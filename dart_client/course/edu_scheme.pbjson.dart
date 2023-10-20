@@ -103,7 +103,9 @@ const UpdateEduSchemeRequest$json = {
     {'1': 'character_standard', '3': 8, '4': 1, '5': 9, '10': 'characterStandard'},
     {'1': 'group_name', '3': 9, '4': 1, '5': 9, '10': 'groupName'},
     {'1': 'edu_scheme_id', '3': 10, '4': 1, '5': 3, '10': 'eduSchemeId'},
-    {'1': 'course_modules', '3': 12, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'skill_hours', '3': 11, '4': 1, '5': 2, '10': 'skillHours'},
+    {'1': 'knowledge_hours', '3': 12, '4': 1, '5': 2, '10': 'knowledgeHours'},
+    {'1': 'course_modules', '3': 13, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
   ],
 };
 
@@ -115,8 +117,10 @@ final $typed_data.Uint8List updateEduSchemeRequestDescriptor = $convert.base64De
     '93bGVkZ2Vfc3RhbmRhcmQYBiABKAlSEWtub3dsZWRnZVN0YW5kYXJkEikKEGFiaWxpdHlfc3Rh'
     'bmRhcmQYByABKAlSD2FiaWxpdHlTdGFuZGFyZBItChJjaGFyYWN0ZXJfc3RhbmRhcmQYCCABKA'
     'lSEWNoYXJhY3RlclN0YW5kYXJkEh0KCmdyb3VwX25hbWUYCSABKAlSCWdyb3VwTmFtZRIiCg1l'
-    'ZHVfc2NoZW1lX2lkGAogASgDUgtlZHVTY2hlbWVJZBI+Cg5jb3Vyc2VfbW9kdWxlcxgMIAMoCz'
-    'IXLmdsb3J5X2FwaS5Db3Vyc2VNb2R1bGVSDWNvdXJzZU1vZHVsZXM=');
+    'ZHVfc2NoZW1lX2lkGAogASgDUgtlZHVTY2hlbWVJZBIfCgtza2lsbF9ob3VycxgLIAEoAlIKc2'
+    'tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYDCABKAJSDmtub3dsZWRnZUhvdXJzEj4KDmNv'
+    'dXJzZV9tb2R1bGVzGA0gAygLMhcuZ2xvcnlfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdW'
+    'xlcw==');
 
 @$core.Deprecated('Use updateEduSchemeResponseDescriptor instead')
 const UpdateEduSchemeResponse$json = {

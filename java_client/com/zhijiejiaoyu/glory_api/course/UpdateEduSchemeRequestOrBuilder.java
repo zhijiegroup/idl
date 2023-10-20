@@ -119,11 +119,23 @@ public interface UpdateEduSchemeRequestOrBuilder extends
   long getEduSchemeId();
 
   /**
+   * <code>float skill_hours = 11;</code>
+   * @return The skillHours.
+   */
+  float getSkillHours();
+
+  /**
+   * <code>float knowledge_hours = 12;</code>
+   * @return The knowledgeHours.
+   */
+  float getKnowledgeHours();
+
+  /**
    * <pre>
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
       getCourseModulesList();
@@ -132,7 +144,7 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
@@ -140,7 +152,7 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
    */
   int getCourseModulesCount();
   /**
@@ -148,7 +160,7 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
       getCourseModulesOrBuilderList();
@@ -157,7 +169,7 @@ public interface UpdateEduSchemeRequestOrBuilder extends
    * 能力指标或能力方向
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 12;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index);

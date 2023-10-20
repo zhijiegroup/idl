@@ -56,6 +56,8 @@ export interface UpdateEduSchemeRequest {
   character_standard?: string;
   group_name?: string;
   edu_scheme_id?: string;
+  skill_hours?: number;
+  knowledge_hours?: number;
   /** 能力指标或能力方向 */
   course_modules?: Array<modules.CourseModule>;
 }

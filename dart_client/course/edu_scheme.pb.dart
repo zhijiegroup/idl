@@ -493,6 +493,8 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.String? characterStandard,
     $core.String? groupName,
     $fixnum.Int64? eduSchemeId,
+    $core.double? skillHours,
+    $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
   }) {
     final $result = create();
@@ -526,6 +528,12 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     if (eduSchemeId != null) {
       $result.eduSchemeId = eduSchemeId;
     }
+    if (skillHours != null) {
+      $result.skillHours = skillHours;
+    }
+    if (knowledgeHours != null) {
+      $result.knowledgeHours = knowledgeHours;
+    }
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
@@ -546,7 +554,9 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'characterStandard')
     ..aOS(9, _omitFieldNames ? '' : 'groupName')
     ..aInt64(10, _omitFieldNames ? '' : 'eduSchemeId')
-    ..pc<$0.CourseModule>(12, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
+    ..pc<$0.CourseModule>(13, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..hasRequiredFields = false
   ;
 
@@ -663,8 +673,26 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearEduSchemeId() => clearField(10);
 
+  @$pb.TagNumber(11)
+  $core.double get skillHours => $_getN(10);
+  @$pb.TagNumber(11)
+  set skillHours($core.double v) { $_setFloat(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasSkillHours() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSkillHours() => clearField(11);
+
   @$pb.TagNumber(12)
-  $core.List<$0.CourseModule> get courseModules => $_getList(10);
+  $core.double get knowledgeHours => $_getN(11);
+  @$pb.TagNumber(12)
+  set knowledgeHours($core.double v) { $_setFloat(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasKnowledgeHours() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearKnowledgeHours() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.List<$0.CourseModule> get courseModules => $_getList(12);
 }
 
 class UpdateEduSchemeResponse extends $pb.GeneratedMessage {

@@ -156,6 +156,10 @@ struct GloryApi_UpdateEduSchemeRequest {
 
   var eduSchemeID: Int64 = 0
 
+  var skillHours: Float = 0
+
+  var knowledgeHours: Float = 0
+
   /// 能力指标或能力方向
   var courseModules: [GloryApi_CourseModule] = []
 
@@ -676,7 +680,9 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     8: .standard(proto: "character_standard"),
     9: .standard(proto: "group_name"),
     10: .standard(proto: "edu_scheme_id"),
-    12: .standard(proto: "course_modules"),
+    11: .standard(proto: "skill_hours"),
+    12: .standard(proto: "knowledge_hours"),
+    13: .standard(proto: "course_modules"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -695,7 +701,9 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 8: try { try decoder.decodeSingularStringField(value: &self.characterStandard) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.groupName) }()
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
-      case 12: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
+      case 11: try { try decoder.decodeSingularFloatField(value: &self.skillHours) }()
+      case 12: try { try decoder.decodeSingularFloatField(value: &self.knowledgeHours) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       default: break
       }
     }
@@ -736,8 +744,14 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if self.eduSchemeID != 0 {
       try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 10)
     }
+    if self.skillHours != 0 {
+      try visitor.visitSingularFloatField(value: self.skillHours, fieldNumber: 11)
+    }
+    if self.knowledgeHours != 0 {
+      try visitor.visitSingularFloatField(value: self.knowledgeHours, fieldNumber: 12)
+    }
     if !self.courseModules.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 12)
+      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -753,6 +767,8 @@ extension GloryApi_UpdateEduSchemeRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.characterStandard != rhs.characterStandard {return false}
     if lhs.groupName != rhs.groupName {return false}
     if lhs.eduSchemeID != rhs.eduSchemeID {return false}
+    if lhs.skillHours != rhs.skillHours {return false}
+    if lhs.knowledgeHours != rhs.knowledgeHours {return false}
     if lhs.courseModules != rhs.courseModules {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
