@@ -40,6 +40,7 @@ const CartSku$json = {
     {'1': 'quantity', '3': 3, '4': 1, '5': 5, '10': 'quantity'},
     {'1': 'shop_id', '3': 4, '4': 1, '5': 3, '10': 'shopId'},
     {'1': 'channel', '3': 5, '4': 1, '5': 9, '10': 'channel'},
+    {'1': 'activity_id', '3': 6, '4': 1, '5': 3, '10': 'activityId'},
   ],
 };
 
@@ -47,7 +48,8 @@ const CartSku$json = {
 final $typed_data.Uint8List cartSkuDescriptor = $convert.base64Decode(
     'CgdDYXJ0U2t1Eh4KC2NhcnRfc2t1X2lkGAEgASgDUgljYXJ0U2t1SWQSFQoGc2t1X2lkGAIgAS'
     'gDUgVza3VJZBIaCghxdWFudGl0eRgDIAEoBVIIcXVhbnRpdHkSFwoHc2hvcF9pZBgEIAEoA1IG'
-    'c2hvcElkEhgKB2NoYW5uZWwYBSABKAlSB2NoYW5uZWw=');
+    'c2hvcElkEhgKB2NoYW5uZWwYBSABKAlSB2NoYW5uZWwSHwoLYWN0aXZpdHlfaWQYBiABKANSCm'
+    'FjdGl2aXR5SWQ=');
 
 @$core.Deprecated('Use productShowDescriptor instead')
 const ProductShow$json = {

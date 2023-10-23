@@ -134,6 +134,7 @@ class CartSku extends $pb.GeneratedMessage {
     $core.int? quantity,
     $fixnum.Int64? shopId,
     $core.String? channel,
+    $fixnum.Int64? activityId,
   }) {
     final $result = create();
     if (cartSkuId != null) {
@@ -151,6 +152,9 @@ class CartSku extends $pb.GeneratedMessage {
     if (channel != null) {
       $result.channel = channel;
     }
+    if (activityId != null) {
+      $result.activityId = activityId;
+    }
     return $result;
   }
   CartSku._() : super();
@@ -163,6 +167,7 @@ class CartSku extends $pb.GeneratedMessage {
     ..a<$core.int>(3, _omitFieldNames ? '' : 'quantity', $pb.PbFieldType.O3)
     ..aInt64(4, _omitFieldNames ? '' : 'shopId')
     ..aOS(5, _omitFieldNames ? '' : 'channel')
+    ..aInt64(6, _omitFieldNames ? '' : 'activityId')
     ..hasRequiredFields = false
   ;
 
@@ -231,6 +236,15 @@ class CartSku extends $pb.GeneratedMessage {
   $core.bool hasChannel() => $_has(4);
   @$pb.TagNumber(5)
   void clearChannel() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get activityId => $_getI64(5);
+  @$pb.TagNumber(6)
+  set activityId($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasActivityId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearActivityId() => clearField(6);
 }
 
 class ProductShow extends $pb.GeneratedMessage {

@@ -50,4 +50,14 @@ public interface CartSkuOrBuilder extends
    */
   com.google.protobuf.ByteString
       getChannelBytes();
+
+  /**
+   * <pre>
+   * 活动ID
+   * </pre>
+   *
+   * <code>int64 activity_id = 6;</code>
+   * @return The activityId.
+   */
+  long getActivityId();
 }

@@ -75,6 +75,11 @@ private static final long serialVersionUID = 0L;
             channel = s;
             break;
           }
+          case 48: {
+
+            activityId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -197,6 +202,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ACTIVITY_ID_FIELD_NUMBER = 6;
+  private long activityId ;
+  /**
+   * <pre>
+   * 活动ID
+   * </pre>
+   *
+   * <code>int64 activity_id = 6;</code>
+   * @return The activityId.
+   */
+  @java.lang.Override
+  public long getActivityId() {
+    return activityId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -226,6 +246,9 @@ private static final long serialVersionUID = 0L;
     if (!getChannelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, channel );
     }
+    if (activityId != 0L) {
+      output.writeInt64(6, activityId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -254,6 +277,10 @@ private static final long serialVersionUID = 0L;
     if (!getChannelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, channel );
     }
+    if (activityId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, activityId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -279,6 +306,8 @@ private static final long serialVersionUID = 0L;
         != other.getShopId()) return false;
     if (!getChannel()
         .equals(other.getChannel())) return false;
+    if (getActivityId()
+        != other.getActivityId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -303,6 +332,9 @@ private static final long serialVersionUID = 0L;
         getShopId());
     hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + getChannel().hashCode();
+    hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getActivityId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,6 +478,8 @@ private static final long serialVersionUID = 0L;
 
       channel = "";
 
+      activityId = 0L;
+
       return this;
     }
 
@@ -477,6 +511,7 @@ private static final long serialVersionUID = 0L;
       result.quantity = quantity ;
       result.shopId = shopId ;
       result.channel = channel ;
+      result.activityId = activityId ;
       onBuilt();
       return result;
     }
@@ -540,6 +575,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getChannel().isEmpty()) {
         channel = other.channel ;
         onChanged();
+      }
+      if (other.getActivityId() != 0L) {
+        setActivityId(other.getActivityId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -786,6 +824,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       channel = value;
+      onChanged();
+      return this;
+    }
+
+    private long activityId ;
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 6;</code>
+     * @return The activityId.
+     */
+    @java.lang.Override
+    public long getActivityId() {
+      return activityId ;
+    }
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 6;</code>
+     * @param value The activityId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActivityId(long value) {
+      
+      activityId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 活动ID
+     * </pre>
+     *
+     * <code>int64 activity_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActivityId() {
+      
+      activityId = 0L;
       onChanged();
       return this;
     }

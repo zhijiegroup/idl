@@ -23,6 +23,8 @@ export interface CartSku {
   shop_id?: string;
   /** live:直播间订单,normal:非直播间订单 */
   channel?: string;
+  /** 活动ID */
+  activity_id?: string;
 }
 
 export interface ProductShow {
