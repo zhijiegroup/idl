@@ -22,6 +22,7 @@ message CartSku {
   int32 quantity = 3;
   int64 shop_id = 4;
   string channel = 5; //live:直播间订单,normal:非直播间订单
+  int64 activity_id = 6; // 活动ID
 }
 
 message ProductShow {
