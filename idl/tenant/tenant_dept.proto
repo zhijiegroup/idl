@@ -59,3 +59,14 @@ message GetTenantDeptResponse {
     base.BaseResponse base_resp = 1;
     TenantDept tenant_dept = 2;
 }
+
+message ListTenantDeptRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    string dept_type = 3;
+}
+
+message ListTenantDeptResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantDept tenant_dept = 2;
+}
