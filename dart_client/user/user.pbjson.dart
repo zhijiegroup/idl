@@ -24,6 +24,7 @@ const TenantDept$json = {
     {'1': 'dept_overview', '3': 5, '4': 1, '5': 9, '10': 'deptOverview'},
     {'1': 'tenant_id', '3': 6, '4': 1, '5': 3, '10': 'tenantId'},
     {'1': 'parent_id', '3': 7, '4': 1, '5': 3, '10': 'parentId'},
+    {'1': 'child_dept', '3': 8, '4': 3, '5': 11, '6': '.glory_api.TenantDept', '10': 'childDept'},
   ],
 };
 
@@ -32,7 +33,8 @@ final $typed_data.Uint8List tenantDeptDescriptor = $convert.base64Decode(
     'CgpUZW5hbnREZXB0EhcKB2RlcHRfaWQYASABKANSBmRlcHRJZBIbCglkZXB0X25hbWUYAiABKA'
     'lSCGRlcHROYW1lEhsKCWRlcHRfdHlwZRgDIAEoCVIIZGVwdFR5cGUSGwoJZGVwdF9jb2RlGAQg'
     'ASgJUghkZXB0Q29kZRIjCg1kZXB0X292ZXJ2aWV3GAUgASgJUgxkZXB0T3ZlcnZpZXcSGwoJdG'
-    'VuYW50X2lkGAYgASgDUgh0ZW5hbnRJZBIbCglwYXJlbnRfaWQYByABKANSCHBhcmVudElk');
+    'VuYW50X2lkGAYgASgDUgh0ZW5hbnRJZBIbCglwYXJlbnRfaWQYByABKANSCHBhcmVudElkEjQK'
+    'CmNoaWxkX2RlcHQYCCADKAsyFS5nbG9yeV9hcGkuVGVuYW50RGVwdFIJY2hpbGREZXB0');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {

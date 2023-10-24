@@ -1656,6 +1656,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListTenantDept(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_tenant_dept`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateTenantUser(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant_user`;
     const body = JSONbigint.stringify(request);

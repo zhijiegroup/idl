@@ -901,6 +901,10 @@ CreateLivePlanProduct create live plan product */
     request: tenant_dept.GetTenantDeptTypeRequest
   ): Promise<tenant_dept.GetTenantDeptTypeResponse>;
 
+  ListTenantDept(
+    request: tenant_dept.ListTenantDeptRequest
+  ): Promise<tenant_dept.ListTenantDeptResponse>;
+
   /** tenant_user */
   CreateTenantUser(
     request: tenant_user.CreateTenantUserRequest

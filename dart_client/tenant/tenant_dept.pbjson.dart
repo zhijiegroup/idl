@@ -172,3 +172,34 @@ final $typed_data.Uint8List getTenantDeptResponseDescriptor = $convert.base64Dec
     'VzcG9uc2VSCGJhc2VSZXNwEjYKC3RlbmFudF9kZXB0GAIgASgLMhUuZ2xvcnlfYXBpLlRlbmFu'
     'dERlcHRSCnRlbmFudERlcHQ=');
 
+@$core.Deprecated('Use listTenantDeptRequestDescriptor instead')
+const ListTenantDeptRequest$json = {
+  '1': 'ListTenantDeptRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'dept_type', '3': 3, '4': 1, '5': 9, '10': 'deptType'},
+  ],
+};
+
+/// Descriptor for `ListTenantDeptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantDeptRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0VGVuYW50RGVwdFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIbCglk'
+    'ZXB0X3R5cGUYAyABKAlSCGRlcHRUeXBl');
+
+@$core.Deprecated('Use listTenantDeptResponseDescriptor instead')
+const ListTenantDeptResponse$json = {
+  '1': 'ListTenantDeptResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'tenant_dept', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TenantDept', '10': 'tenantDept'},
+  ],
+};
+
+/// Descriptor for `ListTenantDeptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantDeptResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0VGVuYW50RGVwdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBI2Cgt0ZW5hbnRfZGVwdBgCIAMoCzIVLmdsb3J5X2FwaS5UZW5h'
+    'bnREZXB0Ugp0ZW5hbnREZXB0');
+

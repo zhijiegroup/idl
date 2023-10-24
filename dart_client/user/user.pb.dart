@@ -28,6 +28,7 @@ class TenantDept extends $pb.GeneratedMessage {
     $core.String? deptOverview,
     $fixnum.Int64? tenantId,
     $fixnum.Int64? parentId,
+    $core.Iterable<TenantDept>? childDept,
   }) {
     final $result = create();
     if (deptId != null) {
@@ -51,6 +52,9 @@ class TenantDept extends $pb.GeneratedMessage {
     if (parentId != null) {
       $result.parentId = parentId;
     }
+    if (childDept != null) {
+      $result.childDept.addAll(childDept);
+    }
     return $result;
   }
   TenantDept._() : super();
@@ -65,6 +69,7 @@ class TenantDept extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'deptOverview')
     ..aInt64(6, _omitFieldNames ? '' : 'tenantId')
     ..aInt64(7, _omitFieldNames ? '' : 'parentId')
+    ..pc<TenantDept>(8, _omitFieldNames ? '' : 'childDept', $pb.PbFieldType.PM, subBuilder: TenantDept.create)
     ..hasRequiredFields = false
   ;
 
@@ -151,6 +156,9 @@ class TenantDept extends $pb.GeneratedMessage {
   $core.bool hasParentId() => $_has(6);
   @$pb.TagNumber(7)
   void clearParentId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<TenantDept> get childDept => $_getList(7);
 }
 
 class User extends $pb.GeneratedMessage {

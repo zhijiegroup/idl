@@ -6308,6 +6308,37 @@ public final class glory_apiGrpc {
     return getGetTenantDeptTypeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> getListTenantDeptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTenantDept",
+      requestType = com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest,
+      com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> getListTenantDeptMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest, com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> getListTenantDeptMethod;
+    if ((getListTenantDeptMethod = glory_apiGrpc.getListTenantDeptMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTenantDeptMethod = glory_apiGrpc.getListTenantDeptMethod) == null) {
+          glory_apiGrpc.getListTenantDeptMethod = getListTenantDeptMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest, com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTenantDept"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTenantDept"))
+              .build();
+        }
+      }
+    }
+    return getListTenantDeptMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserRequest,
       com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserResponse> getCreateTenantUserMethod;
 
@@ -10778,6 +10809,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void listTenantDept(com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTenantDeptMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * tenant_user
      * </pre>
@@ -13378,6 +13416,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void listTenantDept(com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTenantDeptMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * tenant_user
      * </pre>
@@ -15854,6 +15900,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.tenant.GetTenantDeptTypeResponse getTenantDeptType(com.zhijiejiaoyu.glory_api.tenant.GetTenantDeptTypeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTenantDeptTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse listTenantDept(com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTenantDeptMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18446,6 +18499,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse> listTenantDept(
+        com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTenantDeptMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * tenant_user
      * </pre>
@@ -19573,99 +19634,100 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_TENANT_DEPT = 200;
   private static final int METHODID_GET_TENANT_DEPT = 201;
   private static final int METHODID_GET_TENANT_DEPT_TYPE = 202;
-  private static final int METHODID_CREATE_TENANT_USER = 203;
-  private static final int METHODID_DELETE_TENANT_USER = 204;
-  private static final int METHODID_UPDATE_TENANT_USER = 205;
-  private static final int METHODID_GET_TENANT_USER = 206;
-  private static final int METHODID_LIST_TENANT_USER = 207;
-  private static final int METHODID_LIST_TENANT_STUDENT = 208;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 209;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 210;
-  private static final int METHODID_LIST_TENANT_CONFIG = 211;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 212;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 213;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 214;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 215;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 216;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 217;
-  private static final int METHODID_GET_SHORT_VIDEO = 218;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 219;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 220;
-  private static final int METHODID_GET_STAGE_VIDEO = 221;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 222;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 223;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 224;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 225;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 226;
-  private static final int METHODID_LIST_SHORT_VIDEO = 227;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 228;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 229;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 230;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 231;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 232;
-  private static final int METHODID_CREATE_COUPON = 233;
-  private static final int METHODID_LIST_COUPON = 234;
-  private static final int METHODID_COUPON_DETAIL = 235;
-  private static final int METHODID_UPDATE_COUPON = 236;
-  private static final int METHODID_DELETE_COUPON = 237;
-  private static final int METHODID_ABOLISH_COUPON = 238;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 239;
-  private static final int METHODID_CLAIM_COUPON = 240;
-  private static final int METHODID_LIST_MY_COUPON = 241;
-  private static final int METHODID_CREATE_ACTIVITY = 242;
-  private static final int METHODID_LIST_ACTIVITY = 243;
-  private static final int METHODID_ACTIVITY_DETAIL = 244;
-  private static final int METHODID_UPDATE_ACTIVITY = 245;
-  private static final int METHODID_DELETE_ACTIVITY = 246;
-  private static final int METHODID_DISABLE_ACTIVITY = 247;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 248;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 249;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 250;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 251;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 252;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 253;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 254;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 255;
-  private static final int METHODID_CREATE_COURSE_MODULE = 256;
-  private static final int METHODID_GET_COURSE_MODULE = 257;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 258;
-  private static final int METHODID_DELETE_COURSE_MODULE = 259;
-  private static final int METHODID_LIST_COURSE_MODULE = 260;
-  private static final int METHODID_LIST_LATEST_COURSE = 261;
-  private static final int METHODID_LIST_HOTEST_COURSE = 262;
-  private static final int METHODID_CREATE_CM_COURSE = 263;
-  private static final int METHODID_PREVIEW_CM_COURSE = 264;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 265;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 266;
-  private static final int METHODID_CREATE_NM_COURSE = 267;
-  private static final int METHODID_LIST_NM_COURSE = 268;
-  private static final int METHODID_NM_COURSE_DETAIL = 269;
-  private static final int METHODID_DELETE_NM_COURSE = 270;
-  private static final int METHODID_CREATE_COURSE = 271;
-  private static final int METHODID_GET_COURSE = 272;
-  private static final int METHODID_UPDATE_COURSE = 273;
-  private static final int METHODID_DELETE_COURSE = 274;
-  private static final int METHODID_LIST_COURSE = 275;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 276;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 277;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 278;
-  private static final int METHODID_GET_MAJOR_CODE = 279;
-  private static final int METHODID_GET_COURSE_IDS = 280;
-  private static final int METHODID_ENROLL_COURSE = 281;
-  private static final int METHODID_DELETE_MY_COURSE = 282;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 283;
-  private static final int METHODID_LIST_MY_COURSE = 284;
-  private static final int METHODID_LIST_TEACHING_PLAN = 285;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 286;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 287;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 288;
-  private static final int METHODID_CREATE_EDU_SCHEME = 289;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 290;
-  private static final int METHODID_LIST_EDU_SCHEME = 291;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 292;
-  private static final int METHODID_DELETE_EDU_SCHEME = 293;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 294;
-  private static final int METHODID_GET_ANDROID_QRCODE = 295;
+  private static final int METHODID_LIST_TENANT_DEPT = 203;
+  private static final int METHODID_CREATE_TENANT_USER = 204;
+  private static final int METHODID_DELETE_TENANT_USER = 205;
+  private static final int METHODID_UPDATE_TENANT_USER = 206;
+  private static final int METHODID_GET_TENANT_USER = 207;
+  private static final int METHODID_LIST_TENANT_USER = 208;
+  private static final int METHODID_LIST_TENANT_STUDENT = 209;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 210;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 211;
+  private static final int METHODID_LIST_TENANT_CONFIG = 212;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 213;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 214;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 215;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 216;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 217;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 218;
+  private static final int METHODID_GET_SHORT_VIDEO = 219;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 220;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 221;
+  private static final int METHODID_GET_STAGE_VIDEO = 222;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 223;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 224;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 225;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 226;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 227;
+  private static final int METHODID_LIST_SHORT_VIDEO = 228;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 229;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 230;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 231;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 232;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 233;
+  private static final int METHODID_CREATE_COUPON = 234;
+  private static final int METHODID_LIST_COUPON = 235;
+  private static final int METHODID_COUPON_DETAIL = 236;
+  private static final int METHODID_UPDATE_COUPON = 237;
+  private static final int METHODID_DELETE_COUPON = 238;
+  private static final int METHODID_ABOLISH_COUPON = 239;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 240;
+  private static final int METHODID_CLAIM_COUPON = 241;
+  private static final int METHODID_LIST_MY_COUPON = 242;
+  private static final int METHODID_CREATE_ACTIVITY = 243;
+  private static final int METHODID_LIST_ACTIVITY = 244;
+  private static final int METHODID_ACTIVITY_DETAIL = 245;
+  private static final int METHODID_UPDATE_ACTIVITY = 246;
+  private static final int METHODID_DELETE_ACTIVITY = 247;
+  private static final int METHODID_DISABLE_ACTIVITY = 248;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 249;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 250;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 251;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 252;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 253;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 254;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 255;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 256;
+  private static final int METHODID_CREATE_COURSE_MODULE = 257;
+  private static final int METHODID_GET_COURSE_MODULE = 258;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 259;
+  private static final int METHODID_DELETE_COURSE_MODULE = 260;
+  private static final int METHODID_LIST_COURSE_MODULE = 261;
+  private static final int METHODID_LIST_LATEST_COURSE = 262;
+  private static final int METHODID_LIST_HOTEST_COURSE = 263;
+  private static final int METHODID_CREATE_CM_COURSE = 264;
+  private static final int METHODID_PREVIEW_CM_COURSE = 265;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 266;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 267;
+  private static final int METHODID_CREATE_NM_COURSE = 268;
+  private static final int METHODID_LIST_NM_COURSE = 269;
+  private static final int METHODID_NM_COURSE_DETAIL = 270;
+  private static final int METHODID_DELETE_NM_COURSE = 271;
+  private static final int METHODID_CREATE_COURSE = 272;
+  private static final int METHODID_GET_COURSE = 273;
+  private static final int METHODID_UPDATE_COURSE = 274;
+  private static final int METHODID_DELETE_COURSE = 275;
+  private static final int METHODID_LIST_COURSE = 276;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 277;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 278;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 279;
+  private static final int METHODID_GET_MAJOR_CODE = 280;
+  private static final int METHODID_GET_COURSE_IDS = 281;
+  private static final int METHODID_ENROLL_COURSE = 282;
+  private static final int METHODID_DELETE_MY_COURSE = 283;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 284;
+  private static final int METHODID_LIST_MY_COURSE = 285;
+  private static final int METHODID_LIST_TEACHING_PLAN = 286;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 287;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 288;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 289;
+  private static final int METHODID_CREATE_EDU_SCHEME = 290;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 291;
+  private static final int METHODID_LIST_EDU_SCHEME = 292;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 293;
+  private static final int METHODID_DELETE_EDU_SCHEME = 294;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 295;
+  private static final int METHODID_GET_ANDROID_QRCODE = 296;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20495,6 +20557,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_TENANT_DEPT_TYPE:
           serviceImpl.getTenantDeptType((com.zhijiejiaoyu.glory_api.tenant.GetTenantDeptTypeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.GetTenantDeptTypeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TENANT_DEPT:
+          serviceImpl.listTenantDept((com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse>) responseObserver);
           break;
         case METHODID_CREATE_TENANT_USER:
           serviceImpl.createTenantUser((com.zhijiejiaoyu.glory_api.tenant.CreateTenantUserRequest) request,
@@ -22308,6 +22374,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.tenant.GetTenantDeptTypeResponse>(
                 service, METHODID_GET_TENANT_DEPT_TYPE)))
         .addMethod(
+          getListTenantDeptMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptRequest,
+              com.zhijiejiaoyu.glory_api.tenant.ListTenantDeptResponse>(
+                service, METHODID_LIST_TENANT_DEPT)))
+        .addMethod(
           getCreateTenantUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -23209,6 +23282,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteTenantDeptMethod())
               .addMethod(getGetTenantDeptMethod())
               .addMethod(getGetTenantDeptTypeMethod())
+              .addMethod(getListTenantDeptMethod())
               .addMethod(getCreateTenantUserMethod())
               .addMethod(getDeleteTenantUserMethod())
               .addMethod(getUpdateTenantUserMethod())

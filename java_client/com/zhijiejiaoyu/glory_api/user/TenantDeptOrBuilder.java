@@ -72,4 +72,28 @@ public interface TenantDeptOrBuilder extends
    * @return The parentId.
    */
   long getParentId();
+
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> 
+      getChildDeptList();
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getChildDept(int index);
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  int getChildDeptCount();
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getChildDeptOrBuilderList();
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getChildDeptOrBuilder(
+      int index);
 }

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     deptType = "";
     deptCode = "";
     deptOverview = "";
+    childDept = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -91,6 +93,15 @@ private static final long serialVersionUID = 0L;
             parentId = input.readInt64();
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              childDept = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            childDept .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -106,6 +117,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        childDept = java.util.Collections.unmodifiableList(childDept );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -308,6 +322,46 @@ private static final long serialVersionUID = 0L;
     return parentId ;
   }
 
+  public static final int CHILD_DEPT_FIELD_NUMBER = 8;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> childDept ;
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getChildDeptList() {
+    return childDept ;
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getChildDeptOrBuilderList() {
+    return childDept ;
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  @java.lang.Override
+  public int getChildDeptCount() {
+    return childDept .size();
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getChildDept(int index) {
+    return childDept .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getChildDeptOrBuilder(
+      int index) {
+    return childDept .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -343,6 +397,9 @@ private static final long serialVersionUID = 0L;
     if (parentId != 0L) {
       output.writeInt64(7, parentId );
     }
+    for (int i = 0; i < childDept .size(); i++) {
+      output.writeMessage(8, childDept .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -376,6 +433,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, parentId );
     }
+    for (int i = 0; i < childDept .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, childDept .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -405,6 +466,8 @@ private static final long serialVersionUID = 0L;
         != other.getTenantId()) return false;
     if (getParentId()
         != other.getParentId()) return false;
+    if (!getChildDeptList()
+        .equals(other.getChildDeptList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -433,6 +496,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getParentId());
+    if (getChildDeptCount() > 0) {
+      hash = (37 * hash) + CHILD_DEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getChildDeptList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,6 +628,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChildDeptFieldBuilder();
       }
     }
     @java.lang.Override
@@ -580,6 +648,12 @@ private static final long serialVersionUID = 0L;
 
       parentId = 0L;
 
+      if (childDeptBuilder == null) {
+        childDept = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        childDeptBuilder .clear();
+      }
       return this;
     }
 
@@ -606,6 +680,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.TenantDept buildPartial() {
       com.zhijiejiaoyu.glory_api.user.TenantDept result = new com.zhijiejiaoyu.glory_api.user.TenantDept(this);
+      int from_bitField0 = bitField0 ;
       result.deptId = deptId ;
       result.deptName = deptName ;
       result.deptType = deptType ;
@@ -613,6 +688,15 @@ private static final long serialVersionUID = 0L;
       result.deptOverview = deptOverview ;
       result.tenantId = tenantId ;
       result.parentId = parentId ;
+      if (childDeptBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          childDept = java.util.Collections.unmodifiableList(childDept );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.childDept = childDept ;
+      } else {
+        result.childDept = childDeptBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -686,6 +770,32 @@ private static final long serialVersionUID = 0L;
       if (other.getParentId() != 0L) {
         setParentId(other.getParentId());
       }
+      if (childDeptBuilder == null) {
+        if (!other.childDept .isEmpty()) {
+          if (childDept .isEmpty()) {
+            childDept = other.childDept ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureChildDeptIsMutable();
+            childDept .addAll(other.childDept );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.childDept .isEmpty()) {
+          if (childDeptBuilder .isEmpty()) {
+            childDeptBuilder .dispose();
+            childDeptBuilder = null;
+            childDept = other.childDept ;
+            bitField0 = (bitField0 & ~0x00000001);
+            childDeptBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChildDeptFieldBuilder() : null;
+          } else {
+            childDeptBuilder .addAllMessages(other.childDept );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -714,6 +824,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long deptId ;
     /**
@@ -1110,6 +1221,246 @@ private static final long serialVersionUID = 0L;
       parentId = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> childDept =
+      java.util.Collections.emptyList();
+    private void ensureChildDeptIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        childDept = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>(childDept );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> childDeptBuilder ;
+
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getChildDeptList() {
+      if (childDeptBuilder == null) {
+        return java.util.Collections.unmodifiableList(childDept );
+      } else {
+        return childDeptBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public int getChildDeptCount() {
+      if (childDeptBuilder == null) {
+        return childDept .size();
+      } else {
+        return childDeptBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getChildDept(int index) {
+      if (childDeptBuilder == null) {
+        return childDept .get(index);
+      } else {
+        return childDeptBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder setChildDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (childDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildDeptIsMutable();
+        childDept .set(index, value);
+        onChanged();
+      } else {
+        childDeptBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder setChildDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (childDeptBuilder == null) {
+        ensureChildDeptIsMutable();
+        childDept .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        childDeptBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder addChildDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (childDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildDeptIsMutable();
+        childDept .add(value);
+        onChanged();
+      } else {
+        childDeptBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder addChildDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (childDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildDeptIsMutable();
+        childDept .add(index, value);
+        onChanged();
+      } else {
+        childDeptBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder addChildDept(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (childDeptBuilder == null) {
+        ensureChildDeptIsMutable();
+        childDept .add(builderForValue.build());
+        onChanged();
+      } else {
+        childDeptBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder addChildDept(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (childDeptBuilder == null) {
+        ensureChildDeptIsMutable();
+        childDept .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        childDeptBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder addAllChildDept(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.TenantDept> values) {
+      if (childDeptBuilder == null) {
+        ensureChildDeptIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, childDept );
+        onChanged();
+      } else {
+        childDeptBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder clearChildDept() {
+      if (childDeptBuilder == null) {
+        childDept = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        childDeptBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public Builder removeChildDept(int index) {
+      if (childDeptBuilder == null) {
+        ensureChildDeptIsMutable();
+        childDept .remove(index);
+        onChanged();
+      } else {
+        childDeptBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getChildDeptBuilder(
+        int index) {
+      return getChildDeptFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getChildDeptOrBuilder(
+        int index) {
+      if (childDeptBuilder == null) {
+        return childDept .get(index);  } else {
+        return childDeptBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+         getChildDeptOrBuilderList() {
+      if (childDeptBuilder != null) {
+        return childDeptBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(childDept );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addChildDeptBuilder() {
+      return getChildDeptFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addChildDeptBuilder(
+        int index) {
+      return getChildDeptFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TenantDept child_dept = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept.Builder> 
+         getChildDeptBuilderList() {
+      return getChildDeptFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getChildDeptFieldBuilder() {
+      if (childDeptBuilder == null) {
+        childDeptBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                childDept ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        childDept = null;
+      }
+      return childDeptBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

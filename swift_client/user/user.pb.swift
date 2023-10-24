@@ -39,6 +39,8 @@ struct GloryApi_TenantDept {
 
   var parentID: Int64 = 0
 
+  var childDept: [GloryApi_TenantDept] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1976,6 +1978,7 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     5: .standard(proto: "dept_overview"),
     6: .standard(proto: "tenant_id"),
     7: .standard(proto: "parent_id"),
+    8: .standard(proto: "child_dept"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1991,6 +1994,7 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 5: try { try decoder.decodeSingularStringField(value: &self.deptOverview) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.parentID) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.childDept) }()
       default: break
       }
     }
@@ -2018,6 +2022,9 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if self.parentID != 0 {
       try visitor.visitSingularInt64Field(value: self.parentID, fieldNumber: 7)
     }
+    if !self.childDept.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.childDept, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2029,6 +2036,7 @@ extension GloryApi_TenantDept: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.deptOverview != rhs.deptOverview {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs.parentID != rhs.parentID {return false}
+    if lhs.childDept != rhs.childDept {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

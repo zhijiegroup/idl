@@ -59,3 +59,14 @@ export interface GetTenantDeptResponse {
   base_resp?: base.BaseResponse;
   tenant_dept?: user.TenantDept;
 }
+
+export interface ListTenantDeptRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  dept_type?: string;
+}
+
+export interface ListTenantDeptResponse {
+  base_resp?: base.BaseResponse;
+  tenant_dept?: Array<user.TenantDept>;
+}

@@ -269,6 +269,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$30.DeleteTenantDeptResponse> deleteTenantDept($pb.ServerContext ctx, $30.DeleteTenantDeptRequest request);
   $async.Future<$30.GetTenantDeptResponse> getTenantDept($pb.ServerContext ctx, $30.GetTenantDeptRequest request);
   $async.Future<$30.GetTenantDeptTypeResponse> getTenantDeptType($pb.ServerContext ctx, $30.GetTenantDeptTypeRequest request);
+  $async.Future<$30.ListTenantDeptResponse> listTenantDept($pb.ServerContext ctx, $30.ListTenantDeptRequest request);
   $async.Future<$31.CreateTenantUserResponse> createTenantUser($pb.ServerContext ctx, $31.CreateTenantUserRequest request);
   $async.Future<$31.DeleteTenantUserResponse> deleteTenantUser($pb.ServerContext ctx, $31.DeleteTenantUserRequest request);
   $async.Future<$31.UpdateTenantUserResponse> updateTenantUser($pb.ServerContext ctx, $31.UpdateTenantUserRequest request);
@@ -568,6 +569,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteTenantDept': return $30.DeleteTenantDeptRequest();
       case 'GetTenantDept': return $30.GetTenantDeptRequest();
       case 'GetTenantDeptType': return $30.GetTenantDeptTypeRequest();
+      case 'ListTenantDept': return $30.ListTenantDeptRequest();
       case 'CreateTenantUser': return $31.CreateTenantUserRequest();
       case 'DeleteTenantUser': return $31.DeleteTenantUserRequest();
       case 'UpdateTenantUser': return $31.UpdateTenantUserRequest();
@@ -870,6 +872,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteTenantDept': return this.deleteTenantDept(ctx, request as $30.DeleteTenantDeptRequest);
       case 'GetTenantDept': return this.getTenantDept(ctx, request as $30.GetTenantDeptRequest);
       case 'GetTenantDeptType': return this.getTenantDeptType(ctx, request as $30.GetTenantDeptTypeRequest);
+      case 'ListTenantDept': return this.listTenantDept(ctx, request as $30.ListTenantDeptRequest);
       case 'CreateTenantUser': return this.createTenantUser(ctx, request as $31.CreateTenantUserRequest);
       case 'DeleteTenantUser': return this.deleteTenantUser(ctx, request as $31.DeleteTenantUserRequest);
       case 'UpdateTenantUser': return this.updateTenantUser(ctx, request as $31.UpdateTenantUserRequest);

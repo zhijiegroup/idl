@@ -727,6 +727,146 @@ class GetTenantDeptResponse extends $pb.GeneratedMessage {
   $1.TenantDept ensureTenantDept() => $_ensure(1);
 }
 
+class ListTenantDeptRequest extends $pb.GeneratedMessage {
+  factory ListTenantDeptRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? tenantId,
+    $core.String? deptType,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (deptType != null) {
+      $result.deptType = deptType;
+    }
+    return $result;
+  }
+  ListTenantDeptRequest._() : super();
+  factory ListTenantDeptRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantDeptRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantDeptRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(3, _omitFieldNames ? '' : 'deptType')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantDeptRequest clone() => ListTenantDeptRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantDeptRequest copyWith(void Function(ListTenantDeptRequest) updates) => super.copyWith((message) => updates(message as ListTenantDeptRequest)) as ListTenantDeptRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantDeptRequest create() => ListTenantDeptRequest._();
+  ListTenantDeptRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTenantDeptRequest> createRepeated() => $pb.PbList<ListTenantDeptRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantDeptRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantDeptRequest>(create);
+  static ListTenantDeptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deptType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deptType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDeptType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeptType() => clearField(3);
+}
+
+class ListTenantDeptResponse extends $pb.GeneratedMessage {
+  factory ListTenantDeptResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<$1.TenantDept>? tenantDept,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (tenantDept != null) {
+      $result.tenantDept.addAll(tenantDept);
+    }
+    return $result;
+  }
+  ListTenantDeptResponse._() : super();
+  factory ListTenantDeptResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantDeptResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantDeptResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<$1.TenantDept>(2, _omitFieldNames ? '' : 'tenantDept', $pb.PbFieldType.PM, subBuilder: $1.TenantDept.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantDeptResponse clone() => ListTenantDeptResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantDeptResponse copyWith(void Function(ListTenantDeptResponse) updates) => super.copyWith((message) => updates(message as ListTenantDeptResponse)) as ListTenantDeptResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantDeptResponse create() => ListTenantDeptResponse._();
+  ListTenantDeptResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTenantDeptResponse> createRepeated() => $pb.PbList<ListTenantDeptResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantDeptResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantDeptResponse>(create);
+  static ListTenantDeptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$1.TenantDept> get tenantDept => $_getList(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -16,6 +16,7 @@ export interface TenantDept {
   dept_overview?: string;
   tenant_id?: string;
   parent_id?: string;
+  child_dept?: Array<TenantDept>;
 }
 
 export interface User {

@@ -674,6 +674,9 @@ class glory_apiApi {
   $async.Future<$30.GetTenantDeptTypeResponse> getTenantDeptType($pb.ClientContext? ctx, $30.GetTenantDeptTypeRequest request) =>
     _client.invoke<$30.GetTenantDeptTypeResponse>(ctx, 'glory_api', 'GetTenantDeptType', request, $30.GetTenantDeptTypeResponse())
   ;
+  $async.Future<$30.ListTenantDeptResponse> listTenantDept($pb.ClientContext? ctx, $30.ListTenantDeptRequest request) =>
+    _client.invoke<$30.ListTenantDeptResponse>(ctx, 'glory_api', 'ListTenantDept', request, $30.ListTenantDeptResponse())
+  ;
   $async.Future<$31.CreateTenantUserResponse> createTenantUser($pb.ClientContext? ctx, $31.CreateTenantUserRequest request) =>
     _client.invoke<$31.CreateTenantUserResponse>(ctx, 'glory_api', 'CreateTenantUser', request, $31.CreateTenantUserResponse())
   ;
