@@ -113,6 +113,18 @@ public interface CreateEduSchemeRequestOrBuilder extends
       getGroupNameBytes();
 
   /**
+   * <code>float skill_hours = 10;</code>
+   * @return The skillHours.
+   */
+  float getSkillHours();
+
+  /**
+   * <code>float knowledge_hours = 11;</code>
+   * @return The knowledgeHours.
+   */
+  float getKnowledgeHours();
+
+  /**
    * <pre>
    * 能力指标或能力方向
    * </pre>

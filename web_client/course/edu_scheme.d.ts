@@ -36,6 +36,8 @@ export interface CreateEduSchemeRequest {
   ability_standard?: string;
   character_standard?: string;
   group_name?: string;
+  skill_hours?: number;
+  knowledge_hours?: number;
   /** 能力指标或能力方向 */
   course_modules?: Array<modules.CourseModule>;
 }
@@ -97,6 +99,7 @@ export interface EduSchemeDetailRequest {
 export interface EduSchemeDetailResponse {
   base_resp?: base.BaseResponse;
   scheme_detail?: EduScheme;
+  clas_ids?: Array<string>;
 }
 
 export interface DistributeEduSchemeRequest {

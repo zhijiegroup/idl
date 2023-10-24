@@ -254,6 +254,8 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     $core.String? abilityStandard,
     $core.String? characterStandard,
     $core.String? groupName,
+    $core.double? skillHours,
+    $core.double? knowledgeHours,
     $core.Iterable<$0.CourseModule>? courseModules,
   }) {
     final $result = create();
@@ -284,6 +286,12 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     if (groupName != null) {
       $result.groupName = groupName;
     }
+    if (skillHours != null) {
+      $result.skillHours = skillHours;
+    }
+    if (knowledgeHours != null) {
+      $result.knowledgeHours = knowledgeHours;
+    }
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
@@ -303,6 +311,8 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'abilityStandard')
     ..aOS(8, _omitFieldNames ? '' : 'characterStandard')
     ..aOS(9, _omitFieldNames ? '' : 'groupName')
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..hasRequiredFields = false
   ;
@@ -411,8 +421,26 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearGroupName() => clearField(9);
 
+  @$pb.TagNumber(10)
+  $core.double get skillHours => $_getN(9);
+  @$pb.TagNumber(10)
+  set skillHours($core.double v) { $_setFloat(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasSkillHours() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSkillHours() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get knowledgeHours => $_getN(10);
+  @$pb.TagNumber(11)
+  set knowledgeHours($core.double v) { $_setFloat(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasKnowledgeHours() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearKnowledgeHours() => clearField(11);
+
   @$pb.TagNumber(15)
-  $core.List<$0.CourseModule> get courseModules => $_getList(9);
+  $core.List<$0.CourseModule> get courseModules => $_getList(11);
 }
 
 class CreateEduSchemeResponse extends $pb.GeneratedMessage {
@@ -1121,6 +1149,7 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   factory EduSchemeDetailResponse({
     $1.BaseResponse? baseResp,
     EduScheme? schemeDetail,
+    $core.Iterable<$fixnum.Int64>? clasIds,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1128,6 +1157,9 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
     }
     if (schemeDetail != null) {
       $result.schemeDetail = schemeDetail;
+    }
+    if (clasIds != null) {
+      $result.clasIds.addAll(clasIds);
     }
     return $result;
   }
@@ -1138,6 +1170,7 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EduSchemeDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<EduScheme>(2, _omitFieldNames ? '' : 'schemeDetail', subBuilder: EduScheme.create)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -1183,6 +1216,9 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   void clearSchemeDetail() => clearField(2);
   @$pb.TagNumber(2)
   EduScheme ensureSchemeDetail() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get clasIds => $_getList(2);
 }
 
 class DistributeEduSchemeRequest extends $pb.GeneratedMessage {

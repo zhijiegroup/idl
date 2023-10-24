@@ -117,6 +117,16 @@ private static final long serialVersionUID = 0L;
             groupName = s;
             break;
           }
+          case 85: {
+
+            skillHours = input.readFloat();
+            break;
+          }
+          case 93: {
+
+            knowledgeHours = input.readFloat();
+            break;
+          }
           case 122: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
@@ -464,6 +474,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SKILL_HOURS_FIELD_NUMBER = 10;
+  private float skillHours ;
+  /**
+   * <code>float skill_hours = 10;</code>
+   * @return The skillHours.
+   */
+  @java.lang.Override
+  public float getSkillHours() {
+    return skillHours ;
+  }
+
+  public static final int KNOWLEDGE_HOURS_FIELD_NUMBER = 11;
+  private float knowledgeHours ;
+  /**
+   * <code>float knowledge_hours = 11;</code>
+   * @return The knowledgeHours.
+   */
+  @java.lang.Override
+  public float getKnowledgeHours() {
+    return knowledgeHours ;
+  }
+
   public static final int COURSE_MODULES_FIELD_NUMBER = 15;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
   /**
@@ -565,6 +597,12 @@ private static final long serialVersionUID = 0L;
     if (!getGroupNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, groupName );
     }
+    if (skillHours != 0F) {
+      output.writeFloat(10, skillHours );
+    }
+    if (knowledgeHours != 0F) {
+      output.writeFloat(11, knowledgeHours );
+    }
     for (int i = 0; i < courseModules .size(); i++) {
       output.writeMessage(15, courseModules .get(i));
     }
@@ -606,6 +644,14 @@ private static final long serialVersionUID = 0L;
     if (!getGroupNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, groupName );
     }
+    if (skillHours != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(10, skillHours );
+    }
+    if (knowledgeHours != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(11, knowledgeHours );
+    }
     for (int i = 0; i < courseModules .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, courseModules .get(i));
@@ -646,6 +692,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCharacterStandard())) return false;
     if (!getGroupName()
         .equals(other.getGroupName())) return false;
+    if (java.lang.Float.floatToIntBits(getSkillHours())
+        != java.lang.Float.floatToIntBits(
+            other.getSkillHours())) return false;
+    if (java.lang.Float.floatToIntBits(getKnowledgeHours())
+        != java.lang.Float.floatToIntBits(
+            other.getKnowledgeHours())) return false;
     if (!getCourseModulesList()
         .equals(other.getCourseModulesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -679,6 +731,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCharacterStandard().hashCode();
     hash = (37 * hash) + GROUP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getGroupName().hashCode();
+    hash = (37 * hash) + SKILL_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getSkillHours());
+    hash = (37 * hash) + KNOWLEDGE_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getKnowledgeHours());
     if (getCourseModulesCount() > 0) {
       hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
       hash = (53 * hash) + getCourseModulesList().hashCode();
@@ -839,6 +897,10 @@ private static final long serialVersionUID = 0L;
 
       groupName = "";
 
+      skillHours = 0F;
+
+      knowledgeHours = 0F;
+
       if (courseModulesBuilder == null) {
         courseModules = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -885,6 +947,8 @@ private static final long serialVersionUID = 0L;
       result.abilityStandard = abilityStandard ;
       result.characterStandard = characterStandard ;
       result.groupName = groupName ;
+      result.skillHours = skillHours ;
+      result.knowledgeHours = knowledgeHours ;
       if (courseModulesBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           courseModules = java.util.Collections.unmodifiableList(courseModules );
@@ -975,6 +1039,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getGroupName().isEmpty()) {
         groupName = other.groupName ;
         onChanged();
+      }
+      if (other.getSkillHours() != 0F) {
+        setSkillHours(other.getSkillHours());
+      }
+      if (other.getKnowledgeHours() != 0F) {
+        setKnowledgeHours(other.getKnowledgeHours());
       }
       if (courseModulesBuilder == null) {
         if (!other.courseModules .isEmpty()) {
@@ -1710,6 +1780,68 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       groupName = value;
+      onChanged();
+      return this;
+    }
+
+    private float skillHours ;
+    /**
+     * <code>float skill_hours = 10;</code>
+     * @return The skillHours.
+     */
+    @java.lang.Override
+    public float getSkillHours() {
+      return skillHours ;
+    }
+    /**
+     * <code>float skill_hours = 10;</code>
+     * @param value The skillHours to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkillHours(float value) {
+      
+      skillHours = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float skill_hours = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSkillHours() {
+      
+      skillHours = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float knowledgeHours ;
+    /**
+     * <code>float knowledge_hours = 11;</code>
+     * @return The knowledgeHours.
+     */
+    @java.lang.Override
+    public float getKnowledgeHours() {
+      return knowledgeHours ;
+    }
+    /**
+     * <code>float knowledge_hours = 11;</code>
+     * @param value The knowledgeHours to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKnowledgeHours(float value) {
+      
+      knowledgeHours = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float knowledge_hours = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKnowledgeHours() {
+      
+      knowledgeHours = 0F;
       onChanged();
       return this;
     }

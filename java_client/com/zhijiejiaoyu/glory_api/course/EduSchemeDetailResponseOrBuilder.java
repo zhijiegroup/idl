@@ -36,4 +36,21 @@ public interface EduSchemeDetailResponseOrBuilder extends
    * <code>.glory_api.EduScheme scheme_detail = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.EduSchemeOrBuilder getSchemeDetailOrBuilder();
+
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return A list containing the clasIds.
+   */
+  java.util.List<java.lang.Long> getClasIdsList();
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @return The count of clasIds.
+   */
+  int getClasIdsCount();
+  /**
+   * <code>repeated int64 clas_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The clasIds at the given index.
+   */
+  long getClasIds(int index);
 }

@@ -60,6 +60,8 @@ const CreateEduSchemeRequest$json = {
     {'1': 'ability_standard', '3': 7, '4': 1, '5': 9, '10': 'abilityStandard'},
     {'1': 'character_standard', '3': 8, '4': 1, '5': 9, '10': 'characterStandard'},
     {'1': 'group_name', '3': 9, '4': 1, '5': 9, '10': 'groupName'},
+    {'1': 'skill_hours', '3': 10, '4': 1, '5': 2, '10': 'skillHours'},
+    {'1': 'knowledge_hours', '3': 11, '4': 1, '5': 2, '10': 'knowledgeHours'},
     {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
   ],
 };
@@ -71,9 +73,10 @@ final $typed_data.Uint8List createEduSchemeRequestDescriptor = $convert.base64De
     'KAlSBW1ham9yEhIKBGdvYWwYBCABKAlSBGdvYWwSEgoEdHlwZRgFIAEoBVIEdHlwZRItChJrbm'
     '93bGVkZ2Vfc3RhbmRhcmQYBiABKAlSEWtub3dsZWRnZVN0YW5kYXJkEikKEGFiaWxpdHlfc3Rh'
     'bmRhcmQYByABKAlSD2FiaWxpdHlTdGFuZGFyZBItChJjaGFyYWN0ZXJfc3RhbmRhcmQYCCABKA'
-    'lSEWNoYXJhY3RlclN0YW5kYXJkEh0KCmdyb3VwX25hbWUYCSABKAlSCWdyb3VwTmFtZRI+Cg5j'
-    'b3Vyc2VfbW9kdWxlcxgPIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2R1bGVSDWNvdXJzZU1vZH'
-    'VsZXM=');
+    'lSEWNoYXJhY3RlclN0YW5kYXJkEh0KCmdyb3VwX25hbWUYCSABKAlSCWdyb3VwTmFtZRIfCgtz'
+    'a2lsbF9ob3VycxgKIAEoAlIKc2tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMYCyABKAJSDm'
+    'tub3dsZWRnZUhvdXJzEj4KDmNvdXJzZV9tb2R1bGVzGA8gAygLMhcuZ2xvcnlfYXBpLkNvdXJz'
+    'ZU1vZHVsZVINY291cnNlTW9kdWxlcw==');
 
 @$core.Deprecated('Use createEduSchemeResponseDescriptor instead')
 const CreateEduSchemeResponse$json = {
@@ -220,6 +223,7 @@ const EduSchemeDetailResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'scheme_detail', '3': 2, '4': 1, '5': 11, '6': '.glory_api.EduScheme', '10': 'schemeDetail'},
+    {'1': 'clas_ids', '3': 3, '4': 3, '5': 3, '10': 'clasIds'},
   ],
 };
 
@@ -227,7 +231,7 @@ const EduSchemeDetailResponse$json = {
 final $typed_data.Uint8List eduSchemeDetailResponseDescriptor = $convert.base64Decode(
     'ChdFZHVTY2hlbWVEZXRhaWxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
     'VSZXNwb25zZVIIYmFzZVJlc3ASOQoNc2NoZW1lX2RldGFpbBgCIAEoCzIULmdsb3J5X2FwaS5F'
-    'ZHVTY2hlbWVSDHNjaGVtZURldGFpbA==');
+    'ZHVTY2hlbWVSDHNjaGVtZURldGFpbBIZCghjbGFzX2lkcxgDIAMoA1IHY2xhc0lkcw==');
 
 @$core.Deprecated('Use distributeEduSchemeRequestDescriptor instead')
 const DistributeEduSchemeRequest$json = {
