@@ -29,12 +29,18 @@ public interface ListTenantDeptRequestOrBuilder extends
   long getTenantId();
 
   /**
-   * <code>string dept_type = 3;</code>
+   * <code>int64 user_id = 3;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
+   * <code>string dept_type = 4;</code>
    * @return The deptType.
    */
   java.lang.String getDeptType();
   /**
-   * <code>string dept_type = 3;</code>
+   * <code>string dept_type = 4;</code>
    * @return The bytes for deptType.
    */
   com.google.protobuf.ByteString

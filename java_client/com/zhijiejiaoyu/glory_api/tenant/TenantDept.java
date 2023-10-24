@@ -114,13 +114,14 @@ public final class TenantDept {
       "ant_id\030\002 \001(\003\022\017\n\007dept_id\030\003 \001(\003\"j\n\025GetTena" +
       "ntDeptResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
       ".BaseResponse\022*\n\013tenant_dept\030\002 \001(\0132\025.glo" +
-      "ry_api.TenantDept\"f\n\025ListTenantDeptReque" +
+      "ry_api.TenantDept\"w\n\025ListTenantDeptReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\021\n\ttenant_id\030\002 \001(\003\022\021\n\tdept_type\030\003 \001(" +
-      "\t\"k\n\026ListTenantDeptResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022*\n\013tenant_dep" +
-      "t\030\002 \003(\0132\025.glory_api.TenantDeptB%\n!com.zh" +
-      "ijiejiaoyu.glory_api.tenantP\001b\006proto3"
+      "est\022\021\n\ttenant_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022" +
+      "\021\n\tdept_type\030\004 \001(\t\"k\n\026ListTenantDeptResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022*\n\013tenant_dept\030\002 \003(\0132\025.glory_api.Ten" +
+      "antDeptB%\n!com.zhijiejiaoyu.glory_api.te" +
+      "nantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -199,7 +200,7 @@ public final class TenantDept {
     internal_static_glory_api_ListTenantDeptRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantDeptRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", "DeptType", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "UserId", "DeptType", });
     internal_static_glory_api_ListTenantDeptResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_ListTenantDeptResponse_fieldAccessorTable = new

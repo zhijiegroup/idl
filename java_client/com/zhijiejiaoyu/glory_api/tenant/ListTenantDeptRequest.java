@@ -67,7 +67,12 @@ private static final long serialVersionUID = 0L;
             tenantId = input.readInt64();
             break;
           }
-          case 26: {
+          case 24: {
+
+            userId = input.readInt64();
+            break;
+          }
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             deptType = s;
@@ -142,10 +147,21 @@ private static final long serialVersionUID = 0L;
     return tenantId ;
   }
 
-  public static final int DEPT_TYPE_FIELD_NUMBER = 3;
+  public static final int USER_ID_FIELD_NUMBER = 3;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 3;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
+  public static final int DEPT_TYPE_FIELD_NUMBER = 4;
   private volatile java.lang.Object deptType ;
   /**
-   * <code>string dept_type = 3;</code>
+   * <code>string dept_type = 4;</code>
    * @return The deptType.
    */
   @java.lang.Override
@@ -162,7 +178,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dept_type = 3;</code>
+   * <code>string dept_type = 4;</code>
    * @return The bytes for deptType.
    */
   @java.lang.Override
@@ -200,8 +216,11 @@ private static final long serialVersionUID = 0L;
     if (tenantId != 0L) {
       output.writeInt64(2, tenantId );
     }
+    if (userId != 0L) {
+      output.writeInt64(3, userId );
+    }
     if (!getDeptTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deptType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptType );
     }
     unknownFields.writeTo(output);
   }
@@ -220,8 +239,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, tenantId );
     }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, userId );
+    }
     if (!getDeptTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deptType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, deptType );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,6 +268,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTenantId()
         != other.getTenantId()) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (!getDeptType()
         .equals(other.getDeptType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -265,6 +290,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (37 * hash) + DEPT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getDeptType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -408,6 +436,8 @@ private static final long serialVersionUID = 0L;
       }
       tenantId = 0L;
 
+      userId = 0L;
+
       deptType = "";
 
       return this;
@@ -442,6 +472,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.tenantId = tenantId ;
+      result.userId = userId ;
       result.deptType = deptType ;
       onBuilt();
       return result;
@@ -496,6 +527,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       if (!other.getDeptType().isEmpty()) {
         deptType = other.deptType ;
@@ -680,9 +714,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long userId ;
+    /**
+     * <code>int64 user_id = 3;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 3;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object deptType = "";
     /**
-     * <code>string dept_type = 3;</code>
+     * <code>string dept_type = 4;</code>
      * @return The deptType.
      */
     public java.lang.String getDeptType() {
@@ -698,7 +763,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dept_type = 3;</code>
+     * <code>string dept_type = 4;</code>
      * @return The bytes for deptType.
      */
     public com.google.protobuf.ByteString
@@ -715,7 +780,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dept_type = 3;</code>
+     * <code>string dept_type = 4;</code>
      * @param value The deptType to set.
      * @return This builder for chaining.
      */
@@ -730,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dept_type = 3;</code>
+     * <code>string dept_type = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearDeptType() {
@@ -740,7 +805,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dept_type = 3;</code>
+     * <code>string dept_type = 4;</code>
      * @param value The bytes for deptType to set.
      * @return This builder for chaining.
      */

@@ -731,6 +731,7 @@ class ListTenantDeptRequest extends $pb.GeneratedMessage {
   factory ListTenantDeptRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? tenantId,
+    $fixnum.Int64? userId,
     $core.String? deptType,
   }) {
     final $result = create();
@@ -739,6 +740,9 @@ class ListTenantDeptRequest extends $pb.GeneratedMessage {
     }
     if (tenantId != null) {
       $result.tenantId = tenantId;
+    }
+    if (userId != null) {
+      $result.userId = userId;
     }
     if (deptType != null) {
       $result.deptType = deptType;
@@ -752,7 +756,8 @@ class ListTenantDeptRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantDeptRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
-    ..aOS(3, _omitFieldNames ? '' : 'deptType')
+    ..aInt64(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'deptType')
     ..hasRequiredFields = false
   ;
 
@@ -798,13 +803,22 @@ class ListTenantDeptRequest extends $pb.GeneratedMessage {
   void clearTenantId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get deptType => $_getSZ(2);
+  $fixnum.Int64 get userId => $_getI64(2);
   @$pb.TagNumber(3)
-  set deptType($core.String v) { $_setString(2, v); }
+  set userId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDeptType() => $_has(2);
+  $core.bool hasUserId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDeptType() => clearField(3);
+  void clearUserId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deptType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deptType($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDeptType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeptType() => clearField(4);
 }
 
 class ListTenantDeptResponse extends $pb.GeneratedMessage {

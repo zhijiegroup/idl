@@ -178,15 +178,16 @@ const ListTenantDeptRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
-    {'1': 'dept_type', '3': 3, '4': 1, '5': 9, '10': 'deptType'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'dept_type', '3': 4, '4': 1, '5': 9, '10': 'deptType'},
   ],
 };
 
 /// Descriptor for `ListTenantDeptRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listTenantDeptRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0VGVuYW50RGVwdFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
-    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIbCglk'
-    'ZXB0X3R5cGUYAyABKAlSCGRlcHRUeXBl');
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIXCgd1'
+    'c2VyX2lkGAMgASgDUgZ1c2VySWQSGwoJZGVwdF90eXBlGAQgASgJUghkZXB0VHlwZQ==');
 
 @$core.Deprecated('Use listTenantDeptResponseDescriptor instead')
 const ListTenantDeptResponse$json = {

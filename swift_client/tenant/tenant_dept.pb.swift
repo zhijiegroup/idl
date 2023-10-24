@@ -302,6 +302,8 @@ struct GloryApi_ListTenantDeptRequest {
 
   var tenantID: Int64 = 0
 
+  var userID: Int64 = 0
+
   var deptType: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -811,7 +813,8 @@ extension GloryApi_ListTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "tenant_id"),
-    3: .standard(proto: "dept_type"),
+    3: .standard(proto: "user_id"),
+    4: .standard(proto: "dept_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -822,7 +825,8 @@ extension GloryApi_ListTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.deptType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.deptType) }()
       default: break
       }
     }
@@ -839,8 +843,11 @@ extension GloryApi_ListTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
     }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 3)
+    }
     if !self.deptType.isEmpty {
-      try visitor.visitSingularStringField(value: self.deptType, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.deptType, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -848,6 +855,7 @@ extension GloryApi_ListTenantDeptRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_ListTenantDeptRequest, rhs: GloryApi_ListTenantDeptRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.deptType != rhs.deptType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

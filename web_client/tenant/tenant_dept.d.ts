@@ -63,6 +63,7 @@ export interface GetTenantDeptResponse {
 export interface ListTenantDeptRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;
+  user_id?: string;
   dept_type?: string;
 }
 
