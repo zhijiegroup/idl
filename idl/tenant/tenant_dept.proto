@@ -63,7 +63,8 @@ message GetTenantDeptResponse {
 message ListTenantDeptRequest {
     base.BaseRequest base_request = 1;
     int64 tenant_id = 2;
-    string dept_type = 3;
+    int64 user_id = 3;
+    string dept_type = 4;
 }
 
 message ListTenantDeptResponse {
