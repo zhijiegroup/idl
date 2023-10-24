@@ -16,6 +16,7 @@ message TenantDept {
   string dept_overview = 5;
   int64 tenant_id = 6;
   int64 parent_id = 7;
+  repeated TenantDept child_dept = 8;
 }
 
 message User {
