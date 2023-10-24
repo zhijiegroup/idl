@@ -33,6 +33,8 @@ message CreateEduSchemeRequest {
     string ability_standard = 7;
     string character_standard = 8;
     string group_name = 9;
+    float skill_hours = 10;
+    float knowledge_hours = 11;
     repeated CourseModule course_modules = 15; // 能力指标或能力方向
 }
 
@@ -92,6 +94,7 @@ message EduSchemeDetailRequest {
 message EduSchemeDetailResponse {
     base.BaseResponse base_resp = 1;
     EduScheme scheme_detail = 2;
+     repeated int64 clas_ids = 3;
 }
 
 message DistributeEduSchemeRequest {
