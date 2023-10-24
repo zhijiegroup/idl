@@ -373,62 +373,63 @@ public final class ShortVideoOuterClass {
       ".\n\010products\030\t \003(\0132\034.glory_api.ShortVideo" +
       "Product\022\017\n\007shop_id\030\n \001(\003\"Y\n\030UpdateStageV" +
       "ideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022\026\n\016stage_video_id\030\002 \001(\003\"\205\001\n\037" +
+      "aseResponse\022\026\n\016stage_video_id\030\002 \001(\003\"\251\001\n\037" +
       "ManagementListShortVideoRequest\022\'\n\014base_" +
       "request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type" +
-      "\030\002 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"\250\001\n ManagementListShortVideo" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022/\n\020short_video_list\030\002 \003(\0132\025.glor" +
-      "y_api.ShortVideo\022,\n\npagination\030d \001(\0132\030.b" +
-      "ase.PaginationResponse\"\233\001\n!ManagementCen" +
-      "sorShortVideoRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\026\n\016short_video_id\030" +
-      "\002 \001(\003\022\025\n\rcensor_status\030\003 \001(\005\022\036\n\026censor_r" +
-      "ejected_reason\030\004 \001(\t\"K\n\"ManagementCensor" +
-      "ShortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"d\n!ManagementDeleteSho" +
-      "rtVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\"" +
-      "K\n\"ManagementDeleteShortVideoResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"m\n\025" +
-      "ListShortVideoRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022+\n\npagination\030d \001" +
-      "(\0132\027.base.PaginationRequest\"\236\001\n\026ListShor" +
+      "\030\002 \001(\005\022\020\n\010major_id\030\003 \001(\003\022\020\n\010class_id\030\004 \001" +
+      "(\003\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
+      "Request\"\250\001\n ManagementListShortVideoResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022/\n\020short_video_list\030\002 \003(\0132\025.glory_ap" +
+      "i.ShortVideo\022,\n\npagination\030d \001(\0132\030.base." +
+      "PaginationResponse\"\233\001\n!ManagementCensorS" +
+      "hortVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\026\n\016short_video_id\030\002 \001(" +
+      "\003\022\025\n\rcensor_status\030\003 \001(\005\022\036\n\026censor_rejec" +
+      "ted_reason\030\004 \001(\t\"K\n\"ManagementCensorShor" +
       "tVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022/\n\020short_video_list\030\002 \003(\0132" +
-      "\025.glory_api.ShortVideo\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponse\"f\n\025LikeShor" +
-      "tVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\014" +
-      "\n\004like\030\003 \001(\010\"?\n\026LikeShortVideoResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"n\n" +
-      "\031FavoriteShortVideoRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016short_vid" +
-      "eo_id\030\002 \001(\003\022\020\n\010favorite\030\003 \001(\010\"C\n\032Favorit" +
-      "eShortVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"\215\001\n\036CreateShortVideoC" +
-      "ommentRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\017" +
-      "\n\007content\030\003 \001(\t\022\031\n\021parent_comment_id\030\004 \001" +
-      "(\003\"\\\n\037CreateShortVideoCommentResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\n" +
-      "comment_id\030\002 \001(\003\"i\n\036DeleteShortVideoComm" +
-      "entRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\036\n\026short_video_comment_id\030\002 " +
-      "\001(\003\"L\n\037DeleteShortVideoCommentResponse\022)" +
-      "\n\rbase_response\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"\247\001\n\034ListShortVideoCommentRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016s" +
-      "hort_video_id\030\002 \001(\003\022\031\n\021parent_comment_id" +
-      "\030\003 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"\264\001\n\035ListShortVideoCommentRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022>\n\030short_video_comment_list\030\002 \003(\0132\034" +
-      ".glory_api.ShortVideoComment\022,\n\npaginati" +
-      "on\030d \001(\0132\030.base.PaginationResponseB*\n&co" +
-      "m.zhijiejiaoyu.glory_api.short_videoP\001b\006" +
-      "proto3"
+      ".BaseResponse\"d\n!ManagementDeleteShortVi" +
+      "deoRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\026\n\016short_video_id\030\002 \001(\003\"K\n\"M" +
+      "anagementDeleteShortVideoResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"m\n\025List" +
+      "ShortVideoRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\236\001\n\026ListShortVid" +
+      "eoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022/\n\020short_video_list\030\002 \003(\0132\025.gl" +
+      "ory_api.ShortVideo\022,\n\npagination\030d \001(\0132\030" +
+      ".base.PaginationResponse\"f\n\025LikeShortVid" +
+      "eoRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\014\n\004li" +
+      "ke\030\003 \001(\010\"?\n\026LikeShortVideoResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"n\n\031Fav" +
+      "oriteShortVideoRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\026\n\016short_video_i" +
+      "d\030\002 \001(\003\022\020\n\010favorite\030\003 \001(\010\"C\n\032FavoriteSho" +
+      "rtVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"\215\001\n\036CreateShortVideoComme" +
+      "ntRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\026\n\016short_video_id\030\002 \001(\003\022\017\n\007co" +
+      "ntent\030\003 \001(\t\022\031\n\021parent_comment_id\030\004 \001(\003\"\\" +
+      "\n\037CreateShortVideoCommentResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\ncomm" +
+      "ent_id\030\002 \001(\003\"i\n\036DeleteShortVideoCommentR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\036\n\026short_video_comment_id\030\002 \001(\003\"" +
+      "L\n\037DeleteShortVideoCommentResponse\022)\n\rba" +
+      "se_response\030\001 \001(\0132\022.base.BaseResponse\"\247\001" +
+      "\n\034ListShortVideoCommentRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016short" +
+      "_video_id\030\002 \001(\003\022\031\n\021parent_comment_id\030\003 \001" +
+      "(\003\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
+      "Request\"\264\001\n\035ListShortVideoCommentRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022>\n\030short_video_comment_list\030\002 \003(\0132\034.glo" +
+      "ry_api.ShortVideoComment\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponseB*\n&com.zh" +
+      "ijiejiaoyu.glory_api.short_videoP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -620,7 +621,7 @@ public final class ShortVideoOuterClass {
     internal_static_glory_api_ManagementListShortVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ManagementListShortVideoRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Type", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Type", "MajorId", "ClassId", "Pagination", });
     internal_static_glory_api_ManagementListShortVideoResponse_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_ManagementListShortVideoResponse_fieldAccessorTable = new

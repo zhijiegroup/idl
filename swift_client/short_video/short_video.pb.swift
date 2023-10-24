@@ -1033,6 +1033,12 @@ struct GloryApi_ManagementListShortVideoRequest {
   /// 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
   var type: Int32 = 0
 
+  /// 专业ID，可选
+  var majorID: Int64 = 0
+
+  /// 班级ID，可选
+  var classID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -3250,6 +3256,8 @@ extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, Swift
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "type"),
+    3: .standard(proto: "major_id"),
+    4: .standard(proto: "class_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -3261,6 +3269,8 @@ extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, Swift
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -3278,6 +3288,12 @@ extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, Swift
     if self.type != 0 {
       try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 2)
     }
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 3)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -3287,6 +3303,8 @@ extension GloryApi_ManagementListShortVideoRequest: SwiftProtobuf.Message, Swift
   static func ==(lhs: GloryApi_ManagementListShortVideoRequest, rhs: GloryApi_ManagementListShortVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.type != rhs.type {return false}
+    if lhs.majorID != rhs.majorID {return false}
+    if lhs.classID != rhs.classID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

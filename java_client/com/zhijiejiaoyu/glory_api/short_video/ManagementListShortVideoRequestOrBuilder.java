@@ -33,6 +33,26 @@ public interface ManagementListShortVideoRequestOrBuilder extends
   int getType();
 
   /**
+   * <pre>
+   * 专业ID，可选
+   * </pre>
+   *
+   * <code>int64 major_id = 3;</code>
+   * @return The majorId.
+   */
+  long getMajorId();
+
+  /**
+   * <pre>
+   * 班级ID，可选
+   * </pre>
+   *
+   * <code>int64 class_id = 4;</code>
+   * @return The classId.
+   */
+  long getClassId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

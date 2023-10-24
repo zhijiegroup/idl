@@ -2832,6 +2832,8 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementListShortVideoRequest({
     $0.BaseRequest? baseRequest,
     $core.int? type,
+    $fixnum.Int64? majorId,
+    $fixnum.Int64? classId,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -2840,6 +2842,12 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
     }
     if (type != null) {
       $result.type = type;
+    }
+    if (majorId != null) {
+      $result.majorId = majorId;
+    }
+    if (classId != null) {
+      $result.classId = classId;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -2853,6 +2861,8 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementListShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..aInt64(3, _omitFieldNames ? '' : 'majorId')
+    ..aInt64(4, _omitFieldNames ? '' : 'classId')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -2898,16 +2908,34 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get majorId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set majorId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMajorId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMajorId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get classId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set classId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasClassId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClassId() => clearField(4);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(2);
+  $0.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(2);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(2);
+  $0.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ManagementListShortVideoResponse extends $pb.GeneratedMessage {

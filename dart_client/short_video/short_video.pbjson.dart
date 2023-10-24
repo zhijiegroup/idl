@@ -565,6 +565,8 @@ const ManagementListShortVideoRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'type', '3': 2, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'major_id', '3': 3, '4': 1, '5': 3, '10': 'majorId'},
+    {'1': 'class_id', '3': 4, '4': 1, '5': 3, '10': 'classId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -572,8 +574,9 @@ const ManagementListShortVideoRequest$json = {
 /// Descriptor for `ManagementListShortVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List managementListShortVideoRequestDescriptor = $convert.base64Decode(
     'Ch9NYW5hZ2VtZW50TGlzdFNob3J0VmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCz'
-    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHR5cGUYAiABKAVSBHR5cGUSNwoK'
-    'cGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHR5cGUYAiABKAVSBHR5cGUSGQoI'
+    'bWFqb3JfaWQYAyABKANSB21ham9ySWQSGQoIY2xhc3NfaWQYBCABKANSB2NsYXNzSWQSNwoKcG'
+    'FnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use managementListShortVideoResponseDescriptor instead')
 const ManagementListShortVideoResponse$json = {

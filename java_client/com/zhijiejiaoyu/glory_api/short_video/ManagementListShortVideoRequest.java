@@ -70,6 +70,16 @@ private static final long serialVersionUID = 0L;
             type = input.readInt32();
             break;
           }
+          case 24: {
+
+            majorId = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            classId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -156,6 +166,36 @@ private static final long serialVersionUID = 0L;
     return type ;
   }
 
+  public static final int MAJOR_ID_FIELD_NUMBER = 3;
+  private long majorId ;
+  /**
+   * <pre>
+   * 专业ID，可选
+   * </pre>
+   *
+   * <code>int64 major_id = 3;</code>
+   * @return The majorId.
+   */
+  @java.lang.Override
+  public long getMajorId() {
+    return majorId ;
+  }
+
+  public static final int CLASS_ID_FIELD_NUMBER = 4;
+  private long classId ;
+  /**
+   * <pre>
+   * 班级ID，可选
+   * </pre>
+   *
+   * <code>int64 class_id = 4;</code>
+   * @return The classId.
+   */
+  @java.lang.Override
+  public long getClassId() {
+    return classId ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -202,6 +242,12 @@ private static final long serialVersionUID = 0L;
     if (type != 0) {
       output.writeInt32(2, type );
     }
+    if (majorId != 0L) {
+      output.writeInt64(3, majorId );
+    }
+    if (classId != 0L) {
+      output.writeInt64(4, classId );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -221,6 +267,14 @@ private static final long serialVersionUID = 0L;
     if (type != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, type );
+    }
+    if (majorId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, majorId );
+    }
+    if (classId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, classId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -248,6 +302,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getType()
         != other.getType()) return false;
+    if (getMajorId()
+        != other.getMajorId()) return false;
+    if (getClassId()
+        != other.getClassId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -270,6 +328,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType();
+    hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMajorId());
+    hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getClassId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -419,6 +483,10 @@ private static final long serialVersionUID = 0L;
       }
       type = 0;
 
+      majorId = 0L;
+
+      classId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -457,6 +525,8 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.type = type ;
+      result.majorId = majorId ;
+      result.classId = classId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -515,6 +585,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getType() != 0) {
         setType(other.getType());
+      }
+      if (other.getMajorId() != 0L) {
+        setMajorId(other.getMajorId());
+      }
+      if (other.getClassId() != 0L) {
+        setClassId(other.getClassId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -706,6 +782,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearType() {
       
       type = 0;
+      onChanged();
+      return this;
+    }
+
+    private long majorId ;
+    /**
+     * <pre>
+     * 专业ID，可选
+     * </pre>
+     *
+     * <code>int64 major_id = 3;</code>
+     * @return The majorId.
+     */
+    @java.lang.Override
+    public long getMajorId() {
+      return majorId ;
+    }
+    /**
+     * <pre>
+     * 专业ID，可选
+     * </pre>
+     *
+     * <code>int64 major_id = 3;</code>
+     * @param value The majorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorId(long value) {
+      
+      majorId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 专业ID，可选
+     * </pre>
+     *
+     * <code>int64 major_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorId() {
+      
+      majorId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long classId ;
+    /**
+     * <pre>
+     * 班级ID，可选
+     * </pre>
+     *
+     * <code>int64 class_id = 4;</code>
+     * @return The classId.
+     */
+    @java.lang.Override
+    public long getClassId() {
+      return classId ;
+    }
+    /**
+     * <pre>
+     * 班级ID，可选
+     * </pre>
+     *
+     * <code>int64 class_id = 4;</code>
+     * @param value The classId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClassId(long value) {
+      
+      classId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 班级ID，可选
+     * </pre>
+     *
+     * <code>int64 class_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClassId() {
+      
+      classId = 0L;
       onChanged();
       return this;
     }
