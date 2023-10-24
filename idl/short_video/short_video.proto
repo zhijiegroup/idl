@@ -230,6 +230,8 @@ message UpdateStageVideoResponse {
 message ManagementListShortVideoRequest {
   base.BaseRequest base_request = 1;
   int32 type = 2; // 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  int64 major_id = 3; // 专业ID，可选
+  int64 class_id = 4; // 班级ID，可选
   base.PaginationRequest pagination = 100;
 }
 
