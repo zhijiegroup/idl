@@ -37,6 +37,18 @@ message CreateCourseMaterialBoxResponse {
   int64 material_box_id = 2;
 }
 
+// 更新画板
+message UpdateCourseMaterialBoxRequest {
+  base.BaseRequest base_request = 1;
+  int64 material_box_id = 2; // 画板ID
+  string material_box_name = 3; // 画板名称
+}
+
+message UpdateCourseMaterialBoxResponse {
+  base.BaseResponse base_resp = 1;
+  int64 material_box_id = 2;
+}
+
 // 画板列表
 message ListCourseMaterialBoxRequest {
   base.BaseRequest base_request = 1;
