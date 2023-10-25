@@ -985,6 +985,11 @@ service glory_api {
     option (api.post) = '/api/course/create_course_material_box';
   }
 
+  // 编辑画板
+  rpc UpdateCourseMaterialBox(UpdateCourseMaterialBoxRequest) returns (UpdateCourseMaterialBoxResponse) {
+    option (api.post) = '/api/course/update_course_material_box';
+  }
+
   // 画板列表
   rpc ListCourseMaterialBox(ListCourseMaterialBoxRequest) returns (ListCourseMaterialBoxResponse) {
     option (api.post) = '/api/course/list_course_material_box';
