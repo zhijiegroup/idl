@@ -1114,6 +1114,11 @@ CreateLivePlanProduct create live plan product */
     request: material.CreateCourseMaterialBoxRequest
   ): Promise<material.CreateCourseMaterialBoxResponse>;
 
+  /** 编辑画板 */
+  UpdateCourseMaterialBox(
+    request: material.UpdateCourseMaterialBoxRequest
+  ): Promise<material.UpdateCourseMaterialBoxResponse>;
+
   /** 画板列表 */
   ListCourseMaterialBox(
     request: material.ListCourseMaterialBoxRequest

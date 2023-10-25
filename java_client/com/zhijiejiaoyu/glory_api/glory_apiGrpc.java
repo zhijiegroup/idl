@@ -7765,6 +7765,37 @@ public final class glory_apiGrpc {
     return getCreateCourseMaterialBoxMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> getUpdateCourseMaterialBoxMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCourseMaterialBox",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> getUpdateCourseMaterialBoxMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> getUpdateCourseMaterialBoxMethod;
+    if ((getUpdateCourseMaterialBoxMethod = glory_apiGrpc.getUpdateCourseMaterialBoxMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateCourseMaterialBoxMethod = glory_apiGrpc.getUpdateCourseMaterialBoxMethod) == null) {
+          glory_apiGrpc.getUpdateCourseMaterialBoxMethod = getUpdateCourseMaterialBoxMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest, com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCourseMaterialBox"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateCourseMaterialBox"))
+              .build();
+        }
+      }
+    }
+    return getUpdateCourseMaterialBoxMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest,
       com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxResponse> getListCourseMaterialBoxMethod;
 
@@ -11212,6 +11243,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 编辑画板
+     * </pre>
+     */
+    default void updateCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCourseMaterialBoxMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 画板列表
      * </pre>
      */
@@ -13866,6 +13907,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 编辑画板
+     * </pre>
+     */
+    public void updateCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCourseMaterialBoxMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 画板列表
      * </pre>
      */
@@ -16302,6 +16354,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse createCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateCourseMaterialBoxMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 编辑画板
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse updateCourseMaterialBox(com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCourseMaterialBoxMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18949,6 +19011,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 编辑画板
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox(
+        com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCourseMaterialBoxMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 画板列表
      * </pre>
      */
@@ -19681,53 +19754,54 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_ACTIVITY = 247;
   private static final int METHODID_DISABLE_ACTIVITY = 248;
   private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 249;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 250;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 251;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 252;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 253;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 254;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 255;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 256;
-  private static final int METHODID_CREATE_COURSE_MODULE = 257;
-  private static final int METHODID_GET_COURSE_MODULE = 258;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 259;
-  private static final int METHODID_DELETE_COURSE_MODULE = 260;
-  private static final int METHODID_LIST_COURSE_MODULE = 261;
-  private static final int METHODID_LIST_LATEST_COURSE = 262;
-  private static final int METHODID_LIST_HOTEST_COURSE = 263;
-  private static final int METHODID_CREATE_CM_COURSE = 264;
-  private static final int METHODID_PREVIEW_CM_COURSE = 265;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 266;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 267;
-  private static final int METHODID_CREATE_NM_COURSE = 268;
-  private static final int METHODID_LIST_NM_COURSE = 269;
-  private static final int METHODID_NM_COURSE_DETAIL = 270;
-  private static final int METHODID_DELETE_NM_COURSE = 271;
-  private static final int METHODID_CREATE_COURSE = 272;
-  private static final int METHODID_GET_COURSE = 273;
-  private static final int METHODID_UPDATE_COURSE = 274;
-  private static final int METHODID_DELETE_COURSE = 275;
-  private static final int METHODID_LIST_COURSE = 276;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 277;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 278;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 279;
-  private static final int METHODID_GET_MAJOR_CODE = 280;
-  private static final int METHODID_GET_COURSE_IDS = 281;
-  private static final int METHODID_ENROLL_COURSE = 282;
-  private static final int METHODID_DELETE_MY_COURSE = 283;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 284;
-  private static final int METHODID_LIST_MY_COURSE = 285;
-  private static final int METHODID_LIST_TEACHING_PLAN = 286;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 287;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 288;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 289;
-  private static final int METHODID_CREATE_EDU_SCHEME = 290;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 291;
-  private static final int METHODID_LIST_EDU_SCHEME = 292;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 293;
-  private static final int METHODID_DELETE_EDU_SCHEME = 294;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 295;
-  private static final int METHODID_GET_ANDROID_QRCODE = 296;
+  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 250;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 251;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 252;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 253;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 254;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 255;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 256;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 257;
+  private static final int METHODID_CREATE_COURSE_MODULE = 258;
+  private static final int METHODID_GET_COURSE_MODULE = 259;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 260;
+  private static final int METHODID_DELETE_COURSE_MODULE = 261;
+  private static final int METHODID_LIST_COURSE_MODULE = 262;
+  private static final int METHODID_LIST_LATEST_COURSE = 263;
+  private static final int METHODID_LIST_HOTEST_COURSE = 264;
+  private static final int METHODID_CREATE_CM_COURSE = 265;
+  private static final int METHODID_PREVIEW_CM_COURSE = 266;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 267;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 268;
+  private static final int METHODID_CREATE_NM_COURSE = 269;
+  private static final int METHODID_LIST_NM_COURSE = 270;
+  private static final int METHODID_NM_COURSE_DETAIL = 271;
+  private static final int METHODID_DELETE_NM_COURSE = 272;
+  private static final int METHODID_CREATE_COURSE = 273;
+  private static final int METHODID_GET_COURSE = 274;
+  private static final int METHODID_UPDATE_COURSE = 275;
+  private static final int METHODID_DELETE_COURSE = 276;
+  private static final int METHODID_LIST_COURSE = 277;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 278;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 279;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 280;
+  private static final int METHODID_GET_MAJOR_CODE = 281;
+  private static final int METHODID_GET_COURSE_IDS = 282;
+  private static final int METHODID_ENROLL_COURSE = 283;
+  private static final int METHODID_DELETE_MY_COURSE = 284;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 285;
+  private static final int METHODID_LIST_MY_COURSE = 286;
+  private static final int METHODID_LIST_TEACHING_PLAN = 287;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 288;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 289;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 290;
+  private static final int METHODID_CREATE_EDU_SCHEME = 291;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 292;
+  private static final int METHODID_LIST_EDU_SCHEME = 293;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 294;
+  private static final int METHODID_DELETE_EDU_SCHEME = 295;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 296;
+  private static final int METHODID_GET_ANDROID_QRCODE = 297;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20745,6 +20819,10 @@ public final class glory_apiGrpc {
         case METHODID_CREATE_COURSE_MATERIAL_BOX:
           serviceImpl.createCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_COURSE_MATERIAL_BOX:
+          serviceImpl.updateCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse>) responseObserver);
           break;
         case METHODID_LIST_COURSE_MATERIAL_BOX:
           serviceImpl.listCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.ListCourseMaterialBoxRequest) request,
@@ -22703,6 +22781,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>(
                 service, METHODID_CREATE_COURSE_MATERIAL_BOX)))
         .addMethod(
+          getUpdateCourseMaterialBoxMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateCourseMaterialBoxResponse>(
+                service, METHODID_UPDATE_COURSE_MATERIAL_BOX)))
+        .addMethod(
           getListCourseMaterialBoxMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -23329,6 +23414,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteActivityMethod())
               .addMethod(getDisableActivityMethod())
               .addMethod(getCreateCourseMaterialBoxMethod())
+              .addMethod(getUpdateCourseMaterialBoxMethod())
               .addMethod(getListCourseMaterialBoxMethod())
               .addMethod(getDeleteCourseMaterialBoxMethod())
               .addMethod(getUploadCourseMaterialMethod())

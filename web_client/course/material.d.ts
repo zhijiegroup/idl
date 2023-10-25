@@ -47,6 +47,20 @@ export interface CreateCourseMaterialBoxResponse {
   material_box_id?: string;
 }
 
+/** 更新画板 */
+export interface UpdateCourseMaterialBoxRequest {
+  base_request?: base.BaseRequest;
+  /** 画板ID */
+  material_box_id?: string;
+  /** 画板名称 */
+  material_box_name?: string;
+}
+
+export interface UpdateCourseMaterialBoxResponse {
+  base_resp?: base.BaseResponse;
+  material_box_id?: string;
+}
+
 /** 画板列表 */
 export interface ListCourseMaterialBoxRequest {
   base_request?: base.BaseRequest;

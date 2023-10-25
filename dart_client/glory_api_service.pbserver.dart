@@ -316,6 +316,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$35.DeleteActivityResponse> deleteActivity($pb.ServerContext ctx, $35.DeleteActivityRequest request);
   $async.Future<$35.DisableActivityResponse> disableActivity($pb.ServerContext ctx, $35.DisableActivityRequest request);
   $async.Future<$36.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ServerContext ctx, $36.CreateCourseMaterialBoxRequest request);
+  $async.Future<$36.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ServerContext ctx, $36.UpdateCourseMaterialBoxRequest request);
   $async.Future<$36.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ServerContext ctx, $36.ListCourseMaterialBoxRequest request);
   $async.Future<$36.DeleteCourseMaterialBoxResponse> deleteCourseMaterialBox($pb.ServerContext ctx, $36.DeleteCourseMaterialBoxRequest request);
   $async.Future<$36.UploadCourseMaterialResponse> uploadCourseMaterial($pb.ServerContext ctx, $36.UploadCourseMaterialRequest request);
@@ -616,6 +617,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteActivity': return $35.DeleteActivityRequest();
       case 'DisableActivity': return $35.DisableActivityRequest();
       case 'CreateCourseMaterialBox': return $36.CreateCourseMaterialBoxRequest();
+      case 'UpdateCourseMaterialBox': return $36.UpdateCourseMaterialBoxRequest();
       case 'ListCourseMaterialBox': return $36.ListCourseMaterialBoxRequest();
       case 'DeleteCourseMaterialBox': return $36.DeleteCourseMaterialBoxRequest();
       case 'UploadCourseMaterial': return $36.UploadCourseMaterialRequest();
@@ -919,6 +921,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteActivity': return this.deleteActivity(ctx, request as $35.DeleteActivityRequest);
       case 'DisableActivity': return this.disableActivity(ctx, request as $35.DisableActivityRequest);
       case 'CreateCourseMaterialBox': return this.createCourseMaterialBox(ctx, request as $36.CreateCourseMaterialBoxRequest);
+      case 'UpdateCourseMaterialBox': return this.updateCourseMaterialBox(ctx, request as $36.UpdateCourseMaterialBoxRequest);
       case 'ListCourseMaterialBox': return this.listCourseMaterialBox(ctx, request as $36.ListCourseMaterialBoxRequest);
       case 'DeleteCourseMaterialBox': return this.deleteCourseMaterialBox(ctx, request as $36.DeleteCourseMaterialBoxRequest);
       case 'UploadCourseMaterial': return this.uploadCourseMaterial(ctx, request as $36.UploadCourseMaterialRequest);

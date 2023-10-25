@@ -815,6 +815,9 @@ class glory_apiApi {
   $async.Future<$36.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ClientContext? ctx, $36.CreateCourseMaterialBoxRequest request) =>
     _client.invoke<$36.CreateCourseMaterialBoxResponse>(ctx, 'glory_api', 'CreateCourseMaterialBox', request, $36.CreateCourseMaterialBoxResponse())
   ;
+  $async.Future<$36.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ClientContext? ctx, $36.UpdateCourseMaterialBoxRequest request) =>
+    _client.invoke<$36.UpdateCourseMaterialBoxResponse>(ctx, 'glory_api', 'UpdateCourseMaterialBox', request, $36.UpdateCourseMaterialBoxResponse())
+  ;
   $async.Future<$36.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ClientContext? ctx, $36.ListCourseMaterialBoxRequest request) =>
     _client.invoke<$36.ListCourseMaterialBoxResponse>(ctx, 'glory_api', 'ListCourseMaterialBox', request, $36.ListCourseMaterialBoxResponse())
   ;

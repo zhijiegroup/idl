@@ -87,6 +87,38 @@ final $typed_data.Uint8List createCourseMaterialBoxResponseDescriptor = $convert
     'Jhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBImCg9tYXRlcmlhbF9ib3hfaWQYAiABKANSDW1h'
     'dGVyaWFsQm94SWQ=');
 
+@$core.Deprecated('Use updateCourseMaterialBoxRequestDescriptor instead')
+const UpdateCourseMaterialBoxRequest$json = {
+  '1': 'UpdateCourseMaterialBoxRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'material_box_id', '3': 2, '4': 1, '5': 3, '10': 'materialBoxId'},
+    {'1': 'material_box_name', '3': 3, '4': 1, '5': 9, '10': 'materialBoxName'},
+  ],
+};
+
+/// Descriptor for `UpdateCourseMaterialBoxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCourseMaterialBoxRequestDescriptor = $convert.base64Decode(
+    'Ch5VcGRhdGVDb3Vyc2VNYXRlcmlhbEJveFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMh'
+    'EuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSJgoPbWF0ZXJpYWxfYm94X2lkGAIgASgD'
+    'Ug1tYXRlcmlhbEJveElkEioKEW1hdGVyaWFsX2JveF9uYW1lGAMgASgJUg9tYXRlcmlhbEJveE'
+    '5hbWU=');
+
+@$core.Deprecated('Use updateCourseMaterialBoxResponseDescriptor instead')
+const UpdateCourseMaterialBoxResponse$json = {
+  '1': 'UpdateCourseMaterialBoxResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'material_box_id', '3': 2, '4': 1, '5': 3, '10': 'materialBoxId'},
+  ],
+};
+
+/// Descriptor for `UpdateCourseMaterialBoxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCourseMaterialBoxResponseDescriptor = $convert.base64Decode(
+    'Ch9VcGRhdGVDb3Vyc2VNYXRlcmlhbEJveFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLm'
+    'Jhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBImCg9tYXRlcmlhbF9ib3hfaWQYAiABKANSDW1h'
+    'dGVyaWFsQm94SWQ=');
+
 @$core.Deprecated('Use listCourseMaterialBoxRequestDescriptor instead')
 const ListCourseMaterialBoxRequest$json = {
   '1': 'ListCourseMaterialBoxRequest',

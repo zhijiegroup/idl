@@ -125,6 +125,57 @@ struct GloryApi_CreateCourseMaterialBoxResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 更新画板
+struct GloryApi_UpdateCourseMaterialBoxRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 画板ID
+  var materialBoxID: Int64 = 0
+
+  /// 画板名称
+  var materialBoxName: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateCourseMaterialBoxResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var materialBoxID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 /// 画板列表
 struct GloryApi_ListCourseMaterialBoxRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -405,6 +456,8 @@ extension GloryApi_CourseMaterialBox: @unchecked Sendable {}
 extension GloryApi_CourseMaterial: @unchecked Sendable {}
 extension GloryApi_CreateCourseMaterialBoxRequest: @unchecked Sendable {}
 extension GloryApi_CreateCourseMaterialBoxResponse: @unchecked Sendable {}
+extension GloryApi_UpdateCourseMaterialBoxRequest: @unchecked Sendable {}
+extension GloryApi_UpdateCourseMaterialBoxResponse: @unchecked Sendable {}
 extension GloryApi_ListCourseMaterialBoxRequest: @unchecked Sendable {}
 extension GloryApi_ListCourseMaterialBoxResponse: @unchecked Sendable {}
 extension GloryApi_DeleteCourseMaterialBoxRequest: @unchecked Sendable {}
@@ -628,6 +681,96 @@ extension GloryApi_CreateCourseMaterialBoxResponse: SwiftProtobuf.Message, Swift
   }
 
   static func ==(lhs: GloryApi_CreateCourseMaterialBoxResponse, rhs: GloryApi_CreateCourseMaterialBoxResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.materialBoxID != rhs.materialBoxID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateCourseMaterialBoxRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateCourseMaterialBoxRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "material_box_id"),
+    3: .standard(proto: "material_box_name"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.materialBoxName) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.materialBoxID != 0 {
+      try visitor.visitSingularInt64Field(value: self.materialBoxID, fieldNumber: 2)
+    }
+    if !self.materialBoxName.isEmpty {
+      try visitor.visitSingularStringField(value: self.materialBoxName, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateCourseMaterialBoxRequest, rhs: GloryApi_UpdateCourseMaterialBoxRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.materialBoxID != rhs.materialBoxID {return false}
+    if lhs.materialBoxName != rhs.materialBoxName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateCourseMaterialBoxResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateCourseMaterialBoxResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "material_box_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.materialBoxID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.materialBoxID != 0 {
+      try visitor.visitSingularInt64Field(value: self.materialBoxID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateCourseMaterialBoxResponse, rhs: GloryApi_UpdateCourseMaterialBoxResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.materialBoxID != rhs.materialBoxID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

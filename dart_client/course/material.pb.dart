@@ -399,6 +399,153 @@ class CreateCourseMaterialBoxResponse extends $pb.GeneratedMessage {
   void clearMaterialBoxId() => clearField(2);
 }
 
+/// 更新画板
+class UpdateCourseMaterialBoxRequest extends $pb.GeneratedMessage {
+  factory UpdateCourseMaterialBoxRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? materialBoxId,
+    $core.String? materialBoxName,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (materialBoxId != null) {
+      $result.materialBoxId = materialBoxId;
+    }
+    if (materialBoxName != null) {
+      $result.materialBoxName = materialBoxName;
+    }
+    return $result;
+  }
+  UpdateCourseMaterialBoxRequest._() : super();
+  factory UpdateCourseMaterialBoxRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateCourseMaterialBoxRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCourseMaterialBoxRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'materialBoxId')
+    ..aOS(3, _omitFieldNames ? '' : 'materialBoxName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateCourseMaterialBoxRequest clone() => UpdateCourseMaterialBoxRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateCourseMaterialBoxRequest copyWith(void Function(UpdateCourseMaterialBoxRequest) updates) => super.copyWith((message) => updates(message as UpdateCourseMaterialBoxRequest)) as UpdateCourseMaterialBoxRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCourseMaterialBoxRequest create() => UpdateCourseMaterialBoxRequest._();
+  UpdateCourseMaterialBoxRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateCourseMaterialBoxRequest> createRepeated() => $pb.PbList<UpdateCourseMaterialBoxRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCourseMaterialBoxRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCourseMaterialBoxRequest>(create);
+  static UpdateCourseMaterialBoxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get materialBoxId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set materialBoxId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaterialBoxId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaterialBoxId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get materialBoxName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set materialBoxName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMaterialBoxName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaterialBoxName() => clearField(3);
+}
+
+class UpdateCourseMaterialBoxResponse extends $pb.GeneratedMessage {
+  factory UpdateCourseMaterialBoxResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? materialBoxId,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (materialBoxId != null) {
+      $result.materialBoxId = materialBoxId;
+    }
+    return $result;
+  }
+  UpdateCourseMaterialBoxResponse._() : super();
+  factory UpdateCourseMaterialBoxResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateCourseMaterialBoxResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCourseMaterialBoxResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'materialBoxId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateCourseMaterialBoxResponse clone() => UpdateCourseMaterialBoxResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateCourseMaterialBoxResponse copyWith(void Function(UpdateCourseMaterialBoxResponse) updates) => super.copyWith((message) => updates(message as UpdateCourseMaterialBoxResponse)) as UpdateCourseMaterialBoxResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCourseMaterialBoxResponse create() => UpdateCourseMaterialBoxResponse._();
+  UpdateCourseMaterialBoxResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateCourseMaterialBoxResponse> createRepeated() => $pb.PbList<UpdateCourseMaterialBoxResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCourseMaterialBoxResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCourseMaterialBoxResponse>(create);
+  static UpdateCourseMaterialBoxResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get materialBoxId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set materialBoxId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaterialBoxId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaterialBoxId() => clearField(2);
+}
+
 /// 画板列表
 class ListCourseMaterialBoxRequest extends $pb.GeneratedMessage {
   factory ListCourseMaterialBoxRequest({

@@ -2020,6 +2020,14 @@ export class glory_api {
     );
   }
 
+  UpdateCourseMaterialBox(request) {
+    const uri = `${this.uriPrefix}/api/course/update_course_material_box`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListCourseMaterialBox(request) {
     const uri = `${this.uriPrefix}/api/course/list_course_material_box`;
     const body = JSONbigint.stringify(request);
