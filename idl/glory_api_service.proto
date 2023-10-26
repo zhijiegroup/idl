@@ -1188,6 +1188,10 @@ service glory_api {
   rpc DistributeEduScheme(DistributeEduSchemeRequest) returns (DistributeEduSchemeResponse) {
     option (api.post) = '/api/course/distribute_edu_scheme';
   }
+    // 获取培养方案，但返回结果和获取模块化结果一样
+    rpc GetEduSchemeLikeCourse(GetEduSchemeLikeCourseRequest) returns (GetEduSchemeLikeCourseResponse) {
+      option (api.post) = '/api/course/get_edu_scheme_like_course';
+    }
 
   // app下载
   rpc GetAndroidQRcode(GetAndroidQRCodeRequest) returns (GetAndroidQRCodeResponse) {

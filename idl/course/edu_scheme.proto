@@ -5,6 +5,7 @@ option java_multiple_files = true;
 
 import "base.proto";
 import "course/module.proto";
+import "course/course.proto";
 
 message EduScheme {
     int64 edu_scheme_id = 1;
@@ -106,4 +107,15 @@ message DistributeEduSchemeRequest {
 
 message DistributeEduSchemeResponse {
     base.BaseResponse base_resp = 1;
+}
+
+// 获取模块化课程
+message GetEduSchemeLikeCourseRequest {
+    base.BaseRequest base_request = 1;
+    int64 edu_scheme_id = 2; // 培养方案ID
+}
+  
+message GetEduSchemeLikeCourseResponse {
+    base.BaseResponse base_resp = 1;
+    Course course = 2;
 }
