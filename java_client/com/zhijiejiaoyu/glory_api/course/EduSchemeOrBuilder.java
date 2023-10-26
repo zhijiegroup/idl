@@ -146,11 +146,17 @@ public interface EduSchemeOrBuilder extends
   long getCourseGroupId();
 
   /**
+   * <code>int64 created_by = 14;</code>
+   * @return The createdBy.
+   */
+  long getCreatedBy();
+
+  /**
    * <pre>
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> 
       getCourseModulesList();
@@ -159,7 +165,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index);
   /**
@@ -167,7 +173,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   int getCourseModulesCount();
   /**
@@ -175,7 +181,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
       getCourseModulesOrBuilderList();
@@ -184,7 +190,7 @@ public interface EduSchemeOrBuilder extends
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index);

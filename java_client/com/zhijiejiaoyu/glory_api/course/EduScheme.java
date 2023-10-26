@@ -131,7 +131,12 @@ private static final long serialVersionUID = 0L;
             courseGroupId = input.readInt64();
             break;
           }
-          case 114: {
+          case 112: {
+
+            createdBy = input.readInt64();
+            break;
+          }
+          case 122: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
               mutable_bitField0_ |= 0x00000001;
@@ -546,14 +551,25 @@ private static final long serialVersionUID = 0L;
     return courseGroupId ;
   }
 
-  public static final int COURSE_MODULES_FIELD_NUMBER = 14;
+  public static final int CREATED_BY_FIELD_NUMBER = 14;
+  private long createdBy ;
+  /**
+   * <code>int64 created_by = 14;</code>
+   * @return The createdBy.
+   */
+  @java.lang.Override
+  public long getCreatedBy() {
+    return createdBy ;
+  }
+
+  public static final int COURSE_MODULES_FIELD_NUMBER = 15;
   private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules ;
   /**
    * <pre>
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
@@ -564,7 +580,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
@@ -576,7 +592,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   @java.lang.Override
   public int getCourseModulesCount() {
@@ -587,7 +603,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
@@ -598,7 +614,7 @@ private static final long serialVersionUID = 0L;
    * 能力指标
    * </pre>
    *
-   * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+   * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
@@ -659,8 +675,11 @@ private static final long serialVersionUID = 0L;
     if (courseGroupId != 0L) {
       output.writeInt64(13, courseGroupId );
     }
+    if (createdBy != 0L) {
+      output.writeInt64(14, createdBy );
+    }
     for (int i = 0; i < courseModules .size(); i++) {
-      output.writeMessage(14, courseModules .get(i));
+      output.writeMessage(15, courseModules .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -715,9 +734,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(13, courseGroupId );
     }
+    if (createdBy != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(14, createdBy );
+    }
     for (int i = 0; i < courseModules .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, courseModules .get(i));
+        .computeMessageSize(15, courseModules .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -763,6 +786,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseGroupName())) return false;
     if (getCourseGroupId()
         != other.getCourseGroupId()) return false;
+    if (getCreatedBy()
+        != other.getCreatedBy()) return false;
     if (!getCourseModulesList()
         .equals(other.getCourseModulesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -807,6 +832,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COURSE_GROUP_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseGroupId());
+    hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCreatedBy());
     if (getCourseModulesCount() > 0) {
       hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
       hash = (53 * hash) + getCourseModulesList().hashCode();
@@ -971,6 +999,8 @@ private static final long serialVersionUID = 0L;
 
       courseGroupId = 0L;
 
+      createdBy = 0L;
+
       if (courseModulesBuilder == null) {
         courseModules = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -1017,6 +1047,7 @@ private static final long serialVersionUID = 0L;
       result.characterStandard = characterStandard ;
       result.courseGroupName = courseGroupName ;
       result.courseGroupId = courseGroupId ;
+      result.createdBy = createdBy ;
       if (courseModulesBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           courseModules = java.util.Collections.unmodifiableList(courseModules );
@@ -1120,6 +1151,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCourseGroupId() != 0L) {
         setCourseGroupId(other.getCourseGroupId());
+      }
+      if (other.getCreatedBy() != 0L) {
+        setCreatedBy(other.getCreatedBy());
       }
       if (courseModulesBuilder == null) {
         if (!other.courseModules .isEmpty()) {
@@ -1972,6 +2006,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long createdBy ;
+    /**
+     * <code>int64 created_by = 14;</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public long getCreatedBy() {
+      return createdBy ;
+    }
+    /**
+     * <code>int64 created_by = 14;</code>
+     * @param value The createdBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedBy(long value) {
+      
+      createdBy = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 created_by = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedBy() {
+      
+      createdBy = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules =
       java.util.Collections.emptyList();
     private void ensureCourseModulesIsMutable() {
@@ -1989,7 +2054,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> getCourseModulesList() {
       if (courseModulesBuilder == null) {
@@ -2003,7 +2068,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public int getCourseModulesCount() {
       if (courseModulesBuilder == null) {
@@ -2017,7 +2082,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule getCourseModules(int index) {
       if (courseModulesBuilder == null) {
@@ -2031,7 +2096,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder setCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -2052,7 +2117,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder setCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2070,7 +2135,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder addCourseModules(com.zhijiejiaoyu.glory_api.course.CourseModule value) {
       if (courseModulesBuilder == null) {
@@ -2090,7 +2155,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder addCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule value) {
@@ -2111,7 +2176,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder addCourseModules(
         com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2129,7 +2194,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder addCourseModules(
         int index, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder builderForValue) {
@@ -2147,7 +2212,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder addAllCourseModules(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseModule> values) {
@@ -2166,7 +2231,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder clearCourseModules() {
       if (courseModulesBuilder == null) {
@@ -2183,7 +2248,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public Builder removeCourseModules(int index) {
       if (courseModulesBuilder == null) {
@@ -2200,7 +2265,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder getCourseModulesBuilder(
         int index) {
@@ -2211,7 +2276,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
         int index) {
@@ -2225,7 +2290,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder> 
          getCourseModulesOrBuilderList() {
@@ -2240,7 +2305,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder() {
       return getCourseModulesFieldBuilder().addBuilder(
@@ -2251,7 +2316,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.course.CourseModule.Builder addCourseModulesBuilder(
         int index) {
@@ -2263,7 +2328,7 @@ private static final long serialVersionUID = 0L;
      * 能力指标
      * </pre>
      *
-     * <code>repeated .glory_api.CourseModule course_modules = 14;</code>
+     * <code>repeated .glory_api.CourseModule course_modules = 15;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule.Builder> 
          getCourseModulesBuilderList() {

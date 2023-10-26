@@ -30,7 +30,8 @@ const EduScheme$json = {
     {'1': 'character_standard', '3': 11, '4': 1, '5': 9, '10': 'characterStandard'},
     {'1': 'course_group_name', '3': 12, '4': 1, '5': 9, '10': 'courseGroupName'},
     {'1': 'course_group_id', '3': 13, '4': 1, '5': 3, '10': 'courseGroupId'},
-    {'1': 'course_modules', '3': 14, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'created_by', '3': 14, '4': 1, '5': 3, '10': 'createdBy'},
+    {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
   ],
 };
 
@@ -44,8 +45,9 @@ final $typed_data.Uint8List eduSchemeDescriptor = $convert.base64Decode(
     'tub3dsZWRnZVN0YW5kYXJkEikKEGFiaWxpdHlfc3RhbmRhcmQYCiABKAlSD2FiaWxpdHlTdGFu'
     'ZGFyZBItChJjaGFyYWN0ZXJfc3RhbmRhcmQYCyABKAlSEWNoYXJhY3RlclN0YW5kYXJkEioKEW'
     'NvdXJzZV9ncm91cF9uYW1lGAwgASgJUg9jb3Vyc2VHcm91cE5hbWUSJgoPY291cnNlX2dyb3Vw'
-    'X2lkGA0gASgDUg1jb3Vyc2VHcm91cElkEj4KDmNvdXJzZV9tb2R1bGVzGA4gAygLMhcuZ2xvcn'
-    'lfYXBpLkNvdXJzZU1vZHVsZVINY291cnNlTW9kdWxlcw==');
+    'X2lkGA0gASgDUg1jb3Vyc2VHcm91cElkEh0KCmNyZWF0ZWRfYnkYDiABKANSCWNyZWF0ZWRCeR'
+    'I+Cg5jb3Vyc2VfbW9kdWxlcxgPIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2R1bGVSDWNvdXJz'
+    'ZU1vZHVsZXM=');
 
 @$core.Deprecated('Use createEduSchemeRequestDescriptor instead')
 const CreateEduSchemeRequest$json = {

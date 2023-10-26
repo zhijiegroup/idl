@@ -22,6 +22,7 @@ export interface EduScheme {
   course_group_name?: string;
   /** 能力方向ID */
   course_group_id?: string;
+  created_by?: string;
   /** 能力指标 */
   course_modules?: Array<modules.CourseModule>;
 }

@@ -32,6 +32,7 @@ class EduScheme extends $pb.GeneratedMessage {
     $core.String? characterStandard,
     $core.String? courseGroupName,
     $fixnum.Int64? courseGroupId,
+    $fixnum.Int64? createdBy,
     $core.Iterable<$0.CourseModule>? courseModules,
   }) {
     final $result = create();
@@ -74,6 +75,9 @@ class EduScheme extends $pb.GeneratedMessage {
     if (courseGroupId != null) {
       $result.courseGroupId = courseGroupId;
     }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
@@ -97,7 +101,8 @@ class EduScheme extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'characterStandard')
     ..aOS(12, _omitFieldNames ? '' : 'courseGroupName')
     ..aInt64(13, _omitFieldNames ? '' : 'courseGroupId')
-    ..pc<$0.CourseModule>(14, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..aInt64(14, _omitFieldNames ? '' : 'createdBy')
+    ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..hasRequiredFields = false
   ;
 
@@ -240,7 +245,16 @@ class EduScheme extends $pb.GeneratedMessage {
   void clearCourseGroupId() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.List<$0.CourseModule> get courseModules => $_getList(13);
+  $fixnum.Int64 get createdBy => $_getI64(13);
+  @$pb.TagNumber(14)
+  set createdBy($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedBy() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedBy() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.List<$0.CourseModule> get courseModules => $_getList(14);
 }
 
 class CreateEduSchemeRequest extends $pb.GeneratedMessage {

@@ -53,6 +53,8 @@ struct GloryApi_EduScheme {
   /// 能力方向ID
   var courseGroupID: Int64 = 0
 
+  var createdBy: Int64 = 0
+
   /// 能力指标
   var courseModules: [GloryApi_CourseModule] = []
 
@@ -449,7 +451,8 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     11: .standard(proto: "character_standard"),
     12: .standard(proto: "course_group_name"),
     13: .standard(proto: "course_group_id"),
-    14: .standard(proto: "course_modules"),
+    14: .standard(proto: "created_by"),
+    15: .standard(proto: "course_modules"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -471,7 +474,8 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 11: try { try decoder.decodeSingularStringField(value: &self.characterStandard) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.courseGroupName) }()
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.courseGroupID) }()
-      case 14: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
+      case 14: try { try decoder.decodeSingularInt64Field(value: &self.createdBy) }()
+      case 15: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
       default: break
       }
     }
@@ -517,8 +521,11 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if self.courseGroupID != 0 {
       try visitor.visitSingularInt64Field(value: self.courseGroupID, fieldNumber: 13)
     }
+    if self.createdBy != 0 {
+      try visitor.visitSingularInt64Field(value: self.createdBy, fieldNumber: 14)
+    }
     if !self.courseModules.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 14)
+      try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 15)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -537,6 +544,7 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.characterStandard != rhs.characterStandard {return false}
     if lhs.courseGroupName != rhs.courseGroupName {return false}
     if lhs.courseGroupID != rhs.courseGroupID {return false}
+    if lhs.createdBy != rhs.createdBy {return false}
     if lhs.courseModules != rhs.courseModules {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
