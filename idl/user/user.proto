@@ -41,7 +41,9 @@ message UserFollow {
   int64 user_id = 1;
   string user_name = 2;
   string avatar_url = 3;
-  string created_at = 4;
+  bool is_following = 4; // 我是否正在关注该用户
+  bool is_follower = 5; // 该用户是否正在关注我
+  string created_at = 6;
 }
 
 message UserSocialSummary {
