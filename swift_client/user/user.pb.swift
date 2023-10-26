@@ -144,6 +144,12 @@ struct GloryApi_UserFollow {
 
   var avatarURL: String = String()
 
+  /// 我是否正在关注该用户
+  var isFollowing: Bool = false
+
+  /// 该用户是否正在关注我
+  var isFollower: Bool = false
+
   var createdAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -2220,7 +2226,9 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
     3: .standard(proto: "avatar_url"),
-    4: .standard(proto: "created_at"),
+    4: .standard(proto: "is_following"),
+    5: .standard(proto: "is_follower"),
+    6: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2232,7 +2240,9 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.avatarURL) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.isFollowing) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.isFollower) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -2248,8 +2258,14 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.avatarURL.isEmpty {
       try visitor.visitSingularStringField(value: self.avatarURL, fieldNumber: 3)
     }
+    if self.isFollowing != false {
+      try visitor.visitSingularBoolField(value: self.isFollowing, fieldNumber: 4)
+    }
+    if self.isFollower != false {
+      try visitor.visitSingularBoolField(value: self.isFollower, fieldNumber: 5)
+    }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2258,6 +2274,8 @@ extension GloryApi_UserFollow: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.avatarURL != rhs.avatarURL {return false}
+    if lhs.isFollowing != rhs.isFollowing {return false}
+    if lhs.isFollower != rhs.isFollower {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

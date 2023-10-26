@@ -77,15 +77,18 @@ const UserFollow$json = {
     {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
     {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
     {'1': 'avatar_url', '3': 3, '4': 1, '5': 9, '10': 'avatarUrl'},
-    {'1': 'created_at', '3': 4, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'is_following', '3': 4, '4': 1, '5': 8, '10': 'isFollowing'},
+    {'1': 'is_follower', '3': 5, '4': 1, '5': 8, '10': 'isFollower'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
 /// Descriptor for `UserFollow`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userFollowDescriptor = $convert.base64Decode(
     'CgpVc2VyRm9sbG93EhcKB3VzZXJfaWQYASABKANSBnVzZXJJZBIbCgl1c2VyX25hbWUYAiABKA'
-    'lSCHVzZXJOYW1lEh0KCmF2YXRhcl91cmwYAyABKAlSCWF2YXRhclVybBIdCgpjcmVhdGVkX2F0'
-    'GAQgASgJUgljcmVhdGVkQXQ=');
+    'lSCHVzZXJOYW1lEh0KCmF2YXRhcl91cmwYAyABKAlSCWF2YXRhclVybBIhCgxpc19mb2xsb3dp'
+    'bmcYBCABKAhSC2lzRm9sbG93aW5nEh8KC2lzX2ZvbGxvd2VyGAUgASgIUgppc0ZvbGxvd2VyEh'
+    '0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdA==');
 
 @$core.Deprecated('Use userSocialSummaryDescriptor instead')
 const UserSocialSummary$json = {

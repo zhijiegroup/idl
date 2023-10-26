@@ -68,7 +68,17 @@ private static final long serialVersionUID = 0L;
             avatarUrl = s;
             break;
           }
-          case 34: {
+          case 32: {
+
+            isFollowing = input.readBool();
+            break;
+          }
+          case 40: {
+
+            isFollower = input.readBool();
+            break;
+          }
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -193,10 +203,40 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 4;
+  public static final int IS_FOLLOWING_FIELD_NUMBER = 4;
+  private boolean isFollowing ;
+  /**
+   * <pre>
+   * 我是否正在关注该用户
+   * </pre>
+   *
+   * <code>bool is_following = 4;</code>
+   * @return The isFollowing.
+   */
+  @java.lang.Override
+  public boolean getIsFollowing() {
+    return isFollowing ;
+  }
+
+  public static final int IS_FOLLOWER_FIELD_NUMBER = 5;
+  private boolean isFollower ;
+  /**
+   * <pre>
+   * 该用户是否正在关注我
+   * </pre>
+   *
+   * <code>bool is_follower = 5;</code>
+   * @return The isFollower.
+   */
+  @java.lang.Override
+  public boolean getIsFollower() {
+    return isFollower ;
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 6;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 4;</code>
+   * <code>string created_at = 6;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -213,7 +253,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 4;</code>
+   * <code>string created_at = 6;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -254,8 +294,14 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl );
     }
+    if (isFollowing != false) {
+      output.writeBool(4, isFollowing );
+    }
+    if (isFollower != false) {
+      output.writeBool(5, isFollower );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -276,8 +322,16 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl );
     }
+    if (isFollowing != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, isFollowing );
+    }
+    if (isFollower != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isFollower );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -300,6 +354,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserName())) return false;
     if (!getAvatarUrl()
         .equals(other.getAvatarUrl())) return false;
+    if (getIsFollowing()
+        != other.getIsFollowing()) return false;
+    if (getIsFollower()
+        != other.getIsFollower()) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -320,6 +378,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserName().hashCode();
     hash = (37 * hash) + AVATAR_URL_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUrl().hashCode();
+    hash = (37 * hash) + IS_FOLLOWING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFollowing());
+    hash = (37 * hash) + IS_FOLLOWER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFollower());
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -461,6 +525,10 @@ private static final long serialVersionUID = 0L;
 
       avatarUrl = "";
 
+      isFollowing = false;
+
+      isFollower = false;
+
       createdAt = "";
 
       return this;
@@ -492,6 +560,8 @@ private static final long serialVersionUID = 0L;
       result.userId = userId ;
       result.userName = userName ;
       result.avatarUrl = avatarUrl ;
+      result.isFollowing = isFollowing ;
+      result.isFollower = isFollower ;
       result.createdAt = createdAt ;
       onBuilt();
       return result;
@@ -551,6 +621,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getAvatarUrl().isEmpty()) {
         avatarUrl = other.avatarUrl ;
         onChanged();
+      }
+      if (other.getIsFollowing() != false) {
+        setIsFollowing(other.getIsFollowing());
+      }
+      if (other.getIsFollower() != false) {
+        setIsFollower(other.getIsFollower());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
@@ -768,9 +844,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean isFollowing ;
+    /**
+     * <pre>
+     * 我是否正在关注该用户
+     * </pre>
+     *
+     * <code>bool is_following = 4;</code>
+     * @return The isFollowing.
+     */
+    @java.lang.Override
+    public boolean getIsFollowing() {
+      return isFollowing ;
+    }
+    /**
+     * <pre>
+     * 我是否正在关注该用户
+     * </pre>
+     *
+     * <code>bool is_following = 4;</code>
+     * @param value The isFollowing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFollowing(boolean value) {
+      
+      isFollowing = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 我是否正在关注该用户
+     * </pre>
+     *
+     * <code>bool is_following = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFollowing() {
+      
+      isFollowing = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isFollower ;
+    /**
+     * <pre>
+     * 该用户是否正在关注我
+     * </pre>
+     *
+     * <code>bool is_follower = 5;</code>
+     * @return The isFollower.
+     */
+    @java.lang.Override
+    public boolean getIsFollower() {
+      return isFollower ;
+    }
+    /**
+     * <pre>
+     * 该用户是否正在关注我
+     * </pre>
+     *
+     * <code>bool is_follower = 5;</code>
+     * @param value The isFollower to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFollower(boolean value) {
+      
+      isFollower = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 该用户是否正在关注我
+     * </pre>
+     *
+     * <code>bool is_follower = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFollower() {
+      
+      isFollower = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 4;</code>
+     * <code>string created_at = 6;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -786,7 +948,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 4;</code>
+     * <code>string created_at = 6;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -803,7 +965,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 4;</code>
+     * <code>string created_at = 6;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -818,7 +980,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 4;</code>
+     * <code>string created_at = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -828,7 +990,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 4;</code>
+     * <code>string created_at = 6;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */

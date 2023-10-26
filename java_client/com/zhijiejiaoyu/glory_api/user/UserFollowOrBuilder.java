@@ -38,12 +38,32 @@ public interface UserFollowOrBuilder extends
       getAvatarUrlBytes();
 
   /**
-   * <code>string created_at = 4;</code>
+   * <pre>
+   * 我是否正在关注该用户
+   * </pre>
+   *
+   * <code>bool is_following = 4;</code>
+   * @return The isFollowing.
+   */
+  boolean getIsFollowing();
+
+  /**
+   * <pre>
+   * 该用户是否正在关注我
+   * </pre>
+   *
+   * <code>bool is_follower = 5;</code>
+   * @return The isFollower.
+   */
+  boolean getIsFollower();
+
+  /**
+   * <code>string created_at = 6;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 4;</code>
+   * <code>string created_at = 6;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

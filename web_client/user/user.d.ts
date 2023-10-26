@@ -41,6 +41,10 @@ export interface UserFollow {
   user_id?: string;
   user_name?: string;
   avatar_url?: string;
+  /** 我是否正在关注该用户 */
+  is_following?: boolean;
+  /** 该用户是否正在关注我 */
+  is_follower?: boolean;
   created_at?: string;
 }
 

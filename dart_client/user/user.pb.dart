@@ -376,6 +376,8 @@ class UserFollow extends $pb.GeneratedMessage {
     $fixnum.Int64? userId,
     $core.String? userName,
     $core.String? avatarUrl,
+    $core.bool? isFollowing,
+    $core.bool? isFollower,
     $core.String? createdAt,
   }) {
     final $result = create();
@@ -387,6 +389,12 @@ class UserFollow extends $pb.GeneratedMessage {
     }
     if (avatarUrl != null) {
       $result.avatarUrl = avatarUrl;
+    }
+    if (isFollowing != null) {
+      $result.isFollowing = isFollowing;
+    }
+    if (isFollower != null) {
+      $result.isFollower = isFollower;
     }
     if (createdAt != null) {
       $result.createdAt = createdAt;
@@ -401,7 +409,9 @@ class UserFollow extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'userId')
     ..aOS(2, _omitFieldNames ? '' : 'userName')
     ..aOS(3, _omitFieldNames ? '' : 'avatarUrl')
-    ..aOS(4, _omitFieldNames ? '' : 'createdAt')
+    ..aOB(4, _omitFieldNames ? '' : 'isFollowing')
+    ..aOB(5, _omitFieldNames ? '' : 'isFollower')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -454,13 +464,31 @@ class UserFollow extends $pb.GeneratedMessage {
   void clearAvatarUrl() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get createdAt => $_getSZ(3);
+  $core.bool get isFollowing => $_getBF(3);
   @$pb.TagNumber(4)
-  set createdAt($core.String v) { $_setString(3, v); }
+  set isFollowing($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasCreatedAt() => $_has(3);
+  $core.bool hasIsFollowing() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCreatedAt() => clearField(4);
+  void clearIsFollowing() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get isFollower => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isFollower($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsFollower() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsFollower() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
 }
 
 class UserSocialSummary extends $pb.GeneratedMessage {
