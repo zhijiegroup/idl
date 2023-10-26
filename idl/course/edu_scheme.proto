@@ -20,7 +20,8 @@ message EduScheme {
     string character_standard = 11;
     string course_group_name = 12; // 能力方向名称
     int64 course_group_id = 13; // 能力方向ID
-    repeated CourseModule course_modules = 14;  // 能力指标
+    int64 created_by = 14;
+    repeated CourseModule course_modules = 15;  // 能力指标
 }
 
 message CreateEduSchemeRequest {
