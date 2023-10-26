@@ -9222,6 +9222,37 @@ public final class glory_apiGrpc {
     return getDistributeEduSchemeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest,
+      com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> getGetEduSchemeLikeCourseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEduSchemeLikeCourse",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest,
+      com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> getGetEduSchemeLikeCourseMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest, com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> getGetEduSchemeLikeCourseMethod;
+    if ((getGetEduSchemeLikeCourseMethod = glory_apiGrpc.getGetEduSchemeLikeCourseMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetEduSchemeLikeCourseMethod = glory_apiGrpc.getGetEduSchemeLikeCourseMethod) == null) {
+          glory_apiGrpc.getGetEduSchemeLikeCourseMethod = getGetEduSchemeLikeCourseMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest, com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEduSchemeLikeCourse"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetEduSchemeLikeCourse"))
+              .build();
+        }
+      }
+    }
+    return getGetEduSchemeLikeCourseMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
       com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> getGetAndroidQRcodeMethod;
 
@@ -11675,6 +11706,16 @@ public final class glory_apiGrpc {
     default void distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDistributeEduSchemeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取培养方案，但返回结果和获取模块化结果一样
+     * </pre>
+     */
+    default void getEduSchemeLikeCourse(com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEduSchemeLikeCourseMethod(), responseObserver);
     }
 
     /**
@@ -14390,6 +14431,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取培养方案，但返回结果和获取模块化结果一样
+     * </pre>
+     */
+    public void getEduSchemeLikeCourse(com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEduSchemeLikeCourseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * app下载
      * </pre>
      */
@@ -16790,6 +16842,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse distributeEduScheme(com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDistributeEduSchemeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取培养方案，但返回结果和获取模块化结果一样
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse getEduSchemeLikeCourse(com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEduSchemeLikeCourseMethod(), getCallOptions(), request);
     }
 
     /**
@@ -19494,6 +19556,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取培养方案，但返回结果和获取模块化结果一样
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse(
+        com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEduSchemeLikeCourseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * app下载
      * </pre>
      */
@@ -19801,7 +19874,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_EDU_SCHEME_DETAIL = 294;
   private static final int METHODID_DELETE_EDU_SCHEME = 295;
   private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 296;
-  private static final int METHODID_GET_ANDROID_QRCODE = 297;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 297;
+  private static final int METHODID_GET_ANDROID_QRCODE = 298;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21007,6 +21081,10 @@ public final class glory_apiGrpc {
         case METHODID_DISTRIBUTE_EDU_SCHEME:
           serviceImpl.distributeEduScheme((com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>) responseObserver);
+          break;
+        case METHODID_GET_EDU_SCHEME_LIKE_COURSE:
+          serviceImpl.getEduSchemeLikeCourse((com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse>) responseObserver);
           break;
         case METHODID_GET_ANDROID_QRCODE:
           serviceImpl.getAndroidQRcode((com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest) request,
@@ -23110,6 +23188,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.DistributeEduSchemeResponse>(
                 service, METHODID_DISTRIBUTE_EDU_SCHEME)))
         .addMethod(
+          getGetEduSchemeLikeCourseMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseRequest,
+              com.zhijiejiaoyu.glory_api.course.GetEduSchemeLikeCourseResponse>(
+                service, METHODID_GET_EDU_SCHEME_LIKE_COURSE)))
+        .addMethod(
           getGetAndroidQRcodeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -23461,6 +23546,7 @@ public final class glory_apiGrpc {
               .addMethod(getEduSchemeDetailMethod())
               .addMethod(getDeleteEduSchemeMethod())
               .addMethod(getDistributeEduSchemeMethod())
+              .addMethod(getGetEduSchemeLikeCourseMethod())
               .addMethod(getGetAndroidQRcodeMethod())
               .build();
         }

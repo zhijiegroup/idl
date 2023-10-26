@@ -361,6 +361,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'EduSchemeDetail', '2': '.glory_api.EduSchemeDetailRequest', '3': '.glory_api.EduSchemeDetailResponse', '4': {}},
     {'1': 'DeleteEduScheme', '2': '.glory_api.DeleteEduSchemeRequest', '3': '.glory_api.DeleteEduSchemeResponse', '4': {}},
     {'1': 'DistributeEduScheme', '2': '.glory_api.DistributeEduSchemeRequest', '3': '.glory_api.DistributeEduSchemeResponse', '4': {}},
+    {'1': 'GetEduSchemeLikeCourse', '2': '.glory_api.GetEduSchemeLikeCourseRequest', '3': '.glory_api.GetEduSchemeLikeCourseResponse', '4': {}},
     {'1': 'GetAndroidQRcode', '2': '.glory_api.GetAndroidQRCodeRequest', '3': '.glory_api.GetAndroidQRCodeResponse', '4': {}},
   ],
 };
@@ -1125,6 +1126,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.DeleteEduSchemeResponse': $44.DeleteEduSchemeResponse$json,
   '.glory_api.DistributeEduSchemeRequest': $44.DistributeEduSchemeRequest$json,
   '.glory_api.DistributeEduSchemeResponse': $44.DistributeEduSchemeResponse$json,
+  '.glory_api.GetEduSchemeLikeCourseRequest': $44.GetEduSchemeLikeCourseRequest$json,
+  '.glory_api.GetEduSchemeLikeCourseResponse': $44.GetEduSchemeLikeCourseResponse$json,
   '.glory_api.GetAndroidQRCodeRequest': $45.GetAndroidQRCodeRequest$json,
   '.glory_api.GetAndroidQRCodeResponse': $45.GetAndroidQRCodeResponse$json,
 };
@@ -1790,8 +1793,10 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'dBoiLmdsb3J5X2FwaS5EZWxldGVFZHVTY2hlbWVSZXNwb25zZSIh0sEYHS9hcGkvY291cnNlL2'
     'RlbGV0ZV9lZHVfc2NoZW1lEosBChNEaXN0cmlidXRlRWR1U2NoZW1lEiUuZ2xvcnlfYXBpLkRp'
     'c3RyaWJ1dGVFZHVTY2hlbWVSZXF1ZXN0GiYuZ2xvcnlfYXBpLkRpc3RyaWJ1dGVFZHVTY2hlbW'
-    'VSZXNwb25zZSIl0sEYIS9hcGkvY291cnNlL2Rpc3RyaWJ1dGVfZWR1X3NjaGVtZRJ8ChBHZXRB'
-    'bmRyb2lkUVJjb2RlEiIuZ2xvcnlfYXBpLkdldEFuZHJvaWRRUkNvZGVSZXF1ZXN0GiMuZ2xvcn'
-    'lfYXBpLkdldEFuZHJvaWRRUkNvZGVSZXNwb25zZSIfysEYGy9hcGkvYXBwL2dldF9hbmRyb2lk'
-    'X3FyY29kZQ==');
+    'VSZXNwb25zZSIl0sEYIS9hcGkvY291cnNlL2Rpc3RyaWJ1dGVfZWR1X3NjaGVtZRKZAQoWR2V0'
+    'RWR1U2NoZW1lTGlrZUNvdXJzZRIoLmdsb3J5X2FwaS5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUm'
+    'VxdWVzdBopLmdsb3J5X2FwaS5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVzcG9uc2UiKtLBGCYv'
+    'YXBpL2NvdXJzZS9nZXRfZWR1X3NjaGVtZV9saWtlX2NvdXJzZRJ8ChBHZXRBbmRyb2lkUVJjb2'
+    'RlEiIuZ2xvcnlfYXBpLkdldEFuZHJvaWRRUkNvZGVSZXF1ZXN0GiMuZ2xvcnlfYXBpLkdldEFu'
+    'ZHJvaWRRUkNvZGVSZXNwb25zZSIfysEYGy9hcGkvYXBwL2dldF9hbmRyb2lkX3FyY29kZQ==');
 

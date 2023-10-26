@@ -956,6 +956,9 @@ class glory_apiApi {
   $async.Future<$44.DistributeEduSchemeResponse> distributeEduScheme($pb.ClientContext? ctx, $44.DistributeEduSchemeRequest request) =>
     _client.invoke<$44.DistributeEduSchemeResponse>(ctx, 'glory_api', 'DistributeEduScheme', request, $44.DistributeEduSchemeResponse())
   ;
+  $async.Future<$44.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse($pb.ClientContext? ctx, $44.GetEduSchemeLikeCourseRequest request) =>
+    _client.invoke<$44.GetEduSchemeLikeCourseResponse>(ctx, 'glory_api', 'GetEduSchemeLikeCourse', request, $44.GetEduSchemeLikeCourseResponse())
+  ;
   $async.Future<$45.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ClientContext? ctx, $45.GetAndroidQRCodeRequest request) =>
     _client.invoke<$45.GetAndroidQRCodeResponse>(ctx, 'glory_api', 'GetAndroidQRcode', request, $45.GetAndroidQRCodeResponse())
   ;

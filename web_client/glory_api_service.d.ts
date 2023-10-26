@@ -1341,6 +1341,11 @@ CreateLivePlanProduct create live plan product */
     request: edu_scheme.DistributeEduSchemeRequest
   ): Promise<edu_scheme.DistributeEduSchemeResponse>;
 
+  /** 获取培养方案，但返回结果和获取模块化结果一样 */
+  GetEduSchemeLikeCourse(
+    request: edu_scheme.GetEduSchemeLikeCourseRequest
+  ): Promise<edu_scheme.GetEduSchemeLikeCourseResponse>;
+
   /** app下载 */
   GetAndroidQRcode(
     request: app.GetAndroidQRCodeRequest

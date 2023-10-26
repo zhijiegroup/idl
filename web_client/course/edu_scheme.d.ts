@@ -4,7 +4,8 @@
 
 import * as base from "../base";
 import * as modules from "./module";
-export { base, modules };
+import * as course from "./course";
+export { base, modules, course };
 
 export interface EduScheme {
   edu_scheme_id?: string;
@@ -111,4 +112,16 @@ export interface DistributeEduSchemeRequest {
 
 export interface DistributeEduSchemeResponse {
   base_resp?: base.BaseResponse;
+}
+
+/** 获取模块化课程 */
+export interface GetEduSchemeLikeCourseRequest {
+  base_request?: base.BaseRequest;
+  /** 培养方案ID */
+  edu_scheme_id?: string;
+}
+
+export interface GetEduSchemeLikeCourseResponse {
+  base_resp?: base.BaseResponse;
+  course?: course.Course;
 }

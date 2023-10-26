@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $1;
+import 'course.pb.dart' as $2;
 import 'module.pb.dart' as $0;
 
 class EduScheme extends $pb.GeneratedMessage {
@@ -1359,6 +1360,141 @@ class DistributeEduSchemeResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $1.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+/// 获取模块化课程
+class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
+  factory GetEduSchemeLikeCourseRequest({
+    $1.BaseRequest? baseRequest,
+    $fixnum.Int64? eduSchemeId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (eduSchemeId != null) {
+      $result.eduSchemeId = eduSchemeId;
+    }
+    return $result;
+  }
+  GetEduSchemeLikeCourseRequest._() : super();
+  factory GetEduSchemeLikeCourseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEduSchemeLikeCourseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetEduSchemeLikeCourseRequest clone() => GetEduSchemeLikeCourseRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetEduSchemeLikeCourseRequest copyWith(void Function(GetEduSchemeLikeCourseRequest) updates) => super.copyWith((message) => updates(message as GetEduSchemeLikeCourseRequest)) as GetEduSchemeLikeCourseRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEduSchemeLikeCourseRequest create() => GetEduSchemeLikeCourseRequest._();
+  GetEduSchemeLikeCourseRequest createEmptyInstance() => create();
+  static $pb.PbList<GetEduSchemeLikeCourseRequest> createRepeated() => $pb.PbList<GetEduSchemeLikeCourseRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetEduSchemeLikeCourseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEduSchemeLikeCourseRequest>(create);
+  static GetEduSchemeLikeCourseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get eduSchemeId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set eduSchemeId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEduSchemeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEduSchemeId() => clearField(2);
+}
+
+class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
+  factory GetEduSchemeLikeCourseResponse({
+    $1.BaseResponse? baseResp,
+    $2.Course? course,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (course != null) {
+      $result.course = course;
+    }
+    return $result;
+  }
+  GetEduSchemeLikeCourseResponse._() : super();
+  factory GetEduSchemeLikeCourseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetEduSchemeLikeCourseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.Course>(2, _omitFieldNames ? '' : 'course', subBuilder: $2.Course.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetEduSchemeLikeCourseResponse clone() => GetEduSchemeLikeCourseResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetEduSchemeLikeCourseResponse copyWith(void Function(GetEduSchemeLikeCourseResponse) updates) => super.copyWith((message) => updates(message as GetEduSchemeLikeCourseResponse)) as GetEduSchemeLikeCourseResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEduSchemeLikeCourseResponse create() => GetEduSchemeLikeCourseResponse._();
+  GetEduSchemeLikeCourseResponse createEmptyInstance() => create();
+  static $pb.PbList<GetEduSchemeLikeCourseResponse> createRepeated() => $pb.PbList<GetEduSchemeLikeCourseResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetEduSchemeLikeCourseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetEduSchemeLikeCourseResponse>(create);
+  static GetEduSchemeLikeCourseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($1.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $2.Course get course => $_getN(1);
+  @$pb.TagNumber(2)
+  set course($2.Course v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourse() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourse() => clearField(2);
+  @$pb.TagNumber(2)
+  $2.Course ensureCourse() => $_ensure(1);
 }
 
 

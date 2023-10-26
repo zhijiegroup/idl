@@ -50,7 +50,7 @@ public final class GloryApiService {
       "le.proto\032\023course/course.proto\032\022course/gr" +
       "aph.proto\032\030course/user_course.proto\032\032cou" +
       "rse/teaching_plan.proto\032\027course/edu_sche" +
-      "me.proto\032\rapp/app.proto2\214\237\002\n\tglory_api\022s" +
+      "me.proto\032\rapp/app.proto2\250\240\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -966,11 +966,15 @@ public final class GloryApiService {
       "teEduScheme\022%.glory_api.DistributeEduSch" +
       "emeRequest\032&.glory_api.DistributeEduSche" +
       "meResponse\"%\322\301\030!/api/course/distribute_e" +
-      "du_scheme\022|\n\020GetAndroidQRcode\022\".glory_ap" +
-      "i.GetAndroidQRCodeRequest\032#.glory_api.Ge" +
-      "tAndroidQRCodeResponse\"\037\312\301\030\033/api/app/get" +
-      "_android_qrcodeB\036\n\032com.zhijiejiaoyu.glor" +
-      "y_apiP\001b\006proto3"
+      "du_scheme\022\231\001\n\026GetEduSchemeLikeCourse\022(.g" +
+      "lory_api.GetEduSchemeLikeCourseRequest\032)" +
+      ".glory_api.GetEduSchemeLikeCourseRespons" +
+      "e\"*\322\301\030&/api/course/get_edu_scheme_like_c" +
+      "ourse\022|\n\020GetAndroidQRcode\022\".glory_api.Ge" +
+      "tAndroidQRCodeRequest\032#.glory_api.GetAnd" +
+      "roidQRCodeResponse\"\037\312\301\030\033/api/app/get_and" +
+      "roid_qrcodeB\036\n\032com.zhijiejiaoyu.glory_ap" +
+      "iP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

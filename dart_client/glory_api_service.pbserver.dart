@@ -363,6 +363,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$44.EduSchemeDetailResponse> eduSchemeDetail($pb.ServerContext ctx, $44.EduSchemeDetailRequest request);
   $async.Future<$44.DeleteEduSchemeResponse> deleteEduScheme($pb.ServerContext ctx, $44.DeleteEduSchemeRequest request);
   $async.Future<$44.DistributeEduSchemeResponse> distributeEduScheme($pb.ServerContext ctx, $44.DistributeEduSchemeRequest request);
+  $async.Future<$44.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse($pb.ServerContext ctx, $44.GetEduSchemeLikeCourseRequest request);
   $async.Future<$45.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ServerContext ctx, $45.GetAndroidQRCodeRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
@@ -664,6 +665,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'EduSchemeDetail': return $44.EduSchemeDetailRequest();
       case 'DeleteEduScheme': return $44.DeleteEduSchemeRequest();
       case 'DistributeEduScheme': return $44.DistributeEduSchemeRequest();
+      case 'GetEduSchemeLikeCourse': return $44.GetEduSchemeLikeCourseRequest();
       case 'GetAndroidQRcode': return $45.GetAndroidQRCodeRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -968,6 +970,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'EduSchemeDetail': return this.eduSchemeDetail(ctx, request as $44.EduSchemeDetailRequest);
       case 'DeleteEduScheme': return this.deleteEduScheme(ctx, request as $44.DeleteEduSchemeRequest);
       case 'DistributeEduScheme': return this.distributeEduScheme(ctx, request as $44.DistributeEduSchemeRequest);
+      case 'GetEduSchemeLikeCourse': return this.getEduSchemeLikeCourse(ctx, request as $44.GetEduSchemeLikeCourseRequest);
       case 'GetAndroidQRcode': return this.getAndroidQRcode(ctx, request as $45.GetAndroidQRCodeRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }

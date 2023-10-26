@@ -264,3 +264,33 @@ final $typed_data.Uint8List distributeEduSchemeResponseDescriptor = $convert.bas
     'ChtEaXN0cmlidXRlRWR1U2NoZW1lUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
     '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use getEduSchemeLikeCourseRequestDescriptor instead')
+const GetEduSchemeLikeCourseRequest$json = {
+  '1': 'GetEduSchemeLikeCourseRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'edu_scheme_id', '3': 2, '4': 1, '5': 3, '10': 'eduSchemeId'},
+  ],
+};
+
+/// Descriptor for `GetEduSchemeLikeCourseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEduSchemeLikeCourseRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIiCg1lZHVfc2NoZW1lX2lkGAIgASgDUgtl'
+    'ZHVTY2hlbWVJZA==');
+
+@$core.Deprecated('Use getEduSchemeLikeCourseResponseDescriptor instead')
+const GetEduSchemeLikeCourseResponse$json = {
+  '1': 'GetEduSchemeLikeCourseResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.Course', '10': 'course'},
+  ],
+};
+
+/// Descriptor for `GetEduSchemeLikeCourseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEduSchemeLikeCourseResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEikKBmNvdXJzZRgCIAEoCzIRLmdsb3J5X2FwaS5D'
+    'b3Vyc2VSBmNvdXJzZQ==');
+
