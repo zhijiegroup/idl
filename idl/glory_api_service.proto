@@ -1169,6 +1169,11 @@ service glory_api {
     option (api.post) = '/api/course/delete_teaching_plan';
   }
 
+   // 上报老师授课课程进度
+   rpc UpdateTeachingCourseProgress (UpdateTeachingCourseProgressRequest) returns (UpdateTeachingCourseProgressResponse) {
+    option (api.post) = '/api/course/update_teaching_course_progress';
+  }
+
   // 培养方案
   rpc CreateEduScheme(CreateEduSchemeRequest) returns (CreateEduSchemeResponse) {
     option (api.post) = '/api/course/create_edu_scheme';
@@ -1189,9 +1194,9 @@ service glory_api {
     option (api.post) = '/api/course/distribute_edu_scheme';
   }
     // 获取培养方案，但返回结果和获取模块化结果一样
-    rpc GetEduSchemeLikeCourse(GetEduSchemeLikeCourseRequest) returns (GetEduSchemeLikeCourseResponse) {
+  rpc GetEduSchemeLikeCourse(GetEduSchemeLikeCourseRequest) returns (GetEduSchemeLikeCourseResponse) {
       option (api.post) = '/api/course/get_edu_scheme_like_course';
-    }
+  }
 
   // app下载
   rpc GetAndroidQRcode(GetAndroidQRCodeRequest) returns (GetAndroidQRCodeResponse) {
