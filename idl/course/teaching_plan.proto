@@ -70,3 +70,17 @@ message DeleteTeachingPlanRequest {
 message DeleteTeachingPlanResponse {
     base.BaseResponse base_resp = 1;
 }
+
+// 更新老师授课课程进度
+message UpdateTeachingCourseProgressRequest {
+    base.BaseRequest base_request = 1;
+    int64 course_id = 2; // 课程ID
+    int64 chapter_resource_id = 3; // 当前课程资源ID
+    float chapter_resource_progress = 4; // 当前课程资源播放进度
+    float chapter_resource_duration = 5; // 当前课程资源总时长
+  }
+  
+  message UpdateTeachingCourseProgressResponse {
+    base.BaseResponse base_resp = 1;
+    int32 course_progress = 2; // 当前课程总进度
+  }
