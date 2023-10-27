@@ -118,4 +118,5 @@ message GetEduSchemeLikeCourseRequest {
 message GetEduSchemeLikeCourseResponse {
     base.BaseResponse base_resp = 1;
     Course course = 2;
+    int64 course_progress = 3;
 }
