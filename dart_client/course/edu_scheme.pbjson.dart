@@ -285,6 +285,7 @@ const GetEduSchemeLikeCourseResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.Course', '10': 'course'},
+    {'1': 'course_progress', '3': 3, '4': 1, '5': 3, '10': 'courseProgress'},
   ],
 };
 
@@ -292,5 +293,5 @@ const GetEduSchemeLikeCourseResponse$json = {
 final $typed_data.Uint8List getEduSchemeLikeCourseResponseDescriptor = $convert.base64Decode(
     'Ch5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
     'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEikKBmNvdXJzZRgCIAEoCzIRLmdsb3J5X2FwaS5D'
-    'b3Vyc2VSBmNvdXJzZQ==');
+    'b3Vyc2VSBmNvdXJzZRInCg9jb3Vyc2VfcHJvZ3Jlc3MYAyABKANSDmNvdXJzZVByb2dyZXNz');
 

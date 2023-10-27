@@ -36,4 +36,10 @@ public interface GetEduSchemeLikeCourseResponseOrBuilder extends
    * <code>.glory_api.Course course = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.course.CourseOrBuilder getCourseOrBuilder();
+
+  /**
+   * <code>int64 course_progress = 3;</code>
+   * @return The courseProgress.
+   */
+  long getCourseProgress();
 }

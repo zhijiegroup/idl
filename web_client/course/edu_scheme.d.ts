@@ -124,4 +124,5 @@ export interface GetEduSchemeLikeCourseRequest {
 export interface GetEduSchemeLikeCourseResponse {
   base_resp?: base.BaseResponse;
   course?: course.Course;
+  course_progress?: string;
 }

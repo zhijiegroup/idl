@@ -463,6 +463,8 @@ struct GloryApi_GetEduSchemeLikeCourseResponse {
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
 
+  var courseProgress: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1340,6 +1342,7 @@ extension GloryApi_GetEduSchemeLikeCourseResponse: SwiftProtobuf.Message, SwiftP
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "course"),
+    3: .standard(proto: "course_progress"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1350,6 +1353,7 @@ extension GloryApi_GetEduSchemeLikeCourseResponse: SwiftProtobuf.Message, SwiftP
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.courseProgress) }()
       default: break
       }
     }
@@ -1366,12 +1370,16 @@ extension GloryApi_GetEduSchemeLikeCourseResponse: SwiftProtobuf.Message, SwiftP
     try { if let v = self._course {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if self.courseProgress != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseProgress, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetEduSchemeLikeCourseResponse, rhs: GloryApi_GetEduSchemeLikeCourseResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._course != rhs._course {return false}
+    if lhs.courseProgress != rhs.courseProgress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

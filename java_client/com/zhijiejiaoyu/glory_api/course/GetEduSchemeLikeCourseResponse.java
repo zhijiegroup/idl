@@ -74,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            courseProgress = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +163,17 @@ private static final long serialVersionUID = 0L;
     return getCourse();
   }
 
+  public static final int COURSE_PROGRESS_FIELD_NUMBER = 3;
+  private long courseProgress ;
+  /**
+   * <code>int64 course_progress = 3;</code>
+   * @return The courseProgress.
+   */
+  @java.lang.Override
+  public long getCourseProgress() {
+    return courseProgress ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +194,9 @@ private static final long serialVersionUID = 0L;
     if (course != null) {
       output.writeMessage(2, getCourse());
     }
+    if (courseProgress != 0L) {
+      output.writeInt64(3, courseProgress );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +213,10 @@ private static final long serialVersionUID = 0L;
     if (course != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCourse());
+    }
+    if (courseProgress != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, courseProgress );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +243,8 @@ private static final long serialVersionUID = 0L;
       if (!getCourse()
           .equals(other.getCourse())) return false;
     }
+    if (getCourseProgress()
+        != other.getCourseProgress()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +264,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COURSE_FIELD_NUMBER;
       hash = (53 * hash) + getCourse().hashCode();
     }
+    hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseProgress());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +412,8 @@ private static final long serialVersionUID = 0L;
         course = null;
         courseBuilder = null;
       }
+      courseProgress = 0L;
+
       return this;
     }
 
@@ -420,6 +450,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.course = courseBuilder .build();
       }
+      result.courseProgress = courseProgress ;
       onBuilt();
       return result;
     }
@@ -473,6 +504,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCourse()) {
         mergeCourse(other.getCourse());
+      }
+      if (other.getCourseProgress() != 0L) {
+        setCourseProgress(other.getCourseProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +773,37 @@ private static final long serialVersionUID = 0L;
         course = null;
       }
       return courseBuilder ;
+    }
+
+    private long courseProgress ;
+    /**
+     * <code>int64 course_progress = 3;</code>
+     * @return The courseProgress.
+     */
+    @java.lang.Override
+    public long getCourseProgress() {
+      return courseProgress ;
+    }
+    /**
+     * <code>int64 course_progress = 3;</code>
+     * @param value The courseProgress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseProgress(long value) {
+      
+      courseProgress = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 course_progress = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseProgress() {
+      
+      courseProgress = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

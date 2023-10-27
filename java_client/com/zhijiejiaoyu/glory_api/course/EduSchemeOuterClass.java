@@ -154,11 +154,11 @@ public final class EduSchemeOuterClass {
       "_resp\030\001 \001(\0132\022.base.BaseResponse\"_\n\035GetEd" +
       "uSchemeLikeCourseRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\022\025\n\redu_scheme_" +
-      "id\030\002 \001(\003\"j\n\036GetEduSchemeLikeCourseRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022!\n\006course\030\002 \001(\0132\021.glory_api.CourseB%\n!" +
-      "com.zhijiejiaoyu.glory_api.courseP\001b\006pro" +
-      "to3"
+      "id\030\002 \001(\003\"\203\001\n\036GetEduSchemeLikeCourseRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022!\n\006course\030\002 \001(\0132\021.glory_api.Course\022\027\n" +
+      "\017course_progress\030\003 \001(\003B%\n!com.zhijiejiao" +
+      "yu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -256,7 +256,7 @@ public final class EduSchemeOuterClass {
     internal_static_glory_api_GetEduSchemeLikeCourseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetEduSchemeLikeCourseResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Course", });
+        new java.lang.String[] { "BaseResp", "Course", "CourseProgress", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.CourseOuterClass.getDescriptor();

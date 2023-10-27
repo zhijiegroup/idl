@@ -1433,6 +1433,7 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseResponse({
     $1.BaseResponse? baseResp,
     $2.Course? course,
+    $fixnum.Int64? courseProgress,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1440,6 +1441,9 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
     }
     if (course != null) {
       $result.course = course;
+    }
+    if (courseProgress != null) {
+      $result.courseProgress = courseProgress;
     }
     return $result;
   }
@@ -1450,6 +1454,7 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<$2.Course>(2, _omitFieldNames ? '' : 'course', subBuilder: $2.Course.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'courseProgress')
     ..hasRequiredFields = false
   ;
 
@@ -1495,6 +1500,15 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   void clearCourse() => clearField(2);
   @$pb.TagNumber(2)
   $2.Course ensureCourse() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get courseProgress => $_getI64(2);
+  @$pb.TagNumber(3)
+  set courseProgress($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseProgress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseProgress() => clearField(3);
 }
 
 
