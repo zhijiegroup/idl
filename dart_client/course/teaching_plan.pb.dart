@@ -874,6 +874,181 @@ class DeleteTeachingPlanResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+/// 更新老师授课课程进度
+class UpdateTeachingCourseProgressRequest extends $pb.GeneratedMessage {
+  factory UpdateTeachingCourseProgressRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? courseId,
+    $fixnum.Int64? chapterResourceId,
+    $core.double? chapterResourceProgress,
+    $core.double? chapterResourceDuration,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (courseId != null) {
+      $result.courseId = courseId;
+    }
+    if (chapterResourceId != null) {
+      $result.chapterResourceId = chapterResourceId;
+    }
+    if (chapterResourceProgress != null) {
+      $result.chapterResourceProgress = chapterResourceProgress;
+    }
+    if (chapterResourceDuration != null) {
+      $result.chapterResourceDuration = chapterResourceDuration;
+    }
+    return $result;
+  }
+  UpdateTeachingCourseProgressRequest._() : super();
+  factory UpdateTeachingCourseProgressRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTeachingCourseProgressRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTeachingCourseProgressRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'courseId')
+    ..aInt64(3, _omitFieldNames ? '' : 'chapterResourceId')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'chapterResourceProgress', $pb.PbFieldType.OF)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'chapterResourceDuration', $pb.PbFieldType.OF)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTeachingCourseProgressRequest clone() => UpdateTeachingCourseProgressRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTeachingCourseProgressRequest copyWith(void Function(UpdateTeachingCourseProgressRequest) updates) => super.copyWith((message) => updates(message as UpdateTeachingCourseProgressRequest)) as UpdateTeachingCourseProgressRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTeachingCourseProgressRequest create() => UpdateTeachingCourseProgressRequest._();
+  UpdateTeachingCourseProgressRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateTeachingCourseProgressRequest> createRepeated() => $pb.PbList<UpdateTeachingCourseProgressRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTeachingCourseProgressRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTeachingCourseProgressRequest>(create);
+  static UpdateTeachingCourseProgressRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get courseId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set courseId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get chapterResourceId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set chapterResourceId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChapterResourceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChapterResourceId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get chapterResourceProgress => $_getN(3);
+  @$pb.TagNumber(4)
+  set chapterResourceProgress($core.double v) { $_setFloat(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChapterResourceProgress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChapterResourceProgress() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get chapterResourceDuration => $_getN(4);
+  @$pb.TagNumber(5)
+  set chapterResourceDuration($core.double v) { $_setFloat(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasChapterResourceDuration() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChapterResourceDuration() => clearField(5);
+}
+
+class UpdateTeachingCourseProgressResponse extends $pb.GeneratedMessage {
+  factory UpdateTeachingCourseProgressResponse({
+    $0.BaseResponse? baseResp,
+    $core.int? courseProgress,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (courseProgress != null) {
+      $result.courseProgress = courseProgress;
+    }
+    return $result;
+  }
+  UpdateTeachingCourseProgressResponse._() : super();
+  factory UpdateTeachingCourseProgressResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTeachingCourseProgressResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTeachingCourseProgressResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTeachingCourseProgressResponse clone() => UpdateTeachingCourseProgressResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTeachingCourseProgressResponse copyWith(void Function(UpdateTeachingCourseProgressResponse) updates) => super.copyWith((message) => updates(message as UpdateTeachingCourseProgressResponse)) as UpdateTeachingCourseProgressResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTeachingCourseProgressResponse create() => UpdateTeachingCourseProgressResponse._();
+  UpdateTeachingCourseProgressResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateTeachingCourseProgressResponse> createRepeated() => $pb.PbList<UpdateTeachingCourseProgressResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTeachingCourseProgressResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTeachingCourseProgressResponse>(create);
+  static UpdateTeachingCourseProgressResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get courseProgress => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set courseProgress($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseProgress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseProgress() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

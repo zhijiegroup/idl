@@ -938,6 +938,9 @@ class glory_apiApi {
   $async.Future<$43.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ClientContext? ctx, $43.DeleteTeachingPlanRequest request) =>
     _client.invoke<$43.DeleteTeachingPlanResponse>(ctx, 'glory_api', 'DeleteTeachingPlan', request, $43.DeleteTeachingPlanResponse())
   ;
+  $async.Future<$43.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress($pb.ClientContext? ctx, $43.UpdateTeachingCourseProgressRequest request) =>
+    _client.invoke<$43.UpdateTeachingCourseProgressResponse>(ctx, 'glory_api', 'UpdateTeachingCourseProgress', request, $43.UpdateTeachingCourseProgressResponse())
+  ;
   $async.Future<$44.CreateEduSchemeResponse> createEduScheme($pb.ClientContext? ctx, $44.CreateEduSchemeRequest request) =>
     _client.invoke<$44.CreateEduSchemeResponse>(ctx, 'glory_api', 'CreateEduScheme', request, $44.CreateEduSchemeResponse())
   ;

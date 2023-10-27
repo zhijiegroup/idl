@@ -64,6 +64,16 @@ public final class TeachingPlanOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteTeachingPlanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTeachingCourseProgressRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTeachingCourseProgressRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTeachingCourseProgressResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTeachingCourseProgressResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -107,9 +117,16 @@ public final class TeachingPlanOuterClass {
       "eachingPlanRequest\022\'\n\014base_request\030\001 \001(\013" +
       "2\021.base.BaseRequest\022\030\n\020teaching_plan_id\030" +
       "\002 \001(\003\"C\n\032DeleteTeachingPlanResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!co" +
-      "m.zhijiejiaoyu.glory_api.courseP\001b\006proto" +
-      "3"
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\304\001\n#U" +
+      "pdateTeachingCourseProgressRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
+      "ourse_id\030\002 \001(\003\022\033\n\023chapter_resource_id\030\003 " +
+      "\001(\003\022!\n\031chapter_resource_progress\030\004 \001(\002\022!" +
+      "\n\031chapter_resource_duration\030\005 \001(\002\"f\n$Upd" +
+      "ateTeachingCourseProgressResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\027\n\017cour" +
+      "se_progress\030\002 \001(\005B%\n!com.zhijiejiaoyu.gl" +
+      "ory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -177,6 +194,18 @@ public final class TeachingPlanOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTeachingPlanResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateTeachingCourseProgressRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_UpdateTeachingCourseProgressRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTeachingCourseProgressRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "CourseId", "ChapterResourceId", "ChapterResourceProgress", "ChapterResourceDuration", });
+    internal_static_glory_api_UpdateTeachingCourseProgressResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_UpdateTeachingCourseProgressResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTeachingCourseProgressResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "CourseProgress", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();
   }

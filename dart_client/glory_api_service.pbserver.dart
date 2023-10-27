@@ -357,6 +357,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$43.CreateTeachingPlanResponse> createTeachingPlan($pb.ServerContext ctx, $43.CreateTeachingPlanRequest request);
   $async.Future<$43.UpdateTeachingPlanResponse> updateTeachingPlan($pb.ServerContext ctx, $43.UpdateTeachingPlanRequest request);
   $async.Future<$43.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ServerContext ctx, $43.DeleteTeachingPlanRequest request);
+  $async.Future<$43.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress($pb.ServerContext ctx, $43.UpdateTeachingCourseProgressRequest request);
   $async.Future<$44.CreateEduSchemeResponse> createEduScheme($pb.ServerContext ctx, $44.CreateEduSchemeRequest request);
   $async.Future<$44.UpdateEduSchemeResponse> updateEduScheme($pb.ServerContext ctx, $44.UpdateEduSchemeRequest request);
   $async.Future<$44.ListEduSchemeResponse> listEduScheme($pb.ServerContext ctx, $44.ListEduSchemeRequest request);
@@ -659,6 +660,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeachingPlan': return $43.CreateTeachingPlanRequest();
       case 'UpdateTeachingPlan': return $43.UpdateTeachingPlanRequest();
       case 'DeleteTeachingPlan': return $43.DeleteTeachingPlanRequest();
+      case 'UpdateTeachingCourseProgress': return $43.UpdateTeachingCourseProgressRequest();
       case 'CreateEduScheme': return $44.CreateEduSchemeRequest();
       case 'UpdateEduScheme': return $44.UpdateEduSchemeRequest();
       case 'ListEduScheme': return $44.ListEduSchemeRequest();
@@ -964,6 +966,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeachingPlan': return this.createTeachingPlan(ctx, request as $43.CreateTeachingPlanRequest);
       case 'UpdateTeachingPlan': return this.updateTeachingPlan(ctx, request as $43.UpdateTeachingPlanRequest);
       case 'DeleteTeachingPlan': return this.deleteTeachingPlan(ctx, request as $43.DeleteTeachingPlanRequest);
+      case 'UpdateTeachingCourseProgress': return this.updateTeachingCourseProgress(ctx, request as $43.UpdateTeachingCourseProgressRequest);
       case 'CreateEduScheme': return this.createEduScheme(ctx, request as $44.CreateEduSchemeRequest);
       case 'UpdateEduScheme': return this.updateEduScheme(ctx, request as $44.UpdateEduSchemeRequest);
       case 'ListEduScheme': return this.listEduScheme(ctx, request as $44.ListEduSchemeRequest);

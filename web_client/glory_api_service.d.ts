@@ -1316,6 +1316,11 @@ CreateLivePlanProduct create live plan product */
     request: teaching_plan.DeleteTeachingPlanRequest
   ): Promise<teaching_plan.DeleteTeachingPlanResponse>;
 
+  /** 上报老师授课课程进度 */
+  UpdateTeachingCourseProgress(
+    request: teaching_plan.UpdateTeachingCourseProgressRequest
+  ): Promise<teaching_plan.UpdateTeachingCourseProgressResponse>;
+
   /** 培养方案 */
   CreateEduScheme(
     request: edu_scheme.CreateEduSchemeRequest

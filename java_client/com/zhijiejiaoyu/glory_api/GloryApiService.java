@@ -50,7 +50,7 @@ public final class GloryApiService {
       "le.proto\032\023course/course.proto\032\022course/gr" +
       "aph.proto\032\030course/user_course.proto\032\032cou" +
       "rse/teaching_plan.proto\032\027course/edu_sche" +
-      "me.proto\032\rapp/app.proto2\250\240\002\n\tglory_api\022s" +
+      "me.proto\032\rapp/app.proto2\333\241\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -947,34 +947,38 @@ public final class GloryApiService {
       "eteTeachingPlan\022$.glory_api.DeleteTeachi" +
       "ngPlanRequest\032%.glory_api.DeleteTeaching" +
       "PlanResponse\"$\322\301\030 /api/course/delete_tea" +
-      "ching_plan\022{\n\017CreateEduScheme\022!.glory_ap" +
-      "i.CreateEduSchemeRequest\032\".glory_api.Cre" +
-      "ateEduSchemeResponse\"!\322\301\030\035/api/course/cr" +
-      "eate_edu_scheme\022{\n\017UpdateEduScheme\022!.glo" +
-      "ry_api.UpdateEduSchemeRequest\032\".glory_ap" +
-      "i.UpdateEduSchemeResponse\"!\322\301\030\035/api/cour" +
-      "se/update_edu_scheme\022s\n\rListEduScheme\022\037." +
-      "glory_api.ListEduSchemeRequest\032 .glory_a" +
-      "pi.ListEduSchemeResponse\"\037\322\301\030\033/api/cours" +
-      "e/list_edu_scheme\022{\n\017EduSchemeDetail\022!.g" +
-      "lory_api.EduSchemeDetailRequest\032\".glory_" +
-      "api.EduSchemeDetailResponse\"!\312\301\030\035/api/co" +
-      "urse/edu_scheme_detail\022{\n\017DeleteEduSchem" +
-      "e\022!.glory_api.DeleteEduSchemeRequest\032\".g" +
-      "lory_api.DeleteEduSchemeResponse\"!\322\301\030\035/a" +
-      "pi/course/delete_edu_scheme\022\213\001\n\023Distribu" +
-      "teEduScheme\022%.glory_api.DistributeEduSch" +
-      "emeRequest\032&.glory_api.DistributeEduSche" +
-      "meResponse\"%\322\301\030!/api/course/distribute_e" +
-      "du_scheme\022\231\001\n\026GetEduSchemeLikeCourse\022(.g" +
-      "lory_api.GetEduSchemeLikeCourseRequest\032)" +
-      ".glory_api.GetEduSchemeLikeCourseRespons" +
-      "e\"*\322\301\030&/api/course/get_edu_scheme_like_c" +
-      "ourse\022|\n\020GetAndroidQRcode\022\".glory_api.Ge" +
-      "tAndroidQRCodeRequest\032#.glory_api.GetAnd" +
-      "roidQRCodeResponse\"\037\312\301\030\033/api/app/get_and" +
-      "roid_qrcodeB\036\n\032com.zhijiejiaoyu.glory_ap" +
-      "iP\001b\006proto3"
+      "ching_plan\022\260\001\n\034UpdateTeachingCourseProgr" +
+      "ess\022..glory_api.UpdateTeachingCourseProg" +
+      "ressRequest\032/.glory_api.UpdateTeachingCo" +
+      "urseProgressResponse\"/\322\301\030+/api/course/up" +
+      "date_teaching_course_progress\022{\n\017CreateE" +
+      "duScheme\022!.glory_api.CreateEduSchemeRequ" +
+      "est\032\".glory_api.CreateEduSchemeResponse\"" +
+      "!\322\301\030\035/api/course/create_edu_scheme\022{\n\017Up" +
+      "dateEduScheme\022!.glory_api.UpdateEduSchem" +
+      "eRequest\032\".glory_api.UpdateEduSchemeResp" +
+      "onse\"!\322\301\030\035/api/course/update_edu_scheme\022" +
+      "s\n\rListEduScheme\022\037.glory_api.ListEduSche" +
+      "meRequest\032 .glory_api.ListEduSchemeRespo" +
+      "nse\"\037\322\301\030\033/api/course/list_edu_scheme\022{\n\017" +
+      "EduSchemeDetail\022!.glory_api.EduSchemeDet" +
+      "ailRequest\032\".glory_api.EduSchemeDetailRe" +
+      "sponse\"!\312\301\030\035/api/course/edu_scheme_detai" +
+      "l\022{\n\017DeleteEduScheme\022!.glory_api.DeleteE" +
+      "duSchemeRequest\032\".glory_api.DeleteEduSch" +
+      "emeResponse\"!\322\301\030\035/api/course/delete_edu_" +
+      "scheme\022\213\001\n\023DistributeEduScheme\022%.glory_a" +
+      "pi.DistributeEduSchemeRequest\032&.glory_ap" +
+      "i.DistributeEduSchemeResponse\"%\322\301\030!/api/" +
+      "course/distribute_edu_scheme\022\231\001\n\026GetEduS" +
+      "chemeLikeCourse\022(.glory_api.GetEduScheme" +
+      "LikeCourseRequest\032).glory_api.GetEduSche" +
+      "meLikeCourseResponse\"*\322\301\030&/api/course/ge" +
+      "t_edu_scheme_like_course\022|\n\020GetAndroidQR" +
+      "code\022\".glory_api.GetAndroidQRCodeRequest" +
+      "\032#.glory_api.GetAndroidQRCodeResponse\"\037\312" +
+      "\301\030\033/api/app/get_android_qrcodeB\036\n\032com.zh" +
+      "ijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

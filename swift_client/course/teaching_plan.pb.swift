@@ -278,6 +278,64 @@ struct GloryApi_DeleteTeachingPlanResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+/// 更新老师授课课程进度
+struct GloryApi_UpdateTeachingCourseProgressRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  /// 课程ID
+  var courseID: Int64 = 0
+
+  /// 当前课程资源ID
+  var chapterResourceID: Int64 = 0
+
+  /// 当前课程资源播放进度
+  var chapterResourceProgress: Float = 0
+
+  /// 当前课程资源总时长
+  var chapterResourceDuration: Float = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateTeachingCourseProgressResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 当前课程总进度
+  var courseProgress: Int32 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_TeachingPlanChapter: @unchecked Sendable {}
 extension GloryApi_TeachingPlan: @unchecked Sendable {}
@@ -289,6 +347,8 @@ extension GloryApi_ListTeachingPlanRequest: @unchecked Sendable {}
 extension GloryApi_ListTeachingPlanResponse: @unchecked Sendable {}
 extension GloryApi_DeleteTeachingPlanRequest: @unchecked Sendable {}
 extension GloryApi_DeleteTeachingPlanResponse: @unchecked Sendable {}
+extension GloryApi_UpdateTeachingCourseProgressRequest: @unchecked Sendable {}
+extension GloryApi_UpdateTeachingCourseProgressResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -792,6 +852,108 @@ extension GloryApi_DeleteTeachingPlanResponse: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: GloryApi_DeleteTeachingPlanResponse, rhs: GloryApi_DeleteTeachingPlanResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateTeachingCourseProgressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTeachingCourseProgressRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "course_id"),
+    3: .standard(proto: "chapter_resource_id"),
+    4: .standard(proto: "chapter_resource_progress"),
+    5: .standard(proto: "chapter_resource_duration"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.chapterResourceID) }()
+      case 4: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceProgress) }()
+      case 5: try { try decoder.decodeSingularFloatField(value: &self.chapterResourceDuration) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.courseID != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 2)
+    }
+    if self.chapterResourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterResourceID, fieldNumber: 3)
+    }
+    if self.chapterResourceProgress != 0 {
+      try visitor.visitSingularFloatField(value: self.chapterResourceProgress, fieldNumber: 4)
+    }
+    if self.chapterResourceDuration != 0 {
+      try visitor.visitSingularFloatField(value: self.chapterResourceDuration, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateTeachingCourseProgressRequest, rhs: GloryApi_UpdateTeachingCourseProgressRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.courseID != rhs.courseID {return false}
+    if lhs.chapterResourceID != rhs.chapterResourceID {return false}
+    if lhs.chapterResourceProgress != rhs.chapterResourceProgress {return false}
+    if lhs.chapterResourceDuration != rhs.chapterResourceDuration {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateTeachingCourseProgressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTeachingCourseProgressResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "course_progress"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.courseProgress != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseProgress, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateTeachingCourseProgressResponse, rhs: GloryApi_UpdateTeachingCourseProgressResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.courseProgress != rhs.courseProgress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

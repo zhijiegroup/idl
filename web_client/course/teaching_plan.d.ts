@@ -70,3 +70,22 @@ export interface DeleteTeachingPlanRequest {
 export interface DeleteTeachingPlanResponse {
   base_resp?: base.BaseResponse;
 }
+
+/** 更新老师授课课程进度 */
+export interface UpdateTeachingCourseProgressRequest {
+  base_request?: base.BaseRequest;
+  /** 课程ID */
+  course_id?: string;
+  /** 当前课程资源ID */
+  chapter_resource_id?: string;
+  /** 当前课程资源播放进度 */
+  chapter_resource_progress?: number;
+  /** 当前课程资源总时长 */
+  chapter_resource_duration?: number;
+}
+
+export interface UpdateTeachingCourseProgressResponse {
+  base_resp?: base.BaseResponse;
+  /** 当前课程总进度 */
+  course_progress?: number;
+}

@@ -9036,6 +9036,37 @@ public final class glory_apiGrpc {
     return getDeleteTeachingPlanMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> getUpdateTeachingCourseProgressMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTeachingCourseProgress",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> getUpdateTeachingCourseProgressMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest, com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> getUpdateTeachingCourseProgressMethod;
+    if ((getUpdateTeachingCourseProgressMethod = glory_apiGrpc.getUpdateTeachingCourseProgressMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTeachingCourseProgressMethod = glory_apiGrpc.getUpdateTeachingCourseProgressMethod) == null) {
+          glory_apiGrpc.getUpdateTeachingCourseProgressMethod = getUpdateTeachingCourseProgressMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest, com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTeachingCourseProgress"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTeachingCourseProgress"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTeachingCourseProgressMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest,
       com.zhijiejiaoyu.glory_api.course.CreateEduSchemeResponse> getCreateEduSchemeMethod;
 
@@ -11661,6 +11692,16 @@ public final class glory_apiGrpc {
     default void deleteTeachingPlan(com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTeachingPlanMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 上报老师授课课程进度
+     * </pre>
+     */
+    default void updateTeachingCourseProgress(com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeachingCourseProgressMethod(), responseObserver);
     }
 
     /**
@@ -14380,6 +14421,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 上报老师授课课程进度
+     * </pre>
+     */
+    public void updateTeachingCourseProgress(com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTeachingCourseProgressMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 培养方案
      * </pre>
      */
@@ -16797,6 +16849,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse deleteTeachingPlan(com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTeachingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 上报老师授课课程进度
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse updateTeachingCourseProgress(com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTeachingCourseProgressMethod(), getCallOptions(), request);
     }
 
     /**
@@ -19505,6 +19567,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 上报老师授课课程进度
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress(
+        com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTeachingCourseProgressMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 培养方案
      * </pre>
      */
@@ -19868,14 +19941,15 @@ public final class glory_apiGrpc {
   private static final int METHODID_CREATE_TEACHING_PLAN = 288;
   private static final int METHODID_UPDATE_TEACHING_PLAN = 289;
   private static final int METHODID_DELETE_TEACHING_PLAN = 290;
-  private static final int METHODID_CREATE_EDU_SCHEME = 291;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 292;
-  private static final int METHODID_LIST_EDU_SCHEME = 293;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 294;
-  private static final int METHODID_DELETE_EDU_SCHEME = 295;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 296;
-  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 297;
-  private static final int METHODID_GET_ANDROID_QRCODE = 298;
+  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 291;
+  private static final int METHODID_CREATE_EDU_SCHEME = 292;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 293;
+  private static final int METHODID_LIST_EDU_SCHEME = 294;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 295;
+  private static final int METHODID_DELETE_EDU_SCHEME = 296;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 297;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 298;
+  private static final int METHODID_GET_ANDROID_QRCODE = 299;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21057,6 +21131,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_TEACHING_PLAN:
           serviceImpl.deleteTeachingPlan((com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TEACHING_COURSE_PROGRESS:
+          serviceImpl.updateTeachingCourseProgress((com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse>) responseObserver);
           break;
         case METHODID_CREATE_EDU_SCHEME:
           serviceImpl.createEduScheme((com.zhijiejiaoyu.glory_api.course.CreateEduSchemeRequest) request,
@@ -23146,6 +23224,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.DeleteTeachingPlanResponse>(
                 service, METHODID_DELETE_TEACHING_PLAN)))
         .addMethod(
+          getUpdateTeachingCourseProgressMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateTeachingCourseProgressResponse>(
+                service, METHODID_UPDATE_TEACHING_COURSE_PROGRESS)))
+        .addMethod(
           getCreateEduSchemeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -23540,6 +23625,7 @@ public final class glory_apiGrpc {
               .addMethod(getCreateTeachingPlanMethod())
               .addMethod(getUpdateTeachingPlanMethod())
               .addMethod(getDeleteTeachingPlanMethod())
+              .addMethod(getUpdateTeachingCourseProgressMethod())
               .addMethod(getCreateEduSchemeMethod())
               .addMethod(getUpdateEduSchemeMethod())
               .addMethod(getListEduSchemeMethod())

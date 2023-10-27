@@ -355,6 +355,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'CreateTeachingPlan', '2': '.glory_api.CreateTeachingPlanRequest', '3': '.glory_api.CreateTeachingPlanResponse', '4': {}},
     {'1': 'UpdateTeachingPlan', '2': '.glory_api.UpdateTeachingPlanRequest', '3': '.glory_api.UpdateTeachingPlanResponse', '4': {}},
     {'1': 'DeleteTeachingPlan', '2': '.glory_api.DeleteTeachingPlanRequest', '3': '.glory_api.DeleteTeachingPlanResponse', '4': {}},
+    {'1': 'UpdateTeachingCourseProgress', '2': '.glory_api.UpdateTeachingCourseProgressRequest', '3': '.glory_api.UpdateTeachingCourseProgressResponse', '4': {}},
     {'1': 'CreateEduScheme', '2': '.glory_api.CreateEduSchemeRequest', '3': '.glory_api.CreateEduSchemeResponse', '4': {}},
     {'1': 'UpdateEduScheme', '2': '.glory_api.UpdateEduSchemeRequest', '3': '.glory_api.UpdateEduSchemeResponse', '4': {}},
     {'1': 'ListEduScheme', '2': '.glory_api.ListEduSchemeRequest', '3': '.glory_api.ListEduSchemeResponse', '4': {}},
@@ -1113,6 +1114,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.UpdateTeachingPlanResponse': $43.UpdateTeachingPlanResponse$json,
   '.glory_api.DeleteTeachingPlanRequest': $43.DeleteTeachingPlanRequest$json,
   '.glory_api.DeleteTeachingPlanResponse': $43.DeleteTeachingPlanResponse$json,
+  '.glory_api.UpdateTeachingCourseProgressRequest': $43.UpdateTeachingCourseProgressRequest$json,
+  '.glory_api.UpdateTeachingCourseProgressResponse': $43.UpdateTeachingCourseProgressResponse$json,
   '.glory_api.CreateEduSchemeRequest': $44.CreateEduSchemeRequest$json,
   '.glory_api.CreateEduSchemeResponse': $44.CreateEduSchemeResponse$json,
   '.glory_api.UpdateEduSchemeRequest': $44.UpdateEduSchemeRequest$json,
@@ -1780,23 +1783,27 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'UiJNLBGCAvYXBpL2NvdXJzZS91cGRhdGVfdGVhY2hpbmdfcGxhbhKHAQoSRGVsZXRlVGVhY2hp'
     'bmdQbGFuEiQuZ2xvcnlfYXBpLkRlbGV0ZVRlYWNoaW5nUGxhblJlcXVlc3QaJS5nbG9yeV9hcG'
     'kuRGVsZXRlVGVhY2hpbmdQbGFuUmVzcG9uc2UiJNLBGCAvYXBpL2NvdXJzZS9kZWxldGVfdGVh'
-    'Y2hpbmdfcGxhbhJ7Cg9DcmVhdGVFZHVTY2hlbWUSIS5nbG9yeV9hcGkuQ3JlYXRlRWR1U2NoZW'
-    '1lUmVxdWVzdBoiLmdsb3J5X2FwaS5DcmVhdGVFZHVTY2hlbWVSZXNwb25zZSIh0sEYHS9hcGkv'
-    'Y291cnNlL2NyZWF0ZV9lZHVfc2NoZW1lEnsKD1VwZGF0ZUVkdVNjaGVtZRIhLmdsb3J5X2FwaS'
-    '5VcGRhdGVFZHVTY2hlbWVSZXF1ZXN0GiIuZ2xvcnlfYXBpLlVwZGF0ZUVkdVNjaGVtZVJlc3Bv'
-    'bnNlIiHSwRgdL2FwaS9jb3Vyc2UvdXBkYXRlX2VkdV9zY2hlbWUScwoNTGlzdEVkdVNjaGVtZR'
-    'IfLmdsb3J5X2FwaS5MaXN0RWR1U2NoZW1lUmVxdWVzdBogLmdsb3J5X2FwaS5MaXN0RWR1U2No'
-    'ZW1lUmVzcG9uc2UiH9LBGBsvYXBpL2NvdXJzZS9saXN0X2VkdV9zY2hlbWUSewoPRWR1U2NoZW'
-    '1lRGV0YWlsEiEuZ2xvcnlfYXBpLkVkdVNjaGVtZURldGFpbFJlcXVlc3QaIi5nbG9yeV9hcGku'
-    'RWR1U2NoZW1lRGV0YWlsUmVzcG9uc2UiIcrBGB0vYXBpL2NvdXJzZS9lZHVfc2NoZW1lX2RldG'
-    'FpbBJ7Cg9EZWxldGVFZHVTY2hlbWUSIS5nbG9yeV9hcGkuRGVsZXRlRWR1U2NoZW1lUmVxdWVz'
-    'dBoiLmdsb3J5X2FwaS5EZWxldGVFZHVTY2hlbWVSZXNwb25zZSIh0sEYHS9hcGkvY291cnNlL2'
-    'RlbGV0ZV9lZHVfc2NoZW1lEosBChNEaXN0cmlidXRlRWR1U2NoZW1lEiUuZ2xvcnlfYXBpLkRp'
-    'c3RyaWJ1dGVFZHVTY2hlbWVSZXF1ZXN0GiYuZ2xvcnlfYXBpLkRpc3RyaWJ1dGVFZHVTY2hlbW'
-    'VSZXNwb25zZSIl0sEYIS9hcGkvY291cnNlL2Rpc3RyaWJ1dGVfZWR1X3NjaGVtZRKZAQoWR2V0'
-    'RWR1U2NoZW1lTGlrZUNvdXJzZRIoLmdsb3J5X2FwaS5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUm'
-    'VxdWVzdBopLmdsb3J5X2FwaS5HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVzcG9uc2UiKtLBGCYv'
-    'YXBpL2NvdXJzZS9nZXRfZWR1X3NjaGVtZV9saWtlX2NvdXJzZRJ8ChBHZXRBbmRyb2lkUVJjb2'
-    'RlEiIuZ2xvcnlfYXBpLkdldEFuZHJvaWRRUkNvZGVSZXF1ZXN0GiMuZ2xvcnlfYXBpLkdldEFu'
-    'ZHJvaWRRUkNvZGVSZXNwb25zZSIfysEYGy9hcGkvYXBwL2dldF9hbmRyb2lkX3FyY29kZQ==');
+    'Y2hpbmdfcGxhbhKwAQocVXBkYXRlVGVhY2hpbmdDb3Vyc2VQcm9ncmVzcxIuLmdsb3J5X2FwaS'
+    '5VcGRhdGVUZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVxdWVzdBovLmdsb3J5X2FwaS5VcGRhdGVU'
+    'ZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVzcG9uc2UiL9LBGCsvYXBpL2NvdXJzZS91cGRhdGVfdG'
+    'VhY2hpbmdfY291cnNlX3Byb2dyZXNzEnsKD0NyZWF0ZUVkdVNjaGVtZRIhLmdsb3J5X2FwaS5D'
+    'cmVhdGVFZHVTY2hlbWVSZXF1ZXN0GiIuZ2xvcnlfYXBpLkNyZWF0ZUVkdVNjaGVtZVJlc3Bvbn'
+    'NlIiHSwRgdL2FwaS9jb3Vyc2UvY3JlYXRlX2VkdV9zY2hlbWUSewoPVXBkYXRlRWR1U2NoZW1l'
+    'EiEuZ2xvcnlfYXBpLlVwZGF0ZUVkdVNjaGVtZVJlcXVlc3QaIi5nbG9yeV9hcGkuVXBkYXRlRW'
+    'R1U2NoZW1lUmVzcG9uc2UiIdLBGB0vYXBpL2NvdXJzZS91cGRhdGVfZWR1X3NjaGVtZRJzCg1M'
+    'aXN0RWR1U2NoZW1lEh8uZ2xvcnlfYXBpLkxpc3RFZHVTY2hlbWVSZXF1ZXN0GiAuZ2xvcnlfYX'
+    'BpLkxpc3RFZHVTY2hlbWVSZXNwb25zZSIf0sEYGy9hcGkvY291cnNlL2xpc3RfZWR1X3NjaGVt'
+    'ZRJ7Cg9FZHVTY2hlbWVEZXRhaWwSIS5nbG9yeV9hcGkuRWR1U2NoZW1lRGV0YWlsUmVxdWVzdB'
+    'oiLmdsb3J5X2FwaS5FZHVTY2hlbWVEZXRhaWxSZXNwb25zZSIhysEYHS9hcGkvY291cnNlL2Vk'
+    'dV9zY2hlbWVfZGV0YWlsEnsKD0RlbGV0ZUVkdVNjaGVtZRIhLmdsb3J5X2FwaS5EZWxldGVFZH'
+    'VTY2hlbWVSZXF1ZXN0GiIuZ2xvcnlfYXBpLkRlbGV0ZUVkdVNjaGVtZVJlc3BvbnNlIiHSwRgd'
+    'L2FwaS9jb3Vyc2UvZGVsZXRlX2VkdV9zY2hlbWUSiwEKE0Rpc3RyaWJ1dGVFZHVTY2hlbWUSJS'
+    '5nbG9yeV9hcGkuRGlzdHJpYnV0ZUVkdVNjaGVtZVJlcXVlc3QaJi5nbG9yeV9hcGkuRGlzdHJp'
+    'YnV0ZUVkdVNjaGVtZVJlc3BvbnNlIiXSwRghL2FwaS9jb3Vyc2UvZGlzdHJpYnV0ZV9lZHVfc2'
+    'NoZW1lEpkBChZHZXRFZHVTY2hlbWVMaWtlQ291cnNlEiguZ2xvcnlfYXBpLkdldEVkdVNjaGVt'
+    'ZUxpa2VDb3Vyc2VSZXF1ZXN0GikuZ2xvcnlfYXBpLkdldEVkdVNjaGVtZUxpa2VDb3Vyc2VSZX'
+    'Nwb25zZSIq0sEYJi9hcGkvY291cnNlL2dldF9lZHVfc2NoZW1lX2xpa2VfY291cnNlEnwKEEdl'
+    'dEFuZHJvaWRRUmNvZGUSIi5nbG9yeV9hcGkuR2V0QW5kcm9pZFFSQ29kZVJlcXVlc3QaIy5nbG'
+    '9yeV9hcGkuR2V0QW5kcm9pZFFSQ29kZVJlc3BvbnNlIh/KwRgbL2FwaS9hcHAvZ2V0X2FuZHJv'
+    'aWRfcXJjb2Rl');
 

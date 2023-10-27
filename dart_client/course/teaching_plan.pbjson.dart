@@ -184,3 +184,39 @@ final $typed_data.Uint8List deleteTeachingPlanResponseDescriptor = $convert.base
     'ChpEZWxldGVUZWFjaGluZ1BsYW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 
+@$core.Deprecated('Use updateTeachingCourseProgressRequestDescriptor instead')
+const UpdateTeachingCourseProgressRequest$json = {
+  '1': 'UpdateTeachingCourseProgressRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'course_id', '3': 2, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'chapter_resource_id', '3': 3, '4': 1, '5': 3, '10': 'chapterResourceId'},
+    {'1': 'chapter_resource_progress', '3': 4, '4': 1, '5': 2, '10': 'chapterResourceProgress'},
+    {'1': 'chapter_resource_duration', '3': 5, '4': 1, '5': 2, '10': 'chapterResourceDuration'},
+  ],
+};
+
+/// Descriptor for `UpdateTeachingCourseProgressRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTeachingCourseProgressRequestDescriptor = $convert.base64Decode(
+    'CiNVcGRhdGVUZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYAS'
+    'ABKAsyES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgljb3Vyc2VfaWQYAiABKANS'
+    'CGNvdXJzZUlkEi4KE2NoYXB0ZXJfcmVzb3VyY2VfaWQYAyABKANSEWNoYXB0ZXJSZXNvdXJjZU'
+    'lkEjoKGWNoYXB0ZXJfcmVzb3VyY2VfcHJvZ3Jlc3MYBCABKAJSF2NoYXB0ZXJSZXNvdXJjZVBy'
+    'b2dyZXNzEjoKGWNoYXB0ZXJfcmVzb3VyY2VfZHVyYXRpb24YBSABKAJSF2NoYXB0ZXJSZXNvdX'
+    'JjZUR1cmF0aW9u');
+
+@$core.Deprecated('Use updateTeachingCourseProgressResponseDescriptor instead')
+const UpdateTeachingCourseProgressResponse$json = {
+  '1': 'UpdateTeachingCourseProgressResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'course_progress', '3': 2, '4': 1, '5': 5, '10': 'courseProgress'},
+  ],
+};
+
+/// Descriptor for `UpdateTeachingCourseProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTeachingCourseProgressResponseDescriptor = $convert.base64Decode(
+    'CiRVcGRhdGVUZWFjaGluZ0NvdXJzZVByb2dyZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgAS'
+    'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEicKD2NvdXJzZV9wcm9ncmVzcxgCIAEo'
+    'BVIOY291cnNlUHJvZ3Jlc3M=');
+
