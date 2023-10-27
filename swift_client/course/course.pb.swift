@@ -255,6 +255,8 @@ struct GloryApi_GetCourseResponse {
 
   var isJoined: Bool = false
 
+  var courseProgress: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1018,6 +1020,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     1: .standard(proto: "base_resp"),
     2: .same(proto: "course"),
     3: .standard(proto: "is_joined"),
+    4: .standard(proto: "course_progress"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1029,6 +1032,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
       case 3: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.courseProgress) }()
       default: break
       }
     }
@@ -1048,6 +1052,9 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.isJoined != false {
       try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 3)
     }
+    if self.courseProgress != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseProgress, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1055,6 +1062,7 @@ extension GloryApi_GetCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._course != rhs._course {return false}
     if lhs.isJoined != rhs.isJoined {return false}
+    if lhs.courseProgress != rhs.courseProgress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

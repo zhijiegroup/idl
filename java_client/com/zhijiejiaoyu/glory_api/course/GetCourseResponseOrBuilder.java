@@ -42,4 +42,10 @@ public interface GetCourseResponseOrBuilder extends
    * @return The isJoined.
    */
   boolean getIsJoined();
+
+  /**
+   * <code>int32 course_progress = 4;</code>
+   * @return The courseProgress.
+   */
+  int getCourseProgress();
 }

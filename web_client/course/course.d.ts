@@ -69,6 +69,7 @@ export interface GetCourseResponse {
   base_resp?: base.BaseResponse;
   course?: Course;
   is_joined?: boolean;
+  course_progress?: number;
 }
 
 /** 更新模块化课程 */

@@ -538,6 +538,7 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     $1.BaseResponse? baseResp,
     Course? course,
     $core.bool? isJoined,
+    $core.int? courseProgress,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -549,6 +550,9 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     if (isJoined != null) {
       $result.isJoined = isJoined;
     }
+    if (courseProgress != null) {
+      $result.courseProgress = courseProgress;
+    }
     return $result;
   }
   GetCourseResponse._() : super();
@@ -559,6 +563,7 @@ class GetCourseResponse extends $pb.GeneratedMessage {
     ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<Course>(2, _omitFieldNames ? '' : 'course', subBuilder: Course.create)
     ..aOB(3, _omitFieldNames ? '' : 'isJoined')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -613,6 +618,15 @@ class GetCourseResponse extends $pb.GeneratedMessage {
   $core.bool hasIsJoined() => $_has(2);
   @$pb.TagNumber(3)
   void clearIsJoined() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get courseProgress => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set courseProgress($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCourseProgress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCourseProgress() => clearField(4);
 }
 
 /// 更新模块化课程

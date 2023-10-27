@@ -79,6 +79,11 @@ private static final long serialVersionUID = 0L;
             isJoined = input.readBool();
             break;
           }
+          case 32: {
+
+            courseProgress = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +179,17 @@ private static final long serialVersionUID = 0L;
     return isJoined ;
   }
 
+  public static final int COURSE_PROGRESS_FIELD_NUMBER = 4;
+  private int courseProgress ;
+  /**
+   * <code>int32 course_progress = 4;</code>
+   * @return The courseProgress.
+   */
+  @java.lang.Override
+  public int getCourseProgress() {
+    return courseProgress ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -197,6 +213,9 @@ private static final long serialVersionUID = 0L;
     if (isJoined != false) {
       output.writeBool(3, isJoined );
     }
+    if (courseProgress != 0) {
+      output.writeInt32(4, courseProgress );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -217,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (isJoined != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, isJoined );
+    }
+    if (courseProgress != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, courseProgress );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,6 +268,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getIsJoined()
         != other.getIsJoined()) return false;
+    if (getCourseProgress()
+        != other.getCourseProgress()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +292,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_JOINED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsJoined());
+    hash = (37 * hash) + COURSE_PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseProgress();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +441,8 @@ private static final long serialVersionUID = 0L;
       }
       isJoined = false;
 
+      courseProgress = 0;
+
       return this;
     }
 
@@ -451,6 +480,7 @@ private static final long serialVersionUID = 0L;
         result.course = courseBuilder .build();
       }
       result.isJoined = isJoined ;
+      result.courseProgress = courseProgress ;
       onBuilt();
       return result;
     }
@@ -507,6 +537,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsJoined() != false) {
         setIsJoined(other.getIsJoined());
+      }
+      if (other.getCourseProgress() != 0) {
+        setCourseProgress(other.getCourseProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -802,6 +835,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsJoined() {
       
       isJoined = false;
+      onChanged();
+      return this;
+    }
+
+    private int courseProgress ;
+    /**
+     * <code>int32 course_progress = 4;</code>
+     * @return The courseProgress.
+     */
+    @java.lang.Override
+    public int getCourseProgress() {
+      return courseProgress ;
+    }
+    /**
+     * <code>int32 course_progress = 4;</code>
+     * @param value The courseProgress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseProgress(int value) {
+      
+      courseProgress = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 course_progress = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseProgress() {
+      
+      courseProgress = 0;
       onChanged();
       return this;
     }
