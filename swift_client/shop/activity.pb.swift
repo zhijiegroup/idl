@@ -37,6 +37,8 @@ struct GloryApi_ActivityProduct {
 
   var productName: String = String()
 
+  var productURL: String = String()
+
   var sku: [GloryApi_Sku] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -458,7 +460,8 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     4: .standard(proto: "stock_total"),
     5: .standard(proto: "purchase_limit"),
     6: .standard(proto: "product_name"),
-    7: .same(proto: "sku"),
+    7: .standard(proto: "product_url"),
+    8: .same(proto: "sku"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -473,7 +476,8 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.productName) }()
-      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
       default: break
       }
     }
@@ -498,8 +502,11 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.productName.isEmpty {
       try visitor.visitSingularStringField(value: self.productName, fieldNumber: 6)
     }
+    if !self.productURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 7)
+    }
     if !self.sku.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 7)
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -511,6 +518,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.stockTotal != rhs.stockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
     if lhs.productName != rhs.productName {return false}
+    if lhs.productURL != rhs.productURL {return false}
     if lhs.sku != rhs.sku {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -56,25 +56,37 @@ public interface ActivityProductOrBuilder extends
       getProductNameBytes();
 
   /**
-   * <code>repeated .glory_api.Sku sku = 7;</code>
+   * <code>string product_url = 7;</code>
+   * @return The productUrl.
+   */
+  java.lang.String getProductUrl();
+  /**
+   * <code>string product_url = 7;</code>
+   * @return The bytes for productUrl.
+   */
+  com.google.protobuf.ByteString
+      getProductUrlBytes();
+
+  /**
+   * <code>repeated .glory_api.Sku sku = 8;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> 
       getSkuList();
   /**
-   * <code>repeated .glory_api.Sku sku = 7;</code>
+   * <code>repeated .glory_api.Sku sku = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index);
   /**
-   * <code>repeated .glory_api.Sku sku = 7;</code>
+   * <code>repeated .glory_api.Sku sku = 8;</code>
    */
   int getSkuCount();
   /**
-   * <code>repeated .glory_api.Sku sku = 7;</code>
+   * <code>repeated .glory_api.Sku sku = 8;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
       getSkuOrBuilderList();
   /**
-   * <code>repeated .glory_api.Sku sku = 7;</code>
+   * <code>repeated .glory_api.Sku sku = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
       int index);

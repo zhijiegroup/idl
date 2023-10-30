@@ -13,6 +13,7 @@ export interface ActivityProduct {
   stock_total?: string;
   purchase_limit?: string;
   product_name?: string;
+  product_url?: string;
   sku?: Array<sku.Sku>;
 }
 

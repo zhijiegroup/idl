@@ -25,6 +25,7 @@ class ActivityProduct extends $pb.GeneratedMessage {
     $fixnum.Int64? stockTotal,
     $fixnum.Int64? purchaseLimit,
     $core.String? productName,
+    $core.String? productUrl,
     $core.Iterable<$0.Sku>? sku,
   }) {
     final $result = create();
@@ -46,6 +47,9 @@ class ActivityProduct extends $pb.GeneratedMessage {
     if (productName != null) {
       $result.productName = productName;
     }
+    if (productUrl != null) {
+      $result.productUrl = productUrl;
+    }
     if (sku != null) {
       $result.sku.addAll(sku);
     }
@@ -62,7 +66,8 @@ class ActivityProduct extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'stockTotal')
     ..aInt64(5, _omitFieldNames ? '' : 'purchaseLimit')
     ..aOS(6, _omitFieldNames ? '' : 'productName')
-    ..pc<$0.Sku>(7, _omitFieldNames ? '' : 'sku', $pb.PbFieldType.PM, subBuilder: $0.Sku.create)
+    ..aOS(7, _omitFieldNames ? '' : 'productUrl')
+    ..pc<$0.Sku>(8, _omitFieldNames ? '' : 'sku', $pb.PbFieldType.PM, subBuilder: $0.Sku.create)
     ..hasRequiredFields = false
   ;
 
@@ -142,7 +147,16 @@ class ActivityProduct extends $pb.GeneratedMessage {
   void clearProductName() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<$0.Sku> get sku => $_getList(6);
+  $core.String get productUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set productUrl($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasProductUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProductUrl() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$0.Sku> get sku => $_getList(7);
 }
 
 class CreateActivityRequest extends $pb.GeneratedMessage {

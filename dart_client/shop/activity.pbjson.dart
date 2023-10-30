@@ -23,7 +23,8 @@ const ActivityProduct$json = {
     {'1': 'stock_total', '3': 4, '4': 1, '5': 3, '10': 'stockTotal'},
     {'1': 'purchase_limit', '3': 5, '4': 1, '5': 3, '10': 'purchaseLimit'},
     {'1': 'product_name', '3': 6, '4': 1, '5': 9, '10': 'productName'},
-    {'1': 'sku', '3': 7, '4': 3, '5': 11, '6': '.glory_api.Sku', '10': 'sku'},
+    {'1': 'product_url', '3': 7, '4': 1, '5': 9, '10': 'productUrl'},
+    {'1': 'sku', '3': 8, '4': 3, '5': 11, '6': '.glory_api.Sku', '10': 'sku'},
   ],
 };
 
@@ -33,7 +34,8 @@ final $typed_data.Uint8List activityProductDescriptor = $convert.base64Decode(
     '9pZBgCIAEoA1IFc2t1SWQSLQoScHJlZmVyZW50aWFsX3ZhbHVlGAMgASgJUhFwcmVmZXJlbnRp'
     'YWxWYWx1ZRIfCgtzdG9ja190b3RhbBgEIAEoA1IKc3RvY2tUb3RhbBIlCg5wdXJjaGFzZV9saW'
     '1pdBgFIAEoA1INcHVyY2hhc2VMaW1pdBIhCgxwcm9kdWN0X25hbWUYBiABKAlSC3Byb2R1Y3RO'
-    'YW1lEiAKA3NrdRgHIAMoCzIOLmdsb3J5X2FwaS5Ta3VSA3NrdQ==');
+    'YW1lEh8KC3Byb2R1Y3RfdXJsGAcgASgJUgpwcm9kdWN0VXJsEiAKA3NrdRgIIAMoCzIOLmdsb3'
+    'J5X2FwaS5Ta3VSA3NrdQ==');
 
 @$core.Deprecated('Use createActivityRequestDescriptor instead')
 const CreateActivityRequest$json = {
