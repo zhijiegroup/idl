@@ -13,7 +13,8 @@ message ActivityProduct {
     int64 stock_total = 4;
     int64 purchase_limit = 5;
     string product_name = 6;
-    repeated Sku sku = 7;
+    string product_url = 7;
+    repeated Sku sku = 8;
 }
 
 message CreateActivityRequest {
