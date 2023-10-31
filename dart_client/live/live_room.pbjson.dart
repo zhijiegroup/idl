@@ -579,3 +579,32 @@ final $typed_data.Uint8List liveStreamCallbackResponseDescriptor = $convert.base
     'ChpMaXZlU3RyZWFtQ2FsbGJhY2tSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 
+@$core.Deprecated('Use updateLiveCommentCountRequestDescriptor instead')
+const UpdateLiveCommentCountRequest$json = {
+  '1': 'UpdateLiveCommentCountRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 3, '10': 'roomId'},
+    {'1': 'comment_count', '3': 3, '4': 1, '5': 3, '10': 'commentCount'},
+  ],
+};
+
+/// Descriptor for `UpdateLiveCommentCountRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLiveCommentCountRequestDescriptor = $convert.base64Decode(
+    'Ch1VcGRhdGVMaXZlQ29tbWVudENvdW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdyb29tX2lkGAIgASgDUgZyb29tSWQS'
+    'IwoNY29tbWVudF9jb3VudBgDIAEoA1IMY29tbWVudENvdW50');
+
+@$core.Deprecated('Use updateLiveCommentCountResponseDescriptor instead')
+const UpdateLiveCommentCountResponse$json = {
+  '1': 'UpdateLiveCommentCountResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateLiveCommentCountResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLiveCommentCountResponseDescriptor = $convert.base64Decode(
+    'Ch5VcGRhdGVMaXZlQ29tbWVudENvdW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+

@@ -3005,6 +3005,138 @@ class LiveStreamCallbackResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class UpdateLiveCommentCountRequest extends $pb.GeneratedMessage {
+  factory UpdateLiveCommentCountRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? roomId,
+    $fixnum.Int64? commentCount,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (roomId != null) {
+      $result.roomId = roomId;
+    }
+    if (commentCount != null) {
+      $result.commentCount = commentCount;
+    }
+    return $result;
+  }
+  UpdateLiveCommentCountRequest._() : super();
+  factory UpdateLiveCommentCountRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLiveCommentCountRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLiveCommentCountRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'roomId')
+    ..aInt64(3, _omitFieldNames ? '' : 'commentCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLiveCommentCountRequest clone() => UpdateLiveCommentCountRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLiveCommentCountRequest copyWith(void Function(UpdateLiveCommentCountRequest) updates) => super.copyWith((message) => updates(message as UpdateLiveCommentCountRequest)) as UpdateLiveCommentCountRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLiveCommentCountRequest create() => UpdateLiveCommentCountRequest._();
+  UpdateLiveCommentCountRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateLiveCommentCountRequest> createRepeated() => $pb.PbList<UpdateLiveCommentCountRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLiveCommentCountRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLiveCommentCountRequest>(create);
+  static UpdateLiveCommentCountRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get roomId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set roomId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRoomId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get commentCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set commentCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCommentCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommentCount() => clearField(3);
+}
+
+class UpdateLiveCommentCountResponse extends $pb.GeneratedMessage {
+  factory UpdateLiveCommentCountResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateLiveCommentCountResponse._() : super();
+  factory UpdateLiveCommentCountResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLiveCommentCountResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLiveCommentCountResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLiveCommentCountResponse clone() => UpdateLiveCommentCountResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLiveCommentCountResponse copyWith(void Function(UpdateLiveCommentCountResponse) updates) => super.copyWith((message) => updates(message as UpdateLiveCommentCountResponse)) as UpdateLiveCommentCountResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLiveCommentCountResponse create() => UpdateLiveCommentCountResponse._();
+  UpdateLiveCommentCountResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateLiveCommentCountResponse> createRepeated() => $pb.PbList<UpdateLiveCommentCountResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLiveCommentCountResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLiveCommentCountResponse>(create);
+  static UpdateLiveCommentCountResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

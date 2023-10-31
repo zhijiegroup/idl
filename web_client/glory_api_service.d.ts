@@ -690,6 +690,10 @@ list the permissions that supported */
     request: live_room.CloseShopAllLiveRequest
   ): Promise<live_room.CloseShopAllLiveResponse>;
 
+  UpdateLiveCommentCount(
+    request: live_room.UpdateLiveCommentCountRequest
+  ): Promise<live_room.UpdateLiveCommentCountResponse>;
+
   /** live plan
 live plan crud */
   CreateLivePlan(

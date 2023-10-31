@@ -522,6 +522,9 @@ class glory_apiApi {
   $async.Future<$23.CloseShopAllLiveResponse> closeShopAllLive($pb.ClientContext? ctx, $23.CloseShopAllLiveRequest request) =>
     _client.invoke<$23.CloseShopAllLiveResponse>(ctx, 'glory_api', 'CloseShopAllLive', request, $23.CloseShopAllLiveResponse())
   ;
+  $async.Future<$23.UpdateLiveCommentCountResponse> updateLiveCommentCount($pb.ClientContext? ctx, $23.UpdateLiveCommentCountRequest request) =>
+    _client.invoke<$23.UpdateLiveCommentCountResponse>(ctx, 'glory_api', 'UpdateLiveCommentCount', request, $23.UpdateLiveCommentCountResponse())
+  ;
   $async.Future<$24.CreateLivePlanResponse> createLivePlan($pb.ClientContext? ctx, $24.CreateLivePlanRequest request) =>
     _client.invoke<$24.CreateLivePlanResponse>(ctx, 'glory_api', 'CreateLivePlan', request, $24.CreateLivePlanResponse())
   ;

@@ -219,6 +219,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$14.ListAttachmentResponse> listActiveRoomUser($pb.ServerContext ctx, $26.ListActiveRoomUserRequest request);
   $async.Future<$23.LiveSSEResponse> liveSSE($pb.ServerContext ctx, $23.LiveSSERequest request);
   $async.Future<$23.CloseShopAllLiveResponse> closeShopAllLive($pb.ServerContext ctx, $23.CloseShopAllLiveRequest request);
+  $async.Future<$23.UpdateLiveCommentCountResponse> updateLiveCommentCount($pb.ServerContext ctx, $23.UpdateLiveCommentCountRequest request);
   $async.Future<$24.CreateLivePlanResponse> createLivePlan($pb.ServerContext ctx, $24.CreateLivePlanRequest request);
   $async.Future<$24.GetLivePlanResponse> getLivePlan($pb.ServerContext ctx, $24.GetLivePlanRequest request);
   $async.Future<$24.UpdateLivePlanResponse> updateLivePlan($pb.ServerContext ctx, $24.UpdateLivePlanRequest request);
@@ -526,6 +527,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListActiveRoomUser': return $26.ListActiveRoomUserRequest();
       case 'LiveSSE': return $23.LiveSSERequest();
       case 'CloseShopAllLive': return $23.CloseShopAllLiveRequest();
+      case 'UpdateLiveCommentCount': return $23.UpdateLiveCommentCountRequest();
       case 'CreateLivePlan': return $24.CreateLivePlanRequest();
       case 'GetLivePlan': return $24.GetLivePlanRequest();
       case 'UpdateLivePlan': return $24.UpdateLivePlanRequest();
@@ -836,6 +838,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListActiveRoomUser': return this.listActiveRoomUser(ctx, request as $26.ListActiveRoomUserRequest);
       case 'LiveSSE': return this.liveSSE(ctx, request as $23.LiveSSERequest);
       case 'CloseShopAllLive': return this.closeShopAllLive(ctx, request as $23.CloseShopAllLiveRequest);
+      case 'UpdateLiveCommentCount': return this.updateLiveCommentCount(ctx, request as $23.UpdateLiveCommentCountRequest);
       case 'CreateLivePlan': return this.createLivePlan(ctx, request as $24.CreateLivePlanRequest);
       case 'GetLivePlan': return this.getLivePlan(ctx, request as $24.GetLivePlanRequest);
       case 'UpdateLivePlan': return this.updateLivePlan(ctx, request as $24.UpdateLivePlanRequest);

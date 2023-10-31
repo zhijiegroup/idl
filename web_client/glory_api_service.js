@@ -1278,6 +1278,14 @@ export class glory_api {
     );
   }
 
+  UpdateLiveCommentCount(request) {
+    const uri = `${this.uriPrefix}/api/live/update_live_comment_count`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateLivePlan(request) {
     const uri = `${this.uriPrefix}/api/live/create_live_plan`;
     const body = JSONbigint.stringify(request);

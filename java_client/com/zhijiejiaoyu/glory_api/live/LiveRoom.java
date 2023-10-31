@@ -179,6 +179,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_LiveStreamCallbackResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateLiveCommentCountRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateLiveCommentCountRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateLiveCommentCountResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateLiveCommentCountResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -287,8 +297,13 @@ public final class LiveRoom {
       "me\030\006 \001(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t\022" +
       "\016\n\006height\030\t \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveSt" +
       "reamCallbackResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponseB#\n\037com.zhijiejiaoyu." +
-      "glory_api.liveP\001b\006proto3"
+      "\022.base.BaseResponse\"p\n\035UpdateLiveComment" +
+      "CountRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcommen" +
+      "t_count\030\003 \001(\003\"G\n\036UpdateLiveCommentCountR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponseB#\n\037com.zhijiejiaoyu.glory_api.liv" +
+      "eP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -492,6 +507,18 @@ public final class LiveRoom {
     internal_static_glory_api_LiveStreamCallbackResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveStreamCallbackResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateLiveCommentCountRequest_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_glory_api_UpdateLiveCommentCountRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateLiveCommentCountRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RoomId", "CommentCount", });
+    internal_static_glory_api_UpdateLiveCommentCountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_UpdateLiveCommentCountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateLiveCommentCountResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

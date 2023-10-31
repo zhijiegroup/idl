@@ -239,3 +239,13 @@ export interface LiveStreamCallbackRequest {
 export interface LiveStreamCallbackResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface UpdateLiveCommentCountRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+  comment_count?: string;
+}
+
+export interface UpdateLiveCommentCountResponse {
+  base_resp?: base.BaseResponse;
+}
