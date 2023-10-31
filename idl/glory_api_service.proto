@@ -615,6 +615,9 @@ service glory_api {
   rpc CloseShopAllLive(CloseShopAllLiveRequest) returns (CloseShopAllLiveResponse) {
     option (api.post) = '/api/live/close_shop_live';
   }
+  rpc UpdateLiveCommentCount(UpdateLiveCommentCountRequest) returns (UpdateLiveCommentCountResponse) {
+    option (api.post) = '/api/live/update_live_comment_count';
+  }
 
   // live plan
   // live plan crud
