@@ -226,6 +226,16 @@ message LiveStreamCallbackResponse{
   base.BaseResponse base_resp = 1;
 }
 
+message UpdateLiveCommentCountRequest {
+  base.BaseRequest base_request = 1;
+  int64 room_id = 2;
+  int64 comment_count = 3;
+}
+
+message UpdateLiveCommentCountResponse{
+  base.BaseResponse base_resp = 1;
+}
+
 
 
 
