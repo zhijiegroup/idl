@@ -50,6 +50,7 @@ import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
+import * as job from "./course/job";
 import * as app from "./app/app";
 export {
   user,
@@ -98,6 +99,7 @@ export {
   user_course,
   teaching_plan,
   edu_scheme,
+  job,
   app,
 };
 
@@ -2410,6 +2412,38 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/app/get_android_qrcode${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  CreateJob(request) {
+    const uri = `${this.uriPrefix}/api/course/create_job`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateJob(request) {
+    const uri = `${this.uriPrefix}/api/course/update_job`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteJob(request) {
+    const uri = `${this.uriPrefix}/api/course/delete_job`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListJob(request) {
+    const uri = `${this.uriPrefix}/api/course/list_job`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 }
 

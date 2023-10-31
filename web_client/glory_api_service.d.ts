@@ -48,6 +48,7 @@ import * as graph from "./course/graph";
 import * as user_course from "./course/user_course";
 import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
+import * as job from "./course/job";
 import * as app from "./app/app";
 export {
   user,
@@ -96,6 +97,7 @@ export {
   user_course,
   teaching_plan,
   edu_scheme,
+  job,
   app,
 };
 
@@ -1355,6 +1357,15 @@ CreateLivePlanProduct create live plan product */
   GetAndroidQRcode(
     request: app.GetAndroidQRCodeRequest
   ): Promise<app.GetAndroidQRCodeResponse>;
+
+  /** 工作岗位 */
+  CreateJob(request: job.CreateJobRequest): Promise<job.CreateJobResponse>;
+
+  UpdateJob(request: job.UpdateJobRequest): Promise<job.UpdateJobResponse>;
+
+  DeleteJob(request: job.DeleteJobRequest): Promise<job.DeleteJobResponse>;
+
+  ListJob(request: job.ListJobRequest): Promise<job.ListJobResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

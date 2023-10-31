@@ -23,6 +23,7 @@ import 'course/cmodule.pb.dart' as $39;
 import 'course/course.pb.dart' as $38;
 import 'course/edu_scheme.pb.dart' as $44;
 import 'course/graph.pb.dart' as $41;
+import 'course/job.pb.dart' as $46;
 import 'course/material.pb.dart' as $36;
 import 'course/module.pb.dart' as $37;
 import 'course/nmodule.pb.dart' as $40;
@@ -964,6 +965,18 @@ class glory_apiApi {
   ;
   $async.Future<$45.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ClientContext? ctx, $45.GetAndroidQRCodeRequest request) =>
     _client.invoke<$45.GetAndroidQRCodeResponse>(ctx, 'glory_api', 'GetAndroidQRcode', request, $45.GetAndroidQRCodeResponse())
+  ;
+  $async.Future<$46.CreateJobResponse> createJob($pb.ClientContext? ctx, $46.CreateJobRequest request) =>
+    _client.invoke<$46.CreateJobResponse>(ctx, 'glory_api', 'CreateJob', request, $46.CreateJobResponse())
+  ;
+  $async.Future<$46.UpdateJobResponse> updateJob($pb.ClientContext? ctx, $46.UpdateJobRequest request) =>
+    _client.invoke<$46.UpdateJobResponse>(ctx, 'glory_api', 'UpdateJob', request, $46.UpdateJobResponse())
+  ;
+  $async.Future<$46.DeleteJobResponse> deleteJob($pb.ClientContext? ctx, $46.DeleteJobRequest request) =>
+    _client.invoke<$46.DeleteJobResponse>(ctx, 'glory_api', 'DeleteJob', request, $46.DeleteJobResponse())
+  ;
+  $async.Future<$46.ListJobResponse> listJob($pb.ClientContext? ctx, $46.ListJobRequest request) =>
+    _client.invoke<$46.ListJobResponse>(ctx, 'glory_api', 'ListJob', request, $46.ListJobResponse())
   ;
 }
 

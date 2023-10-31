@@ -9315,6 +9315,130 @@ public final class glory_apiGrpc {
     return getGetAndroidQRcodeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateJobRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateJobResponse> getCreateJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateJob",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateJobRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateJobRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateJobResponse> getCreateJobMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateJobRequest, com.zhijiejiaoyu.glory_api.course.CreateJobResponse> getCreateJobMethod;
+    if ((getCreateJobMethod = glory_apiGrpc.getCreateJobMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateJobMethod = glory_apiGrpc.getCreateJobMethod) == null) {
+          glory_apiGrpc.getCreateJobMethod = getCreateJobMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateJobRequest, com.zhijiejiaoyu.glory_api.course.CreateJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateJob"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateJob"))
+              .build();
+        }
+      }
+    }
+    return getCreateJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateJobRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> getUpdateJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateJob",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateJobRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateJobRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> getUpdateJobMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateJobRequest, com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> getUpdateJobMethod;
+    if ((getUpdateJobMethod = glory_apiGrpc.getUpdateJobMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateJobMethod = glory_apiGrpc.getUpdateJobMethod) == null) {
+          glory_apiGrpc.getUpdateJobMethod = getUpdateJobMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateJobRequest, com.zhijiejiaoyu.glory_api.course.UpdateJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateJob"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateJob"))
+              .build();
+        }
+      }
+    }
+    return getUpdateJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteJobRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> getDeleteJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteJob",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteJobRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteJobRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> getDeleteJobMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteJobRequest, com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> getDeleteJobMethod;
+    if ((getDeleteJobMethod = glory_apiGrpc.getDeleteJobMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteJobMethod = glory_apiGrpc.getDeleteJobMethod) == null) {
+          glory_apiGrpc.getDeleteJobMethod = getDeleteJobMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteJobRequest, com.zhijiejiaoyu.glory_api.course.DeleteJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteJob"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteJob"))
+              .build();
+        }
+      }
+    }
+    return getDeleteJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListJobRequest,
+      com.zhijiejiaoyu.glory_api.course.ListJobResponse> getListJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListJob",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListJobRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListJobRequest,
+      com.zhijiejiaoyu.glory_api.course.ListJobResponse> getListJobMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListJobRequest, com.zhijiejiaoyu.glory_api.course.ListJobResponse> getListJobMethod;
+    if ((getListJobMethod = glory_apiGrpc.getListJobMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListJobMethod = glory_apiGrpc.getListJobMethod) == null) {
+          glory_apiGrpc.getListJobMethod = getListJobMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListJobRequest, com.zhijiejiaoyu.glory_api.course.ListJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListJob"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListJob"))
+              .build();
+        }
+      }
+    }
+    return getListJobMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -11767,6 +11891,37 @@ public final class glory_apiGrpc {
     default void getAndroidQRcode(com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAndroidQRcodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 工作岗位
+     * </pre>
+     */
+    default void createJob(com.zhijiejiaoyu.glory_api.course.CreateJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateJob(com.zhijiejiaoyu.glory_api.course.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteJob(com.zhijiejiaoyu.glory_api.course.DeleteJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listJob(com.zhijiejiaoyu.glory_api.course.ListJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobMethod(), responseObserver);
     }
   }
 
@@ -14502,6 +14657,41 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAndroidQRcodeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 工作岗位
+     * </pre>
+     */
+    public void createJob(com.zhijiejiaoyu.glory_api.course.CreateJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateJob(com.zhijiejiaoyu.glory_api.course.UpdateJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteJob(com.zhijiejiaoyu.glory_api.course.DeleteJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listJob(com.zhijiejiaoyu.glory_api.course.ListJobRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListJobMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -16924,6 +17114,37 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse getAndroidQRcode(com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAndroidQRcodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 工作岗位
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateJobResponse createJob(com.zhijiejiaoyu.glory_api.course.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateJobResponse updateJob(com.zhijiejiaoyu.glory_api.course.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteJobResponse deleteJob(com.zhijiejiaoyu.glory_api.course.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListJobResponse listJob(com.zhijiejiaoyu.glory_api.course.ListJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobMethod(), getCallOptions(), request);
     }
   }
 
@@ -19648,6 +19869,41 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAndroidQRcodeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 工作岗位
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateJobResponse> createJob(
+        com.zhijiejiaoyu.glory_api.course.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateJobResponse> updateJob(
+        com.zhijiejiaoyu.glory_api.course.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteJobResponse> deleteJob(
+        com.zhijiejiaoyu.glory_api.course.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListJobResponse> listJob(
+        com.zhijiejiaoyu.glory_api.course.ListJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListJobMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -19950,6 +20206,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 297;
   private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 298;
   private static final int METHODID_GET_ANDROID_QRCODE = 299;
+  private static final int METHODID_CREATE_JOB = 300;
+  private static final int METHODID_UPDATE_JOB = 301;
+  private static final int METHODID_DELETE_JOB = 302;
+  private static final int METHODID_LIST_JOB = 303;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21167,6 +21427,22 @@ public final class glory_apiGrpc {
         case METHODID_GET_ANDROID_QRCODE:
           serviceImpl.getAndroidQRcode((com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_JOB:
+          serviceImpl.createJob((com.zhijiejiaoyu.glory_api.course.CreateJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateJobResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_JOB:
+          serviceImpl.updateJob((com.zhijiejiaoyu.glory_api.course.UpdateJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateJobResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_JOB:
+          serviceImpl.deleteJob((com.zhijiejiaoyu.glory_api.course.DeleteJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteJobResponse>) responseObserver);
+          break;
+        case METHODID_LIST_JOB:
+          serviceImpl.listJob((com.zhijiejiaoyu.glory_api.course.ListJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListJobResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -23286,6 +23562,34 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeRequest,
               com.zhijiejiaoyu.glory_api.course.GetAndroidQRCodeResponse>(
                 service, METHODID_GET_ANDROID_QRCODE)))
+        .addMethod(
+          getCreateJobMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateJobRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateJobResponse>(
+                service, METHODID_CREATE_JOB)))
+        .addMethod(
+          getUpdateJobMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateJobRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateJobResponse>(
+                service, METHODID_UPDATE_JOB)))
+        .addMethod(
+          getDeleteJobMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteJobRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteJobResponse>(
+                service, METHODID_DELETE_JOB)))
+        .addMethod(
+          getListJobMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListJobRequest,
+              com.zhijiejiaoyu.glory_api.course.ListJobResponse>(
+                service, METHODID_LIST_JOB)))
         .build();
   }
 
@@ -23634,6 +23938,10 @@ public final class glory_apiGrpc {
               .addMethod(getDistributeEduSchemeMethod())
               .addMethod(getGetEduSchemeLikeCourseMethod())
               .addMethod(getGetAndroidQRcodeMethod())
+              .addMethod(getCreateJobMethod())
+              .addMethod(getUpdateJobMethod())
+              .addMethod(getDeleteJobMethod())
+              .addMethod(getListJobMethod())
               .build();
         }
       }

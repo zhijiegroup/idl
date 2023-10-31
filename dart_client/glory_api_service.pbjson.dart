@@ -18,11 +18,12 @@ import 'admin/admin_tenant.pbjson.dart' as $18;
 import 'admin/admin_user.pbjson.dart' as $19;
 import 'admin/config.pbjson.dart' as $17;
 import 'app/app.pbjson.dart' as $45;
-import 'base.pbjson.dart' as $46;
+import 'base.pbjson.dart' as $47;
 import 'course/cmodule.pbjson.dart' as $39;
 import 'course/course.pbjson.dart' as $38;
 import 'course/edu_scheme.pbjson.dart' as $44;
 import 'course/graph.pbjson.dart' as $41;
+import 'course/job.pbjson.dart' as $46;
 import 'course/material.pbjson.dart' as $36;
 import 'course/module.pbjson.dart' as $37;
 import 'course/nmodule.pbjson.dart' as $40;
@@ -364,26 +365,30 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'DistributeEduScheme', '2': '.glory_api.DistributeEduSchemeRequest', '3': '.glory_api.DistributeEduSchemeResponse', '4': {}},
     {'1': 'GetEduSchemeLikeCourse', '2': '.glory_api.GetEduSchemeLikeCourseRequest', '3': '.glory_api.GetEduSchemeLikeCourseResponse', '4': {}},
     {'1': 'GetAndroidQRcode', '2': '.glory_api.GetAndroidQRCodeRequest', '3': '.glory_api.GetAndroidQRCodeResponse', '4': {}},
+    {'1': 'CreateJob', '2': '.glory_api.CreateJobRequest', '3': '.glory_api.CreateJobResponse', '4': {}},
+    {'1': 'UpdateJob', '2': '.glory_api.UpdateJobRequest', '3': '.glory_api.UpdateJobResponse', '4': {}},
+    {'1': 'DeleteJob', '2': '.glory_api.DeleteJobRequest', '3': '.glory_api.DeleteJobResponse', '4': {}},
+    {'1': 'ListJob', '2': '.glory_api.ListJobRequest', '3': '.glory_api.ListJobResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $46.BaseRequest$json,
+  '.base.BaseRequest': $47.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $46.BaseResponse$json,
+  '.base.BaseResponse': $47.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $46.AuthorInfo$json,
+  '.base.AuthorInfo': $47.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $46.PaginationRequest$json,
+  '.base.PaginationRequest': $47.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $46.PaginationResponse$json,
+  '.base.PaginationResponse': $47.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1133,6 +1138,15 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetEduSchemeLikeCourseResponse': $44.GetEduSchemeLikeCourseResponse$json,
   '.glory_api.GetAndroidQRCodeRequest': $45.GetAndroidQRCodeRequest$json,
   '.glory_api.GetAndroidQRCodeResponse': $45.GetAndroidQRCodeResponse$json,
+  '.glory_api.CreateJobRequest': $46.CreateJobRequest$json,
+  '.glory_api.CreateJobResponse': $46.CreateJobResponse$json,
+  '.glory_api.UpdateJobRequest': $46.UpdateJobRequest$json,
+  '.glory_api.UpdateJobResponse': $46.UpdateJobResponse$json,
+  '.glory_api.DeleteJobRequest': $46.DeleteJobRequest$json,
+  '.glory_api.DeleteJobResponse': $46.DeleteJobResponse$json,
+  '.glory_api.ListJobRequest': $46.ListJobRequest$json,
+  '.glory_api.ListJobResponse': $46.ListJobResponse$json,
+  '.glory_api.Job': $46.Job$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1805,5 +1819,12 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'Nwb25zZSIq0sEYJi9hcGkvY291cnNlL2dldF9lZHVfc2NoZW1lX2xpa2VfY291cnNlEnwKEEdl'
     'dEFuZHJvaWRRUmNvZGUSIi5nbG9yeV9hcGkuR2V0QW5kcm9pZFFSQ29kZVJlcXVlc3QaIy5nbG'
     '9yeV9hcGkuR2V0QW5kcm9pZFFSQ29kZVJlc3BvbnNlIh/KwRgbL2FwaS9hcHAvZ2V0X2FuZHJv'
-    'aWRfcXJjb2Rl');
+    'aWRfcXJjb2RlEmIKCUNyZWF0ZUpvYhIbLmdsb3J5X2FwaS5DcmVhdGVKb2JSZXF1ZXN0GhwuZ2'
+    'xvcnlfYXBpLkNyZWF0ZUpvYlJlc3BvbnNlIhrSwRgWL2FwaS9jb3Vyc2UvY3JlYXRlX2pvYhJi'
+    'CglVcGRhdGVKb2ISGy5nbG9yeV9hcGkuVXBkYXRlSm9iUmVxdWVzdBocLmdsb3J5X2FwaS5VcG'
+    'RhdGVKb2JSZXNwb25zZSIa0sEYFi9hcGkvY291cnNlL3VwZGF0ZV9qb2ISYgoJRGVsZXRlSm9i'
+    'EhsuZ2xvcnlfYXBpLkRlbGV0ZUpvYlJlcXVlc3QaHC5nbG9yeV9hcGkuRGVsZXRlSm9iUmVzcG'
+    '9uc2UiGtLBGBYvYXBpL2NvdXJzZS9kZWxldGVfam9iEloKB0xpc3RKb2ISGS5nbG9yeV9hcGku'
+    'TGlzdEpvYlJlcXVlc3QaGi5nbG9yeV9hcGkuTGlzdEpvYlJlc3BvbnNlIhjSwRgUL2FwaS9jb3'
+    'Vyc2UvbGlzdF9qb2I=');
 

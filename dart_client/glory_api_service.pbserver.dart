@@ -24,6 +24,7 @@ import 'course/cmodule.pb.dart' as $39;
 import 'course/course.pb.dart' as $38;
 import 'course/edu_scheme.pb.dart' as $44;
 import 'course/graph.pb.dart' as $41;
+import 'course/job.pb.dart' as $46;
 import 'course/material.pb.dart' as $36;
 import 'course/module.pb.dart' as $37;
 import 'course/nmodule.pb.dart' as $40;
@@ -366,6 +367,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$44.DistributeEduSchemeResponse> distributeEduScheme($pb.ServerContext ctx, $44.DistributeEduSchemeRequest request);
   $async.Future<$44.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse($pb.ServerContext ctx, $44.GetEduSchemeLikeCourseRequest request);
   $async.Future<$45.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ServerContext ctx, $45.GetAndroidQRCodeRequest request);
+  $async.Future<$46.CreateJobResponse> createJob($pb.ServerContext ctx, $46.CreateJobRequest request);
+  $async.Future<$46.UpdateJobResponse> updateJob($pb.ServerContext ctx, $46.UpdateJobRequest request);
+  $async.Future<$46.DeleteJobResponse> deleteJob($pb.ServerContext ctx, $46.DeleteJobRequest request);
+  $async.Future<$46.ListJobResponse> listJob($pb.ServerContext ctx, $46.ListJobRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -669,6 +674,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DistributeEduScheme': return $44.DistributeEduSchemeRequest();
       case 'GetEduSchemeLikeCourse': return $44.GetEduSchemeLikeCourseRequest();
       case 'GetAndroidQRcode': return $45.GetAndroidQRCodeRequest();
+      case 'CreateJob': return $46.CreateJobRequest();
+      case 'UpdateJob': return $46.UpdateJobRequest();
+      case 'DeleteJob': return $46.DeleteJobRequest();
+      case 'ListJob': return $46.ListJobRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -975,6 +984,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DistributeEduScheme': return this.distributeEduScheme(ctx, request as $44.DistributeEduSchemeRequest);
       case 'GetEduSchemeLikeCourse': return this.getEduSchemeLikeCourse(ctx, request as $44.GetEduSchemeLikeCourseRequest);
       case 'GetAndroidQRcode': return this.getAndroidQRcode(ctx, request as $45.GetAndroidQRCodeRequest);
+      case 'CreateJob': return this.createJob(ctx, request as $46.CreateJobRequest);
+      case 'UpdateJob': return this.updateJob(ctx, request as $46.UpdateJobRequest);
+      case 'DeleteJob': return this.deleteJob(ctx, request as $46.DeleteJobRequest);
+      case 'ListJob': return this.listJob(ctx, request as $46.ListJobRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
