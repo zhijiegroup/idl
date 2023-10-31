@@ -50,6 +50,7 @@ import "course/graph.proto";
 import "course/user_course.proto";
 import "course/teaching_plan.proto";
 import "course/edu_scheme.proto";
+import "course/job.proto";
 import "app/app.proto";
 
 service glory_api {
@@ -1201,5 +1202,19 @@ service glory_api {
   // app下载
   rpc GetAndroidQRcode(GetAndroidQRCodeRequest) returns (GetAndroidQRCodeResponse) {
     option (api.get) = '/api/app/get_android_qrcode';
+  }
+
+  // 工作岗位
+  rpc CreateJob(CreateJobRequest) returns (CreateJobResponse) {
+    option (api.post) = '/api/course/create_job';
+  }
+  rpc UpdateJob(UpdateJobRequest) returns (UpdateJobResponse) {
+    option (api.post) = '/api/course/update_job';
+  }
+  rpc DeleteJob(DeleteJobRequest) returns (DeleteJobResponse) {
+    option (api.post) = '/api/course/delete_job';
+  }
+  rpc ListJob(ListJobRequest) returns (ListJobResponse) {
+    option (api.post) = '/api/course/list_job';
   }
 }
