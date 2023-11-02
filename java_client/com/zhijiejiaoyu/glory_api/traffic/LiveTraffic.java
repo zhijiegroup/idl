@@ -74,12 +74,13 @@ public final class LiveTraffic {
       "quest\022\021\n\ttenant_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
       "\013\n\003end\030\004 \001(\003\"I\n\025SchooLiveTrafficChart\022\014\n" +
       "\004date\030\001 \001(\t\022\017\n\007traffic\030\002 \001(\003\022\021\n\ttimestam" +
-      "p\030\003 \001(\003\"\237\001\n!GetSchoolLiveTrafficChartRes" +
+      "p\030\003 \001(\003\"\272\001\n!GetSchoolLiveTrafficChartRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022\025\n\rtotal_traffic\030\002 \001(\003\022<\n\022live_traf" +
-      "fic_chart\030\003 \003(\0132 .glory_api.SchooLiveTra" +
-      "fficChartB&\n\"com.zhijiejiaoyu.glory_api." +
-      "trafficP\001b\006proto3"
+      "onse\022\025\n\rtotal_traffic\030\002 \001(\003\022\031\n\021ali_total" +
+      "_traffic\030\003 \001(\003\022<\n\022live_traffic_chart\030\004 \003" +
+      "(\0132 .glory_api.SchooLiveTrafficChartB&\n\"" +
+      "com.zhijiejiaoyu.glory_api.trafficP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -121,7 +122,7 @@ public final class LiveTraffic {
     internal_static_glory_api_GetSchoolLiveTrafficChartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSchoolLiveTrafficChartResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TotalTraffic", "LiveTrafficChart", });
+        new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", "LiveTrafficChart", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

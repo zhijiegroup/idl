@@ -169,6 +169,8 @@ struct GloryApi_GetSchoolLiveTrafficChartResponse {
 
   var totalTraffic: Int64 = 0
 
+  var aliTotalTraffic: Int64 = 0
+
   var liveTrafficChart: [GloryApi_SchooLiveTrafficChart] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -482,7 +484,8 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "total_traffic"),
-    3: .standard(proto: "live_traffic_chart"),
+    3: .standard(proto: "ali_total_traffic"),
+    4: .standard(proto: "live_traffic_chart"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -493,7 +496,8 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.totalTraffic) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.liveTrafficChart) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.aliTotalTraffic) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.liveTrafficChart) }()
       default: break
       }
     }
@@ -510,8 +514,11 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
     if self.totalTraffic != 0 {
       try visitor.visitSingularInt64Field(value: self.totalTraffic, fieldNumber: 2)
     }
+    if self.aliTotalTraffic != 0 {
+      try visitor.visitSingularInt64Field(value: self.aliTotalTraffic, fieldNumber: 3)
+    }
     if !self.liveTrafficChart.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.liveTrafficChart, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.liveTrafficChart, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -519,6 +526,7 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
   static func ==(lhs: GloryApi_GetSchoolLiveTrafficChartResponse, rhs: GloryApi_GetSchoolLiveTrafficChartResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.totalTraffic != rhs.totalTraffic {return false}
+    if lhs.aliTotalTraffic != rhs.aliTotalTraffic {return false}
     if lhs.liveTrafficChart != rhs.liveTrafficChart {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

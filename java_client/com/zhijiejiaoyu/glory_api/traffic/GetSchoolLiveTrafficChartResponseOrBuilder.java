@@ -29,25 +29,31 @@ public interface GetSchoolLiveTrafficChartResponseOrBuilder extends
   long getTotalTraffic();
 
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>int64 ali_total_traffic = 3;</code>
+   * @return The aliTotalTraffic.
+   */
+  long getAliTotalTraffic();
+
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> 
       getLiveTrafficChartList();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index);
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   int getLiveTrafficChartCount();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
       getLiveTrafficChartOrBuilderList();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
       int index);

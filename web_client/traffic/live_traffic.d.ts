@@ -47,5 +47,6 @@ export interface SchooLiveTrafficChart {
 export interface GetSchoolLiveTrafficChartResponse {
   base_resp?: base.BaseResponse;
   total_traffic?: string;
+  ali_total_traffic?: string;
   live_traffic_chart?: Array<SchooLiveTrafficChart>;
 }

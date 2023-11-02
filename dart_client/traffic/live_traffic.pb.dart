@@ -538,6 +538,7 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
   factory GetSchoolLiveTrafficChartResponse({
     $0.BaseResponse? baseResp,
     $fixnum.Int64? totalTraffic,
+    $fixnum.Int64? aliTotalTraffic,
     $core.Iterable<SchooLiveTrafficChart>? liveTrafficChart,
   }) {
     final $result = create();
@@ -546,6 +547,9 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
     }
     if (totalTraffic != null) {
       $result.totalTraffic = totalTraffic;
+    }
+    if (aliTotalTraffic != null) {
+      $result.aliTotalTraffic = aliTotalTraffic;
     }
     if (liveTrafficChart != null) {
       $result.liveTrafficChart.addAll(liveTrafficChart);
@@ -559,7 +563,8 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSchoolLiveTrafficChartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'totalTraffic')
-    ..pc<SchooLiveTrafficChart>(3, _omitFieldNames ? '' : 'liveTrafficChart', $pb.PbFieldType.PM, subBuilder: SchooLiveTrafficChart.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'aliTotalTraffic')
+    ..pc<SchooLiveTrafficChart>(4, _omitFieldNames ? '' : 'liveTrafficChart', $pb.PbFieldType.PM, subBuilder: SchooLiveTrafficChart.create)
     ..hasRequiredFields = false
   ;
 
@@ -605,7 +610,16 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
   void clearTotalTraffic() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<SchooLiveTrafficChart> get liveTrafficChart => $_getList(2);
+  $fixnum.Int64 get aliTotalTraffic => $_getI64(2);
+  @$pb.TagNumber(3)
+  set aliTotalTraffic($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAliTotalTraffic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAliTotalTraffic() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<SchooLiveTrafficChart> get liveTrafficChart => $_getList(3);
 }
 
 

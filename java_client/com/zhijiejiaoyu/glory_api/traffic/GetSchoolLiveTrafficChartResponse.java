@@ -68,7 +68,12 @@ private static final long serialVersionUID = 0L;
             totalTraffic = input.readInt64();
             break;
           }
-          case 26: {
+          case 24: {
+
+            aliTotalTraffic = input.readInt64();
+            break;
+          }
+          case 34: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               liveTrafficChart = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart>();
               mutable_bitField0_ |= 0x00000001;
@@ -149,17 +154,28 @@ private static final long serialVersionUID = 0L;
     return totalTraffic ;
   }
 
-  public static final int LIVE_TRAFFIC_CHART_FIELD_NUMBER = 3;
+  public static final int ALI_TOTAL_TRAFFIC_FIELD_NUMBER = 3;
+  private long aliTotalTraffic ;
+  /**
+   * <code>int64 ali_total_traffic = 3;</code>
+   * @return The aliTotalTraffic.
+   */
+  @java.lang.Override
+  public long getAliTotalTraffic() {
+    return aliTotalTraffic ;
+  }
+
+  public static final int LIVE_TRAFFIC_CHART_FIELD_NUMBER = 4;
   private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> liveTrafficChart ;
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getLiveTrafficChartList() {
     return liveTrafficChart ;
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
@@ -167,21 +183,21 @@ private static final long serialVersionUID = 0L;
     return liveTrafficChart ;
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   @java.lang.Override
   public int getLiveTrafficChartCount() {
     return liveTrafficChart .size();
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index) {
     return liveTrafficChart .get(index);
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
@@ -209,8 +225,11 @@ private static final long serialVersionUID = 0L;
     if (totalTraffic != 0L) {
       output.writeInt64(2, totalTraffic );
     }
+    if (aliTotalTraffic != 0L) {
+      output.writeInt64(3, aliTotalTraffic );
+    }
     for (int i = 0; i < liveTrafficChart .size(); i++) {
-      output.writeMessage(3, liveTrafficChart .get(i));
+      output.writeMessage(4, liveTrafficChart .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -229,9 +248,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, totalTraffic );
     }
+    if (aliTotalTraffic != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, aliTotalTraffic );
+    }
     for (int i = 0; i < liveTrafficChart .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, liveTrafficChart .get(i));
+        .computeMessageSize(4, liveTrafficChart .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -255,6 +278,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTotalTraffic()
         != other.getTotalTraffic()) return false;
+    if (getAliTotalTraffic()
+        != other.getAliTotalTraffic()) return false;
     if (!getLiveTrafficChartList()
         .equals(other.getLiveTrafficChartList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -275,6 +300,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TOTAL_TRAFFIC_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTotalTraffic());
+    hash = (37 * hash) + ALI_TOTAL_TRAFFIC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAliTotalTraffic());
     if (getLiveTrafficChartCount() > 0) {
       hash = (37 * hash) + LIVE_TRAFFIC_CHART_FIELD_NUMBER;
       hash = (53 * hash) + getLiveTrafficChartList().hashCode();
@@ -421,6 +449,8 @@ private static final long serialVersionUID = 0L;
       }
       totalTraffic = 0L;
 
+      aliTotalTraffic = 0L;
+
       if (liveTrafficChartBuilder == null) {
         liveTrafficChart = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -460,6 +490,7 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder .build();
       }
       result.totalTraffic = totalTraffic ;
+      result.aliTotalTraffic = aliTotalTraffic ;
       if (liveTrafficChartBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           liveTrafficChart = java.util.Collections.unmodifiableList(liveTrafficChart );
@@ -522,6 +553,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTotalTraffic() != 0L) {
         setTotalTraffic(other.getTotalTraffic());
+      }
+      if (other.getAliTotalTraffic() != 0L) {
+        setAliTotalTraffic(other.getAliTotalTraffic());
       }
       if (liveTrafficChartBuilder == null) {
         if (!other.liveTrafficChart .isEmpty()) {
@@ -729,6 +763,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long aliTotalTraffic ;
+    /**
+     * <code>int64 ali_total_traffic = 3;</code>
+     * @return The aliTotalTraffic.
+     */
+    @java.lang.Override
+    public long getAliTotalTraffic() {
+      return aliTotalTraffic ;
+    }
+    /**
+     * <code>int64 ali_total_traffic = 3;</code>
+     * @param value The aliTotalTraffic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAliTotalTraffic(long value) {
+      
+      aliTotalTraffic = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 ali_total_traffic = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAliTotalTraffic() {
+      
+      aliTotalTraffic = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> liveTrafficChart =
       java.util.Collections.emptyList();
     private void ensureLiveTrafficChartIsMutable() {
@@ -742,7 +807,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> liveTrafficChartBuilder ;
 
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getLiveTrafficChartList() {
       if (liveTrafficChartBuilder == null) {
@@ -752,7 +817,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public int getLiveTrafficChartCount() {
       if (liveTrafficChartBuilder == null) {
@@ -762,7 +827,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index) {
       if (liveTrafficChartBuilder == null) {
@@ -772,7 +837,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder setLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
@@ -789,7 +854,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder setLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -803,7 +868,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder addLiveTrafficChart(com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
       if (liveTrafficChartBuilder == null) {
@@ -819,7 +884,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder addLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
@@ -836,7 +901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder addLiveTrafficChart(
         com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -850,7 +915,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder addLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -864,7 +929,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder addAllLiveTrafficChart(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> values) {
@@ -879,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder clearLiveTrafficChart() {
       if (liveTrafficChartBuilder == null) {
@@ -892,7 +957,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public Builder removeLiveTrafficChart(int index) {
       if (liveTrafficChartBuilder == null) {
@@ -905,14 +970,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder getLiveTrafficChartBuilder(
         int index) {
       return getLiveTrafficChartFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
         int index) {
@@ -922,7 +987,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
          getLiveTrafficChartOrBuilderList() {
@@ -933,14 +998,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addLiveTrafficChartBuilder() {
       return getLiveTrafficChartFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addLiveTrafficChartBuilder(
         int index) {
@@ -948,7 +1013,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder> 
          getLiveTrafficChartBuilderList() {
