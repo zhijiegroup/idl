@@ -72,11 +72,12 @@ public final class LiveTraffic {
       "ay\030\n \001(\003\"z\n GetSchoolLiveTrafficChartReq" +
       "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
       "quest\022\021\n\ttenant_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022" +
-      "\013\n\003end\030\004 \001(\003\"6\n\025SchooLiveTrafficChart\022\014\n" +
-      "\004date\030\001 \001(\t\022\017\n\007traffic\030\002 \001(\003\"\212\001\n!GetScho" +
-      "olLiveTrafficChartResponse\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022<\n\022live_traf" +
-      "fic_chart\030\002 \003(\0132 .glory_api.SchooLiveTra" +
+      "\013\n\003end\030\004 \001(\003\"I\n\025SchooLiveTrafficChart\022\014\n" +
+      "\004date\030\001 \001(\t\022\017\n\007traffic\030\002 \001(\003\022\021\n\ttimestam" +
+      "p\030\003 \001(\003\"\237\001\n!GetSchoolLiveTrafficChartRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022\025\n\rtotal_traffic\030\002 \001(\003\022<\n\022live_traf" +
+      "fic_chart\030\003 \003(\0132 .glory_api.SchooLiveTra" +
       "fficChartB&\n\"com.zhijiejiaoyu.glory_api." +
       "trafficP\001b\006proto3"
     };
@@ -114,13 +115,13 @@ public final class LiveTraffic {
     internal_static_glory_api_SchooLiveTrafficChart_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SchooLiveTrafficChart_descriptor,
-        new java.lang.String[] { "Date", "Traffic", });
+        new java.lang.String[] { "Date", "Traffic", "Timestamp", });
     internal_static_glory_api_GetSchoolLiveTrafficChartResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_GetSchoolLiveTrafficChartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSchoolLiveTrafficChartResponse_descriptor,
-        new java.lang.String[] { "BaseRequest", "LiveTrafficChart", });
+        new java.lang.String[] { "BaseResp", "TotalTraffic", "LiveTrafficChart", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

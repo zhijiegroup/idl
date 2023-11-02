@@ -41,9 +41,11 @@ export interface GetSchoolLiveTrafficChartRequest {
 export interface SchooLiveTrafficChart {
   date?: string;
   traffic?: string;
+  timestamp?: string;
 }
 
 export interface GetSchoolLiveTrafficChartResponse {
-  base_request?: base.BaseRequest;
+  base_resp?: base.BaseResponse;
+  total_traffic?: string;
   live_traffic_chart?: Array<SchooLiveTrafficChart>;
 }

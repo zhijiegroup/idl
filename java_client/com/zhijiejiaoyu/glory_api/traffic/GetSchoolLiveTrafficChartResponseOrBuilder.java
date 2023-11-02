@@ -8,40 +8,46 @@ public interface GetSchoolLiveTrafficChartResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return Whether the baseRequest field is set.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return Whether the baseResp field is set.
    */
-  boolean hasBaseRequest();
+  boolean hasBaseResp();
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return The baseRequest.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return The baseResp.
    */
-  com.zhijiejiaoyu.base.BaseRequest getBaseRequest();
+  com.zhijiejiaoyu.base.BaseResponse getBaseResp();
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    */
-  com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+  com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>int64 total_traffic = 2;</code>
+   * @return The totalTraffic.
+   */
+  long getTotalTraffic();
+
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> 
       getLiveTrafficChartList();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index);
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   int getLiveTrafficChartCount();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
       getLiveTrafficChartOrBuilderList();
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
       int index);

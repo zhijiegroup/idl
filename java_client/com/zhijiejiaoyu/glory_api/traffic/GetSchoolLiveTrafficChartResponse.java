@@ -51,19 +51,24 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.zhijiejiaoyu.base.BaseRequest.Builder subBuilder = null;
-            if (baseRequest != null) {
-              subBuilder = baseRequest .toBuilder();
+            com.zhijiejiaoyu.base.BaseResponse.Builder subBuilder = null;
+            if (baseResp != null) {
+              subBuilder = baseResp .toBuilder();
             }
-            baseRequest = input.readMessage(com.zhijiejiaoyu.base.BaseRequest.parser(), extensionRegistry);
+            baseResp = input.readMessage(com.zhijiejiaoyu.base.BaseResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(baseRequest );
-              baseRequest = subBuilder.buildPartial();
+              subBuilder.mergeFrom(baseResp );
+              baseResp = subBuilder.buildPartial();
             }
 
             break;
           }
-          case 18: {
+          case 16: {
+
+            totalTraffic = input.readInt64();
+            break;
+          }
+          case 26: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               liveTrafficChart = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart>();
               mutable_bitField0_ |= 0x00000001;
@@ -107,43 +112,54 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse.class, com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse.Builder.class);
   }
 
-  public static final int BASE_REQUEST_FIELD_NUMBER = 1;
-  private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
+  public static final int BASE_RESP_FIELD_NUMBER = 1;
+  private com.zhijiejiaoyu.base.BaseResponse baseResp ;
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return Whether the baseRequest field is set.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return Whether the baseResp field is set.
    */
   @java.lang.Override
-  public boolean hasBaseRequest() {
-    return baseRequest != null;
+  public boolean hasBaseResp() {
+    return baseResp != null;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
-   * @return The baseRequest.
+   * <code>.base.BaseResponse base_resp = 1;</code>
+   * @return The baseResp.
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-    return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+  public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
+    return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
   }
   /**
-   * <code>.base.BaseRequest base_request = 1;</code>
+   * <code>.base.BaseResponse base_resp = 1;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-    return getBaseRequest();
+  public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+    return getBaseResp();
   }
 
-  public static final int LIVE_TRAFFIC_CHART_FIELD_NUMBER = 2;
+  public static final int TOTAL_TRAFFIC_FIELD_NUMBER = 2;
+  private long totalTraffic ;
+  /**
+   * <code>int64 total_traffic = 2;</code>
+   * @return The totalTraffic.
+   */
+  @java.lang.Override
+  public long getTotalTraffic() {
+    return totalTraffic ;
+  }
+
+  public static final int LIVE_TRAFFIC_CHART_FIELD_NUMBER = 3;
   private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> liveTrafficChart ;
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getLiveTrafficChartList() {
     return liveTrafficChart ;
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
@@ -151,21 +167,21 @@ private static final long serialVersionUID = 0L;
     return liveTrafficChart ;
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   @java.lang.Override
   public int getLiveTrafficChartCount() {
     return liveTrafficChart .size();
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index) {
     return liveTrafficChart .get(index);
   }
   /**
-   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+   * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
@@ -187,11 +203,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (baseRequest != null) {
-      output.writeMessage(1, getBaseRequest());
+    if (baseResp != null) {
+      output.writeMessage(1, getBaseResp());
+    }
+    if (totalTraffic != 0L) {
+      output.writeInt64(2, totalTraffic );
     }
     for (int i = 0; i < liveTrafficChart .size(); i++) {
-      output.writeMessage(2, liveTrafficChart .get(i));
+      output.writeMessage(3, liveTrafficChart .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -202,13 +221,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (baseRequest != null) {
+    if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBaseRequest());
+        .computeMessageSize(1, getBaseResp());
+    }
+    if (totalTraffic != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, totalTraffic );
     }
     for (int i = 0; i < liveTrafficChart .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, liveTrafficChart .get(i));
+        .computeMessageSize(3, liveTrafficChart .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -225,11 +248,13 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse other = (com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse) obj;
 
-    if (hasBaseRequest() != other.hasBaseRequest()) return false;
-    if (hasBaseRequest()) {
-      if (!getBaseRequest()
-          .equals(other.getBaseRequest())) return false;
+    if (hasBaseResp() != other.hasBaseResp()) return false;
+    if (hasBaseResp()) {
+      if (!getBaseResp()
+          .equals(other.getBaseResp())) return false;
     }
+    if (getTotalTraffic()
+        != other.getTotalTraffic()) return false;
     if (!getLiveTrafficChartList()
         .equals(other.getLiveTrafficChartList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -243,10 +268,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBaseRequest()) {
-      hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseRequest().hashCode();
+    if (hasBaseResp()) {
+      hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + TOTAL_TRAFFIC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalTraffic());
     if (getLiveTrafficChartCount() > 0) {
       hash = (37 * hash) + LIVE_TRAFFIC_CHART_FIELD_NUMBER;
       hash = (53 * hash) + getLiveTrafficChartList().hashCode();
@@ -385,12 +413,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+      if (baseRespBuilder == null) {
+        baseResp = null;
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
+      totalTraffic = 0L;
+
       if (liveTrafficChartBuilder == null) {
         liveTrafficChart = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -424,11 +454,12 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse result = new com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse(this);
       int from_bitField0 = bitField0 ;
-      if (baseRequestBuilder == null) {
-        result.baseRequest = baseRequest ;
+      if (baseRespBuilder == null) {
+        result.baseResp = baseResp ;
       } else {
-        result.baseRequest = baseRequestBuilder .build();
+        result.baseResp = baseRespBuilder .build();
       }
+      result.totalTraffic = totalTraffic ;
       if (liveTrafficChartBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           liveTrafficChart = java.util.Collections.unmodifiableList(liveTrafficChart );
@@ -486,8 +517,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse other) {
       if (other == com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse.getDefaultInstance()) return this;
-      if (other.hasBaseRequest()) {
-        mergeBaseRequest(other.getBaseRequest());
+      if (other.hasBaseResp()) {
+        mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getTotalTraffic() != 0L) {
+        setTotalTraffic(other.getTotalTraffic());
       }
       if (liveTrafficChartBuilder == null) {
         if (!other.liveTrafficChart .isEmpty()) {
@@ -545,123 +579,154 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
+    private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> baseRequestBuilder ;
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> baseRespBuilder ;
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return Whether the baseRequest field is set.
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return Whether the baseResp field is set.
      */
-    public boolean hasBaseRequest() {
-      return baseRequestBuilder != null || baseRequest != null;
+    public boolean hasBaseResp() {
+      return baseRespBuilder != null || baseResp != null;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
-     * @return The baseRequest.
+     * <code>.base.BaseResponse base_resp = 1;</code>
+     * @return The baseResp.
      */
-    public com.zhijiejiaoyu.base.BaseRequest getBaseRequest() {
-      if (baseRequestBuilder == null) {
-        return baseRequest == null ? com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+    public com.zhijiejiaoyu.base.BaseResponse getBaseResp() {
+      if (baseRespBuilder == null) {
+        return baseResp == null ? com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       } else {
-        return baseRequestBuilder .getMessage();
+        return baseRespBuilder .getMessage();
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder setBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
+    public Builder setBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseRespBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        baseRequest = value;
+        baseResp = value;
         onChanged();
       } else {
-        baseRequestBuilder .setMessage(value);
+        baseRespBuilder .setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder setBaseRequest(
-        com.zhijiejiaoyu.base.BaseRequest.Builder builderForValue) {
-      if (baseRequestBuilder == null) {
-        baseRequest = builderForValue.build();
+    public Builder setBaseResp(
+        com.zhijiejiaoyu.base.BaseResponse.Builder builderForValue) {
+      if (baseRespBuilder == null) {
+        baseResp = builderForValue.build();
         onChanged();
       } else {
-        baseRequestBuilder .setMessage(builderForValue.build());
+        baseRespBuilder .setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder mergeBaseRequest(com.zhijiejiaoyu.base.BaseRequest value) {
-      if (baseRequestBuilder == null) {
-        if (baseRequest != null) {
-          baseRequest =
-            com.zhijiejiaoyu.base.BaseRequest.newBuilder(baseRequest ).mergeFrom(value).buildPartial();
+    public Builder mergeBaseResp(com.zhijiejiaoyu.base.BaseResponse value) {
+      if (baseRespBuilder == null) {
+        if (baseResp != null) {
+          baseResp =
+            com.zhijiejiaoyu.base.BaseResponse.newBuilder(baseResp ).mergeFrom(value).buildPartial();
         } else {
-          baseRequest = value;
+          baseResp = value;
         }
         onChanged();
       } else {
-        baseRequestBuilder .mergeFrom(value);
+        baseRespBuilder .mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public Builder clearBaseRequest() {
-      if (baseRequestBuilder == null) {
-        baseRequest = null;
+    public Builder clearBaseResp() {
+      if (baseRespBuilder == null) {
+        baseResp = null;
         onChanged();
       } else {
-        baseRequest = null;
-        baseRequestBuilder = null;
+        baseResp = null;
+        baseRespBuilder = null;
       }
 
       return this;
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequest.Builder getBaseRequestBuilder() {
+    public com.zhijiejiaoyu.base.BaseResponse.Builder getBaseRespBuilder() {
       
       onChanged();
-      return getBaseRequestFieldBuilder().getBuilder();
+      return getBaseRespFieldBuilder().getBuilder();
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
-    public com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder() {
-      if (baseRequestBuilder != null) {
-        return baseRequestBuilder .getMessageOrBuilder();
+    public com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder() {
+      if (baseRespBuilder != null) {
+        return baseRespBuilder .getMessageOrBuilder();
       } else {
-        return baseRequest == null ?
-            com.zhijiejiaoyu.base.BaseRequest.getDefaultInstance() : baseRequest ;
+        return baseResp == null ?
+            com.zhijiejiaoyu.base.BaseResponse.getDefaultInstance() : baseResp ;
       }
     }
     /**
-     * <code>.base.BaseRequest base_request = 1;</code>
+     * <code>.base.BaseResponse base_resp = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder> 
-        getBaseRequestFieldBuilder() {
-      if (baseRequestBuilder == null) {
-        baseRequestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
-            com.zhijiejiaoyu.base.BaseRequest, com.zhijiejiaoyu.base.BaseRequest.Builder, com.zhijiejiaoyu.base.BaseRequestOrBuilder>(
-                getBaseRequest(),
+        com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder> 
+        getBaseRespFieldBuilder() {
+      if (baseRespBuilder == null) {
+        baseRespBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.BaseResponse, com.zhijiejiaoyu.base.BaseResponse.Builder, com.zhijiejiaoyu.base.BaseResponseOrBuilder>(
+                getBaseResp(),
                 getParentForChildren(),
                 isClean());
-        baseRequest = null;
+        baseResp = null;
       }
-      return baseRequestBuilder ;
+      return baseRespBuilder ;
+    }
+
+    private long totalTraffic ;
+    /**
+     * <code>int64 total_traffic = 2;</code>
+     * @return The totalTraffic.
+     */
+    @java.lang.Override
+    public long getTotalTraffic() {
+      return totalTraffic ;
+    }
+    /**
+     * <code>int64 total_traffic = 2;</code>
+     * @param value The totalTraffic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalTraffic(long value) {
+      
+      totalTraffic = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total_traffic = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalTraffic() {
+      
+      totalTraffic = 0L;
+      onChanged();
+      return this;
     }
 
     private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> liveTrafficChart =
@@ -677,7 +742,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> liveTrafficChartBuilder ;
 
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getLiveTrafficChartList() {
       if (liveTrafficChartBuilder == null) {
@@ -687,7 +752,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public int getLiveTrafficChartCount() {
       if (liveTrafficChartBuilder == null) {
@@ -697,7 +762,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getLiveTrafficChart(int index) {
       if (liveTrafficChartBuilder == null) {
@@ -707,7 +772,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder setLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
@@ -724,7 +789,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder setLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -738,7 +803,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder addLiveTrafficChart(com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
       if (liveTrafficChartBuilder == null) {
@@ -754,7 +819,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder addLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
@@ -771,7 +836,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder addLiveTrafficChart(
         com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -785,7 +850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder addLiveTrafficChart(
         int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
@@ -799,7 +864,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder addAllLiveTrafficChart(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> values) {
@@ -814,7 +879,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder clearLiveTrafficChart() {
       if (liveTrafficChartBuilder == null) {
@@ -827,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public Builder removeLiveTrafficChart(int index) {
       if (liveTrafficChartBuilder == null) {
@@ -840,14 +905,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder getLiveTrafficChartBuilder(
         int index) {
       return getLiveTrafficChartFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
         int index) {
@@ -857,7 +922,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
          getLiveTrafficChartOrBuilderList() {
@@ -868,14 +933,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addLiveTrafficChartBuilder() {
       return getLiveTrafficChartFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addLiveTrafficChartBuilder(
         int index) {
@@ -883,7 +948,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 2;</code>
+     * <code>repeated .glory_api.SchooLiveTrafficChart live_traffic_chart = 3;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder> 
          getLiveTrafficChartBuilderList() {

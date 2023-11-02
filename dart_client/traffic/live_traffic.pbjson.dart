@@ -99,27 +99,29 @@ const SchooLiveTrafficChart$json = {
   '2': [
     {'1': 'date', '3': 1, '4': 1, '5': 9, '10': 'date'},
     {'1': 'traffic', '3': 2, '4': 1, '5': 3, '10': 'traffic'},
+    {'1': 'timestamp', '3': 3, '4': 1, '5': 3, '10': 'timestamp'},
   ],
 };
 
 /// Descriptor for `SchooLiveTrafficChart`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List schooLiveTrafficChartDescriptor = $convert.base64Decode(
     'ChVTY2hvb0xpdmVUcmFmZmljQ2hhcnQSEgoEZGF0ZRgBIAEoCVIEZGF0ZRIYCgd0cmFmZmljGA'
-    'IgASgDUgd0cmFmZmlj');
+    'IgASgDUgd0cmFmZmljEhwKCXRpbWVzdGFtcBgDIAEoA1IJdGltZXN0YW1w');
 
 @$core.Deprecated('Use getSchoolLiveTrafficChartResponseDescriptor instead')
 const GetSchoolLiveTrafficChartResponse$json = {
   '1': 'GetSchoolLiveTrafficChartResponse',
   '2': [
-    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'live_traffic_chart', '3': 2, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'liveTrafficChart'},
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_traffic', '3': 2, '4': 1, '5': 3, '10': 'totalTraffic'},
+    {'1': 'live_traffic_chart', '3': 3, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'liveTrafficChart'},
   ],
 };
 
 /// Descriptor for `GetSchoolLiveTrafficChartResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getSchoolLiveTrafficChartResponseDescriptor = $convert.base64Decode(
-    'CiFHZXRTY2hvb2xMaXZlVHJhZmZpY0NoYXJ0UmVzcG9uc2USNAoMYmFzZV9yZXF1ZXN0GAEgAS'
-    'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSTgoSbGl2ZV90cmFmZmljX2NoYXJ0'
-    'GAIgAygLMiAuZ2xvcnlfYXBpLlNjaG9vTGl2ZVRyYWZmaWNDaGFydFIQbGl2ZVRyYWZmaWNDaG'
-    'FydA==');
+    'CiFHZXRTY2hvb2xMaXZlVHJhZmZpY0NoYXJ0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEiMKDXRvdGFsX3RyYWZmaWMYAiABKANSDHRv'
+    'dGFsVHJhZmZpYxJOChJsaXZlX3RyYWZmaWNfY2hhcnQYAyADKAsyIC5nbG9yeV9hcGkuU2Nob2'
+    '9MaXZlVHJhZmZpY0NoYXJ0UhBsaXZlVHJhZmZpY0NoYXJ0');
 

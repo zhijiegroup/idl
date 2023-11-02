@@ -24,4 +24,10 @@ public interface SchooLiveTrafficChartOrBuilder extends
    * @return The traffic.
    */
   long getTraffic();
+
+  /**
+   * <code>int64 timestamp = 3;</code>
+   * @return The timestamp.
+   */
+  long getTimestamp();
 }

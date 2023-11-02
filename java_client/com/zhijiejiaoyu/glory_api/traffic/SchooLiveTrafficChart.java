@@ -60,6 +60,11 @@ private static final long serialVersionUID = 0L;
             traffic = input.readInt64();
             break;
           }
+          case 24: {
+
+            timestamp = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -141,6 +146,17 @@ private static final long serialVersionUID = 0L;
     return traffic ;
   }
 
+  public static final int TIMESTAMP_FIELD_NUMBER = 3;
+  private long timestamp ;
+  /**
+   * <code>int64 timestamp = 3;</code>
+   * @return The timestamp.
+   */
+  @java.lang.Override
+  public long getTimestamp() {
+    return timestamp ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -161,6 +177,9 @@ private static final long serialVersionUID = 0L;
     if (traffic != 0L) {
       output.writeInt64(2, traffic );
     }
+    if (timestamp != 0L) {
+      output.writeInt64(3, timestamp );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -176,6 +195,10 @@ private static final long serialVersionUID = 0L;
     if (traffic != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, traffic );
+    }
+    if (timestamp != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, timestamp );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -196,6 +219,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDate())) return false;
     if (getTraffic()
         != other.getTraffic()) return false;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -212,6 +237,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRAFFIC_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTraffic());
+    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTimestamp());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -349,6 +377,8 @@ private static final long serialVersionUID = 0L;
 
       traffic = 0L;
 
+      timestamp = 0L;
+
       return this;
     }
 
@@ -377,6 +407,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart result = new com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart(this);
       result.date = date ;
       result.traffic = traffic ;
+      result.timestamp = timestamp ;
       onBuilt();
       return result;
     }
@@ -431,6 +462,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTraffic() != 0L) {
         setTraffic(other.getTraffic());
+      }
+      if (other.getTimestamp() != 0L) {
+        setTimestamp(other.getTimestamp());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -564,6 +598,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearTraffic() {
       
       traffic = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long timestamp ;
+    /**
+     * <code>int64 timestamp = 3;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public long getTimestamp() {
+      return timestamp ;
+    }
+    /**
+     * <code>int64 timestamp = 3;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimestamp(long value) {
+      
+      timestamp = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 timestamp = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimestamp() {
+      
+      timestamp = 0L;
       onChanged();
       return this;
     }
