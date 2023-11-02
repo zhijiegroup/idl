@@ -60,6 +60,7 @@ import 'tenant/tenant.pb.dart' as $29;
 import 'tenant/tenant_config.pb.dart' as $32;
 import 'tenant/tenant_dept.pb.dart' as $30;
 import 'tenant/tenant_user.pb.dart' as $31;
+import 'traffic/live_traffic.pb.dart' as $47;
 import 'user/address.pb.dart' as $2;
 import 'user/user.pb.dart' as $1;
 import 'wxpay/wxpay.pb.dart' as $20;
@@ -372,6 +373,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.UpdateJobResponse> updateJob($pb.ServerContext ctx, $46.UpdateJobRequest request);
   $async.Future<$46.DeleteJobResponse> deleteJob($pb.ServerContext ctx, $46.DeleteJobRequest request);
   $async.Future<$46.ListJobResponse> listJob($pb.ServerContext ctx, $46.ListJobRequest request);
+  $async.Future<$47.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ServerContext ctx, $47.GetSchoolLiveTrafficChartRequest request);
+  $async.Future<$47.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ServerContext ctx, $47.ListSchoolLiveTrafficRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -680,6 +683,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateJob': return $46.UpdateJobRequest();
       case 'DeleteJob': return $46.DeleteJobRequest();
       case 'ListJob': return $46.ListJobRequest();
+      case 'GetSchooLiveChart': return $47.GetSchoolLiveTrafficChartRequest();
+      case 'ListSchooLiveTraffic': return $47.ListSchoolLiveTrafficRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -991,6 +996,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateJob': return this.updateJob(ctx, request as $46.UpdateJobRequest);
       case 'DeleteJob': return this.deleteJob(ctx, request as $46.DeleteJobRequest);
       case 'ListJob': return this.listJob(ctx, request as $46.ListJobRequest);
+      case 'GetSchooLiveChart': return this.getSchooLiveChart(ctx, request as $47.GetSchoolLiveTrafficChartRequest);
+      case 'ListSchooLiveTraffic': return this.listSchooLiveTraffic(ctx, request as $47.ListSchoolLiveTrafficRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

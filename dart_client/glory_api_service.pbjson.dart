@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $18;
 import 'admin/admin_user.pbjson.dart' as $19;
 import 'admin/config.pbjson.dart' as $17;
 import 'app/app.pbjson.dart' as $45;
-import 'base.pbjson.dart' as $47;
+import 'base.pbjson.dart' as $48;
 import 'course/cmodule.pbjson.dart' as $39;
 import 'course/course.pbjson.dart' as $38;
 import 'course/edu_scheme.pbjson.dart' as $44;
@@ -58,6 +58,7 @@ import 'tenant/tenant.pbjson.dart' as $29;
 import 'tenant/tenant_config.pbjson.dart' as $32;
 import 'tenant/tenant_dept.pbjson.dart' as $30;
 import 'tenant/tenant_user.pbjson.dart' as $31;
+import 'traffic/live_traffic.pbjson.dart' as $47;
 import 'user/address.pbjson.dart' as $2;
 import 'user/user.pbjson.dart' as $1;
 import 'wxpay/wxpay.pbjson.dart' as $20;
@@ -370,26 +371,28 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'UpdateJob', '2': '.glory_api.UpdateJobRequest', '3': '.glory_api.UpdateJobResponse', '4': {}},
     {'1': 'DeleteJob', '2': '.glory_api.DeleteJobRequest', '3': '.glory_api.DeleteJobResponse', '4': {}},
     {'1': 'ListJob', '2': '.glory_api.ListJobRequest', '3': '.glory_api.ListJobResponse', '4': {}},
+    {'1': 'GetSchooLiveChart', '2': '.glory_api.GetSchoolLiveTrafficChartRequest', '3': '.glory_api.GetSchoolLiveTrafficChartResponse', '4': {}},
+    {'1': 'ListSchooLiveTraffic', '2': '.glory_api.ListSchoolLiveTrafficRequest', '3': '.glory_api.ListSchoolLiveTrafficResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $47.BaseRequest$json,
+  '.base.BaseRequest': $48.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $47.BaseResponse$json,
+  '.base.BaseResponse': $48.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $47.AuthorInfo$json,
+  '.base.AuthorInfo': $48.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $47.PaginationRequest$json,
+  '.base.PaginationRequest': $48.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $47.PaginationResponse$json,
+  '.base.PaginationResponse': $48.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1150,6 +1153,12 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListJobRequest': $46.ListJobRequest$json,
   '.glory_api.ListJobResponse': $46.ListJobResponse$json,
   '.glory_api.Job': $46.Job$json,
+  '.glory_api.GetSchoolLiveTrafficChartRequest': $47.GetSchoolLiveTrafficChartRequest$json,
+  '.glory_api.GetSchoolLiveTrafficChartResponse': $47.GetSchoolLiveTrafficChartResponse$json,
+  '.glory_api.SchooLiveTrafficChart': $47.SchooLiveTrafficChart$json,
+  '.glory_api.ListSchoolLiveTrafficRequest': $47.ListSchoolLiveTrafficRequest$json,
+  '.glory_api.ListSchoolLiveTrafficResponse': $47.ListSchoolLiveTrafficResponse$json,
+  '.glory_api.SchoolLiveTraffic': $47.SchoolLiveTraffic$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1831,5 +1840,11 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'ZSIa0sEYFi9hcGkvY291cnNlL3VwZGF0ZV9qb2ISYgoJRGVsZXRlSm9iEhsuZ2xvcnlfYXBpLk'
     'RlbGV0ZUpvYlJlcXVlc3QaHC5nbG9yeV9hcGkuRGVsZXRlSm9iUmVzcG9uc2UiGtLBGBYvYXBp'
     'L2NvdXJzZS9kZWxldGVfam9iEloKB0xpc3RKb2ISGS5nbG9yeV9hcGkuTGlzdEpvYlJlcXVlc3'
-    'QaGi5nbG9yeV9hcGkuTGlzdEpvYlJlc3BvbnNlIhjSwRgUL2FwaS9jb3Vyc2UvbGlzdF9qb2I=');
+    'QaGi5nbG9yeV9hcGkuTGlzdEpvYlJlc3BvbnNlIhjSwRgUL2FwaS9jb3Vyc2UvbGlzdF9qb2IS'
+    'lgEKEUdldFNjaG9vTGl2ZUNoYXJ0EisuZ2xvcnlfYXBpLkdldFNjaG9vbExpdmVUcmFmZmljQ2'
+    'hhcnRSZXF1ZXN0GiwuZ2xvcnlfYXBpLkdldFNjaG9vbExpdmVUcmFmZmljQ2hhcnRSZXNwb25z'
+    'ZSImysEYIi9hcGkvdHJhZmZpYy9nZXRfc2Nob29sX2xpdmVfY2hhcnQSlAEKFExpc3RTY2hvb0'
+    'xpdmVUcmFmZmljEicuZ2xvcnlfYXBpLkxpc3RTY2hvb2xMaXZlVHJhZmZpY1JlcXVlc3QaKC5n'
+    'bG9yeV9hcGkuTGlzdFNjaG9vbExpdmVUcmFmZmljUmVzcG9uc2UiKcrBGCUvYXBpL3RyYWZmaW'
+    'MvbGlzdF9zY2hvb2xfbGl2ZV90cmFmZmlj');
 

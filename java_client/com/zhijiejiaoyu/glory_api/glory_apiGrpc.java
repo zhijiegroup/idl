@@ -9470,6 +9470,68 @@ public final class glory_apiGrpc {
     return getListJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest,
+      com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> getGetSchooLiveChartMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSchooLiveChart",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest,
+      com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> getGetSchooLiveChartMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest, com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> getGetSchooLiveChartMethod;
+    if ((getGetSchooLiveChartMethod = glory_apiGrpc.getGetSchooLiveChartMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetSchooLiveChartMethod = glory_apiGrpc.getGetSchooLiveChartMethod) == null) {
+          glory_apiGrpc.getGetSchooLiveChartMethod = getGetSchooLiveChartMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest, com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSchooLiveChart"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetSchooLiveChart"))
+              .build();
+        }
+      }
+    }
+    return getGetSchooLiveChartMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> getListSchooLiveTrafficMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSchooLiveTraffic",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> getListSchooLiveTrafficMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest, com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> getListSchooLiveTrafficMethod;
+    if ((getListSchooLiveTrafficMethod = glory_apiGrpc.getListSchooLiveTrafficMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListSchooLiveTrafficMethod = glory_apiGrpc.getListSchooLiveTrafficMethod) == null) {
+          glory_apiGrpc.getListSchooLiveTrafficMethod = getListSchooLiveTrafficMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest, com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSchooLiveTraffic"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListSchooLiveTraffic"))
+              .build();
+        }
+      }
+    }
+    return getListSchooLiveTrafficMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -11960,6 +12022,23 @@ public final class glory_apiGrpc {
     default void listJob(com.zhijiejiaoyu.glory_api.course.ListJobRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListJobResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 流量统计
+     * </pre>
+     */
+    default void getSchooLiveChart(com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSchooLiveChartMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listSchooLiveTraffic(com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSchooLiveTrafficMethod(), responseObserver);
     }
   }
 
@@ -14738,6 +14817,25 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 流量统计
+     * </pre>
+     */
+    public void getSchooLiveChart(com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSchooLiveChartMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listSchooLiveTraffic(com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSchooLiveTrafficMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -17198,6 +17296,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.ListJobResponse listJob(com.zhijiejiaoyu.glory_api.course.ListJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 流量统计
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse getSchooLiveChart(com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSchooLiveChartMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse listSchooLiveTraffic(com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchooLiveTrafficMethod(), getCallOptions(), request);
     }
   }
 
@@ -19965,6 +20080,25 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 流量统计
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse> getSchooLiveChart(
+        com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSchooLiveChartMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse> listSchooLiveTraffic(
+        com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSchooLiveTrafficMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -20272,6 +20406,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_JOB = 302;
   private static final int METHODID_DELETE_JOB = 303;
   private static final int METHODID_LIST_JOB = 304;
+  private static final int METHODID_GET_SCHOO_LIVE_CHART = 305;
+  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 306;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21509,6 +21645,14 @@ public final class glory_apiGrpc {
         case METHODID_LIST_JOB:
           serviceImpl.listJob((com.zhijiejiaoyu.glory_api.course.ListJobRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListJobResponse>) responseObserver);
+          break;
+        case METHODID_GET_SCHOO_LIVE_CHART:
+          serviceImpl.getSchooLiveChart((com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SCHOO_LIVE_TRAFFIC:
+          serviceImpl.listSchooLiveTraffic((com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -23663,6 +23807,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.ListJobRequest,
               com.zhijiejiaoyu.glory_api.course.ListJobResponse>(
                 service, METHODID_LIST_JOB)))
+        .addMethod(
+          getGetSchooLiveChartMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartRequest,
+              com.zhijiejiaoyu.glory_api.traffic.GetSchoolLiveTrafficChartResponse>(
+                service, METHODID_GET_SCHOO_LIVE_CHART)))
+        .addMethod(
+          getListSchooLiveTrafficMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficRequest,
+              com.zhijiejiaoyu.glory_api.traffic.ListSchoolLiveTrafficResponse>(
+                service, METHODID_LIST_SCHOO_LIVE_TRAFFIC)))
         .build();
   }
 
@@ -24016,6 +24174,8 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateJobMethod())
               .addMethod(getDeleteJobMethod())
               .addMethod(getListJobMethod())
+              .addMethod(getGetSchooLiveChartMethod())
+              .addMethod(getListSchooLiveTrafficMethod())
               .build();
         }
       }

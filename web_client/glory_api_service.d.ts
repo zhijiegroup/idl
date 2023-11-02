@@ -50,6 +50,7 @@ import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
 import * as app from "./app/app";
+import * as live_traffic from "./traffic/live_traffic";
 export {
   user,
   address,
@@ -99,6 +100,7 @@ export {
   edu_scheme,
   job,
   app,
+  live_traffic,
 };
 
 export class glory_api {
@@ -1370,6 +1372,15 @@ CreateLivePlanProduct create live plan product */
   DeleteJob(request: job.DeleteJobRequest): Promise<job.DeleteJobResponse>;
 
   ListJob(request: job.ListJobRequest): Promise<job.ListJobResponse>;
+
+  /** 流量统计 */
+  GetSchooLiveChart(
+    request: live_traffic.GetSchoolLiveTrafficChartRequest
+  ): Promise<live_traffic.GetSchoolLiveTrafficChartResponse>;
+
+  ListSchooLiveTraffic(
+    request: live_traffic.ListSchoolLiveTrafficRequest
+  ): Promise<live_traffic.ListSchoolLiveTrafficResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

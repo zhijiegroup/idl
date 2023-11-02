@@ -58,6 +58,7 @@ import 'tenant/tenant.pb.dart' as $29;
 import 'tenant/tenant_config.pb.dart' as $32;
 import 'tenant/tenant_dept.pb.dart' as $30;
 import 'tenant/tenant_user.pb.dart' as $31;
+import 'traffic/live_traffic.pb.dart' as $47;
 import 'user/address.pb.dart' as $2;
 import 'user/user.pb.dart' as $1;
 import 'wxpay/wxpay.pb.dart' as $20;
@@ -980,6 +981,12 @@ class glory_apiApi {
   ;
   $async.Future<$46.ListJobResponse> listJob($pb.ClientContext? ctx, $46.ListJobRequest request) =>
     _client.invoke<$46.ListJobResponse>(ctx, 'glory_api', 'ListJob', request, $46.ListJobResponse())
+  ;
+  $async.Future<$47.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ClientContext? ctx, $47.GetSchoolLiveTrafficChartRequest request) =>
+    _client.invoke<$47.GetSchoolLiveTrafficChartResponse>(ctx, 'glory_api', 'GetSchooLiveChart', request, $47.GetSchoolLiveTrafficChartResponse())
+  ;
+  $async.Future<$47.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ClientContext? ctx, $47.ListSchoolLiveTrafficRequest request) =>
+    _client.invoke<$47.ListSchoolLiveTrafficResponse>(ctx, 'glory_api', 'ListSchooLiveTraffic', request, $47.ListSchoolLiveTrafficResponse())
   ;
 }
 

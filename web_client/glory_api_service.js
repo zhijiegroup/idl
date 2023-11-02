@@ -52,6 +52,7 @@ import * as teaching_plan from "./course/teaching_plan";
 import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
 import * as app from "./app/app";
+import * as live_traffic from "./traffic/live_traffic";
 export {
   user,
   address,
@@ -101,6 +102,7 @@ export {
   edu_scheme,
   job,
   app,
+  live_traffic,
 };
 
 import {
@@ -2452,6 +2454,18 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  GetSchooLiveChart(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/traffic/get_school_live_chart${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListSchooLiveTraffic(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/traffic/list_school_live_traffic${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 }
 
