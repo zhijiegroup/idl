@@ -26,14 +26,15 @@ final $typed_data.Uint8List courseModulesDescriptor = $convert.base64Decode(
 const Occupation$json = {
   '1': 'Occupation',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    {'1': 'job_id', '3': 1, '4': 1, '5': 3, '10': 'jobId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `Occupation`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List occupationDescriptor = $convert.base64Decode(
-    'CgpPY2N1cGF0aW9uEg4KAmlkGAEgASgDUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
+    'CgpPY2N1cGF0aW9uEhUKBmpvYl9pZBgBIAEoA1IFam9iSWQSEgoEbmFtZRgCIAEoCVIEbmFtZQ'
+    '==');
 
 @$core.Deprecated('Use courseDescriptor instead')
 const Course$json = {

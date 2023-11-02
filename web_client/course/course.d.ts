@@ -9,7 +9,7 @@ export { base, modules };
 export interface CourseModules {}
 
 export interface Occupation {
-  id?: string;
+  job_id?: string;
   name?: string;
 }
 

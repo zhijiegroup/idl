@@ -57,4 +57,28 @@ public interface GetSchoolLiveTrafficChartResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getLiveTrafficChartOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart ali_live_traffic_chart = 5;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> 
+      getAliLiveTrafficChartList();
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart ali_live_traffic_chart = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getAliLiveTrafficChart(int index);
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart ali_live_traffic_chart = 5;</code>
+   */
+  int getAliLiveTrafficChartCount();
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart ali_live_traffic_chart = 5;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
+      getAliLiveTrafficChartOrBuilderList();
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart ali_live_traffic_chart = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getAliLiveTrafficChartOrBuilder(
+      int index);
 }

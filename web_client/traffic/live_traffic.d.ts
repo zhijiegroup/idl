@@ -49,4 +49,5 @@ export interface GetSchoolLiveTrafficChartResponse {
   total_traffic?: string;
   ali_total_traffic?: string;
   live_traffic_chart?: Array<SchooLiveTrafficChart>;
+  ali_live_traffic_chart?: Array<SchooLiveTrafficChart>;
 }

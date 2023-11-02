@@ -135,67 +135,67 @@ public final class CourseOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023course/course.proto\022\tglory_api\032\nbase.p" +
       "roto\032\023course/module.proto\"\017\n\rCourseModul" +
-      "es\"&\n\nOccupation\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001" +
-      "(\t\"\360\003\n\006Course\022\021\n\tcourse_id\030\001 \001(\003\022\023\n\013cour" +
-      "se_name\030\002 \001(\t\022\033\n\023course_organization\030\003 \001" +
-      "(\t\022\033\n\023course_teacher_name\030\004 \001(\t\022\027\n\017knowl" +
-      "edge_hours\030\005 \001(\002\022\023\n\013skill_hours\030\006 \001(\002\022\032\n" +
-      "\022course_description\030\007 \001(\t\0220\n\021course_occu" +
-      "pation\030\010 \003(\0132\025.glory_api.Occupation\022\031\n\021c" +
-      "ourse_cover_path\030\t \001(\t\022\030\n\020course_cover_u" +
-      "rl\030\n \001(\t\022\035\n\025course_classification\030\013 \001(\005\022" +
-      "\024\n\014course_level\030\014 \001(\005\022\024\n\014course_major\030\r " +
-      "\001(\t\022\027\n\017course_industry\030\016 \001(\t\022\023\n\013course_t" +
-      "ype\030\017 \001(\005\022\025\n\rcourse_module\030\020 \001(\005\022/\n\016cour" +
-      "se_modules\030\021 \003(\0132\027.glory_api.CourseModul" +
-      "e\022\022\n\ncreated_at\030\022 \001(\t\"a\n\023CreateCourseReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022!\n\006course\030\002 \001(\0132\021.glory_api.Course" +
-      "\"P\n\024CreateCourseResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\021\n\tcourse_id\030\002 \001" +
-      "(\003\"N\n\020GetCourseRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002 \001" +
-      "(\003\"\211\001\n\021GetCourseResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022!\n\006course\030\002 \001(\0132" +
-      "\021.glory_api.Course\022\021\n\tis_joined\030\003 \001(\010\022\027\n" +
-      "\017course_progress\030\004 \001(\005\"a\n\023UpdateCourseRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022!\n\006course\030\002 \001(\0132\021.glory_api.Cours" +
-      "e\"P\n\024UpdateCourseResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\021\n\tcourse_id\030\002 " +
-      "\001(\003\"Q\n\023DeleteCourseRequest\022\'\n\014base_reque" +
+      "es\"*\n\nOccupation\022\016\n\006job_id\030\001 \001(\003\022\014\n\004name" +
+      "\030\002 \001(\t\"\360\003\n\006Course\022\021\n\tcourse_id\030\001 \001(\003\022\023\n\013" +
+      "course_name\030\002 \001(\t\022\033\n\023course_organization" +
+      "\030\003 \001(\t\022\033\n\023course_teacher_name\030\004 \001(\t\022\027\n\017k" +
+      "nowledge_hours\030\005 \001(\002\022\023\n\013skill_hours\030\006 \001(" +
+      "\002\022\032\n\022course_description\030\007 \001(\t\0220\n\021course_" +
+      "occupation\030\010 \003(\0132\025.glory_api.Occupation\022" +
+      "\031\n\021course_cover_path\030\t \001(\t\022\030\n\020course_cov" +
+      "er_url\030\n \001(\t\022\035\n\025course_classification\030\013 " +
+      "\001(\005\022\024\n\014course_level\030\014 \001(\005\022\024\n\014course_majo" +
+      "r\030\r \001(\t\022\027\n\017course_industry\030\016 \001(\t\022\023\n\013cour" +
+      "se_type\030\017 \001(\005\022\025\n\rcourse_module\030\020 \001(\005\022/\n\016" +
+      "course_modules\030\021 \003(\0132\027.glory_api.CourseM" +
+      "odule\022\022\n\ncreated_at\030\022 \001(\t\"a\n\023CreateCours" +
+      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022!\n\006course\030\002 \001(\0132\021.glory_api.Co" +
+      "urse\"P\n\024CreateCourseResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tcourse_id" +
+      "\030\002 \001(\003\"N\n\020GetCourseRequest\022\'\n\014base_reque" +
       "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_id" +
-      "\030\002 \001(\003\"=\n\024DeleteCourseResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"\322\001\n\021ListCo" +
-      "urseRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\035\n\025course_classification\030\002 " +
-      "\001(\005\022\025\n\rcourse_module\030\003 \001(\005\022\r\n\005major\030\004 \003(" +
-      "\t\022\r\n\005level\030\005 \003(\005\022\023\n\013course_type\030\006 \003(\005\022+\n" +
-      "\npagination\030d \001(\0132\027.base.PaginationReque" +
-      "st\"\215\001\n\022ListCourseResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\"\n\007courses\030\002 \003(" +
-      "\0132\021.glory_api.Course\022,\n\npagination\030d \001(\013" +
-      "2\030.base.PaginationResponse\")\n\tMajorCode\022" +
-      "\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\">\n\023GetMajo" +
-      "rCodeRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\"g\n\024GetMajorCodeResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\n" +
-      "major_code\030\002 \003(\0132\024.glory_api.MajorCode\"R" +
-      "\n\023GetCourseIdsRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\022\n\nmajor_code\030\002 \001" +
-      "(\t\"Q\n\024GetCourseIdsResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022\022\n\ncourse_ids\030" +
-      "\002 \003(\003\"P\n\027ListLatestCourseRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004siz" +
-      "e\030\002 \001(\003\"e\n\030ListLatestCourseResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\007co" +
-      "urses\030\002 \003(\0132\021.glory_api.Course\"P\n\027ListHo" +
-      "testCourseRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\014\n\004size\030\002 \001(\003\"e\n\030List" +
-      "HotestCourseResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022\"\n\007courses\030\002 \003(\0132\021.g" +
-      "lory_api.CourseB%\n!com.zhijiejiaoyu.glor" +
-      "y_api.courseP\001b\006proto3"
+      "\030\002 \001(\003\"\211\001\n\021GetCourseResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022!\n\006course\030\002 " +
+      "\001(\0132\021.glory_api.Course\022\021\n\tis_joined\030\003 \001(" +
+      "\010\022\027\n\017course_progress\030\004 \001(\005\"a\n\023UpdateCour" +
+      "seRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022!\n\006course\030\002 \001(\0132\021.glory_api.C" +
+      "ourse\"P\n\024UpdateCourseResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tcourse_i" +
+      "d\030\002 \001(\003\"Q\n\023DeleteCourseRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcours" +
+      "e_id\030\002 \001(\003\"=\n\024DeleteCourseResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\322\001\n\021Li" +
+      "stCourseRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\035\n\025course_classificatio" +
+      "n\030\002 \001(\005\022\025\n\rcourse_module\030\003 \001(\005\022\r\n\005major\030" +
+      "\004 \003(\t\022\r\n\005level\030\005 \003(\005\022\023\n\013course_type\030\006 \003(" +
+      "\005\022+\n\npagination\030d \001(\0132\027.base.PaginationR" +
+      "equest\"\215\001\n\022ListCourseResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\007courses\030" +
+      "\002 \003(\0132\021.glory_api.Course\022,\n\npagination\030d" +
+      " \001(\0132\030.base.PaginationResponse\")\n\tMajorC" +
+      "ode\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\">\n\023Get" +
+      "MajorCodeRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\"g\n\024GetMajorCodeRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022(\n\nmajor_code\030\002 \003(\0132\024.glory_api.MajorCo" +
+      "de\"R\n\023GetCourseIdsRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nmajor_code" +
+      "\030\002 \001(\t\"Q\n\024GetCourseIdsResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\ncourse_" +
+      "ids\030\002 \003(\003\"P\n\027ListLatestCourseRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n" +
+      "\004size\030\002 \001(\003\"e\n\030ListLatestCourseResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\"" +
+      "\n\007courses\030\002 \003(\0132\021.glory_api.Course\"P\n\027Li" +
+      "stHotestCourseRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\014\n\004size\030\002 \001(\003\"e\n\030" +
+      "ListHotestCourseResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\"\n\007courses\030\002 \003(\013" +
+      "2\021.glory_api.CourseB%\n!com.zhijiejiaoyu." +
+      "glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -214,7 +214,7 @@ public final class CourseOuterClass {
     internal_static_glory_api_Occupation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Occupation_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "JobId", "Name", });
     internal_static_glory_api_Course_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_Course_fieldAccessorTable = new

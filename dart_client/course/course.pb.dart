@@ -51,12 +51,12 @@ class CourseModules extends $pb.GeneratedMessage {
 
 class Occupation extends $pb.GeneratedMessage {
   factory Occupation({
-    $fixnum.Int64? id,
+    $fixnum.Int64? jobId,
     $core.String? name,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (jobId != null) {
+      $result.jobId = jobId;
     }
     if (name != null) {
       $result.name = name;
@@ -68,7 +68,7 @@ class Occupation extends $pb.GeneratedMessage {
   factory Occupation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Occupation', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aInt64(1, _omitFieldNames ? '' : 'jobId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -95,13 +95,13 @@ class Occupation extends $pb.GeneratedMessage {
   static Occupation? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get jobId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set jobId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasJobId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearJobId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

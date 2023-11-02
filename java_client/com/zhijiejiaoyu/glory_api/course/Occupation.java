@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            id = input.readInt64();
+            jobId = input.readInt64();
             break;
           }
           case 18: {
@@ -92,15 +92,15 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.course.Occupation.class, com.zhijiejiaoyu.glory_api.course.Occupation.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private long id ;
+  public static final int JOB_ID_FIELD_NUMBER = 1;
+  private long jobId ;
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 job_id = 1;</code>
+   * @return The jobId.
    */
   @java.lang.Override
-  public long getId() {
-    return id ;
+  public long getJobId() {
+    return jobId ;
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
@@ -155,8 +155,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id != 0L) {
-      output.writeInt64(1, id );
+    if (jobId != 0L) {
+      output.writeInt64(1, jobId );
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
@@ -170,9 +170,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id != 0L) {
+    if (jobId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, id );
+        .computeInt64Size(1, jobId );
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
@@ -192,8 +192,8 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.course.Occupation other = (com.zhijiejiaoyu.glory_api.course.Occupation) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (getJobId()
+        != other.getJobId()) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -207,9 +207,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getId());
+        getJobId());
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -345,7 +345,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id = 0L;
+      jobId = 0L;
 
       name = "";
 
@@ -375,7 +375,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.Occupation buildPartial() {
       com.zhijiejiaoyu.glory_api.course.Occupation result = new com.zhijiejiaoyu.glory_api.course.Occupation(this);
-      result.id = id ;
+      result.jobId = jobId ;
       result.name = name ;
       onBuilt();
       return result;
@@ -425,8 +425,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.course.Occupation other) {
       if (other == com.zhijiejiaoyu.glory_api.course.Occupation.getDefaultInstance()) return this;
-      if (other.getId() != 0L) {
-        setId(other.getId());
+      if (other.getJobId() != 0L) {
+        setJobId(other.getJobId());
       }
       if (!other.getName().isEmpty()) {
         name = other.name ;
@@ -461,33 +461,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long id ;
+    private long jobId ;
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>int64 job_id = 1;</code>
+     * @return The jobId.
      */
     @java.lang.Override
-    public long getId() {
-      return id ;
+    public long getJobId() {
+      return jobId ;
     }
     /**
-     * <code>int64 id = 1;</code>
-     * @param value The id to set.
+     * <code>int64 job_id = 1;</code>
+     * @param value The jobId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(long value) {
+    public Builder setJobId(long value) {
       
-      id = value;
+      jobId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 id = 1;</code>
+     * <code>int64 job_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearJobId() {
       
-      id = 0L;
+      jobId = 0L;
       onChanged();
       return this;
     }

@@ -116,6 +116,7 @@ const GetSchoolLiveTrafficChartResponse$json = {
     {'1': 'total_traffic', '3': 2, '4': 1, '5': 3, '10': 'totalTraffic'},
     {'1': 'ali_total_traffic', '3': 3, '4': 1, '5': 3, '10': 'aliTotalTraffic'},
     {'1': 'live_traffic_chart', '3': 4, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'liveTrafficChart'},
+    {'1': 'ali_live_traffic_chart', '3': 5, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'aliLiveTrafficChart'},
   ],
 };
 
@@ -125,5 +126,6 @@ final $typed_data.Uint8List getSchoolLiveTrafficChartResponseDescriptor = $conve
     'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEiMKDXRvdGFsX3RyYWZmaWMYAiABKANSDHRv'
     'dGFsVHJhZmZpYxIqChFhbGlfdG90YWxfdHJhZmZpYxgDIAEoA1IPYWxpVG90YWxUcmFmZmljEk'
     '4KEmxpdmVfdHJhZmZpY19jaGFydBgEIAMoCzIgLmdsb3J5X2FwaS5TY2hvb0xpdmVUcmFmZmlj'
-    'Q2hhcnRSEGxpdmVUcmFmZmljQ2hhcnQ=');
+    'Q2hhcnRSEGxpdmVUcmFmZmljQ2hhcnQSVQoWYWxpX2xpdmVfdHJhZmZpY19jaGFydBgFIAMoCz'
+    'IgLmdsb3J5X2FwaS5TY2hvb0xpdmVUcmFmZmljQ2hhcnRSE2FsaUxpdmVUcmFmZmljQ2hhcnQ=');
 

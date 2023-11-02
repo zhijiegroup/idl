@@ -8,10 +8,10 @@ public interface OccupationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 id = 1;</code>
-   * @return The id.
+   * <code>int64 job_id = 1;</code>
+   * @return The jobId.
    */
-  long getId();
+  long getJobId();
 
   /**
    * <code>string name = 2;</code>
