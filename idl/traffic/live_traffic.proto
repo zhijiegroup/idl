@@ -1,0 +1,49 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.traffic";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message ListSchoolLiveTrafficRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    int64 start = 3;
+    int64 end = 4;
+}
+
+message ListSchoolLiveTrafficResponse {
+    base.BaseResponse base_resp = 1;
+    SchoolLiveTraffic school_live_traffic_summary = 2;
+    repeated SchoolLiveTraffic school_live_traffic_list = 3;
+}
+
+message SchoolLiveTraffic {
+    int64 tenant_id = 1;
+    string tenant_name = 2;
+    int64 used_traffic = 3;
+    int64 remaining_traffic = 4;
+    double remaining_percent = 5;
+    int64 max_live_duration = 6;
+    int64 average_live_duration = 7;
+    int64 max_day_traffic = 8;
+    int64 average_day_traffic = 9;
+    int64 maybe_use_day = 10;
+}
+
+message GetSchoolLiveTrafficChartRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    int64 start = 3;
+    int64 end = 4;
+}
+
+message SchooLiveTrafficChart {
+    string date = 1;
+    int64 traffic = 2;
+}
+
+message GetSchoolLiveTrafficChartResponse {
+    base.BaseRequest base_request = 1;
+    repeated SchooLiveTrafficChart live_traffic_chart = 2;
+}
