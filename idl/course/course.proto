@@ -10,6 +10,11 @@ message CourseModules {
 
 }
 
+message Occupation {
+  int64 id = 1;
+  string name = 2;
+}
+
 message Course {
   int64 course_id = 1; // 课程ID
   string course_name = 2; // 课程名称
@@ -18,7 +23,7 @@ message Course {
   float knowledge_hours = 5; // 知识点学时
   float skill_hours = 6; // 技能学时
   string course_description = 7; // 课程简介
-  string course_occupation = 8; // 课程关联的职业岗位
+  repeated Occupation course_occupation = 8; // 课程关联的职业岗位
   string course_cover_path = 9; // 课程封面图片OSS路径
   string course_cover_url = 10; // 课程封面图片OSS url
   int32 course_classification = 11; // 课程分类：1.学校课程；2.职场提升
