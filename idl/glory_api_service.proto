@@ -52,6 +52,7 @@ import "course/teaching_plan.proto";
 import "course/edu_scheme.proto";
 import "course/job.proto";
 import "app/app.proto";
+import "traffic/live_traffic.proto";
 
 service glory_api {
 
@@ -1219,5 +1220,13 @@ service glory_api {
   }
   rpc ListJob(ListJobRequest) returns (ListJobResponse) {
     option (api.post) = '/api/course/list_job';
+  }
+
+  // 流量统计
+  rpc GetSchooLiveChart(GetSchoolLiveTrafficChartRequest) returns (GetSchoolLiveTrafficChartResponse) {
+    option (api.get) = '/api/traffic/get_school_live_chart';
+  }
+  rpc ListSchooLiveTraffic(ListSchoolLiveTrafficRequest) returns (ListSchoolLiveTrafficResponse) {
+    option (api.get) = '/api/traffic/list_school_live_traffic';
   }
 }
