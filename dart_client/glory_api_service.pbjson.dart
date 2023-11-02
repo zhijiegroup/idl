@@ -1061,6 +1061,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListLatestCourseRequest': $38.ListLatestCourseRequest$json,
   '.glory_api.ListLatestCourseResponse': $38.ListLatestCourseResponse$json,
   '.glory_api.Course': $38.Course$json,
+  '.glory_api.Occupation': $38.Occupation$json,
   '.glory_api.ListHotestCourseRequest': $38.ListHotestCourseRequest$json,
   '.glory_api.ListHotestCourseResponse': $38.ListHotestCourseResponse$json,
   '.glory_api.CreateCmCourseRequest': $39.CreateCmCourseRequest$json,

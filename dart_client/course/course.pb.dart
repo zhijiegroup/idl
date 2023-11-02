@@ -49,6 +49,70 @@ class CourseModules extends $pb.GeneratedMessage {
   static CourseModules? _defaultInstance;
 }
 
+class Occupation extends $pb.GeneratedMessage {
+  factory Occupation({
+    $fixnum.Int64? id,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  Occupation._() : super();
+  factory Occupation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Occupation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Occupation', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Occupation clone() => Occupation()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Occupation copyWith(void Function(Occupation) updates) => super.copyWith((message) => updates(message as Occupation)) as Occupation;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Occupation create() => Occupation._();
+  Occupation createEmptyInstance() => create();
+  static $pb.PbList<Occupation> createRepeated() => $pb.PbList<Occupation>();
+  @$core.pragma('dart2js:noInline')
+  static Occupation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Occupation>(create);
+  static Occupation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+}
+
 class Course extends $pb.GeneratedMessage {
   factory Course({
     $fixnum.Int64? courseId,
@@ -58,7 +122,7 @@ class Course extends $pb.GeneratedMessage {
     $core.double? knowledgeHours,
     $core.double? skillHours,
     $core.String? courseDescription,
-    $core.String? courseOccupation,
+    $core.Iterable<Occupation>? courseOccupation,
     $core.String? courseCoverPath,
     $core.String? courseCoverUrl,
     $core.int? courseClassification,
@@ -93,7 +157,7 @@ class Course extends $pb.GeneratedMessage {
       $result.courseDescription = courseDescription;
     }
     if (courseOccupation != null) {
-      $result.courseOccupation = courseOccupation;
+      $result.courseOccupation.addAll(courseOccupation);
     }
     if (courseCoverPath != null) {
       $result.courseCoverPath = courseCoverPath;
@@ -139,7 +203,7 @@ class Course extends $pb.GeneratedMessage {
     ..a<$core.double>(5, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OF)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'skillHours', $pb.PbFieldType.OF)
     ..aOS(7, _omitFieldNames ? '' : 'courseDescription')
-    ..aOS(8, _omitFieldNames ? '' : 'courseOccupation')
+    ..pc<Occupation>(8, _omitFieldNames ? '' : 'courseOccupation', $pb.PbFieldType.PM, subBuilder: Occupation.create)
     ..aOS(9, _omitFieldNames ? '' : 'courseCoverPath')
     ..aOS(10, _omitFieldNames ? '' : 'courseCoverUrl')
     ..a<$core.int>(11, _omitFieldNames ? '' : 'courseClassification', $pb.PbFieldType.O3)
@@ -238,13 +302,7 @@ class Course extends $pb.GeneratedMessage {
   void clearCourseDescription() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get courseOccupation => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set courseOccupation($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasCourseOccupation() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCourseOccupation() => clearField(8);
+  $core.List<Occupation> get courseOccupation => $_getList(7);
 
   @$pb.TagNumber(9)
   $core.String get courseCoverPath => $_getSZ(8);

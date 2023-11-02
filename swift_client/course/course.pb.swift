@@ -30,6 +30,20 @@ struct GloryApi_CourseModules {
   init() {}
 }
 
+struct GloryApi_Occupation {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var id: Int64 = 0
+
+  var name: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_Course {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -78,7 +92,7 @@ struct GloryApi_Course {
   }
 
   /// 课程关联的职业岗位
-  var courseOccupation: String {
+  var courseOccupation: [GloryApi_Occupation] {
     get {return _storage._courseOccupation}
     set {_uniqueStorage()._courseOccupation = newValue}
   }
@@ -643,6 +657,7 @@ struct GloryApi_ListHotestCourseResponse {
 
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_CourseModules: @unchecked Sendable {}
+extension GloryApi_Occupation: @unchecked Sendable {}
 extension GloryApi_Course: @unchecked Sendable {}
 extension GloryApi_CreateCourseRequest: @unchecked Sendable {}
 extension GloryApi_CreateCourseResponse: @unchecked Sendable {}
@@ -688,6 +703,44 @@ extension GloryApi_CourseModules: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
+extension GloryApi_Occupation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Occupation"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "id"),
+    2: .same(proto: "name"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.id != 0 {
+      try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 1)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_Occupation, rhs: GloryApi_Occupation) -> Bool {
+    if lhs.id != rhs.id {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Course"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -719,7 +772,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     var _knowledgeHours: Float = 0
     var _skillHours: Float = 0
     var _courseDescription: String = String()
-    var _courseOccupation: String = String()
+    var _courseOccupation: [GloryApi_Occupation] = []
     var _courseCoverPath: String = String()
     var _courseCoverURL: String = String()
     var _courseClassification: Int32 = 0
@@ -779,7 +832,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         case 5: try { try decoder.decodeSingularFloatField(value: &_storage._knowledgeHours) }()
         case 6: try { try decoder.decodeSingularFloatField(value: &_storage._skillHours) }()
         case 7: try { try decoder.decodeSingularStringField(value: &_storage._courseDescription) }()
-        case 8: try { try decoder.decodeSingularStringField(value: &_storage._courseOccupation) }()
+        case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseOccupation) }()
         case 9: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverPath) }()
         case 10: try { try decoder.decodeSingularStringField(value: &_storage._courseCoverURL) }()
         case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._courseClassification) }()
@@ -820,7 +873,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         try visitor.visitSingularStringField(value: _storage._courseDescription, fieldNumber: 7)
       }
       if !_storage._courseOccupation.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._courseOccupation, fieldNumber: 8)
+        try visitor.visitRepeatedMessageField(value: _storage._courseOccupation, fieldNumber: 8)
       }
       if !_storage._courseCoverPath.isEmpty {
         try visitor.visitSingularStringField(value: _storage._courseCoverPath, fieldNumber: 9)

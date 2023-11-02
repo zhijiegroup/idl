@@ -122,20 +122,44 @@ public interface CourseOrBuilder extends
    * 课程关联的职业岗位
    * </pre>
    *
-   * <code>string course_occupation = 8;</code>
-   * @return The courseOccupation.
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
    */
-  java.lang.String getCourseOccupation();
+  java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation> 
+      getCourseOccupationList();
   /**
    * <pre>
    * 课程关联的职业岗位
    * </pre>
    *
-   * <code>string course_occupation = 8;</code>
-   * @return The bytes for courseOccupation.
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getCourseOccupationBytes();
+  com.zhijiejiaoyu.glory_api.course.Occupation getCourseOccupation(int index);
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  int getCourseOccupationCount();
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder> 
+      getCourseOccupationOrBuilderList();
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder getCourseOccupationOrBuilder(
+      int index);
 
   /**
    * <pre>

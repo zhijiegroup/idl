@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     courseOrganization = "";
     courseTeacherName = "";
     courseDescription = "";
-    courseOccupation = "";
+    courseOccupation = java.util.Collections.emptyList();
     courseCoverPath = "";
     courseCoverUrl = "";
     courseMajor = "";
@@ -100,9 +100,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            courseOccupation = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              courseOccupation = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.Occupation>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            courseOccupation .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.Occupation.parser(), extensionRegistry));
             break;
           }
           case 74: {
@@ -150,9 +153,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 138: {
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
               courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             courseModules .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
@@ -180,6 +183,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
+        courseOccupation = java.util.Collections.unmodifiableList(courseOccupation );
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
         courseModules = java.util.Collections.unmodifiableList(courseModules );
       }
       this.unknownFields = unknownFields.build();
@@ -429,49 +435,63 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COURSE_OCCUPATION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object courseOccupation ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation> courseOccupation ;
   /**
    * <pre>
    * 课程关联的职业岗位
    * </pre>
    *
-   * <code>string course_occupation = 8;</code>
-   * @return The courseOccupation.
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getCourseOccupation() {
-    java.lang.Object ref = courseOccupation ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      courseOccupation = s;
-      return s;
-    }
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation> getCourseOccupationList() {
+    return courseOccupation ;
   }
   /**
    * <pre>
    * 课程关联的职业岗位
    * </pre>
    *
-   * <code>string course_occupation = 8;</code>
-   * @return The bytes for courseOccupation.
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCourseOccupationBytes() {
-    java.lang.Object ref = courseOccupation ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      courseOccupation = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder> 
+      getCourseOccupationOrBuilderList() {
+    return courseOccupation ;
+  }
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  @java.lang.Override
+  public int getCourseOccupationCount() {
+    return courseOccupation .size();
+  }
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.Occupation getCourseOccupation(int index) {
+    return courseOccupation .get(index);
+  }
+  /**
+   * <pre>
+   * 课程关联的职业岗位
+   * </pre>
+   *
+   * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder getCourseOccupationOrBuilder(
+      int index) {
+    return courseOccupation .get(index);
   }
 
   public static final int COURSE_COVER_PATH_FIELD_NUMBER = 9;
@@ -859,8 +879,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, courseDescription );
     }
-    if (!getCourseOccupationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, courseOccupation );
+    for (int i = 0; i < courseOccupation .size(); i++) {
+      output.writeMessage(8, courseOccupation .get(i));
     }
     if (!getCourseCoverPathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, courseCoverPath );
@@ -925,8 +945,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, courseDescription );
     }
-    if (!getCourseOccupationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, courseOccupation );
+    for (int i = 0; i < courseOccupation .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, courseOccupation .get(i));
     }
     if (!getCourseCoverPathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, courseCoverPath );
@@ -994,8 +1015,8 @@ private static final long serialVersionUID = 0L;
             other.getSkillHours())) return false;
     if (!getCourseDescription()
         .equals(other.getCourseDescription())) return false;
-    if (!getCourseOccupation()
-        .equals(other.getCourseOccupation())) return false;
+    if (!getCourseOccupationList()
+        .equals(other.getCourseOccupationList())) return false;
     if (!getCourseCoverPath()
         .equals(other.getCourseCoverPath())) return false;
     if (!getCourseCoverUrl()
@@ -1044,8 +1065,10 @@ private static final long serialVersionUID = 0L;
         getSkillHours());
     hash = (37 * hash) + COURSE_DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getCourseDescription().hashCode();
-    hash = (37 * hash) + COURSE_OCCUPATION_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseOccupation().hashCode();
+    if (getCourseOccupationCount() > 0) {
+      hash = (37 * hash) + COURSE_OCCUPATION_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseOccupationList().hashCode();
+    }
     hash = (37 * hash) + COURSE_COVER_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getCourseCoverPath().hashCode();
     hash = (37 * hash) + COURSE_COVER_URL_FIELD_NUMBER;
@@ -1196,6 +1219,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getCourseOccupationFieldBuilder();
         getCourseModulesFieldBuilder();
       }
     }
@@ -1216,8 +1240,12 @@ private static final long serialVersionUID = 0L;
 
       courseDescription = "";
 
-      courseOccupation = "";
-
+      if (courseOccupationBuilder == null) {
+        courseOccupation = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        courseOccupationBuilder .clear();
+      }
       courseCoverPath = "";
 
       courseCoverUrl = "";
@@ -1236,7 +1264,7 @@ private static final long serialVersionUID = 0L;
 
       if (courseModulesBuilder == null) {
         courseModules = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
       } else {
         courseModulesBuilder .clear();
       }
@@ -1276,7 +1304,15 @@ private static final long serialVersionUID = 0L;
       result.knowledgeHours = knowledgeHours ;
       result.skillHours = skillHours ;
       result.courseDescription = courseDescription ;
-      result.courseOccupation = courseOccupation ;
+      if (courseOccupationBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          courseOccupation = java.util.Collections.unmodifiableList(courseOccupation );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.courseOccupation = courseOccupation ;
+      } else {
+        result.courseOccupation = courseOccupationBuilder .build();
+      }
       result.courseCoverPath = courseCoverPath ;
       result.courseCoverUrl = courseCoverUrl ;
       result.courseClassification = courseClassification ;
@@ -1286,9 +1322,9 @@ private static final long serialVersionUID = 0L;
       result.courseType = courseType ;
       result.courseModule = courseModule ;
       if (courseModulesBuilder == null) {
-        if (((bitField0 & 0x00000001) != 0)) {
+        if (((bitField0 & 0x00000002) != 0)) {
           courseModules = java.util.Collections.unmodifiableList(courseModules );
-          bitField0 = (bitField0 & ~0x00000001);
+          bitField0 = (bitField0 & ~0x00000002);
         }
         result.courseModules = courseModules ;
       } else {
@@ -1368,9 +1404,31 @@ private static final long serialVersionUID = 0L;
         courseDescription = other.courseDescription ;
         onChanged();
       }
-      if (!other.getCourseOccupation().isEmpty()) {
-        courseOccupation = other.courseOccupation ;
-        onChanged();
+      if (courseOccupationBuilder == null) {
+        if (!other.courseOccupation .isEmpty()) {
+          if (courseOccupation .isEmpty()) {
+            courseOccupation = other.courseOccupation ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureCourseOccupationIsMutable();
+            courseOccupation .addAll(other.courseOccupation );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.courseOccupation .isEmpty()) {
+          if (courseOccupationBuilder .isEmpty()) {
+            courseOccupationBuilder .dispose();
+            courseOccupationBuilder = null;
+            courseOccupation = other.courseOccupation ;
+            bitField0 = (bitField0 & ~0x00000001);
+            courseOccupationBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCourseOccupationFieldBuilder() : null;
+          } else {
+            courseOccupationBuilder .addAllMessages(other.courseOccupation );
+          }
+        }
       }
       if (!other.getCourseCoverPath().isEmpty()) {
         courseCoverPath = other.courseCoverPath ;
@@ -1404,7 +1462,7 @@ private static final long serialVersionUID = 0L;
         if (!other.courseModules .isEmpty()) {
           if (courseModules .isEmpty()) {
             courseModules = other.courseModules ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
           } else {
             ensureCourseModulesIsMutable();
             courseModules .addAll(other.courseModules );
@@ -1417,7 +1475,7 @@ private static final long serialVersionUID = 0L;
             courseModulesBuilder .dispose();
             courseModulesBuilder = null;
             courseModules = other.courseModules ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
             courseModulesBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCourseModulesFieldBuilder() : null;
@@ -1973,25 +2031,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object courseOccupation = "";
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation> courseOccupation =
+      java.util.Collections.emptyList();
+    private void ensureCourseOccupationIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        courseOccupation = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.Occupation>(courseOccupation );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.Occupation, com.zhijiejiaoyu.glory_api.course.Occupation.Builder, com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder> courseOccupationBuilder ;
+
     /**
      * <pre>
      * 课程关联的职业岗位
      * </pre>
      *
-     * <code>string course_occupation = 8;</code>
-     * @return The courseOccupation.
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
      */
-    public java.lang.String getCourseOccupation() {
-      java.lang.Object ref = courseOccupation ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        courseOccupation = s;
-        return s;
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation> getCourseOccupationList() {
+      if (courseOccupationBuilder == null) {
+        return java.util.Collections.unmodifiableList(courseOccupation );
       } else {
-        return (java.lang.String) ref;
+        return courseOccupationBuilder .getMessageList();
       }
     }
     /**
@@ -1999,20 +2062,13 @@ private static final long serialVersionUID = 0L;
      * 课程关联的职业岗位
      * </pre>
      *
-     * <code>string course_occupation = 8;</code>
-     * @return The bytes for courseOccupation.
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getCourseOccupationBytes() {
-      java.lang.Object ref = courseOccupation ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        courseOccupation = b;
-        return b;
+    public int getCourseOccupationCount() {
+      if (courseOccupationBuilder == null) {
+        return courseOccupation .size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return courseOccupationBuilder .getCount();
       }
     }
     /**
@@ -2020,18 +2076,34 @@ private static final long serialVersionUID = 0L;
      * 课程关联的职业岗位
      * </pre>
      *
-     * <code>string course_occupation = 8;</code>
-     * @param value The courseOccupation to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.Occupation getCourseOccupation(int index) {
+      if (courseOccupationBuilder == null) {
+        return courseOccupation .get(index);
+      } else {
+        return courseOccupationBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
      */
     public Builder setCourseOccupation(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      courseOccupation = value;
-      onChanged();
+        int index, com.zhijiejiaoyu.glory_api.course.Occupation value) {
+      if (courseOccupationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseOccupationIsMutable();
+        courseOccupation .set(index, value);
+        onChanged();
+      } else {
+        courseOccupationBuilder .setMessage(index, value);
+      }
       return this;
     }
     /**
@@ -2039,13 +2111,130 @@ private static final long serialVersionUID = 0L;
      * 课程关联的职业岗位
      * </pre>
      *
-     * <code>string course_occupation = 8;</code>
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder setCourseOccupation(
+        int index, com.zhijiejiaoyu.glory_api.course.Occupation.Builder builderForValue) {
+      if (courseOccupationBuilder == null) {
+        ensureCourseOccupationIsMutable();
+        courseOccupation .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseOccupationBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder addCourseOccupation(com.zhijiejiaoyu.glory_api.course.Occupation value) {
+      if (courseOccupationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseOccupationIsMutable();
+        courseOccupation .add(value);
+        onChanged();
+      } else {
+        courseOccupationBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder addCourseOccupation(
+        int index, com.zhijiejiaoyu.glory_api.course.Occupation value) {
+      if (courseOccupationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCourseOccupationIsMutable();
+        courseOccupation .add(index, value);
+        onChanged();
+      } else {
+        courseOccupationBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder addCourseOccupation(
+        com.zhijiejiaoyu.glory_api.course.Occupation.Builder builderForValue) {
+      if (courseOccupationBuilder == null) {
+        ensureCourseOccupationIsMutable();
+        courseOccupation .add(builderForValue.build());
+        onChanged();
+      } else {
+        courseOccupationBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder addCourseOccupation(
+        int index, com.zhijiejiaoyu.glory_api.course.Occupation.Builder builderForValue) {
+      if (courseOccupationBuilder == null) {
+        ensureCourseOccupationIsMutable();
+        courseOccupation .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        courseOccupationBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public Builder addAllCourseOccupation(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.Occupation> values) {
+      if (courseOccupationBuilder == null) {
+        ensureCourseOccupationIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, courseOccupation );
+        onChanged();
+      } else {
+        courseOccupationBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
      */
     public Builder clearCourseOccupation() {
-      
-      courseOccupation = getDefaultInstance().getCourseOccupation();
-      onChanged();
+      if (courseOccupationBuilder == null) {
+        courseOccupation = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        courseOccupationBuilder .clear();
+      }
       return this;
     }
     /**
@@ -2053,20 +2242,105 @@ private static final long serialVersionUID = 0L;
      * 课程关联的职业岗位
      * </pre>
      *
-     * <code>string course_occupation = 8;</code>
-     * @param value The bytes for courseOccupation to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
      */
-    public Builder setCourseOccupationBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      courseOccupation = value;
-      onChanged();
+    public Builder removeCourseOccupation(int index) {
+      if (courseOccupationBuilder == null) {
+        ensureCourseOccupationIsMutable();
+        courseOccupation .remove(index);
+        onChanged();
+      } else {
+        courseOccupationBuilder .remove(index);
+      }
       return this;
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.Occupation.Builder getCourseOccupationBuilder(
+        int index) {
+      return getCourseOccupationFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder getCourseOccupationOrBuilder(
+        int index) {
+      if (courseOccupationBuilder == null) {
+        return courseOccupation .get(index);  } else {
+        return courseOccupationBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder> 
+         getCourseOccupationOrBuilderList() {
+      if (courseOccupationBuilder != null) {
+        return courseOccupationBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(courseOccupation );
+      }
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.Occupation.Builder addCourseOccupationBuilder() {
+      return getCourseOccupationFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.Occupation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.Occupation.Builder addCourseOccupationBuilder(
+        int index) {
+      return getCourseOccupationFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.Occupation.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程关联的职业岗位
+     * </pre>
+     *
+     * <code>repeated .glory_api.Occupation course_occupation = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.Occupation.Builder> 
+         getCourseOccupationBuilderList() {
+      return getCourseOccupationFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.Occupation, com.zhijiejiaoyu.glory_api.course.Occupation.Builder, com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder> 
+        getCourseOccupationFieldBuilder() {
+      if (courseOccupationBuilder == null) {
+        courseOccupationBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.Occupation, com.zhijiejiaoyu.glory_api.course.Occupation.Builder, com.zhijiejiaoyu.glory_api.course.OccupationOrBuilder>(
+                courseOccupation ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        courseOccupation = null;
+      }
+      return courseOccupationBuilder ;
     }
 
     private java.lang.Object courseCoverPath = "";
@@ -2628,9 +2902,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseModule> courseModules =
       java.util.Collections.emptyList();
     private void ensureCourseModulesIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
+      if (!((bitField0 & 0x00000002) != 0)) {
         courseModules = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseModule>(courseModules );
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -2824,7 +3098,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseModules() {
       if (courseModulesBuilder == null) {
         courseModules = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
         onChanged();
       } else {
         courseModulesBuilder .clear();
@@ -2929,7 +3203,7 @@ private static final long serialVersionUID = 0L;
         courseModulesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.course.CourseModule, com.zhijiejiaoyu.glory_api.course.CourseModule.Builder, com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder>(
                 courseModules ,
-                ((bitField0 & 0x00000001) != 0),
+                ((bitField0 & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         courseModules = null;

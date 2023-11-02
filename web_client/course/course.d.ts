@@ -8,6 +8,11 @@ export { base, modules };
 
 export interface CourseModules {}
 
+export interface Occupation {
+  id?: string;
+  name?: string;
+}
+
 export interface Course {
   /** 课程ID */
   course_id?: string;
@@ -24,7 +29,7 @@ export interface Course {
   /** 课程简介 */
   course_description?: string;
   /** 课程关联的职业岗位 */
-  course_occupation?: string;
+  course_occupation?: Array<Occupation>;
   /** 课程封面图片OSS路径 */
   course_cover_path?: string;
   /** 课程封面图片OSS url */

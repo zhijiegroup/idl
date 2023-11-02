@@ -22,6 +22,19 @@ const CourseModules$json = {
 final $typed_data.Uint8List courseModulesDescriptor = $convert.base64Decode(
     'Cg1Db3Vyc2VNb2R1bGVz');
 
+@$core.Deprecated('Use occupationDescriptor instead')
+const Occupation$json = {
+  '1': 'Occupation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `Occupation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List occupationDescriptor = $convert.base64Decode(
+    'CgpPY2N1cGF0aW9uEg4KAmlkGAEgASgDUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
+
 @$core.Deprecated('Use courseDescriptor instead')
 const Course$json = {
   '1': 'Course',
@@ -33,7 +46,7 @@ const Course$json = {
     {'1': 'knowledge_hours', '3': 5, '4': 1, '5': 2, '10': 'knowledgeHours'},
     {'1': 'skill_hours', '3': 6, '4': 1, '5': 2, '10': 'skillHours'},
     {'1': 'course_description', '3': 7, '4': 1, '5': 9, '10': 'courseDescription'},
-    {'1': 'course_occupation', '3': 8, '4': 1, '5': 9, '10': 'courseOccupation'},
+    {'1': 'course_occupation', '3': 8, '4': 3, '5': 11, '6': '.glory_api.Occupation', '10': 'courseOccupation'},
     {'1': 'course_cover_path', '3': 9, '4': 1, '5': 9, '10': 'courseCoverPath'},
     {'1': 'course_cover_url', '3': 10, '4': 1, '5': 9, '10': 'courseCoverUrl'},
     {'1': 'course_classification', '3': 11, '4': 1, '5': 5, '10': 'courseClassification'},
@@ -54,15 +67,15 @@ final $typed_data.Uint8List courseDescriptor = $convert.base64Decode(
     'bml6YXRpb24SLgoTY291cnNlX3RlYWNoZXJfbmFtZRgEIAEoCVIRY291cnNlVGVhY2hlck5hbW'
     'USJwoPa25vd2xlZGdlX2hvdXJzGAUgASgCUg5rbm93bGVkZ2VIb3VycxIfCgtza2lsbF9ob3Vy'
     'cxgGIAEoAlIKc2tpbGxIb3VycxItChJjb3Vyc2VfZGVzY3JpcHRpb24YByABKAlSEWNvdXJzZU'
-    'Rlc2NyaXB0aW9uEisKEWNvdXJzZV9vY2N1cGF0aW9uGAggASgJUhBjb3Vyc2VPY2N1cGF0aW9u'
-    'EioKEWNvdXJzZV9jb3Zlcl9wYXRoGAkgASgJUg9jb3Vyc2VDb3ZlclBhdGgSKAoQY291cnNlX2'
-    'NvdmVyX3VybBgKIAEoCVIOY291cnNlQ292ZXJVcmwSMwoVY291cnNlX2NsYXNzaWZpY2F0aW9u'
-    'GAsgASgFUhRjb3Vyc2VDbGFzc2lmaWNhdGlvbhIhCgxjb3Vyc2VfbGV2ZWwYDCABKAVSC2NvdX'
-    'JzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgNIAEoCVILY291cnNlTWFqb3ISJwoPY291cnNlX2lu'
-    'ZHVzdHJ5GA4gASgJUg5jb3Vyc2VJbmR1c3RyeRIfCgtjb3Vyc2VfdHlwZRgPIAEoBVIKY291cn'
-    'NlVHlwZRIjCg1jb3Vyc2VfbW9kdWxlGBAgASgFUgxjb3Vyc2VNb2R1bGUSPgoOY291cnNlX21v'
-    'ZHVsZXMYESADKAsyFy5nbG9yeV9hcGkuQ291cnNlTW9kdWxlUg1jb3Vyc2VNb2R1bGVzEh0KCm'
-    'NyZWF0ZWRfYXQYEiABKAlSCWNyZWF0ZWRBdA==');
+    'Rlc2NyaXB0aW9uEkIKEWNvdXJzZV9vY2N1cGF0aW9uGAggAygLMhUuZ2xvcnlfYXBpLk9jY3Vw'
+    'YXRpb25SEGNvdXJzZU9jY3VwYXRpb24SKgoRY291cnNlX2NvdmVyX3BhdGgYCSABKAlSD2NvdX'
+    'JzZUNvdmVyUGF0aBIoChBjb3Vyc2VfY292ZXJfdXJsGAogASgJUg5jb3Vyc2VDb3ZlclVybBIz'
+    'ChVjb3Vyc2VfY2xhc3NpZmljYXRpb24YCyABKAVSFGNvdXJzZUNsYXNzaWZpY2F0aW9uEiEKDG'
+    'NvdXJzZV9sZXZlbBgMIAEoBVILY291cnNlTGV2ZWwSIQoMY291cnNlX21ham9yGA0gASgJUgtj'
+    'b3Vyc2VNYWpvchInCg9jb3Vyc2VfaW5kdXN0cnkYDiABKAlSDmNvdXJzZUluZHVzdHJ5Eh8KC2'
+    'NvdXJzZV90eXBlGA8gASgFUgpjb3Vyc2VUeXBlEiMKDWNvdXJzZV9tb2R1bGUYECABKAVSDGNv'
+    'dXJzZU1vZHVsZRI+Cg5jb3Vyc2VfbW9kdWxlcxgRIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2'
+    'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0');
 
 @$core.Deprecated('Use createCourseRequestDescriptor instead')
 const CreateCourseRequest$json = {
