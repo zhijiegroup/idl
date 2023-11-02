@@ -49,4 +49,5 @@ message GetSchoolLiveTrafficChartResponse {
     int64 total_traffic = 2;
     int64 ali_total_traffic = 3;
     repeated SchooLiveTrafficChart live_traffic_chart = 4;
+    repeated SchooLiveTrafficChart ali_live_traffic_chart = 5;
 }
