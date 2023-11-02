@@ -41,9 +41,11 @@ message GetSchoolLiveTrafficChartRequest {
 message SchooLiveTrafficChart {
     string date = 1;
     int64 traffic = 2;
+    int64 timestamp = 3;
 }
 
 message GetSchoolLiveTrafficChartResponse {
-    base.BaseRequest base_request = 1;
-    repeated SchooLiveTrafficChart live_traffic_chart = 2;
+    base.BaseResponse base_resp = 1;
+    int64 total_traffic = 2;
+    repeated SchooLiveTrafficChart live_traffic_chart = 3;
 }
