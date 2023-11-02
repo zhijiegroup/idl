@@ -47,5 +47,6 @@ message SchooLiveTrafficChart {
 message GetSchoolLiveTrafficChartResponse {
     base.BaseResponse base_resp = 1;
     int64 total_traffic = 2;
-    repeated SchooLiveTrafficChart live_traffic_chart = 3;
+    int64 ali_total_traffic = 3;
+    repeated SchooLiveTrafficChart live_traffic_chart = 4;
 }
