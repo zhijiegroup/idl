@@ -150,6 +150,7 @@ message UnevaluatedRoom {
     int64 user_id = 5;
     string user_name = 6;
     string status = 7;
+    bool is_use_ai = 8;
 }
 
 message ListUnevaluatedRoomRequest {

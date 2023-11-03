@@ -24,6 +24,7 @@ message Room {
   string room_title = 14; //直播的标题
   string room_image_url = 15; //直播的封面的url
   int64 room_image_attachment_id = 16; // 直播间的封面的image 的id
+  bool is_use_ai = 17; // 是否使用AI
 }
 
 message CreateRoomRequest {
@@ -32,6 +33,7 @@ message CreateRoomRequest {
   string group_id = 3;
   string room_title = 4;  // 直播房间的标题
   int64 room_image_attachment_id = 5; // 直播房间的图片的id
+  bool is_use_ai = 6; // 是否使用AI评价
 }
 message CreateRoomResponse {
   base.BaseResponse base_resp = 1;
@@ -101,6 +103,7 @@ message FinishedRoom {
   string room_title = 10; //直播的标题
   int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
   double room_deal_amount =12;
+  int64 comment_count = 13; // 评论数
 }
 
 message ListFinishedRoomRequest {
