@@ -118,6 +118,11 @@ private static final long serialVersionUID = 0L;
             roomDealAmount = input.readDouble();
             break;
           }
+          case 104: {
+
+            commentCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -429,6 +434,21 @@ private static final long serialVersionUID = 0L;
     return roomDealAmount ;
   }
 
+  public static final int COMMENT_COUNT_FIELD_NUMBER = 13;
+  private long commentCount ;
+  /**
+   * <pre>
+   * 评论数
+   * </pre>
+   *
+   * <code>int64 comment_count = 13;</code>
+   * @return The commentCount.
+   */
+  @java.lang.Override
+  public long getCommentCount() {
+    return commentCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -478,6 +498,9 @@ private static final long serialVersionUID = 0L;
     }
     if (roomDealAmount != 0D) {
       output.writeDouble(12, roomDealAmount );
+    }
+    if (commentCount != 0L) {
+      output.writeInt64(13, commentCount );
     }
     unknownFields.writeTo(output);
   }
@@ -531,6 +554,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(12, roomDealAmount );
     }
+    if (commentCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(13, commentCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -572,6 +599,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getRoomDealAmount())
         != java.lang.Double.doubleToLongBits(
             other.getRoomDealAmount())) return false;
+    if (getCommentCount()
+        != other.getCommentCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -614,6 +643,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROOM_DEAL_AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getRoomDealAmount()));
+    hash = (37 * hash) + COMMENT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCommentCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -771,6 +803,8 @@ private static final long serialVersionUID = 0L;
 
       roomDealAmount = 0D;
 
+      commentCount = 0L;
+
       return this;
     }
 
@@ -809,6 +843,7 @@ private static final long serialVersionUID = 0L;
       result.roomTitle = roomTitle ;
       result.roomImageAttachmentId = roomImageAttachmentId ;
       result.roomDealAmount = roomDealAmount ;
+      result.commentCount = commentCount ;
       onBuilt();
       return result;
     }
@@ -897,6 +932,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRoomDealAmount() != 0D) {
         setRoomDealAmount(other.getRoomDealAmount());
+      }
+      if (other.getCommentCount() != 0L) {
+        setCommentCount(other.getCommentCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1552,6 +1590,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearRoomDealAmount() {
       
       roomDealAmount = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long commentCount ;
+    /**
+     * <pre>
+     * 评论数
+     * </pre>
+     *
+     * <code>int64 comment_count = 13;</code>
+     * @return The commentCount.
+     */
+    @java.lang.Override
+    public long getCommentCount() {
+      return commentCount ;
+    }
+    /**
+     * <pre>
+     * 评论数
+     * </pre>
+     *
+     * <code>int64 comment_count = 13;</code>
+     * @param value The commentCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCommentCount(long value) {
+      
+      commentCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 评论数
+     * </pre>
+     *
+     * <code>int64 comment_count = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCommentCount() {
+      
+      commentCount = 0L;
       onChanged();
       return this;
     }

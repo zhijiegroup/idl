@@ -27,6 +27,8 @@ export interface Room {
   room_image_url?: string;
   /** 直播间的封面的image 的id */
   room_image_attachment_id?: string;
+  /** 是否使用AI */
+  is_use_ai?: boolean;
 }
 
 export interface CreateRoomRequest {
@@ -37,6 +39,8 @@ export interface CreateRoomRequest {
   room_title?: string;
   /** 直播房间的图片的id */
   room_image_attachment_id?: string;
+  /** 是否使用AI评价 */
+  is_use_ai?: boolean;
 }
 
 export interface CreateRoomResponse {
@@ -112,6 +116,8 @@ export interface FinishedRoom {
   /** 直播间的封面的image 的id */
   room_image_attachment_id?: string;
   room_deal_amount?: number;
+  /** 评论数 */
+  comment_count?: string;
 }
 
 export interface ListFinishedRoomRequest {

@@ -25,46 +25,102 @@ struct GloryApi_Room {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var shopID: Int64 = 0
+  var shopID: Int64 {
+    get {return _storage._shopID}
+    set {_uniqueStorage()._shopID = newValue}
+  }
 
-  var roomID: Int64 = 0
+  var roomID: Int64 {
+    get {return _storage._roomID}
+    set {_uniqueStorage()._roomID = newValue}
+  }
 
-  var userID: Int64 = 0
+  var userID: Int64 {
+    get {return _storage._userID}
+    set {_uniqueStorage()._userID = newValue}
+  }
 
-  var groupID: String = String()
+  var groupID: String {
+    get {return _storage._groupID}
+    set {_uniqueStorage()._groupID = newValue}
+  }
 
-  var appName: String = String()
+  var appName: String {
+    get {return _storage._appName}
+    set {_uniqueStorage()._appName = newValue}
+  }
 
-  var streamName: String = String()
+  var streamName: String {
+    get {return _storage._streamName}
+    set {_uniqueStorage()._streamName = newValue}
+  }
 
-  var upURL: String = String()
+  var upURL: String {
+    get {return _storage._upURL}
+    set {_uniqueStorage()._upURL = newValue}
+  }
 
-  var playURL: String = String()
+  var playURL: String {
+    get {return _storage._playURL}
+    set {_uniqueStorage()._playURL = newValue}
+  }
 
-  var startTime: String = String()
+  var startTime: String {
+    get {return _storage._startTime}
+    set {_uniqueStorage()._startTime = newValue}
+  }
 
-  var likeCount: Int64 = 0
+  var likeCount: Int64 {
+    get {return _storage._likeCount}
+    set {_uniqueStorage()._likeCount = newValue}
+  }
 
-  var endTime: String = String()
+  var endTime: String {
+    get {return _storage._endTime}
+    set {_uniqueStorage()._endTime = newValue}
+  }
 
   /// if end_time not null, means closed, if null, means still active
-  var status: String = String()
+  var status: String {
+    get {return _storage._status}
+    set {_uniqueStorage()._status = newValue}
+  }
 
   /// 设置直播商品计划id
-  var livePlanID: Int64 = 0
+  var livePlanID: Int64 {
+    get {return _storage._livePlanID}
+    set {_uniqueStorage()._livePlanID = newValue}
+  }
 
   ///直播的标题
-  var roomTitle: String = String()
+  var roomTitle: String {
+    get {return _storage._roomTitle}
+    set {_uniqueStorage()._roomTitle = newValue}
+  }
 
   ///直播的封面的url
-  var roomImageURL: String = String()
+  var roomImageURL: String {
+    get {return _storage._roomImageURL}
+    set {_uniqueStorage()._roomImageURL = newValue}
+  }
 
   /// 直播间的封面的image 的id
-  var roomImageAttachmentID: Int64 = 0
+  var roomImageAttachmentID: Int64 {
+    get {return _storage._roomImageAttachmentID}
+    set {_uniqueStorage()._roomImageAttachmentID = newValue}
+  }
+
+  /// 是否使用AI
+  var isUseAi: Bool {
+    get {return _storage._isUseAi}
+    set {_uniqueStorage()._isUseAi = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_CreateRoomRequest {
@@ -90,6 +146,9 @@ struct GloryApi_CreateRoomRequest {
 
   /// 直播房间的图片的id
   var roomImageAttachmentID: Int64 = 0
+
+  /// 是否使用AI评价
+  var isUseAi: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -158,28 +217,29 @@ struct GloryApi_GetRoomResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var room: GloryApi_Room {
-    get {return _storage._room ?? GloryApi_Room()}
-    set {_uniqueStorage()._room = newValue}
+    get {return _room ?? GloryApi_Room()}
+    set {_room = newValue}
   }
   /// Returns true if `room` has been explicitly set.
-  var hasRoom: Bool {return _storage._room != nil}
+  var hasRoom: Bool {return self._room != nil}
   /// Clears the value of `room`. Subsequent reads from it will return its default value.
-  mutating func clearRoom() {_uniqueStorage()._room = nil}
+  mutating func clearRoom() {self._room = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _room: GloryApi_Room? = nil
 }
 
 struct GloryApi_UpdateRoomRequest {
@@ -188,33 +248,31 @@ struct GloryApi_UpdateRoomRequest {
   // methods supported on all messages.
 
   var baseRequest: Base_BaseRequest {
-    get {return _storage._baseRequest ?? Base_BaseRequest()}
-    set {_uniqueStorage()._baseRequest = newValue}
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
   }
   /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return _storage._baseRequest != nil}
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {_uniqueStorage()._baseRequest = nil}
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var closeRoom: Bool {
-    get {return _storage._closeRoom}
-    set {_uniqueStorage()._closeRoom = newValue}
-  }
+  var closeRoom: Bool = false
 
   var room: GloryApi_Room {
-    get {return _storage._room ?? GloryApi_Room()}
-    set {_uniqueStorage()._room = newValue}
+    get {return _room ?? GloryApi_Room()}
+    set {_room = newValue}
   }
   /// Returns true if `room` has been explicitly set.
-  var hasRoom: Bool {return _storage._room != nil}
+  var hasRoom: Bool {return self._room != nil}
   /// Clears the value of `room`. Subsequent reads from it will return its default value.
-  mutating func clearRoom() {_uniqueStorage()._room = nil}
+  mutating func clearRoom() {self._room = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _room: GloryApi_Room? = nil
 }
 
 struct GloryApi_UpdateRoomResponse {
@@ -398,6 +456,9 @@ struct GloryApi_FinishedRoom {
   var roomImageAttachmentID: Int64 = 0
 
   var roomDealAmount: Double = 0
+
+  /// 评论数
+  var commentCount: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -982,104 +1043,174 @@ extension GloryApi_Room: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     14: .standard(proto: "room_title"),
     15: .standard(proto: "room_image_url"),
     16: .standard(proto: "room_image_attachment_id"),
+    17: .standard(proto: "is_use_ai"),
   ]
 
+  fileprivate class _StorageClass {
+    var _shopID: Int64 = 0
+    var _roomID: Int64 = 0
+    var _userID: Int64 = 0
+    var _groupID: String = String()
+    var _appName: String = String()
+    var _streamName: String = String()
+    var _upURL: String = String()
+    var _playURL: String = String()
+    var _startTime: String = String()
+    var _likeCount: Int64 = 0
+    var _endTime: String = String()
+    var _status: String = String()
+    var _livePlanID: Int64 = 0
+    var _roomTitle: String = String()
+    var _roomImageURL: String = String()
+    var _roomImageAttachmentID: Int64 = 0
+    var _isUseAi: Bool = false
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _shopID = source._shopID
+      _roomID = source._roomID
+      _userID = source._userID
+      _groupID = source._groupID
+      _appName = source._appName
+      _streamName = source._streamName
+      _upURL = source._upURL
+      _playURL = source._playURL
+      _startTime = source._startTime
+      _likeCount = source._likeCount
+      _endTime = source._endTime
+      _status = source._status
+      _livePlanID = source._livePlanID
+      _roomTitle = source._roomTitle
+      _roomImageURL = source._roomImageURL
+      _roomImageAttachmentID = source._roomImageAttachmentID
+      _isUseAi = source._isUseAi
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.appName) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.streamName) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.upURL) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.playURL) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
-      case 10: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 13: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
-      case 15: try { try decoder.decodeSingularStringField(value: &self.roomImageURL) }()
-      case 16: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        case 2: try { try decoder.decodeSingularInt64Field(value: &_storage._roomID) }()
+        case 3: try { try decoder.decodeSingularInt64Field(value: &_storage._userID) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._groupID) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._appName) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._streamName) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._upURL) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._playURL) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._startTime) }()
+        case 10: try { try decoder.decodeSingularInt64Field(value: &_storage._likeCount) }()
+        case 11: try { try decoder.decodeSingularStringField(value: &_storage._endTime) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._status) }()
+        case 13: try { try decoder.decodeSingularInt64Field(value: &_storage._livePlanID) }()
+        case 14: try { try decoder.decodeSingularStringField(value: &_storage._roomTitle) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._roomImageURL) }()
+        case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._roomImageAttachmentID) }()
+        case 17: try { try decoder.decodeSingularBoolField(value: &_storage._isUseAi) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 1)
-    }
-    if self.roomID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
-    }
-    if self.userID != 0 {
-      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 3)
-    }
-    if !self.groupID.isEmpty {
-      try visitor.visitSingularStringField(value: self.groupID, fieldNumber: 4)
-    }
-    if !self.appName.isEmpty {
-      try visitor.visitSingularStringField(value: self.appName, fieldNumber: 5)
-    }
-    if !self.streamName.isEmpty {
-      try visitor.visitSingularStringField(value: self.streamName, fieldNumber: 6)
-    }
-    if !self.upURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.upURL, fieldNumber: 7)
-    }
-    if !self.playURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.playURL, fieldNumber: 8)
-    }
-    if !self.startTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 9)
-    }
-    if self.likeCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 10)
-    }
-    if !self.endTime.isEmpty {
-      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 11)
-    }
-    if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 12)
-    }
-    if self.livePlanID != 0 {
-      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 13)
-    }
-    if !self.roomTitle.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomTitle, fieldNumber: 14)
-    }
-    if !self.roomImageURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.roomImageURL, fieldNumber: 15)
-    }
-    if self.roomImageAttachmentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._shopID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 1)
+      }
+      if _storage._roomID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._roomID, fieldNumber: 2)
+      }
+      if _storage._userID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._userID, fieldNumber: 3)
+      }
+      if !_storage._groupID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._groupID, fieldNumber: 4)
+      }
+      if !_storage._appName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._appName, fieldNumber: 5)
+      }
+      if !_storage._streamName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._streamName, fieldNumber: 6)
+      }
+      if !_storage._upURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._upURL, fieldNumber: 7)
+      }
+      if !_storage._playURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._playURL, fieldNumber: 8)
+      }
+      if !_storage._startTime.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._startTime, fieldNumber: 9)
+      }
+      if _storage._likeCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._likeCount, fieldNumber: 10)
+      }
+      if !_storage._endTime.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._endTime, fieldNumber: 11)
+      }
+      if !_storage._status.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 12)
+      }
+      if _storage._livePlanID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._livePlanID, fieldNumber: 13)
+      }
+      if !_storage._roomTitle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._roomTitle, fieldNumber: 14)
+      }
+      if !_storage._roomImageURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._roomImageURL, fieldNumber: 15)
+      }
+      if _storage._roomImageAttachmentID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._roomImageAttachmentID, fieldNumber: 16)
+      }
+      if _storage._isUseAi != false {
+        try visitor.visitSingularBoolField(value: _storage._isUseAi, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_Room, rhs: GloryApi_Room) -> Bool {
-    if lhs.shopID != rhs.shopID {return false}
-    if lhs.roomID != rhs.roomID {return false}
-    if lhs.userID != rhs.userID {return false}
-    if lhs.groupID != rhs.groupID {return false}
-    if lhs.appName != rhs.appName {return false}
-    if lhs.streamName != rhs.streamName {return false}
-    if lhs.upURL != rhs.upURL {return false}
-    if lhs.playURL != rhs.playURL {return false}
-    if lhs.startTime != rhs.startTime {return false}
-    if lhs.likeCount != rhs.likeCount {return false}
-    if lhs.endTime != rhs.endTime {return false}
-    if lhs.status != rhs.status {return false}
-    if lhs.livePlanID != rhs.livePlanID {return false}
-    if lhs.roomTitle != rhs.roomTitle {return false}
-    if lhs.roomImageURL != rhs.roomImageURL {return false}
-    if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._shopID != rhs_storage._shopID {return false}
+        if _storage._roomID != rhs_storage._roomID {return false}
+        if _storage._userID != rhs_storage._userID {return false}
+        if _storage._groupID != rhs_storage._groupID {return false}
+        if _storage._appName != rhs_storage._appName {return false}
+        if _storage._streamName != rhs_storage._streamName {return false}
+        if _storage._upURL != rhs_storage._upURL {return false}
+        if _storage._playURL != rhs_storage._playURL {return false}
+        if _storage._startTime != rhs_storage._startTime {return false}
+        if _storage._likeCount != rhs_storage._likeCount {return false}
+        if _storage._endTime != rhs_storage._endTime {return false}
+        if _storage._status != rhs_storage._status {return false}
+        if _storage._livePlanID != rhs_storage._livePlanID {return false}
+        if _storage._roomTitle != rhs_storage._roomTitle {return false}
+        if _storage._roomImageURL != rhs_storage._roomImageURL {return false}
+        if _storage._roomImageAttachmentID != rhs_storage._roomImageAttachmentID {return false}
+        if _storage._isUseAi != rhs_storage._isUseAi {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1093,6 +1224,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     3: .standard(proto: "group_id"),
     4: .standard(proto: "room_title"),
     5: .standard(proto: "room_image_attachment_id"),
+    6: .standard(proto: "is_use_ai"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1106,6 +1238,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 3: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self.isUseAi) }()
       default: break
       }
     }
@@ -1131,6 +1264,9 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.roomImageAttachmentID != 0 {
       try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 5)
     }
+    if self.isUseAi != false {
+      try visitor.visitSingularBoolField(value: self.isUseAi, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1140,6 +1276,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.groupID != rhs.groupID {return false}
     if lhs.roomTitle != rhs.roomTitle {return false}
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
+    if lhs.isUseAi != rhs.isUseAi {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1260,70 +1397,36 @@ extension GloryApi_GetRoomResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
     2: .same(proto: "room"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _room: GloryApi_Room? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _room = source._room
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._room) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._room) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._room {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
-    }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._room {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetRoomResponse, rhs: GloryApi_GetRoomResponse) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._room != rhs_storage._room {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._room != rhs._room {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1337,77 +1440,41 @@ extension GloryApi_UpdateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     3: .same(proto: "room"),
   ]
 
-  fileprivate class _StorageClass {
-    var _baseRequest: Base_BaseRequest? = nil
-    var _closeRoom: Bool = false
-    var _room: GloryApi_Room? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _baseRequest = source._baseRequest
-      _closeRoom = source._closeRoom
-      _room = source._room
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseRequest) }()
-        case 2: try { try decoder.decodeSingularBoolField(value: &_storage._closeRoom) }()
-        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._room) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularBoolField(value: &self.closeRoom) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._room) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseRequest {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      if _storage._closeRoom != false {
-        try visitor.visitSingularBoolField(value: _storage._closeRoom, fieldNumber: 2)
-      }
-      try { if let v = _storage._room {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.closeRoom != false {
+      try visitor.visitSingularBoolField(value: self.closeRoom, fieldNumber: 2)
     }
+    try { if let v = self._room {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UpdateRoomRequest, rhs: GloryApi_UpdateRoomRequest) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._baseRequest != rhs_storage._baseRequest {return false}
-        if _storage._closeRoom != rhs_storage._closeRoom {return false}
-        if _storage._room != rhs_storage._room {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.closeRoom != rhs.closeRoom {return false}
+    if lhs._room != rhs._room {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1694,6 +1761,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     10: .standard(proto: "room_title"),
     11: .standard(proto: "room_image_attachment_id"),
     12: .standard(proto: "room_deal_amount"),
+    13: .standard(proto: "comment_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1714,6 +1782,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 10: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
       case 12: try { try decoder.decodeSingularDoubleField(value: &self.roomDealAmount) }()
+      case 13: try { try decoder.decodeSingularInt64Field(value: &self.commentCount) }()
       default: break
       }
     }
@@ -1756,6 +1825,9 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.roomDealAmount != 0 {
       try visitor.visitSingularDoubleField(value: self.roomDealAmount, fieldNumber: 12)
     }
+    if self.commentCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.commentCount, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1772,6 +1844,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.roomTitle != rhs.roomTitle {return false}
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
     if lhs.roomDealAmount != rhs.roomDealAmount {return false}
+    if lhs.commentCount != rhs.commentCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

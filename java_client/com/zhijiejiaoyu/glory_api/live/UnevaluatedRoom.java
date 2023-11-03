@@ -93,6 +93,11 @@ private static final long serialVersionUID = 0L;
             status = s;
             break;
           }
+          case 64: {
+
+            isUseAi = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -337,6 +342,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_USE_AI_FIELD_NUMBER = 8;
+  private boolean isUseAi ;
+  /**
+   * <code>bool is_use_ai = 8;</code>
+   * @return The isUseAi.
+   */
+  @java.lang.Override
+  public boolean getIsUseAi() {
+    return isUseAi ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -372,6 +388,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, status );
     }
+    if (isUseAi != false) {
+      output.writeBool(8, isUseAi );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -404,6 +423,10 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, status );
     }
+    if (isUseAi != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, isUseAi );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -433,6 +456,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserName())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (getIsUseAi()
+        != other.getIsUseAi()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -460,6 +485,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserName().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + IS_USE_AI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsUseAi());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -607,6 +635,8 @@ private static final long serialVersionUID = 0L;
 
       status = "";
 
+      isUseAi = false;
+
       return this;
     }
 
@@ -640,6 +670,7 @@ private static final long serialVersionUID = 0L;
       result.userId = userId ;
       result.userName = userName ;
       result.status = status ;
+      result.isUseAi = isUseAi ;
       onBuilt();
       return result;
     }
@@ -713,6 +744,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
         onChanged();
+      }
+      if (other.getIsUseAi() != false) {
+        setIsUseAi(other.getIsUseAi());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1181,6 +1215,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isUseAi ;
+    /**
+     * <code>bool is_use_ai = 8;</code>
+     * @return The isUseAi.
+     */
+    @java.lang.Override
+    public boolean getIsUseAi() {
+      return isUseAi ;
+    }
+    /**
+     * <code>bool is_use_ai = 8;</code>
+     * @param value The isUseAi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsUseAi(boolean value) {
+      
+      isUseAi = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_use_ai = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsUseAi() {
+      
+      isUseAi = false;
       onChanged();
       return this;
     }

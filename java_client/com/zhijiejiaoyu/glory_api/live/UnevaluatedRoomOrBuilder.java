@@ -78,4 +78,10 @@ public interface UnevaluatedRoomOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStatusBytes();
+
+  /**
+   * <code>bool is_use_ai = 8;</code>
+   * @return The isUseAi.
+   */
+  boolean getIsUseAi();
 }

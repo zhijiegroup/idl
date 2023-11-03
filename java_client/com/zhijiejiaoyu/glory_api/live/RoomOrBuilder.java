@@ -194,4 +194,14 @@ public interface RoomOrBuilder extends
    * @return The roomImageAttachmentId.
    */
   long getRoomImageAttachmentId();
+
+  /**
+   * <pre>
+   * 是否使用AI
+   * </pre>
+   *
+   * <code>bool is_use_ai = 17;</code>
+   * @return The isUseAi.
+   */
+  boolean getIsUseAi();
 }

@@ -567,6 +567,8 @@ struct GloryApi_UnevaluatedRoom {
 
   var status: String = String()
 
+  var isUseAi: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2440,6 +2442,7 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     5: .standard(proto: "user_id"),
     6: .standard(proto: "user_name"),
     7: .same(proto: "status"),
+    8: .standard(proto: "is_use_ai"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2455,6 +2458,7 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isUseAi) }()
       default: break
       }
     }
@@ -2482,6 +2486,9 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 7)
     }
+    if self.isUseAi != false {
+      try visitor.visitSingularBoolField(value: self.isUseAi, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2493,6 +2500,7 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.isUseAi != rhs.isUseAi {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

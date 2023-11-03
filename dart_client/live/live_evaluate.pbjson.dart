@@ -364,6 +364,7 @@ const UnevaluatedRoom$json = {
     {'1': 'user_id', '3': 5, '4': 1, '5': 3, '10': 'userId'},
     {'1': 'user_name', '3': 6, '4': 1, '5': 9, '10': 'userName'},
     {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'is_use_ai', '3': 8, '4': 1, '5': 8, '10': 'isUseAi'},
   ],
 };
 
@@ -372,7 +373,8 @@ final $typed_data.Uint8List unevaluatedRoomDescriptor = $convert.base64Decode(
     'Cg9VbmV2YWx1YXRlZFJvb20SFwoHcm9vbV9pZBgBIAEoA1IGcm9vbUlkEh0KCnJvb21fdGl0bG'
     'UYAiABKAlSCXJvb21UaXRsZRIZCghyb29tX3VybBgDIAEoCVIHcm9vbVVybBIbCglzaG9wX25h'
     'bWUYBCABKAlSCHNob3BOYW1lEhcKB3VzZXJfaWQYBSABKANSBnVzZXJJZBIbCgl1c2VyX25hbW'
-    'UYBiABKAlSCHVzZXJOYW1lEhYKBnN0YXR1cxgHIAEoCVIGc3RhdHVz');
+    'UYBiABKAlSCHVzZXJOYW1lEhYKBnN0YXR1cxgHIAEoCVIGc3RhdHVzEhoKCWlzX3VzZV9haRgI'
+    'IAEoCFIHaXNVc2VBaQ==');
 
 @$core.Deprecated('Use listUnevaluatedRoomRequestDescriptor instead')
 const ListUnevaluatedRoomRequest$json = {

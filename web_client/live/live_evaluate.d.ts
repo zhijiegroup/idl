@@ -154,6 +154,7 @@ export interface UnevaluatedRoom {
   user_id?: string;
   user_name?: string;
   status?: string;
+  is_use_ai?: boolean;
 }
 
 export interface ListUnevaluatedRoomRequest {

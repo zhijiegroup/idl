@@ -120,4 +120,14 @@ public interface FinishedRoomOrBuilder extends
    * @return The roomDealAmount.
    */
   double getRoomDealAmount();
+
+  /**
+   * <pre>
+   * 评论数
+   * </pre>
+   *
+   * <code>int64 comment_count = 13;</code>
+   * @return The commentCount.
+   */
+  long getCommentCount();
 }

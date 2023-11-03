@@ -1818,6 +1818,7 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     $fixnum.Int64? userId,
     $core.String? userName,
     $core.String? status,
+    $core.bool? isUseAi,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -1841,6 +1842,9 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (isUseAi != null) {
+      $result.isUseAi = isUseAi;
+    }
     return $result;
   }
   UnevaluatedRoom._() : super();
@@ -1855,6 +1859,7 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     ..aInt64(5, _omitFieldNames ? '' : 'userId')
     ..aOS(6, _omitFieldNames ? '' : 'userName')
     ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aOB(8, _omitFieldNames ? '' : 'isUseAi')
     ..hasRequiredFields = false
   ;
 
@@ -1941,6 +1946,15 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
   void clearStatus() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isUseAi => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isUseAi($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasIsUseAi() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsUseAi() => clearField(8);
 }
 
 class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {

@@ -34,6 +34,7 @@ class Room extends $pb.GeneratedMessage {
     $core.String? roomTitle,
     $core.String? roomImageUrl,
     $fixnum.Int64? roomImageAttachmentId,
+    $core.bool? isUseAi,
   }) {
     final $result = create();
     if (shopId != null) {
@@ -84,6 +85,9 @@ class Room extends $pb.GeneratedMessage {
     if (roomImageAttachmentId != null) {
       $result.roomImageAttachmentId = roomImageAttachmentId;
     }
+    if (isUseAi != null) {
+      $result.isUseAi = isUseAi;
+    }
     return $result;
   }
   Room._() : super();
@@ -107,6 +111,7 @@ class Room extends $pb.GeneratedMessage {
     ..aOS(14, _omitFieldNames ? '' : 'roomTitle')
     ..aOS(15, _omitFieldNames ? '' : 'roomImageUrl')
     ..aInt64(16, _omitFieldNames ? '' : 'roomImageAttachmentId')
+    ..aOB(17, _omitFieldNames ? '' : 'isUseAi')
     ..hasRequiredFields = false
   ;
 
@@ -274,6 +279,15 @@ class Room extends $pb.GeneratedMessage {
   $core.bool hasRoomImageAttachmentId() => $_has(15);
   @$pb.TagNumber(16)
   void clearRoomImageAttachmentId() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.bool get isUseAi => $_getBF(16);
+  @$pb.TagNumber(17)
+  set isUseAi($core.bool v) { $_setBool(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasIsUseAi() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearIsUseAi() => clearField(17);
 }
 
 class CreateRoomRequest extends $pb.GeneratedMessage {
@@ -283,6 +297,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $core.String? groupId,
     $core.String? roomTitle,
     $fixnum.Int64? roomImageAttachmentId,
+    $core.bool? isUseAi,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -300,6 +315,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     if (roomImageAttachmentId != null) {
       $result.roomImageAttachmentId = roomImageAttachmentId;
     }
+    if (isUseAi != null) {
+      $result.isUseAi = isUseAi;
+    }
     return $result;
   }
   CreateRoomRequest._() : super();
@@ -312,6 +330,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'groupId')
     ..aOS(4, _omitFieldNames ? '' : 'roomTitle')
     ..aInt64(5, _omitFieldNames ? '' : 'roomImageAttachmentId')
+    ..aOB(6, _omitFieldNames ? '' : 'isUseAi')
     ..hasRequiredFields = false
   ;
 
@@ -382,6 +401,15 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasRoomImageAttachmentId() => $_has(4);
   @$pb.TagNumber(5)
   void clearRoomImageAttachmentId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get isUseAi => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isUseAi($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasIsUseAi() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsUseAi() => clearField(6);
 }
 
 class CreateRoomResponse extends $pb.GeneratedMessage {
@@ -1170,6 +1198,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     $core.String? roomTitle,
     $fixnum.Int64? roomImageAttachmentId,
     $core.double? roomDealAmount,
+    $fixnum.Int64? commentCount,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -1208,6 +1237,9 @@ class FinishedRoom extends $pb.GeneratedMessage {
     if (roomDealAmount != null) {
       $result.roomDealAmount = roomDealAmount;
     }
+    if (commentCount != null) {
+      $result.commentCount = commentCount;
+    }
     return $result;
   }
   FinishedRoom._() : super();
@@ -1227,6 +1259,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'roomTitle')
     ..aInt64(11, _omitFieldNames ? '' : 'roomImageAttachmentId')
     ..a<$core.double>(12, _omitFieldNames ? '' : 'roomDealAmount', $pb.PbFieldType.OD)
+    ..aInt64(13, _omitFieldNames ? '' : 'commentCount')
     ..hasRequiredFields = false
   ;
 
@@ -1358,6 +1391,15 @@ class FinishedRoom extends $pb.GeneratedMessage {
   $core.bool hasRoomDealAmount() => $_has(11);
   @$pb.TagNumber(12)
   void clearRoomDealAmount() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get commentCount => $_getI64(12);
+  @$pb.TagNumber(13)
+  set commentCount($fixnum.Int64 v) { $_setInt64(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasCommentCount() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCommentCount() => clearField(13);
 }
 
 class ListFinishedRoomRequest extends $pb.GeneratedMessage {
