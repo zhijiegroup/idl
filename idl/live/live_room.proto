@@ -33,7 +33,7 @@ message CreateRoomRequest {
   string group_id = 3;
   string room_title = 4;  // 直播房间的标题
   int64 room_image_attachment_id = 5; // 直播房间的图片的id
-  bool is_use_ai = 6; // 是否使用AI评价
+  int64 is_use_ai = 6; // 是否使用AI评价 1:使用 2:不使用
 }
 message CreateRoomResponse {
   base.BaseResponse base_resp = 1;
