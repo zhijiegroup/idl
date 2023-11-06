@@ -42,6 +42,7 @@ export interface SchooLiveTrafficChart {
   date?: string;
   traffic?: string;
   timestamp?: string;
+  sub_traffic?: number;
 }
 
 export interface GetSchoolLiveTrafficChartResponse {
@@ -50,4 +51,5 @@ export interface GetSchoolLiveTrafficChartResponse {
   ali_total_traffic?: string;
   live_traffic_chart?: Array<SchooLiveTrafficChart>;
   ali_live_traffic_chart?: Array<SchooLiveTrafficChart>;
+  sub_traffic_chart?: Array<SchooLiveTrafficChart>;
 }

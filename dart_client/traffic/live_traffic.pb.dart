@@ -461,6 +461,7 @@ class SchooLiveTrafficChart extends $pb.GeneratedMessage {
     $core.String? date,
     $fixnum.Int64? traffic,
     $fixnum.Int64? timestamp,
+    $core.double? subTraffic,
   }) {
     final $result = create();
     if (date != null) {
@@ -472,6 +473,9 @@ class SchooLiveTrafficChart extends $pb.GeneratedMessage {
     if (timestamp != null) {
       $result.timestamp = timestamp;
     }
+    if (subTraffic != null) {
+      $result.subTraffic = subTraffic;
+    }
     return $result;
   }
   SchooLiveTrafficChart._() : super();
@@ -482,6 +486,7 @@ class SchooLiveTrafficChart extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'date')
     ..aInt64(2, _omitFieldNames ? '' : 'traffic')
     ..aInt64(3, _omitFieldNames ? '' : 'timestamp')
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'subTraffic', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -532,6 +537,15 @@ class SchooLiveTrafficChart extends $pb.GeneratedMessage {
   $core.bool hasTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimestamp() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get subTraffic => $_getN(3);
+  @$pb.TagNumber(4)
+  set subTraffic($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSubTraffic() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSubTraffic() => clearField(4);
 }
 
 class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
@@ -541,6 +555,7 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? aliTotalTraffic,
     $core.Iterable<SchooLiveTrafficChart>? liveTrafficChart,
     $core.Iterable<SchooLiveTrafficChart>? aliLiveTrafficChart,
+    $core.Iterable<SchooLiveTrafficChart>? subTrafficChart,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -558,6 +573,9 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
     if (aliLiveTrafficChart != null) {
       $result.aliLiveTrafficChart.addAll(aliLiveTrafficChart);
     }
+    if (subTrafficChart != null) {
+      $result.subTrafficChart.addAll(subTrafficChart);
+    }
     return $result;
   }
   GetSchoolLiveTrafficChartResponse._() : super();
@@ -570,6 +588,7 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'aliTotalTraffic')
     ..pc<SchooLiveTrafficChart>(4, _omitFieldNames ? '' : 'liveTrafficChart', $pb.PbFieldType.PM, subBuilder: SchooLiveTrafficChart.create)
     ..pc<SchooLiveTrafficChart>(5, _omitFieldNames ? '' : 'aliLiveTrafficChart', $pb.PbFieldType.PM, subBuilder: SchooLiveTrafficChart.create)
+    ..pc<SchooLiveTrafficChart>(6, _omitFieldNames ? '' : 'subTrafficChart', $pb.PbFieldType.PM, subBuilder: SchooLiveTrafficChart.create)
     ..hasRequiredFields = false
   ;
 
@@ -628,6 +647,9 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<SchooLiveTrafficChart> get aliLiveTrafficChart => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<SchooLiveTrafficChart> get subTrafficChart => $_getList(5);
 }
 
 

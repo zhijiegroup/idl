@@ -157,25 +157,31 @@ public interface GetEvaluateDetailResponseOrBuilder extends
   long getLiveEndTime();
 
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
+   * <code>bool is_use_ai = 17;</code>
+   * @return The isUseAi.
+   */
+  boolean getIsUseAi();
+
+  /**
+   * <code>repeated .glory_api.AiResult ai_result = 18;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.AiResult> 
       getAiResultList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResult getAiResult(int index);
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 18;</code>
    */
   int getAiResultCount();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 18;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder> 
       getAiResultOrBuilderList();
   /**
-   * <code>repeated .glory_api.AiResult ai_result = 17;</code>
+   * <code>repeated .glory_api.AiResult ai_result = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.live.AiResultOrBuilder getAiResultOrBuilder(
       int index);

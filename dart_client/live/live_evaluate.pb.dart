@@ -1137,6 +1137,7 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     $core.String? anchor,
     $fixnum.Int64? liveStartTime,
     $fixnum.Int64? liveEndTime,
+    $core.bool? isUseAi,
     $core.Iterable<AiResult>? aiResult,
     $core.Iterable<EvaluateDetail>? detail,
   }) {
@@ -1189,6 +1190,9 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     if (liveEndTime != null) {
       $result.liveEndTime = liveEndTime;
     }
+    if (isUseAi != null) {
+      $result.isUseAi = isUseAi;
+    }
     if (aiResult != null) {
       $result.aiResult.addAll(aiResult);
     }
@@ -1218,7 +1222,8 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
     ..aOS(14, _omitFieldNames ? '' : 'anchor')
     ..aInt64(15, _omitFieldNames ? '' : 'liveStartTime')
     ..aInt64(16, _omitFieldNames ? '' : 'liveEndTime')
-    ..pc<AiResult>(17, _omitFieldNames ? '' : 'aiResult', $pb.PbFieldType.PM, subBuilder: AiResult.create)
+    ..aOB(17, _omitFieldNames ? '' : 'isUseAi')
+    ..pc<AiResult>(18, _omitFieldNames ? '' : 'aiResult', $pb.PbFieldType.PM, subBuilder: AiResult.create)
     ..pc<EvaluateDetail>(100, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: EvaluateDetail.create)
     ..hasRequiredFields = false
   ;
@@ -1391,10 +1396,19 @@ class GetEvaluateDetailResponse extends $pb.GeneratedMessage {
   void clearLiveEndTime() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.List<AiResult> get aiResult => $_getList(16);
+  $core.bool get isUseAi => $_getBF(16);
+  @$pb.TagNumber(17)
+  set isUseAi($core.bool v) { $_setBool(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasIsUseAi() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearIsUseAi() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.List<AiResult> get aiResult => $_getList(17);
 
   @$pb.TagNumber(100)
-  $core.List<EvaluateDetail> get detail => $_getList(17);
+  $core.List<EvaluateDetail> get detail => $_getList(18);
 }
 
 class SubmitEvaluateRequest extends $pb.GeneratedMessage {

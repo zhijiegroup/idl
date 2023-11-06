@@ -148,6 +148,8 @@ struct GloryApi_SchooLiveTrafficChart {
 
   var timestamp: Int64 = 0
 
+  var subTraffic: Double = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -174,6 +176,8 @@ struct GloryApi_GetSchoolLiveTrafficChartResponse {
   var liveTrafficChart: [GloryApi_SchooLiveTrafficChart] = []
 
   var aliLiveTrafficChart: [GloryApi_SchooLiveTrafficChart] = []
+
+  var subTrafficChart: [GloryApi_SchooLiveTrafficChart] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -443,6 +447,7 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
     1: .same(proto: "date"),
     2: .same(proto: "traffic"),
     3: .same(proto: "timestamp"),
+    4: .standard(proto: "sub_traffic"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -454,6 +459,7 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
       case 1: try { try decoder.decodeSingularStringField(value: &self.date) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.traffic) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.timestamp) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.subTraffic) }()
       default: break
       }
     }
@@ -469,6 +475,9 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
     if self.timestamp != 0 {
       try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 3)
     }
+    if self.subTraffic != 0 {
+      try visitor.visitSingularDoubleField(value: self.subTraffic, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -476,6 +485,7 @@ extension GloryApi_SchooLiveTrafficChart: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.date != rhs.date {return false}
     if lhs.traffic != rhs.traffic {return false}
     if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.subTraffic != rhs.subTraffic {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -489,6 +499,7 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
     3: .standard(proto: "ali_total_traffic"),
     4: .standard(proto: "live_traffic_chart"),
     5: .standard(proto: "ali_live_traffic_chart"),
+    6: .standard(proto: "sub_traffic_chart"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -502,6 +513,7 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.aliTotalTraffic) }()
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.liveTrafficChart) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.aliLiveTrafficChart) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.subTrafficChart) }()
       default: break
       }
     }
@@ -527,6 +539,9 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
     if !self.aliLiveTrafficChart.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.aliLiveTrafficChart, fieldNumber: 5)
     }
+    if !self.subTrafficChart.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.subTrafficChart, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -536,6 +551,7 @@ extension GloryApi_GetSchoolLiveTrafficChartResponse: SwiftProtobuf.Message, Swi
     if lhs.aliTotalTraffic != rhs.aliTotalTraffic {return false}
     if lhs.liveTrafficChart != rhs.liveTrafficChart {return false}
     if lhs.aliLiveTrafficChart != rhs.aliLiveTrafficChart {return false}
+    if lhs.subTrafficChart != rhs.subTrafficChart {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

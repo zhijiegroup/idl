@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            isUseAi = input.readBool();
+            isUseAi = input.readInt64();
             break;
           }
           default: {
@@ -259,17 +259,17 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IS_USE_AI_FIELD_NUMBER = 6;
-  private boolean isUseAi ;
+  private long isUseAi ;
   /**
    * <pre>
-   * 是否使用AI评价
+   * 是否使用AI评价 1:使用 2:不使用
    * </pre>
    *
-   * <code>bool is_use_ai = 6;</code>
+   * <code>int64 is_use_ai = 6;</code>
    * @return The isUseAi.
    */
   @java.lang.Override
-  public boolean getIsUseAi() {
+  public long getIsUseAi() {
     return isUseAi ;
   }
 
@@ -302,8 +302,8 @@ private static final long serialVersionUID = 0L;
     if (roomImageAttachmentId != 0L) {
       output.writeInt64(5, roomImageAttachmentId );
     }
-    if (isUseAi != false) {
-      output.writeBool(6, isUseAi );
+    if (isUseAi != 0L) {
+      output.writeInt64(6, isUseAi );
     }
     unknownFields.writeTo(output);
   }
@@ -332,9 +332,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, roomImageAttachmentId );
     }
-    if (isUseAi != false) {
+    if (isUseAi != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, isUseAi );
+        .computeInt64Size(6, isUseAi );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRoomImageAttachmentId());
     hash = (37 * hash) + IS_USE_AI_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getIsUseAi());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -541,7 +541,7 @@ private static final long serialVersionUID = 0L;
 
       roomImageAttachmentId = 0L;
 
-      isUseAi = false;
+      isUseAi = 0L;
 
       return this;
     }
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
       if (other.getRoomImageAttachmentId() != 0L) {
         setRoomImageAttachmentId(other.getRoomImageAttachmentId());
       }
-      if (other.getIsUseAi() != false) {
+      if (other.getIsUseAi() != 0L) {
         setIsUseAi(other.getIsUseAi());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1041,29 +1041,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isUseAi ;
+    private long isUseAi ;
     /**
      * <pre>
-     * 是否使用AI评价
+     * 是否使用AI评价 1:使用 2:不使用
      * </pre>
      *
-     * <code>bool is_use_ai = 6;</code>
+     * <code>int64 is_use_ai = 6;</code>
      * @return The isUseAi.
      */
     @java.lang.Override
-    public boolean getIsUseAi() {
+    public long getIsUseAi() {
       return isUseAi ;
     }
     /**
      * <pre>
-     * 是否使用AI评价
+     * 是否使用AI评价 1:使用 2:不使用
      * </pre>
      *
-     * <code>bool is_use_ai = 6;</code>
+     * <code>int64 is_use_ai = 6;</code>
      * @param value The isUseAi to set.
      * @return This builder for chaining.
      */
-    public Builder setIsUseAi(boolean value) {
+    public Builder setIsUseAi(long value) {
       
       isUseAi = value;
       onChanged();
@@ -1071,15 +1071,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 是否使用AI评价
+     * 是否使用AI评价 1:使用 2:不使用
      * </pre>
      *
-     * <code>bool is_use_ai = 6;</code>
+     * <code>int64 is_use_ai = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsUseAi() {
       
-      isUseAi = false;
+      isUseAi = 0L;
       onChanged();
       return this;
     }

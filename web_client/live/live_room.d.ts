@@ -39,8 +39,8 @@ export interface CreateRoomRequest {
   room_title?: string;
   /** 直播房间的图片的id */
   room_image_attachment_id?: string;
-  /** 是否使用AI评价 */
-  is_use_ai?: boolean;
+  /** 是否使用AI评价 1:使用 2:不使用 */
+  is_use_ai?: string;
 }
 
 export interface CreateRoomResponse {

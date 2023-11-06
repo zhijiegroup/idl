@@ -72,11 +72,11 @@ public interface CreateRoomRequestOrBuilder extends
 
   /**
    * <pre>
-   * 是否使用AI评价
+   * 是否使用AI评价 1:使用 2:不使用
    * </pre>
    *
-   * <code>bool is_use_ai = 6;</code>
+   * <code>int64 is_use_ai = 6;</code>
    * @return The isUseAi.
    */
-  boolean getIsUseAi();
+  long getIsUseAi();
 }

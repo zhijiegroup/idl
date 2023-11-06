@@ -100,13 +100,15 @@ const SchooLiveTrafficChart$json = {
     {'1': 'date', '3': 1, '4': 1, '5': 9, '10': 'date'},
     {'1': 'traffic', '3': 2, '4': 1, '5': 3, '10': 'traffic'},
     {'1': 'timestamp', '3': 3, '4': 1, '5': 3, '10': 'timestamp'},
+    {'1': 'sub_traffic', '3': 4, '4': 1, '5': 1, '10': 'subTraffic'},
   ],
 };
 
 /// Descriptor for `SchooLiveTrafficChart`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List schooLiveTrafficChartDescriptor = $convert.base64Decode(
     'ChVTY2hvb0xpdmVUcmFmZmljQ2hhcnQSEgoEZGF0ZRgBIAEoCVIEZGF0ZRIYCgd0cmFmZmljGA'
-    'IgASgDUgd0cmFmZmljEhwKCXRpbWVzdGFtcBgDIAEoA1IJdGltZXN0YW1w');
+    'IgASgDUgd0cmFmZmljEhwKCXRpbWVzdGFtcBgDIAEoA1IJdGltZXN0YW1wEh8KC3N1Yl90cmFm'
+    'ZmljGAQgASgBUgpzdWJUcmFmZmlj');
 
 @$core.Deprecated('Use getSchoolLiveTrafficChartResponseDescriptor instead')
 const GetSchoolLiveTrafficChartResponse$json = {
@@ -117,6 +119,7 @@ const GetSchoolLiveTrafficChartResponse$json = {
     {'1': 'ali_total_traffic', '3': 3, '4': 1, '5': 3, '10': 'aliTotalTraffic'},
     {'1': 'live_traffic_chart', '3': 4, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'liveTrafficChart'},
     {'1': 'ali_live_traffic_chart', '3': 5, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'aliLiveTrafficChart'},
+    {'1': 'sub_traffic_chart', '3': 6, '4': 3, '5': 11, '6': '.glory_api.SchooLiveTrafficChart', '10': 'subTrafficChart'},
   ],
 };
 
@@ -127,5 +130,7 @@ final $typed_data.Uint8List getSchoolLiveTrafficChartResponseDescriptor = $conve
     'dGFsVHJhZmZpYxIqChFhbGlfdG90YWxfdHJhZmZpYxgDIAEoA1IPYWxpVG90YWxUcmFmZmljEk'
     '4KEmxpdmVfdHJhZmZpY19jaGFydBgEIAMoCzIgLmdsb3J5X2FwaS5TY2hvb0xpdmVUcmFmZmlj'
     'Q2hhcnRSEGxpdmVUcmFmZmljQ2hhcnQSVQoWYWxpX2xpdmVfdHJhZmZpY19jaGFydBgFIAMoCz'
-    'IgLmdsb3J5X2FwaS5TY2hvb0xpdmVUcmFmZmljQ2hhcnRSE2FsaUxpdmVUcmFmZmljQ2hhcnQ=');
+    'IgLmdsb3J5X2FwaS5TY2hvb0xpdmVUcmFmZmljQ2hhcnRSE2FsaUxpdmVUcmFmZmljQ2hhcnQS'
+    'TAoRc3ViX3RyYWZmaWNfY2hhcnQYBiADKAsyIC5nbG9yeV9hcGkuU2Nob29MaXZlVHJhZmZpY0'
+    'NoYXJ0Ug9zdWJUcmFmZmljQ2hhcnQ=');
 

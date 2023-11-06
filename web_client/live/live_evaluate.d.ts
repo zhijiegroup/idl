@@ -109,6 +109,7 @@ export interface GetEvaluateDetailResponse {
   anchor?: string;
   live_start_time?: string;
   live_end_time?: string;
+  is_use_ai?: boolean;
   ai_result?: Array<AiResult>;
   detail?: Array<EvaluateDetail>;
 }

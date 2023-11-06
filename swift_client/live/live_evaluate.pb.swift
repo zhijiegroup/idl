@@ -415,6 +415,11 @@ struct GloryApi_GetEvaluateDetailResponse {
     set {_uniqueStorage()._liveEndTime = newValue}
   }
 
+  var isUseAi: Bool {
+    get {return _storage._isUseAi}
+    set {_uniqueStorage()._isUseAi = newValue}
+  }
+
   var aiResult: [GloryApi_AiResult] {
     get {return _storage._aiResult}
     set {_uniqueStorage()._aiResult = newValue}
@@ -2013,7 +2018,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     14: .same(proto: "anchor"),
     15: .standard(proto: "live_start_time"),
     16: .standard(proto: "live_end_time"),
-    17: .standard(proto: "ai_result"),
+    17: .standard(proto: "is_use_ai"),
+    18: .standard(proto: "ai_result"),
     100: .same(proto: "detail"),
   ]
 
@@ -2034,6 +2040,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
     var _anchor: String = String()
     var _liveStartTime: Int64 = 0
     var _liveEndTime: Int64 = 0
+    var _isUseAi: Bool = false
     var _aiResult: [GloryApi_AiResult] = []
     var _detail: [GloryApi_EvaluateDetail] = []
 
@@ -2058,6 +2065,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       _anchor = source._anchor
       _liveStartTime = source._liveStartTime
       _liveEndTime = source._liveEndTime
+      _isUseAi = source._isUseAi
       _aiResult = source._aiResult
       _detail = source._detail
     }
@@ -2094,7 +2102,8 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
         case 14: try { try decoder.decodeSingularStringField(value: &_storage._anchor) }()
         case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._liveStartTime) }()
         case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._liveEndTime) }()
-        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._aiResult) }()
+        case 17: try { try decoder.decodeSingularBoolField(value: &_storage._isUseAi) }()
+        case 18: try { try decoder.decodeRepeatedMessageField(value: &_storage._aiResult) }()
         case 100: try { try decoder.decodeRepeatedMessageField(value: &_storage._detail) }()
         default: break
         }
@@ -2156,8 +2165,11 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
       if _storage._liveEndTime != 0 {
         try visitor.visitSingularInt64Field(value: _storage._liveEndTime, fieldNumber: 16)
       }
+      if _storage._isUseAi != false {
+        try visitor.visitSingularBoolField(value: _storage._isUseAi, fieldNumber: 17)
+      }
       if !_storage._aiResult.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._aiResult, fieldNumber: 17)
+        try visitor.visitRepeatedMessageField(value: _storage._aiResult, fieldNumber: 18)
       }
       if !_storage._detail.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._detail, fieldNumber: 100)
@@ -2187,6 +2199,7 @@ extension GloryApi_GetEvaluateDetailResponse: SwiftProtobuf.Message, SwiftProtob
         if _storage._anchor != rhs_storage._anchor {return false}
         if _storage._liveStartTime != rhs_storage._liveStartTime {return false}
         if _storage._liveEndTime != rhs_storage._liveEndTime {return false}
+        if _storage._isUseAi != rhs_storage._isUseAi {return false}
         if _storage._aiResult != rhs_storage._aiResult {return false}
         if _storage._detail != rhs_storage._detail {return false}
         return true

@@ -147,8 +147,8 @@ struct GloryApi_CreateRoomRequest {
   /// 直播房间的图片的id
   var roomImageAttachmentID: Int64 = 0
 
-  /// 是否使用AI评价
-  var isUseAi: Bool = false
+  /// 是否使用AI评价 1:使用 2:不使用
+  var isUseAi: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1238,7 +1238,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 3: try { try decoder.decodeSingularStringField(value: &self.groupID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.roomTitle) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self.isUseAi) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.isUseAi) }()
       default: break
       }
     }
@@ -1264,8 +1264,8 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.roomImageAttachmentID != 0 {
       try visitor.visitSingularInt64Field(value: self.roomImageAttachmentID, fieldNumber: 5)
     }
-    if self.isUseAi != false {
-      try visitor.visitSingularBoolField(value: self.isUseAi, fieldNumber: 6)
+    if self.isUseAi != 0 {
+      try visitor.visitSingularInt64Field(value: self.isUseAi, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

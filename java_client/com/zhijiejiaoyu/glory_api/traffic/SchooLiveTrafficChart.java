@@ -65,6 +65,11 @@ private static final long serialVersionUID = 0L;
             timestamp = input.readInt64();
             break;
           }
+          case 33: {
+
+            subTraffic = input.readDouble();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -157,6 +162,17 @@ private static final long serialVersionUID = 0L;
     return timestamp ;
   }
 
+  public static final int SUB_TRAFFIC_FIELD_NUMBER = 4;
+  private double subTraffic ;
+  /**
+   * <code>double sub_traffic = 4;</code>
+   * @return The subTraffic.
+   */
+  @java.lang.Override
+  public double getSubTraffic() {
+    return subTraffic ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -180,6 +196,9 @@ private static final long serialVersionUID = 0L;
     if (timestamp != 0L) {
       output.writeInt64(3, timestamp );
     }
+    if (subTraffic != 0D) {
+      output.writeDouble(4, subTraffic );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +218,10 @@ private static final long serialVersionUID = 0L;
     if (timestamp != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, timestamp );
+    }
+    if (subTraffic != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(4, subTraffic );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -221,6 +244,9 @@ private static final long serialVersionUID = 0L;
         != other.getTraffic()) return false;
     if (getTimestamp()
         != other.getTimestamp()) return false;
+    if (java.lang.Double.doubleToLongBits(getSubTraffic())
+        != java.lang.Double.doubleToLongBits(
+            other.getSubTraffic())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -240,6 +266,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTimestamp());
+    hash = (37 * hash) + SUB_TRAFFIC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSubTraffic()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,6 +408,8 @@ private static final long serialVersionUID = 0L;
 
       timestamp = 0L;
 
+      subTraffic = 0D;
+
       return this;
     }
 
@@ -408,6 +439,7 @@ private static final long serialVersionUID = 0L;
       result.date = date ;
       result.traffic = traffic ;
       result.timestamp = timestamp ;
+      result.subTraffic = subTraffic ;
       onBuilt();
       return result;
     }
@@ -465,6 +497,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTimestamp() != 0L) {
         setTimestamp(other.getTimestamp());
+      }
+      if (other.getSubTraffic() != 0D) {
+        setSubTraffic(other.getSubTraffic());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -629,6 +664,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearTimestamp() {
       
       timestamp = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double subTraffic ;
+    /**
+     * <code>double sub_traffic = 4;</code>
+     * @return The subTraffic.
+     */
+    @java.lang.Override
+    public double getSubTraffic() {
+      return subTraffic ;
+    }
+    /**
+     * <code>double sub_traffic = 4;</code>
+     * @param value The subTraffic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubTraffic(double value) {
+      
+      subTraffic = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double sub_traffic = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSubTraffic() {
+      
+      subTraffic = 0D;
       onChanged();
       return this;
     }

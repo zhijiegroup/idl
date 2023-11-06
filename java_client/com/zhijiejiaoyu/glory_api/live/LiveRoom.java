@@ -211,7 +211,7 @@ public final class LiveRoom {
       "RoomRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
       ".BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\020\n\010group_i" +
       "d\030\003 \001(\t\022\022\n\nroom_title\030\004 \001(\t\022 \n\030room_imag" +
-      "e_attachment_id\030\005 \001(\003\022\021\n\tis_use_ai\030\006 \001(\010" +
+      "e_attachment_id\030\005 \001(\003\022\021\n\tis_use_ai\030\006 \001(\003" +
       "\"\210\001\n\022CreateRoomResponse\022%\n\tbase_resp\030\001 \001" +
       "(\0132\022.base.BaseResponse\022\017\n\007room_id\030\002 \001(\003\022" +
       "\016\n\006up_url\030\003 \001(\t\022\022\n\nroom_title\030\004 \001(\t\022\026\n\016r" +

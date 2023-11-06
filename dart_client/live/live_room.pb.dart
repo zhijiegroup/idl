@@ -297,7 +297,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $core.String? groupId,
     $core.String? roomTitle,
     $fixnum.Int64? roomImageAttachmentId,
-    $core.bool? isUseAi,
+    $fixnum.Int64? isUseAi,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -330,7 +330,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'groupId')
     ..aOS(4, _omitFieldNames ? '' : 'roomTitle')
     ..aInt64(5, _omitFieldNames ? '' : 'roomImageAttachmentId')
-    ..aOB(6, _omitFieldNames ? '' : 'isUseAi')
+    ..aInt64(6, _omitFieldNames ? '' : 'isUseAi')
     ..hasRequiredFields = false
   ;
 
@@ -403,9 +403,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   void clearRoomImageAttachmentId() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get isUseAi => $_getBF(5);
+  $fixnum.Int64 get isUseAi => $_getI64(5);
   @$pb.TagNumber(6)
-  set isUseAi($core.bool v) { $_setBool(5, v); }
+  set isUseAi($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasIsUseAi() => $_has(5);
   @$pb.TagNumber(6)

@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private GetSchoolLiveTrafficChartResponse() {
     liveTrafficChart = java.util.Collections.emptyList();
     aliLiveTrafficChart = java.util.Collections.emptyList();
+    subTrafficChart = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -92,6 +93,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.parser(), extensionRegistry));
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              subTrafficChart = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            subTrafficChart .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,6 +122,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
         aliLiveTrafficChart = java.util.Collections.unmodifiableList(aliLiveTrafficChart );
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        subTrafficChart = java.util.Collections.unmodifiableList(subTrafficChart );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -258,6 +271,46 @@ private static final long serialVersionUID = 0L;
     return aliLiveTrafficChart .get(index);
   }
 
+  public static final int SUB_TRAFFIC_CHART_FIELD_NUMBER = 6;
+  private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> subTrafficChart ;
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getSubTrafficChartList() {
+    return subTrafficChart ;
+  }
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
+      getSubTrafficChartOrBuilderList() {
+    return subTrafficChart ;
+  }
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+   */
+  @java.lang.Override
+  public int getSubTrafficChartCount() {
+    return subTrafficChart .size();
+  }
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getSubTrafficChart(int index) {
+    return subTrafficChart .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getSubTrafficChartOrBuilder(
+      int index) {
+    return subTrafficChart .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -286,6 +339,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < aliLiveTrafficChart .size(); i++) {
       output.writeMessage(5, aliLiveTrafficChart .get(i));
+    }
+    for (int i = 0; i < subTrafficChart .size(); i++) {
+      output.writeMessage(6, subTrafficChart .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -316,6 +372,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, aliLiveTrafficChart .get(i));
     }
+    for (int i = 0; i < subTrafficChart .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, subTrafficChart .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -344,6 +404,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLiveTrafficChartList())) return false;
     if (!getAliLiveTrafficChartList()
         .equals(other.getAliLiveTrafficChartList())) return false;
+    if (!getSubTrafficChartList()
+        .equals(other.getSubTrafficChartList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -372,6 +434,10 @@ private static final long serialVersionUID = 0L;
     if (getAliLiveTrafficChartCount() > 0) {
       hash = (37 * hash) + ALI_LIVE_TRAFFIC_CHART_FIELD_NUMBER;
       hash = (53 * hash) + getAliLiveTrafficChartList().hashCode();
+    }
+    if (getSubTrafficChartCount() > 0) {
+      hash = (37 * hash) + SUB_TRAFFIC_CHART_FIELD_NUMBER;
+      hash = (53 * hash) + getSubTrafficChartList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -503,6 +569,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getLiveTrafficChartFieldBuilder();
         getAliLiveTrafficChartFieldBuilder();
+        getSubTrafficChartFieldBuilder();
       }
     }
     @java.lang.Override
@@ -529,6 +596,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000002);
       } else {
         aliLiveTrafficChartBuilder .clear();
+      }
+      if (subTrafficChartBuilder == null) {
+        subTrafficChart = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+      } else {
+        subTrafficChartBuilder .clear();
       }
       return this;
     }
@@ -581,6 +654,15 @@ private static final long serialVersionUID = 0L;
         result.aliLiveTrafficChart = aliLiveTrafficChart ;
       } else {
         result.aliLiveTrafficChart = aliLiveTrafficChartBuilder .build();
+      }
+      if (subTrafficChartBuilder == null) {
+        if (((bitField0 & 0x00000004) != 0)) {
+          subTrafficChart = java.util.Collections.unmodifiableList(subTrafficChart );
+          bitField0 = (bitField0 & ~0x00000004);
+        }
+        result.subTrafficChart = subTrafficChart ;
+      } else {
+        result.subTrafficChart = subTrafficChartBuilder .build();
       }
       onBuilt();
       return result;
@@ -688,6 +770,32 @@ private static final long serialVersionUID = 0L;
                  getAliLiveTrafficChartFieldBuilder() : null;
           } else {
             aliLiveTrafficChartBuilder .addAllMessages(other.aliLiveTrafficChart );
+          }
+        }
+      }
+      if (subTrafficChartBuilder == null) {
+        if (!other.subTrafficChart .isEmpty()) {
+          if (subTrafficChart .isEmpty()) {
+            subTrafficChart = other.subTrafficChart ;
+            bitField0 = (bitField0 & ~0x00000004);
+          } else {
+            ensureSubTrafficChartIsMutable();
+            subTrafficChart .addAll(other.subTrafficChart );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.subTrafficChart .isEmpty()) {
+          if (subTrafficChartBuilder .isEmpty()) {
+            subTrafficChartBuilder .dispose();
+            subTrafficChartBuilder = null;
+            subTrafficChart = other.subTrafficChart ;
+            bitField0 = (bitField0 & ~0x00000004);
+            subTrafficChartBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSubTrafficChartFieldBuilder() : null;
+          } else {
+            subTrafficChartBuilder .addAllMessages(other.subTrafficChart );
           }
         }
       }
@@ -1380,6 +1488,246 @@ private static final long serialVersionUID = 0L;
         aliLiveTrafficChart = null;
       }
       return aliLiveTrafficChartBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> subTrafficChart =
+      java.util.Collections.emptyList();
+    private void ensureSubTrafficChartIsMutable() {
+      if (!((bitField0 & 0x00000004) != 0)) {
+        subTrafficChart = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart>(subTrafficChart );
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> subTrafficChartBuilder ;
+
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> getSubTrafficChartList() {
+      if (subTrafficChartBuilder == null) {
+        return java.util.Collections.unmodifiableList(subTrafficChart );
+      } else {
+        return subTrafficChartBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public int getSubTrafficChartCount() {
+      if (subTrafficChartBuilder == null) {
+        return subTrafficChart .size();
+      } else {
+        return subTrafficChartBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart getSubTrafficChart(int index) {
+      if (subTrafficChartBuilder == null) {
+        return subTrafficChart .get(index);
+      } else {
+        return subTrafficChartBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder setSubTrafficChart(
+        int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
+      if (subTrafficChartBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .set(index, value);
+        onChanged();
+      } else {
+        subTrafficChartBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder setSubTrafficChart(
+        int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
+      if (subTrafficChartBuilder == null) {
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        subTrafficChartBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder addSubTrafficChart(com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
+      if (subTrafficChartBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .add(value);
+        onChanged();
+      } else {
+        subTrafficChartBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder addSubTrafficChart(
+        int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart value) {
+      if (subTrafficChartBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .add(index, value);
+        onChanged();
+      } else {
+        subTrafficChartBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder addSubTrafficChart(
+        com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
+      if (subTrafficChartBuilder == null) {
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .add(builderForValue.build());
+        onChanged();
+      } else {
+        subTrafficChartBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder addSubTrafficChart(
+        int index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder builderForValue) {
+      if (subTrafficChartBuilder == null) {
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        subTrafficChartBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder addAllSubTrafficChart(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart> values) {
+      if (subTrafficChartBuilder == null) {
+        ensureSubTrafficChartIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, subTrafficChart );
+        onChanged();
+      } else {
+        subTrafficChartBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder clearSubTrafficChart() {
+      if (subTrafficChartBuilder == null) {
+        subTrafficChart = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+        onChanged();
+      } else {
+        subTrafficChartBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public Builder removeSubTrafficChart(int index) {
+      if (subTrafficChartBuilder == null) {
+        ensureSubTrafficChartIsMutable();
+        subTrafficChart .remove(index);
+        onChanged();
+      } else {
+        subTrafficChartBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder getSubTrafficChartBuilder(
+        int index) {
+      return getSubTrafficChartFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder getSubTrafficChartOrBuilder(
+        int index) {
+      if (subTrafficChartBuilder == null) {
+        return subTrafficChart .get(index);  } else {
+        return subTrafficChartBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
+         getSubTrafficChartOrBuilderList() {
+      if (subTrafficChartBuilder != null) {
+        return subTrafficChartBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(subTrafficChart );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addSubTrafficChartBuilder() {
+      return getSubTrafficChartFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder addSubTrafficChartBuilder(
+        int index) {
+      return getSubTrafficChartFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.SchooLiveTrafficChart sub_traffic_chart = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder> 
+         getSubTrafficChartBuilderList() {
+      return getSubTrafficChartFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder> 
+        getSubTrafficChartFieldBuilder() {
+      if (subTrafficChartBuilder == null) {
+        subTrafficChartBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChart.Builder, com.zhijiejiaoyu.glory_api.traffic.SchooLiveTrafficChartOrBuilder>(
+                subTrafficChart ,
+                ((bitField0 & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        subTrafficChart = null;
+      }
+      return subTrafficChartBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

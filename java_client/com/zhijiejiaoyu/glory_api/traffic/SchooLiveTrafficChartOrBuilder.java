@@ -30,4 +30,10 @@ public interface SchooLiveTrafficChartOrBuilder extends
    * @return The timestamp.
    */
   long getTimestamp();
+
+  /**
+   * <code>double sub_traffic = 4;</code>
+   * @return The subTraffic.
+   */
+  double getSubTraffic();
 }
