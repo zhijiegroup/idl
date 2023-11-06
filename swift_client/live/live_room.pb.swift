@@ -457,7 +457,7 @@ struct GloryApi_FinishedRoom {
 
   var roomDealAmount: Double = 0
 
-  /// 评论数
+  /// 评论数量
   var commentCount: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

@@ -116,7 +116,7 @@ export interface FinishedRoom {
   /** 直播间的封面的image 的id */
   room_image_attachment_id?: string;
   room_deal_amount?: number;
-  /** 评论数 */
+  /** 评论数量 */
   comment_count?: string;
 }
 

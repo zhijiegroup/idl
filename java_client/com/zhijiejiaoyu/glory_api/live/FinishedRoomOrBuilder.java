@@ -123,7 +123,7 @@ public interface FinishedRoomOrBuilder extends
 
   /**
    * <pre>
-   * 评论数
+   * 评论数量
    * </pre>
    *
    * <code>int64 comment_count = 13;</code>

@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
   private long commentCount ;
   /**
    * <pre>
-   * 评论数
+   * 评论数量
    * </pre>
    *
    * <code>int64 comment_count = 13;</code>
@@ -1597,7 +1597,7 @@ private static final long serialVersionUID = 0L;
     private long commentCount ;
     /**
      * <pre>
-     * 评论数
+     * 评论数量
      * </pre>
      *
      * <code>int64 comment_count = 13;</code>
@@ -1609,7 +1609,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 评论数
+     * 评论数量
      * </pre>
      *
      * <code>int64 comment_count = 13;</code>
@@ -1624,7 +1624,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 评论数
+     * 评论数量
      * </pre>
      *
      * <code>int64 comment_count = 13;</code>
