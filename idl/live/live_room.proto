@@ -103,7 +103,7 @@ message FinishedRoom {
   string room_title = 10; //直播的标题
   int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
   double room_deal_amount =12;
-  int64 comment_count = 13; // 评论数
+  int64 comment_count = 13; // 评论数量
 }
 
 message ListFinishedRoomRequest {
