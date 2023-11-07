@@ -1239,4 +1239,10 @@ service glory_api {
   rpc GetLiveAllTraffic(GetAllLiveTrafficRequest) returns (GetAllLiveTrafficResponse) {
     option (api.get) = '/api/traffic/get_all_live_traffic';
   }
+  rpc ListTenantTrafficConfig(ListTenantLiveTrafficConfigRequest) returns (ListTenantLiveTrafficConfigResponse) {
+    option (api.post) = '/api/traffic/list_tenant_traffic_config';
+  }
+  rpc UpdateTenantTrafficConfig(UpdateTenantLiveTrafficConfigRequest) returns (UpdateTenantLiveTrafficConfigResponse) {
+    option (api.post) = '/api/traffic/update_tenant_traffic_config';
+  }
 }

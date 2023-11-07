@@ -63,3 +63,36 @@ message GetAllLiveTrafficResponse {
     int64 total_traffic = 2;
     int64 ali_total_traffic = 3;
 }
+
+message ListTenantLiveTrafficConfigRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message TenantTrafficConfig {
+    int64 tenant_id = 1;
+    string tenant_name = 2;
+    int64 live_duration_limit = 3; // 直播时长限制 分钟
+    int64 traffic_day_limit = 4; // 单日流量限制 KB
+    int64 traffic_all_count = 5; // 直播流量总包 KB
+    int64 traffic_used_warning_count = 6; // 直播流量预警值 KB
+}
+
+message ListTenantLiveTrafficConfigResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TenantTrafficConfig tenant_traffic_config_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message UpdateTenantLiveTrafficConfigRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    int64 live_duration_limit = 3;
+    int64 traffic_day_limit = 4;
+    int64 traffic_all_count = 5;
+    int64 traffic_used_warning_count = 6;
+}
+
+message UpdateTenantLiveTrafficConfigResponse {
+    base.BaseResponse base_resp = 1;
+}
