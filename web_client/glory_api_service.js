@@ -53,6 +53,7 @@ import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
+import * as role from "./role/role";
 export {
   user,
   address,
@@ -103,6 +104,7 @@ export {
   job,
   app,
   live_traffic,
+  role,
 };
 
 import {
@@ -406,6 +408,22 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/role/get_role_type${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  GetRoleTemplate(request) {
+    const uri = `${this.uriPrefix}/api/role/get_role_template`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateRoleTemplate(request) {
+    const uri = `${this.uriPrefix}/api/role/update_role_template`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   CreateShop(request) {

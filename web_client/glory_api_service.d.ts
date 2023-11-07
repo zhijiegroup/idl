@@ -51,6 +51,7 @@ import * as edu_scheme from "./course/edu_scheme";
 import * as job from "./course/job";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
+import * as role from "./role/role";
 export {
   user,
   address,
@@ -101,6 +102,7 @@ export {
   job,
   app,
   live_traffic,
+  role,
 };
 
 export class glory_api {
@@ -256,6 +258,14 @@ list the permissions that supported */
   GetRoleType(
     request: user.GetRoleTypeRequest
   ): Promise<user.GetRoleTypeResponse>;
+
+  GetRoleTemplate(
+    request: role.GetRoleTemplateRequest
+  ): Promise<role.GetRoleTemplateResponse>;
+
+  UpdateRoleTemplate(
+    request: role.UpdateRoleTemplateRequest
+  ): Promise<role.UpdateRoleTemplateResponse>;
 
   /** shop */
   CreateShop(request: shop.CreateShopRequest): Promise<shop.CreateShopResponse>;
