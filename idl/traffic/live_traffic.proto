@@ -53,3 +53,13 @@ message GetSchoolLiveTrafficChartResponse {
     repeated SchooLiveTrafficChart ali_live_traffic_chart = 5;
     repeated SchooLiveTrafficChart sub_traffic_chart = 6;
 }
+
+message GetAllLiveTrafficRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message GetAllLiveTrafficResponse {
+    base.BaseResponse base_resp = 1;
+    int64 total_traffic = 2;
+    int64 ali_total_traffic = 3;
+}
