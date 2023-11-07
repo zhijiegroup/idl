@@ -9625,6 +9625,68 @@ public final class glory_apiGrpc {
     return getGetLiveAllTrafficMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> getListTenantTrafficConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTenantTrafficConfig",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> getListTenantTrafficConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest, com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> getListTenantTrafficConfigMethod;
+    if ((getListTenantTrafficConfigMethod = glory_apiGrpc.getListTenantTrafficConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTenantTrafficConfigMethod = glory_apiGrpc.getListTenantTrafficConfigMethod) == null) {
+          glory_apiGrpc.getListTenantTrafficConfigMethod = getListTenantTrafficConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest, com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTenantTrafficConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTenantTrafficConfig"))
+              .build();
+        }
+      }
+    }
+    return getListTenantTrafficConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest,
+      com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> getUpdateTenantTrafficConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTenantTrafficConfig",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest,
+      com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> getUpdateTenantTrafficConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest, com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> getUpdateTenantTrafficConfigMethod;
+    if ((getUpdateTenantTrafficConfigMethod = glory_apiGrpc.getUpdateTenantTrafficConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTenantTrafficConfigMethod = glory_apiGrpc.getUpdateTenantTrafficConfigMethod) == null) {
+          glory_apiGrpc.getUpdateTenantTrafficConfigMethod = getUpdateTenantTrafficConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest, com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTenantTrafficConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTenantTrafficConfig"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTenantTrafficConfigMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -12153,6 +12215,20 @@ public final class glory_apiGrpc {
     default void getLiveAllTraffic(com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveAllTrafficMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTenantTrafficConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTenantTrafficConfigMethod(), responseObserver);
     }
   }
 
@@ -14974,6 +15050,22 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetLiveAllTrafficMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTenantTrafficConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTenantTrafficConfigMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -17472,6 +17564,20 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficResponse getLiveAllTraffic(com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLiveAllTrafficMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse listTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTenantTrafficConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse updateTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTenantTrafficConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -20282,6 +20388,22 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetLiveAllTrafficMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig(
+        com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTenantTrafficConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig(
+        com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTenantTrafficConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -20594,6 +20716,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_SCHOO_LIVE_CHART = 307;
   private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 308;
   private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 309;
+  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 310;
+  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 311;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21851,6 +21975,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_LIVE_ALL_TRAFFIC:
           serviceImpl.getLiveAllTraffic((com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TENANT_TRAFFIC_CONFIG:
+          serviceImpl.listTenantTrafficConfig((com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TENANT_TRAFFIC_CONFIG:
+          serviceImpl.updateTenantTrafficConfig((com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -24040,6 +24172,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficRequest,
               com.zhijiejiaoyu.glory_api.traffic.GetAllLiveTrafficResponse>(
                 service, METHODID_GET_LIVE_ALL_TRAFFIC)))
+        .addMethod(
+          getListTenantTrafficConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigRequest,
+              com.zhijiejiaoyu.glory_api.traffic.ListTenantLiveTrafficConfigResponse>(
+                service, METHODID_LIST_TENANT_TRAFFIC_CONFIG)))
+        .addMethod(
+          getUpdateTenantTrafficConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest,
+              com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse>(
+                service, METHODID_UPDATE_TENANT_TRAFFIC_CONFIG)))
         .build();
   }
 
@@ -24398,6 +24544,8 @@ public final class glory_apiGrpc {
               .addMethod(getGetSchooLiveChartMethod())
               .addMethod(getListSchooLiveTrafficMethod())
               .addMethod(getGetLiveAllTrafficMethod())
+              .addMethod(getListTenantTrafficConfigMethod())
+              .addMethod(getUpdateTenantTrafficConfigMethod())
               .build();
         }
       }

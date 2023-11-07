@@ -63,3 +63,40 @@ export interface GetAllLiveTrafficResponse {
   total_traffic?: string;
   ali_total_traffic?: string;
 }
+
+export interface ListTenantLiveTrafficConfigRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface TenantTrafficConfig {
+  tenant_id?: string;
+  tenant_name?: string;
+  /** 直播时长限制 分钟 */
+  live_duration_limit?: string;
+  /** 单日流量限制 KB */
+  traffic_day_limit?: string;
+  /** 直播流量总包 KB */
+  traffic_all_count?: string;
+  /** 直播流量预警值 KB */
+  traffic_used_warning_count?: string;
+}
+
+export interface ListTenantLiveTrafficConfigResponse {
+  base_resp?: base.BaseResponse;
+  tenant_traffic_config_list?: Array<TenantTrafficConfig>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface UpdateTenantLiveTrafficConfigRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  live_duration_limit?: string;
+  traffic_day_limit?: string;
+  traffic_all_count?: string;
+  traffic_used_warning_count?: string;
+}
+
+export interface UpdateTenantLiveTrafficConfigResponse {
+  base_resp?: base.BaseResponse;
+}

@@ -54,6 +54,31 @@ public final class LiveTraffic {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetAllLiveTrafficResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantLiveTrafficConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantLiveTrafficConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TenantTrafficConfig_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TenantTrafficConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantLiveTrafficConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantLiveTrafficConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -97,7 +122,27 @@ public final class LiveTraffic {
       "e.BaseRequest\"t\n\031GetAllLiveTrafficRespon" +
       "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
       "e\022\025\n\rtotal_traffic\030\002 \001(\003\022\031\n\021ali_total_tr" +
-      "affic\030\003 \001(\003B&\n\"com.zhijiejiaoyu.glory_ap" +
+      "affic\030\003 \001(\003\"z\n\"ListTenantLiveTrafficConf" +
+      "igRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022+\n\npagination\030d \001(\0132\027.base.Pa" +
+      "ginationRequest\"\264\001\n\023TenantTrafficConfig\022" +
+      "\021\n\ttenant_id\030\001 \001(\003\022\023\n\013tenant_name\030\002 \001(\t\022" +
+      "\033\n\023live_duration_limit\030\003 \001(\003\022\031\n\021traffic_" +
+      "day_limit\030\004 \001(\003\022\031\n\021traffic_all_count\030\005 \001" +
+      "(\003\022\"\n\032traffic_used_warning_count\030\006 \001(\003\"\276" +
+      "\001\n#ListTenantLiveTrafficConfigResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022B\n" +
+      "\032tenant_traffic_config_list\030\002 \003(\0132\036.glor" +
+      "y_api.TenantTrafficConfig\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponse\"\331\001\n$Upda" +
+      "teTenantLiveTrafficConfigRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tten" +
+      "ant_id\030\002 \001(\003\022\033\n\023live_duration_limit\030\003 \001(" +
+      "\003\022\031\n\021traffic_day_limit\030\004 \001(\003\022\031\n\021traffic_" +
+      "all_count\030\005 \001(\003\022\"\n\032traffic_used_warning_" +
+      "count\030\006 \001(\003\"N\n%UpdateTenantLiveTrafficCo" +
+      "nfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponseB&\n\"com.zhijiejiaoyu.glory_ap" +
       "i.trafficP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -153,6 +198,36 @@ public final class LiveTraffic {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAllLiveTrafficResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", });
+    internal_static_glory_api_ListTenantLiveTrafficConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_ListTenantLiveTrafficConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantLiveTrafficConfigRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Pagination", });
+    internal_static_glory_api_TenantTrafficConfig_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_TenantTrafficConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TenantTrafficConfig_descriptor,
+        new java.lang.String[] { "TenantId", "TenantName", "LiveDurationLimit", "TrafficDayLimit", "TrafficAllCount", "TrafficUsedWarningCount", });
+    internal_static_glory_api_ListTenantLiveTrafficConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_ListTenantLiveTrafficConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantLiveTrafficConfigResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TenantTrafficConfigList", "Pagination", });
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "LiveDurationLimit", "TrafficDayLimit", "TrafficAllCount", "TrafficUsedWarningCount", });
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

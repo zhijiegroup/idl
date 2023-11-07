@@ -163,3 +163,93 @@ final $typed_data.Uint8List getAllLiveTrafficResponseDescriptor = $convert.base6
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIjCg10b3RhbF90cmFmZmljGAIgASgDUgx0b3RhbFRyYWZm'
     'aWMSKgoRYWxpX3RvdGFsX3RyYWZmaWMYAyABKANSD2FsaVRvdGFsVHJhZmZpYw==');
 
+@$core.Deprecated('Use listTenantLiveTrafficConfigRequestDescriptor instead')
+const ListTenantLiveTrafficConfigRequest$json = {
+  '1': 'ListTenantLiveTrafficConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTenantLiveTrafficConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantLiveTrafficConfigRequestDescriptor = $convert.base64Decode(
+    'CiJMaXN0VGVuYW50TGl2ZVRyYWZmaWNDb25maWdSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIA'
+    'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EjcKCnBhZ2luYXRpb24YZCABKAsy'
+    'Fy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use tenantTrafficConfigDescriptor instead')
+const TenantTrafficConfig$json = {
+  '1': 'TenantTrafficConfig',
+  '2': [
+    {'1': 'tenant_id', '3': 1, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'tenant_name', '3': 2, '4': 1, '5': 9, '10': 'tenantName'},
+    {'1': 'live_duration_limit', '3': 3, '4': 1, '5': 3, '10': 'liveDurationLimit'},
+    {'1': 'traffic_day_limit', '3': 4, '4': 1, '5': 3, '10': 'trafficDayLimit'},
+    {'1': 'traffic_all_count', '3': 5, '4': 1, '5': 3, '10': 'trafficAllCount'},
+    {'1': 'traffic_used_warning_count', '3': 6, '4': 1, '5': 3, '10': 'trafficUsedWarningCount'},
+  ],
+};
+
+/// Descriptor for `TenantTrafficConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tenantTrafficConfigDescriptor = $convert.base64Decode(
+    'ChNUZW5hbnRUcmFmZmljQ29uZmlnEhsKCXRlbmFudF9pZBgBIAEoA1IIdGVuYW50SWQSHwoLdG'
+    'VuYW50X25hbWUYAiABKAlSCnRlbmFudE5hbWUSLgoTbGl2ZV9kdXJhdGlvbl9saW1pdBgDIAEo'
+    'A1IRbGl2ZUR1cmF0aW9uTGltaXQSKgoRdHJhZmZpY19kYXlfbGltaXQYBCABKANSD3RyYWZmaW'
+    'NEYXlMaW1pdBIqChF0cmFmZmljX2FsbF9jb3VudBgFIAEoA1IPdHJhZmZpY0FsbENvdW50EjsK'
+    'GnRyYWZmaWNfdXNlZF93YXJuaW5nX2NvdW50GAYgASgDUhd0cmFmZmljVXNlZFdhcm5pbmdDb3'
+    'VudA==');
+
+@$core.Deprecated('Use listTenantLiveTrafficConfigResponseDescriptor instead')
+const ListTenantLiveTrafficConfigResponse$json = {
+  '1': 'ListTenantLiveTrafficConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'tenant_traffic_config_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TenantTrafficConfig', '10': 'tenantTrafficConfigList'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTenantLiveTrafficConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantLiveTrafficConfigResponseDescriptor = $convert.base64Decode(
+    'CiNMaXN0VGVuYW50TGl2ZVRyYWZmaWNDb25maWdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKA'
+    'syEi5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASWwoadGVuYW50X3RyYWZmaWNfY29uZmln'
+    'X2xpc3QYAiADKAsyHi5nbG9yeV9hcGkuVGVuYW50VHJhZmZpY0NvbmZpZ1IXdGVuYW50VHJhZm'
+    'ZpY0NvbmZpZ0xpc3QSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvblJlc3Bv'
+    'bnNlUgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use updateTenantLiveTrafficConfigRequestDescriptor instead')
+const UpdateTenantLiveTrafficConfigRequest$json = {
+  '1': 'UpdateTenantLiveTrafficConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'live_duration_limit', '3': 3, '4': 1, '5': 3, '10': 'liveDurationLimit'},
+    {'1': 'traffic_day_limit', '3': 4, '4': 1, '5': 3, '10': 'trafficDayLimit'},
+    {'1': 'traffic_all_count', '3': 5, '4': 1, '5': 3, '10': 'trafficAllCount'},
+    {'1': 'traffic_used_warning_count', '3': 6, '4': 1, '5': 3, '10': 'trafficUsedWarningCount'},
+  ],
+};
+
+/// Descriptor for `UpdateTenantLiveTrafficConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTenantLiveTrafficConfigRequestDescriptor = $convert.base64Decode(
+    'CiRVcGRhdGVUZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GA'
+    'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgD'
+    'Ugh0ZW5hbnRJZBIuChNsaXZlX2R1cmF0aW9uX2xpbWl0GAMgASgDUhFsaXZlRHVyYXRpb25MaW'
+    '1pdBIqChF0cmFmZmljX2RheV9saW1pdBgEIAEoA1IPdHJhZmZpY0RheUxpbWl0EioKEXRyYWZm'
+    'aWNfYWxsX2NvdW50GAUgASgDUg90cmFmZmljQWxsQ291bnQSOwoadHJhZmZpY191c2VkX3dhcm'
+    '5pbmdfY291bnQYBiABKANSF3RyYWZmaWNVc2VkV2FybmluZ0NvdW50');
+
+@$core.Deprecated('Use updateTenantLiveTrafficConfigResponseDescriptor instead')
+const UpdateTenantLiveTrafficConfigResponse$json = {
+  '1': 'UpdateTenantLiveTrafficConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateTenantLiveTrafficConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTenantLiveTrafficConfigResponseDescriptor = $convert.base64Decode(
+    'CiVVcGRhdGVUZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
+    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+

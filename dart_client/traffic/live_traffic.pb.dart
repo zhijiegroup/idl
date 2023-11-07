@@ -784,6 +784,444 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
   void clearAliTotalTraffic() => clearField(3);
 }
 
+class ListTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
+  factory ListTenantLiveTrafficConfigRequest({
+    $0.BaseRequest? baseRequest,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListTenantLiveTrafficConfigRequest._() : super();
+  factory ListTenantLiveTrafficConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantLiveTrafficConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantLiveTrafficConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantLiveTrafficConfigRequest clone() => ListTenantLiveTrafficConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantLiveTrafficConfigRequest copyWith(void Function(ListTenantLiveTrafficConfigRequest) updates) => super.copyWith((message) => updates(message as ListTenantLiveTrafficConfigRequest)) as ListTenantLiveTrafficConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantLiveTrafficConfigRequest create() => ListTenantLiveTrafficConfigRequest._();
+  ListTenantLiveTrafficConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTenantLiveTrafficConfigRequest> createRepeated() => $pb.PbList<ListTenantLiveTrafficConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantLiveTrafficConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantLiveTrafficConfigRequest>(create);
+  static ListTenantLiveTrafficConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(1);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(1);
+}
+
+class TenantTrafficConfig extends $pb.GeneratedMessage {
+  factory TenantTrafficConfig({
+    $fixnum.Int64? tenantId,
+    $core.String? tenantName,
+    $fixnum.Int64? liveDurationLimit,
+    $fixnum.Int64? trafficDayLimit,
+    $fixnum.Int64? trafficAllCount,
+    $fixnum.Int64? trafficUsedWarningCount,
+  }) {
+    final $result = create();
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (tenantName != null) {
+      $result.tenantName = tenantName;
+    }
+    if (liveDurationLimit != null) {
+      $result.liveDurationLimit = liveDurationLimit;
+    }
+    if (trafficDayLimit != null) {
+      $result.trafficDayLimit = trafficDayLimit;
+    }
+    if (trafficAllCount != null) {
+      $result.trafficAllCount = trafficAllCount;
+    }
+    if (trafficUsedWarningCount != null) {
+      $result.trafficUsedWarningCount = trafficUsedWarningCount;
+    }
+    return $result;
+  }
+  TenantTrafficConfig._() : super();
+  factory TenantTrafficConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TenantTrafficConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TenantTrafficConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(2, _omitFieldNames ? '' : 'tenantName')
+    ..aInt64(3, _omitFieldNames ? '' : 'liveDurationLimit')
+    ..aInt64(4, _omitFieldNames ? '' : 'trafficDayLimit')
+    ..aInt64(5, _omitFieldNames ? '' : 'trafficAllCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'trafficUsedWarningCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TenantTrafficConfig clone() => TenantTrafficConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TenantTrafficConfig copyWith(void Function(TenantTrafficConfig) updates) => super.copyWith((message) => updates(message as TenantTrafficConfig)) as TenantTrafficConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TenantTrafficConfig create() => TenantTrafficConfig._();
+  TenantTrafficConfig createEmptyInstance() => create();
+  static $pb.PbList<TenantTrafficConfig> createRepeated() => $pb.PbList<TenantTrafficConfig>();
+  @$core.pragma('dart2js:noInline')
+  static TenantTrafficConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TenantTrafficConfig>(create);
+  static TenantTrafficConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get tenantId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set tenantId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTenantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTenantId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get tenantName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set tenantName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get liveDurationLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set liveDurationLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLiveDurationLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLiveDurationLimit() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get trafficDayLimit => $_getI64(3);
+  @$pb.TagNumber(4)
+  set trafficDayLimit($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTrafficDayLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTrafficDayLimit() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get trafficAllCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set trafficAllCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTrafficAllCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTrafficAllCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get trafficUsedWarningCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set trafficUsedWarningCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTrafficUsedWarningCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTrafficUsedWarningCount() => clearField(6);
+}
+
+class ListTenantLiveTrafficConfigResponse extends $pb.GeneratedMessage {
+  factory ListTenantLiveTrafficConfigResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<TenantTrafficConfig>? tenantTrafficConfigList,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (tenantTrafficConfigList != null) {
+      $result.tenantTrafficConfigList.addAll(tenantTrafficConfigList);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListTenantLiveTrafficConfigResponse._() : super();
+  factory ListTenantLiveTrafficConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantLiveTrafficConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantLiveTrafficConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<TenantTrafficConfig>(2, _omitFieldNames ? '' : 'tenantTrafficConfigList', $pb.PbFieldType.PM, subBuilder: TenantTrafficConfig.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantLiveTrafficConfigResponse clone() => ListTenantLiveTrafficConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantLiveTrafficConfigResponse copyWith(void Function(ListTenantLiveTrafficConfigResponse) updates) => super.copyWith((message) => updates(message as ListTenantLiveTrafficConfigResponse)) as ListTenantLiveTrafficConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantLiveTrafficConfigResponse create() => ListTenantLiveTrafficConfigResponse._();
+  ListTenantLiveTrafficConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTenantLiveTrafficConfigResponse> createRepeated() => $pb.PbList<ListTenantLiveTrafficConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantLiveTrafficConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantLiveTrafficConfigResponse>(create);
+  static ListTenantLiveTrafficConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TenantTrafficConfig> get tenantTrafficConfigList => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
+  factory UpdateTenantLiveTrafficConfigRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? tenantId,
+    $fixnum.Int64? liveDurationLimit,
+    $fixnum.Int64? trafficDayLimit,
+    $fixnum.Int64? trafficAllCount,
+    $fixnum.Int64? trafficUsedWarningCount,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (liveDurationLimit != null) {
+      $result.liveDurationLimit = liveDurationLimit;
+    }
+    if (trafficDayLimit != null) {
+      $result.trafficDayLimit = trafficDayLimit;
+    }
+    if (trafficAllCount != null) {
+      $result.trafficAllCount = trafficAllCount;
+    }
+    if (trafficUsedWarningCount != null) {
+      $result.trafficUsedWarningCount = trafficUsedWarningCount;
+    }
+    return $result;
+  }
+  UpdateTenantLiveTrafficConfigRequest._() : super();
+  factory UpdateTenantLiveTrafficConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTenantLiveTrafficConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTenantLiveTrafficConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..aInt64(3, _omitFieldNames ? '' : 'liveDurationLimit')
+    ..aInt64(4, _omitFieldNames ? '' : 'trafficDayLimit')
+    ..aInt64(5, _omitFieldNames ? '' : 'trafficAllCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'trafficUsedWarningCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTenantLiveTrafficConfigRequest clone() => UpdateTenantLiveTrafficConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTenantLiveTrafficConfigRequest copyWith(void Function(UpdateTenantLiveTrafficConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateTenantLiveTrafficConfigRequest)) as UpdateTenantLiveTrafficConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantLiveTrafficConfigRequest create() => UpdateTenantLiveTrafficConfigRequest._();
+  UpdateTenantLiveTrafficConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateTenantLiveTrafficConfigRequest> createRepeated() => $pb.PbList<UpdateTenantLiveTrafficConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantLiveTrafficConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTenantLiveTrafficConfigRequest>(create);
+  static UpdateTenantLiveTrafficConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get liveDurationLimit => $_getI64(2);
+  @$pb.TagNumber(3)
+  set liveDurationLimit($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLiveDurationLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLiveDurationLimit() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get trafficDayLimit => $_getI64(3);
+  @$pb.TagNumber(4)
+  set trafficDayLimit($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTrafficDayLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTrafficDayLimit() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get trafficAllCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set trafficAllCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTrafficAllCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTrafficAllCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get trafficUsedWarningCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set trafficUsedWarningCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTrafficUsedWarningCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTrafficUsedWarningCount() => clearField(6);
+}
+
+class UpdateTenantLiveTrafficConfigResponse extends $pb.GeneratedMessage {
+  factory UpdateTenantLiveTrafficConfigResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateTenantLiveTrafficConfigResponse._() : super();
+  factory UpdateTenantLiveTrafficConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTenantLiveTrafficConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTenantLiveTrafficConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTenantLiveTrafficConfigResponse clone() => UpdateTenantLiveTrafficConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTenantLiveTrafficConfigResponse copyWith(void Function(UpdateTenantLiveTrafficConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateTenantLiveTrafficConfigResponse)) as UpdateTenantLiveTrafficConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantLiveTrafficConfigResponse create() => UpdateTenantLiveTrafficConfigResponse._();
+  UpdateTenantLiveTrafficConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateTenantLiveTrafficConfigResponse> createRepeated() => $pb.PbList<UpdateTenantLiveTrafficConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantLiveTrafficConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTenantLiveTrafficConfigResponse>(create);
+  static UpdateTenantLiveTrafficConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

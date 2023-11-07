@@ -998,5 +998,11 @@ class glory_apiApi {
   $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ClientContext? ctx, $48.GetAllLiveTrafficRequest request) =>
     _client.invoke<$48.GetAllLiveTrafficResponse>(ctx, 'glory_api', 'GetLiveAllTraffic', request, $48.GetAllLiveTrafficResponse())
   ;
+  $async.Future<$48.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig($pb.ClientContext? ctx, $48.ListTenantLiveTrafficConfigRequest request) =>
+    _client.invoke<$48.ListTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'ListTenantTrafficConfig', request, $48.ListTenantLiveTrafficConfigResponse())
+  ;
+  $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ClientContext? ctx, $48.UpdateTenantLiveTrafficConfigRequest request) =>
+    _client.invoke<$48.UpdateTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'UpdateTenantTrafficConfig', request, $48.UpdateTenantLiveTrafficConfigResponse())
+  ;
 }
 

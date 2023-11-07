@@ -52,7 +52,7 @@ public final class GloryApiService {
       "rse/teaching_plan.proto\032\027course/edu_sche" +
       "me.proto\032\020course/job.proto\032\rapp/app.prot" +
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
-      ".proto2\267\253\002\n\tglory_api\022s\n\rCreateExample\022\037" +
+      ".proto2\217\256\002\n\tglory_api\022s\n\rCreateExample\022\037" +
       ".glory_api.CreateExampleRequest\032 .glory_" +
       "api.CreateExampleResponse\"\037\322\301\030\033/api/exam" +
       "ple/create_example\022g\n\nGetExample\022\034.glory" +
@@ -1010,8 +1010,17 @@ public final class GloryApiService {
       "c\022\205\001\n\021GetLiveAllTraffic\022#.glory_api.GetA" +
       "llLiveTrafficRequest\032$.glory_api.GetAllL" +
       "iveTrafficResponse\"%\312\301\030!/api/traffic/get" +
-      "_all_live_trafficB\036\n\032com.zhijiejiaoyu.gl" +
-      "ory_apiP\001b\006proto3"
+      "_all_live_traffic\022\245\001\n\027ListTenantTrafficC" +
+      "onfig\022-.glory_api.ListTenantLiveTrafficC" +
+      "onfigRequest\032..glory_api.ListTenantLiveT" +
+      "rafficConfigResponse\"+\322\301\030\'/api/traffic/l" +
+      "ist_tenant_traffic_config\022\255\001\n\031UpdateTena" +
+      "ntTrafficConfig\022/.glory_api.UpdateTenant" +
+      "LiveTrafficConfigRequest\0320.glory_api.Upd" +
+      "ateTenantLiveTrafficConfigResponse\"-\322\301\030)" +
+      "/api/traffic/update_tenant_traffic_confi" +
+      "gB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

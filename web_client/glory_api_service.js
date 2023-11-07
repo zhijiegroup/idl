@@ -2491,6 +2491,22 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/traffic/get_all_live_traffic${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  ListTenantTrafficConfig(request) {
+    const uri = `${this.uriPrefix}/api/traffic/list_tenant_traffic_config`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateTenantTrafficConfig(request) {
+    const uri = `${this.uriPrefix}/api/traffic/update_tenant_traffic_config`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

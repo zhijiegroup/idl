@@ -379,6 +379,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$48.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ServerContext ctx, $48.GetSchoolLiveTrafficChartRequest request);
   $async.Future<$48.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ServerContext ctx, $48.ListSchoolLiveTrafficRequest request);
   $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ServerContext ctx, $48.GetAllLiveTrafficRequest request);
+  $async.Future<$48.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig($pb.ServerContext ctx, $48.ListTenantLiveTrafficConfigRequest request);
+  $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ServerContext ctx, $48.UpdateTenantLiveTrafficConfigRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -692,6 +694,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetSchooLiveChart': return $48.GetSchoolLiveTrafficChartRequest();
       case 'ListSchooLiveTraffic': return $48.ListSchoolLiveTrafficRequest();
       case 'GetLiveAllTraffic': return $48.GetAllLiveTrafficRequest();
+      case 'ListTenantTrafficConfig': return $48.ListTenantLiveTrafficConfigRequest();
+      case 'UpdateTenantTrafficConfig': return $48.UpdateTenantLiveTrafficConfigRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1008,6 +1012,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetSchooLiveChart': return this.getSchooLiveChart(ctx, request as $48.GetSchoolLiveTrafficChartRequest);
       case 'ListSchooLiveTraffic': return this.listSchooLiveTraffic(ctx, request as $48.ListSchoolLiveTrafficRequest);
       case 'GetLiveAllTraffic': return this.getLiveAllTraffic(ctx, request as $48.GetAllLiveTrafficRequest);
+      case 'ListTenantTrafficConfig': return this.listTenantTrafficConfig(ctx, request as $48.ListTenantLiveTrafficConfigRequest);
+      case 'UpdateTenantTrafficConfig': return this.updateTenantTrafficConfig(ctx, request as $48.UpdateTenantLiveTrafficConfigRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

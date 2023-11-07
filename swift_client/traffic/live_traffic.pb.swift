@@ -232,6 +232,148 @@ struct GloryApi_GetAllLiveTrafficResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_ListTenantLiveTrafficConfigRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_TenantTrafficConfig {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var tenantID: Int64 = 0
+
+  var tenantName: String = String()
+
+  /// 直播时长限制 分钟
+  var liveDurationLimit: Int64 = 0
+
+  /// 单日流量限制 KB
+  var trafficDayLimit: Int64 = 0
+
+  /// 直播流量总包 KB
+  var trafficAllCount: Int64 = 0
+
+  /// 直播流量预警值 KB
+  var trafficUsedWarningCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListTenantLiveTrafficConfigResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var tenantTrafficConfigList: [GloryApi_TenantTrafficConfig] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+struct GloryApi_UpdateTenantLiveTrafficConfigRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var tenantID: Int64 = 0
+
+  var liveDurationLimit: Int64 = 0
+
+  var trafficDayLimit: Int64 = 0
+
+  var trafficAllCount: Int64 = 0
+
+  var trafficUsedWarningCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateTenantLiveTrafficConfigResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_ListSchoolLiveTrafficRequest: @unchecked Sendable {}
 extension GloryApi_ListSchoolLiveTrafficResponse: @unchecked Sendable {}
@@ -241,6 +383,11 @@ extension GloryApi_SchooLiveTrafficChart: @unchecked Sendable {}
 extension GloryApi_GetSchoolLiveTrafficChartResponse: @unchecked Sendable {}
 extension GloryApi_GetAllLiveTrafficRequest: @unchecked Sendable {}
 extension GloryApi_GetAllLiveTrafficResponse: @unchecked Sendable {}
+extension GloryApi_ListTenantLiveTrafficConfigRequest: @unchecked Sendable {}
+extension GloryApi_TenantTrafficConfig: @unchecked Sendable {}
+extension GloryApi_ListTenantLiveTrafficConfigResponse: @unchecked Sendable {}
+extension GloryApi_UpdateTenantLiveTrafficConfigRequest: @unchecked Sendable {}
+extension GloryApi_UpdateTenantLiveTrafficConfigResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -684,6 +831,260 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.totalTraffic != rhs.totalTraffic {return false}
     if lhs.aliTotalTraffic != rhs.aliTotalTraffic {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTenantLiveTrafficConfigRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTenantLiveTrafficConfigRequest, rhs: GloryApi_ListTenantLiveTrafficConfigRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TenantTrafficConfig"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "tenant_id"),
+    2: .standard(proto: "tenant_name"),
+    3: .standard(proto: "live_duration_limit"),
+    4: .standard(proto: "traffic_day_limit"),
+    5: .standard(proto: "traffic_all_count"),
+    6: .standard(proto: "traffic_used_warning_count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.tenantName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.liveDurationLimit) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.trafficDayLimit) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.trafficAllCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.trafficUsedWarningCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 1)
+    }
+    if !self.tenantName.isEmpty {
+      try visitor.visitSingularStringField(value: self.tenantName, fieldNumber: 2)
+    }
+    if self.liveDurationLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveDurationLimit, fieldNumber: 3)
+    }
+    if self.trafficDayLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficDayLimit, fieldNumber: 4)
+    }
+    if self.trafficAllCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficAllCount, fieldNumber: 5)
+    }
+    if self.trafficUsedWarningCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficUsedWarningCount, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TenantTrafficConfig, rhs: GloryApi_TenantTrafficConfig) -> Bool {
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.tenantName != rhs.tenantName {return false}
+    if lhs.liveDurationLimit != rhs.liveDurationLimit {return false}
+    if lhs.trafficDayLimit != rhs.trafficDayLimit {return false}
+    if lhs.trafficAllCount != rhs.trafficAllCount {return false}
+    if lhs.trafficUsedWarningCount != rhs.trafficUsedWarningCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTenantLiveTrafficConfigResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "tenant_traffic_config_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.tenantTrafficConfigList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.tenantTrafficConfigList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.tenantTrafficConfigList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTenantLiveTrafficConfigResponse, rhs: GloryApi_ListTenantLiveTrafficConfigResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.tenantTrafficConfigList != rhs.tenantTrafficConfigList {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantLiveTrafficConfigRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "tenant_id"),
+    3: .standard(proto: "live_duration_limit"),
+    4: .standard(proto: "traffic_day_limit"),
+    5: .standard(proto: "traffic_all_count"),
+    6: .standard(proto: "traffic_used_warning_count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.liveDurationLimit) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.trafficDayLimit) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.trafficAllCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.trafficUsedWarningCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
+    }
+    if self.liveDurationLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveDurationLimit, fieldNumber: 3)
+    }
+    if self.trafficDayLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficDayLimit, fieldNumber: 4)
+    }
+    if self.trafficAllCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficAllCount, fieldNumber: 5)
+    }
+    if self.trafficUsedWarningCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.trafficUsedWarningCount, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateTenantLiveTrafficConfigRequest, rhs: GloryApi_UpdateTenantLiveTrafficConfigRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.liveDurationLimit != rhs.liveDurationLimit {return false}
+    if lhs.trafficDayLimit != rhs.trafficDayLimit {return false}
+    if lhs.trafficAllCount != rhs.trafficAllCount {return false}
+    if lhs.trafficUsedWarningCount != rhs.trafficUsedWarningCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateTenantLiveTrafficConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateTenantLiveTrafficConfigResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateTenantLiveTrafficConfigResponse, rhs: GloryApi_UpdateTenantLiveTrafficConfigResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -1395,6 +1395,14 @@ CreateLivePlanProduct create live plan product */
   GetLiveAllTraffic(
     request: live_traffic.GetAllLiveTrafficRequest
   ): Promise<live_traffic.GetAllLiveTrafficResponse>;
+
+  ListTenantTrafficConfig(
+    request: live_traffic.ListTenantLiveTrafficConfigRequest
+  ): Promise<live_traffic.ListTenantLiveTrafficConfigResponse>;
+
+  UpdateTenantTrafficConfig(
+    request: live_traffic.UpdateTenantLiveTrafficConfigRequest
+  ): Promise<live_traffic.UpdateTenantLiveTrafficConfigResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
