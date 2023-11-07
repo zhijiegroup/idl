@@ -134,3 +134,32 @@ final $typed_data.Uint8List getSchoolLiveTrafficChartResponseDescriptor = $conve
     'TAoRc3ViX3RyYWZmaWNfY2hhcnQYBiADKAsyIC5nbG9yeV9hcGkuU2Nob29MaXZlVHJhZmZpY0'
     'NoYXJ0Ug9zdWJUcmFmZmljQ2hhcnQ=');
 
+@$core.Deprecated('Use getAllLiveTrafficRequestDescriptor instead')
+const GetAllLiveTrafficRequest$json = {
+  '1': 'GetAllLiveTrafficRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetAllLiveTrafficRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAllLiveTrafficRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRBbGxMaXZlVHJhZmZpY1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+
+@$core.Deprecated('Use getAllLiveTrafficResponseDescriptor instead')
+const GetAllLiveTrafficResponse$json = {
+  '1': 'GetAllLiveTrafficResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_traffic', '3': 2, '4': 1, '5': 3, '10': 'totalTraffic'},
+    {'1': 'ali_total_traffic', '3': 3, '4': 1, '5': 3, '10': 'aliTotalTraffic'},
+  ],
+};
+
+/// Descriptor for `GetAllLiveTrafficResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAllLiveTrafficResponseDescriptor = $convert.base64Decode(
+    'ChlHZXRBbGxMaXZlVHJhZmZpY1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIjCg10b3RhbF90cmFmZmljGAIgASgDUgx0b3RhbFRyYWZm'
+    'aWMSKgoRYWxpX3RvdGFsX3RyYWZmaWMYAyABKANSD2FsaVRvdGFsVHJhZmZpYw==');
+

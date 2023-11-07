@@ -44,6 +44,16 @@ public final class LiveTraffic {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetSchoolLiveTrafficChartResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetAllLiveTrafficRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetAllLiveTrafficRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetAllLiveTrafficResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetAllLiveTrafficResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -82,8 +92,13 @@ public final class LiveTraffic {
       "oLiveTrafficChart\022@\n\026ali_live_traffic_ch" +
       "art\030\005 \003(\0132 .glory_api.SchooLiveTrafficCh" +
       "art\022;\n\021sub_traffic_chart\030\006 \003(\0132 .glory_a" +
-      "pi.SchooLiveTrafficChartB&\n\"com.zhijieji" +
-      "aoyu.glory_api.trafficP\001b\006proto3"
+      "pi.SchooLiveTrafficChart\"C\n\030GetAllLiveTr" +
+      "afficRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\"t\n\031GetAllLiveTrafficRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022\025\n\rtotal_traffic\030\002 \001(\003\022\031\n\021ali_total_tr" +
+      "affic\030\003 \001(\003B&\n\"com.zhijiejiaoyu.glory_ap" +
+      "i.trafficP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -126,6 +141,18 @@ public final class LiveTraffic {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSchoolLiveTrafficChartResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", "LiveTrafficChart", "AliLiveTrafficChart", "SubTrafficChart", });
+    internal_static_glory_api_GetAllLiveTrafficRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_glory_api_GetAllLiveTrafficRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetAllLiveTrafficRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_GetAllLiveTrafficResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_glory_api_GetAllLiveTrafficResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetAllLiveTrafficResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -376,6 +376,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListJob', '2': '.glory_api.ListJobRequest', '3': '.glory_api.ListJobResponse', '4': {}},
     {'1': 'GetSchooLiveChart', '2': '.glory_api.GetSchoolLiveTrafficChartRequest', '3': '.glory_api.GetSchoolLiveTrafficChartResponse', '4': {}},
     {'1': 'ListSchooLiveTraffic', '2': '.glory_api.ListSchoolLiveTrafficRequest', '3': '.glory_api.ListSchoolLiveTrafficResponse', '4': {}},
+    {'1': 'GetLiveAllTraffic', '2': '.glory_api.GetAllLiveTrafficRequest', '3': '.glory_api.GetAllLiveTrafficResponse', '4': {}},
   ],
 };
 
@@ -1167,6 +1168,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListSchoolLiveTrafficRequest': $48.ListSchoolLiveTrafficRequest$json,
   '.glory_api.ListSchoolLiveTrafficResponse': $48.ListSchoolLiveTrafficResponse$json,
   '.glory_api.SchoolLiveTraffic': $48.SchoolLiveTraffic$json,
+  '.glory_api.GetAllLiveTrafficRequest': $48.GetAllLiveTrafficRequest$json,
+  '.glory_api.GetAllLiveTrafficResponse': $48.GetAllLiveTrafficResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1859,5 +1862,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'MvZ2V0X3NjaG9vbF9saXZlX2NoYXJ0EpQBChRMaXN0U2Nob29MaXZlVHJhZmZpYxInLmdsb3J5'
     'X2FwaS5MaXN0U2Nob29sTGl2ZVRyYWZmaWNSZXF1ZXN0GiguZ2xvcnlfYXBpLkxpc3RTY2hvb2'
     'xMaXZlVHJhZmZpY1Jlc3BvbnNlIinKwRglL2FwaS90cmFmZmljL2xpc3Rfc2Nob29sX2xpdmVf'
-    'dHJhZmZpYw==');
+    'dHJhZmZpYxKFAQoRR2V0TGl2ZUFsbFRyYWZmaWMSIy5nbG9yeV9hcGkuR2V0QWxsTGl2ZVRyYW'
+    'ZmaWNSZXF1ZXN0GiQuZ2xvcnlfYXBpLkdldEFsbExpdmVUcmFmZmljUmVzcG9uc2UiJcrBGCEv'
+    'YXBpL3RyYWZmaWMvZ2V0X2FsbF9saXZlX3RyYWZmaWM=');
 

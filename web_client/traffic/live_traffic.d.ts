@@ -53,3 +53,13 @@ export interface GetSchoolLiveTrafficChartResponse {
   ali_live_traffic_chart?: Array<SchooLiveTrafficChart>;
   sub_traffic_chart?: Array<SchooLiveTrafficChart>;
 }
+
+export interface GetAllLiveTrafficRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetAllLiveTrafficResponse {
+  base_resp?: base.BaseResponse;
+  total_traffic?: string;
+  ali_total_traffic?: string;
+}

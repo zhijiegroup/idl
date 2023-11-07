@@ -378,6 +378,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$47.ListJobResponse> listJob($pb.ServerContext ctx, $47.ListJobRequest request);
   $async.Future<$48.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ServerContext ctx, $48.GetSchoolLiveTrafficChartRequest request);
   $async.Future<$48.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ServerContext ctx, $48.ListSchoolLiveTrafficRequest request);
+  $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ServerContext ctx, $48.GetAllLiveTrafficRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -690,6 +691,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListJob': return $47.ListJobRequest();
       case 'GetSchooLiveChart': return $48.GetSchoolLiveTrafficChartRequest();
       case 'ListSchooLiveTraffic': return $48.ListSchoolLiveTrafficRequest();
+      case 'GetLiveAllTraffic': return $48.GetAllLiveTrafficRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1005,6 +1007,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListJob': return this.listJob(ctx, request as $47.ListJobRequest);
       case 'GetSchooLiveChart': return this.getSchooLiveChart(ctx, request as $48.GetSchoolLiveTrafficChartRequest);
       case 'ListSchooLiveTraffic': return this.listSchooLiveTraffic(ctx, request as $48.ListSchoolLiveTrafficRequest);
+      case 'GetLiveAllTraffic': return this.getLiveAllTraffic(ctx, request as $48.GetAllLiveTrafficRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

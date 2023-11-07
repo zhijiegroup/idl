@@ -995,5 +995,8 @@ class glory_apiApi {
   $async.Future<$48.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ClientContext? ctx, $48.ListSchoolLiveTrafficRequest request) =>
     _client.invoke<$48.ListSchoolLiveTrafficResponse>(ctx, 'glory_api', 'ListSchooLiveTraffic', request, $48.ListSchoolLiveTrafficResponse())
   ;
+  $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ClientContext? ctx, $48.GetAllLiveTrafficRequest request) =>
+    _client.invoke<$48.GetAllLiveTrafficResponse>(ctx, 'glory_api', 'GetLiveAllTraffic', request, $48.GetAllLiveTrafficResponse())
+  ;
 }
 

@@ -2485,6 +2485,12 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/traffic/list_school_live_traffic${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  GetLiveAllTraffic(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/traffic/get_all_live_traffic${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();

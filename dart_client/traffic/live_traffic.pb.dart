@@ -652,6 +652,138 @@ class GetSchoolLiveTrafficChartResponse extends $pb.GeneratedMessage {
   $core.List<SchooLiveTrafficChart> get subTrafficChart => $_getList(5);
 }
 
+class GetAllLiveTrafficRequest extends $pb.GeneratedMessage {
+  factory GetAllLiveTrafficRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetAllLiveTrafficRequest._() : super();
+  factory GetAllLiveTrafficRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAllLiveTrafficRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAllLiveTrafficRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAllLiveTrafficRequest clone() => GetAllLiveTrafficRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAllLiveTrafficRequest copyWith(void Function(GetAllLiveTrafficRequest) updates) => super.copyWith((message) => updates(message as GetAllLiveTrafficRequest)) as GetAllLiveTrafficRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAllLiveTrafficRequest create() => GetAllLiveTrafficRequest._();
+  GetAllLiveTrafficRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAllLiveTrafficRequest> createRepeated() => $pb.PbList<GetAllLiveTrafficRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAllLiveTrafficRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAllLiveTrafficRequest>(create);
+  static GetAllLiveTrafficRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
+  factory GetAllLiveTrafficResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? totalTraffic,
+    $fixnum.Int64? aliTotalTraffic,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalTraffic != null) {
+      $result.totalTraffic = totalTraffic;
+    }
+    if (aliTotalTraffic != null) {
+      $result.aliTotalTraffic = aliTotalTraffic;
+    }
+    return $result;
+  }
+  GetAllLiveTrafficResponse._() : super();
+  factory GetAllLiveTrafficResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAllLiveTrafficResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAllLiveTrafficResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalTraffic')
+    ..aInt64(3, _omitFieldNames ? '' : 'aliTotalTraffic')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAllLiveTrafficResponse clone() => GetAllLiveTrafficResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAllLiveTrafficResponse copyWith(void Function(GetAllLiveTrafficResponse) updates) => super.copyWith((message) => updates(message as GetAllLiveTrafficResponse)) as GetAllLiveTrafficResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAllLiveTrafficResponse create() => GetAllLiveTrafficResponse._();
+  GetAllLiveTrafficResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAllLiveTrafficResponse> createRepeated() => $pb.PbList<GetAllLiveTrafficResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAllLiveTrafficResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAllLiveTrafficResponse>(create);
+  static GetAllLiveTrafficResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalTraffic => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalTraffic($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalTraffic() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalTraffic() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get aliTotalTraffic => $_getI64(2);
+  @$pb.TagNumber(3)
+  set aliTotalTraffic($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAliTotalTraffic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAliTotalTraffic() => clearField(3);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
