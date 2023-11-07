@@ -1,0 +1,29 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.role";
+option java_multiple_files = true;
+
+import "base.proto";
+import "user/user.proto";
+
+// GetRoleTemplate
+message GetRoleTemplateRequest {
+  base.BaseRequest base_request = 1;
+  string role_type = 2;
+}
+
+message GetRoleTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  repeated PagePermission page_permissions = 2;
+}
+
+// UpdateRoleTemplate
+message UpdateRoleTemplateRequest {
+  base.BaseRequest base_request = 1;
+  string role_type = 2;
+  repeated PagePermission page_permissions = 3;
+}
+
+message UpdateRoleTemplateResponse {
+  base.BaseResponse base_resp = 1;
+}

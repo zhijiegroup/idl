@@ -53,6 +53,7 @@ import "course/edu_scheme.proto";
 import "course/job.proto";
 import "app/app.proto";
 import "traffic/live_traffic.proto";
+import "role/role.proto";
 
 service glory_api {
 
@@ -207,6 +208,12 @@ service glory_api {
   }
   rpc GetRoleType(GetRoleTypeRequest) returns (GetRoleTypeResponse) {
     option (api.get) = '/api/role/get_role_type';
+  }
+  rpc GetRoleTemplate(GetRoleTemplateRequest) returns (GetRoleTemplateResponse) {
+    option (api.post) = '/api/role/get_role_template';
+  }
+  rpc UpdateRoleTemplate(UpdateRoleTemplateRequest) returns (UpdateRoleTemplateResponse) {
+    option (api.post) = '/api/role/update_role_template';
   }
 
   // shop
