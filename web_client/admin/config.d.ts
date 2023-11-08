@@ -100,3 +100,41 @@ export interface GetSTSResponse {
   base_resp?: base.BaseResponse;
   sts?: STS;
 }
+
+export interface WebofficeToken {
+  access_token?: string;
+  access_token_expired_time?: string;
+  refresh_token?: string;
+  refresh_token_expired_time?: string;
+  request_id?: string;
+  weboffice_url?: string;
+}
+
+export interface GenerateWebofficeTokenRequest {
+  base_request?: base.BaseRequest;
+  object_path?: string;
+}
+
+export interface GenerateWebofficeTokenResponse {
+  base_resp?: base.BaseResponse;
+  weboffice_token?: WebofficeToken;
+}
+
+export interface RefreshWebofficeToken {
+  access_token?: string;
+  access_token_expired_time?: string;
+  refresh_token?: string;
+  refresh_token_expired_time?: string;
+  request_id?: string;
+}
+
+export interface RefreshWebofficeTokenRequest {
+  base_request?: base.BaseRequest;
+  access_token?: string;
+  refresh_token?: string;
+}
+
+export interface RefreshWebofficeTokenResponse {
+  base_resp?: base.BaseResponse;
+  refresh_weboffice_token?: RefreshWebofficeToken;
+}

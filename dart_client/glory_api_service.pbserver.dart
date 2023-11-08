@@ -193,6 +193,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$18.DeleteConfigResponse> deleteConfig($pb.ServerContext ctx, $18.DeleteConfigRequest request);
   $async.Future<$18.GetConfigResponse> getConfig($pb.ServerContext ctx, $18.GetConfigRequest request);
   $async.Future<$18.GetSTSResponse> getSTS($pb.ServerContext ctx, $18.GetSTSRequest request);
+  $async.Future<$18.GenerateWebofficeTokenResponse> generateWebofficeToken($pb.ServerContext ctx, $18.GenerateWebofficeTokenRequest request);
+  $async.Future<$18.RefreshWebofficeTokenResponse> refreshWebofficeToken($pb.ServerContext ctx, $18.RefreshWebofficeTokenRequest request);
   $async.Future<$19.ListTenantOrgResponse> listTenantOrg($pb.ServerContext ctx, $19.ListTenantOrgRequest request);
   $async.Future<$20.GetAdminTenantResponse> getAdminTenant($pb.ServerContext ctx, $20.GetAdminTenantRequest request);
   $async.Future<$20.ListAdminUserResponse> listAdminUser($pb.ServerContext ctx, $20.ListAdminUserRequest request);
@@ -508,6 +510,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteConfig': return $18.DeleteConfigRequest();
       case 'GetConfig': return $18.GetConfigRequest();
       case 'GetSTS': return $18.GetSTSRequest();
+      case 'GenerateWebofficeToken': return $18.GenerateWebofficeTokenRequest();
+      case 'RefreshWebofficeToken': return $18.RefreshWebofficeTokenRequest();
       case 'ListTenantOrg': return $19.ListTenantOrgRequest();
       case 'GetAdminTenant': return $20.GetAdminTenantRequest();
       case 'ListAdminUser': return $20.ListAdminUserRequest();
@@ -826,6 +830,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteConfig': return this.deleteConfig(ctx, request as $18.DeleteConfigRequest);
       case 'GetConfig': return this.getConfig(ctx, request as $18.GetConfigRequest);
       case 'GetSTS': return this.getSTS(ctx, request as $18.GetSTSRequest);
+      case 'GenerateWebofficeToken': return this.generateWebofficeToken(ctx, request as $18.GenerateWebofficeTokenRequest);
+      case 'RefreshWebofficeToken': return this.refreshWebofficeToken(ctx, request as $18.RefreshWebofficeTokenRequest);
       case 'ListTenantOrg': return this.listTenantOrg(ctx, request as $19.ListTenantOrgRequest);
       case 'GetAdminTenant': return this.getAdminTenant(ctx, request as $20.GetAdminTenantRequest);
       case 'ListAdminUser': return this.listAdminUser(ctx, request as $20.ListAdminUserRequest);

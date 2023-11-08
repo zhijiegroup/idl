@@ -440,6 +440,12 @@ class glory_apiApi {
   $async.Future<$18.GetSTSResponse> getSTS($pb.ClientContext? ctx, $18.GetSTSRequest request) =>
     _client.invoke<$18.GetSTSResponse>(ctx, 'glory_api', 'GetSTS', request, $18.GetSTSResponse())
   ;
+  $async.Future<$18.GenerateWebofficeTokenResponse> generateWebofficeToken($pb.ClientContext? ctx, $18.GenerateWebofficeTokenRequest request) =>
+    _client.invoke<$18.GenerateWebofficeTokenResponse>(ctx, 'glory_api', 'GenerateWebofficeToken', request, $18.GenerateWebofficeTokenResponse())
+  ;
+  $async.Future<$18.RefreshWebofficeTokenResponse> refreshWebofficeToken($pb.ClientContext? ctx, $18.RefreshWebofficeTokenRequest request) =>
+    _client.invoke<$18.RefreshWebofficeTokenResponse>(ctx, 'glory_api', 'RefreshWebofficeToken', request, $18.RefreshWebofficeTokenResponse())
+  ;
   $async.Future<$19.ListTenantOrgResponse> listTenantOrg($pb.ClientContext? ctx, $19.ListTenantOrgRequest request) =>
     _client.invoke<$19.ListTenantOrgResponse>(ctx, 'glory_api', 'ListTenantOrg', request, $19.ListTenantOrgResponse())
   ;

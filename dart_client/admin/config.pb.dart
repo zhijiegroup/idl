@@ -1170,6 +1170,514 @@ class GetSTSResponse extends $pb.GeneratedMessage {
   STS ensureSts() => $_ensure(1);
 }
 
+class WebofficeToken extends $pb.GeneratedMessage {
+  factory WebofficeToken({
+    $core.String? accessToken,
+    $core.String? accessTokenExpiredTime,
+    $core.String? refreshToken,
+    $core.String? refreshTokenExpiredTime,
+    $core.String? requestId,
+    $core.String? webofficeUrl,
+  }) {
+    final $result = create();
+    if (accessToken != null) {
+      $result.accessToken = accessToken;
+    }
+    if (accessTokenExpiredTime != null) {
+      $result.accessTokenExpiredTime = accessTokenExpiredTime;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    if (refreshTokenExpiredTime != null) {
+      $result.refreshTokenExpiredTime = refreshTokenExpiredTime;
+    }
+    if (requestId != null) {
+      $result.requestId = requestId;
+    }
+    if (webofficeUrl != null) {
+      $result.webofficeUrl = webofficeUrl;
+    }
+    return $result;
+  }
+  WebofficeToken._() : super();
+  factory WebofficeToken.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WebofficeToken.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WebofficeToken', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accessToken')
+    ..aOS(2, _omitFieldNames ? '' : 'accessTokenExpiredTime')
+    ..aOS(3, _omitFieldNames ? '' : 'refreshToken')
+    ..aOS(4, _omitFieldNames ? '' : 'refreshTokenExpiredTime')
+    ..aOS(5, _omitFieldNames ? '' : 'requestId')
+    ..aOS(6, _omitFieldNames ? '' : 'webofficeUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WebofficeToken clone() => WebofficeToken()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WebofficeToken copyWith(void Function(WebofficeToken) updates) => super.copyWith((message) => updates(message as WebofficeToken)) as WebofficeToken;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WebofficeToken create() => WebofficeToken._();
+  WebofficeToken createEmptyInstance() => create();
+  static $pb.PbList<WebofficeToken> createRepeated() => $pb.PbList<WebofficeToken>();
+  @$core.pragma('dart2js:noInline')
+  static WebofficeToken getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WebofficeToken>(create);
+  static WebofficeToken? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accessToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accessToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAccessToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccessToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accessTokenExpiredTime => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accessTokenExpiredTime($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccessTokenExpiredTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccessTokenExpiredTime() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get refreshToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set refreshToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRefreshToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRefreshToken() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get refreshTokenExpiredTime => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set refreshTokenExpiredTime($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRefreshTokenExpiredTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRefreshTokenExpiredTime() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get requestId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set requestId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRequestId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get webofficeUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set webofficeUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasWebofficeUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWebofficeUrl() => clearField(6);
+}
+
+class GenerateWebofficeTokenRequest extends $pb.GeneratedMessage {
+  factory GenerateWebofficeTokenRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? objectPath,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (objectPath != null) {
+      $result.objectPath = objectPath;
+    }
+    return $result;
+  }
+  GenerateWebofficeTokenRequest._() : super();
+  factory GenerateWebofficeTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateWebofficeTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateWebofficeTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'objectPath')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenerateWebofficeTokenRequest clone() => GenerateWebofficeTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenerateWebofficeTokenRequest copyWith(void Function(GenerateWebofficeTokenRequest) updates) => super.copyWith((message) => updates(message as GenerateWebofficeTokenRequest)) as GenerateWebofficeTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateWebofficeTokenRequest create() => GenerateWebofficeTokenRequest._();
+  GenerateWebofficeTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<GenerateWebofficeTokenRequest> createRepeated() => $pb.PbList<GenerateWebofficeTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateWebofficeTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateWebofficeTokenRequest>(create);
+  static GenerateWebofficeTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get objectPath => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set objectPath($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasObjectPath() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearObjectPath() => clearField(2);
+}
+
+class GenerateWebofficeTokenResponse extends $pb.GeneratedMessage {
+  factory GenerateWebofficeTokenResponse({
+    $0.BaseResponse? baseResp,
+    WebofficeToken? webofficeToken,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (webofficeToken != null) {
+      $result.webofficeToken = webofficeToken;
+    }
+    return $result;
+  }
+  GenerateWebofficeTokenResponse._() : super();
+  factory GenerateWebofficeTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateWebofficeTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateWebofficeTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<WebofficeToken>(2, _omitFieldNames ? '' : 'webofficeToken', subBuilder: WebofficeToken.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenerateWebofficeTokenResponse clone() => GenerateWebofficeTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenerateWebofficeTokenResponse copyWith(void Function(GenerateWebofficeTokenResponse) updates) => super.copyWith((message) => updates(message as GenerateWebofficeTokenResponse)) as GenerateWebofficeTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateWebofficeTokenResponse create() => GenerateWebofficeTokenResponse._();
+  GenerateWebofficeTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<GenerateWebofficeTokenResponse> createRepeated() => $pb.PbList<GenerateWebofficeTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateWebofficeTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateWebofficeTokenResponse>(create);
+  static GenerateWebofficeTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  WebofficeToken get webofficeToken => $_getN(1);
+  @$pb.TagNumber(2)
+  set webofficeToken(WebofficeToken v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWebofficeToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWebofficeToken() => clearField(2);
+  @$pb.TagNumber(2)
+  WebofficeToken ensureWebofficeToken() => $_ensure(1);
+}
+
+class RefreshWebofficeToken extends $pb.GeneratedMessage {
+  factory RefreshWebofficeToken({
+    $core.String? accessToken,
+    $core.String? accessTokenExpiredTime,
+    $core.String? refreshToken,
+    $core.String? refreshTokenExpiredTime,
+    $core.String? requestId,
+  }) {
+    final $result = create();
+    if (accessToken != null) {
+      $result.accessToken = accessToken;
+    }
+    if (accessTokenExpiredTime != null) {
+      $result.accessTokenExpiredTime = accessTokenExpiredTime;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    if (refreshTokenExpiredTime != null) {
+      $result.refreshTokenExpiredTime = refreshTokenExpiredTime;
+    }
+    if (requestId != null) {
+      $result.requestId = requestId;
+    }
+    return $result;
+  }
+  RefreshWebofficeToken._() : super();
+  factory RefreshWebofficeToken.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RefreshWebofficeToken.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshWebofficeToken', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accessToken')
+    ..aOS(2, _omitFieldNames ? '' : 'accessTokenExpiredTime')
+    ..aOS(3, _omitFieldNames ? '' : 'refreshToken')
+    ..aOS(4, _omitFieldNames ? '' : 'refreshTokenExpiredTime')
+    ..aOS(5, _omitFieldNames ? '' : 'requestId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeToken clone() => RefreshWebofficeToken()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeToken copyWith(void Function(RefreshWebofficeToken) updates) => super.copyWith((message) => updates(message as RefreshWebofficeToken)) as RefreshWebofficeToken;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeToken create() => RefreshWebofficeToken._();
+  RefreshWebofficeToken createEmptyInstance() => create();
+  static $pb.PbList<RefreshWebofficeToken> createRepeated() => $pb.PbList<RefreshWebofficeToken>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeToken getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshWebofficeToken>(create);
+  static RefreshWebofficeToken? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accessToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accessToken($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAccessToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccessToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accessTokenExpiredTime => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accessTokenExpiredTime($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccessTokenExpiredTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccessTokenExpiredTime() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get refreshToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set refreshToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRefreshToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRefreshToken() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get refreshTokenExpiredTime => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set refreshTokenExpiredTime($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRefreshTokenExpiredTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRefreshTokenExpiredTime() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get requestId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set requestId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRequestId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestId() => clearField(5);
+}
+
+class RefreshWebofficeTokenRequest extends $pb.GeneratedMessage {
+  factory RefreshWebofficeTokenRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? accessToken,
+    $core.String? refreshToken,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (accessToken != null) {
+      $result.accessToken = accessToken;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    return $result;
+  }
+  RefreshWebofficeTokenRequest._() : super();
+  factory RefreshWebofficeTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RefreshWebofficeTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshWebofficeTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'accessToken')
+    ..aOS(3, _omitFieldNames ? '' : 'refreshToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeTokenRequest clone() => RefreshWebofficeTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeTokenRequest copyWith(void Function(RefreshWebofficeTokenRequest) updates) => super.copyWith((message) => updates(message as RefreshWebofficeTokenRequest)) as RefreshWebofficeTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeTokenRequest create() => RefreshWebofficeTokenRequest._();
+  RefreshWebofficeTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<RefreshWebofficeTokenRequest> createRepeated() => $pb.PbList<RefreshWebofficeTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshWebofficeTokenRequest>(create);
+  static RefreshWebofficeTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get accessToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accessToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccessToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccessToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get refreshToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set refreshToken($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRefreshToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRefreshToken() => clearField(3);
+}
+
+class RefreshWebofficeTokenResponse extends $pb.GeneratedMessage {
+  factory RefreshWebofficeTokenResponse({
+    $0.BaseResponse? baseResp,
+    RefreshWebofficeToken? refreshWebofficeToken,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (refreshWebofficeToken != null) {
+      $result.refreshWebofficeToken = refreshWebofficeToken;
+    }
+    return $result;
+  }
+  RefreshWebofficeTokenResponse._() : super();
+  factory RefreshWebofficeTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RefreshWebofficeTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshWebofficeTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<RefreshWebofficeToken>(2, _omitFieldNames ? '' : 'refreshWebofficeToken', subBuilder: RefreshWebofficeToken.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeTokenResponse clone() => RefreshWebofficeTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RefreshWebofficeTokenResponse copyWith(void Function(RefreshWebofficeTokenResponse) updates) => super.copyWith((message) => updates(message as RefreshWebofficeTokenResponse)) as RefreshWebofficeTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeTokenResponse create() => RefreshWebofficeTokenResponse._();
+  RefreshWebofficeTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<RefreshWebofficeTokenResponse> createRepeated() => $pb.PbList<RefreshWebofficeTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RefreshWebofficeTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshWebofficeTokenResponse>(create);
+  static RefreshWebofficeTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  RefreshWebofficeToken get refreshWebofficeToken => $_getN(1);
+  @$pb.TagNumber(2)
+  set refreshWebofficeToken(RefreshWebofficeToken v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRefreshWebofficeToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRefreshWebofficeToken() => clearField(2);
+  @$pb.TagNumber(2)
+  RefreshWebofficeToken ensureRefreshWebofficeToken() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

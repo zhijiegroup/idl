@@ -580,6 +580,14 @@ list the permissions that supported */
   /** admin_other */
   GetSTS(request: config.GetSTSRequest): Promise<config.GetSTSResponse>;
 
+  GenerateWebofficeToken(
+    request: config.GenerateWebofficeTokenRequest
+  ): Promise<config.GenerateWebofficeTokenResponse>;
+
+  RefreshWebofficeToken(
+    request: config.RefreshWebofficeTokenRequest
+  ): Promise<config.RefreshWebofficeTokenResponse>;
+
   ListTenantOrg(
     request: admin_tenant.ListTenantOrgRequest
   ): Promise<admin_tenant.ListTenantOrgResponse>;

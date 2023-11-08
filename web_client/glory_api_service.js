@@ -1072,6 +1072,22 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GenerateWebofficeToken(request) {
+    const uri = `${this.uriPrefix}/api/admin/generate_weboffice_token`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  RefreshWebofficeToken(request) {
+    const uri = `${this.uriPrefix}/api/admin/refresh_weboffice_token`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListTenantOrg(request) {
     const uri = `${this.uriPrefix}/api/admin/list_tenant_org`;
     const body = JSONbigint.stringify(request);

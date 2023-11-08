@@ -242,3 +242,106 @@ final $typed_data.Uint8List getSTSResponseDescriptor = $convert.base64Decode(
     'Cg5HZXRTVFNSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZXNwb25zZV'
     'IIYmFzZVJlc3ASIAoDc3RzGAIgASgLMg4uZ2xvcnlfYXBpLlNUU1IDc3Rz');
 
+@$core.Deprecated('Use webofficeTokenDescriptor instead')
+const WebofficeToken$json = {
+  '1': 'WebofficeToken',
+  '2': [
+    {'1': 'access_token', '3': 1, '4': 1, '5': 9, '10': 'accessToken'},
+    {'1': 'access_token_expired_time', '3': 2, '4': 1, '5': 9, '10': 'accessTokenExpiredTime'},
+    {'1': 'refresh_token', '3': 3, '4': 1, '5': 9, '10': 'refreshToken'},
+    {'1': 'refresh_token_expired_time', '3': 4, '4': 1, '5': 9, '10': 'refreshTokenExpiredTime'},
+    {'1': 'request_id', '3': 5, '4': 1, '5': 9, '10': 'requestId'},
+    {'1': 'weboffice_url', '3': 6, '4': 1, '5': 9, '10': 'webofficeUrl'},
+  ],
+};
+
+/// Descriptor for `WebofficeToken`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List webofficeTokenDescriptor = $convert.base64Decode(
+    'Cg5XZWJvZmZpY2VUb2tlbhIhCgxhY2Nlc3NfdG9rZW4YASABKAlSC2FjY2Vzc1Rva2VuEjkKGW'
+    'FjY2Vzc190b2tlbl9leHBpcmVkX3RpbWUYAiABKAlSFmFjY2Vzc1Rva2VuRXhwaXJlZFRpbWUS'
+    'IwoNcmVmcmVzaF90b2tlbhgDIAEoCVIMcmVmcmVzaFRva2VuEjsKGnJlZnJlc2hfdG9rZW5fZX'
+    'hwaXJlZF90aW1lGAQgASgJUhdyZWZyZXNoVG9rZW5FeHBpcmVkVGltZRIdCgpyZXF1ZXN0X2lk'
+    'GAUgASgJUglyZXF1ZXN0SWQSIwoNd2Vib2ZmaWNlX3VybBgGIAEoCVIMd2Vib2ZmaWNlVXJs');
+
+@$core.Deprecated('Use generateWebofficeTokenRequestDescriptor instead')
+const GenerateWebofficeTokenRequest$json = {
+  '1': 'GenerateWebofficeTokenRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'object_path', '3': 2, '4': 1, '5': 9, '10': 'objectPath'},
+  ],
+};
+
+/// Descriptor for `GenerateWebofficeTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateWebofficeTokenRequestDescriptor = $convert.base64Decode(
+    'Ch1HZW5lcmF0ZVdlYm9mZmljZVRva2VuUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIfCgtvYmplY3RfcGF0aBgCIAEoCVIKb2Jq'
+    'ZWN0UGF0aA==');
+
+@$core.Deprecated('Use generateWebofficeTokenResponseDescriptor instead')
+const GenerateWebofficeTokenResponse$json = {
+  '1': 'GenerateWebofficeTokenResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'weboffice_token', '3': 2, '4': 1, '5': 11, '6': '.glory_api.WebofficeToken', '10': 'webofficeToken'},
+  ],
+};
+
+/// Descriptor for `GenerateWebofficeTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateWebofficeTokenResponseDescriptor = $convert.base64Decode(
+    'Ch5HZW5lcmF0ZVdlYm9mZmljZVRva2VuUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEkIKD3dlYm9mZmljZV90b2tlbhgCIAEoCzIZLmds'
+    'b3J5X2FwaS5XZWJvZmZpY2VUb2tlblIOd2Vib2ZmaWNlVG9rZW4=');
+
+@$core.Deprecated('Use refreshWebofficeTokenDescriptor instead')
+const RefreshWebofficeToken$json = {
+  '1': 'RefreshWebofficeToken',
+  '2': [
+    {'1': 'access_token', '3': 1, '4': 1, '5': 9, '10': 'accessToken'},
+    {'1': 'access_token_expired_time', '3': 2, '4': 1, '5': 9, '10': 'accessTokenExpiredTime'},
+    {'1': 'refresh_token', '3': 3, '4': 1, '5': 9, '10': 'refreshToken'},
+    {'1': 'refresh_token_expired_time', '3': 4, '4': 1, '5': 9, '10': 'refreshTokenExpiredTime'},
+    {'1': 'request_id', '3': 5, '4': 1, '5': 9, '10': 'requestId'},
+  ],
+};
+
+/// Descriptor for `RefreshWebofficeToken`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshWebofficeTokenDescriptor = $convert.base64Decode(
+    'ChVSZWZyZXNoV2Vib2ZmaWNlVG9rZW4SIQoMYWNjZXNzX3Rva2VuGAEgASgJUgthY2Nlc3NUb2'
+    'tlbhI5ChlhY2Nlc3NfdG9rZW5fZXhwaXJlZF90aW1lGAIgASgJUhZhY2Nlc3NUb2tlbkV4cGly'
+    'ZWRUaW1lEiMKDXJlZnJlc2hfdG9rZW4YAyABKAlSDHJlZnJlc2hUb2tlbhI7ChpyZWZyZXNoX3'
+    'Rva2VuX2V4cGlyZWRfdGltZRgEIAEoCVIXcmVmcmVzaFRva2VuRXhwaXJlZFRpbWUSHQoKcmVx'
+    'dWVzdF9pZBgFIAEoCVIJcmVxdWVzdElk');
+
+@$core.Deprecated('Use refreshWebofficeTokenRequestDescriptor instead')
+const RefreshWebofficeTokenRequest$json = {
+  '1': 'RefreshWebofficeTokenRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'access_token', '3': 2, '4': 1, '5': 9, '10': 'accessToken'},
+    {'1': 'refresh_token', '3': 3, '4': 1, '5': 9, '10': 'refreshToken'},
+  ],
+};
+
+/// Descriptor for `RefreshWebofficeTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshWebofficeTokenRequestDescriptor = $convert.base64Decode(
+    'ChxSZWZyZXNoV2Vib2ZmaWNlVG9rZW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiEKDGFjY2Vzc190b2tlbhgCIAEoCVILYWNj'
+    'ZXNzVG9rZW4SIwoNcmVmcmVzaF90b2tlbhgDIAEoCVIMcmVmcmVzaFRva2Vu');
+
+@$core.Deprecated('Use refreshWebofficeTokenResponseDescriptor instead')
+const RefreshWebofficeTokenResponse$json = {
+  '1': 'RefreshWebofficeTokenResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'refresh_weboffice_token', '3': 2, '4': 1, '5': 11, '6': '.glory_api.RefreshWebofficeToken', '10': 'refreshWebofficeToken'},
+  ],
+};
+
+/// Descriptor for `RefreshWebofficeTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshWebofficeTokenResponseDescriptor = $convert.base64Decode(
+    'Ch1SZWZyZXNoV2Vib2ZmaWNlVG9rZW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASWAoXcmVmcmVzaF93ZWJvZmZpY2VfdG9rZW4YAiAB'
+    'KAsyIC5nbG9yeV9hcGkuUmVmcmVzaFdlYm9mZmljZVRva2VuUhVyZWZyZXNoV2Vib2ZmaWNlVG'
+    '9rZW4=');
+

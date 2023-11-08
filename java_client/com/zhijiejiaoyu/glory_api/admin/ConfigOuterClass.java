@@ -84,6 +84,36 @@ public final class ConfigOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetSTSResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_WebofficeToken_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_WebofficeToken_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GenerateWebofficeTokenRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GenerateWebofficeTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GenerateWebofficeTokenResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GenerateWebofficeTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RefreshWebofficeToken_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RefreshWebofficeToken_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RefreshWebofficeTokenRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RefreshWebofficeTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_RefreshWebofficeTokenResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_RefreshWebofficeTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -130,9 +160,29 @@ public final class ConfigOuterClass {
       "ty_token\030\004 \001(\t\"8\n\rGetSTSRequest\022\'\n\014base_" +
       "request\030\001 \001(\0132\021.base.BaseRequest\"T\n\016GetS" +
       "TSResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022\033\n\003sts\030\002 \001(\0132\016.glory_api.STSB$" +
-      "\n com.zhijiejiaoyu.glory_api.adminP\001b\006pr" +
-      "oto3"
+      "eResponse\022\033\n\003sts\030\002 \001(\0132\016.glory_api.STS\"\257" +
+      "\001\n\016WebofficeToken\022\024\n\014access_token\030\001 \001(\t\022" +
+      "!\n\031access_token_expired_time\030\002 \001(\t\022\025\n\rre" +
+      "fresh_token\030\003 \001(\t\022\"\n\032refresh_token_expir" +
+      "ed_time\030\004 \001(\t\022\022\n\nrequest_id\030\005 \001(\t\022\025\n\rweb" +
+      "office_url\030\006 \001(\t\"]\n\035GenerateWebofficeTok" +
+      "enRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\023\n\013object_path\030\002 \001(\t\"{\n\036Gener" +
+      "ateWebofficeTokenResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\0222\n\017weboffice_to" +
+      "ken\030\002 \001(\0132\031.glory_api.WebofficeToken\"\237\001\n" +
+      "\025RefreshWebofficeToken\022\024\n\014access_token\030\001" +
+      " \001(\t\022!\n\031access_token_expired_time\030\002 \001(\t\022" +
+      "\025\n\rrefresh_token\030\003 \001(\t\022\"\n\032refresh_token_" +
+      "expired_time\030\004 \001(\t\022\022\n\nrequest_id\030\005 \001(\t\"t" +
+      "\n\034RefreshWebofficeTokenRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014acces" +
+      "s_token\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\"\211\001\n" +
+      "\035RefreshWebofficeTokenResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022A\n\027refresh" +
+      "_weboffice_token\030\002 \001(\0132 .glory_api.Refre" +
+      "shWebofficeTokenB$\n com.zhijiejiaoyu.glo" +
+      "ry_api.adminP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -223,6 +273,42 @@ public final class ConfigOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSTSResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Sts", });
+    internal_static_glory_api_WebofficeToken_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_WebofficeToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_WebofficeToken_descriptor,
+        new java.lang.String[] { "AccessToken", "AccessTokenExpiredTime", "RefreshToken", "RefreshTokenExpiredTime", "RequestId", "WebofficeUrl", });
+    internal_static_glory_api_GenerateWebofficeTokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_GenerateWebofficeTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GenerateWebofficeTokenRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ObjectPath", });
+    internal_static_glory_api_GenerateWebofficeTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_glory_api_GenerateWebofficeTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GenerateWebofficeTokenResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "WebofficeToken", });
+    internal_static_glory_api_RefreshWebofficeToken_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_RefreshWebofficeToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RefreshWebofficeToken_descriptor,
+        new java.lang.String[] { "AccessToken", "AccessTokenExpiredTime", "RefreshToken", "RefreshTokenExpiredTime", "RequestId", });
+    internal_static_glory_api_RefreshWebofficeTokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_RefreshWebofficeTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RefreshWebofficeTokenRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "AccessToken", "RefreshToken", });
+    internal_static_glory_api_RefreshWebofficeTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_RefreshWebofficeTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_RefreshWebofficeTokenResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "RefreshWebofficeToken", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 
