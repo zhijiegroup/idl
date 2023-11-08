@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
   private long liveDurationLimit ;
   /**
    * <pre>
-   * 直播时长限制 分钟
+   * 直播时长限制 秒
    * </pre>
    *
    * <code>int64 live_duration_limit = 3;</code>
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
     private long liveDurationLimit ;
     /**
      * <pre>
-     * 直播时长限制 分钟
+     * 直播时长限制 秒
      * </pre>
      *
      * <code>int64 live_duration_limit = 3;</code>
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 直播时长限制 分钟
+     * 直播时长限制 秒
      * </pre>
      *
      * <code>int64 live_duration_limit = 3;</code>
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 直播时长限制 分钟
+     * 直播时长限制 秒
      * </pre>
      *
      * <code>int64 live_duration_limit = 3;</code>

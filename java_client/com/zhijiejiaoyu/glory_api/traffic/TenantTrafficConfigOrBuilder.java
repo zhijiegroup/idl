@@ -27,7 +27,7 @@ public interface TenantTrafficConfigOrBuilder extends
 
   /**
    * <pre>
-   * 直播时长限制 分钟
+   * 直播时长限制 秒
    * </pre>
    *
    * <code>int64 live_duration_limit = 3;</code>

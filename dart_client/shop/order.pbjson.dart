@@ -160,13 +160,14 @@ const OrderInfo$json = {
     {'1': 'payment_amount', '3': 12, '4': 1, '5': 1, '10': 'paymentAmount'},
     {'1': 'payable_amount', '3': 13, '4': 1, '5': 1, '10': 'payableAmount'},
     {'1': 'productInfo', '3': 14, '4': 3, '5': 11, '6': '.glory_api.ProductInfo', '10': 'productInfo'},
-    {'1': 'shop_name', '3': 15, '4': 1, '5': 9, '10': 'shopName'},
-    {'1': 'shop_logo', '3': 16, '4': 1, '5': 9, '10': 'shopLogo'},
-    {'1': 'currency', '3': 17, '4': 1, '5': 9, '10': 'currency'},
-    {'1': 'contact_name', '3': 18, '4': 1, '5': 9, '10': 'contactName'},
-    {'1': 'buyer_name', '3': 19, '4': 1, '5': 9, '10': 'buyerName'},
-    {'1': 'deliver_address', '3': 20, '4': 1, '5': 9, '10': 'deliverAddress'},
-    {'1': 'coupon_detail', '3': 21, '4': 1, '5': 11, '6': '.glory_api.CouponDetail', '9': 0, '10': 'couponDetail', '17': true},
+    {'1': 'shop_id', '3': 15, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'shop_name', '3': 16, '4': 1, '5': 9, '10': 'shopName'},
+    {'1': 'shop_logo', '3': 17, '4': 1, '5': 9, '10': 'shopLogo'},
+    {'1': 'currency', '3': 18, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'contact_name', '3': 19, '4': 1, '5': 9, '10': 'contactName'},
+    {'1': 'buyer_name', '3': 20, '4': 1, '5': 9, '10': 'buyerName'},
+    {'1': 'deliver_address', '3': 21, '4': 1, '5': 9, '10': 'deliverAddress'},
+    {'1': 'coupon_detail', '3': 22, '4': 1, '5': 11, '6': '.glory_api.CouponDetail', '9': 0, '10': 'couponDetail', '17': true},
   ],
   '8': [
     {'1': '_coupon_detail'},
@@ -184,12 +185,12 @@ final $typed_data.Uint8List orderInfoDescriptor = $convert.base64Decode(
     'IAEoAVIKZGVsaXZlckZlZRInCg9kaXNjb3VudF9hbW91bnQYCyABKAFSDmRpc2NvdW50QW1vdW'
     '50EiUKDnBheW1lbnRfYW1vdW50GAwgASgBUg1wYXltZW50QW1vdW50EiUKDnBheWFibGVfYW1v'
     'dW50GA0gASgBUg1wYXlhYmxlQW1vdW50EjgKC3Byb2R1Y3RJbmZvGA4gAygLMhYuZ2xvcnlfYX'
-    'BpLlByb2R1Y3RJbmZvUgtwcm9kdWN0SW5mbxIbCglzaG9wX25hbWUYDyABKAlSCHNob3BOYW1l'
-    'EhsKCXNob3BfbG9nbxgQIAEoCVIIc2hvcExvZ28SGgoIY3VycmVuY3kYESABKAlSCGN1cnJlbm'
-    'N5EiEKDGNvbnRhY3RfbmFtZRgSIAEoCVILY29udGFjdE5hbWUSHQoKYnV5ZXJfbmFtZRgTIAEo'
-    'CVIJYnV5ZXJOYW1lEicKD2RlbGl2ZXJfYWRkcmVzcxgUIAEoCVIOZGVsaXZlckFkZHJlc3MSQQ'
-    'oNY291cG9uX2RldGFpbBgVIAEoCzIXLmdsb3J5X2FwaS5Db3Vwb25EZXRhaWxIAFIMY291cG9u'
-    'RGV0YWlsiAEBQhAKDl9jb3Vwb25fZGV0YWls');
+    'BpLlByb2R1Y3RJbmZvUgtwcm9kdWN0SW5mbxIXCgdzaG9wX2lkGA8gASgDUgZzaG9wSWQSGwoJ'
+    'c2hvcF9uYW1lGBAgASgJUghzaG9wTmFtZRIbCglzaG9wX2xvZ28YESABKAlSCHNob3BMb2dvEh'
+    'oKCGN1cnJlbmN5GBIgASgJUghjdXJyZW5jeRIhCgxjb250YWN0X25hbWUYEyABKAlSC2NvbnRh'
+    'Y3ROYW1lEh0KCmJ1eWVyX25hbWUYFCABKAlSCWJ1eWVyTmFtZRInCg9kZWxpdmVyX2FkZHJlc3'
+    'MYFSABKAlSDmRlbGl2ZXJBZGRyZXNzEkEKDWNvdXBvbl9kZXRhaWwYFiABKAsyFy5nbG9yeV9h'
+    'cGkuQ291cG9uRGV0YWlsSABSDGNvdXBvbkRldGFpbIgBAUIQCg5fY291cG9uX2RldGFpbA==');
 
 @$core.Deprecated('Use deliverInfoDescriptor instead')
 const DeliverInfo$json = {

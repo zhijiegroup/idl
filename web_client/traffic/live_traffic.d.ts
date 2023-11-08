@@ -72,7 +72,7 @@ export interface ListTenantLiveTrafficConfigRequest {
 export interface TenantTrafficConfig {
   tenant_id?: string;
   tenant_name?: string;
-  /** 直播时长限制 分钟 */
+  /** 直播时长限制 秒 */
   live_duration_limit?: string;
   /** 单日流量限制 KB */
   traffic_day_limit?: string;

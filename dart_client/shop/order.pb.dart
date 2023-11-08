@@ -895,6 +895,7 @@ class OrderInfo extends $pb.GeneratedMessage {
     $core.double? paymentAmount,
     $core.double? payableAmount,
     $core.Iterable<ProductInfo>? productInfo,
+    $fixnum.Int64? shopId,
     $core.String? shopName,
     $core.String? shopLogo,
     $core.String? currency,
@@ -946,6 +947,9 @@ class OrderInfo extends $pb.GeneratedMessage {
     if (productInfo != null) {
       $result.productInfo.addAll(productInfo);
     }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
     if (shopName != null) {
       $result.shopName = shopName;
     }
@@ -988,13 +992,14 @@ class OrderInfo extends $pb.GeneratedMessage {
     ..a<$core.double>(12, _omitFieldNames ? '' : 'paymentAmount', $pb.PbFieldType.OD)
     ..a<$core.double>(13, _omitFieldNames ? '' : 'payableAmount', $pb.PbFieldType.OD)
     ..pc<ProductInfo>(14, _omitFieldNames ? '' : 'productInfo', $pb.PbFieldType.PM, protoName: 'productInfo', subBuilder: ProductInfo.create)
-    ..aOS(15, _omitFieldNames ? '' : 'shopName')
-    ..aOS(16, _omitFieldNames ? '' : 'shopLogo')
-    ..aOS(17, _omitFieldNames ? '' : 'currency')
-    ..aOS(18, _omitFieldNames ? '' : 'contactName')
-    ..aOS(19, _omitFieldNames ? '' : 'buyerName')
-    ..aOS(20, _omitFieldNames ? '' : 'deliverAddress')
-    ..aOM<$0.CouponDetail>(21, _omitFieldNames ? '' : 'couponDetail', subBuilder: $0.CouponDetail.create)
+    ..aInt64(15, _omitFieldNames ? '' : 'shopId')
+    ..aOS(16, _omitFieldNames ? '' : 'shopName')
+    ..aOS(17, _omitFieldNames ? '' : 'shopLogo')
+    ..aOS(18, _omitFieldNames ? '' : 'currency')
+    ..aOS(19, _omitFieldNames ? '' : 'contactName')
+    ..aOS(20, _omitFieldNames ? '' : 'buyerName')
+    ..aOS(21, _omitFieldNames ? '' : 'deliverAddress')
+    ..aOM<$0.CouponDetail>(22, _omitFieldNames ? '' : 'couponDetail', subBuilder: $0.CouponDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -1140,69 +1145,78 @@ class OrderInfo extends $pb.GeneratedMessage {
   $core.List<ProductInfo> get productInfo => $_getList(13);
 
   @$pb.TagNumber(15)
-  $core.String get shopName => $_getSZ(14);
+  $fixnum.Int64 get shopId => $_getI64(14);
   @$pb.TagNumber(15)
-  set shopName($core.String v) { $_setString(14, v); }
+  set shopId($fixnum.Int64 v) { $_setInt64(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasShopName() => $_has(14);
+  $core.bool hasShopId() => $_has(14);
   @$pb.TagNumber(15)
-  void clearShopName() => clearField(15);
+  void clearShopId() => clearField(15);
 
   @$pb.TagNumber(16)
-  $core.String get shopLogo => $_getSZ(15);
+  $core.String get shopName => $_getSZ(15);
   @$pb.TagNumber(16)
-  set shopLogo($core.String v) { $_setString(15, v); }
+  set shopName($core.String v) { $_setString(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasShopLogo() => $_has(15);
+  $core.bool hasShopName() => $_has(15);
   @$pb.TagNumber(16)
-  void clearShopLogo() => clearField(16);
+  void clearShopName() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.String get currency => $_getSZ(16);
+  $core.String get shopLogo => $_getSZ(16);
   @$pb.TagNumber(17)
-  set currency($core.String v) { $_setString(16, v); }
+  set shopLogo($core.String v) { $_setString(16, v); }
   @$pb.TagNumber(17)
-  $core.bool hasCurrency() => $_has(16);
+  $core.bool hasShopLogo() => $_has(16);
   @$pb.TagNumber(17)
-  void clearCurrency() => clearField(17);
+  void clearShopLogo() => clearField(17);
 
   @$pb.TagNumber(18)
-  $core.String get contactName => $_getSZ(17);
+  $core.String get currency => $_getSZ(17);
   @$pb.TagNumber(18)
-  set contactName($core.String v) { $_setString(17, v); }
+  set currency($core.String v) { $_setString(17, v); }
   @$pb.TagNumber(18)
-  $core.bool hasContactName() => $_has(17);
+  $core.bool hasCurrency() => $_has(17);
   @$pb.TagNumber(18)
-  void clearContactName() => clearField(18);
+  void clearCurrency() => clearField(18);
 
   @$pb.TagNumber(19)
-  $core.String get buyerName => $_getSZ(18);
+  $core.String get contactName => $_getSZ(18);
   @$pb.TagNumber(19)
-  set buyerName($core.String v) { $_setString(18, v); }
+  set contactName($core.String v) { $_setString(18, v); }
   @$pb.TagNumber(19)
-  $core.bool hasBuyerName() => $_has(18);
+  $core.bool hasContactName() => $_has(18);
   @$pb.TagNumber(19)
-  void clearBuyerName() => clearField(19);
+  void clearContactName() => clearField(19);
 
   @$pb.TagNumber(20)
-  $core.String get deliverAddress => $_getSZ(19);
+  $core.String get buyerName => $_getSZ(19);
   @$pb.TagNumber(20)
-  set deliverAddress($core.String v) { $_setString(19, v); }
+  set buyerName($core.String v) { $_setString(19, v); }
   @$pb.TagNumber(20)
-  $core.bool hasDeliverAddress() => $_has(19);
+  $core.bool hasBuyerName() => $_has(19);
   @$pb.TagNumber(20)
-  void clearDeliverAddress() => clearField(20);
+  void clearBuyerName() => clearField(20);
 
   @$pb.TagNumber(21)
-  $0.CouponDetail get couponDetail => $_getN(20);
+  $core.String get deliverAddress => $_getSZ(20);
   @$pb.TagNumber(21)
-  set couponDetail($0.CouponDetail v) { setField(21, v); }
+  set deliverAddress($core.String v) { $_setString(20, v); }
   @$pb.TagNumber(21)
-  $core.bool hasCouponDetail() => $_has(20);
+  $core.bool hasDeliverAddress() => $_has(20);
   @$pb.TagNumber(21)
-  void clearCouponDetail() => clearField(21);
-  @$pb.TagNumber(21)
-  $0.CouponDetail ensureCouponDetail() => $_ensure(20);
+  void clearDeliverAddress() => clearField(21);
+
+  @$pb.TagNumber(22)
+  $0.CouponDetail get couponDetail => $_getN(21);
+  @$pb.TagNumber(22)
+  set couponDetail($0.CouponDetail v) { setField(22, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasCouponDetail() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearCouponDetail() => clearField(22);
+  @$pb.TagNumber(22)
+  $0.CouponDetail ensureCouponDetail() => $_ensure(21);
 }
 
 /// 收获与配送信息

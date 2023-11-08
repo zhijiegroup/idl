@@ -242,11 +242,17 @@ public interface OrderInfoOrBuilder extends
       int index);
 
   /**
+   * <code>int64 shop_id = 15;</code>
+   * @return The shopId.
+   */
+  long getShopId();
+
+  /**
    * <pre>
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The shopName.
    */
   java.lang.String getShopName();
@@ -255,7 +261,7 @@ public interface OrderInfoOrBuilder extends
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The bytes for shopName.
    */
   com.google.protobuf.ByteString
@@ -266,7 +272,7 @@ public interface OrderInfoOrBuilder extends
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 16;</code>
+   * <code>string shop_logo = 17;</code>
    * @return The shopLogo.
    */
   java.lang.String getShopLogo();
@@ -275,7 +281,7 @@ public interface OrderInfoOrBuilder extends
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 16;</code>
+   * <code>string shop_logo = 17;</code>
    * @return The bytes for shopLogo.
    */
   com.google.protobuf.ByteString
@@ -286,7 +292,7 @@ public interface OrderInfoOrBuilder extends
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 17;</code>
+   * <code>string currency = 18;</code>
    * @return The currency.
    */
   java.lang.String getCurrency();
@@ -295,7 +301,7 @@ public interface OrderInfoOrBuilder extends
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 17;</code>
+   * <code>string currency = 18;</code>
    * @return The bytes for currency.
    */
   com.google.protobuf.ByteString
@@ -306,7 +312,7 @@ public interface OrderInfoOrBuilder extends
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 18;</code>
+   * <code>string contact_name = 19;</code>
    * @return The contactName.
    */
   java.lang.String getContactName();
@@ -315,7 +321,7 @@ public interface OrderInfoOrBuilder extends
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 18;</code>
+   * <code>string contact_name = 19;</code>
    * @return The bytes for contactName.
    */
   com.google.protobuf.ByteString
@@ -326,7 +332,7 @@ public interface OrderInfoOrBuilder extends
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 19;</code>
+   * <code>string buyer_name = 20;</code>
    * @return The buyerName.
    */
   java.lang.String getBuyerName();
@@ -335,7 +341,7 @@ public interface OrderInfoOrBuilder extends
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 19;</code>
+   * <code>string buyer_name = 20;</code>
    * @return The bytes for buyerName.
    */
   com.google.protobuf.ByteString
@@ -346,7 +352,7 @@ public interface OrderInfoOrBuilder extends
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 20;</code>
+   * <code>string deliver_address = 21;</code>
    * @return The deliverAddress.
    */
   java.lang.String getDeliverAddress();
@@ -355,7 +361,7 @@ public interface OrderInfoOrBuilder extends
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 20;</code>
+   * <code>string deliver_address = 21;</code>
    * @return The bytes for deliverAddress.
    */
   com.google.protobuf.ByteString
@@ -366,7 +372,7 @@ public interface OrderInfoOrBuilder extends
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    * @return Whether the couponDetail field is set.
    */
   boolean hasCouponDetail();
@@ -375,7 +381,7 @@ public interface OrderInfoOrBuilder extends
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    * @return The couponDetail.
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetail getCouponDetail();
@@ -384,7 +390,7 @@ public interface OrderInfoOrBuilder extends
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponDetailOrBuilder();
 }

@@ -328,6 +328,11 @@ struct GloryApi_OrderInfo {
     set {_uniqueStorage()._productInfo = newValue}
   }
 
+  var shopID: Int64 {
+    get {return _storage._shopID}
+    set {_uniqueStorage()._shopID = newValue}
+  }
+
   ///商店名字
   var shopName: String {
     get {return _storage._shopName}
@@ -1588,13 +1593,14 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     12: .standard(proto: "payment_amount"),
     13: .standard(proto: "payable_amount"),
     14: .same(proto: "productInfo"),
-    15: .standard(proto: "shop_name"),
-    16: .standard(proto: "shop_logo"),
-    17: .same(proto: "currency"),
-    18: .standard(proto: "contact_name"),
-    19: .standard(proto: "buyer_name"),
-    20: .standard(proto: "deliver_address"),
-    21: .standard(proto: "coupon_detail"),
+    15: .standard(proto: "shop_id"),
+    16: .standard(proto: "shop_name"),
+    17: .standard(proto: "shop_logo"),
+    18: .same(proto: "currency"),
+    19: .standard(proto: "contact_name"),
+    20: .standard(proto: "buyer_name"),
+    21: .standard(proto: "deliver_address"),
+    22: .standard(proto: "coupon_detail"),
   ]
 
   fileprivate class _StorageClass {
@@ -1612,6 +1618,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _paymentAmount: Double = 0
     var _payableAmount: Double = 0
     var _productInfo: [GloryApi_ProductInfo] = []
+    var _shopID: Int64 = 0
     var _shopName: String = String()
     var _shopLogo: String = String()
     var _currency: String = String()
@@ -1639,6 +1646,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _paymentAmount = source._paymentAmount
       _payableAmount = source._payableAmount
       _productInfo = source._productInfo
+      _shopID = source._shopID
       _shopName = source._shopName
       _shopLogo = source._shopLogo
       _currency = source._currency
@@ -1678,13 +1686,14 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._paymentAmount) }()
         case 13: try { try decoder.decodeSingularDoubleField(value: &_storage._payableAmount) }()
         case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._productInfo) }()
-        case 15: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
-        case 16: try { try decoder.decodeSingularStringField(value: &_storage._shopLogo) }()
-        case 17: try { try decoder.decodeSingularStringField(value: &_storage._currency) }()
-        case 18: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
-        case 19: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
-        case 20: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
-        case 21: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
+        case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._shopID) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._shopName) }()
+        case 17: try { try decoder.decodeSingularStringField(value: &_storage._shopLogo) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._currency) }()
+        case 19: try { try decoder.decodeSingularStringField(value: &_storage._contactName) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
+        case 21: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
+        case 22: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
         default: break
         }
       }
@@ -1739,26 +1748,29 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._productInfo.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._productInfo, fieldNumber: 14)
       }
+      if _storage._shopID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 15)
+      }
       if !_storage._shopName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 15)
+        try visitor.visitSingularStringField(value: _storage._shopName, fieldNumber: 16)
       }
       if !_storage._shopLogo.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._shopLogo, fieldNumber: 16)
+        try visitor.visitSingularStringField(value: _storage._shopLogo, fieldNumber: 17)
       }
       if !_storage._currency.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 17)
+        try visitor.visitSingularStringField(value: _storage._currency, fieldNumber: 18)
       }
       if !_storage._contactName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._contactName, fieldNumber: 18)
+        try visitor.visitSingularStringField(value: _storage._contactName, fieldNumber: 19)
       }
       if !_storage._buyerName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 19)
+        try visitor.visitSingularStringField(value: _storage._buyerName, fieldNumber: 20)
       }
       if !_storage._deliverAddress.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 20)
+        try visitor.visitSingularStringField(value: _storage._deliverAddress, fieldNumber: 21)
       }
       try { if let v = _storage._couponDetail {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1783,6 +1795,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._paymentAmount != rhs_storage._paymentAmount {return false}
         if _storage._payableAmount != rhs_storage._payableAmount {return false}
         if _storage._productInfo != rhs_storage._productInfo {return false}
+        if _storage._shopID != rhs_storage._shopID {return false}
         if _storage._shopName != rhs_storage._shopName {return false}
         if _storage._shopLogo != rhs_storage._shopLogo {return false}
         if _storage._currency != rhs_storage._currency {return false}

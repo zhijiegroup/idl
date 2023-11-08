@@ -106,6 +106,7 @@ export interface OrderInfo {
   payable_amount?: number;
   /** 商品信息 */
   productInfo?: Array<ProductInfo>;
+  shop_id?: string;
   /** 商店名字 */
   shop_name?: string;
   /** 商店logo */

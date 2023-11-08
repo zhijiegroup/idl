@@ -146,43 +146,48 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ProductInfo.parser(), extensionRegistry));
             break;
           }
-          case 122: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 120: {
 
-            shopName = s;
+            shopId = input.readInt64();
             break;
           }
           case 130: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            shopLogo = s;
+            shopName = s;
             break;
           }
           case 138: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            currency = s;
+            shopLogo = s;
             break;
           }
           case 146: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            contactName = s;
+            currency = s;
             break;
           }
           case 154: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            buyerName = s;
+            contactName = s;
             break;
           }
           case 162: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            deliverAddress = s;
+            buyerName = s;
             break;
           }
           case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deliverAddress = s;
+            break;
+          }
+          case 178: {
             com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder subBuilder = null;
             if (((bitField0 & 0x00000001) != 0)) {
               subBuilder = couponDetail .toBuilder();
@@ -672,14 +677,25 @@ private static final long serialVersionUID = 0L;
     return productInfo .get(index);
   }
 
-  public static final int SHOP_NAME_FIELD_NUMBER = 15;
+  public static final int SHOP_ID_FIELD_NUMBER = 15;
+  private long shopId ;
+  /**
+   * <code>int64 shop_id = 15;</code>
+   * @return The shopId.
+   */
+  @java.lang.Override
+  public long getShopId() {
+    return shopId ;
+  }
+
+  public static final int SHOP_NAME_FIELD_NUMBER = 16;
   private volatile java.lang.Object shopName ;
   /**
    * <pre>
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The shopName.
    */
   @java.lang.Override
@@ -700,7 +716,7 @@ private static final long serialVersionUID = 0L;
    *商店名字
    * </pre>
    *
-   * <code>string shop_name = 15;</code>
+   * <code>string shop_name = 16;</code>
    * @return The bytes for shopName.
    */
   @java.lang.Override
@@ -718,14 +734,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHOP_LOGO_FIELD_NUMBER = 16;
+  public static final int SHOP_LOGO_FIELD_NUMBER = 17;
   private volatile java.lang.Object shopLogo ;
   /**
    * <pre>
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 16;</code>
+   * <code>string shop_logo = 17;</code>
    * @return The shopLogo.
    */
   @java.lang.Override
@@ -746,7 +762,7 @@ private static final long serialVersionUID = 0L;
    *商店logo
    * </pre>
    *
-   * <code>string shop_logo = 16;</code>
+   * <code>string shop_logo = 17;</code>
    * @return The bytes for shopLogo.
    */
   @java.lang.Override
@@ -764,14 +780,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CURRENCY_FIELD_NUMBER = 17;
+  public static final int CURRENCY_FIELD_NUMBER = 18;
   private volatile java.lang.Object currency ;
   /**
    * <pre>
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 17;</code>
+   * <code>string currency = 18;</code>
    * @return The currency.
    */
   @java.lang.Override
@@ -792,7 +808,7 @@ private static final long serialVersionUID = 0L;
    *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
    * </pre>
    *
-   * <code>string currency = 17;</code>
+   * <code>string currency = 18;</code>
    * @return The bytes for currency.
    */
   @java.lang.Override
@@ -810,14 +826,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONTACT_NAME_FIELD_NUMBER = 18;
+  public static final int CONTACT_NAME_FIELD_NUMBER = 19;
   private volatile java.lang.Object contactName ;
   /**
    * <pre>
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 18;</code>
+   * <code>string contact_name = 19;</code>
    * @return The contactName.
    */
   @java.lang.Override
@@ -838,7 +854,7 @@ private static final long serialVersionUID = 0L;
    *收货人
    * </pre>
    *
-   * <code>string contact_name = 18;</code>
+   * <code>string contact_name = 19;</code>
    * @return The bytes for contactName.
    */
   @java.lang.Override
@@ -856,14 +872,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BUYER_NAME_FIELD_NUMBER = 19;
+  public static final int BUYER_NAME_FIELD_NUMBER = 20;
   private volatile java.lang.Object buyerName ;
   /**
    * <pre>
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 19;</code>
+   * <code>string buyer_name = 20;</code>
    * @return The buyerName.
    */
   @java.lang.Override
@@ -884,7 +900,7 @@ private static final long serialVersionUID = 0L;
    *购买人
    * </pre>
    *
-   * <code>string buyer_name = 19;</code>
+   * <code>string buyer_name = 20;</code>
    * @return The bytes for buyerName.
    */
   @java.lang.Override
@@ -902,14 +918,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DELIVER_ADDRESS_FIELD_NUMBER = 20;
+  public static final int DELIVER_ADDRESS_FIELD_NUMBER = 21;
   private volatile java.lang.Object deliverAddress ;
   /**
    * <pre>
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 20;</code>
+   * <code>string deliver_address = 21;</code>
    * @return The deliverAddress.
    */
   @java.lang.Override
@@ -930,7 +946,7 @@ private static final long serialVersionUID = 0L;
    *收获地址
    * </pre>
    *
-   * <code>string deliver_address = 20;</code>
+   * <code>string deliver_address = 21;</code>
    * @return The bytes for deliverAddress.
    */
   @java.lang.Override
@@ -948,14 +964,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUPON_DETAIL_FIELD_NUMBER = 21;
+  public static final int COUPON_DETAIL_FIELD_NUMBER = 22;
   private com.zhijiejiaoyu.glory_api.shop.CouponDetail couponDetail ;
   /**
    * <pre>
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    * @return Whether the couponDetail field is set.
    */
   @java.lang.Override
@@ -967,7 +983,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    * @return The couponDetail.
    */
   @java.lang.Override
@@ -979,7 +995,7 @@ private static final long serialVersionUID = 0L;
    * 优惠券详情
    * </pre>
    *
-   * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+   * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponDetailOrBuilder() {
@@ -1042,26 +1058,29 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < productInfo .size(); i++) {
       output.writeMessage(14, productInfo .get(i));
     }
+    if (shopId != 0L) {
+      output.writeInt64(15, shopId );
+    }
     if (!getShopNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, shopName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopName );
     }
     if (!getShopLogoBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, shopLogo );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, shopLogo );
     }
     if (!getCurrencyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, currency );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, currency );
     }
     if (!getContactNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, contactName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, contactName );
     }
     if (!getBuyerNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, buyerName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, buyerName );
     }
     if (!getDeliverAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, deliverAddress );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, deliverAddress );
     }
     if (((bitField0 & 0x00000001) != 0)) {
-      output.writeMessage(21, getCouponDetail());
+      output.writeMessage(22, getCouponDetail());
     }
     unknownFields.writeTo(output);
   }
@@ -1122,27 +1141,31 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, productInfo .get(i));
     }
+    if (shopId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(15, shopId );
+    }
     if (!getShopNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, shopName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopName );
     }
     if (!getShopLogoBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, shopLogo );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, shopLogo );
     }
     if (!getCurrencyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, currency );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, currency );
     }
     if (!getContactNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, contactName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, contactName );
     }
     if (!getBuyerNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, buyerName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, buyerName );
     }
     if (!getDeliverAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, deliverAddress );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, deliverAddress );
     }
     if (((bitField0 & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, getCouponDetail());
+        .computeMessageSize(22, getCouponDetail());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1193,6 +1216,8 @@ private static final long serialVersionUID = 0L;
             other.getPayableAmount())) return false;
     if (!getProductInfoList()
         .equals(other.getProductInfoList())) return false;
+    if (getShopId()
+        != other.getShopId()) return false;
     if (!getShopName()
         .equals(other.getShopName())) return false;
     if (!getShopLogo()
@@ -1258,6 +1283,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PRODUCTINFO_FIELD_NUMBER;
       hash = (53 * hash) + getProductInfoList().hashCode();
     }
+    hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getShopId());
     hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getShopName().hashCode();
     hash = (37 * hash) + SHOP_LOGO_FIELD_NUMBER;
@@ -1445,6 +1473,8 @@ private static final long serialVersionUID = 0L;
       } else {
         productInfoBuilder .clear();
       }
+      shopId = 0L;
+
       shopName = "";
 
       shopLogo = "";
@@ -1513,6 +1543,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.productInfo = productInfoBuilder .build();
       }
+      result.shopId = shopId ;
       result.shopName = shopName ;
       result.shopLogo = shopLogo ;
       result.currency = currency ;
@@ -1646,6 +1677,9 @@ private static final long serialVersionUID = 0L;
             productInfoBuilder .addAllMessages(other.productInfo );
           }
         }
+      }
+      if (other.getShopId() != 0L) {
+        setShopId(other.getShopId());
       }
       if (!other.getShopName().isEmpty()) {
         shopName = other.shopName ;
@@ -2893,13 +2927,44 @@ private static final long serialVersionUID = 0L;
       return productInfoBuilder ;
     }
 
+    private long shopId ;
+    /**
+     * <code>int64 shop_id = 15;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId ;
+    }
+    /**
+     * <code>int64 shop_id = 15;</code>
+     * @param value The shopId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopId(long value) {
+      
+      shopId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 shop_id = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopId() {
+      
+      shopId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object shopName = "";
     /**
      * <pre>
      *商店名字
      * </pre>
      *
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return The shopName.
      */
     public java.lang.String getShopName() {
@@ -2919,7 +2984,7 @@ private static final long serialVersionUID = 0L;
      *商店名字
      * </pre>
      *
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return The bytes for shopName.
      */
     public com.google.protobuf.ByteString
@@ -2940,7 +3005,7 @@ private static final long serialVersionUID = 0L;
      *商店名字
      * </pre>
      *
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @param value The shopName to set.
      * @return This builder for chaining.
      */
@@ -2959,7 +3024,7 @@ private static final long serialVersionUID = 0L;
      *商店名字
      * </pre>
      *
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopName() {
@@ -2973,7 +3038,7 @@ private static final long serialVersionUID = 0L;
      *商店名字
      * </pre>
      *
-     * <code>string shop_name = 15;</code>
+     * <code>string shop_name = 16;</code>
      * @param value The bytes for shopName to set.
      * @return This builder for chaining.
      */
@@ -2995,7 +3060,7 @@ private static final long serialVersionUID = 0L;
      *商店logo
      * </pre>
      *
-     * <code>string shop_logo = 16;</code>
+     * <code>string shop_logo = 17;</code>
      * @return The shopLogo.
      */
     public java.lang.String getShopLogo() {
@@ -3015,7 +3080,7 @@ private static final long serialVersionUID = 0L;
      *商店logo
      * </pre>
      *
-     * <code>string shop_logo = 16;</code>
+     * <code>string shop_logo = 17;</code>
      * @return The bytes for shopLogo.
      */
     public com.google.protobuf.ByteString
@@ -3036,7 +3101,7 @@ private static final long serialVersionUID = 0L;
      *商店logo
      * </pre>
      *
-     * <code>string shop_logo = 16;</code>
+     * <code>string shop_logo = 17;</code>
      * @param value The shopLogo to set.
      * @return This builder for chaining.
      */
@@ -3055,7 +3120,7 @@ private static final long serialVersionUID = 0L;
      *商店logo
      * </pre>
      *
-     * <code>string shop_logo = 16;</code>
+     * <code>string shop_logo = 17;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopLogo() {
@@ -3069,7 +3134,7 @@ private static final long serialVersionUID = 0L;
      *商店logo
      * </pre>
      *
-     * <code>string shop_logo = 16;</code>
+     * <code>string shop_logo = 17;</code>
      * @param value The bytes for shopLogo to set.
      * @return This builder for chaining.
      */
@@ -3091,7 +3156,7 @@ private static final long serialVersionUID = 0L;
      *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
-     * <code>string currency = 17;</code>
+     * <code>string currency = 18;</code>
      * @return The currency.
      */
     public java.lang.String getCurrency() {
@@ -3111,7 +3176,7 @@ private static final long serialVersionUID = 0L;
      *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
-     * <code>string currency = 17;</code>
+     * <code>string currency = 18;</code>
      * @return The bytes for currency.
      */
     public com.google.protobuf.ByteString
@@ -3132,7 +3197,7 @@ private static final long serialVersionUID = 0L;
      *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
-     * <code>string currency = 17;</code>
+     * <code>string currency = 18;</code>
      * @param value The currency to set.
      * @return This builder for chaining.
      */
@@ -3151,7 +3216,7 @@ private static final long serialVersionUID = 0L;
      *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
-     * <code>string currency = 17;</code>
+     * <code>string currency = 18;</code>
      * @return This builder for chaining.
      */
     public Builder clearCurrency() {
@@ -3165,7 +3230,7 @@ private static final long serialVersionUID = 0L;
      *货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
      * </pre>
      *
-     * <code>string currency = 17;</code>
+     * <code>string currency = 18;</code>
      * @param value The bytes for currency to set.
      * @return This builder for chaining.
      */
@@ -3187,7 +3252,7 @@ private static final long serialVersionUID = 0L;
      *收货人
      * </pre>
      *
-     * <code>string contact_name = 18;</code>
+     * <code>string contact_name = 19;</code>
      * @return The contactName.
      */
     public java.lang.String getContactName() {
@@ -3207,7 +3272,7 @@ private static final long serialVersionUID = 0L;
      *收货人
      * </pre>
      *
-     * <code>string contact_name = 18;</code>
+     * <code>string contact_name = 19;</code>
      * @return The bytes for contactName.
      */
     public com.google.protobuf.ByteString
@@ -3228,7 +3293,7 @@ private static final long serialVersionUID = 0L;
      *收货人
      * </pre>
      *
-     * <code>string contact_name = 18;</code>
+     * <code>string contact_name = 19;</code>
      * @param value The contactName to set.
      * @return This builder for chaining.
      */
@@ -3247,7 +3312,7 @@ private static final long serialVersionUID = 0L;
      *收货人
      * </pre>
      *
-     * <code>string contact_name = 18;</code>
+     * <code>string contact_name = 19;</code>
      * @return This builder for chaining.
      */
     public Builder clearContactName() {
@@ -3261,7 +3326,7 @@ private static final long serialVersionUID = 0L;
      *收货人
      * </pre>
      *
-     * <code>string contact_name = 18;</code>
+     * <code>string contact_name = 19;</code>
      * @param value The bytes for contactName to set.
      * @return This builder for chaining.
      */
@@ -3283,7 +3348,7 @@ private static final long serialVersionUID = 0L;
      *购买人
      * </pre>
      *
-     * <code>string buyer_name = 19;</code>
+     * <code>string buyer_name = 20;</code>
      * @return The buyerName.
      */
     public java.lang.String getBuyerName() {
@@ -3303,7 +3368,7 @@ private static final long serialVersionUID = 0L;
      *购买人
      * </pre>
      *
-     * <code>string buyer_name = 19;</code>
+     * <code>string buyer_name = 20;</code>
      * @return The bytes for buyerName.
      */
     public com.google.protobuf.ByteString
@@ -3324,7 +3389,7 @@ private static final long serialVersionUID = 0L;
      *购买人
      * </pre>
      *
-     * <code>string buyer_name = 19;</code>
+     * <code>string buyer_name = 20;</code>
      * @param value The buyerName to set.
      * @return This builder for chaining.
      */
@@ -3343,7 +3408,7 @@ private static final long serialVersionUID = 0L;
      *购买人
      * </pre>
      *
-     * <code>string buyer_name = 19;</code>
+     * <code>string buyer_name = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearBuyerName() {
@@ -3357,7 +3422,7 @@ private static final long serialVersionUID = 0L;
      *购买人
      * </pre>
      *
-     * <code>string buyer_name = 19;</code>
+     * <code>string buyer_name = 20;</code>
      * @param value The bytes for buyerName to set.
      * @return This builder for chaining.
      */
@@ -3379,7 +3444,7 @@ private static final long serialVersionUID = 0L;
      *收获地址
      * </pre>
      *
-     * <code>string deliver_address = 20;</code>
+     * <code>string deliver_address = 21;</code>
      * @return The deliverAddress.
      */
     public java.lang.String getDeliverAddress() {
@@ -3399,7 +3464,7 @@ private static final long serialVersionUID = 0L;
      *收获地址
      * </pre>
      *
-     * <code>string deliver_address = 20;</code>
+     * <code>string deliver_address = 21;</code>
      * @return The bytes for deliverAddress.
      */
     public com.google.protobuf.ByteString
@@ -3420,7 +3485,7 @@ private static final long serialVersionUID = 0L;
      *收获地址
      * </pre>
      *
-     * <code>string deliver_address = 20;</code>
+     * <code>string deliver_address = 21;</code>
      * @param value The deliverAddress to set.
      * @return This builder for chaining.
      */
@@ -3439,7 +3504,7 @@ private static final long serialVersionUID = 0L;
      *收获地址
      * </pre>
      *
-     * <code>string deliver_address = 20;</code>
+     * <code>string deliver_address = 21;</code>
      * @return This builder for chaining.
      */
     public Builder clearDeliverAddress() {
@@ -3453,7 +3518,7 @@ private static final long serialVersionUID = 0L;
      *收获地址
      * </pre>
      *
-     * <code>string deliver_address = 20;</code>
+     * <code>string deliver_address = 21;</code>
      * @param value The bytes for deliverAddress to set.
      * @return This builder for chaining.
      */
@@ -3477,7 +3542,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      * @return Whether the couponDetail field is set.
      */
     public boolean hasCouponDetail() {
@@ -3488,7 +3553,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      * @return The couponDetail.
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail getCouponDetail() {
@@ -3503,7 +3568,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public Builder setCouponDetail(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
       if (couponDetailBuilder == null) {
@@ -3523,7 +3588,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public Builder setCouponDetail(
         com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder builderForValue) {
@@ -3541,7 +3606,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public Builder mergeCouponDetail(com.zhijiejiaoyu.glory_api.shop.CouponDetail value) {
       if (couponDetailBuilder == null) {
@@ -3565,7 +3630,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public Builder clearCouponDetail() {
       if (couponDetailBuilder == null) {
@@ -3582,7 +3647,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder getCouponDetailBuilder() {
       bitField0_ |= 0x00000002;
@@ -3594,7 +3659,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponDetailOrBuilder() {
       if (couponDetailBuilder != null) {
@@ -3609,7 +3674,7 @@ private static final long serialVersionUID = 0L;
      * 优惠券详情
      * </pre>
      *
-     * <code>.glory_api.CouponDetail coupon_detail = 21;</code>
+     * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.CouponDetail, com.zhijiejiaoyu.glory_api.shop.CouponDetail.Builder, com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder> 

@@ -272,7 +272,7 @@ struct GloryApi_TenantTrafficConfig {
 
   var tenantName: String = String()
 
-  /// 直播时长限制 分钟
+  /// 直播时长限制 秒
   var liveDurationLimit: Int64 = 0
 
   /// 单日流量限制 KB
