@@ -91,3 +91,40 @@ message GetSTSResponse {
   STS sts = 2;
 }
 
+message WebofficeToken {
+  string access_token = 1;
+  string access_token_expired_time = 2;
+  string refresh_token = 3;
+  string refresh_token_expired_time = 4;
+  string request_id = 5;
+  string weboffice_url = 6;
+}
+
+message GenerateWebofficeTokenRequest {
+  base.BaseRequest base_request = 1;
+  string object_path = 2;
+}
+
+message GenerateWebofficeTokenResponse {
+  base.BaseResponse base_resp = 1;
+  WebofficeToken weboffice_token = 2;
+}
+
+message RefreshWebofficeToken {
+  string access_token = 1;
+  string access_token_expired_time = 2;
+  string refresh_token = 3;
+  string refresh_token_expired_time = 4;
+  string request_id = 5;
+}
+
+message RefreshWebofficeTokenRequest {
+  base.BaseRequest base_request = 1;
+  string access_token = 2;
+  string refresh_token = 3;
+}
+
+message RefreshWebofficeTokenResponse {
+  base.BaseResponse base_resp = 1;
+  RefreshWebofficeToken refresh_weboffice_token = 2;
+}

@@ -518,6 +518,12 @@ service glory_api {
   rpc GetSTS(GetSTSRequest) returns (GetSTSResponse) {
     option (api.get) = '/api/admin/get_sts';
   }
+  rpc GenerateWebofficeToken(GenerateWebofficeTokenRequest) returns (GenerateWebofficeTokenResponse) {
+    option (api.post) = '/api/admin/generate_weboffice_token';
+  }
+  rpc RefreshWebofficeToken(RefreshWebofficeTokenRequest) returns (RefreshWebofficeTokenResponse) {
+    option (api.post) = '/api/admin/refresh_weboffice_token';
+  }
   rpc ListTenantOrg(ListTenantOrgRequest) returns(ListTenantOrgResponse) {
     option (api.post) = '/api/admin/list_tenant_org';
   }
