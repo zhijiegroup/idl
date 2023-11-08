@@ -88,13 +88,14 @@ message OrderInfo {
   double payment_amount = 12;//实付金额
   double payable_amount = 13;//应付金额
   repeated ProductInfo productInfo = 14;//商品信息
-  string shop_name = 15;//商店名字
-  string shop_logo = 16;//商店logo
-  string currency = 17;//货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
-  string contact_name = 18;//收货人
-  string buyer_name = 19;//购买人
-  string deliver_address = 20;//收获地址
-  optional CouponDetail coupon_detail = 21; // 优惠券详情
+  int64 shop_id = 15;
+  string shop_name = 16;//商店名字
+  string shop_logo = 17;//商店logo
+  string currency = 18;//货币单位  CNY :人民币    COIN:虚拟币 不区分大小写
+  string contact_name = 19;//收货人
+  string buyer_name = 20;//购买人
+  string deliver_address = 21;//收获地址
+  optional CouponDetail coupon_detail = 22; // 优惠券详情
 }
 
 //收获与配送信息

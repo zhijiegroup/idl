@@ -72,7 +72,7 @@ message ListTenantLiveTrafficConfigRequest {
 message TenantTrafficConfig {
     int64 tenant_id = 1;
     string tenant_name = 2;
-    int64 live_duration_limit = 3; // 直播时长限制 分钟
+    int64 live_duration_limit = 3; // 直播时长限制 秒
     int64 traffic_day_limit = 4; // 单日流量限制 KB
     int64 traffic_all_count = 5; // 直播流量总包 KB
     int64 traffic_used_warning_count = 6; // 直播流量预警值 KB
