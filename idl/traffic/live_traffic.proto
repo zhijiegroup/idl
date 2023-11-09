@@ -96,3 +96,33 @@ message UpdateTenantLiveTrafficConfigRequest {
 message UpdateTenantLiveTrafficConfigResponse {
     base.BaseResponse base_resp = 1;
 }
+
+message ListTrafficWarningRequest {
+    base.BaseRequest base_request = 1;
+    int64 warning_type = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message TrafficWarning {
+    int64 traffic_warning_id = 1;
+    int64 tenant_id = 2;
+    string tenant_name = 3;
+    int64 warning_type = 4;
+    string warning_content = 5;
+    string created_at = 6;
+}
+
+message ListTrafficWarningResponse {
+    base.BaseResponse base_resp = 1;
+    repeated TrafficWarning traffic_warning_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message DeleteTrafficWarningRequest {
+    base.BaseRequest base_request = 1;
+    int64 traffic_warning_id = 2;
+}
+
+message DeleteTrafficWarningResponse {
+    base.BaseResponse base_resp = 1;
+}
