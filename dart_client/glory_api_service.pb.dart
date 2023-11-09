@@ -1010,5 +1010,11 @@ class glory_apiApi {
   $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ClientContext? ctx, $48.UpdateTenantLiveTrafficConfigRequest request) =>
     _client.invoke<$48.UpdateTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'UpdateTenantTrafficConfig', request, $48.UpdateTenantLiveTrafficConfigResponse())
   ;
+  $async.Future<$48.ListTrafficWarningResponse> listTrafficWarning($pb.ClientContext? ctx, $48.ListTrafficWarningRequest request) =>
+    _client.invoke<$48.ListTrafficWarningResponse>(ctx, 'glory_api', 'ListTrafficWarning', request, $48.ListTrafficWarningResponse())
+  ;
+  $async.Future<$48.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ClientContext? ctx, $48.DeleteTrafficWarningRequest request) =>
+    _client.invoke<$48.DeleteTrafficWarningResponse>(ctx, 'glory_api', 'DeleteTrafficWarning', request, $48.DeleteTrafficWarningResponse())
+  ;
 }
 

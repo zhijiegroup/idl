@@ -383,6 +383,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ServerContext ctx, $48.GetAllLiveTrafficRequest request);
   $async.Future<$48.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig($pb.ServerContext ctx, $48.ListTenantLiveTrafficConfigRequest request);
   $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ServerContext ctx, $48.UpdateTenantLiveTrafficConfigRequest request);
+  $async.Future<$48.ListTrafficWarningResponse> listTrafficWarning($pb.ServerContext ctx, $48.ListTrafficWarningRequest request);
+  $async.Future<$48.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ServerContext ctx, $48.DeleteTrafficWarningRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -700,6 +702,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveAllTraffic': return $48.GetAllLiveTrafficRequest();
       case 'ListTenantTrafficConfig': return $48.ListTenantLiveTrafficConfigRequest();
       case 'UpdateTenantTrafficConfig': return $48.UpdateTenantLiveTrafficConfigRequest();
+      case 'ListTrafficWarning': return $48.ListTrafficWarningRequest();
+      case 'DeleteTrafficWarning': return $48.DeleteTrafficWarningRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1020,6 +1024,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveAllTraffic': return this.getLiveAllTraffic(ctx, request as $48.GetAllLiveTrafficRequest);
       case 'ListTenantTrafficConfig': return this.listTenantTrafficConfig(ctx, request as $48.ListTenantLiveTrafficConfigRequest);
       case 'UpdateTenantTrafficConfig': return this.updateTenantTrafficConfig(ctx, request as $48.UpdateTenantLiveTrafficConfigRequest);
+      case 'ListTrafficWarning': return this.listTrafficWarning(ctx, request as $48.ListTrafficWarningRequest);
+      case 'DeleteTrafficWarning': return this.deleteTrafficWarning(ctx, request as $48.DeleteTrafficWarningRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

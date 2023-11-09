@@ -52,7 +52,7 @@ public final class GloryApiService {
       "rse/teaching_plan.proto\032\027course/edu_sche" +
       "me.proto\032\020course/job.proto\032\rapp/app.prot" +
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
-      ".proto2\275\260\002\n\tglory_api\022s\n\rCreateExample\022\037" +
+      ".proto2\345\262\002\n\tglory_api\022s\n\rCreateExample\022\037" +
       ".glory_api.CreateExampleRequest\032 .glory_" +
       "api.CreateExampleResponse\"\037\322\301\030\033/api/exam" +
       "ple/create_example\022g\n\nGetExample\022\034.glory" +
@@ -1026,8 +1026,15 @@ public final class GloryApiService {
       "glory_api.UpdateTenantLiveTrafficConfigR" +
       "equest\0320.glory_api.UpdateTenantLiveTraff" +
       "icConfigResponse\"-\322\301\030)/api/traffic/updat" +
-      "e_tenant_traffic_configB\036\n\032com.zhijiejia" +
-      "oyu.glory_apiP\001b\006proto3"
+      "e_tenant_traffic_config\022\215\001\n\022ListTrafficW" +
+      "arning\022$.glory_api.ListTrafficWarningReq" +
+      "uest\032%.glory_api.ListTrafficWarningRespo" +
+      "nse\"*\322\301\030&/api/traffic/list_live_traffic_" +
+      "warning\022\225\001\n\024DeleteTrafficWarning\022&.glory" +
+      "_api.DeleteTrafficWarningRequest\032\'.glory" +
+      "_api.DeleteTrafficWarningResponse\",\322\301\030(/" +
+      "api/traffic/delete_live_traffic_warningB" +
+      "\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

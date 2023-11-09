@@ -1222,6 +1222,402 @@ class UpdateTenantLiveTrafficConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class ListTrafficWarningRequest extends $pb.GeneratedMessage {
+  factory ListTrafficWarningRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? warningType,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (warningType != null) {
+      $result.warningType = warningType;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListTrafficWarningRequest._() : super();
+  factory ListTrafficWarningRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTrafficWarningRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTrafficWarningRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'warningType')
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTrafficWarningRequest clone() => ListTrafficWarningRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTrafficWarningRequest copyWith(void Function(ListTrafficWarningRequest) updates) => super.copyWith((message) => updates(message as ListTrafficWarningRequest)) as ListTrafficWarningRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTrafficWarningRequest create() => ListTrafficWarningRequest._();
+  ListTrafficWarningRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTrafficWarningRequest> createRepeated() => $pb.PbList<ListTrafficWarningRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTrafficWarningRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTrafficWarningRequest>(create);
+  static ListTrafficWarningRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get warningType => $_getI64(1);
+  @$pb.TagNumber(2)
+  set warningType($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWarningType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWarningType() => clearField(2);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(2);
+}
+
+class TrafficWarning extends $pb.GeneratedMessage {
+  factory TrafficWarning({
+    $fixnum.Int64? trafficWarningId,
+    $fixnum.Int64? tenantId,
+    $core.String? tenantName,
+    $fixnum.Int64? warningType,
+    $core.String? warningContent,
+    $core.String? createdAt,
+  }) {
+    final $result = create();
+    if (trafficWarningId != null) {
+      $result.trafficWarningId = trafficWarningId;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    if (tenantName != null) {
+      $result.tenantName = tenantName;
+    }
+    if (warningType != null) {
+      $result.warningType = warningType;
+    }
+    if (warningContent != null) {
+      $result.warningContent = warningContent;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    return $result;
+  }
+  TrafficWarning._() : super();
+  factory TrafficWarning.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TrafficWarning.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TrafficWarning', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'trafficWarningId')
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(3, _omitFieldNames ? '' : 'tenantName')
+    ..aInt64(4, _omitFieldNames ? '' : 'warningType')
+    ..aOS(5, _omitFieldNames ? '' : 'warningContent')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TrafficWarning clone() => TrafficWarning()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TrafficWarning copyWith(void Function(TrafficWarning) updates) => super.copyWith((message) => updates(message as TrafficWarning)) as TrafficWarning;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TrafficWarning create() => TrafficWarning._();
+  TrafficWarning createEmptyInstance() => create();
+  static $pb.PbList<TrafficWarning> createRepeated() => $pb.PbList<TrafficWarning>();
+  @$core.pragma('dart2js:noInline')
+  static TrafficWarning getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TrafficWarning>(create);
+  static TrafficWarning? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get trafficWarningId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set trafficWarningId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTrafficWarningId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTrafficWarningId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get tenantName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set tenantName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTenantName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTenantName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get warningType => $_getI64(3);
+  @$pb.TagNumber(4)
+  set warningType($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWarningType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWarningType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get warningContent => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set warningContent($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasWarningContent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWarningContent() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
+}
+
+class ListTrafficWarningResponse extends $pb.GeneratedMessage {
+  factory ListTrafficWarningResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<TrafficWarning>? trafficWarningList,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (trafficWarningList != null) {
+      $result.trafficWarningList.addAll(trafficWarningList);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListTrafficWarningResponse._() : super();
+  factory ListTrafficWarningResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTrafficWarningResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTrafficWarningResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<TrafficWarning>(2, _omitFieldNames ? '' : 'trafficWarningList', $pb.PbFieldType.PM, subBuilder: TrafficWarning.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTrafficWarningResponse clone() => ListTrafficWarningResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTrafficWarningResponse copyWith(void Function(ListTrafficWarningResponse) updates) => super.copyWith((message) => updates(message as ListTrafficWarningResponse)) as ListTrafficWarningResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTrafficWarningResponse create() => ListTrafficWarningResponse._();
+  ListTrafficWarningResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTrafficWarningResponse> createRepeated() => $pb.PbList<ListTrafficWarningResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTrafficWarningResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTrafficWarningResponse>(create);
+  static ListTrafficWarningResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TrafficWarning> get trafficWarningList => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class DeleteTrafficWarningRequest extends $pb.GeneratedMessage {
+  factory DeleteTrafficWarningRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? trafficWarningId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (trafficWarningId != null) {
+      $result.trafficWarningId = trafficWarningId;
+    }
+    return $result;
+  }
+  DeleteTrafficWarningRequest._() : super();
+  factory DeleteTrafficWarningRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTrafficWarningRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTrafficWarningRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'trafficWarningId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTrafficWarningRequest clone() => DeleteTrafficWarningRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTrafficWarningRequest copyWith(void Function(DeleteTrafficWarningRequest) updates) => super.copyWith((message) => updates(message as DeleteTrafficWarningRequest)) as DeleteTrafficWarningRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTrafficWarningRequest create() => DeleteTrafficWarningRequest._();
+  DeleteTrafficWarningRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteTrafficWarningRequest> createRepeated() => $pb.PbList<DeleteTrafficWarningRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTrafficWarningRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTrafficWarningRequest>(create);
+  static DeleteTrafficWarningRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get trafficWarningId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set trafficWarningId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTrafficWarningId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTrafficWarningId() => clearField(2);
+}
+
+class DeleteTrafficWarningResponse extends $pb.GeneratedMessage {
+  factory DeleteTrafficWarningResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteTrafficWarningResponse._() : super();
+  factory DeleteTrafficWarningResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTrafficWarningResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTrafficWarningResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTrafficWarningResponse clone() => DeleteTrafficWarningResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTrafficWarningResponse copyWith(void Function(DeleteTrafficWarningResponse) updates) => super.copyWith((message) => updates(message as DeleteTrafficWarningResponse)) as DeleteTrafficWarningResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTrafficWarningResponse create() => DeleteTrafficWarningResponse._();
+  DeleteTrafficWarningResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteTrafficWarningResponse> createRepeated() => $pb.PbList<DeleteTrafficWarningResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTrafficWarningResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTrafficWarningResponse>(create);
+  static DeleteTrafficWarningResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

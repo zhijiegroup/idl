@@ -1411,6 +1411,15 @@ CreateLivePlanProduct create live plan product */
   UpdateTenantTrafficConfig(
     request: live_traffic.UpdateTenantLiveTrafficConfigRequest
   ): Promise<live_traffic.UpdateTenantLiveTrafficConfigResponse>;
+
+  /** 流量告警 */
+  ListTrafficWarning(
+    request: live_traffic.ListTrafficWarningRequest
+  ): Promise<live_traffic.ListTrafficWarningResponse>;
+
+  DeleteTrafficWarning(
+    request: live_traffic.DeleteTrafficWarningRequest
+  ): Promise<live_traffic.DeleteTrafficWarningResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

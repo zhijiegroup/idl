@@ -2523,6 +2523,22 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ListTrafficWarning(request) {
+    const uri = `${this.uriPrefix}/api/traffic/list_live_traffic_warning`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteTrafficWarning(request) {
+    const uri = `${this.uriPrefix}/api/traffic/delete_live_traffic_warning`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

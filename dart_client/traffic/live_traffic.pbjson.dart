@@ -253,3 +253,86 @@ final $typed_data.Uint8List updateTenantLiveTrafficConfigResponseDescriptor = $c
     'CiVVcGRhdGVUZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
     'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
+@$core.Deprecated('Use listTrafficWarningRequestDescriptor instead')
+const ListTrafficWarningRequest$json = {
+  '1': 'ListTrafficWarningRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'warning_type', '3': 2, '4': 1, '5': 3, '10': 'warningType'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTrafficWarningRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTrafficWarningRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0VHJhZmZpY1dhcm5pbmdSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiEKDHdhcm5pbmdfdHlwZRgCIAEoA1ILd2Fybmlu'
+    'Z1R5cGUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2'
+    'luYXRpb24=');
+
+@$core.Deprecated('Use trafficWarningDescriptor instead')
+const TrafficWarning$json = {
+  '1': 'TrafficWarning',
+  '2': [
+    {'1': 'traffic_warning_id', '3': 1, '4': 1, '5': 3, '10': 'trafficWarningId'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'tenant_name', '3': 3, '4': 1, '5': 9, '10': 'tenantName'},
+    {'1': 'warning_type', '3': 4, '4': 1, '5': 3, '10': 'warningType'},
+    {'1': 'warning_content', '3': 5, '4': 1, '5': 9, '10': 'warningContent'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `TrafficWarning`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List trafficWarningDescriptor = $convert.base64Decode(
+    'Cg5UcmFmZmljV2FybmluZxIsChJ0cmFmZmljX3dhcm5pbmdfaWQYASABKANSEHRyYWZmaWNXYX'
+    'JuaW5nSWQSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIfCgt0ZW5hbnRfbmFtZRgDIAEo'
+    'CVIKdGVuYW50TmFtZRIhCgx3YXJuaW5nX3R5cGUYBCABKANSC3dhcm5pbmdUeXBlEicKD3dhcm'
+    '5pbmdfY29udGVudBgFIAEoCVIOd2FybmluZ0NvbnRlbnQSHQoKY3JlYXRlZF9hdBgGIAEoCVIJ'
+    'Y3JlYXRlZEF0');
+
+@$core.Deprecated('Use listTrafficWarningResponseDescriptor instead')
+const ListTrafficWarningResponse$json = {
+  '1': 'ListTrafficWarningResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'traffic_warning_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TrafficWarning', '10': 'trafficWarningList'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListTrafficWarningResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTrafficWarningResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0VHJhZmZpY1dhcm5pbmdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASSwoUdHJhZmZpY193YXJuaW5nX2xpc3QYAiADKAsyGS5n'
+    'bG9yeV9hcGkuVHJhZmZpY1dhcm5pbmdSEnRyYWZmaWNXYXJuaW5nTGlzdBI4CgpwYWdpbmF0aW'
+    '9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUmVzcG9uc2VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use deleteTrafficWarningRequestDescriptor instead')
+const DeleteTrafficWarningRequest$json = {
+  '1': 'DeleteTrafficWarningRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'traffic_warning_id', '3': 2, '4': 1, '5': 3, '10': 'trafficWarningId'},
+  ],
+};
+
+/// Descriptor for `DeleteTrafficWarningRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTrafficWarningRequestDescriptor = $convert.base64Decode(
+    'ChtEZWxldGVUcmFmZmljV2FybmluZ1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSLAoSdHJhZmZpY193YXJuaW5nX2lkGAIgASgD'
+    'UhB0cmFmZmljV2FybmluZ0lk');
+
+@$core.Deprecated('Use deleteTrafficWarningResponseDescriptor instead')
+const DeleteTrafficWarningResponse$json = {
+  '1': 'DeleteTrafficWarningResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteTrafficWarningResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTrafficWarningResponseDescriptor = $convert.base64Decode(
+    'ChxEZWxldGVUcmFmZmljV2FybmluZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+

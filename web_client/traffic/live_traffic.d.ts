@@ -100,3 +100,33 @@ export interface UpdateTenantLiveTrafficConfigRequest {
 export interface UpdateTenantLiveTrafficConfigResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ListTrafficWarningRequest {
+  base_request?: base.BaseRequest;
+  warning_type?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface TrafficWarning {
+  traffic_warning_id?: string;
+  tenant_id?: string;
+  tenant_name?: string;
+  warning_type?: string;
+  warning_content?: string;
+  created_at?: string;
+}
+
+export interface ListTrafficWarningResponse {
+  base_resp?: base.BaseResponse;
+  traffic_warning_list?: Array<TrafficWarning>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface DeleteTrafficWarningRequest {
+  base_request?: base.BaseRequest;
+  traffic_warning_id?: string;
+}
+
+export interface DeleteTrafficWarningResponse {
+  base_resp?: base.BaseResponse;
+}

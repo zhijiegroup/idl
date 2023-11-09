@@ -381,6 +381,8 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetLiveAllTraffic', '2': '.glory_api.GetAllLiveTrafficRequest', '3': '.glory_api.GetAllLiveTrafficResponse', '4': {}},
     {'1': 'ListTenantTrafficConfig', '2': '.glory_api.ListTenantLiveTrafficConfigRequest', '3': '.glory_api.ListTenantLiveTrafficConfigResponse', '4': {}},
     {'1': 'UpdateTenantTrafficConfig', '2': '.glory_api.UpdateTenantLiveTrafficConfigRequest', '3': '.glory_api.UpdateTenantLiveTrafficConfigResponse', '4': {}},
+    {'1': 'ListTrafficWarning', '2': '.glory_api.ListTrafficWarningRequest', '3': '.glory_api.ListTrafficWarningResponse', '4': {}},
+    {'1': 'DeleteTrafficWarning', '2': '.glory_api.DeleteTrafficWarningRequest', '3': '.glory_api.DeleteTrafficWarningResponse', '4': {}},
   ],
 };
 
@@ -1185,6 +1187,11 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.TenantTrafficConfig': $48.TenantTrafficConfig$json,
   '.glory_api.UpdateTenantLiveTrafficConfigRequest': $48.UpdateTenantLiveTrafficConfigRequest$json,
   '.glory_api.UpdateTenantLiveTrafficConfigResponse': $48.UpdateTenantLiveTrafficConfigResponse$json,
+  '.glory_api.ListTrafficWarningRequest': $48.ListTrafficWarningRequest$json,
+  '.glory_api.ListTrafficWarningResponse': $48.ListTrafficWarningResponse$json,
+  '.glory_api.TrafficWarning': $48.TrafficWarning$json,
+  '.glory_api.DeleteTrafficWarningRequest': $48.DeleteTrafficWarningRequest$json,
+  '.glory_api.DeleteTrafficWarningResponse': $48.DeleteTrafficWarningResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1891,5 +1898,10 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'ZpZxKtAQoZVXBkYXRlVGVuYW50VHJhZmZpY0NvbmZpZxIvLmdsb3J5X2FwaS5VcGRhdGVUZW5h'
     'bnRMaXZlVHJhZmZpY0NvbmZpZ1JlcXVlc3QaMC5nbG9yeV9hcGkuVXBkYXRlVGVuYW50TGl2ZV'
     'RyYWZmaWNDb25maWdSZXNwb25zZSIt0sEYKS9hcGkvdHJhZmZpYy91cGRhdGVfdGVuYW50X3Ry'
-    'YWZmaWNfY29uZmln');
+    'YWZmaWNfY29uZmlnEo0BChJMaXN0VHJhZmZpY1dhcm5pbmcSJC5nbG9yeV9hcGkuTGlzdFRyYW'
+    'ZmaWNXYXJuaW5nUmVxdWVzdBolLmdsb3J5X2FwaS5MaXN0VHJhZmZpY1dhcm5pbmdSZXNwb25z'
+    'ZSIq0sEYJi9hcGkvdHJhZmZpYy9saXN0X2xpdmVfdHJhZmZpY193YXJuaW5nEpUBChREZWxldG'
+    'VUcmFmZmljV2FybmluZxImLmdsb3J5X2FwaS5EZWxldGVUcmFmZmljV2FybmluZ1JlcXVlc3Qa'
+    'Jy5nbG9yeV9hcGkuRGVsZXRlVHJhZmZpY1dhcm5pbmdSZXNwb25zZSIs0sEYKC9hcGkvdHJhZm'
+    'ZpYy9kZWxldGVfbGl2ZV90cmFmZmljX3dhcm5pbmc=');
 

@@ -9749,6 +9749,68 @@ public final class glory_apiGrpc {
     return getUpdateTenantTrafficConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> getListTrafficWarningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTrafficWarning",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest,
+      com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> getListTrafficWarningMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest, com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> getListTrafficWarningMethod;
+    if ((getListTrafficWarningMethod = glory_apiGrpc.getListTrafficWarningMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTrafficWarningMethod = glory_apiGrpc.getListTrafficWarningMethod) == null) {
+          glory_apiGrpc.getListTrafficWarningMethod = getListTrafficWarningMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest, com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTrafficWarning"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTrafficWarning"))
+              .build();
+        }
+      }
+    }
+    return getListTrafficWarningMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest,
+      com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> getDeleteTrafficWarningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTrafficWarning",
+      requestType = com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest,
+      com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> getDeleteTrafficWarningMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest, com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> getDeleteTrafficWarningMethod;
+    if ((getDeleteTrafficWarningMethod = glory_apiGrpc.getDeleteTrafficWarningMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteTrafficWarningMethod = glory_apiGrpc.getDeleteTrafficWarningMethod) == null) {
+          glory_apiGrpc.getDeleteTrafficWarningMethod = getDeleteTrafficWarningMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest, com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTrafficWarning"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteTrafficWarning"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTrafficWarningMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -12305,6 +12367,23 @@ public final class glory_apiGrpc {
     default void updateTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTenantTrafficConfigMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 流量告警
+     * </pre>
+     */
+    default void listTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTrafficWarningMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTrafficWarningMethod(), responseObserver);
     }
   }
 
@@ -15158,6 +15237,25 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateTenantTrafficConfigMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 流量告警
+     * </pre>
+     */
+    public void listTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTrafficWarningMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTrafficWarningMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -17684,6 +17782,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse updateTenantTrafficConfig(com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTenantTrafficConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 流量告警
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse listTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTrafficWarningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse deleteTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTrafficWarningMethod(), getCallOptions(), request);
     }
   }
 
@@ -20526,6 +20641,25 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateTenantTrafficConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 流量告警
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse> listTrafficWarning(
+        com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTrafficWarningMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> deleteTrafficWarning(
+        com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTrafficWarningMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -20842,6 +20976,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 311;
   private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 312;
   private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 313;
+  private static final int METHODID_LIST_TRAFFIC_WARNING = 314;
+  private static final int METHODID_DELETE_TRAFFIC_WARNING = 315;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -22115,6 +22251,14 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_TENANT_TRAFFIC_CONFIG:
           serviceImpl.updateTenantTrafficConfig((com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TRAFFIC_WARNING:
+          serviceImpl.listTrafficWarning((com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TRAFFIC_WARNING:
+          serviceImpl.deleteTrafficWarning((com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -24332,6 +24476,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigRequest,
               com.zhijiejiaoyu.glory_api.traffic.UpdateTenantLiveTrafficConfigResponse>(
                 service, METHODID_UPDATE_TENANT_TRAFFIC_CONFIG)))
+        .addMethod(
+          getListTrafficWarningMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningRequest,
+              com.zhijiejiaoyu.glory_api.traffic.ListTrafficWarningResponse>(
+                service, METHODID_LIST_TRAFFIC_WARNING)))
+        .addMethod(
+          getDeleteTrafficWarningMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest,
+              com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse>(
+                service, METHODID_DELETE_TRAFFIC_WARNING)))
         .build();
   }
 
@@ -24694,6 +24852,8 @@ public final class glory_apiGrpc {
               .addMethod(getGetLiveAllTrafficMethod())
               .addMethod(getListTenantTrafficConfigMethod())
               .addMethod(getUpdateTenantTrafficConfigMethod())
+              .addMethod(getListTrafficWarningMethod())
+              .addMethod(getDeleteTrafficWarningMethod())
               .build();
         }
       }
