@@ -91,6 +91,8 @@ message UpdateTenantLiveTrafficConfigRequest {
     int64 traffic_day_limit = 4;
     int64 traffic_all_count = 5;
     int64 traffic_used_warning_count = 6;
+    int64 day_traffic_limit_percent = 7;
+    int64 all_traffic_limit_percent = 8;
 }
 
 message UpdateTenantLiveTrafficConfigResponse {
