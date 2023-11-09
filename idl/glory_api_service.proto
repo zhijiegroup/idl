@@ -1251,4 +1251,11 @@ service glory_api {
   rpc UpdateTenantTrafficConfig(UpdateTenantLiveTrafficConfigRequest) returns (UpdateTenantLiveTrafficConfigResponse) {
     option (api.post) = '/api/traffic/update_tenant_traffic_config';
   }
+  // 流量告警
+  rpc ListTrafficWarning(ListTrafficWarningRequest) returns (ListTrafficWarningResponse) {
+    option (api.post) = '/api/traffic/list_live_traffic_warning';
+  }
+  rpc DeleteTrafficWarning(DeleteTrafficWarningRequest) returns (DeleteTrafficWarningResponse) {
+    option (api.post) = '/api/traffic/delete_live_traffic_warning';
+  }
 }
