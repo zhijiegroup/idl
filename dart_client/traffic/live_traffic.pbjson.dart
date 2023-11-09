@@ -228,6 +228,8 @@ const UpdateTenantLiveTrafficConfigRequest$json = {
     {'1': 'traffic_day_limit', '3': 4, '4': 1, '5': 3, '10': 'trafficDayLimit'},
     {'1': 'traffic_all_count', '3': 5, '4': 1, '5': 3, '10': 'trafficAllCount'},
     {'1': 'traffic_used_warning_count', '3': 6, '4': 1, '5': 3, '10': 'trafficUsedWarningCount'},
+    {'1': 'day_traffic_limit_percent', '3': 7, '4': 1, '5': 3, '10': 'dayTrafficLimitPercent'},
+    {'1': 'all_traffic_limit_percent', '3': 8, '4': 1, '5': 3, '10': 'allTrafficLimitPercent'},
   ],
 };
 
@@ -238,7 +240,9 @@ final $typed_data.Uint8List updateTenantLiveTrafficConfigRequestDescriptor = $co
     'Ugh0ZW5hbnRJZBIuChNsaXZlX2R1cmF0aW9uX2xpbWl0GAMgASgDUhFsaXZlRHVyYXRpb25MaW'
     '1pdBIqChF0cmFmZmljX2RheV9saW1pdBgEIAEoA1IPdHJhZmZpY0RheUxpbWl0EioKEXRyYWZm'
     'aWNfYWxsX2NvdW50GAUgASgDUg90cmFmZmljQWxsQ291bnQSOwoadHJhZmZpY191c2VkX3dhcm'
-    '5pbmdfY291bnQYBiABKANSF3RyYWZmaWNVc2VkV2FybmluZ0NvdW50');
+    '5pbmdfY291bnQYBiABKANSF3RyYWZmaWNVc2VkV2FybmluZ0NvdW50EjkKGWRheV90cmFmZmlj'
+    'X2xpbWl0X3BlcmNlbnQYByABKANSFmRheVRyYWZmaWNMaW1pdFBlcmNlbnQSOQoZYWxsX3RyYW'
+    'ZmaWNfbGltaXRfcGVyY2VudBgIIAEoA1IWYWxsVHJhZmZpY0xpbWl0UGVyY2VudA==');
 
 @$core.Deprecated('Use updateTenantLiveTrafficConfigResponseDescriptor instead')
 const UpdateTenantLiveTrafficConfigResponse$json = {

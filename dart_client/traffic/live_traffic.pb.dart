@@ -1056,6 +1056,8 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? trafficDayLimit,
     $fixnum.Int64? trafficAllCount,
     $fixnum.Int64? trafficUsedWarningCount,
+    $fixnum.Int64? dayTrafficLimitPercent,
+    $fixnum.Int64? allTrafficLimitPercent,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1076,6 +1078,12 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     if (trafficUsedWarningCount != null) {
       $result.trafficUsedWarningCount = trafficUsedWarningCount;
     }
+    if (dayTrafficLimitPercent != null) {
+      $result.dayTrafficLimitPercent = dayTrafficLimitPercent;
+    }
+    if (allTrafficLimitPercent != null) {
+      $result.allTrafficLimitPercent = allTrafficLimitPercent;
+    }
     return $result;
   }
   UpdateTenantLiveTrafficConfigRequest._() : super();
@@ -1089,6 +1097,8 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'trafficDayLimit')
     ..aInt64(5, _omitFieldNames ? '' : 'trafficAllCount')
     ..aInt64(6, _omitFieldNames ? '' : 'trafficUsedWarningCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'dayTrafficLimitPercent')
+    ..aInt64(8, _omitFieldNames ? '' : 'allTrafficLimitPercent')
     ..hasRequiredFields = false
   ;
 
@@ -1168,6 +1178,24 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
   $core.bool hasTrafficUsedWarningCount() => $_has(5);
   @$pb.TagNumber(6)
   void clearTrafficUsedWarningCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get dayTrafficLimitPercent => $_getI64(6);
+  @$pb.TagNumber(7)
+  set dayTrafficLimitPercent($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDayTrafficLimitPercent() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDayTrafficLimitPercent() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get allTrafficLimitPercent => $_getI64(7);
+  @$pb.TagNumber(8)
+  set allTrafficLimitPercent($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAllTrafficLimitPercent() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAllTrafficLimitPercent() => clearField(8);
 }
 
 class UpdateTenantLiveTrafficConfigResponse extends $pb.GeneratedMessage {

@@ -51,4 +51,16 @@ public interface UpdateTenantLiveTrafficConfigRequestOrBuilder extends
    * @return The trafficUsedWarningCount.
    */
   long getTrafficUsedWarningCount();
+
+  /**
+   * <code>int64 day_traffic_limit_percent = 7;</code>
+   * @return The dayTrafficLimitPercent.
+   */
+  long getDayTrafficLimitPercent();
+
+  /**
+   * <code>int64 all_traffic_limit_percent = 8;</code>
+   * @return The allTrafficLimitPercent.
+   */
+  long getAllTrafficLimitPercent();
 }

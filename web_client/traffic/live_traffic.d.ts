@@ -95,6 +95,8 @@ export interface UpdateTenantLiveTrafficConfigRequest {
   traffic_day_limit?: string;
   traffic_all_count?: string;
   traffic_used_warning_count?: string;
+  day_traffic_limit_percent?: string;
+  all_traffic_limit_percent?: string;
 }
 
 export interface UpdateTenantLiveTrafficConfigResponse {

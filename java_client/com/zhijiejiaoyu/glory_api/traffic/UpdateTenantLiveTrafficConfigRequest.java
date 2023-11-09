@@ -86,6 +86,16 @@ private static final long serialVersionUID = 0L;
             trafficUsedWarningCount = input.readInt64();
             break;
           }
+          case 56: {
+
+            dayTrafficLimitPercent = input.readInt64();
+            break;
+          }
+          case 64: {
+
+            allTrafficLimitPercent = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +209,28 @@ private static final long serialVersionUID = 0L;
     return trafficUsedWarningCount ;
   }
 
+  public static final int DAY_TRAFFIC_LIMIT_PERCENT_FIELD_NUMBER = 7;
+  private long dayTrafficLimitPercent ;
+  /**
+   * <code>int64 day_traffic_limit_percent = 7;</code>
+   * @return The dayTrafficLimitPercent.
+   */
+  @java.lang.Override
+  public long getDayTrafficLimitPercent() {
+    return dayTrafficLimitPercent ;
+  }
+
+  public static final int ALL_TRAFFIC_LIMIT_PERCENT_FIELD_NUMBER = 8;
+  private long allTrafficLimitPercent ;
+  /**
+   * <code>int64 all_traffic_limit_percent = 8;</code>
+   * @return The allTrafficLimitPercent.
+   */
+  @java.lang.Override
+  public long getAllTrafficLimitPercent() {
+    return allTrafficLimitPercent ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -230,6 +262,12 @@ private static final long serialVersionUID = 0L;
     }
     if (trafficUsedWarningCount != 0L) {
       output.writeInt64(6, trafficUsedWarningCount );
+    }
+    if (dayTrafficLimitPercent != 0L) {
+      output.writeInt64(7, dayTrafficLimitPercent );
+    }
+    if (allTrafficLimitPercent != 0L) {
+      output.writeInt64(8, allTrafficLimitPercent );
     }
     unknownFields.writeTo(output);
   }
@@ -264,6 +302,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, trafficUsedWarningCount );
     }
+    if (dayTrafficLimitPercent != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, dayTrafficLimitPercent );
+    }
+    if (allTrafficLimitPercent != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, allTrafficLimitPercent );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -294,6 +340,10 @@ private static final long serialVersionUID = 0L;
         != other.getTrafficAllCount()) return false;
     if (getTrafficUsedWarningCount()
         != other.getTrafficUsedWarningCount()) return false;
+    if (getDayTrafficLimitPercent()
+        != other.getDayTrafficLimitPercent()) return false;
+    if (getAllTrafficLimitPercent()
+        != other.getAllTrafficLimitPercent()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,6 +374,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRAFFIC_USED_WARNING_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTrafficUsedWarningCount());
+    hash = (37 * hash) + DAY_TRAFFIC_LIMIT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDayTrafficLimitPercent());
+    hash = (37 * hash) + ALL_TRAFFIC_LIMIT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAllTrafficLimitPercent());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -473,6 +529,10 @@ private static final long serialVersionUID = 0L;
 
       trafficUsedWarningCount = 0L;
 
+      dayTrafficLimitPercent = 0L;
+
+      allTrafficLimitPercent = 0L;
+
       return this;
     }
 
@@ -509,6 +569,8 @@ private static final long serialVersionUID = 0L;
       result.trafficDayLimit = trafficDayLimit ;
       result.trafficAllCount = trafficAllCount ;
       result.trafficUsedWarningCount = trafficUsedWarningCount ;
+      result.dayTrafficLimitPercent = dayTrafficLimitPercent ;
+      result.allTrafficLimitPercent = allTrafficLimitPercent ;
       onBuilt();
       return result;
     }
@@ -574,6 +636,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTrafficUsedWarningCount() != 0L) {
         setTrafficUsedWarningCount(other.getTrafficUsedWarningCount());
+      }
+      if (other.getDayTrafficLimitPercent() != 0L) {
+        setDayTrafficLimitPercent(other.getDayTrafficLimitPercent());
+      }
+      if (other.getAllTrafficLimitPercent() != 0L) {
+        setAllTrafficLimitPercent(other.getAllTrafficLimitPercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -874,6 +942,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearTrafficUsedWarningCount() {
       
       trafficUsedWarningCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long dayTrafficLimitPercent ;
+    /**
+     * <code>int64 day_traffic_limit_percent = 7;</code>
+     * @return The dayTrafficLimitPercent.
+     */
+    @java.lang.Override
+    public long getDayTrafficLimitPercent() {
+      return dayTrafficLimitPercent ;
+    }
+    /**
+     * <code>int64 day_traffic_limit_percent = 7;</code>
+     * @param value The dayTrafficLimitPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDayTrafficLimitPercent(long value) {
+      
+      dayTrafficLimitPercent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 day_traffic_limit_percent = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDayTrafficLimitPercent() {
+      
+      dayTrafficLimitPercent = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long allTrafficLimitPercent ;
+    /**
+     * <code>int64 all_traffic_limit_percent = 8;</code>
+     * @return The allTrafficLimitPercent.
+     */
+    @java.lang.Override
+    public long getAllTrafficLimitPercent() {
+      return allTrafficLimitPercent ;
+    }
+    /**
+     * <code>int64 all_traffic_limit_percent = 8;</code>
+     * @param value The allTrafficLimitPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllTrafficLimitPercent(long value) {
+      
+      allTrafficLimitPercent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 all_traffic_limit_percent = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllTrafficLimitPercent() {
+      
+      allTrafficLimitPercent = 0L;
       onChanged();
       return this;
     }

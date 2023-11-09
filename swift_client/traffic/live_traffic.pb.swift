@@ -346,6 +346,10 @@ struct GloryApi_UpdateTenantLiveTrafficConfigRequest {
 
   var trafficUsedWarningCount: Int64 = 0
 
+  var dayTrafficLimitPercent: Int64 = 0
+
+  var allTrafficLimitPercent: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1134,6 +1138,8 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     4: .standard(proto: "traffic_day_limit"),
     5: .standard(proto: "traffic_all_count"),
     6: .standard(proto: "traffic_used_warning_count"),
+    7: .standard(proto: "day_traffic_limit_percent"),
+    8: .standard(proto: "all_traffic_limit_percent"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1148,6 +1154,8 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.trafficDayLimit) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.trafficAllCount) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.trafficUsedWarningCount) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.dayTrafficLimitPercent) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.allTrafficLimitPercent) }()
       default: break
       }
     }
@@ -1176,6 +1184,12 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     if self.trafficUsedWarningCount != 0 {
       try visitor.visitSingularInt64Field(value: self.trafficUsedWarningCount, fieldNumber: 6)
     }
+    if self.dayTrafficLimitPercent != 0 {
+      try visitor.visitSingularInt64Field(value: self.dayTrafficLimitPercent, fieldNumber: 7)
+    }
+    if self.allTrafficLimitPercent != 0 {
+      try visitor.visitSingularInt64Field(value: self.allTrafficLimitPercent, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1186,6 +1200,8 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     if lhs.trafficDayLimit != rhs.trafficDayLimit {return false}
     if lhs.trafficAllCount != rhs.trafficAllCount {return false}
     if lhs.trafficUsedWarningCount != rhs.trafficUsedWarningCount {return false}
+    if lhs.dayTrafficLimitPercent != rhs.dayTrafficLimitPercent {return false}
+    if lhs.allTrafficLimitPercent != rhs.allTrafficLimitPercent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
