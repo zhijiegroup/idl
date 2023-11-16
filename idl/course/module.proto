@@ -105,6 +105,7 @@ message ListCourseModuleRequest {
   base.BaseRequest base_request = 1;
   string keyword = 2; // 搜索关键词
   string major_code = 3; // 专业代码
+  int32 search_type = 4; // 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
   base.PaginationRequest pagination = 100;
 }
 
