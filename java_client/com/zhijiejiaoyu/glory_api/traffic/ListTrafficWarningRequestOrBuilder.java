@@ -29,6 +29,12 @@ public interface ListTrafficWarningRequestOrBuilder extends
   long getWarningType();
 
   /**
+   * <code>int64 tenant_id = 3;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

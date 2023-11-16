@@ -394,6 +394,8 @@ struct GloryApi_ListTrafficWarningRequest {
 
   var warningType: Int64 = 0
 
+  var tenantID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1248,6 +1250,7 @@ extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "warning_type"),
+    3: .standard(proto: "tenant_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1259,6 +1262,7 @@ extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.warningType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1276,6 +1280,9 @@ extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtob
     if self.warningType != 0 {
       try visitor.visitSingularInt64Field(value: self.warningType, fieldNumber: 2)
     }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1285,6 +1292,7 @@ extension GloryApi_ListTrafficWarningRequest: SwiftProtobuf.Message, SwiftProtob
   static func ==(lhs: GloryApi_ListTrafficWarningRequest, rhs: GloryApi_ListTrafficWarningRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.warningType != rhs.warningType {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

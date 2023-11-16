@@ -1254,6 +1254,7 @@ class ListTrafficWarningRequest extends $pb.GeneratedMessage {
   factory ListTrafficWarningRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? warningType,
+    $fixnum.Int64? tenantId,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1262,6 +1263,9 @@ class ListTrafficWarningRequest extends $pb.GeneratedMessage {
     }
     if (warningType != null) {
       $result.warningType = warningType;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -1275,6 +1279,7 @@ class ListTrafficWarningRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTrafficWarningRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'warningType')
+    ..aInt64(3, _omitFieldNames ? '' : 'tenantId')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1320,16 +1325,25 @@ class ListTrafficWarningRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearWarningType() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get tenantId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set tenantId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTenantId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTenantId() => clearField(3);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(2);
+  $0.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(2);
+  $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(2);
+  $0.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class TrafficWarning extends $pb.GeneratedMessage {

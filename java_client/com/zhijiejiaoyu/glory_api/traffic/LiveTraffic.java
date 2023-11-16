@@ -169,24 +169,24 @@ public final class LiveTraffic {
       "\030\007 \001(\003\022!\n\031all_traffic_limit_percent\030\010 \001(" +
       "\003\"N\n%UpdateTenantLiveTrafficConfigRespon" +
       "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"\207\001\n\031ListTrafficWarningRequest\022\'\n\014base_" +
+      "e\"\232\001\n\031ListTrafficWarningRequest\022\'\n\014base_" +
       "request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014warn" +
-      "ing_type\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.bas" +
-      "e.PaginationRequest\"\227\001\n\016TrafficWarning\022\032" +
-      "\n\022traffic_warning_id\030\001 \001(\003\022\021\n\ttenant_id\030" +
-      "\002 \001(\003\022\023\n\013tenant_name\030\003 \001(\t\022\024\n\014warning_ty" +
-      "pe\030\004 \001(\003\022\027\n\017warning_content\030\005 \001(\t\022\022\n\ncre" +
-      "ated_at\030\006 \001(\t\"\252\001\n\032ListTrafficWarningResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\0227\n\024traffic_warning_list\030\002 \003(\0132\031.glor" +
-      "y_api.TrafficWarning\022,\n\npagination\030d \001(\013" +
-      "2\030.base.PaginationResponse\"b\n\033DeleteTraf" +
-      "ficWarningRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\032\n\022traffic_warning_id" +
-      "\030\002 \001(\003\"E\n\034DeleteTrafficWarningResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB&\n" +
-      "\"com.zhijiejiaoyu.glory_api.trafficP\001b\006p" +
-      "roto3"
+      "ing_type\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npag" +
+      "ination\030d \001(\0132\027.base.PaginationRequest\"\227" +
+      "\001\n\016TrafficWarning\022\032\n\022traffic_warning_id\030" +
+      "\001 \001(\003\022\021\n\ttenant_id\030\002 \001(\003\022\023\n\013tenant_name\030" +
+      "\003 \001(\t\022\024\n\014warning_type\030\004 \001(\003\022\027\n\017warning_c" +
+      "ontent\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\"\252\001\n\032Lis" +
+      "tTrafficWarningResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\0227\n\024traffic_warnin" +
+      "g_list\030\002 \003(\0132\031.glory_api.TrafficWarning\022" +
+      ",\n\npagination\030d \001(\0132\030.base.PaginationRes" +
+      "ponse\"b\n\033DeleteTrafficWarningRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\032\n" +
+      "\022traffic_warning_id\030\002 \001(\003\"E\n\034DeleteTraff" +
+      "icWarningResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponseB&\n\"com.zhijiejiaoyu.glo" +
+      "ry_api.trafficP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -276,7 +276,7 @@ public final class LiveTraffic {
     internal_static_glory_api_ListTrafficWarningRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTrafficWarningRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "WarningType", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "WarningType", "TenantId", "Pagination", });
     internal_static_glory_api_TrafficWarning_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_TrafficWarning_fieldAccessorTable = new

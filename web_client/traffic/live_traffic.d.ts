@@ -106,6 +106,7 @@ export interface UpdateTenantLiveTrafficConfigResponse {
 export interface ListTrafficWarningRequest {
   base_request?: base.BaseRequest;
   warning_type?: string;
+  tenant_id?: string;
   pagination?: base.PaginationRequest;
 }
 

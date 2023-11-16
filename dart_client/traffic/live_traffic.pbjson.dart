@@ -263,6 +263,7 @@ const ListTrafficWarningRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'warning_type', '3': 2, '4': 1, '5': 3, '10': 'warningType'},
+    {'1': 'tenant_id', '3': 3, '4': 1, '5': 3, '10': 'tenantId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -271,8 +272,8 @@ const ListTrafficWarningRequest$json = {
 final $typed_data.Uint8List listTrafficWarningRequestDescriptor = $convert.base64Decode(
     'ChlMaXN0VHJhZmZpY1dhcm5pbmdSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiEKDHdhcm5pbmdfdHlwZRgCIAEoA1ILd2Fybmlu'
-    'Z1R5cGUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2'
-    'luYXRpb24=');
+    'Z1R5cGUSGwoJdGVuYW50X2lkGAMgASgDUgh0ZW5hbnRJZBI3CgpwYWdpbmF0aW9uGGQgASgLMh'
+    'cuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use trafficWarningDescriptor instead')
 const TrafficWarning$json = {

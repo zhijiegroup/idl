@@ -66,6 +66,11 @@ private static final long serialVersionUID = 0L;
             warningType = input.readInt64();
             break;
           }
+          case 24: {
+
+            tenantId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -148,6 +153,17 @@ private static final long serialVersionUID = 0L;
     return warningType ;
   }
 
+  public static final int TENANT_ID_FIELD_NUMBER = 3;
+  private long tenantId ;
+  /**
+   * <code>int64 tenant_id = 3;</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public long getTenantId() {
+    return tenantId ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -194,6 +210,9 @@ private static final long serialVersionUID = 0L;
     if (warningType != 0L) {
       output.writeInt64(2, warningType );
     }
+    if (tenantId != 0L) {
+      output.writeInt64(3, tenantId );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -213,6 +232,10 @@ private static final long serialVersionUID = 0L;
     if (warningType != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, warningType );
+    }
+    if (tenantId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, tenantId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -240,6 +263,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getWarningType()
         != other.getWarningType()) return false;
+    if (getTenantId()
+        != other.getTenantId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -263,6 +288,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + WARNING_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getWarningType());
+    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTenantId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -408,6 +436,8 @@ private static final long serialVersionUID = 0L;
       }
       warningType = 0L;
 
+      tenantId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -446,6 +476,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.warningType = warningType ;
+      result.tenantId = tenantId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -504,6 +535,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getWarningType() != 0L) {
         setWarningType(other.getWarningType());
+      }
+      if (other.getTenantId() != 0L) {
+        setTenantId(other.getTenantId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -683,6 +717,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearWarningType() {
       
       warningType = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long tenantId ;
+    /**
+     * <code>int64 tenant_id = 3;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId ;
+    }
+    /**
+     * <code>int64 tenant_id = 3;</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(long value) {
+      
+      tenantId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 tenant_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      
+      tenantId = 0L;
       onChanged();
       return this;
     }
