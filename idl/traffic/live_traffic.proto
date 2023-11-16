@@ -102,6 +102,7 @@ message UpdateTenantLiveTrafficConfigResponse {
 message ListTrafficWarningRequest {
     base.BaseRequest base_request = 1;
     int64 warning_type = 2;
+    int64 tenant_id = 3;
     base.PaginationRequest pagination = 100;
 }
 
