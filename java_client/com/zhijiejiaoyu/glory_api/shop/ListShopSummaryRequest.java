@@ -75,6 +75,16 @@ private static final long serialVersionUID = 0L;
             shopType = s;
             break;
           }
+          case 32: {
+
+            majorId = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            clasId = input.readInt64();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -222,6 +232,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MAJOR_ID_FIELD_NUMBER = 4;
+  private long majorId ;
+  /**
+   * <code>int64 major_id = 4;</code>
+   * @return The majorId.
+   */
+  @java.lang.Override
+  public long getMajorId() {
+    return majorId ;
+  }
+
+  public static final int CLAS_ID_FIELD_NUMBER = 5;
+  private long clasId ;
+  /**
+   * <code>int64 clas_id = 5;</code>
+   * @return The clasId.
+   */
+  @java.lang.Override
+  public long getClasId() {
+    return clasId ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -271,6 +303,12 @@ private static final long serialVersionUID = 0L;
     if (!getShopTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shopType );
     }
+    if (majorId != 0L) {
+      output.writeInt64(4, majorId );
+    }
+    if (clasId != 0L) {
+      output.writeInt64(5, clasId );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -292,6 +330,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getShopTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shopType );
+    }
+    if (majorId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, majorId );
+    }
+    if (clasId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, clasId );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -321,6 +367,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopName())) return false;
     if (!getShopType()
         .equals(other.getShopType())) return false;
+    if (getMajorId()
+        != other.getMajorId()) return false;
+    if (getClasId()
+        != other.getClasId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -345,6 +395,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShopName().hashCode();
     hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getShopType().hashCode();
+    hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMajorId());
+    hash = (37 * hash) + CLAS_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getClasId());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -492,6 +548,10 @@ private static final long serialVersionUID = 0L;
 
       shopType = "";
 
+      majorId = 0L;
+
+      clasId = 0L;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -531,6 +591,8 @@ private static final long serialVersionUID = 0L;
       }
       result.shopName = shopName ;
       result.shopType = shopType ;
+      result.majorId = majorId ;
+      result.clasId = clasId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -594,6 +656,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getShopType().isEmpty()) {
         shopType = other.shopType ;
         onChanged();
+      }
+      if (other.getMajorId() != 0L) {
+        setMajorId(other.getMajorId());
+      }
+      if (other.getClasId() != 0L) {
+        setClasId(other.getClasId());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -894,6 +962,68 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       shopType = value;
+      onChanged();
+      return this;
+    }
+
+    private long majorId ;
+    /**
+     * <code>int64 major_id = 4;</code>
+     * @return The majorId.
+     */
+    @java.lang.Override
+    public long getMajorId() {
+      return majorId ;
+    }
+    /**
+     * <code>int64 major_id = 4;</code>
+     * @param value The majorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorId(long value) {
+      
+      majorId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 major_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorId() {
+      
+      majorId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long clasId ;
+    /**
+     * <code>int64 clas_id = 5;</code>
+     * @return The clasId.
+     */
+    @java.lang.Override
+    public long getClasId() {
+      return clasId ;
+    }
+    /**
+     * <code>int64 clas_id = 5;</code>
+     * @param value The clasId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClasId(long value) {
+      
+      clasId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 clas_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClasId() {
+      
+      clasId = 0L;
       onChanged();
       return this;
     }

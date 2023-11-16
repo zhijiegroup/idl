@@ -1249,6 +1249,10 @@ struct GloryApi_ListShopSummaryRequest {
 
   var shopType: String = String()
 
+  var majorID: Int64 = 0
+
+  var clasID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -3576,6 +3580,8 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_name"),
     3: .standard(proto: "shop_type"),
+    4: .standard(proto: "major_id"),
+    5: .standard(proto: "clas_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -3588,6 +3594,8 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.shopType) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.clasID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -3608,6 +3616,12 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.shopType.isEmpty {
       try visitor.visitSingularStringField(value: self.shopType, fieldNumber: 3)
     }
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 4)
+    }
+    if self.clasID != 0 {
+      try visitor.visitSingularInt64Field(value: self.clasID, fieldNumber: 5)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -3618,6 +3632,8 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopName != rhs.shopName {return false}
     if lhs.shopType != rhs.shopType {return false}
+    if lhs.majorID != rhs.majorID {return false}
+    if lhs.clasID != rhs.clasID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

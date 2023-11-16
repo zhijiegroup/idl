@@ -718,6 +718,8 @@ const ListShopSummaryRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'shop_name', '3': 2, '4': 1, '5': 9, '10': 'shopName'},
     {'1': 'shop_type', '3': 3, '4': 1, '5': 9, '10': 'shopType'},
+    {'1': 'major_id', '3': 4, '4': 1, '5': 3, '10': 'majorId'},
+    {'1': 'clas_id', '3': 5, '4': 1, '5': 3, '10': 'clasId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -726,8 +728,9 @@ const ListShopSummaryRequest$json = {
 final $typed_data.Uint8List listShopSummaryRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0U2hvcFN1bW1hcnlSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
     'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXNob3BfbmFtZRgCIAEoCVIIc2hvcE5hbWUSGwoJ'
-    'c2hvcF90eXBlGAMgASgJUghzaG9wVHlwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYW'
-    'dpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'c2hvcF90eXBlGAMgASgJUghzaG9wVHlwZRIZCghtYWpvcl9pZBgEIAEoA1IHbWFqb3JJZBIXCg'
+    'djbGFzX2lkGAUgASgDUgZjbGFzSWQSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5h'
+    'dGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listShopSummaryResponseDescriptor instead')
 const ListShopSummaryResponse$json = {

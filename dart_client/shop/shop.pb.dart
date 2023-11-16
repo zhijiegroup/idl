@@ -3592,6 +3592,8 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $core.String? shopName,
     $core.String? shopType,
+    $fixnum.Int64? majorId,
+    $fixnum.Int64? clasId,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -3603,6 +3605,12 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
     }
     if (shopType != null) {
       $result.shopType = shopType;
+    }
+    if (majorId != null) {
+      $result.majorId = majorId;
+    }
+    if (clasId != null) {
+      $result.clasId = clasId;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -3617,6 +3625,8 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'shopName')
     ..aOS(3, _omitFieldNames ? '' : 'shopType')
+    ..aInt64(4, _omitFieldNames ? '' : 'majorId')
+    ..aInt64(5, _omitFieldNames ? '' : 'clasId')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -3671,16 +3681,34 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearShopType() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get majorId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set majorId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMajorId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMajorId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get clasId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set clasId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasClasId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClasId() => clearField(5);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $0.PaginationRequest get pagination => $_getN(5);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(5);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $0.PaginationRequest ensurePagination() => $_ensure(5);
 }
 
 class ListShopSummaryResponse extends $pb.GeneratedMessage {

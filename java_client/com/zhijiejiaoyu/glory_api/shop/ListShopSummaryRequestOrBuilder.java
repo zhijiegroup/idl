@@ -47,6 +47,18 @@ public interface ListShopSummaryRequestOrBuilder extends
       getShopTypeBytes();
 
   /**
+   * <code>int64 major_id = 4;</code>
+   * @return The majorId.
+   */
+  long getMajorId();
+
+  /**
+   * <code>int64 clas_id = 5;</code>
+   * @return The clasId.
+   */
+  long getClasId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

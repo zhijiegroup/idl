@@ -327,6 +327,8 @@ export interface ListShopSummaryRequest {
   base_request?: base.BaseRequest;
   shop_name?: string;
   shop_type?: string;
+  major_id?: string;
+  clas_id?: string;
   pagination?: base.PaginationRequest;
 }
 
