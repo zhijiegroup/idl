@@ -128,6 +128,8 @@ export interface ListCourseModuleRequest {
   keyword?: string;
   /** 专业代码 */
   major_code?: string;
+  /** 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部 */
+  search_type?: number;
   pagination?: base.PaginationRequest;
 }
 

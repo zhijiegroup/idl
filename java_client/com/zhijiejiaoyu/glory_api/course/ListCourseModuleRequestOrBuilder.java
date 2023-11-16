@@ -63,6 +63,16 @@ public interface ListCourseModuleRequestOrBuilder extends
       getMajorCodeBytes();
 
   /**
+   * <pre>
+   * 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+   * </pre>
+   *
+   * <code>int32 search_type = 4;</code>
+   * @return The searchType.
+   */
+  int getSearchType();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

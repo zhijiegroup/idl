@@ -1196,6 +1196,7 @@ class ListCourseModuleRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $core.String? keyword,
     $core.String? majorCode,
+    $core.int? searchType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1207,6 +1208,9 @@ class ListCourseModuleRequest extends $pb.GeneratedMessage {
     }
     if (majorCode != null) {
       $result.majorCode = majorCode;
+    }
+    if (searchType != null) {
+      $result.searchType = searchType;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -1221,6 +1225,7 @@ class ListCourseModuleRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'keyword')
     ..aOS(3, _omitFieldNames ? '' : 'majorCode')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'searchType', $pb.PbFieldType.O3)
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1275,16 +1280,25 @@ class ListCourseModuleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearMajorCode() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $core.int get searchType => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set searchType($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSearchType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSearchType() => clearField(4);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $0.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $0.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListCourseModuleResponse extends $pb.GeneratedMessage {

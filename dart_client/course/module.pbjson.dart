@@ -264,6 +264,7 @@ const ListCourseModuleRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
     {'1': 'major_code', '3': 3, '4': 1, '5': 9, '10': 'majorCode'},
+    {'1': 'search_type', '3': 4, '4': 1, '5': 5, '10': 'searchType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -272,8 +273,9 @@ const ListCourseModuleRequest$json = {
 final $typed_data.Uint8List listCourseModuleRequestDescriptor = $convert.base64Decode(
     'ChdMaXN0Q291cnNlTW9kdWxlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3JkEh0KCm1h'
-    'am9yX2NvZGUYAyABKAlSCW1ham9yQ29kZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYW'
-    'dpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'am9yX2NvZGUYAyABKAlSCW1ham9yQ29kZRIfCgtzZWFyY2hfdHlwZRgEIAEoBVIKc2VhcmNoVH'
+    'lwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5h'
+    'dGlvbg==');
 
 @$core.Deprecated('Use listCourseModuleResponseDescriptor instead')
 const ListCourseModuleResponse$json = {

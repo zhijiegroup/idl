@@ -79,6 +79,11 @@ private static final long serialVersionUID = 0L;
             majorCode = s;
             break;
           }
+          case 32: {
+
+            searchType = input.readInt32();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -242,6 +247,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SEARCH_TYPE_FIELD_NUMBER = 4;
+  private int searchType ;
+  /**
+   * <pre>
+   * 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+   * </pre>
+   *
+   * <code>int32 search_type = 4;</code>
+   * @return The searchType.
+   */
+  @java.lang.Override
+  public int getSearchType() {
+    return searchType ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -291,6 +311,9 @@ private static final long serialVersionUID = 0L;
     if (!getMajorCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, majorCode );
     }
+    if (searchType != 0) {
+      output.writeInt32(4, searchType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -312,6 +335,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMajorCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, majorCode );
+    }
+    if (searchType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, searchType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -341,6 +368,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getKeyword())) return false;
     if (!getMajorCode()
         .equals(other.getMajorCode())) return false;
+    if (getSearchType()
+        != other.getSearchType()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -365,6 +394,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getKeyword().hashCode();
     hash = (37 * hash) + MAJOR_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getMajorCode().hashCode();
+    hash = (37 * hash) + SEARCH_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchType();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -516,6 +547,8 @@ private static final long serialVersionUID = 0L;
 
       majorCode = "";
 
+      searchType = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -555,6 +588,7 @@ private static final long serialVersionUID = 0L;
       }
       result.keyword = keyword ;
       result.majorCode = majorCode ;
+      result.searchType = searchType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -618,6 +652,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getMajorCode().isEmpty()) {
         majorCode = other.majorCode ;
         onChanged();
+      }
+      if (other.getSearchType() != 0) {
+        setSearchType(other.getSearchType());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -958,6 +995,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       majorCode = value;
+      onChanged();
+      return this;
+    }
+
+    private int searchType ;
+    /**
+     * <pre>
+     * 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+     * </pre>
+     *
+     * <code>int32 search_type = 4;</code>
+     * @return The searchType.
+     */
+    @java.lang.Override
+    public int getSearchType() {
+      return searchType ;
+    }
+    /**
+     * <pre>
+     * 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+     * </pre>
+     *
+     * <code>int32 search_type = 4;</code>
+     * @param value The searchType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchType(int value) {
+      
+      searchType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+     * </pre>
+     *
+     * <code>int32 search_type = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchType() {
+      
+      searchType = 0;
       onChanged();
       return this;
     }

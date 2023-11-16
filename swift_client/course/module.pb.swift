@@ -438,6 +438,9 @@ struct GloryApi_ListCourseModuleRequest {
   /// 专业代码
   var majorCode: String = String()
 
+  /// 搜索类型：0. 只搜索能力指标名称；1. 只搜索章节名称；2. 搜索全部
+  var searchType: Int32 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1224,6 +1227,7 @@ extension GloryApi_ListCourseModuleRequest: SwiftProtobuf.Message, SwiftProtobuf
     1: .standard(proto: "base_request"),
     2: .same(proto: "keyword"),
     3: .standard(proto: "major_code"),
+    4: .standard(proto: "search_type"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1236,6 +1240,7 @@ extension GloryApi_ListCourseModuleRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.majorCode) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.searchType) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1256,6 +1261,9 @@ extension GloryApi_ListCourseModuleRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.majorCode.isEmpty {
       try visitor.visitSingularStringField(value: self.majorCode, fieldNumber: 3)
     }
+    if self.searchType != 0 {
+      try visitor.visitSingularInt32Field(value: self.searchType, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1266,6 +1274,7 @@ extension GloryApi_ListCourseModuleRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.keyword != rhs.keyword {return false}
     if lhs.majorCode != rhs.majorCode {return false}
+    if lhs.searchType != rhs.searchType {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
