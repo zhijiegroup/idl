@@ -284,6 +284,8 @@ message ListShopSummaryRequest {
   base.BaseRequest base_request = 1;
   string shop_name = 2;
   string shop_type = 3;
+  int64 major_id = 4;
+  int64 clas_id = 5;
   base.PaginationRequest pagination = 100;
 }
 
