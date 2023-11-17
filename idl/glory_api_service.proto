@@ -116,7 +116,10 @@ service glory_api {
   rpc UpdateUserTenant(UpdateUserTenantRequest) returns (UpdateUserTenantResponse) {
     option (api.post) = '/api/user/update_user_tenant';
   }
-
+  // 用户列表[用户名+头像]
+  rpc ListUser(ListUserRequest) returns (ListUserResponse) {
+    option (api.post) = '/api/user/list_user';
+  }
   // 关注用户
   rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
     option (api.post) = '/api/user/follow_user';
