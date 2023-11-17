@@ -1407,6 +1407,10 @@ CreateLivePlanProduct create live plan product */
     request: live_traffic.GetAllLiveTrafficRequest
   ): Promise<live_traffic.GetAllLiveTrafficResponse>;
 
+  GetSchooLiveTraffic(
+    request: live_traffic.GetSchooLiveTrafficRequest
+  ): Promise<live_traffic.GetSchooLiveTrafficResponse>;
+
   ListTenantTrafficConfig(
     request: live_traffic.ListTenantLiveTrafficConfigRequest
   ): Promise<live_traffic.ListTenantLiveTrafficConfigResponse>;

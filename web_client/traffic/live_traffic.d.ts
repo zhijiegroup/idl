@@ -64,6 +64,19 @@ export interface GetAllLiveTrafficResponse {
   ali_total_traffic?: string;
 }
 
+export interface GetSchooLiveTrafficRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+}
+
+export interface GetSchooLiveTrafficResponse {
+  base_resp?: base.BaseResponse;
+  total_traffic?: string;
+  used_traffic?: string;
+  average_day_traffic?: string;
+  maybe_use_day?: string;
+}
+
 export interface ListTenantLiveTrafficConfigRequest {
   base_request?: base.BaseRequest;
   pagination?: base.PaginationRequest;

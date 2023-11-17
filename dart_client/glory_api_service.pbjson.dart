@@ -380,6 +380,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetSchooLiveChart', '2': '.glory_api.GetSchoolLiveTrafficChartRequest', '3': '.glory_api.GetSchoolLiveTrafficChartResponse', '4': {}},
     {'1': 'ListSchooLiveTraffic', '2': '.glory_api.ListSchoolLiveTrafficRequest', '3': '.glory_api.ListSchoolLiveTrafficResponse', '4': {}},
     {'1': 'GetLiveAllTraffic', '2': '.glory_api.GetAllLiveTrafficRequest', '3': '.glory_api.GetAllLiveTrafficResponse', '4': {}},
+    {'1': 'GetSchooLiveTraffic', '2': '.glory_api.GetSchooLiveTrafficRequest', '3': '.glory_api.GetSchooLiveTrafficResponse', '4': {}},
     {'1': 'ListTenantTrafficConfig', '2': '.glory_api.ListTenantLiveTrafficConfigRequest', '3': '.glory_api.ListTenantLiveTrafficConfigResponse', '4': {}},
     {'1': 'UpdateTenantTrafficConfig', '2': '.glory_api.UpdateTenantLiveTrafficConfigRequest', '3': '.glory_api.UpdateTenantLiveTrafficConfigResponse', '4': {}},
     {'1': 'ListTrafficWarning', '2': '.glory_api.ListTrafficWarningRequest', '3': '.glory_api.ListTrafficWarningResponse', '4': {}},
@@ -1185,6 +1186,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.SchoolLiveTraffic': $48.SchoolLiveTraffic$json,
   '.glory_api.GetAllLiveTrafficRequest': $48.GetAllLiveTrafficRequest$json,
   '.glory_api.GetAllLiveTrafficResponse': $48.GetAllLiveTrafficResponse$json,
+  '.glory_api.GetSchooLiveTrafficRequest': $48.GetSchooLiveTrafficRequest$json,
+  '.glory_api.GetSchooLiveTrafficResponse': $48.GetSchooLiveTrafficResponse$json,
   '.glory_api.ListTenantLiveTrafficConfigRequest': $48.ListTenantLiveTrafficConfigRequest$json,
   '.glory_api.ListTenantLiveTrafficConfigResponse': $48.ListTenantLiveTrafficConfigResponse$json,
   '.glory_api.TenantTrafficConfig': $48.TenantTrafficConfig$json,
@@ -1896,17 +1899,19 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'c3RTY2hvb2xMaXZlVHJhZmZpY1Jlc3BvbnNlIinKwRglL2FwaS90cmFmZmljL2xpc3Rfc2Nob2'
     '9sX2xpdmVfdHJhZmZpYxKFAQoRR2V0TGl2ZUFsbFRyYWZmaWMSIy5nbG9yeV9hcGkuR2V0QWxs'
     'TGl2ZVRyYWZmaWNSZXF1ZXN0GiQuZ2xvcnlfYXBpLkdldEFsbExpdmVUcmFmZmljUmVzcG9uc2'
-    'UiJcrBGCEvYXBpL3RyYWZmaWMvZ2V0X2FsbF9saXZlX3RyYWZmaWMSpQEKF0xpc3RUZW5hbnRU'
-    'cmFmZmljQ29uZmlnEi0uZ2xvcnlfYXBpLkxpc3RUZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1JlcX'
-    'Vlc3QaLi5nbG9yeV9hcGkuTGlzdFRlbmFudExpdmVUcmFmZmljQ29uZmlnUmVzcG9uc2UiK9LB'
-    'GCcvYXBpL3RyYWZmaWMvbGlzdF90ZW5hbnRfdHJhZmZpY19jb25maWcSrQEKGVVwZGF0ZVRlbm'
-    'FudFRyYWZmaWNDb25maWcSLy5nbG9yeV9hcGkuVXBkYXRlVGVuYW50TGl2ZVRyYWZmaWNDb25m'
-    'aWdSZXF1ZXN0GjAuZ2xvcnlfYXBpLlVwZGF0ZVRlbmFudExpdmVUcmFmZmljQ29uZmlnUmVzcG'
-    '9uc2UiLdLBGCkvYXBpL3RyYWZmaWMvdXBkYXRlX3RlbmFudF90cmFmZmljX2NvbmZpZxKNAQoS'
-    'TGlzdFRyYWZmaWNXYXJuaW5nEiQuZ2xvcnlfYXBpLkxpc3RUcmFmZmljV2FybmluZ1JlcXVlc3'
-    'QaJS5nbG9yeV9hcGkuTGlzdFRyYWZmaWNXYXJuaW5nUmVzcG9uc2UiKtLBGCYvYXBpL3RyYWZm'
-    'aWMvbGlzdF9saXZlX3RyYWZmaWNfd2FybmluZxKVAQoURGVsZXRlVHJhZmZpY1dhcm5pbmcSJi'
-    '5nbG9yeV9hcGkuRGVsZXRlVHJhZmZpY1dhcm5pbmdSZXF1ZXN0GicuZ2xvcnlfYXBpLkRlbGV0'
-    'ZVRyYWZmaWNXYXJuaW5nUmVzcG9uc2UiLNLBGCgvYXBpL3RyYWZmaWMvZGVsZXRlX2xpdmVfdH'
-    'JhZmZpY193YXJuaW5n');
+    'UiJcrBGCEvYXBpL3RyYWZmaWMvZ2V0X2FsbF9saXZlX3RyYWZmaWMSjgEKE0dldFNjaG9vTGl2'
+    'ZVRyYWZmaWMSJS5nbG9yeV9hcGkuR2V0U2Nob29MaXZlVHJhZmZpY1JlcXVlc3QaJi5nbG9yeV'
+    '9hcGkuR2V0U2Nob29MaXZlVHJhZmZpY1Jlc3BvbnNlIijKwRgkL2FwaS90cmFmZmljL2dldF9z'
+    'Y2hvb2xfbGl2ZV90cmFmZmljEqUBChdMaXN0VGVuYW50VHJhZmZpY0NvbmZpZxItLmdsb3J5X2'
+    'FwaS5MaXN0VGVuYW50TGl2ZVRyYWZmaWNDb25maWdSZXF1ZXN0Gi4uZ2xvcnlfYXBpLkxpc3RU'
+    'ZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1Jlc3BvbnNlIivSwRgnL2FwaS90cmFmZmljL2xpc3RfdG'
+    'VuYW50X3RyYWZmaWNfY29uZmlnEq0BChlVcGRhdGVUZW5hbnRUcmFmZmljQ29uZmlnEi8uZ2xv'
+    'cnlfYXBpLlVwZGF0ZVRlbmFudExpdmVUcmFmZmljQ29uZmlnUmVxdWVzdBowLmdsb3J5X2FwaS'
+    '5VcGRhdGVUZW5hbnRMaXZlVHJhZmZpY0NvbmZpZ1Jlc3BvbnNlIi3SwRgpL2FwaS90cmFmZmlj'
+    'L3VwZGF0ZV90ZW5hbnRfdHJhZmZpY19jb25maWcSjQEKEkxpc3RUcmFmZmljV2FybmluZxIkLm'
+    'dsb3J5X2FwaS5MaXN0VHJhZmZpY1dhcm5pbmdSZXF1ZXN0GiUuZ2xvcnlfYXBpLkxpc3RUcmFm'
+    'ZmljV2FybmluZ1Jlc3BvbnNlIirSwRgmL2FwaS90cmFmZmljL2xpc3RfbGl2ZV90cmFmZmljX3'
+    'dhcm5pbmcSlQEKFERlbGV0ZVRyYWZmaWNXYXJuaW5nEiYuZ2xvcnlfYXBpLkRlbGV0ZVRyYWZm'
+    'aWNXYXJuaW5nUmVxdWVzdBonLmdsb3J5X2FwaS5EZWxldGVUcmFmZmljV2FybmluZ1Jlc3Bvbn'
+    'NlIizSwRgoL2FwaS90cmFmZmljL2RlbGV0ZV9saXZlX3RyYWZmaWNfd2FybmluZw==');
 

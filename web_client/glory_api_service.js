@@ -2516,6 +2516,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetSchooLiveTraffic(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/traffic/get_school_live_traffic${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListTenantTrafficConfig(request) {
     const uri = `${this.uriPrefix}/api/traffic/list_tenant_traffic_config`;
     const body = JSONbigint.stringify(request);

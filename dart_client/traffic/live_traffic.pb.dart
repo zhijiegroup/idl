@@ -784,6 +784,180 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
   void clearAliTotalTraffic() => clearField(3);
 }
 
+class GetSchooLiveTrafficRequest extends $pb.GeneratedMessage {
+  factory GetSchooLiveTrafficRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? tenantId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    return $result;
+  }
+  GetSchooLiveTrafficRequest._() : super();
+  factory GetSchooLiveTrafficRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSchooLiveTrafficRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSchooLiveTrafficRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSchooLiveTrafficRequest clone() => GetSchooLiveTrafficRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSchooLiveTrafficRequest copyWith(void Function(GetSchooLiveTrafficRequest) updates) => super.copyWith((message) => updates(message as GetSchooLiveTrafficRequest)) as GetSchooLiveTrafficRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSchooLiveTrafficRequest create() => GetSchooLiveTrafficRequest._();
+  GetSchooLiveTrafficRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSchooLiveTrafficRequest> createRepeated() => $pb.PbList<GetSchooLiveTrafficRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSchooLiveTrafficRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSchooLiveTrafficRequest>(create);
+  static GetSchooLiveTrafficRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+}
+
+class GetSchooLiveTrafficResponse extends $pb.GeneratedMessage {
+  factory GetSchooLiveTrafficResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? totalTraffic,
+    $fixnum.Int64? usedTraffic,
+    $fixnum.Int64? averageDayTraffic,
+    $fixnum.Int64? maybeUseDay,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalTraffic != null) {
+      $result.totalTraffic = totalTraffic;
+    }
+    if (usedTraffic != null) {
+      $result.usedTraffic = usedTraffic;
+    }
+    if (averageDayTraffic != null) {
+      $result.averageDayTraffic = averageDayTraffic;
+    }
+    if (maybeUseDay != null) {
+      $result.maybeUseDay = maybeUseDay;
+    }
+    return $result;
+  }
+  GetSchooLiveTrafficResponse._() : super();
+  factory GetSchooLiveTrafficResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSchooLiveTrafficResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSchooLiveTrafficResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalTraffic')
+    ..aInt64(3, _omitFieldNames ? '' : 'usedTraffic')
+    ..aInt64(4, _omitFieldNames ? '' : 'averageDayTraffic')
+    ..aInt64(5, _omitFieldNames ? '' : 'maybeUseDay')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSchooLiveTrafficResponse clone() => GetSchooLiveTrafficResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSchooLiveTrafficResponse copyWith(void Function(GetSchooLiveTrafficResponse) updates) => super.copyWith((message) => updates(message as GetSchooLiveTrafficResponse)) as GetSchooLiveTrafficResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSchooLiveTrafficResponse create() => GetSchooLiveTrafficResponse._();
+  GetSchooLiveTrafficResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSchooLiveTrafficResponse> createRepeated() => $pb.PbList<GetSchooLiveTrafficResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSchooLiveTrafficResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSchooLiveTrafficResponse>(create);
+  static GetSchooLiveTrafficResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalTraffic => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalTraffic($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalTraffic() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalTraffic() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get usedTraffic => $_getI64(2);
+  @$pb.TagNumber(3)
+  set usedTraffic($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUsedTraffic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUsedTraffic() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get averageDayTraffic => $_getI64(3);
+  @$pb.TagNumber(4)
+  set averageDayTraffic($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAverageDayTraffic() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAverageDayTraffic() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get maybeUseDay => $_getI64(4);
+  @$pb.TagNumber(5)
+  set maybeUseDay($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMaybeUseDay() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaybeUseDay() => clearField(5);
+}
+
 class ListTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
   factory ListTenantLiveTrafficConfigRequest({
     $0.BaseRequest? baseRequest,

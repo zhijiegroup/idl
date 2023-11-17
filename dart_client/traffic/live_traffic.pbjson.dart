@@ -163,6 +163,40 @@ final $typed_data.Uint8List getAllLiveTrafficResponseDescriptor = $convert.base6
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIjCg10b3RhbF90cmFmZmljGAIgASgDUgx0b3RhbFRyYWZm'
     'aWMSKgoRYWxpX3RvdGFsX3RyYWZmaWMYAyABKANSD2FsaVRvdGFsVHJhZmZpYw==');
 
+@$core.Deprecated('Use getSchooLiveTrafficRequestDescriptor instead')
+const GetSchooLiveTrafficRequest$json = {
+  '1': 'GetSchooLiveTrafficRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+  ],
+};
+
+/// Descriptor for `GetSchooLiveTrafficRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSchooLiveTrafficRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRTY2hvb0xpdmVUcmFmZmljUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgl0ZW5hbnRfaWQYAiABKANSCHRlbmFudElk');
+
+@$core.Deprecated('Use getSchooLiveTrafficResponseDescriptor instead')
+const GetSchooLiveTrafficResponse$json = {
+  '1': 'GetSchooLiveTrafficResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_traffic', '3': 2, '4': 1, '5': 3, '10': 'totalTraffic'},
+    {'1': 'used_traffic', '3': 3, '4': 1, '5': 3, '10': 'usedTraffic'},
+    {'1': 'average_day_traffic', '3': 4, '4': 1, '5': 3, '10': 'averageDayTraffic'},
+    {'1': 'maybe_use_day', '3': 5, '4': 1, '5': 3, '10': 'maybeUseDay'},
+  ],
+};
+
+/// Descriptor for `GetSchooLiveTrafficResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSchooLiveTrafficResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRTY2hvb0xpdmVUcmFmZmljUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
+    '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEiMKDXRvdGFsX3RyYWZmaWMYAiABKANSDHRvdGFsVHJh'
+    'ZmZpYxIhCgx1c2VkX3RyYWZmaWMYAyABKANSC3VzZWRUcmFmZmljEi4KE2F2ZXJhZ2VfZGF5X3'
+    'RyYWZmaWMYBCABKANSEWF2ZXJhZ2VEYXlUcmFmZmljEiIKDW1heWJlX3VzZV9kYXkYBSABKANS'
+    'C21heWJlVXNlRGF5');
+
 @$core.Deprecated('Use listTenantLiveTrafficConfigRequestDescriptor instead')
 const ListTenantLiveTrafficConfigRequest$json = {
   '1': 'ListTenantLiveTrafficConfigRequest',
