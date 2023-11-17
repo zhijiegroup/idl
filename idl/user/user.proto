@@ -441,3 +441,13 @@ message UpdateUserTenantRequest {
 message UpdateUserTenantResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message ListUserRequest {
+  base.BaseRequest base_request = 1;
+  repeated int64 user_ids = 2;
+}
+
+message ListUserResponse {
+  base.BaseResponse base_resp = 1;
+  repeated User users = 2;
+}
