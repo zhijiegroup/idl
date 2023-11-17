@@ -64,6 +64,19 @@ message GetAllLiveTrafficResponse {
     int64 ali_total_traffic = 3;
 }
 
+message GetSchooLiveTrafficRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+}
+
+message GetSchooLiveTrafficResponse {
+    base.BaseResponse base_resp = 1;
+    int64 total_traffic = 2;
+    int64 used_traffic = 3;
+    int64 average_day_traffic = 4;
+    int64 maybe_use_day = 5;
+}
+
 message ListTenantLiveTrafficConfigRequest {
     base.BaseRequest base_request = 1;
     base.PaginationRequest pagination = 100;
