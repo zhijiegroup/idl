@@ -1115,3 +1115,31 @@ final $typed_data.Uint8List updateUserTenantResponseDescriptor = $convert.base64
     'ChhVcGRhdGVVc2VyVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
     'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use listUserRequestDescriptor instead')
+const ListUserRequest$json = {
+  '1': 'ListUserRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'user_ids', '3': 2, '4': 3, '5': 3, '10': 'userIds'},
+  ],
+};
+
+/// Descriptor for `ListUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserRequestDescriptor = $convert.base64Decode(
+    'Cg9MaXN0VXNlclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUmVxdW'
+    'VzdFILYmFzZVJlcXVlc3QSGQoIdXNlcl9pZHMYAiADKANSB3VzZXJJZHM=');
+
+@$core.Deprecated('Use listUserResponseDescriptor instead')
+const ListUserResponse$json = {
+  '1': 'ListUserResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'users', '3': 2, '4': 3, '5': 11, '6': '.glory_api.User', '10': 'users'},
+  ],
+};
+
+/// Descriptor for `ListUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserResponseDescriptor = $convert.base64Decode(
+    'ChBMaXN0VXNlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3Bvbn'
+    'NlUghiYXNlUmVzcBIlCgV1c2VycxgCIAMoCzIPLmdsb3J5X2FwaS5Vc2VyUgV1c2Vycw==');
+

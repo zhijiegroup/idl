@@ -349,6 +349,16 @@ public final class UserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UpdateUserTenantResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -558,8 +568,12 @@ public final class UserOuterClass {
       "_id\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022\017\n\007role_id\030" +
       "\004 \001(\003\022\017\n\007dept_id\030\005 \001(\003\"A\n\030UpdateUserTena" +
       "ntResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponseB#\n\037com.zhijiejiaoyu.glory_api." +
-      "userP\001b\006proto3"
+      "eResponse\"L\n\017ListUserRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010user_id" +
+      "s\030\002 \003(\003\"Y\n\020ListUserResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\036\n\005users\030\002 \003(" +
+      "\0132\017.glory_api.UserB#\n\037com.zhijiejiaoyu.g" +
+      "lory_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -971,6 +985,18 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateUserTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(67);
+    internal_static_glory_api_ListUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "UserIds", });
+    internal_static_glory_api_ListUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(68);
+    internal_static_glory_api_ListUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Users", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();

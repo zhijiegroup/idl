@@ -471,3 +471,13 @@ export interface UpdateUserTenantRequest {
 export interface UpdateUserTenantResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ListUserRequest {
+  base_request?: base.BaseRequest;
+  user_ids?: Array<string>;
+}
+
+export interface ListUserResponse {
+  base_resp?: base.BaseResponse;
+  users?: Array<User>;
+}

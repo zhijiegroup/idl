@@ -166,6 +166,9 @@ export class glory_api {
     request: user.UpdateUserTenantRequest
   ): Promise<user.UpdateUserTenantResponse>;
 
+  /** 用户列表[用户名+头像] */
+  ListUser(request: user.ListUserRequest): Promise<user.ListUserResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
