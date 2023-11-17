@@ -79,4 +79,24 @@ public interface CreateRoomRequestOrBuilder extends
    * @return The isUseAi.
    */
   long getIsUseAi();
+
+  /**
+   * <pre>
+   * 封面图OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 7;</code>
+   * @return The coverPath.
+   */
+  java.lang.String getCoverPath();
+  /**
+   * <pre>
+   * 封面图OSS路径
+   * </pre>
+   *
+   * <code>string cover_path = 7;</code>
+   * @return The bytes for coverPath.
+   */
+  com.google.protobuf.ByteString
+      getCoverPathBytes();
 }

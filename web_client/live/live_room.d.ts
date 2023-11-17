@@ -41,6 +41,8 @@ export interface CreateRoomRequest {
   room_image_attachment_id?: string;
   /** 是否使用AI评价 1:使用 2:不使用 */
   is_use_ai?: string;
+  /** 封面图OSS路径 */
+  cover_path?: string;
 }
 
 export interface CreateRoomResponse {

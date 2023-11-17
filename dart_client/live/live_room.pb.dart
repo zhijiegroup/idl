@@ -298,6 +298,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $core.String? roomTitle,
     $fixnum.Int64? roomImageAttachmentId,
     $fixnum.Int64? isUseAi,
+    $core.String? coverPath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -318,6 +319,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     if (isUseAi != null) {
       $result.isUseAi = isUseAi;
     }
+    if (coverPath != null) {
+      $result.coverPath = coverPath;
+    }
     return $result;
   }
   CreateRoomRequest._() : super();
@@ -331,6 +335,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'roomTitle')
     ..aInt64(5, _omitFieldNames ? '' : 'roomImageAttachmentId')
     ..aInt64(6, _omitFieldNames ? '' : 'isUseAi')
+    ..aOS(7, _omitFieldNames ? '' : 'coverPath')
     ..hasRequiredFields = false
   ;
 
@@ -410,6 +415,15 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasIsUseAi() => $_has(5);
   @$pb.TagNumber(6)
   void clearIsUseAi() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get coverPath => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set coverPath($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCoverPath() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCoverPath() => clearField(7);
 }
 
 class CreateRoomResponse extends $pb.GeneratedMessage {
