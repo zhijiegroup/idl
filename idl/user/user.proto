@@ -451,3 +451,13 @@ message ListUserResponse {
   base.BaseResponse base_resp = 1;
   repeated User users = 2;
 }
+
+message UserBindWechatRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+  string openid = 3;
+}
+
+message UserBindWechatResponse {
+  base.BaseResponse base_resp = 1;
+}

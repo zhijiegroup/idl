@@ -120,6 +120,10 @@ service glory_api {
   rpc ListUser(ListUserRequest) returns (ListUserResponse) {
     option (api.post) = '/api/user/list_user';
   }
+  // 绑定微信接口
+  rpc UserBindWechat(UserBindWechatRequest) returns (UserBindWechatResponse) {
+    option (api.post) = '/api/user/bind_wechat';
+  }
   // 关注用户
   rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
     option (api.post) = '/api/user/follow_user';
