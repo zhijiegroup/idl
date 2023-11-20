@@ -169,6 +169,11 @@ export class glory_api {
   /** 用户列表[用户名+头像] */
   ListUser(request: user.ListUserRequest): Promise<user.ListUserResponse>;
 
+  /** 绑定微信接口 */
+  UserBindWechat(
+    request: user.UserBindWechatRequest
+  ): Promise<user.UserBindWechatResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 

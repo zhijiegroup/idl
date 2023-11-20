@@ -1143,3 +1143,32 @@ final $typed_data.Uint8List listUserResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0VXNlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3Bvbn'
     'NlUghiYXNlUmVzcBIlCgV1c2VycxgCIAMoCzIPLmdsb3J5X2FwaS5Vc2VyUgV1c2Vycw==');
 
+@$core.Deprecated('Use userBindWechatRequestDescriptor instead')
+const UserBindWechatRequest$json = {
+  '1': 'UserBindWechatRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'openid', '3': 3, '4': 1, '5': 9, '10': 'openid'},
+  ],
+};
+
+/// Descriptor for `UserBindWechatRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userBindWechatRequestDescriptor = $convert.base64Decode(
+    'ChVVc2VyQmluZFdlY2hhdFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSFwoHdXNlcl9pZBgCIAEoA1IGdXNlcklkEhYKBm9wZW5p'
+    'ZBgDIAEoCVIGb3Blbmlk');
+
+@$core.Deprecated('Use userBindWechatResponseDescriptor instead')
+const UserBindWechatResponse$json = {
+  '1': 'UserBindWechatResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UserBindWechatResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userBindWechatResponseDescriptor = $convert.base64Decode(
+    'ChZVc2VyQmluZFdlY2hhdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcA==');
+
