@@ -584,10 +584,11 @@ public final class UserOuterClass {
       "\030\001 \001(\0132\022.base.BaseResponse\022\036\n\005users\030\002 \003(" +
       "\0132\017.glory_api.User\"a\n\025UserBindWechatRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007user_id\030\002 \001(\003\022\016\n\006openid\030\003 \001(\t\"?\n" +
+      "uest\022\017\n\007user_id\030\002 \001(\003\022\016\n\006openid\030\003 \001(\t\"M\n" +
       "\026UserBindWechatResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
-      "yu.glory_api.userP\001b\006proto3"
+      "(\0132\022.base.BaseResponse\022\014\n\004bind\030\002 \001(\010B#\n\037" +
+      "com.zhijiejiaoyu.glory_api.userP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1022,7 +1023,7 @@ public final class UserOuterClass {
     internal_static_glory_api_UserBindWechatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserBindWechatResponse_descriptor,
-        new java.lang.String[] { "BaseResp", });
+        new java.lang.String[] { "BaseResp", "Bind", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();

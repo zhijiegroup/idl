@@ -1985,6 +1985,8 @@ struct GloryApi_UserBindWechatResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var bind: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -5524,6 +5526,7 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let protoMessageName: String = _protobuf_package + ".UserBindWechatResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .same(proto: "bind"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5533,6 +5536,7 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularBoolField(value: &self.bind) }()
       default: break
       }
     }
@@ -5546,11 +5550,15 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.bind != false {
+      try visitor.visitSingularBoolField(value: self.bind, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UserBindWechatResponse, rhs: GloryApi_UserBindWechatResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.bind != rhs.bind {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

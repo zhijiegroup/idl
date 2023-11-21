@@ -21,4 +21,10 @@ public interface UserBindWechatResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <code>bool bind = 2;</code>
+   * @return The bind.
+   */
+  boolean getBind();
 }
