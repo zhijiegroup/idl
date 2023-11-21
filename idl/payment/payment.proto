@@ -13,7 +13,6 @@ message Payment {
   float total_amount = 5;
   int64 supplier_payment_id = 6;
   string supplier_payment_url = 7;
-
 }
 
 message PaymentWithAuthor {
@@ -51,7 +50,6 @@ message UpdatePaymentResponse {
   int64 payment_id=2;
 }
 
-
 message DeletePaymentRequest {
   base.BaseRequest base_request=1;
   int64 payment_id =2;
@@ -60,4 +58,10 @@ message DeletePaymentResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message WechatPaymentNotifyRequest {
 
+}
+
+message WechatPaymentNotifyResponse {
+  
+}
