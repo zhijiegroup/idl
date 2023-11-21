@@ -64,6 +64,16 @@ public final class PaymentOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeletePaymentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_WechatPaymentNotifyRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_WechatPaymentNotifyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_WechatPaymentNotifyResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_WechatPaymentNotifyResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -99,8 +109,10 @@ public final class PaymentOuterClass {
       "ePaymentRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
       "base.BaseRequest\022\022\n\npayment_id\030\002 \001(\003\">\n\025" +
       "DeletePaymentResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponseB&\n\"com.zhijiejiaoyu" +
-      ".glory_api.paymentP\001b\006proto3"
+      "2\022.base.BaseResponse\"\034\n\032WechatPaymentNot" +
+      "ifyRequest\"\035\n\033WechatPaymentNotifyRespons" +
+      "eB&\n\"com.zhijiejiaoyu.glory_api.paymentP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -167,6 +179,18 @@ public final class PaymentOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeletePaymentResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_WechatPaymentNotifyRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_WechatPaymentNotifyRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_WechatPaymentNotifyRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_glory_api_WechatPaymentNotifyResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_WechatPaymentNotifyResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_WechatPaymentNotifyResponse_descriptor,
+        new java.lang.String[] { });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

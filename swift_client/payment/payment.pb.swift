@@ -284,6 +284,26 @@ struct GloryApi_DeletePaymentResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_WechatPaymentNotifyRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_WechatPaymentNotifyResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_Payment: @unchecked Sendable {}
 extension GloryApi_PaymentWithAuthor: @unchecked Sendable {}
@@ -295,6 +315,8 @@ extension GloryApi_UpdatePaymentRequest: @unchecked Sendable {}
 extension GloryApi_UpdatePaymentResponse: @unchecked Sendable {}
 extension GloryApi_DeletePaymentRequest: @unchecked Sendable {}
 extension GloryApi_DeletePaymentResponse: @unchecked Sendable {}
+extension GloryApi_WechatPaymentNotifyRequest: @unchecked Sendable {}
+extension GloryApi_WechatPaymentNotifyResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -742,6 +764,44 @@ extension GloryApi_DeletePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
 
   static func ==(lhs: GloryApi_DeletePaymentResponse, rhs: GloryApi_DeletePaymentResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_WechatPaymentNotifyRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".WechatPaymentNotifyRequest"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_WechatPaymentNotifyRequest, rhs: GloryApi_WechatPaymentNotifyRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_WechatPaymentNotifyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".WechatPaymentNotifyResponse"
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_WechatPaymentNotifyResponse, rhs: GloryApi_WechatPaymentNotifyResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

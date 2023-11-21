@@ -1050,6 +1050,14 @@ export class glory_api {
     );
   }
 
+  WechatPaymentNotify(request = {}) {
+    const uri = `${this.uriPrefix}/api/payment/wechat_notify`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/add_config`;
     const body = JSONbigint.stringify(request);

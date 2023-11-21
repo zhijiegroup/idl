@@ -166,3 +166,21 @@ final $typed_data.Uint8List deletePaymentResponseDescriptor = $convert.base64Dec
     'ChVEZWxldGVQYXltZW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
     'VzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use wechatPaymentNotifyRequestDescriptor instead')
+const WechatPaymentNotifyRequest$json = {
+  '1': 'WechatPaymentNotifyRequest',
+};
+
+/// Descriptor for `WechatPaymentNotifyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List wechatPaymentNotifyRequestDescriptor = $convert.base64Decode(
+    'ChpXZWNoYXRQYXltZW50Tm90aWZ5UmVxdWVzdA==');
+
+@$core.Deprecated('Use wechatPaymentNotifyResponseDescriptor instead')
+const WechatPaymentNotifyResponse$json = {
+  '1': 'WechatPaymentNotifyResponse',
+};
+
+/// Descriptor for `WechatPaymentNotifyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List wechatPaymentNotifyResponseDescriptor = $convert.base64Decode(
+    'ChtXZWNoYXRQYXltZW50Tm90aWZ5UmVzcG9uc2U=');
+
