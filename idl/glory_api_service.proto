@@ -511,6 +511,9 @@ service glory_api {
   rpc DeletePayment(DeletePaymentRequest) returns (DeletePaymentResponse) {
     option (api.post) = '/api/payment/delete_payment';
   }
+  rpc WechatPaymentNotify(WechatPaymentNotifyRequest) returns (WechatPaymentNotifyResponse) {
+    option (api.post) = '/api/payment/wechat_notify';
+  }
 
   //admin_config
   rpc CreateConfig(CreateConfigRequest) returns (CreateConfigResponse) {

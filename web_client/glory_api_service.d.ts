@@ -568,6 +568,10 @@ list the permissions that supported */
     request: payment.DeletePaymentRequest
   ): Promise<payment.DeletePaymentResponse>;
 
+  WechatPaymentNotify(
+    request?: payment.WechatPaymentNotifyRequest
+  ): Promise<payment.WechatPaymentNotifyResponse>;
+
   /** admin_config */
   CreateConfig(
     request: config.CreateConfigRequest

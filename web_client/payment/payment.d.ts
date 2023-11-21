@@ -59,3 +59,7 @@ export interface DeletePaymentRequest {
 export interface DeletePaymentResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface WechatPaymentNotifyRequest {}
+
+export interface WechatPaymentNotifyResponse {}

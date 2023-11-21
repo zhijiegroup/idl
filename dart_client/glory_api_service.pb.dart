@@ -431,6 +431,9 @@ class glory_apiApi {
   $async.Future<$17.DeletePaymentResponse> deletePayment($pb.ClientContext? ctx, $17.DeletePaymentRequest request) =>
     _client.invoke<$17.DeletePaymentResponse>(ctx, 'glory_api', 'DeletePayment', request, $17.DeletePaymentResponse())
   ;
+  $async.Future<$17.WechatPaymentNotifyResponse> wechatPaymentNotify($pb.ClientContext? ctx, $17.WechatPaymentNotifyRequest request) =>
+    _client.invoke<$17.WechatPaymentNotifyResponse>(ctx, 'glory_api', 'WechatPaymentNotify', request, $17.WechatPaymentNotifyResponse())
+  ;
   $async.Future<$18.CreateConfigResponse> createConfig($pb.ClientContext? ctx, $18.CreateConfigRequest request) =>
     _client.invoke<$18.CreateConfigResponse>(ctx, 'glory_api', 'CreateConfig', request, $18.CreateConfigResponse())
   ;

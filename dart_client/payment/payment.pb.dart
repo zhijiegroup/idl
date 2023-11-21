@@ -752,6 +752,70 @@ class DeletePaymentResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class WechatPaymentNotifyRequest extends $pb.GeneratedMessage {
+  factory WechatPaymentNotifyRequest() => create();
+  WechatPaymentNotifyRequest._() : super();
+  factory WechatPaymentNotifyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WechatPaymentNotifyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WechatPaymentNotifyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WechatPaymentNotifyRequest clone() => WechatPaymentNotifyRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WechatPaymentNotifyRequest copyWith(void Function(WechatPaymentNotifyRequest) updates) => super.copyWith((message) => updates(message as WechatPaymentNotifyRequest)) as WechatPaymentNotifyRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WechatPaymentNotifyRequest create() => WechatPaymentNotifyRequest._();
+  WechatPaymentNotifyRequest createEmptyInstance() => create();
+  static $pb.PbList<WechatPaymentNotifyRequest> createRepeated() => $pb.PbList<WechatPaymentNotifyRequest>();
+  @$core.pragma('dart2js:noInline')
+  static WechatPaymentNotifyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WechatPaymentNotifyRequest>(create);
+  static WechatPaymentNotifyRequest? _defaultInstance;
+}
+
+class WechatPaymentNotifyResponse extends $pb.GeneratedMessage {
+  factory WechatPaymentNotifyResponse() => create();
+  WechatPaymentNotifyResponse._() : super();
+  factory WechatPaymentNotifyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WechatPaymentNotifyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WechatPaymentNotifyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WechatPaymentNotifyResponse clone() => WechatPaymentNotifyResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WechatPaymentNotifyResponse copyWith(void Function(WechatPaymentNotifyResponse) updates) => super.copyWith((message) => updates(message as WechatPaymentNotifyResponse)) as WechatPaymentNotifyResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WechatPaymentNotifyResponse create() => WechatPaymentNotifyResponse._();
+  WechatPaymentNotifyResponse createEmptyInstance() => create();
+  static $pb.PbList<WechatPaymentNotifyResponse> createRepeated() => $pb.PbList<WechatPaymentNotifyResponse>();
+  @$core.pragma('dart2js:noInline')
+  static WechatPaymentNotifyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WechatPaymentNotifyResponse>(create);
+  static WechatPaymentNotifyResponse? _defaultInstance;
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
