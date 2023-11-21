@@ -359,6 +359,16 @@ public final class UserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UserBindWechatRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UserBindWechatRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UserBindWechatResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UserBindWechatResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -572,8 +582,12 @@ public final class UserOuterClass {
       "uest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010user_id" +
       "s\030\002 \003(\003\"Y\n\020ListUserResponse\022%\n\tbase_resp" +
       "\030\001 \001(\0132\022.base.BaseResponse\022\036\n\005users\030\002 \003(" +
-      "\0132\017.glory_api.UserB#\n\037com.zhijiejiaoyu.g" +
-      "lory_api.userP\001b\006proto3"
+      "\0132\017.glory_api.User\"a\n\025UserBindWechatRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007user_id\030\002 \001(\003\022\016\n\006openid\030\003 \001(\t\"?\n" +
+      "\026UserBindWechatResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
+      "yu.glory_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -997,6 +1011,18 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Users", });
+    internal_static_glory_api_UserBindWechatRequest_descriptor =
+      getDescriptor().getMessageTypes().get(69);
+    internal_static_glory_api_UserBindWechatRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UserBindWechatRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "UserId", "Openid", });
+    internal_static_glory_api_UserBindWechatResponse_descriptor =
+      getDescriptor().getMessageTypes().get(70);
+    internal_static_glory_api_UserBindWechatResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UserBindWechatResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();
