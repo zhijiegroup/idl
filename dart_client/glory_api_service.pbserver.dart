@@ -87,6 +87,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$1.UpdateUserTenantResponse> updateUserTenant($pb.ServerContext ctx, $1.UpdateUserTenantRequest request);
   $async.Future<$1.ListUserResponse> listUser($pb.ServerContext ctx, $1.ListUserRequest request);
   $async.Future<$1.UserBindWechatResponse> userBindWechat($pb.ServerContext ctx, $1.UserBindWechatRequest request);
+  $async.Future<$1.UserUnbindWechatResponse> userUnbindWechat($pb.ServerContext ctx, $1.UserUnbindWechatRequest request);
   $async.Future<$1.FollowUserResponse> followUser($pb.ServerContext ctx, $1.FollowUserRequest request);
   $async.Future<$1.ListMyFollowingResponse> listMyFollowing($pb.ServerContext ctx, $1.ListMyFollowingRequest request);
   $async.Future<$1.ListMyFollowerResponse> listMyFollower($pb.ServerContext ctx, $1.ListMyFollowerRequest request);
@@ -414,6 +415,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateUserTenant': return $1.UpdateUserTenantRequest();
       case 'ListUser': return $1.ListUserRequest();
       case 'UserBindWechat': return $1.UserBindWechatRequest();
+      case 'UserUnbindWechat': return $1.UserUnbindWechatRequest();
       case 'FollowUser': return $1.FollowUserRequest();
       case 'ListMyFollowing': return $1.ListMyFollowingRequest();
       case 'ListMyFollower': return $1.ListMyFollowerRequest();
@@ -744,6 +746,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateUserTenant': return this.updateUserTenant(ctx, request as $1.UpdateUserTenantRequest);
       case 'ListUser': return this.listUser(ctx, request as $1.ListUserRequest);
       case 'UserBindWechat': return this.userBindWechat(ctx, request as $1.UserBindWechatRequest);
+      case 'UserUnbindWechat': return this.userUnbindWechat(ctx, request as $1.UserUnbindWechatRequest);
       case 'FollowUser': return this.followUser(ctx, request as $1.FollowUserRequest);
       case 'ListMyFollowing': return this.listMyFollowing(ctx, request as $1.ListMyFollowingRequest);
       case 'ListMyFollower': return this.listMyFollower(ctx, request as $1.ListMyFollowerRequest);

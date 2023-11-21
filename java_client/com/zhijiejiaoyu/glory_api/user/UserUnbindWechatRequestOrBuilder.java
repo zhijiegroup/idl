@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.user;
 
-public interface UserBindWechatRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.UserBindWechatRequest)
+public interface UserUnbindWechatRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.UserUnbindWechatRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -21,16 +21,4 @@ public interface UserBindWechatRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
-
-  /**
-   * <code>string code = 3;</code>
-   * @return The code.
-   */
-  java.lang.String getCode();
-  /**
-   * <code>string code = 3;</code>
-   * @return The bytes for code.
-   */
-  com.google.protobuf.ByteString
-      getCodeBytes();
 }

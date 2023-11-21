@@ -120,6 +120,9 @@ class glory_apiApi {
   $async.Future<$1.UserBindWechatResponse> userBindWechat($pb.ClientContext? ctx, $1.UserBindWechatRequest request) =>
     _client.invoke<$1.UserBindWechatResponse>(ctx, 'glory_api', 'UserBindWechat', request, $1.UserBindWechatResponse())
   ;
+  $async.Future<$1.UserUnbindWechatResponse> userUnbindWechat($pb.ClientContext? ctx, $1.UserUnbindWechatRequest request) =>
+    _client.invoke<$1.UserUnbindWechatResponse>(ctx, 'glory_api', 'UserUnbindWechat', request, $1.UserUnbindWechatResponse())
+  ;
   $async.Future<$1.FollowUserResponse> followUser($pb.ClientContext? ctx, $1.FollowUserRequest request) =>
     _client.invoke<$1.FollowUserResponse>(ctx, 'glory_api', 'FollowUser', request, $1.FollowUserResponse())
   ;

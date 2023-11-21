@@ -484,11 +484,18 @@ export interface ListUserResponse {
 
 export interface UserBindWechatRequest {
   base_request?: base.BaseRequest;
-  user_id?: string;
   code?: string;
 }
 
 export interface UserBindWechatResponse {
   base_resp?: base.BaseResponse;
   bind?: boolean;
+}
+
+export interface UserUnbindWechatRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface UserUnbindWechatResponse {
+  base_resp?: base.BaseResponse;
 }

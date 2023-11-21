@@ -4,26 +4,25 @@
 package com.zhijiejiaoyu.glory_api.user;
 
 /**
- * Protobuf type {@code glory_api.UserBindWechatRequest}
+ * Protobuf type {@code glory_api.UserUnbindWechatRequest}
  */
-public final class UserBindWechatRequest extends
+public final class UserUnbindWechatRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.UserBindWechatRequest)
-    UserBindWechatRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.UserUnbindWechatRequest)
+    UserUnbindWechatRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UserBindWechatRequest.newBuilder() to construct.
-  private UserBindWechatRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UserUnbindWechatRequest.newBuilder() to construct.
+  private UserUnbindWechatRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UserBindWechatRequest() {
-    code = "";
+  private UserUnbindWechatRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UserBindWechatRequest();
+    return new UserUnbindWechatRequest();
   }
 
   @java.lang.Override
@@ -31,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UserBindWechatRequest(
+  private UserUnbindWechatRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,12 +61,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            code = s;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,15 +82,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserBindWechatRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserUnbindWechatRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserBindWechatRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserUnbindWechatRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.class, com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.class, com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -126,44 +119,6 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object code ;
-  /**
-   * <code>string code = 3;</code>
-   * @return The code.
-   */
-  @java.lang.Override
-  public java.lang.String getCode() {
-    java.lang.Object ref = code ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      code = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string code = 3;</code>
-   * @return The bytes for code.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCodeBytes() {
-    java.lang.Object ref = code ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      code = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -181,9 +136,6 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (!getCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, code );
-    }
     unknownFields.writeTo(output);
   }
 
@@ -197,9 +149,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (!getCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, code );
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -210,18 +159,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest other = (com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest) obj;
+    com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest other = (com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (!getCode()
-        .equals(other.getCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,76 +184,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -319,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -335,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.UserBindWechatRequest}
+   * Protobuf type {@code glory_api.UserUnbindWechatRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.UserBindWechatRequest)
-      com.zhijiejiaoyu.glory_api.user.UserBindWechatRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.UserUnbindWechatRequest)
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserBindWechatRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserUnbindWechatRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserBindWechatRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserUnbindWechatRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.class, com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.class, com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -378,25 +323,23 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      code = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserBindWechatRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.user.UserOuterClass.internal_static_glory_api_UserUnbindWechatRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest build() {
-      com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest build() {
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -404,14 +347,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest result = new com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest(this);
+    public com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest result = new com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest(this);
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.code = code ;
       onBuilt();
       return result;
     }
@@ -450,22 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
-      }
-      if (!other.getCode().isEmpty()) {
-        code = other.code ;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -482,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -614,82 +552,6 @@ private static final long serialVersionUID = 0L;
       }
       return baseRequestBuilder ;
     }
-
-    private java.lang.Object code = "";
-    /**
-     * <code>string code = 3;</code>
-     * @return The code.
-     */
-    public java.lang.String getCode() {
-      java.lang.Object ref = code ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        code = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string code = 3;</code>
-     * @return The bytes for code.
-     */
-    public com.google.protobuf.ByteString
-        getCodeBytes() {
-      java.lang.Object ref = code ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        code = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string code = 3;</code>
-     * @param value The code to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCode(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      code = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string code = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCode() {
-      
-      code = getDefaultInstance().getCode();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string code = 3;</code>
-     * @param value The bytes for code to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCodeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      code = value;
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -703,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.UserBindWechatRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.UserUnbindWechatRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.UserBindWechatRequest)
-  private static final com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.UserUnbindWechatRequest)
+  private static final com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UserBindWechatRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UserBindWechatRequest>() {
+  private static final com.google.protobuf.Parser<UserUnbindWechatRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UserUnbindWechatRequest>() {
     @java.lang.Override
-    public UserBindWechatRequest parsePartialFrom(
+    public UserUnbindWechatRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UserBindWechatRequest(input, extensionRegistry);
+      return new UserUnbindWechatRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UserBindWechatRequest> parser() {
+  public static com.google.protobuf.Parser<UserUnbindWechatRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UserBindWechatRequest> getParserForType() {
+  public com.google.protobuf.Parser<UserUnbindWechatRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

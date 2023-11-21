@@ -542,6 +542,37 @@ public final class glory_apiGrpc {
     return getUserBindWechatMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest,
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> getUserUnbindWechatMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UserUnbindWechat",
+      requestType = com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest,
+      com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> getUserUnbindWechatMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest, com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> getUserUnbindWechatMethod;
+    if ((getUserUnbindWechatMethod = glory_apiGrpc.getUserUnbindWechatMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUserUnbindWechatMethod = glory_apiGrpc.getUserUnbindWechatMethod) == null) {
+          glory_apiGrpc.getUserUnbindWechatMethod = getUserUnbindWechatMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest, com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UserUnbindWechat"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UserUnbindWechat"))
+              .build();
+        }
+      }
+    }
+    return getUserUnbindWechatMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.user.FollowUserRequest,
       com.zhijiejiaoyu.glory_api.user.FollowUserResponse> getFollowUserMethod;
 
@@ -10252,6 +10283,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 微信解绑接口
+     * </pre>
+     */
+    default void userUnbindWechat(com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUserUnbindWechatMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 关注用户
      * </pre>
      */
@@ -12885,6 +12926,17 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UserBindWechatResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUserBindWechatMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 微信解绑接口
+     * </pre>
+     */
+    public void userUnbindWechat(com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUserUnbindWechatMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -15805,6 +15857,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 微信解绑接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse userUnbindWechat(com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUserUnbindWechatMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * 关注用户
      * </pre>
      */
@@ -18427,6 +18489,17 @@ public final class glory_apiGrpc {
         com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUserBindWechatMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 微信解绑接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse> userUnbindWechat(
+        com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUserUnbindWechatMethod(), getCallOptions()), request);
     }
 
     /**
@@ -21203,313 +21276,314 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_USER_TENANT = 14;
   private static final int METHODID_LIST_USER = 15;
   private static final int METHODID_USER_BIND_WECHAT = 16;
-  private static final int METHODID_FOLLOW_USER = 17;
-  private static final int METHODID_LIST_MY_FOLLOWING = 18;
-  private static final int METHODID_LIST_MY_FOLLOWER = 19;
-  private static final int METHODID_LIST_MY_FRIEND = 20;
-  private static final int METHODID_GET_MY_SOCIAL_SUMMARY = 21;
-  private static final int METHODID_GET_USER_PAGE_PERMISSION = 22;
-  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 23;
-  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 24;
-  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 25;
-  private static final int METHODID_ADD_ADDRESS = 26;
-  private static final int METHODID_DELETE_ADDRESS = 27;
-  private static final int METHODID_UPDATE_ADDRESS = 28;
-  private static final int METHODID_GET_ADDRESS = 29;
-  private static final int METHODID_LIST_ADDRESS = 30;
-  private static final int METHODID_LIST_USER_BY_ROLE = 31;
-  private static final int METHODID_LIST_PERMISSION = 32;
-  private static final int METHODID_LIST_ROLE = 33;
-  private static final int METHODID_GIVE_ROLE_PERMISSION = 34;
-  private static final int METHODID_REMOVE_ROLE_PERMISSION = 35;
-  private static final int METHODID_CREATE_ROLE = 36;
-  private static final int METHODID_DELETE_ROLE = 37;
-  private static final int METHODID_LIST_RESOURCE = 38;
-  private static final int METHODID_GET_ROLE_TYPE = 39;
-  private static final int METHODID_GET_ROLE_TEMPLATE = 40;
-  private static final int METHODID_UPDATE_ROLE_TEMPLATE = 41;
-  private static final int METHODID_CREATE_SHOP = 42;
-  private static final int METHODID_GET_SHOP = 43;
-  private static final int METHODID_UPDATE_SHOP = 44;
-  private static final int METHODID_LIST_SHOP = 45;
-  private static final int METHODID_DELETE_SHOP = 46;
-  private static final int METHODID_LIST_OPERATION_METRICS = 47;
-  private static final int METHODID_GET_SHOP_QRCODE = 48;
-  private static final int METHODID_UPDATE_SHOP_MANAGER = 49;
-  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 50;
-  private static final int METHODID_ADD_SHOP_ACCESS = 51;
-  private static final int METHODID_REMOVE_SHOP_ACCESS = 52;
-  private static final int METHODID_VERIFY_FIELD = 53;
-  private static final int METHODID_LIST_SHOP_ACCESS = 54;
-  private static final int METHODID_ADD_SHOP_CATEGORY = 55;
-  private static final int METHODID_GET_SHOP_CATEGORY = 56;
-  private static final int METHODID_REMOVE_SHOP_CATEGORY = 57;
-  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 58;
-  private static final int METHODID_GET_FREIGHT_TEMPLATE = 59;
-  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 60;
-  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 61;
-  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 62;
-  private static final int METHODID_LIST_QUALIFICATION = 63;
-  private static final int METHODID_GET_MALL_INDEX = 64;
-  private static final int METHODID_CREATE_CATEGORY = 65;
-  private static final int METHODID_GET_CATEGORY = 66;
-  private static final int METHODID_UPDATE_CATEGORY = 67;
-  private static final int METHODID_LIST_CATEGORY = 68;
-  private static final int METHODID_DELETE_CATEGORY = 69;
-  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 70;
-  private static final int METHODID_CREATE_PRODUCT = 71;
-  private static final int METHODID_GET_PRODUCT = 72;
-  private static final int METHODID_UPDATE_PRODUCT = 73;
-  private static final int METHODID_LIST_PRODUCT = 74;
-  private static final int METHODID_LIST_PRODUCT_BY_IDS = 75;
-  private static final int METHODID_DELETE_PRODUCT = 76;
-  private static final int METHODID_UPLOAD_MULTI_IMAGE = 77;
-  private static final int METHODID_DELETE_IMAGE_BY_ID = 78;
-  private static final int METHODID_BIND_ATTRIBUTE = 79;
-  private static final int METHODID_PUBLISH_PRODUCT = 80;
-  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 81;
-  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 82;
-  private static final int METHODID_CHANGE_PRODUCTS_STATE = 83;
-  private static final int METHODID_SAVE_PRODUCT_IMAGE_INFO = 84;
-  private static final int METHODID_CREATE_SKU = 85;
-  private static final int METHODID_GET_SKU = 86;
-  private static final int METHODID_UPDATE_SKU = 87;
-  private static final int METHODID_LIST_SKU = 88;
-  private static final int METHODID_DELETE_SKU = 89;
-  private static final int METHODID_CREATE_ATTRIBUTE = 90;
-  private static final int METHODID_GET_ATTRIBUTE = 91;
-  private static final int METHODID_LIST_ATTRIBUTE = 92;
-  private static final int METHODID_DELETE_ATTRIBUTE = 93;
-  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 94;
-  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 95;
-  private static final int METHODID_CREATE_ORDER = 96;
-  private static final int METHODID_GET_ORDER = 97;
-  private static final int METHODID_UPDATE_ORDER = 98;
-  private static final int METHODID_LIST_ORDER = 99;
-  private static final int METHODID_DELETE_ORDER = 100;
-  private static final int METHODID_SHIP_GOODS = 101;
-  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 102;
-  private static final int METHODID_CANCEL_ORDER = 103;
-  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 104;
-  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 105;
-  private static final int METHODID_LIST_SHOP_SUMMARY = 106;
-  private static final int METHODID_LIST_SHOP_BY_SELLER_ID = 107;
-  private static final int METHODID_CREATE_CART = 108;
-  private static final int METHODID_GET_CART = 109;
-  private static final int METHODID_UPDATE_CART = 110;
-  private static final int METHODID_DELETE_CART = 111;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 112;
-  private static final int METHODID_SAVE_ATTACHMENT = 113;
-  private static final int METHODID_LIST_ATTACHMENT = 114;
-  private static final int METHODID_DELETE_ATTACHMENT = 115;
-  private static final int METHODID_CREATE_SELLER = 116;
-  private static final int METHODID_CREATE_PAYMENT = 117;
-  private static final int METHODID_GET_PAYMENT = 118;
-  private static final int METHODID_UPDATE_PAYMENT = 119;
-  private static final int METHODID_DELETE_PAYMENT = 120;
-  private static final int METHODID_WECHAT_PAYMENT_NOTIFY = 121;
-  private static final int METHODID_CREATE_CONFIG = 122;
-  private static final int METHODID_UPDATE_CONFIG = 123;
-  private static final int METHODID_DELETE_CONFIG = 124;
-  private static final int METHODID_GET_CONFIG = 125;
-  private static final int METHODID_GET_STS = 126;
-  private static final int METHODID_GENERATE_WEBOFFICE_TOKEN = 127;
-  private static final int METHODID_REFRESH_WEBOFFICE_TOKEN = 128;
-  private static final int METHODID_LIST_TENANT_ORG = 129;
-  private static final int METHODID_GET_ADMIN_TENANT = 130;
-  private static final int METHODID_LIST_ADMIN_USER = 131;
-  private static final int METHODID_CREATE_ADMIN_USER = 132;
-  private static final int METHODID_UPDATE_ADMIN_USER = 133;
-  private static final int METHODID_DELETE_ADMIN_USER = 134;
-  private static final int METHODID_WX_PREPAY = 135;
-  private static final int METHODID_CLOSE_ORDER = 136;
-  private static final int METHODID_QUERY_ORDER_BY_ID = 137;
-  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 138;
-  private static final int METHODID_ADD_VCURRENCY = 139;
-  private static final int METHODID_RECHARGE_CURRENCY = 140;
-  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 141;
-  private static final int METHODID_GET_VCURRENCY = 142;
-  private static final int METHODID_LIST_VCURRENCY = 143;
-  private static final int METHODID_LIST_ACCOUNT_OPERATION = 144;
-  private static final int METHODID_CREATE_ROOM = 145;
-  private static final int METHODID_GET_ROOM = 146;
-  private static final int METHODID_UPDATE_ROOM = 147;
-  private static final int METHODID_LIST_ROOM = 148;
-  private static final int METHODID_DELETE_ROOM = 149;
-  private static final int METHODID_LIST_FINISHED_ROOM = 150;
-  private static final int METHODID_GET_FINISHED_ROOM = 151;
-  private static final int METHODID_RECORD = 152;
-  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 153;
-  private static final int METHODID_USER_ENTER_ROOM = 154;
-  private static final int METHODID_USER_EXIT_ROOM = 155;
-  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 156;
-  private static final int METHODID_LIVE_SSE = 157;
-  private static final int METHODID_CLOSE_SHOP_ALL_LIVE = 158;
-  private static final int METHODID_UPDATE_LIVE_COMMENT_COUNT = 159;
-  private static final int METHODID_CREATE_LIVE_PLAN = 160;
-  private static final int METHODID_GET_LIVE_PLAN = 161;
-  private static final int METHODID_UPDATE_LIVE_PLAN = 162;
-  private static final int METHODID_LIST_LIVE_PLAN = 163;
-  private static final int METHODID_DELETE_LIVE_PLAN = 164;
-  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 165;
-  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 166;
-  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 167;
-  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 168;
-  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 169;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 170;
-  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 171;
-  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 172;
-  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 173;
-  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 174;
-  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 175;
-  private static final int METHODID_CREATE_LIVE_TEXT = 176;
-  private static final int METHODID_UPDATE_LIVE_TEXT = 177;
-  private static final int METHODID_LIST_LIVE_TEXT = 178;
-  private static final int METHODID_GET_LIVE_TEXT = 179;
-  private static final int METHODID_DELETE_LIVE_TEXTS = 180;
-  private static final int METHODID_GET_LIVE_CHART_DATA = 181;
-  private static final int METHODID_GET_EVALUATE_SELECTOR = 182;
-  private static final int METHODID_LIST_PERSONAL_EVALUATE = 183;
-  private static final int METHODID_GET_EVALUATE_DETAIL = 184;
-  private static final int METHODID_SUBMIT_EVALUATE = 185;
-  private static final int METHODID_LIST_UNEVALUATED_ROOM = 186;
-  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 187;
-  private static final int METHODID_IGNORE_EVALUATION = 188;
-  private static final int METHODID_GET_RANK = 189;
-  private static final int METHODID_RECORD_LIVE_CALLBACK = 190;
-  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 191;
-  private static final int METHODID_LIVE_STREAM_CALLBACK = 192;
-  private static final int METHODID_REGENERATION_AI_FEEDBACK = 193;
-  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 194;
-  private static final int METHODID_PREHEAT_PRODUCT = 195;
-  private static final int METHODID_PUBLIC_PRICE = 196;
-  private static final int METHODID_CREATE_TENANT = 197;
-  private static final int METHODID_GET_TENANT = 198;
-  private static final int METHODID_UPDATE_TENANT = 199;
-  private static final int METHODID_DELETE_TENANT = 200;
-  private static final int METHODID_LIST_TENANT = 201;
-  private static final int METHODID_GET_TENANT_ORG = 202;
-  private static final int METHODID_ENTER_TENANT = 203;
-  private static final int METHODID_EXIT_TENANT = 204;
-  private static final int METHODID_INIT_TENANT = 205;
-  private static final int METHODID_CREATE_TENANT_DEPT = 206;
-  private static final int METHODID_UPDATE_TENANT_DEPT = 207;
-  private static final int METHODID_DELETE_TENANT_DEPT = 208;
-  private static final int METHODID_GET_TENANT_DEPT = 209;
-  private static final int METHODID_GET_TENANT_DEPT_TYPE = 210;
-  private static final int METHODID_LIST_TENANT_DEPT = 211;
-  private static final int METHODID_CREATE_TENANT_USER = 212;
-  private static final int METHODID_DELETE_TENANT_USER = 213;
-  private static final int METHODID_UPDATE_TENANT_USER = 214;
-  private static final int METHODID_GET_TENANT_USER = 215;
-  private static final int METHODID_LIST_TENANT_USER = 216;
-  private static final int METHODID_LIST_TENANT_STUDENT = 217;
-  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 218;
-  private static final int METHODID_UPDATE_TENANT_CONFIG = 219;
-  private static final int METHODID_LIST_TENANT_CONFIG = 220;
-  private static final int METHODID_CREATE_SHORT_VIDEO = 221;
-  private static final int METHODID_STAGE_SHORT_VIDEO = 222;
-  private static final int METHODID_LIST_MY_SHORT_VIDEO = 223;
-  private static final int METHODID_LIST_MY_STAGE_VIDEO = 224;
-  private static final int METHODID_LIST_MY_LIKE_VIDEO = 225;
-  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 226;
-  private static final int METHODID_GET_SHORT_VIDEO = 227;
-  private static final int METHODID_UPDATE_SHORT_VIDEO = 228;
-  private static final int METHODID_DELETE_SHORT_VIDEO = 229;
-  private static final int METHODID_GET_STAGE_VIDEO = 230;
-  private static final int METHODID_DELETE_STAGE_VIDEO = 231;
-  private static final int METHODID_UPDATE_STAGE_VIDEO = 232;
-  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 233;
-  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 234;
-  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 235;
-  private static final int METHODID_LIST_SHORT_VIDEO = 236;
-  private static final int METHODID_LIKE_SHORT_VIDEO = 237;
-  private static final int METHODID_FAVORITE_SHORT_VIDEO = 238;
-  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 239;
-  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 240;
-  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 241;
-  private static final int METHODID_CREATE_COUPON = 242;
-  private static final int METHODID_LIST_COUPON = 243;
-  private static final int METHODID_COUPON_DETAIL = 244;
-  private static final int METHODID_UPDATE_COUPON = 245;
-  private static final int METHODID_DELETE_COUPON = 246;
-  private static final int METHODID_ABOLISH_COUPON = 247;
-  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 248;
-  private static final int METHODID_CLAIM_COUPON = 249;
-  private static final int METHODID_LIST_MY_COUPON = 250;
-  private static final int METHODID_CREATE_ACTIVITY = 251;
-  private static final int METHODID_LIST_ACTIVITY = 252;
-  private static final int METHODID_ACTIVITY_DETAIL = 253;
-  private static final int METHODID_UPDATE_ACTIVITY = 254;
-  private static final int METHODID_DELETE_ACTIVITY = 255;
-  private static final int METHODID_DISABLE_ACTIVITY = 256;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 257;
-  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 258;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 259;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 260;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 261;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 262;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 263;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 264;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 265;
-  private static final int METHODID_CREATE_COURSE_MODULE = 266;
-  private static final int METHODID_GET_COURSE_MODULE = 267;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 268;
-  private static final int METHODID_DELETE_COURSE_MODULE = 269;
-  private static final int METHODID_LIST_COURSE_MODULE = 270;
-  private static final int METHODID_LIST_LATEST_COURSE = 271;
-  private static final int METHODID_LIST_HOTEST_COURSE = 272;
-  private static final int METHODID_CREATE_CM_COURSE = 273;
-  private static final int METHODID_PREVIEW_CM_COURSE = 274;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 275;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 276;
-  private static final int METHODID_CREATE_NM_COURSE = 277;
-  private static final int METHODID_LIST_NM_COURSE = 278;
-  private static final int METHODID_NM_COURSE_DETAIL = 279;
-  private static final int METHODID_DELETE_NM_COURSE = 280;
-  private static final int METHODID_CREATE_COURSE = 281;
-  private static final int METHODID_GET_COURSE = 282;
-  private static final int METHODID_UPDATE_COURSE = 283;
-  private static final int METHODID_DELETE_COURSE = 284;
-  private static final int METHODID_LIST_COURSE = 285;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 286;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 287;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 288;
-  private static final int METHODID_GET_MAJOR_CODE = 289;
-  private static final int METHODID_GET_COURSE_IDS = 290;
-  private static final int METHODID_ENROLL_COURSE = 291;
-  private static final int METHODID_DELETE_MY_COURSE = 292;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 293;
-  private static final int METHODID_LIST_MY_COURSE = 294;
-  private static final int METHODID_LIST_TEACHING_PLAN = 295;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 296;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 297;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 298;
-  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 299;
-  private static final int METHODID_CREATE_EDU_SCHEME = 300;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 301;
-  private static final int METHODID_LIST_EDU_SCHEME = 302;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 303;
-  private static final int METHODID_DELETE_EDU_SCHEME = 304;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 305;
-  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 306;
-  private static final int METHODID_GET_ANDROID_QRCODE = 307;
-  private static final int METHODID_CREATE_JOB = 308;
-  private static final int METHODID_UPDATE_JOB = 309;
-  private static final int METHODID_DELETE_JOB = 310;
-  private static final int METHODID_LIST_JOB = 311;
-  private static final int METHODID_GET_SCHOO_LIVE_CHART = 312;
-  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 313;
-  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 314;
-  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 315;
-  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 316;
-  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 317;
-  private static final int METHODID_LIST_TRAFFIC_WARNING = 318;
-  private static final int METHODID_DELETE_TRAFFIC_WARNING = 319;
-  private static final int METHODID_CREATE_LIVE_CONTROL = 320;
-  private static final int METHODID_UPDATE_LIVE_CONTROL = 321;
-  private static final int METHODID_LIST_LIVE_CONTROL = 322;
-  private static final int METHODID_DELETE_LIVE_CONTROL = 323;
+  private static final int METHODID_USER_UNBIND_WECHAT = 17;
+  private static final int METHODID_FOLLOW_USER = 18;
+  private static final int METHODID_LIST_MY_FOLLOWING = 19;
+  private static final int METHODID_LIST_MY_FOLLOWER = 20;
+  private static final int METHODID_LIST_MY_FRIEND = 21;
+  private static final int METHODID_GET_MY_SOCIAL_SUMMARY = 22;
+  private static final int METHODID_GET_USER_PAGE_PERMISSION = 23;
+  private static final int METHODID_CREATE_ROLE_PAGE_PERMISSION = 24;
+  private static final int METHODID_UPDATE_ROLE_PAGE_PERMISSION = 25;
+  private static final int METHODID_GET_ROLE_PAGE_PERMISSION = 26;
+  private static final int METHODID_ADD_ADDRESS = 27;
+  private static final int METHODID_DELETE_ADDRESS = 28;
+  private static final int METHODID_UPDATE_ADDRESS = 29;
+  private static final int METHODID_GET_ADDRESS = 30;
+  private static final int METHODID_LIST_ADDRESS = 31;
+  private static final int METHODID_LIST_USER_BY_ROLE = 32;
+  private static final int METHODID_LIST_PERMISSION = 33;
+  private static final int METHODID_LIST_ROLE = 34;
+  private static final int METHODID_GIVE_ROLE_PERMISSION = 35;
+  private static final int METHODID_REMOVE_ROLE_PERMISSION = 36;
+  private static final int METHODID_CREATE_ROLE = 37;
+  private static final int METHODID_DELETE_ROLE = 38;
+  private static final int METHODID_LIST_RESOURCE = 39;
+  private static final int METHODID_GET_ROLE_TYPE = 40;
+  private static final int METHODID_GET_ROLE_TEMPLATE = 41;
+  private static final int METHODID_UPDATE_ROLE_TEMPLATE = 42;
+  private static final int METHODID_CREATE_SHOP = 43;
+  private static final int METHODID_GET_SHOP = 44;
+  private static final int METHODID_UPDATE_SHOP = 45;
+  private static final int METHODID_LIST_SHOP = 46;
+  private static final int METHODID_DELETE_SHOP = 47;
+  private static final int METHODID_LIST_OPERATION_METRICS = 48;
+  private static final int METHODID_GET_SHOP_QRCODE = 49;
+  private static final int METHODID_UPDATE_SHOP_MANAGER = 50;
+  private static final int METHODID_GET_SHOP_BUSINESS_DATA = 51;
+  private static final int METHODID_ADD_SHOP_ACCESS = 52;
+  private static final int METHODID_REMOVE_SHOP_ACCESS = 53;
+  private static final int METHODID_VERIFY_FIELD = 54;
+  private static final int METHODID_LIST_SHOP_ACCESS = 55;
+  private static final int METHODID_ADD_SHOP_CATEGORY = 56;
+  private static final int METHODID_GET_SHOP_CATEGORY = 57;
+  private static final int METHODID_REMOVE_SHOP_CATEGORY = 58;
+  private static final int METHODID_ADD_FREIGHT_TEMPLATE = 59;
+  private static final int METHODID_GET_FREIGHT_TEMPLATE = 60;
+  private static final int METHODID_UPDATE_FREIGHT_TEMPLATE = 61;
+  private static final int METHODID_DELETE_FREIGHT_TEMPLATE = 62;
+  private static final int METHODID_LIST_FREIGHT_TEMPLATE = 63;
+  private static final int METHODID_LIST_QUALIFICATION = 64;
+  private static final int METHODID_GET_MALL_INDEX = 65;
+  private static final int METHODID_CREATE_CATEGORY = 66;
+  private static final int METHODID_GET_CATEGORY = 67;
+  private static final int METHODID_UPDATE_CATEGORY = 68;
+  private static final int METHODID_LIST_CATEGORY = 69;
+  private static final int METHODID_DELETE_CATEGORY = 70;
+  private static final int METHODID_LIST_CATEGORY_QUALIFICATION = 71;
+  private static final int METHODID_CREATE_PRODUCT = 72;
+  private static final int METHODID_GET_PRODUCT = 73;
+  private static final int METHODID_UPDATE_PRODUCT = 74;
+  private static final int METHODID_LIST_PRODUCT = 75;
+  private static final int METHODID_LIST_PRODUCT_BY_IDS = 76;
+  private static final int METHODID_DELETE_PRODUCT = 77;
+  private static final int METHODID_UPLOAD_MULTI_IMAGE = 78;
+  private static final int METHODID_DELETE_IMAGE_BY_ID = 79;
+  private static final int METHODID_BIND_ATTRIBUTE = 80;
+  private static final int METHODID_PUBLISH_PRODUCT = 81;
+  private static final int METHODID_OFF_SHELF_PRODUCT_IN_BATCHES = 82;
+  private static final int METHODID_DELETE_PRODUCT_IN_BATCHES = 83;
+  private static final int METHODID_CHANGE_PRODUCTS_STATE = 84;
+  private static final int METHODID_SAVE_PRODUCT_IMAGE_INFO = 85;
+  private static final int METHODID_CREATE_SKU = 86;
+  private static final int METHODID_GET_SKU = 87;
+  private static final int METHODID_UPDATE_SKU = 88;
+  private static final int METHODID_LIST_SKU = 89;
+  private static final int METHODID_DELETE_SKU = 90;
+  private static final int METHODID_CREATE_ATTRIBUTE = 91;
+  private static final int METHODID_GET_ATTRIBUTE = 92;
+  private static final int METHODID_LIST_ATTRIBUTE = 93;
+  private static final int METHODID_DELETE_ATTRIBUTE = 94;
+  private static final int METHODID_ADD_ATTRIBUTE_VALUE = 95;
+  private static final int METHODID_DELETE_ATTRIBUTE_VALUE = 96;
+  private static final int METHODID_CREATE_ORDER = 97;
+  private static final int METHODID_GET_ORDER = 98;
+  private static final int METHODID_UPDATE_ORDER = 99;
+  private static final int METHODID_LIST_ORDER = 100;
+  private static final int METHODID_DELETE_ORDER = 101;
+  private static final int METHODID_SHIP_GOODS = 102;
+  private static final int METHODID_CONFIRM_RECEIPT_GOODS = 103;
+  private static final int METHODID_CANCEL_ORDER = 104;
+  private static final int METHODID_SHIP_GOODS_IN_BATCHES = 105;
+  private static final int METHODID_FREE_SHIPPING_IN_BATCHES = 106;
+  private static final int METHODID_LIST_SHOP_SUMMARY = 107;
+  private static final int METHODID_LIST_SHOP_BY_SELLER_ID = 108;
+  private static final int METHODID_CREATE_CART = 109;
+  private static final int METHODID_GET_CART = 110;
+  private static final int METHODID_UPDATE_CART = 111;
+  private static final int METHODID_DELETE_CART = 112;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 113;
+  private static final int METHODID_SAVE_ATTACHMENT = 114;
+  private static final int METHODID_LIST_ATTACHMENT = 115;
+  private static final int METHODID_DELETE_ATTACHMENT = 116;
+  private static final int METHODID_CREATE_SELLER = 117;
+  private static final int METHODID_CREATE_PAYMENT = 118;
+  private static final int METHODID_GET_PAYMENT = 119;
+  private static final int METHODID_UPDATE_PAYMENT = 120;
+  private static final int METHODID_DELETE_PAYMENT = 121;
+  private static final int METHODID_WECHAT_PAYMENT_NOTIFY = 122;
+  private static final int METHODID_CREATE_CONFIG = 123;
+  private static final int METHODID_UPDATE_CONFIG = 124;
+  private static final int METHODID_DELETE_CONFIG = 125;
+  private static final int METHODID_GET_CONFIG = 126;
+  private static final int METHODID_GET_STS = 127;
+  private static final int METHODID_GENERATE_WEBOFFICE_TOKEN = 128;
+  private static final int METHODID_REFRESH_WEBOFFICE_TOKEN = 129;
+  private static final int METHODID_LIST_TENANT_ORG = 130;
+  private static final int METHODID_GET_ADMIN_TENANT = 131;
+  private static final int METHODID_LIST_ADMIN_USER = 132;
+  private static final int METHODID_CREATE_ADMIN_USER = 133;
+  private static final int METHODID_UPDATE_ADMIN_USER = 134;
+  private static final int METHODID_DELETE_ADMIN_USER = 135;
+  private static final int METHODID_WX_PREPAY = 136;
+  private static final int METHODID_CLOSE_ORDER = 137;
+  private static final int METHODID_QUERY_ORDER_BY_ID = 138;
+  private static final int METHODID_QUERY_ORDER_BY_OUT_TRADE = 139;
+  private static final int METHODID_ADD_VCURRENCY = 140;
+  private static final int METHODID_RECHARGE_CURRENCY = 141;
+  private static final int METHODID_RECHARGE_CURRENCY_IN_BATCHES = 142;
+  private static final int METHODID_GET_VCURRENCY = 143;
+  private static final int METHODID_LIST_VCURRENCY = 144;
+  private static final int METHODID_LIST_ACCOUNT_OPERATION = 145;
+  private static final int METHODID_CREATE_ROOM = 146;
+  private static final int METHODID_GET_ROOM = 147;
+  private static final int METHODID_UPDATE_ROOM = 148;
+  private static final int METHODID_LIST_ROOM = 149;
+  private static final int METHODID_DELETE_ROOM = 150;
+  private static final int METHODID_LIST_FINISHED_ROOM = 151;
+  private static final int METHODID_GET_FINISHED_ROOM = 152;
+  private static final int METHODID_RECORD = 153;
+  private static final int METHODID_CREATE_LIVE_USER_TOKEN = 154;
+  private static final int METHODID_USER_ENTER_ROOM = 155;
+  private static final int METHODID_USER_EXIT_ROOM = 156;
+  private static final int METHODID_LIST_ACTIVE_ROOM_USER = 157;
+  private static final int METHODID_LIVE_SSE = 158;
+  private static final int METHODID_CLOSE_SHOP_ALL_LIVE = 159;
+  private static final int METHODID_UPDATE_LIVE_COMMENT_COUNT = 160;
+  private static final int METHODID_CREATE_LIVE_PLAN = 161;
+  private static final int METHODID_GET_LIVE_PLAN = 162;
+  private static final int METHODID_UPDATE_LIVE_PLAN = 163;
+  private static final int METHODID_LIST_LIVE_PLAN = 164;
+  private static final int METHODID_DELETE_LIVE_PLAN = 165;
+  private static final int METHODID_CREATE_LIVE_PLAN_PRODUCT = 166;
+  private static final int METHODID_UPDATE_LIVE_PLAN_PRODUCT = 167;
+  private static final int METHODID_LIST_LIVE_PLAN_PRODUCT = 168;
+  private static final int METHODID_DELETE_LIVE_PLAN_PRODUCT = 169;
+  private static final int METHODID_LOAD_LIVE_PLAN_PRODUCT = 170;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_STATUS = 171;
+  private static final int METHODID_LIST_LIVE_PRODUCT_STATUS = 172;
+  private static final int METHODID_DELETE_LIVE_PRODUCT_STATUS = 173;
+  private static final int METHODID_CREATE_LIVE_PRODUCT_STATUS = 174;
+  private static final int METHODID_GET_LIVING_PRODUCT_STATUS = 175;
+  private static final int METHODID_UPDATE_LIVE_PRODUCT_INTRODUCT_STATUS = 176;
+  private static final int METHODID_CREATE_LIVE_TEXT = 177;
+  private static final int METHODID_UPDATE_LIVE_TEXT = 178;
+  private static final int METHODID_LIST_LIVE_TEXT = 179;
+  private static final int METHODID_GET_LIVE_TEXT = 180;
+  private static final int METHODID_DELETE_LIVE_TEXTS = 181;
+  private static final int METHODID_GET_LIVE_CHART_DATA = 182;
+  private static final int METHODID_GET_EVALUATE_SELECTOR = 183;
+  private static final int METHODID_LIST_PERSONAL_EVALUATE = 184;
+  private static final int METHODID_GET_EVALUATE_DETAIL = 185;
+  private static final int METHODID_SUBMIT_EVALUATE = 186;
+  private static final int METHODID_LIST_UNEVALUATED_ROOM = 187;
+  private static final int METHODID_LIST_STUDENT_EVALUATIONS = 188;
+  private static final int METHODID_IGNORE_EVALUATION = 189;
+  private static final int METHODID_GET_RANK = 190;
+  private static final int METHODID_RECORD_LIVE_CALLBACK = 191;
+  private static final int METHODID_VIDEO_TO_TEXT_CALLBACK = 192;
+  private static final int METHODID_LIVE_STREAM_CALLBACK = 193;
+  private static final int METHODID_REGENERATION_AI_FEEDBACK = 194;
+  private static final int METHODID_SUBMIT_USER_ATTITUDE_FOR_AI_RESULT = 195;
+  private static final int METHODID_PREHEAT_PRODUCT = 196;
+  private static final int METHODID_PUBLIC_PRICE = 197;
+  private static final int METHODID_CREATE_TENANT = 198;
+  private static final int METHODID_GET_TENANT = 199;
+  private static final int METHODID_UPDATE_TENANT = 200;
+  private static final int METHODID_DELETE_TENANT = 201;
+  private static final int METHODID_LIST_TENANT = 202;
+  private static final int METHODID_GET_TENANT_ORG = 203;
+  private static final int METHODID_ENTER_TENANT = 204;
+  private static final int METHODID_EXIT_TENANT = 205;
+  private static final int METHODID_INIT_TENANT = 206;
+  private static final int METHODID_CREATE_TENANT_DEPT = 207;
+  private static final int METHODID_UPDATE_TENANT_DEPT = 208;
+  private static final int METHODID_DELETE_TENANT_DEPT = 209;
+  private static final int METHODID_GET_TENANT_DEPT = 210;
+  private static final int METHODID_GET_TENANT_DEPT_TYPE = 211;
+  private static final int METHODID_LIST_TENANT_DEPT = 212;
+  private static final int METHODID_CREATE_TENANT_USER = 213;
+  private static final int METHODID_DELETE_TENANT_USER = 214;
+  private static final int METHODID_UPDATE_TENANT_USER = 215;
+  private static final int METHODID_GET_TENANT_USER = 216;
+  private static final int METHODID_LIST_TENANT_USER = 217;
+  private static final int METHODID_LIST_TENANT_STUDENT = 218;
+  private static final int METHODID_UPDATE_TENANT_USER_PASSWORD = 219;
+  private static final int METHODID_UPDATE_TENANT_CONFIG = 220;
+  private static final int METHODID_LIST_TENANT_CONFIG = 221;
+  private static final int METHODID_CREATE_SHORT_VIDEO = 222;
+  private static final int METHODID_STAGE_SHORT_VIDEO = 223;
+  private static final int METHODID_LIST_MY_SHORT_VIDEO = 224;
+  private static final int METHODID_LIST_MY_STAGE_VIDEO = 225;
+  private static final int METHODID_LIST_MY_LIKE_VIDEO = 226;
+  private static final int METHODID_LIST_MY_FAVORITE_VIDEO = 227;
+  private static final int METHODID_GET_SHORT_VIDEO = 228;
+  private static final int METHODID_UPDATE_SHORT_VIDEO = 229;
+  private static final int METHODID_DELETE_SHORT_VIDEO = 230;
+  private static final int METHODID_GET_STAGE_VIDEO = 231;
+  private static final int METHODID_DELETE_STAGE_VIDEO = 232;
+  private static final int METHODID_UPDATE_STAGE_VIDEO = 233;
+  private static final int METHODID_MANAGEMENT_LIST_SHORT_VIDEO = 234;
+  private static final int METHODID_MANAGEMENT_CENSOR_SHORT_VIDEO = 235;
+  private static final int METHODID_MANAGEMENT_DELETE_SHORT_VIDEO = 236;
+  private static final int METHODID_LIST_SHORT_VIDEO = 237;
+  private static final int METHODID_LIKE_SHORT_VIDEO = 238;
+  private static final int METHODID_FAVORITE_SHORT_VIDEO = 239;
+  private static final int METHODID_CREATE_SHORT_VIDEO_COMMENT = 240;
+  private static final int METHODID_DELETE_SHORT_VIDEO_COMMENT = 241;
+  private static final int METHODID_LIST_SHORT_VIDEO_COMMENT = 242;
+  private static final int METHODID_CREATE_COUPON = 243;
+  private static final int METHODID_LIST_COUPON = 244;
+  private static final int METHODID_COUPON_DETAIL = 245;
+  private static final int METHODID_UPDATE_COUPON = 246;
+  private static final int METHODID_DELETE_COUPON = 247;
+  private static final int METHODID_ABOLISH_COUPON = 248;
+  private static final int METHODID_UPDATE_COUPON_DISTRIBUTION_STATUS = 249;
+  private static final int METHODID_CLAIM_COUPON = 250;
+  private static final int METHODID_LIST_MY_COUPON = 251;
+  private static final int METHODID_CREATE_ACTIVITY = 252;
+  private static final int METHODID_LIST_ACTIVITY = 253;
+  private static final int METHODID_ACTIVITY_DETAIL = 254;
+  private static final int METHODID_UPDATE_ACTIVITY = 255;
+  private static final int METHODID_DELETE_ACTIVITY = 256;
+  private static final int METHODID_DISABLE_ACTIVITY = 257;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 258;
+  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 259;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 260;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 261;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 262;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 263;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 264;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 265;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 266;
+  private static final int METHODID_CREATE_COURSE_MODULE = 267;
+  private static final int METHODID_GET_COURSE_MODULE = 268;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 269;
+  private static final int METHODID_DELETE_COURSE_MODULE = 270;
+  private static final int METHODID_LIST_COURSE_MODULE = 271;
+  private static final int METHODID_LIST_LATEST_COURSE = 272;
+  private static final int METHODID_LIST_HOTEST_COURSE = 273;
+  private static final int METHODID_CREATE_CM_COURSE = 274;
+  private static final int METHODID_PREVIEW_CM_COURSE = 275;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 276;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 277;
+  private static final int METHODID_CREATE_NM_COURSE = 278;
+  private static final int METHODID_LIST_NM_COURSE = 279;
+  private static final int METHODID_NM_COURSE_DETAIL = 280;
+  private static final int METHODID_DELETE_NM_COURSE = 281;
+  private static final int METHODID_CREATE_COURSE = 282;
+  private static final int METHODID_GET_COURSE = 283;
+  private static final int METHODID_UPDATE_COURSE = 284;
+  private static final int METHODID_DELETE_COURSE = 285;
+  private static final int METHODID_LIST_COURSE = 286;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 287;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 288;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 289;
+  private static final int METHODID_GET_MAJOR_CODE = 290;
+  private static final int METHODID_GET_COURSE_IDS = 291;
+  private static final int METHODID_ENROLL_COURSE = 292;
+  private static final int METHODID_DELETE_MY_COURSE = 293;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 294;
+  private static final int METHODID_LIST_MY_COURSE = 295;
+  private static final int METHODID_LIST_TEACHING_PLAN = 296;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 297;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 298;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 299;
+  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 300;
+  private static final int METHODID_CREATE_EDU_SCHEME = 301;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 302;
+  private static final int METHODID_LIST_EDU_SCHEME = 303;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 304;
+  private static final int METHODID_DELETE_EDU_SCHEME = 305;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 306;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 307;
+  private static final int METHODID_GET_ANDROID_QRCODE = 308;
+  private static final int METHODID_CREATE_JOB = 309;
+  private static final int METHODID_UPDATE_JOB = 310;
+  private static final int METHODID_DELETE_JOB = 311;
+  private static final int METHODID_LIST_JOB = 312;
+  private static final int METHODID_GET_SCHOO_LIVE_CHART = 313;
+  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 314;
+  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 315;
+  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 316;
+  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 317;
+  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 318;
+  private static final int METHODID_LIST_TRAFFIC_WARNING = 319;
+  private static final int METHODID_DELETE_TRAFFIC_WARNING = 320;
+  private static final int METHODID_CREATE_LIVE_CONTROL = 321;
+  private static final int METHODID_UPDATE_LIVE_CONTROL = 322;
+  private static final int METHODID_LIST_LIVE_CONTROL = 323;
+  private static final int METHODID_DELETE_LIVE_CONTROL = 324;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21595,6 +21669,10 @@ public final class glory_apiGrpc {
         case METHODID_USER_BIND_WECHAT:
           serviceImpl.userBindWechat((com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UserBindWechatResponse>) responseObserver);
+          break;
+        case METHODID_USER_UNBIND_WECHAT:
+          serviceImpl.userUnbindWechat((com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse>) responseObserver);
           break;
         case METHODID_FOLLOW_USER:
           serviceImpl.followUser((com.zhijiejiaoyu.glory_api.user.FollowUserRequest) request,
@@ -22961,6 +23039,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.user.UserBindWechatRequest,
               com.zhijiejiaoyu.glory_api.user.UserBindWechatResponse>(
                 service, METHODID_USER_BIND_WECHAT)))
+        .addMethod(
+          getUserUnbindWechatMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.user.UserUnbindWechatRequest,
+              com.zhijiejiaoyu.glory_api.user.UserUnbindWechatResponse>(
+                service, METHODID_USER_UNBIND_WECHAT)))
         .addMethod(
           getFollowUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -25175,6 +25260,7 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateUserTenantMethod())
               .addMethod(getListUserMethod())
               .addMethod(getUserBindWechatMethod())
+              .addMethod(getUserUnbindWechatMethod())
               .addMethod(getFollowUserMethod())
               .addMethod(getListMyFollowingMethod())
               .addMethod(getListMyFollowerMethod())

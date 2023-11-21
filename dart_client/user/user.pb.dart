@@ -5585,15 +5585,11 @@ class ListUserResponse extends $pb.GeneratedMessage {
 class UserBindWechatRequest extends $pb.GeneratedMessage {
   factory UserBindWechatRequest({
     $2.BaseRequest? baseRequest,
-    $fixnum.Int64? userId,
     $core.String? code,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
-    }
-    if (userId != null) {
-      $result.userId = userId;
     }
     if (code != null) {
       $result.code = code;
@@ -5606,7 +5602,6 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserBindWechatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'userId')
     ..aOS(3, _omitFieldNames ? '' : 'code')
     ..hasRequiredFields = false
   ;
@@ -5643,21 +5638,12 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get userId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasUserId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearUserId() => clearField(2);
-
   @$pb.TagNumber(3)
-  $core.String get code => $_getSZ(2);
+  $core.String get code => $_getSZ(1);
   @$pb.TagNumber(3)
-  set code($core.String v) { $_setString(2, v); }
+  set code($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCode() => $_has(2);
+  $core.bool hasCode() => $_has(1);
   @$pb.TagNumber(3)
   void clearCode() => clearField(3);
 }
@@ -5726,6 +5712,110 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
   $core.bool hasBind() => $_has(1);
   @$pb.TagNumber(2)
   void clearBind() => clearField(2);
+}
+
+class UserUnbindWechatRequest extends $pb.GeneratedMessage {
+  factory UserUnbindWechatRequest({
+    $2.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  UserUnbindWechatRequest._() : super();
+  factory UserUnbindWechatRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserUnbindWechatRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserUnbindWechatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserUnbindWechatRequest clone() => UserUnbindWechatRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserUnbindWechatRequest copyWith(void Function(UserUnbindWechatRequest) updates) => super.copyWith((message) => updates(message as UserUnbindWechatRequest)) as UserUnbindWechatRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserUnbindWechatRequest create() => UserUnbindWechatRequest._();
+  UserUnbindWechatRequest createEmptyInstance() => create();
+  static $pb.PbList<UserUnbindWechatRequest> createRepeated() => $pb.PbList<UserUnbindWechatRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UserUnbindWechatRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserUnbindWechatRequest>(create);
+  static UserUnbindWechatRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class UserUnbindWechatResponse extends $pb.GeneratedMessage {
+  factory UserUnbindWechatResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UserUnbindWechatResponse._() : super();
+  factory UserUnbindWechatResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserUnbindWechatResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserUnbindWechatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserUnbindWechatResponse clone() => UserUnbindWechatResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserUnbindWechatResponse copyWith(void Function(UserUnbindWechatResponse) updates) => super.copyWith((message) => updates(message as UserUnbindWechatResponse)) as UserUnbindWechatResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserUnbindWechatResponse create() => UserUnbindWechatResponse._();
+  UserUnbindWechatResponse createEmptyInstance() => create();
+  static $pb.PbList<UserUnbindWechatResponse> createRepeated() => $pb.PbList<UserUnbindWechatResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UserUnbindWechatResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserUnbindWechatResponse>(create);
+  static UserUnbindWechatResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 

@@ -252,6 +252,14 @@ export class glory_api {
     );
   }
 
+  UserUnbindWechat(request) {
+    const uri = `${this.uriPrefix}/api/user/unbind_wechat`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   FollowUser(request) {
     const uri = `${this.uriPrefix}/api/user/follow_user`;
     const body = JSONbigint.stringify(request);

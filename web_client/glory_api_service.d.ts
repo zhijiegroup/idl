@@ -176,6 +176,11 @@ export class glory_api {
     request: user.UserBindWechatRequest
   ): Promise<user.UserBindWechatResponse>;
 
+  /** 微信解绑接口 */
+  UserUnbindWechat(
+    request: user.UserUnbindWechatRequest
+  ): Promise<user.UserUnbindWechatResponse>;
+
   /** 关注用户 */
   FollowUser(request: user.FollowUserRequest): Promise<user.FollowUserResponse>;
 
