@@ -32,6 +32,7 @@ import * as live_user from "./live/live_user";
 import * as live_plan from "./live/live_plan";
 import * as live_text from "./live/live_text";
 import * as live_evaluate from "./live/live_evaluate";
+import * as live_control from "./live/live_control";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
@@ -83,6 +84,7 @@ export {
   live_plan,
   live_text,
   live_evaluate,
+  live_control,
   account_operation,
   virtual_currency,
   tenant,
@@ -1436,6 +1438,23 @@ CreateLivePlanProduct create live plan product */
   DeleteTrafficWarning(
     request: live_traffic.DeleteTrafficWarningRequest
   ): Promise<live_traffic.DeleteTrafficWarningResponse>;
+
+  /** 直播管控 */
+  CreateLiveControl(
+    request: live_control.CreateLiveControlRequest
+  ): Promise<live_control.CreateLiveControlResponse>;
+
+  UpdateLiveControl(
+    request: live_control.UpdateLiveControlRequest
+  ): Promise<live_control.UpdateLiveControlResponse>;
+
+  ListLiveControl(
+    request: live_control.ListLiveControlRequest
+  ): Promise<live_control.ListLiveControlResponse>;
+
+  DeleteLiveControl(
+    request: live_control.DeleteLiveControlRequest
+  ): Promise<live_control.DeleteLiveControlResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
