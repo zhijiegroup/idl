@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $49;
+import 'base.pbjson.dart' as $50;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $39;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -31,6 +31,7 @@ import 'course/teaching_plan.pbjson.dart' as $44;
 import 'course/user_course.pbjson.dart' as $43;
 import 'currency/virtual_currency.pbjson.dart' as $22;
 import 'example/example.pbjson.dart' as $0;
+import 'live/live_control.pbjson.dart' as $49;
 import 'live/live_evaluate.pbjson.dart' as $29;
 import 'live/live_plan.pbjson.dart' as $25;
 import 'live/live_room.pbjson.dart' as $24;
@@ -387,26 +388,30 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'UpdateTenantTrafficConfig', '2': '.glory_api.UpdateTenantLiveTrafficConfigRequest', '3': '.glory_api.UpdateTenantLiveTrafficConfigResponse', '4': {}},
     {'1': 'ListTrafficWarning', '2': '.glory_api.ListTrafficWarningRequest', '3': '.glory_api.ListTrafficWarningResponse', '4': {}},
     {'1': 'DeleteTrafficWarning', '2': '.glory_api.DeleteTrafficWarningRequest', '3': '.glory_api.DeleteTrafficWarningResponse', '4': {}},
+    {'1': 'CreateLiveControl', '2': '.glory_api.CreateLiveControlRequest', '3': '.glory_api.CreateLiveControlResponse', '4': {}},
+    {'1': 'UpdateLiveControl', '2': '.glory_api.UpdateLiveControlRequest', '3': '.glory_api.UpdateLiveControlResponse', '4': {}},
+    {'1': 'ListLiveControl', '2': '.glory_api.ListLiveControlRequest', '3': '.glory_api.ListLiveControlResponse', '4': {}},
+    {'1': 'DeleteLiveControl', '2': '.glory_api.DeleteLiveControlRequest', '3': '.glory_api.DeleteLiveControlResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $49.BaseRequest$json,
+  '.base.BaseRequest': $50.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $49.BaseResponse$json,
+  '.base.BaseResponse': $50.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $49.AuthorInfo$json,
+  '.base.AuthorInfo': $50.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $49.PaginationRequest$json,
+  '.base.PaginationRequest': $50.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $49.PaginationResponse$json,
+  '.base.PaginationResponse': $50.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1204,6 +1209,15 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.TrafficWarning': $48.TrafficWarning$json,
   '.glory_api.DeleteTrafficWarningRequest': $48.DeleteTrafficWarningRequest$json,
   '.glory_api.DeleteTrafficWarningResponse': $48.DeleteTrafficWarningResponse$json,
+  '.glory_api.CreateLiveControlRequest': $49.CreateLiveControlRequest$json,
+  '.glory_api.CreateLiveControlResponse': $49.CreateLiveControlResponse$json,
+  '.glory_api.UpdateLiveControlRequest': $49.UpdateLiveControlRequest$json,
+  '.glory_api.UpdateLiveControlResponse': $49.UpdateLiveControlResponse$json,
+  '.glory_api.ListLiveControlRequest': $49.ListLiveControlRequest$json,
+  '.glory_api.ListLiveControlResponse': $49.ListLiveControlResponse$json,
+  '.glory_api.LiveControl': $49.LiveControl$json,
+  '.glory_api.DeleteLiveControlRequest': $49.DeleteLiveControlRequest$json,
+  '.glory_api.DeleteLiveControlResponse': $49.DeleteLiveControlResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1924,5 +1938,14 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     '90cmFmZmljL2xpc3RfbGl2ZV90cmFmZmljX3dhcm5pbmcSlQEKFERlbGV0ZVRyYWZmaWNXYXJu'
     'aW5nEiYuZ2xvcnlfYXBpLkRlbGV0ZVRyYWZmaWNXYXJuaW5nUmVxdWVzdBonLmdsb3J5X2FwaS'
     '5EZWxldGVUcmFmZmljV2FybmluZ1Jlc3BvbnNlIizSwRgoL2FwaS90cmFmZmljL2RlbGV0ZV9s'
-    'aXZlX3RyYWZmaWNfd2FybmluZw==');
+    'aXZlX3RyYWZmaWNfd2FybmluZxKBAQoRQ3JlYXRlTGl2ZUNvbnRyb2wSIy5nbG9yeV9hcGkuQ3'
+    'JlYXRlTGl2ZUNvbnRyb2xSZXF1ZXN0GiQuZ2xvcnlfYXBpLkNyZWF0ZUxpdmVDb250cm9sUmVz'
+    'cG9uc2UiIdLBGB0vYXBpL2xpdmUvY3JlYXRlX2xpdmVfY29udHJvbBKBAQoRVXBkYXRlTGl2ZU'
+    'NvbnRyb2wSIy5nbG9yeV9hcGkuVXBkYXRlTGl2ZUNvbnRyb2xSZXF1ZXN0GiQuZ2xvcnlfYXBp'
+    'LlVwZGF0ZUxpdmVDb250cm9sUmVzcG9uc2UiIdLBGB0vYXBpL2xpdmUvdXBkYXRlX2xpdmVfY2'
+    '9udHJvbBJ5Cg9MaXN0TGl2ZUNvbnRyb2wSIS5nbG9yeV9hcGkuTGlzdExpdmVDb250cm9sUmVx'
+    'dWVzdBoiLmdsb3J5X2FwaS5MaXN0TGl2ZUNvbnRyb2xSZXNwb25zZSIf0sEYGy9hcGkvbGl2ZS'
+    '9saXN0X2xpdmVfY29udHJvbBKBAQoRRGVsZXRlTGl2ZUNvbnRyb2wSIy5nbG9yeV9hcGkuRGVs'
+    'ZXRlTGl2ZUNvbnRyb2xSZXF1ZXN0GiQuZ2xvcnlfYXBpLkRlbGV0ZUxpdmVDb250cm9sUmVzcG'
+    '9uc2UiIdLBGB0vYXBpL2xpdmUvZGVsZXRlX2xpdmVfY29udHJvbA==');
 

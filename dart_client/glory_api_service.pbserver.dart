@@ -33,6 +33,7 @@ import 'course/user_course.pb.dart' as $43;
 import 'currency/virtual_currency.pb.dart' as $22;
 import 'example/example.pb.dart' as $0;
 import 'glory_api_service.pbjson.dart';
+import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
 import 'live/live_room.pb.dart' as $24;
@@ -389,6 +390,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ServerContext ctx, $48.UpdateTenantLiveTrafficConfigRequest request);
   $async.Future<$48.ListTrafficWarningResponse> listTrafficWarning($pb.ServerContext ctx, $48.ListTrafficWarningRequest request);
   $async.Future<$48.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ServerContext ctx, $48.DeleteTrafficWarningRequest request);
+  $async.Future<$49.CreateLiveControlResponse> createLiveControl($pb.ServerContext ctx, $49.CreateLiveControlRequest request);
+  $async.Future<$49.UpdateLiveControlResponse> updateLiveControl($pb.ServerContext ctx, $49.UpdateLiveControlRequest request);
+  $async.Future<$49.ListLiveControlResponse> listLiveControl($pb.ServerContext ctx, $49.ListLiveControlRequest request);
+  $async.Future<$49.DeleteLiveControlResponse> deleteLiveControl($pb.ServerContext ctx, $49.DeleteLiveControlRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -712,6 +717,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTenantTrafficConfig': return $48.UpdateTenantLiveTrafficConfigRequest();
       case 'ListTrafficWarning': return $48.ListTrafficWarningRequest();
       case 'DeleteTrafficWarning': return $48.DeleteTrafficWarningRequest();
+      case 'CreateLiveControl': return $49.CreateLiveControlRequest();
+      case 'UpdateLiveControl': return $49.UpdateLiveControlRequest();
+      case 'ListLiveControl': return $49.ListLiveControlRequest();
+      case 'DeleteLiveControl': return $49.DeleteLiveControlRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1038,6 +1047,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTenantTrafficConfig': return this.updateTenantTrafficConfig(ctx, request as $48.UpdateTenantLiveTrafficConfigRequest);
       case 'ListTrafficWarning': return this.listTrafficWarning(ctx, request as $48.ListTrafficWarningRequest);
       case 'DeleteTrafficWarning': return this.deleteTrafficWarning(ctx, request as $48.DeleteTrafficWarningRequest);
+      case 'CreateLiveControl': return this.createLiveControl(ctx, request as $49.CreateLiveControlRequest);
+      case 'UpdateLiveControl': return this.updateLiveControl(ctx, request as $49.UpdateLiveControlRequest);
+      case 'ListLiveControl': return this.listLiveControl(ctx, request as $49.ListLiveControlRequest);
+      case 'DeleteLiveControl': return this.deleteLiveControl(ctx, request as $49.DeleteLiveControlRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

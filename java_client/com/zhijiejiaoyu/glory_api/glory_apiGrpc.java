@@ -9935,6 +9935,130 @@ public final class glory_apiGrpc {
     return getDeleteTrafficWarningMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> getCreateLiveControlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateLiveControl",
+      requestType = com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> getCreateLiveControlMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest, com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> getCreateLiveControlMethod;
+    if ((getCreateLiveControlMethod = glory_apiGrpc.getCreateLiveControlMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateLiveControlMethod = glory_apiGrpc.getCreateLiveControlMethod) == null) {
+          glory_apiGrpc.getCreateLiveControlMethod = getCreateLiveControlMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest, com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateLiveControl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateLiveControl"))
+              .build();
+        }
+      }
+    }
+    return getCreateLiveControlMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> getUpdateLiveControlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLiveControl",
+      requestType = com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> getUpdateLiveControlMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest, com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> getUpdateLiveControlMethod;
+    if ((getUpdateLiveControlMethod = glory_apiGrpc.getUpdateLiveControlMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateLiveControlMethod = glory_apiGrpc.getUpdateLiveControlMethod) == null) {
+          glory_apiGrpc.getUpdateLiveControlMethod = getUpdateLiveControlMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest, com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLiveControl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateLiveControl"))
+              .build();
+        }
+      }
+    }
+    return getUpdateLiveControlMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> getListLiveControlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLiveControl",
+      requestType = com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> getListLiveControlMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest, com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> getListLiveControlMethod;
+    if ((getListLiveControlMethod = glory_apiGrpc.getListLiveControlMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListLiveControlMethod = glory_apiGrpc.getListLiveControlMethod) == null) {
+          glory_apiGrpc.getListLiveControlMethod = getListLiveControlMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest, com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLiveControl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListLiveControl"))
+              .build();
+        }
+      }
+    }
+    return getListLiveControlMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> getDeleteLiveControlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLiveControl",
+      requestType = com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest,
+      com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> getDeleteLiveControlMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest, com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> getDeleteLiveControlMethod;
+    if ((getDeleteLiveControlMethod = glory_apiGrpc.getDeleteLiveControlMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteLiveControlMethod = glory_apiGrpc.getDeleteLiveControlMethod) == null) {
+          glory_apiGrpc.getDeleteLiveControlMethod = getDeleteLiveControlMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest, com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteLiveControl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteLiveControl"))
+              .build();
+        }
+      }
+    }
+    return getDeleteLiveControlMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -12542,6 +12666,37 @@ public final class glory_apiGrpc {
     default void deleteTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTrafficWarningMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 直播管控
+     * </pre>
+     */
+    default void createLiveControl(com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateLiveControlMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateLiveControl(com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLiveControlMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listLiveControl(com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLiveControlMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteLiveControl(com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLiveControlMethod(), responseObserver);
     }
   }
 
@@ -15452,6 +15607,41 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTrafficWarningMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 直播管控
+     * </pre>
+     */
+    public void createLiveControl(com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateLiveControlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateLiveControl(com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLiveControlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listLiveControl(com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLiveControlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteLiveControl(com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteLiveControlMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -18029,6 +18219,37 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse deleteTrafficWarning(com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTrafficWarningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 直播管控
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse createLiveControl(com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLiveControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse updateLiveControl(com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLiveControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse listLiveControl(com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLiveControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse deleteLiveControl(com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLiveControlMethod(), getCallOptions(), request);
     }
   }
 
@@ -20928,6 +21149,41 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTrafficWarningMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 直播管控
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse> createLiveControl(
+        com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateLiveControlMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse> updateLiveControl(
+        com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLiveControlMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse> listLiveControl(
+        com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLiveControlMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse> deleteLiveControl(
+        com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteLiveControlMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -21250,6 +21506,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 317;
   private static final int METHODID_LIST_TRAFFIC_WARNING = 318;
   private static final int METHODID_DELETE_TRAFFIC_WARNING = 319;
+  private static final int METHODID_CREATE_LIVE_CONTROL = 320;
+  private static final int METHODID_UPDATE_LIVE_CONTROL = 321;
+  private static final int METHODID_LIST_LIVE_CONTROL = 322;
+  private static final int METHODID_DELETE_LIVE_CONTROL = 323;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -22547,6 +22807,22 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_TRAFFIC_WARNING:
           serviceImpl.deleteTrafficWarning((com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_LIVE_CONTROL:
+          serviceImpl.createLiveControl((com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_LIVE_CONTROL:
+          serviceImpl.updateLiveControl((com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse>) responseObserver);
+          break;
+        case METHODID_LIST_LIVE_CONTROL:
+          serviceImpl.listLiveControl((com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_LIVE_CONTROL:
+          serviceImpl.deleteLiveControl((com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -24806,6 +25082,34 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningRequest,
               com.zhijiejiaoyu.glory_api.traffic.DeleteTrafficWarningResponse>(
                 service, METHODID_DELETE_TRAFFIC_WARNING)))
+        .addMethod(
+          getCreateLiveControlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.CreateLiveControlRequest,
+              com.zhijiejiaoyu.glory_api.live.CreateLiveControlResponse>(
+                service, METHODID_CREATE_LIVE_CONTROL)))
+        .addMethod(
+          getUpdateLiveControlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.UpdateLiveControlRequest,
+              com.zhijiejiaoyu.glory_api.live.UpdateLiveControlResponse>(
+                service, METHODID_UPDATE_LIVE_CONTROL)))
+        .addMethod(
+          getListLiveControlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.ListLiveControlRequest,
+              com.zhijiejiaoyu.glory_api.live.ListLiveControlResponse>(
+                service, METHODID_LIST_LIVE_CONTROL)))
+        .addMethod(
+          getDeleteLiveControlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.DeleteLiveControlRequest,
+              com.zhijiejiaoyu.glory_api.live.DeleteLiveControlResponse>(
+                service, METHODID_DELETE_LIVE_CONTROL)))
         .build();
   }
 
@@ -25174,6 +25478,10 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTenantTrafficConfigMethod())
               .addMethod(getListTrafficWarningMethod())
               .addMethod(getDeleteTrafficWarningMethod())
+              .addMethod(getCreateLiveControlMethod())
+              .addMethod(getUpdateLiveControlMethod())
+              .addMethod(getListLiveControlMethod())
+              .addMethod(getDeleteLiveControlMethod())
               .build();
         }
       }

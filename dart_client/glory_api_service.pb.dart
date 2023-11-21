@@ -31,6 +31,7 @@ import 'course/teaching_plan.pb.dart' as $44;
 import 'course/user_course.pb.dart' as $43;
 import 'currency/virtual_currency.pb.dart' as $22;
 import 'example/example.pb.dart' as $0;
+import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
 import 'live/live_room.pb.dart' as $24;
@@ -1027,6 +1028,18 @@ class glory_apiApi {
   ;
   $async.Future<$48.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ClientContext? ctx, $48.DeleteTrafficWarningRequest request) =>
     _client.invoke<$48.DeleteTrafficWarningResponse>(ctx, 'glory_api', 'DeleteTrafficWarning', request, $48.DeleteTrafficWarningResponse())
+  ;
+  $async.Future<$49.CreateLiveControlResponse> createLiveControl($pb.ClientContext? ctx, $49.CreateLiveControlRequest request) =>
+    _client.invoke<$49.CreateLiveControlResponse>(ctx, 'glory_api', 'CreateLiveControl', request, $49.CreateLiveControlResponse())
+  ;
+  $async.Future<$49.UpdateLiveControlResponse> updateLiveControl($pb.ClientContext? ctx, $49.UpdateLiveControlRequest request) =>
+    _client.invoke<$49.UpdateLiveControlResponse>(ctx, 'glory_api', 'UpdateLiveControl', request, $49.UpdateLiveControlResponse())
+  ;
+  $async.Future<$49.ListLiveControlResponse> listLiveControl($pb.ClientContext? ctx, $49.ListLiveControlRequest request) =>
+    _client.invoke<$49.ListLiveControlResponse>(ctx, 'glory_api', 'ListLiveControl', request, $49.ListLiveControlResponse())
+  ;
+  $async.Future<$49.DeleteLiveControlResponse> deleteLiveControl($pb.ClientContext? ctx, $49.DeleteLiveControlRequest request) =>
+    _client.invoke<$49.DeleteLiveControlResponse>(ctx, 'glory_api', 'DeleteLiveControl', request, $49.DeleteLiveControlResponse())
   ;
 }
 
