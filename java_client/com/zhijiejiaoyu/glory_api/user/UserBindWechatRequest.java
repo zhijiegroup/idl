@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UserBindWechatRequest() {
-    openid = "";
+    code = "";
   }
 
   @java.lang.Override
@@ -70,7 +70,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            openid = s;
+            code = s;
             break;
           }
           default: {
@@ -142,38 +142,38 @@ private static final long serialVersionUID = 0L;
     return userId ;
   }
 
-  public static final int OPENID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object openid ;
+  public static final int CODE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object code ;
   /**
-   * <code>string openid = 3;</code>
-   * @return The openid.
+   * <code>string code = 3;</code>
+   * @return The code.
    */
   @java.lang.Override
-  public java.lang.String getOpenid() {
-    java.lang.Object ref = openid ;
+  public java.lang.String getCode() {
+    java.lang.Object ref = code ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      openid = s;
+      code = s;
       return s;
     }
   }
   /**
-   * <code>string openid = 3;</code>
-   * @return The bytes for openid.
+   * <code>string code = 3;</code>
+   * @return The bytes for code.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getOpenidBytes() {
-    java.lang.Object ref = openid ;
+      getCodeBytes() {
+    java.lang.Object ref = code ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      openid = b;
+      code = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -200,8 +200,8 @@ private static final long serialVersionUID = 0L;
     if (userId != 0L) {
       output.writeInt64(2, userId );
     }
-    if (!getOpenidBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, openid );
+    if (!getCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, code );
     }
     unknownFields.writeTo(output);
   }
@@ -220,8 +220,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId );
     }
-    if (!getOpenidBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, openid );
+    if (!getCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, code );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,8 +245,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getUserId()
         != other.getUserId()) return false;
-    if (!getOpenid()
-        .equals(other.getOpenid())) return false;
+    if (!getCode()
+        .equals(other.getCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -265,8 +265,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserId());
-    hash = (37 * hash) + OPENID_FIELD_NUMBER;
-    hash = (53 * hash) + getOpenid().hashCode();
+    hash = (37 * hash) + CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
       }
       userId = 0L;
 
-      openid = "";
+      code = "";
 
       return this;
     }
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.userId = userId ;
-      result.openid = openid ;
+      result.code = code ;
       onBuilt();
       return result;
     }
@@ -497,8 +497,8 @@ private static final long serialVersionUID = 0L;
       if (other.getUserId() != 0L) {
         setUserId(other.getUserId());
       }
-      if (!other.getOpenid().isEmpty()) {
-        openid = other.openid ;
+      if (!other.getCode().isEmpty()) {
+        code = other.code ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -680,78 +680,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object openid = "";
+    private java.lang.Object code = "";
     /**
-     * <code>string openid = 3;</code>
-     * @return The openid.
+     * <code>string code = 3;</code>
+     * @return The code.
      */
-    public java.lang.String getOpenid() {
-      java.lang.Object ref = openid ;
+    public java.lang.String getCode() {
+      java.lang.Object ref = code ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        openid = s;
+        code = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string openid = 3;</code>
-     * @return The bytes for openid.
+     * <code>string code = 3;</code>
+     * @return The bytes for code.
      */
     public com.google.protobuf.ByteString
-        getOpenidBytes() {
-      java.lang.Object ref = openid ;
+        getCodeBytes() {
+      java.lang.Object ref = code ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        openid = b;
+        code = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string openid = 3;</code>
-     * @param value The openid to set.
+     * <code>string code = 3;</code>
+     * @param value The code to set.
      * @return This builder for chaining.
      */
-    public Builder setOpenid(
+    public Builder setCode(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      openid = value;
+      code = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string openid = 3;</code>
+     * <code>string code = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearOpenid() {
+    public Builder clearCode() {
       
-      openid = getDefaultInstance().getOpenid();
+      code = getDefaultInstance().getCode();
       onChanged();
       return this;
     }
     /**
-     * <code>string openid = 3;</code>
-     * @param value The bytes for openid to set.
+     * <code>string code = 3;</code>
+     * @param value The bytes for code to set.
      * @return This builder for chaining.
      */
-    public Builder setOpenidBytes(
+    public Builder setCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      openid = value;
+      code = value;
       onChanged();
       return this;
     }

@@ -485,7 +485,7 @@ export interface ListUserResponse {
 export interface UserBindWechatRequest {
   base_request?: base.BaseRequest;
   user_id?: string;
-  openid?: string;
+  code?: string;
 }
 
 export interface UserBindWechatResponse {

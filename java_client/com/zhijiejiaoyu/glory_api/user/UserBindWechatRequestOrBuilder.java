@@ -29,14 +29,14 @@ public interface UserBindWechatRequestOrBuilder extends
   long getUserId();
 
   /**
-   * <code>string openid = 3;</code>
-   * @return The openid.
+   * <code>string code = 3;</code>
+   * @return The code.
    */
-  java.lang.String getOpenid();
+  java.lang.String getCode();
   /**
-   * <code>string openid = 3;</code>
-   * @return The bytes for openid.
+   * <code>string code = 3;</code>
+   * @return The bytes for code.
    */
   com.google.protobuf.ByteString
-      getOpenidBytes();
+      getCodeBytes();
 }

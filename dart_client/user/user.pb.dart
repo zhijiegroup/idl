@@ -5586,7 +5586,7 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
   factory UserBindWechatRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? userId,
-    $core.String? openid,
+    $core.String? code,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -5595,8 +5595,8 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
     if (userId != null) {
       $result.userId = userId;
     }
-    if (openid != null) {
-      $result.openid = openid;
+    if (code != null) {
+      $result.code = code;
     }
     return $result;
   }
@@ -5607,7 +5607,7 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserBindWechatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'userId')
-    ..aOS(3, _omitFieldNames ? '' : 'openid')
+    ..aOS(3, _omitFieldNames ? '' : 'code')
     ..hasRequiredFields = false
   ;
 
@@ -5653,13 +5653,13 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
   void clearUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get openid => $_getSZ(2);
+  $core.String get code => $_getSZ(2);
   @$pb.TagNumber(3)
-  set openid($core.String v) { $_setString(2, v); }
+  set code($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasOpenid() => $_has(2);
+  $core.bool hasCode() => $_has(2);
   @$pb.TagNumber(3)
-  void clearOpenid() => clearField(3);
+  void clearCode() => clearField(3);
 }
 
 class UserBindWechatResponse extends $pb.GeneratedMessage {
