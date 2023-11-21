@@ -5665,10 +5665,14 @@ class UserBindWechatRequest extends $pb.GeneratedMessage {
 class UserBindWechatResponse extends $pb.GeneratedMessage {
   factory UserBindWechatResponse({
     $2.BaseResponse? baseResp,
+    $core.bool? bind,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (bind != null) {
+      $result.bind = bind;
     }
     return $result;
   }
@@ -5678,6 +5682,7 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserBindWechatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aOB(2, _omitFieldNames ? '' : 'bind')
     ..hasRequiredFields = false
   ;
 
@@ -5712,6 +5717,15 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get bind => $_getBF(1);
+  @$pb.TagNumber(2)
+  set bind($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBind() => clearField(2);
 }
 
 

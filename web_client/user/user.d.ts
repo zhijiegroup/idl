@@ -490,4 +490,5 @@ export interface UserBindWechatRequest {
 
 export interface UserBindWechatResponse {
   base_resp?: base.BaseResponse;
+  bind?: boolean;
 }

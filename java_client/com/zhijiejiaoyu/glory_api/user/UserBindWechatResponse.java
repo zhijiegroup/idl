@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            bind = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +124,17 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
+  public static final int BIND_FIELD_NUMBER = 2;
+  private boolean bind ;
+  /**
+   * <code>bool bind = 2;</code>
+   * @return The bind.
+   */
+  @java.lang.Override
+  public boolean getBind() {
+    return bind ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +152,9 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (bind != false) {
+      output.writeBool(2, bind );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +167,10 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
+    }
+    if (bind != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, bind );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +192,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getBind()
+        != other.getBind()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +209,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + BIND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBind());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +351,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      bind = false;
+
       return this;
     }
 
@@ -354,6 +384,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.bind = bind ;
       onBuilt();
       return result;
     }
@@ -404,6 +435,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.user.UserBindWechatResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getBind() != false) {
+        setBind(other.getBind());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +585,37 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder ;
+    }
+
+    private boolean bind ;
+    /**
+     * <code>bool bind = 2;</code>
+     * @return The bind.
+     */
+    @java.lang.Override
+    public boolean getBind() {
+      return bind ;
+    }
+    /**
+     * <code>bool bind = 2;</code>
+     * @param value The bind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBind(boolean value) {
+      
+      bind = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool bind = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBind() {
+      
+      bind = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
