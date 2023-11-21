@@ -454,11 +454,18 @@ message ListUserResponse {
 
 message UserBindWechatRequest {
   base.BaseRequest base_request = 1;
-  int64 user_id = 2;
   string code = 3;
 }
 
 message UserBindWechatResponse {
   base.BaseResponse base_resp = 1;
   bool bind = 2;
+}
+
+message UserUnbindWechatRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message UserUnbindWechatResponse {
+  base.BaseResponse base_resp = 1;
 }
