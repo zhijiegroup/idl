@@ -455,7 +455,7 @@ message ListUserResponse {
 message UserBindWechatRequest {
   base.BaseRequest base_request = 1;
   int64 user_id = 2;
-  string openid = 3;
+  string code = 3;
 }
 
 message UserBindWechatResponse {
