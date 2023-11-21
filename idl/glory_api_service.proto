@@ -34,6 +34,7 @@ import "live/live_user.proto";
 import "live/live_plan.proto";
 import "live/live_text.proto";
 import "live/live_evaluate.proto";
+import "live/live_control.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
@@ -1270,5 +1271,18 @@ service glory_api {
   }
   rpc DeleteTrafficWarning(DeleteTrafficWarningRequest) returns (DeleteTrafficWarningResponse) {
     option (api.post) = '/api/traffic/delete_live_traffic_warning';
+  }
+  // 直播管控
+  rpc CreateLiveControl(CreateLiveControlRequest) returns (CreateLiveControlResponse) {
+    option (api.post) = '/api/live/create_live_control';
+  }
+  rpc UpdateLiveControl(UpdateLiveControlRequest) returns (UpdateLiveControlResponse) {
+    option (api.post) = '/api/live/update_live_control';
+  }
+  rpc ListLiveControl(ListLiveControlRequest) returns (ListLiveControlResponse) {
+    option (api.post) = '/api/live/list_live_control';
+  }
+  rpc DeleteLiveControl(DeleteLiveControlRequest) returns (DeleteLiveControlResponse) {
+    option (api.post) = '/api/live/delete_live_control';
   }
 }

@@ -1,0 +1,71 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.live";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message CreateLiveControlRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    string name = 3;
+    bool is_repeated = 4;
+    string days = 5;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
+}
+
+message CreateLiveControlResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateLiveControlRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+    string name = 3;
+    bool is_repeated = 4;
+    string days = 5;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
+    int64 id = 10;
+    bool is_enable = 11;
+}
+
+message UpdateLiveControlResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListLiveControlRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+}
+
+message LiveControl {
+    int64 id = 1;
+    string name = 2;
+    bool is_repeated = 3;
+    bool is_enable = 4;
+    string days = 5;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
+}
+
+message ListLiveControlResponse {
+    base.BaseResponse base_resp = 1;
+    repeated LiveControl live_control_list = 2;
+}
+
+message DeleteLiveControlRequest {
+    base.BaseRequest base_request = 1;
+    int64 id = 2;
+}
+
+message DeleteLiveControlResponse {
+    base.BaseResponse base_resp = 1;
+}
