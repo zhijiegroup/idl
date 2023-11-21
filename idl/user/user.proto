@@ -460,4 +460,5 @@ message UserBindWechatRequest {
 
 message UserBindWechatResponse {
   base.BaseResponse base_resp = 1;
+  bool bind = 2;
 }
