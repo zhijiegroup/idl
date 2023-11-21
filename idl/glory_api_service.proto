@@ -125,6 +125,10 @@ service glory_api {
   rpc UserBindWechat(UserBindWechatRequest) returns (UserBindWechatResponse) {
     option (api.post) = '/api/user/bind_wechat';
   }
+  // 微信解绑接口
+  rpc UserUnbindWechat(UserUnbindWechatRequest) returns (UserUnbindWechatResponse) {
+    option (api.post) = '/api/user/unbind_wechat';
+  }
   // 关注用户
   rpc FollowUser(FollowUserRequest) returns (FollowUserResponse) {
     option (api.post) = '/api/user/follow_user';
