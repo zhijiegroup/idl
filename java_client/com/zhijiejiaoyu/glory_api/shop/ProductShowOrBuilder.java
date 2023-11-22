@@ -183,4 +183,14 @@ public interface ProductShowOrBuilder extends
    * <code>.glory_api.ActivityDetail activity = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ActivityDetailOrBuilder getActivityOrBuilder();
+
+  /**
+   * <pre>
+   * 该商品是否被删除
+   * </pre>
+   *
+   * <code>bool is_deleted = 13;</code>
+   * @return The isDeleted.
+   */
+  boolean getIsDeleted();
 }

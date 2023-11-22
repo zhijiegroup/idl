@@ -67,6 +67,7 @@ const ProductShow$json = {
     {'1': 'channel', '3': 10, '4': 1, '5': 9, '10': 'channel'},
     {'1': 'coupon', '3': 11, '4': 3, '5': 11, '6': '.glory_api.CouponDetail', '10': 'coupon'},
     {'1': 'activity', '3': 12, '4': 1, '5': 11, '6': '.glory_api.ActivityDetail', '10': 'activity'},
+    {'1': 'is_deleted', '3': 13, '4': 1, '5': 8, '10': 'isDeleted'},
   ],
 };
 
@@ -79,7 +80,8 @@ final $typed_data.Uint8List productShowDescriptor = $convert.base64Decode(
     'GgoIY3VycmVuY3kYCCABKAlSCGN1cnJlbmN5EiUKDmZyZWlnaHRfYW1vdW50GAkgASgCUg1mcm'
     'VpZ2h0QW1vdW50EhgKB2NoYW5uZWwYCiABKAlSB2NoYW5uZWwSLwoGY291cG9uGAsgAygLMhcu'
     'Z2xvcnlfYXBpLkNvdXBvbkRldGFpbFIGY291cG9uEjUKCGFjdGl2aXR5GAwgASgLMhkuZ2xvcn'
-    'lfYXBpLkFjdGl2aXR5RGV0YWlsUghhY3Rpdml0eQ==');
+    'lfYXBpLkFjdGl2aXR5RGV0YWlsUghhY3Rpdml0eRIdCgppc19kZWxldGVkGA0gASgIUglpc0Rl'
+    'bGV0ZWQ=');
 
 @$core.Deprecated('Use shopShowDescriptor instead')
 const ShopShow$json = {

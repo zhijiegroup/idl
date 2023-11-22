@@ -261,6 +261,7 @@ class ProductShow extends $pb.GeneratedMessage {
     $core.String? channel,
     $core.Iterable<$0.CouponDetail>? coupon,
     $1.ActivityDetail? activity,
+    $core.bool? isDeleted,
   }) {
     final $result = create();
     if (productId != null) {
@@ -299,6 +300,9 @@ class ProductShow extends $pb.GeneratedMessage {
     if (activity != null) {
       $result.activity = activity;
     }
+    if (isDeleted != null) {
+      $result.isDeleted = isDeleted;
+    }
     return $result;
   }
   ProductShow._() : super();
@@ -318,6 +322,7 @@ class ProductShow extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'channel')
     ..pc<$0.CouponDetail>(11, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $0.CouponDetail.create)
     ..aOM<$1.ActivityDetail>(12, _omitFieldNames ? '' : 'activity', subBuilder: $1.ActivityDetail.create)
+    ..aOB(13, _omitFieldNames ? '' : 'isDeleted')
     ..hasRequiredFields = false
   ;
 
@@ -445,6 +450,15 @@ class ProductShow extends $pb.GeneratedMessage {
   void clearActivity() => clearField(12);
   @$pb.TagNumber(12)
   $1.ActivityDetail ensureActivity() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $core.bool get isDeleted => $_getBF(12);
+  @$pb.TagNumber(13)
+  set isDeleted($core.bool v) { $_setBool(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasIsDeleted() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIsDeleted() => clearField(13);
 }
 
 class ShopShow extends $pb.GeneratedMessage {
