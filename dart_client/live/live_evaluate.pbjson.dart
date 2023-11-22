@@ -384,6 +384,8 @@ const ListUnevaluatedRoomRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+    {'1': 'shop_or_user_name', '3': 3, '4': 1, '5': 9, '10': 'shopOrUserName'},
+    {'1': 'room_status', '3': 4, '4': 1, '5': 3, '10': 'roomStatus'},
   ],
 };
 
@@ -391,7 +393,8 @@ const ListUnevaluatedRoomRequest$json = {
 final $typed_data.Uint8List listUnevaluatedRoomRequestDescriptor = $convert.base64Decode(
     'ChpMaXN0VW5ldmFsdWF0ZWRSb29tUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
     'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGAIgASgLMhcuYmFzZS5Q'
-    'YWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'YWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbhIpChFzaG9wX29yX3VzZXJfbmFtZRgDIAEoCV'
+    'IOc2hvcE9yVXNlck5hbWUSHwoLcm9vbV9zdGF0dXMYBCABKANSCnJvb21TdGF0dXM=');
 
 @$core.Deprecated('Use listUnevaluatedRoomResponseDescriptor instead')
 const ListUnevaluatedRoomResponse$json = {

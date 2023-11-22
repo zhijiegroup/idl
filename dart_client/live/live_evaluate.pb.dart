@@ -1975,6 +1975,8 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
   factory ListUnevaluatedRoomRequest({
     $0.BaseRequest? baseRequest,
     $0.PaginationRequest? pagination,
+    $core.String? shopOrUserName,
+    $fixnum.Int64? roomStatus,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1982,6 +1984,12 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
     }
     if (pagination != null) {
       $result.pagination = pagination;
+    }
+    if (shopOrUserName != null) {
+      $result.shopOrUserName = shopOrUserName;
+    }
+    if (roomStatus != null) {
+      $result.roomStatus = roomStatus;
     }
     return $result;
   }
@@ -1992,6 +2000,8 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUnevaluatedRoomRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOM<$0.PaginationRequest>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOS(3, _omitFieldNames ? '' : 'shopOrUserName')
+    ..aInt64(4, _omitFieldNames ? '' : 'roomStatus')
     ..hasRequiredFields = false
   ;
 
@@ -2037,6 +2047,24 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
   $0.PaginationRequest ensurePagination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get shopOrUserName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set shopOrUserName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasShopOrUserName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearShopOrUserName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get roomStatus => $_getI64(3);
+  @$pb.TagNumber(4)
+  set roomStatus($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRoomStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRoomStatus() => clearField(4);
 }
 
 class ListUnevaluatedRoomResponse extends $pb.GeneratedMessage {

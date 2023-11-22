@@ -161,6 +161,9 @@ export interface UnevaluatedRoom {
 export interface ListUnevaluatedRoomRequest {
   base_request?: base.BaseRequest;
   pagination?: base.PaginationRequest;
+  shop_or_user_name?: string;
+  /** 0:全部 1:进行中 2:已结束 */
+  room_status?: string;
 }
 
 export interface ListUnevaluatedRoomResponse {

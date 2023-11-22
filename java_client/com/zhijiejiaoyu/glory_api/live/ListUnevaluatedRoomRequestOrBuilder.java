@@ -36,4 +36,26 @@ public interface ListUnevaluatedRoomRequestOrBuilder extends
    * <code>.base.PaginationRequest pagination = 2;</code>
    */
   com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
+
+  /**
+   * <code>string shop_or_user_name = 3;</code>
+   * @return The shopOrUserName.
+   */
+  java.lang.String getShopOrUserName();
+  /**
+   * <code>string shop_or_user_name = 3;</code>
+   * @return The bytes for shopOrUserName.
+   */
+  com.google.protobuf.ByteString
+      getShopOrUserNameBytes();
+
+  /**
+   * <pre>
+   * 0:全部 1:进行中 2:已结束
+   * </pre>
+   *
+   * <code>int64 room_status = 4;</code>
+   * @return The roomStatus.
+   */
+  long getRoomStatus();
 }

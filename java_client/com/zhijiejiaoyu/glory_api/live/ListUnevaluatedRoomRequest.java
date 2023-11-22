@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListUnevaluatedRoomRequest() {
+    shopOrUserName = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,17 @@ private static final long serialVersionUID = 0L;
               pagination = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopOrUserName = s;
+            break;
+          }
+          case 32: {
+
+            roomStatus = input.readInt64();
             break;
           }
           default: {
@@ -158,6 +170,59 @@ private static final long serialVersionUID = 0L;
     return getPagination();
   }
 
+  public static final int SHOP_OR_USER_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object shopOrUserName ;
+  /**
+   * <code>string shop_or_user_name = 3;</code>
+   * @return The shopOrUserName.
+   */
+  @java.lang.Override
+  public java.lang.String getShopOrUserName() {
+    java.lang.Object ref = shopOrUserName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopOrUserName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shop_or_user_name = 3;</code>
+   * @return The bytes for shopOrUserName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopOrUserNameBytes() {
+    java.lang.Object ref = shopOrUserName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopOrUserName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROOM_STATUS_FIELD_NUMBER = 4;
+  private long roomStatus ;
+  /**
+   * <pre>
+   * 0:全部 1:进行中 2:已结束
+   * </pre>
+   *
+   * <code>int64 room_status = 4;</code>
+   * @return The roomStatus.
+   */
+  @java.lang.Override
+  public long getRoomStatus() {
+    return roomStatus ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +243,12 @@ private static final long serialVersionUID = 0L;
     if (pagination != null) {
       output.writeMessage(2, getPagination());
     }
+    if (!getShopOrUserNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shopOrUserName );
+    }
+    if (roomStatus != 0L) {
+      output.writeInt64(4, roomStatus );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +265,13 @@ private static final long serialVersionUID = 0L;
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getPagination());
+    }
+    if (!getShopOrUserNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shopOrUserName );
+    }
+    if (roomStatus != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, roomStatus );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +298,10 @@ private static final long serialVersionUID = 0L;
       if (!getPagination()
           .equals(other.getPagination())) return false;
     }
+    if (!getShopOrUserName()
+        .equals(other.getShopOrUserName())) return false;
+    if (getRoomStatus()
+        != other.getRoomStatus()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +321,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
     }
+    hash = (37 * hash) + SHOP_OR_USER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getShopOrUserName().hashCode();
+    hash = (37 * hash) + ROOM_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoomStatus());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +471,10 @@ private static final long serialVersionUID = 0L;
         pagination = null;
         paginationBuilder = null;
       }
+      shopOrUserName = "";
+
+      roomStatus = 0L;
+
       return this;
     }
 
@@ -420,6 +511,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.pagination = paginationBuilder .build();
       }
+      result.shopOrUserName = shopOrUserName ;
+      result.roomStatus = roomStatus ;
       onBuilt();
       return result;
     }
@@ -473,6 +566,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
+      }
+      if (!other.getShopOrUserName().isEmpty()) {
+        shopOrUserName = other.shopOrUserName ;
+        onChanged();
+      }
+      if (other.getRoomStatus() != 0L) {
+        setRoomStatus(other.getRoomStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +839,125 @@ private static final long serialVersionUID = 0L;
         pagination = null;
       }
       return paginationBuilder ;
+    }
+
+    private java.lang.Object shopOrUserName = "";
+    /**
+     * <code>string shop_or_user_name = 3;</code>
+     * @return The shopOrUserName.
+     */
+    public java.lang.String getShopOrUserName() {
+      java.lang.Object ref = shopOrUserName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopOrUserName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shop_or_user_name = 3;</code>
+     * @return The bytes for shopOrUserName.
+     */
+    public com.google.protobuf.ByteString
+        getShopOrUserNameBytes() {
+      java.lang.Object ref = shopOrUserName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopOrUserName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shop_or_user_name = 3;</code>
+     * @param value The shopOrUserName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopOrUserName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopOrUserName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_or_user_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopOrUserName() {
+      
+      shopOrUserName = getDefaultInstance().getShopOrUserName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shop_or_user_name = 3;</code>
+     * @param value The bytes for shopOrUserName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopOrUserNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopOrUserName = value;
+      onChanged();
+      return this;
+    }
+
+    private long roomStatus ;
+    /**
+     * <pre>
+     * 0:全部 1:进行中 2:已结束
+     * </pre>
+     *
+     * <code>int64 room_status = 4;</code>
+     * @return The roomStatus.
+     */
+    @java.lang.Override
+    public long getRoomStatus() {
+      return roomStatus ;
+    }
+    /**
+     * <pre>
+     * 0:全部 1:进行中 2:已结束
+     * </pre>
+     *
+     * <code>int64 room_status = 4;</code>
+     * @param value The roomStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomStatus(long value) {
+      
+      roomStatus = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0:全部 1:进行中 2:已结束
+     * </pre>
+     *
+     * <code>int64 room_status = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomStatus() {
+      
+      roomStatus = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

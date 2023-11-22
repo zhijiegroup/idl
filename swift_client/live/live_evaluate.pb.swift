@@ -602,6 +602,11 @@ struct GloryApi_ListUnevaluatedRoomRequest {
   /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
   mutating func clearPagination() {self._pagination = nil}
 
+  var shopOrUserName: String = String()
+
+  /// 0:全部 1:进行中 2:已结束
+  var roomStatus: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2524,6 +2529,8 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "pagination"),
+    3: .standard(proto: "shop_or_user_name"),
+    4: .standard(proto: "room_status"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2534,6 +2541,8 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.shopOrUserName) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.roomStatus) }()
       default: break
       }
     }
@@ -2550,12 +2559,20 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if !self.shopOrUserName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopOrUserName, fieldNumber: 3)
+    }
+    if self.roomStatus != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomStatus, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListUnevaluatedRoomRequest, rhs: GloryApi_ListUnevaluatedRoomRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.shopOrUserName != rhs.shopOrUserName {return false}
+    if lhs.roomStatus != rhs.roomStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
