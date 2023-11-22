@@ -72,18 +72,18 @@ public final class LiveControlOuterClass {
       "se.proto\"\377\001\n\030CreateLiveControlRequest\022\'\n" +
       "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\021" +
       "\n\ttenant_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\023\n\013is_re" +
-      "peated\030\004 \001(\010\022\014\n\004days\030\005 \001(\t\022\034\n\024available_" +
-      "start_time\030\006 \001(\003\022\032\n\022available_end_time\030\007" +
-      " \001(\003\022\036\n\026unavailable_start_time\030\010 \001(\003\022\034\n\024" +
-      "unavailable_end_time\030\t \001(\003\"B\n\031CreateLive" +
+      "peated\030\004 \001(\010\022\014\n\004days\030\005 \001(\t\022\034\n\024avaliable_" +
+      "start_time\030\006 \001(\003\022\032\n\022avaliable_end_time\030\007" +
+      " \001(\003\022\036\n\026unavaliable_start_time\030\010 \001(\003\022\034\n\024" +
+      "unavaliable_end_time\030\t \001(\003\"B\n\031CreateLive" +
       "ControlResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
       "e.BaseResponse\"\236\002\n\030UpdateLiveControlRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
       "uest\022\021\n\ttenant_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\023\n" +
-      "\013is_repeated\030\004 \001(\010\022\014\n\004days\030\005 \001(\t\022\034\n\024avai" +
-      "lable_start_time\030\006 \001(\003\022\032\n\022available_end_" +
-      "time\030\007 \001(\003\022\036\n\026unavailable_start_time\030\010 \001" +
-      "(\003\022\034\n\024unavailable_end_time\030\t \001(\003\022\n\n\002id\030\n" +
+      "\013is_repeated\030\004 \001(\010\022\014\n\004days\030\005 \001(\t\022\034\n\024aval" +
+      "iable_start_time\030\006 \001(\003\022\032\n\022avaliable_end_" +
+      "time\030\007 \001(\003\022\036\n\026unavaliable_start_time\030\010 \001" +
+      "(\003\022\034\n\024unavaliable_end_time\030\t \001(\003\022\n\n\002id\030\n" +
       " \001(\003\022\021\n\tis_enable\030\013 \001(\010\"B\n\031UpdateLiveCon" +
       "trolResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
       "aseResponse\"T\n\026ListLiveControlRequest\022\'\n" +
@@ -91,9 +91,9 @@ public final class LiveControlOuterClass {
       "\n\ttenant_id\030\002 \001(\003\"\325\001\n\013LiveControl\022\n\n\002id\030" +
       "\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\023\n\013is_repeated\030\003 \001(\010" +
       "\022\021\n\tis_enable\030\004 \001(\010\022\014\n\004days\030\005 \001(\t\022\034\n\024ava" +
-      "ilable_start_time\030\006 \001(\003\022\032\n\022available_end" +
-      "_time\030\007 \001(\003\022\036\n\026unavailable_start_time\030\010 " +
-      "\001(\003\022\034\n\024unavailable_end_time\030\t \001(\003\"s\n\027Lis" +
+      "liable_start_time\030\006 \001(\003\022\032\n\022avaliable_end" +
+      "_time\030\007 \001(\003\022\036\n\026unavaliable_start_time\030\010 " +
+      "\001(\003\022\034\n\024unavaliable_end_time\030\t \001(\003\"s\n\027Lis" +
       "tLiveControlResponse\022%\n\tbase_resp\030\001 \001(\0132" +
       "\022.base.BaseResponse\0221\n\021live_control_list" +
       "\030\002 \003(\0132\026.glory_api.LiveControl\"O\n\030Delete" +
@@ -113,7 +113,7 @@ public final class LiveControlOuterClass {
     internal_static_glory_api_CreateLiveControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateLiveControlRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", "Name", "IsRepeated", "Days", "AvailableStartTime", "AvailableEndTime", "UnavailableStartTime", "UnavailableEndTime", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "Name", "IsRepeated", "Days", "AvaliableStartTime", "AvaliableEndTime", "UnavaliableStartTime", "UnavaliableEndTime", });
     internal_static_glory_api_CreateLiveControlResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateLiveControlResponse_fieldAccessorTable = new
@@ -125,7 +125,7 @@ public final class LiveControlOuterClass {
     internal_static_glory_api_UpdateLiveControlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateLiveControlRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", "Name", "IsRepeated", "Days", "AvailableStartTime", "AvailableEndTime", "UnavailableStartTime", "UnavailableEndTime", "Id", "IsEnable", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "Name", "IsRepeated", "Days", "AvaliableStartTime", "AvaliableEndTime", "UnavaliableStartTime", "UnavaliableEndTime", "Id", "IsEnable", });
     internal_static_glory_api_UpdateLiveControlResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_UpdateLiveControlResponse_fieldAccessorTable = new
@@ -143,7 +143,7 @@ public final class LiveControlOuterClass {
     internal_static_glory_api_LiveControl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveControl_descriptor,
-        new java.lang.String[] { "Id", "Name", "IsRepeated", "IsEnable", "Days", "AvailableStartTime", "AvailableEndTime", "UnavailableStartTime", "UnavailableEndTime", });
+        new java.lang.String[] { "Id", "Name", "IsRepeated", "IsEnable", "Days", "AvaliableStartTime", "AvaliableEndTime", "UnavaliableStartTime", "UnavaliableEndTime", });
     internal_static_glory_api_ListLiveControlResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListLiveControlResponse_fieldAccessorTable = new

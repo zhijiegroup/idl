@@ -79,22 +79,22 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            availableStartTime = input.readInt64();
+            avaliableStartTime = input.readInt64();
             break;
           }
           case 56: {
 
-            availableEndTime = input.readInt64();
+            avaliableEndTime = input.readInt64();
             break;
           }
           case 64: {
 
-            unavailableStartTime = input.readInt64();
+            unavaliableStartTime = input.readInt64();
             break;
           }
           case 72: {
 
-            unavailableEndTime = input.readInt64();
+            unavaliableEndTime = input.readInt64();
             break;
           }
           default: {
@@ -238,48 +238,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVAILABLE_START_TIME_FIELD_NUMBER = 6;
-  private long availableStartTime ;
+  public static final int AVALIABLE_START_TIME_FIELD_NUMBER = 6;
+  private long avaliableStartTime ;
   /**
-   * <code>int64 available_start_time = 6;</code>
-   * @return The availableStartTime.
+   * <code>int64 avaliable_start_time = 6;</code>
+   * @return The avaliableStartTime.
    */
   @java.lang.Override
-  public long getAvailableStartTime() {
-    return availableStartTime ;
+  public long getAvaliableStartTime() {
+    return avaliableStartTime ;
   }
 
-  public static final int AVAILABLE_END_TIME_FIELD_NUMBER = 7;
-  private long availableEndTime ;
+  public static final int AVALIABLE_END_TIME_FIELD_NUMBER = 7;
+  private long avaliableEndTime ;
   /**
-   * <code>int64 available_end_time = 7;</code>
-   * @return The availableEndTime.
+   * <code>int64 avaliable_end_time = 7;</code>
+   * @return The avaliableEndTime.
    */
   @java.lang.Override
-  public long getAvailableEndTime() {
-    return availableEndTime ;
+  public long getAvaliableEndTime() {
+    return avaliableEndTime ;
   }
 
-  public static final int UNAVAILABLE_START_TIME_FIELD_NUMBER = 8;
-  private long unavailableStartTime ;
+  public static final int UNAVALIABLE_START_TIME_FIELD_NUMBER = 8;
+  private long unavaliableStartTime ;
   /**
-   * <code>int64 unavailable_start_time = 8;</code>
-   * @return The unavailableStartTime.
+   * <code>int64 unavaliable_start_time = 8;</code>
+   * @return The unavaliableStartTime.
    */
   @java.lang.Override
-  public long getUnavailableStartTime() {
-    return unavailableStartTime ;
+  public long getUnavaliableStartTime() {
+    return unavaliableStartTime ;
   }
 
-  public static final int UNAVAILABLE_END_TIME_FIELD_NUMBER = 9;
-  private long unavailableEndTime ;
+  public static final int UNAVALIABLE_END_TIME_FIELD_NUMBER = 9;
+  private long unavaliableEndTime ;
   /**
-   * <code>int64 unavailable_end_time = 9;</code>
-   * @return The unavailableEndTime.
+   * <code>int64 unavaliable_end_time = 9;</code>
+   * @return The unavaliableEndTime.
    */
   @java.lang.Override
-  public long getUnavailableEndTime() {
-    return unavailableEndTime ;
+  public long getUnavaliableEndTime() {
+    return unavaliableEndTime ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -311,17 +311,17 @@ private static final long serialVersionUID = 0L;
     if (!getDaysBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, days );
     }
-    if (availableStartTime != 0L) {
-      output.writeInt64(6, availableStartTime );
+    if (avaliableStartTime != 0L) {
+      output.writeInt64(6, avaliableStartTime );
     }
-    if (availableEndTime != 0L) {
-      output.writeInt64(7, availableEndTime );
+    if (avaliableEndTime != 0L) {
+      output.writeInt64(7, avaliableEndTime );
     }
-    if (unavailableStartTime != 0L) {
-      output.writeInt64(8, unavailableStartTime );
+    if (unavaliableStartTime != 0L) {
+      output.writeInt64(8, unavaliableStartTime );
     }
-    if (unavailableEndTime != 0L) {
-      output.writeInt64(9, unavailableEndTime );
+    if (unavaliableEndTime != 0L) {
+      output.writeInt64(9, unavaliableEndTime );
     }
     unknownFields.writeTo(output);
   }
@@ -350,21 +350,21 @@ private static final long serialVersionUID = 0L;
     if (!getDaysBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, days );
     }
-    if (availableStartTime != 0L) {
+    if (avaliableStartTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, availableStartTime );
+        .computeInt64Size(6, avaliableStartTime );
     }
-    if (availableEndTime != 0L) {
+    if (avaliableEndTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, availableEndTime );
+        .computeInt64Size(7, avaliableEndTime );
     }
-    if (unavailableStartTime != 0L) {
+    if (unavaliableStartTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, unavailableStartTime );
+        .computeInt64Size(8, unavaliableStartTime );
     }
-    if (unavailableEndTime != 0L) {
+    if (unavaliableEndTime != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, unavailableEndTime );
+        .computeInt64Size(9, unavaliableEndTime );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -391,14 +391,14 @@ private static final long serialVersionUID = 0L;
         != other.getIsEnable()) return false;
     if (!getDays()
         .equals(other.getDays())) return false;
-    if (getAvailableStartTime()
-        != other.getAvailableStartTime()) return false;
-    if (getAvailableEndTime()
-        != other.getAvailableEndTime()) return false;
-    if (getUnavailableStartTime()
-        != other.getUnavailableStartTime()) return false;
-    if (getUnavailableEndTime()
-        != other.getUnavailableEndTime()) return false;
+    if (getAvaliableStartTime()
+        != other.getAvaliableStartTime()) return false;
+    if (getAvaliableEndTime()
+        != other.getAvaliableEndTime()) return false;
+    if (getUnavaliableStartTime()
+        != other.getUnavaliableStartTime()) return false;
+    if (getUnavaliableEndTime()
+        != other.getUnavaliableEndTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -423,18 +423,18 @@ private static final long serialVersionUID = 0L;
         getIsEnable());
     hash = (37 * hash) + DAYS_FIELD_NUMBER;
     hash = (53 * hash) + getDays().hashCode();
-    hash = (37 * hash) + AVAILABLE_START_TIME_FIELD_NUMBER;
+    hash = (37 * hash) + AVALIABLE_START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAvailableStartTime());
-    hash = (37 * hash) + AVAILABLE_END_TIME_FIELD_NUMBER;
+        getAvaliableStartTime());
+    hash = (37 * hash) + AVALIABLE_END_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAvailableEndTime());
-    hash = (37 * hash) + UNAVAILABLE_START_TIME_FIELD_NUMBER;
+        getAvaliableEndTime());
+    hash = (37 * hash) + UNAVALIABLE_START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUnavailableStartTime());
-    hash = (37 * hash) + UNAVAILABLE_END_TIME_FIELD_NUMBER;
+        getUnavaliableStartTime());
+    hash = (37 * hash) + UNAVALIABLE_END_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUnavailableEndTime());
+        getUnavaliableEndTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -578,13 +578,13 @@ private static final long serialVersionUID = 0L;
 
       days = "";
 
-      availableStartTime = 0L;
+      avaliableStartTime = 0L;
 
-      availableEndTime = 0L;
+      avaliableEndTime = 0L;
 
-      unavailableStartTime = 0L;
+      unavaliableStartTime = 0L;
 
-      unavailableEndTime = 0L;
+      unavaliableEndTime = 0L;
 
       return this;
     }
@@ -617,10 +617,10 @@ private static final long serialVersionUID = 0L;
       result.isRepeated = isRepeated ;
       result.isEnable = isEnable ;
       result.days = days ;
-      result.availableStartTime = availableStartTime ;
-      result.availableEndTime = availableEndTime ;
-      result.unavailableStartTime = unavailableStartTime ;
-      result.unavailableEndTime = unavailableEndTime ;
+      result.avaliableStartTime = avaliableStartTime ;
+      result.avaliableEndTime = avaliableEndTime ;
+      result.unavaliableStartTime = unavaliableStartTime ;
+      result.unavaliableEndTime = unavaliableEndTime ;
       onBuilt();
       return result;
     }
@@ -686,17 +686,17 @@ private static final long serialVersionUID = 0L;
         days = other.days ;
         onChanged();
       }
-      if (other.getAvailableStartTime() != 0L) {
-        setAvailableStartTime(other.getAvailableStartTime());
+      if (other.getAvaliableStartTime() != 0L) {
+        setAvaliableStartTime(other.getAvaliableStartTime());
       }
-      if (other.getAvailableEndTime() != 0L) {
-        setAvailableEndTime(other.getAvailableEndTime());
+      if (other.getAvaliableEndTime() != 0L) {
+        setAvaliableEndTime(other.getAvaliableEndTime());
       }
-      if (other.getUnavailableStartTime() != 0L) {
-        setUnavailableStartTime(other.getUnavailableStartTime());
+      if (other.getUnavaliableStartTime() != 0L) {
+        setUnavaliableStartTime(other.getUnavaliableStartTime());
       }
-      if (other.getUnavailableEndTime() != 0L) {
-        setUnavailableEndTime(other.getUnavailableEndTime());
+      if (other.getUnavaliableEndTime() != 0L) {
+        setUnavaliableEndTime(other.getUnavaliableEndTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -972,126 +972,126 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long availableStartTime ;
+    private long avaliableStartTime ;
     /**
-     * <code>int64 available_start_time = 6;</code>
-     * @return The availableStartTime.
+     * <code>int64 avaliable_start_time = 6;</code>
+     * @return The avaliableStartTime.
      */
     @java.lang.Override
-    public long getAvailableStartTime() {
-      return availableStartTime ;
+    public long getAvaliableStartTime() {
+      return avaliableStartTime ;
     }
     /**
-     * <code>int64 available_start_time = 6;</code>
-     * @param value The availableStartTime to set.
+     * <code>int64 avaliable_start_time = 6;</code>
+     * @param value The avaliableStartTime to set.
      * @return This builder for chaining.
      */
-    public Builder setAvailableStartTime(long value) {
+    public Builder setAvaliableStartTime(long value) {
       
-      availableStartTime = value;
+      avaliableStartTime = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 available_start_time = 6;</code>
+     * <code>int64 avaliable_start_time = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAvailableStartTime() {
+    public Builder clearAvaliableStartTime() {
       
-      availableStartTime = 0L;
+      avaliableStartTime = 0L;
       onChanged();
       return this;
     }
 
-    private long availableEndTime ;
+    private long avaliableEndTime ;
     /**
-     * <code>int64 available_end_time = 7;</code>
-     * @return The availableEndTime.
+     * <code>int64 avaliable_end_time = 7;</code>
+     * @return The avaliableEndTime.
      */
     @java.lang.Override
-    public long getAvailableEndTime() {
-      return availableEndTime ;
+    public long getAvaliableEndTime() {
+      return avaliableEndTime ;
     }
     /**
-     * <code>int64 available_end_time = 7;</code>
-     * @param value The availableEndTime to set.
+     * <code>int64 avaliable_end_time = 7;</code>
+     * @param value The avaliableEndTime to set.
      * @return This builder for chaining.
      */
-    public Builder setAvailableEndTime(long value) {
+    public Builder setAvaliableEndTime(long value) {
       
-      availableEndTime = value;
+      avaliableEndTime = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 available_end_time = 7;</code>
+     * <code>int64 avaliable_end_time = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAvailableEndTime() {
+    public Builder clearAvaliableEndTime() {
       
-      availableEndTime = 0L;
+      avaliableEndTime = 0L;
       onChanged();
       return this;
     }
 
-    private long unavailableStartTime ;
+    private long unavaliableStartTime ;
     /**
-     * <code>int64 unavailable_start_time = 8;</code>
-     * @return The unavailableStartTime.
+     * <code>int64 unavaliable_start_time = 8;</code>
+     * @return The unavaliableStartTime.
      */
     @java.lang.Override
-    public long getUnavailableStartTime() {
-      return unavailableStartTime ;
+    public long getUnavaliableStartTime() {
+      return unavaliableStartTime ;
     }
     /**
-     * <code>int64 unavailable_start_time = 8;</code>
-     * @param value The unavailableStartTime to set.
+     * <code>int64 unavaliable_start_time = 8;</code>
+     * @param value The unavaliableStartTime to set.
      * @return This builder for chaining.
      */
-    public Builder setUnavailableStartTime(long value) {
+    public Builder setUnavaliableStartTime(long value) {
       
-      unavailableStartTime = value;
+      unavaliableStartTime = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 unavailable_start_time = 8;</code>
+     * <code>int64 unavaliable_start_time = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUnavailableStartTime() {
+    public Builder clearUnavaliableStartTime() {
       
-      unavailableStartTime = 0L;
+      unavaliableStartTime = 0L;
       onChanged();
       return this;
     }
 
-    private long unavailableEndTime ;
+    private long unavaliableEndTime ;
     /**
-     * <code>int64 unavailable_end_time = 9;</code>
-     * @return The unavailableEndTime.
+     * <code>int64 unavaliable_end_time = 9;</code>
+     * @return The unavaliableEndTime.
      */
     @java.lang.Override
-    public long getUnavailableEndTime() {
-      return unavailableEndTime ;
+    public long getUnavaliableEndTime() {
+      return unavaliableEndTime ;
     }
     /**
-     * <code>int64 unavailable_end_time = 9;</code>
-     * @param value The unavailableEndTime to set.
+     * <code>int64 unavaliable_end_time = 9;</code>
+     * @param value The unavaliableEndTime to set.
      * @return This builder for chaining.
      */
-    public Builder setUnavailableEndTime(long value) {
+    public Builder setUnavaliableEndTime(long value) {
       
-      unavailableEndTime = value;
+      unavaliableEndTime = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 unavailable_end_time = 9;</code>
+     * <code>int64 unavaliable_end_time = 9;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUnavailableEndTime() {
+    public Builder clearUnavaliableEndTime() {
       
-      unavailableEndTime = 0L;
+      unavaliableEndTime = 0L;
       onChanged();
       return this;
     }

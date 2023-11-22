@@ -22,10 +22,10 @@ const CreateLiveControlRequest$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'is_repeated', '3': 4, '4': 1, '5': 8, '10': 'isRepeated'},
     {'1': 'days', '3': 5, '4': 1, '5': 9, '10': 'days'},
-    {'1': 'available_start_time', '3': 6, '4': 1, '5': 3, '10': 'availableStartTime'},
-    {'1': 'available_end_time', '3': 7, '4': 1, '5': 3, '10': 'availableEndTime'},
-    {'1': 'unavailable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavailableStartTime'},
-    {'1': 'unavailable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavailableEndTime'},
+    {'1': 'avaliable_start_time', '3': 6, '4': 1, '5': 3, '10': 'avaliableStartTime'},
+    {'1': 'avaliable_end_time', '3': 7, '4': 1, '5': 3, '10': 'avaliableEndTime'},
+    {'1': 'unavaliable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavaliableStartTime'},
+    {'1': 'unavaliable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavaliableEndTime'},
   ],
 };
 
@@ -34,10 +34,10 @@ final $typed_data.Uint8List createLiveControlRequestDescriptor = $convert.base64
     'ChhDcmVhdGVMaXZlQ29udHJvbFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
     '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIS'
     'CgRuYW1lGAMgASgJUgRuYW1lEh8KC2lzX3JlcGVhdGVkGAQgASgIUgppc1JlcGVhdGVkEhIKBG'
-    'RheXMYBSABKAlSBGRheXMSMAoUYXZhaWxhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YWlsYWJs'
-    'ZVN0YXJ0VGltZRIsChJhdmFpbGFibGVfZW5kX3RpbWUYByABKANSEGF2YWlsYWJsZUVuZFRpbW'
-    'USNAoWdW5hdmFpbGFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFpbGFibGVTdGFydFRpbWUS'
-    'MAoUdW5hdmFpbGFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhaWxhYmxlRW5kVGltZQ==');
+    'RheXMYBSABKAlSBGRheXMSMAoUYXZhbGlhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YWxpYWJs'
+    'ZVN0YXJ0VGltZRIsChJhdmFsaWFibGVfZW5kX3RpbWUYByABKANSEGF2YWxpYWJsZUVuZFRpbW'
+    'USNAoWdW5hdmFsaWFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFsaWFibGVTdGFydFRpbWUS'
+    'MAoUdW5hdmFsaWFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhbGlhYmxlRW5kVGltZQ==');
 
 @$core.Deprecated('Use createLiveControlResponseDescriptor instead')
 const CreateLiveControlResponse$json = {
@@ -61,10 +61,10 @@ const UpdateLiveControlRequest$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'is_repeated', '3': 4, '4': 1, '5': 8, '10': 'isRepeated'},
     {'1': 'days', '3': 5, '4': 1, '5': 9, '10': 'days'},
-    {'1': 'available_start_time', '3': 6, '4': 1, '5': 3, '10': 'availableStartTime'},
-    {'1': 'available_end_time', '3': 7, '4': 1, '5': 3, '10': 'availableEndTime'},
-    {'1': 'unavailable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavailableStartTime'},
-    {'1': 'unavailable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavailableEndTime'},
+    {'1': 'avaliable_start_time', '3': 6, '4': 1, '5': 3, '10': 'avaliableStartTime'},
+    {'1': 'avaliable_end_time', '3': 7, '4': 1, '5': 3, '10': 'avaliableEndTime'},
+    {'1': 'unavaliable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavaliableStartTime'},
+    {'1': 'unavaliable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavaliableEndTime'},
     {'1': 'id', '3': 10, '4': 1, '5': 3, '10': 'id'},
     {'1': 'is_enable', '3': 11, '4': 1, '5': 8, '10': 'isEnable'},
   ],
@@ -75,10 +75,10 @@ final $typed_data.Uint8List updateLiveControlRequestDescriptor = $convert.base64
     'ChhVcGRhdGVMaXZlQ29udHJvbFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
     '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIS'
     'CgRuYW1lGAMgASgJUgRuYW1lEh8KC2lzX3JlcGVhdGVkGAQgASgIUgppc1JlcGVhdGVkEhIKBG'
-    'RheXMYBSABKAlSBGRheXMSMAoUYXZhaWxhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YWlsYWJs'
-    'ZVN0YXJ0VGltZRIsChJhdmFpbGFibGVfZW5kX3RpbWUYByABKANSEGF2YWlsYWJsZUVuZFRpbW'
-    'USNAoWdW5hdmFpbGFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFpbGFibGVTdGFydFRpbWUS'
-    'MAoUdW5hdmFpbGFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhaWxhYmxlRW5kVGltZRIOCgJpZB'
+    'RheXMYBSABKAlSBGRheXMSMAoUYXZhbGlhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YWxpYWJs'
+    'ZVN0YXJ0VGltZRIsChJhdmFsaWFibGVfZW5kX3RpbWUYByABKANSEGF2YWxpYWJsZUVuZFRpbW'
+    'USNAoWdW5hdmFsaWFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFsaWFibGVTdGFydFRpbWUS'
+    'MAoUdW5hdmFsaWFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhbGlhYmxlRW5kVGltZRIOCgJpZB'
     'gKIAEoA1ICaWQSGwoJaXNfZW5hYmxlGAsgASgIUghpc0VuYWJsZQ==');
 
 @$core.Deprecated('Use updateLiveControlResponseDescriptor instead')
@@ -117,10 +117,10 @@ const LiveControl$json = {
     {'1': 'is_repeated', '3': 3, '4': 1, '5': 8, '10': 'isRepeated'},
     {'1': 'is_enable', '3': 4, '4': 1, '5': 8, '10': 'isEnable'},
     {'1': 'days', '3': 5, '4': 1, '5': 9, '10': 'days'},
-    {'1': 'available_start_time', '3': 6, '4': 1, '5': 3, '10': 'availableStartTime'},
-    {'1': 'available_end_time', '3': 7, '4': 1, '5': 3, '10': 'availableEndTime'},
-    {'1': 'unavailable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavailableStartTime'},
-    {'1': 'unavailable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavailableEndTime'},
+    {'1': 'avaliable_start_time', '3': 6, '4': 1, '5': 3, '10': 'avaliableStartTime'},
+    {'1': 'avaliable_end_time', '3': 7, '4': 1, '5': 3, '10': 'avaliableEndTime'},
+    {'1': 'unavaliable_start_time', '3': 8, '4': 1, '5': 3, '10': 'unavaliableStartTime'},
+    {'1': 'unavaliable_end_time', '3': 9, '4': 1, '5': 3, '10': 'unavaliableEndTime'},
   ],
 };
 
@@ -128,10 +128,10 @@ const LiveControl$json = {
 final $typed_data.Uint8List liveControlDescriptor = $convert.base64Decode(
     'CgtMaXZlQ29udHJvbBIOCgJpZBgBIAEoA1ICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIfCgtpc1'
     '9yZXBlYXRlZBgDIAEoCFIKaXNSZXBlYXRlZBIbCglpc19lbmFibGUYBCABKAhSCGlzRW5hYmxl'
-    'EhIKBGRheXMYBSABKAlSBGRheXMSMAoUYXZhaWxhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YW'
-    'lsYWJsZVN0YXJ0VGltZRIsChJhdmFpbGFibGVfZW5kX3RpbWUYByABKANSEGF2YWlsYWJsZUVu'
-    'ZFRpbWUSNAoWdW5hdmFpbGFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFpbGFibGVTdGFydF'
-    'RpbWUSMAoUdW5hdmFpbGFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhaWxhYmxlRW5kVGltZQ==');
+    'EhIKBGRheXMYBSABKAlSBGRheXMSMAoUYXZhbGlhYmxlX3N0YXJ0X3RpbWUYBiABKANSEmF2YW'
+    'xpYWJsZVN0YXJ0VGltZRIsChJhdmFsaWFibGVfZW5kX3RpbWUYByABKANSEGF2YWxpYWJsZUVu'
+    'ZFRpbWUSNAoWdW5hdmFsaWFibGVfc3RhcnRfdGltZRgIIAEoA1IUdW5hdmFsaWFibGVTdGFydF'
+    'RpbWUSMAoUdW5hdmFsaWFibGVfZW5kX3RpbWUYCSABKANSEnVuYXZhbGlhYmxlRW5kVGltZQ==');
 
 @$core.Deprecated('Use listLiveControlResponseDescriptor instead')
 const ListLiveControlResponse$json = {
