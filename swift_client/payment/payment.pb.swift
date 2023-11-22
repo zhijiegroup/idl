@@ -122,8 +122,13 @@ struct GloryApi_CreatePaymentResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  ///  PaymentWithAuthor payment_detail =2;
   var paymentID: Int64 = 0
+
+  /// 支付方式：coin：虚拟币支付；weixin：微信支付
+  var paymentMethod: String = String()
+
+  /// 微信支付的预付单 id
+  var prepayID: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -486,6 +491,8 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "payment_id"),
+    3: .standard(proto: "payment_method"),
+    4: .standard(proto: "prepay_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -496,6 +503,8 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.paymentID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.paymentMethod) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.prepayID) }()
       default: break
       }
     }
@@ -512,12 +521,20 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if self.paymentID != 0 {
       try visitor.visitSingularInt64Field(value: self.paymentID, fieldNumber: 2)
     }
+    if !self.paymentMethod.isEmpty {
+      try visitor.visitSingularStringField(value: self.paymentMethod, fieldNumber: 3)
+    }
+    if !self.prepayID.isEmpty {
+      try visitor.visitSingularStringField(value: self.prepayID, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreatePaymentResponse, rhs: GloryApi_CreatePaymentResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.paymentID != rhs.paymentID {return false}
+    if lhs.paymentMethod != rhs.paymentMethod {return false}
+    if lhs.prepayID != rhs.prepayID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

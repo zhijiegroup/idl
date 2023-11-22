@@ -23,12 +23,48 @@ public interface CreatePaymentResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <pre>
-   *  PaymentWithAuthor payment_detail =2;
-   * </pre>
-   *
    * <code>int64 payment_id = 2;</code>
    * @return The paymentId.
    */
   long getPaymentId();
+
+  /**
+   * <pre>
+   * 支付方式：coin：虚拟币支付；weixin：微信支付
+   * </pre>
+   *
+   * <code>string payment_method = 3;</code>
+   * @return The paymentMethod.
+   */
+  java.lang.String getPaymentMethod();
+  /**
+   * <pre>
+   * 支付方式：coin：虚拟币支付；weixin：微信支付
+   * </pre>
+   *
+   * <code>string payment_method = 3;</code>
+   * @return The bytes for paymentMethod.
+   */
+  com.google.protobuf.ByteString
+      getPaymentMethodBytes();
+
+  /**
+   * <pre>
+   * 微信支付的预付单 id
+   * </pre>
+   *
+   * <code>string prepay_id = 4;</code>
+   * @return The prepayId.
+   */
+  java.lang.String getPrepayId();
+  /**
+   * <pre>
+   * 微信支付的预付单 id
+   * </pre>
+   *
+   * <code>string prepay_id = 4;</code>
+   * @return The bytes for prepayId.
+   */
+  com.google.protobuf.ByteString
+      getPrepayIdBytes();
 }

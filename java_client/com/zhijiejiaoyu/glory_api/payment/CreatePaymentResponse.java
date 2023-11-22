@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CreatePaymentResponse() {
+    paymentMethod = "";
+    prepayId = "";
   }
 
   @java.lang.Override
@@ -64,6 +66,18 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             paymentId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            paymentMethod = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            prepayId = s;
             break;
           }
           default: {
@@ -127,16 +141,104 @@ private static final long serialVersionUID = 0L;
   public static final int PAYMENT_ID_FIELD_NUMBER = 2;
   private long paymentId ;
   /**
-   * <pre>
-   *  PaymentWithAuthor payment_detail =2;
-   * </pre>
-   *
    * <code>int64 payment_id = 2;</code>
    * @return The paymentId.
    */
   @java.lang.Override
   public long getPaymentId() {
     return paymentId ;
+  }
+
+  public static final int PAYMENT_METHOD_FIELD_NUMBER = 3;
+  private volatile java.lang.Object paymentMethod ;
+  /**
+   * <pre>
+   * 支付方式：coin：虚拟币支付；weixin：微信支付
+   * </pre>
+   *
+   * <code>string payment_method = 3;</code>
+   * @return The paymentMethod.
+   */
+  @java.lang.Override
+  public java.lang.String getPaymentMethod() {
+    java.lang.Object ref = paymentMethod ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      paymentMethod = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 支付方式：coin：虚拟币支付；weixin：微信支付
+   * </pre>
+   *
+   * <code>string payment_method = 3;</code>
+   * @return The bytes for paymentMethod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPaymentMethodBytes() {
+    java.lang.Object ref = paymentMethod ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      paymentMethod = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PREPAY_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object prepayId ;
+  /**
+   * <pre>
+   * 微信支付的预付单 id
+   * </pre>
+   *
+   * <code>string prepay_id = 4;</code>
+   * @return The prepayId.
+   */
+  @java.lang.Override
+  public java.lang.String getPrepayId() {
+    java.lang.Object ref = prepayId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prepayId = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的预付单 id
+   * </pre>
+   *
+   * <code>string prepay_id = 4;</code>
+   * @return The bytes for prepayId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrepayIdBytes() {
+    java.lang.Object ref = prepayId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      prepayId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -159,6 +261,12 @@ private static final long serialVersionUID = 0L;
     if (paymentId != 0L) {
       output.writeInt64(2, paymentId );
     }
+    if (!getPaymentMethodBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, paymentMethod );
+    }
+    if (!getPrepayIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prepayId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -175,6 +283,12 @@ private static final long serialVersionUID = 0L;
     if (paymentId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, paymentId );
+    }
+    if (!getPaymentMethodBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, paymentMethod );
+    }
+    if (!getPrepayIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prepayId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -198,6 +312,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getPaymentId()
         != other.getPaymentId()) return false;
+    if (!getPaymentMethod()
+        .equals(other.getPaymentMethod())) return false;
+    if (!getPrepayId()
+        .equals(other.getPrepayId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -216,6 +334,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PAYMENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPaymentId());
+    hash = (37 * hash) + PAYMENT_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + getPaymentMethod().hashCode();
+    hash = (37 * hash) + PREPAY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPrepayId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -357,6 +479,10 @@ private static final long serialVersionUID = 0L;
       }
       paymentId = 0L;
 
+      paymentMethod = "";
+
+      prepayId = "";
+
       return this;
     }
 
@@ -389,6 +515,8 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder .build();
       }
       result.paymentId = paymentId ;
+      result.paymentMethod = paymentMethod ;
+      result.prepayId = prepayId ;
       onBuilt();
       return result;
     }
@@ -442,6 +570,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPaymentId() != 0L) {
         setPaymentId(other.getPaymentId());
+      }
+      if (!other.getPaymentMethod().isEmpty()) {
+        paymentMethod = other.paymentMethod ;
+        onChanged();
+      }
+      if (!other.getPrepayId().isEmpty()) {
+        prepayId = other.prepayId ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -593,10 +729,6 @@ private static final long serialVersionUID = 0L;
 
     private long paymentId ;
     /**
-     * <pre>
-     *  PaymentWithAuthor payment_detail =2;
-     * </pre>
-     *
      * <code>int64 payment_id = 2;</code>
      * @return The paymentId.
      */
@@ -605,10 +737,6 @@ private static final long serialVersionUID = 0L;
       return paymentId ;
     }
     /**
-     * <pre>
-     *  PaymentWithAuthor payment_detail =2;
-     * </pre>
-     *
      * <code>int64 payment_id = 2;</code>
      * @param value The paymentId to set.
      * @return This builder for chaining.
@@ -620,16 +748,204 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  PaymentWithAuthor payment_detail =2;
-     * </pre>
-     *
      * <code>int64 payment_id = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearPaymentId() {
       
       paymentId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object paymentMethod = "";
+    /**
+     * <pre>
+     * 支付方式：coin：虚拟币支付；weixin：微信支付
+     * </pre>
+     *
+     * <code>string payment_method = 3;</code>
+     * @return The paymentMethod.
+     */
+    public java.lang.String getPaymentMethod() {
+      java.lang.Object ref = paymentMethod ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paymentMethod = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 支付方式：coin：虚拟币支付；weixin：微信支付
+     * </pre>
+     *
+     * <code>string payment_method = 3;</code>
+     * @return The bytes for paymentMethod.
+     */
+    public com.google.protobuf.ByteString
+        getPaymentMethodBytes() {
+      java.lang.Object ref = paymentMethod ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paymentMethod = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 支付方式：coin：虚拟币支付；weixin：微信支付
+     * </pre>
+     *
+     * <code>string payment_method = 3;</code>
+     * @param value The paymentMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentMethod(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      paymentMethod = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付方式：coin：虚拟币支付；weixin：微信支付
+     * </pre>
+     *
+     * <code>string payment_method = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPaymentMethod() {
+      
+      paymentMethod = getDefaultInstance().getPaymentMethod();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 支付方式：coin：虚拟币支付；weixin：微信支付
+     * </pre>
+     *
+     * <code>string payment_method = 3;</code>
+     * @param value The bytes for paymentMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentMethodBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      paymentMethod = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object prepayId = "";
+    /**
+     * <pre>
+     * 微信支付的预付单 id
+     * </pre>
+     *
+     * <code>string prepay_id = 4;</code>
+     * @return The prepayId.
+     */
+    public java.lang.String getPrepayId() {
+      java.lang.Object ref = prepayId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prepayId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的预付单 id
+     * </pre>
+     *
+     * <code>string prepay_id = 4;</code>
+     * @return The bytes for prepayId.
+     */
+    public com.google.protobuf.ByteString
+        getPrepayIdBytes() {
+      java.lang.Object ref = prepayId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prepayId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的预付单 id
+     * </pre>
+     *
+     * <code>string prepay_id = 4;</code>
+     * @param value The prepayId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrepayId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      prepayId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的预付单 id
+     * </pre>
+     *
+     * <code>string prepay_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPrepayId() {
+      
+      prepayId = getDefaultInstance().getPrepayId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的预付单 id
+     * </pre>
+     *
+     * <code>string prepay_id = 4;</code>
+     * @param value The bytes for prepayId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrepayIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      prepayId = value;
       onChanged();
       return this;
     }

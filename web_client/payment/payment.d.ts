@@ -29,6 +29,10 @@ export interface CreatePaymentRequest {
 export interface CreatePaymentResponse {
   base_resp?: base.BaseResponse;
   payment_id?: string;
+  /** 支付方式：coin：虚拟币支付；weixin：微信支付 */
+  payment_method?: string;
+  /** 微信支付的预付单 id */
+  prepay_id?: string;
 }
 
 export interface GetPaymentRequest {

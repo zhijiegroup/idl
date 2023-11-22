@@ -304,6 +304,8 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
   factory CreatePaymentResponse({
     $0.BaseResponse? baseResp,
     $fixnum.Int64? paymentId,
+    $core.String? paymentMethod,
+    $core.String? prepayId,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -311,6 +313,12 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
     }
     if (paymentId != null) {
       $result.paymentId = paymentId;
+    }
+    if (paymentMethod != null) {
+      $result.paymentMethod = paymentMethod;
+    }
+    if (prepayId != null) {
+      $result.prepayId = prepayId;
     }
     return $result;
   }
@@ -321,6 +329,8 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePaymentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'paymentId')
+    ..aOS(3, _omitFieldNames ? '' : 'paymentMethod')
+    ..aOS(4, _omitFieldNames ? '' : 'prepayId')
     ..hasRequiredFields = false
   ;
 
@@ -364,6 +374,24 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
   $core.bool hasPaymentId() => $_has(1);
   @$pb.TagNumber(2)
   void clearPaymentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get paymentMethod => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set paymentMethod($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPaymentMethod() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPaymentMethod() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get prepayId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set prepayId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPrepayId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPrepayId() => clearField(4);
 }
 
 class GetPaymentRequest extends $pb.GeneratedMessage {

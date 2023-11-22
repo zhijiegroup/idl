@@ -73,13 +73,17 @@ const CreatePaymentResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'payment_id', '3': 2, '4': 1, '5': 3, '10': 'paymentId'},
+    {'1': 'payment_method', '3': 3, '4': 1, '5': 9, '10': 'paymentMethod'},
+    {'1': 'prepay_id', '3': 4, '4': 1, '5': 9, '10': 'prepayId'},
   ],
 };
 
 /// Descriptor for `CreatePaymentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createPaymentResponseDescriptor = $convert.base64Decode(
     'ChVDcmVhdGVQYXltZW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
-    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnBheW1lbnRfaWQYAiABKANSCXBheW1lbnRJZA==');
+    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnBheW1lbnRfaWQYAiABKANSCXBheW1lbnRJZBIlCg5wYXlt'
+    'ZW50X21ldGhvZBgDIAEoCVINcGF5bWVudE1ldGhvZBIbCglwcmVwYXlfaWQYBCABKAlSCHByZX'
+    'BheUlk');
 
 @$core.Deprecated('Use getPaymentRequestDescriptor instead')
 const GetPaymentRequest$json = {
