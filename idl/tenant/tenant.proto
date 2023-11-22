@@ -120,6 +120,15 @@ message ExitTenantResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message IsEnterTenantRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message IsTenantResponse {
+  base.BaseResponse base_resp = 1;
+  bool entered = 2;
+}
+
 message InitTenantRequest {
   base.BaseRequest base_request = 1;
   int64 tenant_id = 2;
