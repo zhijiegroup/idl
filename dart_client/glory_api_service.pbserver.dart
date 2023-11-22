@@ -276,6 +276,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$30.GetTenantOrgResponse> getTenantOrg($pb.ServerContext ctx, $30.GetTenantOrgRequest request);
   $async.Future<$30.EnterTenantResponse> enterTenant($pb.ServerContext ctx, $30.EnterTenantRequest request);
   $async.Future<$30.ExitTenantResponse> exitTenant($pb.ServerContext ctx, $30.ExitTenantRequest request);
+  $async.Future<$30.IsTenantResponse> isEnterTenant($pb.ServerContext ctx, $30.IsEnterTenantRequest request);
   $async.Future<$30.InitTenantResponse> initTenant($pb.ServerContext ctx, $30.InitTenantRequest request);
   $async.Future<$31.CreateTenantDeptResponse> createTenantDept($pb.ServerContext ctx, $31.CreateTenantDeptRequest request);
   $async.Future<$31.UpdateTenantDeptResponse> updateTenantDept($pb.ServerContext ctx, $31.UpdateTenantDeptRequest request);
@@ -604,6 +605,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTenantOrg': return $30.GetTenantOrgRequest();
       case 'EnterTenant': return $30.EnterTenantRequest();
       case 'ExitTenant': return $30.ExitTenantRequest();
+      case 'IsEnterTenant': return $30.IsEnterTenantRequest();
       case 'InitTenant': return $30.InitTenantRequest();
       case 'CreateTenantDept': return $31.CreateTenantDeptRequest();
       case 'UpdateTenantDept': return $31.UpdateTenantDeptRequest();
@@ -935,6 +937,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTenantOrg': return this.getTenantOrg(ctx, request as $30.GetTenantOrgRequest);
       case 'EnterTenant': return this.enterTenant(ctx, request as $30.EnterTenantRequest);
       case 'ExitTenant': return this.exitTenant(ctx, request as $30.ExitTenantRequest);
+      case 'IsEnterTenant': return this.isEnterTenant(ctx, request as $30.IsEnterTenantRequest);
       case 'InitTenant': return this.initTenant(ctx, request as $30.InitTenantRequest);
       case 'CreateTenantDept': return this.createTenantDept(ctx, request as $31.CreateTenantDeptRequest);
       case 'UpdateTenantDept': return this.updateTenantDept(ctx, request as $31.UpdateTenantDeptRequest);

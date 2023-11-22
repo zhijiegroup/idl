@@ -110,6 +110,16 @@ public final class TenantOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ExitTenantResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_IsEnterTenantRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_IsEnterTenantRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_IsTenantResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_IsTenantResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_InitTenantRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -178,12 +188,15 @@ public final class TenantOuterClass {
       "\001 \001(\0132\022.base.BaseResponse\"<\n\021ExitTenantR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
       "Request\";\n\022ExitTenantResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"O\n\021InitTena" +
-      "ntRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022\021\n\ttenant_id\030\002 \001(\003\";\n\022InitTen" +
-      "antResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponseB%\n!com.zhijiejiaoyu.glory_api" +
-      ".tenantP\001b\006proto3"
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"?\n\024IsEnterT" +
+      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\"J\n\020IsTenantResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007ente" +
+      "red\030\002 \001(\010\"O\n\021InitTenantRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenan" +
+      "t_id\030\002 \001(\003\";\n\022InitTenantResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.z" +
+      "hijiejiaoyu.glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -304,14 +317,26 @@ public final class TenantOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ExitTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_InitTenantRequest_descriptor =
+    internal_static_glory_api_IsEnterTenantRequest_descriptor =
       getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_IsEnterTenantRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_IsEnterTenantRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_IsTenantResponse_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_glory_api_IsTenantResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_IsTenantResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Entered", });
+    internal_static_glory_api_InitTenantRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_InitTenantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_InitTenantRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", });
     internal_static_glory_api_InitTenantResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_InitTenantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_InitTenantResponse_descriptor,

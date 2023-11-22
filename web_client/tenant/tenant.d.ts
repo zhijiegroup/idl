@@ -124,6 +124,15 @@ export interface ExitTenantResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface IsEnterTenantRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface IsTenantResponse {
+  base_resp?: base.BaseResponse;
+  entered?: boolean;
+}
+
 export interface InitTenantRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;

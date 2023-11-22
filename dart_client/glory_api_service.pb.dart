@@ -687,6 +687,9 @@ class glory_apiApi {
   $async.Future<$30.ExitTenantResponse> exitTenant($pb.ClientContext? ctx, $30.ExitTenantRequest request) =>
     _client.invoke<$30.ExitTenantResponse>(ctx, 'glory_api', 'ExitTenant', request, $30.ExitTenantResponse())
   ;
+  $async.Future<$30.IsTenantResponse> isEnterTenant($pb.ClientContext? ctx, $30.IsEnterTenantRequest request) =>
+    _client.invoke<$30.IsTenantResponse>(ctx, 'glory_api', 'IsEnterTenant', request, $30.IsTenantResponse())
+  ;
   $async.Future<$30.InitTenantResponse> initTenant($pb.ClientContext? ctx, $30.InitTenantRequest request) =>
     _client.invoke<$30.InitTenantResponse>(ctx, 'glory_api', 'InitTenant', request, $30.InitTenantResponse())
   ;

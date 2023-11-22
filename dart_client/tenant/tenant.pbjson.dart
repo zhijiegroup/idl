@@ -311,6 +311,33 @@ final $typed_data.Uint8List exitTenantResponseDescriptor = $convert.base64Decode
     'ChJFeGl0VGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use isEnterTenantRequestDescriptor instead')
+const IsEnterTenantRequest$json = {
+  '1': 'IsEnterTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `IsEnterTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List isEnterTenantRequestDescriptor = $convert.base64Decode(
+    'ChRJc0VudGVyVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use isTenantResponseDescriptor instead')
+const IsTenantResponse$json = {
+  '1': 'IsTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'entered', '3': 2, '4': 1, '5': 8, '10': 'entered'},
+  ],
+};
+
+/// Descriptor for `IsTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List isTenantResponseDescriptor = $convert.base64Decode(
+    'ChBJc1RlbmFudFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3Bvbn'
+    'NlUghiYXNlUmVzcBIYCgdlbnRlcmVkGAIgASgIUgdlbnRlcmVk');
+
 @$core.Deprecated('Use initTenantRequestDescriptor instead')
 const InitTenantRequest$json = {
   '1': 'InitTenantRequest',
