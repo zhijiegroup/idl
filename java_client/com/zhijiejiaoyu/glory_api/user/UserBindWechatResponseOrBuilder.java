@@ -27,4 +27,28 @@ public interface UserBindWechatResponseOrBuilder extends
    * @return The bind.
    */
   boolean getBind();
+
+  /**
+   * <code>string nickname = 3;</code>
+   * @return The nickname.
+   */
+  java.lang.String getNickname();
+  /**
+   * <code>string nickname = 3;</code>
+   * @return The bytes for nickname.
+   */
+  com.google.protobuf.ByteString
+      getNicknameBytes();
+
+  /**
+   * <code>string avatar = 4;</code>
+   * @return The avatar.
+   */
+  java.lang.String getAvatar();
+  /**
+   * <code>string avatar = 4;</code>
+   * @return The bytes for avatar.
+   */
+  com.google.protobuf.ByteString
+      getAvatarBytes();
 }

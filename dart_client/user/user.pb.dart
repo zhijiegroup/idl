@@ -5666,6 +5666,8 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
   factory UserBindWechatResponse({
     $2.BaseResponse? baseResp,
     $core.bool? bind,
+    $core.String? nickname,
+    $core.String? avatar,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -5673,6 +5675,12 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
     }
     if (bind != null) {
       $result.bind = bind;
+    }
+    if (nickname != null) {
+      $result.nickname = nickname;
+    }
+    if (avatar != null) {
+      $result.avatar = avatar;
     }
     return $result;
   }
@@ -5683,6 +5691,8 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserBindWechatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aOB(2, _omitFieldNames ? '' : 'bind')
+    ..aOS(3, _omitFieldNames ? '' : 'nickname')
+    ..aOS(4, _omitFieldNames ? '' : 'avatar')
     ..hasRequiredFields = false
   ;
 
@@ -5726,6 +5736,24 @@ class UserBindWechatResponse extends $pb.GeneratedMessage {
   $core.bool hasBind() => $_has(1);
   @$pb.TagNumber(2)
   void clearBind() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nickname => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nickname($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNickname() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNickname() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get avatar => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set avatar($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAvatar() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAvatar() => clearField(4);
 }
 
 class UserUnbindWechatRequest extends $pb.GeneratedMessage {

@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private UserBindWechatResponse() {
+    nickname = "";
+    avatar = "";
   }
 
   @java.lang.Override
@@ -64,6 +66,18 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             bind = input.readBool();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nickname = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            avatar = s;
             break;
           }
           default: {
@@ -135,6 +149,82 @@ private static final long serialVersionUID = 0L;
     return bind ;
   }
 
+  public static final int NICKNAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object nickname ;
+  /**
+   * <code>string nickname = 3;</code>
+   * @return The nickname.
+   */
+  @java.lang.Override
+  public java.lang.String getNickname() {
+    java.lang.Object ref = nickname ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nickname = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string nickname = 3;</code>
+   * @return The bytes for nickname.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNicknameBytes() {
+    java.lang.Object ref = nickname ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nickname = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVATAR_FIELD_NUMBER = 4;
+  private volatile java.lang.Object avatar ;
+  /**
+   * <code>string avatar = 4;</code>
+   * @return The avatar.
+   */
+  @java.lang.Override
+  public java.lang.String getAvatar() {
+    java.lang.Object ref = avatar ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      avatar = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string avatar = 4;</code>
+   * @return The bytes for avatar.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAvatarBytes() {
+    java.lang.Object ref = avatar ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      avatar = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -155,6 +245,12 @@ private static final long serialVersionUID = 0L;
     if (bind != false) {
       output.writeBool(2, bind );
     }
+    if (!getNicknameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nickname );
+    }
+    if (!getAvatarBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, avatar );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -171,6 +267,12 @@ private static final long serialVersionUID = 0L;
     if (bind != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, bind );
+    }
+    if (!getNicknameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nickname );
+    }
+    if (!getAvatarBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, avatar );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +296,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getBind()
         != other.getBind()) return false;
+    if (!getNickname()
+        .equals(other.getNickname())) return false;
+    if (!getAvatar()
+        .equals(other.getAvatar())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -212,6 +318,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BIND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBind());
+    hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getNickname().hashCode();
+    hash = (37 * hash) + AVATAR_FIELD_NUMBER;
+    hash = (53 * hash) + getAvatar().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -353,6 +463,10 @@ private static final long serialVersionUID = 0L;
       }
       bind = false;
 
+      nickname = "";
+
+      avatar = "";
+
       return this;
     }
 
@@ -385,6 +499,8 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseRespBuilder .build();
       }
       result.bind = bind ;
+      result.nickname = nickname ;
+      result.avatar = avatar ;
       onBuilt();
       return result;
     }
@@ -438,6 +554,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBind() != false) {
         setBind(other.getBind());
+      }
+      if (!other.getNickname().isEmpty()) {
+        nickname = other.nickname ;
+        onChanged();
+      }
+      if (!other.getAvatar().isEmpty()) {
+        avatar = other.avatar ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -614,6 +738,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearBind() {
       
       bind = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nickname = "";
+    /**
+     * <code>string nickname = 3;</code>
+     * @return The nickname.
+     */
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nickname = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string nickname = 3;</code>
+     * @return The bytes for nickname.
+     */
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string nickname = 3;</code>
+     * @param value The nickname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNickname(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nickname = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nickname = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNickname() {
+      
+      nickname = getDefaultInstance().getNickname();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nickname = 3;</code>
+     * @param value The bytes for nickname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNicknameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nickname = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object avatar = "";
+    /**
+     * <code>string avatar = 4;</code>
+     * @return The avatar.
+     */
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        avatar = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string avatar = 4;</code>
+     * @return The bytes for avatar.
+     */
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string avatar = 4;</code>
+     * @param value The avatar to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvatar(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      avatar = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string avatar = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAvatar() {
+      
+      avatar = getDefaultInstance().getAvatar();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string avatar = 4;</code>
+     * @param value The bytes for avatar to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvatarBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      avatar = value;
       onChanged();
       return this;
     }

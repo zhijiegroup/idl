@@ -595,13 +595,14 @@ public final class UserOuterClass {
       "aseResponse\022\036\n\005users\030\002 \003(\0132\017.glory_api.U" +
       "ser\"N\n\025UserBindWechatRequest\022\'\n\014base_req" +
       "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004code\030\003 " +
-      "\001(\t\"M\n\026UserBindWechatResponse\022%\n\tbase_re" +
+      "\001(\t\"o\n\026UserBindWechatResponse\022%\n\tbase_re" +
       "sp\030\001 \001(\0132\022.base.BaseResponse\022\014\n\004bind\030\002 \001" +
-      "(\010\"B\n\027UserUnbindWechatRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\"A\n\030UserUn" +
-      "bindWechatResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponseB#\n\037com.zhijiejiaoyu.gl" +
-      "ory_api.userP\001b\006proto3"
+      "(\010\022\020\n\010nickname\030\003 \001(\t\022\016\n\006avatar\030\004 \001(\t\"B\n\027" +
+      "UserUnbindWechatRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\"A\n\030UserUnbindWe" +
+      "chatResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponseB#\n\037com.zhijiejiaoyu.glory_ap" +
+      "i.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1036,7 +1037,7 @@ public final class UserOuterClass {
     internal_static_glory_api_UserBindWechatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserBindWechatResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Bind", });
+        new java.lang.String[] { "BaseResp", "Bind", "Nickname", "Avatar", });
     internal_static_glory_api_UserUnbindWechatRequest_descriptor =
       getDescriptor().getMessageTypes().get(71);
     internal_static_glory_api_UserUnbindWechatRequest_fieldAccessorTable = new

@@ -1991,6 +1991,10 @@ struct GloryApi_UserBindWechatResponse {
 
   var bind: Bool = false
 
+  var nickname: String = String()
+
+  var avatar: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -5577,6 +5581,8 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "bind"),
+    3: .same(proto: "nickname"),
+    4: .same(proto: "avatar"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5587,6 +5593,8 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.bind) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.nickname) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
       default: break
       }
     }
@@ -5603,12 +5611,20 @@ extension GloryApi_UserBindWechatResponse: SwiftProtobuf.Message, SwiftProtobuf.
     if self.bind != false {
       try visitor.visitSingularBoolField(value: self.bind, fieldNumber: 2)
     }
+    if !self.nickname.isEmpty {
+      try visitor.visitSingularStringField(value: self.nickname, fieldNumber: 3)
+    }
+    if !self.avatar.isEmpty {
+      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_UserBindWechatResponse, rhs: GloryApi_UserBindWechatResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.bind != rhs.bind {return false}
+    if lhs.nickname != rhs.nickname {return false}
+    if lhs.avatar != rhs.avatar {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

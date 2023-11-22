@@ -1164,13 +1164,16 @@ const UserBindWechatResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'bind', '3': 2, '4': 1, '5': 8, '10': 'bind'},
+    {'1': 'nickname', '3': 3, '4': 1, '5': 9, '10': 'nickname'},
+    {'1': 'avatar', '3': 4, '4': 1, '5': 9, '10': 'avatar'},
   ],
 };
 
 /// Descriptor for `UserBindWechatResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userBindWechatResponseDescriptor = $convert.base64Decode(
     'ChZVc2VyQmluZFdlY2hhdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
-    'Jlc3BvbnNlUghiYXNlUmVzcBISCgRiaW5kGAIgASgIUgRiaW5k');
+    'Jlc3BvbnNlUghiYXNlUmVzcBISCgRiaW5kGAIgASgIUgRiaW5kEhoKCG5pY2tuYW1lGAMgASgJ'
+    'UghuaWNrbmFtZRIWCgZhdmF0YXIYBCABKAlSBmF2YXRhcg==');
 
 @$core.Deprecated('Use userUnbindWechatRequestDescriptor instead')
 const UserUnbindWechatRequest$json = {
