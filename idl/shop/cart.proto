@@ -38,6 +38,7 @@ message ProductShow {
   string channel = 10; //live:直播间订单,normal:非直播间订单
   repeated CouponDetail coupon = 11; // 优惠券
   ActivityDetail activity = 12; // 活动
+  bool is_deleted = 13; // 该商品是否被删除
 }
 
 
