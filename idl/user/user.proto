@@ -460,6 +460,8 @@ message UserBindWechatRequest {
 message UserBindWechatResponse {
   base.BaseResponse base_resp = 1;
   bool bind = 2;
+  string nickname = 3;
+  string avatar = 4;
 }
 
 message UserUnbindWechatRequest {
