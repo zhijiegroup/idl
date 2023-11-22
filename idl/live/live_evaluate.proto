@@ -157,6 +157,8 @@ message UnevaluatedRoom {
 message ListUnevaluatedRoomRequest {
     base.BaseRequest base_request = 1;
     base.PaginationRequest pagination = 2;
+    string shop_or_user_name = 3;
+    int64 room_status = 4; // 0:全部 1:进行中 2:已结束
 }
 
 message ListUnevaluatedRoomResponse {
