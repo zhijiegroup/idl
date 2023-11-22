@@ -28,7 +28,8 @@ message CreatePaymentRequest {
 message CreatePaymentResponse {
   base.BaseResponse base_resp = 1;
   int64 payment_id = 2;
-//  PaymentWithAuthor payment_detail =2;
+  string payment_method = 3; // 支付方式：coin：虚拟币支付；weixin：微信支付
+  string prepay_id = 4; // 微信支付的预付单 id
 }
 
 message GetPaymentRequest {
