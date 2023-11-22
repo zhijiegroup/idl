@@ -1692,6 +1692,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  IsEnterTenant(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/tenant/is_enter_tenant${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   InitTenant(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/tenant/init_tenant${query}`;

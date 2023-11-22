@@ -45,6 +45,8 @@ export interface ProductShow {
   coupon?: Array<coupon.CouponDetail>;
   /** 活动 */
   activity?: activity.ActivityDetail;
+  /** 该商品是否被删除 */
+  is_deleted?: boolean;
 }
 
 export interface ShopShow {

@@ -59,26 +59,26 @@ public interface CreateLiveControlRequestOrBuilder extends
       getDaysBytes();
 
   /**
-   * <code>int64 available_start_time = 6;</code>
-   * @return The availableStartTime.
+   * <code>int64 avaliable_start_time = 6;</code>
+   * @return The avaliableStartTime.
    */
-  long getAvailableStartTime();
+  long getAvaliableStartTime();
 
   /**
-   * <code>int64 available_end_time = 7;</code>
-   * @return The availableEndTime.
+   * <code>int64 avaliable_end_time = 7;</code>
+   * @return The avaliableEndTime.
    */
-  long getAvailableEndTime();
+  long getAvaliableEndTime();
 
   /**
-   * <code>int64 unavailable_start_time = 8;</code>
-   * @return The unavailableStartTime.
+   * <code>int64 unavaliable_start_time = 8;</code>
+   * @return The unavaliableStartTime.
    */
-  long getUnavailableStartTime();
+  long getUnavaliableStartTime();
 
   /**
-   * <code>int64 unavailable_end_time = 9;</code>
-   * @return The unavailableEndTime.
+   * <code>int64 unavaliable_end_time = 9;</code>
+   * @return The unavaliableEndTime.
    */
-  long getUnavailableEndTime();
+  long getUnavaliableEndTime();
 }

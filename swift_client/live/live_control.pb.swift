@@ -42,13 +42,13 @@ struct GloryApi_CreateLiveControlRequest {
 
   var days: String = String()
 
-  var availableStartTime: Int64 = 0
+  var avaliableStartTime: Int64 = 0
 
-  var availableEndTime: Int64 = 0
+  var avaliableEndTime: Int64 = 0
 
-  var unavailableStartTime: Int64 = 0
+  var unavaliableStartTime: Int64 = 0
 
-  var unavailableEndTime: Int64 = 0
+  var unavaliableEndTime: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -100,13 +100,13 @@ struct GloryApi_UpdateLiveControlRequest {
 
   var days: String = String()
 
-  var availableStartTime: Int64 = 0
+  var avaliableStartTime: Int64 = 0
 
-  var availableEndTime: Int64 = 0
+  var avaliableEndTime: Int64 = 0
 
-  var unavailableStartTime: Int64 = 0
+  var unavaliableStartTime: Int64 = 0
 
-  var unavailableEndTime: Int64 = 0
+  var unavaliableEndTime: Int64 = 0
 
   var id: Int64 = 0
 
@@ -178,13 +178,13 @@ struct GloryApi_LiveControl {
 
   var days: String = String()
 
-  var availableStartTime: Int64 = 0
+  var avaliableStartTime: Int64 = 0
 
-  var availableEndTime: Int64 = 0
+  var avaliableEndTime: Int64 = 0
 
-  var unavailableStartTime: Int64 = 0
+  var unavaliableStartTime: Int64 = 0
 
-  var unavailableEndTime: Int64 = 0
+  var unavaliableEndTime: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -282,10 +282,10 @@ extension GloryApi_CreateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     3: .same(proto: "name"),
     4: .standard(proto: "is_repeated"),
     5: .same(proto: "days"),
-    6: .standard(proto: "available_start_time"),
-    7: .standard(proto: "available_end_time"),
-    8: .standard(proto: "unavailable_start_time"),
-    9: .standard(proto: "unavailable_end_time"),
+    6: .standard(proto: "avaliable_start_time"),
+    7: .standard(proto: "avaliable_end_time"),
+    8: .standard(proto: "unavaliable_start_time"),
+    9: .standard(proto: "unavaliable_end_time"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -299,10 +299,10 @@ extension GloryApi_CreateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isRepeated) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.days) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.availableStartTime) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.availableEndTime) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavailableStartTime) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavailableEndTime) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.avaliableStartTime) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.avaliableEndTime) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableStartTime) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableEndTime) }()
       default: break
       }
     }
@@ -328,17 +328,17 @@ extension GloryApi_CreateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     if !self.days.isEmpty {
       try visitor.visitSingularStringField(value: self.days, fieldNumber: 5)
     }
-    if self.availableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableStartTime, fieldNumber: 6)
+    if self.avaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableStartTime, fieldNumber: 6)
     }
-    if self.availableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableEndTime, fieldNumber: 7)
+    if self.avaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableEndTime, fieldNumber: 7)
     }
-    if self.unavailableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableStartTime, fieldNumber: 8)
+    if self.unavaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableStartTime, fieldNumber: 8)
     }
-    if self.unavailableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableEndTime, fieldNumber: 9)
+    if self.unavaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableEndTime, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -349,10 +349,10 @@ extension GloryApi_CreateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     if lhs.name != rhs.name {return false}
     if lhs.isRepeated != rhs.isRepeated {return false}
     if lhs.days != rhs.days {return false}
-    if lhs.availableStartTime != rhs.availableStartTime {return false}
-    if lhs.availableEndTime != rhs.availableEndTime {return false}
-    if lhs.unavailableStartTime != rhs.unavailableStartTime {return false}
-    if lhs.unavailableEndTime != rhs.unavailableEndTime {return false}
+    if lhs.avaliableStartTime != rhs.avaliableStartTime {return false}
+    if lhs.avaliableEndTime != rhs.avaliableEndTime {return false}
+    if lhs.unavaliableStartTime != rhs.unavaliableStartTime {return false}
+    if lhs.unavaliableEndTime != rhs.unavaliableEndTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -402,10 +402,10 @@ extension GloryApi_UpdateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     3: .same(proto: "name"),
     4: .standard(proto: "is_repeated"),
     5: .same(proto: "days"),
-    6: .standard(proto: "available_start_time"),
-    7: .standard(proto: "available_end_time"),
-    8: .standard(proto: "unavailable_start_time"),
-    9: .standard(proto: "unavailable_end_time"),
+    6: .standard(proto: "avaliable_start_time"),
+    7: .standard(proto: "avaliable_end_time"),
+    8: .standard(proto: "unavaliable_start_time"),
+    9: .standard(proto: "unavaliable_end_time"),
     10: .same(proto: "id"),
     11: .standard(proto: "is_enable"),
   ]
@@ -421,10 +421,10 @@ extension GloryApi_UpdateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isRepeated) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.days) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.availableStartTime) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.availableEndTime) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavailableStartTime) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavailableEndTime) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.avaliableStartTime) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.avaliableEndTime) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableStartTime) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableEndTime) }()
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.id) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
       default: break
@@ -452,17 +452,17 @@ extension GloryApi_UpdateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     if !self.days.isEmpty {
       try visitor.visitSingularStringField(value: self.days, fieldNumber: 5)
     }
-    if self.availableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableStartTime, fieldNumber: 6)
+    if self.avaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableStartTime, fieldNumber: 6)
     }
-    if self.availableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableEndTime, fieldNumber: 7)
+    if self.avaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableEndTime, fieldNumber: 7)
     }
-    if self.unavailableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableStartTime, fieldNumber: 8)
+    if self.unavaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableStartTime, fieldNumber: 8)
     }
-    if self.unavailableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableEndTime, fieldNumber: 9)
+    if self.unavaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableEndTime, fieldNumber: 9)
     }
     if self.id != 0 {
       try visitor.visitSingularInt64Field(value: self.id, fieldNumber: 10)
@@ -479,10 +479,10 @@ extension GloryApi_UpdateLiveControlRequest: SwiftProtobuf.Message, SwiftProtobu
     if lhs.name != rhs.name {return false}
     if lhs.isRepeated != rhs.isRepeated {return false}
     if lhs.days != rhs.days {return false}
-    if lhs.availableStartTime != rhs.availableStartTime {return false}
-    if lhs.availableEndTime != rhs.availableEndTime {return false}
-    if lhs.unavailableStartTime != rhs.unavailableStartTime {return false}
-    if lhs.unavailableEndTime != rhs.unavailableEndTime {return false}
+    if lhs.avaliableStartTime != rhs.avaliableStartTime {return false}
+    if lhs.avaliableEndTime != rhs.avaliableEndTime {return false}
+    if lhs.unavaliableStartTime != rhs.unavaliableStartTime {return false}
+    if lhs.unavaliableEndTime != rhs.unavaliableEndTime {return false}
     if lhs.id != rhs.id {return false}
     if lhs.isEnable != rhs.isEnable {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -576,10 +576,10 @@ extension GloryApi_LiveControl: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     3: .standard(proto: "is_repeated"),
     4: .standard(proto: "is_enable"),
     5: .same(proto: "days"),
-    6: .standard(proto: "available_start_time"),
-    7: .standard(proto: "available_end_time"),
-    8: .standard(proto: "unavailable_start_time"),
-    9: .standard(proto: "unavailable_end_time"),
+    6: .standard(proto: "avaliable_start_time"),
+    7: .standard(proto: "avaliable_end_time"),
+    8: .standard(proto: "unavaliable_start_time"),
+    9: .standard(proto: "unavaliable_end_time"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -593,10 +593,10 @@ extension GloryApi_LiveControl: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 3: try { try decoder.decodeSingularBoolField(value: &self.isRepeated) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.days) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.availableStartTime) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.availableEndTime) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavailableStartTime) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavailableEndTime) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.avaliableStartTime) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.avaliableEndTime) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableStartTime) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.unavaliableEndTime) }()
       default: break
       }
     }
@@ -618,17 +618,17 @@ extension GloryApi_LiveControl: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.days.isEmpty {
       try visitor.visitSingularStringField(value: self.days, fieldNumber: 5)
     }
-    if self.availableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableStartTime, fieldNumber: 6)
+    if self.avaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableStartTime, fieldNumber: 6)
     }
-    if self.availableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.availableEndTime, fieldNumber: 7)
+    if self.avaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.avaliableEndTime, fieldNumber: 7)
     }
-    if self.unavailableStartTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableStartTime, fieldNumber: 8)
+    if self.unavaliableStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableStartTime, fieldNumber: 8)
     }
-    if self.unavailableEndTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.unavailableEndTime, fieldNumber: 9)
+    if self.unavaliableEndTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.unavaliableEndTime, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -639,10 +639,10 @@ extension GloryApi_LiveControl: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.isRepeated != rhs.isRepeated {return false}
     if lhs.isEnable != rhs.isEnable {return false}
     if lhs.days != rhs.days {return false}
-    if lhs.availableStartTime != rhs.availableStartTime {return false}
-    if lhs.availableEndTime != rhs.availableEndTime {return false}
-    if lhs.unavailableStartTime != rhs.unavailableStartTime {return false}
-    if lhs.unavailableEndTime != rhs.unavailableEndTime {return false}
+    if lhs.avaliableStartTime != rhs.avaliableStartTime {return false}
+    if lhs.avaliableEndTime != rhs.avaliableEndTime {return false}
+    if lhs.unavaliableStartTime != rhs.unavaliableStartTime {return false}
+    if lhs.unavaliableEndTime != rhs.unavaliableEndTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

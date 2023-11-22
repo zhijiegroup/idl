@@ -132,6 +132,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 104: {
+
+            isDeleted = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -526,6 +531,21 @@ private static final long serialVersionUID = 0L;
     return getActivity();
   }
 
+  public static final int IS_DELETED_FIELD_NUMBER = 13;
+  private boolean isDeleted ;
+  /**
+   * <pre>
+   * 该商品是否被删除
+   * </pre>
+   *
+   * <code>bool is_deleted = 13;</code>
+   * @return The isDeleted.
+   */
+  @java.lang.Override
+  public boolean getIsDeleted() {
+    return isDeleted ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -575,6 +595,9 @@ private static final long serialVersionUID = 0L;
     }
     if (activity != null) {
       output.writeMessage(12, getActivity());
+    }
+    if (isDeleted != false) {
+      output.writeBool(13, isDeleted );
     }
     unknownFields.writeTo(output);
   }
@@ -628,6 +651,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getActivity());
     }
+    if (isDeleted != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isDeleted );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -672,6 +699,8 @@ private static final long serialVersionUID = 0L;
       if (!getActivity()
           .equals(other.getActivity())) return false;
     }
+    if (getIsDeleted()
+        != other.getIsDeleted()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -715,6 +744,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ACTIVITY_FIELD_NUMBER;
       hash = (53 * hash) + getActivity().hashCode();
     }
+    hash = (37 * hash) + IS_DELETED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsDeleted());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -881,6 +913,8 @@ private static final long serialVersionUID = 0L;
         activity = null;
         activityBuilder = null;
       }
+      isDeleted = false;
+
       return this;
     }
 
@@ -932,6 +966,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.activity = activityBuilder .build();
       }
+      result.isDeleted = isDeleted ;
       onBuilt();
       return result;
     }
@@ -1043,6 +1078,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasActivity()) {
         mergeActivity(other.getActivity());
+      }
+      if (other.getIsDeleted() != false) {
+        setIsDeleted(other.getIsDeleted());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2118,6 +2156,49 @@ private static final long serialVersionUID = 0L;
         activity = null;
       }
       return activityBuilder ;
+    }
+
+    private boolean isDeleted ;
+    /**
+     * <pre>
+     * 该商品是否被删除
+     * </pre>
+     *
+     * <code>bool is_deleted = 13;</code>
+     * @return The isDeleted.
+     */
+    @java.lang.Override
+    public boolean getIsDeleted() {
+      return isDeleted ;
+    }
+    /**
+     * <pre>
+     * 该商品是否被删除
+     * </pre>
+     *
+     * <code>bool is_deleted = 13;</code>
+     * @param value The isDeleted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsDeleted(boolean value) {
+      
+      isDeleted = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 该商品是否被删除
+     * </pre>
+     *
+     * <code>bool is_deleted = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsDeleted() {
+      
+      isDeleted = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

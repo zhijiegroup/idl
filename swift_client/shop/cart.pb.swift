@@ -148,6 +148,12 @@ struct GloryApi_ProductShow {
   /// Clears the value of `activity`. Subsequent reads from it will return its default value.
   mutating func clearActivity() {_uniqueStorage()._activity = nil}
 
+  /// 该商品是否被删除
+  var isDeleted: Bool {
+    get {return _storage._isDeleted}
+    set {_uniqueStorage()._isDeleted = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -617,6 +623,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     10: .same(proto: "channel"),
     11: .same(proto: "coupon"),
     12: .same(proto: "activity"),
+    13: .standard(proto: "is_deleted"),
   ]
 
   fileprivate class _StorageClass {
@@ -632,6 +639,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _channel: String = String()
     var _coupon: [GloryApi_CouponDetail] = []
     var _activity: GloryApi_ActivityDetail? = nil
+    var _isDeleted: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -650,6 +658,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _channel = source._channel
       _coupon = source._coupon
       _activity = source._activity
+      _isDeleted = source._isDeleted
     }
   }
 
@@ -680,6 +689,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 10: try { try decoder.decodeSingularStringField(value: &_storage._channel) }()
         case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._coupon) }()
         case 12: try { try decoder.decodeSingularMessageField(value: &_storage._activity) }()
+        case 13: try { try decoder.decodeSingularBoolField(value: &_storage._isDeleted) }()
         default: break
         }
       }
@@ -728,6 +738,9 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       try { if let v = _storage._activity {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
       } }()
+      if _storage._isDeleted != false {
+        try visitor.visitSingularBoolField(value: _storage._isDeleted, fieldNumber: 13)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -749,6 +762,7 @@ extension GloryApi_ProductShow: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._channel != rhs_storage._channel {return false}
         if _storage._coupon != rhs_storage._coupon {return false}
         if _storage._activity != rhs_storage._activity {return false}
+        if _storage._isDeleted != rhs_storage._isDeleted {return false}
         return true
       }
       if !storagesAreEqual {return false}

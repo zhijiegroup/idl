@@ -1475,6 +1475,124 @@ class ExitTenantResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class IsEnterTenantRequest extends $pb.GeneratedMessage {
+  factory IsEnterTenantRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  IsEnterTenantRequest._() : super();
+  factory IsEnterTenantRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IsEnterTenantRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IsEnterTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IsEnterTenantRequest clone() => IsEnterTenantRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IsEnterTenantRequest copyWith(void Function(IsEnterTenantRequest) updates) => super.copyWith((message) => updates(message as IsEnterTenantRequest)) as IsEnterTenantRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IsEnterTenantRequest create() => IsEnterTenantRequest._();
+  IsEnterTenantRequest createEmptyInstance() => create();
+  static $pb.PbList<IsEnterTenantRequest> createRepeated() => $pb.PbList<IsEnterTenantRequest>();
+  @$core.pragma('dart2js:noInline')
+  static IsEnterTenantRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsEnterTenantRequest>(create);
+  static IsEnterTenantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class IsTenantResponse extends $pb.GeneratedMessage {
+  factory IsTenantResponse({
+    $0.BaseResponse? baseResp,
+    $core.bool? entered,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (entered != null) {
+      $result.entered = entered;
+    }
+    return $result;
+  }
+  IsTenantResponse._() : super();
+  factory IsTenantResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IsTenantResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IsTenantResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOB(2, _omitFieldNames ? '' : 'entered')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IsTenantResponse clone() => IsTenantResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IsTenantResponse copyWith(void Function(IsTenantResponse) updates) => super.copyWith((message) => updates(message as IsTenantResponse)) as IsTenantResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IsTenantResponse create() => IsTenantResponse._();
+  IsTenantResponse createEmptyInstance() => create();
+  static $pb.PbList<IsTenantResponse> createRepeated() => $pb.PbList<IsTenantResponse>();
+  @$core.pragma('dart2js:noInline')
+  static IsTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IsTenantResponse>(create);
+  static IsTenantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get entered => $_getBF(1);
+  @$pb.TagNumber(2)
+  set entered($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEntered() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntered() => clearField(2);
+}
+
 class InitTenantRequest extends $pb.GeneratedMessage {
   factory InitTenantRequest({
     $0.BaseRequest? baseRequest,

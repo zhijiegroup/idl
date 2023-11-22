@@ -921,6 +921,10 @@ CreateLivePlanProduct create live plan product */
     request: tenant.ExitTenantRequest
   ): Promise<tenant.ExitTenantResponse>;
 
+  IsEnterTenant(
+    request: tenant.IsEnterTenantRequest
+  ): Promise<tenant.IsTenantResponse>;
+
   InitTenant(
     request: tenant.InitTenantRequest
   ): Promise<tenant.InitTenantResponse>;

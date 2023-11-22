@@ -176,6 +176,7 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<TenantDept>? tenantDept,
     $core.Iterable<PagePermission>? pages,
     $core.bool? isAdmin,
+    $core.bool? isEnterTenant,
     $core.Iterable<Role>? roles,
   }) {
     final $result = create();
@@ -218,6 +219,9 @@ class User extends $pb.GeneratedMessage {
     if (isAdmin != null) {
       $result.isAdmin = isAdmin;
     }
+    if (isEnterTenant != null) {
+      $result.isEnterTenant = isEnterTenant;
+    }
     if (roles != null) {
       $result.roles.addAll(roles);
     }
@@ -241,6 +245,7 @@ class User extends $pb.GeneratedMessage {
     ..pc<TenantDept>(11, _omitFieldNames ? '' : 'tenantDept', $pb.PbFieldType.PM, subBuilder: TenantDept.create)
     ..pc<PagePermission>(13, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: PagePermission.create)
     ..aOB(14, _omitFieldNames ? '' : 'isAdmin')
+    ..aOB(15, _omitFieldNames ? '' : 'isEnterTenant')
     ..pc<Role>(121, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: Role.create)
     ..hasRequiredFields = false
   ;
@@ -367,8 +372,17 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   void clearIsAdmin() => clearField(14);
 
+  @$pb.TagNumber(15)
+  $core.bool get isEnterTenant => $_getBF(13);
+  @$pb.TagNumber(15)
+  set isEnterTenant($core.bool v) { $_setBool(13, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasIsEnterTenant() => $_has(13);
+  @$pb.TagNumber(15)
+  void clearIsEnterTenant() => clearField(15);
+
   @$pb.TagNumber(121)
-  $core.List<Role> get roles => $_getList(13);
+  $core.List<Role> get roles => $_getList(14);
 }
 
 class UserFollow extends $pb.GeneratedMessage {
