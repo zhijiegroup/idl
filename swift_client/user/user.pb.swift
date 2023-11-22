@@ -126,6 +126,12 @@ struct GloryApi_User {
     set {_uniqueStorage()._isAdmin = newValue}
   }
 
+  /// 是否在管控状态
+  var isEnterTenant: Bool {
+    get {return _storage._isEnterTenant}
+    set {_uniqueStorage()._isEnterTenant = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2205,6 +2211,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     121: .same(proto: "roles"),
     13: .same(proto: "pages"),
     14: .standard(proto: "is_admin"),
+    15: .standard(proto: "is_enter_tenant"),
   ]
 
   fileprivate class _StorageClass {
@@ -2222,6 +2229,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _roles: [GloryApi_Role] = []
     var _pages: [GloryApi_PagePermission] = []
     var _isAdmin: Bool = false
+    var _isEnterTenant: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -2242,6 +2250,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _roles = source._roles
       _pages = source._pages
       _isAdmin = source._isAdmin
+      _isEnterTenant = source._isEnterTenant
     }
   }
 
@@ -2273,6 +2282,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._tenantDept) }()
         case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._pages) }()
         case 14: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
+        case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isEnterTenant) }()
         case 121: try { try decoder.decodeRepeatedMessageField(value: &_storage._roles) }()
         default: break
         }
@@ -2325,6 +2335,9 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._isAdmin != false {
         try visitor.visitSingularBoolField(value: _storage._isAdmin, fieldNumber: 14)
       }
+      if _storage._isEnterTenant != false {
+        try visitor.visitSingularBoolField(value: _storage._isEnterTenant, fieldNumber: 15)
+      }
       if !_storage._roles.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._roles, fieldNumber: 121)
       }
@@ -2351,6 +2364,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._roles != rhs_storage._roles {return false}
         if _storage._pages != rhs_storage._pages {return false}
         if _storage._isAdmin != rhs_storage._isAdmin {return false}
+        if _storage._isEnterTenant != rhs_storage._isEnterTenant {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -150,6 +150,11 @@ private static final long serialVersionUID = 0L;
             isAdmin = input.readBool();
             break;
           }
+          case 120: {
+
+            isEnterTenant = input.readBool();
+            break;
+          }
           case 970: {
             if (!((mutable_bitField0 & 0x00000004) != 0)) {
               roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
@@ -670,6 +675,21 @@ private static final long serialVersionUID = 0L;
     return isAdmin ;
   }
 
+  public static final int IS_ENTER_TENANT_FIELD_NUMBER = 15;
+  private boolean isEnterTenant ;
+  /**
+   * <pre>
+   * 是否在管控状态
+   * </pre>
+   *
+   * <code>bool is_enter_tenant = 15;</code>
+   * @return The isEnterTenant.
+   */
+  @java.lang.Override
+  public boolean getIsEnterTenant() {
+    return isEnterTenant ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -722,6 +742,9 @@ private static final long serialVersionUID = 0L;
     }
     if (isAdmin != false) {
       output.writeBool(14, isAdmin );
+    }
+    if (isEnterTenant != false) {
+      output.writeBool(15, isEnterTenant );
     }
     for (int i = 0; i < roles .size(); i++) {
       output.writeMessage(121, roles .get(i));
@@ -781,6 +804,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(14, isAdmin );
     }
+    if (isEnterTenant != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, isEnterTenant );
+    }
     for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(121, roles .get(i));
@@ -831,6 +858,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPagesList())) return false;
     if (getIsAdmin()
         != other.getIsAdmin()) return false;
+    if (getIsEnterTenant()
+        != other.getIsEnterTenant()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -883,6 +912,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_ADMIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsAdmin());
+    hash = (37 * hash) + IS_ENTER_TENANT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsEnterTenant());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1068,6 +1100,8 @@ private static final long serialVersionUID = 0L;
       }
       isAdmin = false;
 
+      isEnterTenant = false;
+
       return this;
     }
 
@@ -1145,6 +1179,7 @@ private static final long serialVersionUID = 0L;
         result.pages = pagesBuilder .build();
       }
       result.isAdmin = isAdmin ;
+      result.isEnterTenant = isEnterTenant ;
       onBuilt();
       return result;
     }
@@ -1332,6 +1367,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsAdmin() != false) {
         setIsAdmin(other.getIsAdmin());
+      }
+      if (other.getIsEnterTenant() != false) {
+        setIsEnterTenant(other.getIsEnterTenant());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3059,6 +3097,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsAdmin() {
       
       isAdmin = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean isEnterTenant ;
+    /**
+     * <pre>
+     * 是否在管控状态
+     * </pre>
+     *
+     * <code>bool is_enter_tenant = 15;</code>
+     * @return The isEnterTenant.
+     */
+    @java.lang.Override
+    public boolean getIsEnterTenant() {
+      return isEnterTenant ;
+    }
+    /**
+     * <pre>
+     * 是否在管控状态
+     * </pre>
+     *
+     * <code>bool is_enter_tenant = 15;</code>
+     * @param value The isEnterTenant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsEnterTenant(boolean value) {
+      
+      isEnterTenant = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否在管控状态
+     * </pre>
+     *
+     * <code>bool is_enter_tenant = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsEnterTenant() {
+      
+      isEnterTenant = false;
       onChanged();
       return this;
     }

@@ -227,4 +227,14 @@ public interface UserOrBuilder extends
    * @return The isAdmin.
    */
   boolean getIsAdmin();
+
+  /**
+   * <pre>
+   * 是否在管控状态
+   * </pre>
+   *
+   * <code>bool is_enter_tenant = 15;</code>
+   * @return The isEnterTenant.
+   */
+  boolean getIsEnterTenant();
 }

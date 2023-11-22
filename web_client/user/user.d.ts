@@ -35,6 +35,8 @@ export interface User {
   roles?: Array<Role>;
   pages?: Array<PagePermission>;
   is_admin?: boolean;
+  /** 是否在管控状态 */
+  is_enter_tenant?: boolean;
 }
 
 export interface UserFollow {

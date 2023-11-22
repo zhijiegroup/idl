@@ -54,6 +54,7 @@ const User$json = {
     {'1': 'roles', '3': 121, '4': 3, '5': 11, '6': '.glory_api.Role', '10': 'roles'},
     {'1': 'pages', '3': 13, '4': 3, '5': 11, '6': '.glory_api.PagePermission', '10': 'pages'},
     {'1': 'is_admin', '3': 14, '4': 1, '5': 8, '10': 'isAdmin'},
+    {'1': 'is_enter_tenant', '3': 15, '4': 1, '5': 8, '10': 'isEnterTenant'},
   ],
 };
 
@@ -68,7 +69,7 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'NgoLdGVuYW50X2RlcHQYCyADKAsyFS5nbG9yeV9hcGkuVGVuYW50RGVwdFIKdGVuYW50RGVwdB'
     'IlCgVyb2xlcxh5IAMoCzIPLmdsb3J5X2FwaS5Sb2xlUgVyb2xlcxIvCgVwYWdlcxgNIAMoCzIZ'
     'Lmdsb3J5X2FwaS5QYWdlUGVybWlzc2lvblIFcGFnZXMSGQoIaXNfYWRtaW4YDiABKAhSB2lzQW'
-    'RtaW4=');
+    'RtaW4SJgoPaXNfZW50ZXJfdGVuYW50GA8gASgIUg1pc0VudGVyVGVuYW50');
 
 @$core.Deprecated('Use userFollowDescriptor instead')
 const UserFollow$json = {
