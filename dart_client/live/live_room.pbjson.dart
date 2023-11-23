@@ -245,6 +245,7 @@ const FinishedRoom$json = {
     {'1': 'room_image_attachment_id', '3': 11, '4': 1, '5': 3, '10': 'roomImageAttachmentId'},
     {'1': 'room_deal_amount', '3': 12, '4': 1, '5': 1, '10': 'roomDealAmount'},
     {'1': 'comment_count', '3': 13, '4': 1, '5': 3, '10': 'commentCount'},
+    {'1': 'live_product_count', '3': 14, '4': 1, '5': 3, '10': 'liveProductCount'},
   ],
 };
 
@@ -259,7 +260,8 @@ final $typed_data.Uint8List finishedRoomDescriptor = $convert.base64Decode(
     'DHJvb21JbWFnZVVybBIdCgpyb29tX3RpdGxlGAogASgJUglyb29tVGl0bGUSNwoYcm9vbV9pbW'
     'FnZV9hdHRhY2htZW50X2lkGAsgASgDUhVyb29tSW1hZ2VBdHRhY2htZW50SWQSKAoQcm9vbV9k'
     'ZWFsX2Ftb3VudBgMIAEoAVIOcm9vbURlYWxBbW91bnQSIwoNY29tbWVudF9jb3VudBgNIAEoA1'
-    'IMY29tbWVudENvdW50');
+    'IMY29tbWVudENvdW50EiwKEmxpdmVfcHJvZHVjdF9jb3VudBgOIAEoA1IQbGl2ZVByb2R1Y3RD'
+    'b3VudA==');
 
 @$core.Deprecated('Use listFinishedRoomRequestDescriptor instead')
 const ListFinishedRoomRequest$json = {

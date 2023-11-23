@@ -120,6 +120,8 @@ export interface FinishedRoom {
   room_deal_amount?: number;
   /** 评论数量 */
   comment_count?: string;
+  /** 带货商品数量 */
+  live_product_count?: string;
 }
 
 export interface ListFinishedRoomRequest {

@@ -123,6 +123,11 @@ private static final long serialVersionUID = 0L;
             commentCount = input.readInt64();
             break;
           }
+          case 112: {
+
+            liveProductCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -449,6 +454,21 @@ private static final long serialVersionUID = 0L;
     return commentCount ;
   }
 
+  public static final int LIVE_PRODUCT_COUNT_FIELD_NUMBER = 14;
+  private long liveProductCount ;
+  /**
+   * <pre>
+   * 带货商品数量
+   * </pre>
+   *
+   * <code>int64 live_product_count = 14;</code>
+   * @return The liveProductCount.
+   */
+  @java.lang.Override
+  public long getLiveProductCount() {
+    return liveProductCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -501,6 +521,9 @@ private static final long serialVersionUID = 0L;
     }
     if (commentCount != 0L) {
       output.writeInt64(13, commentCount );
+    }
+    if (liveProductCount != 0L) {
+      output.writeInt64(14, liveProductCount );
     }
     unknownFields.writeTo(output);
   }
@@ -558,6 +581,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(13, commentCount );
     }
+    if (liveProductCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(14, liveProductCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -601,6 +628,8 @@ private static final long serialVersionUID = 0L;
             other.getRoomDealAmount())) return false;
     if (getCommentCount()
         != other.getCommentCount()) return false;
+    if (getLiveProductCount()
+        != other.getLiveProductCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -646,6 +675,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COMMENT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCommentCount());
+    hash = (37 * hash) + LIVE_PRODUCT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLiveProductCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -805,6 +837,8 @@ private static final long serialVersionUID = 0L;
 
       commentCount = 0L;
 
+      liveProductCount = 0L;
+
       return this;
     }
 
@@ -844,6 +878,7 @@ private static final long serialVersionUID = 0L;
       result.roomImageAttachmentId = roomImageAttachmentId ;
       result.roomDealAmount = roomDealAmount ;
       result.commentCount = commentCount ;
+      result.liveProductCount = liveProductCount ;
       onBuilt();
       return result;
     }
@@ -935,6 +970,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCommentCount() != 0L) {
         setCommentCount(other.getCommentCount());
+      }
+      if (other.getLiveProductCount() != 0L) {
+        setLiveProductCount(other.getLiveProductCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1633,6 +1671,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearCommentCount() {
       
       commentCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long liveProductCount ;
+    /**
+     * <pre>
+     * 带货商品数量
+     * </pre>
+     *
+     * <code>int64 live_product_count = 14;</code>
+     * @return The liveProductCount.
+     */
+    @java.lang.Override
+    public long getLiveProductCount() {
+      return liveProductCount ;
+    }
+    /**
+     * <pre>
+     * 带货商品数量
+     * </pre>
+     *
+     * <code>int64 live_product_count = 14;</code>
+     * @param value The liveProductCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveProductCount(long value) {
+      
+      liveProductCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 带货商品数量
+     * </pre>
+     *
+     * <code>int64 live_product_count = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveProductCount() {
+      
+      liveProductCount = 0L;
       onChanged();
       return this;
     }

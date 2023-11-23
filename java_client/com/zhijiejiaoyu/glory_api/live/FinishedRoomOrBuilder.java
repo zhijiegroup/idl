@@ -130,4 +130,14 @@ public interface FinishedRoomOrBuilder extends
    * @return The commentCount.
    */
   long getCommentCount();
+
+  /**
+   * <pre>
+   * 带货商品数量
+   * </pre>
+   *
+   * <code>int64 live_product_count = 14;</code>
+   * @return The liveProductCount.
+   */
+  long getLiveProductCount();
 }

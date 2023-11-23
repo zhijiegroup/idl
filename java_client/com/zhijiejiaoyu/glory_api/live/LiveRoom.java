@@ -237,7 +237,7 @@ public final class LiveRoom {
       "(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\";" +
       "\n\022DeleteRoomResponse\022%\n\tbase_resp\030\001 \001(\0132" +
       "\022.base.BaseResponse\"-\n\nDealAmount\022\017\n\007cur" +
-      "reny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\306\002\n\014FinishedR" +
+      "reny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\342\002\n\014FinishedR" +
       "oom\022\017\n\007room_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022" +
       "\027\n\017user_avatar_url\030\003 \001(\t\022\021\n\tseller_id\030\004 " +
       "\001(\003\022\022\n\nstart_time\030\005 \001(\t\022\033\n\023average_onlin" +
@@ -245,67 +245,67 @@ public final class LiveRoom {
       "\003\022\031\n\021room_order_amount\030\010 \001(\003\022\026\n\016room_ima" +
       "ge_url\030\t \001(\t\022\022\n\nroom_title\030\n \001(\t\022 \n\030room" +
       "_image_attachment_id\030\013 \001(\003\022\030\n\020room_deal_" +
-      "amount\030\014 \001(\001\022\025\n\rcomment_count\030\r \001(\003\"\200\001\n\027" +
-      "ListFinishedRoomRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(" +
-      "\003\022+\n\npagination\030d \001(\0132\027.base.PaginationR" +
-      "equest\"\226\001\n\030ListFinishedRoomResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004ro" +
-      "om\030\002 \003(\0132\027.glory_api.FinishedRoom\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "R\n\026GetFinishedRoomRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 " +
-      "\001(\003\"g\n\027GetFinishedRoomResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030\002 " +
-      "\001(\0132\027.glory_api.FinishedRoom\"o\n\027GetLiveC" +
-      "hartDataRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005sta" +
-      "rt\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014" +
-      "\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021roo" +
-      "m_buyer_amount\030\003 \001(\003\022\031\n\021room_order_amoun" +
-      "t\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n\010LiveData\022" +
-      "1\n\017live_chart_data\030\001 \003(\0132\030.glory_api.Liv" +
-      "eChartData\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n" +
-      "\024total_visitor_amount\030\003 \001(\003\022\032\n\022total_ord" +
-      "er_amount\030\004 \001(\003\"i\n\030GetLiveChartDataRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022&\n\tlive_data\030\002 \001(\0132\023.glory_api.LiveDa" +
-      "ta\"\216\001\n\031RecordLiveCallbackRequest\022\016\n\006doma" +
-      "in\030\001 \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006stream\030\003 \001(\t\022\013\n" +
-      "\003uri\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022\022\n\nstart_ti" +
-      "me\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C\n\032RecordLiv" +
-      "eCallbackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"\235\001\n\023VideoToTextSentence" +
-      "\022\021\n\tBeginTime\030\001 \001(\003\022\017\n\007EndTime\030\002 \001(\003\022\021\n\t" +
-      "ChannelId\030\003 \001(\003\022\022\n\nSpeechRate\030\004 \001(\003\022\024\n\014E" +
-      "motionValue\030\005 \001(\001\022\027\n\017SilenceDuration\030\006 \001" +
-      "(\003\022\014\n\004Text\030\007 \001(\t\"F\n\021VideoToTextResult\0221\n" +
-      "\tSentences\030\001 \003(\0132\036.glory_api.VideoToText" +
-      "Sentence\"\322\001\n\032VideoToTextCallbackRequest\022" +
-      "\016\n\006TaskId\030\001 \001(\t\022\022\n\nStatusCode\030\002 \001(\003\022\022\n\nS" +
-      "tatusText\030\003 \001(\t\022\023\n\013RequestTime\030\004 \001(\003\022\021\n\t" +
-      "SolveTime\030\005 \001(\003\022\023\n\013BizDuration\030\006 \001(\003\022\021\n\t" +
-      "stop_time\030\007 \001(\003\022,\n\006Result\030\010 \001(\0132\034.glory_" +
-      "api.VideoToTextResult\"D\n\033VideoToTextCall" +
-      "backResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"!\n\016LiveSSERequest\022\017\n\007room_id" +
-      "\030\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"*\n\027CloseShopAll" +
-      "LiveRequest\022\017\n\007shop_id\030\001 \001(\003\"A\n\030CloseSho" +
-      "pAllLiveResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"\255\001\n\031LiveStreamCallbackRe" +
-      "quest\022\016\n\006action\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\n\n\002id\030" +
-      "\003 \001(\t\022\013\n\003app\030\004 \001(\t\022\017\n\007appname\030\005 \001(\t\022\014\n\004t" +
-      "ime\030\006 \001(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t" +
-      "\022\016\n\006height\030\t \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveS" +
-      "treamCallbackResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"p\n\035UpdateLiveCommen" +
-      "tCountRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcomme" +
-      "nt_count\030\003 \001(\003\"G\n\036UpdateLiveCommentCount" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponseB#\n\037com.zhijiejiaoyu.glory_api.li" +
-      "veP\001b\006proto3"
+      "amount\030\014 \001(\001\022\025\n\rcomment_count\030\r \001(\003\022\032\n\022l" +
+      "ive_product_count\030\016 \001(\003\"\200\001\n\027ListFinished" +
+      "RoomRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022+\n\npaginat" +
+      "ion\030d \001(\0132\027.base.PaginationRequest\"\226\001\n\030L" +
+      "istFinishedRoomResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022%\n\004room\030\002 \003(\0132\027.g" +
+      "lory_api.FinishedRoom\022,\n\npagination\030d \001(" +
+      "\0132\030.base.PaginationResponse\"R\n\026GetFinish" +
+      "edRoomRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\017\n\007room_id\030\002 \001(\003\"g\n\027GetFi" +
+      "nishedRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022%\n\004room\030\002 \001(\0132\027.glory_" +
+      "api.FinishedRoom\"o\n\027GetLiveChartDataRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005start\030\003 \001(\003\022\013\n\003" +
+      "end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n\004date\030\001 \001(\t" +
+      "\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_buyer_amou" +
+      "nt\030\003 \001(\003\022\031\n\021room_order_amount\030\004 \001(\003\022\021\n\tt" +
+      "imestamp\030\005 \001(\003\"\222\001\n\010LiveData\0221\n\017live_char" +
+      "t_data\030\001 \003(\0132\030.glory_api.LiveChartData\022\031" +
+      "\n\021total_deal_amount\030\002 \001(\001\022\034\n\024total_visit" +
+      "or_amount\030\003 \001(\003\022\032\n\022total_order_amount\030\004 " +
+      "\001(\003\"i\n\030GetLiveChartDataResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022&\n\tlive_d" +
+      "ata\030\002 \001(\0132\023.glory_api.LiveData\"\216\001\n\031Recor" +
+      "dLiveCallbackRequest\022\016\n\006domain\030\001 \001(\t\022\013\n\003" +
+      "app\030\002 \001(\t\022\016\n\006stream\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\022\020" +
+      "\n\010duration\030\005 \001(\001\022\022\n\nstart_time\030\006 \001(\003\022\021\n\t" +
+      "stop_time\030\007 \001(\003\"C\n\032RecordLiveCallbackRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"\235\001\n\023VideoToTextSentence\022\021\n\tBeginTim" +
+      "e\030\001 \001(\003\022\017\n\007EndTime\030\002 \001(\003\022\021\n\tChannelId\030\003 " +
+      "\001(\003\022\022\n\nSpeechRate\030\004 \001(\003\022\024\n\014EmotionValue\030" +
+      "\005 \001(\001\022\027\n\017SilenceDuration\030\006 \001(\003\022\014\n\004Text\030\007" +
+      " \001(\t\"F\n\021VideoToTextResult\0221\n\tSentences\030\001" +
+      " \003(\0132\036.glory_api.VideoToTextSentence\"\322\001\n" +
+      "\032VideoToTextCallbackRequest\022\016\n\006TaskId\030\001 " +
+      "\001(\t\022\022\n\nStatusCode\030\002 \001(\003\022\022\n\nStatusText\030\003 " +
+      "\001(\t\022\023\n\013RequestTime\030\004 \001(\003\022\021\n\tSolveTime\030\005 " +
+      "\001(\003\022\023\n\013BizDuration\030\006 \001(\003\022\021\n\tstop_time\030\007 " +
+      "\001(\003\022,\n\006Result\030\010 \001(\0132\034.glory_api.VideoToT" +
+      "extResult\"D\n\033VideoToTextCallbackResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "!\n\016LiveSSERequest\022\017\n\007room_id\030\001 \001(\003\"8\n\017Li" +
+      "veSSEResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"*\n\027CloseShopAllLiveRequest\022" +
+      "\017\n\007shop_id\030\001 \001(\003\"A\n\030CloseShopAllLiveResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\"\255\001\n\031LiveStreamCallbackRequest\022\016\n\006act" +
+      "ion\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\n\n\002id\030\003 \001(\t\022\013\n\003app" +
+      "\030\004 \001(\t\022\017\n\007appname\030\005 \001(\t\022\014\n\004time\030\006 \001(\003\022\017\n" +
+      "\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t\022\016\n\006height\030\t" +
+      " \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveStreamCallbac" +
+      "kResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\"p\n\035UpdateLiveCommentCountReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcomment_count\030\003 \001" +
+      "(\003\"G\n\036UpdateLiveCommentCountResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037c" +
+      "om.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -389,7 +389,7 @@ public final class LiveRoom {
     internal_static_glory_api_FinishedRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FinishedRoom_descriptor,
-        new java.lang.String[] { "RoomId", "UserName", "UserAvatarUrl", "SellerId", "StartTime", "AverageOnlineUser", "RoomProductAmount", "RoomOrderAmount", "RoomImageUrl", "RoomTitle", "RoomImageAttachmentId", "RoomDealAmount", "CommentCount", });
+        new java.lang.String[] { "RoomId", "UserName", "UserAvatarUrl", "SellerId", "StartTime", "AverageOnlineUser", "RoomProductAmount", "RoomOrderAmount", "RoomImageUrl", "RoomTitle", "RoomImageAttachmentId", "RoomDealAmount", "CommentCount", "LiveProductCount", });
     internal_static_glory_api_ListFinishedRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_ListFinishedRoomRequest_fieldAccessorTable = new

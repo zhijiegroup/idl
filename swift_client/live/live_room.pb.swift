@@ -463,6 +463,9 @@ struct GloryApi_FinishedRoom {
   /// 评论数量
   var commentCount: Int64 = 0
 
+  /// 带货商品数量
+  var liveProductCount: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1771,6 +1774,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     11: .standard(proto: "room_image_attachment_id"),
     12: .standard(proto: "room_deal_amount"),
     13: .standard(proto: "comment_count"),
+    14: .standard(proto: "live_product_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1792,6 +1796,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
       case 12: try { try decoder.decodeSingularDoubleField(value: &self.roomDealAmount) }()
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.commentCount) }()
+      case 14: try { try decoder.decodeSingularInt64Field(value: &self.liveProductCount) }()
       default: break
       }
     }
@@ -1837,6 +1842,9 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.commentCount != 0 {
       try visitor.visitSingularInt64Field(value: self.commentCount, fieldNumber: 13)
     }
+    if self.liveProductCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.liveProductCount, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1854,6 +1862,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
     if lhs.roomDealAmount != rhs.roomDealAmount {return false}
     if lhs.commentCount != rhs.commentCount {return false}
+    if lhs.liveProductCount != rhs.liveProductCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

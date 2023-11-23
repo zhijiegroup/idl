@@ -1213,6 +1213,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     $fixnum.Int64? roomImageAttachmentId,
     $core.double? roomDealAmount,
     $fixnum.Int64? commentCount,
+    $fixnum.Int64? liveProductCount,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -1254,6 +1255,9 @@ class FinishedRoom extends $pb.GeneratedMessage {
     if (commentCount != null) {
       $result.commentCount = commentCount;
     }
+    if (liveProductCount != null) {
+      $result.liveProductCount = liveProductCount;
+    }
     return $result;
   }
   FinishedRoom._() : super();
@@ -1274,6 +1278,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     ..aInt64(11, _omitFieldNames ? '' : 'roomImageAttachmentId')
     ..a<$core.double>(12, _omitFieldNames ? '' : 'roomDealAmount', $pb.PbFieldType.OD)
     ..aInt64(13, _omitFieldNames ? '' : 'commentCount')
+    ..aInt64(14, _omitFieldNames ? '' : 'liveProductCount')
     ..hasRequiredFields = false
   ;
 
@@ -1414,6 +1419,15 @@ class FinishedRoom extends $pb.GeneratedMessage {
   $core.bool hasCommentCount() => $_has(12);
   @$pb.TagNumber(13)
   void clearCommentCount() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get liveProductCount => $_getI64(13);
+  @$pb.TagNumber(14)
+  set liveProductCount($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasLiveProductCount() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLiveProductCount() => clearField(14);
 }
 
 class ListFinishedRoomRequest extends $pb.GeneratedMessage {
