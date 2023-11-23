@@ -508,6 +508,10 @@ list the permissions that supported */
     request: order.ConfirmReceiptGoodsRequest
   ): Promise<order.ConfirmReceiptGoodsResponse>;
 
+  GetOrderStatus(
+    request: order.GetOrderStatusRequest
+  ): Promise<order.GetOrderStatusResponse>;
+
   CancelOrder(
     request: order.CancelOrderRequest
   ): Promise<order.CancelOrderResponse>;

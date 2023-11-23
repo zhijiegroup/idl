@@ -494,6 +494,34 @@ final $typed_data.Uint8List confirmReceiptGoodsResponseDescriptor = $convert.bas
     'ChtDb25maXJtUmVjZWlwdEdvb2RzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
     '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use getOrderStatusRequestDescriptor instead')
+const GetOrderStatusRequest$json = {
+  '1': 'GetOrderStatusRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'order_id', '3': 2, '4': 1, '5': 3, '10': 'orderId'},
+  ],
+};
+
+/// Descriptor for `GetOrderStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrderStatusRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRPcmRlclN0YXR1c1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIb3JkZXJfaWQYAiABKANSB29yZGVySWQ=');
+
+@$core.Deprecated('Use getOrderStatusResponseDescriptor instead')
+const GetOrderStatusResponse$json = {
+  '1': 'GetOrderStatusResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'order_status', '3': 2, '4': 1, '5': 9, '10': 'orderStatus'},
+  ],
+};
+
+/// Descriptor for `GetOrderStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOrderStatusResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRPcmRlclN0YXR1c1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBIhCgxvcmRlcl9zdGF0dXMYAiABKAlSC29yZGVyU3RhdHVz');
+
 @$core.Deprecated('Use cancelOrderRequestDescriptor instead')
 const CancelOrderRequest$json = {
   '1': 'CancelOrderRequest',

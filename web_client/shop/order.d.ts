@@ -254,6 +254,16 @@ export interface ConfirmReceiptGoodsResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface GetOrderStatusRequest {
+  base_request?: base.BaseRequest;
+  order_id?: string;
+}
+
+export interface GetOrderStatusResponse {
+  base_resp?: base.BaseResponse;
+  order_status?: string;
+}
+
 export interface CancelOrderRequest {
   base_request?: base.BaseRequest;
   order_id?: string;

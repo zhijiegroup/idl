@@ -381,6 +381,9 @@ class glory_apiApi {
   $async.Future<$13.ConfirmReceiptGoodsResponse> confirmReceiptGoods($pb.ClientContext? ctx, $13.ConfirmReceiptGoodsRequest request) =>
     _client.invoke<$13.ConfirmReceiptGoodsResponse>(ctx, 'glory_api', 'ConfirmReceiptGoods', request, $13.ConfirmReceiptGoodsResponse())
   ;
+  $async.Future<$13.GetOrderStatusResponse> getOrderStatus($pb.ClientContext? ctx, $13.GetOrderStatusRequest request) =>
+    _client.invoke<$13.GetOrderStatusResponse>(ctx, 'glory_api', 'GetOrderStatus', request, $13.GetOrderStatusResponse())
+  ;
   $async.Future<$13.CancelOrderResponse> cancelOrder($pb.ClientContext? ctx, $13.CancelOrderRequest request) =>
     _client.invoke<$13.CancelOrderResponse>(ctx, 'glory_api', 'CancelOrder', request, $13.CancelOrderResponse())
   ;

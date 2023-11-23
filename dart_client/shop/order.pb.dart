@@ -2688,6 +2688,138 @@ class ConfirmReceiptGoodsResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class GetOrderStatusRequest extends $pb.GeneratedMessage {
+  factory GetOrderStatusRequest({
+    $2.BaseRequest? baseRequest,
+    $fixnum.Int64? orderId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (orderId != null) {
+      $result.orderId = orderId;
+    }
+    return $result;
+  }
+  GetOrderStatusRequest._() : super();
+  factory GetOrderStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrderStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrderStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'orderId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrderStatusRequest clone() => GetOrderStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrderStatusRequest copyWith(void Function(GetOrderStatusRequest) updates) => super.copyWith((message) => updates(message as GetOrderStatusRequest)) as GetOrderStatusRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrderStatusRequest create() => GetOrderStatusRequest._();
+  GetOrderStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<GetOrderStatusRequest> createRepeated() => $pb.PbList<GetOrderStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrderStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrderStatusRequest>(create);
+  static GetOrderStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get orderId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set orderId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrderId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrderId() => clearField(2);
+}
+
+class GetOrderStatusResponse extends $pb.GeneratedMessage {
+  factory GetOrderStatusResponse({
+    $2.BaseResponse? baseResp,
+    $core.String? orderStatus,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (orderStatus != null) {
+      $result.orderStatus = orderStatus;
+    }
+    return $result;
+  }
+  GetOrderStatusResponse._() : super();
+  factory GetOrderStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetOrderStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrderStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'orderStatus')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetOrderStatusResponse clone() => GetOrderStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetOrderStatusResponse copyWith(void Function(GetOrderStatusResponse) updates) => super.copyWith((message) => updates(message as GetOrderStatusResponse)) as GetOrderStatusResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOrderStatusResponse create() => GetOrderStatusResponse._();
+  GetOrderStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<GetOrderStatusResponse> createRepeated() => $pb.PbList<GetOrderStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetOrderStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetOrderStatusResponse>(create);
+  static GetOrderStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get orderStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set orderStatus($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOrderStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrderStatus() => clearField(2);
+}
+
 class CancelOrderRequest extends $pb.GeneratedMessage {
   factory CancelOrderRequest({
     $2.BaseRequest? baseRequest,

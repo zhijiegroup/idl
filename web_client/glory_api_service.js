@@ -920,6 +920,14 @@ export class glory_api {
     );
   }
 
+  GetOrderStatus(request) {
+    const uri = `${this.uriPrefix}/api/shop/get_order_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CancelOrder(request) {
     const uri = `${this.uriPrefix}/api/shop/cancel_order`;
     const body = JSONbigint.stringify(request);

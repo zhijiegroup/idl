@@ -174,6 +174,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$13.DeleteOrderResponse> deleteOrder($pb.ServerContext ctx, $13.DeleteOrderRequest request);
   $async.Future<$13.ShipGoodsResponse> shipGoods($pb.ServerContext ctx, $13.ShipGoodsRequest request);
   $async.Future<$13.ConfirmReceiptGoodsResponse> confirmReceiptGoods($pb.ServerContext ctx, $13.ConfirmReceiptGoodsRequest request);
+  $async.Future<$13.GetOrderStatusResponse> getOrderStatus($pb.ServerContext ctx, $13.GetOrderStatusRequest request);
   $async.Future<$13.CancelOrderResponse> cancelOrder($pb.ServerContext ctx, $13.CancelOrderRequest request);
   $async.Future<$13.ShipGoodsInBatchesResponse> shipGoodsInBatches($pb.ServerContext ctx, $13.ShipGoodsInBatchesRequest request);
   $async.Future<$13.FreeShippingInBatchesResponse> freeShippingInBatches($pb.ServerContext ctx, $13.FreeShippingInBatchesRequest request);
@@ -503,6 +504,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteOrder': return $13.DeleteOrderRequest();
       case 'ShipGoods': return $13.ShipGoodsRequest();
       case 'ConfirmReceiptGoods': return $13.ConfirmReceiptGoodsRequest();
+      case 'GetOrderStatus': return $13.GetOrderStatusRequest();
       case 'CancelOrder': return $13.CancelOrderRequest();
       case 'ShipGoodsInBatches': return $13.ShipGoodsInBatchesRequest();
       case 'FreeShippingInBatches': return $13.FreeShippingInBatchesRequest();
@@ -835,6 +837,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteOrder': return this.deleteOrder(ctx, request as $13.DeleteOrderRequest);
       case 'ShipGoods': return this.shipGoods(ctx, request as $13.ShipGoodsRequest);
       case 'ConfirmReceiptGoods': return this.confirmReceiptGoods(ctx, request as $13.ConfirmReceiptGoodsRequest);
+      case 'GetOrderStatus': return this.getOrderStatus(ctx, request as $13.GetOrderStatusRequest);
       case 'CancelOrder': return this.cancelOrder(ctx, request as $13.CancelOrderRequest);
       case 'ShipGoodsInBatches': return this.shipGoodsInBatches(ctx, request as $13.ShipGoodsInBatchesRequest);
       case 'FreeShippingInBatches': return this.freeShippingInBatches(ctx, request as $13.FreeShippingInBatchesRequest);
