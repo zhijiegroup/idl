@@ -11,10 +11,10 @@ message CreateLiveControlRequest {
     string name = 3;
     bool is_repeated = 4;
     string days = 5;
-    int64 avaliable_start_time = 6;
-    int64 avaliable_end_time = 7;
-    int64 unavaliable_start_time = 8;
-    int64 unavaliable_end_time = 9;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
 }
 
 message CreateLiveControlResponse {
@@ -27,10 +27,10 @@ message UpdateLiveControlRequest {
     string name = 3;
     bool is_repeated = 4;
     string days = 5;
-    int64 avaliable_start_time = 6;
-    int64 avaliable_end_time = 7;
-    int64 unavaliable_start_time = 8;
-    int64 unavaliable_end_time = 9;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
     int64 id = 10;
     bool is_enable = 11;
 }
@@ -50,10 +50,10 @@ message LiveControl {
     bool is_repeated = 3;
     bool is_enable = 4;
     string days = 5;
-    int64 avaliable_start_time = 6;
-    int64 avaliable_end_time = 7;
-    int64 unavaliable_start_time = 8;
-    int64 unavaliable_end_time = 9;
+    int64 available_start_time = 6;
+    int64 available_end_time = 7;
+    int64 unavailable_start_time = 8;
+    int64 unavailable_end_time = 9;
 }
 
 message ListLiveControlResponse {
