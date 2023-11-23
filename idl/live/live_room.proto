@@ -105,6 +105,7 @@ message FinishedRoom {
   int64 room_image_attachment_id = 11; // 直播间的封面的image 的id
   double room_deal_amount =12;
   int64 comment_count = 13; // 评论数量
+  int64 live_product_count = 14; // 带货商品数量
 }
 
 message ListFinishedRoomRequest {
