@@ -210,6 +210,16 @@ message ConfirmReceiptGoodsResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message GetOrderStatusRequest {
+  base.BaseRequest base_request = 1;
+  int64 order_id = 2;
+}
+
+message GetOrderStatusResponse {
+  base.BaseResponse base_resp = 1;
+  string order_status = 2;
+}
+
 message CancelOrderRequest {
   base.BaseRequest base_request=1;
   int64 order_id =2;
