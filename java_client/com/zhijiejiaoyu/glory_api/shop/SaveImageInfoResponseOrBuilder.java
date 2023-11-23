@@ -23,17 +23,26 @@ public interface SaveImageInfoResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-   * @return Whether the imageInfo field is set.
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
-  boolean hasImageInfo();
+  java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo> 
+      getImageInfoList();
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-   * @return The imageInfo.
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo();
+  com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo(int index);
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder();
+  int getImageInfoCount();
+  /**
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> 
+      getImageInfoOrBuilderList();
+  /**
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder(
+      int index);
 }

@@ -1212,7 +1212,7 @@ struct GloryApi_SaveImageInfoRequest {
   var productImageType: String = String()
 
   /// 图片OSS路径
-  var productImagePath: String = String()
+  var productImagePath: [String] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1235,21 +1235,13 @@ struct GloryApi_SaveImageInfoResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var imageInfo: GloryApi_ImageInfo {
-    get {return _imageInfo ?? GloryApi_ImageInfo()}
-    set {_imageInfo = newValue}
-  }
-  /// Returns true if `imageInfo` has been explicitly set.
-  var hasImageInfo: Bool {return self._imageInfo != nil}
-  /// Clears the value of `imageInfo`. Subsequent reads from it will return its default value.
-  mutating func clearImageInfo() {self._imageInfo = nil}
+  var imageInfo: [GloryApi_ImageInfo] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _imageInfo: GloryApi_ImageInfo? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -3327,7 +3319,7 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.productImageType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.productImagePath) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.productImagePath) }()
       default: break
       }
     }
@@ -3348,7 +3340,7 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       try visitor.visitSingularStringField(value: self.productImageType, fieldNumber: 3)
     }
     if !self.productImagePath.isEmpty {
-      try visitor.visitSingularStringField(value: self.productImagePath, fieldNumber: 4)
+      try visitor.visitRepeatedStringField(value: self.productImagePath, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3377,7 +3369,7 @@ extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._imageInfo) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.imageInfo) }()
       default: break
       }
     }
@@ -3391,15 +3383,15 @@ extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._imageInfo {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    if !self.imageInfo.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.imageInfo, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_SaveImageInfoResponse, rhs: GloryApi_SaveImageInfoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._imageInfo != rhs._imageInfo {return false}
+    if lhs.imageInfo != rhs.imageInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -53,18 +53,39 @@ public interface SaveImageInfoRequestOrBuilder extends
    * 图片OSS路径
    * </pre>
    *
-   * <code>string product_image_path = 4;</code>
-   * @return The productImagePath.
+   * <code>repeated string product_image_path = 4;</code>
+   * @return A list containing the productImagePath.
    */
-  java.lang.String getProductImagePath();
+  java.util.List<java.lang.String>
+      getProductImagePathList();
   /**
    * <pre>
    * 图片OSS路径
    * </pre>
    *
-   * <code>string product_image_path = 4;</code>
-   * @return The bytes for productImagePath.
+   * <code>repeated string product_image_path = 4;</code>
+   * @return The count of productImagePath.
+   */
+  int getProductImagePathCount();
+  /**
+   * <pre>
+   * 图片OSS路径
+   * </pre>
+   *
+   * <code>repeated string product_image_path = 4;</code>
+   * @param index The index of the element to return.
+   * @return The productImagePath at the given index.
+   */
+  java.lang.String getProductImagePath(int index);
+  /**
+   * <pre>
+   * 图片OSS路径
+   * </pre>
+   *
+   * <code>repeated string product_image_path = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the productImagePath at the given index.
    */
   com.google.protobuf.ByteString
-      getProductImagePathBytes();
+      getProductImagePathBytes(int index);
 }

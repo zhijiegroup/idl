@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SaveImageInfoRequest() {
     productImageType = "";
-    productImagePath = "";
+    productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,8 +77,11 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            productImagePath = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              productImagePath = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            productImagePath .add(s);
             break;
           }
           default: {
@@ -95,6 +99,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        productImagePath = productImagePath .getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -196,49 +203,54 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRODUCT_IMAGE_PATH_FIELD_NUMBER = 4;
-  private volatile java.lang.Object productImagePath ;
+  private com.google.protobuf.LazyStringList productImagePath ;
   /**
    * <pre>
    * 图片OSS路径
    * </pre>
    *
-   * <code>string product_image_path = 4;</code>
-   * @return The productImagePath.
+   * <code>repeated string product_image_path = 4;</code>
+   * @return A list containing the productImagePath.
    */
-  @java.lang.Override
-  public java.lang.String getProductImagePath() {
-    java.lang.Object ref = productImagePath ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      productImagePath = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getProductImagePathList() {
+    return productImagePath ;
   }
   /**
    * <pre>
    * 图片OSS路径
    * </pre>
    *
-   * <code>string product_image_path = 4;</code>
-   * @return The bytes for productImagePath.
+   * <code>repeated string product_image_path = 4;</code>
+   * @return The count of productImagePath.
    */
-  @java.lang.Override
+  public int getProductImagePathCount() {
+    return productImagePath .size();
+  }
+  /**
+   * <pre>
+   * 图片OSS路径
+   * </pre>
+   *
+   * <code>repeated string product_image_path = 4;</code>
+   * @param index The index of the element to return.
+   * @return The productImagePath at the given index.
+   */
+  public java.lang.String getProductImagePath(int index) {
+    return productImagePath .get(index);
+  }
+  /**
+   * <pre>
+   * 图片OSS路径
+   * </pre>
+   *
+   * <code>repeated string product_image_path = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the productImagePath at the given index.
+   */
   public com.google.protobuf.ByteString
-      getProductImagePathBytes() {
-    java.lang.Object ref = productImagePath ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      productImagePath = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getProductImagePathBytes(int index) {
+    return productImagePath .getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -264,8 +276,8 @@ private static final long serialVersionUID = 0L;
     if (!getProductImageTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productImageType );
     }
-    if (!getProductImagePathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productImagePath );
+    for (int i = 0; i < productImagePath .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productImagePath .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -287,8 +299,13 @@ private static final long serialVersionUID = 0L;
     if (!getProductImageTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productImageType );
     }
-    if (!getProductImagePathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productImagePath );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < productImagePath .size(); i++) {
+        dataSize += computeStringSizeNoTag(productImagePath .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProductImagePathList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -314,8 +331,8 @@ private static final long serialVersionUID = 0L;
         != other.getProductId()) return false;
     if (!getProductImageType()
         .equals(other.getProductImageType())) return false;
-    if (!getProductImagePath()
-        .equals(other.getProductImagePath())) return false;
+    if (!getProductImagePathList()
+        .equals(other.getProductImagePathList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -336,8 +353,10 @@ private static final long serialVersionUID = 0L;
         getProductId());
     hash = (37 * hash) + PRODUCT_IMAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getProductImageType().hashCode();
-    hash = (37 * hash) + PRODUCT_IMAGE_PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getProductImagePath().hashCode();
+    if (getProductImagePathCount() > 0) {
+      hash = (37 * hash) + PRODUCT_IMAGE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getProductImagePathList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -481,8 +500,8 @@ private static final long serialVersionUID = 0L;
 
       productImageType = "";
 
-      productImagePath = "";
-
+      productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -509,6 +528,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.SaveImageInfoRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.SaveImageInfoRequest result = new com.zhijiejiaoyu.glory_api.shop.SaveImageInfoRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
@@ -516,6 +536,10 @@ private static final long serialVersionUID = 0L;
       }
       result.productId = productId ;
       result.productImageType = productImageType ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        productImagePath = productImagePath .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
       result.productImagePath = productImagePath ;
       onBuilt();
       return result;
@@ -575,8 +599,14 @@ private static final long serialVersionUID = 0L;
         productImageType = other.productImageType ;
         onChanged();
       }
-      if (!other.getProductImagePath().isEmpty()) {
-        productImagePath = other.productImagePath ;
+      if (!other.productImagePath .isEmpty()) {
+        if (productImagePath .isEmpty()) {
+          productImagePath = other.productImagePath ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureProductImagePathIsMutable();
+          productImagePath .addAll(other.productImagePath );
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -607,6 +637,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -854,64 +885,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object productImagePath = "";
-    /**
-     * <pre>
-     * 图片OSS路径
-     * </pre>
-     *
-     * <code>string product_image_path = 4;</code>
-     * @return The productImagePath.
-     */
-    public java.lang.String getProductImagePath() {
-      java.lang.Object ref = productImagePath ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productImagePath = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureProductImagePathIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        productImagePath = new com.google.protobuf.LazyStringArrayList(productImagePath );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
      * <pre>
      * 图片OSS路径
      * </pre>
      *
-     * <code>string product_image_path = 4;</code>
-     * @return The bytes for productImagePath.
+     * <code>repeated string product_image_path = 4;</code>
+     * @return A list containing the productImagePath.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getProductImagePathList() {
+      return productImagePath .getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * 图片OSS路径
+     * </pre>
+     *
+     * <code>repeated string product_image_path = 4;</code>
+     * @return The count of productImagePath.
+     */
+    public int getProductImagePathCount() {
+      return productImagePath .size();
+    }
+    /**
+     * <pre>
+     * 图片OSS路径
+     * </pre>
+     *
+     * <code>repeated string product_image_path = 4;</code>
+     * @param index The index of the element to return.
+     * @return The productImagePath at the given index.
+     */
+    public java.lang.String getProductImagePath(int index) {
+      return productImagePath .get(index);
+    }
+    /**
+     * <pre>
+     * 图片OSS路径
+     * </pre>
+     *
+     * <code>repeated string product_image_path = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the productImagePath at the given index.
      */
     public com.google.protobuf.ByteString
-        getProductImagePathBytes() {
-      java.lang.Object ref = productImagePath ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        productImagePath = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getProductImagePathBytes(int index) {
+      return productImagePath .getByteString(index);
     }
     /**
      * <pre>
      * 图片OSS路径
      * </pre>
      *
-     * <code>string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 4;</code>
+     * @param index The index to set the value at.
      * @param value The productImagePath to set.
      * @return This builder for chaining.
      */
     public Builder setProductImagePath(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductImagePathIsMutable();
+      productImagePath .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 图片OSS路径
+     * </pre>
+     *
+     * <code>repeated string product_image_path = 4;</code>
+     * @param value The productImagePath to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProductImagePath(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      productImagePath = value;
+  ensureProductImagePathIsMutable();
+      productImagePath .add(value);
       onChanged();
       return this;
     }
@@ -920,12 +984,29 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 4;</code>
+     * @param values The productImagePath to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProductImagePath(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureProductImagePathIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, productImagePath );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 图片OSS路径
+     * </pre>
+     *
+     * <code>repeated string product_image_path = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductImagePath() {
-      
-      productImagePath = getDefaultInstance().getProductImagePath();
+      productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
@@ -934,18 +1015,18 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>string product_image_path = 4;</code>
-     * @param value The bytes for productImagePath to set.
+     * <code>repeated string product_image_path = 4;</code>
+     * @param value The bytes of the productImagePath to add.
      * @return This builder for chaining.
      */
-    public Builder setProductImagePathBytes(
+    public Builder addProductImagePathBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      productImagePath = value;
+      ensureProductImagePathIsMutable();
+      productImagePath .add(value);
       onChanged();
       return this;
     }

@@ -3231,7 +3231,7 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
     $3.BaseRequest? baseRequest,
     $fixnum.Int64? productId,
     $core.String? productImageType,
-    $core.String? productImagePath,
+    $core.Iterable<$core.String>? productImagePath,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3244,7 +3244,7 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
       $result.productImageType = productImageType;
     }
     if (productImagePath != null) {
-      $result.productImagePath = productImagePath;
+      $result.productImagePath.addAll(productImagePath);
     }
     return $result;
   }
@@ -3256,7 +3256,7 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
     ..aOM<$3.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $3.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'productId')
     ..aOS(3, _omitFieldNames ? '' : 'productImageType')
-    ..aOS(4, _omitFieldNames ? '' : 'productImagePath')
+    ..pPS(4, _omitFieldNames ? '' : 'productImagePath')
     ..hasRequiredFields = false
   ;
 
@@ -3311,26 +3311,20 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
   void clearProductImageType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get productImagePath => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set productImagePath($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasProductImagePath() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearProductImagePath() => clearField(4);
+  $core.List<$core.String> get productImagePath => $_getList(3);
 }
 
 class SaveImageInfoResponse extends $pb.GeneratedMessage {
   factory SaveImageInfoResponse({
     $3.BaseResponse? baseResp,
-    ImageInfo? imageInfo,
+    $core.Iterable<ImageInfo>? imageInfo,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
     if (imageInfo != null) {
-      $result.imageInfo = imageInfo;
+      $result.imageInfo.addAll(imageInfo);
     }
     return $result;
   }
@@ -3340,7 +3334,7 @@ class SaveImageInfoResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveImageInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$3.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $3.BaseResponse.create)
-    ..aOM<ImageInfo>(2, _omitFieldNames ? '' : 'imageInfo', protoName: 'imageInfo', subBuilder: ImageInfo.create)
+    ..pc<ImageInfo>(2, _omitFieldNames ? '' : 'imageInfo', $pb.PbFieldType.PM, protoName: 'imageInfo', subBuilder: ImageInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -3377,15 +3371,7 @@ class SaveImageInfoResponse extends $pb.GeneratedMessage {
   $3.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  ImageInfo get imageInfo => $_getN(1);
-  @$pb.TagNumber(2)
-  set imageInfo(ImageInfo v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasImageInfo() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearImageInfo() => clearField(2);
-  @$pb.TagNumber(2)
-  ImageInfo ensureImageInfo() => $_ensure(1);
+  $core.List<ImageInfo> get imageInfo => $_getList(1);
 }
 
 

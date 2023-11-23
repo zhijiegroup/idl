@@ -694,7 +694,7 @@ const SaveImageInfoRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'product_id', '3': 2, '4': 1, '5': 3, '10': 'productId'},
     {'1': 'product_image_type', '3': 3, '4': 1, '5': 9, '10': 'productImageType'},
-    {'1': 'product_image_path', '3': 4, '4': 1, '5': 9, '10': 'productImagePath'},
+    {'1': 'product_image_path', '3': 4, '4': 3, '5': 9, '10': 'productImagePath'},
   ],
 };
 
@@ -703,20 +703,20 @@ final $typed_data.Uint8List saveImageInfoRequestDescriptor = $convert.base64Deco
     'ChRTYXZlSW1hZ2VJbmZvUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
     'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIdCgpwcm9kdWN0X2lkGAIgASgDUglwcm9kdWN0SWQSLAoS'
     'cHJvZHVjdF9pbWFnZV90eXBlGAMgASgJUhBwcm9kdWN0SW1hZ2VUeXBlEiwKEnByb2R1Y3RfaW'
-    '1hZ2VfcGF0aBgEIAEoCVIQcHJvZHVjdEltYWdlUGF0aA==');
+    '1hZ2VfcGF0aBgEIAMoCVIQcHJvZHVjdEltYWdlUGF0aA==');
 
 @$core.Deprecated('Use saveImageInfoResponseDescriptor instead')
 const SaveImageInfoResponse$json = {
   '1': 'SaveImageInfoResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'imageInfo', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ImageInfo', '10': 'imageInfo'},
+    {'1': 'imageInfo', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ImageInfo', '10': 'imageInfo'},
   ],
 };
 
 /// Descriptor for `SaveImageInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List saveImageInfoResponseDescriptor = $convert.base64Decode(
     'ChVTYXZlSW1hZ2VJbmZvUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
-    'VzcG9uc2VSCGJhc2VSZXNwEjIKCWltYWdlSW5mbxgCIAEoCzIULmdsb3J5X2FwaS5JbWFnZUlu'
+    'VzcG9uc2VSCGJhc2VSZXNwEjIKCWltYWdlSW5mbxgCIAMoCzIULmdsb3J5X2FwaS5JbWFnZUlu'
     'Zm9SCWltYWdlSW5mbw==');
 

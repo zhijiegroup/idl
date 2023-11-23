@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SaveImageInfoResponse() {
+    imageInfo = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,16 +64,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder subBuilder = null;
-            if (imageInfo != null) {
-              subBuilder = imageInfo .toBuilder();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              imageInfo = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ImageInfo>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            imageInfo = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ImageInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(imageInfo );
-              imageInfo = subBuilder.buildPartial();
-            }
-
+            imageInfo .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.shop.ImageInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -89,6 +87,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        imageInfo = java.util.Collections.unmodifiableList(imageInfo );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -133,29 +134,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGEINFO_FIELD_NUMBER = 2;
-  private com.zhijiejiaoyu.glory_api.shop.ImageInfo imageInfo ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo> imageInfo ;
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-   * @return Whether the imageInfo field is set.
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
   @java.lang.Override
-  public boolean hasImageInfo() {
-    return imageInfo != null;
+  public java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo> getImageInfoList() {
+    return imageInfo ;
   }
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-   * @return The imageInfo.
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo() {
-    return imageInfo == null ? com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance() : imageInfo ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> 
+      getImageInfoOrBuilderList() {
+    return imageInfo ;
   }
   /**
-   * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder() {
-    return getImageInfo();
+  public int getImageInfoCount() {
+    return imageInfo .size();
+  }
+  /**
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo(int index) {
+    return imageInfo .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder(
+      int index) {
+    return imageInfo .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,8 +190,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (imageInfo != null) {
-      output.writeMessage(2, getImageInfo());
+    for (int i = 0; i < imageInfo .size(); i++) {
+      output.writeMessage(2, imageInfo .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -191,9 +206,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (imageInfo != null) {
+    for (int i = 0; i < imageInfo .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getImageInfo());
+        .computeMessageSize(2, imageInfo .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,11 +230,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (hasImageInfo() != other.hasImageInfo()) return false;
-    if (hasImageInfo()) {
-      if (!getImageInfo()
-          .equals(other.getImageInfo())) return false;
-    }
+    if (!getImageInfoList()
+        .equals(other.getImageInfoList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,9 +247,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (hasImageInfo()) {
+    if (getImageInfoCount() > 0) {
       hash = (37 * hash) + IMAGEINFO_FIELD_NUMBER;
-      hash = (53 * hash) + getImageInfo().hashCode();
+      hash = (53 * hash) + getImageInfoList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -367,6 +379,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getImageInfoFieldBuilder();
       }
     }
     @java.lang.Override
@@ -379,10 +392,10 @@ private static final long serialVersionUID = 0L;
         baseRespBuilder = null;
       }
       if (imageInfoBuilder == null) {
-        imageInfo = null;
+        imageInfo = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
-        imageInfo = null;
-        imageInfoBuilder = null;
+        imageInfoBuilder .clear();
       }
       return this;
     }
@@ -410,12 +423,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.shop.SaveImageInfoResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.shop.SaveImageInfoResponse result = new com.zhijiejiaoyu.glory_api.shop.SaveImageInfoResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
       if (imageInfoBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          imageInfo = java.util.Collections.unmodifiableList(imageInfo );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
         result.imageInfo = imageInfo ;
       } else {
         result.imageInfo = imageInfoBuilder .build();
@@ -471,8 +489,31 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.hasImageInfo()) {
-        mergeImageInfo(other.getImageInfo());
+      if (imageInfoBuilder == null) {
+        if (!other.imageInfo .isEmpty()) {
+          if (imageInfo .isEmpty()) {
+            imageInfo = other.imageInfo ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureImageInfoIsMutable();
+            imageInfo .addAll(other.imageInfo );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.imageInfo .isEmpty()) {
+          if (imageInfoBuilder .isEmpty()) {
+            imageInfoBuilder .dispose();
+            imageInfoBuilder = null;
+            imageInfo = other.imageInfo ;
+            bitField0 = (bitField0 & ~0x00000001);
+            imageInfoBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getImageInfoFieldBuilder() : null;
+          } else {
+            imageInfoBuilder .addAllMessages(other.imageInfo );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -502,6 +543,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -622,118 +664,239 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private com.zhijiejiaoyu.glory_api.shop.ImageInfo imageInfo ;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.shop.ImageInfo, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder, com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> imageInfoBuilder ;
-    /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-     * @return Whether the imageInfo field is set.
-     */
-    public boolean hasImageInfo() {
-      return imageInfoBuilder != null || imageInfo != null;
+    private java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo> imageInfo =
+      java.util.Collections.emptyList();
+    private void ensureImageInfoIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        imageInfo = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ImageInfo>(imageInfo );
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.ImageInfo, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder, com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> imageInfoBuilder ;
+
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
-     * @return The imageInfo.
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo() {
+    public java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo> getImageInfoList() {
       if (imageInfoBuilder == null) {
-        return imageInfo == null ? com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance() : imageInfo ;
+        return java.util.Collections.unmodifiableList(imageInfo );
       } else {
-        return imageInfoBuilder .getMessage();
+        return imageInfoBuilder .getMessageList();
       }
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    public Builder setImageInfo(com.zhijiejiaoyu.glory_api.shop.ImageInfo value) {
+    public int getImageInfoCount() {
+      if (imageInfoBuilder == null) {
+        return imageInfo .size();
+      } else {
+        return imageInfoBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ImageInfo getImageInfo(int index) {
+      if (imageInfoBuilder == null) {
+        return imageInfo .get(index);
+      } else {
+        return imageInfoBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public Builder setImageInfo(
+        int index, com.zhijiejiaoyu.glory_api.shop.ImageInfo value) {
       if (imageInfoBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        imageInfo = value;
+        ensureImageInfoIsMutable();
+        imageInfo .set(index, value);
         onChanged();
       } else {
-        imageInfoBuilder .setMessage(value);
+        imageInfoBuilder .setMessage(index, value);
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
     public Builder setImageInfo(
+        int index, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder builderForValue) {
+      if (imageInfoBuilder == null) {
+        ensureImageInfoIsMutable();
+        imageInfo .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        imageInfoBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public Builder addImageInfo(com.zhijiejiaoyu.glory_api.shop.ImageInfo value) {
+      if (imageInfoBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImageInfoIsMutable();
+        imageInfo .add(value);
+        onChanged();
+      } else {
+        imageInfoBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public Builder addImageInfo(
+        int index, com.zhijiejiaoyu.glory_api.shop.ImageInfo value) {
+      if (imageInfoBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImageInfoIsMutable();
+        imageInfo .add(index, value);
+        onChanged();
+      } else {
+        imageInfoBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public Builder addImageInfo(
         com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder builderForValue) {
       if (imageInfoBuilder == null) {
-        imageInfo = builderForValue.build();
+        ensureImageInfoIsMutable();
+        imageInfo .add(builderForValue.build());
         onChanged();
       } else {
-        imageInfoBuilder .setMessage(builderForValue.build());
+        imageInfoBuilder .addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    public Builder mergeImageInfo(com.zhijiejiaoyu.glory_api.shop.ImageInfo value) {
+    public Builder addImageInfo(
+        int index, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder builderForValue) {
       if (imageInfoBuilder == null) {
-        if (imageInfo != null) {
-          imageInfo =
-            com.zhijiejiaoyu.glory_api.shop.ImageInfo.newBuilder(imageInfo ).mergeFrom(value).buildPartial();
-        } else {
-          imageInfo = value;
-        }
+        ensureImageInfoIsMutable();
+        imageInfo .add(index, builderForValue.build());
         onChanged();
       } else {
-        imageInfoBuilder .mergeFrom(value);
+        imageInfoBuilder .addMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public Builder addAllImageInfo(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.ImageInfo> values) {
+      if (imageInfoBuilder == null) {
+        ensureImageInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, imageInfo );
+        onChanged();
+      } else {
+        imageInfoBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
     public Builder clearImageInfo() {
       if (imageInfoBuilder == null) {
-        imageInfo = null;
+        imageInfo = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        imageInfo = null;
-        imageInfoBuilder = null;
+        imageInfoBuilder .clear();
       }
-
       return this;
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder getImageInfoBuilder() {
-      
-      onChanged();
-      return getImageInfoFieldBuilder().getBuilder();
+    public Builder removeImageInfo(int index) {
+      if (imageInfoBuilder == null) {
+        ensureImageInfoIsMutable();
+        imageInfo .remove(index);
+        onChanged();
+      } else {
+        imageInfoBuilder .remove(index);
+      }
+      return this;
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder() {
-      if (imageInfoBuilder != null) {
-        return imageInfoBuilder .getMessageOrBuilder();
-      } else {
-        return imageInfo == null ?
-            com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance() : imageInfo ;
+    public com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder getImageInfoBuilder(
+        int index) {
+      return getImageInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder(
+        int index) {
+      if (imageInfoBuilder == null) {
+        return imageInfo .get(index);  } else {
+        return imageInfoBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>.glory_api.ImageInfo imageInfo = 2;</code>
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> 
+         getImageInfoOrBuilderList() {
+      if (imageInfoBuilder != null) {
+        return imageInfoBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(imageInfo );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder addImageInfoBuilder() {
+      return getImageInfoFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder addImageInfoBuilder(
+        int index) {
+      return getImageInfoFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.shop.ImageInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.ImageInfo imageInfo = 2;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder> 
+         getImageInfoBuilderList() {
+      return getImageInfoFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.ImageInfo, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder, com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder> 
         getImageInfoFieldBuilder() {
       if (imageInfoBuilder == null) {
-        imageInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+        imageInfoBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.shop.ImageInfo, com.zhijiejiaoyu.glory_api.shop.ImageInfo.Builder, com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder>(
-                getImageInfo(),
+                imageInfo ,
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         imageInfo = null;

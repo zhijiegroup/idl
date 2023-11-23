@@ -297,10 +297,10 @@ export interface SaveImageInfoRequest {
   /** 图片类型：image_main,image_detail,image_assistant,white_ground */
   product_image_type?: string;
   /** 图片OSS路径 */
-  product_image_path?: string;
+  product_image_path?: Array<string>;
 }
 
 export interface SaveImageInfoResponse {
   base_resp?: base.BaseResponse;
-  imageInfo?: ImageInfo;
+  imageInfo?: Array<ImageInfo>;
 }
