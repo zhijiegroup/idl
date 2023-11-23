@@ -23,10 +23,10 @@ class CreateLiveControlRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.bool? isRepeated,
     $core.String? days,
-    $fixnum.Int64? avaliableStartTime,
-    $fixnum.Int64? avaliableEndTime,
-    $fixnum.Int64? unavaliableStartTime,
-    $fixnum.Int64? unavaliableEndTime,
+    $fixnum.Int64? availableStartTime,
+    $fixnum.Int64? availableEndTime,
+    $fixnum.Int64? unavailableStartTime,
+    $fixnum.Int64? unavailableEndTime,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -44,17 +44,17 @@ class CreateLiveControlRequest extends $pb.GeneratedMessage {
     if (days != null) {
       $result.days = days;
     }
-    if (avaliableStartTime != null) {
-      $result.avaliableStartTime = avaliableStartTime;
+    if (availableStartTime != null) {
+      $result.availableStartTime = availableStartTime;
     }
-    if (avaliableEndTime != null) {
-      $result.avaliableEndTime = avaliableEndTime;
+    if (availableEndTime != null) {
+      $result.availableEndTime = availableEndTime;
     }
-    if (unavaliableStartTime != null) {
-      $result.unavaliableStartTime = unavaliableStartTime;
+    if (unavailableStartTime != null) {
+      $result.unavailableStartTime = unavailableStartTime;
     }
-    if (unavaliableEndTime != null) {
-      $result.unavaliableEndTime = unavaliableEndTime;
+    if (unavailableEndTime != null) {
+      $result.unavailableEndTime = unavailableEndTime;
     }
     return $result;
   }
@@ -68,10 +68,10 @@ class CreateLiveControlRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOB(4, _omitFieldNames ? '' : 'isRepeated')
     ..aOS(5, _omitFieldNames ? '' : 'days')
-    ..aInt64(6, _omitFieldNames ? '' : 'avaliableStartTime')
-    ..aInt64(7, _omitFieldNames ? '' : 'avaliableEndTime')
-    ..aInt64(8, _omitFieldNames ? '' : 'unavaliableStartTime')
-    ..aInt64(9, _omitFieldNames ? '' : 'unavaliableEndTime')
+    ..aInt64(6, _omitFieldNames ? '' : 'availableStartTime')
+    ..aInt64(7, _omitFieldNames ? '' : 'availableEndTime')
+    ..aInt64(8, _omitFieldNames ? '' : 'unavailableStartTime')
+    ..aInt64(9, _omitFieldNames ? '' : 'unavailableEndTime')
     ..hasRequiredFields = false
   ;
 
@@ -144,40 +144,40 @@ class CreateLiveControlRequest extends $pb.GeneratedMessage {
   void clearDays() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get avaliableStartTime => $_getI64(5);
+  $fixnum.Int64 get availableStartTime => $_getI64(5);
   @$pb.TagNumber(6)
-  set avaliableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
+  set availableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAvaliableStartTime() => $_has(5);
+  $core.bool hasAvailableStartTime() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAvaliableStartTime() => clearField(6);
+  void clearAvailableStartTime() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get avaliableEndTime => $_getI64(6);
+  $fixnum.Int64 get availableEndTime => $_getI64(6);
   @$pb.TagNumber(7)
-  set avaliableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
+  set availableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAvaliableEndTime() => $_has(6);
+  $core.bool hasAvailableEndTime() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAvaliableEndTime() => clearField(7);
+  void clearAvailableEndTime() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get unavaliableStartTime => $_getI64(7);
+  $fixnum.Int64 get unavailableStartTime => $_getI64(7);
   @$pb.TagNumber(8)
-  set unavaliableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
+  set unavailableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasUnavaliableStartTime() => $_has(7);
+  $core.bool hasUnavailableStartTime() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUnavaliableStartTime() => clearField(8);
+  void clearUnavailableStartTime() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get unavaliableEndTime => $_getI64(8);
+  $fixnum.Int64 get unavailableEndTime => $_getI64(8);
   @$pb.TagNumber(9)
-  set unavaliableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
+  set unavailableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasUnavaliableEndTime() => $_has(8);
+  $core.bool hasUnavailableEndTime() => $_has(8);
   @$pb.TagNumber(9)
-  void clearUnavaliableEndTime() => clearField(9);
+  void clearUnavailableEndTime() => clearField(9);
 }
 
 class CreateLiveControlResponse extends $pb.GeneratedMessage {
@@ -239,10 +239,10 @@ class UpdateLiveControlRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.bool? isRepeated,
     $core.String? days,
-    $fixnum.Int64? avaliableStartTime,
-    $fixnum.Int64? avaliableEndTime,
-    $fixnum.Int64? unavaliableStartTime,
-    $fixnum.Int64? unavaliableEndTime,
+    $fixnum.Int64? availableStartTime,
+    $fixnum.Int64? availableEndTime,
+    $fixnum.Int64? unavailableStartTime,
+    $fixnum.Int64? unavailableEndTime,
     $fixnum.Int64? id,
     $core.bool? isEnable,
   }) {
@@ -262,17 +262,17 @@ class UpdateLiveControlRequest extends $pb.GeneratedMessage {
     if (days != null) {
       $result.days = days;
     }
-    if (avaliableStartTime != null) {
-      $result.avaliableStartTime = avaliableStartTime;
+    if (availableStartTime != null) {
+      $result.availableStartTime = availableStartTime;
     }
-    if (avaliableEndTime != null) {
-      $result.avaliableEndTime = avaliableEndTime;
+    if (availableEndTime != null) {
+      $result.availableEndTime = availableEndTime;
     }
-    if (unavaliableStartTime != null) {
-      $result.unavaliableStartTime = unavaliableStartTime;
+    if (unavailableStartTime != null) {
+      $result.unavailableStartTime = unavailableStartTime;
     }
-    if (unavaliableEndTime != null) {
-      $result.unavaliableEndTime = unavaliableEndTime;
+    if (unavailableEndTime != null) {
+      $result.unavailableEndTime = unavailableEndTime;
     }
     if (id != null) {
       $result.id = id;
@@ -292,10 +292,10 @@ class UpdateLiveControlRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOB(4, _omitFieldNames ? '' : 'isRepeated')
     ..aOS(5, _omitFieldNames ? '' : 'days')
-    ..aInt64(6, _omitFieldNames ? '' : 'avaliableStartTime')
-    ..aInt64(7, _omitFieldNames ? '' : 'avaliableEndTime')
-    ..aInt64(8, _omitFieldNames ? '' : 'unavaliableStartTime')
-    ..aInt64(9, _omitFieldNames ? '' : 'unavaliableEndTime')
+    ..aInt64(6, _omitFieldNames ? '' : 'availableStartTime')
+    ..aInt64(7, _omitFieldNames ? '' : 'availableEndTime')
+    ..aInt64(8, _omitFieldNames ? '' : 'unavailableStartTime')
+    ..aInt64(9, _omitFieldNames ? '' : 'unavailableEndTime')
     ..aInt64(10, _omitFieldNames ? '' : 'id')
     ..aOB(11, _omitFieldNames ? '' : 'isEnable')
     ..hasRequiredFields = false
@@ -370,40 +370,40 @@ class UpdateLiveControlRequest extends $pb.GeneratedMessage {
   void clearDays() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get avaliableStartTime => $_getI64(5);
+  $fixnum.Int64 get availableStartTime => $_getI64(5);
   @$pb.TagNumber(6)
-  set avaliableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
+  set availableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAvaliableStartTime() => $_has(5);
+  $core.bool hasAvailableStartTime() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAvaliableStartTime() => clearField(6);
+  void clearAvailableStartTime() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get avaliableEndTime => $_getI64(6);
+  $fixnum.Int64 get availableEndTime => $_getI64(6);
   @$pb.TagNumber(7)
-  set avaliableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
+  set availableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAvaliableEndTime() => $_has(6);
+  $core.bool hasAvailableEndTime() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAvaliableEndTime() => clearField(7);
+  void clearAvailableEndTime() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get unavaliableStartTime => $_getI64(7);
+  $fixnum.Int64 get unavailableStartTime => $_getI64(7);
   @$pb.TagNumber(8)
-  set unavaliableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
+  set unavailableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasUnavaliableStartTime() => $_has(7);
+  $core.bool hasUnavailableStartTime() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUnavaliableStartTime() => clearField(8);
+  void clearUnavailableStartTime() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get unavaliableEndTime => $_getI64(8);
+  $fixnum.Int64 get unavailableEndTime => $_getI64(8);
   @$pb.TagNumber(9)
-  set unavaliableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
+  set unavailableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasUnavaliableEndTime() => $_has(8);
+  $core.bool hasUnavailableEndTime() => $_has(8);
   @$pb.TagNumber(9)
-  void clearUnavaliableEndTime() => clearField(9);
+  void clearUnavailableEndTime() => clearField(9);
 
   @$pb.TagNumber(10)
   $fixnum.Int64 get id => $_getI64(9);
@@ -549,10 +549,10 @@ class LiveControl extends $pb.GeneratedMessage {
     $core.bool? isRepeated,
     $core.bool? isEnable,
     $core.String? days,
-    $fixnum.Int64? avaliableStartTime,
-    $fixnum.Int64? avaliableEndTime,
-    $fixnum.Int64? unavaliableStartTime,
-    $fixnum.Int64? unavaliableEndTime,
+    $fixnum.Int64? availableStartTime,
+    $fixnum.Int64? availableEndTime,
+    $fixnum.Int64? unavailableStartTime,
+    $fixnum.Int64? unavailableEndTime,
   }) {
     final $result = create();
     if (id != null) {
@@ -570,17 +570,17 @@ class LiveControl extends $pb.GeneratedMessage {
     if (days != null) {
       $result.days = days;
     }
-    if (avaliableStartTime != null) {
-      $result.avaliableStartTime = avaliableStartTime;
+    if (availableStartTime != null) {
+      $result.availableStartTime = availableStartTime;
     }
-    if (avaliableEndTime != null) {
-      $result.avaliableEndTime = avaliableEndTime;
+    if (availableEndTime != null) {
+      $result.availableEndTime = availableEndTime;
     }
-    if (unavaliableStartTime != null) {
-      $result.unavaliableStartTime = unavaliableStartTime;
+    if (unavailableStartTime != null) {
+      $result.unavailableStartTime = unavailableStartTime;
     }
-    if (unavaliableEndTime != null) {
-      $result.unavaliableEndTime = unavaliableEndTime;
+    if (unavailableEndTime != null) {
+      $result.unavailableEndTime = unavailableEndTime;
     }
     return $result;
   }
@@ -594,10 +594,10 @@ class LiveControl extends $pb.GeneratedMessage {
     ..aOB(3, _omitFieldNames ? '' : 'isRepeated')
     ..aOB(4, _omitFieldNames ? '' : 'isEnable')
     ..aOS(5, _omitFieldNames ? '' : 'days')
-    ..aInt64(6, _omitFieldNames ? '' : 'avaliableStartTime')
-    ..aInt64(7, _omitFieldNames ? '' : 'avaliableEndTime')
-    ..aInt64(8, _omitFieldNames ? '' : 'unavaliableStartTime')
-    ..aInt64(9, _omitFieldNames ? '' : 'unavaliableEndTime')
+    ..aInt64(6, _omitFieldNames ? '' : 'availableStartTime')
+    ..aInt64(7, _omitFieldNames ? '' : 'availableEndTime')
+    ..aInt64(8, _omitFieldNames ? '' : 'unavailableStartTime')
+    ..aInt64(9, _omitFieldNames ? '' : 'unavailableEndTime')
     ..hasRequiredFields = false
   ;
 
@@ -668,40 +668,40 @@ class LiveControl extends $pb.GeneratedMessage {
   void clearDays() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get avaliableStartTime => $_getI64(5);
+  $fixnum.Int64 get availableStartTime => $_getI64(5);
   @$pb.TagNumber(6)
-  set avaliableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
+  set availableStartTime($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAvaliableStartTime() => $_has(5);
+  $core.bool hasAvailableStartTime() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAvaliableStartTime() => clearField(6);
+  void clearAvailableStartTime() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get avaliableEndTime => $_getI64(6);
+  $fixnum.Int64 get availableEndTime => $_getI64(6);
   @$pb.TagNumber(7)
-  set avaliableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
+  set availableEndTime($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAvaliableEndTime() => $_has(6);
+  $core.bool hasAvailableEndTime() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAvaliableEndTime() => clearField(7);
+  void clearAvailableEndTime() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get unavaliableStartTime => $_getI64(7);
+  $fixnum.Int64 get unavailableStartTime => $_getI64(7);
   @$pb.TagNumber(8)
-  set unavaliableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
+  set unavailableStartTime($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasUnavaliableStartTime() => $_has(7);
+  $core.bool hasUnavailableStartTime() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUnavaliableStartTime() => clearField(8);
+  void clearUnavailableStartTime() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get unavaliableEndTime => $_getI64(8);
+  $fixnum.Int64 get unavailableEndTime => $_getI64(8);
   @$pb.TagNumber(9)
-  set unavaliableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
+  set unavailableEndTime($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasUnavaliableEndTime() => $_has(8);
+  $core.bool hasUnavailableEndTime() => $_has(8);
   @$pb.TagNumber(9)
-  void clearUnavaliableEndTime() => clearField(9);
+  void clearUnavailableEndTime() => clearField(9);
 }
 
 class ListLiveControlResponse extends $pb.GeneratedMessage {

@@ -11,10 +11,10 @@ export interface CreateLiveControlRequest {
   name?: string;
   is_repeated?: boolean;
   days?: string;
-  avaliable_start_time?: string;
-  avaliable_end_time?: string;
-  unavaliable_start_time?: string;
-  unavaliable_end_time?: string;
+  available_start_time?: string;
+  available_end_time?: string;
+  unavailable_start_time?: string;
+  unavailable_end_time?: string;
 }
 
 export interface CreateLiveControlResponse {
@@ -27,10 +27,10 @@ export interface UpdateLiveControlRequest {
   name?: string;
   is_repeated?: boolean;
   days?: string;
-  avaliable_start_time?: string;
-  avaliable_end_time?: string;
-  unavaliable_start_time?: string;
-  unavaliable_end_time?: string;
+  available_start_time?: string;
+  available_end_time?: string;
+  unavailable_start_time?: string;
+  unavailable_end_time?: string;
   id?: string;
   is_enable?: boolean;
 }
@@ -50,10 +50,10 @@ export interface LiveControl {
   is_repeated?: boolean;
   is_enable?: boolean;
   days?: string;
-  avaliable_start_time?: string;
-  avaliable_end_time?: string;
-  unavaliable_start_time?: string;
-  unavaliable_end_time?: string;
+  available_start_time?: string;
+  available_end_time?: string;
+  unavailable_start_time?: string;
+  unavailable_end_time?: string;
 }
 
 export interface ListLiveControlResponse {
