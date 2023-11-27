@@ -306,6 +306,12 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? paymentId,
     $core.String? paymentMethod,
     $core.String? prepayId,
+    $core.String? appId,
+    $core.String? partnerId,
+    $core.String? package,
+    $core.String? noncestr,
+    $core.String? timestamp,
+    $core.String? sign,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -320,6 +326,24 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
     if (prepayId != null) {
       $result.prepayId = prepayId;
     }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    if (partnerId != null) {
+      $result.partnerId = partnerId;
+    }
+    if (package != null) {
+      $result.package = package;
+    }
+    if (noncestr != null) {
+      $result.noncestr = noncestr;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (sign != null) {
+      $result.sign = sign;
+    }
     return $result;
   }
   CreatePaymentResponse._() : super();
@@ -331,6 +355,12 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'paymentId')
     ..aOS(3, _omitFieldNames ? '' : 'paymentMethod')
     ..aOS(4, _omitFieldNames ? '' : 'prepayId')
+    ..aOS(5, _omitFieldNames ? '' : 'appId')
+    ..aOS(6, _omitFieldNames ? '' : 'partnerId')
+    ..aOS(7, _omitFieldNames ? '' : 'package')
+    ..aOS(8, _omitFieldNames ? '' : 'noncestr')
+    ..aOS(9, _omitFieldNames ? '' : 'timestamp')
+    ..aOS(10, _omitFieldNames ? '' : 'sign')
     ..hasRequiredFields = false
   ;
 
@@ -392,6 +422,60 @@ class CreatePaymentResponse extends $pb.GeneratedMessage {
   $core.bool hasPrepayId() => $_has(3);
   @$pb.TagNumber(4)
   void clearPrepayId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get appId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set appId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAppId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAppId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get partnerId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set partnerId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPartnerId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPartnerId() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get package => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set package($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPackage() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPackage() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get noncestr => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set noncestr($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasNoncestr() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoncestr() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get timestamp => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set timestamp($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTimestamp() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTimestamp() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sign => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sign($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasSign() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSign() => clearField(10);
 }
 
 class GetPaymentRequest extends $pb.GeneratedMessage {

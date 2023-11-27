@@ -18,6 +18,12 @@ private static final long serialVersionUID = 0L;
   private CreatePaymentResponse() {
     paymentMethod = "";
     prepayId = "";
+    appId = "";
+    partnerId = "";
+    package = "";
+    noncestr = "";
+    timestamp = "";
+    sign = "";
   }
 
   @java.lang.Override
@@ -78,6 +84,42 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             prepayId = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appId = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            partnerId = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            package = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            noncestr = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            timestamp = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sign = s;
             break;
           }
           default: {
@@ -241,6 +283,282 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APP_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object appId ;
+  /**
+   * <pre>
+   * 微信支付的 app_id
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The appId.
+   */
+  @java.lang.Override
+  public java.lang.String getAppId() {
+    java.lang.Object ref = appId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appId = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的 app_id
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The bytes for appId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAppIdBytes() {
+    java.lang.Object ref = appId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      appId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARTNER_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object partnerId ;
+  /**
+   * <pre>
+   * 微信支付的 mch_id
+   * </pre>
+   *
+   * <code>string partner_id = 6;</code>
+   * @return The partnerId.
+   */
+  @java.lang.Override
+  public java.lang.String getPartnerId() {
+    java.lang.Object ref = partnerId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partnerId = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的 mch_id
+   * </pre>
+   *
+   * <code>string partner_id = 6;</code>
+   * @return The bytes for partnerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPartnerIdBytes() {
+    java.lang.Object ref = partnerId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      partnerId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PACKAGE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object package ;
+  /**
+   * <pre>
+   * 微信支付的固定值 WXPay
+   * </pre>
+   *
+   * <code>string package = 7;</code>
+   * @return The package.
+   */
+  @java.lang.Override
+  public java.lang.String getPackage() {
+    java.lang.Object ref = package ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      package = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的固定值 WXPay
+   * </pre>
+   *
+   * <code>string package = 7;</code>
+   * @return The bytes for package.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPackageBytes() {
+    java.lang.Object ref = package ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      package = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NONCESTR_FIELD_NUMBER = 8;
+  private volatile java.lang.Object noncestr ;
+  /**
+   * <pre>
+   * 微信支付的随机字符串，不长于 32 位
+   * </pre>
+   *
+   * <code>string noncestr = 8;</code>
+   * @return The noncestr.
+   */
+  @java.lang.Override
+  public java.lang.String getNoncestr() {
+    java.lang.Object ref = noncestr ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      noncestr = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的随机字符串，不长于 32 位
+   * </pre>
+   *
+   * <code>string noncestr = 8;</code>
+   * @return The bytes for noncestr.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNoncestrBytes() {
+    java.lang.Object ref = noncestr ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      noncestr = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TIMESTAMP_FIELD_NUMBER = 9;
+  private volatile java.lang.Object timestamp ;
+  /**
+   * <pre>
+   * 微信支付的时间戳，单位秒
+   * </pre>
+   *
+   * <code>string timestamp = 9;</code>
+   * @return The timestamp.
+   */
+  @java.lang.Override
+  public java.lang.String getTimestamp() {
+    java.lang.Object ref = timestamp ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      timestamp = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付的时间戳，单位秒
+   * </pre>
+   *
+   * <code>string timestamp = 9;</code>
+   * @return The bytes for timestamp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTimestampBytes() {
+    java.lang.Object ref = timestamp ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      timestamp = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SIGN_FIELD_NUMBER = 10;
+  private volatile java.lang.Object sign ;
+  /**
+   * <pre>
+   * 微信支付签名
+   * </pre>
+   *
+   * <code>string sign = 10;</code>
+   * @return The sign.
+   */
+  @java.lang.Override
+  public java.lang.String getSign() {
+    java.lang.Object ref = sign ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sign = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 微信支付签名
+   * </pre>
+   *
+   * <code>string sign = 10;</code>
+   * @return The bytes for sign.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSignBytes() {
+    java.lang.Object ref = sign ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sign = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -267,6 +585,24 @@ private static final long serialVersionUID = 0L;
     if (!getPrepayIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prepayId );
     }
+    if (!getAppIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appId );
+    }
+    if (!getPartnerIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, partnerId );
+    }
+    if (!getPackageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, package );
+    }
+    if (!getNoncestrBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, noncestr );
+    }
+    if (!getTimestampBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, timestamp );
+    }
+    if (!getSignBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, sign );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -289,6 +625,24 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPrepayIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prepayId );
+    }
+    if (!getAppIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appId );
+    }
+    if (!getPartnerIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, partnerId );
+    }
+    if (!getPackageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, package );
+    }
+    if (!getNoncestrBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, noncestr );
+    }
+    if (!getTimestampBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, timestamp );
+    }
+    if (!getSignBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, sign );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -316,6 +670,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPaymentMethod())) return false;
     if (!getPrepayId()
         .equals(other.getPrepayId())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
+    if (!getPartnerId()
+        .equals(other.getPartnerId())) return false;
+    if (!getPackage()
+        .equals(other.getPackage())) return false;
+    if (!getNoncestr()
+        .equals(other.getNoncestr())) return false;
+    if (!getTimestamp()
+        .equals(other.getTimestamp())) return false;
+    if (!getSign()
+        .equals(other.getSign())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -338,6 +704,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPaymentMethod().hashCode();
     hash = (37 * hash) + PREPAY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPrepayId().hashCode();
+    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAppId().hashCode();
+    hash = (37 * hash) + PARTNER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPartnerId().hashCode();
+    hash = (37 * hash) + PACKAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPackage().hashCode();
+    hash = (37 * hash) + NONCESTR_FIELD_NUMBER;
+    hash = (53 * hash) + getNoncestr().hashCode();
+    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+    hash = (53 * hash) + getTimestamp().hashCode();
+    hash = (37 * hash) + SIGN_FIELD_NUMBER;
+    hash = (53 * hash) + getSign().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +861,18 @@ private static final long serialVersionUID = 0L;
 
       prepayId = "";
 
+      appId = "";
+
+      partnerId = "";
+
+      package = "";
+
+      noncestr = "";
+
+      timestamp = "";
+
+      sign = "";
+
       return this;
     }
 
@@ -517,6 +907,12 @@ private static final long serialVersionUID = 0L;
       result.paymentId = paymentId ;
       result.paymentMethod = paymentMethod ;
       result.prepayId = prepayId ;
+      result.appId = appId ;
+      result.partnerId = partnerId ;
+      result.package = package ;
+      result.noncestr = noncestr ;
+      result.timestamp = timestamp ;
+      result.sign = sign ;
       onBuilt();
       return result;
     }
@@ -577,6 +973,30 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPrepayId().isEmpty()) {
         prepayId = other.prepayId ;
+        onChanged();
+      }
+      if (!other.getAppId().isEmpty()) {
+        appId = other.appId ;
+        onChanged();
+      }
+      if (!other.getPartnerId().isEmpty()) {
+        partnerId = other.partnerId ;
+        onChanged();
+      }
+      if (!other.getPackage().isEmpty()) {
+        package = other.package ;
+        onChanged();
+      }
+      if (!other.getNoncestr().isEmpty()) {
+        noncestr = other.noncestr ;
+        onChanged();
+      }
+      if (!other.getTimestamp().isEmpty()) {
+        timestamp = other.timestamp ;
+        onChanged();
+      }
+      if (!other.getSign().isEmpty()) {
+        sign = other.sign ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -946,6 +1366,582 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       prepayId = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appId = "";
+    /**
+     * <pre>
+     * 微信支付的 app_id
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return The appId.
+     */
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的 app_id
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return The bytes for appId.
+     */
+    public com.google.protobuf.ByteString
+        getAppIdBytes() {
+      java.lang.Object ref = appId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的 app_id
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的 app_id
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAppId() {
+      
+      appId = getDefaultInstance().getAppId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的 app_id
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appId = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object partnerId = "";
+    /**
+     * <pre>
+     * 微信支付的 mch_id
+     * </pre>
+     *
+     * <code>string partner_id = 6;</code>
+     * @return The partnerId.
+     */
+    public java.lang.String getPartnerId() {
+      java.lang.Object ref = partnerId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partnerId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的 mch_id
+     * </pre>
+     *
+     * <code>string partner_id = 6;</code>
+     * @return The bytes for partnerId.
+     */
+    public com.google.protobuf.ByteString
+        getPartnerIdBytes() {
+      java.lang.Object ref = partnerId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partnerId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的 mch_id
+     * </pre>
+     *
+     * <code>string partner_id = 6;</code>
+     * @param value The partnerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      partnerId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的 mch_id
+     * </pre>
+     *
+     * <code>string partner_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPartnerId() {
+      
+      partnerId = getDefaultInstance().getPartnerId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的 mch_id
+     * </pre>
+     *
+     * <code>string partner_id = 6;</code>
+     * @param value The bytes for partnerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      partnerId = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object package = "";
+    /**
+     * <pre>
+     * 微信支付的固定值 WXPay
+     * </pre>
+     *
+     * <code>string package = 7;</code>
+     * @return The package.
+     */
+    public java.lang.String getPackage() {
+      java.lang.Object ref = package ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        package = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的固定值 WXPay
+     * </pre>
+     *
+     * <code>string package = 7;</code>
+     * @return The bytes for package.
+     */
+    public com.google.protobuf.ByteString
+        getPackageBytes() {
+      java.lang.Object ref = package ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        package = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的固定值 WXPay
+     * </pre>
+     *
+     * <code>string package = 7;</code>
+     * @param value The package to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPackage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      package = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的固定值 WXPay
+     * </pre>
+     *
+     * <code>string package = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPackage() {
+      
+      package = getDefaultInstance().getPackage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的固定值 WXPay
+     * </pre>
+     *
+     * <code>string package = 7;</code>
+     * @param value The bytes for package to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPackageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      package = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object noncestr = "";
+    /**
+     * <pre>
+     * 微信支付的随机字符串，不长于 32 位
+     * </pre>
+     *
+     * <code>string noncestr = 8;</code>
+     * @return The noncestr.
+     */
+    public java.lang.String getNoncestr() {
+      java.lang.Object ref = noncestr ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        noncestr = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的随机字符串，不长于 32 位
+     * </pre>
+     *
+     * <code>string noncestr = 8;</code>
+     * @return The bytes for noncestr.
+     */
+    public com.google.protobuf.ByteString
+        getNoncestrBytes() {
+      java.lang.Object ref = noncestr ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        noncestr = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的随机字符串，不长于 32 位
+     * </pre>
+     *
+     * <code>string noncestr = 8;</code>
+     * @param value The noncestr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoncestr(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      noncestr = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的随机字符串，不长于 32 位
+     * </pre>
+     *
+     * <code>string noncestr = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNoncestr() {
+      
+      noncestr = getDefaultInstance().getNoncestr();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的随机字符串，不长于 32 位
+     * </pre>
+     *
+     * <code>string noncestr = 8;</code>
+     * @param value The bytes for noncestr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoncestrBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      noncestr = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object timestamp = "";
+    /**
+     * <pre>
+     * 微信支付的时间戳，单位秒
+     * </pre>
+     *
+     * <code>string timestamp = 9;</code>
+     * @return The timestamp.
+     */
+    public java.lang.String getTimestamp() {
+      java.lang.Object ref = timestamp ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timestamp = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的时间戳，单位秒
+     * </pre>
+     *
+     * <code>string timestamp = 9;</code>
+     * @return The bytes for timestamp.
+     */
+    public com.google.protobuf.ByteString
+        getTimestampBytes() {
+      java.lang.Object ref = timestamp ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timestamp = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付的时间戳，单位秒
+     * </pre>
+     *
+     * <code>string timestamp = 9;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimestamp(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      timestamp = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的时间戳，单位秒
+     * </pre>
+     *
+     * <code>string timestamp = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimestamp() {
+      
+      timestamp = getDefaultInstance().getTimestamp();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付的时间戳，单位秒
+     * </pre>
+     *
+     * <code>string timestamp = 9;</code>
+     * @param value The bytes for timestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimestampBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      timestamp = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sign = "";
+    /**
+     * <pre>
+     * 微信支付签名
+     * </pre>
+     *
+     * <code>string sign = 10;</code>
+     * @return The sign.
+     */
+    public java.lang.String getSign() {
+      java.lang.Object ref = sign ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sign = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付签名
+     * </pre>
+     *
+     * <code>string sign = 10;</code>
+     * @return The bytes for sign.
+     */
+    public com.google.protobuf.ByteString
+        getSignBytes() {
+      java.lang.Object ref = sign ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sign = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 微信支付签名
+     * </pre>
+     *
+     * <code>string sign = 10;</code>
+     * @param value The sign to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSign(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sign = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付签名
+     * </pre>
+     *
+     * <code>string sign = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSign() {
+      
+      sign = getDefaultInstance().getSign();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 微信支付签名
+     * </pre>
+     *
+     * <code>string sign = 10;</code>
+     * @param value The bytes for sign to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSignBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sign = value;
       onChanged();
       return this;
     }

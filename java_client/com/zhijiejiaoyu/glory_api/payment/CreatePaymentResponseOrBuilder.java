@@ -67,4 +67,124 @@ public interface CreatePaymentResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPrepayIdBytes();
+
+  /**
+   * <pre>
+   * 微信支付的 app_id
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The appId.
+   */
+  java.lang.String getAppId();
+  /**
+   * <pre>
+   * 微信支付的 app_id
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The bytes for appId.
+   */
+  com.google.protobuf.ByteString
+      getAppIdBytes();
+
+  /**
+   * <pre>
+   * 微信支付的 mch_id
+   * </pre>
+   *
+   * <code>string partner_id = 6;</code>
+   * @return The partnerId.
+   */
+  java.lang.String getPartnerId();
+  /**
+   * <pre>
+   * 微信支付的 mch_id
+   * </pre>
+   *
+   * <code>string partner_id = 6;</code>
+   * @return The bytes for partnerId.
+   */
+  com.google.protobuf.ByteString
+      getPartnerIdBytes();
+
+  /**
+   * <pre>
+   * 微信支付的固定值 WXPay
+   * </pre>
+   *
+   * <code>string package = 7;</code>
+   * @return The package.
+   */
+  java.lang.String getPackage();
+  /**
+   * <pre>
+   * 微信支付的固定值 WXPay
+   * </pre>
+   *
+   * <code>string package = 7;</code>
+   * @return The bytes for package.
+   */
+  com.google.protobuf.ByteString
+      getPackageBytes();
+
+  /**
+   * <pre>
+   * 微信支付的随机字符串，不长于 32 位
+   * </pre>
+   *
+   * <code>string noncestr = 8;</code>
+   * @return The noncestr.
+   */
+  java.lang.String getNoncestr();
+  /**
+   * <pre>
+   * 微信支付的随机字符串，不长于 32 位
+   * </pre>
+   *
+   * <code>string noncestr = 8;</code>
+   * @return The bytes for noncestr.
+   */
+  com.google.protobuf.ByteString
+      getNoncestrBytes();
+
+  /**
+   * <pre>
+   * 微信支付的时间戳，单位秒
+   * </pre>
+   *
+   * <code>string timestamp = 9;</code>
+   * @return The timestamp.
+   */
+  java.lang.String getTimestamp();
+  /**
+   * <pre>
+   * 微信支付的时间戳，单位秒
+   * </pre>
+   *
+   * <code>string timestamp = 9;</code>
+   * @return The bytes for timestamp.
+   */
+  com.google.protobuf.ByteString
+      getTimestampBytes();
+
+  /**
+   * <pre>
+   * 微信支付签名
+   * </pre>
+   *
+   * <code>string sign = 10;</code>
+   * @return The sign.
+   */
+  java.lang.String getSign();
+  /**
+   * <pre>
+   * 微信支付签名
+   * </pre>
+   *
+   * <code>string sign = 10;</code>
+   * @return The bytes for sign.
+   */
+  com.google.protobuf.ByteString
+      getSignBytes();
 }

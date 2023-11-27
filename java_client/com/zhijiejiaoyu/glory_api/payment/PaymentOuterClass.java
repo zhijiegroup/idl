@@ -94,26 +94,28 @@ public final class PaymentOuterClass {
       "fo\"x\n\024CreatePaymentRequest\022\'\n\014base_reque" +
       "st\030\001 \001(\0132\021.base.BaseRequest\022#\n\007payment\030\002" +
       " \001(\0132\022.glory_api.Payment\022\022\n\ncreated_by\030\003" +
-      " \001(\t\"}\n\025CreatePaymentResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\npayment_" +
-      "id\030\002 \001(\003\022\026\n\016payment_method\030\003 \001(\t\022\021\n\tprep" +
-      "ay_id\030\004 \001(\t\"P\n\021GetPaymentRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\npay" +
-      "ment_id\030\002 \001(\003\"q\n\022GetPaymentResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\0224\n\016pa" +
-      "yment_detail\030\002 \001(\0132\034.glory_api.PaymentWi" +
-      "thAuthor\"d\n\024UpdatePaymentRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022#\n\007pay" +
-      "ment\030\002 \001(\0132\022.glory_api.Payment\"R\n\025Update" +
-      "PaymentResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\022\n\npayment_id\030\002 \001(\003\"S\n\024De" +
-      "letePaymentRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\022\n\npayment_id\030\002 \001(\003\"" +
-      ">\n\025DeletePaymentResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"\034\n\032WechatPayment" +
-      "NotifyRequest\"\035\n\033WechatPaymentNotifyResp" +
-      "onseB&\n\"com.zhijiejiaoyu.glory_api.payme" +
-      "ntP\001b\006proto3"
+      " \001(\t\"\345\001\n\025CreatePaymentResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\npayment" +
+      "_id\030\002 \001(\003\022\026\n\016payment_method\030\003 \001(\t\022\021\n\tpre" +
+      "pay_id\030\004 \001(\t\022\016\n\006app_id\030\005 \001(\t\022\022\n\npartner_" +
+      "id\030\006 \001(\t\022\017\n\007package\030\007 \001(\t\022\020\n\010noncestr\030\010 " +
+      "\001(\t\022\021\n\ttimestamp\030\t \001(\t\022\014\n\004sign\030\n \001(\t\"P\n\021" +
+      "GetPaymentRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\022\n\npayment_id\030\002 \001(\003\"q" +
+      "\n\022GetPaymentResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\0224\n\016payment_detail\030\002 " +
+      "\001(\0132\034.glory_api.PaymentWithAuthor\"d\n\024Upd" +
+      "atePaymentRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022#\n\007payment\030\002 \001(\0132\022.gl" +
+      "ory_api.Payment\"R\n\025UpdatePaymentResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\022\n\npayment_id\030\002 \001(\003\"S\n\024DeletePaymentRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\022\n\npayment_id\030\002 \001(\003\">\n\025DeletePaymen" +
+      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\"\034\n\032WechatPaymentNotifyRequest\"\035" +
+      "\n\033WechatPaymentNotifyResponseB&\n\"com.zhi" +
+      "jiejiaoyu.glory_api.paymentP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -143,7 +145,7 @@ public final class PaymentOuterClass {
     internal_static_glory_api_CreatePaymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreatePaymentResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "PaymentId", "PaymentMethod", "PrepayId", });
+        new java.lang.String[] { "BaseResp", "PaymentId", "PaymentMethod", "PrepayId", "AppId", "PartnerId", "Package", "Noncestr", "Timestamp", "Sign", });
     internal_static_glory_api_GetPaymentRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_GetPaymentRequest_fieldAccessorTable = new

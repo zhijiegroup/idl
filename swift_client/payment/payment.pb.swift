@@ -130,6 +130,24 @@ struct GloryApi_CreatePaymentResponse {
   /// 微信支付的预付单 id
   var prepayID: String = String()
 
+  /// 微信支付的 app_id
+  var appID: String = String()
+
+  /// 微信支付的 mch_id
+  var partnerID: String = String()
+
+  /// 微信支付的固定值 WXPay
+  var package: String = String()
+
+  /// 微信支付的随机字符串，不长于 32 位
+  var noncestr: String = String()
+
+  /// 微信支付的时间戳，单位秒
+  var timestamp: String = String()
+
+  /// 微信支付签名
+  var sign: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -493,6 +511,12 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
     2: .standard(proto: "payment_id"),
     3: .standard(proto: "payment_method"),
     4: .standard(proto: "prepay_id"),
+    5: .standard(proto: "app_id"),
+    6: .standard(proto: "partner_id"),
+    7: .same(proto: "package"),
+    8: .same(proto: "noncestr"),
+    9: .same(proto: "timestamp"),
+    10: .same(proto: "sign"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -505,6 +529,12 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.paymentID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.paymentMethod) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.prepayID) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.appID) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.partnerID) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.package) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.noncestr) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.timestamp) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.sign) }()
       default: break
       }
     }
@@ -527,6 +557,24 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.prepayID.isEmpty {
       try visitor.visitSingularStringField(value: self.prepayID, fieldNumber: 4)
     }
+    if !self.appID.isEmpty {
+      try visitor.visitSingularStringField(value: self.appID, fieldNumber: 5)
+    }
+    if !self.partnerID.isEmpty {
+      try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 6)
+    }
+    if !self.package.isEmpty {
+      try visitor.visitSingularStringField(value: self.package, fieldNumber: 7)
+    }
+    if !self.noncestr.isEmpty {
+      try visitor.visitSingularStringField(value: self.noncestr, fieldNumber: 8)
+    }
+    if !self.timestamp.isEmpty {
+      try visitor.visitSingularStringField(value: self.timestamp, fieldNumber: 9)
+    }
+    if !self.sign.isEmpty {
+      try visitor.visitSingularStringField(value: self.sign, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -535,6 +583,12 @@ extension GloryApi_CreatePaymentResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.paymentID != rhs.paymentID {return false}
     if lhs.paymentMethod != rhs.paymentMethod {return false}
     if lhs.prepayID != rhs.prepayID {return false}
+    if lhs.appID != rhs.appID {return false}
+    if lhs.partnerID != rhs.partnerID {return false}
+    if lhs.package != rhs.package {return false}
+    if lhs.noncestr != rhs.noncestr {return false}
+    if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.sign != rhs.sign {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

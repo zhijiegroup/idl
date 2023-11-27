@@ -33,6 +33,18 @@ export interface CreatePaymentResponse {
   payment_method?: string;
   /** 微信支付的预付单 id */
   prepay_id?: string;
+  /** 微信支付的 app_id */
+  app_id?: string;
+  /** 微信支付的 mch_id */
+  partner_id?: string;
+  /** 微信支付的固定值 WXPay */
+  package?: string;
+  /** 微信支付的随机字符串，不长于 32 位 */
+  noncestr?: string;
+  /** 微信支付的时间戳，单位秒 */
+  timestamp?: string;
+  /** 微信支付签名 */
+  sign?: string;
 }
 
 export interface GetPaymentRequest {

@@ -75,6 +75,12 @@ const CreatePaymentResponse$json = {
     {'1': 'payment_id', '3': 2, '4': 1, '5': 3, '10': 'paymentId'},
     {'1': 'payment_method', '3': 3, '4': 1, '5': 9, '10': 'paymentMethod'},
     {'1': 'prepay_id', '3': 4, '4': 1, '5': 9, '10': 'prepayId'},
+    {'1': 'app_id', '3': 5, '4': 1, '5': 9, '10': 'appId'},
+    {'1': 'partner_id', '3': 6, '4': 1, '5': 9, '10': 'partnerId'},
+    {'1': 'package', '3': 7, '4': 1, '5': 9, '10': 'package'},
+    {'1': 'noncestr', '3': 8, '4': 1, '5': 9, '10': 'noncestr'},
+    {'1': 'timestamp', '3': 9, '4': 1, '5': 9, '10': 'timestamp'},
+    {'1': 'sign', '3': 10, '4': 1, '5': 9, '10': 'sign'},
   ],
 };
 
@@ -83,7 +89,9 @@ final $typed_data.Uint8List createPaymentResponseDescriptor = $convert.base64Dec
     'ChVDcmVhdGVQYXltZW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
     'VzcG9uc2VSCGJhc2VSZXNwEh0KCnBheW1lbnRfaWQYAiABKANSCXBheW1lbnRJZBIlCg5wYXlt'
     'ZW50X21ldGhvZBgDIAEoCVINcGF5bWVudE1ldGhvZBIbCglwcmVwYXlfaWQYBCABKAlSCHByZX'
-    'BheUlk');
+    'BheUlkEhUKBmFwcF9pZBgFIAEoCVIFYXBwSWQSHQoKcGFydG5lcl9pZBgGIAEoCVIJcGFydG5l'
+    'cklkEhgKB3BhY2thZ2UYByABKAlSB3BhY2thZ2USGgoIbm9uY2VzdHIYCCABKAlSCG5vbmNlc3'
+    'RyEhwKCXRpbWVzdGFtcBgJIAEoCVIJdGltZXN0YW1wEhIKBHNpZ24YCiABKAlSBHNpZ24=');
 
 @$core.Deprecated('Use getPaymentRequestDescriptor instead')
 const GetPaymentRequest$json = {
