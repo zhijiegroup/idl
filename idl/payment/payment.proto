@@ -16,13 +16,13 @@ message Payment {
 }
 
 message PaymentWithAuthor {
-  Payment payment =1;
+  Payment payment = 1;
   base.AuthorInfo author_info = 2;
 }
 
 message CreatePaymentRequest {
   base.BaseRequest base_request = 1;
-  Payment payment =2;
+  Payment payment = 2;
   string created_by = 3;
 }
 message CreatePaymentResponse {
@@ -30,6 +30,12 @@ message CreatePaymentResponse {
   int64 payment_id = 2;
   string payment_method = 3; // 支付方式：coin：虚拟币支付；weixin：微信支付
   string prepay_id = 4; // 微信支付的预付单 id
+  string app_id = 5; // 微信支付的 app_id
+  string partner_id = 6; // 微信支付的 mch_id
+  string package = 7; // 微信支付的固定值 WXPay
+  string noncestr = 8; // 微信支付的随机字符串，不长于 32 位
+  string timestamp = 9; // 微信支付的时间戳，单位秒
+  string sign = 10; // 微信支付签名
 }
 
 message GetPaymentRequest {
@@ -39,7 +45,7 @@ message GetPaymentRequest {
 }
 message GetPaymentResponse {
   base.BaseResponse base_resp = 1;
-  PaymentWithAuthor payment_detail =2;
+  PaymentWithAuthor payment_detail = 2;
 }
 
 message UpdatePaymentRequest {
@@ -48,12 +54,12 @@ message UpdatePaymentRequest {
 }
 message UpdatePaymentResponse {
   base.BaseResponse base_resp = 1;
-  int64 payment_id=2;
+  int64 payment_id = 2;
 }
 
 message DeletePaymentRequest {
-  base.BaseRequest base_request=1;
-  int64 payment_id =2;
+  base.BaseRequest base_request = 1;
+  int64 payment_id = 2;
 }
 message DeletePaymentResponse {
   base.BaseResponse base_resp = 1;
@@ -64,5 +70,5 @@ message WechatPaymentNotifyRequest {
 }
 
 message WechatPaymentNotifyResponse {
-  
+
 }
