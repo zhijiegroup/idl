@@ -42,6 +42,10 @@ message Shop {
   int64 business_license_attachment_id = 32; // 上传附件的接口返回的 attachment id
   string manager = 33; // 店铺管理者
   string manager_phone = 34; // 店铺管理者手机号
+  string owner_id_front_path = 39;  // 身份证正面OSS路径
+  string owner_id_back_path = 36; // 身份证背面OSS路径
+  string shop_logo_path = 37; // 店铺Logo OSS路径
+  string business_license_path = 38; //营业执照 OSS路径
 }
 
 message ShopQualification {
@@ -51,6 +55,7 @@ message ShopQualification {
   string qualification_name = 4;//资质名称
   int64 attachment_id = 5;
   string validity_period = 6;//有效期
+  string shop_qualification_path = 7;//图片OSS路径
 }
 
 message ShopBusiness {
