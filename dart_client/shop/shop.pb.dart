@@ -52,6 +52,10 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? manager,
     $core.String? managerPhone,
     $core.Iterable<$fixnum.Int64>? categoryId,
+    $core.String? ownerIdBackPath,
+    $core.String? shopLogoPath,
+    $core.String? businessLicensePath,
+    $core.String? ownerIdFrontPath,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -154,6 +158,18 @@ class Shop extends $pb.GeneratedMessage {
     if (categoryId != null) {
       $result.categoryId.addAll(categoryId);
     }
+    if (ownerIdBackPath != null) {
+      $result.ownerIdBackPath = ownerIdBackPath;
+    }
+    if (shopLogoPath != null) {
+      $result.shopLogoPath = shopLogoPath;
+    }
+    if (businessLicensePath != null) {
+      $result.businessLicensePath = businessLicensePath;
+    }
+    if (ownerIdFrontPath != null) {
+      $result.ownerIdFrontPath = ownerIdFrontPath;
+    }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
     }
@@ -197,6 +213,10 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(33, _omitFieldNames ? '' : 'manager')
     ..aOS(34, _omitFieldNames ? '' : 'managerPhone')
     ..p<$fixnum.Int64>(35, _omitFieldNames ? '' : 'categoryId', $pb.PbFieldType.K6)
+    ..aOS(36, _omitFieldNames ? '' : 'ownerIdBackPath')
+    ..aOS(37, _omitFieldNames ? '' : 'shopLogoPath')
+    ..aOS(38, _omitFieldNames ? '' : 'businessLicensePath')
+    ..aOS(39, _omitFieldNames ? '' : 'ownerIdFrontPath')
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -513,8 +533,44 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(35)
   $core.List<$fixnum.Int64> get categoryId => $_getList(32);
 
+  @$pb.TagNumber(36)
+  $core.String get ownerIdBackPath => $_getSZ(33);
+  @$pb.TagNumber(36)
+  set ownerIdBackPath($core.String v) { $_setString(33, v); }
+  @$pb.TagNumber(36)
+  $core.bool hasOwnerIdBackPath() => $_has(33);
+  @$pb.TagNumber(36)
+  void clearOwnerIdBackPath() => clearField(36);
+
+  @$pb.TagNumber(37)
+  $core.String get shopLogoPath => $_getSZ(34);
+  @$pb.TagNumber(37)
+  set shopLogoPath($core.String v) { $_setString(34, v); }
+  @$pb.TagNumber(37)
+  $core.bool hasShopLogoPath() => $_has(34);
+  @$pb.TagNumber(37)
+  void clearShopLogoPath() => clearField(37);
+
+  @$pb.TagNumber(38)
+  $core.String get businessLicensePath => $_getSZ(35);
+  @$pb.TagNumber(38)
+  set businessLicensePath($core.String v) { $_setString(35, v); }
+  @$pb.TagNumber(38)
+  $core.bool hasBusinessLicensePath() => $_has(35);
+  @$pb.TagNumber(38)
+  void clearBusinessLicensePath() => clearField(38);
+
+  @$pb.TagNumber(39)
+  $core.String get ownerIdFrontPath => $_getSZ(36);
+  @$pb.TagNumber(39)
+  set ownerIdFrontPath($core.String v) { $_setString(36, v); }
+  @$pb.TagNumber(39)
+  $core.bool hasOwnerIdFrontPath() => $_has(36);
+  @$pb.TagNumber(39)
+  void clearOwnerIdFrontPath() => clearField(39);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(33);
+  $core.List<ShopQualification> get shopQualification => $_getList(37);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {
@@ -525,6 +581,7 @@ class ShopQualification extends $pb.GeneratedMessage {
     $core.String? qualificationName,
     $fixnum.Int64? attachmentId,
     $core.String? validityPeriod,
+    $core.String? shopQualificationPath,
   }) {
     final $result = create();
     if (shopQualificationId != null) {
@@ -545,6 +602,9 @@ class ShopQualification extends $pb.GeneratedMessage {
     if (validityPeriod != null) {
       $result.validityPeriod = validityPeriod;
     }
+    if (shopQualificationPath != null) {
+      $result.shopQualificationPath = shopQualificationPath;
+    }
     return $result;
   }
   ShopQualification._() : super();
@@ -558,6 +618,7 @@ class ShopQualification extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'qualificationName')
     ..aInt64(5, _omitFieldNames ? '' : 'attachmentId')
     ..aOS(6, _omitFieldNames ? '' : 'validityPeriod')
+    ..aOS(7, _omitFieldNames ? '' : 'shopQualificationPath')
     ..hasRequiredFields = false
   ;
 
@@ -635,6 +696,15 @@ class ShopQualification extends $pb.GeneratedMessage {
   $core.bool hasValidityPeriod() => $_has(5);
   @$pb.TagNumber(6)
   void clearValidityPeriod() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get shopQualificationPath => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set shopQualificationPath($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasShopQualificationPath() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearShopQualificationPath() => clearField(7);
 }
 
 class ShopBusiness extends $pb.GeneratedMessage {

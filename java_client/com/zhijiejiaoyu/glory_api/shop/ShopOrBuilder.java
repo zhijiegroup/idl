@@ -639,4 +639,84 @@ public interface ShopOrBuilder extends
    */
   com.google.protobuf.ByteString
       getManagerPhoneBytes();
+
+  /**
+   * <pre>
+   * 身份证正面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_front_path = 39;</code>
+   * @return The ownerIdFrontPath.
+   */
+  java.lang.String getOwnerIdFrontPath();
+  /**
+   * <pre>
+   * 身份证正面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_front_path = 39;</code>
+   * @return The bytes for ownerIdFrontPath.
+   */
+  com.google.protobuf.ByteString
+      getOwnerIdFrontPathBytes();
+
+  /**
+   * <pre>
+   * 身份证背面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_back_path = 36;</code>
+   * @return The ownerIdBackPath.
+   */
+  java.lang.String getOwnerIdBackPath();
+  /**
+   * <pre>
+   * 身份证背面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_back_path = 36;</code>
+   * @return The bytes for ownerIdBackPath.
+   */
+  com.google.protobuf.ByteString
+      getOwnerIdBackPathBytes();
+
+  /**
+   * <pre>
+   * 店铺Logo OSS路径
+   * </pre>
+   *
+   * <code>string shop_logo_path = 37;</code>
+   * @return The shopLogoPath.
+   */
+  java.lang.String getShopLogoPath();
+  /**
+   * <pre>
+   * 店铺Logo OSS路径
+   * </pre>
+   *
+   * <code>string shop_logo_path = 37;</code>
+   * @return The bytes for shopLogoPath.
+   */
+  com.google.protobuf.ByteString
+      getShopLogoPathBytes();
+
+  /**
+   * <pre>
+   *营业执照 OSS路径
+   * </pre>
+   *
+   * <code>string business_license_path = 38;</code>
+   * @return The businessLicensePath.
+   */
+  java.lang.String getBusinessLicensePath();
+  /**
+   * <pre>
+   *营业执照 OSS路径
+   * </pre>
+   *
+   * <code>string business_license_path = 38;</code>
+   * @return The bytes for businessLicensePath.
+   */
+  com.google.protobuf.ByteString
+      getBusinessLicensePathBytes();
 }

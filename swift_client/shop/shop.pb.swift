@@ -229,6 +229,30 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._managerPhone = newValue}
   }
 
+  /// 身份证正面OSS路径
+  var ownerIDFrontPath: String {
+    get {return _storage._ownerIDFrontPath}
+    set {_uniqueStorage()._ownerIDFrontPath = newValue}
+  }
+
+  /// 身份证背面OSS路径
+  var ownerIDBackPath: String {
+    get {return _storage._ownerIDBackPath}
+    set {_uniqueStorage()._ownerIDBackPath = newValue}
+  }
+
+  /// 店铺Logo OSS路径
+  var shopLogoPath: String {
+    get {return _storage._shopLogoPath}
+    set {_uniqueStorage()._shopLogoPath = newValue}
+  }
+
+  ///营业执照 OSS路径
+  var businessLicensePath: String {
+    get {return _storage._businessLicensePath}
+    set {_uniqueStorage()._businessLicensePath = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -257,6 +281,9 @@ struct GloryApi_ShopQualification {
 
   ///有效期
   var validityPeriod: String = String()
+
+  ///图片OSS路径
+  var shopQualificationPath: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1438,6 +1465,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     32: .standard(proto: "business_license_attachment_id"),
     33: .same(proto: "manager"),
     34: .standard(proto: "manager_phone"),
+    39: .standard(proto: "owner_id_front_path"),
+    36: .standard(proto: "owner_id_back_path"),
+    37: .standard(proto: "shop_logo_path"),
+    38: .standard(proto: "business_license_path"),
   ]
 
   fileprivate class _StorageClass {
@@ -1475,6 +1506,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _businessLicenseAttachmentID: Int64 = 0
     var _manager: String = String()
     var _managerPhone: String = String()
+    var _ownerIDFrontPath: String = String()
+    var _ownerIDBackPath: String = String()
+    var _shopLogoPath: String = String()
+    var _businessLicensePath: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -1515,6 +1550,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _businessLicenseAttachmentID = source._businessLicenseAttachmentID
       _manager = source._manager
       _managerPhone = source._managerPhone
+      _ownerIDFrontPath = source._ownerIDFrontPath
+      _ownerIDBackPath = source._ownerIDBackPath
+      _shopLogoPath = source._shopLogoPath
+      _businessLicensePath = source._businessLicensePath
     }
   }
 
@@ -1566,6 +1605,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 33: try { try decoder.decodeSingularStringField(value: &_storage._manager) }()
         case 34: try { try decoder.decodeSingularStringField(value: &_storage._managerPhone) }()
         case 35: try { try decoder.decodeRepeatedInt64Field(value: &_storage._categoryID) }()
+        case 36: try { try decoder.decodeSingularStringField(value: &_storage._ownerIDBackPath) }()
+        case 37: try { try decoder.decodeSingularStringField(value: &_storage._shopLogoPath) }()
+        case 38: try { try decoder.decodeSingularStringField(value: &_storage._businessLicensePath) }()
+        case 39: try { try decoder.decodeSingularStringField(value: &_storage._ownerIDFrontPath) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1674,6 +1717,18 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if !_storage._categoryID.isEmpty {
         try visitor.visitPackedInt64Field(value: _storage._categoryID, fieldNumber: 35)
       }
+      if !_storage._ownerIDBackPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._ownerIDBackPath, fieldNumber: 36)
+      }
+      if !_storage._shopLogoPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._shopLogoPath, fieldNumber: 37)
+      }
+      if !_storage._businessLicensePath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._businessLicensePath, fieldNumber: 38)
+      }
+      if !_storage._ownerIDFrontPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._ownerIDFrontPath, fieldNumber: 39)
+      }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
       }
@@ -1720,6 +1775,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._businessLicenseAttachmentID != rhs_storage._businessLicenseAttachmentID {return false}
         if _storage._manager != rhs_storage._manager {return false}
         if _storage._managerPhone != rhs_storage._managerPhone {return false}
+        if _storage._ownerIDFrontPath != rhs_storage._ownerIDFrontPath {return false}
+        if _storage._ownerIDBackPath != rhs_storage._ownerIDBackPath {return false}
+        if _storage._shopLogoPath != rhs_storage._shopLogoPath {return false}
+        if _storage._businessLicensePath != rhs_storage._businessLicensePath {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1738,6 +1797,7 @@ extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._Mess
     4: .standard(proto: "qualification_name"),
     5: .standard(proto: "attachment_id"),
     6: .standard(proto: "validity_period"),
+    7: .standard(proto: "shop_qualification_path"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1752,6 +1812,7 @@ extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 4: try { try decoder.decodeSingularStringField(value: &self.qualificationName) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.attachmentID) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.validityPeriod) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.shopQualificationPath) }()
       default: break
       }
     }
@@ -1776,6 +1837,9 @@ extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.validityPeriod.isEmpty {
       try visitor.visitSingularStringField(value: self.validityPeriod, fieldNumber: 6)
     }
+    if !self.shopQualificationPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopQualificationPath, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1786,6 +1850,7 @@ extension GloryApi_ShopQualification: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.qualificationName != rhs.qualificationName {return false}
     if lhs.attachmentID != rhs.attachmentID {return false}
     if lhs.validityPeriod != rhs.validityPeriod {return false}
+    if lhs.shopQualificationPath != rhs.shopQualificationPath {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

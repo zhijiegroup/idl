@@ -249,7 +249,7 @@ public final class ShopOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017shop/shop.proto\022\tglory_api\032\nbase.proto" +
-      "\032\023shop/category.proto\"\202\007\n\004Shop\022\017\n\007shop_i" +
+      "\032\023shop/category.proto\"\362\007\n\004Shop\022\017\n\007shop_i" +
       "d\030\001 \001(\003\022\021\n\tseller_id\030\002 \001(\003\022\021\n\tshop_name\030" +
       "\003 \001(\t\022\023\n\013category_id\030# \003(\003\0229\n\022shop_quali" +
       "fication\030\315\002 \003(\0132\034.glory_api.ShopQualific" +
@@ -272,126 +272,130 @@ public final class ShopOuterClass {
       "_id\030\036 \001(\003\022\037\n\027shop_logo_attachment_id\030\037 \001" +
       "(\003\022&\n\036business_license_attachment_id\030  \001" +
       "(\003\022\017\n\007manager\030! \001(\t\022\025\n\rmanager_phone\030\" \001" +
-      "(\t\"\265\001\n\021ShopQualification\022\035\n\025shop_qualifi" +
-      "cation_id\030\001 \001(\003\022\036\n\026shop_qualification_ur" +
-      "l\030\002 \001(\t\022\025\n\rcategory_root\030\003 \001(\t\022\032\n\022qualif" +
-      "ication_name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(" +
-      "\003\022\027\n\017validity_period\030\006 \001(\t\"\"\n\014ShopBusine" +
-      "ss\022\022\n\nsale_total\030\001 \001(\003\"\206\001\n\016ShopWithAutho" +
-      "r\022\035\n\004shop\030\001 \001(\0132\017.glory_api.Shop\022%\n\013auth" +
-      "or_info\030\002 \001(\0132\020.base.AuthorInfo\022.\n\rshop_" +
-      "business\030\003 \001(\0132\027.glory_api.ShopBusiness\"" +
-      "o\n\021CreateShopRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\035\n\004shop\030\002 \001(\0132\017.gl" +
-      "ory_api.Shop\022\022\n\ncreated_by\030\003 \001(\t\"L\n\022Crea" +
-      "teShopResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\017\n\007shop_id\030\002 \001(\003\"J\n\016GetSho" +
-      "pRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\017\n\007shop_id\030\002 \001(\003\"h\n\017GetShopRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022.\n\013shop_detail\030\002 \001(\0132\031.glory_api.Sh" +
-      "opWithAuthor\"[\n\021UpdateShopRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004sh" +
-      "op\030\002 \001(\0132\017.glory_api.Shop\"L\n\022UpdateShopR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022\017\n\007shop_id\030\002 \001(\003\"\254\002\n\017ListShopRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007shop_id\030\002 \001(\003\022\021\n\tseller_id\030\004 \001(\003" +
-      "\022\021\n\tshop_name\030\005 \001(\t\022\021\n\tshop_type\030\006 \001(\t\022\020" +
-      "\n\010province\030\007 \001(\t\022\014\n\004city\030\010 \001(\t\022\020\n\010distri" +
-      "ct\030\t \001(\t\022\017\n\007address\030\n \001(\t\022\014\n\004post\030\013 \001(\t\022" +
-      "\024\n\014company_name\030\014 \001(\t\022\022\n\nowner_name\030\r \001(" +
-      "\t\022+\n\npagination\030d \001(\0132\027.base.PaginationR" +
-      "equest\"\227\001\n\020ListShopResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022.\n\013shop_detai" +
-      "l\030\002 \003(\0132\031.glory_api.ShopWithAuthor\022,\n\npa" +
-      "gination\030d \001(\0132\030.base.PaginationResponse" +
-      "\"M\n\021DeleteShopRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"" +
-      ";\n\022DeleteShopResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\"t\n\024AddShopAccessReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013access_type\030\003 " +
-      "\001(\t\022\r\n\005phone\030\004 \001(\t\">\n\025AddShopAccessRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"Z\n\027RemoveShopAccessRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016shop_a" +
-      "ccess_id\030\002 \001(\003\"A\n\030RemoveShopAccessRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"P\n\022VerifyFieldRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\021\n\tshop_name\030\002 " +
-      "\001(\t\"U\n\023VerifyFieldResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022\027\n\017shop_name_v" +
-      "alid\030\002 \001(\010\"\244\001\n\nShopAccess\022\026\n\016shop_access" +
-      "_id\030\001 \001(\003\022\017\n\007shop_id\030\002 \001(\003\022\017\n\007user_id\030\003 " +
-      "\001(\003\022\023\n\013access_type\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022" +
-      "\014\n\004name\030\006 \001(\t\022\026\n\016binding_method\030\007 \001(\t\022\022\n" +
-      "\ncreated_at\030\010 \001(\t\"f\n\025ListShopAccessReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013access_type\030\003 \001(" +
-      "\t\"k\n\026ListShopAccessResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022*\n\013shop_acces" +
-      "s\030\002 \003(\0132\025.glory_api.ShopAccess\"\'\n\024GetSho" +
-      "pQrcodeRequest\022\017\n\007shop_id\030\001 \001(\003\"\027\n\025GetSh" +
-      "opQrcodeResponse\"g\n\026AddShopCategoryReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013category_id\030\003 \003(" +
-      "\003\"@\n\027AddShopCategoryResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"o\n\031RemoveSho" +
-      "pCategoryRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\030\n\020sh" +
-      "op_category_id\030\003 \003(\003\"C\n\032RemoveShopCatego" +
-      "ryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"R\n\026GetShopCategoryRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007" +
-      "shop_id\030\002 \001(\003\"O\n\014ShopCategory\022\030\n\020shop_ca" +
-      "tegory_id\030\001 \001(\003\022%\n\010category\030\003 \001(\0132\023.glor" +
-      "y_api.Category\"\203\001\n\027GetShopCategoryRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\017\n\007shop_id\030\002 \001(\003\0220\n\017category_detail\030\003 " +
-      "\003(\0132\027.glory_api.ShopCategory\"X\n\034ListShop" +
-      "QualificationRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\200" +
-      "\001\n\035ListShopQualificationResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\0228\n\022shop_" +
-      "qualification\030\002 \003(\0132\034.glory_api.ShopQual" +
-      "ification\"|\n\030UpdateShopManagerRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
-      "\n\007shop_id\030\002 \001(\003\022\017\n\007manager\030\003 \001(\t\022\025\n\rmana" +
-      "ger_phone\030\004 \001(\t\"B\n\031UpdateShopManagerResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\"f\n\032GetShopBusinessDataRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sh" +
-      "op_id\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"{\n\rShopChart" +
-      "Data\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022" +
-      "\031\n\021shop_buyer_amount\030\003 \001(\003\022\031\n\021shop_order" +
-      "_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\255\001\n\020Sho" +
-      "pBusinessData\0221\n\017shop_chart_data\030\001 \003(\0132\030" +
-      ".glory_api.ShopChartData\022\031\n\021total_deal_a" +
-      "mount\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(" +
-      "\003\022\032\n\022total_order_amount\030\004 \001(\003\022\021\n\tshop_ty" +
-      "pe\030\005 \001(\t\"}\n\033GetShopBusinessDataResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0227" +
-      "\n\022shop_business_data\030\002 \001(\0132\033.glory_api.S" +
-      "hopBusinessData\"\240\001\n\013ShopSummary\022\017\n\007shop_" +
-      "id\030\001 \001(\003\022\025\n\rshop_logo_url\030\002 \001(\t\022\021\n\tshop_" +
-      "name\030\003 \001(\t\022\023\n\013deal_amount\030\004 \001(\001\022\023\n\013order" +
-      "_total\030\005 \001(\003\022\021\n\tseller_id\030\006 \001(\003\022\031\n\021shop_" +
-      "manager_name\030\007 \001(\t\"\267\001\n\026ListShopSummaryRe" +
+      "(\t\022\033\n\023owner_id_front_path\030\' \001(\t\022\032\n\022owner" +
+      "_id_back_path\030$ \001(\t\022\026\n\016shop_logo_path\030% " +
+      "\001(\t\022\035\n\025business_license_path\030& \001(\t\"\326\001\n\021S" +
+      "hopQualification\022\035\n\025shop_qualification_i" +
+      "d\030\001 \001(\003\022\036\n\026shop_qualification_url\030\002 \001(\t\022" +
+      "\025\n\rcategory_root\030\003 \001(\t\022\032\n\022qualification_" +
+      "name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(\003\022\027\n\017val" +
+      "idity_period\030\006 \001(\t\022\037\n\027shop_qualification" +
+      "_path\030\007 \001(\t\"\"\n\014ShopBusiness\022\022\n\nsale_tota" +
+      "l\030\001 \001(\003\"\206\001\n\016ShopWithAuthor\022\035\n\004shop\030\001 \001(\013" +
+      "2\017.glory_api.Shop\022%\n\013author_info\030\002 \001(\0132\020" +
+      ".base.AuthorInfo\022.\n\rshop_business\030\003 \001(\0132" +
+      "\027.glory_api.ShopBusiness\"o\n\021CreateShopRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\021\n\tshop_name\030\002 \001(\t\022\021\n\tshop_type\030\003" +
-      " \001(\t\022\020\n\010major_id\030\004 \001(\003\022\017\n\007clas_id\030\005 \001(\003\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\231\001\n\027ListShopSummaryResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\tshop_" +
-      "list\030\002 \003(\0132\026.glory_api.ShopSummary\022,\n\npa" +
-      "gination\030d \001(\0132\030.base.PaginationResponse" +
-      "\"W\n\031ListShopBySellerIDRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tseller" +
-      "_id\030\002 \001(\003\"g\n\032ListShopBySellerIDResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\"" +
-      "\n\tshop_list\030\002 \003(\0132\017.glory_api.ShopB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.shopP\001b\006proto3"
+      "equest\022\035\n\004shop\030\002 \001(\0132\017.glory_api.Shop\022\022\n" +
+      "\ncreated_by\030\003 \001(\t\"L\n\022CreateShopResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017" +
+      "\n\007shop_id\030\002 \001(\003\"J\n\016GetShopRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sh" +
+      "op_id\030\002 \001(\003\"h\n\017GetShopResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022.\n\013shop_de" +
+      "tail\030\002 \001(\0132\031.glory_api.ShopWithAuthor\"[\n" +
+      "\021UpdateShopRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\035\n\004shop\030\002 \001(\0132\017.glor" +
+      "y_api.Shop\"L\n\022UpdateShopResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007shop_" +
+      "id\030\002 \001(\003\"\254\002\n\017ListShopRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
+      "\030\002 \001(\003\022\021\n\tseller_id\030\004 \001(\003\022\021\n\tshop_name\030\005" +
+      " \001(\t\022\021\n\tshop_type\030\006 \001(\t\022\020\n\010province\030\007 \001(" +
+      "\t\022\014\n\004city\030\010 \001(\t\022\020\n\010district\030\t \001(\t\022\017\n\007add" +
+      "ress\030\n \001(\t\022\014\n\004post\030\013 \001(\t\022\024\n\014company_name" +
+      "\030\014 \001(\t\022\022\n\nowner_name\030\r \001(\t\022+\n\npagination" +
+      "\030d \001(\0132\027.base.PaginationRequest\"\227\001\n\020List" +
+      "ShopResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022.\n\013shop_detail\030\002 \003(\0132\031.glory" +
+      "_api.ShopWithAuthor\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"M\n\021DeleteShopR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\017\n\007shop_id\030\002 \001(\003\";\n\022DeleteShopRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"t\n\024AddShopAccessRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_i" +
+      "d\030\002 \001(\003\022\023\n\013access_type\030\003 \001(\t\022\r\n\005phone\030\004 " +
+      "\001(\t\">\n\025AddShopAccessResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"Z\n\027RemoveSho" +
+      "pAccessRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\026\n\016shop_access_id\030\002 \001(\003\"" +
+      "A\n\030RemoveShopAccessResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"P\n\022VerifyFiel" +
+      "dRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\021\n\tshop_name\030\002 \001(\t\"U\n\023VerifyFi" +
+      "eldResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\027\n\017shop_name_valid\030\002 \001(\010\"\244\001\n\n" +
+      "ShopAccess\022\026\n\016shop_access_id\030\001 \001(\003\022\017\n\007sh" +
+      "op_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\023\n\013access_t" +
+      "ype\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\026" +
+      "\n\016binding_method\030\007 \001(\t\022\022\n\ncreated_at\030\010 \001" +
+      "(\t\"f\n\025ListShopAccessRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
+      "\002 \001(\003\022\023\n\013access_type\030\003 \001(\t\"k\n\026ListShopAc" +
+      "cessResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022*\n\013shop_access\030\002 \003(\0132\025.glory" +
+      "_api.ShopAccess\"\'\n\024GetShopQrcodeRequest\022" +
+      "\017\n\007shop_id\030\001 \001(\003\"\027\n\025GetShopQrcodeRespons" +
+      "e\"g\n\026AddShopCategoryRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
+      "\002 \001(\003\022\023\n\013category_id\030\003 \003(\003\"@\n\027AddShopCat" +
+      "egoryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"o\n\031RemoveShopCategoryReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\017\n\007shop_id\030\002 \001(\003\022\030\n\020shop_category_id\030" +
+      "\003 \003(\003\"C\n\032RemoveShopCategoryResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"R\n\026Ge" +
+      "tShopCategoryRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"O" +
+      "\n\014ShopCategory\022\030\n\020shop_category_id\030\001 \001(\003" +
+      "\022%\n\010category\030\003 \001(\0132\023.glory_api.Category\"" +
+      "\203\001\n\027GetShopCategoryResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007shop_id\030\002 " +
+      "\001(\003\0220\n\017category_detail\030\003 \003(\0132\027.glory_api" +
+      ".ShopCategory\"X\n\034ListShopQualificationRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\017\n\007shop_id\030\002 \001(\003\"\200\001\n\035ListShopQual" +
+      "ificationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\0228\n\022shop_qualification\030\002" +
+      " \003(\0132\034.glory_api.ShopQualification\"|\n\030Up" +
+      "dateShopManagerRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003" +
+      "\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager_phone\030\004 \001(\t" +
+      "\"B\n\031UpdateShopManagerResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"f\n\032GetShopB" +
+      "usinessDataRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\016\n\006" +
+      "period\030\003 \001(\003\"{\n\rShopChartData\022\014\n\004date\030\001 " +
+      "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021shop_buyer_a" +
+      "mount\030\003 \001(\003\022\031\n\021shop_order_amount\030\004 \001(\003\022\021" +
+      "\n\ttimestamp\030\005 \001(\003\"\255\001\n\020ShopBusinessData\0221" +
+      "\n\017shop_chart_data\030\001 \003(\0132\030.glory_api.Shop" +
+      "ChartData\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024" +
+      "total_visitor_amount\030\003 \001(\003\022\032\n\022total_orde" +
+      "r_amount\030\004 \001(\003\022\021\n\tshop_type\030\005 \001(\t\"}\n\033Get" +
+      "ShopBusinessDataResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\0227\n\022shop_business" +
+      "_data\030\002 \001(\0132\033.glory_api.ShopBusinessData" +
+      "\"\240\001\n\013ShopSummary\022\017\n\007shop_id\030\001 \001(\003\022\025\n\rsho" +
+      "p_logo_url\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\023\n\013d" +
+      "eal_amount\030\004 \001(\001\022\023\n\013order_total\030\005 \001(\003\022\021\n" +
+      "\tseller_id\030\006 \001(\003\022\031\n\021shop_manager_name\030\007 " +
+      "\001(\t\"\267\001\n\026ListShopSummaryRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tshop_" +
+      "name\030\002 \001(\t\022\021\n\tshop_type\030\003 \001(\t\022\020\n\010major_i" +
+      "d\030\004 \001(\003\022\017\n\007clas_id\030\005 \001(\003\022+\n\npagination\030d" +
+      " \001(\0132\027.base.PaginationRequest\"\231\001\n\027ListSh" +
+      "opSummaryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022)\n\tshop_list\030\002 \003(\0132\026.gl" +
+      "ory_api.ShopSummary\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"W\n\031ListShopByS" +
+      "ellerIDRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\021\n\tseller_id\030\002 \001(\003\"g\n\032Li" +
+      "stShopBySellerIDResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\"\n\tshop_list\030\002 \003" +
+      "(\0132\017.glory_api.ShopB#\n\037com.zhijiejiaoyu." +
+      "glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -404,13 +408,13 @@ public final class ShopOuterClass {
     internal_static_glory_api_Shop_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Shop_descriptor,
-        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", "Manager", "ManagerPhone", });
+        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", "Manager", "ManagerPhone", "OwnerIdFrontPath", "OwnerIdBackPath", "ShopLogoPath", "BusinessLicensePath", });
     internal_static_glory_api_ShopQualification_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ShopQualification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopQualification_descriptor,
-        new java.lang.String[] { "ShopQualificationId", "ShopQualificationUrl", "CategoryRoot", "QualificationName", "AttachmentId", "ValidityPeriod", });
+        new java.lang.String[] { "ShopQualificationId", "ShopQualificationUrl", "CategoryRoot", "QualificationName", "AttachmentId", "ValidityPeriod", "ShopQualificationPath", });
     internal_static_glory_api_ShopBusiness_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_ShopBusiness_fieldAccessorTable = new

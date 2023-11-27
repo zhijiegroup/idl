@@ -102,4 +102,24 @@ public interface ShopQualificationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getValidityPeriodBytes();
+
+  /**
+   * <pre>
+   *图片OSS路径
+   * </pre>
+   *
+   * <code>string shop_qualification_path = 7;</code>
+   * @return The shopQualificationPath.
+   */
+  java.lang.String getShopQualificationPath();
+  /**
+   * <pre>
+   *图片OSS路径
+   * </pre>
+   *
+   * <code>string shop_qualification_path = 7;</code>
+   * @return The bytes for shopQualificationPath.
+   */
+  com.google.protobuf.ByteString
+      getShopQualificationPathBytes();
 }

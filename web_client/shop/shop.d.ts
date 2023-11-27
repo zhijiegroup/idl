@@ -75,6 +75,14 @@ export interface Shop {
   manager?: string;
   /** 店铺管理者手机号 */
   manager_phone?: string;
+  /** 身份证正面OSS路径 */
+  owner_id_front_path?: string;
+  /** 身份证背面OSS路径 */
+  owner_id_back_path?: string;
+  /** 店铺Logo OSS路径 */
+  shop_logo_path?: string;
+  /** 营业执照 OSS路径 */
+  business_license_path?: string;
 }
 
 export interface ShopQualification {
@@ -89,6 +97,8 @@ export interface ShopQualification {
   attachment_id?: string;
   /** 有效期 */
   validity_period?: string;
+  /** 图片OSS路径 */
+  shop_qualification_path?: string;
 }
 
 export interface ShopBusiness {

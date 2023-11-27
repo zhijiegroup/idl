@@ -42,6 +42,10 @@ private static final long serialVersionUID = 0L;
     companyBankPhone = "";
     manager = "";
     managerPhone = "";
+    ownerIdFrontPath = "";
+    ownerIdBackPath = "";
+    shopLogoPath = "";
+    businessLicensePath = "";
   }
 
   @java.lang.Override
@@ -278,6 +282,30 @@ private static final long serialVersionUID = 0L;
               categoryId .addLong(input.readInt64());
             }
             input.popLimit(limit);
+            break;
+          }
+          case 290: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerIdBackPath = s;
+            break;
+          }
+          case 298: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopLogoPath = s;
+            break;
+          }
+          case 306: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            businessLicensePath = s;
+            break;
+          }
+          case 314: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            ownerIdFrontPath = s;
             break;
           }
           case 2666: {
@@ -1651,6 +1679,190 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int OWNER_ID_FRONT_PATH_FIELD_NUMBER = 39;
+  private volatile java.lang.Object ownerIdFrontPath ;
+  /**
+   * <pre>
+   * 身份证正面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_front_path = 39;</code>
+   * @return The ownerIdFrontPath.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerIdFrontPath() {
+    java.lang.Object ref = ownerIdFrontPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerIdFrontPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 身份证正面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_front_path = 39;</code>
+   * @return The bytes for ownerIdFrontPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerIdFrontPathBytes() {
+    java.lang.Object ref = ownerIdFrontPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerIdFrontPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OWNER_ID_BACK_PATH_FIELD_NUMBER = 36;
+  private volatile java.lang.Object ownerIdBackPath ;
+  /**
+   * <pre>
+   * 身份证背面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_back_path = 36;</code>
+   * @return The ownerIdBackPath.
+   */
+  @java.lang.Override
+  public java.lang.String getOwnerIdBackPath() {
+    java.lang.Object ref = ownerIdBackPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ownerIdBackPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 身份证背面OSS路径
+   * </pre>
+   *
+   * <code>string owner_id_back_path = 36;</code>
+   * @return The bytes for ownerIdBackPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOwnerIdBackPathBytes() {
+    java.lang.Object ref = ownerIdBackPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ownerIdBackPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHOP_LOGO_PATH_FIELD_NUMBER = 37;
+  private volatile java.lang.Object shopLogoPath ;
+  /**
+   * <pre>
+   * 店铺Logo OSS路径
+   * </pre>
+   *
+   * <code>string shop_logo_path = 37;</code>
+   * @return The shopLogoPath.
+   */
+  @java.lang.Override
+  public java.lang.String getShopLogoPath() {
+    java.lang.Object ref = shopLogoPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopLogoPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 店铺Logo OSS路径
+   * </pre>
+   *
+   * <code>string shop_logo_path = 37;</code>
+   * @return The bytes for shopLogoPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopLogoPathBytes() {
+    java.lang.Object ref = shopLogoPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopLogoPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUSINESS_LICENSE_PATH_FIELD_NUMBER = 38;
+  private volatile java.lang.Object businessLicensePath ;
+  /**
+   * <pre>
+   *营业执照 OSS路径
+   * </pre>
+   *
+   * <code>string business_license_path = 38;</code>
+   * @return The businessLicensePath.
+   */
+  @java.lang.Override
+  public java.lang.String getBusinessLicensePath() {
+    java.lang.Object ref = businessLicensePath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      businessLicensePath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *营业执照 OSS路径
+   * </pre>
+   *
+   * <code>string business_license_path = 38;</code>
+   * @return The bytes for businessLicensePath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBusinessLicensePathBytes() {
+    java.lang.Object ref = businessLicensePath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      businessLicensePath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1768,6 +1980,18 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < categoryId .size(); i++) {
       output.writeInt64NoTag(categoryId .getLong(i));
+    }
+    if (!getOwnerIdBackPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, ownerIdBackPath );
+    }
+    if (!getShopLogoPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, shopLogoPath );
+    }
+    if (!getBusinessLicensePathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38, businessLicensePath );
+    }
+    if (!getOwnerIdFrontPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39, ownerIdFrontPath );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -1899,6 +2123,18 @@ private static final long serialVersionUID = 0L;
       }
       categoryIdMemoizedSerializedSize = dataSize;
     }
+    if (!getOwnerIdBackPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, ownerIdBackPath );
+    }
+    if (!getShopLogoPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, shopLogoPath );
+    }
+    if (!getBusinessLicensePathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38, businessLicensePath );
+    }
+    if (!getOwnerIdFrontPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, ownerIdFrontPath );
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -1986,6 +2222,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getManager())) return false;
     if (!getManagerPhone()
         .equals(other.getManagerPhone())) return false;
+    if (!getOwnerIdFrontPath()
+        .equals(other.getOwnerIdFrontPath())) return false;
+    if (!getOwnerIdBackPath()
+        .equals(other.getOwnerIdBackPath())) return false;
+    if (!getShopLogoPath()
+        .equals(other.getShopLogoPath())) return false;
+    if (!getBusinessLicensePath()
+        .equals(other.getBusinessLicensePath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2076,6 +2320,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getManager().hashCode();
     hash = (37 * hash) + MANAGER_PHONE_FIELD_NUMBER;
     hash = (53 * hash) + getManagerPhone().hashCode();
+    hash = (37 * hash) + OWNER_ID_FRONT_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerIdFrontPath().hashCode();
+    hash = (37 * hash) + OWNER_ID_BACK_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getOwnerIdBackPath().hashCode();
+    hash = (37 * hash) + SHOP_LOGO_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getShopLogoPath().hashCode();
+    hash = (37 * hash) + BUSINESS_LICENSE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getBusinessLicensePath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2282,6 +2534,14 @@ private static final long serialVersionUID = 0L;
 
       managerPhone = "";
 
+      ownerIdFrontPath = "";
+
+      ownerIdBackPath = "";
+
+      shopLogoPath = "";
+
+      businessLicensePath = "";
+
       return this;
     }
 
@@ -2355,6 +2615,10 @@ private static final long serialVersionUID = 0L;
       result.businessLicenseAttachmentId = businessLicenseAttachmentId ;
       result.manager = manager ;
       result.managerPhone = managerPhone ;
+      result.ownerIdFrontPath = ownerIdFrontPath ;
+      result.ownerIdBackPath = ownerIdBackPath ;
+      result.shopLogoPath = shopLogoPath ;
+      result.businessLicensePath = businessLicensePath ;
       onBuilt();
       return result;
     }
@@ -2557,6 +2821,22 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getManagerPhone().isEmpty()) {
         managerPhone = other.managerPhone ;
+        onChanged();
+      }
+      if (!other.getOwnerIdFrontPath().isEmpty()) {
+        ownerIdFrontPath = other.ownerIdFrontPath ;
+        onChanged();
+      }
+      if (!other.getOwnerIdBackPath().isEmpty()) {
+        ownerIdBackPath = other.ownerIdBackPath ;
+        onChanged();
+      }
+      if (!other.getShopLogoPath().isEmpty()) {
+        shopLogoPath = other.shopLogoPath ;
+        onChanged();
+      }
+      if (!other.getBusinessLicensePath().isEmpty()) {
+        businessLicensePath = other.businessLicensePath ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -5652,6 +5932,390 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       managerPhone = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerIdFrontPath = "";
+    /**
+     * <pre>
+     * 身份证正面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_front_path = 39;</code>
+     * @return The ownerIdFrontPath.
+     */
+    public java.lang.String getOwnerIdFrontPath() {
+      java.lang.Object ref = ownerIdFrontPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerIdFrontPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 身份证正面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_front_path = 39;</code>
+     * @return The bytes for ownerIdFrontPath.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerIdFrontPathBytes() {
+      java.lang.Object ref = ownerIdFrontPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerIdFrontPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 身份证正面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_front_path = 39;</code>
+     * @param value The ownerIdFrontPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerIdFrontPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerIdFrontPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 身份证正面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_front_path = 39;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerIdFrontPath() {
+      
+      ownerIdFrontPath = getDefaultInstance().getOwnerIdFrontPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 身份证正面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_front_path = 39;</code>
+     * @param value The bytes for ownerIdFrontPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerIdFrontPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerIdFrontPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ownerIdBackPath = "";
+    /**
+     * <pre>
+     * 身份证背面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_back_path = 36;</code>
+     * @return The ownerIdBackPath.
+     */
+    public java.lang.String getOwnerIdBackPath() {
+      java.lang.Object ref = ownerIdBackPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerIdBackPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 身份证背面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_back_path = 36;</code>
+     * @return The bytes for ownerIdBackPath.
+     */
+    public com.google.protobuf.ByteString
+        getOwnerIdBackPathBytes() {
+      java.lang.Object ref = ownerIdBackPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerIdBackPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 身份证背面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_back_path = 36;</code>
+     * @param value The ownerIdBackPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerIdBackPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      ownerIdBackPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 身份证背面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_back_path = 36;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOwnerIdBackPath() {
+      
+      ownerIdBackPath = getDefaultInstance().getOwnerIdBackPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 身份证背面OSS路径
+     * </pre>
+     *
+     * <code>string owner_id_back_path = 36;</code>
+     * @param value The bytes for ownerIdBackPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOwnerIdBackPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ownerIdBackPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopLogoPath = "";
+    /**
+     * <pre>
+     * 店铺Logo OSS路径
+     * </pre>
+     *
+     * <code>string shop_logo_path = 37;</code>
+     * @return The shopLogoPath.
+     */
+    public java.lang.String getShopLogoPath() {
+      java.lang.Object ref = shopLogoPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopLogoPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺Logo OSS路径
+     * </pre>
+     *
+     * <code>string shop_logo_path = 37;</code>
+     * @return The bytes for shopLogoPath.
+     */
+    public com.google.protobuf.ByteString
+        getShopLogoPathBytes() {
+      java.lang.Object ref = shopLogoPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopLogoPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺Logo OSS路径
+     * </pre>
+     *
+     * <code>string shop_logo_path = 37;</code>
+     * @param value The shopLogoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopLogoPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺Logo OSS路径
+     * </pre>
+     *
+     * <code>string shop_logo_path = 37;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopLogoPath() {
+      
+      shopLogoPath = getDefaultInstance().getShopLogoPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺Logo OSS路径
+     * </pre>
+     *
+     * <code>string shop_logo_path = 37;</code>
+     * @param value The bytes for shopLogoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopLogoPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopLogoPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object businessLicensePath = "";
+    /**
+     * <pre>
+     *营业执照 OSS路径
+     * </pre>
+     *
+     * <code>string business_license_path = 38;</code>
+     * @return The businessLicensePath.
+     */
+    public java.lang.String getBusinessLicensePath() {
+      java.lang.Object ref = businessLicensePath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        businessLicensePath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *营业执照 OSS路径
+     * </pre>
+     *
+     * <code>string business_license_path = 38;</code>
+     * @return The bytes for businessLicensePath.
+     */
+    public com.google.protobuf.ByteString
+        getBusinessLicensePathBytes() {
+      java.lang.Object ref = businessLicensePath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        businessLicensePath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *营业执照 OSS路径
+     * </pre>
+     *
+     * <code>string business_license_path = 38;</code>
+     * @param value The businessLicensePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBusinessLicensePath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      businessLicensePath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *营业执照 OSS路径
+     * </pre>
+     *
+     * <code>string business_license_path = 38;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBusinessLicensePath() {
+      
+      businessLicensePath = getDefaultInstance().getBusinessLicensePath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *营业执照 OSS路径
+     * </pre>
+     *
+     * <code>string business_license_path = 38;</code>
+     * @param value The bytes for businessLicensePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBusinessLicensePathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      businessLicensePath = value;
       onChanged();
       return this;
     }

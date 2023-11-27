@@ -51,6 +51,10 @@ const Shop$json = {
     {'1': 'business_license_attachment_id', '3': 32, '4': 1, '5': 3, '10': 'businessLicenseAttachmentId'},
     {'1': 'manager', '3': 33, '4': 1, '5': 9, '10': 'manager'},
     {'1': 'manager_phone', '3': 34, '4': 1, '5': 9, '10': 'managerPhone'},
+    {'1': 'owner_id_front_path', '3': 39, '4': 1, '5': 9, '10': 'ownerIdFrontPath'},
+    {'1': 'owner_id_back_path', '3': 36, '4': 1, '5': 9, '10': 'ownerIdBackPath'},
+    {'1': 'shop_logo_path', '3': 37, '4': 1, '5': 9, '10': 'shopLogoPath'},
+    {'1': 'business_license_path', '3': 38, '4': 1, '5': 9, '10': 'businessLicensePath'},
   ],
 };
 
@@ -81,7 +85,11 @@ final $typed_data.Uint8List shopDescriptor = $convert.base64Decode(
     'b3duZXJJZEJhY2tBdHRhY2htZW50SWQSNQoXc2hvcF9sb2dvX2F0dGFjaG1lbnRfaWQYHyABKA'
     'NSFHNob3BMb2dvQXR0YWNobWVudElkEkMKHmJ1c2luZXNzX2xpY2Vuc2VfYXR0YWNobWVudF9p'
     'ZBggIAEoA1IbYnVzaW5lc3NMaWNlbnNlQXR0YWNobWVudElkEhgKB21hbmFnZXIYISABKAlSB2'
-    '1hbmFnZXISIwoNbWFuYWdlcl9waG9uZRgiIAEoCVIMbWFuYWdlclBob25l');
+    '1hbmFnZXISIwoNbWFuYWdlcl9waG9uZRgiIAEoCVIMbWFuYWdlclBob25lEi0KE293bmVyX2lk'
+    'X2Zyb250X3BhdGgYJyABKAlSEG93bmVySWRGcm9udFBhdGgSKwoSb3duZXJfaWRfYmFja19wYX'
+    'RoGCQgASgJUg9vd25lcklkQmFja1BhdGgSJAoOc2hvcF9sb2dvX3BhdGgYJSABKAlSDHNob3BM'
+    'b2dvUGF0aBIyChVidXNpbmVzc19saWNlbnNlX3BhdGgYJiABKAlSE2J1c2luZXNzTGljZW5zZV'
+    'BhdGg=');
 
 @$core.Deprecated('Use shopQualificationDescriptor instead')
 const ShopQualification$json = {
@@ -93,6 +101,7 @@ const ShopQualification$json = {
     {'1': 'qualification_name', '3': 4, '4': 1, '5': 9, '10': 'qualificationName'},
     {'1': 'attachment_id', '3': 5, '4': 1, '5': 3, '10': 'attachmentId'},
     {'1': 'validity_period', '3': 6, '4': 1, '5': 9, '10': 'validityPeriod'},
+    {'1': 'shop_qualification_path', '3': 7, '4': 1, '5': 9, '10': 'shopQualificationPath'},
   ],
 };
 
@@ -103,7 +112,8 @@ final $typed_data.Uint8List shopQualificationDescriptor = $convert.base64Decode(
     'YWxpZmljYXRpb25VcmwSIwoNY2F0ZWdvcnlfcm9vdBgDIAEoCVIMY2F0ZWdvcnlSb290Ei0KEn'
     'F1YWxpZmljYXRpb25fbmFtZRgEIAEoCVIRcXVhbGlmaWNhdGlvbk5hbWUSIwoNYXR0YWNobWVu'
     'dF9pZBgFIAEoA1IMYXR0YWNobWVudElkEicKD3ZhbGlkaXR5X3BlcmlvZBgGIAEoCVIOdmFsaW'
-    'RpdHlQZXJpb2Q=');
+    'RpdHlQZXJpb2QSNgoXc2hvcF9xdWFsaWZpY2F0aW9uX3BhdGgYByABKAlSFXNob3BRdWFsaWZp'
+    'Y2F0aW9uUGF0aA==');
 
 @$core.Deprecated('Use shopBusinessDescriptor instead')
 const ShopBusiness$json = {

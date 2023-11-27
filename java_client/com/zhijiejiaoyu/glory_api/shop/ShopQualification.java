@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     categoryRoot = "";
     qualificationName = "";
     validityPeriod = "";
+    shopQualificationPath = "";
   }
 
   @java.lang.Override
@@ -84,6 +85,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             validityPeriod = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shopQualificationPath = s;
             break;
           }
           default: {
@@ -328,6 +335,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHOP_QUALIFICATION_PATH_FIELD_NUMBER = 7;
+  private volatile java.lang.Object shopQualificationPath ;
+  /**
+   * <pre>
+   *图片OSS路径
+   * </pre>
+   *
+   * <code>string shop_qualification_path = 7;</code>
+   * @return The shopQualificationPath.
+   */
+  @java.lang.Override
+  public java.lang.String getShopQualificationPath() {
+    java.lang.Object ref = shopQualificationPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shopQualificationPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *图片OSS路径
+   * </pre>
+   *
+   * <code>string shop_qualification_path = 7;</code>
+   * @return The bytes for shopQualificationPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getShopQualificationPathBytes() {
+    java.lang.Object ref = shopQualificationPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shopQualificationPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -360,6 +413,9 @@ private static final long serialVersionUID = 0L;
     if (!getValidityPeriodBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, validityPeriod );
     }
+    if (!getShopQualificationPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, shopQualificationPath );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -389,6 +445,9 @@ private static final long serialVersionUID = 0L;
     if (!getValidityPeriodBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, validityPeriod );
     }
+    if (!getShopQualificationPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, shopQualificationPath );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -416,6 +475,8 @@ private static final long serialVersionUID = 0L;
         != other.getAttachmentId()) return false;
     if (!getValidityPeriod()
         .equals(other.getValidityPeriod())) return false;
+    if (!getShopQualificationPath()
+        .equals(other.getShopQualificationPath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -441,6 +502,8 @@ private static final long serialVersionUID = 0L;
         getAttachmentId());
     hash = (37 * hash) + VALIDITY_PERIOD_FIELD_NUMBER;
     hash = (53 * hash) + getValidityPeriod().hashCode();
+    hash = (37 * hash) + SHOP_QUALIFICATION_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getShopQualificationPath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -586,6 +649,8 @@ private static final long serialVersionUID = 0L;
 
       validityPeriod = "";
 
+      shopQualificationPath = "";
+
       return this;
     }
 
@@ -618,6 +683,7 @@ private static final long serialVersionUID = 0L;
       result.qualificationName = qualificationName ;
       result.attachmentId = attachmentId ;
       result.validityPeriod = validityPeriod ;
+      result.shopQualificationPath = shopQualificationPath ;
       onBuilt();
       return result;
     }
@@ -686,6 +752,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getValidityPeriod().isEmpty()) {
         validityPeriod = other.validityPeriod ;
+        onChanged();
+      }
+      if (!other.getShopQualificationPath().isEmpty()) {
+        shopQualificationPath = other.shopQualificationPath ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1171,6 +1241,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       validityPeriod = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shopQualificationPath = "";
+    /**
+     * <pre>
+     *图片OSS路径
+     * </pre>
+     *
+     * <code>string shop_qualification_path = 7;</code>
+     * @return The shopQualificationPath.
+     */
+    public java.lang.String getShopQualificationPath() {
+      java.lang.Object ref = shopQualificationPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shopQualificationPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *图片OSS路径
+     * </pre>
+     *
+     * <code>string shop_qualification_path = 7;</code>
+     * @return The bytes for shopQualificationPath.
+     */
+    public com.google.protobuf.ByteString
+        getShopQualificationPathBytes() {
+      java.lang.Object ref = shopQualificationPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shopQualificationPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *图片OSS路径
+     * </pre>
+     *
+     * <code>string shop_qualification_path = 7;</code>
+     * @param value The shopQualificationPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopQualificationPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shopQualificationPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *图片OSS路径
+     * </pre>
+     *
+     * <code>string shop_qualification_path = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopQualificationPath() {
+      
+      shopQualificationPath = getDefaultInstance().getShopQualificationPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *图片OSS路径
+     * </pre>
+     *
+     * <code>string shop_qualification_path = 7;</code>
+     * @param value The bytes for shopQualificationPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopQualificationPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shopQualificationPath = value;
       onChanged();
       return this;
     }
