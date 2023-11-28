@@ -76,6 +76,8 @@ export interface GetVirtualCurrencyResponse {
 export interface ListVirtualCurrencyRequest {
   base_request?: base.BaseRequest;
   user_id?: string;
+  /** 充值审核状态：1. recharge - 待充值；2. recharged - 已充值 */
+  status?: string;
   pagination?: base.PaginationRequest;
 }
 

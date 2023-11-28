@@ -116,16 +116,17 @@ public final class VirtualCurrencyOuterClass {
       "est\022\017\n\007user_id\030\002 \001(\003\"\202\001\n\032GetVirtualCurre" +
       "ncyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\022=\n\025virtual_currency_info\030\002 \001(" +
-      "\0132\036.glory_api.VirtualCurrencyInfo\"\203\001\n\032Li" +
+      "\0132\036.glory_api.VirtualCurrencyInfo\"\223\001\n\032Li" +
       "stVirtualCurrencyRequest\022\'\n\014base_request" +
       "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001" +
-      "(\003\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\261\001\n\033ListVirtualCurrencyResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022=" +
-      "\n\025virtual_currency_info\030\002 \003(\0132\036.glory_ap" +
-      "i.VirtualCurrencyInfo\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponseB\'\n#com.zhiji" +
-      "ejiaoyu.glory_api.currencyP\001b\006proto3"
+      "(\003\022\016\n\006status\030\003 \001(\t\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\261\001\n\033ListVirtualC" +
+      "urrencyResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022=\n\025virtual_currency_info\030" +
+      "\002 \003(\0132\036.glory_api.VirtualCurrencyInfo\022,\n" +
+      "\npagination\030d \001(\0132\030.base.PaginationRespo" +
+      "nseB\'\n#com.zhijiejiaoyu.glory_api.curren" +
+      "cyP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -203,7 +204,7 @@ public final class VirtualCurrencyOuterClass {
     internal_static_glory_api_ListVirtualCurrencyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVirtualCurrencyRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "UserId", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "UserId", "Status", "Pagination", });
     internal_static_glory_api_ListVirtualCurrencyResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_ListVirtualCurrencyResponse_fieldAccessorTable = new

@@ -186,6 +186,7 @@ const ListVirtualCurrencyRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -193,8 +194,9 @@ const ListVirtualCurrencyRequest$json = {
 /// Descriptor for `ListVirtualCurrencyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listVirtualCurrencyRequestDescriptor = $convert.base64Decode(
     'ChpMaXN0VmlydHVhbEN1cnJlbmN5UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
-    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSNwoK'
-    'cGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSFgoG'
+    'c3RhdHVzGAMgASgJUgZzdGF0dXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdG'
+    'lvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listVirtualCurrencyResponseDescriptor instead')
 const ListVirtualCurrencyResponse$json = {

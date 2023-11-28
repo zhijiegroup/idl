@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListVirtualCurrencyRequest() {
+    status = "";
   }
 
   @java.lang.Override
@@ -64,6 +65,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             userId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status = s;
             break;
           }
           case 802: {
@@ -148,6 +155,52 @@ private static final long serialVersionUID = 0L;
     return userId ;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object status ;
+  /**
+   * <pre>
+   * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+   * </pre>
+   *
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+   * </pre>
+   *
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -194,6 +247,9 @@ private static final long serialVersionUID = 0L;
     if (userId != 0L) {
       output.writeInt64(2, userId );
     }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -213,6 +269,9 @@ private static final long serialVersionUID = 0L;
     if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -240,6 +299,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getUserId()
         != other.getUserId()) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -263,6 +324,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserId());
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -408,6 +471,8 @@ private static final long serialVersionUID = 0L;
       }
       userId = 0L;
 
+      status = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -446,6 +511,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.userId = userId ;
+      result.status = status ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -504,6 +570,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUserId() != 0L) {
         setUserId(other.getUserId());
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -683,6 +753,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearUserId() {
       
       userId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status = "";
+    /**
+     * <pre>
+     * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+     * </pre>
+     *
+     * <code>string status = 3;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
       onChanged();
       return this;
     }

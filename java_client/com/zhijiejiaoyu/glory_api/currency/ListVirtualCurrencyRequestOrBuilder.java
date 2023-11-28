@@ -29,6 +29,26 @@ public interface ListVirtualCurrencyRequestOrBuilder extends
   long getUserId();
 
   /**
+   * <pre>
+   * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+   * </pre>
+   *
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   * 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
+   * </pre>
+   *
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

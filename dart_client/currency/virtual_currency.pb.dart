@@ -826,6 +826,7 @@ class ListVirtualCurrencyRequest extends $pb.GeneratedMessage {
   factory ListVirtualCurrencyRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? userId,
+    $core.String? status,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -834,6 +835,9 @@ class ListVirtualCurrencyRequest extends $pb.GeneratedMessage {
     }
     if (userId != null) {
       $result.userId = userId;
+    }
+    if (status != null) {
+      $result.status = status;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -847,6 +851,7 @@ class ListVirtualCurrencyRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVirtualCurrencyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -892,16 +897,25 @@ class ListVirtualCurrencyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearUserId() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(2);
+  $0.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(2);
+  $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(2);
+  $0.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListVirtualCurrencyResponse extends $pb.GeneratedMessage {
