@@ -70,6 +70,7 @@ message GetVirtualCurrencyResponse {
 message ListVirtualCurrencyRequest {
   base.BaseRequest base_request = 1;
   int64 user_id = 2;
+  string status = 3; // 充值审核状态：1. recharge - 待充值；2. recharged - 已充值
   base.PaginationRequest pagination = 100;
 }
 
