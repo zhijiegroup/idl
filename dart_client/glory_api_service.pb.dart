@@ -34,6 +34,7 @@ import 'example/example.pb.dart' as $0;
 import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
+import 'live/live_quick_evaluate.pb.dart' as $50;
 import 'live/live_room.pb.dart' as $24;
 import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
@@ -1049,6 +1050,18 @@ class glory_apiApi {
   ;
   $async.Future<$49.DeleteLiveControlResponse> deleteLiveControl($pb.ClientContext? ctx, $49.DeleteLiveControlRequest request) =>
     _client.invoke<$49.DeleteLiveControlResponse>(ctx, 'glory_api', 'DeleteLiveControl', request, $49.DeleteLiveControlResponse())
+  ;
+  $async.Future<$50.CreateQuickEvaluationResponse> createQuickEvaluationStandard($pb.ClientContext? ctx, $50.CreateQuickEvaluationRequest request) =>
+    _client.invoke<$50.CreateQuickEvaluationResponse>(ctx, 'glory_api', 'CreateQuickEvaluationStandard', request, $50.CreateQuickEvaluationResponse())
+  ;
+  $async.Future<$50.UpdateQuickEvaluationResponse> updateQuickEvaluationStandard($pb.ClientContext? ctx, $50.UpdateQuickEvaluationRequest request) =>
+    _client.invoke<$50.UpdateQuickEvaluationResponse>(ctx, 'glory_api', 'UpdateQuickEvaluationStandard', request, $50.UpdateQuickEvaluationResponse())
+  ;
+  $async.Future<$50.DeleteQuickEvaluationResponse> deleteQuickEvaluationStandard($pb.ClientContext? ctx, $50.DeleteQuickEvaluationRequest request) =>
+    _client.invoke<$50.DeleteQuickEvaluationResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationStandard', request, $50.DeleteQuickEvaluationResponse())
+  ;
+  $async.Future<$50.ListQuickEvaluationResponse> listQuickEvaluationStandard($pb.ClientContext? ctx, $50.ListQuickEvaluationRequest request) =>
+    _client.invoke<$50.ListQuickEvaluationResponse>(ctx, 'glory_api', 'ListQuickEvaluationStandard', request, $50.ListQuickEvaluationResponse())
   ;
 }
 

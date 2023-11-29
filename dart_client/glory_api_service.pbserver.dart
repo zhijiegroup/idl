@@ -36,6 +36,7 @@ import 'glory_api_service.pbjson.dart';
 import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
+import 'live/live_quick_evaluate.pb.dart' as $50;
 import 'live/live_room.pb.dart' as $24;
 import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
@@ -397,6 +398,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$49.UpdateLiveControlResponse> updateLiveControl($pb.ServerContext ctx, $49.UpdateLiveControlRequest request);
   $async.Future<$49.ListLiveControlResponse> listLiveControl($pb.ServerContext ctx, $49.ListLiveControlRequest request);
   $async.Future<$49.DeleteLiveControlResponse> deleteLiveControl($pb.ServerContext ctx, $49.DeleteLiveControlRequest request);
+  $async.Future<$50.CreateQuickEvaluationResponse> createQuickEvaluationStandard($pb.ServerContext ctx, $50.CreateQuickEvaluationRequest request);
+  $async.Future<$50.UpdateQuickEvaluationResponse> updateQuickEvaluationStandard($pb.ServerContext ctx, $50.UpdateQuickEvaluationRequest request);
+  $async.Future<$50.DeleteQuickEvaluationResponse> deleteQuickEvaluationStandard($pb.ServerContext ctx, $50.DeleteQuickEvaluationRequest request);
+  $async.Future<$50.ListQuickEvaluationResponse> listQuickEvaluationStandard($pb.ServerContext ctx, $50.ListQuickEvaluationRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -727,6 +732,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateLiveControl': return $49.UpdateLiveControlRequest();
       case 'ListLiveControl': return $49.ListLiveControlRequest();
       case 'DeleteLiveControl': return $49.DeleteLiveControlRequest();
+      case 'CreateQuickEvaluationStandard': return $50.CreateQuickEvaluationRequest();
+      case 'UpdateQuickEvaluationStandard': return $50.UpdateQuickEvaluationRequest();
+      case 'DeleteQuickEvaluationStandard': return $50.DeleteQuickEvaluationRequest();
+      case 'ListQuickEvaluationStandard': return $50.ListQuickEvaluationRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1060,6 +1069,10 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateLiveControl': return this.updateLiveControl(ctx, request as $49.UpdateLiveControlRequest);
       case 'ListLiveControl': return this.listLiveControl(ctx, request as $49.ListLiveControlRequest);
       case 'DeleteLiveControl': return this.deleteLiveControl(ctx, request as $49.DeleteLiveControlRequest);
+      case 'CreateQuickEvaluationStandard': return this.createQuickEvaluationStandard(ctx, request as $50.CreateQuickEvaluationRequest);
+      case 'UpdateQuickEvaluationStandard': return this.updateQuickEvaluationStandard(ctx, request as $50.UpdateQuickEvaluationRequest);
+      case 'DeleteQuickEvaluationStandard': return this.deleteQuickEvaluationStandard(ctx, request as $50.DeleteQuickEvaluationRequest);
+      case 'ListQuickEvaluationStandard': return this.listQuickEvaluationStandard(ctx, request as $50.ListQuickEvaluationRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

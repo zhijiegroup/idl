@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $50;
+import 'base.pbjson.dart' as $51;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $39;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -34,6 +34,7 @@ import 'example/example.pbjson.dart' as $0;
 import 'live/live_control.pbjson.dart' as $49;
 import 'live/live_evaluate.pbjson.dart' as $29;
 import 'live/live_plan.pbjson.dart' as $25;
+import 'live/live_quick_evaluate.pbjson.dart' as $50;
 import 'live/live_room.pbjson.dart' as $24;
 import 'live/live_text.pbjson.dart' as $28;
 import 'live/live_token.pbjson.dart' as $26;
@@ -395,26 +396,30 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'UpdateLiveControl', '2': '.glory_api.UpdateLiveControlRequest', '3': '.glory_api.UpdateLiveControlResponse', '4': {}},
     {'1': 'ListLiveControl', '2': '.glory_api.ListLiveControlRequest', '3': '.glory_api.ListLiveControlResponse', '4': {}},
     {'1': 'DeleteLiveControl', '2': '.glory_api.DeleteLiveControlRequest', '3': '.glory_api.DeleteLiveControlResponse', '4': {}},
+    {'1': 'CreateQuickEvaluationStandard', '2': '.glory_api.CreateQuickEvaluationRequest', '3': '.glory_api.CreateQuickEvaluationResponse', '4': {}},
+    {'1': 'UpdateQuickEvaluationStandard', '2': '.glory_api.UpdateQuickEvaluationRequest', '3': '.glory_api.UpdateQuickEvaluationResponse', '4': {}},
+    {'1': 'DeleteQuickEvaluationStandard', '2': '.glory_api.DeleteQuickEvaluationRequest', '3': '.glory_api.DeleteQuickEvaluationResponse', '4': {}},
+    {'1': 'ListQuickEvaluationStandard', '2': '.glory_api.ListQuickEvaluationRequest', '3': '.glory_api.ListQuickEvaluationResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $50.BaseRequest$json,
+  '.base.BaseRequest': $51.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $50.BaseResponse$json,
+  '.base.BaseResponse': $51.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $50.AuthorInfo$json,
+  '.base.AuthorInfo': $51.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $50.PaginationRequest$json,
+  '.base.PaginationRequest': $51.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $50.PaginationResponse$json,
+  '.base.PaginationResponse': $51.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1227,6 +1232,15 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.LiveControl': $49.LiveControl$json,
   '.glory_api.DeleteLiveControlRequest': $49.DeleteLiveControlRequest$json,
   '.glory_api.DeleteLiveControlResponse': $49.DeleteLiveControlResponse$json,
+  '.glory_api.CreateQuickEvaluationRequest': $50.CreateQuickEvaluationRequest$json,
+  '.glory_api.CreateQuickEvaluationResponse': $50.CreateQuickEvaluationResponse$json,
+  '.glory_api.UpdateQuickEvaluationRequest': $50.UpdateQuickEvaluationRequest$json,
+  '.glory_api.UpdateQuickEvaluationResponse': $50.UpdateQuickEvaluationResponse$json,
+  '.glory_api.DeleteQuickEvaluationRequest': $50.DeleteQuickEvaluationRequest$json,
+  '.glory_api.DeleteQuickEvaluationResponse': $50.DeleteQuickEvaluationResponse$json,
+  '.glory_api.ListQuickEvaluationRequest': $50.ListQuickEvaluationRequest$json,
+  '.glory_api.ListQuickEvaluationResponse': $50.ListQuickEvaluationResponse$json,
+  '.glory_api.EvaluationStandard': $50.EvaluationStandard$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1963,5 +1977,16 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'BvbnNlIh/SwRgbL2FwaS9saXZlL2xpc3RfbGl2ZV9jb250cm9sEoEBChFEZWxldGVMaXZlQ29u'
     'dHJvbBIjLmdsb3J5X2FwaS5EZWxldGVMaXZlQ29udHJvbFJlcXVlc3QaJC5nbG9yeV9hcGkuRG'
     'VsZXRlTGl2ZUNvbnRyb2xSZXNwb25zZSIh0sEYHS9hcGkvbGl2ZS9kZWxldGVfbGl2ZV9jb250'
-    'cm9s');
+    'cm9sEqIBCh1DcmVhdGVRdWlja0V2YWx1YXRpb25TdGFuZGFyZBInLmdsb3J5X2FwaS5DcmVhdG'
+    'VRdWlja0V2YWx1YXRpb25SZXF1ZXN0GiguZ2xvcnlfYXBpLkNyZWF0ZVF1aWNrRXZhbHVhdGlv'
+    'blJlc3BvbnNlIi7SwRgqL2FwaS9saXZlL2NyZWF0ZV9xdWlja19ldmFsdWF0aW9uX3N0YW5kYX'
+    'JkEqIBCh1VcGRhdGVRdWlja0V2YWx1YXRpb25TdGFuZGFyZBInLmdsb3J5X2FwaS5VcGRhdGVR'
+    'dWlja0V2YWx1YXRpb25SZXF1ZXN0GiguZ2xvcnlfYXBpLlVwZGF0ZVF1aWNrRXZhbHVhdGlvbl'
+    'Jlc3BvbnNlIi7SwRgqL2FwaS9saXZlL3VwZGF0ZV9xdWlja19ldmFsdWF0aW9uX3N0YW5kYXJk'
+    'EqIBCh1EZWxldGVRdWlja0V2YWx1YXRpb25TdGFuZGFyZBInLmdsb3J5X2FwaS5EZWxldGVRdW'
+    'lja0V2YWx1YXRpb25SZXF1ZXN0GiguZ2xvcnlfYXBpLkRlbGV0ZVF1aWNrRXZhbHVhdGlvblJl'
+    'c3BvbnNlIi7SwRgqL2FwaS9saXZlL2RlbGV0ZV9xdWlja19ldmFsdWF0aW9uX3N0YW5kYXJkEp'
+    'oBChtMaXN0UXVpY2tFdmFsdWF0aW9uU3RhbmRhcmQSJS5nbG9yeV9hcGkuTGlzdFF1aWNrRXZh'
+    'bHVhdGlvblJlcXVlc3QaJi5nbG9yeV9hcGkuTGlzdFF1aWNrRXZhbHVhdGlvblJlc3BvbnNlIi'
+    'zSwRgoL2FwaS9saXZlL2xpc3RfcXVpY2tfZXZhbHVhdGlvbl9zdGFuZGFyZA==');
 
