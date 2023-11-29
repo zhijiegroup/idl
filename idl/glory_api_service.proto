@@ -35,6 +35,7 @@ import "live/live_plan.proto";
 import "live/live_text.proto";
 import "live/live_evaluate.proto";
 import "live/live_control.proto";
+import "live/live_quick_evaluate.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
@@ -1294,5 +1295,18 @@ service glory_api {
   }
   rpc DeleteLiveControl(DeleteLiveControlRequest) returns (DeleteLiveControlResponse) {
     option (api.post) = '/api/live/delete_live_control';
+  }
+  // 快速评价模版
+  rpc CreateQuickEvaluationStandard(CreateQuickEvaluationRequest) returns (CreateQuickEvaluationResponse) {
+    option (api.post) = '/api/live/create_quick_evaluation_standard';
+  }
+  rpc UpdateQuickEvaluationStandard(UpdateQuickEvaluationRequest) returns (UpdateQuickEvaluationResponse) {
+    option (api.post) = '/api/live/update_quick_evaluation_standard';
+  }
+  rpc DeleteQuickEvaluationStandard(DeleteQuickEvaluationRequest) returns (DeleteQuickEvaluationResponse) {
+    option (api.post) = '/api/live/delete_quick_evaluation_standard';
+  }
+  rpc ListQuickEvaluationStandard(ListQuickEvaluationRequest) returns (ListQuickEvaluationResponse) {
+    option (api.post) = '/api/live/list_quick_evaluation_standard';
   }
 }

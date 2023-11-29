@@ -1,0 +1,60 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.live";
+option java_multiple_files = true;
+
+import "base.proto";
+
+message CreateQuickEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    string name = 2;
+    int64 duration = 3;
+    repeated string keywords = 4;
+}
+
+message CreateQuickEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateQuickEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    int64 standard_id = 2;
+    string name = 3;
+    int64 duration = 4;
+    repeated string keywords = 5;
+}
+
+message UpdateQuickEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message DeleteQuickEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    int64 standard_id = 2;
+}
+
+message DeleteQuickEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message EvaluationStandard {
+    int64 standard_id = 1;  
+    string name = 2;
+    int64 duration = 3; 
+    repeated string keywords = 4;
+    string creator = 5;
+    string updator = 6;
+    bool is_enable = 7;
+    int64 updated_at = 8;
+}
+
+message ListQuickEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListQuickEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+    repeated EvaluationStandard standard_list = 2;
+    base.PaginationResponse pagination = 100;
+}
