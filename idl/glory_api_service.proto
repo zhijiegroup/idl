@@ -1309,4 +1309,9 @@ service glory_api {
   rpc ListQuickEvaluationStandard(ListQuickEvaluationRequest) returns (ListQuickEvaluationResponse) {
     option (api.post) = '/api/live/list_quick_evaluation_standard';
   }
+
+  //获取直播回放链接
+  rpc GetLiveReplay(GetLiveReplayRequest) returns (GetLiveReplayResponse) {
+    option (api.get) = '/api/live/get_live_replay';
+  }
 }

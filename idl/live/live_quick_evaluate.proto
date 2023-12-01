@@ -22,6 +22,7 @@ message UpdateQuickEvaluationRequest {
     string name = 3;
     int64 duration = 4;
     repeated string keywords = 5;
+    bool is_enable = 6;
 }
 
 message UpdateQuickEvaluationResponse {
