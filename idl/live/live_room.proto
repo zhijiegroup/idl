@@ -241,6 +241,16 @@ message UpdateLiveCommentCountResponse{
   base.BaseResponse base_resp = 1;
 }
 
+message GetLiveReplayRequest {
+  base.BaseRequest base_request = 1;
+  int64 room_id = 2;
+}
+
+message GetLiveReplayResponse{
+  base.BaseResponse base_resp = 1;
+  string replay_url = 2;
+}
+
 
 
 
