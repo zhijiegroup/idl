@@ -248,7 +248,7 @@ message GetLiveReplayRequest {
 
 message GetLiveReplayResponse{
   base.BaseResponse base_resp = 1;
-  string replay_url = 2;
+  repeated string replay_url = 2;
 }
 
 
