@@ -318,7 +318,7 @@ public final class LiveRoom {
       "etLiveReplayRequest\022\'\n\014base_request\030\001 \001(" +
       "\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\"R\n" +
       "\025GetLiveReplayResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\022\n\nreplay_url\030\002 \001(" +
+      "\0132\022.base.BaseResponse\022\022\n\nreplay_url\030\002 \003(" +
       "\tB#\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006" +
       "proto3"
     };

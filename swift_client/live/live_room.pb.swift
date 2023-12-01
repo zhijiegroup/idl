@@ -1025,7 +1025,7 @@ struct GloryApi_GetLiveReplayResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var replayURL: String = String()
+  var replayURL: [String] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3014,7 +3014,7 @@ extension GloryApi_GetLiveReplayResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.replayURL) }()
+      case 2: try { try decoder.decodeRepeatedStringField(value: &self.replayURL) }()
       default: break
       }
     }
@@ -3029,7 +3029,7 @@ extension GloryApi_GetLiveReplayResponse: SwiftProtobuf.Message, SwiftProtobuf._
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
     if !self.replayURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.replayURL, fieldNumber: 2)
+      try visitor.visitRepeatedStringField(value: self.replayURL, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

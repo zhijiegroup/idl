@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetLiveReplayResponse() {
-    replayUrl = "";
+    replayUrl = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -64,8 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            replayUrl = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              replayUrl = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            replayUrl .add(s);
             break;
           }
           default: {
@@ -83,6 +87,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        replayUrl = replayUrl .getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -127,41 +134,38 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REPLAY_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object replayUrl ;
+  private com.google.protobuf.LazyStringList replayUrl ;
   /**
-   * <code>string replay_url = 2;</code>
-   * @return The replayUrl.
+   * <code>repeated string replay_url = 2;</code>
+   * @return A list containing the replayUrl.
    */
-  @java.lang.Override
-  public java.lang.String getReplayUrl() {
-    java.lang.Object ref = replayUrl ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      replayUrl = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getReplayUrlList() {
+    return replayUrl ;
   }
   /**
-   * <code>string replay_url = 2;</code>
-   * @return The bytes for replayUrl.
+   * <code>repeated string replay_url = 2;</code>
+   * @return The count of replayUrl.
    */
-  @java.lang.Override
+  public int getReplayUrlCount() {
+    return replayUrl .size();
+  }
+  /**
+   * <code>repeated string replay_url = 2;</code>
+   * @param index The index of the element to return.
+   * @return The replayUrl at the given index.
+   */
+  public java.lang.String getReplayUrl(int index) {
+    return replayUrl .get(index);
+  }
+  /**
+   * <code>repeated string replay_url = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the replayUrl at the given index.
+   */
   public com.google.protobuf.ByteString
-      getReplayUrlBytes() {
-    java.lang.Object ref = replayUrl ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      replayUrl = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getReplayUrlBytes(int index) {
+    return replayUrl .getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -181,8 +185,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (!getReplayUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, replayUrl );
+    for (int i = 0; i < replayUrl .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, replayUrl .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -197,8 +201,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (!getReplayUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, replayUrl );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < replayUrl .size(); i++) {
+        dataSize += computeStringSizeNoTag(replayUrl .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getReplayUrlList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,8 +229,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getReplayUrl()
-        .equals(other.getReplayUrl())) return false;
+    if (!getReplayUrlList()
+        .equals(other.getReplayUrlList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,8 +246,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + REPLAY_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getReplayUrl().hashCode();
+    if (getReplayUrlCount() > 0) {
+      hash = (37 * hash) + REPLAY_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getReplayUrlList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,8 +389,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      replayUrl = "";
-
+      replayUrl = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -406,10 +417,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse result = new com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
+      }
+      if (((bitField0 & 0x00000001) != 0)) {
+        replayUrl = replayUrl .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
       }
       result.replayUrl = replayUrl ;
       onBuilt();
@@ -463,8 +479,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (!other.getReplayUrl().isEmpty()) {
-        replayUrl = other.replayUrl ;
+      if (!other.replayUrl .isEmpty()) {
+        if (replayUrl .isEmpty()) {
+          replayUrl = other.replayUrl ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureReplayUrlIsMutable();
+          replayUrl .addAll(other.replayUrl );
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -495,6 +517,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -615,78 +638,112 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.lang.Object replayUrl = "";
-    /**
-     * <code>string replay_url = 2;</code>
-     * @return The replayUrl.
-     */
-    public java.lang.String getReplayUrl() {
-      java.lang.Object ref = replayUrl ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        replayUrl = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList replayUrl = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureReplayUrlIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        replayUrl = new com.google.protobuf.LazyStringArrayList(replayUrl );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>string replay_url = 2;</code>
-     * @return The bytes for replayUrl.
+     * <code>repeated string replay_url = 2;</code>
+     * @return A list containing the replayUrl.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getReplayUrlList() {
+      return replayUrl .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string replay_url = 2;</code>
+     * @return The count of replayUrl.
+     */
+    public int getReplayUrlCount() {
+      return replayUrl .size();
+    }
+    /**
+     * <code>repeated string replay_url = 2;</code>
+     * @param index The index of the element to return.
+     * @return The replayUrl at the given index.
+     */
+    public java.lang.String getReplayUrl(int index) {
+      return replayUrl .get(index);
+    }
+    /**
+     * <code>repeated string replay_url = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the replayUrl at the given index.
      */
     public com.google.protobuf.ByteString
-        getReplayUrlBytes() {
-      java.lang.Object ref = replayUrl ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        replayUrl = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getReplayUrlBytes(int index) {
+      return replayUrl .getByteString(index);
     }
     /**
-     * <code>string replay_url = 2;</code>
+     * <code>repeated string replay_url = 2;</code>
+     * @param index The index to set the value at.
      * @param value The replayUrl to set.
      * @return This builder for chaining.
      */
     public Builder setReplayUrl(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureReplayUrlIsMutable();
+      replayUrl .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string replay_url = 2;</code>
+     * @param value The replayUrl to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplayUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      replayUrl = value;
+  ensureReplayUrlIsMutable();
+      replayUrl .add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>string replay_url = 2;</code>
+     * <code>repeated string replay_url = 2;</code>
+     * @param values The replayUrl to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReplayUrl(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureReplayUrlIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, replayUrl );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string replay_url = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearReplayUrl() {
-      
-      replayUrl = getDefaultInstance().getReplayUrl();
+      replayUrl = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string replay_url = 2;</code>
-     * @param value The bytes for replayUrl to set.
+     * <code>repeated string replay_url = 2;</code>
+     * @param value The bytes of the replayUrl to add.
      * @return This builder for chaining.
      */
-    public Builder setReplayUrlBytes(
+    public Builder addReplayUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      replayUrl = value;
+      ensureReplayUrlIsMutable();
+      replayUrl .add(value);
       onChanged();
       return this;
     }

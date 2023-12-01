@@ -636,12 +636,12 @@ const GetLiveReplayResponse$json = {
   '1': 'GetLiveReplayResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'replay_url', '3': 2, '4': 1, '5': 9, '10': 'replayUrl'},
+    {'1': 'replay_url', '3': 2, '4': 3, '5': 9, '10': 'replayUrl'},
   ],
 };
 
 /// Descriptor for `GetLiveReplayResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getLiveReplayResponseDescriptor = $convert.base64Decode(
     'ChVHZXRMaXZlUmVwbGF5UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
-    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnJlcGxheV91cmwYAiABKAlSCXJlcGxheVVybA==');
+    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnJlcGxheV91cmwYAiADKAlSCXJlcGxheVVybA==');
 

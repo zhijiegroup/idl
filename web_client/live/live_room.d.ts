@@ -267,5 +267,5 @@ export interface GetLiveReplayRequest {
 
 export interface GetLiveReplayResponse {
   base_resp?: base.BaseResponse;
-  replay_url?: string;
+  replay_url?: Array<string>;
 }

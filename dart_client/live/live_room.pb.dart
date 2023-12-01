@@ -3276,14 +3276,14 @@ class GetLiveReplayRequest extends $pb.GeneratedMessage {
 class GetLiveReplayResponse extends $pb.GeneratedMessage {
   factory GetLiveReplayResponse({
     $0.BaseResponse? baseResp,
-    $core.String? replayUrl,
+    $core.Iterable<$core.String>? replayUrl,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
     if (replayUrl != null) {
-      $result.replayUrl = replayUrl;
+      $result.replayUrl.addAll(replayUrl);
     }
     return $result;
   }
@@ -3293,7 +3293,7 @@ class GetLiveReplayResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveReplayResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aOS(2, _omitFieldNames ? '' : 'replayUrl')
+    ..pPS(2, _omitFieldNames ? '' : 'replayUrl')
     ..hasRequiredFields = false
   ;
 
@@ -3330,13 +3330,7 @@ class GetLiveReplayResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get replayUrl => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set replayUrl($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasReplayUrl() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearReplayUrl() => clearField(2);
+  $core.List<$core.String> get replayUrl => $_getList(1);
 }
 
 

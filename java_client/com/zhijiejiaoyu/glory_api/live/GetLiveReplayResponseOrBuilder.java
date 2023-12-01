@@ -23,14 +23,27 @@ public interface GetLiveReplayResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>string replay_url = 2;</code>
-   * @return The replayUrl.
+   * <code>repeated string replay_url = 2;</code>
+   * @return A list containing the replayUrl.
    */
-  java.lang.String getReplayUrl();
+  java.util.List<java.lang.String>
+      getReplayUrlList();
   /**
-   * <code>string replay_url = 2;</code>
-   * @return The bytes for replayUrl.
+   * <code>repeated string replay_url = 2;</code>
+   * @return The count of replayUrl.
+   */
+  int getReplayUrlCount();
+  /**
+   * <code>repeated string replay_url = 2;</code>
+   * @param index The index of the element to return.
+   * @return The replayUrl at the given index.
+   */
+  java.lang.String getReplayUrl(int index);
+  /**
+   * <code>repeated string replay_url = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the replayUrl at the given index.
    */
   com.google.protobuf.ByteString
-      getReplayUrlBytes();
+      getReplayUrlBytes(int index);
 }
