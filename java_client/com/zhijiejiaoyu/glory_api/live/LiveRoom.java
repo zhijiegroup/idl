@@ -189,6 +189,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UpdateLiveCommentCountResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveReplayRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveReplayRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveReplayResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveReplayResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -304,8 +314,13 @@ public final class LiveRoom {
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
       "st\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcomment_count\030\003 \001" +
       "(\003\"G\n\036UpdateLiveCommentCountResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037c" +
-      "om.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n\024G" +
+      "etLiveReplayRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\"R\n" +
+      "\025GetLiveReplayResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022\022\n\nreplay_url\030\002 \001(" +
+      "\tB#\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -522,6 +537,18 @@ public final class LiveRoom {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateLiveCommentCountResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetLiveReplayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_glory_api_GetLiveReplayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveReplayRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "RoomId", });
+    internal_static_glory_api_GetLiveReplayResponse_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_glory_api_GetLiveReplayResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveReplayResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ReplayUrl", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

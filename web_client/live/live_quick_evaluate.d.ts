@@ -22,6 +22,7 @@ export interface UpdateQuickEvaluationRequest {
   name?: string;
   duration?: string;
   keywords?: Array<string>;
+  is_enable?: boolean;
 }
 
 export interface UpdateQuickEvaluationResponse {

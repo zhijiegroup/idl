@@ -10276,6 +10276,37 @@ public final class glory_apiGrpc {
     return getListQuickEvaluationStandardMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> getGetLiveReplayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLiveReplay",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> getGetLiveReplayMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest, com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> getGetLiveReplayMethod;
+    if ((getGetLiveReplayMethod = glory_apiGrpc.getGetLiveReplayMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLiveReplayMethod = glory_apiGrpc.getGetLiveReplayMethod) == null) {
+          glory_apiGrpc.getGetLiveReplayMethod = getGetLiveReplayMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest, com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLiveReplay"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLiveReplay"))
+              .build();
+        }
+      }
+    }
+    return getGetLiveReplayMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -12969,6 +13000,16 @@ public final class glory_apiGrpc {
     default void listQuickEvaluationStandard(com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListQuickEvaluationStandardMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *获取直播回放链接
+     * </pre>
+     */
+    default void getLiveReplay(com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveReplayMethod(), responseObserver);
     }
   }
 
@@ -15976,6 +16017,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListQuickEvaluationStandardMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *获取直播回放链接
+     * </pre>
+     */
+    public void getLiveReplay(com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLiveReplayMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -18639,6 +18691,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationResponse listQuickEvaluationStandard(com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListQuickEvaluationStandardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *获取直播回放链接
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse getLiveReplay(com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveReplayMethod(), getCallOptions(), request);
     }
   }
 
@@ -21635,6 +21697,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListQuickEvaluationStandardMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *获取直播回放链接
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> getLiveReplay(
+        com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLiveReplayMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -21968,6 +22041,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 328;
   private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 329;
   private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 330;
+  private static final int METHODID_GET_LIVE_REPLAY = 331;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23309,6 +23383,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_QUICK_EVALUATION_STANDARD:
           serviceImpl.listQuickEvaluationStandard((com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_REPLAY:
+          serviceImpl.getLiveReplay((com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -25645,6 +25723,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationRequest,
               com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationResponse>(
                 service, METHODID_LIST_QUICK_EVALUATION_STANDARD)))
+        .addMethod(
+          getGetLiveReplayMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest,
+              com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse>(
+                service, METHODID_GET_LIVE_REPLAY)))
         .build();
   }
 
@@ -26024,6 +26109,7 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateQuickEvaluationStandardMethod())
               .addMethod(getDeleteQuickEvaluationStandardMethod())
               .addMethod(getListQuickEvaluationStandardMethod())
+              .addMethod(getGetLiveReplayMethod())
               .build();
         }
       }

@@ -1487,6 +1487,11 @@ CreateLivePlanProduct create live plan product */
   ListQuickEvaluationStandard(
     request: live_quick_evaluate.ListQuickEvaluationRequest
   ): Promise<live_quick_evaluate.ListQuickEvaluationResponse>;
+
+  /** 获取直播回放链接 */
+  GetLiveReplay(
+    request: live_room.GetLiveReplayRequest
+  ): Promise<live_room.GetLiveReplayResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

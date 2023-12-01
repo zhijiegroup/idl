@@ -52,6 +52,7 @@ const UpdateQuickEvaluationRequest$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'duration', '3': 4, '4': 1, '5': 3, '10': 'duration'},
     {'1': 'keywords', '3': 5, '4': 3, '5': 9, '10': 'keywords'},
+    {'1': 'is_enable', '3': 6, '4': 1, '5': 8, '10': 'isEnable'},
   ],
 };
 
@@ -60,7 +61,7 @@ final $typed_data.Uint8List updateQuickEvaluationRequestDescriptor = $convert.ba
     'ChxVcGRhdGVRdWlja0V2YWx1YXRpb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC3N0YW5kYXJkX2lkGAIgASgDUgpzdGFu'
     'ZGFyZElkEhIKBG5hbWUYAyABKAlSBG5hbWUSGgoIZHVyYXRpb24YBCABKANSCGR1cmF0aW9uEh'
-    'oKCGtleXdvcmRzGAUgAygJUghrZXl3b3Jkcw==');
+    'oKCGtleXdvcmRzGAUgAygJUghrZXl3b3JkcxIbCglpc19lbmFibGUYBiABKAhSCGlzRW5hYmxl');
 
 @$core.Deprecated('Use updateQuickEvaluationResponseDescriptor instead')
 const UpdateQuickEvaluationResponse$json = {

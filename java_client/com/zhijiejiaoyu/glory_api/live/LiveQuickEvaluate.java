@@ -74,29 +74,29 @@ public final class LiveQuickEvaluate {
       "eRequest\022\014\n\004name\030\002 \001(\t\022\020\n\010duration\030\003 \001(\003" +
       "\022\020\n\010keywords\030\004 \003(\t\"F\n\035CreateQuickEvaluat" +
       "ionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\"\216\001\n\034UpdateQuickEvaluationRequ" +
+      "seResponse\"\241\001\n\034UpdateQuickEvaluationRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
       "uest\022\023\n\013standard_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022" +
-      "\020\n\010duration\030\004 \001(\003\022\020\n\010keywords\030\005 \003(\t\"F\n\035U" +
-      "pdateQuickEvaluationResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"\\\n\034DeleteQui" +
-      "ckEvaluationRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\023\n\013standard_id\030\002 \001(" +
-      "\003\"F\n\035DeleteQuickEvaluationResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\244\001\n\022Ev" +
-      "aluationStandard\022\023\n\013standard_id\030\001 \001(\003\022\014\n" +
-      "\004name\030\002 \001(\t\022\020\n\010duration\030\003 \001(\003\022\020\n\010keyword" +
-      "s\030\004 \003(\t\022\017\n\007creator\030\005 \001(\t\022\017\n\007updator\030\006 \001(" +
-      "\t\022\021\n\tis_enable\030\007 \001(\010\022\022\n\nupdated_at\030\010 \001(\003" +
-      "\"r\n\032ListQuickEvaluationRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"\250\001\n" +
-      "\033ListQuickEvaluationResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\0224\n\rstandard_" +
-      "list\030\002 \003(\0132\035.glory_api.EvaluationStandar" +
-      "d\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponseB#\n\037com.zhijiejiaoyu.glory_api.li" +
-      "veP\001b\006proto3"
+      "\020\n\010duration\030\004 \001(\003\022\020\n\010keywords\030\005 \003(\t\022\021\n\ti" +
+      "s_enable\030\006 \001(\010\"F\n\035UpdateQuickEvaluationR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"\\\n\034DeleteQuickEvaluationRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\023\n\013standard_id\030\002 \001(\003\"F\n\035DeleteQuickEvalu" +
+      "ationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\244\001\n\022EvaluationStandard\022\023\n\013s" +
+      "tandard_id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010durati" +
+      "on\030\003 \001(\003\022\020\n\010keywords\030\004 \003(\t\022\017\n\007creator\030\005 " +
+      "\001(\t\022\017\n\007updator\030\006 \001(\t\022\021\n\tis_enable\030\007 \001(\010\022" +
+      "\022\n\nupdated_at\030\010 \001(\003\"r\n\032ListQuickEvaluati" +
+      "onRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022+\n\npagination\030d \001(\0132\027.base.Pa" +
+      "ginationRequest\"\250\001\n\033ListQuickEvaluationR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\0224\n\rstandard_list\030\002 \003(\0132\035.glory_ap" +
+      "i.EvaluationStandard\022,\n\npagination\030d \001(\013" +
+      "2\030.base.PaginationResponseB#\n\037com.zhijie" +
+      "jiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -120,7 +120,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_UpdateQuickEvaluationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateQuickEvaluationRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "StandardId", "Name", "Duration", "Keywords", });
+        new java.lang.String[] { "BaseRequest", "StandardId", "Name", "Duration", "Keywords", "IsEnable", });
     internal_static_glory_api_UpdateQuickEvaluationResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_UpdateQuickEvaluationResponse_fieldAccessorTable = new

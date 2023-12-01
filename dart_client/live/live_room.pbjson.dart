@@ -617,3 +617,31 @@ final $typed_data.Uint8List updateLiveCommentCountResponseDescriptor = $convert.
     'Ch5VcGRhdGVMaXZlQ29tbWVudENvdW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
     'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use getLiveReplayRequestDescriptor instead')
+const GetLiveReplayRequest$json = {
+  '1': 'GetLiveReplayRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 3, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `GetLiveReplayRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveReplayRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRMaXZlUmVwbGF5UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdyb29tX2lkGAIgASgDUgZyb29tSWQ=');
+
+@$core.Deprecated('Use getLiveReplayResponseDescriptor instead')
+const GetLiveReplayResponse$json = {
+  '1': 'GetLiveReplayResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'replay_url', '3': 2, '4': 1, '5': 9, '10': 'replayUrl'},
+  ],
+};
+
+/// Descriptor for `GetLiveReplayResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveReplayResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRMaXZlUmVwbGF5UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEh0KCnJlcGxheV91cmwYAiABKAlSCXJlcGxheVVybA==');
+

@@ -400,6 +400,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'UpdateQuickEvaluationStandard', '2': '.glory_api.UpdateQuickEvaluationRequest', '3': '.glory_api.UpdateQuickEvaluationResponse', '4': {}},
     {'1': 'DeleteQuickEvaluationStandard', '2': '.glory_api.DeleteQuickEvaluationRequest', '3': '.glory_api.DeleteQuickEvaluationResponse', '4': {}},
     {'1': 'ListQuickEvaluationStandard', '2': '.glory_api.ListQuickEvaluationRequest', '3': '.glory_api.ListQuickEvaluationResponse', '4': {}},
+    {'1': 'GetLiveReplay', '2': '.glory_api.GetLiveReplayRequest', '3': '.glory_api.GetLiveReplayResponse', '4': {}},
   ],
 };
 
@@ -1241,6 +1242,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListQuickEvaluationRequest': $50.ListQuickEvaluationRequest$json,
   '.glory_api.ListQuickEvaluationResponse': $50.ListQuickEvaluationResponse$json,
   '.glory_api.EvaluationStandard': $50.EvaluationStandard$json,
+  '.glory_api.GetLiveReplayRequest': $24.GetLiveReplayRequest$json,
+  '.glory_api.GetLiveReplayResponse': $24.GetLiveReplayResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1988,5 +1991,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'c3BvbnNlIi7SwRgqL2FwaS9saXZlL2RlbGV0ZV9xdWlja19ldmFsdWF0aW9uX3N0YW5kYXJkEp'
     'oBChtMaXN0UXVpY2tFdmFsdWF0aW9uU3RhbmRhcmQSJS5nbG9yeV9hcGkuTGlzdFF1aWNrRXZh'
     'bHVhdGlvblJlcXVlc3QaJi5nbG9yeV9hcGkuTGlzdFF1aWNrRXZhbHVhdGlvblJlc3BvbnNlIi'
-    'zSwRgoL2FwaS9saXZlL2xpc3RfcXVpY2tfZXZhbHVhdGlvbl9zdGFuZGFyZA==');
+    'zSwRgoL2FwaS9saXZlL2xpc3RfcXVpY2tfZXZhbHVhdGlvbl9zdGFuZGFyZBJxCg1HZXRMaXZl'
+    'UmVwbGF5Eh8uZ2xvcnlfYXBpLkdldExpdmVSZXBsYXlSZXF1ZXN0GiAuZ2xvcnlfYXBpLkdldE'
+    'xpdmVSZXBsYXlSZXNwb25zZSIdysEYGS9hcGkvbGl2ZS9nZXRfbGl2ZV9yZXBsYXk=');
 

@@ -70,4 +70,10 @@ public interface UpdateQuickEvaluationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getKeywordsBytes(int index);
+
+  /**
+   * <code>bool is_enable = 6;</code>
+   * @return The isEnable.
+   */
+  boolean getIsEnable();
 }

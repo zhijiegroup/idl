@@ -259,3 +259,13 @@ export interface UpdateLiveCommentCountRequest {
 export interface UpdateLiveCommentCountResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface GetLiveReplayRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface GetLiveReplayResponse {
+  base_resp?: base.BaseResponse;
+  replay_url?: string;
+}

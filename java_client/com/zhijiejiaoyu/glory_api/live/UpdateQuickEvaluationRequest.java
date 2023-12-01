@@ -89,6 +89,11 @@ private static final long serialVersionUID = 0L;
             keywords .add(s);
             break;
           }
+          case 48: {
+
+            isEnable = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -245,6 +250,17 @@ private static final long serialVersionUID = 0L;
     return keywords .getByteString(index);
   }
 
+  public static final int IS_ENABLE_FIELD_NUMBER = 6;
+  private boolean isEnable ;
+  /**
+   * <code>bool is_enable = 6;</code>
+   * @return The isEnable.
+   */
+  @java.lang.Override
+  public boolean getIsEnable() {
+    return isEnable ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -273,6 +289,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < keywords .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keywords .getRaw(i));
+    }
+    if (isEnable != false) {
+      output.writeBool(6, isEnable );
     }
     unknownFields.writeTo(output);
   }
@@ -306,6 +325,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getKeywordsList().size();
     }
+    if (isEnable != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, isEnable );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -334,6 +357,8 @@ private static final long serialVersionUID = 0L;
         != other.getDuration()) return false;
     if (!getKeywordsList()
         .equals(other.getKeywordsList())) return false;
+    if (getIsEnable()
+        != other.getIsEnable()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -361,6 +386,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordsList().hashCode();
     }
+    hash = (37 * hash) + IS_ENABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsEnable());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -508,6 +536,8 @@ private static final long serialVersionUID = 0L;
 
       keywords = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      isEnable = false;
+
       return this;
     }
 
@@ -548,6 +578,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.keywords = keywords ;
+      result.isEnable = isEnable ;
       onBuilt();
       return result;
     }
@@ -618,6 +649,9 @@ private static final long serialVersionUID = 0L;
           keywords .addAll(other.keywords );
         }
         onChanged();
+      }
+      if (other.getIsEnable() != false) {
+        setIsEnable(other.getIsEnable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1012,6 +1046,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureKeywordsIsMutable();
       keywords .add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean isEnable ;
+    /**
+     * <code>bool is_enable = 6;</code>
+     * @return The isEnable.
+     */
+    @java.lang.Override
+    public boolean getIsEnable() {
+      return isEnable ;
+    }
+    /**
+     * <code>bool is_enable = 6;</code>
+     * @param value The isEnable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsEnable(boolean value) {
+      
+      isEnable = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_enable = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsEnable() {
+      
+      isEnable = false;
       onChanged();
       return this;
     }

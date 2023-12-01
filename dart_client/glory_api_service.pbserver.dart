@@ -402,6 +402,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.UpdateQuickEvaluationResponse> updateQuickEvaluationStandard($pb.ServerContext ctx, $50.UpdateQuickEvaluationRequest request);
   $async.Future<$50.DeleteQuickEvaluationResponse> deleteQuickEvaluationStandard($pb.ServerContext ctx, $50.DeleteQuickEvaluationRequest request);
   $async.Future<$50.ListQuickEvaluationResponse> listQuickEvaluationStandard($pb.ServerContext ctx, $50.ListQuickEvaluationRequest request);
+  $async.Future<$24.GetLiveReplayResponse> getLiveReplay($pb.ServerContext ctx, $24.GetLiveReplayRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -736,6 +737,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateQuickEvaluationStandard': return $50.UpdateQuickEvaluationRequest();
       case 'DeleteQuickEvaluationStandard': return $50.DeleteQuickEvaluationRequest();
       case 'ListQuickEvaluationStandard': return $50.ListQuickEvaluationRequest();
+      case 'GetLiveReplay': return $24.GetLiveReplayRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1073,6 +1075,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateQuickEvaluationStandard': return this.updateQuickEvaluationStandard(ctx, request as $50.UpdateQuickEvaluationRequest);
       case 'DeleteQuickEvaluationStandard': return this.deleteQuickEvaluationStandard(ctx, request as $50.DeleteQuickEvaluationRequest);
       case 'ListQuickEvaluationStandard': return this.listQuickEvaluationStandard(ctx, request as $50.ListQuickEvaluationRequest);
+      case 'GetLiveReplay': return this.getLiveReplay(ctx, request as $24.GetLiveReplayRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

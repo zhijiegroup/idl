@@ -90,6 +90,8 @@ struct GloryApi_UpdateQuickEvaluationRequest {
 
   var keywords: [String] = []
 
+  var isEnable: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -366,6 +368,7 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     3: .same(proto: "name"),
     4: .same(proto: "duration"),
     5: .same(proto: "keywords"),
+    6: .standard(proto: "is_enable"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -379,6 +382,7 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.duration) }()
       case 5: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
       default: break
       }
     }
@@ -404,6 +408,9 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if !self.keywords.isEmpty {
       try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 5)
     }
+    if self.isEnable != false {
+      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -413,6 +420,7 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.name != rhs.name {return false}
     if lhs.duration != rhs.duration {return false}
     if lhs.keywords != rhs.keywords {return false}
+    if lhs.isEnable != rhs.isEnable {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

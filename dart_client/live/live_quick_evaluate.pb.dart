@@ -163,6 +163,7 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $fixnum.Int64? duration,
     $core.Iterable<$core.String>? keywords,
+    $core.bool? isEnable,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -180,6 +181,9 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     if (keywords != null) {
       $result.keywords.addAll(keywords);
     }
+    if (isEnable != null) {
+      $result.isEnable = isEnable;
+    }
     return $result;
   }
   UpdateQuickEvaluationRequest._() : super();
@@ -192,6 +196,7 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aInt64(4, _omitFieldNames ? '' : 'duration')
     ..pPS(5, _omitFieldNames ? '' : 'keywords')
+    ..aOB(6, _omitFieldNames ? '' : 'isEnable')
     ..hasRequiredFields = false
   ;
 
@@ -256,6 +261,15 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<$core.String> get keywords => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get isEnable => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isEnable($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasIsEnable() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsEnable() => clearField(6);
 }
 
 class UpdateQuickEvaluationResponse extends $pb.GeneratedMessage {

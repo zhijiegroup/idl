@@ -2659,6 +2659,12 @@ export class glory_api {
       handleResponse
     );
   }
+
+  GetLiveReplay(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_live_replay${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();
