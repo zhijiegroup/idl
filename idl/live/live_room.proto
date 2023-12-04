@@ -106,6 +106,7 @@ message FinishedRoom {
   double room_deal_amount =12;
   int64 comment_count = 13; // 评论数量
   int64 live_product_count = 14; // 带货商品数量
+  int64 like_count = 15; // 点赞数量
 }
 
 message ListFinishedRoomRequest {
