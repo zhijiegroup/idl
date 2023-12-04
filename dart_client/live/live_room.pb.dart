@@ -1214,6 +1214,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     $core.double? roomDealAmount,
     $fixnum.Int64? commentCount,
     $fixnum.Int64? liveProductCount,
+    $fixnum.Int64? likeCount,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -1258,6 +1259,9 @@ class FinishedRoom extends $pb.GeneratedMessage {
     if (liveProductCount != null) {
       $result.liveProductCount = liveProductCount;
     }
+    if (likeCount != null) {
+      $result.likeCount = likeCount;
+    }
     return $result;
   }
   FinishedRoom._() : super();
@@ -1279,6 +1283,7 @@ class FinishedRoom extends $pb.GeneratedMessage {
     ..a<$core.double>(12, _omitFieldNames ? '' : 'roomDealAmount', $pb.PbFieldType.OD)
     ..aInt64(13, _omitFieldNames ? '' : 'commentCount')
     ..aInt64(14, _omitFieldNames ? '' : 'liveProductCount')
+    ..aInt64(15, _omitFieldNames ? '' : 'likeCount')
     ..hasRequiredFields = false
   ;
 
@@ -1428,6 +1433,15 @@ class FinishedRoom extends $pb.GeneratedMessage {
   $core.bool hasLiveProductCount() => $_has(13);
   @$pb.TagNumber(14)
   void clearLiveProductCount() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get likeCount => $_getI64(14);
+  @$pb.TagNumber(15)
+  set likeCount($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLikeCount() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLikeCount() => clearField(15);
 }
 
 class ListFinishedRoomRequest extends $pb.GeneratedMessage {

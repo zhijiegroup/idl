@@ -128,6 +128,11 @@ private static final long serialVersionUID = 0L;
             liveProductCount = input.readInt64();
             break;
           }
+          case 120: {
+
+            likeCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -469,6 +474,21 @@ private static final long serialVersionUID = 0L;
     return liveProductCount ;
   }
 
+  public static final int LIKE_COUNT_FIELD_NUMBER = 15;
+  private long likeCount ;
+  /**
+   * <pre>
+   * 点赞数量
+   * </pre>
+   *
+   * <code>int64 like_count = 15;</code>
+   * @return The likeCount.
+   */
+  @java.lang.Override
+  public long getLikeCount() {
+    return likeCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -524,6 +544,9 @@ private static final long serialVersionUID = 0L;
     }
     if (liveProductCount != 0L) {
       output.writeInt64(14, liveProductCount );
+    }
+    if (likeCount != 0L) {
+      output.writeInt64(15, likeCount );
     }
     unknownFields.writeTo(output);
   }
@@ -585,6 +608,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(14, liveProductCount );
     }
+    if (likeCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(15, likeCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -630,6 +657,8 @@ private static final long serialVersionUID = 0L;
         != other.getCommentCount()) return false;
     if (getLiveProductCount()
         != other.getLiveProductCount()) return false;
+    if (getLikeCount()
+        != other.getLikeCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -678,6 +707,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LIVE_PRODUCT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getLiveProductCount());
+    hash = (37 * hash) + LIKE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLikeCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -839,6 +871,8 @@ private static final long serialVersionUID = 0L;
 
       liveProductCount = 0L;
 
+      likeCount = 0L;
+
       return this;
     }
 
@@ -879,6 +913,7 @@ private static final long serialVersionUID = 0L;
       result.roomDealAmount = roomDealAmount ;
       result.commentCount = commentCount ;
       result.liveProductCount = liveProductCount ;
+      result.likeCount = likeCount ;
       onBuilt();
       return result;
     }
@@ -973,6 +1008,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getLiveProductCount() != 0L) {
         setLiveProductCount(other.getLiveProductCount());
+      }
+      if (other.getLikeCount() != 0L) {
+        setLikeCount(other.getLikeCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1714,6 +1752,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearLiveProductCount() {
       
       liveProductCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long likeCount ;
+    /**
+     * <pre>
+     * 点赞数量
+     * </pre>
+     *
+     * <code>int64 like_count = 15;</code>
+     * @return The likeCount.
+     */
+    @java.lang.Override
+    public long getLikeCount() {
+      return likeCount ;
+    }
+    /**
+     * <pre>
+     * 点赞数量
+     * </pre>
+     *
+     * <code>int64 like_count = 15;</code>
+     * @param value The likeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLikeCount(long value) {
+      
+      likeCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 点赞数量
+     * </pre>
+     *
+     * <code>int64 like_count = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLikeCount() {
+      
+      likeCount = 0L;
       onChanged();
       return this;
     }

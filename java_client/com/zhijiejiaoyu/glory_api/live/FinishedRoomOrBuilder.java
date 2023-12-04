@@ -140,4 +140,14 @@ public interface FinishedRoomOrBuilder extends
    * @return The liveProductCount.
    */
   long getLiveProductCount();
+
+  /**
+   * <pre>
+   * 点赞数量
+   * </pre>
+   *
+   * <code>int64 like_count = 15;</code>
+   * @return The likeCount.
+   */
+  long getLikeCount();
 }

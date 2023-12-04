@@ -122,6 +122,8 @@ export interface FinishedRoom {
   comment_count?: string;
   /** 带货商品数量 */
   live_product_count?: string;
+  /** 点赞数量 */
+  like_count?: string;
 }
 
 export interface ListFinishedRoomRequest {

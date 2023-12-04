@@ -466,6 +466,9 @@ struct GloryApi_FinishedRoom {
   /// 带货商品数量
   var liveProductCount: Int64 = 0
 
+  /// 点赞数量
+  var likeCount: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -566,29 +569,28 @@ struct GloryApi_GetFinishedRoomResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var room: GloryApi_FinishedRoom {
-    get {return _room ?? GloryApi_FinishedRoom()}
-    set {_room = newValue}
+    get {return _storage._room ?? GloryApi_FinishedRoom()}
+    set {_uniqueStorage()._room = newValue}
   }
   /// Returns true if `room` has been explicitly set.
-  var hasRoom: Bool {return self._room != nil}
+  var hasRoom: Bool {return _storage._room != nil}
   /// Clears the value of `room`. Subsequent reads from it will return its default value.
-  mutating func clearRoom() {self._room = nil}
+  mutating func clearRoom() {_uniqueStorage()._room = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _room: GloryApi_FinishedRoom? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_GetLiveChartDataRequest {
@@ -1823,6 +1825,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     12: .standard(proto: "room_deal_amount"),
     13: .standard(proto: "comment_count"),
     14: .standard(proto: "live_product_count"),
+    15: .standard(proto: "like_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1845,6 +1848,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 12: try { try decoder.decodeSingularDoubleField(value: &self.roomDealAmount) }()
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.commentCount) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.liveProductCount) }()
+      case 15: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
       default: break
       }
     }
@@ -1893,6 +1897,9 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if self.liveProductCount != 0 {
       try visitor.visitSingularInt64Field(value: self.liveProductCount, fieldNumber: 14)
     }
+    if self.likeCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1911,6 +1918,7 @@ extension GloryApi_FinishedRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.roomDealAmount != rhs.roomDealAmount {return false}
     if lhs.commentCount != rhs.commentCount {return false}
     if lhs.liveProductCount != rhs.liveProductCount {return false}
+    if lhs.likeCount != rhs.likeCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2061,36 +2069,70 @@ extension GloryApi_GetFinishedRoomResponse: SwiftProtobuf.Message, SwiftProtobuf
     2: .same(proto: "room"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _room: GloryApi_FinishedRoom? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _room = source._room
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._room) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._room) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._room {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._room {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetFinishedRoomResponse, rhs: GloryApi_GetFinishedRoomResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._room != rhs._room {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._room != rhs_storage._room {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
