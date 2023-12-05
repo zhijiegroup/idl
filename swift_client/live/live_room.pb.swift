@@ -153,6 +153,9 @@ struct GloryApi_CreateRoomRequest {
   /// 封面图OSS路径
   var coverPath: String = String()
 
+  /// 评价类型：quick standard
+  var evaluationType: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1282,6 +1285,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     5: .standard(proto: "room_image_attachment_id"),
     6: .standard(proto: "is_use_ai"),
     7: .standard(proto: "cover_path"),
+    8: .standard(proto: "evaluation_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1297,6 +1301,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.roomImageAttachmentID) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.isUseAi) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.evaluationType) }()
       default: break
       }
     }
@@ -1328,6 +1333,9 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.coverPath.isEmpty {
       try visitor.visitSingularStringField(value: self.coverPath, fieldNumber: 7)
     }
+    if !self.evaluationType.isEmpty {
+      try visitor.visitSingularStringField(value: self.evaluationType, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1339,6 +1347,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.roomImageAttachmentID != rhs.roomImageAttachmentID {return false}
     if lhs.isUseAi != rhs.isUseAi {return false}
     if lhs.coverPath != rhs.coverPath {return false}
+    if lhs.evaluationType != rhs.evaluationType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

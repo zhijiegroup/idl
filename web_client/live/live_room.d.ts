@@ -43,6 +43,8 @@ export interface CreateRoomRequest {
   is_use_ai?: string;
   /** 封面图OSS路径 */
   cover_path?: string;
+  /** 评价类型：quick standard */
+  evaluation_type?: string;
 }
 
 export interface CreateRoomResponse {

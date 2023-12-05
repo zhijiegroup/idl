@@ -99,4 +99,24 @@ public interface CreateRoomRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCoverPathBytes();
+
+  /**
+   * <pre>
+   * 评价类型：quick standard
+   * </pre>
+   *
+   * <code>string evaluation_type = 8;</code>
+   * @return The evaluationType.
+   */
+  java.lang.String getEvaluationType();
+  /**
+   * <pre>
+   * 评价类型：quick standard
+   * </pre>
+   *
+   * <code>string evaluation_type = 8;</code>
+   * @return The bytes for evaluationType.
+   */
+  com.google.protobuf.ByteString
+      getEvaluationTypeBytes();
 }

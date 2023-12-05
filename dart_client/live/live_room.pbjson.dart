@@ -61,6 +61,7 @@ const CreateRoomRequest$json = {
     {'1': 'room_image_attachment_id', '3': 5, '4': 1, '5': 3, '10': 'roomImageAttachmentId'},
     {'1': 'is_use_ai', '3': 6, '4': 1, '5': 3, '10': 'isUseAi'},
     {'1': 'cover_path', '3': 7, '4': 1, '5': 9, '10': 'coverPath'},
+    {'1': 'evaluation_type', '3': 8, '4': 1, '5': 9, '10': 'evaluationType'},
   ],
 };
 
@@ -70,7 +71,8 @@ final $typed_data.Uint8List createRoomRequestDescriptor = $convert.base64Decode(
     'F1ZXN0UgtiYXNlUmVxdWVzdBIXCgdzaG9wX2lkGAIgASgDUgZzaG9wSWQSGQoIZ3JvdXBfaWQY'
     'AyABKAlSB2dyb3VwSWQSHQoKcm9vbV90aXRsZRgEIAEoCVIJcm9vbVRpdGxlEjcKGHJvb21faW'
     '1hZ2VfYXR0YWNobWVudF9pZBgFIAEoA1IVcm9vbUltYWdlQXR0YWNobWVudElkEhoKCWlzX3Vz'
-    'ZV9haRgGIAEoA1IHaXNVc2VBaRIdCgpjb3Zlcl9wYXRoGAcgASgJUgljb3ZlclBhdGg=');
+    'ZV9haRgGIAEoA1IHaXNVc2VBaRIdCgpjb3Zlcl9wYXRoGAcgASgJUgljb3ZlclBhdGgSJwoPZX'
+    'ZhbHVhdGlvbl90eXBlGAggASgJUg5ldmFsdWF0aW9uVHlwZQ==');
 
 @$core.Deprecated('Use createRoomResponseDescriptor instead')
 const CreateRoomResponse$json = {

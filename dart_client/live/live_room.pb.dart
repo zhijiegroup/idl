@@ -299,6 +299,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? roomImageAttachmentId,
     $fixnum.Int64? isUseAi,
     $core.String? coverPath,
+    $core.String? evaluationType,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -322,6 +323,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     if (coverPath != null) {
       $result.coverPath = coverPath;
     }
+    if (evaluationType != null) {
+      $result.evaluationType = evaluationType;
+    }
     return $result;
   }
   CreateRoomRequest._() : super();
@@ -336,6 +340,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aInt64(5, _omitFieldNames ? '' : 'roomImageAttachmentId')
     ..aInt64(6, _omitFieldNames ? '' : 'isUseAi')
     ..aOS(7, _omitFieldNames ? '' : 'coverPath')
+    ..aOS(8, _omitFieldNames ? '' : 'evaluationType')
     ..hasRequiredFields = false
   ;
 
@@ -424,6 +429,15 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasCoverPath() => $_has(6);
   @$pb.TagNumber(7)
   void clearCoverPath() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get evaluationType => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set evaluationType($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasEvaluationType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvaluationType() => clearField(8);
 }
 
 class CreateRoomResponse extends $pb.GeneratedMessage {
