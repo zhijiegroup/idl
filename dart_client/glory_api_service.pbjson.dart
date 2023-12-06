@@ -401,6 +401,9 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'DeleteQuickEvaluationStandard', '2': '.glory_api.DeleteQuickEvaluationRequest', '3': '.glory_api.DeleteQuickEvaluationResponse', '4': {}},
     {'1': 'ListQuickEvaluationStandard', '2': '.glory_api.ListQuickEvaluationRequest', '3': '.glory_api.ListQuickEvaluationResponse', '4': {}},
     {'1': 'GetLiveReplay', '2': '.glory_api.GetLiveReplayRequest', '3': '.glory_api.GetLiveReplayResponse', '4': {}},
+    {'1': 'CreateQuickEvaluationReport', '2': '.glory_api.CreateQuickEvaluationReportRequest', '3': '.glory_api.CreateQuickEvaluationReportResponse', '4': {}},
+    {'1': 'ListQuickEvaluationReport', '2': '.glory_api.ListQuickEvaluationReportRequest', '3': '.glory_api.ListQuickEvaluationReportResponse', '4': {}},
+    {'1': 'GetQuickEvaluationReport', '2': '.glory_api.GetQuickEvaluationReportRequest', '3': '.glory_api.GetQuickEvaluationReportResponse', '4': {}},
   ],
 };
 
@@ -1244,6 +1247,15 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.EvaluationStandard': $50.EvaluationStandard$json,
   '.glory_api.GetLiveReplayRequest': $24.GetLiveReplayRequest$json,
   '.glory_api.GetLiveReplayResponse': $24.GetLiveReplayResponse$json,
+  '.glory_api.CreateQuickEvaluationReportRequest': $50.CreateQuickEvaluationReportRequest$json,
+  '.glory_api.CreateQuickEvaluationReportResponse': $50.CreateQuickEvaluationReportResponse$json,
+  '.glory_api.ListQuickEvaluationReportRequest': $50.ListQuickEvaluationReportRequest$json,
+  '.glory_api.ListQuickEvaluationReportResponse': $50.ListQuickEvaluationReportResponse$json,
+  '.glory_api.EvaluationReport': $50.EvaluationReport$json,
+  '.glory_api.GetQuickEvaluationReportRequest': $50.GetQuickEvaluationReportRequest$json,
+  '.glory_api.GetQuickEvaluationReportResponse': $50.GetQuickEvaluationReportResponse$json,
+  '.glory_api.ReportDetail': $50.ReportDetail$json,
+  '.glory_api.PassDetail': $50.PassDetail$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -1993,5 +2005,14 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'bHVhdGlvblJlcXVlc3QaJi5nbG9yeV9hcGkuTGlzdFF1aWNrRXZhbHVhdGlvblJlc3BvbnNlIi'
     'zSwRgoL2FwaS9saXZlL2xpc3RfcXVpY2tfZXZhbHVhdGlvbl9zdGFuZGFyZBJxCg1HZXRMaXZl'
     'UmVwbGF5Eh8uZ2xvcnlfYXBpLkdldExpdmVSZXBsYXlSZXF1ZXN0GiAuZ2xvcnlfYXBpLkdldE'
-    'xpdmVSZXBsYXlSZXNwb25zZSIdysEYGS9hcGkvbGl2ZS9nZXRfbGl2ZV9yZXBsYXk=');
+    'xpdmVSZXBsYXlSZXNwb25zZSIdysEYGS9hcGkvbGl2ZS9nZXRfbGl2ZV9yZXBsYXkSqgEKG0Ny'
+    'ZWF0ZVF1aWNrRXZhbHVhdGlvblJlcG9ydBItLmdsb3J5X2FwaS5DcmVhdGVRdWlja0V2YWx1YX'
+    'Rpb25SZXBvcnRSZXF1ZXN0Gi4uZ2xvcnlfYXBpLkNyZWF0ZVF1aWNrRXZhbHVhdGlvblJlcG9y'
+    'dFJlc3BvbnNlIizSwRgoL2FwaS9saXZlL2NyZWF0ZV9xdWlja19ldmFsdWF0aW9uX3JlcG9ydB'
+    'KiAQoZTGlzdFF1aWNrRXZhbHVhdGlvblJlcG9ydBIrLmdsb3J5X2FwaS5MaXN0UXVpY2tFdmFs'
+    'dWF0aW9uUmVwb3J0UmVxdWVzdBosLmdsb3J5X2FwaS5MaXN0UXVpY2tFdmFsdWF0aW9uUmVwb3'
+    'J0UmVzcG9uc2UiKtLBGCYvYXBpL2xpdmUvbGlzdF9xdWlja19ldmFsdWF0aW9uX3JlcG9ydBKe'
+    'AQoYR2V0UXVpY2tFdmFsdWF0aW9uUmVwb3J0EiouZ2xvcnlfYXBpLkdldFF1aWNrRXZhbHVhdG'
+    'lvblJlcG9ydFJlcXVlc3QaKy5nbG9yeV9hcGkuR2V0UXVpY2tFdmFsdWF0aW9uUmVwb3J0UmVz'
+    'cG9uc2UiKcrBGCUvYXBpL2xpdmUvZ2V0X3F1aWNrX2V2YWx1YXRpb25fcmVwb3J0');
 

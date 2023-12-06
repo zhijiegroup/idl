@@ -1492,6 +1492,19 @@ CreateLivePlanProduct create live plan product */
   GetLiveReplay(
     request: live_room.GetLiveReplayRequest
   ): Promise<live_room.GetLiveReplayResponse>;
+
+  /** 快速评价报告 */
+  CreateQuickEvaluationReport(
+    request: live_quick_evaluate.CreateQuickEvaluationReportRequest
+  ): Promise<live_quick_evaluate.CreateQuickEvaluationReportResponse>;
+
+  ListQuickEvaluationReport(
+    request: live_quick_evaluate.ListQuickEvaluationReportRequest
+  ): Promise<live_quick_evaluate.ListQuickEvaluationReportResponse>;
+
+  GetQuickEvaluationReport(
+    request: live_quick_evaluate.GetQuickEvaluationReportRequest
+  ): Promise<live_quick_evaluate.GetQuickEvaluationReportResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

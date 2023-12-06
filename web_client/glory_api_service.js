@@ -2665,6 +2665,28 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/live/get_live_replay${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  CreateQuickEvaluationReport(request) {
+    const uri = `${this.uriPrefix}/api/live/create_quick_evaluation_report`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListQuickEvaluationReport(request) {
+    const uri = `${this.uriPrefix}/api/live/list_quick_evaluation_report`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetQuickEvaluationReport(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_quick_evaluation_report${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();

@@ -10307,6 +10307,99 @@ public final class glory_apiGrpc {
     return getGetLiveReplayMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> getCreateQuickEvaluationReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQuickEvaluationReport",
+      requestType = com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> getCreateQuickEvaluationReportMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> getCreateQuickEvaluationReportMethod;
+    if ((getCreateQuickEvaluationReportMethod = glory_apiGrpc.getCreateQuickEvaluationReportMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateQuickEvaluationReportMethod = glory_apiGrpc.getCreateQuickEvaluationReportMethod) == null) {
+          glory_apiGrpc.getCreateQuickEvaluationReportMethod = getCreateQuickEvaluationReportMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateQuickEvaluationReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateQuickEvaluationReport"))
+              .build();
+        }
+      }
+    }
+    return getCreateQuickEvaluationReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> getListQuickEvaluationReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQuickEvaluationReport",
+      requestType = com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> getListQuickEvaluationReportMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> getListQuickEvaluationReportMethod;
+    if ((getListQuickEvaluationReportMethod = glory_apiGrpc.getListQuickEvaluationReportMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListQuickEvaluationReportMethod = glory_apiGrpc.getListQuickEvaluationReportMethod) == null) {
+          glory_apiGrpc.getListQuickEvaluationReportMethod = getListQuickEvaluationReportMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListQuickEvaluationReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListQuickEvaluationReport"))
+              .build();
+        }
+      }
+    }
+    return getListQuickEvaluationReportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> getGetQuickEvaluationReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQuickEvaluationReport",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> getGetQuickEvaluationReportMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> getGetQuickEvaluationReportMethod;
+    if ((getGetQuickEvaluationReportMethod = glory_apiGrpc.getGetQuickEvaluationReportMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetQuickEvaluationReportMethod = glory_apiGrpc.getGetQuickEvaluationReportMethod) == null) {
+          glory_apiGrpc.getGetQuickEvaluationReportMethod = getGetQuickEvaluationReportMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQuickEvaluationReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetQuickEvaluationReport"))
+              .build();
+        }
+      }
+    }
+    return getGetQuickEvaluationReportMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -13010,6 +13103,30 @@ public final class glory_apiGrpc {
     default void getLiveReplay(com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveReplayMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 快速评价报告
+     * </pre>
+     */
+    default void createQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateQuickEvaluationReportMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListQuickEvaluationReportMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuickEvaluationReportMethod(), responseObserver);
     }
   }
 
@@ -16028,6 +16145,33 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetLiveReplayMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 快速评价报告
+     * </pre>
+     */
+    public void createQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateQuickEvaluationReportMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListQuickEvaluationReportMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetQuickEvaluationReportMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -18701,6 +18845,30 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse getLiveReplay(com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLiveReplayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 快速评价报告
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse createQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQuickEvaluationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse listQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuickEvaluationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse getQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuickEvaluationReportMethod(), getCallOptions(), request);
     }
   }
 
@@ -21708,6 +21876,33 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetLiveReplayMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 快速评价报告
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse> createQuickEvaluationReport(
+        com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateQuickEvaluationReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse> listQuickEvaluationReport(
+        com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListQuickEvaluationReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse> getQuickEvaluationReport(
+        com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetQuickEvaluationReportMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -22042,6 +22237,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 329;
   private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 330;
   private static final int METHODID_GET_LIVE_REPLAY = 331;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 332;
+  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 333;
+  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 334;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23387,6 +23585,18 @@ public final class glory_apiGrpc {
         case METHODID_GET_LIVE_REPLAY:
           serviceImpl.getLiveReplay((com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_QUICK_EVALUATION_REPORT:
+          serviceImpl.createQuickEvaluationReport((com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse>) responseObserver);
+          break;
+        case METHODID_LIST_QUICK_EVALUATION_REPORT:
+          serviceImpl.listQuickEvaluationReport((com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse>) responseObserver);
+          break;
+        case METHODID_GET_QUICK_EVALUATION_REPORT:
+          serviceImpl.getQuickEvaluationReport((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -25730,6 +25940,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetLiveReplayRequest,
               com.zhijiejiaoyu.glory_api.live.GetLiveReplayResponse>(
                 service, METHODID_GET_LIVE_REPLAY)))
+        .addMethod(
+          getCreateQuickEvaluationReportMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportRequest,
+              com.zhijiejiaoyu.glory_api.live.CreateQuickEvaluationReportResponse>(
+                service, METHODID_CREATE_QUICK_EVALUATION_REPORT)))
+        .addMethod(
+          getListQuickEvaluationReportMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportRequest,
+              com.zhijiejiaoyu.glory_api.live.ListQuickEvaluationReportResponse>(
+                service, METHODID_LIST_QUICK_EVALUATION_REPORT)))
+        .addMethod(
+          getGetQuickEvaluationReportMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest,
+              com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse>(
+                service, METHODID_GET_QUICK_EVALUATION_REPORT)))
         .build();
   }
 
@@ -26110,6 +26341,9 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteQuickEvaluationStandardMethod())
               .addMethod(getListQuickEvaluationStandardMethod())
               .addMethod(getGetLiveReplayMethod())
+              .addMethod(getCreateQuickEvaluationReportMethod())
+              .addMethod(getListQuickEvaluationReportMethod())
+              .addMethod(getGetQuickEvaluationReportMethod())
               .build();
         }
       }

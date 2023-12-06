@@ -1066,5 +1066,14 @@ class glory_apiApi {
   $async.Future<$24.GetLiveReplayResponse> getLiveReplay($pb.ClientContext? ctx, $24.GetLiveReplayRequest request) =>
     _client.invoke<$24.GetLiveReplayResponse>(ctx, 'glory_api', 'GetLiveReplay', request, $24.GetLiveReplayResponse())
   ;
+  $async.Future<$50.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ClientContext? ctx, $50.CreateQuickEvaluationReportRequest request) =>
+    _client.invoke<$50.CreateQuickEvaluationReportResponse>(ctx, 'glory_api', 'CreateQuickEvaluationReport', request, $50.CreateQuickEvaluationReportResponse())
+  ;
+  $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ClientContext? ctx, $50.ListQuickEvaluationReportRequest request) =>
+    _client.invoke<$50.ListQuickEvaluationReportResponse>(ctx, 'glory_api', 'ListQuickEvaluationReport', request, $50.ListQuickEvaluationReportResponse())
+  ;
+  $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ClientContext? ctx, $50.GetQuickEvaluationReportRequest request) =>
+    _client.invoke<$50.GetQuickEvaluationReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationReport', request, $50.GetQuickEvaluationReportResponse())
+  ;
 }
 

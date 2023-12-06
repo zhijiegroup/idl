@@ -53,7 +53,7 @@ public final class GloryApiService {
       "course.proto\032\032course/teaching_plan.proto" +
       "\032\027course/edu_scheme.proto\032\020course/job.pr" +
       "oto\032\rapp/app.proto\032\032traffic/live_traffic" +
-      ".proto\032\017role/role.proto2\264\303\002\n\tglory_api\022s" +
+      ".proto\032\017role/role.proto2\247\307\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -1088,8 +1088,21 @@ public final class GloryApiService {
       "st_quick_evaluation_standard\022q\n\rGetLiveR" +
       "eplay\022\037.glory_api.GetLiveReplayRequest\032 " +
       ".glory_api.GetLiveReplayResponse\"\035\312\301\030\031/a" +
-      "pi/live/get_live_replayB\036\n\032com.zhijiejia" +
-      "oyu.glory_apiP\001b\006proto3"
+      "pi/live/get_live_replay\022\252\001\n\033CreateQuickE" +
+      "valuationReport\022-.glory_api.CreateQuickE" +
+      "valuationReportRequest\032..glory_api.Creat" +
+      "eQuickEvaluationReportResponse\",\322\301\030(/api" +
+      "/live/create_quick_evaluation_report\022\242\001\n" +
+      "\031ListQuickEvaluationReport\022+.glory_api.L" +
+      "istQuickEvaluationReportRequest\032,.glory_" +
+      "api.ListQuickEvaluationReportResponse\"*\322" +
+      "\301\030&/api/live/list_quick_evaluation_repor" +
+      "t\022\236\001\n\030GetQuickEvaluationReport\022*.glory_a" +
+      "pi.GetQuickEvaluationReportRequest\032+.glo" +
+      "ry_api.GetQuickEvaluationReportResponse\"" +
+      ")\312\301\030%/api/live/get_quick_evaluation_repo" +
+      "rtB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
