@@ -59,3 +59,60 @@ message ListQuickEvaluationResponse {
     repeated EvaluationStandard standard_list = 2;
     base.PaginationResponse pagination = 100;
 }
+
+message CreateQuickEvaluationReportRequest {
+    base.BaseRequest base_request = 1;
+    string name = 2;
+    int64 start_time = 3;
+    int64 end_time = 4;
+}
+
+message CreateQuickEvaluationReportResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListQuickEvaluationReportRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message EvaluationReport {
+    int64 report_id = 1;
+    string name = 2;
+    string start_time = 3;
+    string end_time = 4;
+    string created_at = 5;
+}
+
+message ListQuickEvaluationReportResponse {
+    base.BaseResponse base_resp = 1;
+    repeated EvaluationReport report_list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message GetQuickEvaluationReportRequest {
+    base.BaseRequest base_request = 1;
+    int64 report_id = 2;
+}
+
+message PassDetail {
+    int64 user_id = 1;
+    string user_name = 2;
+    string detail = 3;
+    string replay_url = 4;
+}
+
+message ReportDetail {
+    string name = 1;
+    int64 start_time = 2;
+    int64 end_time = 3;
+    int64 pass_total = 4;
+    int64 no_pass_total = 5;
+    repeated PassDetail passes = 6;
+    repeated PassDetail no_passes = 7;
+}
+
+message GetQuickEvaluationReportResponse {
+    base.BaseResponse base_resp = 1;
+    ReportDetail report = 2;
+}
