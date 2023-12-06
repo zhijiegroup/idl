@@ -1314,4 +1314,15 @@ service glory_api {
   rpc GetLiveReplay(GetLiveReplayRequest) returns (GetLiveReplayResponse) {
     option (api.get) = '/api/live/get_live_replay';
   }
+
+  // 快速评价报告
+  rpc CreateQuickEvaluationReport(CreateQuickEvaluationReportRequest) returns (CreateQuickEvaluationReportResponse) {
+    option (api.post) = '/api/live/create_quick_evaluation_report';
+  }
+  rpc ListQuickEvaluationReport(ListQuickEvaluationReportRequest) returns (ListQuickEvaluationReportResponse) {
+    option (api.post) = '/api/live/list_quick_evaluation_report';
+  }
+  rpc GetQuickEvaluationReport(GetQuickEvaluationReportRequest) returns (GetQuickEvaluationReportResponse) {
+    option (api.get) = '/api/live/get_quick_evaluation_report';
+  }
 }
