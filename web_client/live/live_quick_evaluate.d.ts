@@ -99,6 +99,7 @@ export interface PassDetail {
   user_id?: string;
   user_name?: string;
   room_id?: string;
+  /** keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃 */
   no_pass_items?: Array<string>;
 }
 

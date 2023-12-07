@@ -174,6 +174,10 @@ private static final long serialVersionUID = 0L;
   public static final int NO_PASS_ITEMS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList noPassItems ;
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @return A list containing the noPassItems.
    */
@@ -182,6 +186,10 @@ private static final long serialVersionUID = 0L;
     return noPassItems ;
   }
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @return The count of noPassItems.
    */
@@ -189,6 +197,10 @@ private static final long serialVersionUID = 0L;
     return noPassItems .size();
   }
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @param index The index of the element to return.
    * @return The noPassItems at the given index.
@@ -197,6 +209,10 @@ private static final long serialVersionUID = 0L;
     return noPassItems .get(index);
   }
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @param index The index of the value to return.
    * @return The bytes of the noPassItems at the given index.
@@ -726,6 +742,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @return A list containing the noPassItems.
      */
@@ -734,6 +754,10 @@ private static final long serialVersionUID = 0L;
       return noPassItems .getUnmodifiableView();
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @return The count of noPassItems.
      */
@@ -741,6 +765,10 @@ private static final long serialVersionUID = 0L;
       return noPassItems .size();
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param index The index of the element to return.
      * @return The noPassItems at the given index.
@@ -749,6 +777,10 @@ private static final long serialVersionUID = 0L;
       return noPassItems .get(index);
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the noPassItems at the given index.
@@ -758,6 +790,10 @@ private static final long serialVersionUID = 0L;
       return noPassItems .getByteString(index);
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param index The index to set the value at.
      * @param value The noPassItems to set.
@@ -774,6 +810,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param value The noPassItems to add.
      * @return This builder for chaining.
@@ -789,6 +829,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param values The noPassItems to add.
      * @return This builder for chaining.
@@ -802,6 +846,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @return This builder for chaining.
      */
@@ -812,6 +860,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+     * </pre>
+     *
      * <code>repeated string no_pass_items = 4;</code>
      * @param value The bytes of the noPassItems to add.
      * @return This builder for chaining.

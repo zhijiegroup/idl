@@ -420,6 +420,7 @@ struct GloryApi_PassDetail {
 
   var roomID: Int64 = 0
 
+  /// keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
   var noPassItems: [String] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

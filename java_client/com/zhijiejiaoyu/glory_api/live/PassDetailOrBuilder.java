@@ -32,23 +32,39 @@ public interface PassDetailOrBuilder extends
   long getRoomId();
 
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @return A list containing the noPassItems.
    */
   java.util.List<java.lang.String>
       getNoPassItemsList();
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @return The count of noPassItems.
    */
   int getNoPassItemsCount();
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @param index The index of the element to return.
    * @return The noPassItems at the given index.
    */
   java.lang.String getNoPassItems(int index);
   /**
+   * <pre>
+   * keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+   * </pre>
+   *
    * <code>repeated string no_pass_items = 4;</code>
    * @param index The index of the value to return.
    * @return The bytes of the noPassItems at the given index.
