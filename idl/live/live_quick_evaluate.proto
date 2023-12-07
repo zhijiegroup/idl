@@ -98,8 +98,8 @@ message GetQuickEvaluationReportRequest {
 message PassDetail {
     int64 user_id = 1;
     string user_name = 2;
-    string detail = 3;
-    string replay_url = 4;
+    int64 room_id = 3;
+    repeated string no_pass_items = 4;
 }
 
 message ReportDetail {
@@ -115,4 +115,20 @@ message ReportDetail {
 message GetQuickEvaluationReportResponse {
     base.BaseResponse base_resp = 1;
     ReportDetail report = 2;
+}
+
+message GetQuickEvaluationDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 room_id = 2;
+}
+
+message QuickEvaluationDetail {
+    string key = 1;
+    bool is_pass = 2;
+    string detail = 3;
+}
+
+message GetQuickEvaluationDetailResponse {
+    base.BaseResponse base_resp = 1;
+    repeated QuickEvaluationDetail quick_evaluation_detail = 2;
 }
