@@ -1631,6 +1631,7 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     $core.String? key,
     $core.bool? isPass,
     $core.String? detail,
+    $core.String? type,
   }) {
     final $result = create();
     if (key != null) {
@@ -1642,6 +1643,9 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     if (detail != null) {
       $result.detail = detail;
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   QuickEvaluationDetail._() : super();
@@ -1652,6 +1656,7 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'key')
     ..aOB(2, _omitFieldNames ? '' : 'isPass')
     ..aOS(3, _omitFieldNames ? '' : 'detail')
+    ..aOS(4, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -1702,16 +1707,37 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
   $core.bool hasDetail() => $_has(2);
   @$pb.TagNumber(3)
   void clearDetail() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get type => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set type($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearType() => clearField(4);
 }
 
 class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
   factory GetQuickEvaluationDetailResponse({
     $0.BaseResponse? baseResp,
+    $fixnum.Int64? startTime,
+    $fixnum.Int64? endTime,
+    $core.bool? result,
     $core.Iterable<QuickEvaluationDetail>? quickEvaluationDetail,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (result != null) {
+      $result.result = result;
     }
     if (quickEvaluationDetail != null) {
       $result.quickEvaluationDetail.addAll(quickEvaluationDetail);
@@ -1724,7 +1750,10 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetQuickEvaluationDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..pc<QuickEvaluationDetail>(2, _omitFieldNames ? '' : 'quickEvaluationDetail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'startTime')
+    ..aInt64(3, _omitFieldNames ? '' : 'endTime')
+    ..aOB(4, _omitFieldNames ? '' : 'result')
+    ..pc<QuickEvaluationDetail>(5, _omitFieldNames ? '' : 'quickEvaluationDetail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -1761,7 +1790,34 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<QuickEvaluationDetail> get quickEvaluationDetail => $_getList(1);
+  $fixnum.Int64 get startTime => $_getI64(1);
+  @$pb.TagNumber(2)
+  set startTime($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStartTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStartTime() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get endTime => $_getI64(2);
+  @$pb.TagNumber(3)
+  set endTime($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEndTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEndTime() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get result => $_getBF(3);
+  @$pb.TagNumber(4)
+  set result($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResult() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResult() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<QuickEvaluationDetail> get quickEvaluationDetail => $_getList(4);
 }
 
 

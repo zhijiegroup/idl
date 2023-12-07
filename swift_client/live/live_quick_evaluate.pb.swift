@@ -537,6 +537,8 @@ struct GloryApi_QuickEvaluationDetail {
 
   var detail: String = String()
 
+  var type: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -555,6 +557,12 @@ struct GloryApi_GetQuickEvaluationDetailResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var startTime: Int64 = 0
+
+  var endTime: Int64 = 0
+
+  var result: Bool = false
 
   var quickEvaluationDetail: [GloryApi_QuickEvaluationDetail] = []
 
@@ -1570,6 +1578,7 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     1: .same(proto: "key"),
     2: .standard(proto: "is_pass"),
     3: .same(proto: "detail"),
+    4: .same(proto: "type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1581,6 +1590,7 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
       case 1: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.isPass) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.detail) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.type) }()
       default: break
       }
     }
@@ -1596,6 +1606,9 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.detail.isEmpty {
       try visitor.visitSingularStringField(value: self.detail, fieldNumber: 3)
     }
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1603,6 +1616,7 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.key != rhs.key {return false}
     if lhs.isPass != rhs.isPass {return false}
     if lhs.detail != rhs.detail {return false}
+    if lhs.type != rhs.type {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1612,7 +1626,10 @@ extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, Swif
   static let protoMessageName: String = _protobuf_package + ".GetQuickEvaluationDetailResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "quick_evaluation_detail"),
+    2: .standard(proto: "start_time"),
+    3: .standard(proto: "end_time"),
+    4: .same(proto: "result"),
+    5: .standard(proto: "quick_evaluation_detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1622,7 +1639,10 @@ extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, Swif
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.quickEvaluationDetail) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.startTime) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.endTime) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.result) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.quickEvaluationDetail) }()
       default: break
       }
     }
@@ -1636,14 +1656,26 @@ extension GloryApi_GetQuickEvaluationDetailResponse: SwiftProtobuf.Message, Swif
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.startTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.startTime, fieldNumber: 2)
+    }
+    if self.endTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.endTime, fieldNumber: 3)
+    }
+    if self.result != false {
+      try visitor.visitSingularBoolField(value: self.result, fieldNumber: 4)
+    }
     if !self.quickEvaluationDetail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.quickEvaluationDetail, fieldNumber: 2)
+      try visitor.visitRepeatedMessageField(value: self.quickEvaluationDetail, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetQuickEvaluationDetailResponse, rhs: GloryApi_GetQuickEvaluationDetailResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
+    if lhs.result != rhs.result {return false}
     if lhs.quickEvaluationDetail != rhs.quickEvaluationDetail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

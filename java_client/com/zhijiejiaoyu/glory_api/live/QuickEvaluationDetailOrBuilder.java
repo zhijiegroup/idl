@@ -36,4 +36,16 @@ public interface QuickEvaluationDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDetailBytes();
+
+  /**
+   * <code>string type = 4;</code>
+   * @return The type.
+   */
+  java.lang.String getType();
+  /**
+   * <code>string type = 4;</code>
+   * @return The bytes for type.
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

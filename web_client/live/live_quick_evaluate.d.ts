@@ -135,9 +135,13 @@ export interface QuickEvaluationDetail {
   key?: string;
   is_pass?: boolean;
   detail?: string;
+  type?: string;
 }
 
 export interface GetQuickEvaluationDetailResponse {
   base_resp?: base.BaseResponse;
+  start_time?: string;
+  end_time?: string;
+  result?: boolean;
   quick_evaluation_detail?: Array<QuickEvaluationDetail>;
 }

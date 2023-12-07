@@ -349,27 +349,32 @@ const QuickEvaluationDetail$json = {
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
     {'1': 'is_pass', '3': 2, '4': 1, '5': 8, '10': 'isPass'},
     {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
+    {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
   ],
 };
 
 /// Descriptor for `QuickEvaluationDetail`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List quickEvaluationDetailDescriptor = $convert.base64Decode(
     'ChVRdWlja0V2YWx1YXRpb25EZXRhaWwSEAoDa2V5GAEgASgJUgNrZXkSFwoHaXNfcGFzcxgCIA'
-    'EoCFIGaXNQYXNzEhYKBmRldGFpbBgDIAEoCVIGZGV0YWls');
+    'EoCFIGaXNQYXNzEhYKBmRldGFpbBgDIAEoCVIGZGV0YWlsEhIKBHR5cGUYBCABKAlSBHR5cGU=');
 
 @$core.Deprecated('Use getQuickEvaluationDetailResponseDescriptor instead')
 const GetQuickEvaluationDetailResponse$json = {
   '1': 'GetQuickEvaluationDetailResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'quick_evaluation_detail', '3': 2, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'quickEvaluationDetail'},
+    {'1': 'start_time', '3': 2, '4': 1, '5': 3, '10': 'startTime'},
+    {'1': 'end_time', '3': 3, '4': 1, '5': 3, '10': 'endTime'},
+    {'1': 'result', '3': 4, '4': 1, '5': 8, '10': 'result'},
+    {'1': 'quick_evaluation_detail', '3': 5, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'quickEvaluationDetail'},
   ],
 };
 
 /// Descriptor for `GetQuickEvaluationDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getQuickEvaluationDetailResponseDescriptor = $convert.base64Decode(
     'CiBHZXRRdWlja0V2YWx1YXRpb25EZXRhaWxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
-    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASWAoXcXVpY2tfZXZhbHVhdGlvbl9kZXRhaWwY'
-    'AiADKAsyIC5nbG9yeV9hcGkuUXVpY2tFdmFsdWF0aW9uRGV0YWlsUhVxdWlja0V2YWx1YXRpb2'
-    '5EZXRhaWw=');
+    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASHQoKc3RhcnRfdGltZRgCIAEoA1IJc3RhcnRU'
+    'aW1lEhkKCGVuZF90aW1lGAMgASgDUgdlbmRUaW1lEhYKBnJlc3VsdBgEIAEoCFIGcmVzdWx0El'
+    'gKF3F1aWNrX2V2YWx1YXRpb25fZGV0YWlsGAUgAygLMiAuZ2xvcnlfYXBpLlF1aWNrRXZhbHVh'
+    'dGlvbkRldGFpbFIVcXVpY2tFdmFsdWF0aW9uRGV0YWls');
 

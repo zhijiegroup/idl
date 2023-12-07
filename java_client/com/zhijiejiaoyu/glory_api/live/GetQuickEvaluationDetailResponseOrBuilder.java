@@ -23,25 +23,43 @@ public interface GetQuickEvaluationDetailResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 2;</code>
+   * <code>int64 start_time = 2;</code>
+   * @return The startTime.
+   */
+  long getStartTime();
+
+  /**
+   * <code>int64 end_time = 3;</code>
+   * @return The endTime.
+   */
+  long getEndTime();
+
+  /**
+   * <code>bool result = 4;</code>
+   * @return The result.
+   */
+  boolean getResult();
+
+  /**
+   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> 
       getQuickEvaluationDetailList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 2;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getQuickEvaluationDetail(int index);
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 2;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
    */
   int getQuickEvaluationDetailCount();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 2;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
       getQuickEvaluationDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 2;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getQuickEvaluationDetailOrBuilder(
       int index);
