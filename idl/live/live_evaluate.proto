@@ -25,6 +25,7 @@ message EvaluateRoom {
     int64 order = 7;
     string ai_feedback = 8;
     string evaluated_time = 9;
+    string evaluated_type = 10;
 
 }
 message EvaluateData {
