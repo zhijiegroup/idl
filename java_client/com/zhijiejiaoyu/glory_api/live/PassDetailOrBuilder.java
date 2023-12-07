@@ -26,26 +26,33 @@ public interface PassDetailOrBuilder extends
       getUserNameBytes();
 
   /**
-   * <code>string detail = 3;</code>
-   * @return The detail.
+   * <code>int64 room_id = 3;</code>
+   * @return The roomId.
    */
-  java.lang.String getDetail();
-  /**
-   * <code>string detail = 3;</code>
-   * @return The bytes for detail.
-   */
-  com.google.protobuf.ByteString
-      getDetailBytes();
+  long getRoomId();
 
   /**
-   * <code>string replay_url = 4;</code>
-   * @return The replayUrl.
+   * <code>repeated string no_pass_items = 4;</code>
+   * @return A list containing the noPassItems.
    */
-  java.lang.String getReplayUrl();
+  java.util.List<java.lang.String>
+      getNoPassItemsList();
   /**
-   * <code>string replay_url = 4;</code>
-   * @return The bytes for replayUrl.
+   * <code>repeated string no_pass_items = 4;</code>
+   * @return The count of noPassItems.
+   */
+  int getNoPassItemsCount();
+  /**
+   * <code>repeated string no_pass_items = 4;</code>
+   * @param index The index of the element to return.
+   * @return The noPassItems at the given index.
+   */
+  java.lang.String getNoPassItems(int index);
+  /**
+   * <code>repeated string no_pass_items = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the noPassItems at the given index.
    */
   com.google.protobuf.ByteString
-      getReplayUrlBytes();
+      getNoPassItemsBytes(int index);
 }

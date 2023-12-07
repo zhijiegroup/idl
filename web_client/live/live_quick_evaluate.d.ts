@@ -98,8 +98,8 @@ export interface GetQuickEvaluationReportRequest {
 export interface PassDetail {
   user_id?: string;
   user_name?: string;
-  detail?: string;
-  replay_url?: string;
+  room_id?: string;
+  no_pass_items?: Array<string>;
 }
 
 export interface ReportDetail {
@@ -115,4 +115,20 @@ export interface ReportDetail {
 export interface GetQuickEvaluationReportResponse {
   base_resp?: base.BaseResponse;
   report?: ReportDetail;
+}
+
+export interface GetQuickEvaluationDetailRequest {
+  base_request?: base.BaseRequest;
+  room_id?: string;
+}
+
+export interface QuickEvaluationDetail {
+  key?: string;
+  is_pass?: boolean;
+  detail?: string;
+}
+
+export interface GetQuickEvaluationDetailResponse {
+  base_resp?: base.BaseResponse;
+  quick_evaluation_detail?: Array<QuickEvaluationDetail>;
 }

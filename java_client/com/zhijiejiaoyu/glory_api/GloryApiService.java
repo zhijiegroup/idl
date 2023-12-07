@@ -53,7 +53,7 @@ public final class GloryApiService {
       "course.proto\032\032course/teaching_plan.proto" +
       "\032\027course/edu_scheme.proto\032\020course/job.pr" +
       "oto\032\rapp/app.proto\032\032traffic/live_traffic" +
-      ".proto\032\017role/role.proto2\247\307\002\n\tglory_api\022s" +
+      ".proto\032\017role/role.proto2\310\310\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -1101,8 +1101,12 @@ public final class GloryApiService {
       "pi.GetQuickEvaluationReportRequest\032+.glo" +
       "ry_api.GetQuickEvaluationReportResponse\"" +
       ")\312\301\030%/api/live/get_quick_evaluation_repo" +
-      "rtB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006prot" +
-      "o3"
+      "rt\022\236\001\n\030GetQuickEvaluationDetail\022*.glory_" +
+      "api.GetQuickEvaluationDetailRequest\032+.gl" +
+      "ory_api.GetQuickEvaluationDetailResponse" +
+      "\")\312\301\030%/api/live/get_quick_evaluation_det" +
+      "ailB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

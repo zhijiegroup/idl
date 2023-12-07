@@ -2687,6 +2687,12 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/live/get_quick_evaluation_report${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  GetQuickEvaluationDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_quick_evaluation_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();

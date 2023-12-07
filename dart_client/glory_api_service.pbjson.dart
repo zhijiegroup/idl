@@ -404,6 +404,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'CreateQuickEvaluationReport', '2': '.glory_api.CreateQuickEvaluationReportRequest', '3': '.glory_api.CreateQuickEvaluationReportResponse', '4': {}},
     {'1': 'ListQuickEvaluationReport', '2': '.glory_api.ListQuickEvaluationReportRequest', '3': '.glory_api.ListQuickEvaluationReportResponse', '4': {}},
     {'1': 'GetQuickEvaluationReport', '2': '.glory_api.GetQuickEvaluationReportRequest', '3': '.glory_api.GetQuickEvaluationReportResponse', '4': {}},
+    {'1': 'GetQuickEvaluationDetail', '2': '.glory_api.GetQuickEvaluationDetailRequest', '3': '.glory_api.GetQuickEvaluationDetailResponse', '4': {}},
   ],
 };
 
@@ -1256,6 +1257,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetQuickEvaluationReportResponse': $50.GetQuickEvaluationReportResponse$json,
   '.glory_api.ReportDetail': $50.ReportDetail$json,
   '.glory_api.PassDetail': $50.PassDetail$json,
+  '.glory_api.GetQuickEvaluationDetailRequest': $50.GetQuickEvaluationDetailRequest$json,
+  '.glory_api.GetQuickEvaluationDetailResponse': $50.GetQuickEvaluationDetailResponse$json,
+  '.glory_api.QuickEvaluationDetail': $50.QuickEvaluationDetail$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2014,5 +2018,8 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'J0UmVzcG9uc2UiKtLBGCYvYXBpL2xpdmUvbGlzdF9xdWlja19ldmFsdWF0aW9uX3JlcG9ydBKe'
     'AQoYR2V0UXVpY2tFdmFsdWF0aW9uUmVwb3J0EiouZ2xvcnlfYXBpLkdldFF1aWNrRXZhbHVhdG'
     'lvblJlcG9ydFJlcXVlc3QaKy5nbG9yeV9hcGkuR2V0UXVpY2tFdmFsdWF0aW9uUmVwb3J0UmVz'
-    'cG9uc2UiKcrBGCUvYXBpL2xpdmUvZ2V0X3F1aWNrX2V2YWx1YXRpb25fcmVwb3J0');
+    'cG9uc2UiKcrBGCUvYXBpL2xpdmUvZ2V0X3F1aWNrX2V2YWx1YXRpb25fcmVwb3J0Ep4BChhHZX'
+    'RRdWlja0V2YWx1YXRpb25EZXRhaWwSKi5nbG9yeV9hcGkuR2V0UXVpY2tFdmFsdWF0aW9uRGV0'
+    'YWlsUmVxdWVzdBorLmdsb3J5X2FwaS5HZXRRdWlja0V2YWx1YXRpb25EZXRhaWxSZXNwb25zZS'
+    'IpysEYJS9hcGkvbGl2ZS9nZXRfcXVpY2tfZXZhbHVhdGlvbl9kZXRhaWw=');
 

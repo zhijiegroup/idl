@@ -406,6 +406,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ServerContext ctx, $50.CreateQuickEvaluationReportRequest request);
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
+  $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -744,6 +745,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return $50.CreateQuickEvaluationReportRequest();
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
+      case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1085,6 +1087,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return this.createQuickEvaluationReport(ctx, request as $50.CreateQuickEvaluationReportRequest);
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
+      case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

@@ -1505,6 +1505,10 @@ CreateLivePlanProduct create live plan product */
   GetQuickEvaluationReport(
     request: live_quick_evaluate.GetQuickEvaluationReportRequest
   ): Promise<live_quick_evaluate.GetQuickEvaluationReportResponse>;
+
+  GetQuickEvaluationDetail(
+    request: live_quick_evaluate.GetQuickEvaluationDetailRequest
+  ): Promise<live_quick_evaluate.GetQuickEvaluationDetailResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

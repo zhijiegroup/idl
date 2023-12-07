@@ -261,16 +261,16 @@ const PassDetail$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
     {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
-    {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
-    {'1': 'replay_url', '3': 4, '4': 1, '5': 9, '10': 'replayUrl'},
+    {'1': 'room_id', '3': 3, '4': 1, '5': 3, '10': 'roomId'},
+    {'1': 'no_pass_items', '3': 4, '4': 3, '5': 9, '10': 'noPassItems'},
   ],
 };
 
 /// Descriptor for `PassDetail`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List passDetailDescriptor = $convert.base64Decode(
     'CgpQYXNzRGV0YWlsEhcKB3VzZXJfaWQYASABKANSBnVzZXJJZBIbCgl1c2VyX25hbWUYAiABKA'
-    'lSCHVzZXJOYW1lEhYKBmRldGFpbBgDIAEoCVIGZGV0YWlsEh0KCnJlcGxheV91cmwYBCABKAlS'
-    'CXJlcGxheVVybA==');
+    'lSCHVzZXJOYW1lEhcKB3Jvb21faWQYAyABKANSBnJvb21JZBIiCg1ub19wYXNzX2l0ZW1zGAQg'
+    'AygJUgtub1Bhc3NJdGVtcw==');
 
 @$core.Deprecated('Use reportDetailDescriptor instead')
 const ReportDetail$json = {
@@ -308,4 +308,50 @@ final $typed_data.Uint8List getQuickEvaluationReportResponseDescriptor = $conver
     'CiBHZXRRdWlja0V2YWx1YXRpb25SZXBvcnRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
     '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASLwoGcmVwb3J0GAIgASgLMhcuZ2xvcnlfYXBp'
     'LlJlcG9ydERldGFpbFIGcmVwb3J0');
+
+@$core.Deprecated('Use getQuickEvaluationDetailRequestDescriptor instead')
+const GetQuickEvaluationDetailRequest$json = {
+  '1': 'GetQuickEvaluationDetailRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 3, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `GetQuickEvaluationDetailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getQuickEvaluationDetailRequestDescriptor = $convert.base64Decode(
+    'Ch9HZXRRdWlja0V2YWx1YXRpb25EZXRhaWxSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCz'
+    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Jvb21faWQYAiABKANSBnJvb21J'
+    'ZA==');
+
+@$core.Deprecated('Use quickEvaluationDetailDescriptor instead')
+const QuickEvaluationDetail$json = {
+  '1': 'QuickEvaluationDetail',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'is_pass', '3': 2, '4': 1, '5': 8, '10': 'isPass'},
+    {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
+  ],
+};
+
+/// Descriptor for `QuickEvaluationDetail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quickEvaluationDetailDescriptor = $convert.base64Decode(
+    'ChVRdWlja0V2YWx1YXRpb25EZXRhaWwSEAoDa2V5GAEgASgJUgNrZXkSFwoHaXNfcGFzcxgCIA'
+    'EoCFIGaXNQYXNzEhYKBmRldGFpbBgDIAEoCVIGZGV0YWls');
+
+@$core.Deprecated('Use getQuickEvaluationDetailResponseDescriptor instead')
+const GetQuickEvaluationDetailResponse$json = {
+  '1': 'GetQuickEvaluationDetailResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'quick_evaluation_detail', '3': 2, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'quickEvaluationDetail'},
+  ],
+};
+
+/// Descriptor for `GetQuickEvaluationDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getQuickEvaluationDetailResponseDescriptor = $convert.base64Decode(
+    'CiBHZXRRdWlja0V2YWx1YXRpb25EZXRhaWxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
+    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASWAoXcXVpY2tfZXZhbHVhdGlvbl9kZXRhaWwY'
+    'AiADKAsyIC5nbG9yeV9hcGkuUXVpY2tFdmFsdWF0aW9uRGV0YWlsUhVxdWlja0V2YWx1YXRpb2'
+    '5EZXRhaWw=');
 

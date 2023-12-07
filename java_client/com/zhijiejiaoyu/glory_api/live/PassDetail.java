@@ -17,8 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private PassDetail() {
     userName = "";
-    detail = "";
-    replayUrl = "";
+    noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -41,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,16 +62,18 @@ private static final long serialVersionUID = 0L;
             userName = s;
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 24: {
 
-            detail = s;
+            roomId = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            replayUrl = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              noPassItems = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            noPassItems .add(s);
             break;
           }
           default: {
@@ -89,6 +91,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        noPassItems = noPassItems .getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -155,80 +160,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DETAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object detail ;
+  public static final int ROOM_ID_FIELD_NUMBER = 3;
+  private long roomId ;
   /**
-   * <code>string detail = 3;</code>
-   * @return The detail.
+   * <code>int64 room_id = 3;</code>
+   * @return The roomId.
    */
   @java.lang.Override
-  public java.lang.String getDetail() {
-    java.lang.Object ref = detail ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      detail = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string detail = 3;</code>
-   * @return The bytes for detail.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDetailBytes() {
-    java.lang.Object ref = detail ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      detail = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getRoomId() {
+    return roomId ;
   }
 
-  public static final int REPLAY_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object replayUrl ;
+  public static final int NO_PASS_ITEMS_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList noPassItems ;
   /**
-   * <code>string replay_url = 4;</code>
-   * @return The replayUrl.
+   * <code>repeated string no_pass_items = 4;</code>
+   * @return A list containing the noPassItems.
    */
-  @java.lang.Override
-  public java.lang.String getReplayUrl() {
-    java.lang.Object ref = replayUrl ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      replayUrl = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getNoPassItemsList() {
+    return noPassItems ;
   }
   /**
-   * <code>string replay_url = 4;</code>
-   * @return The bytes for replayUrl.
+   * <code>repeated string no_pass_items = 4;</code>
+   * @return The count of noPassItems.
    */
-  @java.lang.Override
+  public int getNoPassItemsCount() {
+    return noPassItems .size();
+  }
+  /**
+   * <code>repeated string no_pass_items = 4;</code>
+   * @param index The index of the element to return.
+   * @return The noPassItems at the given index.
+   */
+  public java.lang.String getNoPassItems(int index) {
+    return noPassItems .get(index);
+  }
+  /**
+   * <code>repeated string no_pass_items = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the noPassItems at the given index.
+   */
   public com.google.protobuf.ByteString
-      getReplayUrlBytes() {
-    java.lang.Object ref = replayUrl ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      replayUrl = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getNoPassItemsBytes(int index) {
+    return noPassItems .getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -251,11 +226,11 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName );
     }
-    if (!getDetailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, detail );
+    if (roomId != 0L) {
+      output.writeInt64(3, roomId );
     }
-    if (!getReplayUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, replayUrl );
+    for (int i = 0; i < noPassItems .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, noPassItems .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -273,11 +248,17 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName );
     }
-    if (!getDetailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, detail );
+    if (roomId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, roomId );
     }
-    if (!getReplayUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, replayUrl );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < noPassItems .size(); i++) {
+        dataSize += computeStringSizeNoTag(noPassItems .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNoPassItemsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,10 +279,10 @@ private static final long serialVersionUID = 0L;
         != other.getUserId()) return false;
     if (!getUserName()
         .equals(other.getUserName())) return false;
-    if (!getDetail()
-        .equals(other.getDetail())) return false;
-    if (!getReplayUrl()
-        .equals(other.getReplayUrl())) return false;
+    if (getRoomId()
+        != other.getRoomId()) return false;
+    if (!getNoPassItemsList()
+        .equals(other.getNoPassItemsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -318,10 +299,13 @@ private static final long serialVersionUID = 0L;
         getUserId());
     hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getUserName().hashCode();
-    hash = (37 * hash) + DETAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getDetail().hashCode();
-    hash = (37 * hash) + REPLAY_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getReplayUrl().hashCode();
+    hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoomId());
+    if (getNoPassItemsCount() > 0) {
+      hash = (37 * hash) + NO_PASS_ITEMS_FIELD_NUMBER;
+      hash = (53 * hash) + getNoPassItemsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -459,10 +443,10 @@ private static final long serialVersionUID = 0L;
 
       userName = "";
 
-      detail = "";
+      roomId = 0L;
 
-      replayUrl = "";
-
+      noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -489,10 +473,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.PassDetail buildPartial() {
       com.zhijiejiaoyu.glory_api.live.PassDetail result = new com.zhijiejiaoyu.glory_api.live.PassDetail(this);
+      int from_bitField0 = bitField0 ;
       result.userId = userId ;
       result.userName = userName ;
-      result.detail = detail ;
-      result.replayUrl = replayUrl ;
+      result.roomId = roomId ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        noPassItems = noPassItems .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.noPassItems = noPassItems ;
       onBuilt();
       return result;
     }
@@ -548,12 +537,17 @@ private static final long serialVersionUID = 0L;
         userName = other.userName ;
         onChanged();
       }
-      if (!other.getDetail().isEmpty()) {
-        detail = other.detail ;
-        onChanged();
+      if (other.getRoomId() != 0L) {
+        setRoomId(other.getRoomId());
       }
-      if (!other.getReplayUrl().isEmpty()) {
-        replayUrl = other.replayUrl ;
+      if (!other.noPassItems .isEmpty()) {
+        if (noPassItems .isEmpty()) {
+          noPassItems = other.noPassItems ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureNoPassItemsIsMutable();
+          noPassItems .addAll(other.noPassItems );
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -584,6 +578,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long userId ;
     /**
@@ -692,154 +687,143 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object detail = "";
+    private long roomId ;
     /**
-     * <code>string detail = 3;</code>
-     * @return The detail.
+     * <code>int64 room_id = 3;</code>
+     * @return The roomId.
      */
-    public java.lang.String getDetail() {
-      java.lang.Object ref = detail ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        detail = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getRoomId() {
+      return roomId ;
     }
     /**
-     * <code>string detail = 3;</code>
-     * @return The bytes for detail.
-     */
-    public com.google.protobuf.ByteString
-        getDetailBytes() {
-      java.lang.Object ref = detail ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        detail = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string detail = 3;</code>
-     * @param value The detail to set.
+     * <code>int64 room_id = 3;</code>
+     * @param value The roomId to set.
      * @return This builder for chaining.
      */
-    public Builder setDetail(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      detail = value;
+    public Builder setRoomId(long value) {
+      
+      roomId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string detail = 3;</code>
+     * <code>int64 room_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDetail() {
+    public Builder clearRoomId() {
       
-      detail = getDefaultInstance().getDetail();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string detail = 3;</code>
-     * @param value The bytes for detail to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDetailBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      detail = value;
+      roomId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object replayUrl = "";
-    /**
-     * <code>string replay_url = 4;</code>
-     * @return The replayUrl.
-     */
-    public java.lang.String getReplayUrl() {
-      java.lang.Object ref = replayUrl ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        replayUrl = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureNoPassItemsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        noPassItems = new com.google.protobuf.LazyStringArrayList(noPassItems );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>string replay_url = 4;</code>
-     * @return The bytes for replayUrl.
+     * <code>repeated string no_pass_items = 4;</code>
+     * @return A list containing the noPassItems.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNoPassItemsList() {
+      return noPassItems .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string no_pass_items = 4;</code>
+     * @return The count of noPassItems.
+     */
+    public int getNoPassItemsCount() {
+      return noPassItems .size();
+    }
+    /**
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param index The index of the element to return.
+     * @return The noPassItems at the given index.
+     */
+    public java.lang.String getNoPassItems(int index) {
+      return noPassItems .get(index);
+    }
+    /**
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the noPassItems at the given index.
      */
     public com.google.protobuf.ByteString
-        getReplayUrlBytes() {
-      java.lang.Object ref = replayUrl ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        replayUrl = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getNoPassItemsBytes(int index) {
+      return noPassItems .getByteString(index);
     }
     /**
-     * <code>string replay_url = 4;</code>
-     * @param value The replayUrl to set.
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The noPassItems to set.
      * @return This builder for chaining.
      */
-    public Builder setReplayUrl(
+    public Builder setNoPassItems(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNoPassItemsIsMutable();
+      noPassItems .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param value The noPassItems to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNoPassItems(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      replayUrl = value;
+  ensureNoPassItemsIsMutable();
+      noPassItems .add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>string replay_url = 4;</code>
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param values The noPassItems to add.
      * @return This builder for chaining.
      */
-    public Builder clearReplayUrl() {
-      
-      replayUrl = getDefaultInstance().getReplayUrl();
+    public Builder addAllNoPassItems(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureNoPassItemsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, noPassItems );
       onChanged();
       return this;
     }
     /**
-     * <code>string replay_url = 4;</code>
-     * @param value The bytes for replayUrl to set.
+     * <code>repeated string no_pass_items = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder setReplayUrlBytes(
+    public Builder clearNoPassItems() {
+      noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string no_pass_items = 4;</code>
+     * @param value The bytes of the noPassItems to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNoPassItemsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      replayUrl = value;
+      ensureNoPassItemsIsMutable();
+      noPassItems .add(value);
       onChanged();
       return this;
     }
