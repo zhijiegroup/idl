@@ -100,6 +100,14 @@ message PassDetail {
     string user_name = 2;
     int64 room_id = 3;
     repeated string no_pass_items = 4; // keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
+    repeated NoPassInfo no_pass_detail = 5;
+}
+
+message NoPassInfo {
+    string key = 1;
+    string name = 2;
+    string value = 3;
+    repeated string detail = 4;
 }
 
 message ReportDetail {
