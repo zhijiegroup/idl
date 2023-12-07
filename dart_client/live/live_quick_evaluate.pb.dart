@@ -1196,6 +1196,7 @@ class PassDetail extends $pb.GeneratedMessage {
     $core.String? userName,
     $fixnum.Int64? roomId,
     $core.Iterable<$core.String>? noPassItems,
+    $core.Iterable<NoPassInfo>? noPassDetail,
   }) {
     final $result = create();
     if (userId != null) {
@@ -1210,6 +1211,9 @@ class PassDetail extends $pb.GeneratedMessage {
     if (noPassItems != null) {
       $result.noPassItems.addAll(noPassItems);
     }
+    if (noPassDetail != null) {
+      $result.noPassDetail.addAll(noPassDetail);
+    }
     return $result;
   }
   PassDetail._() : super();
@@ -1221,6 +1225,7 @@ class PassDetail extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'userName')
     ..aInt64(3, _omitFieldNames ? '' : 'roomId')
     ..pPS(4, _omitFieldNames ? '' : 'noPassItems')
+    ..pc<NoPassInfo>(5, _omitFieldNames ? '' : 'noPassDetail', $pb.PbFieldType.PM, subBuilder: NoPassInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -1274,6 +1279,95 @@ class PassDetail extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get noPassItems => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<NoPassInfo> get noPassDetail => $_getList(4);
+}
+
+class NoPassInfo extends $pb.GeneratedMessage {
+  factory NoPassInfo({
+    $core.String? key,
+    $core.String? name,
+    $core.String? value,
+    $core.Iterable<$core.String>? detail,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (detail != null) {
+      $result.detail.addAll(detail);
+    }
+    return $result;
+  }
+  NoPassInfo._() : super();
+  factory NoPassInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NoPassInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NoPassInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'value')
+    ..pPS(4, _omitFieldNames ? '' : 'detail')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NoPassInfo clone() => NoPassInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NoPassInfo copyWith(void Function(NoPassInfo) updates) => super.copyWith((message) => updates(message as NoPassInfo)) as NoPassInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NoPassInfo create() => NoPassInfo._();
+  NoPassInfo createEmptyInstance() => create();
+  static $pb.PbList<NoPassInfo> createRepeated() => $pb.PbList<NoPassInfo>();
+  @$core.pragma('dart2js:noInline')
+  static NoPassInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NoPassInfo>(create);
+  static NoPassInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get value => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set value($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasValue() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValue() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get detail => $_getList(3);
 }
 
 class ReportDetail extends $pb.GeneratedMessage {

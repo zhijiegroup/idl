@@ -1257,6 +1257,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetQuickEvaluationReportResponse': $50.GetQuickEvaluationReportResponse$json,
   '.glory_api.ReportDetail': $50.ReportDetail$json,
   '.glory_api.PassDetail': $50.PassDetail$json,
+  '.glory_api.NoPassInfo': $50.NoPassInfo$json,
   '.glory_api.GetQuickEvaluationDetailRequest': $50.GetQuickEvaluationDetailRequest$json,
   '.glory_api.GetQuickEvaluationDetailResponse': $50.GetQuickEvaluationDetailResponse$json,
   '.glory_api.QuickEvaluationDetail': $50.QuickEvaluationDetail$json,

@@ -423,6 +423,26 @@ struct GloryApi_PassDetail {
   /// keyword 关键词 speech_rate 语速 live_duration 直播时长 baseline 底线 stammer 结巴口吃
   var noPassItems: [String] = []
 
+  var noPassDetail: [GloryApi_NoPassInfo] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_NoPassInfo {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var key: String = String()
+
+  var name: String = String()
+
+  var value: String = String()
+
+  var detail: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -562,6 +582,7 @@ extension GloryApi_EvaluationReport: @unchecked Sendable {}
 extension GloryApi_ListQuickEvaluationReportResponse: @unchecked Sendable {}
 extension GloryApi_GetQuickEvaluationReportRequest: @unchecked Sendable {}
 extension GloryApi_PassDetail: @unchecked Sendable {}
+extension GloryApi_NoPassInfo: @unchecked Sendable {}
 extension GloryApi_ReportDetail: @unchecked Sendable {}
 extension GloryApi_GetQuickEvaluationReportResponse: @unchecked Sendable {}
 extension GloryApi_GetQuickEvaluationDetailRequest: @unchecked Sendable {}
@@ -1292,6 +1313,7 @@ extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "user_name"),
     3: .standard(proto: "room_id"),
     4: .standard(proto: "no_pass_items"),
+    5: .standard(proto: "no_pass_detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1304,6 +1326,7 @@ extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       case 4: try { try decoder.decodeRepeatedStringField(value: &self.noPassItems) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.noPassDetail) }()
       default: break
       }
     }
@@ -1322,6 +1345,9 @@ extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.noPassItems.isEmpty {
       try visitor.visitRepeatedStringField(value: self.noPassItems, fieldNumber: 4)
     }
+    if !self.noPassDetail.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.noPassDetail, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1330,6 +1356,57 @@ extension GloryApi_PassDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.userName != rhs.userName {return false}
     if lhs.roomID != rhs.roomID {return false}
     if lhs.noPassItems != rhs.noPassItems {return false}
+    if lhs.noPassDetail != rhs.noPassDetail {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".NoPassInfo"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "key"),
+    2: .same(proto: "name"),
+    3: .same(proto: "value"),
+    4: .same(proto: "detail"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.key) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.detail) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.key.isEmpty {
+      try visitor.visitSingularStringField(value: self.key, fieldNumber: 1)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 3)
+    }
+    if !self.detail.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.detail, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_NoPassInfo, rhs: GloryApi_NoPassInfo) -> Bool {
+    if lhs.key != rhs.key {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -263,6 +263,7 @@ const PassDetail$json = {
     {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
     {'1': 'room_id', '3': 3, '4': 1, '5': 3, '10': 'roomId'},
     {'1': 'no_pass_items', '3': 4, '4': 3, '5': 9, '10': 'noPassItems'},
+    {'1': 'no_pass_detail', '3': 5, '4': 3, '5': 11, '6': '.glory_api.NoPassInfo', '10': 'noPassDetail'},
   ],
 };
 
@@ -270,7 +271,24 @@ const PassDetail$json = {
 final $typed_data.Uint8List passDetailDescriptor = $convert.base64Decode(
     'CgpQYXNzRGV0YWlsEhcKB3VzZXJfaWQYASABKANSBnVzZXJJZBIbCgl1c2VyX25hbWUYAiABKA'
     'lSCHVzZXJOYW1lEhcKB3Jvb21faWQYAyABKANSBnJvb21JZBIiCg1ub19wYXNzX2l0ZW1zGAQg'
-    'AygJUgtub1Bhc3NJdGVtcw==');
+    'AygJUgtub1Bhc3NJdGVtcxI7Cg5ub19wYXNzX2RldGFpbBgFIAMoCzIVLmdsb3J5X2FwaS5Ob1'
+    'Bhc3NJbmZvUgxub1Bhc3NEZXRhaWw=');
+
+@$core.Deprecated('Use noPassInfoDescriptor instead')
+const NoPassInfo$json = {
+  '1': 'NoPassInfo',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'value', '3': 3, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'detail', '3': 4, '4': 3, '5': 9, '10': 'detail'},
+  ],
+};
+
+/// Descriptor for `NoPassInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List noPassInfoDescriptor = $convert.base64Decode(
+    'CgpOb1Bhc3NJbmZvEhAKA2tleRgBIAEoCVIDa2V5EhIKBG5hbWUYAiABKAlSBG5hbWUSFAoFdm'
+    'FsdWUYAyABKAlSBXZhbHVlEhYKBmRldGFpbBgEIAMoCVIGZGV0YWls');
 
 @$core.Deprecated('Use reportDetailDescriptor instead')
 const ReportDetail$json = {

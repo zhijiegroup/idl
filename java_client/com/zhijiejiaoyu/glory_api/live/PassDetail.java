@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private PassDetail() {
     userName = "";
     noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
+    noPassDetail = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -76,6 +77,15 @@ private static final long serialVersionUID = 0L;
             noPassItems .add(s);
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              noPassDetail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.NoPassInfo>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            noPassDetail .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.live.NoPassInfo.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -93,6 +103,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         noPassItems = noPassItems .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        noPassDetail = java.util.Collections.unmodifiableList(noPassDetail );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -222,6 +235,46 @@ private static final long serialVersionUID = 0L;
     return noPassItems .getByteString(index);
   }
 
+  public static final int NO_PASS_DETAIL_FIELD_NUMBER = 5;
+  private java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo> noPassDetail ;
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo> getNoPassDetailList() {
+    return noPassDetail ;
+  }
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder> 
+      getNoPassDetailOrBuilderList() {
+    return noPassDetail ;
+  }
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  @java.lang.Override
+  public int getNoPassDetailCount() {
+    return noPassDetail .size();
+  }
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.NoPassInfo getNoPassDetail(int index) {
+    return noPassDetail .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder getNoPassDetailOrBuilder(
+      int index) {
+    return noPassDetail .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -247,6 +300,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < noPassItems .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, noPassItems .getRaw(i));
+    }
+    for (int i = 0; i < noPassDetail .size(); i++) {
+      output.writeMessage(5, noPassDetail .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -276,6 +332,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getNoPassItemsList().size();
     }
+    for (int i = 0; i < noPassDetail .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, noPassDetail .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -299,6 +359,8 @@ private static final long serialVersionUID = 0L;
         != other.getRoomId()) return false;
     if (!getNoPassItemsList()
         .equals(other.getNoPassItemsList())) return false;
+    if (!getNoPassDetailList()
+        .equals(other.getNoPassDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -321,6 +383,10 @@ private static final long serialVersionUID = 0L;
     if (getNoPassItemsCount() > 0) {
       hash = (37 * hash) + NO_PASS_ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getNoPassItemsList().hashCode();
+    }
+    if (getNoPassDetailCount() > 0) {
+      hash = (37 * hash) + NO_PASS_DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getNoPassDetailList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -450,6 +516,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getNoPassDetailFieldBuilder();
       }
     }
     @java.lang.Override
@@ -463,6 +530,12 @@ private static final long serialVersionUID = 0L;
 
       noPassItems = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      if (noPassDetailBuilder == null) {
+        noPassDetail = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        noPassDetailBuilder .clear();
+      }
       return this;
     }
 
@@ -498,6 +571,15 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.noPassItems = noPassItems ;
+      if (noPassDetailBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          noPassDetail = java.util.Collections.unmodifiableList(noPassDetail );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.noPassDetail = noPassDetail ;
+      } else {
+        result.noPassDetail = noPassDetailBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -565,6 +647,32 @@ private static final long serialVersionUID = 0L;
           noPassItems .addAll(other.noPassItems );
         }
         onChanged();
+      }
+      if (noPassDetailBuilder == null) {
+        if (!other.noPassDetail .isEmpty()) {
+          if (noPassDetail .isEmpty()) {
+            noPassDetail = other.noPassDetail ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureNoPassDetailIsMutable();
+            noPassDetail .addAll(other.noPassDetail );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.noPassDetail .isEmpty()) {
+          if (noPassDetailBuilder .isEmpty()) {
+            noPassDetailBuilder .dispose();
+            noPassDetailBuilder = null;
+            noPassDetail = other.noPassDetail ;
+            bitField0 = (bitField0 & ~0x00000002);
+            noPassDetailBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getNoPassDetailFieldBuilder() : null;
+          } else {
+            noPassDetailBuilder .addAllMessages(other.noPassDetail );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -878,6 +986,246 @@ private static final long serialVersionUID = 0L;
       noPassItems .add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo> noPassDetail =
+      java.util.Collections.emptyList();
+    private void ensureNoPassDetailIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        noPassDetail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.NoPassInfo>(noPassDetail );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.NoPassInfo, com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder, com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder> noPassDetailBuilder ;
+
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo> getNoPassDetailList() {
+      if (noPassDetailBuilder == null) {
+        return java.util.Collections.unmodifiableList(noPassDetail );
+      } else {
+        return noPassDetailBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public int getNoPassDetailCount() {
+      if (noPassDetailBuilder == null) {
+        return noPassDetail .size();
+      } else {
+        return noPassDetailBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.NoPassInfo getNoPassDetail(int index) {
+      if (noPassDetailBuilder == null) {
+        return noPassDetail .get(index);
+      } else {
+        return noPassDetailBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder setNoPassDetail(
+        int index, com.zhijiejiaoyu.glory_api.live.NoPassInfo value) {
+      if (noPassDetailBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNoPassDetailIsMutable();
+        noPassDetail .set(index, value);
+        onChanged();
+      } else {
+        noPassDetailBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder setNoPassDetail(
+        int index, com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder builderForValue) {
+      if (noPassDetailBuilder == null) {
+        ensureNoPassDetailIsMutable();
+        noPassDetail .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        noPassDetailBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder addNoPassDetail(com.zhijiejiaoyu.glory_api.live.NoPassInfo value) {
+      if (noPassDetailBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNoPassDetailIsMutable();
+        noPassDetail .add(value);
+        onChanged();
+      } else {
+        noPassDetailBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder addNoPassDetail(
+        int index, com.zhijiejiaoyu.glory_api.live.NoPassInfo value) {
+      if (noPassDetailBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNoPassDetailIsMutable();
+        noPassDetail .add(index, value);
+        onChanged();
+      } else {
+        noPassDetailBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder addNoPassDetail(
+        com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder builderForValue) {
+      if (noPassDetailBuilder == null) {
+        ensureNoPassDetailIsMutable();
+        noPassDetail .add(builderForValue.build());
+        onChanged();
+      } else {
+        noPassDetailBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder addNoPassDetail(
+        int index, com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder builderForValue) {
+      if (noPassDetailBuilder == null) {
+        ensureNoPassDetailIsMutable();
+        noPassDetail .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        noPassDetailBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder addAllNoPassDetail(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.NoPassInfo> values) {
+      if (noPassDetailBuilder == null) {
+        ensureNoPassDetailIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, noPassDetail );
+        onChanged();
+      } else {
+        noPassDetailBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder clearNoPassDetail() {
+      if (noPassDetailBuilder == null) {
+        noPassDetail = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        noPassDetailBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public Builder removeNoPassDetail(int index) {
+      if (noPassDetailBuilder == null) {
+        ensureNoPassDetailIsMutable();
+        noPassDetail .remove(index);
+        onChanged();
+      } else {
+        noPassDetailBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder getNoPassDetailBuilder(
+        int index) {
+      return getNoPassDetailFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder getNoPassDetailOrBuilder(
+        int index) {
+      if (noPassDetailBuilder == null) {
+        return noPassDetail .get(index);  } else {
+        return noPassDetailBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder> 
+         getNoPassDetailOrBuilderList() {
+      if (noPassDetailBuilder != null) {
+        return noPassDetailBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(noPassDetail );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder addNoPassDetailBuilder() {
+      return getNoPassDetailFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.live.NoPassInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder addNoPassDetailBuilder(
+        int index) {
+      return getNoPassDetailFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.live.NoPassInfo.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder> 
+         getNoPassDetailBuilderList() {
+      return getNoPassDetailFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.live.NoPassInfo, com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder, com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder> 
+        getNoPassDetailFieldBuilder() {
+      if (noPassDetailBuilder == null) {
+        noPassDetailBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.live.NoPassInfo, com.zhijiejiaoyu.glory_api.live.NoPassInfo.Builder, com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder>(
+                noPassDetail ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        noPassDetail = null;
+      }
+      return noPassDetailBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

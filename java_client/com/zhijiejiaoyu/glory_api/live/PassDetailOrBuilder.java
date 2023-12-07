@@ -71,4 +71,28 @@ public interface PassDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNoPassItemsBytes(int index);
+
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.live.NoPassInfo> 
+      getNoPassDetailList();
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.NoPassInfo getNoPassDetail(int index);
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  int getNoPassDetailCount();
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder> 
+      getNoPassDetailOrBuilderList();
+  /**
+   * <code>repeated .glory_api.NoPassInfo no_pass_detail = 5;</code>
+   */
+  com.zhijiejiaoyu.glory_api.live.NoPassInfoOrBuilder getNoPassDetailOrBuilder(
+      int index);
 }
