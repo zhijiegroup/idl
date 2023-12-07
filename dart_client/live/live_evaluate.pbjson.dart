@@ -55,6 +55,7 @@ const EvaluateRoom$json = {
     {'1': 'order', '3': 7, '4': 1, '5': 3, '10': 'order'},
     {'1': 'ai_feedback', '3': 8, '4': 1, '5': 9, '10': 'aiFeedback'},
     {'1': 'evaluated_time', '3': 9, '4': 1, '5': 9, '10': 'evaluatedTime'},
+    {'1': 'evaluated_type', '3': 10, '4': 1, '5': 9, '10': 'evaluatedType'},
   ],
 };
 
@@ -64,7 +65,8 @@ final $typed_data.Uint8List evaluateRoomDescriptor = $convert.base64Decode(
     'ABKAlSCXJvb21UaXRsZRIZCghyb29tX3VybBgDIAEoCVIHcm9vbVVybBIUCgVzY29yZRgEIAEo'
     'AVIFc2NvcmUSGgoIZHVyYXRpb24YBSABKAFSCGR1cmF0aW9uEhIKBGxpa2UYBiABKANSBGxpa2'
     'USFAoFb3JkZXIYByABKANSBW9yZGVyEh8KC2FpX2ZlZWRiYWNrGAggASgJUgphaUZlZWRiYWNr'
-    'EiUKDmV2YWx1YXRlZF90aW1lGAkgASgJUg1ldmFsdWF0ZWRUaW1l');
+    'EiUKDmV2YWx1YXRlZF90aW1lGAkgASgJUg1ldmFsdWF0ZWRUaW1lEiUKDmV2YWx1YXRlZF90eX'
+    'BlGAogASgJUg1ldmFsdWF0ZWRUeXBl');
 
 @$core.Deprecated('Use evaluateDataDescriptor instead')
 const EvaluateData$json = {

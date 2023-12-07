@@ -148,6 +148,7 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     $fixnum.Int64? order,
     $core.String? aiFeedback,
     $core.String? evaluatedTime,
+    $core.String? evaluatedType,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -177,6 +178,9 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     if (evaluatedTime != null) {
       $result.evaluatedTime = evaluatedTime;
     }
+    if (evaluatedType != null) {
+      $result.evaluatedType = evaluatedType;
+    }
     return $result;
   }
   EvaluateRoom._() : super();
@@ -193,6 +197,7 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     ..aInt64(7, _omitFieldNames ? '' : 'order')
     ..aOS(8, _omitFieldNames ? '' : 'aiFeedback')
     ..aOS(9, _omitFieldNames ? '' : 'evaluatedTime')
+    ..aOS(10, _omitFieldNames ? '' : 'evaluatedType')
     ..hasRequiredFields = false
   ;
 
@@ -297,6 +302,15 @@ class EvaluateRoom extends $pb.GeneratedMessage {
   $core.bool hasEvaluatedTime() => $_has(8);
   @$pb.TagNumber(9)
   void clearEvaluatedTime() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get evaluatedType => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set evaluatedType($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasEvaluatedType() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEvaluatedType() => clearField(10);
 }
 
 class EvaluateData extends $pb.GeneratedMessage {

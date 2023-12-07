@@ -26,6 +26,7 @@ export interface EvaluateRoom {
   order?: string;
   ai_feedback?: string;
   evaluated_time?: string;
+  evaluated_type?: string;
 }
 
 export interface EvaluateData {

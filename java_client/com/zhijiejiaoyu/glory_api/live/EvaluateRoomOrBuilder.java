@@ -84,4 +84,16 @@ public interface EvaluateRoomOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEvaluatedTimeBytes();
+
+  /**
+   * <code>string evaluated_type = 10;</code>
+   * @return The evaluatedType.
+   */
+  java.lang.String getEvaluatedType();
+  /**
+   * <code>string evaluated_type = 10;</code>
+   * @return The bytes for evaluatedType.
+   */
+  com.google.protobuf.ByteString
+      getEvaluatedTypeBytes();
 }

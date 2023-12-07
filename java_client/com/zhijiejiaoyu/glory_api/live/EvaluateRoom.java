@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     roomUrl = "";
     aiFeedback = "";
     evaluatedTime = "";
+    evaluatedType = "";
   }
 
   @java.lang.Override
@@ -99,6 +100,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             evaluatedTime = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluatedType = s;
             break;
           }
           default: {
@@ -340,6 +347,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int EVALUATED_TYPE_FIELD_NUMBER = 10;
+  private volatile java.lang.Object evaluatedType ;
+  /**
+   * <code>string evaluated_type = 10;</code>
+   * @return The evaluatedType.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluatedType() {
+    java.lang.Object ref = evaluatedType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluatedType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string evaluated_type = 10;</code>
+   * @return The bytes for evaluatedType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluatedTypeBytes() {
+    java.lang.Object ref = evaluatedType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluatedType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -380,6 +425,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEvaluatedTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, evaluatedTime );
+    }
+    if (!getEvaluatedTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, evaluatedType );
     }
     unknownFields.writeTo(output);
   }
@@ -422,6 +470,9 @@ private static final long serialVersionUID = 0L;
     if (!getEvaluatedTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, evaluatedTime );
     }
+    if (!getEvaluatedTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, evaluatedType );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -457,6 +508,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAiFeedback())) return false;
     if (!getEvaluatedTime()
         .equals(other.getEvaluatedTime())) return false;
+    if (!getEvaluatedType()
+        .equals(other.getEvaluatedType())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -491,6 +544,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAiFeedback().hashCode();
     hash = (37 * hash) + EVALUATED_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getEvaluatedTime().hashCode();
+    hash = (37 * hash) + EVALUATED_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluatedType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -642,6 +697,8 @@ private static final long serialVersionUID = 0L;
 
       evaluatedTime = "";
 
+      evaluatedType = "";
+
       return this;
     }
 
@@ -677,6 +734,7 @@ private static final long serialVersionUID = 0L;
       result.order = order ;
       result.aiFeedback = aiFeedback ;
       result.evaluatedTime = evaluatedTime ;
+      result.evaluatedType = evaluatedType ;
       onBuilt();
       return result;
     }
@@ -754,6 +812,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getEvaluatedTime().isEmpty()) {
         evaluatedTime = other.evaluatedTime ;
+        onChanged();
+      }
+      if (!other.getEvaluatedType().isEmpty()) {
+        evaluatedType = other.evaluatedType ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1240,6 +1302,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       evaluatedTime = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluatedType = "";
+    /**
+     * <code>string evaluated_type = 10;</code>
+     * @return The evaluatedType.
+     */
+    public java.lang.String getEvaluatedType() {
+      java.lang.Object ref = evaluatedType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluatedType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string evaluated_type = 10;</code>
+     * @return The bytes for evaluatedType.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluatedTypeBytes() {
+      java.lang.Object ref = evaluatedType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluatedType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string evaluated_type = 10;</code>
+     * @param value The evaluatedType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatedType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluatedType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluated_type = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluatedType() {
+      
+      evaluatedType = getDefaultInstance().getEvaluatedType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluated_type = 10;</code>
+     * @param value The bytes for evaluatedType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatedTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluatedType = value;
       onChanged();
       return this;
     }
