@@ -134,9 +134,13 @@ message QuickEvaluationDetail {
     string key = 1;
     bool is_pass = 2;
     string detail = 3;
+    string type = 4;
 }
 
 message GetQuickEvaluationDetailResponse {
     base.BaseResponse base_resp = 1;
-    repeated QuickEvaluationDetail quick_evaluation_detail = 2;
+    int64 start_time = 2;
+    int64 end_time = 3;
+    bool result = 4;
+    repeated QuickEvaluationDetail quick_evaluation_detail = 5;
 }
