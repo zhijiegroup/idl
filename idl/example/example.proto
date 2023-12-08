@@ -3,11 +3,12 @@ package glory_api;
 option java_package = "com.zhijiejiaoyu.glory_api.example";
 option java_multiple_files = true;
 
+import "api.proto";
 import "base.proto";
 
 message Example {
   int64 example_id = 1;
-  string example_name = 2;
+  string example_name = 2[(api.vd)="@:len($)>0;msg:'name cannot be empty'"];
 }
 
 message ExampleWithAuthor {
