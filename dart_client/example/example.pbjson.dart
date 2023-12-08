@@ -18,14 +18,15 @@ const Example$json = {
   '1': 'Example',
   '2': [
     {'1': 'example_id', '3': 1, '4': 1, '5': 3, '10': 'exampleId'},
-    {'1': 'example_name', '3': 2, '4': 1, '5': 9, '10': 'exampleName'},
+    {'1': 'example_name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'exampleName'},
   ],
 };
 
 /// Descriptor for `Example`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List exampleDescriptor = $convert.base64Decode(
-    'CgdFeGFtcGxlEh0KCmV4YW1wbGVfaWQYASABKANSCWV4YW1wbGVJZBIhCgxleGFtcGxlX25hbW'
-    'UYAiABKAlSC2V4YW1wbGVOYW1l');
+    'CgdFeGFtcGxlEh0KCmV4YW1wbGVfaWQYASABKANSCWV4YW1wbGVJZBJMCgxleGFtcGxlX25hbW'
+    'UYAiABKAlCKdq7GCVAOmxlbigkKT4wO21zZzonbmFtZSBjYW5ub3QgYmUgZW1wdHknUgtleGFt'
+    'cGxlTmFtZQ==');
 
 @$core.Deprecated('Use exampleWithAuthorDescriptor instead')
 const ExampleWithAuthor$json = {

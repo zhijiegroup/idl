@@ -14,12 +14,12 @@ public interface ExampleOrBuilder extends
   long getExampleId();
 
   /**
-   * <code>string example_name = 2;</code>
+   * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
    * @return The exampleName.
    */
   java.lang.String getExampleName();
   /**
-   * <code>string example_name = 2;</code>
+   * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
    * @return The bytes for exampleName.
    */
   com.google.protobuf.ByteString

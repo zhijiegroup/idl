@@ -83,42 +83,45 @@ public final class ExampleOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025example/example.proto\022\tglory_api\032\nbase" +
-      ".proto\"3\n\007Example\022\022\n\nexample_id\030\001 \001(\003\022\024\n" +
-      "\014example_name\030\002 \001(\t\"_\n\021ExampleWithAuthor" +
-      "\022#\n\007example\030\001 \001(\0132\022.glory_api.Example\022%\n" +
-      "\013author_info\030\002 \001(\0132\020.base.AuthorInfo\"x\n\024" +
-      "CreateExampleRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022#\n\007example\030\002 \001(\0132\022" +
-      ".glory_api.Example\022\022\n\ncreated_by\030\003 \001(\t\"R" +
-      "\n\025CreateExampleResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022\022\n\nexample_id\030\002 \001" +
-      "(\003\"P\n\021GetExampleRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\022\n\nexample_id\030\002" +
-      " \001(\003\"q\n\022GetExampleResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\0224\n\016example_det" +
-      "ail\030\002 \001(\0132\034.glory_api.ExampleWithAuthor\"" +
-      "d\n\024UpdateExampleRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022#\n\007example\030\002 \001(" +
-      "\0132\022.glory_api.Example\"R\n\025UpdateExampleRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\022\n\nexample_id\030\002 \001(\003\"\200\001\n\022ListExampl" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\024\n\014example_name\030\002 \001(\t\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"\240\001\n" +
-      "\023ListExampleResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\0224\n\016example_detail\030\002 " +
-      "\003(\0132\034.glory_api.ExampleWithAuthor\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "S\n\024DeleteExampleRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\022\n\nexample_id\030\002" +
-      " \001(\003\">\n\025DeleteExampleResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponseB&\n\"com.zhij" +
-      "iejiaoyu.glory_api.exampleP\001b\006proto3"
+      "\n\025example/example.proto\022\tglory_api\032\tapi." +
+      "proto\032\nbase.proto\"^\n\007Example\022\022\n\nexample_" +
+      "id\030\001 \001(\003\022?\n\014example_name\030\002 \001(\tB)\332\273\030%@:le" +
+      "n($)>0;msg:\'name cannot be empty\'\"_\n\021Exa" +
+      "mpleWithAuthor\022#\n\007example\030\001 \001(\0132\022.glory_" +
+      "api.Example\022%\n\013author_info\030\002 \001(\0132\020.base." +
+      "AuthorInfo\"x\n\024CreateExampleRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022#\n\007e" +
+      "xample\030\002 \001(\0132\022.glory_api.Example\022\022\n\ncrea" +
+      "ted_by\030\003 \001(\t\"R\n\025CreateExampleResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\n" +
+      "example_id\030\002 \001(\003\"P\n\021GetExampleRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\022" +
+      "\n\nexample_id\030\002 \001(\003\"q\n\022GetExampleResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "4\n\016example_detail\030\002 \001(\0132\034.glory_api.Exam" +
+      "pleWithAuthor\"d\n\024UpdateExampleRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022#" +
+      "\n\007example\030\002 \001(\0132\022.glory_api.Example\"R\n\025U" +
+      "pdateExampleResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022\022\n\nexample_id\030\002 \001(\003\"" +
+      "\200\001\n\022ListExampleRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\024\n\014example_name\030" +
+      "\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
+      "ionRequest\"\240\001\n\023ListExampleResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0224\n\016exa" +
+      "mple_detail\030\002 \003(\0132\034.glory_api.ExampleWit" +
+      "hAuthor\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
+      "ationResponse\"S\n\024DeleteExampleRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\022" +
+      "\n\nexample_id\030\002 \001(\003\">\n\025DeleteExampleRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "seB&\n\"com.zhijiejiaoyu.glory_api.example" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.zhijiejiaoyu.api.Api.getDescriptor(),
           com.zhijiejiaoyu.base.Base.getDescriptor(),
         });
     internal_static_glory_api_Example_descriptor =
@@ -193,6 +196,12 @@ public final class ExampleOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteExampleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.zhijiejiaoyu.api.Api.vd);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

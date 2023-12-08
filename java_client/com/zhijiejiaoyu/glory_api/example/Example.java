@@ -106,7 +106,7 @@ private static final long serialVersionUID = 0L;
   public static final int EXAMPLE_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object exampleName ;
   /**
-   * <code>string example_name = 2;</code>
+   * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
    * @return The exampleName.
    */
   @java.lang.Override
@@ -123,7 +123,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string example_name = 2;</code>
+   * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
    * @return The bytes for exampleName.
    */
   @java.lang.Override
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object exampleName = "";
     /**
-     * <code>string example_name = 2;</code>
+     * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
      * @return The exampleName.
      */
     public java.lang.String getExampleName() {
@@ -510,7 +510,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string example_name = 2;</code>
+     * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
      * @return The bytes for exampleName.
      */
     public com.google.protobuf.ByteString
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string example_name = 2;</code>
+     * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
      * @param value The exampleName to set.
      * @return This builder for chaining.
      */
@@ -542,7 +542,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string example_name = 2;</code>
+     * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
      * @return This builder for chaining.
      */
     public Builder clearExampleName() {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string example_name = 2;</code>
+     * <code>string example_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'name cannot be empty&#92;'"];</code>
      * @param value The bytes for exampleName to set.
      * @return This builder for chaining.
      */
