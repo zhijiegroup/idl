@@ -135,6 +135,7 @@ message QuickEvaluationDetail {
     bool is_pass = 2;
     string detail = 3;
     string type = 4;
+    string ref_type_result = 5;
 }
 
 message GetQuickEvaluationDetailResponse {
