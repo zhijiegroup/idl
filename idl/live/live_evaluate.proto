@@ -26,13 +26,14 @@ message EvaluateRoom {
     string ai_feedback = 8;
     string evaluated_time = 9;
     string evaluated_type = 10;
+    bool quick_evaluation_is_pass = 11;
 
 }
 message EvaluateData {
     double average_score =1;
     double total_duration=2;
     int64 total_like = 3;
-    int64 total_order = 4;
+    int64 total_order = 4;    
     repeated EvaluateRoom evaluate_list = 5;
 }
 
