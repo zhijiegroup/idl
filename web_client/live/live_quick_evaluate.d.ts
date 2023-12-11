@@ -136,6 +136,7 @@ export interface QuickEvaluationDetail {
   is_pass?: boolean;
   detail?: string;
   type?: string;
+  ref_type_result?: string;
 }
 
 export interface GetQuickEvaluationDetailResponse {

@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     key = "";
     detail = "";
     type = "";
+    refTypeResult = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             type = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            refTypeResult = s;
             break;
           }
           default: {
@@ -231,6 +238,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int REF_TYPE_RESULT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object refTypeResult ;
+  /**
+   * <code>string ref_type_result = 5;</code>
+   * @return The refTypeResult.
+   */
+  @java.lang.Override
+  public java.lang.String getRefTypeResult() {
+    java.lang.Object ref = refTypeResult ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      refTypeResult = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string ref_type_result = 5;</code>
+   * @return The bytes for refTypeResult.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRefTypeResultBytes() {
+    java.lang.Object ref = refTypeResult ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      refTypeResult = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +302,9 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type );
     }
+    if (!getRefTypeResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, refTypeResult );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -278,6 +326,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type );
+    }
+    if (!getRefTypeResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, refTypeResult );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,6 +353,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDetail())) return false;
     if (!getType()
         .equals(other.getType())) return false;
+    if (!getRefTypeResult()
+        .equals(other.getRefTypeResult())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -322,6 +375,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDetail().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + REF_TYPE_RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getRefTypeResult().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +518,8 @@ private static final long serialVersionUID = 0L;
 
       type = "";
 
+      refTypeResult = "";
+
       return this;
     }
 
@@ -493,6 +550,7 @@ private static final long serialVersionUID = 0L;
       result.isPass = isPass ;
       result.detail = detail ;
       result.type = type ;
+      result.refTypeResult = refTypeResult ;
       onBuilt();
       return result;
     }
@@ -554,6 +612,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getType().isEmpty()) {
         type = other.type ;
+        onChanged();
+      }
+      if (!other.getRefTypeResult().isEmpty()) {
+        refTypeResult = other.refTypeResult ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -840,6 +902,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       type = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object refTypeResult = "";
+    /**
+     * <code>string ref_type_result = 5;</code>
+     * @return The refTypeResult.
+     */
+    public java.lang.String getRefTypeResult() {
+      java.lang.Object ref = refTypeResult ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refTypeResult = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string ref_type_result = 5;</code>
+     * @return The bytes for refTypeResult.
+     */
+    public com.google.protobuf.ByteString
+        getRefTypeResultBytes() {
+      java.lang.Object ref = refTypeResult ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refTypeResult = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string ref_type_result = 5;</code>
+     * @param value The refTypeResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefTypeResult(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      refTypeResult = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_type_result = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRefTypeResult() {
+      
+      refTypeResult = getDefaultInstance().getRefTypeResult();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_type_result = 5;</code>
+     * @param value The bytes for refTypeResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefTypeResultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      refTypeResult = value;
       onChanged();
       return this;
     }

@@ -193,15 +193,16 @@ public final class LiveQuickEvaluate {
       "se.BaseResponse\022\'\n\006report\030\002 \001(\0132\027.glory_" +
       "api.ReportDetail\"[\n\037GetQuickEvaluationDe" +
       "tailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\017\n\007room_id\030\002 \001(\003\"S\n\025QuickEv" +
+      ".BaseRequest\022\017\n\007room_id\030\002 \001(\003\"l\n\025QuickEv" +
       "aluationDetail\022\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002" +
-      " \001(\010\022\016\n\006detail\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\"\302\001\n G" +
-      "etQuickEvaluationDetailResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nstart_" +
-      "time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\016\n\006result\030\004" +
-      " \001(\010\022A\n\027quick_evaluation_detail\030\005 \003(\0132 ." +
-      "glory_api.QuickEvaluationDetailB#\n\037com.z" +
-      "hijiejiaoyu.glory_api.liveP\001b\006proto3"
+      " \001(\010\022\016\n\006detail\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\027\n\017re" +
+      "f_type_result\030\005 \001(\t\"\302\001\n GetQuickEvaluati" +
+      "onDetailResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010e" +
+      "nd_time\030\003 \001(\003\022\016\n\006result\030\004 \001(\010\022A\n\027quick_e" +
+      "valuation_detail\030\005 \003(\0132 .glory_api.Quick" +
+      "EvaluationDetailB#\n\037com.zhijiejiaoyu.glo" +
+      "ry_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -333,7 +334,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_QuickEvaluationDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QuickEvaluationDetail_descriptor,
-        new java.lang.String[] { "Key", "IsPass", "Detail", "Type", });
+        new java.lang.String[] { "Key", "IsPass", "Detail", "Type", "RefTypeResult", });
     internal_static_glory_api_GetQuickEvaluationDetailResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_GetQuickEvaluationDetailResponse_fieldAccessorTable = new

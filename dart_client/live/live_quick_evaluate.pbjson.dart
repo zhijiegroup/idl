@@ -350,13 +350,15 @@ const QuickEvaluationDetail$json = {
     {'1': 'is_pass', '3': 2, '4': 1, '5': 8, '10': 'isPass'},
     {'1': 'detail', '3': 3, '4': 1, '5': 9, '10': 'detail'},
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'ref_type_result', '3': 5, '4': 1, '5': 9, '10': 'refTypeResult'},
   ],
 };
 
 /// Descriptor for `QuickEvaluationDetail`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List quickEvaluationDetailDescriptor = $convert.base64Decode(
     'ChVRdWlja0V2YWx1YXRpb25EZXRhaWwSEAoDa2V5GAEgASgJUgNrZXkSFwoHaXNfcGFzcxgCIA'
-    'EoCFIGaXNQYXNzEhYKBmRldGFpbBgDIAEoCVIGZGV0YWlsEhIKBHR5cGUYBCABKAlSBHR5cGU=');
+    'EoCFIGaXNQYXNzEhYKBmRldGFpbBgDIAEoCVIGZGV0YWlsEhIKBHR5cGUYBCABKAlSBHR5cGUS'
+    'JgoPcmVmX3R5cGVfcmVzdWx0GAUgASgJUg1yZWZUeXBlUmVzdWx0');
 
 @$core.Deprecated('Use getQuickEvaluationDetailResponseDescriptor instead')
 const GetQuickEvaluationDetailResponse$json = {
