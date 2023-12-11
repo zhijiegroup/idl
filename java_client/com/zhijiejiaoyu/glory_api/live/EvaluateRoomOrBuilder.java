@@ -96,4 +96,10 @@ public interface EvaluateRoomOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEvaluatedTypeBytes();
+
+  /**
+   * <code>bool quick_evaluation_is_pass = 11;</code>
+   * @return The quickEvaluationIsPass.
+   */
+  boolean getQuickEvaluationIsPass();
 }

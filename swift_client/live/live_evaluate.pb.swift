@@ -92,6 +92,8 @@ struct GloryApi_EvaluateRoom {
 
   var evaluatedType: String = String()
 
+  var quickEvaluationIsPass: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1473,6 +1475,7 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     8: .standard(proto: "ai_feedback"),
     9: .standard(proto: "evaluated_time"),
     10: .standard(proto: "evaluated_type"),
+    11: .standard(proto: "quick_evaluation_is_pass"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1491,6 +1494,7 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 8: try { try decoder.decodeSingularStringField(value: &self.aiFeedback) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.evaluatedTime) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.evaluatedType) }()
+      case 11: try { try decoder.decodeSingularBoolField(value: &self.quickEvaluationIsPass) }()
       default: break
       }
     }
@@ -1527,6 +1531,9 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.evaluatedType.isEmpty {
       try visitor.visitSingularStringField(value: self.evaluatedType, fieldNumber: 10)
     }
+    if self.quickEvaluationIsPass != false {
+      try visitor.visitSingularBoolField(value: self.quickEvaluationIsPass, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1541,6 +1548,7 @@ extension GloryApi_EvaluateRoom: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.aiFeedback != rhs.aiFeedback {return false}
     if lhs.evaluatedTime != rhs.evaluatedTime {return false}
     if lhs.evaluatedType != rhs.evaluatedType {return false}
+    if lhs.quickEvaluationIsPass != rhs.quickEvaluationIsPass {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

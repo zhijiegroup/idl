@@ -27,6 +27,7 @@ export interface EvaluateRoom {
   ai_feedback?: string;
   evaluated_time?: string;
   evaluated_type?: string;
+  quick_evaluation_is_pass?: boolean;
 }
 
 export interface EvaluateData {

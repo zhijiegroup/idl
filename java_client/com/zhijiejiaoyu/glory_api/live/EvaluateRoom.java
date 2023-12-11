@@ -108,6 +108,11 @@ private static final long serialVersionUID = 0L;
             evaluatedType = s;
             break;
           }
+          case 88: {
+
+            quickEvaluationIsPass = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -385,6 +390,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int QUICK_EVALUATION_IS_PASS_FIELD_NUMBER = 11;
+  private boolean quickEvaluationIsPass ;
+  /**
+   * <code>bool quick_evaluation_is_pass = 11;</code>
+   * @return The quickEvaluationIsPass.
+   */
+  @java.lang.Override
+  public boolean getQuickEvaluationIsPass() {
+    return quickEvaluationIsPass ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -428,6 +444,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEvaluatedTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, evaluatedType );
+    }
+    if (quickEvaluationIsPass != false) {
+      output.writeBool(11, quickEvaluationIsPass );
     }
     unknownFields.writeTo(output);
   }
@@ -473,6 +492,10 @@ private static final long serialVersionUID = 0L;
     if (!getEvaluatedTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, evaluatedType );
     }
+    if (quickEvaluationIsPass != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, quickEvaluationIsPass );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -510,6 +533,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEvaluatedTime())) return false;
     if (!getEvaluatedType()
         .equals(other.getEvaluatedType())) return false;
+    if (getQuickEvaluationIsPass()
+        != other.getQuickEvaluationIsPass()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -546,6 +571,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEvaluatedTime().hashCode();
     hash = (37 * hash) + EVALUATED_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getEvaluatedType().hashCode();
+    hash = (37 * hash) + QUICK_EVALUATION_IS_PASS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getQuickEvaluationIsPass());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -699,6 +727,8 @@ private static final long serialVersionUID = 0L;
 
       evaluatedType = "";
 
+      quickEvaluationIsPass = false;
+
       return this;
     }
 
@@ -735,6 +765,7 @@ private static final long serialVersionUID = 0L;
       result.aiFeedback = aiFeedback ;
       result.evaluatedTime = evaluatedTime ;
       result.evaluatedType = evaluatedType ;
+      result.quickEvaluationIsPass = quickEvaluationIsPass ;
       onBuilt();
       return result;
     }
@@ -817,6 +848,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getEvaluatedType().isEmpty()) {
         evaluatedType = other.evaluatedType ;
         onChanged();
+      }
+      if (other.getQuickEvaluationIsPass() != false) {
+        setQuickEvaluationIsPass(other.getQuickEvaluationIsPass());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1378,6 +1412,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       evaluatedType = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean quickEvaluationIsPass ;
+    /**
+     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * @return The quickEvaluationIsPass.
+     */
+    @java.lang.Override
+    public boolean getQuickEvaluationIsPass() {
+      return quickEvaluationIsPass ;
+    }
+    /**
+     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * @param value The quickEvaluationIsPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuickEvaluationIsPass(boolean value) {
+      
+      quickEvaluationIsPass = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQuickEvaluationIsPass() {
+      
+      quickEvaluationIsPass = false;
       onChanged();
       return this;
     }

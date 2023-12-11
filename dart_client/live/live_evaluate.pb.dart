@@ -149,6 +149,7 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     $core.String? aiFeedback,
     $core.String? evaluatedTime,
     $core.String? evaluatedType,
+    $core.bool? quickEvaluationIsPass,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -181,6 +182,9 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     if (evaluatedType != null) {
       $result.evaluatedType = evaluatedType;
     }
+    if (quickEvaluationIsPass != null) {
+      $result.quickEvaluationIsPass = quickEvaluationIsPass;
+    }
     return $result;
   }
   EvaluateRoom._() : super();
@@ -198,6 +202,7 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'aiFeedback')
     ..aOS(9, _omitFieldNames ? '' : 'evaluatedTime')
     ..aOS(10, _omitFieldNames ? '' : 'evaluatedType')
+    ..aOB(11, _omitFieldNames ? '' : 'quickEvaluationIsPass')
     ..hasRequiredFields = false
   ;
 
@@ -311,6 +316,15 @@ class EvaluateRoom extends $pb.GeneratedMessage {
   $core.bool hasEvaluatedType() => $_has(9);
   @$pb.TagNumber(10)
   void clearEvaluatedType() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get quickEvaluationIsPass => $_getBF(10);
+  @$pb.TagNumber(11)
+  set quickEvaluationIsPass($core.bool v) { $_setBool(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasQuickEvaluationIsPass() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearQuickEvaluationIsPass() => clearField(11);
 }
 
 class EvaluateData extends $pb.GeneratedMessage {
