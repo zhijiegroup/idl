@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListPersonalEvaluateRequest() {
+    evaluationType = "";
   }
 
   @java.lang.Override
@@ -64,6 +65,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             userId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluationType = s;
             break;
           }
           case 802: {
@@ -148,6 +155,52 @@ private static final long serialVersionUID = 0L;
     return userId ;
   }
 
+  public static final int EVALUATION_TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object evaluationType ;
+  /**
+   * <pre>
+   * standard/quick/close
+   * </pre>
+   *
+   * <code>string evaluation_type = 3;</code>
+   * @return The evaluationType.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluationType() {
+    java.lang.Object ref = evaluationType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluationType = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * standard/quick/close
+   * </pre>
+   *
+   * <code>string evaluation_type = 3;</code>
+   * @return The bytes for evaluationType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluationTypeBytes() {
+    java.lang.Object ref = evaluationType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluationType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -194,6 +247,9 @@ private static final long serialVersionUID = 0L;
     if (userId != 0L) {
       output.writeInt64(2, userId );
     }
+    if (!getEvaluationTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, evaluationType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -213,6 +269,9 @@ private static final long serialVersionUID = 0L;
     if (userId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, userId );
+    }
+    if (!getEvaluationTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, evaluationType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -240,6 +299,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getUserId()
         != other.getUserId()) return false;
+    if (!getEvaluationType()
+        .equals(other.getEvaluationType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -263,6 +324,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserId());
+    hash = (37 * hash) + EVALUATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -408,6 +471,8 @@ private static final long serialVersionUID = 0L;
       }
       userId = 0L;
 
+      evaluationType = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -446,6 +511,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.userId = userId ;
+      result.evaluationType = evaluationType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -504,6 +570,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUserId() != 0L) {
         setUserId(other.getUserId());
+      }
+      if (!other.getEvaluationType().isEmpty()) {
+        evaluationType = other.evaluationType ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -683,6 +753,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearUserId() {
       
       userId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluationType = "";
+    /**
+     * <pre>
+     * standard/quick/close
+     * </pre>
+     *
+     * <code>string evaluation_type = 3;</code>
+     * @return The evaluationType.
+     */
+    public java.lang.String getEvaluationType() {
+      java.lang.Object ref = evaluationType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluationType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * standard/quick/close
+     * </pre>
+     *
+     * <code>string evaluation_type = 3;</code>
+     * @return The bytes for evaluationType.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluationTypeBytes() {
+      java.lang.Object ref = evaluationType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluationType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * standard/quick/close
+     * </pre>
+     *
+     * <code>string evaluation_type = 3;</code>
+     * @param value The evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluationType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * standard/quick/close
+     * </pre>
+     *
+     * <code>string evaluation_type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationType() {
+      
+      evaluationType = getDefaultInstance().getEvaluationType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * standard/quick/close
+     * </pre>
+     *
+     * <code>string evaluation_type = 3;</code>
+     * @param value The bytes for evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluationType = value;
       onChanged();
       return this;
     }

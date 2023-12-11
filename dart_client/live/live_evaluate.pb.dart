@@ -431,6 +431,7 @@ class ListPersonalEvaluateRequest extends $pb.GeneratedMessage {
   factory ListPersonalEvaluateRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? userId,
+    $core.String? evaluationType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -439,6 +440,9 @@ class ListPersonalEvaluateRequest extends $pb.GeneratedMessage {
     }
     if (userId != null) {
       $result.userId = userId;
+    }
+    if (evaluationType != null) {
+      $result.evaluationType = evaluationType;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -452,6 +456,7 @@ class ListPersonalEvaluateRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPersonalEvaluateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'evaluationType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -497,16 +502,25 @@ class ListPersonalEvaluateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearUserId() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $core.String get evaluationType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set evaluationType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEvaluationType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEvaluationType() => clearField(3);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(2);
+  $0.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(2);
+  $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(2);
+  $0.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListPersonalEvaluateResponse extends $pb.GeneratedMessage {

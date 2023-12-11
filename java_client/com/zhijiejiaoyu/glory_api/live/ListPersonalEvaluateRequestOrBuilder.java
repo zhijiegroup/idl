@@ -29,6 +29,26 @@ public interface ListPersonalEvaluateRequestOrBuilder extends
   long getUserId();
 
   /**
+   * <pre>
+   * standard/quick/close
+   * </pre>
+   *
+   * <code>string evaluation_type = 3;</code>
+   * @return The evaluationType.
+   */
+  java.lang.String getEvaluationType();
+  /**
+   * <pre>
+   * standard/quick/close
+   * </pre>
+   *
+   * <code>string evaluation_type = 3;</code>
+   * @return The bytes for evaluationType.
+   */
+  com.google.protobuf.ByteString
+      getEvaluationTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

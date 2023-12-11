@@ -95,6 +95,7 @@ const ListPersonalEvaluateRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'evaluation_type', '3': 3, '4': 1, '5': 9, '10': 'evaluationType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -102,8 +103,9 @@ const ListPersonalEvaluateRequest$json = {
 /// Descriptor for `ListPersonalEvaluateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listPersonalEvaluateRequestDescriptor = $convert.base64Decode(
     'ChtMaXN0UGVyc29uYWxFdmFsdWF0ZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
-    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFwoHdXNlcl9pZBgCIAEoA1IGdXNlcklkEjcK'
-    'CnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFwoHdXNlcl9pZBgCIAEoA1IGdXNlcklkEicK'
+    'D2V2YWx1YXRpb25fdHlwZRgDIAEoCVIOZXZhbHVhdGlvblR5cGUSNwoKcGFnaW5hdGlvbhhkIA'
+    'EoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listPersonalEvaluateResponseDescriptor instead')
 const ListPersonalEvaluateResponse$json = {

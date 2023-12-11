@@ -41,6 +41,8 @@ export interface EvaluateData {
 export interface ListPersonalEvaluateRequest {
   base_request?: base.BaseRequest;
   user_id?: string;
+  /** standard/quick/close */
+  evaluation_type?: string;
   pagination?: base.PaginationRequest;
 }
 
