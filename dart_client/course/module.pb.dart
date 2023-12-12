@@ -21,6 +21,7 @@ class CourseResource extends $pb.GeneratedMessage {
     $fixnum.Int64? resourceId,
     $core.String? resourceName,
     $core.int? resourceType,
+    $core.String? contentType,
     $core.String? resourcePath,
     $core.String? resourceUrl,
     $core.String? resourceContent,
@@ -34,6 +35,9 @@ class CourseResource extends $pb.GeneratedMessage {
     }
     if (resourceType != null) {
       $result.resourceType = resourceType;
+    }
+    if (contentType != null) {
+      $result.contentType = contentType;
     }
     if (resourcePath != null) {
       $result.resourcePath = resourcePath;
@@ -54,9 +58,10 @@ class CourseResource extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'resourceType', $pb.PbFieldType.O3)
-    ..aOS(4, _omitFieldNames ? '' : 'resourcePath')
-    ..aOS(5, _omitFieldNames ? '' : 'resourceUrl')
-    ..aOS(6, _omitFieldNames ? '' : 'resourceContent')
+    ..aOS(4, _omitFieldNames ? '' : 'contentType')
+    ..aOS(5, _omitFieldNames ? '' : 'resourcePath')
+    ..aOS(6, _omitFieldNames ? '' : 'resourceUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'resourceContent')
     ..hasRequiredFields = false
   ;
 
@@ -109,31 +114,40 @@ class CourseResource extends $pb.GeneratedMessage {
   void clearResourceType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get resourcePath => $_getSZ(3);
+  $core.String get contentType => $_getSZ(3);
   @$pb.TagNumber(4)
-  set resourcePath($core.String v) { $_setString(3, v); }
+  set contentType($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasResourcePath() => $_has(3);
+  $core.bool hasContentType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearResourcePath() => clearField(4);
+  void clearContentType() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get resourceUrl => $_getSZ(4);
+  $core.String get resourcePath => $_getSZ(4);
   @$pb.TagNumber(5)
-  set resourceUrl($core.String v) { $_setString(4, v); }
+  set resourcePath($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasResourceUrl() => $_has(4);
+  $core.bool hasResourcePath() => $_has(4);
   @$pb.TagNumber(5)
-  void clearResourceUrl() => clearField(5);
+  void clearResourcePath() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get resourceContent => $_getSZ(5);
+  $core.String get resourceUrl => $_getSZ(5);
   @$pb.TagNumber(6)
-  set resourceContent($core.String v) { $_setString(5, v); }
+  set resourceUrl($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasResourceContent() => $_has(5);
+  $core.bool hasResourceUrl() => $_has(5);
   @$pb.TagNumber(6)
-  void clearResourceContent() => clearField(6);
+  void clearResourceUrl() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get resourceContent => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set resourceContent($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasResourceContent() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResourceContent() => clearField(7);
 }
 
 class CourseChapter extends $pb.GeneratedMessage {

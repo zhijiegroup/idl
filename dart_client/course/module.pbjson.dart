@@ -20,9 +20,10 @@ const CourseResource$json = {
     {'1': 'resource_id', '3': 1, '4': 1, '5': 3, '10': 'resourceId'},
     {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
     {'1': 'resource_type', '3': 3, '4': 1, '5': 5, '10': 'resourceType'},
-    {'1': 'resource_path', '3': 4, '4': 1, '5': 9, '10': 'resourcePath'},
-    {'1': 'resource_url', '3': 5, '4': 1, '5': 9, '10': 'resourceUrl'},
-    {'1': 'resource_content', '3': 6, '4': 1, '5': 9, '10': 'resourceContent'},
+    {'1': 'content_type', '3': 4, '4': 1, '5': 9, '10': 'contentType'},
+    {'1': 'resource_path', '3': 5, '4': 1, '5': 9, '10': 'resourcePath'},
+    {'1': 'resource_url', '3': 6, '4': 1, '5': 9, '10': 'resourceUrl'},
+    {'1': 'resource_content', '3': 7, '4': 1, '5': 9, '10': 'resourceContent'},
   ],
 };
 
@@ -30,9 +31,9 @@ const CourseResource$json = {
 final $typed_data.Uint8List courseResourceDescriptor = $convert.base64Decode(
     'Cg5Db3Vyc2VSZXNvdXJjZRIfCgtyZXNvdXJjZV9pZBgBIAEoA1IKcmVzb3VyY2VJZBIjCg1yZX'
     'NvdXJjZV9uYW1lGAIgASgJUgxyZXNvdXJjZU5hbWUSIwoNcmVzb3VyY2VfdHlwZRgDIAEoBVIM'
-    'cmVzb3VyY2VUeXBlEiMKDXJlc291cmNlX3BhdGgYBCABKAlSDHJlc291cmNlUGF0aBIhCgxyZX'
-    'NvdXJjZV91cmwYBSABKAlSC3Jlc291cmNlVXJsEikKEHJlc291cmNlX2NvbnRlbnQYBiABKAlS'
-    'D3Jlc291cmNlQ29udGVudA==');
+    'cmVzb3VyY2VUeXBlEiEKDGNvbnRlbnRfdHlwZRgEIAEoCVILY29udGVudFR5cGUSIwoNcmVzb3'
+    'VyY2VfcGF0aBgFIAEoCVIMcmVzb3VyY2VQYXRoEiEKDHJlc291cmNlX3VybBgGIAEoCVILcmVz'
+    'b3VyY2VVcmwSKQoQcmVzb3VyY2VfY29udGVudBgHIAEoCVIPcmVzb3VyY2VDb250ZW50');
 
 @$core.Deprecated('Use courseChapterDescriptor instead')
 const CourseChapter$json = {

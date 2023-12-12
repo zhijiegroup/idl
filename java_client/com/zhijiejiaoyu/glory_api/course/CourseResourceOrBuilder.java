@@ -39,7 +39,7 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课程资源类型：1.教学视频；2.教学PPT；3.课后习题；4.教案
+   * 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案
    * </pre>
    *
    * <code>int32 resource_type = 3;</code>
@@ -49,10 +49,30 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
+   * 课件类型：0.默认；1.PPT；2.PDF
+   * </pre>
+   *
+   * <code>string content_type = 4;</code>
+   * @return The contentType.
+   */
+  java.lang.String getContentType();
+  /**
+   * <pre>
+   * 课件类型：0.默认；1.PPT；2.PDF
+   * </pre>
+   *
+   * <code>string content_type = 4;</code>
+   * @return The bytes for contentType.
+   */
+  com.google.protobuf.ByteString
+      getContentTypeBytes();
+
+  /**
+   * <pre>
    * 课程资源OSS路径，用于教学视频和教学PPT
    * </pre>
    *
-   * <code>string resource_path = 4;</code>
+   * <code>string resource_path = 5;</code>
    * @return The resourcePath.
    */
   java.lang.String getResourcePath();
@@ -61,7 +81,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源OSS路径，用于教学视频和教学PPT
    * </pre>
    *
-   * <code>string resource_path = 4;</code>
+   * <code>string resource_path = 5;</code>
    * @return The bytes for resourcePath.
    */
   com.google.protobuf.ByteString
@@ -72,7 +92,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源URL
    * </pre>
    *
-   * <code>string resource_url = 5;</code>
+   * <code>string resource_url = 6;</code>
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
@@ -81,7 +101,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源URL
    * </pre>
    *
-   * <code>string resource_url = 5;</code>
+   * <code>string resource_url = 6;</code>
    * @return The bytes for resourceUrl.
    */
   com.google.protobuf.ByteString
@@ -92,7 +112,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源内容，用于课后习题和教案
    * </pre>
    *
-   * <code>string resource_content = 6;</code>
+   * <code>string resource_content = 7;</code>
    * @return The resourceContent.
    */
   java.lang.String getResourceContent();
@@ -101,7 +121,7 @@ public interface CourseResourceOrBuilder extends
    * 课程资源内容，用于课后习题和教案
    * </pre>
    *
-   * <code>string resource_content = 6;</code>
+   * <code>string resource_content = 7;</code>
    * @return The bytes for resourceContent.
    */
   com.google.protobuf.ByteString
