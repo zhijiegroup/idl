@@ -59,6 +59,7 @@ import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
+import 'task/system_task.pb.dart' as $51;
 import 'tenant/tenant.pb.dart' as $30;
 import 'tenant/tenant_config.pb.dart' as $33;
 import 'tenant/tenant_dept.pb.dart' as $31;
@@ -331,6 +332,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$36.UpdateActivityResponse> updateActivity($pb.ServerContext ctx, $36.UpdateActivityRequest request);
   $async.Future<$36.DeleteActivityResponse> deleteActivity($pb.ServerContext ctx, $36.DeleteActivityRequest request);
   $async.Future<$36.DisableActivityResponse> disableActivity($pb.ServerContext ctx, $36.DisableActivityRequest request);
+  $async.Future<$24.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct($pb.ServerContext ctx, $24.GetCouponAndIntroducingProductRequest request);
   $async.Future<$37.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ServerContext ctx, $37.CreateCourseMaterialBoxRequest request);
   $async.Future<$37.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ServerContext ctx, $37.UpdateCourseMaterialBoxRequest request);
   $async.Future<$37.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ServerContext ctx, $37.ListCourseMaterialBoxRequest request);
@@ -407,6 +409,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
+  $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
+  $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -670,6 +674,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateActivity': return $36.UpdateActivityRequest();
       case 'DeleteActivity': return $36.DeleteActivityRequest();
       case 'DisableActivity': return $36.DisableActivityRequest();
+      case 'GetCouponAndIntroducingProduct': return $24.GetCouponAndIntroducingProductRequest();
       case 'CreateCourseMaterialBox': return $37.CreateCourseMaterialBoxRequest();
       case 'UpdateCourseMaterialBox': return $37.UpdateCourseMaterialBoxRequest();
       case 'ListCourseMaterialBox': return $37.ListCourseMaterialBoxRequest();
@@ -746,6 +751,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
+      case 'ListSystemTask': return $51.ListSystemTaskRequest();
+      case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1012,6 +1019,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateActivity': return this.updateActivity(ctx, request as $36.UpdateActivityRequest);
       case 'DeleteActivity': return this.deleteActivity(ctx, request as $36.DeleteActivityRequest);
       case 'DisableActivity': return this.disableActivity(ctx, request as $36.DisableActivityRequest);
+      case 'GetCouponAndIntroducingProduct': return this.getCouponAndIntroducingProduct(ctx, request as $24.GetCouponAndIntroducingProductRequest);
       case 'CreateCourseMaterialBox': return this.createCourseMaterialBox(ctx, request as $37.CreateCourseMaterialBoxRequest);
       case 'UpdateCourseMaterialBox': return this.updateCourseMaterialBox(ctx, request as $37.UpdateCourseMaterialBoxRequest);
       case 'ListCourseMaterialBox': return this.listCourseMaterialBox(ctx, request as $37.ListCourseMaterialBoxRequest);
@@ -1088,6 +1096,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
+      case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
+      case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

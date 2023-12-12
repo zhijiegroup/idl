@@ -253,6 +253,17 @@ message GetLiveReplayResponse{
   repeated string replay_url = 2;
 }
 
+message GetCouponAndIntroducingProductRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+}
+
+message GetCouponAndIntroducingProductResponse {
+  base.BaseResponse base_resp = 1;
+  int64 product_id = 2;
+  repeated int64 coupon_ids = 3;
+}
+
 
 
 

@@ -3361,6 +3361,146 @@ class GetLiveReplayResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get replayUrl => $_getList(1);
 }
 
+class GetCouponAndIntroducingProductRequest extends $pb.GeneratedMessage {
+  factory GetCouponAndIntroducingProductRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? shopId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    return $result;
+  }
+  GetCouponAndIntroducingProductRequest._() : super();
+  factory GetCouponAndIntroducingProductRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCouponAndIntroducingProductRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCouponAndIntroducingProductRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'shopId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCouponAndIntroducingProductRequest clone() => GetCouponAndIntroducingProductRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCouponAndIntroducingProductRequest copyWith(void Function(GetCouponAndIntroducingProductRequest) updates) => super.copyWith((message) => updates(message as GetCouponAndIntroducingProductRequest)) as GetCouponAndIntroducingProductRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCouponAndIntroducingProductRequest create() => GetCouponAndIntroducingProductRequest._();
+  GetCouponAndIntroducingProductRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCouponAndIntroducingProductRequest> createRepeated() => $pb.PbList<GetCouponAndIntroducingProductRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCouponAndIntroducingProductRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCouponAndIntroducingProductRequest>(create);
+  static GetCouponAndIntroducingProductRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get shopId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set shopId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasShopId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShopId() => clearField(2);
+}
+
+class GetCouponAndIntroducingProductResponse extends $pb.GeneratedMessage {
+  factory GetCouponAndIntroducingProductResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? productId,
+    $core.Iterable<$fixnum.Int64>? couponIds,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (productId != null) {
+      $result.productId = productId;
+    }
+    if (couponIds != null) {
+      $result.couponIds.addAll(couponIds);
+    }
+    return $result;
+  }
+  GetCouponAndIntroducingProductResponse._() : super();
+  factory GetCouponAndIntroducingProductResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCouponAndIntroducingProductResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCouponAndIntroducingProductResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'productId')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'couponIds', $pb.PbFieldType.K6)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCouponAndIntroducingProductResponse clone() => GetCouponAndIntroducingProductResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCouponAndIntroducingProductResponse copyWith(void Function(GetCouponAndIntroducingProductResponse) updates) => super.copyWith((message) => updates(message as GetCouponAndIntroducingProductResponse)) as GetCouponAndIntroducingProductResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCouponAndIntroducingProductResponse create() => GetCouponAndIntroducingProductResponse._();
+  GetCouponAndIntroducingProductResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCouponAndIntroducingProductResponse> createRepeated() => $pb.PbList<GetCouponAndIntroducingProductResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCouponAndIntroducingProductResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCouponAndIntroducingProductResponse>(create);
+  static GetCouponAndIntroducingProductResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get productId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set productId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasProductId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProductId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get couponIds => $_getList(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -199,6 +199,16 @@ public final class LiveRoom {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetLiveReplayResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCouponAndIntroducingProductRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCouponAndIntroducingProductRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetCouponAndIntroducingProductResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetCouponAndIntroducingProductResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -320,8 +330,13 @@ public final class LiveRoom {
       "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001" +
       "(\003\"R\n\025GetLiveReplayResponse\022%\n\tbase_resp" +
       "\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nreplay_url" +
-      "\030\002 \003(\tB#\n\037com.zhijiejiaoyu.glory_api.liv" +
-      "eP\001b\006proto3"
+      "\030\002 \003(\t\"a\n%GetCouponAndIntroducingProduct" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\017\n\007shop_id\030\002 \001(\003\"w\n&GetCouponAn" +
+      "dIntroducingProductResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduct_id" +
+      "\030\002 \001(\003\022\022\n\ncoupon_ids\030\003 \003(\003B#\n\037com.zhijie" +
+      "jiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -550,6 +565,18 @@ public final class LiveRoom {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveReplayResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ReplayUrl", });
+    internal_static_glory_api_GetCouponAndIntroducingProductRequest_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_glory_api_GetCouponAndIntroducingProductRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCouponAndIntroducingProductRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ShopId", });
+    internal_static_glory_api_GetCouponAndIntroducingProductResponse_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_glory_api_GetCouponAndIntroducingProductResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetCouponAndIntroducingProductResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ProductId", "CouponIds", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

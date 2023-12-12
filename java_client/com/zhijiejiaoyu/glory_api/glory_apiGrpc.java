@@ -8075,6 +8075,37 @@ public final class glory_apiGrpc {
     return getDisableActivityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest,
+      com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> getGetCouponAndIntroducingProductMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCouponAndIntroducingProduct",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest,
+      com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> getGetCouponAndIntroducingProductMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest, com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> getGetCouponAndIntroducingProductMethod;
+    if ((getGetCouponAndIntroducingProductMethod = glory_apiGrpc.getGetCouponAndIntroducingProductMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCouponAndIntroducingProductMethod = glory_apiGrpc.getGetCouponAndIntroducingProductMethod) == null) {
+          glory_apiGrpc.getGetCouponAndIntroducingProductMethod = getGetCouponAndIntroducingProductMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest, com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCouponAndIntroducingProduct"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCouponAndIntroducingProduct"))
+              .build();
+        }
+      }
+    }
+    return getGetCouponAndIntroducingProductMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest,
       com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse> getCreateCourseMaterialBoxMethod;
 
@@ -10431,6 +10462,68 @@ public final class glory_apiGrpc {
     return getGetQuickEvaluationDetailMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSystemTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
+    if ((getListSystemTaskMethod = glory_apiGrpc.getListSystemTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListSystemTaskMethod = glory_apiGrpc.getListSystemTaskMethod) == null) {
+          glory_apiGrpc.getListSystemTaskMethod = getListSystemTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSystemTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListSystemTask"))
+              .build();
+        }
+      }
+    }
+    return getListSystemTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSystemTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod;
+    if ((getUpdateSystemTaskMethod = glory_apiGrpc.getUpdateSystemTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateSystemTaskMethod = glory_apiGrpc.getUpdateSystemTaskMethod) == null) {
+          glory_apiGrpc.getUpdateSystemTaskMethod = getUpdateSystemTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSystemTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateSystemTask"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSystemTaskMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -12496,6 +12589,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取正在讲解的商品和发放中的优惠券
+     * </pre>
+     */
+    default void getCouponAndIntroducingProduct(com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCouponAndIntroducingProductMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 素材库
      * 创建画板
      * </pre>
@@ -13165,6 +13268,23 @@ public final class glory_apiGrpc {
     default void getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuickEvaluationDetailMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    default void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSystemTaskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSystemTaskMethod(), responseObserver);
     }
   }
 
@@ -15472,6 +15592,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取正在讲解的商品和发放中的优惠券
+     * </pre>
+     */
+    public void getCouponAndIntroducingProduct(com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCouponAndIntroducingProductMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 素材库
      * 创建画板
      * </pre>
@@ -16217,6 +16348,25 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetQuickEvaluationDetailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSystemTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -18253,6 +18403,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取正在讲解的商品和发放中的优惠券
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse getCouponAndIntroducingProduct(com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCouponAndIntroducingProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * 素材库
      * 创建画板
      * </pre>
@@ -18922,6 +19082,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQuickEvaluationDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSystemTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSystemTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -21218,6 +21395,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取正在讲解的商品和发放中的优惠券
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct(
+        com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCouponAndIntroducingProductMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 素材库
      * 创建画板
      * </pre>
@@ -21964,6 +22152,25 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetQuickEvaluationDetailMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> listSystemTask(
+        com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSystemTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> updateSystemTask(
+        com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -22226,82 +22433,85 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_ACTIVITY = 257;
   private static final int METHODID_DELETE_ACTIVITY = 258;
   private static final int METHODID_DISABLE_ACTIVITY = 259;
-  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 260;
-  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 261;
-  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 262;
-  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 263;
-  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 264;
-  private static final int METHODID_LIST_COURSE_MATERIAL = 265;
-  private static final int METHODID_DELETE_COURSE_MATERIAL = 266;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 267;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 268;
-  private static final int METHODID_CREATE_COURSE_MODULE = 269;
-  private static final int METHODID_GET_COURSE_MODULE = 270;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 271;
-  private static final int METHODID_DELETE_COURSE_MODULE = 272;
-  private static final int METHODID_LIST_COURSE_MODULE = 273;
-  private static final int METHODID_LIST_LATEST_COURSE = 274;
-  private static final int METHODID_LIST_HOTEST_COURSE = 275;
-  private static final int METHODID_CREATE_CM_COURSE = 276;
-  private static final int METHODID_PREVIEW_CM_COURSE = 277;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 278;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 279;
-  private static final int METHODID_CREATE_NM_COURSE = 280;
-  private static final int METHODID_LIST_NM_COURSE = 281;
-  private static final int METHODID_NM_COURSE_DETAIL = 282;
-  private static final int METHODID_DELETE_NM_COURSE = 283;
-  private static final int METHODID_CREATE_COURSE = 284;
-  private static final int METHODID_GET_COURSE = 285;
-  private static final int METHODID_UPDATE_COURSE = 286;
-  private static final int METHODID_DELETE_COURSE = 287;
-  private static final int METHODID_LIST_COURSE = 288;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 289;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 290;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 291;
-  private static final int METHODID_GET_MAJOR_CODE = 292;
-  private static final int METHODID_GET_COURSE_IDS = 293;
-  private static final int METHODID_ENROLL_COURSE = 294;
-  private static final int METHODID_DELETE_MY_COURSE = 295;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 296;
-  private static final int METHODID_LIST_MY_COURSE = 297;
-  private static final int METHODID_LIST_TEACHING_PLAN = 298;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 299;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 300;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 301;
-  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 302;
-  private static final int METHODID_CREATE_EDU_SCHEME = 303;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 304;
-  private static final int METHODID_LIST_EDU_SCHEME = 305;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 306;
-  private static final int METHODID_DELETE_EDU_SCHEME = 307;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 308;
-  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 309;
-  private static final int METHODID_GET_ANDROID_QRCODE = 310;
-  private static final int METHODID_CREATE_JOB = 311;
-  private static final int METHODID_UPDATE_JOB = 312;
-  private static final int METHODID_DELETE_JOB = 313;
-  private static final int METHODID_LIST_JOB = 314;
-  private static final int METHODID_GET_SCHOO_LIVE_CHART = 315;
-  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 316;
-  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 317;
-  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 318;
-  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 319;
-  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 320;
-  private static final int METHODID_LIST_TRAFFIC_WARNING = 321;
-  private static final int METHODID_DELETE_TRAFFIC_WARNING = 322;
-  private static final int METHODID_CREATE_LIVE_CONTROL = 323;
-  private static final int METHODID_UPDATE_LIVE_CONTROL = 324;
-  private static final int METHODID_LIST_LIVE_CONTROL = 325;
-  private static final int METHODID_DELETE_LIVE_CONTROL = 326;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 327;
-  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 328;
-  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 329;
-  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 330;
-  private static final int METHODID_GET_LIVE_REPLAY = 331;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 332;
-  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 333;
-  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 334;
-  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 335;
+  private static final int METHODID_GET_COUPON_AND_INTRODUCING_PRODUCT = 260;
+  private static final int METHODID_CREATE_COURSE_MATERIAL_BOX = 261;
+  private static final int METHODID_UPDATE_COURSE_MATERIAL_BOX = 262;
+  private static final int METHODID_LIST_COURSE_MATERIAL_BOX = 263;
+  private static final int METHODID_DELETE_COURSE_MATERIAL_BOX = 264;
+  private static final int METHODID_UPLOAD_COURSE_MATERIAL = 265;
+  private static final int METHODID_LIST_COURSE_MATERIAL = 266;
+  private static final int METHODID_DELETE_COURSE_MATERIAL = 267;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 268;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 269;
+  private static final int METHODID_CREATE_COURSE_MODULE = 270;
+  private static final int METHODID_GET_COURSE_MODULE = 271;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 272;
+  private static final int METHODID_DELETE_COURSE_MODULE = 273;
+  private static final int METHODID_LIST_COURSE_MODULE = 274;
+  private static final int METHODID_LIST_LATEST_COURSE = 275;
+  private static final int METHODID_LIST_HOTEST_COURSE = 276;
+  private static final int METHODID_CREATE_CM_COURSE = 277;
+  private static final int METHODID_PREVIEW_CM_COURSE = 278;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 279;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 280;
+  private static final int METHODID_CREATE_NM_COURSE = 281;
+  private static final int METHODID_LIST_NM_COURSE = 282;
+  private static final int METHODID_NM_COURSE_DETAIL = 283;
+  private static final int METHODID_DELETE_NM_COURSE = 284;
+  private static final int METHODID_CREATE_COURSE = 285;
+  private static final int METHODID_GET_COURSE = 286;
+  private static final int METHODID_UPDATE_COURSE = 287;
+  private static final int METHODID_DELETE_COURSE = 288;
+  private static final int METHODID_LIST_COURSE = 289;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 290;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 291;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 292;
+  private static final int METHODID_GET_MAJOR_CODE = 293;
+  private static final int METHODID_GET_COURSE_IDS = 294;
+  private static final int METHODID_ENROLL_COURSE = 295;
+  private static final int METHODID_DELETE_MY_COURSE = 296;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 297;
+  private static final int METHODID_LIST_MY_COURSE = 298;
+  private static final int METHODID_LIST_TEACHING_PLAN = 299;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 300;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 301;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 302;
+  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 303;
+  private static final int METHODID_CREATE_EDU_SCHEME = 304;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 305;
+  private static final int METHODID_LIST_EDU_SCHEME = 306;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 307;
+  private static final int METHODID_DELETE_EDU_SCHEME = 308;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 309;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 310;
+  private static final int METHODID_GET_ANDROID_QRCODE = 311;
+  private static final int METHODID_CREATE_JOB = 312;
+  private static final int METHODID_UPDATE_JOB = 313;
+  private static final int METHODID_DELETE_JOB = 314;
+  private static final int METHODID_LIST_JOB = 315;
+  private static final int METHODID_GET_SCHOO_LIVE_CHART = 316;
+  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 317;
+  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 318;
+  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 319;
+  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 320;
+  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 321;
+  private static final int METHODID_LIST_TRAFFIC_WARNING = 322;
+  private static final int METHODID_DELETE_TRAFFIC_WARNING = 323;
+  private static final int METHODID_CREATE_LIVE_CONTROL = 324;
+  private static final int METHODID_UPDATE_LIVE_CONTROL = 325;
+  private static final int METHODID_LIST_LIVE_CONTROL = 326;
+  private static final int METHODID_DELETE_LIVE_CONTROL = 327;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 328;
+  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 329;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 330;
+  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 331;
+  private static final int METHODID_GET_LIVE_REPLAY = 332;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 333;
+  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 334;
+  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 335;
+  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 336;
+  private static final int METHODID_LIST_SYSTEM_TASK = 337;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 338;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23360,6 +23570,10 @@ public final class glory_apiGrpc {
           serviceImpl.disableActivity((com.zhijiejiaoyu.glory_api.shop.DisableActivityRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>) responseObserver);
           break;
+        case METHODID_GET_COUPON_AND_INTRODUCING_PRODUCT:
+          serviceImpl.getCouponAndIntroducingProduct((com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse>) responseObserver);
+          break;
         case METHODID_CREATE_COURSE_MATERIAL_BOX:
           serviceImpl.createCourseMaterialBox((com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateCourseMaterialBoxResponse>) responseObserver);
@@ -23663,6 +23877,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_QUICK_EVALUATION_DETAIL:
           serviceImpl.getQuickEvaluationDetail((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SYSTEM_TASK:
+          serviceImpl.listSystemTask((com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_SYSTEM_TASK:
+          serviceImpl.updateSystemTask((com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -25503,6 +25725,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.shop.DisableActivityResponse>(
                 service, METHODID_DISABLE_ACTIVITY)))
         .addMethod(
+          getGetCouponAndIntroducingProductMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductRequest,
+              com.zhijiejiaoyu.glory_api.live.GetCouponAndIntroducingProductResponse>(
+                service, METHODID_GET_COUPON_AND_INTRODUCING_PRODUCT)))
+        .addMethod(
           getCreateCourseMaterialBoxMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -26034,6 +26263,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest,
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>(
                 service, METHODID_GET_QUICK_EVALUATION_DETAIL)))
+        .addMethod(
+          getListSystemTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>(
+                service, METHODID_LIST_SYSTEM_TASK)))
+        .addMethod(
+          getUpdateSystemTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>(
+                service, METHODID_UPDATE_SYSTEM_TASK)))
         .build();
   }
 
@@ -26342,6 +26585,7 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateActivityMethod())
               .addMethod(getDeleteActivityMethod())
               .addMethod(getDisableActivityMethod())
+              .addMethod(getGetCouponAndIntroducingProductMethod())
               .addMethod(getCreateCourseMaterialBoxMethod())
               .addMethod(getUpdateCourseMaterialBoxMethod())
               .addMethod(getListCourseMaterialBoxMethod())
@@ -26418,6 +26662,8 @@ public final class glory_apiGrpc {
               .addMethod(getListQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationDetailMethod())
+              .addMethod(getListSystemTaskMethod())
+              .addMethod(getUpdateSystemTaskMethod())
               .build();
         }
       }
