@@ -56,6 +56,7 @@ import "course/job.proto";
 import "app/app.proto";
 import "traffic/live_traffic.proto";
 import "role/role.proto";
+import "task/system_task.proto";
 
 service glory_api {
 
@@ -1327,5 +1328,13 @@ service glory_api {
   }
   rpc GetQuickEvaluationDetail(GetQuickEvaluationDetailRequest) returns (GetQuickEvaluationDetailResponse) {
     option (api.get) = '/api/live/get_quick_evaluation_detail';
+  }
+
+  // 系统预置任务管理
+  rpc ListSystemTask(ListSystemTaskRequest) returns (ListSystemTaskResponse) {
+    option (api.get) = '/api/task/list_system_task';
+  }
+  rpc UpdateSystemTask(UpdateSystemTaskRequest) returns (UpdateSystemTaskResponse) {
+    option (api.post) = '/api/task/update_system_task';
   }
 }
