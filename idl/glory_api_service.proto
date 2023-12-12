@@ -1020,6 +1020,11 @@ service glory_api {
     option (api.post) = '/api/shop/disable_activity';
   }
 
+  // 获取正在讲解的商品和发放中的优惠券
+  rpc GetCouponAndIntroducingProduct(GetCouponAndIntroducingProductRequest) returns (GetCouponAndIntroducingProductResponse) {
+    option (api.get) = '/api/live/get_coupon_and_introducing_product';
+  }
+
   // 素材库
   // 创建画板
   rpc CreateCourseMaterialBox(CreateCourseMaterialBoxRequest) returns (CreateCourseMaterialBoxResponse) {
