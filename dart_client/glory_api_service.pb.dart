@@ -57,6 +57,7 @@ import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
+import 'task/system_task.pb.dart' as $51;
 import 'tenant/tenant.pb.dart' as $30;
 import 'tenant/tenant_config.pb.dart' as $33;
 import 'tenant/tenant_dept.pb.dart' as $31;
@@ -1077,6 +1078,12 @@ class glory_apiApi {
   ;
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ClientContext? ctx, $50.GetQuickEvaluationDetailRequest request) =>
     _client.invoke<$50.GetQuickEvaluationDetailResponse>(ctx, 'glory_api', 'GetQuickEvaluationDetail', request, $50.GetQuickEvaluationDetailResponse())
+  ;
+  $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $51.ListSystemTaskRequest request) =>
+    _client.invoke<$51.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $51.ListSystemTaskResponse())
+  ;
+  $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $51.UpdateSystemTaskRequest request) =>
+    _client.invoke<$51.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $51.UpdateSystemTaskResponse())
   ;
 }
 

@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $51;
+import 'base.pbjson.dart' as $52;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $39;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -57,6 +57,7 @@ import 'shop/product.pbjson.dart' as $10;
 import 'shop/shop.pbjson.dart' as $4;
 import 'shop/sku.pbjson.dart' as $11;
 import 'short_video/short_video.pbjson.dart' as $34;
+import 'task/system_task.pbjson.dart' as $51;
 import 'tenant/tenant.pbjson.dart' as $30;
 import 'tenant/tenant_config.pbjson.dart' as $33;
 import 'tenant/tenant_dept.pbjson.dart' as $31;
@@ -405,26 +406,28 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListQuickEvaluationReport', '2': '.glory_api.ListQuickEvaluationReportRequest', '3': '.glory_api.ListQuickEvaluationReportResponse', '4': {}},
     {'1': 'GetQuickEvaluationReport', '2': '.glory_api.GetQuickEvaluationReportRequest', '3': '.glory_api.GetQuickEvaluationReportResponse', '4': {}},
     {'1': 'GetQuickEvaluationDetail', '2': '.glory_api.GetQuickEvaluationDetailRequest', '3': '.glory_api.GetQuickEvaluationDetailResponse', '4': {}},
+    {'1': 'ListSystemTask', '2': '.glory_api.ListSystemTaskRequest', '3': '.glory_api.ListSystemTaskResponse', '4': {}},
+    {'1': 'UpdateSystemTask', '2': '.glory_api.UpdateSystemTaskRequest', '3': '.glory_api.UpdateSystemTaskResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $51.BaseRequest$json,
+  '.base.BaseRequest': $52.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $51.BaseResponse$json,
+  '.base.BaseResponse': $52.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $51.AuthorInfo$json,
+  '.base.AuthorInfo': $52.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $51.PaginationRequest$json,
+  '.base.PaginationRequest': $52.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $51.PaginationResponse$json,
+  '.base.PaginationResponse': $52.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1261,6 +1264,11 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetQuickEvaluationDetailRequest': $50.GetQuickEvaluationDetailRequest$json,
   '.glory_api.GetQuickEvaluationDetailResponse': $50.GetQuickEvaluationDetailResponse$json,
   '.glory_api.QuickEvaluationDetail': $50.QuickEvaluationDetail$json,
+  '.glory_api.ListSystemTaskRequest': $51.ListSystemTaskRequest$json,
+  '.glory_api.ListSystemTaskResponse': $51.ListSystemTaskResponse$json,
+  '.glory_api.SystemTask': $51.SystemTask$json,
+  '.glory_api.UpdateSystemTaskRequest': $51.UpdateSystemTaskRequest$json,
+  '.glory_api.UpdateSystemTaskResponse': $51.UpdateSystemTaskResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2022,5 +2030,10 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'cG9uc2UiKcrBGCUvYXBpL2xpdmUvZ2V0X3F1aWNrX2V2YWx1YXRpb25fcmVwb3J0Ep4BChhHZX'
     'RRdWlja0V2YWx1YXRpb25EZXRhaWwSKi5nbG9yeV9hcGkuR2V0UXVpY2tFdmFsdWF0aW9uRGV0'
     'YWlsUmVxdWVzdBorLmdsb3J5X2FwaS5HZXRRdWlja0V2YWx1YXRpb25EZXRhaWxSZXNwb25zZS'
-    'IpysEYJS9hcGkvbGl2ZS9nZXRfcXVpY2tfZXZhbHVhdGlvbl9kZXRhaWw=');
+    'IpysEYJS9hcGkvbGl2ZS9nZXRfcXVpY2tfZXZhbHVhdGlvbl9kZXRhaWwSdQoOTGlzdFN5c3Rl'
+    'bVRhc2sSIC5nbG9yeV9hcGkuTGlzdFN5c3RlbVRhc2tSZXF1ZXN0GiEuZ2xvcnlfYXBpLkxpc3'
+    'RTeXN0ZW1UYXNrUmVzcG9uc2UiHsrBGBovYXBpL3Rhc2svbGlzdF9zeXN0ZW1fdGFzaxJ9ChBV'
+    'cGRhdGVTeXN0ZW1UYXNrEiIuZ2xvcnlfYXBpLlVwZGF0ZVN5c3RlbVRhc2tSZXF1ZXN0GiMuZ2'
+    'xvcnlfYXBpLlVwZGF0ZVN5c3RlbVRhc2tSZXNwb25zZSIg0sEYHC9hcGkvdGFzay91cGRhdGVf'
+    'c3lzdGVtX3Rhc2s=');
 

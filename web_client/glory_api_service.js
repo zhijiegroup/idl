@@ -56,6 +56,7 @@ import * as job from "./course/job";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
+import * as system_task from "./task/system_task";
 export {
   user,
   address,
@@ -109,6 +110,7 @@ export {
   app,
   live_traffic,
   role,
+  system_task,
 };
 
 import {
@@ -2692,6 +2694,20 @@ export class glory_api {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/live/get_quick_evaluation_detail${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ListSystemTask(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/list_system_task${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  UpdateSystemTask(request) {
+    const uri = `${this.uriPrefix}/api/task/update_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 }
 

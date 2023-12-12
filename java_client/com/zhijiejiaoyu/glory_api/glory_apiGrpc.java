@@ -10431,6 +10431,68 @@ public final class glory_apiGrpc {
     return getGetQuickEvaluationDetailMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSystemTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
+    if ((getListSystemTaskMethod = glory_apiGrpc.getListSystemTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListSystemTaskMethod = glory_apiGrpc.getListSystemTaskMethod) == null) {
+          glory_apiGrpc.getListSystemTaskMethod = getListSystemTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSystemTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListSystemTask"))
+              .build();
+        }
+      }
+    }
+    return getListSystemTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSystemTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> getUpdateSystemTaskMethod;
+    if ((getUpdateSystemTaskMethod = glory_apiGrpc.getUpdateSystemTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateSystemTaskMethod = glory_apiGrpc.getUpdateSystemTaskMethod) == null) {
+          glory_apiGrpc.getUpdateSystemTaskMethod = getUpdateSystemTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSystemTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateSystemTask"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSystemTaskMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -13165,6 +13227,23 @@ public final class glory_apiGrpc {
     default void getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuickEvaluationDetailMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    default void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSystemTaskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSystemTaskMethod(), responseObserver);
     }
   }
 
@@ -16218,6 +16297,25 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetQuickEvaluationDetailMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSystemTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -18922,6 +19020,23 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQuickEvaluationDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSystemTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSystemTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -21964,6 +22079,25 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetQuickEvaluationDetailMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 系统预置任务管理
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> listSystemTask(
+        com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSystemTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> updateSystemTask(
+        com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -22302,6 +22436,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 333;
   private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 334;
   private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 335;
+  private static final int METHODID_LIST_SYSTEM_TASK = 336;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 337;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23663,6 +23799,14 @@ public final class glory_apiGrpc {
         case METHODID_GET_QUICK_EVALUATION_DETAIL:
           serviceImpl.getQuickEvaluationDetail((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SYSTEM_TASK:
+          serviceImpl.listSystemTask((com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_SYSTEM_TASK:
+          serviceImpl.updateSystemTask((com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -26034,6 +26178,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest,
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>(
                 service, METHODID_GET_QUICK_EVALUATION_DETAIL)))
+        .addMethod(
+          getListSystemTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse>(
+                service, METHODID_LIST_SYSTEM_TASK)))
+        .addMethod(
+          getUpdateSystemTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>(
+                service, METHODID_UPDATE_SYSTEM_TASK)))
         .build();
   }
 
@@ -26418,6 +26576,8 @@ public final class glory_apiGrpc {
               .addMethod(getListQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationDetailMethod())
+              .addMethod(getListSystemTaskMethod())
+              .addMethod(getUpdateSystemTaskMethod())
               .build();
         }
       }

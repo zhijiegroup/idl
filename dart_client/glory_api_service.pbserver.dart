@@ -59,6 +59,7 @@ import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
+import 'task/system_task.pb.dart' as $51;
 import 'tenant/tenant.pb.dart' as $30;
 import 'tenant/tenant_config.pb.dart' as $33;
 import 'tenant/tenant_dept.pb.dart' as $31;
@@ -407,6 +408,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
+  $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
+  $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -746,6 +749,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
+      case 'ListSystemTask': return $51.ListSystemTaskRequest();
+      case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1088,6 +1093,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
+      case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
+      case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

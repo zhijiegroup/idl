@@ -54,6 +54,7 @@ import * as job from "./course/job";
 import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
+import * as system_task from "./task/system_task";
 export {
   user,
   address,
@@ -107,6 +108,7 @@ export {
   app,
   live_traffic,
   role,
+  system_task,
 };
 
 export class glory_api {
@@ -1509,6 +1511,15 @@ CreateLivePlanProduct create live plan product */
   GetQuickEvaluationDetail(
     request: live_quick_evaluate.GetQuickEvaluationDetailRequest
   ): Promise<live_quick_evaluate.GetQuickEvaluationDetailResponse>;
+
+  /** 系统预置任务管理 */
+  ListSystemTask(
+    request: system_task.ListSystemTaskRequest
+  ): Promise<system_task.ListSystemTaskResponse>;
+
+  UpdateSystemTask(
+    request: system_task.UpdateSystemTaskRequest
+  ): Promise<system_task.UpdateSystemTaskResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
