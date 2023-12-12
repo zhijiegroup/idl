@@ -332,6 +332,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$36.UpdateActivityResponse> updateActivity($pb.ServerContext ctx, $36.UpdateActivityRequest request);
   $async.Future<$36.DeleteActivityResponse> deleteActivity($pb.ServerContext ctx, $36.DeleteActivityRequest request);
   $async.Future<$36.DisableActivityResponse> disableActivity($pb.ServerContext ctx, $36.DisableActivityRequest request);
+  $async.Future<$24.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct($pb.ServerContext ctx, $24.GetCouponAndIntroducingProductRequest request);
   $async.Future<$37.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ServerContext ctx, $37.CreateCourseMaterialBoxRequest request);
   $async.Future<$37.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ServerContext ctx, $37.UpdateCourseMaterialBoxRequest request);
   $async.Future<$37.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ServerContext ctx, $37.ListCourseMaterialBoxRequest request);
@@ -673,6 +674,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateActivity': return $36.UpdateActivityRequest();
       case 'DeleteActivity': return $36.DeleteActivityRequest();
       case 'DisableActivity': return $36.DisableActivityRequest();
+      case 'GetCouponAndIntroducingProduct': return $24.GetCouponAndIntroducingProductRequest();
       case 'CreateCourseMaterialBox': return $37.CreateCourseMaterialBoxRequest();
       case 'UpdateCourseMaterialBox': return $37.UpdateCourseMaterialBoxRequest();
       case 'ListCourseMaterialBox': return $37.ListCourseMaterialBoxRequest();
@@ -1017,6 +1019,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateActivity': return this.updateActivity(ctx, request as $36.UpdateActivityRequest);
       case 'DeleteActivity': return this.deleteActivity(ctx, request as $36.DeleteActivityRequest);
       case 'DisableActivity': return this.disableActivity(ctx, request as $36.DisableActivityRequest);
+      case 'GetCouponAndIntroducingProduct': return this.getCouponAndIntroducingProduct(ctx, request as $24.GetCouponAndIntroducingProductRequest);
       case 'CreateCourseMaterialBox': return this.createCourseMaterialBox(ctx, request as $37.CreateCourseMaterialBoxRequest);
       case 'UpdateCourseMaterialBox': return this.updateCourseMaterialBox(ctx, request as $37.UpdateCourseMaterialBoxRequest);
       case 'ListCourseMaterialBox': return this.listCourseMaterialBox(ctx, request as $37.ListCourseMaterialBoxRequest);

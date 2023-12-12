@@ -1165,6 +1165,11 @@ CreateLivePlanProduct create live plan product */
     request: activity.DisableActivityRequest
   ): Promise<activity.DisableActivityResponse>;
 
+  /** 获取正在讲解的商品和发放中的优惠券 */
+  GetCouponAndIntroducingProduct(
+    request: live_room.GetCouponAndIntroducingProductRequest
+  ): Promise<live_room.GetCouponAndIntroducingProductResponse>;
+
   /** 素材库
 创建画板 */
   CreateCourseMaterialBox(

@@ -273,3 +273,14 @@ export interface GetLiveReplayResponse {
   base_resp?: base.BaseResponse;
   replay_url?: Array<string>;
 }
+
+export interface GetCouponAndIntroducingProductRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+}
+
+export interface GetCouponAndIntroducingProductResponse {
+  base_resp?: base.BaseResponse;
+  product_id?: string;
+  coupon_ids?: Array<string>;
+}

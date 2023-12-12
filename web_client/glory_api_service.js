@@ -2110,6 +2110,12 @@ export class glory_api {
     );
   }
 
+  GetCouponAndIntroducingProduct(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/get_coupon_and_introducing_product${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateCourseMaterialBox(request) {
     const uri = `${this.uriPrefix}/api/course/create_course_material_box`;
     const body = JSONbigint.stringify(request);

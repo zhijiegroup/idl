@@ -648,3 +648,34 @@ final $typed_data.Uint8List getLiveReplayResponseDescriptor = $convert.base64Dec
     'ChVHZXRMaXZlUmVwbGF5UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
     'VzcG9uc2VSCGJhc2VSZXNwEh0KCnJlcGxheV91cmwYAiADKAlSCXJlcGxheVVybA==');
 
+@$core.Deprecated('Use getCouponAndIntroducingProductRequestDescriptor instead')
+const GetCouponAndIntroducingProductRequest$json = {
+  '1': 'GetCouponAndIntroducingProductRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
+  ],
+};
+
+/// Descriptor for `GetCouponAndIntroducingProductRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCouponAndIntroducingProductRequestDescriptor = $convert.base64Decode(
+    'CiVHZXRDb3Vwb25BbmRJbnRyb2R1Y2luZ1Byb2R1Y3RSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdB'
+    'gBIAEoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Nob3BfaWQYAiABKANS'
+    'BnNob3BJZA==');
+
+@$core.Deprecated('Use getCouponAndIntroducingProductResponseDescriptor instead')
+const GetCouponAndIntroducingProductResponse$json = {
+  '1': 'GetCouponAndIntroducingProductResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'product_id', '3': 2, '4': 1, '5': 3, '10': 'productId'},
+    {'1': 'coupon_ids', '3': 3, '4': 3, '5': 3, '10': 'couponIds'},
+  ],
+};
+
+/// Descriptor for `GetCouponAndIntroducingProductResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCouponAndIntroducingProductResponseDescriptor = $convert.base64Decode(
+    'CiZHZXRDb3Vwb25BbmRJbnRyb2R1Y2luZ1Byb2R1Y3RSZXNwb25zZRIvCgliYXNlX3Jlc3AYAS'
+    'ABKAsyEi5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASHQoKcHJvZHVjdF9pZBgCIAEoA1IJ'
+    'cHJvZHVjdElkEh0KCmNvdXBvbl9pZHMYAyADKANSCWNvdXBvbklkcw==');
+

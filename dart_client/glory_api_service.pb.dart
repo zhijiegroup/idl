@@ -851,6 +851,9 @@ class glory_apiApi {
   $async.Future<$36.DisableActivityResponse> disableActivity($pb.ClientContext? ctx, $36.DisableActivityRequest request) =>
     _client.invoke<$36.DisableActivityResponse>(ctx, 'glory_api', 'DisableActivity', request, $36.DisableActivityResponse())
   ;
+  $async.Future<$24.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct($pb.ClientContext? ctx, $24.GetCouponAndIntroducingProductRequest request) =>
+    _client.invoke<$24.GetCouponAndIntroducingProductResponse>(ctx, 'glory_api', 'GetCouponAndIntroducingProduct', request, $24.GetCouponAndIntroducingProductResponse())
+  ;
   $async.Future<$37.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ClientContext? ctx, $37.CreateCourseMaterialBoxRequest request) =>
     _client.invoke<$37.CreateCourseMaterialBoxResponse>(ctx, 'glory_api', 'CreateCourseMaterialBox', request, $37.CreateCourseMaterialBoxResponse())
   ;
