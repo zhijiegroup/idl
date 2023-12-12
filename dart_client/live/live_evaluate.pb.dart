@@ -148,6 +148,7 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     $fixnum.Int64? order,
     $core.String? aiFeedback,
     $core.String? evaluatedTime,
+    $core.String? liveTime,
     $core.String? evaluatedType,
     $core.bool? quickEvaluationIsPass,
   }) {
@@ -179,6 +180,9 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     if (evaluatedTime != null) {
       $result.evaluatedTime = evaluatedTime;
     }
+    if (liveTime != null) {
+      $result.liveTime = liveTime;
+    }
     if (evaluatedType != null) {
       $result.evaluatedType = evaluatedType;
     }
@@ -201,8 +205,9 @@ class EvaluateRoom extends $pb.GeneratedMessage {
     ..aInt64(7, _omitFieldNames ? '' : 'order')
     ..aOS(8, _omitFieldNames ? '' : 'aiFeedback')
     ..aOS(9, _omitFieldNames ? '' : 'evaluatedTime')
-    ..aOS(10, _omitFieldNames ? '' : 'evaluatedType')
-    ..aOB(11, _omitFieldNames ? '' : 'quickEvaluationIsPass')
+    ..aOS(10, _omitFieldNames ? '' : 'liveTime')
+    ..aOS(11, _omitFieldNames ? '' : 'evaluatedType')
+    ..aOB(12, _omitFieldNames ? '' : 'quickEvaluationIsPass')
     ..hasRequiredFields = false
   ;
 
@@ -309,22 +314,31 @@ class EvaluateRoom extends $pb.GeneratedMessage {
   void clearEvaluatedTime() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get evaluatedType => $_getSZ(9);
+  $core.String get liveTime => $_getSZ(9);
   @$pb.TagNumber(10)
-  set evaluatedType($core.String v) { $_setString(9, v); }
+  set liveTime($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasEvaluatedType() => $_has(9);
+  $core.bool hasLiveTime() => $_has(9);
   @$pb.TagNumber(10)
-  void clearEvaluatedType() => clearField(10);
+  void clearLiveTime() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.bool get quickEvaluationIsPass => $_getBF(10);
+  $core.String get evaluatedType => $_getSZ(10);
   @$pb.TagNumber(11)
-  set quickEvaluationIsPass($core.bool v) { $_setBool(10, v); }
+  set evaluatedType($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasQuickEvaluationIsPass() => $_has(10);
+  $core.bool hasEvaluatedType() => $_has(10);
   @$pb.TagNumber(11)
-  void clearQuickEvaluationIsPass() => clearField(11);
+  void clearEvaluatedType() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get quickEvaluationIsPass => $_getBF(11);
+  @$pb.TagNumber(12)
+  set quickEvaluationIsPass($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasQuickEvaluationIsPass() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearQuickEvaluationIsPass() => clearField(12);
 }
 
 class EvaluateData extends $pb.GeneratedMessage {

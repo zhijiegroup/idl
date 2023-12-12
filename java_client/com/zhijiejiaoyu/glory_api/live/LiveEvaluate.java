@@ -268,168 +268,168 @@ public final class LiveEvaluate {
       "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
       "\"a\n\033GetEvaluateSelectorResponse\022%\n\tbase_" +
       "resp\030\001 \001(\0132\022.base.BaseResponse\022\r\n\005major\030" +
-      "\002 \003(\t\022\014\n\004clas\030d \003(\t\"\352\001\n\014EvaluateRoom\022\017\n\007" +
+      "\002 \003(\t\022\014\n\004clas\030d \003(\t\"\375\001\n\014EvaluateRoom\022\017\n\007" +
       "room_id\030\001 \001(\003\022\022\n\nroom_title\030\002 \001(\t\022\020\n\010roo" +
       "m_url\030\003 \001(\t\022\r\n\005score\030\004 \001(\001\022\020\n\010duration\030\005" +
       " \001(\001\022\014\n\004like\030\006 \001(\003\022\r\n\005order\030\007 \001(\003\022\023\n\013ai_" +
-      "feedback\030\010 \001(\t\022\026\n\016evaluated_time\030\t \001(\t\022\026" +
-      "\n\016evaluated_type\030\n \001(\t\022 \n\030quick_evaluati" +
-      "on_is_pass\030\013 \001(\010\"\226\001\n\014EvaluateData\022\025\n\rave" +
-      "rage_score\030\001 \001(\001\022\026\n\016total_duration\030\002 \001(\001" +
-      "\022\022\n\ntotal_like\030\003 \001(\003\022\023\n\013total_order\030\004 \001(" +
-      "\003\022.\n\revaluate_list\030\005 \003(\0132\027.glory_api.Eva" +
-      "luateRoom\"\235\001\n\033ListPersonalEvaluateReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\017\n\007user_id\030\002 \001(\003\022\027\n\017evaluation_type\030\003" +
-      " \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
-      "onRequest\"\243\001\n\034ListPersonalEvaluateRespon" +
+      "feedback\030\010 \001(\t\022\026\n\016evaluated_time\030\t \001(\t\022\021" +
+      "\n\tlive_time\030\n \001(\t\022\026\n\016evaluated_type\030\013 \001(" +
+      "\t\022 \n\030quick_evaluation_is_pass\030\014 \001(\010\"\226\001\n\014" +
+      "EvaluateData\022\025\n\raverage_score\030\001 \001(\001\022\026\n\016t" +
+      "otal_duration\030\002 \001(\001\022\022\n\ntotal_like\030\003 \001(\003\022" +
+      "\023\n\013total_order\030\004 \001(\003\022.\n\revaluate_list\030\005 " +
+      "\003(\0132\027.glory_api.EvaluateRoom\"\235\001\n\033ListPer" +
+      "sonalEvaluateRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022\027" +
+      "\n\017evaluation_type\030\003 \001(\t\022+\n\npagination\030d " +
+      "\001(\0132\027.base.PaginationRequest\"\243\001\n\034ListPer" +
+      "sonalEvaluateResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022.\n\revaluate_data\030\002 " +
+      "\001(\0132\027.glory_api.EvaluateData\022,\n\npaginati" +
+      "on\030d \001(\0132\030.base.PaginationResponse\"b\n\021Ev" +
+      "aluateSubOption\022\014\n\004name\030\001 \001(\t\022\r\n\005total\030\002" +
+      " \001(\001\022\017\n\007content\030\003 \001(\t\022\r\n\005score\030\004 \001(\t\022\020\n\010" +
+      "name_key\030\005 \001(\t\"\202\001\n\016EvaluateDetail\022\016\n\006opt" +
+      "ion\030\001 \001(\t\022\r\n\005total\030\002 \001(\001\022\r\n\005score\030\003 \001(\t\022" +
+      "\021\n\tis_expand\030\004 \001(\010\022/\n\tsuboption\030\005 \003(\0132\034." +
+      "glory_api.EvaluateSubOption\"\313\001\n\021ProductP" +
+      "rofession\022\024\n\014product_name\030\001 \001(\t\022\025\n\rprodu" +
+      "ct_class\030\002 \001(\t\022O\n\022product_attributed\030\003 \003" +
+      "(\01323.glory_api.ProductProfession.Product" +
+      "AttributedEntry\0328\n\026ProductAttributedEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"z\n\010Fee" +
+      "dback\022\021\n\tenjoyment\030\001 \001(\t\022\r\n\005logic\030\002 \001(\t\022" +
+      "\022\n\ninnovative\030\003 \001(\t\0228\n\022product_professio" +
+      "n\030\004 \003(\0132\034.glory_api.ProductProfession\"\212\001" +
+      "\n\010AiResult\022\033\n\023live_ai_feedback_id\030\001 \001(\003\022" +
+      "\017\n\007room_id\030\002 \001(\003\022%\n\010feedback\030\003 \001(\0132\023.glo" +
+      "ry_api.Feedback\022\025\n\ruser_attitude\030\004 \001(\t\022\022" +
+      "\n\ncreated_at\030\005 \001(\t\"\201\001\n\030GetEvaluateDetail" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\017\n\007room_id\030\002 \001(\003\022+\n\npagination\030" +
+      "d \001(\0132\027.base.PaginationRequest\"\327\003\n\031GetEv" +
+      "aluateDetailResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022\014\n\004type\030\002 \001(\t\022\023\n\013eva" +
+      "luate_id\030\003 \001(\003\022\023\n\013template_id\030\004 \001(\003\022\017\n\007u" +
+      "ser_id\030\005 \001(\003\022\023\n\013extra_score\030\006 \001(\001\022\025\n\rext" +
+      "ra_comment\030\007 \001(\t\022\024\n\014zero_comment\030\010 \001(\t\022\r" +
+      "\n\005score\030\t \001(\001\022\023\n\013ai_feedback\030\n \001(\t\022\020\n\010ba" +
+      "seline\030\013 \001(\010\022\026\n\016ai_feedback_id\030\014 \001(\003\022\024\n\014" +
+      "created_user\030\r \001(\t\022\016\n\006anchor\030\016 \001(\t\022\027\n\017li" +
+      "ve_start_time\030\017 \001(\003\022\025\n\rlive_end_time\030\020 \001" +
+      "(\003\022\021\n\tis_use_ai\030\021 \001(\010\022&\n\tai_result\030\022 \003(\013" +
+      "2\023.glory_api.AiResult\022)\n\006detail\030d \003(\0132\031." +
+      "glory_api.EvaluateDetail\"\325\002\n\025SubmitEvalu" +
+      "ateRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\014\n\004type\030\002 \001(\t\022\023\n\013evaluate_id" +
+      "\030\003 \001(\003\022\023\n\013template_id\030\004 \001(\003\022\017\n\007user_id\030\005" +
+      " \001(\003\022\017\n\007room_id\030\006 \001(\003\022\023\n\013extra_score\030\007 \001" +
+      "(\001\022\025\n\rextra_comment\030\010 \001(\t\022\024\n\014zero_commen" +
+      "t\030\t \001(\t\022\r\n\005score\030\n \001(\001\022\023\n\013ai_feedback\030\013 " +
+      "\001(\t\022\020\n\010baseline\030\014 \001(\010\022\026\n\016ai_feedback_id\030" +
+      "\r \001(\003\022)\n\006detail\030\016 \003(\0132\031.glory_api.Evalua" +
+      "teDetail\"?\n\026SubmitEvaluateResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"~\n$Sub" +
+      "mitUserAttitudeForAIResultRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023li" +
+      "ve_ai_feedback_id\030\002 \001(\003\022\020\n\010attitude\030\003 \001(" +
+      "\t\"N\n%SubmitUserAttitudeForAIResultRespon" +
       "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022.\n\revaluate_data\030\002 \001(\0132\027.glory_api.Eva" +
-      "luateData\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"b\n\021EvaluateSubOption\022\014\n\004" +
-      "name\030\001 \001(\t\022\r\n\005total\030\002 \001(\001\022\017\n\007content\030\003 \001" +
-      "(\t\022\r\n\005score\030\004 \001(\t\022\020\n\010name_key\030\005 \001(\t\"\202\001\n\016" +
-      "EvaluateDetail\022\016\n\006option\030\001 \001(\t\022\r\n\005total\030" +
-      "\002 \001(\001\022\r\n\005score\030\003 \001(\t\022\021\n\tis_expand\030\004 \001(\010\022" +
-      "/\n\tsuboption\030\005 \003(\0132\034.glory_api.EvaluateS" +
-      "ubOption\"\313\001\n\021ProductProfession\022\024\n\014produc" +
-      "t_name\030\001 \001(\t\022\025\n\rproduct_class\030\002 \001(\t\022O\n\022p" +
-      "roduct_attributed\030\003 \003(\01323.glory_api.Prod" +
-      "uctProfession.ProductAttributedEntry\0328\n\026" +
-      "ProductAttributedEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\t:\0028\001\"z\n\010Feedback\022\021\n\tenjoyment\030" +
-      "\001 \001(\t\022\r\n\005logic\030\002 \001(\t\022\022\n\ninnovative\030\003 \001(\t" +
-      "\0228\n\022product_profession\030\004 \003(\0132\034.glory_api" +
-      ".ProductProfession\"\212\001\n\010AiResult\022\033\n\023live_" +
-      "ai_feedback_id\030\001 \001(\003\022\017\n\007room_id\030\002 \001(\003\022%\n" +
-      "\010feedback\030\003 \001(\0132\023.glory_api.Feedback\022\025\n\r" +
-      "user_attitude\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\"" +
-      "\201\001\n\030GetEvaluateDetailRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id" +
-      "\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"\327\003\n\031GetEvaluateDetailRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\014\n\004type\030\002 \001(\t\022\023\n\013evaluate_id\030\003 \001(\003\022\023\n\013t" +
-      "emplate_id\030\004 \001(\003\022\017\n\007user_id\030\005 \001(\003\022\023\n\013ext" +
-      "ra_score\030\006 \001(\001\022\025\n\rextra_comment\030\007 \001(\t\022\024\n" +
-      "\014zero_comment\030\010 \001(\t\022\r\n\005score\030\t \001(\001\022\023\n\013ai" +
-      "_feedback\030\n \001(\t\022\020\n\010baseline\030\013 \001(\010\022\026\n\016ai_" +
-      "feedback_id\030\014 \001(\003\022\024\n\014created_user\030\r \001(\t\022" +
-      "\016\n\006anchor\030\016 \001(\t\022\027\n\017live_start_time\030\017 \001(\003" +
-      "\022\025\n\rlive_end_time\030\020 \001(\003\022\021\n\tis_use_ai\030\021 \001" +
-      "(\010\022&\n\tai_result\030\022 \003(\0132\023.glory_api.AiResu" +
-      "lt\022)\n\006detail\030d \003(\0132\031.glory_api.EvaluateD" +
-      "etail\"\325\002\n\025SubmitEvaluateRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type" +
-      "\030\002 \001(\t\022\023\n\013evaluate_id\030\003 \001(\003\022\023\n\013template_" +
-      "id\030\004 \001(\003\022\017\n\007user_id\030\005 \001(\003\022\017\n\007room_id\030\006 \001" +
-      "(\003\022\023\n\013extra_score\030\007 \001(\001\022\025\n\rextra_comment" +
-      "\030\010 \001(\t\022\024\n\014zero_comment\030\t \001(\t\022\r\n\005score\030\n " +
-      "\001(\001\022\023\n\013ai_feedback\030\013 \001(\t\022\020\n\010baseline\030\014 \001" +
-      "(\010\022\026\n\016ai_feedback_id\030\r \001(\003\022)\n\006detail\030\016 \003" +
-      "(\0132\031.glory_api.EvaluateDetail\"?\n\026SubmitE" +
-      "valuateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"~\n$SubmitUserAttitudeForA" +
-      "IResultRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\033\n\023live_ai_feedback_id\030\002" +
-      " \001(\003\022\020\n\010attitude\030\003 \001(\t\"N\n%SubmitUserAtti" +
-      "tudeForAIResultResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"\242\001\n\017UnevaluatedRo" +
-      "om\022\017\n\007room_id\030\001 \001(\003\022\022\n\nroom_title\030\002 \001(\t\022" +
-      "\020\n\010room_url\030\003 \001(\t\022\021\n\tshop_name\030\004 \001(\t\022\017\n\007" +
-      "user_id\030\005 \001(\003\022\021\n\tuser_name\030\006 \001(\t\022\016\n\006stat" +
-      "us\030\007 \001(\t\022\021\n\tis_use_ai\030\010 \001(\010\"\242\001\n\032ListUnev" +
-      "aluatedRoomRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022+\n\npagination\030\002 \001(\0132" +
-      "\027.base.PaginationRequest\022\031\n\021shop_or_user" +
-      "_name\030\003 \001(\t\022\023\n\013room_status\030\004 \001(\003\"\276\001\n\033Lis" +
-      "tUnevaluatedRoomResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\024\n\014living_total\030" +
-      "\002 \001(\003\0224\n\020unevaluated_room\030\003 \003(\0132\032.glory_" +
-      "api.UnevaluatedRoom\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponse\"\247\001\n\014UserLiveDa" +
-      "ta\022\017\n\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\r" +
-      "\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\026\n\016total_dur" +
-      "ation\030\005 \001(\001\022\022\n\ntotal_like\030\006 \001(\003\022\023\n\013total" +
-      "_order\030\007 \001(\003\022\025\n\raverage_score\030\010 \001(\001\"\237\001\n\034" +
-      "ListStudentEvalutionsRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 " +
-      "\001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022+\n\npagi" +
-      "nation\030\005 \001(\0132\027.base.PaginationRequest\"\240\001" +
-      "\n\035ListStudentEvalutionsResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022*\n\tlive_d" +
-      "ata\030\002 \003(\0132\027.glory_api.UserLiveData\022,\n\npa" +
-      "gination\030d \001(\0132\030.base.PaginationResponse" +
-      "\"W\n\033IgnoreLiveEvaluationRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room" +
-      "_id\030\002 \001(\003\"E\n\034IgnoreLiveEvaluationRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"Y\n\035RegenerationAiFeedbackRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007ro" +
-      "om_id\030\002 \001(\003\"G\n\036RegenerationAiFeedbackRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"g\n\016LiveRankDetail\022\021\n\tuser_name\030\001 \001(" +
-      "\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas" +
-      "\030\004 \001(\t\022\025\n\rlive_duration\030\005 \001(\003\"s\n\014LiveRan" +
-      "kMine\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t" +
-      "\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\025\n\rlive_du" +
-      "ration\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"_\n\010LiveRank\022," +
-      "\n\trank_list\030\001 \003(\0132\031.glory_api.LiveRankDe" +
-      "tail\022%\n\004mine\030d \001(\0132\027.glory_api.LiveRankM" +
-      "ine\"J\n\016ShopRankDetail\022\021\n\tshop_name\030\001 \001(\t" +
-      "\022\020\n\010shop_url\030\002 \001(\t\022\023\n\013sale_amount\030\003 \001(\003\"" +
-      "V\n\014ShopRankMine\022\021\n\tshop_name\030\001 \001(\t\022\020\n\010sh" +
-      "op_url\030\002 \001(\t\022\023\n\013sale_amount\030\003 \001(\003\022\014\n\004ran" +
-      "k\030\004 \001(\003\"_\n\010ShopRank\022,\n\trank_list\030\001 \003(\0132\031" +
-      ".glory_api.ShopRankDetail\022%\n\004mine\030d \001(\0132" +
-      "\027.glory_api.ShopRankMine\"x\n\021ProductRankD" +
-      "etail\022\024\n\014product_name\030\001 \001(\t\022\023\n\013product_u" +
-      "rl\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop_url\030" +
-      "\004 \001(\t\022\023\n\013sale_amount\030\005 \001(\003\"\204\001\n\017ProductRa" +
-      "nkMine\022\024\n\014product_name\030\001 \001(\t\022\023\n\013product_" +
-      "url\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\020\n\010shop_url" +
-      "\030\004 \001(\t\022\023\n\013sale_amount\030\005 \001(\003\022\014\n\004rank\030\006 \001(" +
-      "\003\"h\n\013ProductRank\022/\n\trank_list\030\001 \003(\0132\034.gl" +
-      "ory_api.ProductRankDetail\022(\n\004mine\030d \001(\0132" +
-      "\032.glory_api.ProductRankMine\"i\n\022LiveLikeR" +
-      "ankDetail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002" +
-      " \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\023\n\013lik" +
-      "e_amount\030\005 \001(\003\"u\n\020LiveLikeRankMine\022\021\n\tus" +
-      "er_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003" +
-      " \001(\t\022\014\n\004clas\030\004 \001(\t\022\023\n\013like_amount\030\005 \001(\003\022" +
-      "\014\n\004rank\030\006 \001(\003\"k\n\014LiveLikeRank\0220\n\trank_li" +
-      "st\030\001 \003(\0132\035.glory_api.LiveLikeRankDetail\022" +
-      ")\n\004mine\030d \001(\0132\033.glory_api.LiveLikeRankMi" +
-      "ne\"k\n\023LiveOrderRankDetail\022\021\n\tuser_name\030\001" +
-      " \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004c" +
-      "las\030\004 \001(\t\022\024\n\014order_amount\030\005 \001(\003\"w\n\021LiveO" +
-      "rderRankMine\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenan" +
-      "t\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\024\n\014" +
-      "order_amount\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"n\n\rLive" +
-      "OrderRank\0221\n\trank_list\030\001 \003(\0132\036.glory_api" +
-      ".LiveOrderRankDetail\022*\n\004mine\030d \001(\0132\034.glo" +
-      "ry_api.LiveOrderRankMine\"i\n\030LiveEvaluati" +
-      "onRankDetail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenan" +
-      "t\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\r\n\005" +
-      "score\030\005 \001(\001\"u\n\026LiveEvaluationRankMine\022\021\n" +
-      "\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005majo" +
-      "r\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\r\n\005score\030\005 \001(\001\022\014\n\004" +
-      "rank\030\006 \001(\003\"}\n\022LiveEvaluationRank\0226\n\trank" +
-      "_list\030\001 \003(\0132#.glory_api.LiveEvaluationRa" +
-      "nkDetail\022/\n\004mine\030d \001(\0132!.glory_api.LiveE" +
-      "valuationRankMine\"u\n\016GetRankRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010" +
-      "category\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\r\n\005start\030\004 " +
-      "\001(\003\022\013\n\003end\030\005 \001(\003\"\271\002\n\017GetRankResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n\004l" +
-      "ive\030\002 \001(\0132\023.glory_api.LiveRank\022!\n\004shop\030\003" +
-      " \001(\0132\023.glory_api.ShopRank\022\'\n\007product\030\004 \001" +
-      "(\0132\026.glory_api.ProductRank\022*\n\tlive_like\030" +
-      "\005 \001(\0132\027.glory_api.LiveLikeRank\022,\n\nlive_o" +
-      "rder\030\006 \001(\0132\030.glory_api.LiveOrderRank\0226\n\017" +
-      "live_evaluation\030\007 \001(\0132\035.glory_api.LiveEv" +
-      "aluationRankB#\n\037com.zhijiejiaoyu.glory_a" +
-      "pi.liveP\001b\006proto3"
+      "e\"\242\001\n\017UnevaluatedRoom\022\017\n\007room_id\030\001 \001(\003\022\022" +
+      "\n\nroom_title\030\002 \001(\t\022\020\n\010room_url\030\003 \001(\t\022\021\n\t" +
+      "shop_name\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\003\022\021\n\tuser" +
+      "_name\030\006 \001(\t\022\016\n\006status\030\007 \001(\t\022\021\n\tis_use_ai" +
+      "\030\010 \001(\010\"\242\001\n\032ListUnevaluatedRoomRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022+" +
+      "\n\npagination\030\002 \001(\0132\027.base.PaginationRequ" +
+      "est\022\031\n\021shop_or_user_name\030\003 \001(\t\022\023\n\013room_s" +
+      "tatus\030\004 \001(\003\"\276\001\n\033ListUnevaluatedRoomRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022\024\n\014living_total\030\002 \001(\003\0224\n\020unevaluated_" +
+      "room\030\003 \003(\0132\032.glory_api.UnevaluatedRoom\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"\247\001\n\014UserLiveData\022\017\n\007user_id\030\001 \001(\003\022\021" +
+      "\n\tuser_name\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas" +
+      "\030\004 \001(\t\022\026\n\016total_duration\030\005 \001(\001\022\022\n\ntotal_" +
+      "like\030\006 \001(\003\022\023\n\013total_order\030\007 \001(\003\022\025\n\ravera" +
+      "ge_score\030\010 \001(\001\"\237\001\n\034ListStudentEvalutions" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\014\n\004name\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n" +
+      "\004clas\030\004 \001(\t\022+\n\npagination\030\005 \001(\0132\027.base.P" +
+      "aginationRequest\"\240\001\n\035ListStudentEvalutio" +
+      "nsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022*\n\tlive_data\030\002 \003(\0132\027.glory_api" +
+      ".UserLiveData\022,\n\npagination\030d \001(\0132\030.base" +
+      ".PaginationResponse\"W\n\033IgnoreLiveEvaluat" +
+      "ionRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\"E\n\034IgnoreLi" +
+      "veEvaluationResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"Y\n\035RegenerationAiFee" +
+      "dbackRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\017\n\007room_id\030\002 \001(\003\"G\n\036Regene" +
+      "rationAiFeedbackResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"g\n\016LiveRankDetai" +
+      "l\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005" +
+      "major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\025\n\rlive_durati" +
+      "on\030\005 \001(\003\"s\n\014LiveRankMine\022\021\n\tuser_name\030\001 " +
+      "\001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004cl" +
+      "as\030\004 \001(\t\022\025\n\rlive_duration\030\005 \001(\003\022\014\n\004rank\030" +
+      "\006 \001(\003\"_\n\010LiveRank\022,\n\trank_list\030\001 \003(\0132\031.g" +
+      "lory_api.LiveRankDetail\022%\n\004mine\030d \001(\0132\027." +
+      "glory_api.LiveRankMine\"J\n\016ShopRankDetail" +
+      "\022\021\n\tshop_name\030\001 \001(\t\022\020\n\010shop_url\030\002 \001(\t\022\023\n" +
+      "\013sale_amount\030\003 \001(\003\"V\n\014ShopRankMine\022\021\n\tsh" +
+      "op_name\030\001 \001(\t\022\020\n\010shop_url\030\002 \001(\t\022\023\n\013sale_" +
+      "amount\030\003 \001(\003\022\014\n\004rank\030\004 \001(\003\"_\n\010ShopRank\022," +
+      "\n\trank_list\030\001 \003(\0132\031.glory_api.ShopRankDe" +
+      "tail\022%\n\004mine\030d \001(\0132\027.glory_api.ShopRankM" +
+      "ine\"x\n\021ProductRankDetail\022\024\n\014product_name" +
+      "\030\001 \001(\t\022\023\n\013product_url\030\002 \001(\t\022\021\n\tshop_name" +
+      "\030\003 \001(\t\022\020\n\010shop_url\030\004 \001(\t\022\023\n\013sale_amount\030" +
+      "\005 \001(\003\"\204\001\n\017ProductRankMine\022\024\n\014product_nam" +
+      "e\030\001 \001(\t\022\023\n\013product_url\030\002 \001(\t\022\021\n\tshop_nam" +
+      "e\030\003 \001(\t\022\020\n\010shop_url\030\004 \001(\t\022\023\n\013sale_amount" +
+      "\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"h\n\013ProductRank\022/\n\tr" +
+      "ank_list\030\001 \003(\0132\034.glory_api.ProductRankDe" +
+      "tail\022(\n\004mine\030d \001(\0132\032.glory_api.ProductRa" +
+      "nkMine\"i\n\022LiveLikeRankDetail\022\021\n\tuser_nam" +
+      "e\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014" +
+      "\n\004clas\030\004 \001(\t\022\023\n\013like_amount\030\005 \001(\003\"u\n\020Liv" +
+      "eLikeRankMine\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tena" +
+      "nt\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\023\n" +
+      "\013like_amount\030\005 \001(\003\022\014\n\004rank\030\006 \001(\003\"k\n\014Live" +
+      "LikeRank\0220\n\trank_list\030\001 \003(\0132\035.glory_api." +
+      "LiveLikeRankDetail\022)\n\004mine\030d \001(\0132\033.glory" +
+      "_api.LiveLikeRankMine\"k\n\023LiveOrderRankDe" +
+      "tail\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022" +
+      "\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t\022\024\n\014order_am" +
+      "ount\030\005 \001(\003\"w\n\021LiveOrderRankMine\022\021\n\tuser_" +
+      "name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(" +
+      "\t\022\014\n\004clas\030\004 \001(\t\022\024\n\014order_amount\030\005 \001(\003\022\014\n" +
+      "\004rank\030\006 \001(\003\"n\n\rLiveOrderRank\0221\n\trank_lis" +
+      "t\030\001 \003(\0132\036.glory_api.LiveOrderRankDetail\022" +
+      "*\n\004mine\030d \001(\0132\034.glory_api.LiveOrderRankM" +
+      "ine\"i\n\030LiveEvaluationRankDetail\022\021\n\tuser_" +
+      "name\030\001 \001(\t\022\016\n\006tenant\030\002 \001(\t\022\r\n\005major\030\003 \001(" +
+      "\t\022\014\n\004clas\030\004 \001(\t\022\r\n\005score\030\005 \001(\001\"u\n\026LiveEv" +
+      "aluationRankMine\022\021\n\tuser_name\030\001 \001(\t\022\016\n\006t" +
+      "enant\030\002 \001(\t\022\r\n\005major\030\003 \001(\t\022\014\n\004clas\030\004 \001(\t" +
+      "\022\r\n\005score\030\005 \001(\001\022\014\n\004rank\030\006 \001(\003\"}\n\022LiveEva" +
+      "luationRank\0226\n\trank_list\030\001 \003(\0132#.glory_a" +
+      "pi.LiveEvaluationRankDetail\022/\n\004mine\030d \001(" +
+      "\0132!.glory_api.LiveEvaluationRankMine\"u\n\016" +
+      "GetRankRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\020\n\010category\030\002 \001(\t\022\014\n\004typ" +
+      "e\030\003 \001(\t\022\r\n\005start\030\004 \001(\003\022\013\n\003end\030\005 \001(\003\"\271\002\n\017" +
+      "GetRankResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022!\n\004live\030\002 \001(\0132\023.glory_api" +
+      ".LiveRank\022!\n\004shop\030\003 \001(\0132\023.glory_api.Shop" +
+      "Rank\022\'\n\007product\030\004 \001(\0132\026.glory_api.Produc" +
+      "tRank\022*\n\tlive_like\030\005 \001(\0132\027.glory_api.Liv" +
+      "eLikeRank\022,\n\nlive_order\030\006 \001(\0132\030.glory_ap" +
+      "i.LiveOrderRank\0226\n\017live_evaluation\030\007 \001(\013" +
+      "2\035.glory_api.LiveEvaluationRankB#\n\037com.z" +
+      "hijiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -453,7 +453,7 @@ public final class LiveEvaluate {
     internal_static_glory_api_EvaluateRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_EvaluateRoom_descriptor,
-        new java.lang.String[] { "RoomId", "RoomTitle", "RoomUrl", "Score", "Duration", "Like", "Order", "AiFeedback", "EvaluatedTime", "EvaluatedType", "QuickEvaluationIsPass", });
+        new java.lang.String[] { "RoomId", "RoomTitle", "RoomUrl", "Score", "Duration", "Like", "Order", "AiFeedback", "EvaluatedTime", "LiveTime", "EvaluatedType", "QuickEvaluationIsPass", });
     internal_static_glory_api_EvaluateData_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_EvaluateData_fieldAccessorTable = new

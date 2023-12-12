@@ -86,19 +86,31 @@ public interface EvaluateRoomOrBuilder extends
       getEvaluatedTimeBytes();
 
   /**
-   * <code>string evaluated_type = 10;</code>
+   * <code>string live_time = 10;</code>
+   * @return The liveTime.
+   */
+  java.lang.String getLiveTime();
+  /**
+   * <code>string live_time = 10;</code>
+   * @return The bytes for liveTime.
+   */
+  com.google.protobuf.ByteString
+      getLiveTimeBytes();
+
+  /**
+   * <code>string evaluated_type = 11;</code>
    * @return The evaluatedType.
    */
   java.lang.String getEvaluatedType();
   /**
-   * <code>string evaluated_type = 10;</code>
+   * <code>string evaluated_type = 11;</code>
    * @return The bytes for evaluatedType.
    */
   com.google.protobuf.ByteString
       getEvaluatedTypeBytes();
 
   /**
-   * <code>bool quick_evaluation_is_pass = 11;</code>
+   * <code>bool quick_evaluation_is_pass = 12;</code>
    * @return The quickEvaluationIsPass.
    */
   boolean getQuickEvaluationIsPass();

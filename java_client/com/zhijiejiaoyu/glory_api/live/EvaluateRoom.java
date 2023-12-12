@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     roomUrl = "";
     aiFeedback = "";
     evaluatedTime = "";
+    liveTime = "";
     evaluatedType = "";
   }
 
@@ -105,10 +106,16 @@ private static final long serialVersionUID = 0L;
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            liveTime = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             evaluatedType = s;
             break;
           }
-          case 88: {
+          case 96: {
 
             quickEvaluationIsPass = input.readBool();
             break;
@@ -352,10 +359,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EVALUATED_TYPE_FIELD_NUMBER = 10;
+  public static final int LIVE_TIME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object liveTime ;
+  /**
+   * <code>string live_time = 10;</code>
+   * @return The liveTime.
+   */
+  @java.lang.Override
+  public java.lang.String getLiveTime() {
+    java.lang.Object ref = liveTime ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      liveTime = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string live_time = 10;</code>
+   * @return The bytes for liveTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLiveTimeBytes() {
+    java.lang.Object ref = liveTime ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      liveTime = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVALUATED_TYPE_FIELD_NUMBER = 11;
   private volatile java.lang.Object evaluatedType ;
   /**
-   * <code>string evaluated_type = 10;</code>
+   * <code>string evaluated_type = 11;</code>
    * @return The evaluatedType.
    */
   @java.lang.Override
@@ -372,7 +417,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string evaluated_type = 10;</code>
+   * <code>string evaluated_type = 11;</code>
    * @return The bytes for evaluatedType.
    */
   @java.lang.Override
@@ -390,10 +435,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int QUICK_EVALUATION_IS_PASS_FIELD_NUMBER = 11;
+  public static final int QUICK_EVALUATION_IS_PASS_FIELD_NUMBER = 12;
   private boolean quickEvaluationIsPass ;
   /**
-   * <code>bool quick_evaluation_is_pass = 11;</code>
+   * <code>bool quick_evaluation_is_pass = 12;</code>
    * @return The quickEvaluationIsPass.
    */
   @java.lang.Override
@@ -442,11 +487,14 @@ private static final long serialVersionUID = 0L;
     if (!getEvaluatedTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, evaluatedTime );
     }
+    if (!getLiveTimeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, liveTime );
+    }
     if (!getEvaluatedTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, evaluatedType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, evaluatedType );
     }
     if (quickEvaluationIsPass != false) {
-      output.writeBool(11, quickEvaluationIsPass );
+      output.writeBool(12, quickEvaluationIsPass );
     }
     unknownFields.writeTo(output);
   }
@@ -489,12 +537,15 @@ private static final long serialVersionUID = 0L;
     if (!getEvaluatedTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, evaluatedTime );
     }
+    if (!getLiveTimeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, liveTime );
+    }
     if (!getEvaluatedTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, evaluatedType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, evaluatedType );
     }
     if (quickEvaluationIsPass != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, quickEvaluationIsPass );
+        .computeBoolSize(12, quickEvaluationIsPass );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -531,6 +582,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAiFeedback())) return false;
     if (!getEvaluatedTime()
         .equals(other.getEvaluatedTime())) return false;
+    if (!getLiveTime()
+        .equals(other.getLiveTime())) return false;
     if (!getEvaluatedType()
         .equals(other.getEvaluatedType())) return false;
     if (getQuickEvaluationIsPass()
@@ -569,6 +622,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAiFeedback().hashCode();
     hash = (37 * hash) + EVALUATED_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getEvaluatedTime().hashCode();
+    hash = (37 * hash) + LIVE_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + getLiveTime().hashCode();
     hash = (37 * hash) + EVALUATED_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getEvaluatedType().hashCode();
     hash = (37 * hash) + QUICK_EVALUATION_IS_PASS_FIELD_NUMBER;
@@ -725,6 +780,8 @@ private static final long serialVersionUID = 0L;
 
       evaluatedTime = "";
 
+      liveTime = "";
+
       evaluatedType = "";
 
       quickEvaluationIsPass = false;
@@ -764,6 +821,7 @@ private static final long serialVersionUID = 0L;
       result.order = order ;
       result.aiFeedback = aiFeedback ;
       result.evaluatedTime = evaluatedTime ;
+      result.liveTime = liveTime ;
       result.evaluatedType = evaluatedType ;
       result.quickEvaluationIsPass = quickEvaluationIsPass ;
       onBuilt();
@@ -843,6 +901,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getEvaluatedTime().isEmpty()) {
         evaluatedTime = other.evaluatedTime ;
+        onChanged();
+      }
+      if (!other.getLiveTime().isEmpty()) {
+        liveTime = other.liveTime ;
         onChanged();
       }
       if (!other.getEvaluatedType().isEmpty()) {
@@ -1340,9 +1402,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object liveTime = "";
+    /**
+     * <code>string live_time = 10;</code>
+     * @return The liveTime.
+     */
+    public java.lang.String getLiveTime() {
+      java.lang.Object ref = liveTime ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        liveTime = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string live_time = 10;</code>
+     * @return The bytes for liveTime.
+     */
+    public com.google.protobuf.ByteString
+        getLiveTimeBytes() {
+      java.lang.Object ref = liveTime ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        liveTime = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string live_time = 10;</code>
+     * @param value The liveTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveTime(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      liveTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string live_time = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveTime() {
+      
+      liveTime = getDefaultInstance().getLiveTime();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string live_time = 10;</code>
+     * @param value The bytes for liveTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveTimeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      liveTime = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object evaluatedType = "";
     /**
-     * <code>string evaluated_type = 10;</code>
+     * <code>string evaluated_type = 11;</code>
      * @return The evaluatedType.
      */
     public java.lang.String getEvaluatedType() {
@@ -1358,7 +1496,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string evaluated_type = 10;</code>
+     * <code>string evaluated_type = 11;</code>
      * @return The bytes for evaluatedType.
      */
     public com.google.protobuf.ByteString
@@ -1375,7 +1513,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string evaluated_type = 10;</code>
+     * <code>string evaluated_type = 11;</code>
      * @param value The evaluatedType to set.
      * @return This builder for chaining.
      */
@@ -1390,7 +1528,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string evaluated_type = 10;</code>
+     * <code>string evaluated_type = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearEvaluatedType() {
@@ -1400,7 +1538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string evaluated_type = 10;</code>
+     * <code>string evaluated_type = 11;</code>
      * @param value The bytes for evaluatedType to set.
      * @return This builder for chaining.
      */
@@ -1418,7 +1556,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean quickEvaluationIsPass ;
     /**
-     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * <code>bool quick_evaluation_is_pass = 12;</code>
      * @return The quickEvaluationIsPass.
      */
     @java.lang.Override
@@ -1426,7 +1564,7 @@ private static final long serialVersionUID = 0L;
       return quickEvaluationIsPass ;
     }
     /**
-     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * <code>bool quick_evaluation_is_pass = 12;</code>
      * @param value The quickEvaluationIsPass to set.
      * @return This builder for chaining.
      */
@@ -1437,7 +1575,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool quick_evaluation_is_pass = 11;</code>
+     * <code>bool quick_evaluation_is_pass = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearQuickEvaluationIsPass() {

@@ -26,6 +26,7 @@ export interface EvaluateRoom {
   order?: string;
   ai_feedback?: string;
   evaluated_time?: string;
+  live_time?: string;
   evaluated_type?: string;
   quick_evaluation_is_pass?: boolean;
 }
