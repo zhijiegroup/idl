@@ -100,6 +100,16 @@ private static final long serialVersionUID = 0L;
             maybeUseDay = input.readInt64();
             break;
           }
+          case 88: {
+
+            totalLiveDuration = input.readInt64();
+            break;
+          }
+          case 96: {
+
+            totalLiveCost = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -269,6 +279,36 @@ private static final long serialVersionUID = 0L;
     return maybeUseDay ;
   }
 
+  public static final int TOTAL_LIVE_DURATION_FIELD_NUMBER = 11;
+  private long totalLiveDuration ;
+  /**
+   * <pre>
+   * 直播总时长 单位秒
+   * </pre>
+   *
+   * <code>int64 total_live_duration = 11;</code>
+   * @return The totalLiveDuration.
+   */
+  @java.lang.Override
+  public long getTotalLiveDuration() {
+    return totalLiveDuration ;
+  }
+
+  public static final int TOTAL_LIVE_COST_FIELD_NUMBER = 12;
+  private long totalLiveCost ;
+  /**
+   * <pre>
+   * 直播总花费 单位分
+   * </pre>
+   *
+   * <code>int64 total_live_cost = 12;</code>
+   * @return The totalLiveCost.
+   */
+  @java.lang.Override
+  public long getTotalLiveCost() {
+    return totalLiveCost ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -312,6 +352,12 @@ private static final long serialVersionUID = 0L;
     }
     if (maybeUseDay != 0L) {
       output.writeInt64(10, maybeUseDay );
+    }
+    if (totalLiveDuration != 0L) {
+      output.writeInt64(11, totalLiveDuration );
+    }
+    if (totalLiveCost != 0L) {
+      output.writeInt64(12, totalLiveCost );
     }
     unknownFields.writeTo(output);
   }
@@ -361,6 +407,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(10, maybeUseDay );
     }
+    if (totalLiveDuration != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, totalLiveDuration );
+    }
+    if (totalLiveCost != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(12, totalLiveCost );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -397,6 +451,10 @@ private static final long serialVersionUID = 0L;
         != other.getAverageDayTraffic()) return false;
     if (getMaybeUseDay()
         != other.getMaybeUseDay()) return false;
+    if (getTotalLiveDuration()
+        != other.getTotalLiveDuration()) return false;
+    if (getTotalLiveCost()
+        != other.getTotalLiveCost()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -437,6 +495,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAYBE_USE_DAY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaybeUseDay());
+    hash = (37 * hash) + TOTAL_LIVE_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalLiveDuration());
+    hash = (37 * hash) + TOTAL_LIVE_COST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalLiveCost());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -590,6 +654,10 @@ private static final long serialVersionUID = 0L;
 
       maybeUseDay = 0L;
 
+      totalLiveDuration = 0L;
+
+      totalLiveCost = 0L;
+
       return this;
     }
 
@@ -626,6 +694,8 @@ private static final long serialVersionUID = 0L;
       result.maxDayTraffic = maxDayTraffic ;
       result.averageDayTraffic = averageDayTraffic ;
       result.maybeUseDay = maybeUseDay ;
+      result.totalLiveDuration = totalLiveDuration ;
+      result.totalLiveCost = totalLiveCost ;
       onBuilt();
       return result;
     }
@@ -704,6 +774,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getMaybeUseDay() != 0L) {
         setMaybeUseDay(other.getMaybeUseDay());
+      }
+      if (other.getTotalLiveDuration() != 0L) {
+        setTotalLiveDuration(other.getTotalLiveDuration());
+      }
+      if (other.getTotalLiveCost() != 0L) {
+        setTotalLiveCost(other.getTotalLiveCost());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1085,6 +1161,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearMaybeUseDay() {
       
       maybeUseDay = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalLiveDuration ;
+    /**
+     * <pre>
+     * 直播总时长 单位秒
+     * </pre>
+     *
+     * <code>int64 total_live_duration = 11;</code>
+     * @return The totalLiveDuration.
+     */
+    @java.lang.Override
+    public long getTotalLiveDuration() {
+      return totalLiveDuration ;
+    }
+    /**
+     * <pre>
+     * 直播总时长 单位秒
+     * </pre>
+     *
+     * <code>int64 total_live_duration = 11;</code>
+     * @param value The totalLiveDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalLiveDuration(long value) {
+      
+      totalLiveDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直播总时长 单位秒
+     * </pre>
+     *
+     * <code>int64 total_live_duration = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalLiveDuration() {
+      
+      totalLiveDuration = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalLiveCost ;
+    /**
+     * <pre>
+     * 直播总花费 单位分
+     * </pre>
+     *
+     * <code>int64 total_live_cost = 12;</code>
+     * @return The totalLiveCost.
+     */
+    @java.lang.Override
+    public long getTotalLiveCost() {
+      return totalLiveCost ;
+    }
+    /**
+     * <pre>
+     * 直播总花费 单位分
+     * </pre>
+     *
+     * <code>int64 total_live_cost = 12;</code>
+     * @param value The totalLiveCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalLiveCost(long value) {
+      
+      totalLiveCost = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 直播总花费 单位分
+     * </pre>
+     *
+     * <code>int64 total_live_cost = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalLiveCost() {
+      
+      totalLiveCost = 0L;
       onChanged();
       return this;
     }

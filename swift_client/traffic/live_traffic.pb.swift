@@ -105,6 +105,12 @@ struct GloryApi_SchoolLiveTraffic {
 
   var maybeUseDay: Int64 = 0
 
+  /// 直播总时长 单位秒
+  var totalLiveDuration: Int64 = 0
+
+  /// 直播总花费 单位分
+  var totalLiveCost: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -706,6 +712,8 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
     8: .standard(proto: "max_day_traffic"),
     9: .standard(proto: "average_day_traffic"),
     10: .standard(proto: "maybe_use_day"),
+    11: .standard(proto: "total_live_duration"),
+    12: .standard(proto: "total_live_cost"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -724,6 +732,8 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.maxDayTraffic) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.averageDayTraffic) }()
       case 10: try { try decoder.decodeSingularInt64Field(value: &self.maybeUseDay) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.totalLiveDuration) }()
+      case 12: try { try decoder.decodeSingularInt64Field(value: &self.totalLiveCost) }()
       default: break
       }
     }
@@ -760,6 +770,12 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.maybeUseDay != 0 {
       try visitor.visitSingularInt64Field(value: self.maybeUseDay, fieldNumber: 10)
     }
+    if self.totalLiveDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalLiveDuration, fieldNumber: 11)
+    }
+    if self.totalLiveCost != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalLiveCost, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -774,6 +790,8 @@ extension GloryApi_SchoolLiveTraffic: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.maxDayTraffic != rhs.maxDayTraffic {return false}
     if lhs.averageDayTraffic != rhs.averageDayTraffic {return false}
     if lhs.maybeUseDay != rhs.maybeUseDay {return false}
+    if lhs.totalLiveDuration != rhs.totalLiveDuration {return false}
+    if lhs.totalLiveCost != rhs.totalLiveCost {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
