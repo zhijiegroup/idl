@@ -13,6 +13,24 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use courseResourceFileDescriptor instead')
+const CourseResourceFile$json = {
+  '1': 'CourseResourceFile',
+  '2': [
+    {'1': 'resource_id', '3': 1, '4': 1, '5': 3, '10': 'resourceId'},
+    {'1': 'file_id', '3': 2, '4': 1, '5': 3, '10': 'fileId'},
+    {'1': 'file_type', '3': 3, '4': 1, '5': 9, '10': 'fileType'},
+    {'1': 'file_name', '3': 4, '4': 1, '5': 9, '10': 'fileName'},
+    {'1': 'file_path', '3': 5, '4': 1, '5': 9, '10': 'filePath'},
+  ],
+};
+
+/// Descriptor for `CourseResourceFile`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List courseResourceFileDescriptor = $convert.base64Decode(
+    'ChJDb3Vyc2VSZXNvdXJjZUZpbGUSHwoLcmVzb3VyY2VfaWQYASABKANSCnJlc291cmNlSWQSFw'
+    'oHZmlsZV9pZBgCIAEoA1IGZmlsZUlkEhsKCWZpbGVfdHlwZRgDIAEoCVIIZmlsZVR5cGUSGwoJ'
+    'ZmlsZV9uYW1lGAQgASgJUghmaWxlTmFtZRIbCglmaWxlX3BhdGgYBSABKAlSCGZpbGVQYXRo');
+
 @$core.Deprecated('Use courseResourceDescriptor instead')
 const CourseResource$json = {
   '1': 'CourseResource',
@@ -20,10 +38,10 @@ const CourseResource$json = {
     {'1': 'resource_id', '3': 1, '4': 1, '5': 3, '10': 'resourceId'},
     {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
     {'1': 'resource_type', '3': 3, '4': 1, '5': 5, '10': 'resourceType'},
-    {'1': 'content_type', '3': 4, '4': 1, '5': 9, '10': 'contentType'},
     {'1': 'resource_path', '3': 5, '4': 1, '5': 9, '10': 'resourcePath'},
     {'1': 'resource_url', '3': 6, '4': 1, '5': 9, '10': 'resourceUrl'},
     {'1': 'resource_content', '3': 7, '4': 1, '5': 9, '10': 'resourceContent'},
+    {'1': 'files', '3': 8, '4': 3, '5': 11, '6': '.glory_api.CourseResourceFile', '10': 'files'},
   ],
 };
 
@@ -31,9 +49,10 @@ const CourseResource$json = {
 final $typed_data.Uint8List courseResourceDescriptor = $convert.base64Decode(
     'Cg5Db3Vyc2VSZXNvdXJjZRIfCgtyZXNvdXJjZV9pZBgBIAEoA1IKcmVzb3VyY2VJZBIjCg1yZX'
     'NvdXJjZV9uYW1lGAIgASgJUgxyZXNvdXJjZU5hbWUSIwoNcmVzb3VyY2VfdHlwZRgDIAEoBVIM'
-    'cmVzb3VyY2VUeXBlEiEKDGNvbnRlbnRfdHlwZRgEIAEoCVILY29udGVudFR5cGUSIwoNcmVzb3'
-    'VyY2VfcGF0aBgFIAEoCVIMcmVzb3VyY2VQYXRoEiEKDHJlc291cmNlX3VybBgGIAEoCVILcmVz'
-    'b3VyY2VVcmwSKQoQcmVzb3VyY2VfY29udGVudBgHIAEoCVIPcmVzb3VyY2VDb250ZW50');
+    'cmVzb3VyY2VUeXBlEiMKDXJlc291cmNlX3BhdGgYBSABKAlSDHJlc291cmNlUGF0aBIhCgxyZX'
+    'NvdXJjZV91cmwYBiABKAlSC3Jlc291cmNlVXJsEikKEHJlc291cmNlX2NvbnRlbnQYByABKAlS'
+    'D3Jlc291cmNlQ29udGVudBIzCgVmaWxlcxgIIAMoCzIdLmdsb3J5X2FwaS5Db3Vyc2VSZXNvdX'
+    'JjZUZpbGVSBWZpbGVz');
 
 @$core.Deprecated('Use courseChapterDescriptor instead')
 const CourseChapter$json = {

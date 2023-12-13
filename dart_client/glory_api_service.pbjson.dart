@@ -1109,6 +1109,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.CourseModule': $38.CourseModule$json,
   '.glory_api.CourseChapter': $38.CourseChapter$json,
   '.glory_api.CourseResource': $38.CourseResource$json,
+  '.glory_api.CourseResourceFile': $38.CourseResourceFile$json,
   '.glory_api.CreateCourseModuleResponse': $38.CreateCourseModuleResponse$json,
   '.glory_api.GetCourseModuleRequest': $38.GetCourseModuleRequest$json,
   '.glory_api.GetCourseModuleResponse': $38.GetCourseModuleResponse$json,

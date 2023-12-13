@@ -17,10 +17,10 @@ private static final long serialVersionUID = 0L;
   }
   private CourseResource() {
     resourceName = "";
-    contentType = "";
     resourcePath = "";
     resourceUrl = "";
     resourceContent = "";
+    files = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,12 +70,6 @@ private static final long serialVersionUID = 0L;
             resourceType = input.readInt32();
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            contentType = s;
-            break;
-          }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -93,6 +88,15 @@ private static final long serialVersionUID = 0L;
             resourceContent = s;
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              files = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseResourceFile>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            files .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseResourceFile.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -108,6 +112,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        files = java.util.Collections.unmodifiableList(files );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -199,52 +206,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getResourceType() {
     return resourceType ;
-  }
-
-  public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object contentType ;
-  /**
-   * <pre>
-   * 课件类型：0.默认；1.PPT；2.PDF
-   * </pre>
-   *
-   * <code>string content_type = 4;</code>
-   * @return The contentType.
-   */
-  @java.lang.Override
-  public java.lang.String getContentType() {
-    java.lang.Object ref = contentType ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      contentType = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 课件类型：0.默认；1.PPT；2.PDF
-   * </pre>
-   *
-   * <code>string content_type = 4;</code>
-   * @return The bytes for contentType.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getContentTypeBytes() {
-    java.lang.Object ref = contentType ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      contentType = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int RESOURCE_PATH_FIELD_NUMBER = 5;
@@ -385,6 +346,66 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FILES_FIELD_NUMBER = 8;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> files ;
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> getFilesList() {
+    return files ;
+  }
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder> 
+      getFilesOrBuilderList() {
+    return files ;
+  }
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  @java.lang.Override
+  public int getFilesCount() {
+    return files .size();
+  }
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseResourceFile getFiles(int index) {
+    return files .get(index);
+  }
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder getFilesOrBuilder(
+      int index) {
+    return files .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -408,9 +429,6 @@ private static final long serialVersionUID = 0L;
     if (resourceType != 0) {
       output.writeInt32(3, resourceType );
     }
-    if (!getContentTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contentType );
-    }
     if (!getResourcePathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourcePath );
     }
@@ -419,6 +437,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getResourceContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resourceContent );
+    }
+    for (int i = 0; i < files .size(); i++) {
+      output.writeMessage(8, files .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -440,9 +461,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, resourceType );
     }
-    if (!getContentTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contentType );
-    }
     if (!getResourcePathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resourcePath );
     }
@@ -451,6 +469,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getResourceContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resourceContent );
+    }
+    for (int i = 0; i < files .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, files .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -473,14 +495,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceName())) return false;
     if (getResourceType()
         != other.getResourceType()) return false;
-    if (!getContentType()
-        .equals(other.getContentType())) return false;
     if (!getResourcePath()
         .equals(other.getResourcePath())) return false;
     if (!getResourceUrl()
         .equals(other.getResourceUrl())) return false;
     if (!getResourceContent()
         .equals(other.getResourceContent())) return false;
+    if (!getFilesList()
+        .equals(other.getFilesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -499,14 +521,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getResourceName().hashCode();
     hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getResourceType();
-    hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getContentType().hashCode();
     hash = (37 * hash) + RESOURCE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getResourcePath().hashCode();
     hash = (37 * hash) + RESOURCE_URL_FIELD_NUMBER;
     hash = (53 * hash) + getResourceUrl().hashCode();
     hash = (37 * hash) + RESOURCE_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getResourceContent().hashCode();
+    if (getFilesCount() > 0) {
+      hash = (37 * hash) + FILES_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -635,6 +659,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getFilesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -646,14 +671,18 @@ private static final long serialVersionUID = 0L;
 
       resourceType = 0;
 
-      contentType = "";
-
       resourcePath = "";
 
       resourceUrl = "";
 
       resourceContent = "";
 
+      if (filesBuilder == null) {
+        files = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        filesBuilder .clear();
+      }
       return this;
     }
 
@@ -680,13 +709,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.course.CourseResource buildPartial() {
       com.zhijiejiaoyu.glory_api.course.CourseResource result = new com.zhijiejiaoyu.glory_api.course.CourseResource(this);
+      int from_bitField0 = bitField0 ;
       result.resourceId = resourceId ;
       result.resourceName = resourceName ;
       result.resourceType = resourceType ;
-      result.contentType = contentType ;
       result.resourcePath = resourcePath ;
       result.resourceUrl = resourceUrl ;
       result.resourceContent = resourceContent ;
+      if (filesBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          files = java.util.Collections.unmodifiableList(files );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.files = files ;
+      } else {
+        result.files = filesBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -745,10 +783,6 @@ private static final long serialVersionUID = 0L;
       if (other.getResourceType() != 0) {
         setResourceType(other.getResourceType());
       }
-      if (!other.getContentType().isEmpty()) {
-        contentType = other.contentType ;
-        onChanged();
-      }
       if (!other.getResourcePath().isEmpty()) {
         resourcePath = other.resourcePath ;
         onChanged();
@@ -760,6 +794,32 @@ private static final long serialVersionUID = 0L;
       if (!other.getResourceContent().isEmpty()) {
         resourceContent = other.resourceContent ;
         onChanged();
+      }
+      if (filesBuilder == null) {
+        if (!other.files .isEmpty()) {
+          if (files .isEmpty()) {
+            files = other.files ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureFilesIsMutable();
+            files .addAll(other.files );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.files .isEmpty()) {
+          if (filesBuilder .isEmpty()) {
+            filesBuilder .dispose();
+            filesBuilder = null;
+            files = other.files ;
+            bitField0 = (bitField0 & ~0x00000001);
+            filesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFilesFieldBuilder() : null;
+          } else {
+            filesBuilder .addAllMessages(other.files );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -789,6 +849,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private long resourceId ;
     /**
@@ -968,102 +1029,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearResourceType() {
       
       resourceType = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object contentType = "";
-    /**
-     * <pre>
-     * 课件类型：0.默认；1.PPT；2.PDF
-     * </pre>
-     *
-     * <code>string content_type = 4;</code>
-     * @return The contentType.
-     */
-    public java.lang.String getContentType() {
-      java.lang.Object ref = contentType ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        contentType = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 课件类型：0.默认；1.PPT；2.PDF
-     * </pre>
-     *
-     * <code>string content_type = 4;</code>
-     * @return The bytes for contentType.
-     */
-    public com.google.protobuf.ByteString
-        getContentTypeBytes() {
-      java.lang.Object ref = contentType ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        contentType = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 课件类型：0.默认；1.PPT；2.PDF
-     * </pre>
-     *
-     * <code>string content_type = 4;</code>
-     * @param value The contentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setContentType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      contentType = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 课件类型：0.默认；1.PPT；2.PDF
-     * </pre>
-     *
-     * <code>string content_type = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearContentType() {
-      
-      contentType = getDefaultInstance().getContentType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 课件类型：0.默认；1.PPT；2.PDF
-     * </pre>
-     *
-     * <code>string content_type = 4;</code>
-     * @param value The bytes for contentType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setContentTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      contentType = value;
       onChanged();
       return this;
     }
@@ -1354,6 +1319,318 @@ private static final long serialVersionUID = 0L;
       resourceContent = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> files =
+      java.util.Collections.emptyList();
+    private void ensureFilesIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        files = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseResourceFile>(files );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseResourceFile, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder> filesBuilder ;
+
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> getFilesList() {
+      if (filesBuilder == null) {
+        return java.util.Collections.unmodifiableList(files );
+      } else {
+        return filesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public int getFilesCount() {
+      if (filesBuilder == null) {
+        return files .size();
+      } else {
+        return filesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceFile getFiles(int index) {
+      if (filesBuilder == null) {
+        return files .get(index);
+      } else {
+        return filesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder setFiles(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResourceFile value) {
+      if (filesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files .set(index, value);
+        onChanged();
+      } else {
+        filesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder setFiles(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder builderForValue) {
+      if (filesBuilder == null) {
+        ensureFilesIsMutable();
+        files .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder addFiles(com.zhijiejiaoyu.glory_api.course.CourseResourceFile value) {
+      if (filesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files .add(value);
+        onChanged();
+      } else {
+        filesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder addFiles(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResourceFile value) {
+      if (filesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files .add(index, value);
+        onChanged();
+      } else {
+        filesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder addFiles(
+        com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder builderForValue) {
+      if (filesBuilder == null) {
+        ensureFilesIsMutable();
+        files .add(builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder addFiles(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder builderForValue) {
+      if (filesBuilder == null) {
+        ensureFilesIsMutable();
+        files .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder addAllFiles(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceFile> values) {
+      if (filesBuilder == null) {
+        ensureFilesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, files );
+        onChanged();
+      } else {
+        filesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder clearFiles() {
+      if (filesBuilder == null) {
+        files = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        filesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public Builder removeFiles(int index) {
+      if (filesBuilder == null) {
+        ensureFilesIsMutable();
+        files .remove(index);
+        onChanged();
+      } else {
+        filesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder getFilesBuilder(
+        int index) {
+      return getFilesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder getFilesOrBuilder(
+        int index) {
+      if (filesBuilder == null) {
+        return files .get(index);  } else {
+        return filesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder> 
+         getFilesOrBuilderList() {
+      if (filesBuilder != null) {
+        return filesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(files );
+      }
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder addFilesBuilder() {
+      return getFilesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseResourceFile.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder addFilesBuilder(
+        int index) {
+      return getFilesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+     * </pre>
+     *
+     * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder> 
+         getFilesBuilderList() {
+      return getFilesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseResourceFile, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder> 
+        getFilesFieldBuilder() {
+      if (filesBuilder == null) {
+        filesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseResourceFile, com.zhijiejiaoyu.glory_api.course.CourseResourceFile.Builder, com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder>(
+                files ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        files = null;
+      }
+      return filesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -49,26 +49,6 @@ public interface CourseResourceOrBuilder extends
 
   /**
    * <pre>
-   * 课件类型：0.默认；1.PPT；2.PDF
-   * </pre>
-   *
-   * <code>string content_type = 4;</code>
-   * @return The contentType.
-   */
-  java.lang.String getContentType();
-  /**
-   * <pre>
-   * 课件类型：0.默认；1.PPT；2.PDF
-   * </pre>
-   *
-   * <code>string content_type = 4;</code>
-   * @return The bytes for contentType.
-   */
-  com.google.protobuf.ByteString
-      getContentTypeBytes();
-
-  /**
-   * <pre>
    * 课程资源OSS路径，用于教学视频和教学PPT
    * </pre>
    *
@@ -126,4 +106,48 @@ public interface CourseResourceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceContentBytes();
+
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseResourceFile> 
+      getFilesList();
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseResourceFile getFiles(int index);
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  int getFilesCount();
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder> 
+      getFilesOrBuilderList();
+  /**
+   * <pre>
+   * 课程资源类型为教学课件时的文件(PDF/PPT)列表
+   * </pre>
+   *
+   * <code>repeated .glory_api.CourseResourceFile files = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseResourceFileOrBuilder getFilesOrBuilder(
+      int index);
 }

@@ -20,6 +20,31 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+struct GloryApi_CourseResourceFile {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// 关联的资源ID
+  var resourceID: Int64 = 0
+
+  /// 文件ID
+  var fileID: Int64 = 0
+
+  /// 文件类型(0:默认;1:PPT;2:PDF)
+  var fileType: String = String()
+
+  /// 文件名称
+  var fileName: String = String()
+
+  /// 文件路径
+  var filePath: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_CourseResource {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -34,9 +59,6 @@ struct GloryApi_CourseResource {
   /// 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案
   var resourceType: Int32 = 0
 
-  /// 课件类型：0.默认；1.PPT；2.PDF
-  var contentType: String = String()
-
   /// 课程资源OSS路径，用于教学视频和教学PPT
   var resourcePath: String = String()
 
@@ -45,6 +67,9 @@ struct GloryApi_CourseResource {
 
   /// 课程资源内容，用于课后习题和教案
   var resourceContent: String = String()
+
+  /// 课程资源类型为教学课件时的文件(PDF/PPT)列表
+  var files: [GloryApi_CourseResourceFile] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -499,6 +524,7 @@ struct GloryApi_ListCourseModuleResponse {
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
+extension GloryApi_CourseResourceFile: @unchecked Sendable {}
 extension GloryApi_CourseResource: @unchecked Sendable {}
 extension GloryApi_CourseChapter: @unchecked Sendable {}
 extension GloryApi_CourseModule: @unchecked Sendable {}
@@ -522,16 +548,72 @@ extension GloryApi_ListCourseModuleResponse: @unchecked Sendable {}
 
 fileprivate let _protobuf_package = "glory_api"
 
+extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CourseResourceFile"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "resource_id"),
+    2: .standard(proto: "file_id"),
+    3: .standard(proto: "file_type"),
+    4: .standard(proto: "file_name"),
+    5: .standard(proto: "file_path"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.fileID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.fileName) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.filePath) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.resourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourceID, fieldNumber: 1)
+    }
+    if self.fileID != 0 {
+      try visitor.visitSingularInt64Field(value: self.fileID, fieldNumber: 2)
+    }
+    if !self.fileType.isEmpty {
+      try visitor.visitSingularStringField(value: self.fileType, fieldNumber: 3)
+    }
+    if !self.fileName.isEmpty {
+      try visitor.visitSingularStringField(value: self.fileName, fieldNumber: 4)
+    }
+    if !self.filePath.isEmpty {
+      try visitor.visitSingularStringField(value: self.filePath, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CourseResourceFile, rhs: GloryApi_CourseResourceFile) -> Bool {
+    if lhs.resourceID != rhs.resourceID {return false}
+    if lhs.fileID != rhs.fileID {return false}
+    if lhs.fileType != rhs.fileType {return false}
+    if lhs.fileName != rhs.fileName {return false}
+    if lhs.filePath != rhs.filePath {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CourseResource"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "resource_id"),
     2: .standard(proto: "resource_name"),
     3: .standard(proto: "resource_type"),
-    4: .standard(proto: "content_type"),
     5: .standard(proto: "resource_path"),
     6: .standard(proto: "resource_url"),
     7: .standard(proto: "resource_content"),
+    8: .same(proto: "files"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -543,10 +625,10 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.resourceType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.contentType) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.resourceContent) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.files) }()
       default: break
       }
     }
@@ -562,9 +644,6 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.resourceType != 0 {
       try visitor.visitSingularInt32Field(value: self.resourceType, fieldNumber: 3)
     }
-    if !self.contentType.isEmpty {
-      try visitor.visitSingularStringField(value: self.contentType, fieldNumber: 4)
-    }
     if !self.resourcePath.isEmpty {
       try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 5)
     }
@@ -574,6 +653,9 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if !self.resourceContent.isEmpty {
       try visitor.visitSingularStringField(value: self.resourceContent, fieldNumber: 7)
     }
+    if !self.files.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.files, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -581,10 +663,10 @@ extension GloryApi_CourseResource: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.resourceID != rhs.resourceID {return false}
     if lhs.resourceName != rhs.resourceName {return false}
     if lhs.resourceType != rhs.resourceType {return false}
-    if lhs.contentType != rhs.contentType {return false}
     if lhs.resourcePath != rhs.resourcePath {return false}
     if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.resourceContent != rhs.resourceContent {return false}
+    if lhs.files != rhs.files {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

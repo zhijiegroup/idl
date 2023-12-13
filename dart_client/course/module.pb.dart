@@ -16,15 +16,121 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
 
+class CourseResourceFile extends $pb.GeneratedMessage {
+  factory CourseResourceFile({
+    $fixnum.Int64? resourceId,
+    $fixnum.Int64? fileId,
+    $core.String? fileType,
+    $core.String? fileName,
+    $core.String? filePath,
+  }) {
+    final $result = create();
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (fileId != null) {
+      $result.fileId = fileId;
+    }
+    if (fileType != null) {
+      $result.fileType = fileType;
+    }
+    if (fileName != null) {
+      $result.fileName = fileName;
+    }
+    if (filePath != null) {
+      $result.filePath = filePath;
+    }
+    return $result;
+  }
+  CourseResourceFile._() : super();
+  factory CourseResourceFile.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CourseResourceFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CourseResourceFile', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
+    ..aInt64(2, _omitFieldNames ? '' : 'fileId')
+    ..aOS(3, _omitFieldNames ? '' : 'fileType')
+    ..aOS(4, _omitFieldNames ? '' : 'fileName')
+    ..aOS(5, _omitFieldNames ? '' : 'filePath')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CourseResourceFile clone() => CourseResourceFile()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CourseResourceFile copyWith(void Function(CourseResourceFile) updates) => super.copyWith((message) => updates(message as CourseResourceFile)) as CourseResourceFile;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CourseResourceFile create() => CourseResourceFile._();
+  CourseResourceFile createEmptyInstance() => create();
+  static $pb.PbList<CourseResourceFile> createRepeated() => $pb.PbList<CourseResourceFile>();
+  @$core.pragma('dart2js:noInline')
+  static CourseResourceFile getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CourseResourceFile>(create);
+  static CourseResourceFile? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get resourceId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set resourceId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResourceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResourceId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get fileId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set fileId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFileId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFileId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fileType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fileType($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFileType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFileType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get fileName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set fileName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFileName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFileName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get filePath => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set filePath($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFilePath() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFilePath() => clearField(5);
+}
+
 class CourseResource extends $pb.GeneratedMessage {
   factory CourseResource({
     $fixnum.Int64? resourceId,
     $core.String? resourceName,
     $core.int? resourceType,
-    $core.String? contentType,
     $core.String? resourcePath,
     $core.String? resourceUrl,
     $core.String? resourceContent,
+    $core.Iterable<CourseResourceFile>? files,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -36,9 +142,6 @@ class CourseResource extends $pb.GeneratedMessage {
     if (resourceType != null) {
       $result.resourceType = resourceType;
     }
-    if (contentType != null) {
-      $result.contentType = contentType;
-    }
     if (resourcePath != null) {
       $result.resourcePath = resourcePath;
     }
@@ -47,6 +150,9 @@ class CourseResource extends $pb.GeneratedMessage {
     }
     if (resourceContent != null) {
       $result.resourceContent = resourceContent;
+    }
+    if (files != null) {
+      $result.files.addAll(files);
     }
     return $result;
   }
@@ -58,10 +164,10 @@ class CourseResource extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
     ..aOS(2, _omitFieldNames ? '' : 'resourceName')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'resourceType', $pb.PbFieldType.O3)
-    ..aOS(4, _omitFieldNames ? '' : 'contentType')
     ..aOS(5, _omitFieldNames ? '' : 'resourcePath')
     ..aOS(6, _omitFieldNames ? '' : 'resourceUrl')
     ..aOS(7, _omitFieldNames ? '' : 'resourceContent')
+    ..pc<CourseResourceFile>(8, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: CourseResourceFile.create)
     ..hasRequiredFields = false
   ;
 
@@ -113,41 +219,35 @@ class CourseResource extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearResourceType() => clearField(3);
 
-  @$pb.TagNumber(4)
-  $core.String get contentType => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set contentType($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasContentType() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearContentType() => clearField(4);
-
   @$pb.TagNumber(5)
-  $core.String get resourcePath => $_getSZ(4);
+  $core.String get resourcePath => $_getSZ(3);
   @$pb.TagNumber(5)
-  set resourcePath($core.String v) { $_setString(4, v); }
+  set resourcePath($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(5)
-  $core.bool hasResourcePath() => $_has(4);
+  $core.bool hasResourcePath() => $_has(3);
   @$pb.TagNumber(5)
   void clearResourcePath() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get resourceUrl => $_getSZ(5);
+  $core.String get resourceUrl => $_getSZ(4);
   @$pb.TagNumber(6)
-  set resourceUrl($core.String v) { $_setString(5, v); }
+  set resourceUrl($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(6)
-  $core.bool hasResourceUrl() => $_has(5);
+  $core.bool hasResourceUrl() => $_has(4);
   @$pb.TagNumber(6)
   void clearResourceUrl() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get resourceContent => $_getSZ(6);
+  $core.String get resourceContent => $_getSZ(5);
   @$pb.TagNumber(7)
-  set resourceContent($core.String v) { $_setString(6, v); }
+  set resourceContent($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasResourceContent() => $_has(6);
+  $core.bool hasResourceContent() => $_has(5);
   @$pb.TagNumber(7)
   void clearResourceContent() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<CourseResourceFile> get files => $_getList(6);
 }
 
 class CourseChapter extends $pb.GeneratedMessage {

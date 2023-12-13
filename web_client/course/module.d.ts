@@ -5,6 +5,19 @@
 import * as base from "../base";
 export { base };
 
+export interface CourseResourceFile {
+  /** 关联的资源ID */
+  resource_id?: string;
+  /** 文件ID */
+  file_id?: string;
+  /** 文件类型(0:默认;1:PPT;2:PDF) */
+  file_type?: string;
+  /** 文件名称 */
+  file_name?: string;
+  /** 文件路径 */
+  file_path?: string;
+}
+
 export interface CourseResource {
   /** 课程资源ID */
   resource_id?: string;
@@ -12,14 +25,14 @@ export interface CourseResource {
   resource_name?: string;
   /** 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案 */
   resource_type?: number;
-  /** 课件类型：0.默认；1.PPT；2.PDF */
-  content_type?: string;
   /** 课程资源OSS路径，用于教学视频和教学PPT */
   resource_path?: string;
   /** 课程资源URL */
   resource_url?: string;
   /** 课程资源内容，用于课后习题和教案 */
   resource_content?: string;
+  /** 课程资源类型为教学课件时的文件(PDF/PPT)列表 */
+  files?: Array<CourseResourceFile>;
 }
 
 export interface CourseChapter {
