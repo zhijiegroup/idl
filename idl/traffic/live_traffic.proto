@@ -29,6 +29,8 @@ message SchoolLiveTraffic {
     int64 max_day_traffic = 8;
     int64 average_day_traffic = 9;
     int64 maybe_use_day = 10;
+    int64 total_live_duration = 11; // 直播总时长 单位秒
+    int64 total_live_cost = 12; // 直播总花费 单位分
 }
 
 message GetSchoolLiveTrafficChartRequest {
