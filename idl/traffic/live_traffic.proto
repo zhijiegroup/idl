@@ -64,6 +64,8 @@ message GetAllLiveTrafficResponse {
     base.BaseResponse base_resp = 1;
     int64 total_traffic = 2;
     int64 ali_total_traffic = 3;
+    int64 total_cost = 4;
+    int64 ali_total_cost = 5;
 }
 
 message GetSchooLiveTrafficRequest {
