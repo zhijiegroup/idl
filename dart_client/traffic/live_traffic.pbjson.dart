@@ -62,6 +62,8 @@ const SchoolLiveTraffic$json = {
     {'1': 'max_day_traffic', '3': 8, '4': 1, '5': 3, '10': 'maxDayTraffic'},
     {'1': 'average_day_traffic', '3': 9, '4': 1, '5': 3, '10': 'averageDayTraffic'},
     {'1': 'maybe_use_day', '3': 10, '4': 1, '5': 3, '10': 'maybeUseDay'},
+    {'1': 'total_live_duration', '3': 11, '4': 1, '5': 3, '10': 'totalLiveDuration'},
+    {'1': 'total_live_cost', '3': 12, '4': 1, '5': 3, '10': 'totalLiveCost'},
   ],
 };
 
@@ -74,7 +76,9 @@ final $typed_data.Uint8List schoolLiveTrafficDescriptor = $convert.base64Decode(
     'YXRpb24YBiABKANSD21heExpdmVEdXJhdGlvbhIyChVhdmVyYWdlX2xpdmVfZHVyYXRpb24YBy'
     'ABKANSE2F2ZXJhZ2VMaXZlRHVyYXRpb24SJgoPbWF4X2RheV90cmFmZmljGAggASgDUg1tYXhE'
     'YXlUcmFmZmljEi4KE2F2ZXJhZ2VfZGF5X3RyYWZmaWMYCSABKANSEWF2ZXJhZ2VEYXlUcmFmZm'
-    'ljEiIKDW1heWJlX3VzZV9kYXkYCiABKANSC21heWJlVXNlRGF5');
+    'ljEiIKDW1heWJlX3VzZV9kYXkYCiABKANSC21heWJlVXNlRGF5Ei4KE3RvdGFsX2xpdmVfZHVy'
+    'YXRpb24YCyABKANSEXRvdGFsTGl2ZUR1cmF0aW9uEiYKD3RvdGFsX2xpdmVfY29zdBgMIAEoA1'
+    'INdG90YWxMaXZlQ29zdA==');
 
 @$core.Deprecated('Use getSchoolLiveTrafficChartRequestDescriptor instead')
 const GetSchoolLiveTrafficChartRequest$json = {

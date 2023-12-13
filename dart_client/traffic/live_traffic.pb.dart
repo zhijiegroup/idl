@@ -198,6 +198,8 @@ class SchoolLiveTraffic extends $pb.GeneratedMessage {
     $fixnum.Int64? maxDayTraffic,
     $fixnum.Int64? averageDayTraffic,
     $fixnum.Int64? maybeUseDay,
+    $fixnum.Int64? totalLiveDuration,
+    $fixnum.Int64? totalLiveCost,
   }) {
     final $result = create();
     if (tenantId != null) {
@@ -230,6 +232,12 @@ class SchoolLiveTraffic extends $pb.GeneratedMessage {
     if (maybeUseDay != null) {
       $result.maybeUseDay = maybeUseDay;
     }
+    if (totalLiveDuration != null) {
+      $result.totalLiveDuration = totalLiveDuration;
+    }
+    if (totalLiveCost != null) {
+      $result.totalLiveCost = totalLiveCost;
+    }
     return $result;
   }
   SchoolLiveTraffic._() : super();
@@ -247,6 +255,8 @@ class SchoolLiveTraffic extends $pb.GeneratedMessage {
     ..aInt64(8, _omitFieldNames ? '' : 'maxDayTraffic')
     ..aInt64(9, _omitFieldNames ? '' : 'averageDayTraffic')
     ..aInt64(10, _omitFieldNames ? '' : 'maybeUseDay')
+    ..aInt64(11, _omitFieldNames ? '' : 'totalLiveDuration')
+    ..aInt64(12, _omitFieldNames ? '' : 'totalLiveCost')
     ..hasRequiredFields = false
   ;
 
@@ -360,6 +370,24 @@ class SchoolLiveTraffic extends $pb.GeneratedMessage {
   $core.bool hasMaybeUseDay() => $_has(9);
   @$pb.TagNumber(10)
   void clearMaybeUseDay() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get totalLiveDuration => $_getI64(10);
+  @$pb.TagNumber(11)
+  set totalLiveDuration($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasTotalLiveDuration() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTotalLiveDuration() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get totalLiveCost => $_getI64(11);
+  @$pb.TagNumber(12)
+  set totalLiveCost($fixnum.Int64 v) { $_setInt64(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTotalLiveCost() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTotalLiveCost() => clearField(12);
 }
 
 class GetSchoolLiveTrafficChartRequest extends $pb.GeneratedMessage {

@@ -29,6 +29,10 @@ export interface SchoolLiveTraffic {
   max_day_traffic?: string;
   average_day_traffic?: string;
   maybe_use_day?: string;
+  /** 直播总时长 单位秒 */
+  total_live_duration?: string;
+  /** 直播总花费 单位分 */
+  total_live_cost?: string;
 }
 
 export interface GetSchoolLiveTrafficChartRequest {

@@ -72,4 +72,24 @@ public interface SchoolLiveTrafficOrBuilder extends
    * @return The maybeUseDay.
    */
   long getMaybeUseDay();
+
+  /**
+   * <pre>
+   * 直播总时长 单位秒
+   * </pre>
+   *
+   * <code>int64 total_live_duration = 11;</code>
+   * @return The totalLiveDuration.
+   */
+  long getTotalLiveDuration();
+
+  /**
+   * <pre>
+   * 直播总花费 单位分
+   * </pre>
+   *
+   * <code>int64 total_live_cost = 12;</code>
+   * @return The totalLiveCost.
+   */
+  long getTotalLiveCost();
 }
