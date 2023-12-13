@@ -35,10 +35,10 @@ struct GloryApi_CourseResourceFile {
   var fileType: String = String()
 
   /// 文件名称
-  var fileName: String = String()
+  var resourceName: String = String()
 
   /// 文件路径
-  var filePath: String = String()
+  var resourcePath: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -554,8 +554,8 @@ extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftProtobuf._Mes
     1: .standard(proto: "resource_id"),
     2: .standard(proto: "file_id"),
     3: .standard(proto: "file_type"),
-    4: .standard(proto: "file_name"),
-    5: .standard(proto: "file_path"),
+    4: .standard(proto: "resource_name"),
+    5: .standard(proto: "resource_path"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -567,8 +567,8 @@ extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.fileID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.fileName) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.filePath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
       default: break
       }
     }
@@ -584,11 +584,11 @@ extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.fileType.isEmpty {
       try visitor.visitSingularStringField(value: self.fileType, fieldNumber: 3)
     }
-    if !self.fileName.isEmpty {
-      try visitor.visitSingularStringField(value: self.fileName, fieldNumber: 4)
+    if !self.resourceName.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceName, fieldNumber: 4)
     }
-    if !self.filePath.isEmpty {
-      try visitor.visitSingularStringField(value: self.filePath, fieldNumber: 5)
+    if !self.resourcePath.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -597,8 +597,8 @@ extension GloryApi_CourseResourceFile: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.resourceID != rhs.resourceID {return false}
     if lhs.fileID != rhs.fileID {return false}
     if lhs.fileType != rhs.fileType {return false}
-    if lhs.fileName != rhs.fileName {return false}
-    if lhs.filePath != rhs.filePath {return false}
+    if lhs.resourceName != rhs.resourceName {return false}
+    if lhs.resourcePath != rhs.resourcePath {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -17,8 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private CourseResourceFile() {
     fileType = "";
-    fileName = "";
-    filePath = "";
+    resourceName = "";
+    resourcePath = "";
   }
 
   @java.lang.Override
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            fileName = s;
+            resourceName = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            filePath = s;
+            resourcePath = s;
             break;
           }
           default: {
@@ -187,26 +187,26 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FILE_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object fileName ;
+  public static final int RESOURCE_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object resourceName ;
   /**
    * <pre>
    * 文件名称
    * </pre>
    *
-   * <code>string file_name = 4;</code>
-   * @return The fileName.
+   * <code>string resource_name = 4;</code>
+   * @return The resourceName.
    */
   @java.lang.Override
-  public java.lang.String getFileName() {
-    java.lang.Object ref = fileName ;
+  public java.lang.String getResourceName() {
+    java.lang.Object ref = resourceName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      fileName = s;
+      resourceName = s;
       return s;
     }
   }
@@ -215,44 +215,44 @@ private static final long serialVersionUID = 0L;
    * 文件名称
    * </pre>
    *
-   * <code>string file_name = 4;</code>
-   * @return The bytes for fileName.
+   * <code>string resource_name = 4;</code>
+   * @return The bytes for resourceName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFileNameBytes() {
-    java.lang.Object ref = fileName ;
+      getResourceNameBytes() {
+    java.lang.Object ref = resourceName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      fileName = b;
+      resourceName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FILE_PATH_FIELD_NUMBER = 5;
-  private volatile java.lang.Object filePath ;
+  public static final int RESOURCE_PATH_FIELD_NUMBER = 5;
+  private volatile java.lang.Object resourcePath ;
   /**
    * <pre>
    * 文件路径
    * </pre>
    *
-   * <code>string file_path = 5;</code>
-   * @return The filePath.
+   * <code>string resource_path = 5;</code>
+   * @return The resourcePath.
    */
   @java.lang.Override
-  public java.lang.String getFilePath() {
-    java.lang.Object ref = filePath ;
+  public java.lang.String getResourcePath() {
+    java.lang.Object ref = resourcePath ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      filePath = s;
+      resourcePath = s;
       return s;
     }
   }
@@ -261,18 +261,18 @@ private static final long serialVersionUID = 0L;
    * 文件路径
    * </pre>
    *
-   * <code>string file_path = 5;</code>
-   * @return The bytes for filePath.
+   * <code>string resource_path = 5;</code>
+   * @return The bytes for resourcePath.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFilePathBytes() {
-    java.lang.Object ref = filePath ;
+      getResourcePathBytes() {
+    java.lang.Object ref = resourcePath ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      filePath = b;
+      resourcePath = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -302,11 +302,11 @@ private static final long serialVersionUID = 0L;
     if (!getFileTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fileType );
     }
-    if (!getFileNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, fileName );
+    if (!getResourceNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resourceName );
     }
-    if (!getFilePathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filePath );
+    if (!getResourcePathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourcePath );
     }
     unknownFields.writeTo(output);
   }
@@ -328,11 +328,11 @@ private static final long serialVersionUID = 0L;
     if (!getFileTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fileType );
     }
-    if (!getFileNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, fileName );
+    if (!getResourceNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resourceName );
     }
-    if (!getFilePathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filePath );
+    if (!getResourcePathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resourcePath );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -355,10 +355,10 @@ private static final long serialVersionUID = 0L;
         != other.getFileId()) return false;
     if (!getFileType()
         .equals(other.getFileType())) return false;
-    if (!getFileName()
-        .equals(other.getFileName())) return false;
-    if (!getFilePath()
-        .equals(other.getFilePath())) return false;
+    if (!getResourceName()
+        .equals(other.getResourceName())) return false;
+    if (!getResourcePath()
+        .equals(other.getResourcePath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -378,10 +378,10 @@ private static final long serialVersionUID = 0L;
         getFileId());
     hash = (37 * hash) + FILE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getFileType().hashCode();
-    hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getFileName().hashCode();
-    hash = (37 * hash) + FILE_PATH_FIELD_NUMBER;
-    hash = (53 * hash) + getFilePath().hashCode();
+    hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceName().hashCode();
+    hash = (37 * hash) + RESOURCE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getResourcePath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -521,9 +521,9 @@ private static final long serialVersionUID = 0L;
 
       fileType = "";
 
-      fileName = "";
+      resourceName = "";
 
-      filePath = "";
+      resourcePath = "";
 
       return this;
     }
@@ -554,8 +554,8 @@ private static final long serialVersionUID = 0L;
       result.resourceId = resourceId ;
       result.fileId = fileId ;
       result.fileType = fileType ;
-      result.fileName = fileName ;
-      result.filePath = filePath ;
+      result.resourceName = resourceName ;
+      result.resourcePath = resourcePath ;
       onBuilt();
       return result;
     }
@@ -614,12 +614,12 @@ private static final long serialVersionUID = 0L;
         fileType = other.fileType ;
         onChanged();
       }
-      if (!other.getFileName().isEmpty()) {
-        fileName = other.fileName ;
+      if (!other.getResourceName().isEmpty()) {
+        resourceName = other.resourceName ;
         onChanged();
       }
-      if (!other.getFilePath().isEmpty()) {
-        filePath = other.filePath ;
+      if (!other.getResourcePath().isEmpty()) {
+        resourcePath = other.resourcePath ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -833,22 +833,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object fileName = "";
+    private java.lang.Object resourceName = "";
     /**
      * <pre>
      * 文件名称
      * </pre>
      *
-     * <code>string file_name = 4;</code>
-     * @return The fileName.
+     * <code>string resource_name = 4;</code>
+     * @return The resourceName.
      */
-    public java.lang.String getFileName() {
-      java.lang.Object ref = fileName ;
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        fileName = s;
+        resourceName = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -859,17 +859,17 @@ private static final long serialVersionUID = 0L;
      * 文件名称
      * </pre>
      *
-     * <code>string file_name = 4;</code>
-     * @return The bytes for fileName.
+     * <code>string resource_name = 4;</code>
+     * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString
-        getFileNameBytes() {
-      java.lang.Object ref = fileName ;
+        getResourceNameBytes() {
+      java.lang.Object ref = resourceName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        fileName = b;
+        resourceName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -880,17 +880,17 @@ private static final long serialVersionUID = 0L;
      * 文件名称
      * </pre>
      *
-     * <code>string file_name = 4;</code>
-     * @param value The fileName to set.
+     * <code>string resource_name = 4;</code>
+     * @param value The resourceName to set.
      * @return This builder for chaining.
      */
-    public Builder setFileName(
+    public Builder setResourceName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      fileName = value;
+      resourceName = value;
       onChanged();
       return this;
     }
@@ -899,12 +899,12 @@ private static final long serialVersionUID = 0L;
      * 文件名称
      * </pre>
      *
-     * <code>string file_name = 4;</code>
+     * <code>string resource_name = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFileName() {
+    public Builder clearResourceName() {
       
-      fileName = getDefaultInstance().getFileName();
+      resourceName = getDefaultInstance().getResourceName();
       onChanged();
       return this;
     }
@@ -913,38 +913,38 @@ private static final long serialVersionUID = 0L;
      * 文件名称
      * </pre>
      *
-     * <code>string file_name = 4;</code>
-     * @param value The bytes for fileName to set.
+     * <code>string resource_name = 4;</code>
+     * @param value The bytes for resourceName to set.
      * @return This builder for chaining.
      */
-    public Builder setFileNameBytes(
+    public Builder setResourceNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      fileName = value;
+      resourceName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object filePath = "";
+    private java.lang.Object resourcePath = "";
     /**
      * <pre>
      * 文件路径
      * </pre>
      *
-     * <code>string file_path = 5;</code>
-     * @return The filePath.
+     * <code>string resource_path = 5;</code>
+     * @return The resourcePath.
      */
-    public java.lang.String getFilePath() {
-      java.lang.Object ref = filePath ;
+    public java.lang.String getResourcePath() {
+      java.lang.Object ref = resourcePath ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        filePath = s;
+        resourcePath = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -955,17 +955,17 @@ private static final long serialVersionUID = 0L;
      * 文件路径
      * </pre>
      *
-     * <code>string file_path = 5;</code>
-     * @return The bytes for filePath.
+     * <code>string resource_path = 5;</code>
+     * @return The bytes for resourcePath.
      */
     public com.google.protobuf.ByteString
-        getFilePathBytes() {
-      java.lang.Object ref = filePath ;
+        getResourcePathBytes() {
+      java.lang.Object ref = resourcePath ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        filePath = b;
+        resourcePath = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -976,17 +976,17 @@ private static final long serialVersionUID = 0L;
      * 文件路径
      * </pre>
      *
-     * <code>string file_path = 5;</code>
-     * @param value The filePath to set.
+     * <code>string resource_path = 5;</code>
+     * @param value The resourcePath to set.
      * @return This builder for chaining.
      */
-    public Builder setFilePath(
+    public Builder setResourcePath(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      filePath = value;
+      resourcePath = value;
       onChanged();
       return this;
     }
@@ -995,12 +995,12 @@ private static final long serialVersionUID = 0L;
      * 文件路径
      * </pre>
      *
-     * <code>string file_path = 5;</code>
+     * <code>string resource_path = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFilePath() {
+    public Builder clearResourcePath() {
       
-      filePath = getDefaultInstance().getFilePath();
+      resourcePath = getDefaultInstance().getResourcePath();
       onChanged();
       return this;
     }
@@ -1009,18 +1009,18 @@ private static final long serialVersionUID = 0L;
      * 文件路径
      * </pre>
      *
-     * <code>string file_path = 5;</code>
-     * @param value The bytes for filePath to set.
+     * <code>string resource_path = 5;</code>
+     * @param value The bytes for resourcePath to set.
      * @return This builder for chaining.
      */
-    public Builder setFilePathBytes(
+    public Builder setResourcePathBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      filePath = value;
+      resourcePath = value;
       onChanged();
       return this;
     }
