@@ -52,38 +52,38 @@ public interface CourseResourceFileOrBuilder extends
    * 文件名称
    * </pre>
    *
-   * <code>string file_name = 4;</code>
-   * @return The fileName.
+   * <code>string resource_name = 4;</code>
+   * @return The resourceName.
    */
-  java.lang.String getFileName();
+  java.lang.String getResourceName();
   /**
    * <pre>
    * 文件名称
    * </pre>
    *
-   * <code>string file_name = 4;</code>
-   * @return The bytes for fileName.
+   * <code>string resource_name = 4;</code>
+   * @return The bytes for resourceName.
    */
   com.google.protobuf.ByteString
-      getFileNameBytes();
+      getResourceNameBytes();
 
   /**
    * <pre>
    * 文件路径
    * </pre>
    *
-   * <code>string file_path = 5;</code>
-   * @return The filePath.
+   * <code>string resource_path = 5;</code>
+   * @return The resourcePath.
    */
-  java.lang.String getFilePath();
+  java.lang.String getResourcePath();
   /**
    * <pre>
    * 文件路径
    * </pre>
    *
-   * <code>string file_path = 5;</code>
-   * @return The bytes for filePath.
+   * <code>string resource_path = 5;</code>
+   * @return The bytes for resourcePath.
    */
   com.google.protobuf.ByteString
-      getFilePathBytes();
+      getResourcePathBytes();
 }

@@ -13,9 +13,9 @@ export interface CourseResourceFile {
   /** 文件类型(0:默认;1:PPT;2:PDF) */
   file_type?: string;
   /** 文件名称 */
-  file_name?: string;
+  resource_name?: string;
   /** 文件路径 */
-  file_path?: string;
+  resource_path?: string;
 }
 
 export interface CourseResource {

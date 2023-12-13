@@ -21,8 +21,8 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     $fixnum.Int64? resourceId,
     $fixnum.Int64? fileId,
     $core.String? fileType,
-    $core.String? fileName,
-    $core.String? filePath,
+    $core.String? resourceName,
+    $core.String? resourcePath,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -34,11 +34,11 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     if (fileType != null) {
       $result.fileType = fileType;
     }
-    if (fileName != null) {
-      $result.fileName = fileName;
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
     }
-    if (filePath != null) {
-      $result.filePath = filePath;
+    if (resourcePath != null) {
+      $result.resourcePath = resourcePath;
     }
     return $result;
   }
@@ -50,8 +50,8 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
     ..aInt64(2, _omitFieldNames ? '' : 'fileId')
     ..aOS(3, _omitFieldNames ? '' : 'fileType')
-    ..aOS(4, _omitFieldNames ? '' : 'fileName')
-    ..aOS(5, _omitFieldNames ? '' : 'filePath')
+    ..aOS(4, _omitFieldNames ? '' : 'resourceName')
+    ..aOS(5, _omitFieldNames ? '' : 'resourcePath')
     ..hasRequiredFields = false
   ;
 
@@ -104,22 +104,22 @@ class CourseResourceFile extends $pb.GeneratedMessage {
   void clearFileType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get fileName => $_getSZ(3);
+  $core.String get resourceName => $_getSZ(3);
   @$pb.TagNumber(4)
-  set fileName($core.String v) { $_setString(3, v); }
+  set resourceName($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasFileName() => $_has(3);
+  $core.bool hasResourceName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearFileName() => clearField(4);
+  void clearResourceName() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get filePath => $_getSZ(4);
+  $core.String get resourcePath => $_getSZ(4);
   @$pb.TagNumber(5)
-  set filePath($core.String v) { $_setString(4, v); }
+  set resourcePath($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasFilePath() => $_has(4);
+  $core.bool hasResourcePath() => $_has(4);
   @$pb.TagNumber(5)
-  void clearFilePath() => clearField(5);
+  void clearResourcePath() => clearField(5);
 }
 
 class CourseResource extends $pb.GeneratedMessage {
