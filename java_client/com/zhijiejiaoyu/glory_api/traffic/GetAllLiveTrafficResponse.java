@@ -71,6 +71,16 @@ private static final long serialVersionUID = 0L;
             aliTotalTraffic = input.readInt64();
             break;
           }
+          case 32: {
+
+            totalCost = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            aliTotalCost = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -151,6 +161,28 @@ private static final long serialVersionUID = 0L;
     return aliTotalTraffic ;
   }
 
+  public static final int TOTAL_COST_FIELD_NUMBER = 4;
+  private long totalCost ;
+  /**
+   * <code>int64 total_cost = 4;</code>
+   * @return The totalCost.
+   */
+  @java.lang.Override
+  public long getTotalCost() {
+    return totalCost ;
+  }
+
+  public static final int ALI_TOTAL_COST_FIELD_NUMBER = 5;
+  private long aliTotalCost ;
+  /**
+   * <code>int64 ali_total_cost = 5;</code>
+   * @return The aliTotalCost.
+   */
+  @java.lang.Override
+  public long getAliTotalCost() {
+    return aliTotalCost ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -174,6 +206,12 @@ private static final long serialVersionUID = 0L;
     if (aliTotalTraffic != 0L) {
       output.writeInt64(3, aliTotalTraffic );
     }
+    if (totalCost != 0L) {
+      output.writeInt64(4, totalCost );
+    }
+    if (aliTotalCost != 0L) {
+      output.writeInt64(5, aliTotalCost );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +232,14 @@ private static final long serialVersionUID = 0L;
     if (aliTotalTraffic != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, aliTotalTraffic );
+    }
+    if (totalCost != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, totalCost );
+    }
+    if (aliTotalCost != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, aliTotalCost );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,6 +265,10 @@ private static final long serialVersionUID = 0L;
         != other.getTotalTraffic()) return false;
     if (getAliTotalTraffic()
         != other.getAliTotalTraffic()) return false;
+    if (getTotalCost()
+        != other.getTotalCost()) return false;
+    if (getAliTotalCost()
+        != other.getAliTotalCost()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -240,6 +290,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALI_TOTAL_TRAFFIC_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAliTotalTraffic());
+    hash = (37 * hash) + TOTAL_COST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalCost());
+    hash = (37 * hash) + ALI_TOTAL_COST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAliTotalCost());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -383,6 +439,10 @@ private static final long serialVersionUID = 0L;
 
       aliTotalTraffic = 0L;
 
+      totalCost = 0L;
+
+      aliTotalCost = 0L;
+
       return this;
     }
 
@@ -416,6 +476,8 @@ private static final long serialVersionUID = 0L;
       }
       result.totalTraffic = totalTraffic ;
       result.aliTotalTraffic = aliTotalTraffic ;
+      result.totalCost = totalCost ;
+      result.aliTotalCost = aliTotalCost ;
       onBuilt();
       return result;
     }
@@ -472,6 +534,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAliTotalTraffic() != 0L) {
         setAliTotalTraffic(other.getAliTotalTraffic());
+      }
+      if (other.getTotalCost() != 0L) {
+        setTotalCost(other.getTotalCost());
+      }
+      if (other.getAliTotalCost() != 0L) {
+        setAliTotalCost(other.getAliTotalCost());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -679,6 +747,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearAliTotalTraffic() {
       
       aliTotalTraffic = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalCost ;
+    /**
+     * <code>int64 total_cost = 4;</code>
+     * @return The totalCost.
+     */
+    @java.lang.Override
+    public long getTotalCost() {
+      return totalCost ;
+    }
+    /**
+     * <code>int64 total_cost = 4;</code>
+     * @param value The totalCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalCost(long value) {
+      
+      totalCost = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total_cost = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalCost() {
+      
+      totalCost = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long aliTotalCost ;
+    /**
+     * <code>int64 ali_total_cost = 5;</code>
+     * @return The aliTotalCost.
+     */
+    @java.lang.Override
+    public long getAliTotalCost() {
+      return aliTotalCost ;
+    }
+    /**
+     * <code>int64 ali_total_cost = 5;</code>
+     * @param value The aliTotalCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAliTotalCost(long value) {
+      
+      aliTotalCost = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 ali_total_cost = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAliTotalCost() {
+      
+      aliTotalCost = 0L;
       onChanged();
       return this;
     }

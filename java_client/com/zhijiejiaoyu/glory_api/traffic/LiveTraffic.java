@@ -155,56 +155,57 @@ public final class LiveTraffic {
       "oLiveTrafficChart\022;\n\021sub_traffic_chart\030\006" +
       " \003(\0132 .glory_api.SchooLiveTrafficChart\"C" +
       "\n\030GetAllLiveTrafficRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\"t\n\031GetAllLiv" +
-      "eTrafficResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022\025\n\rtotal_traffic\030\002 \001(\003\022\031" +
-      "\n\021ali_total_traffic\030\003 \001(\003\"X\n\032GetSchooLiv" +
-      "eTrafficRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"\245\001\n\033" +
-      "GetSchooLiveTrafficResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022\025\n\rtotal_traf" +
-      "fic\030\002 \001(\003\022\024\n\014used_traffic\030\003 \001(\003\022\033\n\023avera" +
-      "ge_day_traffic\030\004 \001(\003\022\025\n\rmaybe_use_day\030\005 " +
-      "\001(\003\"z\n\"ListTenantLiveTrafficConfigReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\264\001\n\023TenantTrafficConfig\022\021\n\ttenan" +
-      "t_id\030\001 \001(\003\022\023\n\013tenant_name\030\002 \001(\t\022\033\n\023live_" +
-      "duration_limit\030\003 \001(\003\022\031\n\021traffic_day_limi" +
-      "t\030\004 \001(\003\022\031\n\021traffic_all_count\030\005 \001(\003\022\"\n\032tr" +
-      "affic_used_warning_count\030\006 \001(\003\"\276\001\n#ListT" +
-      "enantLiveTrafficConfigResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022B\n\032tenant_" +
-      "traffic_config_list\030\002 \003(\0132\036.glory_api.Te" +
-      "nantTrafficConfig\022,\n\npagination\030d \001(\0132\030." +
-      "base.PaginationResponse\"\237\002\n$UpdateTenant" +
-      "LiveTrafficConfigRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002" +
-      " \001(\003\022\033\n\023live_duration_limit\030\003 \001(\003\022\031\n\021tra" +
-      "ffic_day_limit\030\004 \001(\003\022\031\n\021traffic_all_coun" +
-      "t\030\005 \001(\003\022\"\n\032traffic_used_warning_count\030\006 " +
-      "\001(\003\022!\n\031day_traffic_limit_percent\030\007 \001(\003\022!" +
-      "\n\031all_traffic_limit_percent\030\010 \001(\003\"N\n%Upd" +
-      "ateTenantLiveTrafficConfigResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\232\001\n\031Li" +
-      "stTrafficWarningRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\024\n\014warning_type" +
-      "\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\227\001\n\016Traff" +
-      "icWarning\022\032\n\022traffic_warning_id\030\001 \001(\003\022\021\n" +
-      "\ttenant_id\030\002 \001(\003\022\023\n\013tenant_name\030\003 \001(\t\022\024\n" +
-      "\014warning_type\030\004 \001(\003\022\027\n\017warning_content\030\005" +
-      " \001(\t\022\022\n\ncreated_at\030\006 \001(\t\"\252\001\n\032ListTraffic" +
-      "WarningResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\0227\n\024traffic_warning_list\030\002" +
-      " \003(\0132\031.glory_api.TrafficWarning\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponse\"b\n" +
-      "\033DeleteTrafficWarningRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022traffic" +
-      "_warning_id\030\002 \001(\003\"E\n\034DeleteTrafficWarnin" +
-      "gResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "ResponseB&\n\"com.zhijiejiaoyu.glory_api.t" +
-      "rafficP\001b\006proto3"
+      "st\030\001 \001(\0132\021.base.BaseRequest\"\240\001\n\031GetAllLi" +
+      "veTrafficResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\025\n\rtotal_traffic\030\002 \001(\003\022" +
+      "\031\n\021ali_total_traffic\030\003 \001(\003\022\022\n\ntotal_cost" +
+      "\030\004 \001(\003\022\026\n\016ali_total_cost\030\005 \001(\003\"X\n\032GetSch" +
+      "ooLiveTrafficRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003" +
+      "\"\245\001\n\033GetSchooLiveTrafficResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\025\n\rtotal" +
+      "_traffic\030\002 \001(\003\022\024\n\014used_traffic\030\003 \001(\003\022\033\n\023" +
+      "average_day_traffic\030\004 \001(\003\022\025\n\rmaybe_use_d" +
+      "ay\030\005 \001(\003\"z\n\"ListTenantLiveTrafficConfigR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
+      "ationRequest\"\264\001\n\023TenantTrafficConfig\022\021\n\t" +
+      "tenant_id\030\001 \001(\003\022\023\n\013tenant_name\030\002 \001(\t\022\033\n\023" +
+      "live_duration_limit\030\003 \001(\003\022\031\n\021traffic_day" +
+      "_limit\030\004 \001(\003\022\031\n\021traffic_all_count\030\005 \001(\003\022" +
+      "\"\n\032traffic_used_warning_count\030\006 \001(\003\"\276\001\n#" +
+      "ListTenantLiveTrafficConfigResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022B\n\032te" +
+      "nant_traffic_config_list\030\002 \003(\0132\036.glory_a" +
+      "pi.TenantTrafficConfig\022,\n\npagination\030d \001" +
+      "(\0132\030.base.PaginationResponse\"\237\002\n$UpdateT" +
+      "enantLiveTrafficConfigRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant" +
+      "_id\030\002 \001(\003\022\033\n\023live_duration_limit\030\003 \001(\003\022\031" +
+      "\n\021traffic_day_limit\030\004 \001(\003\022\031\n\021traffic_all" +
+      "_count\030\005 \001(\003\022\"\n\032traffic_used_warning_cou" +
+      "nt\030\006 \001(\003\022!\n\031day_traffic_limit_percent\030\007 " +
+      "\001(\003\022!\n\031all_traffic_limit_percent\030\010 \001(\003\"N" +
+      "\n%UpdateTenantLiveTrafficConfigResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\232" +
+      "\001\n\031ListTrafficWarningRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014warning" +
+      "_type\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagina" +
+      "tion\030d \001(\0132\027.base.PaginationRequest\"\227\001\n\016" +
+      "TrafficWarning\022\032\n\022traffic_warning_id\030\001 \001" +
+      "(\003\022\021\n\ttenant_id\030\002 \001(\003\022\023\n\013tenant_name\030\003 \001" +
+      "(\t\022\024\n\014warning_type\030\004 \001(\003\022\027\n\017warning_cont" +
+      "ent\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\"\252\001\n\032ListTr" +
+      "afficWarningResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\0227\n\024traffic_warning_l" +
+      "ist\030\002 \003(\0132\031.glory_api.TrafficWarning\022,\n\n" +
+      "pagination\030d \001(\0132\030.base.PaginationRespon" +
+      "se\"b\n\033DeleteTrafficWarningRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022tr" +
+      "affic_warning_id\030\002 \001(\003\"E\n\034DeleteTrafficW" +
+      "arningResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponseB&\n\"com.zhijiejiaoyu.glory_" +
+      "api.trafficP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -258,7 +259,7 @@ public final class LiveTraffic {
     internal_static_glory_api_GetAllLiveTrafficResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAllLiveTrafficResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", });
+        new java.lang.String[] { "BaseResp", "TotalTraffic", "AliTotalTraffic", "TotalCost", "AliTotalCost", });
     internal_static_glory_api_GetSchooLiveTrafficRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_GetSchooLiveTrafficRequest_fieldAccessorTable = new

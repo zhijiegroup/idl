@@ -158,6 +158,8 @@ const GetAllLiveTrafficResponse$json = {
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'total_traffic', '3': 2, '4': 1, '5': 3, '10': 'totalTraffic'},
     {'1': 'ali_total_traffic', '3': 3, '4': 1, '5': 3, '10': 'aliTotalTraffic'},
+    {'1': 'total_cost', '3': 4, '4': 1, '5': 3, '10': 'totalCost'},
+    {'1': 'ali_total_cost', '3': 5, '4': 1, '5': 3, '10': 'aliTotalCost'},
   ],
 };
 
@@ -165,7 +167,9 @@ const GetAllLiveTrafficResponse$json = {
 final $typed_data.Uint8List getAllLiveTrafficResponseDescriptor = $convert.base64Decode(
     'ChlHZXRBbGxMaXZlVHJhZmZpY1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIjCg10b3RhbF90cmFmZmljGAIgASgDUgx0b3RhbFRyYWZm'
-    'aWMSKgoRYWxpX3RvdGFsX3RyYWZmaWMYAyABKANSD2FsaVRvdGFsVHJhZmZpYw==');
+    'aWMSKgoRYWxpX3RvdGFsX3RyYWZmaWMYAyABKANSD2FsaVRvdGFsVHJhZmZpYxIdCgp0b3RhbF'
+    '9jb3N0GAQgASgDUgl0b3RhbENvc3QSJAoOYWxpX3RvdGFsX2Nvc3QYBSABKANSDGFsaVRvdGFs'
+    'Q29zdA==');
 
 @$core.Deprecated('Use getSchooLiveTrafficRequestDescriptor instead')
 const GetSchooLiveTrafficRequest$json = {

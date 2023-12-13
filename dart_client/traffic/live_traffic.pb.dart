@@ -737,6 +737,8 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
     $0.BaseResponse? baseResp,
     $fixnum.Int64? totalTraffic,
     $fixnum.Int64? aliTotalTraffic,
+    $fixnum.Int64? totalCost,
+    $fixnum.Int64? aliTotalCost,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -748,6 +750,12 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
     if (aliTotalTraffic != null) {
       $result.aliTotalTraffic = aliTotalTraffic;
     }
+    if (totalCost != null) {
+      $result.totalCost = totalCost;
+    }
+    if (aliTotalCost != null) {
+      $result.aliTotalCost = aliTotalCost;
+    }
     return $result;
   }
   GetAllLiveTrafficResponse._() : super();
@@ -758,6 +766,8 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'totalTraffic')
     ..aInt64(3, _omitFieldNames ? '' : 'aliTotalTraffic')
+    ..aInt64(4, _omitFieldNames ? '' : 'totalCost')
+    ..aInt64(5, _omitFieldNames ? '' : 'aliTotalCost')
     ..hasRequiredFields = false
   ;
 
@@ -810,6 +820,24 @@ class GetAllLiveTrafficResponse extends $pb.GeneratedMessage {
   $core.bool hasAliTotalTraffic() => $_has(2);
   @$pb.TagNumber(3)
   void clearAliTotalTraffic() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get totalCost => $_getI64(3);
+  @$pb.TagNumber(4)
+  set totalCost($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalCost() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalCost() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get aliTotalCost => $_getI64(4);
+  @$pb.TagNumber(5)
+  set aliTotalCost($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAliTotalCost() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAliTotalCost() => clearField(5);
 }
 
 class GetSchooLiveTrafficRequest extends $pb.GeneratedMessage {

@@ -231,6 +231,10 @@ struct GloryApi_GetAllLiveTrafficResponse {
 
   var aliTotalTraffic: Int64 = 0
 
+  var totalCost: Int64 = 0
+
+  var aliTotalCost: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1009,6 +1013,8 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "total_traffic"),
     3: .standard(proto: "ali_total_traffic"),
+    4: .standard(proto: "total_cost"),
+    5: .standard(proto: "ali_total_cost"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1020,6 +1026,8 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.totalTraffic) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.aliTotalTraffic) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.totalCost) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.aliTotalCost) }()
       default: break
       }
     }
@@ -1039,6 +1047,12 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
     if self.aliTotalTraffic != 0 {
       try visitor.visitSingularInt64Field(value: self.aliTotalTraffic, fieldNumber: 3)
     }
+    if self.totalCost != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalCost, fieldNumber: 4)
+    }
+    if self.aliTotalCost != 0 {
+      try visitor.visitSingularInt64Field(value: self.aliTotalCost, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1046,6 +1060,8 @@ extension GloryApi_GetAllLiveTrafficResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.totalTraffic != rhs.totalTraffic {return false}
     if lhs.aliTotalTraffic != rhs.aliTotalTraffic {return false}
+    if lhs.totalCost != rhs.totalCost {return false}
+    if lhs.aliTotalCost != rhs.aliTotalCost {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

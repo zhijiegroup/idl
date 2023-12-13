@@ -66,6 +66,8 @@ export interface GetAllLiveTrafficResponse {
   base_resp?: base.BaseResponse;
   total_traffic?: string;
   ali_total_traffic?: string;
+  total_cost?: string;
+  ali_total_cost?: string;
 }
 
 export interface GetSchooLiveTrafficRequest {

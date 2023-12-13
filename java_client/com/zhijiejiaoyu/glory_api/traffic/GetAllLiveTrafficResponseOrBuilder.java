@@ -33,4 +33,16 @@ public interface GetAllLiveTrafficResponseOrBuilder extends
    * @return The aliTotalTraffic.
    */
   long getAliTotalTraffic();
+
+  /**
+   * <code>int64 total_cost = 4;</code>
+   * @return The totalCost.
+   */
+  long getTotalCost();
+
+  /**
+   * <code>int64 ali_total_cost = 5;</code>
+   * @return The aliTotalCost.
+   */
+  long getAliTotalCost();
 }
