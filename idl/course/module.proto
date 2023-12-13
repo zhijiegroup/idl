@@ -5,14 +5,22 @@ option java_multiple_files = true;
 
 import "base.proto";
 
+message CourseResourceFile {
+  int64 resource_id = 1; // 关联的资源ID
+  int64 file_id = 2; // 文件ID
+  string file_type = 3; // 文件类型(0:默认;1:PPT;2:PDF)
+  string file_name = 4; // 文件名称
+  string file_path = 5; // 文件路径
+}
+
 message CourseResource {
   int64 resource_id = 1; // 课程资源ID
   string resource_name = 2; // 课程资源名称
   int32 resource_type = 3; // 课程资源类型：1.教学视频；2.教学课件；3.课后习题；4.教案
-  string content_type = 4; // 课件类型：0.默认；1.PPT；2.PDF
   string resource_path = 5; // 课程资源OSS路径，用于教学视频和教学PPT
   string resource_url = 6; // 课程资源URL
   string resource_content = 7; // 课程资源内容，用于课后习题和教案
+  repeated CourseResourceFile files = 8; // 课程资源类型为教学课件时的文件(PDF/PPT)列表
 }
 
 message CourseChapter {
