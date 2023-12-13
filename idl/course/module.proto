@@ -9,8 +9,8 @@ message CourseResourceFile {
   int64 resource_id = 1; // 关联的资源ID
   int64 file_id = 2; // 文件ID
   string file_type = 3; // 文件类型(0:默认;1:PPT;2:PDF)
-  string file_name = 4; // 文件名称
-  string file_path = 5; // 文件路径
+  string resource_name = 4; // 文件名称
+  string resource_path = 5; // 文件路径
 }
 
 message CourseResource {
