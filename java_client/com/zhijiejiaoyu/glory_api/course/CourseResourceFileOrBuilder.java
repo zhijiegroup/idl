@@ -86,4 +86,24 @@ public interface CourseResourceFileOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourcePathBytes();
+
+  /**
+   * <pre>
+   * 文件URL
+   * </pre>
+   *
+   * <code>string resource_url = 6;</code>
+   * @return The resourceUrl.
+   */
+  java.lang.String getResourceUrl();
+  /**
+   * <pre>
+   * 文件URL
+   * </pre>
+   *
+   * <code>string resource_url = 6;</code>
+   * @return The bytes for resourceUrl.
+   */
+  com.google.protobuf.ByteString
+      getResourceUrlBytes();
 }

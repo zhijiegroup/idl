@@ -16,6 +16,8 @@ export interface CourseResourceFile {
   resource_name?: string;
   /** 文件路径 */
   resource_path?: string;
+  /** 文件URL */
+  resource_url?: string;
 }
 
 export interface CourseResource {

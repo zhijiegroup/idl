@@ -23,6 +23,7 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     $core.String? fileType,
     $core.String? resourceName,
     $core.String? resourcePath,
+    $core.String? resourceUrl,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -40,6 +41,9 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     if (resourcePath != null) {
       $result.resourcePath = resourcePath;
     }
+    if (resourceUrl != null) {
+      $result.resourceUrl = resourceUrl;
+    }
     return $result;
   }
   CourseResourceFile._() : super();
@@ -52,6 +56,7 @@ class CourseResourceFile extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'fileType')
     ..aOS(4, _omitFieldNames ? '' : 'resourceName')
     ..aOS(5, _omitFieldNames ? '' : 'resourcePath')
+    ..aOS(6, _omitFieldNames ? '' : 'resourceUrl')
     ..hasRequiredFields = false
   ;
 
@@ -120,6 +125,15 @@ class CourseResourceFile extends $pb.GeneratedMessage {
   $core.bool hasResourcePath() => $_has(4);
   @$pb.TagNumber(5)
   void clearResourcePath() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get resourceUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set resourceUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasResourceUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResourceUrl() => clearField(6);
 }
 
 class CourseResource extends $pb.GeneratedMessage {

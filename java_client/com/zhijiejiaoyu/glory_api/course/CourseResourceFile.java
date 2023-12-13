@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     fileType = "";
     resourceName = "";
     resourcePath = "";
+    resourceUrl = "";
   }
 
   @java.lang.Override
@@ -77,6 +78,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             resourcePath = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            resourceUrl = s;
             break;
           }
           default: {
@@ -279,6 +286,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int RESOURCE_URL_FIELD_NUMBER = 6;
+  private volatile java.lang.Object resourceUrl ;
+  /**
+   * <pre>
+   * 文件URL
+   * </pre>
+   *
+   * <code>string resource_url = 6;</code>
+   * @return The resourceUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceUrl() {
+    java.lang.Object ref = resourceUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 文件URL
+   * </pre>
+   *
+   * <code>string resource_url = 6;</code>
+   * @return The bytes for resourceUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceUrlBytes() {
+    java.lang.Object ref = resourceUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -308,6 +361,9 @@ private static final long serialVersionUID = 0L;
     if (!getResourcePathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resourcePath );
     }
+    if (!getResourceUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, resourceUrl );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -334,6 +390,9 @@ private static final long serialVersionUID = 0L;
     if (!getResourcePathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resourcePath );
     }
+    if (!getResourceUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, resourceUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -359,6 +418,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getResourceName())) return false;
     if (!getResourcePath()
         .equals(other.getResourcePath())) return false;
+    if (!getResourceUrl()
+        .equals(other.getResourceUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -382,6 +443,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getResourceName().hashCode();
     hash = (37 * hash) + RESOURCE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getResourcePath().hashCode();
+    hash = (37 * hash) + RESOURCE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -525,6 +588,8 @@ private static final long serialVersionUID = 0L;
 
       resourcePath = "";
 
+      resourceUrl = "";
+
       return this;
     }
 
@@ -556,6 +621,7 @@ private static final long serialVersionUID = 0L;
       result.fileType = fileType ;
       result.resourceName = resourceName ;
       result.resourcePath = resourcePath ;
+      result.resourceUrl = resourceUrl ;
       onBuilt();
       return result;
     }
@@ -620,6 +686,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getResourcePath().isEmpty()) {
         resourcePath = other.resourcePath ;
+        onChanged();
+      }
+      if (!other.getResourceUrl().isEmpty()) {
+        resourceUrl = other.resourceUrl ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1021,6 +1091,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       resourcePath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceUrl = "";
+    /**
+     * <pre>
+     * 文件URL
+     * </pre>
+     *
+     * <code>string resource_url = 6;</code>
+     * @return The resourceUrl.
+     */
+    public java.lang.String getResourceUrl() {
+      java.lang.Object ref = resourceUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 文件URL
+     * </pre>
+     *
+     * <code>string resource_url = 6;</code>
+     * @return The bytes for resourceUrl.
+     */
+    public com.google.protobuf.ByteString
+        getResourceUrlBytes() {
+      java.lang.Object ref = resourceUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 文件URL
+     * </pre>
+     *
+     * <code>string resource_url = 6;</code>
+     * @param value The resourceUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      resourceUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 文件URL
+     * </pre>
+     *
+     * <code>string resource_url = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceUrl() {
+      
+      resourceUrl = getDefaultInstance().getResourceUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 文件URL
+     * </pre>
+     *
+     * <code>string resource_url = 6;</code>
+     * @param value The bytes for resourceUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      resourceUrl = value;
       onChanged();
       return this;
     }

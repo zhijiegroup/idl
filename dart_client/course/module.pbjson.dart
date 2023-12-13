@@ -22,6 +22,7 @@ const CourseResourceFile$json = {
     {'1': 'file_type', '3': 3, '4': 1, '5': 9, '10': 'fileType'},
     {'1': 'resource_name', '3': 4, '4': 1, '5': 9, '10': 'resourceName'},
     {'1': 'resource_path', '3': 5, '4': 1, '5': 9, '10': 'resourcePath'},
+    {'1': 'resource_url', '3': 6, '4': 1, '5': 9, '10': 'resourceUrl'},
   ],
 };
 
@@ -30,7 +31,7 @@ final $typed_data.Uint8List courseResourceFileDescriptor = $convert.base64Decode
     'ChJDb3Vyc2VSZXNvdXJjZUZpbGUSHwoLcmVzb3VyY2VfaWQYASABKANSCnJlc291cmNlSWQSFw'
     'oHZmlsZV9pZBgCIAEoA1IGZmlsZUlkEhsKCWZpbGVfdHlwZRgDIAEoCVIIZmlsZVR5cGUSIwoN'
     'cmVzb3VyY2VfbmFtZRgEIAEoCVIMcmVzb3VyY2VOYW1lEiMKDXJlc291cmNlX3BhdGgYBSABKA'
-    'lSDHJlc291cmNlUGF0aA==');
+    'lSDHJlc291cmNlUGF0aBIhCgxyZXNvdXJjZV91cmwYBiABKAlSC3Jlc291cmNlVXJs');
 
 @$core.Deprecated('Use courseResourceDescriptor instead')
 const CourseResource$json = {
