@@ -102,7 +102,7 @@ export interface CheckVerifyCodeRequest {
 
 export interface CheckVerifyCodeResponse {
   base_resp?: base.BaseResponse;
-  user_id?: string;
+  token?: string;
   pass?: boolean;
 }
 

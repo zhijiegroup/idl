@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CheckVerifyCodeResponse() {
+    token = "";
   }
 
   @java.lang.Override
@@ -61,9 +62,10 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            userId = input.readInt64();
+            token = s;
             break;
           }
           case 24: {
@@ -129,15 +131,42 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 2;
-  private long userId ;
+  public static final int TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object token ;
   /**
-   * <code>int64 user_id = 2;</code>
-   * @return The userId.
+   * <code>string token = 2;</code>
+   * @return The token.
    */
   @java.lang.Override
-  public long getUserId() {
-    return userId ;
+  public java.lang.String getToken() {
+    java.lang.Object ref = token ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      token = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string token = 2;</code>
+   * @return The bytes for token.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTokenBytes() {
+    java.lang.Object ref = token ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      token = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PASS_FIELD_NUMBER = 3;
@@ -168,8 +197,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (userId != 0L) {
-      output.writeInt64(2, userId );
+    if (!getTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token );
     }
     if (pass != false) {
       output.writeBool(3, pass );
@@ -187,9 +216,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (userId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, userId );
+    if (!getTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token );
     }
     if (pass != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -215,8 +243,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getUserId()
-        != other.getUserId()) return false;
+    if (!getToken()
+        .equals(other.getToken())) return false;
     if (getPass()
         != other.getPass()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -234,9 +262,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUserId());
+    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getToken().hashCode();
     hash = (37 * hash) + PASS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getPass());
@@ -379,7 +406,7 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      userId = 0L;
+      token = "";
 
       pass = false;
 
@@ -414,7 +441,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.userId = userId ;
+      result.token = token ;
       result.pass = pass ;
       onBuilt();
       return result;
@@ -467,8 +494,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getUserId() != 0L) {
-        setUserId(other.getUserId());
+      if (!other.getToken().isEmpty()) {
+        token = other.token ;
+        onChanged();
       }
       if (other.getPass() != false) {
         setPass(other.getPass());
@@ -621,33 +649,78 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private long userId ;
+    private java.lang.Object token = "";
     /**
-     * <code>int64 user_id = 2;</code>
-     * @return The userId.
+     * <code>string token = 2;</code>
+     * @return The token.
      */
-    @java.lang.Override
-    public long getUserId() {
-      return userId ;
+    public java.lang.String getToken() {
+      java.lang.Object ref = token ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>int64 user_id = 2;</code>
-     * @param value The userId to set.
+     * <code>string token = 2;</code>
+     * @return The bytes for token.
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string token = 2;</code>
+     * @param value The token to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(long value) {
-      
-      userId = value;
+    public Builder setToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      token = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 user_id = 2;</code>
+     * <code>string token = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUserId() {
+    public Builder clearToken() {
       
-      userId = 0L;
+      token = getDefaultInstance().getToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string token = 2;</code>
+     * @param value The bytes for token to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      token = value;
       onChanged();
       return this;
     }

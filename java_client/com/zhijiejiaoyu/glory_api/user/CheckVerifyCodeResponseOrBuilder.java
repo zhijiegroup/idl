@@ -23,10 +23,16 @@ public interface CheckVerifyCodeResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>int64 user_id = 2;</code>
-   * @return The userId.
+   * <code>string token = 2;</code>
+   * @return The token.
    */
-  long getUserId();
+  java.lang.String getToken();
+  /**
+   * <code>string token = 2;</code>
+   * @return The bytes for token.
+   */
+  com.google.protobuf.ByteString
+      getTokenBytes();
 
   /**
    * <code>bool pass = 3;</code>
