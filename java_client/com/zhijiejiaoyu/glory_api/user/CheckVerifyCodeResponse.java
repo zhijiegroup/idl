@@ -63,6 +63,11 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
+            userId = input.readInt64();
+            break;
+          }
+          case 24: {
+
             pass = input.readBool();
             break;
           }
@@ -124,10 +129,21 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int PASS_FIELD_NUMBER = 2;
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
+  public static final int PASS_FIELD_NUMBER = 3;
   private boolean pass ;
   /**
-   * <code>bool pass = 2;</code>
+   * <code>bool pass = 3;</code>
    * @return The pass.
    */
   @java.lang.Override
@@ -152,8 +168,11 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (userId != 0L) {
+      output.writeInt64(2, userId );
+    }
     if (pass != false) {
-      output.writeBool(2, pass );
+      output.writeBool(3, pass );
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +187,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, userId );
+    }
     if (pass != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, pass );
+        .computeBoolSize(3, pass );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,6 +215,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getUserId()
+        != other.getUserId()) return false;
     if (getPass()
         != other.getPass()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -209,6 +234,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (37 * hash) + PASS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getPass());
@@ -351,6 +379,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      userId = 0L;
+
       pass = false;
 
       return this;
@@ -384,6 +414,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.userId = userId ;
       result.pass = pass ;
       onBuilt();
       return result;
@@ -435,6 +466,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.user.CheckVerifyCodeResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
       }
       if (other.getPass() != false) {
         setPass(other.getPass());
@@ -587,9 +621,40 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
+    private long userId ;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
+    }
+
     private boolean pass ;
     /**
-     * <code>bool pass = 2;</code>
+     * <code>bool pass = 3;</code>
      * @return The pass.
      */
     @java.lang.Override
@@ -597,7 +662,7 @@ private static final long serialVersionUID = 0L;
       return pass ;
     }
     /**
-     * <code>bool pass = 2;</code>
+     * <code>bool pass = 3;</code>
      * @param value The pass to set.
      * @return This builder for chaining.
      */
@@ -608,7 +673,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool pass = 2;</code>
+     * <code>bool pass = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPass() {

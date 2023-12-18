@@ -371,6 +371,8 @@ struct GloryApi_CheckVerifyCodeResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var userID: Int64 = 0
+
   var pass: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -2782,7 +2784,8 @@ extension GloryApi_CheckVerifyCodeResponse: SwiftProtobuf.Message, SwiftProtobuf
   static let protoMessageName: String = _protobuf_package + ".CheckVerifyCodeResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "pass"),
+    2: .standard(proto: "user_id"),
+    3: .same(proto: "pass"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2792,7 +2795,8 @@ extension GloryApi_CheckVerifyCodeResponse: SwiftProtobuf.Message, SwiftProtobuf
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularBoolField(value: &self.pass) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.pass) }()
       default: break
       }
     }
@@ -2806,14 +2810,18 @@ extension GloryApi_CheckVerifyCodeResponse: SwiftProtobuf.Message, SwiftProtobuf
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
+    }
     if self.pass != false {
-      try visitor.visitSingularBoolField(value: self.pass, fieldNumber: 2)
+      try visitor.visitSingularBoolField(value: self.pass, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CheckVerifyCodeResponse, rhs: GloryApi_CheckVerifyCodeResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.pass != rhs.pass {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -23,7 +23,13 @@ public interface CheckVerifyCodeResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>bool pass = 2;</code>
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
+   * <code>bool pass = 3;</code>
    * @return The pass.
    */
   boolean getPass();

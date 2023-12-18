@@ -1053,11 +1053,15 @@ class CheckVerifyCodeRequest extends $pb.GeneratedMessage {
 class CheckVerifyCodeResponse extends $pb.GeneratedMessage {
   factory CheckVerifyCodeResponse({
     $2.BaseResponse? baseResp,
+    $fixnum.Int64? userId,
     $core.bool? pass,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (userId != null) {
+      $result.userId = userId;
     }
     if (pass != null) {
       $result.pass = pass;
@@ -1070,7 +1074,8 @@ class CheckVerifyCodeResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckVerifyCodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
-    ..aOB(2, _omitFieldNames ? '' : 'pass')
+    ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aOB(3, _omitFieldNames ? '' : 'pass')
     ..hasRequiredFields = false
   ;
 
@@ -1107,13 +1112,22 @@ class CheckVerifyCodeResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.bool get pass => $_getBF(1);
+  $fixnum.Int64 get userId => $_getI64(1);
   @$pb.TagNumber(2)
-  set pass($core.bool v) { $_setBool(1, v); }
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPass() => $_has(1);
+  $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPass() => clearField(2);
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get pass => $_getBF(2);
+  @$pb.TagNumber(3)
+  set pass($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPass() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPass() => clearField(3);
 }
 
 class LoginWithPasswordRequest extends $pb.GeneratedMessage {
