@@ -91,7 +91,7 @@ message CheckVerifyCodeRequest {
 
 message CheckVerifyCodeResponse {
   base.BaseResponse base_resp = 1;
-  int64 user_id = 2;
+  string token = 2;
   bool pass = 3;
 }
 
