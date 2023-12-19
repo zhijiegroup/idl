@@ -1335,6 +1335,23 @@ service glory_api {
     option (api.get) = '/api/live/get_quick_evaluation_detail';
   }
 
+  // App 版本管理
+  rpc CreateVersionLog(CreateVersionLogRequest) returns (CreateVersionLogResponse) {
+    option (api.post) = '/api/app/create_version_log';
+  }
+  rpc UpdateVersionLog(UpdateVersionLogRequest) returns (UpdateVersionLogResponse) {
+    option (api.post) = '/api/app/update_version_log';
+  }
+  rpc ListVersionLog(ListVersionLogRequest) returns (ListVersionLogResponse) {
+    option (api.post) = '/api/app/list_version_log';
+  }
+  rpc DeleteVersionLog(DeleteVersionLogRequest) returns (DeleteVersionLogResponse) {
+    option (api.post) = '/api/app/delete_version_log';
+  }
+  rpc GetLatestVersion(GetLatestVersionRequest) returns (GetLatestVersionResponse) {
+    option (api.post) = '/api/app/get_latest_version';
+  }
+
   // 系统预置任务管理
   rpc ListSystemTask(ListSystemTaskRequest) returns (ListSystemTaskResponse) {
     option (api.get) = '/api/task/list_system_task';

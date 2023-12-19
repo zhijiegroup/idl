@@ -6,10 +6,72 @@ option java_multiple_files = true;
 import "base.proto";
 
 message GetAndroidQRCodeRequest {
-    base.BaseRequest base_request = 1;
+  base.BaseRequest base_request = 1;
 }
 
 message GetAndroidQRCodeResponse {
-    base.BaseResponse base_resp = 1;
-    string qrcode_url = 2;
+  base.BaseResponse base_resp = 1;
+  string qrcode_url = 2;
+}
+
+message AppVersion {
+  string version = 1;
+  string changelog = 2;
+  string path = 3;
+  bool force_update = 4;
+}
+
+message VersionLog {
+  int64 version_log_id = 1;
+  string version_type = 2; // 版本类型：android/ios/all
+  AppVersion android_version = 3;
+  AppVersion ios_version = 4;
+}
+
+message CreateVersionLogRequest {
+  base.BaseRequest base_request = 1;
+  VersionLog version_log = 2;
+}
+
+message CreateVersionLogResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateVersionLogRequest {
+  base.BaseRequest base_request = 1;
+  VersionLog version_log = 2;
+}
+
+message UpdateVersionLogResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListVersionLogRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListVersionLogResponse {
+  base.BaseResponse base_resp = 1;
+  repeated VersionLog version_logs = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteVersionLogRequest {
+  base.BaseRequest base_request = 1;
+  int64 version_log_id = 2;
+}
+
+message DeleteVersionLogResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message GetLatestVersionRequest {
+  base.BaseRequest base_request = 1;
+  string os = 2; // android/ios
+}
+
+message GetLatestVersionResponse {
+  base.BaseResponse base_resp = 1;
+  AppVersion version = 2;
 }
