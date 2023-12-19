@@ -1082,6 +1082,21 @@ class glory_apiApi {
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ClientContext? ctx, $50.GetQuickEvaluationDetailRequest request) =>
     _client.invoke<$50.GetQuickEvaluationDetailResponse>(ctx, 'glory_api', 'GetQuickEvaluationDetail', request, $50.GetQuickEvaluationDetailResponse())
   ;
+  $async.Future<$46.CreateVersionLogResponse> createVersionLog($pb.ClientContext? ctx, $46.CreateVersionLogRequest request) =>
+    _client.invoke<$46.CreateVersionLogResponse>(ctx, 'glory_api', 'CreateVersionLog', request, $46.CreateVersionLogResponse())
+  ;
+  $async.Future<$46.UpdateVersionLogResponse> updateVersionLog($pb.ClientContext? ctx, $46.UpdateVersionLogRequest request) =>
+    _client.invoke<$46.UpdateVersionLogResponse>(ctx, 'glory_api', 'UpdateVersionLog', request, $46.UpdateVersionLogResponse())
+  ;
+  $async.Future<$46.ListVersionLogResponse> listVersionLog($pb.ClientContext? ctx, $46.ListVersionLogRequest request) =>
+    _client.invoke<$46.ListVersionLogResponse>(ctx, 'glory_api', 'ListVersionLog', request, $46.ListVersionLogResponse())
+  ;
+  $async.Future<$46.DeleteVersionLogResponse> deleteVersionLog($pb.ClientContext? ctx, $46.DeleteVersionLogRequest request) =>
+    _client.invoke<$46.DeleteVersionLogResponse>(ctx, 'glory_api', 'DeleteVersionLog', request, $46.DeleteVersionLogResponse())
+  ;
+  $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ClientContext? ctx, $46.GetLatestVersionRequest request) =>
+    _client.invoke<$46.GetLatestVersionResponse>(ctx, 'glory_api', 'GetLatestVersion', request, $46.GetLatestVersionResponse())
+  ;
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $51.ListSystemTaskRequest request) =>
     _client.invoke<$51.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $51.ListSystemTaskResponse())
   ;

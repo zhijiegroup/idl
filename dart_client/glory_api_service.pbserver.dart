@@ -409,6 +409,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
+  $async.Future<$46.CreateVersionLogResponse> createVersionLog($pb.ServerContext ctx, $46.CreateVersionLogRequest request);
+  $async.Future<$46.UpdateVersionLogResponse> updateVersionLog($pb.ServerContext ctx, $46.UpdateVersionLogRequest request);
+  $async.Future<$46.ListVersionLogResponse> listVersionLog($pb.ServerContext ctx, $46.ListVersionLogRequest request);
+  $async.Future<$46.DeleteVersionLogResponse> deleteVersionLog($pb.ServerContext ctx, $46.DeleteVersionLogRequest request);
+  $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
 
@@ -751,6 +756,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
+      case 'CreateVersionLog': return $46.CreateVersionLogRequest();
+      case 'UpdateVersionLog': return $46.UpdateVersionLogRequest();
+      case 'ListVersionLog': return $46.ListVersionLogRequest();
+      case 'DeleteVersionLog': return $46.DeleteVersionLogRequest();
+      case 'GetLatestVersion': return $46.GetLatestVersionRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
@@ -1096,6 +1106,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
+      case 'CreateVersionLog': return this.createVersionLog(ctx, request as $46.CreateVersionLogRequest);
+      case 'UpdateVersionLog': return this.updateVersionLog(ctx, request as $46.UpdateVersionLogRequest);
+      case 'ListVersionLog': return this.listVersionLog(ctx, request as $46.ListVersionLogRequest);
+      case 'DeleteVersionLog': return this.deleteVersionLog(ctx, request as $46.DeleteVersionLogRequest);
+      case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');

@@ -13,3 +13,67 @@ export interface GetAndroidQRCodeResponse {
   base_resp?: base.BaseResponse;
   qrcode_url?: string;
 }
+
+export interface AppVersion {
+  version?: string;
+  changelog?: string;
+  path?: string;
+  force_update?: boolean;
+}
+
+export interface VersionLog {
+  version_log_id?: string;
+  /** 版本类型：android/ios/all */
+  version_type?: string;
+  android_version?: AppVersion;
+  ios_version?: AppVersion;
+}
+
+export interface CreateVersionLogRequest {
+  base_request?: base.BaseRequest;
+  version_log?: VersionLog;
+}
+
+export interface CreateVersionLogResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface UpdateVersionLogRequest {
+  base_request?: base.BaseRequest;
+  version_log?: VersionLog;
+}
+
+export interface UpdateVersionLogResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface ListVersionLogRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListVersionLogResponse {
+  base_resp?: base.BaseResponse;
+  version_logs?: Array<VersionLog>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface DeleteVersionLogRequest {
+  base_request?: base.BaseRequest;
+  version_log_id?: string;
+}
+
+export interface DeleteVersionLogResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface GetLatestVersionRequest {
+  base_request?: base.BaseRequest;
+  /** android/ios */
+  os?: string;
+}
+
+export interface GetLatestVersionResponse {
+  base_resp?: base.BaseResponse;
+  version?: AppVersion;
+}

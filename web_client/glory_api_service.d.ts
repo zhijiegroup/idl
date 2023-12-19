@@ -1517,6 +1517,27 @@ CreateLivePlanProduct create live plan product */
     request: live_quick_evaluate.GetQuickEvaluationDetailRequest
   ): Promise<live_quick_evaluate.GetQuickEvaluationDetailResponse>;
 
+  /** App 版本管理 */
+  CreateVersionLog(
+    request: app.CreateVersionLogRequest
+  ): Promise<app.CreateVersionLogResponse>;
+
+  UpdateVersionLog(
+    request: app.UpdateVersionLogRequest
+  ): Promise<app.UpdateVersionLogResponse>;
+
+  ListVersionLog(
+    request: app.ListVersionLogRequest
+  ): Promise<app.ListVersionLogResponse>;
+
+  DeleteVersionLog(
+    request: app.DeleteVersionLogRequest
+  ): Promise<app.DeleteVersionLogResponse>;
+
+  GetLatestVersion(
+    request: app.GetLatestVersionRequest
+  ): Promise<app.GetLatestVersionResponse>;
+
   /** 系统预置任务管理 */
   ListSystemTask(
     request: system_task.ListSystemTaskRequest

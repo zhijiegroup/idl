@@ -212,7 +212,7 @@ const CheckVerifyCodeResponse$json = {
   '1': 'CheckVerifyCodeResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
     {'1': 'pass', '3': 3, '4': 1, '5': 8, '10': 'pass'},
   ],
 };
@@ -220,8 +220,8 @@ const CheckVerifyCodeResponse$json = {
 /// Descriptor for `CheckVerifyCodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List checkVerifyCodeResponseDescriptor = $convert.base64Decode(
     'ChdDaGVja1ZlcmlmeUNvZGVSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
-    'VSZXNwb25zZVIIYmFzZVJlc3ASFwoHdXNlcl9pZBgCIAEoA1IGdXNlcklkEhIKBHBhc3MYAyAB'
-    'KAhSBHBhc3M=');
+    'VSZXNwb25zZVIIYmFzZVJlc3ASFAoFdG9rZW4YAiABKAlSBXRva2VuEhIKBHBhc3MYAyABKAhS'
+    'BHBhc3M=');
 
 @$core.Deprecated('Use loginWithPasswordRequestDescriptor instead')
 const LoginWithPasswordRequest$json = {

@@ -2702,6 +2702,46 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  CreateVersionLog(request) {
+    const uri = `${this.uriPrefix}/api/app/create_version_log`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateVersionLog(request) {
+    const uri = `${this.uriPrefix}/api/app/update_version_log`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListVersionLog(request) {
+    const uri = `${this.uriPrefix}/api/app/list_version_log`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteVersionLog(request) {
+    const uri = `${this.uriPrefix}/api/app/delete_version_log`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetLatestVersion(request) {
+    const uri = `${this.uriPrefix}/api/app/get_latest_version`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListSystemTask(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/task/list_system_task${query}`;

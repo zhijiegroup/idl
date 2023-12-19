@@ -407,6 +407,11 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListQuickEvaluationReport', '2': '.glory_api.ListQuickEvaluationReportRequest', '3': '.glory_api.ListQuickEvaluationReportResponse', '4': {}},
     {'1': 'GetQuickEvaluationReport', '2': '.glory_api.GetQuickEvaluationReportRequest', '3': '.glory_api.GetQuickEvaluationReportResponse', '4': {}},
     {'1': 'GetQuickEvaluationDetail', '2': '.glory_api.GetQuickEvaluationDetailRequest', '3': '.glory_api.GetQuickEvaluationDetailResponse', '4': {}},
+    {'1': 'CreateVersionLog', '2': '.glory_api.CreateVersionLogRequest', '3': '.glory_api.CreateVersionLogResponse', '4': {}},
+    {'1': 'UpdateVersionLog', '2': '.glory_api.UpdateVersionLogRequest', '3': '.glory_api.UpdateVersionLogResponse', '4': {}},
+    {'1': 'ListVersionLog', '2': '.glory_api.ListVersionLogRequest', '3': '.glory_api.ListVersionLogResponse', '4': {}},
+    {'1': 'DeleteVersionLog', '2': '.glory_api.DeleteVersionLogRequest', '3': '.glory_api.DeleteVersionLogResponse', '4': {}},
+    {'1': 'GetLatestVersion', '2': '.glory_api.GetLatestVersionRequest', '3': '.glory_api.GetLatestVersionResponse', '4': {}},
     {'1': 'ListSystemTask', '2': '.glory_api.ListSystemTaskRequest', '3': '.glory_api.ListSystemTaskResponse', '4': {}},
     {'1': 'UpdateSystemTask', '2': '.glory_api.UpdateSystemTaskRequest', '3': '.glory_api.UpdateSystemTaskResponse', '4': {}},
   ],
@@ -1268,6 +1273,18 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetQuickEvaluationDetailRequest': $50.GetQuickEvaluationDetailRequest$json,
   '.glory_api.GetQuickEvaluationDetailResponse': $50.GetQuickEvaluationDetailResponse$json,
   '.glory_api.QuickEvaluationDetail': $50.QuickEvaluationDetail$json,
+  '.glory_api.CreateVersionLogRequest': $46.CreateVersionLogRequest$json,
+  '.glory_api.VersionLog': $46.VersionLog$json,
+  '.glory_api.AppVersion': $46.AppVersion$json,
+  '.glory_api.CreateVersionLogResponse': $46.CreateVersionLogResponse$json,
+  '.glory_api.UpdateVersionLogRequest': $46.UpdateVersionLogRequest$json,
+  '.glory_api.UpdateVersionLogResponse': $46.UpdateVersionLogResponse$json,
+  '.glory_api.ListVersionLogRequest': $46.ListVersionLogRequest$json,
+  '.glory_api.ListVersionLogResponse': $46.ListVersionLogResponse$json,
+  '.glory_api.DeleteVersionLogRequest': $46.DeleteVersionLogRequest$json,
+  '.glory_api.DeleteVersionLogResponse': $46.DeleteVersionLogResponse$json,
+  '.glory_api.GetLatestVersionRequest': $46.GetLatestVersionRequest$json,
+  '.glory_api.GetLatestVersionResponse': $46.GetLatestVersionResponse$json,
   '.glory_api.ListSystemTaskRequest': $51.ListSystemTaskRequest$json,
   '.glory_api.ListSystemTaskResponse': $51.ListSystemTaskResponse$json,
   '.glory_api.SystemTask': $51.SystemTask$json,
@@ -2038,9 +2055,20 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'YXRpb25fcmVwb3J0Ep4BChhHZXRRdWlja0V2YWx1YXRpb25EZXRhaWwSKi5nbG9yeV9hcGkuR2'
     'V0UXVpY2tFdmFsdWF0aW9uRGV0YWlsUmVxdWVzdBorLmdsb3J5X2FwaS5HZXRRdWlja0V2YWx1'
     'YXRpb25EZXRhaWxSZXNwb25zZSIpysEYJS9hcGkvbGl2ZS9nZXRfcXVpY2tfZXZhbHVhdGlvbl'
-    '9kZXRhaWwSdQoOTGlzdFN5c3RlbVRhc2sSIC5nbG9yeV9hcGkuTGlzdFN5c3RlbVRhc2tSZXF1'
-    'ZXN0GiEuZ2xvcnlfYXBpLkxpc3RTeXN0ZW1UYXNrUmVzcG9uc2UiHsrBGBovYXBpL3Rhc2svbG'
-    'lzdF9zeXN0ZW1fdGFzaxJ9ChBVcGRhdGVTeXN0ZW1UYXNrEiIuZ2xvcnlfYXBpLlVwZGF0ZVN5'
-    'c3RlbVRhc2tSZXF1ZXN0GiMuZ2xvcnlfYXBpLlVwZGF0ZVN5c3RlbVRhc2tSZXNwb25zZSIg0s'
-    'EYHC9hcGkvdGFzay91cGRhdGVfc3lzdGVtX3Rhc2s=');
+    '9kZXRhaWwSfAoQQ3JlYXRlVmVyc2lvbkxvZxIiLmdsb3J5X2FwaS5DcmVhdGVWZXJzaW9uTG9n'
+    'UmVxdWVzdBojLmdsb3J5X2FwaS5DcmVhdGVWZXJzaW9uTG9nUmVzcG9uc2UiH9LBGBsvYXBpL2'
+    'FwcC9jcmVhdGVfdmVyc2lvbl9sb2cSfAoQVXBkYXRlVmVyc2lvbkxvZxIiLmdsb3J5X2FwaS5V'
+    'cGRhdGVWZXJzaW9uTG9nUmVxdWVzdBojLmdsb3J5X2FwaS5VcGRhdGVWZXJzaW9uTG9nUmVzcG'
+    '9uc2UiH9LBGBsvYXBpL2FwcC91cGRhdGVfdmVyc2lvbl9sb2cSdAoOTGlzdFZlcnNpb25Mb2cS'
+    'IC5nbG9yeV9hcGkuTGlzdFZlcnNpb25Mb2dSZXF1ZXN0GiEuZ2xvcnlfYXBpLkxpc3RWZXJzaW'
+    '9uTG9nUmVzcG9uc2UiHdLBGBkvYXBpL2FwcC9saXN0X3ZlcnNpb25fbG9nEnwKEERlbGV0ZVZl'
+    'cnNpb25Mb2cSIi5nbG9yeV9hcGkuRGVsZXRlVmVyc2lvbkxvZ1JlcXVlc3QaIy5nbG9yeV9hcG'
+    'kuRGVsZXRlVmVyc2lvbkxvZ1Jlc3BvbnNlIh/SwRgbL2FwaS9hcHAvZGVsZXRlX3ZlcnNpb25f'
+    'bG9nEnwKEEdldExhdGVzdFZlcnNpb24SIi5nbG9yeV9hcGkuR2V0TGF0ZXN0VmVyc2lvblJlcX'
+    'Vlc3QaIy5nbG9yeV9hcGkuR2V0TGF0ZXN0VmVyc2lvblJlc3BvbnNlIh/SwRgbL2FwaS9hcHAv'
+    'Z2V0X2xhdGVzdF92ZXJzaW9uEnUKDkxpc3RTeXN0ZW1UYXNrEiAuZ2xvcnlfYXBpLkxpc3RTeX'
+    'N0ZW1UYXNrUmVxdWVzdBohLmdsb3J5X2FwaS5MaXN0U3lzdGVtVGFza1Jlc3BvbnNlIh7KwRga'
+    'L2FwaS90YXNrL2xpc3Rfc3lzdGVtX3Rhc2sSfQoQVXBkYXRlU3lzdGVtVGFzaxIiLmdsb3J5X2'
+    'FwaS5VcGRhdGVTeXN0ZW1UYXNrUmVxdWVzdBojLmdsb3J5X2FwaS5VcGRhdGVTeXN0ZW1UYXNr'
+    'UmVzcG9uc2UiINLBGBwvYXBpL3Rhc2svdXBkYXRlX3N5c3RlbV90YXNr');
 

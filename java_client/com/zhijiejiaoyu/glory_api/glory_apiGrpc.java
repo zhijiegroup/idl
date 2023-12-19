@@ -10462,6 +10462,161 @@ public final class glory_apiGrpc {
     return getGetQuickEvaluationDetailMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> getCreateVersionLogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateVersionLog",
+      requestType = com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> getCreateVersionLogMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest, com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> getCreateVersionLogMethod;
+    if ((getCreateVersionLogMethod = glory_apiGrpc.getCreateVersionLogMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateVersionLogMethod = glory_apiGrpc.getCreateVersionLogMethod) == null) {
+          glory_apiGrpc.getCreateVersionLogMethod = getCreateVersionLogMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest, com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVersionLog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateVersionLog"))
+              .build();
+        }
+      }
+    }
+    return getCreateVersionLogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> getUpdateVersionLogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVersionLog",
+      requestType = com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> getUpdateVersionLogMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest, com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> getUpdateVersionLogMethod;
+    if ((getUpdateVersionLogMethod = glory_apiGrpc.getUpdateVersionLogMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateVersionLogMethod = glory_apiGrpc.getUpdateVersionLogMethod) == null) {
+          glory_apiGrpc.getUpdateVersionLogMethod = getUpdateVersionLogMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest, com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVersionLog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateVersionLog"))
+              .build();
+        }
+      }
+    }
+    return getUpdateVersionLogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> getListVersionLogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListVersionLog",
+      requestType = com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> getListVersionLogMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest, com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> getListVersionLogMethod;
+    if ((getListVersionLogMethod = glory_apiGrpc.getListVersionLogMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListVersionLogMethod = glory_apiGrpc.getListVersionLogMethod) == null) {
+          glory_apiGrpc.getListVersionLogMethod = getListVersionLogMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest, com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListVersionLog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListVersionLog"))
+              .build();
+        }
+      }
+    }
+    return getListVersionLogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> getDeleteVersionLogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVersionLog",
+      requestType = com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest,
+      com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> getDeleteVersionLogMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest, com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> getDeleteVersionLogMethod;
+    if ((getDeleteVersionLogMethod = glory_apiGrpc.getDeleteVersionLogMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteVersionLogMethod = glory_apiGrpc.getDeleteVersionLogMethod) == null) {
+          glory_apiGrpc.getDeleteVersionLogMethod = getDeleteVersionLogMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest, com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVersionLog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteVersionLog"))
+              .build();
+        }
+      }
+    }
+    return getDeleteVersionLogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest,
+      com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> getGetLatestVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLatestVersion",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest,
+      com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> getGetLatestVersionMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest, com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> getGetLatestVersionMethod;
+    if ((getGetLatestVersionMethod = glory_apiGrpc.getGetLatestVersionMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLatestVersionMethod = glory_apiGrpc.getGetLatestVersionMethod) == null) {
+          glory_apiGrpc.getGetLatestVersionMethod = getGetLatestVersionMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest, com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLatestVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLatestVersion"))
+              .build();
+        }
+      }
+    }
+    return getGetLatestVersionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
       com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
 
@@ -13268,6 +13423,44 @@ public final class glory_apiGrpc {
     default void getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuickEvaluationDetailMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * App 版本管理
+     * </pre>
+     */
+    default void createVersionLog(com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateVersionLogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateVersionLog(com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateVersionLogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listVersionLog(com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListVersionLogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteVersionLog(com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteVersionLogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getLatestVersion(com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLatestVersionMethod(), responseObserver);
     }
 
     /**
@@ -16352,6 +16545,49 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * App 版本管理
+     * </pre>
+     */
+    public void createVersionLog(com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateVersionLogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateVersionLog(com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateVersionLogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listVersionLog(com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListVersionLogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteVersionLog(com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteVersionLogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getLatestVersion(com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLatestVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 系统预置任务管理
      * </pre>
      */
@@ -19082,6 +19318,44 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQuickEvaluationDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * App 版本管理
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse createVersionLog(com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVersionLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse updateVersionLog(com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVersionLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse listVersionLog(com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVersionLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse deleteVersionLog(com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVersionLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse getLatestVersion(com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLatestVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -22155,6 +22429,49 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * App 版本管理
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse> createVersionLog(
+        com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateVersionLogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse> updateVersionLog(
+        com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateVersionLogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse> listVersionLog(
+        com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListVersionLogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse> deleteVersionLog(
+        com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteVersionLogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse> getLatestVersion(
+        com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLatestVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 系统预置任务管理
      * </pre>
      */
@@ -22510,8 +22827,13 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 334;
   private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 335;
   private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 336;
-  private static final int METHODID_LIST_SYSTEM_TASK = 337;
-  private static final int METHODID_UPDATE_SYSTEM_TASK = 338;
+  private static final int METHODID_CREATE_VERSION_LOG = 337;
+  private static final int METHODID_UPDATE_VERSION_LOG = 338;
+  private static final int METHODID_LIST_VERSION_LOG = 339;
+  private static final int METHODID_DELETE_VERSION_LOG = 340;
+  private static final int METHODID_GET_LATEST_VERSION = 341;
+  private static final int METHODID_LIST_SYSTEM_TASK = 342;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 343;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -23877,6 +24199,26 @@ public final class glory_apiGrpc {
         case METHODID_GET_QUICK_EVALUATION_DETAIL:
           serviceImpl.getQuickEvaluationDetail((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_VERSION_LOG:
+          serviceImpl.createVersionLog((com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_VERSION_LOG:
+          serviceImpl.updateVersionLog((com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse>) responseObserver);
+          break;
+        case METHODID_LIST_VERSION_LOG:
+          serviceImpl.listVersionLog((com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_VERSION_LOG:
+          serviceImpl.deleteVersionLog((com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse>) responseObserver);
+          break;
+        case METHODID_GET_LATEST_VERSION:
+          serviceImpl.getLatestVersion((com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse>) responseObserver);
           break;
         case METHODID_LIST_SYSTEM_TASK:
           serviceImpl.listSystemTask((com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest) request,
@@ -26264,6 +26606,41 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse>(
                 service, METHODID_GET_QUICK_EVALUATION_DETAIL)))
         .addMethod(
+          getCreateVersionLogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.CreateVersionLogRequest,
+              com.zhijiejiaoyu.glory_api.course.CreateVersionLogResponse>(
+                service, METHODID_CREATE_VERSION_LOG)))
+        .addMethod(
+          getUpdateVersionLogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.UpdateVersionLogRequest,
+              com.zhijiejiaoyu.glory_api.course.UpdateVersionLogResponse>(
+                service, METHODID_UPDATE_VERSION_LOG)))
+        .addMethod(
+          getListVersionLogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest,
+              com.zhijiejiaoyu.glory_api.course.ListVersionLogResponse>(
+                service, METHODID_LIST_VERSION_LOG)))
+        .addMethod(
+          getDeleteVersionLogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.DeleteVersionLogRequest,
+              com.zhijiejiaoyu.glory_api.course.DeleteVersionLogResponse>(
+                service, METHODID_DELETE_VERSION_LOG)))
+        .addMethod(
+          getGetLatestVersionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest,
+              com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse>(
+                service, METHODID_GET_LATEST_VERSION)))
+        .addMethod(
           getListSystemTaskMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -26662,6 +27039,11 @@ public final class glory_apiGrpc {
               .addMethod(getListQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationDetailMethod())
+              .addMethod(getCreateVersionLogMethod())
+              .addMethod(getUpdateVersionLogMethod())
+              .addMethod(getListVersionLogMethod())
+              .addMethod(getDeleteVersionLogMethod())
+              .addMethod(getGetLatestVersionMethod())
               .addMethod(getListSystemTaskMethod())
               .addMethod(getUpdateSystemTaskMethod())
               .build();
