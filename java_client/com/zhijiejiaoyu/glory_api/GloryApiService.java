@@ -54,7 +54,7 @@ public final class GloryApiService {
       "\032\027course/edu_scheme.proto\032\020course/job.pr" +
       "oto\032\rapp/app.proto\032\032traffic/live_traffic" +
       ".proto\032\017role/role.proto\032\026task/system_tas" +
-      "k.proto2\370\313\002\n\tglory_api\022s\n\rCreateExample\022" +
+      "k.proto2\346\320\002\n\tglory_api\022s\n\rCreateExample\022" +
       "\037.glory_api.CreateExampleRequest\032 .glory" +
       "_api.CreateExampleResponse\"\037\322\301\030\033/api/exa" +
       "mple/create_example\022g\n\nGetExample\022\034.glor" +
@@ -1110,14 +1110,30 @@ public final class GloryApiService {
       "l\022*.glory_api.GetQuickEvaluationDetailRe" +
       "quest\032+.glory_api.GetQuickEvaluationDeta" +
       "ilResponse\")\312\301\030%/api/live/get_quick_eval" +
-      "uation_detail\022u\n\016ListSystemTask\022 .glory_" +
-      "api.ListSystemTaskRequest\032!.glory_api.Li" +
-      "stSystemTaskResponse\"\036\312\301\030\032/api/task/list" +
-      "_system_task\022}\n\020UpdateSystemTask\022\".glory" +
-      "_api.UpdateSystemTaskRequest\032#.glory_api" +
-      ".UpdateSystemTaskResponse\" \322\301\030\034/api/task" +
-      "/update_system_taskB\036\n\032com.zhijiejiaoyu." +
-      "glory_apiP\001b\006proto3"
+      "uation_detail\022|\n\020CreateVersionLog\022\".glor" +
+      "y_api.CreateVersionLogRequest\032#.glory_ap" +
+      "i.CreateVersionLogResponse\"\037\322\301\030\033/api/app" +
+      "/create_version_log\022|\n\020UpdateVersionLog\022" +
+      "\".glory_api.UpdateVersionLogRequest\032#.gl" +
+      "ory_api.UpdateVersionLogResponse\"\037\322\301\030\033/a" +
+      "pi/app/update_version_log\022t\n\016ListVersion" +
+      "Log\022 .glory_api.ListVersionLogRequest\032!." +
+      "glory_api.ListVersionLogResponse\"\035\322\301\030\031/a" +
+      "pi/app/list_version_log\022|\n\020DeleteVersion" +
+      "Log\022\".glory_api.DeleteVersionLogRequest\032" +
+      "#.glory_api.DeleteVersionLogResponse\"\037\322\301" +
+      "\030\033/api/app/delete_version_log\022|\n\020GetLate" +
+      "stVersion\022\".glory_api.GetLatestVersionRe" +
+      "quest\032#.glory_api.GetLatestVersionRespon" +
+      "se\"\037\322\301\030\033/api/app/get_latest_version\022u\n\016L" +
+      "istSystemTask\022 .glory_api.ListSystemTask" +
+      "Request\032!.glory_api.ListSystemTaskRespon" +
+      "se\"\036\312\301\030\032/api/task/list_system_task\022}\n\020Up" +
+      "dateSystemTask\022\".glory_api.UpdateSystemT" +
+      "askRequest\032#.glory_api.UpdateSystemTaskR" +
+      "esponse\" \322\301\030\034/api/task/update_system_tas" +
+      "kB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
