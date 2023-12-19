@@ -473,3 +473,11 @@ message UserUnbindWechatRequest {
 message UserUnbindWechatResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message DeleteUserRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message DeleteUserResponse {
+  base.BaseResponse base_resp = 1;
+}
