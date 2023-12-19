@@ -48,6 +48,7 @@ message UpdateVersionLogResponse {
 
 message ListVersionLogRequest {
   base.BaseRequest base_request = 1;
+  string version_type = 2;
   base.PaginationRequest pagination = 100;
 }
 
