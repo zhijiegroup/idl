@@ -112,24 +112,24 @@ public final class App {
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
       "*\n\013version_log\030\002 \001(\0132\025.glory_api.Version" +
       "Log\"A\n\030UpdateVersionLogResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"m\n\025ListVe" +
-      "rsionLogRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022+\n\npagination\030d \001(\0132\027.b" +
-      "ase.PaginationRequest\"\232\001\n\026ListVersionLog" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022+\n\014version_logs\030\002 \003(\0132\025.glory_ap" +
-      "i.VersionLog\022,\n\npagination\030d \001(\0132\030.base." +
-      "PaginationResponse\"Z\n\027DeleteVersionLogRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\026\n\016version_log_id\030\002 \001(\003\"A\n\030Delete" +
-      "VersionLogResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"N\n\027GetLatestVersionReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\n\n\002os\030\002 \001(\t\"i\n\030GetLatestVersionRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022&\n\007version\030\002 \001(\0132\025.glory_api.AppVer" +
-      "sionB%\n!com.zhijiejiaoyu.glory_api.cours" +
-      "eP\001b\006proto3"
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\025ListV" +
+      "ersionLogRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\024\n\014version_type\030\002 \001(\t\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\232\001\n\026ListVersionLogResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\014versio" +
+      "n_logs\030\002 \003(\0132\025.glory_api.VersionLog\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"Z\n\027DeleteVersionLogRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016version" +
+      "_log_id\030\002 \001(\003\"A\n\030DeleteVersionLogRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"N\n\027GetLatestVersionRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\n\n\002os\030\002 \001(\t" +
+      "\"i\n\030GetLatestVersionResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\007version\030\002" +
+      " \001(\0132\025.glory_api.AppVersionB%\n!com.zhiji" +
+      "ejiaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -189,7 +189,7 @@ public final class App {
     internal_static_glory_api_ListVersionLogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListVersionLogRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "VersionType", "Pagination", });
     internal_static_glory_api_ListVersionLogResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_ListVersionLogResponse_fieldAccessorTable = new

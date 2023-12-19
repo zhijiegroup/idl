@@ -565,11 +565,15 @@ class UpdateVersionLogResponse extends $pb.GeneratedMessage {
 class ListVersionLogRequest extends $pb.GeneratedMessage {
   factory ListVersionLogRequest({
     $0.BaseRequest? baseRequest,
+    $core.String? versionType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (versionType != null) {
+      $result.versionType = versionType;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -582,6 +586,7 @@ class ListVersionLogRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListVersionLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'versionType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -618,16 +623,25 @@ class ListVersionLogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
+  @$pb.TagNumber(2)
+  $core.String get versionType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set versionType($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVersionType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersionType() => clearField(2);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $0.PaginationRequest get pagination => $_getN(2);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(1);
+  $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $0.PaginationRequest ensurePagination() => $_ensure(2);
 }
 
 class ListVersionLogResponse extends $pb.GeneratedMessage {

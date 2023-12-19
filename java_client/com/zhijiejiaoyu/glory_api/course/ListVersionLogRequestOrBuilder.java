@@ -23,6 +23,18 @@ public interface ListVersionLogRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>string version_type = 2;</code>
+   * @return The versionType.
+   */
+  java.lang.String getVersionType();
+  /**
+   * <code>string version_type = 2;</code>
+   * @return The bytes for versionType.
+   */
+  com.google.protobuf.ByteString
+      getVersionTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

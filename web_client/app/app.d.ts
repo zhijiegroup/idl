@@ -49,6 +49,7 @@ export interface UpdateVersionLogResponse {
 
 export interface ListVersionLogRequest {
   base_request?: base.BaseRequest;
+  version_type?: string;
   pagination?: base.PaginationRequest;
 }
 
