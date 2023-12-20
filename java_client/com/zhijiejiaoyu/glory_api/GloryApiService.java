@@ -1147,7 +1147,7 @@ public final class GloryApiService {
       "ationResponse\"\032\322\301\030\026/api/notification/rea" +
       "d\022\216\001\n\025GetAggregationLiveUrl\022\'.glory_api." +
       "GetAggregationLiveUrlRequest\032(.glory_api" +
-      ".GetAggregationLiveUrlResponse\"\"\312\301\030\036/api" +
+      ".GetAggregationLiveUrlResponse\"\"\322\301\030\036/api" +
       "/live/aggregation_live_urlB\036\n\032com.zhijie" +
       "jiaoyu.glory_apiP\001b\006proto3"
     };

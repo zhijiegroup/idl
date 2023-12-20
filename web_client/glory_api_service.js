@@ -2791,9 +2791,11 @@ export class glory_api {
   }
 
   GetAggregationLiveUrl(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/live/aggregation_live_url${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/live/aggregation_live_url`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 }
 
