@@ -34,6 +34,7 @@ import * as live_text from "./live/live_text";
 import * as live_evaluate from "./live/live_evaluate";
 import * as live_control from "./live/live_control";
 import * as live_quick_evaluate from "./live/live_quick_evaluate";
+import * as live_board from "./live/live_board";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
@@ -89,6 +90,7 @@ export {
   live_evaluate,
   live_control,
   live_quick_evaluate,
+  live_board,
   account_operation,
   virtual_currency,
   tenant,
@@ -1563,6 +1565,11 @@ CreateLivePlanProduct create live plan product */
   ReadNotification(
     request: notification.ReadNotificationRequest
   ): Promise<notification.ReadNotificationResponse>;
+
+  /** 直播大屏 */
+  GetAggregationLiveUrl(
+    request: live_board.GetAggregationLiveUrlRequest
+  ): Promise<live_board.GetAggregationLiveUrlResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

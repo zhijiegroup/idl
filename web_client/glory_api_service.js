@@ -36,6 +36,7 @@ import * as live_text from "./live/live_text";
 import * as live_evaluate from "./live/live_evaluate";
 import * as live_control from "./live/live_control";
 import * as live_quick_evaluate from "./live/live_quick_evaluate";
+import * as live_board from "./live/live_board";
 import * as account_operation from "./account/account_operation";
 import * as virtual_currency from "./currency/virtual_currency";
 import * as tenant from "./tenant/tenant";
@@ -91,6 +92,7 @@ export {
   live_evaluate,
   live_control,
   live_quick_evaluate,
+  live_board,
   account_operation,
   virtual_currency,
   tenant,
@@ -2786,6 +2788,12 @@ export class glory_api {
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
+  }
+
+  GetAggregationLiveUrl(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/aggregation_live_url${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 }
 

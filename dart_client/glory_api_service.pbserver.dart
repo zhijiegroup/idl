@@ -33,6 +33,7 @@ import 'course/user_course.pb.dart' as $43;
 import 'currency/virtual_currency.pb.dart' as $22;
 import 'example/example.pb.dart' as $0;
 import 'glory_api_service.pbjson.dart';
+import 'live/live_board.pb.dart' as $53;
 import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
@@ -421,6 +422,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$52.ListNotificationResponse> listNotification($pb.ServerContext ctx, $52.ListNotificationRequest request);
   $async.Future<$52.CountNotificationResponse> countNotification($pb.ServerContext ctx, $52.CountNotificationRequest request);
   $async.Future<$52.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $52.ReadNotificationRequest request);
+  $async.Future<$53.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $53.GetAggregationLiveUrlRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -772,6 +774,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListNotification': return $52.ListNotificationRequest();
       case 'CountNotification': return $52.CountNotificationRequest();
       case 'ReadNotification': return $52.ReadNotificationRequest();
+      case 'GetAggregationLiveUrl': return $53.GetAggregationLiveUrlRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1126,6 +1129,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListNotification': return this.listNotification(ctx, request as $52.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $52.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $52.ReadNotificationRequest);
+      case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $53.GetAggregationLiveUrlRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
