@@ -36,6 +36,7 @@ import "live/live_text.proto";
 import "live/live_evaluate.proto";
 import "live/live_control.proto";
 import "live/live_quick_evaluate.proto";
+import "live/live_board.proto";
 import "account/account_operation.proto";
 import "currency/virtual_currency.proto";
 import "tenant/tenant.proto";
@@ -1373,5 +1374,11 @@ service glory_api {
   }
   rpc ReadNotification(ReadNotificationRequest) returns (ReadNotificationResponse) {
     option (api.post) = '/api/notification/read';
+  }
+  
+
+  // 直播大屏
+  rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
+    option (api.get) = '/api/live/aggregation_live_url';
   }
 }
