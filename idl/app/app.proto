@@ -19,6 +19,7 @@ message AppVersion {
   string changelog = 2;
   string path = 3;
   bool force_update = 4;
+  string force_update_min_version = 5;
 }
 
 message VersionLog {
@@ -26,6 +27,8 @@ message VersionLog {
   string version_type = 2; // 版本类型：android/ios/all
   AppVersion android_version = 3;
   AppVersion ios_version = 4;
+  string creator_name = 5;
+  string created_at = 6;
 }
 
 message CreateVersionLogRequest {
