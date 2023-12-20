@@ -144,6 +144,8 @@ export class glory_api {
 
   Logout(request: user.LogoutRequest): Promise<user.LogoutResponse>;
 
+  DeleteUser(request: user.DeleteUserRequest): Promise<user.DeleteUserResponse>;
+
   GetVerifyCode(
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;

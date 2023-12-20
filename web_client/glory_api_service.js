@@ -178,6 +178,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  DeleteUser(request) {
+    const uri = `${this.uriPrefix}/api/user/delete`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetVerifyCode(request) {
     const uri = `${this.uriPrefix}/api/user/get_verify_code`;
     const body = JSONbigint.stringify(request);

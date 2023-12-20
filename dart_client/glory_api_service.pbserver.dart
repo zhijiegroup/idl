@@ -79,6 +79,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$0.DeleteExampleResponse> deleteExample($pb.ServerContext ctx, $0.DeleteExampleRequest request);
   $async.Future<$1.LoginResponse> login($pb.ServerContext ctx, $1.LoginRequest request);
   $async.Future<$1.LogoutResponse> logout($pb.ServerContext ctx, $1.LogoutRequest request);
+  $async.Future<$1.DeleteUserResponse> deleteUser($pb.ServerContext ctx, $1.DeleteUserRequest request);
   $async.Future<$1.GetVerifyCodeResponse> getVerifyCode($pb.ServerContext ctx, $1.GetVerifyCodeRequest request);
   $async.Future<$1.CheckVerifyCodeResponse> checkVerifyCode($pb.ServerContext ctx, $1.CheckVerifyCodeRequest request);
   $async.Future<$1.GetUserResponse> getUser($pb.ServerContext ctx, $1.GetUserRequest request);
@@ -426,6 +427,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteExample': return $0.DeleteExampleRequest();
       case 'Login': return $1.LoginRequest();
       case 'Logout': return $1.LogoutRequest();
+      case 'DeleteUser': return $1.DeleteUserRequest();
       case 'GetVerifyCode': return $1.GetVerifyCodeRequest();
       case 'CheckVerifyCode': return $1.CheckVerifyCodeRequest();
       case 'GetUser': return $1.GetUserRequest();
@@ -776,6 +778,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteExample': return this.deleteExample(ctx, request as $0.DeleteExampleRequest);
       case 'Login': return this.login(ctx, request as $1.LoginRequest);
       case 'Logout': return this.logout(ctx, request as $1.LogoutRequest);
+      case 'DeleteUser': return this.deleteUser(ctx, request as $1.DeleteUserRequest);
       case 'GetVerifyCode': return this.getVerifyCode(ctx, request as $1.GetVerifyCodeRequest);
       case 'CheckVerifyCode': return this.checkVerifyCode(ctx, request as $1.CheckVerifyCodeRequest);
       case 'GetUser': return this.getUser(ctx, request as $1.GetUserRequest);

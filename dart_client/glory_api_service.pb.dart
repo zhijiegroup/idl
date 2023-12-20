@@ -92,6 +92,9 @@ class glory_apiApi {
   $async.Future<$1.LogoutResponse> logout($pb.ClientContext? ctx, $1.LogoutRequest request) =>
     _client.invoke<$1.LogoutResponse>(ctx, 'glory_api', 'Logout', request, $1.LogoutResponse())
   ;
+  $async.Future<$1.DeleteUserResponse> deleteUser($pb.ClientContext? ctx, $1.DeleteUserRequest request) =>
+    _client.invoke<$1.DeleteUserResponse>(ctx, 'glory_api', 'DeleteUser', request, $1.DeleteUserResponse())
+  ;
   $async.Future<$1.GetVerifyCodeResponse> getVerifyCode($pb.ClientContext? ctx, $1.GetVerifyCodeRequest request) =>
     _client.invoke<$1.GetVerifyCodeResponse>(ctx, 'glory_api', 'GetVerifyCode', request, $1.GetVerifyCodeResponse())
   ;

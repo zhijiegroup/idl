@@ -379,6 +379,16 @@ public final class UserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UserUnbindWechatResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteUserResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -601,8 +611,11 @@ public final class UserOuterClass {
       "vatar\030\004 \001(\t\"B\n\027UserUnbindWechatRequest\022\'" +
       "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\"" +
       "A\n\030UserUnbindWechatResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhijie" +
-      "jiaoyu.glory_api.userP\001b\006proto3"
+      "\030\001 \001(\0132\022.base.BaseResponse\"<\n\021DeleteUser" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\";\n\022DeleteUserResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhi" +
+      "jiejiaoyu.glory_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1049,6 +1062,18 @@ public final class UserOuterClass {
     internal_static_glory_api_UserUnbindWechatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserUnbindWechatResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_DeleteUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(73);
+    internal_static_glory_api_DeleteUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_DeleteUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(74);
+    internal_static_glory_api_DeleteUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();

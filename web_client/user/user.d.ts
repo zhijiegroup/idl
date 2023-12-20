@@ -504,3 +504,11 @@ export interface UserUnbindWechatRequest {
 export interface UserUnbindWechatResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface DeleteUserRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface DeleteUserResponse {
+  base_resp?: base.BaseResponse;
+}

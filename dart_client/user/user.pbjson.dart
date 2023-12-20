@@ -1203,3 +1203,29 @@ final $typed_data.Uint8List userUnbindWechatResponseDescriptor = $convert.base64
     'ChhVc2VyVW5iaW5kV2VjaGF0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
     'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use deleteUserRequestDescriptor instead')
+const DeleteUserRequest$json = {
+  '1': 'DeleteUserRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `DeleteUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserRequestDescriptor = $convert.base64Decode(
+    'ChFEZWxldGVVc2VyUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZX'
+    'F1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use deleteUserResponseDescriptor instead')
+const DeleteUserResponse$json = {
+  '1': 'DeleteUserResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserResponseDescriptor = $convert.base64Decode(
+    'ChJEZWxldGVVc2VyUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
+    '9uc2VSCGJhc2VSZXNw');
+
