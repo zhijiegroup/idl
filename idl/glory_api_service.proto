@@ -88,6 +88,9 @@ service glory_api {
   rpc Logout(LogoutRequest) returns (LogoutResponse) {
     option (api.get) = '/api/user/logout';
   }
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {
+    option (api.post) = '/api/user/delete';
+  }
 
   rpc GetVerifyCode(GetVerifyCodeRequest) returns (GetVerifyCodeResponse) {
     option (api.post) = '/api/user/get_verify_code';
