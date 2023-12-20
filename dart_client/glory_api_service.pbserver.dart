@@ -42,6 +42,7 @@ import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
 import 'live/live_user.pb.dart' as $27;
 import 'mall/mall_index.pb.dart' as $7;
+import 'notification/notification.pb.dart' as $52;
 import 'payment/payment.pb.dart' as $17;
 import 'role/role.pb.dart' as $3;
 import 'seller/attachment.pb.dart' as $15;
@@ -417,6 +418,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
+  $async.Future<$52.ListNotificationResponse> listNotification($pb.ServerContext ctx, $52.ListNotificationRequest request);
+  $async.Future<$52.CountNotificationResponse> countNotification($pb.ServerContext ctx, $52.CountNotificationRequest request);
+  $async.Future<$52.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $52.ReadNotificationRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -765,6 +769,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return $46.GetLatestVersionRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
+      case 'ListNotification': return $52.ListNotificationRequest();
+      case 'CountNotification': return $52.CountNotificationRequest();
+      case 'ReadNotification': return $52.ReadNotificationRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1116,6 +1123,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
+      case 'ListNotification': return this.listNotification(ctx, request as $52.ListNotificationRequest);
+      case 'CountNotification': return this.countNotification(ctx, request as $52.CountNotificationRequest);
+      case 'ReadNotification': return this.readNotification(ctx, request as $52.ReadNotificationRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

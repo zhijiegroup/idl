@@ -10710,6 +10710,99 @@ public final class glory_apiGrpc {
     return getUpdateSystemTaskMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> getListNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNotification",
+      requestType = com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> getListNotificationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest, com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> getListNotificationMethod;
+    if ((getListNotificationMethod = glory_apiGrpc.getListNotificationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListNotificationMethod = glory_apiGrpc.getListNotificationMethod) == null) {
+          glory_apiGrpc.getListNotificationMethod = getListNotificationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest, com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListNotification"))
+              .build();
+        }
+      }
+    }
+    return getListNotificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> getCountNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CountNotification",
+      requestType = com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> getCountNotificationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest, com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> getCountNotificationMethod;
+    if ((getCountNotificationMethod = glory_apiGrpc.getCountNotificationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCountNotificationMethod = glory_apiGrpc.getCountNotificationMethod) == null) {
+          glory_apiGrpc.getCountNotificationMethod = getCountNotificationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest, com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CountNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CountNotification"))
+              .build();
+        }
+      }
+    }
+    return getCountNotificationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> getReadNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadNotification",
+      requestType = com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> getReadNotificationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest, com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> getReadNotificationMethod;
+    if ((getReadNotificationMethod = glory_apiGrpc.getReadNotificationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getReadNotificationMethod = glory_apiGrpc.getReadNotificationMethod) == null) {
+          glory_apiGrpc.getReadNotificationMethod = getReadNotificationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest, com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReadNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ReadNotification"))
+              .build();
+        }
+      }
+    }
+    return getReadNotificationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -13516,6 +13609,30 @@ public final class glory_apiGrpc {
     default void updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSystemTaskMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 通知模块
+     * </pre>
+     */
+    default void listNotification(com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void countNotification(com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCountNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void readNotification(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadNotificationMethod(), responseObserver);
     }
   }
 
@@ -16650,6 +16767,33 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 通知模块
+     * </pre>
+     */
+    public void listNotification(com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void countNotification(com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCountNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void readNotification(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReadNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -19426,6 +19570,30 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse updateSystemTask(com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSystemTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 通知模块
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse listNotification(com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse countNotification(com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCountNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse readNotification(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadNotificationMethod(), getCallOptions(), request);
     }
   }
 
@@ -22549,6 +22717,33 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateSystemTaskMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 通知模块
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> listNotification(
+        com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse> countNotification(
+        com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCountNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> readNotification(
+        com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReadNotificationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -22896,6 +23091,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_LATEST_VERSION = 342;
   private static final int METHODID_LIST_SYSTEM_TASK = 343;
   private static final int METHODID_UPDATE_SYSTEM_TASK = 344;
+  private static final int METHODID_LIST_NOTIFICATION = 345;
+  private static final int METHODID_COUNT_NOTIFICATION = 346;
+  private static final int METHODID_READ_NOTIFICATION = 347;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24293,6 +24491,18 @@ public final class glory_apiGrpc {
         case METHODID_UPDATE_SYSTEM_TASK:
           serviceImpl.updateSystemTask((com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>) responseObserver);
+          break;
+        case METHODID_LIST_NOTIFICATION:
+          serviceImpl.listNotification((com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse>) responseObserver);
+          break;
+        case METHODID_COUNT_NOTIFICATION:
+          serviceImpl.countNotification((com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse>) responseObserver);
+          break;
+        case METHODID_READ_NOTIFICATION:
+          serviceImpl.readNotification((com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -26727,6 +26937,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskRequest,
               com.zhijiejiaoyu.glory_api.task.UpdateSystemTaskResponse>(
                 service, METHODID_UPDATE_SYSTEM_TASK)))
+        .addMethod(
+          getListNotificationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest,
+              com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse>(
+                service, METHODID_LIST_NOTIFICATION)))
+        .addMethod(
+          getCountNotificationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest,
+              com.zhijiejiaoyu.glory_api.notification.CountNotificationResponse>(
+                service, METHODID_COUNT_NOTIFICATION)))
+        .addMethod(
+          getReadNotificationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest,
+              com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse>(
+                service, METHODID_READ_NOTIFICATION)))
         .build();
   }
 
@@ -27120,6 +27351,9 @@ public final class glory_apiGrpc {
               .addMethod(getGetLatestVersionMethod())
               .addMethod(getListSystemTaskMethod())
               .addMethod(getUpdateSystemTaskMethod())
+              .addMethod(getListNotificationMethod())
+              .addMethod(getCountNotificationMethod())
+              .addMethod(getReadNotificationMethod())
               .build();
         }
       }

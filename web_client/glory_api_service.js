@@ -57,6 +57,7 @@ import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
 import * as system_task from "./task/system_task";
+import * as notification from "./notification/notification";
 export {
   user,
   address,
@@ -111,6 +112,7 @@ export {
   live_traffic,
   role,
   system_task,
+  notification,
 };
 
 import {
@@ -2758,6 +2760,28 @@ export class glory_api {
 
   UpdateSystemTask(request) {
     const uri = `${this.uriPrefix}/api/task/update_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListNotification(request) {
+    const uri = `${this.uriPrefix}/api/notification/list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountNotification(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/notification/count${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  ReadNotification(request) {
+    const uri = `${this.uriPrefix}/api/notification/read`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

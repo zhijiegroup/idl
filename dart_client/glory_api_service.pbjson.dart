@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $52;
+import 'base.pbjson.dart' as $53;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $39;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -40,6 +40,7 @@ import 'live/live_text.pbjson.dart' as $28;
 import 'live/live_token.pbjson.dart' as $26;
 import 'live/live_user.pbjson.dart' as $27;
 import 'mall/mall_index.pbjson.dart' as $7;
+import 'notification/notification.pbjson.dart' as $52;
 import 'payment/payment.pbjson.dart' as $17;
 import 'role/role.pbjson.dart' as $3;
 import 'seller/attachment.pbjson.dart' as $15;
@@ -415,26 +416,29 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetLatestVersion', '2': '.glory_api.GetLatestVersionRequest', '3': '.glory_api.GetLatestVersionResponse', '4': {}},
     {'1': 'ListSystemTask', '2': '.glory_api.ListSystemTaskRequest', '3': '.glory_api.ListSystemTaskResponse', '4': {}},
     {'1': 'UpdateSystemTask', '2': '.glory_api.UpdateSystemTaskRequest', '3': '.glory_api.UpdateSystemTaskResponse', '4': {}},
+    {'1': 'ListNotification', '2': '.glory_api.ListNotificationRequest', '3': '.glory_api.ListNotificationResponse', '4': {}},
+    {'1': 'CountNotification', '2': '.glory_api.CountNotificationRequest', '3': '.glory_api.CountNotificationResponse', '4': {}},
+    {'1': 'ReadNotification', '2': '.glory_api.ReadNotificationRequest', '3': '.glory_api.ReadNotificationResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $52.BaseRequest$json,
+  '.base.BaseRequest': $53.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $52.BaseResponse$json,
+  '.base.BaseResponse': $53.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $52.AuthorInfo$json,
+  '.base.AuthorInfo': $53.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $52.PaginationRequest$json,
+  '.base.PaginationRequest': $53.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $52.PaginationResponse$json,
+  '.base.PaginationResponse': $53.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1293,6 +1297,14 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.SystemTask': $51.SystemTask$json,
   '.glory_api.UpdateSystemTaskRequest': $51.UpdateSystemTaskRequest$json,
   '.glory_api.UpdateSystemTaskResponse': $51.UpdateSystemTaskResponse$json,
+  '.glory_api.ListNotificationRequest': $52.ListNotificationRequest$json,
+  '.glory_api.ListNotificationResponse': $52.ListNotificationResponse$json,
+  '.glory_api.Notification': $52.Notification$json,
+  '.glory_api.CountNotificationRequest': $52.CountNotificationRequest$json,
+  '.glory_api.CountNotificationResponse': $52.CountNotificationResponse$json,
+  '.glory_api.NotificationCount': $52.NotificationCount$json,
+  '.glory_api.ReadNotificationRequest': $52.ReadNotificationRequest$json,
+  '.glory_api.ReadNotificationResponse': $52.ReadNotificationResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2075,5 +2087,12 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'QaIS5nbG9yeV9hcGkuTGlzdFN5c3RlbVRhc2tSZXNwb25zZSIeysEYGi9hcGkvdGFzay9saXN0'
     'X3N5c3RlbV90YXNrEn0KEFVwZGF0ZVN5c3RlbVRhc2sSIi5nbG9yeV9hcGkuVXBkYXRlU3lzdG'
     'VtVGFza1JlcXVlc3QaIy5nbG9yeV9hcGkuVXBkYXRlU3lzdGVtVGFza1Jlc3BvbnNlIiDSwRgc'
-    'L2FwaS90YXNrL3VwZGF0ZV9zeXN0ZW1fdGFzaw==');
+    'L2FwaS90YXNrL3VwZGF0ZV9zeXN0ZW1fdGFzaxJ3ChBMaXN0Tm90aWZpY2F0aW9uEiIuZ2xvcn'
+    'lfYXBpLkxpc3ROb3RpZmljYXRpb25SZXF1ZXN0GiMuZ2xvcnlfYXBpLkxpc3ROb3RpZmljYXRp'
+    'b25SZXNwb25zZSIa0sEYFi9hcGkvbm90aWZpY2F0aW9uL2xpc3QSewoRQ291bnROb3RpZmljYX'
+    'Rpb24SIy5nbG9yeV9hcGkuQ291bnROb3RpZmljYXRpb25SZXF1ZXN0GiQuZ2xvcnlfYXBpLkNv'
+    'dW50Tm90aWZpY2F0aW9uUmVzcG9uc2UiG8rBGBcvYXBpL25vdGlmaWNhdGlvbi9jb3VudBJ3Ch'
+    'BSZWFkTm90aWZpY2F0aW9uEiIuZ2xvcnlfYXBpLlJlYWROb3RpZmljYXRpb25SZXF1ZXN0GiMu'
+    'Z2xvcnlfYXBpLlJlYWROb3RpZmljYXRpb25SZXNwb25zZSIa0sEYFi9hcGkvbm90aWZpY2F0aW'
+    '9uL3JlYWQ=');
 

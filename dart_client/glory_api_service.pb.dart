@@ -40,6 +40,7 @@ import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
 import 'live/live_user.pb.dart' as $27;
 import 'mall/mall_index.pb.dart' as $7;
+import 'notification/notification.pb.dart' as $52;
 import 'payment/payment.pb.dart' as $17;
 import 'role/role.pb.dart' as $3;
 import 'seller/attachment.pb.dart' as $15;
@@ -1105,6 +1106,15 @@ class glory_apiApi {
   ;
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $51.UpdateSystemTaskRequest request) =>
     _client.invoke<$51.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $51.UpdateSystemTaskResponse())
+  ;
+  $async.Future<$52.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $52.ListNotificationRequest request) =>
+    _client.invoke<$52.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $52.ListNotificationResponse())
+  ;
+  $async.Future<$52.CountNotificationResponse> countNotification($pb.ClientContext? ctx, $52.CountNotificationRequest request) =>
+    _client.invoke<$52.CountNotificationResponse>(ctx, 'glory_api', 'CountNotification', request, $52.CountNotificationResponse())
+  ;
+  $async.Future<$52.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $52.ReadNotificationRequest request) =>
+    _client.invoke<$52.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $52.ReadNotificationResponse())
   ;
 }
 
