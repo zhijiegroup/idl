@@ -48,6 +48,7 @@ const AppVersion$json = {
     {'1': 'changelog', '3': 2, '4': 1, '5': 9, '10': 'changelog'},
     {'1': 'path', '3': 3, '4': 1, '5': 9, '10': 'path'},
     {'1': 'force_update', '3': 4, '4': 1, '5': 8, '10': 'forceUpdate'},
+    {'1': 'force_update_min_version', '3': 5, '4': 1, '5': 9, '10': 'forceUpdateMinVersion'},
   ],
 };
 
@@ -55,7 +56,8 @@ const AppVersion$json = {
 final $typed_data.Uint8List appVersionDescriptor = $convert.base64Decode(
     'CgpBcHBWZXJzaW9uEhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24SHAoJY2hhbmdlbG9nGAIgAS'
     'gJUgljaGFuZ2Vsb2cSEgoEcGF0aBgDIAEoCVIEcGF0aBIhCgxmb3JjZV91cGRhdGUYBCABKAhS'
-    'C2ZvcmNlVXBkYXRl');
+    'C2ZvcmNlVXBkYXRlEjcKGGZvcmNlX3VwZGF0ZV9taW5fdmVyc2lvbhgFIAEoCVIVZm9yY2VVcG'
+    'RhdGVNaW5WZXJzaW9u');
 
 @$core.Deprecated('Use versionLogDescriptor instead')
 const VersionLog$json = {
@@ -65,6 +67,8 @@ const VersionLog$json = {
     {'1': 'version_type', '3': 2, '4': 1, '5': 9, '10': 'versionType'},
     {'1': 'android_version', '3': 3, '4': 1, '5': 11, '6': '.glory_api.AppVersion', '10': 'androidVersion'},
     {'1': 'ios_version', '3': 4, '4': 1, '5': 11, '6': '.glory_api.AppVersion', '10': 'iosVersion'},
+    {'1': 'creator_name', '3': 5, '4': 1, '5': 9, '10': 'creatorName'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
@@ -73,7 +77,8 @@ final $typed_data.Uint8List versionLogDescriptor = $convert.base64Decode(
     'CgpWZXJzaW9uTG9nEiQKDnZlcnNpb25fbG9nX2lkGAEgASgDUgx2ZXJzaW9uTG9nSWQSIQoMdm'
     'Vyc2lvbl90eXBlGAIgASgJUgt2ZXJzaW9uVHlwZRI+Cg9hbmRyb2lkX3ZlcnNpb24YAyABKAsy'
     'FS5nbG9yeV9hcGkuQXBwVmVyc2lvblIOYW5kcm9pZFZlcnNpb24SNgoLaW9zX3ZlcnNpb24YBC'
-    'ABKAsyFS5nbG9yeV9hcGkuQXBwVmVyc2lvblIKaW9zVmVyc2lvbg==');
+    'ABKAsyFS5nbG9yeV9hcGkuQXBwVmVyc2lvblIKaW9zVmVyc2lvbhIhCgxjcmVhdG9yX25hbWUY'
+    'BSABKAlSC2NyZWF0b3JOYW1lEh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdA==');
 
 @$core.Deprecated('Use createVersionLogRequestDescriptor instead')
 const CreateVersionLogRequest$json = {

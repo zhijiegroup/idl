@@ -48,4 +48,16 @@ public interface AppVersionOrBuilder extends
    * @return The forceUpdate.
    */
   boolean getForceUpdate();
+
+  /**
+   * <code>string force_update_min_version = 5;</code>
+   * @return The forceUpdateMinVersion.
+   */
+  java.lang.String getForceUpdateMinVersion();
+  /**
+   * <code>string force_update_min_version = 5;</code>
+   * @return The bytes for forceUpdateMinVersion.
+   */
+  com.google.protobuf.ByteString
+      getForceUpdateMinVersionBytes();
 }

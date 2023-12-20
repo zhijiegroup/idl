@@ -97,39 +97,41 @@ public final class App {
       "\n\027GetAndroidQRCodeRequest\022\'\n\014base_reques" +
       "t\030\001 \001(\0132\021.base.BaseRequest\"U\n\030GetAndroid" +
       "QRCodeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\022\n\nqrcode_url\030\002 \001(\t\"T\n\nApp" +
+      ".BaseResponse\022\022\n\nqrcode_url\030\002 \001(\t\"v\n\nApp" +
       "Version\022\017\n\007version\030\001 \001(\t\022\021\n\tchangelog\030\002 " +
-      "\001(\t\022\014\n\004path\030\003 \001(\t\022\024\n\014force_update\030\004 \001(\010\"" +
-      "\226\001\n\nVersionLog\022\026\n\016version_log_id\030\001 \001(\003\022\024" +
-      "\n\014version_type\030\002 \001(\t\022.\n\017android_version\030" +
-      "\003 \001(\0132\025.glory_api.AppVersion\022*\n\013ios_vers" +
-      "ion\030\004 \001(\0132\025.glory_api.AppVersion\"n\n\027Crea" +
-      "teVersionLogRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022*\n\013version_log\030\002 \001(" +
-      "\0132\025.glory_api.VersionLog\"A\n\030CreateVersio" +
-      "nLogResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"n\n\027UpdateVersionLogRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "*\n\013version_log\030\002 \001(\0132\025.glory_api.Version" +
-      "Log\"A\n\030UpdateVersionLogResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\025ListV" +
-      "ersionLogRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\024\n\014version_type\030\002 \001(\t\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\232\001\n\026ListVersionLogResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\014versio" +
-      "n_logs\030\002 \003(\0132\025.glory_api.VersionLog\022,\n\np" +
-      "agination\030d \001(\0132\030.base.PaginationRespons" +
-      "e\"Z\n\027DeleteVersionLogRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016version" +
-      "_log_id\030\002 \001(\003\"A\n\030DeleteVersionLogRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"N\n\027GetLatestVersionRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\n\n\002os\030\002 \001(\t" +
-      "\"i\n\030GetLatestVersionResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\007version\030\002" +
-      " \001(\0132\025.glory_api.AppVersionB%\n!com.zhiji" +
-      "ejiaoyu.glory_api.courseP\001b\006proto3"
+      "\001(\t\022\014\n\004path\030\003 \001(\t\022\024\n\014force_update\030\004 \001(\010\022" +
+      " \n\030force_update_min_version\030\005 \001(\t\"\300\001\n\nVe" +
+      "rsionLog\022\026\n\016version_log_id\030\001 \001(\003\022\024\n\014vers" +
+      "ion_type\030\002 \001(\t\022.\n\017android_version\030\003 \001(\0132" +
+      "\025.glory_api.AppVersion\022*\n\013ios_version\030\004 " +
+      "\001(\0132\025.glory_api.AppVersion\022\024\n\014creator_na" +
+      "me\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\"n\n\027CreateVe" +
+      "rsionLogRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022*\n\013version_log\030\002 \001(\0132\025." +
+      "glory_api.VersionLog\"A\n\030CreateVersionLog" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"n\n\027UpdateVersionLogRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022*\n\013v" +
+      "ersion_log\030\002 \001(\0132\025.glory_api.VersionLog\"" +
+      "A\n\030UpdateVersionLogResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\025ListVersi" +
+      "onLogRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\024\n\014version_type\030\002 \001(\t\022+\n\np" +
+      "agination\030d \001(\0132\027.base.PaginationRequest" +
+      "\"\232\001\n\026ListVersionLogResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022+\n\014version_lo" +
+      "gs\030\002 \003(\0132\025.glory_api.VersionLog\022,\n\npagin" +
+      "ation\030d \001(\0132\030.base.PaginationResponse\"Z\n" +
+      "\027DeleteVersionLogRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016version_log" +
+      "_id\030\002 \001(\003\"A\n\030DeleteVersionLogResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"N\n\027" +
+      "GetLatestVersionRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\n\n\002os\030\002 \001(\t\"i\n\030" +
+      "GetLatestVersionResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022&\n\007version\030\002 \001(\013" +
+      "2\025.glory_api.AppVersionB%\n!com.zhijiejia" +
+      "oyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -153,13 +155,13 @@ public final class App {
     internal_static_glory_api_AppVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AppVersion_descriptor,
-        new java.lang.String[] { "Version", "Changelog", "Path", "ForceUpdate", });
+        new java.lang.String[] { "Version", "Changelog", "Path", "ForceUpdate", "ForceUpdateMinVersion", });
     internal_static_glory_api_VersionLog_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_VersionLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VersionLog_descriptor,
-        new java.lang.String[] { "VersionLogId", "VersionType", "AndroidVersion", "IosVersion", });
+        new java.lang.String[] { "VersionLogId", "VersionType", "AndroidVersion", "IosVersion", "CreatorName", "CreatedAt", });
     internal_static_glory_api_CreateVersionLogRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_CreateVersionLogRequest_fieldAccessorTable = new

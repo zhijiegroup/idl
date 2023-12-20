@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private VersionLog() {
     versionType = "";
+    creatorName = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -84,6 +86,18 @@ private static final long serialVersionUID = 0L;
               iosVersion = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            creatorName = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
             break;
           }
           default: {
@@ -227,6 +241,82 @@ private static final long serialVersionUID = 0L;
     return getIosVersion();
   }
 
+  public static final int CREATOR_NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object creatorName ;
+  /**
+   * <code>string creator_name = 5;</code>
+   * @return The creatorName.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatorName() {
+    java.lang.Object ref = creatorName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creatorName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string creator_name = 5;</code>
+   * @return The bytes for creatorName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatorNameBytes() {
+    java.lang.Object ref = creatorName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      creatorName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object createdAt ;
+  /**
+   * <code>string created_at = 6;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedAt() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string created_at = 6;</code>
+   * @return The bytes for createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedAtBytes() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -253,6 +343,12 @@ private static final long serialVersionUID = 0L;
     if (iosVersion != null) {
       output.writeMessage(4, getIosVersion());
     }
+    if (!getCreatorNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, creatorName );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -276,6 +372,12 @@ private static final long serialVersionUID = 0L;
     if (iosVersion != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getIosVersion());
+    }
+    if (!getCreatorNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, creatorName );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,6 +408,10 @@ private static final long serialVersionUID = 0L;
       if (!getIosVersion()
           .equals(other.getIosVersion())) return false;
     }
+    if (!getCreatorName()
+        .equals(other.getCreatorName())) return false;
+    if (!getCreatedAt()
+        .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -330,6 +436,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IOS_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getIosVersion().hashCode();
     }
+    hash = (37 * hash) + CREATOR_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatorName().hashCode();
+    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -479,6 +589,10 @@ private static final long serialVersionUID = 0L;
         iosVersion = null;
         iosVersionBuilder = null;
       }
+      creatorName = "";
+
+      createdAt = "";
+
       return this;
     }
 
@@ -517,6 +631,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.iosVersion = iosVersionBuilder .build();
       }
+      result.creatorName = creatorName ;
+      result.createdAt = createdAt ;
       onBuilt();
       return result;
     }
@@ -577,6 +693,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasIosVersion()) {
         mergeIosVersion(other.getIosVersion());
+      }
+      if (!other.getCreatorName().isEmpty()) {
+        creatorName = other.creatorName ;
+        onChanged();
+      }
+      if (!other.getCreatedAt().isEmpty()) {
+        createdAt = other.createdAt ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -970,6 +1094,158 @@ private static final long serialVersionUID = 0L;
         iosVersion = null;
       }
       return iosVersionBuilder ;
+    }
+
+    private java.lang.Object creatorName = "";
+    /**
+     * <code>string creator_name = 5;</code>
+     * @return The creatorName.
+     */
+    public java.lang.String getCreatorName() {
+      java.lang.Object ref = creatorName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creatorName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string creator_name = 5;</code>
+     * @return The bytes for creatorName.
+     */
+    public com.google.protobuf.ByteString
+        getCreatorNameBytes() {
+      java.lang.Object ref = creatorName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        creatorName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string creator_name = 5;</code>
+     * @param value The creatorName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      creatorName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string creator_name = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatorName() {
+      
+      creatorName = getDefaultInstance().getCreatorName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string creator_name = 5;</code>
+     * @param value The bytes for creatorName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      creatorName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdAt = "";
+    /**
+     * <code>string created_at = 6;</code>
+     * @return The createdAt.
+     */
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 6;</code>
+     * @return The bytes for createdAt.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 6;</code>
+     * @param value The createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedAt() {
+      
+      createdAt = getDefaultInstance().getCreatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 6;</code>
+     * @param value The bytes for createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdAt = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

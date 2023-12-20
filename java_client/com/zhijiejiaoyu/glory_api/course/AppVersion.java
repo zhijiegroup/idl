@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     version = "";
     changelog = "";
     path = "";
+    forceUpdateMinVersion = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             forceUpdate = input.readBool();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            forceUpdateMinVersion = s;
             break;
           }
           default: {
@@ -231,6 +238,44 @@ private static final long serialVersionUID = 0L;
     return forceUpdate ;
   }
 
+  public static final int FORCE_UPDATE_MIN_VERSION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object forceUpdateMinVersion ;
+  /**
+   * <code>string force_update_min_version = 5;</code>
+   * @return The forceUpdateMinVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getForceUpdateMinVersion() {
+    java.lang.Object ref = forceUpdateMinVersion ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      forceUpdateMinVersion = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string force_update_min_version = 5;</code>
+   * @return The bytes for forceUpdateMinVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getForceUpdateMinVersionBytes() {
+    java.lang.Object ref = forceUpdateMinVersion ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      forceUpdateMinVersion = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +302,9 @@ private static final long serialVersionUID = 0L;
     if (forceUpdate != false) {
       output.writeBool(4, forceUpdate );
     }
+    if (!getForceUpdateMinVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, forceUpdateMinVersion );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -278,6 +326,9 @@ private static final long serialVersionUID = 0L;
     if (forceUpdate != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, forceUpdate );
+    }
+    if (!getForceUpdateMinVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, forceUpdateMinVersion );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,6 +353,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPath())) return false;
     if (getForceUpdate()
         != other.getForceUpdate()) return false;
+    if (!getForceUpdateMinVersion()
+        .equals(other.getForceUpdateMinVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -322,6 +375,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FORCE_UPDATE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getForceUpdate());
+    hash = (37 * hash) + FORCE_UPDATE_MIN_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getForceUpdateMinVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +518,8 @@ private static final long serialVersionUID = 0L;
 
       forceUpdate = false;
 
+      forceUpdateMinVersion = "";
+
       return this;
     }
 
@@ -493,6 +550,7 @@ private static final long serialVersionUID = 0L;
       result.changelog = changelog ;
       result.path = path ;
       result.forceUpdate = forceUpdate ;
+      result.forceUpdateMinVersion = forceUpdateMinVersion ;
       onBuilt();
       return result;
     }
@@ -555,6 +613,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getForceUpdate() != false) {
         setForceUpdate(other.getForceUpdate());
+      }
+      if (!other.getForceUpdateMinVersion().isEmpty()) {
+        forceUpdateMinVersion = other.forceUpdateMinVersion ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -840,6 +902,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearForceUpdate() {
       
       forceUpdate = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object forceUpdateMinVersion = "";
+    /**
+     * <code>string force_update_min_version = 5;</code>
+     * @return The forceUpdateMinVersion.
+     */
+    public java.lang.String getForceUpdateMinVersion() {
+      java.lang.Object ref = forceUpdateMinVersion ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        forceUpdateMinVersion = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string force_update_min_version = 5;</code>
+     * @return The bytes for forceUpdateMinVersion.
+     */
+    public com.google.protobuf.ByteString
+        getForceUpdateMinVersionBytes() {
+      java.lang.Object ref = forceUpdateMinVersion ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        forceUpdateMinVersion = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string force_update_min_version = 5;</code>
+     * @param value The forceUpdateMinVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceUpdateMinVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      forceUpdateMinVersion = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string force_update_min_version = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearForceUpdateMinVersion() {
+      
+      forceUpdateMinVersion = getDefaultInstance().getForceUpdateMinVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string force_update_min_version = 5;</code>
+     * @param value The bytes for forceUpdateMinVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForceUpdateMinVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      forceUpdateMinVersion = value;
       onChanged();
       return this;
     }
