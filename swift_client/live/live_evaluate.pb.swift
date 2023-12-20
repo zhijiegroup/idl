@@ -583,6 +583,10 @@ struct GloryApi_UnevaluatedRoom {
 
   var isUseAi: Bool = false
 
+  var startTime: String = String()
+
+  var endTime: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -615,6 +619,10 @@ struct GloryApi_ListUnevaluatedRoomRequest {
 
   /// 0:全部 1:进行中 2:已结束
   var roomStatus: Int64 = 0
+
+  var startTime: Int64 = 0
+
+  var endTime: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2494,6 +2502,8 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     6: .standard(proto: "user_name"),
     7: .same(proto: "status"),
     8: .standard(proto: "is_use_ai"),
+    9: .standard(proto: "start_time"),
+    10: .standard(proto: "end_time"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2510,6 +2520,8 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 6: try { try decoder.decodeSingularStringField(value: &self.userName) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.isUseAi) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       default: break
       }
     }
@@ -2540,6 +2552,12 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.isUseAi != false {
       try visitor.visitSingularBoolField(value: self.isUseAi, fieldNumber: 8)
     }
+    if !self.startTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 9)
+    }
+    if !self.endTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2552,6 +2570,8 @@ extension GloryApi_UnevaluatedRoom: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.userName != rhs.userName {return false}
     if lhs.status != rhs.status {return false}
     if lhs.isUseAi != rhs.isUseAi {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2564,6 +2584,8 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
     2: .same(proto: "pagination"),
     3: .standard(proto: "shop_or_user_name"),
     4: .standard(proto: "room_status"),
+    5: .standard(proto: "start_time"),
+    6: .standard(proto: "end_time"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2576,6 +2598,8 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
       case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.shopOrUserName) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.roomStatus) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.startTime) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.endTime) }()
       default: break
       }
     }
@@ -2598,6 +2622,12 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
     if self.roomStatus != 0 {
       try visitor.visitSingularInt64Field(value: self.roomStatus, fieldNumber: 4)
     }
+    if self.startTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.startTime, fieldNumber: 5)
+    }
+    if self.endTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.endTime, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2606,6 +2636,8 @@ extension GloryApi_ListUnevaluatedRoomRequest: SwiftProtobuf.Message, SwiftProto
     if lhs._pagination != rhs._pagination {return false}
     if lhs.shopOrUserName != rhs.shopOrUserName {return false}
     if lhs.roomStatus != rhs.roomStatus {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

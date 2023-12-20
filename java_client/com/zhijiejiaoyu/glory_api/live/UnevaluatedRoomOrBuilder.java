@@ -84,4 +84,28 @@ public interface UnevaluatedRoomOrBuilder extends
    * @return The isUseAi.
    */
   boolean getIsUseAi();
+
+  /**
+   * <code>string start_time = 9;</code>
+   * @return The startTime.
+   */
+  java.lang.String getStartTime();
+  /**
+   * <code>string start_time = 9;</code>
+   * @return The bytes for startTime.
+   */
+  com.google.protobuf.ByteString
+      getStartTimeBytes();
+
+  /**
+   * <code>string end_time = 10;</code>
+   * @return The endTime.
+   */
+  java.lang.String getEndTime();
+  /**
+   * <code>string end_time = 10;</code>
+   * @return The bytes for endTime.
+   */
+  com.google.protobuf.ByteString
+      getEndTimeBytes();
 }

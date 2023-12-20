@@ -1889,6 +1889,8 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     $core.String? userName,
     $core.String? status,
     $core.bool? isUseAi,
+    $core.String? startTime,
+    $core.String? endTime,
   }) {
     final $result = create();
     if (roomId != null) {
@@ -1915,6 +1917,12 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     if (isUseAi != null) {
       $result.isUseAi = isUseAi;
     }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
     return $result;
   }
   UnevaluatedRoom._() : super();
@@ -1930,6 +1938,8 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'userName')
     ..aOS(7, _omitFieldNames ? '' : 'status')
     ..aOB(8, _omitFieldNames ? '' : 'isUseAi')
+    ..aOS(9, _omitFieldNames ? '' : 'startTime')
+    ..aOS(10, _omitFieldNames ? '' : 'endTime')
     ..hasRequiredFields = false
   ;
 
@@ -2025,6 +2035,24 @@ class UnevaluatedRoom extends $pb.GeneratedMessage {
   $core.bool hasIsUseAi() => $_has(7);
   @$pb.TagNumber(8)
   void clearIsUseAi() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get startTime => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set startTime($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasStartTime() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStartTime() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get endTime => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set endTime($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasEndTime() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEndTime() => clearField(10);
 }
 
 class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
@@ -2033,6 +2061,8 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
     $0.PaginationRequest? pagination,
     $core.String? shopOrUserName,
     $fixnum.Int64? roomStatus,
+    $fixnum.Int64? startTime,
+    $fixnum.Int64? endTime,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2047,6 +2077,12 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
     if (roomStatus != null) {
       $result.roomStatus = roomStatus;
     }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
     return $result;
   }
   ListUnevaluatedRoomRequest._() : super();
@@ -2058,6 +2094,8 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
     ..aOM<$0.PaginationRequest>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..aOS(3, _omitFieldNames ? '' : 'shopOrUserName')
     ..aInt64(4, _omitFieldNames ? '' : 'roomStatus')
+    ..aInt64(5, _omitFieldNames ? '' : 'startTime')
+    ..aInt64(6, _omitFieldNames ? '' : 'endTime')
     ..hasRequiredFields = false
   ;
 
@@ -2121,6 +2159,24 @@ class ListUnevaluatedRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasRoomStatus() => $_has(3);
   @$pb.TagNumber(4)
   void clearRoomStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get startTime => $_getI64(4);
+  @$pb.TagNumber(5)
+  set startTime($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStartTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartTime() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get endTime => $_getI64(5);
+  @$pb.TagNumber(6)
+  set endTime($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEndTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEndTime() => clearField(6);
 }
 
 class ListUnevaluatedRoomResponse extends $pb.GeneratedMessage {

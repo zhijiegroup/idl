@@ -161,6 +161,8 @@ export interface UnevaluatedRoom {
   user_name?: string;
   status?: string;
   is_use_ai?: boolean;
+  start_time?: string;
+  end_time?: string;
 }
 
 export interface ListUnevaluatedRoomRequest {
@@ -169,6 +171,8 @@ export interface ListUnevaluatedRoomRequest {
   shop_or_user_name?: string;
   /** 0:全部 1:进行中 2:已结束 */
   room_status?: string;
+  start_time?: string;
+  end_time?: string;
 }
 
 export interface ListUnevaluatedRoomResponse {
