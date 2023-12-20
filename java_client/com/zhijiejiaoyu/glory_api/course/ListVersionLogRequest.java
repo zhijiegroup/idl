@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListVersionLogRequest() {
+    versionType = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,12 @@ private static final long serialVersionUID = 0L;
               baseRequest = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            versionType = s;
             break;
           }
           case 802: {
@@ -132,6 +139,44 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int VERSION_TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object versionType ;
+  /**
+   * <code>string version_type = 2;</code>
+   * @return The versionType.
+   */
+  @java.lang.Override
+  public java.lang.String getVersionType() {
+    java.lang.Object ref = versionType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string version_type = 2;</code>
+   * @return The bytes for versionType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVersionTypeBytes() {
+    java.lang.Object ref = versionType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      versionType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -175,6 +220,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (!getVersionTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, versionType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -190,6 +238,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (!getVersionTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, versionType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -215,6 +266,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (!getVersionType()
+        .equals(other.getVersionType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -235,6 +288,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + VERSION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -378,6 +433,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      versionType = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -415,6 +472,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.versionType = versionType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -470,6 +528,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.course.ListVersionLogRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (!other.getVersionType().isEmpty()) {
+        versionType = other.versionType ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -620,6 +682,82 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private java.lang.Object versionType = "";
+    /**
+     * <code>string version_type = 2;</code>
+     * @return The versionType.
+     */
+    public java.lang.String getVersionType() {
+      java.lang.Object ref = versionType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string version_type = 2;</code>
+     * @return The bytes for versionType.
+     */
+    public com.google.protobuf.ByteString
+        getVersionTypeBytes() {
+      java.lang.Object ref = versionType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string version_type = 2;</code>
+     * @param value The versionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      versionType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version_type = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionType() {
+      
+      versionType = getDefaultInstance().getVersionType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string version_type = 2;</code>
+     * @param value The bytes for versionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      versionType = value;
+      onChanged();
+      return this;
     }
 
     private com.zhijiejiaoyu.base.PaginationRequest pagination ;

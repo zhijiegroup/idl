@@ -136,6 +136,7 @@ const ListVersionLogRequest$json = {
   '1': 'ListVersionLogRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'version_type', '3': 2, '4': 1, '5': 9, '10': 'versionType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -143,8 +144,9 @@ const ListVersionLogRequest$json = {
 /// Descriptor for `ListVersionLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listVersionLogRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0VmVyc2lvbkxvZ1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
-    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5h'
-    'dGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSIQoMdmVyc2lvbl90eXBlGAIgASgJUgt2ZXJzaW9uVHlw'
+    'ZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdG'
+    'lvbg==');
 
 @$core.Deprecated('Use listVersionLogResponseDescriptor instead')
 const ListVersionLogResponse$json = {
