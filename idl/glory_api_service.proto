@@ -57,6 +57,7 @@ import "app/app.proto";
 import "traffic/live_traffic.proto";
 import "role/role.proto";
 import "task/system_task.proto";
+import "notification/notification.proto";
 
 service glory_api {
 
@@ -1361,5 +1362,16 @@ service glory_api {
   }
   rpc UpdateSystemTask(UpdateSystemTaskRequest) returns (UpdateSystemTaskResponse) {
     option (api.post) = '/api/task/update_system_task';
+  }
+
+  // 通知模块
+  rpc ListNotification(ListNotificationRequest) returns (ListNotificationResponse) {
+    option (api.post) = '/api/notification/list';
+  }
+  rpc CountNotification(CountNotificationRequest) returns (CountNotificationResponse) {
+    option (api.get) = '/api/notification/count';
+  }
+  rpc ReadNotification(ReadNotificationRequest) returns (ReadNotificationResponse) {
+    option (api.post) = '/api/notification/read';
   }
 }
