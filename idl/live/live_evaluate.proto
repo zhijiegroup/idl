@@ -156,6 +156,8 @@ message UnevaluatedRoom {
     string user_name = 6;
     string status = 7;
     bool is_use_ai = 8;
+    string start_time = 9;
+    string end_time = 10;
 }
 
 message ListUnevaluatedRoomRequest {
@@ -163,6 +165,8 @@ message ListUnevaluatedRoomRequest {
     base.PaginationRequest pagination = 2;
     string shop_or_user_name = 3;
     int64 room_status = 4; // 0:全部 1:进行中 2:已结束
+    int64 start_time = 5;
+    int64 end_time = 6;
 }
 
 message ListUnevaluatedRoomResponse {
