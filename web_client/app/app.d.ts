@@ -19,6 +19,7 @@ export interface AppVersion {
   changelog?: string;
   path?: string;
   force_update?: boolean;
+  force_update_min_version?: string;
 }
 
 export interface VersionLog {
@@ -27,6 +28,8 @@ export interface VersionLog {
   version_type?: string;
   android_version?: AppVersion;
   ios_version?: AppVersion;
+  creator_name?: string;
+  created_at?: string;
 }
 
 export interface CreateVersionLogRequest {

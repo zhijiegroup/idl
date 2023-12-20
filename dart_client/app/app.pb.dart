@@ -140,6 +140,7 @@ class AppVersion extends $pb.GeneratedMessage {
     $core.String? changelog,
     $core.String? path,
     $core.bool? forceUpdate,
+    $core.String? forceUpdateMinVersion,
   }) {
     final $result = create();
     if (version != null) {
@@ -154,6 +155,9 @@ class AppVersion extends $pb.GeneratedMessage {
     if (forceUpdate != null) {
       $result.forceUpdate = forceUpdate;
     }
+    if (forceUpdateMinVersion != null) {
+      $result.forceUpdateMinVersion = forceUpdateMinVersion;
+    }
     return $result;
   }
   AppVersion._() : super();
@@ -165,6 +169,7 @@ class AppVersion extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'changelog')
     ..aOS(3, _omitFieldNames ? '' : 'path')
     ..aOB(4, _omitFieldNames ? '' : 'forceUpdate')
+    ..aOS(5, _omitFieldNames ? '' : 'forceUpdateMinVersion')
     ..hasRequiredFields = false
   ;
 
@@ -224,6 +229,15 @@ class AppVersion extends $pb.GeneratedMessage {
   $core.bool hasForceUpdate() => $_has(3);
   @$pb.TagNumber(4)
   void clearForceUpdate() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get forceUpdateMinVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set forceUpdateMinVersion($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasForceUpdateMinVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearForceUpdateMinVersion() => clearField(5);
 }
 
 class VersionLog extends $pb.GeneratedMessage {
@@ -232,6 +246,8 @@ class VersionLog extends $pb.GeneratedMessage {
     $core.String? versionType,
     AppVersion? androidVersion,
     AppVersion? iosVersion,
+    $core.String? creatorName,
+    $core.String? createdAt,
   }) {
     final $result = create();
     if (versionLogId != null) {
@@ -246,6 +262,12 @@ class VersionLog extends $pb.GeneratedMessage {
     if (iosVersion != null) {
       $result.iosVersion = iosVersion;
     }
+    if (creatorName != null) {
+      $result.creatorName = creatorName;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
     return $result;
   }
   VersionLog._() : super();
@@ -257,6 +279,8 @@ class VersionLog extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'versionType')
     ..aOM<AppVersion>(3, _omitFieldNames ? '' : 'androidVersion', subBuilder: AppVersion.create)
     ..aOM<AppVersion>(4, _omitFieldNames ? '' : 'iosVersion', subBuilder: AppVersion.create)
+    ..aOS(5, _omitFieldNames ? '' : 'creatorName')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -320,6 +344,24 @@ class VersionLog extends $pb.GeneratedMessage {
   void clearIosVersion() => clearField(4);
   @$pb.TagNumber(4)
   AppVersion ensureIosVersion() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get creatorName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set creatorName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatorName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
 }
 
 class CreateVersionLogRequest extends $pb.GeneratedMessage {

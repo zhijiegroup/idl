@@ -62,4 +62,28 @@ public interface VersionLogOrBuilder extends
    * <code>.glory_api.AppVersion ios_version = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.course.AppVersionOrBuilder getIosVersionOrBuilder();
+
+  /**
+   * <code>string creator_name = 5;</code>
+   * @return The creatorName.
+   */
+  java.lang.String getCreatorName();
+  /**
+   * <code>string creator_name = 5;</code>
+   * @return The bytes for creatorName.
+   */
+  com.google.protobuf.ByteString
+      getCreatorNameBytes();
+
+  /**
+   * <code>string created_at = 6;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 6;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }

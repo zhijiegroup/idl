@@ -77,6 +77,8 @@ struct GloryApi_AppVersion {
 
   var forceUpdate: Bool = false
 
+  var forceUpdateMinVersion: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -109,6 +111,10 @@ struct GloryApi_VersionLog {
   var hasIosVersion: Bool {return self._iosVersion != nil}
   /// Clears the value of `iosVersion`. Subsequent reads from it will return its default value.
   mutating func clearIosVersion() {self._iosVersion = nil}
+
+  var creatorName: String = String()
+
+  var createdAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -493,6 +499,7 @@ extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .same(proto: "changelog"),
     3: .same(proto: "path"),
     4: .standard(proto: "force_update"),
+    5: .standard(proto: "force_update_min_version"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -505,6 +512,7 @@ extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularStringField(value: &self.changelog) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.path) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.forceUpdate) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.forceUpdateMinVersion) }()
       default: break
       }
     }
@@ -523,6 +531,9 @@ extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if self.forceUpdate != false {
       try visitor.visitSingularBoolField(value: self.forceUpdate, fieldNumber: 4)
     }
+    if !self.forceUpdateMinVersion.isEmpty {
+      try visitor.visitSingularStringField(value: self.forceUpdateMinVersion, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -531,6 +542,7 @@ extension GloryApi_AppVersion: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.changelog != rhs.changelog {return false}
     if lhs.path != rhs.path {return false}
     if lhs.forceUpdate != rhs.forceUpdate {return false}
+    if lhs.forceUpdateMinVersion != rhs.forceUpdateMinVersion {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -543,6 +555,8 @@ extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "version_type"),
     3: .standard(proto: "android_version"),
     4: .standard(proto: "ios_version"),
+    5: .standard(proto: "creator_name"),
+    6: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -555,6 +569,8 @@ extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularStringField(value: &self.versionType) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._androidVersion) }()
       case 4: try { try decoder.decodeSingularMessageField(value: &self._iosVersion) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.creatorName) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -577,6 +593,12 @@ extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     try { if let v = self._iosVersion {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     } }()
+    if !self.creatorName.isEmpty {
+      try visitor.visitSingularStringField(value: self.creatorName, fieldNumber: 5)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -585,6 +607,8 @@ extension GloryApi_VersionLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.versionType != rhs.versionType {return false}
     if lhs._androidVersion != rhs._androidVersion {return false}
     if lhs._iosVersion != rhs._iosVersion {return false}
+    if lhs.creatorName != rhs.creatorName {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
