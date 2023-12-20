@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
     shopName = "";
     userName = "";
     status = "";
+    startTime = "";
+    endTime = "";
   }
 
   @java.lang.Override
@@ -96,6 +98,18 @@ private static final long serialVersionUID = 0L;
           case 64: {
 
             isUseAi = input.readBool();
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            startTime = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            endTime = s;
             break;
           }
           default: {
@@ -353,6 +367,82 @@ private static final long serialVersionUID = 0L;
     return isUseAi ;
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 9;
+  private volatile java.lang.Object startTime ;
+  /**
+   * <code>string start_time = 9;</code>
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public java.lang.String getStartTime() {
+    java.lang.Object ref = startTime ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      startTime = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string start_time = 9;</code>
+   * @return The bytes for startTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStartTimeBytes() {
+    java.lang.Object ref = startTime ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      startTime = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object endTime ;
+  /**
+   * <code>string end_time = 10;</code>
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public java.lang.String getEndTime() {
+    java.lang.Object ref = endTime ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endTime = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string end_time = 10;</code>
+   * @return The bytes for endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEndTimeBytes() {
+    java.lang.Object ref = endTime ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      endTime = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -391,6 +481,12 @@ private static final long serialVersionUID = 0L;
     if (isUseAi != false) {
       output.writeBool(8, isUseAi );
     }
+    if (!getStartTimeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, startTime );
+    }
+    if (!getEndTimeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, endTime );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -427,6 +523,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, isUseAi );
     }
+    if (!getStartTimeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, startTime );
+    }
+    if (!getEndTimeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, endTime );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -458,6 +560,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatus())) return false;
     if (getIsUseAi()
         != other.getIsUseAi()) return false;
+    if (!getStartTime()
+        .equals(other.getStartTime())) return false;
+    if (!getEndTime()
+        .equals(other.getEndTime())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -488,6 +594,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_USE_AI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsUseAi());
+    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + getStartTime().hashCode();
+    hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + getEndTime().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -637,6 +747,10 @@ private static final long serialVersionUID = 0L;
 
       isUseAi = false;
 
+      startTime = "";
+
+      endTime = "";
+
       return this;
     }
 
@@ -671,6 +785,8 @@ private static final long serialVersionUID = 0L;
       result.userName = userName ;
       result.status = status ;
       result.isUseAi = isUseAi ;
+      result.startTime = startTime ;
+      result.endTime = endTime ;
       onBuilt();
       return result;
     }
@@ -747,6 +863,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsUseAi() != false) {
         setIsUseAi(other.getIsUseAi());
+      }
+      if (!other.getStartTime().isEmpty()) {
+        startTime = other.startTime ;
+        onChanged();
+      }
+      if (!other.getEndTime().isEmpty()) {
+        endTime = other.endTime ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1246,6 +1370,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsUseAi() {
       
       isUseAi = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object startTime = "";
+    /**
+     * <code>string start_time = 9;</code>
+     * @return The startTime.
+     */
+    public java.lang.String getStartTime() {
+      java.lang.Object ref = startTime ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startTime = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string start_time = 9;</code>
+     * @return The bytes for startTime.
+     */
+    public com.google.protobuf.ByteString
+        getStartTimeBytes() {
+      java.lang.Object ref = startTime ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        startTime = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string start_time = 9;</code>
+     * @param value The startTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartTime(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      startTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string start_time = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartTime() {
+      
+      startTime = getDefaultInstance().getStartTime();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string start_time = 9;</code>
+     * @param value The bytes for startTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartTimeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      startTime = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object endTime = "";
+    /**
+     * <code>string end_time = 10;</code>
+     * @return The endTime.
+     */
+    public java.lang.String getEndTime() {
+      java.lang.Object ref = endTime ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endTime = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string end_time = 10;</code>
+     * @return The bytes for endTime.
+     */
+    public com.google.protobuf.ByteString
+        getEndTimeBytes() {
+      java.lang.Object ref = endTime ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endTime = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string end_time = 10;</code>
+     * @param value The endTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTime(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      endTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string end_time = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndTime() {
+      
+      endTime = getDefaultInstance().getEndTime();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string end_time = 10;</code>
+     * @param value The bytes for endTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTimeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      endTime = value;
       onChanged();
       return this;
     }

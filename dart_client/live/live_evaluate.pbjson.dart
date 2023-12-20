@@ -374,6 +374,8 @@ const UnevaluatedRoom$json = {
     {'1': 'user_name', '3': 6, '4': 1, '5': 9, '10': 'userName'},
     {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
     {'1': 'is_use_ai', '3': 8, '4': 1, '5': 8, '10': 'isUseAi'},
+    {'1': 'start_time', '3': 9, '4': 1, '5': 9, '10': 'startTime'},
+    {'1': 'end_time', '3': 10, '4': 1, '5': 9, '10': 'endTime'},
   ],
 };
 
@@ -383,7 +385,8 @@ final $typed_data.Uint8List unevaluatedRoomDescriptor = $convert.base64Decode(
     'UYAiABKAlSCXJvb21UaXRsZRIZCghyb29tX3VybBgDIAEoCVIHcm9vbVVybBIbCglzaG9wX25h'
     'bWUYBCABKAlSCHNob3BOYW1lEhcKB3VzZXJfaWQYBSABKANSBnVzZXJJZBIbCgl1c2VyX25hbW'
     'UYBiABKAlSCHVzZXJOYW1lEhYKBnN0YXR1cxgHIAEoCVIGc3RhdHVzEhoKCWlzX3VzZV9haRgI'
-    'IAEoCFIHaXNVc2VBaQ==');
+    'IAEoCFIHaXNVc2VBaRIdCgpzdGFydF90aW1lGAkgASgJUglzdGFydFRpbWUSGQoIZW5kX3RpbW'
+    'UYCiABKAlSB2VuZFRpbWU=');
 
 @$core.Deprecated('Use listUnevaluatedRoomRequestDescriptor instead')
 const ListUnevaluatedRoomRequest$json = {
@@ -393,6 +396,8 @@ const ListUnevaluatedRoomRequest$json = {
     {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
     {'1': 'shop_or_user_name', '3': 3, '4': 1, '5': 9, '10': 'shopOrUserName'},
     {'1': 'room_status', '3': 4, '4': 1, '5': 3, '10': 'roomStatus'},
+    {'1': 'start_time', '3': 5, '4': 1, '5': 3, '10': 'startTime'},
+    {'1': 'end_time', '3': 6, '4': 1, '5': 3, '10': 'endTime'},
   ],
 };
 
@@ -401,7 +406,8 @@ final $typed_data.Uint8List listUnevaluatedRoomRequestDescriptor = $convert.base
     'ChpMaXN0VW5ldmFsdWF0ZWRSb29tUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
     'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGAIgASgLMhcuYmFzZS5Q'
     'YWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbhIpChFzaG9wX29yX3VzZXJfbmFtZRgDIAEoCV'
-    'IOc2hvcE9yVXNlck5hbWUSHwoLcm9vbV9zdGF0dXMYBCABKANSCnJvb21TdGF0dXM=');
+    'IOc2hvcE9yVXNlck5hbWUSHwoLcm9vbV9zdGF0dXMYBCABKANSCnJvb21TdGF0dXMSHQoKc3Rh'
+    'cnRfdGltZRgFIAEoA1IJc3RhcnRUaW1lEhkKCGVuZF90aW1lGAYgASgDUgdlbmRUaW1l');
 
 @$core.Deprecated('Use listUnevaluatedRoomResponseDescriptor instead')
 const ListUnevaluatedRoomResponse$json = {

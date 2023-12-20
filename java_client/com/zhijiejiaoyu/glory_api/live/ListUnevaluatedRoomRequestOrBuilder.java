@@ -58,4 +58,16 @@ public interface ListUnevaluatedRoomRequestOrBuilder extends
    * @return The roomStatus.
    */
   long getRoomStatus();
+
+  /**
+   * <code>int64 start_time = 5;</code>
+   * @return The startTime.
+   */
+  long getStartTime();
+
+  /**
+   * <code>int64 end_time = 6;</code>
+   * @return The endTime.
+   */
+  long getEndTime();
 }

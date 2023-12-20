@@ -86,6 +86,16 @@ private static final long serialVersionUID = 0L;
             roomStatus = input.readInt64();
             break;
           }
+          case 40: {
+
+            startTime = input.readInt64();
+            break;
+          }
+          case 48: {
+
+            endTime = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -223,6 +233,28 @@ private static final long serialVersionUID = 0L;
     return roomStatus ;
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 5;
+  private long startTime ;
+  /**
+   * <code>int64 start_time = 5;</code>
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public long getStartTime() {
+    return startTime ;
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 6;
+  private long endTime ;
+  /**
+   * <code>int64 end_time = 6;</code>
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public long getEndTime() {
+    return endTime ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -249,6 +281,12 @@ private static final long serialVersionUID = 0L;
     if (roomStatus != 0L) {
       output.writeInt64(4, roomStatus );
     }
+    if (startTime != 0L) {
+      output.writeInt64(5, startTime );
+    }
+    if (endTime != 0L) {
+      output.writeInt64(6, endTime );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -272,6 +310,14 @@ private static final long serialVersionUID = 0L;
     if (roomStatus != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, roomStatus );
+    }
+    if (startTime != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, startTime );
+    }
+    if (endTime != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, endTime );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,6 +348,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopOrUserName())) return false;
     if (getRoomStatus()
         != other.getRoomStatus()) return false;
+    if (getStartTime()
+        != other.getStartTime()) return false;
+    if (getEndTime()
+        != other.getEndTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -326,6 +376,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ROOM_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRoomStatus());
+    hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStartTime());
+    hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEndTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,6 +531,10 @@ private static final long serialVersionUID = 0L;
 
       roomStatus = 0L;
 
+      startTime = 0L;
+
+      endTime = 0L;
+
       return this;
     }
 
@@ -513,6 +573,8 @@ private static final long serialVersionUID = 0L;
       }
       result.shopOrUserName = shopOrUserName ;
       result.roomStatus = roomStatus ;
+      result.startTime = startTime ;
+      result.endTime = endTime ;
       onBuilt();
       return result;
     }
@@ -573,6 +635,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRoomStatus() != 0L) {
         setRoomStatus(other.getRoomStatus());
+      }
+      if (other.getStartTime() != 0L) {
+        setStartTime(other.getStartTime());
+      }
+      if (other.getEndTime() != 0L) {
+        setEndTime(other.getEndTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -956,6 +1024,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearRoomStatus() {
       
       roomStatus = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long startTime ;
+    /**
+     * <code>int64 start_time = 5;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime ;
+    }
+    /**
+     * <code>int64 start_time = 5;</code>
+     * @param value The startTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartTime(long value) {
+      
+      startTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 start_time = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStartTime() {
+      
+      startTime = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long endTime ;
+    /**
+     * <code>int64 end_time = 6;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public long getEndTime() {
+      return endTime ;
+    }
+    /**
+     * <code>int64 end_time = 6;</code>
+     * @param value The endTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTime(long value) {
+      
+      endTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 end_time = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndTime() {
+      
+      endTime = 0L;
       onChanged();
       return this;
     }
