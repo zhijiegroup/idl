@@ -36,9 +36,19 @@ message ListNotificationResponse {
 message ReadNotificationRequest {
   base.BaseRequest base_request = 1;
   int64 notification_id = 2;
+  bool all = 3;
 }
 
 message ReadNotificationResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message DeleteNotificationRequest {
+  base.BaseRequest base_request = 1;
+  repeated int64 notification_ids = 2;
+}
+
+message DeleteNotificationResponse {
   base.BaseResponse base_resp = 1;
 }
 

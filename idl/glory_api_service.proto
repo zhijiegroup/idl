@@ -1378,6 +1378,9 @@ service glory_api {
   rpc TestNotification(TestNotificationRequest) returns (TestNotificationResponse) {
     option (api.post) = '/api/notification/test';
   }
+  rpc DeleteNotification(DeleteNotificationRequest) returns (DeleteNotificationResponse) {
+    option (api.post) = '/api/notification/delete';
+  }
 
   // 直播大屏
    // 获取专业和班级
