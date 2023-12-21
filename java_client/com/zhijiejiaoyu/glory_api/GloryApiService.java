@@ -55,7 +55,7 @@ public final class GloryApiService {
       "me.proto\032\020course/job.proto\032\rapp/app.prot" +
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
       ".proto\032\026task/system_task.proto\032\037notifica" +
-      "tion/notification.proto2\317\327\002\n\tglory_api\022s" +
+      "tion/notification.proto2\320\330\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -1148,15 +1148,18 @@ public final class GloryApiService {
       "d\022w\n\020TestNotification\022\".glory_api.TestNo" +
       "tificationRequest\032#.glory_api.TestNotifi" +
       "cationResponse\"\032\322\301\030\026/api/notification/te" +
-      "st\022\214\001\n\025ListUserMajorAndClass\022&.glory_api" +
-      ".ListUserMajorAndClasRequest\032\'.glory_api" +
-      ".ListUserMajorAndClasResponse\"\"\312\301\030\036/api/" +
-      "live/list_major_and_class\022\216\001\n\025GetAggrega" +
-      "tionLiveUrl\022\'.glory_api.GetAggregationLi" +
-      "veUrlRequest\032(.glory_api.GetAggregationL" +
-      "iveUrlResponse\"\"\322\301\030\036/api/live/aggregatio" +
-      "n_live_urlB\036\n\032com.zhijiejiaoyu.glory_api" +
-      "P\001b\006proto3"
+      "st\022\177\n\022DeleteNotification\022$.glory_api.Del" +
+      "eteNotificationRequest\032%.glory_api.Delet" +
+      "eNotificationResponse\"\034\322\301\030\030/api/notifica" +
+      "tion/delete\022\214\001\n\025ListUserMajorAndClass\022&." +
+      "glory_api.ListUserMajorAndClasRequest\032\'." +
+      "glory_api.ListUserMajorAndClasResponse\"\"" +
+      "\312\301\030\036/api/live/list_major_and_class\022\216\001\n\025G" +
+      "etAggregationLiveUrl\022\'.glory_api.GetAggr" +
+      "egationLiveUrlRequest\032(.glory_api.GetAgg" +
+      "regationLiveUrlResponse\"\"\322\301\030\036/api/live/a" +
+      "ggregation_live_urlB\036\n\032com.zhijiejiaoyu." +
+      "glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

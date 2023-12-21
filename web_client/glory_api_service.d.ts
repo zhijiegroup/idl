@@ -1570,6 +1570,10 @@ CreateLivePlanProduct create live plan product */
     request: notification.TestNotificationRequest
   ): Promise<notification.TestNotificationResponse>;
 
+  DeleteNotification(
+    request: notification.DeleteNotificationRequest
+  ): Promise<notification.DeleteNotificationResponse>;
+
   /** 直播大屏
 获取专业和班级 */
   ListUserMajorAndClass(

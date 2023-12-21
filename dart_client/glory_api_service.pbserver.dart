@@ -423,6 +423,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$52.CountNotificationResponse> countNotification($pb.ServerContext ctx, $52.CountNotificationRequest request);
   $async.Future<$52.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $52.ReadNotificationRequest request);
   $async.Future<$52.TestNotificationResponse> testNotification($pb.ServerContext ctx, $52.TestNotificationRequest request);
+  $async.Future<$52.DeleteNotificationResponse> deleteNotification($pb.ServerContext ctx, $52.DeleteNotificationRequest request);
   $async.Future<$53.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ServerContext ctx, $53.ListUserMajorAndClasRequest request);
   $async.Future<$53.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $53.GetAggregationLiveUrlRequest request);
 
@@ -777,6 +778,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CountNotification': return $52.CountNotificationRequest();
       case 'ReadNotification': return $52.ReadNotificationRequest();
       case 'TestNotification': return $52.TestNotificationRequest();
+      case 'DeleteNotification': return $52.DeleteNotificationRequest();
       case 'ListUserMajorAndClass': return $53.ListUserMajorAndClasRequest();
       case 'GetAggregationLiveUrl': return $53.GetAggregationLiveUrlRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
@@ -1134,6 +1136,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CountNotification': return this.countNotification(ctx, request as $52.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $52.ReadNotificationRequest);
       case 'TestNotification': return this.testNotification(ctx, request as $52.TestNotificationRequest);
+      case 'DeleteNotification': return this.deleteNotification(ctx, request as $52.DeleteNotificationRequest);
       case 'ListUserMajorAndClass': return this.listUserMajorAndClass(ctx, request as $53.ListUserMajorAndClasRequest);
       case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $53.GetAggregationLiveUrlRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');

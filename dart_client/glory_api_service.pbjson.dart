@@ -421,6 +421,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'CountNotification', '2': '.glory_api.CountNotificationRequest', '3': '.glory_api.CountNotificationResponse', '4': {}},
     {'1': 'ReadNotification', '2': '.glory_api.ReadNotificationRequest', '3': '.glory_api.ReadNotificationResponse', '4': {}},
     {'1': 'TestNotification', '2': '.glory_api.TestNotificationRequest', '3': '.glory_api.TestNotificationResponse', '4': {}},
+    {'1': 'DeleteNotification', '2': '.glory_api.DeleteNotificationRequest', '3': '.glory_api.DeleteNotificationResponse', '4': {}},
     {'1': 'ListUserMajorAndClass', '2': '.glory_api.ListUserMajorAndClasRequest', '3': '.glory_api.ListUserMajorAndClasResponse', '4': {}},
     {'1': 'GetAggregationLiveUrl', '2': '.glory_api.GetAggregationLiveUrlRequest', '3': '.glory_api.GetAggregationLiveUrlResponse', '4': {}},
   ],
@@ -1312,6 +1313,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ReadNotificationResponse': $52.ReadNotificationResponse$json,
   '.glory_api.TestNotificationRequest': $52.TestNotificationRequest$json,
   '.glory_api.TestNotificationResponse': $52.TestNotificationResponse$json,
+  '.glory_api.DeleteNotificationRequest': $52.DeleteNotificationRequest$json,
+  '.glory_api.DeleteNotificationResponse': $52.DeleteNotificationResponse$json,
   '.glory_api.ListUserMajorAndClasRequest': $53.ListUserMajorAndClasRequest$json,
   '.glory_api.ListUserMajorAndClasResponse': $53.ListUserMajorAndClasResponse$json,
   '.glory_api.MajorData': $53.MajorData$json,
@@ -2109,10 +2112,12 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'Z2xvcnlfYXBpLlJlYWROb3RpZmljYXRpb25SZXNwb25zZSIa0sEYFi9hcGkvbm90aWZpY2F0aW'
     '9uL3JlYWQSdwoQVGVzdE5vdGlmaWNhdGlvbhIiLmdsb3J5X2FwaS5UZXN0Tm90aWZpY2F0aW9u'
     'UmVxdWVzdBojLmdsb3J5X2FwaS5UZXN0Tm90aWZpY2F0aW9uUmVzcG9uc2UiGtLBGBYvYXBpL2'
-    '5vdGlmaWNhdGlvbi90ZXN0EowBChVMaXN0VXNlck1ham9yQW5kQ2xhc3MSJi5nbG9yeV9hcGku'
-    'TGlzdFVzZXJNYWpvckFuZENsYXNSZXF1ZXN0GicuZ2xvcnlfYXBpLkxpc3RVc2VyTWFqb3JBbm'
-    'RDbGFzUmVzcG9uc2UiIsrBGB4vYXBpL2xpdmUvbGlzdF9tYWpvcl9hbmRfY2xhc3MSjgEKFUdl'
-    'dEFnZ3JlZ2F0aW9uTGl2ZVVybBInLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZX'
-    'F1ZXN0GiguZ2xvcnlfYXBpLkdldEFnZ3JlZ2F0aW9uTGl2ZVVybFJlc3BvbnNlIiLSwRgeL2Fw'
-    'aS9saXZlL2FnZ3JlZ2F0aW9uX2xpdmVfdXJs');
+    '5vdGlmaWNhdGlvbi90ZXN0En8KEkRlbGV0ZU5vdGlmaWNhdGlvbhIkLmdsb3J5X2FwaS5EZWxl'
+    'dGVOb3RpZmljYXRpb25SZXF1ZXN0GiUuZ2xvcnlfYXBpLkRlbGV0ZU5vdGlmaWNhdGlvblJlc3'
+    'BvbnNlIhzSwRgYL2FwaS9ub3RpZmljYXRpb24vZGVsZXRlEowBChVMaXN0VXNlck1ham9yQW5k'
+    'Q2xhc3MSJi5nbG9yeV9hcGkuTGlzdFVzZXJNYWpvckFuZENsYXNSZXF1ZXN0GicuZ2xvcnlfYX'
+    'BpLkxpc3RVc2VyTWFqb3JBbmRDbGFzUmVzcG9uc2UiIsrBGB4vYXBpL2xpdmUvbGlzdF9tYWpv'
+    'cl9hbmRfY2xhc3MSjgEKFUdldEFnZ3JlZ2F0aW9uTGl2ZVVybBInLmdsb3J5X2FwaS5HZXRBZ2'
+    'dyZWdhdGlvbkxpdmVVcmxSZXF1ZXN0GiguZ2xvcnlfYXBpLkdldEFnZ3JlZ2F0aW9uTGl2ZVVy'
+    'bFJlc3BvbnNlIiLSwRgeL2FwaS9saXZlL2FnZ3JlZ2F0aW9uX2xpdmVfdXJs');
 

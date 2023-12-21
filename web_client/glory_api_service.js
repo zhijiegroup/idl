@@ -2798,6 +2798,14 @@ export class glory_api {
     );
   }
 
+  DeleteNotification(request) {
+    const uri = `${this.uriPrefix}/api/notification/delete`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListUserMajorAndClass(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/live/list_major_and_class${query}`;

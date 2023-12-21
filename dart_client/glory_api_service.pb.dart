@@ -1120,6 +1120,9 @@ class glory_apiApi {
   $async.Future<$52.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $52.TestNotificationRequest request) =>
     _client.invoke<$52.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $52.TestNotificationResponse())
   ;
+  $async.Future<$52.DeleteNotificationResponse> deleteNotification($pb.ClientContext? ctx, $52.DeleteNotificationRequest request) =>
+    _client.invoke<$52.DeleteNotificationResponse>(ctx, 'glory_api', 'DeleteNotification', request, $52.DeleteNotificationResponse())
+  ;
   $async.Future<$53.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ClientContext? ctx, $53.ListUserMajorAndClasRequest request) =>
     _client.invoke<$53.ListUserMajorAndClasResponse>(ctx, 'glory_api', 'ListUserMajorAndClass', request, $53.ListUserMajorAndClasResponse())
   ;

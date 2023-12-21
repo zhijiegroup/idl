@@ -10834,6 +10834,37 @@ public final class glory_apiGrpc {
     return getTestNotificationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> getDeleteNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNotification",
+      requestType = com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> getDeleteNotificationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest, com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> getDeleteNotificationMethod;
+    if ((getDeleteNotificationMethod = glory_apiGrpc.getDeleteNotificationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteNotificationMethod = glory_apiGrpc.getDeleteNotificationMethod) == null) {
+          glory_apiGrpc.getDeleteNotificationMethod = getDeleteNotificationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest, com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteNotification"))
+              .build();
+        }
+      }
+    }
+    return getDeleteNotificationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest,
       com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> getListUserMajorAndClassMethod;
 
@@ -13733,6 +13764,13 @@ public final class glory_apiGrpc {
     default void testNotification(com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteNotification(com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNotificationMethod(), responseObserver);
     }
 
     /**
@@ -16922,6 +16960,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void deleteNotification(com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 直播大屏
      * 获取专业和班级
@@ -19747,6 +19793,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse testNotification(com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse deleteNotification(com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotificationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -22925,6 +22978,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse> deleteNotification(
+        com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 直播大屏
      * 获取专业和班级
@@ -23294,8 +23355,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_COUNT_NOTIFICATION = 346;
   private static final int METHODID_READ_NOTIFICATION = 347;
   private static final int METHODID_TEST_NOTIFICATION = 348;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 349;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 350;
+  private static final int METHODID_DELETE_NOTIFICATION = 349;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 350;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 351;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24709,6 +24771,10 @@ public final class glory_apiGrpc {
         case METHODID_TEST_NOTIFICATION:
           serviceImpl.testNotification((com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_NOTIFICATION:
+          serviceImpl.deleteNotification((com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse>) responseObserver);
           break;
         case METHODID_LIST_USER_MAJOR_AND_CLASS:
           serviceImpl.listUserMajorAndClass((com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest) request,
@@ -27180,6 +27246,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>(
                 service, METHODID_TEST_NOTIFICATION)))
         .addMethod(
+          getDeleteNotificationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest,
+              com.zhijiejiaoyu.glory_api.notification.DeleteNotificationResponse>(
+                service, METHODID_DELETE_NOTIFICATION)))
+        .addMethod(
           getListUserMajorAndClassMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -27590,6 +27663,7 @@ public final class glory_apiGrpc {
               .addMethod(getCountNotificationMethod())
               .addMethod(getReadNotificationMethod())
               .addMethod(getTestNotificationMethod())
+              .addMethod(getDeleteNotificationMethod())
               .addMethod(getListUserMajorAndClassMethod())
               .addMethod(getGetAggregationLiveUrlMethod())
               .build();

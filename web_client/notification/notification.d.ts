@@ -36,9 +36,19 @@ export interface ListNotificationResponse {
 export interface ReadNotificationRequest {
   base_request?: base.BaseRequest;
   notification_id?: string;
+  all?: boolean;
 }
 
 export interface ReadNotificationResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteNotificationRequest {
+  base_request?: base.BaseRequest;
+  notification_ids?: Array<string>;
+}
+
+export interface DeleteNotificationResponse {
   base_resp?: base.BaseResponse;
 }
 

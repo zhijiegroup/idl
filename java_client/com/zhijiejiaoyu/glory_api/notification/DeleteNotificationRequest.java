@@ -4,25 +4,26 @@
 package com.zhijiejiaoyu.glory_api.notification;
 
 /**
- * Protobuf type {@code glory_api.ReadNotificationRequest}
+ * Protobuf type {@code glory_api.DeleteNotificationRequest}
  */
-public final class ReadNotificationRequest extends
+public final class DeleteNotificationRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ReadNotificationRequest)
-    ReadNotificationRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.DeleteNotificationRequest)
+    DeleteNotificationRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ReadNotificationRequest.newBuilder() to construct.
-  private ReadNotificationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteNotificationRequest.newBuilder() to construct.
+  private DeleteNotificationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReadNotificationRequest() {
+  private DeleteNotificationRequest() {
+    notificationIds = emptyLongList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ReadNotificationRequest();
+    return new DeleteNotificationRequest();
   }
 
   @java.lang.Override
@@ -30,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReadNotificationRequest(
+  private DeleteNotificationRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,13 +64,24 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-
-            notificationId = input.readInt64();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              notificationIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            notificationIds .addLong(input.readInt64());
             break;
           }
-          case 24: {
-
-            all = input.readBool();
+          case 18: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              notificationIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              notificationIds .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
             break;
           }
           default: {
@@ -86,21 +99,24 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        notificationIds .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_ReadNotificationRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_DeleteNotificationRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_ReadNotificationRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_DeleteNotificationRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.class, com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.class, com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -129,27 +145,33 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int NOTIFICATION_ID_FIELD_NUMBER = 2;
-  private long notificationId ;
+  public static final int NOTIFICATION_IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.Internal.LongList notificationIds ;
   /**
-   * <code>int64 notification_id = 2;</code>
-   * @return The notificationId.
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @return A list containing the notificationIds.
    */
   @java.lang.Override
-  public long getNotificationId() {
-    return notificationId ;
+  public java.util.List<java.lang.Long>
+      getNotificationIdsList() {
+    return notificationIds ;
   }
-
-  public static final int ALL_FIELD_NUMBER = 3;
-  private boolean all ;
   /**
-   * <code>bool all = 3;</code>
-   * @return The all.
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @return The count of notificationIds.
    */
-  @java.lang.Override
-  public boolean getAll() {
-    return all ;
+  public int getNotificationIdsCount() {
+    return notificationIds .size();
   }
+  /**
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The notificationIds at the given index.
+   */
+  public long getNotificationIds(int index) {
+    return notificationIds .getLong(index);
+  }
+  private int notificationIdsMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -165,14 +187,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (notificationId != 0L) {
-      output.writeInt64(2, notificationId );
+    if (getNotificationIdsList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(notificationIdsMemoizedSerializedSize);
     }
-    if (all != false) {
-      output.writeBool(3, all );
+    for (int i = 0; i < notificationIds .size(); i++) {
+      output.writeInt64NoTag(notificationIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -187,13 +211,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (notificationId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, notificationId );
-    }
-    if (all != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, all );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < notificationIds .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(notificationIds .getLong(i));
+      }
+      size += dataSize;
+      if (!getNotificationIdsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      notificationIdsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,20 +235,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest other = (com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest) obj;
+    com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest other = (com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getNotificationId()
-        != other.getNotificationId()) return false;
-    if (getAll()
-        != other.getAll()) return false;
+    if (!getNotificationIdsList()
+        .equals(other.getNotificationIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -234,80 +262,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + NOTIFICATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNotificationId());
-    hash = (37 * hash) + ALL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAll());
+    if (getNotificationIdsCount() > 0) {
+      hash = (37 * hash) + NOTIFICATION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getNotificationIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -320,7 +346,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -336,26 +362,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ReadNotificationRequest}
+   * Protobuf type {@code glory_api.DeleteNotificationRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ReadNotificationRequest)
-      com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.DeleteNotificationRequest)
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_ReadNotificationRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_DeleteNotificationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_ReadNotificationRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_DeleteNotificationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.class, com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.class, com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -379,27 +405,25 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      notificationId = 0L;
-
-      all = false;
-
+      notificationIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_ReadNotificationRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.notification.NotificationOuterClass.internal_static_glory_api_DeleteNotificationRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest build() {
-      com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest build() {
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -407,15 +431,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest result = new com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest(this);
+    public com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest result = new com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.notificationId = notificationId ;
-      result.all = all ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        notificationIds .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.notificationIds = notificationIds ;
       onBuilt();
       return result;
     }
@@ -454,24 +482,28 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getNotificationId() != 0L) {
-        setNotificationId(other.getNotificationId());
-      }
-      if (other.getAll() != false) {
-        setAll(other.getAll());
+      if (!other.notificationIds .isEmpty()) {
+        if (notificationIds .isEmpty()) {
+          notificationIds = other.notificationIds ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureNotificationIdsIsMutable();
+          notificationIds .addAll(other.notificationIds );
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -488,11 +520,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -501,6 +533,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -621,64 +654,81 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private long notificationId ;
-    /**
-     * <code>int64 notification_id = 2;</code>
-     * @return The notificationId.
-     */
-    @java.lang.Override
-    public long getNotificationId() {
-      return notificationId ;
+    private com.google.protobuf.Internal.LongList notificationIds = emptyLongList();
+    private void ensureNotificationIdsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        notificationIds = mutableCopy(notificationIds );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>int64 notification_id = 2;</code>
-     * @param value The notificationId to set.
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @return A list containing the notificationIds.
+     */
+    public java.util.List<java.lang.Long>
+        getNotificationIdsList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(notificationIds ) : notificationIds ;
+    }
+    /**
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @return The count of notificationIds.
+     */
+    public int getNotificationIdsCount() {
+      return notificationIds .size();
+    }
+    /**
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @param index The index of the element to return.
+     * @return The notificationIds at the given index.
+     */
+    public long getNotificationIds(int index) {
+      return notificationIds .getLong(index);
+    }
+    /**
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The notificationIds to set.
      * @return This builder for chaining.
      */
-    public Builder setNotificationId(long value) {
-      
-      notificationId = value;
+    public Builder setNotificationIds(
+        int index, long value) {
+      ensureNotificationIdsIsMutable();
+      notificationIds .setLong(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>int64 notification_id = 2;</code>
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @param value The notificationIds to add.
      * @return This builder for chaining.
      */
-    public Builder clearNotificationId() {
-      
-      notificationId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private boolean all ;
-    /**
-     * <code>bool all = 3;</code>
-     * @return The all.
-     */
-    @java.lang.Override
-    public boolean getAll() {
-      return all ;
-    }
-    /**
-     * <code>bool all = 3;</code>
-     * @param value The all to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAll(boolean value) {
-      
-      all = value;
+    public Builder addNotificationIds(long value) {
+      ensureNotificationIdsIsMutable();
+      notificationIds .addLong(value);
       onChanged();
       return this;
     }
     /**
-     * <code>bool all = 3;</code>
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @param values The notificationIds to add.
      * @return This builder for chaining.
      */
-    public Builder clearAll() {
-      
-      all = false;
+    public Builder addAllNotificationIds(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureNotificationIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, notificationIds );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 notification_ids = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationIds() {
+      notificationIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
@@ -695,41 +745,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ReadNotificationRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.DeleteNotificationRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ReadNotificationRequest)
-  private static final com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.DeleteNotificationRequest)
+  private static final com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReadNotificationRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReadNotificationRequest>() {
+  private static final com.google.protobuf.Parser<DeleteNotificationRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteNotificationRequest>() {
     @java.lang.Override
-    public ReadNotificationRequest parsePartialFrom(
+    public DeleteNotificationRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReadNotificationRequest(input, extensionRegistry);
+      return new DeleteNotificationRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ReadNotificationRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteNotificationRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReadNotificationRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteNotificationRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.notification.DeleteNotificationRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

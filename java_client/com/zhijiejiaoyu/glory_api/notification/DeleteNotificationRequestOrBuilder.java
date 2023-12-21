@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.notification;
 
-public interface ReadNotificationRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ReadNotificationRequest)
+public interface DeleteNotificationRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.DeleteNotificationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,14 +23,19 @@ public interface ReadNotificationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 notification_id = 2;</code>
-   * @return The notificationId.
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @return A list containing the notificationIds.
    */
-  long getNotificationId();
-
+  java.util.List<java.lang.Long> getNotificationIdsList();
   /**
-   * <code>bool all = 3;</code>
-   * @return The all.
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @return The count of notificationIds.
    */
-  boolean getAll();
+  int getNotificationIdsCount();
+  /**
+   * <code>repeated int64 notification_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The notificationIds at the given index.
+   */
+  long getNotificationIds(int index);
 }
