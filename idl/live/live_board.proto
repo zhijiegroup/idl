@@ -5,6 +5,25 @@ option java_multiple_files = true;
 
 import "base.proto";
 
+message ListUserMajorAndClasRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message ListUserMajorAndClasResponse {
+    base.BaseResponse base_resp = 1;
+   repeated MajorData major_list = 2;
+}
+
+message MajorData {
+    int64 major_id = 1;
+    string major_name = 2;
+    repeated ClasData clas_list = 3;
+}
+message ClasData {
+    int64 clas_id = 1;
+    string clas_name = 2;
+}
+
 message GetAggregationLiveUrlRequest {
     base.BaseRequest base_request = 1;
     int64 page = 2;

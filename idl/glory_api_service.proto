@@ -1380,6 +1380,11 @@ service glory_api {
   }
 
   // 直播大屏
+   // 获取专业和班级
+   rpc ListUserMajorAndClass(ListUserMajorAndClasRequest) returns (ListUserMajorAndClasResponse) {
+    option (api.get) = '/api/live/list_major_and_class';
+  }
+
   rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
     option (api.post) = '/api/live/aggregation_live_url';
   }
