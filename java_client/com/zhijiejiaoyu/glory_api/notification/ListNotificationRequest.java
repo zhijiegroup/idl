@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            notificationType = input.readInt32();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -132,6 +137,17 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int NOTIFICATION_TYPE_FIELD_NUMBER = 2;
+  private int notificationType ;
+  /**
+   * <code>int32 notification_type = 2;</code>
+   * @return The notificationType.
+   */
+  @java.lang.Override
+  public int getNotificationType() {
+    return notificationType ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -175,6 +191,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (notificationType != 0) {
+      output.writeInt32(2, notificationType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -190,6 +209,10 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (notificationType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, notificationType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -215,6 +238,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getNotificationType()
+        != other.getNotificationType()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -235,6 +260,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + NOTIFICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationType();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -378,6 +405,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      notificationType = 0;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -415,6 +444,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.notificationType = notificationType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -470,6 +500,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getNotificationType() != 0) {
+        setNotificationType(other.getNotificationType());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -620,6 +653,37 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private int notificationType ;
+    /**
+     * <code>int32 notification_type = 2;</code>
+     * @return The notificationType.
+     */
+    @java.lang.Override
+    public int getNotificationType() {
+      return notificationType ;
+    }
+    /**
+     * <code>int32 notification_type = 2;</code>
+     * @param value The notificationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationType(int value) {
+      
+      notificationType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 notification_type = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationType() {
+      
+      notificationType = 0;
+      onChanged();
+      return this;
     }
 
     private com.zhijiejiaoyu.base.PaginationRequest pagination ;

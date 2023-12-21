@@ -81,31 +81,32 @@ public final class NotificationOuterClass {
       "title\030\005 \001(\t\022\034\n\024notification_content\030\006 \001(" +
       "\t\022\022\n\ncreated_by\030\007 \001(\003\022\022\n\ncreated_at\030\010 \001(" +
       "\t\"0\n\021NotificationCount\022\014\n\004type\030\001 \001(\005\022\r\n\005" +
-      "count\030\002 \001(\r\"o\n\027ListNotificationRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\243\001\n\030ListNotificationResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\021noti" +
-      "fication_list\030\002 \003(\0132\027.glory_api.Notifica" +
-      "tion\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"[\n\027ReadNotificationRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\027" +
-      "\n\017notification_id\030\002 \001(\003\"A\n\030ReadNotificat" +
-      "ionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\"C\n\030CountNotificationRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\"" +
-      "}\n\031CountNotificationResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022+\n\005count\030\002 \003" +
-      "(\0132\034.glory_api.NotificationCount\022\014\n\004news" +
-      "\030\003 \001(\010\"\336\001\n\027TestNotificationRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007u" +
-      "ser_id\030\002 \001(\003\022\017\n\007link_id\030\003 \001(\003\022\031\n\021notific" +
-      "ation_type\030\004 \001(\005\022\033\n\023notification_result\030" +
-      "\005 \001(\005\022\034\n\024notification_content\030\006 \001(\t\022\020\n\010i" +
-      "ntValue\030\007 \001(\003\022\020\n\010strValue\030\010 \001(\t\"A\n\030TestN" +
-      "otificationResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponseB+\n\'com.zhijiejiaoyu.g" +
-      "lory_api.notificationP\001b\006proto3"
+      "count\030\002 \001(\r\"\212\001\n\027ListNotificationRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\031\n\021notification_type\030\002 \001(\005\022+\n\npaginatio" +
+      "n\030d \001(\0132\027.base.PaginationRequest\"\243\001\n\030Lis" +
+      "tNotificationResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\0222\n\021notification_lis" +
+      "t\030\002 \003(\0132\027.glory_api.Notification\022,\n\npagi" +
+      "nation\030d \001(\0132\030.base.PaginationResponse\"[" +
+      "\n\027ReadNotificationRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017notificati" +
+      "on_id\030\002 \001(\003\"A\n\030ReadNotificationResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"C" +
+      "\n\030CountNotificationRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\"}\n\031CountNoti" +
+      "ficationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022+\n\005count\030\002 \003(\0132\034.glory_a" +
+      "pi.NotificationCount\022\014\n\004news\030\003 \001(\010\"\336\001\n\027T" +
+      "estNotificationRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\017\n\007user_id\030\002 \001(\003" +
+      "\022\017\n\007link_id\030\003 \001(\003\022\031\n\021notification_type\030\004" +
+      " \001(\005\022\033\n\023notification_result\030\005 \001(\005\022\034\n\024not" +
+      "ification_content\030\006 \001(\t\022\020\n\010intValue\030\007 \001(" +
+      "\003\022\020\n\010strValue\030\010 \001(\t\"A\n\030TestNotificationR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponseB+\n\'com.zhijiejiaoyu.glory_api.not" +
+      "ificationP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -129,7 +130,7 @@ public final class NotificationOuterClass {
     internal_static_glory_api_ListNotificationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListNotificationRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "NotificationType", "Pagination", });
     internal_static_glory_api_ListNotificationResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_ListNotificationResponse_fieldAccessorTable = new

@@ -57,6 +57,7 @@ const ListNotificationRequest$json = {
   '1': 'ListNotificationRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'notification_type', '3': 2, '4': 1, '5': 5, '10': 'notificationType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -64,8 +65,9 @@ const ListNotificationRequest$json = {
 /// Descriptor for `ListNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listNotificationRequestDescriptor = $convert.base64Decode(
     'ChdMaXN0Tm90aWZpY2F0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdp'
-    'bmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIrChFub3RpZmljYXRpb25fdHlwZRgCIAEoBVIQbm90'
+    'aWZpY2F0aW9uVHlwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdW'
+    'VzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listNotificationResponseDescriptor instead')
 const ListNotificationResponse$json = {

@@ -23,6 +23,7 @@ export interface NotificationCount {
 
 export interface ListNotificationRequest {
   base_request?: base.BaseRequest;
+  notification_type?: number;
   pagination?: base.PaginationRequest;
 }
 

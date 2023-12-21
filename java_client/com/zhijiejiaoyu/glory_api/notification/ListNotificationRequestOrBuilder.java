@@ -23,6 +23,12 @@ public interface ListNotificationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>int32 notification_type = 2;</code>
+   * @return The notificationType.
+   */
+  int getNotificationType();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
