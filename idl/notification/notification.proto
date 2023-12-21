@@ -23,6 +23,7 @@ message NotificationCount {
 
 message ListNotificationRequest{
   base.BaseRequest base_request = 1;
+  int32 notification_type = 2;
   base.PaginationRequest pagination = 100;
 }
 
