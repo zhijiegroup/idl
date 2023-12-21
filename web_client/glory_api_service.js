@@ -2790,6 +2790,14 @@ export class glory_api {
     );
   }
 
+  TestNotification(request) {
+    const uri = `${this.uriPrefix}/api/notification/test`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetAggregationLiveUrl(request) {
     const uri = `${this.uriPrefix}/api/live/aggregation_live_url`;
     const body = JSONbigint.stringify(request);

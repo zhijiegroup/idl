@@ -50,3 +50,18 @@ export interface CountNotificationResponse {
   count?: Array<NotificationCount>;
   news?: boolean;
 }
+
+export interface TestNotificationRequest {
+  base_request?: base.BaseRequest;
+  user_id?: string;
+  link_id?: string;
+  notification_type?: number;
+  notification_result?: number;
+  notification_content?: string;
+  intValue?: string;
+  strValue?: string;
+}
+
+export interface TestNotificationResponse {
+  base_resp?: base.BaseResponse;
+}

@@ -55,7 +55,7 @@ public final class GloryApiService {
       "me.proto\032\020course/job.proto\032\rapp/app.prot" +
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
       ".proto\032\026task/system_task.proto\032\037notifica" +
-      "tion/notification.proto2\307\325\002\n\tglory_api\022s" +
+      "tion/notification.proto2\300\326\002\n\tglory_api\022s" +
       "\n\rCreateExample\022\037.glory_api.CreateExampl" +
       "eRequest\032 .glory_api.CreateExampleRespon" +
       "se\"\037\322\301\030\033/api/example/create_example\022g\n\nG" +
@@ -1145,11 +1145,14 @@ public final class GloryApiService {
       "\022w\n\020ReadNotification\022\".glory_api.ReadNot" +
       "ificationRequest\032#.glory_api.ReadNotific" +
       "ationResponse\"\032\322\301\030\026/api/notification/rea" +
-      "d\022\216\001\n\025GetAggregationLiveUrl\022\'.glory_api." +
-      "GetAggregationLiveUrlRequest\032(.glory_api" +
-      ".GetAggregationLiveUrlResponse\"\"\322\301\030\036/api" +
-      "/live/aggregation_live_urlB\036\n\032com.zhijie" +
-      "jiaoyu.glory_apiP\001b\006proto3"
+      "d\022w\n\020TestNotification\022\".glory_api.TestNo" +
+      "tificationRequest\032#.glory_api.TestNotifi" +
+      "cationResponse\"\032\322\301\030\026/api/notification/te" +
+      "st\022\216\001\n\025GetAggregationLiveUrl\022\'.glory_api" +
+      ".GetAggregationLiveUrlRequest\032(.glory_ap" +
+      "i.GetAggregationLiveUrlResponse\"\"\322\301\030\036/ap" +
+      "i/live/aggregation_live_urlB\036\n\032com.zhiji" +
+      "ejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

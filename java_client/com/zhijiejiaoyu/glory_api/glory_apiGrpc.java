@@ -10803,6 +10803,37 @@ public final class glory_apiGrpc {
     return getReadNotificationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> getTestNotificationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestNotification",
+      requestType = com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest,
+      com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> getTestNotificationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest, com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> getTestNotificationMethod;
+    if ((getTestNotificationMethod = glory_apiGrpc.getTestNotificationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getTestNotificationMethod = glory_apiGrpc.getTestNotificationMethod) == null) {
+          glory_apiGrpc.getTestNotificationMethod = getTestNotificationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest, com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestNotification"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("TestNotification"))
+              .build();
+        }
+      }
+    }
+    return getTestNotificationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest,
       com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> getGetAggregationLiveUrlMethod;
 
@@ -13664,6 +13695,13 @@ public final class glory_apiGrpc {
     default void readNotification(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadNotificationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void testNotification(com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestNotificationMethod(), responseObserver);
     }
 
     /**
@@ -16837,6 +16875,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void testNotification(com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTestNotificationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 直播大屏
      * </pre>
@@ -19646,6 +19692,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse readNotification(com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReadNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse testNotification(com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestNotificationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -22808,6 +22861,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse> testNotification(
+        com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTestNotificationMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 直播大屏
      * </pre>
@@ -23167,7 +23228,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_NOTIFICATION = 345;
   private static final int METHODID_COUNT_NOTIFICATION = 346;
   private static final int METHODID_READ_NOTIFICATION = 347;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 348;
+  private static final int METHODID_TEST_NOTIFICATION = 348;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 349;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24577,6 +24639,10 @@ public final class glory_apiGrpc {
         case METHODID_READ_NOTIFICATION:
           serviceImpl.readNotification((com.zhijiejiaoyu.glory_api.notification.ReadNotificationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse>) responseObserver);
+          break;
+        case METHODID_TEST_NOTIFICATION:
+          serviceImpl.testNotification((com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>) responseObserver);
           break;
         case METHODID_GET_AGGREGATION_LIVE_URL:
           serviceImpl.getAggregationLiveUrl((com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) request,
@@ -27037,6 +27103,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.notification.ReadNotificationResponse>(
                 service, METHODID_READ_NOTIFICATION)))
         .addMethod(
+          getTestNotificationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest,
+              com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>(
+                service, METHODID_TEST_NOTIFICATION)))
+        .addMethod(
           getGetAggregationLiveUrlMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -27439,6 +27512,7 @@ public final class glory_apiGrpc {
               .addMethod(getListNotificationMethod())
               .addMethod(getCountNotificationMethod())
               .addMethod(getReadNotificationMethod())
+              .addMethod(getTestNotificationMethod())
               .addMethod(getGetAggregationLiveUrlMethod())
               .build();
         }

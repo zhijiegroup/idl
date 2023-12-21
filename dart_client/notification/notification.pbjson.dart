@@ -141,3 +141,40 @@ final $typed_data.Uint8List countNotificationResponseDescriptor = $convert.base6
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIyCgVjb3VudBgCIAMoCzIcLmdsb3J5X2FwaS5Ob3RpZmlj'
     'YXRpb25Db3VudFIFY291bnQSEgoEbmV3cxgDIAEoCFIEbmV3cw==');
 
+@$core.Deprecated('Use testNotificationRequestDescriptor instead')
+const TestNotificationRequest$json = {
+  '1': 'TestNotificationRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'link_id', '3': 3, '4': 1, '5': 3, '10': 'linkId'},
+    {'1': 'notification_type', '3': 4, '4': 1, '5': 5, '10': 'notificationType'},
+    {'1': 'notification_result', '3': 5, '4': 1, '5': 5, '10': 'notificationResult'},
+    {'1': 'notification_content', '3': 6, '4': 1, '5': 9, '10': 'notificationContent'},
+    {'1': 'intValue', '3': 7, '4': 1, '5': 3, '10': 'intValue'},
+    {'1': 'strValue', '3': 8, '4': 1, '5': 9, '10': 'strValue'},
+  ],
+};
+
+/// Descriptor for `TestNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List testNotificationRequestDescriptor = $convert.base64Decode(
+    'ChdUZXN0Tm90aWZpY2F0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd1c2VyX2lkGAIgASgDUgZ1c2VySWQSFwoHbGlu'
+    'a19pZBgDIAEoA1IGbGlua0lkEisKEW5vdGlmaWNhdGlvbl90eXBlGAQgASgFUhBub3RpZmljYX'
+    'Rpb25UeXBlEi8KE25vdGlmaWNhdGlvbl9yZXN1bHQYBSABKAVSEm5vdGlmaWNhdGlvblJlc3Vs'
+    'dBIxChRub3RpZmljYXRpb25fY29udGVudBgGIAEoCVITbm90aWZpY2F0aW9uQ29udGVudBIaCg'
+    'hpbnRWYWx1ZRgHIAEoA1IIaW50VmFsdWUSGgoIc3RyVmFsdWUYCCABKAlSCHN0clZhbHVl');
+
+@$core.Deprecated('Use testNotificationResponseDescriptor instead')
+const TestNotificationResponse$json = {
+  '1': 'TestNotificationResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `TestNotificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List testNotificationResponseDescriptor = $convert.base64Decode(
+    'ChhUZXN0Tm90aWZpY2F0aW9uUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+

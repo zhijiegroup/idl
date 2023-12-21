@@ -420,6 +420,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListNotification', '2': '.glory_api.ListNotificationRequest', '3': '.glory_api.ListNotificationResponse', '4': {}},
     {'1': 'CountNotification', '2': '.glory_api.CountNotificationRequest', '3': '.glory_api.CountNotificationResponse', '4': {}},
     {'1': 'ReadNotification', '2': '.glory_api.ReadNotificationRequest', '3': '.glory_api.ReadNotificationResponse', '4': {}},
+    {'1': 'TestNotification', '2': '.glory_api.TestNotificationRequest', '3': '.glory_api.TestNotificationResponse', '4': {}},
     {'1': 'GetAggregationLiveUrl', '2': '.glory_api.GetAggregationLiveUrlRequest', '3': '.glory_api.GetAggregationLiveUrlResponse', '4': {}},
   ],
 };
@@ -1307,6 +1308,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.NotificationCount': $52.NotificationCount$json,
   '.glory_api.ReadNotificationRequest': $52.ReadNotificationRequest$json,
   '.glory_api.ReadNotificationResponse': $52.ReadNotificationResponse$json,
+  '.glory_api.TestNotificationRequest': $52.TestNotificationRequest$json,
+  '.glory_api.TestNotificationResponse': $52.TestNotificationResponse$json,
   '.glory_api.GetAggregationLiveUrlRequest': $53.GetAggregationLiveUrlRequest$json,
   '.glory_api.GetAggregationLiveUrlResponse': $53.GetAggregationLiveUrlResponse$json,
 };
@@ -2098,7 +2101,9 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'dW50Tm90aWZpY2F0aW9uUmVzcG9uc2UiG8rBGBcvYXBpL25vdGlmaWNhdGlvbi9jb3VudBJ3Ch'
     'BSZWFkTm90aWZpY2F0aW9uEiIuZ2xvcnlfYXBpLlJlYWROb3RpZmljYXRpb25SZXF1ZXN0GiMu'
     'Z2xvcnlfYXBpLlJlYWROb3RpZmljYXRpb25SZXNwb25zZSIa0sEYFi9hcGkvbm90aWZpY2F0aW'
-    '9uL3JlYWQSjgEKFUdldEFnZ3JlZ2F0aW9uTGl2ZVVybBInLmdsb3J5X2FwaS5HZXRBZ2dyZWdh'
-    'dGlvbkxpdmVVcmxSZXF1ZXN0GiguZ2xvcnlfYXBpLkdldEFnZ3JlZ2F0aW9uTGl2ZVVybFJlc3'
-    'BvbnNlIiLSwRgeL2FwaS9saXZlL2FnZ3JlZ2F0aW9uX2xpdmVfdXJs');
+    '9uL3JlYWQSdwoQVGVzdE5vdGlmaWNhdGlvbhIiLmdsb3J5X2FwaS5UZXN0Tm90aWZpY2F0aW9u'
+    'UmVxdWVzdBojLmdsb3J5X2FwaS5UZXN0Tm90aWZpY2F0aW9uUmVzcG9uc2UiGtLBGBYvYXBpL2'
+    '5vdGlmaWNhdGlvbi90ZXN0Eo4BChVHZXRBZ2dyZWdhdGlvbkxpdmVVcmwSJy5nbG9yeV9hcGku'
+    'R2V0QWdncmVnYXRpb25MaXZlVXJsUmVxdWVzdBooLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbk'
+    'xpdmVVcmxSZXNwb25zZSIi0sEYHi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybA==');
 

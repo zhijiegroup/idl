@@ -1566,6 +1566,10 @@ CreateLivePlanProduct create live plan product */
     request: notification.ReadNotificationRequest
   ): Promise<notification.ReadNotificationResponse>;
 
+  TestNotification(
+    request: notification.TestNotificationRequest
+  ): Promise<notification.TestNotificationResponse>;
+
   /** 直播大屏 */
   GetAggregationLiveUrl(
     request: live_board.GetAggregationLiveUrlRequest

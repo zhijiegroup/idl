@@ -616,6 +616,208 @@ class CountNotificationResponse extends $pb.GeneratedMessage {
   void clearNews() => clearField(3);
 }
 
+class TestNotificationRequest extends $pb.GeneratedMessage {
+  factory TestNotificationRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? userId,
+    $fixnum.Int64? linkId,
+    $core.int? notificationType,
+    $core.int? notificationResult,
+    $core.String? notificationContent,
+    $fixnum.Int64? intValue,
+    $core.String? strValue,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (linkId != null) {
+      $result.linkId = linkId;
+    }
+    if (notificationType != null) {
+      $result.notificationType = notificationType;
+    }
+    if (notificationResult != null) {
+      $result.notificationResult = notificationResult;
+    }
+    if (notificationContent != null) {
+      $result.notificationContent = notificationContent;
+    }
+    if (intValue != null) {
+      $result.intValue = intValue;
+    }
+    if (strValue != null) {
+      $result.strValue = strValue;
+    }
+    return $result;
+  }
+  TestNotificationRequest._() : super();
+  factory TestNotificationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TestNotificationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestNotificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aInt64(3, _omitFieldNames ? '' : 'linkId')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'notificationType', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'notificationResult', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'notificationContent')
+    ..aInt64(7, _omitFieldNames ? '' : 'intValue', protoName: 'intValue')
+    ..aOS(8, _omitFieldNames ? '' : 'strValue', protoName: 'strValue')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TestNotificationRequest clone() => TestNotificationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TestNotificationRequest copyWith(void Function(TestNotificationRequest) updates) => super.copyWith((message) => updates(message as TestNotificationRequest)) as TestNotificationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TestNotificationRequest create() => TestNotificationRequest._();
+  TestNotificationRequest createEmptyInstance() => create();
+  static $pb.PbList<TestNotificationRequest> createRepeated() => $pb.PbList<TestNotificationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TestNotificationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestNotificationRequest>(create);
+  static TestNotificationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get userId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get linkId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set linkId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLinkId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLinkId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get notificationType => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set notificationType($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNotificationType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotificationType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get notificationResult => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set notificationResult($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasNotificationResult() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNotificationResult() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get notificationContent => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set notificationContent($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasNotificationContent() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNotificationContent() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get intValue => $_getI64(6);
+  @$pb.TagNumber(7)
+  set intValue($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIntValue() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIntValue() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get strValue => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set strValue($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasStrValue() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStrValue() => clearField(8);
+}
+
+class TestNotificationResponse extends $pb.GeneratedMessage {
+  factory TestNotificationResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  TestNotificationResponse._() : super();
+  factory TestNotificationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TestNotificationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestNotificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TestNotificationResponse clone() => TestNotificationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TestNotificationResponse copyWith(void Function(TestNotificationResponse) updates) => super.copyWith((message) => updates(message as TestNotificationResponse)) as TestNotificationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TestNotificationResponse create() => TestNotificationResponse._();
+  TestNotificationResponse createEmptyInstance() => create();
+  static $pb.PbList<TestNotificationResponse> createRepeated() => $pb.PbList<TestNotificationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TestNotificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestNotificationResponse>(create);
+  static TestNotificationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

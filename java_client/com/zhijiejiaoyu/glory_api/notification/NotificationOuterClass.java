@@ -54,6 +54,16 @@ public final class NotificationOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CountNotificationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TestNotificationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TestNotificationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TestNotificationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TestNotificationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -87,8 +97,15 @@ public final class NotificationOuterClass {
       "}\n\031CountNotificationResponse\022%\n\tbase_res" +
       "p\030\001 \001(\0132\022.base.BaseResponse\022+\n\005count\030\002 \003" +
       "(\0132\034.glory_api.NotificationCount\022\014\n\004news" +
-      "\030\003 \001(\010B+\n\'com.zhijiejiaoyu.glory_api.not" +
-      "ificationP\001b\006proto3"
+      "\030\003 \001(\010\"\336\001\n\027TestNotificationRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007u" +
+      "ser_id\030\002 \001(\003\022\017\n\007link_id\030\003 \001(\003\022\031\n\021notific" +
+      "ation_type\030\004 \001(\005\022\033\n\023notification_result\030" +
+      "\005 \001(\005\022\034\n\024notification_content\030\006 \001(\t\022\020\n\010i" +
+      "ntValue\030\007 \001(\003\022\020\n\010strValue\030\010 \001(\t\"A\n\030TestN" +
+      "otificationResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponseB+\n\'com.zhijiejiaoyu.g" +
+      "lory_api.notificationP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -143,6 +160,18 @@ public final class NotificationOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountNotificationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Count", "News", });
+    internal_static_glory_api_TestNotificationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_TestNotificationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TestNotificationRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "UserId", "LinkId", "NotificationType", "NotificationResult", "NotificationContent", "IntValue", "StrValue", });
+    internal_static_glory_api_TestNotificationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_TestNotificationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TestNotificationResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -422,6 +422,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$52.ListNotificationResponse> listNotification($pb.ServerContext ctx, $52.ListNotificationRequest request);
   $async.Future<$52.CountNotificationResponse> countNotification($pb.ServerContext ctx, $52.CountNotificationRequest request);
   $async.Future<$52.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $52.ReadNotificationRequest request);
+  $async.Future<$52.TestNotificationResponse> testNotification($pb.ServerContext ctx, $52.TestNotificationRequest request);
   $async.Future<$53.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $53.GetAggregationLiveUrlRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
@@ -774,6 +775,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListNotification': return $52.ListNotificationRequest();
       case 'CountNotification': return $52.CountNotificationRequest();
       case 'ReadNotification': return $52.ReadNotificationRequest();
+      case 'TestNotification': return $52.TestNotificationRequest();
       case 'GetAggregationLiveUrl': return $53.GetAggregationLiveUrlRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -1129,6 +1131,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListNotification': return this.listNotification(ctx, request as $52.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $52.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $52.ReadNotificationRequest);
+      case 'TestNotification': return this.testNotification(ctx, request as $52.TestNotificationRequest);
       case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $53.GetAggregationLiveUrlRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }

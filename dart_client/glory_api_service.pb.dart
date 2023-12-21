@@ -1117,6 +1117,9 @@ class glory_apiApi {
   $async.Future<$52.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $52.ReadNotificationRequest request) =>
     _client.invoke<$52.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $52.ReadNotificationResponse())
   ;
+  $async.Future<$52.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $52.TestNotificationRequest request) =>
+    _client.invoke<$52.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $52.TestNotificationResponse())
+  ;
   $async.Future<$53.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $53.GetAggregationLiveUrlRequest request) =>
     _client.invoke<$53.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $53.GetAggregationLiveUrlResponse())
   ;
