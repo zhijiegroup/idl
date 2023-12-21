@@ -1570,7 +1570,12 @@ CreateLivePlanProduct create live plan product */
     request: notification.TestNotificationRequest
   ): Promise<notification.TestNotificationResponse>;
 
-  /** 直播大屏 */
+  /** 直播大屏
+获取专业和班级 */
+  ListUserMajorAndClass(
+    request: live_board.ListUserMajorAndClasRequest
+  ): Promise<live_board.ListUserMajorAndClasResponse>;
+
   GetAggregationLiveUrl(
     request: live_board.GetAggregationLiveUrlRequest
   ): Promise<live_board.GetAggregationLiveUrlResponse>;

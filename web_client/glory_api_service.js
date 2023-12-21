@@ -2798,6 +2798,12 @@ export class glory_api {
     );
   }
 
+  ListUserMajorAndClass(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/list_major_and_class${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   GetAggregationLiveUrl(request) {
     const uri = `${this.uriPrefix}/api/live/aggregation_live_url`;
     const body = JSONbigint.stringify(request);

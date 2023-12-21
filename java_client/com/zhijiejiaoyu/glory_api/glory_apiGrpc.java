@@ -10834,6 +10834,37 @@ public final class glory_apiGrpc {
     return getTestNotificationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest,
+      com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> getListUserMajorAndClassMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserMajorAndClass",
+      requestType = com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest,
+      com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> getListUserMajorAndClassMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest, com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> getListUserMajorAndClassMethod;
+    if ((getListUserMajorAndClassMethod = glory_apiGrpc.getListUserMajorAndClassMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListUserMajorAndClassMethod = glory_apiGrpc.getListUserMajorAndClassMethod) == null) {
+          glory_apiGrpc.getListUserMajorAndClassMethod = getListUserMajorAndClassMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest, com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUserMajorAndClass"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListUserMajorAndClass"))
+              .build();
+        }
+      }
+    }
+    return getListUserMajorAndClassMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest,
       com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> getGetAggregationLiveUrlMethod;
 
@@ -13707,7 +13738,15 @@ public final class glory_apiGrpc {
     /**
      * <pre>
      * 直播大屏
+     * 获取专业和班级
      * </pre>
+     */
+    default void listUserMajorAndClass(com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUserMajorAndClassMethod(), responseObserver);
+    }
+
+    /**
      */
     default void getAggregationLiveUrl(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> responseObserver) {
@@ -16885,7 +16924,16 @@ public final class glory_apiGrpc {
     /**
      * <pre>
      * 直播大屏
+     * 获取专业和班级
      * </pre>
+     */
+    public void listUserMajorAndClass(com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserMajorAndClassMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void getAggregationLiveUrl(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> responseObserver) {
@@ -19704,7 +19752,15 @@ public final class glory_apiGrpc {
     /**
      * <pre>
      * 直播大屏
+     * 获取专业和班级
      * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse listUserMajorAndClass(com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserMajorAndClassMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse getAggregationLiveUrl(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -22871,7 +22927,16 @@ public final class glory_apiGrpc {
     /**
      * <pre>
      * 直播大屏
+     * 获取专业和班级
      * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse> listUserMajorAndClass(
+        com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserMajorAndClassMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> getAggregationLiveUrl(
         com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request) {
@@ -23229,7 +23294,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_COUNT_NOTIFICATION = 346;
   private static final int METHODID_READ_NOTIFICATION = 347;
   private static final int METHODID_TEST_NOTIFICATION = 348;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 349;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 349;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 350;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24643,6 +24709,10 @@ public final class glory_apiGrpc {
         case METHODID_TEST_NOTIFICATION:
           serviceImpl.testNotification((com.zhijiejiaoyu.glory_api.notification.TestNotificationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>) responseObserver);
+          break;
+        case METHODID_LIST_USER_MAJOR_AND_CLASS:
+          serviceImpl.listUserMajorAndClass((com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse>) responseObserver);
           break;
         case METHODID_GET_AGGREGATION_LIVE_URL:
           serviceImpl.getAggregationLiveUrl((com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) request,
@@ -27110,6 +27180,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.notification.TestNotificationResponse>(
                 service, METHODID_TEST_NOTIFICATION)))
         .addMethod(
+          getListUserMajorAndClassMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasRequest,
+              com.zhijiejiaoyu.glory_api.live.ListUserMajorAndClasResponse>(
+                service, METHODID_LIST_USER_MAJOR_AND_CLASS)))
+        .addMethod(
           getGetAggregationLiveUrlMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -27513,6 +27590,7 @@ public final class glory_apiGrpc {
               .addMethod(getCountNotificationMethod())
               .addMethod(getReadNotificationMethod())
               .addMethod(getTestNotificationMethod())
+              .addMethod(getListUserMajorAndClassMethod())
               .addMethod(getGetAggregationLiveUrlMethod())
               .build();
         }

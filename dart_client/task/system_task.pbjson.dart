@@ -13,33 +13,80 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use systemTaskParameterDescriptor instead')
+const SystemTaskParameter$json = {
+  '1': 'SystemTaskParameter',
+  '2': [
+    {'1': 'task_parameter_key', '3': 1, '4': 1, '5': 9, '10': 'taskParameterKey'},
+    {'1': 'task_parameter_name', '3': 2, '4': 1, '5': 9, '10': 'taskParameterName'},
+    {'1': 'task_parameter_value', '3': 3, '4': 1, '5': 9, '10': 'taskParameterValue'},
+    {'1': 'task_parameter_type', '3': 4, '4': 1, '5': 9, '10': 'taskParameterType'},
+  ],
+};
+
+/// Descriptor for `SystemTaskParameter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemTaskParameterDescriptor = $convert.base64Decode(
+    'ChNTeXN0ZW1UYXNrUGFyYW1ldGVyEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgBIAEoCVIQdGFza1'
+    'BhcmFtZXRlcktleRIuChN0YXNrX3BhcmFtZXRlcl9uYW1lGAIgASgJUhF0YXNrUGFyYW1ldGVy'
+    'TmFtZRIwChR0YXNrX3BhcmFtZXRlcl92YWx1ZRgDIAEoCVISdGFza1BhcmFtZXRlclZhbHVlEi'
+    '4KE3Rhc2tfcGFyYW1ldGVyX3R5cGUYBCABKAlSEXRhc2tQYXJhbWV0ZXJUeXBl');
+
 @$core.Deprecated('Use systemTaskDescriptor instead')
 const SystemTask$json = {
   '1': 'SystemTask',
   '2': [
     {'1': 'task_key', '3': 1, '4': 1, '5': 9, '10': 'taskKey'},
-    {'1': 'task_business_system', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessSystem'},
-    {'1': 'task_business_module', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessModule'},
-    {'1': 'task_link', '3': 4, '4': 1, '5': 9, '10': 'taskLink'},
-    {'1': 'task_params', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'taskParams'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'created_by', '3': 7, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 9, '10': 'updatedAt'},
-    {'1': 'updated_by', '3': 9, '4': 1, '5': 9, '10': 'updatedBy'},
+    {'1': 'task_name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'taskName'},
+    {'1': 'task_business_system', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessSystem'},
+    {'1': 'task_business_module', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessModule'},
+    {'1': 'task_content', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'taskContent'},
+    {'1': 'task_requirements', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'taskRequirements'},
+    {'1': 'task_link', '3': 7, '4': 1, '5': 9, '10': 'taskLink'},
+    {'1': 'task_parameters', '3': 8, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'taskParameters'},
   ],
 };
 
 /// Descriptor for `SystemTask`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List systemTaskDescriptor = $convert.base64Decode(
-    'CgpTeXN0ZW1UYXNrEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5El8KFHRhc2tfYnVzaW5lc3'
-    'Nfc3lzdGVtGAIgASgJQi3auxgpQDpsZW4oJCk+MDttc2c6J+Wunuiureezu+e7n+S4jeiDveS4'
-    'uuepuidSEnRhc2tCdXNpbmVzc1N5c3RlbRJfChR0YXNrX2J1c2luZXNzX21vZHVsZRgDIAEoCU'
-    'It2rsYKUA6bGVuKCQpPjA7bXNnOifns7vnu5/mqKHlnZfkuI3og73kuLrnqbonUhJ0YXNrQnVz'
-    'aW5lc3NNb2R1bGUSGwoJdGFza19saW5rGAQgASgJUgh0YXNrTGluaxJOCgt0YXNrX3BhcmFtcx'
-    'gFIAEoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOifku7vliqHlj4LmlbDkuI3og73kuLrnqbonUgp0'
-    'YXNrUGFyYW1zEh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdBIdCgpjcmVhdGVkX2J5GA'
-    'cgASgJUgljcmVhdGVkQnkSHQoKdXBkYXRlZF9hdBgIIAEoCVIJdXBkYXRlZEF0Eh0KCnVwZGF0'
-    'ZWRfYnkYCSABKAlSCXVwZGF0ZWRCeQ==');
+    'CgpTeXN0ZW1UYXNrEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5EkoKCXRhc2tfbmFtZRgCIA'
+    'EoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOifku7vliqHlkI3np7DkuI3og73kuLrnqbonUgh0YXNr'
+    'TmFtZRJfChR0YXNrX2J1c2luZXNzX3N5c3RlbRgDIAEoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOi'
+    'fns7vnu5/lkI3np7DkuI3og73kuLrnqbonUhJ0YXNrQnVzaW5lc3NTeXN0ZW0SXwoUdGFza19i'
+    'dXNpbmVzc19tb2R1bGUYBCABKAlCLdq7GClAOmxlbigkKT4wO21zZzon5qih5Z2X5ZCN56ew5L'
+    'iN6IO95Li656m6J1ISdGFza0J1c2luZXNzTW9kdWxlElAKDHRhc2tfY29udGVudBgFIAEoCUIt'
+    '2rsYKUA6bGVuKCQpPjA7bXNnOifku7vliqHlhoXlrrnkuI3og73kuLrnqbonUgt0YXNrQ29udG'
+    'VudBJaChF0YXNrX3JlcXVpcmVtZW50cxgGIAEoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOifku7vl'
+    'iqHopoHmsYLkuI3og73kuLrnqbonUhB0YXNrUmVxdWlyZW1lbnRzEhsKCXRhc2tfbGluaxgHIA'
+    'EoCVIIdGFza0xpbmsSRwoPdGFza19wYXJhbWV0ZXJzGAggAygLMh4uZ2xvcnlfYXBpLlN5c3Rl'
+    'bVRhc2tQYXJhbWV0ZXJSDnRhc2tQYXJhbWV0ZXJz');
+
+@$core.Deprecated('Use createSystemTaskRequestDescriptor instead')
+const CreateSystemTaskRequest$json = {
+  '1': 'CreateSystemTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'system_task', '3': 2, '4': 1, '5': 11, '6': '.glory_api.SystemTask', '10': 'systemTask'},
+  ],
+};
+
+/// Descriptor for `CreateSystemTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSystemTaskRequestDescriptor = $convert.base64Decode(
+    'ChdDcmVhdGVTeXN0ZW1UYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI2CgtzeXN0ZW1fdGFzaxgCIAEoCzIVLmdsb3J5X2Fw'
+    'aS5TeXN0ZW1UYXNrUgpzeXN0ZW1UYXNr');
+
+@$core.Deprecated('Use createSystemTaskResponseDescriptor instead')
+const CreateSystemTaskResponse$json = {
+  '1': 'CreateSystemTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CreateSystemTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSystemTaskResponseDescriptor = $convert.base64Decode(
+    'ChhDcmVhdGVTeXN0ZW1UYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
 @$core.Deprecated('Use listSystemTaskRequestDescriptor instead')
 const ListSystemTaskRequest$json = {

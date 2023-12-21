@@ -15,6 +15,26 @@ public final class LiveBoard {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserMajorAndClasRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserMajorAndClasRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListUserMajorAndClasResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListUserMajorAndClasResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_MajorData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_MajorData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ClasData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ClasData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -34,27 +54,59 @@ public final class LiveBoard {
   static {
     java.lang.String[] descriptorData = {
       "\n\025live/live_board.proto\022\tglory_api\032\nbase" +
-      ".proto\"f\n\034GetAggregationLiveUrlRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\014\n\004page\030\002 \001(\003\022\017\n\007clas_id\030\003 \003(\003\"k\n\035GetAgg" +
-      "regationLiveUrlResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022\020\n\010live_url\030\002 \001(\t" +
-      "\022\021\n\tmix_count\030\003 \001(\003B#\n\037com.zhijiejiaoyu." +
-      "glory_api.liveP\001b\006proto3"
+      ".proto\"F\n\033ListUserMajorAndClasRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\"o" +
+      "\n\034ListUserMajorAndClasResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022(\n\nmajor_l" +
+      "ist\030\002 \003(\0132\024.glory_api.MajorData\"Y\n\tMajor" +
+      "Data\022\020\n\010major_id\030\001 \001(\003\022\022\n\nmajor_name\030\002 \001" +
+      "(\t\022&\n\tclas_list\030\003 \003(\0132\023.glory_api.ClasDa" +
+      "ta\".\n\010ClasData\022\017\n\007clas_id\030\001 \001(\003\022\021\n\tclas_" +
+      "name\030\002 \001(\t\"f\n\034GetAggregationLiveUrlReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\014\n\004page\030\002 \001(\003\022\017\n\007clas_id\030\003 \003(\003\"k\n\035Ge" +
+      "tAggregationLiveUrlResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010live_url\030\002" +
+      " \001(\t\022\021\n\tmix_count\030\003 \001(\003B#\n\037com.zhijiejia" +
+      "oyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
         });
-    internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor =
+    internal_static_glory_api_ListUserMajorAndClasRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_glory_api_ListUserMajorAndClasRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserMajorAndClasRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_ListUserMajorAndClasResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_glory_api_ListUserMajorAndClasResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListUserMajorAndClasResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "MajorList", });
+    internal_static_glory_api_MajorData_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_glory_api_MajorData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_MajorData_descriptor,
+        new java.lang.String[] { "MajorId", "MajorName", "ClasList", });
+    internal_static_glory_api_ClasData_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_ClasData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ClasData_descriptor,
+        new java.lang.String[] { "ClasId", "ClasName", });
+    internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_GetAggregationLiveUrlRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Page", "ClasId", });
     internal_static_glory_api_GetAggregationLiveUrlResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_GetAggregationLiveUrlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAggregationLiveUrlResponse_descriptor,
