@@ -50,3 +50,18 @@ message CountNotificationResponse {
   repeated NotificationCount count = 2;
   bool news = 3;
 }
+
+message TestNotificationRequest {
+  base.BaseRequest base_request = 1;
+  int64 user_id = 2;
+  int64 link_id = 3;
+  int32 notification_type = 4;
+  int32 notification_result = 5;
+  string notification_content = 6;
+  int64 intValue = 7;
+  string strValue = 8;
+}
+
+message TestNotificationResponse {
+  base.BaseResponse base_resp = 1;
+}

@@ -1375,7 +1375,9 @@ service glory_api {
   rpc ReadNotification(ReadNotificationRequest) returns (ReadNotificationResponse) {
     option (api.post) = '/api/notification/read';
   }
-  
+  rpc TestNotification(TestNotificationRequest) returns (TestNotificationResponse) {
+    option (api.post) = '/api/notification/test';
+  }
 
   // 直播大屏
   rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
