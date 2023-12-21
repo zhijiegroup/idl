@@ -17,14 +17,13 @@ private static final long serialVersionUID = 0L;
   }
   private SystemTask() {
     taskKey = "";
+    taskName = "";
     taskBusinessSystem = "";
     taskBusinessModule = "";
+    taskContent = "";
+    taskRequirements = "";
     taskLink = "";
-    taskParams = "";
-    createdAt = "";
-    createdBy = "";
-    updatedAt = "";
-    updatedBy = "";
+    taskParameters = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -47,6 +46,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -66,49 +66,46 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessSystem = s;
+            taskName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessModule = s;
+            taskBusinessSystem = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskLink = s;
+            taskBusinessModule = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskParams = s;
+            taskContent = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt = s;
+            taskRequirements = s;
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdBy = s;
+            taskLink = s;
             break;
           }
           case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            updatedAt = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            updatedBy = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            taskParameters .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -126,6 +123,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        taskParameters = java.util.Collections.unmodifiableList(taskParameters );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -189,14 +189,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_BUSINESS_SYSTEM_FIELD_NUMBER = 2;
+  public static final int TASK_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskName ;
+  /**
+   * <pre>
+   * 预置任务名称
+   * </pre>
+   *
+   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskName.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskName() {
+    java.lang.Object ref = taskName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskName = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 预置任务名称
+   * </pre>
+   *
+   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskNameBytes() {
+    java.lang.Object ref = taskName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_BUSINESS_SYSTEM_FIELD_NUMBER = 3;
   private volatile java.lang.Object taskBusinessSystem ;
   /**
    * <pre>
    * 预置任务所属实训系统
    * </pre>
    *
-   * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessSystem.
    */
   @java.lang.Override
@@ -217,7 +263,7 @@ private static final long serialVersionUID = 0L;
    * 预置任务所属实训系统
    * </pre>
    *
-   * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessSystem.
    */
   @java.lang.Override
@@ -235,14 +281,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_BUSINESS_MODULE_FIELD_NUMBER = 3;
+  public static final int TASK_BUSINESS_MODULE_FIELD_NUMBER = 4;
   private volatile java.lang.Object taskBusinessModule ;
   /**
    * <pre>
    * 预置任务所属系统模块
    * </pre>
    *
-   * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessModule.
    */
   @java.lang.Override
@@ -263,7 +309,7 @@ private static final long serialVersionUID = 0L;
    * 预置任务所属系统模块
    * </pre>
    *
-   * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessModule.
    */
   @java.lang.Override
@@ -281,14 +327,106 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_LINK_FIELD_NUMBER = 4;
+  public static final int TASK_CONTENT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object taskContent ;
+  /**
+   * <pre>
+   * 预置任务内容
+   * </pre>
+   *
+   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskContent.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskContent() {
+    java.lang.Object ref = taskContent ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskContent = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 预置任务内容
+   * </pre>
+   *
+   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskContent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskContentBytes() {
+    java.lang.Object ref = taskContent ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskContent = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_REQUIREMENTS_FIELD_NUMBER = 6;
+  private volatile java.lang.Object taskRequirements ;
+  /**
+   * <pre>
+   * 预置任务要求
+   * </pre>
+   *
+   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskRequirements.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskRequirements() {
+    java.lang.Object ref = taskRequirements ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskRequirements = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 预置任务要求
+   * </pre>
+   *
+   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskRequirements.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskRequirementsBytes() {
+    java.lang.Object ref = taskRequirements ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskRequirements = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_LINK_FIELD_NUMBER = 7;
   private volatile java.lang.Object taskLink ;
   /**
    * <pre>
    * 预置任务链接
    * </pre>
    *
-   * <code>string task_link = 4;</code>
+   * <code>string task_link = 7;</code>
    * @return The taskLink.
    */
   @java.lang.Override
@@ -309,7 +447,7 @@ private static final long serialVersionUID = 0L;
    * 预置任务链接
    * </pre>
    *
-   * <code>string task_link = 4;</code>
+   * <code>string task_link = 7;</code>
    * @return The bytes for taskLink.
    */
   @java.lang.Override
@@ -327,234 +465,64 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_PARAMS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object taskParams ;
+  public static final int TASK_PARAMETERS_FIELD_NUMBER = 8;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> taskParameters ;
   /**
    * <pre>
-   * 预置任务参数（JSON 序列化）
+   * 预置任务参数
    * </pre>
    *
-   * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskParams.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getTaskParams() {
-    java.lang.Object ref = taskParams ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskParams = s;
-      return s;
-    }
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getTaskParametersList() {
+    return taskParameters ;
   }
   /**
    * <pre>
-   * 预置任务参数（JSON 序列化）
+   * 预置任务参数
    * </pre>
    *
-   * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskParams.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskParamsBytes() {
-    java.lang.Object ref = taskParams ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskParams = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CREATED_AT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object createdAt ;
-  /**
-   * <pre>
-   * 创建时间
-   * </pre>
-   *
-   * <code>string created_at = 6;</code>
-   * @return The createdAt.
-   */
-  @java.lang.Override
-  public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      createdAt = s;
-      return s;
-    }
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
+      getTaskParametersOrBuilderList() {
+    return taskParameters ;
   }
   /**
    * <pre>
-   * 创建时间
+   * 预置任务参数
    * </pre>
    *
-   * <code>string created_at = 6;</code>
-   * @return The bytes for createdAt.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatedAtBytes() {
-    java.lang.Object ref = createdAt ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      createdAt = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CREATED_BY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object createdBy ;
-  /**
-   * <pre>
-   * 创建者
-   * </pre>
-   *
-   * <code>string created_by = 7;</code>
-   * @return The createdBy.
-   */
-  @java.lang.Override
-  public java.lang.String getCreatedBy() {
-    java.lang.Object ref = createdBy ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      createdBy = s;
-      return s;
-    }
+  public int getTaskParametersCount() {
+    return taskParameters .size();
   }
   /**
    * <pre>
-   * 创建者
+   * 预置任务参数
    * </pre>
    *
-   * <code>string created_by = 7;</code>
-   * @return The bytes for createdBy.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatedByBytes() {
-    java.lang.Object ref = createdBy ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      createdBy = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int UPDATED_AT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object updatedAt ;
-  /**
-   * <pre>
-   * 更新时间
-   * </pre>
-   *
-   * <code>string updated_at = 8;</code>
-   * @return The updatedAt.
-   */
-  @java.lang.Override
-  public java.lang.String getUpdatedAt() {
-    java.lang.Object ref = updatedAt ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      updatedAt = s;
-      return s;
-    }
+  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getTaskParameters(int index) {
+    return taskParameters .get(index);
   }
   /**
    * <pre>
-   * 更新时间
+   * 预置任务参数
    * </pre>
    *
-   * <code>string updated_at = 8;</code>
-   * @return The bytes for updatedAt.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUpdatedAtBytes() {
-    java.lang.Object ref = updatedAt ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      updatedAt = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int UPDATED_BY_FIELD_NUMBER = 9;
-  private volatile java.lang.Object updatedBy ;
-  /**
-   * <pre>
-   * 更新者
-   * </pre>
-   *
-   * <code>string updated_by = 9;</code>
-   * @return The updatedBy.
-   */
-  @java.lang.Override
-  public java.lang.String getUpdatedBy() {
-    java.lang.Object ref = updatedBy ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      updatedBy = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 更新者
-   * </pre>
-   *
-   * <code>string updated_by = 9;</code>
-   * @return The bytes for updatedBy.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUpdatedByBytes() {
-    java.lang.Object ref = updatedBy ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      updatedBy = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getTaskParametersOrBuilder(
+      int index) {
+    return taskParameters .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -574,29 +542,26 @@ private static final long serialVersionUID = 0L;
     if (!getTaskKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskKey );
     }
+    if (!getTaskNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName );
+    }
     if (!getTaskBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskBusinessSystem );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskBusinessSystem );
     }
     if (!getTaskBusinessModuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskBusinessModule );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskBusinessModule );
+    }
+    if (!getTaskContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskContent );
+    }
+    if (!getTaskRequirementsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskRequirements );
     }
     if (!getTaskLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskLink );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskLink );
     }
-    if (!getTaskParamsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskParams );
-    }
-    if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt );
-    }
-    if (!getCreatedByBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdBy );
-    }
-    if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updatedAt );
-    }
-    if (!getUpdatedByBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, updatedBy );
+    for (int i = 0; i < taskParameters .size(); i++) {
+      output.writeMessage(8, taskParameters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -610,29 +575,27 @@ private static final long serialVersionUID = 0L;
     if (!getTaskKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskKey );
     }
+    if (!getTaskNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName );
+    }
     if (!getTaskBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskBusinessSystem );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskBusinessSystem );
     }
     if (!getTaskBusinessModuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskBusinessModule );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskBusinessModule );
+    }
+    if (!getTaskContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskContent );
+    }
+    if (!getTaskRequirementsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskRequirements );
     }
     if (!getTaskLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskLink );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskLink );
     }
-    if (!getTaskParamsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskParams );
-    }
-    if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt );
-    }
-    if (!getCreatedByBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdBy );
-    }
-    if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updatedAt );
-    }
-    if (!getUpdatedByBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, updatedBy );
+    for (int i = 0; i < taskParameters .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, taskParameters .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -651,22 +614,20 @@ private static final long serialVersionUID = 0L;
 
     if (!getTaskKey()
         .equals(other.getTaskKey())) return false;
+    if (!getTaskName()
+        .equals(other.getTaskName())) return false;
     if (!getTaskBusinessSystem()
         .equals(other.getTaskBusinessSystem())) return false;
     if (!getTaskBusinessModule()
         .equals(other.getTaskBusinessModule())) return false;
+    if (!getTaskContent()
+        .equals(other.getTaskContent())) return false;
+    if (!getTaskRequirements()
+        .equals(other.getTaskRequirements())) return false;
     if (!getTaskLink()
         .equals(other.getTaskLink())) return false;
-    if (!getTaskParams()
-        .equals(other.getTaskParams())) return false;
-    if (!getCreatedAt()
-        .equals(other.getCreatedAt())) return false;
-    if (!getCreatedBy()
-        .equals(other.getCreatedBy())) return false;
-    if (!getUpdatedAt()
-        .equals(other.getUpdatedAt())) return false;
-    if (!getUpdatedBy()
-        .equals(other.getUpdatedBy())) return false;
+    if (!getTaskParametersList()
+        .equals(other.getTaskParametersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -680,22 +641,22 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TASK_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getTaskKey().hashCode();
+    hash = (37 * hash) + TASK_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskName().hashCode();
     hash = (37 * hash) + TASK_BUSINESS_SYSTEM_FIELD_NUMBER;
     hash = (53 * hash) + getTaskBusinessSystem().hashCode();
     hash = (37 * hash) + TASK_BUSINESS_MODULE_FIELD_NUMBER;
     hash = (53 * hash) + getTaskBusinessModule().hashCode();
+    hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskContent().hashCode();
+    hash = (37 * hash) + TASK_REQUIREMENTS_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskRequirements().hashCode();
     hash = (37 * hash) + TASK_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getTaskLink().hashCode();
-    hash = (37 * hash) + TASK_PARAMS_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskParams().hashCode();
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatedAt().hashCode();
-    hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatedBy().hashCode();
-    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getUpdatedAt().hashCode();
-    hash = (37 * hash) + UPDATED_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getUpdatedBy().hashCode();
+    if (getTaskParametersCount() > 0) {
+      hash = (37 * hash) + TASK_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskParametersList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -824,6 +785,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getTaskParametersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -831,22 +793,24 @@ private static final long serialVersionUID = 0L;
       super.clear();
       taskKey = "";
 
+      taskName = "";
+
       taskBusinessSystem = "";
 
       taskBusinessModule = "";
 
+      taskContent = "";
+
+      taskRequirements = "";
+
       taskLink = "";
 
-      taskParams = "";
-
-      createdAt = "";
-
-      createdBy = "";
-
-      updatedAt = "";
-
-      updatedBy = "";
-
+      if (taskParametersBuilder == null) {
+        taskParameters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        taskParametersBuilder .clear();
+      }
       return this;
     }
 
@@ -873,15 +837,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.SystemTask buildPartial() {
       com.zhijiejiaoyu.glory_api.task.SystemTask result = new com.zhijiejiaoyu.glory_api.task.SystemTask(this);
+      int from_bitField0 = bitField0 ;
       result.taskKey = taskKey ;
+      result.taskName = taskName ;
       result.taskBusinessSystem = taskBusinessSystem ;
       result.taskBusinessModule = taskBusinessModule ;
+      result.taskContent = taskContent ;
+      result.taskRequirements = taskRequirements ;
       result.taskLink = taskLink ;
-      result.taskParams = taskParams ;
-      result.createdAt = createdAt ;
-      result.createdBy = createdBy ;
-      result.updatedAt = updatedAt ;
-      result.updatedBy = updatedBy ;
+      if (taskParametersBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          taskParameters = java.util.Collections.unmodifiableList(taskParameters );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.taskParameters = taskParameters ;
+      } else {
+        result.taskParameters = taskParametersBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -934,6 +906,10 @@ private static final long serialVersionUID = 0L;
         taskKey = other.taskKey ;
         onChanged();
       }
+      if (!other.getTaskName().isEmpty()) {
+        taskName = other.taskName ;
+        onChanged();
+      }
       if (!other.getTaskBusinessSystem().isEmpty()) {
         taskBusinessSystem = other.taskBusinessSystem ;
         onChanged();
@@ -942,29 +918,43 @@ private static final long serialVersionUID = 0L;
         taskBusinessModule = other.taskBusinessModule ;
         onChanged();
       }
+      if (!other.getTaskContent().isEmpty()) {
+        taskContent = other.taskContent ;
+        onChanged();
+      }
+      if (!other.getTaskRequirements().isEmpty()) {
+        taskRequirements = other.taskRequirements ;
+        onChanged();
+      }
       if (!other.getTaskLink().isEmpty()) {
         taskLink = other.taskLink ;
         onChanged();
       }
-      if (!other.getTaskParams().isEmpty()) {
-        taskParams = other.taskParams ;
-        onChanged();
-      }
-      if (!other.getCreatedAt().isEmpty()) {
-        createdAt = other.createdAt ;
-        onChanged();
-      }
-      if (!other.getCreatedBy().isEmpty()) {
-        createdBy = other.createdBy ;
-        onChanged();
-      }
-      if (!other.getUpdatedAt().isEmpty()) {
-        updatedAt = other.updatedAt ;
-        onChanged();
-      }
-      if (!other.getUpdatedBy().isEmpty()) {
-        updatedBy = other.updatedBy ;
-        onChanged();
+      if (taskParametersBuilder == null) {
+        if (!other.taskParameters .isEmpty()) {
+          if (taskParameters .isEmpty()) {
+            taskParameters = other.taskParameters ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureTaskParametersIsMutable();
+            taskParameters .addAll(other.taskParameters );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.taskParameters .isEmpty()) {
+          if (taskParametersBuilder .isEmpty()) {
+            taskParametersBuilder .dispose();
+            taskParametersBuilder = null;
+            taskParameters = other.taskParameters ;
+            bitField0 = (bitField0 & ~0x00000001);
+            taskParametersBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTaskParametersFieldBuilder() : null;
+          } else {
+            taskParametersBuilder .addAllMessages(other.taskParameters );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -994,6 +984,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private java.lang.Object taskKey = "";
     /**
@@ -1091,13 +1082,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object taskName = "";
+    /**
+     * <pre>
+     * 预置任务名称
+     * </pre>
+     *
+     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The taskName.
+     */
+    public java.lang.String getTaskName() {
+      java.lang.Object ref = taskName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务名称
+     * </pre>
+     *
+     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The bytes for taskName.
+     */
+    public com.google.protobuf.ByteString
+        getTaskNameBytes() {
+      java.lang.Object ref = taskName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务名称
+     * </pre>
+     *
+     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The taskName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务名称
+     * </pre>
+     *
+     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskName() {
+      
+      taskName = getDefaultInstance().getTaskName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务名称
+     * </pre>
+     *
+     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The bytes for taskName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskName = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object taskBusinessSystem = "";
     /**
      * <pre>
      * 预置任务所属实训系统
      * </pre>
      *
-     * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return The taskBusinessSystem.
      */
     public java.lang.String getTaskBusinessSystem() {
@@ -1117,7 +1204,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属实训系统
      * </pre>
      *
-     * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return The bytes for taskBusinessSystem.
      */
     public com.google.protobuf.ByteString
@@ -1138,7 +1225,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属实训系统
      * </pre>
      *
-     * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @param value The taskBusinessSystem to set.
      * @return This builder for chaining.
      */
@@ -1157,7 +1244,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属实训系统
      * </pre>
      *
-     * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskBusinessSystem() {
@@ -1171,7 +1258,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属实训系统
      * </pre>
      *
-     * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @param value The bytes for taskBusinessSystem to set.
      * @return This builder for chaining.
      */
@@ -1193,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属系统模块
      * </pre>
      *
-     * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return The taskBusinessModule.
      */
     public java.lang.String getTaskBusinessModule() {
@@ -1213,7 +1300,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属系统模块
      * </pre>
      *
-     * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return The bytes for taskBusinessModule.
      */
     public com.google.protobuf.ByteString
@@ -1234,7 +1321,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属系统模块
      * </pre>
      *
-     * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @param value The taskBusinessModule to set.
      * @return This builder for chaining.
      */
@@ -1253,7 +1340,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属系统模块
      * </pre>
      *
-     * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskBusinessModule() {
@@ -1267,7 +1354,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务所属系统模块
      * </pre>
      *
-     * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
      * @param value The bytes for taskBusinessModule to set.
      * @return This builder for chaining.
      */
@@ -1283,13 +1370,205 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object taskContent = "";
+    /**
+     * <pre>
+     * 预置任务内容
+     * </pre>
+     *
+     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The taskContent.
+     */
+    public java.lang.String getTaskContent() {
+      java.lang.Object ref = taskContent ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskContent = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务内容
+     * </pre>
+     *
+     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The bytes for taskContent.
+     */
+    public com.google.protobuf.ByteString
+        getTaskContentBytes() {
+      java.lang.Object ref = taskContent ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskContent = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务内容
+     * </pre>
+     *
+     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The taskContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskContent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskContent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务内容
+     * </pre>
+     *
+     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskContent() {
+      
+      taskContent = getDefaultInstance().getTaskContent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务内容
+     * </pre>
+     *
+     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The bytes for taskContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskContentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskContent = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskRequirements = "";
+    /**
+     * <pre>
+     * 预置任务要求
+     * </pre>
+     *
+     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The taskRequirements.
+     */
+    public java.lang.String getTaskRequirements() {
+      java.lang.Object ref = taskRequirements ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskRequirements = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务要求
+     * </pre>
+     *
+     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return The bytes for taskRequirements.
+     */
+    public com.google.protobuf.ByteString
+        getTaskRequirementsBytes() {
+      java.lang.Object ref = taskRequirements ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskRequirements = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 预置任务要求
+     * </pre>
+     *
+     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The taskRequirements to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskRequirements(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskRequirements = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务要求
+     * </pre>
+     *
+     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskRequirements() {
+      
+      taskRequirements = getDefaultInstance().getTaskRequirements();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务要求
+     * </pre>
+     *
+     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * @param value The bytes for taskRequirements to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskRequirementsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskRequirements = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object taskLink = "";
     /**
      * <pre>
      * 预置任务链接
      * </pre>
      *
-     * <code>string task_link = 4;</code>
+     * <code>string task_link = 7;</code>
      * @return The taskLink.
      */
     public java.lang.String getTaskLink() {
@@ -1309,7 +1588,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务链接
      * </pre>
      *
-     * <code>string task_link = 4;</code>
+     * <code>string task_link = 7;</code>
      * @return The bytes for taskLink.
      */
     public com.google.protobuf.ByteString
@@ -1330,7 +1609,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务链接
      * </pre>
      *
-     * <code>string task_link = 4;</code>
+     * <code>string task_link = 7;</code>
      * @param value The taskLink to set.
      * @return This builder for chaining.
      */
@@ -1349,7 +1628,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务链接
      * </pre>
      *
-     * <code>string task_link = 4;</code>
+     * <code>string task_link = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskLink() {
@@ -1363,7 +1642,7 @@ private static final long serialVersionUID = 0L;
      * 预置任务链接
      * </pre>
      *
-     * <code>string task_link = 4;</code>
+     * <code>string task_link = 7;</code>
      * @param value The bytes for taskLink to set.
      * @return This builder for chaining.
      */
@@ -1379,484 +1658,316 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object taskParams = "";
-    /**
-     * <pre>
-     * 预置任务参数（JSON 序列化）
-     * </pre>
-     *
-     * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskParams.
-     */
-    public java.lang.String getTaskParams() {
-      java.lang.Object ref = taskParams ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskParams = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务参数（JSON 序列化）
-     * </pre>
-     *
-     * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskParams.
-     */
-    public com.google.protobuf.ByteString
-        getTaskParamsBytes() {
-      java.lang.Object ref = taskParams ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskParams = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务参数（JSON 序列化）
-     * </pre>
-     *
-     * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskParams to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskParams(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskParams = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务参数（JSON 序列化）
-     * </pre>
-     *
-     * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskParams() {
-      
-      taskParams = getDefaultInstance().getTaskParams();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务参数（JSON 序列化）
-     * </pre>
-     *
-     * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskParams to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskParamsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskParams = value;
-      onChanged();
-      return this;
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> taskParameters =
+      java.util.Collections.emptyList();
+    private void ensureTaskParametersIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>(taskParameters );
+        bitField0_ |= 0x00000001;
+       }
     }
 
-    private java.lang.Object createdAt = "";
-    /**
-     * <pre>
-     * 创建时间
-     * </pre>
-     *
-     * <code>string created_at = 6;</code>
-     * @return The createdAt.
-     */
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdAt = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 创建时间
-     * </pre>
-     *
-     * <code>string created_at = 6;</code>
-     * @return The bytes for createdAt.
-     */
-    public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdAt = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 创建时间
-     * </pre>
-     *
-     * <code>string created_at = 6;</code>
-     * @param value The createdAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedAt(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      createdAt = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 创建时间
-     * </pre>
-     *
-     * <code>string created_at = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreatedAt() {
-      
-      createdAt = getDefaultInstance().getCreatedAt();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 创建时间
-     * </pre>
-     *
-     * <code>string created_at = 6;</code>
-     * @param value The bytes for createdAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedAtBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      createdAt = value;
-      onChanged();
-      return this;
-    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> taskParametersBuilder ;
 
-    private java.lang.Object createdBy = "";
     /**
      * <pre>
-     * 创建者
+     * 预置任务参数
      * </pre>
      *
-     * <code>string created_by = 7;</code>
-     * @return The createdBy.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public java.lang.String getCreatedBy() {
-      java.lang.Object ref = createdBy ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        createdBy = s;
-        return s;
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getTaskParametersList() {
+      if (taskParametersBuilder == null) {
+        return java.util.Collections.unmodifiableList(taskParameters );
       } else {
-        return (java.lang.String) ref;
+        return taskParametersBuilder .getMessageList();
       }
     }
     /**
      * <pre>
-     * 创建者
+     * 预置任务参数
      * </pre>
      *
-     * <code>string created_by = 7;</code>
-     * @return The bytes for createdBy.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getCreatedByBytes() {
-      java.lang.Object ref = createdBy ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        createdBy = b;
-        return b;
+    public int getTaskParametersCount() {
+      if (taskParametersBuilder == null) {
+        return taskParameters .size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return taskParametersBuilder .getCount();
       }
     }
     /**
      * <pre>
-     * 创建者
+     * 预置任务参数
      * </pre>
      *
-     * <code>string created_by = 7;</code>
-     * @param value The createdBy to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public Builder setCreatedBy(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      createdBy = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 创建者
-     * </pre>
-     *
-     * <code>string created_by = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreatedBy() {
-      
-      createdBy = getDefaultInstance().getCreatedBy();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 创建者
-     * </pre>
-     *
-     * <code>string created_by = 7;</code>
-     * @param value The bytes for createdBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreatedByBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      createdBy = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object updatedAt = "";
-    /**
-     * <pre>
-     * 更新时间
-     * </pre>
-     *
-     * <code>string updated_at = 8;</code>
-     * @return The updatedAt.
-     */
-    public java.lang.String getUpdatedAt() {
-      java.lang.Object ref = updatedAt ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedAt = s;
-        return s;
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getTaskParameters(int index) {
+      if (taskParametersBuilder == null) {
+        return taskParameters .get(index);
       } else {
-        return (java.lang.String) ref;
+        return taskParametersBuilder .getMessage(index);
       }
     }
     /**
      * <pre>
-     * 更新时间
+     * 预置任务参数
      * </pre>
      *
-     * <code>string updated_at = 8;</code>
-     * @return The bytes for updatedAt.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getUpdatedAtBytes() {
-      java.lang.Object ref = updatedAt ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedAt = b;
-        return b;
+    public Builder setTaskParameters(
+        int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
+      if (taskParametersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskParametersIsMutable();
+        taskParameters .set(index, value);
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        taskParametersBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder setTaskParameters(
+        int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
+      if (taskParametersBuilder == null) {
+        ensureTaskParametersIsMutable();
+        taskParameters .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        taskParametersBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder addTaskParameters(com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
+      if (taskParametersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskParametersIsMutable();
+        taskParameters .add(value);
+        onChanged();
+      } else {
+        taskParametersBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder addTaskParameters(
+        int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
+      if (taskParametersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskParametersIsMutable();
+        taskParameters .add(index, value);
+        onChanged();
+      } else {
+        taskParametersBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder addTaskParameters(
+        com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
+      if (taskParametersBuilder == null) {
+        ensureTaskParametersIsMutable();
+        taskParameters .add(builderForValue.build());
+        onChanged();
+      } else {
+        taskParametersBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder addTaskParameters(
+        int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
+      if (taskParametersBuilder == null) {
+        ensureTaskParametersIsMutable();
+        taskParameters .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        taskParametersBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder addAllTaskParameters(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> values) {
+      if (taskParametersBuilder == null) {
+        ensureTaskParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, taskParameters );
+        onChanged();
+      } else {
+        taskParametersBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder clearTaskParameters() {
+      if (taskParametersBuilder == null) {
+        taskParameters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        taskParametersBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public Builder removeTaskParameters(int index) {
+      if (taskParametersBuilder == null) {
+        ensureTaskParametersIsMutable();
+        taskParameters .remove(index);
+        onChanged();
+      } else {
+        taskParametersBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder getTaskParametersBuilder(
+        int index) {
+      return getTaskParametersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getTaskParametersOrBuilder(
+        int index) {
+      if (taskParametersBuilder == null) {
+        return taskParameters .get(index);  } else {
+        return taskParametersBuilder .getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * 更新时间
+     * 预置任务参数
      * </pre>
      *
-     * <code>string updated_at = 8;</code>
-     * @param value The updatedAt to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public Builder setUpdatedAt(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      updatedAt = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 更新时间
-     * </pre>
-     *
-     * <code>string updated_at = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUpdatedAt() {
-      
-      updatedAt = getDefaultInstance().getUpdatedAt();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 更新时间
-     * </pre>
-     *
-     * <code>string updated_at = 8;</code>
-     * @param value The bytes for updatedAt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUpdatedAtBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      updatedAt = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object updatedBy = "";
-    /**
-     * <pre>
-     * 更新者
-     * </pre>
-     *
-     * <code>string updated_by = 9;</code>
-     * @return The updatedBy.
-     */
-    public java.lang.String getUpdatedBy() {
-      java.lang.Object ref = updatedBy ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedBy = s;
-        return s;
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
+         getTaskParametersOrBuilderList() {
+      if (taskParametersBuilder != null) {
+        return taskParametersBuilder .getMessageOrBuilderList();
       } else {
-        return (java.lang.String) ref;
+        return java.util.Collections.unmodifiableList(taskParameters );
       }
     }
     /**
      * <pre>
-     * 更新者
+     * 预置任务参数
      * </pre>
      *
-     * <code>string updated_by = 9;</code>
-     * @return The bytes for updatedBy.
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getUpdatedByBytes() {
-      java.lang.Object ref = updatedBy ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedBy = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addTaskParametersBuilder() {
+      return getTaskParametersFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addTaskParametersBuilder(
+        int index) {
+      return getTaskParametersFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 预置任务参数
+     * </pre>
+     *
+     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder> 
+         getTaskParametersBuilderList() {
+      return getTaskParametersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
+        getTaskParametersFieldBuilder() {
+      if (taskParametersBuilder == null) {
+        taskParametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder>(
+                taskParameters ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        taskParameters = null;
       }
-    }
-    /**
-     * <pre>
-     * 更新者
-     * </pre>
-     *
-     * <code>string updated_by = 9;</code>
-     * @param value The updatedBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUpdatedBy(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      updatedBy = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 更新者
-     * </pre>
-     *
-     * <code>string updated_by = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUpdatedBy() {
-      
-      updatedBy = getDefaultInstance().getUpdatedBy();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 更新者
-     * </pre>
-     *
-     * <code>string updated_by = 9;</code>
-     * @param value The bytes for updatedBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUpdatedByBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      updatedBy = value;
-      onChanged();
-      return this;
+      return taskParametersBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

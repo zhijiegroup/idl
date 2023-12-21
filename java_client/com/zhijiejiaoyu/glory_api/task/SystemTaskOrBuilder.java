@@ -29,10 +29,30 @@ public interface SystemTaskOrBuilder extends
 
   /**
    * <pre>
+   * 预置任务名称
+   * </pre>
+   *
+   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskName.
+   */
+  java.lang.String getTaskName();
+  /**
+   * <pre>
+   * 预置任务名称
+   * </pre>
+   *
+   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskName.
+   */
+  com.google.protobuf.ByteString
+      getTaskNameBytes();
+
+  /**
+   * <pre>
    * 预置任务所属实训系统
    * </pre>
    *
-   * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessSystem.
    */
   java.lang.String getTaskBusinessSystem();
@@ -41,7 +61,7 @@ public interface SystemTaskOrBuilder extends
    * 预置任务所属实训系统
    * </pre>
    *
-   * <code>string task_business_system = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;256&#92;236&#92;350&#92;256&#92;255&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessSystem.
    */
   com.google.protobuf.ByteString
@@ -52,7 +72,7 @@ public interface SystemTaskOrBuilder extends
    * 预置任务所属系统模块
    * </pre>
    *
-   * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessModule.
    */
   java.lang.String getTaskBusinessModule();
@@ -61,7 +81,7 @@ public interface SystemTaskOrBuilder extends
    * 预置任务所属系统模块
    * </pre>
    *
-   * <code>string task_business_module = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessModule.
    */
   com.google.protobuf.ByteString
@@ -69,10 +89,50 @@ public interface SystemTaskOrBuilder extends
 
   /**
    * <pre>
+   * 预置任务内容
+   * </pre>
+   *
+   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskContent.
+   */
+  java.lang.String getTaskContent();
+  /**
+   * <pre>
+   * 预置任务内容
+   * </pre>
+   *
+   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskContent.
+   */
+  com.google.protobuf.ByteString
+      getTaskContentBytes();
+
+  /**
+   * <pre>
+   * 预置任务要求
+   * </pre>
+   *
+   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The taskRequirements.
+   */
+  java.lang.String getTaskRequirements();
+  /**
+   * <pre>
+   * 预置任务要求
+   * </pre>
+   *
+   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * @return The bytes for taskRequirements.
+   */
+  com.google.protobuf.ByteString
+      getTaskRequirementsBytes();
+
+  /**
+   * <pre>
    * 预置任务链接
    * </pre>
    *
-   * <code>string task_link = 4;</code>
+   * <code>string task_link = 7;</code>
    * @return The taskLink.
    */
   java.lang.String getTaskLink();
@@ -81,7 +141,7 @@ public interface SystemTaskOrBuilder extends
    * 预置任务链接
    * </pre>
    *
-   * <code>string task_link = 4;</code>
+   * <code>string task_link = 7;</code>
    * @return The bytes for taskLink.
    */
   com.google.protobuf.ByteString
@@ -89,101 +149,45 @@ public interface SystemTaskOrBuilder extends
 
   /**
    * <pre>
-   * 预置任务参数（JSON 序列化）
+   * 预置任务参数
    * </pre>
    *
-   * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskParams.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
-  java.lang.String getTaskParams();
+  java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> 
+      getTaskParametersList();
   /**
    * <pre>
-   * 预置任务参数（JSON 序列化）
+   * 预置任务参数
    * </pre>
    *
-   * <code>string task_params = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskParams.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getTaskParamsBytes();
-
+  com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getTaskParameters(int index);
   /**
    * <pre>
-   * 创建时间
+   * 预置任务参数
    * </pre>
    *
-   * <code>string created_at = 6;</code>
-   * @return The createdAt.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
-  java.lang.String getCreatedAt();
+  int getTaskParametersCount();
   /**
    * <pre>
-   * 创建时间
+   * 预置任务参数
    * </pre>
    *
-   * <code>string created_at = 6;</code>
-   * @return The bytes for createdAt.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getCreatedAtBytes();
-
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
+      getTaskParametersOrBuilderList();
   /**
    * <pre>
-   * 创建者
+   * 预置任务参数
    * </pre>
    *
-   * <code>string created_by = 7;</code>
-   * @return The createdBy.
+   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
    */
-  java.lang.String getCreatedBy();
-  /**
-   * <pre>
-   * 创建者
-   * </pre>
-   *
-   * <code>string created_by = 7;</code>
-   * @return The bytes for createdBy.
-   */
-  com.google.protobuf.ByteString
-      getCreatedByBytes();
-
-  /**
-   * <pre>
-   * 更新时间
-   * </pre>
-   *
-   * <code>string updated_at = 8;</code>
-   * @return The updatedAt.
-   */
-  java.lang.String getUpdatedAt();
-  /**
-   * <pre>
-   * 更新时间
-   * </pre>
-   *
-   * <code>string updated_at = 8;</code>
-   * @return The bytes for updatedAt.
-   */
-  com.google.protobuf.ByteString
-      getUpdatedAtBytes();
-
-  /**
-   * <pre>
-   * 更新者
-   * </pre>
-   *
-   * <code>string updated_by = 9;</code>
-   * @return The updatedBy.
-   */
-  java.lang.String getUpdatedBy();
-  /**
-   * <pre>
-   * 更新者
-   * </pre>
-   *
-   * <code>string updated_by = 9;</code>
-   * @return The bytes for updatedBy.
-   */
-  com.google.protobuf.ByteString
-      getUpdatedByBytes();
+  com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getTaskParametersOrBuilder(
+      int index);
 }
