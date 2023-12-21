@@ -18,8 +18,8 @@ const SystemTaskParameter$json = {
   '1': 'SystemTaskParameter',
   '2': [
     {'1': 'task_parameter_key', '3': 1, '4': 1, '5': 9, '10': 'taskParameterKey'},
-    {'1': 'task_parameter_name', '3': 2, '4': 1, '5': 9, '10': 'taskParameterName'},
-    {'1': 'task_parameter_value', '3': 3, '4': 1, '5': 9, '10': 'taskParameterValue'},
+    {'1': 'task_parameter_name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'taskParameterName'},
+    {'1': 'task_parameter_value', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskParameterValue'},
     {'1': 'task_parameter_type', '3': 4, '4': 1, '5': 9, '10': 'taskParameterType'},
   ],
 };
@@ -27,9 +27,11 @@ const SystemTaskParameter$json = {
 /// Descriptor for `SystemTaskParameter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List systemTaskParameterDescriptor = $convert.base64Decode(
     'ChNTeXN0ZW1UYXNrUGFyYW1ldGVyEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgBIAEoCVIQdGFza1'
-    'BhcmFtZXRlcktleRIuChN0YXNrX3BhcmFtZXRlcl9uYW1lGAIgASgJUhF0YXNrUGFyYW1ldGVy'
-    'TmFtZRIwChR0YXNrX3BhcmFtZXRlcl92YWx1ZRgDIAEoCVISdGFza1BhcmFtZXRlclZhbHVlEi'
-    '4KE3Rhc2tfcGFyYW1ldGVyX3R5cGUYBCABKAlSEXRhc2tQYXJhbWV0ZXJUeXBl');
+    'BhcmFtZXRlcktleRJdChN0YXNrX3BhcmFtZXRlcl9uYW1lGAIgASgJQi3auxgpQDpsZW4oJCk+'
+    'MDttc2c6J+WPguaVsOWQjeensOS4jeiDveS4uuepuidSEXRhc2tQYXJhbWV0ZXJOYW1lElwKFH'
+    'Rhc2tfcGFyYW1ldGVyX3ZhbHVlGAMgASgJQirauxgmQDpsZW4oJCk+MDttc2c6J+WPguaVsOWA'
+    'vOS4jeiDveS4uuepuidSEnRhc2tQYXJhbWV0ZXJWYWx1ZRIuChN0YXNrX3BhcmFtZXRlcl90eX'
+    'BlGAQgASgJUhF0YXNrUGFyYW1ldGVyVHlwZQ==');
 
 @$core.Deprecated('Use systemTaskDescriptor instead')
 const SystemTask$json = {
