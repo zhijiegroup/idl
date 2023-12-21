@@ -8,8 +8,8 @@ import "base.proto";
 
 message SystemTaskParameter {
   string task_parameter_key = 1;
-  string task_parameter_name = 2;
-  string task_parameter_value = 3;
+  string task_parameter_name = 2[(api.vd)="@:len($)>0;msg:'参数名称不能为空'"];
+  string task_parameter_value = 3[(api.vd)="@:len($)>0;msg:'参数值不能为空'"];
   string task_parameter_type = 4;
 }
 
