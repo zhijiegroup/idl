@@ -58,6 +58,7 @@ import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
 import * as system_task from "./task/system_task";
+import * as teacher_task_template from "./task/teacher_task_template";
 import * as notification from "./notification/notification";
 export {
   user,
@@ -114,6 +115,7 @@ export {
   live_traffic,
   role,
   system_task,
+  teacher_task_template,
   notification,
 };
 
@@ -2762,6 +2764,14 @@ export class glory_api {
 
   UpdateSystemTask(request) {
     const uri = `${this.uriPrefix}/api/task/update_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTeacherTaskTemplate(request) {
+    const uri = `${this.uriPrefix}/api/task/list_teacher_task_template`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

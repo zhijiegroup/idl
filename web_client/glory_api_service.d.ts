@@ -56,6 +56,7 @@ import * as app from "./app/app";
 import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
 import * as system_task from "./task/system_task";
+import * as teacher_task_template from "./task/teacher_task_template";
 import * as notification from "./notification/notification";
 export {
   user,
@@ -112,6 +113,7 @@ export {
   live_traffic,
   role,
   system_task,
+  teacher_task_template,
   notification,
 };
 
@@ -1552,6 +1554,11 @@ CreateLivePlanProduct create live plan product */
   UpdateSystemTask(
     request: system_task.UpdateSystemTaskRequest
   ): Promise<system_task.UpdateSystemTaskResponse>;
+
+  /** 教师任务模板 */
+  ListTeacherTaskTemplate(
+    request: teacher_task_template.ListTeacherTaskTemplateRequest
+  ): Promise<teacher_task_template.ListTeacherTaskTemplateResponse>;
 
   /** 通知模块 */
   ListNotification(

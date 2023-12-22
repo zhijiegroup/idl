@@ -33,7 +33,7 @@ import 'course/user_course.pb.dart' as $43;
 import 'currency/virtual_currency.pb.dart' as $22;
 import 'example/example.pb.dart' as $0;
 import 'glory_api_service.pbjson.dart';
-import 'live/live_board.pb.dart' as $53;
+import 'live/live_board.pb.dart' as $54;
 import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
@@ -43,7 +43,7 @@ import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
 import 'live/live_user.pb.dart' as $27;
 import 'mall/mall_index.pb.dart' as $7;
-import 'notification/notification.pb.dart' as $52;
+import 'notification/notification.pb.dart' as $53;
 import 'payment/payment.pb.dart' as $17;
 import 'role/role.pb.dart' as $3;
 import 'seller/attachment.pb.dart' as $15;
@@ -62,6 +62,7 @@ import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
 import 'task/system_task.pb.dart' as $51;
+import 'task/teacher_task_template.pb.dart' as $52;
 import 'tenant/tenant.pb.dart' as $30;
 import 'tenant/tenant_config.pb.dart' as $33;
 import 'tenant/tenant_dept.pb.dart' as $31;
@@ -419,13 +420,14 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
-  $async.Future<$52.ListNotificationResponse> listNotification($pb.ServerContext ctx, $52.ListNotificationRequest request);
-  $async.Future<$52.CountNotificationResponse> countNotification($pb.ServerContext ctx, $52.CountNotificationRequest request);
-  $async.Future<$52.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $52.ReadNotificationRequest request);
-  $async.Future<$52.TestNotificationResponse> testNotification($pb.ServerContext ctx, $52.TestNotificationRequest request);
-  $async.Future<$52.DeleteNotificationResponse> deleteNotification($pb.ServerContext ctx, $52.DeleteNotificationRequest request);
-  $async.Future<$53.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ServerContext ctx, $53.ListUserMajorAndClasRequest request);
-  $async.Future<$53.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $53.GetAggregationLiveUrlRequest request);
+  $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ServerContext ctx, $52.ListTeacherTaskTemplateRequest request);
+  $async.Future<$53.ListNotificationResponse> listNotification($pb.ServerContext ctx, $53.ListNotificationRequest request);
+  $async.Future<$53.CountNotificationResponse> countNotification($pb.ServerContext ctx, $53.CountNotificationRequest request);
+  $async.Future<$53.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $53.ReadNotificationRequest request);
+  $async.Future<$53.TestNotificationResponse> testNotification($pb.ServerContext ctx, $53.TestNotificationRequest request);
+  $async.Future<$53.DeleteNotificationResponse> deleteNotification($pb.ServerContext ctx, $53.DeleteNotificationRequest request);
+  $async.Future<$54.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ServerContext ctx, $54.ListUserMajorAndClasRequest request);
+  $async.Future<$54.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $54.GetAggregationLiveUrlRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -774,13 +776,14 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return $46.GetLatestVersionRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
-      case 'ListNotification': return $52.ListNotificationRequest();
-      case 'CountNotification': return $52.CountNotificationRequest();
-      case 'ReadNotification': return $52.ReadNotificationRequest();
-      case 'TestNotification': return $52.TestNotificationRequest();
-      case 'DeleteNotification': return $52.DeleteNotificationRequest();
-      case 'ListUserMajorAndClass': return $53.ListUserMajorAndClasRequest();
-      case 'GetAggregationLiveUrl': return $53.GetAggregationLiveUrlRequest();
+      case 'ListTeacherTaskTemplate': return $52.ListTeacherTaskTemplateRequest();
+      case 'ListNotification': return $53.ListNotificationRequest();
+      case 'CountNotification': return $53.CountNotificationRequest();
+      case 'ReadNotification': return $53.ReadNotificationRequest();
+      case 'TestNotification': return $53.TestNotificationRequest();
+      case 'DeleteNotification': return $53.DeleteNotificationRequest();
+      case 'ListUserMajorAndClass': return $54.ListUserMajorAndClasRequest();
+      case 'GetAggregationLiveUrl': return $54.GetAggregationLiveUrlRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1132,13 +1135,14 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
-      case 'ListNotification': return this.listNotification(ctx, request as $52.ListNotificationRequest);
-      case 'CountNotification': return this.countNotification(ctx, request as $52.CountNotificationRequest);
-      case 'ReadNotification': return this.readNotification(ctx, request as $52.ReadNotificationRequest);
-      case 'TestNotification': return this.testNotification(ctx, request as $52.TestNotificationRequest);
-      case 'DeleteNotification': return this.deleteNotification(ctx, request as $52.DeleteNotificationRequest);
-      case 'ListUserMajorAndClass': return this.listUserMajorAndClass(ctx, request as $53.ListUserMajorAndClasRequest);
-      case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $53.GetAggregationLiveUrlRequest);
+      case 'ListTeacherTaskTemplate': return this.listTeacherTaskTemplate(ctx, request as $52.ListTeacherTaskTemplateRequest);
+      case 'ListNotification': return this.listNotification(ctx, request as $53.ListNotificationRequest);
+      case 'CountNotification': return this.countNotification(ctx, request as $53.CountNotificationRequest);
+      case 'ReadNotification': return this.readNotification(ctx, request as $53.ReadNotificationRequest);
+      case 'TestNotification': return this.testNotification(ctx, request as $53.TestNotificationRequest);
+      case 'DeleteNotification': return this.deleteNotification(ctx, request as $53.DeleteNotificationRequest);
+      case 'ListUserMajorAndClass': return this.listUserMajorAndClass(ctx, request as $54.ListUserMajorAndClasRequest);
+      case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $54.GetAggregationLiveUrlRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
