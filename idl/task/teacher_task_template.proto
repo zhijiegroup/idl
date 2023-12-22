@@ -1,0 +1,38 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.task";
+option java_multiple_files = true;
+
+import "api.proto";
+import "base.proto";
+
+message TeacherTaskTemplateParameter {
+  int64 task_template_id = 1;
+  string task_parameter_key = 2;
+  string task_parameter_name = 3;
+  string task_parameter_value = 4;
+  string task_parameter_type = 5;
+}
+
+message TeacherTaskTemplate {
+  int64 task_template_id = 1;
+  string system_task_key = 2;
+  string task_name = 3;
+  string task_business_system = 4;
+  string task_business_module = 5;
+  string task_content = 6;
+  string task_requirements = 7;
+  string task_link = 8;
+  repeated TeacherTaskTemplateParameter task_parameters = 9;
+}
+
+message ListTeacherTaskTemplateRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListTeacherTaskTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  repeated TeacherTaskTemplate teacher_task_templates = 2;
+  base.PaginationResponse pagination = 100;
+}

@@ -58,6 +58,7 @@ import "app/app.proto";
 import "traffic/live_traffic.proto";
 import "role/role.proto";
 import "task/system_task.proto";
+import "task/teacher_task_template.proto";
 import "notification/notification.proto";
 
 service glory_api {
@@ -1363,6 +1364,10 @@ service glory_api {
   }
   rpc UpdateSystemTask(UpdateSystemTaskRequest) returns (UpdateSystemTaskResponse) {
     option (api.post) = '/api/task/update_system_task';
+  }
+  // 教师任务模板
+  rpc ListTeacherTaskTemplate(ListTeacherTaskTemplateRequest) returns (ListTeacherTaskTemplateResponse) {
+    option (api.post) = '/api/task/list_teacher_task_template';
   }
 
   // 通知模块
