@@ -36,3 +36,22 @@ export interface GetAggregationLiveUrlResponse {
   live_url?: string;
   mix_count?: string;
 }
+
+export interface GetLiveBoardDataRequest {
+  base_request?: base.BaseRequest;
+  clas_ids?: Array<string>;
+}
+
+export interface GetLiveBoardDataResponse {
+  base_resp?: base.BaseResponse;
+  total_amount?: string;
+  total_order?: string;
+  total_living?: string;
+  total_comment?: string;
+  like_rank?: Array<LiveLikeData>;
+}
+
+export interface LiveLikeData {
+  name?: string;
+  like_count?: string;
+}

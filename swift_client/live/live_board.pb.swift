@@ -144,6 +144,74 @@ struct GloryApi_GetAggregationLiveUrlResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_GetLiveBoardDataRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var clasIds: [Int64] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetLiveBoardDataResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var totalAmount: Int64 = 0
+
+  var totalOrder: Int64 = 0
+
+  var totalLiving: Int64 = 0
+
+  var totalComment: Int64 = 0
+
+  var likeRank: [GloryApi_LiveLikeData] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_LiveLikeData {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String = String()
+
+  var likeCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_ListUserMajorAndClasRequest: @unchecked Sendable {}
 extension GloryApi_ListUserMajorAndClasResponse: @unchecked Sendable {}
@@ -151,6 +219,9 @@ extension GloryApi_MajorData: @unchecked Sendable {}
 extension GloryApi_ClasData: @unchecked Sendable {}
 extension GloryApi_GetAggregationLiveUrlRequest: @unchecked Sendable {}
 extension GloryApi_GetAggregationLiveUrlResponse: @unchecked Sendable {}
+extension GloryApi_GetLiveBoardDataRequest: @unchecked Sendable {}
+extension GloryApi_GetLiveBoardDataResponse: @unchecked Sendable {}
+extension GloryApi_LiveLikeData: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -408,6 +479,152 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.liveURL != rhs.liveURL {return false}
     if lhs.mixCount != rhs.mixCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLiveBoardDataRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLiveBoardDataRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "clas_ids"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.clasIds) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.clasIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.clasIds, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLiveBoardDataRequest, rhs: GloryApi_GetLiveBoardDataRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.clasIds != rhs.clasIds {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetLiveBoardDataResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetLiveBoardDataResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "total_amount"),
+    3: .standard(proto: "total_order"),
+    4: .standard(proto: "total_living"),
+    5: .standard(proto: "total_comment"),
+    6: .standard(proto: "like_rank"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.totalAmount) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.totalOrder) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.totalLiving) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.totalComment) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.likeRank) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.totalAmount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalAmount, fieldNumber: 2)
+    }
+    if self.totalOrder != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalOrder, fieldNumber: 3)
+    }
+    if self.totalLiving != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalLiving, fieldNumber: 4)
+    }
+    if self.totalComment != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalComment, fieldNumber: 5)
+    }
+    if !self.likeRank.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.likeRank, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetLiveBoardDataResponse, rhs: GloryApi_GetLiveBoardDataResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.totalAmount != rhs.totalAmount {return false}
+    if lhs.totalOrder != rhs.totalOrder {return false}
+    if lhs.totalLiving != rhs.totalLiving {return false}
+    if lhs.totalComment != rhs.totalComment {return false}
+    if lhs.likeRank != rhs.likeRank {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_LiveLikeData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".LiveLikeData"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .standard(proto: "like_count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.likeCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if self.likeCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.likeCount, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_LiveLikeData, rhs: GloryApi_LiveLikeData) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.likeCount != rhs.likeCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

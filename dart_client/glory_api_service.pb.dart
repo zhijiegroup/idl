@@ -1136,5 +1136,8 @@ class glory_apiApi {
   $async.Future<$54.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $54.GetAggregationLiveUrlRequest request) =>
     _client.invoke<$54.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $54.GetAggregationLiveUrlResponse())
   ;
+  $async.Future<$54.GetLiveBoardDataResponse> getLiveBoardData($pb.ClientContext? ctx, $54.GetLiveBoardDataRequest request) =>
+    _client.invoke<$54.GetLiveBoardDataResponse>(ctx, 'glory_api', 'GetLiveBoardData', request, $54.GetLiveBoardDataResponse())
+  ;
 }
 

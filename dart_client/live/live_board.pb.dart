@@ -418,6 +418,246 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
   void clearMixCount() => clearField(3);
 }
 
+class GetLiveBoardDataRequest extends $pb.GeneratedMessage {
+  factory GetLiveBoardDataRequest({
+    $0.BaseRequest? baseRequest,
+    $core.Iterable<$fixnum.Int64>? clasIds,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (clasIds != null) {
+      $result.clasIds.addAll(clasIds);
+    }
+    return $result;
+  }
+  GetLiveBoardDataRequest._() : super();
+  factory GetLiveBoardDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLiveBoardDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardDataRequest clone() => GetLiveBoardDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardDataRequest copyWith(void Function(GetLiveBoardDataRequest) updates) => super.copyWith((message) => updates(message as GetLiveBoardDataRequest)) as GetLiveBoardDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardDataRequest create() => GetLiveBoardDataRequest._();
+  GetLiveBoardDataRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLiveBoardDataRequest> createRepeated() => $pb.PbList<GetLiveBoardDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLiveBoardDataRequest>(create);
+  static GetLiveBoardDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get clasIds => $_getList(1);
+}
+
+class GetLiveBoardDataResponse extends $pb.GeneratedMessage {
+  factory GetLiveBoardDataResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? totalAmount,
+    $fixnum.Int64? totalOrder,
+    $fixnum.Int64? totalLiving,
+    $fixnum.Int64? totalComment,
+    $core.Iterable<LiveLikeData>? likeRank,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalAmount != null) {
+      $result.totalAmount = totalAmount;
+    }
+    if (totalOrder != null) {
+      $result.totalOrder = totalOrder;
+    }
+    if (totalLiving != null) {
+      $result.totalLiving = totalLiving;
+    }
+    if (totalComment != null) {
+      $result.totalComment = totalComment;
+    }
+    if (likeRank != null) {
+      $result.likeRank.addAll(likeRank);
+    }
+    return $result;
+  }
+  GetLiveBoardDataResponse._() : super();
+  factory GetLiveBoardDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLiveBoardDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalAmount')
+    ..aInt64(3, _omitFieldNames ? '' : 'totalOrder')
+    ..aInt64(4, _omitFieldNames ? '' : 'totalLiving')
+    ..aInt64(5, _omitFieldNames ? '' : 'totalComment')
+    ..pc<LiveLikeData>(6, _omitFieldNames ? '' : 'likeRank', $pb.PbFieldType.PM, subBuilder: LiveLikeData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardDataResponse clone() => GetLiveBoardDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardDataResponse copyWith(void Function(GetLiveBoardDataResponse) updates) => super.copyWith((message) => updates(message as GetLiveBoardDataResponse)) as GetLiveBoardDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardDataResponse create() => GetLiveBoardDataResponse._();
+  GetLiveBoardDataResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLiveBoardDataResponse> createRepeated() => $pb.PbList<GetLiveBoardDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLiveBoardDataResponse>(create);
+  static GetLiveBoardDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalAmount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalAmount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalAmount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get totalOrder => $_getI64(2);
+  @$pb.TagNumber(3)
+  set totalOrder($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalOrder() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalOrder() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get totalLiving => $_getI64(3);
+  @$pb.TagNumber(4)
+  set totalLiving($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalLiving() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalLiving() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get totalComment => $_getI64(4);
+  @$pb.TagNumber(5)
+  set totalComment($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTotalComment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTotalComment() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<LiveLikeData> get likeRank => $_getList(5);
+}
+
+class LiveLikeData extends $pb.GeneratedMessage {
+  factory LiveLikeData({
+    $core.String? name,
+    $fixnum.Int64? likeCount,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (likeCount != null) {
+      $result.likeCount = likeCount;
+    }
+    return $result;
+  }
+  LiveLikeData._() : super();
+  factory LiveLikeData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveLikeData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveLikeData', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aInt64(2, _omitFieldNames ? '' : 'likeCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveLikeData clone() => LiveLikeData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveLikeData copyWith(void Function(LiveLikeData) updates) => super.copyWith((message) => updates(message as LiveLikeData)) as LiveLikeData;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveLikeData create() => LiveLikeData._();
+  LiveLikeData createEmptyInstance() => create();
+  static $pb.PbList<LiveLikeData> createRepeated() => $pb.PbList<LiveLikeData>();
+  @$core.pragma('dart2js:noInline')
+  static LiveLikeData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveLikeData>(create);
+  static LiveLikeData? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get likeCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set likeCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLikeCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLikeCount() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

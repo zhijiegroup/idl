@@ -44,6 +44,21 @@ public final class LiveBoard {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetAggregationLiveUrlResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveBoardDataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveBoardDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetLiveBoardDataResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetLiveBoardDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LiveLikeData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LiveLikeData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -67,8 +82,17 @@ public final class LiveBoard {
       "est\022\014\n\004page\030\002 \001(\003\022\017\n\007clas_id\030\003 \003(\003\"k\n\035Ge" +
       "tAggregationLiveUrlResponse\022%\n\tbase_resp" +
       "\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010live_url\030\002" +
-      " \001(\t\022\021\n\tmix_count\030\003 \001(\003B#\n\037com.zhijiejia" +
-      "oyu.glory_api.liveP\001b\006proto3"
+      " \001(\t\022\021\n\tmix_count\030\003 \001(\003\"T\n\027GetLiveBoardD" +
+      "ataRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\020\n\010clas_ids\030\002 \003(\003\"\305\001\n\030GetLiv" +
+      "eBoardDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022\024\n\014total_amount\030\002 \001(\003\022" +
+      "\023\n\013total_order\030\003 \001(\003\022\024\n\014total_living\030\004 \001" +
+      "(\003\022\025\n\rtotal_comment\030\005 \001(\003\022*\n\tlike_rank\030\006" +
+      " \003(\0132\027.glory_api.LiveLikeData\"0\n\014LiveLik" +
+      "eData\022\014\n\004name\030\001 \001(\t\022\022\n\nlike_count\030\002 \001(\003B" +
+      "#\n\037com.zhijiejiaoyu.glory_api.liveP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -111,6 +135,24 @@ public final class LiveBoard {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAggregationLiveUrlResponse_descriptor,
         new java.lang.String[] { "BaseResp", "LiveUrl", "MixCount", });
+    internal_static_glory_api_GetLiveBoardDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_glory_api_GetLiveBoardDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveBoardDataRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ClasIds", });
+    internal_static_glory_api_GetLiveBoardDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_glory_api_GetLiveBoardDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetLiveBoardDataResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TotalAmount", "TotalOrder", "TotalLiving", "TotalComment", "LikeRank", });
+    internal_static_glory_api_LiveLikeData_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_LiveLikeData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LiveLikeData_descriptor,
+        new java.lang.String[] { "Name", "LikeCount", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

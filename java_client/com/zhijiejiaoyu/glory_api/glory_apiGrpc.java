@@ -10989,6 +10989,37 @@ public final class glory_apiGrpc {
     return getGetAggregationLiveUrlMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> getGetLiveBoardDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLiveBoardData",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> getGetLiveBoardDataMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest, com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> getGetLiveBoardDataMethod;
+    if ((getGetLiveBoardDataMethod = glory_apiGrpc.getGetLiveBoardDataMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLiveBoardDataMethod = glory_apiGrpc.getGetLiveBoardDataMethod) == null) {
+          glory_apiGrpc.getGetLiveBoardDataMethod = getGetLiveBoardDataMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest, com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLiveBoardData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLiveBoardData"))
+              .build();
+        }
+      }
+    }
+    return getGetLiveBoardDataMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -13868,6 +13899,13 @@ public final class glory_apiGrpc {
     default void getAggregationLiveUrl(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAggregationLiveUrlMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getLiveBoardData(com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveBoardDataMethod(), responseObserver);
     }
   }
 
@@ -17084,6 +17122,14 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAggregationLiveUrlMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getLiveBoardData(com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLiveBoardDataMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -19933,6 +19979,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse getAggregationLiveUrl(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAggregationLiveUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse getLiveBoardData(com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveBoardDataMethod(), getCallOptions(), request);
     }
   }
 
@@ -23138,6 +23191,14 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAggregationLiveUrlMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> getLiveBoardData(
+        com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLiveBoardDataMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -23494,6 +23555,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_DELETE_NOTIFICATION = 351;
   private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 352;
   private static final int METHODID_GET_AGGREGATION_LIVE_URL = 353;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 354;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -24927,6 +24989,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_AGGREGATION_LIVE_URL:
           serviceImpl.getAggregationLiveUrl((com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_BOARD_DATA:
+          serviceImpl.getLiveBoardData((com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -27424,6 +27490,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest,
               com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse>(
                 service, METHODID_GET_AGGREGATION_LIVE_URL)))
+        .addMethod(
+          getGetLiveBoardDataMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest,
+              com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse>(
+                service, METHODID_GET_LIVE_BOARD_DATA)))
         .build();
   }
 
@@ -27826,6 +27899,7 @@ public final class glory_apiGrpc {
               .addMethod(getDeleteNotificationMethod())
               .addMethod(getListUserMajorAndClassMethod())
               .addMethod(getGetAggregationLiveUrlMethod())
+              .addMethod(getGetLiveBoardDataMethod())
               .build();
         }
       }

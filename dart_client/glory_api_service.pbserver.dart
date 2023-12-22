@@ -429,6 +429,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$53.DeleteNotificationResponse> deleteNotification($pb.ServerContext ctx, $53.DeleteNotificationRequest request);
   $async.Future<$54.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ServerContext ctx, $54.ListUserMajorAndClasRequest request);
   $async.Future<$54.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ServerContext ctx, $54.GetAggregationLiveUrlRequest request);
+  $async.Future<$54.GetLiveBoardDataResponse> getLiveBoardData($pb.ServerContext ctx, $54.GetLiveBoardDataRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -786,6 +787,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteNotification': return $53.DeleteNotificationRequest();
       case 'ListUserMajorAndClass': return $54.ListUserMajorAndClasRequest();
       case 'GetAggregationLiveUrl': return $54.GetAggregationLiveUrlRequest();
+      case 'GetLiveBoardData': return $54.GetLiveBoardDataRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1146,6 +1148,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteNotification': return this.deleteNotification(ctx, request as $53.DeleteNotificationRequest);
       case 'ListUserMajorAndClass': return this.listUserMajorAndClass(ctx, request as $54.ListUserMajorAndClasRequest);
       case 'GetAggregationLiveUrl': return this.getAggregationLiveUrl(ctx, request as $54.GetAggregationLiveUrlRequest);
+      case 'GetLiveBoardData': return this.getLiveBoardData(ctx, request as $54.GetLiveBoardDataRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

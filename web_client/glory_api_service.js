@@ -2837,6 +2837,14 @@ export class glory_api {
       handleResponse
     );
   }
+
+  GetLiveBoardData(request) {
+    const uri = `${this.uriPrefix}/api/live/get_board_data`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

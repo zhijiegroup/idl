@@ -1594,6 +1594,10 @@ CreateLivePlanProduct create live plan product */
   GetAggregationLiveUrl(
     request: live_board.GetAggregationLiveUrlRequest
   ): Promise<live_board.GetAggregationLiveUrlResponse>;
+
+  GetLiveBoardData(
+    request: live_board.GetLiveBoardDataRequest
+  ): Promise<live_board.GetLiveBoardDataResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

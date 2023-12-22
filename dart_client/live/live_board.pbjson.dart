@@ -103,3 +103,52 @@ final $typed_data.Uint8List getAggregationLiveUrlResponseDescriptor = $convert.b
     'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASGQoIbGl2ZV91cmwYAiABKAlSB2xpdmVVcmwSGwoJ'
     'bWl4X2NvdW50GAMgASgDUghtaXhDb3VudA==');
 
+@$core.Deprecated('Use getLiveBoardDataRequestDescriptor instead')
+const GetLiveBoardDataRequest$json = {
+  '1': 'GetLiveBoardDataRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'clas_ids', '3': 2, '4': 3, '5': 3, '10': 'clasIds'},
+  ],
+};
+
+/// Descriptor for `GetLiveBoardDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveBoardDataRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRMaXZlQm9hcmREYXRhUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIZCghjbGFzX2lkcxgCIAMoA1IHY2xhc0lkcw==');
+
+@$core.Deprecated('Use getLiveBoardDataResponseDescriptor instead')
+const GetLiveBoardDataResponse$json = {
+  '1': 'GetLiveBoardDataResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_amount', '3': 2, '4': 1, '5': 3, '10': 'totalAmount'},
+    {'1': 'total_order', '3': 3, '4': 1, '5': 3, '10': 'totalOrder'},
+    {'1': 'total_living', '3': 4, '4': 1, '5': 3, '10': 'totalLiving'},
+    {'1': 'total_comment', '3': 5, '4': 1, '5': 3, '10': 'totalComment'},
+    {'1': 'like_rank', '3': 6, '4': 3, '5': 11, '6': '.glory_api.LiveLikeData', '10': 'likeRank'},
+  ],
+};
+
+/// Descriptor for `GetLiveBoardDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveBoardDataResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRMaXZlQm9hcmREYXRhUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEiEKDHRvdGFsX2Ftb3VudBgCIAEoA1ILdG90YWxBbW91bnQS'
+    'HwoLdG90YWxfb3JkZXIYAyABKANSCnRvdGFsT3JkZXISIQoMdG90YWxfbGl2aW5nGAQgASgDUg'
+    't0b3RhbExpdmluZxIjCg10b3RhbF9jb21tZW50GAUgASgDUgx0b3RhbENvbW1lbnQSNAoJbGlr'
+    'ZV9yYW5rGAYgAygLMhcuZ2xvcnlfYXBpLkxpdmVMaWtlRGF0YVIIbGlrZVJhbms=');
+
+@$core.Deprecated('Use liveLikeDataDescriptor instead')
+const LiveLikeData$json = {
+  '1': 'LiveLikeData',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'like_count', '3': 2, '4': 1, '5': 3, '10': 'likeCount'},
+  ],
+};
+
+/// Descriptor for `LiveLikeData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveLikeDataDescriptor = $convert.base64Decode(
+    'CgxMaXZlTGlrZURhdGESEgoEbmFtZRgBIAEoCVIEbmFtZRIdCgpsaWtlX2NvdW50GAIgASgDUg'
+    'lsaWtlQ291bnQ=');
+

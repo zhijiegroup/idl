@@ -427,6 +427,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'DeleteNotification', '2': '.glory_api.DeleteNotificationRequest', '3': '.glory_api.DeleteNotificationResponse', '4': {}},
     {'1': 'ListUserMajorAndClass', '2': '.glory_api.ListUserMajorAndClasRequest', '3': '.glory_api.ListUserMajorAndClasResponse', '4': {}},
     {'1': 'GetAggregationLiveUrl', '2': '.glory_api.GetAggregationLiveUrlRequest', '3': '.glory_api.GetAggregationLiveUrlResponse', '4': {}},
+    {'1': 'GetLiveBoardData', '2': '.glory_api.GetLiveBoardDataRequest', '3': '.glory_api.GetLiveBoardDataResponse', '4': {}},
   ],
 };
 
@@ -1330,6 +1331,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ClasData': $54.ClasData$json,
   '.glory_api.GetAggregationLiveUrlRequest': $54.GetAggregationLiveUrlRequest$json,
   '.glory_api.GetAggregationLiveUrlResponse': $54.GetAggregationLiveUrlResponse$json,
+  '.glory_api.GetLiveBoardDataRequest': $54.GetLiveBoardDataRequest$json,
+  '.glory_api.GetLiveBoardDataResponse': $54.GetLiveBoardDataResponse$json,
+  '.glory_api.LiveLikeData': $54.LiveLikeData$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2134,5 +2138,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     '1ham9yQW5kQ2xhc1Jlc3BvbnNlIiLKwRgeL2FwaS9saXZlL2xpc3RfbWFqb3JfYW5kX2NsYXNz'
     'Eo4BChVHZXRBZ2dyZWdhdGlvbkxpdmVVcmwSJy5nbG9yeV9hcGkuR2V0QWdncmVnYXRpb25MaX'
     'ZlVXJsUmVxdWVzdBooLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZSIi'
-    '0sEYHi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybA==');
+    '0sEYHi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybBJ5ChBHZXRMaXZlQm9hcmREYXRhEi'
+    'IuZ2xvcnlfYXBpLkdldExpdmVCb2FyZERhdGFSZXF1ZXN0GiMuZ2xvcnlfYXBpLkdldExpdmVC'
+    'b2FyZERhdGFSZXNwb25zZSIc0sEYGC9hcGkvbGl2ZS9nZXRfYm9hcmRfZGF0YQ==');
 
