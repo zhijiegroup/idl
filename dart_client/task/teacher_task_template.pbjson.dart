@@ -95,6 +95,35 @@ final $typed_data.Uint8List createTeacherTaskTemplateResponseDescriptor = $conve
     'CiFDcmVhdGVUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
     'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use updateTeacherTaskTemplateRequestDescriptor instead')
+const UpdateTeacherTaskTemplateRequest$json = {
+  '1': 'UpdateTeacherTaskTemplateRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teacher_task_template', '3': 2, '4': 1, '5': 11, '6': '.glory_api.TeacherTaskTemplate', '10': 'teacherTaskTemplate'},
+  ],
+};
+
+/// Descriptor for `UpdateTeacherTaskTemplateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTeacherTaskTemplateRequestDescriptor = $convert.base64Decode(
+    'CiBVcGRhdGVUZWFjaGVyVGFza1RlbXBsYXRlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBJSChV0ZWFjaGVyX3Rhc2tfdGVtcGxh'
+    'dGUYAiABKAsyHi5nbG9yeV9hcGkuVGVhY2hlclRhc2tUZW1wbGF0ZVITdGVhY2hlclRhc2tUZW'
+    '1wbGF0ZQ==');
+
+@$core.Deprecated('Use updateTeacherTaskTemplateResponseDescriptor instead')
+const UpdateTeacherTaskTemplateResponse$json = {
+  '1': 'UpdateTeacherTaskTemplateResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateTeacherTaskTemplateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTeacherTaskTemplateResponseDescriptor = $convert.base64Decode(
+    'CiFVcGRhdGVUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
 @$core.Deprecated('Use listTeacherTaskTemplateRequestDescriptor instead')
 const ListTeacherTaskTemplateRequest$json = {
   '1': 'ListTeacherTaskTemplateRequest',

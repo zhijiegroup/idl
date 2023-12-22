@@ -35,6 +35,16 @@ public final class TeacherTaskTemplateOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CreateTeacherTaskTemplateResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTeacherTaskTemplateRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTeacherTaskTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTeacherTaskTemplateResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTeacherTaskTemplateResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ListTeacherTaskTemplateRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -79,16 +89,22 @@ public final class TeacherTaskTemplateOuterClass {
       "ase.BaseRequest\022=\n\025teacher_task_template" +
       "\030\002 \001(\0132\036.glory_api.TeacherTaskTemplate\"J" +
       "\n!CreateTeacherTaskTemplateResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"v\n\036Li" +
-      "stTeacherTaskTemplateRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginat" +
-      "ion\030d \001(\0132\027.base.PaginationRequest\"\266\001\n\037L" +
-      "istTeacherTaskTemplateResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022>\n\026teacher" +
-      "_task_templates\030\002 \003(\0132\036.glory_api.Teache" +
-      "rTaskTemplate\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponseB#\n\037com.zhijiejiaoyu." +
-      "glory_api.taskP\001b\006proto3"
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\212\001\n U" +
+      "pdateTeacherTaskTemplateRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022=\n\025teac" +
+      "her_task_template\030\002 \001(\0132\036.glory_api.Teac" +
+      "herTaskTemplate\"J\n!UpdateTeacherTaskTemp" +
+      "lateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"v\n\036ListTeacherTaskTemplateRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\266\001\n\037ListTeacherTaskTemplateR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022>\n\026teacher_task_templates\030\002 \003(\0132\036" +
+      ".glory_api.TeacherTaskTemplate\022,\n\npagina" +
+      "tion\030d \001(\0132\030.base.PaginationResponseB#\n\037" +
+      "com.zhijiejiaoyu.glory_api.taskP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -120,14 +136,26 @@ public final class TeacherTaskTemplateOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateTeacherTaskTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_ListTeacherTaskTemplateRequest_descriptor =
+    internal_static_glory_api_UpdateTeacherTaskTemplateRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_UpdateTeacherTaskTemplateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTeacherTaskTemplateRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TeacherTaskTemplate", });
+    internal_static_glory_api_UpdateTeacherTaskTemplateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_UpdateTeacherTaskTemplateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTeacherTaskTemplateResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListTeacherTaskTemplateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListTeacherTaskTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskTemplateRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListTeacherTaskTemplateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListTeacherTaskTemplateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskTemplateResponse_descriptor,
