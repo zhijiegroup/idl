@@ -34,3 +34,22 @@ message GetAggregationLiveUrlResponse {
     string live_url = 2;
     int64 mix_count = 3;
 }
+
+message GetLiveBoardDataRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 clas_ids = 2;
+}
+
+message GetLiveBoardDataResponse {
+    base.BaseResponse base_resp = 1;
+    int64 total_amount = 2;
+    int64 total_order = 3;
+    int64 total_living = 4;
+    int64 total_comment = 5;
+    repeated LiveLikeData like_rank = 6;
+}
+
+message LiveLikeData {
+    string name = 1;
+    int64 like_count = 2;
+}

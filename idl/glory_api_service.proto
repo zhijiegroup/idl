@@ -1399,4 +1399,8 @@ service glory_api {
   rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
     option (api.post) = '/api/live/aggregation_live_url';
   }
+
+  rpc GetLiveBoardData(GetLiveBoardDataRequest) returns (GetLiveBoardDataResponse) {
+    option (api.post) = '/api/live/get_board_data';
+  }
 }
