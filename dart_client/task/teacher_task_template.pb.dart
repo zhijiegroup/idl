@@ -278,6 +278,126 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
   $core.List<TeacherTaskTemplateParameter> get taskParameters => $_getList(8);
 }
 
+class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
+  factory CreateTeacherTaskTemplateRequest({
+    $0.BaseRequest? baseRequest,
+    TeacherTaskTemplate? teacherTaskTemplate,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (teacherTaskTemplate != null) {
+      $result.teacherTaskTemplate = teacherTaskTemplate;
+    }
+    return $result;
+  }
+  CreateTeacherTaskTemplateRequest._() : super();
+  factory CreateTeacherTaskTemplateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<TeacherTaskTemplate>(2, _omitFieldNames ? '' : 'teacherTaskTemplate', subBuilder: TeacherTaskTemplate.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateTeacherTaskTemplateRequest clone() => CreateTeacherTaskTemplateRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateTeacherTaskTemplateRequest copyWith(void Function(CreateTeacherTaskTemplateRequest) updates) => super.copyWith((message) => updates(message as CreateTeacherTaskTemplateRequest)) as CreateTeacherTaskTemplateRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateTeacherTaskTemplateRequest create() => CreateTeacherTaskTemplateRequest._();
+  CreateTeacherTaskTemplateRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateTeacherTaskTemplateRequest> createRepeated() => $pb.PbList<CreateTeacherTaskTemplateRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateTeacherTaskTemplateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateTeacherTaskTemplateRequest>(create);
+  static CreateTeacherTaskTemplateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  TeacherTaskTemplate get teacherTaskTemplate => $_getN(1);
+  @$pb.TagNumber(2)
+  set teacherTaskTemplate(TeacherTaskTemplate v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeacherTaskTemplate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeacherTaskTemplate() => clearField(2);
+  @$pb.TagNumber(2)
+  TeacherTaskTemplate ensureTeacherTaskTemplate() => $_ensure(1);
+}
+
+class CreateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
+  factory CreateTeacherTaskTemplateResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  CreateTeacherTaskTemplateResponse._() : super();
+  factory CreateTeacherTaskTemplateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateTeacherTaskTemplateResponse clone() => CreateTeacherTaskTemplateResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateTeacherTaskTemplateResponse copyWith(void Function(CreateTeacherTaskTemplateResponse) updates) => super.copyWith((message) => updates(message as CreateTeacherTaskTemplateResponse)) as CreateTeacherTaskTemplateResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateTeacherTaskTemplateResponse create() => CreateTeacherTaskTemplateResponse._();
+  CreateTeacherTaskTemplateResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateTeacherTaskTemplateResponse> createRepeated() => $pb.PbList<CreateTeacherTaskTemplateResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateTeacherTaskTemplateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateTeacherTaskTemplateResponse>(create);
+  static CreateTeacherTaskTemplateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory ListTeacherTaskTemplateRequest({
     $0.BaseRequest? baseRequest,

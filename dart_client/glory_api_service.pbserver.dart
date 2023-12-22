@@ -420,6 +420,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
+  $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ServerContext ctx, $52.CreateTeacherTaskTemplateRequest request);
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ServerContext ctx, $52.ListTeacherTaskTemplateRequest request);
   $async.Future<$53.ListNotificationResponse> listNotification($pb.ServerContext ctx, $53.ListNotificationRequest request);
   $async.Future<$53.CountNotificationResponse> countNotification($pb.ServerContext ctx, $53.CountNotificationRequest request);
@@ -776,6 +777,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return $46.GetLatestVersionRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
+      case 'CreateTeacherTaskTemplate': return $52.CreateTeacherTaskTemplateRequest();
       case 'ListTeacherTaskTemplate': return $52.ListTeacherTaskTemplateRequest();
       case 'ListNotification': return $53.ListNotificationRequest();
       case 'CountNotification': return $53.CountNotificationRequest();
@@ -1135,6 +1137,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
+      case 'CreateTeacherTaskTemplate': return this.createTeacherTaskTemplate(ctx, request as $52.CreateTeacherTaskTemplateRequest);
       case 'ListTeacherTaskTemplate': return this.listTeacherTaskTemplate(ctx, request as $52.ListTeacherTaskTemplateRequest);
       case 'ListNotification': return this.listNotification(ctx, request as $53.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $53.CountNotificationRequest);

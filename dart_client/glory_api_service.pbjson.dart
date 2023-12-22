@@ -418,6 +418,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetLatestVersion', '2': '.glory_api.GetLatestVersionRequest', '3': '.glory_api.GetLatestVersionResponse', '4': {}},
     {'1': 'ListSystemTask', '2': '.glory_api.ListSystemTaskRequest', '3': '.glory_api.ListSystemTaskResponse', '4': {}},
     {'1': 'UpdateSystemTask', '2': '.glory_api.UpdateSystemTaskRequest', '3': '.glory_api.UpdateSystemTaskResponse', '4': {}},
+    {'1': 'CreateTeacherTaskTemplate', '2': '.glory_api.CreateTeacherTaskTemplateRequest', '3': '.glory_api.CreateTeacherTaskTemplateResponse', '4': {}},
     {'1': 'ListTeacherTaskTemplate', '2': '.glory_api.ListTeacherTaskTemplateRequest', '3': '.glory_api.ListTeacherTaskTemplateResponse', '4': {}},
     {'1': 'ListNotification', '2': '.glory_api.ListNotificationRequest', '3': '.glory_api.ListNotificationResponse', '4': {}},
     {'1': 'CountNotification', '2': '.glory_api.CountNotificationRequest', '3': '.glory_api.CountNotificationResponse', '4': {}},
@@ -1305,10 +1306,12 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.SystemTaskParameter': $51.SystemTaskParameter$json,
   '.glory_api.UpdateSystemTaskRequest': $51.UpdateSystemTaskRequest$json,
   '.glory_api.UpdateSystemTaskResponse': $51.UpdateSystemTaskResponse$json,
-  '.glory_api.ListTeacherTaskTemplateRequest': $52.ListTeacherTaskTemplateRequest$json,
-  '.glory_api.ListTeacherTaskTemplateResponse': $52.ListTeacherTaskTemplateResponse$json,
+  '.glory_api.CreateTeacherTaskTemplateRequest': $52.CreateTeacherTaskTemplateRequest$json,
   '.glory_api.TeacherTaskTemplate': $52.TeacherTaskTemplate$json,
   '.glory_api.TeacherTaskTemplateParameter': $52.TeacherTaskTemplateParameter$json,
+  '.glory_api.CreateTeacherTaskTemplateResponse': $52.CreateTeacherTaskTemplateResponse$json,
+  '.glory_api.ListTeacherTaskTemplateRequest': $52.ListTeacherTaskTemplateRequest$json,
+  '.glory_api.ListTeacherTaskTemplateResponse': $52.ListTeacherTaskTemplateResponse$json,
   '.glory_api.ListNotificationRequest': $53.ListNotificationRequest$json,
   '.glory_api.ListNotificationResponse': $53.ListNotificationResponse$json,
   '.glory_api.Notification': $53.Notification$json,
@@ -2109,24 +2112,27 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'QaIS5nbG9yeV9hcGkuTGlzdFN5c3RlbVRhc2tSZXNwb25zZSIeysEYGi9hcGkvdGFzay9saXN0'
     'X3N5c3RlbV90YXNrEn0KEFVwZGF0ZVN5c3RlbVRhc2sSIi5nbG9yeV9hcGkuVXBkYXRlU3lzdG'
     'VtVGFza1JlcXVlc3QaIy5nbG9yeV9hcGkuVXBkYXRlU3lzdGVtVGFza1Jlc3BvbnNlIiDSwRgc'
-    'L2FwaS90YXNrL3VwZGF0ZV9zeXN0ZW1fdGFzaxKaAQoXTGlzdFRlYWNoZXJUYXNrVGVtcGxhdG'
-    'USKS5nbG9yeV9hcGkuTGlzdFRlYWNoZXJUYXNrVGVtcGxhdGVSZXF1ZXN0GiouZ2xvcnlfYXBp'
-    'Lkxpc3RUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2UiKNLBGCQvYXBpL3Rhc2svbGlzdF90ZW'
-    'FjaGVyX3Rhc2tfdGVtcGxhdGUSdwoQTGlzdE5vdGlmaWNhdGlvbhIiLmdsb3J5X2FwaS5MaXN0'
-    'Tm90aWZpY2F0aW9uUmVxdWVzdBojLmdsb3J5X2FwaS5MaXN0Tm90aWZpY2F0aW9uUmVzcG9uc2'
-    'UiGtLBGBYvYXBpL25vdGlmaWNhdGlvbi9saXN0EnsKEUNvdW50Tm90aWZpY2F0aW9uEiMuZ2xv'
-    'cnlfYXBpLkNvdW50Tm90aWZpY2F0aW9uUmVxdWVzdBokLmdsb3J5X2FwaS5Db3VudE5vdGlmaW'
-    'NhdGlvblJlc3BvbnNlIhvKwRgXL2FwaS9ub3RpZmljYXRpb24vY291bnQSdwoQUmVhZE5vdGlm'
-    'aWNhdGlvbhIiLmdsb3J5X2FwaS5SZWFkTm90aWZpY2F0aW9uUmVxdWVzdBojLmdsb3J5X2FwaS'
-    '5SZWFkTm90aWZpY2F0aW9uUmVzcG9uc2UiGtLBGBYvYXBpL25vdGlmaWNhdGlvbi9yZWFkEncK'
-    'EFRlc3ROb3RpZmljYXRpb24SIi5nbG9yeV9hcGkuVGVzdE5vdGlmaWNhdGlvblJlcXVlc3QaIy'
-    '5nbG9yeV9hcGkuVGVzdE5vdGlmaWNhdGlvblJlc3BvbnNlIhrSwRgWL2FwaS9ub3RpZmljYXRp'
-    'b24vdGVzdBJ/ChJEZWxldGVOb3RpZmljYXRpb24SJC5nbG9yeV9hcGkuRGVsZXRlTm90aWZpY2'
-    'F0aW9uUmVxdWVzdBolLmdsb3J5X2FwaS5EZWxldGVOb3RpZmljYXRpb25SZXNwb25zZSIc0sEY'
-    'GC9hcGkvbm90aWZpY2F0aW9uL2RlbGV0ZRKMAQoVTGlzdFVzZXJNYWpvckFuZENsYXNzEiYuZ2'
-    'xvcnlfYXBpLkxpc3RVc2VyTWFqb3JBbmRDbGFzUmVxdWVzdBonLmdsb3J5X2FwaS5MaXN0VXNl'
-    'ck1ham9yQW5kQ2xhc1Jlc3BvbnNlIiLKwRgeL2FwaS9saXZlL2xpc3RfbWFqb3JfYW5kX2NsYX'
-    'NzEo4BChVHZXRBZ2dyZWdhdGlvbkxpdmVVcmwSJy5nbG9yeV9hcGkuR2V0QWdncmVnYXRpb25M'
-    'aXZlVXJsUmVxdWVzdBooLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZS'
-    'Ii0sEYHi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybA==');
+    'L2FwaS90YXNrL3VwZGF0ZV9zeXN0ZW1fdGFzaxKiAQoZQ3JlYXRlVGVhY2hlclRhc2tUZW1wbG'
+    'F0ZRIrLmdsb3J5X2FwaS5DcmVhdGVUZWFjaGVyVGFza1RlbXBsYXRlUmVxdWVzdBosLmdsb3J5'
+    'X2FwaS5DcmVhdGVUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2UiKtLBGCYvYXBpL3Rhc2svY3'
+    'JlYXRlX3RlYWNoZXJfdGFza190ZW1wbGF0ZRKaAQoXTGlzdFRlYWNoZXJUYXNrVGVtcGxhdGUS'
+    'KS5nbG9yeV9hcGkuTGlzdFRlYWNoZXJUYXNrVGVtcGxhdGVSZXF1ZXN0GiouZ2xvcnlfYXBpLk'
+    'xpc3RUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2UiKNLBGCQvYXBpL3Rhc2svbGlzdF90ZWFj'
+    'aGVyX3Rhc2tfdGVtcGxhdGUSdwoQTGlzdE5vdGlmaWNhdGlvbhIiLmdsb3J5X2FwaS5MaXN0Tm'
+    '90aWZpY2F0aW9uUmVxdWVzdBojLmdsb3J5X2FwaS5MaXN0Tm90aWZpY2F0aW9uUmVzcG9uc2Ui'
+    'GtLBGBYvYXBpL25vdGlmaWNhdGlvbi9saXN0EnsKEUNvdW50Tm90aWZpY2F0aW9uEiMuZ2xvcn'
+    'lfYXBpLkNvdW50Tm90aWZpY2F0aW9uUmVxdWVzdBokLmdsb3J5X2FwaS5Db3VudE5vdGlmaWNh'
+    'dGlvblJlc3BvbnNlIhvKwRgXL2FwaS9ub3RpZmljYXRpb24vY291bnQSdwoQUmVhZE5vdGlmaW'
+    'NhdGlvbhIiLmdsb3J5X2FwaS5SZWFkTm90aWZpY2F0aW9uUmVxdWVzdBojLmdsb3J5X2FwaS5S'
+    'ZWFkTm90aWZpY2F0aW9uUmVzcG9uc2UiGtLBGBYvYXBpL25vdGlmaWNhdGlvbi9yZWFkEncKEF'
+    'Rlc3ROb3RpZmljYXRpb24SIi5nbG9yeV9hcGkuVGVzdE5vdGlmaWNhdGlvblJlcXVlc3QaIy5n'
+    'bG9yeV9hcGkuVGVzdE5vdGlmaWNhdGlvblJlc3BvbnNlIhrSwRgWL2FwaS9ub3RpZmljYXRpb2'
+    '4vdGVzdBJ/ChJEZWxldGVOb3RpZmljYXRpb24SJC5nbG9yeV9hcGkuRGVsZXRlTm90aWZpY2F0'
+    'aW9uUmVxdWVzdBolLmdsb3J5X2FwaS5EZWxldGVOb3RpZmljYXRpb25SZXNwb25zZSIc0sEYGC'
+    '9hcGkvbm90aWZpY2F0aW9uL2RlbGV0ZRKMAQoVTGlzdFVzZXJNYWpvckFuZENsYXNzEiYuZ2xv'
+    'cnlfYXBpLkxpc3RVc2VyTWFqb3JBbmRDbGFzUmVxdWVzdBonLmdsb3J5X2FwaS5MaXN0VXNlck'
+    '1ham9yQW5kQ2xhc1Jlc3BvbnNlIiLKwRgeL2FwaS9saXZlL2xpc3RfbWFqb3JfYW5kX2NsYXNz'
+    'Eo4BChVHZXRBZ2dyZWdhdGlvbkxpdmVVcmwSJy5nbG9yeV9hcGkuR2V0QWdncmVnYXRpb25MaX'
+    'ZlVXJsUmVxdWVzdBooLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZSIi'
+    '0sEYHi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybA==');
 

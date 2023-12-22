@@ -26,60 +26,60 @@ public interface TeacherTaskTemplateOrBuilder extends
       getSystemTaskKeyBytes();
 
   /**
-   * <code>string task_name = 3;</code>
+   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskName.
    */
   java.lang.String getTaskName();
   /**
-   * <code>string task_name = 3;</code>
+   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskName.
    */
   com.google.protobuf.ByteString
       getTaskNameBytes();
 
   /**
-   * <code>string task_business_system = 4;</code>
+   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessSystem.
    */
   java.lang.String getTaskBusinessSystem();
   /**
-   * <code>string task_business_system = 4;</code>
+   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessSystem.
    */
   com.google.protobuf.ByteString
       getTaskBusinessSystemBytes();
 
   /**
-   * <code>string task_business_module = 5;</code>
+   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskBusinessModule.
    */
   java.lang.String getTaskBusinessModule();
   /**
-   * <code>string task_business_module = 5;</code>
+   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskBusinessModule.
    */
   com.google.protobuf.ByteString
       getTaskBusinessModuleBytes();
 
   /**
-   * <code>string task_content = 6;</code>
+   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskContent.
    */
   java.lang.String getTaskContent();
   /**
-   * <code>string task_content = 6;</code>
+   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskContent.
    */
   com.google.protobuf.ByteString
       getTaskContentBytes();
 
   /**
-   * <code>string task_requirements = 7;</code>
+   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The taskRequirements.
    */
   java.lang.String getTaskRequirements();
   /**
-   * <code>string task_requirements = 7;</code>
+   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
    * @return The bytes for taskRequirements.
    */
   com.google.protobuf.ByteString

@@ -1556,6 +1556,10 @@ CreateLivePlanProduct create live plan product */
   ): Promise<system_task.UpdateSystemTaskResponse>;
 
   /** 教师任务模板 */
+  CreateTeacherTaskTemplate(
+    request: teacher_task_template.CreateTeacherTaskTemplateRequest
+  ): Promise<teacher_task_template.CreateTeacherTaskTemplateResponse>;
+
   ListTeacherTaskTemplate(
     request: teacher_task_template.ListTeacherTaskTemplateRequest
   ): Promise<teacher_task_template.ListTeacherTaskTemplateResponse>;

@@ -26,6 +26,15 @@ export interface TeacherTaskTemplate {
   task_parameters?: Array<TeacherTaskTemplateParameter>;
 }
 
+export interface CreateTeacherTaskTemplateRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_template?: TeacherTaskTemplate;
+}
+
+export interface CreateTeacherTaskTemplateResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface ListTeacherTaskTemplateRequest {
   base_request?: base.BaseRequest;
   pagination?: base.PaginationRequest;

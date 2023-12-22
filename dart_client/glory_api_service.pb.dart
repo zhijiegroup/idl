@@ -1109,6 +1109,9 @@ class glory_apiApi {
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $51.UpdateSystemTaskRequest request) =>
     _client.invoke<$51.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $51.UpdateSystemTaskResponse())
   ;
+  $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ClientContext? ctx, $52.CreateTeacherTaskTemplateRequest request) =>
+    _client.invoke<$52.CreateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'CreateTeacherTaskTemplate', request, $52.CreateTeacherTaskTemplateResponse())
+  ;
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ClientContext? ctx, $52.ListTeacherTaskTemplateRequest request) =>
     _client.invoke<$52.ListTeacherTaskTemplateResponse>(ctx, 'glory_api', 'ListTeacherTaskTemplate', request, $52.ListTeacherTaskTemplateResponse())
   ;
