@@ -1369,6 +1369,9 @@ service glory_api {
   rpc CreateTeacherTaskTemplate(CreateTeacherTaskTemplateRequest) returns (CreateTeacherTaskTemplateResponse) {
     option (api.post) = '/api/task/create_teacher_task_template';
   }
+  rpc UpdateTeacherTaskTemplate(UpdateTeacherTaskTemplateRequest) returns (UpdateTeacherTaskTemplateResponse) {
+    option (api.post) = '/api/task/update_teacher_task_template';
+  }
   rpc ListTeacherTaskTemplate(ListTeacherTaskTemplateRequest) returns (ListTeacherTaskTemplateResponse) {
     option (api.post) = '/api/task/list_teacher_task_template';
   }
