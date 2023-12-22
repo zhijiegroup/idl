@@ -9,21 +9,30 @@ import "base.proto";
 message TeacherTaskTemplateParameter {
   int64 task_template_id = 1;
   string task_parameter_key = 2;
-  string task_parameter_name = 3;
-  string task_parameter_value = 4;
+  string task_parameter_name = 3[(api.vd)="@:len($)>0;msg:'参数名称不能为空'"];
+  string task_parameter_value = 4[(api.vd)="@:len($)>0;msg:'参数值不能为空'"];
   string task_parameter_type = 5;
 }
 
 message TeacherTaskTemplate {
   int64 task_template_id = 1;
   string system_task_key = 2;
-  string task_name = 3;
-  string task_business_system = 4;
-  string task_business_module = 5;
-  string task_content = 6;
-  string task_requirements = 7;
+  string task_name = 3[(api.vd) = "@:len($)>0;msg:'任务名称不能为空'"];
+  string task_business_system = 4[(api.vd) = "@:len($)>0;msg:'系统名称不能为空'"];
+  string task_business_module = 5[(api.vd) = "@:len($)>0;msg:'模块名称不能为空'"];
+  string task_content = 6[(api.vd) = "@:len($)>0;msg:'任务内容不能为空'"];
+  string task_requirements = 7[(api.vd) = "@:len($)>0;msg:'任务要求不能为空'"];
   string task_link = 8;
   repeated TeacherTaskTemplateParameter task_parameters = 9;
+}
+
+message CreateTeacherTaskTemplateRequest {
+  base.BaseRequest base_request = 1;
+  TeacherTaskTemplate teacher_task_template = 2;
+}
+
+message CreateTeacherTaskTemplateResponse {
+  base.BaseResponse base_resp = 1;
 }
 
 message ListTeacherTaskTemplateRequest {

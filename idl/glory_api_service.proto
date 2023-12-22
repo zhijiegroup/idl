@@ -1366,6 +1366,9 @@ service glory_api {
     option (api.post) = '/api/task/update_system_task';
   }
   // 教师任务模板
+  rpc CreateTeacherTaskTemplate(CreateTeacherTaskTemplateRequest) returns (CreateTeacherTaskTemplateResponse) {
+    option (api.post) = '/api/task/create_teacher_task_template';
+  }
   rpc ListTeacherTaskTemplate(ListTeacherTaskTemplateRequest) returns (ListTeacherTaskTemplateResponse) {
     option (api.post) = '/api/task/list_teacher_task_template';
   }
