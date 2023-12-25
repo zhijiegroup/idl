@@ -1409,4 +1409,8 @@ service glory_api {
   rpc GetLiveBoardData(GetLiveBoardDataRequest) returns (GetLiveBoardDataResponse) {
     option (api.post) = '/api/live/get_board_data';
   }
+
+  rpc GetLiveBoardComments(GetLiveBoardCommentsRequest) returns (GetLiveBoardCommentsResponse) {
+    option (api.post) = '/api/live/get_board_live_comment';
+  }
 }
