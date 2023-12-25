@@ -662,6 +662,124 @@ class ListTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+class DeleteTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
+  factory DeleteTeacherTaskTemplateRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? teacherTaskTemplateId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (teacherTaskTemplateId != null) {
+      $result.teacherTaskTemplateId = teacherTaskTemplateId;
+    }
+    return $result;
+  }
+  DeleteTeacherTaskTemplateRequest._() : super();
+  factory DeleteTeacherTaskTemplateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'teacherTaskTemplateId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeacherTaskTemplateRequest clone() => DeleteTeacherTaskTemplateRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeacherTaskTemplateRequest copyWith(void Function(DeleteTeacherTaskTemplateRequest) updates) => super.copyWith((message) => updates(message as DeleteTeacherTaskTemplateRequest)) as DeleteTeacherTaskTemplateRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeacherTaskTemplateRequest create() => DeleteTeacherTaskTemplateRequest._();
+  DeleteTeacherTaskTemplateRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeacherTaskTemplateRequest> createRepeated() => $pb.PbList<DeleteTeacherTaskTemplateRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeacherTaskTemplateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeacherTaskTemplateRequest>(create);
+  static DeleteTeacherTaskTemplateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get teacherTaskTemplateId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set teacherTaskTemplateId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeacherTaskTemplateId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeacherTaskTemplateId() => clearField(2);
+}
+
+class DeleteTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
+  factory DeleteTeacherTaskTemplateResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteTeacherTaskTemplateResponse._() : super();
+  factory DeleteTeacherTaskTemplateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteTeacherTaskTemplateResponse clone() => DeleteTeacherTaskTemplateResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteTeacherTaskTemplateResponse copyWith(void Function(DeleteTeacherTaskTemplateResponse) updates) => super.copyWith((message) => updates(message as DeleteTeacherTaskTemplateResponse)) as DeleteTeacherTaskTemplateResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeacherTaskTemplateResponse create() => DeleteTeacherTaskTemplateResponse._();
+  DeleteTeacherTaskTemplateResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteTeacherTaskTemplateResponse> createRepeated() => $pb.PbList<DeleteTeacherTaskTemplateResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteTeacherTaskTemplateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteTeacherTaskTemplateResponse>(create);
+  static DeleteTeacherTaskTemplateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

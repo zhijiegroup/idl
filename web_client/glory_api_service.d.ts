@@ -1568,6 +1568,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task_template.ListTeacherTaskTemplateRequest
   ): Promise<teacher_task_template.ListTeacherTaskTemplateResponse>;
 
+  DeleteTeacherTaskTemplate(
+    request: teacher_task_template.DeleteTeacherTaskTemplateRequest
+  ): Promise<teacher_task_template.DeleteTeacherTaskTemplateResponse>;
+
   /** 通知模块 */
   ListNotification(
     request: notification.ListNotificationRequest

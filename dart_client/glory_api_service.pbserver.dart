@@ -423,6 +423,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ServerContext ctx, $52.CreateTeacherTaskTemplateRequest request);
   $async.Future<$52.UpdateTeacherTaskTemplateResponse> updateTeacherTaskTemplate($pb.ServerContext ctx, $52.UpdateTeacherTaskTemplateRequest request);
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ServerContext ctx, $52.ListTeacherTaskTemplateRequest request);
+  $async.Future<$52.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ServerContext ctx, $52.DeleteTeacherTaskTemplateRequest request);
   $async.Future<$53.ListNotificationResponse> listNotification($pb.ServerContext ctx, $53.ListNotificationRequest request);
   $async.Future<$53.CountNotificationResponse> countNotification($pb.ServerContext ctx, $53.CountNotificationRequest request);
   $async.Future<$53.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $53.ReadNotificationRequest request);
@@ -782,6 +783,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeacherTaskTemplate': return $52.CreateTeacherTaskTemplateRequest();
       case 'UpdateTeacherTaskTemplate': return $52.UpdateTeacherTaskTemplateRequest();
       case 'ListTeacherTaskTemplate': return $52.ListTeacherTaskTemplateRequest();
+      case 'DeleteTeacherTaskTemplate': return $52.DeleteTeacherTaskTemplateRequest();
       case 'ListNotification': return $53.ListNotificationRequest();
       case 'CountNotification': return $53.CountNotificationRequest();
       case 'ReadNotification': return $53.ReadNotificationRequest();
@@ -1144,6 +1146,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeacherTaskTemplate': return this.createTeacherTaskTemplate(ctx, request as $52.CreateTeacherTaskTemplateRequest);
       case 'UpdateTeacherTaskTemplate': return this.updateTeacherTaskTemplate(ctx, request as $52.UpdateTeacherTaskTemplateRequest);
       case 'ListTeacherTaskTemplate': return this.listTeacherTaskTemplate(ctx, request as $52.ListTeacherTaskTemplateRequest);
+      case 'DeleteTeacherTaskTemplate': return this.deleteTeacherTaskTemplate(ctx, request as $52.DeleteTeacherTaskTemplateRequest);
       case 'ListNotification': return this.listNotification(ctx, request as $53.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $53.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $53.ReadNotificationRequest);

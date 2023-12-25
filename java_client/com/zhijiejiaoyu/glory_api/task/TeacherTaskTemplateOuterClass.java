@@ -54,6 +54,16 @@ public final class TeacherTaskTemplateOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTeacherTaskTemplateResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTeacherTaskTemplateRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTeacherTaskTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteTeacherTaskTemplateResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteTeacherTaskTemplateResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -102,9 +112,13 @@ public final class TeacherTaskTemplateOuterClass {
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
       "sponse\022>\n\026teacher_task_templates\030\002 \003(\0132\036" +
       ".glory_api.TeacherTaskTemplate\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponseB#\n\037" +
-      "com.zhijiejiaoyu.glory_api.taskP\001b\006proto" +
-      "3"
+      "tion\030d \001(\0132\030.base.PaginationResponse\"m\n " +
+      "DeleteTeacherTaskTemplateRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022 \n\030tea" +
+      "cher_task_template_id\030\002 \001(\003\"J\n!DeleteTea" +
+      "cherTaskTemplateResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponseB#\n\037com.zhijiejia" +
+      "oyu.glory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -160,6 +174,18 @@ public final class TeacherTaskTemplateOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TeacherTaskTemplates", "Pagination", });
+    internal_static_glory_api_DeleteTeacherTaskTemplateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_DeleteTeacherTaskTemplateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTeacherTaskTemplateRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TeacherTaskTemplateId", });
+    internal_static_glory_api_DeleteTeacherTaskTemplateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_DeleteTeacherTaskTemplateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteTeacherTaskTemplateResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.zhijiejiaoyu.api.Api.vd);

@@ -54,3 +54,12 @@ export interface ListTeacherTaskTemplateResponse {
   teacher_task_templates?: Array<TeacherTaskTemplate>;
   pagination?: base.PaginationResponse;
 }
+
+export interface DeleteTeacherTaskTemplateRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_template_id?: string;
+}
+
+export interface DeleteTeacherTaskTemplateResponse {
+  base_resp?: base.BaseResponse;
+}

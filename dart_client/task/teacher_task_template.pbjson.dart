@@ -157,3 +157,31 @@ final $typed_data.Uint8List listTeacherTaskTemplateResponseDescriptor = $convert
     'VzEjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW5h'
     'dGlvbg==');
 
+@$core.Deprecated('Use deleteTeacherTaskTemplateRequestDescriptor instead')
+const DeleteTeacherTaskTemplateRequest$json = {
+  '1': 'DeleteTeacherTaskTemplateRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teacher_task_template_id', '3': 2, '4': 1, '5': 3, '10': 'teacherTaskTemplateId'},
+  ],
+};
+
+/// Descriptor for `DeleteTeacherTaskTemplateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeacherTaskTemplateRequestDescriptor = $convert.base64Decode(
+    'CiBEZWxldGVUZWFjaGVyVGFza1RlbXBsYXRlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3Chh0ZWFjaGVyX3Rhc2tfdGVtcGxh'
+    'dGVfaWQYAiABKANSFXRlYWNoZXJUYXNrVGVtcGxhdGVJZA==');
+
+@$core.Deprecated('Use deleteTeacherTaskTemplateResponseDescriptor instead')
+const DeleteTeacherTaskTemplateResponse$json = {
+  '1': 'DeleteTeacherTaskTemplateResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteTeacherTaskTemplateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteTeacherTaskTemplateResponseDescriptor = $convert.base64Decode(
+    'CiFEZWxldGVUZWFjaGVyVGFza1RlbXBsYXRlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
