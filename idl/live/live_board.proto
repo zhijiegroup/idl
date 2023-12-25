@@ -27,12 +27,15 @@ message ClasData {
 message GetAggregationLiveUrlRequest {
     base.BaseRequest base_request = 1;
     int64 page = 2;
-    repeated int64 clas_id = 3;
+    string caster_id = 3;
+    repeated int64 clas_id = 4;
 }
 message GetAggregationLiveUrlResponse {
     base.BaseResponse base_resp = 1;
     string live_url = 2;
     int64 mix_count = 3;
+    string caster_id = 4;
+    repeated int64 room_ids = 5;
 }
 
 message GetLiveBoardDataRequest {
@@ -52,4 +55,14 @@ message GetLiveBoardDataResponse {
 message LiveLikeData {
     string name = 1;
     int64 like_count = 2;
+}
+
+message GetLiveBoardCommentsRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 room_ids = 2;
+}
+
+message GetLiveBoardCommentsResponse {
+    base.BaseResponse base_resp = 1;
+    repeated string comments = 6;
 }
