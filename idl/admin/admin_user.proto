@@ -9,7 +9,7 @@ option java_multiple_files = true;
 message AdminUser {
     int64 user_id = 1;
     string user_name = 2;
-    string user_phone = 3;
+    string phone = 3;
     repeated Role roles = 4;
     string created_at = 6;
     int64 tenant_id = 7;
