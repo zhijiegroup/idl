@@ -26,16 +26,16 @@ public interface AdminUserOrBuilder extends
       getUserNameBytes();
 
   /**
-   * <code>string user_phone = 3;</code>
-   * @return The userPhone.
+   * <code>string phone = 3;</code>
+   * @return The phone.
    */
-  java.lang.String getUserPhone();
+  java.lang.String getPhone();
   /**
-   * <code>string user_phone = 3;</code>
-   * @return The bytes for userPhone.
+   * <code>string phone = 3;</code>
+   * @return The bytes for phone.
    */
   com.google.protobuf.ByteString
-      getUserPhoneBytes();
+      getPhoneBytes();
 
   /**
    * <code>repeated .glory_api.Role roles = 4;</code>

@@ -19,7 +19,7 @@ const AdminUser$json = {
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
     {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
-    {'1': 'user_phone', '3': 3, '4': 1, '5': 9, '10': 'userPhone'},
+    {'1': 'phone', '3': 3, '4': 1, '5': 9, '10': 'phone'},
     {'1': 'roles', '3': 4, '4': 3, '5': 11, '6': '.glory_api.Role', '10': 'roles'},
     {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'tenant_id', '3': 7, '4': 1, '5': 3, '10': 'tenantId'},
@@ -29,9 +29,9 @@ const AdminUser$json = {
 /// Descriptor for `AdminUser`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List adminUserDescriptor = $convert.base64Decode(
     'CglBZG1pblVzZXISFwoHdXNlcl9pZBgBIAEoA1IGdXNlcklkEhsKCXVzZXJfbmFtZRgCIAEoCV'
-    'IIdXNlck5hbWUSHQoKdXNlcl9waG9uZRgDIAEoCVIJdXNlclBob25lEiUKBXJvbGVzGAQgAygL'
-    'Mg8uZ2xvcnlfYXBpLlJvbGVSBXJvbGVzEh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdB'
-    'IbCgl0ZW5hbnRfaWQYByABKANSCHRlbmFudElk');
+    'IIdXNlck5hbWUSFAoFcGhvbmUYAyABKAlSBXBob25lEiUKBXJvbGVzGAQgAygLMg8uZ2xvcnlf'
+    'YXBpLlJvbGVSBXJvbGVzEh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdBIbCgl0ZW5hbn'
+    'RfaWQYByABKANSCHRlbmFudElk');
 
 @$core.Deprecated('Use adminTenantDescriptor instead')
 const AdminTenant$json = {

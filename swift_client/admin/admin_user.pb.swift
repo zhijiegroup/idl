@@ -29,7 +29,7 @@ struct GloryApi_AdminUser {
 
   var userName: String = String()
 
-  var userPhone: String = String()
+  var phone: String = String()
 
   var roles: [GloryApi_Role] = []
 
@@ -338,7 +338,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "user_id"),
     2: .standard(proto: "user_name"),
-    3: .standard(proto: "user_phone"),
+    3: .same(proto: "phone"),
     4: .same(proto: "roles"),
     6: .standard(proto: "created_at"),
     7: .standard(proto: "tenant_id"),
@@ -352,7 +352,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.userPhone) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.phone) }()
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.roles) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
@@ -368,8 +368,8 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.userName.isEmpty {
       try visitor.visitSingularStringField(value: self.userName, fieldNumber: 2)
     }
-    if !self.userPhone.isEmpty {
-      try visitor.visitSingularStringField(value: self.userPhone, fieldNumber: 3)
+    if !self.phone.isEmpty {
+      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 3)
     }
     if !self.roles.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.roles, fieldNumber: 4)
@@ -386,7 +386,7 @@ extension GloryApi_AdminUser: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static func ==(lhs: GloryApi_AdminUser, rhs: GloryApi_AdminUser) -> Bool {
     if lhs.userID != rhs.userID {return false}
     if lhs.userName != rhs.userName {return false}
-    if lhs.userPhone != rhs.userPhone {return false}
+    if lhs.phone != rhs.phone {return false}
     if lhs.roles != rhs.roles {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.tenantID != rhs.tenantID {return false}

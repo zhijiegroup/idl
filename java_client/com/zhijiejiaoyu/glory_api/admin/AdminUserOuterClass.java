@@ -84,37 +84,37 @@ public final class AdminUserOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026admin/admin_user.proto\022\tglory_api\032\nbas" +
-      "e.proto\032\017user/user.proto\"\212\001\n\tAdminUser\022\017" +
-      "\n\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\022\n\nus" +
-      "er_phone\030\003 \001(\t\022\036\n\005roles\030\004 \003(\0132\017.glory_ap" +
-      "i.Role\022\022\n\ncreated_at\030\006 \001(\t\022\021\n\ttenant_id\030" +
-      "\007 \001(\003\"+\n\013AdminTenant\022\r\n\005label\030\001 \001(\t\022\r\n\005v" +
-      "alue\030\002 \001(\003\"@\n\025GetAdminTenantRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\"h\n\026" +
-      "GetAdminTenantResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\'\n\007tenants\030\002 \003(\0132\026" +
-      ".glory_api.AdminTenant\"k\n\026CreateAdminUse" +
-      "rRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022(\n\nadmin_user\030\002 \001(\0132\024.glory_ap" +
-      "i.AdminUser\"@\n\027CreateAdminUserResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"k\n" +
-      "\026UpdateAdminUserRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022(\n\nadmin_user\030\002" +
-      " \001(\0132\024.glory_api.AdminUser\"@\n\027UpdateAdmi" +
-      "nUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"R\n\026DeleteAdminUserRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\017\n\007user_id\030\002 \001(\003\"@\n\027DeleteAdminUserRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"z\n\024ListAdminUserRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(" +
-      "\t\022+\n\npagination\030d \001(\0132\027.base.PaginationR" +
-      "equest\"\227\001\n\025ListAdminUserResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022)\n\013admin" +
-      "_users\030\002 \003(\0132\024.glory_api.AdminUser\022,\n\npa" +
-      "gination\030d \001(\0132\030.base.PaginationResponse" +
-      "B$\n com.zhijiejiaoyu.glory_api.adminP\001b\006" +
-      "proto3"
+      "e.proto\032\017user/user.proto\"\205\001\n\tAdminUser\022\017" +
+      "\n\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\r\n\005ph" +
+      "one\030\003 \001(\t\022\036\n\005roles\030\004 \003(\0132\017.glory_api.Rol" +
+      "e\022\022\n\ncreated_at\030\006 \001(\t\022\021\n\ttenant_id\030\007 \001(\003" +
+      "\"+\n\013AdminTenant\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\003\"@\n\025GetAdminTenantRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\"h\n\026GetAd" +
+      "minTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\'\n\007tenants\030\002 \003(\0132\026.glor" +
+      "y_api.AdminTenant\"k\n\026CreateAdminUserRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022(\n\nadmin_user\030\002 \001(\0132\024.glory_api.Adm" +
+      "inUser\"@\n\027CreateAdminUserResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"k\n\026Upda" +
+      "teAdminUserRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022(\n\nadmin_user\030\002 \001(\0132" +
+      "\024.glory_api.AdminUser\"@\n\027UpdateAdminUser" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"R\n\026DeleteAdminUserRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007us" +
+      "er_id\030\002 \001(\003\"@\n\027DeleteAdminUserResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"z\n" +
+      "\024ListAdminUserRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(\t\022+\n\n" +
+      "pagination\030d \001(\0132\027.base.PaginationReques" +
+      "t\"\227\001\n\025ListAdminUserResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022)\n\013admin_user" +
+      "s\030\002 \003(\0132\024.glory_api.AdminUser\022,\n\npaginat" +
+      "ion\030d \001(\0132\030.base.PaginationResponseB$\n c" +
+      "om.zhijiejiaoyu.glory_api.adminP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -127,7 +127,7 @@ public final class AdminUserOuterClass {
     internal_static_glory_api_AdminUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AdminUser_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "UserPhone", "Roles", "CreatedAt", "TenantId", });
+        new java.lang.String[] { "UserId", "UserName", "Phone", "Roles", "CreatedAt", "TenantId", });
     internal_static_glory_api_AdminTenant_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_AdminTenant_fieldAccessorTable = new

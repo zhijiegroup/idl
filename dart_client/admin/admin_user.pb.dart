@@ -21,7 +21,7 @@ class AdminUser extends $pb.GeneratedMessage {
   factory AdminUser({
     $fixnum.Int64? userId,
     $core.String? userName,
-    $core.String? userPhone,
+    $core.String? phone,
     $core.Iterable<$0.Role>? roles,
     $core.String? createdAt,
     $fixnum.Int64? tenantId,
@@ -33,8 +33,8 @@ class AdminUser extends $pb.GeneratedMessage {
     if (userName != null) {
       $result.userName = userName;
     }
-    if (userPhone != null) {
-      $result.userPhone = userPhone;
+    if (phone != null) {
+      $result.phone = phone;
     }
     if (roles != null) {
       $result.roles.addAll(roles);
@@ -54,7 +54,7 @@ class AdminUser extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdminUser', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'userId')
     ..aOS(2, _omitFieldNames ? '' : 'userName')
-    ..aOS(3, _omitFieldNames ? '' : 'userPhone')
+    ..aOS(3, _omitFieldNames ? '' : 'phone')
     ..pc<$0.Role>(4, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: $0.Role.create)
     ..aOS(6, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(7, _omitFieldNames ? '' : 'tenantId')
@@ -101,13 +101,13 @@ class AdminUser extends $pb.GeneratedMessage {
   void clearUserName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get userPhone => $_getSZ(2);
+  $core.String get phone => $_getSZ(2);
   @$pb.TagNumber(3)
-  set userPhone($core.String v) { $_setString(2, v); }
+  set phone($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUserPhone() => $_has(2);
+  $core.bool hasPhone() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUserPhone() => clearField(3);
+  void clearPhone() => clearField(3);
 
   @$pb.TagNumber(4)
   $core.List<$0.Role> get roles => $_getList(3);

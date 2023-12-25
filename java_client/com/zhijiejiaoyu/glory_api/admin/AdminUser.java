@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private AdminUser() {
     userName = "";
-    userPhone = "";
+    phone = "";
     roles = java.util.Collections.emptyList();
     createdAt = "";
   }
@@ -67,7 +67,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userPhone = s;
+            phone = s;
             break;
           }
           case 34: {
@@ -174,38 +174,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_PHONE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userPhone ;
+  public static final int PHONE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object phone ;
   /**
-   * <code>string user_phone = 3;</code>
-   * @return The userPhone.
+   * <code>string phone = 3;</code>
+   * @return The phone.
    */
   @java.lang.Override
-  public java.lang.String getUserPhone() {
-    java.lang.Object ref = userPhone ;
+  public java.lang.String getPhone() {
+    java.lang.Object ref = phone ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      userPhone = s;
+      phone = s;
       return s;
     }
   }
   /**
-   * <code>string user_phone = 3;</code>
-   * @return The bytes for userPhone.
+   * <code>string phone = 3;</code>
+   * @return The bytes for phone.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getUserPhoneBytes() {
-    java.lang.Object ref = userPhone ;
+      getPhoneBytes() {
+    java.lang.Object ref = phone ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      userPhone = b;
+      phone = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -321,8 +321,8 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName );
     }
-    if (!getUserPhoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userPhone );
+    if (!getPhoneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, phone );
     }
     for (int i = 0; i < roles .size(); i++) {
       output.writeMessage(4, roles .get(i));
@@ -349,8 +349,8 @@ private static final long serialVersionUID = 0L;
     if (!getUserNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName );
     }
-    if (!getUserPhoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userPhone );
+    if (!getPhoneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, phone );
     }
     for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -382,8 +382,8 @@ private static final long serialVersionUID = 0L;
         != other.getUserId()) return false;
     if (!getUserName()
         .equals(other.getUserName())) return false;
-    if (!getUserPhone()
-        .equals(other.getUserPhone())) return false;
+    if (!getPhone()
+        .equals(other.getPhone())) return false;
     if (!getRolesList()
         .equals(other.getRolesList())) return false;
     if (!getCreatedAt()
@@ -406,8 +406,8 @@ private static final long serialVersionUID = 0L;
         getUserId());
     hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getUserName().hashCode();
-    hash = (37 * hash) + USER_PHONE_FIELD_NUMBER;
-    hash = (53 * hash) + getUserPhone().hashCode();
+    hash = (37 * hash) + PHONE_FIELD_NUMBER;
+    hash = (53 * hash) + getPhone().hashCode();
     if (getRolesCount() > 0) {
       hash = (37 * hash) + ROLES_FIELD_NUMBER;
       hash = (53 * hash) + getRolesList().hashCode();
@@ -555,7 +555,7 @@ private static final long serialVersionUID = 0L;
 
       userName = "";
 
-      userPhone = "";
+      phone = "";
 
       if (rolesBuilder == null) {
         roles = java.util.Collections.emptyList();
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0 = bitField0 ;
       result.userId = userId ;
       result.userName = userName ;
-      result.userPhone = userPhone ;
+      result.phone = phone ;
       if (rolesBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           roles = java.util.Collections.unmodifiableList(roles );
@@ -663,8 +663,8 @@ private static final long serialVersionUID = 0L;
         userName = other.userName ;
         onChanged();
       }
-      if (!other.getUserPhone().isEmpty()) {
-        userPhone = other.userPhone ;
+      if (!other.getPhone().isEmpty()) {
+        phone = other.phone ;
         onChanged();
       }
       if (rolesBuilder == null) {
@@ -837,78 +837,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userPhone = "";
+    private java.lang.Object phone = "";
     /**
-     * <code>string user_phone = 3;</code>
-     * @return The userPhone.
+     * <code>string phone = 3;</code>
+     * @return The phone.
      */
-    public java.lang.String getUserPhone() {
-      java.lang.Object ref = userPhone ;
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        userPhone = s;
+        phone = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string user_phone = 3;</code>
-     * @return The bytes for userPhone.
+     * <code>string phone = 3;</code>
+     * @return The bytes for phone.
      */
     public com.google.protobuf.ByteString
-        getUserPhoneBytes() {
-      java.lang.Object ref = userPhone ;
+        getPhoneBytes() {
+      java.lang.Object ref = phone ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        userPhone = b;
+        phone = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string user_phone = 3;</code>
-     * @param value The userPhone to set.
+     * <code>string phone = 3;</code>
+     * @param value The phone to set.
      * @return This builder for chaining.
      */
-    public Builder setUserPhone(
+    public Builder setPhone(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      userPhone = value;
+      phone = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string user_phone = 3;</code>
+     * <code>string phone = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUserPhone() {
+    public Builder clearPhone() {
       
-      userPhone = getDefaultInstance().getUserPhone();
+      phone = getDefaultInstance().getPhone();
       onChanged();
       return this;
     }
     /**
-     * <code>string user_phone = 3;</code>
-     * @param value The bytes for userPhone to set.
+     * <code>string phone = 3;</code>
+     * @param value The bytes for phone to set.
      * @return This builder for chaining.
      */
-    public Builder setUserPhoneBytes(
+    public Builder setPhoneBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      userPhone = value;
+      phone = value;
       onChanged();
       return this;
     }

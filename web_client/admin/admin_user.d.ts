@@ -9,7 +9,7 @@ export { base, user };
 export interface AdminUser {
   user_id?: string;
   user_name?: string;
-  user_phone?: string;
+  phone?: string;
   roles?: Array<user.Role>;
   created_at?: string;
   tenant_id?: string;
