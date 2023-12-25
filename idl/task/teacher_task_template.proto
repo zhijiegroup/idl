@@ -54,3 +54,12 @@ message ListTeacherTaskTemplateResponse {
   repeated TeacherTaskTemplate teacher_task_templates = 2;
   base.PaginationResponse pagination = 100;
 }
+
+message DeleteTeacherTaskTemplateRequest {
+  base.BaseRequest base_request = 1;
+  int64 teacher_task_template_id = 2;
+}
+
+message DeleteTeacherTaskTemplateResponse {
+  base.BaseResponse base_resp = 1;
+}

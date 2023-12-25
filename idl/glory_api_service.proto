@@ -1375,6 +1375,9 @@ service glory_api {
   rpc ListTeacherTaskTemplate(ListTeacherTaskTemplateRequest) returns (ListTeacherTaskTemplateResponse) {
     option (api.post) = '/api/task/list_teacher_task_template';
   }
+  rpc DeleteTeacherTaskTemplate(DeleteTeacherTaskTemplateRequest) returns (DeleteTeacherTaskTemplateResponse) {
+    option (api.post) = '/api/task/delete_teacher_task_template';
+  }
 
   // 通知模块
   rpc ListNotification(ListNotificationRequest) returns (ListNotificationResponse) {
