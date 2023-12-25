@@ -33,4 +33,29 @@ public interface UpdateLiveCommentCountRequestOrBuilder extends
    * @return The commentCount.
    */
   long getCommentCount();
+
+  /**
+   * <code>repeated string comments = 4;</code>
+   * @return A list containing the comments.
+   */
+  java.util.List<java.lang.String>
+      getCommentsList();
+  /**
+   * <code>repeated string comments = 4;</code>
+   * @return The count of comments.
+   */
+  int getCommentsCount();
+  /**
+   * <code>repeated string comments = 4;</code>
+   * @param index The index of the element to return.
+   * @return The comments at the given index.
+   */
+  java.lang.String getComments(int index);
+  /**
+   * <code>repeated string comments = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the comments at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCommentsBytes(int index);
 }

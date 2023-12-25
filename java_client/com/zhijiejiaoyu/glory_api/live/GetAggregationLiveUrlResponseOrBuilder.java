@@ -39,4 +39,33 @@ public interface GetAggregationLiveUrlResponseOrBuilder extends
    * @return The mixCount.
    */
   long getMixCount();
+
+  /**
+   * <code>string caster_id = 4;</code>
+   * @return The casterId.
+   */
+  java.lang.String getCasterId();
+  /**
+   * <code>string caster_id = 4;</code>
+   * @return The bytes for casterId.
+   */
+  com.google.protobuf.ByteString
+      getCasterIdBytes();
+
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @return A list containing the roomIds.
+   */
+  java.util.List<java.lang.Long> getRoomIdsList();
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @return The count of roomIds.
+   */
+  int getRoomIdsCount();
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The roomIds at the given index.
+   */
+  long getRoomIds(int index);
 }

@@ -1606,6 +1606,10 @@ CreateLivePlanProduct create live plan product */
   GetLiveBoardData(
     request: live_board.GetLiveBoardDataRequest
   ): Promise<live_board.GetLiveBoardDataResponse>;
+
+  GetLiveBoardComments(
+    request: live_board.GetLiveBoardCommentsRequest
+  ): Promise<live_board.GetLiveBoardCommentsResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

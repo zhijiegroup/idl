@@ -268,6 +268,7 @@ class GetAggregationLiveUrlRequest extends $pb.GeneratedMessage {
   factory GetAggregationLiveUrlRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? page,
+    $core.String? casterId,
     $core.Iterable<$fixnum.Int64>? clasId,
   }) {
     final $result = create();
@@ -276,6 +277,9 @@ class GetAggregationLiveUrlRequest extends $pb.GeneratedMessage {
     }
     if (page != null) {
       $result.page = page;
+    }
+    if (casterId != null) {
+      $result.casterId = casterId;
     }
     if (clasId != null) {
       $result.clasId.addAll(clasId);
@@ -289,7 +293,8 @@ class GetAggregationLiveUrlRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAggregationLiveUrlRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'page')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'clasId', $pb.PbFieldType.K6)
+    ..aOS(3, _omitFieldNames ? '' : 'casterId')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'clasId', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -335,7 +340,16 @@ class GetAggregationLiveUrlRequest extends $pb.GeneratedMessage {
   void clearPage() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get clasId => $_getList(2);
+  $core.String get casterId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set casterId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCasterId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCasterId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$fixnum.Int64> get clasId => $_getList(3);
 }
 
 class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
@@ -343,6 +357,8 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     $0.BaseResponse? baseResp,
     $core.String? liveUrl,
     $fixnum.Int64? mixCount,
+    $core.String? casterId,
+    $core.Iterable<$fixnum.Int64>? roomIds,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -354,6 +370,12 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     if (mixCount != null) {
       $result.mixCount = mixCount;
     }
+    if (casterId != null) {
+      $result.casterId = casterId;
+    }
+    if (roomIds != null) {
+      $result.roomIds.addAll(roomIds);
+    }
     return $result;
   }
   GetAggregationLiveUrlResponse._() : super();
@@ -364,6 +386,8 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOS(2, _omitFieldNames ? '' : 'liveUrl')
     ..aInt64(3, _omitFieldNames ? '' : 'mixCount')
+    ..aOS(4, _omitFieldNames ? '' : 'casterId')
+    ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -416,6 +440,18 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
   $core.bool hasMixCount() => $_has(2);
   @$pb.TagNumber(3)
   void clearMixCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get casterId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set casterId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCasterId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCasterId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$fixnum.Int64> get roomIds => $_getList(4);
 }
 
 class GetLiveBoardDataRequest extends $pb.GeneratedMessage {
@@ -656,6 +692,126 @@ class LiveLikeData extends $pb.GeneratedMessage {
   $core.bool hasLikeCount() => $_has(1);
   @$pb.TagNumber(2)
   void clearLikeCount() => clearField(2);
+}
+
+class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
+  factory GetLiveBoardCommentsRequest({
+    $0.BaseRequest? baseRequest,
+    $core.Iterable<$fixnum.Int64>? roomIds,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (roomIds != null) {
+      $result.roomIds.addAll(roomIds);
+    }
+    return $result;
+  }
+  GetLiveBoardCommentsRequest._() : super();
+  factory GetLiveBoardCommentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLiveBoardCommentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardCommentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardCommentsRequest clone() => GetLiveBoardCommentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardCommentsRequest copyWith(void Function(GetLiveBoardCommentsRequest) updates) => super.copyWith((message) => updates(message as GetLiveBoardCommentsRequest)) as GetLiveBoardCommentsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardCommentsRequest create() => GetLiveBoardCommentsRequest._();
+  GetLiveBoardCommentsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetLiveBoardCommentsRequest> createRepeated() => $pb.PbList<GetLiveBoardCommentsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardCommentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLiveBoardCommentsRequest>(create);
+  static GetLiveBoardCommentsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get roomIds => $_getList(1);
+}
+
+class GetLiveBoardCommentsResponse extends $pb.GeneratedMessage {
+  factory GetLiveBoardCommentsResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<$core.String>? comments,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (comments != null) {
+      $result.comments.addAll(comments);
+    }
+    return $result;
+  }
+  GetLiveBoardCommentsResponse._() : super();
+  factory GetLiveBoardCommentsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLiveBoardCommentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardCommentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pPS(6, _omitFieldNames ? '' : 'comments')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardCommentsResponse clone() => GetLiveBoardCommentsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLiveBoardCommentsResponse copyWith(void Function(GetLiveBoardCommentsResponse) updates) => super.copyWith((message) => updates(message as GetLiveBoardCommentsResponse)) as GetLiveBoardCommentsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardCommentsResponse create() => GetLiveBoardCommentsResponse._();
+  GetLiveBoardCommentsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetLiveBoardCommentsResponse> createRepeated() => $pb.PbList<GetLiveBoardCommentsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveBoardCommentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLiveBoardCommentsResponse>(create);
+  static GetLiveBoardCommentsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get comments => $_getList(1);
 }
 
 

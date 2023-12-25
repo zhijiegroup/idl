@@ -965,6 +965,8 @@ struct GloryApi_UpdateLiveCommentCountRequest {
 
   var commentCount: Int64 = 0
 
+  var comments: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2981,6 +2983,7 @@ extension GloryApi_UpdateLiveCommentCountRequest: SwiftProtobuf.Message, SwiftPr
     1: .standard(proto: "base_request"),
     2: .standard(proto: "room_id"),
     3: .standard(proto: "comment_count"),
+    4: .same(proto: "comments"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2992,6 +2995,7 @@ extension GloryApi_UpdateLiveCommentCountRequest: SwiftProtobuf.Message, SwiftPr
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.commentCount) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.comments) }()
       default: break
       }
     }
@@ -3011,6 +3015,9 @@ extension GloryApi_UpdateLiveCommentCountRequest: SwiftProtobuf.Message, SwiftPr
     if self.commentCount != 0 {
       try visitor.visitSingularInt64Field(value: self.commentCount, fieldNumber: 3)
     }
+    if !self.comments.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.comments, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3018,6 +3025,7 @@ extension GloryApi_UpdateLiveCommentCountRequest: SwiftProtobuf.Message, SwiftPr
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.roomID != rhs.roomID {return false}
     if lhs.commentCount != rhs.commentCount {return false}
+    if lhs.comments != rhs.comments {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

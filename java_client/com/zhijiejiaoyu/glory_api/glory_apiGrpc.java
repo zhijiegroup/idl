@@ -11082,6 +11082,37 @@ public final class glory_apiGrpc {
     return getGetLiveBoardDataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> getGetLiveBoardCommentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLiveBoardComments",
+      requestType = com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest,
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> getGetLiveBoardCommentsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest, com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> getGetLiveBoardCommentsMethod;
+    if ((getGetLiveBoardCommentsMethod = glory_apiGrpc.getGetLiveBoardCommentsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetLiveBoardCommentsMethod = glory_apiGrpc.getGetLiveBoardCommentsMethod) == null) {
+          glory_apiGrpc.getGetLiveBoardCommentsMethod = getGetLiveBoardCommentsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest, com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLiveBoardComments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetLiveBoardComments"))
+              .build();
+        }
+      }
+    }
+    return getGetLiveBoardCommentsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -13982,6 +14013,13 @@ public final class glory_apiGrpc {
     default void getLiveBoardData(com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveBoardDataMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getLiveBoardComments(com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLiveBoardCommentsMethod(), responseObserver);
     }
   }
 
@@ -17222,6 +17260,14 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetLiveBoardDataMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getLiveBoardComments(com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLiveBoardCommentsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -20092,6 +20138,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse getLiveBoardData(com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLiveBoardDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse getLiveBoardComments(com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveBoardCommentsMethod(), getCallOptions(), request);
     }
   }
 
@@ -23321,6 +23374,14 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetLiveBoardDataMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse> getLiveBoardComments(
+        com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLiveBoardCommentsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -23680,6 +23741,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 354;
   private static final int METHODID_GET_AGGREGATION_LIVE_URL = 355;
   private static final int METHODID_GET_LIVE_BOARD_DATA = 356;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 357;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -25125,6 +25187,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_LIVE_BOARD_DATA:
           serviceImpl.getLiveBoardData((com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_BOARD_COMMENTS:
+          serviceImpl.getLiveBoardComments((com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -27643,6 +27709,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataRequest,
               com.zhijiejiaoyu.glory_api.live.GetLiveBoardDataResponse>(
                 service, METHODID_GET_LIVE_BOARD_DATA)))
+        .addMethod(
+          getGetLiveBoardCommentsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest,
+              com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsResponse>(
+                service, METHODID_GET_LIVE_BOARD_COMMENTS)))
         .build();
   }
 
@@ -28048,6 +28121,7 @@ public final class glory_apiGrpc {
               .addMethod(getListUserMajorAndClassMethod())
               .addMethod(getGetAggregationLiveUrlMethod())
               .addMethod(getGetLiveBoardDataMethod())
+              .addMethod(getGetLiveBoardCommentsMethod())
               .build();
         }
       }

@@ -4,27 +4,26 @@
 package com.zhijiejiaoyu.glory_api.live;
 
 /**
- * Protobuf type {@code glory_api.GetAggregationLiveUrlRequest}
+ * Protobuf type {@code glory_api.GetLiveBoardCommentsRequest}
  */
-public final class GetAggregationLiveUrlRequest extends
+public final class GetLiveBoardCommentsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.GetAggregationLiveUrlRequest)
-    GetAggregationLiveUrlRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.GetLiveBoardCommentsRequest)
+    GetLiveBoardCommentsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetAggregationLiveUrlRequest.newBuilder() to construct.
-  private GetAggregationLiveUrlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetLiveBoardCommentsRequest.newBuilder() to construct.
+  private GetLiveBoardCommentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetAggregationLiveUrlRequest() {
-    casterId = "";
-    clasId = emptyLongList();
+  private GetLiveBoardCommentsRequest() {
+    roomIds = emptyLongList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetAggregationLiveUrlRequest();
+    return new GetLiveBoardCommentsRequest();
   }
 
   @java.lang.Override
@@ -32,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetAggregationLiveUrlRequest(
+  private GetLiveBoardCommentsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,33 +64,22 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-
-            page = input.readInt64();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            casterId = s;
-            break;
-          }
-          case 32: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              clasId = newLongList();
+              roomIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            clasId .addLong(input.readInt64());
+            roomIds .addLong(input.readInt64());
             break;
           }
-          case 34: {
+          case 18: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              clasId = newLongList();
+              roomIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              clasId .addLong(input.readInt64());
+              roomIds .addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -112,7 +100,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        clasId .makeImmutable(); // C
+        roomIds .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -120,15 +108,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor;
+    return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetLiveBoardCommentsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetAggregationLiveUrlRequest_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetLiveBoardCommentsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.class, com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.Builder.class);
+            com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.class, com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.Builder.class);
   }
 
   public static final int BASE_REQUEST_FIELD_NUMBER = 1;
@@ -157,82 +145,33 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int PAGE_FIELD_NUMBER = 2;
-  private long page ;
+  public static final int ROOM_IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.Internal.LongList roomIds ;
   /**
-   * <code>int64 page = 2;</code>
-   * @return The page.
-   */
-  @java.lang.Override
-  public long getPage() {
-    return page ;
-  }
-
-  public static final int CASTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object casterId ;
-  /**
-   * <code>string caster_id = 3;</code>
-   * @return The casterId.
-   */
-  @java.lang.Override
-  public java.lang.String getCasterId() {
-    java.lang.Object ref = casterId ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      casterId = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string caster_id = 3;</code>
-   * @return The bytes for casterId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCasterIdBytes() {
-    java.lang.Object ref = casterId ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      casterId = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CLAS_ID_FIELD_NUMBER = 4;
-  private com.google.protobuf.Internal.LongList clasId ;
-  /**
-   * <code>repeated int64 clas_id = 4;</code>
-   * @return A list containing the clasId.
+   * <code>repeated int64 room_ids = 2;</code>
+   * @return A list containing the roomIds.
    */
   @java.lang.Override
   public java.util.List<java.lang.Long>
-      getClasIdList() {
-    return clasId ;
+      getRoomIdsList() {
+    return roomIds ;
   }
   /**
-   * <code>repeated int64 clas_id = 4;</code>
-   * @return The count of clasId.
+   * <code>repeated int64 room_ids = 2;</code>
+   * @return The count of roomIds.
    */
-  public int getClasIdCount() {
-    return clasId .size();
+  public int getRoomIdsCount() {
+    return roomIds .size();
   }
   /**
-   * <code>repeated int64 clas_id = 4;</code>
+   * <code>repeated int64 room_ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The clasId at the given index.
+   * @return The roomIds at the given index.
    */
-  public long getClasId(int index) {
-    return clasId .getLong(index);
+  public long getRoomIds(int index) {
+    return roomIds .getLong(index);
   }
-  private int clasIdMemoizedSerializedSize = -1;
+  private int roomIdsMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -252,18 +191,12 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (page != 0L) {
-      output.writeInt64(2, page );
+    if (getRoomIdsList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(roomIdsMemoizedSerializedSize);
     }
-    if (!getCasterIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, casterId );
-    }
-    if (getClasIdList().size() > 0) {
-      output.writeUInt32NoTag(34);
-      output.writeUInt32NoTag(clasIdMemoizedSerializedSize);
-    }
-    for (int i = 0; i < clasId .size(); i++) {
-      output.writeInt64NoTag(clasId .getLong(i));
+    for (int i = 0; i < roomIds .size(); i++) {
+      output.writeInt64NoTag(roomIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,26 +211,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (page != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, page );
-    }
-    if (!getCasterIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, casterId );
-    }
     {
       int dataSize = 0;
-      for (int i = 0; i < clasId .size(); i++) {
+      for (int i = 0; i < roomIds .size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(clasId .getLong(i));
+          .computeInt64SizeNoTag(roomIds .getLong(i));
       }
       size += dataSize;
-      if (!getClasIdList().isEmpty()) {
+      if (!getRoomIdsList().isEmpty()) {
         size += 1;
         size += com.google.protobuf.CodedOutputStream
             .computeInt32SizeNoTag(dataSize);
       }
-      clasIdMemoizedSerializedSize = dataSize;
+      roomIdsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -309,22 +235,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest other = (com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) obj;
+    com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest other = (com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest) obj;
 
     if (hasBaseRequest() != other.hasBaseRequest()) return false;
     if (hasBaseRequest()) {
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getPage()
-        != other.getPage()) return false;
-    if (!getCasterId()
-        .equals(other.getCasterId())) return false;
-    if (!getClasIdList()
-        .equals(other.getClasIdList())) return false;
+    if (!getRoomIdsList()
+        .equals(other.getRoomIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -340,83 +262,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + PAGE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPage());
-    hash = (37 * hash) + CASTER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCasterId().hashCode();
-    if (getClasIdCount() > 0) {
-      hash = (37 * hash) + CLAS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClasIdList().hashCode();
+    if (getRoomIdsCount() > 0) {
+      hash = (37 * hash) + ROOM_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parseFrom(
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -429,7 +346,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -445,26 +362,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.GetAggregationLiveUrlRequest}
+   * Protobuf type {@code glory_api.GetLiveBoardCommentsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.GetAggregationLiveUrlRequest)
-      com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.GetLiveBoardCommentsRequest)
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetLiveBoardCommentsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetAggregationLiveUrlRequest_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetLiveBoardCommentsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.class, com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.Builder.class);
+              com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.class, com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -488,11 +405,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      page = 0L;
-
-      casterId = "";
-
-      clasId = emptyLongList();
+      roomIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
@@ -500,17 +413,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetAggregationLiveUrlRequest_descriptor;
+      return com.zhijiejiaoyu.glory_api.live.LiveBoard.internal_static_glory_api_GetLiveBoardCommentsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest build() {
-      com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest build() {
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -518,21 +431,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest buildPartial() {
-      com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest result = new com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest(this);
+    public com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest buildPartial() {
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest result = new com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest(this);
       int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.page = page ;
-      result.casterId = casterId ;
       if (((bitField0 & 0x00000001) != 0)) {
-        clasId .makeImmutable();
+        roomIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
       }
-      result.clasId = clasId ;
+      result.roomIds = roomIds ;
       onBuilt();
       return result;
     }
@@ -571,33 +482,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest other) {
-      if (other == com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest other) {
+      if (other == com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getPage() != 0L) {
-        setPage(other.getPage());
-      }
-      if (!other.getCasterId().isEmpty()) {
-        casterId = other.casterId ;
-        onChanged();
-      }
-      if (!other.clasId .isEmpty()) {
-        if (clasId .isEmpty()) {
-          clasId = other.clasId ;
+      if (!other.roomIds .isEmpty()) {
+        if (roomIds .isEmpty()) {
+          roomIds = other.roomIds ;
           bitField0 = (bitField0 & ~0x00000001);
         } else {
-          ensureClasIdIsMutable();
-          clasId .addAll(other.clasId );
+          ensureRoomIdsIsMutable();
+          roomIds .addAll(other.roomIds );
         }
         onChanged();
       }
@@ -616,11 +520,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -750,187 +654,80 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private long page ;
-    /**
-     * <code>int64 page = 2;</code>
-     * @return The page.
-     */
-    @java.lang.Override
-    public long getPage() {
-      return page ;
-    }
-    /**
-     * <code>int64 page = 2;</code>
-     * @param value The page to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPage(long value) {
-      
-      page = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 page = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPage() {
-      
-      page = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object casterId = "";
-    /**
-     * <code>string caster_id = 3;</code>
-     * @return The casterId.
-     */
-    public java.lang.String getCasterId() {
-      java.lang.Object ref = casterId ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        casterId = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string caster_id = 3;</code>
-     * @return The bytes for casterId.
-     */
-    public com.google.protobuf.ByteString
-        getCasterIdBytes() {
-      java.lang.Object ref = casterId ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        casterId = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string caster_id = 3;</code>
-     * @param value The casterId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCasterId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      casterId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string caster_id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCasterId() {
-      
-      casterId = getDefaultInstance().getCasterId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string caster_id = 3;</code>
-     * @param value The bytes for casterId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCasterIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      casterId = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.LongList clasId = emptyLongList();
-    private void ensureClasIdIsMutable() {
+    private com.google.protobuf.Internal.LongList roomIds = emptyLongList();
+    private void ensureRoomIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        clasId = mutableCopy(clasId );
+        roomIds = mutableCopy(roomIds );
         bitField0_ |= 0x00000001;
        }
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
-     * @return A list containing the clasId.
+     * <code>repeated int64 room_ids = 2;</code>
+     * @return A list containing the roomIds.
      */
     public java.util.List<java.lang.Long>
-        getClasIdList() {
+        getRoomIdsList() {
       return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(clasId ) : clasId ;
+               java.util.Collections.unmodifiableList(roomIds ) : roomIds ;
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
-     * @return The count of clasId.
+     * <code>repeated int64 room_ids = 2;</code>
+     * @return The count of roomIds.
      */
-    public int getClasIdCount() {
-      return clasId .size();
+    public int getRoomIdsCount() {
+      return roomIds .size();
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
+     * <code>repeated int64 room_ids = 2;</code>
      * @param index The index of the element to return.
-     * @return The clasId at the given index.
+     * @return The roomIds at the given index.
      */
-    public long getClasId(int index) {
-      return clasId .getLong(index);
+    public long getRoomIds(int index) {
+      return roomIds .getLong(index);
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
+     * <code>repeated int64 room_ids = 2;</code>
      * @param index The index to set the value at.
-     * @param value The clasId to set.
+     * @param value The roomIds to set.
      * @return This builder for chaining.
      */
-    public Builder setClasId(
+    public Builder setRoomIds(
         int index, long value) {
-      ensureClasIdIsMutable();
-      clasId .setLong(index, value);
+      ensureRoomIdsIsMutable();
+      roomIds .setLong(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
-     * @param value The clasId to add.
+     * <code>repeated int64 room_ids = 2;</code>
+     * @param value The roomIds to add.
      * @return This builder for chaining.
      */
-    public Builder addClasId(long value) {
-      ensureClasIdIsMutable();
-      clasId .addLong(value);
+    public Builder addRoomIds(long value) {
+      ensureRoomIdsIsMutable();
+      roomIds .addLong(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
-     * @param values The clasId to add.
+     * <code>repeated int64 room_ids = 2;</code>
+     * @param values The roomIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllClasId(
+    public Builder addAllRoomIds(
         java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureClasIdIsMutable();
+      ensureRoomIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, clasId );
+          values, roomIds );
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 clas_id = 4;</code>
+     * <code>repeated int64 room_ids = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearClasId() {
-      clasId = emptyLongList();
+    public Builder clearRoomIds() {
+      roomIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
@@ -948,41 +745,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.GetAggregationLiveUrlRequest)
+    // @@protoc_insertion_point(builder_scope:glory_api.GetLiveBoardCommentsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.GetAggregationLiveUrlRequest)
-  private static final com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.GetLiveBoardCommentsRequest)
+  private static final com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest();
   }
 
-  public static com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetAggregationLiveUrlRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetAggregationLiveUrlRequest>() {
+  private static final com.google.protobuf.Parser<GetLiveBoardCommentsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetLiveBoardCommentsRequest>() {
     @java.lang.Override
-    public GetAggregationLiveUrlRequest parsePartialFrom(
+    public GetLiveBoardCommentsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetAggregationLiveUrlRequest(input, extensionRegistry);
+      return new GetLiveBoardCommentsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetAggregationLiveUrlRequest> parser() {
+  public static com.google.protobuf.Parser<GetLiveBoardCommentsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetAggregationLiveUrlRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetLiveBoardCommentsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlRequest getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.live.GetLiveBoardCommentsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -430,6 +430,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListUserMajorAndClass', '2': '.glory_api.ListUserMajorAndClasRequest', '3': '.glory_api.ListUserMajorAndClasResponse', '4': {}},
     {'1': 'GetAggregationLiveUrl', '2': '.glory_api.GetAggregationLiveUrlRequest', '3': '.glory_api.GetAggregationLiveUrlResponse', '4': {}},
     {'1': 'GetLiveBoardData', '2': '.glory_api.GetLiveBoardDataRequest', '3': '.glory_api.GetLiveBoardDataResponse', '4': {}},
+    {'1': 'GetLiveBoardComments', '2': '.glory_api.GetLiveBoardCommentsRequest', '3': '.glory_api.GetLiveBoardCommentsResponse', '4': {}},
   ],
 };
 
@@ -1340,6 +1341,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetLiveBoardDataRequest': $54.GetLiveBoardDataRequest$json,
   '.glory_api.GetLiveBoardDataResponse': $54.GetLiveBoardDataResponse$json,
   '.glory_api.LiveLikeData': $54.LiveLikeData$json,
+  '.glory_api.GetLiveBoardCommentsRequest': $54.GetLiveBoardCommentsRequest$json,
+  '.glory_api.GetLiveBoardCommentsResponse': $54.GetLiveBoardCommentsResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2152,5 +2155,8 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'JsUmVxdWVzdBooLmdsb3J5X2FwaS5HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZSIi0sEY'
     'Hi9hcGkvbGl2ZS9hZ2dyZWdhdGlvbl9saXZlX3VybBJ5ChBHZXRMaXZlQm9hcmREYXRhEiIuZ2'
     'xvcnlfYXBpLkdldExpdmVCb2FyZERhdGFSZXF1ZXN0GiMuZ2xvcnlfYXBpLkdldExpdmVCb2Fy'
-    'ZERhdGFSZXNwb25zZSIc0sEYGC9hcGkvbGl2ZS9nZXRfYm9hcmRfZGF0YQ==');
+    'ZERhdGFSZXNwb25zZSIc0sEYGC9hcGkvbGl2ZS9nZXRfYm9hcmRfZGF0YRKNAQoUR2V0TGl2ZU'
+    'JvYXJkQ29tbWVudHMSJi5nbG9yeV9hcGkuR2V0TGl2ZUJvYXJkQ29tbWVudHNSZXF1ZXN0Gicu'
+    'Z2xvcnlfYXBpLkdldExpdmVCb2FyZENvbW1lbnRzUmVzcG9uc2UiJNLBGCAvYXBpL2xpdmUvZ2'
+    'V0X2JvYXJkX2xpdmVfY29tbWVudA==');
 

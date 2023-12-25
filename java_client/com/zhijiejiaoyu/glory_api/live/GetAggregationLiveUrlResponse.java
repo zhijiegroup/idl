@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private GetAggregationLiveUrlResponse() {
     liveUrl = "";
+    casterId = "";
+    roomIds = emptyLongList();
   }
 
   @java.lang.Override
@@ -39,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,6 +76,33 @@ private static final long serialVersionUID = 0L;
             mixCount = input.readInt64();
             break;
           }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            casterId = s;
+            break;
+          }
+          case 40: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              roomIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            roomIds .addLong(input.readInt64());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              roomIds = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              roomIds .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +118,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        roomIds .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -180,6 +213,72 @@ private static final long serialVersionUID = 0L;
     return mixCount ;
   }
 
+  public static final int CASTER_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object casterId ;
+  /**
+   * <code>string caster_id = 4;</code>
+   * @return The casterId.
+   */
+  @java.lang.Override
+  public java.lang.String getCasterId() {
+    java.lang.Object ref = casterId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      casterId = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string caster_id = 4;</code>
+   * @return The bytes for casterId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCasterIdBytes() {
+    java.lang.Object ref = casterId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      casterId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROOM_IDS_FIELD_NUMBER = 5;
+  private com.google.protobuf.Internal.LongList roomIds ;
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @return A list containing the roomIds.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long>
+      getRoomIdsList() {
+    return roomIds ;
+  }
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @return The count of roomIds.
+   */
+  public int getRoomIdsCount() {
+    return roomIds .size();
+  }
+  /**
+   * <code>repeated int64 room_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The roomIds at the given index.
+   */
+  public long getRoomIds(int index) {
+    return roomIds .getLong(index);
+  }
+  private int roomIdsMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -194,6 +293,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
@@ -202,6 +302,16 @@ private static final long serialVersionUID = 0L;
     }
     if (mixCount != 0L) {
       output.writeInt64(3, mixCount );
+    }
+    if (!getCasterIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, casterId );
+    }
+    if (getRoomIdsList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(roomIdsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < roomIds .size(); i++) {
+      output.writeInt64NoTag(roomIds .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -222,6 +332,23 @@ private static final long serialVersionUID = 0L;
     if (mixCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, mixCount );
+    }
+    if (!getCasterIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, casterId );
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < roomIds .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(roomIds .getLong(i));
+      }
+      size += dataSize;
+      if (!getRoomIdsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      roomIdsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -247,6 +374,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLiveUrl())) return false;
     if (getMixCount()
         != other.getMixCount()) return false;
+    if (!getCasterId()
+        .equals(other.getCasterId())) return false;
+    if (!getRoomIdsList()
+        .equals(other.getRoomIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +398,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MIX_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMixCount());
+    hash = (37 * hash) + CASTER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCasterId().hashCode();
+    if (getRoomIdsCount() > 0) {
+      hash = (37 * hash) + ROOM_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -410,6 +547,10 @@ private static final long serialVersionUID = 0L;
 
       mixCount = 0L;
 
+      casterId = "";
+
+      roomIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -436,6 +577,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse result = new com.zhijiejiaoyu.glory_api.live.GetAggregationLiveUrlResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
@@ -443,6 +585,12 @@ private static final long serialVersionUID = 0L;
       }
       result.liveUrl = liveUrl ;
       result.mixCount = mixCount ;
+      result.casterId = casterId ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        roomIds .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.roomIds = roomIds ;
       onBuilt();
       return result;
     }
@@ -501,6 +649,20 @@ private static final long serialVersionUID = 0L;
       if (other.getMixCount() != 0L) {
         setMixCount(other.getMixCount());
       }
+      if (!other.getCasterId().isEmpty()) {
+        casterId = other.casterId ;
+        onChanged();
+      }
+      if (!other.roomIds .isEmpty()) {
+        if (roomIds .isEmpty()) {
+          roomIds = other.roomIds ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureRoomIdsIsMutable();
+          roomIds .addAll(other.roomIds );
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -529,6 +691,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -752,6 +915,161 @@ private static final long serialVersionUID = 0L;
     public Builder clearMixCount() {
       
       mixCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object casterId = "";
+    /**
+     * <code>string caster_id = 4;</code>
+     * @return The casterId.
+     */
+    public java.lang.String getCasterId() {
+      java.lang.Object ref = casterId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        casterId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string caster_id = 4;</code>
+     * @return The bytes for casterId.
+     */
+    public com.google.protobuf.ByteString
+        getCasterIdBytes() {
+      java.lang.Object ref = casterId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        casterId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string caster_id = 4;</code>
+     * @param value The casterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCasterId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      casterId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string caster_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCasterId() {
+      
+      casterId = getDefaultInstance().getCasterId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string caster_id = 4;</code>
+     * @param value The bytes for casterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCasterIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      casterId = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.LongList roomIds = emptyLongList();
+    private void ensureRoomIdsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        roomIds = mutableCopy(roomIds );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @return A list containing the roomIds.
+     */
+    public java.util.List<java.lang.Long>
+        getRoomIdsList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(roomIds ) : roomIds ;
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @return The count of roomIds.
+     */
+    public int getRoomIdsCount() {
+      return roomIds .size();
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @param index The index of the element to return.
+     * @return The roomIds at the given index.
+     */
+    public long getRoomIds(int index) {
+      return roomIds .getLong(index);
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The roomIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomIds(
+        int index, long value) {
+      ensureRoomIdsIsMutable();
+      roomIds .setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @param value The roomIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRoomIds(long value) {
+      ensureRoomIdsIsMutable();
+      roomIds .addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @param values The roomIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRoomIds(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureRoomIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, roomIds );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 room_ids = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomIds() {
+      roomIds = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }

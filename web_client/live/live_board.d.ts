@@ -28,6 +28,7 @@ export interface ClasData {
 export interface GetAggregationLiveUrlRequest {
   base_request?: base.BaseRequest;
   page?: string;
+  caster_id?: string;
   clas_id?: Array<string>;
 }
 
@@ -35,6 +36,8 @@ export interface GetAggregationLiveUrlResponse {
   base_resp?: base.BaseResponse;
   live_url?: string;
   mix_count?: string;
+  caster_id?: string;
+  room_ids?: Array<string>;
 }
 
 export interface GetLiveBoardDataRequest {
@@ -54,4 +57,14 @@ export interface GetLiveBoardDataResponse {
 export interface LiveLikeData {
   name?: string;
   like_count?: string;
+}
+
+export interface GetLiveBoardCommentsRequest {
+  base_request?: base.BaseRequest;
+  room_ids?: Array<string>;
+}
+
+export interface GetLiveBoardCommentsResponse {
+  base_resp?: base.BaseResponse;
+  comments?: Array<string>;
 }

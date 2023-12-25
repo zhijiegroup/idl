@@ -29,17 +29,29 @@ public interface GetAggregationLiveUrlRequestOrBuilder extends
   long getPage();
 
   /**
-   * <code>repeated int64 clas_id = 3;</code>
+   * <code>string caster_id = 3;</code>
+   * @return The casterId.
+   */
+  java.lang.String getCasterId();
+  /**
+   * <code>string caster_id = 3;</code>
+   * @return The bytes for casterId.
+   */
+  com.google.protobuf.ByteString
+      getCasterIdBytes();
+
+  /**
+   * <code>repeated int64 clas_id = 4;</code>
    * @return A list containing the clasId.
    */
   java.util.List<java.lang.Long> getClasIdList();
   /**
-   * <code>repeated int64 clas_id = 3;</code>
+   * <code>repeated int64 clas_id = 4;</code>
    * @return The count of clasId.
    */
   int getClasIdCount();
   /**
-   * <code>repeated int64 clas_id = 3;</code>
+   * <code>repeated int64 clas_id = 4;</code>
    * @param index The index of the element to return.
    * @return The clasId at the given index.
    */
