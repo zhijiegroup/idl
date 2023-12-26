@@ -132,6 +132,18 @@ struct GloryApi_User {
     set {_uniqueStorage()._isEnterTenant = newValue}
   }
 
+  /// 密码较弱，建议修改密码
+  var weakPassword: Bool {
+    get {return _storage._weakPassword}
+    set {_uniqueStorage()._weakPassword = newValue}
+  }
+
+  /// 首次登录，请修改密码
+  var needChangePassword: Bool {
+    get {return _storage._needChangePassword}
+    set {_uniqueStorage()._needChangePassword = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2262,6 +2274,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     13: .same(proto: "pages"),
     14: .standard(proto: "is_admin"),
     15: .standard(proto: "is_enter_tenant"),
+    16: .standard(proto: "weak_password"),
+    17: .standard(proto: "need_change_password"),
   ]
 
   fileprivate class _StorageClass {
@@ -2280,6 +2294,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _pages: [GloryApi_PagePermission] = []
     var _isAdmin: Bool = false
     var _isEnterTenant: Bool = false
+    var _weakPassword: Bool = false
+    var _needChangePassword: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -2301,6 +2317,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _pages = source._pages
       _isAdmin = source._isAdmin
       _isEnterTenant = source._isEnterTenant
+      _weakPassword = source._weakPassword
+      _needChangePassword = source._needChangePassword
     }
   }
 
@@ -2333,6 +2351,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._pages) }()
         case 14: try { try decoder.decodeSingularBoolField(value: &_storage._isAdmin) }()
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isEnterTenant) }()
+        case 16: try { try decoder.decodeSingularBoolField(value: &_storage._weakPassword) }()
+        case 17: try { try decoder.decodeSingularBoolField(value: &_storage._needChangePassword) }()
         case 121: try { try decoder.decodeRepeatedMessageField(value: &_storage._roles) }()
         default: break
         }
@@ -2388,6 +2408,12 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._isEnterTenant != false {
         try visitor.visitSingularBoolField(value: _storage._isEnterTenant, fieldNumber: 15)
       }
+      if _storage._weakPassword != false {
+        try visitor.visitSingularBoolField(value: _storage._weakPassword, fieldNumber: 16)
+      }
+      if _storage._needChangePassword != false {
+        try visitor.visitSingularBoolField(value: _storage._needChangePassword, fieldNumber: 17)
+      }
       if !_storage._roles.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._roles, fieldNumber: 121)
       }
@@ -2415,6 +2441,8 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._pages != rhs_storage._pages {return false}
         if _storage._isAdmin != rhs_storage._isAdmin {return false}
         if _storage._isEnterTenant != rhs_storage._isEnterTenant {return false}
+        if _storage._weakPassword != rhs_storage._weakPassword {return false}
+        if _storage._needChangePassword != rhs_storage._needChangePassword {return false}
         return true
       }
       if !storagesAreEqual {return false}

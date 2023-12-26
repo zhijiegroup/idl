@@ -155,6 +155,16 @@ private static final long serialVersionUID = 0L;
             isEnterTenant = input.readBool();
             break;
           }
+          case 128: {
+
+            weakPassword = input.readBool();
+            break;
+          }
+          case 136: {
+
+            needChangePassword = input.readBool();
+            break;
+          }
           case 970: {
             if (!((mutable_bitField0 & 0x00000004) != 0)) {
               roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
@@ -690,6 +700,36 @@ private static final long serialVersionUID = 0L;
     return isEnterTenant ;
   }
 
+  public static final int WEAK_PASSWORD_FIELD_NUMBER = 16;
+  private boolean weakPassword ;
+  /**
+   * <pre>
+   * 密码较弱，建议修改密码
+   * </pre>
+   *
+   * <code>bool weak_password = 16;</code>
+   * @return The weakPassword.
+   */
+  @java.lang.Override
+  public boolean getWeakPassword() {
+    return weakPassword ;
+  }
+
+  public static final int NEED_CHANGE_PASSWORD_FIELD_NUMBER = 17;
+  private boolean needChangePassword ;
+  /**
+   * <pre>
+   * 首次登录，请修改密码
+   * </pre>
+   *
+   * <code>bool need_change_password = 17;</code>
+   * @return The needChangePassword.
+   */
+  @java.lang.Override
+  public boolean getNeedChangePassword() {
+    return needChangePassword ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -745,6 +785,12 @@ private static final long serialVersionUID = 0L;
     }
     if (isEnterTenant != false) {
       output.writeBool(15, isEnterTenant );
+    }
+    if (weakPassword != false) {
+      output.writeBool(16, weakPassword );
+    }
+    if (needChangePassword != false) {
+      output.writeBool(17, needChangePassword );
     }
     for (int i = 0; i < roles .size(); i++) {
       output.writeMessage(121, roles .get(i));
@@ -808,6 +854,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, isEnterTenant );
     }
+    if (weakPassword != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(16, weakPassword );
+    }
+    if (needChangePassword != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(17, needChangePassword );
+    }
     for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(121, roles .get(i));
@@ -860,6 +914,10 @@ private static final long serialVersionUID = 0L;
         != other.getIsAdmin()) return false;
     if (getIsEnterTenant()
         != other.getIsEnterTenant()) return false;
+    if (getWeakPassword()
+        != other.getWeakPassword()) return false;
+    if (getNeedChangePassword()
+        != other.getNeedChangePassword()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -915,6 +973,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_ENTER_TENANT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsEnterTenant());
+    hash = (37 * hash) + WEAK_PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getWeakPassword());
+    hash = (37 * hash) + NEED_CHANGE_PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getNeedChangePassword());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1102,6 +1166,10 @@ private static final long serialVersionUID = 0L;
 
       isEnterTenant = false;
 
+      weakPassword = false;
+
+      needChangePassword = false;
+
       return this;
     }
 
@@ -1180,6 +1248,8 @@ private static final long serialVersionUID = 0L;
       }
       result.isAdmin = isAdmin ;
       result.isEnterTenant = isEnterTenant ;
+      result.weakPassword = weakPassword ;
+      result.needChangePassword = needChangePassword ;
       onBuilt();
       return result;
     }
@@ -1370,6 +1440,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsEnterTenant() != false) {
         setIsEnterTenant(other.getIsEnterTenant());
+      }
+      if (other.getWeakPassword() != false) {
+        setWeakPassword(other.getWeakPassword());
+      }
+      if (other.getNeedChangePassword() != false) {
+        setNeedChangePassword(other.getNeedChangePassword());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3140,6 +3216,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsEnterTenant() {
       
       isEnterTenant = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean weakPassword ;
+    /**
+     * <pre>
+     * 密码较弱，建议修改密码
+     * </pre>
+     *
+     * <code>bool weak_password = 16;</code>
+     * @return The weakPassword.
+     */
+    @java.lang.Override
+    public boolean getWeakPassword() {
+      return weakPassword ;
+    }
+    /**
+     * <pre>
+     * 密码较弱，建议修改密码
+     * </pre>
+     *
+     * <code>bool weak_password = 16;</code>
+     * @param value The weakPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeakPassword(boolean value) {
+      
+      weakPassword = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 密码较弱，建议修改密码
+     * </pre>
+     *
+     * <code>bool weak_password = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWeakPassword() {
+      
+      weakPassword = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean needChangePassword ;
+    /**
+     * <pre>
+     * 首次登录，请修改密码
+     * </pre>
+     *
+     * <code>bool need_change_password = 17;</code>
+     * @return The needChangePassword.
+     */
+    @java.lang.Override
+    public boolean getNeedChangePassword() {
+      return needChangePassword ;
+    }
+    /**
+     * <pre>
+     * 首次登录，请修改密码
+     * </pre>
+     *
+     * <code>bool need_change_password = 17;</code>
+     * @param value The needChangePassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNeedChangePassword(boolean value) {
+      
+      needChangePassword = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 首次登录，请修改密码
+     * </pre>
+     *
+     * <code>bool need_change_password = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNeedChangePassword() {
+      
+      needChangePassword = false;
       onChanged();
       return this;
     }

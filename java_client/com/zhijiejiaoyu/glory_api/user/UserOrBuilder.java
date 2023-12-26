@@ -237,4 +237,24 @@ public interface UserOrBuilder extends
    * @return The isEnterTenant.
    */
   boolean getIsEnterTenant();
+
+  /**
+   * <pre>
+   * 密码较弱，建议修改密码
+   * </pre>
+   *
+   * <code>bool weak_password = 16;</code>
+   * @return The weakPassword.
+   */
+  boolean getWeakPassword();
+
+  /**
+   * <pre>
+   * 首次登录，请修改密码
+   * </pre>
+   *
+   * <code>bool need_change_password = 17;</code>
+   * @return The needChangePassword.
+   */
+  boolean getNeedChangePassword();
 }

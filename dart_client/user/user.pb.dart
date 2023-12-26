@@ -177,6 +177,8 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<PagePermission>? pages,
     $core.bool? isAdmin,
     $core.bool? isEnterTenant,
+    $core.bool? weakPassword,
+    $core.bool? needChangePassword,
     $core.Iterable<Role>? roles,
   }) {
     final $result = create();
@@ -222,6 +224,12 @@ class User extends $pb.GeneratedMessage {
     if (isEnterTenant != null) {
       $result.isEnterTenant = isEnterTenant;
     }
+    if (weakPassword != null) {
+      $result.weakPassword = weakPassword;
+    }
+    if (needChangePassword != null) {
+      $result.needChangePassword = needChangePassword;
+    }
     if (roles != null) {
       $result.roles.addAll(roles);
     }
@@ -246,6 +254,8 @@ class User extends $pb.GeneratedMessage {
     ..pc<PagePermission>(13, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: PagePermission.create)
     ..aOB(14, _omitFieldNames ? '' : 'isAdmin')
     ..aOB(15, _omitFieldNames ? '' : 'isEnterTenant')
+    ..aOB(16, _omitFieldNames ? '' : 'weakPassword')
+    ..aOB(17, _omitFieldNames ? '' : 'needChangePassword')
     ..pc<Role>(121, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: Role.create)
     ..hasRequiredFields = false
   ;
@@ -381,8 +391,26 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   void clearIsEnterTenant() => clearField(15);
 
+  @$pb.TagNumber(16)
+  $core.bool get weakPassword => $_getBF(14);
+  @$pb.TagNumber(16)
+  set weakPassword($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasWeakPassword() => $_has(14);
+  @$pb.TagNumber(16)
+  void clearWeakPassword() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.bool get needChangePassword => $_getBF(15);
+  @$pb.TagNumber(17)
+  set needChangePassword($core.bool v) { $_setBool(15, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasNeedChangePassword() => $_has(15);
+  @$pb.TagNumber(17)
+  void clearNeedChangePassword() => clearField(17);
+
   @$pb.TagNumber(121)
-  $core.List<Role> get roles => $_getList(14);
+  $core.List<Role> get roles => $_getList(16);
 }
 
 class UserFollow extends $pb.GeneratedMessage {

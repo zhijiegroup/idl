@@ -37,6 +37,10 @@ export interface User {
   is_admin?: boolean;
   /** 是否在管控状态 */
   is_enter_tenant?: boolean;
+  /** 密码较弱，建议修改密码 */
+  weak_password?: boolean;
+  /** 首次登录，请修改密码 */
+  need_change_password?: boolean;
 }
 
 export interface UserFollow {
