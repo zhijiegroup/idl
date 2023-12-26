@@ -35,7 +35,8 @@ message GetAggregationLiveUrlResponse {
     string live_url = 2;
     int64 mix_count = 3;
     string caster_id = 4;
-    repeated int64 room_ids = 5;
+    int64 total = 5;
+    repeated int64 room_ids = 6;
 }
 
 message GetLiveBoardDataRequest {
@@ -60,7 +61,6 @@ message LiveLikeData {
 message GetLiveBoardCommentsRequest {
     base.BaseRequest base_request = 1;
     repeated int64 clas_ids = 2;
-    int64 page = 3;
 }
 
 message GetLiveBoardCommentsResponse {
