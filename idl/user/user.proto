@@ -36,6 +36,8 @@ message User {
   repeated PagePermission pages = 13;
   bool is_admin = 14;
   bool is_enter_tenant = 15; // 是否在管控状态
+  bool weak_password = 16; // 密码较弱，建议修改密码
+  bool need_change_password = 17; // 首次登录，请修改密码
 }
 
 message UserFollow {
