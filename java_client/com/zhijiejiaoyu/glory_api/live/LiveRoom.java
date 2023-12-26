@@ -321,23 +321,23 @@ public final class LiveRoom {
       "(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t\022\016\n\006hei" +
       "ght\030\t \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveStreamCa" +
       "llbackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"\202\001\n\035UpdateLiveCommentCount" +
+      ".BaseResponse\"\226\001\n\035UpdateLiveCommentCount" +
       "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
       "eRequest\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcomment_cou" +
-      "nt\030\003 \001(\003\022\020\n\010comments\030\004 \003(\t\"G\n\036UpdateLive" +
-      "CommentCountResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"P\n\024GetLiveReplayRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007room_id\030\002 \001(\003\"R\n\025GetLiveReplayRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\022\n\nreplay_url\030\002 \003(\t\"a\n%GetCouponAn" +
-      "dIntroducingProductRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002" +
-      " \001(\003\"w\n&GetCouponAndIntroducingProductRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\022\n\nproduct_id\030\002 \001(\003\022\022\n\ncoupon_ids\030" +
-      "\003 \003(\003B#\n\037com.zhijiejiaoyu.glory_api.live" +
-      "P\001b\006proto3"
+      "nt\030\003 \001(\003\022\022\n\nlike_count\030\004 \001(\003\022\020\n\010comments" +
+      "\030\005 \003(\t\"G\n\036UpdateLiveCommentCountResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "P\n\024GetLiveReplayRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(" +
+      "\003\"R\n\025GetLiveReplayResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\022\n\nreplay_url\030" +
+      "\002 \003(\t\"a\n%GetCouponAndIntroducingProductR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\017\n\007shop_id\030\002 \001(\003\"w\n&GetCouponAnd" +
+      "IntroducingProductResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduct_id\030" +
+      "\002 \001(\003\022\022\n\ncoupon_ids\030\003 \003(\003B#\n\037com.zhijiej" +
+      "iaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -547,7 +547,7 @@ public final class LiveRoom {
     internal_static_glory_api_UpdateLiveCommentCountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateLiveCommentCountRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "RoomId", "CommentCount", "Comments", });
+        new java.lang.String[] { "BaseRequest", "RoomId", "CommentCount", "LikeCount", "Comments", });
     internal_static_glory_api_UpdateLiveCommentCountResponse_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_UpdateLiveCommentCountResponse_fieldAccessorTable = new

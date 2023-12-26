@@ -73,7 +73,12 @@ private static final long serialVersionUID = 0L;
             commentCount = input.readInt64();
             break;
           }
-          case 34: {
+          case 32: {
+
+            likeCount = input.readInt64();
+            break;
+          }
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               comments = new com.google.protobuf.LazyStringArrayList();
@@ -165,10 +170,21 @@ private static final long serialVersionUID = 0L;
     return commentCount ;
   }
 
-  public static final int COMMENTS_FIELD_NUMBER = 4;
+  public static final int LIKE_COUNT_FIELD_NUMBER = 4;
+  private long likeCount ;
+  /**
+   * <code>int64 like_count = 4;</code>
+   * @return The likeCount.
+   */
+  @java.lang.Override
+  public long getLikeCount() {
+    return likeCount ;
+  }
+
+  public static final int COMMENTS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList comments ;
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @return A list containing the comments.
    */
   public com.google.protobuf.ProtocolStringList
@@ -176,14 +192,14 @@ private static final long serialVersionUID = 0L;
     return comments ;
   }
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @return The count of comments.
    */
   public int getCommentsCount() {
     return comments .size();
   }
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @param index The index of the element to return.
    * @return The comments at the given index.
    */
@@ -191,7 +207,7 @@ private static final long serialVersionUID = 0L;
     return comments .get(index);
   }
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the comments at the given index.
    */
@@ -223,8 +239,11 @@ private static final long serialVersionUID = 0L;
     if (commentCount != 0L) {
       output.writeInt64(3, commentCount );
     }
+    if (likeCount != 0L) {
+      output.writeInt64(4, likeCount );
+    }
     for (int i = 0; i < comments .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, comments .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, comments .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -246,6 +265,10 @@ private static final long serialVersionUID = 0L;
     if (commentCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, commentCount );
+    }
+    if (likeCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, likeCount );
     }
     {
       int dataSize = 0;
@@ -279,6 +302,8 @@ private static final long serialVersionUID = 0L;
         != other.getRoomId()) return false;
     if (getCommentCount()
         != other.getCommentCount()) return false;
+    if (getLikeCount()
+        != other.getLikeCount()) return false;
     if (!getCommentsList()
         .equals(other.getCommentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -302,6 +327,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COMMENT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCommentCount());
+    hash = (37 * hash) + LIKE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLikeCount());
     if (getCommentsCount() > 0) {
       hash = (37 * hash) + COMMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getCommentsList().hashCode();
@@ -449,6 +477,8 @@ private static final long serialVersionUID = 0L;
 
       commentCount = 0L;
 
+      likeCount = 0L;
+
       comments = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -485,6 +515,7 @@ private static final long serialVersionUID = 0L;
       }
       result.roomId = roomId ;
       result.commentCount = commentCount ;
+      result.likeCount = likeCount ;
       if (((bitField0 & 0x00000001) != 0)) {
         comments = comments .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000001);
@@ -546,6 +577,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCommentCount() != 0L) {
         setCommentCount(other.getCommentCount());
+      }
+      if (other.getLikeCount() != 0L) {
+        setLikeCount(other.getLikeCount());
       }
       if (!other.comments .isEmpty()) {
         if (comments .isEmpty()) {
@@ -768,6 +802,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long likeCount ;
+    /**
+     * <code>int64 like_count = 4;</code>
+     * @return The likeCount.
+     */
+    @java.lang.Override
+    public long getLikeCount() {
+      return likeCount ;
+    }
+    /**
+     * <code>int64 like_count = 4;</code>
+     * @param value The likeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLikeCount(long value) {
+      
+      likeCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 like_count = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLikeCount() {
+      
+      likeCount = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList comments = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureCommentsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -776,7 +841,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @return A list containing the comments.
      */
     public com.google.protobuf.ProtocolStringList
@@ -784,14 +849,14 @@ private static final long serialVersionUID = 0L;
       return comments .getUnmodifiableView();
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @return The count of comments.
      */
     public int getCommentsCount() {
       return comments .size();
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param index The index of the element to return.
      * @return The comments at the given index.
      */
@@ -799,7 +864,7 @@ private static final long serialVersionUID = 0L;
       return comments .get(index);
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param index The index of the value to return.
      * @return The bytes of the comments at the given index.
      */
@@ -808,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return comments .getByteString(index);
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param index The index to set the value at.
      * @param value The comments to set.
      * @return This builder for chaining.
@@ -824,7 +889,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param value The comments to add.
      * @return This builder for chaining.
      */
@@ -839,7 +904,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param values The comments to add.
      * @return This builder for chaining.
      */
@@ -852,7 +917,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearComments() {
@@ -862,7 +927,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string comments = 4;</code>
+     * <code>repeated string comments = 5;</code>
      * @param value The bytes of the comments to add.
      * @return This builder for chaining.
      */

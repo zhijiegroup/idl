@@ -598,7 +598,8 @@ const UpdateLiveCommentCountRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'room_id', '3': 2, '4': 1, '5': 3, '10': 'roomId'},
     {'1': 'comment_count', '3': 3, '4': 1, '5': 3, '10': 'commentCount'},
-    {'1': 'comments', '3': 4, '4': 3, '5': 9, '10': 'comments'},
+    {'1': 'like_count', '3': 4, '4': 1, '5': 3, '10': 'likeCount'},
+    {'1': 'comments', '3': 5, '4': 3, '5': 9, '10': 'comments'},
   ],
 };
 
@@ -606,8 +607,8 @@ const UpdateLiveCommentCountRequest$json = {
 final $typed_data.Uint8List updateLiveCommentCountRequestDescriptor = $convert.base64Decode(
     'Ch1VcGRhdGVMaXZlQ29tbWVudENvdW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdyb29tX2lkGAIgASgDUgZyb29tSWQS'
-    'IwoNY29tbWVudF9jb3VudBgDIAEoA1IMY29tbWVudENvdW50EhoKCGNvbW1lbnRzGAQgAygJUg'
-    'hjb21tZW50cw==');
+    'IwoNY29tbWVudF9jb3VudBgDIAEoA1IMY29tbWVudENvdW50Eh0KCmxpa2VfY291bnQYBCABKA'
+    'NSCWxpa2VDb3VudBIaCghjb21tZW50cxgFIAMoCVIIY29tbWVudHM=');
 
 @$core.Deprecated('Use updateLiveCommentCountResponseDescriptor instead')
 const UpdateLiveCommentCountResponse$json = {

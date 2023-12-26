@@ -35,24 +35,30 @@ public interface UpdateLiveCommentCountRequestOrBuilder extends
   long getCommentCount();
 
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>int64 like_count = 4;</code>
+   * @return The likeCount.
+   */
+  long getLikeCount();
+
+  /**
+   * <code>repeated string comments = 5;</code>
    * @return A list containing the comments.
    */
   java.util.List<java.lang.String>
       getCommentsList();
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @return The count of comments.
    */
   int getCommentsCount();
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @param index The index of the element to return.
    * @return The comments at the given index.
    */
   java.lang.String getComments(int index);
   /**
-   * <code>repeated string comments = 4;</code>
+   * <code>repeated string comments = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the comments at the given index.
    */

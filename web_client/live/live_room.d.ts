@@ -258,6 +258,7 @@ export interface UpdateLiveCommentCountRequest {
   base_request?: base.BaseRequest;
   room_id?: string;
   comment_count?: string;
+  like_count?: string;
   comments?: Array<string>;
 }
 

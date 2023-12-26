@@ -3108,6 +3108,7 @@ class UpdateLiveCommentCountRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? roomId,
     $fixnum.Int64? commentCount,
+    $fixnum.Int64? likeCount,
     $core.Iterable<$core.String>? comments,
   }) {
     final $result = create();
@@ -3119,6 +3120,9 @@ class UpdateLiveCommentCountRequest extends $pb.GeneratedMessage {
     }
     if (commentCount != null) {
       $result.commentCount = commentCount;
+    }
+    if (likeCount != null) {
+      $result.likeCount = likeCount;
     }
     if (comments != null) {
       $result.comments.addAll(comments);
@@ -3133,7 +3137,8 @@ class UpdateLiveCommentCountRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'roomId')
     ..aInt64(3, _omitFieldNames ? '' : 'commentCount')
-    ..pPS(4, _omitFieldNames ? '' : 'comments')
+    ..aInt64(4, _omitFieldNames ? '' : 'likeCount')
+    ..pPS(5, _omitFieldNames ? '' : 'comments')
     ..hasRequiredFields = false
   ;
 
@@ -3188,7 +3193,16 @@ class UpdateLiveCommentCountRequest extends $pb.GeneratedMessage {
   void clearCommentCount() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get comments => $_getList(3);
+  $fixnum.Int64 get likeCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set likeCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLikeCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLikeCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get comments => $_getList(4);
 }
 
 class UpdateLiveCommentCountResponse extends $pb.GeneratedMessage {
