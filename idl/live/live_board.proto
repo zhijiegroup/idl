@@ -59,7 +59,8 @@ message LiveLikeData {
 
 message GetLiveBoardCommentsRequest {
     base.BaseRequest base_request = 1;
-    repeated int64 room_ids = 2;
+    repeated int64 clas_ids = 2;
+    int64 page = 3;
 }
 
 message GetLiveBoardCommentsResponse {
