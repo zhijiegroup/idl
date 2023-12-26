@@ -111,7 +111,8 @@ message LoginWithPasswordResponse {
 message UpdatePasswordRequest {
   base.BaseRequest base_request = 1;
   string phone = 2;
-  string password = 3;
+  string origin_password = 3;
+  string password = 4;
 }
 message UpdatePasswordResponse {
   base.BaseResponse base_resp = 1;
