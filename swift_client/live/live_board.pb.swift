@@ -232,7 +232,9 @@ struct GloryApi_GetLiveBoardCommentsRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var roomIds: [Int64] = []
+  var clasIds: [Int64] = []
+
+  var page: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -706,7 +708,8 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
   static let protoMessageName: String = _protobuf_package + ".GetLiveBoardCommentsRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "room_ids"),
+    2: .standard(proto: "clas_ids"),
+    3: .same(proto: "page"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -716,7 +719,8 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.roomIds) }()
+      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.clasIds) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.page) }()
       default: break
       }
     }
@@ -730,15 +734,19 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.roomIds.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.roomIds, fieldNumber: 2)
+    if !self.clasIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.clasIds, fieldNumber: 2)
+    }
+    if self.page != 0 {
+      try visitor.visitSingularInt64Field(value: self.page, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetLiveBoardCommentsRequest, rhs: GloryApi_GetLiveBoardCommentsRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.roomIds != rhs.roomIds {return false}
+    if lhs.clasIds != rhs.clasIds {return false}
+    if lhs.page != rhs.page {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

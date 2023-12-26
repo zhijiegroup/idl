@@ -61,7 +61,8 @@ export interface LiveLikeData {
 
 export interface GetLiveBoardCommentsRequest {
   base_request?: base.BaseRequest;
-  room_ids?: Array<string>;
+  clas_ids?: Array<string>;
+  page?: string;
 }
 
 export interface GetLiveBoardCommentsResponse {

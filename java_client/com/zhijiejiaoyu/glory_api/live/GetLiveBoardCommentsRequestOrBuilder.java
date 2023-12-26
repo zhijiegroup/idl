@@ -23,19 +23,25 @@ public interface GetLiveBoardCommentsRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>repeated int64 room_ids = 2;</code>
-   * @return A list containing the roomIds.
+   * <code>repeated int64 clas_ids = 2;</code>
+   * @return A list containing the clasIds.
    */
-  java.util.List<java.lang.Long> getRoomIdsList();
+  java.util.List<java.lang.Long> getClasIdsList();
   /**
-   * <code>repeated int64 room_ids = 2;</code>
-   * @return The count of roomIds.
+   * <code>repeated int64 clas_ids = 2;</code>
+   * @return The count of clasIds.
    */
-  int getRoomIdsCount();
+  int getClasIdsCount();
   /**
-   * <code>repeated int64 room_ids = 2;</code>
+   * <code>repeated int64 clas_ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The roomIds at the given index.
+   * @return The clasIds at the given index.
    */
-  long getRoomIds(int index);
+  long getClasIds(int index);
+
+  /**
+   * <code>int64 page = 3;</code>
+   * @return The page.
+   */
+  long getPage();
 }

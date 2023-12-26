@@ -697,14 +697,18 @@ class LiveLikeData extends $pb.GeneratedMessage {
 class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
   factory GetLiveBoardCommentsRequest({
     $0.BaseRequest? baseRequest,
-    $core.Iterable<$fixnum.Int64>? roomIds,
+    $core.Iterable<$fixnum.Int64>? clasIds,
+    $fixnum.Int64? page,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
     }
-    if (roomIds != null) {
-      $result.roomIds.addAll(roomIds);
+    if (clasIds != null) {
+      $result.clasIds.addAll(clasIds);
+    }
+    if (page != null) {
+      $result.page = page;
     }
     return $result;
   }
@@ -714,7 +718,8 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardCommentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
+    ..aInt64(3, _omitFieldNames ? '' : 'page')
     ..hasRequiredFields = false
   ;
 
@@ -751,7 +756,16 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get roomIds => $_getList(1);
+  $core.List<$fixnum.Int64> get clasIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get page => $_getI64(2);
+  @$pb.TagNumber(3)
+  set page($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPage() => clearField(3);
 }
 
 class GetLiveBoardCommentsResponse extends $pb.GeneratedMessage {

@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetLiveBoardCommentsRequest() {
-    roomIds = emptyLongList();
+    clasIds = emptyLongList();
   }
 
   @java.lang.Override
@@ -65,23 +65,28 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              roomIds = newLongList();
+              clasIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            roomIds .addLong(input.readInt64());
+            clasIds .addLong(input.readInt64());
             break;
           }
           case 18: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              roomIds = newLongList();
+              clasIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              roomIds .addLong(input.readInt64());
+              clasIds .addLong(input.readInt64());
             }
             input.popLimit(limit);
+            break;
+          }
+          case 24: {
+
+            page = input.readInt64();
             break;
           }
           default: {
@@ -100,7 +105,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        roomIds .makeImmutable(); // C
+        clasIds .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -145,33 +150,44 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int ROOM_IDS_FIELD_NUMBER = 2;
-  private com.google.protobuf.Internal.LongList roomIds ;
+  public static final int CLAS_IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.Internal.LongList clasIds ;
   /**
-   * <code>repeated int64 room_ids = 2;</code>
-   * @return A list containing the roomIds.
+   * <code>repeated int64 clas_ids = 2;</code>
+   * @return A list containing the clasIds.
    */
   @java.lang.Override
   public java.util.List<java.lang.Long>
-      getRoomIdsList() {
-    return roomIds ;
+      getClasIdsList() {
+    return clasIds ;
   }
   /**
-   * <code>repeated int64 room_ids = 2;</code>
-   * @return The count of roomIds.
+   * <code>repeated int64 clas_ids = 2;</code>
+   * @return The count of clasIds.
    */
-  public int getRoomIdsCount() {
-    return roomIds .size();
+  public int getClasIdsCount() {
+    return clasIds .size();
   }
   /**
-   * <code>repeated int64 room_ids = 2;</code>
+   * <code>repeated int64 clas_ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The roomIds at the given index.
+   * @return The clasIds at the given index.
    */
-  public long getRoomIds(int index) {
-    return roomIds .getLong(index);
+  public long getClasIds(int index) {
+    return clasIds .getLong(index);
   }
-  private int roomIdsMemoizedSerializedSize = -1;
+  private int clasIdsMemoizedSerializedSize = -1;
+
+  public static final int PAGE_FIELD_NUMBER = 3;
+  private long page ;
+  /**
+   * <code>int64 page = 3;</code>
+   * @return The page.
+   */
+  @java.lang.Override
+  public long getPage() {
+    return page ;
+  }
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -191,12 +207,15 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (getRoomIdsList().size() > 0) {
+    if (getClasIdsList().size() > 0) {
       output.writeUInt32NoTag(18);
-      output.writeUInt32NoTag(roomIdsMemoizedSerializedSize);
+      output.writeUInt32NoTag(clasIdsMemoizedSerializedSize);
     }
-    for (int i = 0; i < roomIds .size(); i++) {
-      output.writeInt64NoTag(roomIds .getLong(i));
+    for (int i = 0; i < clasIds .size(); i++) {
+      output.writeInt64NoTag(clasIds .getLong(i));
+    }
+    if (page != 0L) {
+      output.writeInt64(3, page );
     }
     unknownFields.writeTo(output);
   }
@@ -213,17 +232,21 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < roomIds .size(); i++) {
+      for (int i = 0; i < clasIds .size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(roomIds .getLong(i));
+          .computeInt64SizeNoTag(clasIds .getLong(i));
       }
       size += dataSize;
-      if (!getRoomIdsList().isEmpty()) {
+      if (!getClasIdsList().isEmpty()) {
         size += 1;
         size += com.google.protobuf.CodedOutputStream
             .computeInt32SizeNoTag(dataSize);
       }
-      roomIdsMemoizedSerializedSize = dataSize;
+      clasIdsMemoizedSerializedSize = dataSize;
+    }
+    if (page != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, page );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,8 +268,10 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (!getRoomIdsList()
-        .equals(other.getRoomIdsList())) return false;
+    if (!getClasIdsList()
+        .equals(other.getClasIdsList())) return false;
+    if (getPage()
+        != other.getPage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -262,10 +287,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    if (getRoomIdsCount() > 0) {
-      hash = (37 * hash) + ROOM_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomIdsList().hashCode();
+    if (getClasIdsCount() > 0) {
+      hash = (37 * hash) + CLAS_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getClasIdsList().hashCode();
     }
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,8 +433,10 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      roomIds = emptyLongList();
+      clasIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      page = 0L;
+
       return this;
     }
 
@@ -440,10 +470,11 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       if (((bitField0 & 0x00000001) != 0)) {
-        roomIds .makeImmutable();
+        clasIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
       }
-      result.roomIds = roomIds ;
+      result.clasIds = clasIds ;
+      result.page = page ;
       onBuilt();
       return result;
     }
@@ -495,15 +526,18 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.roomIds .isEmpty()) {
-        if (roomIds .isEmpty()) {
-          roomIds = other.roomIds ;
+      if (!other.clasIds .isEmpty()) {
+        if (clasIds .isEmpty()) {
+          clasIds = other.clasIds ;
           bitField0 = (bitField0 & ~0x00000001);
         } else {
-          ensureRoomIdsIsMutable();
-          roomIds .addAll(other.roomIds );
+          ensureClasIdsIsMutable();
+          clasIds .addAll(other.clasIds );
         }
         onChanged();
+      }
+      if (other.getPage() != 0L) {
+        setPage(other.getPage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -654,81 +688,112 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private com.google.protobuf.Internal.LongList roomIds = emptyLongList();
-    private void ensureRoomIdsIsMutable() {
+    private com.google.protobuf.Internal.LongList clasIds = emptyLongList();
+    private void ensureClasIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        roomIds = mutableCopy(roomIds );
+        clasIds = mutableCopy(clasIds );
         bitField0_ |= 0x00000001;
        }
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
-     * @return A list containing the roomIds.
+     * <code>repeated int64 clas_ids = 2;</code>
+     * @return A list containing the clasIds.
      */
     public java.util.List<java.lang.Long>
-        getRoomIdsList() {
+        getClasIdsList() {
       return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(roomIds ) : roomIds ;
+               java.util.Collections.unmodifiableList(clasIds ) : clasIds ;
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
-     * @return The count of roomIds.
+     * <code>repeated int64 clas_ids = 2;</code>
+     * @return The count of clasIds.
      */
-    public int getRoomIdsCount() {
-      return roomIds .size();
+    public int getClasIdsCount() {
+      return clasIds .size();
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
+     * <code>repeated int64 clas_ids = 2;</code>
      * @param index The index of the element to return.
-     * @return The roomIds at the given index.
+     * @return The clasIds at the given index.
      */
-    public long getRoomIds(int index) {
-      return roomIds .getLong(index);
+    public long getClasIds(int index) {
+      return clasIds .getLong(index);
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
+     * <code>repeated int64 clas_ids = 2;</code>
      * @param index The index to set the value at.
-     * @param value The roomIds to set.
+     * @param value The clasIds to set.
      * @return This builder for chaining.
      */
-    public Builder setRoomIds(
+    public Builder setClasIds(
         int index, long value) {
-      ensureRoomIdsIsMutable();
-      roomIds .setLong(index, value);
+      ensureClasIdsIsMutable();
+      clasIds .setLong(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
-     * @param value The roomIds to add.
+     * <code>repeated int64 clas_ids = 2;</code>
+     * @param value The clasIds to add.
      * @return This builder for chaining.
      */
-    public Builder addRoomIds(long value) {
-      ensureRoomIdsIsMutable();
-      roomIds .addLong(value);
+    public Builder addClasIds(long value) {
+      ensureClasIdsIsMutable();
+      clasIds .addLong(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
-     * @param values The roomIds to add.
+     * <code>repeated int64 clas_ids = 2;</code>
+     * @param values The clasIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllRoomIds(
+    public Builder addAllClasIds(
         java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureRoomIdsIsMutable();
+      ensureClasIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, roomIds );
+          values, clasIds );
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 2;</code>
+     * <code>repeated int64 clas_ids = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRoomIds() {
-      roomIds = emptyLongList();
+    public Builder clearClasIds() {
+      clasIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    private long page ;
+    /**
+     * <code>int64 page = 3;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public long getPage() {
+      return page ;
+    }
+    /**
+     * <code>int64 page = 3;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPage(long value) {
+      
+      page = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 page = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPage() {
+      
+      page = 0L;
       onChanged();
       return this;
     }

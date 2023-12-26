@@ -161,14 +161,16 @@ const GetLiveBoardCommentsRequest$json = {
   '1': 'GetLiveBoardCommentsRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'room_ids', '3': 2, '4': 3, '5': 3, '10': 'roomIds'},
+    {'1': 'clas_ids', '3': 2, '4': 3, '5': 3, '10': 'clasIds'},
+    {'1': 'page', '3': 3, '4': 1, '5': 3, '10': 'page'},
   ],
 };
 
 /// Descriptor for `GetLiveBoardCommentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getLiveBoardCommentsRequestDescriptor = $convert.base64Decode(
     'ChtHZXRMaXZlQm9hcmRDb21tZW50c1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
-    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIcm9vbV9pZHMYAiADKANSB3Jvb21JZHM=');
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIY2xhc19pZHMYAiADKANSB2NsYXNJZHMS'
+    'EgoEcGFnZRgDIAEoA1IEcGFnZQ==');
 
 @$core.Deprecated('Use getLiveBoardCommentsResponseDescriptor instead')
 const GetLiveBoardCommentsResponse$json = {
