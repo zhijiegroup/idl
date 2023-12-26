@@ -84,11 +84,6 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case 24: {
-
-            page = input.readInt64();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -178,17 +173,6 @@ private static final long serialVersionUID = 0L;
   }
   private int clasIdsMemoizedSerializedSize = -1;
 
-  public static final int PAGE_FIELD_NUMBER = 3;
-  private long page ;
-  /**
-   * <code>int64 page = 3;</code>
-   * @return The page.
-   */
-  @java.lang.Override
-  public long getPage() {
-    return page ;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -213,9 +197,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < clasIds .size(); i++) {
       output.writeInt64NoTag(clasIds .getLong(i));
-    }
-    if (page != 0L) {
-      output.writeInt64(3, page );
     }
     unknownFields.writeTo(output);
   }
@@ -244,10 +225,6 @@ private static final long serialVersionUID = 0L;
       }
       clasIdsMemoizedSerializedSize = dataSize;
     }
-    if (page != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, page );
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -270,8 +247,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getClasIdsList()
         .equals(other.getClasIdsList())) return false;
-    if (getPage()
-        != other.getPage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -291,9 +266,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLAS_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getClasIdsList().hashCode();
     }
-    hash = (37 * hash) + PAGE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPage());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -435,8 +407,6 @@ private static final long serialVersionUID = 0L;
       }
       clasIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
-      page = 0L;
-
       return this;
     }
 
@@ -474,7 +444,6 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.clasIds = clasIds ;
-      result.page = page ;
       onBuilt();
       return result;
     }
@@ -535,9 +504,6 @@ private static final long serialVersionUID = 0L;
           clasIds .addAll(other.clasIds );
         }
         onChanged();
-      }
-      if (other.getPage() != 0L) {
-        setPage(other.getPage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -763,37 +729,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearClasIds() {
       clasIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
-      return this;
-    }
-
-    private long page ;
-    /**
-     * <code>int64 page = 3;</code>
-     * @return The page.
-     */
-    @java.lang.Override
-    public long getPage() {
-      return page ;
-    }
-    /**
-     * <code>int64 page = 3;</code>
-     * @param value The page to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPage(long value) {
-      
-      page = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 page = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPage() {
-      
-      page = 0L;
       onChanged();
       return this;
     }

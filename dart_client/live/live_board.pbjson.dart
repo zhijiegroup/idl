@@ -96,7 +96,8 @@ const GetAggregationLiveUrlResponse$json = {
     {'1': 'live_url', '3': 2, '4': 1, '5': 9, '10': 'liveUrl'},
     {'1': 'mix_count', '3': 3, '4': 1, '5': 3, '10': 'mixCount'},
     {'1': 'caster_id', '3': 4, '4': 1, '5': 9, '10': 'casterId'},
-    {'1': 'room_ids', '3': 5, '4': 3, '5': 3, '10': 'roomIds'},
+    {'1': 'total', '3': 5, '4': 1, '5': 3, '10': 'total'},
+    {'1': 'room_ids', '3': 6, '4': 3, '5': 3, '10': 'roomIds'},
   ],
 };
 
@@ -105,7 +106,7 @@ final $typed_data.Uint8List getAggregationLiveUrlResponseDescriptor = $convert.b
     'Ch1HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
     'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASGQoIbGl2ZV91cmwYAiABKAlSB2xpdmVVcmwSGwoJ'
     'bWl4X2NvdW50GAMgASgDUghtaXhDb3VudBIbCgljYXN0ZXJfaWQYBCABKAlSCGNhc3RlcklkEh'
-    'kKCHJvb21faWRzGAUgAygDUgdyb29tSWRz');
+    'QKBXRvdGFsGAUgASgDUgV0b3RhbBIZCghyb29tX2lkcxgGIAMoA1IHcm9vbUlkcw==');
 
 @$core.Deprecated('Use getLiveBoardDataRequestDescriptor instead')
 const GetLiveBoardDataRequest$json = {
@@ -162,15 +163,13 @@ const GetLiveBoardCommentsRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'clas_ids', '3': 2, '4': 3, '5': 3, '10': 'clasIds'},
-    {'1': 'page', '3': 3, '4': 1, '5': 3, '10': 'page'},
   ],
 };
 
 /// Descriptor for `GetLiveBoardCommentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getLiveBoardCommentsRequestDescriptor = $convert.base64Decode(
     'ChtHZXRMaXZlQm9hcmRDb21tZW50c1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
-    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIY2xhc19pZHMYAiADKANSB2NsYXNJZHMS'
-    'EgoEcGFnZRgDIAEoA1IEcGFnZQ==');
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIY2xhc19pZHMYAiADKANSB2NsYXNJZHM=');
 
 @$core.Deprecated('Use getLiveBoardCommentsResponseDescriptor instead')
 const GetLiveBoardCommentsResponse$json = {

@@ -37,6 +37,7 @@ export interface GetAggregationLiveUrlResponse {
   live_url?: string;
   mix_count?: string;
   caster_id?: string;
+  total?: string;
   room_ids?: Array<string>;
 }
 
@@ -62,7 +63,6 @@ export interface LiveLikeData {
 export interface GetLiveBoardCommentsRequest {
   base_request?: base.BaseRequest;
   clas_ids?: Array<string>;
-  page?: string;
 }
 
 export interface GetLiveBoardCommentsResponse {

@@ -141,6 +141,8 @@ struct GloryApi_GetAggregationLiveUrlResponse {
 
   var casterID: String = String()
 
+  var total: Int64 = 0
+
   var roomIds: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -233,8 +235,6 @@ struct GloryApi_GetLiveBoardCommentsRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var clasIds: [Int64] = []
-
-  var page: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -505,7 +505,8 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "live_url"),
     3: .standard(proto: "mix_count"),
     4: .standard(proto: "caster_id"),
-    5: .standard(proto: "room_ids"),
+    5: .same(proto: "total"),
+    6: .standard(proto: "room_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -518,7 +519,8 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
       case 2: try { try decoder.decodeSingularStringField(value: &self.liveURL) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.mixCount) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.casterID) }()
-      case 5: try { try decoder.decodeRepeatedInt64Field(value: &self.roomIds) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
+      case 6: try { try decoder.decodeRepeatedInt64Field(value: &self.roomIds) }()
       default: break
       }
     }
@@ -541,8 +543,11 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     if !self.casterID.isEmpty {
       try visitor.visitSingularStringField(value: self.casterID, fieldNumber: 4)
     }
+    if self.total != 0 {
+      try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 5)
+    }
     if !self.roomIds.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.roomIds, fieldNumber: 5)
+      try visitor.visitPackedInt64Field(value: self.roomIds, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -552,6 +557,7 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     if lhs.liveURL != rhs.liveURL {return false}
     if lhs.mixCount != rhs.mixCount {return false}
     if lhs.casterID != rhs.casterID {return false}
+    if lhs.total != rhs.total {return false}
     if lhs.roomIds != rhs.roomIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -709,7 +715,6 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "clas_ids"),
-    3: .same(proto: "page"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -720,7 +725,6 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.clasIds) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.page) }()
       default: break
       }
     }
@@ -737,16 +741,12 @@ extension GloryApi_GetLiveBoardCommentsRequest: SwiftProtobuf.Message, SwiftProt
     if !self.clasIds.isEmpty {
       try visitor.visitPackedInt64Field(value: self.clasIds, fieldNumber: 2)
     }
-    if self.page != 0 {
-      try visitor.visitSingularInt64Field(value: self.page, fieldNumber: 3)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetLiveBoardCommentsRequest, rhs: GloryApi_GetLiveBoardCommentsRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.clasIds != rhs.clasIds {return false}
-    if lhs.page != rhs.page {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

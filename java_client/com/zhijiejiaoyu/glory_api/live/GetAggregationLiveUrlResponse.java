@@ -83,6 +83,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 40: {
+
+            total = input.readInt64();
+            break;
+          }
+          case 48: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               roomIds = newLongList();
               mutable_bitField0_ |= 0x00000001;
@@ -90,7 +95,7 @@ private static final long serialVersionUID = 0L;
             roomIds .addLong(input.readInt64());
             break;
           }
-          case 42: {
+          case 50: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -251,10 +256,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ROOM_IDS_FIELD_NUMBER = 5;
+  public static final int TOTAL_FIELD_NUMBER = 5;
+  private long total ;
+  /**
+   * <code>int64 total = 5;</code>
+   * @return The total.
+   */
+  @java.lang.Override
+  public long getTotal() {
+    return total ;
+  }
+
+  public static final int ROOM_IDS_FIELD_NUMBER = 6;
   private com.google.protobuf.Internal.LongList roomIds ;
   /**
-   * <code>repeated int64 room_ids = 5;</code>
+   * <code>repeated int64 room_ids = 6;</code>
    * @return A list containing the roomIds.
    */
   @java.lang.Override
@@ -263,14 +279,14 @@ private static final long serialVersionUID = 0L;
     return roomIds ;
   }
   /**
-   * <code>repeated int64 room_ids = 5;</code>
+   * <code>repeated int64 room_ids = 6;</code>
    * @return The count of roomIds.
    */
   public int getRoomIdsCount() {
     return roomIds .size();
   }
   /**
-   * <code>repeated int64 room_ids = 5;</code>
+   * <code>repeated int64 room_ids = 6;</code>
    * @param index The index of the element to return.
    * @return The roomIds at the given index.
    */
@@ -306,8 +322,11 @@ private static final long serialVersionUID = 0L;
     if (!getCasterIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, casterId );
     }
+    if (total != 0L) {
+      output.writeInt64(5, total );
+    }
     if (getRoomIdsList().size() > 0) {
-      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(50);
       output.writeUInt32NoTag(roomIdsMemoizedSerializedSize);
     }
     for (int i = 0; i < roomIds .size(); i++) {
@@ -335,6 +354,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCasterIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, casterId );
+    }
+    if (total != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, total );
     }
     {
       int dataSize = 0;
@@ -376,6 +399,8 @@ private static final long serialVersionUID = 0L;
         != other.getMixCount()) return false;
     if (!getCasterId()
         .equals(other.getCasterId())) return false;
+    if (getTotal()
+        != other.getTotal()) return false;
     if (!getRoomIdsList()
         .equals(other.getRoomIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -400,6 +425,9 @@ private static final long serialVersionUID = 0L;
         getMixCount());
     hash = (37 * hash) + CASTER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCasterId().hashCode();
+    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotal());
     if (getRoomIdsCount() > 0) {
       hash = (37 * hash) + ROOM_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getRoomIdsList().hashCode();
@@ -549,6 +577,8 @@ private static final long serialVersionUID = 0L;
 
       casterId = "";
 
+      total = 0L;
+
       roomIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -586,6 +616,7 @@ private static final long serialVersionUID = 0L;
       result.liveUrl = liveUrl ;
       result.mixCount = mixCount ;
       result.casterId = casterId ;
+      result.total = total ;
       if (((bitField0 & 0x00000001) != 0)) {
         roomIds .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
@@ -652,6 +683,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCasterId().isEmpty()) {
         casterId = other.casterId ;
         onChanged();
+      }
+      if (other.getTotal() != 0L) {
+        setTotal(other.getTotal());
       }
       if (!other.roomIds .isEmpty()) {
         if (roomIds .isEmpty()) {
@@ -995,6 +1029,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long total ;
+    /**
+     * <code>int64 total = 5;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total ;
+    }
+    /**
+     * <code>int64 total = 5;</code>
+     * @param value The total to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotal(long value) {
+      
+      total = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotal() {
+      
+      total = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Internal.LongList roomIds = emptyLongList();
     private void ensureRoomIdsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -1003,7 +1068,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @return A list containing the roomIds.
      */
     public java.util.List<java.lang.Long>
@@ -1012,14 +1077,14 @@ private static final long serialVersionUID = 0L;
                java.util.Collections.unmodifiableList(roomIds ) : roomIds ;
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @return The count of roomIds.
      */
     public int getRoomIdsCount() {
       return roomIds .size();
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @param index The index of the element to return.
      * @return The roomIds at the given index.
      */
@@ -1027,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       return roomIds .getLong(index);
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @param index The index to set the value at.
      * @param value The roomIds to set.
      * @return This builder for chaining.
@@ -1040,7 +1105,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @param value The roomIds to add.
      * @return This builder for chaining.
      */
@@ -1051,7 +1116,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @param values The roomIds to add.
      * @return This builder for chaining.
      */
@@ -1064,7 +1129,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated int64 room_ids = 5;</code>
+     * <code>repeated int64 room_ids = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearRoomIds() {

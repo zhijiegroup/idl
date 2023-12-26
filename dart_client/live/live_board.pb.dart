@@ -358,6 +358,7 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     $core.String? liveUrl,
     $fixnum.Int64? mixCount,
     $core.String? casterId,
+    $fixnum.Int64? total,
     $core.Iterable<$fixnum.Int64>? roomIds,
   }) {
     final $result = create();
@@ -373,6 +374,9 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     if (casterId != null) {
       $result.casterId = casterId;
     }
+    if (total != null) {
+      $result.total = total;
+    }
     if (roomIds != null) {
       $result.roomIds.addAll(roomIds);
     }
@@ -387,7 +391,8 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'liveUrl')
     ..aInt64(3, _omitFieldNames ? '' : 'mixCount')
     ..aOS(4, _omitFieldNames ? '' : 'casterId')
-    ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
+    ..aInt64(5, _omitFieldNames ? '' : 'total')
+    ..p<$fixnum.Int64>(6, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -451,7 +456,16 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
   void clearCasterId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$fixnum.Int64> get roomIds => $_getList(4);
+  $fixnum.Int64 get total => $_getI64(4);
+  @$pb.TagNumber(5)
+  set total($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTotal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTotal() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$fixnum.Int64> get roomIds => $_getList(5);
 }
 
 class GetLiveBoardDataRequest extends $pb.GeneratedMessage {
@@ -698,7 +712,6 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
   factory GetLiveBoardCommentsRequest({
     $0.BaseRequest? baseRequest,
     $core.Iterable<$fixnum.Int64>? clasIds,
-    $fixnum.Int64? page,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -706,9 +719,6 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
     }
     if (clasIds != null) {
       $result.clasIds.addAll(clasIds);
-    }
-    if (page != null) {
-      $result.page = page;
     }
     return $result;
   }
@@ -719,7 +729,6 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLiveBoardCommentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
-    ..aInt64(3, _omitFieldNames ? '' : 'page')
     ..hasRequiredFields = false
   ;
 
@@ -757,15 +766,6 @@ class GetLiveBoardCommentsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$fixnum.Int64> get clasIds => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $fixnum.Int64 get page => $_getI64(2);
-  @$pb.TagNumber(3)
-  set page($fixnum.Int64 v) { $_setInt64(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPage() => clearField(3);
 }
 
 class GetLiveBoardCommentsResponse extends $pb.GeneratedMessage {

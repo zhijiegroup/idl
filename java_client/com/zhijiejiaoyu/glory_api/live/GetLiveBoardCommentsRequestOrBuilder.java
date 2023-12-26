@@ -38,10 +38,4 @@ public interface GetLiveBoardCommentsRequestOrBuilder extends
    * @return The clasIds at the given index.
    */
   long getClasIds(int index);
-
-  /**
-   * <code>int64 page = 3;</code>
-   * @return The page.
-   */
-  long getPage();
 }
