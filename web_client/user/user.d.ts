@@ -124,6 +124,7 @@ export interface LoginWithPasswordResponse {
 export interface UpdatePasswordRequest {
   base_request?: base.BaseRequest;
   phone?: string;
+  origin_password?: string;
   password?: string;
 }
 

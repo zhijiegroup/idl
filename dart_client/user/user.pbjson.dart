@@ -264,15 +264,17 @@ const UpdatePasswordRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'phone', '3': 2, '4': 1, '5': 9, '10': 'phone'},
-    {'1': 'password', '3': 3, '4': 1, '5': 9, '10': 'password'},
+    {'1': 'origin_password', '3': 3, '4': 1, '5': 9, '10': 'originPassword'},
+    {'1': 'password', '3': 4, '4': 1, '5': 9, '10': 'password'},
   ],
 };
 
 /// Descriptor for `UpdatePasswordRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updatePasswordRequestDescriptor = $convert.base64Decode(
     'ChVVcGRhdGVQYXNzd29yZFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
-    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSFAoFcGhvbmUYAiABKAlSBXBob25lEhoKCHBhc3N3b3Jk'
-    'GAMgASgJUghwYXNzd29yZA==');
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSFAoFcGhvbmUYAiABKAlSBXBob25lEicKD29yaWdpbl9w'
+    'YXNzd29yZBgDIAEoCVIOb3JpZ2luUGFzc3dvcmQSGgoIcGFzc3dvcmQYBCABKAlSCHBhc3N3b3'
+    'Jk');
 
 @$core.Deprecated('Use updatePasswordResponseDescriptor instead')
 const UpdatePasswordResponse$json = {

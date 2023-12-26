@@ -35,12 +35,24 @@ public interface UpdatePasswordRequestOrBuilder extends
       getPhoneBytes();
 
   /**
-   * <code>string password = 3;</code>
+   * <code>string origin_password = 3;</code>
+   * @return The originPassword.
+   */
+  java.lang.String getOriginPassword();
+  /**
+   * <code>string origin_password = 3;</code>
+   * @return The bytes for originPassword.
+   */
+  com.google.protobuf.ByteString
+      getOriginPasswordBytes();
+
+  /**
+   * <code>string password = 4;</code>
    * @return The password.
    */
   java.lang.String getPassword();
   /**
-   * <code>string password = 3;</code>
+   * <code>string password = 4;</code>
    * @return The bytes for password.
    */
   com.google.protobuf.ByteString

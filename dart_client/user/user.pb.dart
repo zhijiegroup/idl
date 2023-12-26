@@ -1310,6 +1310,7 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
   factory UpdatePasswordRequest({
     $2.BaseRequest? baseRequest,
     $core.String? phone,
+    $core.String? originPassword,
     $core.String? password,
   }) {
     final $result = create();
@@ -1318,6 +1319,9 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
     }
     if (phone != null) {
       $result.phone = phone;
+    }
+    if (originPassword != null) {
+      $result.originPassword = originPassword;
     }
     if (password != null) {
       $result.password = password;
@@ -1331,7 +1335,8 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePasswordRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'phone')
-    ..aOS(3, _omitFieldNames ? '' : 'password')
+    ..aOS(3, _omitFieldNames ? '' : 'originPassword')
+    ..aOS(4, _omitFieldNames ? '' : 'password')
     ..hasRequiredFields = false
   ;
 
@@ -1377,13 +1382,22 @@ class UpdatePasswordRequest extends $pb.GeneratedMessage {
   void clearPhone() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get password => $_getSZ(2);
+  $core.String get originPassword => $_getSZ(2);
   @$pb.TagNumber(3)
-  set password($core.String v) { $_setString(2, v); }
+  set originPassword($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasPassword() => $_has(2);
+  $core.bool hasOriginPassword() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPassword() => clearField(3);
+  void clearOriginPassword() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get password => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set password($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPassword() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassword() => clearField(4);
 }
 
 class UpdatePasswordResponse extends $pb.GeneratedMessage {
