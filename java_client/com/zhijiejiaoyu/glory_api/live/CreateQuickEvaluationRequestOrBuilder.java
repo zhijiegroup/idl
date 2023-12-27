@@ -35,30 +35,42 @@ public interface CreateQuickEvaluationRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 duration = 3;</code>
-   * @return The duration.
+   * <code>int64 min_duration = 3;</code>
+   * @return The minDuration.
    */
-  long getDuration();
+  long getMinDuration();
 
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>int64 max_duration = 4;</code>
+   * @return The maxDuration.
+   */
+  long getMaxDuration();
+
+  /**
+   * <code>int64 major_id = 5;</code>
+   * @return The majorId.
+   */
+  long getMajorId();
+
+  /**
+   * <code>repeated string keywords = 6;</code>
    * @return A list containing the keywords.
    */
   java.util.List<java.lang.String>
       getKeywordsList();
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @return The count of keywords.
    */
   int getKeywordsCount();
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @param index The index of the element to return.
    * @return The keywords at the given index.
    */
   java.lang.String getKeywords(int index);
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the keywords at the given index.
    */

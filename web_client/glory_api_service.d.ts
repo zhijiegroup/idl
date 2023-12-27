@@ -180,6 +180,11 @@ export class glory_api {
     request: user.UpdatePhoneRequest
   ): Promise<user.UpdatePhoneResponse>;
 
+  /** 获取用户的所有专业[select] */
+  GetUserMajor(
+    request: user.GetUserMajorRequest
+  ): Promise<user.GetUserMajorResponse>;
+
   UpdateUserTenant(
     request: user.UpdateUserTenantRequest
   ): Promise<user.UpdateUserTenantResponse>;
@@ -966,6 +971,7 @@ CreateLivePlanProduct create live plan product */
     request: tenant_dept.GetTenantDeptRequest
   ): Promise<tenant_dept.GetTenantDeptResponse>;
 
+  /** 获取所有部门类型[select] */
   GetTenantDeptType(
     request: tenant_dept.GetTenantDeptTypeRequest
   ): Promise<tenant_dept.GetTenantDeptTypeResponse>;

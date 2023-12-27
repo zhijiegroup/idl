@@ -91,6 +91,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$1.UpdatePasswordResponse> updatePassword($pb.ServerContext ctx, $1.UpdatePasswordRequest request);
   $async.Future<$1.UpdateUserResponse> updateUser($pb.ServerContext ctx, $1.UpdateUserRequest request);
   $async.Future<$1.UpdatePhoneResponse> updatePhone($pb.ServerContext ctx, $1.UpdatePhoneRequest request);
+  $async.Future<$1.GetUserMajorResponse> getUserMajor($pb.ServerContext ctx, $1.GetUserMajorRequest request);
   $async.Future<$1.UpdateUserTenantResponse> updateUserTenant($pb.ServerContext ctx, $1.UpdateUserTenantRequest request);
   $async.Future<$1.ListUserResponse> listUser($pb.ServerContext ctx, $1.ListUserRequest request);
   $async.Future<$1.UserBindWechatResponse> userBindWechat($pb.ServerContext ctx, $1.UserBindWechatRequest request);
@@ -454,6 +455,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdatePassword': return $1.UpdatePasswordRequest();
       case 'UpdateUser': return $1.UpdateUserRequest();
       case 'UpdatePhone': return $1.UpdatePhoneRequest();
+      case 'GetUserMajor': return $1.GetUserMajorRequest();
       case 'UpdateUserTenant': return $1.UpdateUserTenantRequest();
       case 'ListUser': return $1.ListUserRequest();
       case 'UserBindWechat': return $1.UserBindWechatRequest();
@@ -820,6 +822,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdatePassword': return this.updatePassword(ctx, request as $1.UpdatePasswordRequest);
       case 'UpdateUser': return this.updateUser(ctx, request as $1.UpdateUserRequest);
       case 'UpdatePhone': return this.updatePhone(ctx, request as $1.UpdatePhoneRequest);
+      case 'GetUserMajor': return this.getUserMajor(ctx, request as $1.GetUserMajorRequest);
       case 'UpdateUserTenant': return this.updateUserTenant(ctx, request as $1.UpdateUserTenantRequest);
       case 'ListUser': return this.listUser(ctx, request as $1.ListUserRequest);
       case 'UserBindWechat': return this.userBindWechat(ctx, request as $1.UserBindWechatRequest);

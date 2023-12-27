@@ -254,6 +254,12 @@ export class glory_api {
     );
   }
 
+  GetUserMajor(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/user/get_user_major${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   UpdateUserTenant(request) {
     const uri = `${this.uriPrefix}/api/user/update_user_tenant`;
     const body = JSONbigint.stringify(request);

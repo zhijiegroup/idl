@@ -399,6 +399,21 @@ public final class UserOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UserMajor_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UserMajor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserMajorRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserMajorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserMajorResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserMajorResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -632,8 +647,14 @@ public final class UserOuterClass {
       "_resp\030\001 \001(\0132\022.base.BaseResponse\"<\n\021Delet" +
       "eUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
       "e.BaseRequest\";\n\022DeleteUserResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.userP\001b\006proto3"
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\")\n\tUs" +
+      "erMajor\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\003\">\n" +
+      "\023GetUserMajorRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\"g\n\024GetUserMajorRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022(\n\nuser_major\030\002 \003(\0132\024.glory_api.Use" +
+      "rMajorB#\n\037com.zhijiejiaoyu.glory_api.use" +
+      "rP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1106,6 +1127,24 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UserMajor_descriptor =
+      getDescriptor().getMessageTypes().get(77);
+    internal_static_glory_api_UserMajor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UserMajor_descriptor,
+        new java.lang.String[] { "Label", "Value", });
+    internal_static_glory_api_GetUserMajorRequest_descriptor =
+      getDescriptor().getMessageTypes().get(78);
+    internal_static_glory_api_GetUserMajorRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserMajorRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_GetUserMajorResponse_descriptor =
+      getDescriptor().getMessageTypes().get(79);
+    internal_static_glory_api_GetUserMajorResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserMajorResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "UserMajor", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.zhijiejiaoyu.api.Api.vd);

@@ -1266,3 +1266,45 @@ final $typed_data.Uint8List deleteUserResponseDescriptor = $convert.base64Decode
     'ChJEZWxldGVVc2VyUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use userMajorDescriptor instead')
+const UserMajor$json = {
+  '1': 'UserMajor',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'value', '3': 2, '4': 1, '5': 3, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `UserMajor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userMajorDescriptor = $convert.base64Decode(
+    'CglVc2VyTWFqb3ISFAoFbGFiZWwYASABKAlSBWxhYmVsEhQKBXZhbHVlGAIgASgDUgV2YWx1ZQ'
+    '==');
+
+@$core.Deprecated('Use getUserMajorRequestDescriptor instead')
+const GetUserMajorRequest$json = {
+  '1': 'GetUserMajorRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetUserMajorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserMajorRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRVc2VyTWFqb3JSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
+    'JlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+
+@$core.Deprecated('Use getUserMajorResponseDescriptor instead')
+const GetUserMajorResponse$json = {
+  '1': 'GetUserMajorResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'user_major', '3': 2, '4': 3, '5': 11, '6': '.glory_api.UserMajor', '10': 'userMajor'},
+  ],
+};
+
+/// Descriptor for `GetUserMajorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserMajorResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRVc2VyTWFqb3JSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
+    'Nwb25zZVIIYmFzZVJlc3ASMwoKdXNlcl9tYWpvchgCIAMoCzIULmdsb3J5X2FwaS5Vc2VyTWFq'
+    'b3JSCXVzZXJNYWpvcg==');
+

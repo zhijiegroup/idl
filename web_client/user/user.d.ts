@@ -529,3 +529,17 @@ export interface DeleteUserRequest {
 export interface DeleteUserResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface UserMajor {
+  label?: string;
+  value?: string;
+}
+
+export interface GetUserMajorRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetUserMajorResponse {
+  base_resp?: base.BaseResponse;
+  user_major?: Array<UserMajor>;
+}

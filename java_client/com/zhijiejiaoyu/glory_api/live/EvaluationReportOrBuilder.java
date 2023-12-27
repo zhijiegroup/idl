@@ -60,4 +60,16 @@ public interface EvaluationReportOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>string created_by = 6;</code>
+   * @return The createdBy.
+   */
+  java.lang.String getCreatedBy();
+  /**
+   * <code>string created_by = 6;</code>
+   * @return The bytes for createdBy.
+   */
+  com.google.protobuf.ByteString
+      getCreatedByBytes();
 }

@@ -89,6 +89,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'UpdatePassword', '2': '.glory_api.UpdatePasswordRequest', '3': '.glory_api.UpdatePasswordResponse', '4': {}},
     {'1': 'UpdateUser', '2': '.glory_api.UpdateUserRequest', '3': '.glory_api.UpdateUserResponse', '4': {}},
     {'1': 'UpdatePhone', '2': '.glory_api.UpdatePhoneRequest', '3': '.glory_api.UpdatePhoneResponse', '4': {}},
+    {'1': 'GetUserMajor', '2': '.glory_api.GetUserMajorRequest', '3': '.glory_api.GetUserMajorResponse', '4': {}},
     {'1': 'UpdateUserTenant', '2': '.glory_api.UpdateUserTenantRequest', '3': '.glory_api.UpdateUserTenantResponse', '4': {}},
     {'1': 'ListUser', '2': '.glory_api.ListUserRequest', '3': '.glory_api.ListUserResponse', '4': {}},
     {'1': 'UserBindWechat', '2': '.glory_api.UserBindWechatRequest', '3': '.glory_api.UserBindWechatResponse', '4': {}},
@@ -488,6 +489,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.UpdateUserResponse': $1.UpdateUserResponse$json,
   '.glory_api.UpdatePhoneRequest': $1.UpdatePhoneRequest$json,
   '.glory_api.UpdatePhoneResponse': $1.UpdatePhoneResponse$json,
+  '.glory_api.GetUserMajorRequest': $1.GetUserMajorRequest$json,
+  '.glory_api.GetUserMajorResponse': $1.GetUserMajorResponse$json,
+  '.glory_api.UserMajor': $1.UserMajor$json,
   '.glory_api.UpdateUserTenantRequest': $1.UpdateUserTenantRequest$json,
   '.glory_api.UpdateUserTenantResponse': $1.UpdateUserTenantResponse$json,
   '.glory_api.ListUserRequest': $1.ListUserRequest$json,
@@ -1384,7 +1388,9 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'Z2xvcnlfYXBpLlVwZGF0ZVVzZXJSZXF1ZXN0Gh0uZ2xvcnlfYXBpLlVwZGF0ZVVzZXJSZXNwb2'
     '5zZSIZ0sEYFS9hcGkvdXNlci91cGRhdGVfdXNlchJoCgtVcGRhdGVQaG9uZRIdLmdsb3J5X2Fw'
     'aS5VcGRhdGVQaG9uZVJlcXVlc3QaHi5nbG9yeV9hcGkuVXBkYXRlUGhvbmVSZXNwb25zZSIa0s'
-    'EYFi9hcGkvdXNlci91cGRhdGVfcGhvbmUSfQoQVXBkYXRlVXNlclRlbmFudBIiLmdsb3J5X2Fw'
+    'EYFi9hcGkvdXNlci91cGRhdGVfcGhvbmUSbQoMR2V0VXNlck1ham9yEh4uZ2xvcnlfYXBpLkdl'
+    'dFVzZXJNYWpvclJlcXVlc3QaHy5nbG9yeV9hcGkuR2V0VXNlck1ham9yUmVzcG9uc2UiHMrBGB'
+    'gvYXBpL3VzZXIvZ2V0X3VzZXJfbWFqb3ISfQoQVXBkYXRlVXNlclRlbmFudBIiLmdsb3J5X2Fw'
     'aS5VcGRhdGVVc2VyVGVuYW50UmVxdWVzdBojLmdsb3J5X2FwaS5VcGRhdGVVc2VyVGVuYW50Um'
     'VzcG9uc2UiINLBGBwvYXBpL3VzZXIvdXBkYXRlX3VzZXJfdGVuYW50ElwKCExpc3RVc2VyEhou'
     'Z2xvcnlfYXBpLkxpc3RVc2VyUmVxdWVzdBobLmdsb3J5X2FwaS5MaXN0VXNlclJlc3BvbnNlIh'

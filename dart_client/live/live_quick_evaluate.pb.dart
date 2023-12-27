@@ -21,7 +21,9 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
   factory CreateQuickEvaluationRequest({
     $0.BaseRequest? baseRequest,
     $core.String? name,
-    $fixnum.Int64? duration,
+    $fixnum.Int64? minDuration,
+    $fixnum.Int64? maxDuration,
+    $fixnum.Int64? majorId,
     $core.Iterable<$core.String>? keywords,
   }) {
     final $result = create();
@@ -31,8 +33,14 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (duration != null) {
-      $result.duration = duration;
+    if (minDuration != null) {
+      $result.minDuration = minDuration;
+    }
+    if (maxDuration != null) {
+      $result.maxDuration = maxDuration;
+    }
+    if (majorId != null) {
+      $result.majorId = majorId;
     }
     if (keywords != null) {
       $result.keywords.addAll(keywords);
@@ -46,8 +54,10 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateQuickEvaluationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aInt64(3, _omitFieldNames ? '' : 'duration')
-    ..pPS(4, _omitFieldNames ? '' : 'keywords')
+    ..aInt64(3, _omitFieldNames ? '' : 'minDuration')
+    ..aInt64(4, _omitFieldNames ? '' : 'maxDuration')
+    ..aInt64(5, _omitFieldNames ? '' : 'majorId')
+    ..pPS(6, _omitFieldNames ? '' : 'keywords')
     ..hasRequiredFields = false
   ;
 
@@ -93,16 +103,34 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get duration => $_getI64(2);
+  $fixnum.Int64 get minDuration => $_getI64(2);
   @$pb.TagNumber(3)
-  set duration($fixnum.Int64 v) { $_setInt64(2, v); }
+  set minDuration($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDuration() => $_has(2);
+  $core.bool hasMinDuration() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDuration() => clearField(3);
+  void clearMinDuration() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get keywords => $_getList(3);
+  $fixnum.Int64 get maxDuration => $_getI64(3);
+  @$pb.TagNumber(4)
+  set maxDuration($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMaxDuration() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaxDuration() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get majorId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set majorId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMajorId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMajorId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get keywords => $_getList(5);
 }
 
 class CreateQuickEvaluationResponse extends $pb.GeneratedMessage {
@@ -447,7 +475,8 @@ class EvaluationStandard extends $pb.GeneratedMessage {
   factory EvaluationStandard({
     $fixnum.Int64? standardId,
     $core.String? name,
-    $fixnum.Int64? duration,
+    $fixnum.Int64? minDuration,
+    $fixnum.Int64? maxDuration,
     $core.Iterable<$core.String>? keywords,
     $core.String? creator,
     $core.String? updator,
@@ -462,8 +491,11 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (duration != null) {
-      $result.duration = duration;
+    if (minDuration != null) {
+      $result.minDuration = minDuration;
+    }
+    if (maxDuration != null) {
+      $result.maxDuration = maxDuration;
     }
     if (keywords != null) {
       $result.keywords.addAll(keywords);
@@ -492,13 +524,14 @@ class EvaluationStandard extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EvaluationStandard', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'standardId')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aInt64(3, _omitFieldNames ? '' : 'duration')
-    ..pPS(4, _omitFieldNames ? '' : 'keywords')
-    ..aOS(5, _omitFieldNames ? '' : 'creator')
-    ..aOS(6, _omitFieldNames ? '' : 'updator')
-    ..aOB(7, _omitFieldNames ? '' : 'isEnable')
-    ..aInt64(8, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$1.TenantDept>(9, _omitFieldNames ? '' : 'major', subBuilder: $1.TenantDept.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'minDuration')
+    ..aInt64(4, _omitFieldNames ? '' : 'maxDuration')
+    ..pPS(5, _omitFieldNames ? '' : 'keywords')
+    ..aOS(6, _omitFieldNames ? '' : 'creator')
+    ..aOS(7, _omitFieldNames ? '' : 'updator')
+    ..aOB(8, _omitFieldNames ? '' : 'isEnable')
+    ..aInt64(9, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$1.TenantDept>(10, _omitFieldNames ? '' : 'major', subBuilder: $1.TenantDept.create)
     ..hasRequiredFields = false
   ;
 
@@ -542,63 +575,72 @@ class EvaluationStandard extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get duration => $_getI64(2);
+  $fixnum.Int64 get minDuration => $_getI64(2);
   @$pb.TagNumber(3)
-  set duration($fixnum.Int64 v) { $_setInt64(2, v); }
+  set minDuration($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDuration() => $_has(2);
+  $core.bool hasMinDuration() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDuration() => clearField(3);
+  void clearMinDuration() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get keywords => $_getList(3);
+  $fixnum.Int64 get maxDuration => $_getI64(3);
+  @$pb.TagNumber(4)
+  set maxDuration($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasMaxDuration() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaxDuration() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get creator => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set creator($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasCreator() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearCreator() => clearField(5);
+  $core.List<$core.String> get keywords => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get updator => $_getSZ(5);
+  $core.String get creator => $_getSZ(5);
   @$pb.TagNumber(6)
-  set updator($core.String v) { $_setString(5, v); }
+  set creator($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasUpdator() => $_has(5);
+  $core.bool hasCreator() => $_has(5);
   @$pb.TagNumber(6)
-  void clearUpdator() => clearField(6);
+  void clearCreator() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get isEnable => $_getBF(6);
+  $core.String get updator => $_getSZ(6);
   @$pb.TagNumber(7)
-  set isEnable($core.bool v) { $_setBool(6, v); }
+  set updator($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasIsEnable() => $_has(6);
+  $core.bool hasUpdator() => $_has(6);
   @$pb.TagNumber(7)
-  void clearIsEnable() => clearField(7);
+  void clearUpdator() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get updatedAt => $_getI64(7);
+  $core.bool get isEnable => $_getBF(7);
   @$pb.TagNumber(8)
-  set updatedAt($fixnum.Int64 v) { $_setInt64(7, v); }
+  set isEnable($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasUpdatedAt() => $_has(7);
+  $core.bool hasIsEnable() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUpdatedAt() => clearField(8);
+  void clearIsEnable() => clearField(8);
 
   @$pb.TagNumber(9)
-  $1.TenantDept get major => $_getN(8);
+  $fixnum.Int64 get updatedAt => $_getI64(8);
   @$pb.TagNumber(9)
-  set major($1.TenantDept v) { setField(9, v); }
+  set updatedAt($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasMajor() => $_has(8);
+  $core.bool hasUpdatedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearMajor() => clearField(9);
-  @$pb.TagNumber(9)
-  $1.TenantDept ensureMajor() => $_ensure(8);
+  void clearUpdatedAt() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.TenantDept get major => $_getN(9);
+  @$pb.TagNumber(10)
+  set major($1.TenantDept v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasMajor() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMajor() => clearField(10);
+  @$pb.TagNumber(10)
+  $1.TenantDept ensureMajor() => $_ensure(9);
 }
 
 class ListQuickEvaluationRequest extends $pb.GeneratedMessage {
@@ -966,6 +1008,7 @@ class EvaluationReport extends $pb.GeneratedMessage {
     $core.String? startTime,
     $core.String? endTime,
     $core.String? createdAt,
+    $core.String? createdBy,
   }) {
     final $result = create();
     if (reportId != null) {
@@ -983,6 +1026,9 @@ class EvaluationReport extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
     return $result;
   }
   EvaluationReport._() : super();
@@ -995,6 +1041,7 @@ class EvaluationReport extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'startTime')
     ..aOS(4, _omitFieldNames ? '' : 'endTime')
     ..aOS(5, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(6, _omitFieldNames ? '' : 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -1063,6 +1110,15 @@ class EvaluationReport extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdBy => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdBy($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedBy() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedBy() => clearField(6);
 }
 
 class ListQuickEvaluationReportResponse extends $pb.GeneratedMessage {
@@ -1906,14 +1962,14 @@ class DeleteQuickEvaluationReportResponse extends $pb.GeneratedMessage {
 class DeleteQuickEvaluationReportRequest extends $pb.GeneratedMessage {
   factory DeleteQuickEvaluationReportRequest({
     $0.BaseRequest? baseRequest,
-    $fixnum.Int64? reportId,
+    $core.Iterable<$fixnum.Int64>? reportIds,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
     }
-    if (reportId != null) {
-      $result.reportId = reportId;
+    if (reportIds != null) {
+      $result.reportIds.addAll(reportIds);
     }
     return $result;
   }
@@ -1923,7 +1979,7 @@ class DeleteQuickEvaluationReportRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteQuickEvaluationReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'reportId')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'reportIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -1960,13 +2016,7 @@ class DeleteQuickEvaluationReportRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get reportId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set reportId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasReportId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearReportId() => clearField(2);
+  $core.List<$fixnum.Int64> get reportIds => $_getList(1);
 }
 
 
