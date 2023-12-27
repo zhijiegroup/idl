@@ -2117,7 +2117,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'VhdGlvblJlcG9ydFJlc3BvbnNlIinKwRglL2FwaS9saXZlL2dldF9xdWlja19ldmFsdWF0aW9u'
     'X3JlcG9ydBKqAQobRGVsZXRlUXVpY2tFdmFsdWF0aW9uUmVwb3J0Ei0uZ2xvcnlfYXBpLkRlbG'
     'V0ZVF1aWNrRXZhbHVhdGlvblJlcG9ydFJlcXVlc3QaLi5nbG9yeV9hcGkuRGVsZXRlUXVpY2tF'
-    'dmFsdWF0aW9uUmVwb3J0UmVzcG9uc2UiLMrBGCgvYXBpL2xpdmUvZGVsZXRlX3F1aWNrX2V2YW'
+    'dmFsdWF0aW9uUmVwb3J0UmVzcG9uc2UiLNLBGCgvYXBpL2xpdmUvZGVsZXRlX3F1aWNrX2V2YW'
     'x1YXRpb25fcmVwb3J0Ep4BChhHZXRRdWlja0V2YWx1YXRpb25EZXRhaWwSKi5nbG9yeV9hcGku'
     'R2V0UXVpY2tFdmFsdWF0aW9uRGV0YWlsUmVxdWVzdBorLmdsb3J5X2FwaS5HZXRRdWlja0V2YW'
     'x1YXRpb25EZXRhaWxSZXNwb25zZSIpysEYJS9hcGkvbGl2ZS9nZXRfcXVpY2tfZXZhbHVhdGlv'

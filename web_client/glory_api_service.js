@@ -2719,9 +2719,11 @@ export class glory_api {
   }
 
   DeleteQuickEvaluationReport(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/live/delete_quick_evaluation_report${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/live/delete_quick_evaluation_report`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   GetQuickEvaluationDetail(request) {

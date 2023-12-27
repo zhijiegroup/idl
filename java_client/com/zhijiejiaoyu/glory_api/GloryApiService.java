@@ -1117,7 +1117,7 @@ public final class GloryApiService {
       "\252\001\n\033DeleteQuickEvaluationReport\022-.glory_" +
       "api.DeleteQuickEvaluationReportRequest\032." +
       ".glory_api.DeleteQuickEvaluationReportRe" +
-      "sponse\",\312\301\030(/api/live/delete_quick_evalu" +
+      "sponse\",\322\301\030(/api/live/delete_quick_evalu" +
       "ation_report\022\236\001\n\030GetQuickEvaluationDetai" +
       "l\022*.glory_api.GetQuickEvaluationDetailRe" +
       "quest\032+.glory_api.GetQuickEvaluationDeta" +
