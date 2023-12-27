@@ -105,6 +105,16 @@ public final class UserOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetUserResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserByPhoneRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserByPhoneRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetUserByPhoneResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetUserByPhoneResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_UpdateUserRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -398,230 +408,237 @@ public final class UserOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017user/user.proto\022\tglory_api\032\nbase.proto" +
-      "\032\023seller/seller.proto\032\017shop/shop.proto\032\023" +
-      "tenant/tenant.proto\"\276\001\n\nTenantDept\022\017\n\007de" +
-      "pt_id\030\001 \001(\003\022\021\n\tdept_name\030\002 \001(\t\022\021\n\tdept_t" +
-      "ype\030\003 \001(\t\022\021\n\tdept_code\030\004 \001(\t\022\025\n\rdept_ove" +
-      "rview\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\022\021\n\tparent" +
-      "_id\030\007 \001(\003\022)\n\nchild_dept\030\010 \003(\0132\025.glory_ap" +
-      "i.TenantDept\"\277\003\n\004User\022\n\n\002id\030\001 \001(\003\022\r\n\005pho" +
-      "ne\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\024\n\014token_expiry\030" +
-      "\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022" +
-      "\034\n\024avatar_attachment_id\030\007 \001(\003\022\022\n\navatar_" +
-      "url\030\010 \001(\t\022!\n\006seller\030\t \001(\0132\021.glory_api.Se" +
-      "ller\022*\n\013shop_access\030\n \003(\0132\025.glory_api.Sh" +
-      "opAccess\022*\n\013tenant_dept\030\013 \003(\0132\025.glory_ap" +
-      "i.TenantDept\022\036\n\005roles\030y \003(\0132\017.glory_api." +
-      "Role\022(\n\005pages\030\r \003(\0132\031.glory_api.PagePerm" +
-      "ission\022\020\n\010is_admin\030\016 \001(\010\022\027\n\017is_enter_ten" +
-      "ant\030\017 \001(\010\022\025\n\rweak_password\030\020 \001(\010\022\034\n\024need" +
-      "_change_password\030\021 \001(\010\"\203\001\n\nUserFollow\022\017\n" +
-      "\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\022\n\nava" +
-      "tar_url\030\003 \001(\t\022\024\n\014is_following\030\004 \001(\010\022\023\n\013i" +
-      "s_follower\030\005 \001(\010\022\022\n\ncreated_at\030\006 \001(\t\"{\n\021" +
-      "UserSocialSummary\022\026\n\016my_liked_count\030\001 \001(" +
-      "\003\022\027\n\017my_friend_count\030\002 \001(\003\022\032\n\022my_followi" +
-      "ng_count\030\003 \001(\003\022\031\n\021my_follower_count\030\004 \001(" +
-      "\003\"T\n\014LoginRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\r\n\005phone\030\002 \001(\t\022\014\n\004cod" +
-      "e\030\003 \001(\t\"U\n\rLoginResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\035\n\004data\030\002 \001(\0132\017." +
-      "glory_api.User\"8\n\rLogoutRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\"7\n\016Logo" +
-      "utResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"N\n\024GetVerifyCodeRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005ph" +
-      "one\030\002 \001(\t\">\n\025GetVerifyCodeResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"^\n\026Che" +
-      "ckVerifyCodeRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(\t\022\014\n\004c" +
-      "ode\030\003 \001(\t\"]\n\027CheckVerifyCodeResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\r\n\005t" +
-      "oken\030\002 \001(\t\022\014\n\004pass\030\003 \001(\010\"d\n\030LoginWithPas" +
-      "swordRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\r\n\005phone\030\002 \001(\t\022\020\n\010password" +
-      "\030\003 \001(\t\"a\n\031LoginWithPasswordResponse\022%\n\tb" +
+      "\n\017user/user.proto\022\tglory_api\032\tapi.proto\032" +
+      "\nbase.proto\032\023seller/seller.proto\032\017shop/s" +
+      "hop.proto\032\023tenant/tenant.proto\"\276\001\n\nTenan" +
+      "tDept\022\017\n\007dept_id\030\001 \001(\003\022\021\n\tdept_name\030\002 \001(" +
+      "\t\022\021\n\tdept_type\030\003 \001(\t\022\021\n\tdept_code\030\004 \001(\t\022" +
+      "\025\n\rdept_overview\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(" +
+      "\003\022\021\n\tparent_id\030\007 \001(\003\022)\n\nchild_dept\030\010 \003(\013" +
+      "2\025.glory_api.TenantDept\"\277\003\n\004User\022\n\n\002id\030\001" +
+      " \001(\003\022\r\n\005phone\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\024\n\014to" +
+      "ken_expiry\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\022\014\n\004" +
+      "name\030\006 \001(\t\022\034\n\024avatar_attachment_id\030\007 \001(\003" +
+      "\022\022\n\navatar_url\030\010 \001(\t\022!\n\006seller\030\t \001(\0132\021.g" +
+      "lory_api.Seller\022*\n\013shop_access\030\n \003(\0132\025.g" +
+      "lory_api.ShopAccess\022*\n\013tenant_dept\030\013 \003(\013" +
+      "2\025.glory_api.TenantDept\022\036\n\005roles\030y \003(\0132\017" +
+      ".glory_api.Role\022(\n\005pages\030\r \003(\0132\031.glory_a" +
+      "pi.PagePermission\022\020\n\010is_admin\030\016 \001(\010\022\027\n\017i" +
+      "s_enter_tenant\030\017 \001(\010\022\025\n\rweak_password\030\020 " +
+      "\001(\010\022\034\n\024need_change_password\030\021 \001(\010\"\203\001\n\nUs" +
+      "erFollow\022\017\n\007user_id\030\001 \001(\003\022\021\n\tuser_name\030\002" +
+      " \001(\t\022\022\n\navatar_url\030\003 \001(\t\022\024\n\014is_following" +
+      "\030\004 \001(\010\022\023\n\013is_follower\030\005 \001(\010\022\022\n\ncreated_a" +
+      "t\030\006 \001(\t\"{\n\021UserSocialSummary\022\026\n\016my_liked" +
+      "_count\030\001 \001(\003\022\027\n\017my_friend_count\030\002 \001(\003\022\032\n" +
+      "\022my_following_count\030\003 \001(\003\022\031\n\021my_follower" +
+      "_count\030\004 \001(\003\"T\n\014LoginRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002" +
+      " \001(\t\022\014\n\004code\030\003 \001(\t\"U\n\rLoginResponse\022%\n\tb" +
       "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004da" +
-      "ta\030\002 \001(\0132\017.glory_api.User\"z\n\025UpdatePassw" +
-      "ordRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\r\n\005phone\030\002 \001(\t\022\027\n\017origin_pas" +
-      "sword\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\"?\n\026UpdateP" +
-      "asswordResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"9\n\016GetUserRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\"\217\001\n\017Ge" +
-      "tUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022\035\n\004data\030\002 \001(\0132\017.glory_api.U" +
-      "ser\022!\n\006tenant\030\003 \001(\0132\021.glory_api.Tenant\022\023" +
-      "\n\013dept_detail\030\004 \003(\t\"[\n\021UpdateUserRequest" +
-      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
-      "t\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\";\n\022Upda" +
-      "teUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"Z\n\022UpdatePhoneRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005" +
-      "phone\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"<\n\023UpdatePhone" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\"i\n\016PagePermission\022\027\n\017business_sy" +
-      "stem\030\001 \001(\t\022\014\n\004page\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\022\014\n\004" +
-      "name\030\004 \001(\t\022\026\n\016has_permission\030\005 \001(\010\"Z\n\034Ge" +
-      "tUserPagePermissionRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_id" +
-      "\030\002 \001(\003\"z\n\035GetUserPagePermissionResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0222" +
-      "\n\017page_permission\030\002 \003(\0132\031.glory_api.Page" +
-      "Permission\"\321\001\n\037CreateRolePagePermissionR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\021\n\ttenant_id\030\002 \001(\003\022\021\n\trole_name\030" +
-      "\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\030\n\020role_descrip" +
-      "tion\030\005 \001(\t\0222\n\017page_permission\030\006 \003(\0132\031.gl" +
-      "ory_api.PagePermission\"Z\n CreateRolePage" +
-      "PermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\017\n\007role_id\030\002 \001(\003\"k\n\034Ge" +
-      "tRolePagePermissionRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002" +
-      " \001(\003\022\021\n\ttenant_id\030\003 \001(\003\"\365\001\n\035GetRolePageP" +
-      "ermissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\022\017\n\007r" +
-      "ole_id\030\003 \001(\003\022\021\n\trole_name\030\004 \001(\t\022\021\n\trole_" +
-      "type\030\005 \001(\t\022\030\n\020role_description\030\006 \001(\t\022\025\n\r" +
-      "role_readonly\030\007 \001(\010\0222\n\017page_permission\030\010" +
-      " \003(\0132\031.glory_api.PagePermission\"\342\001\n\037Upda" +
-      "teRolePagePermissionRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant_i" +
-      "d\030\002 \001(\003\022\017\n\007role_id\030\003 \001(\003\022\021\n\trole_name\030\004 " +
-      "\001(\t\022\021\n\trole_type\030\005 \001(\t\022\030\n\020role_descripti" +
-      "on\030\006 \001(\t\0222\n\017page_permission\030\007 \003(\0132\031.glor" +
-      "y_api.PagePermission\"I\n UpdateRolePagePe" +
-      "rmissionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"\215\001\n\nPermission\022\025\n\rpermis" +
-      "sion_id\030\001 \001(\003\022\027\n\017permission_name\030\002 \001(\t\022\023" +
-      "\n\013resource_id\030\003 \001(\003\022\022\n\npermission\030\004 \001(\t\022" +
-      "\023\n\013description\030\005 \001(\t\022\021\n\ttenant_id\030\006 \001(\003\"" +
-      "\331\001\n\025ListPermissionRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rpermission" +
-      "_id\030\002 \001(\003\022\027\n\017permission_name\030\003 \001(\t\022\023\n\013re" +
-      "source_id\030\004 \001(\003\022\022\n\npermission\030\005 \001(\t\022\021\n\tt" +
-      "enant_id\030\006 \001(\003\022+\n\npagination\030d \001(\0132\027.bas" +
-      "e.PaginationRequest\"\230\001\n\026ListPermissionRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022)\n\npermission\030\002 \003(\0132\025.glory_api.Pe" +
-      "rmission\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponse\"(\n\010RoleType\022\r\n\005label\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t\"O\n\022GetRoleTypeRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\020\n\010category\030\002 \001(\t\"`\n\023GetRoleTypeResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "\"\n\005types\030\002 \003(\0132\023.glory_api.RoleType\"\302\001\n\004" +
-      "Role\022\017\n\007role_id\030\001 \001(\003\022\021\n\trole_name\030\002 \001(\t" +
-      "\022\021\n\trole_type\030\003 \001(\t\022\023\n\013description\030\005 \001(\t" +
-      "\022\020\n\010readonly\030\006 \001(\010\0222\n\017role_permission\030\007 " +
-      "\003(\0132\031.glory_api.RolePermission\022(\n\005pages\030" +
-      "\010 \003(\0132\031.glory_api.PagePermission\"\177\n\016Role" +
-      "Permission\022\032\n\022role_permission_id\030\001 \001(\003\022\017" +
-      "\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id\030\003 \001(\003\022)" +
-      "\n\npermission\030\004 \003(\0132\025.glory_api.Permissio" +
-      "n\"\261\001\n\017ListRoleRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002 \001(\003\022" +
-      "\021\n\trole_name\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\021\n" +
-      "\ttenant_id\030\007 \001(\003\022+\n\npagination\030d \001(\0132\027.b" +
-      "ase.PaginationRequest\"\206\001\n\020ListRoleRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\035\n\004role\030\002 \003(\0132\017.glory_api.Role\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponse\"[" +
-      "\n\021CreateRoleRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\035\n\004role\030\002 \001(\0132\017.glo" +
-      "ry_api.Role\"L\n\022CreateRoleResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007role" +
-      "_id\030\002 \001(\003\"l\n\031GiveRolePermissionRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id\030\003 \003(\003\"" +
-      "C\n\032GiveRolePermissionResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"b\n\033RemoveRo" +
-      "lePermissionRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\032\n\022role_permission_" +
-      "id\030\003 \003(\003\"E\n\034RemoveRolePermissionResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "M\n\021DeleteRoleRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007role_id\030\002 \003(\003\";" +
-      "\n\022DeleteRoleResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\"\203\001\n\010Resource\022\023\n\013reso" +
-      "urce_id\030\002 \001(\003\022\025\n\rresource_name\030\003 \001(\t\022\025\n\r" +
-      "resource_type\030\004 \001(\t\022\016\n\006source\030\005 \001(\t\022\021\n\ts" +
-      "ource_id\030\006 \001(\003\022\021\n\ttenant_id\030\007 \001(\003\"\222\001\n\023Li" +
-      "stResourceRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022%\n\010resource\030\002 \001(\0132\023.g" +
-      "lory_api.Resource\022+\n\npagination\030d \001(\0132\027." +
-      "base.PaginationRequest\"\222\001\n\024ListResourceR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022%\n\010resource\030\002 \003(\0132\023.glory_api.Res" +
-      "ource\022,\n\npagination\030d \001(\0132\030.base.Paginat" +
-      "ionResponse\"\230\001\n\016ListUserByRole\022\017\n\007user_i" +
-      "d\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuser_name\030\003 \001(" +
-      "\t\022\021\n\ttenant_id\030\004 \001(\003\022\014\n\004role\030\005 \001(\t\022\022\n\ncr" +
-      "eated_at\030\006 \001(\t\022\036\n\005roles\030\007 \003(\0132\017.glory_ap" +
-      "i.Role\"\241\001\n\025ListUserByRoleRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\trol" +
-      "e_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n\ttenant_id\030" +
-      "\004 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\226\001\n\026ListUserByRoleResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\004" +
-      "user\030\002 \003(\0132\031.glory_api.ListUserByRole\022,\n" +
-      "\npagination\030d \001(\0132\030.base.PaginationRespo" +
-      "nse\"b\n\021FollowUserRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014following_i" +
-      "d\030\002 \001(\003\022\016\n\006follow\030\003 \001(\010\";\n\022FollowUserRes" +
+      "ta\030\002 \001(\0132\017.glory_api.User\"8\n\rLogoutReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\"7\n\016LogoutResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\"N\n\024GetVerifyCodeReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\r\n\005phone\030\002 \001(\t\">\n\025GetVerifyCodeRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"n\n\026ListMyFollowingRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"\235\001\n" +
-      "\027ListMyFollowingResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022-\n\016following_lis" +
-      "t\030\002 \003(\0132\025.glory_api.UserFollow\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"m\n\025" +
-      "ListMyFollowerRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022+\n\npagination\030d \001" +
-      "(\0132\027.base.PaginationRequest\"\233\001\n\026ListMyFo" +
-      "llowerResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022,\n\rfollower_list\030\002 \003(\0132\025.g" +
-      "lory_api.UserFollow\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponse\"k\n\023ListMyFrien" +
-      "dRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022+\n\npagination\030d \001(\0132\027.base.Pag" +
-      "inationRequest\"\227\001\n\024ListMyFriendResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022*" +
-      "\n\013friend_list\030\002 \003(\0132\025.glory_api.UserFoll" +
-      "ow\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
-      "Response\"D\n\031GetMySocialSummaryRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\"y" +
-      "\n\032GetMySocialSummaryResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\0224\n\016social_su" +
-      "mmary\030\002 \001(\0132\034.glory_api.UserSocialSummar" +
-      "y\"\210\001\n\027UpdateUserTenantRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_i" +
-      "d\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022\017\n\007role_id\030\004 " +
-      "\001(\003\022\017\n\007dept_id\030\005 \001(\003\"A\n\030UpdateUserTenant" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\"L\n\017ListUserRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010user_ids\030" +
-      "\002 \003(\003\"Y\n\020ListUserResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\036\n\005users\030\002 \003(\0132" +
-      "\017.glory_api.User\"N\n\025UserBindWechatReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\014\n\004code\030\003 \001(\t\"o\n\026UserBindWechatRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\014\n\004bind\030\002 \001(\010\022\020\n\010nickname\030\003 \001(\t\022\016\n\006ava" +
-      "tar\030\004 \001(\t\"B\n\027UserUnbindWechatRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\"A\n" +
-      "\030UserUnbindWechatResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\"<\n\021DeleteUserRe" +
+      "onse\"^\n\026CheckVerifyCodeRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone" +
+      "\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"]\n\027CheckVerifyCodeR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\r\n\005token\030\002 \001(\t\022\014\n\004pass\030\003 \001(\010\"d\n\030L" +
+      "oginWithPasswordRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(\t\022" +
+      "\020\n\010password\030\003 \001(\t\"a\n\031LoginWithPasswordRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\"z\n\025" +
+      "UpdatePasswordRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\r\n\005phone\030\002 \001(\t\022\027\n" +
+      "\017origin_password\030\003 \001(\t\022\020\n\010password\030\004 \001(\t" +
+      "\"?\n\026UpdatePasswordResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\"9\n\016GetUserRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\"\217\001\n\017GetUserResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\035\n\004data\030\002 \001(\0132\017." +
+      "glory_api.User\022!\n\006tenant\030\003 \001(\0132\021.glory_a" +
+      "pi.Tenant\022\023\n\013dept_detail\030\004 \003(\t\"{\n\025GetUse" +
+      "rByPhoneRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\0229\n\005phone\030\002 \001(\tB*\332\273\030&@:l" +
+      "en($)>0;msg:\'\346\211\213\346\234\272\345\217\267\344\270\215\350\203\275\344\270\272\347\251\272\'\"m\n\026G" +
+      "etUserByPhoneResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\r\n\005found\030\002 \001(\010\022\035\n\004u" +
+      "ser\030\003 \001(\0132\017.glory_api.User\"[\n\021UpdateUser" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\035\n\004data\030\002 \001(\0132\017.glory_api.User\"" +
+      ";\n\022UpdateUserResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\"Z\n\022UpdatePhoneReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\r\n\005phone\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"<\n\023Upda" +
+      "tePhoneResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"i\n\016PagePermission\022\027\n\017busi" +
+      "ness_system\030\001 \001(\t\022\014\n\004page\030\002 \001(\t\022\n\n\002id\030\003 " +
+      "\001(\003\022\014\n\004name\030\004 \001(\t\022\026\n\016has_permission\030\005 \001(" +
+      "\010\"Z\n\034GetUserPagePermissionRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tte" +
+      "nant_id\030\002 \001(\003\"z\n\035GetUserPagePermissionRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\0222\n\017page_permission\030\002 \003(\0132\031.glory_a" +
+      "pi.PagePermission\"\321\001\n\037CreateRolePagePerm" +
+      "issionRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\022\021\n\trol" +
+      "e_name\030\003 \001(\t\022\021\n\trole_type\030\004 \001(\t\022\030\n\020role_" +
+      "description\030\005 \001(\t\0222\n\017page_permission\030\006 \003" +
+      "(\0132\031.glory_api.PagePermission\"Z\n CreateR" +
+      "olePagePermissionResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\022\017\n\007role_id\030\002 \001(" +
+      "\003\"k\n\034GetRolePagePermissionRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007ro" +
+      "le_id\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\"\365\001\n\035GetRo" +
+      "lePagePermissionResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022\021\n\ttenant_id\030\002 \001" +
+      "(\003\022\017\n\007role_id\030\003 \001(\003\022\021\n\trole_name\030\004 \001(\t\022\021" +
+      "\n\trole_type\030\005 \001(\t\022\030\n\020role_description\030\006 " +
+      "\001(\t\022\025\n\rrole_readonly\030\007 \001(\010\0222\n\017page_permi" +
+      "ssion\030\010 \003(\0132\031.glory_api.PagePermission\"\342" +
+      "\001\n\037UpdateRolePagePermissionRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tt" +
+      "enant_id\030\002 \001(\003\022\017\n\007role_id\030\003 \001(\003\022\021\n\trole_" +
+      "name\030\004 \001(\t\022\021\n\trole_type\030\005 \001(\t\022\030\n\020role_de" +
+      "scription\030\006 \001(\t\0222\n\017page_permission\030\007 \003(\013" +
+      "2\031.glory_api.PagePermission\"I\n UpdateRol" +
+      "ePagePermissionResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\"\215\001\n\nPermission\022\025\n" +
+      "\rpermission_id\030\001 \001(\003\022\027\n\017permission_name\030" +
+      "\002 \001(\t\022\023\n\013resource_id\030\003 \001(\003\022\022\n\npermission" +
+      "\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\021\n\ttenant_id" +
+      "\030\006 \001(\003\"\331\001\n\025ListPermissionRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rper" +
+      "mission_id\030\002 \001(\003\022\027\n\017permission_name\030\003 \001(" +
+      "\t\022\023\n\013resource_id\030\004 \001(\003\022\022\n\npermission\030\005 \001" +
+      "(\t\022\021\n\ttenant_id\030\006 \001(\003\022+\n\npagination\030d \001(" +
+      "\0132\027.base.PaginationRequest\"\230\001\n\026ListPermi" +
+      "ssionResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022)\n\npermission\030\002 \003(\0132\025.glory" +
+      "_api.Permission\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"(\n\010RoleType\022\r\n\005lab" +
+      "el\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"O\n\022GetRoleTypeRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\";\n\022DeleteUserResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhiji" +
-      "ejiaoyu.glory_api.userP\001b\006proto3"
+      "equest\022\020\n\010category\030\002 \001(\t\"`\n\023GetRoleTypeR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\"\n\005types\030\002 \003(\0132\023.glory_api.RoleTy" +
+      "pe\"\302\001\n\004Role\022\017\n\007role_id\030\001 \001(\003\022\021\n\trole_nam" +
+      "e\030\002 \001(\t\022\021\n\trole_type\030\003 \001(\t\022\023\n\013descriptio" +
+      "n\030\005 \001(\t\022\020\n\010readonly\030\006 \001(\010\0222\n\017role_permis" +
+      "sion\030\007 \003(\0132\031.glory_api.RolePermission\022(\n" +
+      "\005pages\030\010 \003(\0132\031.glory_api.PagePermission\"" +
+      "\177\n\016RolePermission\022\032\n\022role_permission_id\030" +
+      "\001 \001(\003\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id\030" +
+      "\003 \001(\003\022)\n\npermission\030\004 \003(\0132\025.glory_api.Pe" +
+      "rmission\"\261\001\n\017ListRoleRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id" +
+      "\030\002 \001(\003\022\021\n\trole_name\030\003 \001(\t\022\021\n\trole_type\030\004" +
+      " \001(\t\022\021\n\ttenant_id\030\007 \001(\003\022+\n\npagination\030d " +
+      "\001(\0132\027.base.PaginationRequest\"\206\001\n\020ListRol" +
+      "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\035\n\004role\030\002 \003(\0132\017.glory_api.Role\022" +
+      ",\n\npagination\030d \001(\0132\030.base.PaginationRes" +
+      "ponse\"[\n\021CreateRoleRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004role\030\002 \001(" +
+      "\0132\017.glory_api.Role\"L\n\022CreateRoleResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "\017\n\007role_id\030\002 \001(\003\"l\n\031GiveRolePermissionRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\017\n\007role_id\030\002 \001(\003\022\025\n\rpermission_id" +
+      "\030\003 \003(\003\"C\n\032GiveRolePermissionResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"b\n\033R" +
+      "emoveRolePermissionRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022role_perm" +
+      "ission_id\030\003 \003(\003\"E\n\034RemoveRolePermissionR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"M\n\021DeleteRoleRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007role_id\030" +
+      "\002 \003(\003\";\n\022DeleteRoleResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"\203\001\n\010Resource\022" +
+      "\023\n\013resource_id\030\002 \001(\003\022\025\n\rresource_name\030\003 " +
+      "\001(\t\022\025\n\rresource_type\030\004 \001(\t\022\016\n\006source\030\005 \001" +
+      "(\t\022\021\n\tsource_id\030\006 \001(\003\022\021\n\ttenant_id\030\007 \001(\003" +
+      "\"\222\001\n\023ListResourceRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022%\n\010resource\030\002 " +
+      "\001(\0132\023.glory_api.Resource\022+\n\npagination\030d" +
+      " \001(\0132\027.base.PaginationRequest\"\222\001\n\024ListRe" +
+      "sourceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022%\n\010resource\030\002 \003(\0132\023.glory_" +
+      "api.Resource\022,\n\npagination\030d \001(\0132\030.base." +
+      "PaginationResponse\"\230\001\n\016ListUserByRole\022\017\n" +
+      "\007user_id\030\001 \001(\003\022\r\n\005phone\030\002 \001(\t\022\021\n\tuser_na" +
+      "me\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\003\022\014\n\004role\030\005 \001(" +
+      "\t\022\022\n\ncreated_at\030\006 \001(\t\022\036\n\005roles\030\007 \003(\0132\017.g" +
+      "lory_api.Role\"\241\001\n\025ListUserByRoleRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\021\n\trole_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\021\n\tten" +
+      "ant_id\030\004 \001(\003\022+\n\npagination\030d \001(\0132\027.base." +
+      "PaginationRequest\"\226\001\n\026ListUserByRoleResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022\'\n\004user\030\002 \003(\0132\031.glory_api.ListUserBy" +
+      "Role\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponse\"b\n\021FollowUserRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014foll" +
+      "owing_id\030\002 \001(\003\022\016\n\006follow\030\003 \001(\010\";\n\022Follow" +
+      "UserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"n\n\026ListMyFollowingRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"\235\001\n\027ListMyFollowingResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022-\n\016follow" +
+      "ing_list\030\002 \003(\0132\025.glory_api.UserFollow\022,\n" +
+      "\npagination\030d \001(\0132\030.base.PaginationRespo" +
+      "nse\"m\n\025ListMyFollowerRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginat" +
+      "ion\030d \001(\0132\027.base.PaginationRequest\"\233\001\n\026L" +
+      "istMyFollowerResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022,\n\rfollower_list\030\002 " +
+      "\003(\0132\025.glory_api.UserFollow\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponse\"k\n\023List" +
+      "MyFriendRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022+\n\npagination\030d \001(\0132\027.b" +
+      "ase.PaginationRequest\"\227\001\n\024ListMyFriendRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022*\n\013friend_list\030\002 \003(\0132\025.glory_api.U" +
+      "serFollow\022,\n\npagination\030d \001(\0132\030.base.Pag" +
+      "inationResponse\"D\n\031GetMySocialSummaryReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\"y\n\032GetMySocialSummaryResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\0224\n\016so" +
+      "cial_summary\030\002 \001(\0132\034.glory_api.UserSocia" +
+      "lSummary\"\210\001\n\027UpdateUserTenantRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
+      "\007user_id\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022\017\n\007rol" +
+      "e_id\030\004 \001(\003\022\017\n\007dept_id\030\005 \001(\003\"A\n\030UpdateUse" +
+      "rTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"L\n\017ListUserRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010us" +
+      "er_ids\030\002 \003(\003\"Y\n\020ListUserResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\036\n\005users" +
+      "\030\002 \003(\0132\017.glory_api.User\"N\n\025UserBindWecha" +
+      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\014\n\004code\030\003 \001(\t\"o\n\026UserBindWecha" +
+      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\014\n\004bind\030\002 \001(\010\022\020\n\010nickname\030\003 \001(\t" +
+      "\022\016\n\006avatar\030\004 \001(\t\"B\n\027UserUnbindWechatRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\"A\n\030UserUnbindWechatResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"<\n\021Delet" +
+      "eUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\";\n\022DeleteUserResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
+      "m.zhijiejiaoyu.glory_api.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.zhijiejiaoyu.api.Api.getDescriptor(),
           com.zhijiejiaoyu.base.Base.getDescriptor(),
           com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor(),
           com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor(),
@@ -735,348 +752,366 @@ public final class UserOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Data", "Tenant", "DeptDetail", });
-    internal_static_glory_api_UpdateUserRequest_descriptor =
+    internal_static_glory_api_GetUserByPhoneRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_GetUserByPhoneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserByPhoneRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Phone", });
+    internal_static_glory_api_GetUserByPhoneResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_glory_api_GetUserByPhoneResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetUserByPhoneResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Found", "User", });
+    internal_static_glory_api_UpdateUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_UpdateUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateUserRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Data", });
     internal_static_glory_api_UpdateUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_UpdateUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_UpdatePhoneRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_UpdatePhoneRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdatePhoneRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Phone", "Code", });
     internal_static_glory_api_UpdatePhoneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_UpdatePhoneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdatePhoneResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_PagePermission_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_PagePermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_PagePermission_descriptor,
         new java.lang.String[] { "BusinessSystem", "Page", "Id", "Name", "HasPermission", });
     internal_static_glory_api_GetUserPagePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_GetUserPagePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetUserPagePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", });
     internal_static_glory_api_GetUserPagePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_GetUserPagePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetUserPagePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", "PagePermission", });
     internal_static_glory_api_CreateRolePagePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_CreateRolePagePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRolePagePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", "RoleName", "RoleType", "RoleDescription", "PagePermission", });
     internal_static_glory_api_CreateRolePagePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_CreateRolePagePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRolePagePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", "RoleId", });
     internal_static_glory_api_GetRolePagePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_GetRolePagePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRolePagePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoleId", "TenantId", });
     internal_static_glory_api_GetRolePagePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_GetRolePagePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRolePagePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TenantId", "RoleId", "RoleName", "RoleType", "RoleDescription", "RoleReadonly", "PagePermission", });
     internal_static_glory_api_UpdateRolePagePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_UpdateRolePagePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateRolePagePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", "RoleId", "RoleName", "RoleType", "RoleDescription", "PagePermission", });
     internal_static_glory_api_UpdateRolePagePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_glory_api_UpdateRolePagePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateRolePagePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_Permission_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_Permission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Permission_descriptor,
         new java.lang.String[] { "PermissionId", "PermissionName", "ResourceId", "Permission", "Description", "TenantId", });
     internal_static_glory_api_ListPermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_ListPermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListPermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "PermissionId", "PermissionName", "ResourceId", "Permission", "TenantId", "Pagination", });
     internal_static_glory_api_ListPermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_ListPermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListPermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Permission", "Pagination", });
     internal_static_glory_api_RoleType_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_RoleType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RoleType_descriptor,
         new java.lang.String[] { "Label", "Value", });
     internal_static_glory_api_GetRoleTypeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_GetRoleTypeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRoleTypeRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Category", });
     internal_static_glory_api_GetRoleTypeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_GetRoleTypeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetRoleTypeResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Types", });
     internal_static_glory_api_Role_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_glory_api_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Role_descriptor,
         new java.lang.String[] { "RoleId", "RoleName", "RoleType", "Description", "Readonly", "RolePermission", "Pages", });
     internal_static_glory_api_RolePermission_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_glory_api_RolePermission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RolePermission_descriptor,
         new java.lang.String[] { "RolePermissionId", "RoleId", "PermissionId", "Permission", });
     internal_static_glory_api_ListRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_glory_api_ListRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListRoleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoleId", "RoleName", "RoleType", "TenantId", "Pagination", });
     internal_static_glory_api_ListRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_glory_api_ListRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListRoleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Role", "Pagination", });
     internal_static_glory_api_CreateRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_CreateRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRoleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Role", });
     internal_static_glory_api_CreateRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_glory_api_CreateRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRoleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "RoleId", });
     internal_static_glory_api_GiveRolePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_glory_api_GiveRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GiveRolePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoleId", "PermissionId", });
     internal_static_glory_api_GiveRolePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_glory_api_GiveRolePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GiveRolePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_RemoveRolePermissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_glory_api_RemoveRolePermissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveRolePermissionRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RolePermissionId", });
     internal_static_glory_api_RemoveRolePermissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_glory_api_RemoveRolePermissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveRolePermissionResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_DeleteRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_glory_api_DeleteRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteRoleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoleId", });
     internal_static_glory_api_DeleteRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_glory_api_DeleteRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteRoleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_Resource_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_glory_api_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Resource_descriptor,
         new java.lang.String[] { "ResourceId", "ResourceName", "ResourceType", "Source", "SourceId", "TenantId", });
     internal_static_glory_api_ListResourceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_glory_api_ListResourceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListResourceRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Resource", "Pagination", });
     internal_static_glory_api_ListResourceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_glory_api_ListResourceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListResourceResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Resource", "Pagination", });
     internal_static_glory_api_ListUserByRole_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_glory_api_ListUserByRole_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRole_descriptor,
         new java.lang.String[] { "UserId", "Phone", "UserName", "TenantId", "Role", "CreatedAt", "Roles", });
     internal_static_glory_api_ListUserByRoleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_glory_api_ListUserByRoleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRoleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "RoleName", "Name", "TenantId", "Pagination", });
     internal_static_glory_api_ListUserByRoleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_glory_api_ListUserByRoleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserByRoleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "User", "Pagination", });
     internal_static_glory_api_FollowUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_glory_api_FollowUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FollowUserRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "FollowingId", "Follow", });
     internal_static_glory_api_FollowUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_glory_api_FollowUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FollowUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListMyFollowingRequest_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_glory_api_ListMyFollowingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFollowingRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListMyFollowingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_glory_api_ListMyFollowingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFollowingResponse_descriptor,
         new java.lang.String[] { "BaseResp", "FollowingList", "Pagination", });
     internal_static_glory_api_ListMyFollowerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_glory_api_ListMyFollowerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFollowerRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListMyFollowerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_glory_api_ListMyFollowerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFollowerResponse_descriptor,
         new java.lang.String[] { "BaseResp", "FollowerList", "Pagination", });
     internal_static_glory_api_ListMyFriendRequest_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_glory_api_ListMyFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFriendRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListMyFriendResponse_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_glory_api_ListMyFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyFriendResponse_descriptor,
         new java.lang.String[] { "BaseResp", "FriendList", "Pagination", });
     internal_static_glory_api_GetMySocialSummaryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_glory_api_GetMySocialSummaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetMySocialSummaryRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_GetMySocialSummaryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_glory_api_GetMySocialSummaryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetMySocialSummaryResponse_descriptor,
         new java.lang.String[] { "BaseResp", "SocialSummary", });
     internal_static_glory_api_UpdateUserTenantRequest_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_glory_api_UpdateUserTenantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateUserTenantRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "UserId", "TenantId", "RoleId", "DeptId", });
     internal_static_glory_api_UpdateUserTenantResponse_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_glory_api_UpdateUserTenantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateUserTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_glory_api_ListUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "UserIds", });
     internal_static_glory_api_ListUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_glory_api_ListUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Users", });
     internal_static_glory_api_UserBindWechatRequest_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_glory_api_UserBindWechatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserBindWechatRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Code", });
     internal_static_glory_api_UserBindWechatResponse_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_glory_api_UserBindWechatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserBindWechatResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Bind", "Nickname", "Avatar", });
     internal_static_glory_api_UserUnbindWechatRequest_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_glory_api_UserUnbindWechatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserUnbindWechatRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_UserUnbindWechatResponse_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_glory_api_UserUnbindWechatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UserUnbindWechatResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_DeleteUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_glory_api_DeleteUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteUserRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_DeleteUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_glory_api_DeleteUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteUserResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.zhijiejiaoyu.api.Api.vd);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.seller.SellerOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();

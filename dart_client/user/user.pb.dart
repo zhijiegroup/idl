@@ -1597,6 +1597,154 @@ class GetUserResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get deptDetail => $_getList(3);
 }
 
+class GetUserByPhoneRequest extends $pb.GeneratedMessage {
+  factory GetUserByPhoneRequest({
+    $2.BaseRequest? baseRequest,
+    $core.String? phone,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (phone != null) {
+      $result.phone = phone;
+    }
+    return $result;
+  }
+  GetUserByPhoneRequest._() : super();
+  factory GetUserByPhoneRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetUserByPhoneRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserByPhoneRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'phone')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetUserByPhoneRequest clone() => GetUserByPhoneRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetUserByPhoneRequest copyWith(void Function(GetUserByPhoneRequest) updates) => super.copyWith((message) => updates(message as GetUserByPhoneRequest)) as GetUserByPhoneRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUserByPhoneRequest create() => GetUserByPhoneRequest._();
+  GetUserByPhoneRequest createEmptyInstance() => create();
+  static $pb.PbList<GetUserByPhoneRequest> createRepeated() => $pb.PbList<GetUserByPhoneRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetUserByPhoneRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUserByPhoneRequest>(create);
+  static GetUserByPhoneRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get phone => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set phone($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPhone() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPhone() => clearField(2);
+}
+
+class GetUserByPhoneResponse extends $pb.GeneratedMessage {
+  factory GetUserByPhoneResponse({
+    $2.BaseResponse? baseResp,
+    $core.bool? found,
+    User? user,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (found != null) {
+      $result.found = found;
+    }
+    if (user != null) {
+      $result.user = user;
+    }
+    return $result;
+  }
+  GetUserByPhoneResponse._() : super();
+  factory GetUserByPhoneResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetUserByPhoneResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserByPhoneResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aOB(2, _omitFieldNames ? '' : 'found')
+    ..aOM<User>(3, _omitFieldNames ? '' : 'user', subBuilder: User.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetUserByPhoneResponse clone() => GetUserByPhoneResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetUserByPhoneResponse copyWith(void Function(GetUserByPhoneResponse) updates) => super.copyWith((message) => updates(message as GetUserByPhoneResponse)) as GetUserByPhoneResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUserByPhoneResponse create() => GetUserByPhoneResponse._();
+  GetUserByPhoneResponse createEmptyInstance() => create();
+  static $pb.PbList<GetUserByPhoneResponse> createRepeated() => $pb.PbList<GetUserByPhoneResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetUserByPhoneResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUserByPhoneResponse>(create);
+  static GetUserByPhoneResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get found => $_getBF(1);
+  @$pb.TagNumber(2)
+  set found($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFound() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFound() => clearField(2);
+
+  @$pb.TagNumber(3)
+  User get user => $_getN(2);
+  @$pb.TagNumber(3)
+  set user(User v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUser() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUser() => clearField(3);
+  @$pb.TagNumber(3)
+  User ensureUser() => $_ensure(2);
+}
+
 class UpdateUserRequest extends $pb.GeneratedMessage {
   factory UpdateUserRequest({
     $2.BaseRequest? baseRequest,

@@ -320,6 +320,37 @@ final $typed_data.Uint8List getUserResponseDescriptor = $convert.base64Decode(
     'bnQYAyABKAsyES5nbG9yeV9hcGkuVGVuYW50UgZ0ZW5hbnQSHwoLZGVwdF9kZXRhaWwYBCADKA'
     'lSCmRlcHREZXRhaWw=');
 
+@$core.Deprecated('Use getUserByPhoneRequestDescriptor instead')
+const GetUserByPhoneRequest$json = {
+  '1': 'GetUserByPhoneRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'phone', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'phone'},
+  ],
+};
+
+/// Descriptor for `GetUserByPhoneRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserByPhoneRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRVc2VyQnlQaG9uZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSQAoFcGhvbmUYAiABKAlCKtq7GCZAOmxlbigkKT4wO21z'
+    'Zzon5omL5py65Y+35LiN6IO95Li656m6J1IFcGhvbmU=');
+
+@$core.Deprecated('Use getUserByPhoneResponseDescriptor instead')
+const GetUserByPhoneResponse$json = {
+  '1': 'GetUserByPhoneResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'found', '3': 2, '4': 1, '5': 8, '10': 'found'},
+    {'1': 'user', '3': 3, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'user'},
+  ],
+};
+
+/// Descriptor for `GetUserByPhoneResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserByPhoneResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRVc2VyQnlQaG9uZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBIUCgVmb3VuZBgCIAEoCFIFZm91bmQSIwoEdXNlchgDIAEoCzIP'
+    'Lmdsb3J5X2FwaS5Vc2VyUgR1c2Vy');
+
 @$core.Deprecated('Use updateUserRequestDescriptor instead')
 const UpdateUserRequest$json = {
   '1': 'UpdateUserRequest',

@@ -56,7 +56,7 @@ public final class GloryApiService {
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
       ".proto\032\026task/system_task.proto\032 task/tea" +
       "cher_task_template.proto\032\037notification/n" +
-      "otification.proto2\347\337\002\n\tglory_api\022s\n\rCrea" +
+      "otification.proto2\337\340\002\n\tglory_api\022s\n\rCrea" +
       "teExample\022\037.glory_api.CreateExampleReque" +
       "st\032 .glory_api.CreateExampleResponse\"\037\322\301" +
       "\030\033/api/example/create_example\022g\n\nGetExam" +
@@ -85,7 +85,10 @@ public final class GloryApiService {
       "i.CheckVerifyCodeResponse\"\037\322\301\030\033/api/user" +
       "/check_verify_code\022X\n\007GetUser\022\031.glory_ap" +
       "i.GetUserRequest\032\032.glory_api.GetUserResp" +
-      "onse\"\026\312\301\030\022/api/user/get_user\022\201\001\n\021LoginWi" +
+      "onse\"\026\312\301\030\022/api/user/get_user\022v\n\016GetUserB" +
+      "yPhone\022 .glory_api.GetUserByPhoneRequest" +
+      "\032!.glory_api.GetUserByPhoneResponse\"\037\322\301\030" +
+      "\033/api/user/get_user_by_phone\022\201\001\n\021LoginWi" +
       "thPassword\022#.glory_api.LoginWithPassword" +
       "Request\032$.glory_api.LoginWithPasswordRes" +
       "ponse\"!\322\301\030\035/api/user/login_with_password" +
@@ -419,10 +422,10 @@ public final class GloryApiService {
       "lory_api.DeletePaymentResponse\"\037\322\301\030\033/api" +
       "/payment/delete_payment\022\204\001\n\023WechatPaymen" +
       "tNotify\022%.glory_api.WechatPaymentNotifyR" +
-      "equest\032&.glory_api.WechatPaymentNotifyRe" +
+      "equest\032&.glory_api.WechatPaymentNotifyRe",
       "sponse\"\036\322\301\030\032/api/payment/wechat_notify\022j" +
       "\n\014CreateConfig\022\036.glory_api.CreateConfigR" +
-      "equest\032\037.glory_api.CreateConfigResponse\"",
+      "equest\032\037.glory_api.CreateConfigResponse\"" +
       "\031\322\301\030\025/api/admin/add_config\022m\n\014UpdateConf" +
       "ig\022\036.glory_api.UpdateConfigRequest\032\037.glo" +
       "ry_api.UpdateConfigResponse\"\034\322\301\030\030/api/ad" +
@@ -819,10 +822,10 @@ public final class GloryApiService {
       "\036.glory_api.UpdateCouponRequest\032\037.glory_" +
       "api.UpdateCouponResponse\"\033\322\301\030\027/api/shop/" +
       "update_coupon\022l\n\014DeleteCoupon\022\036.glory_ap" +
-      "i.DeleteCouponRequest\032\037.glory_api.Delete" +
+      "i.DeleteCouponRequest\032\037.glory_api.Delete",
       "CouponResponse\"\033\322\301\030\027/api/shop/delete_cou" +
       "pon\022p\n\rAbolishCoupon\022\037.glory_api.Abolish" +
-      "CouponRequest\032 .glory_api.AbolishCouponR",
+      "CouponRequest\032 .glory_api.AbolishCouponR" +
       "esponse\"\034\312\301\030\030/api/shop/abolish_coupon\022\266\001" +
       "\n\036UpdateCouponDistributionStatus\0220.glory" +
       "_api.UpdateCouponDistributionStatusReque" +
