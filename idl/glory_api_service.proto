@@ -123,6 +123,10 @@ service glory_api {
   rpc UpdatePhone(UpdatePhoneRequest) returns (UpdatePhoneResponse) {
     option (api.post) = '/api/user/update_phone';
   }
+  // 获取用户的所有专业[select]
+  rpc GetUserMajor(GetUserMajorRequest) returns (GetUserMajorResponse) {
+    option (api.get) = '/api/user/get_user_major';
+  }
 
   rpc UpdateUserTenant(UpdateUserTenantRequest) returns (UpdateUserTenantResponse) {
     option (api.post) = '/api/user/update_user_tenant';
@@ -831,6 +835,7 @@ service glory_api {
     option (api.post) = '/api/tenant/get_tenant_dept';
   }
 
+  // 获取所有部门类型[select]
   rpc GetTenantDeptType(GetTenantDeptTypeRequest) returns(GetTenantDeptTypeResponse) {
     option (api.get) = '/api/tenant/get_tenant_dept_type';
   }
@@ -1323,7 +1328,6 @@ service glory_api {
   rpc ListQuickEvaluationStandard(ListQuickEvaluationRequest) returns (ListQuickEvaluationResponse) {
     option (api.post) = '/api/live/list_quick_evaluation_standard';
   }
-
   //获取直播回放链接
   rpc GetLiveReplay(GetLiveReplayRequest) returns (GetLiveReplayResponse) {
     option (api.get) = '/api/live/get_live_replay';
