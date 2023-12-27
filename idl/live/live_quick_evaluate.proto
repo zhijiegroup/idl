@@ -9,8 +9,10 @@ import "user/user.proto";
 message CreateQuickEvaluationRequest {
     base.BaseRequest base_request = 1;
     string name = 2;
-    int64 duration = 3;
-    repeated string keywords = 4;
+    int64 min_duration = 3;
+    int64 max_duration = 4;
+    int64 major_id = 5;
+    repeated string keywords = 6;
 }
 
 message CreateQuickEvaluationResponse {
@@ -42,13 +44,14 @@ message DeleteQuickEvaluationResponse {
 message EvaluationStandard {
     int64 standard_id = 1;  
     string name = 2;
-    int64 duration = 3; 
-    repeated string keywords = 4;
-    string creator = 5;
-    string updator = 6;
-    bool is_enable = 7;
-    int64 updated_at = 8;
-    TenantDept major = 9;
+    int64 min_duration = 3;
+    int64 max_duration = 4;
+    repeated string keywords = 5;
+    string creator = 6;
+    string updator = 7;
+    bool is_enable = 8;
+    int64 updated_at = 9;
+    TenantDept major = 10;
 }
 
 message ListQuickEvaluationRequest {
@@ -84,6 +87,7 @@ message EvaluationReport {
     string start_time = 3;
     string end_time = 4;
     string created_at = 5;
+    string created_by = 6;
 }
 
 message ListQuickEvaluationReportResponse {
@@ -154,5 +158,5 @@ message DeleteQuickEvaluationReportResponse {
 
 message DeleteQuickEvaluationReportRequest {
     base.BaseRequest base_request = 1;
-    int64 report_id = 2;
+    repeated int64 report_ids = 2;
 }
