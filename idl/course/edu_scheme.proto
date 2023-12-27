@@ -6,6 +6,7 @@ option java_multiple_files = true;
 import "base.proto";
 import "course/module.proto";
 import "course/course.proto";
+import "user/user.proto";
 
 message EduScheme {
     int64 edu_scheme_id = 1;
@@ -23,6 +24,7 @@ message EduScheme {
     int64 course_group_id = 13; // 能力方向ID
     int64 created_by = 14;
     repeated CourseModule course_modules = 15;  // 能力指标
+    repeated TenantDept classes = 16; // 应用班级
 }
 
 message CreateEduSchemeRequest {
