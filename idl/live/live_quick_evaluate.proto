@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.live";
 option java_multiple_files = true;
 
 import "base.proto";
+import "user/user.proto";
 
 message CreateQuickEvaluationRequest {
     base.BaseRequest base_request = 1;
@@ -47,6 +48,7 @@ message EvaluationStandard {
     string updator = 6;
     bool is_enable = 7;
     int64 updated_at = 8;
+    TenantDept major = 9;
 }
 
 message ListQuickEvaluationRequest {
