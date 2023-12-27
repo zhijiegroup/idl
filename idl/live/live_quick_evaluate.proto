@@ -147,3 +147,12 @@ message GetQuickEvaluationDetailResponse {
     bool result = 4;
     repeated QuickEvaluationDetail quick_evaluation_detail = 5;
 }
+
+message DeleteQuickEvaluationReportResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message DeleteQuickEvaluationReportRequest {
+    base.BaseRequest base_request = 1;
+    int64 report_id = 2;
+}

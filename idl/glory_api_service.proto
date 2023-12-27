@@ -1337,6 +1337,9 @@ service glory_api {
   rpc GetQuickEvaluationReport(GetQuickEvaluationReportRequest) returns (GetQuickEvaluationReportResponse) {
     option (api.get) = '/api/live/get_quick_evaluation_report';
   }
+  rpc DeleteQuickEvaluationReport(DeleteQuickEvaluationReportRequest) returns (DeleteQuickEvaluationReportResponse) {
+    option (api.get) = '/api/live/delete_quick_evaluation_report';
+  }
   rpc GetQuickEvaluationDetail(GetQuickEvaluationDetailRequest) returns (GetQuickEvaluationDetailResponse) {
     option (api.get) = '/api/live/get_quick_evaluation_detail';
   }
