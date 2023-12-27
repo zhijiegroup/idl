@@ -3,6 +3,7 @@ package glory_api;
 option java_package = "com.zhijiejiaoyu.glory_api.user";
 option java_multiple_files = true;
 
+import "api.proto";
 import "base.proto";
 import "seller/seller.proto";
 import "shop/shop.proto";
@@ -128,6 +129,17 @@ message GetUserResponse {
   User data = 2; // user data
   Tenant tenant = 3;
   repeated string dept_detail = 4;
+}
+
+message GetUserByPhoneRequest {
+  base.BaseRequest base_request = 1;
+  string phone = 2[(api.vd)="@:len($)>0;msg:'手机号不能为空'"];
+}
+
+message GetUserByPhoneResponse {
+  base.BaseResponse base_resp = 1;
+  bool found = 2;
+  User user = 3;
 }
 
 message UpdateUserRequest {

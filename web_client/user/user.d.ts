@@ -2,11 +2,12 @@
 /* eslint-disable */
 // @ts-nocheck
 
+import * as api from "../api";
 import * as base from "../base";
 import * as seller from "../seller/seller";
 import * as shop from "../shop/shop";
 import * as tenant from "../tenant/tenant";
-export { base, seller, shop, tenant };
+export { api, base, seller, shop, tenant };
 
 export interface TenantDept {
   dept_id?: string;
@@ -143,6 +144,17 @@ export interface GetUserResponse {
   data?: User;
   tenant?: tenant.Tenant;
   dept_detail?: Array<string>;
+}
+
+export interface GetUserByPhoneRequest {
+  base_request?: base.BaseRequest;
+  phone?: string;
+}
+
+export interface GetUserByPhoneResponse {
+  base_resp?: base.BaseResponse;
+  found?: boolean;
+  user?: User;
 }
 
 export interface UpdateUserRequest {

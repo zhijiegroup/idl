@@ -86,6 +86,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$1.GetVerifyCodeResponse> getVerifyCode($pb.ServerContext ctx, $1.GetVerifyCodeRequest request);
   $async.Future<$1.CheckVerifyCodeResponse> checkVerifyCode($pb.ServerContext ctx, $1.CheckVerifyCodeRequest request);
   $async.Future<$1.GetUserResponse> getUser($pb.ServerContext ctx, $1.GetUserRequest request);
+  $async.Future<$1.GetUserByPhoneResponse> getUserByPhone($pb.ServerContext ctx, $1.GetUserByPhoneRequest request);
   $async.Future<$1.LoginWithPasswordResponse> loginWithPassword($pb.ServerContext ctx, $1.LoginWithPasswordRequest request);
   $async.Future<$1.UpdatePasswordResponse> updatePassword($pb.ServerContext ctx, $1.UpdatePasswordRequest request);
   $async.Future<$1.UpdateUserResponse> updateUser($pb.ServerContext ctx, $1.UpdateUserRequest request);
@@ -447,6 +448,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetVerifyCode': return $1.GetVerifyCodeRequest();
       case 'CheckVerifyCode': return $1.CheckVerifyCodeRequest();
       case 'GetUser': return $1.GetUserRequest();
+      case 'GetUserByPhone': return $1.GetUserByPhoneRequest();
       case 'LoginWithPassword': return $1.LoginWithPasswordRequest();
       case 'UpdatePassword': return $1.UpdatePasswordRequest();
       case 'UpdateUser': return $1.UpdateUserRequest();
@@ -811,6 +813,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetVerifyCode': return this.getVerifyCode(ctx, request as $1.GetVerifyCodeRequest);
       case 'CheckVerifyCode': return this.checkVerifyCode(ctx, request as $1.CheckVerifyCodeRequest);
       case 'GetUser': return this.getUser(ctx, request as $1.GetUserRequest);
+      case 'GetUserByPhone': return this.getUserByPhone(ctx, request as $1.GetUserByPhoneRequest);
       case 'LoginWithPassword': return this.loginWithPassword(ctx, request as $1.LoginWithPasswordRequest);
       case 'UpdatePassword': return this.updatePassword(ctx, request as $1.UpdatePasswordRequest);
       case 'UpdateUser': return this.updateUser(ctx, request as $1.UpdateUserRequest);

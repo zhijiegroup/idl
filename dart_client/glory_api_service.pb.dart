@@ -107,6 +107,9 @@ class glory_apiApi {
   $async.Future<$1.GetUserResponse> getUser($pb.ClientContext? ctx, $1.GetUserRequest request) =>
     _client.invoke<$1.GetUserResponse>(ctx, 'glory_api', 'GetUser', request, $1.GetUserResponse())
   ;
+  $async.Future<$1.GetUserByPhoneResponse> getUserByPhone($pb.ClientContext? ctx, $1.GetUserByPhoneRequest request) =>
+    _client.invoke<$1.GetUserByPhoneResponse>(ctx, 'glory_api', 'GetUserByPhone', request, $1.GetUserByPhoneResponse())
+  ;
   $async.Future<$1.LoginWithPasswordResponse> loginWithPassword($pb.ClientContext? ctx, $1.LoginWithPasswordRequest request) =>
     _client.invoke<$1.LoginWithPasswordResponse>(ctx, 'glory_api', 'LoginWithPassword', request, $1.LoginWithPasswordResponse())
   ;

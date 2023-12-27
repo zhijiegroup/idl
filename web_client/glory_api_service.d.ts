@@ -162,6 +162,10 @@ export class glory_api {
 
   GetUser(request: user.GetUserRequest): Promise<user.GetUserResponse>;
 
+  GetUserByPhone(
+    request: user.GetUserByPhoneRequest
+  ): Promise<user.GetUserByPhoneResponse>;
+
   LoginWithPassword(
     request: user.LoginWithPasswordRequest
   ): Promise<user.LoginWithPasswordResponse>;
