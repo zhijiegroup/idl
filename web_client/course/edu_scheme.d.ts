@@ -5,7 +5,8 @@
 import * as base from "../base";
 import * as modules from "./module";
 import * as course from "./course";
-export { base, modules, course };
+import * as user from "../user/user";
+export { base, modules, course, user };
 
 export interface EduScheme {
   edu_scheme_id?: string;
@@ -26,6 +27,8 @@ export interface EduScheme {
   created_by?: string;
   /** 能力指标 */
   course_modules?: Array<modules.CourseModule>;
+  /** 应用班级 */
+  classes?: Array<user.TenantDept>;
 }
 
 export interface CreateEduSchemeRequest {

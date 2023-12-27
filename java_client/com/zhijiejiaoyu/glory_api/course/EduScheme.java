@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     characterStandard = "";
     courseGroupName = "";
     courseModules = java.util.Collections.emptyList();
+    classes = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -145,6 +146,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseModule.parser(), extensionRegistry));
             break;
           }
+          case 130: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              classes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            classes .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +172,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         courseModules = java.util.Collections.unmodifiableList(courseModules );
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        classes = java.util.Collections.unmodifiableList(classes );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -622,6 +635,66 @@ private static final long serialVersionUID = 0L;
     return courseModules .get(index);
   }
 
+  public static final int CLASSES_FIELD_NUMBER = 16;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> classes ;
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getClassesList() {
+    return classes ;
+  }
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getClassesOrBuilderList() {
+    return classes ;
+  }
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  @java.lang.Override
+  public int getClassesCount() {
+    return classes .size();
+  }
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getClasses(int index) {
+    return classes .get(index);
+  }
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassesOrBuilder(
+      int index) {
+    return classes .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -680,6 +753,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < courseModules .size(); i++) {
       output.writeMessage(15, courseModules .get(i));
+    }
+    for (int i = 0; i < classes .size(); i++) {
+      output.writeMessage(16, classes .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -742,6 +818,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, courseModules .get(i));
     }
+    for (int i = 0; i < classes .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, classes .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -790,6 +870,8 @@ private static final long serialVersionUID = 0L;
         != other.getCreatedBy()) return false;
     if (!getCourseModulesList()
         .equals(other.getCourseModulesList())) return false;
+    if (!getClassesList()
+        .equals(other.getClassesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -838,6 +920,10 @@ private static final long serialVersionUID = 0L;
     if (getCourseModulesCount() > 0) {
       hash = (37 * hash) + COURSE_MODULES_FIELD_NUMBER;
       hash = (53 * hash) + getCourseModulesList().hashCode();
+    }
+    if (getClassesCount() > 0) {
+      hash = (37 * hash) + CLASSES_FIELD_NUMBER;
+      hash = (53 * hash) + getClassesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -968,6 +1054,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getCourseModulesFieldBuilder();
+        getClassesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1006,6 +1093,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       } else {
         courseModulesBuilder .clear();
+      }
+      if (classesBuilder == null) {
+        classes = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        classesBuilder .clear();
       }
       return this;
     }
@@ -1056,6 +1149,15 @@ private static final long serialVersionUID = 0L;
         result.courseModules = courseModules ;
       } else {
         result.courseModules = courseModulesBuilder .build();
+      }
+      if (classesBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          classes = java.util.Collections.unmodifiableList(classes );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.classes = classes ;
+      } else {
+        result.classes = classesBuilder .build();
       }
       onBuilt();
       return result;
@@ -1178,6 +1280,32 @@ private static final long serialVersionUID = 0L;
                  getCourseModulesFieldBuilder() : null;
           } else {
             courseModulesBuilder .addAllMessages(other.courseModules );
+          }
+        }
+      }
+      if (classesBuilder == null) {
+        if (!other.classes .isEmpty()) {
+          if (classes .isEmpty()) {
+            classes = other.classes ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureClassesIsMutable();
+            classes .addAll(other.classes );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.classes .isEmpty()) {
+          if (classesBuilder .isEmpty()) {
+            classesBuilder .dispose();
+            classesBuilder = null;
+            classes = other.classes ;
+            bitField0 = (bitField0 & ~0x00000002);
+            classesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getClassesFieldBuilder() : null;
+          } else {
+            classesBuilder .addAllMessages(other.classes );
           }
         }
       }
@@ -2347,6 +2475,318 @@ private static final long serialVersionUID = 0L;
         courseModules = null;
       }
       return courseModulesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> classes =
+      java.util.Collections.emptyList();
+    private void ensureClassesIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        classes = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.TenantDept>(classes );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> classesBuilder ;
+
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> getClassesList() {
+      if (classesBuilder == null) {
+        return java.util.Collections.unmodifiableList(classes );
+      } else {
+        return classesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public int getClassesCount() {
+      if (classesBuilder == null) {
+        return classes .size();
+      } else {
+        return classesBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getClasses(int index) {
+      if (classesBuilder == null) {
+        return classes .get(index);
+      } else {
+        return classesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder setClasses(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (classesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClassesIsMutable();
+        classes .set(index, value);
+        onChanged();
+      } else {
+        classesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder setClasses(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (classesBuilder == null) {
+        ensureClassesIsMutable();
+        classes .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        classesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder addClasses(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (classesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClassesIsMutable();
+        classes .add(value);
+        onChanged();
+      } else {
+        classesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder addClasses(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (classesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClassesIsMutable();
+        classes .add(index, value);
+        onChanged();
+      } else {
+        classesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder addClasses(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (classesBuilder == null) {
+        ensureClassesIsMutable();
+        classes .add(builderForValue.build());
+        onChanged();
+      } else {
+        classesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder addClasses(
+        int index, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (classesBuilder == null) {
+        ensureClassesIsMutable();
+        classes .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        classesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder addAllClasses(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.TenantDept> values) {
+      if (classesBuilder == null) {
+        ensureClassesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, classes );
+        onChanged();
+      } else {
+        classesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder clearClasses() {
+      if (classesBuilder == null) {
+        classes = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        classesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public Builder removeClasses(int index) {
+      if (classesBuilder == null) {
+        ensureClassesIsMutable();
+        classes .remove(index);
+        onChanged();
+      } else {
+        classesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getClassesBuilder(
+        int index) {
+      return getClassesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassesOrBuilder(
+        int index) {
+      if (classesBuilder == null) {
+        return classes .get(index);  } else {
+        return classesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+         getClassesOrBuilderList() {
+      if (classesBuilder != null) {
+        return classesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(classes );
+      }
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addClassesBuilder() {
+      return getClassesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder addClassesBuilder(
+        int index) {
+      return getClassesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 应用班级
+     * </pre>
+     *
+     * <code>repeated .glory_api.TenantDept classes = 16;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept.Builder> 
+         getClassesBuilderList() {
+      return getClassesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getClassesFieldBuilder() {
+      if (classesBuilder == null) {
+        classesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                classes ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        classes = null;
+      }
+      return classesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

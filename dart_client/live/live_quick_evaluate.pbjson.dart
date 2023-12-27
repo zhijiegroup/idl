@@ -116,6 +116,7 @@ const EvaluationStandard$json = {
     {'1': 'updator', '3': 6, '4': 1, '5': 9, '10': 'updator'},
     {'1': 'is_enable', '3': 7, '4': 1, '5': 8, '10': 'isEnable'},
     {'1': 'updated_at', '3': 8, '4': 1, '5': 3, '10': 'updatedAt'},
+    {'1': 'major', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'major'},
   ],
 };
 
@@ -125,7 +126,8 @@ final $typed_data.Uint8List evaluationStandardDescriptor = $convert.base64Decode
     'oEbmFtZRgCIAEoCVIEbmFtZRIaCghkdXJhdGlvbhgDIAEoA1IIZHVyYXRpb24SGgoIa2V5d29y'
     'ZHMYBCADKAlSCGtleXdvcmRzEhgKB2NyZWF0b3IYBSABKAlSB2NyZWF0b3ISGAoHdXBkYXRvch'
     'gGIAEoCVIHdXBkYXRvchIbCglpc19lbmFibGUYByABKAhSCGlzRW5hYmxlEh0KCnVwZGF0ZWRf'
-    'YXQYCCABKANSCXVwZGF0ZWRBdA==');
+    'YXQYCCABKANSCXVwZGF0ZWRBdBIrCgVtYWpvchgJIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZX'
+    'B0UgVtYWpvcg==');
 
 @$core.Deprecated('Use listQuickEvaluationRequestDescriptor instead')
 const ListQuickEvaluationRequest$json = {
@@ -379,4 +381,32 @@ final $typed_data.Uint8List getQuickEvaluationDetailResponseDescriptor = $conver
     'aW1lEhkKCGVuZF90aW1lGAMgASgDUgdlbmRUaW1lEhYKBnJlc3VsdBgEIAEoCFIGcmVzdWx0El'
     'gKF3F1aWNrX2V2YWx1YXRpb25fZGV0YWlsGAUgAygLMiAuZ2xvcnlfYXBpLlF1aWNrRXZhbHVh'
     'dGlvbkRldGFpbFIVcXVpY2tFdmFsdWF0aW9uRGV0YWls');
+
+@$core.Deprecated('Use deleteQuickEvaluationReportResponseDescriptor instead')
+const DeleteQuickEvaluationReportResponse$json = {
+  '1': 'DeleteQuickEvaluationReportResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteQuickEvaluationReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteQuickEvaluationReportResponseDescriptor = $convert.base64Decode(
+    'CiNEZWxldGVRdWlja0V2YWx1YXRpb25SZXBvcnRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKA'
+    'syEi5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+
+@$core.Deprecated('Use deleteQuickEvaluationReportRequestDescriptor instead')
+const DeleteQuickEvaluationReportRequest$json = {
+  '1': 'DeleteQuickEvaluationReportRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'report_id', '3': 2, '4': 1, '5': 3, '10': 'reportId'},
+  ],
+};
+
+/// Descriptor for `DeleteQuickEvaluationReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteQuickEvaluationReportRequestDescriptor = $convert.base64Decode(
+    'CiJEZWxldGVRdWlja0V2YWx1YXRpb25SZXBvcnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIA'
+    'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXJlcG9ydF9pZBgCIAEoA1II'
+    'cmVwb3J0SWQ=');
 

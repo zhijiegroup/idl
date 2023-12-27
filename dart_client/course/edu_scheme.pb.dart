@@ -14,8 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $1;
-import 'course.pb.dart' as $2;
+import '../base.pb.dart' as $2;
+import '../user/user.pb.dart' as $1;
+import 'course.pb.dart' as $3;
 import 'module.pb.dart' as $0;
 
 class EduScheme extends $pb.GeneratedMessage {
@@ -35,6 +36,7 @@ class EduScheme extends $pb.GeneratedMessage {
     $fixnum.Int64? courseGroupId,
     $fixnum.Int64? createdBy,
     $core.Iterable<$0.CourseModule>? courseModules,
+    $core.Iterable<$1.TenantDept>? classes,
   }) {
     final $result = create();
     if (eduSchemeId != null) {
@@ -82,6 +84,9 @@ class EduScheme extends $pb.GeneratedMessage {
     if (courseModules != null) {
       $result.courseModules.addAll(courseModules);
     }
+    if (classes != null) {
+      $result.classes.addAll(classes);
+    }
     return $result;
   }
   EduScheme._() : super();
@@ -104,6 +109,7 @@ class EduScheme extends $pb.GeneratedMessage {
     ..aInt64(13, _omitFieldNames ? '' : 'courseGroupId')
     ..aInt64(14, _omitFieldNames ? '' : 'createdBy')
     ..pc<$0.CourseModule>(15, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
+    ..pc<$1.TenantDept>(16, _omitFieldNames ? '' : 'classes', $pb.PbFieldType.PM, subBuilder: $1.TenantDept.create)
     ..hasRequiredFields = false
   ;
 
@@ -256,11 +262,14 @@ class EduScheme extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(15)
   $core.List<$0.CourseModule> get courseModules => $_getList(14);
+
+  @$pb.TagNumber(16)
+  $core.List<$1.TenantDept> get classes => $_getList(15);
 }
 
 class CreateEduSchemeRequest extends $pb.GeneratedMessage {
   factory CreateEduSchemeRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $core.String? name,
     $core.String? major,
     $core.String? goal,
@@ -317,7 +326,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
   factory CreateEduSchemeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEduSchemeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'major')
     ..aOS(4, _omitFieldNames ? '' : 'goal')
@@ -354,15 +363,15 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
   static CreateEduSchemeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -460,7 +469,7 @@ class CreateEduSchemeRequest extends $pb.GeneratedMessage {
 
 class CreateEduSchemeResponse extends $pb.GeneratedMessage {
   factory CreateEduSchemeResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     $fixnum.Int64? eduSchemeId,
   }) {
     final $result = create();
@@ -477,7 +486,7 @@ class CreateEduSchemeResponse extends $pb.GeneratedMessage {
   factory CreateEduSchemeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEduSchemeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
     ..hasRequiredFields = false
   ;
@@ -504,15 +513,15 @@ class CreateEduSchemeResponse extends $pb.GeneratedMessage {
   static CreateEduSchemeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get eduSchemeId => $_getI64(1);
@@ -526,7 +535,7 @@ class CreateEduSchemeResponse extends $pb.GeneratedMessage {
 
 class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
   factory UpdateEduSchemeRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $core.String? name,
     $core.String? major,
     $core.String? goal,
@@ -587,7 +596,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
   factory UpdateEduSchemeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEduSchemeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'major')
     ..aOS(4, _omitFieldNames ? '' : 'goal')
@@ -625,15 +634,15 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
   static UpdateEduSchemeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -740,7 +749,7 @@ class UpdateEduSchemeRequest extends $pb.GeneratedMessage {
 
 class UpdateEduSchemeResponse extends $pb.GeneratedMessage {
   factory UpdateEduSchemeResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -753,7 +762,7 @@ class UpdateEduSchemeResponse extends $pb.GeneratedMessage {
   factory UpdateEduSchemeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEduSchemeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -779,20 +788,20 @@ class UpdateEduSchemeResponse extends $pb.GeneratedMessage {
   static UpdateEduSchemeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class DeleteEduSchemeRequest extends $pb.GeneratedMessage {
   factory DeleteEduSchemeRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
   }) {
     final $result = create();
@@ -809,7 +818,7 @@ class DeleteEduSchemeRequest extends $pb.GeneratedMessage {
   factory DeleteEduSchemeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEduSchemeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
     ..hasRequiredFields = false
   ;
@@ -836,15 +845,15 @@ class DeleteEduSchemeRequest extends $pb.GeneratedMessage {
   static DeleteEduSchemeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get eduSchemeId => $_getI64(1);
@@ -858,7 +867,7 @@ class DeleteEduSchemeRequest extends $pb.GeneratedMessage {
 
 class DeleteEduSchemeResponse extends $pb.GeneratedMessage {
   factory DeleteEduSchemeResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -871,7 +880,7 @@ class DeleteEduSchemeResponse extends $pb.GeneratedMessage {
   factory DeleteEduSchemeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEduSchemeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -897,24 +906,24 @@ class DeleteEduSchemeResponse extends $pb.GeneratedMessage {
   static DeleteEduSchemeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class ListEduSchemeRequest extends $pb.GeneratedMessage {
   factory ListEduSchemeRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $core.int? type,
     $core.String? name,
     $core.String? major,
-    $1.PaginationRequest? pagination,
+    $2.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -939,11 +948,11 @@ class ListEduSchemeRequest extends $pb.GeneratedMessage {
   factory ListEduSchemeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEduSchemeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'major')
-    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
+    ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -969,15 +978,15 @@ class ListEduSchemeRequest extends $pb.GeneratedMessage {
   static ListEduSchemeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get type => $_getIZ(1);
@@ -1007,22 +1016,22 @@ class ListEduSchemeRequest extends $pb.GeneratedMessage {
   void clearMajor() => clearField(4);
 
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(4);
+  $2.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
-  set pagination($1.PaginationRequest v) { setField(100, v); }
+  set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(4);
+  $2.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListEduSchemeResponse extends $pb.GeneratedMessage {
   factory ListEduSchemeResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     $core.Iterable<EduScheme>? eduSchemeList,
-    $1.PaginationResponse? pagination,
+    $2.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1041,9 +1050,9 @@ class ListEduSchemeResponse extends $pb.GeneratedMessage {
   factory ListEduSchemeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEduSchemeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..pc<EduScheme>(2, _omitFieldNames ? '' : 'eduSchemeList', $pb.PbFieldType.PM, subBuilder: EduScheme.create)
-    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
+    ..aOM<$2.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1069,34 +1078,34 @@ class ListEduSchemeResponse extends $pb.GeneratedMessage {
   static ListEduSchemeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<EduScheme> get eduSchemeList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $1.PaginationResponse get pagination => $_getN(2);
+  $2.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($1.PaginationResponse v) { setField(100, v); }
+  set pagination($2.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationResponse ensurePagination() => $_ensure(2);
+  $2.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   factory EduSchemeDetailRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
   }) {
     final $result = create();
@@ -1113,7 +1122,7 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   factory EduSchemeDetailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EduSchemeDetailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
     ..hasRequiredFields = false
   ;
@@ -1140,15 +1149,15 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
   static EduSchemeDetailRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get eduSchemeId => $_getI64(1);
@@ -1162,7 +1171,7 @@ class EduSchemeDetailRequest extends $pb.GeneratedMessage {
 
 class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   factory EduSchemeDetailResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
     EduScheme? schemeDetail,
     $core.Iterable<$fixnum.Int64>? clasIds,
   }) {
@@ -1183,7 +1192,7 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   factory EduSchemeDetailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EduSchemeDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aOM<EduScheme>(2, _omitFieldNames ? '' : 'schemeDetail', subBuilder: EduScheme.create)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -1211,15 +1220,15 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
   static EduSchemeDetailResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   EduScheme get schemeDetail => $_getN(1);
@@ -1238,7 +1247,7 @@ class EduSchemeDetailResponse extends $pb.GeneratedMessage {
 
 class DistributeEduSchemeRequest extends $pb.GeneratedMessage {
   factory DistributeEduSchemeRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
     $core.Iterable<$fixnum.Int64>? clasIds,
   }) {
@@ -1259,7 +1268,7 @@ class DistributeEduSchemeRequest extends $pb.GeneratedMessage {
   factory DistributeEduSchemeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DistributeEduSchemeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -1287,15 +1296,15 @@ class DistributeEduSchemeRequest extends $pb.GeneratedMessage {
   static DistributeEduSchemeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get eduSchemeId => $_getI64(1);
@@ -1312,7 +1321,7 @@ class DistributeEduSchemeRequest extends $pb.GeneratedMessage {
 
 class DistributeEduSchemeResponse extends $pb.GeneratedMessage {
   factory DistributeEduSchemeResponse({
-    $1.BaseResponse? baseResp,
+    $2.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1325,7 +1334,7 @@ class DistributeEduSchemeResponse extends $pb.GeneratedMessage {
   factory DistributeEduSchemeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DistributeEduSchemeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1351,21 +1360,21 @@ class DistributeEduSchemeResponse extends $pb.GeneratedMessage {
   static DistributeEduSchemeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 获取模块化课程
 class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseRequest({
-    $1.BaseRequest? baseRequest,
+    $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
   }) {
     final $result = create();
@@ -1382,7 +1391,7 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
     ..hasRequiredFields = false
   ;
@@ -1409,15 +1418,15 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   static GetEduSchemeLikeCourseRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseRequest get baseRequest => $_getN(0);
+  $2.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get eduSchemeId => $_getI64(1);
@@ -1431,8 +1440,8 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
 
 class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseResponse({
-    $1.BaseResponse? baseResp,
-    $2.Course? course,
+    $2.BaseResponse? baseResp,
+    $3.Course? course,
     $fixnum.Int64? courseProgress,
   }) {
     final $result = create();
@@ -1452,8 +1461,8 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
-    ..aOM<$2.Course>(2, _omitFieldNames ? '' : 'course', subBuilder: $2.Course.create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aOM<$3.Course>(2, _omitFieldNames ? '' : 'course', subBuilder: $3.Course.create)
     ..aInt64(3, _omitFieldNames ? '' : 'courseProgress')
     ..hasRequiredFields = false
   ;
@@ -1480,26 +1489,26 @@ class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {
   static GetEduSchemeLikeCourseResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.BaseResponse get baseResp => $_getN(0);
+  $2.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($1.BaseResponse v) { setField(1, v); }
+  set baseResp($2.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $2.Course get course => $_getN(1);
+  $3.Course get course => $_getN(1);
   @$pb.TagNumber(2)
-  set course($2.Course v) { setField(2, v); }
+  set course($3.Course v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCourse() => $_has(1);
   @$pb.TagNumber(2)
   void clearCourse() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Course ensureCourse() => $_ensure(1);
+  $3.Course ensureCourse() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get courseProgress => $_getI64(2);

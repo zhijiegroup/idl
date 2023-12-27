@@ -413,6 +413,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ServerContext ctx, $50.CreateQuickEvaluationReportRequest request);
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
+  $async.Future<$50.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ServerContext ctx, $50.DeleteQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
   $async.Future<$46.CreateVersionLogResponse> createVersionLog($pb.ServerContext ctx, $46.CreateVersionLogRequest request);
   $async.Future<$46.UpdateVersionLogResponse> updateVersionLog($pb.ServerContext ctx, $46.UpdateVersionLogRequest request);
@@ -775,6 +776,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return $50.CreateQuickEvaluationReportRequest();
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
+      case 'DeleteQuickEvaluationReport': return $50.DeleteQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
       case 'CreateVersionLog': return $46.CreateVersionLogRequest();
       case 'UpdateVersionLog': return $46.UpdateVersionLogRequest();
@@ -1140,6 +1142,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return this.createQuickEvaluationReport(ctx, request as $50.CreateQuickEvaluationReportRequest);
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
+      case 'DeleteQuickEvaluationReport': return this.deleteQuickEvaluationReport(ctx, request as $50.DeleteQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
       case 'CreateVersionLog': return this.createVersionLog(ctx, request as $46.CreateVersionLogRequest);
       case 'UpdateVersionLog': return this.updateVersionLog(ctx, request as $46.UpdateVersionLogRequest);

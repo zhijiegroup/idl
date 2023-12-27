@@ -58,6 +58,9 @@ struct GloryApi_EduScheme {
   /// 能力指标
   var courseModules: [GloryApi_CourseModule] = []
 
+  /// 应用班级
+  var classes: [GloryApi_TenantDept] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -513,6 +516,7 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     13: .standard(proto: "course_group_id"),
     14: .standard(proto: "created_by"),
     15: .standard(proto: "course_modules"),
+    16: .same(proto: "classes"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -536,6 +540,7 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.courseGroupID) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.createdBy) }()
       case 15: try { try decoder.decodeRepeatedMessageField(value: &self.courseModules) }()
+      case 16: try { try decoder.decodeRepeatedMessageField(value: &self.classes) }()
       default: break
       }
     }
@@ -587,6 +592,9 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.courseModules.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.courseModules, fieldNumber: 15)
     }
+    if !self.classes.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.classes, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -606,6 +614,7 @@ extension GloryApi_EduScheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.courseGroupID != rhs.courseGroupID {return false}
     if lhs.createdBy != rhs.createdBy {return false}
     if lhs.courseModules != rhs.courseModules {return false}
+    if lhs.classes != rhs.classes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

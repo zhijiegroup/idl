@@ -10493,6 +10493,37 @@ public final class glory_apiGrpc {
     return getGetQuickEvaluationReportMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> getDeleteQuickEvaluationReportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQuickEvaluationReport",
+      requestType = com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest,
+      com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> getDeleteQuickEvaluationReportMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> getDeleteQuickEvaluationReportMethod;
+    if ((getDeleteQuickEvaluationReportMethod = glory_apiGrpc.getDeleteQuickEvaluationReportMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteQuickEvaluationReportMethod = glory_apiGrpc.getDeleteQuickEvaluationReportMethod) == null) {
+          glory_apiGrpc.getDeleteQuickEvaluationReportMethod = getDeleteQuickEvaluationReportMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest, com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteQuickEvaluationReport"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteQuickEvaluationReport"))
+              .build();
+        }
+      }
+    }
+    return getDeleteQuickEvaluationReportMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest,
       com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> getGetQuickEvaluationDetailMethod;
 
@@ -13899,6 +13930,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void deleteQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteQuickEvaluationReportMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQuickEvaluationDetailMethod(), responseObserver);
@@ -17133,6 +17171,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void deleteQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteQuickEvaluationReportMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void getQuickEvaluationDetail(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -20035,6 +20081,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse getQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetQuickEvaluationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse deleteQuickEvaluationReport(com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQuickEvaluationReportMethod(), getCallOptions(), request);
     }
 
     /**
@@ -23262,6 +23315,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport(
+        com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteQuickEvaluationReportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail(
         com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -23783,27 +23844,28 @@ public final class glory_apiGrpc {
   private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 335;
   private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 336;
   private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 337;
-  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 338;
-  private static final int METHODID_CREATE_VERSION_LOG = 339;
-  private static final int METHODID_UPDATE_VERSION_LOG = 340;
-  private static final int METHODID_LIST_VERSION_LOG = 341;
-  private static final int METHODID_DELETE_VERSION_LOG = 342;
-  private static final int METHODID_GET_LATEST_VERSION = 343;
-  private static final int METHODID_LIST_SYSTEM_TASK = 344;
-  private static final int METHODID_UPDATE_SYSTEM_TASK = 345;
-  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 346;
-  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 347;
-  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 348;
-  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 349;
-  private static final int METHODID_LIST_NOTIFICATION = 350;
-  private static final int METHODID_COUNT_NOTIFICATION = 351;
-  private static final int METHODID_READ_NOTIFICATION = 352;
-  private static final int METHODID_TEST_NOTIFICATION = 353;
-  private static final int METHODID_DELETE_NOTIFICATION = 354;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 355;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 356;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 357;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 358;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_REPORT = 338;
+  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 339;
+  private static final int METHODID_CREATE_VERSION_LOG = 340;
+  private static final int METHODID_UPDATE_VERSION_LOG = 341;
+  private static final int METHODID_LIST_VERSION_LOG = 342;
+  private static final int METHODID_DELETE_VERSION_LOG = 343;
+  private static final int METHODID_GET_LATEST_VERSION = 344;
+  private static final int METHODID_LIST_SYSTEM_TASK = 345;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 346;
+  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 347;
+  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 348;
+  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 349;
+  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 350;
+  private static final int METHODID_LIST_NOTIFICATION = 351;
+  private static final int METHODID_COUNT_NOTIFICATION = 352;
+  private static final int METHODID_READ_NOTIFICATION = 353;
+  private static final int METHODID_TEST_NOTIFICATION = 354;
+  private static final int METHODID_DELETE_NOTIFICATION = 355;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 356;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 357;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 358;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 359;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -25173,6 +25235,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_QUICK_EVALUATION_REPORT:
           serviceImpl.getQuickEvaluationReport((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_QUICK_EVALUATION_REPORT:
+          serviceImpl.deleteQuickEvaluationReport((com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse>) responseObserver);
           break;
         case METHODID_GET_QUICK_EVALUATION_DETAIL:
           serviceImpl.getQuickEvaluationDetail((com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationDetailRequest) request,
@@ -27643,6 +27709,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.GetQuickEvaluationReportResponse>(
                 service, METHODID_GET_QUICK_EVALUATION_REPORT)))
         .addMethod(
+          getDeleteQuickEvaluationReportMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportRequest,
+              com.zhijiejiaoyu.glory_api.live.DeleteQuickEvaluationReportResponse>(
+                service, METHODID_DELETE_QUICK_EVALUATION_REPORT)))
+        .addMethod(
           getGetQuickEvaluationDetailMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -28175,6 +28248,7 @@ public final class glory_apiGrpc {
               .addMethod(getCreateQuickEvaluationReportMethod())
               .addMethod(getListQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationReportMethod())
+              .addMethod(getDeleteQuickEvaluationReportMethod())
               .addMethod(getGetQuickEvaluationDetailMethod())
               .addMethod(getCreateVersionLogMethod())
               .addMethod(getUpdateVersionLogMethod())

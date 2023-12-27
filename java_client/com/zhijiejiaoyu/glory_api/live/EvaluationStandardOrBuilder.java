@@ -91,4 +91,19 @@ public interface EvaluationStandardOrBuilder extends
    * @return The updatedAt.
    */
   long getUpdatedAt();
+
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   * @return Whether the major field is set.
+   */
+  boolean hasMajor();
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   * @return The major.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getMajor();
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder();
 }

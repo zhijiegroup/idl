@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as user from "../user/user";
+export { base, user };
 
 export interface CreateQuickEvaluationRequest {
   base_request?: base.BaseRequest;
@@ -47,6 +48,7 @@ export interface EvaluationStandard {
   updator?: string;
   is_enable?: boolean;
   updated_at?: string;
+  major?: user.TenantDept;
 }
 
 export interface ListQuickEvaluationRequest {
@@ -145,4 +147,13 @@ export interface GetQuickEvaluationDetailResponse {
   end_time?: string;
   result?: boolean;
   quick_evaluation_detail?: Array<QuickEvaluationDetail>;
+}
+
+export interface DeleteQuickEvaluationReportResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteQuickEvaluationReportRequest {
+  base_request?: base.BaseRequest;
+  report_id?: string;
 }

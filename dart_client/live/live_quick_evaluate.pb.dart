@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
+import '../user/user.pb.dart' as $1;
 
 class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
   factory CreateQuickEvaluationRequest({
@@ -452,6 +453,7 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     $core.String? updator,
     $core.bool? isEnable,
     $fixnum.Int64? updatedAt,
+    $1.TenantDept? major,
   }) {
     final $result = create();
     if (standardId != null) {
@@ -478,6 +480,9 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (major != null) {
+      $result.major = major;
+    }
     return $result;
   }
   EvaluationStandard._() : super();
@@ -493,6 +498,7 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'updator')
     ..aOB(7, _omitFieldNames ? '' : 'isEnable')
     ..aInt64(8, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$1.TenantDept>(9, _omitFieldNames ? '' : 'major', subBuilder: $1.TenantDept.create)
     ..hasRequiredFields = false
   ;
 
@@ -582,6 +588,17 @@ class EvaluationStandard extends $pb.GeneratedMessage {
   $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.TenantDept get major => $_getN(8);
+  @$pb.TagNumber(9)
+  set major($1.TenantDept v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMajor() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMajor() => clearField(9);
+  @$pb.TagNumber(9)
+  $1.TenantDept ensureMajor() => $_ensure(8);
 }
 
 class ListQuickEvaluationRequest extends $pb.GeneratedMessage {
@@ -1832,6 +1849,124 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<QuickEvaluationDetail> get quickEvaluationDetail => $_getList(4);
+}
+
+class DeleteQuickEvaluationReportResponse extends $pb.GeneratedMessage {
+  factory DeleteQuickEvaluationReportResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteQuickEvaluationReportResponse._() : super();
+  factory DeleteQuickEvaluationReportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteQuickEvaluationReportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteQuickEvaluationReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteQuickEvaluationReportResponse clone() => DeleteQuickEvaluationReportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteQuickEvaluationReportResponse copyWith(void Function(DeleteQuickEvaluationReportResponse) updates) => super.copyWith((message) => updates(message as DeleteQuickEvaluationReportResponse)) as DeleteQuickEvaluationReportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteQuickEvaluationReportResponse create() => DeleteQuickEvaluationReportResponse._();
+  DeleteQuickEvaluationReportResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteQuickEvaluationReportResponse> createRepeated() => $pb.PbList<DeleteQuickEvaluationReportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteQuickEvaluationReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteQuickEvaluationReportResponse>(create);
+  static DeleteQuickEvaluationReportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class DeleteQuickEvaluationReportRequest extends $pb.GeneratedMessage {
+  factory DeleteQuickEvaluationReportRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? reportId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (reportId != null) {
+      $result.reportId = reportId;
+    }
+    return $result;
+  }
+  DeleteQuickEvaluationReportRequest._() : super();
+  factory DeleteQuickEvaluationReportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteQuickEvaluationReportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteQuickEvaluationReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'reportId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteQuickEvaluationReportRequest clone() => DeleteQuickEvaluationReportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteQuickEvaluationReportRequest copyWith(void Function(DeleteQuickEvaluationReportRequest) updates) => super.copyWith((message) => updates(message as DeleteQuickEvaluationReportRequest)) as DeleteQuickEvaluationReportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteQuickEvaluationReportRequest create() => DeleteQuickEvaluationReportRequest._();
+  DeleteQuickEvaluationReportRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteQuickEvaluationReportRequest> createRepeated() => $pb.PbList<DeleteQuickEvaluationReportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteQuickEvaluationReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteQuickEvaluationReportRequest>(create);
+  static DeleteQuickEvaluationReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get reportId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set reportId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReportId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReportId() => clearField(2);
 }
 
 

@@ -100,6 +100,19 @@ private static final long serialVersionUID = 0L;
             updatedAt = input.readInt64();
             break;
           }
+          case 74: {
+            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
+            if (major != null) {
+              subBuilder = major .toBuilder();
+            }
+            major = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(major );
+              major = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -328,6 +341,32 @@ private static final long serialVersionUID = 0L;
     return updatedAt ;
   }
 
+  public static final int MAJOR_FIELD_NUMBER = 9;
+  private com.zhijiejiaoyu.glory_api.user.TenantDept major ;
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   * @return Whether the major field is set.
+   */
+  @java.lang.Override
+  public boolean hasMajor() {
+    return major != null;
+  }
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   * @return The major.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getMajor() {
+    return major == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : major ;
+  }
+  /**
+   * <code>.glory_api.TenantDept major = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder() {
+    return getMajor();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -365,6 +404,9 @@ private static final long serialVersionUID = 0L;
     }
     if (updatedAt != 0L) {
       output.writeInt64(8, updatedAt );
+    }
+    if (major != null) {
+      output.writeMessage(9, getMajor());
     }
     unknownFields.writeTo(output);
   }
@@ -408,6 +450,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(8, updatedAt );
     }
+    if (major != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getMajor());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -439,6 +485,11 @@ private static final long serialVersionUID = 0L;
         != other.getIsEnable()) return false;
     if (getUpdatedAt()
         != other.getUpdatedAt()) return false;
+    if (hasMajor() != other.hasMajor()) return false;
+    if (hasMajor()) {
+      if (!getMajor()
+          .equals(other.getMajor())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -472,6 +523,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUpdatedAt());
+    if (hasMajor()) {
+      hash = (37 * hash) + MAJOR_FIELD_NUMBER;
+      hash = (53 * hash) + getMajor().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -621,6 +676,12 @@ private static final long serialVersionUID = 0L;
 
       updatedAt = 0L;
 
+      if (majorBuilder == null) {
+        major = null;
+      } else {
+        major = null;
+        majorBuilder = null;
+      }
       return this;
     }
 
@@ -660,6 +721,11 @@ private static final long serialVersionUID = 0L;
       result.updator = updator ;
       result.isEnable = isEnable ;
       result.updatedAt = updatedAt ;
+      if (majorBuilder == null) {
+        result.major = major ;
+      } else {
+        result.major = majorBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -741,6 +807,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUpdatedAt() != 0L) {
         setUpdatedAt(other.getUpdatedAt());
+      }
+      if (other.hasMajor()) {
+        mergeMajor(other.getMajor());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1232,6 +1301,125 @@ private static final long serialVersionUID = 0L;
       updatedAt = 0L;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.user.TenantDept major ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> majorBuilder ;
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     * @return Whether the major field is set.
+     */
+    public boolean hasMajor() {
+      return majorBuilder != null || major != null;
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     * @return The major.
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getMajor() {
+      if (majorBuilder == null) {
+        return major == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : major ;
+      } else {
+        return majorBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public Builder setMajor(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (majorBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        major = value;
+        onChanged();
+      } else {
+        majorBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public Builder setMajor(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (majorBuilder == null) {
+        major = builderForValue.build();
+        onChanged();
+      } else {
+        majorBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public Builder mergeMajor(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (majorBuilder == null) {
+        if (major != null) {
+          major =
+            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(major ).mergeFrom(value).buildPartial();
+        } else {
+          major = value;
+        }
+        onChanged();
+      } else {
+        majorBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public Builder clearMajor() {
+      if (majorBuilder == null) {
+        major = null;
+        onChanged();
+      } else {
+        major = null;
+        majorBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getMajorBuilder() {
+      
+      onChanged();
+      return getMajorFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder() {
+      if (majorBuilder != null) {
+        return majorBuilder .getMessageOrBuilder();
+      } else {
+        return major == null ?
+            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : major ;
+      }
+    }
+    /**
+     * <code>.glory_api.TenantDept major = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getMajorFieldBuilder() {
+      if (majorBuilder == null) {
+        majorBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                getMajor(),
+                getParentForChildren(),
+                isClean());
+        major = null;
+      }
+      return majorBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

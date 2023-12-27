@@ -194,4 +194,48 @@ public interface EduSchemeOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.CourseModuleOrBuilder getCourseModulesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.TenantDept> 
+      getClassesList();
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getClasses(int index);
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  int getClassesCount();
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+      getClassesOrBuilderList();
+  /**
+   * <pre>
+   * 应用班级
+   * </pre>
+   *
+   * <code>repeated .glory_api.TenantDept classes = 16;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassesOrBuilder(
+      int index);
 }

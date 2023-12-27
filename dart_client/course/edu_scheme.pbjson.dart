@@ -32,6 +32,7 @@ const EduScheme$json = {
     {'1': 'course_group_id', '3': 13, '4': 1, '5': 3, '10': 'courseGroupId'},
     {'1': 'created_by', '3': 14, '4': 1, '5': 3, '10': 'createdBy'},
     {'1': 'course_modules', '3': 15, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
+    {'1': 'classes', '3': 16, '4': 3, '5': 11, '6': '.glory_api.TenantDept', '10': 'classes'},
   ],
 };
 
@@ -47,7 +48,8 @@ final $typed_data.Uint8List eduSchemeDescriptor = $convert.base64Decode(
     'NvdXJzZV9ncm91cF9uYW1lGAwgASgJUg9jb3Vyc2VHcm91cE5hbWUSJgoPY291cnNlX2dyb3Vw'
     'X2lkGA0gASgDUg1jb3Vyc2VHcm91cElkEh0KCmNyZWF0ZWRfYnkYDiABKANSCWNyZWF0ZWRCeR'
     'I+Cg5jb3Vyc2VfbW9kdWxlcxgPIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2R1bGVSDWNvdXJz'
-    'ZU1vZHVsZXM=');
+    'ZU1vZHVsZXMSLwoHY2xhc3NlcxgQIAMoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgdjbGFzc2'
+    'Vz');
 
 @$core.Deprecated('Use createEduSchemeRequestDescriptor instead')
 const CreateEduSchemeRequest$json = {
