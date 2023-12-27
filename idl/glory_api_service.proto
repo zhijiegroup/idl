@@ -105,7 +105,9 @@ service glory_api {
   rpc GetUser(GetUserRequest) returns (GetUserResponse) {
     option (api.get) = '/api/user/get_user';  // get user data with token and phone
   }
-
+  rpc GetUserByPhone(GetUserByPhoneRequest) returns (GetUserByPhoneResponse) {
+    option (api.post) = '/api/user/get_user_by_phone';
+  }
   rpc LoginWithPassword(LoginWithPasswordRequest) returns (LoginWithPasswordResponse) {
     option (api.post) = '/api/user/login_with_password';
   }
