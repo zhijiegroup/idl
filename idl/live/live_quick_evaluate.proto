@@ -23,9 +23,11 @@ message UpdateQuickEvaluationRequest {
     base.BaseRequest base_request = 1;
     int64 standard_id = 2;
     string name = 3;
-    int64 duration = 4;
-    repeated string keywords = 5;
-    bool is_enable = 6;
+    int64 min_duration = 4;
+    int64 max_duration = 5;
+    repeated string keywords = 6;
+    bool is_enable = 7;
+    int64 major_id = 8;
 }
 
 message UpdateQuickEvaluationResponse {
