@@ -44,13 +44,14 @@ const NotificationCount$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 5, '10': 'type'},
     {'1': 'count', '3': 2, '4': 1, '5': 13, '10': 'count'},
+    {'1': 'latest', '3': 3, '4': 1, '5': 11, '6': '.glory_api.Notification', '10': 'latest'},
   ],
 };
 
 /// Descriptor for `NotificationCount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List notificationCountDescriptor = $convert.base64Decode(
     'ChFOb3RpZmljYXRpb25Db3VudBISCgR0eXBlGAEgASgFUgR0eXBlEhQKBWNvdW50GAIgASgNUg'
-    'Vjb3VudA==');
+    'Vjb3VudBIvCgZsYXRlc3QYAyABKAsyFy5nbG9yeV9hcGkuTm90aWZpY2F0aW9uUgZsYXRlc3Q=');
 
 @$core.Deprecated('Use listNotificationRequestDescriptor instead')
 const ListNotificationRequest$json = {
@@ -148,13 +149,14 @@ const CountNotificationRequest$json = {
   '1': 'CountNotificationRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'latest', '3': 2, '4': 1, '5': 8, '10': 'latest'},
   ],
 };
 
 /// Descriptor for `CountNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countNotificationRequestDescriptor = $convert.base64Decode(
     'ChhDb3VudE5vdGlmaWNhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
-    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFgoGbGF0ZXN0GAIgASgIUgZsYXRlc3Q=');
 
 @$core.Deprecated('Use countNotificationResponseDescriptor instead')
 const CountNotificationResponse$json = {
@@ -162,7 +164,6 @@ const CountNotificationResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'count', '3': 2, '4': 3, '5': 11, '6': '.glory_api.NotificationCount', '10': 'count'},
-    {'1': 'news', '3': 3, '4': 1, '5': 8, '10': 'news'},
   ],
 };
 
@@ -170,7 +171,7 @@ const CountNotificationResponse$json = {
 final $typed_data.Uint8List countNotificationResponseDescriptor = $convert.base64Decode(
     'ChlDb3VudE5vdGlmaWNhdGlvblJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIyCgVjb3VudBgCIAMoCzIcLmdsb3J5X2FwaS5Ob3RpZmlj'
-    'YXRpb25Db3VudFIFY291bnQSEgoEbmV3cxgDIAEoCFIEbmV3cw==');
+    'YXRpb25Db3VudFIFY291bnQ=');
 
 @$core.Deprecated('Use testNotificationRequestDescriptor instead')
 const TestNotificationRequest$json = {

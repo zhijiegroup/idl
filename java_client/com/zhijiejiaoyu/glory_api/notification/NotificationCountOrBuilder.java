@@ -18,4 +18,19 @@ public interface NotificationCountOrBuilder extends
    * @return The count.
    */
   int getCount();
+
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   * @return Whether the latest field is set.
+   */
+  boolean hasLatest();
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   * @return The latest.
+   */
+  com.zhijiejiaoyu.glory_api.notification.Notification getLatest();
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder getLatestOrBuilder();
 }

@@ -139,6 +139,7 @@ const ListQuickEvaluationRequest$json = {
   '1': 'ListQuickEvaluationRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'major_id', '3': 2, '4': 1, '5': 3, '10': 'majorId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -146,8 +147,9 @@ const ListQuickEvaluationRequest$json = {
 /// Descriptor for `ListQuickEvaluationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listQuickEvaluationRequestDescriptor = $convert.base64Decode(
     'ChpMaXN0UXVpY2tFdmFsdWF0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
-    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5Q'
-    'YWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIZCghtYWpvcl9pZBgCIAEoA1IHbWFqb3JJZBI3'
+    'CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg'
+    '==');
 
 @$core.Deprecated('Use listQuickEvaluationResponseDescriptor instead')
 const ListQuickEvaluationResponse$json = {
@@ -202,6 +204,7 @@ const ListQuickEvaluationReportRequest$json = {
   '1': 'ListQuickEvaluationReportRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -209,8 +212,8 @@ const ListQuickEvaluationReportRequest$json = {
 /// Descriptor for `ListQuickEvaluationReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listQuickEvaluationReportRequestDescriptor = $convert.base64Decode(
     'CiBMaXN0UXVpY2tFdmFsdWF0aW9uUmVwb3J0UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
-    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGGQgASgLMhcu'
-    'YmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgRuYW1lGAIgASgJUgRuYW1lEjcK'
+    'CnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use evaluationReportDescriptor instead')
 const EvaluationReport$json = {

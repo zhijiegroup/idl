@@ -23,6 +23,12 @@ public interface ListQuickEvaluationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>int64 major_id = 2;</code>
+   * @return The majorId.
+   */
+  long getMajorId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

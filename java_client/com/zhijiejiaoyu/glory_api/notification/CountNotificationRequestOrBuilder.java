@@ -21,4 +21,10 @@ public interface CountNotificationRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <code>bool latest = 2;</code>
+   * @return The latest.
+   */
+  boolean getLatest();
 }

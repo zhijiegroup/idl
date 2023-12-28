@@ -72,11 +72,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.notification.NotificationCount.parser(), extensionRegistry));
             break;
           }
-          case 24: {
-
-            news = input.readBool();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -178,17 +173,6 @@ private static final long serialVersionUID = 0L;
     return count .get(index);
   }
 
-  public static final int NEWS_FIELD_NUMBER = 3;
-  private boolean news ;
-  /**
-   * <code>bool news = 3;</code>
-   * @return The news.
-   */
-  @java.lang.Override
-  public boolean getNews() {
-    return news ;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,9 +193,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < count .size(); i++) {
       output.writeMessage(2, count .get(i));
     }
-    if (news != false) {
-      output.writeBool(3, news );
-    }
     unknownFields.writeTo(output);
   }
 
@@ -228,10 +209,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < count .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, count .get(i));
-    }
-    if (news != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, news );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -255,8 +232,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCountList()
         .equals(other.getCountList())) return false;
-    if (getNews()
-        != other.getNews()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -276,9 +251,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCountList().hashCode();
     }
-    hash = (37 * hash) + NEWS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getNews());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,8 +397,6 @@ private static final long serialVersionUID = 0L;
       } else {
         countBuilder .clear();
       }
-      news = false;
-
       return this;
     }
 
@@ -468,7 +438,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.count = countBuilder .build();
       }
-      result.news = news ;
       onBuilt();
       return result;
     }
@@ -545,9 +514,6 @@ private static final long serialVersionUID = 0L;
             countBuilder .addAllMessages(other.count );
           }
         }
-      }
-      if (other.getNews() != false) {
-        setNews(other.getNews());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -936,37 +902,6 @@ private static final long serialVersionUID = 0L;
         count = null;
       }
       return countBuilder ;
-    }
-
-    private boolean news ;
-    /**
-     * <code>bool news = 3;</code>
-     * @return The news.
-     */
-    @java.lang.Override
-    public boolean getNews() {
-      return news ;
-    }
-    /**
-     * <code>bool news = 3;</code>
-     * @param value The news to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNews(boolean value) {
-      
-      news = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool news = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNews() {
-      
-      news = false;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

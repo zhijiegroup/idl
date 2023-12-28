@@ -45,10 +45,4 @@ public interface CountNotificationResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.notification.NotificationCountOrBuilder getCountOrBuilder(
       int index);
-
-  /**
-   * <code>bool news = 3;</code>
-   * @return The news.
-   */
-  boolean getNews();
 }
