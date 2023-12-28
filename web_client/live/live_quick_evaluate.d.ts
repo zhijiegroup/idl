@@ -23,9 +23,11 @@ export interface UpdateQuickEvaluationRequest {
   base_request?: base.BaseRequest;
   standard_id?: string;
   name?: string;
-  duration?: string;
+  min_duration?: string;
+  max_duration?: string;
   keywords?: Array<string>;
   is_enable?: boolean;
+  major_id?: string;
 }
 
 export interface UpdateQuickEvaluationResponse {

@@ -90,11 +90,15 @@ struct GloryApi_UpdateQuickEvaluationRequest {
 
   var name: String = String()
 
-  var duration: Int64 = 0
+  var minDuration: Int64 = 0
+
+  var maxDuration: Int64 = 0
 
   var keywords: [String] = []
 
   var isEnable: Bool = false
+
+  var majorID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -808,9 +812,11 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     1: .standard(proto: "base_request"),
     2: .standard(proto: "standard_id"),
     3: .same(proto: "name"),
-    4: .same(proto: "duration"),
-    5: .same(proto: "keywords"),
-    6: .standard(proto: "is_enable"),
+    4: .standard(proto: "min_duration"),
+    5: .standard(proto: "max_duration"),
+    6: .same(proto: "keywords"),
+    7: .standard(proto: "is_enable"),
+    8: .standard(proto: "major_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -822,9 +828,11 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.standardID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.duration) }()
-      case 5: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.minDuration) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.maxDuration) }()
+      case 6: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
+      case 7: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       default: break
       }
     }
@@ -844,14 +852,20 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
     }
-    if self.duration != 0 {
-      try visitor.visitSingularInt64Field(value: self.duration, fieldNumber: 4)
+    if self.minDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.minDuration, fieldNumber: 4)
+    }
+    if self.maxDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxDuration, fieldNumber: 5)
     }
     if !self.keywords.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 5)
+      try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 6)
     }
     if self.isEnable != false {
-      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 6)
+      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 7)
+    }
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -860,9 +874,11 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.standardID != rhs.standardID {return false}
     if lhs.name != rhs.name {return false}
-    if lhs.duration != rhs.duration {return false}
+    if lhs.minDuration != rhs.minDuration {return false}
+    if lhs.maxDuration != rhs.maxDuration {return false}
     if lhs.keywords != rhs.keywords {return false}
     if lhs.isEnable != rhs.isEnable {return false}
+    if lhs.majorID != rhs.majorID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

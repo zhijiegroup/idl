@@ -190,9 +190,11 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? standardId,
     $core.String? name,
-    $fixnum.Int64? duration,
+    $fixnum.Int64? minDuration,
+    $fixnum.Int64? maxDuration,
     $core.Iterable<$core.String>? keywords,
     $core.bool? isEnable,
+    $fixnum.Int64? majorId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -204,14 +206,20 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (duration != null) {
-      $result.duration = duration;
+    if (minDuration != null) {
+      $result.minDuration = minDuration;
+    }
+    if (maxDuration != null) {
+      $result.maxDuration = maxDuration;
     }
     if (keywords != null) {
       $result.keywords.addAll(keywords);
     }
     if (isEnable != null) {
       $result.isEnable = isEnable;
+    }
+    if (majorId != null) {
+      $result.majorId = majorId;
     }
     return $result;
   }
@@ -223,9 +231,11 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'standardId')
     ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aInt64(4, _omitFieldNames ? '' : 'duration')
-    ..pPS(5, _omitFieldNames ? '' : 'keywords')
-    ..aOB(6, _omitFieldNames ? '' : 'isEnable')
+    ..aInt64(4, _omitFieldNames ? '' : 'minDuration')
+    ..aInt64(5, _omitFieldNames ? '' : 'maxDuration')
+    ..pPS(6, _omitFieldNames ? '' : 'keywords')
+    ..aOB(7, _omitFieldNames ? '' : 'isEnable')
+    ..aInt64(8, _omitFieldNames ? '' : 'majorId')
     ..hasRequiredFields = false
   ;
 
@@ -280,25 +290,43 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get duration => $_getI64(3);
+  $fixnum.Int64 get minDuration => $_getI64(3);
   @$pb.TagNumber(4)
-  set duration($fixnum.Int64 v) { $_setInt64(3, v); }
+  set minDuration($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDuration() => $_has(3);
+  $core.bool hasMinDuration() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDuration() => clearField(4);
+  void clearMinDuration() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get keywords => $_getList(4);
+  $fixnum.Int64 get maxDuration => $_getI64(4);
+  @$pb.TagNumber(5)
+  set maxDuration($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMaxDuration() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaxDuration() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get isEnable => $_getBF(5);
-  @$pb.TagNumber(6)
-  set isEnable($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasIsEnable() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearIsEnable() => clearField(6);
+  $core.List<$core.String> get keywords => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get isEnable => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isEnable($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIsEnable() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsEnable() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get majorId => $_getI64(7);
+  @$pb.TagNumber(8)
+  set majorId($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasMajorId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMajorId() => clearField(8);
 }
 
 class UpdateQuickEvaluationResponse extends $pb.GeneratedMessage {
