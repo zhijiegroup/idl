@@ -54,9 +54,11 @@ const UpdateQuickEvaluationRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'standard_id', '3': 2, '4': 1, '5': 3, '10': 'standardId'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'duration', '3': 4, '4': 1, '5': 3, '10': 'duration'},
-    {'1': 'keywords', '3': 5, '4': 3, '5': 9, '10': 'keywords'},
-    {'1': 'is_enable', '3': 6, '4': 1, '5': 8, '10': 'isEnable'},
+    {'1': 'min_duration', '3': 4, '4': 1, '5': 3, '10': 'minDuration'},
+    {'1': 'max_duration', '3': 5, '4': 1, '5': 3, '10': 'maxDuration'},
+    {'1': 'keywords', '3': 6, '4': 3, '5': 9, '10': 'keywords'},
+    {'1': 'is_enable', '3': 7, '4': 1, '5': 8, '10': 'isEnable'},
+    {'1': 'major_id', '3': 8, '4': 1, '5': 3, '10': 'majorId'},
   ],
 };
 
@@ -64,8 +66,10 @@ const UpdateQuickEvaluationRequest$json = {
 final $typed_data.Uint8List updateQuickEvaluationRequestDescriptor = $convert.base64Decode(
     'ChxVcGRhdGVRdWlja0V2YWx1YXRpb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC3N0YW5kYXJkX2lkGAIgASgDUgpzdGFu'
-    'ZGFyZElkEhIKBG5hbWUYAyABKAlSBG5hbWUSGgoIZHVyYXRpb24YBCABKANSCGR1cmF0aW9uEh'
-    'oKCGtleXdvcmRzGAUgAygJUghrZXl3b3JkcxIbCglpc19lbmFibGUYBiABKAhSCGlzRW5hYmxl');
+    'ZGFyZElkEhIKBG5hbWUYAyABKAlSBG5hbWUSIQoMbWluX2R1cmF0aW9uGAQgASgDUgttaW5EdX'
+    'JhdGlvbhIhCgxtYXhfZHVyYXRpb24YBSABKANSC21heER1cmF0aW9uEhoKCGtleXdvcmRzGAYg'
+    'AygJUghrZXl3b3JkcxIbCglpc19lbmFibGUYByABKAhSCGlzRW5hYmxlEhkKCG1ham9yX2lkGA'
+    'ggASgDUgdtYWpvcklk');
 
 @$core.Deprecated('Use updateQuickEvaluationResponseDescriptor instead')
 const UpdateQuickEvaluationResponse$json = {
