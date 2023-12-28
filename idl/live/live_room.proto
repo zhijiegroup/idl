@@ -266,6 +266,20 @@ message GetCouponAndIntroducingProductResponse {
   repeated int64 coupon_ids = 3;
 }
 
+message CreateNewMessageTokenRequest {
+  base.BaseRequest base_request = 1;
+  string role = 2;
+}
+
+message CreateNewMessageTokenResponse {
+  base.BaseResponse base_resp = 1;
+  string token = 2;
+  string nonce = 3;
+  string timestamp = 4;
+  string app_sign = 5;
+  string app_id = 6;
+}
+
 
 
 
