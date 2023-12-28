@@ -56,6 +56,7 @@ message EvaluationStandard {
 
 message ListQuickEvaluationRequest {
     base.BaseRequest base_request = 1;
+    int64 major_id = 2;
     base.PaginationRequest pagination = 100;
 }
 
@@ -78,6 +79,7 @@ message CreateQuickEvaluationReportResponse {
 
 message ListQuickEvaluationReportRequest {
     base.BaseRequest base_request = 1;
+    string name = 2;
     base.PaginationRequest pagination = 100;
 }
 
