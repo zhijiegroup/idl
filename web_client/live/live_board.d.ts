@@ -39,6 +39,7 @@ export interface GetAggregationLiveUrlResponse {
   caster_id?: string;
   total?: string;
   room_ids?: Array<string>;
+  live_urls?: Array<string>;
 }
 
 export interface GetLiveBoardDataRequest {

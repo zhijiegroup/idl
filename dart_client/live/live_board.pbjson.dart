@@ -98,6 +98,7 @@ const GetAggregationLiveUrlResponse$json = {
     {'1': 'caster_id', '3': 4, '4': 1, '5': 9, '10': 'casterId'},
     {'1': 'total', '3': 5, '4': 1, '5': 3, '10': 'total'},
     {'1': 'room_ids', '3': 6, '4': 3, '5': 3, '10': 'roomIds'},
+    {'1': 'live_urls', '3': 7, '4': 3, '5': 9, '10': 'liveUrls'},
   ],
 };
 
@@ -106,7 +107,8 @@ final $typed_data.Uint8List getAggregationLiveUrlResponseDescriptor = $convert.b
     'Ch1HZXRBZ2dyZWdhdGlvbkxpdmVVcmxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
     'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASGQoIbGl2ZV91cmwYAiABKAlSB2xpdmVVcmwSGwoJ'
     'bWl4X2NvdW50GAMgASgDUghtaXhDb3VudBIbCgljYXN0ZXJfaWQYBCABKAlSCGNhc3RlcklkEh'
-    'QKBXRvdGFsGAUgASgDUgV0b3RhbBIZCghyb29tX2lkcxgGIAMoA1IHcm9vbUlkcw==');
+    'QKBXRvdGFsGAUgASgDUgV0b3RhbBIZCghyb29tX2lkcxgGIAMoA1IHcm9vbUlkcxIbCglsaXZl'
+    'X3VybHMYByADKAlSCGxpdmVVcmxz');
 
 @$core.Deprecated('Use getLiveBoardDataRequestDescriptor instead')
 const GetLiveBoardDataRequest$json = {

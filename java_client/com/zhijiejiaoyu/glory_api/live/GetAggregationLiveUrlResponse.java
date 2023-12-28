@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     liveUrl = "";
     casterId = "";
     roomIds = emptyLongList();
+    liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -108,6 +109,15 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              liveUrls = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            liveUrls .add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -125,6 +135,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         roomIds .makeImmutable(); // C
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        liveUrls = liveUrls .getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -295,6 +308,41 @@ private static final long serialVersionUID = 0L;
   }
   private int roomIdsMemoizedSerializedSize = -1;
 
+  public static final int LIVE_URLS_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList liveUrls ;
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @return A list containing the liveUrls.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getLiveUrlsList() {
+    return liveUrls ;
+  }
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @return The count of liveUrls.
+   */
+  public int getLiveUrlsCount() {
+    return liveUrls .size();
+  }
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @param index The index of the element to return.
+   * @return The liveUrls at the given index.
+   */
+  public java.lang.String getLiveUrls(int index) {
+    return liveUrls .get(index);
+  }
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the liveUrls at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getLiveUrlsBytes(int index) {
+    return liveUrls .getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -331,6 +379,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < roomIds .size(); i++) {
       output.writeInt64NoTag(roomIds .getLong(i));
+    }
+    for (int i = 0; i < liveUrls .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, liveUrls .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -373,6 +424,14 @@ private static final long serialVersionUID = 0L;
       }
       roomIdsMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < liveUrls .size(); i++) {
+        dataSize += computeStringSizeNoTag(liveUrls .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLiveUrlsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -403,6 +462,8 @@ private static final long serialVersionUID = 0L;
         != other.getTotal()) return false;
     if (!getRoomIdsList()
         .equals(other.getRoomIdsList())) return false;
+    if (!getLiveUrlsList()
+        .equals(other.getLiveUrlsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -431,6 +492,10 @@ private static final long serialVersionUID = 0L;
     if (getRoomIdsCount() > 0) {
       hash = (37 * hash) + ROOM_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getRoomIdsList().hashCode();
+    }
+    if (getLiveUrlsCount() > 0) {
+      hash = (37 * hash) + LIVE_URLS_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveUrlsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -581,6 +646,8 @@ private static final long serialVersionUID = 0L;
 
       roomIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
       return this;
     }
 
@@ -622,6 +689,11 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.roomIds = roomIds ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        liveUrls = liveUrls .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
+      result.liveUrls = liveUrls ;
       onBuilt();
       return result;
     }
@@ -694,6 +766,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureRoomIdsIsMutable();
           roomIds .addAll(other.roomIds );
+        }
+        onChanged();
+      }
+      if (!other.liveUrls .isEmpty()) {
+        if (liveUrls .isEmpty()) {
+          liveUrls = other.liveUrls ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureLiveUrlsIsMutable();
+          liveUrls .addAll(other.liveUrls );
         }
         onChanged();
       }
@@ -1135,6 +1217,116 @@ private static final long serialVersionUID = 0L;
     public Builder clearRoomIds() {
       roomIds = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLiveUrlsIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        liveUrls = new com.google.protobuf.LazyStringArrayList(liveUrls );
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @return A list containing the liveUrls.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLiveUrlsList() {
+      return liveUrls .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @return The count of liveUrls.
+     */
+    public int getLiveUrlsCount() {
+      return liveUrls .size();
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param index The index of the element to return.
+     * @return The liveUrls at the given index.
+     */
+    public java.lang.String getLiveUrls(int index) {
+      return liveUrls .get(index);
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the liveUrls at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLiveUrlsBytes(int index) {
+      return liveUrls .getByteString(index);
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The liveUrls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveUrls(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLiveUrlsIsMutable();
+      liveUrls .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param value The liveUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLiveUrls(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLiveUrlsIsMutable();
+      liveUrls .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param values The liveUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLiveUrls(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLiveUrlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, liveUrls );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveUrls() {
+      liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_urls = 7;</code>
+     * @param value The bytes of the liveUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLiveUrlsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLiveUrlsIsMutable();
+      liveUrls .add(value);
       onChanged();
       return this;
     }

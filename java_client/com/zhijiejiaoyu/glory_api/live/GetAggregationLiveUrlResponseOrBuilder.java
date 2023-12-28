@@ -74,4 +74,29 @@ public interface GetAggregationLiveUrlResponseOrBuilder extends
    * @return The roomIds at the given index.
    */
   long getRoomIds(int index);
+
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @return A list containing the liveUrls.
+   */
+  java.util.List<java.lang.String>
+      getLiveUrlsList();
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @return The count of liveUrls.
+   */
+  int getLiveUrlsCount();
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @param index The index of the element to return.
+   * @return The liveUrls at the given index.
+   */
+  java.lang.String getLiveUrls(int index);
+  /**
+   * <code>repeated string live_urls = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the liveUrls at the given index.
+   */
+  com.google.protobuf.ByteString
+      getLiveUrlsBytes(int index);
 }

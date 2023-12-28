@@ -360,6 +360,7 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     $core.String? casterId,
     $fixnum.Int64? total,
     $core.Iterable<$fixnum.Int64>? roomIds,
+    $core.Iterable<$core.String>? liveUrls,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -380,6 +381,9 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     if (roomIds != null) {
       $result.roomIds.addAll(roomIds);
     }
+    if (liveUrls != null) {
+      $result.liveUrls.addAll(liveUrls);
+    }
     return $result;
   }
   GetAggregationLiveUrlResponse._() : super();
@@ -393,6 +397,7 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'casterId')
     ..aInt64(5, _omitFieldNames ? '' : 'total')
     ..p<$fixnum.Int64>(6, _omitFieldNames ? '' : 'roomIds', $pb.PbFieldType.K6)
+    ..pPS(7, _omitFieldNames ? '' : 'liveUrls')
     ..hasRequiredFields = false
   ;
 
@@ -466,6 +471,9 @@ class GetAggregationLiveUrlResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<$fixnum.Int64> get roomIds => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.String> get liveUrls => $_getList(6);
 }
 
 class GetLiveBoardDataRequest extends $pb.GeneratedMessage {
