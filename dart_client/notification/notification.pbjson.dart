@@ -93,7 +93,8 @@ const ReadNotificationRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'notification_id', '3': 2, '4': 1, '5': 3, '10': 'notificationId'},
-    {'1': 'all', '3': 3, '4': 1, '5': 8, '10': 'all'},
+    {'1': 'notification_type', '3': 3, '4': 1, '5': 5, '10': 'notificationType'},
+    {'1': 'all', '3': 4, '4': 1, '5': 8, '10': 'all'},
   ],
 };
 
@@ -101,7 +102,8 @@ const ReadNotificationRequest$json = {
 final $typed_data.Uint8List readNotificationRequestDescriptor = $convert.base64Decode(
     'ChdSZWFkTm90aWZpY2F0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBInCg9ub3RpZmljYXRpb25faWQYAiABKANSDm5vdGlm'
-    'aWNhdGlvbklkEhAKA2FsbBgDIAEoCFIDYWxs');
+    'aWNhdGlvbklkEisKEW5vdGlmaWNhdGlvbl90eXBlGAMgASgFUhBub3RpZmljYXRpb25UeXBlEh'
+    'AKA2FsbBgEIAEoCFIDYWxs');
 
 @$core.Deprecated('Use readNotificationResponseDescriptor instead')
 const ReadNotificationResponse$json = {

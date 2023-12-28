@@ -29,7 +29,13 @@ public interface ReadNotificationRequestOrBuilder extends
   long getNotificationId();
 
   /**
-   * <code>bool all = 3;</code>
+   * <code>int32 notification_type = 3;</code>
+   * @return The notificationType.
+   */
+  int getNotificationType();
+
+  /**
+   * <code>bool all = 4;</code>
    * @return The all.
    */
   boolean getAll();

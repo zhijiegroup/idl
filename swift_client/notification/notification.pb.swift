@@ -153,6 +153,8 @@ struct GloryApi_ReadNotificationRequest {
 
   var notificationID: Int64 = 0
 
+  var notificationType: Int32 = 0
+
   var all: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -571,7 +573,8 @@ extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "notification_id"),
-    3: .same(proto: "all"),
+    3: .standard(proto: "notification_type"),
+    4: .same(proto: "all"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -582,7 +585,8 @@ extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.notificationID) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self.all) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.notificationType) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.all) }()
       default: break
       }
     }
@@ -599,8 +603,11 @@ extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.notificationID != 0 {
       try visitor.visitSingularInt64Field(value: self.notificationID, fieldNumber: 2)
     }
+    if self.notificationType != 0 {
+      try visitor.visitSingularInt32Field(value: self.notificationType, fieldNumber: 3)
+    }
     if self.all != false {
-      try visitor.visitSingularBoolField(value: self.all, fieldNumber: 3)
+      try visitor.visitSingularBoolField(value: self.all, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -608,6 +615,7 @@ extension GloryApi_ReadNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf
   static func ==(lhs: GloryApi_ReadNotificationRequest, rhs: GloryApi_ReadNotificationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.notificationID != rhs.notificationID {return false}
+    if lhs.notificationType != rhs.notificationType {return false}
     if lhs.all != rhs.all {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

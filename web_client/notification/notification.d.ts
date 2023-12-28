@@ -37,6 +37,7 @@ export interface ListNotificationResponse {
 export interface ReadNotificationRequest {
   base_request?: base.BaseRequest;
   notification_id?: string;
+  notification_type?: number;
   all?: boolean;
 }
 

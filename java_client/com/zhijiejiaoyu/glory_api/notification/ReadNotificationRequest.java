@@ -68,6 +68,11 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
+            notificationType = input.readInt32();
+            break;
+          }
+          case 32: {
+
             all = input.readBool();
             break;
           }
@@ -140,10 +145,21 @@ private static final long serialVersionUID = 0L;
     return notificationId ;
   }
 
-  public static final int ALL_FIELD_NUMBER = 3;
+  public static final int NOTIFICATION_TYPE_FIELD_NUMBER = 3;
+  private int notificationType ;
+  /**
+   * <code>int32 notification_type = 3;</code>
+   * @return The notificationType.
+   */
+  @java.lang.Override
+  public int getNotificationType() {
+    return notificationType ;
+  }
+
+  public static final int ALL_FIELD_NUMBER = 4;
   private boolean all ;
   /**
-   * <code>bool all = 3;</code>
+   * <code>bool all = 4;</code>
    * @return The all.
    */
   @java.lang.Override
@@ -171,8 +187,11 @@ private static final long serialVersionUID = 0L;
     if (notificationId != 0L) {
       output.writeInt64(2, notificationId );
     }
+    if (notificationType != 0) {
+      output.writeInt32(3, notificationType );
+    }
     if (all != false) {
-      output.writeBool(3, all );
+      output.writeBool(4, all );
     }
     unknownFields.writeTo(output);
   }
@@ -191,9 +210,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, notificationId );
     }
+    if (notificationType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, notificationType );
+    }
     if (all != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, all );
+        .computeBoolSize(4, all );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -217,6 +240,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getNotificationId()
         != other.getNotificationId()) return false;
+    if (getNotificationType()
+        != other.getNotificationType()) return false;
     if (getAll()
         != other.getAll()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,6 +262,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NOTIFICATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getNotificationId());
+    hash = (37 * hash) + NOTIFICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationType();
     hash = (37 * hash) + ALL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAll());
@@ -381,6 +408,8 @@ private static final long serialVersionUID = 0L;
       }
       notificationId = 0L;
 
+      notificationType = 0;
+
       all = false;
 
       return this;
@@ -415,6 +444,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.notificationId = notificationId ;
+      result.notificationType = notificationType ;
       result.all = all ;
       onBuilt();
       return result;
@@ -469,6 +499,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getNotificationId() != 0L) {
         setNotificationId(other.getNotificationId());
+      }
+      if (other.getNotificationType() != 0) {
+        setNotificationType(other.getNotificationType());
       }
       if (other.getAll() != false) {
         setAll(other.getAll());
@@ -652,9 +685,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int notificationType ;
+    /**
+     * <code>int32 notification_type = 3;</code>
+     * @return The notificationType.
+     */
+    @java.lang.Override
+    public int getNotificationType() {
+      return notificationType ;
+    }
+    /**
+     * <code>int32 notification_type = 3;</code>
+     * @param value The notificationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationType(int value) {
+      
+      notificationType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 notification_type = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationType() {
+      
+      notificationType = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean all ;
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool all = 4;</code>
      * @return The all.
      */
     @java.lang.Override
@@ -662,7 +726,7 @@ private static final long serialVersionUID = 0L;
       return all ;
     }
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool all = 4;</code>
      * @param value The all to set.
      * @return This builder for chaining.
      */
@@ -673,7 +737,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool all = 3;</code>
+     * <code>bool all = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearAll() {

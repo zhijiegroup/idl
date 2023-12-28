@@ -406,6 +406,7 @@ class ReadNotificationRequest extends $pb.GeneratedMessage {
   factory ReadNotificationRequest({
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? notificationId,
+    $core.int? notificationType,
     $core.bool? all,
   }) {
     final $result = create();
@@ -414,6 +415,9 @@ class ReadNotificationRequest extends $pb.GeneratedMessage {
     }
     if (notificationId != null) {
       $result.notificationId = notificationId;
+    }
+    if (notificationType != null) {
+      $result.notificationType = notificationType;
     }
     if (all != null) {
       $result.all = all;
@@ -427,7 +431,8 @@ class ReadNotificationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadNotificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'notificationId')
-    ..aOB(3, _omitFieldNames ? '' : 'all')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'notificationType', $pb.PbFieldType.O3)
+    ..aOB(4, _omitFieldNames ? '' : 'all')
     ..hasRequiredFields = false
   ;
 
@@ -473,13 +478,22 @@ class ReadNotificationRequest extends $pb.GeneratedMessage {
   void clearNotificationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get all => $_getBF(2);
+  $core.int get notificationType => $_getIZ(2);
   @$pb.TagNumber(3)
-  set all($core.bool v) { $_setBool(2, v); }
+  set notificationType($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAll() => $_has(2);
+  $core.bool hasNotificationType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAll() => clearField(3);
+  void clearNotificationType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get all => $_getBF(3);
+  @$pb.TagNumber(4)
+  set all($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAll() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAll() => clearField(4);
 }
 
 class ReadNotificationResponse extends $pb.GeneratedMessage {
