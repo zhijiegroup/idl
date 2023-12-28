@@ -646,6 +646,10 @@ service glory_api {
     option (api.post) = '/api/live/create_live_user_token';
   }
 
+  rpc CreateNewLiveUserToken(CreateNewMessageTokenRequest) returns (CreateNewMessageTokenResponse) {
+    option (api.post) = '/api/live/create_new_live_user_token';
+  }
+
   rpc UserEnterRoom(UserEnterRoomRequest) returns (UserEnterRoomResponse) {
     option (api.post) = '/api/live/user_enter_room';
   }
