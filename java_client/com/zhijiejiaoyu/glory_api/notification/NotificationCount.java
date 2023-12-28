@@ -58,6 +58,19 @@ private static final long serialVersionUID = 0L;
             count = input.readUInt32();
             break;
           }
+          case 26: {
+            com.zhijiejiaoyu.glory_api.notification.Notification.Builder subBuilder = null;
+            if (latest != null) {
+              subBuilder = latest .toBuilder();
+            }
+            latest = input.readMessage(com.zhijiejiaoyu.glory_api.notification.Notification.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(latest );
+              latest = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,6 +125,32 @@ private static final long serialVersionUID = 0L;
     return count ;
   }
 
+  public static final int LATEST_FIELD_NUMBER = 3;
+  private com.zhijiejiaoyu.glory_api.notification.Notification latest ;
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   * @return Whether the latest field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatest() {
+    return latest != null;
+  }
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   * @return The latest.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.notification.Notification getLatest() {
+    return latest == null ? com.zhijiejiaoyu.glory_api.notification.Notification.getDefaultInstance() : latest ;
+  }
+  /**
+   * <code>.glory_api.Notification latest = 3;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder getLatestOrBuilder() {
+    return getLatest();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +171,9 @@ private static final long serialVersionUID = 0L;
     if (count != 0) {
       output.writeUInt32(2, count );
     }
+    if (latest != null) {
+      output.writeMessage(3, getLatest());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +190,10 @@ private static final long serialVersionUID = 0L;
     if (count != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, count );
+    }
+    if (latest != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getLatest());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -168,6 +214,11 @@ private static final long serialVersionUID = 0L;
         != other.getType()) return false;
     if (getCount()
         != other.getCount()) return false;
+    if (hasLatest() != other.hasLatest()) return false;
+    if (hasLatest()) {
+      if (!getLatest()
+          .equals(other.getLatest())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,6 +234,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType();
     hash = (37 * hash) + COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getCount();
+    if (hasLatest()) {
+      hash = (37 * hash) + LATEST_FIELD_NUMBER;
+      hash = (53 * hash) + getLatest().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -320,6 +375,12 @@ private static final long serialVersionUID = 0L;
 
       count = 0;
 
+      if (latestBuilder == null) {
+        latest = null;
+      } else {
+        latest = null;
+        latestBuilder = null;
+      }
       return this;
     }
 
@@ -348,6 +409,11 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.notification.NotificationCount result = new com.zhijiejiaoyu.glory_api.notification.NotificationCount(this);
       result.type = type ;
       result.count = count ;
+      if (latestBuilder == null) {
+        result.latest = latest ;
+      } else {
+        result.latest = latestBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -401,6 +467,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCount() != 0) {
         setCount(other.getCount());
+      }
+      if (other.hasLatest()) {
+        mergeLatest(other.getLatest());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -491,6 +560,125 @@ private static final long serialVersionUID = 0L;
       count = 0;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.notification.Notification latest ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.notification.Notification, com.zhijiejiaoyu.glory_api.notification.Notification.Builder, com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder> latestBuilder ;
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     * @return Whether the latest field is set.
+     */
+    public boolean hasLatest() {
+      return latestBuilder != null || latest != null;
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     * @return The latest.
+     */
+    public com.zhijiejiaoyu.glory_api.notification.Notification getLatest() {
+      if (latestBuilder == null) {
+        return latest == null ? com.zhijiejiaoyu.glory_api.notification.Notification.getDefaultInstance() : latest ;
+      } else {
+        return latestBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public Builder setLatest(com.zhijiejiaoyu.glory_api.notification.Notification value) {
+      if (latestBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latest = value;
+        onChanged();
+      } else {
+        latestBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public Builder setLatest(
+        com.zhijiejiaoyu.glory_api.notification.Notification.Builder builderForValue) {
+      if (latestBuilder == null) {
+        latest = builderForValue.build();
+        onChanged();
+      } else {
+        latestBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public Builder mergeLatest(com.zhijiejiaoyu.glory_api.notification.Notification value) {
+      if (latestBuilder == null) {
+        if (latest != null) {
+          latest =
+            com.zhijiejiaoyu.glory_api.notification.Notification.newBuilder(latest ).mergeFrom(value).buildPartial();
+        } else {
+          latest = value;
+        }
+        onChanged();
+      } else {
+        latestBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public Builder clearLatest() {
+      if (latestBuilder == null) {
+        latest = null;
+        onChanged();
+      } else {
+        latest = null;
+        latestBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.notification.Notification.Builder getLatestBuilder() {
+      
+      onChanged();
+      return getLatestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder getLatestOrBuilder() {
+      if (latestBuilder != null) {
+        return latestBuilder .getMessageOrBuilder();
+      } else {
+        return latest == null ?
+            com.zhijiejiaoyu.glory_api.notification.Notification.getDefaultInstance() : latest ;
+      }
+    }
+    /**
+     * <code>.glory_api.Notification latest = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.notification.Notification, com.zhijiejiaoyu.glory_api.notification.Notification.Builder, com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder> 
+        getLatestFieldBuilder() {
+      if (latestBuilder == null) {
+        latestBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.notification.Notification, com.zhijiejiaoyu.glory_api.notification.Notification.Builder, com.zhijiejiaoyu.glory_api.notification.NotificationOrBuilder>(
+                getLatest(),
+                getParentForChildren(),
+                isClean());
+        latest = null;
+      }
+      return latestBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

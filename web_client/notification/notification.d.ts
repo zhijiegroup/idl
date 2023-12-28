@@ -19,6 +19,7 @@ export interface Notification {
 export interface NotificationCount {
   type?: number;
   count?: number;
+  latest?: Notification;
 }
 
 export interface ListNotificationRequest {
@@ -54,12 +55,12 @@ export interface DeleteNotificationResponse {
 
 export interface CountNotificationRequest {
   base_request?: base.BaseRequest;
+  latest?: boolean;
 }
 
 export interface CountNotificationResponse {
   base_resp?: base.BaseResponse;
   count?: Array<NotificationCount>;
-  news?: boolean;
 }
 
 export interface TestNotificationRequest {

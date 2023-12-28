@@ -234,6 +234,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$24.GetFinishedRoomResponse> getFinishedRoom($pb.ServerContext ctx, $24.GetFinishedRoomRequest request);
   $async.Future<$25.LiveRecordResponse> record($pb.ServerContext ctx, $25.LiveRecordRequest request);
   $async.Future<$26.CreateLiveUserTokenResponse> createLiveUserToken($pb.ServerContext ctx, $26.CreateLiveUserTokenRequest request);
+  $async.Future<$24.CreateNewMessageTokenResponse> createNewLiveUserToken($pb.ServerContext ctx, $24.CreateNewMessageTokenRequest request);
   $async.Future<$27.UserEnterRoomResponse> userEnterRoom($pb.ServerContext ctx, $27.UserEnterRoomRequest request);
   $async.Future<$27.UserExitRoomResponse> userExitRoom($pb.ServerContext ctx, $27.UserExitRoomRequest request);
   $async.Future<$15.ListAttachmentResponse> listActiveRoomUser($pb.ServerContext ctx, $27.ListActiveRoomUserRequest request);
@@ -598,6 +599,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetFinishedRoom': return $24.GetFinishedRoomRequest();
       case 'Record': return $25.LiveRecordRequest();
       case 'CreateLiveUserToken': return $26.CreateLiveUserTokenRequest();
+      case 'CreateNewLiveUserToken': return $24.CreateNewMessageTokenRequest();
       case 'UserEnterRoom': return $27.UserEnterRoomRequest();
       case 'UserExitRoom': return $27.UserExitRoomRequest();
       case 'ListActiveRoomUser': return $27.ListActiveRoomUserRequest();
@@ -965,6 +967,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetFinishedRoom': return this.getFinishedRoom(ctx, request as $24.GetFinishedRoomRequest);
       case 'Record': return this.record(ctx, request as $25.LiveRecordRequest);
       case 'CreateLiveUserToken': return this.createLiveUserToken(ctx, request as $26.CreateLiveUserTokenRequest);
+      case 'CreateNewLiveUserToken': return this.createNewLiveUserToken(ctx, request as $24.CreateNewMessageTokenRequest);
       case 'UserEnterRoom': return this.userEnterRoom(ctx, request as $27.UserEnterRoomRequest);
       case 'UserExitRoom': return this.userExitRoom(ctx, request as $27.UserExitRoomRequest);
       case 'ListActiveRoomUser': return this.listActiveRoomUser(ctx, request as $27.ListActiveRoomUserRequest);

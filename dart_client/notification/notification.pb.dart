@@ -168,6 +168,7 @@ class NotificationCount extends $pb.GeneratedMessage {
   factory NotificationCount({
     $core.int? type,
     $core.int? count,
+    Notification? latest,
   }) {
     final $result = create();
     if (type != null) {
@@ -175,6 +176,9 @@ class NotificationCount extends $pb.GeneratedMessage {
     }
     if (count != null) {
       $result.count = count;
+    }
+    if (latest != null) {
+      $result.latest = latest;
     }
     return $result;
   }
@@ -185,6 +189,7 @@ class NotificationCount extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotificationCount', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU3)
+    ..aOM<Notification>(3, _omitFieldNames ? '' : 'latest', subBuilder: Notification.create)
     ..hasRequiredFields = false
   ;
 
@@ -226,6 +231,17 @@ class NotificationCount extends $pb.GeneratedMessage {
   $core.bool hasCount() => $_has(1);
   @$pb.TagNumber(2)
   void clearCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  Notification get latest => $_getN(2);
+  @$pb.TagNumber(3)
+  set latest(Notification v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLatest() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLatest() => clearField(3);
+  @$pb.TagNumber(3)
+  Notification ensureLatest() => $_ensure(2);
 }
 
 class ListNotificationRequest extends $pb.GeneratedMessage {
@@ -633,10 +649,14 @@ class DeleteNotificationResponse extends $pb.GeneratedMessage {
 class CountNotificationRequest extends $pb.GeneratedMessage {
   factory CountNotificationRequest({
     $0.BaseRequest? baseRequest,
+    $core.bool? latest,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (latest != null) {
+      $result.latest = latest;
     }
     return $result;
   }
@@ -646,6 +666,7 @@ class CountNotificationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountNotificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOB(2, _omitFieldNames ? '' : 'latest')
     ..hasRequiredFields = false
   ;
 
@@ -680,13 +701,21 @@ class CountNotificationRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get latest => $_getBF(1);
+  @$pb.TagNumber(2)
+  set latest($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLatest() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatest() => clearField(2);
 }
 
 class CountNotificationResponse extends $pb.GeneratedMessage {
   factory CountNotificationResponse({
     $0.BaseResponse? baseResp,
     $core.Iterable<NotificationCount>? count,
-    $core.bool? news,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -694,9 +723,6 @@ class CountNotificationResponse extends $pb.GeneratedMessage {
     }
     if (count != null) {
       $result.count.addAll(count);
-    }
-    if (news != null) {
-      $result.news = news;
     }
     return $result;
   }
@@ -707,7 +733,6 @@ class CountNotificationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountNotificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..pc<NotificationCount>(2, _omitFieldNames ? '' : 'count', $pb.PbFieldType.PM, subBuilder: NotificationCount.create)
-    ..aOB(3, _omitFieldNames ? '' : 'news')
     ..hasRequiredFields = false
   ;
 
@@ -745,15 +770,6 @@ class CountNotificationResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<NotificationCount> get count => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.bool get news => $_getBF(2);
-  @$pb.TagNumber(3)
-  set news($core.bool v) { $_setBool(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasNews() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearNews() => clearField(3);
 }
 
 class TestNotificationRequest extends $pb.GeneratedMessage {

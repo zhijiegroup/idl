@@ -248,6 +248,8 @@ struct GloryApi_ListQuickEvaluationRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var majorID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -359,6 +361,8 @@ struct GloryApi_ListQuickEvaluationReportRequest {
   var hasBaseRequest: Bool {return self._baseRequest != nil}
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var name: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -1122,6 +1126,7 @@ extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "major_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1132,6 +1137,7 @@ extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1146,6 +1152,9 @@ extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 2)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1154,6 +1163,7 @@ extension GloryApi_ListQuickEvaluationRequest: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: GloryApi_ListQuickEvaluationRequest, rhs: GloryApi_ListQuickEvaluationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.majorID != rhs.majorID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1302,6 +1312,7 @@ extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, Swif
   static let protoMessageName: String = _protobuf_package + ".ListQuickEvaluationReportRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "name"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1312,6 +1323,7 @@ extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, Swif
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1326,6 +1338,9 @@ extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, Swif
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1334,6 +1349,7 @@ extension GloryApi_ListQuickEvaluationReportRequest: SwiftProtobuf.Message, Swif
 
   static func ==(lhs: GloryApi_ListQuickEvaluationReportRequest, rhs: GloryApi_ListQuickEvaluationReportRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.name != rhs.name {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

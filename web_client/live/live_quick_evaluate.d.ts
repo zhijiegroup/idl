@@ -56,6 +56,7 @@ export interface EvaluationStandard {
 
 export interface ListQuickEvaluationRequest {
   base_request?: base.BaseRequest;
+  major_id?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -78,6 +79,7 @@ export interface CreateQuickEvaluationReportResponse {
 
 export interface ListQuickEvaluationReportRequest {
   base_request?: base.BaseRequest;
+  name?: string;
   pagination?: base.PaginationRequest;
 }
 

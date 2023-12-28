@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            latest = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +124,17 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
+  public static final int LATEST_FIELD_NUMBER = 2;
+  private boolean latest ;
+  /**
+   * <code>bool latest = 2;</code>
+   * @return The latest.
+   */
+  @java.lang.Override
+  public boolean getLatest() {
+    return latest ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +152,9 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (latest != false) {
+      output.writeBool(2, latest );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +167,10 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
+    }
+    if (latest != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, latest );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +192,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getLatest()
+        != other.getLatest()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +209,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + LATEST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLatest());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +351,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      latest = false;
+
       return this;
     }
 
@@ -354,6 +384,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.latest = latest ;
       onBuilt();
       return result;
     }
@@ -404,6 +435,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getLatest() != false) {
+        setLatest(other.getLatest());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +585,37 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
       }
       return baseRequestBuilder ;
+    }
+
+    private boolean latest ;
+    /**
+     * <code>bool latest = 2;</code>
+     * @return The latest.
+     */
+    @java.lang.Override
+    public boolean getLatest() {
+      return latest ;
+    }
+    /**
+     * <code>bool latest = 2;</code>
+     * @param value The latest to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatest(boolean value) {
+      
+      latest = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool latest = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLatest() {
+      
+      latest = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
