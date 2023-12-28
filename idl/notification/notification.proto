@@ -19,6 +19,7 @@ message Notification {
 message NotificationCount {
   int32 type = 1;
   uint32 count = 2;
+  Notification latest = 3;
 }
 
 message ListNotificationRequest{
@@ -54,12 +55,12 @@ message DeleteNotificationResponse {
 
 message CountNotificationRequest {
   base.BaseRequest base_request = 1;
+  bool latest = 2;
 }
 
 message CountNotificationResponse {
   base.BaseResponse base_resp = 1;
   repeated NotificationCount count = 2;
-  bool news = 3;
 }
 
 message TestNotificationRequest {
