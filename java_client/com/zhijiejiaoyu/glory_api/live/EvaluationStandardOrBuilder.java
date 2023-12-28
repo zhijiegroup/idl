@@ -26,30 +26,36 @@ public interface EvaluationStandardOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 duration = 3;</code>
-   * @return The duration.
+   * <code>int64 min_duration = 3;</code>
+   * @return The minDuration.
    */
-  long getDuration();
+  long getMinDuration();
 
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>int64 max_duration = 4;</code>
+   * @return The maxDuration.
+   */
+  long getMaxDuration();
+
+  /**
+   * <code>repeated string keywords = 5;</code>
    * @return A list containing the keywords.
    */
   java.util.List<java.lang.String>
       getKeywordsList();
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 5;</code>
    * @return The count of keywords.
    */
   int getKeywordsCount();
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 5;</code>
    * @param index The index of the element to return.
    * @return The keywords at the given index.
    */
   java.lang.String getKeywords(int index);
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the keywords at the given index.
    */
@@ -57,53 +63,53 @@ public interface EvaluationStandardOrBuilder extends
       getKeywordsBytes(int index);
 
   /**
-   * <code>string creator = 5;</code>
+   * <code>string creator = 6;</code>
    * @return The creator.
    */
   java.lang.String getCreator();
   /**
-   * <code>string creator = 5;</code>
+   * <code>string creator = 6;</code>
    * @return The bytes for creator.
    */
   com.google.protobuf.ByteString
       getCreatorBytes();
 
   /**
-   * <code>string updator = 6;</code>
+   * <code>string updator = 7;</code>
    * @return The updator.
    */
   java.lang.String getUpdator();
   /**
-   * <code>string updator = 6;</code>
+   * <code>string updator = 7;</code>
    * @return The bytes for updator.
    */
   com.google.protobuf.ByteString
       getUpdatorBytes();
 
   /**
-   * <code>bool is_enable = 7;</code>
+   * <code>bool is_enable = 8;</code>
    * @return The isEnable.
    */
   boolean getIsEnable();
 
   /**
-   * <code>int64 updated_at = 8;</code>
+   * <code>int64 updated_at = 9;</code>
    * @return The updatedAt.
    */
   long getUpdatedAt();
 
   /**
-   * <code>.glory_api.TenantDept major = 9;</code>
+   * <code>.glory_api.TenantDept major = 10;</code>
    * @return Whether the major field is set.
    */
   boolean hasMajor();
   /**
-   * <code>.glory_api.TenantDept major = 9;</code>
+   * <code>.glory_api.TenantDept major = 10;</code>
    * @return The major.
    */
   com.zhijiejiaoyu.glory_api.user.TenantDept getMajor();
   /**
-   * <code>.glory_api.TenantDept major = 9;</code>
+   * <code>.glory_api.TenantDept major = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder();
 }

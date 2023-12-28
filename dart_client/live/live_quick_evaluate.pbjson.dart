@@ -19,16 +19,20 @@ const CreateQuickEvaluationRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'duration', '3': 3, '4': 1, '5': 3, '10': 'duration'},
-    {'1': 'keywords', '3': 4, '4': 3, '5': 9, '10': 'keywords'},
+    {'1': 'min_duration', '3': 3, '4': 1, '5': 3, '10': 'minDuration'},
+    {'1': 'max_duration', '3': 4, '4': 1, '5': 3, '10': 'maxDuration'},
+    {'1': 'major_id', '3': 5, '4': 1, '5': 3, '10': 'majorId'},
+    {'1': 'keywords', '3': 6, '4': 3, '5': 9, '10': 'keywords'},
   ],
 };
 
 /// Descriptor for `CreateQuickEvaluationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createQuickEvaluationRequestDescriptor = $convert.base64Decode(
     'ChxDcmVhdGVRdWlja0V2YWx1YXRpb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
-    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBG5hbWUYAiABKAlSBG5hbWUSGgoIZHVy'
-    'YXRpb24YAyABKANSCGR1cmF0aW9uEhoKCGtleXdvcmRzGAQgAygJUghrZXl3b3Jkcw==');
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBG5hbWUYAiABKAlSBG5hbWUSIQoMbWlu'
+    'X2R1cmF0aW9uGAMgASgDUgttaW5EdXJhdGlvbhIhCgxtYXhfZHVyYXRpb24YBCABKANSC21heE'
+    'R1cmF0aW9uEhkKCG1ham9yX2lkGAUgASgDUgdtYWpvcklkEhoKCGtleXdvcmRzGAYgAygJUghr'
+    'ZXl3b3Jkcw==');
 
 @$core.Deprecated('Use createQuickEvaluationResponseDescriptor instead')
 const CreateQuickEvaluationResponse$json = {
@@ -110,24 +114,25 @@ const EvaluationStandard$json = {
   '2': [
     {'1': 'standard_id', '3': 1, '4': 1, '5': 3, '10': 'standardId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'duration', '3': 3, '4': 1, '5': 3, '10': 'duration'},
-    {'1': 'keywords', '3': 4, '4': 3, '5': 9, '10': 'keywords'},
-    {'1': 'creator', '3': 5, '4': 1, '5': 9, '10': 'creator'},
-    {'1': 'updator', '3': 6, '4': 1, '5': 9, '10': 'updator'},
-    {'1': 'is_enable', '3': 7, '4': 1, '5': 8, '10': 'isEnable'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 3, '10': 'updatedAt'},
-    {'1': 'major', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'major'},
+    {'1': 'min_duration', '3': 3, '4': 1, '5': 3, '10': 'minDuration'},
+    {'1': 'max_duration', '3': 4, '4': 1, '5': 3, '10': 'maxDuration'},
+    {'1': 'keywords', '3': 5, '4': 3, '5': 9, '10': 'keywords'},
+    {'1': 'creator', '3': 6, '4': 1, '5': 9, '10': 'creator'},
+    {'1': 'updator', '3': 7, '4': 1, '5': 9, '10': 'updator'},
+    {'1': 'is_enable', '3': 8, '4': 1, '5': 8, '10': 'isEnable'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 3, '10': 'updatedAt'},
+    {'1': 'major', '3': 10, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'major'},
   ],
 };
 
 /// Descriptor for `EvaluationStandard`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List evaluationStandardDescriptor = $convert.base64Decode(
     'ChJFdmFsdWF0aW9uU3RhbmRhcmQSHwoLc3RhbmRhcmRfaWQYASABKANSCnN0YW5kYXJkSWQSEg'
-    'oEbmFtZRgCIAEoCVIEbmFtZRIaCghkdXJhdGlvbhgDIAEoA1IIZHVyYXRpb24SGgoIa2V5d29y'
-    'ZHMYBCADKAlSCGtleXdvcmRzEhgKB2NyZWF0b3IYBSABKAlSB2NyZWF0b3ISGAoHdXBkYXRvch'
-    'gGIAEoCVIHdXBkYXRvchIbCglpc19lbmFibGUYByABKAhSCGlzRW5hYmxlEh0KCnVwZGF0ZWRf'
-    'YXQYCCABKANSCXVwZGF0ZWRBdBIrCgVtYWpvchgJIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZX'
-    'B0UgVtYWpvcg==');
+    'oEbmFtZRgCIAEoCVIEbmFtZRIhCgxtaW5fZHVyYXRpb24YAyABKANSC21pbkR1cmF0aW9uEiEK'
+    'DG1heF9kdXJhdGlvbhgEIAEoA1ILbWF4RHVyYXRpb24SGgoIa2V5d29yZHMYBSADKAlSCGtleX'
+    'dvcmRzEhgKB2NyZWF0b3IYBiABKAlSB2NyZWF0b3ISGAoHdXBkYXRvchgHIAEoCVIHdXBkYXRv'
+    'chIbCglpc19lbmFibGUYCCABKAhSCGlzRW5hYmxlEh0KCnVwZGF0ZWRfYXQYCSABKANSCXVwZG'
+    'F0ZWRBdBIrCgVtYWpvchgKIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgVtYWpvcg==');
 
 @$core.Deprecated('Use listQuickEvaluationRequestDescriptor instead')
 const ListQuickEvaluationRequest$json = {
@@ -216,6 +221,7 @@ const EvaluationReport$json = {
     {'1': 'start_time', '3': 3, '4': 1, '5': 9, '10': 'startTime'},
     {'1': 'end_time', '3': 4, '4': 1, '5': 9, '10': 'endTime'},
     {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'created_by', '3': 6, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
@@ -223,7 +229,8 @@ const EvaluationReport$json = {
 final $typed_data.Uint8List evaluationReportDescriptor = $convert.base64Decode(
     'ChBFdmFsdWF0aW9uUmVwb3J0EhsKCXJlcG9ydF9pZBgBIAEoA1IIcmVwb3J0SWQSEgoEbmFtZR'
     'gCIAEoCVIEbmFtZRIdCgpzdGFydF90aW1lGAMgASgJUglzdGFydFRpbWUSGQoIZW5kX3RpbWUY'
-    'BCABKAlSB2VuZFRpbWUSHQoKY3JlYXRlZF9hdBgFIAEoCVIJY3JlYXRlZEF0');
+    'BCABKAlSB2VuZFRpbWUSHQoKY3JlYXRlZF9hdBgFIAEoCVIJY3JlYXRlZEF0Eh0KCmNyZWF0ZW'
+    'RfYnkYBiABKAlSCWNyZWF0ZWRCeQ==');
 
 @$core.Deprecated('Use listQuickEvaluationReportResponseDescriptor instead')
 const ListQuickEvaluationReportResponse$json = {
@@ -400,13 +407,13 @@ const DeleteQuickEvaluationReportRequest$json = {
   '1': 'DeleteQuickEvaluationReportRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'report_id', '3': 2, '4': 1, '5': 3, '10': 'reportId'},
+    {'1': 'report_ids', '3': 2, '4': 3, '5': 3, '10': 'reportIds'},
   ],
 };
 
 /// Descriptor for `DeleteQuickEvaluationReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteQuickEvaluationReportRequestDescriptor = $convert.base64Decode(
     'CiJEZWxldGVRdWlja0V2YWx1YXRpb25SZXBvcnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIA'
-    'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXJlcG9ydF9pZBgCIAEoA1II'
-    'cmVwb3J0SWQ=');
+    'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh0KCnJlcG9ydF9pZHMYAiADKANS'
+    'CXJlcG9ydElkcw==');
 

@@ -9,7 +9,9 @@ export { base, user };
 export interface CreateQuickEvaluationRequest {
   base_request?: base.BaseRequest;
   name?: string;
-  duration?: string;
+  min_duration?: string;
+  max_duration?: string;
+  major_id?: string;
   keywords?: Array<string>;
 }
 
@@ -42,7 +44,8 @@ export interface DeleteQuickEvaluationResponse {
 export interface EvaluationStandard {
   standard_id?: string;
   name?: string;
-  duration?: string;
+  min_duration?: string;
+  max_duration?: string;
   keywords?: Array<string>;
   creator?: string;
   updator?: string;
@@ -84,6 +87,7 @@ export interface EvaluationReport {
   start_time?: string;
   end_time?: string;
   created_at?: string;
+  created_by?: string;
 }
 
 export interface ListQuickEvaluationReportResponse {
@@ -155,5 +159,5 @@ export interface DeleteQuickEvaluationReportResponse {
 
 export interface DeleteQuickEvaluationReportRequest {
   base_request?: base.BaseRequest;
-  report_id?: string;
+  report_ids?: Array<string>;
 }

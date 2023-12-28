@@ -23,8 +23,19 @@ public interface DeleteQuickEvaluationReportRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 report_id = 2;</code>
-   * @return The reportId.
+   * <code>repeated int64 report_ids = 2;</code>
+   * @return A list containing the reportIds.
    */
-  long getReportId();
+  java.util.List<java.lang.Long> getReportIdsList();
+  /**
+   * <code>repeated int64 report_ids = 2;</code>
+   * @return The count of reportIds.
+   */
+  int getReportIdsCount();
+  /**
+   * <code>repeated int64 report_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The reportIds at the given index.
+   */
+  long getReportIds(int index);
 }

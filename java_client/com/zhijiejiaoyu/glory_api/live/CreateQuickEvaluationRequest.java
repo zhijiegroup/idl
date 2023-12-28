@@ -72,10 +72,20 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            duration = input.readInt64();
+            minDuration = input.readInt64();
             break;
           }
-          case 34: {
+          case 32: {
+
+            maxDuration = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            majorId = input.readInt64();
+            break;
+          }
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               keywords = new com.google.protobuf.LazyStringArrayList();
@@ -183,21 +193,43 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DURATION_FIELD_NUMBER = 3;
-  private long duration ;
+  public static final int MIN_DURATION_FIELD_NUMBER = 3;
+  private long minDuration ;
   /**
-   * <code>int64 duration = 3;</code>
-   * @return The duration.
+   * <code>int64 min_duration = 3;</code>
+   * @return The minDuration.
    */
   @java.lang.Override
-  public long getDuration() {
-    return duration ;
+  public long getMinDuration() {
+    return minDuration ;
   }
 
-  public static final int KEYWORDS_FIELD_NUMBER = 4;
+  public static final int MAX_DURATION_FIELD_NUMBER = 4;
+  private long maxDuration ;
+  /**
+   * <code>int64 max_duration = 4;</code>
+   * @return The maxDuration.
+   */
+  @java.lang.Override
+  public long getMaxDuration() {
+    return maxDuration ;
+  }
+
+  public static final int MAJOR_ID_FIELD_NUMBER = 5;
+  private long majorId ;
+  /**
+   * <code>int64 major_id = 5;</code>
+   * @return The majorId.
+   */
+  @java.lang.Override
+  public long getMajorId() {
+    return majorId ;
+  }
+
+  public static final int KEYWORDS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList keywords ;
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @return A list containing the keywords.
    */
   public com.google.protobuf.ProtocolStringList
@@ -205,14 +237,14 @@ private static final long serialVersionUID = 0L;
     return keywords ;
   }
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @return The count of keywords.
    */
   public int getKeywordsCount() {
     return keywords .size();
   }
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @param index The index of the element to return.
    * @return The keywords at the given index.
    */
@@ -220,7 +252,7 @@ private static final long serialVersionUID = 0L;
     return keywords .get(index);
   }
   /**
-   * <code>repeated string keywords = 4;</code>
+   * <code>repeated string keywords = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the keywords at the given index.
    */
@@ -249,11 +281,17 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
     }
-    if (duration != 0L) {
-      output.writeInt64(3, duration );
+    if (minDuration != 0L) {
+      output.writeInt64(3, minDuration );
+    }
+    if (maxDuration != 0L) {
+      output.writeInt64(4, maxDuration );
+    }
+    if (majorId != 0L) {
+      output.writeInt64(5, majorId );
     }
     for (int i = 0; i < keywords .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, keywords .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, keywords .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -271,9 +309,17 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
     }
-    if (duration != 0L) {
+    if (minDuration != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, duration );
+        .computeInt64Size(3, minDuration );
+    }
+    if (maxDuration != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, maxDuration );
+    }
+    if (majorId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, majorId );
     }
     {
       int dataSize = 0;
@@ -305,8 +351,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getName()
         .equals(other.getName())) return false;
-    if (getDuration()
-        != other.getDuration()) return false;
+    if (getMinDuration()
+        != other.getMinDuration()) return false;
+    if (getMaxDuration()
+        != other.getMaxDuration()) return false;
+    if (getMajorId()
+        != other.getMajorId()) return false;
     if (!getKeywordsList()
         .equals(other.getKeywordsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -326,9 +376,15 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DURATION_FIELD_NUMBER;
+    hash = (37 * hash) + MIN_DURATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDuration());
+        getMinDuration());
+    hash = (37 * hash) + MAX_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMaxDuration());
+    hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMajorId());
     if (getKeywordsCount() > 0) {
       hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordsList().hashCode();
@@ -474,7 +530,11 @@ private static final long serialVersionUID = 0L;
       }
       name = "";
 
-      duration = 0L;
+      minDuration = 0L;
+
+      maxDuration = 0L;
+
+      majorId = 0L;
 
       keywords = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
@@ -511,7 +571,9 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.name = name ;
-      result.duration = duration ;
+      result.minDuration = minDuration ;
+      result.maxDuration = maxDuration ;
+      result.majorId = majorId ;
       if (((bitField0 & 0x00000001) != 0)) {
         keywords = keywords .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000001);
@@ -572,8 +634,14 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
-      if (other.getDuration() != 0L) {
-        setDuration(other.getDuration());
+      if (other.getMinDuration() != 0L) {
+        setMinDuration(other.getMinDuration());
+      }
+      if (other.getMaxDuration() != 0L) {
+        setMaxDuration(other.getMaxDuration());
+      }
+      if (other.getMajorId() != 0L) {
+        setMajorId(other.getMajorId());
       }
       if (!other.keywords .isEmpty()) {
         if (keywords .isEmpty()) {
@@ -810,33 +878,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long duration ;
+    private long minDuration ;
     /**
-     * <code>int64 duration = 3;</code>
-     * @return The duration.
+     * <code>int64 min_duration = 3;</code>
+     * @return The minDuration.
      */
     @java.lang.Override
-    public long getDuration() {
-      return duration ;
+    public long getMinDuration() {
+      return minDuration ;
     }
     /**
-     * <code>int64 duration = 3;</code>
-     * @param value The duration to set.
+     * <code>int64 min_duration = 3;</code>
+     * @param value The minDuration to set.
      * @return This builder for chaining.
      */
-    public Builder setDuration(long value) {
+    public Builder setMinDuration(long value) {
       
-      duration = value;
+      minDuration = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 duration = 3;</code>
+     * <code>int64 min_duration = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDuration() {
+    public Builder clearMinDuration() {
       
-      duration = 0L;
+      minDuration = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxDuration ;
+    /**
+     * <code>int64 max_duration = 4;</code>
+     * @return The maxDuration.
+     */
+    @java.lang.Override
+    public long getMaxDuration() {
+      return maxDuration ;
+    }
+    /**
+     * <code>int64 max_duration = 4;</code>
+     * @param value The maxDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxDuration(long value) {
+      
+      maxDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 max_duration = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxDuration() {
+      
+      maxDuration = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long majorId ;
+    /**
+     * <code>int64 major_id = 5;</code>
+     * @return The majorId.
+     */
+    @java.lang.Override
+    public long getMajorId() {
+      return majorId ;
+    }
+    /**
+     * <code>int64 major_id = 5;</code>
+     * @param value The majorId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorId(long value) {
+      
+      majorId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 major_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorId() {
+      
+      majorId = 0L;
       onChanged();
       return this;
     }
@@ -849,7 +979,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @return A list containing the keywords.
      */
     public com.google.protobuf.ProtocolStringList
@@ -857,14 +987,14 @@ private static final long serialVersionUID = 0L;
       return keywords .getUnmodifiableView();
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @return The count of keywords.
      */
     public int getKeywordsCount() {
       return keywords .size();
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param index The index of the element to return.
      * @return The keywords at the given index.
      */
@@ -872,7 +1002,7 @@ private static final long serialVersionUID = 0L;
       return keywords .get(index);
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param index The index of the value to return.
      * @return The bytes of the keywords at the given index.
      */
@@ -881,7 +1011,7 @@ private static final long serialVersionUID = 0L;
       return keywords .getByteString(index);
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param index The index to set the value at.
      * @param value The keywords to set.
      * @return This builder for chaining.
@@ -897,7 +1027,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param value The keywords to add.
      * @return This builder for chaining.
      */
@@ -912,7 +1042,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param values The keywords to add.
      * @return This builder for chaining.
      */
@@ -925,7 +1055,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearKeywords() {
@@ -935,7 +1065,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string keywords = 4;</code>
+     * <code>repeated string keywords = 6;</code>
      * @param value The bytes of the keywords to add.
      * @return This builder for chaining.
      */

@@ -36,7 +36,11 @@ struct GloryApi_CreateQuickEvaluationRequest {
 
   var name: String = String()
 
-  var duration: Int64 = 0
+  var minDuration: Int64 = 0
+
+  var maxDuration: Int64 = 0
+
+  var majorID: Int64 = 0
 
   var keywords: [String] = []
 
@@ -169,36 +173,65 @@ struct GloryApi_EvaluationStandard {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var standardID: Int64 = 0
+  var standardID: Int64 {
+    get {return _storage._standardID}
+    set {_uniqueStorage()._standardID = newValue}
+  }
 
-  var name: String = String()
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
 
-  var duration: Int64 = 0
+  var minDuration: Int64 {
+    get {return _storage._minDuration}
+    set {_uniqueStorage()._minDuration = newValue}
+  }
 
-  var keywords: [String] = []
+  var maxDuration: Int64 {
+    get {return _storage._maxDuration}
+    set {_uniqueStorage()._maxDuration = newValue}
+  }
 
-  var creator: String = String()
+  var keywords: [String] {
+    get {return _storage._keywords}
+    set {_uniqueStorage()._keywords = newValue}
+  }
 
-  var updator: String = String()
+  var creator: String {
+    get {return _storage._creator}
+    set {_uniqueStorage()._creator = newValue}
+  }
 
-  var isEnable: Bool = false
+  var updator: String {
+    get {return _storage._updator}
+    set {_uniqueStorage()._updator = newValue}
+  }
 
-  var updatedAt: Int64 = 0
+  var isEnable: Bool {
+    get {return _storage._isEnable}
+    set {_uniqueStorage()._isEnable = newValue}
+  }
+
+  var updatedAt: Int64 {
+    get {return _storage._updatedAt}
+    set {_uniqueStorage()._updatedAt = newValue}
+  }
 
   var major: GloryApi_TenantDept {
-    get {return _major ?? GloryApi_TenantDept()}
-    set {_major = newValue}
+    get {return _storage._major ?? GloryApi_TenantDept()}
+    set {_uniqueStorage()._major = newValue}
   }
   /// Returns true if `major` has been explicitly set.
-  var hasMajor: Bool {return self._major != nil}
+  var hasMajor: Bool {return _storage._major != nil}
   /// Clears the value of `major`. Subsequent reads from it will return its default value.
-  mutating func clearMajor() {self._major = nil}
+  mutating func clearMajor() {_uniqueStorage()._major = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _major: GloryApi_TenantDept? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListQuickEvaluationRequest {
@@ -358,6 +391,8 @@ struct GloryApi_EvaluationReport {
   var endTime: String = String()
 
   var createdAt: String = String()
+
+  var createdBy: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -621,7 +656,7 @@ struct GloryApi_DeleteQuickEvaluationReportRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var reportID: Int64 = 0
+  var reportIds: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -666,8 +701,10 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "name"),
-    3: .same(proto: "duration"),
-    4: .same(proto: "keywords"),
+    3: .standard(proto: "min_duration"),
+    4: .standard(proto: "max_duration"),
+    5: .standard(proto: "major_id"),
+    6: .same(proto: "keywords"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -678,8 +715,10 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.duration) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.minDuration) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.maxDuration) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
+      case 6: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
       default: break
       }
     }
@@ -696,11 +735,17 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
-    if self.duration != 0 {
-      try visitor.visitSingularInt64Field(value: self.duration, fieldNumber: 3)
+    if self.minDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.minDuration, fieldNumber: 3)
+    }
+    if self.maxDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxDuration, fieldNumber: 4)
+    }
+    if self.majorID != 0 {
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 5)
     }
     if !self.keywords.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 4)
+      try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -708,7 +753,9 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
   static func ==(lhs: GloryApi_CreateQuickEvaluationRequest, rhs: GloryApi_CreateQuickEvaluationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.name != rhs.name {return false}
-    if lhs.duration != rhs.duration {return false}
+    if lhs.minDuration != rhs.minDuration {return false}
+    if lhs.maxDuration != rhs.maxDuration {return false}
+    if lhs.majorID != rhs.majorID {return false}
     if lhs.keywords != rhs.keywords {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -936,80 +983,136 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "standard_id"),
     2: .same(proto: "name"),
-    3: .same(proto: "duration"),
-    4: .same(proto: "keywords"),
-    5: .same(proto: "creator"),
-    6: .same(proto: "updator"),
-    7: .standard(proto: "is_enable"),
-    8: .standard(proto: "updated_at"),
-    9: .same(proto: "major"),
+    3: .standard(proto: "min_duration"),
+    4: .standard(proto: "max_duration"),
+    5: .same(proto: "keywords"),
+    6: .same(proto: "creator"),
+    7: .same(proto: "updator"),
+    8: .standard(proto: "is_enable"),
+    9: .standard(proto: "updated_at"),
+    10: .same(proto: "major"),
   ]
 
+  fileprivate class _StorageClass {
+    var _standardID: Int64 = 0
+    var _name: String = String()
+    var _minDuration: Int64 = 0
+    var _maxDuration: Int64 = 0
+    var _keywords: [String] = []
+    var _creator: String = String()
+    var _updator: String = String()
+    var _isEnable: Bool = false
+    var _updatedAt: Int64 = 0
+    var _major: GloryApi_TenantDept? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _standardID = source._standardID
+      _name = source._name
+      _minDuration = source._minDuration
+      _maxDuration = source._maxDuration
+      _keywords = source._keywords
+      _creator = source._creator
+      _updator = source._updator
+      _isEnable = source._isEnable
+      _updatedAt = source._updatedAt
+      _major = source._major
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.standardID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.duration) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.creator) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.updator) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.updatedAt) }()
-      case 9: try { try decoder.decodeSingularMessageField(value: &self._major) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._standardID) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 3: try { try decoder.decodeSingularInt64Field(value: &_storage._minDuration) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._maxDuration) }()
+        case 5: try { try decoder.decodeRepeatedStringField(value: &_storage._keywords) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._creator) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._updator) }()
+        case 8: try { try decoder.decodeSingularBoolField(value: &_storage._isEnable) }()
+        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._updatedAt) }()
+        case 10: try { try decoder.decodeSingularMessageField(value: &_storage._major) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if self.standardID != 0 {
-      try visitor.visitSingularInt64Field(value: self.standardID, fieldNumber: 1)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if _storage._standardID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._standardID, fieldNumber: 1)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 2)
+      }
+      if _storage._minDuration != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._minDuration, fieldNumber: 3)
+      }
+      if _storage._maxDuration != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._maxDuration, fieldNumber: 4)
+      }
+      if !_storage._keywords.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._keywords, fieldNumber: 5)
+      }
+      if !_storage._creator.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._creator, fieldNumber: 6)
+      }
+      if !_storage._updator.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._updator, fieldNumber: 7)
+      }
+      if _storage._isEnable != false {
+        try visitor.visitSingularBoolField(value: _storage._isEnable, fieldNumber: 8)
+      }
+      if _storage._updatedAt != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._updatedAt, fieldNumber: 9)
+      }
+      try { if let v = _storage._major {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      } }()
     }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
-    }
-    if self.duration != 0 {
-      try visitor.visitSingularInt64Field(value: self.duration, fieldNumber: 3)
-    }
-    if !self.keywords.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 4)
-    }
-    if !self.creator.isEmpty {
-      try visitor.visitSingularStringField(value: self.creator, fieldNumber: 5)
-    }
-    if !self.updator.isEmpty {
-      try visitor.visitSingularStringField(value: self.updator, fieldNumber: 6)
-    }
-    if self.isEnable != false {
-      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 7)
-    }
-    if self.updatedAt != 0 {
-      try visitor.visitSingularInt64Field(value: self.updatedAt, fieldNumber: 8)
-    }
-    try { if let v = self._major {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_EvaluationStandard, rhs: GloryApi_EvaluationStandard) -> Bool {
-    if lhs.standardID != rhs.standardID {return false}
-    if lhs.name != rhs.name {return false}
-    if lhs.duration != rhs.duration {return false}
-    if lhs.keywords != rhs.keywords {return false}
-    if lhs.creator != rhs.creator {return false}
-    if lhs.updator != rhs.updator {return false}
-    if lhs.isEnable != rhs.isEnable {return false}
-    if lhs.updatedAt != rhs.updatedAt {return false}
-    if lhs._major != rhs._major {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._standardID != rhs_storage._standardID {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._minDuration != rhs_storage._minDuration {return false}
+        if _storage._maxDuration != rhs_storage._maxDuration {return false}
+        if _storage._keywords != rhs_storage._keywords {return false}
+        if _storage._creator != rhs_storage._creator {return false}
+        if _storage._updator != rhs_storage._updator {return false}
+        if _storage._isEnable != rhs_storage._isEnable {return false}
+        if _storage._updatedAt != rhs_storage._updatedAt {return false}
+        if _storage._major != rhs_storage._major {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1245,6 +1348,7 @@ extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._Messa
     3: .standard(proto: "start_time"),
     4: .standard(proto: "end_time"),
     5: .standard(proto: "created_at"),
+    6: .standard(proto: "created_by"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1258,6 +1362,7 @@ extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 3: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdBy) }()
       default: break
       }
     }
@@ -1279,6 +1384,9 @@ extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
     }
+    if !self.createdBy.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdBy, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1288,6 +1396,7 @@ extension GloryApi_EvaluationReport: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.startTime != rhs.startTime {return false}
     if lhs.endTime != rhs.endTime {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.createdBy != rhs.createdBy {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1797,7 +1906,7 @@ extension GloryApi_DeleteQuickEvaluationReportRequest: SwiftProtobuf.Message, Sw
   static let protoMessageName: String = _protobuf_package + ".DeleteQuickEvaluationReportRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "report_id"),
+    2: .standard(proto: "report_ids"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1807,7 +1916,7 @@ extension GloryApi_DeleteQuickEvaluationReportRequest: SwiftProtobuf.Message, Sw
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.reportID) }()
+      case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.reportIds) }()
       default: break
       }
     }
@@ -1821,15 +1930,15 @@ extension GloryApi_DeleteQuickEvaluationReportRequest: SwiftProtobuf.Message, Sw
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.reportID != 0 {
-      try visitor.visitSingularInt64Field(value: self.reportID, fieldNumber: 2)
+    if !self.reportIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.reportIds, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_DeleteQuickEvaluationReportRequest, rhs: GloryApi_DeleteQuickEvaluationReportRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.reportID != rhs.reportID {return false}
+    if lhs.reportIds != rhs.reportIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

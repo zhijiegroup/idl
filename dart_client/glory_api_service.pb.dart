@@ -122,6 +122,9 @@ class glory_apiApi {
   $async.Future<$1.UpdatePhoneResponse> updatePhone($pb.ClientContext? ctx, $1.UpdatePhoneRequest request) =>
     _client.invoke<$1.UpdatePhoneResponse>(ctx, 'glory_api', 'UpdatePhone', request, $1.UpdatePhoneResponse())
   ;
+  $async.Future<$1.GetUserMajorResponse> getUserMajor($pb.ClientContext? ctx, $1.GetUserMajorRequest request) =>
+    _client.invoke<$1.GetUserMajorResponse>(ctx, 'glory_api', 'GetUserMajor', request, $1.GetUserMajorResponse())
+  ;
   $async.Future<$1.UpdateUserTenantResponse> updateUserTenant($pb.ClientContext? ctx, $1.UpdateUserTenantRequest request) =>
     _client.invoke<$1.UpdateUserTenantResponse>(ctx, 'glory_api', 'UpdateUserTenant', request, $1.UpdateUserTenantResponse())
   ;
