@@ -37,7 +37,8 @@ message ListNotificationResponse {
 message ReadNotificationRequest {
   base.BaseRequest base_request = 1;
   int64 notification_id = 2;
-  bool all = 3;
+  int32 notification_type = 3;
+  bool all = 4;
 }
 
 message ReadNotificationResponse {
