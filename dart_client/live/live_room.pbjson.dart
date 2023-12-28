@@ -682,3 +682,37 @@ final $typed_data.Uint8List getCouponAndIntroducingProductResponseDescriptor = $
     'ABKAsyEi5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASHQoKcHJvZHVjdF9pZBgCIAEoA1IJ'
     'cHJvZHVjdElkEh0KCmNvdXBvbl9pZHMYAyADKANSCWNvdXBvbklkcw==');
 
+@$core.Deprecated('Use createNewMessageTokenRequestDescriptor instead')
+const CreateNewMessageTokenRequest$json = {
+  '1': 'CreateNewMessageTokenRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+  ],
+};
+
+/// Descriptor for `CreateNewMessageTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createNewMessageTokenRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVOZXdNZXNzYWdlVG9rZW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHJvbGUYAiABKAlSBHJvbGU=');
+
+@$core.Deprecated('Use createNewMessageTokenResponseDescriptor instead')
+const CreateNewMessageTokenResponse$json = {
+  '1': 'CreateNewMessageTokenResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'nonce', '3': 3, '4': 1, '5': 9, '10': 'nonce'},
+    {'1': 'timestamp', '3': 4, '4': 1, '5': 9, '10': 'timestamp'},
+    {'1': 'app_sign', '3': 5, '4': 1, '5': 9, '10': 'appSign'},
+    {'1': 'app_id', '3': 6, '4': 1, '5': 9, '10': 'appId'},
+  ],
+};
+
+/// Descriptor for `CreateNewMessageTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createNewMessageTokenResponseDescriptor = $convert.base64Decode(
+    'Ch1DcmVhdGVOZXdNZXNzYWdlVG9rZW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASFAoFdG9rZW4YAiABKAlSBXRva2VuEhQKBW5vbmNl'
+    'GAMgASgJUgVub25jZRIcCgl0aW1lc3RhbXAYBCABKAlSCXRpbWVzdGFtcBIZCghhcHBfc2lnbh'
+    'gFIAEoCVIHYXBwU2lnbhIVCgZhcHBfaWQYBiABKAlSBWFwcElk');
+

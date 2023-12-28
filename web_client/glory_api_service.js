@@ -1350,6 +1350,14 @@ export class glory_api {
     );
   }
 
+  CreateNewLiveUserToken(request) {
+    const uri = `${this.uriPrefix}/api/live/create_new_live_user_token`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UserEnterRoom(request) {
     const uri = `${this.uriPrefix}/api/live/user_enter_room`;
     const body = JSONbigint.stringify(request);

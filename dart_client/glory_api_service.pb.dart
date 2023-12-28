@@ -551,6 +551,9 @@ class glory_apiApi {
   $async.Future<$26.CreateLiveUserTokenResponse> createLiveUserToken($pb.ClientContext? ctx, $26.CreateLiveUserTokenRequest request) =>
     _client.invoke<$26.CreateLiveUserTokenResponse>(ctx, 'glory_api', 'CreateLiveUserToken', request, $26.CreateLiveUserTokenResponse())
   ;
+  $async.Future<$24.CreateNewMessageTokenResponse> createNewLiveUserToken($pb.ClientContext? ctx, $24.CreateNewMessageTokenRequest request) =>
+    _client.invoke<$24.CreateNewMessageTokenResponse>(ctx, 'glory_api', 'CreateNewLiveUserToken', request, $24.CreateNewMessageTokenResponse())
+  ;
   $async.Future<$27.UserEnterRoomResponse> userEnterRoom($pb.ClientContext? ctx, $27.UserEnterRoomRequest request) =>
     _client.invoke<$27.UserEnterRoomResponse>(ctx, 'glory_api', 'UserEnterRoom', request, $27.UserEnterRoomResponse())
   ;

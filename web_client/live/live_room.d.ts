@@ -286,3 +286,17 @@ export interface GetCouponAndIntroducingProductResponse {
   product_id?: string;
   coupon_ids?: Array<string>;
 }
+
+export interface CreateNewMessageTokenRequest {
+  base_request?: base.BaseRequest;
+  role?: string;
+}
+
+export interface CreateNewMessageTokenResponse {
+  base_resp?: base.BaseResponse;
+  token?: string;
+  nonce?: string;
+  timestamp?: string;
+  app_sign?: string;
+  app_id?: string;
+}

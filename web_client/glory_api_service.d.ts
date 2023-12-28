@@ -734,6 +734,10 @@ list the permissions that supported */
     request: live_token.CreateLiveUserTokenRequest
   ): Promise<live_token.CreateLiveUserTokenResponse>;
 
+  CreateNewLiveUserToken(
+    request: live_room.CreateNewMessageTokenRequest
+  ): Promise<live_room.CreateNewMessageTokenResponse>;
+
   UserEnterRoom(
     request: live_user.UserEnterRoomRequest
   ): Promise<live_user.UserEnterRoomResponse>;

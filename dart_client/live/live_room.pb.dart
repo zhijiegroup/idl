@@ -3523,6 +3523,194 @@ class GetCouponAndIntroducingProductResponse extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get couponIds => $_getList(2);
 }
 
+class CreateNewMessageTokenRequest extends $pb.GeneratedMessage {
+  factory CreateNewMessageTokenRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? role,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (role != null) {
+      $result.role = role;
+    }
+    return $result;
+  }
+  CreateNewMessageTokenRequest._() : super();
+  factory CreateNewMessageTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNewMessageTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNewMessageTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateNewMessageTokenRequest clone() => CreateNewMessageTokenRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateNewMessageTokenRequest copyWith(void Function(CreateNewMessageTokenRequest) updates) => super.copyWith((message) => updates(message as CreateNewMessageTokenRequest)) as CreateNewMessageTokenRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateNewMessageTokenRequest create() => CreateNewMessageTokenRequest._();
+  CreateNewMessageTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateNewMessageTokenRequest> createRepeated() => $pb.PbList<CreateNewMessageTokenRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateNewMessageTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateNewMessageTokenRequest>(create);
+  static CreateNewMessageTokenRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get role => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set role($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => clearField(2);
+}
+
+class CreateNewMessageTokenResponse extends $pb.GeneratedMessage {
+  factory CreateNewMessageTokenResponse({
+    $0.BaseResponse? baseResp,
+    $core.String? token,
+    $core.String? nonce,
+    $core.String? timestamp,
+    $core.String? appSign,
+    $core.String? appId,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (token != null) {
+      $result.token = token;
+    }
+    if (nonce != null) {
+      $result.nonce = nonce;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (appSign != null) {
+      $result.appSign = appSign;
+    }
+    if (appId != null) {
+      $result.appId = appId;
+    }
+    return $result;
+  }
+  CreateNewMessageTokenResponse._() : super();
+  factory CreateNewMessageTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNewMessageTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNewMessageTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(3, _omitFieldNames ? '' : 'nonce')
+    ..aOS(4, _omitFieldNames ? '' : 'timestamp')
+    ..aOS(5, _omitFieldNames ? '' : 'appSign')
+    ..aOS(6, _omitFieldNames ? '' : 'appId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateNewMessageTokenResponse clone() => CreateNewMessageTokenResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateNewMessageTokenResponse copyWith(void Function(CreateNewMessageTokenResponse) updates) => super.copyWith((message) => updates(message as CreateNewMessageTokenResponse)) as CreateNewMessageTokenResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateNewMessageTokenResponse create() => CreateNewMessageTokenResponse._();
+  CreateNewMessageTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateNewMessageTokenResponse> createRepeated() => $pb.PbList<CreateNewMessageTokenResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateNewMessageTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateNewMessageTokenResponse>(create);
+  static CreateNewMessageTokenResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nonce => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nonce($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNonce() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNonce() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get timestamp => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set timestamp($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTimestamp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTimestamp() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get appSign => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set appSign($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAppSign() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAppSign() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get appId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set appId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAppId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAppId() => clearField(6);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
