@@ -78,11 +78,6 @@ private static final long serialVersionUID = 0L;
             tenantOverview = s;
             break;
           }
-          case 56: {
-
-            logoAttachmentId = input.readInt64();
-            break;
-          }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -204,7 +199,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object tenantLogoUrl ;
   /**
    * <pre>
-   *logo 创建不需要传
+   * 学校 logo
    * </pre>
    *
    * <code>string tenant_logo_url = 3;</code>
@@ -225,7 +220,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *logo 创建不需要传
+   * 学校 logo
    * </pre>
    *
    * <code>string tenant_logo_url = 3;</code>
@@ -290,21 +285,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int LOGO_ATTACHMENT_ID_FIELD_NUMBER = 7;
-  private long logoAttachmentId ;
-  /**
-   * <pre>
-   * 调用upload_attachment后返回的的attachment_id
-   * </pre>
-   *
-   * <code>int64 logo_attachment_id = 7;</code>
-   * @return The logoAttachmentId.
-   */
-  @java.lang.Override
-  public long getLogoAttachmentId() {
-    return logoAttachmentId ;
   }
 
   public static final int ADMIN_NAME_FIELD_NUMBER = 8;
@@ -460,9 +440,6 @@ private static final long serialVersionUID = 0L;
     if (!getTenantOverviewBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tenantOverview );
     }
-    if (logoAttachmentId != 0L) {
-      output.writeInt64(7, logoAttachmentId );
-    }
     if (!getAdminNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, adminName );
     }
@@ -493,10 +470,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTenantOverviewBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tenantOverview );
-    }
-    if (logoAttachmentId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, logoAttachmentId );
     }
     if (!getAdminNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, adminName );
@@ -535,8 +508,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTenantLogoUrl())) return false;
     if (!getTenantOverview()
         .equals(other.getTenantOverview())) return false;
-    if (getLogoAttachmentId()
-        != other.getLogoAttachmentId()) return false;
     if (!getAdminName()
         .equals(other.getAdminName())) return false;
     if (!getAdminPhone()
@@ -563,9 +534,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTenantLogoUrl().hashCode();
     hash = (37 * hash) + TENANT_OVERVIEW_FIELD_NUMBER;
     hash = (53 * hash) + getTenantOverview().hashCode();
-    hash = (37 * hash) + LOGO_ATTACHMENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLogoAttachmentId());
     hash = (37 * hash) + ADMIN_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getAdminName().hashCode();
     hash = (37 * hash) + ADMIN_PHONE_FIELD_NUMBER;
@@ -715,8 +683,6 @@ private static final long serialVersionUID = 0L;
 
       tenantOverview = "";
 
-      logoAttachmentId = 0L;
-
       adminName = "";
 
       adminPhone = "";
@@ -754,7 +720,6 @@ private static final long serialVersionUID = 0L;
       result.tenantName = tenantName ;
       result.tenantLogoUrl = tenantLogoUrl ;
       result.tenantOverview = tenantOverview ;
-      result.logoAttachmentId = logoAttachmentId ;
       result.adminName = adminName ;
       result.adminPhone = adminPhone ;
       if (((bitField0 & 0x00000001) != 0)) {
@@ -824,9 +789,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getTenantOverview().isEmpty()) {
         tenantOverview = other.tenantOverview ;
         onChanged();
-      }
-      if (other.getLogoAttachmentId() != 0L) {
-        setLogoAttachmentId(other.getLogoAttachmentId());
       }
       if (!other.getAdminName().isEmpty()) {
         adminName = other.adminName ;
@@ -1018,7 +980,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object tenantLogoUrl = "";
     /**
      * <pre>
-     *logo 创建不需要传
+     * 学校 logo
      * </pre>
      *
      * <code>string tenant_logo_url = 3;</code>
@@ -1038,7 +1000,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo 创建不需要传
+     * 学校 logo
      * </pre>
      *
      * <code>string tenant_logo_url = 3;</code>
@@ -1059,7 +1021,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo 创建不需要传
+     * 学校 logo
      * </pre>
      *
      * <code>string tenant_logo_url = 3;</code>
@@ -1078,7 +1040,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo 创建不需要传
+     * 学校 logo
      * </pre>
      *
      * <code>string tenant_logo_url = 3;</code>
@@ -1092,7 +1054,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo 创建不需要传
+     * 学校 logo
      * </pre>
      *
      * <code>string tenant_logo_url = 3;</code>
@@ -1203,49 +1165,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       tenantOverview = value;
-      onChanged();
-      return this;
-    }
-
-    private long logoAttachmentId ;
-    /**
-     * <pre>
-     * 调用upload_attachment后返回的的attachment_id
-     * </pre>
-     *
-     * <code>int64 logo_attachment_id = 7;</code>
-     * @return The logoAttachmentId.
-     */
-    @java.lang.Override
-    public long getLogoAttachmentId() {
-      return logoAttachmentId ;
-    }
-    /**
-     * <pre>
-     * 调用upload_attachment后返回的的attachment_id
-     * </pre>
-     *
-     * <code>int64 logo_attachment_id = 7;</code>
-     * @param value The logoAttachmentId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLogoAttachmentId(long value) {
-      
-      logoAttachmentId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 调用upload_attachment后返回的的attachment_id
-     * </pre>
-     *
-     * <code>int64 logo_attachment_id = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLogoAttachmentId() {
-      
-      logoAttachmentId = 0L;
       onChanged();
       return this;
     }

@@ -39,7 +39,7 @@ public interface TenantOrBuilder extends
 
   /**
    * <pre>
-   *logo 创建不需要传
+   * 学校 logo
    * </pre>
    *
    * <code>string tenant_logo_url = 3;</code>
@@ -48,7 +48,7 @@ public interface TenantOrBuilder extends
   java.lang.String getTenantLogoUrl();
   /**
    * <pre>
-   *logo 创建不需要传
+   * 学校 logo
    * </pre>
    *
    * <code>string tenant_logo_url = 3;</code>
@@ -76,16 +76,6 @@ public interface TenantOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTenantOverviewBytes();
-
-  /**
-   * <pre>
-   * 调用upload_attachment后返回的的attachment_id
-   * </pre>
-   *
-   * <code>int64 logo_attachment_id = 7;</code>
-   * @return The logoAttachmentId.
-   */
-  long getLogoAttachmentId();
 
   /**
    * <pre>

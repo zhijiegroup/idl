@@ -31,14 +31,11 @@ struct GloryApi_Tenant {
   ///名称 必传
   var tenantName: String = String()
 
-  ///logo 创建不需要传
+  /// 学校 logo
   var tenantLogoURL: String = String()
 
   ///校训 必传
   var tenantOverview: String = String()
-
-  /// 调用upload_attachment后返回的的attachment_id
-  var logoAttachmentID: Int64 = 0
 
   /// 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
   var adminName: String = String()
@@ -667,7 +664,6 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     2: .standard(proto: "tenant_name"),
     3: .standard(proto: "tenant_logo_url"),
     4: .standard(proto: "tenant_overview"),
-    7: .standard(proto: "logo_attachment_id"),
     8: .standard(proto: "admin_name"),
     9: .standard(proto: "admin_phone"),
     10: .standard(proto: "business_system"),
@@ -683,7 +679,6 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 2: try { try decoder.decodeSingularStringField(value: &self.tenantName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.tenantLogoURL) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.tenantOverview) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.logoAttachmentID) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.adminName) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.adminPhone) }()
       case 10: try { try decoder.decodeRepeatedStringField(value: &self.businessSystem) }()
@@ -705,9 +700,6 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if !self.tenantOverview.isEmpty {
       try visitor.visitSingularStringField(value: self.tenantOverview, fieldNumber: 4)
     }
-    if self.logoAttachmentID != 0 {
-      try visitor.visitSingularInt64Field(value: self.logoAttachmentID, fieldNumber: 7)
-    }
     if !self.adminName.isEmpty {
       try visitor.visitSingularStringField(value: self.adminName, fieldNumber: 8)
     }
@@ -725,7 +717,6 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.tenantName != rhs.tenantName {return false}
     if lhs.tenantLogoURL != rhs.tenantLogoURL {return false}
     if lhs.tenantOverview != rhs.tenantOverview {return false}
-    if lhs.logoAttachmentID != rhs.logoAttachmentID {return false}
     if lhs.adminName != rhs.adminName {return false}
     if lhs.adminPhone != rhs.adminPhone {return false}
     if lhs.businessSystem != rhs.businessSystem {return false}

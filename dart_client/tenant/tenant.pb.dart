@@ -22,7 +22,6 @@ class Tenant extends $pb.GeneratedMessage {
     $core.String? tenantName,
     $core.String? tenantLogoUrl,
     $core.String? tenantOverview,
-    $fixnum.Int64? logoAttachmentId,
     $core.String? adminName,
     $core.String? adminPhone,
     $core.Iterable<$core.String>? businessSystem,
@@ -39,9 +38,6 @@ class Tenant extends $pb.GeneratedMessage {
     }
     if (tenantOverview != null) {
       $result.tenantOverview = tenantOverview;
-    }
-    if (logoAttachmentId != null) {
-      $result.logoAttachmentId = logoAttachmentId;
     }
     if (adminName != null) {
       $result.adminName = adminName;
@@ -63,7 +59,6 @@ class Tenant extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'tenantName')
     ..aOS(3, _omitFieldNames ? '' : 'tenantLogoUrl')
     ..aOS(4, _omitFieldNames ? '' : 'tenantOverview')
-    ..aInt64(7, _omitFieldNames ? '' : 'logoAttachmentId')
     ..aOS(8, _omitFieldNames ? '' : 'adminName')
     ..aOS(9, _omitFieldNames ? '' : 'adminPhone')
     ..pPS(10, _omitFieldNames ? '' : 'businessSystem')
@@ -127,35 +122,26 @@ class Tenant extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearTenantOverview() => clearField(4);
 
-  @$pb.TagNumber(7)
-  $fixnum.Int64 get logoAttachmentId => $_getI64(4);
-  @$pb.TagNumber(7)
-  set logoAttachmentId($fixnum.Int64 v) { $_setInt64(4, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasLogoAttachmentId() => $_has(4);
-  @$pb.TagNumber(7)
-  void clearLogoAttachmentId() => clearField(7);
-
   @$pb.TagNumber(8)
-  $core.String get adminName => $_getSZ(5);
+  $core.String get adminName => $_getSZ(4);
   @$pb.TagNumber(8)
-  set adminName($core.String v) { $_setString(5, v); }
+  set adminName($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(8)
-  $core.bool hasAdminName() => $_has(5);
+  $core.bool hasAdminName() => $_has(4);
   @$pb.TagNumber(8)
   void clearAdminName() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get adminPhone => $_getSZ(6);
+  $core.String get adminPhone => $_getSZ(5);
   @$pb.TagNumber(9)
-  set adminPhone($core.String v) { $_setString(6, v); }
+  set adminPhone($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAdminPhone() => $_has(6);
+  $core.bool hasAdminPhone() => $_has(5);
   @$pb.TagNumber(9)
   void clearAdminPhone() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get businessSystem => $_getList(7);
+  $core.List<$core.String> get businessSystem => $_getList(6);
 }
 
 class CreateTenantRequest extends $pb.GeneratedMessage {

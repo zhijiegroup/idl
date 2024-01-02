@@ -21,7 +21,6 @@ const Tenant$json = {
     {'1': 'tenant_name', '3': 2, '4': 1, '5': 9, '10': 'tenantName'},
     {'1': 'tenant_logo_url', '3': 3, '4': 1, '5': 9, '10': 'tenantLogoUrl'},
     {'1': 'tenant_overview', '3': 4, '4': 1, '5': 9, '10': 'tenantOverview'},
-    {'1': 'logo_attachment_id', '3': 7, '4': 1, '5': 3, '10': 'logoAttachmentId'},
     {'1': 'admin_name', '3': 8, '4': 1, '5': 9, '10': 'adminName'},
     {'1': 'admin_phone', '3': 9, '4': 1, '5': 9, '10': 'adminPhone'},
     {'1': 'business_system', '3': 10, '4': 3, '5': 9, '10': 'businessSystem'},
@@ -32,10 +31,9 @@ const Tenant$json = {
 final $typed_data.Uint8List tenantDescriptor = $convert.base64Decode(
     'CgZUZW5hbnQSGwoJdGVuYW50X2lkGAEgASgDUgh0ZW5hbnRJZBIfCgt0ZW5hbnRfbmFtZRgCIA'
     'EoCVIKdGVuYW50TmFtZRImCg90ZW5hbnRfbG9nb191cmwYAyABKAlSDXRlbmFudExvZ29VcmwS'
-    'JwoPdGVuYW50X292ZXJ2aWV3GAQgASgJUg50ZW5hbnRPdmVydmlldxIsChJsb2dvX2F0dGFjaG'
-    '1lbnRfaWQYByABKANSEGxvZ29BdHRhY2htZW50SWQSHQoKYWRtaW5fbmFtZRgIIAEoCVIJYWRt'
-    'aW5OYW1lEh8KC2FkbWluX3Bob25lGAkgASgJUgphZG1pblBob25lEicKD2J1c2luZXNzX3N5c3'
-    'RlbRgKIAMoCVIOYnVzaW5lc3NTeXN0ZW0=');
+    'JwoPdGVuYW50X292ZXJ2aWV3GAQgASgJUg50ZW5hbnRPdmVydmlldxIdCgphZG1pbl9uYW1lGA'
+    'ggASgJUglhZG1pbk5hbWUSHwoLYWRtaW5fcGhvbmUYCSABKAlSCmFkbWluUGhvbmUSJwoPYnVz'
+    'aW5lc3Nfc3lzdGVtGAogAygJUg5idXNpbmVzc1N5c3RlbQ==');
 
 @$core.Deprecated('Use createTenantRequestDescriptor instead')
 const CreateTenantRequest$json = {
