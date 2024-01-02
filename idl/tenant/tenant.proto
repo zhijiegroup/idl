@@ -8,9 +8,8 @@ import "base.proto";
 message Tenant {
   int64 tenant_id = 1; //创建不传
   string tenant_name  = 2; //名称 必传
-  string tenant_logo_url = 3; //logo 创建不需要传
+  string tenant_logo_url = 3; // 学校 logo
   string tenant_overview = 4; //校训 必传
-  int64 logo_attachment_id = 7; // 调用upload_attachment后返回的的attachment_id
   string admin_name = 8;  // 自动创建的管理员的名字，若是手机已经是注册用户，则不会自动添加，而是用已经有的
   string admin_phone = 9; // 自动创建的管理员的手机号
   repeated string business_system = 10;
