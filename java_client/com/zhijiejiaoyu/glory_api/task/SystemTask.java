@@ -16,14 +16,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SystemTask() {
-    taskKey = "";
-    taskName = "";
-    taskBusinessSystem = "";
-    taskBusinessModule = "";
-    taskContent = "";
-    taskRequirements = "";
-    taskLink = "";
-    taskParameters = java.util.Collections.emptyList();
+    systemTaskKey = "";
+    systemTaskName = "";
+    systemTaskBusiness = "";
+    systemTaskContent = "";
+    systemTaskLink = "";
+    systemTaskParameters = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -57,54 +55,47 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            taskKey = s;
+            systemTaskId = input.readInt64();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskName = s;
+            systemTaskKey = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessSystem = s;
+            systemTaskName = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessModule = s;
+            systemTaskBusiness = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskContent = s;
+            systemTaskContent = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskRequirements = s;
+            systemTaskLink = s;
             break;
           }
           case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            taskLink = s;
-            break;
-          }
-          case 66: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>();
+              systemTaskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>();
               mutable_bitField0_ |= 0x00000001;
             }
-            taskParameters .add(
+            systemTaskParameters .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.parser(), extensionRegistry));
             break;
           }
@@ -124,7 +115,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        taskParameters = java.util.Collections.unmodifiableList(taskParameters );
+        systemTaskParameters = java.util.Collections.unmodifiableList(systemTaskParameters );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -143,386 +134,245 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.SystemTask.class, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder.class);
   }
 
-  public static final int TASK_KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taskKey ;
+  public static final int SYSTEM_TASK_ID_FIELD_NUMBER = 1;
+  private long systemTaskId ;
   /**
-   * <pre>
-   * 预置任务标识
-   * </pre>
-   *
-   * <code>string task_key = 1;</code>
-   * @return The taskKey.
+   * <code>int64 system_task_id = 1;</code>
+   * @return The systemTaskId.
    */
   @java.lang.Override
-  public java.lang.String getTaskKey() {
-    java.lang.Object ref = taskKey ;
+  public long getSystemTaskId() {
+    return systemTaskId ;
+  }
+
+  public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 2;
+  private volatile java.lang.Object systemTaskKey ;
+  /**
+   * <code>string system_task_key = 2;</code>
+   * @return The systemTaskKey.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemTaskKey() {
+    java.lang.Object ref = systemTaskKey ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskKey = s;
+      systemTaskKey = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * 预置任务标识
-   * </pre>
-   *
-   * <code>string task_key = 1;</code>
-   * @return The bytes for taskKey.
+   * <code>string system_task_key = 2;</code>
+   * @return The bytes for systemTaskKey.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskKeyBytes() {
-    java.lang.Object ref = taskKey ;
+      getSystemTaskKeyBytes() {
+    java.lang.Object ref = systemTaskKey ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskKey = b;
+      systemTaskKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskName ;
+  public static final int SYSTEM_TASK_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object systemTaskName ;
   /**
-   * <pre>
-   * 预置任务名称
-   * </pre>
-   *
-   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskName.
+   * <code>string system_task_name = 3;</code>
+   * @return The systemTaskName.
    */
   @java.lang.Override
-  public java.lang.String getTaskName() {
-    java.lang.Object ref = taskName ;
+  public java.lang.String getSystemTaskName() {
+    java.lang.Object ref = systemTaskName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskName = s;
+      systemTaskName = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * 预置任务名称
-   * </pre>
-   *
-   * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskName.
+   * <code>string system_task_name = 3;</code>
+   * @return The bytes for systemTaskName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskNameBytes() {
-    java.lang.Object ref = taskName ;
+      getSystemTaskNameBytes() {
+    java.lang.Object ref = systemTaskName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskName = b;
+      systemTaskName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_BUSINESS_SYSTEM_FIELD_NUMBER = 3;
-  private volatile java.lang.Object taskBusinessSystem ;
+  public static final int SYSTEM_TASK_BUSINESS_FIELD_NUMBER = 4;
+  private volatile java.lang.Object systemTaskBusiness ;
   /**
-   * <pre>
-   * 预置任务所属实训系统
-   * </pre>
-   *
-   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessSystem.
+   * <code>string system_task_business = 4;</code>
+   * @return The systemTaskBusiness.
    */
   @java.lang.Override
-  public java.lang.String getTaskBusinessSystem() {
-    java.lang.Object ref = taskBusinessSystem ;
+  public java.lang.String getSystemTaskBusiness() {
+    java.lang.Object ref = systemTaskBusiness ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskBusinessSystem = s;
+      systemTaskBusiness = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * 预置任务所属实训系统
-   * </pre>
-   *
-   * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessSystem.
+   * <code>string system_task_business = 4;</code>
+   * @return The bytes for systemTaskBusiness.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskBusinessSystemBytes() {
-    java.lang.Object ref = taskBusinessSystem ;
+      getSystemTaskBusinessBytes() {
+    java.lang.Object ref = systemTaskBusiness ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskBusinessSystem = b;
+      systemTaskBusiness = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_BUSINESS_MODULE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object taskBusinessModule ;
+  public static final int SYSTEM_TASK_CONTENT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object systemTaskContent ;
   /**
-   * <pre>
-   * 预置任务所属系统模块
-   * </pre>
-   *
-   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessModule.
+   * <code>string system_task_content = 5;</code>
+   * @return The systemTaskContent.
    */
   @java.lang.Override
-  public java.lang.String getTaskBusinessModule() {
-    java.lang.Object ref = taskBusinessModule ;
+  public java.lang.String getSystemTaskContent() {
+    java.lang.Object ref = systemTaskContent ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskBusinessModule = s;
+      systemTaskContent = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * 预置任务所属系统模块
-   * </pre>
-   *
-   * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessModule.
+   * <code>string system_task_content = 5;</code>
+   * @return The bytes for systemTaskContent.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskBusinessModuleBytes() {
-    java.lang.Object ref = taskBusinessModule ;
+      getSystemTaskContentBytes() {
+    java.lang.Object ref = systemTaskContent ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskBusinessModule = b;
+      systemTaskContent = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_CONTENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object taskContent ;
+  public static final int SYSTEM_TASK_LINK_FIELD_NUMBER = 6;
+  private volatile java.lang.Object systemTaskLink ;
   /**
-   * <pre>
-   * 预置任务内容
-   * </pre>
-   *
-   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskContent.
+   * <code>string system_task_link = 6;</code>
+   * @return The systemTaskLink.
    */
   @java.lang.Override
-  public java.lang.String getTaskContent() {
-    java.lang.Object ref = taskContent ;
+  public java.lang.String getSystemTaskLink() {
+    java.lang.Object ref = systemTaskLink ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskContent = s;
+      systemTaskLink = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * 预置任务内容
-   * </pre>
-   *
-   * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskContent.
+   * <code>string system_task_link = 6;</code>
+   * @return The bytes for systemTaskLink.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskContentBytes() {
-    java.lang.Object ref = taskContent ;
+      getSystemTaskLinkBytes() {
+    java.lang.Object ref = systemTaskLink ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskContent = b;
+      systemTaskLink = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_REQUIREMENTS_FIELD_NUMBER = 6;
-  private volatile java.lang.Object taskRequirements ;
+  public static final int SYSTEM_TASK_PARAMETERS_FIELD_NUMBER = 7;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> systemTaskParameters ;
   /**
-   * <pre>
-   * 预置任务要求
-   * </pre>
-   *
-   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskRequirements.
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
    */
   @java.lang.Override
-  public java.lang.String getTaskRequirements() {
-    java.lang.Object ref = taskRequirements ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskRequirements = s;
-      return s;
-    }
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getSystemTaskParametersList() {
+    return systemTaskParameters ;
   }
   /**
-   * <pre>
-   * 预置任务要求
-   * </pre>
-   *
-   * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskRequirements.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskRequirementsBytes() {
-    java.lang.Object ref = taskRequirements ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskRequirements = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TASK_LINK_FIELD_NUMBER = 7;
-  private volatile java.lang.Object taskLink ;
-  /**
-   * <pre>
-   * 预置任务链接
-   * </pre>
-   *
-   * <code>string task_link = 7;</code>
-   * @return The taskLink.
-   */
-  @java.lang.Override
-  public java.lang.String getTaskLink() {
-    java.lang.Object ref = taskLink ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskLink = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 预置任务链接
-   * </pre>
-   *
-   * <code>string task_link = 7;</code>
-   * @return The bytes for taskLink.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskLinkBytes() {
-    java.lang.Object ref = taskLink ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskLink = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TASK_PARAMETERS_FIELD_NUMBER = 8;
-  private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> taskParameters ;
-  /**
-   * <pre>
-   * 预置任务参数
-   * </pre>
-   *
-   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getTaskParametersList() {
-    return taskParameters ;
-  }
-  /**
-   * <pre>
-   * 预置任务参数
-   * </pre>
-   *
-   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
-      getTaskParametersOrBuilderList() {
-    return taskParameters ;
+      getSystemTaskParametersOrBuilderList() {
+    return systemTaskParameters ;
   }
   /**
-   * <pre>
-   * 预置任务参数
-   * </pre>
-   *
-   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
    */
   @java.lang.Override
-  public int getTaskParametersCount() {
-    return taskParameters .size();
+  public int getSystemTaskParametersCount() {
+    return systemTaskParameters .size();
   }
   /**
-   * <pre>
-   * 预置任务参数
-   * </pre>
-   *
-   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getTaskParameters(int index) {
-    return taskParameters .get(index);
+  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getSystemTaskParameters(int index) {
+    return systemTaskParameters .get(index);
   }
   /**
-   * <pre>
-   * 预置任务参数
-   * </pre>
-   *
-   * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getTaskParametersOrBuilder(
+  public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getSystemTaskParametersOrBuilder(
       int index) {
-    return taskParameters .get(index);
+    return systemTaskParameters .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -539,29 +389,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTaskKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskKey );
+    if (systemTaskId != 0L) {
+      output.writeInt64(1, systemTaskId );
     }
-    if (!getTaskNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName );
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, systemTaskKey );
     }
-    if (!getTaskBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskBusinessSystem );
+    if (!getSystemTaskNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, systemTaskName );
     }
-    if (!getTaskBusinessModuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskBusinessModule );
+    if (!getSystemTaskBusinessBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, systemTaskBusiness );
     }
-    if (!getTaskContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskContent );
+    if (!getSystemTaskContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, systemTaskContent );
     }
-    if (!getTaskRequirementsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskRequirements );
+    if (!getSystemTaskLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, systemTaskLink );
     }
-    if (!getTaskLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskLink );
-    }
-    for (int i = 0; i < taskParameters .size(); i++) {
-      output.writeMessage(8, taskParameters .get(i));
+    for (int i = 0; i < systemTaskParameters .size(); i++) {
+      output.writeMessage(7, systemTaskParameters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -572,30 +419,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTaskKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskKey );
-    }
-    if (!getTaskNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName );
-    }
-    if (!getTaskBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskBusinessSystem );
-    }
-    if (!getTaskBusinessModuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskBusinessModule );
-    }
-    if (!getTaskContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskContent );
-    }
-    if (!getTaskRequirementsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskRequirements );
-    }
-    if (!getTaskLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskLink );
-    }
-    for (int i = 0; i < taskParameters .size(); i++) {
+    if (systemTaskId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, taskParameters .get(i));
+        .computeInt64Size(1, systemTaskId );
+    }
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, systemTaskKey );
+    }
+    if (!getSystemTaskNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, systemTaskName );
+    }
+    if (!getSystemTaskBusinessBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, systemTaskBusiness );
+    }
+    if (!getSystemTaskContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, systemTaskContent );
+    }
+    if (!getSystemTaskLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, systemTaskLink );
+    }
+    for (int i = 0; i < systemTaskParameters .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, systemTaskParameters .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -612,22 +457,20 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.SystemTask other = (com.zhijiejiaoyu.glory_api.task.SystemTask) obj;
 
-    if (!getTaskKey()
-        .equals(other.getTaskKey())) return false;
-    if (!getTaskName()
-        .equals(other.getTaskName())) return false;
-    if (!getTaskBusinessSystem()
-        .equals(other.getTaskBusinessSystem())) return false;
-    if (!getTaskBusinessModule()
-        .equals(other.getTaskBusinessModule())) return false;
-    if (!getTaskContent()
-        .equals(other.getTaskContent())) return false;
-    if (!getTaskRequirements()
-        .equals(other.getTaskRequirements())) return false;
-    if (!getTaskLink()
-        .equals(other.getTaskLink())) return false;
-    if (!getTaskParametersList()
-        .equals(other.getTaskParametersList())) return false;
+    if (getSystemTaskId()
+        != other.getSystemTaskId()) return false;
+    if (!getSystemTaskKey()
+        .equals(other.getSystemTaskKey())) return false;
+    if (!getSystemTaskName()
+        .equals(other.getSystemTaskName())) return false;
+    if (!getSystemTaskBusiness()
+        .equals(other.getSystemTaskBusiness())) return false;
+    if (!getSystemTaskContent()
+        .equals(other.getSystemTaskContent())) return false;
+    if (!getSystemTaskLink()
+        .equals(other.getSystemTaskLink())) return false;
+    if (!getSystemTaskParametersList()
+        .equals(other.getSystemTaskParametersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -639,23 +482,22 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TASK_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskKey().hashCode();
-    hash = (37 * hash) + TASK_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskName().hashCode();
-    hash = (37 * hash) + TASK_BUSINESS_SYSTEM_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskBusinessSystem().hashCode();
-    hash = (37 * hash) + TASK_BUSINESS_MODULE_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskBusinessModule().hashCode();
-    hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskContent().hashCode();
-    hash = (37 * hash) + TASK_REQUIREMENTS_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskRequirements().hashCode();
-    hash = (37 * hash) + TASK_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskLink().hashCode();
-    if (getTaskParametersCount() > 0) {
-      hash = (37 * hash) + TASK_PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskParametersList().hashCode();
+    hash = (37 * hash) + SYSTEM_TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSystemTaskId());
+    hash = (37 * hash) + SYSTEM_TASK_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskKey().hashCode();
+    hash = (37 * hash) + SYSTEM_TASK_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskName().hashCode();
+    hash = (37 * hash) + SYSTEM_TASK_BUSINESS_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskBusiness().hashCode();
+    hash = (37 * hash) + SYSTEM_TASK_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskContent().hashCode();
+    hash = (37 * hash) + SYSTEM_TASK_LINK_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskLink().hashCode();
+    if (getSystemTaskParametersCount() > 0) {
+      hash = (37 * hash) + SYSTEM_TASK_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemTaskParametersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -785,31 +627,29 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getTaskParametersFieldBuilder();
+        getSystemTaskParametersFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      taskKey = "";
+      systemTaskId = 0L;
 
-      taskName = "";
+      systemTaskKey = "";
 
-      taskBusinessSystem = "";
+      systemTaskName = "";
 
-      taskBusinessModule = "";
+      systemTaskBusiness = "";
 
-      taskContent = "";
+      systemTaskContent = "";
 
-      taskRequirements = "";
+      systemTaskLink = "";
 
-      taskLink = "";
-
-      if (taskParametersBuilder == null) {
-        taskParameters = java.util.Collections.emptyList();
+      if (systemTaskParametersBuilder == null) {
+        systemTaskParameters = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        taskParametersBuilder .clear();
+        systemTaskParametersBuilder .clear();
       }
       return this;
     }
@@ -838,21 +678,20 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.task.SystemTask buildPartial() {
       com.zhijiejiaoyu.glory_api.task.SystemTask result = new com.zhijiejiaoyu.glory_api.task.SystemTask(this);
       int from_bitField0 = bitField0 ;
-      result.taskKey = taskKey ;
-      result.taskName = taskName ;
-      result.taskBusinessSystem = taskBusinessSystem ;
-      result.taskBusinessModule = taskBusinessModule ;
-      result.taskContent = taskContent ;
-      result.taskRequirements = taskRequirements ;
-      result.taskLink = taskLink ;
-      if (taskParametersBuilder == null) {
+      result.systemTaskId = systemTaskId ;
+      result.systemTaskKey = systemTaskKey ;
+      result.systemTaskName = systemTaskName ;
+      result.systemTaskBusiness = systemTaskBusiness ;
+      result.systemTaskContent = systemTaskContent ;
+      result.systemTaskLink = systemTaskLink ;
+      if (systemTaskParametersBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          taskParameters = java.util.Collections.unmodifiableList(taskParameters );
+          systemTaskParameters = java.util.Collections.unmodifiableList(systemTaskParameters );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.taskParameters = taskParameters ;
+        result.systemTaskParameters = systemTaskParameters ;
       } else {
-        result.taskParameters = taskParametersBuilder .build();
+        result.systemTaskParameters = systemTaskParametersBuilder .build();
       }
       onBuilt();
       return result;
@@ -902,57 +741,52 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.SystemTask other) {
       if (other == com.zhijiejiaoyu.glory_api.task.SystemTask.getDefaultInstance()) return this;
-      if (!other.getTaskKey().isEmpty()) {
-        taskKey = other.taskKey ;
+      if (other.getSystemTaskId() != 0L) {
+        setSystemTaskId(other.getSystemTaskId());
+      }
+      if (!other.getSystemTaskKey().isEmpty()) {
+        systemTaskKey = other.systemTaskKey ;
         onChanged();
       }
-      if (!other.getTaskName().isEmpty()) {
-        taskName = other.taskName ;
+      if (!other.getSystemTaskName().isEmpty()) {
+        systemTaskName = other.systemTaskName ;
         onChanged();
       }
-      if (!other.getTaskBusinessSystem().isEmpty()) {
-        taskBusinessSystem = other.taskBusinessSystem ;
+      if (!other.getSystemTaskBusiness().isEmpty()) {
+        systemTaskBusiness = other.systemTaskBusiness ;
         onChanged();
       }
-      if (!other.getTaskBusinessModule().isEmpty()) {
-        taskBusinessModule = other.taskBusinessModule ;
+      if (!other.getSystemTaskContent().isEmpty()) {
+        systemTaskContent = other.systemTaskContent ;
         onChanged();
       }
-      if (!other.getTaskContent().isEmpty()) {
-        taskContent = other.taskContent ;
+      if (!other.getSystemTaskLink().isEmpty()) {
+        systemTaskLink = other.systemTaskLink ;
         onChanged();
       }
-      if (!other.getTaskRequirements().isEmpty()) {
-        taskRequirements = other.taskRequirements ;
-        onChanged();
-      }
-      if (!other.getTaskLink().isEmpty()) {
-        taskLink = other.taskLink ;
-        onChanged();
-      }
-      if (taskParametersBuilder == null) {
-        if (!other.taskParameters .isEmpty()) {
-          if (taskParameters .isEmpty()) {
-            taskParameters = other.taskParameters ;
+      if (systemTaskParametersBuilder == null) {
+        if (!other.systemTaskParameters .isEmpty()) {
+          if (systemTaskParameters .isEmpty()) {
+            systemTaskParameters = other.systemTaskParameters ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureTaskParametersIsMutable();
-            taskParameters .addAll(other.taskParameters );
+            ensureSystemTaskParametersIsMutable();
+            systemTaskParameters .addAll(other.systemTaskParameters );
           }
           onChanged();
         }
       } else {
-        if (!other.taskParameters .isEmpty()) {
-          if (taskParametersBuilder .isEmpty()) {
-            taskParametersBuilder .dispose();
-            taskParametersBuilder = null;
-            taskParameters = other.taskParameters ;
+        if (!other.systemTaskParameters .isEmpty()) {
+          if (systemTaskParametersBuilder .isEmpty()) {
+            systemTaskParametersBuilder .dispose();
+            systemTaskParametersBuilder = null;
+            systemTaskParameters = other.systemTaskParameters ;
             bitField0 = (bitField0 & ~0x00000001);
-            taskParametersBuilder = 
+            systemTaskParametersBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTaskParametersFieldBuilder() : null;
+                 getSystemTaskParametersFieldBuilder() : null;
           } else {
-            taskParametersBuilder .addAllMessages(other.taskParameters );
+            systemTaskParametersBuilder .addAllMessages(other.systemTaskParameters );
           }
         }
       }
@@ -986,988 +820,655 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private java.lang.Object taskKey = "";
+    private long systemTaskId ;
     /**
-     * <pre>
-     * 预置任务标识
-     * </pre>
-     *
-     * <code>string task_key = 1;</code>
-     * @return The taskKey.
+     * <code>int64 system_task_id = 1;</code>
+     * @return The systemTaskId.
      */
-    public java.lang.String getTaskKey() {
-      java.lang.Object ref = taskKey ;
+    @java.lang.Override
+    public long getSystemTaskId() {
+      return systemTaskId ;
+    }
+    /**
+     * <code>int64 system_task_id = 1;</code>
+     * @param value The systemTaskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskId(long value) {
+      
+      systemTaskId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 system_task_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemTaskId() {
+      
+      systemTaskId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object systemTaskKey = "";
+    /**
+     * <code>string system_task_key = 2;</code>
+     * @return The systemTaskKey.
+     */
+    public java.lang.String getSystemTaskKey() {
+      java.lang.Object ref = systemTaskKey ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskKey = s;
+        systemTaskKey = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务标识
-     * </pre>
-     *
-     * <code>string task_key = 1;</code>
-     * @return The bytes for taskKey.
+     * <code>string system_task_key = 2;</code>
+     * @return The bytes for systemTaskKey.
      */
     public com.google.protobuf.ByteString
-        getTaskKeyBytes() {
-      java.lang.Object ref = taskKey ;
+        getSystemTaskKeyBytes() {
+      java.lang.Object ref = systemTaskKey ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskKey = b;
+        systemTaskKey = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务标识
-     * </pre>
-     *
-     * <code>string task_key = 1;</code>
-     * @param value The taskKey to set.
+     * <code>string system_task_key = 2;</code>
+     * @param value The systemTaskKey to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskKey(
+    public Builder setSystemTaskKey(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskKey = value;
+      systemTaskKey = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务标识
-     * </pre>
-     *
-     * <code>string task_key = 1;</code>
+     * <code>string system_task_key = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskKey() {
+    public Builder clearSystemTaskKey() {
       
-      taskKey = getDefaultInstance().getTaskKey();
+      systemTaskKey = getDefaultInstance().getSystemTaskKey();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务标识
-     * </pre>
-     *
-     * <code>string task_key = 1;</code>
-     * @param value The bytes for taskKey to set.
+     * <code>string system_task_key = 2;</code>
+     * @param value The bytes for systemTaskKey to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskKeyBytes(
+    public Builder setSystemTaskKeyBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskKey = value;
+      systemTaskKey = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskName = "";
+    private java.lang.Object systemTaskName = "";
     /**
-     * <pre>
-     * 预置任务名称
-     * </pre>
-     *
-     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskName.
+     * <code>string system_task_name = 3;</code>
+     * @return The systemTaskName.
      */
-    public java.lang.String getTaskName() {
-      java.lang.Object ref = taskName ;
+    public java.lang.String getSystemTaskName() {
+      java.lang.Object ref = systemTaskName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskName = s;
+        systemTaskName = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务名称
-     * </pre>
-     *
-     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskName.
+     * <code>string system_task_name = 3;</code>
+     * @return The bytes for systemTaskName.
      */
     public com.google.protobuf.ByteString
-        getTaskNameBytes() {
-      java.lang.Object ref = taskName ;
+        getSystemTaskNameBytes() {
+      java.lang.Object ref = systemTaskName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskName = b;
+        systemTaskName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务名称
-     * </pre>
-     *
-     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskName to set.
+     * <code>string system_task_name = 3;</code>
+     * @param value The systemTaskName to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskName(
+    public Builder setSystemTaskName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskName = value;
+      systemTaskName = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务名称
-     * </pre>
-     *
-     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string system_task_name = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskName() {
+    public Builder clearSystemTaskName() {
       
-      taskName = getDefaultInstance().getTaskName();
+      systemTaskName = getDefaultInstance().getSystemTaskName();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务名称
-     * </pre>
-     *
-     * <code>string task_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskName to set.
+     * <code>string system_task_name = 3;</code>
+     * @param value The bytes for systemTaskName to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskNameBytes(
+    public Builder setSystemTaskNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskName = value;
+      systemTaskName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskBusinessSystem = "";
+    private java.lang.Object systemTaskBusiness = "";
     /**
-     * <pre>
-     * 预置任务所属实训系统
-     * </pre>
-     *
-     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskBusinessSystem.
+     * <code>string system_task_business = 4;</code>
+     * @return The systemTaskBusiness.
      */
-    public java.lang.String getTaskBusinessSystem() {
-      java.lang.Object ref = taskBusinessSystem ;
+    public java.lang.String getSystemTaskBusiness() {
+      java.lang.Object ref = systemTaskBusiness ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskBusinessSystem = s;
+        systemTaskBusiness = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务所属实训系统
-     * </pre>
-     *
-     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskBusinessSystem.
+     * <code>string system_task_business = 4;</code>
+     * @return The bytes for systemTaskBusiness.
      */
     public com.google.protobuf.ByteString
-        getTaskBusinessSystemBytes() {
-      java.lang.Object ref = taskBusinessSystem ;
+        getSystemTaskBusinessBytes() {
+      java.lang.Object ref = systemTaskBusiness ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskBusinessSystem = b;
+        systemTaskBusiness = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务所属实训系统
-     * </pre>
-     *
-     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskBusinessSystem to set.
+     * <code>string system_task_business = 4;</code>
+     * @param value The systemTaskBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessSystem(
+    public Builder setSystemTaskBusiness(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskBusinessSystem = value;
+      systemTaskBusiness = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务所属实训系统
-     * </pre>
-     *
-     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string system_task_business = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskBusinessSystem() {
+    public Builder clearSystemTaskBusiness() {
       
-      taskBusinessSystem = getDefaultInstance().getTaskBusinessSystem();
+      systemTaskBusiness = getDefaultInstance().getSystemTaskBusiness();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务所属实训系统
-     * </pre>
-     *
-     * <code>string task_business_system = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskBusinessSystem to set.
+     * <code>string system_task_business = 4;</code>
+     * @param value The bytes for systemTaskBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessSystemBytes(
+    public Builder setSystemTaskBusinessBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskBusinessSystem = value;
+      systemTaskBusiness = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskBusinessModule = "";
+    private java.lang.Object systemTaskContent = "";
     /**
-     * <pre>
-     * 预置任务所属系统模块
-     * </pre>
-     *
-     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskBusinessModule.
+     * <code>string system_task_content = 5;</code>
+     * @return The systemTaskContent.
      */
-    public java.lang.String getTaskBusinessModule() {
-      java.lang.Object ref = taskBusinessModule ;
+    public java.lang.String getSystemTaskContent() {
+      java.lang.Object ref = systemTaskContent ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskBusinessModule = s;
+        systemTaskContent = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务所属系统模块
-     * </pre>
-     *
-     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskBusinessModule.
+     * <code>string system_task_content = 5;</code>
+     * @return The bytes for systemTaskContent.
      */
     public com.google.protobuf.ByteString
-        getTaskBusinessModuleBytes() {
-      java.lang.Object ref = taskBusinessModule ;
+        getSystemTaskContentBytes() {
+      java.lang.Object ref = systemTaskContent ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskBusinessModule = b;
+        systemTaskContent = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务所属系统模块
-     * </pre>
-     *
-     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskBusinessModule to set.
+     * <code>string system_task_content = 5;</code>
+     * @param value The systemTaskContent to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessModule(
+    public Builder setSystemTaskContent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskBusinessModule = value;
+      systemTaskContent = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务所属系统模块
-     * </pre>
-     *
-     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string system_task_content = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskBusinessModule() {
+    public Builder clearSystemTaskContent() {
       
-      taskBusinessModule = getDefaultInstance().getTaskBusinessModule();
+      systemTaskContent = getDefaultInstance().getSystemTaskContent();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务所属系统模块
-     * </pre>
-     *
-     * <code>string task_business_module = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskBusinessModule to set.
+     * <code>string system_task_content = 5;</code>
+     * @param value The bytes for systemTaskContent to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessModuleBytes(
+    public Builder setSystemTaskContentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskBusinessModule = value;
+      systemTaskContent = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskContent = "";
+    private java.lang.Object systemTaskLink = "";
     /**
-     * <pre>
-     * 预置任务内容
-     * </pre>
-     *
-     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskContent.
+     * <code>string system_task_link = 6;</code>
+     * @return The systemTaskLink.
      */
-    public java.lang.String getTaskContent() {
-      java.lang.Object ref = taskContent ;
+    public java.lang.String getSystemTaskLink() {
+      java.lang.Object ref = systemTaskLink ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskContent = s;
+        systemTaskLink = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务内容
-     * </pre>
-     *
-     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskContent.
+     * <code>string system_task_link = 6;</code>
+     * @return The bytes for systemTaskLink.
      */
     public com.google.protobuf.ByteString
-        getTaskContentBytes() {
-      java.lang.Object ref = taskContent ;
+        getSystemTaskLinkBytes() {
+      java.lang.Object ref = systemTaskLink ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskContent = b;
+        systemTaskLink = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <pre>
-     * 预置任务内容
-     * </pre>
-     *
-     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskContent to set.
+     * <code>string system_task_link = 6;</code>
+     * @param value The systemTaskLink to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskContent(
+    public Builder setSystemTaskLink(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskContent = value;
+      systemTaskLink = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务内容
-     * </pre>
-     *
-     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string system_task_link = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskContent() {
+    public Builder clearSystemTaskLink() {
       
-      taskContent = getDefaultInstance().getTaskContent();
+      systemTaskLink = getDefaultInstance().getSystemTaskLink();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 预置任务内容
-     * </pre>
-     *
-     * <code>string task_content = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskContent to set.
+     * <code>string system_task_link = 6;</code>
+     * @param value The bytes for systemTaskLink to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskContentBytes(
+    public Builder setSystemTaskLinkBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskContent = value;
+      systemTaskLink = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskRequirements = "";
-    /**
-     * <pre>
-     * 预置任务要求
-     * </pre>
-     *
-     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskRequirements.
-     */
-    public java.lang.String getTaskRequirements() {
-      java.lang.Object ref = taskRequirements ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskRequirements = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务要求
-     * </pre>
-     *
-     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskRequirements.
-     */
-    public com.google.protobuf.ByteString
-        getTaskRequirementsBytes() {
-      java.lang.Object ref = taskRequirements ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskRequirements = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务要求
-     * </pre>
-     *
-     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskRequirements to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskRequirements(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskRequirements = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务要求
-     * </pre>
-     *
-     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskRequirements() {
-      
-      taskRequirements = getDefaultInstance().getTaskRequirements();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务要求
-     * </pre>
-     *
-     * <code>string task_requirements = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskRequirements to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskRequirementsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskRequirements = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object taskLink = "";
-    /**
-     * <pre>
-     * 预置任务链接
-     * </pre>
-     *
-     * <code>string task_link = 7;</code>
-     * @return The taskLink.
-     */
-    public java.lang.String getTaskLink() {
-      java.lang.Object ref = taskLink ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskLink = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务链接
-     * </pre>
-     *
-     * <code>string task_link = 7;</code>
-     * @return The bytes for taskLink.
-     */
-    public com.google.protobuf.ByteString
-        getTaskLinkBytes() {
-      java.lang.Object ref = taskLink ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskLink = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 预置任务链接
-     * </pre>
-     *
-     * <code>string task_link = 7;</code>
-     * @param value The taskLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskLink(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskLink = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务链接
-     * </pre>
-     *
-     * <code>string task_link = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskLink() {
-      
-      taskLink = getDefaultInstance().getTaskLink();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 预置任务链接
-     * </pre>
-     *
-     * <code>string task_link = 7;</code>
-     * @param value The bytes for taskLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskLinkBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskLink = value;
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> taskParameters =
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> systemTaskParameters =
       java.util.Collections.emptyList();
-    private void ensureTaskParametersIsMutable() {
+    private void ensureSystemTaskParametersIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>(taskParameters );
+        systemTaskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter>(systemTaskParameters );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> taskParametersBuilder ;
+        com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> systemTaskParametersBuilder ;
 
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getTaskParametersList() {
-      if (taskParametersBuilder == null) {
-        return java.util.Collections.unmodifiableList(taskParameters );
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> getSystemTaskParametersList() {
+      if (systemTaskParametersBuilder == null) {
+        return java.util.Collections.unmodifiableList(systemTaskParameters );
       } else {
-        return taskParametersBuilder .getMessageList();
+        return systemTaskParametersBuilder .getMessageList();
       }
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public int getTaskParametersCount() {
-      if (taskParametersBuilder == null) {
-        return taskParameters .size();
+    public int getSystemTaskParametersCount() {
+      if (systemTaskParametersBuilder == null) {
+        return systemTaskParameters .size();
       } else {
-        return taskParametersBuilder .getCount();
+        return systemTaskParametersBuilder .getCount();
       }
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getTaskParameters(int index) {
-      if (taskParametersBuilder == null) {
-        return taskParameters .get(index);
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getSystemTaskParameters(int index) {
+      if (systemTaskParametersBuilder == null) {
+        return systemTaskParameters .get(index);
       } else {
-        return taskParametersBuilder .getMessage(index);
+        return systemTaskParametersBuilder .getMessage(index);
       }
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder setTaskParameters(
+    public Builder setSystemTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
-      if (taskParametersBuilder == null) {
+      if (systemTaskParametersBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTaskParametersIsMutable();
-        taskParameters .set(index, value);
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .set(index, value);
         onChanged();
       } else {
-        taskParametersBuilder .setMessage(index, value);
+        systemTaskParametersBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder setTaskParameters(
+    public Builder setSystemTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
-      if (taskParametersBuilder == null) {
-        ensureTaskParametersIsMutable();
-        taskParameters .set(index, builderForValue.build());
+      if (systemTaskParametersBuilder == null) {
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .set(index, builderForValue.build());
         onChanged();
       } else {
-        taskParametersBuilder .setMessage(index, builderForValue.build());
+        systemTaskParametersBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder addTaskParameters(com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
-      if (taskParametersBuilder == null) {
+    public Builder addSystemTaskParameters(com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
+      if (systemTaskParametersBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTaskParametersIsMutable();
-        taskParameters .add(value);
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .add(value);
         onChanged();
       } else {
-        taskParametersBuilder .addMessage(value);
+        systemTaskParametersBuilder .addMessage(value);
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder addTaskParameters(
+    public Builder addSystemTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter value) {
-      if (taskParametersBuilder == null) {
+      if (systemTaskParametersBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTaskParametersIsMutable();
-        taskParameters .add(index, value);
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .add(index, value);
         onChanged();
       } else {
-        taskParametersBuilder .addMessage(index, value);
+        systemTaskParametersBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder addTaskParameters(
+    public Builder addSystemTaskParameters(
         com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
-      if (taskParametersBuilder == null) {
-        ensureTaskParametersIsMutable();
-        taskParameters .add(builderForValue.build());
+      if (systemTaskParametersBuilder == null) {
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .add(builderForValue.build());
         onChanged();
       } else {
-        taskParametersBuilder .addMessage(builderForValue.build());
+        systemTaskParametersBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder addTaskParameters(
+    public Builder addSystemTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder builderForValue) {
-      if (taskParametersBuilder == null) {
-        ensureTaskParametersIsMutable();
-        taskParameters .add(index, builderForValue.build());
+      if (systemTaskParametersBuilder == null) {
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .add(index, builderForValue.build());
         onChanged();
       } else {
-        taskParametersBuilder .addMessage(index, builderForValue.build());
+        systemTaskParametersBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder addAllTaskParameters(
+    public Builder addAllSystemTaskParameters(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> values) {
-      if (taskParametersBuilder == null) {
-        ensureTaskParametersIsMutable();
+      if (systemTaskParametersBuilder == null) {
+        ensureSystemTaskParametersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, taskParameters );
+            values, systemTaskParameters );
         onChanged();
       } else {
-        taskParametersBuilder .addAllMessages(values);
+        systemTaskParametersBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder clearTaskParameters() {
-      if (taskParametersBuilder == null) {
-        taskParameters = java.util.Collections.emptyList();
+    public Builder clearSystemTaskParameters() {
+      if (systemTaskParametersBuilder == null) {
+        systemTaskParameters = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        taskParametersBuilder .clear();
+        systemTaskParametersBuilder .clear();
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public Builder removeTaskParameters(int index) {
-      if (taskParametersBuilder == null) {
-        ensureTaskParametersIsMutable();
-        taskParameters .remove(index);
+    public Builder removeSystemTaskParameters(int index) {
+      if (systemTaskParametersBuilder == null) {
+        ensureSystemTaskParametersIsMutable();
+        systemTaskParameters .remove(index);
         onChanged();
       } else {
-        taskParametersBuilder .remove(index);
+        systemTaskParametersBuilder .remove(index);
       }
       return this;
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder getTaskParametersBuilder(
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder getSystemTaskParametersBuilder(
         int index) {
-      return getTaskParametersFieldBuilder().getBuilder(index);
+      return getSystemTaskParametersFieldBuilder().getBuilder(index);
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getTaskParametersOrBuilder(
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getSystemTaskParametersOrBuilder(
         int index) {
-      if (taskParametersBuilder == null) {
-        return taskParameters .get(index);  } else {
-        return taskParametersBuilder .getMessageOrBuilder(index);
+      if (systemTaskParametersBuilder == null) {
+        return systemTaskParameters .get(index);  } else {
+        return systemTaskParametersBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
-         getTaskParametersOrBuilderList() {
-      if (taskParametersBuilder != null) {
-        return taskParametersBuilder .getMessageOrBuilderList();
+         getSystemTaskParametersOrBuilderList() {
+      if (systemTaskParametersBuilder != null) {
+        return systemTaskParametersBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(taskParameters );
+        return java.util.Collections.unmodifiableList(systemTaskParameters );
       }
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addTaskParametersBuilder() {
-      return getTaskParametersFieldBuilder().addBuilder(
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addSystemTaskParametersBuilder() {
+      return getSystemTaskParametersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.getDefaultInstance());
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addTaskParametersBuilder(
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder addSystemTaskParametersBuilder(
         int index) {
-      return getTaskParametersFieldBuilder().addBuilder(
+      return getSystemTaskParametersFieldBuilder().addBuilder(
           index, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.getDefaultInstance());
     }
     /**
-     * <pre>
-     * 预置任务参数
-     * </pre>
-     *
-     * <code>repeated .glory_api.SystemTaskParameter task_parameters = 8;</code>
+     * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder> 
-         getTaskParametersBuilderList() {
-      return getTaskParametersFieldBuilder().getBuilderList();
+         getSystemTaskParametersBuilderList() {
+      return getSystemTaskParametersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
-        getTaskParametersFieldBuilder() {
-      if (taskParametersBuilder == null) {
-        taskParametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getSystemTaskParametersFieldBuilder() {
+      if (systemTaskParametersBuilder == null) {
+        systemTaskParametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.SystemTaskParameter, com.zhijiejiaoyu.glory_api.task.SystemTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder>(
-                taskParameters ,
+                systemTaskParameters ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        taskParameters = null;
+        systemTaskParameters = null;
       }
-      return taskParametersBuilder ;
+      return systemTaskParametersBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

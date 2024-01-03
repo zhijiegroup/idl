@@ -423,8 +423,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.DeleteVersionLogResponse> deleteVersionLog($pb.ServerContext ctx, $46.DeleteVersionLogRequest request);
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
   $async.Future<$51.GetTaskConfigResponse> getTaskConfig($pb.ServerContext ctx, $51.GetTaskConfigRequest request);
+  $async.Future<$51.CreateSystemTaskResponse> createSystemTask($pb.ServerContext ctx, $51.CreateSystemTaskRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
+  $async.Future<$51.GetSystemTaskResponse> getSystemTask($pb.ServerContext ctx, $51.GetSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
+  $async.Future<$51.DeleteSystemTaskResponse> deleteSystemTask($pb.ServerContext ctx, $51.DeleteSystemTaskRequest request);
   $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ServerContext ctx, $52.CreateTeacherTaskTemplateRequest request);
   $async.Future<$52.UpdateTeacherTaskTemplateResponse> updateTeacherTaskTemplate($pb.ServerContext ctx, $52.UpdateTeacherTaskTemplateRequest request);
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ServerContext ctx, $52.ListTeacherTaskTemplateRequest request);
@@ -790,8 +793,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteVersionLog': return $46.DeleteVersionLogRequest();
       case 'GetLatestVersion': return $46.GetLatestVersionRequest();
       case 'GetTaskConfig': return $51.GetTaskConfigRequest();
+      case 'CreateSystemTask': return $51.CreateSystemTaskRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
+      case 'GetSystemTask': return $51.GetSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
+      case 'DeleteSystemTask': return $51.DeleteSystemTaskRequest();
       case 'CreateTeacherTaskTemplate': return $52.CreateTeacherTaskTemplateRequest();
       case 'UpdateTeacherTaskTemplate': return $52.UpdateTeacherTaskTemplateRequest();
       case 'ListTeacherTaskTemplate': return $52.ListTeacherTaskTemplateRequest();
@@ -1160,8 +1166,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteVersionLog': return this.deleteVersionLog(ctx, request as $46.DeleteVersionLogRequest);
       case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
       case 'GetTaskConfig': return this.getTaskConfig(ctx, request as $51.GetTaskConfigRequest);
+      case 'CreateSystemTask': return this.createSystemTask(ctx, request as $51.CreateSystemTaskRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
+      case 'GetSystemTask': return this.getSystemTask(ctx, request as $51.GetSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
+      case 'DeleteSystemTask': return this.deleteSystemTask(ctx, request as $51.DeleteSystemTaskRequest);
       case 'CreateTeacherTaskTemplate': return this.createTeacherTaskTemplate(ctx, request as $52.CreateTeacherTaskTemplateRequest);
       case 'UpdateTeacherTaskTemplate': return this.updateTeacherTaskTemplate(ctx, request as $52.UpdateTeacherTaskTemplateRequest);
       case 'ListTeacherTaskTemplate': return this.listTeacherTaskTemplate(ctx, request as $52.ListTeacherTaskTemplateRequest);

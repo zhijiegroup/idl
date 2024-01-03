@@ -1118,11 +1118,20 @@ class glory_apiApi {
   $async.Future<$51.GetTaskConfigResponse> getTaskConfig($pb.ClientContext? ctx, $51.GetTaskConfigRequest request) =>
     _client.invoke<$51.GetTaskConfigResponse>(ctx, 'glory_api', 'GetTaskConfig', request, $51.GetTaskConfigResponse())
   ;
+  $async.Future<$51.CreateSystemTaskResponse> createSystemTask($pb.ClientContext? ctx, $51.CreateSystemTaskRequest request) =>
+    _client.invoke<$51.CreateSystemTaskResponse>(ctx, 'glory_api', 'CreateSystemTask', request, $51.CreateSystemTaskResponse())
+  ;
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $51.ListSystemTaskRequest request) =>
     _client.invoke<$51.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $51.ListSystemTaskResponse())
   ;
+  $async.Future<$51.GetSystemTaskResponse> getSystemTask($pb.ClientContext? ctx, $51.GetSystemTaskRequest request) =>
+    _client.invoke<$51.GetSystemTaskResponse>(ctx, 'glory_api', 'GetSystemTask', request, $51.GetSystemTaskResponse())
+  ;
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $51.UpdateSystemTaskRequest request) =>
     _client.invoke<$51.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $51.UpdateSystemTaskResponse())
+  ;
+  $async.Future<$51.DeleteSystemTaskResponse> deleteSystemTask($pb.ClientContext? ctx, $51.DeleteSystemTaskRequest request) =>
+    _client.invoke<$51.DeleteSystemTaskResponse>(ctx, 'glory_api', 'DeleteSystemTask', request, $51.DeleteSystemTaskResponse())
   ;
   $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ClientContext? ctx, $52.CreateTeacherTaskTemplateRequest request) =>
     _client.invoke<$52.CreateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'CreateTeacherTaskTemplate', request, $52.CreateTeacherTaskTemplateResponse())

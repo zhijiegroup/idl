@@ -25,29 +25,24 @@ export interface TaskConfig {
 }
 
 export interface SystemTaskParameter {
+  task_parameter_id?: string;
   task_parameter_key?: string;
   task_parameter_name?: string;
-  task_parameter_value?: string;
+  task_parameter_operator?: string;
   task_parameter_type?: string;
+  task_parameter_value?: string;
+  children?: Array<SystemTaskParameter>;
+  created_at?: string;
 }
 
 export interface SystemTask {
-  /** 预置任务标识 */
-  task_key?: string;
-  /** 预置任务名称 */
-  task_name?: string;
-  /** 预置任务所属实训系统 */
-  task_business_system?: string;
-  /** 预置任务所属系统模块 */
-  task_business_module?: string;
-  /** 预置任务内容 */
-  task_content?: string;
-  /** 预置任务要求 */
-  task_requirements?: string;
-  /** 预置任务链接 */
-  task_link?: string;
-  /** 预置任务参数 */
-  task_parameters?: Array<SystemTaskParameter>;
+  system_task_id?: string;
+  system_task_key?: string;
+  system_task_name?: string;
+  system_task_business?: string;
+  system_task_content?: string;
+  system_task_link?: string;
+  system_task_parameters?: Array<SystemTaskParameter>;
 }
 
 export interface GetTaskConfigRequest {
@@ -70,11 +65,23 @@ export interface CreateSystemTaskResponse {
 
 export interface ListSystemTaskRequest {
   base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
 }
 
 export interface ListSystemTaskResponse {
   base_resp?: base.BaseResponse;
   system_tasks?: Array<SystemTask>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface GetSystemTaskRequest {
+  base_request?: base.BaseRequest;
+  system_task_id?: string;
+}
+
+export interface GetSystemTaskResponse {
+  base_resp?: base.BaseResponse;
+  system_task?: SystemTask;
 }
 
 export interface UpdateSystemTaskRequest {
@@ -83,5 +90,14 @@ export interface UpdateSystemTaskRequest {
 }
 
 export interface UpdateSystemTaskResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteSystemTaskRequest {
+  base_request?: base.BaseRequest;
+  system_task_id?: string;
+}
+
+export interface DeleteSystemTaskResponse {
   base_resp?: base.BaseResponse;
 }

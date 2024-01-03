@@ -65,6 +65,16 @@ public final class SystemTaskOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListSystemTaskResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetSystemTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetSystemTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetSystemTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetSystemTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_UpdateSystemTaskRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -74,6 +84,16 @@ public final class SystemTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_UpdateSystemTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteSystemTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteSystemTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DeleteSystemTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DeleteSystemTaskResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -91,43 +111,50 @@ public final class SystemTaskOuterClass {
       "n\030\007 \003(\0132\030.glory_api.TaskParameter\"s\n\nTas" +
       "kConfig\022\013\n\003key\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\013\n\003bi" +
       "z\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022,\n\nparameters\030\005" +
-      " \003(\0132\030.glory_api.TaskParameter\"\344\001\n\023Syste" +
-      "mTaskParameter\022\032\n\022task_parameter_key\030\001 \001" +
-      "(\t\022J\n\023task_parameter_name\030\002 \001(\tB-\332\273\030)@:l" +
-      "en($)>0;msg:\'\345\217\202\346\225\260\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022H" +
-      "\n\024task_parameter_value\030\003 \001(\tB*\332\273\030&@:len(" +
-      "$)>0;msg:\'\345\217\202\346\225\260\345\200\274\344\270\215\350\203\275\344\270\272\347\251\272\'\022\033\n\023task" +
-      "_parameter_type\030\004 \001(\t\"\325\003\n\nSystemTask\022\020\n\010" +
-      "task_key\030\001 \001(\t\022@\n\ttask_name\030\002 \001(\tB-\332\273\030)@" +
-      ":len($)>0;msg:\'\344\273\273\345\212\241\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'" +
-      "\022K\n\024task_business_system\030\003 \001(\tB-\332\273\030)@:le" +
-      "n($)>0;msg:\'\347\263\273\347\273\237\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022K\n" +
-      "\024task_business_module\030\004 \001(\tB-\332\273\030)@:len($" +
-      ")>0;msg:\'\346\250\241\345\235\227\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022C\n\014ta" +
-      "sk_content\030\005 \001(\tB-\332\273\030)@:len($)>0;msg:\'\344\273" +
-      "\273\345\212\241\345\206\205\345\256\271\344\270\215\350\203\275\344\270\272\347\251\272\'\022H\n\021task_requirem" +
-      "ents\030\006 \001(\tB-\332\273\030)@:len($)>0;msg:\'\344\273\273\345\212\241\350\246" +
-      "\201\346\261\202\344\270\215\350\203\275\344\270\272\347\251\272\'\022\021\n\ttask_link\030\007 \001(\t\0227\n\017" +
-      "task_parameters\030\010 \003(\0132\036.glory_api.System" +
-      "TaskParameter\"?\n\024GetTaskConfigRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\"d" +
-      "\n\025GetTaskConfigResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022$\n\005tasks\030\002 \003(\0132\025." +
-      "glory_api.TaskConfig\"n\n\027CreateSystemTask" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022*\n\013system_task\030\002 \001(\0132\025.glory_ap" +
-      "i.SystemTask\"A\n\030CreateSystemTaskResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "@\n\025ListSystemTaskRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\"l\n\026ListSystemT" +
-      "askResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022+\n\014system_tasks\030\002 \003(\0132\025.glory" +
-      "_api.SystemTask\"n\n\027UpdateSystemTaskReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022*\n\013system_task\030\002 \001(\0132\025.glory_api.Sys" +
-      "temTask\"A\n\030UpdateSystemTaskResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.taskP\001b\006proto3"
+      " \003(\0132\030.glory_api.TaskParameter\"\213\002\n\023Syste" +
+      "mTaskParameter\022\031\n\021task_parameter_id\030\001 \001(" +
+      "\003\022\032\n\022task_parameter_key\030\002 \001(\t\022\033\n\023task_pa" +
+      "rameter_name\030\003 \001(\t\022\037\n\027task_parameter_ope" +
+      "rator\030\004 \001(\t\022\033\n\023task_parameter_type\030\005 \001(\t" +
+      "\022\034\n\024task_parameter_value\030\006 \001(\t\0220\n\010childr" +
+      "en\030\007 \003(\0132\036.glory_api.SystemTaskParameter" +
+      "\022\022\n\ncreated_at\030\010 \001(\t\"\354\001\n\nSystemTask\022\026\n\016s" +
+      "ystem_task_id\030\001 \001(\003\022\027\n\017system_task_key\030\002" +
+      " \001(\t\022\030\n\020system_task_name\030\003 \001(\t\022\034\n\024system" +
+      "_task_business\030\004 \001(\t\022\033\n\023system_task_cont" +
+      "ent\030\005 \001(\t\022\030\n\020system_task_link\030\006 \001(\t\022>\n\026s" +
+      "ystem_task_parameters\030\007 \003(\0132\036.glory_api." +
+      "SystemTaskParameter\"?\n\024GetTaskConfigRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\"d\n\025GetTaskConfigResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022$\n\005tasks\030\002 " +
+      "\003(\0132\025.glory_api.TaskConfig\"n\n\027CreateSyst" +
+      "emTaskRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022*\n\013system_task\030\002 \001(\0132\025.gl" +
+      "ory_api.SystemTask\"A\n\030CreateSystemTaskRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"m\n\025ListSystemTaskRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagin" +
+      "ation\030d \001(\0132\027.base.PaginationRequest\"\232\001\n" +
+      "\026ListSystemTaskResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022+\n\014system_tasks\030\002" +
+      " \003(\0132\025.glory_api.SystemTask\022,\n\npaginatio" +
+      "n\030d \001(\0132\030.base.PaginationResponse\"W\n\024Get" +
+      "SystemTaskRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\026\n\016system_task_id\030\002 \001" +
+      "(\003\"j\n\025GetSystemTaskResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022*\n\013system_tas" +
+      "k\030\002 \001(\0132\025.glory_api.SystemTask\"n\n\027Update" +
+      "SystemTaskRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022*\n\013system_task\030\002 \001(\0132" +
+      "\025.glory_api.SystemTask\"A\n\030UpdateSystemTa" +
+      "skResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"Z\n\027DeleteSystemTaskRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n" +
+      "\016system_task_id\030\002 \001(\003\"A\n\030DeleteSystemTas" +
+      "kResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "ResponseB#\n\037com.zhijiejiaoyu.glory_api.t" +
+      "askP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -152,13 +179,13 @@ public final class SystemTaskOuterClass {
     internal_static_glory_api_SystemTaskParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SystemTaskParameter_descriptor,
-        new java.lang.String[] { "TaskParameterKey", "TaskParameterName", "TaskParameterValue", "TaskParameterType", });
+        new java.lang.String[] { "TaskParameterId", "TaskParameterKey", "TaskParameterName", "TaskParameterOperator", "TaskParameterType", "TaskParameterValue", "Children", "CreatedAt", });
     internal_static_glory_api_SystemTask_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_SystemTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SystemTask_descriptor,
-        new java.lang.String[] { "TaskKey", "TaskName", "TaskBusinessSystem", "TaskBusinessModule", "TaskContent", "TaskRequirements", "TaskLink", "TaskParameters", });
+        new java.lang.String[] { "SystemTaskId", "SystemTaskKey", "SystemTaskName", "SystemTaskBusiness", "SystemTaskContent", "SystemTaskLink", "SystemTaskParameters", });
     internal_static_glory_api_GetTaskConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_GetTaskConfigRequest_fieldAccessorTable = new
@@ -188,30 +215,49 @@ public final class SystemTaskOuterClass {
     internal_static_glory_api_ListSystemTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListSystemTaskRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", });
+        new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListSystemTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_ListSystemTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListSystemTaskResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "SystemTasks", });
-    internal_static_glory_api_UpdateSystemTaskRequest_descriptor =
+        new java.lang.String[] { "BaseResp", "SystemTasks", "Pagination", });
+    internal_static_glory_api_GetSystemTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_GetSystemTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetSystemTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "SystemTaskId", });
+    internal_static_glory_api_GetSystemTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_GetSystemTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetSystemTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "SystemTask", });
+    internal_static_glory_api_UpdateSystemTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_UpdateSystemTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateSystemTaskRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "SystemTask", });
     internal_static_glory_api_UpdateSystemTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_UpdateSystemTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateSystemTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.zhijiejiaoyu.api.Api.vd);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
+    internal_static_glory_api_DeleteSystemTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_DeleteSystemTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteSystemTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "SystemTaskId", });
+    internal_static_glory_api_DeleteSystemTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_DeleteSystemTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DeleteSystemTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }

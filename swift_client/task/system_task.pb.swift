@@ -69,13 +69,21 @@ struct GloryApi_SystemTaskParameter {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var taskParameterID: Int64 = 0
+
   var taskParameterKey: String = String()
 
   var taskParameterName: String = String()
 
-  var taskParameterValue: String = String()
+  var taskParameterOperator: String = String()
 
   var taskParameterType: String = String()
+
+  var taskParameterValue: String = String()
+
+  var children: [GloryApi_SystemTaskParameter] = []
+
+  var createdAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -87,29 +95,19 @@ struct GloryApi_SystemTask {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// 预置任务标识
-  var taskKey: String = String()
+  var systemTaskID: Int64 = 0
 
-  /// 预置任务名称
-  var taskName: String = String()
+  var systemTaskKey: String = String()
 
-  /// 预置任务所属实训系统
-  var taskBusinessSystem: String = String()
+  var systemTaskName: String = String()
 
-  /// 预置任务所属系统模块
-  var taskBusinessModule: String = String()
+  var systemTaskBusiness: String = String()
 
-  /// 预置任务内容
-  var taskContent: String = String()
+  var systemTaskContent: String = String()
 
-  /// 预置任务要求
-  var taskRequirements: String = String()
+  var systemTaskLink: String = String()
 
-  /// 预置任务链接
-  var taskLink: String = String()
-
-  /// 预置任务参数
-  var taskParameters: [GloryApi_SystemTaskParameter] = []
+  var systemTaskParameters: [GloryApi_SystemTaskParameter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -226,11 +224,21 @@ struct GloryApi_ListSystemTaskRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
 struct GloryApi_ListSystemTaskResponse {
@@ -249,11 +257,75 @@ struct GloryApi_ListSystemTaskResponse {
 
   var systemTasks: [GloryApi_SystemTask] = []
 
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+struct GloryApi_GetSystemTaskRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var systemTaskID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetSystemTaskResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var systemTask: GloryApi_SystemTask {
+    get {return _systemTask ?? GloryApi_SystemTask()}
+    set {_systemTask = newValue}
+  }
+  /// Returns true if `systemTask` has been explicitly set.
+  var hasSystemTask: Bool {return self._systemTask != nil}
+  /// Clears the value of `systemTask`. Subsequent reads from it will return its default value.
+  mutating func clearSystemTask() {self._systemTask = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _systemTask: GloryApi_SystemTask? = nil
 }
 
 struct GloryApi_UpdateSystemTaskRequest {
@@ -308,6 +380,50 @@ struct GloryApi_UpdateSystemTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_DeleteSystemTaskRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var systemTaskID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_DeleteSystemTaskResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_TaskParameter: @unchecked Sendable {}
 extension GloryApi_TaskConfig: @unchecked Sendable {}
@@ -319,8 +435,12 @@ extension GloryApi_CreateSystemTaskRequest: @unchecked Sendable {}
 extension GloryApi_CreateSystemTaskResponse: @unchecked Sendable {}
 extension GloryApi_ListSystemTaskRequest: @unchecked Sendable {}
 extension GloryApi_ListSystemTaskResponse: @unchecked Sendable {}
+extension GloryApi_GetSystemTaskRequest: @unchecked Sendable {}
+extension GloryApi_GetSystemTaskResponse: @unchecked Sendable {}
 extension GloryApi_UpdateSystemTaskRequest: @unchecked Sendable {}
 extension GloryApi_UpdateSystemTaskResponse: @unchecked Sendable {}
+extension GloryApi_DeleteSystemTaskRequest: @unchecked Sendable {}
+extension GloryApi_DeleteSystemTaskResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -454,10 +574,14 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SystemTaskParameter"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "task_parameter_key"),
-    2: .standard(proto: "task_parameter_name"),
-    3: .standard(proto: "task_parameter_value"),
-    4: .standard(proto: "task_parameter_type"),
+    1: .standard(proto: "task_parameter_id"),
+    2: .standard(proto: "task_parameter_key"),
+    3: .standard(proto: "task_parameter_name"),
+    4: .standard(proto: "task_parameter_operator"),
+    5: .standard(proto: "task_parameter_type"),
+    6: .standard(proto: "task_parameter_value"),
+    7: .same(proto: "children"),
+    8: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -466,36 +590,56 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.taskParameterKey) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.taskParameterName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskParameterID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.taskParameterKey) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.taskParameterName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterOperator) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.taskParameterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskParameterID, fieldNumber: 1)
+    }
     if !self.taskParameterKey.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterKey, fieldNumber: 1)
+      try visitor.visitSingularStringField(value: self.taskParameterKey, fieldNumber: 2)
     }
     if !self.taskParameterName.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterName, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.taskParameterName, fieldNumber: 3)
     }
-    if !self.taskParameterValue.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterValue, fieldNumber: 3)
+    if !self.taskParameterOperator.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterOperator, fieldNumber: 4)
     }
     if !self.taskParameterType.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 5)
+    }
+    if !self.taskParameterValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterValue, fieldNumber: 6)
+    }
+    if !self.children.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 7)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_SystemTaskParameter, rhs: GloryApi_SystemTaskParameter) -> Bool {
+    if lhs.taskParameterID != rhs.taskParameterID {return false}
     if lhs.taskParameterKey != rhs.taskParameterKey {return false}
     if lhs.taskParameterName != rhs.taskParameterName {return false}
-    if lhs.taskParameterValue != rhs.taskParameterValue {return false}
+    if lhs.taskParameterOperator != rhs.taskParameterOperator {return false}
     if lhs.taskParameterType != rhs.taskParameterType {return false}
+    if lhs.taskParameterValue != rhs.taskParameterValue {return false}
+    if lhs.children != rhs.children {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -504,14 +648,13 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
 extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SystemTask"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "task_key"),
-    2: .standard(proto: "task_name"),
-    3: .standard(proto: "task_business_system"),
-    4: .standard(proto: "task_business_module"),
-    5: .standard(proto: "task_content"),
-    6: .standard(proto: "task_requirements"),
-    7: .standard(proto: "task_link"),
-    8: .standard(proto: "task_parameters"),
+    1: .standard(proto: "system_task_id"),
+    2: .standard(proto: "system_task_key"),
+    3: .standard(proto: "system_task_name"),
+    4: .standard(proto: "system_task_business"),
+    5: .standard(proto: "system_task_content"),
+    6: .standard(proto: "system_task_link"),
+    7: .standard(proto: "system_task_parameters"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -520,56 +663,51 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.taskKey) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.taskName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.taskBusinessSystem) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.taskBusinessModule) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.taskContent) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.taskRequirements) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.taskLink) }()
-      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameters) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.systemTaskID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.systemTaskName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.systemTaskBusiness) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.systemTaskContent) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.systemTaskLink) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.systemTaskParameters) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.taskKey.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskKey, fieldNumber: 1)
+    if self.systemTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemTaskID, fieldNumber: 1)
     }
-    if !self.taskName.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskName, fieldNumber: 2)
+    if !self.systemTaskKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 2)
     }
-    if !self.taskBusinessSystem.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskBusinessSystem, fieldNumber: 3)
+    if !self.systemTaskName.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskName, fieldNumber: 3)
     }
-    if !self.taskBusinessModule.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskBusinessModule, fieldNumber: 4)
+    if !self.systemTaskBusiness.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskBusiness, fieldNumber: 4)
     }
-    if !self.taskContent.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskContent, fieldNumber: 5)
+    if !self.systemTaskContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskContent, fieldNumber: 5)
     }
-    if !self.taskRequirements.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskRequirements, fieldNumber: 6)
+    if !self.systemTaskLink.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskLink, fieldNumber: 6)
     }
-    if !self.taskLink.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskLink, fieldNumber: 7)
-    }
-    if !self.taskParameters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.taskParameters, fieldNumber: 8)
+    if !self.systemTaskParameters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.systemTaskParameters, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_SystemTask, rhs: GloryApi_SystemTask) -> Bool {
-    if lhs.taskKey != rhs.taskKey {return false}
-    if lhs.taskName != rhs.taskName {return false}
-    if lhs.taskBusinessSystem != rhs.taskBusinessSystem {return false}
-    if lhs.taskBusinessModule != rhs.taskBusinessModule {return false}
-    if lhs.taskContent != rhs.taskContent {return false}
-    if lhs.taskRequirements != rhs.taskRequirements {return false}
-    if lhs.taskLink != rhs.taskLink {return false}
-    if lhs.taskParameters != rhs.taskParameters {return false}
+    if lhs.systemTaskID != rhs.systemTaskID {return false}
+    if lhs.systemTaskKey != rhs.systemTaskKey {return false}
+    if lhs.systemTaskName != rhs.systemTaskName {return false}
+    if lhs.systemTaskBusiness != rhs.systemTaskBusiness {return false}
+    if lhs.systemTaskContent != rhs.systemTaskContent {return false}
+    if lhs.systemTaskLink != rhs.systemTaskLink {return false}
+    if lhs.systemTaskParameters != rhs.systemTaskParameters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -735,6 +873,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let protoMessageName: String = _protobuf_package + ".ListSystemTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -744,6 +883,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -757,11 +897,15 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListSystemTaskRequest, rhs: GloryApi_ListSystemTaskRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -772,6 +916,7 @@ extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "system_tasks"),
+    100: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -782,6 +927,7 @@ extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.systemTasks) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -798,12 +944,100 @@ extension GloryApi_ListSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.systemTasks.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.systemTasks, fieldNumber: 2)
     }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListSystemTaskResponse, rhs: GloryApi_ListSystemTaskResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.systemTasks != rhs.systemTasks {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSystemTaskRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "system_task_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.systemTaskID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.systemTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemTaskID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSystemTaskRequest, rhs: GloryApi_GetSystemTaskRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.systemTaskID != rhs.systemTaskID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSystemTaskResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "system_task"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._systemTask) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._systemTask {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSystemTaskResponse, rhs: GloryApi_GetSystemTaskResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._systemTask != rhs._systemTask {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -881,6 +1115,84 @@ extension GloryApi_UpdateSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   static func ==(lhs: GloryApi_UpdateSystemTaskResponse, rhs: GloryApi_UpdateSystemTaskResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteSystemTaskRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "system_task_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.systemTaskID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.systemTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemTaskID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteSystemTaskRequest, rhs: GloryApi_DeleteSystemTaskRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.systemTaskID != rhs.systemTaskID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DeleteSystemTaskResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DeleteSystemTaskResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DeleteSystemTaskResponse, rhs: GloryApi_DeleteSystemTaskResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
