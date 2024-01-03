@@ -1414,16 +1414,16 @@ service glory_api {
    rpc ListUserMajorAndClass(ListUserMajorAndClasRequest) returns (ListUserMajorAndClasResponse) {
     option (api.get) = '/api/live/list_major_and_class';
   }
-
   rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
     option (api.post) = '/api/live/aggregation_live_url';
   }
-
   rpc GetLiveBoardData(GetLiveBoardDataRequest) returns (GetLiveBoardDataResponse) {
     option (api.post) = '/api/live/get_board_data';
   }
-
   rpc GetLiveBoardComments(GetLiveBoardCommentsRequest) returns (GetLiveBoardCommentsResponse) {
     option (api.post) = '/api/live/get_board_live_comment';
+  }
+  rpc ListBoardLivingUser(ListLivingUserRequest) returns (ListLivingUserResponse) {
+    option (api.post) = '/api/live/list_board_living_user';
   }
 }
