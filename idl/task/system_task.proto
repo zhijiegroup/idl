@@ -6,6 +6,24 @@ option java_multiple_files = true;
 import "api.proto";
 import "base.proto";
 
+message TaskParameter {
+  string key = 1;
+  string name = 2;
+  string operator = 3;
+  string type = 4;
+  string def = 5;
+  repeated TaskParameter enums = 6;
+  repeated TaskParameter children = 7;
+}
+
+message TaskConfig {
+  string key = 1;
+  string name = 2;
+  string biz = 3;
+  string content = 4;
+  repeated TaskParameter parameters = 5;
+}
+
 message SystemTaskParameter {
   string task_parameter_key = 1;
   string task_parameter_name = 2[(api.vd)="@:len($)>0;msg:'参数名称不能为空'"];
@@ -22,6 +40,15 @@ message SystemTask {
   string task_requirements = 6[(api.vd) = "@:len($)>0;msg:'任务要求不能为空'"]; // 预置任务要求
   string task_link = 7; // 预置任务链接
   repeated SystemTaskParameter task_parameters = 8; // 预置任务参数
+}
+
+message GetTaskConfigRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetTaskConfigResponse {
+  base.BaseResponse base_resp = 1;
+  repeated TaskConfig tasks = 2;
 }
 
 message CreateSystemTaskRequest {
