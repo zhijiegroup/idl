@@ -1375,11 +1375,20 @@ service glory_api {
   rpc GetTaskConfig(GetTaskConfigRequest) returns (GetTaskConfigResponse) {
     option (api.get) = '/api/task/config';
   }
+  rpc CreateSystemTask(CreateSystemTaskRequest) returns (CreateSystemTaskResponse) {
+    option (api.post) = '/api/task/create_system_task';
+  }
   rpc ListSystemTask(ListSystemTaskRequest) returns (ListSystemTaskResponse) {
     option (api.get) = '/api/task/list_system_task';
   }
+  rpc GetSystemTask(GetSystemTaskRequest) returns (GetSystemTaskResponse) {
+    option (api.post) = '/api/task/get_system_task';
+  }
   rpc UpdateSystemTask(UpdateSystemTaskRequest) returns (UpdateSystemTaskResponse) {
     option (api.post) = '/api/task/update_system_task';
+  }
+  rpc DeleteSystemTask(DeleteSystemTaskRequest) returns (DeleteSystemTaskResponse) {
+    option (api.post) = '/api/task/delete_system_task';
   }
   // 教师任务模板
   rpc CreateTeacherTaskTemplate(CreateTeacherTaskTemplateRequest) returns (CreateTeacherTaskTemplateResponse) {

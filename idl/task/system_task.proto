@@ -25,21 +25,24 @@ message TaskConfig {
 }
 
 message SystemTaskParameter {
-  string task_parameter_key = 1;
-  string task_parameter_name = 2[(api.vd)="@:len($)>0;msg:'参数名称不能为空'"];
-  string task_parameter_value = 3[(api.vd)="@:len($)>0;msg:'参数值不能为空'"];
-  string task_parameter_type = 4;
+  int64  task_parameter_id = 1;
+  string task_parameter_key = 2;
+  string task_parameter_name = 3;
+  string task_parameter_operator = 4;
+  string task_parameter_type = 5;
+  string task_parameter_value = 6;
+  repeated SystemTaskParameter children = 7;
+  string created_at = 8;
 }
 
 message SystemTask {
-  string task_key = 1; // 预置任务标识
-  string task_name = 2[(api.vd) = "@:len($)>0;msg:'任务名称不能为空'"]; // 预置任务名称
-  string task_business_system = 3[(api.vd) = "@:len($)>0;msg:'系统名称不能为空'"]; // 预置任务所属实训系统
-  string task_business_module = 4[(api.vd) = "@:len($)>0;msg:'模块名称不能为空'"]; // 预置任务所属系统模块
-  string task_content = 5[(api.vd) = "@:len($)>0;msg:'任务内容不能为空'"]; // 预置任务内容
-  string task_requirements = 6[(api.vd) = "@:len($)>0;msg:'任务要求不能为空'"]; // 预置任务要求
-  string task_link = 7; // 预置任务链接
-  repeated SystemTaskParameter task_parameters = 8; // 预置任务参数
+  int64 system_task_id = 1;
+  string system_task_key = 2;
+  string system_task_name = 3;
+  string system_task_business = 4;
+  string system_task_content = 5;
+  string system_task_link = 6;
+  repeated SystemTaskParameter system_task_parameters = 7;
 }
 
 message GetTaskConfigRequest {
@@ -62,11 +65,23 @@ message CreateSystemTaskResponse {
 
 message ListSystemTaskRequest {
   base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
 }
 
 message ListSystemTaskResponse {
   base.BaseResponse base_resp = 1;
   repeated SystemTask system_tasks = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message GetSystemTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 system_task_id = 2;
+}
+
+message GetSystemTaskResponse {
+  base.BaseResponse base_resp = 1;
+  SystemTask system_task = 2;
 }
 
 message UpdateSystemTaskRequest {
@@ -75,5 +90,14 @@ message UpdateSystemTaskRequest {
 }
 
 message UpdateSystemTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message DeleteSystemTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 system_task_id = 2;
+}
+
+message DeleteSystemTaskResponse {
   base.BaseResponse base_resp = 1;
 }
