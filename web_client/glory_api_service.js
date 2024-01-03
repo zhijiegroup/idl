@@ -2899,6 +2899,14 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ListBoardLivingUser(request) {
+    const uri = `${this.uriPrefix}/api/live/list_board_living_user`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

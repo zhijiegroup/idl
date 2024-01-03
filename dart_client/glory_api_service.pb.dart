@@ -1160,5 +1160,8 @@ class glory_apiApi {
   $async.Future<$54.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ClientContext? ctx, $54.GetLiveBoardCommentsRequest request) =>
     _client.invoke<$54.GetLiveBoardCommentsResponse>(ctx, 'glory_api', 'GetLiveBoardComments', request, $54.GetLiveBoardCommentsResponse())
   ;
+  $async.Future<$54.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $54.ListLivingUserRequest request) =>
+    _client.invoke<$54.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $54.ListLivingUserResponse())
+  ;
 }
 

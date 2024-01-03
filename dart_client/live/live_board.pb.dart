@@ -836,6 +836,232 @@ class GetLiveBoardCommentsResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get comments => $_getList(1);
 }
 
+class ListLivingUserRequest extends $pb.GeneratedMessage {
+  factory ListLivingUserRequest({
+    $0.BaseRequest? baseRequest,
+    $core.Iterable<$fixnum.Int64>? clasIds,
+    $core.String? username,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (clasIds != null) {
+      $result.clasIds.addAll(clasIds);
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    return $result;
+  }
+  ListLivingUserRequest._() : super();
+  factory ListLivingUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListLivingUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLivingUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'clasIds', $pb.PbFieldType.K6)
+    ..aOS(3, _omitFieldNames ? '' : 'username')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListLivingUserRequest clone() => ListLivingUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListLivingUserRequest copyWith(void Function(ListLivingUserRequest) updates) => super.copyWith((message) => updates(message as ListLivingUserRequest)) as ListLivingUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLivingUserRequest create() => ListLivingUserRequest._();
+  ListLivingUserRequest createEmptyInstance() => create();
+  static $pb.PbList<ListLivingUserRequest> createRepeated() => $pb.PbList<ListLivingUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListLivingUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLivingUserRequest>(create);
+  static ListLivingUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get clasIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get username => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set username($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUsername() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUsername() => clearField(3);
+}
+
+class ListLivingUserResponse extends $pb.GeneratedMessage {
+  factory ListLivingUserResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<LivingUser>? livingUserList,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (livingUserList != null) {
+      $result.livingUserList.addAll(livingUserList);
+    }
+    return $result;
+  }
+  ListLivingUserResponse._() : super();
+  factory ListLivingUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListLivingUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLivingUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<LivingUser>(2, _omitFieldNames ? '' : 'livingUserList', $pb.PbFieldType.PM, subBuilder: LivingUser.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListLivingUserResponse clone() => ListLivingUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListLivingUserResponse copyWith(void Function(ListLivingUserResponse) updates) => super.copyWith((message) => updates(message as ListLivingUserResponse)) as ListLivingUserResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLivingUserResponse create() => ListLivingUserResponse._();
+  ListLivingUserResponse createEmptyInstance() => create();
+  static $pb.PbList<ListLivingUserResponse> createRepeated() => $pb.PbList<ListLivingUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListLivingUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLivingUserResponse>(create);
+  static ListLivingUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<LivingUser> get livingUserList => $_getList(1);
+}
+
+class LivingUser extends $pb.GeneratedMessage {
+  factory LivingUser({
+    $core.String? username,
+    $core.String? avatar,
+    $core.String? roomName,
+    $core.String? playUrl,
+  }) {
+    final $result = create();
+    if (username != null) {
+      $result.username = username;
+    }
+    if (avatar != null) {
+      $result.avatar = avatar;
+    }
+    if (roomName != null) {
+      $result.roomName = roomName;
+    }
+    if (playUrl != null) {
+      $result.playUrl = playUrl;
+    }
+    return $result;
+  }
+  LivingUser._() : super();
+  factory LivingUser.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LivingUser.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LivingUser', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'username')
+    ..aOS(2, _omitFieldNames ? '' : 'avatar')
+    ..aOS(3, _omitFieldNames ? '' : 'roomName')
+    ..aOS(4, _omitFieldNames ? '' : 'playUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LivingUser clone() => LivingUser()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LivingUser copyWith(void Function(LivingUser) updates) => super.copyWith((message) => updates(message as LivingUser)) as LivingUser;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LivingUser create() => LivingUser._();
+  LivingUser createEmptyInstance() => create();
+  static $pb.PbList<LivingUser> createRepeated() => $pb.PbList<LivingUser>();
+  @$core.pragma('dart2js:noInline')
+  static LivingUser getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LivingUser>(create);
+  static LivingUser? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get username => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set username($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUsername() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUsername() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get avatar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set avatar($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAvatar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAvatar() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRoomName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get playUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set playUrl($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPlayUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlayUrl() => clearField(4);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

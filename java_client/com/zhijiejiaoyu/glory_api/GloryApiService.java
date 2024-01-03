@@ -56,7 +56,7 @@ public final class GloryApiService {
       "o\032\032traffic/live_traffic.proto\032\017role/role" +
       ".proto\032\026task/system_task.proto\032 task/tea" +
       "cher_task_template.proto\032\037notification/n" +
-      "otification.proto2\223\344\002\n\tglory_api\022s\n\rCrea" +
+      "otification.proto2\226\345\002\n\tglory_api\022s\n\rCrea" +
       "teExample\022\037.glory_api.CreateExampleReque" +
       "st\032 .glory_api.CreateExampleResponse\"\037\322\301" +
       "\030\033/api/example/create_example\022g\n\nGetExam" +
@@ -1196,8 +1196,11 @@ public final class GloryApiService {
       "dComments\022&.glory_api.GetLiveBoardCommen" +
       "tsRequest\032\'.glory_api.GetLiveBoardCommen" +
       "tsResponse\"$\322\301\030 /api/live/get_board_live" +
-      "_commentB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
-      "b\006proto3"
+      "_comment\022\200\001\n\023ListBoardLivingUser\022 .glory" +
+      "_api.ListLivingUserRequest\032!.glory_api.L" +
+      "istLivingUserResponse\"$\322\301\030 /api/live/lis" +
+      "t_board_living_userB\036\n\032com.zhijiejiaoyu." +
+      "glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

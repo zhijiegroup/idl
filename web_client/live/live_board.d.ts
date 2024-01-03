@@ -70,3 +70,21 @@ export interface GetLiveBoardCommentsResponse {
   base_resp?: base.BaseResponse;
   comments?: Array<string>;
 }
+
+export interface ListLivingUserRequest {
+  base_request?: base.BaseRequest;
+  clas_ids?: Array<string>;
+  username?: string;
+}
+
+export interface ListLivingUserResponse {
+  base_resp?: base.BaseResponse;
+  living_user_list?: Array<LivingUser>;
+}
+
+export interface LivingUser {
+  username?: string;
+  avatar?: string;
+  room_name?: string;
+  play_url?: string;
+}

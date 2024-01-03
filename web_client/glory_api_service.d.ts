@@ -1628,6 +1628,10 @@ CreateLivePlanProduct create live plan product */
   GetLiveBoardComments(
     request: live_board.GetLiveBoardCommentsRequest
   ): Promise<live_board.GetLiveBoardCommentsResponse>;
+
+  ListBoardLivingUser(
+    request: live_board.ListLivingUserRequest
+  ): Promise<live_board.ListLivingUserResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
