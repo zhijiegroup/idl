@@ -187,3 +187,51 @@ final $typed_data.Uint8List getLiveBoardCommentsResponseDescriptor = $convert.ba
     'ChxHZXRMaXZlQm9hcmRDb21tZW50c1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
     'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIaCghjb21tZW50cxgGIAMoCVIIY29tbWVudHM=');
 
+@$core.Deprecated('Use listLivingUserRequestDescriptor instead')
+const ListLivingUserRequest$json = {
+  '1': 'ListLivingUserRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'clas_ids', '3': 2, '4': 3, '5': 3, '10': 'clasIds'},
+    {'1': 'username', '3': 3, '4': 1, '5': 9, '10': 'username'},
+  ],
+};
+
+/// Descriptor for `ListLivingUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLivingUserRequestDescriptor = $convert.base64Decode(
+    'ChVMaXN0TGl2aW5nVXNlclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGQoIY2xhc19pZHMYAiADKANSB2NsYXNJZHMSGgoIdXNl'
+    'cm5hbWUYAyABKAlSCHVzZXJuYW1l');
+
+@$core.Deprecated('Use listLivingUserResponseDescriptor instead')
+const ListLivingUserResponse$json = {
+  '1': 'ListLivingUserResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'living_user_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.LivingUser', '10': 'livingUserList'},
+  ],
+};
+
+/// Descriptor for `ListLivingUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLivingUserResponseDescriptor = $convert.base64Decode(
+    'ChZMaXN0TGl2aW5nVXNlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBI/ChBsaXZpbmdfdXNlcl9saXN0GAIgAygLMhUuZ2xvcnlfYXBp'
+    'LkxpdmluZ1VzZXJSDmxpdmluZ1VzZXJMaXN0');
+
+@$core.Deprecated('Use livingUserDescriptor instead')
+const LivingUser$json = {
+  '1': 'LivingUser',
+  '2': [
+    {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
+    {'1': 'avatar', '3': 2, '4': 1, '5': 9, '10': 'avatar'},
+    {'1': 'room_name', '3': 3, '4': 1, '5': 9, '10': 'roomName'},
+    {'1': 'play_url', '3': 4, '4': 1, '5': 9, '10': 'playUrl'},
+  ],
+};
+
+/// Descriptor for `LivingUser`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List livingUserDescriptor = $convert.base64Decode(
+    'CgpMaXZpbmdVc2VyEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIWCgZhdmF0YXIYAiABKA'
+    'lSBmF2YXRhchIbCglyb29tX25hbWUYAyABKAlSCHJvb21OYW1lEhkKCHBsYXlfdXJsGAQgASgJ'
+    'UgdwbGF5VXJs');
+

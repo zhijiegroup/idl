@@ -1372,11 +1372,23 @@ service glory_api {
   }
 
   // 系统预置任务管理
+  rpc GetTaskConfig(GetTaskConfigRequest) returns (GetTaskConfigResponse) {
+    option (api.get) = '/api/task/config';
+  }
+  rpc CreateSystemTask(CreateSystemTaskRequest) returns (CreateSystemTaskResponse) {
+    option (api.post) = '/api/task/create_system_task';
+  }
   rpc ListSystemTask(ListSystemTaskRequest) returns (ListSystemTaskResponse) {
     option (api.get) = '/api/task/list_system_task';
   }
+  rpc GetSystemTask(GetSystemTaskRequest) returns (GetSystemTaskResponse) {
+    option (api.post) = '/api/task/get_system_task';
+  }
   rpc UpdateSystemTask(UpdateSystemTaskRequest) returns (UpdateSystemTaskResponse) {
     option (api.post) = '/api/task/update_system_task';
+  }
+  rpc DeleteSystemTask(DeleteSystemTaskRequest) returns (DeleteSystemTaskResponse) {
+    option (api.post) = '/api/task/delete_system_task';
   }
   // 教师任务模板
   rpc CreateTeacherTaskTemplate(CreateTeacherTaskTemplateRequest) returns (CreateTeacherTaskTemplateResponse) {
@@ -1414,16 +1426,16 @@ service glory_api {
    rpc ListUserMajorAndClass(ListUserMajorAndClasRequest) returns (ListUserMajorAndClasResponse) {
     option (api.get) = '/api/live/list_major_and_class';
   }
-
   rpc GetAggregationLiveUrl(GetAggregationLiveUrlRequest) returns (GetAggregationLiveUrlResponse) {
     option (api.post) = '/api/live/aggregation_live_url';
   }
-
   rpc GetLiveBoardData(GetLiveBoardDataRequest) returns (GetLiveBoardDataResponse) {
     option (api.post) = '/api/live/get_board_data';
   }
-
   rpc GetLiveBoardComments(GetLiveBoardCommentsRequest) returns (GetLiveBoardCommentsResponse) {
     option (api.post) = '/api/live/get_board_live_comment';
+  }
+  rpc ListBoardLivingUser(ListLivingUserRequest) returns (ListLivingUserResponse) {
+    option (api.post) = '/api/live/list_board_living_user';
   }
 }

@@ -2786,14 +2786,44 @@ export class glory_api {
     );
   }
 
+  GetTaskConfig(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/config${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  CreateSystemTask(request) {
+    const uri = `${this.uriPrefix}/api/task/create_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListSystemTask(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/task/list_system_task${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetSystemTask(request) {
+    const uri = `${this.uriPrefix}/api/task/get_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UpdateSystemTask(request) {
     const uri = `${this.uriPrefix}/api/task/update_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteSystemTask(request) {
+    const uri = `${this.uriPrefix}/api/task/delete_system_task`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
@@ -2894,6 +2924,14 @@ export class glory_api {
 
   GetLiveBoardComments(request) {
     const uri = `${this.uriPrefix}/api/live/get_board_live_comment`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListBoardLivingUser(request) {
+    const uri = `${this.uriPrefix}/api/live/list_board_living_user`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

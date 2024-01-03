@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.task;
 
-public interface ListSystemTaskRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ListSystemTaskRequest)
+public interface GetTaskConfigRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.GetTaskConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -21,19 +21,4 @@ public interface ListSystemTaskRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
-
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return Whether the pagination field is set.
-   */
-  boolean hasPagination();
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   * @return The pagination.
-   */
-  com.zhijiejiaoyu.base.PaginationRequest getPagination();
-  /**
-   * <code>.base.PaginationRequest pagination = 100;</code>
-   */
-  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
 }

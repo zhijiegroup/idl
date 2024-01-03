@@ -8,50 +8,104 @@ public interface SystemTaskParameterOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string task_parameter_key = 1;</code>
+   * <code>int64 task_parameter_id = 1;</code>
+   * @return The taskParameterId.
+   */
+  long getTaskParameterId();
+
+  /**
+   * <code>string task_parameter_key = 2;</code>
    * @return The taskParameterKey.
    */
   java.lang.String getTaskParameterKey();
   /**
-   * <code>string task_parameter_key = 1;</code>
+   * <code>string task_parameter_key = 2;</code>
    * @return The bytes for taskParameterKey.
    */
   com.google.protobuf.ByteString
       getTaskParameterKeyBytes();
 
   /**
-   * <code>string task_parameter_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The taskParameterName.
    */
   java.lang.String getTaskParameterName();
   /**
-   * <code>string task_parameter_name = 2 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The bytes for taskParameterName.
    */
   com.google.protobuf.ByteString
       getTaskParameterNameBytes();
 
   /**
-   * <code>string task_parameter_value = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The taskParameterOperator.
+   */
+  java.lang.String getTaskParameterOperator();
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The bytes for taskParameterOperator.
+   */
+  com.google.protobuf.ByteString
+      getTaskParameterOperatorBytes();
+
+  /**
+   * <code>string task_parameter_type = 5;</code>
+   * @return The taskParameterType.
+   */
+  java.lang.String getTaskParameterType();
+  /**
+   * <code>string task_parameter_type = 5;</code>
+   * @return The bytes for taskParameterType.
+   */
+  com.google.protobuf.ByteString
+      getTaskParameterTypeBytes();
+
+  /**
+   * <code>string task_parameter_value = 6;</code>
    * @return The taskParameterValue.
    */
   java.lang.String getTaskParameterValue();
   /**
-   * <code>string task_parameter_value = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_value = 6;</code>
    * @return The bytes for taskParameterValue.
    */
   com.google.protobuf.ByteString
       getTaskParameterValueBytes();
 
   /**
-   * <code>string task_parameter_type = 4;</code>
-   * @return The taskParameterType.
+   * <code>repeated .glory_api.SystemTaskParameter children = 7;</code>
    */
-  java.lang.String getTaskParameterType();
+  java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> 
+      getChildrenList();
   /**
-   * <code>string task_parameter_type = 4;</code>
-   * @return The bytes for taskParameterType.
+   * <code>repeated .glory_api.SystemTaskParameter children = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getChildren(int index);
+  /**
+   * <code>repeated .glory_api.SystemTaskParameter children = 7;</code>
+   */
+  int getChildrenCount();
+  /**
+   * <code>repeated .glory_api.SystemTaskParameter children = 7;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
+      getChildrenOrBuilderList();
+  /**
+   * <code>repeated .glory_api.SystemTaskParameter children = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getChildrenOrBuilder(
+      int index);
+
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
-      getTaskParameterTypeBytes();
+      getCreatedAtBytes();
 }

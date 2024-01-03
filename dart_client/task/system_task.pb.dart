@@ -11,29 +11,268 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
 
-class SystemTaskParameter extends $pb.GeneratedMessage {
-  factory SystemTaskParameter({
-    $core.String? taskParameterKey,
-    $core.String? taskParameterName,
-    $core.String? taskParameterValue,
-    $core.String? taskParameterType,
+class TaskParameter extends $pb.GeneratedMessage {
+  factory TaskParameter({
+    $core.String? key,
+    $core.String? name,
+    $core.String? operator,
+    $core.String? type,
+    $core.String? def,
+    $core.Iterable<TaskParameter>? enums,
+    $core.Iterable<TaskParameter>? children,
   }) {
     final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (operator != null) {
+      $result.operator = operator;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (def != null) {
+      $result.def = def;
+    }
+    if (enums != null) {
+      $result.enums.addAll(enums);
+    }
+    if (children != null) {
+      $result.children.addAll(children);
+    }
+    return $result;
+  }
+  TaskParameter._() : super();
+  factory TaskParameter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TaskParameter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaskParameter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'operator')
+    ..aOS(4, _omitFieldNames ? '' : 'type')
+    ..aOS(5, _omitFieldNames ? '' : 'def')
+    ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'enums', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..pc<TaskParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TaskParameter clone() => TaskParameter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TaskParameter copyWith(void Function(TaskParameter) updates) => super.copyWith((message) => updates(message as TaskParameter)) as TaskParameter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TaskParameter create() => TaskParameter._();
+  TaskParameter createEmptyInstance() => create();
+  static $pb.PbList<TaskParameter> createRepeated() => $pb.PbList<TaskParameter>();
+  @$core.pragma('dart2js:noInline')
+  static TaskParameter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TaskParameter>(create);
+  static TaskParameter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operator => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operator($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOperator() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperator() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get type => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set type($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get def => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set def($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDef() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDef() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<TaskParameter> get enums => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<TaskParameter> get children => $_getList(6);
+}
+
+class TaskConfig extends $pb.GeneratedMessage {
+  factory TaskConfig({
+    $core.String? key,
+    $core.String? name,
+    $core.String? biz,
+    $core.String? content,
+    $core.Iterable<TaskParameter>? parameters,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (biz != null) {
+      $result.biz = biz;
+    }
+    if (content != null) {
+      $result.content = content;
+    }
+    if (parameters != null) {
+      $result.parameters.addAll(parameters);
+    }
+    return $result;
+  }
+  TaskConfig._() : super();
+  factory TaskConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TaskConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaskConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'biz')
+    ..aOS(4, _omitFieldNames ? '' : 'content')
+    ..pc<TaskParameter>(5, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TaskConfig clone() => TaskConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TaskConfig copyWith(void Function(TaskConfig) updates) => super.copyWith((message) => updates(message as TaskConfig)) as TaskConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TaskConfig create() => TaskConfig._();
+  TaskConfig createEmptyInstance() => create();
+  static $pb.PbList<TaskConfig> createRepeated() => $pb.PbList<TaskConfig>();
+  @$core.pragma('dart2js:noInline')
+  static TaskConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TaskConfig>(create);
+  static TaskConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get biz => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set biz($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBiz() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBiz() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get content => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set content($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasContent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContent() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<TaskParameter> get parameters => $_getList(4);
+}
+
+class SystemTaskParameter extends $pb.GeneratedMessage {
+  factory SystemTaskParameter({
+    $fixnum.Int64? taskParameterId,
+    $core.String? taskParameterKey,
+    $core.String? taskParameterName,
+    $core.String? taskParameterOperator,
+    $core.String? taskParameterType,
+    $core.String? taskParameterValue,
+    $core.Iterable<SystemTaskParameter>? children,
+    $core.String? createdAt,
+  }) {
+    final $result = create();
+    if (taskParameterId != null) {
+      $result.taskParameterId = taskParameterId;
+    }
     if (taskParameterKey != null) {
       $result.taskParameterKey = taskParameterKey;
     }
     if (taskParameterName != null) {
       $result.taskParameterName = taskParameterName;
     }
-    if (taskParameterValue != null) {
-      $result.taskParameterValue = taskParameterValue;
+    if (taskParameterOperator != null) {
+      $result.taskParameterOperator = taskParameterOperator;
     }
     if (taskParameterType != null) {
       $result.taskParameterType = taskParameterType;
+    }
+    if (taskParameterValue != null) {
+      $result.taskParameterValue = taskParameterValue;
+    }
+    if (children != null) {
+      $result.children.addAll(children);
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
     }
     return $result;
   }
@@ -42,10 +281,14 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
   factory SystemTaskParameter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemTaskParameter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'taskParameterKey')
-    ..aOS(2, _omitFieldNames ? '' : 'taskParameterName')
-    ..aOS(3, _omitFieldNames ? '' : 'taskParameterValue')
-    ..aOS(4, _omitFieldNames ? '' : 'taskParameterType')
+    ..aInt64(1, _omitFieldNames ? '' : 'taskParameterId')
+    ..aOS(2, _omitFieldNames ? '' : 'taskParameterKey')
+    ..aOS(3, _omitFieldNames ? '' : 'taskParameterName')
+    ..aOS(4, _omitFieldNames ? '' : 'taskParameterOperator')
+    ..aOS(5, _omitFieldNames ? '' : 'taskParameterType')
+    ..aOS(6, _omitFieldNames ? '' : 'taskParameterValue')
+    ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -71,77 +314,103 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
   static SystemTaskParameter? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get taskParameterKey => $_getSZ(0);
+  $fixnum.Int64 get taskParameterId => $_getI64(0);
   @$pb.TagNumber(1)
-  set taskParameterKey($core.String v) { $_setString(0, v); }
+  set taskParameterId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTaskParameterKey() => $_has(0);
+  $core.bool hasTaskParameterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTaskParameterKey() => clearField(1);
+  void clearTaskParameterId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get taskParameterName => $_getSZ(1);
+  $core.String get taskParameterKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set taskParameterName($core.String v) { $_setString(1, v); }
+  set taskParameterKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTaskParameterName() => $_has(1);
+  $core.bool hasTaskParameterKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTaskParameterName() => clearField(2);
+  void clearTaskParameterKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get taskParameterValue => $_getSZ(2);
+  $core.String get taskParameterName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set taskParameterValue($core.String v) { $_setString(2, v); }
+  set taskParameterName($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTaskParameterValue() => $_has(2);
+  $core.bool hasTaskParameterName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTaskParameterValue() => clearField(3);
+  void clearTaskParameterName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get taskParameterType => $_getSZ(3);
+  $core.String get taskParameterOperator => $_getSZ(3);
   @$pb.TagNumber(4)
-  set taskParameterType($core.String v) { $_setString(3, v); }
+  set taskParameterOperator($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasTaskParameterType() => $_has(3);
+  $core.bool hasTaskParameterOperator() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTaskParameterType() => clearField(4);
+  void clearTaskParameterOperator() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get taskParameterType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set taskParameterType($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTaskParameterType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTaskParameterType() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get taskParameterValue => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set taskParameterValue($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTaskParameterValue() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTaskParameterValue() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<SystemTaskParameter> get children => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get createdAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdAt($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => clearField(8);
 }
 
 class SystemTask extends $pb.GeneratedMessage {
   factory SystemTask({
-    $core.String? taskKey,
-    $core.String? taskName,
-    $core.String? taskBusinessSystem,
-    $core.String? taskBusinessModule,
-    $core.String? taskContent,
-    $core.String? taskRequirements,
-    $core.String? taskLink,
-    $core.Iterable<SystemTaskParameter>? taskParameters,
+    $fixnum.Int64? systemTaskId,
+    $core.String? systemTaskKey,
+    $core.String? systemTaskName,
+    $core.String? systemTaskBusiness,
+    $core.String? systemTaskContent,
+    $core.String? systemTaskLink,
+    $core.Iterable<SystemTaskParameter>? systemTaskParameters,
   }) {
     final $result = create();
-    if (taskKey != null) {
-      $result.taskKey = taskKey;
+    if (systemTaskId != null) {
+      $result.systemTaskId = systemTaskId;
     }
-    if (taskName != null) {
-      $result.taskName = taskName;
+    if (systemTaskKey != null) {
+      $result.systemTaskKey = systemTaskKey;
     }
-    if (taskBusinessSystem != null) {
-      $result.taskBusinessSystem = taskBusinessSystem;
+    if (systemTaskName != null) {
+      $result.systemTaskName = systemTaskName;
     }
-    if (taskBusinessModule != null) {
-      $result.taskBusinessModule = taskBusinessModule;
+    if (systemTaskBusiness != null) {
+      $result.systemTaskBusiness = systemTaskBusiness;
     }
-    if (taskContent != null) {
-      $result.taskContent = taskContent;
+    if (systemTaskContent != null) {
+      $result.systemTaskContent = systemTaskContent;
     }
-    if (taskRequirements != null) {
-      $result.taskRequirements = taskRequirements;
+    if (systemTaskLink != null) {
+      $result.systemTaskLink = systemTaskLink;
     }
-    if (taskLink != null) {
-      $result.taskLink = taskLink;
-    }
-    if (taskParameters != null) {
-      $result.taskParameters.addAll(taskParameters);
+    if (systemTaskParameters != null) {
+      $result.systemTaskParameters.addAll(systemTaskParameters);
     }
     return $result;
   }
@@ -150,14 +419,13 @@ class SystemTask extends $pb.GeneratedMessage {
   factory SystemTask.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemTask', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'taskKey')
-    ..aOS(2, _omitFieldNames ? '' : 'taskName')
-    ..aOS(3, _omitFieldNames ? '' : 'taskBusinessSystem')
-    ..aOS(4, _omitFieldNames ? '' : 'taskBusinessModule')
-    ..aOS(5, _omitFieldNames ? '' : 'taskContent')
-    ..aOS(6, _omitFieldNames ? '' : 'taskRequirements')
-    ..aOS(7, _omitFieldNames ? '' : 'taskLink')
-    ..pc<SystemTaskParameter>(8, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
+    ..aInt64(1, _omitFieldNames ? '' : 'systemTaskId')
+    ..aOS(2, _omitFieldNames ? '' : 'systemTaskKey')
+    ..aOS(3, _omitFieldNames ? '' : 'systemTaskName')
+    ..aOS(4, _omitFieldNames ? '' : 'systemTaskBusiness')
+    ..aOS(5, _omitFieldNames ? '' : 'systemTaskContent')
+    ..aOS(6, _omitFieldNames ? '' : 'systemTaskLink')
+    ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'systemTaskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -183,70 +451,173 @@ class SystemTask extends $pb.GeneratedMessage {
   static SystemTask? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get taskKey => $_getSZ(0);
+  $fixnum.Int64 get systemTaskId => $_getI64(0);
   @$pb.TagNumber(1)
-  set taskKey($core.String v) { $_setString(0, v); }
+  set systemTaskId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTaskKey() => $_has(0);
+  $core.bool hasSystemTaskId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTaskKey() => clearField(1);
+  void clearSystemTaskId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get taskName => $_getSZ(1);
+  $core.String get systemTaskKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set taskName($core.String v) { $_setString(1, v); }
+  set systemTaskKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTaskName() => $_has(1);
+  $core.bool hasSystemTaskKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTaskName() => clearField(2);
+  void clearSystemTaskKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get taskBusinessSystem => $_getSZ(2);
+  $core.String get systemTaskName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set taskBusinessSystem($core.String v) { $_setString(2, v); }
+  set systemTaskName($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTaskBusinessSystem() => $_has(2);
+  $core.bool hasSystemTaskName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTaskBusinessSystem() => clearField(3);
+  void clearSystemTaskName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get taskBusinessModule => $_getSZ(3);
+  $core.String get systemTaskBusiness => $_getSZ(3);
   @$pb.TagNumber(4)
-  set taskBusinessModule($core.String v) { $_setString(3, v); }
+  set systemTaskBusiness($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasTaskBusinessModule() => $_has(3);
+  $core.bool hasSystemTaskBusiness() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTaskBusinessModule() => clearField(4);
+  void clearSystemTaskBusiness() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get taskContent => $_getSZ(4);
+  $core.String get systemTaskContent => $_getSZ(4);
   @$pb.TagNumber(5)
-  set taskContent($core.String v) { $_setString(4, v); }
+  set systemTaskContent($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTaskContent() => $_has(4);
+  $core.bool hasSystemTaskContent() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTaskContent() => clearField(5);
+  void clearSystemTaskContent() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get taskRequirements => $_getSZ(5);
+  $core.String get systemTaskLink => $_getSZ(5);
   @$pb.TagNumber(6)
-  set taskRequirements($core.String v) { $_setString(5, v); }
+  set systemTaskLink($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasTaskRequirements() => $_has(5);
+  $core.bool hasSystemTaskLink() => $_has(5);
   @$pb.TagNumber(6)
-  void clearTaskRequirements() => clearField(6);
+  void clearSystemTaskLink() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get taskLink => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set taskLink($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasTaskLink() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearTaskLink() => clearField(7);
+  $core.List<SystemTaskParameter> get systemTaskParameters => $_getList(6);
+}
 
-  @$pb.TagNumber(8)
-  $core.List<SystemTaskParameter> get taskParameters => $_getList(7);
+class GetTaskConfigRequest extends $pb.GeneratedMessage {
+  factory GetTaskConfigRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetTaskConfigRequest._() : super();
+  factory GetTaskConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTaskConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaskConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTaskConfigRequest clone() => GetTaskConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTaskConfigRequest copyWith(void Function(GetTaskConfigRequest) updates) => super.copyWith((message) => updates(message as GetTaskConfigRequest)) as GetTaskConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaskConfigRequest create() => GetTaskConfigRequest._();
+  GetTaskConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTaskConfigRequest> createRepeated() => $pb.PbList<GetTaskConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaskConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaskConfigRequest>(create);
+  static GetTaskConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetTaskConfigResponse extends $pb.GeneratedMessage {
+  factory GetTaskConfigResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<TaskConfig>? tasks,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (tasks != null) {
+      $result.tasks.addAll(tasks);
+    }
+    return $result;
+  }
+  GetTaskConfigResponse._() : super();
+  factory GetTaskConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTaskConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaskConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<TaskConfig>(2, _omitFieldNames ? '' : 'tasks', $pb.PbFieldType.PM, subBuilder: TaskConfig.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTaskConfigResponse clone() => GetTaskConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTaskConfigResponse copyWith(void Function(GetTaskConfigResponse) updates) => super.copyWith((message) => updates(message as GetTaskConfigResponse)) as GetTaskConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTaskConfigResponse create() => GetTaskConfigResponse._();
+  GetTaskConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTaskConfigResponse> createRepeated() => $pb.PbList<GetTaskConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTaskConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTaskConfigResponse>(create);
+  static GetTaskConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TaskConfig> get tasks => $_getList(1);
 }
 
 class CreateSystemTaskRequest extends $pb.GeneratedMessage {
@@ -372,10 +743,14 @@ class CreateSystemTaskResponse extends $pb.GeneratedMessage {
 class ListSystemTaskRequest extends $pb.GeneratedMessage {
   factory ListSystemTaskRequest({
     $0.BaseRequest? baseRequest,
+    $0.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -385,6 +760,7 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -419,12 +795,24 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(1);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListSystemTaskResponse extends $pb.GeneratedMessage {
   factory ListSystemTaskResponse({
     $0.BaseResponse? baseResp,
     $core.Iterable<SystemTask>? systemTasks,
+    $0.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -432,6 +820,9 @@ class ListSystemTaskResponse extends $pb.GeneratedMessage {
     }
     if (systemTasks != null) {
       $result.systemTasks.addAll(systemTasks);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -442,6 +833,7 @@ class ListSystemTaskResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..pc<SystemTask>(2, _omitFieldNames ? '' : 'systemTasks', $pb.PbFieldType.PM, subBuilder: SystemTask.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -479,6 +871,151 @@ class ListSystemTaskResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<SystemTask> get systemTasks => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class GetSystemTaskRequest extends $pb.GeneratedMessage {
+  factory GetSystemTaskRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? systemTaskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (systemTaskId != null) {
+      $result.systemTaskId = systemTaskId;
+    }
+    return $result;
+  }
+  GetSystemTaskRequest._() : super();
+  factory GetSystemTaskRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'systemTaskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSystemTaskRequest clone() => GetSystemTaskRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSystemTaskRequest copyWith(void Function(GetSystemTaskRequest) updates) => super.copyWith((message) => updates(message as GetSystemTaskRequest)) as GetSystemTaskRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSystemTaskRequest create() => GetSystemTaskRequest._();
+  GetSystemTaskRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSystemTaskRequest> createRepeated() => $pb.PbList<GetSystemTaskRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSystemTaskRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSystemTaskRequest>(create);
+  static GetSystemTaskRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get systemTaskId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set systemTaskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSystemTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemTaskId() => clearField(2);
+}
+
+class GetSystemTaskResponse extends $pb.GeneratedMessage {
+  factory GetSystemTaskResponse({
+    $0.BaseResponse? baseResp,
+    SystemTask? systemTask,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (systemTask != null) {
+      $result.systemTask = systemTask;
+    }
+    return $result;
+  }
+  GetSystemTaskResponse._() : super();
+  factory GetSystemTaskResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<SystemTask>(2, _omitFieldNames ? '' : 'systemTask', subBuilder: SystemTask.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSystemTaskResponse clone() => GetSystemTaskResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSystemTaskResponse copyWith(void Function(GetSystemTaskResponse) updates) => super.copyWith((message) => updates(message as GetSystemTaskResponse)) as GetSystemTaskResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSystemTaskResponse create() => GetSystemTaskResponse._();
+  GetSystemTaskResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSystemTaskResponse> createRepeated() => $pb.PbList<GetSystemTaskResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSystemTaskResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSystemTaskResponse>(create);
+  static GetSystemTaskResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SystemTask get systemTask => $_getN(1);
+  @$pb.TagNumber(2)
+  set systemTask(SystemTask v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSystemTask() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemTask() => clearField(2);
+  @$pb.TagNumber(2)
+  SystemTask ensureSystemTask() => $_ensure(1);
 }
 
 class UpdateSystemTaskRequest extends $pb.GeneratedMessage {
@@ -588,6 +1125,124 @@ class UpdateSystemTaskResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateSystemTaskResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSystemTaskResponse>(create);
   static UpdateSystemTaskResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class DeleteSystemTaskRequest extends $pb.GeneratedMessage {
+  factory DeleteSystemTaskRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? systemTaskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (systemTaskId != null) {
+      $result.systemTaskId = systemTaskId;
+    }
+    return $result;
+  }
+  DeleteSystemTaskRequest._() : super();
+  factory DeleteSystemTaskRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'systemTaskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSystemTaskRequest clone() => DeleteSystemTaskRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSystemTaskRequest copyWith(void Function(DeleteSystemTaskRequest) updates) => super.copyWith((message) => updates(message as DeleteSystemTaskRequest)) as DeleteSystemTaskRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSystemTaskRequest create() => DeleteSystemTaskRequest._();
+  DeleteSystemTaskRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteSystemTaskRequest> createRepeated() => $pb.PbList<DeleteSystemTaskRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSystemTaskRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSystemTaskRequest>(create);
+  static DeleteSystemTaskRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get systemTaskId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set systemTaskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSystemTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemTaskId() => clearField(2);
+}
+
+class DeleteSystemTaskResponse extends $pb.GeneratedMessage {
+  factory DeleteSystemTaskResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteSystemTaskResponse._() : super();
+  factory DeleteSystemTaskResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSystemTaskResponse clone() => DeleteSystemTaskResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSystemTaskResponse copyWith(void Function(DeleteSystemTaskResponse) updates) => super.copyWith((message) => updates(message as DeleteSystemTaskResponse)) as DeleteSystemTaskResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSystemTaskResponse create() => DeleteSystemTaskResponse._();
+  DeleteSystemTaskResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteSystemTaskResponse> createRepeated() => $pb.PbList<DeleteSystemTaskResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSystemTaskResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSystemTaskResponse>(create);
+  static DeleteSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);

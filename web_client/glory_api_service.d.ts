@@ -1565,13 +1565,29 @@ CreateLivePlanProduct create live plan product */
   ): Promise<app.GetLatestVersionResponse>;
 
   /** 系统预置任务管理 */
+  GetTaskConfig(
+    request: system_task.GetTaskConfigRequest
+  ): Promise<system_task.GetTaskConfigResponse>;
+
+  CreateSystemTask(
+    request: system_task.CreateSystemTaskRequest
+  ): Promise<system_task.CreateSystemTaskResponse>;
+
   ListSystemTask(
     request: system_task.ListSystemTaskRequest
   ): Promise<system_task.ListSystemTaskResponse>;
 
+  GetSystemTask(
+    request: system_task.GetSystemTaskRequest
+  ): Promise<system_task.GetSystemTaskResponse>;
+
   UpdateSystemTask(
     request: system_task.UpdateSystemTaskRequest
   ): Promise<system_task.UpdateSystemTaskResponse>;
+
+  DeleteSystemTask(
+    request: system_task.DeleteSystemTaskRequest
+  ): Promise<system_task.DeleteSystemTaskResponse>;
 
   /** 教师任务模板 */
   CreateTeacherTaskTemplate(
@@ -1628,6 +1644,10 @@ CreateLivePlanProduct create live plan product */
   GetLiveBoardComments(
     request: live_board.GetLiveBoardCommentsRequest
   ): Promise<live_board.GetLiveBoardCommentsResponse>;
+
+  ListBoardLivingUser(
+    request: live_board.ListLivingUserRequest
+  ): Promise<live_board.ListLivingUserResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

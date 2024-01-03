@@ -13,54 +13,122 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use taskParameterDescriptor instead')
+const TaskParameter$json = {
+  '1': 'TaskParameter',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'operator', '3': 3, '4': 1, '5': 9, '10': 'operator'},
+    {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'def', '3': 5, '4': 1, '5': 9, '10': 'def'},
+    {'1': 'enums', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'enums'},
+    {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'children'},
+  ],
+};
+
+/// Descriptor for `TaskParameter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taskParameterDescriptor = $convert.base64Decode(
+    'Cg1UYXNrUGFyYW1ldGVyEhAKA2tleRgBIAEoCVIDa2V5EhIKBG5hbWUYAiABKAlSBG5hbWUSGg'
+    'oIb3BlcmF0b3IYAyABKAlSCG9wZXJhdG9yEhIKBHR5cGUYBCABKAlSBHR5cGUSEAoDZGVmGAUg'
+    'ASgJUgNkZWYSLgoFZW51bXMYBiADKAsyGC5nbG9yeV9hcGkuVGFza1BhcmFtZXRlclIFZW51bX'
+    'MSNAoIY2hpbGRyZW4YByADKAsyGC5nbG9yeV9hcGkuVGFza1BhcmFtZXRlclIIY2hpbGRyZW4=');
+
+@$core.Deprecated('Use taskConfigDescriptor instead')
+const TaskConfig$json = {
+  '1': 'TaskConfig',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'biz', '3': 3, '4': 1, '5': 9, '10': 'biz'},
+    {'1': 'content', '3': 4, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'parameters', '3': 5, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'parameters'},
+  ],
+};
+
+/// Descriptor for `TaskConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taskConfigDescriptor = $convert.base64Decode(
+    'CgpUYXNrQ29uZmlnEhAKA2tleRgBIAEoCVIDa2V5EhIKBG5hbWUYAiABKAlSBG5hbWUSEAoDYm'
+    'l6GAMgASgJUgNiaXoSGAoHY29udGVudBgEIAEoCVIHY29udGVudBI4CgpwYXJhbWV0ZXJzGAUg'
+    'AygLMhguZ2xvcnlfYXBpLlRhc2tQYXJhbWV0ZXJSCnBhcmFtZXRlcnM=');
+
 @$core.Deprecated('Use systemTaskParameterDescriptor instead')
 const SystemTaskParameter$json = {
   '1': 'SystemTaskParameter',
   '2': [
-    {'1': 'task_parameter_key', '3': 1, '4': 1, '5': 9, '10': 'taskParameterKey'},
-    {'1': 'task_parameter_name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'taskParameterName'},
-    {'1': 'task_parameter_value', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskParameterValue'},
-    {'1': 'task_parameter_type', '3': 4, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'task_parameter_id', '3': 1, '4': 1, '5': 3, '10': 'taskParameterId'},
+    {'1': 'task_parameter_key', '3': 2, '4': 1, '5': 9, '10': 'taskParameterKey'},
+    {'1': 'task_parameter_name', '3': 3, '4': 1, '5': 9, '10': 'taskParameterName'},
+    {'1': 'task_parameter_operator', '3': 4, '4': 1, '5': 9, '10': 'taskParameterOperator'},
+    {'1': 'task_parameter_type', '3': 5, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'task_parameter_value', '3': 6, '4': 1, '5': 9, '10': 'taskParameterValue'},
+    {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'children'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
 /// Descriptor for `SystemTaskParameter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List systemTaskParameterDescriptor = $convert.base64Decode(
-    'ChNTeXN0ZW1UYXNrUGFyYW1ldGVyEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgBIAEoCVIQdGFza1'
-    'BhcmFtZXRlcktleRJdChN0YXNrX3BhcmFtZXRlcl9uYW1lGAIgASgJQi3auxgpQDpsZW4oJCk+'
-    'MDttc2c6J+WPguaVsOWQjeensOS4jeiDveS4uuepuidSEXRhc2tQYXJhbWV0ZXJOYW1lElwKFH'
-    'Rhc2tfcGFyYW1ldGVyX3ZhbHVlGAMgASgJQirauxgmQDpsZW4oJCk+MDttc2c6J+WPguaVsOWA'
-    'vOS4jeiDveS4uuepuidSEnRhc2tQYXJhbWV0ZXJWYWx1ZRIuChN0YXNrX3BhcmFtZXRlcl90eX'
-    'BlGAQgASgJUhF0YXNrUGFyYW1ldGVyVHlwZQ==');
+    'ChNTeXN0ZW1UYXNrUGFyYW1ldGVyEioKEXRhc2tfcGFyYW1ldGVyX2lkGAEgASgDUg90YXNrUG'
+    'FyYW1ldGVySWQSLAoSdGFza19wYXJhbWV0ZXJfa2V5GAIgASgJUhB0YXNrUGFyYW1ldGVyS2V5'
+    'Ei4KE3Rhc2tfcGFyYW1ldGVyX25hbWUYAyABKAlSEXRhc2tQYXJhbWV0ZXJOYW1lEjYKF3Rhc2'
+    'tfcGFyYW1ldGVyX29wZXJhdG9yGAQgASgJUhV0YXNrUGFyYW1ldGVyT3BlcmF0b3ISLgoTdGFz'
+    'a19wYXJhbWV0ZXJfdHlwZRgFIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSMAoUdGFza19wYXJhbW'
+    'V0ZXJfdmFsdWUYBiABKAlSEnRhc2tQYXJhbWV0ZXJWYWx1ZRI6CghjaGlsZHJlbhgHIAMoCzIe'
+    'Lmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1ldGVyUghjaGlsZHJlbhIdCgpjcmVhdGVkX2F0GA'
+    'ggASgJUgljcmVhdGVkQXQ=');
 
 @$core.Deprecated('Use systemTaskDescriptor instead')
 const SystemTask$json = {
   '1': 'SystemTask',
   '2': [
-    {'1': 'task_key', '3': 1, '4': 1, '5': 9, '10': 'taskKey'},
-    {'1': 'task_name', '3': 2, '4': 1, '5': 9, '8': {}, '10': 'taskName'},
-    {'1': 'task_business_system', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessSystem'},
-    {'1': 'task_business_module', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessModule'},
-    {'1': 'task_content', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'taskContent'},
-    {'1': 'task_requirements', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'taskRequirements'},
-    {'1': 'task_link', '3': 7, '4': 1, '5': 9, '10': 'taskLink'},
-    {'1': 'task_parameters', '3': 8, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'taskParameters'},
+    {'1': 'system_task_id', '3': 1, '4': 1, '5': 3, '10': 'systemTaskId'},
+    {'1': 'system_task_key', '3': 2, '4': 1, '5': 9, '10': 'systemTaskKey'},
+    {'1': 'system_task_name', '3': 3, '4': 1, '5': 9, '10': 'systemTaskName'},
+    {'1': 'system_task_business', '3': 4, '4': 1, '5': 9, '10': 'systemTaskBusiness'},
+    {'1': 'system_task_content', '3': 5, '4': 1, '5': 9, '10': 'systemTaskContent'},
+    {'1': 'system_task_link', '3': 6, '4': 1, '5': 9, '10': 'systemTaskLink'},
+    {'1': 'system_task_parameters', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'systemTaskParameters'},
   ],
 };
 
 /// Descriptor for `SystemTask`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List systemTaskDescriptor = $convert.base64Decode(
-    'CgpTeXN0ZW1UYXNrEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5EkoKCXRhc2tfbmFtZRgCIA'
-    'EoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOifku7vliqHlkI3np7DkuI3og73kuLrnqbonUgh0YXNr'
-    'TmFtZRJfChR0YXNrX2J1c2luZXNzX3N5c3RlbRgDIAEoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOi'
-    'fns7vnu5/lkI3np7DkuI3og73kuLrnqbonUhJ0YXNrQnVzaW5lc3NTeXN0ZW0SXwoUdGFza19i'
-    'dXNpbmVzc19tb2R1bGUYBCABKAlCLdq7GClAOmxlbigkKT4wO21zZzon5qih5Z2X5ZCN56ew5L'
-    'iN6IO95Li656m6J1ISdGFza0J1c2luZXNzTW9kdWxlElAKDHRhc2tfY29udGVudBgFIAEoCUIt'
-    '2rsYKUA6bGVuKCQpPjA7bXNnOifku7vliqHlhoXlrrnkuI3og73kuLrnqbonUgt0YXNrQ29udG'
-    'VudBJaChF0YXNrX3JlcXVpcmVtZW50cxgGIAEoCUIt2rsYKUA6bGVuKCQpPjA7bXNnOifku7vl'
-    'iqHopoHmsYLkuI3og73kuLrnqbonUhB0YXNrUmVxdWlyZW1lbnRzEhsKCXRhc2tfbGluaxgHIA'
-    'EoCVIIdGFza0xpbmsSRwoPdGFza19wYXJhbWV0ZXJzGAggAygLMh4uZ2xvcnlfYXBpLlN5c3Rl'
-    'bVRhc2tQYXJhbWV0ZXJSDnRhc2tQYXJhbWV0ZXJz');
+    'CgpTeXN0ZW1UYXNrEiQKDnN5c3RlbV90YXNrX2lkGAEgASgDUgxzeXN0ZW1UYXNrSWQSJgoPc3'
+    'lzdGVtX3Rhc2tfa2V5GAIgASgJUg1zeXN0ZW1UYXNrS2V5EigKEHN5c3RlbV90YXNrX25hbWUY'
+    'AyABKAlSDnN5c3RlbVRhc2tOYW1lEjAKFHN5c3RlbV90YXNrX2J1c2luZXNzGAQgASgJUhJzeX'
+    'N0ZW1UYXNrQnVzaW5lc3MSLgoTc3lzdGVtX3Rhc2tfY29udGVudBgFIAEoCVIRc3lzdGVtVGFz'
+    'a0NvbnRlbnQSKAoQc3lzdGVtX3Rhc2tfbGluaxgGIAEoCVIOc3lzdGVtVGFza0xpbmsSVAoWc3'
+    'lzdGVtX3Rhc2tfcGFyYW1ldGVycxgHIAMoCzIeLmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1l'
+    'dGVyUhRzeXN0ZW1UYXNrUGFyYW1ldGVycw==');
+
+@$core.Deprecated('Use getTaskConfigRequestDescriptor instead')
+const GetTaskConfigRequest$json = {
+  '1': 'GetTaskConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetTaskConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaskConfigRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRUYXNrQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getTaskConfigResponseDescriptor instead')
+const GetTaskConfigResponse$json = {
+  '1': 'GetTaskConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'tasks', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TaskConfig', '10': 'tasks'},
+  ],
+};
+
+/// Descriptor for `GetTaskConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTaskConfigResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRUYXNrQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEisKBXRhc2tzGAIgAygLMhUuZ2xvcnlfYXBpLlRhc2tDb25maWdS'
+    'BXRhc2tz');
 
 @$core.Deprecated('Use createSystemTaskRequestDescriptor instead')
 const CreateSystemTaskRequest$json = {
@@ -95,13 +163,15 @@ const ListSystemTaskRequest$json = {
   '1': 'ListSystemTaskRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `ListSystemTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listSystemTaskRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0U3lzdGVtVGFza1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
-    'NlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5h'
+    'dGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listSystemTaskResponseDescriptor instead')
 const ListSystemTaskResponse$json = {
@@ -109,6 +179,7 @@ const ListSystemTaskResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'system_tasks', '3': 2, '4': 3, '5': 11, '6': '.glory_api.SystemTask', '10': 'systemTasks'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
   ],
 };
 
@@ -116,7 +187,38 @@ const ListSystemTaskResponse$json = {
 final $typed_data.Uint8List listSystemTaskResponseDescriptor = $convert.base64Decode(
     'ChZMaXN0U3lzdGVtVGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBI4CgxzeXN0ZW1fdGFza3MYAiADKAsyFS5nbG9yeV9hcGkuU3lz'
-    'dGVtVGFza1ILc3lzdGVtVGFza3M=');
+    'dGVtVGFza1ILc3lzdGVtVGFza3MSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdG'
+    'lvblJlc3BvbnNlUgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use getSystemTaskRequestDescriptor instead')
+const GetSystemTaskRequest$json = {
+  '1': 'GetSystemTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'system_task_id', '3': 2, '4': 1, '5': 3, '10': 'systemTaskId'},
+  ],
+};
+
+/// Descriptor for `GetSystemTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSystemTaskRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRTeXN0ZW1UYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIkCg5zeXN0ZW1fdGFza19pZBgCIAEoA1IMc3lzdGVtVGFz'
+    'a0lk');
+
+@$core.Deprecated('Use getSystemTaskResponseDescriptor instead')
+const GetSystemTaskResponse$json = {
+  '1': 'GetSystemTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'system_task', '3': 2, '4': 1, '5': 11, '6': '.glory_api.SystemTask', '10': 'systemTask'},
+  ],
+};
+
+/// Descriptor for `GetSystemTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSystemTaskResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRTeXN0ZW1UYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEjYKC3N5c3RlbV90YXNrGAIgASgLMhUuZ2xvcnlfYXBpLlN5c3Rl'
+    'bVRhc2tSCnN5c3RlbVRhc2s=');
 
 @$core.Deprecated('Use updateSystemTaskRequestDescriptor instead')
 const UpdateSystemTaskRequest$json = {
@@ -144,5 +246,33 @@ const UpdateSystemTaskResponse$json = {
 /// Descriptor for `UpdateSystemTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateSystemTaskResponseDescriptor = $convert.base64Decode(
     'ChhVcGRhdGVTeXN0ZW1UYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use deleteSystemTaskRequestDescriptor instead')
+const DeleteSystemTaskRequest$json = {
+  '1': 'DeleteSystemTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'system_task_id', '3': 2, '4': 1, '5': 3, '10': 'systemTaskId'},
+  ],
+};
+
+/// Descriptor for `DeleteSystemTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSystemTaskRequestDescriptor = $convert.base64Decode(
+    'ChdEZWxldGVTeXN0ZW1UYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIkCg5zeXN0ZW1fdGFza19pZBgCIAEoA1IMc3lzdGVt'
+    'VGFza0lk');
+
+@$core.Deprecated('Use deleteSystemTaskResponseDescriptor instead')
+const DeleteSystemTaskResponse$json = {
+  '1': 'DeleteSystemTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteSystemTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSystemTaskResponseDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVTeXN0ZW1UYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
     'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 

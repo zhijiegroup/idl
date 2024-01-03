@@ -68,3 +68,21 @@ message GetLiveBoardCommentsResponse {
     base.BaseResponse base_resp = 1;
     repeated string comments = 6;
 }
+
+message ListLivingUserRequest {
+    base.BaseRequest base_request = 1;
+    repeated int64 clas_ids = 2;
+    string username = 3;
+}
+
+message ListLivingUserResponse {
+    base.BaseResponse base_resp = 1;
+    repeated LivingUser living_user_list = 2;
+}
+
+message LivingUser {
+    string username = 1;
+    string avatar = 2;
+    string room_name = 3;
+    string play_url = 4;
+}

@@ -69,6 +69,21 @@ public final class LiveBoard {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetLiveBoardCommentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListLivingUserRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListLivingUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListLivingUserResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListLivingUserResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_LivingUser_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_LivingUser_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -107,8 +122,16 @@ public final class LiveBoard {
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
       "st\022\020\n\010clas_ids\030\002 \003(\003\"W\n\034GetLiveBoardComm" +
       "entsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022\020\n\010comments\030\006 \003(\tB#\n\037com.zhi" +
-      "jiejiaoyu.glory_api.liveP\001b\006proto3"
+      "aseResponse\022\020\n\010comments\030\006 \003(\t\"d\n\025ListLiv" +
+      "ingUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\020\n\010clas_ids\030\002 \003(\003\022\020\n\010use" +
+      "rname\030\003 \001(\t\"p\n\026ListLivingUserResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\020" +
+      "living_user_list\030\002 \003(\0132\025.glory_api.Livin" +
+      "gUser\"S\n\nLivingUser\022\020\n\010username\030\001 \001(\t\022\016\n" +
+      "\006avatar\030\002 \001(\t\022\021\n\troom_name\030\003 \001(\t\022\020\n\010play" +
+      "_url\030\004 \001(\tB#\n\037com.zhijiejiaoyu.glory_api" +
+      ".liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -181,6 +204,24 @@ public final class LiveBoard {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetLiveBoardCommentsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Comments", });
+    internal_static_glory_api_ListLivingUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_ListLivingUserRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListLivingUserRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ClasIds", "Username", });
+    internal_static_glory_api_ListLivingUserResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_ListLivingUserResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListLivingUserResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "LivingUserList", });
+    internal_static_glory_api_LivingUser_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_glory_api_LivingUser_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_LivingUser_descriptor,
+        new java.lang.String[] { "Username", "Avatar", "RoomName", "PlayUrl", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 
