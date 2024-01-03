@@ -2786,6 +2786,12 @@ export class glory_api {
     );
   }
 
+  GetTaskConfig(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/config${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListSystemTask(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/task/list_system_task${query}`;

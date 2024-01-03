@@ -6,6 +6,24 @@ import * as api from "../api";
 import * as base from "../base";
 export { api, base };
 
+export interface TaskParameter {
+  key?: string;
+  name?: string;
+  operator?: string;
+  type?: string;
+  def?: string;
+  enums?: Array<TaskParameter>;
+  children?: Array<TaskParameter>;
+}
+
+export interface TaskConfig {
+  key?: string;
+  name?: string;
+  biz?: string;
+  content?: string;
+  parameters?: Array<TaskParameter>;
+}
+
 export interface SystemTaskParameter {
   task_parameter_key?: string;
   task_parameter_name?: string;
@@ -30,6 +48,15 @@ export interface SystemTask {
   task_link?: string;
   /** 预置任务参数 */
   task_parameters?: Array<SystemTaskParameter>;
+}
+
+export interface GetTaskConfigRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetTaskConfigResponse {
+  base_resp?: base.BaseResponse;
+  tasks?: Array<TaskConfig>;
 }
 
 export interface CreateSystemTaskRequest {

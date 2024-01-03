@@ -1115,6 +1115,9 @@ class glory_apiApi {
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ClientContext? ctx, $46.GetLatestVersionRequest request) =>
     _client.invoke<$46.GetLatestVersionResponse>(ctx, 'glory_api', 'GetLatestVersion', request, $46.GetLatestVersionResponse())
   ;
+  $async.Future<$51.GetTaskConfigResponse> getTaskConfig($pb.ClientContext? ctx, $51.GetTaskConfigRequest request) =>
+    _client.invoke<$51.GetTaskConfigResponse>(ctx, 'glory_api', 'GetTaskConfig', request, $51.GetTaskConfigResponse())
+  ;
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $51.ListSystemTaskRequest request) =>
     _client.invoke<$51.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $51.ListSystemTaskResponse())
   ;

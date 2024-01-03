@@ -1565,6 +1565,10 @@ CreateLivePlanProduct create live plan product */
   ): Promise<app.GetLatestVersionResponse>;
 
   /** 系统预置任务管理 */
+  GetTaskConfig(
+    request: system_task.GetTaskConfigRequest
+  ): Promise<system_task.GetTaskConfigResponse>;
+
   ListSystemTask(
     request: system_task.ListSystemTaskRequest
   ): Promise<system_task.ListSystemTaskResponse>;

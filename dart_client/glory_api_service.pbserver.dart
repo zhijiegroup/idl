@@ -422,6 +422,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$46.ListVersionLogResponse> listVersionLog($pb.ServerContext ctx, $46.ListVersionLogRequest request);
   $async.Future<$46.DeleteVersionLogResponse> deleteVersionLog($pb.ServerContext ctx, $46.DeleteVersionLogRequest request);
   $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ServerContext ctx, $46.GetLatestVersionRequest request);
+  $async.Future<$51.GetTaskConfigResponse> getTaskConfig($pb.ServerContext ctx, $51.GetTaskConfigRequest request);
   $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ServerContext ctx, $51.ListSystemTaskRequest request);
   $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ServerContext ctx, $51.UpdateSystemTaskRequest request);
   $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ServerContext ctx, $52.CreateTeacherTaskTemplateRequest request);
@@ -788,6 +789,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListVersionLog': return $46.ListVersionLogRequest();
       case 'DeleteVersionLog': return $46.DeleteVersionLogRequest();
       case 'GetLatestVersion': return $46.GetLatestVersionRequest();
+      case 'GetTaskConfig': return $51.GetTaskConfigRequest();
       case 'ListSystemTask': return $51.ListSystemTaskRequest();
       case 'UpdateSystemTask': return $51.UpdateSystemTaskRequest();
       case 'CreateTeacherTaskTemplate': return $52.CreateTeacherTaskTemplateRequest();
@@ -1157,6 +1159,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListVersionLog': return this.listVersionLog(ctx, request as $46.ListVersionLogRequest);
       case 'DeleteVersionLog': return this.deleteVersionLog(ctx, request as $46.DeleteVersionLogRequest);
       case 'GetLatestVersion': return this.getLatestVersion(ctx, request as $46.GetLatestVersionRequest);
+      case 'GetTaskConfig': return this.getTaskConfig(ctx, request as $51.GetTaskConfigRequest);
       case 'ListSystemTask': return this.listSystemTask(ctx, request as $51.ListSystemTaskRequest);
       case 'UpdateSystemTask': return this.updateSystemTask(ctx, request as $51.UpdateSystemTaskRequest);
       case 'CreateTeacherTaskTemplate': return this.createTeacherTaskTemplate(ctx, request as $52.CreateTeacherTaskTemplateRequest);

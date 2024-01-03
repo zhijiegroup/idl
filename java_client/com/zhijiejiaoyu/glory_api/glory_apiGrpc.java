@@ -10772,6 +10772,37 @@ public final class glory_apiGrpc {
     return getGetLatestVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest,
+      com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> getGetTaskConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTaskConfig",
+      requestType = com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest,
+      com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> getGetTaskConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest, com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> getGetTaskConfigMethod;
+    if ((getGetTaskConfigMethod = glory_apiGrpc.getGetTaskConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetTaskConfigMethod = glory_apiGrpc.getGetTaskConfigMethod) == null) {
+          glory_apiGrpc.getGetTaskConfigMethod = getGetTaskConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest, com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTaskConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetTaskConfig"))
+              .build();
+        }
+      }
+    }
+    return getGetTaskConfigMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest,
       com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> getListSystemTaskMethod;
 
@@ -14098,6 +14129,13 @@ public final class glory_apiGrpc {
      * 系统预置任务管理
      * </pre>
      */
+    default void getTaskConfig(com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSystemTaskMethod(), responseObserver);
@@ -17375,6 +17413,14 @@ public final class glory_apiGrpc {
      * 系统预置任务管理
      * </pre>
      */
+    public void getTaskConfig(com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTaskConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -20309,6 +20355,13 @@ public final class glory_apiGrpc {
      * <pre>
      * 系统预置任务管理
      * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse getTaskConfig(com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTaskConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse listSystemTask(com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -23576,6 +23629,14 @@ public final class glory_apiGrpc {
      * 系统预置任务管理
      * </pre>
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse> getTaskConfig(
+        com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTaskConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.ListSystemTaskResponse> listSystemTask(
         com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -24060,22 +24121,23 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_VERSION_LOG = 344;
   private static final int METHODID_DELETE_VERSION_LOG = 345;
   private static final int METHODID_GET_LATEST_VERSION = 346;
-  private static final int METHODID_LIST_SYSTEM_TASK = 347;
-  private static final int METHODID_UPDATE_SYSTEM_TASK = 348;
-  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 349;
-  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 350;
-  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 351;
-  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 352;
-  private static final int METHODID_LIST_NOTIFICATION = 353;
-  private static final int METHODID_COUNT_NOTIFICATION = 354;
-  private static final int METHODID_READ_NOTIFICATION = 355;
-  private static final int METHODID_TEST_NOTIFICATION = 356;
-  private static final int METHODID_DELETE_NOTIFICATION = 357;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 358;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 359;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 360;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 361;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 362;
+  private static final int METHODID_GET_TASK_CONFIG = 347;
+  private static final int METHODID_LIST_SYSTEM_TASK = 348;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 349;
+  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 350;
+  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 351;
+  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 352;
+  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 353;
+  private static final int METHODID_LIST_NOTIFICATION = 354;
+  private static final int METHODID_COUNT_NOTIFICATION = 355;
+  private static final int METHODID_READ_NOTIFICATION = 356;
+  private static final int METHODID_TEST_NOTIFICATION = 357;
+  private static final int METHODID_DELETE_NOTIFICATION = 358;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 359;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 360;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 361;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 362;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 363;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -25481,6 +25543,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_LATEST_VERSION:
           serviceImpl.getLatestVersion((com.zhijiejiaoyu.glory_api.course.GetLatestVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse>) responseObserver);
+          break;
+        case METHODID_GET_TASK_CONFIG:
+          serviceImpl.getTaskConfig((com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse>) responseObserver);
           break;
         case METHODID_LIST_SYSTEM_TASK:
           serviceImpl.listSystemTask((com.zhijiejiaoyu.glory_api.task.ListSystemTaskRequest) request,
@@ -27994,6 +28060,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetLatestVersionResponse>(
                 service, METHODID_GET_LATEST_VERSION)))
         .addMethod(
+          getGetTaskConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.GetTaskConfigRequest,
+              com.zhijiejiaoyu.glory_api.task.GetTaskConfigResponse>(
+                service, METHODID_GET_TASK_CONFIG)))
+        .addMethod(
           getListSystemTaskMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -28500,6 +28573,7 @@ public final class glory_apiGrpc {
               .addMethod(getListVersionLogMethod())
               .addMethod(getDeleteVersionLogMethod())
               .addMethod(getGetLatestVersionMethod())
+              .addMethod(getGetTaskConfigMethod())
               .addMethod(getListSystemTaskMethod())
               .addMethod(getUpdateSystemTaskMethod())
               .addMethod(getCreateTeacherTaskTemplateMethod())
