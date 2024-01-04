@@ -1379,7 +1379,7 @@ service glory_api {
     option (api.post) = '/api/task/create_system_task';
   }
   rpc ListSystemTask(ListSystemTaskRequest) returns (ListSystemTaskResponse) {
-    option (api.get) = '/api/task/list_system_task';
+    option (api.post) = '/api/task/list_system_task';
   }
   rpc GetSystemTask(GetSystemTaskRequest) returns (GetSystemTaskResponse) {
     option (api.post) = '/api/task/get_system_task';

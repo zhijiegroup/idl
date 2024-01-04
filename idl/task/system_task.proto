@@ -43,6 +43,7 @@ message SystemTask {
   string system_task_content = 5;
   string system_task_link = 6;
   repeated SystemTaskParameter system_task_parameters = 7;
+  string created_at = 8;
 }
 
 message GetTaskConfigRequest {

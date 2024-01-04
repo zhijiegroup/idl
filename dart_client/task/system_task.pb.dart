@@ -389,6 +389,7 @@ class SystemTask extends $pb.GeneratedMessage {
     $core.String? systemTaskContent,
     $core.String? systemTaskLink,
     $core.Iterable<SystemTaskParameter>? systemTaskParameters,
+    $core.String? createdAt,
   }) {
     final $result = create();
     if (systemTaskId != null) {
@@ -412,6 +413,9 @@ class SystemTask extends $pb.GeneratedMessage {
     if (systemTaskParameters != null) {
       $result.systemTaskParameters.addAll(systemTaskParameters);
     }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
     return $result;
   }
   SystemTask._() : super();
@@ -426,6 +430,7 @@ class SystemTask extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'systemTaskContent')
     ..aOS(6, _omitFieldNames ? '' : 'systemTaskLink')
     ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'systemTaskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -506,6 +511,15 @@ class SystemTask extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<SystemTaskParameter> get systemTaskParameters => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get createdAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdAt($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => clearField(8);
 }
 
 class GetTaskConfigRequest extends $pb.GeneratedMessage {

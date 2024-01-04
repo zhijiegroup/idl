@@ -43,6 +43,7 @@ export interface SystemTask {
   system_task_content?: string;
   system_task_link?: string;
   system_task_parameters?: Array<SystemTaskParameter>;
+  created_at?: string;
 }
 
 export interface GetTaskConfigRequest {

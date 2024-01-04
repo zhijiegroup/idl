@@ -2801,9 +2801,11 @@ export class glory_api {
   }
 
   ListSystemTask(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/task/list_system_task${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+    const uri = `${this.uriPrefix}/api/task/list_system_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
   }
 
   GetSystemTask(request) {
