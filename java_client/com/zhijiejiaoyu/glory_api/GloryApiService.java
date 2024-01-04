@@ -1152,7 +1152,7 @@ public final class GloryApiService {
       "ystemTaskResponse\" \322\301\030\034/api/task/create_" +
       "system_task\022u\n\016ListSystemTask\022 .glory_ap" +
       "i.ListSystemTaskRequest\032!.glory_api.List" +
-      "SystemTaskResponse\"\036\312\301\030\032/api/task/list_s" +
+      "SystemTaskResponse\"\036\322\301\030\032/api/task/list_s" +
       "ystem_task\022q\n\rGetSystemTask\022\037.glory_api." +
       "GetSystemTaskRequest\032 .glory_api.GetSyst" +
       "emTaskResponse\"\035\322\301\030\031/api/task/get_system" +

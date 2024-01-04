@@ -109,6 +109,8 @@ struct GloryApi_SystemTask {
 
   var systemTaskParameters: [GloryApi_SystemTaskParameter] = []
 
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -655,6 +657,7 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     5: .standard(proto: "system_task_content"),
     6: .standard(proto: "system_task_link"),
     7: .standard(proto: "system_task_parameters"),
+    8: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -670,6 +673,7 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 5: try { try decoder.decodeSingularStringField(value: &self.systemTaskContent) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.systemTaskLink) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.systemTaskParameters) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -697,6 +701,9 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.systemTaskParameters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.systemTaskParameters, fieldNumber: 7)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -708,6 +715,7 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.systemTaskContent != rhs.systemTaskContent {return false}
     if lhs.systemTaskLink != rhs.systemTaskLink {return false}
     if lhs.systemTaskParameters != rhs.systemTaskParameters {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

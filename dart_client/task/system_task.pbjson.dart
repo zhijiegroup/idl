@@ -89,6 +89,7 @@ const SystemTask$json = {
     {'1': 'system_task_content', '3': 5, '4': 1, '5': 9, '10': 'systemTaskContent'},
     {'1': 'system_task_link', '3': 6, '4': 1, '5': 9, '10': 'systemTaskLink'},
     {'1': 'system_task_parameters', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'systemTaskParameters'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
@@ -100,7 +101,8 @@ final $typed_data.Uint8List systemTaskDescriptor = $convert.base64Decode(
     'N0ZW1UYXNrQnVzaW5lc3MSLgoTc3lzdGVtX3Rhc2tfY29udGVudBgFIAEoCVIRc3lzdGVtVGFz'
     'a0NvbnRlbnQSKAoQc3lzdGVtX3Rhc2tfbGluaxgGIAEoCVIOc3lzdGVtVGFza0xpbmsSVAoWc3'
     'lzdGVtX3Rhc2tfcGFyYW1ldGVycxgHIAMoCzIeLmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1l'
-    'dGVyUhRzeXN0ZW1UYXNrUGFyYW1ldGVycw==');
+    'dGVyUhRzeXN0ZW1UYXNrUGFyYW1ldGVycxIdCgpjcmVhdGVkX2F0GAggASgJUgljcmVhdGVkQX'
+    'Q=');
 
 @$core.Deprecated('Use getTaskConfigRequestDescriptor instead')
 const GetTaskConfigRequest$json = {

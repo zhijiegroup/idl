@@ -96,4 +96,16 @@ public interface SystemTaskOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getSystemTaskParametersOrBuilder(
       int index);
+
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }
