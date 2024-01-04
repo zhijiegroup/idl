@@ -495,6 +495,8 @@ struct GloryApi_NoPassInfo {
 
   var value: String = String()
 
+  var desc: String = String()
+
   var detail: [String] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -1586,7 +1588,8 @@ extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     1: .same(proto: "key"),
     2: .same(proto: "name"),
     3: .same(proto: "value"),
-    4: .same(proto: "detail"),
+    4: .same(proto: "desc"),
+    5: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1598,7 +1601,8 @@ extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 1: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.value) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.detail) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.desc) }()
+      case 5: try { try decoder.decodeRepeatedStringField(value: &self.detail) }()
       default: break
       }
     }
@@ -1614,8 +1618,11 @@ extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.value.isEmpty {
       try visitor.visitSingularStringField(value: self.value, fieldNumber: 3)
     }
+    if !self.desc.isEmpty {
+      try visitor.visitSingularStringField(value: self.desc, fieldNumber: 4)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.detail, fieldNumber: 4)
+      try visitor.visitRepeatedStringField(value: self.detail, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1624,6 +1631,7 @@ extension GloryApi_NoPassInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.key != rhs.key {return false}
     if lhs.name != rhs.name {return false}
     if lhs.value != rhs.value {return false}
+    if lhs.desc != rhs.desc {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

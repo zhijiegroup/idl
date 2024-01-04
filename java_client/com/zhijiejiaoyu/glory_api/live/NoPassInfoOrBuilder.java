@@ -44,24 +44,36 @@ public interface NoPassInfoOrBuilder extends
       getValueBytes();
 
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>string desc = 4;</code>
+   * @return The desc.
+   */
+  java.lang.String getDesc();
+  /**
+   * <code>string desc = 4;</code>
+   * @return The bytes for desc.
+   */
+  com.google.protobuf.ByteString
+      getDescBytes();
+
+  /**
+   * <code>repeated string detail = 5;</code>
    * @return A list containing the detail.
    */
   java.util.List<java.lang.String>
       getDetailList();
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @return The count of detail.
    */
   int getDetailCount();
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @param index The index of the element to return.
    * @return The detail at the given index.
    */
   java.lang.String getDetail(int index);
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the detail at the given index.
    */

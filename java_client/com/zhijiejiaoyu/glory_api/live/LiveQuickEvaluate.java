@@ -197,32 +197,32 @@ public final class LiveQuickEvaluate {
       "(\003\"\207\001\n\nPassDetail\022\017\n\007user_id\030\001 \001(\003\022\021\n\tus" +
       "er_name\030\002 \001(\t\022\017\n\007room_id\030\003 \001(\003\022\025\n\rno_pas" +
       "s_items\030\004 \003(\t\022-\n\016no_pass_detail\030\005 \003(\0132\025." +
-      "glory_api.NoPassInfo\"F\n\nNoPassInfo\022\013\n\003ke" +
-      "y\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\016\n\006" +
-      "detail\030\004 \003(\t\"\276\001\n\014ReportDetail\022\014\n\004name\030\001 " +
-      "\001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(" +
-      "\003\022\022\n\npass_total\030\004 \001(\003\022\025\n\rno_pass_total\030\005" +
-      " \001(\003\022%\n\006passes\030\006 \003(\0132\025.glory_api.PassDet" +
-      "ail\022(\n\tno_passes\030\007 \003(\0132\025.glory_api.PassD" +
-      "etail\"r\n GetQuickEvaluationReportRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\'\n\006report\030\002 \001(\0132\027.glory_api.ReportDetai" +
-      "l\"[\n\037GetQuickEvaluationDetailRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
-      "\007room_id\030\002 \001(\003\"l\n\025QuickEvaluationDetail\022" +
-      "\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002 \001(\010\022\016\n\006detail\030" +
-      "\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\027\n\017ref_type_result\030\005" +
-      " \001(\t\"\302\001\n GetQuickEvaluationDetailRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\016" +
-      "\n\006result\030\004 \001(\010\022A\n\027quick_evaluation_detai" +
-      "l\030\005 \003(\0132 .glory_api.QuickEvaluationDetai" +
-      "l\"L\n#DeleteQuickEvaluationReportResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
-      "a\n\"DeleteQuickEvaluationReportRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\022" +
-      "\n\nreport_ids\030\002 \003(\003B#\n\037com.zhijiejiaoyu.g" +
-      "lory_api.liveP\001b\006proto3"
+      "glory_api.NoPassInfo\"T\n\nNoPassInfo\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\014\n\004" +
+      "desc\030\004 \001(\t\022\016\n\006detail\030\005 \003(\t\"\276\001\n\014ReportDet" +
+      "ail\022\014\n\004name\030\001 \001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020\n" +
+      "\010end_time\030\003 \001(\003\022\022\n\npass_total\030\004 \001(\003\022\025\n\rn" +
+      "o_pass_total\030\005 \001(\003\022%\n\006passes\030\006 \003(\0132\025.glo" +
+      "ry_api.PassDetail\022(\n\tno_passes\030\007 \003(\0132\025.g" +
+      "lory_api.PassDetail\"r\n GetQuickEvaluatio" +
+      "nReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\'\n\006report\030\002 \001(\0132\027.glory_a" +
+      "pi.ReportDetail\"[\n\037GetQuickEvaluationDet" +
+      "ailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\"l\n\025QuickEva" +
+      "luationDetail\022\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002 " +
+      "\001(\010\022\016\n\006detail\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\027\n\017ref" +
+      "_type_result\030\005 \001(\t\"\302\001\n GetQuickEvaluatio" +
+      "nDetailResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010en" +
+      "d_time\030\003 \001(\003\022\016\n\006result\030\004 \001(\010\022A\n\027quick_ev" +
+      "aluation_detail\030\005 \003(\0132 .glory_api.QuickE" +
+      "valuationDetail\"L\n#DeleteQuickEvaluation" +
+      "ReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\"a\n\"DeleteQuickEvaluationRe" +
+      "portRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\022\n\nreport_ids\030\002 \003(\003B#\n\037com." +
+      "zhijiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -331,7 +331,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_NoPassInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NoPassInfo_descriptor,
-        new java.lang.String[] { "Key", "Name", "Value", "Detail", });
+        new java.lang.String[] { "Key", "Name", "Value", "Desc", "Detail", });
     internal_static_glory_api_ReportDetail_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_ReportDetail_fieldAccessorTable = new

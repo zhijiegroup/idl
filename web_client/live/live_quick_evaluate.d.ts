@@ -118,6 +118,7 @@ export interface NoPassInfo {
   key?: string;
   name?: string;
   value?: string;
+  desc?: string;
   detail?: Array<string>;
 }
 

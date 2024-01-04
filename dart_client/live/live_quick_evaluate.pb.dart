@@ -1418,6 +1418,7 @@ class NoPassInfo extends $pb.GeneratedMessage {
     $core.String? key,
     $core.String? name,
     $core.String? value,
+    $core.String? desc,
     $core.Iterable<$core.String>? detail,
   }) {
     final $result = create();
@@ -1429,6 +1430,9 @@ class NoPassInfo extends $pb.GeneratedMessage {
     }
     if (value != null) {
       $result.value = value;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (detail != null) {
       $result.detail.addAll(detail);
@@ -1443,7 +1447,8 @@ class NoPassInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'key')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'value')
-    ..pPS(4, _omitFieldNames ? '' : 'detail')
+    ..aOS(4, _omitFieldNames ? '' : 'desc')
+    ..pPS(5, _omitFieldNames ? '' : 'detail')
     ..hasRequiredFields = false
   ;
 
@@ -1496,7 +1501,16 @@ class NoPassInfo extends $pb.GeneratedMessage {
   void clearValue() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get detail => $_getList(3);
+  $core.String get desc => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set desc($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDesc() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDesc() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get detail => $_getList(4);
 }
 
 class ReportDetail extends $pb.GeneratedMessage {

@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     key = "";
     name = "";
     value = "";
+    desc = "";
     detail = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -72,6 +73,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            desc = s;
+            break;
+          }
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               detail = new com.google.protobuf.LazyStringArrayList();
@@ -229,10 +236,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DETAIL_FIELD_NUMBER = 4;
+  public static final int DESC_FIELD_NUMBER = 4;
+  private volatile java.lang.Object desc ;
+  /**
+   * <code>string desc = 4;</code>
+   * @return The desc.
+   */
+  @java.lang.Override
+  public java.lang.String getDesc() {
+    java.lang.Object ref = desc ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      desc = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string desc = 4;</code>
+   * @return The bytes for desc.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescBytes() {
+    java.lang.Object ref = desc ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      desc = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DETAIL_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList detail ;
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @return A list containing the detail.
    */
   public com.google.protobuf.ProtocolStringList
@@ -240,14 +285,14 @@ private static final long serialVersionUID = 0L;
     return detail ;
   }
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @return The count of detail.
    */
   public int getDetailCount() {
     return detail .size();
   }
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @param index The index of the element to return.
    * @return The detail at the given index.
    */
@@ -255,7 +300,7 @@ private static final long serialVersionUID = 0L;
     return detail .get(index);
   }
   /**
-   * <code>repeated string detail = 4;</code>
+   * <code>repeated string detail = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the detail at the given index.
    */
@@ -287,8 +332,11 @@ private static final long serialVersionUID = 0L;
     if (!getValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value );
     }
+    if (!getDescBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desc );
+    }
     for (int i = 0; i < detail .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, detail .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, detail .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -307,6 +355,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value );
+    }
+    if (!getDescBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desc );
     }
     {
       int dataSize = 0;
@@ -337,6 +388,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getValue()
         .equals(other.getValue())) return false;
+    if (!getDesc()
+        .equals(other.getDesc())) return false;
     if (!getDetailList()
         .equals(other.getDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -356,6 +409,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
+    hash = (37 * hash) + DESC_FIELD_NUMBER;
+    hash = (53 * hash) + getDesc().hashCode();
     if (getDetailCount() > 0) {
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetailList().hashCode();
@@ -499,6 +554,8 @@ private static final long serialVersionUID = 0L;
 
       value = "";
 
+      desc = "";
+
       detail = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -531,6 +588,7 @@ private static final long serialVersionUID = 0L;
       result.key = key ;
       result.name = name ;
       result.value = value ;
+      result.desc = desc ;
       if (((bitField0 & 0x00000001) != 0)) {
         detail = detail .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000001);
@@ -594,6 +652,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getValue().isEmpty()) {
         value = other.value ;
+        onChanged();
+      }
+      if (!other.getDesc().isEmpty()) {
+        desc = other.desc ;
         onChanged();
       }
       if (!other.detail .isEmpty()) {
@@ -864,6 +926,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object desc = "";
+    /**
+     * <code>string desc = 4;</code>
+     * @return The desc.
+     */
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string desc = 4;</code>
+     * @return The bytes for desc.
+     */
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string desc = 4;</code>
+     * @param value The desc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesc(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      desc = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string desc = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDesc() {
+      
+      desc = getDefaultInstance().getDesc();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string desc = 4;</code>
+     * @param value The bytes for desc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      desc = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList detail = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureDetailIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -872,7 +1010,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @return A list containing the detail.
      */
     public com.google.protobuf.ProtocolStringList
@@ -880,14 +1018,14 @@ private static final long serialVersionUID = 0L;
       return detail .getUnmodifiableView();
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @return The count of detail.
      */
     public int getDetailCount() {
       return detail .size();
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param index The index of the element to return.
      * @return The detail at the given index.
      */
@@ -895,7 +1033,7 @@ private static final long serialVersionUID = 0L;
       return detail .get(index);
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param index The index of the value to return.
      * @return The bytes of the detail at the given index.
      */
@@ -904,7 +1042,7 @@ private static final long serialVersionUID = 0L;
       return detail .getByteString(index);
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param index The index to set the value at.
      * @param value The detail to set.
      * @return This builder for chaining.
@@ -920,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param value The detail to add.
      * @return This builder for chaining.
      */
@@ -935,7 +1073,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param values The detail to add.
      * @return This builder for chaining.
      */
@@ -948,7 +1086,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDetail() {
@@ -958,7 +1096,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string detail = 4;</code>
+     * <code>repeated string detail = 5;</code>
      * @param value The bytes of the detail to add.
      * @return This builder for chaining.
      */
