@@ -1062,6 +1062,124 @@ class LivingUser extends $pb.GeneratedMessage {
   void clearPlayUrl() => clearField(4);
 }
 
+class CloseCasterRequest extends $pb.GeneratedMessage {
+  factory CloseCasterRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? casterId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (casterId != null) {
+      $result.casterId = casterId;
+    }
+    return $result;
+  }
+  CloseCasterRequest._() : super();
+  factory CloseCasterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CloseCasterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CloseCasterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'casterId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CloseCasterRequest clone() => CloseCasterRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CloseCasterRequest copyWith(void Function(CloseCasterRequest) updates) => super.copyWith((message) => updates(message as CloseCasterRequest)) as CloseCasterRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CloseCasterRequest create() => CloseCasterRequest._();
+  CloseCasterRequest createEmptyInstance() => create();
+  static $pb.PbList<CloseCasterRequest> createRepeated() => $pb.PbList<CloseCasterRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CloseCasterRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CloseCasterRequest>(create);
+  static CloseCasterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get casterId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set casterId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCasterId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCasterId() => clearField(2);
+}
+
+class CloseCasterResponse extends $pb.GeneratedMessage {
+  factory CloseCasterResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  CloseCasterResponse._() : super();
+  factory CloseCasterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CloseCasterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CloseCasterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CloseCasterResponse clone() => CloseCasterResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CloseCasterResponse copyWith(void Function(CloseCasterResponse) updates) => super.copyWith((message) => updates(message as CloseCasterResponse)) as CloseCasterResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CloseCasterResponse create() => CloseCasterResponse._();
+  CloseCasterResponse createEmptyInstance() => create();
+  static $pb.PbList<CloseCasterResponse> createRepeated() => $pb.PbList<CloseCasterResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CloseCasterResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CloseCasterResponse>(create);
+  static CloseCasterResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

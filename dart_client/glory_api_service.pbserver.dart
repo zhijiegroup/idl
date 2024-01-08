@@ -442,6 +442,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$54.GetLiveBoardDataResponse> getLiveBoardData($pb.ServerContext ctx, $54.GetLiveBoardDataRequest request);
   $async.Future<$54.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ServerContext ctx, $54.GetLiveBoardCommentsRequest request);
   $async.Future<$54.ListLivingUserResponse> listBoardLivingUser($pb.ServerContext ctx, $54.ListLivingUserRequest request);
+  $async.Future<$54.CloseCasterResponse> closeCaster($pb.ServerContext ctx, $54.CloseCasterRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -812,6 +813,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveBoardData': return $54.GetLiveBoardDataRequest();
       case 'GetLiveBoardComments': return $54.GetLiveBoardCommentsRequest();
       case 'ListBoardLivingUser': return $54.ListLivingUserRequest();
+      case 'CloseCaster': return $54.CloseCasterRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1185,6 +1187,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveBoardData': return this.getLiveBoardData(ctx, request as $54.GetLiveBoardDataRequest);
       case 'GetLiveBoardComments': return this.getLiveBoardComments(ctx, request as $54.GetLiveBoardCommentsRequest);
       case 'ListBoardLivingUser': return this.listBoardLivingUser(ctx, request as $54.ListLivingUserRequest);
+      case 'CloseCaster': return this.closeCaster(ctx, request as $54.CloseCasterRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

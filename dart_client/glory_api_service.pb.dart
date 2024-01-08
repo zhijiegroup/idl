@@ -1175,5 +1175,8 @@ class glory_apiApi {
   $async.Future<$54.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $54.ListLivingUserRequest request) =>
     _client.invoke<$54.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $54.ListLivingUserResponse())
   ;
+  $async.Future<$54.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $54.CloseCasterRequest request) =>
+    _client.invoke<$54.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $54.CloseCasterResponse())
+  ;
 }
 

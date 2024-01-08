@@ -11392,6 +11392,37 @@ public final class glory_apiGrpc {
     return getListBoardLivingUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CloseCasterRequest,
+      com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> getCloseCasterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CloseCaster",
+      requestType = com.zhijiejiaoyu.glory_api.live.CloseCasterRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.live.CloseCasterResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CloseCasterRequest,
+      com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> getCloseCasterMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.live.CloseCasterRequest, com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> getCloseCasterMethod;
+    if ((getCloseCasterMethod = glory_apiGrpc.getCloseCasterMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCloseCasterMethod = glory_apiGrpc.getCloseCasterMethod) == null) {
+          glory_apiGrpc.getCloseCasterMethod = getCloseCasterMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.live.CloseCasterRequest, com.zhijiejiaoyu.glory_api.live.CloseCasterResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CloseCaster"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CloseCasterRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.live.CloseCasterResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CloseCaster"))
+              .build();
+        }
+      }
+    }
+    return getCloseCasterMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -14368,6 +14399,13 @@ public final class glory_apiGrpc {
     default void listBoardLivingUser(com.zhijiejiaoyu.glory_api.live.ListLivingUserRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListLivingUserResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBoardLivingUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void closeCaster(com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCloseCasterMethod(), responseObserver);
     }
   }
 
@@ -17694,6 +17732,14 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBoardLivingUserMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void closeCaster(com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCloseCasterMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -20640,6 +20686,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.ListLivingUserResponse listBoardLivingUser(com.zhijiejiaoyu.glory_api.live.ListLivingUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBoardLivingUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.live.CloseCasterResponse closeCaster(com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCloseCasterMethod(), getCallOptions(), request);
     }
   }
 
@@ -23955,6 +24008,14 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBoardLivingUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> closeCaster(
+        com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCloseCasterMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -24324,6 +24385,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_LIVE_BOARD_DATA = 364;
   private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 365;
   private static final int METHODID_LIST_BOARD_LIVING_USER = 366;
+  private static final int METHODID_CLOSE_CASTER = 367;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -25809,6 +25871,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_BOARD_LIVING_USER:
           serviceImpl.listBoardLivingUser((com.zhijiejiaoyu.glory_api.live.ListLivingUserRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.ListLivingUserResponse>) responseObserver);
+          break;
+        case METHODID_CLOSE_CASTER:
+          serviceImpl.closeCaster((com.zhijiejiaoyu.glory_api.live.CloseCasterRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -28397,6 +28463,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.ListLivingUserRequest,
               com.zhijiejiaoyu.glory_api.live.ListLivingUserResponse>(
                 service, METHODID_LIST_BOARD_LIVING_USER)))
+        .addMethod(
+          getCloseCasterMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.live.CloseCasterRequest,
+              com.zhijiejiaoyu.glory_api.live.CloseCasterResponse>(
+                service, METHODID_CLOSE_CASTER)))
         .build();
   }
 
@@ -28812,6 +28885,7 @@ public final class glory_apiGrpc {
               .addMethod(getGetLiveBoardDataMethod())
               .addMethod(getGetLiveBoardCommentsMethod())
               .addMethod(getListBoardLivingUserMethod())
+              .addMethod(getCloseCasterMethod())
               .build();
         }
       }

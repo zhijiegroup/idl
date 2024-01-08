@@ -84,6 +84,16 @@ public final class LiveBoard {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_LivingUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CloseCasterRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CloseCasterRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CloseCasterResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CloseCasterResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -130,8 +140,11 @@ public final class LiveBoard {
       "living_user_list\030\002 \003(\0132\025.glory_api.Livin" +
       "gUser\"S\n\nLivingUser\022\020\n\010username\030\001 \001(\t\022\016\n" +
       "\006avatar\030\002 \001(\t\022\021\n\troom_name\030\003 \001(\t\022\020\n\010play" +
-      "_url\030\004 \001(\tB#\n\037com.zhijiejiaoyu.glory_api" +
-      ".liveP\001b\006proto3"
+      "_url\030\004 \001(\t\"P\n\022CloseCasterRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcas" +
+      "ter_id\030\002 \001(\t\"<\n\023CloseCasterResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
+      "m.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -222,6 +235,18 @@ public final class LiveBoard {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LivingUser_descriptor,
         new java.lang.String[] { "Username", "Avatar", "RoomName", "PlayUrl", });
+    internal_static_glory_api_CloseCasterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_CloseCasterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CloseCasterRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "CasterId", });
+    internal_static_glory_api_CloseCasterResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_glory_api_CloseCasterResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CloseCasterResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -2939,6 +2939,12 @@ export class glory_api {
       handleResponse
     );
   }
+
+  CloseCaster(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/live/close_caster${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();

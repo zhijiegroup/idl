@@ -88,3 +88,12 @@ export interface LivingUser {
   room_name?: string;
   play_url?: string;
 }
+
+export interface CloseCasterRequest {
+  base_request?: base.BaseRequest;
+  caster_id?: string;
+}
+
+export interface CloseCasterResponse {
+  base_resp?: base.BaseResponse;
+}

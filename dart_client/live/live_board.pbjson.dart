@@ -235,3 +235,30 @@ final $typed_data.Uint8List livingUserDescriptor = $convert.base64Decode(
     'lSBmF2YXRhchIbCglyb29tX25hbWUYAyABKAlSCHJvb21OYW1lEhkKCHBsYXlfdXJsGAQgASgJ'
     'UgdwbGF5VXJs');
 
+@$core.Deprecated('Use closeCasterRequestDescriptor instead')
+const CloseCasterRequest$json = {
+  '1': 'CloseCasterRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'caster_id', '3': 2, '4': 1, '5': 9, '10': 'casterId'},
+  ],
+};
+
+/// Descriptor for `CloseCasterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List closeCasterRequestDescriptor = $convert.base64Decode(
+    'ChJDbG9zZUNhc3RlclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUm'
+    'VxdWVzdFILYmFzZVJlcXVlc3QSGwoJY2FzdGVyX2lkGAIgASgJUghjYXN0ZXJJZA==');
+
+@$core.Deprecated('Use closeCasterResponseDescriptor instead')
+const CloseCasterResponse$json = {
+  '1': 'CloseCasterResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CloseCasterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List closeCasterResponseDescriptor = $convert.base64Decode(
+    'ChNDbG9zZUNhc3RlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3'
+    'BvbnNlUghiYXNlUmVzcA==');
+

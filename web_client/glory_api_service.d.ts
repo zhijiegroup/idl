@@ -1648,6 +1648,10 @@ CreateLivePlanProduct create live plan product */
   ListBoardLivingUser(
     request: live_board.ListLivingUserRequest
   ): Promise<live_board.ListLivingUserResponse>;
+
+  CloseCaster(
+    request: live_board.CloseCasterRequest
+  ): Promise<live_board.CloseCasterResponse>;
 }
 
 export declare const glory_apiClient: glory_api;
