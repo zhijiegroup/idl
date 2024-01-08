@@ -1438,4 +1438,7 @@ service glory_api {
   rpc ListBoardLivingUser(ListLivingUserRequest) returns (ListLivingUserResponse) {
     option (api.post) = '/api/live/list_board_living_user';
   }
+  rpc CloseCaster(CloseCasterRequest) returns (CloseCasterResponse) {
+    option (api.get) = '/api/live/close_caster';
+  }
 }
