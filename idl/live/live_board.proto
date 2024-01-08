@@ -86,3 +86,12 @@ message LivingUser {
     string room_name = 3;
     string play_url = 4;
 }
+
+message CloseCasterRequest {
+    base.BaseRequest base_request = 1;
+    string caster_id = 2;
+}
+
+message CloseCasterResponse {
+    base.BaseResponse base_resp = 1;
+}
