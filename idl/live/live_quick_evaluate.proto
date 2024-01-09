@@ -13,6 +13,7 @@ message CreateQuickEvaluationRequest {
     int64 max_duration = 4;
     int64 major_id = 5;
     repeated string keywords = 6;
+    int32 keyword_min_count = 7;
 }
 
 message CreateQuickEvaluationResponse {
@@ -26,8 +27,9 @@ message UpdateQuickEvaluationRequest {
     int64 min_duration = 4;
     int64 max_duration = 5;
     repeated string keywords = 6;
-    bool is_enable = 7;
-    int64 major_id = 8;
+    int32 keyword_min_count = 7;
+    bool is_enable = 8;
+    int64 major_id = 9;
 }
 
 message UpdateQuickEvaluationResponse {
