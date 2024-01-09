@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     casterId = "";
     roomIds = emptyLongList();
     liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
+    liveUsers = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -118,6 +119,15 @@ private static final long serialVersionUID = 0L;
             liveUrls .add(s);
             break;
           }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              liveUsers = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            liveUsers .add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +148,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
         liveUrls = liveUrls .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        liveUsers = liveUsers .getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -343,6 +356,41 @@ private static final long serialVersionUID = 0L;
     return liveUrls .getByteString(index);
   }
 
+  public static final int LIVE_USERS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList liveUsers ;
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @return A list containing the liveUsers.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getLiveUsersList() {
+    return liveUsers ;
+  }
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @return The count of liveUsers.
+   */
+  public int getLiveUsersCount() {
+    return liveUsers .size();
+  }
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @param index The index of the element to return.
+   * @return The liveUsers at the given index.
+   */
+  public java.lang.String getLiveUsers(int index) {
+    return liveUsers .get(index);
+  }
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the liveUsers at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getLiveUsersBytes(int index) {
+    return liveUsers .getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -382,6 +430,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < liveUrls .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, liveUrls .getRaw(i));
+    }
+    for (int i = 0; i < liveUsers .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, liveUsers .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -432,6 +483,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLiveUrlsList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < liveUsers .size(); i++) {
+        dataSize += computeStringSizeNoTag(liveUsers .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLiveUsersList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -464,6 +523,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRoomIdsList())) return false;
     if (!getLiveUrlsList()
         .equals(other.getLiveUrlsList())) return false;
+    if (!getLiveUsersList()
+        .equals(other.getLiveUsersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -496,6 +557,10 @@ private static final long serialVersionUID = 0L;
     if (getLiveUrlsCount() > 0) {
       hash = (37 * hash) + LIVE_URLS_FIELD_NUMBER;
       hash = (53 * hash) + getLiveUrlsList().hashCode();
+    }
+    if (getLiveUsersCount() > 0) {
+      hash = (37 * hash) + LIVE_USERS_FIELD_NUMBER;
+      hash = (53 * hash) + getLiveUsersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -648,6 +713,8 @@ private static final long serialVersionUID = 0L;
       bitField0 = (bitField0 & ~0x00000001);
       liveUrls = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000002);
+      liveUsers = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000004);
       return this;
     }
 
@@ -694,6 +761,11 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000002);
       }
       result.liveUrls = liveUrls ;
+      if (((bitField0 & 0x00000004) != 0)) {
+        liveUsers = liveUsers .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000004);
+      }
+      result.liveUsers = liveUsers ;
       onBuilt();
       return result;
     }
@@ -776,6 +848,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureLiveUrlsIsMutable();
           liveUrls .addAll(other.liveUrls );
+        }
+        onChanged();
+      }
+      if (!other.liveUsers .isEmpty()) {
+        if (liveUsers .isEmpty()) {
+          liveUsers = other.liveUsers ;
+          bitField0 = (bitField0 & ~0x00000004);
+        } else {
+          ensureLiveUsersIsMutable();
+          liveUsers .addAll(other.liveUsers );
         }
         onChanged();
       }
@@ -1327,6 +1409,116 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureLiveUrlsIsMutable();
       liveUrls .add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList liveUsers = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLiveUsersIsMutable() {
+      if (!((bitField0 & 0x00000004) != 0)) {
+        liveUsers = new com.google.protobuf.LazyStringArrayList(liveUsers );
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @return A list containing the liveUsers.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLiveUsersList() {
+      return liveUsers .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @return The count of liveUsers.
+     */
+    public int getLiveUsersCount() {
+      return liveUsers .size();
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param index The index of the element to return.
+     * @return The liveUsers at the given index.
+     */
+    public java.lang.String getLiveUsers(int index) {
+      return liveUsers .get(index);
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the liveUsers at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLiveUsersBytes(int index) {
+      return liveUsers .getByteString(index);
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The liveUsers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveUsers(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLiveUsersIsMutable();
+      liveUsers .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param value The liveUsers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLiveUsers(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLiveUsersIsMutable();
+      liveUsers .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param values The liveUsers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLiveUsers(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLiveUsersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, liveUsers );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveUsers() {
+      liveUsers = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string live_users = 8;</code>
+     * @param value The bytes of the liveUsers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLiveUsersBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLiveUsersIsMutable();
+      liveUsers .add(value);
       onChanged();
       return this;
     }

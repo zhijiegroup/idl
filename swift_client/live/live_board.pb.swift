@@ -147,6 +147,8 @@ struct GloryApi_GetAggregationLiveUrlResponse {
 
   var liveUrls: [String] = []
 
+  var liveUsers: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -625,6 +627,7 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     5: .same(proto: "total"),
     6: .standard(proto: "room_ids"),
     7: .standard(proto: "live_urls"),
+    8: .standard(proto: "live_users"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -640,6 +643,7 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
       case 6: try { try decoder.decodeRepeatedInt64Field(value: &self.roomIds) }()
       case 7: try { try decoder.decodeRepeatedStringField(value: &self.liveUrls) }()
+      case 8: try { try decoder.decodeRepeatedStringField(value: &self.liveUsers) }()
       default: break
       }
     }
@@ -671,6 +675,9 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     if !self.liveUrls.isEmpty {
       try visitor.visitRepeatedStringField(value: self.liveUrls, fieldNumber: 7)
     }
+    if !self.liveUsers.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.liveUsers, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -682,6 +689,7 @@ extension GloryApi_GetAggregationLiveUrlResponse: SwiftProtobuf.Message, SwiftPr
     if lhs.total != rhs.total {return false}
     if lhs.roomIds != rhs.roomIds {return false}
     if lhs.liveUrls != rhs.liveUrls {return false}
+    if lhs.liveUsers != rhs.liveUsers {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
