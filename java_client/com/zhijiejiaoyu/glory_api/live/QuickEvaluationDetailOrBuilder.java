@@ -38,24 +38,12 @@ public interface QuickEvaluationDetailOrBuilder extends
       getDetailBytes();
 
   /**
-   * <code>string type = 4;</code>
-   * @return The type.
-   */
-  java.lang.String getType();
-  /**
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <code>string ref_type_result = 5;</code>
+   * <code>string ref_type_result = 4;</code>
    * @return The refTypeResult.
    */
   java.lang.String getRefTypeResult();
   /**
-   * <code>string ref_type_result = 5;</code>
+   * <code>string ref_type_result = 4;</code>
    * @return The bytes for refTypeResult.
    */
   com.google.protobuf.ByteString

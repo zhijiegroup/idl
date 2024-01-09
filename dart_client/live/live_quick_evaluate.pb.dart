@@ -1802,7 +1802,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     $core.String? key,
     $core.bool? isPass,
     $core.String? detail,
-    $core.String? type,
     $core.String? refTypeResult,
   }) {
     final $result = create();
@@ -1814,9 +1813,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     }
     if (detail != null) {
       $result.detail = detail;
-    }
-    if (type != null) {
-      $result.type = type;
     }
     if (refTypeResult != null) {
       $result.refTypeResult = refTypeResult;
@@ -1831,8 +1827,7 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'key')
     ..aOB(2, _omitFieldNames ? '' : 'isPass')
     ..aOS(3, _omitFieldNames ? '' : 'detail')
-    ..aOS(4, _omitFieldNames ? '' : 'type')
-    ..aOS(5, _omitFieldNames ? '' : 'refTypeResult')
+    ..aOS(4, _omitFieldNames ? '' : 'refTypeResult')
     ..hasRequiredFields = false
   ;
 
@@ -1885,22 +1880,157 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
   void clearDetail() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get type => $_getSZ(3);
+  $core.String get refTypeResult => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type($core.String v) { $_setString(3, v); }
+  set refTypeResult($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
+  $core.bool hasRefTypeResult() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearRefTypeResult() => clearField(4);
+}
 
-  @$pb.TagNumber(5)
-  $core.String get refTypeResult => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set refTypeResult($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasRefTypeResult() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearRefTypeResult() => clearField(5);
+class QuickEvaluationDetailType extends $pb.GeneratedMessage {
+  factory QuickEvaluationDetailType({
+    $core.String? type,
+    $core.Iterable<QuickEvaluationDetailKey>? detail,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (detail != null) {
+      $result.detail.addAll(detail);
+    }
+    return $result;
+  }
+  QuickEvaluationDetailType._() : super();
+  factory QuickEvaluationDetailType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationDetailType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationDetailType', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'type')
+    ..pc<QuickEvaluationDetailKey>(2, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetailKey.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationDetailType clone() => QuickEvaluationDetailType()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationDetailType copyWith(void Function(QuickEvaluationDetailType) updates) => super.copyWith((message) => updates(message as QuickEvaluationDetailType)) as QuickEvaluationDetailType;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationDetailType create() => QuickEvaluationDetailType._();
+  QuickEvaluationDetailType createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationDetailType> createRepeated() => $pb.PbList<QuickEvaluationDetailType>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationDetailType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationDetailType>(create);
+  static QuickEvaluationDetailType? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get type => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set type($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<QuickEvaluationDetailKey> get detail => $_getList(1);
+}
+
+class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
+  factory QuickEvaluationDetailKey({
+    $core.String? key,
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<QuickEvaluationDetail>? detail,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (detail != null) {
+      $result.detail.addAll(detail);
+    }
+    return $result;
+  }
+  QuickEvaluationDetailKey._() : super();
+  factory QuickEvaluationDetailKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QuickEvaluationDetailKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QuickEvaluationDetailKey', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pc<QuickEvaluationDetail>(4, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationDetailKey clone() => QuickEvaluationDetailKey()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QuickEvaluationDetailKey copyWith(void Function(QuickEvaluationDetailKey) updates) => super.copyWith((message) => updates(message as QuickEvaluationDetailKey)) as QuickEvaluationDetailKey;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationDetailKey create() => QuickEvaluationDetailKey._();
+  QuickEvaluationDetailKey createEmptyInstance() => create();
+  static $pb.PbList<QuickEvaluationDetailKey> createRepeated() => $pb.PbList<QuickEvaluationDetailKey>();
+  @$core.pragma('dart2js:noInline')
+  static QuickEvaluationDetailKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuickEvaluationDetailKey>(create);
+  static QuickEvaluationDetailKey? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<QuickEvaluationDetail> get detail => $_getList(3);
 }
 
 class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
@@ -1909,7 +2039,8 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? startTime,
     $fixnum.Int64? endTime,
     $core.bool? result,
-    $core.Iterable<QuickEvaluationDetail>? quickEvaluationDetail,
+    $core.Iterable<QuickEvaluationDetailType>? quickEvaluationDetail,
+    $core.String? name,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1927,6 +2058,9 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
     if (quickEvaluationDetail != null) {
       $result.quickEvaluationDetail.addAll(quickEvaluationDetail);
     }
+    if (name != null) {
+      $result.name = name;
+    }
     return $result;
   }
   GetQuickEvaluationDetailResponse._() : super();
@@ -1938,7 +2072,8 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'startTime')
     ..aInt64(3, _omitFieldNames ? '' : 'endTime')
     ..aOB(4, _omitFieldNames ? '' : 'result')
-    ..pc<QuickEvaluationDetail>(5, _omitFieldNames ? '' : 'quickEvaluationDetail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
+    ..pc<QuickEvaluationDetailType>(5, _omitFieldNames ? '' : 'quickEvaluationDetail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetailType.create)
+    ..aOS(6, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
@@ -2002,7 +2137,16 @@ class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
   void clearResult() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<QuickEvaluationDetail> get quickEvaluationDetail => $_getList(4);
+  $core.List<QuickEvaluationDetailType> get quickEvaluationDetail => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get name => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set name($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearName() => clearField(6);
 }
 
 class DeleteQuickEvaluationReportResponse extends $pb.GeneratedMessage {
@@ -2115,6 +2259,152 @@ class DeleteQuickEvaluationReportRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$fixnum.Int64> get reportIds => $_getList(1);
+}
+
+class DownloadQuickEvaluationReportResponse extends $pb.GeneratedMessage {
+  factory DownloadQuickEvaluationReportResponse({
+    $0.BaseResponse? baseResp,
+    $core.String? name,
+    $core.List<$core.int>? file,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (file != null) {
+      $result.file = file;
+    }
+    return $result;
+  }
+  DownloadQuickEvaluationReportResponse._() : super();
+  factory DownloadQuickEvaluationReportResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadQuickEvaluationReportResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadQuickEvaluationReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'file', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadQuickEvaluationReportResponse clone() => DownloadQuickEvaluationReportResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadQuickEvaluationReportResponse copyWith(void Function(DownloadQuickEvaluationReportResponse) updates) => super.copyWith((message) => updates(message as DownloadQuickEvaluationReportResponse)) as DownloadQuickEvaluationReportResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadQuickEvaluationReportResponse create() => DownloadQuickEvaluationReportResponse._();
+  DownloadQuickEvaluationReportResponse createEmptyInstance() => create();
+  static $pb.PbList<DownloadQuickEvaluationReportResponse> createRepeated() => $pb.PbList<DownloadQuickEvaluationReportResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadQuickEvaluationReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadQuickEvaluationReportResponse>(create);
+  static DownloadQuickEvaluationReportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get file => $_getN(2);
+  @$pb.TagNumber(3)
+  set file($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFile() => clearField(3);
+}
+
+class DownloadQuickEvaluationReportRequest extends $pb.GeneratedMessage {
+  factory DownloadQuickEvaluationReportRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? reportId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (reportId != null) {
+      $result.reportId = reportId;
+    }
+    return $result;
+  }
+  DownloadQuickEvaluationReportRequest._() : super();
+  factory DownloadQuickEvaluationReportRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadQuickEvaluationReportRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadQuickEvaluationReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'reportId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadQuickEvaluationReportRequest clone() => DownloadQuickEvaluationReportRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadQuickEvaluationReportRequest copyWith(void Function(DownloadQuickEvaluationReportRequest) updates) => super.copyWith((message) => updates(message as DownloadQuickEvaluationReportRequest)) as DownloadQuickEvaluationReportRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadQuickEvaluationReportRequest create() => DownloadQuickEvaluationReportRequest._();
+  DownloadQuickEvaluationReportRequest createEmptyInstance() => create();
+  static $pb.PbList<DownloadQuickEvaluationReportRequest> createRepeated() => $pb.PbList<DownloadQuickEvaluationReportRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadQuickEvaluationReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadQuickEvaluationReportRequest>(create);
+  static DownloadQuickEvaluationReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get reportId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set reportId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReportId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReportId() => clearField(2);
 }
 
 
