@@ -147,8 +147,19 @@ message QuickEvaluationDetail {
     string key = 1;
     bool is_pass = 2;
     string detail = 3;
-    string type = 4;
-    string ref_type_result = 5;
+    string ref_type_result = 4;
+}
+
+message QuickEvaluationDetailType {
+    string type = 1;
+    repeated QuickEvaluationDetailKey detail = 2;
+}
+
+message QuickEvaluationDetailKey {
+    string key = 1;
+    string name = 2;
+    string desc = 3;
+    repeated QuickEvaluationDetail detail = 4;
 }
 
 message GetQuickEvaluationDetailResponse {
@@ -156,7 +167,8 @@ message GetQuickEvaluationDetailResponse {
     int64 start_time = 2;
     int64 end_time = 3;
     bool result = 4;
-    repeated QuickEvaluationDetail quick_evaluation_detail = 5;
+    repeated QuickEvaluationDetailType quick_evaluation_detail = 5;
+    string name = 6;
 }
 
 message DeleteQuickEvaluationReportResponse {
@@ -166,4 +178,15 @@ message DeleteQuickEvaluationReportResponse {
 message DeleteQuickEvaluationReportRequest {
     base.BaseRequest base_request = 1;
     repeated int64 report_ids = 2;
+}
+
+message DownloadQuickEvaluationReportResponse {
+    base.BaseResponse base_resp = 1;
+    string name = 2;
+    bytes file = 3;
+}
+
+message DownloadQuickEvaluationReportRequest {
+    base.BaseRequest base_request = 1;
+    int64 report_id = 2;
 }
