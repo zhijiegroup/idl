@@ -94,6 +94,11 @@ private static final long serialVersionUID = 0L;
             keywords .add(s);
             break;
           }
+          case 56: {
+
+            keywordMinCount = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -261,6 +266,17 @@ private static final long serialVersionUID = 0L;
     return keywords .getByteString(index);
   }
 
+  public static final int KEYWORD_MIN_COUNT_FIELD_NUMBER = 7;
+  private int keywordMinCount ;
+  /**
+   * <code>int32 keyword_min_count = 7;</code>
+   * @return The keywordMinCount.
+   */
+  @java.lang.Override
+  public int getKeywordMinCount() {
+    return keywordMinCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -292,6 +308,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < keywords .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, keywords .getRaw(i));
+    }
+    if (keywordMinCount != 0) {
+      output.writeInt32(7, keywordMinCount );
     }
     unknownFields.writeTo(output);
   }
@@ -329,6 +348,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getKeywordsList().size();
     }
+    if (keywordMinCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, keywordMinCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -359,6 +382,8 @@ private static final long serialVersionUID = 0L;
         != other.getMajorId()) return false;
     if (!getKeywordsList()
         .equals(other.getKeywordsList())) return false;
+    if (getKeywordMinCount()
+        != other.getKeywordMinCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -389,6 +414,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordsList().hashCode();
     }
+    hash = (37 * hash) + KEYWORD_MIN_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getKeywordMinCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -538,6 +565,8 @@ private static final long serialVersionUID = 0L;
 
       keywords = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      keywordMinCount = 0;
+
       return this;
     }
 
@@ -579,6 +608,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.keywords = keywords ;
+      result.keywordMinCount = keywordMinCount ;
       onBuilt();
       return result;
     }
@@ -652,6 +682,9 @@ private static final long serialVersionUID = 0L;
           keywords .addAll(other.keywords );
         }
         onChanged();
+      }
+      if (other.getKeywordMinCount() != 0) {
+        setKeywordMinCount(other.getKeywordMinCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1077,6 +1110,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureKeywordsIsMutable();
       keywords .add(value);
+      onChanged();
+      return this;
+    }
+
+    private int keywordMinCount ;
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @return The keywordMinCount.
+     */
+    @java.lang.Override
+    public int getKeywordMinCount() {
+      return keywordMinCount ;
+    }
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @param value The keywordMinCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordMinCount(int value) {
+      
+      keywordMinCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeywordMinCount() {
+      
+      keywordMinCount = 0;
       onChanged();
       return this;
     }

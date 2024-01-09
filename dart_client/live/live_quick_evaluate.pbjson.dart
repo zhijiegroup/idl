@@ -23,6 +23,7 @@ const CreateQuickEvaluationRequest$json = {
     {'1': 'max_duration', '3': 4, '4': 1, '5': 3, '10': 'maxDuration'},
     {'1': 'major_id', '3': 5, '4': 1, '5': 3, '10': 'majorId'},
     {'1': 'keywords', '3': 6, '4': 3, '5': 9, '10': 'keywords'},
+    {'1': 'keyword_min_count', '3': 7, '4': 1, '5': 5, '10': 'keywordMinCount'},
   ],
 };
 
@@ -32,7 +33,7 @@ final $typed_data.Uint8List createQuickEvaluationRequestDescriptor = $convert.ba
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBG5hbWUYAiABKAlSBG5hbWUSIQoMbWlu'
     'X2R1cmF0aW9uGAMgASgDUgttaW5EdXJhdGlvbhIhCgxtYXhfZHVyYXRpb24YBCABKANSC21heE'
     'R1cmF0aW9uEhkKCG1ham9yX2lkGAUgASgDUgdtYWpvcklkEhoKCGtleXdvcmRzGAYgAygJUghr'
-    'ZXl3b3Jkcw==');
+    'ZXl3b3JkcxIqChFrZXl3b3JkX21pbl9jb3VudBgHIAEoBVIPa2V5d29yZE1pbkNvdW50');
 
 @$core.Deprecated('Use createQuickEvaluationResponseDescriptor instead')
 const CreateQuickEvaluationResponse$json = {
@@ -57,8 +58,9 @@ const UpdateQuickEvaluationRequest$json = {
     {'1': 'min_duration', '3': 4, '4': 1, '5': 3, '10': 'minDuration'},
     {'1': 'max_duration', '3': 5, '4': 1, '5': 3, '10': 'maxDuration'},
     {'1': 'keywords', '3': 6, '4': 3, '5': 9, '10': 'keywords'},
-    {'1': 'is_enable', '3': 7, '4': 1, '5': 8, '10': 'isEnable'},
-    {'1': 'major_id', '3': 8, '4': 1, '5': 3, '10': 'majorId'},
+    {'1': 'keyword_min_count', '3': 7, '4': 1, '5': 5, '10': 'keywordMinCount'},
+    {'1': 'is_enable', '3': 8, '4': 1, '5': 8, '10': 'isEnable'},
+    {'1': 'major_id', '3': 9, '4': 1, '5': 3, '10': 'majorId'},
   ],
 };
 
@@ -68,8 +70,9 @@ final $typed_data.Uint8List updateQuickEvaluationRequestDescriptor = $convert.ba
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC3N0YW5kYXJkX2lkGAIgASgDUgpzdGFu'
     'ZGFyZElkEhIKBG5hbWUYAyABKAlSBG5hbWUSIQoMbWluX2R1cmF0aW9uGAQgASgDUgttaW5EdX'
     'JhdGlvbhIhCgxtYXhfZHVyYXRpb24YBSABKANSC21heER1cmF0aW9uEhoKCGtleXdvcmRzGAYg'
-    'AygJUghrZXl3b3JkcxIbCglpc19lbmFibGUYByABKAhSCGlzRW5hYmxlEhkKCG1ham9yX2lkGA'
-    'ggASgDUgdtYWpvcklk');
+    'AygJUghrZXl3b3JkcxIqChFrZXl3b3JkX21pbl9jb3VudBgHIAEoBVIPa2V5d29yZE1pbkNvdW'
+    '50EhsKCWlzX2VuYWJsZRgIIAEoCFIIaXNFbmFibGUSGQoIbWFqb3JfaWQYCSABKANSB21ham9y'
+    'SWQ=');
 
 @$core.Deprecated('Use updateQuickEvaluationResponseDescriptor instead')
 const UpdateQuickEvaluationResponse$json = {

@@ -96,10 +96,15 @@ private static final long serialVersionUID = 0L;
           }
           case 56: {
 
-            isEnable = input.readBool();
+            keywordMinCount = input.readInt32();
             break;
           }
           case 64: {
+
+            isEnable = input.readBool();
+            break;
+          }
+          case 72: {
 
             majorId = input.readInt64();
             break;
@@ -271,10 +276,21 @@ private static final long serialVersionUID = 0L;
     return keywords .getByteString(index);
   }
 
-  public static final int IS_ENABLE_FIELD_NUMBER = 7;
+  public static final int KEYWORD_MIN_COUNT_FIELD_NUMBER = 7;
+  private int keywordMinCount ;
+  /**
+   * <code>int32 keyword_min_count = 7;</code>
+   * @return The keywordMinCount.
+   */
+  @java.lang.Override
+  public int getKeywordMinCount() {
+    return keywordMinCount ;
+  }
+
+  public static final int IS_ENABLE_FIELD_NUMBER = 8;
   private boolean isEnable ;
   /**
-   * <code>bool is_enable = 7;</code>
+   * <code>bool is_enable = 8;</code>
    * @return The isEnable.
    */
   @java.lang.Override
@@ -282,10 +298,10 @@ private static final long serialVersionUID = 0L;
     return isEnable ;
   }
 
-  public static final int MAJOR_ID_FIELD_NUMBER = 8;
+  public static final int MAJOR_ID_FIELD_NUMBER = 9;
   private long majorId ;
   /**
-   * <code>int64 major_id = 8;</code>
+   * <code>int64 major_id = 9;</code>
    * @return The majorId.
    */
   @java.lang.Override
@@ -325,11 +341,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < keywords .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, keywords .getRaw(i));
     }
+    if (keywordMinCount != 0) {
+      output.writeInt32(7, keywordMinCount );
+    }
     if (isEnable != false) {
-      output.writeBool(7, isEnable );
+      output.writeBool(8, isEnable );
     }
     if (majorId != 0L) {
-      output.writeInt64(8, majorId );
+      output.writeInt64(9, majorId );
     }
     unknownFields.writeTo(output);
   }
@@ -367,13 +386,17 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getKeywordsList().size();
     }
+    if (keywordMinCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, keywordMinCount );
+    }
     if (isEnable != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, isEnable );
+        .computeBoolSize(8, isEnable );
     }
     if (majorId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, majorId );
+        .computeInt64Size(9, majorId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,6 +428,8 @@ private static final long serialVersionUID = 0L;
         != other.getMaxDuration()) return false;
     if (!getKeywordsList()
         .equals(other.getKeywordsList())) return false;
+    if (getKeywordMinCount()
+        != other.getKeywordMinCount()) return false;
     if (getIsEnable()
         != other.getIsEnable()) return false;
     if (getMajorId()
@@ -439,6 +464,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordsList().hashCode();
     }
+    hash = (37 * hash) + KEYWORD_MIN_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getKeywordMinCount();
     hash = (37 * hash) + IS_ENABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsEnable());
@@ -594,6 +621,8 @@ private static final long serialVersionUID = 0L;
 
       keywords = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      keywordMinCount = 0;
+
       isEnable = false;
 
       majorId = 0L;
@@ -639,6 +668,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.keywords = keywords ;
+      result.keywordMinCount = keywordMinCount ;
       result.isEnable = isEnable ;
       result.majorId = majorId ;
       onBuilt();
@@ -714,6 +744,9 @@ private static final long serialVersionUID = 0L;
           keywords .addAll(other.keywords );
         }
         onChanged();
+      }
+      if (other.getKeywordMinCount() != 0) {
+        setKeywordMinCount(other.getKeywordMinCount());
       }
       if (other.getIsEnable() != false) {
         setIsEnable(other.getIsEnable());
@@ -1149,9 +1182,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int keywordMinCount ;
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @return The keywordMinCount.
+     */
+    @java.lang.Override
+    public int getKeywordMinCount() {
+      return keywordMinCount ;
+    }
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @param value The keywordMinCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordMinCount(int value) {
+      
+      keywordMinCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 keyword_min_count = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeywordMinCount() {
+      
+      keywordMinCount = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean isEnable ;
     /**
-     * <code>bool is_enable = 7;</code>
+     * <code>bool is_enable = 8;</code>
      * @return The isEnable.
      */
     @java.lang.Override
@@ -1159,7 +1223,7 @@ private static final long serialVersionUID = 0L;
       return isEnable ;
     }
     /**
-     * <code>bool is_enable = 7;</code>
+     * <code>bool is_enable = 8;</code>
      * @param value The isEnable to set.
      * @return This builder for chaining.
      */
@@ -1170,7 +1234,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_enable = 7;</code>
+     * <code>bool is_enable = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsEnable() {
@@ -1182,7 +1246,7 @@ private static final long serialVersionUID = 0L;
 
     private long majorId ;
     /**
-     * <code>int64 major_id = 8;</code>
+     * <code>int64 major_id = 9;</code>
      * @return The majorId.
      */
     @java.lang.Override
@@ -1190,7 +1254,7 @@ private static final long serialVersionUID = 0L;
       return majorId ;
     }
     /**
-     * <code>int64 major_id = 8;</code>
+     * <code>int64 major_id = 9;</code>
      * @param value The majorId to set.
      * @return This builder for chaining.
      */
@@ -1201,7 +1265,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 major_id = 8;</code>
+     * <code>int64 major_id = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearMajorId() {

@@ -25,6 +25,7 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? maxDuration,
     $fixnum.Int64? majorId,
     $core.Iterable<$core.String>? keywords,
+    $core.int? keywordMinCount,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -45,6 +46,9 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
     if (keywords != null) {
       $result.keywords.addAll(keywords);
     }
+    if (keywordMinCount != null) {
+      $result.keywordMinCount = keywordMinCount;
+    }
     return $result;
   }
   CreateQuickEvaluationRequest._() : super();
@@ -58,6 +62,7 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'maxDuration')
     ..aInt64(5, _omitFieldNames ? '' : 'majorId')
     ..pPS(6, _omitFieldNames ? '' : 'keywords')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'keywordMinCount', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -131,6 +136,15 @@ class CreateQuickEvaluationRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<$core.String> get keywords => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.int get keywordMinCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set keywordMinCount($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasKeywordMinCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearKeywordMinCount() => clearField(7);
 }
 
 class CreateQuickEvaluationResponse extends $pb.GeneratedMessage {
@@ -193,6 +207,7 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? minDuration,
     $fixnum.Int64? maxDuration,
     $core.Iterable<$core.String>? keywords,
+    $core.int? keywordMinCount,
     $core.bool? isEnable,
     $fixnum.Int64? majorId,
   }) {
@@ -215,6 +230,9 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     if (keywords != null) {
       $result.keywords.addAll(keywords);
     }
+    if (keywordMinCount != null) {
+      $result.keywordMinCount = keywordMinCount;
+    }
     if (isEnable != null) {
       $result.isEnable = isEnable;
     }
@@ -234,8 +252,9 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'minDuration')
     ..aInt64(5, _omitFieldNames ? '' : 'maxDuration')
     ..pPS(6, _omitFieldNames ? '' : 'keywords')
-    ..aOB(7, _omitFieldNames ? '' : 'isEnable')
-    ..aInt64(8, _omitFieldNames ? '' : 'majorId')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'keywordMinCount', $pb.PbFieldType.O3)
+    ..aOB(8, _omitFieldNames ? '' : 'isEnable')
+    ..aInt64(9, _omitFieldNames ? '' : 'majorId')
     ..hasRequiredFields = false
   ;
 
@@ -311,22 +330,31 @@ class UpdateQuickEvaluationRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get keywords => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.bool get isEnable => $_getBF(6);
+  $core.int get keywordMinCount => $_getIZ(6);
   @$pb.TagNumber(7)
-  set isEnable($core.bool v) { $_setBool(6, v); }
+  set keywordMinCount($core.int v) { $_setSignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasIsEnable() => $_has(6);
+  $core.bool hasKeywordMinCount() => $_has(6);
   @$pb.TagNumber(7)
-  void clearIsEnable() => clearField(7);
+  void clearKeywordMinCount() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get majorId => $_getI64(7);
+  $core.bool get isEnable => $_getBF(7);
   @$pb.TagNumber(8)
-  set majorId($fixnum.Int64 v) { $_setInt64(7, v); }
+  set isEnable($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasMajorId() => $_has(7);
+  $core.bool hasIsEnable() => $_has(7);
   @$pb.TagNumber(8)
-  void clearMajorId() => clearField(8);
+  void clearIsEnable() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get majorId => $_getI64(8);
+  @$pb.TagNumber(9)
+  set majorId($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMajorId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMajorId() => clearField(9);
 }
 
 class UpdateQuickEvaluationResponse extends $pb.GeneratedMessage {

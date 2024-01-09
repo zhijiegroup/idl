@@ -13,6 +13,7 @@ export interface CreateQuickEvaluationRequest {
   max_duration?: string;
   major_id?: string;
   keywords?: Array<string>;
+  keyword_min_count?: number;
 }
 
 export interface CreateQuickEvaluationResponse {
@@ -26,6 +27,7 @@ export interface UpdateQuickEvaluationRequest {
   min_duration?: string;
   max_duration?: string;
   keywords?: Array<string>;
+  keyword_min_count?: number;
   is_enable?: boolean;
   major_id?: string;
 }
