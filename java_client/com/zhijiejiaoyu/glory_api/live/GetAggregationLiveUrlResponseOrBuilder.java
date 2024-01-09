@@ -99,4 +99,29 @@ public interface GetAggregationLiveUrlResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLiveUrlsBytes(int index);
+
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @return A list containing the liveUsers.
+   */
+  java.util.List<java.lang.String>
+      getLiveUsersList();
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @return The count of liveUsers.
+   */
+  int getLiveUsersCount();
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @param index The index of the element to return.
+   * @return The liveUsers at the given index.
+   */
+  java.lang.String getLiveUsers(int index);
+  /**
+   * <code>repeated string live_users = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the liveUsers at the given index.
+   */
+  com.google.protobuf.ByteString
+      getLiveUsersBytes(int index);
 }

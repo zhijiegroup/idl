@@ -144,85 +144,87 @@ public final class LiveQuickEvaluate {
   static {
     java.lang.String[] descriptorData = {
       "\n\036live/live_quick_evaluate.proto\022\tglory_" +
-      "api\032\nbase.proto\032\017user/user.proto\"\245\001\n\034Cre" +
+      "api\032\nbase.proto\032\017user/user.proto\"\300\001\n\034Cre" +
       "ateQuickEvaluationRequest\022\'\n\014base_reques" +
       "t\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(\t" +
       "\022\024\n\014min_duration\030\003 \001(\003\022\024\n\014max_duration\030\004" +
       " \001(\003\022\020\n\010major_id\030\005 \001(\003\022\020\n\010keywords\030\006 \003(\t" +
-      "\"F\n\035CreateQuickEvaluationResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"\315\001\n\034Upd" +
-      "ateQuickEvaluationRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013standard_i" +
-      "d\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022\024\n\014min_duration\030\004 " +
-      "\001(\003\022\024\n\014max_duration\030\005 \001(\003\022\020\n\010keywords\030\006 " +
-      "\003(\t\022\021\n\tis_enable\030\007 \001(\010\022\020\n\010major_id\030\010 \001(\003" +
-      "\"F\n\035UpdateQuickEvaluationResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"\\\n\034Dele" +
-      "teQuickEvaluationRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013standard_id" +
-      "\030\002 \001(\003\"F\n\035DeleteQuickEvaluationResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\344" +
-      "\001\n\022EvaluationStandard\022\023\n\013standard_id\030\001 \001" +
-      "(\003\022\014\n\004name\030\002 \001(\t\022\024\n\014min_duration\030\003 \001(\003\022\024" +
-      "\n\014max_duration\030\004 \001(\003\022\020\n\010keywords\030\005 \003(\t\022\017" +
-      "\n\007creator\030\006 \001(\t\022\017\n\007updator\030\007 \001(\t\022\021\n\tis_e" +
-      "nable\030\010 \001(\010\022\022\n\nupdated_at\030\t \001(\003\022$\n\005major" +
-      "\030\n \001(\0132\025.glory_api.TenantDept\"\204\001\n\032ListQu" +
-      "ickEvaluationRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\020\n\010major_id\030\002 \001(\003\022" +
-      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
-      "uest\"\250\001\n\033ListQuickEvaluationResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0224\n\rs" +
-      "tandard_list\030\002 \003(\0132\035.glory_api.Evaluatio" +
-      "nStandard\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"\201\001\n\"CreateQuickEvaluatio" +
-      "nReportRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\014\n\004name\030\002 \001(\t\022\022\n\nstart_t" +
-      "ime\030\003 \001(\003\022\020\n\010end_time\030\004 \001(\003\"L\n#CreateQui" +
+      "\022\031\n\021keyword_min_count\030\007 \001(\005\"F\n\035CreateQui" +
+      "ckEvaluationResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\"\350\001\n\034UpdateQuickEvalu" +
+      "ationRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\023\n\013standard_id\030\002 \001(\003\022\014\n\004na" +
+      "me\030\003 \001(\t\022\024\n\014min_duration\030\004 \001(\003\022\024\n\014max_du" +
+      "ration\030\005 \001(\003\022\020\n\010keywords\030\006 \003(\t\022\031\n\021keywor" +
+      "d_min_count\030\007 \001(\005\022\021\n\tis_enable\030\010 \001(\010\022\020\n\010" +
+      "major_id\030\t \001(\003\"F\n\035UpdateQuickEvaluationR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"\\\n\034DeleteQuickEvaluationRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\023\n\013standard_id\030\002 \001(\003\"F\n\035DeleteQuickEvalu" +
+      "ationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\344\001\n\022EvaluationStandard\022\023\n\013s" +
+      "tandard_id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\024\n\014min_du" +
+      "ration\030\003 \001(\003\022\024\n\014max_duration\030\004 \001(\003\022\020\n\010ke" +
+      "ywords\030\005 \003(\t\022\017\n\007creator\030\006 \001(\t\022\017\n\007updator" +
+      "\030\007 \001(\t\022\021\n\tis_enable\030\010 \001(\010\022\022\n\nupdated_at\030" +
+      "\t \001(\003\022$\n\005major\030\n \001(\0132\025.glory_api.TenantD" +
+      "ept\"\204\001\n\032ListQuickEvaluationRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010m" +
+      "ajor_id\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\250\001\n\033ListQuickEvaluati" +
+      "onResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\0224\n\rstandard_list\030\002 \003(\0132\035.glory" +
+      "_api.EvaluationStandard\022,\n\npagination\030d " +
+      "\001(\0132\030.base.PaginationResponse\"\201\001\n\"Create" +
+      "QuickEvaluationReportRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 " +
+      "\001(\t\022\022\n\nstart_time\030\003 \001(\003\022\020\n\010end_time\030\004 \001(" +
+      "\003\"L\n#CreateQuickEvaluationReportResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "\206\001\n ListQuickEvaluationReportRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n" +
+      "\004name\030\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.P" +
+      "aginationRequest\"\201\001\n\020EvaluationReport\022\021\n" +
+      "\treport_id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\022\n\nstart_" +
+      "time\030\003 \001(\t\022\020\n\010end_time\030\004 \001(\t\022\022\n\ncreated_" +
+      "at\030\005 \001(\t\022\022\n\ncreated_by\030\006 \001(\t\"\252\001\n!ListQui" +
       "ckEvaluationReportResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"\206\001\n ListQuickE" +
-      "valuationReportRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(\t\022+\n" +
-      "\npagination\030d \001(\0132\027.base.PaginationReque" +
-      "st\"\201\001\n\020EvaluationReport\022\021\n\treport_id\030\001 \001" +
-      "(\003\022\014\n\004name\030\002 \001(\t\022\022\n\nstart_time\030\003 \001(\t\022\020\n\010" +
-      "end_time\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\t\022\022\n\ncr" +
-      "eated_by\030\006 \001(\t\"\252\001\n!ListQuickEvaluationRe" +
-      "portResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\0220\n\013report_list\030\002 \003(\0132\033.glory" +
-      "_api.EvaluationReport\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponse\"]\n\037GetQuickE" +
-      "valuationReportRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\021\n\treport_id\030\002 \001" +
-      "(\003\"\207\001\n\nPassDetail\022\017\n\007user_id\030\001 \001(\003\022\021\n\tus" +
-      "er_name\030\002 \001(\t\022\017\n\007room_id\030\003 \001(\003\022\025\n\rno_pas" +
-      "s_items\030\004 \003(\t\022-\n\016no_pass_detail\030\005 \003(\0132\025." +
-      "glory_api.NoPassInfo\"T\n\nNoPassInfo\022\013\n\003ke" +
-      "y\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\014\n\004" +
-      "desc\030\004 \001(\t\022\016\n\006detail\030\005 \003(\t\"\276\001\n\014ReportDet" +
-      "ail\022\014\n\004name\030\001 \001(\t\022\022\n\nstart_time\030\002 \001(\003\022\020\n" +
-      "\010end_time\030\003 \001(\003\022\022\n\npass_total\030\004 \001(\003\022\025\n\rn" +
-      "o_pass_total\030\005 \001(\003\022%\n\006passes\030\006 \003(\0132\025.glo" +
-      "ry_api.PassDetail\022(\n\tno_passes\030\007 \003(\0132\025.g" +
-      "lory_api.PassDetail\"r\n GetQuickEvaluatio" +
-      "nReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\'\n\006report\030\002 \001(\0132\027.glory_a" +
-      "pi.ReportDetail\"[\n\037GetQuickEvaluationDet" +
-      "ailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\"l\n\025QuickEva" +
-      "luationDetail\022\013\n\003key\030\001 \001(\t\022\017\n\007is_pass\030\002 " +
-      "\001(\010\022\016\n\006detail\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\027\n\017ref" +
-      "_type_result\030\005 \001(\t\"\302\001\n GetQuickEvaluatio" +
-      "nDetailResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010en" +
-      "d_time\030\003 \001(\003\022\016\n\006result\030\004 \001(\010\022A\n\027quick_ev" +
-      "aluation_detail\030\005 \003(\0132 .glory_api.QuickE" +
-      "valuationDetail\"L\n#DeleteQuickEvaluation" +
-      "ReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\"a\n\"DeleteQuickEvaluationRe" +
-      "portRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\022\n\nreport_ids\030\002 \003(\003B#\n\037com." +
-      "zhijiejiaoyu.glory_api.liveP\001b\006proto3"
+      "\001 \001(\0132\022.base.BaseResponse\0220\n\013report_list" +
+      "\030\002 \003(\0132\033.glory_api.EvaluationReport\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"]\n\037GetQuickEvaluationReportRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\treport_id\030\002 \001(\003\"\207\001\n\nPassDetail\022\017\n\007user_" +
+      "id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\017\n\007room_id\030\003" +
+      " \001(\003\022\025\n\rno_pass_items\030\004 \003(\t\022-\n\016no_pass_d" +
+      "etail\030\005 \003(\0132\025.glory_api.NoPassInfo\"T\n\nNo" +
+      "PassInfo\022\013\n\003key\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005v" +
+      "alue\030\003 \001(\t\022\014\n\004desc\030\004 \001(\t\022\016\n\006detail\030\005 \003(\t" +
+      "\"\276\001\n\014ReportDetail\022\014\n\004name\030\001 \001(\t\022\022\n\nstart" +
+      "_time\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\022\n\npass_to" +
+      "tal\030\004 \001(\003\022\025\n\rno_pass_total\030\005 \001(\003\022%\n\006pass" +
+      "es\030\006 \003(\0132\025.glory_api.PassDetail\022(\n\tno_pa" +
+      "sses\030\007 \003(\0132\025.glory_api.PassDetail\"r\n Get" +
+      "QuickEvaluationReportResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\006report\030\002" +
+      " \001(\0132\027.glory_api.ReportDetail\"[\n\037GetQuic" +
+      "kEvaluationDetailRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001" +
+      "(\003\"l\n\025QuickEvaluationDetail\022\013\n\003key\030\001 \001(\t" +
+      "\022\017\n\007is_pass\030\002 \001(\010\022\016\n\006detail\030\003 \001(\t\022\014\n\004typ" +
+      "e\030\004 \001(\t\022\027\n\017ref_type_result\030\005 \001(\t\"\302\001\n Get" +
+      "QuickEvaluationDetailResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nstart_ti" +
+      "me\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\016\n\006result\030\004 \001" +
+      "(\010\022A\n\027quick_evaluation_detail\030\005 \003(\0132 .gl" +
+      "ory_api.QuickEvaluationDetail\"L\n#DeleteQ" +
+      "uickEvaluationReportResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"a\n\"DeleteQui" +
+      "ckEvaluationReportRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nreport_ids" +
+      "\030\002 \003(\003B#\n\037com.zhijiejiaoyu.glory_api.liv" +
+      "eP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -235,7 +237,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_CreateQuickEvaluationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateQuickEvaluationRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Name", "MinDuration", "MaxDuration", "MajorId", "Keywords", });
+        new java.lang.String[] { "BaseRequest", "Name", "MinDuration", "MaxDuration", "MajorId", "Keywords", "KeywordMinCount", });
     internal_static_glory_api_CreateQuickEvaluationResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateQuickEvaluationResponse_fieldAccessorTable = new
@@ -247,7 +249,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_UpdateQuickEvaluationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateQuickEvaluationRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "StandardId", "Name", "MinDuration", "MaxDuration", "Keywords", "IsEnable", "MajorId", });
+        new java.lang.String[] { "BaseRequest", "StandardId", "Name", "MinDuration", "MaxDuration", "Keywords", "KeywordMinCount", "IsEnable", "MajorId", });
     internal_static_glory_api_UpdateQuickEvaluationResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_UpdateQuickEvaluationResponse_fieldAccessorTable = new

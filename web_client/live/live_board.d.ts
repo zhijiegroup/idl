@@ -40,6 +40,7 @@ export interface GetAggregationLiveUrlResponse {
   total?: string;
   room_ids?: Array<string>;
   live_urls?: Array<string>;
+  live_users?: Array<string>;
 }
 
 export interface GetLiveBoardDataRequest {

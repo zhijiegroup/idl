@@ -115,36 +115,37 @@ public final class LiveBoard {
       "name\030\002 \001(\t\"y\n\034GetAggregationLiveUrlReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
       "est\022\014\n\004page\030\002 \001(\003\022\021\n\tcaster_id\030\003 \001(\t\022\017\n\007" +
-      "clas_id\030\004 \003(\003\"\262\001\n\035GetAggregationLiveUrlR" +
+      "clas_id\030\004 \003(\003\"\306\001\n\035GetAggregationLiveUrlR" +
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
       "sponse\022\020\n\010live_url\030\002 \001(\t\022\021\n\tmix_count\030\003 " +
       "\001(\003\022\021\n\tcaster_id\030\004 \001(\t\022\r\n\005total\030\005 \001(\003\022\020\n" +
-      "\010room_ids\030\006 \003(\003\022\021\n\tlive_urls\030\007 \003(\t\"T\n\027Ge" +
-      "tLiveBoardDataRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\020\n\010clas_ids\030\002 \003(\003" +
-      "\"\305\001\n\030GetLiveBoardDataResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014total_am" +
-      "ount\030\002 \001(\003\022\023\n\013total_order\030\003 \001(\003\022\024\n\014total" +
-      "_living\030\004 \001(\003\022\025\n\rtotal_comment\030\005 \001(\003\022*\n\t" +
-      "like_rank\030\006 \003(\0132\027.glory_api.LiveLikeData" +
-      "\"0\n\014LiveLikeData\022\014\n\004name\030\001 \001(\t\022\022\n\nlike_c" +
-      "ount\030\002 \001(\003\"X\n\033GetLiveBoardCommentsReques" +
+      "\010room_ids\030\006 \003(\003\022\021\n\tlive_urls\030\007 \003(\t\022\022\n\nli" +
+      "ve_users\030\010 \003(\t\"T\n\027GetLiveBoardDataReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\020\n\010clas_ids\030\002 \003(\003\"W\n\034GetLiveBoardComm" +
-      "entsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022\020\n\010comments\030\006 \003(\t\"d\n\025ListLiv" +
-      "ingUserRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\020\n\010clas_ids\030\002 \003(\003\022\020\n\010use" +
-      "rname\030\003 \001(\t\"p\n\026ListLivingUserResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\020" +
-      "living_user_list\030\002 \003(\0132\025.glory_api.Livin" +
-      "gUser\"S\n\nLivingUser\022\020\n\010username\030\001 \001(\t\022\016\n" +
-      "\006avatar\030\002 \001(\t\022\021\n\troom_name\030\003 \001(\t\022\020\n\010play" +
-      "_url\030\004 \001(\t\"P\n\022CloseCasterRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tcas" +
-      "ter_id\030\002 \001(\t\"<\n\023CloseCasterResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037co" +
-      "m.zhijiejiaoyu.glory_api.liveP\001b\006proto3"
+      "st\022\020\n\010clas_ids\030\002 \003(\003\"\305\001\n\030GetLiveBoardDat" +
+      "aResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\024\n\014total_amount\030\002 \001(\003\022\023\n\013total_" +
+      "order\030\003 \001(\003\022\024\n\014total_living\030\004 \001(\003\022\025\n\rtot" +
+      "al_comment\030\005 \001(\003\022*\n\tlike_rank\030\006 \003(\0132\027.gl" +
+      "ory_api.LiveLikeData\"0\n\014LiveLikeData\022\014\n\004" +
+      "name\030\001 \001(\t\022\022\n\nlike_count\030\002 \001(\003\"X\n\033GetLiv" +
+      "eBoardCommentsRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\020\n\010clas_ids\030\002 \003(\003" +
+      "\"W\n\034GetLiveBoardCommentsResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010comme" +
+      "nts\030\006 \003(\t\"d\n\025ListLivingUserRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010c" +
+      "las_ids\030\002 \003(\003\022\020\n\010username\030\003 \001(\t\"p\n\026ListL" +
+      "ivingUserResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022/\n\020living_user_list\030\002 \003" +
+      "(\0132\025.glory_api.LivingUser\"S\n\nLivingUser\022" +
+      "\020\n\010username\030\001 \001(\t\022\016\n\006avatar\030\002 \001(\t\022\021\n\troo" +
+      "m_name\030\003 \001(\t\022\020\n\010play_url\030\004 \001(\t\"P\n\022CloseC" +
+      "asterRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\021\n\tcaster_id\030\002 \001(\t\"<\n\023Clos" +
+      "eCasterResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponseB#\n\037com.zhijiejiaoyu.glory" +
+      "_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -186,7 +187,7 @@ public final class LiveBoard {
     internal_static_glory_api_GetAggregationLiveUrlResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetAggregationLiveUrlResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "LiveUrl", "MixCount", "CasterId", "Total", "RoomIds", "LiveUrls", });
+        new java.lang.String[] { "BaseResp", "LiveUrl", "MixCount", "CasterId", "Total", "RoomIds", "LiveUrls", "LiveUsers", });
     internal_static_glory_api_GetLiveBoardDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_GetLiveBoardDataRequest_fieldAccessorTable = new

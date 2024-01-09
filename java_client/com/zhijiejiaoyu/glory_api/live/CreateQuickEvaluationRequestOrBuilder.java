@@ -76,4 +76,10 @@ public interface CreateQuickEvaluationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getKeywordsBytes(int index);
+
+  /**
+   * <code>int32 keyword_min_count = 7;</code>
+   * @return The keywordMinCount.
+   */
+  int getKeywordMinCount();
 }

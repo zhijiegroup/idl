@@ -44,6 +44,8 @@ struct GloryApi_CreateQuickEvaluationRequest {
 
   var keywords: [String] = []
 
+  var keywordMinCount: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -95,6 +97,8 @@ struct GloryApi_UpdateQuickEvaluationRequest {
   var maxDuration: Int64 = 0
 
   var keywords: [String] = []
+
+  var keywordMinCount: Int32 = 0
 
   var isEnable: Bool = false
 
@@ -715,6 +719,7 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     4: .standard(proto: "max_duration"),
     5: .standard(proto: "major_id"),
     6: .same(proto: "keywords"),
+    7: .standard(proto: "keyword_min_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -729,6 +734,7 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.maxDuration) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.keywordMinCount) }()
       default: break
       }
     }
@@ -757,6 +763,9 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if !self.keywords.isEmpty {
       try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 6)
     }
+    if self.keywordMinCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.keywordMinCount, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -767,6 +776,7 @@ extension GloryApi_CreateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.maxDuration != rhs.maxDuration {return false}
     if lhs.majorID != rhs.majorID {return false}
     if lhs.keywords != rhs.keywords {return false}
+    if lhs.keywordMinCount != rhs.keywordMinCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -817,8 +827,9 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     4: .standard(proto: "min_duration"),
     5: .standard(proto: "max_duration"),
     6: .same(proto: "keywords"),
-    7: .standard(proto: "is_enable"),
-    8: .standard(proto: "major_id"),
+    7: .standard(proto: "keyword_min_count"),
+    8: .standard(proto: "is_enable"),
+    9: .standard(proto: "major_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -833,8 +844,9 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.minDuration) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.maxDuration) }()
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.keywords) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.keywordMinCount) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isEnable) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       default: break
       }
     }
@@ -863,11 +875,14 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if !self.keywords.isEmpty {
       try visitor.visitRepeatedStringField(value: self.keywords, fieldNumber: 6)
     }
+    if self.keywordMinCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.keywordMinCount, fieldNumber: 7)
+    }
     if self.isEnable != false {
-      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 7)
+      try visitor.visitSingularBoolField(value: self.isEnable, fieldNumber: 8)
     }
     if self.majorID != 0 {
-      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 8)
+      try visitor.visitSingularInt64Field(value: self.majorID, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -879,6 +894,7 @@ extension GloryApi_UpdateQuickEvaluationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.minDuration != rhs.minDuration {return false}
     if lhs.maxDuration != rhs.maxDuration {return false}
     if lhs.keywords != rhs.keywords {return false}
+    if lhs.keywordMinCount != rhs.keywordMinCount {return false}
     if lhs.isEnable != rhs.isEnable {return false}
     if lhs.majorID != rhs.majorID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

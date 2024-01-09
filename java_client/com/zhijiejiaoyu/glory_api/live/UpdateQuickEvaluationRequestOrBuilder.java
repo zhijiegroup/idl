@@ -78,13 +78,19 @@ public interface UpdateQuickEvaluationRequestOrBuilder extends
       getKeywordsBytes(int index);
 
   /**
-   * <code>bool is_enable = 7;</code>
+   * <code>int32 keyword_min_count = 7;</code>
+   * @return The keywordMinCount.
+   */
+  int getKeywordMinCount();
+
+  /**
+   * <code>bool is_enable = 8;</code>
    * @return The isEnable.
    */
   boolean getIsEnable();
 
   /**
-   * <code>int64 major_id = 8;</code>
+   * <code>int64 major_id = 9;</code>
    * @return The majorId.
    */
   long getMajorId();
