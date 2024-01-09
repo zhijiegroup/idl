@@ -38,6 +38,7 @@ message GetAggregationLiveUrlResponse {
     int64 total = 5;
     repeated int64 room_ids = 6;
     repeated string live_urls = 7;
+    repeated string live_users = 8;
 }
 
 message GetLiveBoardDataRequest {
