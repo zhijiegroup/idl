@@ -1802,7 +1802,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     $core.String? key,
     $core.bool? isPass,
     $core.String? detail,
-    $core.String? refTypeResult,
   }) {
     final $result = create();
     if (key != null) {
@@ -1814,9 +1813,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     if (detail != null) {
       $result.detail = detail;
     }
-    if (refTypeResult != null) {
-      $result.refTypeResult = refTypeResult;
-    }
     return $result;
   }
   QuickEvaluationDetail._() : super();
@@ -1827,7 +1823,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'key')
     ..aOB(2, _omitFieldNames ? '' : 'isPass')
     ..aOS(3, _omitFieldNames ? '' : 'detail')
-    ..aOS(4, _omitFieldNames ? '' : 'refTypeResult')
     ..hasRequiredFields = false
   ;
 
@@ -1878,15 +1873,6 @@ class QuickEvaluationDetail extends $pb.GeneratedMessage {
   $core.bool hasDetail() => $_has(2);
   @$pb.TagNumber(3)
   void clearDetail() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get refTypeResult => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set refTypeResult($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasRefTypeResult() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearRefTypeResult() => clearField(4);
 }
 
 class QuickEvaluationDetailType extends $pb.GeneratedMessage {
@@ -1953,6 +1939,7 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.bool? result,
+    $core.String? refResult,
     $core.Iterable<QuickEvaluationDetail>? detail,
   }) {
     final $result = create();
@@ -1968,6 +1955,9 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     if (result != null) {
       $result.result = result;
     }
+    if (refResult != null) {
+      $result.refResult = refResult;
+    }
     if (detail != null) {
       $result.detail.addAll(detail);
     }
@@ -1982,7 +1972,8 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..aOB(4, _omitFieldNames ? '' : 'result')
-    ..pc<QuickEvaluationDetail>(5, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
+    ..aOS(5, _omitFieldNames ? '' : 'refResult')
+    ..pc<QuickEvaluationDetail>(6, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
     ..hasRequiredFields = false
   ;
 
@@ -2044,7 +2035,16 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
   void clearResult() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<QuickEvaluationDetail> get detail => $_getList(4);
+  $core.String get refResult => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set refResult($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRefResult() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRefResult() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<QuickEvaluationDetail> get detail => $_getList(5);
 }
 
 class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {

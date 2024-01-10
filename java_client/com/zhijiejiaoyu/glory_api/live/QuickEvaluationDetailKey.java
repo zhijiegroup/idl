@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     key = "";
     name = "";
     desc = "";
+    refResult = "";
     detail = java.util.Collections.emptyList();
   }
 
@@ -77,6 +78,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            refResult = s;
+            break;
+          }
+          case 50: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               detail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail>();
               mutable_bitField0_ |= 0x00000001;
@@ -245,17 +252,55 @@ private static final long serialVersionUID = 0L;
     return result ;
   }
 
-  public static final int DETAIL_FIELD_NUMBER = 5;
+  public static final int REF_RESULT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object refResult ;
+  /**
+   * <code>string ref_result = 5;</code>
+   * @return The refResult.
+   */
+  @java.lang.Override
+  public java.lang.String getRefResult() {
+    java.lang.Object ref = refResult ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      refResult = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string ref_result = 5;</code>
+   * @return The bytes for refResult.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRefResultBytes() {
+    java.lang.Object ref = refResult ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      refResult = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DETAIL_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> detail ;
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> getDetailList() {
     return detail ;
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
@@ -263,21 +308,21 @@ private static final long serialVersionUID = 0L;
     return detail ;
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   @java.lang.Override
   public int getDetailCount() {
     return detail .size();
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index) {
     return detail .get(index);
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
@@ -311,8 +356,11 @@ private static final long serialVersionUID = 0L;
     if (result != false) {
       output.writeBool(4, result );
     }
+    if (!getRefResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, refResult );
+    }
     for (int i = 0; i < detail .size(); i++) {
-      output.writeMessage(5, detail .get(i));
+      output.writeMessage(6, detail .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -336,9 +384,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, result );
     }
+    if (!getRefResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, refResult );
+    }
     for (int i = 0; i < detail .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, detail .get(i));
+        .computeMessageSize(6, detail .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -363,6 +414,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDesc())) return false;
     if (getResult()
         != other.getResult()) return false;
+    if (!getRefResult()
+        .equals(other.getRefResult())) return false;
     if (!getDetailList()
         .equals(other.getDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -385,6 +438,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RESULT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getResult());
+    hash = (37 * hash) + REF_RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getRefResult().hashCode();
     if (getDetailCount() > 0) {
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetailList().hashCode();
@@ -531,6 +586,8 @@ private static final long serialVersionUID = 0L;
 
       result = false;
 
+      refResult = "";
+
       if (detailBuilder == null) {
         detail = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -568,6 +625,7 @@ private static final long serialVersionUID = 0L;
       result.name = name ;
       result.desc = desc ;
       result.result = result ;
+      result.refResult = refResult ;
       if (detailBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           detail = java.util.Collections.unmodifiableList(detail );
@@ -639,6 +697,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getResult() != false) {
         setResult(other.getResult());
+      }
+      if (!other.getRefResult().isEmpty()) {
+        refResult = other.refResult ;
+        onChanged();
       }
       if (detailBuilder == null) {
         if (!other.detail .isEmpty()) {
@@ -955,6 +1017,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object refResult = "";
+    /**
+     * <code>string ref_result = 5;</code>
+     * @return The refResult.
+     */
+    public java.lang.String getRefResult() {
+      java.lang.Object ref = refResult ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refResult = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string ref_result = 5;</code>
+     * @return The bytes for refResult.
+     */
+    public com.google.protobuf.ByteString
+        getRefResultBytes() {
+      java.lang.Object ref = refResult ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refResult = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string ref_result = 5;</code>
+     * @param value The refResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefResult(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      refResult = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_result = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRefResult() {
+      
+      refResult = getDefaultInstance().getRefResult();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_result = 5;</code>
+     * @param value The bytes for refResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefResultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      refResult = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> detail =
       java.util.Collections.emptyList();
     private void ensureDetailIsMutable() {
@@ -968,7 +1106,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> detailBuilder ;
 
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> getDetailList() {
       if (detailBuilder == null) {
@@ -978,7 +1116,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public int getDetailCount() {
       if (detailBuilder == null) {
@@ -988,7 +1126,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index) {
       if (detailBuilder == null) {
@@ -998,7 +1136,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
@@ -1015,7 +1153,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -1029,7 +1167,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder addDetail(com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
       if (detailBuilder == null) {
@@ -1045,7 +1183,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
@@ -1062,7 +1200,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder addDetail(
         com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -1076,7 +1214,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -1090,7 +1228,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder addAllDetail(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> values) {
@@ -1105,7 +1243,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder clearDetail() {
       if (detailBuilder == null) {
@@ -1118,7 +1256,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public Builder removeDetail(int index) {
       if (detailBuilder == null) {
@@ -1131,14 +1269,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder getDetailBuilder(
         int index) {
       return getDetailFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
         int index) {
@@ -1148,7 +1286,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
          getDetailOrBuilderList() {
@@ -1159,14 +1297,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder addDetailBuilder() {
       return getDetailFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder addDetailBuilder(
         int index) {
@@ -1174,7 +1312,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder> 
          getDetailBuilderList() {

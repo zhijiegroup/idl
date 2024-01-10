@@ -36,16 +36,4 @@ public interface QuickEvaluationDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDetailBytes();
-
-  /**
-   * <code>string ref_type_result = 4;</code>
-   * @return The refTypeResult.
-   */
-  java.lang.String getRefTypeResult();
-  /**
-   * <code>string ref_type_result = 4;</code>
-   * @return The bytes for refTypeResult.
-   */
-  com.google.protobuf.ByteString
-      getRefTypeResultBytes();
 }

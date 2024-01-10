@@ -50,25 +50,37 @@ public interface QuickEvaluationDetailKeyOrBuilder extends
   boolean getResult();
 
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>string ref_result = 5;</code>
+   * @return The refResult.
+   */
+  java.lang.String getRefResult();
+  /**
+   * <code>string ref_result = 5;</code>
+   * @return The bytes for refResult.
+   */
+  com.google.protobuf.ByteString
+      getRefResultBytes();
+
+  /**
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> 
       getDetailList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index);
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   int getDetailCount();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
       getDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
       int index);

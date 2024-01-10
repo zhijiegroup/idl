@@ -148,7 +148,6 @@ export interface QuickEvaluationDetail {
   key?: string;
   is_pass?: boolean;
   detail?: string;
-  ref_type_result?: string;
 }
 
 export interface QuickEvaluationDetailType {
@@ -161,6 +160,7 @@ export interface QuickEvaluationDetailKey {
   name?: string;
   desc?: string;
   result?: boolean;
+  ref_result?: string;
   detail?: Array<QuickEvaluationDetail>;
 }
 

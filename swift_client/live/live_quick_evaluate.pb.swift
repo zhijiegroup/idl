@@ -597,8 +597,6 @@ struct GloryApi_QuickEvaluationDetail {
 
   var detail: String = String()
 
-  var refTypeResult: String = String()
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -630,6 +628,8 @@ struct GloryApi_QuickEvaluationDetailKey {
   var desc: String = String()
 
   var result: Bool = false
+
+  var refResult: String = String()
 
   var detail: [GloryApi_QuickEvaluationDetail] = []
 
@@ -1898,7 +1898,6 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     1: .same(proto: "key"),
     2: .standard(proto: "is_pass"),
     3: .same(proto: "detail"),
-    4: .standard(proto: "ref_type_result"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1910,7 +1909,6 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
       case 1: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.isPass) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.detail) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.refTypeResult) }()
       default: break
       }
     }
@@ -1926,9 +1924,6 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.detail.isEmpty {
       try visitor.visitSingularStringField(value: self.detail, fieldNumber: 3)
     }
-    if !self.refTypeResult.isEmpty {
-      try visitor.visitSingularStringField(value: self.refTypeResult, fieldNumber: 4)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1936,7 +1931,6 @@ extension GloryApi_QuickEvaluationDetail: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.key != rhs.key {return false}
     if lhs.isPass != rhs.isPass {return false}
     if lhs.detail != rhs.detail {return false}
-    if lhs.refTypeResult != rhs.refTypeResult {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1987,7 +1981,8 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     2: .same(proto: "name"),
     3: .same(proto: "desc"),
     4: .same(proto: "result"),
-    5: .same(proto: "detail"),
+    5: .standard(proto: "ref_result"),
+    6: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2000,7 +1995,8 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.desc) }()
       case 4: try { try decoder.decodeSingularBoolField(value: &self.result) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.refResult) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
     }
@@ -2019,8 +2015,11 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if self.result != false {
       try visitor.visitSingularBoolField(value: self.result, fieldNumber: 4)
     }
+    if !self.refResult.isEmpty {
+      try visitor.visitSingularStringField(value: self.refResult, fieldNumber: 5)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2030,6 +2029,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if lhs.name != rhs.name {return false}
     if lhs.desc != rhs.desc {return false}
     if lhs.result != rhs.result {return false}
+    if lhs.refResult != rhs.refResult {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
