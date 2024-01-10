@@ -247,6 +247,8 @@ struct GloryApi_ListSystemTaskRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var name: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -918,6 +920,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let protoMessageName: String = _protobuf_package + ".ListSystemTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "name"),
     100: .same(proto: "pagination"),
   ]
 
@@ -928,6 +931,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -942,6 +946,9 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -950,6 +957,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
 
   static func ==(lhs: GloryApi_ListSystemTaskRequest, rhs: GloryApi_ListSystemTaskRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.name != rhs.name {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
