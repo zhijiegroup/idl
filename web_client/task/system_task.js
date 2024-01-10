@@ -3,4 +3,5 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as user from "../user/user";
+export { api, base, user };

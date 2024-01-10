@@ -41,26 +41,38 @@ public interface GetQuickEvaluationDetailResponseOrBuilder extends
   boolean getResult();
 
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetailType quick_evaluation_detail = 5;</code>
    */
-  java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> 
+  java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailType> 
       getQuickEvaluationDetailList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetailType quick_evaluation_detail = 5;</code>
    */
-  com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getQuickEvaluationDetail(int index);
+  com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailType getQuickEvaluationDetail(int index);
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetailType quick_evaluation_detail = 5;</code>
    */
   int getQuickEvaluationDetailCount();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetailType quick_evaluation_detail = 5;</code>
    */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailTypeOrBuilder> 
       getQuickEvaluationDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail quick_evaluation_detail = 5;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetailType quick_evaluation_detail = 5;</code>
    */
-  com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getQuickEvaluationDetailOrBuilder(
+  com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailTypeOrBuilder getQuickEvaluationDetailOrBuilder(
       int index);
+
+  /**
+   * <code>string name = 6;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 6;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

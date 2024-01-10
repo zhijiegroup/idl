@@ -8,94 +8,99 @@ public interface TeacherTaskTemplateOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 task_template_id = 1;</code>
-   * @return The taskTemplateId.
+   * <code>int64 teacher_task_template_id = 1;</code>
+   * @return The teacherTaskTemplateId.
    */
-  long getTaskTemplateId();
+  long getTeacherTaskTemplateId();
 
   /**
-   * <code>string system_task_key = 2;</code>
-   * @return The systemTaskKey.
+   * <pre>
+   * 任务模板类型：1.预置任务；2.手动任务
+   * </pre>
+   *
+   * <code>int32 teacher_task_template_type = 2;</code>
+   * @return The teacherTaskTemplateType.
    */
-  java.lang.String getSystemTaskKey();
-  /**
-   * <code>string system_task_key = 2;</code>
-   * @return The bytes for systemTaskKey.
-   */
-  com.google.protobuf.ByteString
-      getSystemTaskKeyBytes();
+  int getTeacherTaskTemplateType();
 
   /**
-   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskName.
+   * <code>int64 system_task_id = 3;</code>
+   * @return The systemTaskId.
    */
-  java.lang.String getTaskName();
-  /**
-   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskName.
-   */
-  com.google.protobuf.ByteString
-      getTaskNameBytes();
+  long getSystemTaskId();
 
   /**
-   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessSystem.
+   * <code>string teacher_task_template_name = 4;</code>
+   * @return The teacherTaskTemplateName.
    */
-  java.lang.String getTaskBusinessSystem();
+  java.lang.String getTeacherTaskTemplateName();
   /**
-   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessSystem.
+   * <code>string teacher_task_template_name = 4;</code>
+   * @return The bytes for teacherTaskTemplateName.
    */
   com.google.protobuf.ByteString
-      getTaskBusinessSystemBytes();
+      getTeacherTaskTemplateNameBytes();
 
   /**
-   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessModule.
+   * <code>string teacher_task_template_business = 5;</code>
+   * @return The teacherTaskTemplateBusiness.
    */
-  java.lang.String getTaskBusinessModule();
+  java.lang.String getTeacherTaskTemplateBusiness();
   /**
-   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessModule.
+   * <code>string teacher_task_template_business = 5;</code>
+   * @return The bytes for teacherTaskTemplateBusiness.
    */
   com.google.protobuf.ByteString
-      getTaskBusinessModuleBytes();
+      getTeacherTaskTemplateBusinessBytes();
 
   /**
-   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskContent.
+   * <code>string teacher_task_template_content = 6;</code>
+   * @return The teacherTaskTemplateContent.
    */
-  java.lang.String getTaskContent();
+  java.lang.String getTeacherTaskTemplateContent();
   /**
-   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskContent.
+   * <code>string teacher_task_template_content = 6;</code>
+   * @return The bytes for teacherTaskTemplateContent.
    */
   com.google.protobuf.ByteString
-      getTaskContentBytes();
+      getTeacherTaskTemplateContentBytes();
 
   /**
-   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskRequirements.
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @return A list containing the teacherTaskTemplateRequirements.
    */
-  java.lang.String getTaskRequirements();
+  java.util.List<java.lang.String>
+      getTeacherTaskTemplateRequirementsList();
   /**
-   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskRequirements.
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @return The count of teacherTaskTemplateRequirements.
+   */
+  int getTeacherTaskTemplateRequirementsCount();
+  /**
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @param index The index of the element to return.
+   * @return The teacherTaskTemplateRequirements at the given index.
+   */
+  java.lang.String getTeacherTaskTemplateRequirements(int index);
+  /**
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teacherTaskTemplateRequirements at the given index.
    */
   com.google.protobuf.ByteString
-      getTaskRequirementsBytes();
+      getTeacherTaskTemplateRequirementsBytes(int index);
 
   /**
-   * <code>string task_link = 8;</code>
-   * @return The taskLink.
+   * <code>string teacher_task_template_link = 8;</code>
+   * @return The teacherTaskTemplateLink.
    */
-  java.lang.String getTaskLink();
+  java.lang.String getTeacherTaskTemplateLink();
   /**
-   * <code>string task_link = 8;</code>
-   * @return The bytes for taskLink.
+   * <code>string teacher_task_template_link = 8;</code>
+   * @return The bytes for teacherTaskTemplateLink.
    */
   com.google.protobuf.ByteString
-      getTaskLinkBytes();
+      getTeacherTaskTemplateLinkBytes();
 
   /**
    * <code>repeated .glory_api.TeacherTaskTemplateParameter task_parameters = 9;</code>
@@ -120,4 +125,58 @@ public interface TeacherTaskTemplateOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder getTaskParametersOrBuilder(
       int index);
+
+  /**
+   * <code>string created_at = 10;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 10;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
+
+  /**
+   * <code>string updated_at = 11;</code>
+   * @return The updatedAt.
+   */
+  java.lang.String getUpdatedAt();
+  /**
+   * <code>string updated_at = 11;</code>
+   * @return The bytes for updatedAt.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedAtBytes();
+
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   * @return Whether the creator field is set.
+   */
+  boolean hasCreator();
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   * @return The creator.
+   */
+  com.zhijiejiaoyu.glory_api.user.User getCreator();
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
+
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   * @return Whether the updater field is set.
+   */
+  boolean hasUpdater();
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   * @return The updater.
+   */
+  com.zhijiejiaoyu.glory_api.user.User getUpdater();
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder();
 }

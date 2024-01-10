@@ -8,110 +8,110 @@ public interface TaskParameterOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string key = 1;</code>
-   * @return The key.
+   * <code>string task_parameter_key = 1;</code>
+   * @return The taskParameterKey.
    */
-  java.lang.String getKey();
+  java.lang.String getTaskParameterKey();
   /**
-   * <code>string key = 1;</code>
-   * @return The bytes for key.
-   */
-  com.google.protobuf.ByteString
-      getKeyBytes();
-
-  /**
-   * <code>string name = 2;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
+   * <code>string task_parameter_key = 1;</code>
+   * @return The bytes for taskParameterKey.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getTaskParameterKeyBytes();
 
   /**
-   * <code>string operator = 3;</code>
-   * @return The operator.
+   * <code>string task_parameter_name = 2;</code>
+   * @return The taskParameterName.
    */
-  java.lang.String getOperator();
+  java.lang.String getTaskParameterName();
   /**
-   * <code>string operator = 3;</code>
-   * @return The bytes for operator.
+   * <code>string task_parameter_name = 2;</code>
+   * @return The bytes for taskParameterName.
    */
   com.google.protobuf.ByteString
-      getOperatorBytes();
+      getTaskParameterNameBytes();
 
   /**
-   * <code>string type = 4;</code>
-   * @return The type.
+   * <code>string task_parameter_operator = 3;</code>
+   * @return The taskParameterOperator.
    */
-  java.lang.String getType();
+  java.lang.String getTaskParameterOperator();
   /**
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
+   * <code>string task_parameter_operator = 3;</code>
+   * @return The bytes for taskParameterOperator.
    */
   com.google.protobuf.ByteString
-      getTypeBytes();
+      getTaskParameterOperatorBytes();
 
   /**
-   * <code>string def = 5;</code>
-   * @return The def.
+   * <code>string task_parameter_type = 4;</code>
+   * @return The taskParameterType.
    */
-  java.lang.String getDef();
+  java.lang.String getTaskParameterType();
   /**
-   * <code>string def = 5;</code>
-   * @return The bytes for def.
+   * <code>string task_parameter_type = 4;</code>
+   * @return The bytes for taskParameterType.
    */
   com.google.protobuf.ByteString
-      getDefBytes();
+      getTaskParameterTypeBytes();
 
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>string task_parameter_default = 5;</code>
+   * @return The taskParameterDefault.
+   */
+  java.lang.String getTaskParameterDefault();
+  /**
+   * <code>string task_parameter_default = 5;</code>
+   * @return The bytes for taskParameterDefault.
+   */
+  com.google.protobuf.ByteString
+      getTaskParameterDefaultBytes();
+
+  /**
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> 
-      getEnumsList();
+      getTaskParameterEnumsList();
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
-  com.zhijiejiaoyu.glory_api.task.TaskParameter getEnums(int index);
+  com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterEnums(int index);
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
-  int getEnumsCount();
+  int getTaskParameterEnumsCount();
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-      getEnumsOrBuilderList();
+      getTaskParameterEnumsOrBuilderList();
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
-  com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getEnumsOrBuilder(
+  com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterEnumsOrBuilder(
       int index);
 
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> 
-      getChildrenList();
+      getTaskParameterChildrenList();
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
-  com.zhijiejiaoyu.glory_api.task.TaskParameter getChildren(int index);
+  com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterChildren(int index);
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
-  int getChildrenCount();
+  int getTaskParameterChildrenCount();
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-      getChildrenOrBuilderList();
+      getTaskParameterChildrenOrBuilderList();
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
-  com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getChildrenOrBuilder(
+  com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterChildrenOrBuilder(
       int index);
 }

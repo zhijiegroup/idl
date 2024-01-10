@@ -148,8 +148,19 @@ export interface QuickEvaluationDetail {
   key?: string;
   is_pass?: boolean;
   detail?: string;
-  type?: string;
   ref_type_result?: string;
+}
+
+export interface QuickEvaluationDetailType {
+  type?: string;
+  detail?: Array<QuickEvaluationDetailKey>;
+}
+
+export interface QuickEvaluationDetailKey {
+  key?: string;
+  name?: string;
+  desc?: string;
+  detail?: Array<QuickEvaluationDetail>;
 }
 
 export interface GetQuickEvaluationDetailResponse {
@@ -157,7 +168,8 @@ export interface GetQuickEvaluationDetailResponse {
   start_time?: string;
   end_time?: string;
   result?: boolean;
-  quick_evaluation_detail?: Array<QuickEvaluationDetail>;
+  quick_evaluation_detail?: Array<QuickEvaluationDetailType>;
+  name?: string;
 }
 
 export interface DeleteQuickEvaluationReportResponse {
@@ -167,4 +179,15 @@ export interface DeleteQuickEvaluationReportResponse {
 export interface DeleteQuickEvaluationReportRequest {
   base_request?: base.BaseRequest;
   report_ids?: Array<string>;
+}
+
+export interface DownloadQuickEvaluationReportResponse {
+  base_resp?: base.BaseResponse;
+  name?: string;
+  file?: Uint8Array;
+}
+
+export interface DownloadQuickEvaluationReportRequest {
+  base_request?: base.BaseRequest;
+  report_id?: string;
 }

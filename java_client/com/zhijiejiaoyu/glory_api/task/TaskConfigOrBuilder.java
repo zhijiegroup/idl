@@ -8,52 +8,52 @@ public interface TaskConfigOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string key = 1;</code>
-   * @return The key.
+   * <code>string task_key = 1;</code>
+   * @return The taskKey.
    */
-  java.lang.String getKey();
+  java.lang.String getTaskKey();
   /**
-   * <code>string key = 1;</code>
-   * @return The bytes for key.
+   * <code>string task_key = 1;</code>
+   * @return The bytes for taskKey.
    */
   com.google.protobuf.ByteString
-      getKeyBytes();
+      getTaskKeyBytes();
 
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
+   * <code>string task_name = 2;</code>
+   * @return The taskName.
    */
-  java.lang.String getName();
+  java.lang.String getTaskName();
   /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
+   * <code>string task_name = 2;</code>
+   * @return The bytes for taskName.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getTaskNameBytes();
 
   /**
-   * <code>string biz = 3;</code>
-   * @return The biz.
+   * <code>string task_business = 3;</code>
+   * @return The taskBusiness.
    */
-  java.lang.String getBiz();
+  java.lang.String getTaskBusiness();
   /**
-   * <code>string biz = 3;</code>
-   * @return The bytes for biz.
+   * <code>string task_business = 3;</code>
+   * @return The bytes for taskBusiness.
    */
   com.google.protobuf.ByteString
-      getBizBytes();
+      getTaskBusinessBytes();
 
   /**
-   * <code>string content = 4;</code>
-   * @return The content.
+   * <code>string task_content = 4;</code>
+   * @return The taskContent.
    */
-  java.lang.String getContent();
+  java.lang.String getTaskContent();
   /**
-   * <code>string content = 4;</code>
-   * @return The bytes for content.
+   * <code>string task_content = 4;</code>
+   * @return The bytes for taskContent.
    */
   com.google.protobuf.ByteString
-      getContentBytes();
+      getTaskContentBytes();
 
   /**
    * <code>repeated .glory_api.TaskParameter parameters = 5;</code>

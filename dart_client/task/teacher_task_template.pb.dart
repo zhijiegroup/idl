@@ -14,19 +14,22 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $0;
+import '../base.pb.dart' as $1;
+import '../user/user.pb.dart' as $0;
 
 class TeacherTaskTemplateParameter extends $pb.GeneratedMessage {
   factory TeacherTaskTemplateParameter({
-    $fixnum.Int64? taskTemplateId,
+    $fixnum.Int64? taskParameterId,
     $core.String? taskParameterKey,
     $core.String? taskParameterName,
+    $core.String? taskParameterOperator,
     $core.String? taskParameterValue,
     $core.String? taskParameterType,
+    $core.Iterable<TeacherTaskTemplateParameter>? children,
   }) {
     final $result = create();
-    if (taskTemplateId != null) {
-      $result.taskTemplateId = taskTemplateId;
+    if (taskParameterId != null) {
+      $result.taskParameterId = taskParameterId;
     }
     if (taskParameterKey != null) {
       $result.taskParameterKey = taskParameterKey;
@@ -34,11 +37,17 @@ class TeacherTaskTemplateParameter extends $pb.GeneratedMessage {
     if (taskParameterName != null) {
       $result.taskParameterName = taskParameterName;
     }
+    if (taskParameterOperator != null) {
+      $result.taskParameterOperator = taskParameterOperator;
+    }
     if (taskParameterValue != null) {
       $result.taskParameterValue = taskParameterValue;
     }
     if (taskParameterType != null) {
       $result.taskParameterType = taskParameterType;
+    }
+    if (children != null) {
+      $result.children.addAll(children);
     }
     return $result;
   }
@@ -47,11 +56,13 @@ class TeacherTaskTemplateParameter extends $pb.GeneratedMessage {
   factory TeacherTaskTemplateParameter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskTemplateParameter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'taskTemplateId')
+    ..aInt64(1, _omitFieldNames ? '' : 'taskParameterId')
     ..aOS(2, _omitFieldNames ? '' : 'taskParameterKey')
     ..aOS(3, _omitFieldNames ? '' : 'taskParameterName')
-    ..aOS(4, _omitFieldNames ? '' : 'taskParameterValue')
-    ..aOS(5, _omitFieldNames ? '' : 'taskParameterType')
+    ..aOS(4, _omitFieldNames ? '' : 'taskParameterOperator')
+    ..aOS(5, _omitFieldNames ? '' : 'taskParameterValue')
+    ..aOS(6, _omitFieldNames ? '' : 'taskParameterType')
+    ..pc<TeacherTaskTemplateParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: TeacherTaskTemplateParameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -77,13 +88,13 @@ class TeacherTaskTemplateParameter extends $pb.GeneratedMessage {
   static TeacherTaskTemplateParameter? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get taskTemplateId => $_getI64(0);
+  $fixnum.Int64 get taskParameterId => $_getI64(0);
   @$pb.TagNumber(1)
-  set taskTemplateId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set taskParameterId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTaskTemplateId() => $_has(0);
+  $core.bool hasTaskParameterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTaskTemplateId() => clearField(1);
+  void clearTaskParameterId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get taskParameterKey => $_getSZ(1);
@@ -104,63 +115,91 @@ class TeacherTaskTemplateParameter extends $pb.GeneratedMessage {
   void clearTaskParameterName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get taskParameterValue => $_getSZ(3);
+  $core.String get taskParameterOperator => $_getSZ(3);
   @$pb.TagNumber(4)
-  set taskParameterValue($core.String v) { $_setString(3, v); }
+  set taskParameterOperator($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasTaskParameterValue() => $_has(3);
+  $core.bool hasTaskParameterOperator() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTaskParameterValue() => clearField(4);
+  void clearTaskParameterOperator() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get taskParameterType => $_getSZ(4);
+  $core.String get taskParameterValue => $_getSZ(4);
   @$pb.TagNumber(5)
-  set taskParameterType($core.String v) { $_setString(4, v); }
+  set taskParameterValue($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTaskParameterType() => $_has(4);
+  $core.bool hasTaskParameterValue() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTaskParameterType() => clearField(5);
+  void clearTaskParameterValue() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get taskParameterType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set taskParameterType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTaskParameterType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTaskParameterType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<TeacherTaskTemplateParameter> get children => $_getList(6);
 }
 
 class TeacherTaskTemplate extends $pb.GeneratedMessage {
   factory TeacherTaskTemplate({
-    $fixnum.Int64? taskTemplateId,
-    $core.String? systemTaskKey,
-    $core.String? taskName,
-    $core.String? taskBusinessSystem,
-    $core.String? taskBusinessModule,
-    $core.String? taskContent,
-    $core.String? taskRequirements,
-    $core.String? taskLink,
+    $fixnum.Int64? teacherTaskTemplateId,
+    $core.int? teacherTaskTemplateType,
+    $fixnum.Int64? systemTaskId,
+    $core.String? teacherTaskTemplateName,
+    $core.String? teacherTaskTemplateBusiness,
+    $core.String? teacherTaskTemplateContent,
+    $core.Iterable<$core.String>? teacherTaskTemplateRequirements,
+    $core.String? teacherTaskTemplateLink,
     $core.Iterable<TeacherTaskTemplateParameter>? taskParameters,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+    $0.User? creator,
+    $0.User? updater,
   }) {
     final $result = create();
-    if (taskTemplateId != null) {
-      $result.taskTemplateId = taskTemplateId;
+    if (teacherTaskTemplateId != null) {
+      $result.teacherTaskTemplateId = teacherTaskTemplateId;
     }
-    if (systemTaskKey != null) {
-      $result.systemTaskKey = systemTaskKey;
+    if (teacherTaskTemplateType != null) {
+      $result.teacherTaskTemplateType = teacherTaskTemplateType;
     }
-    if (taskName != null) {
-      $result.taskName = taskName;
+    if (systemTaskId != null) {
+      $result.systemTaskId = systemTaskId;
     }
-    if (taskBusinessSystem != null) {
-      $result.taskBusinessSystem = taskBusinessSystem;
+    if (teacherTaskTemplateName != null) {
+      $result.teacherTaskTemplateName = teacherTaskTemplateName;
     }
-    if (taskBusinessModule != null) {
-      $result.taskBusinessModule = taskBusinessModule;
+    if (teacherTaskTemplateBusiness != null) {
+      $result.teacherTaskTemplateBusiness = teacherTaskTemplateBusiness;
     }
-    if (taskContent != null) {
-      $result.taskContent = taskContent;
+    if (teacherTaskTemplateContent != null) {
+      $result.teacherTaskTemplateContent = teacherTaskTemplateContent;
     }
-    if (taskRequirements != null) {
-      $result.taskRequirements = taskRequirements;
+    if (teacherTaskTemplateRequirements != null) {
+      $result.teacherTaskTemplateRequirements.addAll(teacherTaskTemplateRequirements);
     }
-    if (taskLink != null) {
-      $result.taskLink = taskLink;
+    if (teacherTaskTemplateLink != null) {
+      $result.teacherTaskTemplateLink = teacherTaskTemplateLink;
     }
     if (taskParameters != null) {
       $result.taskParameters.addAll(taskParameters);
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (creator != null) {
+      $result.creator = creator;
+    }
+    if (updater != null) {
+      $result.updater = updater;
     }
     return $result;
   }
@@ -169,15 +208,19 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
   factory TeacherTaskTemplate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskTemplate', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'taskTemplateId')
-    ..aOS(2, _omitFieldNames ? '' : 'systemTaskKey')
-    ..aOS(3, _omitFieldNames ? '' : 'taskName')
-    ..aOS(4, _omitFieldNames ? '' : 'taskBusinessSystem')
-    ..aOS(5, _omitFieldNames ? '' : 'taskBusinessModule')
-    ..aOS(6, _omitFieldNames ? '' : 'taskContent')
-    ..aOS(7, _omitFieldNames ? '' : 'taskRequirements')
-    ..aOS(8, _omitFieldNames ? '' : 'taskLink')
+    ..aInt64(1, _omitFieldNames ? '' : 'teacherTaskTemplateId')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'teacherTaskTemplateType', $pb.PbFieldType.O3)
+    ..aInt64(3, _omitFieldNames ? '' : 'systemTaskId')
+    ..aOS(4, _omitFieldNames ? '' : 'teacherTaskTemplateName')
+    ..aOS(5, _omitFieldNames ? '' : 'teacherTaskTemplateBusiness')
+    ..aOS(6, _omitFieldNames ? '' : 'teacherTaskTemplateContent')
+    ..pPS(7, _omitFieldNames ? '' : 'teacherTaskTemplateRequirements')
+    ..aOS(8, _omitFieldNames ? '' : 'teacherTaskTemplateLink')
     ..pc<TeacherTaskTemplateParameter>(9, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskTemplateParameter.create)
+    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(12, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(13, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -203,84 +246,118 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
   static TeacherTaskTemplate? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get taskTemplateId => $_getI64(0);
+  $fixnum.Int64 get teacherTaskTemplateId => $_getI64(0);
   @$pb.TagNumber(1)
-  set taskTemplateId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set teacherTaskTemplateId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTaskTemplateId() => $_has(0);
+  $core.bool hasTeacherTaskTemplateId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTaskTemplateId() => clearField(1);
+  void clearTeacherTaskTemplateId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get systemTaskKey => $_getSZ(1);
+  $core.int get teacherTaskTemplateType => $_getIZ(1);
   @$pb.TagNumber(2)
-  set systemTaskKey($core.String v) { $_setString(1, v); }
+  set teacherTaskTemplateType($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSystemTaskKey() => $_has(1);
+  $core.bool hasTeacherTaskTemplateType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSystemTaskKey() => clearField(2);
+  void clearTeacherTaskTemplateType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get taskName => $_getSZ(2);
+  $fixnum.Int64 get systemTaskId => $_getI64(2);
   @$pb.TagNumber(3)
-  set taskName($core.String v) { $_setString(2, v); }
+  set systemTaskId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTaskName() => $_has(2);
+  $core.bool hasSystemTaskId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTaskName() => clearField(3);
+  void clearSystemTaskId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get taskBusinessSystem => $_getSZ(3);
+  $core.String get teacherTaskTemplateName => $_getSZ(3);
   @$pb.TagNumber(4)
-  set taskBusinessSystem($core.String v) { $_setString(3, v); }
+  set teacherTaskTemplateName($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasTaskBusinessSystem() => $_has(3);
+  $core.bool hasTeacherTaskTemplateName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearTaskBusinessSystem() => clearField(4);
+  void clearTeacherTaskTemplateName() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get taskBusinessModule => $_getSZ(4);
+  $core.String get teacherTaskTemplateBusiness => $_getSZ(4);
   @$pb.TagNumber(5)
-  set taskBusinessModule($core.String v) { $_setString(4, v); }
+  set teacherTaskTemplateBusiness($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTaskBusinessModule() => $_has(4);
+  $core.bool hasTeacherTaskTemplateBusiness() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTaskBusinessModule() => clearField(5);
+  void clearTeacherTaskTemplateBusiness() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get taskContent => $_getSZ(5);
+  $core.String get teacherTaskTemplateContent => $_getSZ(5);
   @$pb.TagNumber(6)
-  set taskContent($core.String v) { $_setString(5, v); }
+  set teacherTaskTemplateContent($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasTaskContent() => $_has(5);
+  $core.bool hasTeacherTaskTemplateContent() => $_has(5);
   @$pb.TagNumber(6)
-  void clearTaskContent() => clearField(6);
+  void clearTeacherTaskTemplateContent() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get taskRequirements => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set taskRequirements($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasTaskRequirements() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearTaskRequirements() => clearField(7);
+  $core.List<$core.String> get teacherTaskTemplateRequirements => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.String get taskLink => $_getSZ(7);
+  $core.String get teacherTaskTemplateLink => $_getSZ(7);
   @$pb.TagNumber(8)
-  set taskLink($core.String v) { $_setString(7, v); }
+  set teacherTaskTemplateLink($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasTaskLink() => $_has(7);
+  $core.bool hasTeacherTaskTemplateLink() => $_has(7);
   @$pb.TagNumber(8)
-  void clearTaskLink() => clearField(8);
+  void clearTeacherTaskTemplateLink() => clearField(8);
 
   @$pb.TagNumber(9)
   $core.List<TeacherTaskTemplateParameter> get taskParameters => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get createdAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set createdAt($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAt($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $0.User get creator => $_getN(11);
+  @$pb.TagNumber(12)
+  set creator($0.User v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreator() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreator() => clearField(12);
+  @$pb.TagNumber(12)
+  $0.User ensureCreator() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $0.User get updater => $_getN(12);
+  @$pb.TagNumber(13)
+  set updater($0.User v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasUpdater() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdater() => clearField(13);
+  @$pb.TagNumber(13)
+  $0.User ensureUpdater() => $_ensure(12);
 }
 
 class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory CreateTeacherTaskTemplateRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     TeacherTaskTemplate? teacherTaskTemplate,
   }) {
     final $result = create();
@@ -297,7 +374,7 @@ class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory CreateTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<TeacherTaskTemplate>(2, _omitFieldNames ? '' : 'teacherTaskTemplate', subBuilder: TeacherTaskTemplate.create)
     ..hasRequiredFields = false
   ;
@@ -324,15 +401,15 @@ class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   static CreateTeacherTaskTemplateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   TeacherTaskTemplate get teacherTaskTemplate => $_getN(1);
@@ -348,7 +425,7 @@ class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
 
 class CreateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory CreateTeacherTaskTemplateResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -361,7 +438,7 @@ class CreateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory CreateTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -387,20 +464,20 @@ class CreateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   static CreateTeacherTaskTemplateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class UpdateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory UpdateTeacherTaskTemplateRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     TeacherTaskTemplate? teacherTaskTemplate,
   }) {
     final $result = create();
@@ -417,7 +494,7 @@ class UpdateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory UpdateTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<TeacherTaskTemplate>(2, _omitFieldNames ? '' : 'teacherTaskTemplate', subBuilder: TeacherTaskTemplate.create)
     ..hasRequiredFields = false
   ;
@@ -444,15 +521,15 @@ class UpdateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   static UpdateTeacherTaskTemplateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   TeacherTaskTemplate get teacherTaskTemplate => $_getN(1);
@@ -468,7 +545,7 @@ class UpdateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
 
 class UpdateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory UpdateTeacherTaskTemplateResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -481,7 +558,7 @@ class UpdateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory UpdateTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -507,21 +584,21 @@ class UpdateTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   static UpdateTeacherTaskTemplateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory ListTeacherTaskTemplateRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -537,8 +614,8 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory ListTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -564,33 +641,33 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   static ListTeacherTaskTemplateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory ListTeacherTaskTemplateResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<TeacherTaskTemplate>? teacherTaskTemplates,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -609,9 +686,9 @@ class ListTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory ListTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<TeacherTaskTemplate>(2, _omitFieldNames ? '' : 'teacherTaskTemplates', $pb.PbFieldType.PM, subBuilder: TeacherTaskTemplate.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -637,34 +714,34 @@ class ListTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   static ListTeacherTaskTemplateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<TeacherTaskTemplate> get teacherTaskTemplates => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class DeleteTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory DeleteTeacherTaskTemplateRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? teacherTaskTemplateId,
   }) {
     final $result = create();
@@ -681,7 +758,7 @@ class DeleteTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   factory DeleteTeacherTaskTemplateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeacherTaskTemplateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'teacherTaskTemplateId')
     ..hasRequiredFields = false
   ;
@@ -708,15 +785,15 @@ class DeleteTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   static DeleteTeacherTaskTemplateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get teacherTaskTemplateId => $_getI64(1);
@@ -730,7 +807,7 @@ class DeleteTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
 
 class DeleteTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory DeleteTeacherTaskTemplateResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -743,7 +820,7 @@ class DeleteTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   factory DeleteTeacherTaskTemplateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteTeacherTaskTemplateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -769,15 +846,15 @@ class DeleteTeacherTaskTemplateResponse extends $pb.GeneratedMessage {
   static DeleteTeacherTaskTemplateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 

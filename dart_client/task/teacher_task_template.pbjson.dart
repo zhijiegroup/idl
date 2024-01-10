@@ -17,54 +17,63 @@ import 'dart:typed_data' as $typed_data;
 const TeacherTaskTemplateParameter$json = {
   '1': 'TeacherTaskTemplateParameter',
   '2': [
-    {'1': 'task_template_id', '3': 1, '4': 1, '5': 3, '10': 'taskTemplateId'},
+    {'1': 'task_parameter_id', '3': 1, '4': 1, '5': 3, '10': 'taskParameterId'},
     {'1': 'task_parameter_key', '3': 2, '4': 1, '5': 9, '10': 'taskParameterKey'},
-    {'1': 'task_parameter_name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskParameterName'},
-    {'1': 'task_parameter_value', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'taskParameterValue'},
-    {'1': 'task_parameter_type', '3': 5, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'task_parameter_name', '3': 3, '4': 1, '5': 9, '10': 'taskParameterName'},
+    {'1': 'task_parameter_operator', '3': 4, '4': 1, '5': 9, '10': 'taskParameterOperator'},
+    {'1': 'task_parameter_value', '3': 5, '4': 1, '5': 9, '10': 'taskParameterValue'},
+    {'1': 'task_parameter_type', '3': 6, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.TeacherTaskTemplateParameter', '10': 'children'},
   ],
 };
 
 /// Descriptor for `TeacherTaskTemplateParameter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List teacherTaskTemplateParameterDescriptor = $convert.base64Decode(
-    'ChxUZWFjaGVyVGFza1RlbXBsYXRlUGFyYW1ldGVyEigKEHRhc2tfdGVtcGxhdGVfaWQYASABKA'
-    'NSDnRhc2tUZW1wbGF0ZUlkEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgCIAEoCVIQdGFza1BhcmFt'
-    'ZXRlcktleRJdChN0YXNrX3BhcmFtZXRlcl9uYW1lGAMgASgJQi3auxgpQDpsZW4oJCk+MDttc2'
-    'c6J+WPguaVsOWQjeensOS4jeiDveS4uuepuidSEXRhc2tQYXJhbWV0ZXJOYW1lElwKFHRhc2tf'
-    'cGFyYW1ldGVyX3ZhbHVlGAQgASgJQirauxgmQDpsZW4oJCk+MDttc2c6J+WPguaVsOWAvOS4je'
-    'iDveS4uuepuidSEnRhc2tQYXJhbWV0ZXJWYWx1ZRIuChN0YXNrX3BhcmFtZXRlcl90eXBlGAUg'
-    'ASgJUhF0YXNrUGFyYW1ldGVyVHlwZQ==');
+    'ChxUZWFjaGVyVGFza1RlbXBsYXRlUGFyYW1ldGVyEioKEXRhc2tfcGFyYW1ldGVyX2lkGAEgAS'
+    'gDUg90YXNrUGFyYW1ldGVySWQSLAoSdGFza19wYXJhbWV0ZXJfa2V5GAIgASgJUhB0YXNrUGFy'
+    'YW1ldGVyS2V5Ei4KE3Rhc2tfcGFyYW1ldGVyX25hbWUYAyABKAlSEXRhc2tQYXJhbWV0ZXJOYW'
+    '1lEjYKF3Rhc2tfcGFyYW1ldGVyX29wZXJhdG9yGAQgASgJUhV0YXNrUGFyYW1ldGVyT3BlcmF0'
+    'b3ISMAoUdGFza19wYXJhbWV0ZXJfdmFsdWUYBSABKAlSEnRhc2tQYXJhbWV0ZXJWYWx1ZRIuCh'
+    'N0YXNrX3BhcmFtZXRlcl90eXBlGAYgASgJUhF0YXNrUGFyYW1ldGVyVHlwZRJDCghjaGlsZHJl'
+    'bhgHIAMoCzInLmdsb3J5X2FwaS5UZWFjaGVyVGFza1RlbXBsYXRlUGFyYW1ldGVyUghjaGlsZH'
+    'Jlbg==');
 
 @$core.Deprecated('Use teacherTaskTemplateDescriptor instead')
 const TeacherTaskTemplate$json = {
   '1': 'TeacherTaskTemplate',
   '2': [
-    {'1': 'task_template_id', '3': 1, '4': 1, '5': 3, '10': 'taskTemplateId'},
-    {'1': 'system_task_key', '3': 2, '4': 1, '5': 9, '10': 'systemTaskKey'},
-    {'1': 'task_name', '3': 3, '4': 1, '5': 9, '8': {}, '10': 'taskName'},
-    {'1': 'task_business_system', '3': 4, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessSystem'},
-    {'1': 'task_business_module', '3': 5, '4': 1, '5': 9, '8': {}, '10': 'taskBusinessModule'},
-    {'1': 'task_content', '3': 6, '4': 1, '5': 9, '8': {}, '10': 'taskContent'},
-    {'1': 'task_requirements', '3': 7, '4': 1, '5': 9, '8': {}, '10': 'taskRequirements'},
-    {'1': 'task_link', '3': 8, '4': 1, '5': 9, '10': 'taskLink'},
+    {'1': 'teacher_task_template_id', '3': 1, '4': 1, '5': 3, '10': 'teacherTaskTemplateId'},
+    {'1': 'teacher_task_template_type', '3': 2, '4': 1, '5': 5, '10': 'teacherTaskTemplateType'},
+    {'1': 'system_task_id', '3': 3, '4': 1, '5': 3, '10': 'systemTaskId'},
+    {'1': 'teacher_task_template_name', '3': 4, '4': 1, '5': 9, '10': 'teacherTaskTemplateName'},
+    {'1': 'teacher_task_template_business', '3': 5, '4': 1, '5': 9, '10': 'teacherTaskTemplateBusiness'},
+    {'1': 'teacher_task_template_content', '3': 6, '4': 1, '5': 9, '10': 'teacherTaskTemplateContent'},
+    {'1': 'teacher_task_template_requirements', '3': 7, '4': 3, '5': 9, '10': 'teacherTaskTemplateRequirements'},
+    {'1': 'teacher_task_template_link', '3': 8, '4': 1, '5': 9, '10': 'teacherTaskTemplateLink'},
     {'1': 'task_parameters', '3': 9, '4': 3, '5': 11, '6': '.glory_api.TeacherTaskTemplateParameter', '10': 'taskParameters'},
+    {'1': 'created_at', '3': 10, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 11, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'creator', '3': 12, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
+    {'1': 'updater', '3': 13, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updater'},
   ],
 };
 
 /// Descriptor for `TeacherTaskTemplate`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List teacherTaskTemplateDescriptor = $convert.base64Decode(
-    'ChNUZWFjaGVyVGFza1RlbXBsYXRlEigKEHRhc2tfdGVtcGxhdGVfaWQYASABKANSDnRhc2tUZW'
-    '1wbGF0ZUlkEiYKD3N5c3RlbV90YXNrX2tleRgCIAEoCVINc3lzdGVtVGFza0tleRJKCgl0YXNr'
-    'X25hbWUYAyABKAlCLdq7GClAOmxlbigkKT4wO21zZzon5Lu75Yqh5ZCN56ew5LiN6IO95Li656'
-    'm6J1IIdGFza05hbWUSXwoUdGFza19idXNpbmVzc19zeXN0ZW0YBCABKAlCLdq7GClAOmxlbigk'
-    'KT4wO21zZzon57O757uf5ZCN56ew5LiN6IO95Li656m6J1ISdGFza0J1c2luZXNzU3lzdGVtEl'
-    '8KFHRhc2tfYnVzaW5lc3NfbW9kdWxlGAUgASgJQi3auxgpQDpsZW4oJCk+MDttc2c6J+aooeWd'
-    'l+WQjeensOS4jeiDveS4uuepuidSEnRhc2tCdXNpbmVzc01vZHVsZRJQCgx0YXNrX2NvbnRlbn'
-    'QYBiABKAlCLdq7GClAOmxlbigkKT4wO21zZzon5Lu75Yqh5YaF5a655LiN6IO95Li656m6J1IL'
-    'dGFza0NvbnRlbnQSWgoRdGFza19yZXF1aXJlbWVudHMYByABKAlCLdq7GClAOmxlbigkKT4wO2'
-    '1zZzon5Lu75Yqh6KaB5rGC5LiN6IO95Li656m6J1IQdGFza1JlcXVpcmVtZW50cxIbCgl0YXNr'
-    'X2xpbmsYCCABKAlSCHRhc2tMaW5rElAKD3Rhc2tfcGFyYW1ldGVycxgJIAMoCzInLmdsb3J5X2'
-    'FwaS5UZWFjaGVyVGFza1RlbXBsYXRlUGFyYW1ldGVyUg50YXNrUGFyYW1ldGVycw==');
+    'ChNUZWFjaGVyVGFza1RlbXBsYXRlEjcKGHRlYWNoZXJfdGFza190ZW1wbGF0ZV9pZBgBIAEoA1'
+    'IVdGVhY2hlclRhc2tUZW1wbGF0ZUlkEjsKGnRlYWNoZXJfdGFza190ZW1wbGF0ZV90eXBlGAIg'
+    'ASgFUhd0ZWFjaGVyVGFza1RlbXBsYXRlVHlwZRIkCg5zeXN0ZW1fdGFza19pZBgDIAEoA1IMc3'
+    'lzdGVtVGFza0lkEjsKGnRlYWNoZXJfdGFza190ZW1wbGF0ZV9uYW1lGAQgASgJUhd0ZWFjaGVy'
+    'VGFza1RlbXBsYXRlTmFtZRJDCh50ZWFjaGVyX3Rhc2tfdGVtcGxhdGVfYnVzaW5lc3MYBSABKA'
+    'lSG3RlYWNoZXJUYXNrVGVtcGxhdGVCdXNpbmVzcxJBCh10ZWFjaGVyX3Rhc2tfdGVtcGxhdGVf'
+    'Y29udGVudBgGIAEoCVIadGVhY2hlclRhc2tUZW1wbGF0ZUNvbnRlbnQSSwoidGVhY2hlcl90YX'
+    'NrX3RlbXBsYXRlX3JlcXVpcmVtZW50cxgHIAMoCVIfdGVhY2hlclRhc2tUZW1wbGF0ZVJlcXVp'
+    'cmVtZW50cxI7Chp0ZWFjaGVyX3Rhc2tfdGVtcGxhdGVfbGluaxgIIAEoCVIXdGVhY2hlclRhc2'
+    'tUZW1wbGF0ZUxpbmsSUAoPdGFza19wYXJhbWV0ZXJzGAkgAygLMicuZ2xvcnlfYXBpLlRlYWNo'
+    'ZXJUYXNrVGVtcGxhdGVQYXJhbWV0ZXJSDnRhc2tQYXJhbWV0ZXJzEh0KCmNyZWF0ZWRfYXQYCi'
+    'ABKAlSCWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GAsgASgJUgl1cGRhdGVkQXQSKQoHY3JlYXRv'
+    'chgMIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdjcmVhdG9yEikKB3VwZGF0ZXIYDSABKAsyDy5nbG'
+    '9yeV9hcGkuVXNlclIHdXBkYXRlcg==');
 
 @$core.Deprecated('Use createTeacherTaskTemplateRequestDescriptor instead')
 const CreateTeacherTaskTemplateRequest$json = {

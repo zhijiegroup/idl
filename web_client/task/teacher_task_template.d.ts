@@ -4,26 +4,34 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as user from "../user/user";
+export { api, base, user };
 
 export interface TeacherTaskTemplateParameter {
-  task_template_id?: string;
+  task_parameter_id?: string;
   task_parameter_key?: string;
   task_parameter_name?: string;
+  task_parameter_operator?: string;
   task_parameter_value?: string;
   task_parameter_type?: string;
+  children?: Array<TeacherTaskTemplateParameter>;
 }
 
 export interface TeacherTaskTemplate {
-  task_template_id?: string;
-  system_task_key?: string;
-  task_name?: string;
-  task_business_system?: string;
-  task_business_module?: string;
-  task_content?: string;
-  task_requirements?: string;
-  task_link?: string;
+  teacher_task_template_id?: string;
+  /** 任务模板类型：1.预置任务；2.手动任务 */
+  teacher_task_template_type?: number;
+  system_task_id?: string;
+  teacher_task_template_name?: string;
+  teacher_task_template_business?: string;
+  teacher_task_template_content?: string;
+  teacher_task_template_requirements?: Array<string>;
+  teacher_task_template_link?: string;
   task_parameters?: Array<TeacherTaskTemplateParameter>;
+  created_at?: string;
+  updated_at?: string;
+  creator?: user.User;
+  updater?: user.User;
 }
 
 export interface CreateTeacherTaskTemplateRequest {

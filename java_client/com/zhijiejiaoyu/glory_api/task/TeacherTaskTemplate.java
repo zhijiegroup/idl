@@ -16,14 +16,14 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TeacherTaskTemplate() {
-    systemTaskKey = "";
-    taskName = "";
-    taskBusinessSystem = "";
-    taskBusinessModule = "";
-    taskContent = "";
-    taskRequirements = "";
-    taskLink = "";
+    teacherTaskTemplateName = "";
+    teacherTaskTemplateBusiness = "";
+    teacherTaskTemplateContent = "";
+    teacherTaskTemplateRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
+    teacherTaskTemplateLink = "";
     taskParameters = java.util.Collections.emptyList();
+    createdAt = "";
+    updatedAt = "";
   }
 
   @java.lang.Override
@@ -59,58 +59,97 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            taskTemplateId = input.readInt64();
+            teacherTaskTemplateId = input.readInt64();
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
 
-            systemTaskKey = s;
+            teacherTaskTemplateType = input.readInt32();
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 24: {
 
-            taskName = s;
+            systemTaskId = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessSystem = s;
+            teacherTaskTemplateName = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskBusinessModule = s;
+            teacherTaskTemplateBusiness = s;
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskContent = s;
+            teacherTaskTemplateContent = s;
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            taskRequirements = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              teacherTaskTemplateRequirements = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            teacherTaskTemplateRequirements .add(s);
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskLink = s;
+            teacherTaskTemplateLink = s;
             break;
           }
           case 74: {
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
               taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             taskParameters .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.parser(), extensionRegistry));
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            updatedAt = s;
+            break;
+          }
+          case 98: {
+            com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
+            if (creator != null) {
+              subBuilder = creator .toBuilder();
+            }
+            creator = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(creator );
+              creator = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
+            if (updater != null) {
+              subBuilder = updater .toBuilder();
+            }
+            updater = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updater );
+              updater = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -129,6 +168,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
+        teacherTaskTemplateRequirements = teacherTaskTemplateRequirements .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
         taskParameters = java.util.Collections.unmodifiableList(taskParameters );
       }
       this.unknownFields = unknownFields.build();
@@ -148,277 +190,224 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.class, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder.class);
   }
 
-  public static final int TASK_TEMPLATE_ID_FIELD_NUMBER = 1;
-  private long taskTemplateId ;
+  public static final int TEACHER_TASK_TEMPLATE_ID_FIELD_NUMBER = 1;
+  private long teacherTaskTemplateId ;
   /**
-   * <code>int64 task_template_id = 1;</code>
-   * @return The taskTemplateId.
+   * <code>int64 teacher_task_template_id = 1;</code>
+   * @return The teacherTaskTemplateId.
    */
   @java.lang.Override
-  public long getTaskTemplateId() {
-    return taskTemplateId ;
+  public long getTeacherTaskTemplateId() {
+    return teacherTaskTemplateId ;
   }
 
-  public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object systemTaskKey ;
+  public static final int TEACHER_TASK_TEMPLATE_TYPE_FIELD_NUMBER = 2;
+  private int teacherTaskTemplateType ;
   /**
-   * <code>string system_task_key = 2;</code>
-   * @return The systemTaskKey.
+   * <pre>
+   * 任务模板类型：1.预置任务；2.手动任务
+   * </pre>
+   *
+   * <code>int32 teacher_task_template_type = 2;</code>
+   * @return The teacherTaskTemplateType.
    */
   @java.lang.Override
-  public java.lang.String getSystemTaskKey() {
-    java.lang.Object ref = systemTaskKey ;
+  public int getTeacherTaskTemplateType() {
+    return teacherTaskTemplateType ;
+  }
+
+  public static final int SYSTEM_TASK_ID_FIELD_NUMBER = 3;
+  private long systemTaskId ;
+  /**
+   * <code>int64 system_task_id = 3;</code>
+   * @return The systemTaskId.
+   */
+  @java.lang.Override
+  public long getSystemTaskId() {
+    return systemTaskId ;
+  }
+
+  public static final int TEACHER_TASK_TEMPLATE_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object teacherTaskTemplateName ;
+  /**
+   * <code>string teacher_task_template_name = 4;</code>
+   * @return The teacherTaskTemplateName.
+   */
+  @java.lang.Override
+  public java.lang.String getTeacherTaskTemplateName() {
+    java.lang.Object ref = teacherTaskTemplateName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      systemTaskKey = s;
+      teacherTaskTemplateName = s;
       return s;
     }
   }
   /**
-   * <code>string system_task_key = 2;</code>
-   * @return The bytes for systemTaskKey.
+   * <code>string teacher_task_template_name = 4;</code>
+   * @return The bytes for teacherTaskTemplateName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getSystemTaskKeyBytes() {
-    java.lang.Object ref = systemTaskKey ;
+      getTeacherTaskTemplateNameBytes() {
+    java.lang.Object ref = teacherTaskTemplateName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      systemTaskKey = b;
+      teacherTaskTemplateName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object taskName ;
+  public static final int TEACHER_TASK_TEMPLATE_BUSINESS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object teacherTaskTemplateBusiness ;
   /**
-   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskName.
+   * <code>string teacher_task_template_business = 5;</code>
+   * @return The teacherTaskTemplateBusiness.
    */
   @java.lang.Override
-  public java.lang.String getTaskName() {
-    java.lang.Object ref = taskName ;
+  public java.lang.String getTeacherTaskTemplateBusiness() {
+    java.lang.Object ref = teacherTaskTemplateBusiness ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskName = s;
+      teacherTaskTemplateBusiness = s;
       return s;
     }
   }
   /**
-   * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskName.
+   * <code>string teacher_task_template_business = 5;</code>
+   * @return The bytes for teacherTaskTemplateBusiness.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskNameBytes() {
-    java.lang.Object ref = taskName ;
+      getTeacherTaskTemplateBusinessBytes() {
+    java.lang.Object ref = teacherTaskTemplateBusiness ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskName = b;
+      teacherTaskTemplateBusiness = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_BUSINESS_SYSTEM_FIELD_NUMBER = 4;
-  private volatile java.lang.Object taskBusinessSystem ;
+  public static final int TEACHER_TASK_TEMPLATE_CONTENT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object teacherTaskTemplateContent ;
   /**
-   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessSystem.
+   * <code>string teacher_task_template_content = 6;</code>
+   * @return The teacherTaskTemplateContent.
    */
   @java.lang.Override
-  public java.lang.String getTaskBusinessSystem() {
-    java.lang.Object ref = taskBusinessSystem ;
+  public java.lang.String getTeacherTaskTemplateContent() {
+    java.lang.Object ref = teacherTaskTemplateContent ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskBusinessSystem = s;
+      teacherTaskTemplateContent = s;
       return s;
     }
   }
   /**
-   * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessSystem.
+   * <code>string teacher_task_template_content = 6;</code>
+   * @return The bytes for teacherTaskTemplateContent.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskBusinessSystemBytes() {
-    java.lang.Object ref = taskBusinessSystem ;
+      getTeacherTaskTemplateContentBytes() {
+    java.lang.Object ref = teacherTaskTemplateContent ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskBusinessSystem = b;
+      teacherTaskTemplateContent = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TASK_BUSINESS_MODULE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object taskBusinessModule ;
+  public static final int TEACHER_TASK_TEMPLATE_REQUIREMENTS_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList teacherTaskTemplateRequirements ;
   /**
-   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskBusinessModule.
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @return A list containing the teacherTaskTemplateRequirements.
    */
-  @java.lang.Override
-  public java.lang.String getTaskBusinessModule() {
-    java.lang.Object ref = taskBusinessModule ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskBusinessModule = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getTeacherTaskTemplateRequirementsList() {
+    return teacherTaskTemplateRequirements ;
   }
   /**
-   * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskBusinessModule.
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @return The count of teacherTaskTemplateRequirements.
    */
-  @java.lang.Override
+  public int getTeacherTaskTemplateRequirementsCount() {
+    return teacherTaskTemplateRequirements .size();
+  }
+  /**
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @param index The index of the element to return.
+   * @return The teacherTaskTemplateRequirements at the given index.
+   */
+  public java.lang.String getTeacherTaskTemplateRequirements(int index) {
+    return teacherTaskTemplateRequirements .get(index);
+  }
+  /**
+   * <code>repeated string teacher_task_template_requirements = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teacherTaskTemplateRequirements at the given index.
+   */
   public com.google.protobuf.ByteString
-      getTaskBusinessModuleBytes() {
-    java.lang.Object ref = taskBusinessModule ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskBusinessModule = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getTeacherTaskTemplateRequirementsBytes(int index) {
+    return teacherTaskTemplateRequirements .getByteString(index);
   }
 
-  public static final int TASK_CONTENT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object taskContent ;
+  public static final int TEACHER_TASK_TEMPLATE_LINK_FIELD_NUMBER = 8;
+  private volatile java.lang.Object teacherTaskTemplateLink ;
   /**
-   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskContent.
+   * <code>string teacher_task_template_link = 8;</code>
+   * @return The teacherTaskTemplateLink.
    */
   @java.lang.Override
-  public java.lang.String getTaskContent() {
-    java.lang.Object ref = taskContent ;
+  public java.lang.String getTeacherTaskTemplateLink() {
+    java.lang.Object ref = teacherTaskTemplateLink ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskContent = s;
+      teacherTaskTemplateLink = s;
       return s;
     }
   }
   /**
-   * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskContent.
+   * <code>string teacher_task_template_link = 8;</code>
+   * @return The bytes for teacherTaskTemplateLink.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskContentBytes() {
-    java.lang.Object ref = taskContent ;
+      getTeacherTaskTemplateLinkBytes() {
+    java.lang.Object ref = teacherTaskTemplateLink ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskContent = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TASK_REQUIREMENTS_FIELD_NUMBER = 7;
-  private volatile java.lang.Object taskRequirements ;
-  /**
-   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The taskRequirements.
-   */
-  @java.lang.Override
-  public java.lang.String getTaskRequirements() {
-    java.lang.Object ref = taskRequirements ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskRequirements = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-   * @return The bytes for taskRequirements.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskRequirementsBytes() {
-    java.lang.Object ref = taskRequirements ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskRequirements = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TASK_LINK_FIELD_NUMBER = 8;
-  private volatile java.lang.Object taskLink ;
-  /**
-   * <code>string task_link = 8;</code>
-   * @return The taskLink.
-   */
-  @java.lang.Override
-  public java.lang.String getTaskLink() {
-    java.lang.Object ref = taskLink ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskLink = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string task_link = 8;</code>
-   * @return The bytes for taskLink.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskLinkBytes() {
-    java.lang.Object ref = taskLink ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskLink = b;
+      teacherTaskTemplateLink = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -465,6 +454,134 @@ private static final long serialVersionUID = 0L;
     return taskParameters .get(index);
   }
 
+  public static final int CREATED_AT_FIELD_NUMBER = 10;
+  private volatile java.lang.Object createdAt ;
+  /**
+   * <code>string created_at = 10;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedAt() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string created_at = 10;</code>
+   * @return The bytes for createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedAtBytes() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UPDATED_AT_FIELD_NUMBER = 11;
+  private volatile java.lang.Object updatedAt ;
+  /**
+   * <code>string updated_at = 11;</code>
+   * @return The updatedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdatedAt() {
+    java.lang.Object ref = updatedAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updatedAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string updated_at = 11;</code>
+   * @return The bytes for updatedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUpdatedAtBytes() {
+    java.lang.Object ref = updatedAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      updatedAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATOR_FIELD_NUMBER = 12;
+  private com.zhijiejiaoyu.glory_api.user.User creator ;
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   * @return Whether the creator field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreator() {
+    return creator != null;
+  }
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   * @return The creator.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.User getCreator() {
+    return creator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
+  }
+  /**
+   * <code>.glory_api.User creator = 12;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
+    return getCreator();
+  }
+
+  public static final int UPDATER_FIELD_NUMBER = 13;
+  private com.zhijiejiaoyu.glory_api.user.User updater ;
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   * @return Whether the updater field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdater() {
+    return updater != null;
+  }
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   * @return The updater.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.User getUpdater() {
+    return updater == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updater ;
+  }
+  /**
+   * <code>.glory_api.User updater = 13;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder() {
+    return getUpdater();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -479,32 +596,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (taskTemplateId != 0L) {
-      output.writeInt64(1, taskTemplateId );
+    if (teacherTaskTemplateId != 0L) {
+      output.writeInt64(1, teacherTaskTemplateId );
     }
-    if (!getSystemTaskKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, systemTaskKey );
+    if (teacherTaskTemplateType != 0) {
+      output.writeInt32(2, teacherTaskTemplateType );
     }
-    if (!getTaskNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskName );
+    if (systemTaskId != 0L) {
+      output.writeInt64(3, systemTaskId );
     }
-    if (!getTaskBusinessSystemBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskBusinessSystem );
+    if (!getTeacherTaskTemplateNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, teacherTaskTemplateName );
     }
-    if (!getTaskBusinessModuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskBusinessModule );
+    if (!getTeacherTaskTemplateBusinessBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, teacherTaskTemplateBusiness );
     }
-    if (!getTaskContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskContent );
+    if (!getTeacherTaskTemplateContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, teacherTaskTemplateContent );
     }
-    if (!getTaskRequirementsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, taskRequirements );
+    for (int i = 0; i < teacherTaskTemplateRequirements .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, teacherTaskTemplateRequirements .getRaw(i));
     }
-    if (!getTaskLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, taskLink );
+    if (!getTeacherTaskTemplateLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, teacherTaskTemplateLink );
     }
     for (int i = 0; i < taskParameters .size(); i++) {
       output.writeMessage(9, taskParameters .get(i));
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
+    }
+    if (!getUpdatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, updatedAt );
+    }
+    if (creator != null) {
+      output.writeMessage(12, getCreator());
+    }
+    if (updater != null) {
+      output.writeMessage(13, getUpdater());
     }
     unknownFields.writeTo(output);
   }
@@ -515,34 +644,55 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (taskTemplateId != 0L) {
+    if (teacherTaskTemplateId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, taskTemplateId );
+        .computeInt64Size(1, teacherTaskTemplateId );
     }
-    if (!getSystemTaskKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, systemTaskKey );
+    if (teacherTaskTemplateType != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, teacherTaskTemplateType );
     }
-    if (!getTaskNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskName );
+    if (systemTaskId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, systemTaskId );
     }
-    if (!getTaskBusinessSystemBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskBusinessSystem );
+    if (!getTeacherTaskTemplateNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, teacherTaskTemplateName );
     }
-    if (!getTaskBusinessModuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskBusinessModule );
+    if (!getTeacherTaskTemplateBusinessBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, teacherTaskTemplateBusiness );
     }
-    if (!getTaskContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskContent );
+    if (!getTeacherTaskTemplateContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, teacherTaskTemplateContent );
     }
-    if (!getTaskRequirementsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, taskRequirements );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < teacherTaskTemplateRequirements .size(); i++) {
+        dataSize += computeStringSizeNoTag(teacherTaskTemplateRequirements .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTeacherTaskTemplateRequirementsList().size();
     }
-    if (!getTaskLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, taskLink );
+    if (!getTeacherTaskTemplateLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, teacherTaskTemplateLink );
     }
     for (int i = 0; i < taskParameters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, taskParameters .get(i));
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
+    }
+    if (!getUpdatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, updatedAt );
+    }
+    if (creator != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getCreator());
+    }
+    if (updater != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getUpdater());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -559,24 +709,38 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate other = (com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate) obj;
 
-    if (getTaskTemplateId()
-        != other.getTaskTemplateId()) return false;
-    if (!getSystemTaskKey()
-        .equals(other.getSystemTaskKey())) return false;
-    if (!getTaskName()
-        .equals(other.getTaskName())) return false;
-    if (!getTaskBusinessSystem()
-        .equals(other.getTaskBusinessSystem())) return false;
-    if (!getTaskBusinessModule()
-        .equals(other.getTaskBusinessModule())) return false;
-    if (!getTaskContent()
-        .equals(other.getTaskContent())) return false;
-    if (!getTaskRequirements()
-        .equals(other.getTaskRequirements())) return false;
-    if (!getTaskLink()
-        .equals(other.getTaskLink())) return false;
+    if (getTeacherTaskTemplateId()
+        != other.getTeacherTaskTemplateId()) return false;
+    if (getTeacherTaskTemplateType()
+        != other.getTeacherTaskTemplateType()) return false;
+    if (getSystemTaskId()
+        != other.getSystemTaskId()) return false;
+    if (!getTeacherTaskTemplateName()
+        .equals(other.getTeacherTaskTemplateName())) return false;
+    if (!getTeacherTaskTemplateBusiness()
+        .equals(other.getTeacherTaskTemplateBusiness())) return false;
+    if (!getTeacherTaskTemplateContent()
+        .equals(other.getTeacherTaskTemplateContent())) return false;
+    if (!getTeacherTaskTemplateRequirementsList()
+        .equals(other.getTeacherTaskTemplateRequirementsList())) return false;
+    if (!getTeacherTaskTemplateLink()
+        .equals(other.getTeacherTaskTemplateLink())) return false;
     if (!getTaskParametersList()
         .equals(other.getTaskParametersList())) return false;
+    if (!getCreatedAt()
+        .equals(other.getCreatedAt())) return false;
+    if (!getUpdatedAt()
+        .equals(other.getUpdatedAt())) return false;
+    if (hasCreator() != other.hasCreator()) return false;
+    if (hasCreator()) {
+      if (!getCreator()
+          .equals(other.getCreator())) return false;
+    }
+    if (hasUpdater() != other.hasUpdater()) return false;
+    if (hasUpdater()) {
+      if (!getUpdater()
+          .equals(other.getUpdater())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -588,26 +752,41 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TASK_TEMPLATE_ID_FIELD_NUMBER;
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTaskTemplateId());
-    hash = (37 * hash) + SYSTEM_TASK_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getSystemTaskKey().hashCode();
-    hash = (37 * hash) + TASK_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskName().hashCode();
-    hash = (37 * hash) + TASK_BUSINESS_SYSTEM_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskBusinessSystem().hashCode();
-    hash = (37 * hash) + TASK_BUSINESS_MODULE_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskBusinessModule().hashCode();
-    hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskContent().hashCode();
-    hash = (37 * hash) + TASK_REQUIREMENTS_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskRequirements().hashCode();
-    hash = (37 * hash) + TASK_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskLink().hashCode();
+        getTeacherTaskTemplateId());
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherTaskTemplateType();
+    hash = (37 * hash) + SYSTEM_TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSystemTaskId());
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherTaskTemplateName().hashCode();
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_BUSINESS_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherTaskTemplateBusiness().hashCode();
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherTaskTemplateContent().hashCode();
+    if (getTeacherTaskTemplateRequirementsCount() > 0) {
+      hash = (37 * hash) + TEACHER_TASK_TEMPLATE_REQUIREMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTeacherTaskTemplateRequirementsList().hashCode();
+    }
+    hash = (37 * hash) + TEACHER_TASK_TEMPLATE_LINK_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherTaskTemplateLink().hashCode();
     if (getTaskParametersCount() > 0) {
       hash = (37 * hash) + TASK_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskParametersList().hashCode();
+    }
+    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getUpdatedAt().hashCode();
+    if (hasCreator()) {
+      hash = (37 * hash) + CREATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getCreator().hashCode();
+    }
+    if (hasUpdater()) {
+      hash = (37 * hash) + UPDATER_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdater().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -743,27 +922,43 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      taskTemplateId = 0L;
+      teacherTaskTemplateId = 0L;
 
-      systemTaskKey = "";
+      teacherTaskTemplateType = 0;
 
-      taskName = "";
+      systemTaskId = 0L;
 
-      taskBusinessSystem = "";
+      teacherTaskTemplateName = "";
 
-      taskBusinessModule = "";
+      teacherTaskTemplateBusiness = "";
 
-      taskContent = "";
+      teacherTaskTemplateContent = "";
 
-      taskRequirements = "";
-
-      taskLink = "";
+      teacherTaskTemplateRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      teacherTaskTemplateLink = "";
 
       if (taskParametersBuilder == null) {
         taskParameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
       } else {
         taskParametersBuilder .clear();
+      }
+      createdAt = "";
+
+      updatedAt = "";
+
+      if (creatorBuilder == null) {
+        creator = null;
+      } else {
+        creator = null;
+        creatorBuilder = null;
+      }
+      if (updaterBuilder == null) {
+        updater = null;
+      } else {
+        updater = null;
+        updaterBuilder = null;
       }
       return this;
     }
@@ -792,22 +987,38 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate buildPartial() {
       com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate result = new com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate(this);
       int from_bitField0 = bitField0 ;
-      result.taskTemplateId = taskTemplateId ;
-      result.systemTaskKey = systemTaskKey ;
-      result.taskName = taskName ;
-      result.taskBusinessSystem = taskBusinessSystem ;
-      result.taskBusinessModule = taskBusinessModule ;
-      result.taskContent = taskContent ;
-      result.taskRequirements = taskRequirements ;
-      result.taskLink = taskLink ;
+      result.teacherTaskTemplateId = teacherTaskTemplateId ;
+      result.teacherTaskTemplateType = teacherTaskTemplateType ;
+      result.systemTaskId = systemTaskId ;
+      result.teacherTaskTemplateName = teacherTaskTemplateName ;
+      result.teacherTaskTemplateBusiness = teacherTaskTemplateBusiness ;
+      result.teacherTaskTemplateContent = teacherTaskTemplateContent ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        teacherTaskTemplateRequirements = teacherTaskTemplateRequirements .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.teacherTaskTemplateRequirements = teacherTaskTemplateRequirements ;
+      result.teacherTaskTemplateLink = teacherTaskTemplateLink ;
       if (taskParametersBuilder == null) {
-        if (((bitField0 & 0x00000001) != 0)) {
+        if (((bitField0 & 0x00000002) != 0)) {
           taskParameters = java.util.Collections.unmodifiableList(taskParameters );
-          bitField0 = (bitField0 & ~0x00000001);
+          bitField0 = (bitField0 & ~0x00000002);
         }
         result.taskParameters = taskParameters ;
       } else {
         result.taskParameters = taskParametersBuilder .build();
+      }
+      result.createdAt = createdAt ;
+      result.updatedAt = updatedAt ;
+      if (creatorBuilder == null) {
+        result.creator = creator ;
+      } else {
+        result.creator = creatorBuilder .build();
+      }
+      if (updaterBuilder == null) {
+        result.updater = updater ;
+      } else {
+        result.updater = updaterBuilder .build();
       }
       onBuilt();
       return result;
@@ -857,42 +1068,46 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate other) {
       if (other == com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.getDefaultInstance()) return this;
-      if (other.getTaskTemplateId() != 0L) {
-        setTaskTemplateId(other.getTaskTemplateId());
+      if (other.getTeacherTaskTemplateId() != 0L) {
+        setTeacherTaskTemplateId(other.getTeacherTaskTemplateId());
       }
-      if (!other.getSystemTaskKey().isEmpty()) {
-        systemTaskKey = other.systemTaskKey ;
+      if (other.getTeacherTaskTemplateType() != 0) {
+        setTeacherTaskTemplateType(other.getTeacherTaskTemplateType());
+      }
+      if (other.getSystemTaskId() != 0L) {
+        setSystemTaskId(other.getSystemTaskId());
+      }
+      if (!other.getTeacherTaskTemplateName().isEmpty()) {
+        teacherTaskTemplateName = other.teacherTaskTemplateName ;
         onChanged();
       }
-      if (!other.getTaskName().isEmpty()) {
-        taskName = other.taskName ;
+      if (!other.getTeacherTaskTemplateBusiness().isEmpty()) {
+        teacherTaskTemplateBusiness = other.teacherTaskTemplateBusiness ;
         onChanged();
       }
-      if (!other.getTaskBusinessSystem().isEmpty()) {
-        taskBusinessSystem = other.taskBusinessSystem ;
+      if (!other.getTeacherTaskTemplateContent().isEmpty()) {
+        teacherTaskTemplateContent = other.teacherTaskTemplateContent ;
         onChanged();
       }
-      if (!other.getTaskBusinessModule().isEmpty()) {
-        taskBusinessModule = other.taskBusinessModule ;
+      if (!other.teacherTaskTemplateRequirements .isEmpty()) {
+        if (teacherTaskTemplateRequirements .isEmpty()) {
+          teacherTaskTemplateRequirements = other.teacherTaskTemplateRequirements ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureTeacherTaskTemplateRequirementsIsMutable();
+          teacherTaskTemplateRequirements .addAll(other.teacherTaskTemplateRequirements );
+        }
         onChanged();
       }
-      if (!other.getTaskContent().isEmpty()) {
-        taskContent = other.taskContent ;
-        onChanged();
-      }
-      if (!other.getTaskRequirements().isEmpty()) {
-        taskRequirements = other.taskRequirements ;
-        onChanged();
-      }
-      if (!other.getTaskLink().isEmpty()) {
-        taskLink = other.taskLink ;
+      if (!other.getTeacherTaskTemplateLink().isEmpty()) {
+        teacherTaskTemplateLink = other.teacherTaskTemplateLink ;
         onChanged();
       }
       if (taskParametersBuilder == null) {
         if (!other.taskParameters .isEmpty()) {
           if (taskParameters .isEmpty()) {
             taskParameters = other.taskParameters ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
           } else {
             ensureTaskParametersIsMutable();
             taskParameters .addAll(other.taskParameters );
@@ -905,7 +1120,7 @@ private static final long serialVersionUID = 0L;
             taskParametersBuilder .dispose();
             taskParametersBuilder = null;
             taskParameters = other.taskParameters ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
             taskParametersBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTaskParametersFieldBuilder() : null;
@@ -913,6 +1128,20 @@ private static final long serialVersionUID = 0L;
             taskParametersBuilder .addAllMessages(other.taskParameters );
           }
         }
+      }
+      if (!other.getCreatedAt().isEmpty()) {
+        createdAt = other.createdAt ;
+        onChanged();
+      }
+      if (!other.getUpdatedAt().isEmpty()) {
+        updatedAt = other.updatedAt ;
+        onChanged();
+      }
+      if (other.hasCreator()) {
+        mergeCreator(other.getCreator());
+      }
+      if (other.hasUpdater()) {
+        mergeUpdater(other.getUpdater());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -944,565 +1173,521 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private long taskTemplateId ;
+    private long teacherTaskTemplateId ;
     /**
-     * <code>int64 task_template_id = 1;</code>
-     * @return The taskTemplateId.
+     * <code>int64 teacher_task_template_id = 1;</code>
+     * @return The teacherTaskTemplateId.
      */
     @java.lang.Override
-    public long getTaskTemplateId() {
-      return taskTemplateId ;
+    public long getTeacherTaskTemplateId() {
+      return teacherTaskTemplateId ;
     }
     /**
-     * <code>int64 task_template_id = 1;</code>
-     * @param value The taskTemplateId to set.
+     * <code>int64 teacher_task_template_id = 1;</code>
+     * @param value The teacherTaskTemplateId to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskTemplateId(long value) {
+    public Builder setTeacherTaskTemplateId(long value) {
       
-      taskTemplateId = value;
+      teacherTaskTemplateId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 task_template_id = 1;</code>
+     * <code>int64 teacher_task_template_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskTemplateId() {
+    public Builder clearTeacherTaskTemplateId() {
       
-      taskTemplateId = 0L;
+      teacherTaskTemplateId = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object systemTaskKey = "";
+    private int teacherTaskTemplateType ;
     /**
-     * <code>string system_task_key = 2;</code>
-     * @return The systemTaskKey.
+     * <pre>
+     * 任务模板类型：1.预置任务；2.手动任务
+     * </pre>
+     *
+     * <code>int32 teacher_task_template_type = 2;</code>
+     * @return The teacherTaskTemplateType.
      */
-    public java.lang.String getSystemTaskKey() {
-      java.lang.Object ref = systemTaskKey ;
+    @java.lang.Override
+    public int getTeacherTaskTemplateType() {
+      return teacherTaskTemplateType ;
+    }
+    /**
+     * <pre>
+     * 任务模板类型：1.预置任务；2.手动任务
+     * </pre>
+     *
+     * <code>int32 teacher_task_template_type = 2;</code>
+     * @param value The teacherTaskTemplateType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherTaskTemplateType(int value) {
+      
+      teacherTaskTemplateType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务模板类型：1.预置任务；2.手动任务
+     * </pre>
+     *
+     * <code>int32 teacher_task_template_type = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherTaskTemplateType() {
+      
+      teacherTaskTemplateType = 0;
+      onChanged();
+      return this;
+    }
+
+    private long systemTaskId ;
+    /**
+     * <code>int64 system_task_id = 3;</code>
+     * @return The systemTaskId.
+     */
+    @java.lang.Override
+    public long getSystemTaskId() {
+      return systemTaskId ;
+    }
+    /**
+     * <code>int64 system_task_id = 3;</code>
+     * @param value The systemTaskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskId(long value) {
+      
+      systemTaskId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 system_task_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemTaskId() {
+      
+      systemTaskId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object teacherTaskTemplateName = "";
+    /**
+     * <code>string teacher_task_template_name = 4;</code>
+     * @return The teacherTaskTemplateName.
+     */
+    public java.lang.String getTeacherTaskTemplateName() {
+      java.lang.Object ref = teacherTaskTemplateName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        systemTaskKey = s;
+        teacherTaskTemplateName = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string system_task_key = 2;</code>
-     * @return The bytes for systemTaskKey.
+     * <code>string teacher_task_template_name = 4;</code>
+     * @return The bytes for teacherTaskTemplateName.
      */
     public com.google.protobuf.ByteString
-        getSystemTaskKeyBytes() {
-      java.lang.Object ref = systemTaskKey ;
+        getTeacherTaskTemplateNameBytes() {
+      java.lang.Object ref = teacherTaskTemplateName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        systemTaskKey = b;
+        teacherTaskTemplateName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string system_task_key = 2;</code>
-     * @param value The systemTaskKey to set.
+     * <code>string teacher_task_template_name = 4;</code>
+     * @param value The teacherTaskTemplateName to set.
      * @return This builder for chaining.
      */
-    public Builder setSystemTaskKey(
+    public Builder setTeacherTaskTemplateName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      systemTaskKey = value;
+      teacherTaskTemplateName = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string system_task_key = 2;</code>
+     * <code>string teacher_task_template_name = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSystemTaskKey() {
+    public Builder clearTeacherTaskTemplateName() {
       
-      systemTaskKey = getDefaultInstance().getSystemTaskKey();
+      teacherTaskTemplateName = getDefaultInstance().getTeacherTaskTemplateName();
       onChanged();
       return this;
     }
     /**
-     * <code>string system_task_key = 2;</code>
-     * @param value The bytes for systemTaskKey to set.
+     * <code>string teacher_task_template_name = 4;</code>
+     * @param value The bytes for teacherTaskTemplateName to set.
      * @return This builder for chaining.
      */
-    public Builder setSystemTaskKeyBytes(
+    public Builder setTeacherTaskTemplateNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      systemTaskKey = value;
+      teacherTaskTemplateName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskName = "";
+    private java.lang.Object teacherTaskTemplateBusiness = "";
     /**
-     * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskName.
+     * <code>string teacher_task_template_business = 5;</code>
+     * @return The teacherTaskTemplateBusiness.
      */
-    public java.lang.String getTaskName() {
-      java.lang.Object ref = taskName ;
+    public java.lang.String getTeacherTaskTemplateBusiness() {
+      java.lang.Object ref = teacherTaskTemplateBusiness ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskName = s;
+        teacherTaskTemplateBusiness = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskName.
+     * <code>string teacher_task_template_business = 5;</code>
+     * @return The bytes for teacherTaskTemplateBusiness.
      */
     public com.google.protobuf.ByteString
-        getTaskNameBytes() {
-      java.lang.Object ref = taskName ;
+        getTeacherTaskTemplateBusinessBytes() {
+      java.lang.Object ref = teacherTaskTemplateBusiness ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskName = b;
+        teacherTaskTemplateBusiness = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskName to set.
+     * <code>string teacher_task_template_business = 5;</code>
+     * @param value The teacherTaskTemplateBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskName(
+    public Builder setTeacherTaskTemplateBusiness(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskName = value;
+      teacherTaskTemplateBusiness = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string teacher_task_template_business = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskName() {
+    public Builder clearTeacherTaskTemplateBusiness() {
       
-      taskName = getDefaultInstance().getTaskName();
+      teacherTaskTemplateBusiness = getDefaultInstance().getTeacherTaskTemplateBusiness();
       onChanged();
       return this;
     }
     /**
-     * <code>string task_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskName to set.
+     * <code>string teacher_task_template_business = 5;</code>
+     * @param value The bytes for teacherTaskTemplateBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskNameBytes(
+    public Builder setTeacherTaskTemplateBusinessBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskName = value;
+      teacherTaskTemplateBusiness = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskBusinessSystem = "";
+    private java.lang.Object teacherTaskTemplateContent = "";
     /**
-     * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskBusinessSystem.
+     * <code>string teacher_task_template_content = 6;</code>
+     * @return The teacherTaskTemplateContent.
      */
-    public java.lang.String getTaskBusinessSystem() {
-      java.lang.Object ref = taskBusinessSystem ;
+    public java.lang.String getTeacherTaskTemplateContent() {
+      java.lang.Object ref = teacherTaskTemplateContent ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskBusinessSystem = s;
+        teacherTaskTemplateContent = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskBusinessSystem.
+     * <code>string teacher_task_template_content = 6;</code>
+     * @return The bytes for teacherTaskTemplateContent.
      */
     public com.google.protobuf.ByteString
-        getTaskBusinessSystemBytes() {
-      java.lang.Object ref = taskBusinessSystem ;
+        getTeacherTaskTemplateContentBytes() {
+      java.lang.Object ref = teacherTaskTemplateContent ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskBusinessSystem = b;
+        teacherTaskTemplateContent = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskBusinessSystem to set.
+     * <code>string teacher_task_template_content = 6;</code>
+     * @param value The teacherTaskTemplateContent to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessSystem(
+    public Builder setTeacherTaskTemplateContent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskBusinessSystem = value;
+      teacherTaskTemplateContent = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string teacher_task_template_content = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskBusinessSystem() {
+    public Builder clearTeacherTaskTemplateContent() {
       
-      taskBusinessSystem = getDefaultInstance().getTaskBusinessSystem();
+      teacherTaskTemplateContent = getDefaultInstance().getTeacherTaskTemplateContent();
       onChanged();
       return this;
     }
     /**
-     * <code>string task_business_system = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;347&#92;263&#92;273&#92;347&#92;273&#92;237&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskBusinessSystem to set.
+     * <code>string teacher_task_template_content = 6;</code>
+     * @param value The bytes for teacherTaskTemplateContent to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessSystemBytes(
+    public Builder setTeacherTaskTemplateContentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskBusinessSystem = value;
+      teacherTaskTemplateContent = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object taskBusinessModule = "";
+    private com.google.protobuf.LazyStringList teacherTaskTemplateRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTeacherTaskTemplateRequirementsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        teacherTaskTemplateRequirements = new com.google.protobuf.LazyStringArrayList(teacherTaskTemplateRequirements );
+        bitField0_ |= 0x00000001;
+       }
+    }
     /**
-     * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskBusinessModule.
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @return A list containing the teacherTaskTemplateRequirements.
      */
-    public java.lang.String getTaskBusinessModule() {
-      java.lang.Object ref = taskBusinessModule ;
+    public com.google.protobuf.ProtocolStringList
+        getTeacherTaskTemplateRequirementsList() {
+      return teacherTaskTemplateRequirements .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @return The count of teacherTaskTemplateRequirements.
+     */
+    public int getTeacherTaskTemplateRequirementsCount() {
+      return teacherTaskTemplateRequirements .size();
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param index The index of the element to return.
+     * @return The teacherTaskTemplateRequirements at the given index.
+     */
+    public java.lang.String getTeacherTaskTemplateRequirements(int index) {
+      return teacherTaskTemplateRequirements .get(index);
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the teacherTaskTemplateRequirements at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTeacherTaskTemplateRequirementsBytes(int index) {
+      return teacherTaskTemplateRequirements .getByteString(index);
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The teacherTaskTemplateRequirements to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherTaskTemplateRequirements(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeacherTaskTemplateRequirementsIsMutable();
+      teacherTaskTemplateRequirements .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param value The teacherTaskTemplateRequirements to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTeacherTaskTemplateRequirements(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeacherTaskTemplateRequirementsIsMutable();
+      teacherTaskTemplateRequirements .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param values The teacherTaskTemplateRequirements to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTeacherTaskTemplateRequirements(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTeacherTaskTemplateRequirementsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, teacherTaskTemplateRequirements );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherTaskTemplateRequirements() {
+      teacherTaskTemplateRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_template_requirements = 7;</code>
+     * @param value The bytes of the teacherTaskTemplateRequirements to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTeacherTaskTemplateRequirementsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTeacherTaskTemplateRequirementsIsMutable();
+      teacherTaskTemplateRequirements .add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object teacherTaskTemplateLink = "";
+    /**
+     * <code>string teacher_task_template_link = 8;</code>
+     * @return The teacherTaskTemplateLink.
+     */
+    public java.lang.String getTeacherTaskTemplateLink() {
+      java.lang.Object ref = teacherTaskTemplateLink ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskBusinessModule = s;
+        teacherTaskTemplateLink = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskBusinessModule.
+     * <code>string teacher_task_template_link = 8;</code>
+     * @return The bytes for teacherTaskTemplateLink.
      */
     public com.google.protobuf.ByteString
-        getTaskBusinessModuleBytes() {
-      java.lang.Object ref = taskBusinessModule ;
+        getTeacherTaskTemplateLinkBytes() {
+      java.lang.Object ref = teacherTaskTemplateLink ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskBusinessModule = b;
+        teacherTaskTemplateLink = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskBusinessModule to set.
+     * <code>string teacher_task_template_link = 8;</code>
+     * @param value The teacherTaskTemplateLink to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessModule(
+    public Builder setTeacherTaskTemplateLink(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskBusinessModule = value;
+      teacherTaskTemplateLink = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string teacher_task_template_link = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskBusinessModule() {
+    public Builder clearTeacherTaskTemplateLink() {
       
-      taskBusinessModule = getDefaultInstance().getTaskBusinessModule();
+      teacherTaskTemplateLink = getDefaultInstance().getTeacherTaskTemplateLink();
       onChanged();
       return this;
     }
     /**
-     * <code>string task_business_module = 5 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;346&#92;250&#92;241&#92;345&#92;235&#92;227&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskBusinessModule to set.
+     * <code>string teacher_task_template_link = 8;</code>
+     * @param value The bytes for teacherTaskTemplateLink to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskBusinessModuleBytes(
+    public Builder setTeacherTaskTemplateLinkBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskBusinessModule = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object taskContent = "";
-    /**
-     * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskContent.
-     */
-    public java.lang.String getTaskContent() {
-      java.lang.Object ref = taskContent ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskContent = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskContent.
-     */
-    public com.google.protobuf.ByteString
-        getTaskContentBytes() {
-      java.lang.Object ref = taskContent ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskContent = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskContent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskContent(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskContent = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskContent() {
-      
-      taskContent = getDefaultInstance().getTaskContent();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_content = 6 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;345&#92;206&#92;205&#92;345&#92;256&#92;271&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskContent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskContentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskContent = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object taskRequirements = "";
-    /**
-     * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The taskRequirements.
-     */
-    public java.lang.String getTaskRequirements() {
-      java.lang.Object ref = taskRequirements ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskRequirements = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return The bytes for taskRequirements.
-     */
-    public com.google.protobuf.ByteString
-        getTaskRequirementsBytes() {
-      java.lang.Object ref = taskRequirements ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskRequirements = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The taskRequirements to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskRequirements(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskRequirements = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskRequirements() {
-      
-      taskRequirements = getDefaultInstance().getTaskRequirements();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_requirements = 7 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;344&#92;273&#92;273&#92;345&#92;212&#92;241&#92;350&#92;246&#92;201&#92;346&#92;261&#92;202&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
-     * @param value The bytes for taskRequirements to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskRequirementsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskRequirements = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object taskLink = "";
-    /**
-     * <code>string task_link = 8;</code>
-     * @return The taskLink.
-     */
-    public java.lang.String getTaskLink() {
-      java.lang.Object ref = taskLink ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskLink = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string task_link = 8;</code>
-     * @return The bytes for taskLink.
-     */
-    public com.google.protobuf.ByteString
-        getTaskLinkBytes() {
-      java.lang.Object ref = taskLink ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskLink = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string task_link = 8;</code>
-     * @param value The taskLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskLink(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskLink = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_link = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskLink() {
-      
-      taskLink = getDefaultInstance().getTaskLink();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_link = 8;</code>
-     * @param value The bytes for taskLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskLinkBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskLink = value;
+      teacherTaskTemplateLink = value;
       onChanged();
       return this;
     }
@@ -1510,9 +1695,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> taskParameters =
       java.util.Collections.emptyList();
     private void ensureTaskParametersIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
+      if (!((bitField0 & 0x00000002) != 0)) {
         taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter>(taskParameters );
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1662,7 +1847,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskParameters() {
       if (taskParametersBuilder == null) {
         taskParameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
         onChanged();
       } else {
         taskParametersBuilder .clear();
@@ -1739,12 +1924,402 @@ private static final long serialVersionUID = 0L;
         taskParametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder>(
                 taskParameters ,
-                ((bitField0 & 0x00000001) != 0),
+                ((bitField0 & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         taskParameters = null;
       }
       return taskParametersBuilder ;
+    }
+
+    private java.lang.Object createdAt = "";
+    /**
+     * <code>string created_at = 10;</code>
+     * @return The createdAt.
+     */
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 10;</code>
+     * @return The bytes for createdAt.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 10;</code>
+     * @param value The createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedAt() {
+      
+      createdAt = getDefaultInstance().getCreatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 10;</code>
+     * @param value The bytes for createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object updatedAt = "";
+    /**
+     * <code>string updated_at = 11;</code>
+     * @return The updatedAt.
+     */
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string updated_at = 11;</code>
+     * @return The bytes for updatedAt.
+     */
+    public com.google.protobuf.ByteString
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string updated_at = 11;</code>
+     * @param value The updatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      updatedAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string updated_at = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdatedAt() {
+      
+      updatedAt = getDefaultInstance().getUpdatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string updated_at = 11;</code>
+     * @param value The bytes for updatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      updatedAt = value;
+      onChanged();
+      return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.user.User creator ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> creatorBuilder ;
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     * @return Whether the creator field is set.
+     */
+    public boolean hasCreator() {
+      return creatorBuilder != null || creator != null;
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     * @return The creator.
+     */
+    public com.zhijiejiaoyu.glory_api.user.User getCreator() {
+      if (creatorBuilder == null) {
+        return creator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
+      } else {
+        return creatorBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public Builder setCreator(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (creatorBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        creator = value;
+        onChanged();
+      } else {
+        creatorBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public Builder setCreator(
+        com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
+      if (creatorBuilder == null) {
+        creator = builderForValue.build();
+        onChanged();
+      } else {
+        creatorBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public Builder mergeCreator(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (creatorBuilder == null) {
+        if (creator != null) {
+          creator =
+            com.zhijiejiaoyu.glory_api.user.User.newBuilder(creator ).mergeFrom(value).buildPartial();
+        } else {
+          creator = value;
+        }
+        onChanged();
+      } else {
+        creatorBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public Builder clearCreator() {
+      if (creatorBuilder == null) {
+        creator = null;
+        onChanged();
+      } else {
+        creator = null;
+        creatorBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.User.Builder getCreatorBuilder() {
+      
+      onChanged();
+      return getCreatorFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
+      if (creatorBuilder != null) {
+        return creatorBuilder .getMessageOrBuilder();
+      } else {
+        return creator == null ?
+            com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
+      }
+    }
+    /**
+     * <code>.glory_api.User creator = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
+        getCreatorFieldBuilder() {
+      if (creatorBuilder == null) {
+        creatorBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
+                getCreator(),
+                getParentForChildren(),
+                isClean());
+        creator = null;
+      }
+      return creatorBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.user.User updater ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> updaterBuilder ;
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     * @return Whether the updater field is set.
+     */
+    public boolean hasUpdater() {
+      return updaterBuilder != null || updater != null;
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     * @return The updater.
+     */
+    public com.zhijiejiaoyu.glory_api.user.User getUpdater() {
+      if (updaterBuilder == null) {
+        return updater == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updater ;
+      } else {
+        return updaterBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public Builder setUpdater(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (updaterBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updater = value;
+        onChanged();
+      } else {
+        updaterBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public Builder setUpdater(
+        com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
+      if (updaterBuilder == null) {
+        updater = builderForValue.build();
+        onChanged();
+      } else {
+        updaterBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public Builder mergeUpdater(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (updaterBuilder == null) {
+        if (updater != null) {
+          updater =
+            com.zhijiejiaoyu.glory_api.user.User.newBuilder(updater ).mergeFrom(value).buildPartial();
+        } else {
+          updater = value;
+        }
+        onChanged();
+      } else {
+        updaterBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public Builder clearUpdater() {
+      if (updaterBuilder == null) {
+        updater = null;
+        onChanged();
+      } else {
+        updater = null;
+        updaterBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.User.Builder getUpdaterBuilder() {
+      
+      onChanged();
+      return getUpdaterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder() {
+      if (updaterBuilder != null) {
+        return updaterBuilder .getMessageOrBuilder();
+      } else {
+        return updater == null ?
+            com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updater ;
+      }
+    }
+    /**
+     * <code>.glory_api.User updater = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
+        getUpdaterFieldBuilder() {
+      if (updaterBuilder == null) {
+        updaterBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
+                getUpdater(),
+                getParentForChildren(),
+                isClean());
+        updater = null;
+      }
+      return updaterBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
