@@ -147,7 +147,6 @@ message QuickEvaluationDetail {
     string key = 1;
     bool is_pass = 2;
     string detail = 3;
-    string ref_type_result = 4;
 }
 
 message QuickEvaluationDetailType {
@@ -160,7 +159,8 @@ message QuickEvaluationDetailKey {
     string name = 2;
     string desc = 3;
     bool result = 4;
-    repeated QuickEvaluationDetail detail = 5;
+    string ref_result = 5;
+    repeated QuickEvaluationDetail detail = 6;
 }
 
 message GetQuickEvaluationDetailResponse {
