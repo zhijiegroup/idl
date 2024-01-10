@@ -53,6 +53,8 @@ message UpdateTeacherTaskTemplateResponse {
 
 message ListTeacherTaskTemplateRequest {
   base.BaseRequest base_request = 1;
+  string name = 2; // 任务名称
+  int32 type = 3; // 任务类型：0. 所有任务；1.预置任务；2.手动任务
   base.PaginationRequest pagination = 100;
 }
 
