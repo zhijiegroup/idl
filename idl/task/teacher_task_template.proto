@@ -5,25 +5,32 @@ option java_multiple_files = true;
 
 import "api.proto";
 import "base.proto";
+import "user/user.proto";
 
 message TeacherTaskTemplateParameter {
-  int64 task_template_id = 1;
+  int64 task_parameter_id = 1;
   string task_parameter_key = 2;
-  string task_parameter_name = 3[(api.vd) = "@:len($)>0;msg:'参数名称不能为空'"];
-  string task_parameter_value = 4[(api.vd) = "@:len($)>0;msg:'参数值不能为空'"];
-  string task_parameter_type = 5;
+  string task_parameter_name = 3;
+  string task_parameter_operator = 4;
+  string task_parameter_value = 5;
+  string task_parameter_type = 6;
+  repeated TeacherTaskTemplateParameter children = 7;
 }
 
 message TeacherTaskTemplate {
-  int64 task_template_id = 1;
-  string system_task_key = 2;
-  string task_name = 3[(api.vd) = "@:len($)>0;msg:'任务名称不能为空'"];
-  string task_business_system = 4[(api.vd) = "@:len($)>0;msg:'系统名称不能为空'"];
-  string task_business_module = 5[(api.vd) = "@:len($)>0;msg:'模块名称不能为空'"];
-  string task_content = 6[(api.vd) = "@:len($)>0;msg:'任务内容不能为空'"];
-  string task_requirements = 7[(api.vd) = "@:len($)>0;msg:'任务要求不能为空'"];
-  string task_link = 8;
+  int64 teacher_task_template_id = 1;
+  int32 teacher_task_template_type = 2; // 任务模板类型：1.预置任务；2.手动任务
+  int64 system_task_id = 3;
+  string teacher_task_template_name = 4;
+  string teacher_task_template_business = 5;
+  string teacher_task_template_content = 6;
+  repeated string teacher_task_template_requirements = 7;
+  string teacher_task_template_link = 8;
   repeated TeacherTaskTemplateParameter task_parameters = 9;
+  string created_at = 10;
+  string updated_at = 11;
+  User creator = 12;
+  User updater = 13;
 }
 
 message CreateTeacherTaskTemplateRequest {

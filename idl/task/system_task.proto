@@ -5,22 +5,23 @@ option java_multiple_files = true;
 
 import "api.proto";
 import "base.proto";
+import "user/user.proto";
 
 message TaskParameter {
-  string key = 1;
-  string name = 2;
-  string operator = 3;
-  string type = 4;
-  string def = 5;
-  repeated TaskParameter enums = 6;
-  repeated TaskParameter children = 7;
+  string task_parameter_key = 1;
+  string task_parameter_name = 2;
+  string task_parameter_operator = 3;
+  string task_parameter_type = 4;
+  string task_parameter_default = 5;
+  repeated TaskParameter task_parameter_enums = 6;
+  repeated TaskParameter task_parameter_children = 7;
 }
 
 message TaskConfig {
-  string key = 1;
-  string name = 2;
-  string biz = 3;
-  string content = 4;
+  string task_key = 1;
+  string task_name = 2;
+  string task_business = 3;
+  string task_content = 4;
   repeated TaskParameter parameters = 5;
 }
 
@@ -32,7 +33,6 @@ message SystemTaskParameter {
   string task_parameter_type = 5;
   string task_parameter_value = 6;
   repeated SystemTaskParameter children = 7;
-  string created_at = 8;
 }
 
 message SystemTask {
@@ -44,6 +44,9 @@ message SystemTask {
   string system_task_link = 6;
   repeated SystemTaskParameter system_task_parameters = 7;
   string created_at = 8;
+  string updated_at = 9;
+  User creator = 10;
+  User updater = 11;
 }
 
 message GetTaskConfigRequest {
