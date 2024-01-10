@@ -74,70 +74,71 @@ public final class TeacherTaskTemplateOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n task/teacher_task_template.proto\022\tglor" +
-      "y_api\032\tapi.proto\032\nbase.proto\"\207\002\n\034Teacher" +
-      "TaskTemplateParameter\022\030\n\020task_template_i" +
-      "d\030\001 \001(\003\022\032\n\022task_parameter_key\030\002 \001(\t\022J\n\023t" +
-      "ask_parameter_name\030\003 \001(\tB-\332\273\030)@:len($)>0" +
-      ";msg:\'\345\217\202\346\225\260\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022H\n\024task_" +
-      "parameter_value\030\004 \001(\tB*\332\273\030&@:len($)>0;ms" +
-      "g:\'\345\217\202\346\225\260\345\200\274\344\270\215\350\203\275\344\270\272\347\251\272\'\022\033\n\023task_parame" +
-      "ter_type\030\005 \001(\t\"\210\004\n\023TeacherTaskTemplate\022\030" +
-      "\n\020task_template_id\030\001 \001(\003\022\027\n\017system_task_" +
-      "key\030\002 \001(\t\022@\n\ttask_name\030\003 \001(\tB-\332\273\030)@:len(" +
-      "$)>0;msg:\'\344\273\273\345\212\241\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022K\n\024t" +
-      "ask_business_system\030\004 \001(\tB-\332\273\030)@:len($)>" +
-      "0;msg:\'\347\263\273\347\273\237\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022K\n\024task" +
-      "_business_module\030\005 \001(\tB-\332\273\030)@:len($)>0;m" +
-      "sg:\'\346\250\241\345\235\227\345\220\215\347\247\260\344\270\215\350\203\275\344\270\272\347\251\272\'\022C\n\014task_co" +
-      "ntent\030\006 \001(\tB-\332\273\030)@:len($)>0;msg:\'\344\273\273\345\212\241\345" +
-      "\206\205\345\256\271\344\270\215\350\203\275\344\270\272\347\251\272\'\022H\n\021task_requirements\030" +
-      "\007 \001(\tB-\332\273\030)@:len($)>0;msg:\'\344\273\273\345\212\241\350\246\201\346\261\202\344" +
-      "\270\215\350\203\275\344\270\272\347\251\272\'\022\021\n\ttask_link\030\010 \001(\t\022@\n\017task_" +
-      "parameters\030\t \003(\0132\'.glory_api.TeacherTask" +
-      "TemplateParameter\"\212\001\n CreateTeacherTaskT" +
+      "y_api\032\tapi.proto\032\nbase.proto\032\017user/user." +
+      "proto\"\211\002\n\034TeacherTaskTemplateParameter\022\031" +
+      "\n\021task_parameter_id\030\001 \001(\003\022\032\n\022task_parame" +
+      "ter_key\030\002 \001(\t\022\033\n\023task_parameter_name\030\003 \001" +
+      "(\t\022\037\n\027task_parameter_operator\030\004 \001(\t\022\034\n\024t" +
+      "ask_parameter_value\030\005 \001(\t\022\033\n\023task_parame" +
+      "ter_type\030\006 \001(\t\0229\n\010children\030\007 \003(\0132\'.glory" +
+      "_api.TeacherTaskTemplateParameter\"\344\003\n\023Te" +
+      "acherTaskTemplate\022 \n\030teacher_task_templa" +
+      "te_id\030\001 \001(\003\022\"\n\032teacher_task_template_typ" +
+      "e\030\002 \001(\005\022\026\n\016system_task_id\030\003 \001(\003\022\"\n\032teach" +
+      "er_task_template_name\030\004 \001(\t\022&\n\036teacher_t" +
+      "ask_template_business\030\005 \001(\t\022%\n\035teacher_t" +
+      "ask_template_content\030\006 \001(\t\022*\n\"teacher_ta" +
+      "sk_template_requirements\030\007 \003(\t\022\"\n\032teache" +
+      "r_task_template_link\030\010 \001(\t\022@\n\017task_param" +
+      "eters\030\t \003(\0132\'.glory_api.TeacherTaskTempl" +
+      "ateParameter\022\022\n\ncreated_at\030\n \001(\t\022\022\n\nupda" +
+      "ted_at\030\013 \001(\t\022 \n\007creator\030\014 \001(\0132\017.glory_ap" +
+      "i.User\022 \n\007updater\030\r \001(\0132\017.glory_api.User" +
+      "\"\212\001\n CreateTeacherTaskTemplateRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022=" +
+      "\n\025teacher_task_template\030\002 \001(\0132\036.glory_ap" +
+      "i.TeacherTaskTemplate\"J\n!CreateTeacherTa" +
+      "skTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\"\212\001\n UpdateTeacherTaskT" +
       "emplateRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
       "ase.BaseRequest\022=\n\025teacher_task_template" +
       "\030\002 \001(\0132\036.glory_api.TeacherTaskTemplate\"J" +
-      "\n!CreateTeacherTaskTemplateResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\212\001\n U" +
-      "pdateTeacherTaskTemplateRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022=\n\025teac" +
-      "her_task_template\030\002 \001(\0132\036.glory_api.Teac" +
-      "herTaskTemplate\"J\n!UpdateTeacherTaskTemp" +
-      "lateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"v\n\036ListTeacherTaskTemplateRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
-      "tionRequest\"\266\001\n\037ListTeacherTaskTemplateR" +
+      "\n!UpdateTeacherTaskTemplateResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"v\n\036Li" +
+      "stTeacherTaskTemplateRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginat" +
+      "ion\030d \001(\0132\027.base.PaginationRequest\"\266\001\n\037L" +
+      "istTeacherTaskTemplateResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\022>\n\026teacher" +
+      "_task_templates\030\002 \003(\0132\036.glory_api.Teache" +
+      "rTaskTemplate\022,\n\npagination\030d \001(\0132\030.base" +
+      ".PaginationResponse\"m\n DeleteTeacherTask" +
+      "TemplateRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022 \n\030teacher_task_templat" +
+      "e_id\030\002 \001(\003\"J\n!DeleteTeacherTaskTemplateR" +
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022>\n\026teacher_task_templates\030\002 \003(\0132\036" +
-      ".glory_api.TeacherTaskTemplate\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"m\n " +
-      "DeleteTeacherTaskTemplateRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022 \n\030tea" +
-      "cher_task_template_id\030\002 \001(\003\"J\n!DeleteTea" +
-      "cherTaskTemplateResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponseB#\n\037com.zhijiejia" +
-      "oyu.glory_api.taskP\001b\006proto3"
+      "sponseB#\n\037com.zhijiejiaoyu.glory_api.tas" +
+      "kP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.api.Api.getDescriptor(),
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
         });
     internal_static_glory_api_TeacherTaskTemplateParameter_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_glory_api_TeacherTaskTemplateParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherTaskTemplateParameter_descriptor,
-        new java.lang.String[] { "TaskTemplateId", "TaskParameterKey", "TaskParameterName", "TaskParameterValue", "TaskParameterType", });
+        new java.lang.String[] { "TaskParameterId", "TaskParameterKey", "TaskParameterName", "TaskParameterOperator", "TaskParameterValue", "TaskParameterType", "Children", });
     internal_static_glory_api_TeacherTaskTemplate_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_TeacherTaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherTaskTemplate_descriptor,
-        new java.lang.String[] { "TaskTemplateId", "SystemTaskKey", "TaskName", "TaskBusinessSystem", "TaskBusinessModule", "TaskContent", "TaskRequirements", "TaskLink", "TaskParameters", });
+        new java.lang.String[] { "TeacherTaskTemplateId", "TeacherTaskTemplateType", "SystemTaskId", "TeacherTaskTemplateName", "TeacherTaskTemplateBusiness", "TeacherTaskTemplateContent", "TeacherTaskTemplateRequirements", "TeacherTaskTemplateLink", "TaskParameters", "CreatedAt", "UpdatedAt", "Creator", "Updater", });
     internal_static_glory_api_CreateTeacherTaskTemplateRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateTeacherTaskTemplateRequest_fieldAccessorTable = new
@@ -186,13 +187,9 @@ public final class TeacherTaskTemplateOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTeacherTaskTemplateResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.zhijiejiaoyu.api.Api.vd);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

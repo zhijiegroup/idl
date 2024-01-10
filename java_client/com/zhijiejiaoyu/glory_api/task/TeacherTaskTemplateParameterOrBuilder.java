@@ -8,10 +8,10 @@ public interface TeacherTaskTemplateParameterOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int64 task_template_id = 1;</code>
-   * @return The taskTemplateId.
+   * <code>int64 task_parameter_id = 1;</code>
+   * @return The taskParameterId.
    */
-  long getTaskTemplateId();
+  long getTaskParameterId();
 
   /**
    * <code>string task_parameter_key = 2;</code>
@@ -26,38 +26,74 @@ public interface TeacherTaskTemplateParameterOrBuilder extends
       getTaskParameterKeyBytes();
 
   /**
-   * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The taskParameterName.
    */
   java.lang.String getTaskParameterName();
   /**
-   * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The bytes for taskParameterName.
    */
   com.google.protobuf.ByteString
       getTaskParameterNameBytes();
 
   /**
-   * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The taskParameterOperator.
+   */
+  java.lang.String getTaskParameterOperator();
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The bytes for taskParameterOperator.
+   */
+  com.google.protobuf.ByteString
+      getTaskParameterOperatorBytes();
+
+  /**
+   * <code>string task_parameter_value = 5;</code>
    * @return The taskParameterValue.
    */
   java.lang.String getTaskParameterValue();
   /**
-   * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_value = 5;</code>
    * @return The bytes for taskParameterValue.
    */
   com.google.protobuf.ByteString
       getTaskParameterValueBytes();
 
   /**
-   * <code>string task_parameter_type = 5;</code>
+   * <code>string task_parameter_type = 6;</code>
    * @return The taskParameterType.
    */
   java.lang.String getTaskParameterType();
   /**
-   * <code>string task_parameter_type = 5;</code>
+   * <code>string task_parameter_type = 6;</code>
    * @return The bytes for taskParameterType.
    */
   com.google.protobuf.ByteString
       getTaskParameterTypeBytes();
+
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> 
+      getChildrenList();
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter getChildren(int index);
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  int getChildrenCount();
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder> 
+      getChildrenOrBuilderList();
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder getChildrenOrBuilder(
+      int index);
 }

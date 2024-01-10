@@ -4,23 +4,24 @@
 
 import * as api from "../api";
 import * as base from "../base";
-export { api, base };
+import * as user from "../user/user";
+export { api, base, user };
 
 export interface TaskParameter {
-  key?: string;
-  name?: string;
-  operator?: string;
-  type?: string;
-  def?: string;
-  enums?: Array<TaskParameter>;
-  children?: Array<TaskParameter>;
+  task_parameter_key?: string;
+  task_parameter_name?: string;
+  task_parameter_operator?: string;
+  task_parameter_type?: string;
+  task_parameter_default?: string;
+  task_parameter_enums?: Array<TaskParameter>;
+  task_parameter_children?: Array<TaskParameter>;
 }
 
 export interface TaskConfig {
-  key?: string;
-  name?: string;
-  biz?: string;
-  content?: string;
+  task_key?: string;
+  task_name?: string;
+  task_business?: string;
+  task_content?: string;
   parameters?: Array<TaskParameter>;
 }
 
@@ -32,7 +33,6 @@ export interface SystemTaskParameter {
   task_parameter_type?: string;
   task_parameter_value?: string;
   children?: Array<SystemTaskParameter>;
-  created_at?: string;
 }
 
 export interface SystemTask {
@@ -44,6 +44,9 @@ export interface SystemTask {
   system_task_link?: string;
   system_task_parameters?: Array<SystemTaskParameter>;
   created_at?: string;
+  updated_at?: string;
+  creator?: user.User;
+  updater?: user.User;
 }
 
 export interface GetTaskConfigRequest {

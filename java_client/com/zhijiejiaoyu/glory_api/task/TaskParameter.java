@@ -16,13 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TaskParameter() {
-    key = "";
-    name = "";
-    operator = "";
-    type = "";
-    def = "";
-    enums = java.util.Collections.emptyList();
-    children = java.util.Collections.emptyList();
+    taskParameterKey = "";
+    taskParameterName = "";
+    taskParameterOperator = "";
+    taskParameterType = "";
+    taskParameterDefault = "";
+    taskParameterEnums = java.util.Collections.emptyList();
+    taskParameterChildren = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -59,48 +59,48 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            key = s;
+            taskParameterKey = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name = s;
+            taskParameterName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            operator = s;
+            taskParameterOperator = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            type = s;
+            taskParameterType = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            def = s;
+            taskParameterDefault = s;
             break;
           }
           case 50: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              enums = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
+              taskParameterEnums = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
               mutable_bitField0_ |= 0x00000001;
             }
-            enums .add(
+            taskParameterEnums .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TaskParameter.parser(), extensionRegistry));
             break;
           }
           case 58: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
-              children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
+              taskParameterChildren = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
               mutable_bitField0_ |= 0x00000002;
             }
-            children .add(
+            taskParameterChildren .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TaskParameter.parser(), extensionRegistry));
             break;
           }
@@ -120,10 +120,10 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        enums = java.util.Collections.unmodifiableList(enums );
+        taskParameterEnums = java.util.Collections.unmodifiableList(taskParameterEnums );
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
-        children = java.util.Collections.unmodifiableList(children );
+        taskParameterChildren = java.util.Collections.unmodifiableList(taskParameterChildren );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -142,274 +142,274 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.TaskParameter.class, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder.class);
   }
 
-  public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key ;
+  public static final int TASK_PARAMETER_KEY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object taskParameterKey ;
   /**
-   * <code>string key = 1;</code>
-   * @return The key.
+   * <code>string task_parameter_key = 1;</code>
+   * @return The taskParameterKey.
    */
   @java.lang.Override
-  public java.lang.String getKey() {
-    java.lang.Object ref = key ;
+  public java.lang.String getTaskParameterKey() {
+    java.lang.Object ref = taskParameterKey ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      key = s;
+      taskParameterKey = s;
       return s;
     }
   }
   /**
-   * <code>string key = 1;</code>
-   * @return The bytes for key.
+   * <code>string task_parameter_key = 1;</code>
+   * @return The bytes for taskParameterKey.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getKeyBytes() {
-    java.lang.Object ref = key ;
+      getTaskParameterKeyBytes() {
+    java.lang.Object ref = taskParameterKey ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      key = b;
+      taskParameterKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name ;
+  public static final int TASK_PARAMETER_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskParameterName ;
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
+   * <code>string task_parameter_name = 2;</code>
+   * @return The taskParameterName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name ;
+  public java.lang.String getTaskParameterName() {
+    java.lang.Object ref = taskParameterName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name = s;
+      taskParameterName = s;
       return s;
     }
   }
   /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
+   * <code>string task_parameter_name = 2;</code>
+   * @return The bytes for taskParameterName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name ;
+      getTaskParameterNameBytes() {
+    java.lang.Object ref = taskParameterName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name = b;
+      taskParameterName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int OPERATOR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object operator ;
+  public static final int TASK_PARAMETER_OPERATOR_FIELD_NUMBER = 3;
+  private volatile java.lang.Object taskParameterOperator ;
   /**
-   * <code>string operator = 3;</code>
-   * @return The operator.
+   * <code>string task_parameter_operator = 3;</code>
+   * @return The taskParameterOperator.
    */
   @java.lang.Override
-  public java.lang.String getOperator() {
-    java.lang.Object ref = operator ;
+  public java.lang.String getTaskParameterOperator() {
+    java.lang.Object ref = taskParameterOperator ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      operator = s;
+      taskParameterOperator = s;
       return s;
     }
   }
   /**
-   * <code>string operator = 3;</code>
-   * @return The bytes for operator.
+   * <code>string task_parameter_operator = 3;</code>
+   * @return The bytes for taskParameterOperator.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getOperatorBytes() {
-    java.lang.Object ref = operator ;
+      getTaskParameterOperatorBytes() {
+    java.lang.Object ref = taskParameterOperator ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      operator = b;
+      taskParameterOperator = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object type ;
+  public static final int TASK_PARAMETER_TYPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskParameterType ;
   /**
-   * <code>string type = 4;</code>
-   * @return The type.
+   * <code>string task_parameter_type = 4;</code>
+   * @return The taskParameterType.
    */
   @java.lang.Override
-  public java.lang.String getType() {
-    java.lang.Object ref = type ;
+  public java.lang.String getTaskParameterType() {
+    java.lang.Object ref = taskParameterType ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      type = s;
+      taskParameterType = s;
       return s;
     }
   }
   /**
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
+   * <code>string task_parameter_type = 4;</code>
+   * @return The bytes for taskParameterType.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type ;
+      getTaskParameterTypeBytes() {
+    java.lang.Object ref = taskParameterType ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      type = b;
+      taskParameterType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int DEF_FIELD_NUMBER = 5;
-  private volatile java.lang.Object def ;
+  public static final int TASK_PARAMETER_DEFAULT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object taskParameterDefault ;
   /**
-   * <code>string def = 5;</code>
-   * @return The def.
+   * <code>string task_parameter_default = 5;</code>
+   * @return The taskParameterDefault.
    */
   @java.lang.Override
-  public java.lang.String getDef() {
-    java.lang.Object ref = def ;
+  public java.lang.String getTaskParameterDefault() {
+    java.lang.Object ref = taskParameterDefault ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      def = s;
+      taskParameterDefault = s;
       return s;
     }
   }
   /**
-   * <code>string def = 5;</code>
-   * @return The bytes for def.
+   * <code>string task_parameter_default = 5;</code>
+   * @return The bytes for taskParameterDefault.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getDefBytes() {
-    java.lang.Object ref = def ;
+      getTaskParameterDefaultBytes() {
+    java.lang.Object ref = taskParameterDefault ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      def = b;
+      taskParameterDefault = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int ENUMS_FIELD_NUMBER = 6;
-  private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> enums ;
+  public static final int TASK_PARAMETER_ENUMS_FIELD_NUMBER = 6;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> taskParameterEnums ;
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getEnumsList() {
-    return enums ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getTaskParameterEnumsList() {
+    return taskParameterEnums ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-      getEnumsOrBuilderList() {
-    return enums ;
+      getTaskParameterEnumsOrBuilderList() {
+    return taskParameterEnums ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   @java.lang.Override
-  public int getEnumsCount() {
-    return enums .size();
+  public int getTaskParameterEnumsCount() {
+    return taskParameterEnums .size();
   }
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.TaskParameter getEnums(int index) {
-    return enums .get(index);
+  public com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterEnums(int index) {
+    return taskParameterEnums .get(index);
   }
   /**
-   * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getEnumsOrBuilder(
+  public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterEnumsOrBuilder(
       int index) {
-    return enums .get(index);
+    return taskParameterEnums .get(index);
   }
 
-  public static final int CHILDREN_FIELD_NUMBER = 7;
-  private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> children ;
+  public static final int TASK_PARAMETER_CHILDREN_FIELD_NUMBER = 7;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> taskParameterChildren ;
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getChildrenList() {
-    return children ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getTaskParameterChildrenList() {
+    return taskParameterChildren ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-      getChildrenOrBuilderList() {
-    return children ;
+      getTaskParameterChildrenOrBuilderList() {
+    return taskParameterChildren ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   @java.lang.Override
-  public int getChildrenCount() {
-    return children .size();
+  public int getTaskParameterChildrenCount() {
+    return taskParameterChildren .size();
   }
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.TaskParameter getChildren(int index) {
-    return children .get(index);
+  public com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterChildren(int index) {
+    return taskParameterChildren .get(index);
   }
   /**
-   * <code>repeated .glory_api.TaskParameter children = 7;</code>
+   * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getChildrenOrBuilder(
+  public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterChildrenOrBuilder(
       int index) {
-    return children .get(index);
+    return taskParameterChildren .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -426,26 +426,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key );
+    if (!getTaskParameterKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskParameterKey );
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
+    if (!getTaskParameterNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskParameterName );
     }
-    if (!getOperatorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, operator );
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskParameterOperator );
     }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type );
+    if (!getTaskParameterTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskParameterType );
     }
-    if (!getDefBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, def );
+    if (!getTaskParameterDefaultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskParameterDefault );
     }
-    for (int i = 0; i < enums .size(); i++) {
-      output.writeMessage(6, enums .get(i));
+    for (int i = 0; i < taskParameterEnums .size(); i++) {
+      output.writeMessage(6, taskParameterEnums .get(i));
     }
-    for (int i = 0; i < children .size(); i++) {
-      output.writeMessage(7, children .get(i));
+    for (int i = 0; i < taskParameterChildren .size(); i++) {
+      output.writeMessage(7, taskParameterChildren .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -456,28 +456,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key );
+    if (!getTaskParameterKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskParameterKey );
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
+    if (!getTaskParameterNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskParameterName );
     }
-    if (!getOperatorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, operator );
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskParameterOperator );
     }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type );
+    if (!getTaskParameterTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskParameterType );
     }
-    if (!getDefBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, def );
+    if (!getTaskParameterDefaultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskParameterDefault );
     }
-    for (int i = 0; i < enums .size(); i++) {
+    for (int i = 0; i < taskParameterEnums .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, enums .get(i));
+        .computeMessageSize(6, taskParameterEnums .get(i));
     }
-    for (int i = 0; i < children .size(); i++) {
+    for (int i = 0; i < taskParameterChildren .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, children .get(i));
+        .computeMessageSize(7, taskParameterChildren .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -494,20 +494,20 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.TaskParameter other = (com.zhijiejiaoyu.glory_api.task.TaskParameter) obj;
 
-    if (!getKey()
-        .equals(other.getKey())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getOperator()
-        .equals(other.getOperator())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getDef()
-        .equals(other.getDef())) return false;
-    if (!getEnumsList()
-        .equals(other.getEnumsList())) return false;
-    if (!getChildrenList()
-        .equals(other.getChildrenList())) return false;
+    if (!getTaskParameterKey()
+        .equals(other.getTaskParameterKey())) return false;
+    if (!getTaskParameterName()
+        .equals(other.getTaskParameterName())) return false;
+    if (!getTaskParameterOperator()
+        .equals(other.getTaskParameterOperator())) return false;
+    if (!getTaskParameterType()
+        .equals(other.getTaskParameterType())) return false;
+    if (!getTaskParameterDefault()
+        .equals(other.getTaskParameterDefault())) return false;
+    if (!getTaskParameterEnumsList()
+        .equals(other.getTaskParameterEnumsList())) return false;
+    if (!getTaskParameterChildrenList()
+        .equals(other.getTaskParameterChildrenList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -519,23 +519,23 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getKey().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + OPERATOR_FIELD_NUMBER;
-    hash = (53 * hash) + getOperator().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + DEF_FIELD_NUMBER;
-    hash = (53 * hash) + getDef().hashCode();
-    if (getEnumsCount() > 0) {
-      hash = (37 * hash) + ENUMS_FIELD_NUMBER;
-      hash = (53 * hash) + getEnumsList().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterKey().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterName().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_OPERATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterOperator().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterType().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_DEFAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterDefault().hashCode();
+    if (getTaskParameterEnumsCount() > 0) {
+      hash = (37 * hash) + TASK_PARAMETER_ENUMS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskParameterEnumsList().hashCode();
     }
-    if (getChildrenCount() > 0) {
-      hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
-      hash = (53 * hash) + getChildrenList().hashCode();
+    if (getTaskParameterChildrenCount() > 0) {
+      hash = (37 * hash) + TASK_PARAMETER_CHILDREN_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskParameterChildrenList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -665,34 +665,34 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getEnumsFieldBuilder();
-        getChildrenFieldBuilder();
+        getTaskParameterEnumsFieldBuilder();
+        getTaskParameterChildrenFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      key = "";
+      taskParameterKey = "";
 
-      name = "";
+      taskParameterName = "";
 
-      operator = "";
+      taskParameterOperator = "";
 
-      type = "";
+      taskParameterType = "";
 
-      def = "";
+      taskParameterDefault = "";
 
-      if (enumsBuilder == null) {
-        enums = java.util.Collections.emptyList();
+      if (taskParameterEnumsBuilder == null) {
+        taskParameterEnums = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        enumsBuilder .clear();
+        taskParameterEnumsBuilder .clear();
       }
-      if (childrenBuilder == null) {
-        children = java.util.Collections.emptyList();
+      if (taskParameterChildrenBuilder == null) {
+        taskParameterChildren = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000002);
       } else {
-        childrenBuilder .clear();
+        taskParameterChildrenBuilder .clear();
       }
       return this;
     }
@@ -721,28 +721,28 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.task.TaskParameter buildPartial() {
       com.zhijiejiaoyu.glory_api.task.TaskParameter result = new com.zhijiejiaoyu.glory_api.task.TaskParameter(this);
       int from_bitField0 = bitField0 ;
-      result.key = key ;
-      result.name = name ;
-      result.operator = operator ;
-      result.type = type ;
-      result.def = def ;
-      if (enumsBuilder == null) {
+      result.taskParameterKey = taskParameterKey ;
+      result.taskParameterName = taskParameterName ;
+      result.taskParameterOperator = taskParameterOperator ;
+      result.taskParameterType = taskParameterType ;
+      result.taskParameterDefault = taskParameterDefault ;
+      if (taskParameterEnumsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          enums = java.util.Collections.unmodifiableList(enums );
+          taskParameterEnums = java.util.Collections.unmodifiableList(taskParameterEnums );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.enums = enums ;
+        result.taskParameterEnums = taskParameterEnums ;
       } else {
-        result.enums = enumsBuilder .build();
+        result.taskParameterEnums = taskParameterEnumsBuilder .build();
       }
-      if (childrenBuilder == null) {
+      if (taskParameterChildrenBuilder == null) {
         if (((bitField0 & 0x00000002) != 0)) {
-          children = java.util.Collections.unmodifiableList(children );
+          taskParameterChildren = java.util.Collections.unmodifiableList(taskParameterChildren );
           bitField0 = (bitField0 & ~0x00000002);
         }
-        result.children = children ;
+        result.taskParameterChildren = taskParameterChildren ;
       } else {
-        result.children = childrenBuilder .build();
+        result.taskParameterChildren = taskParameterChildrenBuilder .build();
       }
       onBuilt();
       return result;
@@ -792,75 +792,75 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.TaskParameter other) {
       if (other == com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance()) return this;
-      if (!other.getKey().isEmpty()) {
-        key = other.key ;
+      if (!other.getTaskParameterKey().isEmpty()) {
+        taskParameterKey = other.taskParameterKey ;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
-        name = other.name ;
+      if (!other.getTaskParameterName().isEmpty()) {
+        taskParameterName = other.taskParameterName ;
         onChanged();
       }
-      if (!other.getOperator().isEmpty()) {
-        operator = other.operator ;
+      if (!other.getTaskParameterOperator().isEmpty()) {
+        taskParameterOperator = other.taskParameterOperator ;
         onChanged();
       }
-      if (!other.getType().isEmpty()) {
-        type = other.type ;
+      if (!other.getTaskParameterType().isEmpty()) {
+        taskParameterType = other.taskParameterType ;
         onChanged();
       }
-      if (!other.getDef().isEmpty()) {
-        def = other.def ;
+      if (!other.getTaskParameterDefault().isEmpty()) {
+        taskParameterDefault = other.taskParameterDefault ;
         onChanged();
       }
-      if (enumsBuilder == null) {
-        if (!other.enums .isEmpty()) {
-          if (enums .isEmpty()) {
-            enums = other.enums ;
+      if (taskParameterEnumsBuilder == null) {
+        if (!other.taskParameterEnums .isEmpty()) {
+          if (taskParameterEnums .isEmpty()) {
+            taskParameterEnums = other.taskParameterEnums ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureEnumsIsMutable();
-            enums .addAll(other.enums );
+            ensureTaskParameterEnumsIsMutable();
+            taskParameterEnums .addAll(other.taskParameterEnums );
           }
           onChanged();
         }
       } else {
-        if (!other.enums .isEmpty()) {
-          if (enumsBuilder .isEmpty()) {
-            enumsBuilder .dispose();
-            enumsBuilder = null;
-            enums = other.enums ;
+        if (!other.taskParameterEnums .isEmpty()) {
+          if (taskParameterEnumsBuilder .isEmpty()) {
+            taskParameterEnumsBuilder .dispose();
+            taskParameterEnumsBuilder = null;
+            taskParameterEnums = other.taskParameterEnums ;
             bitField0 = (bitField0 & ~0x00000001);
-            enumsBuilder = 
+            taskParameterEnumsBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEnumsFieldBuilder() : null;
+                 getTaskParameterEnumsFieldBuilder() : null;
           } else {
-            enumsBuilder .addAllMessages(other.enums );
+            taskParameterEnumsBuilder .addAllMessages(other.taskParameterEnums );
           }
         }
       }
-      if (childrenBuilder == null) {
-        if (!other.children .isEmpty()) {
-          if (children .isEmpty()) {
-            children = other.children ;
+      if (taskParameterChildrenBuilder == null) {
+        if (!other.taskParameterChildren .isEmpty()) {
+          if (taskParameterChildren .isEmpty()) {
+            taskParameterChildren = other.taskParameterChildren ;
             bitField0 = (bitField0 & ~0x00000002);
           } else {
-            ensureChildrenIsMutable();
-            children .addAll(other.children );
+            ensureTaskParameterChildrenIsMutable();
+            taskParameterChildren .addAll(other.taskParameterChildren );
           }
           onChanged();
         }
       } else {
-        if (!other.children .isEmpty()) {
-          if (childrenBuilder .isEmpty()) {
-            childrenBuilder .dispose();
-            childrenBuilder = null;
-            children = other.children ;
+        if (!other.taskParameterChildren .isEmpty()) {
+          if (taskParameterChildrenBuilder .isEmpty()) {
+            taskParameterChildrenBuilder .dispose();
+            taskParameterChildrenBuilder = null;
+            taskParameterChildren = other.taskParameterChildren ;
             bitField0 = (bitField0 & ~0x00000002);
-            childrenBuilder = 
+            taskParameterChildrenBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getChildrenFieldBuilder() : null;
+                 getTaskParameterChildrenFieldBuilder() : null;
           } else {
-            childrenBuilder .addAllMessages(other.children );
+            taskParameterChildrenBuilder .addAllMessages(other.taskParameterChildren );
           }
         }
       }
@@ -894,864 +894,864 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private java.lang.Object key = "";
+    private java.lang.Object taskParameterKey = "";
     /**
-     * <code>string key = 1;</code>
-     * @return The key.
+     * <code>string task_parameter_key = 1;</code>
+     * @return The taskParameterKey.
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key ;
+    public java.lang.String getTaskParameterKey() {
+      java.lang.Object ref = taskParameterKey ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        key = s;
+        taskParameterKey = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
+     * <code>string task_parameter_key = 1;</code>
+     * @return The bytes for taskParameterKey.
      */
     public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key ;
+        getTaskParameterKeyBytes() {
+      java.lang.Object ref = taskParameterKey ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        key = b;
+        taskParameterKey = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string key = 1;</code>
-     * @param value The key to set.
+     * <code>string task_parameter_key = 1;</code>
+     * @param value The taskParameterKey to set.
      * @return This builder for chaining.
      */
-    public Builder setKey(
+    public Builder setTaskParameterKey(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      key = value;
+      taskParameterKey = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string key = 1;</code>
+     * <code>string task_parameter_key = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearKey() {
+    public Builder clearTaskParameterKey() {
       
-      key = getDefaultInstance().getKey();
+      taskParameterKey = getDefaultInstance().getTaskParameterKey();
       onChanged();
       return this;
     }
     /**
-     * <code>string key = 1;</code>
-     * @param value The bytes for key to set.
+     * <code>string task_parameter_key = 1;</code>
+     * @param value The bytes for taskParameterKey to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyBytes(
+    public Builder setTaskParameterKeyBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      key = value;
+      taskParameterKey = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name = "";
+    private java.lang.Object taskParameterName = "";
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>string task_parameter_name = 2;</code>
+     * @return The taskParameterName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name ;
+    public java.lang.String getTaskParameterName() {
+      java.lang.Object ref = taskParameterName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name = s;
+        taskParameterName = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>string task_parameter_name = 2;</code>
+     * @return The bytes for taskParameterName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name ;
+        getTaskParameterNameBytes() {
+      java.lang.Object ref = taskParameterName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name = b;
+        taskParameterName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @param value The name to set.
+     * <code>string task_parameter_name = 2;</code>
+     * @param value The taskParameterName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setTaskParameterName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name = value;
+      taskParameterName = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string task_parameter_name = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearTaskParameterName() {
       
-      name = getDefaultInstance().getName();
+      taskParameterName = getDefaultInstance().getTaskParameterName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
+     * <code>string task_parameter_name = 2;</code>
+     * @param value The bytes for taskParameterName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setTaskParameterNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name = value;
+      taskParameterName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object operator = "";
+    private java.lang.Object taskParameterOperator = "";
     /**
-     * <code>string operator = 3;</code>
-     * @return The operator.
+     * <code>string task_parameter_operator = 3;</code>
+     * @return The taskParameterOperator.
      */
-    public java.lang.String getOperator() {
-      java.lang.Object ref = operator ;
+    public java.lang.String getTaskParameterOperator() {
+      java.lang.Object ref = taskParameterOperator ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        operator = s;
+        taskParameterOperator = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string operator = 3;</code>
-     * @return The bytes for operator.
+     * <code>string task_parameter_operator = 3;</code>
+     * @return The bytes for taskParameterOperator.
      */
     public com.google.protobuf.ByteString
-        getOperatorBytes() {
-      java.lang.Object ref = operator ;
+        getTaskParameterOperatorBytes() {
+      java.lang.Object ref = taskParameterOperator ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        operator = b;
+        taskParameterOperator = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string operator = 3;</code>
-     * @param value The operator to set.
+     * <code>string task_parameter_operator = 3;</code>
+     * @param value The taskParameterOperator to set.
      * @return This builder for chaining.
      */
-    public Builder setOperator(
+    public Builder setTaskParameterOperator(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      operator = value;
+      taskParameterOperator = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string operator = 3;</code>
+     * <code>string task_parameter_operator = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearOperator() {
+    public Builder clearTaskParameterOperator() {
       
-      operator = getDefaultInstance().getOperator();
+      taskParameterOperator = getDefaultInstance().getTaskParameterOperator();
       onChanged();
       return this;
     }
     /**
-     * <code>string operator = 3;</code>
-     * @param value The bytes for operator to set.
+     * <code>string task_parameter_operator = 3;</code>
+     * @param value The bytes for taskParameterOperator to set.
      * @return This builder for chaining.
      */
-    public Builder setOperatorBytes(
+    public Builder setTaskParameterOperatorBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      operator = value;
+      taskParameterOperator = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object type = "";
+    private java.lang.Object taskParameterType = "";
     /**
-     * <code>string type = 4;</code>
-     * @return The type.
+     * <code>string task_parameter_type = 4;</code>
+     * @return The taskParameterType.
      */
-    public java.lang.String getType() {
-      java.lang.Object ref = type ;
+    public java.lang.String getTaskParameterType() {
+      java.lang.Object ref = taskParameterType ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        type = s;
+        taskParameterType = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string type = 4;</code>
-     * @return The bytes for type.
+     * <code>string task_parameter_type = 4;</code>
+     * @return The bytes for taskParameterType.
      */
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type ;
+        getTaskParameterTypeBytes() {
+      java.lang.Object ref = taskParameterType ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        type = b;
+        taskParameterType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string type = 4;</code>
-     * @param value The type to set.
+     * <code>string task_parameter_type = 4;</code>
+     * @param value The taskParameterType to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
+    public Builder setTaskParameterType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      type = value;
+      taskParameterType = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string type = 4;</code>
+     * <code>string task_parameter_type = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearType() {
+    public Builder clearTaskParameterType() {
       
-      type = getDefaultInstance().getType();
+      taskParameterType = getDefaultInstance().getTaskParameterType();
       onChanged();
       return this;
     }
     /**
-     * <code>string type = 4;</code>
-     * @param value The bytes for type to set.
+     * <code>string task_parameter_type = 4;</code>
+     * @param value The bytes for taskParameterType to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeBytes(
+    public Builder setTaskParameterTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      type = value;
+      taskParameterType = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object def = "";
+    private java.lang.Object taskParameterDefault = "";
     /**
-     * <code>string def = 5;</code>
-     * @return The def.
+     * <code>string task_parameter_default = 5;</code>
+     * @return The taskParameterDefault.
      */
-    public java.lang.String getDef() {
-      java.lang.Object ref = def ;
+    public java.lang.String getTaskParameterDefault() {
+      java.lang.Object ref = taskParameterDefault ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        def = s;
+        taskParameterDefault = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string def = 5;</code>
-     * @return The bytes for def.
+     * <code>string task_parameter_default = 5;</code>
+     * @return The bytes for taskParameterDefault.
      */
     public com.google.protobuf.ByteString
-        getDefBytes() {
-      java.lang.Object ref = def ;
+        getTaskParameterDefaultBytes() {
+      java.lang.Object ref = taskParameterDefault ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        def = b;
+        taskParameterDefault = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string def = 5;</code>
-     * @param value The def to set.
+     * <code>string task_parameter_default = 5;</code>
+     * @param value The taskParameterDefault to set.
      * @return This builder for chaining.
      */
-    public Builder setDef(
+    public Builder setTaskParameterDefault(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      def = value;
+      taskParameterDefault = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string def = 5;</code>
+     * <code>string task_parameter_default = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDef() {
+    public Builder clearTaskParameterDefault() {
       
-      def = getDefaultInstance().getDef();
+      taskParameterDefault = getDefaultInstance().getTaskParameterDefault();
       onChanged();
       return this;
     }
     /**
-     * <code>string def = 5;</code>
-     * @param value The bytes for def to set.
+     * <code>string task_parameter_default = 5;</code>
+     * @param value The bytes for taskParameterDefault to set.
      * @return This builder for chaining.
      */
-    public Builder setDefBytes(
+    public Builder setTaskParameterDefaultBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      def = value;
+      taskParameterDefault = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> enums =
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> taskParameterEnums =
       java.util.Collections.emptyList();
-    private void ensureEnumsIsMutable() {
+    private void ensureTaskParameterEnumsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        enums = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(enums );
+        taskParameterEnums = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(taskParameterEnums );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> enumsBuilder ;
+        com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> taskParameterEnumsBuilder ;
 
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getEnumsList() {
-      if (enumsBuilder == null) {
-        return java.util.Collections.unmodifiableList(enums );
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getTaskParameterEnumsList() {
+      if (taskParameterEnumsBuilder == null) {
+        return java.util.Collections.unmodifiableList(taskParameterEnums );
       } else {
-        return enumsBuilder .getMessageList();
+        return taskParameterEnumsBuilder .getMessageList();
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public int getEnumsCount() {
-      if (enumsBuilder == null) {
-        return enums .size();
+    public int getTaskParameterEnumsCount() {
+      if (taskParameterEnumsBuilder == null) {
+        return taskParameterEnums .size();
       } else {
-        return enumsBuilder .getCount();
+        return taskParameterEnumsBuilder .getCount();
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter getEnums(int index) {
-      if (enumsBuilder == null) {
-        return enums .get(index);
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterEnums(int index) {
+      if (taskParameterEnumsBuilder == null) {
+        return taskParameterEnums .get(index);
       } else {
-        return enumsBuilder .getMessage(index);
+        return taskParameterEnumsBuilder .getMessage(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder setEnums(
+    public Builder setTaskParameterEnums(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (enumsBuilder == null) {
+      if (taskParameterEnumsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureEnumsIsMutable();
-        enums .set(index, value);
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .set(index, value);
         onChanged();
       } else {
-        enumsBuilder .setMessage(index, value);
+        taskParameterEnumsBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder setEnums(
+    public Builder setTaskParameterEnums(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (enumsBuilder == null) {
-        ensureEnumsIsMutable();
-        enums .set(index, builderForValue.build());
+      if (taskParameterEnumsBuilder == null) {
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .set(index, builderForValue.build());
         onChanged();
       } else {
-        enumsBuilder .setMessage(index, builderForValue.build());
+        taskParameterEnumsBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder addEnums(com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (enumsBuilder == null) {
+    public Builder addTaskParameterEnums(com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
+      if (taskParameterEnumsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureEnumsIsMutable();
-        enums .add(value);
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .add(value);
         onChanged();
       } else {
-        enumsBuilder .addMessage(value);
+        taskParameterEnumsBuilder .addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder addEnums(
+    public Builder addTaskParameterEnums(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (enumsBuilder == null) {
+      if (taskParameterEnumsBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureEnumsIsMutable();
-        enums .add(index, value);
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .add(index, value);
         onChanged();
       } else {
-        enumsBuilder .addMessage(index, value);
+        taskParameterEnumsBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder addEnums(
+    public Builder addTaskParameterEnums(
         com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (enumsBuilder == null) {
-        ensureEnumsIsMutable();
-        enums .add(builderForValue.build());
+      if (taskParameterEnumsBuilder == null) {
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .add(builderForValue.build());
         onChanged();
       } else {
-        enumsBuilder .addMessage(builderForValue.build());
+        taskParameterEnumsBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder addEnums(
+    public Builder addTaskParameterEnums(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (enumsBuilder == null) {
-        ensureEnumsIsMutable();
-        enums .add(index, builderForValue.build());
+      if (taskParameterEnumsBuilder == null) {
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .add(index, builderForValue.build());
         onChanged();
       } else {
-        enumsBuilder .addMessage(index, builderForValue.build());
+        taskParameterEnumsBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder addAllEnums(
+    public Builder addAllTaskParameterEnums(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TaskParameter> values) {
-      if (enumsBuilder == null) {
-        ensureEnumsIsMutable();
+      if (taskParameterEnumsBuilder == null) {
+        ensureTaskParameterEnumsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, enums );
+            values, taskParameterEnums );
         onChanged();
       } else {
-        enumsBuilder .addAllMessages(values);
+        taskParameterEnumsBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder clearEnums() {
-      if (enumsBuilder == null) {
-        enums = java.util.Collections.emptyList();
+    public Builder clearTaskParameterEnums() {
+      if (taskParameterEnumsBuilder == null) {
+        taskParameterEnums = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        enumsBuilder .clear();
+        taskParameterEnumsBuilder .clear();
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public Builder removeEnums(int index) {
-      if (enumsBuilder == null) {
-        ensureEnumsIsMutable();
-        enums .remove(index);
+    public Builder removeTaskParameterEnums(int index) {
+      if (taskParameterEnumsBuilder == null) {
+        ensureTaskParameterEnumsIsMutable();
+        taskParameterEnums .remove(index);
         onChanged();
       } else {
-        enumsBuilder .remove(index);
+        taskParameterEnumsBuilder .remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder getEnumsBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder getTaskParameterEnumsBuilder(
         int index) {
-      return getEnumsFieldBuilder().getBuilder(index);
+      return getTaskParameterEnumsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getEnumsOrBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterEnumsOrBuilder(
         int index) {
-      if (enumsBuilder == null) {
-        return enums .get(index);  } else {
-        return enumsBuilder .getMessageOrBuilder(index);
+      if (taskParameterEnumsBuilder == null) {
+        return taskParameterEnums .get(index);  } else {
+        return taskParameterEnumsBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-         getEnumsOrBuilderList() {
-      if (enumsBuilder != null) {
-        return enumsBuilder .getMessageOrBuilderList();
+         getTaskParameterEnumsOrBuilderList() {
+      if (taskParameterEnumsBuilder != null) {
+        return taskParameterEnumsBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(enums );
+        return java.util.Collections.unmodifiableList(taskParameterEnums );
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addEnumsBuilder() {
-      return getEnumsFieldBuilder().addBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addTaskParameterEnumsBuilder() {
+      return getTaskParameterEnumsFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addEnumsBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addTaskParameterEnumsBuilder(
         int index) {
-      return getEnumsFieldBuilder().addBuilder(
+      return getTaskParameterEnumsFieldBuilder().addBuilder(
           index, com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter enums = 6;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_enums = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder> 
-         getEnumsBuilderList() {
-      return getEnumsFieldBuilder().getBuilderList();
+         getTaskParameterEnumsBuilderList() {
+      return getTaskParameterEnumsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-        getEnumsFieldBuilder() {
-      if (enumsBuilder == null) {
-        enumsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getTaskParameterEnumsFieldBuilder() {
+      if (taskParameterEnumsBuilder == null) {
+        taskParameterEnumsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder>(
-                enums ,
+                taskParameterEnums ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        enums = null;
+        taskParameterEnums = null;
       }
-      return enumsBuilder ;
+      return taskParameterEnumsBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> children =
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> taskParameterChildren =
       java.util.Collections.emptyList();
-    private void ensureChildrenIsMutable() {
+    private void ensureTaskParameterChildrenIsMutable() {
       if (!((bitField0 & 0x00000002) != 0)) {
-        children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(children );
+        taskParameterChildren = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(taskParameterChildren );
         bitField0_ |= 0x00000002;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> childrenBuilder ;
+        com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> taskParameterChildrenBuilder ;
 
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getChildrenList() {
-      if (childrenBuilder == null) {
-        return java.util.Collections.unmodifiableList(children );
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getTaskParameterChildrenList() {
+      if (taskParameterChildrenBuilder == null) {
+        return java.util.Collections.unmodifiableList(taskParameterChildren );
       } else {
-        return childrenBuilder .getMessageList();
+        return taskParameterChildrenBuilder .getMessageList();
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public int getChildrenCount() {
-      if (childrenBuilder == null) {
-        return children .size();
+    public int getTaskParameterChildrenCount() {
+      if (taskParameterChildrenBuilder == null) {
+        return taskParameterChildren .size();
       } else {
-        return childrenBuilder .getCount();
+        return taskParameterChildrenBuilder .getCount();
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter getChildren(int index) {
-      if (childrenBuilder == null) {
-        return children .get(index);
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter getTaskParameterChildren(int index) {
+      if (taskParameterChildrenBuilder == null) {
+        return taskParameterChildren .get(index);
       } else {
-        return childrenBuilder .getMessage(index);
+        return taskParameterChildrenBuilder .getMessage(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder setChildren(
+    public Builder setTaskParameterChildren(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (childrenBuilder == null) {
+      if (taskParameterChildrenBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureChildrenIsMutable();
-        children .set(index, value);
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .set(index, value);
         onChanged();
       } else {
-        childrenBuilder .setMessage(index, value);
+        taskParameterChildrenBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder setChildren(
+    public Builder setTaskParameterChildren(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (childrenBuilder == null) {
-        ensureChildrenIsMutable();
-        children .set(index, builderForValue.build());
+      if (taskParameterChildrenBuilder == null) {
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .set(index, builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder .setMessage(index, builderForValue.build());
+        taskParameterChildrenBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder addChildren(com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (childrenBuilder == null) {
+    public Builder addTaskParameterChildren(com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
+      if (taskParameterChildrenBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureChildrenIsMutable();
-        children .add(value);
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .add(value);
         onChanged();
       } else {
-        childrenBuilder .addMessage(value);
+        taskParameterChildrenBuilder .addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder addChildren(
+    public Builder addTaskParameterChildren(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
-      if (childrenBuilder == null) {
+      if (taskParameterChildrenBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureChildrenIsMutable();
-        children .add(index, value);
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .add(index, value);
         onChanged();
       } else {
-        childrenBuilder .addMessage(index, value);
+        taskParameterChildrenBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder addChildren(
+    public Builder addTaskParameterChildren(
         com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (childrenBuilder == null) {
-        ensureChildrenIsMutable();
-        children .add(builderForValue.build());
+      if (taskParameterChildrenBuilder == null) {
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .add(builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder .addMessage(builderForValue.build());
+        taskParameterChildrenBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder addChildren(
+    public Builder addTaskParameterChildren(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
-      if (childrenBuilder == null) {
-        ensureChildrenIsMutable();
-        children .add(index, builderForValue.build());
+      if (taskParameterChildrenBuilder == null) {
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .add(index, builderForValue.build());
         onChanged();
       } else {
-        childrenBuilder .addMessage(index, builderForValue.build());
+        taskParameterChildrenBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder addAllChildren(
+    public Builder addAllTaskParameterChildren(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TaskParameter> values) {
-      if (childrenBuilder == null) {
-        ensureChildrenIsMutable();
+      if (taskParameterChildrenBuilder == null) {
+        ensureTaskParameterChildrenIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, children );
+            values, taskParameterChildren );
         onChanged();
       } else {
-        childrenBuilder .addAllMessages(values);
+        taskParameterChildrenBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder clearChildren() {
-      if (childrenBuilder == null) {
-        children = java.util.Collections.emptyList();
+    public Builder clearTaskParameterChildren() {
+      if (taskParameterChildrenBuilder == null) {
+        taskParameterChildren = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000002);
         onChanged();
       } else {
-        childrenBuilder .clear();
+        taskParameterChildrenBuilder .clear();
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public Builder removeChildren(int index) {
-      if (childrenBuilder == null) {
-        ensureChildrenIsMutable();
-        children .remove(index);
+    public Builder removeTaskParameterChildren(int index) {
+      if (taskParameterChildrenBuilder == null) {
+        ensureTaskParameterChildrenIsMutable();
+        taskParameterChildren .remove(index);
         onChanged();
       } else {
-        childrenBuilder .remove(index);
+        taskParameterChildrenBuilder .remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder getChildrenBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder getTaskParameterChildrenBuilder(
         int index) {
-      return getChildrenFieldBuilder().getBuilder(index);
+      return getTaskParameterChildrenFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getChildrenOrBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getTaskParameterChildrenOrBuilder(
         int index) {
-      if (childrenBuilder == null) {
-        return children .get(index);  } else {
-        return childrenBuilder .getMessageOrBuilder(index);
+      if (taskParameterChildrenBuilder == null) {
+        return taskParameterChildren .get(index);  } else {
+        return taskParameterChildrenBuilder .getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-         getChildrenOrBuilderList() {
-      if (childrenBuilder != null) {
-        return childrenBuilder .getMessageOrBuilderList();
+         getTaskParameterChildrenOrBuilderList() {
+      if (taskParameterChildrenBuilder != null) {
+        return taskParameterChildrenBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(children );
+        return java.util.Collections.unmodifiableList(taskParameterChildren );
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addChildrenBuilder() {
-      return getChildrenFieldBuilder().addBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addTaskParameterChildrenBuilder() {
+      return getTaskParameterChildrenFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addChildrenBuilder(
+    public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addTaskParameterChildrenBuilder(
         int index) {
-      return getChildrenFieldBuilder().addBuilder(
+      return getTaskParameterChildrenFieldBuilder().addBuilder(
           index, com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter children = 7;</code>
+     * <code>repeated .glory_api.TaskParameter task_parameter_children = 7;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder> 
-         getChildrenBuilderList() {
-      return getChildrenFieldBuilder().getBuilderList();
+         getTaskParameterChildrenBuilderList() {
+      return getTaskParameterChildrenFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
-        getChildrenFieldBuilder() {
-      if (childrenBuilder == null) {
-        childrenBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getTaskParameterChildrenFieldBuilder() {
+      if (taskParameterChildrenBuilder == null) {
+        taskParameterChildrenBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder>(
-                children ,
+                taskParameterChildren ,
                 ((bitField0 & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
-        children = null;
+        taskParameterChildren = null;
       }
-      return childrenBuilder ;
+      return taskParameterChildrenBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

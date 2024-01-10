@@ -14,39 +14,40 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $0;
+import '../base.pb.dart' as $1;
+import '../user/user.pb.dart' as $0;
 
 class TaskParameter extends $pb.GeneratedMessage {
   factory TaskParameter({
-    $core.String? key,
-    $core.String? name,
-    $core.String? operator,
-    $core.String? type,
-    $core.String? def,
-    $core.Iterable<TaskParameter>? enums,
-    $core.Iterable<TaskParameter>? children,
+    $core.String? taskParameterKey,
+    $core.String? taskParameterName,
+    $core.String? taskParameterOperator,
+    $core.String? taskParameterType,
+    $core.String? taskParameterDefault,
+    $core.Iterable<TaskParameter>? taskParameterEnums,
+    $core.Iterable<TaskParameter>? taskParameterChildren,
   }) {
     final $result = create();
-    if (key != null) {
-      $result.key = key;
+    if (taskParameterKey != null) {
+      $result.taskParameterKey = taskParameterKey;
     }
-    if (name != null) {
-      $result.name = name;
+    if (taskParameterName != null) {
+      $result.taskParameterName = taskParameterName;
     }
-    if (operator != null) {
-      $result.operator = operator;
+    if (taskParameterOperator != null) {
+      $result.taskParameterOperator = taskParameterOperator;
     }
-    if (type != null) {
-      $result.type = type;
+    if (taskParameterType != null) {
+      $result.taskParameterType = taskParameterType;
     }
-    if (def != null) {
-      $result.def = def;
+    if (taskParameterDefault != null) {
+      $result.taskParameterDefault = taskParameterDefault;
     }
-    if (enums != null) {
-      $result.enums.addAll(enums);
+    if (taskParameterEnums != null) {
+      $result.taskParameterEnums.addAll(taskParameterEnums);
     }
-    if (children != null) {
-      $result.children.addAll(children);
+    if (taskParameterChildren != null) {
+      $result.taskParameterChildren.addAll(taskParameterChildren);
     }
     return $result;
   }
@@ -55,13 +56,13 @@ class TaskParameter extends $pb.GeneratedMessage {
   factory TaskParameter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaskParameter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'key')
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'operator')
-    ..aOS(4, _omitFieldNames ? '' : 'type')
-    ..aOS(5, _omitFieldNames ? '' : 'def')
-    ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'enums', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
-    ..pc<TaskParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..aOS(1, _omitFieldNames ? '' : 'taskParameterKey')
+    ..aOS(2, _omitFieldNames ? '' : 'taskParameterName')
+    ..aOS(3, _omitFieldNames ? '' : 'taskParameterOperator')
+    ..aOS(4, _omitFieldNames ? '' : 'taskParameterType')
+    ..aOS(5, _omitFieldNames ? '' : 'taskParameterDefault')
+    ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'taskParameterEnums', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..pc<TaskParameter>(7, _omitFieldNames ? '' : 'taskParameterChildren', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -87,77 +88,77 @@ class TaskParameter extends $pb.GeneratedMessage {
   static TaskParameter? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get key => $_getSZ(0);
+  $core.String get taskParameterKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set key($core.String v) { $_setString(0, v); }
+  set taskParameterKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasKey() => $_has(0);
+  $core.bool hasTaskParameterKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
+  void clearTaskParameterKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $core.String get taskParameterName => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set taskParameterName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasTaskParameterName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearTaskParameterName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get operator => $_getSZ(2);
+  $core.String get taskParameterOperator => $_getSZ(2);
   @$pb.TagNumber(3)
-  set operator($core.String v) { $_setString(2, v); }
+  set taskParameterOperator($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasOperator() => $_has(2);
+  $core.bool hasTaskParameterOperator() => $_has(2);
   @$pb.TagNumber(3)
-  void clearOperator() => clearField(3);
+  void clearTaskParameterOperator() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get type => $_getSZ(3);
+  $core.String get taskParameterType => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type($core.String v) { $_setString(3, v); }
+  set taskParameterType($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
+  $core.bool hasTaskParameterType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearTaskParameterType() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get def => $_getSZ(4);
+  $core.String get taskParameterDefault => $_getSZ(4);
   @$pb.TagNumber(5)
-  set def($core.String v) { $_setString(4, v); }
+  set taskParameterDefault($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDef() => $_has(4);
+  $core.bool hasTaskParameterDefault() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDef() => clearField(5);
+  void clearTaskParameterDefault() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<TaskParameter> get enums => $_getList(5);
+  $core.List<TaskParameter> get taskParameterEnums => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<TaskParameter> get children => $_getList(6);
+  $core.List<TaskParameter> get taskParameterChildren => $_getList(6);
 }
 
 class TaskConfig extends $pb.GeneratedMessage {
   factory TaskConfig({
-    $core.String? key,
-    $core.String? name,
-    $core.String? biz,
-    $core.String? content,
+    $core.String? taskKey,
+    $core.String? taskName,
+    $core.String? taskBusiness,
+    $core.String? taskContent,
     $core.Iterable<TaskParameter>? parameters,
   }) {
     final $result = create();
-    if (key != null) {
-      $result.key = key;
+    if (taskKey != null) {
+      $result.taskKey = taskKey;
     }
-    if (name != null) {
-      $result.name = name;
+    if (taskName != null) {
+      $result.taskName = taskName;
     }
-    if (biz != null) {
-      $result.biz = biz;
+    if (taskBusiness != null) {
+      $result.taskBusiness = taskBusiness;
     }
-    if (content != null) {
-      $result.content = content;
+    if (taskContent != null) {
+      $result.taskContent = taskContent;
     }
     if (parameters != null) {
       $result.parameters.addAll(parameters);
@@ -169,10 +170,10 @@ class TaskConfig extends $pb.GeneratedMessage {
   factory TaskConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaskConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'key')
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'biz')
-    ..aOS(4, _omitFieldNames ? '' : 'content')
+    ..aOS(1, _omitFieldNames ? '' : 'taskKey')
+    ..aOS(2, _omitFieldNames ? '' : 'taskName')
+    ..aOS(3, _omitFieldNames ? '' : 'taskBusiness')
+    ..aOS(4, _omitFieldNames ? '' : 'taskContent')
     ..pc<TaskParameter>(5, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..hasRequiredFields = false
   ;
@@ -199,40 +200,40 @@ class TaskConfig extends $pb.GeneratedMessage {
   static TaskConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get key => $_getSZ(0);
+  $core.String get taskKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set key($core.String v) { $_setString(0, v); }
+  set taskKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasKey() => $_has(0);
+  $core.bool hasTaskKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
+  void clearTaskKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $core.String get taskName => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set taskName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasTaskName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearTaskName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get biz => $_getSZ(2);
+  $core.String get taskBusiness => $_getSZ(2);
   @$pb.TagNumber(3)
-  set biz($core.String v) { $_setString(2, v); }
+  set taskBusiness($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasBiz() => $_has(2);
+  $core.bool hasTaskBusiness() => $_has(2);
   @$pb.TagNumber(3)
-  void clearBiz() => clearField(3);
+  void clearTaskBusiness() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get content => $_getSZ(3);
+  $core.String get taskContent => $_getSZ(3);
   @$pb.TagNumber(4)
-  set content($core.String v) { $_setString(3, v); }
+  set taskContent($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasContent() => $_has(3);
+  $core.bool hasTaskContent() => $_has(3);
   @$pb.TagNumber(4)
-  void clearContent() => clearField(4);
+  void clearTaskContent() => clearField(4);
 
   @$pb.TagNumber(5)
   $core.List<TaskParameter> get parameters => $_getList(4);
@@ -247,7 +248,6 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     $core.String? taskParameterType,
     $core.String? taskParameterValue,
     $core.Iterable<SystemTaskParameter>? children,
-    $core.String? createdAt,
   }) {
     final $result = create();
     if (taskParameterId != null) {
@@ -271,9 +271,6 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     if (children != null) {
       $result.children.addAll(children);
     }
-    if (createdAt != null) {
-      $result.createdAt = createdAt;
-    }
     return $result;
   }
   SystemTaskParameter._() : super();
@@ -288,7 +285,6 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'taskParameterType')
     ..aOS(6, _omitFieldNames ? '' : 'taskParameterValue')
     ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
-    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -369,15 +365,6 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<SystemTaskParameter> get children => $_getList(6);
-
-  @$pb.TagNumber(8)
-  $core.String get createdAt => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set createdAt($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasCreatedAt() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCreatedAt() => clearField(8);
 }
 
 class SystemTask extends $pb.GeneratedMessage {
@@ -390,6 +377,9 @@ class SystemTask extends $pb.GeneratedMessage {
     $core.String? systemTaskLink,
     $core.Iterable<SystemTaskParameter>? systemTaskParameters,
     $core.String? createdAt,
+    $core.String? updatedAt,
+    $0.User? creator,
+    $0.User? updater,
   }) {
     final $result = create();
     if (systemTaskId != null) {
@@ -416,6 +406,15 @@ class SystemTask extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    if (creator != null) {
+      $result.creator = creator;
+    }
+    if (updater != null) {
+      $result.updater = updater;
+    }
     return $result;
   }
   SystemTask._() : super();
@@ -431,6 +430,9 @@ class SystemTask extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'systemTaskLink')
     ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'systemTaskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
     ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(10, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(11, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -520,11 +522,42 @@ class SystemTask extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearCreatedAt() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $0.User get creator => $_getN(9);
+  @$pb.TagNumber(10)
+  set creator($0.User v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCreator() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreator() => clearField(10);
+  @$pb.TagNumber(10)
+  $0.User ensureCreator() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $0.User get updater => $_getN(10);
+  @$pb.TagNumber(11)
+  set updater($0.User v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdater() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdater() => clearField(11);
+  @$pb.TagNumber(11)
+  $0.User ensureUpdater() => $_ensure(10);
 }
 
 class GetTaskConfigRequest extends $pb.GeneratedMessage {
   factory GetTaskConfigRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -537,7 +570,7 @@ class GetTaskConfigRequest extends $pb.GeneratedMessage {
   factory GetTaskConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaskConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -563,20 +596,20 @@ class GetTaskConfigRequest extends $pb.GeneratedMessage {
   static GetTaskConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 }
 
 class GetTaskConfigResponse extends $pb.GeneratedMessage {
   factory GetTaskConfigResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<TaskConfig>? tasks,
   }) {
     final $result = create();
@@ -593,7 +626,7 @@ class GetTaskConfigResponse extends $pb.GeneratedMessage {
   factory GetTaskConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTaskConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<TaskConfig>(2, _omitFieldNames ? '' : 'tasks', $pb.PbFieldType.PM, subBuilder: TaskConfig.create)
     ..hasRequiredFields = false
   ;
@@ -620,15 +653,15 @@ class GetTaskConfigResponse extends $pb.GeneratedMessage {
   static GetTaskConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<TaskConfig> get tasks => $_getList(1);
@@ -636,7 +669,7 @@ class GetTaskConfigResponse extends $pb.GeneratedMessage {
 
 class CreateSystemTaskRequest extends $pb.GeneratedMessage {
   factory CreateSystemTaskRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     SystemTask? systemTask,
   }) {
     final $result = create();
@@ -653,7 +686,7 @@ class CreateSystemTaskRequest extends $pb.GeneratedMessage {
   factory CreateSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<SystemTask>(2, _omitFieldNames ? '' : 'systemTask', subBuilder: SystemTask.create)
     ..hasRequiredFields = false
   ;
@@ -680,15 +713,15 @@ class CreateSystemTaskRequest extends $pb.GeneratedMessage {
   static CreateSystemTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   SystemTask get systemTask => $_getN(1);
@@ -704,7 +737,7 @@ class CreateSystemTaskRequest extends $pb.GeneratedMessage {
 
 class CreateSystemTaskResponse extends $pb.GeneratedMessage {
   factory CreateSystemTaskResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -717,7 +750,7 @@ class CreateSystemTaskResponse extends $pb.GeneratedMessage {
   factory CreateSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -743,21 +776,21 @@ class CreateSystemTaskResponse extends $pb.GeneratedMessage {
   static CreateSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class ListSystemTaskRequest extends $pb.GeneratedMessage {
   factory ListSystemTaskRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -773,8 +806,8 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   factory ListSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -800,33 +833,33 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   static ListSystemTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListSystemTaskResponse extends $pb.GeneratedMessage {
   factory ListSystemTaskResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<SystemTask>? systemTasks,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -845,9 +878,9 @@ class ListSystemTaskResponse extends $pb.GeneratedMessage {
   factory ListSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<SystemTask>(2, _omitFieldNames ? '' : 'systemTasks', $pb.PbFieldType.PM, subBuilder: SystemTask.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -873,34 +906,34 @@ class ListSystemTaskResponse extends $pb.GeneratedMessage {
   static ListSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<SystemTask> get systemTasks => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class GetSystemTaskRequest extends $pb.GeneratedMessage {
   factory GetSystemTaskRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? systemTaskId,
   }) {
     final $result = create();
@@ -917,7 +950,7 @@ class GetSystemTaskRequest extends $pb.GeneratedMessage {
   factory GetSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'systemTaskId')
     ..hasRequiredFields = false
   ;
@@ -944,15 +977,15 @@ class GetSystemTaskRequest extends $pb.GeneratedMessage {
   static GetSystemTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get systemTaskId => $_getI64(1);
@@ -966,7 +999,7 @@ class GetSystemTaskRequest extends $pb.GeneratedMessage {
 
 class GetSystemTaskResponse extends $pb.GeneratedMessage {
   factory GetSystemTaskResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     SystemTask? systemTask,
   }) {
     final $result = create();
@@ -983,7 +1016,7 @@ class GetSystemTaskResponse extends $pb.GeneratedMessage {
   factory GetSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<SystemTask>(2, _omitFieldNames ? '' : 'systemTask', subBuilder: SystemTask.create)
     ..hasRequiredFields = false
   ;
@@ -1010,15 +1043,15 @@ class GetSystemTaskResponse extends $pb.GeneratedMessage {
   static GetSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   SystemTask get systemTask => $_getN(1);
@@ -1034,7 +1067,7 @@ class GetSystemTaskResponse extends $pb.GeneratedMessage {
 
 class UpdateSystemTaskRequest extends $pb.GeneratedMessage {
   factory UpdateSystemTaskRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     SystemTask? systemTask,
   }) {
     final $result = create();
@@ -1051,7 +1084,7 @@ class UpdateSystemTaskRequest extends $pb.GeneratedMessage {
   factory UpdateSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<SystemTask>(2, _omitFieldNames ? '' : 'systemTask', subBuilder: SystemTask.create)
     ..hasRequiredFields = false
   ;
@@ -1078,15 +1111,15 @@ class UpdateSystemTaskRequest extends $pb.GeneratedMessage {
   static UpdateSystemTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   SystemTask get systemTask => $_getN(1);
@@ -1102,7 +1135,7 @@ class UpdateSystemTaskRequest extends $pb.GeneratedMessage {
 
 class UpdateSystemTaskResponse extends $pb.GeneratedMessage {
   factory UpdateSystemTaskResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1115,7 +1148,7 @@ class UpdateSystemTaskResponse extends $pb.GeneratedMessage {
   factory UpdateSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1141,20 +1174,20 @@ class UpdateSystemTaskResponse extends $pb.GeneratedMessage {
   static UpdateSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class DeleteSystemTaskRequest extends $pb.GeneratedMessage {
   factory DeleteSystemTaskRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? systemTaskId,
   }) {
     final $result = create();
@@ -1171,7 +1204,7 @@ class DeleteSystemTaskRequest extends $pb.GeneratedMessage {
   factory DeleteSystemTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'systemTaskId')
     ..hasRequiredFields = false
   ;
@@ -1198,15 +1231,15 @@ class DeleteSystemTaskRequest extends $pb.GeneratedMessage {
   static DeleteSystemTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get systemTaskId => $_getI64(1);
@@ -1220,7 +1253,7 @@ class DeleteSystemTaskRequest extends $pb.GeneratedMessage {
 
 class DeleteSystemTaskResponse extends $pb.GeneratedMessage {
   factory DeleteSystemTaskResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1233,7 +1266,7 @@ class DeleteSystemTaskResponse extends $pb.GeneratedMessage {
   factory DeleteSystemTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSystemTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1259,15 +1292,15 @@ class DeleteSystemTaskResponse extends $pb.GeneratedMessage {
   static DeleteSystemTaskResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 

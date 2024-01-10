@@ -108,4 +108,46 @@ public interface SystemTaskOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>string updated_at = 9;</code>
+   * @return The updatedAt.
+   */
+  java.lang.String getUpdatedAt();
+  /**
+   * <code>string updated_at = 9;</code>
+   * @return The bytes for updatedAt.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedAtBytes();
+
+  /**
+   * <code>.glory_api.User creator = 10;</code>
+   * @return Whether the creator field is set.
+   */
+  boolean hasCreator();
+  /**
+   * <code>.glory_api.User creator = 10;</code>
+   * @return The creator.
+   */
+  com.zhijiejiaoyu.glory_api.user.User getCreator();
+  /**
+   * <code>.glory_api.User creator = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
+
+  /**
+   * <code>.glory_api.User updater = 11;</code>
+   * @return Whether the updater field is set.
+   */
+  boolean hasUpdater();
+  /**
+   * <code>.glory_api.User updater = 11;</code>
+   * @return The updater.
+   */
+  com.zhijiejiaoyu.glory_api.user.User getUpdater();
+  /**
+   * <code>.glory_api.User updater = 11;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder();
 }

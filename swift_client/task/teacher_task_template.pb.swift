@@ -25,15 +25,19 @@ struct GloryApi_TeacherTaskTemplateParameter {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var taskTemplateID: Int64 = 0
+  var taskParameterID: Int64 = 0
 
   var taskParameterKey: String = String()
 
   var taskParameterName: String = String()
 
+  var taskParameterOperator: String = String()
+
   var taskParameterValue: String = String()
 
   var taskParameterType: String = String()
+
+  var children: [GloryApi_TeacherTaskTemplateParameter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -45,27 +49,53 @@ struct GloryApi_TeacherTaskTemplate {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var taskTemplateID: Int64 = 0
+  var teacherTaskTemplateID: Int64 = 0
 
-  var systemTaskKey: String = String()
+  /// 任务模板类型：1.预置任务；2.手动任务
+  var teacherTaskTemplateType: Int32 = 0
 
-  var taskName: String = String()
+  var systemTaskID: Int64 = 0
 
-  var taskBusinessSystem: String = String()
+  var teacherTaskTemplateName: String = String()
 
-  var taskBusinessModule: String = String()
+  var teacherTaskTemplateBusiness: String = String()
 
-  var taskContent: String = String()
+  var teacherTaskTemplateContent: String = String()
 
-  var taskRequirements: String = String()
+  var teacherTaskTemplateRequirements: [String] = []
 
-  var taskLink: String = String()
+  var teacherTaskTemplateLink: String = String()
 
   var taskParameters: [GloryApi_TeacherTaskTemplateParameter] = []
+
+  var createdAt: String = String()
+
+  var updatedAt: String = String()
+
+  var creator: GloryApi_User {
+    get {return _creator ?? GloryApi_User()}
+    set {_creator = newValue}
+  }
+  /// Returns true if `creator` has been explicitly set.
+  var hasCreator: Bool {return self._creator != nil}
+  /// Clears the value of `creator`. Subsequent reads from it will return its default value.
+  mutating func clearCreator() {self._creator = nil}
+
+  var updater: GloryApi_User {
+    get {return _updater ?? GloryApi_User()}
+    set {_updater = newValue}
+  }
+  /// Returns true if `updater` has been explicitly set.
+  var hasUpdater: Bool {return self._updater != nil}
+  /// Clears the value of `updater`. Subsequent reads from it will return its default value.
+  mutating func clearUpdater() {self._updater = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _creator: GloryApi_User? = nil
+  fileprivate var _updater: GloryApi_User? = nil
 }
 
 struct GloryApi_CreateTeacherTaskTemplateRequest {
@@ -300,11 +330,13 @@ fileprivate let _protobuf_package = "glory_api"
 extension GloryApi_TeacherTaskTemplateParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherTaskTemplateParameter"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "task_template_id"),
+    1: .standard(proto: "task_parameter_id"),
     2: .standard(proto: "task_parameter_key"),
     3: .standard(proto: "task_parameter_name"),
-    4: .standard(proto: "task_parameter_value"),
-    5: .standard(proto: "task_parameter_type"),
+    4: .standard(proto: "task_parameter_operator"),
+    5: .standard(proto: "task_parameter_value"),
+    6: .standard(proto: "task_parameter_type"),
+    7: .same(proto: "children"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -313,19 +345,21 @@ extension GloryApi_TeacherTaskTemplateParameter: SwiftProtobuf.Message, SwiftPro
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskTemplateID) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskParameterID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.taskParameterKey) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.taskParameterName) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterOperator) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.taskTemplateID != 0 {
-      try visitor.visitSingularInt64Field(value: self.taskTemplateID, fieldNumber: 1)
+    if self.taskParameterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskParameterID, fieldNumber: 1)
     }
     if !self.taskParameterKey.isEmpty {
       try visitor.visitSingularStringField(value: self.taskParameterKey, fieldNumber: 2)
@@ -333,21 +367,29 @@ extension GloryApi_TeacherTaskTemplateParameter: SwiftProtobuf.Message, SwiftPro
     if !self.taskParameterName.isEmpty {
       try visitor.visitSingularStringField(value: self.taskParameterName, fieldNumber: 3)
     }
+    if !self.taskParameterOperator.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterOperator, fieldNumber: 4)
+    }
     if !self.taskParameterValue.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterValue, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.taskParameterValue, fieldNumber: 5)
     }
     if !self.taskParameterType.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 6)
+    }
+    if !self.children.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_TeacherTaskTemplateParameter, rhs: GloryApi_TeacherTaskTemplateParameter) -> Bool {
-    if lhs.taskTemplateID != rhs.taskTemplateID {return false}
+    if lhs.taskParameterID != rhs.taskParameterID {return false}
     if lhs.taskParameterKey != rhs.taskParameterKey {return false}
     if lhs.taskParameterName != rhs.taskParameterName {return false}
+    if lhs.taskParameterOperator != rhs.taskParameterOperator {return false}
     if lhs.taskParameterValue != rhs.taskParameterValue {return false}
     if lhs.taskParameterType != rhs.taskParameterType {return false}
+    if lhs.children != rhs.children {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -356,15 +398,19 @@ extension GloryApi_TeacherTaskTemplateParameter: SwiftProtobuf.Message, SwiftPro
 extension GloryApi_TeacherTaskTemplate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherTaskTemplate"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "task_template_id"),
-    2: .standard(proto: "system_task_key"),
-    3: .standard(proto: "task_name"),
-    4: .standard(proto: "task_business_system"),
-    5: .standard(proto: "task_business_module"),
-    6: .standard(proto: "task_content"),
-    7: .standard(proto: "task_requirements"),
-    8: .standard(proto: "task_link"),
+    1: .standard(proto: "teacher_task_template_id"),
+    2: .standard(proto: "teacher_task_template_type"),
+    3: .standard(proto: "system_task_id"),
+    4: .standard(proto: "teacher_task_template_name"),
+    5: .standard(proto: "teacher_task_template_business"),
+    6: .standard(proto: "teacher_task_template_content"),
+    7: .standard(proto: "teacher_task_template_requirements"),
+    8: .standard(proto: "teacher_task_template_link"),
     9: .standard(proto: "task_parameters"),
+    10: .standard(proto: "created_at"),
+    11: .standard(proto: "updated_at"),
+    12: .same(proto: "creator"),
+    13: .same(proto: "updater"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -373,61 +419,85 @@ extension GloryApi_TeacherTaskTemplate: SwiftProtobuf.Message, SwiftProtobuf._Me
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskTemplateID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.taskName) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.taskBusinessSystem) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.taskBusinessModule) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.taskContent) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.taskRequirements) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.taskLink) }()
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.teacherTaskTemplateID) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.teacherTaskTemplateType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.systemTaskID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.teacherTaskTemplateName) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.teacherTaskTemplateBusiness) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.teacherTaskTemplateContent) }()
+      case 7: try { try decoder.decodeRepeatedStringField(value: &self.teacherTaskTemplateRequirements) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.teacherTaskTemplateLink) }()
       case 9: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameters) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 12: try { try decoder.decodeSingularMessageField(value: &self._creator) }()
+      case 13: try { try decoder.decodeSingularMessageField(value: &self._updater) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.taskTemplateID != 0 {
-      try visitor.visitSingularInt64Field(value: self.taskTemplateID, fieldNumber: 1)
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.teacherTaskTemplateID != 0 {
+      try visitor.visitSingularInt64Field(value: self.teacherTaskTemplateID, fieldNumber: 1)
     }
-    if !self.systemTaskKey.isEmpty {
-      try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 2)
+    if self.teacherTaskTemplateType != 0 {
+      try visitor.visitSingularInt32Field(value: self.teacherTaskTemplateType, fieldNumber: 2)
     }
-    if !self.taskName.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskName, fieldNumber: 3)
+    if self.systemTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemTaskID, fieldNumber: 3)
     }
-    if !self.taskBusinessSystem.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskBusinessSystem, fieldNumber: 4)
+    if !self.teacherTaskTemplateName.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherTaskTemplateName, fieldNumber: 4)
     }
-    if !self.taskBusinessModule.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskBusinessModule, fieldNumber: 5)
+    if !self.teacherTaskTemplateBusiness.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherTaskTemplateBusiness, fieldNumber: 5)
     }
-    if !self.taskContent.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskContent, fieldNumber: 6)
+    if !self.teacherTaskTemplateContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherTaskTemplateContent, fieldNumber: 6)
     }
-    if !self.taskRequirements.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskRequirements, fieldNumber: 7)
+    if !self.teacherTaskTemplateRequirements.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.teacherTaskTemplateRequirements, fieldNumber: 7)
     }
-    if !self.taskLink.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskLink, fieldNumber: 8)
+    if !self.teacherTaskTemplateLink.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherTaskTemplateLink, fieldNumber: 8)
     }
     if !self.taskParameters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.taskParameters, fieldNumber: 9)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 10)
+    }
+    if !self.updatedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 11)
+    }
+    try { if let v = self._creator {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+    } }()
+    try { if let v = self._updater {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_TeacherTaskTemplate, rhs: GloryApi_TeacherTaskTemplate) -> Bool {
-    if lhs.taskTemplateID != rhs.taskTemplateID {return false}
-    if lhs.systemTaskKey != rhs.systemTaskKey {return false}
-    if lhs.taskName != rhs.taskName {return false}
-    if lhs.taskBusinessSystem != rhs.taskBusinessSystem {return false}
-    if lhs.taskBusinessModule != rhs.taskBusinessModule {return false}
-    if lhs.taskContent != rhs.taskContent {return false}
-    if lhs.taskRequirements != rhs.taskRequirements {return false}
-    if lhs.taskLink != rhs.taskLink {return false}
+    if lhs.teacherTaskTemplateID != rhs.teacherTaskTemplateID {return false}
+    if lhs.teacherTaskTemplateType != rhs.teacherTaskTemplateType {return false}
+    if lhs.systemTaskID != rhs.systemTaskID {return false}
+    if lhs.teacherTaskTemplateName != rhs.teacherTaskTemplateName {return false}
+    if lhs.teacherTaskTemplateBusiness != rhs.teacherTaskTemplateBusiness {return false}
+    if lhs.teacherTaskTemplateContent != rhs.teacherTaskTemplateContent {return false}
+    if lhs.teacherTaskTemplateRequirements != rhs.teacherTaskTemplateRequirements {return false}
+    if lhs.teacherTaskTemplateLink != rhs.teacherTaskTemplateLink {return false}
     if lhs.taskParameters != rhs.taskParameters {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.updatedAt != rhs.updatedAt {return false}
+    if lhs._creator != rhs._creator {return false}
+    if lhs._updater != rhs._updater {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

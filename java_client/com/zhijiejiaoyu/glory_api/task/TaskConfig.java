@@ -16,10 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TaskConfig() {
-    key = "";
-    name = "";
-    biz = "";
-    content = "";
+    taskKey = "";
+    taskName = "";
+    taskBusiness = "";
+    taskContent = "";
     parameters = java.util.Collections.emptyList();
   }
 
@@ -57,25 +57,25 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            key = s;
+            taskKey = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name = s;
+            taskName = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            biz = s;
+            taskBusiness = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            content = s;
+            taskContent = s;
             break;
           }
           case 42: {
@@ -122,152 +122,152 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.TaskConfig.class, com.zhijiejiaoyu.glory_api.task.TaskConfig.Builder.class);
   }
 
-  public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key ;
+  public static final int TASK_KEY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object taskKey ;
   /**
-   * <code>string key = 1;</code>
-   * @return The key.
+   * <code>string task_key = 1;</code>
+   * @return The taskKey.
    */
   @java.lang.Override
-  public java.lang.String getKey() {
-    java.lang.Object ref = key ;
+  public java.lang.String getTaskKey() {
+    java.lang.Object ref = taskKey ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      key = s;
+      taskKey = s;
       return s;
     }
   }
   /**
-   * <code>string key = 1;</code>
-   * @return The bytes for key.
+   * <code>string task_key = 1;</code>
+   * @return The bytes for taskKey.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getKeyBytes() {
-    java.lang.Object ref = key ;
+      getTaskKeyBytes() {
+    java.lang.Object ref = taskKey ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      key = b;
+      taskKey = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name ;
+  public static final int TASK_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskName ;
   /**
-   * <code>string name = 2;</code>
-   * @return The name.
+   * <code>string task_name = 2;</code>
+   * @return The taskName.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name ;
+  public java.lang.String getTaskName() {
+    java.lang.Object ref = taskName ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name = s;
+      taskName = s;
       return s;
     }
   }
   /**
-   * <code>string name = 2;</code>
-   * @return The bytes for name.
+   * <code>string task_name = 2;</code>
+   * @return The bytes for taskName.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name ;
+      getTaskNameBytes() {
+    java.lang.Object ref = taskName ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name = b;
+      taskName = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int BIZ_FIELD_NUMBER = 3;
-  private volatile java.lang.Object biz ;
+  public static final int TASK_BUSINESS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object taskBusiness ;
   /**
-   * <code>string biz = 3;</code>
-   * @return The biz.
+   * <code>string task_business = 3;</code>
+   * @return The taskBusiness.
    */
   @java.lang.Override
-  public java.lang.String getBiz() {
-    java.lang.Object ref = biz ;
+  public java.lang.String getTaskBusiness() {
+    java.lang.Object ref = taskBusiness ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      biz = s;
+      taskBusiness = s;
       return s;
     }
   }
   /**
-   * <code>string biz = 3;</code>
-   * @return The bytes for biz.
+   * <code>string task_business = 3;</code>
+   * @return The bytes for taskBusiness.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getBizBytes() {
-    java.lang.Object ref = biz ;
+      getTaskBusinessBytes() {
+    java.lang.Object ref = taskBusiness ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      biz = b;
+      taskBusiness = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object content ;
+  public static final int TASK_CONTENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskContent ;
   /**
-   * <code>string content = 4;</code>
-   * @return The content.
+   * <code>string task_content = 4;</code>
+   * @return The taskContent.
    */
   @java.lang.Override
-  public java.lang.String getContent() {
-    java.lang.Object ref = content ;
+  public java.lang.String getTaskContent() {
+    java.lang.Object ref = taskContent ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      content = s;
+      taskContent = s;
       return s;
     }
   }
   /**
-   * <code>string content = 4;</code>
-   * @return The bytes for content.
+   * <code>string task_content = 4;</code>
+   * @return The bytes for taskContent.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getContentBytes() {
-    java.lang.Object ref = content ;
+      getTaskContentBytes() {
+    java.lang.Object ref = taskContent ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      content = b;
+      taskContent = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -328,17 +328,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key );
+    if (!getTaskKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskKey );
     }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
+    if (!getTaskNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName );
     }
-    if (!getBizBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, biz );
+    if (!getTaskBusinessBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskBusiness );
     }
-    if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content );
+    if (!getTaskContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskContent );
     }
     for (int i = 0; i < parameters .size(); i++) {
       output.writeMessage(5, parameters .get(i));
@@ -352,17 +352,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key );
+    if (!getTaskKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskKey );
     }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
+    if (!getTaskNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName );
     }
-    if (!getBizBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, biz );
+    if (!getTaskBusinessBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskBusiness );
     }
-    if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content );
+    if (!getTaskContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskContent );
     }
     for (int i = 0; i < parameters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -383,14 +383,14 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.TaskConfig other = (com.zhijiejiaoyu.glory_api.task.TaskConfig) obj;
 
-    if (!getKey()
-        .equals(other.getKey())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getBiz()
-        .equals(other.getBiz())) return false;
-    if (!getContent()
-        .equals(other.getContent())) return false;
+    if (!getTaskKey()
+        .equals(other.getTaskKey())) return false;
+    if (!getTaskName()
+        .equals(other.getTaskName())) return false;
+    if (!getTaskBusiness()
+        .equals(other.getTaskBusiness())) return false;
+    if (!getTaskContent()
+        .equals(other.getTaskContent())) return false;
     if (!getParametersList()
         .equals(other.getParametersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -404,14 +404,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getKey().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + BIZ_FIELD_NUMBER;
-    hash = (53 * hash) + getBiz().hashCode();
-    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-    hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + TASK_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskKey().hashCode();
+    hash = (37 * hash) + TASK_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskName().hashCode();
+    hash = (37 * hash) + TASK_BUSINESS_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskBusiness().hashCode();
+    hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskContent().hashCode();
     if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
@@ -550,13 +550,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      key = "";
+      taskKey = "";
 
-      name = "";
+      taskName = "";
 
-      biz = "";
+      taskBusiness = "";
 
-      content = "";
+      taskContent = "";
 
       if (parametersBuilder == null) {
         parameters = java.util.Collections.emptyList();
@@ -591,10 +591,10 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.task.TaskConfig buildPartial() {
       com.zhijiejiaoyu.glory_api.task.TaskConfig result = new com.zhijiejiaoyu.glory_api.task.TaskConfig(this);
       int from_bitField0 = bitField0 ;
-      result.key = key ;
-      result.name = name ;
-      result.biz = biz ;
-      result.content = content ;
+      result.taskKey = taskKey ;
+      result.taskName = taskName ;
+      result.taskBusiness = taskBusiness ;
+      result.taskContent = taskContent ;
       if (parametersBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           parameters = java.util.Collections.unmodifiableList(parameters );
@@ -652,20 +652,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.TaskConfig other) {
       if (other == com.zhijiejiaoyu.glory_api.task.TaskConfig.getDefaultInstance()) return this;
-      if (!other.getKey().isEmpty()) {
-        key = other.key ;
+      if (!other.getTaskKey().isEmpty()) {
+        taskKey = other.taskKey ;
         onChanged();
       }
-      if (!other.getName().isEmpty()) {
-        name = other.name ;
+      if (!other.getTaskName().isEmpty()) {
+        taskName = other.taskName ;
         onChanged();
       }
-      if (!other.getBiz().isEmpty()) {
-        biz = other.biz ;
+      if (!other.getTaskBusiness().isEmpty()) {
+        taskBusiness = other.taskBusiness ;
         onChanged();
       }
-      if (!other.getContent().isEmpty()) {
-        content = other.content ;
+      if (!other.getTaskContent().isEmpty()) {
+        taskContent = other.taskContent ;
         onChanged();
       }
       if (parametersBuilder == null) {
@@ -724,306 +724,306 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0 ;
 
-    private java.lang.Object key = "";
+    private java.lang.Object taskKey = "";
     /**
-     * <code>string key = 1;</code>
-     * @return The key.
+     * <code>string task_key = 1;</code>
+     * @return The taskKey.
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key ;
+    public java.lang.String getTaskKey() {
+      java.lang.Object ref = taskKey ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        key = s;
+        taskKey = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
+     * <code>string task_key = 1;</code>
+     * @return The bytes for taskKey.
      */
     public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key ;
+        getTaskKeyBytes() {
+      java.lang.Object ref = taskKey ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        key = b;
+        taskKey = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string key = 1;</code>
-     * @param value The key to set.
+     * <code>string task_key = 1;</code>
+     * @param value The taskKey to set.
      * @return This builder for chaining.
      */
-    public Builder setKey(
+    public Builder setTaskKey(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      key = value;
+      taskKey = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string key = 1;</code>
+     * <code>string task_key = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearKey() {
+    public Builder clearTaskKey() {
       
-      key = getDefaultInstance().getKey();
+      taskKey = getDefaultInstance().getTaskKey();
       onChanged();
       return this;
     }
     /**
-     * <code>string key = 1;</code>
-     * @param value The bytes for key to set.
+     * <code>string task_key = 1;</code>
+     * @param value The bytes for taskKey to set.
      * @return This builder for chaining.
      */
-    public Builder setKeyBytes(
+    public Builder setTaskKeyBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      key = value;
+      taskKey = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object name = "";
+    private java.lang.Object taskName = "";
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
+     * <code>string task_name = 2;</code>
+     * @return The taskName.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name ;
+    public java.lang.String getTaskName() {
+      java.lang.Object ref = taskName ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name = s;
+        taskName = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
+     * <code>string task_name = 2;</code>
+     * @return The bytes for taskName.
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name ;
+        getTaskNameBytes() {
+      java.lang.Object ref = taskName ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name = b;
+        taskName = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 2;</code>
-     * @param value The name to set.
+     * <code>string task_name = 2;</code>
+     * @param value The taskName to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    public Builder setTaskName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name = value;
+      taskName = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string task_name = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearTaskName() {
       
-      name = getDefaultInstance().getName();
+      taskName = getDefaultInstance().getTaskName();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 2;</code>
-     * @param value The bytes for name to set.
+     * <code>string task_name = 2;</code>
+     * @param value The bytes for taskName to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    public Builder setTaskNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name = value;
+      taskName = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object biz = "";
+    private java.lang.Object taskBusiness = "";
     /**
-     * <code>string biz = 3;</code>
-     * @return The biz.
+     * <code>string task_business = 3;</code>
+     * @return The taskBusiness.
      */
-    public java.lang.String getBiz() {
-      java.lang.Object ref = biz ;
+    public java.lang.String getTaskBusiness() {
+      java.lang.Object ref = taskBusiness ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        biz = s;
+        taskBusiness = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string biz = 3;</code>
-     * @return The bytes for biz.
+     * <code>string task_business = 3;</code>
+     * @return The bytes for taskBusiness.
      */
     public com.google.protobuf.ByteString
-        getBizBytes() {
-      java.lang.Object ref = biz ;
+        getTaskBusinessBytes() {
+      java.lang.Object ref = taskBusiness ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        biz = b;
+        taskBusiness = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string biz = 3;</code>
-     * @param value The biz to set.
+     * <code>string task_business = 3;</code>
+     * @param value The taskBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setBiz(
+    public Builder setTaskBusiness(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      biz = value;
+      taskBusiness = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string biz = 3;</code>
+     * <code>string task_business = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearBiz() {
+    public Builder clearTaskBusiness() {
       
-      biz = getDefaultInstance().getBiz();
+      taskBusiness = getDefaultInstance().getTaskBusiness();
       onChanged();
       return this;
     }
     /**
-     * <code>string biz = 3;</code>
-     * @param value The bytes for biz to set.
+     * <code>string task_business = 3;</code>
+     * @param value The bytes for taskBusiness to set.
      * @return This builder for chaining.
      */
-    public Builder setBizBytes(
+    public Builder setTaskBusinessBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      biz = value;
+      taskBusiness = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object content = "";
+    private java.lang.Object taskContent = "";
     /**
-     * <code>string content = 4;</code>
-     * @return The content.
+     * <code>string task_content = 4;</code>
+     * @return The taskContent.
      */
-    public java.lang.String getContent() {
-      java.lang.Object ref = content ;
+    public java.lang.String getTaskContent() {
+      java.lang.Object ref = taskContent ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content = s;
+        taskContent = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string content = 4;</code>
-     * @return The bytes for content.
+     * <code>string task_content = 4;</code>
+     * @return The bytes for taskContent.
      */
     public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content ;
+        getTaskContentBytes() {
+      java.lang.Object ref = taskContent ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content = b;
+        taskContent = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string content = 4;</code>
-     * @param value The content to set.
+     * <code>string task_content = 4;</code>
+     * @param value The taskContent to set.
      * @return This builder for chaining.
      */
-    public Builder setContent(
+    public Builder setTaskContent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      content = value;
+      taskContent = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 4;</code>
+     * <code>string task_content = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearContent() {
+    public Builder clearTaskContent() {
       
-      content = getDefaultInstance().getContent();
+      taskContent = getDefaultInstance().getTaskContent();
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 4;</code>
-     * @param value The bytes for content to set.
+     * <code>string task_content = 4;</code>
+     * @param value The bytes for taskContent to set.
      * @return This builder for chaining.
      */
-    public Builder setContentBytes(
+    public Builder setTaskContentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      content = value;
+      taskContent = value;
       onChanged();
       return this;
     }

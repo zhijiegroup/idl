@@ -18,8 +18,10 @@ private static final long serialVersionUID = 0L;
   private TeacherTaskTemplateParameter() {
     taskParameterKey = "";
     taskParameterName = "";
+    taskParameterOperator = "";
     taskParameterValue = "";
     taskParameterType = "";
+    children = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -54,7 +57,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            taskTemplateId = input.readInt64();
+            taskParameterId = input.readInt64();
             break;
           }
           case 18: {
@@ -72,13 +75,28 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskParameterValue = s;
+            taskParameterOperator = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            taskParameterValue = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             taskParameterType = s;
+            break;
+          }
+          case 58: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            children .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -96,6 +114,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        children = java.util.Collections.unmodifiableList(children );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -113,15 +134,15 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.class, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder.class);
   }
 
-  public static final int TASK_TEMPLATE_ID_FIELD_NUMBER = 1;
-  private long taskTemplateId ;
+  public static final int TASK_PARAMETER_ID_FIELD_NUMBER = 1;
+  private long taskParameterId ;
   /**
-   * <code>int64 task_template_id = 1;</code>
-   * @return The taskTemplateId.
+   * <code>int64 task_parameter_id = 1;</code>
+   * @return The taskParameterId.
    */
   @java.lang.Override
-  public long getTaskTemplateId() {
-    return taskTemplateId ;
+  public long getTaskParameterId() {
+    return taskParameterId ;
   }
 
   public static final int TASK_PARAMETER_KEY_FIELD_NUMBER = 2;
@@ -165,7 +186,7 @@ private static final long serialVersionUID = 0L;
   public static final int TASK_PARAMETER_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object taskParameterName ;
   /**
-   * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The taskParameterName.
    */
   @java.lang.Override
@@ -182,7 +203,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_name = 3;</code>
    * @return The bytes for taskParameterName.
    */
   @java.lang.Override
@@ -200,10 +221,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_PARAMETER_VALUE_FIELD_NUMBER = 4;
+  public static final int TASK_PARAMETER_OPERATOR_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskParameterOperator ;
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The taskParameterOperator.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterOperator() {
+    java.lang.Object ref = taskParameterOperator ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterOperator = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The bytes for taskParameterOperator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterOperatorBytes() {
+    java.lang.Object ref = taskParameterOperator ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterOperator = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMETER_VALUE_FIELD_NUMBER = 5;
   private volatile java.lang.Object taskParameterValue ;
   /**
-   * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_value = 5;</code>
    * @return The taskParameterValue.
    */
   @java.lang.Override
@@ -220,7 +279,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+   * <code>string task_parameter_value = 5;</code>
    * @return The bytes for taskParameterValue.
    */
   @java.lang.Override
@@ -238,10 +297,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_PARAMETER_TYPE_FIELD_NUMBER = 5;
+  public static final int TASK_PARAMETER_TYPE_FIELD_NUMBER = 6;
   private volatile java.lang.Object taskParameterType ;
   /**
-   * <code>string task_parameter_type = 5;</code>
+   * <code>string task_parameter_type = 6;</code>
    * @return The taskParameterType.
    */
   @java.lang.Override
@@ -258,7 +317,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string task_parameter_type = 5;</code>
+   * <code>string task_parameter_type = 6;</code>
    * @return The bytes for taskParameterType.
    */
   @java.lang.Override
@@ -276,6 +335,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CHILDREN_FIELD_NUMBER = 7;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> children ;
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> getChildrenList() {
+    return children ;
+  }
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder> 
+      getChildrenOrBuilderList() {
+    return children ;
+  }
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  @java.lang.Override
+  public int getChildrenCount() {
+    return children .size();
+  }
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter getChildren(int index) {
+    return children .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder getChildrenOrBuilder(
+      int index) {
+    return children .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -290,8 +389,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (taskTemplateId != 0L) {
-      output.writeInt64(1, taskTemplateId );
+    if (taskParameterId != 0L) {
+      output.writeInt64(1, taskParameterId );
     }
     if (!getTaskParameterKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskParameterKey );
@@ -299,11 +398,17 @@ private static final long serialVersionUID = 0L;
     if (!getTaskParameterNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskParameterName );
     }
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskParameterOperator );
+    }
     if (!getTaskParameterValueBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskParameterValue );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskParameterValue );
     }
     if (!getTaskParameterTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskParameterType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskParameterType );
+    }
+    for (int i = 0; i < children .size(); i++) {
+      output.writeMessage(7, children .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -314,9 +419,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (taskTemplateId != 0L) {
+    if (taskParameterId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, taskTemplateId );
+        .computeInt64Size(1, taskParameterId );
     }
     if (!getTaskParameterKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskParameterKey );
@@ -324,11 +429,18 @@ private static final long serialVersionUID = 0L;
     if (!getTaskParameterNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskParameterName );
     }
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskParameterOperator );
+    }
     if (!getTaskParameterValueBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskParameterValue );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskParameterValue );
     }
     if (!getTaskParameterTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskParameterType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskParameterType );
+    }
+    for (int i = 0; i < children .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, children .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -345,16 +457,20 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter other = (com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter) obj;
 
-    if (getTaskTemplateId()
-        != other.getTaskTemplateId()) return false;
+    if (getTaskParameterId()
+        != other.getTaskParameterId()) return false;
     if (!getTaskParameterKey()
         .equals(other.getTaskParameterKey())) return false;
     if (!getTaskParameterName()
         .equals(other.getTaskParameterName())) return false;
+    if (!getTaskParameterOperator()
+        .equals(other.getTaskParameterOperator())) return false;
     if (!getTaskParameterValue()
         .equals(other.getTaskParameterValue())) return false;
     if (!getTaskParameterType()
         .equals(other.getTaskParameterType())) return false;
+    if (!getChildrenList()
+        .equals(other.getChildrenList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -366,17 +482,23 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TASK_TEMPLATE_ID_FIELD_NUMBER;
+    hash = (37 * hash) + TASK_PARAMETER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTaskTemplateId());
+        getTaskParameterId());
     hash = (37 * hash) + TASK_PARAMETER_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getTaskParameterKey().hashCode();
     hash = (37 * hash) + TASK_PARAMETER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTaskParameterName().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_OPERATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterOperator().hashCode();
     hash = (37 * hash) + TASK_PARAMETER_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getTaskParameterValue().hashCode();
     hash = (37 * hash) + TASK_PARAMETER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getTaskParameterType().hashCode();
+    if (getChildrenCount() > 0) {
+      hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
+      hash = (53 * hash) + getChildrenList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -505,21 +627,30 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChildrenFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      taskTemplateId = 0L;
+      taskParameterId = 0L;
 
       taskParameterKey = "";
 
       taskParameterName = "";
 
+      taskParameterOperator = "";
+
       taskParameterValue = "";
 
       taskParameterType = "";
 
+      if (childrenBuilder == null) {
+        children = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        childrenBuilder .clear();
+      }
       return this;
     }
 
@@ -546,11 +677,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter buildPartial() {
       com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter result = new com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter(this);
-      result.taskTemplateId = taskTemplateId ;
+      int from_bitField0 = bitField0 ;
+      result.taskParameterId = taskParameterId ;
       result.taskParameterKey = taskParameterKey ;
       result.taskParameterName = taskParameterName ;
+      result.taskParameterOperator = taskParameterOperator ;
       result.taskParameterValue = taskParameterValue ;
       result.taskParameterType = taskParameterType ;
+      if (childrenBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          children = java.util.Collections.unmodifiableList(children );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.children = children ;
+      } else {
+        result.children = childrenBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -599,8 +741,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter other) {
       if (other == com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.getDefaultInstance()) return this;
-      if (other.getTaskTemplateId() != 0L) {
-        setTaskTemplateId(other.getTaskTemplateId());
+      if (other.getTaskParameterId() != 0L) {
+        setTaskParameterId(other.getTaskParameterId());
       }
       if (!other.getTaskParameterKey().isEmpty()) {
         taskParameterKey = other.taskParameterKey ;
@@ -610,6 +752,10 @@ private static final long serialVersionUID = 0L;
         taskParameterName = other.taskParameterName ;
         onChanged();
       }
+      if (!other.getTaskParameterOperator().isEmpty()) {
+        taskParameterOperator = other.taskParameterOperator ;
+        onChanged();
+      }
       if (!other.getTaskParameterValue().isEmpty()) {
         taskParameterValue = other.taskParameterValue ;
         onChanged();
@@ -617,6 +763,32 @@ private static final long serialVersionUID = 0L;
       if (!other.getTaskParameterType().isEmpty()) {
         taskParameterType = other.taskParameterType ;
         onChanged();
+      }
+      if (childrenBuilder == null) {
+        if (!other.children .isEmpty()) {
+          if (children .isEmpty()) {
+            children = other.children ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureChildrenIsMutable();
+            children .addAll(other.children );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.children .isEmpty()) {
+          if (childrenBuilder .isEmpty()) {
+            childrenBuilder .dispose();
+            childrenBuilder = null;
+            children = other.children ;
+            bitField0 = (bitField0 & ~0x00000001);
+            childrenBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChildrenFieldBuilder() : null;
+          } else {
+            childrenBuilder .addAllMessages(other.children );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -646,34 +818,35 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
-    private long taskTemplateId ;
+    private long taskParameterId ;
     /**
-     * <code>int64 task_template_id = 1;</code>
-     * @return The taskTemplateId.
+     * <code>int64 task_parameter_id = 1;</code>
+     * @return The taskParameterId.
      */
     @java.lang.Override
-    public long getTaskTemplateId() {
-      return taskTemplateId ;
+    public long getTaskParameterId() {
+      return taskParameterId ;
     }
     /**
-     * <code>int64 task_template_id = 1;</code>
-     * @param value The taskTemplateId to set.
+     * <code>int64 task_parameter_id = 1;</code>
+     * @param value The taskParameterId to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskTemplateId(long value) {
+    public Builder setTaskParameterId(long value) {
       
-      taskTemplateId = value;
+      taskParameterId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 task_template_id = 1;</code>
+     * <code>int64 task_parameter_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTaskTemplateId() {
+    public Builder clearTaskParameterId() {
       
-      taskTemplateId = 0L;
+      taskParameterId = 0L;
       onChanged();
       return this;
     }
@@ -756,7 +929,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object taskParameterName = "";
     /**
-     * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_name = 3;</code>
      * @return The taskParameterName.
      */
     public java.lang.String getTaskParameterName() {
@@ -772,7 +945,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_name = 3;</code>
      * @return The bytes for taskParameterName.
      */
     public com.google.protobuf.ByteString
@@ -789,7 +962,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_name = 3;</code>
      * @param value The taskParameterName to set.
      * @return This builder for chaining.
      */
@@ -804,7 +977,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_name = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskParameterName() {
@@ -814,7 +987,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_name = 3 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;220&#92;215&#92;347&#92;247&#92;260&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_name = 3;</code>
      * @param value The bytes for taskParameterName to set.
      * @return This builder for chaining.
      */
@@ -830,9 +1003,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object taskParameterOperator = "";
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return The taskParameterOperator.
+     */
+    public java.lang.String getTaskParameterOperator() {
+      java.lang.Object ref = taskParameterOperator ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterOperator = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return The bytes for taskParameterOperator.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterOperatorBytes() {
+      java.lang.Object ref = taskParameterOperator ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterOperator = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @param value The taskParameterOperator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterOperator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterOperator = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterOperator() {
+      
+      taskParameterOperator = getDefaultInstance().getTaskParameterOperator();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @param value The bytes for taskParameterOperator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterOperatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterOperator = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object taskParameterValue = "";
     /**
-     * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_value = 5;</code>
      * @return The taskParameterValue.
      */
     public java.lang.String getTaskParameterValue() {
@@ -848,7 +1097,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_value = 5;</code>
      * @return The bytes for taskParameterValue.
      */
     public com.google.protobuf.ByteString
@@ -865,7 +1114,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_value = 5;</code>
      * @param value The taskParameterValue to set.
      * @return This builder for chaining.
      */
@@ -880,7 +1129,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_value = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskParameterValue() {
@@ -890,7 +1139,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_value = 4 [(.api.vd) = "&#64;:len($)&gt;0;msg:&#92;'&#92;345&#92;217&#92;202&#92;346&#92;225&#92;260&#92;345&#92;200&#92;274&#92;344&#92;270&#92;215&#92;350&#92;203&#92;275&#92;344&#92;270&#92;272&#92;347&#92;251&#92;272&#92;'"];</code>
+     * <code>string task_parameter_value = 5;</code>
      * @param value The bytes for taskParameterValue to set.
      * @return This builder for chaining.
      */
@@ -908,7 +1157,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object taskParameterType = "";
     /**
-     * <code>string task_parameter_type = 5;</code>
+     * <code>string task_parameter_type = 6;</code>
      * @return The taskParameterType.
      */
     public java.lang.String getTaskParameterType() {
@@ -924,7 +1173,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_type = 5;</code>
+     * <code>string task_parameter_type = 6;</code>
      * @return The bytes for taskParameterType.
      */
     public com.google.protobuf.ByteString
@@ -941,7 +1190,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string task_parameter_type = 5;</code>
+     * <code>string task_parameter_type = 6;</code>
      * @param value The taskParameterType to set.
      * @return This builder for chaining.
      */
@@ -956,7 +1205,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_type = 5;</code>
+     * <code>string task_parameter_type = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskParameterType() {
@@ -966,7 +1215,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string task_parameter_type = 5;</code>
+     * <code>string task_parameter_type = 6;</code>
      * @param value The bytes for taskParameterType to set.
      * @return This builder for chaining.
      */
@@ -980,6 +1229,246 @@ private static final long serialVersionUID = 0L;
       taskParameterType = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> children =
+      java.util.Collections.emptyList();
+    private void ensureChildrenIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter>(children );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder> childrenBuilder ;
+
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> getChildrenList() {
+      if (childrenBuilder == null) {
+        return java.util.Collections.unmodifiableList(children );
+      } else {
+        return childrenBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public int getChildrenCount() {
+      if (childrenBuilder == null) {
+        return children .size();
+      } else {
+        return childrenBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter getChildren(int index) {
+      if (childrenBuilder == null) {
+        return children .get(index);
+      } else {
+        return childrenBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder setChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .set(index, value);
+        onChanged();
+      } else {
+        childrenBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder setChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder addChildren(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .add(value);
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder addChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .add(index, value);
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder addChildren(
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .add(builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder addChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder addAllChildren(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter> values) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, children );
+        onChanged();
+      } else {
+        childrenBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder clearChildren() {
+      if (childrenBuilder == null) {
+        children = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        childrenBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public Builder removeChildren(int index) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .remove(index);
+        onChanged();
+      } else {
+        childrenBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder getChildrenBuilder(
+        int index) {
+      return getChildrenFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder getChildrenOrBuilder(
+        int index) {
+      if (childrenBuilder == null) {
+        return children .get(index);  } else {
+        return childrenBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder> 
+         getChildrenOrBuilderList() {
+      if (childrenBuilder != null) {
+        return childrenBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(children );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder addChildrenBuilder() {
+      return getChildrenFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder addChildrenBuilder(
+        int index) {
+      return getChildrenFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskTemplateParameter children = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder> 
+         getChildrenBuilderList() {
+      return getChildrenFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder> 
+        getChildrenFieldBuilder() {
+      if (childrenBuilder == null) {
+        childrenBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameterOrBuilder>(
+                children ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        children = null;
+      }
+      return childrenBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

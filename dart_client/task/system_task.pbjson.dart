@@ -17,40 +17,45 @@ import 'dart:typed_data' as $typed_data;
 const TaskParameter$json = {
   '1': 'TaskParameter',
   '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'operator', '3': 3, '4': 1, '5': 9, '10': 'operator'},
-    {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'def', '3': 5, '4': 1, '5': 9, '10': 'def'},
-    {'1': 'enums', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'enums'},
-    {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'children'},
+    {'1': 'task_parameter_key', '3': 1, '4': 1, '5': 9, '10': 'taskParameterKey'},
+    {'1': 'task_parameter_name', '3': 2, '4': 1, '5': 9, '10': 'taskParameterName'},
+    {'1': 'task_parameter_operator', '3': 3, '4': 1, '5': 9, '10': 'taskParameterOperator'},
+    {'1': 'task_parameter_type', '3': 4, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'task_parameter_default', '3': 5, '4': 1, '5': 9, '10': 'taskParameterDefault'},
+    {'1': 'task_parameter_enums', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'taskParameterEnums'},
+    {'1': 'task_parameter_children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'taskParameterChildren'},
   ],
 };
 
 /// Descriptor for `TaskParameter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List taskParameterDescriptor = $convert.base64Decode(
-    'Cg1UYXNrUGFyYW1ldGVyEhAKA2tleRgBIAEoCVIDa2V5EhIKBG5hbWUYAiABKAlSBG5hbWUSGg'
-    'oIb3BlcmF0b3IYAyABKAlSCG9wZXJhdG9yEhIKBHR5cGUYBCABKAlSBHR5cGUSEAoDZGVmGAUg'
-    'ASgJUgNkZWYSLgoFZW51bXMYBiADKAsyGC5nbG9yeV9hcGkuVGFza1BhcmFtZXRlclIFZW51bX'
-    'MSNAoIY2hpbGRyZW4YByADKAsyGC5nbG9yeV9hcGkuVGFza1BhcmFtZXRlclIIY2hpbGRyZW4=');
+    'Cg1UYXNrUGFyYW1ldGVyEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgBIAEoCVIQdGFza1BhcmFtZX'
+    'RlcktleRIuChN0YXNrX3BhcmFtZXRlcl9uYW1lGAIgASgJUhF0YXNrUGFyYW1ldGVyTmFtZRI2'
+    'Chd0YXNrX3BhcmFtZXRlcl9vcGVyYXRvchgDIAEoCVIVdGFza1BhcmFtZXRlck9wZXJhdG9yEi'
+    '4KE3Rhc2tfcGFyYW1ldGVyX3R5cGUYBCABKAlSEXRhc2tQYXJhbWV0ZXJUeXBlEjQKFnRhc2tf'
+    'cGFyYW1ldGVyX2RlZmF1bHQYBSABKAlSFHRhc2tQYXJhbWV0ZXJEZWZhdWx0EkoKFHRhc2tfcG'
+    'FyYW1ldGVyX2VudW1zGAYgAygLMhguZ2xvcnlfYXBpLlRhc2tQYXJhbWV0ZXJSEnRhc2tQYXJh'
+    'bWV0ZXJFbnVtcxJQChd0YXNrX3BhcmFtZXRlcl9jaGlsZHJlbhgHIAMoCzIYLmdsb3J5X2FwaS'
+    '5UYXNrUGFyYW1ldGVyUhV0YXNrUGFyYW1ldGVyQ2hpbGRyZW4=');
 
 @$core.Deprecated('Use taskConfigDescriptor instead')
 const TaskConfig$json = {
   '1': 'TaskConfig',
   '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'biz', '3': 3, '4': 1, '5': 9, '10': 'biz'},
-    {'1': 'content', '3': 4, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'task_key', '3': 1, '4': 1, '5': 9, '10': 'taskKey'},
+    {'1': 'task_name', '3': 2, '4': 1, '5': 9, '10': 'taskName'},
+    {'1': 'task_business', '3': 3, '4': 1, '5': 9, '10': 'taskBusiness'},
+    {'1': 'task_content', '3': 4, '4': 1, '5': 9, '10': 'taskContent'},
     {'1': 'parameters', '3': 5, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'parameters'},
   ],
 };
 
 /// Descriptor for `TaskConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List taskConfigDescriptor = $convert.base64Decode(
-    'CgpUYXNrQ29uZmlnEhAKA2tleRgBIAEoCVIDa2V5EhIKBG5hbWUYAiABKAlSBG5hbWUSEAoDYm'
-    'l6GAMgASgJUgNiaXoSGAoHY29udGVudBgEIAEoCVIHY29udGVudBI4CgpwYXJhbWV0ZXJzGAUg'
-    'AygLMhguZ2xvcnlfYXBpLlRhc2tQYXJhbWV0ZXJSCnBhcmFtZXRlcnM=');
+    'CgpUYXNrQ29uZmlnEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5EhsKCXRhc2tfbmFtZRgCIA'
+    'EoCVIIdGFza05hbWUSIwoNdGFza19idXNpbmVzcxgDIAEoCVIMdGFza0J1c2luZXNzEiEKDHRh'
+    'c2tfY29udGVudBgEIAEoCVILdGFza0NvbnRlbnQSOAoKcGFyYW1ldGVycxgFIAMoCzIYLmdsb3'
+    'J5X2FwaS5UYXNrUGFyYW1ldGVyUgpwYXJhbWV0ZXJz');
 
 @$core.Deprecated('Use systemTaskParameterDescriptor instead')
 const SystemTaskParameter$json = {
@@ -63,7 +68,6 @@ const SystemTaskParameter$json = {
     {'1': 'task_parameter_type', '3': 5, '4': 1, '5': 9, '10': 'taskParameterType'},
     {'1': 'task_parameter_value', '3': 6, '4': 1, '5': 9, '10': 'taskParameterValue'},
     {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'children'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
@@ -75,8 +79,7 @@ final $typed_data.Uint8List systemTaskParameterDescriptor = $convert.base64Decod
     'tfcGFyYW1ldGVyX29wZXJhdG9yGAQgASgJUhV0YXNrUGFyYW1ldGVyT3BlcmF0b3ISLgoTdGFz'
     'a19wYXJhbWV0ZXJfdHlwZRgFIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSMAoUdGFza19wYXJhbW'
     'V0ZXJfdmFsdWUYBiABKAlSEnRhc2tQYXJhbWV0ZXJWYWx1ZRI6CghjaGlsZHJlbhgHIAMoCzIe'
-    'Lmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1ldGVyUghjaGlsZHJlbhIdCgpjcmVhdGVkX2F0GA'
-    'ggASgJUgljcmVhdGVkQXQ=');
+    'Lmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1ldGVyUghjaGlsZHJlbg==');
 
 @$core.Deprecated('Use systemTaskDescriptor instead')
 const SystemTask$json = {
@@ -90,6 +93,9 @@ const SystemTask$json = {
     {'1': 'system_task_link', '3': 6, '4': 1, '5': 9, '10': 'systemTaskLink'},
     {'1': 'system_task_parameters', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'systemTaskParameters'},
     {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'creator', '3': 10, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
+    {'1': 'updater', '3': 11, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updater'},
   ],
 };
 
@@ -102,7 +108,9 @@ final $typed_data.Uint8List systemTaskDescriptor = $convert.base64Decode(
     'a0NvbnRlbnQSKAoQc3lzdGVtX3Rhc2tfbGluaxgGIAEoCVIOc3lzdGVtVGFza0xpbmsSVAoWc3'
     'lzdGVtX3Rhc2tfcGFyYW1ldGVycxgHIAMoCzIeLmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1l'
     'dGVyUhRzeXN0ZW1UYXNrUGFyYW1ldGVycxIdCgpjcmVhdGVkX2F0GAggASgJUgljcmVhdGVkQX'
-    'Q=');
+    'QSHQoKdXBkYXRlZF9hdBgJIAEoCVIJdXBkYXRlZEF0EikKB2NyZWF0b3IYCiABKAsyDy5nbG9y'
+    'eV9hcGkuVXNlclIHY3JlYXRvchIpCgd1cGRhdGVyGAsgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3'
+    'VwZGF0ZXI=');
 
 @$core.Deprecated('Use getTaskConfigRequestDescriptor instead')
 const GetTaskConfigRequest$json = {
