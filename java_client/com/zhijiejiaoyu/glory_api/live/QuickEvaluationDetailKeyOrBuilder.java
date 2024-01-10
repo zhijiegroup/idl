@@ -44,25 +44,31 @@ public interface QuickEvaluationDetailKeyOrBuilder extends
       getDescBytes();
 
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>bool result = 4;</code>
+   * @return The result.
+   */
+  boolean getResult();
+
+  /**
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> 
       getDetailList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index);
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   int getDetailCount();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
       getDetailOrBuilderList();
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
       int index);
