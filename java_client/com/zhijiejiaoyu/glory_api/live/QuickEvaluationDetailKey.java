@@ -71,7 +71,12 @@ private static final long serialVersionUID = 0L;
             desc = s;
             break;
           }
-          case 34: {
+          case 32: {
+
+            result = input.readBool();
+            break;
+          }
+          case 42: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               detail = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail>();
               mutable_bitField0_ |= 0x00000001;
@@ -229,17 +234,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DETAIL_FIELD_NUMBER = 4;
+  public static final int RESULT_FIELD_NUMBER = 4;
+  private boolean result ;
+  /**
+   * <code>bool result = 4;</code>
+   * @return The result.
+   */
+  @java.lang.Override
+  public boolean getResult() {
+    return result ;
+  }
+
+  public static final int DETAIL_FIELD_NUMBER = 5;
   private java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> detail ;
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> getDetailList() {
     return detail ;
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
@@ -247,21 +263,21 @@ private static final long serialVersionUID = 0L;
     return detail ;
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   @java.lang.Override
   public int getDetailCount() {
     return detail .size();
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index) {
     return detail .get(index);
   }
   /**
-   * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+   * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
@@ -292,8 +308,11 @@ private static final long serialVersionUID = 0L;
     if (!getDescBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc );
     }
+    if (result != false) {
+      output.writeBool(4, result );
+    }
     for (int i = 0; i < detail .size(); i++) {
-      output.writeMessage(4, detail .get(i));
+      output.writeMessage(5, detail .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -313,9 +332,13 @@ private static final long serialVersionUID = 0L;
     if (!getDescBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc );
     }
+    if (result != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, result );
+    }
     for (int i = 0; i < detail .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, detail .get(i));
+        .computeMessageSize(5, detail .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,6 +361,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getDesc()
         .equals(other.getDesc())) return false;
+    if (getResult()
+        != other.getResult()) return false;
     if (!getDetailList()
         .equals(other.getDetailList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -357,6 +382,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESC_FIELD_NUMBER;
     hash = (53 * hash) + getDesc().hashCode();
+    hash = (37 * hash) + RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getResult());
     if (getDetailCount() > 0) {
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetailList().hashCode();
@@ -501,6 +529,8 @@ private static final long serialVersionUID = 0L;
 
       desc = "";
 
+      result = false;
+
       if (detailBuilder == null) {
         detail = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -537,6 +567,7 @@ private static final long serialVersionUID = 0L;
       result.key = key ;
       result.name = name ;
       result.desc = desc ;
+      result.result = result ;
       if (detailBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           detail = java.util.Collections.unmodifiableList(detail );
@@ -605,6 +636,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDesc().isEmpty()) {
         desc = other.desc ;
         onChanged();
+      }
+      if (other.getResult() != false) {
+        setResult(other.getResult());
       }
       if (detailBuilder == null) {
         if (!other.detail .isEmpty()) {
@@ -890,6 +924,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean result ;
+    /**
+     * <code>bool result = 4;</code>
+     * @return The result.
+     */
+    @java.lang.Override
+    public boolean getResult() {
+      return result ;
+    }
+    /**
+     * <code>bool result = 4;</code>
+     * @param value The result to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResult(boolean value) {
+      
+      result = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool result = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResult() {
+      
+      result = false;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> detail =
       java.util.Collections.emptyList();
     private void ensureDetailIsMutable() {
@@ -903,7 +968,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> detailBuilder ;
 
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> getDetailList() {
       if (detailBuilder == null) {
@@ -913,7 +978,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public int getDetailCount() {
       if (detailBuilder == null) {
@@ -923,7 +988,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail getDetail(int index) {
       if (detailBuilder == null) {
@@ -933,7 +998,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
@@ -950,7 +1015,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder setDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -964,7 +1029,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder addDetail(com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
       if (detailBuilder == null) {
@@ -980,7 +1045,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail value) {
@@ -997,7 +1062,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder addDetail(
         com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -1011,7 +1076,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder addDetail(
         int index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder builderForValue) {
@@ -1025,7 +1090,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder addAllDetail(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail> values) {
@@ -1040,7 +1105,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder clearDetail() {
       if (detailBuilder == null) {
@@ -1053,7 +1118,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public Builder removeDetail(int index) {
       if (detailBuilder == null) {
@@ -1066,14 +1131,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder getDetailBuilder(
         int index) {
       return getDetailFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
         int index) {
@@ -1083,7 +1148,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder> 
          getDetailOrBuilderList() {
@@ -1094,14 +1159,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder addDetailBuilder() {
       return getDetailFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder addDetailBuilder(
         int index) {
@@ -1109,7 +1174,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.QuickEvaluationDetail detail = 4;</code>
+     * <code>repeated .glory_api.QuickEvaluationDetail detail = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.Builder> 
          getDetailBuilderList() {

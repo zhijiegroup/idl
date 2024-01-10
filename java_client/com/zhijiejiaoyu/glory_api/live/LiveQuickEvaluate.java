@@ -235,26 +235,27 @@ public final class LiveQuickEvaluate {
       "\022\017\n\007is_pass\030\002 \001(\010\022\016\n\006detail\030\003 \001(\t\022\027\n\017ref" +
       "_type_result\030\004 \001(\t\"^\n\031QuickEvaluationDet" +
       "ailType\022\014\n\004type\030\001 \001(\t\0223\n\006detail\030\002 \003(\0132#." +
-      "glory_api.QuickEvaluationDetailKey\"u\n\030Qu" +
-      "ickEvaluationDetailKey\022\013\n\003key\030\001 \001(\t\022\014\n\004n" +
-      "ame\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\0220\n\006detail\030\004 \003(\0132" +
-      " .glory_api.QuickEvaluationDetail\"\324\001\n Ge" +
-      "tQuickEvaluationDetailResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nstart_t" +
-      "ime\030\002 \001(\003\022\020\n\010end_time\030\003 \001(\003\022\016\n\006result\030\004 " +
-      "\001(\010\022E\n\027quick_evaluation_detail\030\005 \003(\0132$.g" +
-      "lory_api.QuickEvaluationDetailType\022\014\n\004na" +
-      "me\030\006 \001(\t\"L\n#DeleteQuickEvaluationReportR" +
+      "glory_api.QuickEvaluationDetailKey\"\205\001\n\030Q" +
+      "uickEvaluationDetailKey\022\013\n\003key\030\001 \001(\t\022\014\n\004" +
+      "name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\022\016\n\006result\030\004 \001(\010" +
+      "\0220\n\006detail\030\005 \003(\0132 .glory_api.QuickEvalua" +
+      "tionDetail\"\324\001\n GetQuickEvaluationDetailR" +
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\"a\n\"DeleteQuickEvaluationReportReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\022\n\nreport_ids\030\002 \003(\003\"j\n%DownloadQui" +
-      "ckEvaluationReportResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022\014\n\004name\030\002 \001(\t\022" +
-      "\014\n\004file\030\003 \001(\014\"b\n$DownloadQuickEvaluation" +
-      "ReportRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\021\n\treport_id\030\002 \001(\003B#\n\037com" +
-      ".zhijiejiaoyu.glory_api.liveP\001b\006proto3"
+      "sponse\022\022\n\nstart_time\030\002 \001(\003\022\020\n\010end_time\030\003" +
+      " \001(\003\022\016\n\006result\030\004 \001(\010\022E\n\027quick_evaluation" +
+      "_detail\030\005 \003(\0132$.glory_api.QuickEvaluatio" +
+      "nDetailType\022\014\n\004name\030\006 \001(\t\"L\n#DeleteQuick" +
+      "EvaluationReportResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"a\n\"DeleteQuickEv" +
+      "aluationReportRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\022\n\nreport_ids\030\002 \003" +
+      "(\003\"j\n%DownloadQuickEvaluationReportRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022\014\n\004name\030\002 \001(\t\022\014\n\004file\030\003 \001(\014\"b\n$Downlo" +
+      "adQuickEvaluationReportRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\trepor" +
+      "t_id\030\002 \001(\003B#\n\037com.zhijiejiaoyu.glory_api" +
+      ".liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -399,7 +400,7 @@ public final class LiveQuickEvaluate {
     internal_static_glory_api_QuickEvaluationDetailKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QuickEvaluationDetailKey_descriptor,
-        new java.lang.String[] { "Key", "Name", "Desc", "Detail", });
+        new java.lang.String[] { "Key", "Name", "Desc", "Result", "Detail", });
     internal_static_glory_api_GetQuickEvaluationDetailResponse_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_GetQuickEvaluationDetailResponse_fieldAccessorTable = new

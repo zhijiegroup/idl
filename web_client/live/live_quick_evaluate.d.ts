@@ -160,6 +160,7 @@ export interface QuickEvaluationDetailKey {
   key?: string;
   name?: string;
   desc?: string;
+  result?: boolean;
   detail?: Array<QuickEvaluationDetail>;
 }
 

@@ -629,6 +629,8 @@ struct GloryApi_QuickEvaluationDetailKey {
 
   var desc: String = String()
 
+  var result: Bool = false
+
   var detail: [GloryApi_QuickEvaluationDetail] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -1984,7 +1986,8 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     1: .same(proto: "key"),
     2: .same(proto: "name"),
     3: .same(proto: "desc"),
-    4: .same(proto: "detail"),
+    4: .same(proto: "result"),
+    5: .same(proto: "detail"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1996,7 +1999,8 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
       case 1: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.desc) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.result) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
       default: break
       }
     }
@@ -2012,8 +2016,11 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if !self.desc.isEmpty {
       try visitor.visitSingularStringField(value: self.desc, fieldNumber: 3)
     }
+    if self.result != false {
+      try visitor.visitSingularBoolField(value: self.result, fieldNumber: 4)
+    }
     if !self.detail.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2022,6 +2029,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if lhs.key != rhs.key {return false}
     if lhs.name != rhs.name {return false}
     if lhs.desc != rhs.desc {return false}
+    if lhs.result != rhs.result {return false}
     if lhs.detail != rhs.detail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

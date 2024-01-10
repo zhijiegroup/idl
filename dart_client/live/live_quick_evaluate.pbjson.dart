@@ -401,15 +401,17 @@ const QuickEvaluationDetailKey$json = {
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'detail', '3': 4, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'detail'},
+    {'1': 'result', '3': 4, '4': 1, '5': 8, '10': 'result'},
+    {'1': 'detail', '3': 5, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'detail'},
   ],
 };
 
 /// Descriptor for `QuickEvaluationDetailKey`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List quickEvaluationDetailKeyDescriptor = $convert.base64Decode(
     'ChhRdWlja0V2YWx1YXRpb25EZXRhaWxLZXkSEAoDa2V5GAEgASgJUgNrZXkSEgoEbmFtZRgCIA'
-    'EoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEjgKBmRldGFpbBgEIAMoCzIgLmdsb3J5X2Fw'
-    'aS5RdWlja0V2YWx1YXRpb25EZXRhaWxSBmRldGFpbA==');
+    'EoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEhYKBnJlc3VsdBgEIAEoCFIGcmVzdWx0EjgK'
+    'BmRldGFpbBgFIAMoCzIgLmdsb3J5X2FwaS5RdWlja0V2YWx1YXRpb25EZXRhaWxSBmRldGFpbA'
+    '==');
 
 @$core.Deprecated('Use getQuickEvaluationDetailResponseDescriptor instead')
 const GetQuickEvaluationDetailResponse$json = {
