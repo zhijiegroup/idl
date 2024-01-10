@@ -216,6 +216,12 @@ struct GloryApi_ListTeacherTaskTemplateRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// 任务名称
+  var name: String = String()
+
+  /// 任务类型：0. 所有任务；1.预置任务；2.手动任务
+  var type: Int32 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -663,6 +669,8 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
   static let protoMessageName: String = _protobuf_package + ".ListTeacherTaskTemplateRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "name"),
+    3: .same(proto: "type"),
     100: .same(proto: "pagination"),
   ]
 
@@ -673,6 +681,8 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -687,6 +697,12 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    if self.type != 0 {
+      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -695,6 +711,8 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
 
   static func ==(lhs: GloryApi_ListTeacherTaskTemplateRequest, rhs: GloryApi_ListTeacherTaskTemplateRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.type != rhs.type {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

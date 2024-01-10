@@ -54,6 +54,10 @@ export interface UpdateTeacherTaskTemplateResponse {
 
 export interface ListTeacherTaskTemplateRequest {
   base_request?: base.BaseRequest;
+  /** 任务名称 */
+  name?: string;
+  /** 任务类型：0. 所有任务；1.预置任务；2.手动任务 */
+  type?: number;
   pagination?: base.PaginationRequest;
 }
 

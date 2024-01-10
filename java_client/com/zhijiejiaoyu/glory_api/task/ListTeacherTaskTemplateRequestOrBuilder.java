@@ -23,6 +23,36 @@ public interface ListTeacherTaskTemplateRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <pre>
+   * 任务名称
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * 任务名称
+   * </pre>
+   *
+   * <code>string name = 2;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * 任务类型：0. 所有任务；1.预置任务；2.手动任务
+   * </pre>
+   *
+   * <code>int32 type = 3;</code>
+   * @return The type.
+   */
+  int getType();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -104,21 +104,21 @@ public final class TeacherTaskTemplateOuterClass {
       "ase.BaseRequest\022=\n\025teacher_task_template" +
       "\030\002 \001(\0132\036.glory_api.TeacherTaskTemplate\"J" +
       "\n!UpdateTeacherTaskTemplateResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"v\n\036Li" +
-      "stTeacherTaskTemplateRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npaginat" +
-      "ion\030d \001(\0132\027.base.PaginationRequest\"\266\001\n\037L" +
-      "istTeacherTaskTemplateResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022>\n\026teacher" +
-      "_task_templates\030\002 \003(\0132\036.glory_api.Teache" +
-      "rTaskTemplate\022,\n\npagination\030d \001(\0132\030.base" +
-      ".PaginationResponse\"m\n DeleteTeacherTask" +
-      "TemplateRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022 \n\030teacher_task_templat" +
-      "e_id\030\002 \001(\003\"J\n!DeleteTeacherTaskTemplateR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponseB#\n\037com.zhijiejiaoyu.glory_api.tas" +
-      "kP\001b\006proto3"
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"\222\001\n\036L" +
+      "istTeacherTaskTemplateRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002" +
+      " \001(\t\022\014\n\004type\030\003 \001(\005\022+\n\npagination\030d \001(\0132\027" +
+      ".base.PaginationRequest\"\266\001\n\037ListTeacherT" +
+      "askTemplateResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022>\n\026teacher_task_templ" +
+      "ates\030\002 \003(\0132\036.glory_api.TeacherTaskTempla" +
+      "te\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
+      "Response\"m\n DeleteTeacherTaskTemplateReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022 \n\030teacher_task_template_id\030\002 \001(\003\"" +
+      "J\n!DeleteTeacherTaskTemplateResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037c" +
+      "om.zhijiejiaoyu.glory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -168,7 +168,7 @@ public final class TeacherTaskTemplateOuterClass {
     internal_static_glory_api_ListTeacherTaskTemplateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskTemplateRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Name", "Type", "Pagination", });
     internal_static_glory_api_ListTeacherTaskTemplateResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListTeacherTaskTemplateResponse_fieldAccessorTable = new
