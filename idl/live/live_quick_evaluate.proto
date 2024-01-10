@@ -159,7 +159,8 @@ message QuickEvaluationDetailKey {
     string key = 1;
     string name = 2;
     string desc = 3;
-    repeated QuickEvaluationDetail detail = 4;
+    bool result = 4;
+    repeated QuickEvaluationDetail detail = 5;
 }
 
 message GetQuickEvaluationDetailResponse {
