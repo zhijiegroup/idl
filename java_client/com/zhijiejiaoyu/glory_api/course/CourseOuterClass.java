@@ -115,15 +115,15 @@ public final class CourseOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListLatestCourseResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListHotestCourseRequest_descriptor;
+    internal_static_glory_api_ListHottestCourseRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListHotestCourseRequest_fieldAccessorTable;
+      internal_static_glory_api_ListHottestCourseRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_ListHotestCourseResponse_descriptor;
+    internal_static_glory_api_ListHottestCourseResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_ListHotestCourseResponse_fieldAccessorTable;
+      internal_static_glory_api_ListHottestCourseResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -189,13 +189,13 @@ public final class CourseOuterClass {
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n" +
       "\004size\030\002 \001(\003\"e\n\030ListLatestCourseResponse\022" +
       "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\"" +
-      "\n\007courses\030\002 \003(\0132\021.glory_api.Course\"P\n\027Li" +
-      "stHotestCourseRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\014\n\004size\030\002 \001(\003\"e\n\030" +
-      "ListHotestCourseResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\"\n\007courses\030\002 \003(\013" +
-      "2\021.glory_api.CourseB%\n!com.zhijiejiaoyu." +
-      "glory_api.courseP\001b\006proto3"
+      "\n\007courses\030\002 \003(\0132\021.glory_api.Course\"Q\n\030Li" +
+      "stHottestCourseRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\014\n\004size\030\002 \001(\003\"f\n" +
+      "\031ListHottestCourseResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\"\n\007courses\030\002 \003" +
+      "(\0132\021.glory_api.CourseB%\n!com.zhijiejiaoy" +
+      "u.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -323,17 +323,17 @@ public final class CourseOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListLatestCourseResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Courses", });
-    internal_static_glory_api_ListHotestCourseRequest_descriptor =
+    internal_static_glory_api_ListHottestCourseRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
-    internal_static_glory_api_ListHotestCourseRequest_fieldAccessorTable = new
+    internal_static_glory_api_ListHottestCourseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListHotestCourseRequest_descriptor,
+        internal_static_glory_api_ListHottestCourseRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Size", });
-    internal_static_glory_api_ListHotestCourseResponse_descriptor =
+    internal_static_glory_api_ListHottestCourseResponse_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_glory_api_ListHotestCourseResponse_fieldAccessorTable = new
+    internal_static_glory_api_ListHottestCourseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_ListHotestCourseResponse_descriptor,
+        internal_static_glory_api_ListHottestCourseResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Courses", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();

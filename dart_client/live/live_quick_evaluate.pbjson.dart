@@ -462,34 +462,3 @@ final $typed_data.Uint8List deleteQuickEvaluationReportRequestDescriptor = $conv
     'EoCzIRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh0KCnJlcG9ydF9pZHMYAiADKANS'
     'CXJlcG9ydElkcw==');
 
-@$core.Deprecated('Use downloadQuickEvaluationReportResponseDescriptor instead')
-const DownloadQuickEvaluationReportResponse$json = {
-  '1': 'DownloadQuickEvaluationReportResponse',
-  '2': [
-    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'file', '3': 3, '4': 1, '5': 12, '10': 'file'},
-  ],
-};
-
-/// Descriptor for `DownloadQuickEvaluationReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List downloadQuickEvaluationReportResponseDescriptor = $convert.base64Decode(
-    'CiVEb3dubG9hZFF1aWNrRXZhbHVhdGlvblJlcG9ydFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
-    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBISCgRuYW1lGAIgASgJUgRuYW1lEhIK'
-    'BGZpbGUYAyABKAxSBGZpbGU=');
-
-@$core.Deprecated('Use downloadQuickEvaluationReportRequestDescriptor instead')
-const DownloadQuickEvaluationReportRequest$json = {
-  '1': 'DownloadQuickEvaluationReportRequest',
-  '2': [
-    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'report_id', '3': 2, '4': 1, '5': 3, '10': 'reportId'},
-  ],
-};
-
-/// Descriptor for `DownloadQuickEvaluationReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List downloadQuickEvaluationReportRequestDescriptor = $convert.base64Decode(
-    'CiREb3dubG9hZFF1aWNrRXZhbHVhdGlvblJlcG9ydFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GA'
-    'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJcmVwb3J0X2lkGAIgASgD'
-    'UghyZXBvcnRJZA==');
-

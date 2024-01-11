@@ -609,7 +609,7 @@ struct GloryApi_ListLatestCourseResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ListHotestCourseRequest {
+struct GloryApi_ListHottestCourseRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -632,7 +632,7 @@ struct GloryApi_ListHotestCourseRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_ListHotestCourseResponse {
+struct GloryApi_ListHottestCourseResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -676,8 +676,8 @@ extension GloryApi_GetCourseIdsRequest: @unchecked Sendable {}
 extension GloryApi_GetCourseIdsResponse: @unchecked Sendable {}
 extension GloryApi_ListLatestCourseRequest: @unchecked Sendable {}
 extension GloryApi_ListLatestCourseResponse: @unchecked Sendable {}
-extension GloryApi_ListHotestCourseRequest: @unchecked Sendable {}
-extension GloryApi_ListHotestCourseResponse: @unchecked Sendable {}
+extension GloryApi_ListHottestCourseRequest: @unchecked Sendable {}
+extension GloryApi_ListHottestCourseResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1687,8 +1687,8 @@ extension GloryApi_ListLatestCourseResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListHotestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListHotestCourseRequest"
+extension GloryApi_ListHottestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListHottestCourseRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "size"),
@@ -1721,7 +1721,7 @@ extension GloryApi_ListHotestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListHotestCourseRequest, rhs: GloryApi_ListHotestCourseRequest) -> Bool {
+  static func ==(lhs: GloryApi_ListHottestCourseRequest, rhs: GloryApi_ListHottestCourseRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.size != rhs.size {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1729,8 +1729,8 @@ extension GloryApi_ListHotestCourseRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension GloryApi_ListHotestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListHotestCourseResponse"
+extension GloryApi_ListHottestCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListHottestCourseResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "courses"),
@@ -1763,7 +1763,7 @@ extension GloryApi_ListHotestCourseResponse: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListHotestCourseResponse, rhs: GloryApi_ListHotestCourseResponse) -> Bool {
+  static func ==(lhs: GloryApi_ListHottestCourseResponse, rhs: GloryApi_ListHottestCourseResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.courses != rhs.courses {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

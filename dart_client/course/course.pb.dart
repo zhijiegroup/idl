@@ -1566,8 +1566,8 @@ class ListLatestCourseResponse extends $pb.GeneratedMessage {
   $core.List<Course> get courses => $_getList(1);
 }
 
-class ListHotestCourseRequest extends $pb.GeneratedMessage {
-  factory ListHotestCourseRequest({
+class ListHottestCourseRequest extends $pb.GeneratedMessage {
+  factory ListHottestCourseRequest({
     $1.BaseRequest? baseRequest,
     $fixnum.Int64? size,
   }) {
@@ -1580,11 +1580,11 @@ class ListHotestCourseRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListHotestCourseRequest._() : super();
-  factory ListHotestCourseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListHotestCourseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListHottestCourseRequest._() : super();
+  factory ListHottestCourseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListHottestCourseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListHotestCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListHottestCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'size')
     ..hasRequiredFields = false
@@ -1594,22 +1594,22 @@ class ListHotestCourseRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListHotestCourseRequest clone() => ListHotestCourseRequest()..mergeFromMessage(this);
+  ListHottestCourseRequest clone() => ListHottestCourseRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListHotestCourseRequest copyWith(void Function(ListHotestCourseRequest) updates) => super.copyWith((message) => updates(message as ListHotestCourseRequest)) as ListHotestCourseRequest;
+  ListHottestCourseRequest copyWith(void Function(ListHottestCourseRequest) updates) => super.copyWith((message) => updates(message as ListHottestCourseRequest)) as ListHottestCourseRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListHotestCourseRequest create() => ListHotestCourseRequest._();
-  ListHotestCourseRequest createEmptyInstance() => create();
-  static $pb.PbList<ListHotestCourseRequest> createRepeated() => $pb.PbList<ListHotestCourseRequest>();
+  static ListHottestCourseRequest create() => ListHottestCourseRequest._();
+  ListHottestCourseRequest createEmptyInstance() => create();
+  static $pb.PbList<ListHottestCourseRequest> createRepeated() => $pb.PbList<ListHottestCourseRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListHotestCourseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListHotestCourseRequest>(create);
-  static ListHotestCourseRequest? _defaultInstance;
+  static ListHottestCourseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListHottestCourseRequest>(create);
+  static ListHottestCourseRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $1.BaseRequest get baseRequest => $_getN(0);
@@ -1632,8 +1632,8 @@ class ListHotestCourseRequest extends $pb.GeneratedMessage {
   void clearSize() => clearField(2);
 }
 
-class ListHotestCourseResponse extends $pb.GeneratedMessage {
-  factory ListHotestCourseResponse({
+class ListHottestCourseResponse extends $pb.GeneratedMessage {
+  factory ListHottestCourseResponse({
     $1.BaseResponse? baseResp,
     $core.Iterable<Course>? courses,
   }) {
@@ -1646,11 +1646,11 @@ class ListHotestCourseResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListHotestCourseResponse._() : super();
-  factory ListHotestCourseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListHotestCourseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListHottestCourseResponse._() : super();
+  factory ListHottestCourseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListHottestCourseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListHotestCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListHottestCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<Course>(2, _omitFieldNames ? '' : 'courses', $pb.PbFieldType.PM, subBuilder: Course.create)
     ..hasRequiredFields = false
@@ -1660,22 +1660,22 @@ class ListHotestCourseResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListHotestCourseResponse clone() => ListHotestCourseResponse()..mergeFromMessage(this);
+  ListHottestCourseResponse clone() => ListHottestCourseResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListHotestCourseResponse copyWith(void Function(ListHotestCourseResponse) updates) => super.copyWith((message) => updates(message as ListHotestCourseResponse)) as ListHotestCourseResponse;
+  ListHottestCourseResponse copyWith(void Function(ListHottestCourseResponse) updates) => super.copyWith((message) => updates(message as ListHottestCourseResponse)) as ListHottestCourseResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListHotestCourseResponse create() => ListHotestCourseResponse._();
-  ListHotestCourseResponse createEmptyInstance() => create();
-  static $pb.PbList<ListHotestCourseResponse> createRepeated() => $pb.PbList<ListHotestCourseResponse>();
+  static ListHottestCourseResponse create() => ListHottestCourseResponse._();
+  ListHottestCourseResponse createEmptyInstance() => create();
+  static $pb.PbList<ListHottestCourseResponse> createRepeated() => $pb.PbList<ListHottestCourseResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListHotestCourseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListHotestCourseResponse>(create);
-  static ListHotestCourseResponse? _defaultInstance;
+  static ListHottestCourseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListHottestCourseResponse>(create);
+  static ListHottestCourseResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $1.BaseResponse get baseResp => $_getN(0);

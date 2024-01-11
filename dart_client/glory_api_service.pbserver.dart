@@ -355,7 +355,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$38.DeleteCourseModuleResponse> deleteCourseModule($pb.ServerContext ctx, $38.DeleteCourseModuleRequest request);
   $async.Future<$38.ListCourseModuleResponse> listCourseModule($pb.ServerContext ctx, $38.ListCourseModuleRequest request);
   $async.Future<$39.ListLatestCourseResponse> listLatestCourse($pb.ServerContext ctx, $39.ListLatestCourseRequest request);
-  $async.Future<$39.ListHotestCourseResponse> listHotestCourse($pb.ServerContext ctx, $39.ListHotestCourseRequest request);
+  $async.Future<$39.ListHottestCourseResponse> listHottestCourse($pb.ServerContext ctx, $39.ListHottestCourseRequest request);
   $async.Future<$40.CreateCmCourseResponse> createCmCourse($pb.ServerContext ctx, $40.CreateCmCourseRequest request);
   $async.Future<$40.PreviewCmCourseResponse> previewCmCourse($pb.ServerContext ctx, $40.PreviewCmCourseRequest request);
   $async.Future<$41.CreateNmCourseChapterResourceResponse> createNmCourseResource($pb.ServerContext ctx, $41.CreateNmCourseChapterResourceRequest request);
@@ -415,7 +415,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$50.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ServerContext ctx, $50.CreateQuickEvaluationReportRequest request);
   $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ServerContext ctx, $50.ListQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ServerContext ctx, $50.GetQuickEvaluationReportRequest request);
-  $async.Future<$50.DownloadQuickEvaluationReportResponse> downloadQuickEvaluationReport($pb.ServerContext ctx, $50.DownloadQuickEvaluationReportRequest request);
   $async.Future<$50.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ServerContext ctx, $50.DeleteQuickEvaluationReportRequest request);
   $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ServerContext ctx, $50.GetQuickEvaluationDetailRequest request);
   $async.Future<$46.CreateVersionLogResponse> createVersionLog($pb.ServerContext ctx, $46.CreateVersionLogRequest request);
@@ -727,7 +726,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteCourseModule': return $38.DeleteCourseModuleRequest();
       case 'ListCourseModule': return $38.ListCourseModuleRequest();
       case 'ListLatestCourse': return $39.ListLatestCourseRequest();
-      case 'ListHotestCourse': return $39.ListHotestCourseRequest();
+      case 'ListHottestCourse': return $39.ListHottestCourseRequest();
       case 'CreateCmCourse': return $40.CreateCmCourseRequest();
       case 'PreviewCmCourse': return $40.PreviewCmCourseRequest();
       case 'CreateNmCourseResource': return $41.CreateNmCourseChapterResourceRequest();
@@ -787,7 +786,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return $50.CreateQuickEvaluationReportRequest();
       case 'ListQuickEvaluationReport': return $50.ListQuickEvaluationReportRequest();
       case 'GetQuickEvaluationReport': return $50.GetQuickEvaluationReportRequest();
-      case 'DownloadQuickEvaluationReport': return $50.DownloadQuickEvaluationReportRequest();
       case 'DeleteQuickEvaluationReport': return $50.DeleteQuickEvaluationReportRequest();
       case 'GetQuickEvaluationDetail': return $50.GetQuickEvaluationDetailRequest();
       case 'CreateVersionLog': return $46.CreateVersionLogRequest();
@@ -1102,7 +1100,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteCourseModule': return this.deleteCourseModule(ctx, request as $38.DeleteCourseModuleRequest);
       case 'ListCourseModule': return this.listCourseModule(ctx, request as $38.ListCourseModuleRequest);
       case 'ListLatestCourse': return this.listLatestCourse(ctx, request as $39.ListLatestCourseRequest);
-      case 'ListHotestCourse': return this.listHotestCourse(ctx, request as $39.ListHotestCourseRequest);
+      case 'ListHottestCourse': return this.listHottestCourse(ctx, request as $39.ListHottestCourseRequest);
       case 'CreateCmCourse': return this.createCmCourse(ctx, request as $40.CreateCmCourseRequest);
       case 'PreviewCmCourse': return this.previewCmCourse(ctx, request as $40.PreviewCmCourseRequest);
       case 'CreateNmCourseResource': return this.createNmCourseResource(ctx, request as $41.CreateNmCourseChapterResourceRequest);
@@ -1162,7 +1160,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateQuickEvaluationReport': return this.createQuickEvaluationReport(ctx, request as $50.CreateQuickEvaluationReportRequest);
       case 'ListQuickEvaluationReport': return this.listQuickEvaluationReport(ctx, request as $50.ListQuickEvaluationReportRequest);
       case 'GetQuickEvaluationReport': return this.getQuickEvaluationReport(ctx, request as $50.GetQuickEvaluationReportRequest);
-      case 'DownloadQuickEvaluationReport': return this.downloadQuickEvaluationReport(ctx, request as $50.DownloadQuickEvaluationReportRequest);
       case 'DeleteQuickEvaluationReport': return this.deleteQuickEvaluationReport(ctx, request as $50.DeleteQuickEvaluationReportRequest);
       case 'GetQuickEvaluationDetail': return this.getQuickEvaluationDetail(ctx, request as $50.GetQuickEvaluationDetailRequest);
       case 'CreateVersionLog': return this.createVersionLog(ctx, request as $46.CreateVersionLogRequest);

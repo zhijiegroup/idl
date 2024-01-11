@@ -914,8 +914,8 @@ class glory_apiApi {
   $async.Future<$39.ListLatestCourseResponse> listLatestCourse($pb.ClientContext? ctx, $39.ListLatestCourseRequest request) =>
     _client.invoke<$39.ListLatestCourseResponse>(ctx, 'glory_api', 'ListLatestCourse', request, $39.ListLatestCourseResponse())
   ;
-  $async.Future<$39.ListHotestCourseResponse> listHotestCourse($pb.ClientContext? ctx, $39.ListHotestCourseRequest request) =>
-    _client.invoke<$39.ListHotestCourseResponse>(ctx, 'glory_api', 'ListHotestCourse', request, $39.ListHotestCourseResponse())
+  $async.Future<$39.ListHottestCourseResponse> listHottestCourse($pb.ClientContext? ctx, $39.ListHottestCourseRequest request) =>
+    _client.invoke<$39.ListHottestCourseResponse>(ctx, 'glory_api', 'ListHottestCourse', request, $39.ListHottestCourseResponse())
   ;
   $async.Future<$40.CreateCmCourseResponse> createCmCourse($pb.ClientContext? ctx, $40.CreateCmCourseRequest request) =>
     _client.invoke<$40.CreateCmCourseResponse>(ctx, 'glory_api', 'CreateCmCourse', request, $40.CreateCmCourseResponse())
@@ -1093,9 +1093,6 @@ class glory_apiApi {
   ;
   $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ClientContext? ctx, $50.GetQuickEvaluationReportRequest request) =>
     _client.invoke<$50.GetQuickEvaluationReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationReport', request, $50.GetQuickEvaluationReportResponse())
-  ;
-  $async.Future<$50.DownloadQuickEvaluationReportResponse> downloadQuickEvaluationReport($pb.ClientContext? ctx, $50.DownloadQuickEvaluationReportRequest request) =>
-    _client.invoke<$50.DownloadQuickEvaluationReportResponse>(ctx, 'glory_api', 'DownloadQuickEvaluationReport', request, $50.DownloadQuickEvaluationReportResponse())
   ;
   $async.Future<$50.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ClientContext? ctx, $50.DeleteQuickEvaluationReportRequest request) =>
     _client.invoke<$50.DeleteQuickEvaluationReportResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationReport', request, $50.DeleteQuickEvaluationReportResponse())

@@ -154,12 +154,12 @@ export interface ListLatestCourseResponse {
   courses?: Array<Course>;
 }
 
-export interface ListHotestCourseRequest {
+export interface ListHottestCourseRequest {
   base_request?: base.BaseRequest;
   size?: string;
 }
 
-export interface ListHotestCourseResponse {
+export interface ListHottestCourseResponse {
   base_resp?: base.BaseResponse;
   courses?: Array<Course>;
 }

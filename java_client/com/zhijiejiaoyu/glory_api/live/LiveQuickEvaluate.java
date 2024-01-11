@@ -144,16 +144,6 @@ public final class LiveQuickEvaluate {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteQuickEvaluationReportRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DownloadQuickEvaluationReportResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DownloadQuickEvaluationReportResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DownloadQuickEvaluationReportRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DownloadQuickEvaluationReportRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -248,14 +238,9 @@ public final class LiveQuickEvaluate {
       "ationReportResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
       ".base.BaseResponse\"a\n\"DeleteQuickEvaluat" +
       "ionReportRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\022\n\nreport_ids\030\002 \003(\003\"j\n" +
-      "%DownloadQuickEvaluationReportResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\014\n" +
-      "\004name\030\002 \001(\t\022\014\n\004file\030\003 \001(\014\"b\n$DownloadQui" +
-      "ckEvaluationReportRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\021\n\treport_id\030" +
-      "\002 \001(\003B#\n\037com.zhijiejiaoyu.glory_api.live" +
-      "P\001b\006proto3"
+      ".base.BaseRequest\022\022\n\nreport_ids\030\002 \003(\003B#\n" +
+      "\037com.zhijiejiaoyu.glory_api.liveP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -419,18 +404,6 @@ public final class LiveQuickEvaluate {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteQuickEvaluationReportRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ReportIds", });
-    internal_static_glory_api_DownloadQuickEvaluationReportResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
-    internal_static_glory_api_DownloadQuickEvaluationReportResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DownloadQuickEvaluationReportResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Name", "File", });
-    internal_static_glory_api_DownloadQuickEvaluationReportRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_glory_api_DownloadQuickEvaluationReportRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DownloadQuickEvaluationReportRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ReportId", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

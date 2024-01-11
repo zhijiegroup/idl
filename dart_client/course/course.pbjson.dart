@@ -334,32 +334,32 @@ final $typed_data.Uint8List listLatestCourseResponseDescriptor = $convert.base64
     'NlUmVzcG9uc2VSCGJhc2VSZXNwEisKB2NvdXJzZXMYAiADKAsyES5nbG9yeV9hcGkuQ291cnNl'
     'Ugdjb3Vyc2Vz');
 
-@$core.Deprecated('Use listHotestCourseRequestDescriptor instead')
-const ListHotestCourseRequest$json = {
-  '1': 'ListHotestCourseRequest',
+@$core.Deprecated('Use listHottestCourseRequestDescriptor instead')
+const ListHottestCourseRequest$json = {
+  '1': 'ListHottestCourseRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'size', '3': 2, '4': 1, '5': 3, '10': 'size'},
   ],
 };
 
-/// Descriptor for `ListHotestCourseRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listHotestCourseRequestDescriptor = $convert.base64Decode(
-    'ChdMaXN0SG90ZXN0Q291cnNlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgRzaXplGAIgASgDUgRzaXpl');
+/// Descriptor for `ListHottestCourseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listHottestCourseRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0SG90dGVzdENvdXJzZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSEgoEc2l6ZRgCIAEoA1IEc2l6ZQ==');
 
-@$core.Deprecated('Use listHotestCourseResponseDescriptor instead')
-const ListHotestCourseResponse$json = {
-  '1': 'ListHotestCourseResponse',
+@$core.Deprecated('Use listHottestCourseResponseDescriptor instead')
+const ListHottestCourseResponse$json = {
+  '1': 'ListHottestCourseResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'courses', '3': 2, '4': 3, '5': 11, '6': '.glory_api.Course', '10': 'courses'},
   ],
 };
 
-/// Descriptor for `ListHotestCourseResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listHotestCourseResponseDescriptor = $convert.base64Decode(
-    'ChhMaXN0SG90ZXN0Q291cnNlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
-    'NlUmVzcG9uc2VSCGJhc2VSZXNwEisKB2NvdXJzZXMYAiADKAsyES5nbG9yeV9hcGkuQ291cnNl'
-    'Ugdjb3Vyc2Vz');
+/// Descriptor for `ListHottestCourseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listHottestCourseResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0SG90dGVzdENvdXJzZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIrCgdjb3Vyc2VzGAIgAygLMhEuZ2xvcnlfYXBpLkNvdXJz'
+    'ZVIHY291cnNlcw==');
 

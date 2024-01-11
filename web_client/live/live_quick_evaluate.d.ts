@@ -181,14 +181,3 @@ export interface DeleteQuickEvaluationReportRequest {
   base_request?: base.BaseRequest;
   report_ids?: Array<string>;
 }
-
-export interface DownloadQuickEvaluationReportResponse {
-  base_resp?: base.BaseResponse;
-  name?: string;
-  file?: Uint8Array;
-}
-
-export interface DownloadQuickEvaluationReportRequest {
-  base_request?: base.BaseRequest;
-  report_id?: string;
-}
