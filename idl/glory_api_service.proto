@@ -1118,7 +1118,7 @@ service glory_api {
   rpc ListLatestCourse(ListLatestCourseRequest) returns (ListLatestCourseResponse) {
     option (api.post) = '/api/course/list_latest_course';
   }
-  rpc ListHotestCourse(ListHotestCourseRequest) returns (ListHotestCourseResponse) {
+  rpc ListHottestCourse(ListHottestCourseRequest) returns (ListHottestCourseResponse) {
     option (api.post) = '/api/course/list_hotest_course';
   }
 
@@ -1346,9 +1346,6 @@ service glory_api {
   }
   rpc GetQuickEvaluationReport(GetQuickEvaluationReportRequest) returns (GetQuickEvaluationReportResponse) {
     option (api.get) = '/api/live/get_quick_evaluation_report';
-  }
-  rpc DownloadQuickEvaluationReport(DownloadQuickEvaluationReportRequest) returns (DownloadQuickEvaluationReportResponse) {
-    option (api.get) = '/api/live/download_quick_evaluation_report';
   }
   rpc DeleteQuickEvaluationReport(DeleteQuickEvaluationReportRequest) returns (DeleteQuickEvaluationReportResponse) {
     option (api.post) = '/api/live/delete_quick_evaluation_report';
