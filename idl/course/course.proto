@@ -132,12 +132,12 @@ message ListLatestCourseResponse {
   repeated Course courses = 2;
 }
 
-message ListHotestCourseRequest {
+message ListHottestCourseRequest {
   base.BaseRequest base_request = 1;
   int64 size = 2;
 }
 
-message ListHotestCourseResponse {
+message ListHottestCourseResponse {
   base.BaseResponse base_resp = 1;
   repeated Course courses = 2;
 }
