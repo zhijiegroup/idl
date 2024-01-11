@@ -180,14 +180,3 @@ message DeleteQuickEvaluationReportRequest {
     base.BaseRequest base_request = 1;
     repeated int64 report_ids = 2;
 }
-
-message DownloadQuickEvaluationReportResponse {
-    base.BaseResponse base_resp = 1;
-    string name = 2;
-    bytes file = 3;
-}
-
-message DownloadQuickEvaluationReportRequest {
-    base.BaseRequest base_request = 1;
-    int64 report_id = 2;
-}
