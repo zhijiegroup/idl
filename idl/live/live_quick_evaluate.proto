@@ -51,11 +51,12 @@ message EvaluationStandard {
     int64 min_duration = 3;
     int64 max_duration = 4;
     repeated string keywords = 5;
-    string creator = 6;
-    string updator = 7;
-    bool is_enable = 8;
-    int64 updated_at = 9;
-    TenantDept major = 10;
+    int32 keyword_min_count = 6;
+    string creator = 7;
+    string updator = 8;
+    bool is_enable = 9;
+    int64 updated_at = 10;
+    TenantDept major = 11;
 }
 
 message ListQuickEvaluationRequest {
