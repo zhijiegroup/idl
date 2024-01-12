@@ -161,6 +161,7 @@ message QuickEvaluationDetailKey {
     bool result = 4;
     string ref_result = 5;
     repeated QuickEvaluationDetail detail = 6;
+    int32 order = 7;
 }
 
 message GetQuickEvaluationDetailResponse {
