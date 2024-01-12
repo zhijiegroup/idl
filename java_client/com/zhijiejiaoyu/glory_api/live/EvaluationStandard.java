@@ -83,29 +83,34 @@ private static final long serialVersionUID = 0L;
             keywords .add(s);
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 48: {
 
-            creator = s;
+            keywordMinCount = input.readInt32();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            updator = s;
+            creator = s;
             break;
           }
-          case 64: {
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            isEnable = input.readBool();
+            updator = s;
             break;
           }
           case 72: {
 
+            isEnable = input.readBool();
+            break;
+          }
+          case 80: {
+
             updatedAt = input.readInt64();
             break;
           }
-          case 82: {
+          case 90: {
             com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
             if (major != null) {
               subBuilder = major .toBuilder();
@@ -259,10 +264,21 @@ private static final long serialVersionUID = 0L;
     return keywords .getByteString(index);
   }
 
-  public static final int CREATOR_FIELD_NUMBER = 6;
+  public static final int KEYWORD_MIN_COUNT_FIELD_NUMBER = 6;
+  private int keywordMinCount ;
+  /**
+   * <code>int32 keyword_min_count = 6;</code>
+   * @return The keywordMinCount.
+   */
+  @java.lang.Override
+  public int getKeywordMinCount() {
+    return keywordMinCount ;
+  }
+
+  public static final int CREATOR_FIELD_NUMBER = 7;
   private volatile java.lang.Object creator ;
   /**
-   * <code>string creator = 6;</code>
+   * <code>string creator = 7;</code>
    * @return The creator.
    */
   @java.lang.Override
@@ -279,7 +295,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string creator = 6;</code>
+   * <code>string creator = 7;</code>
    * @return The bytes for creator.
    */
   @java.lang.Override
@@ -297,10 +313,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATOR_FIELD_NUMBER = 7;
+  public static final int UPDATOR_FIELD_NUMBER = 8;
   private volatile java.lang.Object updator ;
   /**
-   * <code>string updator = 7;</code>
+   * <code>string updator = 8;</code>
    * @return The updator.
    */
   @java.lang.Override
@@ -317,7 +333,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string updator = 7;</code>
+   * <code>string updator = 8;</code>
    * @return The bytes for updator.
    */
   @java.lang.Override
@@ -335,10 +351,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IS_ENABLE_FIELD_NUMBER = 8;
+  public static final int IS_ENABLE_FIELD_NUMBER = 9;
   private boolean isEnable ;
   /**
-   * <code>bool is_enable = 8;</code>
+   * <code>bool is_enable = 9;</code>
    * @return The isEnable.
    */
   @java.lang.Override
@@ -346,10 +362,10 @@ private static final long serialVersionUID = 0L;
     return isEnable ;
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 9;
+  public static final int UPDATED_AT_FIELD_NUMBER = 10;
   private long updatedAt ;
   /**
-   * <code>int64 updated_at = 9;</code>
+   * <code>int64 updated_at = 10;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -357,10 +373,10 @@ private static final long serialVersionUID = 0L;
     return updatedAt ;
   }
 
-  public static final int MAJOR_FIELD_NUMBER = 10;
+  public static final int MAJOR_FIELD_NUMBER = 11;
   private com.zhijiejiaoyu.glory_api.user.TenantDept major ;
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    * @return Whether the major field is set.
    */
   @java.lang.Override
@@ -368,7 +384,7 @@ private static final long serialVersionUID = 0L;
     return major != null;
   }
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    * @return The major.
    */
   @java.lang.Override
@@ -376,7 +392,7 @@ private static final long serialVersionUID = 0L;
     return major == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : major ;
   }
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder() {
@@ -412,20 +428,23 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < keywords .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, keywords .getRaw(i));
     }
+    if (keywordMinCount != 0) {
+      output.writeInt32(6, keywordMinCount );
+    }
     if (!getCreatorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creator );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creator );
     }
     if (!getUpdatorBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, updator );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, updator );
     }
     if (isEnable != false) {
-      output.writeBool(8, isEnable );
+      output.writeBool(9, isEnable );
     }
     if (updatedAt != 0L) {
-      output.writeInt64(9, updatedAt );
+      output.writeInt64(10, updatedAt );
     }
     if (major != null) {
-      output.writeMessage(10, getMajor());
+      output.writeMessage(11, getMajor());
     }
     unknownFields.writeTo(output);
   }
@@ -459,23 +478,27 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getKeywordsList().size();
     }
+    if (keywordMinCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, keywordMinCount );
+    }
     if (!getCreatorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creator );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creator );
     }
     if (!getUpdatorBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, updator );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, updator );
     }
     if (isEnable != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, isEnable );
+        .computeBoolSize(9, isEnable );
     }
     if (updatedAt != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, updatedAt );
+        .computeInt64Size(10, updatedAt );
     }
     if (major != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getMajor());
+        .computeMessageSize(11, getMajor());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -502,6 +525,8 @@ private static final long serialVersionUID = 0L;
         != other.getMaxDuration()) return false;
     if (!getKeywordsList()
         .equals(other.getKeywordsList())) return false;
+    if (getKeywordMinCount()
+        != other.getKeywordMinCount()) return false;
     if (!getCreator()
         .equals(other.getCreator())) return false;
     if (!getUpdator()
@@ -541,6 +566,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordsList().hashCode();
     }
+    hash = (37 * hash) + KEYWORD_MIN_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getKeywordMinCount();
     hash = (37 * hash) + CREATOR_FIELD_NUMBER;
     hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + UPDATOR_FIELD_NUMBER;
@@ -698,6 +725,8 @@ private static final long serialVersionUID = 0L;
 
       keywords = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      keywordMinCount = 0;
+
       creator = "";
 
       updator = "";
@@ -748,6 +777,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.keywords = keywords ;
+      result.keywordMinCount = keywordMinCount ;
       result.creator = creator ;
       result.updator = updator ;
       result.isEnable = isEnable ;
@@ -827,6 +857,9 @@ private static final long serialVersionUID = 0L;
           keywords .addAll(other.keywords );
         }
         onChanged();
+      }
+      if (other.getKeywordMinCount() != 0) {
+        setKeywordMinCount(other.getKeywordMinCount());
       }
       if (!other.getCreator().isEmpty()) {
         creator = other.creator ;
@@ -1154,9 +1187,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int keywordMinCount ;
+    /**
+     * <code>int32 keyword_min_count = 6;</code>
+     * @return The keywordMinCount.
+     */
+    @java.lang.Override
+    public int getKeywordMinCount() {
+      return keywordMinCount ;
+    }
+    /**
+     * <code>int32 keyword_min_count = 6;</code>
+     * @param value The keywordMinCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordMinCount(int value) {
+      
+      keywordMinCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 keyword_min_count = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeywordMinCount() {
+      
+      keywordMinCount = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object creator = "";
     /**
-     * <code>string creator = 6;</code>
+     * <code>string creator = 7;</code>
      * @return The creator.
      */
     public java.lang.String getCreator() {
@@ -1172,7 +1236,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creator = 6;</code>
+     * <code>string creator = 7;</code>
      * @return The bytes for creator.
      */
     public com.google.protobuf.ByteString
@@ -1189,7 +1253,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string creator = 6;</code>
+     * <code>string creator = 7;</code>
      * @param value The creator to set.
      * @return This builder for chaining.
      */
@@ -1204,7 +1268,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creator = 6;</code>
+     * <code>string creator = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreator() {
@@ -1214,7 +1278,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string creator = 6;</code>
+     * <code>string creator = 7;</code>
      * @param value The bytes for creator to set.
      * @return This builder for chaining.
      */
@@ -1232,7 +1296,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updator = "";
     /**
-     * <code>string updator = 7;</code>
+     * <code>string updator = 8;</code>
      * @return The updator.
      */
     public java.lang.String getUpdator() {
@@ -1248,7 +1312,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updator = 7;</code>
+     * <code>string updator = 8;</code>
      * @return The bytes for updator.
      */
     public com.google.protobuf.ByteString
@@ -1265,7 +1329,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updator = 7;</code>
+     * <code>string updator = 8;</code>
      * @param value The updator to set.
      * @return This builder for chaining.
      */
@@ -1280,7 +1344,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updator = 7;</code>
+     * <code>string updator = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdator() {
@@ -1290,7 +1354,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updator = 7;</code>
+     * <code>string updator = 8;</code>
      * @param value The bytes for updator to set.
      * @return This builder for chaining.
      */
@@ -1308,7 +1372,7 @@ private static final long serialVersionUID = 0L;
 
     private boolean isEnable ;
     /**
-     * <code>bool is_enable = 8;</code>
+     * <code>bool is_enable = 9;</code>
      * @return The isEnable.
      */
     @java.lang.Override
@@ -1316,7 +1380,7 @@ private static final long serialVersionUID = 0L;
       return isEnable ;
     }
     /**
-     * <code>bool is_enable = 8;</code>
+     * <code>bool is_enable = 9;</code>
      * @param value The isEnable to set.
      * @return This builder for chaining.
      */
@@ -1327,7 +1391,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool is_enable = 8;</code>
+     * <code>bool is_enable = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsEnable() {
@@ -1339,7 +1403,7 @@ private static final long serialVersionUID = 0L;
 
     private long updatedAt ;
     /**
-     * <code>int64 updated_at = 9;</code>
+     * <code>int64 updated_at = 10;</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1347,7 +1411,7 @@ private static final long serialVersionUID = 0L;
       return updatedAt ;
     }
     /**
-     * <code>int64 updated_at = 9;</code>
+     * <code>int64 updated_at = 10;</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1358,7 +1422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 updated_at = 9;</code>
+     * <code>int64 updated_at = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
@@ -1372,14 +1436,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> majorBuilder ;
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      * @return Whether the major field is set.
      */
     public boolean hasMajor() {
       return majorBuilder != null || major != null;
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      * @return The major.
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept getMajor() {
@@ -1390,7 +1454,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public Builder setMajor(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (majorBuilder == null) {
@@ -1406,7 +1470,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public Builder setMajor(
         com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -1420,7 +1484,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public Builder mergeMajor(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (majorBuilder == null) {
@@ -1438,7 +1502,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public Builder clearMajor() {
       if (majorBuilder == null) {
@@ -1452,7 +1516,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getMajorBuilder() {
       
@@ -1460,7 +1524,7 @@ private static final long serialVersionUID = 0L;
       return getMajorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder() {
       if (majorBuilder != null) {
@@ -1471,7 +1535,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TenantDept major = 10;</code>
+     * <code>.glory_api.TenantDept major = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 

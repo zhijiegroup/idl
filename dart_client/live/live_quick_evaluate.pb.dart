@@ -534,6 +534,7 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     $fixnum.Int64? minDuration,
     $fixnum.Int64? maxDuration,
     $core.Iterable<$core.String>? keywords,
+    $core.int? keywordMinCount,
     $core.String? creator,
     $core.String? updator,
     $core.bool? isEnable,
@@ -555,6 +556,9 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     }
     if (keywords != null) {
       $result.keywords.addAll(keywords);
+    }
+    if (keywordMinCount != null) {
+      $result.keywordMinCount = keywordMinCount;
     }
     if (creator != null) {
       $result.creator = creator;
@@ -583,11 +587,12 @@ class EvaluationStandard extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'minDuration')
     ..aInt64(4, _omitFieldNames ? '' : 'maxDuration')
     ..pPS(5, _omitFieldNames ? '' : 'keywords')
-    ..aOS(6, _omitFieldNames ? '' : 'creator')
-    ..aOS(7, _omitFieldNames ? '' : 'updator')
-    ..aOB(8, _omitFieldNames ? '' : 'isEnable')
-    ..aInt64(9, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$1.TenantDept>(10, _omitFieldNames ? '' : 'major', subBuilder: $1.TenantDept.create)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'keywordMinCount', $pb.PbFieldType.O3)
+    ..aOS(7, _omitFieldNames ? '' : 'creator')
+    ..aOS(8, _omitFieldNames ? '' : 'updator')
+    ..aOB(9, _omitFieldNames ? '' : 'isEnable')
+    ..aInt64(10, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$1.TenantDept>(11, _omitFieldNames ? '' : 'major', subBuilder: $1.TenantDept.create)
     ..hasRequiredFields = false
   ;
 
@@ -652,51 +657,60 @@ class EvaluationStandard extends $pb.GeneratedMessage {
   $core.List<$core.String> get keywords => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get creator => $_getSZ(5);
+  $core.int get keywordMinCount => $_getIZ(5);
   @$pb.TagNumber(6)
-  set creator($core.String v) { $_setString(5, v); }
+  set keywordMinCount($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasCreator() => $_has(5);
+  $core.bool hasKeywordMinCount() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCreator() => clearField(6);
+  void clearKeywordMinCount() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get updator => $_getSZ(6);
+  $core.String get creator => $_getSZ(6);
   @$pb.TagNumber(7)
-  set updator($core.String v) { $_setString(6, v); }
+  set creator($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasUpdator() => $_has(6);
+  $core.bool hasCreator() => $_has(6);
   @$pb.TagNumber(7)
-  void clearUpdator() => clearField(7);
+  void clearCreator() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get isEnable => $_getBF(7);
+  $core.String get updator => $_getSZ(7);
   @$pb.TagNumber(8)
-  set isEnable($core.bool v) { $_setBool(7, v); }
+  set updator($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasIsEnable() => $_has(7);
+  $core.bool hasUpdator() => $_has(7);
   @$pb.TagNumber(8)
-  void clearIsEnable() => clearField(8);
+  void clearUpdator() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get updatedAt => $_getI64(8);
+  $core.bool get isEnable => $_getBF(8);
   @$pb.TagNumber(9)
-  set updatedAt($fixnum.Int64 v) { $_setInt64(8, v); }
+  set isEnable($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasUpdatedAt() => $_has(8);
+  $core.bool hasIsEnable() => $_has(8);
   @$pb.TagNumber(9)
-  void clearUpdatedAt() => clearField(9);
+  void clearIsEnable() => clearField(9);
 
   @$pb.TagNumber(10)
-  $1.TenantDept get major => $_getN(9);
+  $fixnum.Int64 get updatedAt => $_getI64(9);
   @$pb.TagNumber(10)
-  set major($1.TenantDept v) { setField(10, v); }
+  set updatedAt($fixnum.Int64 v) { $_setInt64(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasMajor() => $_has(9);
+  $core.bool hasUpdatedAt() => $_has(9);
   @$pb.TagNumber(10)
-  void clearMajor() => clearField(10);
-  @$pb.TagNumber(10)
-  $1.TenantDept ensureMajor() => $_ensure(9);
+  void clearUpdatedAt() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.TenantDept get major => $_getN(10);
+  @$pb.TagNumber(11)
+  set major($1.TenantDept v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasMajor() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMajor() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.TenantDept ensureMajor() => $_ensure(10);
 }
 
 class ListQuickEvaluationRequest extends $pb.GeneratedMessage {

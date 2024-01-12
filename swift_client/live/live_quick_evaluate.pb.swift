@@ -206,6 +206,11 @@ struct GloryApi_EvaluationStandard {
     set {_uniqueStorage()._keywords = newValue}
   }
 
+  var keywordMinCount: Int32 {
+    get {return _storage._keywordMinCount}
+    set {_uniqueStorage()._keywordMinCount = newValue}
+  }
+
   var creator: String {
     get {return _storage._creator}
     set {_uniqueStorage()._creator = newValue}
@@ -1062,11 +1067,12 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
     3: .standard(proto: "min_duration"),
     4: .standard(proto: "max_duration"),
     5: .same(proto: "keywords"),
-    6: .same(proto: "creator"),
-    7: .same(proto: "updator"),
-    8: .standard(proto: "is_enable"),
-    9: .standard(proto: "updated_at"),
-    10: .same(proto: "major"),
+    6: .standard(proto: "keyword_min_count"),
+    7: .same(proto: "creator"),
+    8: .same(proto: "updator"),
+    9: .standard(proto: "is_enable"),
+    10: .standard(proto: "updated_at"),
+    11: .same(proto: "major"),
   ]
 
   fileprivate class _StorageClass {
@@ -1075,6 +1081,7 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _minDuration: Int64 = 0
     var _maxDuration: Int64 = 0
     var _keywords: [String] = []
+    var _keywordMinCount: Int32 = 0
     var _creator: String = String()
     var _updator: String = String()
     var _isEnable: Bool = false
@@ -1091,6 +1098,7 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _minDuration = source._minDuration
       _maxDuration = source._maxDuration
       _keywords = source._keywords
+      _keywordMinCount = source._keywordMinCount
       _creator = source._creator
       _updator = source._updator
       _isEnable = source._isEnable
@@ -1119,11 +1127,12 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 3: try { try decoder.decodeSingularInt64Field(value: &_storage._minDuration) }()
         case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._maxDuration) }()
         case 5: try { try decoder.decodeRepeatedStringField(value: &_storage._keywords) }()
-        case 6: try { try decoder.decodeSingularStringField(value: &_storage._creator) }()
-        case 7: try { try decoder.decodeSingularStringField(value: &_storage._updator) }()
-        case 8: try { try decoder.decodeSingularBoolField(value: &_storage._isEnable) }()
-        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._updatedAt) }()
-        case 10: try { try decoder.decodeSingularMessageField(value: &_storage._major) }()
+        case 6: try { try decoder.decodeSingularInt32Field(value: &_storage._keywordMinCount) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._creator) }()
+        case 8: try { try decoder.decodeSingularStringField(value: &_storage._updator) }()
+        case 9: try { try decoder.decodeSingularBoolField(value: &_storage._isEnable) }()
+        case 10: try { try decoder.decodeSingularInt64Field(value: &_storage._updatedAt) }()
+        case 11: try { try decoder.decodeSingularMessageField(value: &_storage._major) }()
         default: break
         }
       }
@@ -1151,20 +1160,23 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if !_storage._keywords.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._keywords, fieldNumber: 5)
       }
+      if _storage._keywordMinCount != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._keywordMinCount, fieldNumber: 6)
+      }
       if !_storage._creator.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._creator, fieldNumber: 6)
+        try visitor.visitSingularStringField(value: _storage._creator, fieldNumber: 7)
       }
       if !_storage._updator.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._updator, fieldNumber: 7)
+        try visitor.visitSingularStringField(value: _storage._updator, fieldNumber: 8)
       }
       if _storage._isEnable != false {
-        try visitor.visitSingularBoolField(value: _storage._isEnable, fieldNumber: 8)
+        try visitor.visitSingularBoolField(value: _storage._isEnable, fieldNumber: 9)
       }
       if _storage._updatedAt != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._updatedAt, fieldNumber: 9)
+        try visitor.visitSingularInt64Field(value: _storage._updatedAt, fieldNumber: 10)
       }
       try { if let v = _storage._major {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1180,6 +1192,7 @@ extension GloryApi_EvaluationStandard: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._minDuration != rhs_storage._minDuration {return false}
         if _storage._maxDuration != rhs_storage._maxDuration {return false}
         if _storage._keywords != rhs_storage._keywords {return false}
+        if _storage._keywordMinCount != rhs_storage._keywordMinCount {return false}
         if _storage._creator != rhs_storage._creator {return false}
         if _storage._updator != rhs_storage._updator {return false}
         if _storage._isEnable != rhs_storage._isEnable {return false}

@@ -63,53 +63,59 @@ public interface EvaluationStandardOrBuilder extends
       getKeywordsBytes(int index);
 
   /**
-   * <code>string creator = 6;</code>
+   * <code>int32 keyword_min_count = 6;</code>
+   * @return The keywordMinCount.
+   */
+  int getKeywordMinCount();
+
+  /**
+   * <code>string creator = 7;</code>
    * @return The creator.
    */
   java.lang.String getCreator();
   /**
-   * <code>string creator = 6;</code>
+   * <code>string creator = 7;</code>
    * @return The bytes for creator.
    */
   com.google.protobuf.ByteString
       getCreatorBytes();
 
   /**
-   * <code>string updator = 7;</code>
+   * <code>string updator = 8;</code>
    * @return The updator.
    */
   java.lang.String getUpdator();
   /**
-   * <code>string updator = 7;</code>
+   * <code>string updator = 8;</code>
    * @return The bytes for updator.
    */
   com.google.protobuf.ByteString
       getUpdatorBytes();
 
   /**
-   * <code>bool is_enable = 8;</code>
+   * <code>bool is_enable = 9;</code>
    * @return The isEnable.
    */
   boolean getIsEnable();
 
   /**
-   * <code>int64 updated_at = 9;</code>
+   * <code>int64 updated_at = 10;</code>
    * @return The updatedAt.
    */
   long getUpdatedAt();
 
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    * @return Whether the major field is set.
    */
   boolean hasMajor();
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    * @return The major.
    */
   com.zhijiejiaoyu.glory_api.user.TenantDept getMajor();
   /**
-   * <code>.glory_api.TenantDept major = 10;</code>
+   * <code>.glory_api.TenantDept major = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorOrBuilder();
 }

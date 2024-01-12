@@ -124,11 +124,12 @@ const EvaluationStandard$json = {
     {'1': 'min_duration', '3': 3, '4': 1, '5': 3, '10': 'minDuration'},
     {'1': 'max_duration', '3': 4, '4': 1, '5': 3, '10': 'maxDuration'},
     {'1': 'keywords', '3': 5, '4': 3, '5': 9, '10': 'keywords'},
-    {'1': 'creator', '3': 6, '4': 1, '5': 9, '10': 'creator'},
-    {'1': 'updator', '3': 7, '4': 1, '5': 9, '10': 'updator'},
-    {'1': 'is_enable', '3': 8, '4': 1, '5': 8, '10': 'isEnable'},
-    {'1': 'updated_at', '3': 9, '4': 1, '5': 3, '10': 'updatedAt'},
-    {'1': 'major', '3': 10, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'major'},
+    {'1': 'keyword_min_count', '3': 6, '4': 1, '5': 5, '10': 'keywordMinCount'},
+    {'1': 'creator', '3': 7, '4': 1, '5': 9, '10': 'creator'},
+    {'1': 'updator', '3': 8, '4': 1, '5': 9, '10': 'updator'},
+    {'1': 'is_enable', '3': 9, '4': 1, '5': 8, '10': 'isEnable'},
+    {'1': 'updated_at', '3': 10, '4': 1, '5': 3, '10': 'updatedAt'},
+    {'1': 'major', '3': 11, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'major'},
   ],
 };
 
@@ -137,9 +138,10 @@ final $typed_data.Uint8List evaluationStandardDescriptor = $convert.base64Decode
     'ChJFdmFsdWF0aW9uU3RhbmRhcmQSHwoLc3RhbmRhcmRfaWQYASABKANSCnN0YW5kYXJkSWQSEg'
     'oEbmFtZRgCIAEoCVIEbmFtZRIhCgxtaW5fZHVyYXRpb24YAyABKANSC21pbkR1cmF0aW9uEiEK'
     'DG1heF9kdXJhdGlvbhgEIAEoA1ILbWF4RHVyYXRpb24SGgoIa2V5d29yZHMYBSADKAlSCGtleX'
-    'dvcmRzEhgKB2NyZWF0b3IYBiABKAlSB2NyZWF0b3ISGAoHdXBkYXRvchgHIAEoCVIHdXBkYXRv'
-    'chIbCglpc19lbmFibGUYCCABKAhSCGlzRW5hYmxlEh0KCnVwZGF0ZWRfYXQYCSABKANSCXVwZG'
-    'F0ZWRBdBIrCgVtYWpvchgKIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgVtYWpvcg==');
+    'dvcmRzEioKEWtleXdvcmRfbWluX2NvdW50GAYgASgFUg9rZXl3b3JkTWluQ291bnQSGAoHY3Jl'
+    'YXRvchgHIAEoCVIHY3JlYXRvchIYCgd1cGRhdG9yGAggASgJUgd1cGRhdG9yEhsKCWlzX2VuYW'
+    'JsZRgJIAEoCFIIaXNFbmFibGUSHQoKdXBkYXRlZF9hdBgKIAEoA1IJdXBkYXRlZEF0EisKBW1h'
+    'am9yGAsgASgLMhUuZ2xvcnlfYXBpLlRlbmFudERlcHRSBW1ham9y');
 
 @$core.Deprecated('Use listQuickEvaluationRequestDescriptor instead')
 const ListQuickEvaluationRequest$json = {

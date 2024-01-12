@@ -51,6 +51,7 @@ export interface EvaluationStandard {
   min_duration?: string;
   max_duration?: string;
   keywords?: Array<string>;
+  keyword_min_count?: number;
   creator?: string;
   updator?: string;
   is_enable?: boolean;
