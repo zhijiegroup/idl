@@ -162,6 +162,7 @@ export interface QuickEvaluationDetailKey {
   result?: boolean;
   ref_result?: string;
   detail?: Array<QuickEvaluationDetail>;
+  order?: number;
 }
 
 export interface GetQuickEvaluationDetailResponse {

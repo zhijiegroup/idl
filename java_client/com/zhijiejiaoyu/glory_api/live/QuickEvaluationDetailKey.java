@@ -92,6 +92,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetail.parser(), extensionRegistry));
             break;
           }
+          case 56: {
+
+            order = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -330,6 +335,17 @@ private static final long serialVersionUID = 0L;
     return detail .get(index);
   }
 
+  public static final int ORDER_FIELD_NUMBER = 7;
+  private int order ;
+  /**
+   * <code>int32 order = 7;</code>
+   * @return The order.
+   */
+  @java.lang.Override
+  public int getOrder() {
+    return order ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -362,6 +378,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < detail .size(); i++) {
       output.writeMessage(6, detail .get(i));
     }
+    if (order != 0) {
+      output.writeInt32(7, order );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -391,6 +410,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, detail .get(i));
     }
+    if (order != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, order );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,6 +441,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRefResult())) return false;
     if (!getDetailList()
         .equals(other.getDetailList())) return false;
+    if (getOrder()
+        != other.getOrder()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -444,6 +469,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetailList().hashCode();
     }
+    hash = (37 * hash) + ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -594,6 +621,8 @@ private static final long serialVersionUID = 0L;
       } else {
         detailBuilder .clear();
       }
+      order = 0;
+
       return this;
     }
 
@@ -635,6 +664,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.detail = detailBuilder .build();
       }
+      result.order = order ;
       onBuilt();
       return result;
     }
@@ -727,6 +757,9 @@ private static final long serialVersionUID = 0L;
             detailBuilder .addAllMessages(other.detail );
           }
         }
+      }
+      if (other.getOrder() != 0) {
+        setOrder(other.getOrder());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1331,6 +1364,37 @@ private static final long serialVersionUID = 0L;
         detail = null;
       }
       return detailBuilder ;
+    }
+
+    private int order ;
+    /**
+     * <code>int32 order = 7;</code>
+     * @return The order.
+     */
+    @java.lang.Override
+    public int getOrder() {
+      return order ;
+    }
+    /**
+     * <code>int32 order = 7;</code>
+     * @param value The order to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrder(int value) {
+      
+      order = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 order = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrder() {
+      
+      order = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -402,6 +402,7 @@ const QuickEvaluationDetailKey$json = {
     {'1': 'result', '3': 4, '4': 1, '5': 8, '10': 'result'},
     {'1': 'ref_result', '3': 5, '4': 1, '5': 9, '10': 'refResult'},
     {'1': 'detail', '3': 6, '4': 3, '5': 11, '6': '.glory_api.QuickEvaluationDetail', '10': 'detail'},
+    {'1': 'order', '3': 7, '4': 1, '5': 5, '10': 'order'},
   ],
 };
 
@@ -410,7 +411,7 @@ final $typed_data.Uint8List quickEvaluationDetailKeyDescriptor = $convert.base64
     'ChhRdWlja0V2YWx1YXRpb25EZXRhaWxLZXkSEAoDa2V5GAEgASgJUgNrZXkSEgoEbmFtZRgCIA'
     'EoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEhYKBnJlc3VsdBgEIAEoCFIGcmVzdWx0Eh0K'
     'CnJlZl9yZXN1bHQYBSABKAlSCXJlZlJlc3VsdBI4CgZkZXRhaWwYBiADKAsyIC5nbG9yeV9hcG'
-    'kuUXVpY2tFdmFsdWF0aW9uRGV0YWlsUgZkZXRhaWw=');
+    'kuUXVpY2tFdmFsdWF0aW9uRGV0YWlsUgZkZXRhaWwSFAoFb3JkZXIYByABKAVSBW9yZGVy');
 
 @$core.Deprecated('Use getQuickEvaluationDetailResponseDescriptor instead')
 const GetQuickEvaluationDetailResponse$json = {

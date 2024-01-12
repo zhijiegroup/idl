@@ -84,4 +84,10 @@ public interface QuickEvaluationDetailKeyOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.live.QuickEvaluationDetailOrBuilder getDetailOrBuilder(
       int index);
+
+  /**
+   * <code>int32 order = 7;</code>
+   * @return The order.
+   */
+  int getOrder();
 }

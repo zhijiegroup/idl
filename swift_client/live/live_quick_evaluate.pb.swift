@@ -633,6 +633,8 @@ struct GloryApi_QuickEvaluationDetailKey {
 
   var detail: [GloryApi_QuickEvaluationDetail] = []
 
+  var order: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1933,6 +1935,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     4: .same(proto: "result"),
     5: .standard(proto: "ref_result"),
     6: .same(proto: "detail"),
+    7: .same(proto: "order"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1947,6 +1950,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
       case 4: try { try decoder.decodeSingularBoolField(value: &self.result) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.refResult) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.detail) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.order) }()
       default: break
       }
     }
@@ -1971,6 +1975,9 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if !self.detail.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.detail, fieldNumber: 6)
     }
+    if self.order != 0 {
+      try visitor.visitSingularInt32Field(value: self.order, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1981,6 +1988,7 @@ extension GloryApi_QuickEvaluationDetailKey: SwiftProtobuf.Message, SwiftProtobu
     if lhs.result != rhs.result {return false}
     if lhs.refResult != rhs.refResult {return false}
     if lhs.detail != rhs.detail {return false}
+    if lhs.order != rhs.order {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

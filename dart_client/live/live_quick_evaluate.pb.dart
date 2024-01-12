@@ -1941,6 +1941,7 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     $core.bool? result,
     $core.String? refResult,
     $core.Iterable<QuickEvaluationDetail>? detail,
+    $core.int? order,
   }) {
     final $result = create();
     if (key != null) {
@@ -1961,6 +1962,9 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     if (detail != null) {
       $result.detail.addAll(detail);
     }
+    if (order != null) {
+      $result.order = order;
+    }
     return $result;
   }
   QuickEvaluationDetailKey._() : super();
@@ -1974,6 +1978,7 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'result')
     ..aOS(5, _omitFieldNames ? '' : 'refResult')
     ..pc<QuickEvaluationDetail>(6, _omitFieldNames ? '' : 'detail', $pb.PbFieldType.PM, subBuilder: QuickEvaluationDetail.create)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -2045,6 +2050,15 @@ class QuickEvaluationDetailKey extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<QuickEvaluationDetail> get detail => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.int get order => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set order($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasOrder() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOrder() => clearField(7);
 }
 
 class GetQuickEvaluationDetailResponse extends $pb.GeneratedMessage {
