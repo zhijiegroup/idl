@@ -70,6 +70,7 @@ export interface CreateSystemTaskResponse {
 export interface ListSystemTaskRequest {
   base_request?: base.BaseRequest;
   name?: string;
+  business?: string;
   pagination?: base.PaginationRequest;
 }
 

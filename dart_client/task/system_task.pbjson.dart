@@ -174,6 +174,7 @@ const ListSystemTaskRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'business', '3': 3, '4': 1, '5': 9, '10': 'business'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -181,8 +182,9 @@ const ListSystemTaskRequest$json = {
 /// Descriptor for `ListSystemTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listSystemTaskRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0U3lzdGVtVGFza1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
-    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSEgoEbmFtZRgCIAEoCVIEbmFtZRI3CgpwYWdpbmF0aW9u'
-    'GGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSEgoEbmFtZRgCIAEoCVIEbmFtZRIaCghidXNpbmVzcxgD'
+    'IAEoCVIIYnVzaW5lc3MSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcX'
+    'Vlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listSystemTaskResponseDescriptor instead')
 const ListSystemTaskResponse$json = {

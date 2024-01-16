@@ -35,6 +35,18 @@ public interface ListSystemTaskRequestOrBuilder extends
       getNameBytes();
 
   /**
+   * <code>string business = 3;</code>
+   * @return The business.
+   */
+  java.lang.String getBusiness();
+  /**
+   * <code>string business = 3;</code>
+   * @return The bytes for business.
+   */
+  com.google.protobuf.ByteString
+      getBusinessBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

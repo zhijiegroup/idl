@@ -249,6 +249,8 @@ struct GloryApi_ListSystemTaskRequest {
 
   var name: String = String()
 
+  var business: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -921,6 +923,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "name"),
+    3: .same(proto: "business"),
     100: .same(proto: "pagination"),
   ]
 
@@ -932,6 +935,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.business) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -949,6 +953,9 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
     }
+    if !self.business.isEmpty {
+      try visitor.visitSingularStringField(value: self.business, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -958,6 +965,7 @@ extension GloryApi_ListSystemTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_ListSystemTaskRequest, rhs: GloryApi_ListSystemTaskRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.name != rhs.name {return false}
+    if lhs.business != rhs.business {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

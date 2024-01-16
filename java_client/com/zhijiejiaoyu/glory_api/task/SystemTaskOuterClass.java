@@ -139,28 +139,29 @@ public final class SystemTaskOuterClass {
       "se.BaseRequest\022*\n\013system_task\030\002 \001(\0132\025.gl" +
       "ory_api.SystemTask\"A\n\030CreateSystemTaskRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"{\n\025ListSystemTaskRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030" +
-      "\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\232\001\n\026ListSystemTaskResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\014" +
-      "system_tasks\030\002 \003(\0132\025.glory_api.SystemTas" +
-      "k\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"W\n\024GetSystemTaskRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016syst" +
-      "em_task_id\030\002 \001(\003\"j\n\025GetSystemTaskRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022*\n\013system_task\030\002 \001(\0132\025.glory_api.System" +
-      "Task\"n\n\027UpdateSystemTaskRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022*\n\013syst" +
-      "em_task\030\002 \001(\0132\025.glory_api.SystemTask\"A\n\030" +
-      "UpdateSystemTaskResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"Z\n\027DeleteSystemT" +
+      "ponse\"\215\001\n\025ListSystemTaskRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name" +
+      "\030\002 \001(\t\022\020\n\010business\030\003 \001(\t\022+\n\npagination\030d" +
+      " \001(\0132\027.base.PaginationRequest\"\232\001\n\026ListSy" +
+      "stemTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022+\n\014system_tasks\030\002 \003(\0132\025." +
+      "glory_api.SystemTask\022,\n\npagination\030d \001(\013" +
+      "2\030.base.PaginationResponse\"W\n\024GetSystemT" +
       "askRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\026\n\016system_task_id\030\002 \001(\003\"A\n\030D" +
-      "eleteSystemTaskResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
-      "yu.glory_api.taskP\001b\006proto3"
+      "BaseRequest\022\026\n\016system_task_id\030\002 \001(\003\"j\n\025G" +
+      "etSystemTaskResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022*\n\013system_task\030\002 \001(\013" +
+      "2\025.glory_api.SystemTask\"n\n\027UpdateSystemT" +
+      "askRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022*\n\013system_task\030\002 \001(\0132\025.glory" +
+      "_api.SystemTask\"A\n\030UpdateSystemTaskRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"Z\n\027DeleteSystemTaskRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016system" +
+      "_task_id\030\002 \001(\003\"A\n\030DeleteSystemTaskRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "eB#\n\037com.zhijiejiaoyu.glory_api.taskP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -222,7 +223,7 @@ public final class SystemTaskOuterClass {
     internal_static_glory_api_ListSystemTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListSystemTaskRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Name", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Name", "Business", "Pagination", });
     internal_static_glory_api_ListSystemTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_ListSystemTaskResponse_fieldAccessorTable = new

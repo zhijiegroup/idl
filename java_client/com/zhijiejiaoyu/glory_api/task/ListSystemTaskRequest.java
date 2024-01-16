@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListSystemTaskRequest() {
     name = "";
+    business = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            business = s;
             break;
           }
           case 802: {
@@ -177,6 +184,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BUSINESS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object business ;
+  /**
+   * <code>string business = 3;</code>
+   * @return The business.
+   */
+  @java.lang.Override
+  public java.lang.String getBusiness() {
+    java.lang.Object ref = business ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      business = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string business = 3;</code>
+   * @return The bytes for business.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBusinessBytes() {
+    java.lang.Object ref = business ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      business = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -223,6 +268,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
     }
+    if (!getBusinessBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, business );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -241,6 +289,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
+    }
+    if (!getBusinessBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, business );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -268,6 +319,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getBusiness()
+        .equals(other.getBusiness())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -290,6 +343,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BUSINESS_FIELD_NUMBER;
+    hash = (53 * hash) + getBusiness().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -435,6 +490,8 @@ private static final long serialVersionUID = 0L;
       }
       name = "";
 
+      business = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -473,6 +530,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.name = name ;
+      result.business = business ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -531,6 +589,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getName().isEmpty()) {
         name = other.name ;
+        onChanged();
+      }
+      if (!other.getBusiness().isEmpty()) {
+        business = other.business ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -756,6 +818,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object business = "";
+    /**
+     * <code>string business = 3;</code>
+     * @return The business.
+     */
+    public java.lang.String getBusiness() {
+      java.lang.Object ref = business ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        business = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string business = 3;</code>
+     * @return The bytes for business.
+     */
+    public com.google.protobuf.ByteString
+        getBusinessBytes() {
+      java.lang.Object ref = business ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        business = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string business = 3;</code>
+     * @param value The business to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBusiness(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      business = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string business = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBusiness() {
+      
+      business = getDefaultInstance().getBusiness();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string business = 3;</code>
+     * @param value The bytes for business to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBusinessBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      business = value;
       onChanged();
       return this;
     }

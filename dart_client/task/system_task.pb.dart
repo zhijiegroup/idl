@@ -791,6 +791,7 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   factory ListSystemTaskRequest({
     $1.BaseRequest? baseRequest,
     $core.String? name,
+    $core.String? business,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -799,6 +800,9 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (business != null) {
+      $result.business = business;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -812,6 +816,7 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'business')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -857,16 +862,25 @@ class ListSystemTaskRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $core.String get business => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set business($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBusiness() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBusiness() => clearField(3);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(2);
+  $1.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(2);
+  $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(2);
+  $1.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListSystemTaskResponse extends $pb.GeneratedMessage {
