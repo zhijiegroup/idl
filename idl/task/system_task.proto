@@ -15,6 +15,7 @@ message TaskParameter {
   string task_parameter_default = 5;
   repeated TaskParameter task_parameter_enums = 6;
   repeated TaskParameter task_parameter_children = 7;
+  bool task_parameter_visible_in_system = 8;
 }
 
 message TaskConfig {
@@ -33,6 +34,7 @@ message SystemTaskParameter {
   string task_parameter_type = 5;
   string task_parameter_value = 6;
   repeated SystemTaskParameter children = 7;
+  bool task_parameter_visible_in_system = 8;
 }
 
 message SystemTask {
