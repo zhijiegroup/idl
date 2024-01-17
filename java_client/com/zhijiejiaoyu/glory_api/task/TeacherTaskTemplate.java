@@ -152,6 +152,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            com.zhijiejiaoyu.glory_api.task.SystemTask.Builder subBuilder = null;
+            if (systemTask != null) {
+              subBuilder = systemTask .toBuilder();
+            }
+            systemTask = input.readMessage(com.zhijiejiaoyu.glory_api.task.SystemTask.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(systemTask );
+              systemTask = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -582,6 +595,32 @@ private static final long serialVersionUID = 0L;
     return getUpdater();
   }
 
+  public static final int SYSTEM_TASK_FIELD_NUMBER = 14;
+  private com.zhijiejiaoyu.glory_api.task.SystemTask systemTask ;
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * @return Whether the systemTask field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystemTask() {
+    return systemTask != null;
+  }
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * @return The systemTask.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.SystemTask getSystemTask() {
+    return systemTask == null ? com.zhijiejiaoyu.glory_api.task.SystemTask.getDefaultInstance() : systemTask ;
+  }
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder() {
+    return getSystemTask();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -634,6 +673,9 @@ private static final long serialVersionUID = 0L;
     }
     if (updater != null) {
       output.writeMessage(13, getUpdater());
+    }
+    if (systemTask != null) {
+      output.writeMessage(14, getSystemTask());
     }
     unknownFields.writeTo(output);
   }
@@ -694,6 +736,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getUpdater());
     }
+    if (systemTask != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getSystemTask());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -741,6 +787,11 @@ private static final long serialVersionUID = 0L;
       if (!getUpdater()
           .equals(other.getUpdater())) return false;
     }
+    if (hasSystemTask() != other.hasSystemTask()) return false;
+    if (hasSystemTask()) {
+      if (!getSystemTask()
+          .equals(other.getSystemTask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -787,6 +838,10 @@ private static final long serialVersionUID = 0L;
     if (hasUpdater()) {
       hash = (37 * hash) + UPDATER_FIELD_NUMBER;
       hash = (53 * hash) + getUpdater().hashCode();
+    }
+    if (hasSystemTask()) {
+      hash = (37 * hash) + SYSTEM_TASK_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemTask().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -960,6 +1015,12 @@ private static final long serialVersionUID = 0L;
         updater = null;
         updaterBuilder = null;
       }
+      if (systemTaskBuilder == null) {
+        systemTask = null;
+      } else {
+        systemTask = null;
+        systemTaskBuilder = null;
+      }
       return this;
     }
 
@@ -1019,6 +1080,11 @@ private static final long serialVersionUID = 0L;
         result.updater = updater ;
       } else {
         result.updater = updaterBuilder .build();
+      }
+      if (systemTaskBuilder == null) {
+        result.systemTask = systemTask ;
+      } else {
+        result.systemTask = systemTaskBuilder .build();
       }
       onBuilt();
       return result;
@@ -1142,6 +1208,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdater()) {
         mergeUpdater(other.getUpdater());
+      }
+      if (other.hasSystemTask()) {
+        mergeSystemTask(other.getSystemTask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2320,6 +2389,125 @@ private static final long serialVersionUID = 0L;
         updater = null;
       }
       return updaterBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.task.SystemTask systemTask ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.SystemTask, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder> systemTaskBuilder ;
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * @return Whether the systemTask field is set.
+     */
+    public boolean hasSystemTask() {
+      return systemTaskBuilder != null || systemTask != null;
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * @return The systemTask.
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTask getSystemTask() {
+      if (systemTaskBuilder == null) {
+        return systemTask == null ? com.zhijiejiaoyu.glory_api.task.SystemTask.getDefaultInstance() : systemTask ;
+      } else {
+        return systemTaskBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public Builder setSystemTask(com.zhijiejiaoyu.glory_api.task.SystemTask value) {
+      if (systemTaskBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        systemTask = value;
+        onChanged();
+      } else {
+        systemTaskBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public Builder setSystemTask(
+        com.zhijiejiaoyu.glory_api.task.SystemTask.Builder builderForValue) {
+      if (systemTaskBuilder == null) {
+        systemTask = builderForValue.build();
+        onChanged();
+      } else {
+        systemTaskBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public Builder mergeSystemTask(com.zhijiejiaoyu.glory_api.task.SystemTask value) {
+      if (systemTaskBuilder == null) {
+        if (systemTask != null) {
+          systemTask =
+            com.zhijiejiaoyu.glory_api.task.SystemTask.newBuilder(systemTask ).mergeFrom(value).buildPartial();
+        } else {
+          systemTask = value;
+        }
+        onChanged();
+      } else {
+        systemTaskBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public Builder clearSystemTask() {
+      if (systemTaskBuilder == null) {
+        systemTask = null;
+        onChanged();
+      } else {
+        systemTask = null;
+        systemTaskBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTask.Builder getSystemTaskBuilder() {
+      
+      onChanged();
+      return getSystemTaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder() {
+      if (systemTaskBuilder != null) {
+        return systemTaskBuilder .getMessageOrBuilder();
+      } else {
+        return systemTask == null ?
+            com.zhijiejiaoyu.glory_api.task.SystemTask.getDefaultInstance() : systemTask ;
+      }
+    }
+    /**
+     * <code>.glory_api.SystemTask system_task = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.SystemTask, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder> 
+        getSystemTaskFieldBuilder() {
+      if (systemTaskBuilder == null) {
+        systemTaskBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.SystemTask, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder>(
+                getSystemTask(),
+                getParentForChildren(),
+                isClean());
+        systemTask = null;
+      }
+      return systemTaskBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

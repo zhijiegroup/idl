@@ -11051,6 +11051,37 @@ public final class glory_apiGrpc {
     return getListTeacherTaskTemplateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest,
+      com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> getGetTeacherTaskTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTeacherTaskTemplate",
+      requestType = com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest,
+      com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> getGetTeacherTaskTemplateMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest, com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> getGetTeacherTaskTemplateMethod;
+    if ((getGetTeacherTaskTemplateMethod = glory_apiGrpc.getGetTeacherTaskTemplateMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetTeacherTaskTemplateMethod = glory_apiGrpc.getGetTeacherTaskTemplateMethod) == null) {
+          glory_apiGrpc.getGetTeacherTaskTemplateMethod = getGetTeacherTaskTemplateMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest, com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTeacherTaskTemplate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetTeacherTaskTemplate"))
+              .build();
+        }
+      }
+    }
+    return getGetTeacherTaskTemplateMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest,
       com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse> getDeleteTeacherTaskTemplateMethod;
 
@@ -14443,6 +14474,13 @@ public final class glory_apiGrpc {
 
     /**
      */
+    default void getTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTeacherTaskTemplateMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void deleteTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTeacherTaskTemplateMethod(), responseObserver);
@@ -17795,6 +17833,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public void getTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTeacherTaskTemplateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void deleteTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -20792,6 +20838,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.task.ListTeacherTaskTemplateResponse listTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.ListTeacherTaskTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTeacherTaskTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse getTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTeacherTaskTemplateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -24137,6 +24190,14 @@ public final class glory_apiGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse> getTeacherTaskTemplate(
+        com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTeacherTaskTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate(
         com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -24630,22 +24691,23 @@ public final class glory_apiGrpc {
   private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 353;
   private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 354;
   private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 355;
-  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 356;
-  private static final int METHODID_CREATE_TEACHER_TASK = 357;
-  private static final int METHODID_UPDATE_TEACHER_TASK = 358;
-  private static final int METHODID_LIST_TEACHER_TASK = 359;
-  private static final int METHODID_DELETE_TEACHER_TASK = 360;
-  private static final int METHODID_LIST_NOTIFICATION = 361;
-  private static final int METHODID_COUNT_NOTIFICATION = 362;
-  private static final int METHODID_READ_NOTIFICATION = 363;
-  private static final int METHODID_TEST_NOTIFICATION = 364;
-  private static final int METHODID_DELETE_NOTIFICATION = 365;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 366;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 367;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 368;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 369;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 370;
-  private static final int METHODID_CLOSE_CASTER = 371;
+  private static final int METHODID_GET_TEACHER_TASK_TEMPLATE = 356;
+  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 357;
+  private static final int METHODID_CREATE_TEACHER_TASK = 358;
+  private static final int METHODID_UPDATE_TEACHER_TASK = 359;
+  private static final int METHODID_LIST_TEACHER_TASK = 360;
+  private static final int METHODID_DELETE_TEACHER_TASK = 361;
+  private static final int METHODID_LIST_NOTIFICATION = 362;
+  private static final int METHODID_COUNT_NOTIFICATION = 363;
+  private static final int METHODID_READ_NOTIFICATION = 364;
+  private static final int METHODID_TEST_NOTIFICATION = 365;
+  private static final int METHODID_DELETE_NOTIFICATION = 366;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 367;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 368;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 369;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 370;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 371;
+  private static final int METHODID_CLOSE_CASTER = 372;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -26087,6 +26149,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_TEACHER_TASK_TEMPLATE:
           serviceImpl.listTeacherTaskTemplate((com.zhijiejiaoyu.glory_api.task.ListTeacherTaskTemplateRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskTemplateResponse>) responseObserver);
+          break;
+        case METHODID_GET_TEACHER_TASK_TEMPLATE:
+          serviceImpl.getTeacherTaskTemplate((com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse>) responseObserver);
           break;
         case METHODID_DELETE_TEACHER_TASK_TEMPLATE:
           serviceImpl.deleteTeacherTaskTemplate((com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest) request,
@@ -28663,6 +28729,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.ListTeacherTaskTemplateResponse>(
                 service, METHODID_LIST_TEACHER_TASK_TEMPLATE)))
         .addMethod(
+          getGetTeacherTaskTemplateMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateRequest,
+              com.zhijiejiaoyu.glory_api.task.GetTeacherTaskTemplateResponse>(
+                service, METHODID_GET_TEACHER_TASK_TEMPLATE)))
+        .addMethod(
           getDeleteTeacherTaskTemplateMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -29178,6 +29251,7 @@ public final class glory_apiGrpc {
               .addMethod(getCreateTeacherTaskTemplateMethod())
               .addMethod(getUpdateTeacherTaskTemplateMethod())
               .addMethod(getListTeacherTaskTemplateMethod())
+              .addMethod(getGetTeacherTaskTemplateMethod())
               .addMethod(getDeleteTeacherTaskTemplateMethod())
               .addMethod(getCreateTeacherTaskMethod())
               .addMethod(getUpdateTeacherTaskMethod())

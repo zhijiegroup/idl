@@ -2858,6 +2858,14 @@ export class glory_api {
     );
   }
 
+  GetTeacherTaskTemplate(request) {
+    const uri = `${this.uriPrefix}/api/task/get_teacher_task_template`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteTeacherTaskTemplate(request) {
     const uri = `${this.uriPrefix}/api/task/delete_teacher_task_template`;
     const body = JSONbigint.stringify(request);

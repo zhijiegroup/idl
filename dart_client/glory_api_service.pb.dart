@@ -1143,6 +1143,9 @@ class glory_apiApi {
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ClientContext? ctx, $52.ListTeacherTaskTemplateRequest request) =>
     _client.invoke<$52.ListTeacherTaskTemplateResponse>(ctx, 'glory_api', 'ListTeacherTaskTemplate', request, $52.ListTeacherTaskTemplateResponse())
   ;
+  $async.Future<$52.GetTeacherTaskTemplateResponse> getTeacherTaskTemplate($pb.ClientContext? ctx, $52.GetTeacherTaskTemplateRequest request) =>
+    _client.invoke<$52.GetTeacherTaskTemplateResponse>(ctx, 'glory_api', 'GetTeacherTaskTemplate', request, $52.GetTeacherTaskTemplateResponse())
+  ;
   $async.Future<$52.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ClientContext? ctx, $52.DeleteTeacherTaskTemplateRequest request) =>
     _client.invoke<$52.DeleteTeacherTaskTemplateResponse>(ctx, 'glory_api', 'DeleteTeacherTaskTemplate', request, $52.DeleteTeacherTaskTemplateResponse())
   ;

@@ -5,7 +5,8 @@
 import * as api from "../api";
 import * as base from "../base";
 import * as user from "../user/user";
-export { api, base, user };
+import * as system_task from "./system_task";
+export { api, base, user, system_task };
 
 export interface TeacherTaskTemplateParameter {
   task_parameter_id?: string;
@@ -32,6 +33,7 @@ export interface TeacherTaskTemplate {
   updated_at?: string;
   creator?: user.User;
   updater?: user.User;
+  system_task?: system_task.SystemTask;
 }
 
 export interface CreateTeacherTaskTemplateRequest {
@@ -65,6 +67,16 @@ export interface ListTeacherTaskTemplateResponse {
   base_resp?: base.BaseResponse;
   teacher_task_templates?: Array<TeacherTaskTemplate>;
   pagination?: base.PaginationResponse;
+}
+
+export interface GetTeacherTaskTemplateRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_template_id?: string;
+}
+
+export interface GetTeacherTaskTemplateResponse {
+  base_resp?: base.BaseResponse;
+  teacher_task_template?: TeacherTaskTemplate;
 }
 
 export interface DeleteTeacherTaskTemplateRequest {

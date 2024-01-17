@@ -432,6 +432,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ServerContext ctx, $52.CreateTeacherTaskTemplateRequest request);
   $async.Future<$52.UpdateTeacherTaskTemplateResponse> updateTeacherTaskTemplate($pb.ServerContext ctx, $52.UpdateTeacherTaskTemplateRequest request);
   $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ServerContext ctx, $52.ListTeacherTaskTemplateRequest request);
+  $async.Future<$52.GetTeacherTaskTemplateResponse> getTeacherTaskTemplate($pb.ServerContext ctx, $52.GetTeacherTaskTemplateRequest request);
   $async.Future<$52.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ServerContext ctx, $52.DeleteTeacherTaskTemplateRequest request);
   $async.Future<$53.CreateTeacherTaskResponse> createTeacherTask($pb.ServerContext ctx, $53.CreateTeacherTaskRequest request);
   $async.Future<$53.UpdateTeacherTaskResponse> updateTeacherTask($pb.ServerContext ctx, $53.UpdateTeacherTaskRequest request);
@@ -807,6 +808,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeacherTaskTemplate': return $52.CreateTeacherTaskTemplateRequest();
       case 'UpdateTeacherTaskTemplate': return $52.UpdateTeacherTaskTemplateRequest();
       case 'ListTeacherTaskTemplate': return $52.ListTeacherTaskTemplateRequest();
+      case 'GetTeacherTaskTemplate': return $52.GetTeacherTaskTemplateRequest();
       case 'DeleteTeacherTaskTemplate': return $52.DeleteTeacherTaskTemplateRequest();
       case 'CreateTeacherTask': return $53.CreateTeacherTaskRequest();
       case 'UpdateTeacherTask': return $53.UpdateTeacherTaskRequest();
@@ -1185,6 +1187,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateTeacherTaskTemplate': return this.createTeacherTaskTemplate(ctx, request as $52.CreateTeacherTaskTemplateRequest);
       case 'UpdateTeacherTaskTemplate': return this.updateTeacherTaskTemplate(ctx, request as $52.UpdateTeacherTaskTemplateRequest);
       case 'ListTeacherTaskTemplate': return this.listTeacherTaskTemplate(ctx, request as $52.ListTeacherTaskTemplateRequest);
+      case 'GetTeacherTaskTemplate': return this.getTeacherTaskTemplate(ctx, request as $52.GetTeacherTaskTemplateRequest);
       case 'DeleteTeacherTaskTemplate': return this.deleteTeacherTaskTemplate(ctx, request as $52.DeleteTeacherTaskTemplateRequest);
       case 'CreateTeacherTask': return this.createTeacherTask(ctx, request as $53.CreateTeacherTaskRequest);
       case 'UpdateTeacherTask': return this.updateTeacherTask(ctx, request as $53.UpdateTeacherTaskRequest);

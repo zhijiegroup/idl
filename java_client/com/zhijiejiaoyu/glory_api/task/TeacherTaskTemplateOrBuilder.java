@@ -179,4 +179,19 @@ public interface TeacherTaskTemplateOrBuilder extends
    * <code>.glory_api.User updater = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder();
+
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * @return Whether the systemTask field is set.
+   */
+  boolean hasSystemTask();
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * @return The systemTask.
+   */
+  com.zhijiejiaoyu.glory_api.task.SystemTask getSystemTask();
+  /**
+   * <code>.glory_api.SystemTask system_task = 14;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder();
 }
