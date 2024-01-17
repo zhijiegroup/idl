@@ -31,7 +31,7 @@ import 'course/teaching_plan.pb.dart' as $44;
 import 'course/user_course.pb.dart' as $43;
 import 'currency/virtual_currency.pb.dart' as $22;
 import 'example/example.pb.dart' as $0;
-import 'live/live_board.pb.dart' as $54;
+import 'live/live_board.pb.dart' as $55;
 import 'live/live_control.pb.dart' as $49;
 import 'live/live_evaluate.pb.dart' as $29;
 import 'live/live_plan.pb.dart' as $25;
@@ -41,7 +41,7 @@ import 'live/live_text.pb.dart' as $28;
 import 'live/live_token.pb.dart' as $26;
 import 'live/live_user.pb.dart' as $27;
 import 'mall/mall_index.pb.dart' as $7;
-import 'notification/notification.pb.dart' as $53;
+import 'notification/notification.pb.dart' as $54;
 import 'payment/payment.pb.dart' as $17;
 import 'role/role.pb.dart' as $3;
 import 'seller/attachment.pb.dart' as $15;
@@ -60,6 +60,7 @@ import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
 import 'task/system_task.pb.dart' as $51;
+import 'task/teacher_task.pb.dart' as $53;
 import 'task/teacher_task_template.pb.dart' as $52;
 import 'tenant/tenant.pb.dart' as $30;
 import 'tenant/tenant_config.pb.dart' as $33;
@@ -1145,38 +1146,50 @@ class glory_apiApi {
   $async.Future<$52.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ClientContext? ctx, $52.DeleteTeacherTaskTemplateRequest request) =>
     _client.invoke<$52.DeleteTeacherTaskTemplateResponse>(ctx, 'glory_api', 'DeleteTeacherTaskTemplate', request, $52.DeleteTeacherTaskTemplateResponse())
   ;
-  $async.Future<$53.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $53.ListNotificationRequest request) =>
-    _client.invoke<$53.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $53.ListNotificationResponse())
+  $async.Future<$53.CreateTeacherTaskResponse> createTeacherTask($pb.ClientContext? ctx, $53.CreateTeacherTaskRequest request) =>
+    _client.invoke<$53.CreateTeacherTaskResponse>(ctx, 'glory_api', 'CreateTeacherTask', request, $53.CreateTeacherTaskResponse())
   ;
-  $async.Future<$53.CountNotificationResponse> countNotification($pb.ClientContext? ctx, $53.CountNotificationRequest request) =>
-    _client.invoke<$53.CountNotificationResponse>(ctx, 'glory_api', 'CountNotification', request, $53.CountNotificationResponse())
+  $async.Future<$53.UpdateTeacherTaskResponse> updateTeacherTask($pb.ClientContext? ctx, $53.UpdateTeacherTaskRequest request) =>
+    _client.invoke<$53.UpdateTeacherTaskResponse>(ctx, 'glory_api', 'UpdateTeacherTask', request, $53.UpdateTeacherTaskResponse())
   ;
-  $async.Future<$53.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $53.ReadNotificationRequest request) =>
-    _client.invoke<$53.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $53.ReadNotificationResponse())
+  $async.Future<$53.ListTeacherTaskResponse> listTeacherTask($pb.ClientContext? ctx, $53.ListTeacherTaskRequest request) =>
+    _client.invoke<$53.ListTeacherTaskResponse>(ctx, 'glory_api', 'ListTeacherTask', request, $53.ListTeacherTaskResponse())
   ;
-  $async.Future<$53.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $53.TestNotificationRequest request) =>
-    _client.invoke<$53.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $53.TestNotificationResponse())
+  $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ClientContext? ctx, $53.DeleteTeacherTaskRequest request) =>
+    _client.invoke<$53.DeleteTeacherTaskResponse>(ctx, 'glory_api', 'DeleteTeacherTask', request, $53.DeleteTeacherTaskResponse())
   ;
-  $async.Future<$53.DeleteNotificationResponse> deleteNotification($pb.ClientContext? ctx, $53.DeleteNotificationRequest request) =>
-    _client.invoke<$53.DeleteNotificationResponse>(ctx, 'glory_api', 'DeleteNotification', request, $53.DeleteNotificationResponse())
+  $async.Future<$54.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $54.ListNotificationRequest request) =>
+    _client.invoke<$54.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $54.ListNotificationResponse())
   ;
-  $async.Future<$54.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ClientContext? ctx, $54.ListUserMajorAndClasRequest request) =>
-    _client.invoke<$54.ListUserMajorAndClasResponse>(ctx, 'glory_api', 'ListUserMajorAndClass', request, $54.ListUserMajorAndClasResponse())
+  $async.Future<$54.CountNotificationResponse> countNotification($pb.ClientContext? ctx, $54.CountNotificationRequest request) =>
+    _client.invoke<$54.CountNotificationResponse>(ctx, 'glory_api', 'CountNotification', request, $54.CountNotificationResponse())
   ;
-  $async.Future<$54.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $54.GetAggregationLiveUrlRequest request) =>
-    _client.invoke<$54.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $54.GetAggregationLiveUrlResponse())
+  $async.Future<$54.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $54.ReadNotificationRequest request) =>
+    _client.invoke<$54.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $54.ReadNotificationResponse())
   ;
-  $async.Future<$54.GetLiveBoardDataResponse> getLiveBoardData($pb.ClientContext? ctx, $54.GetLiveBoardDataRequest request) =>
-    _client.invoke<$54.GetLiveBoardDataResponse>(ctx, 'glory_api', 'GetLiveBoardData', request, $54.GetLiveBoardDataResponse())
+  $async.Future<$54.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $54.TestNotificationRequest request) =>
+    _client.invoke<$54.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $54.TestNotificationResponse())
   ;
-  $async.Future<$54.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ClientContext? ctx, $54.GetLiveBoardCommentsRequest request) =>
-    _client.invoke<$54.GetLiveBoardCommentsResponse>(ctx, 'glory_api', 'GetLiveBoardComments', request, $54.GetLiveBoardCommentsResponse())
+  $async.Future<$54.DeleteNotificationResponse> deleteNotification($pb.ClientContext? ctx, $54.DeleteNotificationRequest request) =>
+    _client.invoke<$54.DeleteNotificationResponse>(ctx, 'glory_api', 'DeleteNotification', request, $54.DeleteNotificationResponse())
   ;
-  $async.Future<$54.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $54.ListLivingUserRequest request) =>
-    _client.invoke<$54.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $54.ListLivingUserResponse())
+  $async.Future<$55.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ClientContext? ctx, $55.ListUserMajorAndClasRequest request) =>
+    _client.invoke<$55.ListUserMajorAndClasResponse>(ctx, 'glory_api', 'ListUserMajorAndClass', request, $55.ListUserMajorAndClasResponse())
   ;
-  $async.Future<$54.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $54.CloseCasterRequest request) =>
-    _client.invoke<$54.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $54.CloseCasterResponse())
+  $async.Future<$55.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $55.GetAggregationLiveUrlRequest request) =>
+    _client.invoke<$55.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $55.GetAggregationLiveUrlResponse())
+  ;
+  $async.Future<$55.GetLiveBoardDataResponse> getLiveBoardData($pb.ClientContext? ctx, $55.GetLiveBoardDataRequest request) =>
+    _client.invoke<$55.GetLiveBoardDataResponse>(ctx, 'glory_api', 'GetLiveBoardData', request, $55.GetLiveBoardDataResponse())
+  ;
+  $async.Future<$55.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ClientContext? ctx, $55.GetLiveBoardCommentsRequest request) =>
+    _client.invoke<$55.GetLiveBoardCommentsResponse>(ctx, 'glory_api', 'GetLiveBoardComments', request, $55.GetLiveBoardCommentsResponse())
+  ;
+  $async.Future<$55.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $55.ListLivingUserRequest request) =>
+    _client.invoke<$55.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $55.ListLivingUserResponse())
+  ;
+  $async.Future<$55.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $55.CloseCasterRequest request) =>
+    _client.invoke<$55.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $55.CloseCasterResponse())
   ;
 }
 

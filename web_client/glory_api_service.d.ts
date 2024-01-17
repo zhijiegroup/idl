@@ -57,6 +57,7 @@ import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
 import * as system_task from "./task/system_task";
 import * as teacher_task_template from "./task/teacher_task_template";
+import * as teacher_task from "./task/teacher_task";
 import * as notification from "./notification/notification";
 export {
   user,
@@ -114,6 +115,7 @@ export {
   role,
   system_task,
   teacher_task_template,
+  teacher_task,
   notification,
 };
 
@@ -1605,6 +1607,23 @@ CreateLivePlanProduct create live plan product */
   DeleteTeacherTaskTemplate(
     request: teacher_task_template.DeleteTeacherTaskTemplateRequest
   ): Promise<teacher_task_template.DeleteTeacherTaskTemplateResponse>;
+
+  /** 教师任务管理 */
+  CreateTeacherTask(
+    request: teacher_task.CreateTeacherTaskRequest
+  ): Promise<teacher_task.CreateTeacherTaskResponse>;
+
+  UpdateTeacherTask(
+    request: teacher_task.UpdateTeacherTaskRequest
+  ): Promise<teacher_task.UpdateTeacherTaskResponse>;
+
+  ListTeacherTask(
+    request: teacher_task.ListTeacherTaskRequest
+  ): Promise<teacher_task.ListTeacherTaskResponse>;
+
+  DeleteTeacherTask(
+    request: teacher_task.DeleteTeacherTaskRequest
+  ): Promise<teacher_task.DeleteTeacherTaskResponse>;
 
   /** 通知模块 */
   ListNotification(

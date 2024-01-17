@@ -96,4 +96,10 @@ public interface SystemTaskParameterOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getChildrenOrBuilder(
       int index);
+
+  /**
+   * <code>bool task_parameter_visible_in_system = 8;</code>
+   * @return The taskParameterVisibleInSystem.
+   */
+  boolean getTaskParameterVisibleInSystem();
 }

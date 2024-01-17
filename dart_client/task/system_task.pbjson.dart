@@ -24,6 +24,7 @@ const TaskParameter$json = {
     {'1': 'task_parameter_default', '3': 5, '4': 1, '5': 9, '10': 'taskParameterDefault'},
     {'1': 'task_parameter_enums', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'taskParameterEnums'},
     {'1': 'task_parameter_children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'taskParameterChildren'},
+    {'1': 'task_parameter_visible_in_system', '3': 8, '4': 1, '5': 8, '10': 'taskParameterVisibleInSystem'},
   ],
 };
 
@@ -36,7 +37,8 @@ final $typed_data.Uint8List taskParameterDescriptor = $convert.base64Decode(
     'cGFyYW1ldGVyX2RlZmF1bHQYBSABKAlSFHRhc2tQYXJhbWV0ZXJEZWZhdWx0EkoKFHRhc2tfcG'
     'FyYW1ldGVyX2VudW1zGAYgAygLMhguZ2xvcnlfYXBpLlRhc2tQYXJhbWV0ZXJSEnRhc2tQYXJh'
     'bWV0ZXJFbnVtcxJQChd0YXNrX3BhcmFtZXRlcl9jaGlsZHJlbhgHIAMoCzIYLmdsb3J5X2FwaS'
-    '5UYXNrUGFyYW1ldGVyUhV0YXNrUGFyYW1ldGVyQ2hpbGRyZW4=');
+    '5UYXNrUGFyYW1ldGVyUhV0YXNrUGFyYW1ldGVyQ2hpbGRyZW4SRgogdGFza19wYXJhbWV0ZXJf'
+    'dmlzaWJsZV9pbl9zeXN0ZW0YCCABKAhSHHRhc2tQYXJhbWV0ZXJWaXNpYmxlSW5TeXN0ZW0=');
 
 @$core.Deprecated('Use taskConfigDescriptor instead')
 const TaskConfig$json = {
@@ -68,6 +70,7 @@ const SystemTaskParameter$json = {
     {'1': 'task_parameter_type', '3': 5, '4': 1, '5': 9, '10': 'taskParameterType'},
     {'1': 'task_parameter_value', '3': 6, '4': 1, '5': 9, '10': 'taskParameterValue'},
     {'1': 'children', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'children'},
+    {'1': 'task_parameter_visible_in_system', '3': 8, '4': 1, '5': 8, '10': 'taskParameterVisibleInSystem'},
   ],
 };
 
@@ -79,7 +82,9 @@ final $typed_data.Uint8List systemTaskParameterDescriptor = $convert.base64Decod
     'tfcGFyYW1ldGVyX29wZXJhdG9yGAQgASgJUhV0YXNrUGFyYW1ldGVyT3BlcmF0b3ISLgoTdGFz'
     'a19wYXJhbWV0ZXJfdHlwZRgFIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSMAoUdGFza19wYXJhbW'
     'V0ZXJfdmFsdWUYBiABKAlSEnRhc2tQYXJhbWV0ZXJWYWx1ZRI6CghjaGlsZHJlbhgHIAMoCzIe'
-    'Lmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1ldGVyUghjaGlsZHJlbg==');
+    'Lmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1ldGVyUghjaGlsZHJlbhJGCiB0YXNrX3BhcmFtZX'
+    'Rlcl92aXNpYmxlX2luX3N5c3RlbRgIIAEoCFIcdGFza1BhcmFtZXRlclZpc2libGVJblN5c3Rl'
+    'bQ==');
 
 @$core.Deprecated('Use systemTaskDescriptor instead')
 const SystemTask$json = {

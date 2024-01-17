@@ -39,6 +39,8 @@ struct GloryApi_TaskParameter {
 
   var taskParameterChildren: [GloryApi_TaskParameter] = []
 
+  var taskParameterVisibleInSystem: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -82,6 +84,8 @@ struct GloryApi_SystemTaskParameter {
   var taskParameterValue: String = String()
 
   var children: [GloryApi_SystemTaskParameter] = []
+
+  var taskParameterVisibleInSystem: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -484,6 +488,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     5: .standard(proto: "task_parameter_default"),
     6: .standard(proto: "task_parameter_enums"),
     7: .standard(proto: "task_parameter_children"),
+    8: .standard(proto: "task_parameter_visible_in_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -499,6 +504,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterDefault) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameterEnums) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameterChildren) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.taskParameterVisibleInSystem) }()
       default: break
       }
     }
@@ -526,6 +532,9 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.taskParameterChildren.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.taskParameterChildren, fieldNumber: 7)
     }
+    if self.taskParameterVisibleInSystem != false {
+      try visitor.visitSingularBoolField(value: self.taskParameterVisibleInSystem, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -537,6 +546,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.taskParameterDefault != rhs.taskParameterDefault {return false}
     if lhs.taskParameterEnums != rhs.taskParameterEnums {return false}
     if lhs.taskParameterChildren != rhs.taskParameterChildren {return false}
+    if lhs.taskParameterVisibleInSystem != rhs.taskParameterVisibleInSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -608,6 +618,7 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
     5: .standard(proto: "task_parameter_type"),
     6: .standard(proto: "task_parameter_value"),
     7: .same(proto: "children"),
+    8: .standard(proto: "task_parameter_visible_in_system"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -623,6 +634,7 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.taskParameterVisibleInSystem) }()
       default: break
       }
     }
@@ -650,6 +662,9 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.children.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 7)
     }
+    if self.taskParameterVisibleInSystem != false {
+      try visitor.visitSingularBoolField(value: self.taskParameterVisibleInSystem, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -661,6 +676,7 @@ extension GloryApi_SystemTaskParameter: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.taskParameterType != rhs.taskParameterType {return false}
     if lhs.taskParameterValue != rhs.taskParameterValue {return false}
     if lhs.children != rhs.children {return false}
+    if lhs.taskParameterVisibleInSystem != rhs.taskParameterVisibleInSystem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

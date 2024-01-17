@@ -104,6 +104,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TaskParameter.parser(), extensionRegistry));
             break;
           }
+          case 64: {
+
+            taskParameterVisibleInSystem = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -412,6 +417,17 @@ private static final long serialVersionUID = 0L;
     return taskParameterChildren .get(index);
   }
 
+  public static final int TASK_PARAMETER_VISIBLE_IN_SYSTEM_FIELD_NUMBER = 8;
+  private boolean taskParameterVisibleInSystem ;
+  /**
+   * <code>bool task_parameter_visible_in_system = 8;</code>
+   * @return The taskParameterVisibleInSystem.
+   */
+  @java.lang.Override
+  public boolean getTaskParameterVisibleInSystem() {
+    return taskParameterVisibleInSystem ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -447,6 +463,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < taskParameterChildren .size(); i++) {
       output.writeMessage(7, taskParameterChildren .get(i));
     }
+    if (taskParameterVisibleInSystem != false) {
+      output.writeBool(8, taskParameterVisibleInSystem );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -479,6 +498,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, taskParameterChildren .get(i));
     }
+    if (taskParameterVisibleInSystem != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, taskParameterVisibleInSystem );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -508,6 +531,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskParameterEnumsList())) return false;
     if (!getTaskParameterChildrenList()
         .equals(other.getTaskParameterChildrenList())) return false;
+    if (getTaskParameterVisibleInSystem()
+        != other.getTaskParameterVisibleInSystem()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -537,6 +562,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TASK_PARAMETER_CHILDREN_FIELD_NUMBER;
       hash = (53 * hash) + getTaskParameterChildrenList().hashCode();
     }
+    hash = (37 * hash) + TASK_PARAMETER_VISIBLE_IN_SYSTEM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTaskParameterVisibleInSystem());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -694,6 +722,8 @@ private static final long serialVersionUID = 0L;
       } else {
         taskParameterChildrenBuilder .clear();
       }
+      taskParameterVisibleInSystem = false;
+
       return this;
     }
 
@@ -744,6 +774,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.taskParameterChildren = taskParameterChildrenBuilder .build();
       }
+      result.taskParameterVisibleInSystem = taskParameterVisibleInSystem ;
       onBuilt();
       return result;
     }
@@ -863,6 +894,9 @@ private static final long serialVersionUID = 0L;
             taskParameterChildrenBuilder .addAllMessages(other.taskParameterChildren );
           }
         }
+      }
+      if (other.getTaskParameterVisibleInSystem() != false) {
+        setTaskParameterVisibleInSystem(other.getTaskParameterVisibleInSystem());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1752,6 +1786,37 @@ private static final long serialVersionUID = 0L;
         taskParameterChildren = null;
       }
       return taskParameterChildrenBuilder ;
+    }
+
+    private boolean taskParameterVisibleInSystem ;
+    /**
+     * <code>bool task_parameter_visible_in_system = 8;</code>
+     * @return The taskParameterVisibleInSystem.
+     */
+    @java.lang.Override
+    public boolean getTaskParameterVisibleInSystem() {
+      return taskParameterVisibleInSystem ;
+    }
+    /**
+     * <code>bool task_parameter_visible_in_system = 8;</code>
+     * @param value The taskParameterVisibleInSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterVisibleInSystem(boolean value) {
+      
+      taskParameterVisibleInSystem = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool task_parameter_visible_in_system = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterVisibleInSystem() {
+      
+      taskParameterVisibleInSystem = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

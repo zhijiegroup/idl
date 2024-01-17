@@ -26,6 +26,7 @@ class TaskParameter extends $pb.GeneratedMessage {
     $core.String? taskParameterDefault,
     $core.Iterable<TaskParameter>? taskParameterEnums,
     $core.Iterable<TaskParameter>? taskParameterChildren,
+    $core.bool? taskParameterVisibleInSystem,
   }) {
     final $result = create();
     if (taskParameterKey != null) {
@@ -49,6 +50,9 @@ class TaskParameter extends $pb.GeneratedMessage {
     if (taskParameterChildren != null) {
       $result.taskParameterChildren.addAll(taskParameterChildren);
     }
+    if (taskParameterVisibleInSystem != null) {
+      $result.taskParameterVisibleInSystem = taskParameterVisibleInSystem;
+    }
     return $result;
   }
   TaskParameter._() : super();
@@ -63,6 +67,7 @@ class TaskParameter extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'taskParameterDefault')
     ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'taskParameterEnums', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..pc<TaskParameter>(7, _omitFieldNames ? '' : 'taskParameterChildren', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..aOB(8, _omitFieldNames ? '' : 'taskParameterVisibleInSystem')
     ..hasRequiredFields = false
   ;
 
@@ -137,6 +142,15 @@ class TaskParameter extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<TaskParameter> get taskParameterChildren => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.bool get taskParameterVisibleInSystem => $_getBF(7);
+  @$pb.TagNumber(8)
+  set taskParameterVisibleInSystem($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTaskParameterVisibleInSystem() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaskParameterVisibleInSystem() => clearField(8);
 }
 
 class TaskConfig extends $pb.GeneratedMessage {
@@ -248,6 +262,7 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     $core.String? taskParameterType,
     $core.String? taskParameterValue,
     $core.Iterable<SystemTaskParameter>? children,
+    $core.bool? taskParameterVisibleInSystem,
   }) {
     final $result = create();
     if (taskParameterId != null) {
@@ -271,6 +286,9 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     if (children != null) {
       $result.children.addAll(children);
     }
+    if (taskParameterVisibleInSystem != null) {
+      $result.taskParameterVisibleInSystem = taskParameterVisibleInSystem;
+    }
     return $result;
   }
   SystemTaskParameter._() : super();
@@ -285,6 +303,7 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'taskParameterType')
     ..aOS(6, _omitFieldNames ? '' : 'taskParameterValue')
     ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
+    ..aOB(8, _omitFieldNames ? '' : 'taskParameterVisibleInSystem')
     ..hasRequiredFields = false
   ;
 
@@ -365,6 +384,15 @@ class SystemTaskParameter extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<SystemTaskParameter> get children => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.bool get taskParameterVisibleInSystem => $_getBF(7);
+  @$pb.TagNumber(8)
+  set taskParameterVisibleInSystem($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTaskParameterVisibleInSystem() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaskParameterVisibleInSystem() => clearField(8);
 }
 
 class SystemTask extends $pb.GeneratedMessage {

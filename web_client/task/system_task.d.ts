@@ -15,6 +15,7 @@ export interface TaskParameter {
   task_parameter_default?: string;
   task_parameter_enums?: Array<TaskParameter>;
   task_parameter_children?: Array<TaskParameter>;
+  task_parameter_visible_in_system?: boolean;
 }
 
 export interface TaskConfig {
@@ -33,6 +34,7 @@ export interface SystemTaskParameter {
   task_parameter_type?: string;
   task_parameter_value?: string;
   children?: Array<SystemTaskParameter>;
+  task_parameter_visible_in_system?: boolean;
 }
 
 export interface SystemTask {

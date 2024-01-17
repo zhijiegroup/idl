@@ -59,6 +59,7 @@ import * as live_traffic from "./traffic/live_traffic";
 import * as role from "./role/role";
 import * as system_task from "./task/system_task";
 import * as teacher_task_template from "./task/teacher_task_template";
+import * as teacher_task from "./task/teacher_task";
 import * as notification from "./notification/notification";
 export {
   user,
@@ -116,6 +117,7 @@ export {
   role,
   system_task,
   teacher_task_template,
+  teacher_task,
   notification,
 };
 
@@ -2858,6 +2860,38 @@ export class glory_api {
 
   DeleteTeacherTaskTemplate(request) {
     const uri = `${this.uriPrefix}/api/task/delete_teacher_task_template`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateTeacherTask(request) {
+    const uri = `${this.uriPrefix}/api/task/create_teacher_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UpdateTeacherTask(request) {
+    const uri = `${this.uriPrefix}/api/task/update_teacher_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListTeacherTask(request) {
+    const uri = `${this.uriPrefix}/api/task/list_teacher_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DeleteTeacherTask(request) {
+    const uri = `${this.uriPrefix}/api/task/delete_teacher_task`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

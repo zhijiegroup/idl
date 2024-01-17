@@ -11082,6 +11082,130 @@ public final class glory_apiGrpc {
     return getDeleteTeacherTaskTemplateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> getCreateTeacherTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTeacherTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> getCreateTeacherTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> getCreateTeacherTaskMethod;
+    if ((getCreateTeacherTaskMethod = glory_apiGrpc.getCreateTeacherTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateTeacherTaskMethod = glory_apiGrpc.getCreateTeacherTaskMethod) == null) {
+          glory_apiGrpc.getCreateTeacherTaskMethod = getCreateTeacherTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTeacherTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateTeacherTask"))
+              .build();
+        }
+      }
+    }
+    return getCreateTeacherTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> getUpdateTeacherTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTeacherTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> getUpdateTeacherTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> getUpdateTeacherTaskMethod;
+    if ((getUpdateTeacherTaskMethod = glory_apiGrpc.getUpdateTeacherTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateTeacherTaskMethod = glory_apiGrpc.getUpdateTeacherTaskMethod) == null) {
+          glory_apiGrpc.getUpdateTeacherTaskMethod = getUpdateTeacherTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTeacherTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateTeacherTask"))
+              .build();
+        }
+      }
+    }
+    return getUpdateTeacherTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> getListTeacherTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTeacherTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> getListTeacherTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> getListTeacherTaskMethod;
+    if ((getListTeacherTaskMethod = glory_apiGrpc.getListTeacherTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListTeacherTaskMethod = glory_apiGrpc.getListTeacherTaskMethod) == null) {
+          glory_apiGrpc.getListTeacherTaskMethod = getListTeacherTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTeacherTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListTeacherTask"))
+              .build();
+        }
+      }
+    }
+    return getListTeacherTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> getDeleteTeacherTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTeacherTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> getDeleteTeacherTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> getDeleteTeacherTaskMethod;
+    if ((getDeleteTeacherTaskMethod = glory_apiGrpc.getDeleteTeacherTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteTeacherTaskMethod = glory_apiGrpc.getDeleteTeacherTaskMethod) == null) {
+          glory_apiGrpc.getDeleteTeacherTaskMethod = getDeleteTeacherTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTeacherTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteTeacherTask"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTeacherTaskMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest,
       com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> getListNotificationMethod;
 
@@ -14322,6 +14446,37 @@ public final class glory_apiGrpc {
     default void deleteTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTeacherTaskTemplateMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 教师任务管理
+     * </pre>
+     */
+    default void createTeacherTask(com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTeacherTaskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateTeacherTask(com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTeacherTaskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listTeacherTask(com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTeacherTaskMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteTeacherTask(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTeacherTaskMethod(), responseObserver);
     }
 
     /**
@@ -17648,6 +17803,41 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师任务管理
+     * </pre>
+     */
+    public void createTeacherTask(com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTeacherTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateTeacherTask(com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTeacherTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listTeacherTask(com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTeacherTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteTeacherTask(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTeacherTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 通知模块
      * </pre>
      */
@@ -20609,6 +20799,37 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse deleteTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTeacherTaskTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 教师任务管理
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse createTeacherTask(com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTeacherTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse updateTeacherTask(com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTeacherTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse listTeacherTask(com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTeacherTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse deleteTeacherTask(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTeacherTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -23924,6 +24145,41 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 教师任务管理
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse> createTeacherTask(
+        com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTeacherTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse> updateTeacherTask(
+        com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTeacherTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse> listTeacherTask(
+        com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTeacherTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse> deleteTeacherTask(
+        com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTeacherTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 通知模块
      * </pre>
      */
@@ -24375,17 +24631,21 @@ public final class glory_apiGrpc {
   private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 354;
   private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 355;
   private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 356;
-  private static final int METHODID_LIST_NOTIFICATION = 357;
-  private static final int METHODID_COUNT_NOTIFICATION = 358;
-  private static final int METHODID_READ_NOTIFICATION = 359;
-  private static final int METHODID_TEST_NOTIFICATION = 360;
-  private static final int METHODID_DELETE_NOTIFICATION = 361;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 362;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 363;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 364;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 365;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 366;
-  private static final int METHODID_CLOSE_CASTER = 367;
+  private static final int METHODID_CREATE_TEACHER_TASK = 357;
+  private static final int METHODID_UPDATE_TEACHER_TASK = 358;
+  private static final int METHODID_LIST_TEACHER_TASK = 359;
+  private static final int METHODID_DELETE_TEACHER_TASK = 360;
+  private static final int METHODID_LIST_NOTIFICATION = 361;
+  private static final int METHODID_COUNT_NOTIFICATION = 362;
+  private static final int METHODID_READ_NOTIFICATION = 363;
+  private static final int METHODID_TEST_NOTIFICATION = 364;
+  private static final int METHODID_DELETE_NOTIFICATION = 365;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 366;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 367;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 368;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 369;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 370;
+  private static final int METHODID_CLOSE_CASTER = 371;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -25831,6 +26091,22 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_TEACHER_TASK_TEMPLATE:
           serviceImpl.deleteTeacherTaskTemplate((com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_TEACHER_TASK:
+          serviceImpl.createTeacherTask((com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_TEACHER_TASK:
+          serviceImpl.updateTeacherTask((com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TEACHER_TASK:
+          serviceImpl.listTeacherTask((com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TEACHER_TASK:
+          serviceImpl.deleteTeacherTask((com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse>) responseObserver);
           break;
         case METHODID_LIST_NOTIFICATION:
           serviceImpl.listNotification((com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest) request,
@@ -28394,6 +28670,34 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskTemplateResponse>(
                 service, METHODID_DELETE_TEACHER_TASK_TEMPLATE)))
         .addMethod(
+          getCreateTeacherTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.CreateTeacherTaskResponse>(
+                service, METHODID_CREATE_TEACHER_TASK)))
+        .addMethod(
+          getUpdateTeacherTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.UpdateTeacherTaskResponse>(
+                service, METHODID_UPDATE_TEACHER_TASK)))
+        .addMethod(
+          getListTeacherTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.ListTeacherTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.ListTeacherTaskResponse>(
+                service, METHODID_LIST_TEACHER_TASK)))
+        .addMethod(
+          getDeleteTeacherTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse>(
+                service, METHODID_DELETE_TEACHER_TASK)))
+        .addMethod(
           getListNotificationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -28875,6 +29179,10 @@ public final class glory_apiGrpc {
               .addMethod(getUpdateTeacherTaskTemplateMethod())
               .addMethod(getListTeacherTaskTemplateMethod())
               .addMethod(getDeleteTeacherTaskTemplateMethod())
+              .addMethod(getCreateTeacherTaskMethod())
+              .addMethod(getUpdateTeacherTaskMethod())
+              .addMethod(getListTeacherTaskMethod())
+              .addMethod(getDeleteTeacherTaskMethod())
               .addMethod(getListNotificationMethod())
               .addMethod(getCountNotificationMethod())
               .addMethod(getReadNotificationMethod())
