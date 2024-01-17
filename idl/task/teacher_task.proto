@@ -1,0 +1,81 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.task";
+option java_multiple_files = true;
+
+import "api.proto";
+import "base.proto";
+import "user/user.proto";
+
+message TeacherTaskParameter {
+  int64 task_parameter_id = 1;
+  string task_parameter_key = 2;
+  string task_parameter_name = 3;
+  string task_parameter_operator = 4;
+  string task_parameter_value = 5;
+  string task_parameter_type = 6;
+  repeated TeacherTaskParameter children = 7;
+}
+
+message TeacherTaskClass {
+  int64 class_id = 1;
+  string class_name = 2;
+}
+
+message TeacherTask {
+  int64 teacher_task_id = 1;
+  int64 teacher_id = 2;
+  string teacher_task_name = 3;
+  string teacher_task_business = 4;
+  repeated TeacherTaskClass teacher_task_classes = 5;
+  string teacher_task_start = 6;
+  string teacher_task_end = 7;
+  int32 teacher_task_type = 8; // 任务类型：1.模板任务；2.手动任务
+  int64 teacher_task_template_id = 9;
+  string teacher_task_content = 10;
+  repeated string teacher_task_requirements = 11;
+  string teacher_task_link = 12;
+  repeated TeacherTaskParameter task_parameters = 13;
+  string created_at = 14;
+  string updated_at = 15;
+  User creator = 16;
+  User updator = 17;
+}
+
+message CreateTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  TeacherTask teacher_task = 2;
+}
+
+message CreateTeacherTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  TeacherTask teacher_task = 2;
+}
+
+message UpdateTeacherTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message ListTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  base.PaginationRequest pagination = 100;
+}
+
+message ListTeacherTaskResponse {
+  base.BaseResponse base_resp = 1;
+  repeated TeacherTask teacher_tasks = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message DeleteTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 teacher_task_id = 2;
+}
+
+message DeleteTeacherTaskResponse {
+  base.BaseResponse base_resp = 1;
+}

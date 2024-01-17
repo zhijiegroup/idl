@@ -59,6 +59,7 @@ import "traffic/live_traffic.proto";
 import "role/role.proto";
 import "task/system_task.proto";
 import "task/teacher_task_template.proto";
+import "task/teacher_task.proto";
 import "notification/notification.proto";
 
 service glory_api {
@@ -1402,6 +1403,19 @@ service glory_api {
   }
   rpc DeleteTeacherTaskTemplate(DeleteTeacherTaskTemplateRequest) returns (DeleteTeacherTaskTemplateResponse) {
     option (api.post) = '/api/task/delete_teacher_task_template';
+  }
+  // 教师任务管理
+  rpc CreateTeacherTask(CreateTeacherTaskRequest) returns (CreateTeacherTaskResponse) {
+    option (api.post) = '/api/task/create_teacher_task';
+  }
+  rpc UpdateTeacherTask(UpdateTeacherTaskRequest) returns (UpdateTeacherTaskResponse) {
+    option (api.post) = '/api/task/update_teacher_task';
+  }
+  rpc ListTeacherTask(ListTeacherTaskRequest) returns (ListTeacherTaskResponse) {
+    option (api.post) = '/api/task/list_teacher_task';
+  }
+  rpc DeleteTeacherTask(DeleteTeacherTaskRequest) returns (DeleteTeacherTaskResponse) {
+    option (api.post) = '/api/task/delete_teacher_task';
   }
 
   // 通知模块
