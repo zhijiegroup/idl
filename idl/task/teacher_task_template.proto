@@ -6,6 +6,7 @@ option java_multiple_files = true;
 import "api.proto";
 import "base.proto";
 import "user/user.proto";
+import "task/system_task.proto";
 
 message TeacherTaskTemplateParameter {
   int64 task_parameter_id = 1;
@@ -31,6 +32,7 @@ message TeacherTaskTemplate {
   string updated_at = 11;
   User creator = 12;
   User updater = 13;
+  SystemTask system_task = 14;
 }
 
 message CreateTeacherTaskTemplateRequest {
@@ -62,6 +64,16 @@ message ListTeacherTaskTemplateResponse {
   base.BaseResponse base_resp = 1;
   repeated TeacherTaskTemplate teacher_task_templates = 2;
   base.PaginationResponse pagination = 100;
+}
+
+message GetTeacherTaskTemplateRequest {
+  base.BaseRequest base_request = 1;
+  int64 teacher_task_template_id = 2;
+}
+
+message GetTeacherTaskTemplateResponse {
+  base.BaseResponse base_resp = 1;
+  TeacherTaskTemplate teacher_task_template = 2;
 }
 
 message DeleteTeacherTaskTemplateRequest {
