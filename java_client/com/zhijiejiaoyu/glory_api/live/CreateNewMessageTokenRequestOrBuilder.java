@@ -33,4 +33,16 @@ public interface CreateNewMessageTokenRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRoleBytes();
+
+  /**
+   * <code>string user_id = 3;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <code>string user_id = 3;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

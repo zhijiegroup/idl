@@ -3527,6 +3527,7 @@ class CreateNewMessageTokenRequest extends $pb.GeneratedMessage {
   factory CreateNewMessageTokenRequest({
     $0.BaseRequest? baseRequest,
     $core.String? role,
+    $core.String? userId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3534,6 +3535,9 @@ class CreateNewMessageTokenRequest extends $pb.GeneratedMessage {
     }
     if (role != null) {
       $result.role = role;
+    }
+    if (userId != null) {
+      $result.userId = userId;
     }
     return $result;
   }
@@ -3544,6 +3548,7 @@ class CreateNewMessageTokenRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNewMessageTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
 
@@ -3587,6 +3592,15 @@ class CreateNewMessageTokenRequest extends $pb.GeneratedMessage {
   $core.bool hasRole() => $_has(1);
   @$pb.TagNumber(2)
   void clearRole() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => clearField(3);
 }
 
 class CreateNewMessageTokenResponse extends $pb.GeneratedMessage {

@@ -1107,6 +1107,8 @@ struct GloryApi_CreateNewMessageTokenRequest {
 
   var role: String = String()
 
+  var userID: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3310,6 +3312,7 @@ extension GloryApi_CreateNewMessageTokenRequest: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "role"),
+    3: .standard(proto: "user_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3320,6 +3323,7 @@ extension GloryApi_CreateNewMessageTokenRequest: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.role) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.userID) }()
       default: break
       }
     }
@@ -3336,12 +3340,16 @@ extension GloryApi_CreateNewMessageTokenRequest: SwiftProtobuf.Message, SwiftPro
     if !self.role.isEmpty {
       try visitor.visitSingularStringField(value: self.role, fieldNumber: 2)
     }
+    if !self.userID.isEmpty {
+      try visitor.visitSingularStringField(value: self.userID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateNewMessageTokenRequest, rhs: GloryApi_CreateNewMessageTokenRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.role != rhs.role {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

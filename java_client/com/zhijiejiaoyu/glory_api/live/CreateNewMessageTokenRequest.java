@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateNewMessageTokenRequest() {
     role = "";
+    userId = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             role = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId = s;
             break;
           }
           default: {
@@ -164,6 +171,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object userId ;
+  /**
+   * <code>string user_id = 3;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_id = 3;</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +229,9 @@ private static final long serialVersionUID = 0L;
     if (!getRoleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role );
     }
+    if (!getUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +247,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRoleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role );
+    }
+    if (!getUserIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +273,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRole()
         .equals(other.getRole())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +292,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
     hash = (53 * hash) + getRole().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,6 +435,8 @@ private static final long serialVersionUID = 0L;
       }
       role = "";
 
+      userId = "";
+
       return this;
     }
 
@@ -412,6 +469,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.role = role ;
+      result.userId = userId ;
       onBuilt();
       return result;
     }
@@ -465,6 +523,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRole().isEmpty()) {
         role = other.role ;
+        onChanged();
+      }
+      if (!other.getUserId().isEmpty()) {
+        userId = other.userId ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -687,6 +749,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       role = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userId = "";
+    /**
+     * <code>string user_id = 3;</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string user_id = 3;</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_id = 3;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = getDefaultInstance().getUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_id = 3;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userId = value;
       onChanged();
       return this;
     }

@@ -688,13 +688,15 @@ const CreateNewMessageTokenRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
   ],
 };
 
 /// Descriptor for `CreateNewMessageTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createNewMessageTokenRequestDescriptor = $convert.base64Decode(
     'ChxDcmVhdGVOZXdNZXNzYWdlVG9rZW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
-    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHJvbGUYAiABKAlSBHJvbGU=');
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHJvbGUYAiABKAlSBHJvbGUSFwoHdXNl'
+    'cl9pZBgDIAEoCVIGdXNlcklk');
 
 @$core.Deprecated('Use createNewMessageTokenResponseDescriptor instead')
 const CreateNewMessageTokenResponse$json = {

@@ -290,6 +290,7 @@ export interface GetCouponAndIntroducingProductResponse {
 export interface CreateNewMessageTokenRequest {
   base_request?: base.BaseRequest;
   role?: string;
+  user_id?: string;
 }
 
 export interface CreateNewMessageTokenResponse {
