@@ -60,6 +60,7 @@ import "role/role.proto";
 import "task/system_task.proto";
 import "task/teacher_task_template.proto";
 import "task/teacher_task.proto";
+import "task/student_task.proto";
 import "notification/notification.proto";
 
 service glory_api {
@@ -1419,6 +1420,13 @@ service glory_api {
   }
   rpc DeleteTeacherTask(DeleteTeacherTaskRequest) returns (DeleteTeacherTaskResponse) {
     option (api.post) = '/api/task/delete_teacher_task';
+  }
+  // 学生任务
+  rpc ListStudentTask(ListStudentTaskRequest) returns (ListStudentTaskResponse) {
+    option (api.post) = '/api/task/list_student_task';
+  }
+  rpc SubmitStudentTask(SubmitStudentTaskRequest) returns (SubmitStudentTaskResponse) {
+    option (api.post) = '/api/task/submit_student_task';
   }
 
   // 通知模块

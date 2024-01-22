@@ -1,0 +1,41 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.task";
+option java_multiple_files = true;
+
+import "api.proto";
+import "base.proto";
+import "user/user.proto";
+import "task/teacher_task.proto";
+
+message StudentTask {
+  int64 student_task_id = 1;
+  string status = 2;
+  string submitted_at = 3;
+  string submit_parameter = 4;
+  string submit_description = 5;
+  repeated string attachments = 6;
+  TeacherTask teacher_task = 7;
+  User teacher = 8;
+}
+
+message ListStudentTaskRequest {
+  base.PaginationRequest pagination = 100;
+}
+
+message ListStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentTask student_tasks = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message SubmitStudentTaskRequest {
+  int64 student_task_id = 1;
+  string student_task_parameter = 2;
+  string student_task_description = 3;
+  repeated string student_task_attachments = 4;
+}
+
+message SubmitStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
