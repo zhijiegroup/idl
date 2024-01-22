@@ -60,6 +60,7 @@ import * as role from "./role/role";
 import * as system_task from "./task/system_task";
 import * as teacher_task_template from "./task/teacher_task_template";
 import * as teacher_task from "./task/teacher_task";
+import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
 export {
   user,
@@ -118,6 +119,7 @@ export {
   system_task,
   teacher_task_template,
   teacher_task,
+  student_task,
   notification,
 };
 
@@ -2900,6 +2902,22 @@ export class glory_api {
 
   DeleteTeacherTask(request) {
     const uri = `${this.uriPrefix}/api/task/delete_teacher_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/list_student_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  SubmitStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/submit_student_task`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
