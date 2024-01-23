@@ -35,11 +35,12 @@ message TeacherTask {
   string teacher_task_content = 10;
   repeated string teacher_task_requirements = 11;
   string teacher_task_link = 12;
-  repeated TeacherTaskParameter task_parameters = 13;
-  string created_at = 14;
-  string updated_at = 15;
-  User creator = 16;
-  User updator = 17;
+  string teacher_task_status = 13; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  repeated TeacherTaskParameter task_parameters = 14;
+  string created_at = 15;
+  string updated_at = 16;
+  User creator = 17;
+  User updator = 18;
 }
 
 message CreateTeacherTaskRequest {
