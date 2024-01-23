@@ -36,6 +36,8 @@ export interface TeacherTask {
   teacher_task_content?: string;
   teacher_task_requirements?: Array<string>;
   teacher_task_link?: string;
+  /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
+  teacher_task_status?: string;
   task_parameters?: Array<TeacherTaskParameter>;
   created_at?: string;
   updated_at?: string;

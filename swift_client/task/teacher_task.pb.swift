@@ -124,6 +124,12 @@ struct GloryApi_TeacherTask {
     set {_uniqueStorage()._teacherTaskLink = newValue}
   }
 
+  /// 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  var teacherTaskStatus: String {
+    get {return _storage._teacherTaskStatus}
+    set {_uniqueStorage()._teacherTaskStatus = newValue}
+  }
+
   var taskParameters: [GloryApi_TeacherTaskParameter] {
     get {return _storage._taskParameters}
     set {_uniqueStorage()._taskParameters = newValue}
@@ -515,11 +521,12 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     10: .standard(proto: "teacher_task_content"),
     11: .standard(proto: "teacher_task_requirements"),
     12: .standard(proto: "teacher_task_link"),
-    13: .standard(proto: "task_parameters"),
-    14: .standard(proto: "created_at"),
-    15: .standard(proto: "updated_at"),
-    16: .same(proto: "creator"),
-    17: .same(proto: "updator"),
+    13: .standard(proto: "teacher_task_status"),
+    14: .standard(proto: "task_parameters"),
+    15: .standard(proto: "created_at"),
+    16: .standard(proto: "updated_at"),
+    17: .same(proto: "creator"),
+    18: .same(proto: "updator"),
   ]
 
   fileprivate class _StorageClass {
@@ -535,6 +542,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _teacherTaskContent: String = String()
     var _teacherTaskRequirements: [String] = []
     var _teacherTaskLink: String = String()
+    var _teacherTaskStatus: String = String()
     var _taskParameters: [GloryApi_TeacherTaskParameter] = []
     var _createdAt: String = String()
     var _updatedAt: String = String()
@@ -558,6 +566,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _teacherTaskContent = source._teacherTaskContent
       _teacherTaskRequirements = source._teacherTaskRequirements
       _teacherTaskLink = source._teacherTaskLink
+      _teacherTaskStatus = source._teacherTaskStatus
       _taskParameters = source._taskParameters
       _createdAt = source._createdAt
       _updatedAt = source._updatedAt
@@ -593,11 +602,12 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 10: try { try decoder.decodeSingularStringField(value: &_storage._teacherTaskContent) }()
         case 11: try { try decoder.decodeRepeatedStringField(value: &_storage._teacherTaskRequirements) }()
         case 12: try { try decoder.decodeSingularStringField(value: &_storage._teacherTaskLink) }()
-        case 13: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskParameters) }()
-        case 14: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
-        case 15: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
-        case 16: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
-        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._teacherTaskStatus) }()
+        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskParameters) }()
+        case 15: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
+        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
+        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
         default: break
         }
       }
@@ -646,20 +656,23 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._teacherTaskLink.isEmpty {
         try visitor.visitSingularStringField(value: _storage._teacherTaskLink, fieldNumber: 12)
       }
+      if !_storage._teacherTaskStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._teacherTaskStatus, fieldNumber: 13)
+      }
       if !_storage._taskParameters.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._taskParameters, fieldNumber: 13)
+        try visitor.visitRepeatedMessageField(value: _storage._taskParameters, fieldNumber: 14)
       }
       if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 14)
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 15)
       }
       if !_storage._updatedAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._updatedAt, fieldNumber: 15)
+        try visitor.visitSingularStringField(value: _storage._updatedAt, fieldNumber: 16)
       }
       try { if let v = _storage._creator {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       } }()
       try { if let v = _storage._updator {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -682,6 +695,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._teacherTaskContent != rhs_storage._teacherTaskContent {return false}
         if _storage._teacherTaskRequirements != rhs_storage._teacherTaskRequirements {return false}
         if _storage._teacherTaskLink != rhs_storage._teacherTaskLink {return false}
+        if _storage._teacherTaskStatus != rhs_storage._teacherTaskStatus {return false}
         if _storage._taskParameters != rhs_storage._taskParameters {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._updatedAt != rhs_storage._updatedAt {return false}
