@@ -11,10 +11,11 @@ message ActivityProduct {
     int64 sku_id = 2;
     string preferential_value = 3;
     int64 stock_total = 4;
-    int64 purchase_limit = 5;
-    string product_name = 6;
-    string product_url = 7;
-    repeated Sku sku = 8;
+    int64 all_stock_total = 5;
+    int64 purchase_limit = 6;
+    string product_name = 7;
+    string product_url = 8;
+    repeated Sku sku = 9;
 }
 
 message CreateActivityRequest {
