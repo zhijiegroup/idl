@@ -8,6 +8,14 @@ import "base.proto";
 import "user/user.proto";
 import "task/teacher_task.proto";
 
+message StudentTaskParameterResult {
+
+}
+
+message StudentTaskRequirementResult {
+
+}
+
 message StudentTask {
   int64 student_task_id = 1;
   string task_status = 2;
@@ -47,6 +55,16 @@ message SubmitStudentTaskResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message GetStudentTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 student_task_id = 2;
+}
+
+message GetStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+  StudentTask student_task = 2;
+}
+
 message TeacherListStudentTaskRequest {
   base.BaseRequest base_request = 1;
   int32 task_evaluate_type = 2; // 任务评价类型：1. 机器评价任务；2. 教师评价任务
@@ -68,14 +86,4 @@ message TeacherEvaluateStudentTaskRequest {
 
 message TeacherEvaluateStudentTaskResponse {
   base.BaseResponse base_resp = 1;
-}
-
-message TeacherGetStudentTaskRequest {
-  base.BaseRequest base_request = 1;
-  int64 student_task_id = 2;
-}
-
-message TeacherGetStudentTaskResponse {
-  base.BaseResponse base_resp = 1;
-  StudentTask student_task = 2;
 }
