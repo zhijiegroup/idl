@@ -1168,14 +1168,14 @@ class glory_apiApi {
   $async.Future<$54.SubmitStudentTaskResponse> submitStudentTask($pb.ClientContext? ctx, $54.SubmitStudentTaskRequest request) =>
     _client.invoke<$54.SubmitStudentTaskResponse>(ctx, 'glory_api', 'SubmitStudentTask', request, $54.SubmitStudentTaskResponse())
   ;
+  $async.Future<$54.GetStudentTaskResponse> getStudentTask($pb.ClientContext? ctx, $54.GetStudentTaskRequest request) =>
+    _client.invoke<$54.GetStudentTaskResponse>(ctx, 'glory_api', 'GetStudentTask', request, $54.GetStudentTaskResponse())
+  ;
   $async.Future<$54.TeacherListStudentTaskResponse> teacherListStudentTask($pb.ClientContext? ctx, $54.TeacherListStudentTaskRequest request) =>
     _client.invoke<$54.TeacherListStudentTaskResponse>(ctx, 'glory_api', 'TeacherListStudentTask', request, $54.TeacherListStudentTaskResponse())
   ;
   $async.Future<$54.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ClientContext? ctx, $54.TeacherEvaluateStudentTaskRequest request) =>
     _client.invoke<$54.TeacherEvaluateStudentTaskResponse>(ctx, 'glory_api', 'TeacherEvaluateStudentTask', request, $54.TeacherEvaluateStudentTaskResponse())
-  ;
-  $async.Future<$54.TeacherGetStudentTaskResponse> teacherGetStudentTask($pb.ClientContext? ctx, $54.TeacherGetStudentTaskRequest request) =>
-    _client.invoke<$54.TeacherGetStudentTaskResponse>(ctx, 'glory_api', 'TeacherGetStudentTask', request, $54.TeacherGetStudentTaskResponse())
   ;
   $async.Future<$55.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $55.ListNotificationRequest request) =>
     _client.invoke<$55.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $55.ListNotificationResponse())

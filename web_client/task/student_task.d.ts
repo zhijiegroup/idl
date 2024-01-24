@@ -8,6 +8,10 @@ import * as user from "../user/user";
 import * as teacher_task from "./teacher_task";
 export { api, base, user, teacher_task };
 
+export interface StudentTaskParameterResult {}
+
+export interface StudentTaskRequirementResult {}
+
 export interface StudentTask {
   student_task_id?: string;
   task_status?: string;
@@ -47,6 +51,16 @@ export interface SubmitStudentTaskResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface GetStudentTaskRequest {
+  base_request?: base.BaseRequest;
+  student_task_id?: string;
+}
+
+export interface GetStudentTaskResponse {
+  base_resp?: base.BaseResponse;
+  student_task?: StudentTask;
+}
+
 export interface TeacherListStudentTaskRequest {
   base_request?: base.BaseRequest;
   /** 任务评价类型：1. 机器评价任务；2. 教师评价任务 */
@@ -70,14 +84,4 @@ export interface TeacherEvaluateStudentTaskRequest {
 
 export interface TeacherEvaluateStudentTaskResponse {
   base_resp?: base.BaseResponse;
-}
-
-export interface TeacherGetStudentTaskRequest {
-  base_request?: base.BaseRequest;
-  student_task_id?: string;
-}
-
-export interface TeacherGetStudentTaskResponse {
-  base_resp?: base.BaseResponse;
-  student_task?: StudentTask;
 }

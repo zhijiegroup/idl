@@ -15,6 +15,16 @@ public final class StudentTaskOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StudentTaskParameterResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StudentTaskParameterResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StudentTaskRequirementResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StudentTaskRequirementResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_StudentTask_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -45,6 +55,16 @@ public final class StudentTaskOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_SubmitStudentTaskResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetStudentTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetStudentTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetStudentTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetStudentTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_TeacherListStudentTaskRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -64,16 +84,6 @@ public final class StudentTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_TeacherEvaluateStudentTaskResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_TeacherGetStudentTaskRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_TeacherGetStudentTaskRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_TeacherGetStudentTaskResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_TeacherGetStudentTaskResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -85,49 +95,51 @@ public final class StudentTaskOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027task/student_task.proto\022\tglory_api\032\tap" +
       "i.proto\032\nbase.proto\032\017user/user.proto\032\027ta" +
-      "sk/teacher_task.proto\"\216\002\n\013StudentTask\022\027\n" +
-      "\017student_task_id\030\001 \001(\003\022\023\n\013task_status\030\002 " +
-      "\001(\t\022\024\n\014submitted_at\030\003 \001(\t\022\030\n\020submit_para" +
-      "meter\030\004 \001(\t\022\032\n\022submit_description\030\005 \001(\t\022" +
-      "\023\n\013attachments\030\006 \003(\t\022,\n\014teacher_task\030\007 \001" +
-      "(\0132\026.glory_api.TeacherTask\022 \n\007student\030\010 " +
-      "\001(\0132\017.glory_api.User\022 \n\007teacher\030\t \001(\0132\017." +
-      "glory_api.User\"g\n\034TeacherRequirementEval" +
-      "uation\022\026\n\016requirement_id\030\001 \001(\003\022\030\n\020requir" +
-      "ement_pass\030\002 \001(\010\022\025\n\rfailed_reason\030\003 \001(\t\"" +
-      "E\n\026ListStudentTaskRequest\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\235\001\n\027ListS" +
-      "tudentTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022-\n\rstudent_tasks\030\002 \003(\013" +
-      "2\026.glory_api.StudentTask\022,\n\npagination\030d" +
-      " \001(\0132\030.base.PaginationResponse\"\227\001\n\030Submi" +
-      "tStudentTaskRequest\022\027\n\017student_task_id\030\001" +
-      " \001(\003\022\036\n\026student_task_parameter\030\002 \001(\t\022 \n\030" +
-      "student_task_description\030\003 \001(\t\022 \n\030studen" +
-      "t_task_attachments\030\004 \003(\t\"B\n\031SubmitStuden" +
-      "tTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"\257\001\n\035TeacherListStudentTaskR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\032\n\022task_evaluate_type\030\002 \001(\005\022\034\n\024t" +
-      "ask_evaluate_status\030\003 \001(\005\022+\n\npagination\030" +
-      "d \001(\0132\027.base.PaginationRequest\"\244\001\n\036Teach" +
-      "erListStudentTaskResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022-\n\rstudent_task" +
-      "s\030\002 \003(\0132\026.glory_api.StudentTask\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponse\"\257\001" +
-      "\n!TeacherEvaluateStudentTaskRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017" +
-      "student_task_id\030\002 \001(\003\022H\n\027requirement_eva" +
-      "luations\030\003 \003(\0132\'.glory_api.TeacherRequir" +
-      "ementEvaluation\"K\n\"TeacherEvaluateStuden" +
-      "tTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"`\n\034TeacherGetStudentTaskReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\027\n\017student_task_id\030\002 \001(\003\"t\n\035Teache" +
-      "rGetStudentTaskResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022,\n\014student_task\030\002" +
-      " \001(\0132\026.glory_api.StudentTaskB#\n\037com.zhij" +
-      "iejiaoyu.glory_api.taskP\001b\006proto3"
+      "sk/teacher_task.proto\"\034\n\032StudentTaskPara" +
+      "meterResult\"\036\n\034StudentTaskRequirementRes" +
+      "ult\"\216\002\n\013StudentTask\022\027\n\017student_task_id\030\001" +
+      " \001(\003\022\023\n\013task_status\030\002 \001(\t\022\024\n\014submitted_a" +
+      "t\030\003 \001(\t\022\030\n\020submit_parameter\030\004 \001(\t\022\032\n\022sub" +
+      "mit_description\030\005 \001(\t\022\023\n\013attachments\030\006 \003" +
+      "(\t\022,\n\014teacher_task\030\007 \001(\0132\026.glory_api.Tea" +
+      "cherTask\022 \n\007student\030\010 \001(\0132\017.glory_api.Us" +
+      "er\022 \n\007teacher\030\t \001(\0132\017.glory_api.User\"g\n\034" +
+      "TeacherRequirementEvaluation\022\026\n\016requirem" +
+      "ent_id\030\001 \001(\003\022\030\n\020requirement_pass\030\002 \001(\010\022\025" +
+      "\n\rfailed_reason\030\003 \001(\t\"E\n\026ListStudentTask" +
+      "Request\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
+      "ationRequest\"\235\001\n\027ListStudentTaskResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
+      "-\n\rstudent_tasks\030\002 \003(\0132\026.glory_api.Stude" +
+      "ntTask\022,\n\npagination\030d \001(\0132\030.base.Pagina" +
+      "tionResponse\"\227\001\n\030SubmitStudentTaskReques" +
+      "t\022\027\n\017student_task_id\030\001 \001(\003\022\036\n\026student_ta" +
+      "sk_parameter\030\002 \001(\t\022 \n\030student_task_descr" +
+      "iption\030\003 \001(\t\022 \n\030student_task_attachments" +
+      "\030\004 \003(\t\"B\n\031SubmitStudentTaskResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"Y\n\025Ge" +
+      "tStudentTaskRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\027\n\017student_task_id\030" +
+      "\002 \001(\003\"m\n\026GetStudentTaskResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022,\n\014studen" +
+      "t_task\030\002 \001(\0132\026.glory_api.StudentTask\"\257\001\n" +
+      "\035TeacherListStudentTaskRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022task_" +
+      "evaluate_type\030\002 \001(\005\022\034\n\024task_evaluate_sta" +
+      "tus\030\003 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pag" +
+      "inationRequest\"\244\001\n\036TeacherListStudentTas" +
+      "kResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022-\n\rstudent_tasks\030\002 \003(\0132\026.glory_" +
+      "api.StudentTask\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"\257\001\n!TeacherEvaluat" +
+      "eStudentTaskRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\027\n\017student_task_id\030" +
+      "\002 \001(\003\022H\n\027requirement_evaluations\030\003 \003(\0132\'" +
+      ".glory_api.TeacherRequirementEvaluation\"" +
+      "K\n\"TeacherEvaluateStudentTaskResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037" +
+      "com.zhijiejiaoyu.glory_api.taskP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -137,78 +149,90 @@ public final class StudentTaskOuterClass {
           com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
           com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.getDescriptor(),
         });
-    internal_static_glory_api_StudentTask_descriptor =
+    internal_static_glory_api_StudentTaskParameterResult_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_glory_api_StudentTaskParameterResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StudentTaskParameterResult_descriptor,
+        new java.lang.String[] { });
+    internal_static_glory_api_StudentTaskRequirementResult_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_glory_api_StudentTaskRequirementResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StudentTaskRequirementResult_descriptor,
+        new java.lang.String[] { });
+    internal_static_glory_api_StudentTask_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_StudentTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTask_descriptor,
         new java.lang.String[] { "StudentTaskId", "TaskStatus", "SubmittedAt", "SubmitParameter", "SubmitDescription", "Attachments", "TeacherTask", "Student", "Teacher", });
     internal_static_glory_api_TeacherRequirementEvaluation_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_TeacherRequirementEvaluation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherRequirementEvaluation_descriptor,
         new java.lang.String[] { "RequirementId", "RequirementPass", "FailedReason", });
     internal_static_glory_api_ListStudentTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_ListStudentTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListStudentTaskRequest_descriptor,
         new java.lang.String[] { "Pagination", });
     internal_static_glory_api_ListStudentTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_ListStudentTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListStudentTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", "StudentTasks", "Pagination", });
     internal_static_glory_api_SubmitStudentTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_SubmitStudentTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SubmitStudentTaskRequest_descriptor,
         new java.lang.String[] { "StudentTaskId", "StudentTaskParameter", "StudentTaskDescription", "StudentTaskAttachments", });
     internal_static_glory_api_SubmitStudentTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_SubmitStudentTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SubmitStudentTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetStudentTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_GetStudentTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetStudentTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "StudentTaskId", });
+    internal_static_glory_api_GetStudentTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_GetStudentTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetStudentTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "StudentTask", });
     internal_static_glory_api_TeacherListStudentTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_TeacherListStudentTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherListStudentTaskRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TaskEvaluateType", "TaskEvaluateStatus", "Pagination", });
     internal_static_glory_api_TeacherListStudentTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_TeacherListStudentTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherListStudentTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", "StudentTasks", "Pagination", });
     internal_static_glory_api_TeacherEvaluateStudentTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_TeacherEvaluateStudentTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherEvaluateStudentTaskRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "StudentTaskId", "RequirementEvaluations", });
     internal_static_glory_api_TeacherEvaluateStudentTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_TeacherEvaluateStudentTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherEvaluateStudentTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_TeacherGetStudentTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_glory_api_TeacherGetStudentTaskRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_TeacherGetStudentTaskRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "StudentTaskId", });
-    internal_static_glory_api_TeacherGetStudentTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_glory_api_TeacherGetStudentTaskResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_TeacherGetStudentTaskResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "StudentTask", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();

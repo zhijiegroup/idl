@@ -441,9 +441,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ServerContext ctx, $53.DeleteTeacherTaskRequest request);
   $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ServerContext ctx, $54.ListStudentTaskRequest request);
   $async.Future<$54.SubmitStudentTaskResponse> submitStudentTask($pb.ServerContext ctx, $54.SubmitStudentTaskRequest request);
+  $async.Future<$54.GetStudentTaskResponse> getStudentTask($pb.ServerContext ctx, $54.GetStudentTaskRequest request);
   $async.Future<$54.TeacherListStudentTaskResponse> teacherListStudentTask($pb.ServerContext ctx, $54.TeacherListStudentTaskRequest request);
   $async.Future<$54.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ServerContext ctx, $54.TeacherEvaluateStudentTaskRequest request);
-  $async.Future<$54.TeacherGetStudentTaskResponse> teacherGetStudentTask($pb.ServerContext ctx, $54.TeacherGetStudentTaskRequest request);
   $async.Future<$55.ListNotificationResponse> listNotification($pb.ServerContext ctx, $55.ListNotificationRequest request);
   $async.Future<$55.CountNotificationResponse> countNotification($pb.ServerContext ctx, $55.CountNotificationRequest request);
   $async.Future<$55.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $55.ReadNotificationRequest request);
@@ -822,9 +822,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteTeacherTask': return $53.DeleteTeacherTaskRequest();
       case 'ListStudentTask': return $54.ListStudentTaskRequest();
       case 'SubmitStudentTask': return $54.SubmitStudentTaskRequest();
+      case 'GetStudentTask': return $54.GetStudentTaskRequest();
       case 'TeacherListStudentTask': return $54.TeacherListStudentTaskRequest();
       case 'TeacherEvaluateStudentTask': return $54.TeacherEvaluateStudentTaskRequest();
-      case 'TeacherGetStudentTask': return $54.TeacherGetStudentTaskRequest();
       case 'ListNotification': return $55.ListNotificationRequest();
       case 'CountNotification': return $55.CountNotificationRequest();
       case 'ReadNotification': return $55.ReadNotificationRequest();
@@ -1206,9 +1206,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteTeacherTask': return this.deleteTeacherTask(ctx, request as $53.DeleteTeacherTaskRequest);
       case 'ListStudentTask': return this.listStudentTask(ctx, request as $54.ListStudentTaskRequest);
       case 'SubmitStudentTask': return this.submitStudentTask(ctx, request as $54.SubmitStudentTaskRequest);
+      case 'GetStudentTask': return this.getStudentTask(ctx, request as $54.GetStudentTaskRequest);
       case 'TeacherListStudentTask': return this.teacherListStudentTask(ctx, request as $54.TeacherListStudentTaskRequest);
       case 'TeacherEvaluateStudentTask': return this.teacherEvaluateStudentTask(ctx, request as $54.TeacherEvaluateStudentTaskRequest);
-      case 'TeacherGetStudentTask': return this.teacherGetStudentTask(ctx, request as $54.TeacherGetStudentTaskRequest);
       case 'ListNotification': return this.listNotification(ctx, request as $55.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $55.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $55.ReadNotificationRequest);

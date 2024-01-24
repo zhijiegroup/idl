@@ -2924,6 +2924,14 @@ export class glory_api {
     );
   }
 
+  GetStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/get_student_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   TeacherListStudentTask(request) {
     const uri = `${this.uriPrefix}/api/task/teacher_list_student_task`;
     const body = JSONbigint.stringify(request);
@@ -2934,14 +2942,6 @@ export class glory_api {
 
   TeacherEvaluateStudentTask(request) {
     const uri = `${this.uriPrefix}/api/task/teacher_evaluate_student_task`;
-    const body = JSONbigint.stringify(request);
-    return fetch(uri, { method: "POST", headers, body, credentials }).then(
-      handleResponse
-    );
-  }
-
-  TeacherGetStudentTask(request) {
-    const uri = `${this.uriPrefix}/api/task/teacher_get_student_task`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
