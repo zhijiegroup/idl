@@ -10,13 +10,20 @@ import "task/teacher_task.proto";
 
 message StudentTask {
   int64 student_task_id = 1;
-  string status = 2;
+  string task_status = 2;
   string submitted_at = 3;
   string submit_parameter = 4;
   string submit_description = 5;
   repeated string attachments = 6;
   TeacherTask teacher_task = 7;
-  User teacher = 8;
+  User student = 8;
+  User teacher = 9;
+}
+
+message TeacherRequirementEvaluation {
+  int64 requirement_id = 1;
+  bool requirement_pass = 2;
+  string failed_reason = 3;
 }
 
 message ListStudentTaskRequest {
@@ -38,4 +45,37 @@ message SubmitStudentTaskRequest {
 
 message SubmitStudentTaskResponse {
   base.BaseResponse base_resp = 1;
+}
+
+message TeacherListStudentTaskRequest {
+  base.BaseRequest base_request = 1;
+  int32 task_evaluate_type = 2; // 任务评价类型：1. 机器评价任务；2. 教师评价任务
+  int32 task_evaluate_status = 3; // 任务评价状态：1. 待评价；2. 已评价；3. 未提交
+  base.PaginationRequest pagination = 100;
+}
+
+message TeacherListStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentTask student_tasks = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message TeacherEvaluateStudentTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 student_task_id = 2;
+  repeated TeacherRequirementEvaluation requirement_evaluations = 3;
+}
+
+message TeacherEvaluateStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message TeacherGetStudentTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 student_task_id = 2;
+}
+
+message TeacherGetStudentTaskResponse {
+  base.BaseResponse base_resp = 1;
+  StudentTask student_task = 2;
 }

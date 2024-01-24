@@ -1428,6 +1428,15 @@ service glory_api {
   rpc SubmitStudentTask(SubmitStudentTaskRequest) returns (SubmitStudentTaskResponse) {
     option (api.post) = '/api/task/submit_student_task';
   }
+  rpc TeacherListStudentTask(TeacherListStudentTaskRequest) returns (TeacherListStudentTaskResponse) {
+    option (api.post) = '/api/task/teacher_list_student_task';
+  }
+  rpc TeacherEvaluateStudentTask(TeacherEvaluateStudentTaskRequest) returns (TeacherEvaluateStudentTaskResponse) {
+    option (api.post) = '/api/task/teacher_evaluate_student_task';
+  }
+  rpc TeacherGetStudentTask(TeacherGetStudentTaskRequest) returns (TeacherGetStudentTaskResponse) {
+    option (api.post) = '/api/task/teacher_get_student_task';
+  }
 
   // 通知模块
   rpc ListNotification(ListNotificationRequest) returns (ListNotificationResponse) {
