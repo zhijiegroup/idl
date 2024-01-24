@@ -38,55 +38,61 @@ public interface ActivityProductOrBuilder extends
   long getStockTotal();
 
   /**
-   * <code>int64 purchase_limit = 5;</code>
+   * <code>int64 all_stock_total = 5;</code>
+   * @return The allStockTotal.
+   */
+  long getAllStockTotal();
+
+  /**
+   * <code>int64 purchase_limit = 6;</code>
    * @return The purchaseLimit.
    */
   long getPurchaseLimit();
 
   /**
-   * <code>string product_name = 6;</code>
+   * <code>string product_name = 7;</code>
    * @return The productName.
    */
   java.lang.String getProductName();
   /**
-   * <code>string product_name = 6;</code>
+   * <code>string product_name = 7;</code>
    * @return The bytes for productName.
    */
   com.google.protobuf.ByteString
       getProductNameBytes();
 
   /**
-   * <code>string product_url = 7;</code>
+   * <code>string product_url = 8;</code>
    * @return The productUrl.
    */
   java.lang.String getProductUrl();
   /**
-   * <code>string product_url = 7;</code>
+   * <code>string product_url = 8;</code>
    * @return The bytes for productUrl.
    */
   com.google.protobuf.ByteString
       getProductUrlBytes();
 
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> 
       getSkuList();
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index);
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   int getSkuCount();
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
       getSkuOrBuilderList();
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
       int index);

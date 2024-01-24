@@ -23,6 +23,7 @@ class ActivityProduct extends $pb.GeneratedMessage {
     $fixnum.Int64? skuId,
     $core.String? preferentialValue,
     $fixnum.Int64? stockTotal,
+    $fixnum.Int64? allStockTotal,
     $fixnum.Int64? purchaseLimit,
     $core.String? productName,
     $core.String? productUrl,
@@ -40,6 +41,9 @@ class ActivityProduct extends $pb.GeneratedMessage {
     }
     if (stockTotal != null) {
       $result.stockTotal = stockTotal;
+    }
+    if (allStockTotal != null) {
+      $result.allStockTotal = allStockTotal;
     }
     if (purchaseLimit != null) {
       $result.purchaseLimit = purchaseLimit;
@@ -64,10 +68,11 @@ class ActivityProduct extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'skuId')
     ..aOS(3, _omitFieldNames ? '' : 'preferentialValue')
     ..aInt64(4, _omitFieldNames ? '' : 'stockTotal')
-    ..aInt64(5, _omitFieldNames ? '' : 'purchaseLimit')
-    ..aOS(6, _omitFieldNames ? '' : 'productName')
-    ..aOS(7, _omitFieldNames ? '' : 'productUrl')
-    ..pc<$0.Sku>(8, _omitFieldNames ? '' : 'sku', $pb.PbFieldType.PM, subBuilder: $0.Sku.create)
+    ..aInt64(5, _omitFieldNames ? '' : 'allStockTotal')
+    ..aInt64(6, _omitFieldNames ? '' : 'purchaseLimit')
+    ..aOS(7, _omitFieldNames ? '' : 'productName')
+    ..aOS(8, _omitFieldNames ? '' : 'productUrl')
+    ..pc<$0.Sku>(9, _omitFieldNames ? '' : 'sku', $pb.PbFieldType.PM, subBuilder: $0.Sku.create)
     ..hasRequiredFields = false
   ;
 
@@ -129,34 +134,43 @@ class ActivityProduct extends $pb.GeneratedMessage {
   void clearStockTotal() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get purchaseLimit => $_getI64(4);
+  $fixnum.Int64 get allStockTotal => $_getI64(4);
   @$pb.TagNumber(5)
-  set purchaseLimit($fixnum.Int64 v) { $_setInt64(4, v); }
+  set allStockTotal($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPurchaseLimit() => $_has(4);
+  $core.bool hasAllStockTotal() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPurchaseLimit() => clearField(5);
+  void clearAllStockTotal() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get productName => $_getSZ(5);
+  $fixnum.Int64 get purchaseLimit => $_getI64(5);
   @$pb.TagNumber(6)
-  set productName($core.String v) { $_setString(5, v); }
+  set purchaseLimit($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasProductName() => $_has(5);
+  $core.bool hasPurchaseLimit() => $_has(5);
   @$pb.TagNumber(6)
-  void clearProductName() => clearField(6);
+  void clearPurchaseLimit() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get productUrl => $_getSZ(6);
+  $core.String get productName => $_getSZ(6);
   @$pb.TagNumber(7)
-  set productUrl($core.String v) { $_setString(6, v); }
+  set productName($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasProductUrl() => $_has(6);
+  $core.bool hasProductName() => $_has(6);
   @$pb.TagNumber(7)
-  void clearProductUrl() => clearField(7);
+  void clearProductName() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$0.Sku> get sku => $_getList(7);
+  $core.String get productUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set productUrl($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasProductUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProductUrl() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<$0.Sku> get sku => $_getList(8);
 }
 
 class CreateActivityRequest extends $pb.GeneratedMessage {

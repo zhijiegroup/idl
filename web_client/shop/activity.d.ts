@@ -11,6 +11,7 @@ export interface ActivityProduct {
   sku_id?: string;
   preferential_value?: string;
   stock_total?: string;
+  all_stock_total?: string;
   purchase_limit?: string;
   product_name?: string;
   product_url?: string;

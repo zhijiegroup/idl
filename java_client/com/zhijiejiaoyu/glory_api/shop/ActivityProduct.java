@@ -76,22 +76,27 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            purchaseLimit = input.readInt64();
+            allStockTotal = input.readInt64();
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 48: {
 
-            productName = s;
+            purchaseLimit = input.readInt64();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            productUrl = s;
+            productName = s;
             break;
           }
           case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productUrl = s;
+            break;
+          }
+          case 74: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               sku = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.Sku>();
               mutable_bitField0_ |= 0x00000001;
@@ -206,10 +211,21 @@ private static final long serialVersionUID = 0L;
     return stockTotal ;
   }
 
-  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 5;
+  public static final int ALL_STOCK_TOTAL_FIELD_NUMBER = 5;
+  private long allStockTotal ;
+  /**
+   * <code>int64 all_stock_total = 5;</code>
+   * @return The allStockTotal.
+   */
+  @java.lang.Override
+  public long getAllStockTotal() {
+    return allStockTotal ;
+  }
+
+  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 6;
   private long purchaseLimit ;
   /**
-   * <code>int64 purchase_limit = 5;</code>
+   * <code>int64 purchase_limit = 6;</code>
    * @return The purchaseLimit.
    */
   @java.lang.Override
@@ -217,10 +233,10 @@ private static final long serialVersionUID = 0L;
     return purchaseLimit ;
   }
 
-  public static final int PRODUCT_NAME_FIELD_NUMBER = 6;
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object productName ;
   /**
-   * <code>string product_name = 6;</code>
+   * <code>string product_name = 7;</code>
    * @return The productName.
    */
   @java.lang.Override
@@ -237,7 +253,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string product_name = 6;</code>
+   * <code>string product_name = 7;</code>
    * @return The bytes for productName.
    */
   @java.lang.Override
@@ -255,10 +271,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRODUCT_URL_FIELD_NUMBER = 7;
+  public static final int PRODUCT_URL_FIELD_NUMBER = 8;
   private volatile java.lang.Object productUrl ;
   /**
-   * <code>string product_url = 7;</code>
+   * <code>string product_url = 8;</code>
    * @return The productUrl.
    */
   @java.lang.Override
@@ -275,7 +291,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string product_url = 7;</code>
+   * <code>string product_url = 8;</code>
    * @return The bytes for productUrl.
    */
   @java.lang.Override
@@ -293,17 +309,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SKU_FIELD_NUMBER = 8;
+  public static final int SKU_FIELD_NUMBER = 9;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> sku ;
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> getSkuList() {
     return sku ;
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
@@ -311,21 +327,21 @@ private static final long serialVersionUID = 0L;
     return sku ;
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   @java.lang.Override
   public int getSkuCount() {
     return sku .size();
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index) {
     return sku .get(index);
   }
   /**
-   * <code>repeated .glory_api.Sku sku = 8;</code>
+   * <code>repeated .glory_api.Sku sku = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
@@ -359,17 +375,20 @@ private static final long serialVersionUID = 0L;
     if (stockTotal != 0L) {
       output.writeInt64(4, stockTotal );
     }
+    if (allStockTotal != 0L) {
+      output.writeInt64(5, allStockTotal );
+    }
     if (purchaseLimit != 0L) {
-      output.writeInt64(5, purchaseLimit );
+      output.writeInt64(6, purchaseLimit );
     }
     if (!getProductNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, productName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productName );
     }
     if (!getProductUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, productUrl );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, productUrl );
     }
     for (int i = 0; i < sku .size(); i++) {
-      output.writeMessage(8, sku .get(i));
+      output.writeMessage(9, sku .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -395,19 +414,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, stockTotal );
     }
+    if (allStockTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, allStockTotal );
+    }
     if (purchaseLimit != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, purchaseLimit );
+        .computeInt64Size(6, purchaseLimit );
     }
     if (!getProductNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, productName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, productName );
     }
     if (!getProductUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, productUrl );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, productUrl );
     }
     for (int i = 0; i < sku .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, sku .get(i));
+        .computeMessageSize(9, sku .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,6 +455,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPreferentialValue())) return false;
     if (getStockTotal()
         != other.getStockTotal()) return false;
+    if (getAllStockTotal()
+        != other.getAllStockTotal()) return false;
     if (getPurchaseLimit()
         != other.getPurchaseLimit()) return false;
     if (!getProductName()
@@ -462,6 +487,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STOCK_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStockTotal());
+    hash = (37 * hash) + ALL_STOCK_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAllStockTotal());
     hash = (37 * hash) + PURCHASE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPurchaseLimit());
@@ -615,6 +643,8 @@ private static final long serialVersionUID = 0L;
 
       stockTotal = 0L;
 
+      allStockTotal = 0L;
+
       purchaseLimit = 0L;
 
       productName = "";
@@ -658,6 +688,7 @@ private static final long serialVersionUID = 0L;
       result.skuId = skuId ;
       result.preferentialValue = preferentialValue ;
       result.stockTotal = stockTotal ;
+      result.allStockTotal = allStockTotal ;
       result.purchaseLimit = purchaseLimit ;
       result.productName = productName ;
       result.productUrl = productUrl ;
@@ -730,6 +761,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStockTotal() != 0L) {
         setStockTotal(other.getStockTotal());
+      }
+      if (other.getAllStockTotal() != 0L) {
+        setAllStockTotal(other.getAllStockTotal());
       }
       if (other.getPurchaseLimit() != 0L) {
         setPurchaseLimit(other.getPurchaseLimit());
@@ -967,9 +1001,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long allStockTotal ;
+    /**
+     * <code>int64 all_stock_total = 5;</code>
+     * @return The allStockTotal.
+     */
+    @java.lang.Override
+    public long getAllStockTotal() {
+      return allStockTotal ;
+    }
+    /**
+     * <code>int64 all_stock_total = 5;</code>
+     * @param value The allStockTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllStockTotal(long value) {
+      
+      allStockTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 all_stock_total = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllStockTotal() {
+      
+      allStockTotal = 0L;
+      onChanged();
+      return this;
+    }
+
     private long purchaseLimit ;
     /**
-     * <code>int64 purchase_limit = 5;</code>
+     * <code>int64 purchase_limit = 6;</code>
      * @return The purchaseLimit.
      */
     @java.lang.Override
@@ -977,7 +1042,7 @@ private static final long serialVersionUID = 0L;
       return purchaseLimit ;
     }
     /**
-     * <code>int64 purchase_limit = 5;</code>
+     * <code>int64 purchase_limit = 6;</code>
      * @param value The purchaseLimit to set.
      * @return This builder for chaining.
      */
@@ -988,7 +1053,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 purchase_limit = 5;</code>
+     * <code>int64 purchase_limit = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearPurchaseLimit() {
@@ -1000,7 +1065,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object productName = "";
     /**
-     * <code>string product_name = 6;</code>
+     * <code>string product_name = 7;</code>
      * @return The productName.
      */
     public java.lang.String getProductName() {
@@ -1016,7 +1081,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 6;</code>
+     * <code>string product_name = 7;</code>
      * @return The bytes for productName.
      */
     public com.google.protobuf.ByteString
@@ -1033,7 +1098,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 6;</code>
+     * <code>string product_name = 7;</code>
      * @param value The productName to set.
      * @return This builder for chaining.
      */
@@ -1048,7 +1113,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 6;</code>
+     * <code>string product_name = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductName() {
@@ -1058,7 +1123,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 6;</code>
+     * <code>string product_name = 7;</code>
      * @param value The bytes for productName to set.
      * @return This builder for chaining.
      */
@@ -1076,7 +1141,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object productUrl = "";
     /**
-     * <code>string product_url = 7;</code>
+     * <code>string product_url = 8;</code>
      * @return The productUrl.
      */
     public java.lang.String getProductUrl() {
@@ -1092,7 +1157,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_url = 7;</code>
+     * <code>string product_url = 8;</code>
      * @return The bytes for productUrl.
      */
     public com.google.protobuf.ByteString
@@ -1109,7 +1174,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_url = 7;</code>
+     * <code>string product_url = 8;</code>
      * @param value The productUrl to set.
      * @return This builder for chaining.
      */
@@ -1124,7 +1189,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_url = 7;</code>
+     * <code>string product_url = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductUrl() {
@@ -1134,7 +1199,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_url = 7;</code>
+     * <code>string product_url = 8;</code>
      * @param value The bytes for productUrl to set.
      * @return This builder for chaining.
      */
@@ -1163,7 +1228,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.shop.Sku, com.zhijiejiaoyu.glory_api.shop.Sku.Builder, com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> skuBuilder ;
 
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku> getSkuList() {
       if (skuBuilder == null) {
@@ -1173,7 +1238,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public int getSkuCount() {
       if (skuBuilder == null) {
@@ -1183,7 +1248,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku getSku(int index) {
       if (skuBuilder == null) {
@@ -1193,7 +1258,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder setSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku value) {
@@ -1210,7 +1275,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder setSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -1224,7 +1289,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder addSku(com.zhijiejiaoyu.glory_api.shop.Sku value) {
       if (skuBuilder == null) {
@@ -1240,7 +1305,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder addSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku value) {
@@ -1257,7 +1322,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder addSku(
         com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -1271,7 +1336,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder addSku(
         int index, com.zhijiejiaoyu.glory_api.shop.Sku.Builder builderForValue) {
@@ -1285,7 +1350,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder addAllSku(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.shop.Sku> values) {
@@ -1300,7 +1365,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder clearSku() {
       if (skuBuilder == null) {
@@ -1313,7 +1378,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public Builder removeSku(int index) {
       if (skuBuilder == null) {
@@ -1326,14 +1391,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder getSkuBuilder(
         int index) {
       return getSkuFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder getSkuOrBuilder(
         int index) {
@@ -1343,7 +1408,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.SkuOrBuilder> 
          getSkuOrBuilderList() {
@@ -1354,14 +1419,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder addSkuBuilder() {
       return getSkuFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.shop.Sku.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.Sku.Builder addSkuBuilder(
         int index) {
@@ -1369,7 +1434,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.shop.Sku.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.Sku sku = 8;</code>
+     * <code>repeated .glory_api.Sku sku = 9;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.shop.Sku.Builder> 
          getSkuBuilderList() {

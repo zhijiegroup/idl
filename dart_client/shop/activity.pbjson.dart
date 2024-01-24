@@ -21,10 +21,11 @@ const ActivityProduct$json = {
     {'1': 'sku_id', '3': 2, '4': 1, '5': 3, '10': 'skuId'},
     {'1': 'preferential_value', '3': 3, '4': 1, '5': 9, '10': 'preferentialValue'},
     {'1': 'stock_total', '3': 4, '4': 1, '5': 3, '10': 'stockTotal'},
-    {'1': 'purchase_limit', '3': 5, '4': 1, '5': 3, '10': 'purchaseLimit'},
-    {'1': 'product_name', '3': 6, '4': 1, '5': 9, '10': 'productName'},
-    {'1': 'product_url', '3': 7, '4': 1, '5': 9, '10': 'productUrl'},
-    {'1': 'sku', '3': 8, '4': 3, '5': 11, '6': '.glory_api.Sku', '10': 'sku'},
+    {'1': 'all_stock_total', '3': 5, '4': 1, '5': 3, '10': 'allStockTotal'},
+    {'1': 'purchase_limit', '3': 6, '4': 1, '5': 3, '10': 'purchaseLimit'},
+    {'1': 'product_name', '3': 7, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'product_url', '3': 8, '4': 1, '5': 9, '10': 'productUrl'},
+    {'1': 'sku', '3': 9, '4': 3, '5': 11, '6': '.glory_api.Sku', '10': 'sku'},
   ],
 };
 
@@ -32,10 +33,10 @@ const ActivityProduct$json = {
 final $typed_data.Uint8List activityProductDescriptor = $convert.base64Decode(
     'Cg9BY3Rpdml0eVByb2R1Y3QSHQoKcHJvZHVjdF9pZBgBIAEoA1IJcHJvZHVjdElkEhUKBnNrdV'
     '9pZBgCIAEoA1IFc2t1SWQSLQoScHJlZmVyZW50aWFsX3ZhbHVlGAMgASgJUhFwcmVmZXJlbnRp'
-    'YWxWYWx1ZRIfCgtzdG9ja190b3RhbBgEIAEoA1IKc3RvY2tUb3RhbBIlCg5wdXJjaGFzZV9saW'
-    '1pdBgFIAEoA1INcHVyY2hhc2VMaW1pdBIhCgxwcm9kdWN0X25hbWUYBiABKAlSC3Byb2R1Y3RO'
-    'YW1lEh8KC3Byb2R1Y3RfdXJsGAcgASgJUgpwcm9kdWN0VXJsEiAKA3NrdRgIIAMoCzIOLmdsb3'
-    'J5X2FwaS5Ta3VSA3NrdQ==');
+    'YWxWYWx1ZRIfCgtzdG9ja190b3RhbBgEIAEoA1IKc3RvY2tUb3RhbBImCg9hbGxfc3RvY2tfdG'
+    '90YWwYBSABKANSDWFsbFN0b2NrVG90YWwSJQoOcHVyY2hhc2VfbGltaXQYBiABKANSDXB1cmNo'
+    'YXNlTGltaXQSIQoMcHJvZHVjdF9uYW1lGAcgASgJUgtwcm9kdWN0TmFtZRIfCgtwcm9kdWN0X3'
+    'VybBgIIAEoCVIKcHJvZHVjdFVybBIgCgNza3UYCSADKAsyDi5nbG9yeV9hcGkuU2t1UgNza3U=');
 
 @$core.Deprecated('Use createActivityRequestDescriptor instead')
 const CreateActivityRequest$json = {

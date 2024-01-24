@@ -33,6 +33,8 @@ struct GloryApi_ActivityProduct {
 
   var stockTotal: Int64 = 0
 
+  var allStockTotal: Int64 = 0
+
   var purchaseLimit: Int64 = 0
 
   var productName: String = String()
@@ -458,10 +460,11 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     2: .standard(proto: "sku_id"),
     3: .standard(proto: "preferential_value"),
     4: .standard(proto: "stock_total"),
-    5: .standard(proto: "purchase_limit"),
-    6: .standard(proto: "product_name"),
-    7: .standard(proto: "product_url"),
-    8: .same(proto: "sku"),
+    5: .standard(proto: "all_stock_total"),
+    6: .standard(proto: "purchase_limit"),
+    7: .standard(proto: "product_name"),
+    8: .standard(proto: "product_url"),
+    9: .same(proto: "sku"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -474,10 +477,11 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.skuID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.preferentialValue) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.stockTotal) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.productName) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
-      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.allStockTotal) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.purchaseLimit) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.productURL) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.sku) }()
       default: break
       }
     }
@@ -496,17 +500,20 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.stockTotal != 0 {
       try visitor.visitSingularInt64Field(value: self.stockTotal, fieldNumber: 4)
     }
+    if self.allStockTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.allStockTotal, fieldNumber: 5)
+    }
     if self.purchaseLimit != 0 {
-      try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.purchaseLimit, fieldNumber: 6)
     }
     if !self.productName.isEmpty {
-      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 7)
     }
     if !self.productURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: self.productURL, fieldNumber: 8)
     }
     if !self.sku.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 8)
+      try visitor.visitRepeatedMessageField(value: self.sku, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -516,6 +523,7 @@ extension GloryApi_ActivityProduct: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.skuID != rhs.skuID {return false}
     if lhs.preferentialValue != rhs.preferentialValue {return false}
     if lhs.stockTotal != rhs.stockTotal {return false}
+    if lhs.allStockTotal != rhs.allStockTotal {return false}
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.productURL != rhs.productURL {return false}
