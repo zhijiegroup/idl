@@ -36,11 +36,14 @@ message TeacherTask {
   repeated string teacher_task_requirements = 11;
   string teacher_task_link = 12;
   string teacher_task_status = 13; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
-  repeated TeacherTaskParameter task_parameters = 14;
-  string created_at = 15;
-  string updated_at = 16;
-  User creator = 17;
-  User updator = 18;
+  int64 total_task_count = 14; // 总任务数
+  int64 total_submit_count = 15; // 总提交数
+  int64 total_pass_count = 16; // 总通过数
+  repeated TeacherTaskParameter task_parameters = 17;
+  string created_at = 18;
+  string updated_at = 19;
+  User creator = 20;
+  User updator = 21;
 }
 
 message CreateTeacherTaskRequest {
