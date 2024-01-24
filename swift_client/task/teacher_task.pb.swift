@@ -130,6 +130,24 @@ struct GloryApi_TeacherTask {
     set {_uniqueStorage()._teacherTaskStatus = newValue}
   }
 
+  /// 总任务数
+  var totalTaskCount: Int64 {
+    get {return _storage._totalTaskCount}
+    set {_uniqueStorage()._totalTaskCount = newValue}
+  }
+
+  /// 总提交数
+  var totalSubmitCount: Int64 {
+    get {return _storage._totalSubmitCount}
+    set {_uniqueStorage()._totalSubmitCount = newValue}
+  }
+
+  /// 总通过数
+  var totalPassCount: Int64 {
+    get {return _storage._totalPassCount}
+    set {_uniqueStorage()._totalPassCount = newValue}
+  }
+
   var taskParameters: [GloryApi_TeacherTaskParameter] {
     get {return _storage._taskParameters}
     set {_uniqueStorage()._taskParameters = newValue}
@@ -522,11 +540,14 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     11: .standard(proto: "teacher_task_requirements"),
     12: .standard(proto: "teacher_task_link"),
     13: .standard(proto: "teacher_task_status"),
-    14: .standard(proto: "task_parameters"),
-    15: .standard(proto: "created_at"),
-    16: .standard(proto: "updated_at"),
-    17: .same(proto: "creator"),
-    18: .same(proto: "updator"),
+    14: .standard(proto: "total_task_count"),
+    15: .standard(proto: "total_submit_count"),
+    16: .standard(proto: "total_pass_count"),
+    17: .standard(proto: "task_parameters"),
+    18: .standard(proto: "created_at"),
+    19: .standard(proto: "updated_at"),
+    20: .same(proto: "creator"),
+    21: .same(proto: "updator"),
   ]
 
   fileprivate class _StorageClass {
@@ -543,6 +564,9 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _teacherTaskRequirements: [String] = []
     var _teacherTaskLink: String = String()
     var _teacherTaskStatus: String = String()
+    var _totalTaskCount: Int64 = 0
+    var _totalSubmitCount: Int64 = 0
+    var _totalPassCount: Int64 = 0
     var _taskParameters: [GloryApi_TeacherTaskParameter] = []
     var _createdAt: String = String()
     var _updatedAt: String = String()
@@ -567,6 +591,9 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _teacherTaskRequirements = source._teacherTaskRequirements
       _teacherTaskLink = source._teacherTaskLink
       _teacherTaskStatus = source._teacherTaskStatus
+      _totalTaskCount = source._totalTaskCount
+      _totalSubmitCount = source._totalSubmitCount
+      _totalPassCount = source._totalPassCount
       _taskParameters = source._taskParameters
       _createdAt = source._createdAt
       _updatedAt = source._updatedAt
@@ -603,11 +630,14 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 11: try { try decoder.decodeRepeatedStringField(value: &_storage._teacherTaskRequirements) }()
         case 12: try { try decoder.decodeSingularStringField(value: &_storage._teacherTaskLink) }()
         case 13: try { try decoder.decodeSingularStringField(value: &_storage._teacherTaskStatus) }()
-        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskParameters) }()
-        case 15: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
-        case 16: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
-        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
-        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
+        case 14: try { try decoder.decodeSingularInt64Field(value: &_storage._totalTaskCount) }()
+        case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._totalSubmitCount) }()
+        case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._totalPassCount) }()
+        case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskParameters) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 19: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
+        case 20: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
+        case 21: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
         default: break
         }
       }
@@ -659,20 +689,29 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._teacherTaskStatus.isEmpty {
         try visitor.visitSingularStringField(value: _storage._teacherTaskStatus, fieldNumber: 13)
       }
+      if _storage._totalTaskCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._totalTaskCount, fieldNumber: 14)
+      }
+      if _storage._totalSubmitCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._totalSubmitCount, fieldNumber: 15)
+      }
+      if _storage._totalPassCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._totalPassCount, fieldNumber: 16)
+      }
       if !_storage._taskParameters.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._taskParameters, fieldNumber: 14)
+        try visitor.visitRepeatedMessageField(value: _storage._taskParameters, fieldNumber: 17)
       }
       if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 15)
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 18)
       }
       if !_storage._updatedAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._updatedAt, fieldNumber: 16)
+        try visitor.visitSingularStringField(value: _storage._updatedAt, fieldNumber: 19)
       }
       try { if let v = _storage._creator {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
       } }()
       try { if let v = _storage._updator {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -696,6 +735,9 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._teacherTaskRequirements != rhs_storage._teacherTaskRequirements {return false}
         if _storage._teacherTaskLink != rhs_storage._teacherTaskLink {return false}
         if _storage._teacherTaskStatus != rhs_storage._teacherTaskStatus {return false}
+        if _storage._totalTaskCount != rhs_storage._totalTaskCount {return false}
+        if _storage._totalSubmitCount != rhs_storage._totalSubmitCount {return false}
+        if _storage._totalPassCount != rhs_storage._totalPassCount {return false}
         if _storage._taskParameters != rhs_storage._taskParameters {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._updatedAt != rhs_storage._updatedAt {return false}

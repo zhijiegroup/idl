@@ -87,7 +87,7 @@ public final class TeacherTaskOuterClass {
       "ue\030\005 \001(\t\022\033\n\023task_parameter_type\030\006 \001(\t\0221\n" +
       "\010children\030\007 \003(\0132\037.glory_api.TeacherTaskP" +
       "arameter\"8\n\020TeacherTaskClass\022\020\n\010class_id" +
-      "\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\"\301\004\n\013TeacherTa" +
+      "\030\001 \001(\003\022\022\n\nclass_name\030\002 \001(\t\"\221\005\n\013TeacherTa" +
       "sk\022\027\n\017teacher_task_id\030\001 \001(\003\022\022\n\nteacher_i" +
       "d\030\002 \001(\003\022\031\n\021teacher_task_name\030\003 \001(\t\022\035\n\025te" +
       "acher_task_business\030\004 \001(\t\0229\n\024teacher_tas" +
@@ -98,10 +98,12 @@ public final class TeacherTaskOuterClass {
       "\034\n\024teacher_task_content\030\n \001(\t\022!\n\031teacher" +
       "_task_requirements\030\013 \003(\t\022\031\n\021teacher_task" +
       "_link\030\014 \001(\t\022\033\n\023teacher_task_status\030\r \001(\t" +
-      "\0228\n\017task_parameters\030\016 \003(\0132\037.glory_api.Te" +
-      "acherTaskParameter\022\022\n\ncreated_at\030\017 \001(\t\022\022" +
-      "\n\nupdated_at\030\020 \001(\t\022 \n\007creator\030\021 \001(\0132\017.gl" +
-      "ory_api.User\022 \n\007updator\030\022 \001(\0132\017.glory_ap" +
+      "\022\030\n\020total_task_count\030\016 \001(\003\022\032\n\022total_subm" +
+      "it_count\030\017 \001(\003\022\030\n\020total_pass_count\030\020 \001(\003" +
+      "\0228\n\017task_parameters\030\021 \003(\0132\037.glory_api.Te" +
+      "acherTaskParameter\022\022\n\ncreated_at\030\022 \001(\t\022\022" +
+      "\n\nupdated_at\030\023 \001(\t\022 \n\007creator\030\024 \001(\0132\017.gl" +
+      "ory_api.User\022 \n\007updator\030\025 \001(\0132\017.glory_ap" +
       "i.User\"q\n\030CreateTeacherTaskRequest\022\'\n\014ba" +
       "se_request\030\001 \001(\0132\021.base.BaseRequest\022,\n\014t" +
       "eacher_task\030\002 \001(\0132\026.glory_api.TeacherTas" +
@@ -149,7 +151,7 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_TeacherTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherTask_descriptor,
-        new java.lang.String[] { "TeacherTaskId", "TeacherId", "TeacherTaskName", "TeacherTaskBusiness", "TeacherTaskClasses", "TeacherTaskStart", "TeacherTaskEnd", "TeacherTaskType", "TeacherTaskTemplateId", "TeacherTaskContent", "TeacherTaskRequirements", "TeacherTaskLink", "TeacherTaskStatus", "TaskParameters", "CreatedAt", "UpdatedAt", "Creator", "Updator", });
+        new java.lang.String[] { "TeacherTaskId", "TeacherId", "TeacherTaskName", "TeacherTaskBusiness", "TeacherTaskClasses", "TeacherTaskStart", "TeacherTaskEnd", "TeacherTaskType", "TeacherTaskTemplateId", "TeacherTaskContent", "TeacherTaskRequirements", "TeacherTaskLink", "TeacherTaskStatus", "TotalTaskCount", "TotalSubmitCount", "TotalPassCount", "TaskParameters", "CreatedAt", "UpdatedAt", "Creator", "Updator", });
     internal_static_glory_api_CreateTeacherTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_CreateTeacherTaskRequest_fieldAccessorTable = new

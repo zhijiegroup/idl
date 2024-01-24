@@ -224,6 +224,9 @@ class TeacherTask extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? teacherTaskRequirements,
     $core.String? teacherTaskLink,
     $core.String? teacherTaskStatus,
+    $fixnum.Int64? totalTaskCount,
+    $fixnum.Int64? totalSubmitCount,
+    $fixnum.Int64? totalPassCount,
     $core.Iterable<TeacherTaskParameter>? taskParameters,
     $core.String? createdAt,
     $core.String? updatedAt,
@@ -270,6 +273,15 @@ class TeacherTask extends $pb.GeneratedMessage {
     if (teacherTaskStatus != null) {
       $result.teacherTaskStatus = teacherTaskStatus;
     }
+    if (totalTaskCount != null) {
+      $result.totalTaskCount = totalTaskCount;
+    }
+    if (totalSubmitCount != null) {
+      $result.totalSubmitCount = totalSubmitCount;
+    }
+    if (totalPassCount != null) {
+      $result.totalPassCount = totalPassCount;
+    }
     if (taskParameters != null) {
       $result.taskParameters.addAll(taskParameters);
     }
@@ -305,11 +317,14 @@ class TeacherTask extends $pb.GeneratedMessage {
     ..pPS(11, _omitFieldNames ? '' : 'teacherTaskRequirements')
     ..aOS(12, _omitFieldNames ? '' : 'teacherTaskLink')
     ..aOS(13, _omitFieldNames ? '' : 'teacherTaskStatus')
-    ..pc<TeacherTaskParameter>(14, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskParameter.create)
-    ..aOS(15, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(16, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$0.User>(17, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
-    ..aOM<$0.User>(18, _omitFieldNames ? '' : 'updator', subBuilder: $0.User.create)
+    ..aInt64(14, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(15, _omitFieldNames ? '' : 'totalSubmitCount')
+    ..aInt64(16, _omitFieldNames ? '' : 'totalPassCount')
+    ..pc<TeacherTaskParameter>(17, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskParameter.create)
+    ..aOS(18, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(19, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(20, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(21, _omitFieldNames ? '' : 'updator', subBuilder: $0.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -440,47 +455,74 @@ class TeacherTask extends $pb.GeneratedMessage {
   void clearTeacherTaskStatus() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.List<TeacherTaskParameter> get taskParameters => $_getList(13);
+  $fixnum.Int64 get totalTaskCount => $_getI64(13);
+  @$pb.TagNumber(14)
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasTotalTaskCount() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTotalTaskCount() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.String get createdAt => $_getSZ(14);
+  $fixnum.Int64 get totalSubmitCount => $_getI64(14);
   @$pb.TagNumber(15)
-  set createdAt($core.String v) { $_setString(14, v); }
+  set totalSubmitCount($fixnum.Int64 v) { $_setInt64(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasCreatedAt() => $_has(14);
+  $core.bool hasTotalSubmitCount() => $_has(14);
   @$pb.TagNumber(15)
-  void clearCreatedAt() => clearField(15);
+  void clearTotalSubmitCount() => clearField(15);
 
   @$pb.TagNumber(16)
-  $core.String get updatedAt => $_getSZ(15);
+  $fixnum.Int64 get totalPassCount => $_getI64(15);
   @$pb.TagNumber(16)
-  set updatedAt($core.String v) { $_setString(15, v); }
+  set totalPassCount($fixnum.Int64 v) { $_setInt64(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasUpdatedAt() => $_has(15);
+  $core.bool hasTotalPassCount() => $_has(15);
   @$pb.TagNumber(16)
-  void clearUpdatedAt() => clearField(16);
+  void clearTotalPassCount() => clearField(16);
 
   @$pb.TagNumber(17)
-  $0.User get creator => $_getN(16);
-  @$pb.TagNumber(17)
-  set creator($0.User v) { setField(17, v); }
-  @$pb.TagNumber(17)
-  $core.bool hasCreator() => $_has(16);
-  @$pb.TagNumber(17)
-  void clearCreator() => clearField(17);
-  @$pb.TagNumber(17)
-  $0.User ensureCreator() => $_ensure(16);
+  $core.List<TeacherTaskParameter> get taskParameters => $_getList(16);
 
   @$pb.TagNumber(18)
-  $0.User get updator => $_getN(17);
+  $core.String get createdAt => $_getSZ(17);
   @$pb.TagNumber(18)
-  set updator($0.User v) { setField(18, v); }
+  set createdAt($core.String v) { $_setString(17, v); }
   @$pb.TagNumber(18)
-  $core.bool hasUpdator() => $_has(17);
+  $core.bool hasCreatedAt() => $_has(17);
   @$pb.TagNumber(18)
-  void clearUpdator() => clearField(18);
-  @$pb.TagNumber(18)
-  $0.User ensureUpdator() => $_ensure(17);
+  void clearCreatedAt() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get updatedAt => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set updatedAt($core.String v) { $_setString(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasUpdatedAt() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearUpdatedAt() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $0.User get creator => $_getN(19);
+  @$pb.TagNumber(20)
+  set creator($0.User v) { setField(20, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasCreator() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCreator() => clearField(20);
+  @$pb.TagNumber(20)
+  $0.User ensureCreator() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $0.User get updator => $_getN(20);
+  @$pb.TagNumber(21)
+  set updator($0.User v) { setField(21, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasUpdator() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearUpdator() => clearField(21);
+  @$pb.TagNumber(21)
+  $0.User ensureUpdator() => $_ensure(20);
 }
 
 class CreateTeacherTaskRequest extends $pb.GeneratedMessage {

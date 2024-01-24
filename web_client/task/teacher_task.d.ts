@@ -38,6 +38,12 @@ export interface TeacherTask {
   teacher_task_link?: string;
   /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
   teacher_task_status?: string;
+  /** 总任务数 */
+  total_task_count?: string;
+  /** 总提交数 */
+  total_submit_count?: string;
+  /** 总通过数 */
+  total_pass_count?: string;
   task_parameters?: Array<TeacherTaskParameter>;
   created_at?: string;
   updated_at?: string;

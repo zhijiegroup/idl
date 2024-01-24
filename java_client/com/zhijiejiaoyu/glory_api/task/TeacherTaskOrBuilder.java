@@ -177,80 +177,110 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskStatusBytes();
 
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 14;</code>
+   * <pre>
+   * 总任务数
+   * </pre>
+   *
+   * <code>int64 total_task_count = 14;</code>
+   * @return The totalTaskCount.
+   */
+  long getTotalTaskCount();
+
+  /**
+   * <pre>
+   * 总提交数
+   * </pre>
+   *
+   * <code>int64 total_submit_count = 15;</code>
+   * @return The totalSubmitCount.
+   */
+  long getTotalSubmitCount();
+
+  /**
+   * <pre>
+   * 总通过数
+   * </pre>
+   *
+   * <code>int64 total_pass_count = 16;</code>
+   * @return The totalPassCount.
+   */
+  long getTotalPassCount();
+
+  /**
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> 
       getTaskParametersList();
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 14;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter getTaskParameters(int index);
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 14;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
    */
   int getTaskParametersCount();
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 14;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> 
       getTaskParametersOrBuilderList();
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 14;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder getTaskParametersOrBuilder(
       int index);
 
   /**
-   * <code>string created_at = 15;</code>
+   * <code>string created_at = 18;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 15;</code>
+   * <code>string created_at = 18;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string updated_at = 16;</code>
+   * <code>string updated_at = 19;</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <code>string updated_at = 16;</code>
+   * <code>string updated_at = 19;</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <code>.glory_api.User creator = 17;</code>
+   * <code>.glory_api.User creator = 20;</code>
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
   /**
-   * <code>.glory_api.User creator = 17;</code>
+   * <code>.glory_api.User creator = 20;</code>
    * @return The creator.
    */
   com.zhijiejiaoyu.glory_api.user.User getCreator();
   /**
-   * <code>.glory_api.User creator = 17;</code>
+   * <code>.glory_api.User creator = 20;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
 
   /**
-   * <code>.glory_api.User updator = 18;</code>
+   * <code>.glory_api.User updator = 21;</code>
    * @return Whether the updator field is set.
    */
   boolean hasUpdator();
   /**
-   * <code>.glory_api.User updator = 18;</code>
+   * <code>.glory_api.User updator = 21;</code>
    * @return The updator.
    */
   com.zhijiejiaoyu.glory_api.user.User getUpdator();
   /**
-   * <code>.glory_api.User updator = 18;</code>
+   * <code>.glory_api.User updator = 21;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder();
 }
