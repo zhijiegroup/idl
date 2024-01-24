@@ -14,16 +14,16 @@ public interface StudentTaskOrBuilder extends
   long getStudentTaskId();
 
   /**
-   * <code>string status = 2;</code>
-   * @return The status.
+   * <code>string task_status = 2;</code>
+   * @return The taskStatus.
    */
-  java.lang.String getStatus();
+  java.lang.String getTaskStatus();
   /**
-   * <code>string status = 2;</code>
-   * @return The bytes for status.
+   * <code>string task_status = 2;</code>
+   * @return The bytes for taskStatus.
    */
   com.google.protobuf.ByteString
-      getStatusBytes();
+      getTaskStatusBytes();
 
   /**
    * <code>string submitted_at = 3;</code>
@@ -102,17 +102,32 @@ public interface StudentTaskOrBuilder extends
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User student = 8;</code>
+   * @return Whether the student field is set.
+   */
+  boolean hasStudent();
+  /**
+   * <code>.glory_api.User student = 8;</code>
+   * @return The student.
+   */
+  com.zhijiejiaoyu.glory_api.user.User getStudent();
+  /**
+   * <code>.glory_api.User student = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
+
+  /**
+   * <code>.glory_api.User teacher = 9;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User teacher = 9;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User teacher = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

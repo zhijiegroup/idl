@@ -2924,6 +2924,30 @@ export class glory_api {
     );
   }
 
+  TeacherListStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/teacher_list_student_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  TeacherEvaluateStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/teacher_evaluate_student_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  TeacherGetStudentTask(request) {
+    const uri = `${this.uriPrefix}/api/task/teacher_get_student_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListNotification(request) {
     const uri = `${this.uriPrefix}/api/notification/list`;
     const body = JSONbigint.stringify(request);

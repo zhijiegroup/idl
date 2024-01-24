@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StudentTask() {
-    status = "";
+    taskStatus = "";
     submittedAt = "";
     submitParameter = "";
     submitDescription = "";
@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            status = s;
+            taskStatus = s;
             break;
           }
           case 26: {
@@ -106,6 +106,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
+            com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
+            if (student != null) {
+              subBuilder = student .toBuilder();
+            }
+            student = input.readMessage(com.zhijiejiaoyu.glory_api.user.User.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(student );
+              student = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 74: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (teacher != null) {
               subBuilder = teacher .toBuilder();
@@ -164,38 +177,38 @@ private static final long serialVersionUID = 0L;
     return studentTaskId ;
   }
 
-  public static final int STATUS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object status ;
+  public static final int TASK_STATUS_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskStatus ;
   /**
-   * <code>string status = 2;</code>
-   * @return The status.
+   * <code>string task_status = 2;</code>
+   * @return The taskStatus.
    */
   @java.lang.Override
-  public java.lang.String getStatus() {
-    java.lang.Object ref = status ;
+  public java.lang.String getTaskStatus() {
+    java.lang.Object ref = taskStatus ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      status = s;
+      taskStatus = s;
       return s;
     }
   }
   /**
-   * <code>string status = 2;</code>
-   * @return The bytes for status.
+   * <code>string task_status = 2;</code>
+   * @return The bytes for taskStatus.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getStatusBytes() {
-    java.lang.Object ref = status ;
+      getTaskStatusBytes() {
+    java.lang.Object ref = taskStatus ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      status = b;
+      taskStatus = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -377,10 +390,36 @@ private static final long serialVersionUID = 0L;
     return getTeacherTask();
   }
 
-  public static final int TEACHER_FIELD_NUMBER = 8;
+  public static final int STUDENT_FIELD_NUMBER = 8;
+  private com.zhijiejiaoyu.glory_api.user.User student ;
+  /**
+   * <code>.glory_api.User student = 8;</code>
+   * @return Whether the student field is set.
+   */
+  @java.lang.Override
+  public boolean hasStudent() {
+    return student != null;
+  }
+  /**
+   * <code>.glory_api.User student = 8;</code>
+   * @return The student.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.User getStudent() {
+    return student == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : student ;
+  }
+  /**
+   * <code>.glory_api.User student = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
+    return getStudent();
+  }
+
+  public static final int TEACHER_FIELD_NUMBER = 9;
   private com.zhijiejiaoyu.glory_api.user.User teacher ;
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User teacher = 9;</code>
    * @return Whether the teacher field is set.
    */
   @java.lang.Override
@@ -388,7 +427,7 @@ private static final long serialVersionUID = 0L;
     return teacher != null;
   }
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User teacher = 9;</code>
    * @return The teacher.
    */
   @java.lang.Override
@@ -396,7 +435,7 @@ private static final long serialVersionUID = 0L;
     return teacher == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : teacher ;
   }
   /**
-   * <code>.glory_api.User teacher = 8;</code>
+   * <code>.glory_api.User teacher = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
@@ -420,8 +459,8 @@ private static final long serialVersionUID = 0L;
     if (studentTaskId != 0L) {
       output.writeInt64(1, studentTaskId );
     }
-    if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status );
+    if (!getTaskStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskStatus );
     }
     if (!getSubmittedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, submittedAt );
@@ -438,8 +477,11 @@ private static final long serialVersionUID = 0L;
     if (teacherTask != null) {
       output.writeMessage(7, getTeacherTask());
     }
+    if (student != null) {
+      output.writeMessage(8, getStudent());
+    }
     if (teacher != null) {
-      output.writeMessage(8, getTeacher());
+      output.writeMessage(9, getTeacher());
     }
     unknownFields.writeTo(output);
   }
@@ -454,8 +496,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, studentTaskId );
     }
-    if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status );
+    if (!getTaskStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskStatus );
     }
     if (!getSubmittedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, submittedAt );
@@ -478,9 +520,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getTeacherTask());
     }
+    if (student != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getStudent());
+    }
     if (teacher != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getTeacher());
+        .computeMessageSize(9, getTeacher());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -499,8 +545,8 @@ private static final long serialVersionUID = 0L;
 
     if (getStudentTaskId()
         != other.getStudentTaskId()) return false;
-    if (!getStatus()
-        .equals(other.getStatus())) return false;
+    if (!getTaskStatus()
+        .equals(other.getTaskStatus())) return false;
     if (!getSubmittedAt()
         .equals(other.getSubmittedAt())) return false;
     if (!getSubmitParameter()
@@ -513,6 +559,11 @@ private static final long serialVersionUID = 0L;
     if (hasTeacherTask()) {
       if (!getTeacherTask()
           .equals(other.getTeacherTask())) return false;
+    }
+    if (hasStudent() != other.hasStudent()) return false;
+    if (hasStudent()) {
+      if (!getStudent()
+          .equals(other.getStudent())) return false;
     }
     if (hasTeacher() != other.hasTeacher()) return false;
     if (hasTeacher()) {
@@ -533,8 +584,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STUDENT_TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStudentTaskId());
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + TASK_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskStatus().hashCode();
     hash = (37 * hash) + SUBMITTED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getSubmittedAt().hashCode();
     hash = (37 * hash) + SUBMIT_PARAMETER_FIELD_NUMBER;
@@ -548,6 +599,10 @@ private static final long serialVersionUID = 0L;
     if (hasTeacherTask()) {
       hash = (37 * hash) + TEACHER_TASK_FIELD_NUMBER;
       hash = (53 * hash) + getTeacherTask().hashCode();
+    }
+    if (hasStudent()) {
+      hash = (37 * hash) + STUDENT_FIELD_NUMBER;
+      hash = (53 * hash) + getStudent().hashCode();
     }
     if (hasTeacher()) {
       hash = (37 * hash) + TEACHER_FIELD_NUMBER;
@@ -688,7 +743,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       studentTaskId = 0L;
 
-      status = "";
+      taskStatus = "";
 
       submittedAt = "";
 
@@ -703,6 +758,12 @@ private static final long serialVersionUID = 0L;
       } else {
         teacherTask = null;
         teacherTaskBuilder = null;
+      }
+      if (studentBuilder == null) {
+        student = null;
+      } else {
+        student = null;
+        studentBuilder = null;
       }
       if (teacherBuilder == null) {
         teacher = null;
@@ -738,7 +799,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.task.StudentTask result = new com.zhijiejiaoyu.glory_api.task.StudentTask(this);
       int from_bitField0 = bitField0 ;
       result.studentTaskId = studentTaskId ;
-      result.status = status ;
+      result.taskStatus = taskStatus ;
       result.submittedAt = submittedAt ;
       result.submitParameter = submitParameter ;
       result.submitDescription = submitDescription ;
@@ -751,6 +812,11 @@ private static final long serialVersionUID = 0L;
         result.teacherTask = teacherTask ;
       } else {
         result.teacherTask = teacherTaskBuilder .build();
+      }
+      if (studentBuilder == null) {
+        result.student = student ;
+      } else {
+        result.student = studentBuilder .build();
       }
       if (teacherBuilder == null) {
         result.teacher = teacher ;
@@ -808,8 +874,8 @@ private static final long serialVersionUID = 0L;
       if (other.getStudentTaskId() != 0L) {
         setStudentTaskId(other.getStudentTaskId());
       }
-      if (!other.getStatus().isEmpty()) {
-        status = other.status ;
+      if (!other.getTaskStatus().isEmpty()) {
+        taskStatus = other.taskStatus ;
         onChanged();
       }
       if (!other.getSubmittedAt().isEmpty()) {
@@ -836,6 +902,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTeacherTask()) {
         mergeTeacherTask(other.getTeacherTask());
+      }
+      if (other.hasStudent()) {
+        mergeStudent(other.getStudent());
       }
       if (other.hasTeacher()) {
         mergeTeacher(other.getTeacher());
@@ -901,78 +970,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object status = "";
+    private java.lang.Object taskStatus = "";
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>string task_status = 2;</code>
+     * @return The taskStatus.
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status ;
+    public java.lang.String getTaskStatus() {
+      java.lang.Object ref = taskStatus ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        status = s;
+        taskStatus = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
+     * <code>string task_status = 2;</code>
+     * @return The bytes for taskStatus.
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status ;
+        getTaskStatusBytes() {
+      java.lang.Object ref = taskStatus ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        status = b;
+        taskStatus = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string status = 2;</code>
-     * @param value The status to set.
+     * <code>string task_status = 2;</code>
+     * @param value The taskStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setStatus(
+    public Builder setTaskStatus(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      status = value;
+      taskStatus = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 2;</code>
+     * <code>string task_status = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
+    public Builder clearTaskStatus() {
       
-      status = getDefaultInstance().getStatus();
+      taskStatus = getDefaultInstance().getTaskStatus();
       onChanged();
       return this;
     }
     /**
-     * <code>string status = 2;</code>
-     * @param value The bytes for status to set.
+     * <code>string task_status = 2;</code>
+     * @param value The bytes for taskStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusBytes(
+    public Builder setTaskStatusBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      status = value;
+      taskStatus = value;
       onChanged();
       return this;
     }
@@ -1434,18 +1503,137 @@ private static final long serialVersionUID = 0L;
       return teacherTaskBuilder ;
     }
 
+    private com.zhijiejiaoyu.glory_api.user.User student ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> studentBuilder ;
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     * @return Whether the student field is set.
+     */
+    public boolean hasStudent() {
+      return studentBuilder != null || student != null;
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     * @return The student.
+     */
+    public com.zhijiejiaoyu.glory_api.user.User getStudent() {
+      if (studentBuilder == null) {
+        return student == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : student ;
+      } else {
+        return studentBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public Builder setStudent(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (studentBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        student = value;
+        onChanged();
+      } else {
+        studentBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public Builder setStudent(
+        com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
+      if (studentBuilder == null) {
+        student = builderForValue.build();
+        onChanged();
+      } else {
+        studentBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public Builder mergeStudent(com.zhijiejiaoyu.glory_api.user.User value) {
+      if (studentBuilder == null) {
+        if (student != null) {
+          student =
+            com.zhijiejiaoyu.glory_api.user.User.newBuilder(student ).mergeFrom(value).buildPartial();
+        } else {
+          student = value;
+        }
+        onChanged();
+      } else {
+        studentBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public Builder clearStudent() {
+      if (studentBuilder == null) {
+        student = null;
+        onChanged();
+      } else {
+        student = null;
+        studentBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.User.Builder getStudentBuilder() {
+      
+      onChanged();
+      return getStudentFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
+      if (studentBuilder != null) {
+        return studentBuilder .getMessageOrBuilder();
+      } else {
+        return student == null ?
+            com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : student ;
+      }
+    }
+    /**
+     * <code>.glory_api.User student = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
+        getStudentFieldBuilder() {
+      if (studentBuilder == null) {
+        studentBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder>(
+                getStudent(),
+                getParentForChildren(),
+                isClean());
+        student = null;
+      }
+      return studentBuilder ;
+    }
+
     private com.zhijiejiaoyu.glory_api.user.User teacher ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> teacherBuilder ;
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      * @return Whether the teacher field is set.
      */
     public boolean hasTeacher() {
       return teacherBuilder != null || teacher != null;
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      * @return The teacher.
      */
     public com.zhijiejiaoyu.glory_api.user.User getTeacher() {
@@ -1456,7 +1644,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public Builder setTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -1472,7 +1660,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public Builder setTeacher(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -1486,7 +1674,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public Builder mergeTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -1504,7 +1692,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public Builder clearTeacher() {
       if (teacherBuilder == null) {
@@ -1518,7 +1706,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getTeacherBuilder() {
       
@@ -1526,7 +1714,7 @@ private static final long serialVersionUID = 0L;
       return getTeacherFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
       if (teacherBuilder != null) {
@@ -1537,7 +1725,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 8;</code>
+     * <code>.glory_api.User teacher = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

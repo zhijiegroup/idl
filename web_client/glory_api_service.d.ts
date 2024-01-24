@@ -1640,6 +1640,18 @@ CreateLivePlanProduct create live plan product */
     request: student_task.SubmitStudentTaskRequest
   ): Promise<student_task.SubmitStudentTaskResponse>;
 
+  TeacherListStudentTask(
+    request: student_task.TeacherListStudentTaskRequest
+  ): Promise<student_task.TeacherListStudentTaskResponse>;
+
+  TeacherEvaluateStudentTask(
+    request: student_task.TeacherEvaluateStudentTaskRequest
+  ): Promise<student_task.TeacherEvaluateStudentTaskResponse>;
+
+  TeacherGetStudentTask(
+    request: student_task.TeacherGetStudentTaskRequest
+  ): Promise<student_task.TeacherGetStudentTaskResponse>;
+
   /** 通知模块 */
   ListNotification(
     request: notification.ListNotificationRequest

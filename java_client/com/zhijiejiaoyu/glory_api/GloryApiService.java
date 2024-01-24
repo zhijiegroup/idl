@@ -57,7 +57,7 @@ public final class GloryApiService {
       ".proto\032\026task/system_task.proto\032 task/tea" +
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
-      "fication/notification.proto2\376\360\002\n\tglory_a" +
+      "fication/notification.proto2\325\364\002\n\tglory_a" +
       "pi\022s\n\rCreateExample\022\037.glory_api.CreateEx" +
       "ampleRequest\032 .glory_api.CreateExampleRe" +
       "sponse\"\037\322\301\030\033/api/example/create_example\022" +
@@ -1203,43 +1203,55 @@ public final class GloryApiService {
       "\022\201\001\n\021SubmitStudentTask\022#.glory_api.Submi" +
       "tStudentTaskRequest\032$.glory_api.SubmitSt" +
       "udentTaskResponse\"!\322\301\030\035/api/task/submit_" +
-      "student_task\022w\n\020ListNotification\022\".glory" +
-      "_api.ListNotificationRequest\032#.glory_api" +
-      ".ListNotificationResponse\"\032\322\301\030\026/api/noti" +
-      "fication/list\022{\n\021CountNotification\022#.glo" +
-      "ry_api.CountNotificationRequest\032$.glory_" +
-      "api.CountNotificationResponse\"\033\312\301\030\027/api/" +
-      "notification/count\022w\n\020ReadNotification\022\"" +
-      ".glory_api.ReadNotificationRequest\032#.glo" +
-      "ry_api.ReadNotificationResponse\"\032\322\301\030\026/ap" +
-      "i/notification/read\022w\n\020TestNotification\022" +
-      "\".glory_api.TestNotificationRequest\032#.gl" +
-      "ory_api.TestNotificationResponse\"\032\322\301\030\026/a" +
-      "pi/notification/test\022\177\n\022DeleteNotificati" +
-      "on\022$.glory_api.DeleteNotificationRequest" +
-      "\032%.glory_api.DeleteNotificationResponse\"" +
-      "\034\322\301\030\030/api/notification/delete\022\214\001\n\025ListUs" +
-      "erMajorAndClass\022&.glory_api.ListUserMajo" +
-      "rAndClasRequest\032\'.glory_api.ListUserMajo" +
-      "rAndClasResponse\"\"\312\301\030\036/api/live/list_maj" +
-      "or_and_class\022\216\001\n\025GetAggregationLiveUrl\022\'",
-      ".glory_api.GetAggregationLiveUrlRequest\032" +
-      "(.glory_api.GetAggregationLiveUrlRespons" +
-      "e\"\"\322\301\030\036/api/live/aggregation_live_url\022y\n" +
-      "\020GetLiveBoardData\022\".glory_api.GetLiveBoa" +
-      "rdDataRequest\032#.glory_api.GetLiveBoardDa" +
-      "taResponse\"\034\322\301\030\030/api/live/get_board_data" +
-      "\022\215\001\n\024GetLiveBoardComments\022&.glory_api.Ge" +
-      "tLiveBoardCommentsRequest\032\'.glory_api.Ge" +
-      "tLiveBoardCommentsResponse\"$\322\301\030 /api/liv" +
-      "e/get_board_live_comment\022\200\001\n\023ListBoardLi" +
-      "vingUser\022 .glory_api.ListLivingUserReque" +
-      "st\032!.glory_api.ListLivingUserResponse\"$\322" +
-      "\301\030 /api/live/list_board_living_user\022h\n\013C" +
-      "loseCaster\022\035.glory_api.CloseCasterReques" +
-      "t\032\036.glory_api.CloseCasterResponse\"\032\312\301\030\026/" +
-      "api/live/close_casterB\036\n\032com.zhijiejiaoy" +
-      "u.glory_apiP\001b\006proto3"
+      "student_task\022\226\001\n\026TeacherListStudentTask\022" +
+      "(.glory_api.TeacherListStudentTaskReques" +
+      "t\032).glory_api.TeacherListStudentTaskResp" +
+      "onse\"\'\322\301\030#/api/task/teacher_list_student" +
+      "_task\022\246\001\n\032TeacherEvaluateStudentTask\022,.g" +
+      "lory_api.TeacherEvaluateStudentTaskReque" +
+      "st\032-.glory_api.TeacherEvaluateStudentTas" +
+      "kResponse\"+\322\301\030\'/api/task/teacher_evaluat" +
+      "e_student_task\022\222\001\n\025TeacherGetStudentTask" +
+      "\022\'.glory_api.TeacherGetStudentTaskReques" +
+      "t\032(.glory_api.TeacherGetStudentTaskRespo" +
+      "nse\"&\322\301\030\"/api/task/teacher_get_student_t" +
+      "ask\022w\n\020ListNotification\022\".glory_api.List" +
+      "NotificationRequest\032#.glory_api.ListNoti" +
+      "ficationResponse\"\032\322\301\030\026/api/notification/" +
+      "list\022{\n\021CountNotification\022#.glory_api.Co" +
+      "untNotificationRequest\032$.glory_api.Count" +
+      "NotificationResponse\"\033\312\301\030\027/api/notificat" +
+      "ion/count\022w\n\020ReadNotification\022\".glory_ap" +
+      "i.ReadNotificationRequest\032#.glory_api.Re",
+      "adNotificationResponse\"\032\322\301\030\026/api/notific" +
+      "ation/read\022w\n\020TestNotification\022\".glory_a" +
+      "pi.TestNotificationRequest\032#.glory_api.T" +
+      "estNotificationResponse\"\032\322\301\030\026/api/notifi" +
+      "cation/test\022\177\n\022DeleteNotification\022$.glor" +
+      "y_api.DeleteNotificationRequest\032%.glory_" +
+      "api.DeleteNotificationResponse\"\034\322\301\030\030/api" +
+      "/notification/delete\022\214\001\n\025ListUserMajorAn" +
+      "dClass\022&.glory_api.ListUserMajorAndClasR" +
+      "equest\032\'.glory_api.ListUserMajorAndClasR" +
+      "esponse\"\"\312\301\030\036/api/live/list_major_and_cl" +
+      "ass\022\216\001\n\025GetAggregationLiveUrl\022\'.glory_ap" +
+      "i.GetAggregationLiveUrlRequest\032(.glory_a" +
+      "pi.GetAggregationLiveUrlResponse\"\"\322\301\030\036/a" +
+      "pi/live/aggregation_live_url\022y\n\020GetLiveB" +
+      "oardData\022\".glory_api.GetLiveBoardDataReq" +
+      "uest\032#.glory_api.GetLiveBoardDataRespons" +
+      "e\"\034\322\301\030\030/api/live/get_board_data\022\215\001\n\024GetL" +
+      "iveBoardComments\022&.glory_api.GetLiveBoar" +
+      "dCommentsRequest\032\'.glory_api.GetLiveBoar" +
+      "dCommentsResponse\"$\322\301\030 /api/live/get_boa" +
+      "rd_live_comment\022\200\001\n\023ListBoardLivingUser\022" +
+      " .glory_api.ListLivingUserRequest\032!.glor" +
+      "y_api.ListLivingUserResponse\"$\322\301\030 /api/l" +
+      "ive/list_board_living_user\022h\n\013CloseCaste" +
+      "r\022\035.glory_api.CloseCasterRequest\032\036.glory" +
+      "_api.CloseCasterResponse\"\032\312\301\030\026/api/live/" +
+      "close_casterB\036\n\032com.zhijiejiaoyu.glory_a" +
+      "piP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
