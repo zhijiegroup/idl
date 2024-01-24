@@ -20,6 +20,7 @@ export interface Sku {
   serial_number?: string;
   preferential_value?: string;
   stock_total?: string;
+  all_stock_total?: string;
   purchase_limit?: string;
   user_buy_total?: string;
 }

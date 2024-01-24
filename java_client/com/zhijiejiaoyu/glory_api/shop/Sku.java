@@ -131,10 +131,15 @@ private static final long serialVersionUID = 0L;
           }
           case 120: {
 
-            purchaseLimit = input.readInt64();
+            allStockTotal = input.readInt64();
             break;
           }
           case 128: {
+
+            purchaseLimit = input.readInt64();
+            break;
+          }
+          case 136: {
 
             userBuyTotal = input.readInt64();
             break;
@@ -481,10 +486,21 @@ private static final long serialVersionUID = 0L;
     return stockTotal ;
   }
 
-  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 15;
+  public static final int ALL_STOCK_TOTAL_FIELD_NUMBER = 15;
+  private long allStockTotal ;
+  /**
+   * <code>int64 all_stock_total = 15;</code>
+   * @return The allStockTotal.
+   */
+  @java.lang.Override
+  public long getAllStockTotal() {
+    return allStockTotal ;
+  }
+
+  public static final int PURCHASE_LIMIT_FIELD_NUMBER = 16;
   private long purchaseLimit ;
   /**
-   * <code>int64 purchase_limit = 15;</code>
+   * <code>int64 purchase_limit = 16;</code>
    * @return The purchaseLimit.
    */
   @java.lang.Override
@@ -492,10 +508,10 @@ private static final long serialVersionUID = 0L;
     return purchaseLimit ;
   }
 
-  public static final int USER_BUY_TOTAL_FIELD_NUMBER = 16;
+  public static final int USER_BUY_TOTAL_FIELD_NUMBER = 17;
   private long userBuyTotal ;
   /**
-   * <code>int64 user_buy_total = 16;</code>
+   * <code>int64 user_buy_total = 17;</code>
    * @return The userBuyTotal.
    */
   @java.lang.Override
@@ -556,11 +572,14 @@ private static final long serialVersionUID = 0L;
     if (stockTotal != 0L) {
       output.writeInt64(14, stockTotal );
     }
+    if (allStockTotal != 0L) {
+      output.writeInt64(15, allStockTotal );
+    }
     if (purchaseLimit != 0L) {
-      output.writeInt64(15, purchaseLimit );
+      output.writeInt64(16, purchaseLimit );
     }
     if (userBuyTotal != 0L) {
-      output.writeInt64(16, userBuyTotal );
+      output.writeInt64(17, userBuyTotal );
     }
     unknownFields.writeTo(output);
   }
@@ -618,13 +637,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(14, stockTotal );
     }
+    if (allStockTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(15, allStockTotal );
+    }
     if (purchaseLimit != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(15, purchaseLimit );
+        .computeInt64Size(16, purchaseLimit );
     }
     if (userBuyTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(16, userBuyTotal );
+        .computeInt64Size(17, userBuyTotal );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -668,6 +691,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPreferentialValue())) return false;
     if (getStockTotal()
         != other.getStockTotal()) return false;
+    if (getAllStockTotal()
+        != other.getAllStockTotal()) return false;
     if (getPurchaseLimit()
         != other.getPurchaseLimit()) return false;
     if (getUserBuyTotal()
@@ -716,6 +741,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STOCK_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStockTotal());
+    hash = (37 * hash) + ALL_STOCK_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAllStockTotal());
     hash = (37 * hash) + PURCHASE_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPurchaseLimit());
@@ -886,6 +914,8 @@ private static final long serialVersionUID = 0L;
 
       stockTotal = 0L;
 
+      allStockTotal = 0L;
+
       purchaseLimit = 0L;
 
       userBuyTotal = 0L;
@@ -938,6 +968,7 @@ private static final long serialVersionUID = 0L;
       result.serialNumber = serialNumber ;
       result.preferentialValue = preferentialValue ;
       result.stockTotal = stockTotal ;
+      result.allStockTotal = allStockTotal ;
       result.purchaseLimit = purchaseLimit ;
       result.userBuyTotal = userBuyTotal ;
       onBuilt();
@@ -1054,6 +1085,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStockTotal() != 0L) {
         setStockTotal(other.getStockTotal());
+      }
+      if (other.getAllStockTotal() != 0L) {
+        setAllStockTotal(other.getAllStockTotal());
       }
       if (other.getPurchaseLimit() != 0L) {
         setPurchaseLimit(other.getPurchaseLimit());
@@ -1928,9 +1962,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long allStockTotal ;
+    /**
+     * <code>int64 all_stock_total = 15;</code>
+     * @return The allStockTotal.
+     */
+    @java.lang.Override
+    public long getAllStockTotal() {
+      return allStockTotal ;
+    }
+    /**
+     * <code>int64 all_stock_total = 15;</code>
+     * @param value The allStockTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllStockTotal(long value) {
+      
+      allStockTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 all_stock_total = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllStockTotal() {
+      
+      allStockTotal = 0L;
+      onChanged();
+      return this;
+    }
+
     private long purchaseLimit ;
     /**
-     * <code>int64 purchase_limit = 15;</code>
+     * <code>int64 purchase_limit = 16;</code>
      * @return The purchaseLimit.
      */
     @java.lang.Override
@@ -1938,7 +2003,7 @@ private static final long serialVersionUID = 0L;
       return purchaseLimit ;
     }
     /**
-     * <code>int64 purchase_limit = 15;</code>
+     * <code>int64 purchase_limit = 16;</code>
      * @param value The purchaseLimit to set.
      * @return This builder for chaining.
      */
@@ -1949,7 +2014,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 purchase_limit = 15;</code>
+     * <code>int64 purchase_limit = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearPurchaseLimit() {
@@ -1961,7 +2026,7 @@ private static final long serialVersionUID = 0L;
 
     private long userBuyTotal ;
     /**
-     * <code>int64 user_buy_total = 16;</code>
+     * <code>int64 user_buy_total = 17;</code>
      * @return The userBuyTotal.
      */
     @java.lang.Override
@@ -1969,7 +2034,7 @@ private static final long serialVersionUID = 0L;
       return userBuyTotal ;
     }
     /**
-     * <code>int64 user_buy_total = 16;</code>
+     * <code>int64 user_buy_total = 17;</code>
      * @param value The userBuyTotal to set.
      * @return This builder for chaining.
      */
@@ -1980,7 +2045,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 user_buy_total = 16;</code>
+     * <code>int64 user_buy_total = 17;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserBuyTotal() {

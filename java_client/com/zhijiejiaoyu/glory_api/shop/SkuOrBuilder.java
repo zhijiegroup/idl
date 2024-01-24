@@ -134,13 +134,19 @@ public interface SkuOrBuilder extends
   long getStockTotal();
 
   /**
-   * <code>int64 purchase_limit = 15;</code>
+   * <code>int64 all_stock_total = 15;</code>
+   * @return The allStockTotal.
+   */
+  long getAllStockTotal();
+
+  /**
+   * <code>int64 purchase_limit = 16;</code>
    * @return The purchaseLimit.
    */
   long getPurchaseLimit();
 
   /**
-   * <code>int64 user_buy_total = 16;</code>
+   * <code>int64 user_buy_total = 17;</code>
    * @return The userBuyTotal.
    */
   long getUserBuyTotal();

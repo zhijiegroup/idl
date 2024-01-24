@@ -32,6 +32,7 @@ class Sku extends $pb.GeneratedMessage {
     $core.String? serialNumber,
     $core.String? preferentialValue,
     $fixnum.Int64? stockTotal,
+    $fixnum.Int64? allStockTotal,
     $fixnum.Int64? purchaseLimit,
     $fixnum.Int64? userBuyTotal,
   }) {
@@ -75,6 +76,9 @@ class Sku extends $pb.GeneratedMessage {
     if (stockTotal != null) {
       $result.stockTotal = stockTotal;
     }
+    if (allStockTotal != null) {
+      $result.allStockTotal = allStockTotal;
+    }
     if (purchaseLimit != null) {
       $result.purchaseLimit = purchaseLimit;
     }
@@ -101,8 +105,9 @@ class Sku extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'serialNumber')
     ..aOS(13, _omitFieldNames ? '' : 'preferentialValue')
     ..aInt64(14, _omitFieldNames ? '' : 'stockTotal')
-    ..aInt64(15, _omitFieldNames ? '' : 'purchaseLimit')
-    ..aInt64(16, _omitFieldNames ? '' : 'userBuyTotal')
+    ..aInt64(15, _omitFieldNames ? '' : 'allStockTotal')
+    ..aInt64(16, _omitFieldNames ? '' : 'purchaseLimit')
+    ..aInt64(17, _omitFieldNames ? '' : 'userBuyTotal')
     ..hasRequiredFields = false
   ;
 
@@ -239,22 +244,31 @@ class Sku extends $pb.GeneratedMessage {
   void clearStockTotal() => clearField(14);
 
   @$pb.TagNumber(15)
-  $fixnum.Int64 get purchaseLimit => $_getI64(13);
+  $fixnum.Int64 get allStockTotal => $_getI64(13);
   @$pb.TagNumber(15)
-  set purchaseLimit($fixnum.Int64 v) { $_setInt64(13, v); }
+  set allStockTotal($fixnum.Int64 v) { $_setInt64(13, v); }
   @$pb.TagNumber(15)
-  $core.bool hasPurchaseLimit() => $_has(13);
+  $core.bool hasAllStockTotal() => $_has(13);
   @$pb.TagNumber(15)
-  void clearPurchaseLimit() => clearField(15);
+  void clearAllStockTotal() => clearField(15);
 
   @$pb.TagNumber(16)
-  $fixnum.Int64 get userBuyTotal => $_getI64(14);
+  $fixnum.Int64 get purchaseLimit => $_getI64(14);
   @$pb.TagNumber(16)
-  set userBuyTotal($fixnum.Int64 v) { $_setInt64(14, v); }
+  set purchaseLimit($fixnum.Int64 v) { $_setInt64(14, v); }
   @$pb.TagNumber(16)
-  $core.bool hasUserBuyTotal() => $_has(14);
+  $core.bool hasPurchaseLimit() => $_has(14);
   @$pb.TagNumber(16)
-  void clearUserBuyTotal() => clearField(16);
+  void clearPurchaseLimit() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get userBuyTotal => $_getI64(15);
+  @$pb.TagNumber(17)
+  set userBuyTotal($fixnum.Int64 v) { $_setInt64(15, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasUserBuyTotal() => $_has(15);
+  @$pb.TagNumber(17)
+  void clearUserBuyTotal() => clearField(17);
 }
 
 class SkuAttributeWithOneValue extends $pb.GeneratedMessage {
