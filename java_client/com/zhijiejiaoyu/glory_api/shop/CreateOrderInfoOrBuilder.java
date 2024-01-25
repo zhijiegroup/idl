@@ -183,7 +183,7 @@ public interface CreateOrderInfoOrBuilder extends
 
   /**
    * <pre>
-   *live:直播间订单,normal:非直播间订单
+   *live:直播间订单,normal:商城订单;video:短视频订单
    * </pre>
    *
    * <code>string channel = 20;</code>
@@ -192,7 +192,7 @@ public interface CreateOrderInfoOrBuilder extends
   java.lang.String getChannel();
   /**
    * <pre>
-   *live:直播间订单,normal:非直播间订单
+   *live:直播间订单,normal:商城订单;video:短视频订单
    * </pre>
    *
    * <code>string channel = 20;</code>

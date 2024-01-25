@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object channel ;
   /**
    * <pre>
-   *live:直播间订单,normal:非直播间订单
+   *live:直播间订单,normal:商城订单;video:短视频订单
    * </pre>
    *
    * <code>string channel = 20;</code>
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *live:直播间订单,normal:非直播间订单
+   *live:直播间订单,normal:商城订单;video:短视频订单
    * </pre>
    *
    * <code>string channel = 20;</code>
@@ -2455,7 +2455,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object channel = "";
     /**
      * <pre>
-     *live:直播间订单,normal:非直播间订单
+     *live:直播间订单,normal:商城订单;video:短视频订单
      * </pre>
      *
      * <code>string channel = 20;</code>
@@ -2475,7 +2475,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *live:直播间订单,normal:非直播间订单
+     *live:直播间订单,normal:商城订单;video:短视频订单
      * </pre>
      *
      * <code>string channel = 20;</code>
@@ -2496,7 +2496,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *live:直播间订单,normal:非直播间订单
+     *live:直播间订单,normal:商城订单;video:短视频订单
      * </pre>
      *
      * <code>string channel = 20;</code>
@@ -2515,7 +2515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *live:直播间订单,normal:非直播间订单
+     *live:直播间订单,normal:商城订单;video:短视频订单
      * </pre>
      *
      * <code>string channel = 20;</code>
@@ -2529,7 +2529,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *live:直播间订单,normal:非直播间订单
+     *live:直播间订单,normal:商城订单;video:短视频订单
      * </pre>
      *
      * <code>string channel = 20;</code>

@@ -173,7 +173,7 @@ struct GloryApi_CreateOrderInfo {
     set {_uniqueStorage()._roomID = newValue}
   }
 
-  ///live:直播间订单,normal:非直播间订单
+  ///live:直播间订单,normal:商城订单;video:短视频订单
   var channel: String {
     get {return _storage._channel}
     set {_uniqueStorage()._channel = newValue}

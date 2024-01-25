@@ -52,7 +52,7 @@ export interface CreateOrderInfo {
   buyer_name?: string;
   /** 直播房间id */
   room_id?: string;
-  /** live:直播间订单,normal:非直播间订单 */
+  /** live:直播间订单,normal:商城订单;video:短视频订单 */
   channel?: string;
   /** 流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id) */
   trans_id?: string;
