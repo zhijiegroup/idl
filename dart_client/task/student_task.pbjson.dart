@@ -16,20 +16,48 @@ import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use studentTaskParameterResultDescriptor instead')
 const StudentTaskParameterResult$json = {
   '1': 'StudentTaskParameterResult',
+  '2': [
+    {'1': 'task_parameter_id', '3': 1, '4': 1, '5': 3, '10': 'taskParameterId'},
+    {'1': 'task_parameter_key', '3': 2, '4': 1, '5': 9, '10': 'taskParameterKey'},
+    {'1': 'task_parameter_name', '3': 3, '4': 1, '5': 9, '10': 'taskParameterName'},
+    {'1': 'task_parameter_operator', '3': 4, '4': 1, '5': 9, '10': 'taskParameterOperator'},
+    {'1': 'task_parameter_value', '3': 5, '4': 1, '5': 9, '10': 'taskParameterValue'},
+    {'1': 'task_parameter_type', '3': 6, '4': 1, '5': 9, '10': 'taskParameterType'},
+    {'1': 'is_passed', '3': 7, '4': 1, '5': 8, '10': 'isPassed'},
+    {'1': 'failed_reason', '3': 8, '4': 1, '5': 9, '10': 'failedReason'},
+    {'1': 'children', '3': 9, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'children'},
+  ],
 };
 
 /// Descriptor for `StudentTaskParameterResult`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List studentTaskParameterResultDescriptor = $convert.base64Decode(
-    'ChpTdHVkZW50VGFza1BhcmFtZXRlclJlc3VsdA==');
+    'ChpTdHVkZW50VGFza1BhcmFtZXRlclJlc3VsdBIqChF0YXNrX3BhcmFtZXRlcl9pZBgBIAEoA1'
+    'IPdGFza1BhcmFtZXRlcklkEiwKEnRhc2tfcGFyYW1ldGVyX2tleRgCIAEoCVIQdGFza1BhcmFt'
+    'ZXRlcktleRIuChN0YXNrX3BhcmFtZXRlcl9uYW1lGAMgASgJUhF0YXNrUGFyYW1ldGVyTmFtZR'
+    'I2Chd0YXNrX3BhcmFtZXRlcl9vcGVyYXRvchgEIAEoCVIVdGFza1BhcmFtZXRlck9wZXJhdG9y'
+    'EjAKFHRhc2tfcGFyYW1ldGVyX3ZhbHVlGAUgASgJUhJ0YXNrUGFyYW1ldGVyVmFsdWUSLgoTdG'
+    'Fza19wYXJhbWV0ZXJfdHlwZRgGIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSGwoJaXNfcGFzc2Vk'
+    'GAcgASgIUghpc1Bhc3NlZBIjCg1mYWlsZWRfcmVhc29uGAggASgJUgxmYWlsZWRSZWFzb24SQQ'
+    'oIY2hpbGRyZW4YCSADKAsyJS5nbG9yeV9hcGkuU3R1ZGVudFRhc2tQYXJhbWV0ZXJSZXN1bHRS'
+    'CGNoaWxkcmVu');
 
 @$core.Deprecated('Use studentTaskRequirementResultDescriptor instead')
 const StudentTaskRequirementResult$json = {
   '1': 'StudentTaskRequirementResult',
+  '2': [
+    {'1': 'task_requirement_id', '3': 1, '4': 1, '5': 3, '10': 'taskRequirementId'},
+    {'1': 'task_requirement', '3': 2, '4': 1, '5': 9, '10': 'taskRequirement'},
+    {'1': 'is_passwd', '3': 3, '4': 1, '5': 8, '10': 'isPasswd'},
+    {'1': 'failed_reason', '3': 4, '4': 1, '5': 9, '10': 'failedReason'},
+  ],
 };
 
 /// Descriptor for `StudentTaskRequirementResult`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List studentTaskRequirementResultDescriptor = $convert.base64Decode(
-    'ChxTdHVkZW50VGFza1JlcXVpcmVtZW50UmVzdWx0');
+    'ChxTdHVkZW50VGFza1JlcXVpcmVtZW50UmVzdWx0Ei4KE3Rhc2tfcmVxdWlyZW1lbnRfaWQYAS'
+    'ABKANSEXRhc2tSZXF1aXJlbWVudElkEikKEHRhc2tfcmVxdWlyZW1lbnQYAiABKAlSD3Rhc2tS'
+    'ZXF1aXJlbWVudBIbCglpc19wYXNzd2QYAyABKAhSCGlzUGFzc3dkEiMKDWZhaWxlZF9yZWFzb2'
+    '4YBCABKAlSDGZhaWxlZFJlYXNvbg==');
 
 @$core.Deprecated('Use studentTaskDescriptor instead')
 const StudentTask$json = {
@@ -41,9 +69,11 @@ const StudentTask$json = {
     {'1': 'submit_parameter', '3': 4, '4': 1, '5': 9, '10': 'submitParameter'},
     {'1': 'submit_description', '3': 5, '4': 1, '5': 9, '10': 'submitDescription'},
     {'1': 'attachments', '3': 6, '4': 3, '5': 9, '10': 'attachments'},
-    {'1': 'teacher_task', '3': 7, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
-    {'1': 'student', '3': 8, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
-    {'1': 'teacher', '3': 9, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
+    {'1': 'student_task_parameter_result', '3': 7, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'studentTaskParameterResult'},
+    {'1': 'student_task_requirement_result', '3': 8, '4': 3, '5': 11, '6': '.glory_api.StudentTaskRequirementResult', '10': 'studentTaskRequirementResult'},
+    {'1': 'teacher_task', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
+    {'1': 'student', '3': 10, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
+    {'1': 'teacher', '3': 11, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
   ],
 };
 
@@ -53,10 +83,13 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'oLdGFza19zdGF0dXMYAiABKAlSCnRhc2tTdGF0dXMSIQoMc3VibWl0dGVkX2F0GAMgASgJUgtz'
     'dWJtaXR0ZWRBdBIpChBzdWJtaXRfcGFyYW1ldGVyGAQgASgJUg9zdWJtaXRQYXJhbWV0ZXISLQ'
     'oSc3VibWl0X2Rlc2NyaXB0aW9uGAUgASgJUhFzdWJtaXREZXNjcmlwdGlvbhIgCgthdHRhY2ht'
-    'ZW50cxgGIAMoCVILYXR0YWNobWVudHMSOQoMdGVhY2hlcl90YXNrGAcgASgLMhYuZ2xvcnlfYX'
-    'BpLlRlYWNoZXJUYXNrUgt0ZWFjaGVyVGFzaxIpCgdzdHVkZW50GAggASgLMg8uZ2xvcnlfYXBp'
-    'LlVzZXJSB3N0dWRlbnQSKQoHdGVhY2hlchgJIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgd0ZWFjaG'
-    'Vy');
+    'ZW50cxgGIAMoCVILYXR0YWNobWVudHMSaAodc3R1ZGVudF90YXNrX3BhcmFtZXRlcl9yZXN1bH'
+    'QYByADKAsyJS5nbG9yeV9hcGkuU3R1ZGVudFRhc2tQYXJhbWV0ZXJSZXN1bHRSGnN0dWRlbnRU'
+    'YXNrUGFyYW1ldGVyUmVzdWx0Em4KH3N0dWRlbnRfdGFza19yZXF1aXJlbWVudF9yZXN1bHQYCC'
+    'ADKAsyJy5nbG9yeV9hcGkuU3R1ZGVudFRhc2tSZXF1aXJlbWVudFJlc3VsdFIcc3R1ZGVudFRh'
+    'c2tSZXF1aXJlbWVudFJlc3VsdBI5Cgx0ZWFjaGVyX3Rhc2sYCSABKAsyFi5nbG9yeV9hcGkuVG'
+    'VhY2hlclRhc2tSC3RlYWNoZXJUYXNrEikKB3N0dWRlbnQYCiABKAsyDy5nbG9yeV9hcGkuVXNl'
+    'clIHc3R1ZGVudBIpCgd0ZWFjaGVyGAsgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3RlYWNoZXI=');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {

@@ -1379,6 +1379,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListStudentTaskRequest': $54.ListStudentTaskRequest$json,
   '.glory_api.ListStudentTaskResponse': $54.ListStudentTaskResponse$json,
   '.glory_api.StudentTask': $54.StudentTask$json,
+  '.glory_api.StudentTaskParameterResult': $54.StudentTaskParameterResult$json,
+  '.glory_api.StudentTaskRequirementResult': $54.StudentTaskRequirementResult$json,
   '.glory_api.SubmitStudentTaskRequest': $54.SubmitStudentTaskRequest$json,
   '.glory_api.SubmitStudentTaskResponse': $54.SubmitStudentTaskResponse$json,
   '.glory_api.GetStudentTaskRequest': $54.GetStudentTaskRequest$json,

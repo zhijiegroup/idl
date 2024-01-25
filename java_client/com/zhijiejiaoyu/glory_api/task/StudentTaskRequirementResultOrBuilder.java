@@ -6,4 +6,40 @@ package com.zhijiejiaoyu.glory_api.task;
 public interface StudentTaskRequirementResultOrBuilder extends
     // @@protoc_insertion_point(interface_extends:glory_api.StudentTaskRequirementResult)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>int64 task_requirement_id = 1;</code>
+   * @return The taskRequirementId.
+   */
+  long getTaskRequirementId();
+
+  /**
+   * <code>string task_requirement = 2;</code>
+   * @return The taskRequirement.
+   */
+  java.lang.String getTaskRequirement();
+  /**
+   * <code>string task_requirement = 2;</code>
+   * @return The bytes for taskRequirement.
+   */
+  com.google.protobuf.ByteString
+      getTaskRequirementBytes();
+
+  /**
+   * <code>bool is_passwd = 3;</code>
+   * @return The isPasswd.
+   */
+  boolean getIsPasswd();
+
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The failedReason.
+   */
+  java.lang.String getFailedReason();
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The bytes for failedReason.
+   */
+  com.google.protobuf.ByteString
+      getFailedReasonBytes();
 }

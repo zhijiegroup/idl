@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StudentTaskRequirementResult() {
+    taskRequirement = "";
+    failedReason = "";
   }
 
   @java.lang.Override
@@ -48,6 +50,28 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+
+            taskRequirementId = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskRequirement = s;
+            break;
+          }
+          case 24: {
+
+            isPasswd = input.readBool();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            failedReason = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -80,6 +104,104 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.class, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder.class);
   }
 
+  public static final int TASK_REQUIREMENT_ID_FIELD_NUMBER = 1;
+  private long taskRequirementId ;
+  /**
+   * <code>int64 task_requirement_id = 1;</code>
+   * @return The taskRequirementId.
+   */
+  @java.lang.Override
+  public long getTaskRequirementId() {
+    return taskRequirementId ;
+  }
+
+  public static final int TASK_REQUIREMENT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskRequirement ;
+  /**
+   * <code>string task_requirement = 2;</code>
+   * @return The taskRequirement.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskRequirement() {
+    java.lang.Object ref = taskRequirement ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskRequirement = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_requirement = 2;</code>
+   * @return The bytes for taskRequirement.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskRequirementBytes() {
+    java.lang.Object ref = taskRequirement ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskRequirement = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IS_PASSWD_FIELD_NUMBER = 3;
+  private boolean isPasswd ;
+  /**
+   * <code>bool is_passwd = 3;</code>
+   * @return The isPasswd.
+   */
+  @java.lang.Override
+  public boolean getIsPasswd() {
+    return isPasswd ;
+  }
+
+  public static final int FAILED_REASON_FIELD_NUMBER = 4;
+  private volatile java.lang.Object failedReason ;
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The failedReason.
+   */
+  @java.lang.Override
+  public java.lang.String getFailedReason() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      failedReason = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The bytes for failedReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFailedReasonBytes() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      failedReason = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -94,6 +216,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (taskRequirementId != 0L) {
+      output.writeInt64(1, taskRequirementId );
+    }
+    if (!getTaskRequirementBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskRequirement );
+    }
+    if (isPasswd != false) {
+      output.writeBool(3, isPasswd );
+    }
+    if (!getFailedReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, failedReason );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -103,6 +237,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (taskRequirementId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, taskRequirementId );
+    }
+    if (!getTaskRequirementBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskRequirement );
+    }
+    if (isPasswd != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, isPasswd );
+    }
+    if (!getFailedReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, failedReason );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -118,6 +266,14 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult other = (com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult) obj;
 
+    if (getTaskRequirementId()
+        != other.getTaskRequirementId()) return false;
+    if (!getTaskRequirement()
+        .equals(other.getTaskRequirement())) return false;
+    if (getIsPasswd()
+        != other.getIsPasswd()) return false;
+    if (!getFailedReason()
+        .equals(other.getFailedReason())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -129,6 +285,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TASK_REQUIREMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskRequirementId());
+    hash = (37 * hash) + TASK_REQUIREMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskRequirement().hashCode();
+    hash = (37 * hash) + IS_PASSWD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsPasswd());
+    hash = (37 * hash) + FAILED_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getFailedReason().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -262,6 +428,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      taskRequirementId = 0L;
+
+      taskRequirement = "";
+
+      isPasswd = false;
+
+      failedReason = "";
+
       return this;
     }
 
@@ -288,6 +462,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult buildPartial() {
       com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult result = new com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult(this);
+      result.taskRequirementId = taskRequirementId ;
+      result.taskRequirement = taskRequirement ;
+      result.isPasswd = isPasswd ;
+      result.failedReason = failedReason ;
       onBuilt();
       return result;
     }
@@ -336,6 +514,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult other) {
       if (other == com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.getDefaultInstance()) return this;
+      if (other.getTaskRequirementId() != 0L) {
+        setTaskRequirementId(other.getTaskRequirementId());
+      }
+      if (!other.getTaskRequirement().isEmpty()) {
+        taskRequirement = other.taskRequirement ;
+        onChanged();
+      }
+      if (other.getIsPasswd() != false) {
+        setIsPasswd(other.getIsPasswd());
+      }
+      if (!other.getFailedReason().isEmpty()) {
+        failedReason = other.failedReason ;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -362,6 +554,220 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private long taskRequirementId ;
+    /**
+     * <code>int64 task_requirement_id = 1;</code>
+     * @return The taskRequirementId.
+     */
+    @java.lang.Override
+    public long getTaskRequirementId() {
+      return taskRequirementId ;
+    }
+    /**
+     * <code>int64 task_requirement_id = 1;</code>
+     * @param value The taskRequirementId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskRequirementId(long value) {
+      
+      taskRequirementId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 task_requirement_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskRequirementId() {
+      
+      taskRequirementId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskRequirement = "";
+    /**
+     * <code>string task_requirement = 2;</code>
+     * @return The taskRequirement.
+     */
+    public java.lang.String getTaskRequirement() {
+      java.lang.Object ref = taskRequirement ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskRequirement = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_requirement = 2;</code>
+     * @return The bytes for taskRequirement.
+     */
+    public com.google.protobuf.ByteString
+        getTaskRequirementBytes() {
+      java.lang.Object ref = taskRequirement ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskRequirement = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_requirement = 2;</code>
+     * @param value The taskRequirement to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskRequirement(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskRequirement = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_requirement = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskRequirement() {
+      
+      taskRequirement = getDefaultInstance().getTaskRequirement();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_requirement = 2;</code>
+     * @param value The bytes for taskRequirement to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskRequirementBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskRequirement = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isPasswd ;
+    /**
+     * <code>bool is_passwd = 3;</code>
+     * @return The isPasswd.
+     */
+    @java.lang.Override
+    public boolean getIsPasswd() {
+      return isPasswd ;
+    }
+    /**
+     * <code>bool is_passwd = 3;</code>
+     * @param value The isPasswd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPasswd(boolean value) {
+      
+      isPasswd = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_passwd = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPasswd() {
+      
+      isPasswd = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object failedReason = "";
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return The failedReason.
+     */
+    public java.lang.String getFailedReason() {
+      java.lang.Object ref = failedReason ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        failedReason = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return The bytes for failedReason.
+     */
+    public com.google.protobuf.ByteString
+        getFailedReasonBytes() {
+      java.lang.Object ref = failedReason ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        failedReason = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @param value The failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReason(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      failedReason = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedReason() {
+      
+      failedReason = getDefaultInstance().getFailedReason();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @param value The bytes for failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReasonBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      failedReason = value;
+      onChanged();
       return this;
     }
     @java.lang.Override
