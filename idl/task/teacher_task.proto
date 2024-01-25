@@ -75,6 +75,16 @@ message ListTeacherTaskResponse {
   base.PaginationResponse pagination = 100;
 }
 
+message GetTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  int64 teacher_task_id = 2;
+}
+
+message GetTeacherTaskResponse {
+  base.BaseResponse base_resp = 1;
+  TeacherTask teacher_task = 2;
+}
+
 message DeleteTeacherTaskRequest {
   base.BaseRequest base_request = 1;
   int64 teacher_task_id = 2;
