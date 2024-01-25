@@ -8,9 +8,24 @@ import * as user from "../user/user";
 import * as teacher_task from "./teacher_task";
 export { api, base, user, teacher_task };
 
-export interface StudentTaskParameterResult {}
+export interface StudentTaskParameterResult {
+  task_parameter_id?: string;
+  task_parameter_key?: string;
+  task_parameter_name?: string;
+  task_parameter_operator?: string;
+  task_parameter_value?: string;
+  task_parameter_type?: string;
+  is_passed?: boolean;
+  failed_reason?: string;
+  children?: Array<StudentTaskParameterResult>;
+}
 
-export interface StudentTaskRequirementResult {}
+export interface StudentTaskRequirementResult {
+  task_requirement_id?: string;
+  task_requirement?: string;
+  is_passwd?: boolean;
+  failed_reason?: string;
+}
 
 export interface StudentTask {
   student_task_id?: string;
@@ -19,6 +34,8 @@ export interface StudentTask {
   submit_parameter?: string;
   submit_description?: string;
   attachments?: Array<string>;
+  student_task_parameter_result?: Array<StudentTaskParameterResult>;
+  student_task_requirement_result?: Array<StudentTaskRequirementResult>;
   teacher_task?: teacher_task.TeacherTask;
   student?: user.User;
   teacher?: user.User;

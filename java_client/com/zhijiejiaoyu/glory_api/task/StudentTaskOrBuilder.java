@@ -87,47 +87,95 @@ public interface StudentTaskOrBuilder extends
       getAttachmentsBytes(int index);
 
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> 
+      getStudentTaskParameterResultList();
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getStudentTaskParameterResult(int index);
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  int getStudentTaskParameterResultCount();
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+      getStudentTaskParameterResultOrBuilderList();
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getStudentTaskParameterResultOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> 
+      getStudentTaskRequirementResultList();
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult getStudentTaskRequirementResult(int index);
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  int getStudentTaskRequirementResultCount();
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
+      getStudentTaskRequirementResultOrBuilderList();
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder getStudentTaskRequirementResultOrBuilder(
+      int index);
+
+  /**
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

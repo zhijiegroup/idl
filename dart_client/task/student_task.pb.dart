@@ -19,12 +19,61 @@ import '../user/user.pb.dart' as $1;
 import 'teacher_task.pb.dart' as $0;
 
 class StudentTaskParameterResult extends $pb.GeneratedMessage {
-  factory StudentTaskParameterResult() => create();
+  factory StudentTaskParameterResult({
+    $fixnum.Int64? taskParameterId,
+    $core.String? taskParameterKey,
+    $core.String? taskParameterName,
+    $core.String? taskParameterOperator,
+    $core.String? taskParameterValue,
+    $core.String? taskParameterType,
+    $core.bool? isPassed,
+    $core.String? failedReason,
+    $core.Iterable<StudentTaskParameterResult>? children,
+  }) {
+    final $result = create();
+    if (taskParameterId != null) {
+      $result.taskParameterId = taskParameterId;
+    }
+    if (taskParameterKey != null) {
+      $result.taskParameterKey = taskParameterKey;
+    }
+    if (taskParameterName != null) {
+      $result.taskParameterName = taskParameterName;
+    }
+    if (taskParameterOperator != null) {
+      $result.taskParameterOperator = taskParameterOperator;
+    }
+    if (taskParameterValue != null) {
+      $result.taskParameterValue = taskParameterValue;
+    }
+    if (taskParameterType != null) {
+      $result.taskParameterType = taskParameterType;
+    }
+    if (isPassed != null) {
+      $result.isPassed = isPassed;
+    }
+    if (failedReason != null) {
+      $result.failedReason = failedReason;
+    }
+    if (children != null) {
+      $result.children.addAll(children);
+    }
+    return $result;
+  }
   StudentTaskParameterResult._() : super();
   factory StudentTaskParameterResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StudentTaskParameterResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskParameterResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'taskParameterId')
+    ..aOS(2, _omitFieldNames ? '' : 'taskParameterKey')
+    ..aOS(3, _omitFieldNames ? '' : 'taskParameterName')
+    ..aOS(4, _omitFieldNames ? '' : 'taskParameterOperator')
+    ..aOS(5, _omitFieldNames ? '' : 'taskParameterValue')
+    ..aOS(6, _omitFieldNames ? '' : 'taskParameterType')
+    ..aOB(7, _omitFieldNames ? '' : 'isPassed')
+    ..aOS(8, _omitFieldNames ? '' : 'failedReason')
+    ..pc<StudentTaskParameterResult>(9, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -48,15 +97,114 @@ class StudentTaskParameterResult extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static StudentTaskParameterResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskParameterResult>(create);
   static StudentTaskParameterResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get taskParameterId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set taskParameterId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTaskParameterId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTaskParameterId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get taskParameterKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set taskParameterKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskParameterKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskParameterKey() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get taskParameterName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set taskParameterName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTaskParameterName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTaskParameterName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get taskParameterOperator => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set taskParameterOperator($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTaskParameterOperator() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTaskParameterOperator() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get taskParameterValue => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set taskParameterValue($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTaskParameterValue() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTaskParameterValue() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get taskParameterType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set taskParameterType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTaskParameterType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTaskParameterType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isPassed => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isPassed($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIsPassed() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsPassed() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get failedReason => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set failedReason($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasFailedReason() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFailedReason() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<StudentTaskParameterResult> get children => $_getList(8);
 }
 
 class StudentTaskRequirementResult extends $pb.GeneratedMessage {
-  factory StudentTaskRequirementResult() => create();
+  factory StudentTaskRequirementResult({
+    $fixnum.Int64? taskRequirementId,
+    $core.String? taskRequirement,
+    $core.bool? isPasswd,
+    $core.String? failedReason,
+  }) {
+    final $result = create();
+    if (taskRequirementId != null) {
+      $result.taskRequirementId = taskRequirementId;
+    }
+    if (taskRequirement != null) {
+      $result.taskRequirement = taskRequirement;
+    }
+    if (isPasswd != null) {
+      $result.isPasswd = isPasswd;
+    }
+    if (failedReason != null) {
+      $result.failedReason = failedReason;
+    }
+    return $result;
+  }
   StudentTaskRequirementResult._() : super();
   factory StudentTaskRequirementResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StudentTaskRequirementResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskRequirementResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'taskRequirementId')
+    ..aOS(2, _omitFieldNames ? '' : 'taskRequirement')
+    ..aOB(3, _omitFieldNames ? '' : 'isPasswd')
+    ..aOS(4, _omitFieldNames ? '' : 'failedReason')
     ..hasRequiredFields = false
   ;
 
@@ -80,6 +228,42 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static StudentTaskRequirementResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskRequirementResult>(create);
   static StudentTaskRequirementResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get taskRequirementId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set taskRequirementId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTaskRequirementId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTaskRequirementId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get taskRequirement => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set taskRequirement($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskRequirement() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskRequirement() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get isPasswd => $_getBF(2);
+  @$pb.TagNumber(3)
+  set isPasswd($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIsPasswd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIsPasswd() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get failedReason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set failedReason($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFailedReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFailedReason() => clearField(4);
 }
 
 class StudentTask extends $pb.GeneratedMessage {
@@ -90,6 +274,8 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.String? submitParameter,
     $core.String? submitDescription,
     $core.Iterable<$core.String>? attachments,
+    $core.Iterable<StudentTaskParameterResult>? studentTaskParameterResult,
+    $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
     $0.TeacherTask? teacherTask,
     $1.User? student,
     $1.User? teacher,
@@ -113,6 +299,12 @@ class StudentTask extends $pb.GeneratedMessage {
     if (attachments != null) {
       $result.attachments.addAll(attachments);
     }
+    if (studentTaskParameterResult != null) {
+      $result.studentTaskParameterResult.addAll(studentTaskParameterResult);
+    }
+    if (studentTaskRequirementResult != null) {
+      $result.studentTaskRequirementResult.addAll(studentTaskRequirementResult);
+    }
     if (teacherTask != null) {
       $result.teacherTask = teacherTask;
     }
@@ -135,9 +327,11 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'submitParameter')
     ..aOS(5, _omitFieldNames ? '' : 'submitDescription')
     ..pPS(6, _omitFieldNames ? '' : 'attachments')
-    ..aOM<$0.TeacherTask>(7, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
-    ..aOM<$1.User>(8, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
-    ..aOM<$1.User>(9, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..pc<StudentTaskParameterResult>(7, _omitFieldNames ? '' : 'studentTaskParameterResult', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
+    ..pc<StudentTaskRequirementResult>(8, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
+    ..aOM<$0.TeacherTask>(9, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
+    ..aOM<$1.User>(10, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
+    ..aOM<$1.User>(11, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -211,37 +405,43 @@ class StudentTask extends $pb.GeneratedMessage {
   $core.List<$core.String> get attachments => $_getList(5);
 
   @$pb.TagNumber(7)
-  $0.TeacherTask get teacherTask => $_getN(6);
-  @$pb.TagNumber(7)
-  set teacherTask($0.TeacherTask v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasTeacherTask() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearTeacherTask() => clearField(7);
-  @$pb.TagNumber(7)
-  $0.TeacherTask ensureTeacherTask() => $_ensure(6);
+  $core.List<StudentTaskParameterResult> get studentTaskParameterResult => $_getList(6);
 
   @$pb.TagNumber(8)
-  $1.User get student => $_getN(7);
-  @$pb.TagNumber(8)
-  set student($1.User v) { setField(8, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasStudent() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearStudent() => clearField(8);
-  @$pb.TagNumber(8)
-  $1.User ensureStudent() => $_ensure(7);
+  $core.List<StudentTaskRequirementResult> get studentTaskRequirementResult => $_getList(7);
 
   @$pb.TagNumber(9)
-  $1.User get teacher => $_getN(8);
+  $0.TeacherTask get teacherTask => $_getN(8);
   @$pb.TagNumber(9)
-  set teacher($1.User v) { setField(9, v); }
+  set teacherTask($0.TeacherTask v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasTeacher() => $_has(8);
+  $core.bool hasTeacherTask() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTeacher() => clearField(9);
+  void clearTeacherTask() => clearField(9);
   @$pb.TagNumber(9)
-  $1.User ensureTeacher() => $_ensure(8);
+  $0.TeacherTask ensureTeacherTask() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.User get student => $_getN(9);
+  @$pb.TagNumber(10)
+  set student($1.User v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasStudent() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStudent() => clearField(10);
+  @$pb.TagNumber(10)
+  $1.User ensureStudent() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.User get teacher => $_getN(10);
+  @$pb.TagNumber(11)
+  set teacher($1.User v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasTeacher() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTeacher() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.User ensureTeacher() => $_ensure(10);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {

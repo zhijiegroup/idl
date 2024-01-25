@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
     submitParameter = "";
     submitDescription = "";
     attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    studentTaskParameterResult = java.util.Collections.emptyList();
+    studentTaskRequirementResult = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -93,6 +95,24 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              studentTaskParameterResult = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            studentTaskParameterResult .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.parser(), extensionRegistry));
+            break;
+          }
+          case 66: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              studentTaskRequirementResult = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            studentTaskRequirementResult .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
             com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder subBuilder = null;
             if (teacherTask != null) {
               subBuilder = teacherTask .toBuilder();
@@ -105,7 +125,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 66: {
+          case 82: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (student != null) {
               subBuilder = student .toBuilder();
@@ -118,7 +138,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 74: {
+          case 90: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (teacher != null) {
               subBuilder = teacher .toBuilder();
@@ -148,6 +168,12 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         attachments = attachments .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        studentTaskParameterResult = java.util.Collections.unmodifiableList(studentTaskParameterResult );
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
+        studentTaskRequirementResult = java.util.Collections.unmodifiableList(studentTaskRequirementResult );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -364,10 +390,90 @@ private static final long serialVersionUID = 0L;
     return attachments .getByteString(index);
   }
 
-  public static final int TEACHER_TASK_FIELD_NUMBER = 7;
+  public static final int STUDENT_TASK_PARAMETER_RESULT_FIELD_NUMBER = 7;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> studentTaskParameterResult ;
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> getStudentTaskParameterResultList() {
+    return studentTaskParameterResult ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+      getStudentTaskParameterResultOrBuilderList() {
+    return studentTaskParameterResult ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  @java.lang.Override
+  public int getStudentTaskParameterResultCount() {
+    return studentTaskParameterResult .size();
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getStudentTaskParameterResult(int index) {
+    return studentTaskParameterResult .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getStudentTaskParameterResultOrBuilder(
+      int index) {
+    return studentTaskParameterResult .get(index);
+  }
+
+  public static final int STUDENT_TASK_REQUIREMENT_RESULT_FIELD_NUMBER = 8;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> studentTaskRequirementResult ;
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> getStudentTaskRequirementResultList() {
+    return studentTaskRequirementResult ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
+      getStudentTaskRequirementResultOrBuilderList() {
+    return studentTaskRequirementResult ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  @java.lang.Override
+  public int getStudentTaskRequirementResultCount() {
+    return studentTaskRequirementResult .size();
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult getStudentTaskRequirementResult(int index) {
+    return studentTaskRequirementResult .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder getStudentTaskRequirementResultOrBuilder(
+      int index) {
+    return studentTaskRequirementResult .get(index);
+  }
+
+  public static final int TEACHER_TASK_FIELD_NUMBER = 9;
   private com.zhijiejiaoyu.glory_api.task.TeacherTask teacherTask ;
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    * @return Whether the teacherTask field is set.
    */
   @java.lang.Override
@@ -375,7 +481,7 @@ private static final long serialVersionUID = 0L;
     return teacherTask != null;
   }
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    * @return The teacherTask.
    */
   @java.lang.Override
@@ -383,17 +489,17 @@ private static final long serialVersionUID = 0L;
     return teacherTask == null ? com.zhijiejiaoyu.glory_api.task.TeacherTask.getDefaultInstance() : teacherTask ;
   }
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder() {
     return getTeacherTask();
   }
 
-  public static final int STUDENT_FIELD_NUMBER = 8;
+  public static final int STUDENT_FIELD_NUMBER = 10;
   private com.zhijiejiaoyu.glory_api.user.User student ;
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    * @return Whether the student field is set.
    */
   @java.lang.Override
@@ -401,7 +507,7 @@ private static final long serialVersionUID = 0L;
     return student != null;
   }
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    * @return The student.
    */
   @java.lang.Override
@@ -409,17 +515,17 @@ private static final long serialVersionUID = 0L;
     return student == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : student ;
   }
   /**
-   * <code>.glory_api.User student = 8;</code>
+   * <code>.glory_api.User student = 10;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
     return getStudent();
   }
 
-  public static final int TEACHER_FIELD_NUMBER = 9;
+  public static final int TEACHER_FIELD_NUMBER = 11;
   private com.zhijiejiaoyu.glory_api.user.User teacher ;
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    * @return Whether the teacher field is set.
    */
   @java.lang.Override
@@ -427,7 +533,7 @@ private static final long serialVersionUID = 0L;
     return teacher != null;
   }
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    * @return The teacher.
    */
   @java.lang.Override
@@ -435,7 +541,7 @@ private static final long serialVersionUID = 0L;
     return teacher == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : teacher ;
   }
   /**
-   * <code>.glory_api.User teacher = 9;</code>
+   * <code>.glory_api.User teacher = 11;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
@@ -474,14 +580,20 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < attachments .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, attachments .getRaw(i));
     }
+    for (int i = 0; i < studentTaskParameterResult .size(); i++) {
+      output.writeMessage(7, studentTaskParameterResult .get(i));
+    }
+    for (int i = 0; i < studentTaskRequirementResult .size(); i++) {
+      output.writeMessage(8, studentTaskRequirementResult .get(i));
+    }
     if (teacherTask != null) {
-      output.writeMessage(7, getTeacherTask());
+      output.writeMessage(9, getTeacherTask());
     }
     if (student != null) {
-      output.writeMessage(8, getStudent());
+      output.writeMessage(10, getStudent());
     }
     if (teacher != null) {
-      output.writeMessage(9, getTeacher());
+      output.writeMessage(11, getTeacher());
     }
     unknownFields.writeTo(output);
   }
@@ -516,17 +628,25 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAttachmentsList().size();
     }
+    for (int i = 0; i < studentTaskParameterResult .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, studentTaskParameterResult .get(i));
+    }
+    for (int i = 0; i < studentTaskRequirementResult .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, studentTaskRequirementResult .get(i));
+    }
     if (teacherTask != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getTeacherTask());
+        .computeMessageSize(9, getTeacherTask());
     }
     if (student != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getStudent());
+        .computeMessageSize(10, getStudent());
     }
     if (teacher != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getTeacher());
+        .computeMessageSize(11, getTeacher());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -555,6 +675,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSubmitDescription())) return false;
     if (!getAttachmentsList()
         .equals(other.getAttachmentsList())) return false;
+    if (!getStudentTaskParameterResultList()
+        .equals(other.getStudentTaskParameterResultList())) return false;
+    if (!getStudentTaskRequirementResultList()
+        .equals(other.getStudentTaskRequirementResultList())) return false;
     if (hasTeacherTask() != other.hasTeacherTask()) return false;
     if (hasTeacherTask()) {
       if (!getTeacherTask()
@@ -595,6 +719,14 @@ private static final long serialVersionUID = 0L;
     if (getAttachmentsCount() > 0) {
       hash = (37 * hash) + ATTACHMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getAttachmentsList().hashCode();
+    }
+    if (getStudentTaskParameterResultCount() > 0) {
+      hash = (37 * hash) + STUDENT_TASK_PARAMETER_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getStudentTaskParameterResultList().hashCode();
+    }
+    if (getStudentTaskRequirementResultCount() > 0) {
+      hash = (37 * hash) + STUDENT_TASK_REQUIREMENT_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getStudentTaskRequirementResultList().hashCode();
     }
     if (hasTeacherTask()) {
       hash = (37 * hash) + TEACHER_TASK_FIELD_NUMBER;
@@ -736,6 +868,8 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getStudentTaskParameterResultFieldBuilder();
+        getStudentTaskRequirementResultFieldBuilder();
       }
     }
     @java.lang.Override
@@ -753,6 +887,18 @@ private static final long serialVersionUID = 0L;
 
       attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      if (studentTaskParameterResultBuilder == null) {
+        studentTaskParameterResult = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        studentTaskParameterResultBuilder .clear();
+      }
+      if (studentTaskRequirementResultBuilder == null) {
+        studentTaskRequirementResult = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+      } else {
+        studentTaskRequirementResultBuilder .clear();
+      }
       if (teacherTaskBuilder == null) {
         teacherTask = null;
       } else {
@@ -808,6 +954,24 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.attachments = attachments ;
+      if (studentTaskParameterResultBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          studentTaskParameterResult = java.util.Collections.unmodifiableList(studentTaskParameterResult );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.studentTaskParameterResult = studentTaskParameterResult ;
+      } else {
+        result.studentTaskParameterResult = studentTaskParameterResultBuilder .build();
+      }
+      if (studentTaskRequirementResultBuilder == null) {
+        if (((bitField0 & 0x00000004) != 0)) {
+          studentTaskRequirementResult = java.util.Collections.unmodifiableList(studentTaskRequirementResult );
+          bitField0 = (bitField0 & ~0x00000004);
+        }
+        result.studentTaskRequirementResult = studentTaskRequirementResult ;
+      } else {
+        result.studentTaskRequirementResult = studentTaskRequirementResultBuilder .build();
+      }
       if (teacherTaskBuilder == null) {
         result.teacherTask = teacherTask ;
       } else {
@@ -899,6 +1063,58 @@ private static final long serialVersionUID = 0L;
           attachments .addAll(other.attachments );
         }
         onChanged();
+      }
+      if (studentTaskParameterResultBuilder == null) {
+        if (!other.studentTaskParameterResult .isEmpty()) {
+          if (studentTaskParameterResult .isEmpty()) {
+            studentTaskParameterResult = other.studentTaskParameterResult ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureStudentTaskParameterResultIsMutable();
+            studentTaskParameterResult .addAll(other.studentTaskParameterResult );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.studentTaskParameterResult .isEmpty()) {
+          if (studentTaskParameterResultBuilder .isEmpty()) {
+            studentTaskParameterResultBuilder .dispose();
+            studentTaskParameterResultBuilder = null;
+            studentTaskParameterResult = other.studentTaskParameterResult ;
+            bitField0 = (bitField0 & ~0x00000002);
+            studentTaskParameterResultBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getStudentTaskParameterResultFieldBuilder() : null;
+          } else {
+            studentTaskParameterResultBuilder .addAllMessages(other.studentTaskParameterResult );
+          }
+        }
+      }
+      if (studentTaskRequirementResultBuilder == null) {
+        if (!other.studentTaskRequirementResult .isEmpty()) {
+          if (studentTaskRequirementResult .isEmpty()) {
+            studentTaskRequirementResult = other.studentTaskRequirementResult ;
+            bitField0 = (bitField0 & ~0x00000004);
+          } else {
+            ensureStudentTaskRequirementResultIsMutable();
+            studentTaskRequirementResult .addAll(other.studentTaskRequirementResult );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.studentTaskRequirementResult .isEmpty()) {
+          if (studentTaskRequirementResultBuilder .isEmpty()) {
+            studentTaskRequirementResultBuilder .dispose();
+            studentTaskRequirementResultBuilder = null;
+            studentTaskRequirementResult = other.studentTaskRequirementResult ;
+            bitField0 = (bitField0 & ~0x00000004);
+            studentTaskRequirementResultBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getStudentTaskRequirementResultFieldBuilder() : null;
+          } else {
+            studentTaskRequirementResultBuilder .addAllMessages(other.studentTaskRequirementResult );
+          }
+        }
       }
       if (other.hasTeacherTask()) {
         mergeTeacherTask(other.getTeacherTask());
@@ -1384,18 +1600,498 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> studentTaskParameterResult =
+      java.util.Collections.emptyList();
+    private void ensureStudentTaskParameterResultIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        studentTaskParameterResult = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult>(studentTaskParameterResult );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> studentTaskParameterResultBuilder ;
+
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> getStudentTaskParameterResultList() {
+      if (studentTaskParameterResultBuilder == null) {
+        return java.util.Collections.unmodifiableList(studentTaskParameterResult );
+      } else {
+        return studentTaskParameterResultBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public int getStudentTaskParameterResultCount() {
+      if (studentTaskParameterResultBuilder == null) {
+        return studentTaskParameterResult .size();
+      } else {
+        return studentTaskParameterResultBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getStudentTaskParameterResult(int index) {
+      if (studentTaskParameterResultBuilder == null) {
+        return studentTaskParameterResult .get(index);
+      } else {
+        return studentTaskParameterResultBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder setStudentTaskParameterResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (studentTaskParameterResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .set(index, value);
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder setStudentTaskParameterResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (studentTaskParameterResultBuilder == null) {
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder addStudentTaskParameterResult(com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (studentTaskParameterResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .add(value);
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder addStudentTaskParameterResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (studentTaskParameterResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .add(index, value);
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder addStudentTaskParameterResult(
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (studentTaskParameterResultBuilder == null) {
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .add(builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder addStudentTaskParameterResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (studentTaskParameterResultBuilder == null) {
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder addAllStudentTaskParameterResult(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> values) {
+      if (studentTaskParameterResultBuilder == null) {
+        ensureStudentTaskParameterResultIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, studentTaskParameterResult );
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder clearStudentTaskParameterResult() {
+      if (studentTaskParameterResultBuilder == null) {
+        studentTaskParameterResult = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public Builder removeStudentTaskParameterResult(int index) {
+      if (studentTaskParameterResultBuilder == null) {
+        ensureStudentTaskParameterResultIsMutable();
+        studentTaskParameterResult .remove(index);
+        onChanged();
+      } else {
+        studentTaskParameterResultBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder getStudentTaskParameterResultBuilder(
+        int index) {
+      return getStudentTaskParameterResultFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getStudentTaskParameterResultOrBuilder(
+        int index) {
+      if (studentTaskParameterResultBuilder == null) {
+        return studentTaskParameterResult .get(index);  } else {
+        return studentTaskParameterResultBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+         getStudentTaskParameterResultOrBuilderList() {
+      if (studentTaskParameterResultBuilder != null) {
+        return studentTaskParameterResultBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(studentTaskParameterResult );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder addStudentTaskParameterResultBuilder() {
+      return getStudentTaskParameterResultFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder addStudentTaskParameterResultBuilder(
+        int index) {
+      return getStudentTaskParameterResultFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder> 
+         getStudentTaskParameterResultBuilderList() {
+      return getStudentTaskParameterResultFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+        getStudentTaskParameterResultFieldBuilder() {
+      if (studentTaskParameterResultBuilder == null) {
+        studentTaskParameterResultBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder>(
+                studentTaskParameterResult ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        studentTaskParameterResult = null;
+      }
+      return studentTaskParameterResultBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> studentTaskRequirementResult =
+      java.util.Collections.emptyList();
+    private void ensureStudentTaskRequirementResultIsMutable() {
+      if (!((bitField0 & 0x00000004) != 0)) {
+        studentTaskRequirementResult = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult>(studentTaskRequirementResult );
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> studentTaskRequirementResultBuilder ;
+
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> getStudentTaskRequirementResultList() {
+      if (studentTaskRequirementResultBuilder == null) {
+        return java.util.Collections.unmodifiableList(studentTaskRequirementResult );
+      } else {
+        return studentTaskRequirementResultBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public int getStudentTaskRequirementResultCount() {
+      if (studentTaskRequirementResultBuilder == null) {
+        return studentTaskRequirementResult .size();
+      } else {
+        return studentTaskRequirementResultBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult getStudentTaskRequirementResult(int index) {
+      if (studentTaskRequirementResultBuilder == null) {
+        return studentTaskRequirementResult .get(index);
+      } else {
+        return studentTaskRequirementResultBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder setStudentTaskRequirementResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult value) {
+      if (studentTaskRequirementResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .set(index, value);
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder setStudentTaskRequirementResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder builderForValue) {
+      if (studentTaskRequirementResultBuilder == null) {
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder addStudentTaskRequirementResult(com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult value) {
+      if (studentTaskRequirementResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .add(value);
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder addStudentTaskRequirementResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult value) {
+      if (studentTaskRequirementResultBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .add(index, value);
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder addStudentTaskRequirementResult(
+        com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder builderForValue) {
+      if (studentTaskRequirementResultBuilder == null) {
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .add(builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder addStudentTaskRequirementResult(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder builderForValue) {
+      if (studentTaskRequirementResultBuilder == null) {
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder addAllStudentTaskRequirementResult(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> values) {
+      if (studentTaskRequirementResultBuilder == null) {
+        ensureStudentTaskRequirementResultIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, studentTaskRequirementResult );
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder clearStudentTaskRequirementResult() {
+      if (studentTaskRequirementResultBuilder == null) {
+        studentTaskRequirementResult = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000004);
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public Builder removeStudentTaskRequirementResult(int index) {
+      if (studentTaskRequirementResultBuilder == null) {
+        ensureStudentTaskRequirementResultIsMutable();
+        studentTaskRequirementResult .remove(index);
+        onChanged();
+      } else {
+        studentTaskRequirementResultBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder getStudentTaskRequirementResultBuilder(
+        int index) {
+      return getStudentTaskRequirementResultFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder getStudentTaskRequirementResultOrBuilder(
+        int index) {
+      if (studentTaskRequirementResultBuilder == null) {
+        return studentTaskRequirementResult .get(index);  } else {
+        return studentTaskRequirementResultBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
+         getStudentTaskRequirementResultOrBuilderList() {
+      if (studentTaskRequirementResultBuilder != null) {
+        return studentTaskRequirementResultBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(studentTaskRequirementResult );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder addStudentTaskRequirementResultBuilder() {
+      return getStudentTaskRequirementResultFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder addStudentTaskRequirementResultBuilder(
+        int index) {
+      return getStudentTaskRequirementResultFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder> 
+         getStudentTaskRequirementResultBuilderList() {
+      return getStudentTaskRequirementResultFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
+        getStudentTaskRequirementResultFieldBuilder() {
+      if (studentTaskRequirementResultBuilder == null) {
+        studentTaskRequirementResultBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder>(
+                studentTaskRequirementResult ,
+                ((bitField0 & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        studentTaskRequirementResult = null;
+      }
+      return studentTaskRequirementResultBuilder ;
+    }
+
     private com.zhijiejiaoyu.glory_api.task.TeacherTask teacherTask ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TeacherTask, com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder> teacherTaskBuilder ;
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      * @return Whether the teacherTask field is set.
      */
     public boolean hasTeacherTask() {
       return teacherTaskBuilder != null || teacherTask != null;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      * @return The teacherTask.
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask() {
@@ -1406,7 +2102,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public Builder setTeacherTask(com.zhijiejiaoyu.glory_api.task.TeacherTask value) {
       if (teacherTaskBuilder == null) {
@@ -1422,7 +2118,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public Builder setTeacherTask(
         com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder builderForValue) {
@@ -1436,7 +2132,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public Builder mergeTeacherTask(com.zhijiejiaoyu.glory_api.task.TeacherTask value) {
       if (teacherTaskBuilder == null) {
@@ -1454,7 +2150,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public Builder clearTeacherTask() {
       if (teacherTaskBuilder == null) {
@@ -1468,7 +2164,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder getTeacherTaskBuilder() {
       
@@ -1476,7 +2172,7 @@ private static final long serialVersionUID = 0L;
       return getTeacherTaskFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder() {
       if (teacherTaskBuilder != null) {
@@ -1487,7 +2183,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 7;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TeacherTask, com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder> 
@@ -1507,14 +2203,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> studentBuilder ;
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      * @return Whether the student field is set.
      */
     public boolean hasStudent() {
       return studentBuilder != null || student != null;
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      * @return The student.
      */
     public com.zhijiejiaoyu.glory_api.user.User getStudent() {
@@ -1525,7 +2221,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public Builder setStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -1541,7 +2237,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public Builder setStudent(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -1555,7 +2251,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public Builder mergeStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -1573,7 +2269,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public Builder clearStudent() {
       if (studentBuilder == null) {
@@ -1587,7 +2283,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getStudentBuilder() {
       
@@ -1595,7 +2291,7 @@ private static final long serialVersionUID = 0L;
       return getStudentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
       if (studentBuilder != null) {
@@ -1606,7 +2302,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User student = 8;</code>
+     * <code>.glory_api.User student = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -1626,14 +2322,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> teacherBuilder ;
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      * @return Whether the teacher field is set.
      */
     public boolean hasTeacher() {
       return teacherBuilder != null || teacher != null;
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      * @return The teacher.
      */
     public com.zhijiejiaoyu.glory_api.user.User getTeacher() {
@@ -1644,7 +2340,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public Builder setTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -1660,7 +2356,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public Builder setTeacher(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -1674,7 +2370,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public Builder mergeTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -1692,7 +2388,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public Builder clearTeacher() {
       if (teacherBuilder == null) {
@@ -1706,7 +2402,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getTeacherBuilder() {
       
@@ -1714,7 +2410,7 @@ private static final long serialVersionUID = 0L;
       return getTeacherFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
       if (teacherBuilder != null) {
@@ -1725,7 +2421,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 9;</code>
+     * <code>.glory_api.User teacher = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

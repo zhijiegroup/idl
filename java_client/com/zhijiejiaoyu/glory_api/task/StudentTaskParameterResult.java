@@ -16,6 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StudentTaskParameterResult() {
+    taskParameterKey = "";
+    taskParameterName = "";
+    taskParameterOperator = "";
+    taskParameterValue = "";
+    taskParameterType = "";
+    failedReason = "";
+    children = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -48,6 +56,61 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+
+            taskParameterId = input.readInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskParameterKey = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskParameterName = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskParameterOperator = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskParameterValue = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskParameterType = s;
+            break;
+          }
+          case 56: {
+
+            isPassed = input.readBool();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            failedReason = s;
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            children .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -63,6 +126,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        children = java.util.Collections.unmodifiableList(children );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -80,6 +146,296 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.class, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder.class);
   }
 
+  public static final int TASK_PARAMETER_ID_FIELD_NUMBER = 1;
+  private long taskParameterId ;
+  /**
+   * <code>int64 task_parameter_id = 1;</code>
+   * @return The taskParameterId.
+   */
+  @java.lang.Override
+  public long getTaskParameterId() {
+    return taskParameterId ;
+  }
+
+  public static final int TASK_PARAMETER_KEY_FIELD_NUMBER = 2;
+  private volatile java.lang.Object taskParameterKey ;
+  /**
+   * <code>string task_parameter_key = 2;</code>
+   * @return The taskParameterKey.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterKey() {
+    java.lang.Object ref = taskParameterKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterKey = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_key = 2;</code>
+   * @return The bytes for taskParameterKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterKeyBytes() {
+    java.lang.Object ref = taskParameterKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMETER_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object taskParameterName ;
+  /**
+   * <code>string task_parameter_name = 3;</code>
+   * @return The taskParameterName.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterName() {
+    java.lang.Object ref = taskParameterName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_name = 3;</code>
+   * @return The bytes for taskParameterName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterNameBytes() {
+    java.lang.Object ref = taskParameterName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMETER_OPERATOR_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskParameterOperator ;
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The taskParameterOperator.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterOperator() {
+    java.lang.Object ref = taskParameterOperator ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterOperator = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_operator = 4;</code>
+   * @return The bytes for taskParameterOperator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterOperatorBytes() {
+    java.lang.Object ref = taskParameterOperator ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterOperator = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMETER_VALUE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object taskParameterValue ;
+  /**
+   * <code>string task_parameter_value = 5;</code>
+   * @return The taskParameterValue.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterValue() {
+    java.lang.Object ref = taskParameterValue ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterValue = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_value = 5;</code>
+   * @return The bytes for taskParameterValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterValueBytes() {
+    java.lang.Object ref = taskParameterValue ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterValue = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_PARAMETER_TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object taskParameterType ;
+  /**
+   * <code>string task_parameter_type = 6;</code>
+   * @return The taskParameterType.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskParameterType() {
+    java.lang.Object ref = taskParameterType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskParameterType = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_parameter_type = 6;</code>
+   * @return The bytes for taskParameterType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskParameterTypeBytes() {
+    java.lang.Object ref = taskParameterType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskParameterType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IS_PASSED_FIELD_NUMBER = 7;
+  private boolean isPassed ;
+  /**
+   * <code>bool is_passed = 7;</code>
+   * @return The isPassed.
+   */
+  @java.lang.Override
+  public boolean getIsPassed() {
+    return isPassed ;
+  }
+
+  public static final int FAILED_REASON_FIELD_NUMBER = 8;
+  private volatile java.lang.Object failedReason ;
+  /**
+   * <code>string failed_reason = 8;</code>
+   * @return The failedReason.
+   */
+  @java.lang.Override
+  public java.lang.String getFailedReason() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      failedReason = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string failed_reason = 8;</code>
+   * @return The bytes for failedReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFailedReasonBytes() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      failedReason = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CHILDREN_FIELD_NUMBER = 9;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> children ;
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> getChildrenList() {
+    return children ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+      getChildrenOrBuilderList() {
+    return children ;
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   */
+  @java.lang.Override
+  public int getChildrenCount() {
+    return children .size();
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getChildren(int index) {
+    return children .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getChildrenOrBuilder(
+      int index) {
+    return children .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -94,6 +450,33 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (taskParameterId != 0L) {
+      output.writeInt64(1, taskParameterId );
+    }
+    if (!getTaskParameterKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskParameterKey );
+    }
+    if (!getTaskParameterNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskParameterName );
+    }
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskParameterOperator );
+    }
+    if (!getTaskParameterValueBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskParameterValue );
+    }
+    if (!getTaskParameterTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskParameterType );
+    }
+    if (isPassed != false) {
+      output.writeBool(7, isPassed );
+    }
+    if (!getFailedReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, failedReason );
+    }
+    for (int i = 0; i < children .size(); i++) {
+      output.writeMessage(9, children .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -103,6 +486,36 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (taskParameterId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, taskParameterId );
+    }
+    if (!getTaskParameterKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskParameterKey );
+    }
+    if (!getTaskParameterNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskParameterName );
+    }
+    if (!getTaskParameterOperatorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskParameterOperator );
+    }
+    if (!getTaskParameterValueBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskParameterValue );
+    }
+    if (!getTaskParameterTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskParameterType );
+    }
+    if (isPassed != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, isPassed );
+    }
+    if (!getFailedReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, failedReason );
+    }
+    for (int i = 0; i < children .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, children .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -118,6 +531,24 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult other = (com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult) obj;
 
+    if (getTaskParameterId()
+        != other.getTaskParameterId()) return false;
+    if (!getTaskParameterKey()
+        .equals(other.getTaskParameterKey())) return false;
+    if (!getTaskParameterName()
+        .equals(other.getTaskParameterName())) return false;
+    if (!getTaskParameterOperator()
+        .equals(other.getTaskParameterOperator())) return false;
+    if (!getTaskParameterValue()
+        .equals(other.getTaskParameterValue())) return false;
+    if (!getTaskParameterType()
+        .equals(other.getTaskParameterType())) return false;
+    if (getIsPassed()
+        != other.getIsPassed()) return false;
+    if (!getFailedReason()
+        .equals(other.getFailedReason())) return false;
+    if (!getChildrenList()
+        .equals(other.getChildrenList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -129,6 +560,28 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskParameterId());
+    hash = (37 * hash) + TASK_PARAMETER_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterKey().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterName().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_OPERATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterOperator().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterValue().hashCode();
+    hash = (37 * hash) + TASK_PARAMETER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskParameterType().hashCode();
+    hash = (37 * hash) + IS_PASSED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsPassed());
+    hash = (37 * hash) + FAILED_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getFailedReason().hashCode();
+    if (getChildrenCount() > 0) {
+      hash = (37 * hash) + CHILDREN_FIELD_NUMBER;
+      hash = (53 * hash) + getChildrenList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -257,11 +710,34 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChildrenFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      taskParameterId = 0L;
+
+      taskParameterKey = "";
+
+      taskParameterName = "";
+
+      taskParameterOperator = "";
+
+      taskParameterValue = "";
+
+      taskParameterType = "";
+
+      isPassed = false;
+
+      failedReason = "";
+
+      if (childrenBuilder == null) {
+        children = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        childrenBuilder .clear();
+      }
       return this;
     }
 
@@ -288,6 +764,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult buildPartial() {
       com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult result = new com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult(this);
+      int from_bitField0 = bitField0 ;
+      result.taskParameterId = taskParameterId ;
+      result.taskParameterKey = taskParameterKey ;
+      result.taskParameterName = taskParameterName ;
+      result.taskParameterOperator = taskParameterOperator ;
+      result.taskParameterValue = taskParameterValue ;
+      result.taskParameterType = taskParameterType ;
+      result.isPassed = isPassed ;
+      result.failedReason = failedReason ;
+      if (childrenBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          children = java.util.Collections.unmodifiableList(children );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.children = children ;
+      } else {
+        result.children = childrenBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -336,6 +830,62 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult other) {
       if (other == com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.getDefaultInstance()) return this;
+      if (other.getTaskParameterId() != 0L) {
+        setTaskParameterId(other.getTaskParameterId());
+      }
+      if (!other.getTaskParameterKey().isEmpty()) {
+        taskParameterKey = other.taskParameterKey ;
+        onChanged();
+      }
+      if (!other.getTaskParameterName().isEmpty()) {
+        taskParameterName = other.taskParameterName ;
+        onChanged();
+      }
+      if (!other.getTaskParameterOperator().isEmpty()) {
+        taskParameterOperator = other.taskParameterOperator ;
+        onChanged();
+      }
+      if (!other.getTaskParameterValue().isEmpty()) {
+        taskParameterValue = other.taskParameterValue ;
+        onChanged();
+      }
+      if (!other.getTaskParameterType().isEmpty()) {
+        taskParameterType = other.taskParameterType ;
+        onChanged();
+      }
+      if (other.getIsPassed() != false) {
+        setIsPassed(other.getIsPassed());
+      }
+      if (!other.getFailedReason().isEmpty()) {
+        failedReason = other.failedReason ;
+        onChanged();
+      }
+      if (childrenBuilder == null) {
+        if (!other.children .isEmpty()) {
+          if (children .isEmpty()) {
+            children = other.children ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureChildrenIsMutable();
+            children .addAll(other.children );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.children .isEmpty()) {
+          if (childrenBuilder .isEmpty()) {
+            childrenBuilder .dispose();
+            childrenBuilder = null;
+            children = other.children ;
+            bitField0 = (bitField0 & ~0x00000001);
+            childrenBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChildrenFieldBuilder() : null;
+          } else {
+            childrenBuilder .addAllMessages(other.children );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -363,6 +913,765 @@ private static final long serialVersionUID = 0L;
         }
       }
       return this;
+    }
+    private int bitField0 ;
+
+    private long taskParameterId ;
+    /**
+     * <code>int64 task_parameter_id = 1;</code>
+     * @return The taskParameterId.
+     */
+    @java.lang.Override
+    public long getTaskParameterId() {
+      return taskParameterId ;
+    }
+    /**
+     * <code>int64 task_parameter_id = 1;</code>
+     * @param value The taskParameterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterId(long value) {
+      
+      taskParameterId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 task_parameter_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterId() {
+      
+      taskParameterId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskParameterKey = "";
+    /**
+     * <code>string task_parameter_key = 2;</code>
+     * @return The taskParameterKey.
+     */
+    public java.lang.String getTaskParameterKey() {
+      java.lang.Object ref = taskParameterKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_key = 2;</code>
+     * @return The bytes for taskParameterKey.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterKeyBytes() {
+      java.lang.Object ref = taskParameterKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_key = 2;</code>
+     * @param value The taskParameterKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_key = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterKey() {
+      
+      taskParameterKey = getDefaultInstance().getTaskParameterKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_key = 2;</code>
+     * @param value The bytes for taskParameterKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterKey = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskParameterName = "";
+    /**
+     * <code>string task_parameter_name = 3;</code>
+     * @return The taskParameterName.
+     */
+    public java.lang.String getTaskParameterName() {
+      java.lang.Object ref = taskParameterName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_name = 3;</code>
+     * @return The bytes for taskParameterName.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterNameBytes() {
+      java.lang.Object ref = taskParameterName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_name = 3;</code>
+     * @param value The taskParameterName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterName() {
+      
+      taskParameterName = getDefaultInstance().getTaskParameterName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_name = 3;</code>
+     * @param value The bytes for taskParameterName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskParameterOperator = "";
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return The taskParameterOperator.
+     */
+    public java.lang.String getTaskParameterOperator() {
+      java.lang.Object ref = taskParameterOperator ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterOperator = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return The bytes for taskParameterOperator.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterOperatorBytes() {
+      java.lang.Object ref = taskParameterOperator ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterOperator = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @param value The taskParameterOperator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterOperator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterOperator = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterOperator() {
+      
+      taskParameterOperator = getDefaultInstance().getTaskParameterOperator();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_operator = 4;</code>
+     * @param value The bytes for taskParameterOperator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterOperatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterOperator = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskParameterValue = "";
+    /**
+     * <code>string task_parameter_value = 5;</code>
+     * @return The taskParameterValue.
+     */
+    public java.lang.String getTaskParameterValue() {
+      java.lang.Object ref = taskParameterValue ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterValue = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_value = 5;</code>
+     * @return The bytes for taskParameterValue.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterValueBytes() {
+      java.lang.Object ref = taskParameterValue ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterValue = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_value = 5;</code>
+     * @param value The taskParameterValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterValue(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterValue = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_value = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterValue() {
+      
+      taskParameterValue = getDefaultInstance().getTaskParameterValue();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_value = 5;</code>
+     * @param value The bytes for taskParameterValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterValueBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterValue = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskParameterType = "";
+    /**
+     * <code>string task_parameter_type = 6;</code>
+     * @return The taskParameterType.
+     */
+    public java.lang.String getTaskParameterType() {
+      java.lang.Object ref = taskParameterType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskParameterType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_type = 6;</code>
+     * @return The bytes for taskParameterType.
+     */
+    public com.google.protobuf.ByteString
+        getTaskParameterTypeBytes() {
+      java.lang.Object ref = taskParameterType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskParameterType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_parameter_type = 6;</code>
+     * @param value The taskParameterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskParameterType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_type = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterType() {
+      
+      taskParameterType = getDefaultInstance().getTaskParameterType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_parameter_type = 6;</code>
+     * @param value The bytes for taskParameterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskParameterType = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isPassed ;
+    /**
+     * <code>bool is_passed = 7;</code>
+     * @return The isPassed.
+     */
+    @java.lang.Override
+    public boolean getIsPassed() {
+      return isPassed ;
+    }
+    /**
+     * <code>bool is_passed = 7;</code>
+     * @param value The isPassed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPassed(boolean value) {
+      
+      isPassed = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_passed = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPassed() {
+      
+      isPassed = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object failedReason = "";
+    /**
+     * <code>string failed_reason = 8;</code>
+     * @return The failedReason.
+     */
+    public java.lang.String getFailedReason() {
+      java.lang.Object ref = failedReason ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        failedReason = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 8;</code>
+     * @return The bytes for failedReason.
+     */
+    public com.google.protobuf.ByteString
+        getFailedReasonBytes() {
+      java.lang.Object ref = failedReason ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        failedReason = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 8;</code>
+     * @param value The failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReason(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      failedReason = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedReason() {
+      
+      failedReason = getDefaultInstance().getFailedReason();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 8;</code>
+     * @param value The bytes for failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReasonBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      failedReason = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> children =
+      java.util.Collections.emptyList();
+    private void ensureChildrenIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        children = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult>(children );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> childrenBuilder ;
+
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> getChildrenList() {
+      if (childrenBuilder == null) {
+        return java.util.Collections.unmodifiableList(children );
+      } else {
+        return childrenBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public int getChildrenCount() {
+      if (childrenBuilder == null) {
+        return children .size();
+      } else {
+        return childrenBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getChildren(int index) {
+      if (childrenBuilder == null) {
+        return children .get(index);
+      } else {
+        return childrenBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder setChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .set(index, value);
+        onChanged();
+      } else {
+        childrenBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder setChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder addChildren(com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .add(value);
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder addChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult value) {
+      if (childrenBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildrenIsMutable();
+        children .add(index, value);
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder addChildren(
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .add(builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder addChildren(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder builderForValue) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        childrenBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder addAllChildren(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> values) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, children );
+        onChanged();
+      } else {
+        childrenBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder clearChildren() {
+      if (childrenBuilder == null) {
+        children = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        childrenBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public Builder removeChildren(int index) {
+      if (childrenBuilder == null) {
+        ensureChildrenIsMutable();
+        children .remove(index);
+        onChanged();
+      } else {
+        childrenBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder getChildrenBuilder(
+        int index) {
+      return getChildrenFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getChildrenOrBuilder(
+        int index) {
+      if (childrenBuilder == null) {
+        return children .get(index);  } else {
+        return childrenBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+         getChildrenOrBuilderList() {
+      if (childrenBuilder != null) {
+        return childrenBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(children );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder addChildrenBuilder() {
+      return getChildrenFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder addChildrenBuilder(
+        int index) {
+      return getChildrenFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder> 
+         getChildrenBuilderList() {
+      return getChildrenFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
+        getChildrenFieldBuilder() {
+      if (childrenBuilder == null) {
+        childrenBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder>(
+                children ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        children = null;
+      }
+      return childrenBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

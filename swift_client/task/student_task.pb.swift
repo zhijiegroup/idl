@@ -25,6 +25,24 @@ struct GloryApi_StudentTaskParameterResult {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var taskParameterID: Int64 = 0
+
+  var taskParameterKey: String = String()
+
+  var taskParameterName: String = String()
+
+  var taskParameterOperator: String = String()
+
+  var taskParameterValue: String = String()
+
+  var taskParameterType: String = String()
+
+  var isPassed: Bool = false
+
+  var failedReason: String = String()
+
+  var children: [GloryApi_StudentTaskParameterResult] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -34,6 +52,14 @@ struct GloryApi_StudentTaskRequirementResult {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  var taskRequirementID: Int64 = 0
+
+  var taskRequirement: String = String()
+
+  var isPasswd: Bool = false
+
+  var failedReason: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -56,6 +82,10 @@ struct GloryApi_StudentTask {
   var submitDescription: String = String()
 
   var attachments: [String] = []
+
+  var studentTaskParameterResult: [GloryApi_StudentTaskParameterResult] = []
+
+  var studentTaskRequirementResult: [GloryApi_StudentTaskRequirementResult] = []
 
   var teacherTask: GloryApi_TeacherTask {
     get {return _teacherTask ?? GloryApi_TeacherTask()}
@@ -395,18 +425,79 @@ fileprivate let _protobuf_package = "glory_api"
 
 extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskParameterResult"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "task_parameter_id"),
+    2: .standard(proto: "task_parameter_key"),
+    3: .standard(proto: "task_parameter_name"),
+    4: .standard(proto: "task_parameter_operator"),
+    5: .standard(proto: "task_parameter_value"),
+    6: .standard(proto: "task_parameter_type"),
+    7: .standard(proto: "is_passed"),
+    8: .standard(proto: "failed_reason"),
+    9: .same(proto: "children"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskParameterID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.taskParameterKey) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.taskParameterName) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterOperator) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
+      case 7: try { try decoder.decodeSingularBoolField(value: &self.isPassed) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
+      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.taskParameterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskParameterID, fieldNumber: 1)
+    }
+    if !self.taskParameterKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterKey, fieldNumber: 2)
+    }
+    if !self.taskParameterName.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterName, fieldNumber: 3)
+    }
+    if !self.taskParameterOperator.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterOperator, fieldNumber: 4)
+    }
+    if !self.taskParameterValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterValue, fieldNumber: 5)
+    }
+    if !self.taskParameterType.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 6)
+    }
+    if self.isPassed != false {
+      try visitor.visitSingularBoolField(value: self.isPassed, fieldNumber: 7)
+    }
+    if !self.failedReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 8)
+    }
+    if !self.children.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StudentTaskParameterResult, rhs: GloryApi_StudentTaskParameterResult) -> Bool {
+    if lhs.taskParameterID != rhs.taskParameterID {return false}
+    if lhs.taskParameterKey != rhs.taskParameterKey {return false}
+    if lhs.taskParameterName != rhs.taskParameterName {return false}
+    if lhs.taskParameterOperator != rhs.taskParameterOperator {return false}
+    if lhs.taskParameterValue != rhs.taskParameterValue {return false}
+    if lhs.taskParameterType != rhs.taskParameterType {return false}
+    if lhs.isPassed != rhs.isPassed {return false}
+    if lhs.failedReason != rhs.failedReason {return false}
+    if lhs.children != rhs.children {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -414,18 +505,49 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
 
 extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".StudentTaskRequirementResult"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "task_requirement_id"),
+    2: .standard(proto: "task_requirement"),
+    3: .standard(proto: "is_passwd"),
+    4: .standard(proto: "failed_reason"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskRequirementID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.taskRequirement) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.isPasswd) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.taskRequirementID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskRequirementID, fieldNumber: 1)
+    }
+    if !self.taskRequirement.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskRequirement, fieldNumber: 2)
+    }
+    if self.isPasswd != false {
+      try visitor.visitSingularBoolField(value: self.isPasswd, fieldNumber: 3)
+    }
+    if !self.failedReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StudentTaskRequirementResult, rhs: GloryApi_StudentTaskRequirementResult) -> Bool {
+    if lhs.taskRequirementID != rhs.taskRequirementID {return false}
+    if lhs.taskRequirement != rhs.taskRequirement {return false}
+    if lhs.isPasswd != rhs.isPasswd {return false}
+    if lhs.failedReason != rhs.failedReason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -440,9 +562,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     4: .standard(proto: "submit_parameter"),
     5: .standard(proto: "submit_description"),
     6: .same(proto: "attachments"),
-    7: .standard(proto: "teacher_task"),
-    8: .same(proto: "student"),
-    9: .same(proto: "teacher"),
+    7: .standard(proto: "student_task_parameter_result"),
+    8: .standard(proto: "student_task_requirement_result"),
+    9: .standard(proto: "teacher_task"),
+    10: .same(proto: "student"),
+    11: .same(proto: "teacher"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -457,9 +581,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 4: try { try decoder.decodeSingularStringField(value: &self.submitParameter) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.submitDescription) }()
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.attachments) }()
-      case 7: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
-      case 8: try { try decoder.decodeSingularMessageField(value: &self._student) }()
-      case 9: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
+      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskParameterResult) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskRequirementResult) }()
+      case 9: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
+      case 10: try { try decoder.decodeSingularMessageField(value: &self._student) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
       default: break
       }
     }
@@ -488,14 +614,20 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.attachments.isEmpty {
       try visitor.visitRepeatedStringField(value: self.attachments, fieldNumber: 6)
     }
+    if !self.studentTaskParameterResult.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.studentTaskParameterResult, fieldNumber: 7)
+    }
+    if !self.studentTaskRequirementResult.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.studentTaskRequirementResult, fieldNumber: 8)
+    }
     try { if let v = self._teacherTask {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     } }()
     try { if let v = self._student {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
     } }()
     try { if let v = self._teacher {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -507,6 +639,8 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.submitParameter != rhs.submitParameter {return false}
     if lhs.submitDescription != rhs.submitDescription {return false}
     if lhs.attachments != rhs.attachments {return false}
+    if lhs.studentTaskParameterResult != rhs.studentTaskParameterResult {return false}
+    if lhs.studentTaskRequirementResult != rhs.studentTaskRequirementResult {return false}
     if lhs._teacherTask != rhs._teacherTask {return false}
     if lhs._student != rhs._student {return false}
     if lhs._teacher != rhs._teacher {return false}
