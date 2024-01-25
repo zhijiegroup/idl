@@ -617,6 +617,7 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
     $2.BaseRequest? baseRequest,
     $core.String? name,
     $core.int? type,
+    $core.String? business,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -628,6 +629,9 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
     }
     if (type != null) {
       $result.type = type;
+    }
+    if (business != null) {
+      $result.business = business;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -642,6 +646,7 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'business')
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -696,16 +701,25 @@ class ListTeacherTaskTemplateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearType() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $core.String get business => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set business($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBusiness() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBusiness() => clearField(4);
+
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(3);
+  $2.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(3);
+  $2.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListTeacherTaskTemplateResponse extends $pb.GeneratedMessage {

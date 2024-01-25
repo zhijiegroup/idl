@@ -142,6 +142,7 @@ const ListTeacherTaskTemplateRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'type', '3': 3, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'business', '3': 4, '4': 1, '5': 9, '10': 'business'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -150,8 +151,8 @@ const ListTeacherTaskTemplateRequest$json = {
 final $typed_data.Uint8List listTeacherTaskTemplateRequestDescriptor = $convert.base64Decode(
     'Ch5MaXN0VGVhY2hlclRhc2tUZW1wbGF0ZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMh'
     'EuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgR0'
-    'eXBlGAMgASgFUgR0eXBlEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZX'
-    'F1ZXN0UgpwYWdpbmF0aW9u');
+    'eXBlGAMgASgFUgR0eXBlEhoKCGJ1c2luZXNzGAQgASgJUghidXNpbmVzcxI3CgpwYWdpbmF0aW'
+    '9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listTeacherTaskTemplateResponseDescriptor instead')
 const ListTeacherTaskTemplateResponse$json = {

@@ -53,6 +53,26 @@ public interface ListTeacherTaskTemplateRequestOrBuilder extends
   int getType();
 
   /**
+   * <pre>
+   * 任务所属实训系统
+   * </pre>
+   *
+   * <code>string business = 4;</code>
+   * @return The business.
+   */
+  java.lang.String getBusiness();
+  /**
+   * <pre>
+   * 任务所属实训系统
+   * </pre>
+   *
+   * <code>string business = 4;</code>
+   * @return The bytes for business.
+   */
+  com.google.protobuf.ByteString
+      getBusinessBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

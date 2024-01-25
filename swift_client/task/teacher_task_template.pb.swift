@@ -263,6 +263,9 @@ struct GloryApi_ListTeacherTaskTemplateRequest {
   /// 任务类型：0. 所有任务；1.预置任务；2.手动任务
   var type: Int32 = 0
 
+  /// 任务所属实训系统
+  var business: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -832,6 +835,7 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
     1: .standard(proto: "base_request"),
     2: .same(proto: "name"),
     3: .same(proto: "type"),
+    4: .same(proto: "business"),
     100: .same(proto: "pagination"),
   ]
 
@@ -844,6 +848,7 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.business) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -864,6 +869,9 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
     if self.type != 0 {
       try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 3)
     }
+    if !self.business.isEmpty {
+      try visitor.visitSingularStringField(value: self.business, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -874,6 +882,7 @@ extension GloryApi_ListTeacherTaskTemplateRequest: SwiftProtobuf.Message, SwiftP
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.name != rhs.name {return false}
     if lhs.type != rhs.type {return false}
+    if lhs.business != rhs.business {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

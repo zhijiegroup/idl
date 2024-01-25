@@ -60,6 +60,8 @@ export interface ListTeacherTaskTemplateRequest {
   name?: string;
   /** 任务类型：0. 所有任务；1.预置任务；2.手动任务 */
   type?: number;
+  /** 任务所属实训系统 */
+  business?: string;
   pagination?: base.PaginationRequest;
 }
 
