@@ -9,11 +9,22 @@ import "user/user.proto";
 import "task/teacher_task.proto";
 
 message StudentTaskParameterResult {
-
+  int64 task_parameter_id = 1;
+  string task_parameter_key = 2;
+  string task_parameter_name = 3;
+  string task_parameter_operator = 4;
+  string task_parameter_value = 5;
+  string task_parameter_type = 6;
+  bool is_passed = 7;
+  string failed_reason = 8;
+  repeated StudentTaskParameterResult children = 9;
 }
 
 message StudentTaskRequirementResult {
-
+  int64 task_requirement_id = 1;
+  string task_requirement = 2;
+  bool is_passwd = 3;
+  string failed_reason = 4;
 }
 
 message StudentTask {
@@ -23,9 +34,11 @@ message StudentTask {
   string submit_parameter = 4;
   string submit_description = 5;
   repeated string attachments = 6;
-  TeacherTask teacher_task = 7;
-  User student = 8;
-  User teacher = 9;
+  repeated StudentTaskParameterResult student_task_parameter_result =  7;
+  repeated StudentTaskRequirementResult student_task_requirement_result = 8;
+  TeacherTask teacher_task = 9;
+  User student = 10;
+  User teacher = 11;
 }
 
 message TeacherRequirementEvaluation {
