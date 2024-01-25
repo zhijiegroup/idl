@@ -51,7 +51,7 @@ message CreateOrderInfo {
   string message = 17;
   string buyer_name = 18;
   int64 room_id = 19;//直播房间id
-  string channel = 20;//live:直播间订单,normal:非直播间订单
+  string channel = 20;//live:直播间订单,normal:商城订单;video:短视频订单
   int64 trans_id = 21;//流水id,下单时候 货币订单、虚拟币订单,分别进行合并,合并后称之为 trans_id(流水id)
   int64 coupon_id = 22; // 订单使用优惠券ID
 }
