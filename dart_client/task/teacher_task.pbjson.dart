@@ -189,6 +189,36 @@ final $typed_data.Uint8List listTeacherTaskResponseDescriptor = $convert.base64D
     'ZWFjaGVyVGFza1IMdGVhY2hlclRhc2tzEjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2'
     'luYXRpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
 
+@$core.Deprecated('Use getTeacherTaskRequestDescriptor instead')
+const GetTeacherTaskRequest$json = {
+  '1': 'GetTeacherTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teacher_task_id', '3': 2, '4': 1, '5': 3, '10': 'teacherTaskId'},
+  ],
+};
+
+/// Descriptor for `GetTeacherTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTeacherTaskRequestDescriptor = $convert.base64Decode(
+    'ChVHZXRUZWFjaGVyVGFza1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
+    'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSJgoPdGVhY2hlcl90YXNrX2lkGAIgASgDUg10ZWFjaGVy'
+    'VGFza0lk');
+
+@$core.Deprecated('Use getTeacherTaskResponseDescriptor instead')
+const GetTeacherTaskResponse$json = {
+  '1': 'GetTeacherTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'teacher_task', '3': 2, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
+  ],
+};
+
+/// Descriptor for `GetTeacherTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTeacherTaskResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRUZWFjaGVyVGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBI5Cgx0ZWFjaGVyX3Rhc2sYAiABKAsyFi5nbG9yeV9hcGkuVGVh'
+    'Y2hlclRhc2tSC3RlYWNoZXJUYXNr');
+
 @$core.Deprecated('Use deleteTeacherTaskRequestDescriptor instead')
 const DeleteTeacherTaskRequest$json = {
   '1': 'DeleteTeacherTaskRequest',

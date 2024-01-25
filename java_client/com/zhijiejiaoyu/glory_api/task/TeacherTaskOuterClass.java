@@ -60,6 +60,16 @@ public final class TeacherTaskOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTeacherTaskResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTeacherTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTeacherTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetTeacherTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetTeacherTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_DeleteTeacherTaskRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -120,12 +130,17 @@ public final class TeacherTaskOuterClass {
       "_resp\030\001 \001(\0132\022.base.BaseResponse\022-\n\rteach" +
       "er_tasks\030\002 \003(\0132\026.glory_api.TeacherTask\022," +
       "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
-      "onse\"\\\n\030DeleteTeacherTaskRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017tea" +
-      "cher_task_id\030\002 \001(\003\"B\n\031DeleteTeacherTaskR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponseB#\n\037com.zhijiejiaoyu.glory_api.tas" +
-      "kP\001b\006proto3"
+      "onse\"Y\n\025GetTeacherTaskRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017teache" +
+      "r_task_id\030\002 \001(\003\"m\n\026GetTeacherTaskRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022,\n\014teacher_task\030\002 \001(\0132\026.glory_api.Teach" +
+      "erTask\"\\\n\030DeleteTeacherTaskRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017t" +
+      "eacher_task_id\030\002 \001(\003\"B\n\031DeleteTeacherTas" +
+      "kResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "ResponseB#\n\037com.zhijiejiaoyu.glory_api.t" +
+      "askP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -188,14 +203,26 @@ public final class TeacherTaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TeacherTasks", "Pagination", });
-    internal_static_glory_api_DeleteTeacherTaskRequest_descriptor =
+    internal_static_glory_api_GetTeacherTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_glory_api_GetTeacherTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTeacherTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TeacherTaskId", });
+    internal_static_glory_api_GetTeacherTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_glory_api_GetTeacherTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetTeacherTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TeacherTask", });
+    internal_static_glory_api_DeleteTeacherTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_DeleteTeacherTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTeacherTaskRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TeacherTaskId", });
     internal_static_glory_api_DeleteTeacherTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_DeleteTeacherTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteTeacherTaskResponse_descriptor,

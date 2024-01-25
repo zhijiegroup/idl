@@ -57,7 +57,7 @@ public final class GloryApiService {
       ".proto\032\026task/system_task.proto\032 task/tea" +
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
-      "fication/notification.proto2\267\364\002\n\tglory_a" +
+      "fication/notification.proto2\256\365\002\n\tglory_a" +
       "pi\022s\n\rCreateExample\022\037.glory_api.CreateEx" +
       "ampleRequest\032 .glory_api.CreateExampleRe" +
       "sponse\"\037\322\301\030\033/api/example/create_example\022" +
@@ -1193,64 +1193,67 @@ public final class GloryApiService {
       "sk/update_teacher_task\022y\n\017ListTeacherTas" +
       "k\022!.glory_api.ListTeacherTaskRequest\032\".g" +
       "lory_api.ListTeacherTaskResponse\"\037\322\301\030\033/a" +
-      "pi/task/list_teacher_task\022\201\001\n\021DeleteTeac" +
-      "herTask\022#.glory_api.DeleteTeacherTaskReq" +
-      "uest\032$.glory_api.DeleteTeacherTaskRespon" +
-      "se\"!\322\301\030\035/api/task/delete_teacher_task\022y\n" +
-      "\017ListStudentTask\022!.glory_api.ListStudent" +
-      "TaskRequest\032\".glory_api.ListStudentTaskR" +
-      "esponse\"\037\322\301\030\033/api/task/list_student_task" +
-      "\022\201\001\n\021SubmitStudentTask\022#.glory_api.Submi" +
-      "tStudentTaskRequest\032$.glory_api.SubmitSt" +
-      "udentTaskResponse\"!\322\301\030\035/api/task/submit_" +
-      "student_task\022u\n\016GetStudentTask\022 .glory_a" +
-      "pi.GetStudentTaskRequest\032!.glory_api.Get" +
-      "StudentTaskResponse\"\036\322\301\030\032/api/task/get_s" +
-      "tudent_task\022\226\001\n\026TeacherListStudentTask\022(" +
-      ".glory_api.TeacherListStudentTaskRequest" +
-      "\032).glory_api.TeacherListStudentTaskRespo" +
-      "nse\"\'\322\301\030#/api/task/teacher_list_student_" +
-      "task\022\246\001\n\032TeacherEvaluateStudentTask\022,.gl" +
-      "ory_api.TeacherEvaluateStudentTaskReques" +
-      "t\032-.glory_api.TeacherEvaluateStudentTask" +
-      "Response\"+\322\301\030\'/api/task/teacher_evaluate" +
-      "_student_task\022w\n\020ListNotification\022\".glor" +
-      "y_api.ListNotificationRequest\032#.glory_ap" +
-      "i.ListNotificationResponse\"\032\322\301\030\026/api/not" +
-      "ification/list\022{\n\021CountNotification\022#.gl" +
-      "ory_api.CountNotificationRequest\032$.glory" +
-      "_api.CountNotificationResponse\"\033\312\301\030\027/api" +
-      "/notification/count\022w\n\020ReadNotification\022" +
-      "\".glory_api.ReadNotificationRequest\032#.gl" +
-      "ory_api.ReadNotificationResponse\"\032\322\301\030\026/a",
-      "pi/notification/read\022w\n\020TestNotification" +
-      "\022\".glory_api.TestNotificationRequest\032#.g" +
-      "lory_api.TestNotificationResponse\"\032\322\301\030\026/" +
-      "api/notification/test\022\177\n\022DeleteNotificat" +
-      "ion\022$.glory_api.DeleteNotificationReques" +
-      "t\032%.glory_api.DeleteNotificationResponse" +
-      "\"\034\322\301\030\030/api/notification/delete\022\214\001\n\025ListU" +
-      "serMajorAndClass\022&.glory_api.ListUserMaj" +
-      "orAndClasRequest\032\'.glory_api.ListUserMaj" +
-      "orAndClasResponse\"\"\312\301\030\036/api/live/list_ma" +
-      "jor_and_class\022\216\001\n\025GetAggregationLiveUrl\022" +
-      "\'.glory_api.GetAggregationLiveUrlRequest" +
-      "\032(.glory_api.GetAggregationLiveUrlRespon" +
-      "se\"\"\322\301\030\036/api/live/aggregation_live_url\022y" +
-      "\n\020GetLiveBoardData\022\".glory_api.GetLiveBo" +
-      "ardDataRequest\032#.glory_api.GetLiveBoardD" +
-      "ataResponse\"\034\322\301\030\030/api/live/get_board_dat" +
-      "a\022\215\001\n\024GetLiveBoardComments\022&.glory_api.G" +
-      "etLiveBoardCommentsRequest\032\'.glory_api.G" +
-      "etLiveBoardCommentsResponse\"$\322\301\030 /api/li" +
-      "ve/get_board_live_comment\022\200\001\n\023ListBoardL" +
-      "ivingUser\022 .glory_api.ListLivingUserRequ" +
-      "est\032!.glory_api.ListLivingUserResponse\"$" +
-      "\322\301\030 /api/live/list_board_living_user\022h\n\013" +
-      "CloseCaster\022\035.glory_api.CloseCasterReque" +
-      "st\032\036.glory_api.CloseCasterResponse\"\032\312\301\030\026" +
-      "/api/live/close_casterB\036\n\032com.zhijiejiao" +
-      "yu.glory_apiP\001b\006proto3"
+      "pi/task/list_teacher_task\022u\n\016GetTeacherT" +
+      "ask\022 .glory_api.GetTeacherTaskRequest\032!." +
+      "glory_api.GetTeacherTaskResponse\"\036\322\301\030\032/a" +
+      "pi/task/get_teacher_task\022\201\001\n\021DeleteTeach" +
+      "erTask\022#.glory_api.DeleteTeacherTaskRequ" +
+      "est\032$.glory_api.DeleteTeacherTaskRespons" +
+      "e\"!\322\301\030\035/api/task/delete_teacher_task\022y\n\017" +
+      "ListStudentTask\022!.glory_api.ListStudentT" +
+      "askRequest\032\".glory_api.ListStudentTaskRe" +
+      "sponse\"\037\322\301\030\033/api/task/list_student_task\022" +
+      "\201\001\n\021SubmitStudentTask\022#.glory_api.Submit" +
+      "StudentTaskRequest\032$.glory_api.SubmitStu" +
+      "dentTaskResponse\"!\322\301\030\035/api/task/submit_s" +
+      "tudent_task\022u\n\016GetStudentTask\022 .glory_ap" +
+      "i.GetStudentTaskRequest\032!.glory_api.GetS" +
+      "tudentTaskResponse\"\036\322\301\030\032/api/task/get_st" +
+      "udent_task\022\226\001\n\026TeacherListStudentTask\022(." +
+      "glory_api.TeacherListStudentTaskRequest\032" +
+      ").glory_api.TeacherListStudentTaskRespon" +
+      "se\"\'\322\301\030#/api/task/teacher_list_student_t" +
+      "ask\022\246\001\n\032TeacherEvaluateStudentTask\022,.glo" +
+      "ry_api.TeacherEvaluateStudentTaskRequest" +
+      "\032-.glory_api.TeacherEvaluateStudentTaskR" +
+      "esponse\"+\322\301\030\'/api/task/teacher_evaluate_" +
+      "student_task\022w\n\020ListNotification\022\".glory" +
+      "_api.ListNotificationRequest\032#.glory_api" +
+      ".ListNotificationResponse\"\032\322\301\030\026/api/noti" +
+      "fication/list\022{\n\021CountNotification\022#.glo" +
+      "ry_api.CountNotificationRequest\032$.glory_" +
+      "api.CountNotificationResponse\"\033\312\301\030\027/api/",
+      "notification/count\022w\n\020ReadNotification\022\"" +
+      ".glory_api.ReadNotificationRequest\032#.glo" +
+      "ry_api.ReadNotificationResponse\"\032\322\301\030\026/ap" +
+      "i/notification/read\022w\n\020TestNotification\022" +
+      "\".glory_api.TestNotificationRequest\032#.gl" +
+      "ory_api.TestNotificationResponse\"\032\322\301\030\026/a" +
+      "pi/notification/test\022\177\n\022DeleteNotificati" +
+      "on\022$.glory_api.DeleteNotificationRequest" +
+      "\032%.glory_api.DeleteNotificationResponse\"" +
+      "\034\322\301\030\030/api/notification/delete\022\214\001\n\025ListUs" +
+      "erMajorAndClass\022&.glory_api.ListUserMajo" +
+      "rAndClasRequest\032\'.glory_api.ListUserMajo" +
+      "rAndClasResponse\"\"\312\301\030\036/api/live/list_maj" +
+      "or_and_class\022\216\001\n\025GetAggregationLiveUrl\022\'" +
+      ".glory_api.GetAggregationLiveUrlRequest\032" +
+      "(.glory_api.GetAggregationLiveUrlRespons" +
+      "e\"\"\322\301\030\036/api/live/aggregation_live_url\022y\n" +
+      "\020GetLiveBoardData\022\".glory_api.GetLiveBoa" +
+      "rdDataRequest\032#.glory_api.GetLiveBoardDa" +
+      "taResponse\"\034\322\301\030\030/api/live/get_board_data" +
+      "\022\215\001\n\024GetLiveBoardComments\022&.glory_api.Ge" +
+      "tLiveBoardCommentsRequest\032\'.glory_api.Ge" +
+      "tLiveBoardCommentsResponse\"$\322\301\030 /api/liv" +
+      "e/get_board_live_comment\022\200\001\n\023ListBoardLi" +
+      "vingUser\022 .glory_api.ListLivingUserReque" +
+      "st\032!.glory_api.ListLivingUserResponse\"$\322" +
+      "\301\030 /api/live/list_board_living_user\022h\n\013C" +
+      "loseCaster\022\035.glory_api.CloseCasterReques" +
+      "t\032\036.glory_api.CloseCasterResponse\"\032\312\301\030\026/" +
+      "api/live/close_casterB\036\n\032com.zhijiejiaoy" +
+      "u.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,6 +80,16 @@ export interface ListTeacherTaskResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface GetTeacherTaskRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_id?: string;
+}
+
+export interface GetTeacherTaskResponse {
+  base_resp?: base.BaseResponse;
+  teacher_task?: TeacherTask;
+}
+
 export interface DeleteTeacherTaskRequest {
   base_request?: base.BaseRequest;
   teacher_task_id?: string;
