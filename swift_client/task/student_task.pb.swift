@@ -91,6 +91,8 @@ struct GloryApi_StudentTask {
 
   var teacherEvaluateScore: Int32 = 0
 
+  var systemTaskKey: String = String()
+
   var teacherTask: GloryApi_TeacherTask {
     get {return _teacherTask ?? GloryApi_TeacherTask()}
     set {_teacherTask = newValue}
@@ -572,9 +574,10 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     8: .standard(proto: "student_task_requirement_result"),
     9: .standard(proto: "teacher_failed_reason"),
     10: .standard(proto: "teacher_evaluate_score"),
-    11: .standard(proto: "teacher_task"),
-    12: .same(proto: "student"),
-    13: .same(proto: "teacher"),
+    11: .standard(proto: "system_task_key"),
+    12: .standard(proto: "teacher_task"),
+    13: .same(proto: "student"),
+    14: .same(proto: "teacher"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -593,9 +596,10 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskRequirementResult) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.teacherFailedReason) }()
       case 10: try { try decoder.decodeSingularInt32Field(value: &self.teacherEvaluateScore) }()
-      case 11: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
-      case 12: try { try decoder.decodeSingularMessageField(value: &self._student) }()
-      case 13: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
+      case 12: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
+      case 13: try { try decoder.decodeSingularMessageField(value: &self._student) }()
+      case 14: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
       default: break
       }
     }
@@ -636,14 +640,17 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if self.teacherEvaluateScore != 0 {
       try visitor.visitSingularInt32Field(value: self.teacherEvaluateScore, fieldNumber: 10)
     }
+    if !self.systemTaskKey.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 11)
+    }
     try { if let v = self._teacherTask {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-    } }()
-    try { if let v = self._student {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
     } }()
-    try { if let v = self._teacher {
+    try { if let v = self._student {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+    } }()
+    try { if let v = self._teacher {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -659,6 +666,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.studentTaskRequirementResult != rhs.studentTaskRequirementResult {return false}
     if lhs.teacherFailedReason != rhs.teacherFailedReason {return false}
     if lhs.teacherEvaluateScore != rhs.teacherEvaluateScore {return false}
+    if lhs.systemTaskKey != rhs.systemTaskKey {return false}
     if lhs._teacherTask != rhs._teacherTask {return false}
     if lhs._student != rhs._student {return false}
     if lhs._teacher != rhs._teacher {return false}

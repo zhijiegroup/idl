@@ -153,47 +153,59 @@ public interface StudentTaskOrBuilder extends
   int getTeacherEvaluateScore();
 
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>string system_task_key = 11;</code>
+   * @return The systemTaskKey.
+   */
+  java.lang.String getSystemTaskKey();
+  /**
+   * <code>string system_task_key = 11;</code>
+   * @return The bytes for systemTaskKey.
+   */
+  com.google.protobuf.ByteString
+      getSystemTaskKeyBytes();
+
+  /**
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

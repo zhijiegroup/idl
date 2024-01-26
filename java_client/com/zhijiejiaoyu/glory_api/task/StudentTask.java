@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     studentTaskParameterResult = java.util.Collections.emptyList();
     studentTaskRequirementResult = java.util.Collections.emptyList();
     teacherFailedReason = "";
+    systemTaskKey = "";
   }
 
   @java.lang.Override
@@ -125,6 +126,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            systemTaskKey = s;
+            break;
+          }
+          case 98: {
             com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder subBuilder = null;
             if (teacherTask != null) {
               subBuilder = teacherTask .toBuilder();
@@ -137,7 +144,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 98: {
+          case 106: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (student != null) {
               subBuilder = student .toBuilder();
@@ -150,7 +157,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 106: {
+          case 114: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (teacher != null) {
               subBuilder = teacher .toBuilder();
@@ -531,10 +538,48 @@ private static final long serialVersionUID = 0L;
     return teacherEvaluateScore ;
   }
 
-  public static final int TEACHER_TASK_FIELD_NUMBER = 11;
+  public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 11;
+  private volatile java.lang.Object systemTaskKey ;
+  /**
+   * <code>string system_task_key = 11;</code>
+   * @return The systemTaskKey.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemTaskKey() {
+    java.lang.Object ref = systemTaskKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemTaskKey = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string system_task_key = 11;</code>
+   * @return The bytes for systemTaskKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSystemTaskKeyBytes() {
+    java.lang.Object ref = systemTaskKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      systemTaskKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEACHER_TASK_FIELD_NUMBER = 12;
   private com.zhijiejiaoyu.glory_api.task.TeacherTask teacherTask ;
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    * @return Whether the teacherTask field is set.
    */
   @java.lang.Override
@@ -542,7 +587,7 @@ private static final long serialVersionUID = 0L;
     return teacherTask != null;
   }
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    * @return The teacherTask.
    */
   @java.lang.Override
@@ -550,17 +595,17 @@ private static final long serialVersionUID = 0L;
     return teacherTask == null ? com.zhijiejiaoyu.glory_api.task.TeacherTask.getDefaultInstance() : teacherTask ;
   }
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder() {
     return getTeacherTask();
   }
 
-  public static final int STUDENT_FIELD_NUMBER = 12;
+  public static final int STUDENT_FIELD_NUMBER = 13;
   private com.zhijiejiaoyu.glory_api.user.User student ;
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    * @return Whether the student field is set.
    */
   @java.lang.Override
@@ -568,7 +613,7 @@ private static final long serialVersionUID = 0L;
     return student != null;
   }
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    * @return The student.
    */
   @java.lang.Override
@@ -576,17 +621,17 @@ private static final long serialVersionUID = 0L;
     return student == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : student ;
   }
   /**
-   * <code>.glory_api.User student = 12;</code>
+   * <code>.glory_api.User student = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
     return getStudent();
   }
 
-  public static final int TEACHER_FIELD_NUMBER = 13;
+  public static final int TEACHER_FIELD_NUMBER = 14;
   private com.zhijiejiaoyu.glory_api.user.User teacher ;
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    * @return Whether the teacher field is set.
    */
   @java.lang.Override
@@ -594,7 +639,7 @@ private static final long serialVersionUID = 0L;
     return teacher != null;
   }
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    * @return The teacher.
    */
   @java.lang.Override
@@ -602,7 +647,7 @@ private static final long serialVersionUID = 0L;
     return teacher == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : teacher ;
   }
   /**
-   * <code>.glory_api.User teacher = 13;</code>
+   * <code>.glory_api.User teacher = 14;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
@@ -653,14 +698,17 @@ private static final long serialVersionUID = 0L;
     if (teacherEvaluateScore != 0) {
       output.writeInt32(10, teacherEvaluateScore );
     }
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, systemTaskKey );
+    }
     if (teacherTask != null) {
-      output.writeMessage(11, getTeacherTask());
+      output.writeMessage(12, getTeacherTask());
     }
     if (student != null) {
-      output.writeMessage(12, getStudent());
+      output.writeMessage(13, getStudent());
     }
     if (teacher != null) {
-      output.writeMessage(13, getTeacher());
+      output.writeMessage(14, getTeacher());
     }
     unknownFields.writeTo(output);
   }
@@ -710,17 +758,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, teacherEvaluateScore );
     }
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, systemTaskKey );
+    }
     if (teacherTask != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getTeacherTask());
+        .computeMessageSize(12, getTeacherTask());
     }
     if (student != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getStudent());
+        .computeMessageSize(13, getStudent());
     }
     if (teacher != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getTeacher());
+        .computeMessageSize(14, getTeacher());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -757,6 +808,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTeacherFailedReason())) return false;
     if (getTeacherEvaluateScore()
         != other.getTeacherEvaluateScore()) return false;
+    if (!getSystemTaskKey()
+        .equals(other.getSystemTaskKey())) return false;
     if (hasTeacherTask() != other.hasTeacherTask()) return false;
     if (hasTeacherTask()) {
       if (!getTeacherTask()
@@ -810,6 +863,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTeacherFailedReason().hashCode();
     hash = (37 * hash) + TEACHER_EVALUATE_SCORE_FIELD_NUMBER;
     hash = (53 * hash) + getTeacherEvaluateScore();
+    hash = (37 * hash) + SYSTEM_TASK_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskKey().hashCode();
     if (hasTeacherTask()) {
       hash = (37 * hash) + TEACHER_TASK_FIELD_NUMBER;
       hash = (53 * hash) + getTeacherTask().hashCode();
@@ -985,6 +1040,8 @@ private static final long serialVersionUID = 0L;
 
       teacherEvaluateScore = 0;
 
+      systemTaskKey = "";
+
       if (teacherTaskBuilder == null) {
         teacherTask = null;
       } else {
@@ -1060,6 +1117,7 @@ private static final long serialVersionUID = 0L;
       }
       result.teacherFailedReason = teacherFailedReason ;
       result.teacherEvaluateScore = teacherEvaluateScore ;
+      result.systemTaskKey = systemTaskKey ;
       if (teacherTaskBuilder == null) {
         result.teacherTask = teacherTask ;
       } else {
@@ -1210,6 +1268,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTeacherEvaluateScore() != 0) {
         setTeacherEvaluateScore(other.getTeacherEvaluateScore());
+      }
+      if (!other.getSystemTaskKey().isEmpty()) {
+        systemTaskKey = other.systemTaskKey ;
+        onChanged();
       }
       if (other.hasTeacherTask()) {
         mergeTeacherTask(other.getTeacherTask());
@@ -2282,18 +2344,94 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object systemTaskKey = "";
+    /**
+     * <code>string system_task_key = 11;</code>
+     * @return The systemTaskKey.
+     */
+    public java.lang.String getSystemTaskKey() {
+      java.lang.Object ref = systemTaskKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemTaskKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string system_task_key = 11;</code>
+     * @return The bytes for systemTaskKey.
+     */
+    public com.google.protobuf.ByteString
+        getSystemTaskKeyBytes() {
+      java.lang.Object ref = systemTaskKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        systemTaskKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string system_task_key = 11;</code>
+     * @param value The systemTaskKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      systemTaskKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_task_key = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemTaskKey() {
+      
+      systemTaskKey = getDefaultInstance().getSystemTaskKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_task_key = 11;</code>
+     * @param value The bytes for systemTaskKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      systemTaskKey = value;
+      onChanged();
+      return this;
+    }
+
     private com.zhijiejiaoyu.glory_api.task.TeacherTask teacherTask ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TeacherTask, com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder> teacherTaskBuilder ;
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      * @return Whether the teacherTask field is set.
      */
     public boolean hasTeacherTask() {
       return teacherTaskBuilder != null || teacherTask != null;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      * @return The teacherTask.
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask() {
@@ -2304,7 +2442,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public Builder setTeacherTask(com.zhijiejiaoyu.glory_api.task.TeacherTask value) {
       if (teacherTaskBuilder == null) {
@@ -2320,7 +2458,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public Builder setTeacherTask(
         com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder builderForValue) {
@@ -2334,7 +2472,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public Builder mergeTeacherTask(com.zhijiejiaoyu.glory_api.task.TeacherTask value) {
       if (teacherTaskBuilder == null) {
@@ -2352,7 +2490,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public Builder clearTeacherTask() {
       if (teacherTaskBuilder == null) {
@@ -2366,7 +2504,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder getTeacherTaskBuilder() {
       
@@ -2374,7 +2512,7 @@ private static final long serialVersionUID = 0L;
       return getTeacherTaskFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder() {
       if (teacherTaskBuilder != null) {
@@ -2385,7 +2523,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.TeacherTask teacher_task = 11;</code>
+     * <code>.glory_api.TeacherTask teacher_task = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.TeacherTask, com.zhijiejiaoyu.glory_api.task.TeacherTask.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder> 
@@ -2405,14 +2543,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> studentBuilder ;
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      * @return Whether the student field is set.
      */
     public boolean hasStudent() {
       return studentBuilder != null || student != null;
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      * @return The student.
      */
     public com.zhijiejiaoyu.glory_api.user.User getStudent() {
@@ -2423,7 +2561,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public Builder setStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -2439,7 +2577,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public Builder setStudent(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -2453,7 +2591,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public Builder mergeStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -2471,7 +2609,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public Builder clearStudent() {
       if (studentBuilder == null) {
@@ -2485,7 +2623,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getStudentBuilder() {
       
@@ -2493,7 +2631,7 @@ private static final long serialVersionUID = 0L;
       return getStudentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
       if (studentBuilder != null) {
@@ -2504,7 +2642,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User student = 12;</code>
+     * <code>.glory_api.User student = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -2524,14 +2662,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> teacherBuilder ;
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      * @return Whether the teacher field is set.
      */
     public boolean hasTeacher() {
       return teacherBuilder != null || teacher != null;
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      * @return The teacher.
      */
     public com.zhijiejiaoyu.glory_api.user.User getTeacher() {
@@ -2542,7 +2680,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public Builder setTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -2558,7 +2696,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public Builder setTeacher(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -2572,7 +2710,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public Builder mergeTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -2590,7 +2728,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public Builder clearTeacher() {
       if (teacherBuilder == null) {
@@ -2604,7 +2742,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getTeacherBuilder() {
       
@@ -2612,7 +2750,7 @@ private static final long serialVersionUID = 0L;
       return getTeacherFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
       if (teacherBuilder != null) {
@@ -2623,7 +2761,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User teacher = 13;</code>
+     * <code>.glory_api.User teacher = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
