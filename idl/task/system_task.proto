@@ -23,7 +23,8 @@ message TaskConfig {
   string task_name = 2;
   string task_business = 3;
   string task_content = 4;
-  repeated TaskParameter parameters = 5;
+  repeated string task_platforms = 5;
+  repeated TaskParameter parameters = 6;
 }
 
 message SystemTaskParameter {
