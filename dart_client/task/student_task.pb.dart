@@ -276,6 +276,8 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? attachments,
     $core.Iterable<StudentTaskParameterResult>? studentTaskParameterResult,
     $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
+    $core.String? teacherFailedReason,
+    $core.int? teacherEvaluateScore,
     $0.TeacherTask? teacherTask,
     $1.User? student,
     $1.User? teacher,
@@ -305,6 +307,12 @@ class StudentTask extends $pb.GeneratedMessage {
     if (studentTaskRequirementResult != null) {
       $result.studentTaskRequirementResult.addAll(studentTaskRequirementResult);
     }
+    if (teacherFailedReason != null) {
+      $result.teacherFailedReason = teacherFailedReason;
+    }
+    if (teacherEvaluateScore != null) {
+      $result.teacherEvaluateScore = teacherEvaluateScore;
+    }
     if (teacherTask != null) {
       $result.teacherTask = teacherTask;
     }
@@ -329,9 +337,11 @@ class StudentTask extends $pb.GeneratedMessage {
     ..pPS(6, _omitFieldNames ? '' : 'attachments')
     ..pc<StudentTaskParameterResult>(7, _omitFieldNames ? '' : 'studentTaskParameterResult', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
     ..pc<StudentTaskRequirementResult>(8, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
-    ..aOM<$0.TeacherTask>(9, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
-    ..aOM<$1.User>(10, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
-    ..aOM<$1.User>(11, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..aOS(9, _omitFieldNames ? '' : 'teacherFailedReason')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'teacherEvaluateScore', $pb.PbFieldType.O3)
+    ..aOM<$0.TeacherTask>(11, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
+    ..aOM<$1.User>(12, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
+    ..aOM<$1.User>(13, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -411,44 +421,61 @@ class StudentTask extends $pb.GeneratedMessage {
   $core.List<StudentTaskRequirementResult> get studentTaskRequirementResult => $_getList(7);
 
   @$pb.TagNumber(9)
-  $0.TeacherTask get teacherTask => $_getN(8);
+  $core.String get teacherFailedReason => $_getSZ(8);
   @$pb.TagNumber(9)
-  set teacherTask($0.TeacherTask v) { setField(9, v); }
+  set teacherFailedReason($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasTeacherTask() => $_has(8);
+  $core.bool hasTeacherFailedReason() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTeacherTask() => clearField(9);
-  @$pb.TagNumber(9)
-  $0.TeacherTask ensureTeacherTask() => $_ensure(8);
+  void clearTeacherFailedReason() => clearField(9);
 
   @$pb.TagNumber(10)
-  $1.User get student => $_getN(9);
+  $core.int get teacherEvaluateScore => $_getIZ(9);
   @$pb.TagNumber(10)
-  set student($1.User v) { setField(10, v); }
+  set teacherEvaluateScore($core.int v) { $_setSignedInt32(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasStudent() => $_has(9);
+  $core.bool hasTeacherEvaluateScore() => $_has(9);
   @$pb.TagNumber(10)
-  void clearStudent() => clearField(10);
-  @$pb.TagNumber(10)
-  $1.User ensureStudent() => $_ensure(9);
+  void clearTeacherEvaluateScore() => clearField(10);
 
   @$pb.TagNumber(11)
-  $1.User get teacher => $_getN(10);
+  $0.TeacherTask get teacherTask => $_getN(10);
   @$pb.TagNumber(11)
-  set teacher($1.User v) { setField(11, v); }
+  set teacherTask($0.TeacherTask v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasTeacher() => $_has(10);
+  $core.bool hasTeacherTask() => $_has(10);
   @$pb.TagNumber(11)
-  void clearTeacher() => clearField(11);
+  void clearTeacherTask() => clearField(11);
   @$pb.TagNumber(11)
-  $1.User ensureTeacher() => $_ensure(10);
+  $0.TeacherTask ensureTeacherTask() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.User get student => $_getN(11);
+  @$pb.TagNumber(12)
+  set student($1.User v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasStudent() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearStudent() => clearField(12);
+  @$pb.TagNumber(12)
+  $1.User ensureStudent() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.User get teacher => $_getN(12);
+  @$pb.TagNumber(13)
+  set teacher($1.User v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasTeacher() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTeacher() => clearField(13);
+  @$pb.TagNumber(13)
+  $1.User ensureTeacher() => $_ensure(12);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
   factory TeacherRequirementEvaluation({
     $fixnum.Int64? requirementId,
     $core.bool? requirementPass,
-    $core.String? failedReason,
   }) {
     final $result = create();
     if (requirementId != null) {
@@ -456,9 +483,6 @@ class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
     }
     if (requirementPass != null) {
       $result.requirementPass = requirementPass;
-    }
-    if (failedReason != null) {
-      $result.failedReason = failedReason;
     }
     return $result;
   }
@@ -469,7 +493,6 @@ class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherRequirementEvaluation', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'requirementId')
     ..aOB(2, _omitFieldNames ? '' : 'requirementPass')
-    ..aOS(3, _omitFieldNames ? '' : 'failedReason')
     ..hasRequiredFields = false
   ;
 
@@ -511,15 +534,6 @@ class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
   $core.bool hasRequirementPass() => $_has(1);
   @$pb.TagNumber(2)
   void clearRequirementPass() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get failedReason => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set failedReason($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasFailedReason() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearFailedReason() => clearField(3);
 }
 
 class ListStudentTaskRequest extends $pb.GeneratedMessage {
@@ -1099,6 +1113,8 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? studentTaskId,
     $core.Iterable<TeacherRequirementEvaluation>? requirementEvaluations,
+    $core.String? failedReason,
+    $fixnum.Int64? evaluateScore,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1110,6 +1126,12 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
     if (requirementEvaluations != null) {
       $result.requirementEvaluations.addAll(requirementEvaluations);
     }
+    if (failedReason != null) {
+      $result.failedReason = failedReason;
+    }
+    if (evaluateScore != null) {
+      $result.evaluateScore = evaluateScore;
+    }
     return $result;
   }
   TeacherEvaluateStudentTaskRequest._() : super();
@@ -1120,6 +1142,8 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'studentTaskId')
     ..pc<TeacherRequirementEvaluation>(3, _omitFieldNames ? '' : 'requirementEvaluations', $pb.PbFieldType.PM, subBuilder: TeacherRequirementEvaluation.create)
+    ..aOS(4, _omitFieldNames ? '' : 'failedReason')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluateScore')
     ..hasRequiredFields = false
   ;
 
@@ -1166,6 +1190,24 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<TeacherRequirementEvaluation> get requirementEvaluations => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get failedReason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set failedReason($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFailedReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFailedReason() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluateScore => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluateScore($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluateScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluateScore() => clearField(5);
 }
 
 class TeacherEvaluateStudentTaskResponse extends $pb.GeneratedMessage {

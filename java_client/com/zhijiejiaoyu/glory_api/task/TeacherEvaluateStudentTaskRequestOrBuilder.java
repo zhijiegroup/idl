@@ -51,4 +51,22 @@ public interface TeacherEvaluateStudentTaskRequestOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.task.TeacherRequirementEvaluationOrBuilder getRequirementEvaluationsOrBuilder(
       int index);
+
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The failedReason.
+   */
+  java.lang.String getFailedReason();
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The bytes for failedReason.
+   */
+  com.google.protobuf.ByteString
+      getFailedReasonBytes();
+
+  /**
+   * <code>int64 evaluate_score = 5;</code>
+   * @return The evaluateScore.
+   */
+  long getEvaluateScore();
 }

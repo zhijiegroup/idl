@@ -71,9 +71,11 @@ const StudentTask$json = {
     {'1': 'attachments', '3': 6, '4': 3, '5': 9, '10': 'attachments'},
     {'1': 'student_task_parameter_result', '3': 7, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'studentTaskParameterResult'},
     {'1': 'student_task_requirement_result', '3': 8, '4': 3, '5': 11, '6': '.glory_api.StudentTaskRequirementResult', '10': 'studentTaskRequirementResult'},
-    {'1': 'teacher_task', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
-    {'1': 'student', '3': 10, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
-    {'1': 'teacher', '3': 11, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
+    {'1': 'teacher_failed_reason', '3': 9, '4': 1, '5': 9, '10': 'teacherFailedReason'},
+    {'1': 'teacher_evaluate_score', '3': 10, '4': 1, '5': 5, '10': 'teacherEvaluateScore'},
+    {'1': 'teacher_task', '3': 11, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
+    {'1': 'student', '3': 12, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
+    {'1': 'teacher', '3': 13, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
   ],
 };
 
@@ -87,9 +89,11 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'QYByADKAsyJS5nbG9yeV9hcGkuU3R1ZGVudFRhc2tQYXJhbWV0ZXJSZXN1bHRSGnN0dWRlbnRU'
     'YXNrUGFyYW1ldGVyUmVzdWx0Em4KH3N0dWRlbnRfdGFza19yZXF1aXJlbWVudF9yZXN1bHQYCC'
     'ADKAsyJy5nbG9yeV9hcGkuU3R1ZGVudFRhc2tSZXF1aXJlbWVudFJlc3VsdFIcc3R1ZGVudFRh'
-    'c2tSZXF1aXJlbWVudFJlc3VsdBI5Cgx0ZWFjaGVyX3Rhc2sYCSABKAsyFi5nbG9yeV9hcGkuVG'
-    'VhY2hlclRhc2tSC3RlYWNoZXJUYXNrEikKB3N0dWRlbnQYCiABKAsyDy5nbG9yeV9hcGkuVXNl'
-    'clIHc3R1ZGVudBIpCgd0ZWFjaGVyGAsgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3RlYWNoZXI=');
+    'c2tSZXF1aXJlbWVudFJlc3VsdBIyChV0ZWFjaGVyX2ZhaWxlZF9yZWFzb24YCSABKAlSE3RlYW'
+    'NoZXJGYWlsZWRSZWFzb24SNAoWdGVhY2hlcl9ldmFsdWF0ZV9zY29yZRgKIAEoBVIUdGVhY2hl'
+    'ckV2YWx1YXRlU2NvcmUSOQoMdGVhY2hlcl90YXNrGAsgASgLMhYuZ2xvcnlfYXBpLlRlYWNoZX'
+    'JUYXNrUgt0ZWFjaGVyVGFzaxIpCgdzdHVkZW50GAwgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3N0'
+    'dWRlbnQSKQoHdGVhY2hlchgNIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgd0ZWFjaGVy');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {
@@ -97,7 +101,6 @@ const TeacherRequirementEvaluation$json = {
   '2': [
     {'1': 'requirement_id', '3': 1, '4': 1, '5': 3, '10': 'requirementId'},
     {'1': 'requirement_pass', '3': 2, '4': 1, '5': 8, '10': 'requirementPass'},
-    {'1': 'failed_reason', '3': 3, '4': 1, '5': 9, '10': 'failedReason'},
   ],
 };
 
@@ -105,7 +108,7 @@ const TeacherRequirementEvaluation$json = {
 final $typed_data.Uint8List teacherRequirementEvaluationDescriptor = $convert.base64Decode(
     'ChxUZWFjaGVyUmVxdWlyZW1lbnRFdmFsdWF0aW9uEiUKDnJlcXVpcmVtZW50X2lkGAEgASgDUg'
     '1yZXF1aXJlbWVudElkEikKEHJlcXVpcmVtZW50X3Bhc3MYAiABKAhSD3JlcXVpcmVtZW50UGFz'
-    'cxIjCg1mYWlsZWRfcmVhc29uGAMgASgJUgxmYWlsZWRSZWFzb24=');
+    'cw==');
 
 @$core.Deprecated('Use listStudentTaskRequestDescriptor instead')
 const ListStudentTaskRequest$json = {
@@ -242,6 +245,8 @@ const TeacherEvaluateStudentTaskRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'student_task_id', '3': 2, '4': 1, '5': 3, '10': 'studentTaskId'},
     {'1': 'requirement_evaluations', '3': 3, '4': 3, '5': 11, '6': '.glory_api.TeacherRequirementEvaluation', '10': 'requirementEvaluations'},
+    {'1': 'failed_reason', '3': 4, '4': 1, '5': 9, '10': 'failedReason'},
+    {'1': 'evaluate_score', '3': 5, '4': 1, '5': 3, '10': 'evaluateScore'},
   ],
 };
 
@@ -251,7 +256,8 @@ final $typed_data.Uint8List teacherEvaluateStudentTaskRequestDescriptor = $conve
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSJgoPc3R1ZGVudF90YXNrX2lkGAIg'
     'ASgDUg1zdHVkZW50VGFza0lkEmAKF3JlcXVpcmVtZW50X2V2YWx1YXRpb25zGAMgAygLMicuZ2'
     'xvcnlfYXBpLlRlYWNoZXJSZXF1aXJlbWVudEV2YWx1YXRpb25SFnJlcXVpcmVtZW50RXZhbHVh'
-    'dGlvbnM=');
+    'dGlvbnMSIwoNZmFpbGVkX3JlYXNvbhgEIAEoCVIMZmFpbGVkUmVhc29uEiUKDmV2YWx1YXRlX3'
+    'Njb3JlGAUgASgDUg1ldmFsdWF0ZVNjb3Jl');
 
 @$core.Deprecated('Use teacherEvaluateStudentTaskResponseDescriptor instead')
 const TeacherEvaluateStudentTaskResponse$json = {

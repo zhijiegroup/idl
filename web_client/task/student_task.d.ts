@@ -36,6 +36,8 @@ export interface StudentTask {
   attachments?: Array<string>;
   student_task_parameter_result?: Array<StudentTaskParameterResult>;
   student_task_requirement_result?: Array<StudentTaskRequirementResult>;
+  teacher_failed_reason?: string;
+  teacher_evaluate_score?: number;
   teacher_task?: teacher_task.TeacherTask;
   student?: user.User;
   teacher?: user.User;
@@ -44,7 +46,6 @@ export interface StudentTask {
 export interface TeacherRequirementEvaluation {
   requirement_id?: string;
   requirement_pass?: boolean;
-  failed_reason?: string;
 }
 
 export interface ListStudentTaskRequest {
@@ -97,6 +98,8 @@ export interface TeacherEvaluateStudentTaskRequest {
   base_request?: base.BaseRequest;
   student_task_id?: string;
   requirement_evaluations?: Array<TeacherRequirementEvaluation>;
+  failed_reason?: string;
+  evaluate_score?: string;
 }
 
 export interface TeacherEvaluateStudentTaskResponse {

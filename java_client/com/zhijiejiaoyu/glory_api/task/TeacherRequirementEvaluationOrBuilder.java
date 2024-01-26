@@ -18,16 +18,4 @@ public interface TeacherRequirementEvaluationOrBuilder extends
    * @return The requirementPass.
    */
   boolean getRequirementPass();
-
-  /**
-   * <code>string failed_reason = 3;</code>
-   * @return The failedReason.
-   */
-  java.lang.String getFailedReason();
-  /**
-   * <code>string failed_reason = 3;</code>
-   * @return The bytes for failedReason.
-   */
-  com.google.protobuf.ByteString
-      getFailedReasonBytes();
 }

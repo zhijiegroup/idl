@@ -135,47 +135,65 @@ public interface StudentTaskOrBuilder extends
       int index);
 
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
+   * <code>string teacher_failed_reason = 9;</code>
+   * @return The teacherFailedReason.
+   */
+  java.lang.String getTeacherFailedReason();
+  /**
+   * <code>string teacher_failed_reason = 9;</code>
+   * @return The bytes for teacherFailedReason.
+   */
+  com.google.protobuf.ByteString
+      getTeacherFailedReasonBytes();
+
+  /**
+   * <code>int32 teacher_evaluate_score = 10;</code>
+   * @return The teacherEvaluateScore.
+   */
+  int getTeacherEvaluateScore();
+
+  /**
+   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 9;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User student = 10;</code>
+   * <code>.glory_api.User student = 12;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
-   * <code>.glory_api.User student = 10;</code>
+   * <code>.glory_api.User student = 12;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
-   * <code>.glory_api.User student = 10;</code>
+   * <code>.glory_api.User student = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 11;</code>
+   * <code>.glory_api.User teacher = 13;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 11;</code>
+   * <code>.glory_api.User teacher = 13;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 11;</code>
+   * <code>.glory_api.User teacher = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

@@ -87,6 +87,10 @@ struct GloryApi_StudentTask {
 
   var studentTaskRequirementResult: [GloryApi_StudentTaskRequirementResult] = []
 
+  var teacherFailedReason: String = String()
+
+  var teacherEvaluateScore: Int32 = 0
+
   var teacherTask: GloryApi_TeacherTask {
     get {return _teacherTask ?? GloryApi_TeacherTask()}
     set {_teacherTask = newValue}
@@ -131,8 +135,6 @@ struct GloryApi_TeacherRequirementEvaluation {
   var requirementID: Int64 = 0
 
   var requirementPass: Bool = false
-
-  var failedReason: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -374,6 +376,10 @@ struct GloryApi_TeacherEvaluateStudentTaskRequest {
 
   var requirementEvaluations: [GloryApi_TeacherRequirementEvaluation] = []
 
+  var failedReason: String = String()
+
+  var evaluateScore: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -564,9 +570,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     6: .same(proto: "attachments"),
     7: .standard(proto: "student_task_parameter_result"),
     8: .standard(proto: "student_task_requirement_result"),
-    9: .standard(proto: "teacher_task"),
-    10: .same(proto: "student"),
-    11: .same(proto: "teacher"),
+    9: .standard(proto: "teacher_failed_reason"),
+    10: .standard(proto: "teacher_evaluate_score"),
+    11: .standard(proto: "teacher_task"),
+    12: .same(proto: "student"),
+    13: .same(proto: "teacher"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -583,9 +591,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.attachments) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskParameterResult) }()
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskRequirementResult) }()
-      case 9: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
-      case 10: try { try decoder.decodeSingularMessageField(value: &self._student) }()
-      case 11: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.teacherFailedReason) }()
+      case 10: try { try decoder.decodeSingularInt32Field(value: &self.teacherEvaluateScore) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
+      case 12: try { try decoder.decodeSingularMessageField(value: &self._student) }()
+      case 13: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
       default: break
       }
     }
@@ -620,14 +630,20 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.studentTaskRequirementResult.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.studentTaskRequirementResult, fieldNumber: 8)
     }
+    if !self.teacherFailedReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherFailedReason, fieldNumber: 9)
+    }
+    if self.teacherEvaluateScore != 0 {
+      try visitor.visitSingularInt32Field(value: self.teacherEvaluateScore, fieldNumber: 10)
+    }
     try { if let v = self._teacherTask {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
     } }()
     try { if let v = self._student {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
     } }()
     try { if let v = self._teacher {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -641,6 +657,8 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.attachments != rhs.attachments {return false}
     if lhs.studentTaskParameterResult != rhs.studentTaskParameterResult {return false}
     if lhs.studentTaskRequirementResult != rhs.studentTaskRequirementResult {return false}
+    if lhs.teacherFailedReason != rhs.teacherFailedReason {return false}
+    if lhs.teacherEvaluateScore != rhs.teacherEvaluateScore {return false}
     if lhs._teacherTask != rhs._teacherTask {return false}
     if lhs._student != rhs._student {return false}
     if lhs._teacher != rhs._teacher {return false}
@@ -654,7 +672,6 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "requirement_id"),
     2: .standard(proto: "requirement_pass"),
-    3: .standard(proto: "failed_reason"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -665,7 +682,6 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.requirementID) }()
       case 2: try { try decoder.decodeSingularBoolField(value: &self.requirementPass) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
       default: break
       }
     }
@@ -678,16 +694,12 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
     if self.requirementPass != false {
       try visitor.visitSingularBoolField(value: self.requirementPass, fieldNumber: 2)
     }
-    if !self.failedReason.isEmpty {
-      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 3)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_TeacherRequirementEvaluation, rhs: GloryApi_TeacherRequirementEvaluation) -> Bool {
     if lhs.requirementID != rhs.requirementID {return false}
     if lhs.requirementPass != rhs.requirementPass {return false}
-    if lhs.failedReason != rhs.failedReason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1055,6 +1067,8 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
     1: .standard(proto: "base_request"),
     2: .standard(proto: "student_task_id"),
     3: .standard(proto: "requirement_evaluations"),
+    4: .standard(proto: "failed_reason"),
+    5: .standard(proto: "evaluate_score"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1066,6 +1080,8 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.studentTaskID) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.requirementEvaluations) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluateScore) }()
       default: break
       }
     }
@@ -1085,6 +1101,12 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
     if !self.requirementEvaluations.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.requirementEvaluations, fieldNumber: 3)
     }
+    if !self.failedReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 4)
+    }
+    if self.evaluateScore != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluateScore, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1092,6 +1114,8 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.studentTaskID != rhs.studentTaskID {return false}
     if lhs.requirementEvaluations != rhs.requirementEvaluations {return false}
+    if lhs.failedReason != rhs.failedReason {return false}
+    if lhs.evaluateScore != rhs.evaluateScore {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

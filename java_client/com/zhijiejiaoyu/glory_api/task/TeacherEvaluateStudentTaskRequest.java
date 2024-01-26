@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private TeacherEvaluateStudentTaskRequest() {
     requirementEvaluations = java.util.Collections.emptyList();
+    failedReason = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,17 @@ private static final long serialVersionUID = 0L;
             }
             requirementEvaluations .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherRequirementEvaluation.parser(), extensionRegistry));
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            failedReason = s;
+            break;
+          }
+          case 40: {
+
+            evaluateScore = input.readInt64();
             break;
           }
           default: {
@@ -189,6 +201,55 @@ private static final long serialVersionUID = 0L;
     return requirementEvaluations .get(index);
   }
 
+  public static final int FAILED_REASON_FIELD_NUMBER = 4;
+  private volatile java.lang.Object failedReason ;
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The failedReason.
+   */
+  @java.lang.Override
+  public java.lang.String getFailedReason() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      failedReason = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string failed_reason = 4;</code>
+   * @return The bytes for failedReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFailedReasonBytes() {
+    java.lang.Object ref = failedReason ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      failedReason = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVALUATE_SCORE_FIELD_NUMBER = 5;
+  private long evaluateScore ;
+  /**
+   * <code>int64 evaluate_score = 5;</code>
+   * @return The evaluateScore.
+   */
+  @java.lang.Override
+  public long getEvaluateScore() {
+    return evaluateScore ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -212,6 +273,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requirementEvaluations .size(); i++) {
       output.writeMessage(3, requirementEvaluations .get(i));
     }
+    if (!getFailedReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, failedReason );
+    }
+    if (evaluateScore != 0L) {
+      output.writeInt64(5, evaluateScore );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -232,6 +299,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < requirementEvaluations .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, requirementEvaluations .get(i));
+    }
+    if (!getFailedReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, failedReason );
+    }
+    if (evaluateScore != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, evaluateScore );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -257,6 +331,10 @@ private static final long serialVersionUID = 0L;
         != other.getStudentTaskId()) return false;
     if (!getRequirementEvaluationsList()
         .equals(other.getRequirementEvaluationsList())) return false;
+    if (!getFailedReason()
+        .equals(other.getFailedReason())) return false;
+    if (getEvaluateScore()
+        != other.getEvaluateScore()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -279,6 +357,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REQUIREMENT_EVALUATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getRequirementEvaluationsList().hashCode();
     }
+    hash = (37 * hash) + FAILED_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getFailedReason().hashCode();
+    hash = (37 * hash) + EVALUATE_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluateScore());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,6 +510,10 @@ private static final long serialVersionUID = 0L;
       } else {
         requirementEvaluationsBuilder .clear();
       }
+      failedReason = "";
+
+      evaluateScore = 0L;
+
       return this;
     }
 
@@ -469,6 +556,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.requirementEvaluations = requirementEvaluationsBuilder .build();
       }
+      result.failedReason = failedReason ;
+      result.evaluateScore = evaluateScore ;
       onBuilt();
       return result;
     }
@@ -548,6 +637,13 @@ private static final long serialVersionUID = 0L;
             requirementEvaluationsBuilder .addAllMessages(other.requirementEvaluations );
           }
         }
+      }
+      if (!other.getFailedReason().isEmpty()) {
+        failedReason = other.failedReason ;
+        onChanged();
+      }
+      if (other.getEvaluateScore() != 0L) {
+        setEvaluateScore(other.getEvaluateScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -967,6 +1063,113 @@ private static final long serialVersionUID = 0L;
         requirementEvaluations = null;
       }
       return requirementEvaluationsBuilder ;
+    }
+
+    private java.lang.Object failedReason = "";
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return The failedReason.
+     */
+    public java.lang.String getFailedReason() {
+      java.lang.Object ref = failedReason ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        failedReason = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return The bytes for failedReason.
+     */
+    public com.google.protobuf.ByteString
+        getFailedReasonBytes() {
+      java.lang.Object ref = failedReason ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        failedReason = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @param value The failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReason(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      failedReason = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedReason() {
+      
+      failedReason = getDefaultInstance().getFailedReason();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string failed_reason = 4;</code>
+     * @param value The bytes for failedReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedReasonBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      failedReason = value;
+      onChanged();
+      return this;
+    }
+
+    private long evaluateScore ;
+    /**
+     * <code>int64 evaluate_score = 5;</code>
+     * @return The evaluateScore.
+     */
+    @java.lang.Override
+    public long getEvaluateScore() {
+      return evaluateScore ;
+    }
+    /**
+     * <code>int64 evaluate_score = 5;</code>
+     * @param value The evaluateScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluateScore(long value) {
+      
+      evaluateScore = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 evaluate_score = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluateScore() {
+      
+      evaluateScore = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
