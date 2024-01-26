@@ -8,6 +8,11 @@ import "base.proto";
 import "user/user.proto";
 import "task/teacher_task.proto";
 
+message StudentTaskLink {
+  string name = 1;
+  string url = 2;
+}
+
 message StudentTaskParameterResult {
   int64 task_parameter_id = 1;
   string task_parameter_key = 2;
@@ -41,8 +46,9 @@ message StudentTask {
   repeated string task_platform = 11;
   string system_task_key = 12;
   TeacherTask teacher_task = 13;
-  User student = 14;
-  User teacher = 15;
+  repeated StudentTaskLink task_links = 14;
+  User student = 15;
+  User teacher = 16;
 }
 
 message TeacherRequirementEvaluation {
