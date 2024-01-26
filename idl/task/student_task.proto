@@ -38,9 +38,10 @@ message StudentTask {
   repeated StudentTaskRequirementResult student_task_requirement_result = 8;
   string teacher_failed_reason = 9;
   int32 teacher_evaluate_score = 10;
-  TeacherTask teacher_task = 11;
-  User student = 12;
-  User teacher = 13;
+  string system_task_key = 11;
+  TeacherTask teacher_task = 12;
+  User student = 13;
+  User teacher = 14;
 }
 
 message TeacherRequirementEvaluation {
