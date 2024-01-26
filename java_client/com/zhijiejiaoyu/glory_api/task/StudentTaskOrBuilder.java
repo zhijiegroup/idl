@@ -205,32 +205,56 @@ public interface StudentTaskOrBuilder extends
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User student = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> 
+      getTaskLinksList();
+  /**
+   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskLink getTaskLinks(int index);
+  /**
+   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   */
+  int getTaskLinksCount();
+  /**
+   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
+      getTaskLinksOrBuilderList();
+  /**
+   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder getTaskLinksOrBuilder(
+      int index);
+
+  /**
+   * <code>.glory_api.User student = 15;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
-   * <code>.glory_api.User student = 14;</code>
+   * <code>.glory_api.User student = 15;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
-   * <code>.glory_api.User student = 14;</code>
+   * <code>.glory_api.User student = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 15;</code>
+   * <code>.glory_api.User teacher = 16;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 15;</code>
+   * <code>.glory_api.User teacher = 16;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 15;</code>
+   * <code>.glory_api.User teacher = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

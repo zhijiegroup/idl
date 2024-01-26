@@ -13,6 +13,20 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use studentTaskLinkDescriptor instead')
+const StudentTaskLink$json = {
+  '1': 'StudentTaskLink',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `StudentTaskLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskLinkDescriptor = $convert.base64Decode(
+    'Cg9TdHVkZW50VGFza0xpbmsSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgN1cmwYAiABKAlSA3VybA'
+    '==');
+
 @$core.Deprecated('Use studentTaskParameterResultDescriptor instead')
 const StudentTaskParameterResult$json = {
   '1': 'StudentTaskParameterResult',
@@ -76,8 +90,9 @@ const StudentTask$json = {
     {'1': 'task_platform', '3': 11, '4': 3, '5': 9, '10': 'taskPlatform'},
     {'1': 'system_task_key', '3': 12, '4': 1, '5': 9, '10': 'systemTaskKey'},
     {'1': 'teacher_task', '3': 13, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
-    {'1': 'student', '3': 14, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
-    {'1': 'teacher', '3': 15, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
+    {'1': 'task_links', '3': 14, '4': 3, '5': 11, '6': '.glory_api.StudentTaskLink', '10': 'taskLinks'},
+    {'1': 'student', '3': 15, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
+    {'1': 'teacher', '3': 16, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
   ],
 };
 
@@ -95,9 +110,10 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'NoZXJGYWlsZWRSZWFzb24SNAoWdGVhY2hlcl9ldmFsdWF0ZV9zY29yZRgKIAEoBVIUdGVhY2hl'
     'ckV2YWx1YXRlU2NvcmUSIwoNdGFza19wbGF0Zm9ybRgLIAMoCVIMdGFza1BsYXRmb3JtEiYKD3'
     'N5c3RlbV90YXNrX2tleRgMIAEoCVINc3lzdGVtVGFza0tleRI5Cgx0ZWFjaGVyX3Rhc2sYDSAB'
-    'KAsyFi5nbG9yeV9hcGkuVGVhY2hlclRhc2tSC3RlYWNoZXJUYXNrEikKB3N0dWRlbnQYDiABKA'
-    'syDy5nbG9yeV9hcGkuVXNlclIHc3R1ZGVudBIpCgd0ZWFjaGVyGA8gASgLMg8uZ2xvcnlfYXBp'
-    'LlVzZXJSB3RlYWNoZXI=');
+    'KAsyFi5nbG9yeV9hcGkuVGVhY2hlclRhc2tSC3RlYWNoZXJUYXNrEjkKCnRhc2tfbGlua3MYDi'
+    'ADKAsyGi5nbG9yeV9hcGkuU3R1ZGVudFRhc2tMaW5rUgl0YXNrTGlua3MSKQoHc3R1ZGVudBgP'
+    'IAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdzdHVkZW50EikKB3RlYWNoZXIYECABKAsyDy5nbG9yeV'
+    '9hcGkuVXNlclIHdGVhY2hlcg==');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {

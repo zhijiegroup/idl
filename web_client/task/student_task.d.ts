@@ -8,6 +8,11 @@ import * as user from "../user/user";
 import * as teacher_task from "./teacher_task";
 export { api, base, user, teacher_task };
 
+export interface StudentTaskLink {
+  name?: string;
+  url?: string;
+}
+
 export interface StudentTaskParameterResult {
   task_parameter_id?: string;
   task_parameter_key?: string;
@@ -41,6 +46,7 @@ export interface StudentTask {
   task_platform?: Array<string>;
   system_task_key?: string;
   teacher_task?: teacher_task.TeacherTask;
+  task_links?: Array<StudentTaskLink>;
   student?: user.User;
   teacher?: user.User;
 }

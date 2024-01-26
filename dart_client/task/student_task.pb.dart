@@ -18,6 +18,70 @@ import '../base.pb.dart' as $2;
 import '../user/user.pb.dart' as $1;
 import 'teacher_task.pb.dart' as $0;
 
+class StudentTaskLink extends $pb.GeneratedMessage {
+  factory StudentTaskLink({
+    $core.String? name,
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
+  StudentTaskLink._() : super();
+  factory StudentTaskLink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskLink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskLink', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'url')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskLink clone() => StudentTaskLink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskLink copyWith(void Function(StudentTaskLink) updates) => super.copyWith((message) => updates(message as StudentTaskLink)) as StudentTaskLink;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskLink create() => StudentTaskLink._();
+  StudentTaskLink createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskLink> createRepeated() => $pb.PbList<StudentTaskLink>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskLink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskLink>(create);
+  static StudentTaskLink? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get url => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set url($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUrl() => clearField(2);
+}
+
 class StudentTaskParameterResult extends $pb.GeneratedMessage {
   factory StudentTaskParameterResult({
     $fixnum.Int64? taskParameterId,
@@ -281,6 +345,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? taskPlatform,
     $core.String? systemTaskKey,
     $0.TeacherTask? teacherTask,
+    $core.Iterable<StudentTaskLink>? taskLinks,
     $1.User? student,
     $1.User? teacher,
   }) {
@@ -324,6 +389,9 @@ class StudentTask extends $pb.GeneratedMessage {
     if (teacherTask != null) {
       $result.teacherTask = teacherTask;
     }
+    if (taskLinks != null) {
+      $result.taskLinks.addAll(taskLinks);
+    }
     if (student != null) {
       $result.student = student;
     }
@@ -350,8 +418,9 @@ class StudentTask extends $pb.GeneratedMessage {
     ..pPS(11, _omitFieldNames ? '' : 'taskPlatform')
     ..aOS(12, _omitFieldNames ? '' : 'systemTaskKey')
     ..aOM<$0.TeacherTask>(13, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
-    ..aOM<$1.User>(14, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
-    ..aOM<$1.User>(15, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..pc<StudentTaskLink>(14, _omitFieldNames ? '' : 'taskLinks', $pb.PbFieldType.PM, subBuilder: StudentTaskLink.create)
+    ..aOM<$1.User>(15, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
+    ..aOM<$1.User>(16, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -472,26 +541,29 @@ class StudentTask extends $pb.GeneratedMessage {
   $0.TeacherTask ensureTeacherTask() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $1.User get student => $_getN(13);
-  @$pb.TagNumber(14)
-  set student($1.User v) { setField(14, v); }
-  @$pb.TagNumber(14)
-  $core.bool hasStudent() => $_has(13);
-  @$pb.TagNumber(14)
-  void clearStudent() => clearField(14);
-  @$pb.TagNumber(14)
-  $1.User ensureStudent() => $_ensure(13);
+  $core.List<StudentTaskLink> get taskLinks => $_getList(13);
 
   @$pb.TagNumber(15)
-  $1.User get teacher => $_getN(14);
+  $1.User get student => $_getN(14);
   @$pb.TagNumber(15)
-  set teacher($1.User v) { setField(15, v); }
+  set student($1.User v) { setField(15, v); }
   @$pb.TagNumber(15)
-  $core.bool hasTeacher() => $_has(14);
+  $core.bool hasStudent() => $_has(14);
   @$pb.TagNumber(15)
-  void clearTeacher() => clearField(15);
+  void clearStudent() => clearField(15);
   @$pb.TagNumber(15)
-  $1.User ensureTeacher() => $_ensure(14);
+  $1.User ensureStudent() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.User get teacher => $_getN(15);
+  @$pb.TagNumber(16)
+  set teacher($1.User v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasTeacher() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearTeacher() => clearField(16);
+  @$pb.TagNumber(16)
+  $1.User ensureTeacher() => $_ensure(15);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
