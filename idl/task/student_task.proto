@@ -36,15 +36,16 @@ message StudentTask {
   repeated string attachments = 6;
   repeated StudentTaskParameterResult student_task_parameter_result =  7;
   repeated StudentTaskRequirementResult student_task_requirement_result = 8;
-  TeacherTask teacher_task = 9;
-  User student = 10;
-  User teacher = 11;
+  string teacher_failed_reason = 9;
+  int32 teacher_evaluate_score = 10;
+  TeacherTask teacher_task = 11;
+  User student = 12;
+  User teacher = 13;
 }
 
 message TeacherRequirementEvaluation {
   int64 requirement_id = 1;
   bool requirement_pass = 2;
-  string failed_reason = 3;
 }
 
 message ListStudentTaskRequest {
@@ -95,6 +96,8 @@ message TeacherEvaluateStudentTaskRequest {
   base.BaseRequest base_request = 1;
   int64 student_task_id = 2;
   repeated TeacherRequirementEvaluation requirement_evaluations = 3;
+  string failed_reason = 4;
+  int64 evaluate_score = 5;
 }
 
 message TeacherEvaluateStudentTaskResponse {
