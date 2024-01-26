@@ -38,6 +38,7 @@ export interface StudentTask {
   student_task_requirement_result?: Array<StudentTaskRequirementResult>;
   teacher_failed_reason?: string;
   teacher_evaluate_score?: number;
+  task_platform?: Array<string>;
   system_task_key?: string;
   teacher_task?: teacher_task.TeacherTask;
   student?: user.User;

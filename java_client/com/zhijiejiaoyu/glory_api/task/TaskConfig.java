@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     taskName = "";
     taskBusiness = "";
     taskContent = "";
+    taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
     parameters = java.util.Collections.emptyList();
   }
 
@@ -79,9 +80,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              parameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
+              taskPlatforms = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
+            }
+            taskPlatforms .add(s);
+            break;
+          }
+          case 50: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              parameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
+              mutable_bitField0_ |= 0x00000002;
             }
             parameters .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TaskParameter.parser(), extensionRegistry));
@@ -103,6 +113,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
+        taskPlatforms = taskPlatforms .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
         parameters = java.util.Collections.unmodifiableList(parameters );
       }
       this.unknownFields = unknownFields.build();
@@ -274,17 +287,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PARAMETERS_FIELD_NUMBER = 5;
+  public static final int TASK_PLATFORMS_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList taskPlatforms ;
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @return A list containing the taskPlatforms.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTaskPlatformsList() {
+    return taskPlatforms ;
+  }
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @return The count of taskPlatforms.
+   */
+  public int getTaskPlatformsCount() {
+    return taskPlatforms .size();
+  }
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @param index The index of the element to return.
+   * @return The taskPlatforms at the given index.
+   */
+  public java.lang.String getTaskPlatforms(int index) {
+    return taskPlatforms .get(index);
+  }
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the taskPlatforms at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTaskPlatformsBytes(int index) {
+    return taskPlatforms .getByteString(index);
+  }
+
+  public static final int PARAMETERS_FIELD_NUMBER = 6;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> parameters ;
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getParametersList() {
     return parameters ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
@@ -292,21 +340,21 @@ private static final long serialVersionUID = 0L;
     return parameters ;
   }
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   @java.lang.Override
   public int getParametersCount() {
     return parameters .size();
   }
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TaskParameter getParameters(int index) {
     return parameters .get(index);
   }
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getParametersOrBuilder(
@@ -340,8 +388,11 @@ private static final long serialVersionUID = 0L;
     if (!getTaskContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskContent );
     }
+    for (int i = 0; i < taskPlatforms .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskPlatforms .getRaw(i));
+    }
     for (int i = 0; i < parameters .size(); i++) {
-      output.writeMessage(5, parameters .get(i));
+      output.writeMessage(6, parameters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -364,9 +415,17 @@ private static final long serialVersionUID = 0L;
     if (!getTaskContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskContent );
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < taskPlatforms .size(); i++) {
+        dataSize += computeStringSizeNoTag(taskPlatforms .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTaskPlatformsList().size();
+    }
     for (int i = 0; i < parameters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, parameters .get(i));
+        .computeMessageSize(6, parameters .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -391,6 +450,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskBusiness())) return false;
     if (!getTaskContent()
         .equals(other.getTaskContent())) return false;
+    if (!getTaskPlatformsList()
+        .equals(other.getTaskPlatformsList())) return false;
     if (!getParametersList()
         .equals(other.getParametersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -412,6 +473,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTaskBusiness().hashCode();
     hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getTaskContent().hashCode();
+    if (getTaskPlatformsCount() > 0) {
+      hash = (37 * hash) + TASK_PLATFORMS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskPlatformsList().hashCode();
+    }
     if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
@@ -558,9 +623,11 @@ private static final long serialVersionUID = 0L;
 
       taskContent = "";
 
+      taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       if (parametersBuilder == null) {
         parameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
       } else {
         parametersBuilder .clear();
       }
@@ -595,10 +662,15 @@ private static final long serialVersionUID = 0L;
       result.taskName = taskName ;
       result.taskBusiness = taskBusiness ;
       result.taskContent = taskContent ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        taskPlatforms = taskPlatforms .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.taskPlatforms = taskPlatforms ;
       if (parametersBuilder == null) {
-        if (((bitField0 & 0x00000001) != 0)) {
+        if (((bitField0 & 0x00000002) != 0)) {
           parameters = java.util.Collections.unmodifiableList(parameters );
-          bitField0 = (bitField0 & ~0x00000001);
+          bitField0 = (bitField0 & ~0x00000002);
         }
         result.parameters = parameters ;
       } else {
@@ -668,11 +740,21 @@ private static final long serialVersionUID = 0L;
         taskContent = other.taskContent ;
         onChanged();
       }
+      if (!other.taskPlatforms .isEmpty()) {
+        if (taskPlatforms .isEmpty()) {
+          taskPlatforms = other.taskPlatforms ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureTaskPlatformsIsMutable();
+          taskPlatforms .addAll(other.taskPlatforms );
+        }
+        onChanged();
+      }
       if (parametersBuilder == null) {
         if (!other.parameters .isEmpty()) {
           if (parameters .isEmpty()) {
             parameters = other.parameters ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
           } else {
             ensureParametersIsMutable();
             parameters .addAll(other.parameters );
@@ -685,7 +767,7 @@ private static final long serialVersionUID = 0L;
             parametersBuilder .dispose();
             parametersBuilder = null;
             parameters = other.parameters ;
-            bitField0 = (bitField0 & ~0x00000001);
+            bitField0 = (bitField0 & ~0x00000002);
             parametersBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParametersFieldBuilder() : null;
@@ -1028,12 +1110,122 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTaskPlatformsIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        taskPlatforms = new com.google.protobuf.LazyStringArrayList(taskPlatforms );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @return A list containing the taskPlatforms.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTaskPlatformsList() {
+      return taskPlatforms .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @return The count of taskPlatforms.
+     */
+    public int getTaskPlatformsCount() {
+      return taskPlatforms .size();
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param index The index of the element to return.
+     * @return The taskPlatforms at the given index.
+     */
+    public java.lang.String getTaskPlatforms(int index) {
+      return taskPlatforms .get(index);
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the taskPlatforms at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTaskPlatformsBytes(int index) {
+      return taskPlatforms .getByteString(index);
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The taskPlatforms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskPlatforms(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskPlatformsIsMutable();
+      taskPlatforms .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param value The taskPlatforms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaskPlatforms(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTaskPlatformsIsMutable();
+      taskPlatforms .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param values The taskPlatforms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTaskPlatforms(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTaskPlatformsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, taskPlatforms );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskPlatforms() {
+      taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string task_platforms = 5;</code>
+     * @param value The bytes of the taskPlatforms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaskPlatformsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTaskPlatformsIsMutable();
+      taskPlatforms .add(value);
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> parameters =
       java.util.Collections.emptyList();
     private void ensureParametersIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
+      if (!((bitField0 & 0x00000002) != 0)) {
         parameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(parameters );
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1041,7 +1233,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> parametersBuilder ;
 
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> getParametersList() {
       if (parametersBuilder == null) {
@@ -1051,7 +1243,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public int getParametersCount() {
       if (parametersBuilder == null) {
@@ -1061,7 +1253,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TaskParameter getParameters(int index) {
       if (parametersBuilder == null) {
@@ -1071,7 +1263,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder setParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
@@ -1088,7 +1280,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder setParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
@@ -1102,7 +1294,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder addParameters(com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
       if (parametersBuilder == null) {
@@ -1118,7 +1310,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder addParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter value) {
@@ -1135,7 +1327,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder addParameters(
         com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
@@ -1149,7 +1341,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder addParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder builderForValue) {
@@ -1163,7 +1355,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder addAllParameters(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TaskParameter> values) {
@@ -1178,12 +1370,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder clearParameters() {
       if (parametersBuilder == null) {
         parameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000001);
+        bitField0 = (bitField0 & ~0x00000002);
         onChanged();
       } else {
         parametersBuilder .clear();
@@ -1191,7 +1383,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public Builder removeParameters(int index) {
       if (parametersBuilder == null) {
@@ -1204,14 +1396,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder getParametersBuilder(
         int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getParametersOrBuilder(
         int index) {
@@ -1221,7 +1413,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
          getParametersOrBuilderList() {
@@ -1232,14 +1424,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addParametersBuilder() {
       return getParametersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder addParametersBuilder(
         int index) {
@@ -1247,7 +1439,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.task.TaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+     * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder> 
          getParametersBuilderList() {
@@ -1260,7 +1452,7 @@ private static final long serialVersionUID = 0L;
         parametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder>(
                 parameters ,
-                ((bitField0 & 0x00000001) != 0),
+                ((bitField0 & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         parameters = null;

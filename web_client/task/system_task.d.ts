@@ -23,6 +23,7 @@ export interface TaskConfig {
   task_name?: string;
   task_business?: string;
   task_content?: string;
+  task_platforms?: Array<string>;
   parameters?: Array<TaskParameter>;
 }
 

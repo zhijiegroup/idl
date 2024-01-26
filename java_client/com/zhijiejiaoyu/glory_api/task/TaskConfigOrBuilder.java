@@ -56,25 +56,50 @@ public interface TaskConfigOrBuilder extends
       getTaskContentBytes();
 
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated string task_platforms = 5;</code>
+   * @return A list containing the taskPlatforms.
+   */
+  java.util.List<java.lang.String>
+      getTaskPlatformsList();
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @return The count of taskPlatforms.
+   */
+  int getTaskPlatformsCount();
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @param index The index of the element to return.
+   * @return The taskPlatforms at the given index.
+   */
+  java.lang.String getTaskPlatforms(int index);
+  /**
+   * <code>repeated string task_platforms = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the taskPlatforms at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTaskPlatformsBytes(int index);
+
+  /**
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> 
       getParametersList();
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TaskParameter getParameters(int index);
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   int getParametersCount();
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder> 
       getParametersOrBuilderList();
   /**
-   * <code>repeated .glory_api.TaskParameter parameters = 5;</code>
+   * <code>repeated .glory_api.TaskParameter parameters = 6;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder getParametersOrBuilder(
       int index);

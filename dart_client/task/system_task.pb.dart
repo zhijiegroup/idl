@@ -159,6 +159,7 @@ class TaskConfig extends $pb.GeneratedMessage {
     $core.String? taskName,
     $core.String? taskBusiness,
     $core.String? taskContent,
+    $core.Iterable<$core.String>? taskPlatforms,
     $core.Iterable<TaskParameter>? parameters,
   }) {
     final $result = create();
@@ -174,6 +175,9 @@ class TaskConfig extends $pb.GeneratedMessage {
     if (taskContent != null) {
       $result.taskContent = taskContent;
     }
+    if (taskPlatforms != null) {
+      $result.taskPlatforms.addAll(taskPlatforms);
+    }
     if (parameters != null) {
       $result.parameters.addAll(parameters);
     }
@@ -188,7 +192,8 @@ class TaskConfig extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'taskName')
     ..aOS(3, _omitFieldNames ? '' : 'taskBusiness')
     ..aOS(4, _omitFieldNames ? '' : 'taskContent')
-    ..pc<TaskParameter>(5, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
+    ..pPS(5, _omitFieldNames ? '' : 'taskPlatforms')
+    ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -250,7 +255,10 @@ class TaskConfig extends $pb.GeneratedMessage {
   void clearTaskContent() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<TaskParameter> get parameters => $_getList(4);
+  $core.List<$core.String> get taskPlatforms => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<TaskParameter> get parameters => $_getList(5);
 }
 
 class SystemTaskParameter extends $pb.GeneratedMessage {

@@ -153,59 +153,84 @@ public interface StudentTaskOrBuilder extends
   int getTeacherEvaluateScore();
 
   /**
-   * <code>string system_task_key = 11;</code>
+   * <code>repeated string task_platform = 11;</code>
+   * @return A list containing the taskPlatform.
+   */
+  java.util.List<java.lang.String>
+      getTaskPlatformList();
+  /**
+   * <code>repeated string task_platform = 11;</code>
+   * @return The count of taskPlatform.
+   */
+  int getTaskPlatformCount();
+  /**
+   * <code>repeated string task_platform = 11;</code>
+   * @param index The index of the element to return.
+   * @return The taskPlatform at the given index.
+   */
+  java.lang.String getTaskPlatform(int index);
+  /**
+   * <code>repeated string task_platform = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the taskPlatform at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTaskPlatformBytes(int index);
+
+  /**
+   * <code>string system_task_key = 12;</code>
    * @return The systemTaskKey.
    */
   java.lang.String getSystemTaskKey();
   /**
-   * <code>string system_task_key = 11;</code>
+   * <code>string system_task_key = 12;</code>
    * @return The bytes for systemTaskKey.
    */
   com.google.protobuf.ByteString
       getSystemTaskKeyBytes();
 
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
   /**
-   * <code>.glory_api.TeacherTask teacher_task = 12;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
-   * <code>.glory_api.User student = 13;</code>
+   * <code>.glory_api.User student = 14;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
-   * <code>.glory_api.User student = 13;</code>
+   * <code>.glory_api.User student = 14;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
-   * <code>.glory_api.User student = 13;</code>
+   * <code>.glory_api.User student = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
-   * <code>.glory_api.User teacher = 14;</code>
+   * <code>.glory_api.User teacher = 15;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
-   * <code>.glory_api.User teacher = 14;</code>
+   * <code>.glory_api.User teacher = 15;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
-   * <code>.glory_api.User teacher = 14;</code>
+   * <code>.glory_api.User teacher = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

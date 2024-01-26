@@ -278,6 +278,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
     $core.String? teacherFailedReason,
     $core.int? teacherEvaluateScore,
+    $core.Iterable<$core.String>? taskPlatform,
     $core.String? systemTaskKey,
     $0.TeacherTask? teacherTask,
     $1.User? student,
@@ -314,6 +315,9 @@ class StudentTask extends $pb.GeneratedMessage {
     if (teacherEvaluateScore != null) {
       $result.teacherEvaluateScore = teacherEvaluateScore;
     }
+    if (taskPlatform != null) {
+      $result.taskPlatform.addAll(taskPlatform);
+    }
     if (systemTaskKey != null) {
       $result.systemTaskKey = systemTaskKey;
     }
@@ -343,10 +347,11 @@ class StudentTask extends $pb.GeneratedMessage {
     ..pc<StudentTaskRequirementResult>(8, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
     ..aOS(9, _omitFieldNames ? '' : 'teacherFailedReason')
     ..a<$core.int>(10, _omitFieldNames ? '' : 'teacherEvaluateScore', $pb.PbFieldType.O3)
-    ..aOS(11, _omitFieldNames ? '' : 'systemTaskKey')
-    ..aOM<$0.TeacherTask>(12, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
-    ..aOM<$1.User>(13, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
-    ..aOM<$1.User>(14, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..pPS(11, _omitFieldNames ? '' : 'taskPlatform')
+    ..aOS(12, _omitFieldNames ? '' : 'systemTaskKey')
+    ..aOM<$0.TeacherTask>(13, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
+    ..aOM<$1.User>(14, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
+    ..aOM<$1.User>(15, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -444,46 +449,49 @@ class StudentTask extends $pb.GeneratedMessage {
   void clearTeacherEvaluateScore() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get systemTaskKey => $_getSZ(10);
-  @$pb.TagNumber(11)
-  set systemTaskKey($core.String v) { $_setString(10, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasSystemTaskKey() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearSystemTaskKey() => clearField(11);
+  $core.List<$core.String> get taskPlatform => $_getList(10);
 
   @$pb.TagNumber(12)
-  $0.TeacherTask get teacherTask => $_getN(11);
+  $core.String get systemTaskKey => $_getSZ(11);
   @$pb.TagNumber(12)
-  set teacherTask($0.TeacherTask v) { setField(12, v); }
+  set systemTaskKey($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasTeacherTask() => $_has(11);
+  $core.bool hasSystemTaskKey() => $_has(11);
   @$pb.TagNumber(12)
-  void clearTeacherTask() => clearField(12);
-  @$pb.TagNumber(12)
-  $0.TeacherTask ensureTeacherTask() => $_ensure(11);
+  void clearSystemTaskKey() => clearField(12);
 
   @$pb.TagNumber(13)
-  $1.User get student => $_getN(12);
+  $0.TeacherTask get teacherTask => $_getN(12);
   @$pb.TagNumber(13)
-  set student($1.User v) { setField(13, v); }
+  set teacherTask($0.TeacherTask v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasStudent() => $_has(12);
+  $core.bool hasTeacherTask() => $_has(12);
   @$pb.TagNumber(13)
-  void clearStudent() => clearField(13);
+  void clearTeacherTask() => clearField(13);
   @$pb.TagNumber(13)
-  $1.User ensureStudent() => $_ensure(12);
+  $0.TeacherTask ensureTeacherTask() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $1.User get teacher => $_getN(13);
+  $1.User get student => $_getN(13);
   @$pb.TagNumber(14)
-  set teacher($1.User v) { setField(14, v); }
+  set student($1.User v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasTeacher() => $_has(13);
+  $core.bool hasStudent() => $_has(13);
   @$pb.TagNumber(14)
-  void clearTeacher() => clearField(14);
+  void clearStudent() => clearField(14);
   @$pb.TagNumber(14)
-  $1.User ensureTeacher() => $_ensure(13);
+  $1.User ensureStudent() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.User get teacher => $_getN(14);
+  @$pb.TagNumber(15)
+  set teacher($1.User v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasTeacher() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearTeacher() => clearField(15);
+  @$pb.TagNumber(15)
+  $1.User ensureTeacher() => $_ensure(14);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {

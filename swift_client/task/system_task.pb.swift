@@ -59,6 +59,8 @@ struct GloryApi_TaskConfig {
 
   var taskContent: String = String()
 
+  var taskPlatforms: [String] = []
+
   var parameters: [GloryApi_TaskParameter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -559,7 +561,8 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "task_name"),
     3: .standard(proto: "task_business"),
     4: .standard(proto: "task_content"),
-    5: .same(proto: "parameters"),
+    5: .standard(proto: "task_platforms"),
+    6: .same(proto: "parameters"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -572,7 +575,8 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularStringField(value: &self.taskName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.taskBusiness) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.taskContent) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.parameters) }()
+      case 5: try { try decoder.decodeRepeatedStringField(value: &self.taskPlatforms) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.parameters) }()
       default: break
       }
     }
@@ -591,8 +595,11 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.taskContent.isEmpty {
       try visitor.visitSingularStringField(value: self.taskContent, fieldNumber: 4)
     }
+    if !self.taskPlatforms.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.taskPlatforms, fieldNumber: 5)
+    }
     if !self.parameters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.parameters, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.parameters, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -602,6 +609,7 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.taskName != rhs.taskName {return false}
     if lhs.taskBusiness != rhs.taskBusiness {return false}
     if lhs.taskContent != rhs.taskContent {return false}
+    if lhs.taskPlatforms != rhs.taskPlatforms {return false}
     if lhs.parameters != rhs.parameters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

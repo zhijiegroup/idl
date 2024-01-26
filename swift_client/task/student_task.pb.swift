@@ -91,6 +91,8 @@ struct GloryApi_StudentTask {
 
   var teacherEvaluateScore: Int32 = 0
 
+  var taskPlatform: [String] = []
+
   var systemTaskKey: String = String()
 
   var teacherTask: GloryApi_TeacherTask {
@@ -265,29 +267,28 @@ struct GloryApi_GetStudentTaskResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var studentTask: GloryApi_StudentTask {
-    get {return _studentTask ?? GloryApi_StudentTask()}
-    set {_studentTask = newValue}
+    get {return _storage._studentTask ?? GloryApi_StudentTask()}
+    set {_uniqueStorage()._studentTask = newValue}
   }
   /// Returns true if `studentTask` has been explicitly set.
-  var hasStudentTask: Bool {return self._studentTask != nil}
+  var hasStudentTask: Bool {return _storage._studentTask != nil}
   /// Clears the value of `studentTask`. Subsequent reads from it will return its default value.
-  mutating func clearStudentTask() {self._studentTask = nil}
+  mutating func clearStudentTask() {_uniqueStorage()._studentTask = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _studentTask: GloryApi_StudentTask? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_TeacherListStudentTaskRequest {
@@ -574,10 +575,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     8: .standard(proto: "student_task_requirement_result"),
     9: .standard(proto: "teacher_failed_reason"),
     10: .standard(proto: "teacher_evaluate_score"),
-    11: .standard(proto: "system_task_key"),
-    12: .standard(proto: "teacher_task"),
-    13: .same(proto: "student"),
-    14: .same(proto: "teacher"),
+    11: .standard(proto: "task_platform"),
+    12: .standard(proto: "system_task_key"),
+    13: .standard(proto: "teacher_task"),
+    14: .same(proto: "student"),
+    15: .same(proto: "teacher"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -596,10 +598,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskRequirementResult) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.teacherFailedReason) }()
       case 10: try { try decoder.decodeSingularInt32Field(value: &self.teacherEvaluateScore) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
-      case 12: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
-      case 13: try { try decoder.decodeSingularMessageField(value: &self._student) }()
-      case 14: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
+      case 11: try { try decoder.decodeRepeatedStringField(value: &self.taskPlatform) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
+      case 13: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
+      case 14: try { try decoder.decodeSingularMessageField(value: &self._student) }()
+      case 15: try { try decoder.decodeSingularMessageField(value: &self._teacher) }()
       default: break
       }
     }
@@ -640,17 +643,20 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if self.teacherEvaluateScore != 0 {
       try visitor.visitSingularInt32Field(value: self.teacherEvaluateScore, fieldNumber: 10)
     }
+    if !self.taskPlatform.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.taskPlatform, fieldNumber: 11)
+    }
     if !self.systemTaskKey.isEmpty {
-      try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 12)
     }
     try { if let v = self._teacherTask {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-    } }()
-    try { if let v = self._student {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
     } }()
-    try { if let v = self._teacher {
+    try { if let v = self._student {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+    } }()
+    try { if let v = self._teacher {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -666,6 +672,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.studentTaskRequirementResult != rhs.studentTaskRequirementResult {return false}
     if lhs.teacherFailedReason != rhs.teacherFailedReason {return false}
     if lhs.teacherEvaluateScore != rhs.teacherEvaluateScore {return false}
+    if lhs.taskPlatform != rhs.taskPlatform {return false}
     if lhs.systemTaskKey != rhs.systemTaskKey {return false}
     if lhs._teacherTask != rhs._teacherTask {return false}
     if lhs._student != rhs._student {return false}
@@ -932,36 +939,70 @@ extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
     2: .standard(proto: "student_task"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _studentTask: GloryApi_StudentTask? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _studentTask = source._studentTask
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._studentTask) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._studentTask) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._studentTask {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._studentTask {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetStudentTaskResponse, rhs: GloryApi_GetStudentTaskResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._studentTask != rhs._studentTask {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._studentTask != rhs_storage._studentTask {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

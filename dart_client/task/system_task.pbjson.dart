@@ -48,7 +48,8 @@ const TaskConfig$json = {
     {'1': 'task_name', '3': 2, '4': 1, '5': 9, '10': 'taskName'},
     {'1': 'task_business', '3': 3, '4': 1, '5': 9, '10': 'taskBusiness'},
     {'1': 'task_content', '3': 4, '4': 1, '5': 9, '10': 'taskContent'},
-    {'1': 'parameters', '3': 5, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'parameters'},
+    {'1': 'task_platforms', '3': 5, '4': 3, '5': 9, '10': 'taskPlatforms'},
+    {'1': 'parameters', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'parameters'},
   ],
 };
 
@@ -56,8 +57,9 @@ const TaskConfig$json = {
 final $typed_data.Uint8List taskConfigDescriptor = $convert.base64Decode(
     'CgpUYXNrQ29uZmlnEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5EhsKCXRhc2tfbmFtZRgCIA'
     'EoCVIIdGFza05hbWUSIwoNdGFza19idXNpbmVzcxgDIAEoCVIMdGFza0J1c2luZXNzEiEKDHRh'
-    'c2tfY29udGVudBgEIAEoCVILdGFza0NvbnRlbnQSOAoKcGFyYW1ldGVycxgFIAMoCzIYLmdsb3'
-    'J5X2FwaS5UYXNrUGFyYW1ldGVyUgpwYXJhbWV0ZXJz');
+    'c2tfY29udGVudBgEIAEoCVILdGFza0NvbnRlbnQSJQoOdGFza19wbGF0Zm9ybXMYBSADKAlSDX'
+    'Rhc2tQbGF0Zm9ybXMSOAoKcGFyYW1ldGVycxgGIAMoCzIYLmdsb3J5X2FwaS5UYXNrUGFyYW1l'
+    'dGVyUgpwYXJhbWV0ZXJz');
 
 @$core.Deprecated('Use systemTaskParameterDescriptor instead')
 const SystemTaskParameter$json = {
