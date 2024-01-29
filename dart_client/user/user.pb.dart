@@ -6450,10 +6450,76 @@ class OwnAccess extends $pb.GeneratedMessage {
   void clearType() => clearField(5);
 }
 
+class OwnAccessHeader extends $pb.GeneratedMessage {
+  factory OwnAccessHeader({
+    $core.String? label,
+    $core.String? key,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (key != null) {
+      $result.key = key;
+    }
+    return $result;
+  }
+  OwnAccessHeader._() : super();
+  factory OwnAccessHeader.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OwnAccessHeader.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OwnAccessHeader', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'key')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OwnAccessHeader clone() => OwnAccessHeader()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OwnAccessHeader copyWith(void Function(OwnAccessHeader) updates) => super.copyWith((message) => updates(message as OwnAccessHeader)) as OwnAccessHeader;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OwnAccessHeader create() => OwnAccessHeader._();
+  OwnAccessHeader createEmptyInstance() => create();
+  static $pb.PbList<OwnAccessHeader> createRepeated() => $pb.PbList<OwnAccessHeader>();
+  @$core.pragma('dart2js:noInline')
+  static OwnAccessHeader getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OwnAccessHeader>(create);
+  static OwnAccessHeader? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => clearField(2);
+}
+
 class ListOwnAccessRequest extends $pb.GeneratedMessage {
   factory ListOwnAccessRequest({
     $2.BaseRequest? baseRequest,
     $core.String? access,
+    $fixnum.Int64? taskId,
+    $2.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -6461,6 +6527,12 @@ class ListOwnAccessRequest extends $pb.GeneratedMessage {
     }
     if (access != null) {
       $result.access = access;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
     }
     return $result;
   }
@@ -6471,6 +6543,8 @@ class ListOwnAccessRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOwnAccessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'access')
+    ..aInt64(3, _omitFieldNames ? '' : 'taskId')
+    ..aOM<$2.PaginationRequest>(4, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -6514,15 +6588,47 @@ class ListOwnAccessRequest extends $pb.GeneratedMessage {
   $core.bool hasAccess() => $_has(1);
   @$pb.TagNumber(2)
   void clearAccess() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get taskId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set taskId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTaskId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTaskId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $2.PaginationRequest get pagination => $_getN(3);
+  @$pb.TagNumber(4)
+  set pagination($2.PaginationRequest v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPagination() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPagination() => clearField(4);
+  @$pb.TagNumber(4)
+  $2.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListOwnAccessResponse extends $pb.GeneratedMessage {
   factory ListOwnAccessResponse({
     $2.BaseResponse? baseResp,
+    $2.PaginationResponse? pagination,
+    $core.Iterable<OwnAccessHeader>? accessHeader,
+    $core.Iterable<OwnAccess>? accessList,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    if (accessHeader != null) {
+      $result.accessHeader.addAll(accessHeader);
+    }
+    if (accessList != null) {
+      $result.accessList.addAll(accessList);
     }
     return $result;
   }
@@ -6532,6 +6638,9 @@ class ListOwnAccessResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOwnAccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aOM<$2.PaginationResponse>(2, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationResponse.create)
+    ..pc<OwnAccessHeader>(3, _omitFieldNames ? '' : 'accessHeader', $pb.PbFieldType.PM, subBuilder: OwnAccessHeader.create)
+    ..pc<OwnAccess>(4, _omitFieldNames ? '' : 'accessList', $pb.PbFieldType.PM, subBuilder: OwnAccess.create)
     ..hasRequiredFields = false
   ;
 
@@ -6566,6 +6675,23 @@ class ListOwnAccessResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $2.PaginationResponse get pagination => $_getN(1);
+  @$pb.TagNumber(2)
+  set pagination($2.PaginationResponse v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPagination() => clearField(2);
+  @$pb.TagNumber(2)
+  $2.PaginationResponse ensurePagination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<OwnAccessHeader> get accessHeader => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<OwnAccess> get accessList => $_getList(3);
 }
 
 

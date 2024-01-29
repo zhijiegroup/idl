@@ -496,6 +496,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.DeleteUserResponse': $1.DeleteUserResponse$json,
   '.glory_api.ListOwnAccessRequest': $1.ListOwnAccessRequest$json,
   '.glory_api.ListOwnAccessResponse': $1.ListOwnAccessResponse$json,
+  '.glory_api.OwnAccessHeader': $1.OwnAccessHeader$json,
+  '.glory_api.OwnAccess': $1.OwnAccess$json,
   '.glory_api.GetVerifyCodeRequest': $1.GetVerifyCodeRequest$json,
   '.glory_api.GetVerifyCodeResponse': $1.GetVerifyCodeResponse$json,
   '.glory_api.CheckVerifyCodeRequest': $1.CheckVerifyCodeRequest$json,

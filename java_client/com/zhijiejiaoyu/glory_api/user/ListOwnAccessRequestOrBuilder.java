@@ -33,4 +33,25 @@ public interface ListOwnAccessRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAccessBytes();
+
+  /**
+   * <code>int64 task_id = 3;</code>
+   * @return The taskId.
+   */
+  long getTaskId();
+
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   * @return Whether the pagination field is set.
+   */
+  boolean hasPagination();
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   * @return The pagination.
+   */
+  com.zhijiejiaoyu.base.PaginationRequest getPagination();
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   */
+  com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder();
 }

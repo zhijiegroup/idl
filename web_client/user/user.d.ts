@@ -553,11 +553,21 @@ export interface OwnAccess {
   type?: string;
 }
 
+export interface OwnAccessHeader {
+  label?: string;
+  key?: string;
+}
+
 export interface ListOwnAccessRequest {
   base_request?: base.BaseRequest;
   access?: string;
+  task_id?: string;
+  pagination?: base.PaginationRequest;
 }
 
 export interface ListOwnAccessResponse {
   base_resp?: base.BaseResponse;
+  pagination?: base.PaginationResponse;
+  access_header?: Array<OwnAccessHeader>;
+  access_list?: Array<OwnAccess>;
 }

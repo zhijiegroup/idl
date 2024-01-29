@@ -2237,6 +2237,20 @@ struct GloryApi_OwnAccess {
   init() {}
 }
 
+struct GloryApi_OwnAccessHeader {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var label: String = String()
+
+  var key: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_ListOwnAccessRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -2253,11 +2267,23 @@ struct GloryApi_ListOwnAccessRequest {
 
   var access: String = String()
 
+  var taskID: Int64 = 0
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
 struct GloryApi_ListOwnAccessResponse {
@@ -2274,11 +2300,25 @@ struct GloryApi_ListOwnAccessResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var accessHeader: [GloryApi_OwnAccessHeader] = []
+
+  var accessList: [GloryApi_OwnAccess] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -2363,6 +2403,7 @@ extension GloryApi_UserMajor: @unchecked Sendable {}
 extension GloryApi_GetUserMajorRequest: @unchecked Sendable {}
 extension GloryApi_GetUserMajorResponse: @unchecked Sendable {}
 extension GloryApi_OwnAccess: @unchecked Sendable {}
+extension GloryApi_OwnAccessHeader: @unchecked Sendable {}
 extension GloryApi_ListOwnAccessRequest: @unchecked Sendable {}
 extension GloryApi_ListOwnAccessResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
@@ -6311,11 +6352,51 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
+extension GloryApi_OwnAccessHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".OwnAccessHeader"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "label"),
+    2: .same(proto: "key"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.label) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.key) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.label.isEmpty {
+      try visitor.visitSingularStringField(value: self.label, fieldNumber: 1)
+    }
+    if !self.key.isEmpty {
+      try visitor.visitSingularStringField(value: self.key, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_OwnAccessHeader, rhs: GloryApi_OwnAccessHeader) -> Bool {
+    if lhs.label != rhs.label {return false}
+    if lhs.key != rhs.key {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_ListOwnAccessRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListOwnAccessRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "access"),
+    3: .standard(proto: "task_id"),
+    4: .same(proto: "pagination"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6326,6 +6407,8 @@ extension GloryApi_ListOwnAccessRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.access) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
     }
@@ -6342,12 +6425,20 @@ extension GloryApi_ListOwnAccessRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.access.isEmpty {
       try visitor.visitSingularStringField(value: self.access, fieldNumber: 2)
     }
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 3)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListOwnAccessRequest, rhs: GloryApi_ListOwnAccessRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.access != rhs.access {return false}
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -6357,6 +6448,9 @@ extension GloryApi_ListOwnAccessResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let protoMessageName: String = _protobuf_package + ".ListOwnAccessResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .same(proto: "pagination"),
+    3: .standard(proto: "access_header"),
+    4: .standard(proto: "access_list"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6366,6 +6460,9 @@ extension GloryApi_ListOwnAccessResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.accessHeader) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.accessList) }()
       default: break
       }
     }
@@ -6379,11 +6476,23 @@ extension GloryApi_ListOwnAccessResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    if !self.accessHeader.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.accessHeader, fieldNumber: 3)
+    }
+    if !self.accessList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.accessList, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListOwnAccessResponse, rhs: GloryApi_ListOwnAccessResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.accessHeader != rhs.accessHeader {return false}
+    if lhs.accessList != rhs.accessList {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

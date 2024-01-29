@@ -21,4 +21,67 @@ public interface ListOwnAccessResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   * @return Whether the pagination field is set.
+   */
+  boolean hasPagination();
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   * @return The pagination.
+   */
+  com.zhijiejiaoyu.base.PaginationResponse getPagination();
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   */
+  com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder();
+
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> 
+      getAccessHeaderList();
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.OwnAccessHeader getAccessHeader(int index);
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  int getAccessHeaderCount();
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder> 
+      getAccessHeaderOrBuilderList();
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder getAccessHeaderOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess> 
+      getAccessListList();
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.OwnAccess getAccessList(int index);
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  int getAccessListCount();
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder> 
+      getAccessListOrBuilderList();
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder getAccessListOrBuilder(
+      int index);
 }

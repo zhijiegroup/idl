@@ -1325,30 +1325,54 @@ final $typed_data.Uint8List ownAccessDescriptor = $convert.base64Decode(
     'CglPd25BY2Nlc3MSDgoCaWQYASABKANSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbx'
     'gDIAEoCVIEbG9nbxIWCgZyZW1hcmsYBCABKAlSBnJlbWFyaxISCgR0eXBlGAUgASgJUgR0eXBl');
 
+@$core.Deprecated('Use ownAccessHeaderDescriptor instead')
+const OwnAccessHeader$json = {
+  '1': 'OwnAccessHeader',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'key', '3': 2, '4': 1, '5': 9, '10': 'key'},
+  ],
+};
+
+/// Descriptor for `OwnAccessHeader`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ownAccessHeaderDescriptor = $convert.base64Decode(
+    'Cg9Pd25BY2Nlc3NIZWFkZXISFAoFbGFiZWwYASABKAlSBWxhYmVsEhAKA2tleRgCIAEoCVIDa2'
+    'V5');
+
 @$core.Deprecated('Use listOwnAccessRequestDescriptor instead')
 const ListOwnAccessRequest$json = {
   '1': 'ListOwnAccessRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'access', '3': 2, '4': 1, '5': 9, '10': 'access'},
+    {'1': 'task_id', '3': 3, '4': 1, '5': 3, '10': 'taskId'},
+    {'1': 'pagination', '3': 4, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `ListOwnAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listOwnAccessRequestDescriptor = $convert.base64Decode(
     'ChRMaXN0T3duQWNjZXNzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
-    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIWCgZhY2Nlc3MYAiABKAlSBmFjY2Vzcw==');
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIWCgZhY2Nlc3MYAiABKAlSBmFjY2VzcxIXCgd0YXNrX2lk'
+    'GAMgASgDUgZ0YXNrSWQSNwoKcGFnaW5hdGlvbhgEIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcX'
+    'Vlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listOwnAccessResponseDescriptor instead')
 const ListOwnAccessResponse$json = {
   '1': 'ListOwnAccessResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+    {'1': 'access_header', '3': 3, '4': 3, '5': 11, '6': '.glory_api.OwnAccessHeader', '10': 'accessHeader'},
+    {'1': 'access_list', '3': 4, '4': 3, '5': 11, '6': '.glory_api.OwnAccess', '10': 'accessList'},
   ],
 };
 
 /// Descriptor for `ListOwnAccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listOwnAccessResponseDescriptor = $convert.base64Decode(
     'ChVMaXN0T3duQWNjZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
-    'VzcG9uc2VSCGJhc2VSZXNw');
+    'VzcG9uc2VSCGJhc2VSZXNwEjgKCnBhZ2luYXRpb24YAiABKAsyGC5iYXNlLlBhZ2luYXRpb25S'
+    'ZXNwb25zZVIKcGFnaW5hdGlvbhI/Cg1hY2Nlc3NfaGVhZGVyGAMgAygLMhouZ2xvcnlfYXBpLk'
+    '93bkFjY2Vzc0hlYWRlclIMYWNjZXNzSGVhZGVyEjUKC2FjY2Vzc19saXN0GAQgAygLMhQuZ2xv'
+    'cnlfYXBpLk93bkFjY2Vzc1IKYWNjZXNzTGlzdA==');
 

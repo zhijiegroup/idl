@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListOwnAccessResponse() {
+    accessHeader = java.util.Collections.emptyList();
+    accessList = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -38,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -61,6 +64,37 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            com.zhijiejiaoyu.base.PaginationResponse.Builder subBuilder = null;
+            if (pagination != null) {
+              subBuilder = pagination .toBuilder();
+            }
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pagination );
+              pagination = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 26: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              accessHeader = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            accessHeader .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.parser(), extensionRegistry));
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              accessList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.OwnAccess>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            accessList .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.user.OwnAccess.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -76,6 +110,12 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        accessHeader = java.util.Collections.unmodifiableList(accessHeader );
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        accessList = java.util.Collections.unmodifiableList(accessList );
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -119,6 +159,112 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
+  public static final int PAGINATION_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.base.PaginationResponse pagination ;
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   * @return Whether the pagination field is set.
+   */
+  @java.lang.Override
+  public boolean hasPagination() {
+    return pagination != null;
+  }
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   * @return The pagination.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
+  }
+  /**
+   * <code>.base.PaginationResponse pagination = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+    return getPagination();
+  }
+
+  public static final int ACCESS_HEADER_FIELD_NUMBER = 3;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> accessHeader ;
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> getAccessHeaderList() {
+    return accessHeader ;
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder> 
+      getAccessHeaderOrBuilderList() {
+    return accessHeader ;
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  @java.lang.Override
+  public int getAccessHeaderCount() {
+    return accessHeader .size();
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.OwnAccessHeader getAccessHeader(int index) {
+    return accessHeader .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder getAccessHeaderOrBuilder(
+      int index) {
+    return accessHeader .get(index);
+  }
+
+  public static final int ACCESS_LIST_FIELD_NUMBER = 4;
+  private java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess> accessList ;
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess> getAccessListList() {
+    return accessList ;
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder> 
+      getAccessListOrBuilderList() {
+    return accessList ;
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  @java.lang.Override
+  public int getAccessListCount() {
+    return accessList .size();
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.OwnAccess getAccessList(int index) {
+    return accessList .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder getAccessListOrBuilder(
+      int index) {
+    return accessList .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +282,15 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (pagination != null) {
+      output.writeMessage(2, getPagination());
+    }
+    for (int i = 0; i < accessHeader .size(); i++) {
+      output.writeMessage(3, accessHeader .get(i));
+    }
+    for (int i = 0; i < accessList .size(); i++) {
+      output.writeMessage(4, accessList .get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +303,18 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
+    }
+    if (pagination != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getPagination());
+    }
+    for (int i = 0; i < accessHeader .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, accessHeader .get(i));
+    }
+    for (int i = 0; i < accessList .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, accessList .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +336,15 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (hasPagination() != other.hasPagination()) return false;
+    if (hasPagination()) {
+      if (!getPagination()
+          .equals(other.getPagination())) return false;
+    }
+    if (!getAccessHeaderList()
+        .equals(other.getAccessHeaderList())) return false;
+    if (!getAccessListList()
+        .equals(other.getAccessListList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -183,6 +359,18 @@ private static final long serialVersionUID = 0L;
     if (hasBaseResp()) {
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
+    }
+    if (hasPagination()) {
+      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPagination().hashCode();
+    }
+    if (getAccessHeaderCount() > 0) {
+      hash = (37 * hash) + ACCESS_HEADER_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessHeaderList().hashCode();
+    }
+    if (getAccessListCount() > 0) {
+      hash = (37 * hash) + ACCESS_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessListList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -312,6 +500,8 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAccessHeaderFieldBuilder();
+        getAccessListFieldBuilder();
       }
     }
     @java.lang.Override
@@ -322,6 +512,24 @@ private static final long serialVersionUID = 0L;
       } else {
         baseResp = null;
         baseRespBuilder = null;
+      }
+      if (paginationBuilder == null) {
+        pagination = null;
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+      if (accessHeaderBuilder == null) {
+        accessHeader = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        accessHeaderBuilder .clear();
+      }
+      if (accessListBuilder == null) {
+        accessList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+      } else {
+        accessListBuilder .clear();
       }
       return this;
     }
@@ -349,10 +557,34 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.user.ListOwnAccessResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.user.ListOwnAccessResponse result = new com.zhijiejiaoyu.glory_api.user.ListOwnAccessResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
+      }
+      if (paginationBuilder == null) {
+        result.pagination = pagination ;
+      } else {
+        result.pagination = paginationBuilder .build();
+      }
+      if (accessHeaderBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          accessHeader = java.util.Collections.unmodifiableList(accessHeader );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.accessHeader = accessHeader ;
+      } else {
+        result.accessHeader = accessHeaderBuilder .build();
+      }
+      if (accessListBuilder == null) {
+        if (((bitField0 & 0x00000002) != 0)) {
+          accessList = java.util.Collections.unmodifiableList(accessList );
+          bitField0 = (bitField0 & ~0x00000002);
+        }
+        result.accessList = accessList ;
+      } else {
+        result.accessList = accessListBuilder .build();
       }
       onBuilt();
       return result;
@@ -405,6 +637,61 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
+      if (other.hasPagination()) {
+        mergePagination(other.getPagination());
+      }
+      if (accessHeaderBuilder == null) {
+        if (!other.accessHeader .isEmpty()) {
+          if (accessHeader .isEmpty()) {
+            accessHeader = other.accessHeader ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureAccessHeaderIsMutable();
+            accessHeader .addAll(other.accessHeader );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.accessHeader .isEmpty()) {
+          if (accessHeaderBuilder .isEmpty()) {
+            accessHeaderBuilder .dispose();
+            accessHeaderBuilder = null;
+            accessHeader = other.accessHeader ;
+            bitField0 = (bitField0 & ~0x00000001);
+            accessHeaderBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAccessHeaderFieldBuilder() : null;
+          } else {
+            accessHeaderBuilder .addAllMessages(other.accessHeader );
+          }
+        }
+      }
+      if (accessListBuilder == null) {
+        if (!other.accessList .isEmpty()) {
+          if (accessList .isEmpty()) {
+            accessList = other.accessList ;
+            bitField0 = (bitField0 & ~0x00000002);
+          } else {
+            ensureAccessListIsMutable();
+            accessList .addAll(other.accessList );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.accessList .isEmpty()) {
+          if (accessListBuilder .isEmpty()) {
+            accessListBuilder .dispose();
+            accessListBuilder = null;
+            accessList = other.accessList ;
+            bitField0 = (bitField0 & ~0x00000002);
+            accessListBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAccessListFieldBuilder() : null;
+          } else {
+            accessListBuilder .addAllMessages(other.accessList );
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -433,6 +720,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -551,6 +839,605 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder ;
+    }
+
+    private com.zhijiejiaoyu.base.PaginationResponse pagination ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> paginationBuilder ;
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     * @return Whether the pagination field is set.
+     */
+    public boolean hasPagination() {
+      return paginationBuilder != null || pagination != null;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     * @return The pagination.
+     */
+    public com.zhijiejiaoyu.base.PaginationResponse getPagination() {
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
+      } else {
+        return paginationBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public Builder setPagination(com.zhijiejiaoyu.base.PaginationResponse value) {
+      if (paginationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pagination = value;
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public Builder setPagination(
+        com.zhijiejiaoyu.base.PaginationResponse.Builder builderForValue) {
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationResponse value) {
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationResponse.newBuilder(pagination ).mergeFrom(value).buildPartial();
+        } else {
+          pagination = value;
+        }
+        onChanged();
+      } else {
+        paginationBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public Builder clearPagination() {
+      if (paginationBuilder == null) {
+        pagination = null;
+        onChanged();
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationResponse.Builder getPaginationBuilder() {
+      
+      onChanged();
+      return getPaginationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationResponseOrBuilder getPaginationOrBuilder() {
+      if (paginationBuilder != null) {
+        return paginationBuilder .getMessageOrBuilder();
+      } else {
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationResponse.getDefaultInstance() : pagination ;
+      }
+    }
+    /**
+     * <code>.base.PaginationResponse pagination = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder> 
+        getPaginationFieldBuilder() {
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.PaginationResponse, com.zhijiejiaoyu.base.PaginationResponse.Builder, com.zhijiejiaoyu.base.PaginationResponseOrBuilder>(
+                getPagination(),
+                getParentForChildren(),
+                isClean());
+        pagination = null;
+      }
+      return paginationBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> accessHeader =
+      java.util.Collections.emptyList();
+    private void ensureAccessHeaderIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        accessHeader = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader>(accessHeader );
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.OwnAccessHeader, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder> accessHeaderBuilder ;
+
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> getAccessHeaderList() {
+      if (accessHeaderBuilder == null) {
+        return java.util.Collections.unmodifiableList(accessHeader );
+      } else {
+        return accessHeaderBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public int getAccessHeaderCount() {
+      if (accessHeaderBuilder == null) {
+        return accessHeader .size();
+      } else {
+        return accessHeaderBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessHeader getAccessHeader(int index) {
+      if (accessHeaderBuilder == null) {
+        return accessHeader .get(index);
+      } else {
+        return accessHeaderBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder setAccessHeader(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader value) {
+      if (accessHeaderBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessHeaderIsMutable();
+        accessHeader .set(index, value);
+        onChanged();
+      } else {
+        accessHeaderBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder setAccessHeader(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder builderForValue) {
+      if (accessHeaderBuilder == null) {
+        ensureAccessHeaderIsMutable();
+        accessHeader .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessHeaderBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder addAccessHeader(com.zhijiejiaoyu.glory_api.user.OwnAccessHeader value) {
+      if (accessHeaderBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessHeaderIsMutable();
+        accessHeader .add(value);
+        onChanged();
+      } else {
+        accessHeaderBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder addAccessHeader(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader value) {
+      if (accessHeaderBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessHeaderIsMutable();
+        accessHeader .add(index, value);
+        onChanged();
+      } else {
+        accessHeaderBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder addAccessHeader(
+        com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder builderForValue) {
+      if (accessHeaderBuilder == null) {
+        ensureAccessHeaderIsMutable();
+        accessHeader .add(builderForValue.build());
+        onChanged();
+      } else {
+        accessHeaderBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder addAccessHeader(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder builderForValue) {
+      if (accessHeaderBuilder == null) {
+        ensureAccessHeaderIsMutable();
+        accessHeader .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessHeaderBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder addAllAccessHeader(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessHeader> values) {
+      if (accessHeaderBuilder == null) {
+        ensureAccessHeaderIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, accessHeader );
+        onChanged();
+      } else {
+        accessHeaderBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder clearAccessHeader() {
+      if (accessHeaderBuilder == null) {
+        accessHeader = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        accessHeaderBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public Builder removeAccessHeader(int index) {
+      if (accessHeaderBuilder == null) {
+        ensureAccessHeaderIsMutable();
+        accessHeader .remove(index);
+        onChanged();
+      } else {
+        accessHeaderBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder getAccessHeaderBuilder(
+        int index) {
+      return getAccessHeaderFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder getAccessHeaderOrBuilder(
+        int index) {
+      if (accessHeaderBuilder == null) {
+        return accessHeader .get(index);  } else {
+        return accessHeaderBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder> 
+         getAccessHeaderOrBuilderList() {
+      if (accessHeaderBuilder != null) {
+        return accessHeaderBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(accessHeader );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder addAccessHeaderBuilder() {
+      return getAccessHeaderFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder addAccessHeaderBuilder(
+        int index) {
+      return getAccessHeaderFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccessHeader access_header = 3;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder> 
+         getAccessHeaderBuilderList() {
+      return getAccessHeaderFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.OwnAccessHeader, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder> 
+        getAccessHeaderFieldBuilder() {
+      if (accessHeaderBuilder == null) {
+        accessHeaderBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.OwnAccessHeader, com.zhijiejiaoyu.glory_api.user.OwnAccessHeader.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessHeaderOrBuilder>(
+                accessHeader ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        accessHeader = null;
+      }
+      return accessHeaderBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess> accessList =
+      java.util.Collections.emptyList();
+    private void ensureAccessListIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        accessList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.OwnAccess>(accessList );
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.OwnAccess, com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder> accessListBuilder ;
+
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess> getAccessListList() {
+      if (accessListBuilder == null) {
+        return java.util.Collections.unmodifiableList(accessList );
+      } else {
+        return accessListBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public int getAccessListCount() {
+      if (accessListBuilder == null) {
+        return accessList .size();
+      } else {
+        return accessListBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccess getAccessList(int index) {
+      if (accessListBuilder == null) {
+        return accessList .get(index);
+      } else {
+        return accessListBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder setAccessList(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccess value) {
+      if (accessListBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessListIsMutable();
+        accessList .set(index, value);
+        onChanged();
+      } else {
+        accessListBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder setAccessList(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder builderForValue) {
+      if (accessListBuilder == null) {
+        ensureAccessListIsMutable();
+        accessList .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessListBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder addAccessList(com.zhijiejiaoyu.glory_api.user.OwnAccess value) {
+      if (accessListBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessListIsMutable();
+        accessList .add(value);
+        onChanged();
+      } else {
+        accessListBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder addAccessList(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccess value) {
+      if (accessListBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessListIsMutable();
+        accessList .add(index, value);
+        onChanged();
+      } else {
+        accessListBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder addAccessList(
+        com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder builderForValue) {
+      if (accessListBuilder == null) {
+        ensureAccessListIsMutable();
+        accessList .add(builderForValue.build());
+        onChanged();
+      } else {
+        accessListBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder addAccessList(
+        int index, com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder builderForValue) {
+      if (accessListBuilder == null) {
+        ensureAccessListIsMutable();
+        accessList .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessListBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder addAllAccessList(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.user.OwnAccess> values) {
+      if (accessListBuilder == null) {
+        ensureAccessListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, accessList );
+        onChanged();
+      } else {
+        accessListBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder clearAccessList() {
+      if (accessListBuilder == null) {
+        accessList = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000002);
+        onChanged();
+      } else {
+        accessListBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public Builder removeAccessList(int index) {
+      if (accessListBuilder == null) {
+        ensureAccessListIsMutable();
+        accessList .remove(index);
+        onChanged();
+      } else {
+        accessListBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder getAccessListBuilder(
+        int index) {
+      return getAccessListFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder getAccessListOrBuilder(
+        int index) {
+      if (accessListBuilder == null) {
+        return accessList .get(index);  } else {
+        return accessListBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder> 
+         getAccessListOrBuilderList() {
+      if (accessListBuilder != null) {
+        return accessListBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(accessList );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder addAccessListBuilder() {
+      return getAccessListFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.user.OwnAccess.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder addAccessListBuilder(
+        int index) {
+      return getAccessListFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.user.OwnAccess.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.OwnAccess access_list = 4;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder> 
+         getAccessListBuilderList() {
+      return getAccessListFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.OwnAccess, com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder> 
+        getAccessListFieldBuilder() {
+      if (accessListBuilder == null) {
+        accessListBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.OwnAccess, com.zhijiejiaoyu.glory_api.user.OwnAccess.Builder, com.zhijiejiaoyu.glory_api.user.OwnAccessOrBuilder>(
+                accessList ,
+                ((bitField0 & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        accessList = null;
+      }
+      return accessListBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

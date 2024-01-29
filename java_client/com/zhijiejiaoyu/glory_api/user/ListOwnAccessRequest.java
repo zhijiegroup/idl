@@ -68,6 +68,24 @@ private static final long serialVersionUID = 0L;
             access = s;
             break;
           }
+          case 24: {
+
+            taskId = input.readInt64();
+            break;
+          }
+          case 34: {
+            com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
+            if (pagination != null) {
+              subBuilder = pagination .toBuilder();
+            }
+            pagination = input.readMessage(com.zhijiejiaoyu.base.PaginationRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pagination );
+              pagination = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -164,6 +182,43 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TASK_ID_FIELD_NUMBER = 3;
+  private long taskId ;
+  /**
+   * <code>int64 task_id = 3;</code>
+   * @return The taskId.
+   */
+  @java.lang.Override
+  public long getTaskId() {
+    return taskId ;
+  }
+
+  public static final int PAGINATION_FIELD_NUMBER = 4;
+  private com.zhijiejiaoyu.base.PaginationRequest pagination ;
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   * @return Whether the pagination field is set.
+   */
+  @java.lang.Override
+  public boolean hasPagination() {
+    return pagination != null;
+  }
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   * @return The pagination.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+    return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+  }
+  /**
+   * <code>.base.PaginationRequest pagination = 4;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+    return getPagination();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +239,12 @@ private static final long serialVersionUID = 0L;
     if (!getAccessBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, access );
     }
+    if (taskId != 0L) {
+      output.writeInt64(3, taskId );
+    }
+    if (pagination != null) {
+      output.writeMessage(4, getPagination());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +260,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAccessBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, access );
+    }
+    if (taskId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, taskId );
+    }
+    if (pagination != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getPagination());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +291,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAccess()
         .equals(other.getAccess())) return false;
+    if (getTaskId()
+        != other.getTaskId()) return false;
+    if (hasPagination() != other.hasPagination()) return false;
+    if (hasPagination()) {
+      if (!getPagination()
+          .equals(other.getPagination())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +315,13 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + getAccess().hashCode();
+    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskId());
+    if (hasPagination()) {
+      hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPagination().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,6 +463,14 @@ private static final long serialVersionUID = 0L;
       }
       access = "";
 
+      taskId = 0L;
+
+      if (paginationBuilder == null) {
+        pagination = null;
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
       return this;
     }
 
@@ -412,6 +503,12 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.access = access ;
+      result.taskId = taskId ;
+      if (paginationBuilder == null) {
+        result.pagination = pagination ;
+      } else {
+        result.pagination = paginationBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -466,6 +563,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getAccess().isEmpty()) {
         access = other.access ;
         onChanged();
+      }
+      if (other.getTaskId() != 0L) {
+        setTaskId(other.getTaskId());
+      }
+      if (other.hasPagination()) {
+        mergePagination(other.getPagination());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -689,6 +792,156 @@ private static final long serialVersionUID = 0L;
       access = value;
       onChanged();
       return this;
+    }
+
+    private long taskId ;
+    /**
+     * <code>int64 task_id = 3;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public long getTaskId() {
+      return taskId ;
+    }
+    /**
+     * <code>int64 task_id = 3;</code>
+     * @param value The taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskId(long value) {
+      
+      taskId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 task_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskId() {
+      
+      taskId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.zhijiejiaoyu.base.PaginationRequest pagination ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> paginationBuilder ;
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     * @return Whether the pagination field is set.
+     */
+    public boolean hasPagination() {
+      return paginationBuilder != null || pagination != null;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     * @return The pagination.
+     */
+    public com.zhijiejiaoyu.base.PaginationRequest getPagination() {
+      if (paginationBuilder == null) {
+        return pagination == null ? com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+      } else {
+        return paginationBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public Builder setPagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pagination = value;
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public Builder setPagination(
+        com.zhijiejiaoyu.base.PaginationRequest.Builder builderForValue) {
+      if (paginationBuilder == null) {
+        pagination = builderForValue.build();
+        onChanged();
+      } else {
+        paginationBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public Builder mergePagination(com.zhijiejiaoyu.base.PaginationRequest value) {
+      if (paginationBuilder == null) {
+        if (pagination != null) {
+          pagination =
+            com.zhijiejiaoyu.base.PaginationRequest.newBuilder(pagination ).mergeFrom(value).buildPartial();
+        } else {
+          pagination = value;
+        }
+        onChanged();
+      } else {
+        paginationBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public Builder clearPagination() {
+      if (paginationBuilder == null) {
+        pagination = null;
+        onChanged();
+      } else {
+        pagination = null;
+        paginationBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequest.Builder getPaginationBuilder() {
+      
+      onChanged();
+      return getPaginationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    public com.zhijiejiaoyu.base.PaginationRequestOrBuilder getPaginationOrBuilder() {
+      if (paginationBuilder != null) {
+        return paginationBuilder .getMessageOrBuilder();
+      } else {
+        return pagination == null ?
+            com.zhijiejiaoyu.base.PaginationRequest.getDefaultInstance() : pagination ;
+      }
+    }
+    /**
+     * <code>.base.PaginationRequest pagination = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder> 
+        getPaginationFieldBuilder() {
+      if (paginationBuilder == null) {
+        paginationBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.base.PaginationRequest, com.zhijiejiaoyu.base.PaginationRequest.Builder, com.zhijiejiaoyu.base.PaginationRequestOrBuilder>(
+                getPagination(),
+                getParentForChildren(),
+                isClean());
+        pagination = null;
+      }
+      return paginationBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
