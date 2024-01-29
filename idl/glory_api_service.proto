@@ -96,6 +96,9 @@ service glory_api {
   rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {
     option (api.post) = '/api/user/delete';
   }
+  rpc ListOwnAccess(ListOwnAccessRequest) returns (ListOwnAccessResponse) {
+    option (api.post) = '/api/user/list_own_access';
+  }
 
   rpc GetVerifyCode(GetVerifyCodeRequest) returns (GetVerifyCodeResponse) {
     option (api.post) = '/api/user/get_verify_code';
