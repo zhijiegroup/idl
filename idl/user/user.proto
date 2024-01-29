@@ -510,3 +510,21 @@ message GetUserMajorResponse {
   base.BaseResponse base_resp = 1;
   repeated UserMajor user_major = 2;
 }
+
+
+message OwnAccess {
+  int64 id = 1;
+  string name = 2;
+  string logo = 3;
+  string remark = 4;
+  string type = 5; // shop: 店铺; product: 商品; live_script: 直播文案; live_record: 直播记录; video: 短视频; video_script: 短视频文案;
+}
+
+message ListOwnAccessRequest {
+  base.BaseRequest base_request = 1;
+  string access = 2;
+}
+
+message ListOwnAccessResponse {
+  base.BaseResponse base_resp = 1;
+}
