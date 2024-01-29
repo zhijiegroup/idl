@@ -197,6 +197,8 @@ const ListTeacherTaskRequest$json = {
     {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
     {'1': 'class_id', '3': 3, '4': 1, '5': 3, '10': 'classId'},
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'created_start', '3': 5, '4': 1, '5': 9, '10': 'createdStart'},
+    {'1': 'created_end', '3': 6, '4': 1, '5': 9, '10': 'createdEnd'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -205,8 +207,10 @@ const ListTeacherTaskRequest$json = {
 final $typed_data.Uint8List listTeacherTaskRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0VGVhY2hlclRhc2tSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
     'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhgKB2tleXdvcmQYAiABKAlSB2tleXdvcmQSGQoIY2xh'
-    'c3NfaWQYAyABKANSB2NsYXNzSWQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSNwoKcGFnaW5hdG'
-    'lvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'c3NfaWQYAyABKANSB2NsYXNzSWQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSIwoNY3JlYXRlZF'
+    '9zdGFydBgFIAEoCVIMY3JlYXRlZFN0YXJ0Eh8KC2NyZWF0ZWRfZW5kGAYgASgJUgpjcmVhdGVk'
+    'RW5kEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbm'
+    'F0aW9u');
 
 @$core.Deprecated('Use listTeacherTaskResponseDescriptor instead')
 const ListTeacherTaskResponse$json = {

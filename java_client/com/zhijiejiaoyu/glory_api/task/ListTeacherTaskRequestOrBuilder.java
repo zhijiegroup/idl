@@ -61,6 +61,46 @@ public interface ListTeacherTaskRequestOrBuilder extends
       getStatusBytes();
 
   /**
+   * <pre>
+   * 任务创建时间开始
+   * </pre>
+   *
+   * <code>string created_start = 5;</code>
+   * @return The createdStart.
+   */
+  java.lang.String getCreatedStart();
+  /**
+   * <pre>
+   * 任务创建时间开始
+   * </pre>
+   *
+   * <code>string created_start = 5;</code>
+   * @return The bytes for createdStart.
+   */
+  com.google.protobuf.ByteString
+      getCreatedStartBytes();
+
+  /**
+   * <pre>
+   * 任务创建时间结束
+   * </pre>
+   *
+   * <code>string created_end = 6;</code>
+   * @return The createdEnd.
+   */
+  java.lang.String getCreatedEnd();
+  /**
+   * <pre>
+   * 任务创建时间结束
+   * </pre>
+   *
+   * <code>string created_end = 6;</code>
+   * @return The bytes for createdEnd.
+   */
+  com.google.protobuf.ByteString
+      getCreatedEndBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
