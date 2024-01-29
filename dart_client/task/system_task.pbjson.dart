@@ -48,7 +48,7 @@ const TaskConfig$json = {
     {'1': 'task_name', '3': 2, '4': 1, '5': 9, '10': 'taskName'},
     {'1': 'task_business', '3': 3, '4': 1, '5': 9, '10': 'taskBusiness'},
     {'1': 'task_content', '3': 4, '4': 1, '5': 9, '10': 'taskContent'},
-    {'1': 'task_platforms', '3': 5, '4': 3, '5': 9, '10': 'taskPlatforms'},
+    {'1': 'task_platform', '3': 5, '4': 1, '5': 9, '10': 'taskPlatform'},
     {'1': 'parameters', '3': 6, '4': 3, '5': 11, '6': '.glory_api.TaskParameter', '10': 'parameters'},
   ],
 };
@@ -57,9 +57,9 @@ const TaskConfig$json = {
 final $typed_data.Uint8List taskConfigDescriptor = $convert.base64Decode(
     'CgpUYXNrQ29uZmlnEhkKCHRhc2tfa2V5GAEgASgJUgd0YXNrS2V5EhsKCXRhc2tfbmFtZRgCIA'
     'EoCVIIdGFza05hbWUSIwoNdGFza19idXNpbmVzcxgDIAEoCVIMdGFza0J1c2luZXNzEiEKDHRh'
-    'c2tfY29udGVudBgEIAEoCVILdGFza0NvbnRlbnQSJQoOdGFza19wbGF0Zm9ybXMYBSADKAlSDX'
-    'Rhc2tQbGF0Zm9ybXMSOAoKcGFyYW1ldGVycxgGIAMoCzIYLmdsb3J5X2FwaS5UYXNrUGFyYW1l'
-    'dGVyUgpwYXJhbWV0ZXJz');
+    'c2tfY29udGVudBgEIAEoCVILdGFza0NvbnRlbnQSIwoNdGFza19wbGF0Zm9ybRgFIAEoCVIMdG'
+    'Fza1BsYXRmb3JtEjgKCnBhcmFtZXRlcnMYBiADKAsyGC5nbG9yeV9hcGkuVGFza1BhcmFtZXRl'
+    'clIKcGFyYW1ldGVycw==');
 
 @$core.Deprecated('Use systemTaskParameterDescriptor instead')
 const SystemTaskParameter$json = {
@@ -98,11 +98,12 @@ const SystemTask$json = {
     {'1': 'system_task_business', '3': 4, '4': 1, '5': 9, '10': 'systemTaskBusiness'},
     {'1': 'system_task_content', '3': 5, '4': 1, '5': 9, '10': 'systemTaskContent'},
     {'1': 'system_task_link', '3': 6, '4': 1, '5': 9, '10': 'systemTaskLink'},
-    {'1': 'system_task_parameters', '3': 7, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'systemTaskParameters'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 9, '4': 1, '5': 9, '10': 'updatedAt'},
-    {'1': 'creator', '3': 10, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
-    {'1': 'updater', '3': 11, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updater'},
+    {'1': 'system_task_platform', '3': 7, '4': 1, '5': 9, '10': 'systemTaskPlatform'},
+    {'1': 'system_task_parameters', '3': 8, '4': 3, '5': 11, '6': '.glory_api.SystemTaskParameter', '10': 'systemTaskParameters'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 10, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'creator', '3': 11, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
+    {'1': 'updater', '3': 12, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updater'},
   ],
 };
 
@@ -112,12 +113,13 @@ final $typed_data.Uint8List systemTaskDescriptor = $convert.base64Decode(
     'lzdGVtX3Rhc2tfa2V5GAIgASgJUg1zeXN0ZW1UYXNrS2V5EigKEHN5c3RlbV90YXNrX25hbWUY'
     'AyABKAlSDnN5c3RlbVRhc2tOYW1lEjAKFHN5c3RlbV90YXNrX2J1c2luZXNzGAQgASgJUhJzeX'
     'N0ZW1UYXNrQnVzaW5lc3MSLgoTc3lzdGVtX3Rhc2tfY29udGVudBgFIAEoCVIRc3lzdGVtVGFz'
-    'a0NvbnRlbnQSKAoQc3lzdGVtX3Rhc2tfbGluaxgGIAEoCVIOc3lzdGVtVGFza0xpbmsSVAoWc3'
-    'lzdGVtX3Rhc2tfcGFyYW1ldGVycxgHIAMoCzIeLmdsb3J5X2FwaS5TeXN0ZW1UYXNrUGFyYW1l'
-    'dGVyUhRzeXN0ZW1UYXNrUGFyYW1ldGVycxIdCgpjcmVhdGVkX2F0GAggASgJUgljcmVhdGVkQX'
-    'QSHQoKdXBkYXRlZF9hdBgJIAEoCVIJdXBkYXRlZEF0EikKB2NyZWF0b3IYCiABKAsyDy5nbG9y'
-    'eV9hcGkuVXNlclIHY3JlYXRvchIpCgd1cGRhdGVyGAsgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3'
-    'VwZGF0ZXI=');
+    'a0NvbnRlbnQSKAoQc3lzdGVtX3Rhc2tfbGluaxgGIAEoCVIOc3lzdGVtVGFza0xpbmsSMAoUc3'
+    'lzdGVtX3Rhc2tfcGxhdGZvcm0YByABKAlSEnN5c3RlbVRhc2tQbGF0Zm9ybRJUChZzeXN0ZW1f'
+    'dGFza19wYXJhbWV0ZXJzGAggAygLMh4uZ2xvcnlfYXBpLlN5c3RlbVRhc2tQYXJhbWV0ZXJSFH'
+    'N5c3RlbVRhc2tQYXJhbWV0ZXJzEh0KCmNyZWF0ZWRfYXQYCSABKAlSCWNyZWF0ZWRBdBIdCgp1'
+    'cGRhdGVkX2F0GAogASgJUgl1cGRhdGVkQXQSKQoHY3JlYXRvchgLIAEoCzIPLmdsb3J5X2FwaS'
+    '5Vc2VyUgdjcmVhdG9yEikKB3VwZGF0ZXIYDCABKAsyDy5nbG9yeV9hcGkuVXNlclIHdXBkYXRl'
+    'cg==');
 
 @$core.Deprecated('Use getTaskConfigRequestDescriptor instead')
 const GetTaskConfigRequest$json = {

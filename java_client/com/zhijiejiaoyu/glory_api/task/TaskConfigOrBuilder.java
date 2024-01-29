@@ -56,29 +56,24 @@ public interface TaskConfigOrBuilder extends
       getTaskContentBytes();
 
   /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @return A list containing the taskPlatforms.
+   * <pre>
+   * 任务所属平台：APP，WEB，APP/WEB
+   * </pre>
+   *
+   * <code>string task_platform = 5;</code>
+   * @return The taskPlatform.
    */
-  java.util.List<java.lang.String>
-      getTaskPlatformsList();
+  java.lang.String getTaskPlatform();
   /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @return The count of taskPlatforms.
-   */
-  int getTaskPlatformsCount();
-  /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @param index The index of the element to return.
-   * @return The taskPlatforms at the given index.
-   */
-  java.lang.String getTaskPlatforms(int index);
-  /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the taskPlatforms at the given index.
+   * <pre>
+   * 任务所属平台：APP，WEB，APP/WEB
+   * </pre>
+   *
+   * <code>string task_platform = 5;</code>
+   * @return The bytes for taskPlatform.
    */
   com.google.protobuf.ByteString
-      getTaskPlatformsBytes(int index);
+      getTaskPlatformBytes();
 
   /**
    * <code>repeated .glory_api.TaskParameter parameters = 6;</code>

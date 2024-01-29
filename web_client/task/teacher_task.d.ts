@@ -33,6 +33,7 @@ export interface TeacherTask {
   /** 任务类型：1.模板任务；2.手动任务 */
   teacher_task_type?: number;
   teacher_task_template_id?: string;
+  system_task_key?: string;
   teacher_task_content?: string;
   teacher_task_requirements?: Array<string>;
   teacher_task_link?: string;

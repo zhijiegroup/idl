@@ -122,7 +122,7 @@ public final class StudentTaskOuterClass {
       "irement_result\030\010 \003(\0132\'.glory_api.Student" +
       "TaskRequirementResult\022\035\n\025teacher_failed_" +
       "reason\030\t \001(\t\022\036\n\026teacher_evaluate_score\030\n" +
-      " \001(\005\022\025\n\rtask_platform\030\013 \003(\t\022\027\n\017system_ta" +
+      " \001(\005\022\025\n\rtask_platform\030\013 \001(\t\022\027\n\017system_ta" +
       "sk_key\030\014 \001(\t\022,\n\014teacher_task\030\r \001(\0132\026.glo" +
       "ry_api.TeacherTask\022.\n\ntask_links\030\016 \003(\0132\032" +
       ".glory_api.StudentTaskLink\022 \n\007student\030\017 " +

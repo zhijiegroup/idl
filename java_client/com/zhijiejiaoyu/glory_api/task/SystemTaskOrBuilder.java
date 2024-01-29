@@ -74,80 +74,92 @@ public interface SystemTaskOrBuilder extends
       getSystemTaskLinkBytes();
 
   /**
-   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
+   * <code>string system_task_platform = 7;</code>
+   * @return The systemTaskPlatform.
+   */
+  java.lang.String getSystemTaskPlatform();
+  /**
+   * <code>string system_task_platform = 7;</code>
+   * @return The bytes for systemTaskPlatform.
+   */
+  com.google.protobuf.ByteString
+      getSystemTaskPlatformBytes();
+
+  /**
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 8;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.SystemTaskParameter> 
       getSystemTaskParametersList();
   /**
-   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.SystemTaskParameter getSystemTaskParameters(int index);
   /**
-   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 8;</code>
    */
   int getSystemTaskParametersCount();
   /**
-   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 8;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder> 
       getSystemTaskParametersOrBuilderList();
   /**
-   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 7;</code>
+   * <code>repeated .glory_api.SystemTaskParameter system_task_parameters = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.SystemTaskParameterOrBuilder getSystemTaskParametersOrBuilder(
       int index);
 
   /**
-   * <code>string created_at = 8;</code>
+   * <code>string created_at = 9;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 8;</code>
+   * <code>string created_at = 9;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string updated_at = 9;</code>
+   * <code>string updated_at = 10;</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <code>string updated_at = 9;</code>
+   * <code>string updated_at = 10;</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <code>.glory_api.User creator = 10;</code>
+   * <code>.glory_api.User creator = 11;</code>
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
   /**
-   * <code>.glory_api.User creator = 10;</code>
+   * <code>.glory_api.User creator = 11;</code>
    * @return The creator.
    */
   com.zhijiejiaoyu.glory_api.user.User getCreator();
   /**
-   * <code>.glory_api.User creator = 10;</code>
+   * <code>.glory_api.User creator = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
 
   /**
-   * <code>.glory_api.User updater = 11;</code>
+   * <code>.glory_api.User updater = 12;</code>
    * @return Whether the updater field is set.
    */
   boolean hasUpdater();
   /**
-   * <code>.glory_api.User updater = 11;</code>
+   * <code>.glory_api.User updater = 12;</code>
    * @return The updater.
    */
   com.zhijiejiaoyu.glory_api.user.User getUpdater();
   /**
-   * <code>.glory_api.User updater = 11;</code>
+   * <code>.glory_api.User updater = 12;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder();
 }

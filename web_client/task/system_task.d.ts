@@ -23,7 +23,8 @@ export interface TaskConfig {
   task_name?: string;
   task_business?: string;
   task_content?: string;
-  task_platforms?: Array<string>;
+  /** 任务所属平台：APP，WEB，APP/WEB */
+  task_platform?: string;
   parameters?: Array<TaskParameter>;
 }
 
@@ -45,6 +46,7 @@ export interface SystemTask {
   system_task_business?: string;
   system_task_content?: string;
   system_task_link?: string;
+  system_task_platform?: string;
   system_task_parameters?: Array<SystemTaskParameter>;
   created_at?: string;
   updated_at?: string;

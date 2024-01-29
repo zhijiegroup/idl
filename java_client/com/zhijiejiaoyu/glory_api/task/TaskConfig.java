@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     taskName = "";
     taskBusiness = "";
     taskContent = "";
-    taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
+    taskPlatform = "";
     parameters = java.util.Collections.emptyList();
   }
 
@@ -81,17 +81,14 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              taskPlatforms = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            taskPlatforms .add(s);
+
+            taskPlatform = s;
             break;
           }
           case 50: {
-            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
               parameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             parameters .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TaskParameter.parser(), extensionRegistry));
@@ -113,9 +110,6 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        taskPlatforms = taskPlatforms .getUnmodifiableView();
-      }
-      if (((mutable_bitField0 & 0x00000002) != 0)) {
         parameters = java.util.Collections.unmodifiableList(parameters );
       }
       this.unknownFields = unknownFields.build();
@@ -287,39 +281,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_PLATFORMS_FIELD_NUMBER = 5;
-  private com.google.protobuf.LazyStringList taskPlatforms ;
+  public static final int TASK_PLATFORM_FIELD_NUMBER = 5;
+  private volatile java.lang.Object taskPlatform ;
   /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @return A list containing the taskPlatforms.
+   * <pre>
+   * 任务所属平台：APP，WEB，APP/WEB
+   * </pre>
+   *
+   * <code>string task_platform = 5;</code>
+   * @return The taskPlatform.
    */
-  public com.google.protobuf.ProtocolStringList
-      getTaskPlatformsList() {
-    return taskPlatforms ;
+  @java.lang.Override
+  public java.lang.String getTaskPlatform() {
+    java.lang.Object ref = taskPlatform ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskPlatform = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @return The count of taskPlatforms.
+   * <pre>
+   * 任务所属平台：APP，WEB，APP/WEB
+   * </pre>
+   *
+   * <code>string task_platform = 5;</code>
+   * @return The bytes for taskPlatform.
    */
-  public int getTaskPlatformsCount() {
-    return taskPlatforms .size();
-  }
-  /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @param index The index of the element to return.
-   * @return The taskPlatforms at the given index.
-   */
-  public java.lang.String getTaskPlatforms(int index) {
-    return taskPlatforms .get(index);
-  }
-  /**
-   * <code>repeated string task_platforms = 5;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the taskPlatforms at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskPlatformsBytes(int index) {
-    return taskPlatforms .getByteString(index);
+      getTaskPlatformBytes() {
+    java.lang.Object ref = taskPlatform ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskPlatform = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 6;
@@ -388,8 +393,8 @@ private static final long serialVersionUID = 0L;
     if (!getTaskContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskContent );
     }
-    for (int i = 0; i < taskPlatforms .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskPlatforms .getRaw(i));
+    if (!getTaskPlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskPlatform );
     }
     for (int i = 0; i < parameters .size(); i++) {
       output.writeMessage(6, parameters .get(i));
@@ -415,13 +420,8 @@ private static final long serialVersionUID = 0L;
     if (!getTaskContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskContent );
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < taskPlatforms .size(); i++) {
-        dataSize += computeStringSizeNoTag(taskPlatforms .getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getTaskPlatformsList().size();
+    if (!getTaskPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskPlatform );
     }
     for (int i = 0; i < parameters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -450,8 +450,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskBusiness())) return false;
     if (!getTaskContent()
         .equals(other.getTaskContent())) return false;
-    if (!getTaskPlatformsList()
-        .equals(other.getTaskPlatformsList())) return false;
+    if (!getTaskPlatform()
+        .equals(other.getTaskPlatform())) return false;
     if (!getParametersList()
         .equals(other.getParametersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -473,10 +473,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTaskBusiness().hashCode();
     hash = (37 * hash) + TASK_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getTaskContent().hashCode();
-    if (getTaskPlatformsCount() > 0) {
-      hash = (37 * hash) + TASK_PLATFORMS_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskPlatformsList().hashCode();
-    }
+    hash = (37 * hash) + TASK_PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskPlatform().hashCode();
     if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
@@ -623,11 +621,11 @@ private static final long serialVersionUID = 0L;
 
       taskContent = "";
 
-      taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
+      taskPlatform = "";
+
       if (parametersBuilder == null) {
         parameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000001);
       } else {
         parametersBuilder .clear();
       }
@@ -662,15 +660,11 @@ private static final long serialVersionUID = 0L;
       result.taskName = taskName ;
       result.taskBusiness = taskBusiness ;
       result.taskContent = taskContent ;
-      if (((bitField0 & 0x00000001) != 0)) {
-        taskPlatforms = taskPlatforms .getUnmodifiableView();
-        bitField0 = (bitField0 & ~0x00000001);
-      }
-      result.taskPlatforms = taskPlatforms ;
+      result.taskPlatform = taskPlatform ;
       if (parametersBuilder == null) {
-        if (((bitField0 & 0x00000002) != 0)) {
+        if (((bitField0 & 0x00000001) != 0)) {
           parameters = java.util.Collections.unmodifiableList(parameters );
-          bitField0 = (bitField0 & ~0x00000002);
+          bitField0 = (bitField0 & ~0x00000001);
         }
         result.parameters = parameters ;
       } else {
@@ -740,21 +734,15 @@ private static final long serialVersionUID = 0L;
         taskContent = other.taskContent ;
         onChanged();
       }
-      if (!other.taskPlatforms .isEmpty()) {
-        if (taskPlatforms .isEmpty()) {
-          taskPlatforms = other.taskPlatforms ;
-          bitField0 = (bitField0 & ~0x00000001);
-        } else {
-          ensureTaskPlatformsIsMutable();
-          taskPlatforms .addAll(other.taskPlatforms );
-        }
+      if (!other.getTaskPlatform().isEmpty()) {
+        taskPlatform = other.taskPlatform ;
         onChanged();
       }
       if (parametersBuilder == null) {
         if (!other.parameters .isEmpty()) {
           if (parameters .isEmpty()) {
             parameters = other.parameters ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000001);
           } else {
             ensureParametersIsMutable();
             parameters .addAll(other.parameters );
@@ -767,7 +755,7 @@ private static final long serialVersionUID = 0L;
             parametersBuilder .dispose();
             parametersBuilder = null;
             parameters = other.parameters ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000001);
             parametersBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getParametersFieldBuilder() : null;
@@ -1110,112 +1098,98 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureTaskPlatformsIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
-        taskPlatforms = new com.google.protobuf.LazyStringArrayList(taskPlatforms );
-        bitField0_ |= 0x00000001;
-       }
-    }
+    private java.lang.Object taskPlatform = "";
     /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @return A list containing the taskPlatforms.
+     * <pre>
+     * 任务所属平台：APP，WEB，APP/WEB
+     * </pre>
+     *
+     * <code>string task_platform = 5;</code>
+     * @return The taskPlatform.
      */
-    public com.google.protobuf.ProtocolStringList
-        getTaskPlatformsList() {
-      return taskPlatforms .getUnmodifiableView();
+    public java.lang.String getTaskPlatform() {
+      java.lang.Object ref = taskPlatform ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskPlatform = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @return The count of taskPlatforms.
-     */
-    public int getTaskPlatformsCount() {
-      return taskPlatforms .size();
-    }
-    /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param index The index of the element to return.
-     * @return The taskPlatforms at the given index.
-     */
-    public java.lang.String getTaskPlatforms(int index) {
-      return taskPlatforms .get(index);
-    }
-    /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the taskPlatforms at the given index.
+     * <pre>
+     * 任务所属平台：APP，WEB，APP/WEB
+     * </pre>
+     *
+     * <code>string task_platform = 5;</code>
+     * @return The bytes for taskPlatform.
      */
     public com.google.protobuf.ByteString
-        getTaskPlatformsBytes(int index) {
-      return taskPlatforms .getByteString(index);
+        getTaskPlatformBytes() {
+      java.lang.Object ref = taskPlatform ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskPlatform = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param index The index to set the value at.
-     * @param value The taskPlatforms to set.
+     * <pre>
+     * 任务所属平台：APP，WEB，APP/WEB
+     * </pre>
+     *
+     * <code>string task_platform = 5;</code>
+     * @param value The taskPlatform to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskPlatforms(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTaskPlatformsIsMutable();
-      taskPlatforms .set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param value The taskPlatforms to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTaskPlatforms(
+    public Builder setTaskPlatform(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureTaskPlatformsIsMutable();
-      taskPlatforms .add(value);
+  
+      taskPlatform = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param values The taskPlatforms to add.
+     * <pre>
+     * 任务所属平台：APP，WEB，APP/WEB
+     * </pre>
+     *
+     * <code>string task_platform = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder addAllTaskPlatforms(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTaskPlatformsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, taskPlatforms );
+    public Builder clearTaskPlatform() {
+      
+      taskPlatform = getDefaultInstance().getTaskPlatform();
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string task_platforms = 5;</code>
+     * <pre>
+     * 任务所属平台：APP，WEB，APP/WEB
+     * </pre>
+     *
+     * <code>string task_platform = 5;</code>
+     * @param value The bytes for taskPlatform to set.
      * @return This builder for chaining.
      */
-    public Builder clearTaskPlatforms() {
-      taskPlatforms = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string task_platforms = 5;</code>
-     * @param value The bytes of the taskPlatforms to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTaskPlatformsBytes(
+    public Builder setTaskPlatformBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureTaskPlatformsIsMutable();
-      taskPlatforms .add(value);
+      
+      taskPlatform = value;
       onChanged();
       return this;
     }
@@ -1223,9 +1197,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.task.TaskParameter> parameters =
       java.util.Collections.emptyList();
     private void ensureParametersIsMutable() {
-      if (!((bitField0 & 0x00000002) != 0)) {
+      if (!((bitField0 & 0x00000001) != 0)) {
         parameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TaskParameter>(parameters );
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1375,7 +1349,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearParameters() {
       if (parametersBuilder == null) {
         parameters = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
         parametersBuilder .clear();
@@ -1452,7 +1426,7 @@ private static final long serialVersionUID = 0L;
         parametersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.TaskParameter, com.zhijiejiaoyu.glory_api.task.TaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TaskParameterOrBuilder>(
                 parameters ,
-                ((bitField0 & 0x00000002) != 0),
+                ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         parameters = null;

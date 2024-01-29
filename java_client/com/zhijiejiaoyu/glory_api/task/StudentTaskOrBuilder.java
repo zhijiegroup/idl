@@ -153,29 +153,16 @@ public interface StudentTaskOrBuilder extends
   int getTeacherEvaluateScore();
 
   /**
-   * <code>repeated string task_platform = 11;</code>
-   * @return A list containing the taskPlatform.
+   * <code>string task_platform = 11;</code>
+   * @return The taskPlatform.
    */
-  java.util.List<java.lang.String>
-      getTaskPlatformList();
+  java.lang.String getTaskPlatform();
   /**
-   * <code>repeated string task_platform = 11;</code>
-   * @return The count of taskPlatform.
-   */
-  int getTaskPlatformCount();
-  /**
-   * <code>repeated string task_platform = 11;</code>
-   * @param index The index of the element to return.
-   * @return The taskPlatform at the given index.
-   */
-  java.lang.String getTaskPlatform(int index);
-  /**
-   * <code>repeated string task_platform = 11;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the taskPlatform at the given index.
+   * <code>string task_platform = 11;</code>
+   * @return The bytes for taskPlatform.
    */
   com.google.protobuf.ByteString
-      getTaskPlatformBytes(int index);
+      getTaskPlatformBytes();
 
   /**
    * <code>string system_task_key = 12;</code>

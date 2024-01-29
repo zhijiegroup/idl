@@ -159,7 +159,7 @@ class TaskConfig extends $pb.GeneratedMessage {
     $core.String? taskName,
     $core.String? taskBusiness,
     $core.String? taskContent,
-    $core.Iterable<$core.String>? taskPlatforms,
+    $core.String? taskPlatform,
     $core.Iterable<TaskParameter>? parameters,
   }) {
     final $result = create();
@@ -175,8 +175,8 @@ class TaskConfig extends $pb.GeneratedMessage {
     if (taskContent != null) {
       $result.taskContent = taskContent;
     }
-    if (taskPlatforms != null) {
-      $result.taskPlatforms.addAll(taskPlatforms);
+    if (taskPlatform != null) {
+      $result.taskPlatform = taskPlatform;
     }
     if (parameters != null) {
       $result.parameters.addAll(parameters);
@@ -192,7 +192,7 @@ class TaskConfig extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'taskName')
     ..aOS(3, _omitFieldNames ? '' : 'taskBusiness')
     ..aOS(4, _omitFieldNames ? '' : 'taskContent')
-    ..pPS(5, _omitFieldNames ? '' : 'taskPlatforms')
+    ..aOS(5, _omitFieldNames ? '' : 'taskPlatform')
     ..pc<TaskParameter>(6, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..hasRequiredFields = false
   ;
@@ -255,7 +255,13 @@ class TaskConfig extends $pb.GeneratedMessage {
   void clearTaskContent() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get taskPlatforms => $_getList(4);
+  $core.String get taskPlatform => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set taskPlatform($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTaskPlatform() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTaskPlatform() => clearField(5);
 
   @$pb.TagNumber(6)
   $core.List<TaskParameter> get parameters => $_getList(5);
@@ -411,6 +417,7 @@ class SystemTask extends $pb.GeneratedMessage {
     $core.String? systemTaskBusiness,
     $core.String? systemTaskContent,
     $core.String? systemTaskLink,
+    $core.String? systemTaskPlatform,
     $core.Iterable<SystemTaskParameter>? systemTaskParameters,
     $core.String? createdAt,
     $core.String? updatedAt,
@@ -435,6 +442,9 @@ class SystemTask extends $pb.GeneratedMessage {
     }
     if (systemTaskLink != null) {
       $result.systemTaskLink = systemTaskLink;
+    }
+    if (systemTaskPlatform != null) {
+      $result.systemTaskPlatform = systemTaskPlatform;
     }
     if (systemTaskParameters != null) {
       $result.systemTaskParameters.addAll(systemTaskParameters);
@@ -464,11 +474,12 @@ class SystemTask extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'systemTaskBusiness')
     ..aOS(5, _omitFieldNames ? '' : 'systemTaskContent')
     ..aOS(6, _omitFieldNames ? '' : 'systemTaskLink')
-    ..pc<SystemTaskParameter>(7, _omitFieldNames ? '' : 'systemTaskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
-    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$0.User>(10, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
-    ..aOM<$0.User>(11, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
+    ..aOS(7, _omitFieldNames ? '' : 'systemTaskPlatform')
+    ..pc<SystemTaskParameter>(8, _omitFieldNames ? '' : 'systemTaskParameters', $pb.PbFieldType.PM, subBuilder: SystemTaskParameter.create)
+    ..aOS(9, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(11, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(12, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -548,47 +559,56 @@ class SystemTask extends $pb.GeneratedMessage {
   void clearSystemTaskLink() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<SystemTaskParameter> get systemTaskParameters => $_getList(6);
+  $core.String get systemTaskPlatform => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set systemTaskPlatform($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSystemTaskPlatform() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSystemTaskPlatform() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get createdAt => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set createdAt($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasCreatedAt() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCreatedAt() => clearField(8);
+  $core.List<SystemTaskParameter> get systemTaskParameters => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.String get updatedAt => $_getSZ(8);
+  $core.String get createdAt => $_getSZ(8);
   @$pb.TagNumber(9)
-  set updatedAt($core.String v) { $_setString(8, v); }
+  set createdAt($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasUpdatedAt() => $_has(8);
+  $core.bool hasCreatedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearUpdatedAt() => clearField(9);
+  void clearCreatedAt() => clearField(9);
 
   @$pb.TagNumber(10)
-  $0.User get creator => $_getN(9);
+  $core.String get updatedAt => $_getSZ(9);
   @$pb.TagNumber(10)
-  set creator($0.User v) { setField(10, v); }
+  set updatedAt($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCreator() => $_has(9);
+  $core.bool hasUpdatedAt() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreator() => clearField(10);
-  @$pb.TagNumber(10)
-  $0.User ensureCreator() => $_ensure(9);
+  void clearUpdatedAt() => clearField(10);
 
   @$pb.TagNumber(11)
-  $0.User get updater => $_getN(10);
+  $0.User get creator => $_getN(10);
   @$pb.TagNumber(11)
-  set updater($0.User v) { setField(11, v); }
+  set creator($0.User v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasUpdater() => $_has(10);
+  $core.bool hasCreator() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdater() => clearField(11);
+  void clearCreator() => clearField(11);
   @$pb.TagNumber(11)
-  $0.User ensureUpdater() => $_ensure(10);
+  $0.User ensureCreator() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $0.User get updater => $_getN(11);
+  @$pb.TagNumber(12)
+  set updater($0.User v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasUpdater() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdater() => clearField(12);
+  @$pb.TagNumber(12)
+  $0.User ensureUpdater() => $_ensure(11);
 }
 
 class GetTaskConfigRequest extends $pb.GeneratedMessage {

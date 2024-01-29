@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
     studentTaskParameterResult = java.util.Collections.emptyList();
     studentTaskRequirementResult = java.util.Collections.emptyList();
     teacherFailedReason = "";
-    taskPlatform = com.google.protobuf.LazyStringArrayList.EMPTY;
+    taskPlatform = "";
     systemTaskKey = "";
     taskLinks = java.util.Collections.emptyList();
   }
@@ -129,11 +129,8 @@ private static final long serialVersionUID = 0L;
           }
           case 90: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0 & 0x00000008) != 0)) {
-              taskPlatform = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
-            }
-            taskPlatform .add(s);
+
+            taskPlatform = s;
             break;
           }
           case 98: {
@@ -156,9 +153,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 114: {
-            if (!((mutable_bitField0 & 0x00000010) != 0)) {
+            if (!((mutable_bitField0 & 0x00000008) != 0)) {
               taskLinks = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskLink>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000008;
             }
             taskLinks .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskLink.parser(), extensionRegistry));
@@ -215,9 +212,6 @@ private static final long serialVersionUID = 0L;
         studentTaskRequirementResult = java.util.Collections.unmodifiableList(studentTaskRequirementResult );
       }
       if (((mutable_bitField0 & 0x00000008) != 0)) {
-        taskPlatform = taskPlatform .getUnmodifiableView();
-      }
-      if (((mutable_bitField0 & 0x00000010) != 0)) {
         taskLinks = java.util.Collections.unmodifiableList(taskLinks );
       }
       this.unknownFields = unknownFields.build();
@@ -565,38 +559,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TASK_PLATFORM_FIELD_NUMBER = 11;
-  private com.google.protobuf.LazyStringList taskPlatform ;
+  private volatile java.lang.Object taskPlatform ;
   /**
-   * <code>repeated string task_platform = 11;</code>
-   * @return A list containing the taskPlatform.
+   * <code>string task_platform = 11;</code>
+   * @return The taskPlatform.
    */
-  public com.google.protobuf.ProtocolStringList
-      getTaskPlatformList() {
-    return taskPlatform ;
+  @java.lang.Override
+  public java.lang.String getTaskPlatform() {
+    java.lang.Object ref = taskPlatform ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskPlatform = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string task_platform = 11;</code>
-   * @return The count of taskPlatform.
+   * <code>string task_platform = 11;</code>
+   * @return The bytes for taskPlatform.
    */
-  public int getTaskPlatformCount() {
-    return taskPlatform .size();
-  }
-  /**
-   * <code>repeated string task_platform = 11;</code>
-   * @param index The index of the element to return.
-   * @return The taskPlatform at the given index.
-   */
-  public java.lang.String getTaskPlatform(int index) {
-    return taskPlatform .get(index);
-  }
-  /**
-   * <code>repeated string task_platform = 11;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the taskPlatform at the given index.
-   */
+  @java.lang.Override
   public com.google.protobuf.ByteString
-      getTaskPlatformBytes(int index) {
-    return taskPlatform .getByteString(index);
+      getTaskPlatformBytes() {
+    java.lang.Object ref = taskPlatform ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskPlatform = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 12;
@@ -799,8 +796,8 @@ private static final long serialVersionUID = 0L;
     if (teacherEvaluateScore != 0) {
       output.writeInt32(10, teacherEvaluateScore );
     }
-    for (int i = 0; i < taskPlatform .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, taskPlatform .getRaw(i));
+    if (!getTaskPlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, taskPlatform );
     }
     if (!getSystemTaskKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, systemTaskKey );
@@ -865,13 +862,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, teacherEvaluateScore );
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < taskPlatform .size(); i++) {
-        dataSize += computeStringSizeNoTag(taskPlatform .getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getTaskPlatformList().size();
+    if (!getTaskPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, taskPlatform );
     }
     if (!getSystemTaskKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, systemTaskKey );
@@ -927,8 +919,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTeacherFailedReason())) return false;
     if (getTeacherEvaluateScore()
         != other.getTeacherEvaluateScore()) return false;
-    if (!getTaskPlatformList()
-        .equals(other.getTaskPlatformList())) return false;
+    if (!getTaskPlatform()
+        .equals(other.getTaskPlatform())) return false;
     if (!getSystemTaskKey()
         .equals(other.getSystemTaskKey())) return false;
     if (hasTeacherTask() != other.hasTeacherTask()) return false;
@@ -986,10 +978,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTeacherFailedReason().hashCode();
     hash = (37 * hash) + TEACHER_EVALUATE_SCORE_FIELD_NUMBER;
     hash = (53 * hash) + getTeacherEvaluateScore();
-    if (getTaskPlatformCount() > 0) {
-      hash = (37 * hash) + TASK_PLATFORM_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskPlatformList().hashCode();
-    }
+    hash = (37 * hash) + TASK_PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskPlatform().hashCode();
     hash = (37 * hash) + SYSTEM_TASK_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getSystemTaskKey().hashCode();
     if (hasTeacherTask()) {
@@ -1172,8 +1162,8 @@ private static final long serialVersionUID = 0L;
 
       teacherEvaluateScore = 0;
 
-      taskPlatform = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000008);
+      taskPlatform = "";
+
       systemTaskKey = "";
 
       if (teacherTaskBuilder == null) {
@@ -1184,7 +1174,7 @@ private static final long serialVersionUID = 0L;
       }
       if (taskLinksBuilder == null) {
         taskLinks = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000010);
+        bitField0 = (bitField0 & ~0x00000008);
       } else {
         taskLinksBuilder .clear();
       }
@@ -1257,10 +1247,6 @@ private static final long serialVersionUID = 0L;
       }
       result.teacherFailedReason = teacherFailedReason ;
       result.teacherEvaluateScore = teacherEvaluateScore ;
-      if (((bitField0 & 0x00000008) != 0)) {
-        taskPlatform = taskPlatform .getUnmodifiableView();
-        bitField0 = (bitField0 & ~0x00000008);
-      }
       result.taskPlatform = taskPlatform ;
       result.systemTaskKey = systemTaskKey ;
       if (teacherTaskBuilder == null) {
@@ -1269,9 +1255,9 @@ private static final long serialVersionUID = 0L;
         result.teacherTask = teacherTaskBuilder .build();
       }
       if (taskLinksBuilder == null) {
-        if (((bitField0 & 0x00000010) != 0)) {
+        if (((bitField0 & 0x00000008) != 0)) {
           taskLinks = java.util.Collections.unmodifiableList(taskLinks );
-          bitField0 = (bitField0 & ~0x00000010);
+          bitField0 = (bitField0 & ~0x00000008);
         }
         result.taskLinks = taskLinks ;
       } else {
@@ -1423,14 +1409,8 @@ private static final long serialVersionUID = 0L;
       if (other.getTeacherEvaluateScore() != 0) {
         setTeacherEvaluateScore(other.getTeacherEvaluateScore());
       }
-      if (!other.taskPlatform .isEmpty()) {
-        if (taskPlatform .isEmpty()) {
-          taskPlatform = other.taskPlatform ;
-          bitField0 = (bitField0 & ~0x00000008);
-        } else {
-          ensureTaskPlatformIsMutable();
-          taskPlatform .addAll(other.taskPlatform );
-        }
+      if (!other.getTaskPlatform().isEmpty()) {
+        taskPlatform = other.taskPlatform ;
         onChanged();
       }
       if (!other.getSystemTaskKey().isEmpty()) {
@@ -1444,7 +1424,7 @@ private static final long serialVersionUID = 0L;
         if (!other.taskLinks .isEmpty()) {
           if (taskLinks .isEmpty()) {
             taskLinks = other.taskLinks ;
-            bitField0 = (bitField0 & ~0x00000010);
+            bitField0 = (bitField0 & ~0x00000008);
           } else {
             ensureTaskLinksIsMutable();
             taskLinks .addAll(other.taskLinks );
@@ -1457,7 +1437,7 @@ private static final long serialVersionUID = 0L;
             taskLinksBuilder .dispose();
             taskLinksBuilder = null;
             taskLinks = other.taskLinks ;
-            bitField0 = (bitField0 & ~0x00000010);
+            bitField0 = (bitField0 & ~0x00000008);
             taskLinksBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTaskLinksFieldBuilder() : null;
@@ -2534,112 +2514,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList taskPlatform = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureTaskPlatformIsMutable() {
-      if (!((bitField0 & 0x00000008) != 0)) {
-        taskPlatform = new com.google.protobuf.LazyStringArrayList(taskPlatform );
-        bitField0_ |= 0x00000008;
-       }
-    }
+    private java.lang.Object taskPlatform = "";
     /**
-     * <code>repeated string task_platform = 11;</code>
-     * @return A list containing the taskPlatform.
+     * <code>string task_platform = 11;</code>
+     * @return The taskPlatform.
      */
-    public com.google.protobuf.ProtocolStringList
-        getTaskPlatformList() {
-      return taskPlatform .getUnmodifiableView();
+    public java.lang.String getTaskPlatform() {
+      java.lang.Object ref = taskPlatform ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskPlatform = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>repeated string task_platform = 11;</code>
-     * @return The count of taskPlatform.
-     */
-    public int getTaskPlatformCount() {
-      return taskPlatform .size();
-    }
-    /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param index The index of the element to return.
-     * @return The taskPlatform at the given index.
-     */
-    public java.lang.String getTaskPlatform(int index) {
-      return taskPlatform .get(index);
-    }
-    /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the taskPlatform at the given index.
+     * <code>string task_platform = 11;</code>
+     * @return The bytes for taskPlatform.
      */
     public com.google.protobuf.ByteString
-        getTaskPlatformBytes(int index) {
-      return taskPlatform .getByteString(index);
+        getTaskPlatformBytes() {
+      java.lang.Object ref = taskPlatform ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskPlatform = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param index The index to set the value at.
+     * <code>string task_platform = 11;</code>
      * @param value The taskPlatform to set.
      * @return This builder for chaining.
      */
     public Builder setTaskPlatform(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTaskPlatformIsMutable();
-      taskPlatform .set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param value The taskPlatform to add.
-     * @return This builder for chaining.
-     */
-    public Builder addTaskPlatform(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureTaskPlatformIsMutable();
-      taskPlatform .add(value);
+  
+      taskPlatform = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param values The taskPlatform to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllTaskPlatform(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTaskPlatformIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, taskPlatform );
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string task_platform = 11;</code>
+     * <code>string task_platform = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskPlatform() {
-      taskPlatform = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000008);
+      
+      taskPlatform = getDefaultInstance().getTaskPlatform();
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string task_platform = 11;</code>
-     * @param value The bytes of the taskPlatform to add.
+     * <code>string task_platform = 11;</code>
+     * @param value The bytes for taskPlatform to set.
      * @return This builder for chaining.
      */
-    public Builder addTaskPlatformBytes(
+    public Builder setTaskPlatformBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureTaskPlatformIsMutable();
-      taskPlatform .add(value);
+      
+      taskPlatform = value;
       onChanged();
       return this;
     }
@@ -2842,9 +2788,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> taskLinks =
       java.util.Collections.emptyList();
     private void ensureTaskLinksIsMutable() {
-      if (!((bitField0 & 0x00000010) != 0)) {
+      if (!((bitField0 & 0x00000008) != 0)) {
         taskLinks = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskLink>(taskLinks );
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -2994,7 +2940,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskLinks() {
       if (taskLinksBuilder == null) {
         taskLinks = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000010);
+        bitField0 = (bitField0 & ~0x00000008);
         onChanged();
       } else {
         taskLinksBuilder .clear();
@@ -3071,7 +3017,7 @@ private static final long serialVersionUID = 0L;
         taskLinksBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.StudentTaskLink, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder>(
                 taskLinks ,
-                ((bitField0 & 0x00000010) != 0),
+                ((bitField0 & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         taskLinks = null;

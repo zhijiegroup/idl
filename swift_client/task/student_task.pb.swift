@@ -105,7 +105,7 @@ struct GloryApi_StudentTask {
 
   var teacherEvaluateScore: Int32 = 0
 
-  var taskPlatform: [String] = []
+  var taskPlatform: String = String()
 
   var systemTaskKey: String = String()
 
@@ -654,7 +654,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 8: try { try decoder.decodeRepeatedMessageField(value: &self.studentTaskRequirementResult) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.teacherFailedReason) }()
       case 10: try { try decoder.decodeSingularInt32Field(value: &self.teacherEvaluateScore) }()
-      case 11: try { try decoder.decodeRepeatedStringField(value: &self.taskPlatform) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.taskPlatform) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.systemTaskKey) }()
       case 13: try { try decoder.decodeSingularMessageField(value: &self._teacherTask) }()
       case 14: try { try decoder.decodeRepeatedMessageField(value: &self.taskLinks) }()
@@ -701,7 +701,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       try visitor.visitSingularInt32Field(value: self.teacherEvaluateScore, fieldNumber: 10)
     }
     if !self.taskPlatform.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.taskPlatform, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.taskPlatform, fieldNumber: 11)
     }
     if !self.systemTaskKey.isEmpty {
       try visitor.visitSingularStringField(value: self.systemTaskKey, fieldNumber: 12)

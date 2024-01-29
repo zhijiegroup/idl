@@ -87,7 +87,7 @@ const StudentTask$json = {
     {'1': 'student_task_requirement_result', '3': 8, '4': 3, '5': 11, '6': '.glory_api.StudentTaskRequirementResult', '10': 'studentTaskRequirementResult'},
     {'1': 'teacher_failed_reason', '3': 9, '4': 1, '5': 9, '10': 'teacherFailedReason'},
     {'1': 'teacher_evaluate_score', '3': 10, '4': 1, '5': 5, '10': 'teacherEvaluateScore'},
-    {'1': 'task_platform', '3': 11, '4': 3, '5': 9, '10': 'taskPlatform'},
+    {'1': 'task_platform', '3': 11, '4': 1, '5': 9, '10': 'taskPlatform'},
     {'1': 'system_task_key', '3': 12, '4': 1, '5': 9, '10': 'systemTaskKey'},
     {'1': 'teacher_task', '3': 13, '4': 1, '5': 11, '6': '.glory_api.TeacherTask', '10': 'teacherTask'},
     {'1': 'task_links', '3': 14, '4': 3, '5': 11, '6': '.glory_api.StudentTaskLink', '10': 'taskLinks'},
@@ -108,7 +108,7 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'ADKAsyJy5nbG9yeV9hcGkuU3R1ZGVudFRhc2tSZXF1aXJlbWVudFJlc3VsdFIcc3R1ZGVudFRh'
     'c2tSZXF1aXJlbWVudFJlc3VsdBIyChV0ZWFjaGVyX2ZhaWxlZF9yZWFzb24YCSABKAlSE3RlYW'
     'NoZXJGYWlsZWRSZWFzb24SNAoWdGVhY2hlcl9ldmFsdWF0ZV9zY29yZRgKIAEoBVIUdGVhY2hl'
-    'ckV2YWx1YXRlU2NvcmUSIwoNdGFza19wbGF0Zm9ybRgLIAMoCVIMdGFza1BsYXRmb3JtEiYKD3'
+    'ckV2YWx1YXRlU2NvcmUSIwoNdGFza19wbGF0Zm9ybRgLIAEoCVIMdGFza1BsYXRmb3JtEiYKD3'
     'N5c3RlbV90YXNrX2tleRgMIAEoCVINc3lzdGVtVGFza0tleRI5Cgx0ZWFjaGVyX3Rhc2sYDSAB'
     'KAsyFi5nbG9yeV9hcGkuVGVhY2hlclRhc2tSC3RlYWNoZXJUYXNrEjkKCnRhc2tfbGlua3MYDi'
     'ADKAsyGi5nbG9yeV9hcGkuU3R1ZGVudFRhc2tMaW5rUgl0YXNrTGlua3MSKQoHc3R1ZGVudBgP'

@@ -220,6 +220,7 @@ class TeacherTask extends $pb.GeneratedMessage {
     $core.String? teacherTaskEnd,
     $core.int? teacherTaskType,
     $fixnum.Int64? teacherTaskTemplateId,
+    $core.String? systemTaskKey,
     $core.String? teacherTaskContent,
     $core.Iterable<$core.String>? teacherTaskRequirements,
     $core.String? teacherTaskLink,
@@ -260,6 +261,9 @@ class TeacherTask extends $pb.GeneratedMessage {
     }
     if (teacherTaskTemplateId != null) {
       $result.teacherTaskTemplateId = teacherTaskTemplateId;
+    }
+    if (systemTaskKey != null) {
+      $result.systemTaskKey = systemTaskKey;
     }
     if (teacherTaskContent != null) {
       $result.teacherTaskContent = teacherTaskContent;
@@ -313,18 +317,19 @@ class TeacherTask extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'teacherTaskEnd')
     ..a<$core.int>(8, _omitFieldNames ? '' : 'teacherTaskType', $pb.PbFieldType.O3)
     ..aInt64(9, _omitFieldNames ? '' : 'teacherTaskTemplateId')
-    ..aOS(10, _omitFieldNames ? '' : 'teacherTaskContent')
-    ..pPS(11, _omitFieldNames ? '' : 'teacherTaskRequirements')
-    ..aOS(12, _omitFieldNames ? '' : 'teacherTaskLink')
-    ..aOS(13, _omitFieldNames ? '' : 'teacherTaskStatus')
-    ..aInt64(14, _omitFieldNames ? '' : 'totalTaskCount')
-    ..aInt64(15, _omitFieldNames ? '' : 'totalSubmitCount')
-    ..aInt64(16, _omitFieldNames ? '' : 'totalPassCount')
-    ..pc<TeacherTaskParameter>(17, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskParameter.create)
-    ..aOS(18, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(19, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$0.User>(20, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
-    ..aOM<$0.User>(21, _omitFieldNames ? '' : 'updator', subBuilder: $0.User.create)
+    ..aOS(10, _omitFieldNames ? '' : 'systemTaskKey')
+    ..aOS(11, _omitFieldNames ? '' : 'teacherTaskContent')
+    ..pPS(12, _omitFieldNames ? '' : 'teacherTaskRequirements')
+    ..aOS(13, _omitFieldNames ? '' : 'teacherTaskLink')
+    ..aOS(14, _omitFieldNames ? '' : 'teacherTaskStatus')
+    ..aInt64(15, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(16, _omitFieldNames ? '' : 'totalSubmitCount')
+    ..aInt64(17, _omitFieldNames ? '' : 'totalPassCount')
+    ..pc<TeacherTaskParameter>(18, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskParameter.create)
+    ..aOS(19, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(20, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(21, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(22, _omitFieldNames ? '' : 'updator', subBuilder: $0.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -425,104 +430,113 @@ class TeacherTask extends $pb.GeneratedMessage {
   void clearTeacherTaskTemplateId() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get teacherTaskContent => $_getSZ(9);
+  $core.String get systemTaskKey => $_getSZ(9);
   @$pb.TagNumber(10)
-  set teacherTaskContent($core.String v) { $_setString(9, v); }
+  set systemTaskKey($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasTeacherTaskContent() => $_has(9);
+  $core.bool hasSystemTaskKey() => $_has(9);
   @$pb.TagNumber(10)
-  void clearTeacherTaskContent() => clearField(10);
+  void clearSystemTaskKey() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.List<$core.String> get teacherTaskRequirements => $_getList(10);
+  $core.String get teacherTaskContent => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set teacherTaskContent($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasTeacherTaskContent() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTeacherTaskContent() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get teacherTaskLink => $_getSZ(11);
-  @$pb.TagNumber(12)
-  set teacherTaskLink($core.String v) { $_setString(11, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasTeacherTaskLink() => $_has(11);
-  @$pb.TagNumber(12)
-  void clearTeacherTaskLink() => clearField(12);
+  $core.List<$core.String> get teacherTaskRequirements => $_getList(11);
 
   @$pb.TagNumber(13)
-  $core.String get teacherTaskStatus => $_getSZ(12);
+  $core.String get teacherTaskLink => $_getSZ(12);
   @$pb.TagNumber(13)
-  set teacherTaskStatus($core.String v) { $_setString(12, v); }
+  set teacherTaskLink($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasTeacherTaskStatus() => $_has(12);
+  $core.bool hasTeacherTaskLink() => $_has(12);
   @$pb.TagNumber(13)
-  void clearTeacherTaskStatus() => clearField(13);
+  void clearTeacherTaskLink() => clearField(13);
 
   @$pb.TagNumber(14)
-  $fixnum.Int64 get totalTaskCount => $_getI64(13);
+  $core.String get teacherTaskStatus => $_getSZ(13);
   @$pb.TagNumber(14)
-  set totalTaskCount($fixnum.Int64 v) { $_setInt64(13, v); }
+  set teacherTaskStatus($core.String v) { $_setString(13, v); }
   @$pb.TagNumber(14)
-  $core.bool hasTotalTaskCount() => $_has(13);
+  $core.bool hasTeacherTaskStatus() => $_has(13);
   @$pb.TagNumber(14)
-  void clearTotalTaskCount() => clearField(14);
+  void clearTeacherTaskStatus() => clearField(14);
 
   @$pb.TagNumber(15)
-  $fixnum.Int64 get totalSubmitCount => $_getI64(14);
+  $fixnum.Int64 get totalTaskCount => $_getI64(14);
   @$pb.TagNumber(15)
-  set totalSubmitCount($fixnum.Int64 v) { $_setInt64(14, v); }
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasTotalSubmitCount() => $_has(14);
+  $core.bool hasTotalTaskCount() => $_has(14);
   @$pb.TagNumber(15)
-  void clearTotalSubmitCount() => clearField(15);
+  void clearTotalTaskCount() => clearField(15);
 
   @$pb.TagNumber(16)
-  $fixnum.Int64 get totalPassCount => $_getI64(15);
+  $fixnum.Int64 get totalSubmitCount => $_getI64(15);
   @$pb.TagNumber(16)
-  set totalPassCount($fixnum.Int64 v) { $_setInt64(15, v); }
+  set totalSubmitCount($fixnum.Int64 v) { $_setInt64(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasTotalPassCount() => $_has(15);
+  $core.bool hasTotalSubmitCount() => $_has(15);
   @$pb.TagNumber(16)
-  void clearTotalPassCount() => clearField(16);
+  void clearTotalSubmitCount() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.List<TeacherTaskParameter> get taskParameters => $_getList(16);
+  $fixnum.Int64 get totalPassCount => $_getI64(16);
+  @$pb.TagNumber(17)
+  set totalPassCount($fixnum.Int64 v) { $_setInt64(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasTotalPassCount() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearTotalPassCount() => clearField(17);
 
   @$pb.TagNumber(18)
-  $core.String get createdAt => $_getSZ(17);
-  @$pb.TagNumber(18)
-  set createdAt($core.String v) { $_setString(17, v); }
-  @$pb.TagNumber(18)
-  $core.bool hasCreatedAt() => $_has(17);
-  @$pb.TagNumber(18)
-  void clearCreatedAt() => clearField(18);
+  $core.List<TeacherTaskParameter> get taskParameters => $_getList(17);
 
   @$pb.TagNumber(19)
-  $core.String get updatedAt => $_getSZ(18);
+  $core.String get createdAt => $_getSZ(18);
   @$pb.TagNumber(19)
-  set updatedAt($core.String v) { $_setString(18, v); }
+  set createdAt($core.String v) { $_setString(18, v); }
   @$pb.TagNumber(19)
-  $core.bool hasUpdatedAt() => $_has(18);
+  $core.bool hasCreatedAt() => $_has(18);
   @$pb.TagNumber(19)
-  void clearUpdatedAt() => clearField(19);
+  void clearCreatedAt() => clearField(19);
 
   @$pb.TagNumber(20)
-  $0.User get creator => $_getN(19);
+  $core.String get updatedAt => $_getSZ(19);
   @$pb.TagNumber(20)
-  set creator($0.User v) { setField(20, v); }
+  set updatedAt($core.String v) { $_setString(19, v); }
   @$pb.TagNumber(20)
-  $core.bool hasCreator() => $_has(19);
+  $core.bool hasUpdatedAt() => $_has(19);
   @$pb.TagNumber(20)
-  void clearCreator() => clearField(20);
-  @$pb.TagNumber(20)
-  $0.User ensureCreator() => $_ensure(19);
+  void clearUpdatedAt() => clearField(20);
 
   @$pb.TagNumber(21)
-  $0.User get updator => $_getN(20);
+  $0.User get creator => $_getN(20);
   @$pb.TagNumber(21)
-  set updator($0.User v) { setField(21, v); }
+  set creator($0.User v) { setField(21, v); }
   @$pb.TagNumber(21)
-  $core.bool hasUpdator() => $_has(20);
+  $core.bool hasCreator() => $_has(20);
   @$pb.TagNumber(21)
-  void clearUpdator() => clearField(21);
+  void clearCreator() => clearField(21);
   @$pb.TagNumber(21)
-  $0.User ensureUpdator() => $_ensure(20);
+  $0.User ensureCreator() => $_ensure(20);
+
+  @$pb.TagNumber(22)
+  $0.User get updator => $_getN(21);
+  @$pb.TagNumber(22)
+  set updator($0.User v) { setField(22, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasUpdator() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearUpdator() => clearField(22);
+  @$pb.TagNumber(22)
+  $0.User ensureUpdator() => $_ensure(21);
 }
 
 class CreateTeacherTaskRequest extends $pb.GeneratedMessage {

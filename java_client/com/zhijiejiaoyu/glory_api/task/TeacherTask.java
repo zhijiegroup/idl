@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     teacherTaskClasses = java.util.Collections.emptyList();
     teacherTaskStart = "";
     teacherTaskEnd = "";
+    systemTaskKey = "";
     teacherTaskContent = "";
     teacherTaskRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
     teacherTaskLink = "";
@@ -117,10 +118,16 @@ private static final long serialVersionUID = 0L;
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            teacherTaskContent = s;
+            systemTaskKey = s;
             break;
           }
           case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            teacherTaskContent = s;
+            break;
+          }
+          case 98: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               teacherTaskRequirements = new com.google.protobuf.LazyStringArrayList();
@@ -129,34 +136,34 @@ private static final long serialVersionUID = 0L;
             teacherTaskRequirements .add(s);
             break;
           }
-          case 98: {
+          case 106: {
             java.lang.String s = input.readStringRequireUtf8();
 
             teacherTaskLink = s;
             break;
           }
-          case 106: {
+          case 114: {
             java.lang.String s = input.readStringRequireUtf8();
 
             teacherTaskStatus = s;
             break;
           }
-          case 112: {
+          case 120: {
 
             totalTaskCount = input.readInt64();
             break;
           }
-          case 120: {
+          case 128: {
 
             totalSubmitCount = input.readInt64();
             break;
           }
-          case 128: {
+          case 136: {
 
             totalPassCount = input.readInt64();
             break;
           }
-          case 138: {
+          case 146: {
             if (!((mutable_bitField0 & 0x00000004) != 0)) {
               taskParameters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter>();
               mutable_bitField0_ |= 0x00000004;
@@ -165,19 +172,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.parser(), extensionRegistry));
             break;
           }
-          case 146: {
+          case 154: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
             break;
           }
-          case 154: {
+          case 162: {
             java.lang.String s = input.readStringRequireUtf8();
 
             updatedAt = s;
             break;
           }
-          case 162: {
+          case 170: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (creator != null) {
               subBuilder = creator .toBuilder();
@@ -190,7 +197,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 170: {
+          case 178: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (updator != null) {
               subBuilder = updator .toBuilder();
@@ -484,10 +491,48 @@ private static final long serialVersionUID = 0L;
     return teacherTaskTemplateId ;
   }
 
-  public static final int TEACHER_TASK_CONTENT_FIELD_NUMBER = 10;
+  public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object systemTaskKey ;
+  /**
+   * <code>string system_task_key = 10;</code>
+   * @return The systemTaskKey.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemTaskKey() {
+    java.lang.Object ref = systemTaskKey ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemTaskKey = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string system_task_key = 10;</code>
+   * @return The bytes for systemTaskKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSystemTaskKeyBytes() {
+    java.lang.Object ref = systemTaskKey ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      systemTaskKey = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEACHER_TASK_CONTENT_FIELD_NUMBER = 11;
   private volatile java.lang.Object teacherTaskContent ;
   /**
-   * <code>string teacher_task_content = 10;</code>
+   * <code>string teacher_task_content = 11;</code>
    * @return The teacherTaskContent.
    */
   @java.lang.Override
@@ -504,7 +549,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string teacher_task_content = 10;</code>
+   * <code>string teacher_task_content = 11;</code>
    * @return The bytes for teacherTaskContent.
    */
   @java.lang.Override
@@ -522,10 +567,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TEACHER_TASK_REQUIREMENTS_FIELD_NUMBER = 11;
+  public static final int TEACHER_TASK_REQUIREMENTS_FIELD_NUMBER = 12;
   private com.google.protobuf.LazyStringList teacherTaskRequirements ;
   /**
-   * <code>repeated string teacher_task_requirements = 11;</code>
+   * <code>repeated string teacher_task_requirements = 12;</code>
    * @return A list containing the teacherTaskRequirements.
    */
   public com.google.protobuf.ProtocolStringList
@@ -533,14 +578,14 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements ;
   }
   /**
-   * <code>repeated string teacher_task_requirements = 11;</code>
+   * <code>repeated string teacher_task_requirements = 12;</code>
    * @return The count of teacherTaskRequirements.
    */
   public int getTeacherTaskRequirementsCount() {
     return teacherTaskRequirements .size();
   }
   /**
-   * <code>repeated string teacher_task_requirements = 11;</code>
+   * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the element to return.
    * @return The teacherTaskRequirements at the given index.
    */
@@ -548,7 +593,7 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements .get(index);
   }
   /**
-   * <code>repeated string teacher_task_requirements = 11;</code>
+   * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the value to return.
    * @return The bytes of the teacherTaskRequirements at the given index.
    */
@@ -557,10 +602,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements .getByteString(index);
   }
 
-  public static final int TEACHER_TASK_LINK_FIELD_NUMBER = 12;
+  public static final int TEACHER_TASK_LINK_FIELD_NUMBER = 13;
   private volatile java.lang.Object teacherTaskLink ;
   /**
-   * <code>string teacher_task_link = 12;</code>
+   * <code>string teacher_task_link = 13;</code>
    * @return The teacherTaskLink.
    */
   @java.lang.Override
@@ -577,7 +622,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string teacher_task_link = 12;</code>
+   * <code>string teacher_task_link = 13;</code>
    * @return The bytes for teacherTaskLink.
    */
   @java.lang.Override
@@ -595,14 +640,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TEACHER_TASK_STATUS_FIELD_NUMBER = 13;
+  public static final int TEACHER_TASK_STATUS_FIELD_NUMBER = 14;
   private volatile java.lang.Object teacherTaskStatus ;
   /**
    * <pre>
    * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
    * </pre>
    *
-   * <code>string teacher_task_status = 13;</code>
+   * <code>string teacher_task_status = 14;</code>
    * @return The teacherTaskStatus.
    */
   @java.lang.Override
@@ -623,7 +668,7 @@ private static final long serialVersionUID = 0L;
    * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
    * </pre>
    *
-   * <code>string teacher_task_status = 13;</code>
+   * <code>string teacher_task_status = 14;</code>
    * @return The bytes for teacherTaskStatus.
    */
   @java.lang.Override
@@ -641,14 +686,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TOTAL_TASK_COUNT_FIELD_NUMBER = 14;
+  public static final int TOTAL_TASK_COUNT_FIELD_NUMBER = 15;
   private long totalTaskCount ;
   /**
    * <pre>
    * 总任务数
    * </pre>
    *
-   * <code>int64 total_task_count = 14;</code>
+   * <code>int64 total_task_count = 15;</code>
    * @return The totalTaskCount.
    */
   @java.lang.Override
@@ -656,14 +701,14 @@ private static final long serialVersionUID = 0L;
     return totalTaskCount ;
   }
 
-  public static final int TOTAL_SUBMIT_COUNT_FIELD_NUMBER = 15;
+  public static final int TOTAL_SUBMIT_COUNT_FIELD_NUMBER = 16;
   private long totalSubmitCount ;
   /**
    * <pre>
    * 总提交数
    * </pre>
    *
-   * <code>int64 total_submit_count = 15;</code>
+   * <code>int64 total_submit_count = 16;</code>
    * @return The totalSubmitCount.
    */
   @java.lang.Override
@@ -671,14 +716,14 @@ private static final long serialVersionUID = 0L;
     return totalSubmitCount ;
   }
 
-  public static final int TOTAL_PASS_COUNT_FIELD_NUMBER = 16;
+  public static final int TOTAL_PASS_COUNT_FIELD_NUMBER = 17;
   private long totalPassCount ;
   /**
    * <pre>
    * 总通过数
    * </pre>
    *
-   * <code>int64 total_pass_count = 16;</code>
+   * <code>int64 total_pass_count = 17;</code>
    * @return The totalPassCount.
    */
   @java.lang.Override
@@ -686,17 +731,17 @@ private static final long serialVersionUID = 0L;
     return totalPassCount ;
   }
 
-  public static final int TASK_PARAMETERS_FIELD_NUMBER = 17;
+  public static final int TASK_PARAMETERS_FIELD_NUMBER = 18;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> taskParameters ;
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> getTaskParametersList() {
     return taskParameters ;
   }
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> 
@@ -704,21 +749,21 @@ private static final long serialVersionUID = 0L;
     return taskParameters ;
   }
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
   public int getTaskParametersCount() {
     return taskParameters .size();
   }
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter getTaskParameters(int index) {
     return taskParameters .get(index);
   }
   /**
-   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+   * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder getTaskParametersOrBuilder(
@@ -726,10 +771,10 @@ private static final long serialVersionUID = 0L;
     return taskParameters .get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 18;
+  public static final int CREATED_AT_FIELD_NUMBER = 19;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 19;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -746,7 +791,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 19;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -764,10 +809,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 19;
+  public static final int UPDATED_AT_FIELD_NUMBER = 20;
   private volatile java.lang.Object updatedAt ;
   /**
-   * <code>string updated_at = 19;</code>
+   * <code>string updated_at = 20;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -784,7 +829,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string updated_at = 19;</code>
+   * <code>string updated_at = 20;</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -802,10 +847,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATOR_FIELD_NUMBER = 20;
+  public static final int CREATOR_FIELD_NUMBER = 21;
   private com.zhijiejiaoyu.glory_api.user.User creator ;
   /**
-   * <code>.glory_api.User creator = 20;</code>
+   * <code>.glory_api.User creator = 21;</code>
    * @return Whether the creator field is set.
    */
   @java.lang.Override
@@ -813,7 +858,7 @@ private static final long serialVersionUID = 0L;
     return creator != null;
   }
   /**
-   * <code>.glory_api.User creator = 20;</code>
+   * <code>.glory_api.User creator = 21;</code>
    * @return The creator.
    */
   @java.lang.Override
@@ -821,17 +866,17 @@ private static final long serialVersionUID = 0L;
     return creator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
   }
   /**
-   * <code>.glory_api.User creator = 20;</code>
+   * <code>.glory_api.User creator = 21;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
     return getCreator();
   }
 
-  public static final int UPDATOR_FIELD_NUMBER = 21;
+  public static final int UPDATOR_FIELD_NUMBER = 22;
   private com.zhijiejiaoyu.glory_api.user.User updator ;
   /**
-   * <code>.glory_api.User updator = 21;</code>
+   * <code>.glory_api.User updator = 22;</code>
    * @return Whether the updator field is set.
    */
   @java.lang.Override
@@ -839,7 +884,7 @@ private static final long serialVersionUID = 0L;
     return updator != null;
   }
   /**
-   * <code>.glory_api.User updator = 21;</code>
+   * <code>.glory_api.User updator = 22;</code>
    * @return The updator.
    */
   @java.lang.Override
@@ -847,7 +892,7 @@ private static final long serialVersionUID = 0L;
     return updator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updator ;
   }
   /**
-   * <code>.glory_api.User updator = 21;</code>
+   * <code>.glory_api.User updator = 22;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder() {
@@ -895,41 +940,44 @@ private static final long serialVersionUID = 0L;
     if (teacherTaskTemplateId != 0L) {
       output.writeInt64(9, teacherTaskTemplateId );
     }
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, systemTaskKey );
+    }
     if (!getTeacherTaskContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, teacherTaskContent );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, teacherTaskContent );
     }
     for (int i = 0; i < teacherTaskRequirements .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, teacherTaskRequirements .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, teacherTaskRequirements .getRaw(i));
     }
     if (!getTeacherTaskLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, teacherTaskLink );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, teacherTaskLink );
     }
     if (!getTeacherTaskStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, teacherTaskStatus );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, teacherTaskStatus );
     }
     if (totalTaskCount != 0L) {
-      output.writeInt64(14, totalTaskCount );
+      output.writeInt64(15, totalTaskCount );
     }
     if (totalSubmitCount != 0L) {
-      output.writeInt64(15, totalSubmitCount );
+      output.writeInt64(16, totalSubmitCount );
     }
     if (totalPassCount != 0L) {
-      output.writeInt64(16, totalPassCount );
+      output.writeInt64(17, totalPassCount );
     }
     for (int i = 0; i < taskParameters .size(); i++) {
-      output.writeMessage(17, taskParameters .get(i));
+      output.writeMessage(18, taskParameters .get(i));
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, updatedAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, updatedAt );
     }
     if (creator != null) {
-      output.writeMessage(20, getCreator());
+      output.writeMessage(21, getCreator());
     }
     if (updator != null) {
-      output.writeMessage(21, getUpdator());
+      output.writeMessage(22, getUpdator());
     }
     unknownFields.writeTo(output);
   }
@@ -972,8 +1020,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, teacherTaskTemplateId );
     }
+    if (!getSystemTaskKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, systemTaskKey );
+    }
     if (!getTeacherTaskContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, teacherTaskContent );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, teacherTaskContent );
     }
     {
       int dataSize = 0;
@@ -984,40 +1035,40 @@ private static final long serialVersionUID = 0L;
       size += 1 * getTeacherTaskRequirementsList().size();
     }
     if (!getTeacherTaskLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, teacherTaskLink );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, teacherTaskLink );
     }
     if (!getTeacherTaskStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, teacherTaskStatus );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, teacherTaskStatus );
     }
     if (totalTaskCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(14, totalTaskCount );
+        .computeInt64Size(15, totalTaskCount );
     }
     if (totalSubmitCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(15, totalSubmitCount );
+        .computeInt64Size(16, totalSubmitCount );
     }
     if (totalPassCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(16, totalPassCount );
+        .computeInt64Size(17, totalPassCount );
     }
     for (int i = 0; i < taskParameters .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, taskParameters .get(i));
+        .computeMessageSize(18, taskParameters .get(i));
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, updatedAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, updatedAt );
     }
     if (creator != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, getCreator());
+        .computeMessageSize(21, getCreator());
     }
     if (updator != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, getUpdator());
+        .computeMessageSize(22, getUpdator());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1052,6 +1103,8 @@ private static final long serialVersionUID = 0L;
         != other.getTeacherTaskType()) return false;
     if (getTeacherTaskTemplateId()
         != other.getTeacherTaskTemplateId()) return false;
+    if (!getSystemTaskKey()
+        .equals(other.getSystemTaskKey())) return false;
     if (!getTeacherTaskContent()
         .equals(other.getTeacherTaskContent())) return false;
     if (!getTeacherTaskRequirementsList()
@@ -1116,6 +1169,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEACHER_TASK_TEMPLATE_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTeacherTaskTemplateId());
+    hash = (37 * hash) + SYSTEM_TASK_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemTaskKey().hashCode();
     hash = (37 * hash) + TEACHER_TASK_CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getTeacherTaskContent().hashCode();
     if (getTeacherTaskRequirementsCount() > 0) {
@@ -1308,6 +1363,8 @@ private static final long serialVersionUID = 0L;
 
       teacherTaskTemplateId = 0L;
 
+      systemTaskKey = "";
+
       teacherTaskContent = "";
 
       teacherTaskRequirements = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1388,6 +1445,7 @@ private static final long serialVersionUID = 0L;
       result.teacherTaskEnd = teacherTaskEnd ;
       result.teacherTaskType = teacherTaskType ;
       result.teacherTaskTemplateId = teacherTaskTemplateId ;
+      result.systemTaskKey = systemTaskKey ;
       result.teacherTaskContent = teacherTaskContent ;
       if (((bitField0 & 0x00000002) != 0)) {
         teacherTaskRequirements = teacherTaskRequirements .getUnmodifiableView();
@@ -1521,6 +1579,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTeacherTaskTemplateId() != 0L) {
         setTeacherTaskTemplateId(other.getTeacherTaskTemplateId());
+      }
+      if (!other.getSystemTaskKey().isEmpty()) {
+        systemTaskKey = other.systemTaskKey ;
+        onChanged();
       }
       if (!other.getTeacherTaskContent().isEmpty()) {
         teacherTaskContent = other.teacherTaskContent ;
@@ -2303,9 +2365,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object systemTaskKey = "";
+    /**
+     * <code>string system_task_key = 10;</code>
+     * @return The systemTaskKey.
+     */
+    public java.lang.String getSystemTaskKey() {
+      java.lang.Object ref = systemTaskKey ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemTaskKey = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string system_task_key = 10;</code>
+     * @return The bytes for systemTaskKey.
+     */
+    public com.google.protobuf.ByteString
+        getSystemTaskKeyBytes() {
+      java.lang.Object ref = systemTaskKey ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        systemTaskKey = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string system_task_key = 10;</code>
+     * @param value The systemTaskKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      systemTaskKey = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_task_key = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemTaskKey() {
+      
+      systemTaskKey = getDefaultInstance().getSystemTaskKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_task_key = 10;</code>
+     * @param value The bytes for systemTaskKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemTaskKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      systemTaskKey = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object teacherTaskContent = "";
     /**
-     * <code>string teacher_task_content = 10;</code>
+     * <code>string teacher_task_content = 11;</code>
      * @return The teacherTaskContent.
      */
     public java.lang.String getTeacherTaskContent() {
@@ -2321,7 +2459,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string teacher_task_content = 10;</code>
+     * <code>string teacher_task_content = 11;</code>
      * @return The bytes for teacherTaskContent.
      */
     public com.google.protobuf.ByteString
@@ -2338,7 +2476,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string teacher_task_content = 10;</code>
+     * <code>string teacher_task_content = 11;</code>
      * @param value The teacherTaskContent to set.
      * @return This builder for chaining.
      */
@@ -2353,7 +2491,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string teacher_task_content = 10;</code>
+     * <code>string teacher_task_content = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearTeacherTaskContent() {
@@ -2363,7 +2501,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string teacher_task_content = 10;</code>
+     * <code>string teacher_task_content = 11;</code>
      * @param value The bytes for teacherTaskContent to set.
      * @return This builder for chaining.
      */
@@ -2387,7 +2525,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @return A list containing the teacherTaskRequirements.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2395,14 +2533,14 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .getUnmodifiableView();
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @return The count of teacherTaskRequirements.
      */
     public int getTeacherTaskRequirementsCount() {
       return teacherTaskRequirements .size();
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index of the element to return.
      * @return The teacherTaskRequirements at the given index.
      */
@@ -2410,7 +2548,7 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .get(index);
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index of the value to return.
      * @return The bytes of the teacherTaskRequirements at the given index.
      */
@@ -2419,7 +2557,7 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .getByteString(index);
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index to set the value at.
      * @param value The teacherTaskRequirements to set.
      * @return This builder for chaining.
@@ -2435,7 +2573,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param value The teacherTaskRequirements to add.
      * @return This builder for chaining.
      */
@@ -2450,7 +2588,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param values The teacherTaskRequirements to add.
      * @return This builder for chaining.
      */
@@ -2463,7 +2601,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearTeacherTaskRequirements() {
@@ -2473,7 +2611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string teacher_task_requirements = 11;</code>
+     * <code>repeated string teacher_task_requirements = 12;</code>
      * @param value The bytes of the teacherTaskRequirements to add.
      * @return This builder for chaining.
      */
@@ -2491,7 +2629,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskLink = "";
     /**
-     * <code>string teacher_task_link = 12;</code>
+     * <code>string teacher_task_link = 13;</code>
      * @return The teacherTaskLink.
      */
     public java.lang.String getTeacherTaskLink() {
@@ -2507,7 +2645,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string teacher_task_link = 12;</code>
+     * <code>string teacher_task_link = 13;</code>
      * @return The bytes for teacherTaskLink.
      */
     public com.google.protobuf.ByteString
@@ -2524,7 +2662,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string teacher_task_link = 12;</code>
+     * <code>string teacher_task_link = 13;</code>
      * @param value The teacherTaskLink to set.
      * @return This builder for chaining.
      */
@@ -2539,7 +2677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string teacher_task_link = 12;</code>
+     * <code>string teacher_task_link = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearTeacherTaskLink() {
@@ -2549,7 +2687,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string teacher_task_link = 12;</code>
+     * <code>string teacher_task_link = 13;</code>
      * @param value The bytes for teacherTaskLink to set.
      * @return This builder for chaining.
      */
@@ -2571,7 +2709,7 @@ private static final long serialVersionUID = 0L;
      * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
      * </pre>
      *
-     * <code>string teacher_task_status = 13;</code>
+     * <code>string teacher_task_status = 14;</code>
      * @return The teacherTaskStatus.
      */
     public java.lang.String getTeacherTaskStatus() {
@@ -2591,7 +2729,7 @@ private static final long serialVersionUID = 0L;
      * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
      * </pre>
      *
-     * <code>string teacher_task_status = 13;</code>
+     * <code>string teacher_task_status = 14;</code>
      * @return The bytes for teacherTaskStatus.
      */
     public com.google.protobuf.ByteString
@@ -2612,7 +2750,7 @@ private static final long serialVersionUID = 0L;
      * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
      * </pre>
      *
-     * <code>string teacher_task_status = 13;</code>
+     * <code>string teacher_task_status = 14;</code>
      * @param value The teacherTaskStatus to set.
      * @return This builder for chaining.
      */
@@ -2631,7 +2769,7 @@ private static final long serialVersionUID = 0L;
      * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
      * </pre>
      *
-     * <code>string teacher_task_status = 13;</code>
+     * <code>string teacher_task_status = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearTeacherTaskStatus() {
@@ -2645,7 +2783,7 @@ private static final long serialVersionUID = 0L;
      * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
      * </pre>
      *
-     * <code>string teacher_task_status = 13;</code>
+     * <code>string teacher_task_status = 14;</code>
      * @param value The bytes for teacherTaskStatus to set.
      * @return This builder for chaining.
      */
@@ -2667,7 +2805,7 @@ private static final long serialVersionUID = 0L;
      * 总任务数
      * </pre>
      *
-     * <code>int64 total_task_count = 14;</code>
+     * <code>int64 total_task_count = 15;</code>
      * @return The totalTaskCount.
      */
     @java.lang.Override
@@ -2679,7 +2817,7 @@ private static final long serialVersionUID = 0L;
      * 总任务数
      * </pre>
      *
-     * <code>int64 total_task_count = 14;</code>
+     * <code>int64 total_task_count = 15;</code>
      * @param value The totalTaskCount to set.
      * @return This builder for chaining.
      */
@@ -2694,7 +2832,7 @@ private static final long serialVersionUID = 0L;
      * 总任务数
      * </pre>
      *
-     * <code>int64 total_task_count = 14;</code>
+     * <code>int64 total_task_count = 15;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalTaskCount() {
@@ -2710,7 +2848,7 @@ private static final long serialVersionUID = 0L;
      * 总提交数
      * </pre>
      *
-     * <code>int64 total_submit_count = 15;</code>
+     * <code>int64 total_submit_count = 16;</code>
      * @return The totalSubmitCount.
      */
     @java.lang.Override
@@ -2722,7 +2860,7 @@ private static final long serialVersionUID = 0L;
      * 总提交数
      * </pre>
      *
-     * <code>int64 total_submit_count = 15;</code>
+     * <code>int64 total_submit_count = 16;</code>
      * @param value The totalSubmitCount to set.
      * @return This builder for chaining.
      */
@@ -2737,7 +2875,7 @@ private static final long serialVersionUID = 0L;
      * 总提交数
      * </pre>
      *
-     * <code>int64 total_submit_count = 15;</code>
+     * <code>int64 total_submit_count = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalSubmitCount() {
@@ -2753,7 +2891,7 @@ private static final long serialVersionUID = 0L;
      * 总通过数
      * </pre>
      *
-     * <code>int64 total_pass_count = 16;</code>
+     * <code>int64 total_pass_count = 17;</code>
      * @return The totalPassCount.
      */
     @java.lang.Override
@@ -2765,7 +2903,7 @@ private static final long serialVersionUID = 0L;
      * 总通过数
      * </pre>
      *
-     * <code>int64 total_pass_count = 16;</code>
+     * <code>int64 total_pass_count = 17;</code>
      * @param value The totalPassCount to set.
      * @return This builder for chaining.
      */
@@ -2780,7 +2918,7 @@ private static final long serialVersionUID = 0L;
      * 总通过数
      * </pre>
      *
-     * <code>int64 total_pass_count = 16;</code>
+     * <code>int64 total_pass_count = 17;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalPassCount() {
@@ -2803,7 +2941,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> taskParametersBuilder ;
 
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> getTaskParametersList() {
       if (taskParametersBuilder == null) {
@@ -2813,7 +2951,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public int getTaskParametersCount() {
       if (taskParametersBuilder == null) {
@@ -2823,7 +2961,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter getTaskParameters(int index) {
       if (taskParametersBuilder == null) {
@@ -2833,7 +2971,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder setTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter value) {
@@ -2850,7 +2988,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder setTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder builderForValue) {
@@ -2864,7 +3002,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter value) {
       if (taskParametersBuilder == null) {
@@ -2880,7 +3018,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter value) {
@@ -2897,7 +3035,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
         com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder builderForValue) {
@@ -2911,7 +3049,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
         int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder builderForValue) {
@@ -2925,7 +3063,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addAllTaskParameters(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> values) {
@@ -2940,7 +3078,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder clearTaskParameters() {
       if (taskParametersBuilder == null) {
@@ -2953,7 +3091,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder removeTaskParameters(int index) {
       if (taskParametersBuilder == null) {
@@ -2966,14 +3104,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder getTaskParametersBuilder(
         int index) {
       return getTaskParametersFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder getTaskParametersOrBuilder(
         int index) {
@@ -2983,7 +3121,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> 
          getTaskParametersOrBuilderList() {
@@ -2994,14 +3132,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder addTaskParametersBuilder() {
       return getTaskParametersFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder addTaskParametersBuilder(
         int index) {
@@ -3009,7 +3147,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 17;</code>
+     * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder> 
          getTaskParametersBuilderList() {
@@ -3032,7 +3170,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 19;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -3048,7 +3186,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 19;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -3065,7 +3203,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 19;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -3080,7 +3218,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 19;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -3090,7 +3228,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 19;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -3108,7 +3246,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt = "";
     /**
-     * <code>string updated_at = 19;</code>
+     * <code>string updated_at = 20;</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -3124,7 +3262,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 19;</code>
+     * <code>string updated_at = 20;</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -3141,7 +3279,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 19;</code>
+     * <code>string updated_at = 20;</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -3156,7 +3294,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 19;</code>
+     * <code>string updated_at = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
@@ -3166,7 +3304,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 19;</code>
+     * <code>string updated_at = 20;</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -3186,14 +3324,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> creatorBuilder ;
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      * @return Whether the creator field is set.
      */
     public boolean hasCreator() {
       return creatorBuilder != null || creator != null;
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      * @return The creator.
      */
     public com.zhijiejiaoyu.glory_api.user.User getCreator() {
@@ -3204,7 +3342,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public Builder setCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -3220,7 +3358,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public Builder setCreator(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -3234,7 +3372,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public Builder mergeCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -3252,7 +3390,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public Builder clearCreator() {
       if (creatorBuilder == null) {
@@ -3266,7 +3404,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getCreatorBuilder() {
       
@@ -3274,7 +3412,7 @@ private static final long serialVersionUID = 0L;
       return getCreatorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
       if (creatorBuilder != null) {
@@ -3285,7 +3423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 20;</code>
+     * <code>.glory_api.User creator = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -3305,14 +3443,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> updatorBuilder ;
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      * @return Whether the updator field is set.
      */
     public boolean hasUpdator() {
       return updatorBuilder != null || updator != null;
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      * @return The updator.
      */
     public com.zhijiejiaoyu.glory_api.user.User getUpdator() {
@@ -3323,7 +3461,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public Builder setUpdator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updatorBuilder == null) {
@@ -3339,7 +3477,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public Builder setUpdator(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -3353,7 +3491,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public Builder mergeUpdator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updatorBuilder == null) {
@@ -3371,7 +3509,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public Builder clearUpdator() {
       if (updatorBuilder == null) {
@@ -3385,7 +3523,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getUpdatorBuilder() {
       
@@ -3393,7 +3531,7 @@ private static final long serialVersionUID = 0L;
       return getUpdatorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder() {
       if (updatorBuilder != null) {
@@ -3404,7 +3542,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updator = 21;</code>
+     * <code>.glory_api.User updator = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

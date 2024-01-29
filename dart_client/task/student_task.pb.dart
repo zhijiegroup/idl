@@ -342,7 +342,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
     $core.String? teacherFailedReason,
     $core.int? teacherEvaluateScore,
-    $core.Iterable<$core.String>? taskPlatform,
+    $core.String? taskPlatform,
     $core.String? systemTaskKey,
     $0.TeacherTask? teacherTask,
     $core.Iterable<StudentTaskLink>? taskLinks,
@@ -381,7 +381,7 @@ class StudentTask extends $pb.GeneratedMessage {
       $result.teacherEvaluateScore = teacherEvaluateScore;
     }
     if (taskPlatform != null) {
-      $result.taskPlatform.addAll(taskPlatform);
+      $result.taskPlatform = taskPlatform;
     }
     if (systemTaskKey != null) {
       $result.systemTaskKey = systemTaskKey;
@@ -415,7 +415,7 @@ class StudentTask extends $pb.GeneratedMessage {
     ..pc<StudentTaskRequirementResult>(8, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
     ..aOS(9, _omitFieldNames ? '' : 'teacherFailedReason')
     ..a<$core.int>(10, _omitFieldNames ? '' : 'teacherEvaluateScore', $pb.PbFieldType.O3)
-    ..pPS(11, _omitFieldNames ? '' : 'taskPlatform')
+    ..aOS(11, _omitFieldNames ? '' : 'taskPlatform')
     ..aOS(12, _omitFieldNames ? '' : 'systemTaskKey')
     ..aOM<$0.TeacherTask>(13, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
     ..pc<StudentTaskLink>(14, _omitFieldNames ? '' : 'taskLinks', $pb.PbFieldType.PM, subBuilder: StudentTaskLink.create)
@@ -518,7 +518,13 @@ class StudentTask extends $pb.GeneratedMessage {
   void clearTeacherEvaluateScore() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.List<$core.String> get taskPlatform => $_getList(10);
+  $core.String get taskPlatform => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set taskPlatform($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasTaskPlatform() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTaskPlatform() => clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get systemTaskKey => $_getSZ(11);

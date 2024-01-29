@@ -59,7 +59,8 @@ struct GloryApi_TaskConfig {
 
   var taskContent: String = String()
 
-  var taskPlatforms: [String] = []
+  /// 任务所属平台：APP，WEB，APP/WEB
+  var taskPlatform: String = String()
 
   var parameters: [GloryApi_TaskParameter] = []
 
@@ -110,6 +111,8 @@ struct GloryApi_SystemTask {
   var systemTaskContent: String = String()
 
   var systemTaskLink: String = String()
+
+  var systemTaskPlatform: String = String()
 
   var systemTaskParameters: [GloryApi_SystemTaskParameter] = []
 
@@ -561,7 +564,7 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     2: .standard(proto: "task_name"),
     3: .standard(proto: "task_business"),
     4: .standard(proto: "task_content"),
-    5: .standard(proto: "task_platforms"),
+    5: .standard(proto: "task_platform"),
     6: .same(proto: "parameters"),
   ]
 
@@ -575,7 +578,7 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 2: try { try decoder.decodeSingularStringField(value: &self.taskName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.taskBusiness) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.taskContent) }()
-      case 5: try { try decoder.decodeRepeatedStringField(value: &self.taskPlatforms) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.taskPlatform) }()
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.parameters) }()
       default: break
       }
@@ -595,8 +598,8 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.taskContent.isEmpty {
       try visitor.visitSingularStringField(value: self.taskContent, fieldNumber: 4)
     }
-    if !self.taskPlatforms.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.taskPlatforms, fieldNumber: 5)
+    if !self.taskPlatform.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskPlatform, fieldNumber: 5)
     }
     if !self.parameters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.parameters, fieldNumber: 6)
@@ -609,7 +612,7 @@ extension GloryApi_TaskConfig: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.taskName != rhs.taskName {return false}
     if lhs.taskBusiness != rhs.taskBusiness {return false}
     if lhs.taskContent != rhs.taskContent {return false}
-    if lhs.taskPlatforms != rhs.taskPlatforms {return false}
+    if lhs.taskPlatform != rhs.taskPlatform {return false}
     if lhs.parameters != rhs.parameters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -699,11 +702,12 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     4: .standard(proto: "system_task_business"),
     5: .standard(proto: "system_task_content"),
     6: .standard(proto: "system_task_link"),
-    7: .standard(proto: "system_task_parameters"),
-    8: .standard(proto: "created_at"),
-    9: .standard(proto: "updated_at"),
-    10: .same(proto: "creator"),
-    11: .same(proto: "updater"),
+    7: .standard(proto: "system_task_platform"),
+    8: .standard(proto: "system_task_parameters"),
+    9: .standard(proto: "created_at"),
+    10: .standard(proto: "updated_at"),
+    11: .same(proto: "creator"),
+    12: .same(proto: "updater"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -718,11 +722,12 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 4: try { try decoder.decodeSingularStringField(value: &self.systemTaskBusiness) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.systemTaskContent) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.systemTaskLink) }()
-      case 7: try { try decoder.decodeRepeatedMessageField(value: &self.systemTaskParameters) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
-      case 10: try { try decoder.decodeSingularMessageField(value: &self._creator) }()
-      case 11: try { try decoder.decodeSingularMessageField(value: &self._updater) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.systemTaskPlatform) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.systemTaskParameters) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 11: try { try decoder.decodeSingularMessageField(value: &self._creator) }()
+      case 12: try { try decoder.decodeSingularMessageField(value: &self._updater) }()
       default: break
       }
     }
@@ -751,20 +756,23 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.systemTaskLink.isEmpty {
       try visitor.visitSingularStringField(value: self.systemTaskLink, fieldNumber: 6)
     }
+    if !self.systemTaskPlatform.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemTaskPlatform, fieldNumber: 7)
+    }
     if !self.systemTaskParameters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.systemTaskParameters, fieldNumber: 7)
+      try visitor.visitRepeatedMessageField(value: self.systemTaskParameters, fieldNumber: 8)
     }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
     }
     if !self.updatedAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 9)
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 10)
     }
     try { if let v = self._creator {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
     } }()
     try { if let v = self._updater {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -776,6 +784,7 @@ extension GloryApi_SystemTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.systemTaskBusiness != rhs.systemTaskBusiness {return false}
     if lhs.systemTaskContent != rhs.systemTaskContent {return false}
     if lhs.systemTaskLink != rhs.systemTaskLink {return false}
+    if lhs.systemTaskPlatform != rhs.systemTaskPlatform {return false}
     if lhs.systemTaskParameters != rhs.systemTaskParameters {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
