@@ -47,6 +47,19 @@ message TeacherTask {
   User updator = 22;
 }
 
+message TeacherTaskProgress {
+  string teacher_task_status = 1; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  int32 teacher_task_evaluate_type = 2; // 任务评价类型：1. 仅机器评分；2. 仅老师评分；3. 包含机器与老师
+  int64 total_task_count = 3; // 任务总参与人数
+  int64 student_submit_count = 4; // 学生提交任务数
+  int64 student_not_submit_count = 5; // 学生未提交任务数
+  int64 system_evaluated_count = 6; // 机器评价任务数
+  int64 system_not_evaluated_count = 7; // 机器待评价任务数
+  int64 teacher_evaluated_count = 8; // 老师评价任务数
+  int64 teacher_not_evaluated_count = 9; // 老师待评价任务数
+  int64 total_evaluated_count = 10; // 整体完成评价数
+}
+
 message CreateTeacherTaskRequest {
   base.BaseRequest base_request = 1;
   TeacherTask teacher_task = 2;
@@ -87,6 +100,16 @@ message GetTeacherTaskRequest {
 message GetTeacherTaskResponse {
   base.BaseResponse base_resp = 1;
   TeacherTask teacher_task = 2;
+}
+
+message GetTeacherTaskProgressRequest {
+  base.BaseRequest base_request = 1;
+  int64 teacher_task_id = 2;
+}
+
+message GetTeacherTaskProgressResponse {
+  base.BaseResponse base_resp = 1;
+  TeacherTaskProgress teacher_task_progress = 2;
 }
 
 message DeleteTeacherTaskRequest {

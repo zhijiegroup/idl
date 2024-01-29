@@ -1421,6 +1421,9 @@ service glory_api {
   rpc GetTeacherTask(GetTeacherTaskRequest) returns (GetTeacherTaskResponse) {
     option (api.post) = '/api/task/get_teacher_task';
   }
+  rpc GetTeacherTaskProgress(GetTeacherTaskProgressRequest) returns (GetTeacherTaskProgressResponse) {
+    option (api.post) = '/api/task/get_teacher_task_progress';
+  }
   rpc DeleteTeacherTask(DeleteTeacherTaskRequest) returns (DeleteTeacherTaskResponse) {
     option (api.post) = '/api/task/delete_teacher_task';
   }
