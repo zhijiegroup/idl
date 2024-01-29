@@ -27,6 +27,19 @@ final $typed_data.Uint8List studentTaskLinkDescriptor = $convert.base64Decode(
     'Cg9TdHVkZW50VGFza0xpbmsSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgN1cmwYAiABKAlSA3VybA'
     '==');
 
+@$core.Deprecated('Use timeRangeDescriptor instead')
+const TimeRange$json = {
+  '1': 'TimeRange',
+  '2': [
+    {'1': 'start', '3': 1, '4': 1, '5': 9, '10': 'start'},
+    {'1': 'end', '3': 2, '4': 1, '5': 9, '10': 'end'},
+  ],
+};
+
+/// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode(
+    'CglUaW1lUmFuZ2USFAoFc3RhcnQYASABKAlSBXN0YXJ0EhAKA2VuZBgCIAEoCVIDZW5k');
+
 @$core.Deprecated('Use studentTaskParameterResultDescriptor instead')
 const StudentTaskParameterResult$json = {
   '1': 'StudentTaskParameterResult',
@@ -134,18 +147,23 @@ final $typed_data.Uint8List teacherRequirementEvaluationDescriptor = $convert.ba
 const ListStudentTaskRequest$json = {
   '1': 'ListStudentTaskRequest',
   '2': [
-    {'1': 'keyword', '3': 1, '4': 1, '5': 9, '10': 'keyword'},
-    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'type', '3': 1, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'task_start', '3': 5, '4': 1, '5': 9, '10': 'taskStart'},
+    {'1': 'task_end', '3': 6, '4': 1, '5': 9, '10': 'taskEnd'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `ListStudentTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listStudentTaskRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EhgKB2tleXdvcmQYASABKAlSB2tleXdvcmQSGgoIcG'
-    'xhdGZvcm0YAiABKAlSCHBsYXRmb3JtEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEjcKCnBhZ2lu'
-    'YXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EhIKBHR5cGUYASABKAVSBHR5cGUSGAoHa2V5d29yZB'
+    'gCIAEoCVIHa2V5d29yZBIaCghwbGF0Zm9ybRgDIAEoCVIIcGxhdGZvcm0SFgoGc3RhdHVzGAQg'
+    'ASgJUgZzdGF0dXMSHQoKdGFza19zdGFydBgFIAEoCVIJdGFza1N0YXJ0EhkKCHRhc2tfZW5kGA'
+    'YgASgJUgd0YXNrRW5kEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1'
+    'ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listStudentTaskResponseDescriptor instead')
 const ListStudentTaskResponse$json = {
@@ -233,6 +251,13 @@ const TeacherListStudentTaskRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'task_evaluate_type', '3': 2, '4': 1, '5': 5, '10': 'taskEvaluateType'},
     {'1': 'task_evaluate_status', '3': 3, '4': 1, '5': 5, '10': 'taskEvaluateStatus'},
+    {'1': 'keyword', '3': 4, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'class_id', '3': 5, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'task_start', '3': 7, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskStart'},
+    {'1': 'task_end', '3': 8, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskEnd'},
+    {'1': 'task_submitted_at', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskSubmittedAt'},
+    {'1': 'task_evaluated_at', '3': 10, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskEvaluatedAt'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -242,8 +267,13 @@ final $typed_data.Uint8List teacherListStudentTaskRequestDescriptor = $convert.b
     'Ch1UZWFjaGVyTGlzdFN0dWRlbnRUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIsChJ0YXNrX2V2YWx1YXRlX3R5cGUYAiAB'
     'KAVSEHRhc2tFdmFsdWF0ZVR5cGUSMAoUdGFza19ldmFsdWF0ZV9zdGF0dXMYAyABKAVSEnRhc2'
-    'tFdmFsdWF0ZVN0YXR1cxI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVx'
-    'dWVzdFIKcGFnaW5hdGlvbg==');
+    'tFdmFsdWF0ZVN0YXR1cxIYCgdrZXl3b3JkGAQgASgJUgdrZXl3b3JkEhkKCGNsYXNzX2lkGAUg'
+    'ASgDUgdjbGFzc0lkEhYKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEjMKCnRhc2tfc3RhcnQYByABKA'
+    'syFC5nbG9yeV9hcGkuVGltZVJhbmdlUgl0YXNrU3RhcnQSLwoIdGFza19lbmQYCCABKAsyFC5n'
+    'bG9yeV9hcGkuVGltZVJhbmdlUgd0YXNrRW5kEkAKEXRhc2tfc3VibWl0dGVkX2F0GAkgASgLMh'
+    'QuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza1N1Ym1pdHRlZEF0EkAKEXRhc2tfZXZhbHVhdGVk'
+    'X2F0GAogASgLMhQuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza0V2YWx1YXRlZEF0EjcKCnBhZ2'
+    'luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use teacherListStudentTaskResponseDescriptor instead')
 const TeacherListStudentTaskResponse$json = {

@@ -1308,3 +1308,47 @@ final $typed_data.Uint8List getUserMajorResponseDescriptor = $convert.base64Deco
     'Nwb25zZVIIYmFzZVJlc3ASMwoKdXNlcl9tYWpvchgCIAMoCzIULmdsb3J5X2FwaS5Vc2VyTWFq'
     'b3JSCXVzZXJNYWpvcg==');
 
+@$core.Deprecated('Use ownAccessDescriptor instead')
+const OwnAccess$json = {
+  '1': 'OwnAccess',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'logo', '3': 3, '4': 1, '5': 9, '10': 'logo'},
+    {'1': 'remark', '3': 4, '4': 1, '5': 9, '10': 'remark'},
+    {'1': 'type', '3': 5, '4': 1, '5': 9, '10': 'type'},
+  ],
+};
+
+/// Descriptor for `OwnAccess`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ownAccessDescriptor = $convert.base64Decode(
+    'CglPd25BY2Nlc3MSDgoCaWQYASABKANSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbx'
+    'gDIAEoCVIEbG9nbxIWCgZyZW1hcmsYBCABKAlSBnJlbWFyaxISCgR0eXBlGAUgASgJUgR0eXBl');
+
+@$core.Deprecated('Use listOwnAccessRequestDescriptor instead')
+const ListOwnAccessRequest$json = {
+  '1': 'ListOwnAccessRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'access', '3': 2, '4': 1, '5': 9, '10': 'access'},
+  ],
+};
+
+/// Descriptor for `ListOwnAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOwnAccessRequestDescriptor = $convert.base64Decode(
+    'ChRMaXN0T3duQWNjZXNzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIWCgZhY2Nlc3MYAiABKAlSBmFjY2Vzcw==');
+
+@$core.Deprecated('Use listOwnAccessResponseDescriptor instead')
+const ListOwnAccessResponse$json = {
+  '1': 'ListOwnAccessResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `ListOwnAccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOwnAccessResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0T3duQWNjZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNw');
+

@@ -13,6 +13,11 @@ export interface StudentTaskLink {
   url?: string;
 }
 
+export interface TimeRange {
+  start?: string;
+  end?: string;
+}
+
 export interface StudentTaskParameterResult {
   task_parameter_id?: string;
   task_parameter_key?: string;
@@ -57,10 +62,15 @@ export interface TeacherRequirementEvaluation {
 }
 
 export interface ListStudentTaskRequest {
+  /** 0. 全部；1. 未提交；2. 已评价 */
+  type?: number;
   keyword?: string;
   /** 任务所属平台："APP"，"WEB"，"APP/WEB"，"" */
   platform?: string;
+  /** 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc */
   status?: string;
+  task_start?: string;
+  task_end?: string;
   pagination?: base.PaginationRequest;
 }
 
@@ -97,6 +107,13 @@ export interface TeacherListStudentTaskRequest {
   task_evaluate_type?: number;
   /** 任务评价状态：1. 待评价；2. 已评价；3. 未提交 */
   task_evaluate_status?: number;
+  keyword?: string;
+  class_id?: string;
+  status?: string;
+  task_start?: TimeRange;
+  task_end?: TimeRange;
+  task_submitted_at?: TimeRange;
+  task_evaluated_at?: TimeRange;
   pagination?: base.PaginationRequest;
 }
 
