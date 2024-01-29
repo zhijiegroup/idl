@@ -83,6 +83,8 @@ message ListTeacherTaskRequest {
   string keyword = 2;
   int64 class_id = 3;
   string status = 4; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  string created_start = 5; // 任务创建时间开始
+  string created_end = 6; // 任务创建时间结束
   base.PaginationRequest pagination = 100;
 }
 
