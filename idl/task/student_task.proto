@@ -57,6 +57,9 @@ message TeacherRequirementEvaluation {
 }
 
 message ListStudentTaskRequest {
+  string keyword = 1;
+  string platform = 2; // 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  string status = 3;
   base.PaginationRequest pagination = 100;
 }
 

@@ -67,6 +67,9 @@ message UpdateTeacherTaskResponse {
 
 message ListTeacherTaskRequest {
   base.BaseRequest base_request = 1;
+  string keyword = 2;
+  int64 class_id = 3;
+  string status = 4; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
   base.PaginationRequest pagination = 100;
 }
 
