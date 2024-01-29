@@ -8,12 +8,22 @@ public interface ListStudentTaskRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string keyword = 1;</code>
+   * <pre>
+   * 0. 全部；1. 未提交；2. 已评价
+   * </pre>
+   *
+   * <code>int32 type = 1;</code>
+   * @return The type.
+   */
+  int getType();
+
+  /**
+   * <code>string keyword = 2;</code>
    * @return The keyword.
    */
   java.lang.String getKeyword();
   /**
-   * <code>string keyword = 1;</code>
+   * <code>string keyword = 2;</code>
    * @return The bytes for keyword.
    */
   com.google.protobuf.ByteString
@@ -24,7 +34,7 @@ public interface ListStudentTaskRequestOrBuilder extends
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string platform = 2;</code>
+   * <code>string platform = 3;</code>
    * @return The platform.
    */
   java.lang.String getPlatform();
@@ -33,23 +43,55 @@ public interface ListStudentTaskRequestOrBuilder extends
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string platform = 2;</code>
+   * <code>string platform = 3;</code>
    * @return The bytes for platform.
    */
   com.google.protobuf.ByteString
       getPlatformBytes();
 
   /**
-   * <code>string status = 3;</code>
+   * <pre>
+   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
+   * <code>string status = 4;</code>
    * @return The status.
    */
   java.lang.String getStatus();
   /**
-   * <code>string status = 3;</code>
+   * <pre>
+   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
+   * <code>string status = 4;</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
+
+  /**
+   * <code>string task_start = 5;</code>
+   * @return The taskStart.
+   */
+  java.lang.String getTaskStart();
+  /**
+   * <code>string task_start = 5;</code>
+   * @return The bytes for taskStart.
+   */
+  com.google.protobuf.ByteString
+      getTaskStartBytes();
+
+  /**
+   * <code>string task_end = 6;</code>
+   * @return The taskEnd.
+   */
+  java.lang.String getTaskEnd();
+  /**
+   * <code>string task_end = 6;</code>
+   * @return The bytes for taskEnd.
+   */
+  com.google.protobuf.ByteString
+      getTaskEndBytes();
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

@@ -82,6 +82,70 @@ class StudentTaskLink extends $pb.GeneratedMessage {
   void clearUrl() => clearField(2);
 }
 
+class TimeRange extends $pb.GeneratedMessage {
+  factory TimeRange({
+    $core.String? start,
+    $core.String? end,
+  }) {
+    final $result = create();
+    if (start != null) {
+      $result.start = start;
+    }
+    if (end != null) {
+      $result.end = end;
+    }
+    return $result;
+  }
+  TimeRange._() : super();
+  factory TimeRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'start')
+    ..aOS(2, _omitFieldNames ? '' : 'end')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TimeRange clone() => TimeRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TimeRange copyWith(void Function(TimeRange) updates) => super.copyWith((message) => updates(message as TimeRange)) as TimeRange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TimeRange create() => TimeRange._();
+  TimeRange createEmptyInstance() => create();
+  static $pb.PbList<TimeRange> createRepeated() => $pb.PbList<TimeRange>();
+  @$core.pragma('dart2js:noInline')
+  static TimeRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRange>(create);
+  static TimeRange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get start => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set start($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStart() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStart() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get end => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set end($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEnd() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEnd() => clearField(2);
+}
+
 class StudentTaskParameterResult extends $pb.GeneratedMessage {
   factory StudentTaskParameterResult({
     $fixnum.Int64? taskParameterId,
@@ -638,12 +702,18 @@ class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
 
 class ListStudentTaskRequest extends $pb.GeneratedMessage {
   factory ListStudentTaskRequest({
+    $core.int? type,
     $core.String? keyword,
     $core.String? platform,
     $core.String? status,
+    $core.String? taskStart,
+    $core.String? taskEnd,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
     if (keyword != null) {
       $result.keyword = keyword;
     }
@@ -652,6 +722,12 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
     }
     if (status != null) {
       $result.status = status;
+    }
+    if (taskStart != null) {
+      $result.taskStart = taskStart;
+    }
+    if (taskEnd != null) {
+      $result.taskEnd = taskEnd;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -663,9 +739,12 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   factory ListStudentTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStudentTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'keyword')
-    ..aOS(2, _omitFieldNames ? '' : 'platform')
-    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..aOS(2, _omitFieldNames ? '' : 'keyword')
+    ..aOS(3, _omitFieldNames ? '' : 'platform')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'taskStart')
+    ..aOS(6, _omitFieldNames ? '' : 'taskEnd')
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -692,42 +771,69 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   static ListStudentTaskRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get keyword => $_getSZ(0);
+  $core.int get type => $_getIZ(0);
   @$pb.TagNumber(1)
-  set keyword($core.String v) { $_setString(0, v); }
+  set type($core.int v) { $_setSignedInt32(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasKeyword() => $_has(0);
+  $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKeyword() => clearField(1);
+  void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get platform => $_getSZ(1);
+  $core.String get keyword => $_getSZ(1);
   @$pb.TagNumber(2)
-  set platform($core.String v) { $_setString(1, v); }
+  set keyword($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPlatform() => $_has(1);
+  $core.bool hasKeyword() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatform() => clearField(2);
+  void clearKeyword() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get status => $_getSZ(2);
+  $core.String get platform => $_getSZ(2);
   @$pb.TagNumber(3)
-  set status($core.String v) { $_setString(2, v); }
+  set platform($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasStatus() => $_has(2);
+  $core.bool hasPlatform() => $_has(2);
   @$pb.TagNumber(3)
-  void clearStatus() => clearField(3);
+  void clearPlatform() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get taskStart => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set taskStart($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTaskStart() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTaskStart() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get taskEnd => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set taskEnd($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTaskEnd() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTaskEnd() => clearField(6);
 
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(3);
+  $2.PaginationRequest get pagination => $_getN(6);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(6);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(3);
+  $2.PaginationRequest ensurePagination() => $_ensure(6);
 }
 
 class ListStudentTaskResponse extends $pb.GeneratedMessage {

@@ -27,6 +27,19 @@ final $typed_data.Uint8List studentTaskLinkDescriptor = $convert.base64Decode(
     'Cg9TdHVkZW50VGFza0xpbmsSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgN1cmwYAiABKAlSA3VybA'
     '==');
 
+@$core.Deprecated('Use timeRangeDescriptor instead')
+const TimeRange$json = {
+  '1': 'TimeRange',
+  '2': [
+    {'1': 'start', '3': 1, '4': 1, '5': 9, '10': 'start'},
+    {'1': 'end', '3': 2, '4': 1, '5': 9, '10': 'end'},
+  ],
+};
+
+/// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode(
+    'CglUaW1lUmFuZ2USFAoFc3RhcnQYASABKAlSBXN0YXJ0EhAKA2VuZBgCIAEoCVIDZW5k');
+
 @$core.Deprecated('Use studentTaskParameterResultDescriptor instead')
 const StudentTaskParameterResult$json = {
   '1': 'StudentTaskParameterResult',
@@ -134,18 +147,23 @@ final $typed_data.Uint8List teacherRequirementEvaluationDescriptor = $convert.ba
 const ListStudentTaskRequest$json = {
   '1': 'ListStudentTaskRequest',
   '2': [
-    {'1': 'keyword', '3': 1, '4': 1, '5': 9, '10': 'keyword'},
-    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'type', '3': 1, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'task_start', '3': 5, '4': 1, '5': 9, '10': 'taskStart'},
+    {'1': 'task_end', '3': 6, '4': 1, '5': 9, '10': 'taskEnd'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `ListStudentTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listStudentTaskRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EhgKB2tleXdvcmQYASABKAlSB2tleXdvcmQSGgoIcG'
-    'xhdGZvcm0YAiABKAlSCHBsYXRmb3JtEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEjcKCnBhZ2lu'
-    'YXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EhIKBHR5cGUYASABKAVSBHR5cGUSGAoHa2V5d29yZB'
+    'gCIAEoCVIHa2V5d29yZBIaCghwbGF0Zm9ybRgDIAEoCVIIcGxhdGZvcm0SFgoGc3RhdHVzGAQg'
+    'ASgJUgZzdGF0dXMSHQoKdGFza19zdGFydBgFIAEoCVIJdGFza1N0YXJ0EhkKCHRhc2tfZW5kGA'
+    'YgASgJUgd0YXNrRW5kEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1'
+    'ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listStudentTaskResponseDescriptor instead')
 const ListStudentTaskResponse$json = {

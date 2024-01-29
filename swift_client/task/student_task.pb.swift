@@ -34,6 +34,20 @@ struct GloryApi_StudentTaskLink {
   init() {}
 }
 
+struct GloryApi_TimeRange {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var start: String = String()
+
+  var end: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_StudentTaskParameterResult {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -166,12 +180,20 @@ struct GloryApi_ListStudentTaskRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// 0. 全部；1. 未提交；2. 已评价
+  var type: Int32 = 0
+
   var keyword: String = String()
 
   /// 任务所属平台："APP"，"WEB"，"APP/WEB"，""
   var platform: String = String()
 
+  /// 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
   var status: String = String()
+
+  var taskStart: String = String()
+
+  var taskEnd: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -436,6 +458,7 @@ struct GloryApi_TeacherEvaluateStudentTaskResponse {
 
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_StudentTaskLink: @unchecked Sendable {}
+extension GloryApi_TimeRange: @unchecked Sendable {}
 extension GloryApi_StudentTaskParameterResult: @unchecked Sendable {}
 extension GloryApi_StudentTaskRequirementResult: @unchecked Sendable {}
 extension GloryApi_StudentTask: @unchecked Sendable {}
@@ -489,6 +512,44 @@ extension GloryApi_StudentTaskLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static func ==(lhs: GloryApi_StudentTaskLink, rhs: GloryApi_StudentTaskLink) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.url != rhs.url {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TimeRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TimeRange"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "start"),
+    2: .same(proto: "end"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.start) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.end) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.start.isEmpty {
+      try visitor.visitSingularStringField(value: self.start, fieldNumber: 1)
+    }
+    if !self.end.isEmpty {
+      try visitor.visitSingularStringField(value: self.end, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TimeRange, rhs: GloryApi_TimeRange) -> Bool {
+    if lhs.start != rhs.start {return false}
+    if lhs.end != rhs.end {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -791,9 +852,12 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
 extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "keyword"),
-    2: .same(proto: "platform"),
-    3: .same(proto: "status"),
+    1: .same(proto: "type"),
+    2: .same(proto: "keyword"),
+    3: .same(proto: "platform"),
+    4: .same(proto: "status"),
+    5: .standard(proto: "task_start"),
+    6: .standard(proto: "task_end"),
     100: .same(proto: "pagination"),
   ]
 
@@ -803,9 +867,12 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.platform) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 1: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.platform) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.taskStart) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.taskEnd) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -817,14 +884,23 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
+    if self.type != 0 {
+      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 1)
+    }
     if !self.keyword.isEmpty {
-      try visitor.visitSingularStringField(value: self.keyword, fieldNumber: 1)
+      try visitor.visitSingularStringField(value: self.keyword, fieldNumber: 2)
     }
     if !self.platform.isEmpty {
-      try visitor.visitSingularStringField(value: self.platform, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.platform, fieldNumber: 3)
     }
     if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+    }
+    if !self.taskStart.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskStart, fieldNumber: 5)
+    }
+    if !self.taskEnd.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskEnd, fieldNumber: 6)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -833,9 +909,12 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   static func ==(lhs: GloryApi_ListStudentTaskRequest, rhs: GloryApi_ListStudentTaskRequest) -> Bool {
+    if lhs.type != rhs.type {return false}
     if lhs.keyword != rhs.keyword {return false}
     if lhs.platform != rhs.platform {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.taskStart != rhs.taskStart {return false}
+    if lhs.taskEnd != rhs.taskEnd {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

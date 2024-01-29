@@ -19,6 +19,8 @@ private static final long serialVersionUID = 0L;
     keyword = "";
     platform = "";
     status = "";
+    taskStart = "";
+    taskEnd = "";
   }
 
   @java.lang.Override
@@ -51,22 +53,39 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            keyword = s;
+            type = input.readInt32();
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            platform = s;
+            keyword = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
+            platform = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
             status = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskStart = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskEnd = s;
             break;
           }
           case 802: {
@@ -114,10 +133,25 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.class, com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.Builder.class);
   }
 
-  public static final int KEYWORD_FIELD_NUMBER = 1;
+  public static final int TYPE_FIELD_NUMBER = 1;
+  private int type ;
+  /**
+   * <pre>
+   * 0. 全部；1. 未提交；2. 已评价
+   * </pre>
+   *
+   * <code>int32 type = 1;</code>
+   * @return The type.
+   */
+  @java.lang.Override
+  public int getType() {
+    return type ;
+  }
+
+  public static final int KEYWORD_FIELD_NUMBER = 2;
   private volatile java.lang.Object keyword ;
   /**
-   * <code>string keyword = 1;</code>
+   * <code>string keyword = 2;</code>
    * @return The keyword.
    */
   @java.lang.Override
@@ -134,7 +168,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string keyword = 1;</code>
+   * <code>string keyword = 2;</code>
    * @return The bytes for keyword.
    */
   @java.lang.Override
@@ -152,14 +186,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PLATFORM_FIELD_NUMBER = 2;
+  public static final int PLATFORM_FIELD_NUMBER = 3;
   private volatile java.lang.Object platform ;
   /**
    * <pre>
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string platform = 2;</code>
+   * <code>string platform = 3;</code>
    * @return The platform.
    */
   @java.lang.Override
@@ -180,7 +214,7 @@ private static final long serialVersionUID = 0L;
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string platform = 2;</code>
+   * <code>string platform = 3;</code>
    * @return The bytes for platform.
    */
   @java.lang.Override
@@ -198,10 +232,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATUS_FIELD_NUMBER = 3;
+  public static final int STATUS_FIELD_NUMBER = 4;
   private volatile java.lang.Object status ;
   /**
-   * <code>string status = 3;</code>
+   * <pre>
+   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
+   * <code>string status = 4;</code>
    * @return The status.
    */
   @java.lang.Override
@@ -218,7 +256,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status = 3;</code>
+   * <pre>
+   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
+   * <code>string status = 4;</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -230,6 +272,82 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_START_FIELD_NUMBER = 5;
+  private volatile java.lang.Object taskStart ;
+  /**
+   * <code>string task_start = 5;</code>
+   * @return The taskStart.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskStart() {
+    java.lang.Object ref = taskStart ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskStart = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_start = 5;</code>
+   * @return The bytes for taskStart.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskStartBytes() {
+    java.lang.Object ref = taskStart ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskStart = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_END_FIELD_NUMBER = 6;
+  private volatile java.lang.Object taskEnd ;
+  /**
+   * <code>string task_end = 6;</code>
+   * @return The taskEnd.
+   */
+  @java.lang.Override
+  public java.lang.String getTaskEnd() {
+    java.lang.Object ref = taskEnd ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskEnd = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string task_end = 6;</code>
+   * @return The bytes for taskEnd.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskEndBytes() {
+    java.lang.Object ref = taskEnd ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskEnd = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -276,14 +394,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (type != 0) {
+      output.writeInt32(1, type );
+    }
     if (!getKeywordBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyword );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword );
     }
     if (!getPlatformBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, platform );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, platform );
     }
     if (!getStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status );
+    }
+    if (!getTaskStartBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, taskStart );
+    }
+    if (!getTaskEndBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, taskEnd );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -297,14 +424,24 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (type != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, type );
+    }
     if (!getKeywordBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyword );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword );
     }
     if (!getPlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, platform );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, platform );
     }
     if (!getStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status );
+    }
+    if (!getTaskStartBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, taskStart );
+    }
+    if (!getTaskEndBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, taskEnd );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -325,12 +462,18 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest other = (com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest) obj;
 
+    if (getType()
+        != other.getType()) return false;
     if (!getKeyword()
         .equals(other.getKeyword())) return false;
     if (!getPlatform()
         .equals(other.getPlatform())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getTaskStart()
+        .equals(other.getTaskStart())) return false;
+    if (!getTaskEnd()
+        .equals(other.getTaskEnd())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -347,12 +490,18 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType();
     hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
     hash = (53 * hash) + getKeyword().hashCode();
     hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getPlatform().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + TASK_START_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskStart().hashCode();
+    hash = (37 * hash) + TASK_END_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskEnd().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -490,11 +639,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      type = 0;
+
       keyword = "";
 
       platform = "";
 
       status = "";
+
+      taskStart = "";
+
+      taskEnd = "";
 
       if (paginationBuilder == null) {
         pagination = null;
@@ -528,9 +683,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest result = new com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest(this);
+      result.type = type ;
       result.keyword = keyword ;
       result.platform = platform ;
       result.status = status ;
+      result.taskStart = taskStart ;
+      result.taskEnd = taskEnd ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -584,6 +742,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest other) {
       if (other == com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.getDefaultInstance()) return this;
+      if (other.getType() != 0) {
+        setType(other.getType());
+      }
       if (!other.getKeyword().isEmpty()) {
         keyword = other.keyword ;
         onChanged();
@@ -594,6 +755,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
+        onChanged();
+      }
+      if (!other.getTaskStart().isEmpty()) {
+        taskStart = other.taskStart ;
+        onChanged();
+      }
+      if (!other.getTaskEnd().isEmpty()) {
+        taskEnd = other.taskEnd ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -628,9 +797,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int type ;
+    /**
+     * <pre>
+     * 0. 全部；1. 未提交；2. 已评价
+     * </pre>
+     *
+     * <code>int32 type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type ;
+    }
+    /**
+     * <pre>
+     * 0. 全部；1. 未提交；2. 已评价
+     * </pre>
+     *
+     * <code>int32 type = 1;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(int value) {
+      
+      type = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 0. 全部；1. 未提交；2. 已评价
+     * </pre>
+     *
+     * <code>int32 type = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object keyword = "";
     /**
-     * <code>string keyword = 1;</code>
+     * <code>string keyword = 2;</code>
      * @return The keyword.
      */
     public java.lang.String getKeyword() {
@@ -646,7 +858,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string keyword = 1;</code>
+     * <code>string keyword = 2;</code>
      * @return The bytes for keyword.
      */
     public com.google.protobuf.ByteString
@@ -663,7 +875,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string keyword = 1;</code>
+     * <code>string keyword = 2;</code>
      * @param value The keyword to set.
      * @return This builder for chaining.
      */
@@ -678,7 +890,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string keyword = 1;</code>
+     * <code>string keyword = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearKeyword() {
@@ -688,7 +900,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string keyword = 1;</code>
+     * <code>string keyword = 2;</code>
      * @param value The bytes for keyword to set.
      * @return This builder for chaining.
      */
@@ -710,7 +922,7 @@ private static final long serialVersionUID = 0L;
      * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
      * </pre>
      *
-     * <code>string platform = 2;</code>
+     * <code>string platform = 3;</code>
      * @return The platform.
      */
     public java.lang.String getPlatform() {
@@ -730,7 +942,7 @@ private static final long serialVersionUID = 0L;
      * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
      * </pre>
      *
-     * <code>string platform = 2;</code>
+     * <code>string platform = 3;</code>
      * @return The bytes for platform.
      */
     public com.google.protobuf.ByteString
@@ -751,7 +963,7 @@ private static final long serialVersionUID = 0L;
      * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
      * </pre>
      *
-     * <code>string platform = 2;</code>
+     * <code>string platform = 3;</code>
      * @param value The platform to set.
      * @return This builder for chaining.
      */
@@ -770,7 +982,7 @@ private static final long serialVersionUID = 0L;
      * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
      * </pre>
      *
-     * <code>string platform = 2;</code>
+     * <code>string platform = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPlatform() {
@@ -784,7 +996,7 @@ private static final long serialVersionUID = 0L;
      * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
      * </pre>
      *
-     * <code>string platform = 2;</code>
+     * <code>string platform = 3;</code>
      * @param value The bytes for platform to set.
      * @return This builder for chaining.
      */
@@ -802,7 +1014,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status = "";
     /**
-     * <code>string status = 3;</code>
+     * <pre>
+     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * </pre>
+     *
+     * <code>string status = 4;</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -818,7 +1034,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 3;</code>
+     * <pre>
+     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * </pre>
+     *
+     * <code>string status = 4;</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -835,7 +1055,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 3;</code>
+     * <pre>
+     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * </pre>
+     *
+     * <code>string status = 4;</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -850,7 +1074,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 3;</code>
+     * <pre>
+     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * </pre>
+     *
+     * <code>string status = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -860,7 +1088,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 3;</code>
+     * <pre>
+     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * </pre>
+     *
+     * <code>string status = 4;</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -872,6 +1104,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskStart = "";
+    /**
+     * <code>string task_start = 5;</code>
+     * @return The taskStart.
+     */
+    public java.lang.String getTaskStart() {
+      java.lang.Object ref = taskStart ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskStart = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_start = 5;</code>
+     * @return The bytes for taskStart.
+     */
+    public com.google.protobuf.ByteString
+        getTaskStartBytes() {
+      java.lang.Object ref = taskStart ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskStart = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_start = 5;</code>
+     * @param value The taskStart to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskStart(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskStart = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_start = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskStart() {
+      
+      taskStart = getDefaultInstance().getTaskStart();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_start = 5;</code>
+     * @param value The bytes for taskStart to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskStartBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskStart = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskEnd = "";
+    /**
+     * <code>string task_end = 6;</code>
+     * @return The taskEnd.
+     */
+    public java.lang.String getTaskEnd() {
+      java.lang.Object ref = taskEnd ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskEnd = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_end = 6;</code>
+     * @return The bytes for taskEnd.
+     */
+    public com.google.protobuf.ByteString
+        getTaskEndBytes() {
+      java.lang.Object ref = taskEnd ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskEnd = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_end = 6;</code>
+     * @param value The taskEnd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskEnd(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskEnd = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_end = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskEnd() {
+      
+      taskEnd = getDefaultInstance().getTaskEnd();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_end = 6;</code>
+     * @param value The bytes for taskEnd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskEndBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskEnd = value;
       onChanged();
       return this;
     }
