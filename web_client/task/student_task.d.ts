@@ -107,6 +107,13 @@ export interface TeacherListStudentTaskRequest {
   task_evaluate_type?: number;
   /** 任务评价状态：1. 待评价；2. 已评价；3. 未提交 */
   task_evaluate_status?: number;
+  keyword?: string;
+  class_id?: string;
+  status?: string;
+  task_start?: TimeRange;
+  task_end?: TimeRange;
+  task_submitted_at?: TimeRange;
+  task_evaluated_at?: TimeRange;
   pagination?: base.PaginationRequest;
 }
 

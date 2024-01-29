@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TeacherListStudentTaskRequest() {
+    keyword = "";
+    status = "";
   }
 
   @java.lang.Override
@@ -69,6 +71,75 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             taskEvaluateStatus = input.readInt32();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            keyword = s;
+            break;
+          }
+          case 40: {
+
+            classId = input.readInt64();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status = s;
+            break;
+          }
+          case 58: {
+            com.zhijiejiaoyu.glory_api.task.TimeRange.Builder subBuilder = null;
+            if (taskStart != null) {
+              subBuilder = taskStart .toBuilder();
+            }
+            taskStart = input.readMessage(com.zhijiejiaoyu.glory_api.task.TimeRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(taskStart );
+              taskStart = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            com.zhijiejiaoyu.glory_api.task.TimeRange.Builder subBuilder = null;
+            if (taskEnd != null) {
+              subBuilder = taskEnd .toBuilder();
+            }
+            taskEnd = input.readMessage(com.zhijiejiaoyu.glory_api.task.TimeRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(taskEnd );
+              taskEnd = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 74: {
+            com.zhijiejiaoyu.glory_api.task.TimeRange.Builder subBuilder = null;
+            if (taskSubmittedAt != null) {
+              subBuilder = taskSubmittedAt .toBuilder();
+            }
+            taskSubmittedAt = input.readMessage(com.zhijiejiaoyu.glory_api.task.TimeRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(taskSubmittedAt );
+              taskSubmittedAt = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 82: {
+            com.zhijiejiaoyu.glory_api.task.TimeRange.Builder subBuilder = null;
+            if (taskEvaluatedAt != null) {
+              subBuilder = taskEvaluatedAt .toBuilder();
+            }
+            taskEvaluatedAt = input.readMessage(com.zhijiejiaoyu.glory_api.task.TimeRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(taskEvaluatedAt );
+              taskEvaluatedAt = subBuilder.buildPartial();
+            }
+
             break;
           }
           case 802: {
@@ -172,6 +243,197 @@ private static final long serialVersionUID = 0L;
     return taskEvaluateStatus ;
   }
 
+  public static final int KEYWORD_FIELD_NUMBER = 4;
+  private volatile java.lang.Object keyword ;
+  /**
+   * <code>string keyword = 4;</code>
+   * @return The keyword.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyword() {
+    java.lang.Object ref = keyword ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyword = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string keyword = 4;</code>
+   * @return The bytes for keyword.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeywordBytes() {
+    java.lang.Object ref = keyword ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyword = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLASS_ID_FIELD_NUMBER = 5;
+  private long classId ;
+  /**
+   * <code>int64 class_id = 5;</code>
+   * @return The classId.
+   */
+  @java.lang.Override
+  public long getClassId() {
+    return classId ;
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 6;
+  private volatile java.lang.Object status ;
+  /**
+   * <code>string status = 6;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 6;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_START_FIELD_NUMBER = 7;
+  private com.zhijiejiaoyu.glory_api.task.TimeRange taskStart ;
+  /**
+   * <code>.glory_api.TimeRange task_start = 7;</code>
+   * @return Whether the taskStart field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaskStart() {
+    return taskStart != null;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_start = 7;</code>
+   * @return The taskStart.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskStart() {
+    return taskStart == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskStart ;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_start = 7;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskStartOrBuilder() {
+    return getTaskStart();
+  }
+
+  public static final int TASK_END_FIELD_NUMBER = 8;
+  private com.zhijiejiaoyu.glory_api.task.TimeRange taskEnd ;
+  /**
+   * <code>.glory_api.TimeRange task_end = 8;</code>
+   * @return Whether the taskEnd field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaskEnd() {
+    return taskEnd != null;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_end = 8;</code>
+   * @return The taskEnd.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEnd() {
+    return taskEnd == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEnd ;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_end = 8;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEndOrBuilder() {
+    return getTaskEnd();
+  }
+
+  public static final int TASK_SUBMITTED_AT_FIELD_NUMBER = 9;
+  private com.zhijiejiaoyu.glory_api.task.TimeRange taskSubmittedAt ;
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+   * @return Whether the taskSubmittedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaskSubmittedAt() {
+    return taskSubmittedAt != null;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+   * @return The taskSubmittedAt.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskSubmittedAt() {
+    return taskSubmittedAt == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskSubmittedAt ;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskSubmittedAtOrBuilder() {
+    return getTaskSubmittedAt();
+  }
+
+  public static final int TASK_EVALUATED_AT_FIELD_NUMBER = 10;
+  private com.zhijiejiaoyu.glory_api.task.TimeRange taskEvaluatedAt ;
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+   * @return Whether the taskEvaluatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaskEvaluatedAt() {
+    return taskEvaluatedAt != null;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+   * @return The taskEvaluatedAt.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEvaluatedAt() {
+    return taskEvaluatedAt == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEvaluatedAt ;
+  }
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEvaluatedAtOrBuilder() {
+    return getTaskEvaluatedAt();
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -221,6 +483,27 @@ private static final long serialVersionUID = 0L;
     if (taskEvaluateStatus != 0) {
       output.writeInt32(3, taskEvaluateStatus );
     }
+    if (!getKeywordBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, keyword );
+    }
+    if (classId != 0L) {
+      output.writeInt64(5, classId );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status );
+    }
+    if (taskStart != null) {
+      output.writeMessage(7, getTaskStart());
+    }
+    if (taskEnd != null) {
+      output.writeMessage(8, getTaskEnd());
+    }
+    if (taskSubmittedAt != null) {
+      output.writeMessage(9, getTaskSubmittedAt());
+    }
+    if (taskEvaluatedAt != null) {
+      output.writeMessage(10, getTaskEvaluatedAt());
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -244,6 +527,32 @@ private static final long serialVersionUID = 0L;
     if (taskEvaluateStatus != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, taskEvaluateStatus );
+    }
+    if (!getKeywordBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, keyword );
+    }
+    if (classId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, classId );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status );
+    }
+    if (taskStart != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getTaskStart());
+    }
+    if (taskEnd != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getTaskEnd());
+    }
+    if (taskSubmittedAt != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getTaskSubmittedAt());
+    }
+    if (taskEvaluatedAt != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getTaskEvaluatedAt());
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -273,6 +582,32 @@ private static final long serialVersionUID = 0L;
         != other.getTaskEvaluateType()) return false;
     if (getTaskEvaluateStatus()
         != other.getTaskEvaluateStatus()) return false;
+    if (!getKeyword()
+        .equals(other.getKeyword())) return false;
+    if (getClassId()
+        != other.getClassId()) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (hasTaskStart() != other.hasTaskStart()) return false;
+    if (hasTaskStart()) {
+      if (!getTaskStart()
+          .equals(other.getTaskStart())) return false;
+    }
+    if (hasTaskEnd() != other.hasTaskEnd()) return false;
+    if (hasTaskEnd()) {
+      if (!getTaskEnd()
+          .equals(other.getTaskEnd())) return false;
+    }
+    if (hasTaskSubmittedAt() != other.hasTaskSubmittedAt()) return false;
+    if (hasTaskSubmittedAt()) {
+      if (!getTaskSubmittedAt()
+          .equals(other.getTaskSubmittedAt())) return false;
+    }
+    if (hasTaskEvaluatedAt() != other.hasTaskEvaluatedAt()) return false;
+    if (hasTaskEvaluatedAt()) {
+      if (!getTaskEvaluatedAt()
+          .equals(other.getTaskEvaluatedAt())) return false;
+    }
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -297,6 +632,29 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTaskEvaluateType();
     hash = (37 * hash) + TASK_EVALUATE_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getTaskEvaluateStatus();
+    hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getKeyword().hashCode();
+    hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getClassId());
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    if (hasTaskStart()) {
+      hash = (37 * hash) + TASK_START_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskStart().hashCode();
+    }
+    if (hasTaskEnd()) {
+      hash = (37 * hash) + TASK_END_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskEnd().hashCode();
+    }
+    if (hasTaskSubmittedAt()) {
+      hash = (37 * hash) + TASK_SUBMITTED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskSubmittedAt().hashCode();
+    }
+    if (hasTaskEvaluatedAt()) {
+      hash = (37 * hash) + TASK_EVALUATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskEvaluatedAt().hashCode();
+    }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -444,6 +802,36 @@ private static final long serialVersionUID = 0L;
 
       taskEvaluateStatus = 0;
 
+      keyword = "";
+
+      classId = 0L;
+
+      status = "";
+
+      if (taskStartBuilder == null) {
+        taskStart = null;
+      } else {
+        taskStart = null;
+        taskStartBuilder = null;
+      }
+      if (taskEndBuilder == null) {
+        taskEnd = null;
+      } else {
+        taskEnd = null;
+        taskEndBuilder = null;
+      }
+      if (taskSubmittedAtBuilder == null) {
+        taskSubmittedAt = null;
+      } else {
+        taskSubmittedAt = null;
+        taskSubmittedAtBuilder = null;
+      }
+      if (taskEvaluatedAtBuilder == null) {
+        taskEvaluatedAt = null;
+      } else {
+        taskEvaluatedAt = null;
+        taskEvaluatedAtBuilder = null;
+      }
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -483,6 +871,29 @@ private static final long serialVersionUID = 0L;
       }
       result.taskEvaluateType = taskEvaluateType ;
       result.taskEvaluateStatus = taskEvaluateStatus ;
+      result.keyword = keyword ;
+      result.classId = classId ;
+      result.status = status ;
+      if (taskStartBuilder == null) {
+        result.taskStart = taskStart ;
+      } else {
+        result.taskStart = taskStartBuilder .build();
+      }
+      if (taskEndBuilder == null) {
+        result.taskEnd = taskEnd ;
+      } else {
+        result.taskEnd = taskEndBuilder .build();
+      }
+      if (taskSubmittedAtBuilder == null) {
+        result.taskSubmittedAt = taskSubmittedAt ;
+      } else {
+        result.taskSubmittedAt = taskSubmittedAtBuilder .build();
+      }
+      if (taskEvaluatedAtBuilder == null) {
+        result.taskEvaluatedAt = taskEvaluatedAt ;
+      } else {
+        result.taskEvaluatedAt = taskEvaluatedAtBuilder .build();
+      }
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -544,6 +955,29 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTaskEvaluateStatus() != 0) {
         setTaskEvaluateStatus(other.getTaskEvaluateStatus());
+      }
+      if (!other.getKeyword().isEmpty()) {
+        keyword = other.keyword ;
+        onChanged();
+      }
+      if (other.getClassId() != 0L) {
+        setClassId(other.getClassId());
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status ;
+        onChanged();
+      }
+      if (other.hasTaskStart()) {
+        mergeTaskStart(other.getTaskStart());
+      }
+      if (other.hasTaskEnd()) {
+        mergeTaskEnd(other.getTaskEnd());
+      }
+      if (other.hasTaskSubmittedAt()) {
+        mergeTaskSubmittedAt(other.getTaskSubmittedAt());
+      }
+      if (other.hasTaskEvaluatedAt()) {
+        mergeTaskEvaluatedAt(other.getTaskEvaluatedAt());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -780,6 +1214,665 @@ private static final long serialVersionUID = 0L;
       taskEvaluateStatus = 0;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object keyword = "";
+    /**
+     * <code>string keyword = 4;</code>
+     * @return The keyword.
+     */
+    public java.lang.String getKeyword() {
+      java.lang.Object ref = keyword ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyword = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string keyword = 4;</code>
+     * @return The bytes for keyword.
+     */
+    public com.google.protobuf.ByteString
+        getKeywordBytes() {
+      java.lang.Object ref = keyword ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyword = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string keyword = 4;</code>
+     * @param value The keyword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyword(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      keyword = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string keyword = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyword() {
+      
+      keyword = getDefaultInstance().getKeyword();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string keyword = 4;</code>
+     * @param value The bytes for keyword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      keyword = value;
+      onChanged();
+      return this;
+    }
+
+    private long classId ;
+    /**
+     * <code>int64 class_id = 5;</code>
+     * @return The classId.
+     */
+    @java.lang.Override
+    public long getClassId() {
+      return classId ;
+    }
+    /**
+     * <code>int64 class_id = 5;</code>
+     * @param value The classId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClassId(long value) {
+      
+      classId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 class_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClassId() {
+      
+      classId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status = "";
+    /**
+     * <code>string status = 6;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 6;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 6;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 6;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
+      onChanged();
+      return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.task.TimeRange taskStart ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> taskStartBuilder ;
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     * @return Whether the taskStart field is set.
+     */
+    public boolean hasTaskStart() {
+      return taskStartBuilder != null || taskStart != null;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     * @return The taskStart.
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskStart() {
+      if (taskStartBuilder == null) {
+        return taskStart == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskStart ;
+      } else {
+        return taskStartBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public Builder setTaskStart(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskStartBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskStart = value;
+        onChanged();
+      } else {
+        taskStartBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public Builder setTaskStart(
+        com.zhijiejiaoyu.glory_api.task.TimeRange.Builder builderForValue) {
+      if (taskStartBuilder == null) {
+        taskStart = builderForValue.build();
+        onChanged();
+      } else {
+        taskStartBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public Builder mergeTaskStart(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskStartBuilder == null) {
+        if (taskStart != null) {
+          taskStart =
+            com.zhijiejiaoyu.glory_api.task.TimeRange.newBuilder(taskStart ).mergeFrom(value).buildPartial();
+        } else {
+          taskStart = value;
+        }
+        onChanged();
+      } else {
+        taskStartBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public Builder clearTaskStart() {
+      if (taskStartBuilder == null) {
+        taskStart = null;
+        onChanged();
+      } else {
+        taskStart = null;
+        taskStartBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange.Builder getTaskStartBuilder() {
+      
+      onChanged();
+      return getTaskStartFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskStartOrBuilder() {
+      if (taskStartBuilder != null) {
+        return taskStartBuilder .getMessageOrBuilder();
+      } else {
+        return taskStart == null ?
+            com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskStart ;
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_start = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> 
+        getTaskStartFieldBuilder() {
+      if (taskStartBuilder == null) {
+        taskStartBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder>(
+                getTaskStart(),
+                getParentForChildren(),
+                isClean());
+        taskStart = null;
+      }
+      return taskStartBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.task.TimeRange taskEnd ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> taskEndBuilder ;
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     * @return Whether the taskEnd field is set.
+     */
+    public boolean hasTaskEnd() {
+      return taskEndBuilder != null || taskEnd != null;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     * @return The taskEnd.
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEnd() {
+      if (taskEndBuilder == null) {
+        return taskEnd == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEnd ;
+      } else {
+        return taskEndBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public Builder setTaskEnd(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskEndBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskEnd = value;
+        onChanged();
+      } else {
+        taskEndBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public Builder setTaskEnd(
+        com.zhijiejiaoyu.glory_api.task.TimeRange.Builder builderForValue) {
+      if (taskEndBuilder == null) {
+        taskEnd = builderForValue.build();
+        onChanged();
+      } else {
+        taskEndBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public Builder mergeTaskEnd(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskEndBuilder == null) {
+        if (taskEnd != null) {
+          taskEnd =
+            com.zhijiejiaoyu.glory_api.task.TimeRange.newBuilder(taskEnd ).mergeFrom(value).buildPartial();
+        } else {
+          taskEnd = value;
+        }
+        onChanged();
+      } else {
+        taskEndBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public Builder clearTaskEnd() {
+      if (taskEndBuilder == null) {
+        taskEnd = null;
+        onChanged();
+      } else {
+        taskEnd = null;
+        taskEndBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange.Builder getTaskEndBuilder() {
+      
+      onChanged();
+      return getTaskEndFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEndOrBuilder() {
+      if (taskEndBuilder != null) {
+        return taskEndBuilder .getMessageOrBuilder();
+      } else {
+        return taskEnd == null ?
+            com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEnd ;
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_end = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> 
+        getTaskEndFieldBuilder() {
+      if (taskEndBuilder == null) {
+        taskEndBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder>(
+                getTaskEnd(),
+                getParentForChildren(),
+                isClean());
+        taskEnd = null;
+      }
+      return taskEndBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.task.TimeRange taskSubmittedAt ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> taskSubmittedAtBuilder ;
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     * @return Whether the taskSubmittedAt field is set.
+     */
+    public boolean hasTaskSubmittedAt() {
+      return taskSubmittedAtBuilder != null || taskSubmittedAt != null;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     * @return The taskSubmittedAt.
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskSubmittedAt() {
+      if (taskSubmittedAtBuilder == null) {
+        return taskSubmittedAt == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskSubmittedAt ;
+      } else {
+        return taskSubmittedAtBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public Builder setTaskSubmittedAt(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskSubmittedAtBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskSubmittedAt = value;
+        onChanged();
+      } else {
+        taskSubmittedAtBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public Builder setTaskSubmittedAt(
+        com.zhijiejiaoyu.glory_api.task.TimeRange.Builder builderForValue) {
+      if (taskSubmittedAtBuilder == null) {
+        taskSubmittedAt = builderForValue.build();
+        onChanged();
+      } else {
+        taskSubmittedAtBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public Builder mergeTaskSubmittedAt(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskSubmittedAtBuilder == null) {
+        if (taskSubmittedAt != null) {
+          taskSubmittedAt =
+            com.zhijiejiaoyu.glory_api.task.TimeRange.newBuilder(taskSubmittedAt ).mergeFrom(value).buildPartial();
+        } else {
+          taskSubmittedAt = value;
+        }
+        onChanged();
+      } else {
+        taskSubmittedAtBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public Builder clearTaskSubmittedAt() {
+      if (taskSubmittedAtBuilder == null) {
+        taskSubmittedAt = null;
+        onChanged();
+      } else {
+        taskSubmittedAt = null;
+        taskSubmittedAtBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange.Builder getTaskSubmittedAtBuilder() {
+      
+      onChanged();
+      return getTaskSubmittedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskSubmittedAtOrBuilder() {
+      if (taskSubmittedAtBuilder != null) {
+        return taskSubmittedAtBuilder .getMessageOrBuilder();
+      } else {
+        return taskSubmittedAt == null ?
+            com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskSubmittedAt ;
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_submitted_at = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> 
+        getTaskSubmittedAtFieldBuilder() {
+      if (taskSubmittedAtBuilder == null) {
+        taskSubmittedAtBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder>(
+                getTaskSubmittedAt(),
+                getParentForChildren(),
+                isClean());
+        taskSubmittedAt = null;
+      }
+      return taskSubmittedAtBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.task.TimeRange taskEvaluatedAt ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> taskEvaluatedAtBuilder ;
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     * @return Whether the taskEvaluatedAt field is set.
+     */
+    public boolean hasTaskEvaluatedAt() {
+      return taskEvaluatedAtBuilder != null || taskEvaluatedAt != null;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     * @return The taskEvaluatedAt.
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEvaluatedAt() {
+      if (taskEvaluatedAtBuilder == null) {
+        return taskEvaluatedAt == null ? com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEvaluatedAt ;
+      } else {
+        return taskEvaluatedAtBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public Builder setTaskEvaluatedAt(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskEvaluatedAtBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskEvaluatedAt = value;
+        onChanged();
+      } else {
+        taskEvaluatedAtBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public Builder setTaskEvaluatedAt(
+        com.zhijiejiaoyu.glory_api.task.TimeRange.Builder builderForValue) {
+      if (taskEvaluatedAtBuilder == null) {
+        taskEvaluatedAt = builderForValue.build();
+        onChanged();
+      } else {
+        taskEvaluatedAtBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public Builder mergeTaskEvaluatedAt(com.zhijiejiaoyu.glory_api.task.TimeRange value) {
+      if (taskEvaluatedAtBuilder == null) {
+        if (taskEvaluatedAt != null) {
+          taskEvaluatedAt =
+            com.zhijiejiaoyu.glory_api.task.TimeRange.newBuilder(taskEvaluatedAt ).mergeFrom(value).buildPartial();
+        } else {
+          taskEvaluatedAt = value;
+        }
+        onChanged();
+      } else {
+        taskEvaluatedAtBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public Builder clearTaskEvaluatedAt() {
+      if (taskEvaluatedAtBuilder == null) {
+        taskEvaluatedAt = null;
+        onChanged();
+      } else {
+        taskEvaluatedAt = null;
+        taskEvaluatedAtBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRange.Builder getTaskEvaluatedAtBuilder() {
+      
+      onChanged();
+      return getTaskEvaluatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEvaluatedAtOrBuilder() {
+      if (taskEvaluatedAtBuilder != null) {
+        return taskEvaluatedAtBuilder .getMessageOrBuilder();
+      } else {
+        return taskEvaluatedAt == null ?
+            com.zhijiejiaoyu.glory_api.task.TimeRange.getDefaultInstance() : taskEvaluatedAt ;
+      }
+    }
+    /**
+     * <code>.glory_api.TimeRange task_evaluated_at = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder> 
+        getTaskEvaluatedAtFieldBuilder() {
+      if (taskEvaluatedAtBuilder == null) {
+        taskEvaluatedAtBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TimeRange, com.zhijiejiaoyu.glory_api.task.TimeRange.Builder, com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder>(
+                getTaskEvaluatedAt(),
+                getParentForChildren(),
+                isClean());
+        taskEvaluatedAt = null;
+      }
+      return taskEvaluatedAtBuilder ;
     }
 
     private com.zhijiejiaoyu.base.PaginationRequest pagination ;

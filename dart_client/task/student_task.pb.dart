@@ -1189,6 +1189,13 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     $2.BaseRequest? baseRequest,
     $core.int? taskEvaluateType,
     $core.int? taskEvaluateStatus,
+    $core.String? keyword,
+    $fixnum.Int64? classId,
+    $core.String? status,
+    TimeRange? taskStart,
+    TimeRange? taskEnd,
+    TimeRange? taskSubmittedAt,
+    TimeRange? taskEvaluatedAt,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1200,6 +1207,27 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     }
     if (taskEvaluateStatus != null) {
       $result.taskEvaluateStatus = taskEvaluateStatus;
+    }
+    if (keyword != null) {
+      $result.keyword = keyword;
+    }
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (taskStart != null) {
+      $result.taskStart = taskStart;
+    }
+    if (taskEnd != null) {
+      $result.taskEnd = taskEnd;
+    }
+    if (taskSubmittedAt != null) {
+      $result.taskSubmittedAt = taskSubmittedAt;
+    }
+    if (taskEvaluatedAt != null) {
+      $result.taskEvaluatedAt = taskEvaluatedAt;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -1214,6 +1242,13 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'taskEvaluateType', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'taskEvaluateStatus', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'keyword')
+    ..aInt64(5, _omitFieldNames ? '' : 'classId')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOM<TimeRange>(7, _omitFieldNames ? '' : 'taskStart', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(8, _omitFieldNames ? '' : 'taskEnd', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(9, _omitFieldNames ? '' : 'taskSubmittedAt', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(10, _omitFieldNames ? '' : 'taskEvaluatedAt', subBuilder: TimeRange.create)
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1268,16 +1303,87 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearTaskEvaluateStatus() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $core.String get keyword => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set keyword($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasKeyword() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKeyword() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get classId => $_getI64(4);
+  @$pb.TagNumber(5)
+  set classId($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasClassId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClassId() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => clearField(6);
+
+  @$pb.TagNumber(7)
+  TimeRange get taskStart => $_getN(6);
+  @$pb.TagNumber(7)
+  set taskStart(TimeRange v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasTaskStart() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTaskStart() => clearField(7);
+  @$pb.TagNumber(7)
+  TimeRange ensureTaskStart() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  TimeRange get taskEnd => $_getN(7);
+  @$pb.TagNumber(8)
+  set taskEnd(TimeRange v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTaskEnd() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaskEnd() => clearField(8);
+  @$pb.TagNumber(8)
+  TimeRange ensureTaskEnd() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  TimeRange get taskSubmittedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set taskSubmittedAt(TimeRange v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTaskSubmittedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTaskSubmittedAt() => clearField(9);
+  @$pb.TagNumber(9)
+  TimeRange ensureTaskSubmittedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  TimeRange get taskEvaluatedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set taskEvaluatedAt(TimeRange v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTaskEvaluatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTaskEvaluatedAt() => clearField(10);
+  @$pb.TagNumber(10)
+  TimeRange ensureTaskEvaluatedAt() => $_ensure(9);
+
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(3);
+  $2.PaginationRequest get pagination => $_getN(10);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(10);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(3);
+  $2.PaginationRequest ensurePagination() => $_ensure(10);
 }
 
 class TeacherListStudentTaskResponse extends $pb.GeneratedMessage {

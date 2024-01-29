@@ -251,6 +251,13 @@ const TeacherListStudentTaskRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'task_evaluate_type', '3': 2, '4': 1, '5': 5, '10': 'taskEvaluateType'},
     {'1': 'task_evaluate_status', '3': 3, '4': 1, '5': 5, '10': 'taskEvaluateStatus'},
+    {'1': 'keyword', '3': 4, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'class_id', '3': 5, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'task_start', '3': 7, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskStart'},
+    {'1': 'task_end', '3': 8, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskEnd'},
+    {'1': 'task_submitted_at', '3': 9, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskSubmittedAt'},
+    {'1': 'task_evaluated_at', '3': 10, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskEvaluatedAt'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -260,8 +267,13 @@ final $typed_data.Uint8List teacherListStudentTaskRequestDescriptor = $convert.b
     'Ch1UZWFjaGVyTGlzdFN0dWRlbnRUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIsChJ0YXNrX2V2YWx1YXRlX3R5cGUYAiAB'
     'KAVSEHRhc2tFdmFsdWF0ZVR5cGUSMAoUdGFza19ldmFsdWF0ZV9zdGF0dXMYAyABKAVSEnRhc2'
-    'tFdmFsdWF0ZVN0YXR1cxI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVx'
-    'dWVzdFIKcGFnaW5hdGlvbg==');
+    'tFdmFsdWF0ZVN0YXR1cxIYCgdrZXl3b3JkGAQgASgJUgdrZXl3b3JkEhkKCGNsYXNzX2lkGAUg'
+    'ASgDUgdjbGFzc0lkEhYKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEjMKCnRhc2tfc3RhcnQYByABKA'
+    'syFC5nbG9yeV9hcGkuVGltZVJhbmdlUgl0YXNrU3RhcnQSLwoIdGFza19lbmQYCCABKAsyFC5n'
+    'bG9yeV9hcGkuVGltZVJhbmdlUgd0YXNrRW5kEkAKEXRhc2tfc3VibWl0dGVkX2F0GAkgASgLMh'
+    'QuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza1N1Ym1pdHRlZEF0EkAKEXRhc2tfZXZhbHVhdGVk'
+    'X2F0GAogASgLMhQuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza0V2YWx1YXRlZEF0EjcKCnBhZ2'
+    'luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use teacherListStudentTaskResponseDescriptor instead')
 const TeacherListStudentTaskResponse$json = {
