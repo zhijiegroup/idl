@@ -23,7 +23,7 @@ message TaskConfig {
   string task_name = 2;
   string task_business = 3;
   string task_content = 4;
-  repeated string task_platforms = 5;
+  string task_platform = 5; // 任务所属平台：APP，WEB，APP/WEB
   repeated TaskParameter parameters = 6;
 }
 
@@ -45,11 +45,12 @@ message SystemTask {
   string system_task_business = 4;
   string system_task_content = 5;
   string system_task_link = 6;
-  repeated SystemTaskParameter system_task_parameters = 7;
-  string created_at = 8;
-  string updated_at = 9;
-  User creator = 10;
-  User updater = 11;
+  string system_task_platform = 7;
+  repeated SystemTaskParameter system_task_parameters = 8;
+  string created_at = 9;
+  string updated_at = 10;
+  User creator = 11;
+  User updater = 12;
 }
 
 message GetTaskConfigRequest {
