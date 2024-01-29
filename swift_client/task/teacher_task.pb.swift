@@ -311,6 +311,13 @@ struct GloryApi_ListTeacherTaskRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var keyword: String = String()
+
+  var classID: Int64 = 0
+
+  /// 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  var status: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -981,6 +988,9 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static let protoMessageName: String = _protobuf_package + ".ListTeacherTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "keyword"),
+    3: .standard(proto: "class_id"),
+    4: .same(proto: "status"),
     100: .same(proto: "pagination"),
   ]
 
@@ -991,6 +1001,9 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1005,6 +1018,15 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.keyword.isEmpty {
+      try visitor.visitSingularStringField(value: self.keyword, fieldNumber: 2)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 3)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1013,6 +1035,9 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
 
   static func ==(lhs: GloryApi_ListTeacherTaskRequest, rhs: GloryApi_ListTeacherTaskRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.keyword != rhs.keyword {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.status != rhs.status {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

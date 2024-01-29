@@ -166,6 +166,13 @@ struct GloryApi_ListStudentTaskRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var keyword: String = String()
+
+  /// 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  var platform: String = String()
+
+  var status: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -784,6 +791,9 @@ extension GloryApi_TeacherRequirementEvaluation: SwiftProtobuf.Message, SwiftPro
 extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListStudentTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "keyword"),
+    2: .same(proto: "platform"),
+    3: .same(proto: "status"),
     100: .same(proto: "pagination"),
   ]
 
@@ -793,6 +803,9 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.platform) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -804,6 +817,15 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
+    if !self.keyword.isEmpty {
+      try visitor.visitSingularStringField(value: self.keyword, fieldNumber: 1)
+    }
+    if !self.platform.isEmpty {
+      try visitor.visitSingularStringField(value: self.platform, fieldNumber: 2)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -811,6 +833,9 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   static func ==(lhs: GloryApi_ListStudentTaskRequest, rhs: GloryApi_ListStudentTaskRequest) -> Bool {
+    if lhs.keyword != rhs.keyword {return false}
+    if lhs.platform != rhs.platform {return false}
+    if lhs.status != rhs.status {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

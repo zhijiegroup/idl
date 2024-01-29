@@ -782,11 +782,23 @@ class UpdateTeacherTaskResponse extends $pb.GeneratedMessage {
 class ListTeacherTaskRequest extends $pb.GeneratedMessage {
   factory ListTeacherTaskRequest({
     $1.BaseRequest? baseRequest,
+    $core.String? keyword,
+    $fixnum.Int64? classId,
+    $core.String? status,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (keyword != null) {
+      $result.keyword = keyword;
+    }
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (status != null) {
+      $result.status = status;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -799,6 +811,9 @@ class ListTeacherTaskRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTeacherTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'keyword')
+    ..aInt64(3, _omitFieldNames ? '' : 'classId')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -835,16 +850,43 @@ class ListTeacherTaskRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
+  @$pb.TagNumber(2)
+  $core.String get keyword => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set keyword($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKeyword() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKeyword() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get classId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set classId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasClassId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClassId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(1);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListTeacherTaskResponse extends $pb.GeneratedMessage {

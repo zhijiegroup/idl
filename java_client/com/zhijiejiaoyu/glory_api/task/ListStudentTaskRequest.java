@@ -16,6 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListStudentTaskRequest() {
+    keyword = "";
+    platform = "";
+    status = "";
   }
 
   @java.lang.Override
@@ -48,6 +51,24 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            keyword = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            platform = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            status = s;
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -93,6 +114,128 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.class, com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.Builder.class);
   }
 
+  public static final int KEYWORD_FIELD_NUMBER = 1;
+  private volatile java.lang.Object keyword ;
+  /**
+   * <code>string keyword = 1;</code>
+   * @return The keyword.
+   */
+  @java.lang.Override
+  public java.lang.String getKeyword() {
+    java.lang.Object ref = keyword ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      keyword = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string keyword = 1;</code>
+   * @return The bytes for keyword.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeywordBytes() {
+    java.lang.Object ref = keyword ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      keyword = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLATFORM_FIELD_NUMBER = 2;
+  private volatile java.lang.Object platform ;
+  /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
+   * <code>string platform = 2;</code>
+   * @return The platform.
+   */
+  @java.lang.Override
+  public java.lang.String getPlatform() {
+    java.lang.Object ref = platform ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      platform = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
+   * <code>string platform = 2;</code>
+   * @return The bytes for platform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPlatformBytes() {
+    java.lang.Object ref = platform ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      platform = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private volatile java.lang.Object status ;
+  /**
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -133,6 +276,15 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getKeywordBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyword );
+    }
+    if (!getPlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, platform );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -145,6 +297,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getKeywordBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyword );
+    }
+    if (!getPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, platform );
+    }
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -164,6 +325,12 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest other = (com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest) obj;
 
+    if (!getKeyword()
+        .equals(other.getKeyword())) return false;
+    if (!getPlatform()
+        .equals(other.getPlatform())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -180,6 +347,12 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getKeyword().hashCode();
+    hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getPlatform().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -317,6 +490,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      keyword = "";
+
+      platform = "";
+
+      status = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -349,6 +528,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest result = new com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest(this);
+      result.keyword = keyword ;
+      result.platform = platform ;
+      result.status = status ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -402,6 +584,18 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest other) {
       if (other == com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest.getDefaultInstance()) return this;
+      if (!other.getKeyword().isEmpty()) {
+        keyword = other.keyword ;
+        onChanged();
+      }
+      if (!other.getPlatform().isEmpty()) {
+        platform = other.platform ;
+        onChanged();
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status ;
+        onChanged();
+      }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
       }
@@ -431,6 +625,254 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object keyword = "";
+    /**
+     * <code>string keyword = 1;</code>
+     * @return The keyword.
+     */
+    public java.lang.String getKeyword() {
+      java.lang.Object ref = keyword ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyword = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string keyword = 1;</code>
+     * @return The bytes for keyword.
+     */
+    public com.google.protobuf.ByteString
+        getKeywordBytes() {
+      java.lang.Object ref = keyword ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        keyword = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string keyword = 1;</code>
+     * @param value The keyword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyword(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      keyword = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string keyword = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyword() {
+      
+      keyword = getDefaultInstance().getKeyword();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string keyword = 1;</code>
+     * @param value The bytes for keyword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      keyword = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object platform = "";
+    /**
+     * <pre>
+     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * </pre>
+     *
+     * <code>string platform = 2;</code>
+     * @return The platform.
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        platform = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * </pre>
+     *
+     * <code>string platform = 2;</code>
+     * @return The bytes for platform.
+     */
+    public com.google.protobuf.ByteString
+        getPlatformBytes() {
+      java.lang.Object ref = platform ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platform = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * </pre>
+     *
+     * <code>string platform = 2;</code>
+     * @param value The platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatform(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      platform = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * </pre>
+     *
+     * <code>string platform = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlatform() {
+      
+      platform = getDefaultInstance().getPlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * </pre>
+     *
+     * <code>string platform = 2;</code>
+     * @param value The bytes for platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatformBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      platform = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status = "";
+    /**
+     * <code>string status = 3;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
+      onChanged();
       return this;
     }
 

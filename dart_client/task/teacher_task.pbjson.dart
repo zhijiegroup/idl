@@ -163,6 +163,9 @@ const ListTeacherTaskRequest$json = {
   '1': 'ListTeacherTaskRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'class_id', '3': 3, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -170,8 +173,9 @@ const ListTeacherTaskRequest$json = {
 /// Descriptor for `ListTeacherTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listTeacherTaskRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0VGVhY2hlclRhc2tSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
-    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2lu'
-    'YXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhgKB2tleXdvcmQYAiABKAlSB2tleXdvcmQSGQoIY2xh'
+    'c3NfaWQYAyABKANSB2NsYXNzSWQSFgoGc3RhdHVzGAQgASgJUgZzdGF0dXMSNwoKcGFnaW5hdG'
+    'lvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listTeacherTaskResponseDescriptor instead')
 const ListTeacherTaskResponse$json = {

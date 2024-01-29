@@ -123,24 +123,26 @@ public final class TeacherTaskOuterClass {
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
       "est\022,\n\014teacher_task\030\002 \001(\0132\026.glory_api.Te" +
       "acherTask\"B\n\031UpdateTeacherTaskResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"n\n" +
-      "\026ListTeacherTaskRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022+\n\npagination\030d" +
-      " \001(\0132\027.base.PaginationRequest\"\235\001\n\027ListTe" +
-      "acherTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022-\n\rteacher_tasks\030\002 \003(\0132" +
-      "\026.glory_api.TeacherTask\022,\n\npagination\030d " +
-      "\001(\0132\030.base.PaginationResponse\"Y\n\025GetTeac" +
-      "herTaskRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\027\n\017teacher_task_id\030\002 \001(\003" +
-      "\"m\n\026GetTeacherTaskResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022,\n\014teacher_tas" +
-      "k\030\002 \001(\0132\026.glory_api.TeacherTask\"\\\n\030Delet" +
-      "eTeacherTaskRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\027\n\017teacher_task_id\030" +
-      "\002 \001(\003\"B\n\031DeleteTeacherTaskResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com" +
-      ".zhijiejiaoyu.glory_api.taskP\001b\006proto3"
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\241\001" +
+      "\n\026ListTeacherTaskRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007keyword\030\002 \001" +
+      "(\t\022\020\n\010class_id\030\003 \001(\003\022\016\n\006status\030\004 \001(\t\022+\n\n" +
+      "pagination\030d \001(\0132\027.base.PaginationReques" +
+      "t\"\235\001\n\027ListTeacherTaskResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022-\n\rteacher_" +
+      "tasks\030\002 \003(\0132\026.glory_api.TeacherTask\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"Y\n\025GetTeacherTaskRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017teacher_t" +
+      "ask_id\030\002 \001(\003\"m\n\026GetTeacherTaskResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022,\n" +
+      "\014teacher_task\030\002 \001(\0132\026.glory_api.TeacherT" +
+      "ask\"\\\n\030DeleteTeacherTaskRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017teac" +
+      "her_task_id\030\002 \001(\003\"B\n\031DeleteTeacherTaskRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponseB#\n\037com.zhijiejiaoyu.glory_api.task" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -196,7 +198,7 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_ListTeacherTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTeacherTaskRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Keyword", "ClassId", "Status", "Pagination", });
     internal_static_glory_api_ListTeacherTaskResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_ListTeacherTaskResponse_fieldAccessorTable = new

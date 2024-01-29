@@ -134,14 +134,18 @@ final $typed_data.Uint8List teacherRequirementEvaluationDescriptor = $convert.ba
 const ListStudentTaskRequest$json = {
   '1': 'ListStudentTaskRequest',
   '2': [
+    {'1': 'keyword', '3': 1, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
 
 /// Descriptor for `ListStudentTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listStudentTaskRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2'
-    'luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'ChZMaXN0U3R1ZGVudFRhc2tSZXF1ZXN0EhgKB2tleXdvcmQYASABKAlSB2tleXdvcmQSGgoIcG'
+    'xhdGZvcm0YAiABKAlSCHBsYXRmb3JtEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEjcKCnBhZ2lu'
+    'YXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listStudentTaskResponseDescriptor instead')
 const ListStudentTaskResponse$json = {

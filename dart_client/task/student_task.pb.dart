@@ -638,9 +638,21 @@ class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
 
 class ListStudentTaskRequest extends $pb.GeneratedMessage {
   factory ListStudentTaskRequest({
+    $core.String? keyword,
+    $core.String? platform,
+    $core.String? status,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
+    if (keyword != null) {
+      $result.keyword = keyword;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -651,6 +663,9 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   factory ListStudentTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStudentTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'keyword')
+    ..aOS(2, _omitFieldNames ? '' : 'platform')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -676,16 +691,43 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   static ListStudentTaskRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStudentTaskRequest>(create);
   static ListStudentTaskRequest? _defaultInstance;
 
+  @$pb.TagNumber(1)
+  $core.String get keyword => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set keyword($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKeyword() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKeyword() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get platform => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set platform($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPlatform() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlatform() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(0);
+  $2.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(0);
+  $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(0);
+  $2.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListStudentTaskResponse extends $pb.GeneratedMessage {

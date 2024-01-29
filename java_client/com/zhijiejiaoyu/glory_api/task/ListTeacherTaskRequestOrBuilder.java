@@ -23,6 +23,44 @@ public interface ListTeacherTaskRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>string keyword = 2;</code>
+   * @return The keyword.
+   */
+  java.lang.String getKeyword();
+  /**
+   * <code>string keyword = 2;</code>
+   * @return The bytes for keyword.
+   */
+  com.google.protobuf.ByteString
+      getKeywordBytes();
+
+  /**
+   * <code>int64 class_id = 3;</code>
+   * @return The classId.
+   */
+  long getClassId();
+
+  /**
+   * <pre>
+   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * </pre>
+   *
+   * <code>string status = 4;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * </pre>
+   *
+   * <code>string status = 4;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

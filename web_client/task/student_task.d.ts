@@ -57,6 +57,10 @@ export interface TeacherRequirementEvaluation {
 }
 
 export interface ListStudentTaskRequest {
+  keyword?: string;
+  /** 任务所属平台："APP"，"WEB"，"APP/WEB"，"" */
+  platform?: string;
+  status?: string;
   pagination?: base.PaginationRequest;
 }
 

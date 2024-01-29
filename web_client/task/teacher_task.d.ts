@@ -72,6 +72,10 @@ export interface UpdateTeacherTaskResponse {
 
 export interface ListTeacherTaskRequest {
   base_request?: base.BaseRequest;
+  keyword?: string;
+  class_id?: string;
+  /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
+  status?: string;
   pagination?: base.PaginationRequest;
 }
 

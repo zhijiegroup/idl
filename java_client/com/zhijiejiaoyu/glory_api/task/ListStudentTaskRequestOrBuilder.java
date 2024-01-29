@@ -8,6 +8,50 @@ public interface ListStudentTaskRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <code>string keyword = 1;</code>
+   * @return The keyword.
+   */
+  java.lang.String getKeyword();
+  /**
+   * <code>string keyword = 1;</code>
+   * @return The bytes for keyword.
+   */
+  com.google.protobuf.ByteString
+      getKeywordBytes();
+
+  /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
+   * <code>string platform = 2;</code>
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
+   * <code>string platform = 2;</code>
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString
+      getPlatformBytes();
+
+  /**
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
