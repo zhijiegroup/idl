@@ -156,6 +156,10 @@ export class glory_api {
 
   DeleteUser(request: user.DeleteUserRequest): Promise<user.DeleteUserResponse>;
 
+  ListOwnAccess(
+    request: user.ListOwnAccessRequest
+  ): Promise<user.ListOwnAccessResponse>;
+
   GetVerifyCode(
     request: user.GetVerifyCodeRequest
   ): Promise<user.GetVerifyCodeResponse>;

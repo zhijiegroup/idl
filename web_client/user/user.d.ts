@@ -543,3 +543,21 @@ export interface GetUserMajorResponse {
   base_resp?: base.BaseResponse;
   user_major?: Array<UserMajor>;
 }
+
+export interface OwnAccess {
+  id?: string;
+  name?: string;
+  logo?: string;
+  remark?: string;
+  /** shop: 店铺; product: 商品; live_script: 直播文案; live_record: 直播记录; video: 短视频; video_script: 短视频文案; */
+  type?: string;
+}
+
+export interface ListOwnAccessRequest {
+  base_request?: base.BaseRequest;
+  access?: string;
+}
+
+export interface ListOwnAccessResponse {
+  base_resp?: base.BaseResponse;
+}

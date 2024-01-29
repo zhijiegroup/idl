@@ -6344,6 +6344,230 @@ class GetUserMajorResponse extends $pb.GeneratedMessage {
   $core.List<UserMajor> get userMajor => $_getList(1);
 }
 
+class OwnAccess extends $pb.GeneratedMessage {
+  factory OwnAccess({
+    $fixnum.Int64? id,
+    $core.String? name,
+    $core.String? logo,
+    $core.String? remark,
+    $core.String? type,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (logo != null) {
+      $result.logo = logo;
+    }
+    if (remark != null) {
+      $result.remark = remark;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
+  OwnAccess._() : super();
+  factory OwnAccess.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OwnAccess.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OwnAccess', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'logo')
+    ..aOS(4, _omitFieldNames ? '' : 'remark')
+    ..aOS(5, _omitFieldNames ? '' : 'type')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OwnAccess clone() => OwnAccess()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OwnAccess copyWith(void Function(OwnAccess) updates) => super.copyWith((message) => updates(message as OwnAccess)) as OwnAccess;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OwnAccess create() => OwnAccess._();
+  OwnAccess createEmptyInstance() => create();
+  static $pb.PbList<OwnAccess> createRepeated() => $pb.PbList<OwnAccess>();
+  @$core.pragma('dart2js:noInline')
+  static OwnAccess getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OwnAccess>(create);
+  static OwnAccess? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get logo => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set logo($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLogo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLogo() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get remark => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set remark($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRemark() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRemark() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get type => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set type($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearType() => clearField(5);
+}
+
+class ListOwnAccessRequest extends $pb.GeneratedMessage {
+  factory ListOwnAccessRequest({
+    $2.BaseRequest? baseRequest,
+    $core.String? access,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (access != null) {
+      $result.access = access;
+    }
+    return $result;
+  }
+  ListOwnAccessRequest._() : super();
+  factory ListOwnAccessRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListOwnAccessRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOwnAccessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'access')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListOwnAccessRequest clone() => ListOwnAccessRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListOwnAccessRequest copyWith(void Function(ListOwnAccessRequest) updates) => super.copyWith((message) => updates(message as ListOwnAccessRequest)) as ListOwnAccessRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListOwnAccessRequest create() => ListOwnAccessRequest._();
+  ListOwnAccessRequest createEmptyInstance() => create();
+  static $pb.PbList<ListOwnAccessRequest> createRepeated() => $pb.PbList<ListOwnAccessRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListOwnAccessRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListOwnAccessRequest>(create);
+  static ListOwnAccessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get access => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set access($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccess() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccess() => clearField(2);
+}
+
+class ListOwnAccessResponse extends $pb.GeneratedMessage {
+  factory ListOwnAccessResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  ListOwnAccessResponse._() : super();
+  factory ListOwnAccessResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListOwnAccessResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListOwnAccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListOwnAccessResponse clone() => ListOwnAccessResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListOwnAccessResponse copyWith(void Function(ListOwnAccessResponse) updates) => super.copyWith((message) => updates(message as ListOwnAccessResponse)) as ListOwnAccessResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListOwnAccessResponse create() => ListOwnAccessResponse._();
+  ListOwnAccessResponse createEmptyInstance() => create();
+  static $pb.PbList<ListOwnAccessResponse> createRepeated() => $pb.PbList<ListOwnAccessResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListOwnAccessResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListOwnAccessResponse>(create);
+  static ListOwnAccessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -100,6 +100,9 @@ class glory_apiApi {
   $async.Future<$1.DeleteUserResponse> deleteUser($pb.ClientContext? ctx, $1.DeleteUserRequest request) =>
     _client.invoke<$1.DeleteUserResponse>(ctx, 'glory_api', 'DeleteUser', request, $1.DeleteUserResponse())
   ;
+  $async.Future<$1.ListOwnAccessResponse> listOwnAccess($pb.ClientContext? ctx, $1.ListOwnAccessRequest request) =>
+    _client.invoke<$1.ListOwnAccessResponse>(ctx, 'glory_api', 'ListOwnAccess', request, $1.ListOwnAccessResponse())
+  ;
   $async.Future<$1.GetVerifyCodeResponse> getVerifyCode($pb.ClientContext? ctx, $1.GetVerifyCodeRequest request) =>
     _client.invoke<$1.GetVerifyCodeResponse>(ctx, 'glory_api', 'GetVerifyCode', request, $1.GetVerifyCodeResponse())
   ;
