@@ -102,6 +102,13 @@ message TeacherListStudentTaskRequest {
   base.BaseRequest base_request = 1;
   int32 task_evaluate_type = 2; // 任务评价类型：1. 机器评价任务；2. 教师评价任务
   int32 task_evaluate_status = 3; // 任务评价状态：1. 待评价；2. 已评价；3. 未提交
+  string keyword = 4;
+  int64 class_id = 5;
+  string status = 6;
+  TimeRange task_start = 7;
+  TimeRange task_end = 8;
+  TimeRange task_submitted_at = 9;
+  TimeRange task_evaluated_at = 10;
   base.PaginationRequest pagination = 100;
 }
 
