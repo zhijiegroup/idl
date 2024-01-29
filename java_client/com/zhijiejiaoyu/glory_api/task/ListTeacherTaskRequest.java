@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   private ListTeacherTaskRequest() {
     keyword = "";
     status = "";
+    createdStart = "";
+    createdEnd = "";
   }
 
   @java.lang.Override
@@ -78,6 +80,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             status = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdStart = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdEnd = s;
             break;
           }
           case 802: {
@@ -246,6 +260,98 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CREATED_START_FIELD_NUMBER = 5;
+  private volatile java.lang.Object createdStart ;
+  /**
+   * <pre>
+   * 任务创建时间开始
+   * </pre>
+   *
+   * <code>string created_start = 5;</code>
+   * @return The createdStart.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedStart() {
+    java.lang.Object ref = createdStart ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdStart = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 任务创建时间开始
+   * </pre>
+   *
+   * <code>string created_start = 5;</code>
+   * @return The bytes for createdStart.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedStartBytes() {
+    java.lang.Object ref = createdStart ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdStart = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_END_FIELD_NUMBER = 6;
+  private volatile java.lang.Object createdEnd ;
+  /**
+   * <pre>
+   * 任务创建时间结束
+   * </pre>
+   *
+   * <code>string created_end = 6;</code>
+   * @return The createdEnd.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedEnd() {
+    java.lang.Object ref = createdEnd ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdEnd = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 任务创建时间结束
+   * </pre>
+   *
+   * <code>string created_end = 6;</code>
+   * @return The bytes for createdEnd.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedEndBytes() {
+    java.lang.Object ref = createdEnd ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdEnd = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -298,6 +404,12 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status );
     }
+    if (!getCreatedStartBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdStart );
+    }
+    if (!getCreatedEndBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdEnd );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -323,6 +435,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status );
+    }
+    if (!getCreatedStartBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdStart );
+    }
+    if (!getCreatedEndBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdEnd );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -354,6 +472,10 @@ private static final long serialVersionUID = 0L;
         != other.getClassId()) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
+    if (!getCreatedStart()
+        .equals(other.getCreatedStart())) return false;
+    if (!getCreatedEnd()
+        .equals(other.getCreatedEnd())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -381,6 +503,10 @@ private static final long serialVersionUID = 0L;
         getClassId());
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + CREATED_START_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedStart().hashCode();
+    hash = (37 * hash) + CREATED_END_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedEnd().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -530,6 +656,10 @@ private static final long serialVersionUID = 0L;
 
       status = "";
 
+      createdStart = "";
+
+      createdEnd = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -570,6 +700,8 @@ private static final long serialVersionUID = 0L;
       result.keyword = keyword ;
       result.classId = classId ;
       result.status = status ;
+      result.createdStart = createdStart ;
+      result.createdEnd = createdEnd ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -635,6 +767,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
+        onChanged();
+      }
+      if (!other.getCreatedStart().isEmpty()) {
+        createdStart = other.createdStart ;
+        onChanged();
+      }
+      if (!other.getCreatedEnd().isEmpty()) {
+        createdEnd = other.createdEnd ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -987,6 +1127,198 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdStart = "";
+    /**
+     * <pre>
+     * 任务创建时间开始
+     * </pre>
+     *
+     * <code>string created_start = 5;</code>
+     * @return The createdStart.
+     */
+    public java.lang.String getCreatedStart() {
+      java.lang.Object ref = createdStart ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdStart = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务创建时间开始
+     * </pre>
+     *
+     * <code>string created_start = 5;</code>
+     * @return The bytes for createdStart.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedStartBytes() {
+      java.lang.Object ref = createdStart ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdStart = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务创建时间开始
+     * </pre>
+     *
+     * <code>string created_start = 5;</code>
+     * @param value The createdStart to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedStart(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdStart = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务创建时间开始
+     * </pre>
+     *
+     * <code>string created_start = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedStart() {
+      
+      createdStart = getDefaultInstance().getCreatedStart();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务创建时间开始
+     * </pre>
+     *
+     * <code>string created_start = 5;</code>
+     * @param value The bytes for createdStart to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedStartBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdStart = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdEnd = "";
+    /**
+     * <pre>
+     * 任务创建时间结束
+     * </pre>
+     *
+     * <code>string created_end = 6;</code>
+     * @return The createdEnd.
+     */
+    public java.lang.String getCreatedEnd() {
+      java.lang.Object ref = createdEnd ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdEnd = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务创建时间结束
+     * </pre>
+     *
+     * <code>string created_end = 6;</code>
+     * @return The bytes for createdEnd.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedEndBytes() {
+      java.lang.Object ref = createdEnd ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdEnd = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 任务创建时间结束
+     * </pre>
+     *
+     * <code>string created_end = 6;</code>
+     * @param value The createdEnd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedEnd(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdEnd = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务创建时间结束
+     * </pre>
+     *
+     * <code>string created_end = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedEnd() {
+      
+      createdEnd = getDefaultInstance().getCreatedEnd();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务创建时间结束
+     * </pre>
+     *
+     * <code>string created_end = 6;</code>
+     * @param value The bytes for createdEnd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedEndBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdEnd = value;
       onChanged();
       return this;
     }

@@ -99,6 +99,10 @@ export interface ListTeacherTaskRequest {
   class_id?: string;
   /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
   status?: string;
+  /** 任务创建时间开始 */
+  created_start?: string;
+  /** 任务创建时间结束 */
+  created_end?: string;
   pagination?: base.PaginationRequest;
 }
 

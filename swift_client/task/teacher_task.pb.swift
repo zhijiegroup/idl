@@ -358,6 +358,12 @@ struct GloryApi_ListTeacherTaskRequest {
   /// 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
   var status: String = String()
 
+  /// 任务创建时间开始
+  var createdStart: String = String()
+
+  /// 任务创建时间结束
+  var createdEnd: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1174,6 +1180,8 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     2: .same(proto: "keyword"),
     3: .standard(proto: "class_id"),
     4: .same(proto: "status"),
+    5: .standard(proto: "created_start"),
+    6: .standard(proto: "created_end"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1187,6 +1195,8 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 2: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.createdStart) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdEnd) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1210,6 +1220,12 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
     }
+    if !self.createdStart.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdStart, fieldNumber: 5)
+    }
+    if !self.createdEnd.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdEnd, fieldNumber: 6)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1221,6 +1237,8 @@ extension GloryApi_ListTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.keyword != rhs.keyword {return false}
     if lhs.classID != rhs.classID {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.createdStart != rhs.createdStart {return false}
+    if lhs.createdEnd != rhs.createdEnd {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
