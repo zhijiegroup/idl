@@ -539,6 +539,182 @@ class TeacherTask extends $pb.GeneratedMessage {
   $0.User ensureUpdator() => $_ensure(21);
 }
 
+class TeacherTaskProgress extends $pb.GeneratedMessage {
+  factory TeacherTaskProgress({
+    $core.String? teacherTaskStatus,
+    $core.int? teacherTaskEvaluateType,
+    $fixnum.Int64? totalTaskCount,
+    $fixnum.Int64? studentSubmitCount,
+    $fixnum.Int64? studentNotSubmitCount,
+    $fixnum.Int64? systemEvaluatedCount,
+    $fixnum.Int64? systemNotEvaluatedCount,
+    $fixnum.Int64? teacherEvaluatedCount,
+    $fixnum.Int64? teacherNotEvaluatedCount,
+    $fixnum.Int64? totalEvaluatedCount,
+  }) {
+    final $result = create();
+    if (teacherTaskStatus != null) {
+      $result.teacherTaskStatus = teacherTaskStatus;
+    }
+    if (teacherTaskEvaluateType != null) {
+      $result.teacherTaskEvaluateType = teacherTaskEvaluateType;
+    }
+    if (totalTaskCount != null) {
+      $result.totalTaskCount = totalTaskCount;
+    }
+    if (studentSubmitCount != null) {
+      $result.studentSubmitCount = studentSubmitCount;
+    }
+    if (studentNotSubmitCount != null) {
+      $result.studentNotSubmitCount = studentNotSubmitCount;
+    }
+    if (systemEvaluatedCount != null) {
+      $result.systemEvaluatedCount = systemEvaluatedCount;
+    }
+    if (systemNotEvaluatedCount != null) {
+      $result.systemNotEvaluatedCount = systemNotEvaluatedCount;
+    }
+    if (teacherEvaluatedCount != null) {
+      $result.teacherEvaluatedCount = teacherEvaluatedCount;
+    }
+    if (teacherNotEvaluatedCount != null) {
+      $result.teacherNotEvaluatedCount = teacherNotEvaluatedCount;
+    }
+    if (totalEvaluatedCount != null) {
+      $result.totalEvaluatedCount = totalEvaluatedCount;
+    }
+    return $result;
+  }
+  TeacherTaskProgress._() : super();
+  factory TeacherTaskProgress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherTaskProgress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskProgress', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'teacherTaskStatus')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'teacherTaskEvaluateType', $pb.PbFieldType.O3)
+    ..aInt64(3, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(4, _omitFieldNames ? '' : 'studentSubmitCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'studentNotSubmitCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'systemEvaluatedCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'systemNotEvaluatedCount')
+    ..aInt64(8, _omitFieldNames ? '' : 'teacherEvaluatedCount')
+    ..aInt64(9, _omitFieldNames ? '' : 'teacherNotEvaluatedCount')
+    ..aInt64(10, _omitFieldNames ? '' : 'totalEvaluatedCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherTaskProgress clone() => TeacherTaskProgress()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherTaskProgress copyWith(void Function(TeacherTaskProgress) updates) => super.copyWith((message) => updates(message as TeacherTaskProgress)) as TeacherTaskProgress;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskProgress create() => TeacherTaskProgress._();
+  TeacherTaskProgress createEmptyInstance() => create();
+  static $pb.PbList<TeacherTaskProgress> createRepeated() => $pb.PbList<TeacherTaskProgress>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskProgress getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherTaskProgress>(create);
+  static TeacherTaskProgress? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get teacherTaskStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set teacherTaskStatus($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTeacherTaskStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTeacherTaskStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get teacherTaskEvaluateType => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set teacherTaskEvaluateType($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeacherTaskEvaluateType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeacherTaskEvaluateType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get totalTaskCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalTaskCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalTaskCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get studentSubmitCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set studentSubmitCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStudentSubmitCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStudentSubmitCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get studentNotSubmitCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set studentNotSubmitCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStudentNotSubmitCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStudentNotSubmitCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get systemEvaluatedCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set systemEvaluatedCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSystemEvaluatedCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSystemEvaluatedCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get systemNotEvaluatedCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set systemNotEvaluatedCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSystemNotEvaluatedCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSystemNotEvaluatedCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get teacherEvaluatedCount => $_getI64(7);
+  @$pb.TagNumber(8)
+  set teacherEvaluatedCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTeacherEvaluatedCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTeacherEvaluatedCount() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get teacherNotEvaluatedCount => $_getI64(8);
+  @$pb.TagNumber(9)
+  set teacherNotEvaluatedCount($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTeacherNotEvaluatedCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTeacherNotEvaluatedCount() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get totalEvaluatedCount => $_getI64(9);
+  @$pb.TagNumber(10)
+  set totalEvaluatedCount($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTotalEvaluatedCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTotalEvaluatedCount() => clearField(10);
+}
+
 class CreateTeacherTaskRequest extends $pb.GeneratedMessage {
   factory CreateTeacherTaskRequest({
     $1.BaseRequest? baseRequest,
@@ -1097,6 +1273,140 @@ class GetTeacherTaskResponse extends $pb.GeneratedMessage {
   void clearTeacherTask() => clearField(2);
   @$pb.TagNumber(2)
   TeacherTask ensureTeacherTask() => $_ensure(1);
+}
+
+class GetTeacherTaskProgressRequest extends $pb.GeneratedMessage {
+  factory GetTeacherTaskProgressRequest({
+    $1.BaseRequest? baseRequest,
+    $fixnum.Int64? teacherTaskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (teacherTaskId != null) {
+      $result.teacherTaskId = teacherTaskId;
+    }
+    return $result;
+  }
+  GetTeacherTaskProgressRequest._() : super();
+  factory GetTeacherTaskProgressRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTeacherTaskProgressRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTeacherTaskProgressRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'teacherTaskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTeacherTaskProgressRequest clone() => GetTeacherTaskProgressRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTeacherTaskProgressRequest copyWith(void Function(GetTeacherTaskProgressRequest) updates) => super.copyWith((message) => updates(message as GetTeacherTaskProgressRequest)) as GetTeacherTaskProgressRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTeacherTaskProgressRequest create() => GetTeacherTaskProgressRequest._();
+  GetTeacherTaskProgressRequest createEmptyInstance() => create();
+  static $pb.PbList<GetTeacherTaskProgressRequest> createRepeated() => $pb.PbList<GetTeacherTaskProgressRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetTeacherTaskProgressRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTeacherTaskProgressRequest>(create);
+  static GetTeacherTaskProgressRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get teacherTaskId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set teacherTaskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeacherTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeacherTaskId() => clearField(2);
+}
+
+class GetTeacherTaskProgressResponse extends $pb.GeneratedMessage {
+  factory GetTeacherTaskProgressResponse({
+    $1.BaseResponse? baseResp,
+    TeacherTaskProgress? teacherTaskProgress,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (teacherTaskProgress != null) {
+      $result.teacherTaskProgress = teacherTaskProgress;
+    }
+    return $result;
+  }
+  GetTeacherTaskProgressResponse._() : super();
+  factory GetTeacherTaskProgressResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTeacherTaskProgressResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTeacherTaskProgressResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..aOM<TeacherTaskProgress>(2, _omitFieldNames ? '' : 'teacherTaskProgress', subBuilder: TeacherTaskProgress.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTeacherTaskProgressResponse clone() => GetTeacherTaskProgressResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTeacherTaskProgressResponse copyWith(void Function(GetTeacherTaskProgressResponse) updates) => super.copyWith((message) => updates(message as GetTeacherTaskProgressResponse)) as GetTeacherTaskProgressResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTeacherTaskProgressResponse create() => GetTeacherTaskProgressResponse._();
+  GetTeacherTaskProgressResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTeacherTaskProgressResponse> createRepeated() => $pb.PbList<GetTeacherTaskProgressResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTeacherTaskProgressResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTeacherTaskProgressResponse>(create);
+  static GetTeacherTaskProgressResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($1.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  TeacherTaskProgress get teacherTaskProgress => $_getN(1);
+  @$pb.TagNumber(2)
+  set teacherTaskProgress(TeacherTaskProgress v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTeacherTaskProgress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTeacherTaskProgress() => clearField(2);
+  @$pb.TagNumber(2)
+  TeacherTaskProgress ensureTeacherTaskProgress() => $_ensure(1);
 }
 
 class DeleteTeacherTaskRequest extends $pb.GeneratedMessage {

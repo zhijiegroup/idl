@@ -439,6 +439,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$53.UpdateTeacherTaskResponse> updateTeacherTask($pb.ServerContext ctx, $53.UpdateTeacherTaskRequest request);
   $async.Future<$53.ListTeacherTaskResponse> listTeacherTask($pb.ServerContext ctx, $53.ListTeacherTaskRequest request);
   $async.Future<$53.GetTeacherTaskResponse> getTeacherTask($pb.ServerContext ctx, $53.GetTeacherTaskRequest request);
+  $async.Future<$53.GetTeacherTaskProgressResponse> getTeacherTaskProgress($pb.ServerContext ctx, $53.GetTeacherTaskProgressRequest request);
   $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ServerContext ctx, $53.DeleteTeacherTaskRequest request);
   $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ServerContext ctx, $54.ListStudentTaskRequest request);
   $async.Future<$54.SubmitStudentTaskResponse> submitStudentTask($pb.ServerContext ctx, $54.SubmitStudentTaskRequest request);
@@ -821,6 +822,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTeacherTask': return $53.UpdateTeacherTaskRequest();
       case 'ListTeacherTask': return $53.ListTeacherTaskRequest();
       case 'GetTeacherTask': return $53.GetTeacherTaskRequest();
+      case 'GetTeacherTaskProgress': return $53.GetTeacherTaskProgressRequest();
       case 'DeleteTeacherTask': return $53.DeleteTeacherTaskRequest();
       case 'ListStudentTask': return $54.ListStudentTaskRequest();
       case 'SubmitStudentTask': return $54.SubmitStudentTaskRequest();
@@ -1206,6 +1208,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateTeacherTask': return this.updateTeacherTask(ctx, request as $53.UpdateTeacherTaskRequest);
       case 'ListTeacherTask': return this.listTeacherTask(ctx, request as $53.ListTeacherTaskRequest);
       case 'GetTeacherTask': return this.getTeacherTask(ctx, request as $53.GetTeacherTaskRequest);
+      case 'GetTeacherTaskProgress': return this.getTeacherTaskProgress(ctx, request as $53.GetTeacherTaskProgressRequest);
       case 'DeleteTeacherTask': return this.deleteTeacherTask(ctx, request as $53.DeleteTeacherTaskRequest);
       case 'ListStudentTask': return this.listStudentTask(ctx, request as $54.ListStudentTaskRequest);
       case 'SubmitStudentTask': return this.submitStudentTask(ctx, request as $54.SubmitStudentTaskRequest);

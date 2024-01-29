@@ -1631,6 +1631,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.GetTeacherTaskRequest
   ): Promise<teacher_task.GetTeacherTaskResponse>;
 
+  GetTeacherTaskProgress(
+    request: teacher_task.GetTeacherTaskProgressRequest
+  ): Promise<teacher_task.GetTeacherTaskProgressResponse>;
+
   DeleteTeacherTask(
     request: teacher_task.DeleteTeacherTaskRequest
   ): Promise<teacher_task.DeleteTeacherTaskResponse>;

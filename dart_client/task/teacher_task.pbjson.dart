@@ -102,6 +102,37 @@ final $typed_data.Uint8List teacherTaskDescriptor = $convert.base64Decode(
     'gJUgl1cGRhdGVkQXQSKQoHY3JlYXRvchgVIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdjcmVhdG9y'
     'EikKB3VwZGF0b3IYFiABKAsyDy5nbG9yeV9hcGkuVXNlclIHdXBkYXRvcg==');
 
+@$core.Deprecated('Use teacherTaskProgressDescriptor instead')
+const TeacherTaskProgress$json = {
+  '1': 'TeacherTaskProgress',
+  '2': [
+    {'1': 'teacher_task_status', '3': 1, '4': 1, '5': 9, '10': 'teacherTaskStatus'},
+    {'1': 'teacher_task_evaluate_type', '3': 2, '4': 1, '5': 5, '10': 'teacherTaskEvaluateType'},
+    {'1': 'total_task_count', '3': 3, '4': 1, '5': 3, '10': 'totalTaskCount'},
+    {'1': 'student_submit_count', '3': 4, '4': 1, '5': 3, '10': 'studentSubmitCount'},
+    {'1': 'student_not_submit_count', '3': 5, '4': 1, '5': 3, '10': 'studentNotSubmitCount'},
+    {'1': 'system_evaluated_count', '3': 6, '4': 1, '5': 3, '10': 'systemEvaluatedCount'},
+    {'1': 'system_not_evaluated_count', '3': 7, '4': 1, '5': 3, '10': 'systemNotEvaluatedCount'},
+    {'1': 'teacher_evaluated_count', '3': 8, '4': 1, '5': 3, '10': 'teacherEvaluatedCount'},
+    {'1': 'teacher_not_evaluated_count', '3': 9, '4': 1, '5': 3, '10': 'teacherNotEvaluatedCount'},
+    {'1': 'total_evaluated_count', '3': 10, '4': 1, '5': 3, '10': 'totalEvaluatedCount'},
+  ],
+};
+
+/// Descriptor for `TeacherTaskProgress`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherTaskProgressDescriptor = $convert.base64Decode(
+    'ChNUZWFjaGVyVGFza1Byb2dyZXNzEi4KE3RlYWNoZXJfdGFza19zdGF0dXMYASABKAlSEXRlYW'
+    'NoZXJUYXNrU3RhdHVzEjsKGnRlYWNoZXJfdGFza19ldmFsdWF0ZV90eXBlGAIgASgFUhd0ZWFj'
+    'aGVyVGFza0V2YWx1YXRlVHlwZRIoChB0b3RhbF90YXNrX2NvdW50GAMgASgDUg50b3RhbFRhc2'
+    'tDb3VudBIwChRzdHVkZW50X3N1Ym1pdF9jb3VudBgEIAEoA1ISc3R1ZGVudFN1Ym1pdENvdW50'
+    'EjcKGHN0dWRlbnRfbm90X3N1Ym1pdF9jb3VudBgFIAEoA1IVc3R1ZGVudE5vdFN1Ym1pdENvdW'
+    '50EjQKFnN5c3RlbV9ldmFsdWF0ZWRfY291bnQYBiABKANSFHN5c3RlbUV2YWx1YXRlZENvdW50'
+    'EjsKGnN5c3RlbV9ub3RfZXZhbHVhdGVkX2NvdW50GAcgASgDUhdzeXN0ZW1Ob3RFdmFsdWF0ZW'
+    'RDb3VudBI2Chd0ZWFjaGVyX2V2YWx1YXRlZF9jb3VudBgIIAEoA1IVdGVhY2hlckV2YWx1YXRl'
+    'ZENvdW50Ej0KG3RlYWNoZXJfbm90X2V2YWx1YXRlZF9jb3VudBgJIAEoA1IYdGVhY2hlck5vdE'
+    'V2YWx1YXRlZENvdW50EjIKFXRvdGFsX2V2YWx1YXRlZF9jb3VudBgKIAEoA1ITdG90YWxFdmFs'
+    'dWF0ZWRDb3VudA==');
+
 @$core.Deprecated('Use createTeacherTaskRequestDescriptor instead')
 const CreateTeacherTaskRequest$json = {
   '1': 'CreateTeacherTaskRequest',
@@ -223,6 +254,36 @@ final $typed_data.Uint8List getTeacherTaskResponseDescriptor = $convert.base64De
     'ChZHZXRUZWFjaGVyVGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBI5Cgx0ZWFjaGVyX3Rhc2sYAiABKAsyFi5nbG9yeV9hcGkuVGVh'
     'Y2hlclRhc2tSC3RlYWNoZXJUYXNr');
+
+@$core.Deprecated('Use getTeacherTaskProgressRequestDescriptor instead')
+const GetTeacherTaskProgressRequest$json = {
+  '1': 'GetTeacherTaskProgressRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teacher_task_id', '3': 2, '4': 1, '5': 3, '10': 'teacherTaskId'},
+  ],
+};
+
+/// Descriptor for `GetTeacherTaskProgressRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTeacherTaskProgressRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRUZWFjaGVyVGFza1Byb2dyZXNzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBImCg90ZWFjaGVyX3Rhc2tfaWQYAiABKANS'
+    'DXRlYWNoZXJUYXNrSWQ=');
+
+@$core.Deprecated('Use getTeacherTaskProgressResponseDescriptor instead')
+const GetTeacherTaskProgressResponse$json = {
+  '1': 'GetTeacherTaskProgressResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'teacher_task_progress', '3': 2, '4': 1, '5': 11, '6': '.glory_api.TeacherTaskProgress', '10': 'teacherTaskProgress'},
+  ],
+};
+
+/// Descriptor for `GetTeacherTaskProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTeacherTaskProgressResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRUZWFjaGVyVGFza1Byb2dyZXNzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwElIKFXRlYWNoZXJfdGFza19wcm9ncmVzcxgCIAEo'
+    'CzIeLmdsb3J5X2FwaS5UZWFjaGVyVGFza1Byb2dyZXNzUhN0ZWFjaGVyVGFza1Byb2dyZXNz');
 
 @$core.Deprecated('Use deleteTeacherTaskRequestDescriptor instead')
 const DeleteTeacherTaskRequest$json = {

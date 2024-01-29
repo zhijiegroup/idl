@@ -193,6 +193,46 @@ struct GloryApi_TeacherTask {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+struct GloryApi_TeacherTaskProgress {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  var teacherTaskStatus: String = String()
+
+  /// 任务评价类型：1. 仅机器评分；2. 仅老师评分；3. 包含机器与老师
+  var teacherTaskEvaluateType: Int32 = 0
+
+  /// 任务总参与人数
+  var totalTaskCount: Int64 = 0
+
+  /// 学生提交任务数
+  var studentSubmitCount: Int64 = 0
+
+  /// 学生未提交任务数
+  var studentNotSubmitCount: Int64 = 0
+
+  /// 机器评价任务数
+  var systemEvaluatedCount: Int64 = 0
+
+  /// 机器待评价任务数
+  var systemNotEvaluatedCount: Int64 = 0
+
+  /// 老师评价任务数
+  var teacherEvaluatedCount: Int64 = 0
+
+  /// 老师待评价任务数
+  var teacherNotEvaluatedCount: Int64 = 0
+
+  /// 整体完成评价数
+  var totalEvaluatedCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_CreateTeacherTaskRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -422,6 +462,60 @@ struct GloryApi_GetTeacherTaskResponse {
   fileprivate var _teacherTask: GloryApi_TeacherTask? = nil
 }
 
+struct GloryApi_GetTeacherTaskProgressRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var teacherTaskID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetTeacherTaskProgressResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var teacherTaskProgress: GloryApi_TeacherTaskProgress {
+    get {return _teacherTaskProgress ?? GloryApi_TeacherTaskProgress()}
+    set {_teacherTaskProgress = newValue}
+  }
+  /// Returns true if `teacherTaskProgress` has been explicitly set.
+  var hasTeacherTaskProgress: Bool {return self._teacherTaskProgress != nil}
+  /// Clears the value of `teacherTaskProgress`. Subsequent reads from it will return its default value.
+  mutating func clearTeacherTaskProgress() {self._teacherTaskProgress = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _teacherTaskProgress: GloryApi_TeacherTaskProgress? = nil
+}
+
 struct GloryApi_DeleteTeacherTaskRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -470,6 +564,7 @@ struct GloryApi_DeleteTeacherTaskResponse {
 extension GloryApi_TeacherTaskParameter: @unchecked Sendable {}
 extension GloryApi_TeacherTaskClass: @unchecked Sendable {}
 extension GloryApi_TeacherTask: @unchecked Sendable {}
+extension GloryApi_TeacherTaskProgress: @unchecked Sendable {}
 extension GloryApi_CreateTeacherTaskRequest: @unchecked Sendable {}
 extension GloryApi_CreateTeacherTaskResponse: @unchecked Sendable {}
 extension GloryApi_UpdateTeacherTaskRequest: @unchecked Sendable {}
@@ -478,6 +573,8 @@ extension GloryApi_ListTeacherTaskRequest: @unchecked Sendable {}
 extension GloryApi_ListTeacherTaskResponse: @unchecked Sendable {}
 extension GloryApi_GetTeacherTaskRequest: @unchecked Sendable {}
 extension GloryApi_GetTeacherTaskResponse: @unchecked Sendable {}
+extension GloryApi_GetTeacherTaskProgressRequest: @unchecked Sendable {}
+extension GloryApi_GetTeacherTaskProgressResponse: @unchecked Sendable {}
 extension GloryApi_DeleteTeacherTaskRequest: @unchecked Sendable {}
 extension GloryApi_DeleteTeacherTaskResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
@@ -828,6 +925,92 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
+extension GloryApi_TeacherTaskProgress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TeacherTaskProgress"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "teacher_task_status"),
+    2: .standard(proto: "teacher_task_evaluate_type"),
+    3: .standard(proto: "total_task_count"),
+    4: .standard(proto: "student_submit_count"),
+    5: .standard(proto: "student_not_submit_count"),
+    6: .standard(proto: "system_evaluated_count"),
+    7: .standard(proto: "system_not_evaluated_count"),
+    8: .standard(proto: "teacher_evaluated_count"),
+    9: .standard(proto: "teacher_not_evaluated_count"),
+    10: .standard(proto: "total_evaluated_count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.teacherTaskStatus) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.teacherTaskEvaluateType) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.totalTaskCount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.studentSubmitCount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.studentNotSubmitCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.systemEvaluatedCount) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.systemNotEvaluatedCount) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.teacherEvaluatedCount) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.teacherNotEvaluatedCount) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.totalEvaluatedCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.teacherTaskStatus.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherTaskStatus, fieldNumber: 1)
+    }
+    if self.teacherTaskEvaluateType != 0 {
+      try visitor.visitSingularInt32Field(value: self.teacherTaskEvaluateType, fieldNumber: 2)
+    }
+    if self.totalTaskCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalTaskCount, fieldNumber: 3)
+    }
+    if self.studentSubmitCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.studentSubmitCount, fieldNumber: 4)
+    }
+    if self.studentNotSubmitCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.studentNotSubmitCount, fieldNumber: 5)
+    }
+    if self.systemEvaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemEvaluatedCount, fieldNumber: 6)
+    }
+    if self.systemNotEvaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.systemNotEvaluatedCount, fieldNumber: 7)
+    }
+    if self.teacherEvaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.teacherEvaluatedCount, fieldNumber: 8)
+    }
+    if self.teacherNotEvaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.teacherNotEvaluatedCount, fieldNumber: 9)
+    }
+    if self.totalEvaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalEvaluatedCount, fieldNumber: 10)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TeacherTaskProgress, rhs: GloryApi_TeacherTaskProgress) -> Bool {
+    if lhs.teacherTaskStatus != rhs.teacherTaskStatus {return false}
+    if lhs.teacherTaskEvaluateType != rhs.teacherTaskEvaluateType {return false}
+    if lhs.totalTaskCount != rhs.totalTaskCount {return false}
+    if lhs.studentSubmitCount != rhs.studentSubmitCount {return false}
+    if lhs.studentNotSubmitCount != rhs.studentNotSubmitCount {return false}
+    if lhs.systemEvaluatedCount != rhs.systemEvaluatedCount {return false}
+    if lhs.systemNotEvaluatedCount != rhs.systemNotEvaluatedCount {return false}
+    if lhs.teacherEvaluatedCount != rhs.teacherEvaluatedCount {return false}
+    if lhs.teacherNotEvaluatedCount != rhs.teacherNotEvaluatedCount {return false}
+    if lhs.totalEvaluatedCount != rhs.totalEvaluatedCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_CreateTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateTeacherTaskRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1171,6 +1354,90 @@ extension GloryApi_GetTeacherTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_GetTeacherTaskResponse, rhs: GloryApi_GetTeacherTaskResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._teacherTask != rhs._teacherTask {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTeacherTaskProgressRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTeacherTaskProgressRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "teacher_task_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.teacherTaskID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.teacherTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.teacherTaskID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTeacherTaskProgressRequest, rhs: GloryApi_GetTeacherTaskProgressRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.teacherTaskID != rhs.teacherTaskID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetTeacherTaskProgressResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetTeacherTaskProgressResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "teacher_task_progress"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._teacherTaskProgress) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._teacherTaskProgress {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetTeacherTaskProgressResponse, rhs: GloryApi_GetTeacherTaskProgressResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._teacherTaskProgress != rhs._teacherTaskProgress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

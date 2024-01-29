@@ -52,6 +52,29 @@ export interface TeacherTask {
   updator?: user.User;
 }
 
+export interface TeacherTaskProgress {
+  /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
+  teacher_task_status?: string;
+  /** 任务评价类型：1. 仅机器评分；2. 仅老师评分；3. 包含机器与老师 */
+  teacher_task_evaluate_type?: number;
+  /** 任务总参与人数 */
+  total_task_count?: string;
+  /** 学生提交任务数 */
+  student_submit_count?: string;
+  /** 学生未提交任务数 */
+  student_not_submit_count?: string;
+  /** 机器评价任务数 */
+  system_evaluated_count?: string;
+  /** 机器待评价任务数 */
+  system_not_evaluated_count?: string;
+  /** 老师评价任务数 */
+  teacher_evaluated_count?: string;
+  /** 老师待评价任务数 */
+  teacher_not_evaluated_count?: string;
+  /** 整体完成评价数 */
+  total_evaluated_count?: string;
+}
+
 export interface CreateTeacherTaskRequest {
   base_request?: base.BaseRequest;
   teacher_task?: TeacherTask;
@@ -93,6 +116,16 @@ export interface GetTeacherTaskRequest {
 export interface GetTeacherTaskResponse {
   base_resp?: base.BaseResponse;
   teacher_task?: TeacherTask;
+}
+
+export interface GetTeacherTaskProgressRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_id?: string;
+}
+
+export interface GetTeacherTaskProgressResponse {
+  base_resp?: base.BaseResponse;
+  teacher_task_progress?: TeacherTaskProgress;
 }
 
 export interface DeleteTeacherTaskRequest {

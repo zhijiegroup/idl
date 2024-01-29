@@ -2908,6 +2908,14 @@ export class glory_api {
     );
   }
 
+  GetTeacherTaskProgress(request) {
+    const uri = `${this.uriPrefix}/api/task/get_teacher_task_progress`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   DeleteTeacherTask(request) {
     const uri = `${this.uriPrefix}/api/task/delete_teacher_task`;
     const body = JSONbigint.stringify(request);
