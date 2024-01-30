@@ -32,28 +32,27 @@ message StudentTaskParameterResult {
 
 message StudentTaskRequirementResult {
   int64 task_requirement_id = 1;
-  string task_requirement = 2;
-  bool is_passwd = 3;
-  string failed_reason = 4;
+  string task_requirement = 2; // 任务要求
+  bool is_passwd = 3; // 是否通过
 }
 
 message StudentTask {
   int64 student_task_id = 1;
-  string task_status = 2;
-  string submitted_at = 3;
-  string submit_parameter = 4;
-  string submit_description = 5;
-  repeated string attachments = 6;
-  repeated StudentTaskParameterResult student_task_parameter_result =  7;
-  repeated StudentTaskRequirementResult student_task_requirement_result = 8;
-  string teacher_failed_reason = 9;
-  int32 teacher_evaluate_score = 10;
-  string task_platform = 11;
-  string system_task_key = 12;
-  TeacherTask teacher_task = 13;
-  repeated StudentTaskLink task_links = 14;
-  User student = 15;
-  User teacher = 16;
+  string task_status = 2; // 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+  string submitted_at = 3; // 任务提交时间
+  string submit_parameter = 4; // 任务提交参数
+  string submit_description = 5; // 任务提交描述
+  repeated string attachments = 6; // 任务提交附件
+  repeated StudentTaskParameterResult student_task_parameter_result =  7; // 任务参数评价结果
+  repeated StudentTaskRequirementResult student_task_requirement_result = 8; // 任务要求评价结果
+  string teacher_failed_reason = 9; // 任务要求失败原因
+  int32 teacher_evaluate_score = 10; // 任务评分
+  string task_platform = 11; // 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  string system_task_key = 12; // 预置任务标识
+  TeacherTask teacher_task = 13; // 任务所属教师任务
+  repeated StudentTaskLink task_links = 14; // 任务链接
+  User student = 15; // 学生信息
+  User teacher = 16; // 老师信息
 }
 
 message TeacherRequirementEvaluation {

@@ -23,24 +23,24 @@ message TeacherTaskClass {
 }
 
 message TeacherTask {
-  int64 teacher_task_id = 1;
-  int64 teacher_id = 2;
-  string teacher_task_name = 3;
-  string teacher_task_business = 4;
-  repeated TeacherTaskClass teacher_task_classes = 5;
-  string teacher_task_start = 6;
-  string teacher_task_end = 7;
+  int64 teacher_task_id = 1; // 教师任务 ID
+  int64 teacher_id = 2; // 教师 ID
+  string teacher_task_name = 3; // 教师任务名称
+  string teacher_task_business = 4; // 教师任务所属业务系统
+  repeated TeacherTaskClass teacher_task_classes = 5; // 任务分配班级
+  string teacher_task_start = 6; // 任务开始时间
+  string teacher_task_end = 7; // 任务结束时间
   int32 teacher_task_type = 8; // 任务类型：1.模板任务；2.手动任务
-  int64 teacher_task_template_id = 9;
-  string system_task_key = 10;
-  string teacher_task_content = 11;
-  repeated string teacher_task_requirements = 12;
-  string teacher_task_link = 13;
+  int64 teacher_task_template_id = 9; // 任务使用的模板 ID
+  string system_task_key = 10; // 预置任务表示
+  string teacher_task_content = 11; // 任务内容
+  repeated string teacher_task_requirements = 12; // 任务要求
+  string teacher_task_link = 13; // 任务链接
   string teacher_task_status = 14; // 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
   int64 total_task_count = 15; // 总任务数
   int64 total_submit_count = 16; // 总提交数
   int64 total_pass_count = 17; // 总通过数
-  repeated TeacherTaskParameter task_parameters = 18;
+  repeated TeacherTaskParameter task_parameters = 18; // 任务参数
   string created_at = 19;
   string updated_at = 20;
   User creator = 21;
