@@ -25,9 +25,10 @@ message StudentTaskParameterResult {
   string task_parameter_operator = 4;
   string task_parameter_value = 5;
   string task_parameter_type = 6;
-  bool is_passed = 7;
-  string failed_reason = 8;
-  repeated StudentTaskParameterResult children = 9;
+  string task_parameter_result = 7;
+  bool is_passed = 8;
+  string failed_reason = 9;
+  repeated StudentTaskParameterResult children = 10;
 }
 
 message StudentTaskRequirementResult {
@@ -106,7 +107,7 @@ message TeacherListStudentTaskRequest {
   int32 task_evaluate_type = 2; // 任务评价类型：1. 机器评价任务；2. 教师评价任务
   int32 task_evaluate_status = 3; // 任务评价状态：1. 待评价；2. 已评价；3. 未提交
   string keyword = 4;
-  int64 class_id = 5;
+  repeated int64 class_ids = 5;
   string status = 6;
   TimeRange task_start = 7;
   TimeRange task_end = 8;
