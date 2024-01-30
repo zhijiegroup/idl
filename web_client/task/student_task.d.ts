@@ -81,9 +81,12 @@ export interface ListStudentTaskRequest {
   /** 0. 全部；1. 未提交；2. 已评价 */
   type?: number;
   keyword?: string;
-  /** 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，"" */
+  /** 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+任务状态。
+1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+3. 如果查询已评价：passed - 已通过；failed：未通过。 */
   platform?: string;
-  /** 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc */
   status?: string;
   task_start?: string;
   task_end?: string;

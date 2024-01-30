@@ -236,7 +236,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object status ;
   /**
    * <pre>
-   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * 任务状态。
+   * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+   * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+   * 3. 如果查询已评价：passed - 已通过；failed：未通过。
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -257,7 +260,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * 任务状态。
+   * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+   * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+   * 3. 如果查询已评价：passed - 已通过；failed：未通过。
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -1015,7 +1021,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object status = "";
     /**
      * <pre>
-     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * 任务状态。
+     * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+     * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+     * 3. 如果查询已评价：passed - 已通过；failed：未通过。
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1035,7 +1044,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * 任务状态。
+     * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+     * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+     * 3. 如果查询已评价：passed - 已通过；failed：未通过。
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1056,7 +1068,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * 任务状态。
+     * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+     * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+     * 3. 如果查询已评价：passed - 已通过；failed：未通过。
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1075,7 +1090,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * 任务状态。
+     * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+     * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+     * 3. 如果查询已评价：passed - 已通过；failed：未通过。
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1089,7 +1107,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+     * 任务状态。
+     * 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+     * 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+     * 3. 如果查询已评价：passed - 已通过；failed：未通过。
      * </pre>
      *
      * <code>string status = 4;</code>

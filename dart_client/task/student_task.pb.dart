@@ -783,6 +783,10 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPlatform() => clearField(3);
 
+  /// 任务状态。
+  /// 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
+  /// 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
+  /// 3. 如果查询已评价：passed - 已通过；failed：未通过。
   @$pb.TagNumber(4)
   $core.String get status => $_getSZ(3);
   @$pb.TagNumber(4)
