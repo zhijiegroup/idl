@@ -65,6 +65,8 @@ struct GloryApi_StudentTaskParameterResult {
 
   var taskParameterType: String = String()
 
+  var taskParameterResult: String = String()
+
   var isPassed: Bool = false
 
   var failedReason: String = String()
@@ -385,9 +387,9 @@ struct GloryApi_TeacherListStudentTaskRequest {
     set {_uniqueStorage()._keyword = newValue}
   }
 
-  var classID: Int64 {
-    get {return _storage._classID}
-    set {_uniqueStorage()._classID = newValue}
+  var classIds: [Int64] {
+    get {return _storage._classIds}
+    set {_uniqueStorage()._classIds = newValue}
   }
 
   var status: String {
@@ -638,9 +640,10 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
     4: .standard(proto: "task_parameter_operator"),
     5: .standard(proto: "task_parameter_value"),
     6: .standard(proto: "task_parameter_type"),
-    7: .standard(proto: "is_passed"),
-    8: .standard(proto: "failed_reason"),
-    9: .same(proto: "children"),
+    7: .standard(proto: "task_parameter_result"),
+    8: .standard(proto: "is_passed"),
+    9: .standard(proto: "failed_reason"),
+    10: .same(proto: "children"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -655,9 +658,10 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
       case 4: try { try decoder.decodeSingularStringField(value: &self.taskParameterOperator) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.taskParameterValue) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.taskParameterType) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self.isPassed) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
-      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.taskParameterResult) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self.isPassed) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
+      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.children) }()
       default: break
       }
     }
@@ -682,14 +686,17 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
     if !self.taskParameterType.isEmpty {
       try visitor.visitSingularStringField(value: self.taskParameterType, fieldNumber: 6)
     }
+    if !self.taskParameterResult.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskParameterResult, fieldNumber: 7)
+    }
     if self.isPassed != false {
-      try visitor.visitSingularBoolField(value: self.isPassed, fieldNumber: 7)
+      try visitor.visitSingularBoolField(value: self.isPassed, fieldNumber: 8)
     }
     if !self.failedReason.isEmpty {
-      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 9)
     }
     if !self.children.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 9)
+      try visitor.visitRepeatedMessageField(value: self.children, fieldNumber: 10)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -701,6 +708,7 @@ extension GloryApi_StudentTaskParameterResult: SwiftProtobuf.Message, SwiftProto
     if lhs.taskParameterOperator != rhs.taskParameterOperator {return false}
     if lhs.taskParameterValue != rhs.taskParameterValue {return false}
     if lhs.taskParameterType != rhs.taskParameterType {return false}
+    if lhs.taskParameterResult != rhs.taskParameterResult {return false}
     if lhs.isPassed != rhs.isPassed {return false}
     if lhs.failedReason != rhs.failedReason {return false}
     if lhs.children != rhs.children {return false}
@@ -1248,7 +1256,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "task_evaluate_type"),
     3: .standard(proto: "task_evaluate_status"),
     4: .same(proto: "keyword"),
-    5: .standard(proto: "class_id"),
+    5: .standard(proto: "class_ids"),
     6: .same(proto: "status"),
     7: .standard(proto: "task_start"),
     8: .standard(proto: "task_end"),
@@ -1262,7 +1270,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
     var _taskEvaluateType: Int32 = 0
     var _taskEvaluateStatus: Int32 = 0
     var _keyword: String = String()
-    var _classID: Int64 = 0
+    var _classIds: [Int64] = []
     var _status: String = String()
     var _taskStart: GloryApi_TimeRange? = nil
     var _taskEnd: GloryApi_TimeRange? = nil
@@ -1279,7 +1287,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
       _taskEvaluateType = source._taskEvaluateType
       _taskEvaluateStatus = source._taskEvaluateStatus
       _keyword = source._keyword
-      _classID = source._classID
+      _classIds = source._classIds
       _status = source._status
       _taskStart = source._taskStart
       _taskEnd = source._taskEnd
@@ -1308,7 +1316,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
         case 2: try { try decoder.decodeSingularInt32Field(value: &_storage._taskEvaluateType) }()
         case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._taskEvaluateStatus) }()
         case 4: try { try decoder.decodeSingularStringField(value: &_storage._keyword) }()
-        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._classID) }()
+        case 5: try { try decoder.decodeRepeatedInt64Field(value: &_storage._classIds) }()
         case 6: try { try decoder.decodeSingularStringField(value: &_storage._status) }()
         case 7: try { try decoder.decodeSingularMessageField(value: &_storage._taskStart) }()
         case 8: try { try decoder.decodeSingularMessageField(value: &_storage._taskEnd) }()
@@ -1339,8 +1347,8 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
       if !_storage._keyword.isEmpty {
         try visitor.visitSingularStringField(value: _storage._keyword, fieldNumber: 4)
       }
-      if _storage._classID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._classID, fieldNumber: 5)
+      if !_storage._classIds.isEmpty {
+        try visitor.visitPackedInt64Field(value: _storage._classIds, fieldNumber: 5)
       }
       if !_storage._status.isEmpty {
         try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 6)
@@ -1373,7 +1381,7 @@ extension GloryApi_TeacherListStudentTaskRequest: SwiftProtobuf.Message, SwiftPr
         if _storage._taskEvaluateType != rhs_storage._taskEvaluateType {return false}
         if _storage._taskEvaluateStatus != rhs_storage._taskEvaluateStatus {return false}
         if _storage._keyword != rhs_storage._keyword {return false}
-        if _storage._classID != rhs_storage._classID {return false}
+        if _storage._classIds != rhs_storage._classIds {return false}
         if _storage._status != rhs_storage._status {return false}
         if _storage._taskStart != rhs_storage._taskStart {return false}
         if _storage._taskEnd != rhs_storage._taskEnd {return false}

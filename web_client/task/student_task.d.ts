@@ -25,6 +25,7 @@ export interface StudentTaskParameterResult {
   task_parameter_operator?: string;
   task_parameter_value?: string;
   task_parameter_type?: string;
+  task_parameter_result?: string;
   is_passed?: boolean;
   failed_reason?: string;
   children?: Array<StudentTaskParameterResult>;
@@ -127,7 +128,7 @@ export interface TeacherListStudentTaskRequest {
   /** 任务评价状态：1. 待评价；2. 已评价；3. 未提交 */
   task_evaluate_status?: number;
   keyword?: string;
-  class_id?: string;
+  class_ids?: Array<string>;
   status?: string;
   task_start?: TimeRange;
   task_end?: TimeRange;

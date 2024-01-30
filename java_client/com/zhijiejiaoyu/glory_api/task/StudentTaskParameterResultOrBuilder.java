@@ -74,43 +74,55 @@ public interface StudentTaskParameterResultOrBuilder extends
       getTaskParameterTypeBytes();
 
   /**
-   * <code>bool is_passed = 7;</code>
+   * <code>string task_parameter_result = 7;</code>
+   * @return The taskParameterResult.
+   */
+  java.lang.String getTaskParameterResult();
+  /**
+   * <code>string task_parameter_result = 7;</code>
+   * @return The bytes for taskParameterResult.
+   */
+  com.google.protobuf.ByteString
+      getTaskParameterResultBytes();
+
+  /**
+   * <code>bool is_passed = 8;</code>
    * @return The isPassed.
    */
   boolean getIsPassed();
 
   /**
-   * <code>string failed_reason = 8;</code>
+   * <code>string failed_reason = 9;</code>
    * @return The failedReason.
    */
   java.lang.String getFailedReason();
   /**
-   * <code>string failed_reason = 8;</code>
+   * <code>string failed_reason = 9;</code>
    * @return The bytes for failedReason.
    */
   com.google.protobuf.ByteString
       getFailedReasonBytes();
 
   /**
-   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 10;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> 
       getChildrenList();
   /**
-   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getChildren(int index);
   /**
-   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 10;</code>
    */
   int getChildrenCount();
   /**
-   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 10;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
       getChildrenOrBuilderList();
   /**
-   * <code>repeated .glory_api.StudentTaskParameterResult children = 9;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult children = 10;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getChildrenOrBuilder(
       int index);

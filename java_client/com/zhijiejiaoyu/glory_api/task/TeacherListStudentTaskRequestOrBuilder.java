@@ -55,10 +55,21 @@ public interface TeacherListStudentTaskRequestOrBuilder extends
       getKeywordBytes();
 
   /**
-   * <code>int64 class_id = 5;</code>
-   * @return The classId.
+   * <code>repeated int64 class_ids = 5;</code>
+   * @return A list containing the classIds.
    */
-  long getClassId();
+  java.util.List<java.lang.Long> getClassIdsList();
+  /**
+   * <code>repeated int64 class_ids = 5;</code>
+   * @return The count of classIds.
+   */
+  int getClassIdsCount();
+  /**
+   * <code>repeated int64 class_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The classIds at the given index.
+   */
+  long getClassIds(int index);
 
   /**
    * <code>string status = 6;</code>

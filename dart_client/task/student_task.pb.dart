@@ -154,6 +154,7 @@ class StudentTaskParameterResult extends $pb.GeneratedMessage {
     $core.String? taskParameterOperator,
     $core.String? taskParameterValue,
     $core.String? taskParameterType,
+    $core.String? taskParameterResult,
     $core.bool? isPassed,
     $core.String? failedReason,
     $core.Iterable<StudentTaskParameterResult>? children,
@@ -177,6 +178,9 @@ class StudentTaskParameterResult extends $pb.GeneratedMessage {
     if (taskParameterType != null) {
       $result.taskParameterType = taskParameterType;
     }
+    if (taskParameterResult != null) {
+      $result.taskParameterResult = taskParameterResult;
+    }
     if (isPassed != null) {
       $result.isPassed = isPassed;
     }
@@ -199,9 +203,10 @@ class StudentTaskParameterResult extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'taskParameterOperator')
     ..aOS(5, _omitFieldNames ? '' : 'taskParameterValue')
     ..aOS(6, _omitFieldNames ? '' : 'taskParameterType')
-    ..aOB(7, _omitFieldNames ? '' : 'isPassed')
-    ..aOS(8, _omitFieldNames ? '' : 'failedReason')
-    ..pc<StudentTaskParameterResult>(9, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
+    ..aOS(7, _omitFieldNames ? '' : 'taskParameterResult')
+    ..aOB(8, _omitFieldNames ? '' : 'isPassed')
+    ..aOS(9, _omitFieldNames ? '' : 'failedReason')
+    ..pc<StudentTaskParameterResult>(10, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -281,25 +286,34 @@ class StudentTaskParameterResult extends $pb.GeneratedMessage {
   void clearTaskParameterType() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get isPassed => $_getBF(6);
+  $core.String get taskParameterResult => $_getSZ(6);
   @$pb.TagNumber(7)
-  set isPassed($core.bool v) { $_setBool(6, v); }
+  set taskParameterResult($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasIsPassed() => $_has(6);
+  $core.bool hasTaskParameterResult() => $_has(6);
   @$pb.TagNumber(7)
-  void clearIsPassed() => clearField(7);
+  void clearTaskParameterResult() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get failedReason => $_getSZ(7);
+  $core.bool get isPassed => $_getBF(7);
   @$pb.TagNumber(8)
-  set failedReason($core.String v) { $_setString(7, v); }
+  set isPassed($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasFailedReason() => $_has(7);
+  $core.bool hasIsPassed() => $_has(7);
   @$pb.TagNumber(8)
-  void clearFailedReason() => clearField(8);
+  void clearIsPassed() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<StudentTaskParameterResult> get children => $_getList(8);
+  $core.String get failedReason => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set failedReason($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasFailedReason() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFailedReason() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<StudentTaskParameterResult> get children => $_getList(9);
 }
 
 class StudentTaskRequirementResult extends $pb.GeneratedMessage {
@@ -1180,7 +1194,7 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     $core.int? taskEvaluateType,
     $core.int? taskEvaluateStatus,
     $core.String? keyword,
-    $fixnum.Int64? classId,
+    $core.Iterable<$fixnum.Int64>? classIds,
     $core.String? status,
     TimeRange? taskStart,
     TimeRange? taskEnd,
@@ -1201,8 +1215,8 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     if (keyword != null) {
       $result.keyword = keyword;
     }
-    if (classId != null) {
-      $result.classId = classId;
+    if (classIds != null) {
+      $result.classIds.addAll(classIds);
     }
     if (status != null) {
       $result.status = status;
@@ -1233,7 +1247,7 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'taskEvaluateType', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'taskEvaluateStatus', $pb.PbFieldType.O3)
     ..aOS(4, _omitFieldNames ? '' : 'keyword')
-    ..aInt64(5, _omitFieldNames ? '' : 'classId')
+    ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'classIds', $pb.PbFieldType.K6)
     ..aOS(6, _omitFieldNames ? '' : 'status')
     ..aOM<TimeRange>(7, _omitFieldNames ? '' : 'taskStart', subBuilder: TimeRange.create)
     ..aOM<TimeRange>(8, _omitFieldNames ? '' : 'taskEnd', subBuilder: TimeRange.create)
@@ -1303,13 +1317,7 @@ class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {
   void clearKeyword() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get classId => $_getI64(4);
-  @$pb.TagNumber(5)
-  set classId($fixnum.Int64 v) { $_setInt64(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasClassId() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearClassId() => clearField(5);
+  $core.List<$fixnum.Int64> get classIds => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get status => $_getSZ(5);

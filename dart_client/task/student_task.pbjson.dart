@@ -50,9 +50,10 @@ const StudentTaskParameterResult$json = {
     {'1': 'task_parameter_operator', '3': 4, '4': 1, '5': 9, '10': 'taskParameterOperator'},
     {'1': 'task_parameter_value', '3': 5, '4': 1, '5': 9, '10': 'taskParameterValue'},
     {'1': 'task_parameter_type', '3': 6, '4': 1, '5': 9, '10': 'taskParameterType'},
-    {'1': 'is_passed', '3': 7, '4': 1, '5': 8, '10': 'isPassed'},
-    {'1': 'failed_reason', '3': 8, '4': 1, '5': 9, '10': 'failedReason'},
-    {'1': 'children', '3': 9, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'children'},
+    {'1': 'task_parameter_result', '3': 7, '4': 1, '5': 9, '10': 'taskParameterResult'},
+    {'1': 'is_passed', '3': 8, '4': 1, '5': 8, '10': 'isPassed'},
+    {'1': 'failed_reason', '3': 9, '4': 1, '5': 9, '10': 'failedReason'},
+    {'1': 'children', '3': 10, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'children'},
   ],
 };
 
@@ -63,10 +64,11 @@ final $typed_data.Uint8List studentTaskParameterResultDescriptor = $convert.base
     'ZXRlcktleRIuChN0YXNrX3BhcmFtZXRlcl9uYW1lGAMgASgJUhF0YXNrUGFyYW1ldGVyTmFtZR'
     'I2Chd0YXNrX3BhcmFtZXRlcl9vcGVyYXRvchgEIAEoCVIVdGFza1BhcmFtZXRlck9wZXJhdG9y'
     'EjAKFHRhc2tfcGFyYW1ldGVyX3ZhbHVlGAUgASgJUhJ0YXNrUGFyYW1ldGVyVmFsdWUSLgoTdG'
-    'Fza19wYXJhbWV0ZXJfdHlwZRgGIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSGwoJaXNfcGFzc2Vk'
-    'GAcgASgIUghpc1Bhc3NlZBIjCg1mYWlsZWRfcmVhc29uGAggASgJUgxmYWlsZWRSZWFzb24SQQ'
-    'oIY2hpbGRyZW4YCSADKAsyJS5nbG9yeV9hcGkuU3R1ZGVudFRhc2tQYXJhbWV0ZXJSZXN1bHRS'
-    'CGNoaWxkcmVu');
+    'Fza19wYXJhbWV0ZXJfdHlwZRgGIAEoCVIRdGFza1BhcmFtZXRlclR5cGUSMgoVdGFza19wYXJh'
+    'bWV0ZXJfcmVzdWx0GAcgASgJUhN0YXNrUGFyYW1ldGVyUmVzdWx0EhsKCWlzX3Bhc3NlZBgIIA'
+    'EoCFIIaXNQYXNzZWQSIwoNZmFpbGVkX3JlYXNvbhgJIAEoCVIMZmFpbGVkUmVhc29uEkEKCGNo'
+    'aWxkcmVuGAogAygLMiUuZ2xvcnlfYXBpLlN0dWRlbnRUYXNrUGFyYW1ldGVyUmVzdWx0UghjaG'
+    'lsZHJlbg==');
 
 @$core.Deprecated('Use studentTaskRequirementResultDescriptor instead')
 const StudentTaskRequirementResult$json = {
@@ -250,7 +252,7 @@ const TeacherListStudentTaskRequest$json = {
     {'1': 'task_evaluate_type', '3': 2, '4': 1, '5': 5, '10': 'taskEvaluateType'},
     {'1': 'task_evaluate_status', '3': 3, '4': 1, '5': 5, '10': 'taskEvaluateStatus'},
     {'1': 'keyword', '3': 4, '4': 1, '5': 9, '10': 'keyword'},
-    {'1': 'class_id', '3': 5, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'class_ids', '3': 5, '4': 3, '5': 3, '10': 'classIds'},
     {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
     {'1': 'task_start', '3': 7, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskStart'},
     {'1': 'task_end', '3': 8, '4': 1, '5': 11, '6': '.glory_api.TimeRange', '10': 'taskEnd'},
@@ -265,13 +267,13 @@ final $typed_data.Uint8List teacherListStudentTaskRequestDescriptor = $convert.b
     'Ch1UZWFjaGVyTGlzdFN0dWRlbnRUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIsChJ0YXNrX2V2YWx1YXRlX3R5cGUYAiAB'
     'KAVSEHRhc2tFdmFsdWF0ZVR5cGUSMAoUdGFza19ldmFsdWF0ZV9zdGF0dXMYAyABKAVSEnRhc2'
-    'tFdmFsdWF0ZVN0YXR1cxIYCgdrZXl3b3JkGAQgASgJUgdrZXl3b3JkEhkKCGNsYXNzX2lkGAUg'
-    'ASgDUgdjbGFzc0lkEhYKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEjMKCnRhc2tfc3RhcnQYByABKA'
-    'syFC5nbG9yeV9hcGkuVGltZVJhbmdlUgl0YXNrU3RhcnQSLwoIdGFza19lbmQYCCABKAsyFC5n'
-    'bG9yeV9hcGkuVGltZVJhbmdlUgd0YXNrRW5kEkAKEXRhc2tfc3VibWl0dGVkX2F0GAkgASgLMh'
-    'QuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza1N1Ym1pdHRlZEF0EkAKEXRhc2tfZXZhbHVhdGVk'
-    'X2F0GAogASgLMhQuZ2xvcnlfYXBpLlRpbWVSYW5nZVIPdGFza0V2YWx1YXRlZEF0EjcKCnBhZ2'
-    'luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'tFdmFsdWF0ZVN0YXR1cxIYCgdrZXl3b3JkGAQgASgJUgdrZXl3b3JkEhsKCWNsYXNzX2lkcxgF'
+    'IAMoA1IIY2xhc3NJZHMSFgoGc3RhdHVzGAYgASgJUgZzdGF0dXMSMwoKdGFza19zdGFydBgHIA'
+    'EoCzIULmdsb3J5X2FwaS5UaW1lUmFuZ2VSCXRhc2tTdGFydBIvCgh0YXNrX2VuZBgIIAEoCzIU'
+    'Lmdsb3J5X2FwaS5UaW1lUmFuZ2VSB3Rhc2tFbmQSQAoRdGFza19zdWJtaXR0ZWRfYXQYCSABKA'
+    'syFC5nbG9yeV9hcGkuVGltZVJhbmdlUg90YXNrU3VibWl0dGVkQXQSQAoRdGFza19ldmFsdWF0'
+    'ZWRfYXQYCiABKAsyFC5nbG9yeV9hcGkuVGltZVJhbmdlUg90YXNrRXZhbHVhdGVkQXQSNwoKcG'
+    'FnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use teacherListStudentTaskResponseDescriptor instead')
 const TeacherListStudentTaskResponse$json = {
