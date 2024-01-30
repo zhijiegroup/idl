@@ -185,7 +185,7 @@ struct GloryApi_ListStudentTaskRequest {
 
   var keyword: String = String()
 
-  /// 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  /// 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
   var platform: String = String()
 
   /// 任务状态。参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
