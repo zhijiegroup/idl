@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private StudentTaskRequirementResult() {
     taskRequirement = "";
-    failedReason = "";
   }
 
   @java.lang.Override
@@ -66,12 +65,6 @@ private static final long serialVersionUID = 0L;
             isPasswd = input.readBool();
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            failedReason = s;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -118,6 +111,10 @@ private static final long serialVersionUID = 0L;
   public static final int TASK_REQUIREMENT_FIELD_NUMBER = 2;
   private volatile java.lang.Object taskRequirement ;
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>string task_requirement = 2;</code>
    * @return The taskRequirement.
    */
@@ -135,6 +132,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>string task_requirement = 2;</code>
    * @return The bytes for taskRequirement.
    */
@@ -156,50 +157,16 @@ private static final long serialVersionUID = 0L;
   public static final int IS_PASSWD_FIELD_NUMBER = 3;
   private boolean isPasswd ;
   /**
+   * <pre>
+   * 是否通过
+   * </pre>
+   *
    * <code>bool is_passwd = 3;</code>
    * @return The isPasswd.
    */
   @java.lang.Override
   public boolean getIsPasswd() {
     return isPasswd ;
-  }
-
-  public static final int FAILED_REASON_FIELD_NUMBER = 4;
-  private volatile java.lang.Object failedReason ;
-  /**
-   * <code>string failed_reason = 4;</code>
-   * @return The failedReason.
-   */
-  @java.lang.Override
-  public java.lang.String getFailedReason() {
-    java.lang.Object ref = failedReason ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      failedReason = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string failed_reason = 4;</code>
-   * @return The bytes for failedReason.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFailedReasonBytes() {
-    java.lang.Object ref = failedReason ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      failedReason = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -225,9 +192,6 @@ private static final long serialVersionUID = 0L;
     if (isPasswd != false) {
       output.writeBool(3, isPasswd );
     }
-    if (!getFailedReasonBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, failedReason );
-    }
     unknownFields.writeTo(output);
   }
 
@@ -247,9 +211,6 @@ private static final long serialVersionUID = 0L;
     if (isPasswd != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, isPasswd );
-    }
-    if (!getFailedReasonBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, failedReason );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -272,8 +233,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskRequirement())) return false;
     if (getIsPasswd()
         != other.getIsPasswd()) return false;
-    if (!getFailedReason()
-        .equals(other.getFailedReason())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -293,8 +252,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_PASSWD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsPasswd());
-    hash = (37 * hash) + FAILED_REASON_FIELD_NUMBER;
-    hash = (53 * hash) + getFailedReason().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -434,8 +391,6 @@ private static final long serialVersionUID = 0L;
 
       isPasswd = false;
 
-      failedReason = "";
-
       return this;
     }
 
@@ -465,7 +420,6 @@ private static final long serialVersionUID = 0L;
       result.taskRequirementId = taskRequirementId ;
       result.taskRequirement = taskRequirement ;
       result.isPasswd = isPasswd ;
-      result.failedReason = failedReason ;
       onBuilt();
       return result;
     }
@@ -523,10 +477,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsPasswd() != false) {
         setIsPasswd(other.getIsPasswd());
-      }
-      if (!other.getFailedReason().isEmpty()) {
-        failedReason = other.failedReason ;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -590,6 +540,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object taskRequirement = "";
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>string task_requirement = 2;</code>
      * @return The taskRequirement.
      */
@@ -606,6 +560,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>string task_requirement = 2;</code>
      * @return The bytes for taskRequirement.
      */
@@ -623,6 +581,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>string task_requirement = 2;</code>
      * @param value The taskRequirement to set.
      * @return This builder for chaining.
@@ -638,6 +600,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>string task_requirement = 2;</code>
      * @return This builder for chaining.
      */
@@ -648,6 +614,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>string task_requirement = 2;</code>
      * @param value The bytes for taskRequirement to set.
      * @return This builder for chaining.
@@ -666,6 +636,10 @@ private static final long serialVersionUID = 0L;
 
     private boolean isPasswd ;
     /**
+     * <pre>
+     * 是否通过
+     * </pre>
+     *
      * <code>bool is_passwd = 3;</code>
      * @return The isPasswd.
      */
@@ -674,6 +648,10 @@ private static final long serialVersionUID = 0L;
       return isPasswd ;
     }
     /**
+     * <pre>
+     * 是否通过
+     * </pre>
+     *
      * <code>bool is_passwd = 3;</code>
      * @param value The isPasswd to set.
      * @return This builder for chaining.
@@ -685,88 +663,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 是否通过
+     * </pre>
+     *
      * <code>bool is_passwd = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsPasswd() {
       
       isPasswd = false;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object failedReason = "";
-    /**
-     * <code>string failed_reason = 4;</code>
-     * @return The failedReason.
-     */
-    public java.lang.String getFailedReason() {
-      java.lang.Object ref = failedReason ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        failedReason = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string failed_reason = 4;</code>
-     * @return The bytes for failedReason.
-     */
-    public com.google.protobuf.ByteString
-        getFailedReasonBytes() {
-      java.lang.Object ref = failedReason ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        failedReason = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string failed_reason = 4;</code>
-     * @param value The failedReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFailedReason(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      failedReason = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string failed_reason = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFailedReason() {
-      
-      failedReason = getDefaultInstance().getFailedReason();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string failed_reason = 4;</code>
-     * @param value The bytes for failedReason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFailedReasonBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      failedReason = value;
       onChanged();
       return this;
     }

@@ -307,7 +307,6 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
     $fixnum.Int64? taskRequirementId,
     $core.String? taskRequirement,
     $core.bool? isPasswd,
-    $core.String? failedReason,
   }) {
     final $result = create();
     if (taskRequirementId != null) {
@@ -319,9 +318,6 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
     if (isPasswd != null) {
       $result.isPasswd = isPasswd;
     }
-    if (failedReason != null) {
-      $result.failedReason = failedReason;
-    }
     return $result;
   }
   StudentTaskRequirementResult._() : super();
@@ -332,7 +328,6 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'taskRequirementId')
     ..aOS(2, _omitFieldNames ? '' : 'taskRequirement')
     ..aOB(3, _omitFieldNames ? '' : 'isPasswd')
-    ..aOS(4, _omitFieldNames ? '' : 'failedReason')
     ..hasRequiredFields = false
   ;
 
@@ -383,15 +378,6 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   $core.bool hasIsPasswd() => $_has(2);
   @$pb.TagNumber(3)
   void clearIsPasswd() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get failedReason => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set failedReason($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasFailedReason() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearFailedReason() => clearField(4);
 }
 
 class StudentTask extends $pb.GeneratedMessage {

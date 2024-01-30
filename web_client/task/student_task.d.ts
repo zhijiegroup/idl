@@ -32,27 +32,43 @@ export interface StudentTaskParameterResult {
 
 export interface StudentTaskRequirementResult {
   task_requirement_id?: string;
+  /** 任务要求 */
   task_requirement?: string;
+  /** 是否通过 */
   is_passwd?: boolean;
-  failed_reason?: string;
 }
 
 export interface StudentTask {
   student_task_id?: string;
+  /** 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc */
   task_status?: string;
+  /** 任务提交时间 */
   submitted_at?: string;
+  /** 任务提交参数 */
   submit_parameter?: string;
+  /** 任务提交描述 */
   submit_description?: string;
+  /** 任务提交附件 */
   attachments?: Array<string>;
+  /** 任务参数评价结果 */
   student_task_parameter_result?: Array<StudentTaskParameterResult>;
+  /** 任务要求评价结果 */
   student_task_requirement_result?: Array<StudentTaskRequirementResult>;
+  /** 任务要求失败原因 */
   teacher_failed_reason?: string;
+  /** 任务评分 */
   teacher_evaluate_score?: number;
+  /** 任务所属平台："APP"，"WEB"，"APP/WEB"，"" */
   task_platform?: string;
+  /** 预置任务标识 */
   system_task_key?: string;
+  /** 任务所属教师任务 */
   teacher_task?: teacher_task.TeacherTask;
+  /** 任务链接 */
   task_links?: Array<StudentTaskLink>;
+  /** 学生信息 */
   student?: user.User;
+  /** 老师信息 */
   teacher?: user.User;
 }
 

@@ -254,6 +254,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_ID_FIELD_NUMBER = 1;
   private long teacherTaskId ;
   /**
+   * <pre>
+   * 教师任务 ID
+   * </pre>
+   *
    * <code>int64 teacher_task_id = 1;</code>
    * @return The teacherTaskId.
    */
@@ -265,6 +269,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_ID_FIELD_NUMBER = 2;
   private long teacherId ;
   /**
+   * <pre>
+   * 教师 ID
+   * </pre>
+   *
    * <code>int64 teacher_id = 2;</code>
    * @return The teacherId.
    */
@@ -276,6 +284,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object teacherTaskName ;
   /**
+   * <pre>
+   * 教师任务名称
+   * </pre>
+   *
    * <code>string teacher_task_name = 3;</code>
    * @return The teacherTaskName.
    */
@@ -293,6 +305,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 教师任务名称
+   * </pre>
+   *
    * <code>string teacher_task_name = 3;</code>
    * @return The bytes for teacherTaskName.
    */
@@ -314,6 +330,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_BUSINESS_FIELD_NUMBER = 4;
   private volatile java.lang.Object teacherTaskBusiness ;
   /**
+   * <pre>
+   * 教师任务所属业务系统
+   * </pre>
+   *
    * <code>string teacher_task_business = 4;</code>
    * @return The teacherTaskBusiness.
    */
@@ -331,6 +351,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 教师任务所属业务系统
+   * </pre>
+   *
    * <code>string teacher_task_business = 4;</code>
    * @return The bytes for teacherTaskBusiness.
    */
@@ -352,6 +376,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_CLASSES_FIELD_NUMBER = 5;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskClass> teacherTaskClasses ;
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   @java.lang.Override
@@ -359,6 +387,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskClasses ;
   }
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   @java.lang.Override
@@ -367,6 +399,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskClasses ;
   }
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   @java.lang.Override
@@ -374,6 +410,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskClasses .size();
   }
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   @java.lang.Override
@@ -381,6 +421,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskClasses .get(index);
   }
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   @java.lang.Override
@@ -392,6 +436,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_START_FIELD_NUMBER = 6;
   private volatile java.lang.Object teacherTaskStart ;
   /**
+   * <pre>
+   * 任务开始时间
+   * </pre>
+   *
    * <code>string teacher_task_start = 6;</code>
    * @return The teacherTaskStart.
    */
@@ -409,6 +457,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 任务开始时间
+   * </pre>
+   *
    * <code>string teacher_task_start = 6;</code>
    * @return The bytes for teacherTaskStart.
    */
@@ -430,6 +482,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_END_FIELD_NUMBER = 7;
   private volatile java.lang.Object teacherTaskEnd ;
   /**
+   * <pre>
+   * 任务结束时间
+   * </pre>
+   *
    * <code>string teacher_task_end = 7;</code>
    * @return The teacherTaskEnd.
    */
@@ -447,6 +503,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 任务结束时间
+   * </pre>
+   *
    * <code>string teacher_task_end = 7;</code>
    * @return The bytes for teacherTaskEnd.
    */
@@ -483,6 +543,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_TEMPLATE_ID_FIELD_NUMBER = 9;
   private long teacherTaskTemplateId ;
   /**
+   * <pre>
+   * 任务使用的模板 ID
+   * </pre>
+   *
    * <code>int64 teacher_task_template_id = 9;</code>
    * @return The teacherTaskTemplateId.
    */
@@ -494,6 +558,10 @@ private static final long serialVersionUID = 0L;
   public static final int SYSTEM_TASK_KEY_FIELD_NUMBER = 10;
   private volatile java.lang.Object systemTaskKey ;
   /**
+   * <pre>
+   * 预置任务表示
+   * </pre>
+   *
    * <code>string system_task_key = 10;</code>
    * @return The systemTaskKey.
    */
@@ -511,6 +579,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 预置任务表示
+   * </pre>
+   *
    * <code>string system_task_key = 10;</code>
    * @return The bytes for systemTaskKey.
    */
@@ -532,6 +604,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_CONTENT_FIELD_NUMBER = 11;
   private volatile java.lang.Object teacherTaskContent ;
   /**
+   * <pre>
+   * 任务内容
+   * </pre>
+   *
    * <code>string teacher_task_content = 11;</code>
    * @return The teacherTaskContent.
    */
@@ -549,6 +625,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 任务内容
+   * </pre>
+   *
    * <code>string teacher_task_content = 11;</code>
    * @return The bytes for teacherTaskContent.
    */
@@ -570,6 +650,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_REQUIREMENTS_FIELD_NUMBER = 12;
   private com.google.protobuf.LazyStringList teacherTaskRequirements ;
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @return A list containing the teacherTaskRequirements.
    */
@@ -578,6 +662,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements ;
   }
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @return The count of teacherTaskRequirements.
    */
@@ -585,6 +673,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements .size();
   }
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the element to return.
    * @return The teacherTaskRequirements at the given index.
@@ -593,6 +685,10 @@ private static final long serialVersionUID = 0L;
     return teacherTaskRequirements .get(index);
   }
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the value to return.
    * @return The bytes of the teacherTaskRequirements at the given index.
@@ -605,6 +701,10 @@ private static final long serialVersionUID = 0L;
   public static final int TEACHER_TASK_LINK_FIELD_NUMBER = 13;
   private volatile java.lang.Object teacherTaskLink ;
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>string teacher_task_link = 13;</code>
    * @return The teacherTaskLink.
    */
@@ -622,6 +722,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>string teacher_task_link = 13;</code>
    * @return The bytes for teacherTaskLink.
    */
@@ -734,6 +838,10 @@ private static final long serialVersionUID = 0L;
   public static final int TASK_PARAMETERS_FIELD_NUMBER = 18;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> taskParameters ;
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
@@ -741,6 +849,10 @@ private static final long serialVersionUID = 0L;
     return taskParameters ;
   }
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
@@ -749,6 +861,10 @@ private static final long serialVersionUID = 0L;
     return taskParameters ;
   }
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
@@ -756,6 +872,10 @@ private static final long serialVersionUID = 0L;
     return taskParameters .size();
   }
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
@@ -763,6 +883,10 @@ private static final long serialVersionUID = 0L;
     return taskParameters .get(index);
   }
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   @java.lang.Override
@@ -1687,6 +1811,10 @@ private static final long serialVersionUID = 0L;
 
     private long teacherTaskId ;
     /**
+     * <pre>
+     * 教师任务 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_id = 1;</code>
      * @return The teacherTaskId.
      */
@@ -1695,6 +1823,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskId ;
     }
     /**
+     * <pre>
+     * 教师任务 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_id = 1;</code>
      * @param value The teacherTaskId to set.
      * @return This builder for chaining.
@@ -1706,6 +1838,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师任务 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_id = 1;</code>
      * @return This builder for chaining.
      */
@@ -1718,6 +1854,10 @@ private static final long serialVersionUID = 0L;
 
     private long teacherId ;
     /**
+     * <pre>
+     * 教师 ID
+     * </pre>
+     *
      * <code>int64 teacher_id = 2;</code>
      * @return The teacherId.
      */
@@ -1726,6 +1866,10 @@ private static final long serialVersionUID = 0L;
       return teacherId ;
     }
     /**
+     * <pre>
+     * 教师 ID
+     * </pre>
+     *
      * <code>int64 teacher_id = 2;</code>
      * @param value The teacherId to set.
      * @return This builder for chaining.
@@ -1737,6 +1881,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师 ID
+     * </pre>
+     *
      * <code>int64 teacher_id = 2;</code>
      * @return This builder for chaining.
      */
@@ -1749,6 +1897,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskName = "";
     /**
+     * <pre>
+     * 教师任务名称
+     * </pre>
+     *
      * <code>string teacher_task_name = 3;</code>
      * @return The teacherTaskName.
      */
@@ -1765,6 +1917,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 教师任务名称
+     * </pre>
+     *
      * <code>string teacher_task_name = 3;</code>
      * @return The bytes for teacherTaskName.
      */
@@ -1782,6 +1938,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 教师任务名称
+     * </pre>
+     *
      * <code>string teacher_task_name = 3;</code>
      * @param value The teacherTaskName to set.
      * @return This builder for chaining.
@@ -1797,6 +1957,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师任务名称
+     * </pre>
+     *
      * <code>string teacher_task_name = 3;</code>
      * @return This builder for chaining.
      */
@@ -1807,6 +1971,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师任务名称
+     * </pre>
+     *
      * <code>string teacher_task_name = 3;</code>
      * @param value The bytes for teacherTaskName to set.
      * @return This builder for chaining.
@@ -1825,6 +1993,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskBusiness = "";
     /**
+     * <pre>
+     * 教师任务所属业务系统
+     * </pre>
+     *
      * <code>string teacher_task_business = 4;</code>
      * @return The teacherTaskBusiness.
      */
@@ -1841,6 +2013,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 教师任务所属业务系统
+     * </pre>
+     *
      * <code>string teacher_task_business = 4;</code>
      * @return The bytes for teacherTaskBusiness.
      */
@@ -1858,6 +2034,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 教师任务所属业务系统
+     * </pre>
+     *
      * <code>string teacher_task_business = 4;</code>
      * @param value The teacherTaskBusiness to set.
      * @return This builder for chaining.
@@ -1873,6 +2053,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师任务所属业务系统
+     * </pre>
+     *
      * <code>string teacher_task_business = 4;</code>
      * @return This builder for chaining.
      */
@@ -1883,6 +2067,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 教师任务所属业务系统
+     * </pre>
+     *
      * <code>string teacher_task_business = 4;</code>
      * @param value The bytes for teacherTaskBusiness to set.
      * @return This builder for chaining.
@@ -1912,6 +2100,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.task.TeacherTaskClass, com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskClassOrBuilder> teacherTaskClassesBuilder ;
 
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskClass> getTeacherTaskClassesList() {
@@ -1922,6 +2114,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public int getTeacherTaskClassesCount() {
@@ -1932,6 +2128,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskClass getTeacherTaskClasses(int index) {
@@ -1942,6 +2142,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder setTeacherTaskClasses(
@@ -1959,6 +2163,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder setTeacherTaskClasses(
@@ -1973,6 +2181,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder addTeacherTaskClasses(com.zhijiejiaoyu.glory_api.task.TeacherTaskClass value) {
@@ -1989,6 +2201,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder addTeacherTaskClasses(
@@ -2006,6 +2222,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder addTeacherTaskClasses(
@@ -2020,6 +2240,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder addTeacherTaskClasses(
@@ -2034,6 +2258,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder addAllTeacherTaskClasses(
@@ -2049,6 +2277,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder clearTeacherTaskClasses() {
@@ -2062,6 +2294,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public Builder removeTeacherTaskClasses(int index) {
@@ -2075,6 +2311,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.Builder getTeacherTaskClassesBuilder(
@@ -2082,6 +2322,10 @@ private static final long serialVersionUID = 0L;
       return getTeacherTaskClassesFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskClassOrBuilder getTeacherTaskClassesOrBuilder(
@@ -2092,6 +2336,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskClassOrBuilder> 
@@ -2103,6 +2351,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.Builder addTeacherTaskClassesBuilder() {
@@ -2110,6 +2362,10 @@ private static final long serialVersionUID = 0L;
           com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.Builder addTeacherTaskClassesBuilder(
@@ -2118,6 +2374,10 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 任务分配班级
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskClass.Builder> 
@@ -2141,6 +2401,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskStart = "";
     /**
+     * <pre>
+     * 任务开始时间
+     * </pre>
+     *
      * <code>string teacher_task_start = 6;</code>
      * @return The teacherTaskStart.
      */
@@ -2157,6 +2421,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务开始时间
+     * </pre>
+     *
      * <code>string teacher_task_start = 6;</code>
      * @return The bytes for teacherTaskStart.
      */
@@ -2174,6 +2442,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务开始时间
+     * </pre>
+     *
      * <code>string teacher_task_start = 6;</code>
      * @param value The teacherTaskStart to set.
      * @return This builder for chaining.
@@ -2189,6 +2461,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务开始时间
+     * </pre>
+     *
      * <code>string teacher_task_start = 6;</code>
      * @return This builder for chaining.
      */
@@ -2199,6 +2475,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务开始时间
+     * </pre>
+     *
      * <code>string teacher_task_start = 6;</code>
      * @param value The bytes for teacherTaskStart to set.
      * @return This builder for chaining.
@@ -2217,6 +2497,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskEnd = "";
     /**
+     * <pre>
+     * 任务结束时间
+     * </pre>
+     *
      * <code>string teacher_task_end = 7;</code>
      * @return The teacherTaskEnd.
      */
@@ -2233,6 +2517,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务结束时间
+     * </pre>
+     *
      * <code>string teacher_task_end = 7;</code>
      * @return The bytes for teacherTaskEnd.
      */
@@ -2250,6 +2538,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务结束时间
+     * </pre>
+     *
      * <code>string teacher_task_end = 7;</code>
      * @param value The teacherTaskEnd to set.
      * @return This builder for chaining.
@@ -2265,6 +2557,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务结束时间
+     * </pre>
+     *
      * <code>string teacher_task_end = 7;</code>
      * @return This builder for chaining.
      */
@@ -2275,6 +2571,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务结束时间
+     * </pre>
+     *
      * <code>string teacher_task_end = 7;</code>
      * @param value The bytes for teacherTaskEnd to set.
      * @return This builder for chaining.
@@ -2336,6 +2636,10 @@ private static final long serialVersionUID = 0L;
 
     private long teacherTaskTemplateId ;
     /**
+     * <pre>
+     * 任务使用的模板 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_template_id = 9;</code>
      * @return The teacherTaskTemplateId.
      */
@@ -2344,6 +2648,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskTemplateId ;
     }
     /**
+     * <pre>
+     * 任务使用的模板 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_template_id = 9;</code>
      * @param value The teacherTaskTemplateId to set.
      * @return This builder for chaining.
@@ -2355,6 +2663,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务使用的模板 ID
+     * </pre>
+     *
      * <code>int64 teacher_task_template_id = 9;</code>
      * @return This builder for chaining.
      */
@@ -2367,6 +2679,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object systemTaskKey = "";
     /**
+     * <pre>
+     * 预置任务表示
+     * </pre>
+     *
      * <code>string system_task_key = 10;</code>
      * @return The systemTaskKey.
      */
@@ -2383,6 +2699,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预置任务表示
+     * </pre>
+     *
      * <code>string system_task_key = 10;</code>
      * @return The bytes for systemTaskKey.
      */
@@ -2400,6 +2720,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 预置任务表示
+     * </pre>
+     *
      * <code>string system_task_key = 10;</code>
      * @param value The systemTaskKey to set.
      * @return This builder for chaining.
@@ -2415,6 +2739,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预置任务表示
+     * </pre>
+     *
      * <code>string system_task_key = 10;</code>
      * @return This builder for chaining.
      */
@@ -2425,6 +2753,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 预置任务表示
+     * </pre>
+     *
      * <code>string system_task_key = 10;</code>
      * @param value The bytes for systemTaskKey to set.
      * @return This builder for chaining.
@@ -2443,6 +2775,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskContent = "";
     /**
+     * <pre>
+     * 任务内容
+     * </pre>
+     *
      * <code>string teacher_task_content = 11;</code>
      * @return The teacherTaskContent.
      */
@@ -2459,6 +2795,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务内容
+     * </pre>
+     *
      * <code>string teacher_task_content = 11;</code>
      * @return The bytes for teacherTaskContent.
      */
@@ -2476,6 +2816,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务内容
+     * </pre>
+     *
      * <code>string teacher_task_content = 11;</code>
      * @param value The teacherTaskContent to set.
      * @return This builder for chaining.
@@ -2491,6 +2835,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务内容
+     * </pre>
+     *
      * <code>string teacher_task_content = 11;</code>
      * @return This builder for chaining.
      */
@@ -2501,6 +2849,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务内容
+     * </pre>
+     *
      * <code>string teacher_task_content = 11;</code>
      * @param value The bytes for teacherTaskContent to set.
      * @return This builder for chaining.
@@ -2525,6 +2877,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @return A list containing the teacherTaskRequirements.
      */
@@ -2533,6 +2889,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .getUnmodifiableView();
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @return The count of teacherTaskRequirements.
      */
@@ -2540,6 +2900,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .size();
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index of the element to return.
      * @return The teacherTaskRequirements at the given index.
@@ -2548,6 +2912,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .get(index);
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index of the value to return.
      * @return The bytes of the teacherTaskRequirements at the given index.
@@ -2557,6 +2925,10 @@ private static final long serialVersionUID = 0L;
       return teacherTaskRequirements .getByteString(index);
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param index The index to set the value at.
      * @param value The teacherTaskRequirements to set.
@@ -2573,6 +2945,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param value The teacherTaskRequirements to add.
      * @return This builder for chaining.
@@ -2588,6 +2964,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param values The teacherTaskRequirements to add.
      * @return This builder for chaining.
@@ -2601,6 +2981,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @return This builder for chaining.
      */
@@ -2611,6 +2995,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务要求
+     * </pre>
+     *
      * <code>repeated string teacher_task_requirements = 12;</code>
      * @param value The bytes of the teacherTaskRequirements to add.
      * @return This builder for chaining.
@@ -2629,6 +3017,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object teacherTaskLink = "";
     /**
+     * <pre>
+     * 任务链接
+     * </pre>
+     *
      * <code>string teacher_task_link = 13;</code>
      * @return The teacherTaskLink.
      */
@@ -2645,6 +3037,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务链接
+     * </pre>
+     *
      * <code>string teacher_task_link = 13;</code>
      * @return The bytes for teacherTaskLink.
      */
@@ -2662,6 +3058,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务链接
+     * </pre>
+     *
      * <code>string teacher_task_link = 13;</code>
      * @param value The teacherTaskLink to set.
      * @return This builder for chaining.
@@ -2677,6 +3077,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务链接
+     * </pre>
+     *
      * <code>string teacher_task_link = 13;</code>
      * @return This builder for chaining.
      */
@@ -2687,6 +3091,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务链接
+     * </pre>
+     *
      * <code>string teacher_task_link = 13;</code>
      * @param value The bytes for teacherTaskLink to set.
      * @return This builder for chaining.
@@ -2941,6 +3349,10 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> taskParametersBuilder ;
 
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> getTaskParametersList() {
@@ -2951,6 +3363,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public int getTaskParametersCount() {
@@ -2961,6 +3377,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter getTaskParameters(int index) {
@@ -2971,6 +3391,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder setTaskParameters(
@@ -2988,6 +3412,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder setTaskParameters(
@@ -3002,6 +3430,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter value) {
@@ -3018,6 +3450,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
@@ -3035,6 +3471,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
@@ -3049,6 +3489,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addTaskParameters(
@@ -3063,6 +3507,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder addAllTaskParameters(
@@ -3078,6 +3526,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder clearTaskParameters() {
@@ -3091,6 +3543,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public Builder removeTaskParameters(int index) {
@@ -3104,6 +3560,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder getTaskParametersBuilder(
@@ -3111,6 +3571,10 @@ private static final long serialVersionUID = 0L;
       return getTaskParametersFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder getTaskParametersOrBuilder(
@@ -3121,6 +3585,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> 
@@ -3132,6 +3600,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder addTaskParametersBuilder() {
@@ -3139,6 +3611,10 @@ private static final long serialVersionUID = 0L;
           com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder addTaskParametersBuilder(
@@ -3147,6 +3623,10 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.getDefaultInstance());
     }
     /**
+     * <pre>
+     * 任务参数
+     * </pre>
+     *
      * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter.Builder> 

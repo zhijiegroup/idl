@@ -14,11 +14,19 @@ public interface StudentTaskRequirementResultOrBuilder extends
   long getTaskRequirementId();
 
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>string task_requirement = 2;</code>
    * @return The taskRequirement.
    */
   java.lang.String getTaskRequirement();
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>string task_requirement = 2;</code>
    * @return The bytes for taskRequirement.
    */
@@ -26,20 +34,12 @@ public interface StudentTaskRequirementResultOrBuilder extends
       getTaskRequirementBytes();
 
   /**
+   * <pre>
+   * 是否通过
+   * </pre>
+   *
    * <code>bool is_passwd = 3;</code>
    * @return The isPasswd.
    */
   boolean getIsPasswd();
-
-  /**
-   * <code>string failed_reason = 4;</code>
-   * @return The failedReason.
-   */
-  java.lang.String getFailedReason();
-  /**
-   * <code>string failed_reason = 4;</code>
-   * @return The bytes for failedReason.
-   */
-  com.google.protobuf.ByteString
-      getFailedReasonBytes();
 }

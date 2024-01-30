@@ -63,36 +63,43 @@ struct GloryApi_TeacherTask {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// 教师任务 ID
   var teacherTaskID: Int64 {
     get {return _storage._teacherTaskID}
     set {_uniqueStorage()._teacherTaskID = newValue}
   }
 
+  /// 教师 ID
   var teacherID: Int64 {
     get {return _storage._teacherID}
     set {_uniqueStorage()._teacherID = newValue}
   }
 
+  /// 教师任务名称
   var teacherTaskName: String {
     get {return _storage._teacherTaskName}
     set {_uniqueStorage()._teacherTaskName = newValue}
   }
 
+  /// 教师任务所属业务系统
   var teacherTaskBusiness: String {
     get {return _storage._teacherTaskBusiness}
     set {_uniqueStorage()._teacherTaskBusiness = newValue}
   }
 
+  /// 任务分配班级
   var teacherTaskClasses: [GloryApi_TeacherTaskClass] {
     get {return _storage._teacherTaskClasses}
     set {_uniqueStorage()._teacherTaskClasses = newValue}
   }
 
+  /// 任务开始时间
   var teacherTaskStart: String {
     get {return _storage._teacherTaskStart}
     set {_uniqueStorage()._teacherTaskStart = newValue}
   }
 
+  /// 任务结束时间
   var teacherTaskEnd: String {
     get {return _storage._teacherTaskEnd}
     set {_uniqueStorage()._teacherTaskEnd = newValue}
@@ -104,26 +111,31 @@ struct GloryApi_TeacherTask {
     set {_uniqueStorage()._teacherTaskType = newValue}
   }
 
+  /// 任务使用的模板 ID
   var teacherTaskTemplateID: Int64 {
     get {return _storage._teacherTaskTemplateID}
     set {_uniqueStorage()._teacherTaskTemplateID = newValue}
   }
 
+  /// 预置任务表示
   var systemTaskKey: String {
     get {return _storage._systemTaskKey}
     set {_uniqueStorage()._systemTaskKey = newValue}
   }
 
+  /// 任务内容
   var teacherTaskContent: String {
     get {return _storage._teacherTaskContent}
     set {_uniqueStorage()._teacherTaskContent = newValue}
   }
 
+  /// 任务要求
   var teacherTaskRequirements: [String] {
     get {return _storage._teacherTaskRequirements}
     set {_uniqueStorage()._teacherTaskRequirements = newValue}
   }
 
+  /// 任务链接
   var teacherTaskLink: String {
     get {return _storage._teacherTaskLink}
     set {_uniqueStorage()._teacherTaskLink = newValue}
@@ -153,6 +165,7 @@ struct GloryApi_TeacherTask {
     set {_uniqueStorage()._totalPassCount = newValue}
   }
 
+  /// 任务参数
   var taskParameters: [GloryApi_TeacherTaskParameter] {
     get {return _storage._taskParameters}
     set {_uniqueStorage()._taskParameters = newValue}

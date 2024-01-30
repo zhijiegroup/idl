@@ -23,19 +23,31 @@ export interface TeacherTaskClass {
 }
 
 export interface TeacherTask {
+  /** 教师任务 ID */
   teacher_task_id?: string;
+  /** 教师 ID */
   teacher_id?: string;
+  /** 教师任务名称 */
   teacher_task_name?: string;
+  /** 教师任务所属业务系统 */
   teacher_task_business?: string;
+  /** 任务分配班级 */
   teacher_task_classes?: Array<TeacherTaskClass>;
+  /** 任务开始时间 */
   teacher_task_start?: string;
+  /** 任务结束时间 */
   teacher_task_end?: string;
   /** 任务类型：1.模板任务；2.手动任务 */
   teacher_task_type?: number;
+  /** 任务使用的模板 ID */
   teacher_task_template_id?: string;
+  /** 预置任务表示 */
   system_task_key?: string;
+  /** 任务内容 */
   teacher_task_content?: string;
+  /** 任务要求 */
   teacher_task_requirements?: Array<string>;
+  /** 任务链接 */
   teacher_task_link?: string;
   /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
   teacher_task_status?: string;
@@ -45,6 +57,7 @@ export interface TeacherTask {
   total_submit_count?: string;
   /** 总通过数 */
   total_pass_count?: string;
+  /** 任务参数 */
   task_parameters?: Array<TeacherTaskParameter>;
   created_at?: string;
   updated_at?: string;

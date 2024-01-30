@@ -8,23 +8,39 @@ public interface TeacherTaskOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 教师任务 ID
+   * </pre>
+   *
    * <code>int64 teacher_task_id = 1;</code>
    * @return The teacherTaskId.
    */
   long getTeacherTaskId();
 
   /**
+   * <pre>
+   * 教师 ID
+   * </pre>
+   *
    * <code>int64 teacher_id = 2;</code>
    * @return The teacherId.
    */
   long getTeacherId();
 
   /**
+   * <pre>
+   * 教师任务名称
+   * </pre>
+   *
    * <code>string teacher_task_name = 3;</code>
    * @return The teacherTaskName.
    */
   java.lang.String getTeacherTaskName();
   /**
+   * <pre>
+   * 教师任务名称
+   * </pre>
+   *
    * <code>string teacher_task_name = 3;</code>
    * @return The bytes for teacherTaskName.
    */
@@ -32,11 +48,19 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskNameBytes();
 
   /**
+   * <pre>
+   * 教师任务所属业务系统
+   * </pre>
+   *
    * <code>string teacher_task_business = 4;</code>
    * @return The teacherTaskBusiness.
    */
   java.lang.String getTeacherTaskBusiness();
   /**
+   * <pre>
+   * 教师任务所属业务系统
+   * </pre>
+   *
    * <code>string teacher_task_business = 4;</code>
    * @return The bytes for teacherTaskBusiness.
    */
@@ -44,35 +68,63 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskBusinessBytes();
 
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskClass> 
       getTeacherTaskClassesList();
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskClass getTeacherTaskClasses(int index);
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   int getTeacherTaskClassesCount();
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskClassOrBuilder> 
       getTeacherTaskClassesOrBuilderList();
   /**
+   * <pre>
+   * 任务分配班级
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskClass teacher_task_classes = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskClassOrBuilder getTeacherTaskClassesOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 任务开始时间
+   * </pre>
+   *
    * <code>string teacher_task_start = 6;</code>
    * @return The teacherTaskStart.
    */
   java.lang.String getTeacherTaskStart();
   /**
+   * <pre>
+   * 任务开始时间
+   * </pre>
+   *
    * <code>string teacher_task_start = 6;</code>
    * @return The bytes for teacherTaskStart.
    */
@@ -80,11 +132,19 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskStartBytes();
 
   /**
+   * <pre>
+   * 任务结束时间
+   * </pre>
+   *
    * <code>string teacher_task_end = 7;</code>
    * @return The teacherTaskEnd.
    */
   java.lang.String getTeacherTaskEnd();
   /**
+   * <pre>
+   * 任务结束时间
+   * </pre>
+   *
    * <code>string teacher_task_end = 7;</code>
    * @return The bytes for teacherTaskEnd.
    */
@@ -102,17 +162,29 @@ public interface TeacherTaskOrBuilder extends
   int getTeacherTaskType();
 
   /**
+   * <pre>
+   * 任务使用的模板 ID
+   * </pre>
+   *
    * <code>int64 teacher_task_template_id = 9;</code>
    * @return The teacherTaskTemplateId.
    */
   long getTeacherTaskTemplateId();
 
   /**
+   * <pre>
+   * 预置任务表示
+   * </pre>
+   *
    * <code>string system_task_key = 10;</code>
    * @return The systemTaskKey.
    */
   java.lang.String getSystemTaskKey();
   /**
+   * <pre>
+   * 预置任务表示
+   * </pre>
+   *
    * <code>string system_task_key = 10;</code>
    * @return The bytes for systemTaskKey.
    */
@@ -120,11 +192,19 @@ public interface TeacherTaskOrBuilder extends
       getSystemTaskKeyBytes();
 
   /**
+   * <pre>
+   * 任务内容
+   * </pre>
+   *
    * <code>string teacher_task_content = 11;</code>
    * @return The teacherTaskContent.
    */
   java.lang.String getTeacherTaskContent();
   /**
+   * <pre>
+   * 任务内容
+   * </pre>
+   *
    * <code>string teacher_task_content = 11;</code>
    * @return The bytes for teacherTaskContent.
    */
@@ -132,23 +212,39 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskContentBytes();
 
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @return A list containing the teacherTaskRequirements.
    */
   java.util.List<java.lang.String>
       getTeacherTaskRequirementsList();
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @return The count of teacherTaskRequirements.
    */
   int getTeacherTaskRequirementsCount();
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the element to return.
    * @return The teacherTaskRequirements at the given index.
    */
   java.lang.String getTeacherTaskRequirements(int index);
   /**
+   * <pre>
+   * 任务要求
+   * </pre>
+   *
    * <code>repeated string teacher_task_requirements = 12;</code>
    * @param index The index of the value to return.
    * @return The bytes of the teacherTaskRequirements at the given index.
@@ -157,11 +253,19 @@ public interface TeacherTaskOrBuilder extends
       getTeacherTaskRequirementsBytes(int index);
 
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>string teacher_task_link = 13;</code>
    * @return The teacherTaskLink.
    */
   java.lang.String getTeacherTaskLink();
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>string teacher_task_link = 13;</code>
    * @return The bytes for teacherTaskLink.
    */
@@ -219,24 +323,44 @@ public interface TeacherTaskOrBuilder extends
   long getTotalPassCount();
 
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter> 
       getTaskParametersList();
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskParameter getTaskParameters(int index);
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   int getTaskParametersCount();
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder> 
       getTaskParametersOrBuilderList();
   /**
+   * <pre>
+   * 任务参数
+   * </pre>
+   *
    * <code>repeated .glory_api.TeacherTaskParameter task_parameters = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskParameterOrBuilder getTaskParametersOrBuilder(

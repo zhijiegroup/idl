@@ -14,11 +14,19 @@ public interface StudentTaskOrBuilder extends
   long getStudentTaskId();
 
   /**
+   * <pre>
+   * 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
    * <code>string task_status = 2;</code>
    * @return The taskStatus.
    */
   java.lang.String getTaskStatus();
   /**
+   * <pre>
+   * 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
+   * </pre>
+   *
    * <code>string task_status = 2;</code>
    * @return The bytes for taskStatus.
    */
@@ -26,11 +34,19 @@ public interface StudentTaskOrBuilder extends
       getTaskStatusBytes();
 
   /**
+   * <pre>
+   * 任务提交时间
+   * </pre>
+   *
    * <code>string submitted_at = 3;</code>
    * @return The submittedAt.
    */
   java.lang.String getSubmittedAt();
   /**
+   * <pre>
+   * 任务提交时间
+   * </pre>
+   *
    * <code>string submitted_at = 3;</code>
    * @return The bytes for submittedAt.
    */
@@ -38,11 +54,19 @@ public interface StudentTaskOrBuilder extends
       getSubmittedAtBytes();
 
   /**
+   * <pre>
+   * 任务提交参数
+   * </pre>
+   *
    * <code>string submit_parameter = 4;</code>
    * @return The submitParameter.
    */
   java.lang.String getSubmitParameter();
   /**
+   * <pre>
+   * 任务提交参数
+   * </pre>
+   *
    * <code>string submit_parameter = 4;</code>
    * @return The bytes for submitParameter.
    */
@@ -50,11 +74,19 @@ public interface StudentTaskOrBuilder extends
       getSubmitParameterBytes();
 
   /**
+   * <pre>
+   * 任务提交描述
+   * </pre>
+   *
    * <code>string submit_description = 5;</code>
    * @return The submitDescription.
    */
   java.lang.String getSubmitDescription();
   /**
+   * <pre>
+   * 任务提交描述
+   * </pre>
+   *
    * <code>string submit_description = 5;</code>
    * @return The bytes for submitDescription.
    */
@@ -62,23 +94,39 @@ public interface StudentTaskOrBuilder extends
       getSubmitDescriptionBytes();
 
   /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
    * <code>repeated string attachments = 6;</code>
    * @return A list containing the attachments.
    */
   java.util.List<java.lang.String>
       getAttachmentsList();
   /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
    * <code>repeated string attachments = 6;</code>
    * @return The count of attachments.
    */
   int getAttachmentsCount();
   /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
    * <code>repeated string attachments = 6;</code>
    * @param index The index of the element to return.
    * @return The attachments at the given index.
    */
   java.lang.String getAttachments(int index);
   /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
    * <code>repeated string attachments = 6;</code>
    * @param index The index of the value to return.
    * @return The bytes of the attachments at the given index.
@@ -87,59 +135,107 @@ public interface StudentTaskOrBuilder extends
       getAttachmentsBytes(int index);
 
   /**
+   * <pre>
+   * 任务参数评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> 
       getStudentTaskParameterResultList();
   /**
+   * <pre>
+   * 任务参数评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getStudentTaskParameterResult(int index);
   /**
+   * <pre>
+   * 任务参数评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
    */
   int getStudentTaskParameterResultCount();
   /**
+   * <pre>
+   * 任务参数评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
       getStudentTaskParameterResultOrBuilderList();
   /**
+   * <pre>
+   * 任务参数评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getStudentTaskParameterResultOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 任务要求评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> 
       getStudentTaskRequirementResultList();
   /**
+   * <pre>
+   * 任务要求评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult getStudentTaskRequirementResult(int index);
   /**
+   * <pre>
+   * 任务要求评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
    */
   int getStudentTaskRequirementResultCount();
   /**
+   * <pre>
+   * 任务要求评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
       getStudentTaskRequirementResultOrBuilderList();
   /**
+   * <pre>
+   * 任务要求评价结果
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder getStudentTaskRequirementResultOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 任务要求失败原因
+   * </pre>
+   *
    * <code>string teacher_failed_reason = 9;</code>
    * @return The teacherFailedReason.
    */
   java.lang.String getTeacherFailedReason();
   /**
+   * <pre>
+   * 任务要求失败原因
+   * </pre>
+   *
    * <code>string teacher_failed_reason = 9;</code>
    * @return The bytes for teacherFailedReason.
    */
@@ -147,17 +243,29 @@ public interface StudentTaskOrBuilder extends
       getTeacherFailedReasonBytes();
 
   /**
+   * <pre>
+   * 任务评分
+   * </pre>
+   *
    * <code>int32 teacher_evaluate_score = 10;</code>
    * @return The teacherEvaluateScore.
    */
   int getTeacherEvaluateScore();
 
   /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
    * <code>string task_platform = 11;</code>
    * @return The taskPlatform.
    */
   java.lang.String getTaskPlatform();
   /**
+   * <pre>
+   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * </pre>
+   *
    * <code>string task_platform = 11;</code>
    * @return The bytes for taskPlatform.
    */
@@ -165,11 +273,19 @@ public interface StudentTaskOrBuilder extends
       getTaskPlatformBytes();
 
   /**
+   * <pre>
+   * 预置任务标识
+   * </pre>
+   *
    * <code>string system_task_key = 12;</code>
    * @return The systemTaskKey.
    */
   java.lang.String getSystemTaskKey();
   /**
+   * <pre>
+   * 预置任务标识
+   * </pre>
+   *
    * <code>string system_task_key = 12;</code>
    * @return The bytes for systemTaskKey.
    */
@@ -177,70 +293,126 @@ public interface StudentTaskOrBuilder extends
       getSystemTaskKeyBytes();
 
   /**
+   * <pre>
+   * 任务所属教师任务
+   * </pre>
+   *
    * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
   /**
+   * <pre>
+   * 任务所属教师任务
+   * </pre>
+   *
    * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
   /**
+   * <pre>
+   * 任务所属教师任务
+   * </pre>
+   *
    * <code>.glory_api.TeacherTask teacher_task = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> 
       getTaskLinksList();
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskLink getTaskLinks(int index);
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
    */
   int getTaskLinksCount();
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
       getTaskLinksOrBuilderList();
   /**
+   * <pre>
+   * 任务链接
+   * </pre>
+   *
    * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder getTaskLinksOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * 学生信息
+   * </pre>
+   *
    * <code>.glory_api.User student = 15;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
   /**
+   * <pre>
+   * 学生信息
+   * </pre>
+   *
    * <code>.glory_api.User student = 15;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
   /**
+   * <pre>
+   * 学生信息
+   * </pre>
+   *
    * <code>.glory_api.User student = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
   /**
+   * <pre>
+   * 老师信息
+   * </pre>
+   *
    * <code>.glory_api.User teacher = 16;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
   /**
+   * <pre>
+   * 老师信息
+   * </pre>
+   *
    * <code>.glory_api.User teacher = 16;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
   /**
+   * <pre>
+   * 老师信息
+   * </pre>
+   *
    * <code>.glory_api.User teacher = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();

@@ -83,11 +83,11 @@ struct GloryApi_StudentTaskRequirementResult {
 
   var taskRequirementID: Int64 = 0
 
+  /// 任务要求
   var taskRequirement: String = String()
 
+  /// 是否通过
   var isPasswd: Bool = false
-
-  var failedReason: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -101,28 +101,40 @@ struct GloryApi_StudentTask {
 
   var studentTaskID: Int64 = 0
 
+  /// 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
   var taskStatus: String = String()
 
+  /// 任务提交时间
   var submittedAt: String = String()
 
+  /// 任务提交参数
   var submitParameter: String = String()
 
+  /// 任务提交描述
   var submitDescription: String = String()
 
+  /// 任务提交附件
   var attachments: [String] = []
 
+  /// 任务参数评价结果
   var studentTaskParameterResult: [GloryApi_StudentTaskParameterResult] = []
 
+  /// 任务要求评价结果
   var studentTaskRequirementResult: [GloryApi_StudentTaskRequirementResult] = []
 
+  /// 任务要求失败原因
   var teacherFailedReason: String = String()
 
+  /// 任务评分
   var teacherEvaluateScore: Int32 = 0
 
+  /// 任务所属平台："APP"，"WEB"，"APP/WEB"，""
   var taskPlatform: String = String()
 
+  /// 预置任务标识
   var systemTaskKey: String = String()
 
+  /// 任务所属教师任务
   var teacherTask: GloryApi_TeacherTask {
     get {return _teacherTask ?? GloryApi_TeacherTask()}
     set {_teacherTask = newValue}
@@ -132,8 +144,10 @@ struct GloryApi_StudentTask {
   /// Clears the value of `teacherTask`. Subsequent reads from it will return its default value.
   mutating func clearTeacherTask() {self._teacherTask = nil}
 
+  /// 任务链接
   var taskLinks: [GloryApi_StudentTaskLink] = []
 
+  /// 学生信息
   var student: GloryApi_User {
     get {return _student ?? GloryApi_User()}
     set {_student = newValue}
@@ -143,6 +157,7 @@ struct GloryApi_StudentTask {
   /// Clears the value of `student`. Subsequent reads from it will return its default value.
   mutating func clearStudent() {self._student = nil}
 
+  /// 老师信息
   var teacher: GloryApi_User {
     get {return _teacher ?? GloryApi_User()}
     set {_teacher = newValue}
@@ -697,7 +712,6 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
     1: .standard(proto: "task_requirement_id"),
     2: .standard(proto: "task_requirement"),
     3: .standard(proto: "is_passwd"),
-    4: .standard(proto: "failed_reason"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -709,7 +723,6 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskRequirementID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.taskRequirement) }()
       case 3: try { try decoder.decodeSingularBoolField(value: &self.isPasswd) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
       default: break
       }
     }
@@ -725,9 +738,6 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
     if self.isPasswd != false {
       try visitor.visitSingularBoolField(value: self.isPasswd, fieldNumber: 3)
     }
-    if !self.failedReason.isEmpty {
-      try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 4)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -735,7 +745,6 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
     if lhs.taskRequirementID != rhs.taskRequirementID {return false}
     if lhs.taskRequirement != rhs.taskRequirement {return false}
     if lhs.isPasswd != rhs.isPasswd {return false}
-    if lhs.failedReason != rhs.failedReason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
