@@ -38,8 +38,8 @@ public interface StudentTaskRequirementResultOrBuilder extends
    * 是否通过
    * </pre>
    *
-   * <code>bool is_passwd = 3;</code>
-   * @return The isPasswd.
+   * <code>bool is_passed = 3;</code>
+   * @return The isPassed.
    */
-  boolean getIsPasswd();
+  boolean getIsPassed();
 }

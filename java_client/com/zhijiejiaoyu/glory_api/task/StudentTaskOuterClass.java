@@ -118,7 +118,7 @@ public final class StudentTaskOuterClass {
       "\030\n \003(\0132%.glory_api.StudentTaskParameterR" +
       "esult\"h\n\034StudentTaskRequirementResult\022\033\n" +
       "\023task_requirement_id\030\001 \001(\003\022\030\n\020task_requi" +
-      "rement\030\002 \001(\t\022\021\n\tis_passwd\030\003 \001(\010\"\271\005\n\013Stud" +
+      "rement\030\002 \001(\t\022\021\n\tis_passed\030\003 \001(\010\"\271\005\n\013Stud" +
       "entTask\022\027\n\017student_task_id\030\001 \001(\003\022\023\n\013task" +
       "_status\030\002 \001(\t\022\024\n\014submitted_at\030\003 \001(\t\022\030\n\020s" +
       "ubmit_parameter\030\004 \001(\t\022\032\n\022submit_descript" +
@@ -216,7 +216,7 @@ public final class StudentTaskOuterClass {
     internal_static_glory_api_StudentTaskRequirementResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTaskRequirementResult_descriptor,
-        new java.lang.String[] { "TaskRequirementId", "TaskRequirement", "IsPasswd", });
+        new java.lang.String[] { "TaskRequirementId", "TaskRequirement", "IsPassed", });
     internal_static_glory_api_StudentTask_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_StudentTask_fieldAccessorTable = new

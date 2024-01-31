@@ -320,7 +320,7 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   factory StudentTaskRequirementResult({
     $fixnum.Int64? taskRequirementId,
     $core.String? taskRequirement,
-    $core.bool? isPasswd,
+    $core.bool? isPassed,
   }) {
     final $result = create();
     if (taskRequirementId != null) {
@@ -329,8 +329,8 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
     if (taskRequirement != null) {
       $result.taskRequirement = taskRequirement;
     }
-    if (isPasswd != null) {
-      $result.isPasswd = isPasswd;
+    if (isPassed != null) {
+      $result.isPassed = isPassed;
     }
     return $result;
   }
@@ -341,7 +341,7 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskRequirementResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'taskRequirementId')
     ..aOS(2, _omitFieldNames ? '' : 'taskRequirement')
-    ..aOB(3, _omitFieldNames ? '' : 'isPasswd')
+    ..aOB(3, _omitFieldNames ? '' : 'isPassed')
     ..hasRequiredFields = false
   ;
 
@@ -385,13 +385,13 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   void clearTaskRequirement() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get isPasswd => $_getBF(2);
+  $core.bool get isPassed => $_getBF(2);
   @$pb.TagNumber(3)
-  set isPasswd($core.bool v) { $_setBool(2, v); }
+  set isPassed($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasIsPasswd() => $_has(2);
+  $core.bool hasIsPassed() => $_has(2);
   @$pb.TagNumber(3)
-  void clearIsPasswd() => clearField(3);
+  void clearIsPassed() => clearField(3);
 }
 
 class StudentTask extends $pb.GeneratedMessage {

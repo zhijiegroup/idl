@@ -89,7 +89,7 @@ struct GloryApi_StudentTaskRequirementResult {
   var taskRequirement: String = String()
 
   /// 是否通过
-  var isPasswd: Bool = false
+  var isPassed: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -822,7 +822,7 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "task_requirement_id"),
     2: .standard(proto: "task_requirement"),
-    3: .standard(proto: "is_passwd"),
+    3: .standard(proto: "is_passed"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -833,7 +833,7 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.taskRequirementID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.taskRequirement) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self.isPasswd) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.isPassed) }()
       default: break
       }
     }
@@ -846,8 +846,8 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
     if !self.taskRequirement.isEmpty {
       try visitor.visitSingularStringField(value: self.taskRequirement, fieldNumber: 2)
     }
-    if self.isPasswd != false {
-      try visitor.visitSingularBoolField(value: self.isPasswd, fieldNumber: 3)
+    if self.isPassed != false {
+      try visitor.visitSingularBoolField(value: self.isPassed, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -855,7 +855,7 @@ extension GloryApi_StudentTaskRequirementResult: SwiftProtobuf.Message, SwiftPro
   static func ==(lhs: GloryApi_StudentTaskRequirementResult, rhs: GloryApi_StudentTaskRequirementResult) -> Bool {
     if lhs.taskRequirementID != rhs.taskRequirementID {return false}
     if lhs.taskRequirement != rhs.taskRequirement {return false}
-    if lhs.isPasswd != rhs.isPasswd {return false}
+    if lhs.isPassed != rhs.isPassed {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

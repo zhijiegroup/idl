@@ -36,7 +36,7 @@ export interface StudentTaskRequirementResult {
   /** 任务要求 */
   task_requirement?: string;
   /** 是否通过 */
-  is_passwd?: boolean;
+  is_passed?: boolean;
 }
 
 export interface StudentTask {

@@ -76,7 +76,7 @@ const StudentTaskRequirementResult$json = {
   '2': [
     {'1': 'task_requirement_id', '3': 1, '4': 1, '5': 3, '10': 'taskRequirementId'},
     {'1': 'task_requirement', '3': 2, '4': 1, '5': 9, '10': 'taskRequirement'},
-    {'1': 'is_passwd', '3': 3, '4': 1, '5': 8, '10': 'isPasswd'},
+    {'1': 'is_passed', '3': 3, '4': 1, '5': 8, '10': 'isPassed'},
   ],
 };
 
@@ -84,7 +84,7 @@ const StudentTaskRequirementResult$json = {
 final $typed_data.Uint8List studentTaskRequirementResultDescriptor = $convert.base64Decode(
     'ChxTdHVkZW50VGFza1JlcXVpcmVtZW50UmVzdWx0Ei4KE3Rhc2tfcmVxdWlyZW1lbnRfaWQYAS'
     'ABKANSEXRhc2tSZXF1aXJlbWVudElkEikKEHRhc2tfcmVxdWlyZW1lbnQYAiABKAlSD3Rhc2tS'
-    'ZXF1aXJlbWVudBIbCglpc19wYXNzd2QYAyABKAhSCGlzUGFzc3dk');
+    'ZXF1aXJlbWVudBIbCglpc19wYXNzZWQYAyABKAhSCGlzUGFzc2Vk');
 
 @$core.Deprecated('Use studentTaskDescriptor instead')
 const StudentTask$json = {

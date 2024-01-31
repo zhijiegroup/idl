@@ -62,7 +62,7 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            isPasswd = input.readBool();
+            isPassed = input.readBool();
             break;
           }
           default: {
@@ -154,19 +154,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IS_PASSWD_FIELD_NUMBER = 3;
-  private boolean isPasswd ;
+  public static final int IS_PASSED_FIELD_NUMBER = 3;
+  private boolean isPassed ;
   /**
    * <pre>
    * 是否通过
    * </pre>
    *
-   * <code>bool is_passwd = 3;</code>
-   * @return The isPasswd.
+   * <code>bool is_passed = 3;</code>
+   * @return The isPassed.
    */
   @java.lang.Override
-  public boolean getIsPasswd() {
-    return isPasswd ;
+  public boolean getIsPassed() {
+    return isPassed ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -189,8 +189,8 @@ private static final long serialVersionUID = 0L;
     if (!getTaskRequirementBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskRequirement );
     }
-    if (isPasswd != false) {
-      output.writeBool(3, isPasswd );
+    if (isPassed != false) {
+      output.writeBool(3, isPassed );
     }
     unknownFields.writeTo(output);
   }
@@ -208,9 +208,9 @@ private static final long serialVersionUID = 0L;
     if (!getTaskRequirementBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskRequirement );
     }
-    if (isPasswd != false) {
+    if (isPassed != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, isPasswd );
+        .computeBoolSize(3, isPassed );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,8 +231,8 @@ private static final long serialVersionUID = 0L;
         != other.getTaskRequirementId()) return false;
     if (!getTaskRequirement()
         .equals(other.getTaskRequirement())) return false;
-    if (getIsPasswd()
-        != other.getIsPasswd()) return false;
+    if (getIsPassed()
+        != other.getIsPassed()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -249,9 +249,9 @@ private static final long serialVersionUID = 0L;
         getTaskRequirementId());
     hash = (37 * hash) + TASK_REQUIREMENT_FIELD_NUMBER;
     hash = (53 * hash) + getTaskRequirement().hashCode();
-    hash = (37 * hash) + IS_PASSWD_FIELD_NUMBER;
+    hash = (37 * hash) + IS_PASSED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsPasswd());
+        getIsPassed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
 
       taskRequirement = "";
 
-      isPasswd = false;
+      isPassed = false;
 
       return this;
     }
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult result = new com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult(this);
       result.taskRequirementId = taskRequirementId ;
       result.taskRequirement = taskRequirement ;
-      result.isPasswd = isPasswd ;
+      result.isPassed = isPassed ;
       onBuilt();
       return result;
     }
@@ -475,8 +475,8 @@ private static final long serialVersionUID = 0L;
         taskRequirement = other.taskRequirement ;
         onChanged();
       }
-      if (other.getIsPasswd() != false) {
-        setIsPasswd(other.getIsPasswd());
+      if (other.getIsPassed() != false) {
+        setIsPassed(other.getIsPassed());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -634,31 +634,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isPasswd ;
+    private boolean isPassed ;
     /**
      * <pre>
      * 是否通过
      * </pre>
      *
-     * <code>bool is_passwd = 3;</code>
-     * @return The isPasswd.
+     * <code>bool is_passed = 3;</code>
+     * @return The isPassed.
      */
     @java.lang.Override
-    public boolean getIsPasswd() {
-      return isPasswd ;
+    public boolean getIsPassed() {
+      return isPassed ;
     }
     /**
      * <pre>
      * 是否通过
      * </pre>
      *
-     * <code>bool is_passwd = 3;</code>
-     * @param value The isPasswd to set.
+     * <code>bool is_passed = 3;</code>
+     * @param value The isPassed to set.
      * @return This builder for chaining.
      */
-    public Builder setIsPasswd(boolean value) {
+    public Builder setIsPassed(boolean value) {
       
-      isPasswd = value;
+      isPassed = value;
       onChanged();
       return this;
     }
@@ -667,12 +667,12 @@ private static final long serialVersionUID = 0L;
      * 是否通过
      * </pre>
      *
-     * <code>bool is_passwd = 3;</code>
+     * <code>bool is_passed = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsPasswd() {
+    public Builder clearIsPassed() {
       
-      isPasswd = false;
+      isPassed = false;
       onChanged();
       return this;
     }
