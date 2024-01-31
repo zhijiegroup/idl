@@ -365,10 +365,64 @@ public interface StudentTaskOrBuilder extends
 
   /**
    * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   * @return Whether the classDept field is set.
+   */
+  boolean hasClassDept();
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   * @return The classDept.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept();
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder();
+
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   * @return Whether the majorDept field is set.
+   */
+  boolean hasMajorDept();
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   * @return The majorDept.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept();
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder();
+
+  /**
+   * <pre>
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 15;</code>
+   * <code>.glory_api.User student = 17;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
@@ -377,7 +431,7 @@ public interface StudentTaskOrBuilder extends
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 15;</code>
+   * <code>.glory_api.User student = 17;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
@@ -386,7 +440,7 @@ public interface StudentTaskOrBuilder extends
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 15;</code>
+   * <code>.glory_api.User student = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
@@ -395,7 +449,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 16;</code>
+   * <code>.glory_api.User teacher = 18;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
@@ -404,7 +458,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 16;</code>
+   * <code>.glory_api.User teacher = 18;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
@@ -413,7 +467,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 16;</code>
+   * <code>.glory_api.User teacher = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }

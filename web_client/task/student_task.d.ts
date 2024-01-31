@@ -67,6 +67,10 @@ export interface StudentTask {
   teacher_task?: teacher_task.TeacherTask;
   /** 任务链接 */
   task_links?: Array<StudentTaskLink>;
+  /** 学生班级信息 */
+  class_dept?: user.TenantDept;
+  /** 学生专业信息 */
+  major_dept?: user.TenantDept;
   /** 学生信息 */
   student?: user.User;
   /** 老师信息 */
