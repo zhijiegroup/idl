@@ -34,7 +34,7 @@ message StudentTaskParameterResult {
 message StudentTaskRequirementResult {
   int64 task_requirement_id = 1;
   string task_requirement = 2; // 任务要求
-  bool is_passwd = 3; // 是否通过
+  bool is_passed = 3; // 是否通过
 }
 
 message StudentTask {
