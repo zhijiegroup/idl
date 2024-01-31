@@ -44,18 +44,19 @@ message StudentTask {
   string submit_parameter = 4; // 任务提交参数
   string submit_description = 5; // 任务提交描述
   repeated string attachments = 6; // 任务提交附件
-  repeated StudentTaskParameterResult student_task_parameter_result =  7; // 任务参数评价结果
-  repeated StudentTaskRequirementResult student_task_requirement_result = 8; // 任务要求评价结果
-  string teacher_failed_reason = 9; // 任务要求失败原因
-  int32 teacher_evaluate_score = 10; // 任务评分
-  string task_platform = 11; // 任务所属平台："APP"，"WEB"，"APP/WEB"，""
-  string system_task_key = 12; // 预置任务标识
-  TeacherTask teacher_task = 13; // 任务所属教师任务
-  repeated StudentTaskLink task_links = 14; // 任务链接
-  TenantDept class_dept = 15; // 学生班级信息
-  TenantDept major_dept = 16; // 学生专业信息
-  User student = 17; // 学生信息
-  User teacher = 18; // 老师信息
+  string evaluated_at = 7; // 任务评价时间
+  repeated StudentTaskParameterResult student_task_parameter_result =  8; // 任务参数评价结果
+  repeated StudentTaskRequirementResult student_task_requirement_result = 9; // 任务要求评价结果
+  string teacher_failed_reason = 10; // 任务要求失败原因
+  int32 teacher_evaluate_score = 11; // 任务评分
+  string task_platform = 12; // 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  string system_task_key = 13; // 预置任务标识
+  TeacherTask teacher_task = 14; // 任务所属教师任务
+  repeated StudentTaskLink task_links = 15; // 任务链接
+  TenantDept class_dept = 16; // 学生班级信息
+  TenantDept major_dept = 17; // 学生专业信息
+  User student = 18; // 学生信息
+  User teacher = 19; // 老师信息
 }
 
 message TeacherRequirementEvaluation {
@@ -72,8 +73,10 @@ message ListStudentTaskRequest {
   // 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
   // 3. 如果查询已评价：passed - 已通过；failed：未通过。
   string status = 4;
-  string task_start = 5;
-  string task_end = 6;
+  TimeRange task_start = 5;
+  TimeRange task_end = 6;
+  TimeRange task_submitted_at = 7;
+  TimeRange task_evaluated_at = 8;
   base.PaginationRequest pagination = 100;
 }
 
