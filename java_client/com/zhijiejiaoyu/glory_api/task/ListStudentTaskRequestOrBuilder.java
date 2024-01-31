@@ -76,28 +76,64 @@ public interface ListStudentTaskRequestOrBuilder extends
       getStatusBytes();
 
   /**
-   * <code>string task_start = 5;</code>
+   * <code>.glory_api.TimeRange task_start = 5;</code>
+   * @return Whether the taskStart field is set.
+   */
+  boolean hasTaskStart();
+  /**
+   * <code>.glory_api.TimeRange task_start = 5;</code>
    * @return The taskStart.
    */
-  java.lang.String getTaskStart();
+  com.zhijiejiaoyu.glory_api.task.TimeRange getTaskStart();
   /**
-   * <code>string task_start = 5;</code>
-   * @return The bytes for taskStart.
+   * <code>.glory_api.TimeRange task_start = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getTaskStartBytes();
+  com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskStartOrBuilder();
 
   /**
-   * <code>string task_end = 6;</code>
+   * <code>.glory_api.TimeRange task_end = 6;</code>
+   * @return Whether the taskEnd field is set.
+   */
+  boolean hasTaskEnd();
+  /**
+   * <code>.glory_api.TimeRange task_end = 6;</code>
    * @return The taskEnd.
    */
-  java.lang.String getTaskEnd();
+  com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEnd();
   /**
-   * <code>string task_end = 6;</code>
-   * @return The bytes for taskEnd.
+   * <code>.glory_api.TimeRange task_end = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getTaskEndBytes();
+  com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEndOrBuilder();
+
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 7;</code>
+   * @return Whether the taskSubmittedAt field is set.
+   */
+  boolean hasTaskSubmittedAt();
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 7;</code>
+   * @return The taskSubmittedAt.
+   */
+  com.zhijiejiaoyu.glory_api.task.TimeRange getTaskSubmittedAt();
+  /**
+   * <code>.glory_api.TimeRange task_submitted_at = 7;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskSubmittedAtOrBuilder();
+
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 8;</code>
+   * @return Whether the taskEvaluatedAt field is set.
+   */
+  boolean hasTaskEvaluatedAt();
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 8;</code>
+   * @return The taskEvaluatedAt.
+   */
+  com.zhijiejiaoyu.glory_api.task.TimeRange getTaskEvaluatedAt();
+  /**
+   * <code>.glory_api.TimeRange task_evaluated_at = 8;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TimeRangeOrBuilder getTaskEvaluatedAtOrBuilder();
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

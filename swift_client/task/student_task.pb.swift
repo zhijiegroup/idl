@@ -136,6 +136,12 @@ struct GloryApi_StudentTask {
     set {_uniqueStorage()._attachments = newValue}
   }
 
+  /// 任务评价时间
+  var evaluatedAt: String {
+    get {return _storage._evaluatedAt}
+    set {_uniqueStorage()._evaluatedAt = newValue}
+  }
+
   /// 任务参数评价结果
   var studentTaskParameterResult: [GloryApi_StudentTaskParameterResult] {
     get {return _storage._studentTaskParameterResult}
@@ -268,9 +274,41 @@ struct GloryApi_ListStudentTaskRequest {
   /// 3. 如果查询已评价：passed - 已通过；failed：未通过。
   var status: String = String()
 
-  var taskStart: String = String()
+  var taskStart: GloryApi_TimeRange {
+    get {return _taskStart ?? GloryApi_TimeRange()}
+    set {_taskStart = newValue}
+  }
+  /// Returns true if `taskStart` has been explicitly set.
+  var hasTaskStart: Bool {return self._taskStart != nil}
+  /// Clears the value of `taskStart`. Subsequent reads from it will return its default value.
+  mutating func clearTaskStart() {self._taskStart = nil}
 
-  var taskEnd: String = String()
+  var taskEnd: GloryApi_TimeRange {
+    get {return _taskEnd ?? GloryApi_TimeRange()}
+    set {_taskEnd = newValue}
+  }
+  /// Returns true if `taskEnd` has been explicitly set.
+  var hasTaskEnd: Bool {return self._taskEnd != nil}
+  /// Clears the value of `taskEnd`. Subsequent reads from it will return its default value.
+  mutating func clearTaskEnd() {self._taskEnd = nil}
+
+  var taskSubmittedAt: GloryApi_TimeRange {
+    get {return _taskSubmittedAt ?? GloryApi_TimeRange()}
+    set {_taskSubmittedAt = newValue}
+  }
+  /// Returns true if `taskSubmittedAt` has been explicitly set.
+  var hasTaskSubmittedAt: Bool {return self._taskSubmittedAt != nil}
+  /// Clears the value of `taskSubmittedAt`. Subsequent reads from it will return its default value.
+  mutating func clearTaskSubmittedAt() {self._taskSubmittedAt = nil}
+
+  var taskEvaluatedAt: GloryApi_TimeRange {
+    get {return _taskEvaluatedAt ?? GloryApi_TimeRange()}
+    set {_taskEvaluatedAt = newValue}
+  }
+  /// Returns true if `taskEvaluatedAt` has been explicitly set.
+  var hasTaskEvaluatedAt: Bool {return self._taskEvaluatedAt != nil}
+  /// Clears the value of `taskEvaluatedAt`. Subsequent reads from it will return its default value.
+  mutating func clearTaskEvaluatedAt() {self._taskEvaluatedAt = nil}
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -285,6 +323,10 @@ struct GloryApi_ListStudentTaskRequest {
 
   init() {}
 
+  fileprivate var _taskStart: GloryApi_TimeRange? = nil
+  fileprivate var _taskEnd: GloryApi_TimeRange? = nil
+  fileprivate var _taskSubmittedAt: GloryApi_TimeRange? = nil
+  fileprivate var _taskEvaluatedAt: GloryApi_TimeRange? = nil
   fileprivate var _pagination: Base_PaginationRequest? = nil
 }
 
@@ -828,18 +870,19 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     4: .standard(proto: "submit_parameter"),
     5: .standard(proto: "submit_description"),
     6: .same(proto: "attachments"),
-    7: .standard(proto: "student_task_parameter_result"),
-    8: .standard(proto: "student_task_requirement_result"),
-    9: .standard(proto: "teacher_failed_reason"),
-    10: .standard(proto: "teacher_evaluate_score"),
-    11: .standard(proto: "task_platform"),
-    12: .standard(proto: "system_task_key"),
-    13: .standard(proto: "teacher_task"),
-    14: .standard(proto: "task_links"),
-    15: .standard(proto: "class_dept"),
-    16: .standard(proto: "major_dept"),
-    17: .same(proto: "student"),
-    18: .same(proto: "teacher"),
+    7: .standard(proto: "evaluated_at"),
+    8: .standard(proto: "student_task_parameter_result"),
+    9: .standard(proto: "student_task_requirement_result"),
+    10: .standard(proto: "teacher_failed_reason"),
+    11: .standard(proto: "teacher_evaluate_score"),
+    12: .standard(proto: "task_platform"),
+    13: .standard(proto: "system_task_key"),
+    14: .standard(proto: "teacher_task"),
+    15: .standard(proto: "task_links"),
+    16: .standard(proto: "class_dept"),
+    17: .standard(proto: "major_dept"),
+    18: .same(proto: "student"),
+    19: .same(proto: "teacher"),
   ]
 
   fileprivate class _StorageClass {
@@ -849,6 +892,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _submitParameter: String = String()
     var _submitDescription: String = String()
     var _attachments: [String] = []
+    var _evaluatedAt: String = String()
     var _studentTaskParameterResult: [GloryApi_StudentTaskParameterResult] = []
     var _studentTaskRequirementResult: [GloryApi_StudentTaskRequirementResult] = []
     var _teacherFailedReason: String = String()
@@ -873,6 +917,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _submitParameter = source._submitParameter
       _submitDescription = source._submitDescription
       _attachments = source._attachments
+      _evaluatedAt = source._evaluatedAt
       _studentTaskParameterResult = source._studentTaskParameterResult
       _studentTaskRequirementResult = source._studentTaskRequirementResult
       _teacherFailedReason = source._teacherFailedReason
@@ -909,18 +954,19 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 4: try { try decoder.decodeSingularStringField(value: &_storage._submitParameter) }()
         case 5: try { try decoder.decodeSingularStringField(value: &_storage._submitDescription) }()
         case 6: try { try decoder.decodeRepeatedStringField(value: &_storage._attachments) }()
-        case 7: try { try decoder.decodeRepeatedMessageField(value: &_storage._studentTaskParameterResult) }()
-        case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._studentTaskRequirementResult) }()
-        case 9: try { try decoder.decodeSingularStringField(value: &_storage._teacherFailedReason) }()
-        case 10: try { try decoder.decodeSingularInt32Field(value: &_storage._teacherEvaluateScore) }()
-        case 11: try { try decoder.decodeSingularStringField(value: &_storage._taskPlatform) }()
-        case 12: try { try decoder.decodeSingularStringField(value: &_storage._systemTaskKey) }()
-        case 13: try { try decoder.decodeSingularMessageField(value: &_storage._teacherTask) }()
-        case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskLinks) }()
-        case 15: try { try decoder.decodeSingularMessageField(value: &_storage._classDept) }()
-        case 16: try { try decoder.decodeSingularMessageField(value: &_storage._majorDept) }()
-        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._student) }()
-        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._teacher) }()
+        case 7: try { try decoder.decodeSingularStringField(value: &_storage._evaluatedAt) }()
+        case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._studentTaskParameterResult) }()
+        case 9: try { try decoder.decodeRepeatedMessageField(value: &_storage._studentTaskRequirementResult) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._teacherFailedReason) }()
+        case 11: try { try decoder.decodeSingularInt32Field(value: &_storage._teacherEvaluateScore) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._taskPlatform) }()
+        case 13: try { try decoder.decodeSingularStringField(value: &_storage._systemTaskKey) }()
+        case 14: try { try decoder.decodeSingularMessageField(value: &_storage._teacherTask) }()
+        case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskLinks) }()
+        case 16: try { try decoder.decodeSingularMessageField(value: &_storage._classDept) }()
+        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._majorDept) }()
+        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._student) }()
+        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._teacher) }()
         default: break
         }
       }
@@ -951,41 +997,44 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._attachments.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._attachments, fieldNumber: 6)
       }
+      if !_storage._evaluatedAt.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._evaluatedAt, fieldNumber: 7)
+      }
       if !_storage._studentTaskParameterResult.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._studentTaskParameterResult, fieldNumber: 7)
+        try visitor.visitRepeatedMessageField(value: _storage._studentTaskParameterResult, fieldNumber: 8)
       }
       if !_storage._studentTaskRequirementResult.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._studentTaskRequirementResult, fieldNumber: 8)
+        try visitor.visitRepeatedMessageField(value: _storage._studentTaskRequirementResult, fieldNumber: 9)
       }
       if !_storage._teacherFailedReason.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._teacherFailedReason, fieldNumber: 9)
+        try visitor.visitSingularStringField(value: _storage._teacherFailedReason, fieldNumber: 10)
       }
       if _storage._teacherEvaluateScore != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._teacherEvaluateScore, fieldNumber: 10)
+        try visitor.visitSingularInt32Field(value: _storage._teacherEvaluateScore, fieldNumber: 11)
       }
       if !_storage._taskPlatform.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._taskPlatform, fieldNumber: 11)
+        try visitor.visitSingularStringField(value: _storage._taskPlatform, fieldNumber: 12)
       }
       if !_storage._systemTaskKey.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._systemTaskKey, fieldNumber: 12)
+        try visitor.visitSingularStringField(value: _storage._systemTaskKey, fieldNumber: 13)
       }
       try { if let v = _storage._teacherTask {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
       } }()
       if !_storage._taskLinks.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._taskLinks, fieldNumber: 14)
+        try visitor.visitRepeatedMessageField(value: _storage._taskLinks, fieldNumber: 15)
       }
       try { if let v = _storage._classDept {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      } }()
-      try { if let v = _storage._majorDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       } }()
-      try { if let v = _storage._student {
+      try { if let v = _storage._majorDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       } }()
-      try { if let v = _storage._teacher {
+      try { if let v = _storage._student {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+      } }()
+      try { if let v = _storage._teacher {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1002,6 +1051,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._submitParameter != rhs_storage._submitParameter {return false}
         if _storage._submitDescription != rhs_storage._submitDescription {return false}
         if _storage._attachments != rhs_storage._attachments {return false}
+        if _storage._evaluatedAt != rhs_storage._evaluatedAt {return false}
         if _storage._studentTaskParameterResult != rhs_storage._studentTaskParameterResult {return false}
         if _storage._studentTaskRequirementResult != rhs_storage._studentTaskRequirementResult {return false}
         if _storage._teacherFailedReason != rhs_storage._teacherFailedReason {return false}
@@ -1070,6 +1120,8 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     4: .same(proto: "status"),
     5: .standard(proto: "task_start"),
     6: .standard(proto: "task_end"),
+    7: .standard(proto: "task_submitted_at"),
+    8: .standard(proto: "task_evaluated_at"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1083,8 +1135,10 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
       case 2: try { try decoder.decodeSingularStringField(value: &self.keyword) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.platform) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.taskStart) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.taskEnd) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._taskStart) }()
+      case 6: try { try decoder.decodeSingularMessageField(value: &self._taskEnd) }()
+      case 7: try { try decoder.decodeSingularMessageField(value: &self._taskSubmittedAt) }()
+      case 8: try { try decoder.decodeSingularMessageField(value: &self._taskEvaluatedAt) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1108,12 +1162,18 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
     }
-    if !self.taskStart.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskStart, fieldNumber: 5)
-    }
-    if !self.taskEnd.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskEnd, fieldNumber: 6)
-    }
+    try { if let v = self._taskStart {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    } }()
+    try { if let v = self._taskEnd {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    } }()
+    try { if let v = self._taskSubmittedAt {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    } }()
+    try { if let v = self._taskEvaluatedAt {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    } }()
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1125,8 +1185,10 @@ extension GloryApi_ListStudentTaskRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.keyword != rhs.keyword {return false}
     if lhs.platform != rhs.platform {return false}
     if lhs.status != rhs.status {return false}
-    if lhs.taskStart != rhs.taskStart {return false}
-    if lhs.taskEnd != rhs.taskEnd {return false}
+    if lhs._taskStart != rhs._taskStart {return false}
+    if lhs._taskEnd != rhs._taskEnd {return false}
+    if lhs._taskSubmittedAt != rhs._taskSubmittedAt {return false}
+    if lhs._taskEvaluatedAt != rhs._taskEvaluatedAt {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

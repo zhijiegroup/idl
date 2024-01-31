@@ -402,6 +402,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.String? submitParameter,
     $core.String? submitDescription,
     $core.Iterable<$core.String>? attachments,
+    $core.String? evaluatedAt,
     $core.Iterable<StudentTaskParameterResult>? studentTaskParameterResult,
     $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
     $core.String? teacherFailedReason,
@@ -433,6 +434,9 @@ class StudentTask extends $pb.GeneratedMessage {
     }
     if (attachments != null) {
       $result.attachments.addAll(attachments);
+    }
+    if (evaluatedAt != null) {
+      $result.evaluatedAt = evaluatedAt;
     }
     if (studentTaskParameterResult != null) {
       $result.studentTaskParameterResult.addAll(studentTaskParameterResult);
@@ -483,18 +487,19 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'submitParameter')
     ..aOS(5, _omitFieldNames ? '' : 'submitDescription')
     ..pPS(6, _omitFieldNames ? '' : 'attachments')
-    ..pc<StudentTaskParameterResult>(7, _omitFieldNames ? '' : 'studentTaskParameterResult', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
-    ..pc<StudentTaskRequirementResult>(8, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
-    ..aOS(9, _omitFieldNames ? '' : 'teacherFailedReason')
-    ..a<$core.int>(10, _omitFieldNames ? '' : 'teacherEvaluateScore', $pb.PbFieldType.O3)
-    ..aOS(11, _omitFieldNames ? '' : 'taskPlatform')
-    ..aOS(12, _omitFieldNames ? '' : 'systemTaskKey')
-    ..aOM<$0.TeacherTask>(13, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
-    ..pc<StudentTaskLink>(14, _omitFieldNames ? '' : 'taskLinks', $pb.PbFieldType.PM, subBuilder: StudentTaskLink.create)
-    ..aOM<$1.TenantDept>(15, _omitFieldNames ? '' : 'classDept', subBuilder: $1.TenantDept.create)
-    ..aOM<$1.TenantDept>(16, _omitFieldNames ? '' : 'majorDept', subBuilder: $1.TenantDept.create)
-    ..aOM<$1.User>(17, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
-    ..aOM<$1.User>(18, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..aOS(7, _omitFieldNames ? '' : 'evaluatedAt')
+    ..pc<StudentTaskParameterResult>(8, _omitFieldNames ? '' : 'studentTaskParameterResult', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
+    ..pc<StudentTaskRequirementResult>(9, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
+    ..aOS(10, _omitFieldNames ? '' : 'teacherFailedReason')
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'teacherEvaluateScore', $pb.PbFieldType.O3)
+    ..aOS(12, _omitFieldNames ? '' : 'taskPlatform')
+    ..aOS(13, _omitFieldNames ? '' : 'systemTaskKey')
+    ..aOM<$0.TeacherTask>(14, _omitFieldNames ? '' : 'teacherTask', subBuilder: $0.TeacherTask.create)
+    ..pc<StudentTaskLink>(15, _omitFieldNames ? '' : 'taskLinks', $pb.PbFieldType.PM, subBuilder: StudentTaskLink.create)
+    ..aOM<$1.TenantDept>(16, _omitFieldNames ? '' : 'classDept', subBuilder: $1.TenantDept.create)
+    ..aOM<$1.TenantDept>(17, _omitFieldNames ? '' : 'majorDept', subBuilder: $1.TenantDept.create)
+    ..aOM<$1.User>(18, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
+    ..aOM<$1.User>(19, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -568,104 +573,113 @@ class StudentTask extends $pb.GeneratedMessage {
   $core.List<$core.String> get attachments => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<StudentTaskParameterResult> get studentTaskParameterResult => $_getList(6);
+  $core.String get evaluatedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set evaluatedAt($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasEvaluatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEvaluatedAt() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<StudentTaskRequirementResult> get studentTaskRequirementResult => $_getList(7);
+  $core.List<StudentTaskParameterResult> get studentTaskParameterResult => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.String get teacherFailedReason => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set teacherFailedReason($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasTeacherFailedReason() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearTeacherFailedReason() => clearField(9);
+  $core.List<StudentTaskRequirementResult> get studentTaskRequirementResult => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.int get teacherEvaluateScore => $_getIZ(9);
+  $core.String get teacherFailedReason => $_getSZ(9);
   @$pb.TagNumber(10)
-  set teacherEvaluateScore($core.int v) { $_setSignedInt32(9, v); }
+  set teacherFailedReason($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasTeacherEvaluateScore() => $_has(9);
+  $core.bool hasTeacherFailedReason() => $_has(9);
   @$pb.TagNumber(10)
-  void clearTeacherEvaluateScore() => clearField(10);
+  void clearTeacherFailedReason() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get taskPlatform => $_getSZ(10);
+  $core.int get teacherEvaluateScore => $_getIZ(10);
   @$pb.TagNumber(11)
-  set taskPlatform($core.String v) { $_setString(10, v); }
+  set teacherEvaluateScore($core.int v) { $_setSignedInt32(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasTaskPlatform() => $_has(10);
+  $core.bool hasTeacherEvaluateScore() => $_has(10);
   @$pb.TagNumber(11)
-  void clearTaskPlatform() => clearField(11);
+  void clearTeacherEvaluateScore() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get systemTaskKey => $_getSZ(11);
+  $core.String get taskPlatform => $_getSZ(11);
   @$pb.TagNumber(12)
-  set systemTaskKey($core.String v) { $_setString(11, v); }
+  set taskPlatform($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasSystemTaskKey() => $_has(11);
+  $core.bool hasTaskPlatform() => $_has(11);
   @$pb.TagNumber(12)
-  void clearSystemTaskKey() => clearField(12);
+  void clearTaskPlatform() => clearField(12);
 
   @$pb.TagNumber(13)
-  $0.TeacherTask get teacherTask => $_getN(12);
+  $core.String get systemTaskKey => $_getSZ(12);
   @$pb.TagNumber(13)
-  set teacherTask($0.TeacherTask v) { setField(13, v); }
+  set systemTaskKey($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasTeacherTask() => $_has(12);
+  $core.bool hasSystemTaskKey() => $_has(12);
   @$pb.TagNumber(13)
-  void clearTeacherTask() => clearField(13);
-  @$pb.TagNumber(13)
-  $0.TeacherTask ensureTeacherTask() => $_ensure(12);
+  void clearSystemTaskKey() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.List<StudentTaskLink> get taskLinks => $_getList(13);
+  $0.TeacherTask get teacherTask => $_getN(13);
+  @$pb.TagNumber(14)
+  set teacherTask($0.TeacherTask v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasTeacherTask() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTeacherTask() => clearField(14);
+  @$pb.TagNumber(14)
+  $0.TeacherTask ensureTeacherTask() => $_ensure(13);
 
   @$pb.TagNumber(15)
-  $1.TenantDept get classDept => $_getN(14);
-  @$pb.TagNumber(15)
-  set classDept($1.TenantDept v) { setField(15, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasClassDept() => $_has(14);
-  @$pb.TagNumber(15)
-  void clearClassDept() => clearField(15);
-  @$pb.TagNumber(15)
-  $1.TenantDept ensureClassDept() => $_ensure(14);
+  $core.List<StudentTaskLink> get taskLinks => $_getList(14);
 
   @$pb.TagNumber(16)
-  $1.TenantDept get majorDept => $_getN(15);
+  $1.TenantDept get classDept => $_getN(15);
   @$pb.TagNumber(16)
-  set majorDept($1.TenantDept v) { setField(16, v); }
+  set classDept($1.TenantDept v) { setField(16, v); }
   @$pb.TagNumber(16)
-  $core.bool hasMajorDept() => $_has(15);
+  $core.bool hasClassDept() => $_has(15);
   @$pb.TagNumber(16)
-  void clearMajorDept() => clearField(16);
+  void clearClassDept() => clearField(16);
   @$pb.TagNumber(16)
-  $1.TenantDept ensureMajorDept() => $_ensure(15);
+  $1.TenantDept ensureClassDept() => $_ensure(15);
 
   @$pb.TagNumber(17)
-  $1.User get student => $_getN(16);
+  $1.TenantDept get majorDept => $_getN(16);
   @$pb.TagNumber(17)
-  set student($1.User v) { setField(17, v); }
+  set majorDept($1.TenantDept v) { setField(17, v); }
   @$pb.TagNumber(17)
-  $core.bool hasStudent() => $_has(16);
+  $core.bool hasMajorDept() => $_has(16);
   @$pb.TagNumber(17)
-  void clearStudent() => clearField(17);
+  void clearMajorDept() => clearField(17);
   @$pb.TagNumber(17)
-  $1.User ensureStudent() => $_ensure(16);
+  $1.TenantDept ensureMajorDept() => $_ensure(16);
 
   @$pb.TagNumber(18)
-  $1.User get teacher => $_getN(17);
+  $1.User get student => $_getN(17);
   @$pb.TagNumber(18)
-  set teacher($1.User v) { setField(18, v); }
+  set student($1.User v) { setField(18, v); }
   @$pb.TagNumber(18)
-  $core.bool hasTeacher() => $_has(17);
+  $core.bool hasStudent() => $_has(17);
   @$pb.TagNumber(18)
-  void clearTeacher() => clearField(18);
+  void clearStudent() => clearField(18);
   @$pb.TagNumber(18)
-  $1.User ensureTeacher() => $_ensure(17);
+  $1.User ensureStudent() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $1.User get teacher => $_getN(18);
+  @$pb.TagNumber(19)
+  set teacher($1.User v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasTeacher() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearTeacher() => clearField(19);
+  @$pb.TagNumber(19)
+  $1.User ensureTeacher() => $_ensure(18);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {
@@ -738,8 +752,10 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
     $core.String? keyword,
     $core.String? platform,
     $core.String? status,
-    $core.String? taskStart,
-    $core.String? taskEnd,
+    TimeRange? taskStart,
+    TimeRange? taskEnd,
+    TimeRange? taskSubmittedAt,
+    TimeRange? taskEvaluatedAt,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -761,6 +777,12 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
     if (taskEnd != null) {
       $result.taskEnd = taskEnd;
     }
+    if (taskSubmittedAt != null) {
+      $result.taskSubmittedAt = taskSubmittedAt;
+    }
+    if (taskEvaluatedAt != null) {
+      $result.taskEvaluatedAt = taskEvaluatedAt;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -775,8 +797,10 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'keyword')
     ..aOS(3, _omitFieldNames ? '' : 'platform')
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOS(5, _omitFieldNames ? '' : 'taskStart')
-    ..aOS(6, _omitFieldNames ? '' : 'taskEnd')
+    ..aOM<TimeRange>(5, _omitFieldNames ? '' : 'taskStart', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(6, _omitFieldNames ? '' : 'taskEnd', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(7, _omitFieldNames ? '' : 'taskSubmittedAt', subBuilder: TimeRange.create)
+    ..aOM<TimeRange>(8, _omitFieldNames ? '' : 'taskEvaluatedAt', subBuilder: TimeRange.create)
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -843,33 +867,59 @@ class ListStudentTaskRequest extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get taskStart => $_getSZ(4);
+  TimeRange get taskStart => $_getN(4);
   @$pb.TagNumber(5)
-  set taskStart($core.String v) { $_setString(4, v); }
+  set taskStart(TimeRange v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTaskStart() => $_has(4);
   @$pb.TagNumber(5)
   void clearTaskStart() => clearField(5);
+  @$pb.TagNumber(5)
+  TimeRange ensureTaskStart() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.String get taskEnd => $_getSZ(5);
+  TimeRange get taskEnd => $_getN(5);
   @$pb.TagNumber(6)
-  set taskEnd($core.String v) { $_setString(5, v); }
+  set taskEnd(TimeRange v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasTaskEnd() => $_has(5);
   @$pb.TagNumber(6)
   void clearTaskEnd() => clearField(6);
+  @$pb.TagNumber(6)
+  TimeRange ensureTaskEnd() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  TimeRange get taskSubmittedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set taskSubmittedAt(TimeRange v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasTaskSubmittedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTaskSubmittedAt() => clearField(7);
+  @$pb.TagNumber(7)
+  TimeRange ensureTaskSubmittedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  TimeRange get taskEvaluatedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set taskEvaluatedAt(TimeRange v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTaskEvaluatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaskEvaluatedAt() => clearField(8);
+  @$pb.TagNumber(8)
+  TimeRange ensureTaskEvaluatedAt() => $_ensure(7);
 
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(6);
+  $2.PaginationRequest get pagination => $_getN(8);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(6);
+  $core.bool hasPagination() => $_has(8);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(6);
+  $2.PaginationRequest ensurePagination() => $_ensure(8);
 }
 
 class ListStudentTaskResponse extends $pb.GeneratedMessage {

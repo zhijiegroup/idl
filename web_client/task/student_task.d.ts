@@ -51,6 +51,8 @@ export interface StudentTask {
   submit_description?: string;
   /** 任务提交附件 */
   attachments?: Array<string>;
+  /** 任务评价时间 */
+  evaluated_at?: string;
   /** 任务参数评价结果 */
   student_task_parameter_result?: Array<StudentTaskParameterResult>;
   /** 任务要求评价结果 */
@@ -93,8 +95,10 @@ export interface ListStudentTaskRequest {
 3. 如果查询已评价：passed - 已通过；failed：未通过。 */
   platform?: string;
   status?: string;
-  task_start?: string;
-  task_end?: string;
+  task_start?: TimeRange;
+  task_end?: TimeRange;
+  task_submitted_at?: TimeRange;
+  task_evaluated_at?: TimeRange;
   pagination?: base.PaginationRequest;
 }
 

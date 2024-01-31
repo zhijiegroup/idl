@@ -136,10 +136,30 @@ public interface StudentTaskOrBuilder extends
 
   /**
    * <pre>
+   * 任务评价时间
+   * </pre>
+   *
+   * <code>string evaluated_at = 7;</code>
+   * @return The evaluatedAt.
+   */
+  java.lang.String getEvaluatedAt();
+  /**
+   * <pre>
+   * 任务评价时间
+   * </pre>
+   *
+   * <code>string evaluated_at = 7;</code>
+   * @return The bytes for evaluatedAt.
+   */
+  com.google.protobuf.ByteString
+      getEvaluatedAtBytes();
+
+  /**
+   * <pre>
    * 任务参数评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 8;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult> 
       getStudentTaskParameterResultList();
@@ -148,7 +168,7 @@ public interface StudentTaskOrBuilder extends
    * 任务参数评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResult getStudentTaskParameterResult(int index);
   /**
@@ -156,7 +176,7 @@ public interface StudentTaskOrBuilder extends
    * 任务参数评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 8;</code>
    */
   int getStudentTaskParameterResultCount();
   /**
@@ -164,7 +184,7 @@ public interface StudentTaskOrBuilder extends
    * 任务参数评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 8;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder> 
       getStudentTaskParameterResultOrBuilderList();
@@ -173,7 +193,7 @@ public interface StudentTaskOrBuilder extends
    * 任务参数评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 7;</code>
+   * <code>repeated .glory_api.StudentTaskParameterResult student_task_parameter_result = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskParameterResultOrBuilder getStudentTaskParameterResultOrBuilder(
       int index);
@@ -183,7 +203,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 9;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult> 
       getStudentTaskRequirementResultList();
@@ -192,7 +212,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResult getStudentTaskRequirementResult(int index);
   /**
@@ -200,7 +220,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 9;</code>
    */
   int getStudentTaskRequirementResultCount();
   /**
@@ -208,7 +228,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 9;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder> 
       getStudentTaskRequirementResultOrBuilderList();
@@ -217,7 +237,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求评价结果
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 8;</code>
+   * <code>repeated .glory_api.StudentTaskRequirementResult student_task_requirement_result = 9;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskRequirementResultOrBuilder getStudentTaskRequirementResultOrBuilder(
       int index);
@@ -227,7 +247,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求失败原因
    * </pre>
    *
-   * <code>string teacher_failed_reason = 9;</code>
+   * <code>string teacher_failed_reason = 10;</code>
    * @return The teacherFailedReason.
    */
   java.lang.String getTeacherFailedReason();
@@ -236,7 +256,7 @@ public interface StudentTaskOrBuilder extends
    * 任务要求失败原因
    * </pre>
    *
-   * <code>string teacher_failed_reason = 9;</code>
+   * <code>string teacher_failed_reason = 10;</code>
    * @return The bytes for teacherFailedReason.
    */
   com.google.protobuf.ByteString
@@ -247,7 +267,7 @@ public interface StudentTaskOrBuilder extends
    * 任务评分
    * </pre>
    *
-   * <code>int32 teacher_evaluate_score = 10;</code>
+   * <code>int32 teacher_evaluate_score = 11;</code>
    * @return The teacherEvaluateScore.
    */
   int getTeacherEvaluateScore();
@@ -257,7 +277,7 @@ public interface StudentTaskOrBuilder extends
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string task_platform = 11;</code>
+   * <code>string task_platform = 12;</code>
    * @return The taskPlatform.
    */
   java.lang.String getTaskPlatform();
@@ -266,7 +286,7 @@ public interface StudentTaskOrBuilder extends
    * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
    * </pre>
    *
-   * <code>string task_platform = 11;</code>
+   * <code>string task_platform = 12;</code>
    * @return The bytes for taskPlatform.
    */
   com.google.protobuf.ByteString
@@ -277,7 +297,7 @@ public interface StudentTaskOrBuilder extends
    * 预置任务标识
    * </pre>
    *
-   * <code>string system_task_key = 12;</code>
+   * <code>string system_task_key = 13;</code>
    * @return The systemTaskKey.
    */
   java.lang.String getSystemTaskKey();
@@ -286,7 +306,7 @@ public interface StudentTaskOrBuilder extends
    * 预置任务标识
    * </pre>
    *
-   * <code>string system_task_key = 12;</code>
+   * <code>string system_task_key = 13;</code>
    * @return The bytes for systemTaskKey.
    */
   com.google.protobuf.ByteString
@@ -297,7 +317,7 @@ public interface StudentTaskOrBuilder extends
    * 任务所属教师任务
    * </pre>
    *
-   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 14;</code>
    * @return Whether the teacherTask field is set.
    */
   boolean hasTeacherTask();
@@ -306,7 +326,7 @@ public interface StudentTaskOrBuilder extends
    * 任务所属教师任务
    * </pre>
    *
-   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 14;</code>
    * @return The teacherTask.
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTask getTeacherTask();
@@ -315,7 +335,7 @@ public interface StudentTaskOrBuilder extends
    * 任务所属教师任务
    * </pre>
    *
-   * <code>.glory_api.TeacherTask teacher_task = 13;</code>
+   * <code>.glory_api.TeacherTask teacher_task = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.task.TeacherTaskOrBuilder getTeacherTaskOrBuilder();
 
@@ -324,7 +344,7 @@ public interface StudentTaskOrBuilder extends
    * 任务链接
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 15;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> 
       getTaskLinksList();
@@ -333,7 +353,7 @@ public interface StudentTaskOrBuilder extends
    * 任务链接
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskLink getTaskLinks(int index);
   /**
@@ -341,7 +361,7 @@ public interface StudentTaskOrBuilder extends
    * 任务链接
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 15;</code>
    */
   int getTaskLinksCount();
   /**
@@ -349,7 +369,7 @@ public interface StudentTaskOrBuilder extends
    * 任务链接
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 15;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
       getTaskLinksOrBuilderList();
@@ -358,7 +378,7 @@ public interface StudentTaskOrBuilder extends
    * 任务链接
    * </pre>
    *
-   * <code>repeated .glory_api.StudentTaskLink task_links = 14;</code>
+   * <code>repeated .glory_api.StudentTaskLink task_links = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder getTaskLinksOrBuilder(
       int index);
@@ -368,7 +388,7 @@ public interface StudentTaskOrBuilder extends
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   * <code>.glory_api.TenantDept class_dept = 16;</code>
    * @return Whether the classDept field is set.
    */
   boolean hasClassDept();
@@ -377,7 +397,7 @@ public interface StudentTaskOrBuilder extends
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   * <code>.glory_api.TenantDept class_dept = 16;</code>
    * @return The classDept.
    */
   com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept();
@@ -386,7 +406,7 @@ public interface StudentTaskOrBuilder extends
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 15;</code>
+   * <code>.glory_api.TenantDept class_dept = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder();
 
@@ -395,7 +415,7 @@ public interface StudentTaskOrBuilder extends
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   * <code>.glory_api.TenantDept major_dept = 17;</code>
    * @return Whether the majorDept field is set.
    */
   boolean hasMajorDept();
@@ -404,7 +424,7 @@ public interface StudentTaskOrBuilder extends
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   * <code>.glory_api.TenantDept major_dept = 17;</code>
    * @return The majorDept.
    */
   com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept();
@@ -413,7 +433,7 @@ public interface StudentTaskOrBuilder extends
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 16;</code>
+   * <code>.glory_api.TenantDept major_dept = 17;</code>
    */
   com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder();
 
@@ -422,7 +442,7 @@ public interface StudentTaskOrBuilder extends
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 17;</code>
+   * <code>.glory_api.User student = 18;</code>
    * @return Whether the student field is set.
    */
   boolean hasStudent();
@@ -431,7 +451,7 @@ public interface StudentTaskOrBuilder extends
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 17;</code>
+   * <code>.glory_api.User student = 18;</code>
    * @return The student.
    */
   com.zhijiejiaoyu.glory_api.user.User getStudent();
@@ -440,7 +460,7 @@ public interface StudentTaskOrBuilder extends
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 17;</code>
+   * <code>.glory_api.User student = 18;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder();
 
@@ -449,7 +469,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 18;</code>
+   * <code>.glory_api.User teacher = 19;</code>
    * @return Whether the teacher field is set.
    */
   boolean hasTeacher();
@@ -458,7 +478,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 18;</code>
+   * <code>.glory_api.User teacher = 19;</code>
    * @return The teacher.
    */
   com.zhijiejiaoyu.glory_api.user.User getTeacher();
@@ -467,7 +487,7 @@ public interface StudentTaskOrBuilder extends
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 18;</code>
+   * <code>.glory_api.User teacher = 19;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
 }
