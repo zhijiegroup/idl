@@ -6,6 +6,7 @@ option java_multiple_files = true;
 import "api.proto";
 import "base.proto";
 import "user/user.proto";
+import "task/teacher_task_template.proto";
 
 message TeacherTaskParameter {
   int64 task_parameter_id = 1;
@@ -41,10 +42,11 @@ message TeacherTask {
   int64 total_submit_count = 16; // 总提交数
   int64 total_pass_count = 17; // 总通过数
   repeated TeacherTaskParameter task_parameters = 18; // 任务参数
-  string created_at = 19;
-  string updated_at = 20;
-  User creator = 21;
-  User updator = 22;
+  TeacherTaskTemplate teacher_task_template = 19;
+  string created_at = 20;
+  string updated_at = 21;
+  User creator = 22;
+  User updator = 23;
 }
 
 message TeacherTaskProgress {
