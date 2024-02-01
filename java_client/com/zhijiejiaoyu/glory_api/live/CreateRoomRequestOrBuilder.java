@@ -119,4 +119,24 @@ public interface CreateRoomRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEvaluationTypeBytes();
+
+  /**
+   * <pre>
+   * WEB; APP
+   * </pre>
+   *
+   * <code>string platform = 9;</code>
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   * <pre>
+   * WEB; APP
+   * </pre>
+   *
+   * <code>string platform = 9;</code>
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString
+      getPlatformBytes();
 }

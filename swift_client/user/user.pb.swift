@@ -2232,6 +2232,10 @@ struct GloryApi_OwnAccess {
   /// shop: 店铺; product: 商品; live_script: 直播文案; live_record: 直播记录; video: 短视频; video_script: 短视频文案;
   var type: String = String()
 
+  var createdAt: String = String()
+
+  var updatedAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -6304,6 +6308,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     3: .same(proto: "logo"),
     4: .same(proto: "remark"),
     5: .same(proto: "type"),
+    6: .standard(proto: "created_at"),
+    7: .standard(proto: "updated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6317,6 +6323,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 3: try { try decoder.decodeSingularStringField(value: &self.logo) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.remark) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
       default: break
       }
     }
@@ -6338,6 +6346,12 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 5)
     }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
+    }
+    if !self.updatedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -6347,6 +6361,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.logo != rhs.logo {return false}
     if lhs.remark != rhs.remark {return false}
     if lhs.type != rhs.type {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

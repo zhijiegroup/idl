@@ -673,9 +673,10 @@ public final class UserOuterClass {
       "(\0132\021.base.BaseRequest\"g\n\024GetUserMajorRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
       "onse\022(\n\nuser_major\030\002 \003(\0132\024.glory_api.Use" +
-      "rMajor\"Q\n\tOwnAccess\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030" +
+      "rMajor\"y\n\tOwnAccess\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030" +
       "\002 \001(\t\022\014\n\004logo\030\003 \001(\t\022\016\n\006remark\030\004 \001(\t\022\014\n\004t" +
-      "ype\030\005 \001(\t\"-\n\017OwnAccessHeader\022\r\n\005label\030\001 " +
+      "ype\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\022\022\n\nupdated" +
+      "_at\030\007 \001(\t\"-\n\017OwnAccessHeader\022\r\n\005label\030\001 " +
       "\001(\t\022\013\n\003key\030\002 \001(\t\"\215\001\n\024ListOwnAccessReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
       "st\022\016\n\006access\030\002 \001(\t\022\017\n\007task_id\030\003 \001(\003\022+\n\np" +
@@ -1182,7 +1183,7 @@ public final class UserOuterClass {
     internal_static_glory_api_OwnAccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OwnAccess_descriptor,
-        new java.lang.String[] { "Id", "Name", "Logo", "Remark", "Type", });
+        new java.lang.String[] { "Id", "Name", "Logo", "Remark", "Type", "CreatedAt", "UpdatedAt", });
     internal_static_glory_api_OwnAccessHeader_descriptor =
       getDescriptor().getMessageTypes().get(81);
     internal_static_glory_api_OwnAccessHeader_fieldAccessorTable = new

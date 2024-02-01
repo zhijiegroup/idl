@@ -6351,6 +6351,8 @@ class OwnAccess extends $pb.GeneratedMessage {
     $core.String? logo,
     $core.String? remark,
     $core.String? type,
+    $core.String? createdAt,
+    $core.String? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -6368,6 +6370,12 @@ class OwnAccess extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
     return $result;
   }
   OwnAccess._() : super();
@@ -6380,6 +6388,8 @@ class OwnAccess extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'logo')
     ..aOS(4, _omitFieldNames ? '' : 'remark')
     ..aOS(5, _omitFieldNames ? '' : 'type')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(7, _omitFieldNames ? '' : 'updatedAt')
     ..hasRequiredFields = false
   ;
 
@@ -6448,6 +6458,24 @@ class OwnAccess extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(4);
   @$pb.TagNumber(5)
   void clearType() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get updatedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set updatedAt($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUpdatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdatedAt() => clearField(7);
 }
 
 class OwnAccessHeader extends $pb.GeneratedMessage {

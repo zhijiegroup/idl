@@ -551,6 +551,8 @@ export interface OwnAccess {
   remark?: string;
   /** shop: 店铺; product: 商品; live_script: 直播文案; live_record: 直播记录; video: 短视频; video_script: 短视频文案; */
   type?: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface OwnAccessHeader {

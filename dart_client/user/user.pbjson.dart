@@ -1317,13 +1317,17 @@ const OwnAccess$json = {
     {'1': 'logo', '3': 3, '4': 1, '5': 9, '10': 'logo'},
     {'1': 'remark', '3': 4, '4': 1, '5': 9, '10': 'remark'},
     {'1': 'type', '3': 5, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 9, '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `OwnAccess`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List ownAccessDescriptor = $convert.base64Decode(
     'CglPd25BY2Nlc3MSDgoCaWQYASABKANSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbx'
-    'gDIAEoCVIEbG9nbxIWCgZyZW1hcmsYBCABKAlSBnJlbWFyaxISCgR0eXBlGAUgASgJUgR0eXBl');
+    'gDIAEoCVIEbG9nbxIWCgZyZW1hcmsYBCABKAlSBnJlbWFyaxISCgR0eXBlGAUgASgJUgR0eXBl'
+    'Eh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GAcgASgJUgl1cG'
+    'RhdGVkQXQ=');
 
 @$core.Deprecated('Use ownAccessHeaderDescriptor instead')
 const OwnAccessHeader$json = {

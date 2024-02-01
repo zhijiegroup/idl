@@ -300,6 +300,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? isUseAi,
     $core.String? coverPath,
     $core.String? evaluationType,
+    $core.String? platform,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -326,6 +327,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     if (evaluationType != null) {
       $result.evaluationType = evaluationType;
     }
+    if (platform != null) {
+      $result.platform = platform;
+    }
     return $result;
   }
   CreateRoomRequest._() : super();
@@ -341,6 +345,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aInt64(6, _omitFieldNames ? '' : 'isUseAi')
     ..aOS(7, _omitFieldNames ? '' : 'coverPath')
     ..aOS(8, _omitFieldNames ? '' : 'evaluationType')
+    ..aOS(9, _omitFieldNames ? '' : 'platform')
     ..hasRequiredFields = false
   ;
 
@@ -438,6 +443,15 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasEvaluationType() => $_has(7);
   @$pb.TagNumber(8)
   void clearEvaluationType() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get platform => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set platform($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPlatform() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPlatform() => clearField(9);
 }
 
 class CreateRoomResponse extends $pb.GeneratedMessage {
