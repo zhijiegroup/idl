@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object platform ;
   /**
    * <pre>
-   * WEB; APP
+   * web; app;
    * </pre>
    *
    * <code>string platform = 9;</code>
@@ -411,7 +411,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * WEB; APP
+   * web; app;
    * </pre>
    *
    * <code>string platform = 9;</code>
@@ -1489,7 +1489,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object platform = "";
     /**
      * <pre>
-     * WEB; APP
+     * web; app;
      * </pre>
      *
      * <code>string platform = 9;</code>
@@ -1509,7 +1509,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * WEB; APP
+     * web; app;
      * </pre>
      *
      * <code>string platform = 9;</code>
@@ -1530,7 +1530,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * WEB; APP
+     * web; app;
      * </pre>
      *
      * <code>string platform = 9;</code>
@@ -1549,7 +1549,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * WEB; APP
+     * web; app;
      * </pre>
      *
      * <code>string platform = 9;</code>
@@ -1563,7 +1563,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * WEB; APP
+     * web; app;
      * </pre>
      *
      * <code>string platform = 9;</code>

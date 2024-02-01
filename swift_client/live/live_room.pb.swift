@@ -156,7 +156,7 @@ struct GloryApi_CreateRoomRequest {
   /// 评价类型：quick standard
   var evaluationType: String = String()
 
-  /// WEB; APP
+  /// web; app;
   var platform: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

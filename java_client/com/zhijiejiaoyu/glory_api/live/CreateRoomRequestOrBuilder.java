@@ -122,7 +122,7 @@ public interface CreateRoomRequestOrBuilder extends
 
   /**
    * <pre>
-   * WEB; APP
+   * web; app;
    * </pre>
    *
    * <code>string platform = 9;</code>
@@ -131,7 +131,7 @@ public interface CreateRoomRequestOrBuilder extends
   java.lang.String getPlatform();
   /**
    * <pre>
-   * WEB; APP
+   * web; app;
    * </pre>
    *
    * <code>string platform = 9;</code>

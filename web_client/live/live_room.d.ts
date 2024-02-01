@@ -45,7 +45,7 @@ export interface CreateRoomRequest {
   cover_path?: string;
   /** 评价类型：quick standard */
   evaluation_type?: string;
-  /** WEB; APP */
+  /** web; app; */
   platform?: string;
 }
 

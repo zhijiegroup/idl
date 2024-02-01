@@ -64,6 +64,7 @@ export interface SkuInfo {
   sku_id?: string;
   number?: number;
   activity_id?: string;
+  channel?: string;
 }
 
 export interface OrderSku {

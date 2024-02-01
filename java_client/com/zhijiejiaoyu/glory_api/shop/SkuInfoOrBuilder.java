@@ -24,4 +24,16 @@ public interface SkuInfoOrBuilder extends
    * @return The activityId.
    */
   long getActivityId();
+
+  /**
+   * <code>string channel = 4;</code>
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   * <code>string channel = 4;</code>
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString
+      getChannelBytes();
 }

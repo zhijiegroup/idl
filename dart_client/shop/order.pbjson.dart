@@ -112,13 +112,15 @@ const SkuInfo$json = {
     {'1': 'sku_id', '3': 1, '4': 1, '5': 3, '10': 'skuId'},
     {'1': 'number', '3': 2, '4': 1, '5': 5, '10': 'number'},
     {'1': 'activity_id', '3': 3, '4': 1, '5': 3, '10': 'activityId'},
+    {'1': 'channel', '3': 4, '4': 1, '5': 9, '10': 'channel'},
   ],
 };
 
 /// Descriptor for `SkuInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List skuInfoDescriptor = $convert.base64Decode(
     'CgdTa3VJbmZvEhUKBnNrdV9pZBgBIAEoA1IFc2t1SWQSFgoGbnVtYmVyGAIgASgFUgZudW1iZX'
-    'ISHwoLYWN0aXZpdHlfaWQYAyABKANSCmFjdGl2aXR5SWQ=');
+    'ISHwoLYWN0aXZpdHlfaWQYAyABKANSCmFjdGl2aXR5SWQSGAoHY2hhbm5lbBgEIAEoCVIHY2hh'
+    'bm5lbA==');
 
 @$core.Deprecated('Use orderSkuDescriptor instead')
 const OrderSku$json = {

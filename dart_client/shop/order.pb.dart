@@ -671,6 +671,7 @@ class SkuInfo extends $pb.GeneratedMessage {
     $fixnum.Int64? skuId,
     $core.int? number,
     $fixnum.Int64? activityId,
+    $core.String? channel,
   }) {
     final $result = create();
     if (skuId != null) {
@@ -682,6 +683,9 @@ class SkuInfo extends $pb.GeneratedMessage {
     if (activityId != null) {
       $result.activityId = activityId;
     }
+    if (channel != null) {
+      $result.channel = channel;
+    }
     return $result;
   }
   SkuInfo._() : super();
@@ -692,6 +696,7 @@ class SkuInfo extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'skuId')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'number', $pb.PbFieldType.O3)
     ..aInt64(3, _omitFieldNames ? '' : 'activityId')
+    ..aOS(4, _omitFieldNames ? '' : 'channel')
     ..hasRequiredFields = false
   ;
 
@@ -742,6 +747,15 @@ class SkuInfo extends $pb.GeneratedMessage {
   $core.bool hasActivityId() => $_has(2);
   @$pb.TagNumber(3)
   void clearActivityId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get channel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set channel($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasChannel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChannel() => clearField(4);
 }
 
 class OrderSku extends $pb.GeneratedMessage {
