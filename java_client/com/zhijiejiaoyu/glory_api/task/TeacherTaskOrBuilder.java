@@ -367,56 +367,71 @@ public interface TeacherTaskOrBuilder extends
       int index);
 
   /**
-   * <code>string created_at = 19;</code>
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   * @return Whether the teacherTaskTemplate field is set.
+   */
+  boolean hasTeacherTaskTemplate();
+  /**
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   * @return The teacherTaskTemplate.
+   */
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate getTeacherTaskTemplate();
+  /**
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder getTeacherTaskTemplateOrBuilder();
+
+  /**
+   * <code>string created_at = 20;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 19;</code>
+   * <code>string created_at = 20;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string updated_at = 20;</code>
+   * <code>string updated_at = 21;</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <code>string updated_at = 20;</code>
+   * <code>string updated_at = 21;</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    * @return The creator.
    */
   com.zhijiejiaoyu.glory_api.user.User getCreator();
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
 
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    * @return Whether the updator field is set.
    */
   boolean hasUpdator();
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    * @return The updator.
    */
   com.zhijiejiaoyu.glory_api.user.User getUpdator();
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder();
 }

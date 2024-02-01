@@ -5,7 +5,8 @@
 import * as api from "../api";
 import * as base from "../base";
 import * as user from "../user/user";
-export { api, base, user };
+import * as teacher_task_template from "./teacher_task_template";
+export { api, base, user, teacher_task_template };
 
 export interface TeacherTaskParameter {
   task_parameter_id?: string;
@@ -59,6 +60,7 @@ export interface TeacherTask {
   total_pass_count?: string;
   /** 任务参数 */
   task_parameters?: Array<TeacherTaskParameter>;
+  teacher_task_template?: teacher_task_template.TeacherTaskTemplate;
   created_at?: string;
   updated_at?: string;
   creator?: user.User;

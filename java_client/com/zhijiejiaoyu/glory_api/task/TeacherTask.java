@@ -173,18 +173,31 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 154: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder subBuilder = null;
+            if (teacherTaskTemplate != null) {
+              subBuilder = teacherTaskTemplate .toBuilder();
+            }
+            teacherTaskTemplate = input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(teacherTaskTemplate );
+              teacherTaskTemplate = subBuilder.buildPartial();
+            }
 
-            createdAt = s;
             break;
           }
           case 162: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            updatedAt = s;
+            createdAt = s;
             break;
           }
           case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            updatedAt = s;
+            break;
+          }
+          case 178: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (creator != null) {
               subBuilder = creator .toBuilder();
@@ -197,7 +210,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 178: {
+          case 186: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (updator != null) {
               subBuilder = updator .toBuilder();
@@ -895,10 +908,36 @@ private static final long serialVersionUID = 0L;
     return taskParameters .get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 19;
+  public static final int TEACHER_TASK_TEMPLATE_FIELD_NUMBER = 19;
+  private com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate teacherTaskTemplate ;
+  /**
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   * @return Whether the teacherTaskTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasTeacherTaskTemplate() {
+    return teacherTaskTemplate != null;
+  }
+  /**
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   * @return The teacherTaskTemplate.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate getTeacherTaskTemplate() {
+    return teacherTaskTemplate == null ? com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.getDefaultInstance() : teacherTaskTemplate ;
+  }
+  /**
+   * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder getTeacherTaskTemplateOrBuilder() {
+    return getTeacherTaskTemplate();
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 20;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 19;</code>
+   * <code>string created_at = 20;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -915,7 +954,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 19;</code>
+   * <code>string created_at = 20;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -933,10 +972,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 20;
+  public static final int UPDATED_AT_FIELD_NUMBER = 21;
   private volatile java.lang.Object updatedAt ;
   /**
-   * <code>string updated_at = 20;</code>
+   * <code>string updated_at = 21;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -953,7 +992,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string updated_at = 20;</code>
+   * <code>string updated_at = 21;</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -971,10 +1010,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATOR_FIELD_NUMBER = 21;
+  public static final int CREATOR_FIELD_NUMBER = 22;
   private com.zhijiejiaoyu.glory_api.user.User creator ;
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    * @return Whether the creator field is set.
    */
   @java.lang.Override
@@ -982,7 +1021,7 @@ private static final long serialVersionUID = 0L;
     return creator != null;
   }
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    * @return The creator.
    */
   @java.lang.Override
@@ -990,17 +1029,17 @@ private static final long serialVersionUID = 0L;
     return creator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
   }
   /**
-   * <code>.glory_api.User creator = 21;</code>
+   * <code>.glory_api.User creator = 22;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
     return getCreator();
   }
 
-  public static final int UPDATOR_FIELD_NUMBER = 22;
+  public static final int UPDATOR_FIELD_NUMBER = 23;
   private com.zhijiejiaoyu.glory_api.user.User updator ;
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    * @return Whether the updator field is set.
    */
   @java.lang.Override
@@ -1008,7 +1047,7 @@ private static final long serialVersionUID = 0L;
     return updator != null;
   }
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    * @return The updator.
    */
   @java.lang.Override
@@ -1016,7 +1055,7 @@ private static final long serialVersionUID = 0L;
     return updator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updator ;
   }
   /**
-   * <code>.glory_api.User updator = 22;</code>
+   * <code>.glory_api.User updator = 23;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder() {
@@ -1091,17 +1130,20 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < taskParameters .size(); i++) {
       output.writeMessage(18, taskParameters .get(i));
     }
+    if (teacherTaskTemplate != null) {
+      output.writeMessage(19, getTeacherTaskTemplate());
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, updatedAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, updatedAt );
     }
     if (creator != null) {
-      output.writeMessage(21, getCreator());
+      output.writeMessage(22, getCreator());
     }
     if (updator != null) {
-      output.writeMessage(22, getUpdator());
+      output.writeMessage(23, getUpdator());
     }
     unknownFields.writeTo(output);
   }
@@ -1180,19 +1222,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, taskParameters .get(i));
     }
+    if (teacherTaskTemplate != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getTeacherTaskTemplate());
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, updatedAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, updatedAt );
     }
     if (creator != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, getCreator());
+        .computeMessageSize(22, getCreator());
     }
     if (updator != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(22, getUpdator());
+        .computeMessageSize(23, getUpdator());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1245,6 +1291,11 @@ private static final long serialVersionUID = 0L;
         != other.getTotalPassCount()) return false;
     if (!getTaskParametersList()
         .equals(other.getTaskParametersList())) return false;
+    if (hasTeacherTaskTemplate() != other.hasTeacherTaskTemplate()) return false;
+    if (hasTeacherTaskTemplate()) {
+      if (!getTeacherTaskTemplate()
+          .equals(other.getTeacherTaskTemplate())) return false;
+    }
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -1317,6 +1368,10 @@ private static final long serialVersionUID = 0L;
     if (getTaskParametersCount() > 0) {
       hash = (37 * hash) + TASK_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskParametersList().hashCode();
+    }
+    if (hasTeacherTaskTemplate()) {
+      hash = (37 * hash) + TEACHER_TASK_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getTeacherTaskTemplate().hashCode();
     }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
@@ -1509,6 +1564,12 @@ private static final long serialVersionUID = 0L;
       } else {
         taskParametersBuilder .clear();
       }
+      if (teacherTaskTemplateBuilder == null) {
+        teacherTaskTemplate = null;
+      } else {
+        teacherTaskTemplate = null;
+        teacherTaskTemplateBuilder = null;
+      }
       createdAt = "";
 
       updatedAt = "";
@@ -1589,6 +1650,11 @@ private static final long serialVersionUID = 0L;
         result.taskParameters = taskParameters ;
       } else {
         result.taskParameters = taskParametersBuilder .build();
+      }
+      if (teacherTaskTemplateBuilder == null) {
+        result.teacherTaskTemplate = teacherTaskTemplate ;
+      } else {
+        result.teacherTaskTemplate = teacherTaskTemplateBuilder .build();
       }
       result.createdAt = createdAt ;
       result.updatedAt = updatedAt ;
@@ -1764,6 +1830,9 @@ private static final long serialVersionUID = 0L;
             taskParametersBuilder .addAllMessages(other.taskParameters );
           }
         }
+      }
+      if (other.hasTeacherTaskTemplate()) {
+        mergeTeacherTaskTemplate(other.getTeacherTaskTemplate());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
@@ -3648,9 +3717,128 @@ private static final long serialVersionUID = 0L;
       return taskParametersBuilder ;
     }
 
+    private com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate teacherTaskTemplate ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder> teacherTaskTemplateBuilder ;
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     * @return Whether the teacherTaskTemplate field is set.
+     */
+    public boolean hasTeacherTaskTemplate() {
+      return teacherTaskTemplateBuilder != null || teacherTaskTemplate != null;
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     * @return The teacherTaskTemplate.
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate getTeacherTaskTemplate() {
+      if (teacherTaskTemplateBuilder == null) {
+        return teacherTaskTemplate == null ? com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.getDefaultInstance() : teacherTaskTemplate ;
+      } else {
+        return teacherTaskTemplateBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public Builder setTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate value) {
+      if (teacherTaskTemplateBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        teacherTaskTemplate = value;
+        onChanged();
+      } else {
+        teacherTaskTemplateBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public Builder setTeacherTaskTemplate(
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder builderForValue) {
+      if (teacherTaskTemplateBuilder == null) {
+        teacherTaskTemplate = builderForValue.build();
+        onChanged();
+      } else {
+        teacherTaskTemplateBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public Builder mergeTeacherTaskTemplate(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate value) {
+      if (teacherTaskTemplateBuilder == null) {
+        if (teacherTaskTemplate != null) {
+          teacherTaskTemplate =
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.newBuilder(teacherTaskTemplate ).mergeFrom(value).buildPartial();
+        } else {
+          teacherTaskTemplate = value;
+        }
+        onChanged();
+      } else {
+        teacherTaskTemplateBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public Builder clearTeacherTaskTemplate() {
+      if (teacherTaskTemplateBuilder == null) {
+        teacherTaskTemplate = null;
+        onChanged();
+      } else {
+        teacherTaskTemplate = null;
+        teacherTaskTemplateBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder getTeacherTaskTemplateBuilder() {
+      
+      onChanged();
+      return getTeacherTaskTemplateFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder getTeacherTaskTemplateOrBuilder() {
+      if (teacherTaskTemplateBuilder != null) {
+        return teacherTaskTemplateBuilder .getMessageOrBuilder();
+      } else {
+        return teacherTaskTemplate == null ?
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.getDefaultInstance() : teacherTaskTemplate ;
+      }
+    }
+    /**
+     * <code>.glory_api.TeacherTaskTemplate teacher_task_template = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder> 
+        getTeacherTaskTemplateFieldBuilder() {
+      if (teacherTaskTemplateBuilder == null) {
+        teacherTaskTemplateBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplate.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateOrBuilder>(
+                getTeacherTaskTemplate(),
+                getParentForChildren(),
+                isClean());
+        teacherTaskTemplate = null;
+      }
+      return teacherTaskTemplateBuilder ;
+    }
+
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 19;</code>
+     * <code>string created_at = 20;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -3666,7 +3854,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 19;</code>
+     * <code>string created_at = 20;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -3683,7 +3871,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 19;</code>
+     * <code>string created_at = 20;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -3698,7 +3886,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 19;</code>
+     * <code>string created_at = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -3708,7 +3896,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 19;</code>
+     * <code>string created_at = 20;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -3726,7 +3914,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt = "";
     /**
-     * <code>string updated_at = 20;</code>
+     * <code>string updated_at = 21;</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -3742,7 +3930,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 20;</code>
+     * <code>string updated_at = 21;</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -3759,7 +3947,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 20;</code>
+     * <code>string updated_at = 21;</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -3774,7 +3962,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 20;</code>
+     * <code>string updated_at = 21;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
@@ -3784,7 +3972,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 20;</code>
+     * <code>string updated_at = 21;</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -3804,14 +3992,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> creatorBuilder ;
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      * @return Whether the creator field is set.
      */
     public boolean hasCreator() {
       return creatorBuilder != null || creator != null;
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      * @return The creator.
      */
     public com.zhijiejiaoyu.glory_api.user.User getCreator() {
@@ -3822,7 +4010,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public Builder setCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -3838,7 +4026,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public Builder setCreator(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -3852,7 +4040,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public Builder mergeCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -3870,7 +4058,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public Builder clearCreator() {
       if (creatorBuilder == null) {
@@ -3884,7 +4072,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getCreatorBuilder() {
       
@@ -3892,7 +4080,7 @@ private static final long serialVersionUID = 0L;
       return getCreatorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
       if (creatorBuilder != null) {
@@ -3903,7 +4091,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 21;</code>
+     * <code>.glory_api.User creator = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -3923,14 +4111,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> updatorBuilder ;
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      * @return Whether the updator field is set.
      */
     public boolean hasUpdator() {
       return updatorBuilder != null || updator != null;
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      * @return The updator.
      */
     public com.zhijiejiaoyu.glory_api.user.User getUpdator() {
@@ -3941,7 +4129,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public Builder setUpdator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updatorBuilder == null) {
@@ -3957,7 +4145,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public Builder setUpdator(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -3971,7 +4159,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public Builder mergeUpdator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updatorBuilder == null) {
@@ -3989,7 +4177,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public Builder clearUpdator() {
       if (updatorBuilder == null) {
@@ -4003,7 +4191,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getUpdatorBuilder() {
       
@@ -4011,7 +4199,7 @@ private static final long serialVersionUID = 0L;
       return getUpdatorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder() {
       if (updatorBuilder != null) {
@@ -4022,7 +4210,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updator = 22;</code>
+     * <code>.glory_api.User updator = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

@@ -73,10 +73,11 @@ const TeacherTask$json = {
     {'1': 'total_submit_count', '3': 16, '4': 1, '5': 3, '10': 'totalSubmitCount'},
     {'1': 'total_pass_count', '3': 17, '4': 1, '5': 3, '10': 'totalPassCount'},
     {'1': 'task_parameters', '3': 18, '4': 3, '5': 11, '6': '.glory_api.TeacherTaskParameter', '10': 'taskParameters'},
-    {'1': 'created_at', '3': 19, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 20, '4': 1, '5': 9, '10': 'updatedAt'},
-    {'1': 'creator', '3': 21, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
-    {'1': 'updator', '3': 22, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updator'},
+    {'1': 'teacher_task_template', '3': 19, '4': 1, '5': 11, '6': '.glory_api.TeacherTaskTemplate', '10': 'teacherTaskTemplate'},
+    {'1': 'created_at', '3': 20, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 21, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'creator', '3': 22, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
+    {'1': 'updator', '3': 23, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updator'},
   ],
 };
 
@@ -98,9 +99,11 @@ final $typed_data.Uint8List teacherTaskDescriptor = $convert.base64Decode(
     'FsVGFza0NvdW50EiwKEnRvdGFsX3N1Ym1pdF9jb3VudBgQIAEoA1IQdG90YWxTdWJtaXRDb3Vu'
     'dBIoChB0b3RhbF9wYXNzX2NvdW50GBEgASgDUg50b3RhbFBhc3NDb3VudBJICg90YXNrX3Bhcm'
     'FtZXRlcnMYEiADKAsyHy5nbG9yeV9hcGkuVGVhY2hlclRhc2tQYXJhbWV0ZXJSDnRhc2tQYXJh'
-    'bWV0ZXJzEh0KCmNyZWF0ZWRfYXQYEyABKAlSCWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GBQgAS'
-    'gJUgl1cGRhdGVkQXQSKQoHY3JlYXRvchgVIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdjcmVhdG9y'
-    'EikKB3VwZGF0b3IYFiABKAsyDy5nbG9yeV9hcGkuVXNlclIHdXBkYXRvcg==');
+    'bWV0ZXJzElIKFXRlYWNoZXJfdGFza190ZW1wbGF0ZRgTIAEoCzIeLmdsb3J5X2FwaS5UZWFjaG'
+    'VyVGFza1RlbXBsYXRlUhN0ZWFjaGVyVGFza1RlbXBsYXRlEh0KCmNyZWF0ZWRfYXQYFCABKAlS'
+    'CWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GBUgASgJUgl1cGRhdGVkQXQSKQoHY3JlYXRvchgWIA'
+    'EoCzIPLmdsb3J5X2FwaS5Vc2VyUgdjcmVhdG9yEikKB3VwZGF0b3IYFyABKAsyDy5nbG9yeV9h'
+    'cGkuVXNlclIHdXBkYXRvcg==');
 
 @$core.Deprecated('Use teacherTaskProgressDescriptor instead')
 const TeacherTaskProgress$json = {
