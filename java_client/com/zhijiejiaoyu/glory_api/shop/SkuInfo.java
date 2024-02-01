@@ -138,6 +138,10 @@ private static final long serialVersionUID = 0L;
   public static final int CHANNEL_FIELD_NUMBER = 4;
   private volatile java.lang.Object channel ;
   /**
+   * <pre>
+   * 短视频: video; 商城: normal; 直播: live
+   * </pre>
+   *
    * <code>string channel = 4;</code>
    * @return The channel.
    */
@@ -155,6 +159,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 短视频: video; 商城: normal; 直播: live
+   * </pre>
+   *
    * <code>string channel = 4;</code>
    * @return The bytes for channel.
    */
@@ -623,6 +631,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object channel = "";
     /**
+     * <pre>
+     * 短视频: video; 商城: normal; 直播: live
+     * </pre>
+     *
      * <code>string channel = 4;</code>
      * @return The channel.
      */
@@ -639,6 +651,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 短视频: video; 商城: normal; 直播: live
+     * </pre>
+     *
      * <code>string channel = 4;</code>
      * @return The bytes for channel.
      */
@@ -656,6 +672,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 短视频: video; 商城: normal; 直播: live
+     * </pre>
+     *
      * <code>string channel = 4;</code>
      * @param value The channel to set.
      * @return This builder for chaining.
@@ -671,6 +691,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 短视频: video; 商城: normal; 直播: live
+     * </pre>
+     *
      * <code>string channel = 4;</code>
      * @return This builder for chaining.
      */
@@ -681,6 +705,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 短视频: video; 商城: normal; 直播: live
+     * </pre>
+     *
      * <code>string channel = 4;</code>
      * @param value The bytes for channel to set.
      * @return This builder for chaining.

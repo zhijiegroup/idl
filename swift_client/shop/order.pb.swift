@@ -209,6 +209,7 @@ struct GloryApi_SkuInfo {
 
   var activityID: Int64 = 0
 
+  /// 短视频: video; 商城: normal; 直播: live
   var channel: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()

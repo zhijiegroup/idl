@@ -26,11 +26,19 @@ public interface SkuInfoOrBuilder extends
   long getActivityId();
 
   /**
+   * <pre>
+   * 短视频: video; 商城: normal; 直播: live
+   * </pre>
+   *
    * <code>string channel = 4;</code>
    * @return The channel.
    */
   java.lang.String getChannel();
   /**
+   * <pre>
+   * 短视频: video; 商城: normal; 直播: live
+   * </pre>
+   *
    * <code>string channel = 4;</code>
    * @return The bytes for channel.
    */

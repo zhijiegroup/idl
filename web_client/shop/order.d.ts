@@ -64,6 +64,7 @@ export interface SkuInfo {
   sku_id?: string;
   number?: number;
   activity_id?: string;
+  /** 短视频: video; 商城: normal; 直播: live */
   channel?: string;
 }
 
