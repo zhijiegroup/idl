@@ -37,13 +37,18 @@ message StudentTaskRequirementResult {
   bool is_passed = 3; // 是否通过
 }
 
+message StudentTaskAttachment {
+  string oss_path = 1;
+  string oss_url = 2;
+}
+
 message StudentTask {
   int64 student_task_id = 1;
   string task_status = 2; // 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc
   string submitted_at = 3; // 任务提交时间
   string submit_parameter = 4; // 任务提交参数
   string submit_description = 5; // 任务提交描述
-  repeated string attachments = 6; // 任务提交附件
+  repeated StudentTaskAttachment attachments = 6; // 任务提交附件
   string evaluated_at = 7; // 任务评价时间
   repeated StudentTaskParameterResult student_task_parameter_result =  8; // 任务参数评价结果
   repeated StudentTaskRequirementResult student_task_requirement_result = 9; // 任务要求评价结果
