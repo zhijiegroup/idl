@@ -31,7 +31,7 @@ public interface ListStudentTaskRequestOrBuilder extends
 
   /**
    * <pre>
-   * 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："all"，"app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string platform = 3;</code>
@@ -40,7 +40,7 @@ public interface ListStudentTaskRequestOrBuilder extends
   java.lang.String getPlatform();
   /**
    * <pre>
-   * 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："all"，"app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string platform = 3;</code>

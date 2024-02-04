@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object taskPlatform ;
   /**
    * <pre>
-   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string task_platform = 12;</code>
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string task_platform = 12;</code>
@@ -3505,7 +3505,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object taskPlatform = "";
     /**
      * <pre>
-     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * 任务所属平台："app"，"web"，"app/web"，""
      * </pre>
      *
      * <code>string task_platform = 12;</code>
@@ -3525,7 +3525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * 任务所属平台："app"，"web"，"app/web"，""
      * </pre>
      *
      * <code>string task_platform = 12;</code>
@@ -3546,7 +3546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * 任务所属平台："app"，"web"，"app/web"，""
      * </pre>
      *
      * <code>string task_platform = 12;</code>
@@ -3565,7 +3565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * 任务所属平台："app"，"web"，"app/web"，""
      * </pre>
      *
      * <code>string task_platform = 12;</code>
@@ -3579,7 +3579,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+     * 任务所属平台："app"，"web"，"app/web"，""
      * </pre>
      *
      * <code>string task_platform = 12;</code>

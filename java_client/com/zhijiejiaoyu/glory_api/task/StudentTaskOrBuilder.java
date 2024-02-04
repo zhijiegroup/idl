@@ -277,7 +277,7 @@ public interface StudentTaskOrBuilder extends
 
   /**
    * <pre>
-   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string task_platform = 12;</code>
@@ -286,7 +286,7 @@ public interface StudentTaskOrBuilder extends
   java.lang.String getTaskPlatform();
   /**
    * <pre>
-   * 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+   * 任务所属平台："app"，"web"，"app/web"，""
    * </pre>
    *
    * <code>string task_platform = 12;</code>

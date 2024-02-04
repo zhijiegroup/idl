@@ -66,7 +66,7 @@ export interface StudentTask {
   teacher_failed_reason?: string;
   /** 任务评分 */
   teacher_evaluate_score?: number;
-  /** 任务所属平台："APP"，"WEB"，"APP/WEB"，"" */
+  /** 任务所属平台："app"，"web"，"app/web"，"" */
   task_platform?: string;
   /** 预置任务标识 */
   system_task_key?: string;
@@ -93,7 +93,7 @@ export interface ListStudentTaskRequest {
   /** 0. 全部；1. 未提交；2. 已评价 */
   type?: number;
   keyword?: string;
-  /** 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+  /** 任务所属平台："all"，"app"，"web"，"app/web"，""
 任务状态。
 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。

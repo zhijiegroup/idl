@@ -180,7 +180,7 @@ struct GloryApi_StudentTask {
     set {_uniqueStorage()._teacherEvaluateScore = newValue}
   }
 
-  /// 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  /// 任务所属平台："app"，"web"，"app/web"，""
   var taskPlatform: String {
     get {return _storage._taskPlatform}
     set {_uniqueStorage()._taskPlatform = newValue}
@@ -279,7 +279,7 @@ struct GloryApi_ListStudentTaskRequest {
 
   var keyword: String = String()
 
-  /// 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+  /// 任务所属平台："all"，"app"，"web"，"app/web"，""
   var platform: String = String()
 
   /// 任务状态。
