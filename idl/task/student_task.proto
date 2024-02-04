@@ -54,7 +54,7 @@ message StudentTask {
   repeated StudentTaskRequirementResult student_task_requirement_result = 9; // 任务要求评价结果
   string teacher_failed_reason = 10; // 任务要求失败原因
   int32 teacher_evaluate_score = 11; // 任务评分
-  string task_platform = 12; // 任务所属平台："APP"，"WEB"，"APP/WEB"，""
+  string task_platform = 12; // 任务所属平台："app"，"web"，"app/web"，""
   string system_task_key = 13; // 预置任务标识
   TeacherTask teacher_task = 14; // 任务所属教师任务
   repeated StudentTaskLink task_links = 15; // 任务链接
@@ -72,7 +72,7 @@ message TeacherRequirementEvaluation {
 message ListStudentTaskRequest {
   int32 type = 1; // 0. 全部；1. 未提交；2. 已评价
   string keyword = 2;
-  string platform = 3; // 任务所属平台："ALL"，"APP"，"WEB"，"APP/WEB"，""
+  string platform = 3; // 任务所属平台："all"，"app"，"web"，"app/web"，""
   // 任务状态。
   // 1. 如果查询全部，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc。
   // 2. 如果查询未提交：waiting_submit - 待提交；expired - 逾期未提交。
