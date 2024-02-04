@@ -86,6 +86,20 @@ final $typed_data.Uint8List studentTaskRequirementResultDescriptor = $convert.ba
     'ABKANSEXRhc2tSZXF1aXJlbWVudElkEikKEHRhc2tfcmVxdWlyZW1lbnQYAiABKAlSD3Rhc2tS'
     'ZXF1aXJlbWVudBIbCglpc19wYXNzZWQYAyABKAhSCGlzUGFzc2Vk');
 
+@$core.Deprecated('Use studentTaskAttachmentDescriptor instead')
+const StudentTaskAttachment$json = {
+  '1': 'StudentTaskAttachment',
+  '2': [
+    {'1': 'oss_path', '3': 1, '4': 1, '5': 9, '10': 'ossPath'},
+    {'1': 'oss_url', '3': 2, '4': 1, '5': 9, '10': 'ossUrl'},
+  ],
+};
+
+/// Descriptor for `StudentTaskAttachment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskAttachmentDescriptor = $convert.base64Decode(
+    'ChVTdHVkZW50VGFza0F0dGFjaG1lbnQSGQoIb3NzX3BhdGgYASABKAlSB29zc1BhdGgSFwoHb3'
+    'NzX3VybBgCIAEoCVIGb3NzVXJs');
+
 @$core.Deprecated('Use studentTaskDescriptor instead')
 const StudentTask$json = {
   '1': 'StudentTask',
@@ -95,7 +109,7 @@ const StudentTask$json = {
     {'1': 'submitted_at', '3': 3, '4': 1, '5': 9, '10': 'submittedAt'},
     {'1': 'submit_parameter', '3': 4, '4': 1, '5': 9, '10': 'submitParameter'},
     {'1': 'submit_description', '3': 5, '4': 1, '5': 9, '10': 'submitDescription'},
-    {'1': 'attachments', '3': 6, '4': 3, '5': 9, '10': 'attachments'},
+    {'1': 'attachments', '3': 6, '4': 3, '5': 11, '6': '.glory_api.StudentTaskAttachment', '10': 'attachments'},
     {'1': 'evaluated_at', '3': 7, '4': 1, '5': 9, '10': 'evaluatedAt'},
     {'1': 'student_task_parameter_result', '3': 8, '4': 3, '5': 11, '6': '.glory_api.StudentTaskParameterResult', '10': 'studentTaskParameterResult'},
     {'1': 'student_task_requirement_result', '3': 9, '4': 3, '5': 11, '6': '.glory_api.StudentTaskRequirementResult', '10': 'studentTaskRequirementResult'},
@@ -117,21 +131,22 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'CgtTdHVkZW50VGFzaxImCg9zdHVkZW50X3Rhc2tfaWQYASABKANSDXN0dWRlbnRUYXNrSWQSHw'
     'oLdGFza19zdGF0dXMYAiABKAlSCnRhc2tTdGF0dXMSIQoMc3VibWl0dGVkX2F0GAMgASgJUgtz'
     'dWJtaXR0ZWRBdBIpChBzdWJtaXRfcGFyYW1ldGVyGAQgASgJUg9zdWJtaXRQYXJhbWV0ZXISLQ'
-    'oSc3VibWl0X2Rlc2NyaXB0aW9uGAUgASgJUhFzdWJtaXREZXNjcmlwdGlvbhIgCgthdHRhY2ht'
-    'ZW50cxgGIAMoCVILYXR0YWNobWVudHMSIQoMZXZhbHVhdGVkX2F0GAcgASgJUgtldmFsdWF0ZW'
-    'RBdBJoCh1zdHVkZW50X3Rhc2tfcGFyYW1ldGVyX3Jlc3VsdBgIIAMoCzIlLmdsb3J5X2FwaS5T'
-    'dHVkZW50VGFza1BhcmFtZXRlclJlc3VsdFIac3R1ZGVudFRhc2tQYXJhbWV0ZXJSZXN1bHQSbg'
-    'ofc3R1ZGVudF90YXNrX3JlcXVpcmVtZW50X3Jlc3VsdBgJIAMoCzInLmdsb3J5X2FwaS5TdHVk'
-    'ZW50VGFza1JlcXVpcmVtZW50UmVzdWx0UhxzdHVkZW50VGFza1JlcXVpcmVtZW50UmVzdWx0Ej'
-    'IKFXRlYWNoZXJfZmFpbGVkX3JlYXNvbhgKIAEoCVITdGVhY2hlckZhaWxlZFJlYXNvbhI0ChZ0'
-    'ZWFjaGVyX2V2YWx1YXRlX3Njb3JlGAsgASgFUhR0ZWFjaGVyRXZhbHVhdGVTY29yZRIjCg10YX'
-    'NrX3BsYXRmb3JtGAwgASgJUgx0YXNrUGxhdGZvcm0SJgoPc3lzdGVtX3Rhc2tfa2V5GA0gASgJ'
-    'Ug1zeXN0ZW1UYXNrS2V5EjkKDHRlYWNoZXJfdGFzaxgOIAEoCzIWLmdsb3J5X2FwaS5UZWFjaG'
-    'VyVGFza1ILdGVhY2hlclRhc2sSOQoKdGFza19saW5rcxgPIAMoCzIaLmdsb3J5X2FwaS5TdHVk'
-    'ZW50VGFza0xpbmtSCXRhc2tMaW5rcxI0CgpjbGFzc19kZXB0GBAgASgLMhUuZ2xvcnlfYXBpLl'
-    'RlbmFudERlcHRSCWNsYXNzRGVwdBI0CgptYWpvcl9kZXB0GBEgASgLMhUuZ2xvcnlfYXBpLlRl'
-    'bmFudERlcHRSCW1ham9yRGVwdBIpCgdzdHVkZW50GBIgASgLMg8uZ2xvcnlfYXBpLlVzZXJSB3'
-    'N0dWRlbnQSKQoHdGVhY2hlchgTIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgd0ZWFjaGVy');
+    'oSc3VibWl0X2Rlc2NyaXB0aW9uGAUgASgJUhFzdWJtaXREZXNjcmlwdGlvbhJCCgthdHRhY2ht'
+    'ZW50cxgGIAMoCzIgLmdsb3J5X2FwaS5TdHVkZW50VGFza0F0dGFjaG1lbnRSC2F0dGFjaG1lbn'
+    'RzEiEKDGV2YWx1YXRlZF9hdBgHIAEoCVILZXZhbHVhdGVkQXQSaAodc3R1ZGVudF90YXNrX3Bh'
+    'cmFtZXRlcl9yZXN1bHQYCCADKAsyJS5nbG9yeV9hcGkuU3R1ZGVudFRhc2tQYXJhbWV0ZXJSZX'
+    'N1bHRSGnN0dWRlbnRUYXNrUGFyYW1ldGVyUmVzdWx0Em4KH3N0dWRlbnRfdGFza19yZXF1aXJl'
+    'bWVudF9yZXN1bHQYCSADKAsyJy5nbG9yeV9hcGkuU3R1ZGVudFRhc2tSZXF1aXJlbWVudFJlc3'
+    'VsdFIcc3R1ZGVudFRhc2tSZXF1aXJlbWVudFJlc3VsdBIyChV0ZWFjaGVyX2ZhaWxlZF9yZWFz'
+    'b24YCiABKAlSE3RlYWNoZXJGYWlsZWRSZWFzb24SNAoWdGVhY2hlcl9ldmFsdWF0ZV9zY29yZR'
+    'gLIAEoBVIUdGVhY2hlckV2YWx1YXRlU2NvcmUSIwoNdGFza19wbGF0Zm9ybRgMIAEoCVIMdGFz'
+    'a1BsYXRmb3JtEiYKD3N5c3RlbV90YXNrX2tleRgNIAEoCVINc3lzdGVtVGFza0tleRI5Cgx0ZW'
+    'FjaGVyX3Rhc2sYDiABKAsyFi5nbG9yeV9hcGkuVGVhY2hlclRhc2tSC3RlYWNoZXJUYXNrEjkK'
+    'CnRhc2tfbGlua3MYDyADKAsyGi5nbG9yeV9hcGkuU3R1ZGVudFRhc2tMaW5rUgl0YXNrTGlua3'
+    'MSNAoKY2xhc3NfZGVwdBgQIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgljbGFzc0RlcHQS'
+    'NAoKbWFqb3JfZGVwdBgRIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgltYWpvckRlcHQSKQ'
+    'oHc3R1ZGVudBgSIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdzdHVkZW50EikKB3RlYWNoZXIYEyAB'
+    'KAsyDy5nbG9yeV9hcGkuVXNlclIHdGVhY2hlcg==');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {

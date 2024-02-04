@@ -394,6 +394,70 @@ class StudentTaskRequirementResult extends $pb.GeneratedMessage {
   void clearIsPassed() => clearField(3);
 }
 
+class StudentTaskAttachment extends $pb.GeneratedMessage {
+  factory StudentTaskAttachment({
+    $core.String? ossPath,
+    $core.String? ossUrl,
+  }) {
+    final $result = create();
+    if (ossPath != null) {
+      $result.ossPath = ossPath;
+    }
+    if (ossUrl != null) {
+      $result.ossUrl = ossUrl;
+    }
+    return $result;
+  }
+  StudentTaskAttachment._() : super();
+  factory StudentTaskAttachment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskAttachment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskAttachment', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ossPath')
+    ..aOS(2, _omitFieldNames ? '' : 'ossUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskAttachment clone() => StudentTaskAttachment()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskAttachment copyWith(void Function(StudentTaskAttachment) updates) => super.copyWith((message) => updates(message as StudentTaskAttachment)) as StudentTaskAttachment;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskAttachment create() => StudentTaskAttachment._();
+  StudentTaskAttachment createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskAttachment> createRepeated() => $pb.PbList<StudentTaskAttachment>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskAttachment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskAttachment>(create);
+  static StudentTaskAttachment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ossPath => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ossPath($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOssPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOssPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get ossUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ossUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOssUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOssUrl() => clearField(2);
+}
+
 class StudentTask extends $pb.GeneratedMessage {
   factory StudentTask({
     $fixnum.Int64? studentTaskId,
@@ -401,7 +465,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $core.String? submittedAt,
     $core.String? submitParameter,
     $core.String? submitDescription,
-    $core.Iterable<$core.String>? attachments,
+    $core.Iterable<StudentTaskAttachment>? attachments,
     $core.String? evaluatedAt,
     $core.Iterable<StudentTaskParameterResult>? studentTaskParameterResult,
     $core.Iterable<StudentTaskRequirementResult>? studentTaskRequirementResult,
@@ -486,7 +550,7 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'submittedAt')
     ..aOS(4, _omitFieldNames ? '' : 'submitParameter')
     ..aOS(5, _omitFieldNames ? '' : 'submitDescription')
-    ..pPS(6, _omitFieldNames ? '' : 'attachments')
+    ..pc<StudentTaskAttachment>(6, _omitFieldNames ? '' : 'attachments', $pb.PbFieldType.PM, subBuilder: StudentTaskAttachment.create)
     ..aOS(7, _omitFieldNames ? '' : 'evaluatedAt')
     ..pc<StudentTaskParameterResult>(8, _omitFieldNames ? '' : 'studentTaskParameterResult', $pb.PbFieldType.PM, subBuilder: StudentTaskParameterResult.create)
     ..pc<StudentTaskRequirementResult>(9, _omitFieldNames ? '' : 'studentTaskRequirementResult', $pb.PbFieldType.PM, subBuilder: StudentTaskRequirementResult.create)
@@ -570,7 +634,7 @@ class StudentTask extends $pb.GeneratedMessage {
   void clearSubmitDescription() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get attachments => $_getList(5);
+  $core.List<StudentTaskAttachment> get attachments => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get evaluatedAt => $_getSZ(6);

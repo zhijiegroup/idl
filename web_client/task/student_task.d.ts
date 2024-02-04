@@ -39,6 +39,11 @@ export interface StudentTaskRequirementResult {
   is_passed?: boolean;
 }
 
+export interface StudentTaskAttachment {
+  oss_path?: string;
+  oss_url?: string;
+}
+
 export interface StudentTask {
   student_task_id?: string;
   /** 任务状态，参考：https://qqlgdcm1ns.feishu.cn/wiki/MSpCwRZxKiUaNakVnYgcN4CnnPc */
@@ -50,7 +55,7 @@ export interface StudentTask {
   /** 任务提交描述 */
   submit_description?: string;
   /** 任务提交附件 */
-  attachments?: Array<string>;
+  attachments?: Array<StudentTaskAttachment>;
   /** 任务评价时间 */
   evaluated_at?: string;
   /** 任务参数评价结果 */

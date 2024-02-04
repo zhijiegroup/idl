@@ -98,18 +98,24 @@ public interface StudentTaskOrBuilder extends
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @return A list containing the attachments.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> 
       getAttachmentsList();
   /**
    * <pre>
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @return The count of attachments.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment getAttachments(int index);
+  /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
   int getAttachmentsCount();
   /**
@@ -117,22 +123,19 @@ public interface StudentTaskOrBuilder extends
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @param index The index of the element to return.
-   * @return The attachments at the given index.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  java.lang.String getAttachments(int index);
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder> 
+      getAttachmentsOrBuilderList();
   /**
    * <pre>
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the attachments at the given index.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getAttachmentsBytes(int index);
+  com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder getAttachmentsOrBuilder(
+      int index);
 
   /**
    * <pre>

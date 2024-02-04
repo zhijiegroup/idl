@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     submittedAt = "";
     submitParameter = "";
     submitDescription = "";
-    attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    attachments = java.util.Collections.emptyList();
     evaluatedAt = "";
     studentTaskParameterResult = java.util.Collections.emptyList();
     studentTaskRequirementResult = java.util.Collections.emptyList();
@@ -91,12 +91,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              attachments = new com.google.protobuf.LazyStringArrayList();
+              attachments = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment>();
               mutable_bitField0_ |= 0x00000001;
             }
-            attachments .add(s);
+            attachments .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.parser(), extensionRegistry));
             break;
           }
           case 58: {
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        attachments = attachments .getUnmodifiableView();
+        attachments = java.util.Collections.unmodifiableList(attachments );
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
         studentTaskParameterResult = java.util.Collections.unmodifiableList(studentTaskParameterResult );
@@ -460,17 +460,16 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTACHMENTS_FIELD_NUMBER = 6;
-  private com.google.protobuf.LazyStringList attachments ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> attachments ;
   /**
    * <pre>
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @return A list containing the attachments.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getAttachmentsList() {
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> getAttachmentsList() {
     return attachments ;
   }
   /**
@@ -478,9 +477,21 @@ private static final long serialVersionUID = 0L;
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @return The count of attachments.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder> 
+      getAttachmentsOrBuilderList() {
+    return attachments ;
+  }
+  /**
+   * <pre>
+   * 任务提交附件
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+   */
+  @java.lang.Override
   public int getAttachmentsCount() {
     return attachments .size();
   }
@@ -489,11 +500,10 @@ private static final long serialVersionUID = 0L;
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @param index The index of the element to return.
-   * @return The attachments at the given index.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  public java.lang.String getAttachments(int index) {
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment getAttachments(int index) {
     return attachments .get(index);
   }
   /**
@@ -501,13 +511,12 @@ private static final long serialVersionUID = 0L;
    * 任务提交附件
    * </pre>
    *
-   * <code>repeated string attachments = 6;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the attachments at the given index.
+   * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getAttachmentsBytes(int index) {
-    return attachments .getByteString(index);
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder getAttachmentsOrBuilder(
+      int index) {
+    return attachments .get(index);
   }
 
   public static final int EVALUATED_AT_FIELD_NUMBER = 7;
@@ -1109,7 +1118,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, submitDescription );
     }
     for (int i = 0; i < attachments .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, attachments .getRaw(i));
+      output.writeMessage(6, attachments .get(i));
     }
     if (!getEvaluatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, evaluatedAt );
@@ -1175,13 +1184,9 @@ private static final long serialVersionUID = 0L;
     if (!getSubmitDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, submitDescription );
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < attachments .size(); i++) {
-        dataSize += computeStringSizeNoTag(attachments .getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getAttachmentsList().size();
+    for (int i = 0; i < attachments .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, attachments .get(i));
     }
     if (!getEvaluatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, evaluatedAt );
@@ -1495,6 +1500,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAttachmentsFieldBuilder();
         getStudentTaskParameterResultFieldBuilder();
         getStudentTaskRequirementResultFieldBuilder();
         getTaskLinksFieldBuilder();
@@ -1513,8 +1519,12 @@ private static final long serialVersionUID = 0L;
 
       submitDescription = "";
 
-      attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
+      if (attachmentsBuilder == null) {
+        attachments = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        attachmentsBuilder .clear();
+      }
       evaluatedAt = "";
 
       if (studentTaskParameterResultBuilder == null) {
@@ -1605,11 +1615,15 @@ private static final long serialVersionUID = 0L;
       result.submittedAt = submittedAt ;
       result.submitParameter = submitParameter ;
       result.submitDescription = submitDescription ;
-      if (((bitField0 & 0x00000001) != 0)) {
-        attachments = attachments .getUnmodifiableView();
-        bitField0 = (bitField0 & ~0x00000001);
+      if (attachmentsBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          attachments = java.util.Collections.unmodifiableList(attachments );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.attachments = attachments ;
+      } else {
+        result.attachments = attachmentsBuilder .build();
       }
-      result.attachments = attachments ;
       result.evaluatedAt = evaluatedAt ;
       if (studentTaskParameterResultBuilder == null) {
         if (((bitField0 & 0x00000002) != 0)) {
@@ -1734,15 +1748,31 @@ private static final long serialVersionUID = 0L;
         submitDescription = other.submitDescription ;
         onChanged();
       }
-      if (!other.attachments .isEmpty()) {
-        if (attachments .isEmpty()) {
-          attachments = other.attachments ;
-          bitField0 = (bitField0 & ~0x00000001);
-        } else {
-          ensureAttachmentsIsMutable();
-          attachments .addAll(other.attachments );
+      if (attachmentsBuilder == null) {
+        if (!other.attachments .isEmpty()) {
+          if (attachments .isEmpty()) {
+            attachments = other.attachments ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureAttachmentsIsMutable();
+            attachments .addAll(other.attachments );
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.attachments .isEmpty()) {
+          if (attachmentsBuilder .isEmpty()) {
+            attachmentsBuilder .dispose();
+            attachmentsBuilder = null;
+            attachments = other.attachments ;
+            bitField0 = (bitField0 & ~0x00000001);
+            attachmentsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAttachmentsFieldBuilder() : null;
+          } else {
+            attachmentsBuilder .addAllMessages(other.attachments );
+          }
+        }
       }
       if (!other.getEvaluatedAt().isEmpty()) {
         evaluatedAt = other.evaluatedAt ;
@@ -2301,79 +2331,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> attachments =
+      java.util.Collections.emptyList();
     private void ensureAttachmentsIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        attachments = new com.google.protobuf.LazyStringArrayList(attachments );
+        attachments = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment>(attachments );
         bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder> attachmentsBuilder ;
+
     /**
      * <pre>
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @return A list containing the attachments.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getAttachmentsList() {
-      return attachments .getUnmodifiableView();
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> getAttachmentsList() {
+      if (attachmentsBuilder == null) {
+        return java.util.Collections.unmodifiableList(attachments );
+      } else {
+        return attachmentsBuilder .getMessageList();
+      }
     }
     /**
      * <pre>
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @return The count of attachments.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
     public int getAttachmentsCount() {
-      return attachments .size();
+      if (attachmentsBuilder == null) {
+        return attachments .size();
+      } else {
+        return attachmentsBuilder .getCount();
+      }
     }
     /**
      * <pre>
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @param index The index of the element to return.
-     * @return The attachments at the given index.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
-    public java.lang.String getAttachments(int index) {
-      return attachments .get(index);
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment getAttachments(int index) {
+      if (attachmentsBuilder == null) {
+        return attachments .get(index);
+      } else {
+        return attachmentsBuilder .getMessage(index);
+      }
     }
     /**
      * <pre>
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the attachments at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getAttachmentsBytes(int index) {
-      return attachments .getByteString(index);
-    }
-    /**
-     * <pre>
-     * 任务提交附件
-     * </pre>
-     *
-     * <code>repeated string attachments = 6;</code>
-     * @param index The index to set the value at.
-     * @param value The attachments to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
     public Builder setAttachments(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAttachmentsIsMutable();
-      attachments .set(index, value);
-      onChanged();
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment value) {
+      if (attachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachmentsIsMutable();
+        attachments .set(index, value);
+        onChanged();
+      } else {
+        attachmentsBuilder .setMessage(index, value);
+      }
       return this;
     }
     /**
@@ -2381,18 +2411,58 @@ private static final long serialVersionUID = 0L;
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @param value The attachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public Builder setAttachments(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder builderForValue) {
+      if (attachmentsBuilder == null) {
+        ensureAttachmentsIsMutable();
+        attachments .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachmentsBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public Builder addAttachments(com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment value) {
+      if (attachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachmentsIsMutable();
+        attachments .add(value);
+        onChanged();
+      } else {
+        attachmentsBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
     public Builder addAttachments(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAttachmentsIsMutable();
-      attachments .add(value);
-      onChanged();
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment value) {
+      if (attachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAttachmentsIsMutable();
+        attachments .add(index, value);
+        onChanged();
+      } else {
+        attachmentsBuilder .addMessage(index, value);
+      }
       return this;
     }
     /**
@@ -2400,16 +2470,54 @@ private static final long serialVersionUID = 0L;
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @param values The attachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public Builder addAttachments(
+        com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder builderForValue) {
+      if (attachmentsBuilder == null) {
+        ensureAttachmentsIsMutable();
+        attachments .add(builderForValue.build());
+        onChanged();
+      } else {
+        attachmentsBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public Builder addAttachments(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder builderForValue) {
+      if (attachmentsBuilder == null) {
+        ensureAttachmentsIsMutable();
+        attachments .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        attachmentsBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
     public Builder addAllAttachments(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureAttachmentsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, attachments );
-      onChanged();
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment> values) {
+      if (attachmentsBuilder == null) {
+        ensureAttachmentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, attachments );
+        onChanged();
+      } else {
+        attachmentsBuilder .addAllMessages(values);
+      }
       return this;
     }
     /**
@@ -2417,13 +2525,16 @@ private static final long serialVersionUID = 0L;
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
     public Builder clearAttachments() {
-      attachments = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
+      if (attachmentsBuilder == null) {
+        attachments = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        attachmentsBuilder .clear();
+      }
       return this;
     }
     /**
@@ -2431,20 +2542,105 @@ private static final long serialVersionUID = 0L;
      * 任务提交附件
      * </pre>
      *
-     * <code>repeated string attachments = 6;</code>
-     * @param value The bytes of the attachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
      */
-    public Builder addAttachmentsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureAttachmentsIsMutable();
-      attachments .add(value);
-      onChanged();
+    public Builder removeAttachments(int index) {
+      if (attachmentsBuilder == null) {
+        ensureAttachmentsIsMutable();
+        attachments .remove(index);
+        onChanged();
+      } else {
+        attachmentsBuilder .remove(index);
+      }
       return this;
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder getAttachmentsBuilder(
+        int index) {
+      return getAttachmentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder getAttachmentsOrBuilder(
+        int index) {
+      if (attachmentsBuilder == null) {
+        return attachments .get(index);  } else {
+        return attachmentsBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder> 
+         getAttachmentsOrBuilderList() {
+      if (attachmentsBuilder != null) {
+        return attachmentsBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(attachments );
+      }
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder addAttachmentsBuilder() {
+      return getAttachmentsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder addAttachmentsBuilder(
+        int index) {
+      return getAttachmentsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 任务提交附件
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskAttachment attachments = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder> 
+         getAttachmentsBuilderList() {
+      return getAttachmentsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder> 
+        getAttachmentsFieldBuilder() {
+      if (attachmentsBuilder == null) {
+        attachmentsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskAttachmentOrBuilder>(
+                attachments ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        attachments = null;
+      }
+      return attachmentsBuilder ;
     }
 
     private java.lang.Object evaluatedAt = "";
