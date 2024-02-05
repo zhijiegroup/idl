@@ -163,7 +163,7 @@ export interface TeacherEvaluateStudentTaskRequest {
   student_task_id?: string;
   requirement_evaluations?: Array<TeacherRequirementEvaluation>;
   failed_reason?: string;
-  evaluate_score?: string;
+  evaluate_score?: number;
 }
 
 export interface TeacherEvaluateStudentTaskResponse {

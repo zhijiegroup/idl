@@ -1620,7 +1620,7 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? studentTaskId,
     $core.Iterable<TeacherRequirementEvaluation>? requirementEvaluations,
     $core.String? failedReason,
-    $fixnum.Int64? evaluateScore,
+    $core.int? evaluateScore,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1649,7 +1649,7 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'studentTaskId')
     ..pc<TeacherRequirementEvaluation>(3, _omitFieldNames ? '' : 'requirementEvaluations', $pb.PbFieldType.PM, subBuilder: TeacherRequirementEvaluation.create)
     ..aOS(4, _omitFieldNames ? '' : 'failedReason')
-    ..aInt64(5, _omitFieldNames ? '' : 'evaluateScore')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'evaluateScore', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -1707,9 +1707,9 @@ class TeacherEvaluateStudentTaskRequest extends $pb.GeneratedMessage {
   void clearFailedReason() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get evaluateScore => $_getI64(4);
+  $core.int get evaluateScore => $_getIZ(4);
   @$pb.TagNumber(5)
-  set evaluateScore($fixnum.Int64 v) { $_setInt64(4, v); }
+  set evaluateScore($core.int v) { $_setSignedInt32(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasEvaluateScore() => $_has(4);
   @$pb.TagNumber(5)

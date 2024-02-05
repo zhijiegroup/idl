@@ -189,7 +189,7 @@ public final class StudentTaskOuterClass {
       "\027\n\017student_task_id\030\002 \001(\003\022H\n\027requirement_" +
       "evaluations\030\003 \003(\0132\'.glory_api.TeacherReq" +
       "uirementEvaluation\022\025\n\rfailed_reason\030\004 \001(" +
-      "\t\022\026\n\016evaluate_score\030\005 \001(\003\"K\n\"TeacherEval" +
+      "\t\022\026\n\016evaluate_score\030\005 \001(\005\"K\n\"TeacherEval" +
       "uateStudentTaskResponse\022%\n\tbase_resp\030\001 \001" +
       "(\0132\022.base.BaseResponseB#\n\037com.zhijiejiao" +
       "yu.glory_api.taskP\001b\006proto3"

@@ -86,7 +86,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            evaluateScore = input.readInt64();
+            evaluateScore = input.readInt32();
             break;
           }
           default: {
@@ -240,13 +240,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EVALUATE_SCORE_FIELD_NUMBER = 5;
-  private long evaluateScore ;
+  private int evaluateScore ;
   /**
-   * <code>int64 evaluate_score = 5;</code>
+   * <code>int32 evaluate_score = 5;</code>
    * @return The evaluateScore.
    */
   @java.lang.Override
-  public long getEvaluateScore() {
+  public int getEvaluateScore() {
     return evaluateScore ;
   }
 
@@ -276,8 +276,8 @@ private static final long serialVersionUID = 0L;
     if (!getFailedReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, failedReason );
     }
-    if (evaluateScore != 0L) {
-      output.writeInt64(5, evaluateScore );
+    if (evaluateScore != 0) {
+      output.writeInt32(5, evaluateScore );
     }
     unknownFields.writeTo(output);
   }
@@ -303,9 +303,9 @@ private static final long serialVersionUID = 0L;
     if (!getFailedReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, failedReason );
     }
-    if (evaluateScore != 0L) {
+    if (evaluateScore != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, evaluateScore );
+        .computeInt32Size(5, evaluateScore );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -360,8 +360,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FAILED_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getFailedReason().hashCode();
     hash = (37 * hash) + EVALUATE_SCORE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getEvaluateScore());
+    hash = (53 * hash) + getEvaluateScore();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -512,7 +511,7 @@ private static final long serialVersionUID = 0L;
       }
       failedReason = "";
 
-      evaluateScore = 0L;
+      evaluateScore = 0;
 
       return this;
     }
@@ -642,7 +641,7 @@ private static final long serialVersionUID = 0L;
         failedReason = other.failedReason ;
         onChanged();
       }
-      if (other.getEvaluateScore() != 0L) {
+      if (other.getEvaluateScore() != 0) {
         setEvaluateScore(other.getEvaluateScore());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1141,33 +1140,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long evaluateScore ;
+    private int evaluateScore ;
     /**
-     * <code>int64 evaluate_score = 5;</code>
+     * <code>int32 evaluate_score = 5;</code>
      * @return The evaluateScore.
      */
     @java.lang.Override
-    public long getEvaluateScore() {
+    public int getEvaluateScore() {
       return evaluateScore ;
     }
     /**
-     * <code>int64 evaluate_score = 5;</code>
+     * <code>int32 evaluate_score = 5;</code>
      * @param value The evaluateScore to set.
      * @return This builder for chaining.
      */
-    public Builder setEvaluateScore(long value) {
+    public Builder setEvaluateScore(int value) {
       
       evaluateScore = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 evaluate_score = 5;</code>
+     * <code>int32 evaluate_score = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearEvaluateScore() {
       
-      evaluateScore = 0L;
+      evaluateScore = 0;
       onChanged();
       return this;
     }

@@ -65,8 +65,8 @@ public interface TeacherEvaluateStudentTaskRequestOrBuilder extends
       getFailedReasonBytes();
 
   /**
-   * <code>int64 evaluate_score = 5;</code>
+   * <code>int32 evaluate_score = 5;</code>
    * @return The evaluateScore.
    */
-  long getEvaluateScore();
+  int getEvaluateScore();
 }

@@ -622,7 +622,7 @@ struct GloryApi_TeacherEvaluateStudentTaskRequest {
 
   var failedReason: String = String()
 
-  var evaluateScore: Int64 = 0
+  var evaluateScore: Int32 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1696,7 +1696,7 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.studentTaskID) }()
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.requirementEvaluations) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.failedReason) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluateScore) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.evaluateScore) }()
       default: break
       }
     }
@@ -1720,7 +1720,7 @@ extension GloryApi_TeacherEvaluateStudentTaskRequest: SwiftProtobuf.Message, Swi
       try visitor.visitSingularStringField(value: self.failedReason, fieldNumber: 4)
     }
     if self.evaluateScore != 0 {
-      try visitor.visitSingularInt64Field(value: self.evaluateScore, fieldNumber: 5)
+      try visitor.visitSingularInt32Field(value: self.evaluateScore, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

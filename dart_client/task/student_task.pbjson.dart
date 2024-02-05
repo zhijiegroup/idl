@@ -327,7 +327,7 @@ const TeacherEvaluateStudentTaskRequest$json = {
     {'1': 'student_task_id', '3': 2, '4': 1, '5': 3, '10': 'studentTaskId'},
     {'1': 'requirement_evaluations', '3': 3, '4': 3, '5': 11, '6': '.glory_api.TeacherRequirementEvaluation', '10': 'requirementEvaluations'},
     {'1': 'failed_reason', '3': 4, '4': 1, '5': 9, '10': 'failedReason'},
-    {'1': 'evaluate_score', '3': 5, '4': 1, '5': 3, '10': 'evaluateScore'},
+    {'1': 'evaluate_score', '3': 5, '4': 1, '5': 5, '10': 'evaluateScore'},
   ],
 };
 
@@ -338,7 +338,7 @@ final $typed_data.Uint8List teacherEvaluateStudentTaskRequestDescriptor = $conve
     'ASgDUg1zdHVkZW50VGFza0lkEmAKF3JlcXVpcmVtZW50X2V2YWx1YXRpb25zGAMgAygLMicuZ2'
     'xvcnlfYXBpLlRlYWNoZXJSZXF1aXJlbWVudEV2YWx1YXRpb25SFnJlcXVpcmVtZW50RXZhbHVh'
     'dGlvbnMSIwoNZmFpbGVkX3JlYXNvbhgEIAEoCVIMZmFpbGVkUmVhc29uEiUKDmV2YWx1YXRlX3'
-    'Njb3JlGAUgASgDUg1ldmFsdWF0ZVNjb3Jl');
+    'Njb3JlGAUgASgFUg1ldmFsdWF0ZVNjb3Jl');
 
 @$core.Deprecated('Use teacherEvaluateStudentTaskResponseDescriptor instead')
 const TeacherEvaluateStudentTaskResponse$json = {
