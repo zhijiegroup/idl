@@ -58,10 +58,11 @@ message StudentTask {
   string system_task_key = 13; // 预置任务标识
   TeacherTask teacher_task = 14; // 任务所属教师任务
   repeated StudentTaskLink task_links = 15; // 任务链接
-  TenantDept class_dept = 16; // 学生班级信息
-  TenantDept major_dept = 17; // 学生专业信息
-  User student = 18; // 学生信息
-  User teacher = 19; // 老师信息
+  repeated StudentTaskLink task_result_links = 16; // 任务结果连接
+  TenantDept class_dept = 17; // 学生班级信息
+  TenantDept major_dept = 18; // 学生专业信息
+  User student = 19; // 学生信息
+  User teacher = 20; // 老师信息
 }
 
 message TeacherRequirementEvaluation {
