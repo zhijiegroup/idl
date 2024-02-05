@@ -138,7 +138,7 @@ message TeacherEvaluateStudentTaskRequest {
   int64 student_task_id = 2;
   repeated TeacherRequirementEvaluation requirement_evaluations = 3;
   string failed_reason = 4;
-  int64 evaluate_score = 5;
+  int32 evaluate_score = 5;
 }
 
 message TeacherEvaluateStudentTaskResponse {
