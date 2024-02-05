@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     taskPlatform = "";
     systemTaskKey = "";
     taskLinks = java.util.Collections.emptyList();
+    taskResultLinks = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -169,6 +170,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 130: {
+            if (!((mutable_bitField0 & 0x00000010) != 0)) {
+              taskResultLinks = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskLink>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            taskResultLinks .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentTaskLink.parser(), extensionRegistry));
+            break;
+          }
+          case 138: {
             com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
             if (classDept != null) {
               subBuilder = classDept .toBuilder();
@@ -181,7 +191,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 138: {
+          case 146: {
             com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
             if (majorDept != null) {
               subBuilder = majorDept .toBuilder();
@@ -194,7 +204,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 146: {
+          case 154: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (student != null) {
               subBuilder = student .toBuilder();
@@ -207,7 +217,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 154: {
+          case 162: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (teacher != null) {
               subBuilder = teacher .toBuilder();
@@ -246,6 +256,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000008) != 0)) {
         taskLinks = java.util.Collections.unmodifiableList(taskLinks );
+      }
+      if (((mutable_bitField0 & 0x00000010) != 0)) {
+        taskResultLinks = java.util.Collections.unmodifiableList(taskResultLinks );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -936,14 +949,74 @@ private static final long serialVersionUID = 0L;
     return taskLinks .get(index);
   }
 
-  public static final int CLASS_DEPT_FIELD_NUMBER = 16;
+  public static final int TASK_RESULT_LINKS_FIELD_NUMBER = 16;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> taskResultLinks ;
+  /**
+   * <pre>
+   * 任务结果连接
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> getTaskResultLinksList() {
+    return taskResultLinks ;
+  }
+  /**
+   * <pre>
+   * 任务结果连接
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
+      getTaskResultLinksOrBuilderList() {
+    return taskResultLinks ;
+  }
+  /**
+   * <pre>
+   * 任务结果连接
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+   */
+  @java.lang.Override
+  public int getTaskResultLinksCount() {
+    return taskResultLinks .size();
+  }
+  /**
+   * <pre>
+   * 任务结果连接
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskLink getTaskResultLinks(int index) {
+    return taskResultLinks .get(index);
+  }
+  /**
+   * <pre>
+   * 任务结果连接
+   * </pre>
+   *
+   * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder getTaskResultLinksOrBuilder(
+      int index) {
+    return taskResultLinks .get(index);
+  }
+
+  public static final int CLASS_DEPT_FIELD_NUMBER = 17;
   private com.zhijiejiaoyu.glory_api.user.TenantDept classDept ;
   /**
    * <pre>
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 16;</code>
+   * <code>.glory_api.TenantDept class_dept = 17;</code>
    * @return Whether the classDept field is set.
    */
   @java.lang.Override
@@ -955,7 +1028,7 @@ private static final long serialVersionUID = 0L;
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 16;</code>
+   * <code>.glory_api.TenantDept class_dept = 17;</code>
    * @return The classDept.
    */
   @java.lang.Override
@@ -967,21 +1040,21 @@ private static final long serialVersionUID = 0L;
    * 学生班级信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept class_dept = 16;</code>
+   * <code>.glory_api.TenantDept class_dept = 17;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder() {
     return getClassDept();
   }
 
-  public static final int MAJOR_DEPT_FIELD_NUMBER = 17;
+  public static final int MAJOR_DEPT_FIELD_NUMBER = 18;
   private com.zhijiejiaoyu.glory_api.user.TenantDept majorDept ;
   /**
    * <pre>
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 17;</code>
+   * <code>.glory_api.TenantDept major_dept = 18;</code>
    * @return Whether the majorDept field is set.
    */
   @java.lang.Override
@@ -993,7 +1066,7 @@ private static final long serialVersionUID = 0L;
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 17;</code>
+   * <code>.glory_api.TenantDept major_dept = 18;</code>
    * @return The majorDept.
    */
   @java.lang.Override
@@ -1005,21 +1078,21 @@ private static final long serialVersionUID = 0L;
    * 学生专业信息
    * </pre>
    *
-   * <code>.glory_api.TenantDept major_dept = 17;</code>
+   * <code>.glory_api.TenantDept major_dept = 18;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder() {
     return getMajorDept();
   }
 
-  public static final int STUDENT_FIELD_NUMBER = 18;
+  public static final int STUDENT_FIELD_NUMBER = 19;
   private com.zhijiejiaoyu.glory_api.user.User student ;
   /**
    * <pre>
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 18;</code>
+   * <code>.glory_api.User student = 19;</code>
    * @return Whether the student field is set.
    */
   @java.lang.Override
@@ -1031,7 +1104,7 @@ private static final long serialVersionUID = 0L;
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 18;</code>
+   * <code>.glory_api.User student = 19;</code>
    * @return The student.
    */
   @java.lang.Override
@@ -1043,21 +1116,21 @@ private static final long serialVersionUID = 0L;
    * 学生信息
    * </pre>
    *
-   * <code>.glory_api.User student = 18;</code>
+   * <code>.glory_api.User student = 19;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
     return getStudent();
   }
 
-  public static final int TEACHER_FIELD_NUMBER = 19;
+  public static final int TEACHER_FIELD_NUMBER = 20;
   private com.zhijiejiaoyu.glory_api.user.User teacher ;
   /**
    * <pre>
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 19;</code>
+   * <code>.glory_api.User teacher = 20;</code>
    * @return Whether the teacher field is set.
    */
   @java.lang.Override
@@ -1069,7 +1142,7 @@ private static final long serialVersionUID = 0L;
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 19;</code>
+   * <code>.glory_api.User teacher = 20;</code>
    * @return The teacher.
    */
   @java.lang.Override
@@ -1081,7 +1154,7 @@ private static final long serialVersionUID = 0L;
    * 老师信息
    * </pre>
    *
-   * <code>.glory_api.User teacher = 19;</code>
+   * <code>.glory_api.User teacher = 20;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
@@ -1147,17 +1220,20 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < taskLinks .size(); i++) {
       output.writeMessage(15, taskLinks .get(i));
     }
+    for (int i = 0; i < taskResultLinks .size(); i++) {
+      output.writeMessage(16, taskResultLinks .get(i));
+    }
     if (classDept != null) {
-      output.writeMessage(16, getClassDept());
+      output.writeMessage(17, getClassDept());
     }
     if (majorDept != null) {
-      output.writeMessage(17, getMajorDept());
+      output.writeMessage(18, getMajorDept());
     }
     if (student != null) {
-      output.writeMessage(18, getStudent());
+      output.writeMessage(19, getStudent());
     }
     if (teacher != null) {
-      output.writeMessage(19, getTeacher());
+      output.writeMessage(20, getTeacher());
     }
     unknownFields.writeTo(output);
   }
@@ -1220,21 +1296,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, taskLinks .get(i));
     }
+    for (int i = 0; i < taskResultLinks .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, taskResultLinks .get(i));
+    }
     if (classDept != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(16, getClassDept());
+        .computeMessageSize(17, getClassDept());
     }
     if (majorDept != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, getMajorDept());
+        .computeMessageSize(18, getMajorDept());
     }
     if (student != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getStudent());
+        .computeMessageSize(19, getStudent());
     }
     if (teacher != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, getTeacher());
+        .computeMessageSize(20, getTeacher());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1284,6 +1364,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTaskLinksList()
         .equals(other.getTaskLinksList())) return false;
+    if (!getTaskResultLinksList()
+        .equals(other.getTaskResultLinksList())) return false;
     if (hasClassDept() != other.hasClassDept()) return false;
     if (hasClassDept()) {
       if (!getClassDept()
@@ -1355,6 +1437,10 @@ private static final long serialVersionUID = 0L;
     if (getTaskLinksCount() > 0) {
       hash = (37 * hash) + TASK_LINKS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskLinksList().hashCode();
+    }
+    if (getTaskResultLinksCount() > 0) {
+      hash = (37 * hash) + TASK_RESULT_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaskResultLinksList().hashCode();
     }
     if (hasClassDept()) {
       hash = (37 * hash) + CLASS_DEPT_FIELD_NUMBER;
@@ -1504,6 +1590,7 @@ private static final long serialVersionUID = 0L;
         getStudentTaskParameterResultFieldBuilder();
         getStudentTaskRequirementResultFieldBuilder();
         getTaskLinksFieldBuilder();
+        getTaskResultLinksFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1558,6 +1645,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000008);
       } else {
         taskLinksBuilder .clear();
+      }
+      if (taskResultLinksBuilder == null) {
+        taskResultLinks = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000010);
+      } else {
+        taskResultLinksBuilder .clear();
       }
       if (classDeptBuilder == null) {
         classDept = null;
@@ -1660,6 +1753,15 @@ private static final long serialVersionUID = 0L;
         result.taskLinks = taskLinks ;
       } else {
         result.taskLinks = taskLinksBuilder .build();
+      }
+      if (taskResultLinksBuilder == null) {
+        if (((bitField0 & 0x00000010) != 0)) {
+          taskResultLinks = java.util.Collections.unmodifiableList(taskResultLinks );
+          bitField0 = (bitField0 & ~0x00000010);
+        }
+        result.taskResultLinks = taskResultLinks ;
+      } else {
+        result.taskResultLinks = taskResultLinksBuilder .build();
       }
       if (classDeptBuilder == null) {
         result.classDept = classDept ;
@@ -1871,6 +1973,32 @@ private static final long serialVersionUID = 0L;
                  getTaskLinksFieldBuilder() : null;
           } else {
             taskLinksBuilder .addAllMessages(other.taskLinks );
+          }
+        }
+      }
+      if (taskResultLinksBuilder == null) {
+        if (!other.taskResultLinks .isEmpty()) {
+          if (taskResultLinks .isEmpty()) {
+            taskResultLinks = other.taskResultLinks ;
+            bitField0 = (bitField0 & ~0x00000010);
+          } else {
+            ensureTaskResultLinksIsMutable();
+            taskResultLinks .addAll(other.taskResultLinks );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.taskResultLinks .isEmpty()) {
+          if (taskResultLinksBuilder .isEmpty()) {
+            taskResultLinksBuilder .dispose();
+            taskResultLinksBuilder = null;
+            taskResultLinks = other.taskResultLinks ;
+            bitField0 = (bitField0 & ~0x00000010);
+            taskResultLinksBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTaskResultLinksFieldBuilder() : null;
+          } else {
+            taskResultLinksBuilder .addAllMessages(other.taskResultLinks );
           }
         }
       }
@@ -4161,6 +4289,318 @@ private static final long serialVersionUID = 0L;
       return taskLinksBuilder ;
     }
 
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> taskResultLinks =
+      java.util.Collections.emptyList();
+    private void ensureTaskResultLinksIsMutable() {
+      if (!((bitField0 & 0x00000010) != 0)) {
+        taskResultLinks = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentTaskLink>(taskResultLinks );
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskLink, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> taskResultLinksBuilder ;
+
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink> getTaskResultLinksList() {
+      if (taskResultLinksBuilder == null) {
+        return java.util.Collections.unmodifiableList(taskResultLinks );
+      } else {
+        return taskResultLinksBuilder .getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public int getTaskResultLinksCount() {
+      if (taskResultLinksBuilder == null) {
+        return taskResultLinks .size();
+      } else {
+        return taskResultLinksBuilder .getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskLink getTaskResultLinks(int index) {
+      if (taskResultLinksBuilder == null) {
+        return taskResultLinks .get(index);
+      } else {
+        return taskResultLinksBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder setTaskResultLinks(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskLink value) {
+      if (taskResultLinksBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .set(index, value);
+        onChanged();
+      } else {
+        taskResultLinksBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder setTaskResultLinks(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder builderForValue) {
+      if (taskResultLinksBuilder == null) {
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        taskResultLinksBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder addTaskResultLinks(com.zhijiejiaoyu.glory_api.task.StudentTaskLink value) {
+      if (taskResultLinksBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .add(value);
+        onChanged();
+      } else {
+        taskResultLinksBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder addTaskResultLinks(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskLink value) {
+      if (taskResultLinksBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .add(index, value);
+        onChanged();
+      } else {
+        taskResultLinksBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder addTaskResultLinks(
+        com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder builderForValue) {
+      if (taskResultLinksBuilder == null) {
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .add(builderForValue.build());
+        onChanged();
+      } else {
+        taskResultLinksBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder addTaskResultLinks(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder builderForValue) {
+      if (taskResultLinksBuilder == null) {
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        taskResultLinksBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder addAllTaskResultLinks(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLink> values) {
+      if (taskResultLinksBuilder == null) {
+        ensureTaskResultLinksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, taskResultLinks );
+        onChanged();
+      } else {
+        taskResultLinksBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder clearTaskResultLinks() {
+      if (taskResultLinksBuilder == null) {
+        taskResultLinks = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000010);
+        onChanged();
+      } else {
+        taskResultLinksBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public Builder removeTaskResultLinks(int index) {
+      if (taskResultLinksBuilder == null) {
+        ensureTaskResultLinksIsMutable();
+        taskResultLinks .remove(index);
+        onChanged();
+      } else {
+        taskResultLinksBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder getTaskResultLinksBuilder(
+        int index) {
+      return getTaskResultLinksFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder getTaskResultLinksOrBuilder(
+        int index) {
+      if (taskResultLinksBuilder == null) {
+        return taskResultLinks .get(index);  } else {
+        return taskResultLinksBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
+         getTaskResultLinksOrBuilderList() {
+      if (taskResultLinksBuilder != null) {
+        return taskResultLinksBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(taskResultLinks );
+      }
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder addTaskResultLinksBuilder() {
+      return getTaskResultLinksFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentTaskLink.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder addTaskResultLinksBuilder(
+        int index) {
+      return getTaskResultLinksFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 任务结果连接
+     * </pre>
+     *
+     * <code>repeated .glory_api.StudentTaskLink task_result_links = 16;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder> 
+         getTaskResultLinksBuilderList() {
+      return getTaskResultLinksFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.StudentTaskLink, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder> 
+        getTaskResultLinksFieldBuilder() {
+      if (taskResultLinksBuilder == null) {
+        taskResultLinksBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentTaskLink, com.zhijiejiaoyu.glory_api.task.StudentTaskLink.Builder, com.zhijiejiaoyu.glory_api.task.StudentTaskLinkOrBuilder>(
+                taskResultLinks ,
+                ((bitField0 & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        taskResultLinks = null;
+      }
+      return taskResultLinksBuilder ;
+    }
+
     private com.zhijiejiaoyu.glory_api.user.TenantDept classDept ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> classDeptBuilder ;
@@ -4169,7 +4609,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      * @return Whether the classDept field is set.
      */
     public boolean hasClassDept() {
@@ -4180,7 +4620,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      * @return The classDept.
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept() {
@@ -4195,7 +4635,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public Builder setClassDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (classDeptBuilder == null) {
@@ -4215,7 +4655,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public Builder setClassDept(
         com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -4233,7 +4673,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public Builder mergeClassDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (classDeptBuilder == null) {
@@ -4255,7 +4695,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public Builder clearClassDept() {
       if (classDeptBuilder == null) {
@@ -4273,7 +4713,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getClassDeptBuilder() {
       
@@ -4285,7 +4725,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder() {
       if (classDeptBuilder != null) {
@@ -4300,7 +4740,7 @@ private static final long serialVersionUID = 0L;
      * 学生班级信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept class_dept = 16;</code>
+     * <code>.glory_api.TenantDept class_dept = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
@@ -4324,7 +4764,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      * @return Whether the majorDept field is set.
      */
     public boolean hasMajorDept() {
@@ -4335,7 +4775,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      * @return The majorDept.
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept() {
@@ -4350,7 +4790,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public Builder setMajorDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (majorDeptBuilder == null) {
@@ -4370,7 +4810,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public Builder setMajorDept(
         com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
@@ -4388,7 +4828,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public Builder mergeMajorDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
       if (majorDeptBuilder == null) {
@@ -4410,7 +4850,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public Builder clearMajorDept() {
       if (majorDeptBuilder == null) {
@@ -4428,7 +4868,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getMajorDeptBuilder() {
       
@@ -4440,7 +4880,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder() {
       if (majorDeptBuilder != null) {
@@ -4455,7 +4895,7 @@ private static final long serialVersionUID = 0L;
      * 学生专业信息
      * </pre>
      *
-     * <code>.glory_api.TenantDept major_dept = 17;</code>
+     * <code>.glory_api.TenantDept major_dept = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
@@ -4479,7 +4919,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      * @return Whether the student field is set.
      */
     public boolean hasStudent() {
@@ -4490,7 +4930,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      * @return The student.
      */
     public com.zhijiejiaoyu.glory_api.user.User getStudent() {
@@ -4505,7 +4945,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public Builder setStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -4525,7 +4965,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public Builder setStudent(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -4543,7 +4983,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public Builder mergeStudent(com.zhijiejiaoyu.glory_api.user.User value) {
       if (studentBuilder == null) {
@@ -4565,7 +5005,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public Builder clearStudent() {
       if (studentBuilder == null) {
@@ -4583,7 +5023,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getStudentBuilder() {
       
@@ -4595,7 +5035,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getStudentOrBuilder() {
       if (studentBuilder != null) {
@@ -4610,7 +5050,7 @@ private static final long serialVersionUID = 0L;
      * 学生信息
      * </pre>
      *
-     * <code>.glory_api.User student = 18;</code>
+     * <code>.glory_api.User student = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -4634,7 +5074,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      * @return Whether the teacher field is set.
      */
     public boolean hasTeacher() {
@@ -4645,7 +5085,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      * @return The teacher.
      */
     public com.zhijiejiaoyu.glory_api.user.User getTeacher() {
@@ -4660,7 +5100,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public Builder setTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -4680,7 +5120,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public Builder setTeacher(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -4698,7 +5138,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public Builder mergeTeacher(com.zhijiejiaoyu.glory_api.user.User value) {
       if (teacherBuilder == null) {
@@ -4720,7 +5160,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public Builder clearTeacher() {
       if (teacherBuilder == null) {
@@ -4738,7 +5178,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getTeacherBuilder() {
       
@@ -4750,7 +5190,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder() {
       if (teacherBuilder != null) {
@@ -4765,7 +5205,7 @@ private static final long serialVersionUID = 0L;
      * 老师信息
      * </pre>
      *
-     * <code>.glory_api.User teacher = 19;</code>
+     * <code>.glory_api.User teacher = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 

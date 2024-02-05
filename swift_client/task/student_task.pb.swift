@@ -208,6 +208,12 @@ struct GloryApi_StudentTask {
     set {_uniqueStorage()._taskLinks = newValue}
   }
 
+  /// 任务结果连接
+  var taskResultLinks: [GloryApi_StudentTaskLink] {
+    get {return _storage._taskResultLinks}
+    set {_uniqueStorage()._taskResultLinks = newValue}
+  }
+
   /// 学生班级信息
   var classDept: GloryApi_TenantDept {
     get {return _storage._classDept ?? GloryApi_TenantDept()}
@@ -932,10 +938,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     13: .standard(proto: "system_task_key"),
     14: .standard(proto: "teacher_task"),
     15: .standard(proto: "task_links"),
-    16: .standard(proto: "class_dept"),
-    17: .standard(proto: "major_dept"),
-    18: .same(proto: "student"),
-    19: .same(proto: "teacher"),
+    16: .standard(proto: "task_result_links"),
+    17: .standard(proto: "class_dept"),
+    18: .standard(proto: "major_dept"),
+    19: .same(proto: "student"),
+    20: .same(proto: "teacher"),
   ]
 
   fileprivate class _StorageClass {
@@ -954,6 +961,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _systemTaskKey: String = String()
     var _teacherTask: GloryApi_TeacherTask? = nil
     var _taskLinks: [GloryApi_StudentTaskLink] = []
+    var _taskResultLinks: [GloryApi_StudentTaskLink] = []
     var _classDept: GloryApi_TenantDept? = nil
     var _majorDept: GloryApi_TenantDept? = nil
     var _student: GloryApi_User? = nil
@@ -979,6 +987,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _systemTaskKey = source._systemTaskKey
       _teacherTask = source._teacherTask
       _taskLinks = source._taskLinks
+      _taskResultLinks = source._taskResultLinks
       _classDept = source._classDept
       _majorDept = source._majorDept
       _student = source._student
@@ -1016,10 +1025,11 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 13: try { try decoder.decodeSingularStringField(value: &_storage._systemTaskKey) }()
         case 14: try { try decoder.decodeSingularMessageField(value: &_storage._teacherTask) }()
         case 15: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskLinks) }()
-        case 16: try { try decoder.decodeSingularMessageField(value: &_storage._classDept) }()
-        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._majorDept) }()
-        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._student) }()
-        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._teacher) }()
+        case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._taskResultLinks) }()
+        case 17: try { try decoder.decodeSingularMessageField(value: &_storage._classDept) }()
+        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._majorDept) }()
+        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._student) }()
+        case 20: try { try decoder.decodeSingularMessageField(value: &_storage._teacher) }()
         default: break
         }
       }
@@ -1077,17 +1087,20 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._taskLinks.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._taskLinks, fieldNumber: 15)
       }
+      if !_storage._taskResultLinks.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._taskResultLinks, fieldNumber: 16)
+      }
       try { if let v = _storage._classDept {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      } }()
-      try { if let v = _storage._majorDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       } }()
-      try { if let v = _storage._student {
+      try { if let v = _storage._majorDept {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
       } }()
-      try { if let v = _storage._teacher {
+      try { if let v = _storage._student {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      } }()
+      try { if let v = _storage._teacher {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1113,6 +1126,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._systemTaskKey != rhs_storage._systemTaskKey {return false}
         if _storage._teacherTask != rhs_storage._teacherTask {return false}
         if _storage._taskLinks != rhs_storage._taskLinks {return false}
+        if _storage._taskResultLinks != rhs_storage._taskResultLinks {return false}
         if _storage._classDept != rhs_storage._classDept {return false}
         if _storage._majorDept != rhs_storage._majorDept {return false}
         if _storage._student != rhs_storage._student {return false}
