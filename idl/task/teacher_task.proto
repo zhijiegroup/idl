@@ -142,6 +142,17 @@ message StudentSubmitCount {
   int64 task_expired = 8;
 }
 
+message StudentCommentCount {
+  string name = 1;
+  string class = 2;
+  string pass = 3;
+  float pass_value = 4;
+  int64 task_total = 5;
+  int64 task_no_comment = 6;
+  int64 task_passed = 7;
+  int64 task_no_passed = 8;
+}
+
 message CountTeacherTaskRequest {
   base.BaseRequest base_request = 1;
   repeated string system_name = 2;
