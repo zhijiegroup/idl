@@ -673,21 +673,22 @@ public final class UserOuterClass {
       "(\0132\021.base.BaseRequest\"g\n\024GetUserMajorRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
       "onse\022(\n\nuser_major\030\002 \003(\0132\024.glory_api.Use" +
-      "rMajor\"y\n\tOwnAccess\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030" +
-      "\002 \001(\t\022\014\n\004logo\030\003 \001(\t\022\016\n\006remark\030\004 \001(\t\022\014\n\004t" +
-      "ype\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\022\022\n\nupdated" +
-      "_at\030\007 \001(\t\"-\n\017OwnAccessHeader\022\r\n\005label\030\001 " +
-      "\001(\t\022\013\n\003key\030\002 \001(\t\"\215\001\n\024ListOwnAccessReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\016\n\006access\030\002 \001(\t\022\017\n\007task_id\030\003 \001(\003\022+\n\np" +
-      "agination\030\004 \001(\0132\027.base.PaginationRequest" +
-      "\"\312\001\n\025ListOwnAccessResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022,\n\npagination\030" +
-      "\002 \001(\0132\030.base.PaginationResponse\0221\n\racces" +
-      "s_header\030\003 \003(\0132\032.glory_api.OwnAccessHead" +
-      "er\022)\n\013access_list\030\004 \003(\0132\024.glory_api.OwnA" +
-      "ccessB#\n\037com.zhijiejiaoyu.glory_api.user" +
-      "P\001b\006proto3"
+      "rMajor\"\235\001\n\tOwnAccess\022\n\n\002id\030\001 \001(\003\022\014\n\004name" +
+      "\030\002 \001(\t\022\014\n\004logo\030\003 \001(\t\022\016\n\006remark\030\004 \001(\t\022\014\n\004" +
+      "type\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\022\022\n\nupdate" +
+      "d_at\030\007 \001(\t\022\017\n\007shop_id\030\010 \001(\003\022\021\n\tshop_name" +
+      "\030\t \001(\t\"-\n\017OwnAccessHeader\022\r\n\005label\030\001 \001(\t" +
+      "\022\013\n\003key\030\002 \001(\t\"\215\001\n\024ListOwnAccessRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\016\n\006access\030\002 \001(\t\022\017\n\007task_id\030\003 \001(\003\022+\n\npagi" +
+      "nation\030\004 \001(\0132\027.base.PaginationRequest\"\312\001" +
+      "\n\025ListOwnAccessResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022,\n\npagination\030\002 \001" +
+      "(\0132\030.base.PaginationResponse\0221\n\raccess_h" +
+      "eader\030\003 \003(\0132\032.glory_api.OwnAccessHeader\022" +
+      ")\n\013access_list\030\004 \003(\0132\024.glory_api.OwnAcce" +
+      "ssB#\n\037com.zhijiejiaoyu.glory_api.userP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1183,7 +1184,7 @@ public final class UserOuterClass {
     internal_static_glory_api_OwnAccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OwnAccess_descriptor,
-        new java.lang.String[] { "Id", "Name", "Logo", "Remark", "Type", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "Name", "Logo", "Remark", "Type", "CreatedAt", "UpdatedAt", "ShopId", "ShopName", });
     internal_static_glory_api_OwnAccessHeader_descriptor =
       getDescriptor().getMessageTypes().get(81);
     internal_static_glory_api_OwnAccessHeader_fieldAccessorTable = new

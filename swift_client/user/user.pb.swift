@@ -2236,6 +2236,10 @@ struct GloryApi_OwnAccess {
 
   var updatedAt: String = String()
 
+  var shopID: Int64 = 0
+
+  var shopName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -6310,6 +6314,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     5: .same(proto: "type"),
     6: .standard(proto: "created_at"),
     7: .standard(proto: "updated_at"),
+    8: .standard(proto: "shop_id"),
+    9: .standard(proto: "shop_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6325,6 +6331,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 5: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       default: break
       }
     }
@@ -6352,6 +6360,12 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.updatedAt.isEmpty {
       try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 7)
     }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 8)
+    }
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -6363,6 +6377,8 @@ extension GloryApi_OwnAccess: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.type != rhs.type {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.shopName != rhs.shopName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
