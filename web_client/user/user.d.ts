@@ -553,6 +553,8 @@ export interface OwnAccess {
   type?: string;
   created_at?: string;
   updated_at?: string;
+  shop_id?: string;
+  shop_name?: string;
 }
 
 export interface OwnAccessHeader {

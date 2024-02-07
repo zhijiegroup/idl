@@ -6353,6 +6353,8 @@ class OwnAccess extends $pb.GeneratedMessage {
     $core.String? type,
     $core.String? createdAt,
     $core.String? updatedAt,
+    $fixnum.Int64? shopId,
+    $core.String? shopName,
   }) {
     final $result = create();
     if (id != null) {
@@ -6376,6 +6378,12 @@ class OwnAccess extends $pb.GeneratedMessage {
     if (updatedAt != null) {
       $result.updatedAt = updatedAt;
     }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    if (shopName != null) {
+      $result.shopName = shopName;
+    }
     return $result;
   }
   OwnAccess._() : super();
@@ -6390,6 +6398,8 @@ class OwnAccess extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'type')
     ..aOS(6, _omitFieldNames ? '' : 'createdAt')
     ..aOS(7, _omitFieldNames ? '' : 'updatedAt')
+    ..aInt64(8, _omitFieldNames ? '' : 'shopId')
+    ..aOS(9, _omitFieldNames ? '' : 'shopName')
     ..hasRequiredFields = false
   ;
 
@@ -6476,6 +6486,24 @@ class OwnAccess extends $pb.GeneratedMessage {
   $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(7)
   void clearUpdatedAt() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get shopId => $_getI64(7);
+  @$pb.TagNumber(8)
+  set shopId($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasShopId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearShopId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get shopName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set shopName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasShopName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearShopName() => clearField(9);
 }
 
 class OwnAccessHeader extends $pb.GeneratedMessage {

@@ -1319,6 +1319,8 @@ const OwnAccess$json = {
     {'1': 'type', '3': 5, '4': 1, '5': 9, '10': 'type'},
     {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'updated_at', '3': 7, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'shop_id', '3': 8, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'shop_name', '3': 9, '4': 1, '5': 9, '10': 'shopName'},
   ],
 };
 
@@ -1327,7 +1329,8 @@ final $typed_data.Uint8List ownAccessDescriptor = $convert.base64Decode(
     'CglPd25BY2Nlc3MSDgoCaWQYASABKANSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEbG9nbx'
     'gDIAEoCVIEbG9nbxIWCgZyZW1hcmsYBCABKAlSBnJlbWFyaxISCgR0eXBlGAUgASgJUgR0eXBl'
     'Eh0KCmNyZWF0ZWRfYXQYBiABKAlSCWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GAcgASgJUgl1cG'
-    'RhdGVkQXQ=');
+    'RhdGVkQXQSFwoHc2hvcF9pZBgIIAEoA1IGc2hvcElkEhsKCXNob3BfbmFtZRgJIAEoCVIIc2hv'
+    'cE5hbWU=');
 
 @$core.Deprecated('Use ownAccessHeaderDescriptor instead')
 const OwnAccessHeader$json = {

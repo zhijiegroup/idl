@@ -92,4 +92,22 @@ public interface OwnAccessOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
+
+  /**
+   * <code>int64 shop_id = 8;</code>
+   * @return The shopId.
+   */
+  long getShopId();
+
+  /**
+   * <code>string shop_name = 9;</code>
+   * @return The shopName.
+   */
+  java.lang.String getShopName();
+  /**
+   * <code>string shop_name = 9;</code>
+   * @return The bytes for shopName.
+   */
+  com.google.protobuf.ByteString
+      getShopNameBytes();
 }
