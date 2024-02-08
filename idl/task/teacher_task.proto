@@ -159,6 +159,7 @@ message CountTeacherTaskRequest {
   repeated int64 class_id = 3;
   string begin_date = 4;
   string end_date = 5;
+  base.PaginationRequest pagination = 100;
 }
 
 message CountClassSubmitResponse {
@@ -178,6 +179,6 @@ message CountPotentialListResponse {
 
 message CountSubmitListResponse {
   base.BaseResponse base_resp = 1;
-  repeated StudentSubmitCount potential_list = 4; // 学生任务提交统计
+  repeated StudentSubmitCount list = 2; // 学生任务提交统计
   base.PaginationResponse pagination = 100;
 }
