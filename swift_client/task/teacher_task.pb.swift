@@ -588,7 +588,7 @@ struct GloryApi_DeleteTeacherTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_ClassTaskSubmitCount {
+struct GloryApi_ClassTaskCount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -598,6 +598,58 @@ struct GloryApi_ClassTaskSubmitCount {
   var type: String = String()
 
   var data: [Float] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ClassTaskSubmitCount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var `class`: String = String()
+
+  var task: String = String()
+
+  var classTotal: Int32 = 0
+
+  var noSubmit: Int32 = 0
+
+  var submitted: Int32 = 0
+
+  var expiry: Int32 = 0
+
+  var submitPercent: String = String()
+
+  var submitPercentValue: Float = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ClassTaskPassCount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var `class`: String = String()
+
+  var task: String = String()
+
+  var classTotal: Int32 = 0
+
+  var submitted: Int32 = 0
+
+  var passed: Int32 = 0
+
+  var noPass: Int32 = 0
+
+  var passPercent: String = String()
+
+  var passPercentValue: Float = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -712,7 +764,7 @@ struct GloryApi_CountClassSubmitResponse {
   mutating func clearBaseResp() {self._baseResp = nil}
 
   /// 班级任务提交统计
-  var classData: [GloryApi_ClassTaskSubmitCount] = []
+  var classData: [GloryApi_ClassTaskCount] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -837,6 +889,144 @@ struct GloryApi_CountPassListResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
+struct GloryApi_CountClassPassResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 班级任务通过统计
+  var classData: [GloryApi_ClassTaskCount] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_CountSuperStudentListResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 学习积极分子排行榜
+  var superList: [GloryApi_StudentPassCount] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_CountLaggingStudentListResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 学习积极分子排行榜
+  var laggingList: [GloryApi_StudentPassCount] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_CountClassSubmitListResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var list: [GloryApi_ClassTaskSubmitCount] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+struct GloryApi_CountClassPassListResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var list: [GloryApi_ClassTaskPassCount] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_TeacherTaskParameter: @unchecked Sendable {}
 extension GloryApi_TeacherTaskClass: @unchecked Sendable {}
@@ -854,7 +1044,9 @@ extension GloryApi_GetTeacherTaskProgressRequest: @unchecked Sendable {}
 extension GloryApi_GetTeacherTaskProgressResponse: @unchecked Sendable {}
 extension GloryApi_DeleteTeacherTaskRequest: @unchecked Sendable {}
 extension GloryApi_DeleteTeacherTaskResponse: @unchecked Sendable {}
+extension GloryApi_ClassTaskCount: @unchecked Sendable {}
 extension GloryApi_ClassTaskSubmitCount: @unchecked Sendable {}
+extension GloryApi_ClassTaskPassCount: @unchecked Sendable {}
 extension GloryApi_StudentSubmitCount: @unchecked Sendable {}
 extension GloryApi_StudentPassCount: @unchecked Sendable {}
 extension GloryApi_CountTeacherTaskRequest: @unchecked Sendable {}
@@ -863,6 +1055,11 @@ extension GloryApi_CountPositiveListResponse: @unchecked Sendable {}
 extension GloryApi_CountPotentialListResponse: @unchecked Sendable {}
 extension GloryApi_CountSubmitListResponse: @unchecked Sendable {}
 extension GloryApi_CountPassListResponse: @unchecked Sendable {}
+extension GloryApi_CountClassPassResponse: @unchecked Sendable {}
+extension GloryApi_CountSuperStudentListResponse: @unchecked Sendable {}
+extension GloryApi_CountLaggingStudentListResponse: @unchecked Sendable {}
+extension GloryApi_CountClassSubmitListResponse: @unchecked Sendable {}
+extension GloryApi_CountClassPassListResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1827,8 +2024,8 @@ extension GloryApi_DeleteTeacherTaskResponse: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClassTaskSubmitCount"
+extension GloryApi_ClassTaskCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ClassTaskCount"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "type"),
@@ -1862,10 +2059,158 @@ extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ClassTaskSubmitCount, rhs: GloryApi_ClassTaskSubmitCount) -> Bool {
+  static func ==(lhs: GloryApi_ClassTaskCount, rhs: GloryApi_ClassTaskCount) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.type != rhs.type {return false}
     if lhs.data != rhs.data {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ClassTaskSubmitCount"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "class"),
+    2: .same(proto: "task"),
+    3: .standard(proto: "class_total"),
+    4: .standard(proto: "no_submit"),
+    5: .same(proto: "submitted"),
+    6: .same(proto: "expiry"),
+    7: .standard(proto: "submit_percent"),
+    8: .standard(proto: "submit_percent_value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.task) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.classTotal) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.noSubmit) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.submitted) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.expiry) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.submitPercent) }()
+      case 8: try { try decoder.decodeSingularFloatField(value: &self.submitPercentValue) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.`class`.isEmpty {
+      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 1)
+    }
+    if !self.task.isEmpty {
+      try visitor.visitSingularStringField(value: self.task, fieldNumber: 2)
+    }
+    if self.classTotal != 0 {
+      try visitor.visitSingularInt32Field(value: self.classTotal, fieldNumber: 3)
+    }
+    if self.noSubmit != 0 {
+      try visitor.visitSingularInt32Field(value: self.noSubmit, fieldNumber: 4)
+    }
+    if self.submitted != 0 {
+      try visitor.visitSingularInt32Field(value: self.submitted, fieldNumber: 5)
+    }
+    if self.expiry != 0 {
+      try visitor.visitSingularInt32Field(value: self.expiry, fieldNumber: 6)
+    }
+    if !self.submitPercent.isEmpty {
+      try visitor.visitSingularStringField(value: self.submitPercent, fieldNumber: 7)
+    }
+    if self.submitPercentValue != 0 {
+      try visitor.visitSingularFloatField(value: self.submitPercentValue, fieldNumber: 8)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ClassTaskSubmitCount, rhs: GloryApi_ClassTaskSubmitCount) -> Bool {
+    if lhs.`class` != rhs.`class` {return false}
+    if lhs.task != rhs.task {return false}
+    if lhs.classTotal != rhs.classTotal {return false}
+    if lhs.noSubmit != rhs.noSubmit {return false}
+    if lhs.submitted != rhs.submitted {return false}
+    if lhs.expiry != rhs.expiry {return false}
+    if lhs.submitPercent != rhs.submitPercent {return false}
+    if lhs.submitPercentValue != rhs.submitPercentValue {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ClassTaskPassCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ClassTaskPassCount"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "class"),
+    2: .same(proto: "task"),
+    3: .standard(proto: "class_total"),
+    4: .same(proto: "submitted"),
+    5: .same(proto: "passed"),
+    6: .standard(proto: "no_pass"),
+    7: .standard(proto: "pass_percent"),
+    8: .standard(proto: "pass_percent_value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.`class`) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.task) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self.classTotal) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self.submitted) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.passed) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.noPass) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.passPercent) }()
+      case 8: try { try decoder.decodeSingularFloatField(value: &self.passPercentValue) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.`class`.isEmpty {
+      try visitor.visitSingularStringField(value: self.`class`, fieldNumber: 1)
+    }
+    if !self.task.isEmpty {
+      try visitor.visitSingularStringField(value: self.task, fieldNumber: 2)
+    }
+    if self.classTotal != 0 {
+      try visitor.visitSingularInt32Field(value: self.classTotal, fieldNumber: 3)
+    }
+    if self.submitted != 0 {
+      try visitor.visitSingularInt32Field(value: self.submitted, fieldNumber: 4)
+    }
+    if self.passed != 0 {
+      try visitor.visitSingularInt32Field(value: self.passed, fieldNumber: 5)
+    }
+    if self.noPass != 0 {
+      try visitor.visitSingularInt32Field(value: self.noPass, fieldNumber: 6)
+    }
+    if !self.passPercent.isEmpty {
+      try visitor.visitSingularStringField(value: self.passPercent, fieldNumber: 7)
+    }
+    if self.passPercentValue != 0 {
+      try visitor.visitSingularFloatField(value: self.passPercentValue, fieldNumber: 8)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ClassTaskPassCount, rhs: GloryApi_ClassTaskPassCount) -> Bool {
+    if lhs.`class` != rhs.`class` {return false}
+    if lhs.task != rhs.task {return false}
+    if lhs.classTotal != rhs.classTotal {return false}
+    if lhs.submitted != rhs.submitted {return false}
+    if lhs.passed != rhs.passed {return false}
+    if lhs.noPass != rhs.noPass {return false}
+    if lhs.passPercent != rhs.passPercent {return false}
+    if lhs.passPercentValue != rhs.passPercentValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2305,6 +2650,228 @@ extension GloryApi_CountPassListResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   static func ==(lhs: GloryApi_CountPassListResponse, rhs: GloryApi_CountPassListResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.list != rhs.list {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CountClassPassResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "class_data"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.classData.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CountClassPassResponse, rhs: GloryApi_CountClassPassResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.classData != rhs.classData {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CountSuperStudentListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CountSuperStudentListResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    3: .standard(proto: "super_list"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.superList) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.superList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.superList, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CountSuperStudentListResponse, rhs: GloryApi_CountSuperStudentListResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.superList != rhs.superList {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CountLaggingStudentListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CountLaggingStudentListResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    3: .standard(proto: "lagging_list"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.laggingList) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.laggingList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.laggingList, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CountLaggingStudentListResponse, rhs: GloryApi_CountLaggingStudentListResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.laggingList != rhs.laggingList {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CountClassSubmitListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CountClassSubmitListResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.list) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.list.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.list, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CountClassSubmitListResponse, rhs: GloryApi_CountClassSubmitListResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.list != rhs.list {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_CountClassPassListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CountClassPassListResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.list) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.list.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.list, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_CountClassPassListResponse, rhs: GloryApi_CountClassPassListResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.list != rhs.list {return false}
     if lhs._pagination != rhs._pagination {return false}

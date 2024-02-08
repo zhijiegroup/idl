@@ -2940,6 +2940,14 @@ export class glory_api {
     );
   }
 
+  CountClassSubmitList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_class_submit_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CountPositiveList(request) {
     const uri = `${this.uriPrefix}/api/task/count_positive_list`;
     const body = JSONbigint.stringify(request);
@@ -2958,6 +2966,38 @@ export class glory_api {
 
   CountSubmitList(request) {
     const uri = `${this.uriPrefix}/api/task/count_submit_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountClassPass(request) {
+    const uri = `${this.uriPrefix}/api/task/count_class_pass`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountClassPassList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_class_pass_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountSuperStudentList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_super_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountLaggingStudentList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_lagging_list`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

@@ -320,9 +320,9 @@ final $typed_data.Uint8List deleteTeacherTaskResponseDescriptor = $convert.base6
     'ChlEZWxldGVUZWFjaGVyVGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
-@$core.Deprecated('Use classTaskSubmitCountDescriptor instead')
-const ClassTaskSubmitCount$json = {
-  '1': 'ClassTaskSubmitCount',
+@$core.Deprecated('Use classTaskCountDescriptor instead')
+const ClassTaskCount$json = {
+  '1': 'ClassTaskCount',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
@@ -330,10 +330,56 @@ const ClassTaskSubmitCount$json = {
   ],
 };
 
+/// Descriptor for `ClassTaskCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List classTaskCountDescriptor = $convert.base64Decode(
+    'Cg5DbGFzc1Rhc2tDb3VudBISCgRuYW1lGAEgASgJUgRuYW1lEhIKBHR5cGUYAiABKAlSBHR5cG'
+    'USEgoEZGF0YRgDIAMoAlIEZGF0YQ==');
+
+@$core.Deprecated('Use classTaskSubmitCountDescriptor instead')
+const ClassTaskSubmitCount$json = {
+  '1': 'ClassTaskSubmitCount',
+  '2': [
+    {'1': 'class', '3': 1, '4': 1, '5': 9, '10': 'class'},
+    {'1': 'task', '3': 2, '4': 1, '5': 9, '10': 'task'},
+    {'1': 'class_total', '3': 3, '4': 1, '5': 5, '10': 'classTotal'},
+    {'1': 'no_submit', '3': 4, '4': 1, '5': 5, '10': 'noSubmit'},
+    {'1': 'submitted', '3': 5, '4': 1, '5': 5, '10': 'submitted'},
+    {'1': 'expiry', '3': 6, '4': 1, '5': 5, '10': 'expiry'},
+    {'1': 'submit_percent', '3': 7, '4': 1, '5': 9, '10': 'submitPercent'},
+    {'1': 'submit_percent_value', '3': 8, '4': 1, '5': 2, '10': 'submitPercentValue'},
+  ],
+};
+
 /// Descriptor for `ClassTaskSubmitCount`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List classTaskSubmitCountDescriptor = $convert.base64Decode(
-    'ChRDbGFzc1Rhc2tTdWJtaXRDb3VudBISCgRuYW1lGAEgASgJUgRuYW1lEhIKBHR5cGUYAiABKA'
-    'lSBHR5cGUSEgoEZGF0YRgDIAMoAlIEZGF0YQ==');
+    'ChRDbGFzc1Rhc2tTdWJtaXRDb3VudBIUCgVjbGFzcxgBIAEoCVIFY2xhc3MSEgoEdGFzaxgCIA'
+    'EoCVIEdGFzaxIfCgtjbGFzc190b3RhbBgDIAEoBVIKY2xhc3NUb3RhbBIbCglub19zdWJtaXQY'
+    'BCABKAVSCG5vU3VibWl0EhwKCXN1Ym1pdHRlZBgFIAEoBVIJc3VibWl0dGVkEhYKBmV4cGlyeR'
+    'gGIAEoBVIGZXhwaXJ5EiUKDnN1Ym1pdF9wZXJjZW50GAcgASgJUg1zdWJtaXRQZXJjZW50EjAK'
+    'FHN1Ym1pdF9wZXJjZW50X3ZhbHVlGAggASgCUhJzdWJtaXRQZXJjZW50VmFsdWU=');
+
+@$core.Deprecated('Use classTaskPassCountDescriptor instead')
+const ClassTaskPassCount$json = {
+  '1': 'ClassTaskPassCount',
+  '2': [
+    {'1': 'class', '3': 1, '4': 1, '5': 9, '10': 'class'},
+    {'1': 'task', '3': 2, '4': 1, '5': 9, '10': 'task'},
+    {'1': 'class_total', '3': 3, '4': 1, '5': 5, '10': 'classTotal'},
+    {'1': 'submitted', '3': 4, '4': 1, '5': 5, '10': 'submitted'},
+    {'1': 'passed', '3': 5, '4': 1, '5': 5, '10': 'passed'},
+    {'1': 'no_pass', '3': 6, '4': 1, '5': 5, '10': 'noPass'},
+    {'1': 'pass_percent', '3': 7, '4': 1, '5': 9, '10': 'passPercent'},
+    {'1': 'pass_percent_value', '3': 8, '4': 1, '5': 2, '10': 'passPercentValue'},
+  ],
+};
+
+/// Descriptor for `ClassTaskPassCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List classTaskPassCountDescriptor = $convert.base64Decode(
+    'ChJDbGFzc1Rhc2tQYXNzQ291bnQSFAoFY2xhc3MYASABKAlSBWNsYXNzEhIKBHRhc2sYAiABKA'
+    'lSBHRhc2sSHwoLY2xhc3NfdG90YWwYAyABKAVSCmNsYXNzVG90YWwSHAoJc3VibWl0dGVkGAQg'
+    'ASgFUglzdWJtaXR0ZWQSFgoGcGFzc2VkGAUgASgFUgZwYXNzZWQSFwoHbm9fcGFzcxgGIAEoBV'
+    'IGbm9QYXNzEiEKDHBhc3NfcGVyY2VudBgHIAEoCVILcGFzc1BlcmNlbnQSLAoScGFzc19wZXJj'
+    'ZW50X3ZhbHVlGAggASgCUhBwYXNzUGVyY2VudFZhbHVl');
 
 @$core.Deprecated('Use studentSubmitCountDescriptor instead')
 const StudentSubmitCount$json = {
@@ -409,15 +455,15 @@ const CountClassSubmitResponse$json = {
   '1': 'CountClassSubmitResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'class_data', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ClassTaskSubmitCount', '10': 'classData'},
+    {'1': 'class_data', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
   ],
 };
 
 /// Descriptor for `CountClassSubmitResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countClassSubmitResponseDescriptor = $convert.base64Decode(
     'ChhDb3VudENsYXNzU3VibWl0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
-    'NlUmVzcG9uc2VSCGJhc2VSZXNwEj4KCmNsYXNzX2RhdGEYAiADKAsyHy5nbG9yeV9hcGkuQ2xh'
-    'c3NUYXNrU3VibWl0Q291bnRSCWNsYXNzRGF0YQ==');
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjgKCmNsYXNzX2RhdGEYAiADKAsyGS5nbG9yeV9hcGkuQ2xh'
+    'c3NUYXNrQ291bnRSCWNsYXNzRGF0YQ==');
 
 @$core.Deprecated('Use countPositiveListResponseDescriptor instead')
 const CountPositiveListResponse$json = {
@@ -482,4 +528,83 @@ final $typed_data.Uint8List countPassListResponseDescriptor = $convert.base64Dec
     'VzcG9uc2VSCGJhc2VSZXNwEi8KBGxpc3QYAiADKAsyGy5nbG9yeV9hcGkuU3R1ZGVudFBhc3ND'
     'b3VudFIEbGlzdBI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW9uUmVzcG9uc2'
     'VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use countClassPassResponseDescriptor instead')
+const CountClassPassResponse$json = {
+  '1': 'CountClassPassResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'class_data', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
+  ],
+};
+
+/// Descriptor for `CountClassPassResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countClassPassResponseDescriptor = $convert.base64Decode(
+    'ChZDb3VudENsYXNzUGFzc1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
+    'Jlc3BvbnNlUghiYXNlUmVzcBI4CgpjbGFzc19kYXRhGAIgAygLMhkuZ2xvcnlfYXBpLkNsYXNz'
+    'VGFza0NvdW50UgljbGFzc0RhdGE=');
+
+@$core.Deprecated('Use countSuperStudentListResponseDescriptor instead')
+const CountSuperStudentListResponse$json = {
+  '1': 'CountSuperStudentListResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'super_list', '3': 3, '4': 3, '5': 11, '6': '.glory_api.StudentPassCount', '10': 'superList'},
+  ],
+};
+
+/// Descriptor for `CountSuperStudentListResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countSuperStudentListResponseDescriptor = $convert.base64Decode(
+    'Ch1Db3VudFN1cGVyU3R1ZGVudExpc3RSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASOgoKc3VwZXJfbGlzdBgDIAMoCzIbLmdsb3J5X2Fw'
+    'aS5TdHVkZW50UGFzc0NvdW50UglzdXBlckxpc3Q=');
+
+@$core.Deprecated('Use countLaggingStudentListResponseDescriptor instead')
+const CountLaggingStudentListResponse$json = {
+  '1': 'CountLaggingStudentListResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'lagging_list', '3': 3, '4': 3, '5': 11, '6': '.glory_api.StudentPassCount', '10': 'laggingList'},
+  ],
+};
+
+/// Descriptor for `CountLaggingStudentListResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countLaggingStudentListResponseDescriptor = $convert.base64Decode(
+    'Ch9Db3VudExhZ2dpbmdTdHVkZW50TGlzdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLm'
+    'Jhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBI+CgxsYWdnaW5nX2xpc3QYAyADKAsyGy5nbG9y'
+    'eV9hcGkuU3R1ZGVudFBhc3NDb3VudFILbGFnZ2luZ0xpc3Q=');
+
+@$core.Deprecated('Use countClassSubmitListResponseDescriptor instead')
+const CountClassSubmitListResponse$json = {
+  '1': 'CountClassSubmitListResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ClassTaskSubmitCount', '10': 'list'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `CountClassSubmitListResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countClassSubmitListResponseDescriptor = $convert.base64Decode(
+    'ChxDb3VudENsYXNzU3VibWl0TGlzdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIzCgRsaXN0GAIgAygLMh8uZ2xvcnlfYXBpLkNsYXNz'
+    'VGFza1N1Ym1pdENvdW50UgRsaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYX'
+    'Rpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use countClassPassListResponseDescriptor instead')
+const CountClassPassListResponse$json = {
+  '1': 'CountClassPassListResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ClassTaskPassCount', '10': 'list'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `CountClassPassListResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countClassPassListResponseDescriptor = $convert.base64Decode(
+    'ChpDb3VudENsYXNzUGFzc0xpc3RSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASMQoEbGlzdBgCIAMoCzIdLmdsb3J5X2FwaS5DbGFzc1Rh'
+    'c2tQYXNzQ291bnRSBGxpc3QSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvbl'
+    'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
 

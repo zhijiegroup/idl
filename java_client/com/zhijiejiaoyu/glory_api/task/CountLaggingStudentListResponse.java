@@ -4,26 +4,26 @@
 package com.zhijiejiaoyu.glory_api.task;
 
 /**
- * Protobuf type {@code glory_api.CountClassSubmitResponse}
+ * Protobuf type {@code glory_api.CountLaggingStudentListResponse}
  */
-public final class CountClassSubmitResponse extends
+public final class CountLaggingStudentListResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.CountClassSubmitResponse)
-    CountClassSubmitResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.CountLaggingStudentListResponse)
+    CountLaggingStudentListResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CountClassSubmitResponse.newBuilder() to construct.
-  private CountClassSubmitResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CountLaggingStudentListResponse.newBuilder() to construct.
+  private CountLaggingStudentListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CountClassSubmitResponse() {
-    classData = java.util.Collections.emptyList();
+  private CountLaggingStudentListResponse() {
+    laggingList = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CountClassSubmitResponse();
+    return new CountLaggingStudentListResponse();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CountClassSubmitResponse(
+  private CountLaggingStudentListResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -63,13 +63,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>();
+              laggingList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentPassCount>();
               mutable_bitField0_ |= 0x00000001;
             }
-            classData .add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.task.ClassTaskCount.parser(), extensionRegistry));
+            laggingList .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentPassCount.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        classData = java.util.Collections.unmodifiableList(classData );
+        laggingList = java.util.Collections.unmodifiableList(laggingList );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -96,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountLaggingStudentListResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountLaggingStudentListResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.class, com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -133,64 +133,64 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int CLASS_DATA_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData ;
+  public static final int LAGGING_LIST_FIELD_NUMBER = 3;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> laggingList ;
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
-    return classData ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> getLaggingListList() {
+    return laggingList ;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-      getClassDataOrBuilderList() {
-    return classData ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+      getLaggingListOrBuilderList() {
+    return laggingList ;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
    */
   @java.lang.Override
-  public int getClassDataCount() {
-    return classData .size();
+  public int getLaggingListCount() {
+    return laggingList .size();
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
-    return classData .get(index);
+  public com.zhijiejiaoyu.glory_api.task.StudentPassCount getLaggingList(int index) {
+    return laggingList .get(index);
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
+  public com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder getLaggingListOrBuilder(
       int index) {
-    return classData .get(index);
+    return laggingList .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -210,8 +210,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < classData .size(); i++) {
-      output.writeMessage(2, classData .get(i));
+    for (int i = 0; i < laggingList .size(); i++) {
+      output.writeMessage(3, laggingList .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -226,9 +226,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < classData .size(); i++) {
+    for (int i = 0; i < laggingList .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, classData .get(i));
+        .computeMessageSize(3, laggingList .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -240,18 +240,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) obj;
+    com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse other = (com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getClassDataList()
-        .equals(other.getClassDataList())) return false;
+    if (!getLaggingListList()
+        .equals(other.getLaggingListList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,78 +267,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (getClassDataCount() > 0) {
-      hash = (37 * hash) + CLASS_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getClassDataList().hashCode();
+    if (getLaggingListCount() > 0) {
+      hash = (37 * hash) + LAGGING_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + getLaggingListList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -367,26 +367,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.CountClassSubmitResponse}
+   * Protobuf type {@code glory_api.CountLaggingStudentListResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.CountClassSubmitResponse)
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.CountLaggingStudentListResponse)
+      com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountLaggingStudentListResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountLaggingStudentListResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.class, com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -399,7 +399,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getClassDataFieldBuilder();
+        getLaggingListFieldBuilder();
       }
     }
     @java.lang.Override
@@ -411,11 +411,11 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      if (classDataBuilder == null) {
-        classData = java.util.Collections.emptyList();
+      if (laggingListBuilder == null) {
+        laggingList = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        classDataBuilder .clear();
+        laggingListBuilder .clear();
       }
       return this;
     }
@@ -423,17 +423,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountLaggingStudentListResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse build() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse build() {
+      com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -441,22 +441,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse(this);
+    public com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse result = new com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse(this);
       int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      if (classDataBuilder == null) {
+      if (laggingListBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          classData = java.util.Collections.unmodifiableList(classData );
+          laggingList = java.util.Collections.unmodifiableList(laggingList );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.classData = classData ;
+        result.laggingList = laggingList ;
       } else {
-        result.classData = classDataBuilder .build();
+        result.laggingList = laggingListBuilder .build();
       }
       onBuilt();
       return result;
@@ -496,42 +496,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (classDataBuilder == null) {
-        if (!other.classData .isEmpty()) {
-          if (classData .isEmpty()) {
-            classData = other.classData ;
+      if (laggingListBuilder == null) {
+        if (!other.laggingList .isEmpty()) {
+          if (laggingList .isEmpty()) {
+            laggingList = other.laggingList ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureClassDataIsMutable();
-            classData .addAll(other.classData );
+            ensureLaggingListIsMutable();
+            laggingList .addAll(other.laggingList );
           }
           onChanged();
         }
       } else {
-        if (!other.classData .isEmpty()) {
-          if (classDataBuilder .isEmpty()) {
-            classDataBuilder .dispose();
-            classDataBuilder = null;
-            classData = other.classData ;
+        if (!other.laggingList .isEmpty()) {
+          if (laggingListBuilder .isEmpty()) {
+            laggingListBuilder .dispose();
+            laggingListBuilder = null;
+            laggingList = other.laggingList ;
             bitField0 = (bitField0 & ~0x00000001);
-            classDataBuilder = 
+            laggingListBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getClassDataFieldBuilder() : null;
+                 getLaggingListFieldBuilder() : null;
           } else {
-            classDataBuilder .addAllMessages(other.classData );
+            laggingListBuilder .addAllMessages(other.laggingList );
           }
         }
       }
@@ -550,11 +550,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -684,316 +684,316 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData =
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> laggingList =
       java.util.Collections.emptyList();
-    private void ensureClassDataIsMutable() {
+    private void ensureLaggingListIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>(classData );
+        laggingList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentPassCount>(laggingList );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> classDataBuilder ;
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> laggingListBuilder ;
 
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
-      if (classDataBuilder == null) {
-        return java.util.Collections.unmodifiableList(classData );
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> getLaggingListList() {
+      if (laggingListBuilder == null) {
+        return java.util.Collections.unmodifiableList(laggingList );
       } else {
-        return classDataBuilder .getMessageList();
+        return laggingListBuilder .getMessageList();
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public int getClassDataCount() {
-      if (classDataBuilder == null) {
-        return classData .size();
+    public int getLaggingListCount() {
+      if (laggingListBuilder == null) {
+        return laggingList .size();
       } else {
-        return classDataBuilder .getCount();
+        return laggingListBuilder .getCount();
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
-      if (classDataBuilder == null) {
-        return classData .get(index);
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount getLaggingList(int index) {
+      if (laggingListBuilder == null) {
+        return laggingList .get(index);
       } else {
-        return classDataBuilder .getMessage(index);
+        return laggingListBuilder .getMessage(index);
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder setClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder setLaggingList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (laggingListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .set(index, value);
+        ensureLaggingListIsMutable();
+        laggingList .set(index, value);
         onChanged();
       } else {
-        classDataBuilder .setMessage(index, value);
+        laggingListBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder setClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .set(index, builderForValue.build());
+    public Builder setLaggingList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (laggingListBuilder == null) {
+        ensureLaggingListIsMutable();
+        laggingList .set(index, builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .setMessage(index, builderForValue.build());
+        laggingListBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder addClassData(com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder addLaggingList(com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (laggingListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .add(value);
+        ensureLaggingListIsMutable();
+        laggingList .add(value);
         onChanged();
       } else {
-        classDataBuilder .addMessage(value);
+        laggingListBuilder .addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder addClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder addLaggingList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (laggingListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .add(index, value);
+        ensureLaggingListIsMutable();
+        laggingList .add(index, value);
         onChanged();
       } else {
-        classDataBuilder .addMessage(index, value);
+        laggingListBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder addClassData(
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .add(builderForValue.build());
+    public Builder addLaggingList(
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (laggingListBuilder == null) {
+        ensureLaggingListIsMutable();
+        laggingList .add(builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .addMessage(builderForValue.build());
+        laggingListBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder addClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .add(index, builderForValue.build());
+    public Builder addLaggingList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (laggingListBuilder == null) {
+        ensureLaggingListIsMutable();
+        laggingList .add(index, builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .addMessage(index, builderForValue.build());
+        laggingListBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder addAllClassData(
-        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCount> values) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
+    public Builder addAllLaggingList(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCount> values) {
+      if (laggingListBuilder == null) {
+        ensureLaggingListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, classData );
+            values, laggingList );
         onChanged();
       } else {
-        classDataBuilder .addAllMessages(values);
+        laggingListBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder clearClassData() {
-      if (classDataBuilder == null) {
-        classData = java.util.Collections.emptyList();
+    public Builder clearLaggingList() {
+      if (laggingListBuilder == null) {
+        laggingList = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        classDataBuilder .clear();
+        laggingListBuilder .clear();
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public Builder removeClassData(int index) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .remove(index);
+    public Builder removeLaggingList(int index) {
+      if (laggingListBuilder == null) {
+        ensureLaggingListIsMutable();
+        laggingList .remove(index);
         onChanged();
       } else {
-        classDataBuilder .remove(index);
+        laggingListBuilder .remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder getClassDataBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder getLaggingListBuilder(
         int index) {
-      return getClassDataFieldBuilder().getBuilder(index);
+      return getLaggingListFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder getLaggingListOrBuilder(
         int index) {
-      if (classDataBuilder == null) {
-        return classData .get(index);  } else {
-        return classDataBuilder .getMessageOrBuilder(index);
+      if (laggingListBuilder == null) {
+        return laggingList .get(index);  } else {
+        return laggingListBuilder .getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-         getClassDataOrBuilderList() {
-      if (classDataBuilder != null) {
-        return classDataBuilder .getMessageOrBuilderList();
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+         getLaggingListOrBuilderList() {
+      if (laggingListBuilder != null) {
+        return laggingListBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(classData );
+        return java.util.Collections.unmodifiableList(laggingList );
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder() {
-      return getClassDataFieldBuilder().addBuilder(
-          com.zhijiejiaoyu.glory_api.task.ClassTaskCount.getDefaultInstance());
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder addLaggingListBuilder() {
+      return getLaggingListFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentPassCount.getDefaultInstance());
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder addLaggingListBuilder(
         int index) {
-      return getClassDataFieldBuilder().addBuilder(
-          index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.getDefaultInstance());
+      return getLaggingListFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.getDefaultInstance());
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount lagging_list = 3;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder> 
-         getClassDataBuilderList() {
-      return getClassDataFieldBuilder().getBuilderList();
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder> 
+         getLaggingListBuilderList() {
+      return getLaggingListFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-        getClassDataFieldBuilder() {
-      if (classDataBuilder == null) {
-        classDataBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder>(
-                classData ,
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+        getLaggingListFieldBuilder() {
+      if (laggingListBuilder == null) {
+        laggingListBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder>(
+                laggingList ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        classData = null;
+        laggingList = null;
       }
-      return classDataBuilder ;
+      return laggingListBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1008,41 +1008,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.CountClassSubmitResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.CountLaggingStudentListResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.CountClassSubmitResponse)
-  private static final com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.CountLaggingStudentListResponse)
+  private static final com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CountClassSubmitResponse>
-      PARSER = new com.google.protobuf.AbstractParser<CountClassSubmitResponse>() {
+  private static final com.google.protobuf.Parser<CountLaggingStudentListResponse>
+      PARSER = new com.google.protobuf.AbstractParser<CountLaggingStudentListResponse>() {
     @java.lang.Override
-    public CountClassSubmitResponse parsePartialFrom(
+    public CountLaggingStudentListResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CountClassSubmitResponse(input, extensionRegistry);
+      return new CountLaggingStudentListResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CountClassSubmitResponse> parser() {
+  public static com.google.protobuf.Parser<CountLaggingStudentListResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CountClassSubmitResponse> getParserForType() {
+  public com.google.protobuf.Parser<CountLaggingStudentListResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.task.CountLaggingStudentListResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

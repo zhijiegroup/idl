@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.task;
 
-public interface CountClassSubmitResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.CountClassSubmitResponse)
+public interface CountClassPassResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.CountClassPassResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -24,7 +24,7 @@ public interface CountClassSubmitResponseOrBuilder extends
 
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -33,7 +33,7 @@ public interface CountClassSubmitResponseOrBuilder extends
       getClassDataList();
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -41,7 +41,7 @@ public interface CountClassSubmitResponseOrBuilder extends
   com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index);
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -49,7 +49,7 @@ public interface CountClassSubmitResponseOrBuilder extends
   int getClassDataCount();
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -58,7 +58,7 @@ public interface CountClassSubmitResponseOrBuilder extends
       getClassDataOrBuilderList();
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>

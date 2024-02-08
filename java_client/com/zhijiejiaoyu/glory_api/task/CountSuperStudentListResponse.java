@@ -4,26 +4,26 @@
 package com.zhijiejiaoyu.glory_api.task;
 
 /**
- * Protobuf type {@code glory_api.CountClassSubmitResponse}
+ * Protobuf type {@code glory_api.CountSuperStudentListResponse}
  */
-public final class CountClassSubmitResponse extends
+public final class CountSuperStudentListResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.CountClassSubmitResponse)
-    CountClassSubmitResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.CountSuperStudentListResponse)
+    CountSuperStudentListResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CountClassSubmitResponse.newBuilder() to construct.
-  private CountClassSubmitResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CountSuperStudentListResponse.newBuilder() to construct.
+  private CountSuperStudentListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CountClassSubmitResponse() {
-    classData = java.util.Collections.emptyList();
+  private CountSuperStudentListResponse() {
+    superList = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CountClassSubmitResponse();
+    return new CountSuperStudentListResponse();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CountClassSubmitResponse(
+  private CountSuperStudentListResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -63,13 +63,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>();
+              superList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentPassCount>();
               mutable_bitField0_ |= 0x00000001;
             }
-            classData .add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.task.ClassTaskCount.parser(), extensionRegistry));
+            superList .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.StudentPassCount.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        classData = java.util.Collections.unmodifiableList(classData );
+        superList = java.util.Collections.unmodifiableList(superList );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -96,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountSuperStudentListResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountSuperStudentListResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.class, com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -133,64 +133,64 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int CLASS_DATA_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData ;
+  public static final int SUPER_LIST_FIELD_NUMBER = 3;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> superList ;
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
-    return classData ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> getSuperListList() {
+    return superList ;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-      getClassDataOrBuilderList() {
-    return classData ;
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+      getSuperListOrBuilderList() {
+    return superList ;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
    */
   @java.lang.Override
-  public int getClassDataCount() {
-    return classData .size();
+  public int getSuperListCount() {
+    return superList .size();
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
-    return classData .get(index);
+  public com.zhijiejiaoyu.glory_api.task.StudentPassCount getSuperList(int index) {
+    return superList .get(index);
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 学习积极分子排行榜
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+   * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
+  public com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder getSuperListOrBuilder(
       int index) {
-    return classData .get(index);
+    return superList .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -210,8 +210,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < classData .size(); i++) {
-      output.writeMessage(2, classData .get(i));
+    for (int i = 0; i < superList .size(); i++) {
+      output.writeMessage(3, superList .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -226,9 +226,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    for (int i = 0; i < classData .size(); i++) {
+    for (int i = 0; i < superList .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, classData .get(i));
+        .computeMessageSize(3, superList .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -240,18 +240,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) obj;
+    com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse other = (com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getClassDataList()
-        .equals(other.getClassDataList())) return false;
+    if (!getSuperListList()
+        .equals(other.getSuperListList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,78 +267,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (getClassDataCount() > 0) {
-      hash = (37 * hash) + CLASS_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getClassDataList().hashCode();
+    if (getSuperListCount() > 0) {
+      hash = (37 * hash) + SUPER_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + getSuperListList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -367,26 +367,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.CountClassSubmitResponse}
+   * Protobuf type {@code glory_api.CountSuperStudentListResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.CountClassSubmitResponse)
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.CountSuperStudentListResponse)
+      com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountSuperStudentListResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountSuperStudentListResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.class, com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -399,7 +399,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getClassDataFieldBuilder();
+        getSuperListFieldBuilder();
       }
     }
     @java.lang.Override
@@ -411,11 +411,11 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      if (classDataBuilder == null) {
-        classData = java.util.Collections.emptyList();
+      if (superListBuilder == null) {
+        superList = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
       } else {
-        classDataBuilder .clear();
+        superListBuilder .clear();
       }
       return this;
     }
@@ -423,17 +423,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountSuperStudentListResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse build() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse build() {
+      com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -441,22 +441,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse(this);
+    public com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse result = new com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse(this);
       int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      if (classDataBuilder == null) {
+      if (superListBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
-          classData = java.util.Collections.unmodifiableList(classData );
+          superList = java.util.Collections.unmodifiableList(superList );
           bitField0 = (bitField0 & ~0x00000001);
         }
-        result.classData = classData ;
+        result.superList = superList ;
       } else {
-        result.classData = classDataBuilder .build();
+        result.superList = superListBuilder .build();
       }
       onBuilt();
       return result;
@@ -496,42 +496,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (classDataBuilder == null) {
-        if (!other.classData .isEmpty()) {
-          if (classData .isEmpty()) {
-            classData = other.classData ;
+      if (superListBuilder == null) {
+        if (!other.superList .isEmpty()) {
+          if (superList .isEmpty()) {
+            superList = other.superList ;
             bitField0 = (bitField0 & ~0x00000001);
           } else {
-            ensureClassDataIsMutable();
-            classData .addAll(other.classData );
+            ensureSuperListIsMutable();
+            superList .addAll(other.superList );
           }
           onChanged();
         }
       } else {
-        if (!other.classData .isEmpty()) {
-          if (classDataBuilder .isEmpty()) {
-            classDataBuilder .dispose();
-            classDataBuilder = null;
-            classData = other.classData ;
+        if (!other.superList .isEmpty()) {
+          if (superListBuilder .isEmpty()) {
+            superListBuilder .dispose();
+            superListBuilder = null;
+            superList = other.superList ;
             bitField0 = (bitField0 & ~0x00000001);
-            classDataBuilder = 
+            superListBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getClassDataFieldBuilder() : null;
+                 getSuperListFieldBuilder() : null;
           } else {
-            classDataBuilder .addAllMessages(other.classData );
+            superListBuilder .addAllMessages(other.superList );
           }
         }
       }
@@ -550,11 +550,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -684,316 +684,316 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData =
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> superList =
       java.util.Collections.emptyList();
-    private void ensureClassDataIsMutable() {
+    private void ensureSuperListIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>(classData );
+        superList = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.StudentPassCount>(superList );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> classDataBuilder ;
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> superListBuilder ;
 
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
-      if (classDataBuilder == null) {
-        return java.util.Collections.unmodifiableList(classData );
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount> getSuperListList() {
+      if (superListBuilder == null) {
+        return java.util.Collections.unmodifiableList(superList );
       } else {
-        return classDataBuilder .getMessageList();
+        return superListBuilder .getMessageList();
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public int getClassDataCount() {
-      if (classDataBuilder == null) {
-        return classData .size();
+    public int getSuperListCount() {
+      if (superListBuilder == null) {
+        return superList .size();
       } else {
-        return classDataBuilder .getCount();
+        return superListBuilder .getCount();
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
-      if (classDataBuilder == null) {
-        return classData .get(index);
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount getSuperList(int index) {
+      if (superListBuilder == null) {
+        return superList .get(index);
       } else {
-        return classDataBuilder .getMessage(index);
+        return superListBuilder .getMessage(index);
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder setClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder setSuperList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (superListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .set(index, value);
+        ensureSuperListIsMutable();
+        superList .set(index, value);
         onChanged();
       } else {
-        classDataBuilder .setMessage(index, value);
+        superListBuilder .setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder setClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .set(index, builderForValue.build());
+    public Builder setSuperList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (superListBuilder == null) {
+        ensureSuperListIsMutable();
+        superList .set(index, builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .setMessage(index, builderForValue.build());
+        superListBuilder .setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder addClassData(com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder addSuperList(com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (superListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .add(value);
+        ensureSuperListIsMutable();
+        superList .add(value);
         onChanged();
       } else {
-        classDataBuilder .addMessage(value);
+        superListBuilder .addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder addClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
-      if (classDataBuilder == null) {
+    public Builder addSuperList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount value) {
+      if (superListBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureClassDataIsMutable();
-        classData .add(index, value);
+        ensureSuperListIsMutable();
+        superList .add(index, value);
         onChanged();
       } else {
-        classDataBuilder .addMessage(index, value);
+        superListBuilder .addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder addClassData(
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .add(builderForValue.build());
+    public Builder addSuperList(
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (superListBuilder == null) {
+        ensureSuperListIsMutable();
+        superList .add(builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .addMessage(builderForValue.build());
+        superListBuilder .addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder addClassData(
-        int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .add(index, builderForValue.build());
+    public Builder addSuperList(
+        int index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder builderForValue) {
+      if (superListBuilder == null) {
+        ensureSuperListIsMutable();
+        superList .add(index, builderForValue.build());
         onChanged();
       } else {
-        classDataBuilder .addMessage(index, builderForValue.build());
+        superListBuilder .addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder addAllClassData(
-        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCount> values) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
+    public Builder addAllSuperList(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCount> values) {
+      if (superListBuilder == null) {
+        ensureSuperListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, classData );
+            values, superList );
         onChanged();
       } else {
-        classDataBuilder .addAllMessages(values);
+        superListBuilder .addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder clearClassData() {
-      if (classDataBuilder == null) {
-        classData = java.util.Collections.emptyList();
+    public Builder clearSuperList() {
+      if (superListBuilder == null) {
+        superList = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
         onChanged();
       } else {
-        classDataBuilder .clear();
+        superListBuilder .clear();
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public Builder removeClassData(int index) {
-      if (classDataBuilder == null) {
-        ensureClassDataIsMutable();
-        classData .remove(index);
+    public Builder removeSuperList(int index) {
+      if (superListBuilder == null) {
+        ensureSuperListIsMutable();
+        superList .remove(index);
         onChanged();
       } else {
-        classDataBuilder .remove(index);
+        superListBuilder .remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder getClassDataBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder getSuperListBuilder(
         int index) {
-      return getClassDataFieldBuilder().getBuilder(index);
+      return getSuperListFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder getSuperListOrBuilder(
         int index) {
-      if (classDataBuilder == null) {
-        return classData .get(index);  } else {
-        return classDataBuilder .getMessageOrBuilder(index);
+      if (superListBuilder == null) {
+        return superList .get(index);  } else {
+        return superListBuilder .getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-         getClassDataOrBuilderList() {
-      if (classDataBuilder != null) {
-        return classDataBuilder .getMessageOrBuilderList();
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+         getSuperListOrBuilderList() {
+      if (superListBuilder != null) {
+        return superListBuilder .getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(classData );
+        return java.util.Collections.unmodifiableList(superList );
       }
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder() {
-      return getClassDataFieldBuilder().addBuilder(
-          com.zhijiejiaoyu.glory_api.task.ClassTaskCount.getDefaultInstance());
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder addSuperListBuilder() {
+      return getSuperListFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.StudentPassCount.getDefaultInstance());
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder(
+    public com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder addSuperListBuilder(
         int index) {
-      return getClassDataFieldBuilder().addBuilder(
-          index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.getDefaultInstance());
+      return getSuperListFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.StudentPassCount.getDefaultInstance());
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 学习积极分子排行榜
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
+     * <code>repeated .glory_api.StudentPassCount super_list = 3;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder> 
-         getClassDataBuilderList() {
-      return getClassDataFieldBuilder().getBuilderList();
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder> 
+         getSuperListBuilderList() {
+      return getSuperListFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
-        getClassDataFieldBuilder() {
-      if (classDataBuilder == null) {
-        classDataBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder>(
-                classData ,
+        com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder> 
+        getSuperListFieldBuilder() {
+      if (superListBuilder == null) {
+        superListBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.StudentPassCount, com.zhijiejiaoyu.glory_api.task.StudentPassCount.Builder, com.zhijiejiaoyu.glory_api.task.StudentPassCountOrBuilder>(
+                superList ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        classData = null;
+        superList = null;
       }
-      return classDataBuilder ;
+      return superListBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1008,41 +1008,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.CountClassSubmitResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.CountSuperStudentListResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.CountClassSubmitResponse)
-  private static final com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.CountSuperStudentListResponse)
+  private static final com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CountClassSubmitResponse>
-      PARSER = new com.google.protobuf.AbstractParser<CountClassSubmitResponse>() {
+  private static final com.google.protobuf.Parser<CountSuperStudentListResponse>
+      PARSER = new com.google.protobuf.AbstractParser<CountSuperStudentListResponse>() {
     @java.lang.Override
-    public CountClassSubmitResponse parsePartialFrom(
+    public CountSuperStudentListResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CountClassSubmitResponse(input, extensionRegistry);
+      return new CountSuperStudentListResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CountClassSubmitResponse> parser() {
+  public static com.google.protobuf.Parser<CountSuperStudentListResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CountClassSubmitResponse> getParserForType() {
+  public com.google.protobuf.Parser<CountSuperStudentListResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.task.CountSuperStudentListResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -1648,6 +1648,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.CountTeacherTaskRequest
   ): Promise<teacher_task.CountClassSubmitResponse>;
 
+  CountClassSubmitList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountClassSubmitListResponse>;
+
   CountPositiveList(
     request: teacher_task.CountTeacherTaskRequest
   ): Promise<teacher_task.CountPositiveListResponse>;
@@ -1659,6 +1663,22 @@ CreateLivePlanProduct create live plan product */
   CountSubmitList(
     request: teacher_task.CountTeacherTaskRequest
   ): Promise<teacher_task.CountSubmitListResponse>;
+
+  CountClassPass(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountClassPassResponse>;
+
+  CountClassPassList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountClassPassListResponse>;
+
+  CountSuperStudentList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountSuperStudentListResponse>;
+
+  CountLaggingStudentList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountLaggingStudentListResponse>;
 
   CountPassList(
     request: teacher_task.CountTeacherTaskRequest

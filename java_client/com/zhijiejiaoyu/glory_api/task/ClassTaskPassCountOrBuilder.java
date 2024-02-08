@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.task;
 
-public interface ClassTaskSubmitCountOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.ClassTaskSubmitCount)
+public interface ClassTaskPassCountOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.ClassTaskPassCount)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -38,38 +38,38 @@ public interface ClassTaskSubmitCountOrBuilder extends
   int getClassTotal();
 
   /**
-   * <code>int32 no_submit = 4;</code>
-   * @return The noSubmit.
-   */
-  int getNoSubmit();
-
-  /**
-   * <code>int32 submitted = 5;</code>
+   * <code>int32 submitted = 4;</code>
    * @return The submitted.
    */
   int getSubmitted();
 
   /**
-   * <code>int32 expiry = 6;</code>
-   * @return The expiry.
+   * <code>int32 passed = 5;</code>
+   * @return The passed.
    */
-  int getExpiry();
+  int getPassed();
 
   /**
-   * <code>string submit_percent = 7;</code>
-   * @return The submitPercent.
+   * <code>int32 no_pass = 6;</code>
+   * @return The noPass.
    */
-  java.lang.String getSubmitPercent();
+  int getNoPass();
+
   /**
-   * <code>string submit_percent = 7;</code>
-   * @return The bytes for submitPercent.
+   * <code>string pass_percent = 7;</code>
+   * @return The passPercent.
+   */
+  java.lang.String getPassPercent();
+  /**
+   * <code>string pass_percent = 7;</code>
+   * @return The bytes for passPercent.
    */
   com.google.protobuf.ByteString
-      getSubmitPercentBytes();
+      getPassPercentBytes();
 
   /**
-   * <code>float submit_percent_value = 8;</code>
-   * @return The submitPercentValue.
+   * <code>float pass_percent_value = 8;</code>
+   * @return The passPercentValue.
    */
-  float getSubmitPercentValue();
+  float getPassPercentValue();
 }

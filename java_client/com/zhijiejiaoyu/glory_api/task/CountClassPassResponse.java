@@ -4,18 +4,18 @@
 package com.zhijiejiaoyu.glory_api.task;
 
 /**
- * Protobuf type {@code glory_api.CountClassSubmitResponse}
+ * Protobuf type {@code glory_api.CountClassPassResponse}
  */
-public final class CountClassSubmitResponse extends
+public final class CountClassPassResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.CountClassSubmitResponse)
-    CountClassSubmitResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.CountClassPassResponse)
+    CountClassPassResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CountClassSubmitResponse.newBuilder() to construct.
-  private CountClassSubmitResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CountClassPassResponse.newBuilder() to construct.
+  private CountClassPassResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CountClassSubmitResponse() {
+  private CountClassPassResponse() {
     classData = java.util.Collections.emptyList();
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CountClassSubmitResponse();
+    return new CountClassPassResponse();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CountClassSubmitResponse(
+  private CountClassPassResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -96,15 +96,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassPassResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassPassResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData ;
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -160,7 +160,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 班级任务提交统计
+   * 班级任务通过统计
    * </pre>
    *
    * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -240,10 +240,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.CountClassPassResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) obj;
+    com.zhijiejiaoyu.glory_api.task.CountClassPassResponse other = (com.zhijiejiaoyu.glory_api.task.CountClassPassResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
@@ -276,69 +276,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.CountClassPassResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -367,26 +367,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.CountClassSubmitResponse}
+   * Protobuf type {@code glory_api.CountClassPassResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.CountClassSubmitResponse)
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.CountClassPassResponse)
+      com.zhijiejiaoyu.glory_api.task.CountClassPassResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassPassResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassPassResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.class, com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -423,17 +423,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassSubmitResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_CountClassPassResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.task.CountClassPassResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse build() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.task.CountClassPassResponse build() {
+      com.zhijiejiaoyu.glory_api.task.CountClassPassResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -441,8 +441,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse result = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse(this);
+    public com.zhijiejiaoyu.glory_api.task.CountClassPassResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.task.CountClassPassResponse result = new com.zhijiejiaoyu.glory_api.task.CountClassPassResponse(this);
       int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
@@ -496,16 +496,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.task.CountClassPassResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.task.CountClassPassResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.CountClassPassResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.task.CountClassPassResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
@@ -550,11 +550,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.task.CountClassPassResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.task.CountClassPassResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -698,7 +698,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -761,7 +761,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -820,7 +820,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -875,7 +875,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -909,7 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -920,7 +920,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -949,7 +949,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -972,7 +972,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 班级任务提交统计
+     * 班级任务通过统计
      * </pre>
      *
      * <code>repeated .glory_api.ClassTaskCount class_data = 2;</code>
@@ -1008,41 +1008,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.CountClassSubmitResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.CountClassPassResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.CountClassSubmitResponse)
-  private static final com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.CountClassPassResponse)
+  private static final com.zhijiejiaoyu.glory_api.task.CountClassPassResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.CountClassPassResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.task.CountClassPassResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CountClassSubmitResponse>
-      PARSER = new com.google.protobuf.AbstractParser<CountClassSubmitResponse>() {
+  private static final com.google.protobuf.Parser<CountClassPassResponse>
+      PARSER = new com.google.protobuf.AbstractParser<CountClassPassResponse>() {
     @java.lang.Override
-    public CountClassSubmitResponse parsePartialFrom(
+    public CountClassPassResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CountClassSubmitResponse(input, extensionRegistry);
+      return new CountClassPassResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CountClassSubmitResponse> parser() {
+  public static com.google.protobuf.Parser<CountClassPassResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CountClassSubmitResponse> getParserForType() {
+  public com.google.protobuf.Parser<CountClassPassResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.task.CountClassPassResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

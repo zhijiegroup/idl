@@ -4,28 +4,28 @@
 package com.zhijiejiaoyu.glory_api.task;
 
 /**
- * Protobuf type {@code glory_api.ClassTaskSubmitCount}
+ * Protobuf type {@code glory_api.ClassTaskPassCount}
  */
-public final class ClassTaskSubmitCount extends
+public final class ClassTaskPassCount extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ClassTaskSubmitCount)
-    ClassTaskSubmitCountOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.ClassTaskPassCount)
+    ClassTaskPassCountOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ClassTaskSubmitCount.newBuilder() to construct.
-  private ClassTaskSubmitCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ClassTaskPassCount.newBuilder() to construct.
+  private ClassTaskPassCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ClassTaskSubmitCount() {
+  private ClassTaskPassCount() {
     class = "";
     task = "";
-    submitPercent = "";
+    passPercent = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ClassTaskSubmitCount();
+    return new ClassTaskPassCount();
   }
 
   @java.lang.Override
@@ -33,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ClassTaskSubmitCount(
+  private ClassTaskPassCount(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,28 +70,28 @@ private static final long serialVersionUID = 0L;
           }
           case 32: {
 
-            noSubmit = input.readInt32();
+            submitted = input.readInt32();
             break;
           }
           case 40: {
 
-            submitted = input.readInt32();
+            passed = input.readInt32();
             break;
           }
           case 48: {
 
-            expiry = input.readInt32();
+            noPass = input.readInt32();
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            submitPercent = s;
+            passPercent = s;
             break;
           }
           case 69: {
 
-            submitPercentValue = input.readFloat();
+            passPercentValue = input.readFloat();
             break;
           }
           default: {
@@ -115,15 +115,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskSubmitCount_descriptor;
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskPassCount_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskSubmitCount_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskPassCount_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.class, com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.Builder.class);
+            com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.class, com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.Builder.class);
   }
 
   public static final int CLASS_FIELD_NUMBER = 1;
@@ -213,21 +213,10 @@ private static final long serialVersionUID = 0L;
     return classTotal ;
   }
 
-  public static final int NO_SUBMIT_FIELD_NUMBER = 4;
-  private int noSubmit ;
-  /**
-   * <code>int32 no_submit = 4;</code>
-   * @return The noSubmit.
-   */
-  @java.lang.Override
-  public int getNoSubmit() {
-    return noSubmit ;
-  }
-
-  public static final int SUBMITTED_FIELD_NUMBER = 5;
+  public static final int SUBMITTED_FIELD_NUMBER = 4;
   private int submitted ;
   /**
-   * <code>int32 submitted = 5;</code>
+   * <code>int32 submitted = 4;</code>
    * @return The submitted.
    */
   @java.lang.Override
@@ -235,64 +224,75 @@ private static final long serialVersionUID = 0L;
     return submitted ;
   }
 
-  public static final int EXPIRY_FIELD_NUMBER = 6;
-  private int expiry ;
+  public static final int PASSED_FIELD_NUMBER = 5;
+  private int passed ;
   /**
-   * <code>int32 expiry = 6;</code>
-   * @return The expiry.
+   * <code>int32 passed = 5;</code>
+   * @return The passed.
    */
   @java.lang.Override
-  public int getExpiry() {
-    return expiry ;
+  public int getPassed() {
+    return passed ;
   }
 
-  public static final int SUBMIT_PERCENT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object submitPercent ;
+  public static final int NO_PASS_FIELD_NUMBER = 6;
+  private int noPass ;
   /**
-   * <code>string submit_percent = 7;</code>
-   * @return The submitPercent.
+   * <code>int32 no_pass = 6;</code>
+   * @return The noPass.
    */
   @java.lang.Override
-  public java.lang.String getSubmitPercent() {
-    java.lang.Object ref = submitPercent ;
+  public int getNoPass() {
+    return noPass ;
+  }
+
+  public static final int PASS_PERCENT_FIELD_NUMBER = 7;
+  private volatile java.lang.Object passPercent ;
+  /**
+   * <code>string pass_percent = 7;</code>
+   * @return The passPercent.
+   */
+  @java.lang.Override
+  public java.lang.String getPassPercent() {
+    java.lang.Object ref = passPercent ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      submitPercent = s;
+      passPercent = s;
       return s;
     }
   }
   /**
-   * <code>string submit_percent = 7;</code>
-   * @return The bytes for submitPercent.
+   * <code>string pass_percent = 7;</code>
+   * @return The bytes for passPercent.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getSubmitPercentBytes() {
-    java.lang.Object ref = submitPercent ;
+      getPassPercentBytes() {
+    java.lang.Object ref = passPercent ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      submitPercent = b;
+      passPercent = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int SUBMIT_PERCENT_VALUE_FIELD_NUMBER = 8;
-  private float submitPercentValue ;
+  public static final int PASS_PERCENT_VALUE_FIELD_NUMBER = 8;
+  private float passPercentValue ;
   /**
-   * <code>float submit_percent_value = 8;</code>
-   * @return The submitPercentValue.
+   * <code>float pass_percent_value = 8;</code>
+   * @return The passPercentValue.
    */
   @java.lang.Override
-  public float getSubmitPercentValue() {
-    return submitPercentValue ;
+  public float getPassPercentValue() {
+    return passPercentValue ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,20 +318,20 @@ private static final long serialVersionUID = 0L;
     if (classTotal != 0) {
       output.writeInt32(3, classTotal );
     }
-    if (noSubmit != 0) {
-      output.writeInt32(4, noSubmit );
-    }
     if (submitted != 0) {
-      output.writeInt32(5, submitted );
+      output.writeInt32(4, submitted );
     }
-    if (expiry != 0) {
-      output.writeInt32(6, expiry );
+    if (passed != 0) {
+      output.writeInt32(5, passed );
     }
-    if (!getSubmitPercentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, submitPercent );
+    if (noPass != 0) {
+      output.writeInt32(6, noPass );
     }
-    if (submitPercentValue != 0F) {
-      output.writeFloat(8, submitPercentValue );
+    if (!getPassPercentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, passPercent );
+    }
+    if (passPercentValue != 0F) {
+      output.writeFloat(8, passPercentValue );
     }
     unknownFields.writeTo(output);
   }
@@ -352,24 +352,24 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, classTotal );
     }
-    if (noSubmit != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, noSubmit );
-    }
     if (submitted != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, submitted );
+        .computeInt32Size(4, submitted );
     }
-    if (expiry != 0) {
+    if (passed != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, expiry );
+        .computeInt32Size(5, passed );
     }
-    if (!getSubmitPercentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, submitPercent );
-    }
-    if (submitPercentValue != 0F) {
+    if (noPass != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(8, submitPercentValue );
+        .computeInt32Size(6, noPass );
+    }
+    if (!getPassPercentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, passPercent );
+    }
+    if (passPercentValue != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(8, passPercentValue );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -381,10 +381,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount other = (com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount) obj;
+    com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount other = (com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount) obj;
 
     if (!getClass_()
         .equals(other.getClass_())) return false;
@@ -392,17 +392,17 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTask())) return false;
     if (getClassTotal()
         != other.getClassTotal()) return false;
-    if (getNoSubmit()
-        != other.getNoSubmit()) return false;
     if (getSubmitted()
         != other.getSubmitted()) return false;
-    if (getExpiry()
-        != other.getExpiry()) return false;
-    if (!getSubmitPercent()
-        .equals(other.getSubmitPercent())) return false;
-    if (java.lang.Float.floatToIntBits(getSubmitPercentValue())
+    if (getPassed()
+        != other.getPassed()) return false;
+    if (getNoPass()
+        != other.getNoPass()) return false;
+    if (!getPassPercent()
+        .equals(other.getPassPercent())) return false;
+    if (java.lang.Float.floatToIntBits(getPassPercentValue())
         != java.lang.Float.floatToIntBits(
-            other.getSubmitPercentValue())) return false;
+            other.getPassPercentValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -420,85 +420,85 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTask().hashCode();
     hash = (37 * hash) + CLASS_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + getClassTotal();
-    hash = (37 * hash) + NO_SUBMIT_FIELD_NUMBER;
-    hash = (53 * hash) + getNoSubmit();
     hash = (37 * hash) + SUBMITTED_FIELD_NUMBER;
     hash = (53 * hash) + getSubmitted();
-    hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
-    hash = (53 * hash) + getExpiry();
-    hash = (37 * hash) + SUBMIT_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + getSubmitPercent().hashCode();
-    hash = (37 * hash) + SUBMIT_PERCENT_VALUE_FIELD_NUMBER;
+    hash = (37 * hash) + PASSED_FIELD_NUMBER;
+    hash = (53 * hash) + getPassed();
+    hash = (37 * hash) + NO_PASS_FIELD_NUMBER;
+    hash = (53 * hash) + getNoPass();
+    hash = (37 * hash) + PASS_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + getPassPercent().hashCode();
+    hash = (37 * hash) + PASS_PERCENT_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getSubmitPercentValue());
+        getPassPercentValue());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parseFrom(
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -527,26 +527,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ClassTaskSubmitCount}
+   * Protobuf type {@code glory_api.ClassTaskPassCount}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ClassTaskSubmitCount)
-      com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCountOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.ClassTaskPassCount)
+      com.zhijiejiaoyu.glory_api.task.ClassTaskPassCountOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskSubmitCount_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskPassCount_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskSubmitCount_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskPassCount_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.class, com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.Builder.class);
+              com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.class, com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -570,15 +570,15 @@ private static final long serialVersionUID = 0L;
 
       classTotal = 0;
 
-      noSubmit = 0;
-
       submitted = 0;
 
-      expiry = 0;
+      passed = 0;
 
-      submitPercent = "";
+      noPass = 0;
 
-      submitPercentValue = 0F;
+      passPercent = "";
+
+      passPercentValue = 0F;
 
       return this;
     }
@@ -586,17 +586,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskSubmitCount_descriptor;
+      return com.zhijiejiaoyu.glory_api.task.TeacherTaskOuterClass.internal_static_glory_api_ClassTaskPassCount_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount build() {
-      com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount build() {
+      com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -604,16 +604,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount buildPartial() {
-      com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount result = new com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount(this);
+    public com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount buildPartial() {
+      com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount result = new com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount(this);
       result.class = class ;
       result.task = task ;
       result.classTotal = classTotal ;
-      result.noSubmit = noSubmit ;
       result.submitted = submitted ;
-      result.expiry = expiry ;
-      result.submitPercent = submitPercent ;
-      result.submitPercentValue = submitPercentValue ;
+      result.passed = passed ;
+      result.noPass = noPass ;
+      result.passPercent = passPercent ;
+      result.passPercentValue = passPercentValue ;
       onBuilt();
       return result;
     }
@@ -652,16 +652,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount other) {
-      if (other == com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount other) {
+      if (other == com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount.getDefaultInstance()) return this;
       if (!other.getClass_().isEmpty()) {
         class = other.class ;
         onChanged();
@@ -673,21 +673,21 @@ private static final long serialVersionUID = 0L;
       if (other.getClassTotal() != 0) {
         setClassTotal(other.getClassTotal());
       }
-      if (other.getNoSubmit() != 0) {
-        setNoSubmit(other.getNoSubmit());
-      }
       if (other.getSubmitted() != 0) {
         setSubmitted(other.getSubmitted());
       }
-      if (other.getExpiry() != 0) {
-        setExpiry(other.getExpiry());
+      if (other.getPassed() != 0) {
+        setPassed(other.getPassed());
       }
-      if (!other.getSubmitPercent().isEmpty()) {
-        submitPercent = other.submitPercent ;
+      if (other.getNoPass() != 0) {
+        setNoPass(other.getNoPass());
+      }
+      if (!other.getPassPercent().isEmpty()) {
+        passPercent = other.passPercent ;
         onChanged();
       }
-      if (other.getSubmitPercentValue() != 0F) {
-        setSubmitPercentValue(other.getSubmitPercentValue());
+      if (other.getPassPercentValue() != 0F) {
+        setPassPercentValue(other.getPassPercentValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -704,11 +704,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -901,40 +901,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int noSubmit ;
-    /**
-     * <code>int32 no_submit = 4;</code>
-     * @return The noSubmit.
-     */
-    @java.lang.Override
-    public int getNoSubmit() {
-      return noSubmit ;
-    }
-    /**
-     * <code>int32 no_submit = 4;</code>
-     * @param value The noSubmit to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNoSubmit(int value) {
-      
-      noSubmit = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 no_submit = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNoSubmit() {
-      
-      noSubmit = 0;
-      onChanged();
-      return this;
-    }
-
     private int submitted ;
     /**
-     * <code>int32 submitted = 5;</code>
+     * <code>int32 submitted = 4;</code>
      * @return The submitted.
      */
     @java.lang.Override
@@ -942,7 +911,7 @@ private static final long serialVersionUID = 0L;
       return submitted ;
     }
     /**
-     * <code>int32 submitted = 5;</code>
+     * <code>int32 submitted = 4;</code>
      * @param value The submitted to set.
      * @return This builder for chaining.
      */
@@ -953,7 +922,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 submitted = 5;</code>
+     * <code>int32 submitted = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearSubmitted() {
@@ -963,140 +932,171 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int expiry ;
+    private int passed ;
     /**
-     * <code>int32 expiry = 6;</code>
-     * @return The expiry.
+     * <code>int32 passed = 5;</code>
+     * @return The passed.
      */
     @java.lang.Override
-    public int getExpiry() {
-      return expiry ;
+    public int getPassed() {
+      return passed ;
     }
     /**
-     * <code>int32 expiry = 6;</code>
-     * @param value The expiry to set.
+     * <code>int32 passed = 5;</code>
+     * @param value The passed to set.
      * @return This builder for chaining.
      */
-    public Builder setExpiry(int value) {
+    public Builder setPassed(int value) {
       
-      expiry = value;
+      passed = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 expiry = 6;</code>
+     * <code>int32 passed = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearExpiry() {
+    public Builder clearPassed() {
       
-      expiry = 0;
+      passed = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object submitPercent = "";
+    private int noPass ;
     /**
-     * <code>string submit_percent = 7;</code>
-     * @return The submitPercent.
+     * <code>int32 no_pass = 6;</code>
+     * @return The noPass.
      */
-    public java.lang.String getSubmitPercent() {
-      java.lang.Object ref = submitPercent ;
+    @java.lang.Override
+    public int getNoPass() {
+      return noPass ;
+    }
+    /**
+     * <code>int32 no_pass = 6;</code>
+     * @param value The noPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoPass(int value) {
+      
+      noPass = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 no_pass = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNoPass() {
+      
+      noPass = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object passPercent = "";
+    /**
+     * <code>string pass_percent = 7;</code>
+     * @return The passPercent.
+     */
+    public java.lang.String getPassPercent() {
+      java.lang.Object ref = passPercent ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        submitPercent = s;
+        passPercent = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string submit_percent = 7;</code>
-     * @return The bytes for submitPercent.
+     * <code>string pass_percent = 7;</code>
+     * @return The bytes for passPercent.
      */
     public com.google.protobuf.ByteString
-        getSubmitPercentBytes() {
-      java.lang.Object ref = submitPercent ;
+        getPassPercentBytes() {
+      java.lang.Object ref = passPercent ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        submitPercent = b;
+        passPercent = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string submit_percent = 7;</code>
-     * @param value The submitPercent to set.
+     * <code>string pass_percent = 7;</code>
+     * @param value The passPercent to set.
      * @return This builder for chaining.
      */
-    public Builder setSubmitPercent(
+    public Builder setPassPercent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      submitPercent = value;
+      passPercent = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string submit_percent = 7;</code>
+     * <code>string pass_percent = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSubmitPercent() {
+    public Builder clearPassPercent() {
       
-      submitPercent = getDefaultInstance().getSubmitPercent();
+      passPercent = getDefaultInstance().getPassPercent();
       onChanged();
       return this;
     }
     /**
-     * <code>string submit_percent = 7;</code>
-     * @param value The bytes for submitPercent to set.
+     * <code>string pass_percent = 7;</code>
+     * @param value The bytes for passPercent to set.
      * @return This builder for chaining.
      */
-    public Builder setSubmitPercentBytes(
+    public Builder setPassPercentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      submitPercent = value;
+      passPercent = value;
       onChanged();
       return this;
     }
 
-    private float submitPercentValue ;
+    private float passPercentValue ;
     /**
-     * <code>float submit_percent_value = 8;</code>
-     * @return The submitPercentValue.
+     * <code>float pass_percent_value = 8;</code>
+     * @return The passPercentValue.
      */
     @java.lang.Override
-    public float getSubmitPercentValue() {
-      return submitPercentValue ;
+    public float getPassPercentValue() {
+      return passPercentValue ;
     }
     /**
-     * <code>float submit_percent_value = 8;</code>
-     * @param value The submitPercentValue to set.
+     * <code>float pass_percent_value = 8;</code>
+     * @param value The passPercentValue to set.
      * @return This builder for chaining.
      */
-    public Builder setSubmitPercentValue(float value) {
+    public Builder setPassPercentValue(float value) {
       
-      submitPercentValue = value;
+      passPercentValue = value;
       onChanged();
       return this;
     }
     /**
-     * <code>float submit_percent_value = 8;</code>
+     * <code>float pass_percent_value = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSubmitPercentValue() {
+    public Builder clearPassPercentValue() {
       
-      submitPercentValue = 0F;
+      passPercentValue = 0F;
       onChanged();
       return this;
     }
@@ -1113,41 +1113,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ClassTaskSubmitCount)
+    // @@protoc_insertion_point(builder_scope:glory_api.ClassTaskPassCount)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ClassTaskSubmitCount)
-  private static final com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.ClassTaskPassCount)
+  private static final com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount();
   }
 
-  public static com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ClassTaskSubmitCount>
-      PARSER = new com.google.protobuf.AbstractParser<ClassTaskSubmitCount>() {
+  private static final com.google.protobuf.Parser<ClassTaskPassCount>
+      PARSER = new com.google.protobuf.AbstractParser<ClassTaskPassCount>() {
     @java.lang.Override
-    public ClassTaskSubmitCount parsePartialFrom(
+    public ClassTaskPassCount parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ClassTaskSubmitCount(input, extensionRegistry);
+      return new ClassTaskPassCount(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ClassTaskSubmitCount> parser() {
+  public static com.google.protobuf.Parser<ClassTaskPassCount> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ClassTaskSubmitCount> getParserForType() {
+  public com.google.protobuf.Parser<ClassTaskPassCount> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.task.ClassTaskSubmitCount getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.task.ClassTaskPassCount getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

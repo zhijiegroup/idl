@@ -156,10 +156,32 @@ export interface DeleteTeacherTaskResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface ClassTaskSubmitCount {
+export interface ClassTaskCount {
   name?: string;
   type?: string;
   data?: Array<number>;
+}
+
+export interface ClassTaskSubmitCount {
+  class?: string;
+  task?: string;
+  class_total?: number;
+  no_submit?: number;
+  submitted?: number;
+  expiry?: number;
+  submit_percent?: string;
+  submit_percent_value?: number;
+}
+
+export interface ClassTaskPassCount {
+  class?: string;
+  task?: string;
+  class_total?: number;
+  submitted?: number;
+  passed?: number;
+  no_pass?: number;
+  pass_percent?: string;
+  pass_percent_value?: number;
 }
 
 export interface StudentSubmitCount {
@@ -197,7 +219,7 @@ export interface CountTeacherTaskRequest {
 export interface CountClassSubmitResponse {
   base_resp?: base.BaseResponse;
   /** 班级任务提交统计 */
-  class_data?: Array<ClassTaskSubmitCount>;
+  class_data?: Array<ClassTaskCount>;
 }
 
 export interface CountPositiveListResponse {
@@ -223,5 +245,35 @@ export interface CountPassListResponse {
   base_resp?: base.BaseResponse;
   /** 学生任务提交统计 */
   list?: Array<StudentPassCount>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface CountClassPassResponse {
+  base_resp?: base.BaseResponse;
+  /** 班级任务通过统计 */
+  class_data?: Array<ClassTaskCount>;
+}
+
+export interface CountSuperStudentListResponse {
+  base_resp?: base.BaseResponse;
+  /** 学习积极分子排行榜 */
+  super_list?: Array<StudentPassCount>;
+}
+
+export interface CountLaggingStudentListResponse {
+  base_resp?: base.BaseResponse;
+  /** 学习积极分子排行榜 */
+  lagging_list?: Array<StudentPassCount>;
+}
+
+export interface CountClassSubmitListResponse {
+  base_resp?: base.BaseResponse;
+  list?: Array<ClassTaskSubmitCount>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface CountClassPassListResponse {
+  base_resp?: base.BaseResponse;
+  list?: Array<ClassTaskPassCount>;
   pagination?: base.PaginationResponse;
 }
