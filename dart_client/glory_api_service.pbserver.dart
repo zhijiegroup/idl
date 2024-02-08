@@ -442,6 +442,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$53.GetTeacherTaskResponse> getTeacherTask($pb.ServerContext ctx, $53.GetTeacherTaskRequest request);
   $async.Future<$53.GetTeacherTaskProgressResponse> getTeacherTaskProgress($pb.ServerContext ctx, $53.GetTeacherTaskProgressRequest request);
   $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ServerContext ctx, $53.DeleteTeacherTaskRequest request);
+  $async.Future<$53.CountClassSubmitResponse> countClassSubmit($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
+  $async.Future<$53.CountPositiveListResponse> countPositiveList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
+  $async.Future<$53.CountPotentialListResponse> countPotentialList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
+  $async.Future<$53.CountSubmitListResponse> countSubmitList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
+  $async.Future<$53.CountPassListResponse> countPassList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
   $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ServerContext ctx, $54.ListStudentTaskRequest request);
   $async.Future<$54.SubmitStudentTaskResponse> submitStudentTask($pb.ServerContext ctx, $54.SubmitStudentTaskRequest request);
   $async.Future<$54.GetStudentTaskResponse> getStudentTask($pb.ServerContext ctx, $54.GetStudentTaskRequest request);
@@ -826,6 +831,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTeacherTask': return $53.GetTeacherTaskRequest();
       case 'GetTeacherTaskProgress': return $53.GetTeacherTaskProgressRequest();
       case 'DeleteTeacherTask': return $53.DeleteTeacherTaskRequest();
+      case 'CountClassSubmit': return $53.CountTeacherTaskRequest();
+      case 'CountPositiveList': return $53.CountTeacherTaskRequest();
+      case 'CountPotentialList': return $53.CountTeacherTaskRequest();
+      case 'CountSubmitList': return $53.CountTeacherTaskRequest();
+      case 'CountPassList': return $53.CountTeacherTaskRequest();
       case 'ListStudentTask': return $54.ListStudentTaskRequest();
       case 'SubmitStudentTask': return $54.SubmitStudentTaskRequest();
       case 'GetStudentTask': return $54.GetStudentTaskRequest();
@@ -1213,6 +1223,11 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTeacherTask': return this.getTeacherTask(ctx, request as $53.GetTeacherTaskRequest);
       case 'GetTeacherTaskProgress': return this.getTeacherTaskProgress(ctx, request as $53.GetTeacherTaskProgressRequest);
       case 'DeleteTeacherTask': return this.deleteTeacherTask(ctx, request as $53.DeleteTeacherTaskRequest);
+      case 'CountClassSubmit': return this.countClassSubmit(ctx, request as $53.CountTeacherTaskRequest);
+      case 'CountPositiveList': return this.countPositiveList(ctx, request as $53.CountTeacherTaskRequest);
+      case 'CountPotentialList': return this.countPotentialList(ctx, request as $53.CountTeacherTaskRequest);
+      case 'CountSubmitList': return this.countSubmitList(ctx, request as $53.CountTeacherTaskRequest);
+      case 'CountPassList': return this.countPassList(ctx, request as $53.CountTeacherTaskRequest);
       case 'ListStudentTask': return this.listStudentTask(ctx, request as $54.ListStudentTaskRequest);
       case 'SubmitStudentTask': return this.submitStudentTask(ctx, request as $54.SubmitStudentTaskRequest);
       case 'GetStudentTask': return this.getStudentTask(ctx, request as $54.GetStudentTaskRequest);
