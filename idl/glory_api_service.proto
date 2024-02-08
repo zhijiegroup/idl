@@ -1434,6 +1434,9 @@ service glory_api {
   rpc CountClassSubmit(CountTeacherTaskRequest) returns (CountClassSubmitResponse) {
     option (api.post) = '/api/task/count_class_submit';
   }
+  rpc CountClassSubmitList(CountTeacherTaskRequest) returns (CountClassSubmitListResponse) {
+    option (api.post) = '/api/task/count_class_submit_list';
+  }
   rpc CountPositiveList(CountTeacherTaskRequest) returns (CountPositiveListResponse) {
     option (api.post) = '/api/task/count_positive_list';
   }
@@ -1442,6 +1445,18 @@ service glory_api {
   }
   rpc CountSubmitList(CountTeacherTaskRequest) returns (CountSubmitListResponse) {
     option (api.post) = '/api/task/count_submit_list';
+  }
+  rpc CountClassPass(CountTeacherTaskRequest) returns (CountClassPassResponse) {
+    option (api.post) = '/api/task/count_class_pass';
+  }
+  rpc CountClassPassList(CountTeacherTaskRequest) returns (CountClassPassListResponse) {
+    option (api.post) = '/api/task/count_class_pass_list';
+  }
+  rpc CountSuperStudentList(CountTeacherTaskRequest) returns (CountSuperStudentListResponse) {
+    option (api.post) = '/api/task/count_super_list';
+  }
+  rpc CountLaggingStudentList(CountTeacherTaskRequest) returns (CountLaggingStudentListResponse) {
+    option (api.post) = '/api/task/count_lagging_list';
   }
   rpc CountPassList(CountTeacherTaskRequest) returns (CountPassListResponse) {
     option (api.post) = '/api/task/count_pass_list';
