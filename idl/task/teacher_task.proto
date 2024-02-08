@@ -124,3 +124,68 @@ message DeleteTeacherTaskRequest {
 message DeleteTeacherTaskResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message ClassTaskSubmitCount {
+  string name = 1;
+  string type = 2;
+  repeated float data = 3;
+}
+
+message StudentSubmitCount {
+  string name = 1;
+  string class = 2;
+  string submit = 3;
+  float submit_value = 4;
+  int64 task_total = 5;
+  int64 task_no_submit = 6;
+  int64 task_submitted = 7;
+  int64 task_expired = 8;
+}
+
+message StudentPassCount {
+  string name = 1;
+  string class = 2;
+  string pass = 3;
+  float pass_value = 4;
+  int64 task_total = 5;
+  int64 task_no_submit = 6;
+  int64 task_submitted = 7;
+  int64 task_passed = 8;
+  int64 task_no_passed = 9;
+}
+
+message CountTeacherTaskRequest {
+  base.BaseRequest base_request = 1;
+  repeated string system_name = 2;
+  repeated int64 class_id = 3;
+  string begin_date = 4;
+  string end_date = 5;
+  base.PaginationRequest pagination = 100;
+}
+
+message CountClassSubmitResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ClassTaskSubmitCount class_data = 2; // 班级任务提交统计
+}
+
+message CountPositiveListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentSubmitCount positive_list = 3; // 学习积极分子排行榜
+}
+
+message CountPotentialListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentSubmitCount potential_list = 4; // 进度潜力学生排行榜
+}
+
+message CountSubmitListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentSubmitCount list = 2; // 学生任务提交统计
+  base.PaginationResponse pagination = 100;
+}
+
+message CountPassListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentPassCount list = 2; // 学生任务提交统计
+  base.PaginationResponse pagination = 100;
+}

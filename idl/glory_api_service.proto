@@ -1430,6 +1430,22 @@ service glory_api {
   rpc DeleteTeacherTask(DeleteTeacherTaskRequest) returns (DeleteTeacherTaskResponse) {
     option (api.post) = '/api/task/delete_teacher_task';
   }
+  // 教师任务统计
+  rpc CountClassSubmit(CountTeacherTaskRequest) returns (CountClassSubmitResponse) {
+    option (api.post) = '/api/task/count_class_submit';
+  }
+  rpc CountPositiveList(CountTeacherTaskRequest) returns (CountPositiveListResponse) {
+    option (api.post) = '/api/task/count_positive_list';
+  }
+  rpc CountPotentialList(CountTeacherTaskRequest) returns (CountPotentialListResponse) {
+    option (api.post) = '/api/task/count_potential_list';
+  }
+  rpc CountSubmitList(CountTeacherTaskRequest) returns (CountSubmitListResponse) {
+    option (api.post) = '/api/task/count_submit_list';
+  }
+  rpc CountPassList(CountTeacherTaskRequest) returns (CountPassListResponse) {
+    option (api.post) = '/api/task/count_pass_list';
+  }
   // 学生任务
   rpc ListStudentTask(ListStudentTaskRequest) returns (ListStudentTaskResponse) {
     option (api.post) = '/api/task/list_student_task';
