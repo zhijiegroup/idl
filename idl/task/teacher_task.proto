@@ -125,10 +125,32 @@ message DeleteTeacherTaskResponse {
   base.BaseResponse base_resp = 1;
 }
 
-message ClassTaskSubmitCount {
+message ClassTaskCount {
   string name = 1;
   string type = 2;
   repeated float data = 3;
+}
+
+message ClassTaskSubmitCount {
+  string class = 1;
+  string task = 2;
+  int32 class_total = 3;
+  int32 no_submit = 4;
+  int32 submitted = 5;
+  int32 expiry = 6;
+  string submit_percent = 7;
+  float submit_percent_value = 8;
+}
+
+message ClassTaskPassCount {
+  string class = 1;
+  string task = 2;
+  int32 class_total = 3;
+  int32 submitted = 4;
+  int32 passed = 5;
+  int32 no_pass = 6;
+  string pass_percent = 7;
+  float pass_percent_value = 8;
 }
 
 message StudentSubmitCount {
@@ -165,7 +187,7 @@ message CountTeacherTaskRequest {
 
 message CountClassSubmitResponse {
   base.BaseResponse base_resp = 1;
-  repeated ClassTaskSubmitCount class_data = 2; // 班级任务提交统计
+  repeated ClassTaskCount class_data = 2; // 班级任务提交统计
 }
 
 message CountPositiveListResponse {
@@ -187,5 +209,32 @@ message CountSubmitListResponse {
 message CountPassListResponse {
   base.BaseResponse base_resp = 1;
   repeated StudentPassCount list = 2; // 学生任务提交统计
+  base.PaginationResponse pagination = 100;
+}
+
+message CountClassPassResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ClassTaskCount class_data = 2; // 班级任务通过统计
+}
+
+message CountSuperStudentListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentPassCount super_list = 3; // 学习积极分子排行榜
+}
+
+message CountLaggingStudentListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentPassCount lagging_list = 3; // 学习积极分子排行榜
+}
+
+message CountClassSubmitListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ClassTaskSubmitCount list = 2;
+  base.PaginationResponse pagination = 100;
+}
+
+message CountClassPassListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ClassTaskPassCount list = 2;
   base.PaginationResponse pagination = 100;
 }
