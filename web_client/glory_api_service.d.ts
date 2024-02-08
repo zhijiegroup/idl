@@ -1643,6 +1643,27 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.DeleteTeacherTaskRequest
   ): Promise<teacher_task.DeleteTeacherTaskResponse>;
 
+  /** 教师任务统计 */
+  CountClassSubmit(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountClassSubmitResponse>;
+
+  CountPositiveList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountPositiveListResponse>;
+
+  CountPotentialList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountPotentialListResponse>;
+
+  CountSubmitList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountSubmitListResponse>;
+
+  CountPassList(
+    request: teacher_task.CountTeacherTaskRequest
+  ): Promise<teacher_task.CountPassListResponse>;
+
   /** 学生任务 */
   ListStudentTask(
     request: student_task.ListStudentTaskRequest

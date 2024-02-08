@@ -1171,6 +1171,21 @@ class glory_apiApi {
   $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ClientContext? ctx, $53.DeleteTeacherTaskRequest request) =>
     _client.invoke<$53.DeleteTeacherTaskResponse>(ctx, 'glory_api', 'DeleteTeacherTask', request, $53.DeleteTeacherTaskResponse())
   ;
+  $async.Future<$53.CountClassSubmitResponse> countClassSubmit($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
+    _client.invoke<$53.CountClassSubmitResponse>(ctx, 'glory_api', 'CountClassSubmit', request, $53.CountClassSubmitResponse())
+  ;
+  $async.Future<$53.CountPositiveListResponse> countPositiveList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
+    _client.invoke<$53.CountPositiveListResponse>(ctx, 'glory_api', 'CountPositiveList', request, $53.CountPositiveListResponse())
+  ;
+  $async.Future<$53.CountPotentialListResponse> countPotentialList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
+    _client.invoke<$53.CountPotentialListResponse>(ctx, 'glory_api', 'CountPotentialList', request, $53.CountPotentialListResponse())
+  ;
+  $async.Future<$53.CountSubmitListResponse> countSubmitList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
+    _client.invoke<$53.CountSubmitListResponse>(ctx, 'glory_api', 'CountSubmitList', request, $53.CountSubmitListResponse())
+  ;
+  $async.Future<$53.CountPassListResponse> countPassList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
+    _client.invoke<$53.CountPassListResponse>(ctx, 'glory_api', 'CountPassList', request, $53.CountPassListResponse())
+  ;
   $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ClientContext? ctx, $54.ListStudentTaskRequest request) =>
     _client.invoke<$54.ListStudentTaskResponse>(ctx, 'glory_api', 'ListStudentTask', request, $54.ListStudentTaskResponse())
   ;

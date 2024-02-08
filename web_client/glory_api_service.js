@@ -2932,6 +2932,46 @@ export class glory_api {
     );
   }
 
+  CountClassSubmit(request) {
+    const uri = `${this.uriPrefix}/api/task/count_class_submit`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountPositiveList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_positive_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountPotentialList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_potential_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountSubmitList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_submit_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CountPassList(request) {
+    const uri = `${this.uriPrefix}/api/task/count_pass_list`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListStudentTask(request) {
     const uri = `${this.uriPrefix}/api/task/list_student_task`;
     const body = JSONbigint.stringify(request);

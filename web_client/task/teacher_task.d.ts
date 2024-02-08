@@ -155,3 +155,73 @@ export interface DeleteTeacherTaskRequest {
 export interface DeleteTeacherTaskResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface ClassTaskSubmitCount {
+  name?: string;
+  type?: string;
+  data?: Array<number>;
+}
+
+export interface StudentSubmitCount {
+  name?: string;
+  class?: string;
+  submit?: string;
+  submit_value?: number;
+  task_total?: string;
+  task_no_submit?: string;
+  task_submitted?: string;
+  task_expired?: string;
+}
+
+export interface StudentPassCount {
+  name?: string;
+  class?: string;
+  pass?: string;
+  pass_value?: number;
+  task_total?: string;
+  task_no_submit?: string;
+  task_submitted?: string;
+  task_passed?: string;
+  task_no_passed?: string;
+}
+
+export interface CountTeacherTaskRequest {
+  base_request?: base.BaseRequest;
+  system_name?: Array<string>;
+  class_id?: Array<string>;
+  begin_date?: string;
+  end_date?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface CountClassSubmitResponse {
+  base_resp?: base.BaseResponse;
+  /** 班级任务提交统计 */
+  class_data?: Array<ClassTaskSubmitCount>;
+}
+
+export interface CountPositiveListResponse {
+  base_resp?: base.BaseResponse;
+  /** 学习积极分子排行榜 */
+  positive_list?: Array<StudentSubmitCount>;
+}
+
+export interface CountPotentialListResponse {
+  base_resp?: base.BaseResponse;
+  /** 进度潜力学生排行榜 */
+  potential_list?: Array<StudentSubmitCount>;
+}
+
+export interface CountSubmitListResponse {
+  base_resp?: base.BaseResponse;
+  /** 学生任务提交统计 */
+  list?: Array<StudentSubmitCount>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface CountPassListResponse {
+  base_resp?: base.BaseResponse;
+  /** 学生任务提交统计 */
+  list?: Array<StudentPassCount>;
+  pagination?: base.PaginationResponse;
+}
