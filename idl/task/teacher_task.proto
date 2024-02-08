@@ -142,15 +142,16 @@ message StudentSubmitCount {
   int64 task_expired = 8;
 }
 
-message StudentCommentCount {
+message StudentPassCount {
   string name = 1;
   string class = 2;
   string pass = 3;
   float pass_value = 4;
   int64 task_total = 5;
-  int64 task_no_comment = 6;
-  int64 task_passed = 7;
-  int64 task_no_passed = 8;
+  int64 task_no_submit = 6;
+  int64 task_submitted = 7;
+  int64 task_passed = 8;
+  int64 task_no_passed = 9;
 }
 
 message CountTeacherTaskRequest {
@@ -180,5 +181,11 @@ message CountPotentialListResponse {
 message CountSubmitListResponse {
   base.BaseResponse base_resp = 1;
   repeated StudentSubmitCount list = 2; // 学生任务提交统计
+  base.PaginationResponse pagination = 100;
+}
+
+message CountPassListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated StudentPassCount list = 2; // 学生任务提交统计
   base.PaginationResponse pagination = 100;
 }
