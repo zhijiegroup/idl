@@ -238,3 +238,15 @@ message CountClassPassListResponse {
   repeated ClassTaskPassCount list = 2;
   base.PaginationResponse pagination = 100;
 }
+
+message TeacherTaskStatsRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message TeacherTaskStatsResponse {
+  base.BaseResponse base_resp = 1;
+  int64 total_task_count = 2;
+  int64 not_started_count = 3;
+  int64 ongoing_count = 4;
+  int64 ended_count = 5;
+}

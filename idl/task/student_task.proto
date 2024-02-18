@@ -144,3 +144,12 @@ message TeacherEvaluateStudentTaskRequest {
 message TeacherEvaluateStudentTaskResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message StudentTaskEvaluateStatsRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message StudentTaskEvaluateStatsResponse {
+  base.BaseResponse base_resp = 1;
+
+}

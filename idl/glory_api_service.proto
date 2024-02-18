@@ -1430,6 +1430,9 @@ service glory_api {
   rpc DeleteTeacherTask(DeleteTeacherTaskRequest) returns (DeleteTeacherTaskResponse) {
     option (api.post) = '/api/task/delete_teacher_task';
   }
+  rpc TeacherTaskStats(TeacherTaskStatsRequest) returns (TeacherTaskStatsResponse) {
+    option (api.get) = '/api/task/teacher_task_stats';
+  }
   // 教师任务统计
   rpc CountClassSubmit(CountTeacherTaskRequest) returns (CountClassSubmitResponse) {
     option (api.post) = '/api/task/count_class_submit';
