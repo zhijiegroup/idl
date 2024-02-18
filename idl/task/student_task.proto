@@ -145,6 +145,20 @@ message TeacherEvaluateStudentTaskResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message StudentTaskStatsRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message StudentTaskStatsResponse {
+  base.BaseResponse base_resp = 1;
+  int64 total_task_count = 2;
+  int64 waiting_submit_count = 3;
+  int64 waiting_evaluate_count = 4;
+  int64 evaluate_passed_count = 5;
+  int64 evaluate_failed_count = 6;
+  int64 expire_count = 7;
+}
+
 message StudentTaskEvaluateStatsRequest {
   base.BaseRequest base_request = 1;
 }
