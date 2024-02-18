@@ -92,23 +92,24 @@ public final class LiveTextOuterClass {
       "\007text_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007content" +
       "\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\"?\n\026UpdateLiveTextRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"\212\001\n\023ListLiveTextRequest\022\'\n\014base_re" +
+      "ponse\"\233\001\n\023ListLiveTextRequest\022\'\n\014base_re" +
       "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_i" +
-      "d\030\002 \001(\003\022\014\n\004type\030\003 \001(\t\022+\n\npagination\030d \001(" +
-      "\0132\027.base.PaginationRequest\"\223\001\n\024ListLiveT" +
-      "extResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022&\n\ttext_list\030\002 \003(\0132\023.glory_ap" +
-      "i.LiveText\022,\n\npagination\030d \001(\0132\030.base.Pa" +
-      "ginationResponse\"N\n\022GetLiveTextRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\017\n\007text_id\030\002 \001(\003\"d\n\023GetLiveTextResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022&" +
-      "\n\tlive_text\030\002 \001(\0132\023.glory_api.LiveText\"S" +
-      "\n\026DeleteLiveTextsRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010text_ids\030\002 " +
-      "\003(\003\"@\n\027DeleteLiveTextsResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhi" +
-      "jiejiaoyu.glory_api.liveP\001b\006proto3"
+      "d\030\002 \001(\003\022\014\n\004type\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\003\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"\223\001\n\024ListLiveTextResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttext_list" +
+      "\030\002 \003(\0132\023.glory_api.LiveText\022,\n\npaginatio" +
+      "n\030d \001(\0132\030.base.PaginationResponse\"N\n\022Get" +
+      "LiveTextRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007text_id\030\002 \001(\003\"d\n\023Get" +
+      "LiveTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022&\n\tlive_text\030\002 \001(\0132\023.glo" +
+      "ry_api.LiveText\"S\n\026DeleteLiveTextsReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\020\n\010text_ids\030\002 \003(\003\"@\n\027DeleteLiveTextsR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponseB#\n\037com.zhijiejiaoyu.glory_api.liv" +
+      "eP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -150,7 +151,7 @@ public final class LiveTextOuterClass {
     internal_static_glory_api_ListLiveTextRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListLiveTextRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopId", "Type", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "Type", "UserId", "Pagination", });
     internal_static_glory_api_ListLiveTextResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListLiveTextResponse_fieldAccessorTable = new

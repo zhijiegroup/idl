@@ -43,6 +43,7 @@ export interface ListLiveTextRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;
   type?: string;
+  user_id?: string;
   pagination?: base.PaginationRequest;
 }
 

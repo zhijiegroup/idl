@@ -164,6 +164,7 @@ export interface ListMyShortVideoRequest {
   base_request?: base.BaseRequest;
   /** 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表 */
   type?: number;
+  user_id?: string;
   pagination?: base.PaginationRequest;
 }
 

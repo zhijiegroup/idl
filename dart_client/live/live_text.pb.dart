@@ -475,6 +475,7 @@ class ListLiveTextRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.String? type,
+    $fixnum.Int64? userId,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -486,6 +487,9 @@ class ListLiveTextRequest extends $pb.GeneratedMessage {
     }
     if (type != null) {
       $result.type = type;
+    }
+    if (userId != null) {
+      $result.userId = userId;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -500,6 +504,7 @@ class ListLiveTextRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aOS(3, _omitFieldNames ? '' : 'type')
+    ..aInt64(4, _omitFieldNames ? '' : 'userId')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -554,16 +559,25 @@ class ListLiveTextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearType() => clearField(3);
 
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get userId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set userId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUserId() => clearField(4);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $0.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(3);
+  $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $0.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ListLiveTextResponse extends $pb.GeneratedMessage {

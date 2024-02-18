@@ -41,6 +41,12 @@ public interface ListLiveTextRequestOrBuilder extends
       getTypeBytes();
 
   /**
+   * <code>int64 user_id = 4;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -104,6 +104,7 @@ const ListLiveTextRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
     {'1': 'type', '3': 3, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'user_id', '3': 4, '4': 1, '5': 3, '10': 'userId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -112,8 +113,8 @@ const ListLiveTextRequest$json = {
 final $typed_data.Uint8List listLiveTextRequestDescriptor = $convert.base64Decode(
     'ChNMaXN0TGl2ZVRleHRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
     'JlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Nob3BfaWQYAiABKANSBnNob3BJZBISCgR0eXBlGAMg'
-    'ASgJUgR0eXBlEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0Ug'
-    'pwYWdpbmF0aW9u');
+    'ASgJUgR0eXBlEhcKB3VzZXJfaWQYBCABKANSBnVzZXJJZBI3CgpwYWdpbmF0aW9uGGQgASgLMh'
+    'cuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listLiveTextResponseDescriptor instead')
 const ListLiveTextResponse$json = {

@@ -162,6 +162,8 @@ struct GloryApi_ListLiveTextRequest {
 
   var type: String = String()
 
+  var userID: Int64 = 0
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -594,6 +596,7 @@ extension GloryApi_ListLiveTextRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     1: .standard(proto: "base_request"),
     2: .standard(proto: "shop_id"),
     3: .same(proto: "type"),
+    4: .standard(proto: "user_id"),
     100: .same(proto: "pagination"),
   ]
 
@@ -606,6 +609,7 @@ extension GloryApi_ListLiveTextRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -626,6 +630,9 @@ extension GloryApi_ListLiveTextRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 3)
     }
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 4)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -636,6 +643,7 @@ extension GloryApi_ListLiveTextRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.type != rhs.type {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
