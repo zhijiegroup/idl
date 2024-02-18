@@ -3064,6 +3064,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  StudentTaskEvaluateStats(request) {
+    const uri = `${this.uriPrefix}/api/task/student_task_evaluate_stats`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListNotification(request) {
     const uri = `${this.uriPrefix}/api/notification/list`;
     const body = JSONbigint.stringify(request);

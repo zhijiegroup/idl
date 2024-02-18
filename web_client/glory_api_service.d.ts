@@ -1713,6 +1713,10 @@ CreateLivePlanProduct create live plan product */
     request: student_task.StudentTaskStatsRequest
   ): Promise<student_task.StudentTaskStatsResponse>;
 
+  StudentTaskEvaluateStats(
+    request: student_task.StudentTaskEvaluateStatsRequest
+  ): Promise<student_task.StudentTaskEvaluateStatsResponse>;
+
   /** 通知模块 */
   ListNotification(
     request: notification.ListNotificationRequest

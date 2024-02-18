@@ -186,8 +186,15 @@ export interface StudentTaskStatsResponse {
 
 export interface StudentTaskEvaluateStatsRequest {
   base_request?: base.BaseRequest;
+  /** 任务评价类型：1. 机器评价任务；2. 教师评价任务 */
+  task_evaluate_type?: number;
 }
 
 export interface StudentTaskEvaluateStatsResponse {
   base_resp?: base.BaseResponse;
+  total_task_count?: string;
+  waiting_evaluate_count?: string;
+  evaluated_count?: string;
+  waiting_submit_count?: string;
+  expire_count?: string;
 }

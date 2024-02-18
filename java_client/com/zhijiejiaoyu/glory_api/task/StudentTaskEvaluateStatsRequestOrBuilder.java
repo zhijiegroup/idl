@@ -21,4 +21,14 @@ public interface StudentTaskEvaluateStatsRequestOrBuilder extends
    * <code>.base.BaseRequest base_request = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
+
+  /**
+   * <pre>
+   * 任务评价类型：1. 机器评价任务；2. 教师评价任务
+   * </pre>
+   *
+   * <code>int32 task_evaluate_type = 2;</code>
+   * @return The taskEvaluateType.
+   */
+  int getTaskEvaluateType();
 }

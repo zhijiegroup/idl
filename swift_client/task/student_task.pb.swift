@@ -720,6 +720,9 @@ struct GloryApi_StudentTaskEvaluateStatsRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// 任务评价类型：1. 机器评价任务；2. 教师评价任务
+  var taskEvaluateType: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -740,6 +743,16 @@ struct GloryApi_StudentTaskEvaluateStatsResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var totalTaskCount: Int64 = 0
+
+  var waitingEvaluateCount: Int64 = 0
+
+  var evaluatedCount: Int64 = 0
+
+  var waitingSubmitCount: Int64 = 0
+
+  var expireCount: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1984,6 +1997,7 @@ extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, Swift
   static let protoMessageName: String = _protobuf_package + ".StudentTaskEvaluateStatsRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .standard(proto: "task_evaluate_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1993,6 +2007,7 @@ extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, Swift
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.taskEvaluateType) }()
       default: break
       }
     }
@@ -2006,11 +2021,15 @@ extension GloryApi_StudentTaskEvaluateStatsRequest: SwiftProtobuf.Message, Swift
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.taskEvaluateType != 0 {
+      try visitor.visitSingularInt32Field(value: self.taskEvaluateType, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StudentTaskEvaluateStatsRequest, rhs: GloryApi_StudentTaskEvaluateStatsRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.taskEvaluateType != rhs.taskEvaluateType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2020,6 +2039,11 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
   static let protoMessageName: String = _protobuf_package + ".StudentTaskEvaluateStatsResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .standard(proto: "total_task_count"),
+    3: .standard(proto: "waiting_evaluate_count"),
+    4: .standard(proto: "evaluated_count"),
+    5: .standard(proto: "waiting_submit_count"),
+    6: .standard(proto: "expire_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2029,6 +2053,11 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.totalTaskCount) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.waitingEvaluateCount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.evaluatedCount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.waitingSubmitCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.expireCount) }()
       default: break
       }
     }
@@ -2042,11 +2071,31 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.totalTaskCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalTaskCount, fieldNumber: 2)
+    }
+    if self.waitingEvaluateCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.waitingEvaluateCount, fieldNumber: 3)
+    }
+    if self.evaluatedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluatedCount, fieldNumber: 4)
+    }
+    if self.waitingSubmitCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.waitingSubmitCount, fieldNumber: 5)
+    }
+    if self.expireCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.expireCount, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StudentTaskEvaluateStatsResponse, rhs: GloryApi_StudentTaskEvaluateStatsResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.totalTaskCount != rhs.totalTaskCount {return false}
+    if lhs.waitingEvaluateCount != rhs.waitingEvaluateCount {return false}
+    if lhs.evaluatedCount != rhs.evaluatedCount {return false}
+    if lhs.waitingSubmitCount != rhs.waitingSubmitCount {return false}
+    if lhs.expireCount != rhs.expireCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

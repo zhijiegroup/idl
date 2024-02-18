@@ -1959,10 +1959,14 @@ class StudentTaskStatsResponse extends $pb.GeneratedMessage {
 class StudentTaskEvaluateStatsRequest extends $pb.GeneratedMessage {
   factory StudentTaskEvaluateStatsRequest({
     $2.BaseRequest? baseRequest,
+    $core.int? taskEvaluateType,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (taskEvaluateType != null) {
+      $result.taskEvaluateType = taskEvaluateType;
     }
     return $result;
   }
@@ -1972,6 +1976,7 @@ class StudentTaskEvaluateStatsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskEvaluateStatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'taskEvaluateType', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -2006,15 +2011,44 @@ class StudentTaskEvaluateStatsRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get taskEvaluateType => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set taskEvaluateType($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskEvaluateType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskEvaluateType() => clearField(2);
 }
 
 class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
   factory StudentTaskEvaluateStatsResponse({
     $2.BaseResponse? baseResp,
+    $fixnum.Int64? totalTaskCount,
+    $fixnum.Int64? waitingEvaluateCount,
+    $fixnum.Int64? evaluatedCount,
+    $fixnum.Int64? waitingSubmitCount,
+    $fixnum.Int64? expireCount,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (totalTaskCount != null) {
+      $result.totalTaskCount = totalTaskCount;
+    }
+    if (waitingEvaluateCount != null) {
+      $result.waitingEvaluateCount = waitingEvaluateCount;
+    }
+    if (evaluatedCount != null) {
+      $result.evaluatedCount = evaluatedCount;
+    }
+    if (waitingSubmitCount != null) {
+      $result.waitingSubmitCount = waitingSubmitCount;
+    }
+    if (expireCount != null) {
+      $result.expireCount = expireCount;
     }
     return $result;
   }
@@ -2024,6 +2058,11 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskEvaluateStatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(3, _omitFieldNames ? '' : 'waitingEvaluateCount')
+    ..aInt64(4, _omitFieldNames ? '' : 'evaluatedCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'waitingSubmitCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'expireCount')
     ..hasRequiredFields = false
   ;
 
@@ -2058,6 +2097,51 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalTaskCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalTaskCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalTaskCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get waitingEvaluateCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set waitingEvaluateCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWaitingEvaluateCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWaitingEvaluateCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get evaluatedCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set evaluatedCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEvaluatedCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvaluatedCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get waitingSubmitCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set waitingSubmitCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasWaitingSubmitCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWaitingSubmitCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get expireCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set expireCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasExpireCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExpireCount() => clearField(6);
 }
 
 

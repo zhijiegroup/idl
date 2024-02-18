@@ -395,24 +395,35 @@ const StudentTaskEvaluateStatsRequest$json = {
   '1': 'StudentTaskEvaluateStatsRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_evaluate_type', '3': 2, '4': 1, '5': 5, '10': 'taskEvaluateType'},
   ],
 };
 
 /// Descriptor for `StudentTaskEvaluateStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List studentTaskEvaluateStatsRequestDescriptor = $convert.base64Decode(
     'Ch9TdHVkZW50VGFza0V2YWx1YXRlU3RhdHNSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCz'
-    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EiwKEnRhc2tfZXZhbHVhdGVfdHlwZRgC'
+    'IAEoBVIQdGFza0V2YWx1YXRlVHlwZQ==');
 
 @$core.Deprecated('Use studentTaskEvaluateStatsResponseDescriptor instead')
 const StudentTaskEvaluateStatsResponse$json = {
   '1': 'StudentTaskEvaluateStatsResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_task_count', '3': 2, '4': 1, '5': 3, '10': 'totalTaskCount'},
+    {'1': 'waiting_evaluate_count', '3': 3, '4': 1, '5': 3, '10': 'waitingEvaluateCount'},
+    {'1': 'evaluated_count', '3': 4, '4': 1, '5': 3, '10': 'evaluatedCount'},
+    {'1': 'waiting_submit_count', '3': 5, '4': 1, '5': 3, '10': 'waitingSubmitCount'},
+    {'1': 'expire_count', '3': 6, '4': 1, '5': 3, '10': 'expireCount'},
   ],
 };
 
 /// Descriptor for `StudentTaskEvaluateStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List studentTaskEvaluateStatsResponseDescriptor = $convert.base64Decode(
     'CiBTdHVkZW50VGFza0V2YWx1YXRlU3RhdHNSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
-    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASKAoQdG90YWxfdGFza19jb3VudBgCIAEoA1IO'
+    'dG90YWxUYXNrQ291bnQSNAoWd2FpdGluZ19ldmFsdWF0ZV9jb3VudBgDIAEoA1IUd2FpdGluZ0'
+    'V2YWx1YXRlQ291bnQSJwoPZXZhbHVhdGVkX2NvdW50GAQgASgDUg5ldmFsdWF0ZWRDb3VudBIw'
+    'ChR3YWl0aW5nX3N1Ym1pdF9jb3VudBgFIAEoA1ISd2FpdGluZ1N1Ym1pdENvdW50EiEKDGV4cG'
+    'lyZV9jb3VudBgGIAEoA1ILZXhwaXJlQ291bnQ=');
 

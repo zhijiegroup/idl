@@ -21,4 +21,34 @@ public interface StudentTaskEvaluateStatsResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <code>int64 total_task_count = 2;</code>
+   * @return The totalTaskCount.
+   */
+  long getTotalTaskCount();
+
+  /**
+   * <code>int64 waiting_evaluate_count = 3;</code>
+   * @return The waitingEvaluateCount.
+   */
+  long getWaitingEvaluateCount();
+
+  /**
+   * <code>int64 evaluated_count = 4;</code>
+   * @return The evaluatedCount.
+   */
+  long getEvaluatedCount();
+
+  /**
+   * <code>int64 waiting_submit_count = 5;</code>
+   * @return The waitingSubmitCount.
+   */
+  long getWaitingSubmitCount();
+
+  /**
+   * <code>int64 expire_count = 6;</code>
+   * @return The expireCount.
+   */
+  long getExpireCount();
 }

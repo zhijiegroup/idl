@@ -61,6 +61,31 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            totalTaskCount = input.readInt64();
+            break;
+          }
+          case 24: {
+
+            waitingEvaluateCount = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            evaluatedCount = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            waitingSubmitCount = input.readInt64();
+            break;
+          }
+          case 48: {
+
+            expireCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +144,61 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
+  public static final int TOTAL_TASK_COUNT_FIELD_NUMBER = 2;
+  private long totalTaskCount ;
+  /**
+   * <code>int64 total_task_count = 2;</code>
+   * @return The totalTaskCount.
+   */
+  @java.lang.Override
+  public long getTotalTaskCount() {
+    return totalTaskCount ;
+  }
+
+  public static final int WAITING_EVALUATE_COUNT_FIELD_NUMBER = 3;
+  private long waitingEvaluateCount ;
+  /**
+   * <code>int64 waiting_evaluate_count = 3;</code>
+   * @return The waitingEvaluateCount.
+   */
+  @java.lang.Override
+  public long getWaitingEvaluateCount() {
+    return waitingEvaluateCount ;
+  }
+
+  public static final int EVALUATED_COUNT_FIELD_NUMBER = 4;
+  private long evaluatedCount ;
+  /**
+   * <code>int64 evaluated_count = 4;</code>
+   * @return The evaluatedCount.
+   */
+  @java.lang.Override
+  public long getEvaluatedCount() {
+    return evaluatedCount ;
+  }
+
+  public static final int WAITING_SUBMIT_COUNT_FIELD_NUMBER = 5;
+  private long waitingSubmitCount ;
+  /**
+   * <code>int64 waiting_submit_count = 5;</code>
+   * @return The waitingSubmitCount.
+   */
+  @java.lang.Override
+  public long getWaitingSubmitCount() {
+    return waitingSubmitCount ;
+  }
+
+  public static final int EXPIRE_COUNT_FIELD_NUMBER = 6;
+  private long expireCount ;
+  /**
+   * <code>int64 expire_count = 6;</code>
+   * @return The expireCount.
+   */
+  @java.lang.Override
+  public long getExpireCount() {
+    return expireCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -136,6 +216,21 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (totalTaskCount != 0L) {
+      output.writeInt64(2, totalTaskCount );
+    }
+    if (waitingEvaluateCount != 0L) {
+      output.writeInt64(3, waitingEvaluateCount );
+    }
+    if (evaluatedCount != 0L) {
+      output.writeInt64(4, evaluatedCount );
+    }
+    if (waitingSubmitCount != 0L) {
+      output.writeInt64(5, waitingSubmitCount );
+    }
+    if (expireCount != 0L) {
+      output.writeInt64(6, expireCount );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +243,26 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
+    }
+    if (totalTaskCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, totalTaskCount );
+    }
+    if (waitingEvaluateCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, waitingEvaluateCount );
+    }
+    if (evaluatedCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, evaluatedCount );
+    }
+    if (waitingSubmitCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, waitingSubmitCount );
+    }
+    if (expireCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, expireCount );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +284,16 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getTotalTaskCount()
+        != other.getTotalTaskCount()) return false;
+    if (getWaitingEvaluateCount()
+        != other.getWaitingEvaluateCount()) return false;
+    if (getEvaluatedCount()
+        != other.getEvaluatedCount()) return false;
+    if (getWaitingSubmitCount()
+        != other.getWaitingSubmitCount()) return false;
+    if (getExpireCount()
+        != other.getExpireCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +309,21 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + TOTAL_TASK_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotalTaskCount());
+    hash = (37 * hash) + WAITING_EVALUATE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getWaitingEvaluateCount());
+    hash = (37 * hash) + EVALUATED_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluatedCount());
+    hash = (37 * hash) + WAITING_SUBMIT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getWaitingSubmitCount());
+    hash = (37 * hash) + EXPIRE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getExpireCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +463,16 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      totalTaskCount = 0L;
+
+      waitingEvaluateCount = 0L;
+
+      evaluatedCount = 0L;
+
+      waitingSubmitCount = 0L;
+
+      expireCount = 0L;
+
       return this;
     }
 
@@ -354,6 +504,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.totalTaskCount = totalTaskCount ;
+      result.waitingEvaluateCount = waitingEvaluateCount ;
+      result.evaluatedCount = evaluatedCount ;
+      result.waitingSubmitCount = waitingSubmitCount ;
+      result.expireCount = expireCount ;
       onBuilt();
       return result;
     }
@@ -404,6 +559,21 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.task.StudentTaskEvaluateStatsResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getTotalTaskCount() != 0L) {
+        setTotalTaskCount(other.getTotalTaskCount());
+      }
+      if (other.getWaitingEvaluateCount() != 0L) {
+        setWaitingEvaluateCount(other.getWaitingEvaluateCount());
+      }
+      if (other.getEvaluatedCount() != 0L) {
+        setEvaluatedCount(other.getEvaluatedCount());
+      }
+      if (other.getWaitingSubmitCount() != 0L) {
+        setWaitingSubmitCount(other.getWaitingSubmitCount());
+      }
+      if (other.getExpireCount() != 0L) {
+        setExpireCount(other.getExpireCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -551,6 +721,161 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
       }
       return baseRespBuilder ;
+    }
+
+    private long totalTaskCount ;
+    /**
+     * <code>int64 total_task_count = 2;</code>
+     * @return The totalTaskCount.
+     */
+    @java.lang.Override
+    public long getTotalTaskCount() {
+      return totalTaskCount ;
+    }
+    /**
+     * <code>int64 total_task_count = 2;</code>
+     * @param value The totalTaskCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalTaskCount(long value) {
+      
+      totalTaskCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total_task_count = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalTaskCount() {
+      
+      totalTaskCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long waitingEvaluateCount ;
+    /**
+     * <code>int64 waiting_evaluate_count = 3;</code>
+     * @return The waitingEvaluateCount.
+     */
+    @java.lang.Override
+    public long getWaitingEvaluateCount() {
+      return waitingEvaluateCount ;
+    }
+    /**
+     * <code>int64 waiting_evaluate_count = 3;</code>
+     * @param value The waitingEvaluateCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWaitingEvaluateCount(long value) {
+      
+      waitingEvaluateCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 waiting_evaluate_count = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWaitingEvaluateCount() {
+      
+      waitingEvaluateCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long evaluatedCount ;
+    /**
+     * <code>int64 evaluated_count = 4;</code>
+     * @return The evaluatedCount.
+     */
+    @java.lang.Override
+    public long getEvaluatedCount() {
+      return evaluatedCount ;
+    }
+    /**
+     * <code>int64 evaluated_count = 4;</code>
+     * @param value The evaluatedCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatedCount(long value) {
+      
+      evaluatedCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 evaluated_count = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluatedCount() {
+      
+      evaluatedCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long waitingSubmitCount ;
+    /**
+     * <code>int64 waiting_submit_count = 5;</code>
+     * @return The waitingSubmitCount.
+     */
+    @java.lang.Override
+    public long getWaitingSubmitCount() {
+      return waitingSubmitCount ;
+    }
+    /**
+     * <code>int64 waiting_submit_count = 5;</code>
+     * @param value The waitingSubmitCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWaitingSubmitCount(long value) {
+      
+      waitingSubmitCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 waiting_submit_count = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWaitingSubmitCount() {
+      
+      waitingSubmitCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long expireCount ;
+    /**
+     * <code>int64 expire_count = 6;</code>
+     * @return The expireCount.
+     */
+    @java.lang.Override
+    public long getExpireCount() {
+      return expireCount ;
+    }
+    /**
+     * <code>int64 expire_count = 6;</code>
+     * @param value The expireCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpireCount(long value) {
+      
+      expireCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 expire_count = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExpireCount() {
+      
+      expireCount = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
