@@ -458,6 +458,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$54.GetStudentTaskResponse> getStudentTask($pb.ServerContext ctx, $54.GetStudentTaskRequest request);
   $async.Future<$54.TeacherListStudentTaskResponse> teacherListStudentTask($pb.ServerContext ctx, $54.TeacherListStudentTaskRequest request);
   $async.Future<$54.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ServerContext ctx, $54.TeacherEvaluateStudentTaskRequest request);
+  $async.Future<$54.StudentTaskStatsResponse> studentTaskStats($pb.ServerContext ctx, $54.StudentTaskStatsRequest request);
   $async.Future<$55.ListNotificationResponse> listNotification($pb.ServerContext ctx, $55.ListNotificationRequest request);
   $async.Future<$55.CountNotificationResponse> countNotification($pb.ServerContext ctx, $55.CountNotificationRequest request);
   $async.Future<$55.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $55.ReadNotificationRequest request);
@@ -853,6 +854,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetStudentTask': return $54.GetStudentTaskRequest();
       case 'TeacherListStudentTask': return $54.TeacherListStudentTaskRequest();
       case 'TeacherEvaluateStudentTask': return $54.TeacherEvaluateStudentTaskRequest();
+      case 'StudentTaskStats': return $54.StudentTaskStatsRequest();
       case 'ListNotification': return $55.ListNotificationRequest();
       case 'CountNotification': return $55.CountNotificationRequest();
       case 'ReadNotification': return $55.ReadNotificationRequest();
@@ -1251,6 +1253,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetStudentTask': return this.getStudentTask(ctx, request as $54.GetStudentTaskRequest);
       case 'TeacherListStudentTask': return this.teacherListStudentTask(ctx, request as $54.TeacherListStudentTaskRequest);
       case 'TeacherEvaluateStudentTask': return this.teacherEvaluateStudentTask(ctx, request as $54.TeacherEvaluateStudentTaskRequest);
+      case 'StudentTaskStats': return this.studentTaskStats(ctx, request as $54.StudentTaskStatsRequest);
       case 'ListNotification': return this.listNotification(ctx, request as $55.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $55.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $55.ReadNotificationRequest);

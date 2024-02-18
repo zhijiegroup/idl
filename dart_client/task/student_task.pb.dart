@@ -1768,6 +1768,194 @@ class TeacherEvaluateStudentTaskResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class StudentTaskStatsRequest extends $pb.GeneratedMessage {
+  factory StudentTaskStatsRequest({
+    $2.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  StudentTaskStatsRequest._() : super();
+  factory StudentTaskStatsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskStatsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskStatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskStatsRequest clone() => StudentTaskStatsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskStatsRequest copyWith(void Function(StudentTaskStatsRequest) updates) => super.copyWith((message) => updates(message as StudentTaskStatsRequest)) as StudentTaskStatsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskStatsRequest create() => StudentTaskStatsRequest._();
+  StudentTaskStatsRequest createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskStatsRequest> createRepeated() => $pb.PbList<StudentTaskStatsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskStatsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskStatsRequest>(create);
+  static StudentTaskStatsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class StudentTaskStatsResponse extends $pb.GeneratedMessage {
+  factory StudentTaskStatsResponse({
+    $2.BaseResponse? baseResp,
+    $fixnum.Int64? totalTaskCount,
+    $fixnum.Int64? waitingSubmitCount,
+    $fixnum.Int64? waitingEvaluateCount,
+    $fixnum.Int64? evaluatePassedCount,
+    $fixnum.Int64? evaluateFailedCount,
+    $fixnum.Int64? expireCount,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalTaskCount != null) {
+      $result.totalTaskCount = totalTaskCount;
+    }
+    if (waitingSubmitCount != null) {
+      $result.waitingSubmitCount = waitingSubmitCount;
+    }
+    if (waitingEvaluateCount != null) {
+      $result.waitingEvaluateCount = waitingEvaluateCount;
+    }
+    if (evaluatePassedCount != null) {
+      $result.evaluatePassedCount = evaluatePassedCount;
+    }
+    if (evaluateFailedCount != null) {
+      $result.evaluateFailedCount = evaluateFailedCount;
+    }
+    if (expireCount != null) {
+      $result.expireCount = expireCount;
+    }
+    return $result;
+  }
+  StudentTaskStatsResponse._() : super();
+  factory StudentTaskStatsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskStatsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskStatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(3, _omitFieldNames ? '' : 'waitingSubmitCount')
+    ..aInt64(4, _omitFieldNames ? '' : 'waitingEvaluateCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluatePassedCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'evaluateFailedCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'expireCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskStatsResponse clone() => StudentTaskStatsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskStatsResponse copyWith(void Function(StudentTaskStatsResponse) updates) => super.copyWith((message) => updates(message as StudentTaskStatsResponse)) as StudentTaskStatsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskStatsResponse create() => StudentTaskStatsResponse._();
+  StudentTaskStatsResponse createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskStatsResponse> createRepeated() => $pb.PbList<StudentTaskStatsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskStatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskStatsResponse>(create);
+  static StudentTaskStatsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalTaskCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalTaskCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalTaskCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get waitingSubmitCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set waitingSubmitCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWaitingSubmitCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWaitingSubmitCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get waitingEvaluateCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set waitingEvaluateCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWaitingEvaluateCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWaitingEvaluateCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluatePassedCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluatePassedCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluatePassedCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluatePassedCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get evaluateFailedCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set evaluateFailedCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEvaluateFailedCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEvaluateFailedCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get expireCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set expireCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasExpireCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpireCount() => clearField(7);
+}
+
 class StudentTaskEvaluateStatsRequest extends $pb.GeneratedMessage {
   factory StudentTaskEvaluateStatsRequest({
     $2.BaseRequest? baseRequest,

@@ -170,6 +170,20 @@ export interface TeacherEvaluateStudentTaskResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface StudentTaskStatsRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface StudentTaskStatsResponse {
+  base_resp?: base.BaseResponse;
+  total_task_count?: string;
+  waiting_submit_count?: string;
+  waiting_evaluate_count?: string;
+  evaluate_passed_count?: string;
+  evaluate_failed_count?: string;
+  expire_count?: string;
+}
+
 export interface StudentTaskEvaluateStatsRequest {
   base_request?: base.BaseRequest;
 }

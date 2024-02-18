@@ -100,6 +100,16 @@ public final class StudentTaskOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_TeacherEvaluateStudentTaskResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StudentTaskStatsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StudentTaskStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StudentTaskStatsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StudentTaskStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_StudentTaskEvaluateStatsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -201,12 +211,20 @@ public final class StudentTaskOuterClass {
       "uirementEvaluation\022\025\n\rfailed_reason\030\004 \001(" +
       "\t\022\026\n\016evaluate_score\030\005 \001(\005\"K\n\"TeacherEval" +
       "uateStudentTaskResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"J\n\037StudentTaskEva" +
-      "luateStatsRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\"I\n StudentTaskEvaluat" +
-      "eStatsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponseB#\n\037com.zhijiejiaoyu.glory_" +
-      "api.taskP\001b\006proto3"
+      "(\0132\022.base.BaseResponse\"B\n\027StudentTaskSta" +
+      "tsRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\"\355\001\n\030StudentTaskStatsResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\030" +
+      "\n\020total_task_count\030\002 \001(\003\022\034\n\024waiting_subm" +
+      "it_count\030\003 \001(\003\022\036\n\026waiting_evaluate_count" +
+      "\030\004 \001(\003\022\035\n\025evaluate_passed_count\030\005 \001(\003\022\035\n" +
+      "\025evaluate_failed_count\030\006 \001(\003\022\024\n\014expire_c" +
+      "ount\030\007 \001(\003\"J\n\037StudentTaskEvaluateStatsRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\"I\n StudentTaskEvaluateStatsRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "eB#\n\037com.zhijiejiaoyu.glory_api.taskP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -318,14 +336,26 @@ public final class StudentTaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherEvaluateStudentTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_StudentTaskEvaluateStatsRequest_descriptor =
+    internal_static_glory_api_StudentTaskStatsRequest_descriptor =
       getDescriptor().getMessageTypes().get(17);
+    internal_static_glory_api_StudentTaskStatsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StudentTaskStatsRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_StudentTaskStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_glory_api_StudentTaskStatsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StudentTaskStatsResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TotalTaskCount", "WaitingSubmitCount", "WaitingEvaluateCount", "EvaluatePassedCount", "EvaluateFailedCount", "ExpireCount", });
+    internal_static_glory_api_StudentTaskEvaluateStatsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_StudentTaskEvaluateStatsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTaskEvaluateStatsRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_StudentTaskEvaluateStatsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_StudentTaskEvaluateStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTaskEvaluateStatsResponse_descriptor,

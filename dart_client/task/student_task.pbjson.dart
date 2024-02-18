@@ -353,6 +353,43 @@ final $typed_data.Uint8List teacherEvaluateStudentTaskResponseDescriptor = $conv
     'CiJUZWFjaGVyRXZhbHVhdGVTdHVkZW50VGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCz'
     'ISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
+@$core.Deprecated('Use studentTaskStatsRequestDescriptor instead')
+const StudentTaskStatsRequest$json = {
+  '1': 'StudentTaskStatsRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `StudentTaskStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskStatsRequestDescriptor = $convert.base64Decode(
+    'ChdTdHVkZW50VGFza1N0YXRzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use studentTaskStatsResponseDescriptor instead')
+const StudentTaskStatsResponse$json = {
+  '1': 'StudentTaskStatsResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_task_count', '3': 2, '4': 1, '5': 3, '10': 'totalTaskCount'},
+    {'1': 'waiting_submit_count', '3': 3, '4': 1, '5': 3, '10': 'waitingSubmitCount'},
+    {'1': 'waiting_evaluate_count', '3': 4, '4': 1, '5': 3, '10': 'waitingEvaluateCount'},
+    {'1': 'evaluate_passed_count', '3': 5, '4': 1, '5': 3, '10': 'evaluatePassedCount'},
+    {'1': 'evaluate_failed_count', '3': 6, '4': 1, '5': 3, '10': 'evaluateFailedCount'},
+    {'1': 'expire_count', '3': 7, '4': 1, '5': 3, '10': 'expireCount'},
+  ],
+};
+
+/// Descriptor for `StudentTaskStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskStatsResponseDescriptor = $convert.base64Decode(
+    'ChhTdHVkZW50VGFza1N0YXRzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEigKEHRvdGFsX3Rhc2tfY291bnQYAiABKANSDnRvdGFsVGFz'
+    'a0NvdW50EjAKFHdhaXRpbmdfc3VibWl0X2NvdW50GAMgASgDUhJ3YWl0aW5nU3VibWl0Q291bn'
+    'QSNAoWd2FpdGluZ19ldmFsdWF0ZV9jb3VudBgEIAEoA1IUd2FpdGluZ0V2YWx1YXRlQ291bnQS'
+    'MgoVZXZhbHVhdGVfcGFzc2VkX2NvdW50GAUgASgDUhNldmFsdWF0ZVBhc3NlZENvdW50EjIKFW'
+    'V2YWx1YXRlX2ZhaWxlZF9jb3VudBgGIAEoA1ITZXZhbHVhdGVGYWlsZWRDb3VudBIhCgxleHBp'
+    'cmVfY291bnQYByABKANSC2V4cGlyZUNvdW50');
+
 @$core.Deprecated('Use studentTaskEvaluateStatsRequestDescriptor instead')
 const StudentTaskEvaluateStatsRequest$json = {
   '1': 'StudentTaskEvaluateStatsRequest',

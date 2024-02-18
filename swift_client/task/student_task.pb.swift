@@ -652,6 +652,60 @@ struct GloryApi_TeacherEvaluateStudentTaskResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_StudentTaskStatsRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_StudentTaskStatsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var totalTaskCount: Int64 = 0
+
+  var waitingSubmitCount: Int64 = 0
+
+  var waitingEvaluateCount: Int64 = 0
+
+  var evaluatePassedCount: Int64 = 0
+
+  var evaluateFailedCount: Int64 = 0
+
+  var expireCount: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 struct GloryApi_StudentTaskEvaluateStatsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -712,6 +766,8 @@ extension GloryApi_TeacherListStudentTaskRequest: @unchecked Sendable {}
 extension GloryApi_TeacherListStudentTaskResponse: @unchecked Sendable {}
 extension GloryApi_TeacherEvaluateStudentTaskRequest: @unchecked Sendable {}
 extension GloryApi_TeacherEvaluateStudentTaskResponse: @unchecked Sendable {}
+extension GloryApi_StudentTaskStatsRequest: @unchecked Sendable {}
+extension GloryApi_StudentTaskStatsResponse: @unchecked Sendable {}
 extension GloryApi_StudentTaskEvaluateStatsRequest: @unchecked Sendable {}
 extension GloryApi_StudentTaskEvaluateStatsResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
@@ -1811,6 +1867,114 @@ extension GloryApi_TeacherEvaluateStudentTaskResponse: SwiftProtobuf.Message, Sw
 
   static func ==(lhs: GloryApi_TeacherEvaluateStudentTaskResponse, rhs: GloryApi_TeacherEvaluateStudentTaskResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_StudentTaskStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".StudentTaskStatsRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_StudentTaskStatsRequest, rhs: GloryApi_StudentTaskStatsRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_StudentTaskStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".StudentTaskStatsResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "total_task_count"),
+    3: .standard(proto: "waiting_submit_count"),
+    4: .standard(proto: "waiting_evaluate_count"),
+    5: .standard(proto: "evaluate_passed_count"),
+    6: .standard(proto: "evaluate_failed_count"),
+    7: .standard(proto: "expire_count"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.totalTaskCount) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.waitingSubmitCount) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.waitingEvaluateCount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluatePassedCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.evaluateFailedCount) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.expireCount) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.totalTaskCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.totalTaskCount, fieldNumber: 2)
+    }
+    if self.waitingSubmitCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.waitingSubmitCount, fieldNumber: 3)
+    }
+    if self.waitingEvaluateCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.waitingEvaluateCount, fieldNumber: 4)
+    }
+    if self.evaluatePassedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluatePassedCount, fieldNumber: 5)
+    }
+    if self.evaluateFailedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluateFailedCount, fieldNumber: 6)
+    }
+    if self.expireCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.expireCount, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_StudentTaskStatsResponse, rhs: GloryApi_StudentTaskStatsResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.totalTaskCount != rhs.totalTaskCount {return false}
+    if lhs.waitingSubmitCount != rhs.waitingSubmitCount {return false}
+    if lhs.waitingEvaluateCount != rhs.waitingEvaluateCount {return false}
+    if lhs.evaluatePassedCount != rhs.evaluatePassedCount {return false}
+    if lhs.evaluateFailedCount != rhs.evaluateFailedCount {return false}
+    if lhs.expireCount != rhs.expireCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

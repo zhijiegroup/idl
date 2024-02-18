@@ -3058,6 +3058,12 @@ export class glory_api {
     );
   }
 
+  StudentTaskStats(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/student_task_stats${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListNotification(request) {
     const uri = `${this.uriPrefix}/api/notification/list`;
     const body = JSONbigint.stringify(request);
