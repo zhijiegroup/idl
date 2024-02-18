@@ -174,6 +174,16 @@ public final class TeacherTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CountClassPassListResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherTaskStatsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherTaskStatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherTaskStatsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherTaskStatsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -312,8 +322,14 @@ public final class TeacherTaskOuterClass {
       "tClassPassListResponse\022%\n\tbase_resp\030\001 \001(" +
       "\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(\0132\035.gl" +
       "ory_api.ClassTaskPassCount\022,\n\npagination" +
-      "\030d \001(\0132\030.base.PaginationResponseB#\n\037com." +
-      "zhijiejiaoyu.glory_api.taskP\001b\006proto3"
+      "\030d \001(\0132\030.base.PaginationResponse\"B\n\027Teac" +
+      "herTaskStatsRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\"\242\001\n\030TeacherTaskStat" +
+      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022\030\n\020total_task_count\030\002 \001(\003\022\031\n\021no" +
+      "t_started_count\030\003 \001(\003\022\025\n\rongoing_count\030\004" +
+      " \001(\003\022\023\n\013ended_count\030\005 \001(\003B#\n\037com.zhijiej" +
+      "iaoyu.glory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -515,6 +531,18 @@ public final class TeacherTaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountClassPassListResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
+    internal_static_glory_api_TeacherTaskStatsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_glory_api_TeacherTaskStatsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherTaskStatsRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_TeacherTaskStatsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_glory_api_TeacherTaskStatsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherTaskStatsResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TotalTaskCount", "NotStartedCount", "OngoingCount", "EndedCount", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();

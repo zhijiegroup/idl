@@ -1643,6 +1643,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.DeleteTeacherTaskRequest
   ): Promise<teacher_task.DeleteTeacherTaskResponse>;
 
+  TeacherTaskStats(
+    request: teacher_task.TeacherTaskStatsRequest
+  ): Promise<teacher_task.TeacherTaskStatsResponse>;
+
   /** 教师任务统计 */
   CountClassSubmit(
     request: teacher_task.CountTeacherTaskRequest

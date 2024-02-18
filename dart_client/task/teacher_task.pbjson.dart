@@ -608,3 +608,36 @@ final $typed_data.Uint8List countClassPassListResponseDescriptor = $convert.base
     'c2tQYXNzQ291bnRSBGxpc3QSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvbl'
     'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
 
+@$core.Deprecated('Use teacherTaskStatsRequestDescriptor instead')
+const TeacherTaskStatsRequest$json = {
+  '1': 'TeacherTaskStatsRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `TeacherTaskStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherTaskStatsRequestDescriptor = $convert.base64Decode(
+    'ChdUZWFjaGVyVGFza1N0YXRzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use teacherTaskStatsResponseDescriptor instead')
+const TeacherTaskStatsResponse$json = {
+  '1': 'TeacherTaskStatsResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total_task_count', '3': 2, '4': 1, '5': 3, '10': 'totalTaskCount'},
+    {'1': 'not_started_count', '3': 3, '4': 1, '5': 3, '10': 'notStartedCount'},
+    {'1': 'ongoing_count', '3': 4, '4': 1, '5': 3, '10': 'ongoingCount'},
+    {'1': 'ended_count', '3': 5, '4': 1, '5': 3, '10': 'endedCount'},
+  ],
+};
+
+/// Descriptor for `TeacherTaskStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherTaskStatsResponseDescriptor = $convert.base64Decode(
+    'ChhUZWFjaGVyVGFza1N0YXRzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEigKEHRvdGFsX3Rhc2tfY291bnQYAiABKANSDnRvdGFsVGFz'
+    'a0NvdW50EioKEW5vdF9zdGFydGVkX2NvdW50GAMgASgDUg9ub3RTdGFydGVkQ291bnQSIwoNb2'
+    '5nb2luZ19jb3VudBgEIAEoA1IMb25nb2luZ0NvdW50Eh8KC2VuZGVkX2NvdW50GAUgASgDUgpl'
+    'bmRlZENvdW50');
+

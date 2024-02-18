@@ -3026,6 +3026,166 @@ class CountClassPassListResponse extends $pb.GeneratedMessage {
   $2.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+class TeacherTaskStatsRequest extends $pb.GeneratedMessage {
+  factory TeacherTaskStatsRequest({
+    $2.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  TeacherTaskStatsRequest._() : super();
+  factory TeacherTaskStatsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherTaskStatsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskStatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherTaskStatsRequest clone() => TeacherTaskStatsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherTaskStatsRequest copyWith(void Function(TeacherTaskStatsRequest) updates) => super.copyWith((message) => updates(message as TeacherTaskStatsRequest)) as TeacherTaskStatsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskStatsRequest create() => TeacherTaskStatsRequest._();
+  TeacherTaskStatsRequest createEmptyInstance() => create();
+  static $pb.PbList<TeacherTaskStatsRequest> createRepeated() => $pb.PbList<TeacherTaskStatsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskStatsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherTaskStatsRequest>(create);
+  static TeacherTaskStatsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class TeacherTaskStatsResponse extends $pb.GeneratedMessage {
+  factory TeacherTaskStatsResponse({
+    $2.BaseResponse? baseResp,
+    $fixnum.Int64? totalTaskCount,
+    $fixnum.Int64? notStartedCount,
+    $fixnum.Int64? ongoingCount,
+    $fixnum.Int64? endedCount,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (totalTaskCount != null) {
+      $result.totalTaskCount = totalTaskCount;
+    }
+    if (notStartedCount != null) {
+      $result.notStartedCount = notStartedCount;
+    }
+    if (ongoingCount != null) {
+      $result.ongoingCount = ongoingCount;
+    }
+    if (endedCount != null) {
+      $result.endedCount = endedCount;
+    }
+    return $result;
+  }
+  TeacherTaskStatsResponse._() : super();
+  factory TeacherTaskStatsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherTaskStatsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskStatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalTaskCount')
+    ..aInt64(3, _omitFieldNames ? '' : 'notStartedCount')
+    ..aInt64(4, _omitFieldNames ? '' : 'ongoingCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'endedCount')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherTaskStatsResponse clone() => TeacherTaskStatsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherTaskStatsResponse copyWith(void Function(TeacherTaskStatsResponse) updates) => super.copyWith((message) => updates(message as TeacherTaskStatsResponse)) as TeacherTaskStatsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskStatsResponse create() => TeacherTaskStatsResponse._();
+  TeacherTaskStatsResponse createEmptyInstance() => create();
+  static $pb.PbList<TeacherTaskStatsResponse> createRepeated() => $pb.PbList<TeacherTaskStatsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskStatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherTaskStatsResponse>(create);
+  static TeacherTaskStatsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalTaskCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalTaskCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalTaskCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalTaskCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get notStartedCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set notStartedCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNotStartedCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNotStartedCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get ongoingCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set ongoingCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOngoingCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOngoingCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get endedCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set endedCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndedCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndedCount() => clearField(5);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

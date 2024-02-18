@@ -11330,6 +11330,37 @@ public final class glory_apiGrpc {
     return getDeleteTeacherTaskMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest,
+      com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> getTeacherTaskStatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TeacherTaskStats",
+      requestType = com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest,
+      com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> getTeacherTaskStatsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest, com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> getTeacherTaskStatsMethod;
+    if ((getTeacherTaskStatsMethod = glory_apiGrpc.getTeacherTaskStatsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getTeacherTaskStatsMethod = glory_apiGrpc.getTeacherTaskStatsMethod) == null) {
+          glory_apiGrpc.getTeacherTaskStatsMethod = getTeacherTaskStatsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest, com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TeacherTaskStats"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("TeacherTaskStats"))
+              .build();
+        }
+      }
+    }
+    return getTeacherTaskStatsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CountTeacherTaskRequest,
       com.zhijiejiaoyu.glory_api.task.CountClassSubmitResponse> getCountClassSubmitMethod;
 
@@ -15097,6 +15128,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void teacherTaskStats(com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTeacherTaskStatsMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * 教师任务统计
      * </pre>
@@ -18597,6 +18635,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void teacherTaskStats(com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTeacherTaskStatsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 教师任务统计
      * </pre>
@@ -21744,6 +21790,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse deleteTeacherTask(com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTeacherTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse teacherTaskStats(com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTeacherTaskStatsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -25236,6 +25289,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse> teacherTaskStats(
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTeacherTaskStatsMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 教师任务统计
      * </pre>
@@ -25822,32 +25883,33 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_TEACHER_TASK = 362;
   private static final int METHODID_GET_TEACHER_TASK_PROGRESS = 363;
   private static final int METHODID_DELETE_TEACHER_TASK = 364;
-  private static final int METHODID_COUNT_CLASS_SUBMIT = 365;
-  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 366;
-  private static final int METHODID_COUNT_POSITIVE_LIST = 367;
-  private static final int METHODID_COUNT_POTENTIAL_LIST = 368;
-  private static final int METHODID_COUNT_SUBMIT_LIST = 369;
-  private static final int METHODID_COUNT_CLASS_PASS = 370;
-  private static final int METHODID_COUNT_CLASS_PASS_LIST = 371;
-  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 372;
-  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 373;
-  private static final int METHODID_COUNT_PASS_LIST = 374;
-  private static final int METHODID_LIST_STUDENT_TASK = 375;
-  private static final int METHODID_SUBMIT_STUDENT_TASK = 376;
-  private static final int METHODID_GET_STUDENT_TASK = 377;
-  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 378;
-  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 379;
-  private static final int METHODID_LIST_NOTIFICATION = 380;
-  private static final int METHODID_COUNT_NOTIFICATION = 381;
-  private static final int METHODID_READ_NOTIFICATION = 382;
-  private static final int METHODID_TEST_NOTIFICATION = 383;
-  private static final int METHODID_DELETE_NOTIFICATION = 384;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 385;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 386;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 387;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 388;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 389;
-  private static final int METHODID_CLOSE_CASTER = 390;
+  private static final int METHODID_TEACHER_TASK_STATS = 365;
+  private static final int METHODID_COUNT_CLASS_SUBMIT = 366;
+  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 367;
+  private static final int METHODID_COUNT_POSITIVE_LIST = 368;
+  private static final int METHODID_COUNT_POTENTIAL_LIST = 369;
+  private static final int METHODID_COUNT_SUBMIT_LIST = 370;
+  private static final int METHODID_COUNT_CLASS_PASS = 371;
+  private static final int METHODID_COUNT_CLASS_PASS_LIST = 372;
+  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 373;
+  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 374;
+  private static final int METHODID_COUNT_PASS_LIST = 375;
+  private static final int METHODID_LIST_STUDENT_TASK = 376;
+  private static final int METHODID_SUBMIT_STUDENT_TASK = 377;
+  private static final int METHODID_GET_STUDENT_TASK = 378;
+  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 379;
+  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 380;
+  private static final int METHODID_LIST_NOTIFICATION = 381;
+  private static final int METHODID_COUNT_NOTIFICATION = 382;
+  private static final int METHODID_READ_NOTIFICATION = 383;
+  private static final int METHODID_TEST_NOTIFICATION = 384;
+  private static final int METHODID_DELETE_NOTIFICATION = 385;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 386;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 387;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 388;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 389;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 390;
+  private static final int METHODID_CLOSE_CASTER = 391;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -27325,6 +27387,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_TEACHER_TASK:
           serviceImpl.deleteTeacherTask((com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse>) responseObserver);
+          break;
+        case METHODID_TEACHER_TASK_STATS:
+          serviceImpl.teacherTaskStats((com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse>) responseObserver);
           break;
         case METHODID_COUNT_CLASS_SUBMIT:
           serviceImpl.countClassSubmit((com.zhijiejiaoyu.glory_api.task.CountTeacherTaskRequest) request,
@@ -30004,6 +30070,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.DeleteTeacherTaskResponse>(
                 service, METHODID_DELETE_TEACHER_TASK)))
         .addMethod(
+          getTeacherTaskStatsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsRequest,
+              com.zhijiejiaoyu.glory_api.task.TeacherTaskStatsResponse>(
+                service, METHODID_TEACHER_TASK_STATS)))
+        .addMethod(
           getCountClassSubmitMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -30598,6 +30671,7 @@ public final class glory_apiGrpc {
               .addMethod(getGetTeacherTaskMethod())
               .addMethod(getGetTeacherTaskProgressMethod())
               .addMethod(getDeleteTeacherTaskMethod())
+              .addMethod(getTeacherTaskStatsMethod())
               .addMethod(getCountClassSubmitMethod())
               .addMethod(getCountClassSubmitListMethod())
               .addMethod(getCountPositiveListMethod())

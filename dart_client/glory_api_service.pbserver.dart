@@ -442,6 +442,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$53.GetTeacherTaskResponse> getTeacherTask($pb.ServerContext ctx, $53.GetTeacherTaskRequest request);
   $async.Future<$53.GetTeacherTaskProgressResponse> getTeacherTaskProgress($pb.ServerContext ctx, $53.GetTeacherTaskProgressRequest request);
   $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ServerContext ctx, $53.DeleteTeacherTaskRequest request);
+  $async.Future<$53.TeacherTaskStatsResponse> teacherTaskStats($pb.ServerContext ctx, $53.TeacherTaskStatsRequest request);
   $async.Future<$53.CountClassSubmitResponse> countClassSubmit($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
   $async.Future<$53.CountClassSubmitListResponse> countClassSubmitList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
   $async.Future<$53.CountPositiveListResponse> countPositiveList($pb.ServerContext ctx, $53.CountTeacherTaskRequest request);
@@ -836,6 +837,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTeacherTask': return $53.GetTeacherTaskRequest();
       case 'GetTeacherTaskProgress': return $53.GetTeacherTaskProgressRequest();
       case 'DeleteTeacherTask': return $53.DeleteTeacherTaskRequest();
+      case 'TeacherTaskStats': return $53.TeacherTaskStatsRequest();
       case 'CountClassSubmit': return $53.CountTeacherTaskRequest();
       case 'CountClassSubmitList': return $53.CountTeacherTaskRequest();
       case 'CountPositiveList': return $53.CountTeacherTaskRequest();
@@ -1233,6 +1235,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetTeacherTask': return this.getTeacherTask(ctx, request as $53.GetTeacherTaskRequest);
       case 'GetTeacherTaskProgress': return this.getTeacherTaskProgress(ctx, request as $53.GetTeacherTaskProgressRequest);
       case 'DeleteTeacherTask': return this.deleteTeacherTask(ctx, request as $53.DeleteTeacherTaskRequest);
+      case 'TeacherTaskStats': return this.teacherTaskStats(ctx, request as $53.TeacherTaskStatsRequest);
       case 'CountClassSubmit': return this.countClassSubmit(ctx, request as $53.CountTeacherTaskRequest);
       case 'CountClassSubmitList': return this.countClassSubmitList(ctx, request as $53.CountTeacherTaskRequest);
       case 'CountPositiveList': return this.countPositiveList(ctx, request as $53.CountTeacherTaskRequest);

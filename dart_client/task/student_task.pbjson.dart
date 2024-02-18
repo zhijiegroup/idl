@@ -353,3 +353,29 @@ final $typed_data.Uint8List teacherEvaluateStudentTaskResponseDescriptor = $conv
     'CiJUZWFjaGVyRXZhbHVhdGVTdHVkZW50VGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCz'
     'ISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
+@$core.Deprecated('Use studentTaskEvaluateStatsRequestDescriptor instead')
+const StudentTaskEvaluateStatsRequest$json = {
+  '1': 'StudentTaskEvaluateStatsRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `StudentTaskEvaluateStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskEvaluateStatsRequestDescriptor = $convert.base64Decode(
+    'Ch9TdHVkZW50VGFza0V2YWx1YXRlU3RhdHNSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCz'
+    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+
+@$core.Deprecated('Use studentTaskEvaluateStatsResponseDescriptor instead')
+const StudentTaskEvaluateStatsResponse$json = {
+  '1': 'StudentTaskEvaluateStatsResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `StudentTaskEvaluateStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentTaskEvaluateStatsResponseDescriptor = $convert.base64Decode(
+    'CiBTdHVkZW50VGFza0V2YWx1YXRlU3RhdHNSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
+    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+

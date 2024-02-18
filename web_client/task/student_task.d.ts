@@ -169,3 +169,11 @@ export interface TeacherEvaluateStudentTaskRequest {
 export interface TeacherEvaluateStudentTaskResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface StudentTaskEvaluateStatsRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface StudentTaskEvaluateStatsResponse {
+  base_resp?: base.BaseResponse;
+}

@@ -277,3 +277,15 @@ export interface CountClassPassListResponse {
   list?: Array<ClassTaskPassCount>;
   pagination?: base.PaginationResponse;
 }
+
+export interface TeacherTaskStatsRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface TeacherTaskStatsResponse {
+  base_resp?: base.BaseResponse;
+  total_task_count?: string;
+  not_started_count?: string;
+  ongoing_count?: string;
+  ended_count?: string;
+}

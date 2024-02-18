@@ -1768,6 +1768,110 @@ class TeacherEvaluateStudentTaskResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class StudentTaskEvaluateStatsRequest extends $pb.GeneratedMessage {
+  factory StudentTaskEvaluateStatsRequest({
+    $2.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  StudentTaskEvaluateStatsRequest._() : super();
+  factory StudentTaskEvaluateStatsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskEvaluateStatsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskEvaluateStatsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskEvaluateStatsRequest clone() => StudentTaskEvaluateStatsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskEvaluateStatsRequest copyWith(void Function(StudentTaskEvaluateStatsRequest) updates) => super.copyWith((message) => updates(message as StudentTaskEvaluateStatsRequest)) as StudentTaskEvaluateStatsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskEvaluateStatsRequest create() => StudentTaskEvaluateStatsRequest._();
+  StudentTaskEvaluateStatsRequest createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskEvaluateStatsRequest> createRepeated() => $pb.PbList<StudentTaskEvaluateStatsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskEvaluateStatsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskEvaluateStatsRequest>(create);
+  static StudentTaskEvaluateStatsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
+  factory StudentTaskEvaluateStatsResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  StudentTaskEvaluateStatsResponse._() : super();
+  factory StudentTaskEvaluateStatsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StudentTaskEvaluateStatsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StudentTaskEvaluateStatsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StudentTaskEvaluateStatsResponse clone() => StudentTaskEvaluateStatsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StudentTaskEvaluateStatsResponse copyWith(void Function(StudentTaskEvaluateStatsResponse) updates) => super.copyWith((message) => updates(message as StudentTaskEvaluateStatsResponse)) as StudentTaskEvaluateStatsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskEvaluateStatsResponse create() => StudentTaskEvaluateStatsResponse._();
+  StudentTaskEvaluateStatsResponse createEmptyInstance() => create();
+  static $pb.PbList<StudentTaskEvaluateStatsResponse> createRepeated() => $pb.PbList<StudentTaskEvaluateStatsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StudentTaskEvaluateStatsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StudentTaskEvaluateStatsResponse>(create);
+  static StudentTaskEvaluateStatsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
