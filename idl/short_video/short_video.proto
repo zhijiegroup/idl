@@ -106,6 +106,7 @@ message StageShortVideoResponse {
 message ListMyShortVideoRequest {
   base.BaseRequest base_request = 1;
   int32 type = 2; // 短视频类型：1: 待审核视频列表；2: 已审核视频列表；3: 被驳回视频列表；4: 全部视频列表
+  int64 user_id = 3;
   base.PaginationRequest pagination = 100;
 }
 
