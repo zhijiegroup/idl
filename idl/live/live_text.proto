@@ -4,14 +4,16 @@ option java_package = "com.zhijiejiaoyu.glory_api.live";
 option java_multiple_files = true;
 
 import "base.proto";
+import "user/user.proto";
 
 message LiveText {
     int64 text_id = 1;
     string title =2; 
     string content =3;
-    string user =4; 
-    string created_at =5; 
-    string updated_at =6; 
+    string user =4;
+    string major_class = 5;
+    string created_at =6;
+    string updated_at =7;
 }
   
 message CreateLiveTextRequest {
@@ -67,4 +69,17 @@ message DeleteLiveTextsResponse {
     base.BaseResponse base_resp = 1;
 }
   
-  
+message TeacherListStudentShortVideoTextRequest {
+    base.BaseRequest base_request = 1;
+    string student_name = 2;
+    repeated int64 class_ids = 3;
+    string start_time = 4;
+    string end_time = 5;
+    base.PaginationRequest pagination = 100;
+}
+
+message TeacherListStudentShortVideoTextResponse {
+    base.BaseResponse base_resp = 1;
+    repeated LiveText text_list = 2;
+    base.PaginationResponse pagination = 100;
+}

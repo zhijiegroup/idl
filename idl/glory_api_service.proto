@@ -744,6 +744,9 @@ service glory_api {
   rpc DeleteLiveTexts(DeleteLiveTextsRequest) returns (DeleteLiveTextsResponse) {
     option (api.post) = '/api/live/delete_live_texts';
   }
+  rpc TeacherListStudentShortVideoText(TeacherListStudentShortVideoTextRequest) returns (TeacherListStudentShortVideoTextResponse) {
+    option (api.post) = '/api/live/teacher_list_student_short_video_text';
+  }
 
    // live chart
    rpc GetLiveChartData(GetLiveChartDataRequest) returns (GetLiveChartDataResponse) {
