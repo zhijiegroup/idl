@@ -327,6 +327,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$34.CreateShortVideoCommentResponse> createShortVideoComment($pb.ServerContext ctx, $34.CreateShortVideoCommentRequest request);
   $async.Future<$34.DeleteShortVideoCommentResponse> deleteShortVideoComment($pb.ServerContext ctx, $34.DeleteShortVideoCommentRequest request);
   $async.Future<$34.ListShortVideoCommentResponse> listShortVideoComment($pb.ServerContext ctx, $34.ListShortVideoCommentRequest request);
+  $async.Future<$34.TeacherListStudentShortVideoResponse> teacherListStudentShortVideo($pb.ServerContext ctx, $34.TeacherListStudentShortVideoRequest request);
   $async.Future<$35.CreateCouponResponse> createCoupon($pb.ServerContext ctx, $35.CreateCouponRequest request);
   $async.Future<$35.ListCouponResponse> listCoupon($pb.ServerContext ctx, $35.ListCouponRequest request);
   $async.Future<$35.GetCouponDetailResponse> couponDetail($pb.ServerContext ctx, $35.GetCouponDetailRequest request);
@@ -724,6 +725,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShortVideoComment': return $34.CreateShortVideoCommentRequest();
       case 'DeleteShortVideoComment': return $34.DeleteShortVideoCommentRequest();
       case 'ListShortVideoComment': return $34.ListShortVideoCommentRequest();
+      case 'TeacherListStudentShortVideo': return $34.TeacherListStudentShortVideoRequest();
       case 'CreateCoupon': return $35.CreateCouponRequest();
       case 'ListCoupon': return $35.ListCouponRequest();
       case 'CouponDetail': return $35.GetCouponDetailRequest();
@@ -1124,6 +1126,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShortVideoComment': return this.createShortVideoComment(ctx, request as $34.CreateShortVideoCommentRequest);
       case 'DeleteShortVideoComment': return this.deleteShortVideoComment(ctx, request as $34.DeleteShortVideoCommentRequest);
       case 'ListShortVideoComment': return this.listShortVideoComment(ctx, request as $34.ListShortVideoCommentRequest);
+      case 'TeacherListStudentShortVideo': return this.teacherListStudentShortVideo(ctx, request as $34.TeacherListStudentShortVideoRequest);
       case 'CreateCoupon': return this.createCoupon(ctx, request as $35.CreateCouponRequest);
       case 'ListCoupon': return this.listCoupon(ctx, request as $35.ListCouponRequest);
       case 'CouponDetail': return this.couponDetail(ctx, request as $35.GetCouponDetailRequest);

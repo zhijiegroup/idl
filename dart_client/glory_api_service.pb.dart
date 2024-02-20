@@ -826,6 +826,9 @@ class glory_apiApi {
   $async.Future<$34.ListShortVideoCommentResponse> listShortVideoComment($pb.ClientContext? ctx, $34.ListShortVideoCommentRequest request) =>
     _client.invoke<$34.ListShortVideoCommentResponse>(ctx, 'glory_api', 'ListShortVideoComment', request, $34.ListShortVideoCommentResponse())
   ;
+  $async.Future<$34.TeacherListStudentShortVideoResponse> teacherListStudentShortVideo($pb.ClientContext? ctx, $34.TeacherListStudentShortVideoRequest request) =>
+    _client.invoke<$34.TeacherListStudentShortVideoResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideo', request, $34.TeacherListStudentShortVideoResponse())
+  ;
   $async.Future<$35.CreateCouponResponse> createCoupon($pb.ClientContext? ctx, $35.CreateCouponRequest request) =>
     _client.invoke<$35.CreateCouponResponse>(ctx, 'glory_api', 'CreateCoupon', request, $35.CreateCouponResponse())
   ;

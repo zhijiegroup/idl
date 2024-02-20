@@ -2048,6 +2048,14 @@ export class glory_api {
     );
   }
 
+  TeacherListStudentShortVideo(request) {
+    const uri = `${this.uriPrefix}/api/short_video/teacher_list_student_short_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateCoupon(request) {
     const uri = `${this.uriPrefix}/api/shop/create_coupon`;
     const body = JSONbigint.stringify(request);

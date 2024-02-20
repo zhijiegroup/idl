@@ -412,3 +412,18 @@ export interface ListShortVideoCommentResponse {
   short_video_comment_list?: Array<ShortVideoComment>;
   pagination?: base.PaginationResponse;
 }
+
+export interface TeacherListStudentShortVideoRequest {
+  base_request?: base.BaseRequest;
+  student_name?: string;
+  class_ids?: Array<string>;
+  start_time?: string;
+  end_time?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface TeacherListStudentShortVideoResponse {
+  base_resp?: base.BaseResponse;
+  short_video_list?: Array<ShortVideo>;
+  pagination?: base.PaginationResponse;
+}

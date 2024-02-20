@@ -844,3 +844,41 @@ final $typed_data.Uint8List listShortVideoCommentResponseDescriptor = $convert.b
     'QSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvblJlc3BvbnNlUgpwYWdpbmF0'
     'aW9u');
 
+@$core.Deprecated('Use teacherListStudentShortVideoRequestDescriptor instead')
+const TeacherListStudentShortVideoRequest$json = {
+  '1': 'TeacherListStudentShortVideoRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'student_name', '3': 2, '4': 1, '5': 9, '10': 'studentName'},
+    {'1': 'class_ids', '3': 3, '4': 3, '5': 3, '10': 'classIds'},
+    {'1': 'start_time', '3': 4, '4': 1, '5': 9, '10': 'startTime'},
+    {'1': 'end_time', '3': 5, '4': 1, '5': 9, '10': 'endTime'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `TeacherListStudentShortVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherListStudentShortVideoRequestDescriptor = $convert.base64Decode(
+    'CiNUZWFjaGVyTGlzdFN0dWRlbnRTaG9ydFZpZGVvUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYAS'
+    'ABKAsyES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIhCgxzdHVkZW50X25hbWUYAiAB'
+    'KAlSC3N0dWRlbnROYW1lEhsKCWNsYXNzX2lkcxgDIAMoA1IIY2xhc3NJZHMSHQoKc3RhcnRfdG'
+    'ltZRgEIAEoCVIJc3RhcnRUaW1lEhkKCGVuZF90aW1lGAUgASgJUgdlbmRUaW1lEjcKCnBhZ2lu'
+    'YXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use teacherListStudentShortVideoResponseDescriptor instead')
+const TeacherListStudentShortVideoResponse$json = {
+  '1': 'TeacherListStudentShortVideoResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'short_video_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ShortVideo', '10': 'shortVideoList'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `TeacherListStudentShortVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherListStudentShortVideoResponseDescriptor = $convert.base64Decode(
+    'CiRUZWFjaGVyTGlzdFN0dWRlbnRTaG9ydFZpZGVvUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgAS'
+    'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEj8KEHNob3J0X3ZpZGVvX2xpc3QYAiAD'
+    'KAsyFS5nbG9yeV9hcGkuU2hvcnRWaWRlb1IOc2hvcnRWaWRlb0xpc3QSOAoKcGFnaW5hdGlvbh'
+    'hkIAEoCzIYLmJhc2UuUGFnaW5hdGlvblJlc3BvbnNlUgpwYWdpbmF0aW9u');
+

@@ -254,6 +254,16 @@ public final class ShortVideoOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListShortVideoCommentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherListStudentShortVideoRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherListStudentShortVideoRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherListStudentShortVideoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherListStudentShortVideoResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -428,8 +438,17 @@ public final class ShortVideoOuterClass {
       ".base.BaseResponse\022>\n\030short_video_commen" +
       "t_list\030\002 \003(\0132\034.glory_api.ShortVideoComme" +
       "nt\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
-      "ResponseB*\n&com.zhijiejiaoyu.glory_api.s" +
-      "hort_videoP\001b\006proto3"
+      "Response\"\312\001\n#TeacherListStudentShortVide" +
+      "oRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\024\n\014student_name\030\002 \001(\t\022\021\n\tclass" +
+      "_ids\030\003 \003(\003\022\022\n\nstart_time\030\004 \001(\t\022\020\n\010end_ti" +
+      "me\030\005 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
+      "nationRequest\"\254\001\n$TeacherListStudentShor" +
+      "tVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022/\n\020short_video_list\030\002 \003(\0132" +
+      "\025.glory_api.ShortVideo\022,\n\npagination\030d \001" +
+      "(\0132\030.base.PaginationResponseB*\n&com.zhij" +
+      "iejiaoyu.glory_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -724,6 +743,18 @@ public final class ShortVideoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShortVideoCommentResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShortVideoCommentList", "Pagination", });
+    internal_static_glory_api_TeacherListStudentShortVideoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_glory_api_TeacherListStudentShortVideoRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherListStudentShortVideoRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "StudentName", "ClassIds", "StartTime", "EndTime", "Pagination", });
+    internal_static_glory_api_TeacherListStudentShortVideoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_glory_api_TeacherListStudentShortVideoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherListStudentShortVideoResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ShortVideoList", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

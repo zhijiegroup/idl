@@ -1133,6 +1133,10 @@ CreateLivePlanProduct create live plan product */
     request: short_video.ListShortVideoCommentRequest
   ): Promise<short_video.ListShortVideoCommentResponse>;
 
+  TeacherListStudentShortVideo(
+    request: short_video.TeacherListStudentShortVideoRequest
+  ): Promise<short_video.TeacherListStudentShortVideoResponse>;
+
   /** coupon */
   CreateCoupon(
     request: coupon.CreateCouponRequest
