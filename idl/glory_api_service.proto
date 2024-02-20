@@ -993,6 +993,10 @@ service glory_api {
     option (api.post) = '/api/short_video/list_short_video_comment';
   }
 
+  rpc TeacherListStudentShortVideo(TeacherListStudentShortVideoRequest) returns (TeacherListStudentShortVideoResponse) {
+    option (api.post) = '/api/short_video/teacher_list_student_short_video';
+  }
+
   // coupon
   rpc CreateCoupon(CreateCouponRequest) returns (CreateCouponResponse) {
     option (api.post) = '/api/shop/create_coupon';

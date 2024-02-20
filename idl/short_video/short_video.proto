@@ -333,5 +333,19 @@ message ListShortVideoCommentResponse {
   base.BaseResponse base_resp = 1;
   repeated ShortVideoComment short_video_comment_list = 2;
   base.PaginationResponse pagination = 100;
+}
 
+message TeacherListStudentShortVideoRequest {
+  base.BaseRequest base_request = 1;
+  string student_name = 2;
+  repeated int64 class_ids = 3;
+  string start_time = 4;
+  string end_time = 5;
+  base.PaginationRequest pagination = 100;
+}
+
+message TeacherListStudentShortVideoResponse {
+  base.BaseResponse base_resp = 1;
+  repeated ShortVideo short_video_list = 2;
+  base.PaginationResponse pagination = 100;
 }
