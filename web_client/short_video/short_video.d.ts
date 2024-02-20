@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as user from "../user/user";
+export { base, user };
 
 export interface ShortVideoProduct {
   /** 商品ID */
@@ -65,6 +66,10 @@ export interface ShortVideo {
   favorite_count?: string;
   /** 评论数量 */
   comment_count?: string;
+  /** 学生班级信息 */
+  class_dept?: user.TenantDept;
+  /** 学生专业信息 */
+  major_dept?: user.TenantDept;
   /** 创建时间 */
   created_at?: string;
 }

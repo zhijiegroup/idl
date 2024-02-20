@@ -14,7 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $0;
+import '../base.pb.dart' as $1;
+import '../user/user.pb.dart' as $0;
 
 class ShortVideoProduct extends $pb.GeneratedMessage {
   factory ShortVideoProduct({
@@ -255,6 +256,8 @@ class ShortVideo extends $pb.GeneratedMessage {
     $core.bool? isFavorite,
     $fixnum.Int64? favoriteCount,
     $fixnum.Int64? commentCount,
+    $0.TenantDept? classDept,
+    $0.TenantDept? majorDept,
     $core.String? createdAt,
   }) {
     final $result = create();
@@ -309,6 +312,12 @@ class ShortVideo extends $pb.GeneratedMessage {
     if (commentCount != null) {
       $result.commentCount = commentCount;
     }
+    if (classDept != null) {
+      $result.classDept = classDept;
+    }
+    if (majorDept != null) {
+      $result.majorDept = majorDept;
+    }
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
@@ -336,7 +345,9 @@ class ShortVideo extends $pb.GeneratedMessage {
     ..aOB(15, _omitFieldNames ? '' : 'isFavorite')
     ..aInt64(16, _omitFieldNames ? '' : 'favoriteCount')
     ..aInt64(17, _omitFieldNames ? '' : 'commentCount')
-    ..aOS(18, _omitFieldNames ? '' : 'createdAt')
+    ..aOM<$0.TenantDept>(18, _omitFieldNames ? '' : 'classDept', subBuilder: $0.TenantDept.create)
+    ..aOM<$0.TenantDept>(19, _omitFieldNames ? '' : 'majorDept', subBuilder: $0.TenantDept.create)
+    ..aOS(20, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -513,13 +524,35 @@ class ShortVideo extends $pb.GeneratedMessage {
   void clearCommentCount() => clearField(17);
 
   @$pb.TagNumber(18)
-  $core.String get createdAt => $_getSZ(17);
+  $0.TenantDept get classDept => $_getN(17);
   @$pb.TagNumber(18)
-  set createdAt($core.String v) { $_setString(17, v); }
+  set classDept($0.TenantDept v) { setField(18, v); }
   @$pb.TagNumber(18)
-  $core.bool hasCreatedAt() => $_has(17);
+  $core.bool hasClassDept() => $_has(17);
   @$pb.TagNumber(18)
-  void clearCreatedAt() => clearField(18);
+  void clearClassDept() => clearField(18);
+  @$pb.TagNumber(18)
+  $0.TenantDept ensureClassDept() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $0.TenantDept get majorDept => $_getN(18);
+  @$pb.TagNumber(19)
+  set majorDept($0.TenantDept v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasMajorDept() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearMajorDept() => clearField(19);
+  @$pb.TagNumber(19)
+  $0.TenantDept ensureMajorDept() => $_ensure(18);
+
+  @$pb.TagNumber(20)
+  $core.String get createdAt => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set createdAt($core.String v) { $_setString(19, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasCreatedAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCreatedAt() => clearField(20);
 }
 
 class StageVideo extends $pb.GeneratedMessage {
@@ -846,7 +879,7 @@ class ShortVideoComment extends $pb.GeneratedMessage {
 
 class CreateShortVideoRequest extends $pb.GeneratedMessage {
   factory CreateShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.String? videoPath,
     $core.String? coverPath,
     $core.String? description,
@@ -895,7 +928,7 @@ class CreateShortVideoRequest extends $pb.GeneratedMessage {
   factory CreateShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'videoPath')
     ..aOS(3, _omitFieldNames ? '' : 'coverPath')
     ..aOS(4, _omitFieldNames ? '' : 'description')
@@ -930,15 +963,15 @@ class CreateShortVideoRequest extends $pb.GeneratedMessage {
   static CreateShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get videoPath => $_getSZ(1);
@@ -1018,7 +1051,7 @@ class CreateShortVideoRequest extends $pb.GeneratedMessage {
 
 class CreateShortVideoResponse extends $pb.GeneratedMessage {
   factory CreateShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? shortVideoId,
   }) {
     final $result = create();
@@ -1035,7 +1068,7 @@ class CreateShortVideoResponse extends $pb.GeneratedMessage {
   factory CreateShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..hasRequiredFields = false
   ;
@@ -1062,15 +1095,15 @@ class CreateShortVideoResponse extends $pb.GeneratedMessage {
   static CreateShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -1084,7 +1117,7 @@ class CreateShortVideoResponse extends $pb.GeneratedMessage {
 
 class StageShortVideoRequest extends $pb.GeneratedMessage {
   factory StageShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.String? videoPath,
     $core.String? coverPath,
     $core.String? description,
@@ -1129,7 +1162,7 @@ class StageShortVideoRequest extends $pb.GeneratedMessage {
   factory StageShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StageShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'videoPath')
     ..aOS(3, _omitFieldNames ? '' : 'coverPath')
     ..aOS(4, _omitFieldNames ? '' : 'description')
@@ -1163,15 +1196,15 @@ class StageShortVideoRequest extends $pb.GeneratedMessage {
   static StageShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get videoPath => $_getSZ(1);
@@ -1242,7 +1275,7 @@ class StageShortVideoRequest extends $pb.GeneratedMessage {
 
 class StageShortVideoResponse extends $pb.GeneratedMessage {
   factory StageShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? stageVideoId,
   }) {
     final $result = create();
@@ -1259,7 +1292,7 @@ class StageShortVideoResponse extends $pb.GeneratedMessage {
   factory StageShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StageShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'stageVideoId')
     ..hasRequiredFields = false
   ;
@@ -1286,15 +1319,15 @@ class StageShortVideoResponse extends $pb.GeneratedMessage {
   static StageShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get stageVideoId => $_getI64(1);
@@ -1309,10 +1342,10 @@ class StageShortVideoResponse extends $pb.GeneratedMessage {
 /// 我的短视频列表
 class ListMyShortVideoRequest extends $pb.GeneratedMessage {
   factory ListMyShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.int? type,
     $fixnum.Int64? userId,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1334,10 +1367,10 @@ class ListMyShortVideoRequest extends $pb.GeneratedMessage {
   factory ListMyShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
     ..aInt64(3, _omitFieldNames ? '' : 'userId')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1363,15 +1396,15 @@ class ListMyShortVideoRequest extends $pb.GeneratedMessage {
   static ListMyShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get type => $_getIZ(1);
@@ -1392,22 +1425,22 @@ class ListMyShortVideoRequest extends $pb.GeneratedMessage {
   void clearUserId() => clearField(3);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $1.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $1.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListMyShortVideoResponse extends $pb.GeneratedMessage {
   factory ListMyShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1426,9 +1459,9 @@ class ListMyShortVideoResponse extends $pb.GeneratedMessage {
   factory ListMyShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1454,36 +1487,36 @@ class ListMyShortVideoResponse extends $pb.GeneratedMessage {
   static ListMyShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 /// 我的暂存视频列表
 class ListMyStageVideoRequest extends $pb.GeneratedMessage {
   factory ListMyStageVideoRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1499,8 +1532,8 @@ class ListMyStageVideoRequest extends $pb.GeneratedMessage {
   factory ListMyStageVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyStageVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1526,31 +1559,31 @@ class ListMyStageVideoRequest extends $pb.GeneratedMessage {
   static ListMyStageVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListMyStageVideoResponse extends $pb.GeneratedMessage {
   factory ListMyStageVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<StageVideo>? stageVideoList,
   }) {
     final $result = create();
@@ -1567,7 +1600,7 @@ class ListMyStageVideoResponse extends $pb.GeneratedMessage {
   factory ListMyStageVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyStageVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<StageVideo>(2, _omitFieldNames ? '' : 'stageVideoList', $pb.PbFieldType.PM, subBuilder: StageVideo.create)
     ..hasRequiredFields = false
   ;
@@ -1594,15 +1627,15 @@ class ListMyStageVideoResponse extends $pb.GeneratedMessage {
   static ListMyStageVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<StageVideo> get stageVideoList => $_getList(1);
@@ -1611,8 +1644,8 @@ class ListMyStageVideoResponse extends $pb.GeneratedMessage {
 /// 我的喜欢视频列表
 class ListMyLikeVideoRequest extends $pb.GeneratedMessage {
   factory ListMyLikeVideoRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1628,8 +1661,8 @@ class ListMyLikeVideoRequest extends $pb.GeneratedMessage {
   factory ListMyLikeVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLikeVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1655,33 +1688,33 @@ class ListMyLikeVideoRequest extends $pb.GeneratedMessage {
   static ListMyLikeVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListMyLikeVideoResponse extends $pb.GeneratedMessage {
   factory ListMyLikeVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1700,9 +1733,9 @@ class ListMyLikeVideoResponse extends $pb.GeneratedMessage {
   factory ListMyLikeVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLikeVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1728,36 +1761,36 @@ class ListMyLikeVideoResponse extends $pb.GeneratedMessage {
   static ListMyLikeVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 /// 我的收藏视频列表
 class ListMyFavoriteVideoRequest extends $pb.GeneratedMessage {
   factory ListMyFavoriteVideoRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1773,8 +1806,8 @@ class ListMyFavoriteVideoRequest extends $pb.GeneratedMessage {
   factory ListMyFavoriteVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1800,33 +1833,33 @@ class ListMyFavoriteVideoRequest extends $pb.GeneratedMessage {
   static ListMyFavoriteVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListMyFavoriteVideoResponse extends $pb.GeneratedMessage {
   factory ListMyFavoriteVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1845,9 +1878,9 @@ class ListMyFavoriteVideoResponse extends $pb.GeneratedMessage {
   factory ListMyFavoriteVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyFavoriteVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1873,35 +1906,35 @@ class ListMyFavoriteVideoResponse extends $pb.GeneratedMessage {
   static ListMyFavoriteVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 /// 获取短视频详情
 class GetShortVideoRequest extends $pb.GeneratedMessage {
   factory GetShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
   }) {
     final $result = create();
@@ -1918,7 +1951,7 @@ class GetShortVideoRequest extends $pb.GeneratedMessage {
   factory GetShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..hasRequiredFields = false
   ;
@@ -1945,15 +1978,15 @@ class GetShortVideoRequest extends $pb.GeneratedMessage {
   static GetShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -1967,7 +2000,7 @@ class GetShortVideoRequest extends $pb.GeneratedMessage {
 
 class GetShortVideoResponse extends $pb.GeneratedMessage {
   factory GetShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     ShortVideo? shortVideo,
   }) {
     final $result = create();
@@ -1984,7 +2017,7 @@ class GetShortVideoResponse extends $pb.GeneratedMessage {
   factory GetShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideo', subBuilder: ShortVideo.create)
     ..hasRequiredFields = false
   ;
@@ -2011,15 +2044,15 @@ class GetShortVideoResponse extends $pb.GeneratedMessage {
   static GetShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ShortVideo get shortVideo => $_getN(1);
@@ -2036,7 +2069,7 @@ class GetShortVideoResponse extends $pb.GeneratedMessage {
 /// 更新短视频详情
 class UpdateShortVideoRequest extends $pb.GeneratedMessage {
   factory UpdateShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $core.String? coverPath,
     $core.String? description,
@@ -2073,7 +2106,7 @@ class UpdateShortVideoRequest extends $pb.GeneratedMessage {
   factory UpdateShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..aOS(3, _omitFieldNames ? '' : 'coverPath')
     ..aOS(4, _omitFieldNames ? '' : 'description')
@@ -2105,15 +2138,15 @@ class UpdateShortVideoRequest extends $pb.GeneratedMessage {
   static UpdateShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -2166,7 +2199,7 @@ class UpdateShortVideoRequest extends $pb.GeneratedMessage {
 
 class UpdateShortVideoResponse extends $pb.GeneratedMessage {
   factory UpdateShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? shortVideoId,
   }) {
     final $result = create();
@@ -2183,7 +2216,7 @@ class UpdateShortVideoResponse extends $pb.GeneratedMessage {
   factory UpdateShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..hasRequiredFields = false
   ;
@@ -2210,15 +2243,15 @@ class UpdateShortVideoResponse extends $pb.GeneratedMessage {
   static UpdateShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -2233,7 +2266,7 @@ class UpdateShortVideoResponse extends $pb.GeneratedMessage {
 /// 删除短视频
 class DeleteShortVideoRequest extends $pb.GeneratedMessage {
   factory DeleteShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
   }) {
     final $result = create();
@@ -2250,7 +2283,7 @@ class DeleteShortVideoRequest extends $pb.GeneratedMessage {
   factory DeleteShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..hasRequiredFields = false
   ;
@@ -2277,15 +2310,15 @@ class DeleteShortVideoRequest extends $pb.GeneratedMessage {
   static DeleteShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -2299,7 +2332,7 @@ class DeleteShortVideoRequest extends $pb.GeneratedMessage {
 
 class DeleteShortVideoResponse extends $pb.GeneratedMessage {
   factory DeleteShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2312,7 +2345,7 @@ class DeleteShortVideoResponse extends $pb.GeneratedMessage {
   factory DeleteShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2338,21 +2371,21 @@ class DeleteShortVideoResponse extends $pb.GeneratedMessage {
   static DeleteShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 获取暂存视频详情
 class GetStageVideoRequest extends $pb.GeneratedMessage {
   factory GetStageVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? stageVideoId,
   }) {
     final $result = create();
@@ -2369,7 +2402,7 @@ class GetStageVideoRequest extends $pb.GeneratedMessage {
   factory GetStageVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStageVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'stageVideoId')
     ..hasRequiredFields = false
   ;
@@ -2396,15 +2429,15 @@ class GetStageVideoRequest extends $pb.GeneratedMessage {
   static GetStageVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get stageVideoId => $_getI64(1);
@@ -2418,7 +2451,7 @@ class GetStageVideoRequest extends $pb.GeneratedMessage {
 
 class GetStageVideoResponse extends $pb.GeneratedMessage {
   factory GetStageVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     StageVideo? stageVideo,
   }) {
     final $result = create();
@@ -2435,7 +2468,7 @@ class GetStageVideoResponse extends $pb.GeneratedMessage {
   factory GetStageVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStageVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<StageVideo>(2, _omitFieldNames ? '' : 'stageVideo', subBuilder: StageVideo.create)
     ..hasRequiredFields = false
   ;
@@ -2462,15 +2495,15 @@ class GetStageVideoResponse extends $pb.GeneratedMessage {
   static GetStageVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   StageVideo get stageVideo => $_getN(1);
@@ -2487,7 +2520,7 @@ class GetStageVideoResponse extends $pb.GeneratedMessage {
 /// 删除暂存视频
 class DeleteStageVideoRequest extends $pb.GeneratedMessage {
   factory DeleteStageVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? stageVideoId,
   }) {
     final $result = create();
@@ -2504,7 +2537,7 @@ class DeleteStageVideoRequest extends $pb.GeneratedMessage {
   factory DeleteStageVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteStageVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'stageVideoId')
     ..hasRequiredFields = false
   ;
@@ -2531,15 +2564,15 @@ class DeleteStageVideoRequest extends $pb.GeneratedMessage {
   static DeleteStageVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get stageVideoId => $_getI64(1);
@@ -2553,7 +2586,7 @@ class DeleteStageVideoRequest extends $pb.GeneratedMessage {
 
 class DeleteStageVideoResponse extends $pb.GeneratedMessage {
   factory DeleteStageVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2566,7 +2599,7 @@ class DeleteStageVideoResponse extends $pb.GeneratedMessage {
   factory DeleteStageVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteStageVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2592,20 +2625,20 @@ class DeleteStageVideoResponse extends $pb.GeneratedMessage {
   static DeleteStageVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class UpdateStageVideoRequest extends $pb.GeneratedMessage {
   factory UpdateStageVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? stageVideoId,
     $core.String? videoPath,
     $core.String? coverPath,
@@ -2654,7 +2687,7 @@ class UpdateStageVideoRequest extends $pb.GeneratedMessage {
   factory UpdateStageVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateStageVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'stageVideoId')
     ..aOS(3, _omitFieldNames ? '' : 'videoPath')
     ..aOS(4, _omitFieldNames ? '' : 'coverPath')
@@ -2689,15 +2722,15 @@ class UpdateStageVideoRequest extends $pb.GeneratedMessage {
   static UpdateStageVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get stageVideoId => $_getI64(1);
@@ -2777,7 +2810,7 @@ class UpdateStageVideoRequest extends $pb.GeneratedMessage {
 
 class UpdateStageVideoResponse extends $pb.GeneratedMessage {
   factory UpdateStageVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? stageVideoId,
   }) {
     final $result = create();
@@ -2794,7 +2827,7 @@ class UpdateStageVideoResponse extends $pb.GeneratedMessage {
   factory UpdateStageVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateStageVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'stageVideoId')
     ..hasRequiredFields = false
   ;
@@ -2821,15 +2854,15 @@ class UpdateStageVideoResponse extends $pb.GeneratedMessage {
   static UpdateStageVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get stageVideoId => $_getI64(1);
@@ -2844,11 +2877,11 @@ class UpdateStageVideoResponse extends $pb.GeneratedMessage {
 /// 管理平台短视频列表
 class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementListShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.int? type,
     $fixnum.Int64? majorId,
     $fixnum.Int64? classId,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2873,11 +2906,11 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementListShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementListShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
     ..aInt64(3, _omitFieldNames ? '' : 'majorId')
     ..aInt64(4, _omitFieldNames ? '' : 'classId')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -2903,15 +2936,15 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   static ManagementListShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.int get type => $_getIZ(1);
@@ -2941,22 +2974,22 @@ class ManagementListShortVideoRequest extends $pb.GeneratedMessage {
   void clearClassId() => clearField(4);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(4);
+  $1.PaginationRequest get pagination => $_getN(4);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(4);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(4);
+  $1.PaginationRequest ensurePagination() => $_ensure(4);
 }
 
 class ManagementListShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementListShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2975,9 +3008,9 @@ class ManagementListShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementListShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementListShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3003,35 +3036,35 @@ class ManagementListShortVideoResponse extends $pb.GeneratedMessage {
   static ManagementListShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 /// 管理平台审核短视频
 class ManagementCensorShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementCensorShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $core.int? censorStatus,
     $core.String? censorRejectedReason,
@@ -3056,7 +3089,7 @@ class ManagementCensorShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementCensorShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementCensorShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'censorStatus', $pb.PbFieldType.O3)
     ..aOS(4, _omitFieldNames ? '' : 'censorRejectedReason')
@@ -3085,15 +3118,15 @@ class ManagementCensorShortVideoRequest extends $pb.GeneratedMessage {
   static ManagementCensorShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -3125,7 +3158,7 @@ class ManagementCensorShortVideoRequest extends $pb.GeneratedMessage {
 
 class ManagementCensorShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementCensorShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3138,7 +3171,7 @@ class ManagementCensorShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementCensorShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementCensorShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3164,21 +3197,21 @@ class ManagementCensorShortVideoResponse extends $pb.GeneratedMessage {
   static ManagementCensorShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 管理平台删除短视频
 class ManagementDeleteShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementDeleteShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
   }) {
     final $result = create();
@@ -3195,7 +3228,7 @@ class ManagementDeleteShortVideoRequest extends $pb.GeneratedMessage {
   factory ManagementDeleteShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementDeleteShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..hasRequiredFields = false
   ;
@@ -3222,15 +3255,15 @@ class ManagementDeleteShortVideoRequest extends $pb.GeneratedMessage {
   static ManagementDeleteShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -3244,7 +3277,7 @@ class ManagementDeleteShortVideoRequest extends $pb.GeneratedMessage {
 
 class ManagementDeleteShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementDeleteShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3257,7 +3290,7 @@ class ManagementDeleteShortVideoResponse extends $pb.GeneratedMessage {
   factory ManagementDeleteShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManagementDeleteShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3283,22 +3316,22 @@ class ManagementDeleteShortVideoResponse extends $pb.GeneratedMessage {
   static ManagementDeleteShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// APP首页短视频列表
 class ListShortVideoRequest extends $pb.GeneratedMessage {
   factory ListShortVideoRequest({
-    $0.BaseRequest? baseRequest,
-    $0.PaginationRequest? pagination,
+    $1.BaseRequest? baseRequest,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3314,8 +3347,8 @@ class ListShortVideoRequest extends $pb.GeneratedMessage {
   factory ListShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -3341,33 +3374,33 @@ class ListShortVideoRequest extends $pb.GeneratedMessage {
   static ListShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(1);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(1);
 }
 
 class ListShortVideoResponse extends $pb.GeneratedMessage {
   factory ListShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3386,9 +3419,9 @@ class ListShortVideoResponse extends $pb.GeneratedMessage {
   factory ListShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3414,35 +3447,35 @@ class ListShortVideoResponse extends $pb.GeneratedMessage {
   static ListShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 /// 点赞短视频
 class LikeShortVideoRequest extends $pb.GeneratedMessage {
   factory LikeShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $core.bool? like,
   }) {
@@ -3463,7 +3496,7 @@ class LikeShortVideoRequest extends $pb.GeneratedMessage {
   factory LikeShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LikeShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..aOB(3, _omitFieldNames ? '' : 'like')
     ..hasRequiredFields = false
@@ -3491,15 +3524,15 @@ class LikeShortVideoRequest extends $pb.GeneratedMessage {
   static LikeShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -3522,7 +3555,7 @@ class LikeShortVideoRequest extends $pb.GeneratedMessage {
 
 class LikeShortVideoResponse extends $pb.GeneratedMessage {
   factory LikeShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3535,7 +3568,7 @@ class LikeShortVideoResponse extends $pb.GeneratedMessage {
   factory LikeShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LikeShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3561,21 +3594,21 @@ class LikeShortVideoResponse extends $pb.GeneratedMessage {
   static LikeShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 收藏短视频
 class FavoriteShortVideoRequest extends $pb.GeneratedMessage {
   factory FavoriteShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $core.bool? favorite,
   }) {
@@ -3596,7 +3629,7 @@ class FavoriteShortVideoRequest extends $pb.GeneratedMessage {
   factory FavoriteShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..aOB(3, _omitFieldNames ? '' : 'favorite')
     ..hasRequiredFields = false
@@ -3624,15 +3657,15 @@ class FavoriteShortVideoRequest extends $pb.GeneratedMessage {
   static FavoriteShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -3655,7 +3688,7 @@ class FavoriteShortVideoRequest extends $pb.GeneratedMessage {
 
 class FavoriteShortVideoResponse extends $pb.GeneratedMessage {
   factory FavoriteShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3668,7 +3701,7 @@ class FavoriteShortVideoResponse extends $pb.GeneratedMessage {
   factory FavoriteShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FavoriteShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3694,21 +3727,21 @@ class FavoriteShortVideoResponse extends $pb.GeneratedMessage {
   static FavoriteShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 发布评论
 class CreateShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory CreateShortVideoCommentRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $core.String? content,
     $fixnum.Int64? parentCommentId,
@@ -3733,7 +3766,7 @@ class CreateShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory CreateShortVideoCommentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShortVideoCommentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..aOS(3, _omitFieldNames ? '' : 'content')
     ..aInt64(4, _omitFieldNames ? '' : 'parentCommentId')
@@ -3762,15 +3795,15 @@ class CreateShortVideoCommentRequest extends $pb.GeneratedMessage {
   static CreateShortVideoCommentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -3802,7 +3835,7 @@ class CreateShortVideoCommentRequest extends $pb.GeneratedMessage {
 
 class CreateShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory CreateShortVideoCommentResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? commentId,
   }) {
     final $result = create();
@@ -3819,7 +3852,7 @@ class CreateShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory CreateShortVideoCommentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShortVideoCommentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'commentId')
     ..hasRequiredFields = false
   ;
@@ -3846,15 +3879,15 @@ class CreateShortVideoCommentResponse extends $pb.GeneratedMessage {
   static CreateShortVideoCommentResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get commentId => $_getI64(1);
@@ -3869,7 +3902,7 @@ class CreateShortVideoCommentResponse extends $pb.GeneratedMessage {
 /// 删除评论
 class DeleteShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory DeleteShortVideoCommentRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoCommentId,
   }) {
     final $result = create();
@@ -3886,7 +3919,7 @@ class DeleteShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory DeleteShortVideoCommentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShortVideoCommentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoCommentId')
     ..hasRequiredFields = false
   ;
@@ -3913,15 +3946,15 @@ class DeleteShortVideoCommentRequest extends $pb.GeneratedMessage {
   static DeleteShortVideoCommentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoCommentId => $_getI64(1);
@@ -3935,7 +3968,7 @@ class DeleteShortVideoCommentRequest extends $pb.GeneratedMessage {
 
 class DeleteShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory DeleteShortVideoCommentResponse({
-    $0.BaseResponse? baseResponse,
+    $1.BaseResponse? baseResponse,
   }) {
     final $result = create();
     if (baseResponse != null) {
@@ -3948,7 +3981,7 @@ class DeleteShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory DeleteShortVideoCommentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShortVideoCommentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResponse', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResponse', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3974,24 +4007,24 @@ class DeleteShortVideoCommentResponse extends $pb.GeneratedMessage {
   static DeleteShortVideoCommentResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResponse => $_getN(0);
+  $1.BaseResponse get baseResponse => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResponse($0.BaseResponse v) { setField(1, v); }
+  set baseResponse($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResponse() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResponse() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResponse() => $_ensure(0);
+  $1.BaseResponse ensureBaseResponse() => $_ensure(0);
 }
 
 /// 短视频评论列表
 class ListShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory ListShortVideoCommentRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shortVideoId,
     $fixnum.Int64? parentCommentId,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -4013,10 +4046,10 @@ class ListShortVideoCommentRequest extends $pb.GeneratedMessage {
   factory ListShortVideoCommentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShortVideoCommentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shortVideoId')
     ..aInt64(3, _omitFieldNames ? '' : 'parentCommentId')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -4042,15 +4075,15 @@ class ListShortVideoCommentRequest extends $pb.GeneratedMessage {
   static ListShortVideoCommentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shortVideoId => $_getI64(1);
@@ -4071,22 +4104,22 @@ class ListShortVideoCommentRequest extends $pb.GeneratedMessage {
   void clearParentCommentId() => clearField(3);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(3);
+  $1.PaginationRequest get pagination => $_getN(3);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(3);
+  $1.PaginationRequest ensurePagination() => $_ensure(3);
 }
 
 class ListShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory ListShortVideoCommentResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideoComment>? shortVideoCommentList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -4105,9 +4138,9 @@ class ListShortVideoCommentResponse extends $pb.GeneratedMessage {
   factory ListShortVideoCommentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShortVideoCommentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideoComment>(2, _omitFieldNames ? '' : 'shortVideoCommentList', $pb.PbFieldType.PM, subBuilder: ShortVideoComment.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -4133,39 +4166,39 @@ class ListShortVideoCommentResponse extends $pb.GeneratedMessage {
   static ListShortVideoCommentResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideoComment> get shortVideoCommentList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class TeacherListStudentShortVideoRequest extends $pb.GeneratedMessage {
   factory TeacherListStudentShortVideoRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.String? studentName,
     $core.Iterable<$fixnum.Int64>? classIds,
     $core.String? startTime,
     $core.String? endTime,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -4193,12 +4226,12 @@ class TeacherListStudentShortVideoRequest extends $pb.GeneratedMessage {
   factory TeacherListStudentShortVideoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherListStudentShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'studentName')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'classIds', $pb.PbFieldType.K6)
     ..aOS(4, _omitFieldNames ? '' : 'startTime')
     ..aOS(5, _omitFieldNames ? '' : 'endTime')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -4224,15 +4257,15 @@ class TeacherListStudentShortVideoRequest extends $pb.GeneratedMessage {
   static TeacherListStudentShortVideoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get studentName => $_getSZ(1);
@@ -4265,22 +4298,22 @@ class TeacherListStudentShortVideoRequest extends $pb.GeneratedMessage {
   void clearEndTime() => clearField(5);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(5);
+  $1.PaginationRequest get pagination => $_getN(5);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(5);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(5);
+  $1.PaginationRequest ensurePagination() => $_ensure(5);
 }
 
 class TeacherListStudentShortVideoResponse extends $pb.GeneratedMessage {
   factory TeacherListStudentShortVideoResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShortVideo>? shortVideoList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -4299,9 +4332,9 @@ class TeacherListStudentShortVideoResponse extends $pb.GeneratedMessage {
   factory TeacherListStudentShortVideoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherListStudentShortVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShortVideo>(2, _omitFieldNames ? '' : 'shortVideoList', $pb.PbFieldType.PM, subBuilder: ShortVideo.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -4327,29 +4360,29 @@ class TeacherListStudentShortVideoResponse extends $pb.GeneratedMessage {
   static TeacherListStudentShortVideoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShortVideo> get shortVideoList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 

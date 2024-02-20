@@ -79,7 +79,9 @@ const ShortVideo$json = {
     {'1': 'is_favorite', '3': 15, '4': 1, '5': 8, '10': 'isFavorite'},
     {'1': 'favorite_count', '3': 16, '4': 1, '5': 3, '10': 'favoriteCount'},
     {'1': 'comment_count', '3': 17, '4': 1, '5': 3, '10': 'commentCount'},
-    {'1': 'created_at', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'class_dept', '3': 18, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'classDept'},
+    {'1': 'major_dept', '3': 19, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'majorDept'},
+    {'1': 'created_at', '3': 20, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
@@ -97,7 +99,9 @@ final $typed_data.Uint8List shortVideoDescriptor = $convert.base64Decode(
     '8SFwoHaXNfbGlrZRgNIAEoCFIGaXNMaWtlEh0KCmxpa2VfY291bnQYDiABKANSCWxpa2VDb3Vu'
     'dBIfCgtpc19mYXZvcml0ZRgPIAEoCFIKaXNGYXZvcml0ZRIlCg5mYXZvcml0ZV9jb3VudBgQIA'
     'EoA1INZmF2b3JpdGVDb3VudBIjCg1jb21tZW50X2NvdW50GBEgASgDUgxjb21tZW50Q291bnQS'
-    'HQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0');
+    'NAoKY2xhc3NfZGVwdBgSIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgljbGFzc0RlcHQSNA'
+    'oKbWFqb3JfZGVwdBgTIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnREZXB0UgltYWpvckRlcHQSHQoK'
+    'Y3JlYXRlZF9hdBgUIAEoCVIJY3JlYXRlZEF0');
 
 @$core.Deprecated('Use stageVideoDescriptor instead')
 const StageVideo$json = {

@@ -189,6 +189,26 @@ struct GloryApi_ShortVideo {
     set {_uniqueStorage()._commentCount = newValue}
   }
 
+  /// 学生班级信息
+  var classDept: GloryApi_TenantDept {
+    get {return _storage._classDept ?? GloryApi_TenantDept()}
+    set {_uniqueStorage()._classDept = newValue}
+  }
+  /// Returns true if `classDept` has been explicitly set.
+  var hasClassDept: Bool {return _storage._classDept != nil}
+  /// Clears the value of `classDept`. Subsequent reads from it will return its default value.
+  mutating func clearClassDept() {_uniqueStorage()._classDept = nil}
+
+  /// 学生专业信息
+  var majorDept: GloryApi_TenantDept {
+    get {return _storage._majorDept ?? GloryApi_TenantDept()}
+    set {_uniqueStorage()._majorDept = newValue}
+  }
+  /// Returns true if `majorDept` has been explicitly set.
+  var hasMajorDept: Bool {return _storage._majorDept != nil}
+  /// Clears the value of `majorDept`. Subsequent reads from it will return its default value.
+  mutating func clearMajorDept() {_uniqueStorage()._majorDept = nil}
+
   /// 创建时间
   var createdAt: String {
     get {return _storage._createdAt}
@@ -1787,7 +1807,9 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     15: .standard(proto: "is_favorite"),
     16: .standard(proto: "favorite_count"),
     17: .standard(proto: "comment_count"),
-    18: .standard(proto: "created_at"),
+    18: .standard(proto: "class_dept"),
+    19: .standard(proto: "major_dept"),
+    20: .standard(proto: "created_at"),
   ]
 
   fileprivate class _StorageClass {
@@ -1808,6 +1830,8 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _isFavorite: Bool = false
     var _favoriteCount: Int64 = 0
     var _commentCount: Int64 = 0
+    var _classDept: GloryApi_TenantDept? = nil
+    var _majorDept: GloryApi_TenantDept? = nil
     var _createdAt: String = String()
 
     static let defaultInstance = _StorageClass()
@@ -1832,6 +1856,8 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       _isFavorite = source._isFavorite
       _favoriteCount = source._favoriteCount
       _commentCount = source._commentCount
+      _classDept = source._classDept
+      _majorDept = source._majorDept
       _createdAt = source._createdAt
     }
   }
@@ -1868,7 +1894,9 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isFavorite) }()
         case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._favoriteCount) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._commentCount) }()
-        case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 18: try { try decoder.decodeSingularMessageField(value: &_storage._classDept) }()
+        case 19: try { try decoder.decodeSingularMessageField(value: &_storage._majorDept) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         default: break
         }
       }
@@ -1932,8 +1960,14 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if _storage._commentCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._commentCount, fieldNumber: 17)
       }
+      try { if let v = _storage._classDept {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+      } }()
+      try { if let v = _storage._majorDept {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      } }()
       if !_storage._createdAt.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 18)
+        try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 20)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1961,6 +1995,8 @@ extension GloryApi_ShortVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         if _storage._isFavorite != rhs_storage._isFavorite {return false}
         if _storage._favoriteCount != rhs_storage._favoriteCount {return false}
         if _storage._commentCount != rhs_storage._commentCount {return false}
+        if _storage._classDept != rhs_storage._classDept {return false}
+        if _storage._majorDept != rhs_storage._majorDept {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
         return true
       }

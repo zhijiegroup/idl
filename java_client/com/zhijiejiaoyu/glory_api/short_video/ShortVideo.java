@@ -165,6 +165,32 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
+            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
+            if (classDept != null) {
+              subBuilder = classDept .toBuilder();
+            }
+            classDept = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(classDept );
+              classDept = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 154: {
+            com.zhijiejiaoyu.glory_api.user.TenantDept.Builder subBuilder = null;
+            if (majorDept != null) {
+              subBuilder = majorDept .toBuilder();
+            }
+            majorDept = input.readMessage(com.zhijiejiaoyu.glory_api.user.TenantDept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(majorDept );
+              majorDept = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 162: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -675,14 +701,90 @@ private static final long serialVersionUID = 0L;
     return commentCount ;
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 18;
+  public static final int CLASS_DEPT_FIELD_NUMBER = 18;
+  private com.zhijiejiaoyu.glory_api.user.TenantDept classDept ;
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   * @return Whether the classDept field is set.
+   */
+  @java.lang.Override
+  public boolean hasClassDept() {
+    return classDept != null;
+  }
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   * @return The classDept.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept() {
+    return classDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : classDept ;
+  }
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder() {
+    return getClassDept();
+  }
+
+  public static final int MAJOR_DEPT_FIELD_NUMBER = 19;
+  private com.zhijiejiaoyu.glory_api.user.TenantDept majorDept ;
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   * @return Whether the majorDept field is set.
+   */
+  @java.lang.Override
+  public boolean hasMajorDept() {
+    return majorDept != null;
+  }
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   * @return The majorDept.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept() {
+    return majorDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : majorDept ;
+  }
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder() {
+    return getMajorDept();
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 20;
   private volatile java.lang.Object createdAt ;
   /**
    * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 20;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -703,7 +805,7 @@ private static final long serialVersionUID = 0L;
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 20;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -786,8 +888,14 @@ private static final long serialVersionUID = 0L;
     if (commentCount != 0L) {
       output.writeInt64(17, commentCount );
     }
+    if (classDept != null) {
+      output.writeMessage(18, getClassDept());
+    }
+    if (majorDept != null) {
+      output.writeMessage(19, getMajorDept());
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -862,8 +970,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, commentCount );
     }
+    if (classDept != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getClassDept());
+    }
+    if (majorDept != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getMajorDept());
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -920,6 +1036,16 @@ private static final long serialVersionUID = 0L;
         != other.getFavoriteCount()) return false;
     if (getCommentCount()
         != other.getCommentCount()) return false;
+    if (hasClassDept() != other.hasClassDept()) return false;
+    if (hasClassDept()) {
+      if (!getClassDept()
+          .equals(other.getClassDept())) return false;
+    }
+    if (hasMajorDept() != other.hasMajorDept()) return false;
+    if (hasMajorDept()) {
+      if (!getMajorDept()
+          .equals(other.getMajorDept())) return false;
+    }
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -979,6 +1105,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COMMENT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCommentCount());
+    if (hasClassDept()) {
+      hash = (37 * hash) + CLASS_DEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getClassDept().hashCode();
+    }
+    if (hasMajorDept()) {
+      hash = (37 * hash) + MAJOR_DEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getMajorDept().hashCode();
+    }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1161,6 +1295,18 @@ private static final long serialVersionUID = 0L;
 
       commentCount = 0L;
 
+      if (classDeptBuilder == null) {
+        classDept = null;
+      } else {
+        classDept = null;
+        classDeptBuilder = null;
+      }
+      if (majorDeptBuilder == null) {
+        majorDept = null;
+      } else {
+        majorDept = null;
+        majorDeptBuilder = null;
+      }
       createdAt = "";
 
       return this;
@@ -1223,6 +1369,16 @@ private static final long serialVersionUID = 0L;
       result.isFavorite = isFavorite ;
       result.favoriteCount = favoriteCount ;
       result.commentCount = commentCount ;
+      if (classDeptBuilder == null) {
+        result.classDept = classDept ;
+      } else {
+        result.classDept = classDeptBuilder .build();
+      }
+      if (majorDeptBuilder == null) {
+        result.majorDept = majorDept ;
+      } else {
+        result.majorDept = majorDeptBuilder .build();
+      }
       result.createdAt = createdAt ;
       onBuilt();
       return result;
@@ -1349,6 +1505,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCommentCount() != 0L) {
         setCommentCount(other.getCommentCount());
+      }
+      if (other.hasClassDept()) {
+        mergeClassDept(other.getClassDept());
+      }
+      if (other.hasMajorDept()) {
+        mergeMajorDept(other.getMajorDept());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
@@ -2820,13 +2982,323 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.zhijiejiaoyu.glory_api.user.TenantDept classDept ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> classDeptBuilder ;
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     * @return Whether the classDept field is set.
+     */
+    public boolean hasClassDept() {
+      return classDeptBuilder != null || classDept != null;
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     * @return The classDept.
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept() {
+      if (classDeptBuilder == null) {
+        return classDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : classDept ;
+      } else {
+        return classDeptBuilder .getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public Builder setClassDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (classDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        classDept = value;
+        onChanged();
+      } else {
+        classDeptBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public Builder setClassDept(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (classDeptBuilder == null) {
+        classDept = builderForValue.build();
+        onChanged();
+      } else {
+        classDeptBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public Builder mergeClassDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (classDeptBuilder == null) {
+        if (classDept != null) {
+          classDept =
+            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(classDept ).mergeFrom(value).buildPartial();
+        } else {
+          classDept = value;
+        }
+        onChanged();
+      } else {
+        classDeptBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public Builder clearClassDept() {
+      if (classDeptBuilder == null) {
+        classDept = null;
+        onChanged();
+      } else {
+        classDept = null;
+        classDeptBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getClassDeptBuilder() {
+      
+      onChanged();
+      return getClassDeptFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder() {
+      if (classDeptBuilder != null) {
+        return classDeptBuilder .getMessageOrBuilder();
+      } else {
+        return classDept == null ?
+            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : classDept ;
+      }
+    }
+    /**
+     * <pre>
+     * 学生班级信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept class_dept = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getClassDeptFieldBuilder() {
+      if (classDeptBuilder == null) {
+        classDeptBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                getClassDept(),
+                getParentForChildren(),
+                isClean());
+        classDept = null;
+      }
+      return classDeptBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.user.TenantDept majorDept ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> majorDeptBuilder ;
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     * @return Whether the majorDept field is set.
+     */
+    public boolean hasMajorDept() {
+      return majorDeptBuilder != null || majorDept != null;
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     * @return The majorDept.
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept() {
+      if (majorDeptBuilder == null) {
+        return majorDept == null ? com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : majorDept ;
+      } else {
+        return majorDeptBuilder .getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public Builder setMajorDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (majorDeptBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        majorDept = value;
+        onChanged();
+      } else {
+        majorDeptBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public Builder setMajorDept(
+        com.zhijiejiaoyu.glory_api.user.TenantDept.Builder builderForValue) {
+      if (majorDeptBuilder == null) {
+        majorDept = builderForValue.build();
+        onChanged();
+      } else {
+        majorDeptBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public Builder mergeMajorDept(com.zhijiejiaoyu.glory_api.user.TenantDept value) {
+      if (majorDeptBuilder == null) {
+        if (majorDept != null) {
+          majorDept =
+            com.zhijiejiaoyu.glory_api.user.TenantDept.newBuilder(majorDept ).mergeFrom(value).buildPartial();
+        } else {
+          majorDept = value;
+        }
+        onChanged();
+      } else {
+        majorDeptBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public Builder clearMajorDept() {
+      if (majorDeptBuilder == null) {
+        majorDept = null;
+        onChanged();
+      } else {
+        majorDept = null;
+        majorDeptBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDept.Builder getMajorDeptBuilder() {
+      
+      onChanged();
+      return getMajorDeptFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder() {
+      if (majorDeptBuilder != null) {
+        return majorDeptBuilder .getMessageOrBuilder();
+      } else {
+        return majorDept == null ?
+            com.zhijiejiaoyu.glory_api.user.TenantDept.getDefaultInstance() : majorDept ;
+      }
+    }
+    /**
+     * <pre>
+     * 学生专业信息
+     * </pre>
+     *
+     * <code>.glory_api.TenantDept major_dept = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder> 
+        getMajorDeptFieldBuilder() {
+      if (majorDeptBuilder == null) {
+        majorDeptBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.user.TenantDept, com.zhijiejiaoyu.glory_api.user.TenantDept.Builder, com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder>(
+                getMajorDept(),
+                getParentForChildren(),
+                isClean());
+        majorDept = null;
+      }
+      return majorDeptBuilder ;
+    }
+
     private java.lang.Object createdAt = "";
     /**
      * <pre>
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 20;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -2846,7 +3318,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 20;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -2867,7 +3339,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 20;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -2886,7 +3358,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 20;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -2900,7 +3372,7 @@ private static final long serialVersionUID = 0L;
      * 创建时间
      * </pre>
      *
-     * <code>string created_at = 18;</code>
+     * <code>string created_at = 20;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */

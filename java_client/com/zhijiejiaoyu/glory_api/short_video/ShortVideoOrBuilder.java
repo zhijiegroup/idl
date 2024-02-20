@@ -287,10 +287,64 @@ public interface ShortVideoOrBuilder extends
 
   /**
    * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   * @return Whether the classDept field is set.
+   */
+  boolean hasClassDept();
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   * @return The classDept.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getClassDept();
+  /**
+   * <pre>
+   * 学生班级信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept class_dept = 18;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getClassDeptOrBuilder();
+
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   * @return Whether the majorDept field is set.
+   */
+  boolean hasMajorDept();
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   * @return The majorDept.
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDept getMajorDept();
+  /**
+   * <pre>
+   * 学生专业信息
+   * </pre>
+   *
+   * <code>.glory_api.TenantDept major_dept = 19;</code>
+   */
+  com.zhijiejiaoyu.glory_api.user.TenantDeptOrBuilder getMajorDeptOrBuilder();
+
+  /**
+   * <pre>
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 20;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
@@ -299,7 +353,7 @@ public interface ShortVideoOrBuilder extends
    * 创建时间
    * </pre>
    *
-   * <code>string created_at = 18;</code>
+   * <code>string created_at = 20;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
