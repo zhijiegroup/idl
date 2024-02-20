@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.short_video";
 option java_multiple_files = true;
 
 import "base.proto";
+import "user/user.proto";
 
 message ShortVideoProduct {
   int64 product_id = 1; // 商品ID
@@ -40,7 +41,9 @@ message ShortVideo {
   bool is_favorite = 15; // 是否收藏
   int64 favorite_count = 16; // 收藏数量
   int64 comment_count = 17; // 评论数量
-  string created_at = 18; // 创建时间
+  TenantDept class_dept = 18; // 学生班级信息
+  TenantDept major_dept = 19; // 学生专业信息
+  string created_at = 20; // 创建时间
 }
 
 message StageVideo {
