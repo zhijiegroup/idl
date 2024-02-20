@@ -21,16 +21,18 @@ const LiveText$json = {
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 3, '4': 1, '5': 9, '10': 'content'},
     {'1': 'user', '3': 4, '4': 1, '5': 9, '10': 'user'},
-    {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'updated_at', '3': 6, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'major_class', '3': 5, '4': 1, '5': 9, '10': 'majorClass'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 9, '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `LiveText`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List liveTextDescriptor = $convert.base64Decode(
     'CghMaXZlVGV4dBIXCgd0ZXh0X2lkGAEgASgDUgZ0ZXh0SWQSFAoFdGl0bGUYAiABKAlSBXRpdG'
-    'xlEhgKB2NvbnRlbnQYAyABKAlSB2NvbnRlbnQSEgoEdXNlchgEIAEoCVIEdXNlchIdCgpjcmVh'
-    'dGVkX2F0GAUgASgJUgljcmVhdGVkQXQSHQoKdXBkYXRlZF9hdBgGIAEoCVIJdXBkYXRlZEF0');
+    'xlEhgKB2NvbnRlbnQYAyABKAlSB2NvbnRlbnQSEgoEdXNlchgEIAEoCVIEdXNlchIfCgttYWpv'
+    'cl9jbGFzcxgFIAEoCVIKbWFqb3JDbGFzcxIdCgpjcmVhdGVkX2F0GAYgASgJUgljcmVhdGVkQX'
+    'QSHQoKdXBkYXRlZF9hdBgHIAEoCVIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use createLiveTextRequestDescriptor instead')
 const CreateLiveTextRequest$json = {
@@ -188,4 +190,42 @@ const DeleteLiveTextsResponse$json = {
 final $typed_data.Uint8List deleteLiveTextsResponseDescriptor = $convert.base64Decode(
     'ChdEZWxldGVMaXZlVGV4dHNSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
     'VSZXNwb25zZVIIYmFzZVJlc3A=');
+
+@$core.Deprecated('Use teacherListStudentShortVideoTextRequestDescriptor instead')
+const TeacherListStudentShortVideoTextRequest$json = {
+  '1': 'TeacherListStudentShortVideoTextRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'student_name', '3': 2, '4': 1, '5': 9, '10': 'studentName'},
+    {'1': 'class_ids', '3': 3, '4': 3, '5': 3, '10': 'classIds'},
+    {'1': 'start_time', '3': 4, '4': 1, '5': 9, '10': 'startTime'},
+    {'1': 'end_time', '3': 5, '4': 1, '5': 9, '10': 'endTime'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `TeacherListStudentShortVideoTextRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherListStudentShortVideoTextRequestDescriptor = $convert.base64Decode(
+    'CidUZWFjaGVyTGlzdFN0dWRlbnRTaG9ydFZpZGVvVGV4dFJlcXVlc3QSNAoMYmFzZV9yZXF1ZX'
+    'N0GAEgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSIQoMc3R1ZGVudF9uYW1l'
+    'GAIgASgJUgtzdHVkZW50TmFtZRIbCgljbGFzc19pZHMYAyADKANSCGNsYXNzSWRzEh0KCnN0YX'
+    'J0X3RpbWUYBCABKAlSCXN0YXJ0VGltZRIZCghlbmRfdGltZRgFIAEoCVIHZW5kVGltZRI3Cgpw'
+    'YWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use teacherListStudentShortVideoTextResponseDescriptor instead')
+const TeacherListStudentShortVideoTextResponse$json = {
+  '1': 'TeacherListStudentShortVideoTextResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'text_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.LiveText', '10': 'textList'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `TeacherListStudentShortVideoTextResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherListStudentShortVideoTextResponseDescriptor = $convert.base64Decode(
+    'CihUZWFjaGVyTGlzdFN0dWRlbnRTaG9ydFZpZGVvVGV4dFJlc3BvbnNlEi8KCWJhc2VfcmVzcB'
+    'gBIAEoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIwCgl0ZXh0X2xpc3QYAiADKAsy'
+    'Ey5nbG9yeV9hcGkuTGl2ZVRleHRSCHRleHRMaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYX'
+    'NlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
 

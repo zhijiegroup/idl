@@ -859,6 +859,10 @@ CreateLivePlanProduct create live plan product */
     request: live_text.DeleteLiveTextsRequest
   ): Promise<live_text.DeleteLiveTextsResponse>;
 
+  TeacherListStudentShortVideoText(
+    request: live_text.TeacherListStudentShortVideoTextRequest
+  ): Promise<live_text.TeacherListStudentShortVideoTextResponse>;
+
   /** live chart */
   GetLiveChartData(
     request: live_room.GetLiveChartDataRequest

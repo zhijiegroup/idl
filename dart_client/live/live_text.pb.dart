@@ -22,6 +22,7 @@ class LiveText extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? content,
     $core.String? user,
+    $core.String? majorClass,
     $core.String? createdAt,
     $core.String? updatedAt,
   }) {
@@ -37,6 +38,9 @@ class LiveText extends $pb.GeneratedMessage {
     }
     if (user != null) {
       $result.user = user;
+    }
+    if (majorClass != null) {
+      $result.majorClass = majorClass;
     }
     if (createdAt != null) {
       $result.createdAt = createdAt;
@@ -55,8 +59,9 @@ class LiveText extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'content')
     ..aOS(4, _omitFieldNames ? '' : 'user')
-    ..aOS(5, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(6, _omitFieldNames ? '' : 'updatedAt')
+    ..aOS(5, _omitFieldNames ? '' : 'majorClass')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(7, _omitFieldNames ? '' : 'updatedAt')
     ..hasRequiredFields = false
   ;
 
@@ -118,22 +123,31 @@ class LiveText extends $pb.GeneratedMessage {
   void clearUser() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get createdAt => $_getSZ(4);
+  $core.String get majorClass => $_getSZ(4);
   @$pb.TagNumber(5)
-  set createdAt($core.String v) { $_setString(4, v); }
+  set majorClass($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasCreatedAt() => $_has(4);
+  $core.bool hasMajorClass() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCreatedAt() => clearField(5);
+  void clearMajorClass() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get updatedAt => $_getSZ(5);
+  $core.String get createdAt => $_getSZ(5);
   @$pb.TagNumber(6)
-  set updatedAt($core.String v) { $_setString(5, v); }
+  set createdAt($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasUpdatedAt() => $_has(5);
+  $core.bool hasCreatedAt() => $_has(5);
   @$pb.TagNumber(6)
-  void clearUpdatedAt() => clearField(6);
+  void clearCreatedAt() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get updatedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set updatedAt($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUpdatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdatedAt() => clearField(7);
 }
 
 class CreateLiveTextRequest extends $pb.GeneratedMessage {
@@ -900,6 +914,200 @@ class DeleteLiveTextsResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class TeacherListStudentShortVideoTextRequest extends $pb.GeneratedMessage {
+  factory TeacherListStudentShortVideoTextRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? studentName,
+    $core.Iterable<$fixnum.Int64>? classIds,
+    $core.String? startTime,
+    $core.String? endTime,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (studentName != null) {
+      $result.studentName = studentName;
+    }
+    if (classIds != null) {
+      $result.classIds.addAll(classIds);
+    }
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  TeacherListStudentShortVideoTextRequest._() : super();
+  factory TeacherListStudentShortVideoTextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherListStudentShortVideoTextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherListStudentShortVideoTextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'studentName')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'classIds', $pb.PbFieldType.K6)
+    ..aOS(4, _omitFieldNames ? '' : 'startTime')
+    ..aOS(5, _omitFieldNames ? '' : 'endTime')
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherListStudentShortVideoTextRequest clone() => TeacherListStudentShortVideoTextRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherListStudentShortVideoTextRequest copyWith(void Function(TeacherListStudentShortVideoTextRequest) updates) => super.copyWith((message) => updates(message as TeacherListStudentShortVideoTextRequest)) as TeacherListStudentShortVideoTextRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherListStudentShortVideoTextRequest create() => TeacherListStudentShortVideoTextRequest._();
+  TeacherListStudentShortVideoTextRequest createEmptyInstance() => create();
+  static $pb.PbList<TeacherListStudentShortVideoTextRequest> createRepeated() => $pb.PbList<TeacherListStudentShortVideoTextRequest>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherListStudentShortVideoTextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherListStudentShortVideoTextRequest>(create);
+  static TeacherListStudentShortVideoTextRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get studentName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set studentName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStudentName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStudentName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get classIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get startTime => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set startTime($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStartTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStartTime() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get endTime => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set endTime($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndTime() => clearField(5);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(5);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(5);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(5);
+}
+
+class TeacherListStudentShortVideoTextResponse extends $pb.GeneratedMessage {
+  factory TeacherListStudentShortVideoTextResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<LiveText>? textList,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (textList != null) {
+      $result.textList.addAll(textList);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  TeacherListStudentShortVideoTextResponse._() : super();
+  factory TeacherListStudentShortVideoTextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherListStudentShortVideoTextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherListStudentShortVideoTextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<LiveText>(2, _omitFieldNames ? '' : 'textList', $pb.PbFieldType.PM, subBuilder: LiveText.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherListStudentShortVideoTextResponse clone() => TeacherListStudentShortVideoTextResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherListStudentShortVideoTextResponse copyWith(void Function(TeacherListStudentShortVideoTextResponse) updates) => super.copyWith((message) => updates(message as TeacherListStudentShortVideoTextResponse)) as TeacherListStudentShortVideoTextResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherListStudentShortVideoTextResponse create() => TeacherListStudentShortVideoTextResponse._();
+  TeacherListStudentShortVideoTextResponse createEmptyInstance() => create();
+  static $pb.PbList<TeacherListStudentShortVideoTextResponse> createRepeated() => $pb.PbList<TeacherListStudentShortVideoTextResponse>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherListStudentShortVideoTextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherListStudentShortVideoTextResponse>(create);
+  static TeacherListStudentShortVideoTextResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<LiveText> get textList => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 

@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     title = "";
     content = "";
     user = "";
+    majorClass = "";
     createdAt = "";
     updatedAt = "";
   }
@@ -79,10 +80,16 @@ private static final long serialVersionUID = 0L;
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt = s;
+            majorClass = s;
             break;
           }
           case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
+            break;
+          }
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
             updatedAt = s;
@@ -245,10 +252,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 5;
+  public static final int MAJOR_CLASS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object majorClass ;
+  /**
+   * <code>string major_class = 5;</code>
+   * @return The majorClass.
+   */
+  @java.lang.Override
+  public java.lang.String getMajorClass() {
+    java.lang.Object ref = majorClass ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      majorClass = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string major_class = 5;</code>
+   * @return The bytes for majorClass.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMajorClassBytes() {
+    java.lang.Object ref = majorClass ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      majorClass = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 6;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 6;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -265,7 +310,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 5;</code>
+   * <code>string created_at = 6;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -283,10 +328,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 6;
+  public static final int UPDATED_AT_FIELD_NUMBER = 7;
   private volatile java.lang.Object updatedAt ;
   /**
-   * <code>string updated_at = 6;</code>
+   * <code>string updated_at = 7;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -303,7 +348,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string updated_at = 6;</code>
+   * <code>string updated_at = 7;</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -347,11 +392,14 @@ private static final long serialVersionUID = 0L;
     if (!getUserBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, user );
     }
+    if (!getMajorClassBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, majorClass );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, updatedAt );
     }
     unknownFields.writeTo(output);
   }
@@ -375,11 +423,14 @@ private static final long serialVersionUID = 0L;
     if (!getUserBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, user );
     }
+    if (!getMajorClassBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, majorClass );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, updatedAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -404,6 +455,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getUser()
         .equals(other.getUser())) return false;
+    if (!getMajorClass()
+        .equals(other.getMajorClass())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -428,6 +481,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + USER_FIELD_NUMBER;
     hash = (53 * hash) + getUser().hashCode();
+    hash = (37 * hash) + MAJOR_CLASS_FIELD_NUMBER;
+    hash = (53 * hash) + getMajorClass().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -573,6 +628,8 @@ private static final long serialVersionUID = 0L;
 
       user = "";
 
+      majorClass = "";
+
       createdAt = "";
 
       updatedAt = "";
@@ -607,6 +664,7 @@ private static final long serialVersionUID = 0L;
       result.title = title ;
       result.content = content ;
       result.user = user ;
+      result.majorClass = majorClass ;
       result.createdAt = createdAt ;
       result.updatedAt = updatedAt ;
       onBuilt();
@@ -670,6 +728,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getUser().isEmpty()) {
         user = other.user ;
+        onChanged();
+      }
+      if (!other.getMajorClass().isEmpty()) {
+        majorClass = other.majorClass ;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
@@ -968,9 +1030,85 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object majorClass = "";
+    /**
+     * <code>string major_class = 5;</code>
+     * @return The majorClass.
+     */
+    public java.lang.String getMajorClass() {
+      java.lang.Object ref = majorClass ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        majorClass = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string major_class = 5;</code>
+     * @return The bytes for majorClass.
+     */
+    public com.google.protobuf.ByteString
+        getMajorClassBytes() {
+      java.lang.Object ref = majorClass ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        majorClass = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string major_class = 5;</code>
+     * @param value The majorClass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorClass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      majorClass = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string major_class = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMajorClass() {
+      
+      majorClass = getDefaultInstance().getMajorClass();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string major_class = 5;</code>
+     * @param value The bytes for majorClass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMajorClassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      majorClass = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -986,7 +1124,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1003,7 +1141,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1018,7 +1156,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -1028,7 +1166,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 5;</code>
+     * <code>string created_at = 6;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -1046,7 +1184,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt = "";
     /**
-     * <code>string updated_at = 6;</code>
+     * <code>string updated_at = 7;</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -1062,7 +1200,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 6;</code>
+     * <code>string updated_at = 7;</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -1079,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 6;</code>
+     * <code>string updated_at = 7;</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -1094,7 +1232,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 6;</code>
+     * <code>string updated_at = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
@@ -1104,7 +1242,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 6;</code>
+     * <code>string updated_at = 7;</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */

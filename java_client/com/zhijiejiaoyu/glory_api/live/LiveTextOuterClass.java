@@ -69,6 +69,16 @@ public final class LiveTextOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DeleteLiveTextsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherListStudentShortVideoTextRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherListStudentShortVideoTextRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TeacherListStudentShortVideoTextResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TeacherListStudentShortVideoTextResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -79,49 +89,60 @@ public final class LiveTextOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024live/live_text.proto\022\tglory_api\032\nbase." +
-      "proto\"q\n\010LiveText\022\017\n\007text_id\030\001 \001(\003\022\r\n\005ti" +
-      "tle\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\014\n\004user\030\004 \001(\t" +
-      "\022\022\n\ncreated_at\030\005 \001(\t\022\022\n\nupdated_at\030\006 \001(\t" +
-      "\"\177\n\025CreateLiveTextRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005title\030\002 \001(" +
-      "\t\022\017\n\007content\030\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\022\014\n\004t" +
-      "ype\030\005 \001(\t\"P\n\026CreateLiveTextResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007te" +
-      "xt_id\030\002 \001(\003\"\177\n\025UpdateLiveTextRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
-      "\007text_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007content" +
-      "\030\004 \001(\t\022\014\n\004type\030\005 \001(\t\"?\n\026UpdateLiveTextRe" +
+      "proto\032\017user/user.proto\"\206\001\n\010LiveText\022\017\n\007t" +
+      "ext_id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\017\n\007content\030\003" +
+      " \001(\t\022\014\n\004user\030\004 \001(\t\022\023\n\013major_class\030\005 \001(\t\022" +
+      "\022\n\ncreated_at\030\006 \001(\t\022\022\n\nupdated_at\030\007 \001(\t\"" +
+      "\177\n\025CreateLiveTextRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\r\n\005title\030\002 \001(\t" +
+      "\022\017\n\007content\030\003 \001(\t\022\017\n\007shop_id\030\004 \001(\003\022\014\n\004ty" +
+      "pe\030\005 \001(\t\"P\n\026CreateLiveTextResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007tex" +
+      "t_id\030\002 \001(\003\"\177\n\025UpdateLiveTextRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007" +
+      "text_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007content\030" +
+      "\004 \001(\t\022\014\n\004type\030\005 \001(\t\"?\n\026UpdateLiveTextRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\"\233\001\n\023ListLiveTextRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
+      "\030\002 \001(\003\022\014\n\004type\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\003\022+\n" +
+      "\npagination\030d \001(\0132\027.base.PaginationReque" +
+      "st\"\223\001\n\024ListLiveTextResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttext_list\030" +
+      "\002 \003(\0132\023.glory_api.LiveText\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponse\"N\n\022GetL" +
+      "iveTextRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\017\n\007text_id\030\002 \001(\003\"d\n\023GetL" +
+      "iveTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022&\n\tlive_text\030\002 \001(\0132\023.glor" +
+      "y_api.LiveText\"S\n\026DeleteLiveTextsRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\020\n\010text_ids\030\002 \003(\003\"@\n\027DeleteLiveTextsRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"\233\001\n\023ListLiveTextRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_i" +
-      "d\030\002 \001(\003\022\014\n\004type\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\003\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\223\001\n\024ListLiveTextResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\ttext_list" +
-      "\030\002 \003(\0132\023.glory_api.LiveText\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"N\n\022Get" +
-      "LiveTextRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007text_id\030\002 \001(\003\"d\n\023Get" +
-      "LiveTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\022&\n\tlive_text\030\002 \001(\0132\023.glo" +
-      "ry_api.LiveText\"S\n\026DeleteLiveTextsReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\020\n\010text_ids\030\002 \003(\003\"@\n\027DeleteLiveTextsR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponseB#\n\037com.zhijiejiaoyu.glory_api.liv" +
-      "eP\001b\006proto3"
+      "ponse\"\316\001\n\'TeacherListStudentShortVideoTe" +
+      "xtRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\024\n\014student_name\030\002 \001(\t\022\021\n\tclas" +
+      "s_ids\030\003 \003(\003\022\022\n\nstart_time\030\004 \001(\t\022\020\n\010end_t" +
+      "ime\030\005 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pag" +
+      "inationRequest\"\247\001\n(TeacherListStudentSho" +
+      "rtVideoTextResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022&\n\ttext_list\030\002 \003(\0132\023." +
+      "glory_api.LiveText\022,\n\npagination\030d \001(\0132\030" +
+      ".base.PaginationResponseB#\n\037com.zhijieji" +
+      "aoyu.glory_api.liveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
         });
     internal_static_glory_api_LiveText_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_glory_api_LiveText_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_LiveText_descriptor,
-        new java.lang.String[] { "TextId", "Title", "Content", "User", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "TextId", "Title", "Content", "User", "MajorClass", "CreatedAt", "UpdatedAt", });
     internal_static_glory_api_CreateLiveTextRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateLiveTextRequest_fieldAccessorTable = new
@@ -182,7 +203,20 @@ public final class LiveTextOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteLiveTextsResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_TeacherListStudentShortVideoTextRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_glory_api_TeacherListStudentShortVideoTextRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherListStudentShortVideoTextRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "StudentName", "ClassIds", "StartTime", "EndTime", "Pagination", });
+    internal_static_glory_api_TeacherListStudentShortVideoTextResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_glory_api_TeacherListStudentShortVideoTextResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TeacherListStudentShortVideoTextResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TextList", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

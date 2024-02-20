@@ -640,6 +640,9 @@ class glory_apiApi {
   $async.Future<$28.DeleteLiveTextsResponse> deleteLiveTexts($pb.ClientContext? ctx, $28.DeleteLiveTextsRequest request) =>
     _client.invoke<$28.DeleteLiveTextsResponse>(ctx, 'glory_api', 'DeleteLiveTexts', request, $28.DeleteLiveTextsResponse())
   ;
+  $async.Future<$28.TeacherListStudentShortVideoTextResponse> teacherListStudentShortVideoText($pb.ClientContext? ctx, $28.TeacherListStudentShortVideoTextRequest request) =>
+    _client.invoke<$28.TeacherListStudentShortVideoTextResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideoText', request, $28.TeacherListStudentShortVideoTextResponse())
+  ;
   $async.Future<$24.GetLiveChartDataResponse> getLiveChartData($pb.ClientContext? ctx, $24.GetLiveChartDataRequest request) =>
     _client.invoke<$24.GetLiveChartDataResponse>(ctx, 'glory_api', 'GetLiveChartData', request, $24.GetLiveChartDataResponse())
   ;

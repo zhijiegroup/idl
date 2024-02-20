@@ -265,6 +265,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$28.ListLiveTextResponse> listLiveText($pb.ServerContext ctx, $28.ListLiveTextRequest request);
   $async.Future<$28.GetLiveTextResponse> getLiveText($pb.ServerContext ctx, $28.GetLiveTextRequest request);
   $async.Future<$28.DeleteLiveTextsResponse> deleteLiveTexts($pb.ServerContext ctx, $28.DeleteLiveTextsRequest request);
+  $async.Future<$28.TeacherListStudentShortVideoTextResponse> teacherListStudentShortVideoText($pb.ServerContext ctx, $28.TeacherListStudentShortVideoTextRequest request);
   $async.Future<$24.GetLiveChartDataResponse> getLiveChartData($pb.ServerContext ctx, $24.GetLiveChartDataRequest request);
   $async.Future<$29.GetEvaluateSelectorResponse> getEvaluateSelector($pb.ServerContext ctx, $29.GetEvaluateSelectorRequest request);
   $async.Future<$29.ListPersonalEvaluateResponse> listPersonalEvaluate($pb.ServerContext ctx, $29.ListPersonalEvaluateRequest request);
@@ -663,6 +664,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListLiveText': return $28.ListLiveTextRequest();
       case 'GetLiveText': return $28.GetLiveTextRequest();
       case 'DeleteLiveTexts': return $28.DeleteLiveTextsRequest();
+      case 'TeacherListStudentShortVideoText': return $28.TeacherListStudentShortVideoTextRequest();
       case 'GetLiveChartData': return $24.GetLiveChartDataRequest();
       case 'GetEvaluateSelector': return $29.GetEvaluateSelectorRequest();
       case 'ListPersonalEvaluate': return $29.ListPersonalEvaluateRequest();
@@ -1064,6 +1066,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListLiveText': return this.listLiveText(ctx, request as $28.ListLiveTextRequest);
       case 'GetLiveText': return this.getLiveText(ctx, request as $28.GetLiveTextRequest);
       case 'DeleteLiveTexts': return this.deleteLiveTexts(ctx, request as $28.DeleteLiveTextsRequest);
+      case 'TeacherListStudentShortVideoText': return this.teacherListStudentShortVideoText(ctx, request as $28.TeacherListStudentShortVideoTextRequest);
       case 'GetLiveChartData': return this.getLiveChartData(ctx, request as $24.GetLiveChartDataRequest);
       case 'GetEvaluateSelector': return this.getEvaluateSelector(ctx, request as $29.GetEvaluateSelectorRequest);
       case 'ListPersonalEvaluate': return this.listPersonalEvaluate(ctx, request as $29.ListPersonalEvaluateRequest);

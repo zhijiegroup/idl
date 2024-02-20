@@ -33,6 +33,8 @@ struct GloryApi_LiveText {
 
   var user: String = String()
 
+  var majorClass: String = String()
+
   var createdAt: String = String()
 
   var updatedAt: String = String()
@@ -312,6 +314,78 @@ struct GloryApi_DeleteLiveTextsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_TeacherListStudentShortVideoTextRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var studentName: String = String()
+
+  var classIds: [Int64] = []
+
+  var startTime: String = String()
+
+  var endTime: String = String()
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_TeacherListStudentShortVideoTextResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var textList: [GloryApi_LiveText] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_LiveText: @unchecked Sendable {}
 extension GloryApi_CreateLiveTextRequest: @unchecked Sendable {}
@@ -324,6 +398,8 @@ extension GloryApi_GetLiveTextRequest: @unchecked Sendable {}
 extension GloryApi_GetLiveTextResponse: @unchecked Sendable {}
 extension GloryApi_DeleteLiveTextsRequest: @unchecked Sendable {}
 extension GloryApi_DeleteLiveTextsResponse: @unchecked Sendable {}
+extension GloryApi_TeacherListStudentShortVideoTextRequest: @unchecked Sendable {}
+extension GloryApi_TeacherListStudentShortVideoTextResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -337,8 +413,9 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     2: .same(proto: "title"),
     3: .same(proto: "content"),
     4: .same(proto: "user"),
-    5: .standard(proto: "created_at"),
-    6: .standard(proto: "updated_at"),
+    5: .standard(proto: "major_class"),
+    6: .standard(proto: "created_at"),
+    7: .standard(proto: "updated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -351,8 +428,9 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 2: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.user) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.majorClass) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
       default: break
       }
     }
@@ -371,11 +449,14 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.user.isEmpty {
       try visitor.visitSingularStringField(value: self.user, fieldNumber: 4)
     }
+    if !self.majorClass.isEmpty {
+      try visitor.visitSingularStringField(value: self.majorClass, fieldNumber: 5)
+    }
     if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 6)
     }
     if !self.updatedAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 7)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -385,6 +466,7 @@ extension GloryApi_LiveText: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
     if lhs.user != rhs.user {return false}
+    if lhs.majorClass != rhs.majorClass {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -855,6 +937,120 @@ extension GloryApi_DeleteLiveTextsResponse: SwiftProtobuf.Message, SwiftProtobuf
 
   static func ==(lhs: GloryApi_DeleteLiveTextsResponse, rhs: GloryApi_DeleteLiveTextsResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TeacherListStudentShortVideoTextRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TeacherListStudentShortVideoTextRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "student_name"),
+    3: .standard(proto: "class_ids"),
+    4: .standard(proto: "start_time"),
+    5: .standard(proto: "end_time"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.studentName) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.classIds) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.startTime) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.endTime) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.studentName.isEmpty {
+      try visitor.visitSingularStringField(value: self.studentName, fieldNumber: 2)
+    }
+    if !self.classIds.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.classIds, fieldNumber: 3)
+    }
+    if !self.startTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.startTime, fieldNumber: 4)
+    }
+    if !self.endTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.endTime, fieldNumber: 5)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TeacherListStudentShortVideoTextRequest, rhs: GloryApi_TeacherListStudentShortVideoTextRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.studentName != rhs.studentName {return false}
+    if lhs.classIds != rhs.classIds {return false}
+    if lhs.startTime != rhs.startTime {return false}
+    if lhs.endTime != rhs.endTime {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TeacherListStudentShortVideoTextResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TeacherListStudentShortVideoTextResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "text_list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.textList) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.textList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.textList, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TeacherListStudentShortVideoTextResponse, rhs: GloryApi_TeacherListStudentShortVideoTextResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.textList != rhs.textList {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
