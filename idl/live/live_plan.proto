@@ -124,9 +124,10 @@ message DeleteLivePlanProductResponse {
 
 message LoadLivePlanProductRequest {
   base.BaseRequest base_request=1;
-  int64 shop_id = 2; // shop id
-  int64 live_plan_id = 3; // live plan id
-  bool is_playing = 4; // is load to playing product
+  int64 room_id = 2; // room id
+  int64 shop_id = 3; // shop id
+  int64 live_plan_id = 4; // live plan id
+  bool is_playing = 5; // is load to playing product
 }
 
 message LoadLivePlanProductResponse {
