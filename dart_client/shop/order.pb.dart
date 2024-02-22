@@ -917,6 +917,7 @@ class OrderInfo extends $pb.GeneratedMessage {
     $core.String? buyerName,
     $core.String? deliverAddress,
     $0.CouponDetail? couponDetail,
+    $core.String? channel,
   }) {
     final $result = create();
     if (orderId != null) {
@@ -985,6 +986,9 @@ class OrderInfo extends $pb.GeneratedMessage {
     if (couponDetail != null) {
       $result.couponDetail = couponDetail;
     }
+    if (channel != null) {
+      $result.channel = channel;
+    }
     return $result;
   }
   OrderInfo._() : super();
@@ -1014,6 +1018,7 @@ class OrderInfo extends $pb.GeneratedMessage {
     ..aOS(20, _omitFieldNames ? '' : 'buyerName')
     ..aOS(21, _omitFieldNames ? '' : 'deliverAddress')
     ..aOM<$0.CouponDetail>(22, _omitFieldNames ? '' : 'couponDetail', subBuilder: $0.CouponDetail.create)
+    ..aOS(23, _omitFieldNames ? '' : 'channel')
     ..hasRequiredFields = false
   ;
 
@@ -1231,6 +1236,15 @@ class OrderInfo extends $pb.GeneratedMessage {
   void clearCouponDetail() => clearField(22);
   @$pb.TagNumber(22)
   $0.CouponDetail ensureCouponDetail() => $_ensure(21);
+
+  @$pb.TagNumber(23)
+  $core.String get channel => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set channel($core.String v) { $_setString(22, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasChannel() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearChannel() => clearField(23);
 }
 
 /// 收获与配送信息

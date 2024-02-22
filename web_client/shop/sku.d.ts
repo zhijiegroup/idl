@@ -23,6 +23,7 @@ export interface Sku {
   all_stock_total?: string;
   purchase_limit?: string;
   user_buy_total?: string;
+  channel?: string;
 }
 
 export interface SkuAttributeWithOneValue {

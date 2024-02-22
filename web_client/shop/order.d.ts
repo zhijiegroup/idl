@@ -123,6 +123,7 @@ export interface OrderInfo {
   deliver_address?: string;
   /** 优惠券详情 */
   coupon_detail?: coupon.CouponDetail;
+  channel?: string;
 }
 
 /** 收获与配送信息 */

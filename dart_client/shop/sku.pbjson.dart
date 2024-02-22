@@ -33,6 +33,7 @@ const Sku$json = {
     {'1': 'all_stock_total', '3': 15, '4': 1, '5': 3, '10': 'allStockTotal'},
     {'1': 'purchase_limit', '3': 16, '4': 1, '5': 3, '10': 'purchaseLimit'},
     {'1': 'user_buy_total', '3': 17, '4': 1, '5': 3, '10': 'userBuyTotal'},
+    {'1': 'channel', '3': 18, '4': 1, '5': 9, '10': 'channel'},
   ],
 };
 
@@ -48,7 +49,7 @@ final $typed_data.Uint8List skuDescriptor = $convert.base64Decode(
     'FsX3ZhbHVlGA0gASgJUhFwcmVmZXJlbnRpYWxWYWx1ZRIfCgtzdG9ja190b3RhbBgOIAEoA1IK'
     'c3RvY2tUb3RhbBImCg9hbGxfc3RvY2tfdG90YWwYDyABKANSDWFsbFN0b2NrVG90YWwSJQoOcH'
     'VyY2hhc2VfbGltaXQYECABKANSDXB1cmNoYXNlTGltaXQSJAoOdXNlcl9idXlfdG90YWwYESAB'
-    'KANSDHVzZXJCdXlUb3RhbA==');
+    'KANSDHVzZXJCdXlUb3RhbBIYCgdjaGFubmVsGBIgASgJUgdjaGFubmVs');
 
 @$core.Deprecated('Use skuAttributeWithOneValueDescriptor instead')
 const SkuAttributeWithOneValue$json = {

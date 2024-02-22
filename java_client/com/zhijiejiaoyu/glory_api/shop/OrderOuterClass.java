@@ -216,7 +216,7 @@ public final class OrderOuterClass {
       "erSku\022\024\n\014order_sku_id\030\001 \001(\003\022\020\n\010order_id\030" +
       "\002 \001(\003\022\016\n\006sku_id\030\003 \001(\003\022\021\n\tseller_id\030\004 \001(\003" +
       "\022\017\n\007shop_id\030\005 \001(\003\022\020\n\010quantity\030\006 \001(\005\022\033\n\023f" +
-      "reight_template_id\030\007 \001(\003\"\251\004\n\tOrderInfo\022\020" +
+      "reight_template_id\030\007 \001(\003\"\272\004\n\tOrderInfo\022\020" +
       "\n\010order_id\030\001 \001(\003\022\024\n\014order_status\030\002 \001(\t\022\036" +
       "\n\026order_cancelled_reason\030\003 \001(\t\022\022\n\ncreate" +
       "d_at\030\004 \001(\t\022\021\n\torderType\030\005 \001(\t\022\017\n\007payType" +
@@ -230,75 +230,76 @@ public final class OrderOuterClass {
       "(\t\022\024\n\014contact_name\030\023 \001(\t\022\022\n\nbuyer_name\030\024" +
       " \001(\t\022\027\n\017deliver_address\030\025 \001(\t\0223\n\rcoupon_" +
       "detail\030\026 \001(\0132\027.glory_api.CouponDetailH\000\210" +
-      "\001\001B\020\n\016_coupon_detail\"\255\001\n\013DeliverInfo\022\027\n\017" +
-      "deliver_address\030\001 \001(\t\022\024\n\014deliver_post\030\002 " +
-      "\001(\005\022\024\n\014contact_name\030\003 \001(\t\022\025\n\rcontact_pho" +
-      "ne\030\004 \001(\t\022\022\n\nbuyer_name\030\005 \001(\t\022\025\n\rbuyer_co" +
-      "mment\030\006 \001(\t\022\027\n\017delivery_method\030\007 \001(\t\"\312\001\n" +
-      "\013ProductInfo\022\022\n\nproduct_id\030\001 \001(\003\022\024\n\014prod" +
-      "uct_name\030\002 \001(\t\022\033\n\003sku\030\003 \001(\0132\016.glory_api." +
-      "Sku\022\024\n\014service_info\030\004 \001(\t\022\022\n\nunit_price\030" +
-      "\005 \001(\001\022\020\n\010quantity\030\006 \001(\005\022\025\n\rdiscount_info" +
-      "\030\007 \001(\t\022!\n\006images\030\010 \003(\0132\021.glory_api.Image" +
-      "s\";\n\017OrderWithAuthor\022(\n\norder_info\030\003 \001(\013" +
-      "2\024.glory_api.OrderInfo\"m\n\022CreateOrderReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022.\n\norder_info\030\002 \003(\0132\032.glory_api.Cr" +
-      "eateOrderInfo\"\224\001\n\023CreateOrderResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\t" +
-      "trans_res\030\002 \003(\0132\034.glory_api.TransRespons" +
-      "eInfo\022\021\n\tcny_total\030\003 \001(\001\022\022\n\ncoin_total\030\004" +
-      " \001(\001\"`\n\021TransResponseInfo\022\020\n\010trans_id\030\001 " +
-      "\001(\003\022\'\n\005order\030\002 \003(\0132\030.glory_api.OrderResp" +
-      "onse\022\020\n\010currency\030\003 \001(\t\"3\n\rOrderResponse\022" +
-      "\020\n\010order_id\030\001 \001(\003\022\020\n\010currency\030\002 \001(\t\"L\n\017G" +
-      "etOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"\217\001\n\020Ge" +
-      "tOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\'\n\torderInfo\030\002 \001(\0132\024.glory" +
-      "_api.OrderInfo\022+\n\013deliverInfo\030\004 \001(\0132\026.gl" +
-      "ory_api.DeliverInfo\"^\n\022UpdateOrderReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\037\n\005order\030\002 \001(\0132\020.glory_api.Order\"N\n\023U" +
-      "pdateOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\020\n\010order_id\030\002 \001(\003\"\306\001\n\020" +
-      "ListOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\017\n\007user_id\030\002 \001(\003\022\021\n\tse" +
-      "ller_id\030\003 \001(\003\022\021\n\ttenant_id\030\004 \001(\003\022\017\n\007shop" +
-      "_id\030\005 \001(\003\022\024\n\014order_status\030\006 \001(\t\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"\232\001\n" +
-      "\021ListOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\0220\n\014order_detail\030\002 \003(\0132" +
-      "\032.glory_api.OrderWithAuthor\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"O\n\022Del" +
-      "eteOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"<\n\023De" +
-      "leteOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"M\n\020ShipGoodsRequest\022\'\n\014" +
+      "\001\001\022\017\n\007channel\030\027 \001(\tB\020\n\016_coupon_detail\"\255\001" +
+      "\n\013DeliverInfo\022\027\n\017deliver_address\030\001 \001(\t\022\024" +
+      "\n\014deliver_post\030\002 \001(\005\022\024\n\014contact_name\030\003 \001" +
+      "(\t\022\025\n\rcontact_phone\030\004 \001(\t\022\022\n\nbuyer_name\030" +
+      "\005 \001(\t\022\025\n\rbuyer_comment\030\006 \001(\t\022\027\n\017delivery" +
+      "_method\030\007 \001(\t\"\312\001\n\013ProductInfo\022\022\n\nproduct" +
+      "_id\030\001 \001(\003\022\024\n\014product_name\030\002 \001(\t\022\033\n\003sku\030\003" +
+      " \001(\0132\016.glory_api.Sku\022\024\n\014service_info\030\004 \001" +
+      "(\t\022\022\n\nunit_price\030\005 \001(\001\022\020\n\010quantity\030\006 \001(\005" +
+      "\022\025\n\rdiscount_info\030\007 \001(\t\022!\n\006images\030\010 \003(\0132" +
+      "\021.glory_api.Images\";\n\017OrderWithAuthor\022(\n" +
+      "\norder_info\030\003 \001(\0132\024.glory_api.OrderInfo\"" +
+      "m\n\022CreateOrderRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022.\n\norder_info\030\002 \003" +
+      "(\0132\032.glory_api.CreateOrderInfo\"\224\001\n\023Creat" +
+      "eOrderResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\022/\n\ttrans_res\030\002 \003(\0132\034.glory" +
+      "_api.TransResponseInfo\022\021\n\tcny_total\030\003 \001(" +
+      "\001\022\022\n\ncoin_total\030\004 \001(\001\"`\n\021TransResponseIn" +
+      "fo\022\020\n\010trans_id\030\001 \001(\003\022\'\n\005order\030\002 \003(\0132\030.gl" +
+      "ory_api.OrderResponse\022\020\n\010currency\030\003 \001(\t\"" +
+      "3\n\rOrderResponse\022\020\n\010order_id\030\001 \001(\003\022\020\n\010cu" +
+      "rrency\030\002 \001(\t\"L\n\017GetOrderRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010orde" +
+      "r_id\030\002 \001(\003\"\217\001\n\020GetOrderResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\torderI" +
+      "nfo\030\002 \001(\0132\024.glory_api.OrderInfo\022+\n\013deliv" +
+      "erInfo\030\004 \001(\0132\026.glory_api.DeliverInfo\"^\n\022" +
+      "UpdateOrderRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\037\n\005order\030\002 \001(\0132\020.glo" +
+      "ry_api.Order\"N\n\023UpdateOrderResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010or" +
+      "der_id\030\002 \001(\003\"\306\001\n\020ListOrderRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007us" +
+      "er_id\030\002 \001(\003\022\021\n\tseller_id\030\003 \001(\003\022\021\n\ttenant" +
+      "_id\030\004 \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\024\n\014order_stat" +
+      "us\030\006 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
+      "nationRequest\"\232\001\n\021ListOrderResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\0220\n\014or" +
+      "der_detail\030\002 \003(\0132\032.glory_api.OrderWithAu" +
+      "thor\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponse\"O\n\022DeleteOrderRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010ord" +
+      "er_id\030\002 \001(\003\"<\n\023DeleteOrderResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"M\n\020Shi" +
+      "pGoodsRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\020\n\010order_id\030\002 \001(\003\":\n\021Ship" +
+      "GoodsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"W\n\032ConfirmReceiptGoodsReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\020\n\010order_id\030\002 \001(\003\"D\n\033ConfirmReceiptG" +
+      "oodsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"R\n\025GetOrderStatusRequest\022\'\n\014" +
       "base_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n" +
-      "\010order_id\030\002 \001(\003\":\n\021ShipGoodsResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"W\n\032C" +
-      "onfirmReceiptGoodsRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order_id\030\002" +
-      " \001(\003\"D\n\033ConfirmReceiptGoodsResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"R\n\025Ge" +
-      "tOrderStatusRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\020\n\010order_id\030\002 \001(\003\"U" +
-      "\n\026GetOrderStatusResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\024\n\014order_status\030" +
-      "\002 \001(\t\"O\n\022CancelOrderRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order_id" +
-      "\030\002 \001(\003\"<\n\023CancelOrderResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"V\n\031ShipGood" +
-      "sInBatchesRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003\"C\n\032" +
-      "ShipGoodsInBatchesResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\"Y\n\034FreeShippin" +
-      "gInBatchesRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\020\n\010order_id\030\002 \003(\003\"F\n\035" +
-      "FreeShippingInBatchesResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhij" +
-      "iejiaoyu.glory_api.shopP\001b\006proto3"
+      "\010order_id\030\002 \001(\003\"U\n\026GetOrderStatusRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\024\n\014order_status\030\002 \001(\t\"O\n\022CancelOrderReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\020\n\010order_id\030\002 \001(\003\"<\n\023CancelOrderRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\"V\n\031ShipGoodsInBatchesRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010o" +
+      "rder_id\030\002 \003(\003\"C\n\032ShipGoodsInBatchesRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"Y\n\034FreeShippingInBatchesRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010o" +
+      "rder_id\030\002 \003(\003\"F\n\035FreeShippingInBatchesRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponseB#\n\037com.zhijiejiaoyu.glory_api.shop" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -342,7 +343,7 @@ public final class OrderOuterClass {
     internal_static_glory_api_OrderInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OrderInfo_descriptor,
-        new java.lang.String[] { "OrderId", "OrderStatus", "OrderCancelledReason", "CreatedAt", "OrderType", "PayType", "PayTime", "TotalAmount", "OriginalAmount", "DeliverFee", "DiscountAmount", "PaymentAmount", "PayableAmount", "ProductInfo", "ShopId", "ShopName", "ShopLogo", "Currency", "ContactName", "BuyerName", "DeliverAddress", "CouponDetail", "CouponDetail", });
+        new java.lang.String[] { "OrderId", "OrderStatus", "OrderCancelledReason", "CreatedAt", "OrderType", "PayType", "PayTime", "TotalAmount", "OriginalAmount", "DeliverFee", "DiscountAmount", "PaymentAmount", "PayableAmount", "ProductInfo", "ShopId", "ShopName", "ShopLogo", "Currency", "ContactName", "BuyerName", "DeliverAddress", "CouponDetail", "Channel", "CouponDetail", });
     internal_static_glory_api_DeliverInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_DeliverInfo_fieldAccessorTable = new

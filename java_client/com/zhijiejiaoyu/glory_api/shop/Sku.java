@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     skuUrl = "";
     serialNumber = "";
     preferentialValue = "";
+    channel = "";
   }
 
   @java.lang.Override
@@ -142,6 +143,12 @@ private static final long serialVersionUID = 0L;
           case 136: {
 
             userBuyTotal = input.readInt64();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            channel = s;
             break;
           }
           default: {
@@ -519,6 +526,44 @@ private static final long serialVersionUID = 0L;
     return userBuyTotal ;
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 18;
+  private volatile java.lang.Object channel ;
+  /**
+   * <code>string channel = 18;</code>
+   * @return The channel.
+   */
+  @java.lang.Override
+  public java.lang.String getChannel() {
+    java.lang.Object ref = channel ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      channel = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string channel = 18;</code>
+   * @return The bytes for channel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getChannelBytes() {
+    java.lang.Object ref = channel ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      channel = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -580,6 +625,9 @@ private static final long serialVersionUID = 0L;
     }
     if (userBuyTotal != 0L) {
       output.writeInt64(17, userBuyTotal );
+    }
+    if (!getChannelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, channel );
     }
     unknownFields.writeTo(output);
   }
@@ -649,6 +697,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, userBuyTotal );
     }
+    if (!getChannelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, channel );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -697,6 +748,8 @@ private static final long serialVersionUID = 0L;
         != other.getPurchaseLimit()) return false;
     if (getUserBuyTotal()
         != other.getUserBuyTotal()) return false;
+    if (!getChannel()
+        .equals(other.getChannel())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -750,6 +803,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USER_BUY_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserBuyTotal());
+    hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getChannel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -920,6 +975,8 @@ private static final long serialVersionUID = 0L;
 
       userBuyTotal = 0L;
 
+      channel = "";
+
       return this;
     }
 
@@ -971,6 +1028,7 @@ private static final long serialVersionUID = 0L;
       result.allStockTotal = allStockTotal ;
       result.purchaseLimit = purchaseLimit ;
       result.userBuyTotal = userBuyTotal ;
+      result.channel = channel ;
       onBuilt();
       return result;
     }
@@ -1094,6 +1152,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getUserBuyTotal() != 0L) {
         setUserBuyTotal(other.getUserBuyTotal());
+      }
+      if (!other.getChannel().isEmpty()) {
+        channel = other.channel ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2051,6 +2113,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearUserBuyTotal() {
       
       userBuyTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object channel = "";
+    /**
+     * <code>string channel = 18;</code>
+     * @return The channel.
+     */
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string channel = 18;</code>
+     * @return The bytes for channel.
+     */
+    public com.google.protobuf.ByteString
+        getChannelBytes() {
+      java.lang.Object ref = channel ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channel = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string channel = 18;</code>
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      channel = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string channel = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+      
+      channel = getDefaultInstance().getChannel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string channel = 18;</code>
+     * @param value The bytes for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      channel = value;
       onChanged();
       return this;
     }

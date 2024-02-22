@@ -150,4 +150,16 @@ public interface SkuOrBuilder extends
    * @return The userBuyTotal.
    */
   long getUserBuyTotal();
+
+  /**
+   * <code>string channel = 18;</code>
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   * <code>string channel = 18;</code>
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString
+      getChannelBytes();
 }

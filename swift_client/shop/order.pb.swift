@@ -382,6 +382,11 @@ struct GloryApi_OrderInfo {
   /// Clears the value of `couponDetail`. Subsequent reads from it will return its default value.
   mutating func clearCouponDetail() {_uniqueStorage()._couponDetail = nil}
 
+  var channel: String {
+    get {return _storage._channel}
+    set {_uniqueStorage()._channel = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -427,60 +432,39 @@ struct GloryApi_ProductInfo {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var productID: Int64 {
-    get {return _storage._productID}
-    set {_uniqueStorage()._productID = newValue}
-  }
+  var productID: Int64 = 0
 
-  var productName: String {
-    get {return _storage._productName}
-    set {_uniqueStorage()._productName = newValue}
-  }
+  var productName: String = String()
 
   var sku: GloryApi_Sku {
-    get {return _storage._sku ?? GloryApi_Sku()}
-    set {_uniqueStorage()._sku = newValue}
+    get {return _sku ?? GloryApi_Sku()}
+    set {_sku = newValue}
   }
   /// Returns true if `sku` has been explicitly set.
-  var hasSku: Bool {return _storage._sku != nil}
+  var hasSku: Bool {return self._sku != nil}
   /// Clears the value of `sku`. Subsequent reads from it will return its default value.
-  mutating func clearSku() {_uniqueStorage()._sku = nil}
+  mutating func clearSku() {self._sku = nil}
 
   ///售后信息
-  var serviceInfo: String {
-    get {return _storage._serviceInfo}
-    set {_uniqueStorage()._serviceInfo = newValue}
-  }
+  var serviceInfo: String = String()
 
   ///单价
-  var unitPrice: Double {
-    get {return _storage._unitPrice}
-    set {_uniqueStorage()._unitPrice = newValue}
-  }
+  var unitPrice: Double = 0
 
   ///数量
-  var quantity: Int32 {
-    get {return _storage._quantity}
-    set {_uniqueStorage()._quantity = newValue}
-  }
+  var quantity: Int32 = 0
 
   ///优惠信息
-  var discountInfo: String {
-    get {return _storage._discountInfo}
-    set {_uniqueStorage()._discountInfo = newValue}
-  }
+  var discountInfo: String = String()
 
   ///商品图片
-  var images: [GloryApi_Images] {
-    get {return _storage._images}
-    set {_uniqueStorage()._images = newValue}
-  }
+  var images: [GloryApi_Images] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _sku: GloryApi_Sku? = nil
 }
 
 struct GloryApi_OrderWithAuthor {
@@ -1658,6 +1642,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     20: .standard(proto: "buyer_name"),
     21: .standard(proto: "deliver_address"),
     22: .standard(proto: "coupon_detail"),
+    23: .same(proto: "channel"),
   ]
 
   fileprivate class _StorageClass {
@@ -1683,6 +1668,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _buyerName: String = String()
     var _deliverAddress: String = String()
     var _couponDetail: GloryApi_CouponDetail? = nil
+    var _channel: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -1711,6 +1697,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _buyerName = source._buyerName
       _deliverAddress = source._deliverAddress
       _couponDetail = source._couponDetail
+      _channel = source._channel
     }
   }
 
@@ -1751,6 +1738,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 20: try { try decoder.decodeSingularStringField(value: &_storage._buyerName) }()
         case 21: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
         case 22: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
+        case 23: try { try decoder.decodeSingularStringField(value: &_storage._channel) }()
         default: break
         }
       }
@@ -1829,6 +1817,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       try { if let v = _storage._couponDetail {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       } }()
+      if !_storage._channel.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._channel, fieldNumber: 23)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1860,6 +1851,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._buyerName != rhs_storage._buyerName {return false}
         if _storage._deliverAddress != rhs_storage._deliverAddress {return false}
         if _storage._couponDetail != rhs_storage._couponDetail {return false}
+        if _storage._channel != rhs_storage._channel {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1950,112 +1942,66 @@ extension GloryApi_ProductInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     8: .same(proto: "images"),
   ]
 
-  fileprivate class _StorageClass {
-    var _productID: Int64 = 0
-    var _productName: String = String()
-    var _sku: GloryApi_Sku? = nil
-    var _serviceInfo: String = String()
-    var _unitPrice: Double = 0
-    var _quantity: Int32 = 0
-    var _discountInfo: String = String()
-    var _images: [GloryApi_Images] = []
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _productID = source._productID
-      _productName = source._productName
-      _sku = source._sku
-      _serviceInfo = source._serviceInfo
-      _unitPrice = source._unitPrice
-      _quantity = source._quantity
-      _discountInfo = source._discountInfo
-      _images = source._images
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._productID) }()
-        case 2: try { try decoder.decodeSingularStringField(value: &_storage._productName) }()
-        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._sku) }()
-        case 4: try { try decoder.decodeSingularStringField(value: &_storage._serviceInfo) }()
-        case 5: try { try decoder.decodeSingularDoubleField(value: &_storage._unitPrice) }()
-        case 6: try { try decoder.decodeSingularInt32Field(value: &_storage._quantity) }()
-        case 7: try { try decoder.decodeSingularStringField(value: &_storage._discountInfo) }()
-        case 8: try { try decoder.decodeRepeatedMessageField(value: &_storage._images) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._sku) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.serviceInfo) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.unitPrice) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.quantity) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.discountInfo) }()
+      case 8: try { try decoder.decodeRepeatedMessageField(value: &self.images) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      if _storage._productID != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._productID, fieldNumber: 1)
-      }
-      if !_storage._productName.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._productName, fieldNumber: 2)
-      }
-      try { if let v = _storage._sku {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      } }()
-      if !_storage._serviceInfo.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._serviceInfo, fieldNumber: 4)
-      }
-      if _storage._unitPrice != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._unitPrice, fieldNumber: 5)
-      }
-      if _storage._quantity != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._quantity, fieldNumber: 6)
-      }
-      if !_storage._discountInfo.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._discountInfo, fieldNumber: 7)
-      }
-      if !_storage._images.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._images, fieldNumber: 8)
-      }
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 1)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 2)
+    }
+    try { if let v = self._sku {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
+    if !self.serviceInfo.isEmpty {
+      try visitor.visitSingularStringField(value: self.serviceInfo, fieldNumber: 4)
+    }
+    if self.unitPrice != 0 {
+      try visitor.visitSingularDoubleField(value: self.unitPrice, fieldNumber: 5)
+    }
+    if self.quantity != 0 {
+      try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 6)
+    }
+    if !self.discountInfo.isEmpty {
+      try visitor.visitSingularStringField(value: self.discountInfo, fieldNumber: 7)
+    }
+    if !self.images.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.images, fieldNumber: 8)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ProductInfo, rhs: GloryApi_ProductInfo) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._productID != rhs_storage._productID {return false}
-        if _storage._productName != rhs_storage._productName {return false}
-        if _storage._sku != rhs_storage._sku {return false}
-        if _storage._serviceInfo != rhs_storage._serviceInfo {return false}
-        if _storage._unitPrice != rhs_storage._unitPrice {return false}
-        if _storage._quantity != rhs_storage._quantity {return false}
-        if _storage._discountInfo != rhs_storage._discountInfo {return false}
-        if _storage._images != rhs_storage._images {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.productID != rhs.productID {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs._sku != rhs._sku {return false}
+    if lhs.serviceInfo != rhs.serviceInfo {return false}
+    if lhs.unitPrice != rhs.unitPrice {return false}
+    if lhs.quantity != rhs.quantity {return false}
+    if lhs.discountInfo != rhs.discountInfo {return false}
+    if lhs.images != rhs.images {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

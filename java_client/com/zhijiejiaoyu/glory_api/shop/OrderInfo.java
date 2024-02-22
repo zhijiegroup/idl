@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
     contactName = "";
     buyerName = "";
     deliverAddress = "";
+    channel = "";
   }
 
   @java.lang.Override
@@ -198,6 +199,12 @@ private static final long serialVersionUID = 0L;
               couponDetail = subBuilder.buildPartial();
             }
             bitField0_ |= 0x00000001;
+            break;
+          }
+          case 186: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            channel = s;
             break;
           }
           default: {
@@ -1002,6 +1009,44 @@ private static final long serialVersionUID = 0L;
     return couponDetail == null ? com.zhijiejiaoyu.glory_api.shop.CouponDetail.getDefaultInstance() : couponDetail ;
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 23;
+  private volatile java.lang.Object channel ;
+  /**
+   * <code>string channel = 23;</code>
+   * @return The channel.
+   */
+  @java.lang.Override
+  public java.lang.String getChannel() {
+    java.lang.Object ref = channel ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      channel = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string channel = 23;</code>
+   * @return The bytes for channel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getChannelBytes() {
+    java.lang.Object ref = channel ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      channel = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1081,6 +1126,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0 & 0x00000001) != 0)) {
       output.writeMessage(22, getCouponDetail());
+    }
+    if (!getChannelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, channel );
     }
     unknownFields.writeTo(output);
   }
@@ -1167,6 +1215,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, getCouponDetail());
     }
+    if (!getChannelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, channel );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1235,6 +1286,8 @@ private static final long serialVersionUID = 0L;
       if (!getCouponDetail()
           .equals(other.getCouponDetail())) return false;
     }
+    if (!getChannel()
+        .equals(other.getChannel())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1302,6 +1355,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COUPON_DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getCouponDetail().hashCode();
     }
+    hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getChannel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1493,6 +1548,8 @@ private static final long serialVersionUID = 0L;
         couponDetailBuilder .clear();
       }
       bitField0 = (bitField0 & ~0x00000002);
+      channel = "";
+
       return this;
     }
 
@@ -1558,6 +1615,7 @@ private static final long serialVersionUID = 0L;
         }
         to_bitField0_ |= 0x00000001;
       }
+      result.channel = channel ;
       result.bitField0 = to_bitField0 ;
       onBuilt();
       return result;
@@ -1707,6 +1765,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCouponDetail()) {
         mergeCouponDetail(other.getCouponDetail());
+      }
+      if (!other.getChannel().isEmpty()) {
+        channel = other.channel ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3688,6 +3750,82 @@ private static final long serialVersionUID = 0L;
         couponDetail = null;
       }
       return couponDetailBuilder ;
+    }
+
+    private java.lang.Object channel = "";
+    /**
+     * <code>string channel = 23;</code>
+     * @return The channel.
+     */
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string channel = 23;</code>
+     * @return The bytes for channel.
+     */
+    public com.google.protobuf.ByteString
+        getChannelBytes() {
+      java.lang.Object ref = channel ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channel = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string channel = 23;</code>
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      channel = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string channel = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+      
+      channel = getDefaultInstance().getChannel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string channel = 23;</code>
+     * @param value The bytes for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      channel = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -393,4 +393,16 @@ public interface OrderInfoOrBuilder extends
    * <code>.glory_api.CouponDetail coupon_detail = 22;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponDetailOrBuilder();
+
+  /**
+   * <code>string channel = 23;</code>
+   * @return The channel.
+   */
+  java.lang.String getChannel();
+  /**
+   * <code>string channel = 23;</code>
+   * @return The bytes for channel.
+   */
+  com.google.protobuf.ByteString
+      getChannelBytes();
 }

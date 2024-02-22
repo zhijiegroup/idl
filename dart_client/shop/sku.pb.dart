@@ -35,6 +35,7 @@ class Sku extends $pb.GeneratedMessage {
     $fixnum.Int64? allStockTotal,
     $fixnum.Int64? purchaseLimit,
     $fixnum.Int64? userBuyTotal,
+    $core.String? channel,
   }) {
     final $result = create();
     if (skuId != null) {
@@ -85,6 +86,9 @@ class Sku extends $pb.GeneratedMessage {
     if (userBuyTotal != null) {
       $result.userBuyTotal = userBuyTotal;
     }
+    if (channel != null) {
+      $result.channel = channel;
+    }
     return $result;
   }
   Sku._() : super();
@@ -108,6 +112,7 @@ class Sku extends $pb.GeneratedMessage {
     ..aInt64(15, _omitFieldNames ? '' : 'allStockTotal')
     ..aInt64(16, _omitFieldNames ? '' : 'purchaseLimit')
     ..aInt64(17, _omitFieldNames ? '' : 'userBuyTotal')
+    ..aOS(18, _omitFieldNames ? '' : 'channel')
     ..hasRequiredFields = false
   ;
 
@@ -269,6 +274,15 @@ class Sku extends $pb.GeneratedMessage {
   $core.bool hasUserBuyTotal() => $_has(15);
   @$pb.TagNumber(17)
   void clearUserBuyTotal() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get channel => $_getSZ(16);
+  @$pb.TagNumber(18)
+  set channel($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasChannel() => $_has(16);
+  @$pb.TagNumber(18)
+  void clearChannel() => clearField(18);
 }
 
 class SkuAttributeWithOneValue extends $pb.GeneratedMessage {
