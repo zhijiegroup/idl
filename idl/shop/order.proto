@@ -97,6 +97,7 @@ message OrderInfo {
   string buyer_name = 20;//购买人
   string deliver_address = 21;//收获地址
   optional CouponDetail coupon_detail = 22; // 优惠券详情
+  string channel = 23;
 }
 
 //收获与配送信息
@@ -108,7 +109,6 @@ message DeliverInfo {
   string buyer_name = 5;//买家名字 或昵称
   string buyer_comment = 6;//买家留言
   string delivery_method = 7;//配送方式
-
 }
 
 //商品信息
