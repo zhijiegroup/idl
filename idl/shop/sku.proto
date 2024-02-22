@@ -23,6 +23,7 @@ message Sku {
   int64 all_stock_total = 15;
   int64 purchase_limit = 16;
   int64 user_buy_total = 17;
+  string channel = 18;
 }
 message SkuAttributeWithOneValue {
   int64 attribute_id = 1;
