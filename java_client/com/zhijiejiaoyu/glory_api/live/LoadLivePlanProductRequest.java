@@ -63,15 +63,20 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            shopId = input.readInt64();
+            roomId = input.readInt64();
             break;
           }
           case 24: {
 
-            livePlanId = input.readInt64();
+            shopId = input.readInt64();
             break;
           }
           case 32: {
+
+            livePlanId = input.readInt64();
+            break;
+          }
+          case 40: {
 
             isPlaying = input.readBool();
             break;
@@ -134,14 +139,29 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int SHOP_ID_FIELD_NUMBER = 2;
+  public static final int ROOM_ID_FIELD_NUMBER = 2;
+  private long roomId ;
+  /**
+   * <pre>
+   * room id
+   * </pre>
+   *
+   * <code>int64 room_id = 2;</code>
+   * @return The roomId.
+   */
+  @java.lang.Override
+  public long getRoomId() {
+    return roomId ;
+  }
+
+  public static final int SHOP_ID_FIELD_NUMBER = 3;
   private long shopId ;
   /**
    * <pre>
    * shop id
    * </pre>
    *
-   * <code>int64 shop_id = 2;</code>
+   * <code>int64 shop_id = 3;</code>
    * @return The shopId.
    */
   @java.lang.Override
@@ -149,14 +169,14 @@ private static final long serialVersionUID = 0L;
     return shopId ;
   }
 
-  public static final int LIVE_PLAN_ID_FIELD_NUMBER = 3;
+  public static final int LIVE_PLAN_ID_FIELD_NUMBER = 4;
   private long livePlanId ;
   /**
    * <pre>
    * live plan id
    * </pre>
    *
-   * <code>int64 live_plan_id = 3;</code>
+   * <code>int64 live_plan_id = 4;</code>
    * @return The livePlanId.
    */
   @java.lang.Override
@@ -164,14 +184,14 @@ private static final long serialVersionUID = 0L;
     return livePlanId ;
   }
 
-  public static final int IS_PLAYING_FIELD_NUMBER = 4;
+  public static final int IS_PLAYING_FIELD_NUMBER = 5;
   private boolean isPlaying ;
   /**
    * <pre>
    * is load to playing product
    * </pre>
    *
-   * <code>bool is_playing = 4;</code>
+   * <code>bool is_playing = 5;</code>
    * @return The isPlaying.
    */
   @java.lang.Override
@@ -196,14 +216,17 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (roomId != 0L) {
+      output.writeInt64(2, roomId );
+    }
     if (shopId != 0L) {
-      output.writeInt64(2, shopId );
+      output.writeInt64(3, shopId );
     }
     if (livePlanId != 0L) {
-      output.writeInt64(3, livePlanId );
+      output.writeInt64(4, livePlanId );
     }
     if (isPlaying != false) {
-      output.writeBool(4, isPlaying );
+      output.writeBool(5, isPlaying );
     }
     unknownFields.writeTo(output);
   }
@@ -218,17 +241,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
+    if (roomId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, roomId );
+    }
     if (shopId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, shopId );
+        .computeInt64Size(3, shopId );
     }
     if (livePlanId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, livePlanId );
+        .computeInt64Size(4, livePlanId );
     }
     if (isPlaying != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, isPlaying );
+        .computeBoolSize(5, isPlaying );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -250,6 +277,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (getRoomId()
+        != other.getRoomId()) return false;
     if (getShopId()
         != other.getShopId()) return false;
     if (getLivePlanId()
@@ -271,6 +300,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
+    hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRoomId());
     hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getShopId());
@@ -419,6 +451,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      roomId = 0L;
+
       shopId = 0L;
 
       livePlanId = 0L;
@@ -456,6 +490,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      result.roomId = roomId ;
       result.shopId = shopId ;
       result.livePlanId = livePlanId ;
       result.isPlaying = isPlaying ;
@@ -509,6 +544,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.live.LoadLivePlanProductRequest.getDefaultInstance()) return this;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
+      }
+      if (other.getRoomId() != 0L) {
+        setRoomId(other.getRoomId());
       }
       if (other.getShopId() != 0L) {
         setShopId(other.getShopId());
@@ -667,13 +705,56 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
+    private long roomId ;
+    /**
+     * <pre>
+     * room id
+     * </pre>
+     *
+     * <code>int64 room_id = 2;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public long getRoomId() {
+      return roomId ;
+    }
+    /**
+     * <pre>
+     * room id
+     * </pre>
+     *
+     * <code>int64 room_id = 2;</code>
+     * @param value The roomId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoomId(long value) {
+      
+      roomId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * room id
+     * </pre>
+     *
+     * <code>int64 room_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoomId() {
+      
+      roomId = 0L;
+      onChanged();
+      return this;
+    }
+
     private long shopId ;
     /**
      * <pre>
      * shop id
      * </pre>
      *
-     * <code>int64 shop_id = 2;</code>
+     * <code>int64 shop_id = 3;</code>
      * @return The shopId.
      */
     @java.lang.Override
@@ -685,7 +766,7 @@ private static final long serialVersionUID = 0L;
      * shop id
      * </pre>
      *
-     * <code>int64 shop_id = 2;</code>
+     * <code>int64 shop_id = 3;</code>
      * @param value The shopId to set.
      * @return This builder for chaining.
      */
@@ -700,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * shop id
      * </pre>
      *
-     * <code>int64 shop_id = 2;</code>
+     * <code>int64 shop_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearShopId() {
@@ -716,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * live plan id
      * </pre>
      *
-     * <code>int64 live_plan_id = 3;</code>
+     * <code>int64 live_plan_id = 4;</code>
      * @return The livePlanId.
      */
     @java.lang.Override
@@ -728,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * live plan id
      * </pre>
      *
-     * <code>int64 live_plan_id = 3;</code>
+     * <code>int64 live_plan_id = 4;</code>
      * @param value The livePlanId to set.
      * @return This builder for chaining.
      */
@@ -743,7 +824,7 @@ private static final long serialVersionUID = 0L;
      * live plan id
      * </pre>
      *
-     * <code>int64 live_plan_id = 3;</code>
+     * <code>int64 live_plan_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearLivePlanId() {
@@ -759,7 +840,7 @@ private static final long serialVersionUID = 0L;
      * is load to playing product
      * </pre>
      *
-     * <code>bool is_playing = 4;</code>
+     * <code>bool is_playing = 5;</code>
      * @return The isPlaying.
      */
     @java.lang.Override
@@ -771,7 +852,7 @@ private static final long serialVersionUID = 0L;
      * is load to playing product
      * </pre>
      *
-     * <code>bool is_playing = 4;</code>
+     * <code>bool is_playing = 5;</code>
      * @param value The isPlaying to set.
      * @return This builder for chaining.
      */
@@ -786,7 +867,7 @@ private static final long serialVersionUID = 0L;
      * is load to playing product
      * </pre>
      *
-     * <code>bool is_playing = 4;</code>
+     * <code>bool is_playing = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearIsPlaying() {

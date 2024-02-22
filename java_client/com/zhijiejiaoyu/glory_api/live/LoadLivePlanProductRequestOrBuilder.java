@@ -24,10 +24,20 @@ public interface LoadLivePlanProductRequestOrBuilder extends
 
   /**
    * <pre>
+   * room id
+   * </pre>
+   *
+   * <code>int64 room_id = 2;</code>
+   * @return The roomId.
+   */
+  long getRoomId();
+
+  /**
+   * <pre>
    * shop id
    * </pre>
    *
-   * <code>int64 shop_id = 2;</code>
+   * <code>int64 shop_id = 3;</code>
    * @return The shopId.
    */
   long getShopId();
@@ -37,7 +47,7 @@ public interface LoadLivePlanProductRequestOrBuilder extends
    * live plan id
    * </pre>
    *
-   * <code>int64 live_plan_id = 3;</code>
+   * <code>int64 live_plan_id = 4;</code>
    * @return The livePlanId.
    */
   long getLivePlanId();
@@ -47,7 +57,7 @@ public interface LoadLivePlanProductRequestOrBuilder extends
    * is load to playing product
    * </pre>
    *
-   * <code>bool is_playing = 4;</code>
+   * <code>bool is_playing = 5;</code>
    * @return The isPlaying.
    */
   boolean getIsPlaying();

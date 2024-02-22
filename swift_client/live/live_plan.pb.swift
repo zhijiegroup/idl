@@ -593,6 +593,9 @@ struct GloryApi_LoadLivePlanProductRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  /// room id
+  var roomID: Int64 = 0
+
   /// shop id
   var shopID: Int64 = 0
 
@@ -2260,9 +2263,10 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".LoadLivePlanProductRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "shop_id"),
-    3: .standard(proto: "live_plan_id"),
-    4: .standard(proto: "is_playing"),
+    2: .standard(proto: "room_id"),
+    3: .standard(proto: "shop_id"),
+    4: .standard(proto: "live_plan_id"),
+    5: .standard(proto: "is_playing"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2272,9 +2276,10 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
-      case 4: try { try decoder.decodeSingularBoolField(value: &self.isPlaying) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.livePlanID) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.isPlaying) }()
       default: break
       }
     }
@@ -2288,20 +2293,24 @@ extension GloryApi_LoadLivePlanProductRequest: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 2)
+    }
     if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 3)
     }
     if self.livePlanID != 0 {
-      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.livePlanID, fieldNumber: 4)
     }
     if self.isPlaying != false {
-      try visitor.visitSingularBoolField(value: self.isPlaying, fieldNumber: 4)
+      try visitor.visitSingularBoolField(value: self.isPlaying, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_LoadLivePlanProductRequest, rhs: GloryApi_LoadLivePlanProductRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.roomID != rhs.roomID {return false}
     if lhs.shopID != rhs.shopID {return false}
     if lhs.livePlanID != rhs.livePlanID {return false}
     if lhs.isPlaying != rhs.isPlaying {return false}

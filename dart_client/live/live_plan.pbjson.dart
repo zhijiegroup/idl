@@ -353,18 +353,19 @@ const LoadLivePlanProductRequest$json = {
   '1': 'LoadLivePlanProductRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
-    {'1': 'live_plan_id', '3': 3, '4': 1, '5': 3, '10': 'livePlanId'},
-    {'1': 'is_playing', '3': 4, '4': 1, '5': 8, '10': 'isPlaying'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 3, '10': 'roomId'},
+    {'1': 'shop_id', '3': 3, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'live_plan_id', '3': 4, '4': 1, '5': 3, '10': 'livePlanId'},
+    {'1': 'is_playing', '3': 5, '4': 1, '5': 8, '10': 'isPlaying'},
   ],
 };
 
 /// Descriptor for `LoadLivePlanProductRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loadLivePlanProductRequestDescriptor = $convert.base64Decode(
     'ChpMb2FkTGl2ZVBsYW5Qcm9kdWN0UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
-    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdzaG9wX2lkGAIgASgDUgZzaG9wSWQSIAoM'
-    'bGl2ZV9wbGFuX2lkGAMgASgDUgpsaXZlUGxhbklkEh0KCmlzX3BsYXlpbmcYBCABKAhSCWlzUG'
-    'xheWluZw==');
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdyb29tX2lkGAIgASgDUgZyb29tSWQSFwoH'
+    'c2hvcF9pZBgDIAEoA1IGc2hvcElkEiAKDGxpdmVfcGxhbl9pZBgEIAEoA1IKbGl2ZVBsYW5JZB'
+    'IdCgppc19wbGF5aW5nGAUgASgIUglpc1BsYXlpbmc=');
 
 @$core.Deprecated('Use loadLivePlanProductResponseDescriptor instead')
 const LoadLivePlanProductResponse$json = {

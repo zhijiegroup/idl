@@ -137,6 +137,8 @@ export interface DeleteLivePlanProductResponse {
 
 export interface LoadLivePlanProductRequest {
   base_request?: base.BaseRequest;
+  /** room id */
+  room_id?: string;
   /** shop id */
   shop_id?: string;
   /** live plan id */

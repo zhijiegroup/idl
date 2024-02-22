@@ -1602,6 +1602,7 @@ class DeleteLivePlanProductResponse extends $pb.GeneratedMessage {
 class LoadLivePlanProductRequest extends $pb.GeneratedMessage {
   factory LoadLivePlanProductRequest({
     $0.BaseRequest? baseRequest,
+    $fixnum.Int64? roomId,
     $fixnum.Int64? shopId,
     $fixnum.Int64? livePlanId,
     $core.bool? isPlaying,
@@ -1609,6 +1610,9 @@ class LoadLivePlanProductRequest extends $pb.GeneratedMessage {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (roomId != null) {
+      $result.roomId = roomId;
     }
     if (shopId != null) {
       $result.shopId = shopId;
@@ -1627,9 +1631,10 @@ class LoadLivePlanProductRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoadLivePlanProductRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'shopId')
-    ..aInt64(3, _omitFieldNames ? '' : 'livePlanId')
-    ..aOB(4, _omitFieldNames ? '' : 'isPlaying')
+    ..aInt64(2, _omitFieldNames ? '' : 'roomId')
+    ..aInt64(3, _omitFieldNames ? '' : 'shopId')
+    ..aInt64(4, _omitFieldNames ? '' : 'livePlanId')
+    ..aOB(5, _omitFieldNames ? '' : 'isPlaying')
     ..hasRequiredFields = false
   ;
 
@@ -1666,31 +1671,40 @@ class LoadLivePlanProductRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get shopId => $_getI64(1);
+  $fixnum.Int64 get roomId => $_getI64(1);
   @$pb.TagNumber(2)
-  set shopId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set roomId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasShopId() => $_has(1);
+  $core.bool hasRoomId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearShopId() => clearField(2);
+  void clearRoomId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get livePlanId => $_getI64(2);
+  $fixnum.Int64 get shopId => $_getI64(2);
   @$pb.TagNumber(3)
-  set livePlanId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set shopId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasLivePlanId() => $_has(2);
+  $core.bool hasShopId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearLivePlanId() => clearField(3);
+  void clearShopId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get isPlaying => $_getBF(3);
+  $fixnum.Int64 get livePlanId => $_getI64(3);
   @$pb.TagNumber(4)
-  set isPlaying($core.bool v) { $_setBool(3, v); }
+  set livePlanId($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIsPlaying() => $_has(3);
+  $core.bool hasLivePlanId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIsPlaying() => clearField(4);
+  void clearLivePlanId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get isPlaying => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isPlaying($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsPlaying() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsPlaying() => clearField(5);
 }
 
 class LoadLivePlanProductResponse extends $pb.GeneratedMessage {
