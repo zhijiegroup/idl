@@ -140,6 +140,8 @@ message ClassTaskSubmitCount {
   int32 expiry = 6;
   string submit_percent = 7;
   float submit_percent_value = 8;
+  int64 task_id = 10;
+  int64 class_id = 11;
 }
 
 message ClassTaskPassCount {
@@ -151,6 +153,8 @@ message ClassTaskPassCount {
   int32 no_pass = 6;
   string pass_percent = 7;
   float pass_percent_value = 8;
+  int64 task_id = 10;
+  int64 class_id = 11;
 }
 
 message StudentSubmitCount {
