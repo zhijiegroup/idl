@@ -142,6 +142,7 @@ message ClassTaskSubmitCount {
   float submit_percent_value = 8;
   int64 task_id = 10;
   int64 class_id = 11;
+  string created_at = 12;
 }
 
 message ClassTaskPassCount {
@@ -155,6 +156,7 @@ message ClassTaskPassCount {
   float pass_percent_value = 8;
   int64 task_id = 10;
   int64 class_id = 11;
+  string created_at = 12;
 }
 
 message StudentSubmitCount {
@@ -191,7 +193,8 @@ message CountTeacherTaskRequest {
 
 message CountClassSubmitResponse {
   base.BaseResponse base_resp = 1;
-  repeated ClassTaskCount class_data = 2; // 班级任务提交统计
+  repeated string legend = 2;
+  repeated ClassTaskCount class_data = 3; // 班级任务提交统计
 }
 
 message CountPositiveListResponse {
@@ -218,7 +221,8 @@ message CountPassListResponse {
 
 message CountClassPassResponse {
   base.BaseResponse base_resp = 1;
-  repeated ClassTaskCount class_data = 2; // 班级任务通过统计
+  repeated string legend = 2;
+  repeated ClassTaskCount class_data = 3; // 班级任务通过统计
 }
 
 message CountSuperStudentListResponse {
