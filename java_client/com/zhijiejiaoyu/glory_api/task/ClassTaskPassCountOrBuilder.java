@@ -72,4 +72,28 @@ public interface ClassTaskPassCountOrBuilder extends
    * @return The passPercentValue.
    */
   float getPassPercentValue();
+
+  /**
+   * <code>int64 task_id = 10;</code>
+   * @return The taskId.
+   */
+  long getTaskId();
+
+  /**
+   * <code>int64 class_id = 11;</code>
+   * @return The classId.
+   */
+  long getClassId();
+
+  /**
+   * <code>string created_at = 12;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 12;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }

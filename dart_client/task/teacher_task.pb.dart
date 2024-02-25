@@ -1654,6 +1654,9 @@ class ClassTaskSubmitCount extends $pb.GeneratedMessage {
     $core.int? expiry,
     $core.String? submitPercent,
     $core.double? submitPercentValue,
+    $fixnum.Int64? taskId,
+    $fixnum.Int64? classId,
+    $core.String? createdAt,
   }) {
     final $result = create();
     if (class_1 != null) {
@@ -1680,6 +1683,15 @@ class ClassTaskSubmitCount extends $pb.GeneratedMessage {
     if (submitPercentValue != null) {
       $result.submitPercentValue = submitPercentValue;
     }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
     return $result;
   }
   ClassTaskSubmitCount._() : super();
@@ -1695,6 +1707,9 @@ class ClassTaskSubmitCount extends $pb.GeneratedMessage {
     ..a<$core.int>(6, _omitFieldNames ? '' : 'expiry', $pb.PbFieldType.O3)
     ..aOS(7, _omitFieldNames ? '' : 'submitPercent')
     ..a<$core.double>(8, _omitFieldNames ? '' : 'submitPercentValue', $pb.PbFieldType.OF)
+    ..aInt64(10, _omitFieldNames ? '' : 'taskId')
+    ..aInt64(11, _omitFieldNames ? '' : 'classId')
+    ..aOS(12, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -1790,6 +1805,33 @@ class ClassTaskSubmitCount extends $pb.GeneratedMessage {
   $core.bool hasSubmitPercentValue() => $_has(7);
   @$pb.TagNumber(8)
   void clearSubmitPercentValue() => clearField(8);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get taskId => $_getI64(8);
+  @$pb.TagNumber(10)
+  set taskId($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTaskId() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearTaskId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get classId => $_getI64(9);
+  @$pb.TagNumber(11)
+  set classId($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasClassId() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearClassId() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(12)
+  set createdAt($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => clearField(12);
 }
 
 class ClassTaskPassCount extends $pb.GeneratedMessage {
@@ -1802,6 +1844,9 @@ class ClassTaskPassCount extends $pb.GeneratedMessage {
     $core.int? noPass,
     $core.String? passPercent,
     $core.double? passPercentValue,
+    $fixnum.Int64? taskId,
+    $fixnum.Int64? classId,
+    $core.String? createdAt,
   }) {
     final $result = create();
     if (class_1 != null) {
@@ -1828,6 +1873,15 @@ class ClassTaskPassCount extends $pb.GeneratedMessage {
     if (passPercentValue != null) {
       $result.passPercentValue = passPercentValue;
     }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
     return $result;
   }
   ClassTaskPassCount._() : super();
@@ -1843,6 +1897,9 @@ class ClassTaskPassCount extends $pb.GeneratedMessage {
     ..a<$core.int>(6, _omitFieldNames ? '' : 'noPass', $pb.PbFieldType.O3)
     ..aOS(7, _omitFieldNames ? '' : 'passPercent')
     ..a<$core.double>(8, _omitFieldNames ? '' : 'passPercentValue', $pb.PbFieldType.OF)
+    ..aInt64(10, _omitFieldNames ? '' : 'taskId')
+    ..aInt64(11, _omitFieldNames ? '' : 'classId')
+    ..aOS(12, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -1938,6 +1995,33 @@ class ClassTaskPassCount extends $pb.GeneratedMessage {
   $core.bool hasPassPercentValue() => $_has(7);
   @$pb.TagNumber(8)
   void clearPassPercentValue() => clearField(8);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get taskId => $_getI64(8);
+  @$pb.TagNumber(10)
+  set taskId($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTaskId() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearTaskId() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get classId => $_getI64(9);
+  @$pb.TagNumber(11)
+  set classId($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasClassId() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearClassId() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(12)
+  set createdAt($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => clearField(12);
 }
 
 class StudentSubmitCount extends $pb.GeneratedMessage {
@@ -2365,11 +2449,15 @@ class CountTeacherTaskRequest extends $pb.GeneratedMessage {
 class CountClassSubmitResponse extends $pb.GeneratedMessage {
   factory CountClassSubmitResponse({
     $2.BaseResponse? baseResp,
+    $core.Iterable<$core.String>? legend,
     $core.Iterable<ClassTaskCount>? classData,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (legend != null) {
+      $result.legend.addAll(legend);
     }
     if (classData != null) {
       $result.classData.addAll(classData);
@@ -2382,7 +2470,8 @@ class CountClassSubmitResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountClassSubmitResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
-    ..pc<ClassTaskCount>(2, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
+    ..pPS(2, _omitFieldNames ? '' : 'legend')
+    ..pc<ClassTaskCount>(3, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
     ..hasRequiredFields = false
   ;
 
@@ -2419,7 +2508,10 @@ class CountClassSubmitResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ClassTaskCount> get classData => $_getList(1);
+  $core.List<$core.String> get legend => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<ClassTaskCount> get classData => $_getList(2);
 }
 
 class CountPositiveListResponse extends $pb.GeneratedMessage {
@@ -2697,11 +2789,15 @@ class CountPassListResponse extends $pb.GeneratedMessage {
 class CountClassPassResponse extends $pb.GeneratedMessage {
   factory CountClassPassResponse({
     $2.BaseResponse? baseResp,
+    $core.Iterable<$core.String>? legend,
     $core.Iterable<ClassTaskCount>? classData,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (legend != null) {
+      $result.legend.addAll(legend);
     }
     if (classData != null) {
       $result.classData.addAll(classData);
@@ -2714,7 +2810,8 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountClassPassResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
-    ..pc<ClassTaskCount>(2, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
+    ..pPS(2, _omitFieldNames ? '' : 'legend')
+    ..pc<ClassTaskCount>(3, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
     ..hasRequiredFields = false
   ;
 
@@ -2751,7 +2848,10 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ClassTaskCount> get classData => $_getList(1);
+  $core.List<$core.String> get legend => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<ClassTaskCount> get classData => $_getList(2);
 }
 
 class CountSuperStudentListResponse extends $pb.GeneratedMessage {

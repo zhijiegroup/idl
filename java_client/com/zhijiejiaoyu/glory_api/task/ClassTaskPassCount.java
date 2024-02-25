@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     class = "";
     task = "";
     passPercent = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -92,6 +93,22 @@ private static final long serialVersionUID = 0L;
           case 69: {
 
             passPercentValue = input.readFloat();
+            break;
+          }
+          case 80: {
+
+            taskId = input.readInt64();
+            break;
+          }
+          case 88: {
+
+            classId = input.readInt64();
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
             break;
           }
           default: {
@@ -295,6 +312,66 @@ private static final long serialVersionUID = 0L;
     return passPercentValue ;
   }
 
+  public static final int TASK_ID_FIELD_NUMBER = 10;
+  private long taskId ;
+  /**
+   * <code>int64 task_id = 10;</code>
+   * @return The taskId.
+   */
+  @java.lang.Override
+  public long getTaskId() {
+    return taskId ;
+  }
+
+  public static final int CLASS_ID_FIELD_NUMBER = 11;
+  private long classId ;
+  /**
+   * <code>int64 class_id = 11;</code>
+   * @return The classId.
+   */
+  @java.lang.Override
+  public long getClassId() {
+    return classId ;
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 12;
+  private volatile java.lang.Object createdAt ;
+  /**
+   * <code>string created_at = 12;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedAt() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string created_at = 12;</code>
+   * @return The bytes for createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedAtBytes() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -332,6 +409,15 @@ private static final long serialVersionUID = 0L;
     }
     if (passPercentValue != 0F) {
       output.writeFloat(8, passPercentValue );
+    }
+    if (taskId != 0L) {
+      output.writeInt64(10, taskId );
+    }
+    if (classId != 0L) {
+      output.writeInt64(11, classId );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -371,6 +457,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(8, passPercentValue );
     }
+    if (taskId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, taskId );
+    }
+    if (classId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, classId );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, createdAt );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -403,6 +500,12 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getPassPercentValue())
         != java.lang.Float.floatToIntBits(
             other.getPassPercentValue())) return false;
+    if (getTaskId()
+        != other.getTaskId()) return false;
+    if (getClassId()
+        != other.getClassId()) return false;
+    if (!getCreatedAt()
+        .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -431,6 +534,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PASS_PERCENT_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getPassPercentValue());
+    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskId());
+    hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getClassId());
+    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -580,6 +691,12 @@ private static final long serialVersionUID = 0L;
 
       passPercentValue = 0F;
 
+      taskId = 0L;
+
+      classId = 0L;
+
+      createdAt = "";
+
       return this;
     }
 
@@ -614,6 +731,9 @@ private static final long serialVersionUID = 0L;
       result.noPass = noPass ;
       result.passPercent = passPercent ;
       result.passPercentValue = passPercentValue ;
+      result.taskId = taskId ;
+      result.classId = classId ;
+      result.createdAt = createdAt ;
       onBuilt();
       return result;
     }
@@ -688,6 +808,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPassPercentValue() != 0F) {
         setPassPercentValue(other.getPassPercentValue());
+      }
+      if (other.getTaskId() != 0L) {
+        setTaskId(other.getTaskId());
+      }
+      if (other.getClassId() != 0L) {
+        setClassId(other.getClassId());
+      }
+      if (!other.getCreatedAt().isEmpty()) {
+        createdAt = other.createdAt ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1097,6 +1227,144 @@ private static final long serialVersionUID = 0L;
     public Builder clearPassPercentValue() {
       
       passPercentValue = 0F;
+      onChanged();
+      return this;
+    }
+
+    private long taskId ;
+    /**
+     * <code>int64 task_id = 10;</code>
+     * @return The taskId.
+     */
+    @java.lang.Override
+    public long getTaskId() {
+      return taskId ;
+    }
+    /**
+     * <code>int64 task_id = 10;</code>
+     * @param value The taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskId(long value) {
+      
+      taskId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 task_id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskId() {
+      
+      taskId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long classId ;
+    /**
+     * <code>int64 class_id = 11;</code>
+     * @return The classId.
+     */
+    @java.lang.Override
+    public long getClassId() {
+      return classId ;
+    }
+    /**
+     * <code>int64 class_id = 11;</code>
+     * @param value The classId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClassId(long value) {
+      
+      classId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 class_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClassId() {
+      
+      classId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdAt = "";
+    /**
+     * <code>string created_at = 12;</code>
+     * @return The createdAt.
+     */
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 12;</code>
+     * @return The bytes for createdAt.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 12;</code>
+     * @param value The createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedAt() {
+      
+      createdAt = getDefaultInstance().getCreatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 12;</code>
+     * @param value The bytes for createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdAt = value;
       onChanged();
       return this;
     }

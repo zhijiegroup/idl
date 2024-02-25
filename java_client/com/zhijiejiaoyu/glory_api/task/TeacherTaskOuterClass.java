@@ -265,71 +265,75 @@ public final class TeacherTaskOuterClass {
       "\017teacher_task_id\030\002 \001(\003\"B\n\031DeleteTeacherT" +
       "askResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\":\n\016ClassTaskCount\022\014\n\004name\030\001 \001" +
-      "(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004data\030\003 \003(\002\"\264\001\n\024Class" +
+      "(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004data\030\003 \003(\002\"\353\001\n\024Class" +
       "TaskSubmitCount\022\r\n\005class\030\001 \001(\t\022\014\n\004task\030\002" +
       " \001(\t\022\023\n\013class_total\030\003 \001(\005\022\021\n\tno_submit\030\004" +
       " \001(\005\022\021\n\tsubmitted\030\005 \001(\005\022\016\n\006expiry\030\006 \001(\005\022" +
       "\026\n\016submit_percent\030\007 \001(\t\022\034\n\024submit_percen" +
-      "t_value\030\010 \001(\002\"\254\001\n\022ClassTaskPassCount\022\r\n\005" +
-      "class\030\001 \001(\t\022\014\n\004task\030\002 \001(\t\022\023\n\013class_total" +
-      "\030\003 \001(\005\022\021\n\tsubmitted\030\004 \001(\005\022\016\n\006passed\030\005 \001(" +
-      "\005\022\017\n\007no_pass\030\006 \001(\005\022\024\n\014pass_percent\030\007 \001(\t" +
-      "\022\032\n\022pass_percent_value\030\010 \001(\002\"\261\001\n\022Student" +
-      "SubmitCount\022\014\n\004name\030\001 \001(\t\022\r\n\005class\030\002 \001(\t" +
-      "\022\016\n\006submit\030\003 \001(\t\022\024\n\014submit_value\030\004 \001(\002\022\022" +
-      "\n\ntask_total\030\005 \001(\003\022\026\n\016task_no_submit\030\006 \001" +
-      "(\003\022\026\n\016task_submitted\030\007 \001(\003\022\024\n\014task_expir" +
-      "ed\030\010 \001(\003\"\302\001\n\020StudentPassCount\022\014\n\004name\030\001 " +
-      "\001(\t\022\r\n\005class\030\002 \001(\t\022\014\n\004pass\030\003 \001(\t\022\022\n\npass" +
-      "_value\030\004 \001(\002\022\022\n\ntask_total\030\005 \001(\003\022\026\n\016task" +
-      "_no_submit\030\006 \001(\003\022\026\n\016task_submitted\030\007 \001(\003" +
-      "\022\023\n\013task_passed\030\010 \001(\003\022\026\n\016task_no_passed\030" +
-      "\t \001(\003\"\274\001\n\027CountTeacherTaskRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013sy" +
-      "stem_name\030\002 \003(\t\022\020\n\010class_id\030\003 \003(\003\022\022\n\nbeg" +
-      "in_date\030\004 \001(\t\022\020\n\010end_date\030\005 \001(\t\022+\n\npagin" +
-      "ation\030d \001(\0132\027.base.PaginationRequest\"p\n\030" +
-      "CountClassSubmitResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022-\n\nclass_data\030\002 " +
-      "\003(\0132\031.glory_api.ClassTaskCount\"x\n\031CountP" +
-      "ositiveListResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\0224\n\rpositive_list\030\003 \003(" +
-      "\0132\035.glory_api.StudentSubmitCount\"z\n\032Coun" +
-      "tPotentialListResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\0225\n\016potential_list\030" +
-      "\004 \003(\0132\035.glory_api.StudentSubmitCount\"\233\001\n" +
-      "\027CountSubmitListResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(\0132\035." +
-      "glory_api.StudentSubmitCount\022,\n\npaginati" +
-      "on\030d \001(\0132\030.base.PaginationResponse\"\227\001\n\025C" +
-      "ountPassListResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022)\n\004list\030\002 \003(\0132\033.glor" +
-      "y_api.StudentPassCount\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponse\"n\n\026CountCla" +
-      "ssPassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022-\n\nclass_data\030\002 \003(\0132\031.glor" +
-      "y_api.ClassTaskCount\"w\n\035CountSuperStuden" +
-      "tListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022/\n\nsuper_list\030\003 \003(\0132\033.glory" +
-      "_api.StudentPassCount\"{\n\037CountLaggingStu" +
-      "dentListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\0221\n\014lagging_list\030\003 \003(\0132\033." +
-      "glory_api.StudentPassCount\"\242\001\n\034CountClas" +
-      "sSubmitListResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022-\n\004list\030\002 \003(\0132\037.glory" +
-      "_api.ClassTaskSubmitCount\022,\n\npagination\030" +
-      "d \001(\0132\030.base.PaginationResponse\"\236\001\n\032Coun" +
-      "tClassPassListResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(\0132\035.gl" +
-      "ory_api.ClassTaskPassCount\022,\n\npagination" +
-      "\030d \001(\0132\030.base.PaginationResponse\"B\n\027Teac" +
-      "herTaskStatsRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\"\242\001\n\030TeacherTaskStat" +
-      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\030\n\020total_task_count\030\002 \001(\003\022\031\n\021no" +
-      "t_started_count\030\003 \001(\003\022\025\n\rongoing_count\030\004" +
-      " \001(\003\022\023\n\013ended_count\030\005 \001(\003B#\n\037com.zhijiej" +
-      "iaoyu.glory_api.taskP\001b\006proto3"
+      "t_value\030\010 \001(\002\022\017\n\007task_id\030\n \001(\003\022\020\n\010class_" +
+      "id\030\013 \001(\003\022\022\n\ncreated_at\030\014 \001(\t\"\343\001\n\022ClassTa" +
+      "skPassCount\022\r\n\005class\030\001 \001(\t\022\014\n\004task\030\002 \001(\t" +
+      "\022\023\n\013class_total\030\003 \001(\005\022\021\n\tsubmitted\030\004 \001(\005" +
+      "\022\016\n\006passed\030\005 \001(\005\022\017\n\007no_pass\030\006 \001(\005\022\024\n\014pas" +
+      "s_percent\030\007 \001(\t\022\032\n\022pass_percent_value\030\010 " +
+      "\001(\002\022\017\n\007task_id\030\n \001(\003\022\020\n\010class_id\030\013 \001(\003\022\022" +
+      "\n\ncreated_at\030\014 \001(\t\"\261\001\n\022StudentSubmitCoun" +
+      "t\022\014\n\004name\030\001 \001(\t\022\r\n\005class\030\002 \001(\t\022\016\n\006submit" +
+      "\030\003 \001(\t\022\024\n\014submit_value\030\004 \001(\002\022\022\n\ntask_tot" +
+      "al\030\005 \001(\003\022\026\n\016task_no_submit\030\006 \001(\003\022\026\n\016task" +
+      "_submitted\030\007 \001(\003\022\024\n\014task_expired\030\010 \001(\003\"\302" +
+      "\001\n\020StudentPassCount\022\014\n\004name\030\001 \001(\t\022\r\n\005cla" +
+      "ss\030\002 \001(\t\022\014\n\004pass\030\003 \001(\t\022\022\n\npass_value\030\004 \001" +
+      "(\002\022\022\n\ntask_total\030\005 \001(\003\022\026\n\016task_no_submit" +
+      "\030\006 \001(\003\022\026\n\016task_submitted\030\007 \001(\003\022\023\n\013task_p" +
+      "assed\030\010 \001(\003\022\026\n\016task_no_passed\030\t \001(\003\"\274\001\n\027" +
+      "CountTeacherTaskRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\023\n\013system_name\030" +
+      "\002 \003(\t\022\020\n\010class_id\030\003 \003(\003\022\022\n\nbegin_date\030\004 " +
+      "\001(\t\022\020\n\010end_date\030\005 \001(\t\022+\n\npagination\030d \001(" +
+      "\0132\027.base.PaginationRequest\"\200\001\n\030CountClas" +
+      "sSubmitResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\016\n\006legend\030\002 \003(\t\022-\n\nclass_" +
+      "data\030\003 \003(\0132\031.glory_api.ClassTaskCount\"x\n" +
+      "\031CountPositiveListResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\0224\n\rpositive_li" +
+      "st\030\003 \003(\0132\035.glory_api.StudentSubmitCount\"" +
+      "z\n\032CountPotentialListResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\0225\n\016potentia" +
+      "l_list\030\004 \003(\0132\035.glory_api.StudentSubmitCo" +
+      "unt\"\233\001\n\027CountSubmitListResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\004list\030\002" +
+      " \003(\0132\035.glory_api.StudentSubmitCount\022,\n\np" +
+      "agination\030d \001(\0132\030.base.PaginationRespons" +
+      "e\"\227\001\n\025CountPassListResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022)\n\004list\030\002 \003(\013" +
+      "2\033.glory_api.StudentPassCount\022,\n\npaginat" +
+      "ion\030d \001(\0132\030.base.PaginationResponse\"~\n\026C" +
+      "ountClassPassResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\016\n\006legend\030\002 \003(\t\022-\n\n" +
+      "class_data\030\003 \003(\0132\031.glory_api.ClassTaskCo" +
+      "unt\"w\n\035CountSuperStudentListResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022/\n\ns" +
+      "uper_list\030\003 \003(\0132\033.glory_api.StudentPassC" +
+      "ount\"{\n\037CountLaggingStudentListResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0221" +
+      "\n\014lagging_list\030\003 \003(\0132\033.glory_api.Student" +
+      "PassCount\"\242\001\n\034CountClassSubmitListRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022-\n\004list\030\002 \003(\0132\037.glory_api.ClassTaskSub" +
+      "mitCount\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"\236\001\n\032CountClassPassListRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022+\n\004list\030\002 \003(\0132\035.glory_api.ClassTask" +
+      "PassCount\022,\n\npagination\030d \001(\0132\030.base.Pag" +
+      "inationResponse\"B\n\027TeacherTaskStatsReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\"\242\001\n\030TeacherTaskStatsResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\030\n\020total" +
+      "_task_count\030\002 \001(\003\022\031\n\021not_started_count\030\003" +
+      " \001(\003\022\025\n\rongoing_count\030\004 \001(\003\022\023\n\013ended_cou" +
+      "nt\030\005 \001(\003B#\n\037com.zhijiejiaoyu.glory_api.t" +
+      "askP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -446,13 +450,13 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_ClassTaskSubmitCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ClassTaskSubmitCount_descriptor,
-        new java.lang.String[] { "Class_", "Task", "ClassTotal", "NoSubmit", "Submitted", "Expiry", "SubmitPercent", "SubmitPercentValue", });
+        new java.lang.String[] { "Class_", "Task", "ClassTotal", "NoSubmit", "Submitted", "Expiry", "SubmitPercent", "SubmitPercentValue", "TaskId", "ClassId", "CreatedAt", });
     internal_static_glory_api_ClassTaskPassCount_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_ClassTaskPassCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ClassTaskPassCount_descriptor,
-        new java.lang.String[] { "Class_", "Task", "ClassTotal", "Submitted", "Passed", "NoPass", "PassPercent", "PassPercentValue", });
+        new java.lang.String[] { "Class_", "Task", "ClassTotal", "Submitted", "Passed", "NoPass", "PassPercent", "PassPercentValue", "TaskId", "ClassId", "CreatedAt", });
     internal_static_glory_api_StudentSubmitCount_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_StudentSubmitCount_fieldAccessorTable = new
@@ -476,7 +480,7 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountClassSubmitResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ClassData", });
+        new java.lang.String[] { "BaseResp", "Legend", "ClassData", });
     internal_static_glory_api_CountPositiveListResponse_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_CountPositiveListResponse_fieldAccessorTable = new
@@ -506,7 +510,7 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_CountClassPassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountClassPassResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ClassData", });
+        new java.lang.String[] { "BaseResp", "Legend", "ClassData", });
     internal_static_glory_api_CountSuperStudentListResponse_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_CountSuperStudentListResponse_fieldAccessorTable = new

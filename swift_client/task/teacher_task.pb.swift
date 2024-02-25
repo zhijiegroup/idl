@@ -625,6 +625,12 @@ struct GloryApi_ClassTaskSubmitCount {
 
   var submitPercentValue: Float = 0
 
+  var taskID: Int64 = 0
+
+  var classID: Int64 = 0
+
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -650,6 +656,12 @@ struct GloryApi_ClassTaskPassCount {
   var passPercent: String = String()
 
   var passPercentValue: Float = 0
+
+  var taskID: Int64 = 0
+
+  var classID: Int64 = 0
+
+  var createdAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -762,6 +774,8 @@ struct GloryApi_CountClassSubmitResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var legend: [String] = []
 
   /// 班级任务提交统计
   var classData: [GloryApi_ClassTaskCount] = []
@@ -902,6 +916,8 @@ struct GloryApi_CountClassPassResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var legend: [String] = []
 
   /// 班级任务通过统计
   var classData: [GloryApi_ClassTaskCount] = []
@@ -2131,6 +2147,9 @@ extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._M
     6: .same(proto: "expiry"),
     7: .standard(proto: "submit_percent"),
     8: .standard(proto: "submit_percent_value"),
+    10: .standard(proto: "task_id"),
+    11: .standard(proto: "class_id"),
+    12: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2147,6 +2166,9 @@ extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._M
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.expiry) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.submitPercent) }()
       case 8: try { try decoder.decodeSingularFloatField(value: &self.submitPercentValue) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -2177,6 +2199,15 @@ extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._M
     if self.submitPercentValue != 0 {
       try visitor.visitSingularFloatField(value: self.submitPercentValue, fieldNumber: 8)
     }
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 10)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 11)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2189,6 +2220,9 @@ extension GloryApi_ClassTaskSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs.expiry != rhs.expiry {return false}
     if lhs.submitPercent != rhs.submitPercent {return false}
     if lhs.submitPercentValue != rhs.submitPercentValue {return false}
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2205,6 +2239,9 @@ extension GloryApi_ClassTaskPassCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     6: .standard(proto: "no_pass"),
     7: .standard(proto: "pass_percent"),
     8: .standard(proto: "pass_percent_value"),
+    10: .standard(proto: "task_id"),
+    11: .standard(proto: "class_id"),
+    12: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2221,6 +2258,9 @@ extension GloryApi_ClassTaskPassCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.noPass) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.passPercent) }()
       case 8: try { try decoder.decodeSingularFloatField(value: &self.passPercentValue) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -2251,6 +2291,15 @@ extension GloryApi_ClassTaskPassCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.passPercentValue != 0 {
       try visitor.visitSingularFloatField(value: self.passPercentValue, fieldNumber: 8)
     }
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 10)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 11)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2263,6 +2312,9 @@ extension GloryApi_ClassTaskPassCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.noPass != rhs.noPass {return false}
     if lhs.passPercent != rhs.passPercent {return false}
     if lhs.passPercentValue != rhs.passPercentValue {return false}
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2492,7 +2544,8 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
   static let protoMessageName: String = _protobuf_package + ".CountClassSubmitResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "class_data"),
+    2: .same(proto: "legend"),
+    3: .standard(proto: "class_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2502,7 +2555,8 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
+      case 2: try { try decoder.decodeRepeatedStringField(value: &self.legend) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
       default: break
       }
     }
@@ -2516,14 +2570,18 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.legend.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.legend, fieldNumber: 2)
+    }
     if !self.classData.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 2)
+      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CountClassSubmitResponse, rhs: GloryApi_CountClassSubmitResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.legend != rhs.legend {return false}
     if lhs.classData != rhs.classData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2714,7 +2772,8 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let protoMessageName: String = _protobuf_package + ".CountClassPassResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "class_data"),
+    2: .same(proto: "legend"),
+    3: .standard(proto: "class_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2724,7 +2783,8 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
+      case 2: try { try decoder.decodeRepeatedStringField(value: &self.legend) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
       default: break
       }
     }
@@ -2738,14 +2798,18 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.legend.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.legend, fieldNumber: 2)
+    }
     if !self.classData.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 2)
+      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CountClassPassResponse, rhs: GloryApi_CountClassPassResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.legend != rhs.legend {return false}
     if lhs.classData != rhs.classData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

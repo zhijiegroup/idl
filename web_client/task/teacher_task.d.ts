@@ -171,6 +171,9 @@ export interface ClassTaskSubmitCount {
   expiry?: number;
   submit_percent?: string;
   submit_percent_value?: number;
+  task_id?: string;
+  class_id?: string;
+  created_at?: string;
 }
 
 export interface ClassTaskPassCount {
@@ -182,6 +185,9 @@ export interface ClassTaskPassCount {
   no_pass?: number;
   pass_percent?: string;
   pass_percent_value?: number;
+  task_id?: string;
+  class_id?: string;
+  created_at?: string;
 }
 
 export interface StudentSubmitCount {
@@ -218,6 +224,7 @@ export interface CountTeacherTaskRequest {
 
 export interface CountClassSubmitResponse {
   base_resp?: base.BaseResponse;
+  legend?: Array<string>;
   /** 班级任务提交统计 */
   class_data?: Array<ClassTaskCount>;
 }
@@ -250,6 +257,7 @@ export interface CountPassListResponse {
 
 export interface CountClassPassResponse {
   base_resp?: base.BaseResponse;
+  legend?: Array<string>;
   /** 班级任务通过统计 */
   class_data?: Array<ClassTaskCount>;
 }
