@@ -190,6 +190,7 @@ message CountTeacherTaskRequest {
   repeated int64 class_id = 3;
   string begin_date = 4;
   string end_date = 5;
+  string name = 6;
   base.PaginationRequest pagination = 100;
 }
 
