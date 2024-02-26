@@ -168,6 +168,7 @@ message StudentSubmitCount {
   int64 task_no_submit = 6;
   int64 task_submitted = 7;
   int64 task_expired = 8;
+  string avatar = 10;
 }
 
 message StudentPassCount {
@@ -180,6 +181,7 @@ message StudentPassCount {
   int64 task_submitted = 7;
   int64 task_passed = 8;
   int64 task_no_passed = 9;
+  string avatar = 10;
 }
 
 message CountTeacherTaskRequest {
