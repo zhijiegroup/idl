@@ -78,4 +78,16 @@ public interface StudentPassCountOrBuilder extends
    * @return The taskNoPassed.
    */
   long getTaskNoPassed();
+
+  /**
+   * <code>string avatar = 10;</code>
+   * @return The avatar.
+   */
+  java.lang.String getAvatar();
+  /**
+   * <code>string avatar = 10;</code>
+   * @return The bytes for avatar.
+   */
+  com.google.protobuf.ByteString
+      getAvatarBytes();
 }

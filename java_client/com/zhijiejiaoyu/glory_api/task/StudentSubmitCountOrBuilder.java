@@ -72,4 +72,16 @@ public interface StudentSubmitCountOrBuilder extends
    * @return The taskExpired.
    */
   long getTaskExpired();
+
+  /**
+   * <code>string avatar = 10;</code>
+   * @return The avatar.
+   */
+  java.lang.String getAvatar();
+  /**
+   * <code>string avatar = 10;</code>
+   * @return The bytes for avatar.
+   */
+  com.google.protobuf.ByteString
+      getAvatarBytes();
 }

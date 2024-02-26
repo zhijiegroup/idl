@@ -2034,6 +2034,7 @@ class StudentSubmitCount extends $pb.GeneratedMessage {
     $fixnum.Int64? taskNoSubmit,
     $fixnum.Int64? taskSubmitted,
     $fixnum.Int64? taskExpired,
+    $core.String? avatar,
   }) {
     final $result = create();
     if (name != null) {
@@ -2060,6 +2061,9 @@ class StudentSubmitCount extends $pb.GeneratedMessage {
     if (taskExpired != null) {
       $result.taskExpired = taskExpired;
     }
+    if (avatar != null) {
+      $result.avatar = avatar;
+    }
     return $result;
   }
   StudentSubmitCount._() : super();
@@ -2075,6 +2079,7 @@ class StudentSubmitCount extends $pb.GeneratedMessage {
     ..aInt64(6, _omitFieldNames ? '' : 'taskNoSubmit')
     ..aInt64(7, _omitFieldNames ? '' : 'taskSubmitted')
     ..aInt64(8, _omitFieldNames ? '' : 'taskExpired')
+    ..aOS(10, _omitFieldNames ? '' : 'avatar')
     ..hasRequiredFields = false
   ;
 
@@ -2170,6 +2175,15 @@ class StudentSubmitCount extends $pb.GeneratedMessage {
   $core.bool hasTaskExpired() => $_has(7);
   @$pb.TagNumber(8)
   void clearTaskExpired() => clearField(8);
+
+  @$pb.TagNumber(10)
+  $core.String get avatar => $_getSZ(8);
+  @$pb.TagNumber(10)
+  set avatar($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAvatar() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearAvatar() => clearField(10);
 }
 
 class StudentPassCount extends $pb.GeneratedMessage {
@@ -2183,6 +2197,7 @@ class StudentPassCount extends $pb.GeneratedMessage {
     $fixnum.Int64? taskSubmitted,
     $fixnum.Int64? taskPassed,
     $fixnum.Int64? taskNoPassed,
+    $core.String? avatar,
   }) {
     final $result = create();
     if (name != null) {
@@ -2212,6 +2227,9 @@ class StudentPassCount extends $pb.GeneratedMessage {
     if (taskNoPassed != null) {
       $result.taskNoPassed = taskNoPassed;
     }
+    if (avatar != null) {
+      $result.avatar = avatar;
+    }
     return $result;
   }
   StudentPassCount._() : super();
@@ -2228,6 +2246,7 @@ class StudentPassCount extends $pb.GeneratedMessage {
     ..aInt64(7, _omitFieldNames ? '' : 'taskSubmitted')
     ..aInt64(8, _omitFieldNames ? '' : 'taskPassed')
     ..aInt64(9, _omitFieldNames ? '' : 'taskNoPassed')
+    ..aOS(10, _omitFieldNames ? '' : 'avatar')
     ..hasRequiredFields = false
   ;
 
@@ -2332,6 +2351,15 @@ class StudentPassCount extends $pb.GeneratedMessage {
   $core.bool hasTaskNoPassed() => $_has(8);
   @$pb.TagNumber(9)
   void clearTaskNoPassed() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get avatar => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set avatar($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAvatar() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAvatar() => clearField(10);
 }
 
 class CountTeacherTaskRequest extends $pb.GeneratedMessage {

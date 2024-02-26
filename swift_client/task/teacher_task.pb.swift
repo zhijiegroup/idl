@@ -689,6 +689,8 @@ struct GloryApi_StudentSubmitCount {
 
   var taskExpired: Int64 = 0
 
+  var avatar: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -716,6 +718,8 @@ struct GloryApi_StudentPassCount {
   var taskPassed: Int64 = 0
 
   var taskNoPassed: Int64 = 0
+
+  var avatar: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2331,6 +2335,7 @@ extension GloryApi_StudentSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     6: .standard(proto: "task_no_submit"),
     7: .standard(proto: "task_submitted"),
     8: .standard(proto: "task_expired"),
+    10: .same(proto: "avatar"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2347,6 +2352,7 @@ extension GloryApi_StudentSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.taskNoSubmit) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.taskSubmitted) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.taskExpired) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
       default: break
       }
     }
@@ -2377,6 +2383,9 @@ extension GloryApi_StudentSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if self.taskExpired != 0 {
       try visitor.visitSingularInt64Field(value: self.taskExpired, fieldNumber: 8)
     }
+    if !self.avatar.isEmpty {
+      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2389,6 +2398,7 @@ extension GloryApi_StudentSubmitCount: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.taskNoSubmit != rhs.taskNoSubmit {return false}
     if lhs.taskSubmitted != rhs.taskSubmitted {return false}
     if lhs.taskExpired != rhs.taskExpired {return false}
+    if lhs.avatar != rhs.avatar {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2406,6 +2416,7 @@ extension GloryApi_StudentPassCount: SwiftProtobuf.Message, SwiftProtobuf._Messa
     7: .standard(proto: "task_submitted"),
     8: .standard(proto: "task_passed"),
     9: .standard(proto: "task_no_passed"),
+    10: .same(proto: "avatar"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2423,6 +2434,7 @@ extension GloryApi_StudentPassCount: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.taskSubmitted) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.taskPassed) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.taskNoPassed) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.avatar) }()
       default: break
       }
     }
@@ -2456,6 +2468,9 @@ extension GloryApi_StudentPassCount: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.taskNoPassed != 0 {
       try visitor.visitSingularInt64Field(value: self.taskNoPassed, fieldNumber: 9)
     }
+    if !self.avatar.isEmpty {
+      try visitor.visitSingularStringField(value: self.avatar, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2469,6 +2484,7 @@ extension GloryApi_StudentPassCount: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.taskSubmitted != rhs.taskSubmitted {return false}
     if lhs.taskPassed != rhs.taskPassed {return false}
     if lhs.taskNoPassed != rhs.taskNoPassed {return false}
+    if lhs.avatar != rhs.avatar {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
