@@ -287,54 +287,55 @@ public final class TeacherTaskOuterClass {
       "\n\npass_value\030\004 \001(\002\022\022\n\ntask_total\030\005 \001(\003\022\026" +
       "\n\016task_no_submit\030\006 \001(\003\022\026\n\016task_submitted" +
       "\030\007 \001(\003\022\023\n\013task_passed\030\010 \001(\003\022\026\n\016task_no_p" +
-      "assed\030\t \001(\003\022\016\n\006avatar\030\n \001(\t\"\274\001\n\027CountTea" +
+      "assed\030\t \001(\003\022\016\n\006avatar\030\n \001(\t\"\312\001\n\027CountTea" +
       "cherTaskRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
       "base.BaseRequest\022\023\n\013system_name\030\002 \003(\t\022\020\n" +
       "\010class_id\030\003 \003(\003\022\022\n\nbegin_date\030\004 \001(\t\022\020\n\010e" +
-      "nd_date\030\005 \001(\t\022+\n\npagination\030d \001(\0132\027.base" +
-      ".PaginationRequest\"\200\001\n\030CountClassSubmitR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\022\016\n\006legend\030\002 \003(\t\022-\n\nclass_data\030\003 \003" +
-      "(\0132\031.glory_api.ClassTaskCount\"x\n\031CountPo" +
-      "sitiveListResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\0224\n\rpositive_list\030\003 \003(\013" +
-      "2\035.glory_api.StudentSubmitCount\"z\n\032Count" +
-      "PotentialListResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\0225\n\016potential_list\030\004" +
-      " \003(\0132\035.glory_api.StudentSubmitCount\"\233\001\n\027" +
-      "CountSubmitListResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(\0132\035.g" +
-      "lory_api.StudentSubmitCount\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"\227\001\n\025Co" +
-      "untPassListResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022)\n\004list\030\002 \003(\0132\033.glory" +
-      "_api.StudentPassCount\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponse\"~\n\026CountClas" +
-      "sPassResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022\016\n\006legend\030\002 \003(\t\022-\n\nclass_da" +
-      "ta\030\003 \003(\0132\031.glory_api.ClassTaskCount\"w\n\035C" +
-      "ountSuperStudentListResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022/\n\nsuper_lis" +
-      "t\030\003 \003(\0132\033.glory_api.StudentPassCount\"{\n\037" +
-      "CountLaggingStudentListResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\0221\n\014laggin" +
-      "g_list\030\003 \003(\0132\033.glory_api.StudentPassCoun" +
-      "t\"\242\001\n\034CountClassSubmitListResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022-\n\004lis" +
-      "t\030\002 \003(\0132\037.glory_api.ClassTaskSubmitCount" +
-      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
-      "sponse\"\236\001\n\032CountClassPassListResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\004" +
-      "list\030\002 \003(\0132\035.glory_api.ClassTaskPassCoun" +
-      "t\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
-      "esponse\"B\n\027TeacherTaskStatsRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\"\242\001\n\030" +
-      "TeacherTaskStatsResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\030\n\020total_task_co" +
-      "unt\030\002 \001(\003\022\031\n\021not_started_count\030\003 \001(\003\022\025\n\r" +
-      "ongoing_count\030\004 \001(\003\022\023\n\013ended_count\030\005 \001(\003" +
-      "B#\n\037com.zhijiejiaoyu.glory_api.taskP\001b\006p" +
-      "roto3"
+      "nd_date\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022+\n\npaginatio" +
+      "n\030d \001(\0132\027.base.PaginationRequest\"\224\001\n\030Cou" +
+      "ntClassSubmitResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\016\n\006legend\030\002 \003(\t\022\022\n\n" +
+      "categories\030\003 \003(\t\022-\n\nclass_data\030\004 \003(\0132\031.g" +
+      "lory_api.ClassTaskCount\"x\n\031CountPositive" +
+      "ListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\0224\n\rpositive_list\030\003 \003(\0132\035.glo" +
+      "ry_api.StudentSubmitCount\"z\n\032CountPotent" +
+      "ialListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\0225\n\016potential_list\030\004 \003(\0132\035" +
+      ".glory_api.StudentSubmitCount\"\233\001\n\027CountS" +
+      "ubmitListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022+\n\004list\030\002 \003(\0132\035.glory_a" +
+      "pi.StudentSubmitCount\022,\n\npagination\030d \001(" +
+      "\0132\030.base.PaginationResponse\"\227\001\n\025CountPas" +
+      "sListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022)\n\004list\030\002 \003(\0132\033.glory_api.S" +
+      "tudentPassCount\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"\222\001\n\026CountClassPass" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022\016\n\006legend\030\002 \003(\t\022\022\n\ncategories\030\003 " +
+      "\003(\t\022-\n\nclass_data\030\004 \003(\0132\031.glory_api.Clas" +
+      "sTaskCount\"w\n\035CountSuperStudentListRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022/\n\nsuper_list\030\003 \003(\0132\033.glory_api.Stude" +
+      "ntPassCount\"{\n\037CountLaggingStudentListRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\0221\n\014lagging_list\030\003 \003(\0132\033.glory_api." +
+      "StudentPassCount\"\242\001\n\034CountClassSubmitLis" +
+      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\022-\n\004list\030\002 \003(\0132\037.glory_api.Class" +
+      "TaskSubmitCount\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"\236\001\n\032CountClassPass" +
+      "ListResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\022+\n\004list\030\002 \003(\0132\035.glory_api.Cl" +
+      "assTaskPassCount\022,\n\npagination\030d \001(\0132\030.b" +
+      "ase.PaginationResponse\"B\n\027TeacherTaskSta" +
+      "tsRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\"\242\001\n\030TeacherTaskStatsResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\030" +
+      "\n\020total_task_count\030\002 \001(\003\022\031\n\021not_started_" +
+      "count\030\003 \001(\003\022\025\n\rongoing_count\030\004 \001(\003\022\023\n\013en" +
+      "ded_count\030\005 \001(\003B#\n\037com.zhijiejiaoyu.glor" +
+      "y_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -475,13 +476,13 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_CountTeacherTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountTeacherTaskRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "SystemName", "ClassId", "BeginDate", "EndDate", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "SystemName", "ClassId", "BeginDate", "EndDate", "Name", "Pagination", });
     internal_static_glory_api_CountClassSubmitResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_CountClassSubmitResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountClassSubmitResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Legend", "ClassData", });
+        new java.lang.String[] { "BaseResp", "Legend", "Categories", "ClassData", });
     internal_static_glory_api_CountPositiveListResponse_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_CountPositiveListResponse_fieldAccessorTable = new
@@ -511,7 +512,7 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_CountClassPassResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountClassPassResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Legend", "ClassData", });
+        new java.lang.String[] { "BaseResp", "Legend", "Categories", "ClassData", });
     internal_static_glory_api_CountSuperStudentListResponse_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_CountSuperStudentListResponse_fieldAccessorTable = new

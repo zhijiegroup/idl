@@ -451,6 +451,7 @@ const CountTeacherTaskRequest$json = {
     {'1': 'class_id', '3': 3, '4': 3, '5': 3, '10': 'classId'},
     {'1': 'begin_date', '3': 4, '4': 1, '5': 9, '10': 'beginDate'},
     {'1': 'end_date', '3': 5, '4': 1, '5': 9, '10': 'endDate'},
+    {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -460,8 +461,8 @@ final $typed_data.Uint8List countTeacherTaskRequestDescriptor = $convert.base64D
     'ChdDb3VudFRlYWNoZXJUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIfCgtzeXN0ZW1fbmFtZRgCIAMoCVIKc3lzdGVtTmFt'
     'ZRIZCghjbGFzc19pZBgDIAMoA1IHY2xhc3NJZBIdCgpiZWdpbl9kYXRlGAQgASgJUgliZWdpbk'
-    'RhdGUSGQoIZW5kX2RhdGUYBSABKAlSB2VuZERhdGUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJh'
-    'c2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'RhdGUSGQoIZW5kX2RhdGUYBSABKAlSB2VuZERhdGUSEgoEbmFtZRgGIAEoCVIEbmFtZRI3Cgpw'
+    'YWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use countClassSubmitResponseDescriptor instead')
 const CountClassSubmitResponse$json = {
@@ -469,15 +470,17 @@ const CountClassSubmitResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'legend', '3': 2, '4': 3, '5': 9, '10': 'legend'},
-    {'1': 'class_data', '3': 3, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
+    {'1': 'categories', '3': 3, '4': 3, '5': 9, '10': 'categories'},
+    {'1': 'class_data', '3': 4, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
   ],
 };
 
 /// Descriptor for `CountClassSubmitResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countClassSubmitResponseDescriptor = $convert.base64Decode(
     'ChhDb3VudENsYXNzU3VibWl0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
-    'NlUmVzcG9uc2VSCGJhc2VSZXNwEhYKBmxlZ2VuZBgCIAMoCVIGbGVnZW5kEjgKCmNsYXNzX2Rh'
-    'dGEYAyADKAsyGS5nbG9yeV9hcGkuQ2xhc3NUYXNrQ291bnRSCWNsYXNzRGF0YQ==');
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEhYKBmxlZ2VuZBgCIAMoCVIGbGVnZW5kEh4KCmNhdGVnb3Jp'
+    'ZXMYAyADKAlSCmNhdGVnb3JpZXMSOAoKY2xhc3NfZGF0YRgEIAMoCzIZLmdsb3J5X2FwaS5DbG'
+    'Fzc1Rhc2tDb3VudFIJY2xhc3NEYXRh');
 
 @$core.Deprecated('Use countPositiveListResponseDescriptor instead')
 const CountPositiveListResponse$json = {
@@ -549,15 +552,17 @@ const CountClassPassResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'legend', '3': 2, '4': 3, '5': 9, '10': 'legend'},
-    {'1': 'class_data', '3': 3, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
+    {'1': 'categories', '3': 3, '4': 3, '5': 9, '10': 'categories'},
+    {'1': 'class_data', '3': 4, '4': 3, '5': 11, '6': '.glory_api.ClassTaskCount', '10': 'classData'},
   ],
 };
 
 /// Descriptor for `CountClassPassResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countClassPassResponseDescriptor = $convert.base64Decode(
     'ChZDb3VudENsYXNzUGFzc1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
-    'Jlc3BvbnNlUghiYXNlUmVzcBIWCgZsZWdlbmQYAiADKAlSBmxlZ2VuZBI4CgpjbGFzc19kYXRh'
-    'GAMgAygLMhkuZ2xvcnlfYXBpLkNsYXNzVGFza0NvdW50UgljbGFzc0RhdGE=');
+    'Jlc3BvbnNlUghiYXNlUmVzcBIWCgZsZWdlbmQYAiADKAlSBmxlZ2VuZBIeCgpjYXRlZ29yaWVz'
+    'GAMgAygJUgpjYXRlZ29yaWVzEjgKCmNsYXNzX2RhdGEYBCADKAsyGS5nbG9yeV9hcGkuQ2xhc3'
+    'NUYXNrQ291bnRSCWNsYXNzRGF0YQ==');
 
 @$core.Deprecated('Use countSuperStudentListResponseDescriptor instead')
 const CountSuperStudentListResponse$json = {

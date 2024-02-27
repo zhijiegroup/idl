@@ -748,6 +748,8 @@ struct GloryApi_CountTeacherTaskRequest {
 
   var endDate: String = String()
 
+  var name: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -780,6 +782,8 @@ struct GloryApi_CountClassSubmitResponse {
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var legend: [String] = []
+
+  var categories: [String] = []
 
   /// 班级任务提交统计
   var classData: [GloryApi_ClassTaskCount] = []
@@ -922,6 +926,8 @@ struct GloryApi_CountClassPassResponse {
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var legend: [String] = []
+
+  var categories: [String] = []
 
   /// 班级任务通过统计
   var classData: [GloryApi_ClassTaskCount] = []
@@ -2498,6 +2504,7 @@ extension GloryApi_CountTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
     3: .standard(proto: "class_id"),
     4: .standard(proto: "begin_date"),
     5: .standard(proto: "end_date"),
+    6: .same(proto: "name"),
     100: .same(proto: "pagination"),
   ]
 
@@ -2512,6 +2519,7 @@ extension GloryApi_CountTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.classID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.beginDate) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.endDate) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -2538,6 +2546,9 @@ extension GloryApi_CountTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.endDate.isEmpty {
       try visitor.visitSingularStringField(value: self.endDate, fieldNumber: 5)
     }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 6)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -2550,6 +2561,7 @@ extension GloryApi_CountTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.classID != rhs.classID {return false}
     if lhs.beginDate != rhs.beginDate {return false}
     if lhs.endDate != rhs.endDate {return false}
+    if lhs.name != rhs.name {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2561,7 +2573,8 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "legend"),
-    3: .standard(proto: "class_data"),
+    3: .same(proto: "categories"),
+    4: .standard(proto: "class_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2572,7 +2585,8 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedStringField(value: &self.legend) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
+      case 3: try { try decoder.decodeRepeatedStringField(value: &self.categories) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
       default: break
       }
     }
@@ -2589,8 +2603,11 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
     if !self.legend.isEmpty {
       try visitor.visitRepeatedStringField(value: self.legend, fieldNumber: 2)
     }
+    if !self.categories.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.categories, fieldNumber: 3)
+    }
     if !self.classData.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2598,6 +2615,7 @@ extension GloryApi_CountClassSubmitResponse: SwiftProtobuf.Message, SwiftProtobu
   static func ==(lhs: GloryApi_CountClassSubmitResponse, rhs: GloryApi_CountClassSubmitResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.legend != rhs.legend {return false}
+    if lhs.categories != rhs.categories {return false}
     if lhs.classData != rhs.classData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -2789,7 +2807,8 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "legend"),
-    3: .standard(proto: "class_data"),
+    3: .same(proto: "categories"),
+    4: .standard(proto: "class_data"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2800,7 +2819,8 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedStringField(value: &self.legend) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
+      case 3: try { try decoder.decodeRepeatedStringField(value: &self.categories) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.classData) }()
       default: break
       }
     }
@@ -2817,8 +2837,11 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.legend.isEmpty {
       try visitor.visitRepeatedStringField(value: self.legend, fieldNumber: 2)
     }
+    if !self.categories.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.categories, fieldNumber: 3)
+    }
     if !self.classData.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.classData, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2826,6 +2849,7 @@ extension GloryApi_CountClassPassResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_CountClassPassResponse, rhs: GloryApi_CountClassPassResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.legend != rhs.legend {return false}
+    if lhs.categories != rhs.categories {return false}
     if lhs.classData != rhs.classData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -48,11 +48,36 @@ public interface CountClassSubmitResponseOrBuilder extends
       getLegendBytes(int index);
 
   /**
+   * <code>repeated string categories = 3;</code>
+   * @return A list containing the categories.
+   */
+  java.util.List<java.lang.String>
+      getCategoriesList();
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @return The count of categories.
+   */
+  int getCategoriesCount();
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @param index The index of the element to return.
+   * @return The categories at the given index.
+   */
+  java.lang.String getCategories(int index);
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the categories at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCategoriesBytes(int index);
+
+  /**
    * <pre>
    * 班级任务提交统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> 
       getClassDataList();
@@ -61,7 +86,7 @@ public interface CountClassSubmitResponseOrBuilder extends
    * 班级任务提交统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index);
   /**
@@ -69,7 +94,7 @@ public interface CountClassSubmitResponseOrBuilder extends
    * 班级任务提交统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   int getClassDataCount();
   /**
@@ -77,7 +102,7 @@ public interface CountClassSubmitResponseOrBuilder extends
    * 班级任务提交统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
       getClassDataOrBuilderList();
@@ -86,7 +111,7 @@ public interface CountClassSubmitResponseOrBuilder extends
    * 班级任务提交统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
       int index);

@@ -221,12 +221,14 @@ export interface CountTeacherTaskRequest {
   class_id?: Array<string>;
   begin_date?: string;
   end_date?: string;
+  name?: string;
   pagination?: base.PaginationRequest;
 }
 
 export interface CountClassSubmitResponse {
   base_resp?: base.BaseResponse;
   legend?: Array<string>;
+  categories?: Array<string>;
   /** 班级任务提交统计 */
   class_data?: Array<ClassTaskCount>;
 }
@@ -260,6 +262,7 @@ export interface CountPassListResponse {
 export interface CountClassPassResponse {
   base_resp?: base.BaseResponse;
   legend?: Array<string>;
+  categories?: Array<string>;
   /** 班级任务通过统计 */
   class_data?: Array<ClassTaskCount>;
 }

@@ -89,6 +89,18 @@ public interface CountTeacherTaskRequestOrBuilder extends
       getEndDateBytes();
 
   /**
+   * <code>string name = 6;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 6;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

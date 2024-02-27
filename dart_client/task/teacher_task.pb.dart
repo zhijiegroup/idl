@@ -2369,6 +2369,7 @@ class CountTeacherTaskRequest extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? classId,
     $core.String? beginDate,
     $core.String? endDate,
+    $core.String? name,
     $2.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -2387,6 +2388,9 @@ class CountTeacherTaskRequest extends $pb.GeneratedMessage {
     if (endDate != null) {
       $result.endDate = endDate;
     }
+    if (name != null) {
+      $result.name = name;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -2402,6 +2406,7 @@ class CountTeacherTaskRequest extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'classId', $pb.PbFieldType.K6)
     ..aOS(4, _omitFieldNames ? '' : 'beginDate')
     ..aOS(5, _omitFieldNames ? '' : 'endDate')
+    ..aOS(6, _omitFieldNames ? '' : 'name')
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -2462,22 +2467,32 @@ class CountTeacherTaskRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearEndDate() => clearField(5);
 
+  @$pb.TagNumber(6)
+  $core.String get name => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set name($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearName() => clearField(6);
+
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(5);
+  $2.PaginationRequest get pagination => $_getN(6);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(5);
+  $core.bool hasPagination() => $_has(6);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(5);
+  $2.PaginationRequest ensurePagination() => $_ensure(6);
 }
 
 class CountClassSubmitResponse extends $pb.GeneratedMessage {
   factory CountClassSubmitResponse({
     $2.BaseResponse? baseResp,
     $core.Iterable<$core.String>? legend,
+    $core.Iterable<$core.String>? categories,
     $core.Iterable<ClassTaskCount>? classData,
   }) {
     final $result = create();
@@ -2486,6 +2501,9 @@ class CountClassSubmitResponse extends $pb.GeneratedMessage {
     }
     if (legend != null) {
       $result.legend.addAll(legend);
+    }
+    if (categories != null) {
+      $result.categories.addAll(categories);
     }
     if (classData != null) {
       $result.classData.addAll(classData);
@@ -2499,7 +2517,8 @@ class CountClassSubmitResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountClassSubmitResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..pPS(2, _omitFieldNames ? '' : 'legend')
-    ..pc<ClassTaskCount>(3, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
+    ..pPS(3, _omitFieldNames ? '' : 'categories')
+    ..pc<ClassTaskCount>(4, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
     ..hasRequiredFields = false
   ;
 
@@ -2539,7 +2558,10 @@ class CountClassSubmitResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get legend => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<ClassTaskCount> get classData => $_getList(2);
+  $core.List<$core.String> get categories => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<ClassTaskCount> get classData => $_getList(3);
 }
 
 class CountPositiveListResponse extends $pb.GeneratedMessage {
@@ -2818,6 +2840,7 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
   factory CountClassPassResponse({
     $2.BaseResponse? baseResp,
     $core.Iterable<$core.String>? legend,
+    $core.Iterable<$core.String>? categories,
     $core.Iterable<ClassTaskCount>? classData,
   }) {
     final $result = create();
@@ -2826,6 +2849,9 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
     }
     if (legend != null) {
       $result.legend.addAll(legend);
+    }
+    if (categories != null) {
+      $result.categories.addAll(categories);
     }
     if (classData != null) {
       $result.classData.addAll(classData);
@@ -2839,7 +2865,8 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountClassPassResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..pPS(2, _omitFieldNames ? '' : 'legend')
-    ..pc<ClassTaskCount>(3, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
+    ..pPS(3, _omitFieldNames ? '' : 'categories')
+    ..pc<ClassTaskCount>(4, _omitFieldNames ? '' : 'classData', $pb.PbFieldType.PM, subBuilder: ClassTaskCount.create)
     ..hasRequiredFields = false
   ;
 
@@ -2879,7 +2906,10 @@ class CountClassPassResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get legend => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<ClassTaskCount> get classData => $_getList(2);
+  $core.List<$core.String> get categories => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<ClassTaskCount> get classData => $_getList(3);
 }
 
 class CountSuperStudentListResponse extends $pb.GeneratedMessage {

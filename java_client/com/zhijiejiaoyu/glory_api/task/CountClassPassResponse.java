@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CountClassPassResponse() {
     legend = com.google.protobuf.LazyStringArrayList.EMPTY;
+    categories = com.google.protobuf.LazyStringArrayList.EMPTY;
     classData = java.util.Collections.emptyList();
   }
 
@@ -74,9 +75,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
-              classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>();
+              categories = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
+            }
+            categories .add(s);
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+              classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>();
+              mutable_bitField0_ |= 0x00000004;
             }
             classData .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.ClassTaskCount.parser(), extensionRegistry));
@@ -101,6 +111,9 @@ private static final long serialVersionUID = 0L;
         legend = legend .getUnmodifiableView();
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
+        categories = categories .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000004) != 0)) {
         classData = java.util.Collections.unmodifiableList(classData );
       }
       this.unknownFields = unknownFields.build();
@@ -181,14 +194,49 @@ private static final long serialVersionUID = 0L;
     return legend .getByteString(index);
   }
 
-  public static final int CLASS_DATA_FIELD_NUMBER = 3;
+  public static final int CATEGORIES_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList categories ;
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @return A list containing the categories.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getCategoriesList() {
+    return categories ;
+  }
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @return The count of categories.
+   */
+  public int getCategoriesCount() {
+    return categories .size();
+  }
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @param index The index of the element to return.
+   * @return The categories at the given index.
+   */
+  public java.lang.String getCategories(int index) {
+    return categories .get(index);
+  }
+  /**
+   * <code>repeated string categories = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the categories at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getCategoriesBytes(int index) {
+    return categories .getByteString(index);
+  }
+
+  public static final int CLASS_DATA_FIELD_NUMBER = 4;
   private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData ;
   /**
    * <pre>
    * 班级任务通过统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
@@ -199,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * 班级任务通过统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
@@ -211,7 +259,7 @@ private static final long serialVersionUID = 0L;
    * 班级任务通过统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   @java.lang.Override
   public int getClassDataCount() {
@@ -222,7 +270,7 @@ private static final long serialVersionUID = 0L;
    * 班级任务通过统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
@@ -233,7 +281,7 @@ private static final long serialVersionUID = 0L;
    * 班级任务通过统计
    * </pre>
    *
-   * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+   * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
@@ -261,8 +309,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < legend .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, legend .getRaw(i));
     }
+    for (int i = 0; i < categories .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, categories .getRaw(i));
+    }
     for (int i = 0; i < classData .size(); i++) {
-      output.writeMessage(3, classData .get(i));
+      output.writeMessage(4, classData .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -285,9 +336,17 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLegendList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < categories .size(); i++) {
+        dataSize += computeStringSizeNoTag(categories .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCategoriesList().size();
+    }
     for (int i = 0; i < classData .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, classData .get(i));
+        .computeMessageSize(4, classData .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +370,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLegendList()
         .equals(other.getLegendList())) return false;
+    if (!getCategoriesList()
+        .equals(other.getCategoriesList())) return false;
     if (!getClassDataList()
         .equals(other.getClassDataList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -331,6 +392,10 @@ private static final long serialVersionUID = 0L;
     if (getLegendCount() > 0) {
       hash = (37 * hash) + LEGEND_FIELD_NUMBER;
       hash = (53 * hash) + getLegendList().hashCode();
+    }
+    if (getCategoriesCount() > 0) {
+      hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getCategoriesList().hashCode();
     }
     if (getClassDataCount() > 0) {
       hash = (37 * hash) + CLASS_DATA_FIELD_NUMBER;
@@ -478,9 +543,11 @@ private static final long serialVersionUID = 0L;
       }
       legend = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      categories = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
       if (classDataBuilder == null) {
         classData = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000004);
       } else {
         classDataBuilder .clear();
       }
@@ -521,10 +588,15 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.legend = legend ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        categories = categories .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
+      result.categories = categories ;
       if (classDataBuilder == null) {
-        if (((bitField0 & 0x00000002) != 0)) {
+        if (((bitField0 & 0x00000004) != 0)) {
           classData = java.util.Collections.unmodifiableList(classData );
-          bitField0 = (bitField0 & ~0x00000002);
+          bitField0 = (bitField0 & ~0x00000004);
         }
         result.classData = classData ;
       } else {
@@ -591,11 +663,21 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.categories .isEmpty()) {
+        if (categories .isEmpty()) {
+          categories = other.categories ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureCategoriesIsMutable();
+          categories .addAll(other.categories );
+        }
+        onChanged();
+      }
       if (classDataBuilder == null) {
         if (!other.classData .isEmpty()) {
           if (classData .isEmpty()) {
             classData = other.classData ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000004);
           } else {
             ensureClassDataIsMutable();
             classData .addAll(other.classData );
@@ -608,7 +690,7 @@ private static final long serialVersionUID = 0L;
             classDataBuilder .dispose();
             classDataBuilder = null;
             classData = other.classData ;
-            bitField0 = (bitField0 & ~0x00000002);
+            bitField0 = (bitField0 & ~0x00000004);
             classDataBuilder = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getClassDataFieldBuilder() : null;
@@ -876,12 +958,122 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList categories = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureCategoriesIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        categories = new com.google.protobuf.LazyStringArrayList(categories );
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @return A list containing the categories.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCategoriesList() {
+      return categories .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @return The count of categories.
+     */
+    public int getCategoriesCount() {
+      return categories .size();
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param index The index of the element to return.
+     * @return The categories at the given index.
+     */
+    public java.lang.String getCategories(int index) {
+      return categories .get(index);
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categories at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCategoriesBytes(int index) {
+      return categories .getByteString(index);
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The categories to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategories(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoriesIsMutable();
+      categories .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param value The categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCategories(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCategoriesIsMutable();
+      categories .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param values The categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCategories(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCategoriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, categories );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCategories() {
+      categories = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 3;</code>
+     * @param value The bytes of the categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCategoriesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureCategoriesIsMutable();
+      categories .add(value);
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> classData =
       java.util.Collections.emptyList();
     private void ensureClassDataIsMutable() {
-      if (!((bitField0 & 0x00000002) != 0)) {
+      if (!((bitField0 & 0x00000004) != 0)) {
         classData = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.ClassTaskCount>(classData );
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -893,7 +1085,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount> getClassDataList() {
       if (classDataBuilder == null) {
@@ -907,7 +1099,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public int getClassDataCount() {
       if (classDataBuilder == null) {
@@ -921,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.ClassTaskCount getClassData(int index) {
       if (classDataBuilder == null) {
@@ -935,7 +1127,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder setClassData(
         int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
@@ -956,7 +1148,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder setClassData(
         int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
@@ -974,7 +1166,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder addClassData(com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
       if (classDataBuilder == null) {
@@ -994,7 +1186,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder addClassData(
         int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount value) {
@@ -1015,7 +1207,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder addClassData(
         com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
@@ -1033,7 +1225,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder addClassData(
         int index, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder builderForValue) {
@@ -1051,7 +1243,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder addAllClassData(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCount> values) {
@@ -1070,12 +1262,12 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder clearClassData() {
       if (classDataBuilder == null) {
         classData = java.util.Collections.emptyList();
-        bitField0 = (bitField0 & ~0x00000002);
+        bitField0 = (bitField0 & ~0x00000004);
         onChanged();
       } else {
         classDataBuilder .clear();
@@ -1087,7 +1279,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public Builder removeClassData(int index) {
       if (classDataBuilder == null) {
@@ -1104,7 +1296,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder getClassDataBuilder(
         int index) {
@@ -1115,7 +1307,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder getClassDataOrBuilder(
         int index) {
@@ -1129,7 +1321,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder> 
          getClassDataOrBuilderList() {
@@ -1144,7 +1336,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder() {
       return getClassDataFieldBuilder().addBuilder(
@@ -1155,7 +1347,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder addClassDataBuilder(
         int index) {
@@ -1167,7 +1359,7 @@ private static final long serialVersionUID = 0L;
      * 班级任务通过统计
      * </pre>
      *
-     * <code>repeated .glory_api.ClassTaskCount class_data = 3;</code>
+     * <code>repeated .glory_api.ClassTaskCount class_data = 4;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder> 
          getClassDataBuilderList() {
@@ -1180,7 +1372,7 @@ private static final long serialVersionUID = 0L;
         classDataBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.zhijiejiaoyu.glory_api.task.ClassTaskCount, com.zhijiejiaoyu.glory_api.task.ClassTaskCount.Builder, com.zhijiejiaoyu.glory_api.task.ClassTaskCountOrBuilder>(
                 classData ,
-                ((bitField0 & 0x00000002) != 0),
+                ((bitField0 & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         classData = null;
