@@ -127,71 +127,77 @@ public interface TeacherTaskTemplateOrBuilder extends
       int index);
 
   /**
-   * <code>string created_at = 10;</code>
+   * <code>int64 count_in_use = 10;</code>
+   * @return The countInUse.
+   */
+  long getCountInUse();
+
+  /**
+   * <code>string created_at = 11;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
 
   /**
-   * <code>string updated_at = 11;</code>
+   * <code>string updated_at = 12;</code>
    * @return The updatedAt.
    */
   java.lang.String getUpdatedAt();
   /**
-   * <code>string updated_at = 11;</code>
+   * <code>string updated_at = 12;</code>
    * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
       getUpdatedAtBytes();
 
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    * @return Whether the creator field is set.
    */
   boolean hasCreator();
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    * @return The creator.
    */
   com.zhijiejiaoyu.glory_api.user.User getCreator();
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder();
 
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    * @return Whether the updater field is set.
    */
   boolean hasUpdater();
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    * @return The updater.
    */
   com.zhijiejiaoyu.glory_api.user.User getUpdater();
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder();
 
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    * @return Whether the systemTask field is set.
    */
   boolean hasSystemTask();
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    * @return The systemTask.
    */
   com.zhijiejiaoyu.glory_api.task.SystemTask getSystemTask();
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    */
   com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder();
 }

@@ -114,19 +114,24 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskTemplateParameter.parser(), extensionRegistry));
             break;
           }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 80: {
 
-            createdAt = s;
+            countInUse = input.readInt64();
             break;
           }
           case 90: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            updatedAt = s;
+            createdAt = s;
             break;
           }
           case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            updatedAt = s;
+            break;
+          }
+          case 106: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (creator != null) {
               subBuilder = creator .toBuilder();
@@ -139,7 +144,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 106: {
+          case 114: {
             com.zhijiejiaoyu.glory_api.user.User.Builder subBuilder = null;
             if (updater != null) {
               subBuilder = updater .toBuilder();
@@ -152,7 +157,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 114: {
+          case 122: {
             com.zhijiejiaoyu.glory_api.task.SystemTask.Builder subBuilder = null;
             if (systemTask != null) {
               subBuilder = systemTask .toBuilder();
@@ -467,10 +472,21 @@ private static final long serialVersionUID = 0L;
     return taskParameters .get(index);
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 10;
+  public static final int COUNT_IN_USE_FIELD_NUMBER = 10;
+  private long countInUse ;
+  /**
+   * <code>int64 count_in_use = 10;</code>
+   * @return The countInUse.
+   */
+  @java.lang.Override
+  public long getCountInUse() {
+    return countInUse ;
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 11;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -487,7 +503,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 11;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -505,10 +521,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UPDATED_AT_FIELD_NUMBER = 11;
+  public static final int UPDATED_AT_FIELD_NUMBER = 12;
   private volatile java.lang.Object updatedAt ;
   /**
-   * <code>string updated_at = 11;</code>
+   * <code>string updated_at = 12;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
@@ -525,7 +541,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string updated_at = 11;</code>
+   * <code>string updated_at = 12;</code>
    * @return The bytes for updatedAt.
    */
   @java.lang.Override
@@ -543,10 +559,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATOR_FIELD_NUMBER = 12;
+  public static final int CREATOR_FIELD_NUMBER = 13;
   private com.zhijiejiaoyu.glory_api.user.User creator ;
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    * @return Whether the creator field is set.
    */
   @java.lang.Override
@@ -554,7 +570,7 @@ private static final long serialVersionUID = 0L;
     return creator != null;
   }
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    * @return The creator.
    */
   @java.lang.Override
@@ -562,17 +578,17 @@ private static final long serialVersionUID = 0L;
     return creator == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : creator ;
   }
   /**
-   * <code>.glory_api.User creator = 12;</code>
+   * <code>.glory_api.User creator = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
     return getCreator();
   }
 
-  public static final int UPDATER_FIELD_NUMBER = 13;
+  public static final int UPDATER_FIELD_NUMBER = 14;
   private com.zhijiejiaoyu.glory_api.user.User updater ;
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    * @return Whether the updater field is set.
    */
   @java.lang.Override
@@ -580,7 +596,7 @@ private static final long serialVersionUID = 0L;
     return updater != null;
   }
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    * @return The updater.
    */
   @java.lang.Override
@@ -588,17 +604,17 @@ private static final long serialVersionUID = 0L;
     return updater == null ? com.zhijiejiaoyu.glory_api.user.User.getDefaultInstance() : updater ;
   }
   /**
-   * <code>.glory_api.User updater = 13;</code>
+   * <code>.glory_api.User updater = 14;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder() {
     return getUpdater();
   }
 
-  public static final int SYSTEM_TASK_FIELD_NUMBER = 14;
+  public static final int SYSTEM_TASK_FIELD_NUMBER = 15;
   private com.zhijiejiaoyu.glory_api.task.SystemTask systemTask ;
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    * @return Whether the systemTask field is set.
    */
   @java.lang.Override
@@ -606,7 +622,7 @@ private static final long serialVersionUID = 0L;
     return systemTask != null;
   }
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    * @return The systemTask.
    */
   @java.lang.Override
@@ -614,7 +630,7 @@ private static final long serialVersionUID = 0L;
     return systemTask == null ? com.zhijiejiaoyu.glory_api.task.SystemTask.getDefaultInstance() : systemTask ;
   }
   /**
-   * <code>.glory_api.SystemTask system_task = 14;</code>
+   * <code>.glory_api.SystemTask system_task = 15;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder() {
@@ -662,20 +678,23 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < taskParameters .size(); i++) {
       output.writeMessage(9, taskParameters .get(i));
     }
+    if (countInUse != 0L) {
+      output.writeInt64(10, countInUse );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, updatedAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, updatedAt );
     }
     if (creator != null) {
-      output.writeMessage(12, getCreator());
+      output.writeMessage(13, getCreator());
     }
     if (updater != null) {
-      output.writeMessage(13, getUpdater());
+      output.writeMessage(14, getUpdater());
     }
     if (systemTask != null) {
-      output.writeMessage(14, getSystemTask());
+      output.writeMessage(15, getSystemTask());
     }
     unknownFields.writeTo(output);
   }
@@ -722,23 +741,27 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, taskParameters .get(i));
     }
+    if (countInUse != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, countInUse );
+    }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, createdAt );
     }
     if (!getUpdatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, updatedAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, updatedAt );
     }
     if (creator != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getCreator());
+        .computeMessageSize(13, getCreator());
     }
     if (updater != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getUpdater());
+        .computeMessageSize(14, getUpdater());
     }
     if (systemTask != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getSystemTask());
+        .computeMessageSize(15, getSystemTask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -773,6 +796,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTeacherTaskTemplateLink())) return false;
     if (!getTaskParametersList()
         .equals(other.getTaskParametersList())) return false;
+    if (getCountInUse()
+        != other.getCountInUse()) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getUpdatedAt()
@@ -827,6 +852,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TASK_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getTaskParametersList().hashCode();
     }
+    hash = (37 * hash) + COUNT_IN_USE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCountInUse());
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
@@ -999,6 +1027,8 @@ private static final long serialVersionUID = 0L;
       } else {
         taskParametersBuilder .clear();
       }
+      countInUse = 0L;
+
       createdAt = "";
 
       updatedAt = "";
@@ -1069,6 +1099,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.taskParameters = taskParametersBuilder .build();
       }
+      result.countInUse = countInUse ;
       result.createdAt = createdAt ;
       result.updatedAt = updatedAt ;
       if (creatorBuilder == null) {
@@ -1194,6 +1225,9 @@ private static final long serialVersionUID = 0L;
             taskParametersBuilder .addAllMessages(other.taskParameters );
           }
         }
+      }
+      if (other.getCountInUse() != 0L) {
+        setCountInUse(other.getCountInUse());
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
@@ -2001,9 +2035,40 @@ private static final long serialVersionUID = 0L;
       return taskParametersBuilder ;
     }
 
+    private long countInUse ;
+    /**
+     * <code>int64 count_in_use = 10;</code>
+     * @return The countInUse.
+     */
+    @java.lang.Override
+    public long getCountInUse() {
+      return countInUse ;
+    }
+    /**
+     * <code>int64 count_in_use = 10;</code>
+     * @param value The countInUse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountInUse(long value) {
+      
+      countInUse = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 count_in_use = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCountInUse() {
+      
+      countInUse = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -2019,7 +2084,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -2036,7 +2101,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -2051,7 +2116,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -2061,7 +2126,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 11;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
@@ -2079,7 +2144,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object updatedAt = "";
     /**
-     * <code>string updated_at = 11;</code>
+     * <code>string updated_at = 12;</code>
      * @return The updatedAt.
      */
     public java.lang.String getUpdatedAt() {
@@ -2095,7 +2160,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 11;</code>
+     * <code>string updated_at = 12;</code>
      * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
@@ -2112,7 +2177,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string updated_at = 11;</code>
+     * <code>string updated_at = 12;</code>
      * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
@@ -2127,7 +2192,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 11;</code>
+     * <code>string updated_at = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdatedAt() {
@@ -2137,7 +2202,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string updated_at = 11;</code>
+     * <code>string updated_at = 12;</code>
      * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
@@ -2157,14 +2222,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> creatorBuilder ;
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      * @return Whether the creator field is set.
      */
     public boolean hasCreator() {
       return creatorBuilder != null || creator != null;
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      * @return The creator.
      */
     public com.zhijiejiaoyu.glory_api.user.User getCreator() {
@@ -2175,7 +2240,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public Builder setCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -2191,7 +2256,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public Builder setCreator(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -2205,7 +2270,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public Builder mergeCreator(com.zhijiejiaoyu.glory_api.user.User value) {
       if (creatorBuilder == null) {
@@ -2223,7 +2288,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public Builder clearCreator() {
       if (creatorBuilder == null) {
@@ -2237,7 +2302,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getCreatorBuilder() {
       
@@ -2245,7 +2310,7 @@ private static final long serialVersionUID = 0L;
       return getCreatorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getCreatorOrBuilder() {
       if (creatorBuilder != null) {
@@ -2256,7 +2321,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User creator = 12;</code>
+     * <code>.glory_api.User creator = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -2276,14 +2341,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> updaterBuilder ;
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      * @return Whether the updater field is set.
      */
     public boolean hasUpdater() {
       return updaterBuilder != null || updater != null;
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      * @return The updater.
      */
     public com.zhijiejiaoyu.glory_api.user.User getUpdater() {
@@ -2294,7 +2359,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public Builder setUpdater(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updaterBuilder == null) {
@@ -2310,7 +2375,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public Builder setUpdater(
         com.zhijiejiaoyu.glory_api.user.User.Builder builderForValue) {
@@ -2324,7 +2389,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public Builder mergeUpdater(com.zhijiejiaoyu.glory_api.user.User value) {
       if (updaterBuilder == null) {
@@ -2342,7 +2407,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public Builder clearUpdater() {
       if (updaterBuilder == null) {
@@ -2356,7 +2421,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.User.Builder getUpdaterBuilder() {
       
@@ -2364,7 +2429,7 @@ private static final long serialVersionUID = 0L;
       return getUpdaterFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     public com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdaterOrBuilder() {
       if (updaterBuilder != null) {
@@ -2375,7 +2440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.User updater = 13;</code>
+     * <code>.glory_api.User updater = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.user.User, com.zhijiejiaoyu.glory_api.user.User.Builder, com.zhijiejiaoyu.glory_api.user.UserOrBuilder> 
@@ -2395,14 +2460,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.SystemTask, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder> systemTaskBuilder ;
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      * @return Whether the systemTask field is set.
      */
     public boolean hasSystemTask() {
       return systemTaskBuilder != null || systemTask != null;
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      * @return The systemTask.
      */
     public com.zhijiejiaoyu.glory_api.task.SystemTask getSystemTask() {
@@ -2413,7 +2478,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public Builder setSystemTask(com.zhijiejiaoyu.glory_api.task.SystemTask value) {
       if (systemTaskBuilder == null) {
@@ -2429,7 +2494,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public Builder setSystemTask(
         com.zhijiejiaoyu.glory_api.task.SystemTask.Builder builderForValue) {
@@ -2443,7 +2508,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public Builder mergeSystemTask(com.zhijiejiaoyu.glory_api.task.SystemTask value) {
       if (systemTaskBuilder == null) {
@@ -2461,7 +2526,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public Builder clearSystemTask() {
       if (systemTaskBuilder == null) {
@@ -2475,7 +2540,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.SystemTask.Builder getSystemTaskBuilder() {
       
@@ -2483,7 +2548,7 @@ private static final long serialVersionUID = 0L;
       return getSystemTaskFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     public com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder getSystemTaskOrBuilder() {
       if (systemTaskBuilder != null) {
@@ -2494,7 +2559,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.SystemTask system_task = 14;</code>
+     * <code>.glory_api.SystemTask system_task = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.task.SystemTask, com.zhijiejiaoyu.glory_api.task.SystemTask.Builder, com.zhijiejiaoyu.glory_api.task.SystemTaskOrBuilder> 

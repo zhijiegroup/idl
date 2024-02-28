@@ -157,6 +157,7 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? teacherTaskTemplateRequirements,
     $core.String? teacherTaskTemplateLink,
     $core.Iterable<TeacherTaskTemplateParameter>? taskParameters,
+    $fixnum.Int64? countInUse,
     $core.String? createdAt,
     $core.String? updatedAt,
     $0.User? creator,
@@ -191,6 +192,9 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
     if (taskParameters != null) {
       $result.taskParameters.addAll(taskParameters);
     }
+    if (countInUse != null) {
+      $result.countInUse = countInUse;
+    }
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
@@ -222,11 +226,12 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
     ..pPS(7, _omitFieldNames ? '' : 'teacherTaskTemplateRequirements')
     ..aOS(8, _omitFieldNames ? '' : 'teacherTaskTemplateLink')
     ..pc<TeacherTaskTemplateParameter>(9, _omitFieldNames ? '' : 'taskParameters', $pb.PbFieldType.PM, subBuilder: TeacherTaskTemplateParameter.create)
-    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
-    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
-    ..aOM<$0.User>(12, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
-    ..aOM<$0.User>(13, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
-    ..aOM<$1.SystemTask>(14, _omitFieldNames ? '' : 'systemTask', subBuilder: $1.SystemTask.create)
+    ..aInt64(10, _omitFieldNames ? '' : 'countInUse')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..aOM<$0.User>(13, _omitFieldNames ? '' : 'creator', subBuilder: $0.User.create)
+    ..aOM<$0.User>(14, _omitFieldNames ? '' : 'updater', subBuilder: $0.User.create)
+    ..aOM<$1.SystemTask>(15, _omitFieldNames ? '' : 'systemTask', subBuilder: $1.SystemTask.create)
     ..hasRequiredFields = false
   ;
 
@@ -321,55 +326,64 @@ class TeacherTaskTemplate extends $pb.GeneratedMessage {
   $core.List<TeacherTaskTemplateParameter> get taskParameters => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.String get createdAt => $_getSZ(9);
+  $fixnum.Int64 get countInUse => $_getI64(9);
   @$pb.TagNumber(10)
-  set createdAt($core.String v) { $_setString(9, v); }
+  set countInUse($fixnum.Int64 v) { $_setInt64(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCreatedAt() => $_has(9);
+  $core.bool hasCountInUse() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreatedAt() => clearField(10);
+  void clearCountInUse() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get updatedAt => $_getSZ(10);
+  $core.String get createdAt => $_getSZ(10);
   @$pb.TagNumber(11)
-  set updatedAt($core.String v) { $_setString(10, v); }
+  set createdAt($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasUpdatedAt() => $_has(10);
+  $core.bool hasCreatedAt() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdatedAt() => clearField(11);
+  void clearCreatedAt() => clearField(11);
 
   @$pb.TagNumber(12)
-  $0.User get creator => $_getN(11);
+  $core.String get updatedAt => $_getSZ(11);
   @$pb.TagNumber(12)
-  set creator($0.User v) { setField(12, v); }
+  set updatedAt($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasCreator() => $_has(11);
+  $core.bool hasUpdatedAt() => $_has(11);
   @$pb.TagNumber(12)
-  void clearCreator() => clearField(12);
-  @$pb.TagNumber(12)
-  $0.User ensureCreator() => $_ensure(11);
+  void clearUpdatedAt() => clearField(12);
 
   @$pb.TagNumber(13)
-  $0.User get updater => $_getN(12);
+  $0.User get creator => $_getN(12);
   @$pb.TagNumber(13)
-  set updater($0.User v) { setField(13, v); }
+  set creator($0.User v) { setField(13, v); }
   @$pb.TagNumber(13)
-  $core.bool hasUpdater() => $_has(12);
+  $core.bool hasCreator() => $_has(12);
   @$pb.TagNumber(13)
-  void clearUpdater() => clearField(13);
+  void clearCreator() => clearField(13);
   @$pb.TagNumber(13)
-  $0.User ensureUpdater() => $_ensure(12);
+  $0.User ensureCreator() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $1.SystemTask get systemTask => $_getN(13);
+  $0.User get updater => $_getN(13);
   @$pb.TagNumber(14)
-  set systemTask($1.SystemTask v) { setField(14, v); }
+  set updater($0.User v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasSystemTask() => $_has(13);
+  $core.bool hasUpdater() => $_has(13);
   @$pb.TagNumber(14)
-  void clearSystemTask() => clearField(14);
+  void clearUpdater() => clearField(14);
   @$pb.TagNumber(14)
-  $1.SystemTask ensureSystemTask() => $_ensure(13);
+  $0.User ensureUpdater() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.SystemTask get systemTask => $_getN(14);
+  @$pb.TagNumber(15)
+  set systemTask($1.SystemTask v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasSystemTask() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearSystemTask() => clearField(15);
+  @$pb.TagNumber(15)
+  $1.SystemTask ensureSystemTask() => $_ensure(14);
 }
 
 class CreateTeacherTaskTemplateRequest extends $pb.GeneratedMessage {

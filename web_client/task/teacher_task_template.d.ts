@@ -29,6 +29,7 @@ export interface TeacherTaskTemplate {
   teacher_task_template_requirements?: Array<string>;
   teacher_task_template_link?: string;
   task_parameters?: Array<TeacherTaskTemplateParameter>;
+  count_in_use?: string;
   created_at?: string;
   updated_at?: string;
   creator?: user.User;
