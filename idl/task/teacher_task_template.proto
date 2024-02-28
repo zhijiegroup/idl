@@ -28,11 +28,12 @@ message TeacherTaskTemplate {
   repeated string teacher_task_template_requirements = 7;
   string teacher_task_template_link = 8;
   repeated TeacherTaskTemplateParameter task_parameters = 9;
-  string created_at = 10;
-  string updated_at = 11;
-  User creator = 12;
-  User updater = 13;
-  SystemTask system_task = 14;
+  int64 count_in_use = 10;
+  string created_at = 11;
+  string updated_at = 12;
+  User creator = 13;
+  User updater = 14;
+  SystemTask system_task = 15;
 }
 
 message CreateTeacherTaskTemplateRequest {
