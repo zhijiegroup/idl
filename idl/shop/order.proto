@@ -153,11 +153,16 @@ message OrderResponse {
 message GetOrderRequest {
   base.BaseRequest base_request = 1;
   int64 order_id = 2;
-
 }
+
+message SellerInfo {
+  string shop_name = 1;
+}
+
 message GetOrderResponse {
   base.BaseResponse base_resp = 1;
-  OrderInfo orderInfo = 2;
+  SellerInfo sellerInfo = 2;
+  OrderInfo orderInfo = 3;
   //repeated ProductInfo productInfo = 3;
   DeliverInfo deliverInfo = 4;
 }
