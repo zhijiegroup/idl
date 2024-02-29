@@ -90,4 +90,10 @@ public interface StudentPassCountOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAvatarBytes();
+
+  /**
+   * <code>int64 student_id = 11;</code>
+   * @return The studentId.
+   */
+  long getStudentId();
 }

@@ -277,17 +277,18 @@ public final class TeacherTaskOuterClass {
       "\022\016\n\006passed\030\005 \001(\005\022\017\n\007no_pass\030\006 \001(\005\022\024\n\014pas" +
       "s_percent\030\007 \001(\t\022\032\n\022pass_percent_value\030\010 " +
       "\001(\002\022\017\n\007task_id\030\n \001(\003\022\020\n\010class_id\030\013 \001(\003\022\022" +
-      "\n\ncreated_at\030\014 \001(\t\"\301\001\n\022StudentSubmitCoun" +
+      "\n\ncreated_at\030\014 \001(\t\"\325\001\n\022StudentSubmitCoun" +
       "t\022\014\n\004name\030\001 \001(\t\022\r\n\005class\030\002 \001(\t\022\016\n\006submit" +
       "\030\003 \001(\t\022\024\n\014submit_value\030\004 \001(\002\022\022\n\ntask_tot" +
       "al\030\005 \001(\003\022\026\n\016task_no_submit\030\006 \001(\003\022\026\n\016task" +
       "_submitted\030\007 \001(\003\022\024\n\014task_expired\030\010 \001(\003\022\016" +
-      "\n\006avatar\030\n \001(\t\"\322\001\n\020StudentPassCount\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\r\n\005class\030\002 \001(\t\022\014\n\004pass\030\003 \001(\t\022\022" +
-      "\n\npass_value\030\004 \001(\002\022\022\n\ntask_total\030\005 \001(\003\022\026" +
-      "\n\016task_no_submit\030\006 \001(\003\022\026\n\016task_submitted" +
-      "\030\007 \001(\003\022\023\n\013task_passed\030\010 \001(\003\022\026\n\016task_no_p" +
-      "assed\030\t \001(\003\022\016\n\006avatar\030\n \001(\t\"\312\001\n\027CountTea" +
+      "\n\006avatar\030\n \001(\t\022\022\n\nstudent_id\030\013 \001(\003\"\346\001\n\020S" +
+      "tudentPassCount\022\014\n\004name\030\001 \001(\t\022\r\n\005class\030\002" +
+      " \001(\t\022\014\n\004pass\030\003 \001(\t\022\022\n\npass_value\030\004 \001(\002\022\022" +
+      "\n\ntask_total\030\005 \001(\003\022\026\n\016task_no_submit\030\006 \001" +
+      "(\003\022\026\n\016task_submitted\030\007 \001(\003\022\023\n\013task_passe" +
+      "d\030\010 \001(\003\022\026\n\016task_no_passed\030\t \001(\003\022\016\n\006avata" +
+      "r\030\n \001(\t\022\022\n\nstudent_id\030\013 \001(\003\"\312\001\n\027CountTea" +
       "cherTaskRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
       "base.BaseRequest\022\023\n\013system_name\030\002 \003(\t\022\020\n" +
       "\010class_id\030\003 \003(\003\022\022\n\nbegin_date\030\004 \001(\t\022\020\n\010e" +
@@ -464,13 +465,13 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_StudentSubmitCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentSubmitCount_descriptor,
-        new java.lang.String[] { "Name", "Class_", "Submit", "SubmitValue", "TaskTotal", "TaskNoSubmit", "TaskSubmitted", "TaskExpired", "Avatar", });
+        new java.lang.String[] { "Name", "Class_", "Submit", "SubmitValue", "TaskTotal", "TaskNoSubmit", "TaskSubmitted", "TaskExpired", "Avatar", "StudentId", });
     internal_static_glory_api_StudentPassCount_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_StudentPassCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentPassCount_descriptor,
-        new java.lang.String[] { "Name", "Class_", "Pass", "PassValue", "TaskTotal", "TaskNoSubmit", "TaskSubmitted", "TaskPassed", "TaskNoPassed", "Avatar", });
+        new java.lang.String[] { "Name", "Class_", "Pass", "PassValue", "TaskTotal", "TaskNoSubmit", "TaskSubmitted", "TaskPassed", "TaskNoPassed", "Avatar", "StudentId", });
     internal_static_glory_api_CountTeacherTaskRequest_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_CountTeacherTaskRequest_fieldAccessorTable = new

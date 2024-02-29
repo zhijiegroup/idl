@@ -1929,15 +1929,69 @@ class GetOrderRequest extends $pb.GeneratedMessage {
   void clearOrderId() => clearField(2);
 }
 
+class SellerInfo extends $pb.GeneratedMessage {
+  factory SellerInfo({
+    $core.String? shopName,
+  }) {
+    final $result = create();
+    if (shopName != null) {
+      $result.shopName = shopName;
+    }
+    return $result;
+  }
+  SellerInfo._() : super();
+  factory SellerInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SellerInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SellerInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shopName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SellerInfo clone() => SellerInfo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SellerInfo copyWith(void Function(SellerInfo) updates) => super.copyWith((message) => updates(message as SellerInfo)) as SellerInfo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SellerInfo create() => SellerInfo._();
+  SellerInfo createEmptyInstance() => create();
+  static $pb.PbList<SellerInfo> createRepeated() => $pb.PbList<SellerInfo>();
+  @$core.pragma('dart2js:noInline')
+  static SellerInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SellerInfo>(create);
+  static SellerInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get shopName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shopName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasShopName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShopName() => clearField(1);
+}
+
 class GetOrderResponse extends $pb.GeneratedMessage {
   factory GetOrderResponse({
     $2.BaseResponse? baseResp,
+    SellerInfo? sellerInfo,
     OrderInfo? orderInfo,
     DeliverInfo? deliverInfo,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (sellerInfo != null) {
+      $result.sellerInfo = sellerInfo;
     }
     if (orderInfo != null) {
       $result.orderInfo = orderInfo;
@@ -1953,7 +2007,8 @@ class GetOrderResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetOrderResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
-    ..aOM<OrderInfo>(2, _omitFieldNames ? '' : 'orderInfo', protoName: 'orderInfo', subBuilder: OrderInfo.create)
+    ..aOM<SellerInfo>(2, _omitFieldNames ? '' : 'sellerInfo', protoName: 'sellerInfo', subBuilder: SellerInfo.create)
+    ..aOM<OrderInfo>(3, _omitFieldNames ? '' : 'orderInfo', protoName: 'orderInfo', subBuilder: OrderInfo.create)
     ..aOM<DeliverInfo>(4, _omitFieldNames ? '' : 'deliverInfo', protoName: 'deliverInfo', subBuilder: DeliverInfo.create)
     ..hasRequiredFields = false
   ;
@@ -1991,27 +2046,38 @@ class GetOrderResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  OrderInfo get orderInfo => $_getN(1);
+  SellerInfo get sellerInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set orderInfo(OrderInfo v) { setField(2, v); }
+  set sellerInfo(SellerInfo v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasOrderInfo() => $_has(1);
+  $core.bool hasSellerInfo() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrderInfo() => clearField(2);
+  void clearSellerInfo() => clearField(2);
   @$pb.TagNumber(2)
-  OrderInfo ensureOrderInfo() => $_ensure(1);
+  SellerInfo ensureSellerInfo() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  OrderInfo get orderInfo => $_getN(2);
+  @$pb.TagNumber(3)
+  set orderInfo(OrderInfo v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrderInfo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrderInfo() => clearField(3);
+  @$pb.TagNumber(3)
+  OrderInfo ensureOrderInfo() => $_ensure(2);
 
   /// repeated ProductInfo productInfo = 3;
   @$pb.TagNumber(4)
-  DeliverInfo get deliverInfo => $_getN(2);
+  DeliverInfo get deliverInfo => $_getN(3);
   @$pb.TagNumber(4)
   set deliverInfo(DeliverInfo v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDeliverInfo() => $_has(2);
+  $core.bool hasDeliverInfo() => $_has(3);
   @$pb.TagNumber(4)
   void clearDeliverInfo() => clearField(4);
   @$pb.TagNumber(4)
-  DeliverInfo ensureDeliverInfo() => $_ensure(2);
+  DeliverInfo ensureDeliverInfo() => $_ensure(3);
 }
 
 class UpdateOrderRequest extends $pb.GeneratedMessage {

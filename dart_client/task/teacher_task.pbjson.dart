@@ -404,6 +404,7 @@ const StudentSubmitCount$json = {
     {'1': 'task_submitted', '3': 7, '4': 1, '5': 3, '10': 'taskSubmitted'},
     {'1': 'task_expired', '3': 8, '4': 1, '5': 3, '10': 'taskExpired'},
     {'1': 'avatar', '3': 10, '4': 1, '5': 9, '10': 'avatar'},
+    {'1': 'student_id', '3': 11, '4': 1, '5': 3, '10': 'studentId'},
   ],
 };
 
@@ -414,7 +415,7 @@ final $typed_data.Uint8List studentSubmitCountDescriptor = $convert.base64Decode
     'dWJtaXRWYWx1ZRIdCgp0YXNrX3RvdGFsGAUgASgDUgl0YXNrVG90YWwSJAoOdGFza19ub19zdW'
     'JtaXQYBiABKANSDHRhc2tOb1N1Ym1pdBIlCg50YXNrX3N1Ym1pdHRlZBgHIAEoA1INdGFza1N1'
     'Ym1pdHRlZBIhCgx0YXNrX2V4cGlyZWQYCCABKANSC3Rhc2tFeHBpcmVkEhYKBmF2YXRhchgKIA'
-    'EoCVIGYXZhdGFy');
+    'EoCVIGYXZhdGFyEh0KCnN0dWRlbnRfaWQYCyABKANSCXN0dWRlbnRJZA==');
 
 @$core.Deprecated('Use studentPassCountDescriptor instead')
 const StudentPassCount$json = {
@@ -430,6 +431,7 @@ const StudentPassCount$json = {
     {'1': 'task_passed', '3': 8, '4': 1, '5': 3, '10': 'taskPassed'},
     {'1': 'task_no_passed', '3': 9, '4': 1, '5': 3, '10': 'taskNoPassed'},
     {'1': 'avatar', '3': 10, '4': 1, '5': 9, '10': 'avatar'},
+    {'1': 'student_id', '3': 11, '4': 1, '5': 3, '10': 'studentId'},
   ],
 };
 
@@ -440,7 +442,8 @@ final $typed_data.Uint8List studentPassCountDescriptor = $convert.base64Decode(
     'Eh0KCnRhc2tfdG90YWwYBSABKANSCXRhc2tUb3RhbBIkCg50YXNrX25vX3N1Ym1pdBgGIAEoA1'
     'IMdGFza05vU3VibWl0EiUKDnRhc2tfc3VibWl0dGVkGAcgASgDUg10YXNrU3VibWl0dGVkEh8K'
     'C3Rhc2tfcGFzc2VkGAggASgDUgp0YXNrUGFzc2VkEiQKDnRhc2tfbm9fcGFzc2VkGAkgASgDUg'
-    'x0YXNrTm9QYXNzZWQSFgoGYXZhdGFyGAogASgJUgZhdmF0YXI=');
+    'x0YXNrTm9QYXNzZWQSFgoGYXZhdGFyGAogASgJUgZhdmF0YXISHQoKc3R1ZGVudF9pZBgLIAEo'
+    'A1IJc3R1ZGVudElk');
 
 @$core.Deprecated('Use countTeacherTaskRequestDescriptor instead')
 const CountTeacherTaskRequest$json = {

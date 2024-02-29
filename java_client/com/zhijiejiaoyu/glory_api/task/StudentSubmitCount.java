@@ -101,6 +101,11 @@ private static final long serialVersionUID = 0L;
             avatar = s;
             break;
           }
+          case 88: {
+
+            studentId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -340,6 +345,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STUDENT_ID_FIELD_NUMBER = 11;
+  private long studentId ;
+  /**
+   * <code>int64 student_id = 11;</code>
+   * @return The studentId.
+   */
+  @java.lang.Override
+  public long getStudentId() {
+    return studentId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -380,6 +396,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAvatarBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, avatar );
+    }
+    if (studentId != 0L) {
+      output.writeInt64(11, studentId );
     }
     unknownFields.writeTo(output);
   }
@@ -422,6 +441,10 @@ private static final long serialVersionUID = 0L;
     if (!getAvatarBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, avatar );
     }
+    if (studentId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, studentId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -456,6 +479,8 @@ private static final long serialVersionUID = 0L;
         != other.getTaskExpired()) return false;
     if (!getAvatar()
         .equals(other.getAvatar())) return false;
+    if (getStudentId()
+        != other.getStudentId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -490,6 +515,9 @@ private static final long serialVersionUID = 0L;
         getTaskExpired());
     hash = (37 * hash) + AVATAR_FIELD_NUMBER;
     hash = (53 * hash) + getAvatar().hashCode();
+    hash = (37 * hash) + STUDENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStudentId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -641,6 +669,8 @@ private static final long serialVersionUID = 0L;
 
       avatar = "";
 
+      studentId = 0L;
+
       return this;
     }
 
@@ -676,6 +706,7 @@ private static final long serialVersionUID = 0L;
       result.taskSubmitted = taskSubmitted ;
       result.taskExpired = taskExpired ;
       result.avatar = avatar ;
+      result.studentId = studentId ;
       onBuilt();
       return result;
     }
@@ -754,6 +785,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getAvatar().isEmpty()) {
         avatar = other.avatar ;
         onChanged();
+      }
+      if (other.getStudentId() != 0L) {
+        setStudentId(other.getStudentId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1239,6 +1273,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       avatar = value;
+      onChanged();
+      return this;
+    }
+
+    private long studentId ;
+    /**
+     * <code>int64 student_id = 11;</code>
+     * @return The studentId.
+     */
+    @java.lang.Override
+    public long getStudentId() {
+      return studentId ;
+    }
+    /**
+     * <code>int64 student_id = 11;</code>
+     * @param value The studentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentId(long value) {
+      
+      studentId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 student_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStudentId() {
+      
+      studentId = 0L;
       onChanged();
       return this;
     }

@@ -595,6 +595,18 @@ struct GloryApi_GetOrderRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
+struct GloryApi_SellerInfo {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var shopName: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_GetOrderResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -608,6 +620,15 @@ struct GloryApi_GetOrderResponse {
   var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
+
+  var sellerInfo: GloryApi_SellerInfo {
+    get {return _sellerInfo ?? GloryApi_SellerInfo()}
+    set {_sellerInfo = newValue}
+  }
+  /// Returns true if `sellerInfo` has been explicitly set.
+  var hasSellerInfo: Bool {return self._sellerInfo != nil}
+  /// Clears the value of `sellerInfo`. Subsequent reads from it will return its default value.
+  mutating func clearSellerInfo() {self._sellerInfo = nil}
 
   var orderInfo: GloryApi_OrderInfo {
     get {return _orderInfo ?? GloryApi_OrderInfo()}
@@ -633,6 +654,7 @@ struct GloryApi_GetOrderResponse {
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _sellerInfo: GloryApi_SellerInfo? = nil
   fileprivate var _orderInfo: GloryApi_OrderInfo? = nil
   fileprivate var _deliverInfo: GloryApi_DeliverInfo? = nil
 }
@@ -1090,6 +1112,7 @@ extension GloryApi_CreateOrderResponse: @unchecked Sendable {}
 extension GloryApi_TransResponseInfo: @unchecked Sendable {}
 extension GloryApi_OrderResponse: @unchecked Sendable {}
 extension GloryApi_GetOrderRequest: @unchecked Sendable {}
+extension GloryApi_SellerInfo: @unchecked Sendable {}
 extension GloryApi_GetOrderResponse: @unchecked Sendable {}
 extension GloryApi_UpdateOrderRequest: @unchecked Sendable {}
 extension GloryApi_UpdateOrderResponse: @unchecked Sendable {}
@@ -2263,11 +2286,44 @@ extension GloryApi_GetOrderRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
+extension GloryApi_SellerInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".SellerInfo"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shop_name"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.shopName.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_SellerInfo, rhs: GloryApi_SellerInfo) -> Bool {
+    if lhs.shopName != rhs.shopName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_GetOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetOrderResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "orderInfo"),
+    2: .same(proto: "sellerInfo"),
+    3: .same(proto: "orderInfo"),
     4: .same(proto: "deliverInfo"),
   ]
 
@@ -2278,7 +2334,8 @@ extension GloryApi_GetOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._orderInfo) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._sellerInfo) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._orderInfo) }()
       case 4: try { try decoder.decodeSingularMessageField(value: &self._deliverInfo) }()
       default: break
       }
@@ -2293,8 +2350,11 @@ extension GloryApi_GetOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    try { if let v = self._orderInfo {
+    try { if let v = self._sellerInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._orderInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     } }()
     try { if let v = self._deliverInfo {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
@@ -2304,6 +2364,7 @@ extension GloryApi_GetOrderResponse: SwiftProtobuf.Message, SwiftProtobuf._Messa
 
   static func ==(lhs: GloryApi_GetOrderResponse, rhs: GloryApi_GetOrderResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._sellerInfo != rhs._sellerInfo {return false}
     if lhs._orderInfo != rhs._orderInfo {return false}
     if lhs._deliverInfo != rhs._deliverInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

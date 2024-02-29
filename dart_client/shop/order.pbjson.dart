@@ -332,12 +332,25 @@ final $typed_data.Uint8List getOrderRequestDescriptor = $convert.base64Decode(
     'Cg9HZXRPcmRlclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUmVxdW'
     'VzdFILYmFzZVJlcXVlc3QSGQoIb3JkZXJfaWQYAiABKANSB29yZGVySWQ=');
 
+@$core.Deprecated('Use sellerInfoDescriptor instead')
+const SellerInfo$json = {
+  '1': 'SellerInfo',
+  '2': [
+    {'1': 'shop_name', '3': 1, '4': 1, '5': 9, '10': 'shopName'},
+  ],
+};
+
+/// Descriptor for `SellerInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sellerInfoDescriptor = $convert.base64Decode(
+    'CgpTZWxsZXJJbmZvEhsKCXNob3BfbmFtZRgBIAEoCVIIc2hvcE5hbWU=');
+
 @$core.Deprecated('Use getOrderResponseDescriptor instead')
 const GetOrderResponse$json = {
   '1': 'GetOrderResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'orderInfo', '3': 2, '4': 1, '5': 11, '6': '.glory_api.OrderInfo', '10': 'orderInfo'},
+    {'1': 'sellerInfo', '3': 2, '4': 1, '5': 11, '6': '.glory_api.SellerInfo', '10': 'sellerInfo'},
+    {'1': 'orderInfo', '3': 3, '4': 1, '5': 11, '6': '.glory_api.OrderInfo', '10': 'orderInfo'},
     {'1': 'deliverInfo', '3': 4, '4': 1, '5': 11, '6': '.glory_api.DeliverInfo', '10': 'deliverInfo'},
   ],
 };
@@ -345,9 +358,10 @@ const GetOrderResponse$json = {
 /// Descriptor for `GetOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOrderResponseDescriptor = $convert.base64Decode(
     'ChBHZXRPcmRlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3Bvbn'
-    'NlUghiYXNlUmVzcBIyCglvcmRlckluZm8YAiABKAsyFC5nbG9yeV9hcGkuT3JkZXJJbmZvUglv'
-    'cmRlckluZm8SOAoLZGVsaXZlckluZm8YBCABKAsyFi5nbG9yeV9hcGkuRGVsaXZlckluZm9SC2'
-    'RlbGl2ZXJJbmZv');
+    'NlUghiYXNlUmVzcBI1CgpzZWxsZXJJbmZvGAIgASgLMhUuZ2xvcnlfYXBpLlNlbGxlckluZm9S'
+    'CnNlbGxlckluZm8SMgoJb3JkZXJJbmZvGAMgASgLMhQuZ2xvcnlfYXBpLk9yZGVySW5mb1IJb3'
+    'JkZXJJbmZvEjgKC2RlbGl2ZXJJbmZvGAQgASgLMhYuZ2xvcnlfYXBpLkRlbGl2ZXJJbmZvUgtk'
+    'ZWxpdmVySW5mbw==');
 
 @$core.Deprecated('Use updateOrderRequestDescriptor instead')
 const UpdateOrderRequest$json = {

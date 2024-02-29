@@ -85,6 +85,11 @@ public final class OrderOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_GetOrderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_SellerInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_SellerInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_GetOrderResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -254,52 +259,54 @@ public final class OrderOuterClass {
       "3\n\rOrderResponse\022\020\n\010order_id\030\001 \001(\003\022\020\n\010cu" +
       "rrency\030\002 \001(\t\"L\n\017GetOrderRequest\022\'\n\014base_" +
       "request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010orde" +
-      "r_id\030\002 \001(\003\"\217\001\n\020GetOrderResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\torderI" +
-      "nfo\030\002 \001(\0132\024.glory_api.OrderInfo\022+\n\013deliv" +
-      "erInfo\030\004 \001(\0132\026.glory_api.DeliverInfo\"^\n\022" +
-      "UpdateOrderRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\037\n\005order\030\002 \001(\0132\020.glo" +
-      "ry_api.Order\"N\n\023UpdateOrderResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010or" +
-      "der_id\030\002 \001(\003\"\306\001\n\020ListOrderRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007us" +
-      "er_id\030\002 \001(\003\022\021\n\tseller_id\030\003 \001(\003\022\021\n\ttenant" +
-      "_id\030\004 \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\024\n\014order_stat" +
-      "us\030\006 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
-      "nationRequest\"\232\001\n\021ListOrderResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\0220\n\014or" +
-      "der_detail\030\002 \003(\0132\032.glory_api.OrderWithAu" +
-      "thor\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"O\n\022DeleteOrderRequest\022\'\n\014base" +
+      "r_id\030\002 \001(\003\"\037\n\nSellerInfo\022\021\n\tshop_name\030\001 " +
+      "\001(\t\"\272\001\n\020GetOrderResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022)\n\nsellerInfo\030\002 " +
+      "\001(\0132\025.glory_api.SellerInfo\022\'\n\torderInfo\030" +
+      "\003 \001(\0132\024.glory_api.OrderInfo\022+\n\013deliverIn" +
+      "fo\030\004 \001(\0132\026.glory_api.DeliverInfo\"^\n\022Upda" +
+      "teOrderRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\037\n\005order\030\002 \001(\0132\020.glory_a" +
+      "pi.Order\"N\n\023UpdateOrderResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\020\n\010order_" +
+      "id\030\002 \001(\003\"\306\001\n\020ListOrderRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user_i" +
+      "d\030\002 \001(\003\022\021\n\tseller_id\030\003 \001(\003\022\021\n\ttenant_id\030" +
+      "\004 \001(\003\022\017\n\007shop_id\030\005 \001(\003\022\024\n\014order_status\030\006" +
+      " \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginati" +
+      "onRequest\"\232\001\n\021ListOrderResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\0220\n\014order_" +
+      "detail\030\002 \003(\0132\032.glory_api.OrderWithAuthor" +
+      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
+      "sponse\"O\n\022DeleteOrderRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order_i" +
+      "d\030\002 \001(\003\"<\n\023DeleteOrderResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"M\n\020ShipGoo" +
+      "dsRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\020\n\010order_id\030\002 \001(\003\":\n\021ShipGood" +
+      "sResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "Response\"W\n\032ConfirmReceiptGoodsRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\020\n\010order_id\030\002 \001(\003\"D\n\033ConfirmReceiptGoods" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"R\n\025GetOrderStatusRequest\022\'\n\014base" +
       "_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010ord" +
-      "er_id\030\002 \001(\003\"<\n\023DeleteOrderResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"M\n\020Shi" +
-      "pGoodsRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\020\n\010order_id\030\002 \001(\003\":\n\021Ship" +
-      "GoodsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"W\n\032ConfirmReceiptGoodsReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\020\n\010order_id\030\002 \001(\003\"D\n\033ConfirmReceiptG" +
-      "oodsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\"R\n\025GetOrderStatusRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n" +
-      "\010order_id\030\002 \001(\003\"U\n\026GetOrderStatusRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022\024\n\014order_status\030\002 \001(\t\"O\n\022CancelOrderReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\020\n\010order_id\030\002 \001(\003\"<\n\023CancelOrderRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"V\n\031ShipGoodsInBatchesRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010o" +
-      "rder_id\030\002 \003(\003\"C\n\032ShipGoodsInBatchesRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"Y\n\034FreeShippingInBatchesRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010o" +
-      "rder_id\030\002 \003(\003\"F\n\035FreeShippingInBatchesRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponseB#\n\037com.zhijiejiaoyu.glory_api.shop" +
-      "P\001b\006proto3"
+      "er_id\030\002 \001(\003\"U\n\026GetOrderStatusResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\024\n\014" +
+      "order_status\030\002 \001(\t\"O\n\022CancelOrderRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\020\n\010order_id\030\002 \001(\003\"<\n\023CancelOrderRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\"V\n\031ShipGoodsInBatchesRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order" +
+      "_id\030\002 \003(\003\"C\n\032ShipGoodsInBatchesResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"Y" +
+      "\n\034FreeShippingInBatchesRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010order" +
+      "_id\030\002 \003(\003\"F\n\035FreeShippingInBatchesRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "eB#\n\037com.zhijiejiaoyu.glory_api.shopP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -392,116 +399,122 @@ public final class OrderOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
-    internal_static_glory_api_GetOrderResponse_descriptor =
+    internal_static_glory_api_SellerInfo_descriptor =
       getDescriptor().getMessageTypes().get(14);
+    internal_static_glory_api_SellerInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_SellerInfo_descriptor,
+        new java.lang.String[] { "ShopName", });
+    internal_static_glory_api_GetOrderResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_GetOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "OrderInfo", "DeliverInfo", });
+        new java.lang.String[] { "BaseResp", "SellerInfo", "OrderInfo", "DeliverInfo", });
     internal_static_glory_api_UpdateOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_UpdateOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Order", });
     internal_static_glory_api_UpdateOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_UpdateOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderId", });
     internal_static_glory_api_ListOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_ListOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "UserId", "SellerId", "TenantId", "ShopId", "OrderStatus", "Pagination", });
     internal_static_glory_api_ListOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_ListOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderDetail", "Pagination", });
     internal_static_glory_api_DeleteOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_DeleteOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_DeleteOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_DeleteOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ShipGoodsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_ShipGoodsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ShipGoodsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_ShipGoodsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ConfirmReceiptGoodsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_ConfirmReceiptGoodsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ConfirmReceiptGoodsRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ConfirmReceiptGoodsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_ConfirmReceiptGoodsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ConfirmReceiptGoodsResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetOrderStatusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_GetOrderStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderStatusRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_GetOrderStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_GetOrderStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetOrderStatusResponse_descriptor,
         new java.lang.String[] { "BaseResp", "OrderStatus", });
     internal_static_glory_api_CancelOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_CancelOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CancelOrderRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_CancelOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_CancelOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CancelOrderResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_ShipGoodsInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_ShipGoodsInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShipGoodsInBatchesResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_FreeShippingInBatchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_glory_api_FreeShippingInBatchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "OrderId", });
     internal_static_glory_api_FreeShippingInBatchesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_FreeShippingInBatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_FreeShippingInBatchesResponse_descriptor,

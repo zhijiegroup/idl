@@ -200,6 +200,7 @@ export interface StudentSubmitCount {
   task_submitted?: string;
   task_expired?: string;
   avatar?: string;
+  student_id?: string;
 }
 
 export interface StudentPassCount {
@@ -213,6 +214,7 @@ export interface StudentPassCount {
   task_passed?: string;
   task_no_passed?: string;
   avatar?: string;
+  student_id?: string;
 }
 
 export interface CountTeacherTaskRequest {

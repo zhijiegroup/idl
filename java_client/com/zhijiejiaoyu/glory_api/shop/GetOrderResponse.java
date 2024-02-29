@@ -62,6 +62,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder subBuilder = null;
+            if (sellerInfo != null) {
+              subBuilder = sellerInfo .toBuilder();
+            }
+            sellerInfo = input.readMessage(com.zhijiejiaoyu.glory_api.shop.SellerInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(sellerInfo );
+              sellerInfo = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 26: {
             com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder subBuilder = null;
             if (orderInfo != null) {
               subBuilder = orderInfo .toBuilder();
@@ -145,10 +158,36 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int ORDERINFO_FIELD_NUMBER = 2;
+  public static final int SELLERINFO_FIELD_NUMBER = 2;
+  private com.zhijiejiaoyu.glory_api.shop.SellerInfo sellerInfo ;
+  /**
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   * @return Whether the sellerInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSellerInfo() {
+    return sellerInfo != null;
+  }
+  /**
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   * @return The sellerInfo.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.SellerInfo getSellerInfo() {
+    return sellerInfo == null ? com.zhijiejiaoyu.glory_api.shop.SellerInfo.getDefaultInstance() : sellerInfo ;
+  }
+  /**
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder getSellerInfoOrBuilder() {
+    return getSellerInfo();
+  }
+
+  public static final int ORDERINFO_FIELD_NUMBER = 3;
   private com.zhijiejiaoyu.glory_api.shop.OrderInfo orderInfo ;
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    * @return Whether the orderInfo field is set.
    */
   @java.lang.Override
@@ -156,7 +195,7 @@ private static final long serialVersionUID = 0L;
     return orderInfo != null;
   }
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    * @return The orderInfo.
    */
   @java.lang.Override
@@ -164,7 +203,7 @@ private static final long serialVersionUID = 0L;
     return orderInfo == null ? com.zhijiejiaoyu.glory_api.shop.OrderInfo.getDefaultInstance() : orderInfo ;
   }
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrderInfoOrBuilder() {
@@ -226,8 +265,11 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (sellerInfo != null) {
+      output.writeMessage(2, getSellerInfo());
+    }
     if (orderInfo != null) {
-      output.writeMessage(2, getOrderInfo());
+      output.writeMessage(3, getOrderInfo());
     }
     if (deliverInfo != null) {
       output.writeMessage(4, getDeliverInfo());
@@ -245,9 +287,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
+    if (sellerInfo != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getSellerInfo());
+    }
     if (orderInfo != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getOrderInfo());
+        .computeMessageSize(3, getOrderInfo());
     }
     if (deliverInfo != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -273,6 +319,11 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (hasSellerInfo() != other.hasSellerInfo()) return false;
+    if (hasSellerInfo()) {
+      if (!getSellerInfo()
+          .equals(other.getSellerInfo())) return false;
+    }
     if (hasOrderInfo() != other.hasOrderInfo()) return false;
     if (hasOrderInfo()) {
       if (!getOrderInfo()
@@ -297,6 +348,10 @@ private static final long serialVersionUID = 0L;
     if (hasBaseResp()) {
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
+    }
+    if (hasSellerInfo()) {
+      hash = (37 * hash) + SELLERINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSellerInfo().hashCode();
     }
     if (hasOrderInfo()) {
       hash = (37 * hash) + ORDERINFO_FIELD_NUMBER;
@@ -445,6 +500,12 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      if (sellerInfoBuilder == null) {
+        sellerInfo = null;
+      } else {
+        sellerInfo = null;
+        sellerInfoBuilder = null;
+      }
       if (orderInfoBuilder == null) {
         orderInfo = null;
       } else {
@@ -487,6 +548,11 @@ private static final long serialVersionUID = 0L;
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
+      }
+      if (sellerInfoBuilder == null) {
+        result.sellerInfo = sellerInfo ;
+      } else {
+        result.sellerInfo = sellerInfoBuilder .build();
       }
       if (orderInfoBuilder == null) {
         result.orderInfo = orderInfo ;
@@ -548,6 +614,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.shop.GetOrderResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.hasSellerInfo()) {
+        mergeSellerInfo(other.getSellerInfo());
       }
       if (other.hasOrderInfo()) {
         mergeOrderInfo(other.getOrderInfo());
@@ -703,18 +772,137 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
+    private com.zhijiejiaoyu.glory_api.shop.SellerInfo sellerInfo ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.SellerInfo, com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder, com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder> sellerInfoBuilder ;
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     * @return Whether the sellerInfo field is set.
+     */
+    public boolean hasSellerInfo() {
+      return sellerInfoBuilder != null || sellerInfo != null;
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     * @return The sellerInfo.
+     */
+    public com.zhijiejiaoyu.glory_api.shop.SellerInfo getSellerInfo() {
+      if (sellerInfoBuilder == null) {
+        return sellerInfo == null ? com.zhijiejiaoyu.glory_api.shop.SellerInfo.getDefaultInstance() : sellerInfo ;
+      } else {
+        return sellerInfoBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public Builder setSellerInfo(com.zhijiejiaoyu.glory_api.shop.SellerInfo value) {
+      if (sellerInfoBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sellerInfo = value;
+        onChanged();
+      } else {
+        sellerInfoBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public Builder setSellerInfo(
+        com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder builderForValue) {
+      if (sellerInfoBuilder == null) {
+        sellerInfo = builderForValue.build();
+        onChanged();
+      } else {
+        sellerInfoBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public Builder mergeSellerInfo(com.zhijiejiaoyu.glory_api.shop.SellerInfo value) {
+      if (sellerInfoBuilder == null) {
+        if (sellerInfo != null) {
+          sellerInfo =
+            com.zhijiejiaoyu.glory_api.shop.SellerInfo.newBuilder(sellerInfo ).mergeFrom(value).buildPartial();
+        } else {
+          sellerInfo = value;
+        }
+        onChanged();
+      } else {
+        sellerInfoBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public Builder clearSellerInfo() {
+      if (sellerInfoBuilder == null) {
+        sellerInfo = null;
+        onChanged();
+      } else {
+        sellerInfo = null;
+        sellerInfoBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder getSellerInfoBuilder() {
+      
+      onChanged();
+      return getSellerInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder getSellerInfoOrBuilder() {
+      if (sellerInfoBuilder != null) {
+        return sellerInfoBuilder .getMessageOrBuilder();
+      } else {
+        return sellerInfo == null ?
+            com.zhijiejiaoyu.glory_api.shop.SellerInfo.getDefaultInstance() : sellerInfo ;
+      }
+    }
+    /**
+     * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.SellerInfo, com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder, com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder> 
+        getSellerInfoFieldBuilder() {
+      if (sellerInfoBuilder == null) {
+        sellerInfoBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.shop.SellerInfo, com.zhijiejiaoyu.glory_api.shop.SellerInfo.Builder, com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder>(
+                getSellerInfo(),
+                getParentForChildren(),
+                isClean());
+        sellerInfo = null;
+      }
+      return sellerInfoBuilder ;
+    }
+
     private com.zhijiejiaoyu.glory_api.shop.OrderInfo orderInfo ;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.OrderInfo, com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder, com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder> orderInfoBuilder ;
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      * @return Whether the orderInfo field is set.
      */
     public boolean hasOrderInfo() {
       return orderInfoBuilder != null || orderInfo != null;
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      * @return The orderInfo.
      */
     public com.zhijiejiaoyu.glory_api.shop.OrderInfo getOrderInfo() {
@@ -725,7 +913,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public Builder setOrderInfo(com.zhijiejiaoyu.glory_api.shop.OrderInfo value) {
       if (orderInfoBuilder == null) {
@@ -741,7 +929,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public Builder setOrderInfo(
         com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder builderForValue) {
@@ -755,7 +943,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public Builder mergeOrderInfo(com.zhijiejiaoyu.glory_api.shop.OrderInfo value) {
       if (orderInfoBuilder == null) {
@@ -773,7 +961,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public Builder clearOrderInfo() {
       if (orderInfoBuilder == null) {
@@ -787,7 +975,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder getOrderInfoBuilder() {
       
@@ -795,7 +983,7 @@ private static final long serialVersionUID = 0L;
       return getOrderInfoFieldBuilder().getBuilder();
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     public com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrderInfoOrBuilder() {
       if (orderInfoBuilder != null) {
@@ -806,7 +994,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+     * <code>.glory_api.OrderInfo orderInfo = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.zhijiejiaoyu.glory_api.shop.OrderInfo, com.zhijiejiaoyu.glory_api.shop.OrderInfo.Builder, com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder> 

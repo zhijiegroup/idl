@@ -23,17 +23,32 @@ public interface GetOrderResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   * @return Whether the sellerInfo field is set.
+   */
+  boolean hasSellerInfo();
+  /**
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   * @return The sellerInfo.
+   */
+  com.zhijiejiaoyu.glory_api.shop.SellerInfo getSellerInfo();
+  /**
+   * <code>.glory_api.SellerInfo sellerInfo = 2;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.SellerInfoOrBuilder getSellerInfoOrBuilder();
+
+  /**
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    * @return Whether the orderInfo field is set.
    */
   boolean hasOrderInfo();
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    * @return The orderInfo.
    */
   com.zhijiejiaoyu.glory_api.shop.OrderInfo getOrderInfo();
   /**
-   * <code>.glory_api.OrderInfo orderInfo = 2;</code>
+   * <code>.glory_api.OrderInfo orderInfo = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrderInfoOrBuilder();
 

@@ -197,8 +197,13 @@ export interface GetOrderRequest {
   order_id?: string;
 }
 
+export interface SellerInfo {
+  shop_name?: string;
+}
+
 export interface GetOrderResponse {
   base_resp?: base.BaseResponse;
+  sellerInfo?: SellerInfo;
   orderInfo?: OrderInfo;
   /** repeated ProductInfo productInfo = 3; */
   deliverInfo?: DeliverInfo;

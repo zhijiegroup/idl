@@ -743,6 +743,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.OrderResponse': $13.OrderResponse$json,
   '.glory_api.GetOrderRequest': $13.GetOrderRequest$json,
   '.glory_api.GetOrderResponse': $13.GetOrderResponse$json,
+  '.glory_api.SellerInfo': $13.SellerInfo$json,
   '.glory_api.OrderInfo': $13.OrderInfo$json,
   '.glory_api.ProductInfo': $13.ProductInfo$json,
   '.glory_api.Images': $13.Images$json,
