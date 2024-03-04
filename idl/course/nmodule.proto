@@ -14,7 +14,7 @@ message NmCourse {
     double knowledge_hours = 6;
     string course_description = 7;
     string cover_url = 8;
-    int64 course_classfication = 9;
+    int64 course_classification = 9;
     string course_major = 10;
     int64 course_level = 11;
     int64 course_type = 12;
