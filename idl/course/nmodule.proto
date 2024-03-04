@@ -20,6 +20,7 @@ message NmCourse {
     int64 course_type = 12;
     string course_industry = 13;
     double course_hours = 14;
+    repeated NmChapter chapters = 15;
 }
 
 message CreateNmCourseChapterResourceRequest {
@@ -89,7 +90,6 @@ message NmCourseDetailRequest {
 message NmCourseDetailResponse {
     base.BaseResponse base_resp = 1;
     NmCourse course = 2;
-    repeated NmChapter chapters = 3;
     bool is_joined = 4;
 }
 
