@@ -17,6 +17,7 @@ export interface NmCourse {
   course_classfication?: string;
   course_major?: string;
   course_industry?: string;
+  course_hours?: number;
 }
 
 export interface CreateNmCourseChapterResourceRequest {

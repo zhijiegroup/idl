@@ -114,4 +114,10 @@ public interface NmCourseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCourseIndustryBytes();
+
+  /**
+   * <code>double course_hours = 12;</code>
+   * @return The courseHours.
+   */
+  double getCourseHours();
 }

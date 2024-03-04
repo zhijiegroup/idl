@@ -47,6 +47,8 @@ struct GloryApi_NmCourse {
 
   var courseIndustry: String = String()
 
+  var courseHours: Double = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -464,6 +466,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     9: .standard(proto: "course_classfication"),
     10: .standard(proto: "course_major"),
     11: .standard(proto: "course_industry"),
+    12: .standard(proto: "course_hours"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -483,6 +486,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseClassfication) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
+      case 12: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
       default: break
       }
     }
@@ -522,6 +526,9 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.courseIndustry.isEmpty {
       try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 11)
     }
+    if self.courseHours != 0 {
+      try visitor.visitSingularDoubleField(value: self.courseHours, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -537,6 +544,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.courseClassfication != rhs.courseClassfication {return false}
     if lhs.courseMajor != rhs.courseMajor {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
+    if lhs.courseHours != rhs.courseHours {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

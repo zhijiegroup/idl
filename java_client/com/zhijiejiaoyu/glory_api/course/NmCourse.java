@@ -117,6 +117,11 @@ private static final long serialVersionUID = 0L;
             courseIndustry = s;
             break;
           }
+          case 97: {
+
+            courseHours = input.readDouble();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -459,6 +464,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COURSE_HOURS_FIELD_NUMBER = 12;
+  private double courseHours ;
+  /**
+   * <code>double course_hours = 12;</code>
+   * @return The courseHours.
+   */
+  @java.lang.Override
+  public double getCourseHours() {
+    return courseHours ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -506,6 +522,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, courseIndustry );
     }
+    if (courseHours != 0D) {
+      output.writeDouble(12, courseHours );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -552,6 +571,10 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, courseIndustry );
     }
+    if (courseHours != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(12, courseHours );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -591,6 +614,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseMajor())) return false;
     if (!getCourseIndustry()
         .equals(other.getCourseIndustry())) return false;
+    if (java.lang.Double.doubleToLongBits(getCourseHours())
+        != java.lang.Double.doubleToLongBits(
+            other.getCourseHours())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -628,6 +654,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseMajor().hashCode();
     hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
     hash = (53 * hash) + getCourseIndustry().hashCode();
+    hash = (37 * hash) + COURSE_HOURS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getCourseHours()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -783,6 +812,8 @@ private static final long serialVersionUID = 0L;
 
       courseIndustry = "";
 
+      courseHours = 0D;
+
       return this;
     }
 
@@ -820,6 +851,7 @@ private static final long serialVersionUID = 0L;
       result.courseClassfication = courseClassfication ;
       result.courseMajor = courseMajor ;
       result.courseIndustry = courseIndustry ;
+      result.courseHours = courseHours ;
       onBuilt();
       return result;
     }
@@ -907,6 +939,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCourseIndustry().isEmpty()) {
         courseIndustry = other.courseIndustry ;
         onChanged();
+      }
+      if (other.getCourseHours() != 0D) {
+        setCourseHours(other.getCourseHours());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1589,6 +1624,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       courseIndustry = value;
+      onChanged();
+      return this;
+    }
+
+    private double courseHours ;
+    /**
+     * <code>double course_hours = 12;</code>
+     * @return The courseHours.
+     */
+    @java.lang.Override
+    public double getCourseHours() {
+      return courseHours ;
+    }
+    /**
+     * <code>double course_hours = 12;</code>
+     * @param value The courseHours to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseHours(double value) {
+      
+      courseHours = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double course_hours = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseHours() {
+      
+      courseHours = 0D;
       onChanged();
       return this;
     }
