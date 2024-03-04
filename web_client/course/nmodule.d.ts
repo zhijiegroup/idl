@@ -16,6 +16,8 @@ export interface NmCourse {
   cover_url?: string;
   course_classfication?: string;
   course_major?: string;
+  course_level?: string;
+  course_type?: string;
   course_industry?: string;
   course_hours?: number;
 }

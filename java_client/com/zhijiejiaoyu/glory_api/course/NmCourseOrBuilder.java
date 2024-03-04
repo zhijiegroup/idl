@@ -104,19 +104,31 @@ public interface NmCourseOrBuilder extends
       getCourseMajorBytes();
 
   /**
-   * <code>string course_industry = 11;</code>
+   * <code>int64 course_level = 11;</code>
+   * @return The courseLevel.
+   */
+  long getCourseLevel();
+
+  /**
+   * <code>int64 course_type = 12;</code>
+   * @return The courseType.
+   */
+  long getCourseType();
+
+  /**
+   * <code>string course_industry = 13;</code>
    * @return The courseIndustry.
    */
   java.lang.String getCourseIndustry();
   /**
-   * <code>string course_industry = 11;</code>
+   * <code>string course_industry = 13;</code>
    * @return The bytes for courseIndustry.
    */
   com.google.protobuf.ByteString
       getCourseIndustryBytes();
 
   /**
-   * <code>double course_hours = 12;</code>
+   * <code>double course_hours = 14;</code>
    * @return The courseHours.
    */
   double getCourseHours();

@@ -45,6 +45,10 @@ struct GloryApi_NmCourse {
 
   var courseMajor: String = String()
 
+  var courseLevel: Int64 = 0
+
+  var courseType: Int64 = 0
+
   var courseIndustry: String = String()
 
   var courseHours: Double = 0
@@ -289,33 +293,38 @@ struct GloryApi_NmCourseDetailResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var course: GloryApi_NmCourse {
-    get {return _course ?? GloryApi_NmCourse()}
-    set {_course = newValue}
+    get {return _storage._course ?? GloryApi_NmCourse()}
+    set {_uniqueStorage()._course = newValue}
   }
   /// Returns true if `course` has been explicitly set.
-  var hasCourse: Bool {return self._course != nil}
+  var hasCourse: Bool {return _storage._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
-  mutating func clearCourse() {self._course = nil}
+  mutating func clearCourse() {_uniqueStorage()._course = nil}
 
-  var chapters: [GloryApi_NmChapter] = []
+  var chapters: [GloryApi_NmChapter] {
+    get {return _storage._chapters}
+    set {_uniqueStorage()._chapters = newValue}
+  }
 
-  var isJoined: Bool = false
+  var isJoined: Bool {
+    get {return _storage._isJoined}
+    set {_uniqueStorage()._isJoined = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _course: GloryApi_NmCourse? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListNmCourseRequest {
@@ -465,8 +474,10 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     8: .standard(proto: "cover_url"),
     9: .standard(proto: "course_classfication"),
     10: .standard(proto: "course_major"),
-    11: .standard(proto: "course_industry"),
-    12: .standard(proto: "course_hours"),
+    11: .standard(proto: "course_level"),
+    12: .standard(proto: "course_type"),
+    13: .standard(proto: "course_industry"),
+    14: .standard(proto: "course_hours"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -485,8 +496,10 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 8: try { try decoder.decodeSingularStringField(value: &self.coverURL) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseClassfication) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
-      case 11: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
-      case 12: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseLevel) }()
+      case 12: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
+      case 14: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
       default: break
       }
     }
@@ -523,11 +536,17 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.courseMajor.isEmpty {
       try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 10)
     }
+    if self.courseLevel != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseLevel, fieldNumber: 11)
+    }
+    if self.courseType != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseType, fieldNumber: 12)
+    }
     if !self.courseIndustry.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 11)
+      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 13)
     }
     if self.courseHours != 0 {
-      try visitor.visitSingularDoubleField(value: self.courseHours, fieldNumber: 12)
+      try visitor.visitSingularDoubleField(value: self.courseHours, fieldNumber: 14)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -543,6 +562,8 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.coverURL != rhs.coverURL {return false}
     if lhs.courseClassfication != rhs.courseClassfication {return false}
     if lhs.courseMajor != rhs.courseMajor {return false}
+    if lhs.courseLevel != rhs.courseLevel {return false}
+    if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.courseHours != rhs.courseHours {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1043,46 +1064,84 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
     4: .standard(proto: "is_joined"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _course: GloryApi_NmCourse? = nil
+    var _chapters: [GloryApi_NmChapter] = []
+    var _isJoined: Bool = false
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _course = source._course
+      _chapters = source._chapters
+      _isJoined = source._isJoined
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
-      case 4: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._course) }()
+        case 3: try { try decoder.decodeRepeatedMessageField(value: &_storage._chapters) }()
+        case 4: try { try decoder.decodeSingularBoolField(value: &_storage._isJoined) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._course {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    if !self.chapters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 3)
-    }
-    if self.isJoined != false {
-      try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 4)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._course {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+      if !_storage._chapters.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._chapters, fieldNumber: 3)
+      }
+      if _storage._isJoined != false {
+        try visitor.visitSingularBoolField(value: _storage._isJoined, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_NmCourseDetailResponse, rhs: GloryApi_NmCourseDetailResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._course != rhs._course {return false}
-    if lhs.chapters != rhs.chapters {return false}
-    if lhs.isJoined != rhs.isJoined {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._course != rhs_storage._course {return false}
+        if _storage._chapters != rhs_storage._chapters {return false}
+        if _storage._isJoined != rhs_storage._isJoined {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

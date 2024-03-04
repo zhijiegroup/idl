@@ -111,13 +111,23 @@ private static final long serialVersionUID = 0L;
             courseMajor = s;
             break;
           }
-          case 90: {
+          case 88: {
+
+            courseLevel = input.readInt64();
+            break;
+          }
+          case 96: {
+
+            courseType = input.readInt64();
+            break;
+          }
+          case 106: {
             java.lang.String s = input.readStringRequireUtf8();
 
             courseIndustry = s;
             break;
           }
-          case 97: {
+          case 113: {
 
             courseHours = input.readDouble();
             break;
@@ -426,10 +436,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 11;
+  public static final int COURSE_LEVEL_FIELD_NUMBER = 11;
+  private long courseLevel ;
+  /**
+   * <code>int64 course_level = 11;</code>
+   * @return The courseLevel.
+   */
+  @java.lang.Override
+  public long getCourseLevel() {
+    return courseLevel ;
+  }
+
+  public static final int COURSE_TYPE_FIELD_NUMBER = 12;
+  private long courseType ;
+  /**
+   * <code>int64 course_type = 12;</code>
+   * @return The courseType.
+   */
+  @java.lang.Override
+  public long getCourseType() {
+    return courseType ;
+  }
+
+  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 13;
   private volatile java.lang.Object courseIndustry ;
   /**
-   * <code>string course_industry = 11;</code>
+   * <code>string course_industry = 13;</code>
    * @return The courseIndustry.
    */
   @java.lang.Override
@@ -446,7 +478,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string course_industry = 11;</code>
+   * <code>string course_industry = 13;</code>
    * @return The bytes for courseIndustry.
    */
   @java.lang.Override
@@ -464,10 +496,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_HOURS_FIELD_NUMBER = 12;
+  public static final int COURSE_HOURS_FIELD_NUMBER = 14;
   private double courseHours ;
   /**
-   * <code>double course_hours = 12;</code>
+   * <code>double course_hours = 14;</code>
    * @return The courseHours.
    */
   @java.lang.Override
@@ -519,11 +551,17 @@ private static final long serialVersionUID = 0L;
     if (!getCourseMajorBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, courseMajor );
     }
+    if (courseLevel != 0L) {
+      output.writeInt64(11, courseLevel );
+    }
+    if (courseType != 0L) {
+      output.writeInt64(12, courseType );
+    }
     if (!getCourseIndustryBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, courseIndustry );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, courseIndustry );
     }
     if (courseHours != 0D) {
-      output.writeDouble(12, courseHours );
+      output.writeDouble(14, courseHours );
     }
     unknownFields.writeTo(output);
   }
@@ -568,12 +606,20 @@ private static final long serialVersionUID = 0L;
     if (!getCourseMajorBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, courseMajor );
     }
+    if (courseLevel != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(11, courseLevel );
+    }
+    if (courseType != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(12, courseType );
+    }
     if (!getCourseIndustryBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, courseIndustry );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, courseIndustry );
     }
     if (courseHours != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(12, courseHours );
+        .computeDoubleSize(14, courseHours );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -612,6 +658,10 @@ private static final long serialVersionUID = 0L;
         != other.getCourseClassfication()) return false;
     if (!getCourseMajor()
         .equals(other.getCourseMajor())) return false;
+    if (getCourseLevel()
+        != other.getCourseLevel()) return false;
+    if (getCourseType()
+        != other.getCourseType()) return false;
     if (!getCourseIndustry()
         .equals(other.getCourseIndustry())) return false;
     if (java.lang.Double.doubleToLongBits(getCourseHours())
@@ -652,6 +702,12 @@ private static final long serialVersionUID = 0L;
         getCourseClassfication());
     hash = (37 * hash) + COURSE_MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getCourseMajor().hashCode();
+    hash = (37 * hash) + COURSE_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseLevel());
+    hash = (37 * hash) + COURSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseType());
     hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
     hash = (53 * hash) + getCourseIndustry().hashCode();
     hash = (37 * hash) + COURSE_HOURS_FIELD_NUMBER;
@@ -810,6 +866,10 @@ private static final long serialVersionUID = 0L;
 
       courseMajor = "";
 
+      courseLevel = 0L;
+
+      courseType = 0L;
+
       courseIndustry = "";
 
       courseHours = 0D;
@@ -850,6 +910,8 @@ private static final long serialVersionUID = 0L;
       result.coverUrl = coverUrl ;
       result.courseClassfication = courseClassfication ;
       result.courseMajor = courseMajor ;
+      result.courseLevel = courseLevel ;
+      result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
       result.courseHours = courseHours ;
       onBuilt();
@@ -935,6 +997,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getCourseMajor().isEmpty()) {
         courseMajor = other.courseMajor ;
         onChanged();
+      }
+      if (other.getCourseLevel() != 0L) {
+        setCourseLevel(other.getCourseLevel());
+      }
+      if (other.getCourseType() != 0L) {
+        setCourseType(other.getCourseType());
       }
       if (!other.getCourseIndustry().isEmpty()) {
         courseIndustry = other.courseIndustry ;
@@ -1552,9 +1620,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long courseLevel ;
+    /**
+     * <code>int64 course_level = 11;</code>
+     * @return The courseLevel.
+     */
+    @java.lang.Override
+    public long getCourseLevel() {
+      return courseLevel ;
+    }
+    /**
+     * <code>int64 course_level = 11;</code>
+     * @param value The courseLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseLevel(long value) {
+      
+      courseLevel = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 course_level = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseLevel() {
+      
+      courseLevel = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long courseType ;
+    /**
+     * <code>int64 course_type = 12;</code>
+     * @return The courseType.
+     */
+    @java.lang.Override
+    public long getCourseType() {
+      return courseType ;
+    }
+    /**
+     * <code>int64 course_type = 12;</code>
+     * @param value The courseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseType(long value) {
+      
+      courseType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 course_type = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseType() {
+      
+      courseType = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object courseIndustry = "";
     /**
-     * <code>string course_industry = 11;</code>
+     * <code>string course_industry = 13;</code>
      * @return The courseIndustry.
      */
     public java.lang.String getCourseIndustry() {
@@ -1570,7 +1700,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_industry = 11;</code>
+     * <code>string course_industry = 13;</code>
      * @return The bytes for courseIndustry.
      */
     public com.google.protobuf.ByteString
@@ -1587,7 +1717,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string course_industry = 11;</code>
+     * <code>string course_industry = 13;</code>
      * @param value The courseIndustry to set.
      * @return This builder for chaining.
      */
@@ -1602,7 +1732,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_industry = 11;</code>
+     * <code>string course_industry = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseIndustry() {
@@ -1612,7 +1742,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string course_industry = 11;</code>
+     * <code>string course_industry = 13;</code>
      * @param value The bytes for courseIndustry to set.
      * @return This builder for chaining.
      */
@@ -1630,7 +1760,7 @@ private static final long serialVersionUID = 0L;
 
     private double courseHours ;
     /**
-     * <code>double course_hours = 12;</code>
+     * <code>double course_hours = 14;</code>
      * @return The courseHours.
      */
     @java.lang.Override
@@ -1638,7 +1768,7 @@ private static final long serialVersionUID = 0L;
       return courseHours ;
     }
     /**
-     * <code>double course_hours = 12;</code>
+     * <code>double course_hours = 14;</code>
      * @param value The courseHours to set.
      * @return This builder for chaining.
      */
@@ -1649,7 +1779,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>double course_hours = 12;</code>
+     * <code>double course_hours = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseHours() {

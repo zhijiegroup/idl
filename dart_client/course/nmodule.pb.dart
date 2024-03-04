@@ -28,6 +28,8 @@ class NmCourse extends $pb.GeneratedMessage {
     $core.String? coverUrl,
     $fixnum.Int64? courseClassfication,
     $core.String? courseMajor,
+    $fixnum.Int64? courseLevel,
+    $fixnum.Int64? courseType,
     $core.String? courseIndustry,
     $core.double? courseHours,
   }) {
@@ -62,6 +64,12 @@ class NmCourse extends $pb.GeneratedMessage {
     if (courseMajor != null) {
       $result.courseMajor = courseMajor;
     }
+    if (courseLevel != null) {
+      $result.courseLevel = courseLevel;
+    }
+    if (courseType != null) {
+      $result.courseType = courseType;
+    }
     if (courseIndustry != null) {
       $result.courseIndustry = courseIndustry;
     }
@@ -85,8 +93,10 @@ class NmCourse extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'coverUrl')
     ..aInt64(9, _omitFieldNames ? '' : 'courseClassfication')
     ..aOS(10, _omitFieldNames ? '' : 'courseMajor')
-    ..aOS(11, _omitFieldNames ? '' : 'courseIndustry')
-    ..a<$core.double>(12, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
+    ..aInt64(11, _omitFieldNames ? '' : 'courseLevel')
+    ..aInt64(12, _omitFieldNames ? '' : 'courseType')
+    ..aOS(13, _omitFieldNames ? '' : 'courseIndustry')
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -202,22 +212,40 @@ class NmCourse extends $pb.GeneratedMessage {
   void clearCourseMajor() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get courseIndustry => $_getSZ(10);
+  $fixnum.Int64 get courseLevel => $_getI64(10);
   @$pb.TagNumber(11)
-  set courseIndustry($core.String v) { $_setString(10, v); }
+  set courseLevel($fixnum.Int64 v) { $_setInt64(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCourseIndustry() => $_has(10);
+  $core.bool hasCourseLevel() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCourseIndustry() => clearField(11);
+  void clearCourseLevel() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.double get courseHours => $_getN(11);
+  $fixnum.Int64 get courseType => $_getI64(11);
   @$pb.TagNumber(12)
-  set courseHours($core.double v) { $_setDouble(11, v); }
+  set courseType($fixnum.Int64 v) { $_setInt64(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasCourseHours() => $_has(11);
+  $core.bool hasCourseType() => $_has(11);
   @$pb.TagNumber(12)
-  void clearCourseHours() => clearField(12);
+  void clearCourseType() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get courseIndustry => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set courseIndustry($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasCourseIndustry() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCourseIndustry() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.double get courseHours => $_getN(13);
+  @$pb.TagNumber(14)
+  set courseHours($core.double v) { $_setDouble(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCourseHours() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCourseHours() => clearField(14);
 }
 
 class CreateNmCourseChapterResourceRequest extends $pb.GeneratedMessage {

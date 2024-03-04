@@ -27,8 +27,10 @@ const NmCourse$json = {
     {'1': 'cover_url', '3': 8, '4': 1, '5': 9, '10': 'coverUrl'},
     {'1': 'course_classfication', '3': 9, '4': 1, '5': 3, '10': 'courseClassfication'},
     {'1': 'course_major', '3': 10, '4': 1, '5': 9, '10': 'courseMajor'},
-    {'1': 'course_industry', '3': 11, '4': 1, '5': 9, '10': 'courseIndustry'},
-    {'1': 'course_hours', '3': 12, '4': 1, '5': 1, '10': 'courseHours'},
+    {'1': 'course_level', '3': 11, '4': 1, '5': 3, '10': 'courseLevel'},
+    {'1': 'course_type', '3': 12, '4': 1, '5': 3, '10': 'courseType'},
+    {'1': 'course_industry', '3': 13, '4': 1, '5': 9, '10': 'courseIndustry'},
+    {'1': 'course_hours', '3': 14, '4': 1, '5': 1, '10': 'courseHours'},
   ],
 };
 
@@ -41,8 +43,9 @@ final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'BiABKAFSDmtub3dsZWRnZUhvdXJzEi0KEmNvdXJzZV9kZXNjcmlwdGlvbhgHIAEoCVIRY291cn'
     'NlRGVzY3JpcHRpb24SGwoJY292ZXJfdXJsGAggASgJUghjb3ZlclVybBIxChRjb3Vyc2VfY2xh'
     'c3NmaWNhdGlvbhgJIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbWFqb3IYCi'
-    'ABKAlSC2NvdXJzZU1ham9yEicKD2NvdXJzZV9pbmR1c3RyeRgLIAEoCVIOY291cnNlSW5kdXN0'
-    'cnkSIQoMY291cnNlX2hvdXJzGAwgASgBUgtjb3Vyc2VIb3Vycw==');
+    'ABKAlSC2NvdXJzZU1ham9yEiEKDGNvdXJzZV9sZXZlbBgLIAEoA1ILY291cnNlTGV2ZWwSHwoL'
+    'Y291cnNlX3R5cGUYDCABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GA0gASgJUg'
+    '5jb3Vyc2VJbmR1c3RyeRIhCgxjb3Vyc2VfaG91cnMYDiABKAFSC2NvdXJzZUhvdXJz');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {
