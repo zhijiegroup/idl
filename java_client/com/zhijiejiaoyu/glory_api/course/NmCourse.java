@@ -104,7 +104,7 @@ private static final long serialVersionUID = 0L;
           }
           case 72: {
 
-            courseClassfication = input.readInt64();
+            courseClassification = input.readInt64();
             break;
           }
           case 82: {
@@ -401,15 +401,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_CLASSFICATION_FIELD_NUMBER = 9;
-  private long courseClassfication ;
+  public static final int COURSE_CLASSIFICATION_FIELD_NUMBER = 9;
+  private long courseClassification ;
   /**
-   * <code>int64 course_classfication = 9;</code>
-   * @return The courseClassfication.
+   * <code>int64 course_classification = 9;</code>
+   * @return The courseClassification.
    */
   @java.lang.Override
-  public long getCourseClassfication() {
-    return courseClassfication ;
+  public long getCourseClassification() {
+    return courseClassification ;
   }
 
   public static final int COURSE_MAJOR_FIELD_NUMBER = 10;
@@ -599,8 +599,8 @@ private static final long serialVersionUID = 0L;
     if (!getCoverUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, coverUrl );
     }
-    if (courseClassfication != 0L) {
-      output.writeInt64(9, courseClassfication );
+    if (courseClassification != 0L) {
+      output.writeInt64(9, courseClassification );
     }
     if (!getCourseMajorBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, courseMajor );
@@ -656,9 +656,9 @@ private static final long serialVersionUID = 0L;
     if (!getCoverUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, coverUrl );
     }
-    if (courseClassfication != 0L) {
+    if (courseClassification != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, courseClassfication );
+        .computeInt64Size(9, courseClassification );
     }
     if (!getCourseMajorBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, courseMajor );
@@ -715,8 +715,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseDescription())) return false;
     if (!getCoverUrl()
         .equals(other.getCoverUrl())) return false;
-    if (getCourseClassfication()
-        != other.getCourseClassfication()) return false;
+    if (getCourseClassification()
+        != other.getCourseClassification()) return false;
     if (!getCourseMajor()
         .equals(other.getCourseMajor())) return false;
     if (getCourseLevel()
@@ -760,9 +760,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseDescription().hashCode();
     hash = (37 * hash) + COVER_URL_FIELD_NUMBER;
     hash = (53 * hash) + getCoverUrl().hashCode();
-    hash = (37 * hash) + COURSE_CLASSFICATION_FIELD_NUMBER;
+    hash = (37 * hash) + COURSE_CLASSIFICATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCourseClassfication());
+        getCourseClassification());
     hash = (37 * hash) + COURSE_MAJOR_FIELD_NUMBER;
     hash = (53 * hash) + getCourseMajor().hashCode();
     hash = (37 * hash) + COURSE_LEVEL_FIELD_NUMBER;
@@ -930,7 +930,7 @@ private static final long serialVersionUID = 0L;
 
       coverUrl = "";
 
-      courseClassfication = 0L;
+      courseClassification = 0L;
 
       courseMajor = "";
 
@@ -983,7 +983,7 @@ private static final long serialVersionUID = 0L;
       result.knowledgeHours = knowledgeHours ;
       result.courseDescription = courseDescription ;
       result.coverUrl = coverUrl ;
-      result.courseClassfication = courseClassfication ;
+      result.courseClassification = courseClassification ;
       result.courseMajor = courseMajor ;
       result.courseLevel = courseLevel ;
       result.courseType = courseType ;
@@ -1075,8 +1075,8 @@ private static final long serialVersionUID = 0L;
         coverUrl = other.coverUrl ;
         onChanged();
       }
-      if (other.getCourseClassfication() != 0L) {
-        setCourseClassfication(other.getCourseClassfication());
+      if (other.getCourseClassification() != 0L) {
+        setCourseClassification(other.getCourseClassification());
       }
       if (!other.getCourseMajor().isEmpty()) {
         courseMajor = other.courseMajor ;
@@ -1624,33 +1624,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long courseClassfication ;
+    private long courseClassification ;
     /**
-     * <code>int64 course_classfication = 9;</code>
-     * @return The courseClassfication.
+     * <code>int64 course_classification = 9;</code>
+     * @return The courseClassification.
      */
     @java.lang.Override
-    public long getCourseClassfication() {
-      return courseClassfication ;
+    public long getCourseClassification() {
+      return courseClassification ;
     }
     /**
-     * <code>int64 course_classfication = 9;</code>
-     * @param value The courseClassfication to set.
+     * <code>int64 course_classification = 9;</code>
+     * @param value The courseClassification to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseClassfication(long value) {
+    public Builder setCourseClassification(long value) {
       
-      courseClassfication = value;
+      courseClassification = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 course_classfication = 9;</code>
+     * <code>int64 course_classification = 9;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseClassfication() {
+    public Builder clearCourseClassification() {
       
-      courseClassfication = 0L;
+      courseClassification = 0L;
       onChanged();
       return this;
     }

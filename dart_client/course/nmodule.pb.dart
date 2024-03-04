@@ -26,7 +26,7 @@ class NmCourse extends $pb.GeneratedMessage {
     $core.double? knowledgeHours,
     $core.String? courseDescription,
     $core.String? coverUrl,
-    $fixnum.Int64? courseClassfication,
+    $fixnum.Int64? courseClassification,
     $core.String? courseMajor,
     $fixnum.Int64? courseLevel,
     $fixnum.Int64? courseType,
@@ -59,8 +59,8 @@ class NmCourse extends $pb.GeneratedMessage {
     if (coverUrl != null) {
       $result.coverUrl = coverUrl;
     }
-    if (courseClassfication != null) {
-      $result.courseClassfication = courseClassfication;
+    if (courseClassification != null) {
+      $result.courseClassification = courseClassification;
     }
     if (courseMajor != null) {
       $result.courseMajor = courseMajor;
@@ -95,7 +95,7 @@ class NmCourse extends $pb.GeneratedMessage {
     ..a<$core.double>(6, _omitFieldNames ? '' : 'knowledgeHours', $pb.PbFieldType.OD)
     ..aOS(7, _omitFieldNames ? '' : 'courseDescription')
     ..aOS(8, _omitFieldNames ? '' : 'coverUrl')
-    ..aInt64(9, _omitFieldNames ? '' : 'courseClassfication')
+    ..aInt64(9, _omitFieldNames ? '' : 'courseClassification')
     ..aOS(10, _omitFieldNames ? '' : 'courseMajor')
     ..aInt64(11, _omitFieldNames ? '' : 'courseLevel')
     ..aInt64(12, _omitFieldNames ? '' : 'courseType')
@@ -199,13 +199,13 @@ class NmCourse extends $pb.GeneratedMessage {
   void clearCoverUrl() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get courseClassfication => $_getI64(8);
+  $fixnum.Int64 get courseClassification => $_getI64(8);
   @$pb.TagNumber(9)
-  set courseClassfication($fixnum.Int64 v) { $_setInt64(8, v); }
+  set courseClassification($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCourseClassfication() => $_has(8);
+  $core.bool hasCourseClassification() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCourseClassfication() => clearField(9);
+  void clearCourseClassification() => clearField(9);
 
   @$pb.TagNumber(10)
   $core.String get courseMajor => $_getSZ(9);

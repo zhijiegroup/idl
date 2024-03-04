@@ -25,7 +25,7 @@ const NmCourse$json = {
     {'1': 'knowledge_hours', '3': 6, '4': 1, '5': 1, '10': 'knowledgeHours'},
     {'1': 'course_description', '3': 7, '4': 1, '5': 9, '10': 'courseDescription'},
     {'1': 'cover_url', '3': 8, '4': 1, '5': 9, '10': 'coverUrl'},
-    {'1': 'course_classfication', '3': 9, '4': 1, '5': 3, '10': 'courseClassfication'},
+    {'1': 'course_classification', '3': 9, '4': 1, '5': 3, '10': 'courseClassification'},
     {'1': 'course_major', '3': 10, '4': 1, '5': 9, '10': 'courseMajor'},
     {'1': 'course_level', '3': 11, '4': 1, '5': 3, '10': 'courseLevel'},
     {'1': 'course_type', '3': 12, '4': 1, '5': 3, '10': 'courseType'},
@@ -42,12 +42,12 @@ final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'Z2FuaXphdGlvbhIuChNjb3Vyc2VfdGVhY2hlcl9uYW1lGAQgASgJUhFjb3Vyc2VUZWFjaGVyTm'
     'FtZRIfCgtza2lsbF9ob3VycxgFIAEoAVIKc2tpbGxIb3VycxInCg9rbm93bGVkZ2VfaG91cnMY'
     'BiABKAFSDmtub3dsZWRnZUhvdXJzEi0KEmNvdXJzZV9kZXNjcmlwdGlvbhgHIAEoCVIRY291cn'
-    'NlRGVzY3JpcHRpb24SGwoJY292ZXJfdXJsGAggASgJUghjb3ZlclVybBIxChRjb3Vyc2VfY2xh'
-    'c3NmaWNhdGlvbhgJIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbWFqb3IYCi'
-    'ABKAlSC2NvdXJzZU1ham9yEiEKDGNvdXJzZV9sZXZlbBgLIAEoA1ILY291cnNlTGV2ZWwSHwoL'
-    'Y291cnNlX3R5cGUYDCABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GA0gASgJUg'
-    '5jb3Vyc2VJbmR1c3RyeRIhCgxjb3Vyc2VfaG91cnMYDiABKAFSC2NvdXJzZUhvdXJzEjAKCGNo'
-    'YXB0ZXJzGA8gAygLMhQuZ2xvcnlfYXBpLk5tQ2hhcHRlclIIY2hhcHRlcnM=');
+    'NlRGVzY3JpcHRpb24SGwoJY292ZXJfdXJsGAggASgJUghjb3ZlclVybBIzChVjb3Vyc2VfY2xh'
+    'c3NpZmljYXRpb24YCSABKANSFGNvdXJzZUNsYXNzaWZpY2F0aW9uEiEKDGNvdXJzZV9tYWpvch'
+    'gKIAEoCVILY291cnNlTWFqb3ISIQoMY291cnNlX2xldmVsGAsgASgDUgtjb3Vyc2VMZXZlbBIf'
+    'Cgtjb3Vyc2VfdHlwZRgMIAEoA1IKY291cnNlVHlwZRInCg9jb3Vyc2VfaW5kdXN0cnkYDSABKA'
+    'lSDmNvdXJzZUluZHVzdHJ5EiEKDGNvdXJzZV9ob3VycxgOIAEoAVILY291cnNlSG91cnMSMAoI'
+    'Y2hhcHRlcnMYDyADKAsyFC5nbG9yeV9hcGkuTm1DaGFwdGVyUghjaGFwdGVycw==');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {

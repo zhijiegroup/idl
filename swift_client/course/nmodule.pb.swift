@@ -41,7 +41,7 @@ struct GloryApi_NmCourse {
 
   var coverURL: String = String()
 
-  var courseClassfication: Int64 = 0
+  var courseClassification: Int64 = 0
 
   var courseMajor: String = String()
 
@@ -469,7 +469,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     6: .standard(proto: "knowledge_hours"),
     7: .standard(proto: "course_description"),
     8: .standard(proto: "cover_url"),
-    9: .standard(proto: "course_classfication"),
+    9: .standard(proto: "course_classification"),
     10: .standard(proto: "course_major"),
     11: .standard(proto: "course_level"),
     12: .standard(proto: "course_type"),
@@ -492,7 +492,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 6: try { try decoder.decodeSingularDoubleField(value: &self.knowledgeHours) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseDescription) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.coverURL) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseClassfication) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseClassification) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseLevel) }()
       case 12: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
@@ -529,8 +529,8 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.coverURL.isEmpty {
       try visitor.visitSingularStringField(value: self.coverURL, fieldNumber: 8)
     }
-    if self.courseClassfication != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseClassfication, fieldNumber: 9)
+    if self.courseClassification != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseClassification, fieldNumber: 9)
     }
     if !self.courseMajor.isEmpty {
       try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 10)
@@ -562,7 +562,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.knowledgeHours != rhs.knowledgeHours {return false}
     if lhs.courseDescription != rhs.courseDescription {return false}
     if lhs.coverURL != rhs.coverURL {return false}
-    if lhs.courseClassfication != rhs.courseClassfication {return false}
+    if lhs.courseClassification != rhs.courseClassification {return false}
     if lhs.courseMajor != rhs.courseMajor {return false}
     if lhs.courseLevel != rhs.courseLevel {return false}
     if lhs.courseType != rhs.courseType {return false}

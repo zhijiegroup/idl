@@ -86,10 +86,10 @@ public interface NmCourseOrBuilder extends
       getCoverUrlBytes();
 
   /**
-   * <code>int64 course_classfication = 9;</code>
-   * @return The courseClassfication.
+   * <code>int64 course_classification = 9;</code>
+   * @return The courseClassification.
    */
-  long getCourseClassfication();
+  long getCourseClassification();
 
   /**
    * <code>string course_major = 10;</code>
