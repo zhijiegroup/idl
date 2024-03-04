@@ -58,7 +58,21 @@ export interface CreateNmCourseRequest {
   /** 课程类型：1:核心课程 2:名师公开课 */
   course_type?: string;
   course_industry?: string;
-  chapter_ids?: Array<string>;
+  chapters?: Array<NmChapter>;
+}
+
+export interface NmChapter {
+  chapter_id?: string;
+  chapter_name?: string;
+  resources?: Array<NmResource>;
+}
+
+export interface NmResource {
+  resource_id?: string;
+  resource_name?: string;
+  resource_type?: string;
+  resource_path?: string;
+  resource_url?: string;
 }
 
 export interface CreateNmCourseResponse {
@@ -74,6 +88,7 @@ export interface NmCourseDetailRequest {
 export interface NmCourseDetailResponse {
   base_resp?: base.BaseResponse;
   course?: NmCourse;
+  chapters?: Array<NmChapter>;
   is_joined?: boolean;
 }
 

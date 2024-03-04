@@ -190,13 +190,49 @@ struct GloryApi_CreateNmCourseRequest {
 
   var courseIndustry: String = String()
 
-  var chapterIds: [Int64] = []
+  var chapters: [GloryApi_NmChapter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_NmChapter {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var chapterID: Int64 = 0
+
+  var chapterName: String = String()
+
+  var resources: [GloryApi_NmResource] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_NmResource {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var resourceID: Int64 = 0
+
+  var resourceName: String = String()
+
+  var resourceType: Int64 = 0
+
+  var resourcePath: String = String()
+
+  var resourceURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
 }
 
 struct GloryApi_CreateNmCourseResponse {
@@ -267,6 +303,8 @@ struct GloryApi_NmCourseDetailResponse {
   var hasCourse: Bool {return self._course != nil}
   /// Clears the value of `course`. Subsequent reads from it will return its default value.
   mutating func clearCourse() {self._course = nil}
+
+  var chapters: [GloryApi_NmChapter] = []
 
   var isJoined: Bool = false
 
@@ -397,6 +435,8 @@ extension GloryApi_CreateNmCourseChapterResourceResponse: @unchecked Sendable {}
 extension GloryApi_CreateNmCourseChapterRequest: @unchecked Sendable {}
 extension GloryApi_CreateNmCourseChapterResponse: @unchecked Sendable {}
 extension GloryApi_CreateNmCourseRequest: @unchecked Sendable {}
+extension GloryApi_NmChapter: @unchecked Sendable {}
+extension GloryApi_NmResource: @unchecked Sendable {}
 extension GloryApi_CreateNmCourseResponse: @unchecked Sendable {}
 extension GloryApi_NmCourseDetailRequest: @unchecked Sendable {}
 extension GloryApi_NmCourseDetailResponse: @unchecked Sendable {}
@@ -709,7 +749,7 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     10: .standard(proto: "course_major"),
     11: .standard(proto: "course_type"),
     12: .standard(proto: "course_industry"),
-    13: .standard(proto: "chapter_ids"),
+    13: .same(proto: "chapters"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -730,7 +770,7 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
-      case 13: try { try decoder.decodeRepeatedInt64Field(value: &self.chapterIds) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       default: break
       }
     }
@@ -777,8 +817,8 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.courseIndustry.isEmpty {
       try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 12)
     }
-    if !self.chapterIds.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.chapterIds, fieldNumber: 13)
+    if !self.chapters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -796,7 +836,107 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.courseMajor != rhs.courseMajor {return false}
     if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
-    if lhs.chapterIds != rhs.chapterIds {return false}
+    if lhs.chapters != rhs.chapters {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".NmChapter"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "chapter_id"),
+    2: .standard(proto: "chapter_name"),
+    3: .same(proto: "resources"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.resources) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.chapterID != 0 {
+      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 1)
+    }
+    if !self.chapterName.isEmpty {
+      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 2)
+    }
+    if !self.resources.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_NmChapter, rhs: GloryApi_NmChapter) -> Bool {
+    if lhs.chapterID != rhs.chapterID {return false}
+    if lhs.chapterName != rhs.chapterName {return false}
+    if lhs.resources != rhs.resources {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".NmResource"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "resource_id"),
+    2: .standard(proto: "resource_name"),
+    3: .standard(proto: "resource_type"),
+    4: .standard(proto: "resource_path"),
+    5: .standard(proto: "resource_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.resourceID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.resourceName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.resourceType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.resourceID != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourceID, fieldNumber: 1)
+    }
+    if !self.resourceName.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceName, fieldNumber: 2)
+    }
+    if self.resourceType != 0 {
+      try visitor.visitSingularInt64Field(value: self.resourceType, fieldNumber: 3)
+    }
+    if !self.resourcePath.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourcePath, fieldNumber: 4)
+    }
+    if !self.resourceURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.resourceURL, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_NmResource, rhs: GloryApi_NmResource) -> Bool {
+    if lhs.resourceID != rhs.resourceID {return false}
+    if lhs.resourceName != rhs.resourceName {return false}
+    if lhs.resourceType != rhs.resourceType {return false}
+    if lhs.resourcePath != rhs.resourcePath {return false}
+    if lhs.resourceURL != rhs.resourceURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -891,7 +1031,8 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "course"),
-    3: .standard(proto: "is_joined"),
+    3: .same(proto: "chapters"),
+    4: .standard(proto: "is_joined"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -902,7 +1043,8 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._course) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self.isJoined) }()
       default: break
       }
     }
@@ -919,8 +1061,11 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._course {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if !self.chapters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 3)
+    }
     if self.isJoined != false {
-      try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 3)
+      try visitor.visitSingularBoolField(value: self.isJoined, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -928,6 +1073,7 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_NmCourseDetailResponse, rhs: GloryApi_NmCourseDetailResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._course != rhs._course {return false}
+    if lhs.chapters != rhs.chapters {return false}
     if lhs.isJoined != rhs.isJoined {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

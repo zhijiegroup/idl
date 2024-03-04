@@ -124,7 +124,7 @@ const CreateNmCourseRequest$json = {
     {'1': 'course_major', '3': 10, '4': 1, '5': 9, '10': 'courseMajor'},
     {'1': 'course_type', '3': 11, '4': 1, '5': 3, '10': 'courseType'},
     {'1': 'course_industry', '3': 12, '4': 1, '5': 9, '10': 'courseIndustry'},
-    {'1': 'chapter_ids', '3': 13, '4': 3, '5': 3, '10': 'chapterIds'},
+    {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
   ],
 };
 
@@ -139,7 +139,43 @@ final $typed_data.Uint8List createNmCourseRequestDescriptor = $convert.base64Dec
     'aWNhdGlvbhgIIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbGV2ZWwYCSABKA'
     'NSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3ISHwoLY291'
     'cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgASgJUg5jb3'
-    'Vyc2VJbmR1c3RyeRIfCgtjaGFwdGVyX2lkcxgNIAMoA1IKY2hhcHRlcklkcw==');
+    'Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0ZXJSCGNo'
+    'YXB0ZXJz');
+
+@$core.Deprecated('Use nmChapterDescriptor instead')
+const NmChapter$json = {
+  '1': 'NmChapter',
+  '2': [
+    {'1': 'chapter_id', '3': 1, '4': 1, '5': 3, '10': 'chapterId'},
+    {'1': 'chapter_name', '3': 2, '4': 1, '5': 9, '10': 'chapterName'},
+    {'1': 'resources', '3': 3, '4': 3, '5': 11, '6': '.glory_api.NmResource', '10': 'resources'},
+  ],
+};
+
+/// Descriptor for `NmChapter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nmChapterDescriptor = $convert.base64Decode(
+    'CglObUNoYXB0ZXISHQoKY2hhcHRlcl9pZBgBIAEoA1IJY2hhcHRlcklkEiEKDGNoYXB0ZXJfbm'
+    'FtZRgCIAEoCVILY2hhcHRlck5hbWUSMwoJcmVzb3VyY2VzGAMgAygLMhUuZ2xvcnlfYXBpLk5t'
+    'UmVzb3VyY2VSCXJlc291cmNlcw==');
+
+@$core.Deprecated('Use nmResourceDescriptor instead')
+const NmResource$json = {
+  '1': 'NmResource',
+  '2': [
+    {'1': 'resource_id', '3': 1, '4': 1, '5': 3, '10': 'resourceId'},
+    {'1': 'resource_name', '3': 2, '4': 1, '5': 9, '10': 'resourceName'},
+    {'1': 'resource_type', '3': 3, '4': 1, '5': 3, '10': 'resourceType'},
+    {'1': 'resource_path', '3': 4, '4': 1, '5': 9, '10': 'resourcePath'},
+    {'1': 'resource_url', '3': 5, '4': 1, '5': 9, '10': 'resourceUrl'},
+  ],
+};
+
+/// Descriptor for `NmResource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nmResourceDescriptor = $convert.base64Decode(
+    'CgpObVJlc291cmNlEh8KC3Jlc291cmNlX2lkGAEgASgDUgpyZXNvdXJjZUlkEiMKDXJlc291cm'
+    'NlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIjCg1yZXNvdXJjZV90eXBlGAMgASgDUgxyZXNv'
+    'dXJjZVR5cGUSIwoNcmVzb3VyY2VfcGF0aBgEIAEoCVIMcmVzb3VyY2VQYXRoEiEKDHJlc291cm'
+    'NlX3VybBgFIAEoCVILcmVzb3VyY2VVcmw=');
 
 @$core.Deprecated('Use createNmCourseResponseDescriptor instead')
 const CreateNmCourseResponse$json = {
@@ -175,7 +211,8 @@ const NmCourseDetailResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.NmCourse', '10': 'course'},
-    {'1': 'is_joined', '3': 3, '4': 1, '5': 8, '10': 'isJoined'},
+    {'1': 'chapters', '3': 3, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
+    {'1': 'is_joined', '3': 4, '4': 1, '5': 8, '10': 'isJoined'},
   ],
 };
 
@@ -183,7 +220,8 @@ const NmCourseDetailResponse$json = {
 final $typed_data.Uint8List nmCourseDetailResponseDescriptor = $convert.base64Decode(
     'ChZObUNvdXJzZURldGFpbFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBIrCgZjb3Vyc2UYAiABKAsyEy5nbG9yeV9hcGkuTm1Db3Vyc2VS'
-    'BmNvdXJzZRIbCglpc19qb2luZWQYAyABKAhSCGlzSm9pbmVk');
+    'BmNvdXJzZRIwCghjaGFwdGVycxgDIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0ZXJSCGNoYXB0ZX'
+    'JzEhsKCWlzX2pvaW5lZBgEIAEoCFIIaXNKb2luZWQ=');
 
 @$core.Deprecated('Use listNmCourseRequestDescriptor instead')
 const ListNmCourseRequest$json = {

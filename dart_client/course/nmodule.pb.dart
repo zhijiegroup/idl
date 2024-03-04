@@ -540,7 +540,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     $core.String? courseMajor,
     $fixnum.Int64? courseType,
     $core.String? courseIndustry,
-    $core.Iterable<$fixnum.Int64>? chapterIds,
+    $core.Iterable<NmChapter>? chapters,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -579,8 +579,8 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseIndustry != null) {
       $result.courseIndustry = courseIndustry;
     }
-    if (chapterIds != null) {
-      $result.chapterIds.addAll(chapterIds);
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
     }
     return $result;
   }
@@ -601,7 +601,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'courseMajor')
     ..aInt64(11, _omitFieldNames ? '' : 'courseType')
     ..aOS(12, _omitFieldNames ? '' : 'courseIndustry')
-    ..p<$fixnum.Int64>(13, _omitFieldNames ? '' : 'chapterIds', $pb.PbFieldType.K6)
+    ..pc<NmChapter>(13, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..hasRequiredFields = false
   ;
 
@@ -737,7 +737,185 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   void clearCourseIndustry() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.List<$fixnum.Int64> get chapterIds => $_getList(12);
+  $core.List<NmChapter> get chapters => $_getList(12);
+}
+
+class NmChapter extends $pb.GeneratedMessage {
+  factory NmChapter({
+    $fixnum.Int64? chapterId,
+    $core.String? chapterName,
+    $core.Iterable<NmResource>? resources,
+  }) {
+    final $result = create();
+    if (chapterId != null) {
+      $result.chapterId = chapterId;
+    }
+    if (chapterName != null) {
+      $result.chapterName = chapterName;
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    return $result;
+  }
+  NmChapter._() : super();
+  factory NmChapter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NmChapter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmChapter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'chapterId')
+    ..aOS(2, _omitFieldNames ? '' : 'chapterName')
+    ..pc<NmResource>(3, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: NmResource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NmChapter clone() => NmChapter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NmChapter copyWith(void Function(NmChapter) updates) => super.copyWith((message) => updates(message as NmChapter)) as NmChapter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NmChapter create() => NmChapter._();
+  NmChapter createEmptyInstance() => create();
+  static $pb.PbList<NmChapter> createRepeated() => $pb.PbList<NmChapter>();
+  @$core.pragma('dart2js:noInline')
+  static NmChapter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NmChapter>(create);
+  static NmChapter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get chapterId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set chapterId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasChapterId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapterId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get chapterName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set chapterName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChapterName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChapterName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<NmResource> get resources => $_getList(2);
+}
+
+class NmResource extends $pb.GeneratedMessage {
+  factory NmResource({
+    $fixnum.Int64? resourceId,
+    $core.String? resourceName,
+    $fixnum.Int64? resourceType,
+    $core.String? resourcePath,
+    $core.String? resourceUrl,
+  }) {
+    final $result = create();
+    if (resourceId != null) {
+      $result.resourceId = resourceId;
+    }
+    if (resourceName != null) {
+      $result.resourceName = resourceName;
+    }
+    if (resourceType != null) {
+      $result.resourceType = resourceType;
+    }
+    if (resourcePath != null) {
+      $result.resourcePath = resourcePath;
+    }
+    if (resourceUrl != null) {
+      $result.resourceUrl = resourceUrl;
+    }
+    return $result;
+  }
+  NmResource._() : super();
+  factory NmResource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NmResource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmResource', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'resourceId')
+    ..aOS(2, _omitFieldNames ? '' : 'resourceName')
+    ..aInt64(3, _omitFieldNames ? '' : 'resourceType')
+    ..aOS(4, _omitFieldNames ? '' : 'resourcePath')
+    ..aOS(5, _omitFieldNames ? '' : 'resourceUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NmResource clone() => NmResource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NmResource copyWith(void Function(NmResource) updates) => super.copyWith((message) => updates(message as NmResource)) as NmResource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NmResource create() => NmResource._();
+  NmResource createEmptyInstance() => create();
+  static $pb.PbList<NmResource> createRepeated() => $pb.PbList<NmResource>();
+  @$core.pragma('dart2js:noInline')
+  static NmResource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NmResource>(create);
+  static NmResource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get resourceId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set resourceId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasResourceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResourceId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resourceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resourceName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResourceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get resourceType => $_getI64(2);
+  @$pb.TagNumber(3)
+  set resourceType($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResourceType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResourceType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resourcePath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resourcePath($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResourcePath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourcePath() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get resourceUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set resourceUrl($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasResourceUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearResourceUrl() => clearField(5);
 }
 
 class CreateNmCourseResponse extends $pb.GeneratedMessage {
@@ -876,6 +1054,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   factory NmCourseDetailResponse({
     $0.BaseResponse? baseResp,
     NmCourse? course,
+    $core.Iterable<NmChapter>? chapters,
     $core.bool? isJoined,
   }) {
     final $result = create();
@@ -884,6 +1063,9 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     }
     if (course != null) {
       $result.course = course;
+    }
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
     }
     if (isJoined != null) {
       $result.isJoined = isJoined;
@@ -897,7 +1079,8 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmCourseDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<NmCourse>(2, _omitFieldNames ? '' : 'course', subBuilder: NmCourse.create)
-    ..aOB(3, _omitFieldNames ? '' : 'isJoined')
+    ..pc<NmChapter>(3, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..aOB(4, _omitFieldNames ? '' : 'isJoined')
     ..hasRequiredFields = false
   ;
 
@@ -945,13 +1128,16 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   NmCourse ensureCourse() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.bool get isJoined => $_getBF(2);
-  @$pb.TagNumber(3)
-  set isJoined($core.bool v) { $_setBool(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasIsJoined() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearIsJoined() => clearField(3);
+  $core.List<NmChapter> get chapters => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.bool get isJoined => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isJoined($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIsJoined() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsJoined() => clearField(4);
 }
 
 class ListNmCourseRequest extends $pb.GeneratedMessage {

@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     courseCoverPath = "";
     courseMajor = "";
     courseIndustry = "";
-    chapterIds = emptyLongList();
+    chapters = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -132,25 +132,13 @@ private static final long serialVersionUID = 0L;
             courseIndustry = s;
             break;
           }
-          case 104: {
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              chapterIds = newLongList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            chapterIds .addLong(input.readInt64());
-            break;
-          }
           case 106: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              chapterIds = newLongList();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.NmChapter>();
               mutable_bitField0_ |= 0x00000001;
             }
-            while (input.getBytesUntilLimit() > 0) {
-              chapterIds .addLong(input.readInt64());
-            }
-            input.popLimit(limit);
+            chapters .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.NmChapter.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -169,7 +157,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        chapterIds .makeImmutable(); // C
+        chapters = java.util.Collections.unmodifiableList(chapters );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -532,33 +520,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHAPTER_IDS_FIELD_NUMBER = 13;
-  private com.google.protobuf.Internal.LongList chapterIds ;
+  public static final int CHAPTERS_FIELD_NUMBER = 13;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> chapters ;
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @return A list containing the chapterIds.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
   @java.lang.Override
-  public java.util.List<java.lang.Long>
-      getChapterIdsList() {
-    return chapterIds ;
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> getChaptersList() {
+    return chapters ;
   }
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @return The count of chapterIds.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
-  public int getChapterIdsCount() {
-    return chapterIds .size();
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+      getChaptersOrBuilderList() {
+    return chapters ;
   }
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @param index The index of the element to return.
-   * @return The chapterIds at the given index.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
-  public long getChapterIds(int index) {
-    return chapterIds .getLong(index);
+  @java.lang.Override
+  public int getChaptersCount() {
+    return chapters .size();
   }
-  private int chapterIdsMemoizedSerializedSize = -1;
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index) {
+    return chapters .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
+      int index) {
+    return chapters .get(index);
+  }
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -574,7 +574,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
@@ -611,12 +610,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, courseIndustry );
     }
-    if (getChapterIdsList().size() > 0) {
-      output.writeUInt32NoTag(106);
-      output.writeUInt32NoTag(chapterIdsMemoizedSerializedSize);
-    }
-    for (int i = 0; i < chapterIds .size(); i++) {
-      output.writeInt64NoTag(chapterIds .getLong(i));
+    for (int i = 0; i < chapters .size(); i++) {
+      output.writeMessage(13, chapters .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -668,19 +663,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, courseIndustry );
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < chapterIds .size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(chapterIds .getLong(i));
-      }
-      size += dataSize;
-      if (!getChapterIdsList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      chapterIdsMemoizedSerializedSize = dataSize;
+    for (int i = 0; i < chapters .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, chapters .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -725,8 +710,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseType()) return false;
     if (!getCourseIndustry()
         .equals(other.getCourseIndustry())) return false;
-    if (!getChapterIdsList()
-        .equals(other.getChapterIdsList())) return false;
+    if (!getChaptersList()
+        .equals(other.getChaptersList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -768,9 +753,9 @@ private static final long serialVersionUID = 0L;
         getCourseType());
     hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
     hash = (53 * hash) + getCourseIndustry().hashCode();
-    if (getChapterIdsCount() > 0) {
-      hash = (37 * hash) + CHAPTER_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getChapterIdsList().hashCode();
+    if (getChaptersCount() > 0) {
+      hash = (37 * hash) + CHAPTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getChaptersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -900,6 +885,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChaptersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -933,8 +919,12 @@ private static final long serialVersionUID = 0L;
 
       courseIndustry = "";
 
-      chapterIds = emptyLongList();
-      bitField0 = (bitField0 & ~0x00000001);
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+      } else {
+        chaptersBuilder .clear();
+      }
       return this;
     }
 
@@ -978,11 +968,15 @@ private static final long serialVersionUID = 0L;
       result.courseMajor = courseMajor ;
       result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
-      if (((bitField0 & 0x00000001) != 0)) {
-        chapterIds .makeImmutable();
-        bitField0 = (bitField0 & ~0x00000001);
+      if (chaptersBuilder == null) {
+        if (((bitField0 & 0x00000001) != 0)) {
+          chapters = java.util.Collections.unmodifiableList(chapters );
+          bitField0 = (bitField0 & ~0x00000001);
+        }
+        result.chapters = chapters ;
+      } else {
+        result.chapters = chaptersBuilder .build();
       }
-      result.chapterIds = chapterIds ;
       onBuilt();
       return result;
     }
@@ -1074,15 +1068,31 @@ private static final long serialVersionUID = 0L;
         courseIndustry = other.courseIndustry ;
         onChanged();
       }
-      if (!other.chapterIds .isEmpty()) {
-        if (chapterIds .isEmpty()) {
-          chapterIds = other.chapterIds ;
-          bitField0 = (bitField0 & ~0x00000001);
-        } else {
-          ensureChapterIdsIsMutable();
-          chapterIds .addAll(other.chapterIds );
+      if (chaptersBuilder == null) {
+        if (!other.chapters .isEmpty()) {
+          if (chapters .isEmpty()) {
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000001);
+          } else {
+            ensureChaptersIsMutable();
+            chapters .addAll(other.chapters );
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.chapters .isEmpty()) {
+          if (chaptersBuilder .isEmpty()) {
+            chaptersBuilder .dispose();
+            chaptersBuilder = null;
+            chapters = other.chapters ;
+            bitField0 = (bitField0 & ~0x00000001);
+            chaptersBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChaptersFieldBuilder() : null;
+          } else {
+            chaptersBuilder .addAllMessages(other.chapters );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1913,83 +1923,244 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Internal.LongList chapterIds = emptyLongList();
-    private void ensureChapterIdsIsMutable() {
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> chapters =
+      java.util.Collections.emptyList();
+    private void ensureChaptersIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        chapterIds = mutableCopy(chapterIds );
+        chapters = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.NmChapter>(chapters );
         bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.NmChapter, com.zhijiejiaoyu.glory_api.course.NmChapter.Builder, com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> chaptersBuilder ;
+
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @return A list containing the chapterIds.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public java.util.List<java.lang.Long>
-        getChapterIdsList() {
-      return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(chapterIds ) : chapterIds ;
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> getChaptersList() {
+      if (chaptersBuilder == null) {
+        return java.util.Collections.unmodifiableList(chapters );
+      } else {
+        return chaptersBuilder .getMessageList();
+      }
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @return The count of chapterIds.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public int getChapterIdsCount() {
-      return chapterIds .size();
+    public int getChaptersCount() {
+      if (chaptersBuilder == null) {
+        return chapters .size();
+      } else {
+        return chaptersBuilder .getCount();
+      }
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @param index The index of the element to return.
-     * @return The chapterIds at the given index.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public long getChapterIds(int index) {
-      return chapterIds .getLong(index);
+    public com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);
+      } else {
+        return chaptersBuilder .getMessage(index);
+      }
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @param index The index to set the value at.
-     * @param value The chapterIds to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public Builder setChapterIds(
-        int index, long value) {
-      ensureChapterIdsIsMutable();
-      chapterIds .setLong(index, value);
-      onChanged();
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.NmChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .set(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @param value The chapterIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public Builder addChapterIds(long value) {
-      ensureChapterIdsIsMutable();
-      chapterIds .addLong(value);
-      onChanged();
+    public Builder setChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.NmChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @param values The chapterIds to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public Builder addAllChapterIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureChapterIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, chapterIds );
-      onChanged();
+    public Builder addChapters(com.zhijiejiaoyu.glory_api.course.NmChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(value);
+      }
       return this;
     }
     /**
-     * <code>repeated int64 chapter_ids = 13;</code>
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
      */
-    public Builder clearChapterIds() {
-      chapterIds = emptyLongList();
-      bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.NmChapter value) {
+      if (chaptersBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChaptersIsMutable();
+        chapters .add(index, value);
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, value);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public Builder addChapters(
+        com.zhijiejiaoyu.glory_api.course.NmChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public Builder addChapters(
+        int index, com.zhijiejiaoyu.glory_api.course.NmChapter.Builder builderForValue) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        chaptersBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public Builder addAllChapters(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.NmChapter> values) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, chapters );
+        onChanged();
+      } else {
+        chaptersBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public Builder clearChapters() {
+      if (chaptersBuilder == null) {
+        chapters = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000001);
+        onChanged();
+      } else {
+        chaptersBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public Builder removeChapters(int index) {
+      if (chaptersBuilder == null) {
+        ensureChaptersIsMutable();
+        chapters .remove(index);
+        onChanged();
+      } else {
+        chaptersBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NmChapter.Builder getChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
+        int index) {
+      if (chaptersBuilder == null) {
+        return chapters .get(index);  } else {
+        return chaptersBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+         getChaptersOrBuilderList() {
+      if (chaptersBuilder != null) {
+        return chaptersBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(chapters );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NmChapter.Builder addChaptersBuilder() {
+      return getChaptersFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.NmChapter.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.NmChapter.Builder addChaptersBuilder(
+        int index) {
+      return getChaptersFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.NmChapter.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter.Builder> 
+         getChaptersBuilderList() {
+      return getChaptersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.NmChapter, com.zhijiejiaoyu.glory_api.course.NmChapter.Builder, com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+        getChaptersFieldBuilder() {
+      if (chaptersBuilder == null) {
+        chaptersBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.NmChapter, com.zhijiejiaoyu.glory_api.course.NmChapter.Builder, com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder>(
+                chapters ,
+                ((bitField0 & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        chapters = null;
+      }
+      return chaptersBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

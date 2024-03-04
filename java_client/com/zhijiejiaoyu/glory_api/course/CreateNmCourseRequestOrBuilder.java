@@ -139,19 +139,26 @@ public interface CreateNmCourseRequestOrBuilder extends
       getCourseIndustryBytes();
 
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @return A list containing the chapterIds.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
-  java.util.List<java.lang.Long> getChapterIdsList();
+  java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
+      getChaptersList();
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @return The count of chapterIds.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
-  int getChapterIdsCount();
+  com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index);
   /**
-   * <code>repeated int64 chapter_ids = 13;</code>
-   * @param index The index of the element to return.
-   * @return The chapterIds at the given index.
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
    */
-  long getChapterIds(int index);
+  int getChaptersCount();
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+      getChaptersOrBuilderList();
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 13;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
+      int index);
 }

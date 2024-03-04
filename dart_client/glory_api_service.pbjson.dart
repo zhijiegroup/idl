@@ -1214,6 +1214,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.CreateNmCourseChapterRequest': $41.CreateNmCourseChapterRequest$json,
   '.glory_api.CreateNmCourseChapterResponse': $41.CreateNmCourseChapterResponse$json,
   '.glory_api.CreateNmCourseRequest': $41.CreateNmCourseRequest$json,
+  '.glory_api.NmChapter': $41.NmChapter$json,
+  '.glory_api.NmResource': $41.NmResource$json,
   '.glory_api.CreateNmCourseResponse': $41.CreateNmCourseResponse$json,
   '.glory_api.ListNmCourseRequest': $41.ListNmCourseRequest$json,
   '.glory_api.ListNmCourseResponse': $41.ListNmCourseResponse$json,
