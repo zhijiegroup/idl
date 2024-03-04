@@ -20,6 +20,7 @@ export interface NmCourse {
   course_type?: string;
   course_industry?: string;
   course_hours?: number;
+  chapters?: Array<NmChapter>;
 }
 
 export interface CreateNmCourseChapterResourceRequest {
@@ -91,7 +92,6 @@ export interface NmCourseDetailRequest {
 export interface NmCourseDetailResponse {
   base_resp?: base.BaseResponse;
   course?: NmCourse;
-  chapters?: Array<NmChapter>;
   is_joined?: boolean;
 }
 

@@ -31,6 +31,7 @@ const NmCourse$json = {
     {'1': 'course_type', '3': 12, '4': 1, '5': 3, '10': 'courseType'},
     {'1': 'course_industry', '3': 13, '4': 1, '5': 9, '10': 'courseIndustry'},
     {'1': 'course_hours', '3': 14, '4': 1, '5': 1, '10': 'courseHours'},
+    {'1': 'chapters', '3': 15, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
   ],
 };
 
@@ -45,7 +46,8 @@ final $typed_data.Uint8List nmCourseDescriptor = $convert.base64Decode(
     'c3NmaWNhdGlvbhgJIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbWFqb3IYCi'
     'ABKAlSC2NvdXJzZU1ham9yEiEKDGNvdXJzZV9sZXZlbBgLIAEoA1ILY291cnNlTGV2ZWwSHwoL'
     'Y291cnNlX3R5cGUYDCABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GA0gASgJUg'
-    '5jb3Vyc2VJbmR1c3RyeRIhCgxjb3Vyc2VfaG91cnMYDiABKAFSC2NvdXJzZUhvdXJz');
+    '5jb3Vyc2VJbmR1c3RyeRIhCgxjb3Vyc2VfaG91cnMYDiABKAFSC2NvdXJzZUhvdXJzEjAKCGNo'
+    'YXB0ZXJzGA8gAygLMhQuZ2xvcnlfYXBpLk5tQ2hhcHRlclIIY2hhcHRlcnM=');
 
 @$core.Deprecated('Use createNmCourseChapterResourceRequestDescriptor instead')
 const CreateNmCourseChapterResourceRequest$json = {
@@ -215,7 +217,6 @@ const NmCourseDetailResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.NmCourse', '10': 'course'},
-    {'1': 'chapters', '3': 3, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'is_joined', '3': 4, '4': 1, '5': 8, '10': 'isJoined'},
   ],
 };
@@ -224,8 +225,7 @@ const NmCourseDetailResponse$json = {
 final $typed_data.Uint8List nmCourseDetailResponseDescriptor = $convert.base64Decode(
     'ChZObUNvdXJzZURldGFpbFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBIrCgZjb3Vyc2UYAiABKAsyEy5nbG9yeV9hcGkuTm1Db3Vyc2VS'
-    'BmNvdXJzZRIwCghjaGFwdGVycxgDIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0ZXJSCGNoYXB0ZX'
-    'JzEhsKCWlzX2pvaW5lZBgEIAEoCFIIaXNKb2luZWQ=');
+    'BmNvdXJzZRIbCglpc19qb2luZWQYBCABKAhSCGlzSm9pbmVk');
 
 @$core.Deprecated('Use listNmCourseRequestDescriptor instead')
 const ListNmCourseRequest$json = {

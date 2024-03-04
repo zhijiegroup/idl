@@ -132,4 +132,28 @@ public interface NmCourseOrBuilder extends
    * @return The courseHours.
    */
   double getCourseHours();
+
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
+      getChaptersList();
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index);
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   */
+  int getChaptersCount();
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+      getChaptersOrBuilderList();
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
+      int index);
 }

@@ -38,30 +38,6 @@ public interface NmCourseDetailResponseOrBuilder extends
   com.zhijiejiaoyu.glory_api.course.NmCourseOrBuilder getCourseOrBuilder();
 
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 3;</code>
-   */
-  java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
-      getChaptersList();
-  /**
-   * <code>repeated .glory_api.NmChapter chapters = 3;</code>
-   */
-  com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index);
-  /**
-   * <code>repeated .glory_api.NmChapter chapters = 3;</code>
-   */
-  int getChaptersCount();
-  /**
-   * <code>repeated .glory_api.NmChapter chapters = 3;</code>
-   */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
-      getChaptersOrBuilderList();
-  /**
-   * <code>repeated .glory_api.NmChapter chapters = 3;</code>
-   */
-  com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
-      int index);
-
-  /**
    * <code>bool is_joined = 4;</code>
    * @return The isJoined.
    */
