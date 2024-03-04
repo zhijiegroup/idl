@@ -16,8 +16,10 @@ message NmCourse {
     string cover_url = 8;
     int64 course_classfication = 9;
     string course_major = 10;
-    string course_industry = 11;
-    double course_hours = 12;
+    int64 course_level = 11;
+    int64 course_type = 12;
+    string course_industry = 13;
+    double course_hours = 14;
 }
 
 message CreateNmCourseChapterResourceRequest {
