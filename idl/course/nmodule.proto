@@ -99,6 +99,7 @@ message ListNmCourseRequest {
     base.BaseRequest base_request = 1;
     int32 classification = 2;
     string value = 3;
+    string course_industry = 4;
     base.PaginationRequest pagination = 100;
 }
 
