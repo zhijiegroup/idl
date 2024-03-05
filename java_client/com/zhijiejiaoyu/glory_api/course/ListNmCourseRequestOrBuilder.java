@@ -41,6 +41,18 @@ public interface ListNmCourseRequestOrBuilder extends
       getValueBytes();
 
   /**
+   * <code>string course_industry = 4;</code>
+   * @return The courseIndustry.
+   */
+  java.lang.String getCourseIndustry();
+  /**
+   * <code>string course_industry = 4;</code>
+   * @return The bytes for courseIndustry.
+   */
+  com.google.protobuf.ByteString
+      getCourseIndustryBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -101,6 +101,7 @@ export interface ListNmCourseRequest {
   base_request?: base.BaseRequest;
   classification?: number;
   value?: string;
+  course_industry?: string;
   pagination?: base.PaginationRequest;
 }
 
