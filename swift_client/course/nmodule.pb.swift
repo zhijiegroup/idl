@@ -176,7 +176,7 @@ struct GloryApi_CreateNmCourseRequest {
 
   var courseName: String = String()
 
-  var courseOrgination: String = String()
+  var courseOrganization: String = String()
 
   var teacherName: String = String()
 
@@ -186,7 +186,7 @@ struct GloryApi_CreateNmCourseRequest {
 
   var courseCoverPath: String = String()
 
-  var courseClassfication: Int64 = 0
+  var courseClassification: Int64 = 0
 
   /// 课程层次：1.中职 2.高职 3.中高职
   var courseLevel: Int64 = 0
@@ -791,12 +791,12 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "course_name"),
-    3: .standard(proto: "course_orgination"),
+    3: .standard(proto: "course_organization"),
     4: .standard(proto: "teacher_name"),
     5: .standard(proto: "course_hours"),
     6: .standard(proto: "course_description"),
     7: .standard(proto: "course_cover_path"),
-    8: .standard(proto: "course_classfication"),
+    8: .standard(proto: "course_classification"),
     9: .standard(proto: "course_level"),
     10: .standard(proto: "course_major"),
     11: .standard(proto: "course_type"),
@@ -812,12 +812,12 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrgination) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.teacherName) }()
       case 5: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.courseDescription) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.courseClassfication) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.courseClassification) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseLevel) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
@@ -839,8 +839,8 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.courseName.isEmpty {
       try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 2)
     }
-    if !self.courseOrgination.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseOrgination, fieldNumber: 3)
+    if !self.courseOrganization.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 3)
     }
     if !self.teacherName.isEmpty {
       try visitor.visitSingularStringField(value: self.teacherName, fieldNumber: 4)
@@ -854,8 +854,8 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.courseCoverPath.isEmpty {
       try visitor.visitSingularStringField(value: self.courseCoverPath, fieldNumber: 7)
     }
-    if self.courseClassfication != 0 {
-      try visitor.visitSingularInt64Field(value: self.courseClassfication, fieldNumber: 8)
+    if self.courseClassification != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseClassification, fieldNumber: 8)
     }
     if self.courseLevel != 0 {
       try visitor.visitSingularInt64Field(value: self.courseLevel, fieldNumber: 9)
@@ -878,12 +878,12 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static func ==(lhs: GloryApi_CreateNmCourseRequest, rhs: GloryApi_CreateNmCourseRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.courseName != rhs.courseName {return false}
-    if lhs.courseOrgination != rhs.courseOrgination {return false}
+    if lhs.courseOrganization != rhs.courseOrganization {return false}
     if lhs.teacherName != rhs.teacherName {return false}
     if lhs.courseHours != rhs.courseHours {return false}
     if lhs.courseDescription != rhs.courseDescription {return false}
     if lhs.courseCoverPath != rhs.courseCoverPath {return false}
-    if lhs.courseClassfication != rhs.courseClassfication {return false}
+    if lhs.courseClassification != rhs.courseClassification {return false}
     if lhs.courseLevel != rhs.courseLevel {return false}
     if lhs.courseMajor != rhs.courseMajor {return false}
     if lhs.courseType != rhs.courseType {return false}

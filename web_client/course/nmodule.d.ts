@@ -50,12 +50,12 @@ export interface CreateNmCourseChapterResponse {
 export interface CreateNmCourseRequest {
   base_request?: base.BaseRequest;
   course_name?: string;
-  course_orgination?: string;
+  course_organization?: string;
   teacher_name?: string;
   course_hours?: number;
   course_description?: string;
   course_cover_path?: string;
-  course_classfication?: string;
+  course_classification?: string;
   /** 课程层次：1.中职 2.高职 3.中高职 */
   course_level?: string;
   course_major?: string;

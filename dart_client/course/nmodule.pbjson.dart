@@ -120,12 +120,12 @@ const CreateNmCourseRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'course_name', '3': 2, '4': 1, '5': 9, '10': 'courseName'},
-    {'1': 'course_orgination', '3': 3, '4': 1, '5': 9, '10': 'courseOrgination'},
+    {'1': 'course_organization', '3': 3, '4': 1, '5': 9, '10': 'courseOrganization'},
     {'1': 'teacher_name', '3': 4, '4': 1, '5': 9, '10': 'teacherName'},
     {'1': 'course_hours', '3': 5, '4': 1, '5': 1, '10': 'courseHours'},
     {'1': 'course_description', '3': 6, '4': 1, '5': 9, '10': 'courseDescription'},
     {'1': 'course_cover_path', '3': 7, '4': 1, '5': 9, '10': 'courseCoverPath'},
-    {'1': 'course_classfication', '3': 8, '4': 1, '5': 3, '10': 'courseClassfication'},
+    {'1': 'course_classification', '3': 8, '4': 1, '5': 3, '10': 'courseClassification'},
     {'1': 'course_level', '3': 9, '4': 1, '5': 3, '10': 'courseLevel'},
     {'1': 'course_major', '3': 10, '4': 1, '5': 9, '10': 'courseMajor'},
     {'1': 'course_type', '3': 11, '4': 1, '5': 3, '10': 'courseType'},
@@ -138,15 +138,15 @@ const CreateNmCourseRequest$json = {
 final $typed_data.Uint8List createNmCourseRequestDescriptor = $convert.base64Decode(
     'ChVDcmVhdGVObUNvdXJzZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
     'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX25hbWUYAiABKAlSCmNvdXJzZU5hbWUS'
-    'KwoRY291cnNlX29yZ2luYXRpb24YAyABKAlSEGNvdXJzZU9yZ2luYXRpb24SIQoMdGVhY2hlcl'
-    '9uYW1lGAQgASgJUgt0ZWFjaGVyTmFtZRIhCgxjb3Vyc2VfaG91cnMYBSABKAFSC2NvdXJzZUhv'
-    'dXJzEi0KEmNvdXJzZV9kZXNjcmlwdGlvbhgGIAEoCVIRY291cnNlRGVzY3JpcHRpb24SKgoRY2'
-    '91cnNlX2NvdmVyX3BhdGgYByABKAlSD2NvdXJzZUNvdmVyUGF0aBIxChRjb3Vyc2VfY2xhc3Nm'
-    'aWNhdGlvbhgIIAEoA1ITY291cnNlQ2xhc3NmaWNhdGlvbhIhCgxjb3Vyc2VfbGV2ZWwYCSABKA'
-    'NSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3ISHwoLY291'
-    'cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgASgJUg5jb3'
-    'Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0ZXJSCGNo'
-    'YXB0ZXJz');
+    'LwoTY291cnNlX29yZ2FuaXphdGlvbhgDIAEoCVISY291cnNlT3JnYW5pemF0aW9uEiEKDHRlYW'
+    'NoZXJfbmFtZRgEIAEoCVILdGVhY2hlck5hbWUSIQoMY291cnNlX2hvdXJzGAUgASgBUgtjb3Vy'
+    'c2VIb3VycxItChJjb3Vyc2VfZGVzY3JpcHRpb24YBiABKAlSEWNvdXJzZURlc2NyaXB0aW9uEi'
+    'oKEWNvdXJzZV9jb3Zlcl9wYXRoGAcgASgJUg9jb3Vyc2VDb3ZlclBhdGgSMwoVY291cnNlX2Ns'
+    'YXNzaWZpY2F0aW9uGAggASgDUhRjb3Vyc2VDbGFzc2lmaWNhdGlvbhIhCgxjb3Vyc2VfbGV2ZW'
+    'wYCSABKANSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3IS'
+    'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
+    'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
+    'ZXJSCGNoYXB0ZXJz');
 
 @$core.Deprecated('Use nmChapterDescriptor instead')
 const NmChapter$json = {

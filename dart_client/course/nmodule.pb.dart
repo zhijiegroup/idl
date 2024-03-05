@@ -580,12 +580,12 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   factory CreateNmCourseRequest({
     $0.BaseRequest? baseRequest,
     $core.String? courseName,
-    $core.String? courseOrgination,
+    $core.String? courseOrganization,
     $core.String? teacherName,
     $core.double? courseHours,
     $core.String? courseDescription,
     $core.String? courseCoverPath,
-    $fixnum.Int64? courseClassfication,
+    $fixnum.Int64? courseClassification,
     $fixnum.Int64? courseLevel,
     $core.String? courseMajor,
     $fixnum.Int64? courseType,
@@ -599,8 +599,8 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseName != null) {
       $result.courseName = courseName;
     }
-    if (courseOrgination != null) {
-      $result.courseOrgination = courseOrgination;
+    if (courseOrganization != null) {
+      $result.courseOrganization = courseOrganization;
     }
     if (teacherName != null) {
       $result.teacherName = teacherName;
@@ -614,8 +614,8 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseCoverPath != null) {
       $result.courseCoverPath = courseCoverPath;
     }
-    if (courseClassfication != null) {
-      $result.courseClassfication = courseClassfication;
+    if (courseClassification != null) {
+      $result.courseClassification = courseClassification;
     }
     if (courseLevel != null) {
       $result.courseLevel = courseLevel;
@@ -641,12 +641,12 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNmCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'courseName')
-    ..aOS(3, _omitFieldNames ? '' : 'courseOrgination')
+    ..aOS(3, _omitFieldNames ? '' : 'courseOrganization')
     ..aOS(4, _omitFieldNames ? '' : 'teacherName')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
     ..aOS(6, _omitFieldNames ? '' : 'courseDescription')
     ..aOS(7, _omitFieldNames ? '' : 'courseCoverPath')
-    ..aInt64(8, _omitFieldNames ? '' : 'courseClassfication')
+    ..aInt64(8, _omitFieldNames ? '' : 'courseClassification')
     ..aInt64(9, _omitFieldNames ? '' : 'courseLevel')
     ..aOS(10, _omitFieldNames ? '' : 'courseMajor')
     ..aInt64(11, _omitFieldNames ? '' : 'courseType')
@@ -697,13 +697,13 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   void clearCourseName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get courseOrgination => $_getSZ(2);
+  $core.String get courseOrganization => $_getSZ(2);
   @$pb.TagNumber(3)
-  set courseOrgination($core.String v) { $_setString(2, v); }
+  set courseOrganization($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCourseOrgination() => $_has(2);
+  $core.bool hasCourseOrganization() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCourseOrgination() => clearField(3);
+  void clearCourseOrganization() => clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get teacherName => $_getSZ(3);
@@ -742,13 +742,13 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
   void clearCourseCoverPath() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get courseClassfication => $_getI64(7);
+  $fixnum.Int64 get courseClassification => $_getI64(7);
   @$pb.TagNumber(8)
-  set courseClassfication($fixnum.Int64 v) { $_setInt64(7, v); }
+  set courseClassification($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasCourseClassfication() => $_has(7);
+  $core.bool hasCourseClassification() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCourseClassfication() => clearField(8);
+  void clearCourseClassification() => clearField(8);
 
   @$pb.TagNumber(9)
   $fixnum.Int64 get courseLevel => $_getI64(8);

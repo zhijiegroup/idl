@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateNmCourseRequest() {
     courseName = "";
-    courseOrgination = "";
+    courseOrganization = "";
     teacherName = "";
     courseDescription = "";
     courseCoverPath = "";
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            courseOrgination = s;
+            courseOrganization = s;
             break;
           }
           case 34: {
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
           }
           case 64: {
 
-            courseClassfication = input.readInt64();
+            courseClassification = input.readInt64();
             break;
           }
           case 72: {
@@ -240,38 +240,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_ORGINATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object courseOrgination ;
+  public static final int COURSE_ORGANIZATION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object courseOrganization ;
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The courseOrganization.
    */
   @java.lang.Override
-  public java.lang.String getCourseOrgination() {
-    java.lang.Object ref = courseOrgination ;
+  public java.lang.String getCourseOrganization() {
+    java.lang.Object ref = courseOrganization ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      courseOrgination = s;
+      courseOrganization = s;
       return s;
     }
   }
   /**
-   * <code>string course_orgination = 3;</code>
-   * @return The bytes for courseOrgination.
+   * <code>string course_organization = 3;</code>
+   * @return The bytes for courseOrganization.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCourseOrginationBytes() {
-    java.lang.Object ref = courseOrgination ;
+      getCourseOrganizationBytes() {
+    java.lang.Object ref = courseOrganization ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      courseOrgination = b;
+      courseOrganization = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -403,15 +403,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_CLASSFICATION_FIELD_NUMBER = 8;
-  private long courseClassfication ;
+  public static final int COURSE_CLASSIFICATION_FIELD_NUMBER = 8;
+  private long courseClassification ;
   /**
-   * <code>int64 course_classfication = 8;</code>
-   * @return The courseClassfication.
+   * <code>int64 course_classification = 8;</code>
+   * @return The courseClassification.
    */
   @java.lang.Override
-  public long getCourseClassfication() {
-    return courseClassfication ;
+  public long getCourseClassification() {
+    return courseClassification ;
   }
 
   public static final int COURSE_LEVEL_FIELD_NUMBER = 9;
@@ -580,8 +580,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, courseName );
     }
-    if (!getCourseOrginationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, courseOrgination );
+    if (!getCourseOrganizationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, courseOrganization );
     }
     if (!getTeacherNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, teacherName );
@@ -595,8 +595,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseCoverPathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, courseCoverPath );
     }
-    if (courseClassfication != 0L) {
-      output.writeInt64(8, courseClassfication );
+    if (courseClassification != 0L) {
+      output.writeInt64(8, courseClassification );
     }
     if (courseLevel != 0L) {
       output.writeInt64(9, courseLevel );
@@ -629,8 +629,8 @@ private static final long serialVersionUID = 0L;
     if (!getCourseNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, courseName );
     }
-    if (!getCourseOrginationBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, courseOrgination );
+    if (!getCourseOrganizationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, courseOrganization );
     }
     if (!getTeacherNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, teacherName );
@@ -645,9 +645,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseCoverPathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, courseCoverPath );
     }
-    if (courseClassfication != 0L) {
+    if (courseClassification != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, courseClassfication );
+        .computeInt64Size(8, courseClassification );
     }
     if (courseLevel != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -689,8 +689,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCourseName()
         .equals(other.getCourseName())) return false;
-    if (!getCourseOrgination()
-        .equals(other.getCourseOrgination())) return false;
+    if (!getCourseOrganization()
+        .equals(other.getCourseOrganization())) return false;
     if (!getTeacherName()
         .equals(other.getTeacherName())) return false;
     if (java.lang.Double.doubleToLongBits(getCourseHours())
@@ -700,8 +700,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseDescription())) return false;
     if (!getCourseCoverPath()
         .equals(other.getCourseCoverPath())) return false;
-    if (getCourseClassfication()
-        != other.getCourseClassfication()) return false;
+    if (getCourseClassification()
+        != other.getCourseClassification()) return false;
     if (getCourseLevel()
         != other.getCourseLevel()) return false;
     if (!getCourseMajor()
@@ -729,8 +729,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + COURSE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCourseName().hashCode();
-    hash = (37 * hash) + COURSE_ORGINATION_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseOrgination().hashCode();
+    hash = (37 * hash) + COURSE_ORGANIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseOrganization().hashCode();
     hash = (37 * hash) + TEACHER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTeacherName().hashCode();
     hash = (37 * hash) + COURSE_HOURS_FIELD_NUMBER;
@@ -740,9 +740,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCourseDescription().hashCode();
     hash = (37 * hash) + COURSE_COVER_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getCourseCoverPath().hashCode();
-    hash = (37 * hash) + COURSE_CLASSFICATION_FIELD_NUMBER;
+    hash = (37 * hash) + COURSE_CLASSIFICATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCourseClassfication());
+        getCourseClassification());
     hash = (37 * hash) + COURSE_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCourseLevel());
@@ -899,7 +899,7 @@ private static final long serialVersionUID = 0L;
       }
       courseName = "";
 
-      courseOrgination = "";
+      courseOrganization = "";
 
       teacherName = "";
 
@@ -909,7 +909,7 @@ private static final long serialVersionUID = 0L;
 
       courseCoverPath = "";
 
-      courseClassfication = 0L;
+      courseClassification = 0L;
 
       courseLevel = 0L;
 
@@ -958,12 +958,12 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.courseName = courseName ;
-      result.courseOrgination = courseOrgination ;
+      result.courseOrganization = courseOrganization ;
       result.teacherName = teacherName ;
       result.courseHours = courseHours ;
       result.courseDescription = courseDescription ;
       result.courseCoverPath = courseCoverPath ;
-      result.courseClassfication = courseClassfication ;
+      result.courseClassification = courseClassification ;
       result.courseLevel = courseLevel ;
       result.courseMajor = courseMajor ;
       result.courseType = courseType ;
@@ -1032,8 +1032,8 @@ private static final long serialVersionUID = 0L;
         courseName = other.courseName ;
         onChanged();
       }
-      if (!other.getCourseOrgination().isEmpty()) {
-        courseOrgination = other.courseOrgination ;
+      if (!other.getCourseOrganization().isEmpty()) {
+        courseOrganization = other.courseOrganization ;
         onChanged();
       }
       if (!other.getTeacherName().isEmpty()) {
@@ -1051,8 +1051,8 @@ private static final long serialVersionUID = 0L;
         courseCoverPath = other.courseCoverPath ;
         onChanged();
       }
-      if (other.getCourseClassfication() != 0L) {
-        setCourseClassfication(other.getCourseClassfication());
+      if (other.getCourseClassification() != 0L) {
+        setCourseClassification(other.getCourseClassification());
       }
       if (other.getCourseLevel() != 0L) {
         setCourseLevel(other.getCourseLevel());
@@ -1319,78 +1319,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object courseOrgination = "";
+    private java.lang.Object courseOrganization = "";
     /**
-     * <code>string course_orgination = 3;</code>
-     * @return The courseOrgination.
+     * <code>string course_organization = 3;</code>
+     * @return The courseOrganization.
      */
-    public java.lang.String getCourseOrgination() {
-      java.lang.Object ref = courseOrgination ;
+    public java.lang.String getCourseOrganization() {
+      java.lang.Object ref = courseOrganization ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        courseOrgination = s;
+        courseOrganization = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @return The bytes for courseOrgination.
+     * <code>string course_organization = 3;</code>
+     * @return The bytes for courseOrganization.
      */
     public com.google.protobuf.ByteString
-        getCourseOrginationBytes() {
-      java.lang.Object ref = courseOrgination ;
+        getCourseOrganizationBytes() {
+      java.lang.Object ref = courseOrganization ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        courseOrgination = b;
+        courseOrganization = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @param value The courseOrgination to set.
+     * <code>string course_organization = 3;</code>
+     * @param value The courseOrganization to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseOrgination(
+    public Builder setCourseOrganization(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      courseOrgination = value;
+      courseOrganization = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string course_orgination = 3;</code>
+     * <code>string course_organization = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseOrgination() {
+    public Builder clearCourseOrganization() {
       
-      courseOrgination = getDefaultInstance().getCourseOrgination();
+      courseOrganization = getDefaultInstance().getCourseOrganization();
       onChanged();
       return this;
     }
     /**
-     * <code>string course_orgination = 3;</code>
-     * @param value The bytes for courseOrgination to set.
+     * <code>string course_organization = 3;</code>
+     * @param value The bytes for courseOrganization to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseOrginationBytes(
+    public Builder setCourseOrganizationBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      courseOrgination = value;
+      courseOrganization = value;
       onChanged();
       return this;
     }
@@ -1654,33 +1654,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long courseClassfication ;
+    private long courseClassification ;
     /**
-     * <code>int64 course_classfication = 8;</code>
-     * @return The courseClassfication.
+     * <code>int64 course_classification = 8;</code>
+     * @return The courseClassification.
      */
     @java.lang.Override
-    public long getCourseClassfication() {
-      return courseClassfication ;
+    public long getCourseClassification() {
+      return courseClassification ;
     }
     /**
-     * <code>int64 course_classfication = 8;</code>
-     * @param value The courseClassfication to set.
+     * <code>int64 course_classification = 8;</code>
+     * @param value The courseClassification to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseClassfication(long value) {
+    public Builder setCourseClassification(long value) {
       
-      courseClassfication = value;
+      courseClassification = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 course_classfication = 8;</code>
+     * <code>int64 course_classification = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseClassfication() {
+    public Builder clearCourseClassification() {
       
-      courseClassfication = 0L;
+      courseClassification = 0L;
       onChanged();
       return this;
     }
