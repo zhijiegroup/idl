@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            classfication = input.readInt32();
+            classification = input.readInt32();
             break;
           }
           case 26: {
@@ -144,15 +144,15 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int CLASSFICATION_FIELD_NUMBER = 2;
-  private int classfication ;
+  public static final int CLASSIFICATION_FIELD_NUMBER = 2;
+  private int classification ;
   /**
-   * <code>int32 classfication = 2;</code>
-   * @return The classfication.
+   * <code>int32 classification = 2;</code>
+   * @return The classification.
    */
   @java.lang.Override
-  public int getClassfication() {
-    return classfication ;
+  public int getClassification() {
+    return classification ;
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
@@ -236,8 +236,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (classfication != 0) {
-      output.writeInt32(2, classfication );
+    if (classification != 0) {
+      output.writeInt32(2, classification );
     }
     if (!getValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value );
@@ -258,9 +258,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (classfication != 0) {
+    if (classification != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, classfication );
+        .computeInt32Size(2, classification );
     }
     if (!getValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value );
@@ -289,8 +289,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getClassfication()
-        != other.getClassfication()) return false;
+    if (getClassification()
+        != other.getClassification()) return false;
     if (!getValue()
         .equals(other.getValue())) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -313,8 +313,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + CLASSFICATION_FIELD_NUMBER;
-    hash = (53 * hash) + getClassfication();
+    hash = (37 * hash) + CLASSIFICATION_FIELD_NUMBER;
+    hash = (53 * hash) + getClassification();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
     if (hasPagination()) {
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      classfication = 0;
+      classification = 0;
 
       value = "";
 
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.classfication = classfication ;
+      result.classification = classification ;
       result.value = value ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -559,8 +559,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getClassfication() != 0) {
-        setClassfication(other.getClassfication());
+      if (other.getClassification() != 0) {
+        setClassification(other.getClassification());
       }
       if (!other.getValue().isEmpty()) {
         value = other.value ;
@@ -717,33 +717,33 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private int classfication ;
+    private int classification ;
     /**
-     * <code>int32 classfication = 2;</code>
-     * @return The classfication.
+     * <code>int32 classification = 2;</code>
+     * @return The classification.
      */
     @java.lang.Override
-    public int getClassfication() {
-      return classfication ;
+    public int getClassification() {
+      return classification ;
     }
     /**
-     * <code>int32 classfication = 2;</code>
-     * @param value The classfication to set.
+     * <code>int32 classification = 2;</code>
+     * @param value The classification to set.
      * @return This builder for chaining.
      */
-    public Builder setClassfication(int value) {
+    public Builder setClassification(int value) {
       
-      classfication = value;
+      classification = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 classfication = 2;</code>
+     * <code>int32 classification = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearClassfication() {
+    public Builder clearClassification() {
       
-      classfication = 0;
+      classification = 0;
       onChanged();
       return this;
     }

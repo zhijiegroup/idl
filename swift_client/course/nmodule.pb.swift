@@ -358,7 +358,7 @@ struct GloryApi_ListNmCourseRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var classfication: Int32 = 0
+  var classification: Int32 = 0
 
   var value: String = String()
 
@@ -1214,7 +1214,7 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   static let protoMessageName: String = _protobuf_package + ".ListNmCourseRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "classfication"),
+    2: .same(proto: "classification"),
     3: .same(proto: "value"),
     100: .same(proto: "pagination"),
   ]
@@ -1226,7 +1226,7 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.classfication) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.classification) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.value) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
@@ -1242,8 +1242,8 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.classfication != 0 {
-      try visitor.visitSingularInt32Field(value: self.classfication, fieldNumber: 2)
+    if self.classification != 0 {
+      try visitor.visitSingularInt32Field(value: self.classification, fieldNumber: 2)
     }
     if !self.value.isEmpty {
       try visitor.visitSingularStringField(value: self.value, fieldNumber: 3)
@@ -1256,7 +1256,7 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
 
   static func ==(lhs: GloryApi_ListNmCourseRequest, rhs: GloryApi_ListNmCourseRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.classfication != rhs.classfication {return false}
+    if lhs.classification != rhs.classification {return false}
     if lhs.value != rhs.value {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

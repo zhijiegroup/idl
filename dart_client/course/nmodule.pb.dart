@@ -1201,7 +1201,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
 class ListNmCourseRequest extends $pb.GeneratedMessage {
   factory ListNmCourseRequest({
     $0.BaseRequest? baseRequest,
-    $core.int? classfication,
+    $core.int? classification,
     $core.String? value,
     $0.PaginationRequest? pagination,
   }) {
@@ -1209,8 +1209,8 @@ class ListNmCourseRequest extends $pb.GeneratedMessage {
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
     }
-    if (classfication != null) {
-      $result.classfication = classfication;
+    if (classification != null) {
+      $result.classification = classification;
     }
     if (value != null) {
       $result.value = value;
@@ -1226,7 +1226,7 @@ class ListNmCourseRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNmCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'classfication', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'classification', $pb.PbFieldType.O3)
     ..aOS(3, _omitFieldNames ? '' : 'value')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
@@ -1265,13 +1265,13 @@ class ListNmCourseRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.int get classfication => $_getIZ(1);
+  $core.int get classification => $_getIZ(1);
   @$pb.TagNumber(2)
-  set classfication($core.int v) { $_setSignedInt32(1, v); }
+  set classification($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasClassfication() => $_has(1);
+  $core.bool hasClassification() => $_has(1);
   @$pb.TagNumber(2)
-  void clearClassfication() => clearField(2);
+  void clearClassification() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get value => $_getSZ(2);

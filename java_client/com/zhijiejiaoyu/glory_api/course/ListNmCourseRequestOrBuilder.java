@@ -23,10 +23,10 @@ public interface ListNmCourseRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int32 classfication = 2;</code>
-   * @return The classfication.
+   * <code>int32 classification = 2;</code>
+   * @return The classification.
    */
-  int getClassfication();
+  int getClassification();
 
   /**
    * <code>string value = 3;</code>

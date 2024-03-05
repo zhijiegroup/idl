@@ -98,7 +98,7 @@ export interface NmCourseDetailResponse {
 
 export interface ListNmCourseRequest {
   base_request?: base.BaseRequest;
-  classfication?: number;
+  classification?: number;
   value?: string;
   pagination?: base.PaginationRequest;
 }
