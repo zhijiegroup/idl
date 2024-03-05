@@ -212,15 +212,35 @@ struct GloryApi_NmChapter {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var chapterID: Int64 = 0
+  var chapterID: Int64 {
+    get {return _storage._chapterID}
+    set {_uniqueStorage()._chapterID = newValue}
+  }
 
-  var chapterName: String = String()
+  var chapterName: String {
+    get {return _storage._chapterName}
+    set {_uniqueStorage()._chapterName = newValue}
+  }
 
-  var resources: [GloryApi_NmResource] = []
+  var childChapter: GloryApi_NmChapter {
+    get {return _storage._childChapter ?? GloryApi_NmChapter()}
+    set {_uniqueStorage()._childChapter = newValue}
+  }
+  /// Returns true if `childChapter` has been explicitly set.
+  var hasChildChapter: Bool {return _storage._childChapter != nil}
+  /// Clears the value of `childChapter`. Subsequent reads from it will return its default value.
+  mutating func clearChildChapter() {_uniqueStorage()._childChapter = nil}
+
+  var resources: [GloryApi_NmResource] {
+    get {return _storage._resources}
+    set {_uniqueStorage()._resources = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_NmResource {
@@ -879,40 +899,88 @@ extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "chapter_id"),
     2: .standard(proto: "chapter_name"),
-    3: .same(proto: "resources"),
+    3: .standard(proto: "child_chapter"),
+    4: .same(proto: "resources"),
   ]
 
+  fileprivate class _StorageClass {
+    var _chapterID: Int64 = 0
+    var _chapterName: String = String()
+    var _childChapter: GloryApi_NmChapter? = nil
+    var _resources: [GloryApi_NmResource] = []
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _chapterID = source._chapterID
+      _chapterName = source._chapterName
+      _childChapter = source._childChapter
+      _resources = source._resources
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.resources) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularInt64Field(value: &_storage._chapterID) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._chapterName) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._childChapter) }()
+        case 4: try { try decoder.decodeRepeatedMessageField(value: &_storage._resources) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.chapterID != 0 {
-      try visitor.visitSingularInt64Field(value: self.chapterID, fieldNumber: 1)
-    }
-    if !self.chapterName.isEmpty {
-      try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 2)
-    }
-    if !self.resources.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 3)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if _storage._chapterID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._chapterID, fieldNumber: 1)
+      }
+      if !_storage._chapterName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._chapterName, fieldNumber: 2)
+      }
+      try { if let v = _storage._childChapter {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+      if !_storage._resources.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._resources, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_NmChapter, rhs: GloryApi_NmChapter) -> Bool {
-    if lhs.chapterID != rhs.chapterID {return false}
-    if lhs.chapterName != rhs.chapterName {return false}
-    if lhs.resources != rhs.resources {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._chapterID != rhs_storage._chapterID {return false}
+        if _storage._chapterName != rhs_storage._chapterName {return false}
+        if _storage._childChapter != rhs_storage._childChapter {return false}
+        if _storage._resources != rhs_storage._resources {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

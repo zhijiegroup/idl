@@ -68,6 +68,7 @@ export interface CreateNmCourseRequest {
 export interface NmChapter {
   chapter_id?: string;
   chapter_name?: string;
+  child_chapter?: NmChapter;
   resources?: Array<NmResource>;
 }
 
