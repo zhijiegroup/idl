@@ -96,7 +96,7 @@ message NmCourseDetailResponse {
 
 message ListNmCourseRequest {
     base.BaseRequest base_request = 1;
-    int32 classfication = 2;
+    int32 classification = 2;
     string value = 3;
     base.PaginationRequest pagination = 100;
 }
