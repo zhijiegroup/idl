@@ -66,7 +66,8 @@ message CreateNmCourseRequest {
 message NmChapter {
     int64 chapter_id = 1;
     string chapter_name = 2;
-    repeated NmResource resources = 3;
+    NmChapter child_chapter = 3;
+    repeated NmResource resources = 4;
 }
 
 message NmResource {
