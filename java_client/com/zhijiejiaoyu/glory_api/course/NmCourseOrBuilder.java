@@ -134,25 +134,31 @@ public interface NmCourseOrBuilder extends
   double getCourseHours();
 
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   * <code>int64 course_module = 15;</code>
+   * @return The courseModule.
+   */
+  long getCourseModule();
+
+  /**
+   * <code>repeated .glory_api.NmChapter chapters = 16;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
       getChaptersList();
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   * <code>repeated .glory_api.NmChapter chapters = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmChapter getChapters(int index);
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   * <code>repeated .glory_api.NmChapter chapters = 16;</code>
    */
   int getChaptersCount();
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   * <code>repeated .glory_api.NmChapter chapters = 16;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
       getChaptersOrBuilderList();
   /**
-   * <code>repeated .glory_api.NmChapter chapters = 15;</code>
+   * <code>repeated .glory_api.NmChapter chapters = 16;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
       int index);

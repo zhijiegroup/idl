@@ -32,6 +32,7 @@ class NmCourse extends $pb.GeneratedMessage {
     $fixnum.Int64? courseType,
     $core.String? courseIndustry,
     $core.double? courseHours,
+    $fixnum.Int64? courseModule,
     $core.Iterable<NmChapter>? chapters,
   }) {
     final $result = create();
@@ -77,6 +78,9 @@ class NmCourse extends $pb.GeneratedMessage {
     if (courseHours != null) {
       $result.courseHours = courseHours;
     }
+    if (courseModule != null) {
+      $result.courseModule = courseModule;
+    }
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
@@ -101,7 +105,8 @@ class NmCourse extends $pb.GeneratedMessage {
     ..aInt64(12, _omitFieldNames ? '' : 'courseType')
     ..aOS(13, _omitFieldNames ? '' : 'courseIndustry')
     ..a<$core.double>(14, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
-    ..pc<NmChapter>(15, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..aInt64(15, _omitFieldNames ? '' : 'courseModule')
+    ..pc<NmChapter>(16, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..hasRequiredFields = false
   ;
 
@@ -253,7 +258,16 @@ class NmCourse extends $pb.GeneratedMessage {
   void clearCourseHours() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.List<NmChapter> get chapters => $_getList(14);
+  $fixnum.Int64 get courseModule => $_getI64(14);
+  @$pb.TagNumber(15)
+  set courseModule($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasCourseModule() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCourseModule() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.List<NmChapter> get chapters => $_getList(15);
 }
 
 class CreateNmCourseChapterResourceRequest extends $pb.GeneratedMessage {

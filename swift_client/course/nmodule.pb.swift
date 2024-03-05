@@ -53,6 +53,8 @@ struct GloryApi_NmCourse {
 
   var courseHours: Double = 0
 
+  var courseModule: Int64 = 0
+
   var chapters: [GloryApi_NmChapter] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -495,7 +497,8 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     12: .standard(proto: "course_type"),
     13: .standard(proto: "course_industry"),
     14: .standard(proto: "course_hours"),
-    15: .same(proto: "chapters"),
+    15: .standard(proto: "course_module"),
+    16: .same(proto: "chapters"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -518,7 +521,8 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       case 12: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
       case 13: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 14: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
-      case 15: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
+      case 15: try { try decoder.decodeSingularInt64Field(value: &self.courseModule) }()
+      case 16: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       default: break
       }
     }
@@ -567,8 +571,11 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if self.courseHours != 0 {
       try visitor.visitSingularDoubleField(value: self.courseHours, fieldNumber: 14)
     }
+    if self.courseModule != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseModule, fieldNumber: 15)
+    }
     if !self.chapters.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 15)
+      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 16)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -588,6 +595,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.courseHours != rhs.courseHours {return false}
+    if lhs.courseModule != rhs.courseModule {return false}
     if lhs.chapters != rhs.chapters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

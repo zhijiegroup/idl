@@ -20,6 +20,7 @@ export interface NmCourse {
   course_type?: string;
   course_industry?: string;
   course_hours?: number;
+  course_module?: string;
   chapters?: Array<NmChapter>;
 }
 
