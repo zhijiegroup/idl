@@ -89,6 +89,7 @@ message ListCourseRequest {
   repeated string major = 4; // 专业代码
   repeated int32 level = 5; // 1: 中职 2:高职 3: 中高职
   repeated int32 course_type = 6; // 1: 专业核心课 2:名师公开课 
+  string course_industry = 7; // 课程所属行业
   base.PaginationRequest pagination = 100;
 }
 
