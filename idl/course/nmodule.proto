@@ -20,7 +20,8 @@ message NmCourse {
     int64 course_type = 12;
     string course_industry = 13;
     double course_hours = 14;
-    repeated NmChapter chapters = 15;
+    int64 course_module = 15;
+    repeated NmChapter chapters = 16;
 }
 
 message CreateNmCourseChapterResourceRequest {
