@@ -950,6 +950,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? major,
     $core.Iterable<$core.int>? level,
     $core.Iterable<$core.int>? courseType,
+    $core.String? courseIndustry,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -971,6 +972,9 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     if (courseType != null) {
       $result.courseType.addAll(courseType);
     }
+    if (courseIndustry != null) {
+      $result.courseIndustry = courseIndustry;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -987,6 +991,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..pPS(4, _omitFieldNames ? '' : 'major')
     ..p<$core.int>(5, _omitFieldNames ? '' : 'level', $pb.PbFieldType.K3)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'courseType', $pb.PbFieldType.K3)
+    ..aOS(7, _omitFieldNames ? '' : 'courseIndustry')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1050,16 +1055,25 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.List<$core.int> get courseType => $_getList(5);
 
+  @$pb.TagNumber(7)
+  $core.String get courseIndustry => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set courseIndustry($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCourseIndustry() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCourseIndustry() => clearField(7);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(6);
+  $1.PaginationRequest get pagination => $_getN(7);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(6);
+  $core.bool hasPagination() => $_has(7);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(6);
+  $1.PaginationRequest ensurePagination() => $_ensure(7);
 }
 
 class ListCourseResponse extends $pb.GeneratedMessage {

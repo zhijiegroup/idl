@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private ListNmCourseRequest() {
     value = "";
-    courseIndustry = "";
   }
 
   @java.lang.Override
@@ -72,12 +71,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             value = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            courseIndustry = s;
             break;
           }
           case 802: {
@@ -200,44 +193,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object courseIndustry ;
-  /**
-   * <code>string course_industry = 4;</code>
-   * @return The courseIndustry.
-   */
-  @java.lang.Override
-  public java.lang.String getCourseIndustry() {
-    java.lang.Object ref = courseIndustry ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      courseIndustry = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string course_industry = 4;</code>
-   * @return The bytes for courseIndustry.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCourseIndustryBytes() {
-    java.lang.Object ref = courseIndustry ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      courseIndustry = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -287,9 +242,6 @@ private static final long serialVersionUID = 0L;
     if (!getValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value );
     }
-    if (!getCourseIndustryBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, courseIndustry );
-    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -312,9 +264,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value );
-    }
-    if (!getCourseIndustryBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, courseIndustry );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -344,8 +293,6 @@ private static final long serialVersionUID = 0L;
         != other.getClassification()) return false;
     if (!getValue()
         .equals(other.getValue())) return false;
-    if (!getCourseIndustry()
-        .equals(other.getCourseIndustry())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -370,8 +317,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getClassification();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getValue().hashCode();
-    hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseIndustry().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -519,8 +464,6 @@ private static final long serialVersionUID = 0L;
 
       value = "";
 
-      courseIndustry = "";
-
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -560,7 +503,6 @@ private static final long serialVersionUID = 0L;
       }
       result.classification = classification ;
       result.value = value ;
-      result.courseIndustry = courseIndustry ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -622,10 +564,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getValue().isEmpty()) {
         value = other.value ;
-        onChanged();
-      }
-      if (!other.getCourseIndustry().isEmpty()) {
-        courseIndustry = other.courseIndustry ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -882,82 +820,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       value = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object courseIndustry = "";
-    /**
-     * <code>string course_industry = 4;</code>
-     * @return The courseIndustry.
-     */
-    public java.lang.String getCourseIndustry() {
-      java.lang.Object ref = courseIndustry ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        courseIndustry = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string course_industry = 4;</code>
-     * @return The bytes for courseIndustry.
-     */
-    public com.google.protobuf.ByteString
-        getCourseIndustryBytes() {
-      java.lang.Object ref = courseIndustry ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        courseIndustry = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string course_industry = 4;</code>
-     * @param value The courseIndustry to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCourseIndustry(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      courseIndustry = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string course_industry = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCourseIndustry() {
-      
-      courseIndustry = getDefaultInstance().getCourseIndustry();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string course_industry = 4;</code>
-     * @param value The bytes for courseIndustry to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCourseIndustryBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      courseIndustry = value;
       onChanged();
       return this;
     }

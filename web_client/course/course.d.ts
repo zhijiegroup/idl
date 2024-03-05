@@ -111,6 +111,8 @@ export interface ListCourseRequest {
   level?: Array<number>;
   /** 1: 专业核心课 2:名师公开课 */
   course_type?: Array<number>;
+  /** 课程所属行业 */
+  course_industry?: string;
   pagination?: base.PaginationRequest;
 }
 

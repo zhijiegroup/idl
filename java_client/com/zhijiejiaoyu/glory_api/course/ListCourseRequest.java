@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     major = com.google.protobuf.LazyStringArrayList.EMPTY;
     level = emptyIntList();
     courseType = emptyIntList();
+    courseIndustry = "";
   }
 
   @java.lang.Override
@@ -128,6 +129,12 @@ private static final long serialVersionUID = 0L;
               courseType .addInt(input.readInt32());
             }
             input.popLimit(limit);
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            courseIndustry = s;
             break;
           }
           case 802: {
@@ -371,6 +378,52 @@ private static final long serialVersionUID = 0L;
   }
   private int courseTypeMemoizedSerializedSize = -1;
 
+  public static final int COURSE_INDUSTRY_FIELD_NUMBER = 7;
+  private volatile java.lang.Object courseIndustry ;
+  /**
+   * <pre>
+   * 课程所属行业
+   * </pre>
+   *
+   * <code>string course_industry = 7;</code>
+   * @return The courseIndustry.
+   */
+  @java.lang.Override
+  public java.lang.String getCourseIndustry() {
+    java.lang.Object ref = courseIndustry ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      courseIndustry = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 课程所属行业
+   * </pre>
+   *
+   * <code>string course_industry = 7;</code>
+   * @return The bytes for courseIndustry.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCourseIndustryBytes() {
+    java.lang.Object ref = courseIndustry ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      courseIndustry = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -438,6 +491,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < courseType .size(); i++) {
       output.writeInt32NoTag(courseType .getInt(i));
     }
+    if (!getCourseIndustryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, courseIndustry );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -498,6 +554,9 @@ private static final long serialVersionUID = 0L;
       }
       courseTypeMemoizedSerializedSize = dataSize;
     }
+    if (!getCourseIndustryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, courseIndustry );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -532,6 +591,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLevelList())) return false;
     if (!getCourseTypeList()
         .equals(other.getCourseTypeList())) return false;
+    if (!getCourseIndustry()
+        .equals(other.getCourseIndustry())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -568,6 +629,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COURSE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getCourseTypeList().hashCode();
     }
+    hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseIndustry().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -725,6 +788,8 @@ private static final long serialVersionUID = 0L;
       bitField0 = (bitField0 & ~0x00000002);
       courseType = emptyIntList();
       bitField0 = (bitField0 & ~0x00000004);
+      courseIndustry = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -780,6 +845,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000004);
       }
       result.courseType = courseType ;
+      result.courseIndustry = courseIndustry ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -870,6 +936,10 @@ private static final long serialVersionUID = 0L;
           ensureCourseTypeIsMutable();
           courseType .addAll(other.courseType );
         }
+        onChanged();
+      }
+      if (!other.getCourseIndustry().isEmpty()) {
+        courseIndustry = other.courseIndustry ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -1466,6 +1536,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearCourseType() {
       courseType = emptyIntList();
       bitField0 = (bitField0 & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object courseIndustry = "";
+    /**
+     * <pre>
+     * 课程所属行业
+     * </pre>
+     *
+     * <code>string course_industry = 7;</code>
+     * @return The courseIndustry.
+     */
+    public java.lang.String getCourseIndustry() {
+      java.lang.Object ref = courseIndustry ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        courseIndustry = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课程所属行业
+     * </pre>
+     *
+     * <code>string course_industry = 7;</code>
+     * @return The bytes for courseIndustry.
+     */
+    public com.google.protobuf.ByteString
+        getCourseIndustryBytes() {
+      java.lang.Object ref = courseIndustry ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        courseIndustry = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 课程所属行业
+     * </pre>
+     *
+     * <code>string course_industry = 7;</code>
+     * @param value The courseIndustry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseIndustry(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      courseIndustry = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程所属行业
+     * </pre>
+     *
+     * <code>string course_industry = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseIndustry() {
+      
+      courseIndustry = getDefaultInstance().getCourseIndustry();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程所属行业
+     * </pre>
+     *
+     * <code>string course_industry = 7;</code>
+     * @param value The bytes for courseIndustry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseIndustryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      courseIndustry = value;
       onChanged();
       return this;
     }

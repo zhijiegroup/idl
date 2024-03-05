@@ -364,8 +364,6 @@ struct GloryApi_ListNmCourseRequest {
 
   var value: String = String()
 
-  var courseIndustry: String = String()
-
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1226,7 +1224,6 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     1: .standard(proto: "base_request"),
     2: .same(proto: "classification"),
     3: .same(proto: "value"),
-    4: .standard(proto: "course_industry"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1239,7 +1236,6 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.classification) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.value) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1260,9 +1256,6 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.value.isEmpty {
       try visitor.visitSingularStringField(value: self.value, fieldNumber: 3)
     }
-    if !self.courseIndustry.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 4)
-    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1273,7 +1266,6 @@ extension GloryApi_ListNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.classification != rhs.classification {return false}
     if lhs.value != rhs.value {return false}
-    if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -238,7 +238,6 @@ const ListNmCourseRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'classification', '3': 2, '4': 1, '5': 5, '10': 'classification'},
     {'1': 'value', '3': 3, '4': 1, '5': 9, '10': 'value'},
-    {'1': 'course_industry', '3': 4, '4': 1, '5': 9, '10': 'courseIndustry'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -247,9 +246,8 @@ const ListNmCourseRequest$json = {
 final $typed_data.Uint8List listNmCourseRequestDescriptor = $convert.base64Decode(
     'ChNMaXN0Tm1Db3Vyc2VSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
     'JlcXVlc3RSC2Jhc2VSZXF1ZXN0EiYKDmNsYXNzaWZpY2F0aW9uGAIgASgFUg5jbGFzc2lmaWNh'
-    'dGlvbhIUCgV2YWx1ZRgDIAEoCVIFdmFsdWUSJwoPY291cnNlX2luZHVzdHJ5GAQgASgJUg5jb3'
-    'Vyc2VJbmR1c3RyeRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVz'
-    'dFIKcGFnaW5hdGlvbg==');
+    'dGlvbhIUCgV2YWx1ZRgDIAEoCVIFdmFsdWUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUG'
+    'FnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listNmCourseResponseDescriptor instead')
 const ListNmCourseResponse$json = {
