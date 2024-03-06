@@ -156,7 +156,7 @@ const NmChapter$json = {
   '2': [
     {'1': 'chapter_id', '3': 1, '4': 1, '5': 3, '10': 'chapterId'},
     {'1': 'chapter_name', '3': 2, '4': 1, '5': 9, '10': 'chapterName'},
-    {'1': 'child_chapter', '3': 3, '4': 1, '5': 11, '6': '.glory_api.NmChapter', '10': 'childChapter'},
+    {'1': 'child_chapter', '3': 3, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'childChapter'},
     {'1': 'resources', '3': 4, '4': 3, '5': 11, '6': '.glory_api.NmResource', '10': 'resources'},
   ],
 };
@@ -164,7 +164,7 @@ const NmChapter$json = {
 /// Descriptor for `NmChapter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nmChapterDescriptor = $convert.base64Decode(
     'CglObUNoYXB0ZXISHQoKY2hhcHRlcl9pZBgBIAEoA1IJY2hhcHRlcklkEiEKDGNoYXB0ZXJfbm'
-    'FtZRgCIAEoCVILY2hhcHRlck5hbWUSOQoNY2hpbGRfY2hhcHRlchgDIAEoCzIULmdsb3J5X2Fw'
+    'FtZRgCIAEoCVILY2hhcHRlck5hbWUSOQoNY2hpbGRfY2hhcHRlchgDIAMoCzIULmdsb3J5X2Fw'
     'aS5ObUNoYXB0ZXJSDGNoaWxkQ2hhcHRlchIzCglyZXNvdXJjZXMYBCADKAsyFS5nbG9yeV9hcG'
     'kuTm1SZXNvdXJjZVIJcmVzb3VyY2Vz');
 

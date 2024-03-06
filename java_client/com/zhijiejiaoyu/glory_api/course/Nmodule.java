@@ -132,7 +132,7 @@ public final class Nmodule {
       "e\030\013 \001(\003\022\027\n\017course_industry\030\014 \001(\t\022&\n\010chap" +
       "ters\030\r \003(\0132\024.glory_api.NmChapter\"\214\001\n\tNmC" +
       "hapter\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014chapter_na" +
-      "me\030\002 \001(\t\022+\n\rchild_chapter\030\003 \001(\0132\024.glory_" +
+      "me\030\002 \001(\t\022+\n\rchild_chapter\030\003 \003(\0132\024.glory_" +
       "api.NmChapter\022(\n\tresources\030\004 \003(\0132\025.glory" +
       "_api.NmResource\"|\n\nNmResource\022\023\n\013resourc" +
       "e_id\030\001 \001(\003\022\025\n\rresource_name\030\002 \001(\t\022\025\n\rres" +

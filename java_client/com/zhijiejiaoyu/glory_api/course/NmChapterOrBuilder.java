@@ -26,19 +26,28 @@ public interface NmChapterOrBuilder extends
       getChapterNameBytes();
 
   /**
-   * <code>.glory_api.NmChapter child_chapter = 3;</code>
-   * @return Whether the childChapter field is set.
+   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
    */
-  boolean hasChildChapter();
+  java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
+      getChildChapterList();
   /**
-   * <code>.glory_api.NmChapter child_chapter = 3;</code>
-   * @return The childChapter.
+   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
    */
-  com.zhijiejiaoyu.glory_api.course.NmChapter getChildChapter();
+  com.zhijiejiaoyu.glory_api.course.NmChapter getChildChapter(int index);
   /**
-   * <code>.glory_api.NmChapter child_chapter = 3;</code>
+   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
    */
-  com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChildChapterOrBuilder();
+  int getChildChapterCount();
+  /**
+   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
+      getChildChapterOrBuilderList();
+  /**
+   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChildChapterOrBuilder(
+      int index);
 
   /**
    * <code>repeated .glory_api.NmResource resources = 4;</code>

@@ -808,7 +808,7 @@ class NmChapter extends $pb.GeneratedMessage {
   factory NmChapter({
     $fixnum.Int64? chapterId,
     $core.String? chapterName,
-    NmChapter? childChapter,
+    $core.Iterable<NmChapter>? childChapter,
     $core.Iterable<NmResource>? resources,
   }) {
     final $result = create();
@@ -819,7 +819,7 @@ class NmChapter extends $pb.GeneratedMessage {
       $result.chapterName = chapterName;
     }
     if (childChapter != null) {
-      $result.childChapter = childChapter;
+      $result.childChapter.addAll(childChapter);
     }
     if (resources != null) {
       $result.resources.addAll(resources);
@@ -833,7 +833,7 @@ class NmChapter extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmChapter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'chapterId')
     ..aOS(2, _omitFieldNames ? '' : 'chapterName')
-    ..aOM<NmChapter>(3, _omitFieldNames ? '' : 'childChapter', subBuilder: NmChapter.create)
+    ..pc<NmChapter>(3, _omitFieldNames ? '' : 'childChapter', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..pc<NmResource>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: NmResource.create)
     ..hasRequiredFields = false
   ;
@@ -878,15 +878,7 @@ class NmChapter extends $pb.GeneratedMessage {
   void clearChapterName() => clearField(2);
 
   @$pb.TagNumber(3)
-  NmChapter get childChapter => $_getN(2);
-  @$pb.TagNumber(3)
-  set childChapter(NmChapter v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasChildChapter() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearChildChapter() => clearField(3);
-  @$pb.TagNumber(3)
-  NmChapter ensureChildChapter() => $_ensure(2);
+  $core.List<NmChapter> get childChapter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<NmResource> get resources => $_getList(3);
