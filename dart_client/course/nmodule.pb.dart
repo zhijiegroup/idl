@@ -808,6 +808,7 @@ class NmChapter extends $pb.GeneratedMessage {
   factory NmChapter({
     $fixnum.Int64? chapterId,
     $core.String? chapterName,
+    $core.String? chapterIndex,
     $core.Iterable<NmChapter>? childChapter,
     $core.Iterable<NmResource>? resources,
   }) {
@@ -817,6 +818,9 @@ class NmChapter extends $pb.GeneratedMessage {
     }
     if (chapterName != null) {
       $result.chapterName = chapterName;
+    }
+    if (chapterIndex != null) {
+      $result.chapterIndex = chapterIndex;
     }
     if (childChapter != null) {
       $result.childChapter.addAll(childChapter);
@@ -833,8 +837,9 @@ class NmChapter extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmChapter', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'chapterId')
     ..aOS(2, _omitFieldNames ? '' : 'chapterName')
-    ..pc<NmChapter>(3, _omitFieldNames ? '' : 'childChapter', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
-    ..pc<NmResource>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: NmResource.create)
+    ..aOS(3, _omitFieldNames ? '' : 'chapterIndex')
+    ..pc<NmChapter>(4, _omitFieldNames ? '' : 'childChapter', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..pc<NmResource>(5, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: NmResource.create)
     ..hasRequiredFields = false
   ;
 
@@ -878,10 +883,19 @@ class NmChapter extends $pb.GeneratedMessage {
   void clearChapterName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<NmChapter> get childChapter => $_getList(2);
+  $core.String get chapterIndex => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set chapterIndex($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChapterIndex() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChapterIndex() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<NmResource> get resources => $_getList(3);
+  $core.List<NmChapter> get childChapter => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<NmResource> get resources => $_getList(4);
 }
 
 class NmResource extends $pb.GeneratedMessage {
