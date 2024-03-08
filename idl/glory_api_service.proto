@@ -1157,6 +1157,10 @@ service glory_api {
   rpc CreateNmCourse(CreateNmCourseRequest) returns (CreateNmCourseResponse) {
     option (api.post) = '/api/course/create_nm_course';
   }
+   // 更新课程
+   rpc UpdateNmCourse(UpdateNmCourseRequest) returns (UpdateNmCourseResponse) {
+    option (api.post) = '/api/course/update_nm_course';
+  }
    // 课程列表
   rpc ListNmCourse(ListNmCourseRequest) returns (ListNmCourseResponse) {
     option (api.post) = '/api/course/list_nm_course';

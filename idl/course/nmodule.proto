@@ -85,6 +85,27 @@ message CreateNmCourseResponse {
     int64 course_id = 2;
 }
 
+message UpdateNmCourseRequest {
+    base.BaseRequest base_request = 1;
+    string course_name = 2;
+    string course_organization = 3;
+    string teacher_name = 4;
+    double course_hours = 5;
+    string course_description = 6;
+    string course_cover_path = 7;
+    int64 course_classification = 8;
+    int64 course_level = 9; // 课程层次：1.中职 2.高职 3.中高职
+    string course_major = 10;
+    int64 course_type = 11; // 课程类型：1:核心课程 2:名师公开课
+    string course_industry = 12;
+    repeated NmChapter chapters = 13;
+    int64 course_id = 14;
+}
+
+message UpdateNmCourseResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 message NmCourseDetailRequest {
     base.BaseRequest base_request = 1;
     int64 course_id = 2;
