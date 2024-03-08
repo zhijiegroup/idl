@@ -218,6 +218,8 @@ struct GloryApi_NmChapter {
 
   var chapterName: String = String()
 
+  var chapterIndex: String = String()
+
   var childChapter: [GloryApi_NmChapter] = []
 
   var resources: [GloryApi_NmResource] = []
@@ -889,8 +891,9 @@ extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "chapter_id"),
     2: .standard(proto: "chapter_name"),
-    3: .standard(proto: "child_chapter"),
-    4: .same(proto: "resources"),
+    3: .standard(proto: "chapter_index"),
+    4: .standard(proto: "child_chapter"),
+    5: .same(proto: "resources"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -901,8 +904,9 @@ extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.chapterID) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.chapterName) }()
-      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.childChapter) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.resources) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.chapterIndex) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.childChapter) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.resources) }()
       default: break
       }
     }
@@ -915,11 +919,14 @@ extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.chapterName.isEmpty {
       try visitor.visitSingularStringField(value: self.chapterName, fieldNumber: 2)
     }
+    if !self.chapterIndex.isEmpty {
+      try visitor.visitSingularStringField(value: self.chapterIndex, fieldNumber: 3)
+    }
     if !self.childChapter.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.childChapter, fieldNumber: 3)
+      try visitor.visitRepeatedMessageField(value: self.childChapter, fieldNumber: 4)
     }
     if !self.resources.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 4)
+      try visitor.visitRepeatedMessageField(value: self.resources, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -927,6 +934,7 @@ extension GloryApi_NmChapter: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   static func ==(lhs: GloryApi_NmChapter, rhs: GloryApi_NmChapter) -> Bool {
     if lhs.chapterID != rhs.chapterID {return false}
     if lhs.chapterName != rhs.chapterName {return false}
+    if lhs.chapterIndex != rhs.chapterIndex {return false}
     if lhs.childChapter != rhs.childChapter {return false}
     if lhs.resources != rhs.resources {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

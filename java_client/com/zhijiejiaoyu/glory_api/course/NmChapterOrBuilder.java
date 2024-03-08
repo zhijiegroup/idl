@@ -26,49 +26,61 @@ public interface NmChapterOrBuilder extends
       getChapterNameBytes();
 
   /**
-   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   * <code>string chapter_index = 3;</code>
+   * @return The chapterIndex.
+   */
+  java.lang.String getChapterIndex();
+  /**
+   * <code>string chapter_index = 3;</code>
+   * @return The bytes for chapterIndex.
+   */
+  com.google.protobuf.ByteString
+      getChapterIndexBytes();
+
+  /**
+   * <code>repeated .glory_api.NmChapter child_chapter = 4;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.NmChapter> 
       getChildChapterList();
   /**
-   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   * <code>repeated .glory_api.NmChapter child_chapter = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmChapter getChildChapter(int index);
   /**
-   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   * <code>repeated .glory_api.NmChapter child_chapter = 4;</code>
    */
   int getChildChapterCount();
   /**
-   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   * <code>repeated .glory_api.NmChapter child_chapter = 4;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder> 
       getChildChapterOrBuilderList();
   /**
-   * <code>repeated .glory_api.NmChapter child_chapter = 3;</code>
+   * <code>repeated .glory_api.NmChapter child_chapter = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChildChapterOrBuilder(
       int index);
 
   /**
-   * <code>repeated .glory_api.NmResource resources = 4;</code>
+   * <code>repeated .glory_api.NmResource resources = 5;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.course.NmResource> 
       getResourcesList();
   /**
-   * <code>repeated .glory_api.NmResource resources = 4;</code>
+   * <code>repeated .glory_api.NmResource resources = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmResource getResources(int index);
   /**
-   * <code>repeated .glory_api.NmResource resources = 4;</code>
+   * <code>repeated .glory_api.NmResource resources = 5;</code>
    */
   int getResourcesCount();
   /**
-   * <code>repeated .glory_api.NmResource resources = 4;</code>
+   * <code>repeated .glory_api.NmResource resources = 5;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.course.NmResourceOrBuilder> 
       getResourcesOrBuilderList();
   /**
-   * <code>repeated .glory_api.NmResource resources = 4;</code>
+   * <code>repeated .glory_api.NmResource resources = 5;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NmResourceOrBuilder getResourcesOrBuilder(
       int index);
