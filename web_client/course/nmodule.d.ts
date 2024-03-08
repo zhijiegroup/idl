@@ -119,6 +119,7 @@ export interface NmCourseDetailResponse {
   base_resp?: base.BaseResponse;
   course?: NmCourse;
   is_joined?: boolean;
+  course_progress?: number;
 }
 
 export interface ListNmCourseRequest {

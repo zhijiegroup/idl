@@ -272,6 +272,7 @@ const NmCourseDetailResponse$json = {
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'course', '3': 2, '4': 1, '5': 11, '6': '.glory_api.NmCourse', '10': 'course'},
     {'1': 'is_joined', '3': 4, '4': 1, '5': 8, '10': 'isJoined'},
+    {'1': 'course_progress', '3': 3, '4': 1, '5': 5, '10': 'courseProgress'},
   ],
 };
 
@@ -279,7 +280,8 @@ const NmCourseDetailResponse$json = {
 final $typed_data.Uint8List nmCourseDetailResponseDescriptor = $convert.base64Decode(
     'ChZObUNvdXJzZURldGFpbFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBIrCgZjb3Vyc2UYAiABKAsyEy5nbG9yeV9hcGkuTm1Db3Vyc2VS'
-    'BmNvdXJzZRIbCglpc19qb2luZWQYBCABKAhSCGlzSm9pbmVk');
+    'BmNvdXJzZRIbCglpc19qb2luZWQYBCABKAhSCGlzSm9pbmVkEicKD2NvdXJzZV9wcm9ncmVzcx'
+    'gDIAEoBVIOY291cnNlUHJvZ3Jlc3M=');
 
 @$core.Deprecated('Use listNmCourseRequestDescriptor instead')
 const ListNmCourseRequest$json = {

@@ -1420,6 +1420,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   factory NmCourseDetailResponse({
     $0.BaseResponse? baseResp,
     NmCourse? course,
+    $core.int? courseProgress,
     $core.bool? isJoined,
   }) {
     final $result = create();
@@ -1428,6 +1429,9 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
     }
     if (course != null) {
       $result.course = course;
+    }
+    if (courseProgress != null) {
+      $result.courseProgress = courseProgress;
     }
     if (isJoined != null) {
       $result.isJoined = isJoined;
@@ -1441,6 +1445,7 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NmCourseDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<NmCourse>(2, _omitFieldNames ? '' : 'course', subBuilder: NmCourse.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'courseProgress', $pb.PbFieldType.O3)
     ..aOB(4, _omitFieldNames ? '' : 'isJoined')
     ..hasRequiredFields = false
   ;
@@ -1488,12 +1493,21 @@ class NmCourseDetailResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   NmCourse ensureCourse() => $_ensure(1);
 
+  @$pb.TagNumber(3)
+  $core.int get courseProgress => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set courseProgress($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseProgress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseProgress() => clearField(3);
+
   @$pb.TagNumber(4)
-  $core.bool get isJoined => $_getBF(2);
+  $core.bool get isJoined => $_getBF(3);
   @$pb.TagNumber(4)
-  set isJoined($core.bool v) { $_setBool(2, v); }
+  set isJoined($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIsJoined() => $_has(2);
+  $core.bool hasIsJoined() => $_has(3);
   @$pb.TagNumber(4)
   void clearIsJoined() => clearField(4);
 }

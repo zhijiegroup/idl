@@ -42,4 +42,10 @@ public interface NmCourseDetailResponseOrBuilder extends
    * @return The isJoined.
    */
   boolean getIsJoined();
+
+  /**
+   * <code>int32 course_progress = 3;</code>
+   * @return The courseProgress.
+   */
+  int getCourseProgress();
 }

@@ -393,6 +393,11 @@ struct GloryApi_NmCourseDetailResponse {
     set {_uniqueStorage()._isJoined = newValue}
   }
 
+  var courseProgress: Int32 {
+    get {return _storage._courseProgress}
+    set {_uniqueStorage()._courseProgress = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1310,12 +1315,14 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
     1: .standard(proto: "base_resp"),
     2: .same(proto: "course"),
     4: .standard(proto: "is_joined"),
+    3: .standard(proto: "course_progress"),
   ]
 
   fileprivate class _StorageClass {
     var _baseResp: Base_BaseResponse? = nil
     var _course: GloryApi_NmCourse? = nil
     var _isJoined: Bool = false
+    var _courseProgress: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -1325,6 +1332,7 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
       _baseResp = source._baseResp
       _course = source._course
       _isJoined = source._isJoined
+      _courseProgress = source._courseProgress
     }
   }
 
@@ -1345,6 +1353,7 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
         switch fieldNumber {
         case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._course) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._courseProgress) }()
         case 4: try { try decoder.decodeSingularBoolField(value: &_storage._isJoined) }()
         default: break
         }
@@ -1364,6 +1373,9 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
       try { if let v = _storage._course {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       } }()
+      if _storage._courseProgress != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._courseProgress, fieldNumber: 3)
+      }
       if _storage._isJoined != false {
         try visitor.visitSingularBoolField(value: _storage._isJoined, fieldNumber: 4)
       }
@@ -1379,6 +1391,7 @@ extension GloryApi_NmCourseDetailResponse: SwiftProtobuf.Message, SwiftProtobuf.
         if _storage._baseResp != rhs_storage._baseResp {return false}
         if _storage._course != rhs_storage._course {return false}
         if _storage._isJoined != rhs_storage._isJoined {return false}
+        if _storage._courseProgress != rhs_storage._courseProgress {return false}
         return true
       }
       if !storagesAreEqual {return false}
