@@ -47,6 +47,7 @@ export interface CreateRoomRequest {
   evaluation_type?: string;
   /** web; app; */
   platform?: string;
+  teacher_task_id?: string;
 }
 
 export interface CreateRoomResponse {

@@ -139,4 +139,10 @@ public interface CreateRoomRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPlatformBytes();
+
+  /**
+   * <code>int64 teacher_task_id = 18;</code>
+   * @return The teacherTaskId.
+   */
+  long getTeacherTaskId();
 }

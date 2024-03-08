@@ -111,6 +111,11 @@ private static final long serialVersionUID = 0L;
             platform = s;
             break;
           }
+          case 144: {
+
+            teacherTaskId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -432,6 +437,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TEACHER_TASK_ID_FIELD_NUMBER = 18;
+  private long teacherTaskId ;
+  /**
+   * <code>int64 teacher_task_id = 18;</code>
+   * @return The teacherTaskId.
+   */
+  @java.lang.Override
+  public long getTeacherTaskId() {
+    return teacherTaskId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -473,6 +489,9 @@ private static final long serialVersionUID = 0L;
     if (!getPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, platform );
     }
+    if (teacherTaskId != 0L) {
+      output.writeInt64(18, teacherTaskId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -513,6 +532,10 @@ private static final long serialVersionUID = 0L;
     if (!getPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, platform );
     }
+    if (teacherTaskId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(18, teacherTaskId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -549,6 +572,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEvaluationType())) return false;
     if (!getPlatform()
         .equals(other.getPlatform())) return false;
+    if (getTeacherTaskId()
+        != other.getTeacherTaskId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -583,6 +608,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEvaluationType().hashCode();
     hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getPlatform().hashCode();
+    hash = (37 * hash) + TEACHER_TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTeacherTaskId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -738,6 +766,8 @@ private static final long serialVersionUID = 0L;
 
       platform = "";
 
+      teacherTaskId = 0L;
+
       return this;
     }
 
@@ -777,6 +807,7 @@ private static final long serialVersionUID = 0L;
       result.coverPath = coverPath ;
       result.evaluationType = evaluationType ;
       result.platform = platform ;
+      result.teacherTaskId = teacherTaskId ;
       onBuilt();
       return result;
     }
@@ -856,6 +887,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getPlatform().isEmpty()) {
         platform = other.platform ;
         onChanged();
+      }
+      if (other.getTeacherTaskId() != 0L) {
+        setTeacherTaskId(other.getTeacherTaskId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1578,6 +1612,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       platform = value;
+      onChanged();
+      return this;
+    }
+
+    private long teacherTaskId ;
+    /**
+     * <code>int64 teacher_task_id = 18;</code>
+     * @return The teacherTaskId.
+     */
+    @java.lang.Override
+    public long getTeacherTaskId() {
+      return teacherTaskId ;
+    }
+    /**
+     * <code>int64 teacher_task_id = 18;</code>
+     * @param value The teacherTaskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherTaskId(long value) {
+      
+      teacherTaskId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 teacher_task_id = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherTaskId() {
+      
+      teacherTaskId = 0L;
       onChanged();
       return this;
     }

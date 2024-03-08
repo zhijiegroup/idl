@@ -63,6 +63,7 @@ const CreateRoomRequest$json = {
     {'1': 'cover_path', '3': 7, '4': 1, '5': 9, '10': 'coverPath'},
     {'1': 'evaluation_type', '3': 8, '4': 1, '5': 9, '10': 'evaluationType'},
     {'1': 'platform', '3': 9, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'teacher_task_id', '3': 18, '4': 1, '5': 3, '10': 'teacherTaskId'},
   ],
 };
 
@@ -74,7 +75,7 @@ final $typed_data.Uint8List createRoomRequestDescriptor = $convert.base64Decode(
     '1hZ2VfYXR0YWNobWVudF9pZBgFIAEoA1IVcm9vbUltYWdlQXR0YWNobWVudElkEhoKCWlzX3Vz'
     'ZV9haRgGIAEoA1IHaXNVc2VBaRIdCgpjb3Zlcl9wYXRoGAcgASgJUgljb3ZlclBhdGgSJwoPZX'
     'ZhbHVhdGlvbl90eXBlGAggASgJUg5ldmFsdWF0aW9uVHlwZRIaCghwbGF0Zm9ybRgJIAEoCVII'
-    'cGxhdGZvcm0=');
+    'cGxhdGZvcm0SJgoPdGVhY2hlcl90YXNrX2lkGBIgASgDUg10ZWFjaGVyVGFza0lk');
 
 @$core.Deprecated('Use createRoomResponseDescriptor instead')
 const CreateRoomResponse$json = {

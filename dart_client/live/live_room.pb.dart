@@ -301,6 +301,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     $core.String? coverPath,
     $core.String? evaluationType,
     $core.String? platform,
+    $fixnum.Int64? teacherTaskId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -330,6 +331,9 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
+    if (teacherTaskId != null) {
+      $result.teacherTaskId = teacherTaskId;
+    }
     return $result;
   }
   CreateRoomRequest._() : super();
@@ -346,6 +350,7 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'coverPath')
     ..aOS(8, _omitFieldNames ? '' : 'evaluationType')
     ..aOS(9, _omitFieldNames ? '' : 'platform')
+    ..aInt64(18, _omitFieldNames ? '' : 'teacherTaskId')
     ..hasRequiredFields = false
   ;
 
@@ -452,6 +457,15 @@ class CreateRoomRequest extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(8);
   @$pb.TagNumber(9)
   void clearPlatform() => clearField(9);
+
+  @$pb.TagNumber(18)
+  $fixnum.Int64 get teacherTaskId => $_getI64(9);
+  @$pb.TagNumber(18)
+  set teacherTaskId($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasTeacherTaskId() => $_has(9);
+  @$pb.TagNumber(18)
+  void clearTeacherTaskId() => clearField(18);
 }
 
 class CreateRoomResponse extends $pb.GeneratedMessage {

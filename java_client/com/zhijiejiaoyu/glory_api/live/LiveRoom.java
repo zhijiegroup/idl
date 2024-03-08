@@ -237,124 +237,125 @@ public final class LiveRoom {
       "end_time\030\013 \001(\t\022\016\n\006status\030\014 \001(\t\022\024\n\014live_p" +
       "lan_id\030\r \001(\003\022\022\n\nroom_title\030\016 \001(\t\022\026\n\016room" +
       "_image_url\030\017 \001(\t\022 \n\030room_image_attachmen" +
-      "t_id\030\020 \001(\003\022\021\n\tis_use_ai\030\021 \001(\010\"\347\001\n\021Create" +
+      "t_id\030\020 \001(\003\022\021\n\tis_use_ai\030\021 \001(\010\"\200\002\n\021Create" +
       "RoomRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
       ".BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\020\n\010group_i" +
       "d\030\003 \001(\t\022\022\n\nroom_title\030\004 \001(\t\022 \n\030room_imag" +
       "e_attachment_id\030\005 \001(\003\022\021\n\tis_use_ai\030\006 \001(\003" +
       "\022\022\n\ncover_path\030\007 \001(\t\022\027\n\017evaluation_type\030" +
-      "\010 \001(\t\022\020\n\010platform\030\t \001(\t\"\210\001\n\022CreateRoomRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\017\n\007room_id\030\002 \001(\003\022\016\n\006up_url\030\003 \001(\t\022\022" +
-      "\n\nroom_title\030\004 \001(\t\022\026\n\016room_image_url\030\005 \001" +
-      "(\t\"[\n\016GetRoomRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\017" +
-      "\n\007shop_id\030\003 \001(\003\"W\n\017GetRoomResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004roo" +
-      "m\030\002 \001(\0132\017.glory_api.Room\"o\n\021UpdateRoomRe" +
+      "\010 \001(\t\022\020\n\010platform\030\t \001(\t\022\027\n\017teacher_task_" +
+      "id\030\022 \001(\003\"\210\001\n\022CreateRoomResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007room_i" +
+      "d\030\002 \001(\003\022\016\n\006up_url\030\003 \001(\t\022\022\n\nroom_title\030\004 " +
+      "\001(\t\022\026\n\016room_image_url\030\005 \001(\t\"[\n\016GetRoomRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\022\n\nclose_room\030\002 \001(\010\022\035\n\004room\030\003 \001(\013" +
-      "2\017.glory_api.Room\";\n\022UpdateRoomResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\270" +
-      "\001\n\017ListRoomRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\017\n\007" +
-      "user_id\030\004 \001(\003\022\020\n\010app_name\030\005 \001(\t\022\033\n\023inclu" +
-      "de_closed_room\030\006 \001(\010\022+\n\npagination\030d \001(\013" +
-      "2\027.base.PaginationRequest\"\206\001\n\020ListRoomRe" +
+      "equest\022\017\n\007room_id\030\002 \001(\003\022\017\n\007shop_id\030\003 \001(\003" +
+      "\"W\n\017GetRoomResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022\035\n\004room\030\002 \001(\0132\017.glory" +
+      "_api.Room\"o\n\021UpdateRoomRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nclose" +
+      "_room\030\002 \001(\010\022\035\n\004room\030\003 \001(\0132\017.glory_api.Ro" +
+      "om\";\n\022UpdateRoomResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"\270\001\n\017ListRoomRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007room_id\030\002 \001(\003\022\017\n\007user_id\030\004 \001(\003\022\020" +
+      "\n\010app_name\030\005 \001(\t\022\033\n\023include_closed_room\030" +
+      "\006 \001(\010\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
+      "ionRequest\"\206\001\n\020ListRoomResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\035\n\004room\030\002" +
+      " \003(\0132\017.glory_api.Room\022,\n\npagination\030d \001(" +
+      "\0132\030.base.PaginationResponse\"M\n\021DeleteRoo" +
+      "mRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\017\n\007room_id\030\002 \001(\003\";\n\022DeleteRoom" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"-\n\nDealAmount\022\017\n\007curreny\030\001 \001(\t\022\016" +
+      "\n\006amount\030\002 \001(\001\"\366\002\n\014FinishedRoom\022\017\n\007room_" +
+      "id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001(\t\022\027\n\017user_avat" +
+      "ar_url\030\003 \001(\t\022\021\n\tseller_id\030\004 \001(\003\022\022\n\nstart" +
+      "_time\030\005 \001(\t\022\033\n\023average_online_user\030\006 \001(\001" +
+      "\022\033\n\023room_product_amount\030\007 \001(\003\022\031\n\021room_or" +
+      "der_amount\030\010 \001(\003\022\026\n\016room_image_url\030\t \001(\t" +
+      "\022\022\n\nroom_title\030\n \001(\t\022 \n\030room_image_attac" +
+      "hment_id\030\013 \001(\003\022\030\n\020room_deal_amount\030\014 \001(\001" +
+      "\022\025\n\rcomment_count\030\r \001(\003\022\032\n\022live_product_" +
+      "count\030\016 \001(\003\022\022\n\nlike_count\030\017 \001(\003\"\200\001\n\027List" +
+      "FinishedRoomRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022+\n" +
+      "\npagination\030d \001(\0132\027.base.PaginationReque" +
+      "st\"\226\001\n\030ListFinishedRoomResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030\002" +
+      " \003(\0132\027.glory_api.FinishedRoom\022,\n\npaginat" +
+      "ion\030d \001(\0132\030.base.PaginationResponse\"R\n\026G" +
+      "etFinishedRoomRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(\003\"" +
+      "g\n\027GetFinishedRoomResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022%\n\004room\030\002 \001(\0132" +
+      "\027.glory_api.FinishedRoom\"o\n\027GetLiveChart" +
+      "DataRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\r\n\005start\030\003" +
+      " \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLiveChartData\022\014\n\004da" +
+      "te\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021room_bu" +
+      "yer_amount\030\003 \001(\003\022\031\n\021room_order_amount\030\004 " +
+      "\001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001\n\010LiveData\0221\n\017l" +
+      "ive_chart_data\030\001 \003(\0132\030.glory_api.LiveCha" +
+      "rtData\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024tot" +
+      "al_visitor_amount\030\003 \001(\003\022\032\n\022total_order_a" +
+      "mount\030\004 \001(\003\"i\n\030GetLiveChartDataResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022&" +
+      "\n\tlive_data\030\002 \001(\0132\023.glory_api.LiveData\"\216" +
+      "\001\n\031RecordLiveCallbackRequest\022\016\n\006domain\030\001" +
+      " \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006stream\030\003 \001(\t\022\013\n\003uri" +
+      "\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022\022\n\nstart_time\030\006" +
+      " \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C\n\032RecordLiveCal" +
+      "lbackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\235\001\n\023VideoToTextSentence\022\021\n\t" +
+      "BeginTime\030\001 \001(\003\022\017\n\007EndTime\030\002 \001(\003\022\021\n\tChan" +
+      "nelId\030\003 \001(\003\022\022\n\nSpeechRate\030\004 \001(\003\022\024\n\014Emoti" +
+      "onValue\030\005 \001(\001\022\027\n\017SilenceDuration\030\006 \001(\003\022\014" +
+      "\n\004Text\030\007 \001(\t\"F\n\021VideoToTextResult\0221\n\tSen" +
+      "tences\030\001 \003(\0132\036.glory_api.VideoToTextSent" +
+      "ence\"\322\001\n\032VideoToTextCallbackRequest\022\016\n\006T" +
+      "askId\030\001 \001(\t\022\022\n\nStatusCode\030\002 \001(\003\022\022\n\nStatu" +
+      "sText\030\003 \001(\t\022\023\n\013RequestTime\030\004 \001(\003\022\021\n\tSolv" +
+      "eTime\030\005 \001(\003\022\023\n\013BizDuration\030\006 \001(\003\022\021\n\tstop" +
+      "_time\030\007 \001(\003\022,\n\006Result\030\010 \001(\0132\034.glory_api." +
+      "VideoToTextResult\"D\n\033VideoToTextCallback" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\"!\n\016LiveSSERequest\022\017\n\007room_id\030\001 \001" +
+      "(\003\"8\n\017LiveSSEResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\"*\n\027CloseShopAllLive" +
+      "Request\022\017\n\007shop_id\030\001 \001(\003\"A\n\030CloseShopAll" +
+      "LiveResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"\255\001\n\031LiveStreamCallbackReques" +
+      "t\022\016\n\006action\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\n\n\002id\030\003 \001(" +
+      "\t\022\013\n\003app\030\004 \001(\t\022\017\n\007appname\030\005 \001(\t\022\014\n\004time\030" +
+      "\006 \001(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n\004node\030\010 \001(\t\022\016\n\006" +
+      "height\030\t \001(\005\022\r\n\005width\030\n \001(\005\"C\n\032LiveStrea" +
+      "mCallbackResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\"\226\001\n\035UpdateLiveCommentCo" +
+      "untRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007room_id\030\002 \001(\003\022\025\n\rcomment_" +
+      "count\030\003 \001(\003\022\022\n\nlike_count\030\004 \001(\003\022\020\n\010comme" +
+      "nts\030\005 \003(\t\"G\n\036UpdateLiveCommentCountRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"P\n\024GetLiveReplayRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002" +
+      " \001(\003\"R\n\025GetLiveReplayResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nreplay_u" +
+      "rl\030\002 \003(\t\"a\n%GetCouponAndIntroducingProdu" +
+      "ctRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\017\n\007shop_id\030\002 \001(\003\"w\n&GetCoupon" +
+      "AndIntroducingProductResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduct_" +
+      "id\030\002 \001(\003\022\022\n\ncoupon_ids\030\003 \003(\003\"f\n\034CreateNe" +
+      "wMessageTokenRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\014\n\004role\030\002 \001(\t\022\017\n\007u" +
+      "ser_id\030\003 \001(\t\"\231\001\n\035CreateNewMessageTokenRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022\035\n\004room\030\002 \003(\0132\017.glory_api.Room\022,\n\n" +
-      "pagination\030d \001(\0132\030.base.PaginationRespon" +
-      "se\"M\n\021DeleteRoomRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 \001(" +
-      "\003\";\n\022DeleteRoomResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"-\n\nDealAmount\022\017\n\007" +
-      "curreny\030\001 \001(\t\022\016\n\006amount\030\002 \001(\001\"\366\002\n\014Finish" +
-      "edRoom\022\017\n\007room_id\030\001 \001(\003\022\021\n\tuser_name\030\002 \001" +
-      "(\t\022\027\n\017user_avatar_url\030\003 \001(\t\022\021\n\tseller_id" +
-      "\030\004 \001(\003\022\022\n\nstart_time\030\005 \001(\t\022\033\n\023average_on" +
-      "line_user\030\006 \001(\001\022\033\n\023room_product_amount\030\007" +
-      " \001(\003\022\031\n\021room_order_amount\030\010 \001(\003\022\026\n\016room_" +
-      "image_url\030\t \001(\t\022\022\n\nroom_title\030\n \001(\t\022 \n\030r" +
-      "oom_image_attachment_id\030\013 \001(\003\022\030\n\020room_de" +
-      "al_amount\030\014 \001(\001\022\025\n\rcomment_count\030\r \001(\003\022\032" +
-      "\n\022live_product_count\030\016 \001(\003\022\022\n\nlike_count" +
-      "\030\017 \001(\003\"\200\001\n\027ListFinishedRoomRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007s" +
-      "hop_id\030\002 \001(\003\022+\n\npagination\030d \001(\0132\027.base." +
-      "PaginationRequest\"\226\001\n\030ListFinishedRoomRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022%\n\004room\030\002 \003(\0132\027.glory_api.Finished" +
-      "Room\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"R\n\026GetFinishedRoomRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n" +
-      "\007room_id\030\002 \001(\003\"g\n\027GetFinishedRoomRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\022%\n\004room\030\002 \001(\0132\027.glory_api.FinishedRoom\"" +
-      "o\n\027GetLiveChartDataRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002" +
-      " \001(\003\022\r\n\005start\030\003 \001(\003\022\013\n\003end\030\004 \001(\003\"{\n\rLive" +
-      "ChartData\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002" +
-      " \001(\001\022\031\n\021room_buyer_amount\030\003 \001(\003\022\031\n\021room_" +
-      "order_amount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\222\001" +
-      "\n\010LiveData\0221\n\017live_chart_data\030\001 \003(\0132\030.gl" +
-      "ory_api.LiveChartData\022\031\n\021total_deal_amou" +
-      "nt\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032" +
-      "\n\022total_order_amount\030\004 \001(\003\"i\n\030GetLiveCha" +
-      "rtDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022&\n\tlive_data\030\002 \001(\0132\023.glory" +
-      "_api.LiveData\"\216\001\n\031RecordLiveCallbackRequ" +
-      "est\022\016\n\006domain\030\001 \001(\t\022\013\n\003app\030\002 \001(\t\022\016\n\006stre" +
-      "am\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\022\020\n\010duration\030\005 \001(\001\022" +
-      "\022\n\nstart_time\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\"C" +
-      "\n\032RecordLiveCallbackResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"\235\001\n\023VideoToT" +
-      "extSentence\022\021\n\tBeginTime\030\001 \001(\003\022\017\n\007EndTim" +
-      "e\030\002 \001(\003\022\021\n\tChannelId\030\003 \001(\003\022\022\n\nSpeechRate" +
-      "\030\004 \001(\003\022\024\n\014EmotionValue\030\005 \001(\001\022\027\n\017SilenceD" +
-      "uration\030\006 \001(\003\022\014\n\004Text\030\007 \001(\t\"F\n\021VideoToTe" +
-      "xtResult\0221\n\tSentences\030\001 \003(\0132\036.glory_api." +
-      "VideoToTextSentence\"\322\001\n\032VideoToTextCallb" +
-      "ackRequest\022\016\n\006TaskId\030\001 \001(\t\022\022\n\nStatusCode" +
-      "\030\002 \001(\003\022\022\n\nStatusText\030\003 \001(\t\022\023\n\013RequestTim" +
-      "e\030\004 \001(\003\022\021\n\tSolveTime\030\005 \001(\003\022\023\n\013BizDuratio" +
-      "n\030\006 \001(\003\022\021\n\tstop_time\030\007 \001(\003\022,\n\006Result\030\010 \001" +
-      "(\0132\034.glory_api.VideoToTextResult\"D\n\033Vide" +
-      "oToTextCallbackResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"!\n\016LiveSSERequest" +
-      "\022\017\n\007room_id\030\001 \001(\003\"8\n\017LiveSSEResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"*\n\027C" +
-      "loseShopAllLiveRequest\022\017\n\007shop_id\030\001 \001(\003\"" +
-      "A\n\030CloseShopAllLiveResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\255\001\n\031LiveStrea" +
-      "mCallbackRequest\022\016\n\006action\030\001 \001(\t\022\n\n\002ip\030\002" +
-      " \001(\t\022\n\n\002id\030\003 \001(\t\022\013\n\003app\030\004 \001(\t\022\017\n\007appname" +
-      "\030\005 \001(\t\022\014\n\004time\030\006 \001(\003\022\017\n\007usrargs\030\007 \001(\t\022\014\n" +
-      "\004node\030\010 \001(\t\022\016\n\006height\030\t \001(\005\022\r\n\005width\030\n \001" +
-      "(\005\"C\n\032LiveStreamCallbackResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\226\001\n\035Upda" +
-      "teLiveCommentCountRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007room_id\030\002 " +
-      "\001(\003\022\025\n\rcomment_count\030\003 \001(\003\022\022\n\nlike_count" +
-      "\030\004 \001(\003\022\020\n\010comments\030\005 \003(\t\"G\n\036UpdateLiveCo" +
-      "mmentCountResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"P\n\024GetLiveReplayReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\017\n\007room_id\030\002 \001(\003\"R\n\025GetLiveReplayResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\022\n\nreplay_url\030\002 \003(\t\"a\n%GetCouponAndI" +
-      "ntroducingProductRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001" +
-      "(\003\"w\n&GetCouponAndIntroducingProductResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\022\022\n\nproduct_id\030\002 \001(\003\022\022\n\ncoupon_ids\030\003 " +
-      "\003(\003\"f\n\034CreateNewMessageTokenRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004" +
-      "role\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\t\"\231\001\n\035CreateNe" +
-      "wMessageTokenResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022\r\n\005token\030\002 \001(\t\022\r\n\005n" +
-      "once\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\022\020\n\010app_sig" +
-      "n\030\005 \001(\t\022\016\n\006app_id\030\006 \001(\tB#\n\037com.zhijiejia" +
-      "oyu.glory_api.liveP\001b\006proto3"
+      "ponse\022\r\n\005token\030\002 \001(\t\022\r\n\005nonce\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\t\022\020\n\010app_sign\030\005 \001(\t\022\016\n\006app_" +
+      "id\030\006 \001(\tB#\n\037com.zhijiejiaoyu.glory_api.l" +
+      "iveP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -372,7 +373,7 @@ public final class LiveRoom {
     internal_static_glory_api_CreateRoomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateRoomRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopId", "GroupId", "RoomTitle", "RoomImageAttachmentId", "IsUseAi", "CoverPath", "EvaluationType", "Platform", });
+        new java.lang.String[] { "BaseRequest", "ShopId", "GroupId", "RoomTitle", "RoomImageAttachmentId", "IsUseAi", "CoverPath", "EvaluationType", "Platform", "TeacherTaskId", });
     internal_static_glory_api_CreateRoomResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateRoomResponse_fieldAccessorTable = new

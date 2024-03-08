@@ -159,6 +159,8 @@ struct GloryApi_CreateRoomRequest {
   /// web; app;
   var platform: String = String()
 
+  var teacherTaskID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1402,6 +1404,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     7: .standard(proto: "cover_path"),
     8: .standard(proto: "evaluation_type"),
     9: .same(proto: "platform"),
+    18: .standard(proto: "teacher_task_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1419,6 +1422,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 7: try { try decoder.decodeSingularStringField(value: &self.coverPath) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.evaluationType) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.platform) }()
+      case 18: try { try decoder.decodeSingularInt64Field(value: &self.teacherTaskID) }()
       default: break
       }
     }
@@ -1456,6 +1460,9 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.platform.isEmpty {
       try visitor.visitSingularStringField(value: self.platform, fieldNumber: 9)
     }
+    if self.teacherTaskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.teacherTaskID, fieldNumber: 18)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1469,6 +1476,7 @@ extension GloryApi_CreateRoomRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.coverPath != rhs.coverPath {return false}
     if lhs.evaluationType != rhs.evaluationType {return false}
     if lhs.platform != rhs.platform {return false}
+    if lhs.teacherTaskID != rhs.teacherTaskID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
