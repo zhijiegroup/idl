@@ -1070,6 +1070,286 @@ class CreateNmCourseResponse extends $pb.GeneratedMessage {
   void clearCourseId() => clearField(2);
 }
 
+class UpdateNmCourseRequest extends $pb.GeneratedMessage {
+  factory UpdateNmCourseRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? courseName,
+    $core.String? courseOrganization,
+    $core.String? teacherName,
+    $core.double? courseHours,
+    $core.String? courseDescription,
+    $core.String? courseCoverPath,
+    $fixnum.Int64? courseClassification,
+    $fixnum.Int64? courseLevel,
+    $core.String? courseMajor,
+    $fixnum.Int64? courseType,
+    $core.String? courseIndustry,
+    $core.Iterable<NmChapter>? chapters,
+    $fixnum.Int64? courseId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (courseName != null) {
+      $result.courseName = courseName;
+    }
+    if (courseOrganization != null) {
+      $result.courseOrganization = courseOrganization;
+    }
+    if (teacherName != null) {
+      $result.teacherName = teacherName;
+    }
+    if (courseHours != null) {
+      $result.courseHours = courseHours;
+    }
+    if (courseDescription != null) {
+      $result.courseDescription = courseDescription;
+    }
+    if (courseCoverPath != null) {
+      $result.courseCoverPath = courseCoverPath;
+    }
+    if (courseClassification != null) {
+      $result.courseClassification = courseClassification;
+    }
+    if (courseLevel != null) {
+      $result.courseLevel = courseLevel;
+    }
+    if (courseMajor != null) {
+      $result.courseMajor = courseMajor;
+    }
+    if (courseType != null) {
+      $result.courseType = courseType;
+    }
+    if (courseIndustry != null) {
+      $result.courseIndustry = courseIndustry;
+    }
+    if (chapters != null) {
+      $result.chapters.addAll(chapters);
+    }
+    if (courseId != null) {
+      $result.courseId = courseId;
+    }
+    return $result;
+  }
+  UpdateNmCourseRequest._() : super();
+  factory UpdateNmCourseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNmCourseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNmCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'courseName')
+    ..aOS(3, _omitFieldNames ? '' : 'courseOrganization')
+    ..aOS(4, _omitFieldNames ? '' : 'teacherName')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
+    ..aOS(6, _omitFieldNames ? '' : 'courseDescription')
+    ..aOS(7, _omitFieldNames ? '' : 'courseCoverPath')
+    ..aInt64(8, _omitFieldNames ? '' : 'courseClassification')
+    ..aInt64(9, _omitFieldNames ? '' : 'courseLevel')
+    ..aOS(10, _omitFieldNames ? '' : 'courseMajor')
+    ..aInt64(11, _omitFieldNames ? '' : 'courseType')
+    ..aOS(12, _omitFieldNames ? '' : 'courseIndustry')
+    ..pc<NmChapter>(13, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..aInt64(14, _omitFieldNames ? '' : 'courseId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateNmCourseRequest clone() => UpdateNmCourseRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateNmCourseRequest copyWith(void Function(UpdateNmCourseRequest) updates) => super.copyWith((message) => updates(message as UpdateNmCourseRequest)) as UpdateNmCourseRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNmCourseRequest create() => UpdateNmCourseRequest._();
+  UpdateNmCourseRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateNmCourseRequest> createRepeated() => $pb.PbList<UpdateNmCourseRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNmCourseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNmCourseRequest>(create);
+  static UpdateNmCourseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get courseName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set courseName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get courseOrganization => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set courseOrganization($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseOrganization() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseOrganization() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get teacherName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set teacherName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTeacherName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTeacherName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get courseHours => $_getN(4);
+  @$pb.TagNumber(5)
+  set courseHours($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCourseHours() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCourseHours() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get courseDescription => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set courseDescription($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCourseDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCourseDescription() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get courseCoverPath => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set courseCoverPath($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCourseCoverPath() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCourseCoverPath() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get courseClassification => $_getI64(7);
+  @$pb.TagNumber(8)
+  set courseClassification($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCourseClassification() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCourseClassification() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get courseLevel => $_getI64(8);
+  @$pb.TagNumber(9)
+  set courseLevel($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasCourseLevel() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCourseLevel() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get courseMajor => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set courseMajor($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCourseMajor() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCourseMajor() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get courseType => $_getI64(10);
+  @$pb.TagNumber(11)
+  set courseType($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasCourseType() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCourseType() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get courseIndustry => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set courseIndustry($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCourseIndustry() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCourseIndustry() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.List<NmChapter> get chapters => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get courseId => $_getI64(13);
+  @$pb.TagNumber(14)
+  set courseId($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCourseId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCourseId() => clearField(14);
+}
+
+class UpdateNmCourseResponse extends $pb.GeneratedMessage {
+  factory UpdateNmCourseResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateNmCourseResponse._() : super();
+  factory UpdateNmCourseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNmCourseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNmCourseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateNmCourseResponse clone() => UpdateNmCourseResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateNmCourseResponse copyWith(void Function(UpdateNmCourseResponse) updates) => super.copyWith((message) => updates(message as UpdateNmCourseResponse)) as UpdateNmCourseResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNmCourseResponse create() => UpdateNmCourseResponse._();
+  UpdateNmCourseResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateNmCourseResponse> createRepeated() => $pb.PbList<UpdateNmCourseResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNmCourseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNmCourseResponse>(create);
+  static UpdateNmCourseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 class NmCourseDetailRequest extends $pb.GeneratedMessage {
   factory NmCourseDetailRequest({
     $0.BaseRequest? baseRequest,

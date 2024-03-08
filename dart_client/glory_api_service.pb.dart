@@ -943,6 +943,9 @@ class glory_apiApi {
   $async.Future<$41.CreateNmCourseResponse> createNmCourse($pb.ClientContext? ctx, $41.CreateNmCourseRequest request) =>
     _client.invoke<$41.CreateNmCourseResponse>(ctx, 'glory_api', 'CreateNmCourse', request, $41.CreateNmCourseResponse())
   ;
+  $async.Future<$41.UpdateNmCourseResponse> updateNmCourse($pb.ClientContext? ctx, $41.UpdateNmCourseRequest request) =>
+    _client.invoke<$41.UpdateNmCourseResponse>(ctx, 'glory_api', 'UpdateNmCourse', request, $41.UpdateNmCourseResponse())
+  ;
   $async.Future<$41.ListNmCourseResponse> listNmCourse($pb.ClientContext? ctx, $41.ListNmCourseRequest request) =>
     _client.invoke<$41.ListNmCourseResponse>(ctx, 'glory_api', 'ListNmCourse', request, $41.ListNmCourseResponse())
   ;

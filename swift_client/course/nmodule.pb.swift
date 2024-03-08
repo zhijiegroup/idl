@@ -272,6 +272,76 @@ struct GloryApi_CreateNmCourseResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_UpdateNmCourseRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var courseName: String = String()
+
+  var courseOrganization: String = String()
+
+  var teacherName: String = String()
+
+  var courseHours: Double = 0
+
+  var courseDescription: String = String()
+
+  var courseCoverPath: String = String()
+
+  var courseClassification: Int64 = 0
+
+  /// 课程层次：1.中职 2.高职 3.中高职
+  var courseLevel: Int64 = 0
+
+  var courseMajor: String = String()
+
+  /// 课程类型：1:核心课程 2:名师公开课
+  var courseType: Int64 = 0
+
+  var courseIndustry: String = String()
+
+  var chapters: [GloryApi_NmChapter] = []
+
+  var courseID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateNmCourseResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 struct GloryApi_NmCourseDetailRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -452,6 +522,8 @@ extension GloryApi_CreateNmCourseRequest: @unchecked Sendable {}
 extension GloryApi_NmChapter: @unchecked Sendable {}
 extension GloryApi_NmResource: @unchecked Sendable {}
 extension GloryApi_CreateNmCourseResponse: @unchecked Sendable {}
+extension GloryApi_UpdateNmCourseRequest: @unchecked Sendable {}
+extension GloryApi_UpdateNmCourseResponse: @unchecked Sendable {}
 extension GloryApi_NmCourseDetailRequest: @unchecked Sendable {}
 extension GloryApi_NmCourseDetailResponse: @unchecked Sendable {}
 extension GloryApi_ListNmCourseRequest: @unchecked Sendable {}
@@ -1035,6 +1107,156 @@ extension GloryApi_CreateNmCourseResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_CreateNmCourseResponse, rhs: GloryApi_CreateNmCourseResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.courseID != rhs.courseID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateNmCourseRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "course_name"),
+    3: .standard(proto: "course_organization"),
+    4: .standard(proto: "teacher_name"),
+    5: .standard(proto: "course_hours"),
+    6: .standard(proto: "course_description"),
+    7: .standard(proto: "course_cover_path"),
+    8: .standard(proto: "course_classification"),
+    9: .standard(proto: "course_level"),
+    10: .standard(proto: "course_major"),
+    11: .standard(proto: "course_type"),
+    12: .standard(proto: "course_industry"),
+    13: .same(proto: "chapters"),
+    14: .standard(proto: "course_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.courseName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.courseOrganization) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.teacherName) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.courseHours) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.courseDescription) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.courseCoverPath) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.courseClassification) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.courseLevel) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.courseMajor) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
+      case 14: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.courseName.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseName, fieldNumber: 2)
+    }
+    if !self.courseOrganization.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseOrganization, fieldNumber: 3)
+    }
+    if !self.teacherName.isEmpty {
+      try visitor.visitSingularStringField(value: self.teacherName, fieldNumber: 4)
+    }
+    if self.courseHours != 0 {
+      try visitor.visitSingularDoubleField(value: self.courseHours, fieldNumber: 5)
+    }
+    if !self.courseDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseDescription, fieldNumber: 6)
+    }
+    if !self.courseCoverPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseCoverPath, fieldNumber: 7)
+    }
+    if self.courseClassification != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseClassification, fieldNumber: 8)
+    }
+    if self.courseLevel != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseLevel, fieldNumber: 9)
+    }
+    if !self.courseMajor.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseMajor, fieldNumber: 10)
+    }
+    if self.courseType != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseType, fieldNumber: 11)
+    }
+    if !self.courseIndustry.isEmpty {
+      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 12)
+    }
+    if !self.chapters.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 13)
+    }
+    if self.courseID != 0 {
+      try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 14)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateNmCourseRequest, rhs: GloryApi_UpdateNmCourseRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.courseName != rhs.courseName {return false}
+    if lhs.courseOrganization != rhs.courseOrganization {return false}
+    if lhs.teacherName != rhs.teacherName {return false}
+    if lhs.courseHours != rhs.courseHours {return false}
+    if lhs.courseDescription != rhs.courseDescription {return false}
+    if lhs.courseCoverPath != rhs.courseCoverPath {return false}
+    if lhs.courseClassification != rhs.courseClassification {return false}
+    if lhs.courseLevel != rhs.courseLevel {return false}
+    if lhs.courseMajor != rhs.courseMajor {return false}
+    if lhs.courseType != rhs.courseType {return false}
+    if lhs.courseIndustry != rhs.courseIndustry {return false}
+    if lhs.chapters != rhs.chapters {return false}
+    if lhs.courseID != rhs.courseID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateNmCourseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateNmCourseResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateNmCourseResponse, rhs: GloryApi_UpdateNmCourseResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -2348,6 +2348,14 @@ export class glory_api {
     );
   }
 
+  UpdateNmCourse(request) {
+    const uri = `${this.uriPrefix}/api/course/update_nm_course`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListNmCourse(request) {
     const uri = `${this.uriPrefix}/api/course/list_nm_course`;
     const body = JSONbigint.stringify(request);

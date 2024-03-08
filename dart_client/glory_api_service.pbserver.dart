@@ -366,6 +366,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$41.CreateNmCourseChapterResourceResponse> createNmCourseResource($pb.ServerContext ctx, $41.CreateNmCourseChapterResourceRequest request);
   $async.Future<$41.CreateNmCourseChapterResponse> createNmCourseChapter($pb.ServerContext ctx, $41.CreateNmCourseChapterRequest request);
   $async.Future<$41.CreateNmCourseResponse> createNmCourse($pb.ServerContext ctx, $41.CreateNmCourseRequest request);
+  $async.Future<$41.UpdateNmCourseResponse> updateNmCourse($pb.ServerContext ctx, $41.UpdateNmCourseRequest request);
   $async.Future<$41.ListNmCourseResponse> listNmCourse($pb.ServerContext ctx, $41.ListNmCourseRequest request);
   $async.Future<$41.NmCourseDetailResponse> nmCourseDetail($pb.ServerContext ctx, $41.NmCourseDetailRequest request);
   $async.Future<$41.DeleteNmCourseResponse> deleteNmCourse($pb.ServerContext ctx, $41.DeleteNmCourseRequest request);
@@ -765,6 +766,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateNmCourseResource': return $41.CreateNmCourseChapterResourceRequest();
       case 'CreateNmCourseChapter': return $41.CreateNmCourseChapterRequest();
       case 'CreateNmCourse': return $41.CreateNmCourseRequest();
+      case 'UpdateNmCourse': return $41.UpdateNmCourseRequest();
       case 'ListNmCourse': return $41.ListNmCourseRequest();
       case 'NmCourseDetail': return $41.NmCourseDetailRequest();
       case 'DeleteNmCourse': return $41.DeleteNmCourseRequest();
@@ -1167,6 +1169,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateNmCourseResource': return this.createNmCourseResource(ctx, request as $41.CreateNmCourseChapterResourceRequest);
       case 'CreateNmCourseChapter': return this.createNmCourseChapter(ctx, request as $41.CreateNmCourseChapterRequest);
       case 'CreateNmCourse': return this.createNmCourse(ctx, request as $41.CreateNmCourseRequest);
+      case 'UpdateNmCourse': return this.updateNmCourse(ctx, request as $41.UpdateNmCourseRequest);
       case 'ListNmCourse': return this.listNmCourse(ctx, request as $41.ListNmCourseRequest);
       case 'NmCourseDetail': return this.nmCourseDetail(ctx, request as $41.NmCourseDetailRequest);
       case 'DeleteNmCourse': return this.deleteNmCourse(ctx, request as $41.DeleteNmCourseRequest);

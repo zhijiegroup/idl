@@ -1316,6 +1316,11 @@ CreateLivePlanProduct create live plan product */
     request: nmodule.CreateNmCourseRequest
   ): Promise<nmodule.CreateNmCourseResponse>;
 
+  /** 更新课程 */
+  UpdateNmCourse(
+    request: nmodule.UpdateNmCourseRequest
+  ): Promise<nmodule.UpdateNmCourseResponse>;
+
   /** 课程列表 */
   ListNmCourse(
     request: nmodule.ListNmCourseRequest
