@@ -115,6 +115,7 @@ message NmCourseDetailResponse {
     base.BaseResponse base_resp = 1;
     NmCourse course = 2;
     bool is_joined = 4;
+    int32 course_progress = 3;
 }
 
 message ListNmCourseRequest {
