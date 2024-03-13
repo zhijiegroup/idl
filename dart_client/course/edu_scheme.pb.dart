@@ -1376,6 +1376,7 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   factory GetEduSchemeLikeCourseRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? eduSchemeId,
+    $core.String? role,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1383,6 +1384,9 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
     }
     if (eduSchemeId != null) {
       $result.eduSchemeId = eduSchemeId;
+    }
+    if (role != null) {
+      $result.role = role;
     }
     return $result;
   }
@@ -1393,6 +1397,7 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEduSchemeLikeCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'eduSchemeId')
+    ..aOS(3, _omitFieldNames ? '' : 'role')
     ..hasRequiredFields = false
   ;
 
@@ -1436,6 +1441,15 @@ class GetEduSchemeLikeCourseRequest extends $pb.GeneratedMessage {
   $core.bool hasEduSchemeId() => $_has(1);
   @$pb.TagNumber(2)
   void clearEduSchemeId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get role => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set role($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRole() => clearField(3);
 }
 
 class GetEduSchemeLikeCourseResponse extends $pb.GeneratedMessage {

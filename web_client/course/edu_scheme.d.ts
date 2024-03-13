@@ -122,6 +122,8 @@ export interface GetEduSchemeLikeCourseRequest {
   base_request?: base.BaseRequest;
   /** 培养方案ID */
   edu_scheme_id?: string;
+  /** 角色，学生或老师 student teacher */
+  role?: string;
 }
 
 export interface GetEduSchemeLikeCourseResponse {

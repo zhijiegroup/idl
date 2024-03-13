@@ -153,14 +153,14 @@ public final class EduSchemeOuterClass {
       ".base.BaseRequest\022\025\n\redu_scheme_id\030\002 \001(\003" +
       "\022\020\n\010clas_ids\030\003 \003(\003\"D\n\033DistributeEduSchem" +
       "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\"_\n\035GetEduSchemeLikeCourseReques" +
+      "Response\"m\n\035GetEduSchemeLikeCourseReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\025\n\redu_scheme_id\030\002 \001(\003\"\203\001\n\036GetEduSche" +
-      "meLikeCourseResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\022!\n\006course\030\002 \001(\0132\021.gl" +
-      "ory_api.Course\022\027\n\017course_progress\030\003 \001(\003B" +
-      "%\n!com.zhijiejiaoyu.glory_api.courseP\001b\006" +
-      "proto3"
+      "st\022\025\n\redu_scheme_id\030\002 \001(\003\022\014\n\004role\030\003 \001(\t\"" +
+      "\203\001\n\036GetEduSchemeLikeCourseResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n\006cou" +
+      "rse\030\002 \001(\0132\021.glory_api.Course\022\027\n\017course_p" +
+      "rogress\030\003 \001(\003B%\n!com.zhijiejiaoyu.glory_" +
+      "api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -253,7 +253,7 @@ public final class EduSchemeOuterClass {
     internal_static_glory_api_GetEduSchemeLikeCourseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetEduSchemeLikeCourseRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "EduSchemeId", });
+        new java.lang.String[] { "BaseRequest", "EduSchemeId", "Role", });
     internal_static_glory_api_GetEduSchemeLikeCourseResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_GetEduSchemeLikeCourseResponse_fieldAccessorTable = new

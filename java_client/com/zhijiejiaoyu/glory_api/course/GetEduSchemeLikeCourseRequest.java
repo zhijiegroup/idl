@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetEduSchemeLikeCourseRequest() {
+    role = "";
   }
 
   @java.lang.Override
@@ -68,6 +69,12 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             eduSchemeId = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            role = s;
             break;
           }
           default: {
@@ -143,6 +150,52 @@ private static final long serialVersionUID = 0L;
     return eduSchemeId ;
   }
 
+  public static final int ROLE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object role ;
+  /**
+   * <pre>
+   * 角色，学生或老师 student teacher
+   * </pre>
+   *
+   * <code>string role = 3;</code>
+   * @return The role.
+   */
+  @java.lang.Override
+  public java.lang.String getRole() {
+    java.lang.Object ref = role ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      role = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 角色，学生或老师 student teacher
+   * </pre>
+   *
+   * <code>string role = 3;</code>
+   * @return The bytes for role.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleBytes() {
+    java.lang.Object ref = role ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      role = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -163,6 +216,9 @@ private static final long serialVersionUID = 0L;
     if (eduSchemeId != 0L) {
       output.writeInt64(2, eduSchemeId );
     }
+    if (!getRoleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, role );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -179,6 +235,9 @@ private static final long serialVersionUID = 0L;
     if (eduSchemeId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, eduSchemeId );
+    }
+    if (!getRoleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, role );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -202,6 +261,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getEduSchemeId()
         != other.getEduSchemeId()) return false;
+    if (!getRole()
+        .equals(other.getRole())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +281,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EDU_SCHEME_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEduSchemeId());
+    hash = (37 * hash) + ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getRole().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -365,6 +428,8 @@ private static final long serialVersionUID = 0L;
       }
       eduSchemeId = 0L;
 
+      role = "";
+
       return this;
     }
 
@@ -397,6 +462,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.eduSchemeId = eduSchemeId ;
+      result.role = role ;
       onBuilt();
       return result;
     }
@@ -450,6 +516,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEduSchemeId() != 0L) {
         setEduSchemeId(other.getEduSchemeId());
+      }
+      if (!other.getRole().isEmpty()) {
+        role = other.role ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -638,6 +708,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearEduSchemeId() {
       
       eduSchemeId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object role = "";
+    /**
+     * <pre>
+     * 角色，学生或老师 student teacher
+     * </pre>
+     *
+     * <code>string role = 3;</code>
+     * @return The role.
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 角色，学生或老师 student teacher
+     * </pre>
+     *
+     * <code>string role = 3;</code>
+     * @return The bytes for role.
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 角色，学生或老师 student teacher
+     * </pre>
+     *
+     * <code>string role = 3;</code>
+     * @param value The role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRole(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      role = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 角色，学生或老师 student teacher
+     * </pre>
+     *
+     * <code>string role = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRole() {
+      
+      role = getDefaultInstance().getRole();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 角色，学生或老师 student teacher
+     * </pre>
+     *
+     * <code>string role = 3;</code>
+     * @param value The bytes for role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      role = value;
       onChanged();
       return this;
     }

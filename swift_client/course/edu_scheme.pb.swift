@@ -436,6 +436,9 @@ struct GloryApi_GetEduSchemeLikeCourseRequest {
   /// 培养方案ID
   var eduSchemeID: Int64 = 0
 
+  /// 角色，学生或老师 student teacher
+  var role: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1309,6 +1312,7 @@ extension GloryApi_GetEduSchemeLikeCourseRequest: SwiftProtobuf.Message, SwiftPr
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "edu_scheme_id"),
+    3: .same(proto: "role"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1319,6 +1323,7 @@ extension GloryApi_GetEduSchemeLikeCourseRequest: SwiftProtobuf.Message, SwiftPr
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.eduSchemeID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.role) }()
       default: break
       }
     }
@@ -1335,12 +1340,16 @@ extension GloryApi_GetEduSchemeLikeCourseRequest: SwiftProtobuf.Message, SwiftPr
     if self.eduSchemeID != 0 {
       try visitor.visitSingularInt64Field(value: self.eduSchemeID, fieldNumber: 2)
     }
+    if !self.role.isEmpty {
+      try visitor.visitSingularStringField(value: self.role, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetEduSchemeLikeCourseRequest, rhs: GloryApi_GetEduSchemeLikeCourseRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.eduSchemeID != rhs.eduSchemeID {return false}
+    if lhs.role != rhs.role {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -31,4 +31,24 @@ public interface GetEduSchemeLikeCourseRequestOrBuilder extends
    * @return The eduSchemeId.
    */
   long getEduSchemeId();
+
+  /**
+   * <pre>
+   * 角色，学生或老师 student teacher
+   * </pre>
+   *
+   * <code>string role = 3;</code>
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   * <pre>
+   * 角色，学生或老师 student teacher
+   * </pre>
+   *
+   * <code>string role = 3;</code>
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString
+      getRoleBytes();
 }

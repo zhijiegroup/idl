@@ -272,6 +272,7 @@ const GetEduSchemeLikeCourseRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'edu_scheme_id', '3': 2, '4': 1, '5': 3, '10': 'eduSchemeId'},
+    {'1': 'role', '3': 3, '4': 1, '5': 9, '10': 'role'},
   ],
 };
 
@@ -279,7 +280,7 @@ const GetEduSchemeLikeCourseRequest$json = {
 final $typed_data.Uint8List getEduSchemeLikeCourseRequestDescriptor = $convert.base64Decode(
     'Ch1HZXRFZHVTY2hlbWVMaWtlQ291cnNlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIiCg1lZHVfc2NoZW1lX2lkGAIgASgDUgtl'
-    'ZHVTY2hlbWVJZA==');
+    'ZHVTY2hlbWVJZBISCgRyb2xlGAMgASgJUgRyb2xl');
 
 @$core.Deprecated('Use getEduSchemeLikeCourseResponseDescriptor instead')
 const GetEduSchemeLikeCourseResponse$json = {
