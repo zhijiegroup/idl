@@ -115,6 +115,7 @@ message DistributeEduSchemeResponse {
 message GetEduSchemeLikeCourseRequest {
     base.BaseRequest base_request = 1;
     int64 edu_scheme_id = 2; // 培养方案ID
+    string role = 3; // 角色，学生或老师 student teacher
 }
   
 message GetEduSchemeLikeCourseResponse {
