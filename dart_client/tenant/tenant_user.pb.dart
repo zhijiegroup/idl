@@ -27,6 +27,7 @@ class TenantUser extends $pb.GeneratedMessage {
     $fixnum.Int64? deptId,
     $0.User? user,
     $0.Role? role,
+    $fixnum.Int64? tenantId,
   }) {
     final $result = create();
     if (tenantUserId != null) {
@@ -53,6 +54,9 @@ class TenantUser extends $pb.GeneratedMessage {
     if (role != null) {
       $result.role = role;
     }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
     return $result;
   }
   TenantUser._() : super();
@@ -68,6 +72,7 @@ class TenantUser extends $pb.GeneratedMessage {
     ..aInt64(9, _omitFieldNames ? '' : 'deptId')
     ..aOM<$0.User>(10, _omitFieldNames ? '' : 'user', subBuilder: $0.User.create)
     ..aOM<$0.Role>(11, _omitFieldNames ? '' : 'role', subBuilder: $0.Role.create)
+    ..aInt64(12, _omitFieldNames ? '' : 'tenantId')
     ..hasRequiredFields = false
   ;
 
@@ -167,6 +172,15 @@ class TenantUser extends $pb.GeneratedMessage {
   void clearRole() => clearField(11);
   @$pb.TagNumber(11)
   $0.Role ensureRole() => $_ensure(7);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get tenantId => $_getI64(8);
+  @$pb.TagNumber(12)
+  set tenantId($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasTenantId() => $_has(8);
+  @$pb.TagNumber(12)
+  void clearTenantId() => clearField(12);
 }
 
 class CreateTenantUserRequest extends $pb.GeneratedMessage {

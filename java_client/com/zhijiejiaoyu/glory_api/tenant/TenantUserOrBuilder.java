@@ -90,4 +90,10 @@ public interface TenantUserOrBuilder extends
    * <code>.glory_api.Role role = 11;</code>
    */
   com.zhijiejiaoyu.glory_api.user.RoleOrBuilder getRoleOrBuilder();
+
+  /**
+   * <code>int64 tenant_id = 12;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
 }

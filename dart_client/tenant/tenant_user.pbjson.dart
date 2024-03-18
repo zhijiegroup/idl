@@ -25,6 +25,7 @@ const TenantUser$json = {
     {'1': 'dept_id', '3': 9, '4': 1, '5': 3, '10': 'deptId'},
     {'1': 'user', '3': 10, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'user'},
     {'1': 'role', '3': 11, '4': 1, '5': 11, '6': '.glory_api.Role', '10': 'role'},
+    {'1': 'tenant_id', '3': 12, '4': 1, '5': 3, '10': 'tenantId'},
   ],
 };
 
@@ -34,7 +35,7 @@ final $typed_data.Uint8List tenantUserDescriptor = $convert.base64Decode(
     'Nlcl9pZBgCIAEoA1IGdXNlcklkEhQKBXBob25lGAQgASgJUgVwaG9uZRISCgRuYW1lGAUgASgJ'
     'UgRuYW1lEhIKBGRlcHQYCCABKAlSBGRlcHQSFwoHZGVwdF9pZBgJIAEoA1IGZGVwdElkEiMKBH'
     'VzZXIYCiABKAsyDy5nbG9yeV9hcGkuVXNlclIEdXNlchIjCgRyb2xlGAsgASgLMg8uZ2xvcnlf'
-    'YXBpLlJvbGVSBHJvbGU=');
+    'YXBpLlJvbGVSBHJvbGUSGwoJdGVuYW50X2lkGAwgASgDUgh0ZW5hbnRJZA==');
 
 @$core.Deprecated('Use createTenantUserRequestDescriptor instead')
 const CreateTenantUserRequest$json = {

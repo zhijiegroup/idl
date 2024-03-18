@@ -110,6 +110,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 96: {
+
+            tenantId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -341,6 +346,17 @@ private static final long serialVersionUID = 0L;
     return getRole();
   }
 
+  public static final int TENANT_ID_FIELD_NUMBER = 12;
+  private long tenantId ;
+  /**
+   * <code>int64 tenant_id = 12;</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public long getTenantId() {
+    return tenantId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -378,6 +394,9 @@ private static final long serialVersionUID = 0L;
     }
     if (role != null) {
       output.writeMessage(11, getRole());
+    }
+    if (tenantId != 0L) {
+      output.writeInt64(12, tenantId );
     }
     unknownFields.writeTo(output);
   }
@@ -417,6 +436,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getRole());
     }
+    if (tenantId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(12, tenantId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -454,6 +477,8 @@ private static final long serialVersionUID = 0L;
       if (!getRole()
           .equals(other.getRole())) return false;
     }
+    if (getTenantId()
+        != other.getTenantId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -488,6 +513,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getRole().hashCode();
     }
+    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTenantId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -645,6 +673,8 @@ private static final long serialVersionUID = 0L;
         role = null;
         roleBuilder = null;
       }
+      tenantId = 0L;
+
       return this;
     }
 
@@ -687,6 +717,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.role = roleBuilder .build();
       }
+      result.tenantId = tenantId ;
       onBuilt();
       return result;
     }
@@ -761,6 +792,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRole()) {
         mergeRole(other.getRole());
+      }
+      if (other.getTenantId() != 0L) {
+        setTenantId(other.getTenantId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1348,6 +1382,37 @@ private static final long serialVersionUID = 0L;
         role = null;
       }
       return roleBuilder ;
+    }
+
+    private long tenantId ;
+    /**
+     * <code>int64 tenant_id = 12;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId ;
+    }
+    /**
+     * <code>int64 tenant_id = 12;</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(long value) {
+      
+      tenantId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 tenant_id = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      
+      tenantId = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -15,6 +15,7 @@ export interface TenantUser {
   dept_id?: string;
   user?: user.User;
   role?: user.Role;
+  tenant_id?: string;
 }
 
 export interface CreateTenantUserRequest {
