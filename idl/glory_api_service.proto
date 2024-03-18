@@ -62,6 +62,7 @@ import "task/teacher_task_template.proto";
 import "task/teacher_task.proto";
 import "task/student_task.proto";
 import "notification/notification.proto";
+import "smart_article/article.proto";
 
 service glory_api {
 
@@ -1538,4 +1539,28 @@ service glory_api {
   rpc CloseCaster(CloseCasterRequest) returns (CloseCasterResponse) {
     option (api.get) = '/api/live/close_caster';
   }
+
+  // 智能文案
+  rpc CreateArticleCreation(CreateArticleCreationRequest) returns (CreateArticleCreationResponse) {
+    option (api.post) = '/api/article_creation/create_article';
+  }
+  rpc ListMyArticleCreation(ListMyArticleCreationRequest) returns (ListMyArticleCreationResponse) {
+    option (api.post) = '/api/article_creation/list_my_article_creation';
+  }
+  rpc CreateArticleCreationDraft(CreateArticleCreationDraftRequest) returns (CreateArticleCreationDraftResponse) {
+    option (api.post) = '/api/article_creation/create_draft_article_creation';
+  }
+  rpc ListMyDraftArticleCreation(ListMyArticleCreationDraftRequest) returns (ListMyArticleCreationDraftResponse) {
+    option (api.post) = '/api/article_creation/list_my_draft_article_creation';
+  }
+  rpc DraftArticleCreationDetail(ArticleCreationDraftDetailRequest) returns (ArticleCreationDraftDetailResponse) {
+    option (api.get) = '/api/article_creation/article_creation_draft_detail';
+  }
+  rpc DeleteDraftArticleCreation(DeleteArticleCreationDraftRequest) returns (DeleteArticleCreationDraftResponse) {
+    option (api.post) = '/api/article_creation/delete_draft_article_creation';
+  }
+  rpc ArticleCreationStatistics(ArticleCreationStatisticsRequest) returns (ArticleCreationStatisticsResponse) {
+    option (api.get) = '/api/article_creation/get_student_article_statistics';
+  }
+
 }
