@@ -15,6 +15,7 @@ message TenantUser {
     int64 dept_id = 9;
     User user = 10;
     Role role = 11;
+    int64 tenant_id = 12;
 }
 
 message CreateTenantUserRequest {
