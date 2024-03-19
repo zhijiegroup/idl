@@ -25,6 +25,7 @@ class Tenant extends $pb.GeneratedMessage {
     $core.String? adminName,
     $core.String? adminPhone,
     $core.Iterable<$core.String>? businessSystem,
+    $core.String? platform,
   }) {
     final $result = create();
     if (tenantId != null) {
@@ -48,6 +49,9 @@ class Tenant extends $pb.GeneratedMessage {
     if (businessSystem != null) {
       $result.businessSystem.addAll(businessSystem);
     }
+    if (platform != null) {
+      $result.platform = platform;
+    }
     return $result;
   }
   Tenant._() : super();
@@ -62,6 +66,7 @@ class Tenant extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'adminName')
     ..aOS(9, _omitFieldNames ? '' : 'adminPhone')
     ..pPS(10, _omitFieldNames ? '' : 'businessSystem')
+    ..aOS(11, _omitFieldNames ? '' : 'platform')
     ..hasRequiredFields = false
   ;
 
@@ -142,6 +147,15 @@ class Tenant extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(10)
   $core.List<$core.String> get businessSystem => $_getList(6);
+
+  @$pb.TagNumber(11)
+  $core.String get platform => $_getSZ(7);
+  @$pb.TagNumber(11)
+  set platform($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasPlatform() => $_has(7);
+  @$pb.TagNumber(11)
+  void clearPlatform() => clearField(11);
 }
 
 class CreateTenantRequest extends $pb.GeneratedMessage {
@@ -1695,6 +1709,182 @@ class InitTenantResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class TenantSystem extends $pb.GeneratedMessage {
+  factory TenantSystem({
+    $core.String? label,
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
+  TenantSystem._() : super();
+  factory TenantSystem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TenantSystem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TenantSystem', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TenantSystem clone() => TenantSystem()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TenantSystem copyWith(void Function(TenantSystem) updates) => super.copyWith((message) => updates(message as TenantSystem)) as TenantSystem;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TenantSystem create() => TenantSystem._();
+  TenantSystem createEmptyInstance() => create();
+  static $pb.PbList<TenantSystem> createRepeated() => $pb.PbList<TenantSystem>();
+  @$core.pragma('dart2js:noInline')
+  static TenantSystem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TenantSystem>(create);
+  static TenantSystem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+}
+
+class ListTenantSystemRequest extends $pb.GeneratedMessage {
+  factory ListTenantSystemRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  ListTenantSystemRequest._() : super();
+  factory ListTenantSystemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantSystemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantSystemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantSystemRequest clone() => ListTenantSystemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantSystemRequest copyWith(void Function(ListTenantSystemRequest) updates) => super.copyWith((message) => updates(message as ListTenantSystemRequest)) as ListTenantSystemRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantSystemRequest create() => ListTenantSystemRequest._();
+  ListTenantSystemRequest createEmptyInstance() => create();
+  static $pb.PbList<ListTenantSystemRequest> createRepeated() => $pb.PbList<ListTenantSystemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantSystemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantSystemRequest>(create);
+  static ListTenantSystemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class ListTenantSystemResponse extends $pb.GeneratedMessage {
+  factory ListTenantSystemResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<TenantSystem>? systemList,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (systemList != null) {
+      $result.systemList.addAll(systemList);
+    }
+    return $result;
+  }
+  ListTenantSystemResponse._() : super();
+  factory ListTenantSystemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListTenantSystemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTenantSystemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<TenantSystem>(2, _omitFieldNames ? '' : 'systemList', $pb.PbFieldType.PM, subBuilder: TenantSystem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListTenantSystemResponse clone() => ListTenantSystemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListTenantSystemResponse copyWith(void Function(ListTenantSystemResponse) updates) => super.copyWith((message) => updates(message as ListTenantSystemResponse)) as ListTenantSystemResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTenantSystemResponse create() => ListTenantSystemResponse._();
+  ListTenantSystemResponse createEmptyInstance() => create();
+  static $pb.PbList<ListTenantSystemResponse> createRepeated() => $pb.PbList<ListTenantSystemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListTenantSystemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListTenantSystemResponse>(create);
+  static ListTenantSystemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<TenantSystem> get systemList => $_getList(1);
 }
 
 

@@ -81,4 +81,24 @@ public interface GetConfigRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBusinessSystemBytes();
+
+  /**
+   * <pre>
+   * 用于区分config_type的类型，支持pageKey, appKey
+   * </pre>
+   *
+   * <code>string q = 5;</code>
+   * @return The q.
+   */
+  java.lang.String getQ();
+  /**
+   * <pre>
+   * 用于区分config_type的类型，支持pageKey, appKey
+   * </pre>
+   *
+   * <code>string q = 5;</code>
+   * @return The bytes for q.
+   */
+  com.google.protobuf.ByteString
+      getQBytes();
 }

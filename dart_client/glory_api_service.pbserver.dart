@@ -282,6 +282,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$29.SubmitUserAttitudeForAIResultResponse> submitUserAttitudeForAiResult($pb.ServerContext ctx, $29.SubmitUserAttitudeForAIResultRequest request);
   $async.Future<$25.PreheatResponse> preheatProduct($pb.ServerContext ctx, $25.PreheatRequest request);
   $async.Future<$25.PublicPriceResponse> publicPrice($pb.ServerContext ctx, $25.PublicPriceRequest request);
+  $async.Future<$30.ListTenantSystemResponse> listTenantSystem($pb.ServerContext ctx, $30.ListTenantSystemRequest request);
   $async.Future<$30.CreateTenantResponse> createTenant($pb.ServerContext ctx, $30.CreateTenantRequest request);
   $async.Future<$30.GetTenantResponse> getTenant($pb.ServerContext ctx, $30.GetTenantRequest request);
   $async.Future<$30.UpdateTenantResponse> updateTenant($pb.ServerContext ctx, $30.UpdateTenantRequest request);
@@ -682,6 +683,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SubmitUserAttitudeForAiResult': return $29.SubmitUserAttitudeForAIResultRequest();
       case 'PreheatProduct': return $25.PreheatRequest();
       case 'PublicPrice': return $25.PublicPriceRequest();
+      case 'ListTenantSystem': return $30.ListTenantSystemRequest();
       case 'CreateTenant': return $30.CreateTenantRequest();
       case 'GetTenant': return $30.GetTenantRequest();
       case 'UpdateTenant': return $30.UpdateTenantRequest();
@@ -1085,6 +1087,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SubmitUserAttitudeForAiResult': return this.submitUserAttitudeForAiResult(ctx, request as $29.SubmitUserAttitudeForAIResultRequest);
       case 'PreheatProduct': return this.preheatProduct(ctx, request as $25.PreheatRequest);
       case 'PublicPrice': return this.publicPrice(ctx, request as $25.PublicPriceRequest);
+      case 'ListTenantSystem': return this.listTenantSystem(ctx, request as $30.ListTenantSystemRequest);
       case 'CreateTenant': return this.createTenant(ctx, request as $30.CreateTenantRequest);
       case 'GetTenant': return this.getTenant(ctx, request as $30.GetTenantRequest);
       case 'UpdateTenant': return this.updateTenant(ctx, request as $30.UpdateTenantRequest);

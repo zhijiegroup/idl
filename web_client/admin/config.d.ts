@@ -78,6 +78,8 @@ export interface GetConfigRequest {
   config_type?: string;
   /** 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth */
   business_system?: string;
+  /** 用于区分config_type的类型，支持pageKey, appKey */
+  q?: string;
 }
 
 export interface GetConfigResponse {

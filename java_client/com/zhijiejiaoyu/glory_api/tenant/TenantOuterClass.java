@@ -129,6 +129,21 @@ public final class TenantOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_InitTenantResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TenantSystem_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TenantSystem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantSystemRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantSystemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTenantSystemResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTenantSystemResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -139,64 +154,70 @@ public final class TenantOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023tenant/tenant.proto\022\tglory_api\032\nbase.p" +
-      "roto\"\244\001\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013te" +
+      "roto\"\266\001\n\006Tenant\022\021\n\ttenant_id\030\001 \001(\003\022\023\n\013te" +
       "nant_name\030\002 \001(\t\022\027\n\017tenant_logo_url\030\003 \001(\t" +
       "\022\027\n\017tenant_overview\030\004 \001(\t\022\022\n\nadmin_name\030" +
       "\010 \001(\t\022\023\n\013admin_phone\030\t \001(\t\022\027\n\017business_s" +
-      "ystem\030\n \003(\t\"a\n\023CreateTenantRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006t" +
-      "enant\030\002 \001(\0132\021.glory_api.Tenant\"|\n\024Create" +
-      "TenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\022\025\n\radmi" +
-      "n_user_id\030\003 \001(\003\022\023\n\013admin_phone\030\004 \001(\t\"N\n\020" +
-      "GetTenantRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"\204\001\n" +
-      "\021GetTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022!\n\006tenant\030\002 \001(\0132\021.glor" +
-      "y_api.Tenant\022%\n\013author_info\030\003 \001(\0132\020.base" +
-      ".AuthorInfo\"a\n\023UpdateTenantRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022!\n\006T" +
-      "enant\030\003 \001(\0132\021.glory_api.Tenant\"P\n\024Update" +
-      "TenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\021\n\ttenant_id\030\002 \001(\003\"Q\n\023Dele" +
-      "teTenantRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"=\n\024D" +
-      "eleteTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"~\n\021ListTenantRequest\022" +
-      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\022\023\n\013tenant_name\030\002 \001(\t\022+\n\npagination\030d \001(" +
-      "\0132\027.base.PaginationRequest\"\\\n\020TenantWith" +
-      "Author\022!\n\006tenant\030\001 \001(\0132\021.glory_api.Tenan" +
-      "t\022%\n\013author_info\030\002 \001(\0132\020.base.AuthorInfo" +
-      "\"\227\001\n\022ListTenantResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022,\n\007tenants\030\002 \003(\0132" +
-      "\033.glory_api.TenantWithAuthor\022,\n\npaginati" +
-      "on\030d \001(\0132\030.base.PaginationResponse\"\235\001\n\tT" +
-      "enantOrg\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004ty" +
-      "pe\030\003 \001(\t\022\021\n\tdept_code\030\004 \001(\t\022\016\n\006parent\030\005 " +
-      "\001(\003\022\016\n\006tenant\030\006 \001(\003\022\r\n\005count\030\007 \001(\003\022&\n\010ch" +
-      "ildren\030\010 \003(\0132\024.glory_api.TenantOrg\"_\n\023Ge" +
-      "tTenantOrgRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\022\014\n" +
-      "\004name\030\003 \001(\t\"x\n\024GetTenantOrgResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\nte" +
-      "nant_org\030\002 \001(\0132\024.glory_api.TenantOrg\022\017\n\007" +
-      "dept_id\030\003 \001(\003\"P\n\022EnterTenantRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\t" +
-      "tenant_id\030\002 \001(\003\"<\n\023EnterTenantResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"<\n" +
-      "\021ExitTenantRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\";\n\022ExitTenantRespons" +
+      "ystem\030\n \003(\t\022\020\n\010platform\030\013 \001(\t\"a\n\023CreateT" +
+      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022!\n\006tenant\030\002 \001(\0132\021.glory_ap" +
+      "i.Tenant\"|\n\024CreateTenantResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\ttenan" +
+      "t_id\030\002 \001(\003\022\025\n\radmin_user_id\030\003 \001(\003\022\023\n\013adm" +
+      "in_phone\030\004 \001(\t\"N\n\020GetTenantRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tt" +
+      "enant_id\030\002 \001(\003\"\204\001\n\021GetTenantResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022!\n\006t" +
+      "enant\030\002 \001(\0132\021.glory_api.Tenant\022%\n\013author" +
+      "_info\030\003 \001(\0132\020.base.AuthorInfo\"a\n\023UpdateT" +
+      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022!\n\006Tenant\030\003 \001(\0132\021.glory_ap" +
+      "i.Tenant\"P\n\024UpdateTenantResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\ttenan" +
+      "t_id\030\002 \001(\003\"Q\n\023DeleteTenantRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tte" +
+      "nant_id\030\002 \001(\003\"=\n\024DeleteTenantResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"~\n\021" +
+      "ListTenantRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\023\n\013tenant_name\030\002 \001(\t\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\\\n\020TenantWithAuthor\022!\n\006tenant\030\001 \001(\013" +
+      "2\021.glory_api.Tenant\022%\n\013author_info\030\002 \001(\013" +
+      "2\020.base.AuthorInfo\"\227\001\n\022ListTenantRespons" +
       "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"?\n\024IsEnterTenantRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\"J\n\020IsTenantRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022\017\n\007entered\030\002 \001(\010\"O\n\021InitTenantReque" +
+      "\022,\n\007tenants\030\002 \003(\0132\033.glory_api.TenantWith" +
+      "Author\022,\n\npagination\030d \001(\0132\030.base.Pagina" +
+      "tionResponse\"\235\001\n\tTenantOrg\022\n\n\002id\030\001 \001(\003\022\014" +
+      "\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\021\n\tdept_code\030" +
+      "\004 \001(\t\022\016\n\006parent\030\005 \001(\003\022\016\n\006tenant\030\006 \001(\003\022\r\n" +
+      "\005count\030\007 \001(\003\022&\n\010children\030\010 \003(\0132\024.glory_a" +
+      "pi.TenantOrg\"_\n\023GetTenantOrgRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\t" +
+      "tenant_id\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\"x\n\024GetTena" +
+      "ntOrgResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022(\n\ntenant_org\030\002 \001(\0132\024.glory" +
+      "_api.TenantOrg\022\017\n\007dept_id\030\003 \001(\003\"P\n\022Enter" +
+      "TenantRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"<\n\023Ent" +
+      "erTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"<\n\021ExitTenantRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\";\n" +
+      "\022ExitTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"?\n\024IsEnterTenantReque" +
       "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\021\n\ttenant_id\030\002 \001(\003\";\n\022InitTenantResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nseB%\n!com.zhijiejiaoyu.glory_api.tenant" +
-      "P\001b\006proto3"
+      "est\"J\n\020IsTenantResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\017\n\007entered\030\002 \001(\010\"" +
+      "O\n\021InitTenantRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003" +
+      "\";\n\022InitTenantResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\",\n\014TenantSystem\022\r\n" +
+      "\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"B\n\027ListTenan" +
+      "tSystemRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\"o\n\030ListTenantSystemRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022,\n\013system_list\030\002 \003(\0132\027.glory_api.Tena" +
+      "ntSystemB%\n!com.zhijiejiaoyu.glory_api.t" +
+      "enantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -208,7 +229,7 @@ public final class TenantOuterClass {
     internal_static_glory_api_Tenant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Tenant_descriptor,
-        new java.lang.String[] { "TenantId", "TenantName", "TenantLogoUrl", "TenantOverview", "AdminName", "AdminPhone", "BusinessSystem", });
+        new java.lang.String[] { "TenantId", "TenantName", "TenantLogoUrl", "TenantOverview", "AdminName", "AdminPhone", "BusinessSystem", "Platform", });
     internal_static_glory_api_CreateTenantRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateTenantRequest_fieldAccessorTable = new
@@ -341,6 +362,24 @@ public final class TenantOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_InitTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_TenantSystem_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_glory_api_TenantSystem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TenantSystem_descriptor,
+        new java.lang.String[] { "Label", "Value", });
+    internal_static_glory_api_ListTenantSystemRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_glory_api_ListTenantSystemRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantSystemRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_ListTenantSystemResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_glory_api_ListTenantSystemResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTenantSystemResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "SystemList", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     adminName = "";
     adminPhone = "";
     businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
+    platform = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             businessSystem .add(s);
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            platform = s;
             break;
           }
           default: {
@@ -414,6 +421,44 @@ private static final long serialVersionUID = 0L;
     return businessSystem .getByteString(index);
   }
 
+  public static final int PLATFORM_FIELD_NUMBER = 11;
+  private volatile java.lang.Object platform ;
+  /**
+   * <code>string platform = 11;</code>
+   * @return The platform.
+   */
+  @java.lang.Override
+  public java.lang.String getPlatform() {
+    java.lang.Object ref = platform ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      platform = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string platform = 11;</code>
+   * @return The bytes for platform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPlatformBytes() {
+    java.lang.Object ref = platform ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      platform = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -448,6 +493,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < businessSystem .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, businessSystem .getRaw(i));
+    }
+    if (!getPlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, platform );
     }
     unknownFields.writeTo(output);
   }
@@ -485,6 +533,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getBusinessSystemList().size();
     }
+    if (!getPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, platform );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -514,6 +565,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdminPhone())) return false;
     if (!getBusinessSystemList()
         .equals(other.getBusinessSystemList())) return false;
+    if (!getPlatform()
+        .equals(other.getPlatform())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -542,6 +595,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
       hash = (53 * hash) + getBusinessSystemList().hashCode();
     }
+    hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getPlatform().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -689,6 +744,8 @@ private static final long serialVersionUID = 0L;
 
       businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      platform = "";
+
       return this;
     }
 
@@ -727,6 +784,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.businessSystem = businessSystem ;
+      result.platform = platform ;
       onBuilt();
       return result;
     }
@@ -806,6 +864,10 @@ private static final long serialVersionUID = 0L;
           ensureBusinessSystemIsMutable();
           businessSystem .addAll(other.businessSystem );
         }
+        onChanged();
+      }
+      if (!other.getPlatform().isEmpty()) {
+        platform = other.platform ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1467,6 +1529,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureBusinessSystemIsMutable();
       businessSystem .add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object platform = "";
+    /**
+     * <code>string platform = 11;</code>
+     * @return The platform.
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        platform = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string platform = 11;</code>
+     * @return The bytes for platform.
+     */
+    public com.google.protobuf.ByteString
+        getPlatformBytes() {
+      java.lang.Object ref = platform ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platform = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string platform = 11;</code>
+     * @param value The platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatform(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      platform = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string platform = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPlatform() {
+      
+      platform = getDefaultInstance().getPlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string platform = 11;</code>
+     * @param value The bytes for platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatformBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      platform = value;
       onChanged();
       return this;
     }

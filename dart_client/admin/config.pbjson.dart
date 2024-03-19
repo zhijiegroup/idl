@@ -173,6 +173,7 @@ const GetConfigRequest$json = {
     {'1': 'config_name', '3': 2, '4': 1, '5': 9, '10': 'configName'},
     {'1': 'config_type', '3': 3, '4': 1, '5': 9, '10': 'configType'},
     {'1': 'business_system', '3': 4, '4': 1, '5': 9, '10': 'businessSystem'},
+    {'1': 'q', '3': 5, '4': 1, '5': 9, '10': 'q'},
   ],
 };
 
@@ -181,7 +182,7 @@ final $typed_data.Uint8List getConfigRequestDescriptor = $convert.base64Decode(
     'ChBHZXRDb25maWdSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZVJlcX'
     'Vlc3RSC2Jhc2VSZXF1ZXN0Eh8KC2NvbmZpZ19uYW1lGAIgASgJUgpjb25maWdOYW1lEh8KC2Nv'
     'bmZpZ190eXBlGAMgASgJUgpjb25maWdUeXBlEicKD2J1c2luZXNzX3N5c3RlbRgEIAEoCVIOYn'
-    'VzaW5lc3NTeXN0ZW0=');
+    'VzaW5lc3NTeXN0ZW0SDAoBcRgFIAEoCVIBcQ==');
 
 @$core.Deprecated('Use getConfigResponseDescriptor instead')
 const GetConfigResponse$json = {

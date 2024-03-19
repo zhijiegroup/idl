@@ -19,6 +19,7 @@ export interface Tenant {
   /** 自动创建的管理员的手机号 */
   admin_phone?: string;
   business_system?: Array<string>;
+  platform?: string;
 }
 
 export interface CreateTenantRequest {
@@ -138,4 +139,18 @@ export interface InitTenantRequest {
 
 export interface InitTenantResponse {
   base_resp?: base.BaseResponse;
+}
+
+export interface TenantSystem {
+  label?: string;
+  value?: string;
+}
+
+export interface ListTenantSystemRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface ListTenantSystemResponse {
+  base_resp?: base.BaseResponse;
+  system_list?: Array<TenantSystem>;
 }

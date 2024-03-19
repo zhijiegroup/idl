@@ -1700,6 +1700,14 @@ export class glory_api {
     );
   }
 
+  ListTenantSystem(request) {
+    const uri = `${this.uriPrefix}/api/tenant/list_system`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateTenant(request) {
     const uri = `${this.uriPrefix}/api/tenant/create_tenant`;
     const body = JSONbigint.stringify(request);

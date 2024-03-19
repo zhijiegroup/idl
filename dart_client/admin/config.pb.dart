@@ -810,6 +810,7 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     $core.String? configName,
     $core.String? configType,
     $core.String? businessSystem,
+    $core.String? q,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -824,6 +825,9 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     if (businessSystem != null) {
       $result.businessSystem = businessSystem;
     }
+    if (q != null) {
+      $result.q = q;
+    }
     return $result;
   }
   GetConfigRequest._() : super();
@@ -835,6 +839,7 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'configName')
     ..aOS(3, _omitFieldNames ? '' : 'configType')
     ..aOS(4, _omitFieldNames ? '' : 'businessSystem')
+    ..aOS(5, _omitFieldNames ? '' : 'q')
     ..hasRequiredFields = false
   ;
 
@@ -896,6 +901,15 @@ class GetConfigRequest extends $pb.GeneratedMessage {
   $core.bool hasBusinessSystem() => $_has(3);
   @$pb.TagNumber(4)
   void clearBusinessSystem() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get q => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set q($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasQ() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQ() => clearField(5);
 }
 
 class GetConfigResponse extends $pb.GeneratedMessage {

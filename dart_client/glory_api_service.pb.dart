@@ -691,6 +691,9 @@ class glory_apiApi {
   $async.Future<$25.PublicPriceResponse> publicPrice($pb.ClientContext? ctx, $25.PublicPriceRequest request) =>
     _client.invoke<$25.PublicPriceResponse>(ctx, 'glory_api', 'PublicPrice', request, $25.PublicPriceResponse())
   ;
+  $async.Future<$30.ListTenantSystemResponse> listTenantSystem($pb.ClientContext? ctx, $30.ListTenantSystemRequest request) =>
+    _client.invoke<$30.ListTenantSystemResponse>(ctx, 'glory_api', 'ListTenantSystem', request, $30.ListTenantSystemResponse())
+  ;
   $async.Future<$30.CreateTenantResponse> createTenant($pb.ClientContext? ctx, $30.CreateTenantRequest request) =>
     _client.invoke<$30.CreateTenantResponse>(ctx, 'glory_api', 'CreateTenant', request, $30.CreateTenantResponse())
   ;

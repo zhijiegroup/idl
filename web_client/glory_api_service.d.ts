@@ -930,6 +930,10 @@ CreateLivePlanProduct create live plan product */
   ): Promise<live_plan.PublicPriceResponse>;
 
   /** tenant */
+  ListTenantSystem(
+    request: tenant.ListTenantSystemRequest
+  ): Promise<tenant.ListTenantSystemResponse>;
+
   CreateTenant(
     request: tenant.CreateTenantRequest
   ): Promise<tenant.CreateTenantResponse>;

@@ -24,6 +24,7 @@ const Tenant$json = {
     {'1': 'admin_name', '3': 8, '4': 1, '5': 9, '10': 'adminName'},
     {'1': 'admin_phone', '3': 9, '4': 1, '5': 9, '10': 'adminPhone'},
     {'1': 'business_system', '3': 10, '4': 3, '5': 9, '10': 'businessSystem'},
+    {'1': 'platform', '3': 11, '4': 1, '5': 9, '10': 'platform'},
   ],
 };
 
@@ -33,7 +34,8 @@ final $typed_data.Uint8List tenantDescriptor = $convert.base64Decode(
     'EoCVIKdGVuYW50TmFtZRImCg90ZW5hbnRfbG9nb191cmwYAyABKAlSDXRlbmFudExvZ29VcmwS'
     'JwoPdGVuYW50X292ZXJ2aWV3GAQgASgJUg50ZW5hbnRPdmVydmlldxIdCgphZG1pbl9uYW1lGA'
     'ggASgJUglhZG1pbk5hbWUSHwoLYWRtaW5fcGhvbmUYCSABKAlSCmFkbWluUGhvbmUSJwoPYnVz'
-    'aW5lc3Nfc3lzdGVtGAogAygJUg5idXNpbmVzc1N5c3RlbQ==');
+    'aW5lc3Nfc3lzdGVtGAogAygJUg5idXNpbmVzc1N5c3RlbRIaCghwbGF0Zm9ybRgLIAEoCVIIcG'
+    'xhdGZvcm0=');
 
 @$core.Deprecated('Use createTenantRequestDescriptor instead')
 const CreateTenantRequest$json = {
@@ -362,4 +364,46 @@ const InitTenantResponse$json = {
 final $typed_data.Uint8List initTenantResponseDescriptor = $convert.base64Decode(
     'ChJJbml0VGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use tenantSystemDescriptor instead')
+const TenantSystem$json = {
+  '1': 'TenantSystem',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `TenantSystem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tenantSystemDescriptor = $convert.base64Decode(
+    'CgxUZW5hbnRTeXN0ZW0SFAoFbGFiZWwYASABKAlSBWxhYmVsEhQKBXZhbHVlGAIgASgJUgV2YW'
+    'x1ZQ==');
+
+@$core.Deprecated('Use listTenantSystemRequestDescriptor instead')
+const ListTenantSystemRequest$json = {
+  '1': 'ListTenantSystemRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `ListTenantSystemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantSystemRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VGVuYW50U3lzdGVtUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use listTenantSystemResponseDescriptor instead')
+const ListTenantSystemResponse$json = {
+  '1': 'ListTenantSystemResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'system_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TenantSystem', '10': 'systemList'},
+  ],
+};
+
+/// Descriptor for `ListTenantSystemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTenantSystemResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0VGVuYW50U3lzdGVtUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjgKC3N5c3RlbV9saXN0GAIgAygLMhcuZ2xvcnlfYXBpLlRl'
+    'bmFudFN5c3RlbVIKc3lzdGVtTGlzdA==');
 

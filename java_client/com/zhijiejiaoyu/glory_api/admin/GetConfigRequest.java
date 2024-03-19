@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     configName = "";
     configType = "";
     businessSystem = "";
+    q = "";
   }
 
   @java.lang.Override
@@ -80,6 +81,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             businessSystem = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            q = s;
             break;
           }
           default: {
@@ -278,6 +285,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int Q_FIELD_NUMBER = 5;
+  private volatile java.lang.Object q ;
+  /**
+   * <pre>
+   * 用于区分config_type的类型，支持pageKey, appKey
+   * </pre>
+   *
+   * <code>string q = 5;</code>
+   * @return The q.
+   */
+  @java.lang.Override
+  public java.lang.String getQ() {
+    java.lang.Object ref = q ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      q = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 用于区分config_type的类型，支持pageKey, appKey
+   * </pre>
+   *
+   * <code>string q = 5;</code>
+   * @return The bytes for q.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getQBytes() {
+    java.lang.Object ref = q ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      q = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -304,6 +357,9 @@ private static final long serialVersionUID = 0L;
     if (!getBusinessSystemBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, businessSystem );
     }
+    if (!getQBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, q );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -325,6 +381,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBusinessSystemBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, businessSystem );
+    }
+    if (!getQBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, q );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -352,6 +411,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConfigType())) return false;
     if (!getBusinessSystem()
         .equals(other.getBusinessSystem())) return false;
+    if (!getQ()
+        .equals(other.getQ())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -373,6 +434,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getConfigType().hashCode();
     hash = (37 * hash) + BUSINESS_SYSTEM_FIELD_NUMBER;
     hash = (53 * hash) + getBusinessSystem().hashCode();
+    hash = (37 * hash) + Q_FIELD_NUMBER;
+    hash = (53 * hash) + getQ().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -518,6 +581,8 @@ private static final long serialVersionUID = 0L;
 
       businessSystem = "";
 
+      q = "";
+
       return this;
     }
 
@@ -552,6 +617,7 @@ private static final long serialVersionUID = 0L;
       result.configName = configName ;
       result.configType = configType ;
       result.businessSystem = businessSystem ;
+      result.q = q ;
       onBuilt();
       return result;
     }
@@ -613,6 +679,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getBusinessSystem().isEmpty()) {
         businessSystem = other.businessSystem ;
+        onChanged();
+      }
+      if (!other.getQ().isEmpty()) {
+        q = other.q ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1047,6 +1117,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       businessSystem = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object q = "";
+    /**
+     * <pre>
+     * 用于区分config_type的类型，支持pageKey, appKey
+     * </pre>
+     *
+     * <code>string q = 5;</code>
+     * @return The q.
+     */
+    public java.lang.String getQ() {
+      java.lang.Object ref = q ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        q = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用于区分config_type的类型，支持pageKey, appKey
+     * </pre>
+     *
+     * <code>string q = 5;</code>
+     * @return The bytes for q.
+     */
+    public com.google.protobuf.ByteString
+        getQBytes() {
+      java.lang.Object ref = q ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        q = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 用于区分config_type的类型，支持pageKey, appKey
+     * </pre>
+     *
+     * <code>string q = 5;</code>
+     * @param value The q to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQ(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      q = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用于区分config_type的类型，支持pageKey, appKey
+     * </pre>
+     *
+     * <code>string q = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQ() {
+      
+      q = getDefaultInstance().getQ();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 用于区分config_type的类型，支持pageKey, appKey
+     * </pre>
+     *
+     * <code>string q = 5;</code>
+     * @param value The bytes for q to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      q = value;
       onChanged();
       return this;
     }

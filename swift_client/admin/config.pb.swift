@@ -273,6 +273,9 @@ struct GloryApi_GetConfigRequest {
   /// 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
   var businessSystem: String = String()
 
+  /// 用于区分config_type的类型，支持pageKey, appKey
+  var q: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1009,6 +1012,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     2: .standard(proto: "config_name"),
     3: .standard(proto: "config_type"),
     4: .standard(proto: "business_system"),
+    5: .same(proto: "q"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1021,6 +1025,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 2: try { try decoder.decodeSingularStringField(value: &self.configName) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.configType) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.businessSystem) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.q) }()
       default: break
       }
     }
@@ -1043,6 +1048,9 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if !self.businessSystem.isEmpty {
       try visitor.visitSingularStringField(value: self.businessSystem, fieldNumber: 4)
     }
+    if !self.q.isEmpty {
+      try visitor.visitSingularStringField(value: self.q, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1051,6 +1059,7 @@ extension GloryApi_GetConfigRequest: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.configName != rhs.configName {return false}
     if lhs.configType != rhs.configType {return false}
     if lhs.businessSystem != rhs.businessSystem {return false}
+    if lhs.q != rhs.q {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

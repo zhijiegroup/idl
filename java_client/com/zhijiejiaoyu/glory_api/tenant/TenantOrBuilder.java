@@ -141,4 +141,16 @@ public interface TenantOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBusinessSystemBytes(int index);
+
+  /**
+   * <code>string platform = 11;</code>
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   * <code>string platform = 11;</code>
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString
+      getPlatformBytes();
 }
