@@ -799,6 +799,9 @@ service glory_api {
     option (api.post) = '/api/live/public_price';
   }
   //tenant
+  rpc ListTenantSystem(ListTenantSystemRequest) returns (ListTenantSystemResponse) {
+    option (api.post) = '/api/tenant/list_system';
+  }
   rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse) {
     option (api.post) = '/api/tenant/create_tenant';
   }
