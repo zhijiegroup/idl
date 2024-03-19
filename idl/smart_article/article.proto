@@ -1,0 +1,127 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.short_video";
+option java_multiple_files = true;
+
+import "base.proto";
+import "user/user.proto";
+
+message ArticleCreation {
+    int64 article_creation_id = 1;
+    int64 last_article_creation_id = 2;
+    string title = 3;
+    string ai_result = 4;
+    string status = 5;
+    string topic = 6;
+    string creation_type = 7;
+    string source = 8;
+    string digital_hunman_video_url = 9;
+    string created_at = 10;
+}
+
+message ArticleCreationDraft {
+    int64 article_creation_draft_id = 1;
+    int64 article_creation_id = 2;
+    string course_code = 3;
+    string course_topic_code = 4;
+    string title = 5;
+    string content = 6;
+    string creation_type = 7;
+    string created_at = 8;
+}
+
+
+message CreateArticleCreationRequest {
+    base.BaseRequest base_request = 1;
+    string course_code = 2;
+    string course_topic_code = 3;
+    bool have_sub_topic = 4;
+    string title = 5;
+    string content = 6;
+    string creation_type = 7;
+    int64 last_article_creation_id = 8;
+}
+
+message CreateArticleCreationResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListMyArticleCreationRequest {
+    base.BaseRequest base_request = 1;
+    string status = 2;
+    string title = 3;
+    string ai_result = 4;
+    string topic = 5;
+    int64 start = 6;
+    int64 end = 7;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListMyArticleCreationResponse {
+    base.BaseResponse base_resp = 1;
+    repeated ArticleCreation list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message CreateArticleCreationDraftRequest {
+    base.BaseRequest base_request = 1;
+    string course_code = 2;
+    string course_topic_code = 3;
+    string title = 4;
+    string content = 5;
+    string creation_type = 6;
+}
+
+message CreateArticleCreationDraftResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ListMyArticleCreationDraftRequest {
+    base.BaseRequest base_request = 1;
+    string title = 2;
+    string topic = 3;
+    int64 start = 4;
+    int64 end = 5;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListMyArticleCreationDraftResponse {
+    base.BaseResponse base_resp = 1;
+    repeated ArticleCreationDraft list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message ArticleCreationDraftDetailRequest {
+    base.BaseRequest base_request = 1;
+    int64 article_creation_draft_id = 2;
+}
+
+message ArticleCreationDraftDetailResponse {
+    base.BaseResponse base_resp = 1;
+    ArticleCreationDraft data = 2;
+}
+
+message DeleteArticleCreationDraftRequest {
+    base.BaseRequest base_request = 1;
+    int64 article_creation_draft_id = 2;
+}
+
+message DeleteArticleCreationDraftResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message ArticleCreationStatisticsRequest {
+    base.BaseRequest base_request = 1;
+    string role = 2;
+}
+
+message ArticleCreationStatisticsResponse {
+    base.BaseResponse base_resp = 1;
+    int64 total = 2;
+    int64 reject_total = 3;
+    int64 evaluated_total = 4;
+    int64 ai_pass_total = 5;
+    int64 ai_no_pass_total = 6;
+    int64 system_evaluated_total = 7;
+}
+
