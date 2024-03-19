@@ -78,6 +78,7 @@ message NmResource {
     int64 resource_type = 3;
     string resource_path = 4;
     string resource_url = 5;
+    string file_type = 6;
 }
 
 message CreateNmCourseResponse {
