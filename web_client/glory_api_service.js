@@ -62,6 +62,7 @@ import * as teacher_task_template from "./task/teacher_task_template";
 import * as teacher_task from "./task/teacher_task";
 import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
+import * as article from "./smart_article/article";
 export {
   user,
   address,
@@ -121,6 +122,7 @@ export {
   teacher_task,
   student_task,
   notification,
+  article,
 };
 
 import {
