@@ -179,6 +179,7 @@ const NmResource$json = {
     {'1': 'resource_type', '3': 3, '4': 1, '5': 3, '10': 'resourceType'},
     {'1': 'resource_path', '3': 4, '4': 1, '5': 9, '10': 'resourcePath'},
     {'1': 'resource_url', '3': 5, '4': 1, '5': 9, '10': 'resourceUrl'},
+    {'1': 'file_type', '3': 6, '4': 1, '5': 9, '10': 'fileType'},
   ],
 };
 
@@ -187,7 +188,7 @@ final $typed_data.Uint8List nmResourceDescriptor = $convert.base64Decode(
     'CgpObVJlc291cmNlEh8KC3Jlc291cmNlX2lkGAEgASgDUgpyZXNvdXJjZUlkEiMKDXJlc291cm'
     'NlX25hbWUYAiABKAlSDHJlc291cmNlTmFtZRIjCg1yZXNvdXJjZV90eXBlGAMgASgDUgxyZXNv'
     'dXJjZVR5cGUSIwoNcmVzb3VyY2VfcGF0aBgEIAEoCVIMcmVzb3VyY2VQYXRoEiEKDHJlc291cm'
-    'NlX3VybBgFIAEoCVILcmVzb3VyY2VVcmw=');
+    'NlX3VybBgFIAEoCVILcmVzb3VyY2VVcmwSGwoJZmlsZV90eXBlGAYgASgJUghmaWxlVHlwZQ==');
 
 @$core.Deprecated('Use createNmCourseResponseDescriptor instead')
 const CreateNmCourseResponse$json = {

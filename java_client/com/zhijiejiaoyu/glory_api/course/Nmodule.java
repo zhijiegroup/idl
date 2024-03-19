@@ -144,42 +144,43 @@ public final class Nmodule {
       "hapter\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014chapter_na" +
       "me\030\002 \001(\t\022\025\n\rchapter_index\030\003 \001(\t\022+\n\rchild" +
       "_chapter\030\004 \003(\0132\024.glory_api.NmChapter\022(\n\t" +
-      "resources\030\005 \003(\0132\025.glory_api.NmResource\"|" +
-      "\n\nNmResource\022\023\n\013resource_id\030\001 \001(\003\022\025\n\rres" +
-      "ource_name\030\002 \001(\t\022\025\n\rresource_type\030\003 \001(\003\022" +
-      "\025\n\rresource_path\030\004 \001(\t\022\024\n\014resource_url\030\005" +
-      " \001(\t\"R\n\026CreateNmCourseResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tcourse_" +
-      "id\030\002 \001(\003\"\211\003\n\025UpdateNmCourseRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013c" +
-      "ourse_name\030\002 \001(\t\022\033\n\023course_organization\030" +
-      "\003 \001(\t\022\024\n\014teacher_name\030\004 \001(\t\022\024\n\014course_ho" +
-      "urs\030\005 \001(\001\022\032\n\022course_description\030\006 \001(\t\022\031\n" +
-      "\021course_cover_path\030\007 \001(\t\022\035\n\025course_class" +
-      "ification\030\010 \001(\003\022\024\n\014course_level\030\t \001(\003\022\024\n" +
-      "\014course_major\030\n \001(\t\022\023\n\013course_type\030\013 \001(\003" +
-      "\022\027\n\017course_industry\030\014 \001(\t\022&\n\010chapters\030\r " +
-      "\003(\0132\024.glory_api.NmChapter\022\021\n\tcourse_id\030\016" +
-      " \001(\003\"?\n\026UpdateNmCourseResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"S\n\025NmCours" +
-      "eDetailRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"\220\001\n\026N" +
-      "mCourseDetailResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022#\n\006course\030\002 \001(\0132\023.g" +
-      "lory_api.NmCourse\022\021\n\tis_joined\030\004 \001(\010\022\027\n\017" +
-      "course_progress\030\003 \001(\005\"\222\001\n\023ListNmCourseRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\026\n\016classification\030\002 \001(\005\022\r\n\005value\030" +
-      "\003 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"\221\001\n\024ListNmCourseResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\007co" +
-      "urses\030\002 \003(\0132\023.glory_api.NmCourse\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponse\"S" +
-      "\n\025DeleteNmCourseRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002 " +
-      "\001(\003\"?\n\026DeleteNmCourseResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponseB%\n!com.zhij" +
-      "iejiaoyu.glory_api.courseP\001b\006proto3"
+      "resources\030\005 \003(\0132\025.glory_api.NmResource\"\217" +
+      "\001\n\nNmResource\022\023\n\013resource_id\030\001 \001(\003\022\025\n\rre" +
+      "source_name\030\002 \001(\t\022\025\n\rresource_type\030\003 \001(\003" +
+      "\022\025\n\rresource_path\030\004 \001(\t\022\024\n\014resource_url\030" +
+      "\005 \001(\t\022\021\n\tfile_type\030\006 \001(\t\"R\n\026CreateNmCour" +
+      "seResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022\021\n\tcourse_id\030\002 \001(\003\"\211\003\n\025UpdateN" +
+      "mCourseRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\023\n\013course_name\030\002 \001(\t\022\033\n\023" +
+      "course_organization\030\003 \001(\t\022\024\n\014teacher_nam" +
+      "e\030\004 \001(\t\022\024\n\014course_hours\030\005 \001(\001\022\032\n\022course_" +
+      "description\030\006 \001(\t\022\031\n\021course_cover_path\030\007" +
+      " \001(\t\022\035\n\025course_classification\030\010 \001(\003\022\024\n\014c" +
+      "ourse_level\030\t \001(\003\022\024\n\014course_major\030\n \001(\t\022" +
+      "\023\n\013course_type\030\013 \001(\003\022\027\n\017course_industry\030" +
+      "\014 \001(\t\022&\n\010chapters\030\r \003(\0132\024.glory_api.NmCh" +
+      "apter\022\021\n\tcourse_id\030\016 \001(\003\"?\n\026UpdateNmCour" +
+      "seResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\"S\n\025NmCourseDetailRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tc" +
+      "ourse_id\030\002 \001(\003\"\220\001\n\026NmCourseDetailRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022#\n\006course\030\002 \001(\0132\023.glory_api.NmCourse\022\021\n" +
+      "\tis_joined\030\004 \001(\010\022\027\n\017course_progress\030\003 \001(" +
+      "\005\"\222\001\n\023ListNmCourseRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016classifica" +
+      "tion\030\002 \001(\005\022\r\n\005value\030\003 \001(\t\022+\n\npagination\030" +
+      "d \001(\0132\027.base.PaginationRequest\"\221\001\n\024ListN" +
+      "mCourseResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022$\n\007courses\030\002 \003(\0132\023.glory_" +
+      "api.NmCourse\022,\n\npagination\030d \001(\0132\030.base." +
+      "PaginationResponse\"S\n\025DeleteNmCourseRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\021\n\tcourse_id\030\002 \001(\003\"?\n\026DeleteNmCours" +
+      "eResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
+      "ResponseB%\n!com.zhijiejiaoyu.glory_api.c" +
+      "ourseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -233,7 +234,7 @@ public final class Nmodule {
     internal_static_glory_api_NmResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NmResource_descriptor,
-        new java.lang.String[] { "ResourceId", "ResourceName", "ResourceType", "ResourcePath", "ResourceUrl", });
+        new java.lang.String[] { "ResourceId", "ResourceName", "ResourceType", "ResourcePath", "ResourceUrl", "FileType", });
     internal_static_glory_api_CreateNmCourseResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_CreateNmCourseResponse_fieldAccessorTable = new

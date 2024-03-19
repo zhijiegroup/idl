@@ -80,6 +80,7 @@ export interface NmResource {
   resource_type?: string;
   resource_path?: string;
   resource_url?: string;
+  file_type?: string;
 }
 
 export interface CreateNmCourseResponse {

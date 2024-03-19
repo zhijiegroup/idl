@@ -244,6 +244,8 @@ struct GloryApi_NmResource {
 
   var resourceURL: String = String()
 
+  var fileType: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1027,6 +1029,7 @@ extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     3: .standard(proto: "resource_type"),
     4: .standard(proto: "resource_path"),
     5: .standard(proto: "resource_url"),
+    6: .standard(proto: "file_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1040,6 +1043,7 @@ extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.resourceType) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.resourcePath) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.resourceURL) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.fileType) }()
       default: break
       }
     }
@@ -1061,6 +1065,9 @@ extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if !self.resourceURL.isEmpty {
       try visitor.visitSingularStringField(value: self.resourceURL, fieldNumber: 5)
     }
+    if !self.fileType.isEmpty {
+      try visitor.visitSingularStringField(value: self.fileType, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1070,6 +1077,7 @@ extension GloryApi_NmResource: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     if lhs.resourceType != rhs.resourceType {return false}
     if lhs.resourcePath != rhs.resourcePath {return false}
     if lhs.resourceURL != rhs.resourceURL {return false}
+    if lhs.fileType != rhs.fileType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

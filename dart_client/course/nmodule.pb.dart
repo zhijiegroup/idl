@@ -905,6 +905,7 @@ class NmResource extends $pb.GeneratedMessage {
     $fixnum.Int64? resourceType,
     $core.String? resourcePath,
     $core.String? resourceUrl,
+    $core.String? fileType,
   }) {
     final $result = create();
     if (resourceId != null) {
@@ -922,6 +923,9 @@ class NmResource extends $pb.GeneratedMessage {
     if (resourceUrl != null) {
       $result.resourceUrl = resourceUrl;
     }
+    if (fileType != null) {
+      $result.fileType = fileType;
+    }
     return $result;
   }
   NmResource._() : super();
@@ -934,6 +938,7 @@ class NmResource extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'resourceType')
     ..aOS(4, _omitFieldNames ? '' : 'resourcePath')
     ..aOS(5, _omitFieldNames ? '' : 'resourceUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'fileType')
     ..hasRequiredFields = false
   ;
 
@@ -1002,6 +1007,15 @@ class NmResource extends $pb.GeneratedMessage {
   $core.bool hasResourceUrl() => $_has(4);
   @$pb.TagNumber(5)
   void clearResourceUrl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get fileType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set fileType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFileType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFileType() => clearField(6);
 }
 
 class CreateNmCourseResponse extends $pb.GeneratedMessage {

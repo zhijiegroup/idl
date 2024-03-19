@@ -54,4 +54,16 @@ public interface NmResourceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getResourceUrlBytes();
+
+  /**
+   * <code>string file_type = 6;</code>
+   * @return The fileType.
+   */
+  java.lang.String getFileType();
+  /**
+   * <code>string file_type = 6;</code>
+   * @return The bytes for fileType.
+   */
+  com.google.protobuf.ByteString
+      getFileTypeBytes();
 }
