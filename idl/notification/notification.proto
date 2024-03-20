@@ -56,7 +56,8 @@ message DeleteNotificationResponse {
 
 message CountNotificationRequest {
   base.BaseRequest base_request = 1;
-  bool latest = 2;
+  repeated int32 notify = 2;
+  bool latest = 3;
 }
 
 message CountNotificationResponse {
