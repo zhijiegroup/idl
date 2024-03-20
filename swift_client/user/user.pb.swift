@@ -555,6 +555,8 @@ struct GloryApi_GetUserResponse {
 
   var deptDetail: [String] = []
 
+  var notify: [Int32] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -3361,6 +3363,7 @@ extension GloryApi_GetUserResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
     2: .same(proto: "data"),
     3: .same(proto: "tenant"),
     4: .standard(proto: "dept_detail"),
+    5: .same(proto: "notify"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3373,6 +3376,7 @@ extension GloryApi_GetUserResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 2: try { try decoder.decodeSingularMessageField(value: &self._data) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._tenant) }()
       case 4: try { try decoder.decodeRepeatedStringField(value: &self.deptDetail) }()
+      case 5: try { try decoder.decodeRepeatedInt32Field(value: &self.notify) }()
       default: break
       }
     }
@@ -3395,6 +3399,9 @@ extension GloryApi_GetUserResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.deptDetail.isEmpty {
       try visitor.visitRepeatedStringField(value: self.deptDetail, fieldNumber: 4)
     }
+    if !self.notify.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.notify, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3403,6 +3410,7 @@ extension GloryApi_GetUserResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs._data != rhs._data {return false}
     if lhs._tenant != rhs._tenant {return false}
     if lhs.deptDetail != rhs.deptDetail {return false}
+    if lhs.notify != rhs.notify {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

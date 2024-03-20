@@ -310,6 +310,7 @@ const GetUserResponse$json = {
     {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'data'},
     {'1': 'tenant', '3': 3, '4': 1, '5': 11, '6': '.glory_api.Tenant', '10': 'tenant'},
     {'1': 'dept_detail', '3': 4, '4': 3, '5': 9, '10': 'deptDetail'},
+    {'1': 'notify', '3': 5, '4': 3, '5': 5, '10': 'notify'},
   ],
 };
 
@@ -318,7 +319,7 @@ final $typed_data.Uint8List getUserResponseDescriptor = $convert.base64Decode(
     'Cg9HZXRVc2VyUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG9uc2'
     'VSCGJhc2VSZXNwEiMKBGRhdGEYAiABKAsyDy5nbG9yeV9hcGkuVXNlclIEZGF0YRIpCgZ0ZW5h'
     'bnQYAyABKAsyES5nbG9yeV9hcGkuVGVuYW50UgZ0ZW5hbnQSHwoLZGVwdF9kZXRhaWwYBCADKA'
-    'lSCmRlcHREZXRhaWw=');
+    'lSCmRlcHREZXRhaWwSFgoGbm90aWZ5GAUgAygFUgZub3RpZnk=');
 
 @$core.Deprecated('Use getUserByPhoneRequestDescriptor instead')
 const GetUserByPhoneRequest$json = {

@@ -144,6 +144,7 @@ export interface GetUserResponse {
   data?: User;
   tenant?: tenant.Tenant;
   dept_detail?: Array<string>;
+  notify?: Array<number>;
 }
 
 export interface GetUserByPhoneRequest {
