@@ -129,6 +129,7 @@ message GetUserResponse {
   User data = 2; // user data
   Tenant tenant = 3;
   repeated string dept_detail = 4;
+  repeated int32 notify = 5;
 }
 
 message GetUserByPhoneRequest {

@@ -62,7 +62,6 @@ import "task/teacher_task_template.proto";
 import "task/teacher_task.proto";
 import "task/student_task.proto";
 import "notification/notification.proto";
-import "smart_article/article.proto";
 
 service glory_api {
 
