@@ -151,14 +151,16 @@ const CountNotificationRequest$json = {
   '1': 'CountNotificationRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'latest', '3': 2, '4': 1, '5': 8, '10': 'latest'},
+    {'1': 'notify', '3': 2, '4': 3, '5': 5, '10': 'notify'},
+    {'1': 'latest', '3': 3, '4': 1, '5': 8, '10': 'latest'},
   ],
 };
 
 /// Descriptor for `CountNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List countNotificationRequestDescriptor = $convert.base64Decode(
     'ChhDb3VudE5vdGlmaWNhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
-    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFgoGbGF0ZXN0GAIgASgIUgZsYXRlc3Q=');
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFgoGbm90aWZ5GAIgAygFUgZub3RpZnkSFgoGbGF0'
+    'ZXN0GAMgASgIUgZsYXRlc3Q=');
 
 @$core.Deprecated('Use countNotificationResponseDescriptor instead')
 const CountNotificationResponse$json = {

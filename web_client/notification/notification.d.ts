@@ -56,6 +56,7 @@ export interface DeleteNotificationResponse {
 
 export interface CountNotificationRequest {
   base_request?: base.BaseRequest;
+  notify?: Array<number>;
   latest?: boolean;
 }
 

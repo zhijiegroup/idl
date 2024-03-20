@@ -23,7 +23,24 @@ public interface CountNotificationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>bool latest = 2;</code>
+   * <code>repeated int32 notify = 2;</code>
+   * @return A list containing the notify.
+   */
+  java.util.List<java.lang.Integer> getNotifyList();
+  /**
+   * <code>repeated int32 notify = 2;</code>
+   * @return The count of notify.
+   */
+  int getNotifyCount();
+  /**
+   * <code>repeated int32 notify = 2;</code>
+   * @param index The index of the element to return.
+   * @return The notify at the given index.
+   */
+  int getNotify(int index);
+
+  /**
+   * <code>bool latest = 3;</code>
    * @return The latest.
    */
   boolean getLatest();

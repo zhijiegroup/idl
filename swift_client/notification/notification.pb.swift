@@ -243,6 +243,8 @@ struct GloryApi_CountNotificationRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var notify: [Int32] = []
+
   var latest: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -740,7 +742,8 @@ extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobu
   static let protoMessageName: String = _protobuf_package + ".CountNotificationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .same(proto: "latest"),
+    2: .same(proto: "notify"),
+    3: .same(proto: "latest"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -750,7 +753,8 @@ extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobu
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularBoolField(value: &self.latest) }()
+      case 2: try { try decoder.decodeRepeatedInt32Field(value: &self.notify) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.latest) }()
       default: break
       }
     }
@@ -764,14 +768,18 @@ extension GloryApi_CountNotificationRequest: SwiftProtobuf.Message, SwiftProtobu
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.notify.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.notify, fieldNumber: 2)
+    }
     if self.latest != false {
-      try visitor.visitSingularBoolField(value: self.latest, fieldNumber: 2)
+      try visitor.visitSingularBoolField(value: self.latest, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CountNotificationRequest, rhs: GloryApi_CountNotificationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.notify != rhs.notify {return false}
     if lhs.latest != rhs.latest {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private CountNotificationRequest() {
+    notify = emptyIntList();
   }
 
   @java.lang.Override
@@ -38,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,6 +64,27 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              notify = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            notify .addInt(input.readInt32());
+            break;
+          }
+          case 18: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              notify = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              notify .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
+          case 24: {
 
             latest = input.readBool();
             break;
@@ -81,6 +104,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        notify .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -124,10 +150,38 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int LATEST_FIELD_NUMBER = 2;
+  public static final int NOTIFY_FIELD_NUMBER = 2;
+  private com.google.protobuf.Internal.IntList notify ;
+  /**
+   * <code>repeated int32 notify = 2;</code>
+   * @return A list containing the notify.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getNotifyList() {
+    return notify ;
+  }
+  /**
+   * <code>repeated int32 notify = 2;</code>
+   * @return The count of notify.
+   */
+  public int getNotifyCount() {
+    return notify .size();
+  }
+  /**
+   * <code>repeated int32 notify = 2;</code>
+   * @param index The index of the element to return.
+   * @return The notify at the given index.
+   */
+  public int getNotify(int index) {
+    return notify .getInt(index);
+  }
+  private int notifyMemoizedSerializedSize = -1;
+
+  public static final int LATEST_FIELD_NUMBER = 3;
   private boolean latest ;
   /**
-   * <code>bool latest = 2;</code>
+   * <code>bool latest = 3;</code>
    * @return The latest.
    */
   @java.lang.Override
@@ -149,11 +203,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
+    if (getNotifyList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(notifyMemoizedSerializedSize);
+    }
+    for (int i = 0; i < notify .size(); i++) {
+      output.writeInt32NoTag(notify .getInt(i));
+    }
     if (latest != false) {
-      output.writeBool(2, latest );
+      output.writeBool(3, latest );
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +230,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < notify .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(notify .getInt(i));
+      }
+      size += dataSize;
+      if (!getNotifyList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      notifyMemoizedSerializedSize = dataSize;
+    }
     if (latest != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, latest );
+        .computeBoolSize(3, latest );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,6 +268,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
+    if (!getNotifyList()
+        .equals(other.getNotifyList())) return false;
     if (getLatest()
         != other.getLatest()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -208,6 +286,10 @@ private static final long serialVersionUID = 0L;
     if (hasBaseRequest()) {
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
+    }
+    if (getNotifyCount() > 0) {
+      hash = (37 * hash) + NOTIFY_FIELD_NUMBER;
+      hash = (53 * hash) + getNotifyList().hashCode();
     }
     hash = (37 * hash) + LATEST_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -351,6 +433,8 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
+      notify = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
       latest = false;
 
       return this;
@@ -379,11 +463,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest result = new com.zhijiejiaoyu.glory_api.notification.CountNotificationRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
+      if (((bitField0 & 0x00000001) != 0)) {
+        notify .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
+      result.notify = notify ;
       result.latest = latest ;
       onBuilt();
       return result;
@@ -436,6 +526,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
+      if (!other.notify .isEmpty()) {
+        if (notify .isEmpty()) {
+          notify = other.notify ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureNotifyIsMutable();
+          notify .addAll(other.notify );
+        }
+        onChanged();
+      }
       if (other.getLatest() != false) {
         setLatest(other.getLatest());
       }
@@ -467,6 +567,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -587,9 +688,88 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
+    private com.google.protobuf.Internal.IntList notify = emptyIntList();
+    private void ensureNotifyIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        notify = mutableCopy(notify );
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @return A list containing the notify.
+     */
+    public java.util.List<java.lang.Integer>
+        getNotifyList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(notify ) : notify ;
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @return The count of notify.
+     */
+    public int getNotifyCount() {
+      return notify .size();
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @param index The index of the element to return.
+     * @return The notify at the given index.
+     */
+    public int getNotify(int index) {
+      return notify .getInt(index);
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The notify to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotify(
+        int index, int value) {
+      ensureNotifyIsMutable();
+      notify .setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @param value The notify to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNotify(int value) {
+      ensureNotifyIsMutable();
+      notify .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @param values The notify to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNotify(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureNotifyIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, notify );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotify() {
+      notify = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
     private boolean latest ;
     /**
-     * <code>bool latest = 2;</code>
+     * <code>bool latest = 3;</code>
      * @return The latest.
      */
     @java.lang.Override
@@ -597,7 +777,7 @@ private static final long serialVersionUID = 0L;
       return latest ;
     }
     /**
-     * <code>bool latest = 2;</code>
+     * <code>bool latest = 3;</code>
      * @param value The latest to set.
      * @return This builder for chaining.
      */
@@ -608,7 +788,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>bool latest = 2;</code>
+     * <code>bool latest = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearLatest() {

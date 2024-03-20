@@ -109,20 +109,21 @@ public final class NotificationOuterClass {
       "quest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020notifi" +
       "cation_ids\030\002 \003(\003\"C\n\032DeleteNotificationRe" +
       "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"S\n\030CountNotificationRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006la" +
-      "test\030\002 \001(\010\"o\n\031CountNotificationResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022+" +
-      "\n\005count\030\002 \003(\0132\034.glory_api.NotificationCo" +
-      "unt\"\336\001\n\027TestNotificationRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007user" +
-      "_id\030\002 \001(\003\022\017\n\007link_id\030\003 \001(\003\022\031\n\021notificati" +
-      "on_type\030\004 \001(\005\022\033\n\023notification_result\030\005 \001" +
-      "(\005\022\034\n\024notification_content\030\006 \001(\t\022\020\n\010intV" +
-      "alue\030\007 \001(\003\022\020\n\010strValue\030\010 \001(\t\"A\n\030TestNoti" +
-      "ficationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponseB+\n\'com.zhijiejiaoyu.glor" +
-      "y_api.notificationP\001b\006proto3"
+      "ponse\"c\n\030CountNotificationRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006no" +
+      "tify\030\002 \003(\005\022\016\n\006latest\030\003 \001(\010\"o\n\031CountNotif" +
+      "icationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022+\n\005count\030\002 \003(\0132\034.glory_ap" +
+      "i.NotificationCount\"\336\001\n\027TestNotification" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\017\n\007user_id\030\002 \001(\003\022\017\n\007link_id\030\003 \001" +
+      "(\003\022\031\n\021notification_type\030\004 \001(\005\022\033\n\023notific" +
+      "ation_result\030\005 \001(\005\022\034\n\024notification_conte" +
+      "nt\030\006 \001(\t\022\020\n\010intValue\030\007 \001(\003\022\020\n\010strValue\030\010" +
+      " \001(\t\"A\n\030TestNotificationResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponseB+\n\'com.z" +
+      "hijiejiaoyu.glory_api.notificationP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -182,7 +183,7 @@ public final class NotificationOuterClass {
     internal_static_glory_api_CountNotificationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CountNotificationRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Latest", });
+        new java.lang.String[] { "BaseRequest", "Notify", "Latest", });
     internal_static_glory_api_CountNotificationResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_CountNotificationResponse_fieldAccessorTable = new
