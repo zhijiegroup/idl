@@ -88,4 +88,21 @@ public interface GetUserResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDeptDetailBytes(int index);
+
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @return A list containing the notify.
+   */
+  java.util.List<java.lang.Integer> getNotifyList();
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @return The count of notify.
+   */
+  int getNotifyCount();
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @param index The index of the element to return.
+   * @return The notify at the given index.
+   */
+  int getNotify(int index);
 }

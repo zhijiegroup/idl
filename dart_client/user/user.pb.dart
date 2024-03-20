@@ -1511,6 +1511,7 @@ class GetUserResponse extends $pb.GeneratedMessage {
     User? data,
     $3.Tenant? tenant,
     $core.Iterable<$core.String>? deptDetail,
+    $core.Iterable<$core.int>? notify,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1525,6 +1526,9 @@ class GetUserResponse extends $pb.GeneratedMessage {
     if (deptDetail != null) {
       $result.deptDetail.addAll(deptDetail);
     }
+    if (notify != null) {
+      $result.notify.addAll(notify);
+    }
     return $result;
   }
   GetUserResponse._() : super();
@@ -1536,6 +1540,7 @@ class GetUserResponse extends $pb.GeneratedMessage {
     ..aOM<User>(2, _omitFieldNames ? '' : 'data', subBuilder: User.create)
     ..aOM<$3.Tenant>(3, _omitFieldNames ? '' : 'tenant', subBuilder: $3.Tenant.create)
     ..pPS(4, _omitFieldNames ? '' : 'deptDetail')
+    ..p<$core.int>(5, _omitFieldNames ? '' : 'notify', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 
@@ -1595,6 +1600,9 @@ class GetUserResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get deptDetail => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get notify => $_getList(4);
 }
 
 class GetUserByPhoneRequest extends $pb.GeneratedMessage {

@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private GetUserResponse() {
     deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
+    notify = emptyIntList();
   }
 
   @java.lang.Override
@@ -98,6 +99,27 @@ private static final long serialVersionUID = 0L;
             deptDetail .add(s);
             break;
           }
+          case 40: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              notify = newIntList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            notify .addInt(input.readInt32());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              notify = newIntList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              notify .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,6 +137,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         deptDetail = deptDetail .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        notify .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -258,6 +283,34 @@ private static final long serialVersionUID = 0L;
     return deptDetail .getByteString(index);
   }
 
+  public static final int NOTIFY_FIELD_NUMBER = 5;
+  private com.google.protobuf.Internal.IntList notify ;
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @return A list containing the notify.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+      getNotifyList() {
+    return notify ;
+  }
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @return The count of notify.
+   */
+  public int getNotifyCount() {
+    return notify .size();
+  }
+  /**
+   * <code>repeated int32 notify = 5;</code>
+   * @param index The index of the element to return.
+   * @return The notify at the given index.
+   */
+  public int getNotify(int index) {
+    return notify .getInt(index);
+  }
+  private int notifyMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -272,6 +325,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
@@ -283,6 +337,13 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < deptDetail .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, deptDetail .getRaw(i));
+    }
+    if (getNotifyList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(notifyMemoizedSerializedSize);
+    }
+    for (int i = 0; i < notify .size(); i++) {
+      output.writeInt32NoTag(notify .getInt(i));
     }
     unknownFields.writeTo(output);
   }
@@ -312,6 +373,20 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getDeptDetailList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < notify .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(notify .getInt(i));
+      }
+      size += dataSize;
+      if (!getNotifyList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      notifyMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -345,6 +420,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDeptDetailList()
         .equals(other.getDeptDetailList())) return false;
+    if (!getNotifyList()
+        .equals(other.getNotifyList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -371,6 +448,10 @@ private static final long serialVersionUID = 0L;
     if (getDeptDetailCount() > 0) {
       hash = (37 * hash) + DEPT_DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDeptDetailList().hashCode();
+    }
+    if (getNotifyCount() > 0) {
+      hash = (37 * hash) + NOTIFY_FIELD_NUMBER;
+      hash = (53 * hash) + getNotifyList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -525,6 +606,8 @@ private static final long serialVersionUID = 0L;
       }
       deptDetail = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      notify = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000002);
       return this;
     }
 
@@ -572,6 +655,11 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.deptDetail = deptDetail ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        notify .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
+      result.notify = notify ;
       onBuilt();
       return result;
     }
@@ -636,6 +724,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureDeptDetailIsMutable();
           deptDetail .addAll(other.deptDetail );
+        }
+        onChanged();
+      }
+      if (!other.notify .isEmpty()) {
+        if (notify .isEmpty()) {
+          notify = other.notify ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureNotifyIsMutable();
+          notify .addAll(other.notify );
         }
         onChanged();
       }
@@ -1168,6 +1266,85 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureDeptDetailIsMutable();
       deptDetail .add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList notify = emptyIntList();
+    private void ensureNotifyIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        notify = mutableCopy(notify );
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @return A list containing the notify.
+     */
+    public java.util.List<java.lang.Integer>
+        getNotifyList() {
+      return ((bitField0 & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(notify ) : notify ;
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @return The count of notify.
+     */
+    public int getNotifyCount() {
+      return notify .size();
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @param index The index of the element to return.
+     * @return The notify at the given index.
+     */
+    public int getNotify(int index) {
+      return notify .getInt(index);
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The notify to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotify(
+        int index, int value) {
+      ensureNotifyIsMutable();
+      notify .setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @param value The notify to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNotify(int value) {
+      ensureNotifyIsMutable();
+      notify .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @param values The notify to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNotify(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureNotifyIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, notify );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int32 notify = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotify() {
+      notify = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000002);
       onChanged();
       return this;
     }
