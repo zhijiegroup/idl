@@ -452,6 +452,8 @@ struct GloryApi_GetTeacherTaskRequest {
 
   var teacherTaskID: Int64 = 0
 
+  var copy: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1865,6 +1867,7 @@ extension GloryApi_GetTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "teacher_task_id"),
+    3: .same(proto: "copy"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1875,6 +1878,7 @@ extension GloryApi_GetTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.teacherTaskID) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.copy) }()
       default: break
       }
     }
@@ -1891,12 +1895,16 @@ extension GloryApi_GetTeacherTaskRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.teacherTaskID != 0 {
       try visitor.visitSingularInt64Field(value: self.teacherTaskID, fieldNumber: 2)
     }
+    if self.copy != false {
+      try visitor.visitSingularBoolField(value: self.copy, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetTeacherTaskRequest, rhs: GloryApi_GetTeacherTaskRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.teacherTaskID != rhs.teacherTaskID {return false}
+    if lhs.copy != rhs.copy {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

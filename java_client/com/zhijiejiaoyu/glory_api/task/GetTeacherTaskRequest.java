@@ -66,6 +66,11 @@ private static final long serialVersionUID = 0L;
             teacherTaskId = input.readInt64();
             break;
           }
+          case 24: {
+
+            copy = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -135,6 +140,17 @@ private static final long serialVersionUID = 0L;
     return teacherTaskId ;
   }
 
+  public static final int COPY_FIELD_NUMBER = 3;
+  private boolean copy ;
+  /**
+   * <code>bool copy = 3;</code>
+   * @return The copy.
+   */
+  @java.lang.Override
+  public boolean getCopy() {
+    return copy ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -155,6 +171,9 @@ private static final long serialVersionUID = 0L;
     if (teacherTaskId != 0L) {
       output.writeInt64(2, teacherTaskId );
     }
+    if (copy != false) {
+      output.writeBool(3, copy );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -171,6 +190,10 @@ private static final long serialVersionUID = 0L;
     if (teacherTaskId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, teacherTaskId );
+    }
+    if (copy != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, copy );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -194,6 +217,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTeacherTaskId()
         != other.getTeacherTaskId()) return false;
+    if (getCopy()
+        != other.getCopy()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -212,6 +237,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEACHER_TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTeacherTaskId());
+    hash = (37 * hash) + COPY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCopy());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -353,6 +381,8 @@ private static final long serialVersionUID = 0L;
       }
       teacherTaskId = 0L;
 
+      copy = false;
+
       return this;
     }
 
@@ -385,6 +415,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.teacherTaskId = teacherTaskId ;
+      result.copy = copy ;
       onBuilt();
       return result;
     }
@@ -438,6 +469,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTeacherTaskId() != 0L) {
         setTeacherTaskId(other.getTeacherTaskId());
+      }
+      if (other.getCopy() != false) {
+        setCopy(other.getCopy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -614,6 +648,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearTeacherTaskId() {
       
       teacherTaskId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean copy ;
+    /**
+     * <code>bool copy = 3;</code>
+     * @return The copy.
+     */
+    @java.lang.Override
+    public boolean getCopy() {
+      return copy ;
+    }
+    /**
+     * <code>bool copy = 3;</code>
+     * @param value The copy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCopy(boolean value) {
+      
+      copy = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool copy = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCopy() {
+      
+      copy = false;
       onChanged();
       return this;
     }

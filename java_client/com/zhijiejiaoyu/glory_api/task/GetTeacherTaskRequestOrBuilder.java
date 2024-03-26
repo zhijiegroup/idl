@@ -27,4 +27,10 @@ public interface GetTeacherTaskRequestOrBuilder extends
    * @return The teacherTaskId.
    */
   long getTeacherTaskId();
+
+  /**
+   * <code>bool copy = 3;</code>
+   * @return The copy.
+   */
+  boolean getCopy();
 }

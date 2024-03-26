@@ -1190,6 +1190,7 @@ class GetTeacherTaskRequest extends $pb.GeneratedMessage {
   factory GetTeacherTaskRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? teacherTaskId,
+    $core.bool? copy,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1197,6 +1198,9 @@ class GetTeacherTaskRequest extends $pb.GeneratedMessage {
     }
     if (teacherTaskId != null) {
       $result.teacherTaskId = teacherTaskId;
+    }
+    if (copy != null) {
+      $result.copy = copy;
     }
     return $result;
   }
@@ -1207,6 +1211,7 @@ class GetTeacherTaskRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTeacherTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'teacherTaskId')
+    ..aOB(3, _omitFieldNames ? '' : 'copy')
     ..hasRequiredFields = false
   ;
 
@@ -1250,6 +1255,15 @@ class GetTeacherTaskRequest extends $pb.GeneratedMessage {
   $core.bool hasTeacherTaskId() => $_has(1);
   @$pb.TagNumber(2)
   void clearTeacherTaskId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get copy => $_getBF(2);
+  @$pb.TagNumber(3)
+  set copy($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCopy() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCopy() => clearField(3);
 }
 
 class GetTeacherTaskResponse extends $pb.GeneratedMessage {
