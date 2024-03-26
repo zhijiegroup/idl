@@ -65,6 +65,7 @@ message TeacherTaskProgress {
 message CreateTeacherTaskRequest {
   base.BaseRequest base_request = 1;
   TeacherTask teacher_task = 2;
+  bool copy = 3;
 }
 
 message CreateTeacherTaskResponse {
@@ -99,6 +100,7 @@ message ListTeacherTaskResponse {
 message GetTeacherTaskRequest {
   base.BaseRequest base_request = 1;
   int64 teacher_task_id = 2;
+  bool copy = 3;
 }
 
 message GetTeacherTaskResponse {
