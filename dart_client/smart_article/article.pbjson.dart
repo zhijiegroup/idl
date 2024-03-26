@@ -310,3 +310,358 @@ final $typed_data.Uint8List articleCreationStatisticsResponseDescriptor = $conve
     'YWlfbm9fcGFzc190b3RhbBgGIAEoA1INYWlOb1Bhc3NUb3RhbBI0ChZzeXN0ZW1fZXZhbHVhdG'
     'VkX3RvdGFsGAcgASgDUhRzeXN0ZW1FdmFsdWF0ZWRUb3RhbA==');
 
+@$core.Deprecated('Use getExampleArticleRequestDescriptor instead')
+const GetExampleArticleRequest$json = {
+  '1': 'GetExampleArticleRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'course_code', '3': 2, '4': 1, '5': 9, '10': 'courseCode'},
+    {'1': 'topic_code', '3': 3, '4': 1, '5': 9, '10': 'topicCode'},
+  ],
+};
+
+/// Descriptor for `GetExampleArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getExampleArticleRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRFeGFtcGxlQXJ0aWNsZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX2NvZGUYAiABKAlSCmNvdXJzZUNv'
+    'ZGUSHQoKdG9waWNfY29kZRgDIAEoCVIJdG9waWNDb2Rl');
+
+@$core.Deprecated('Use getExampleArticleResponseDescriptor instead')
+const GetExampleArticleResponse$json = {
+  '1': 'GetExampleArticleResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'example', '3': 2, '4': 1, '5': 9, '10': 'example'},
+  ],
+};
+
+/// Descriptor for `GetExampleArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getExampleArticleResponseDescriptor = $convert.base64Decode(
+    'ChlHZXRFeGFtcGxlQXJ0aWNsZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIYCgdleGFtcGxlGAIgASgJUgdleGFtcGxl');
+
+@$core.Deprecated('Use getEvaluationStandardRequestDescriptor instead')
+const GetEvaluationStandardRequest$json = {
+  '1': 'GetEvaluationStandardRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'course_code', '3': 2, '4': 1, '5': 9, '10': 'courseCode'},
+    {'1': 'topic_code', '3': 3, '4': 1, '5': 9, '10': 'topicCode'},
+  ],
+};
+
+/// Descriptor for `GetEvaluationStandardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvaluationStandardRequestDescriptor = $convert.base64Decode(
+    'ChxHZXRFdmFsdWF0aW9uU3RhbmRhcmRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC2NvdXJzZV9jb2RlGAIgASgJUgpjb3Vy'
+    'c2VDb2RlEh0KCnRvcGljX2NvZGUYAyABKAlSCXRvcGljQ29kZQ==');
+
+@$core.Deprecated('Use getEvaluationStandardResponseDescriptor instead')
+const GetEvaluationStandardResponse$json = {
+  '1': 'GetEvaluationStandardResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'standard', '3': 2, '4': 1, '5': 9, '10': 'standard'},
+  ],
+};
+
+/// Descriptor for `GetEvaluationStandardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvaluationStandardResponseDescriptor = $convert.base64Decode(
+    'Ch1HZXRFdmFsdWF0aW9uU3RhbmRhcmRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASGgoIc3RhbmRhcmQYAiABKAlSCHN0YW5kYXJk');
+
+@$core.Deprecated('Use createEvaluationConfigRequestDescriptor instead')
+const CreateEvaluationConfigRequest$json = {
+  '1': 'CreateEvaluationConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'time_duration', '3': 2, '4': 1, '5': 3, '10': 'timeDuration'},
+    {'1': 'system_content', '3': 3, '4': 1, '5': 9, '10': 'systemContent'},
+    {'1': 'personal_content', '3': 4, '4': 3, '5': 9, '10': 'personalContent'},
+  ],
+};
+
+/// Descriptor for `CreateEvaluationConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEvaluationConfigRequestDescriptor = $convert.base64Decode(
+    'Ch1DcmVhdGVFdmFsdWF0aW9uQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIjCg10aW1lX2R1cmF0aW9uGAIgASgDUgx0'
+    'aW1lRHVyYXRpb24SJQoOc3lzdGVtX2NvbnRlbnQYAyABKAlSDXN5c3RlbUNvbnRlbnQSKQoQcG'
+    'Vyc29uYWxfY29udGVudBgEIAMoCVIPcGVyc29uYWxDb250ZW50');
+
+@$core.Deprecated('Use createEvaluationConfigResponseDescriptor instead')
+const CreateEvaluationConfigResponse$json = {
+  '1': 'CreateEvaluationConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CreateEvaluationConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEvaluationConfigResponseDescriptor = $convert.base64Decode(
+    'Ch5DcmVhdGVFdmFsdWF0aW9uQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use listEvaluationConfigRequestDescriptor instead')
+const ListEvaluationConfigRequest$json = {
+  '1': 'ListEvaluationConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `ListEvaluationConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEvaluationConfigRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0RXZhbHVhdGlvbkNvbmZpZ1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+
+@$core.Deprecated('Use listEvaluationConfigResponseDescriptor instead')
+const ListEvaluationConfigResponse$json = {
+  '1': 'ListEvaluationConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 9, '10': 'list'},
+  ],
+};
+
+/// Descriptor for `ListEvaluationConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listEvaluationConfigResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0RXZhbHVhdGlvbkNvbmZpZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBISCgRsaXN0GAIgAygJUgRsaXN0');
+
+@$core.Deprecated('Use batchEvaluateArticleRequestDescriptor instead')
+const BatchEvaluateArticleRequest$json = {
+  '1': 'BatchEvaluateArticleRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'article_creation_ids', '3': 2, '4': 3, '5': 3, '10': 'articleCreationIds'},
+    {'1': 'action', '3': 3, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'comment', '3': 4, '4': 1, '5': 9, '10': 'comment'},
+  ],
+};
+
+/// Descriptor for `BatchEvaluateArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List batchEvaluateArticleRequestDescriptor = $convert.base64Decode(
+    'ChtCYXRjaEV2YWx1YXRlQXJ0aWNsZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSMAoUYXJ0aWNsZV9jcmVhdGlvbl9pZHMYAiAD'
+    'KANSEmFydGljbGVDcmVhdGlvbklkcxIWCgZhY3Rpb24YAyABKAlSBmFjdGlvbhIYCgdjb21tZW'
+    '50GAQgASgJUgdjb21tZW50');
+
+@$core.Deprecated('Use batchEvaluateArticleResponseDescriptor instead')
+const BatchEvaluateArticleResponse$json = {
+  '1': 'BatchEvaluateArticleResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `BatchEvaluateArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List batchEvaluateArticleResponseDescriptor = $convert.base64Decode(
+    'ChxCYXRjaEV2YWx1YXRlQXJ0aWNsZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+
+@$core.Deprecated('Use listStudentArticleCreationRequestDescriptor instead')
+const ListStudentArticleCreationRequest$json = {
+  '1': 'ListStudentArticleCreationRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'name_or_title', '3': 2, '4': 1, '5': 9, '10': 'nameOrTitle'},
+    {'1': 'clas_id', '3': 3, '4': 1, '5': 3, '10': 'clasId'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'ai_pass', '3': 5, '4': 1, '5': 9, '10': 'aiPass'},
+    {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
+    {'1': 'start', '3': 7, '4': 1, '5': 3, '10': 'start'},
+    {'1': 'end', '3': 8, '4': 1, '5': 3, '10': 'end'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListStudentArticleCreationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listStudentArticleCreationRequestDescriptor = $convert.base64Decode(
+    'CiFMaXN0U3R1ZGVudEFydGljbGVDcmVhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgAS'
+    'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSIgoNbmFtZV9vcl90aXRsZRgCIAEo'
+    'CVILbmFtZU9yVGl0bGUSFwoHY2xhc19pZBgDIAEoA1IGY2xhc0lkEhYKBnN0YXR1cxgEIAEoCV'
+    'IGc3RhdHVzEhcKB2FpX3Bhc3MYBSABKAlSBmFpUGFzcxIUCgV0b3BpYxgGIAEoCVIFdG9waWMS'
+    'FAoFc3RhcnQYByABKANSBXN0YXJ0EhAKA2VuZBgIIAEoA1IDZW5kEjcKCnBhZ2luYXRpb24YZC'
+    'ABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+
+@$core.Deprecated('Use listStudentArticleCreationResponseDescriptor instead')
+const ListStudentArticleCreationResponse$json = {
+  '1': 'ListStudentArticleCreationResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+    {'1': 'list', '3': 3, '4': 3, '5': 11, '6': '.glory_api.StudentArticleCreation', '10': 'list'},
+  ],
+};
+
+/// Descriptor for `ListStudentArticleCreationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listStudentArticleCreationResponseDescriptor = $convert.base64Decode(
+    'CiJMaXN0U3R1ZGVudEFydGljbGVDcmVhdGlvblJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCz'
+    'ISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBI4CgpwYWdpbmF0aW9uGAIgASgLMhguYmFz'
+    'ZS5QYWdpbmF0aW9uUmVzcG9uc2VSCnBhZ2luYXRpb24SNQoEbGlzdBgDIAMoCzIhLmdsb3J5X2'
+    'FwaS5TdHVkZW50QXJ0aWNsZUNyZWF0aW9uUgRsaXN0');
+
+@$core.Deprecated('Use studentArticleCreationDescriptor instead')
+const StudentArticleCreation$json = {
+  '1': 'StudentArticleCreation',
+  '2': [
+    {'1': 'article_creation_id', '3': 1, '4': 1, '5': 3, '10': 'articleCreationId'},
+    {'1': 'username', '3': 2, '4': 1, '5': 9, '10': 'username'},
+    {'1': 'clas', '3': 3, '4': 1, '5': 9, '10': 'clas'},
+    {'1': 'ai_result', '3': 4, '4': 1, '5': 9, '10': 'aiResult'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'title', '3': 6, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'topic', '3': 7, '4': 1, '5': 9, '10': 'topic'},
+    {'1': 'creation_type', '3': 8, '4': 1, '5': 9, '10': 'creationType'},
+    {'1': 'digital_hunman_video_url', '3': 9, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
+    {'1': 'created_at', '3': 10, '4': 1, '5': 9, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `StudentArticleCreation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentArticleCreationDescriptor = $convert.base64Decode(
+    'ChZTdHVkZW50QXJ0aWNsZUNyZWF0aW9uEi4KE2FydGljbGVfY3JlYXRpb25faWQYASABKANSEW'
+    'FydGljbGVDcmVhdGlvbklkEhoKCHVzZXJuYW1lGAIgASgJUgh1c2VybmFtZRISCgRjbGFzGAMg'
+    'ASgJUgRjbGFzEhsKCWFpX3Jlc3VsdBgEIAEoCVIIYWlSZXN1bHQSFgoGc3RhdHVzGAUgASgJUg'
+    'ZzdGF0dXMSFAoFdGl0bGUYBiABKAlSBXRpdGxlEhQKBXRvcGljGAcgASgJUgV0b3BpYxIjCg1j'
+    'cmVhdGlvbl90eXBlGAggASgJUgxjcmVhdGlvblR5cGUSNwoYZGlnaXRhbF9odW5tYW5fdmlkZW'
+    '9fdXJsGAkgASgJUhVkaWdpdGFsSHVubWFuVmlkZW9VcmwSHQoKY3JlYXRlZF9hdBgKIAEoCVIJ'
+    'Y3JlYXRlZEF0');
+
+@$core.Deprecated('Use studentArticleCreationEvaluationDetailRequestDescriptor instead')
+const StudentArticleCreationEvaluationDetailRequest$json = {
+  '1': 'StudentArticleCreationEvaluationDetailRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'article_creation_id', '3': 2, '4': 1, '5': 3, '10': 'articleCreationId'},
+  ],
+};
+
+/// Descriptor for `StudentArticleCreationEvaluationDetailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentArticleCreationEvaluationDetailRequestDescriptor = $convert.base64Decode(
+    'Ci1TdHVkZW50QXJ0aWNsZUNyZWF0aW9uRXZhbHVhdGlvbkRldGFpbFJlcXVlc3QSNAoMYmFzZV'
+    '9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSLgoTYXJ0aWNs'
+    'ZV9jcmVhdGlvbl9pZBgCIAEoA1IRYXJ0aWNsZUNyZWF0aW9uSWQ=');
+
+@$core.Deprecated('Use studentArticleCreationEvaluationDetailResponseDescriptor instead')
+const StudentArticleCreationEvaluationDetailResponse$json = {
+  '1': 'StudentArticleCreationEvaluationDetailResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'basic', '3': 2, '4': 1, '5': 11, '6': '.glory_api.StudentArticleCreationBasic', '10': 'basic'},
+    {'1': 'history', '3': 3, '4': 3, '5': 11, '6': '.glory_api.StudentArticleCreationOperation', '10': 'history'},
+  ],
+};
+
+/// Descriptor for `StudentArticleCreationEvaluationDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentArticleCreationEvaluationDetailResponseDescriptor = $convert.base64Decode(
+    'Ci5TdHVkZW50QXJ0aWNsZUNyZWF0aW9uRXZhbHVhdGlvbkRldGFpbFJlc3BvbnNlEi8KCWJhc2'
+    'VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBI8CgViYXNpYxgCIAEo'
+    'CzImLmdsb3J5X2FwaS5TdHVkZW50QXJ0aWNsZUNyZWF0aW9uQmFzaWNSBWJhc2ljEkQKB2hpc3'
+    'RvcnkYAyADKAsyKi5nbG9yeV9hcGkuU3R1ZGVudEFydGljbGVDcmVhdGlvbk9wZXJhdGlvblIH'
+    'aGlzdG9yeQ==');
+
+@$core.Deprecated('Use studentArticleCreationBasicDescriptor instead')
+const StudentArticleCreationBasic$json = {
+  '1': 'StudentArticleCreationBasic',
+  '2': [
+    {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
+    {'1': 'clas', '3': 2, '4': 1, '5': 9, '10': 'clas'},
+    {'1': 'topic', '3': 3, '4': 1, '5': 9, '10': 'topic'},
+    {'1': 'creation_type', '3': 4, '4': 1, '5': 9, '10': 'creationType'},
+  ],
+};
+
+/// Descriptor for `StudentArticleCreationBasic`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentArticleCreationBasicDescriptor = $convert.base64Decode(
+    'ChtTdHVkZW50QXJ0aWNsZUNyZWF0aW9uQmFzaWMSGgoIdXNlcm5hbWUYASABKAlSCHVzZXJuYW'
+    '1lEhIKBGNsYXMYAiABKAlSBGNsYXMSFAoFdG9waWMYAyABKAlSBXRvcGljEiMKDWNyZWF0aW9u'
+    'X3R5cGUYBCABKAlSDGNyZWF0aW9uVHlwZQ==');
+
+@$core.Deprecated('Use studentArticleCreationOperationDescriptor instead')
+const StudentArticleCreationOperation$json = {
+  '1': 'StudentArticleCreationOperation',
+  '2': [
+    {'1': 'action', '3': 1, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'time', '3': 2, '4': 1, '5': 9, '10': 'time'},
+    {'1': 'content_moderation', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ArticleContentModeration', '10': 'contentModeration'},
+    {'1': 'creation_content', '3': 4, '4': 1, '5': 11, '6': '.glory_api.ArticleCreationInfo', '10': 'creationContent'},
+  ],
+};
+
+/// Descriptor for `StudentArticleCreationOperation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List studentArticleCreationOperationDescriptor = $convert.base64Decode(
+    'Ch9TdHVkZW50QXJ0aWNsZUNyZWF0aW9uT3BlcmF0aW9uEhYKBmFjdGlvbhgBIAEoCVIGYWN0aW'
+    '9uEhIKBHRpbWUYAiABKAlSBHRpbWUSUgoSY29udGVudF9tb2RlcmF0aW9uGAMgASgLMiMuZ2xv'
+    'cnlfYXBpLkFydGljbGVDb250ZW50TW9kZXJhdGlvblIRY29udGVudE1vZGVyYXRpb24SSQoQY3'
+    'JlYXRpb25fY29udGVudBgEIAEoCzIeLmdsb3J5X2FwaS5BcnRpY2xlQ3JlYXRpb25JbmZvUg9j'
+    'cmVhdGlvbkNvbnRlbnQ=');
+
+@$core.Deprecated('Use articleCreationInfoDescriptor instead')
+const ArticleCreationInfo$json = {
+  '1': 'ArticleCreationInfo',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'content', '3': 2, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'ai_result', '3': 3, '4': 1, '5': 9, '10': 'aiResult'},
+    {'1': 'ai_reason', '3': 4, '4': 1, '5': 9, '10': 'aiReason'},
+    {'1': 'ai_evaluation', '3': 5, '4': 1, '5': 9, '10': 'aiEvaluation'},
+  ],
+};
+
+/// Descriptor for `ArticleCreationInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List articleCreationInfoDescriptor = $convert.base64Decode(
+    'ChNBcnRpY2xlQ3JlYXRpb25JbmZvEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIYCgdjb250ZW50GA'
+    'IgASgJUgdjb250ZW50EhsKCWFpX3Jlc3VsdBgDIAEoCVIIYWlSZXN1bHQSGwoJYWlfcmVhc29u'
+    'GAQgASgJUghhaVJlYXNvbhIjCg1haV9ldmFsdWF0aW9uGAUgASgJUgxhaUV2YWx1YXRpb24=');
+
+@$core.Deprecated('Use articleContentModerationDescriptor instead')
+const ArticleContentModeration$json = {
+  '1': 'ArticleContentModeration',
+  '2': [
+    {'1': 'forbidden', '3': 1, '4': 3, '5': 9, '10': 'forbidden'},
+    {'1': 'negative', '3': 2, '4': 3, '5': 9, '10': 'negative'},
+    {'1': 'wrong_word', '3': 3, '4': 3, '5': 11, '6': '.glory_api.WrongWord', '10': 'wrongWord'},
+    {'1': 'good_sentence', '3': 4, '4': 3, '5': 11, '6': '.glory_api.Sentence', '10': 'goodSentence'},
+    {'1': 'bad_sentence', '3': 5, '4': 3, '5': 11, '6': '.glory_api.Sentence', '10': 'badSentence'},
+    {'1': 'reject_reason', '3': 6, '4': 1, '5': 9, '10': 'rejectReason'},
+  ],
+};
+
+/// Descriptor for `ArticleContentModeration`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List articleContentModerationDescriptor = $convert.base64Decode(
+    'ChhBcnRpY2xlQ29udGVudE1vZGVyYXRpb24SHAoJZm9yYmlkZGVuGAEgAygJUglmb3JiaWRkZW'
+    '4SGgoIbmVnYXRpdmUYAiADKAlSCG5lZ2F0aXZlEjMKCndyb25nX3dvcmQYAyADKAsyFC5nbG9y'
+    'eV9hcGkuV3JvbmdXb3JkUgl3cm9uZ1dvcmQSOAoNZ29vZF9zZW50ZW5jZRgEIAMoCzITLmdsb3'
+    'J5X2FwaS5TZW50ZW5jZVIMZ29vZFNlbnRlbmNlEjYKDGJhZF9zZW50ZW5jZRgFIAMoCzITLmds'
+    'b3J5X2FwaS5TZW50ZW5jZVILYmFkU2VudGVuY2USIwoNcmVqZWN0X3JlYXNvbhgGIAEoCVIMcm'
+    'VqZWN0UmVhc29u');
+
+@$core.Deprecated('Use wrongWordDescriptor instead')
+const WrongWord$json = {
+  '1': 'WrongWord',
+  '2': [
+    {'1': 'word', '3': 1, '4': 1, '5': 9, '10': 'word'},
+    {'1': 'position', '3': 2, '4': 1, '5': 3, '10': 'position'},
+  ],
+};
+
+/// Descriptor for `WrongWord`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List wrongWordDescriptor = $convert.base64Decode(
+    'CglXcm9uZ1dvcmQSEgoEd29yZBgBIAEoCVIEd29yZBIaCghwb3NpdGlvbhgCIAEoA1IIcG9zaX'
+    'Rpb24=');
+
+@$core.Deprecated('Use sentenceDescriptor instead')
+const Sentence$json = {
+  '1': 'Sentence',
+  '2': [
+    {'1': 'sentence', '3': 1, '4': 1, '5': 9, '10': 'sentence'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `Sentence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sentenceDescriptor = $convert.base64Decode(
+    'CghTZW50ZW5jZRIaCghzZW50ZW5jZRgBIAEoCVIIc2VudGVuY2USFgoGcmVhc29uGAIgASgJUg'
+    'ZyZWFzb24=');
+

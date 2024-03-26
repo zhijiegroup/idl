@@ -61,6 +61,7 @@ import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
+import 'smart_article/article.pb.dart' as $57;
 import 'task/student_task.pb.dart' as $54;
 import 'task/system_task.pb.dart' as $51;
 import 'task/teacher_task.pb.dart' as $53;
@@ -475,6 +476,20 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$56.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ServerContext ctx, $56.GetLiveBoardCommentsRequest request);
   $async.Future<$56.ListLivingUserResponse> listBoardLivingUser($pb.ServerContext ctx, $56.ListLivingUserRequest request);
   $async.Future<$56.CloseCasterResponse> closeCaster($pb.ServerContext ctx, $56.CloseCasterRequest request);
+  $async.Future<$57.CreateArticleCreationResponse> createArticleCreation($pb.ServerContext ctx, $57.CreateArticleCreationRequest request);
+  $async.Future<$57.ListMyArticleCreationResponse> listMyArticleCreation($pb.ServerContext ctx, $57.ListMyArticleCreationRequest request);
+  $async.Future<$57.CreateArticleCreationDraftResponse> createArticleCreationDraft($pb.ServerContext ctx, $57.CreateArticleCreationDraftRequest request);
+  $async.Future<$57.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation($pb.ServerContext ctx, $57.ListMyArticleCreationDraftRequest request);
+  $async.Future<$57.ArticleCreationDraftDetailResponse> draftArticleCreationDetail($pb.ServerContext ctx, $57.ArticleCreationDraftDetailRequest request);
+  $async.Future<$57.DeleteArticleCreationDraftResponse> deleteDraftArticleCreation($pb.ServerContext ctx, $57.DeleteArticleCreationDraftRequest request);
+  $async.Future<$57.ArticleCreationStatisticsResponse> articleCreationStatistics($pb.ServerContext ctx, $57.ArticleCreationStatisticsRequest request);
+  $async.Future<$57.GetExampleArticleResponse> getExampleArticle($pb.ServerContext ctx, $57.GetExampleArticleRequest request);
+  $async.Future<$57.GetEvaluationStandardResponse> getEvaluationStandard($pb.ServerContext ctx, $57.GetEvaluationStandardRequest request);
+  $async.Future<$57.CreateEvaluationConfigResponse> createEvaluationConfig($pb.ServerContext ctx, $57.CreateEvaluationConfigRequest request);
+  $async.Future<$57.ListEvaluationConfigResponse> listEvaluationConfig($pb.ServerContext ctx, $57.ListEvaluationConfigRequest request);
+  $async.Future<$57.BatchEvaluateArticleResponse> batchEvaluateArticleCreation($pb.ServerContext ctx, $57.BatchEvaluateArticleRequest request);
+  $async.Future<$57.ListStudentArticleCreationResponse> listStudentArticleCreation($pb.ServerContext ctx, $57.ListStudentArticleCreationRequest request);
+  $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ServerContext ctx, $57.StudentArticleCreationEvaluationDetailRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -876,6 +891,20 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveBoardComments': return $56.GetLiveBoardCommentsRequest();
       case 'ListBoardLivingUser': return $56.ListLivingUserRequest();
       case 'CloseCaster': return $56.CloseCasterRequest();
+      case 'CreateArticleCreation': return $57.CreateArticleCreationRequest();
+      case 'ListMyArticleCreation': return $57.ListMyArticleCreationRequest();
+      case 'CreateArticleCreationDraft': return $57.CreateArticleCreationDraftRequest();
+      case 'ListMyDraftArticleCreation': return $57.ListMyArticleCreationDraftRequest();
+      case 'DraftArticleCreationDetail': return $57.ArticleCreationDraftDetailRequest();
+      case 'DeleteDraftArticleCreation': return $57.DeleteArticleCreationDraftRequest();
+      case 'ArticleCreationStatistics': return $57.ArticleCreationStatisticsRequest();
+      case 'GetExampleArticle': return $57.GetExampleArticleRequest();
+      case 'GetEvaluationStandard': return $57.GetEvaluationStandardRequest();
+      case 'CreateEvaluationConfig': return $57.CreateEvaluationConfigRequest();
+      case 'ListEvaluationConfig': return $57.ListEvaluationConfigRequest();
+      case 'BatchEvaluateArticleCreation': return $57.BatchEvaluateArticleRequest();
+      case 'ListStudentArticleCreation': return $57.ListStudentArticleCreationRequest();
+      case 'StudentArticleCreationEvaluationDetail': return $57.StudentArticleCreationEvaluationDetailRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1280,6 +1309,20 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetLiveBoardComments': return this.getLiveBoardComments(ctx, request as $56.GetLiveBoardCommentsRequest);
       case 'ListBoardLivingUser': return this.listBoardLivingUser(ctx, request as $56.ListLivingUserRequest);
       case 'CloseCaster': return this.closeCaster(ctx, request as $56.CloseCasterRequest);
+      case 'CreateArticleCreation': return this.createArticleCreation(ctx, request as $57.CreateArticleCreationRequest);
+      case 'ListMyArticleCreation': return this.listMyArticleCreation(ctx, request as $57.ListMyArticleCreationRequest);
+      case 'CreateArticleCreationDraft': return this.createArticleCreationDraft(ctx, request as $57.CreateArticleCreationDraftRequest);
+      case 'ListMyDraftArticleCreation': return this.listMyDraftArticleCreation(ctx, request as $57.ListMyArticleCreationDraftRequest);
+      case 'DraftArticleCreationDetail': return this.draftArticleCreationDetail(ctx, request as $57.ArticleCreationDraftDetailRequest);
+      case 'DeleteDraftArticleCreation': return this.deleteDraftArticleCreation(ctx, request as $57.DeleteArticleCreationDraftRequest);
+      case 'ArticleCreationStatistics': return this.articleCreationStatistics(ctx, request as $57.ArticleCreationStatisticsRequest);
+      case 'GetExampleArticle': return this.getExampleArticle(ctx, request as $57.GetExampleArticleRequest);
+      case 'GetEvaluationStandard': return this.getEvaluationStandard(ctx, request as $57.GetEvaluationStandardRequest);
+      case 'CreateEvaluationConfig': return this.createEvaluationConfig(ctx, request as $57.CreateEvaluationConfigRequest);
+      case 'ListEvaluationConfig': return this.listEvaluationConfig(ctx, request as $57.ListEvaluationConfigRequest);
+      case 'BatchEvaluateArticleCreation': return this.batchEvaluateArticleCreation(ctx, request as $57.BatchEvaluateArticleRequest);
+      case 'ListStudentArticleCreation': return this.listStudentArticleCreation(ctx, request as $57.ListStudentArticleCreationRequest);
+      case 'StudentArticleCreationEvaluationDetail': return this.studentArticleCreationEvaluationDetail(ctx, request as $57.StudentArticleCreationEvaluationDetailRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

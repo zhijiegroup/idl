@@ -59,6 +59,7 @@ import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
 import 'short_video/short_video.pb.dart' as $34;
+import 'smart_article/article.pb.dart' as $57;
 import 'task/student_task.pb.dart' as $54;
 import 'task/system_task.pb.dart' as $51;
 import 'task/teacher_task.pb.dart' as $53;
@@ -1269,6 +1270,48 @@ class glory_apiApi {
   ;
   $async.Future<$56.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $56.CloseCasterRequest request) =>
     _client.invoke<$56.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $56.CloseCasterResponse())
+  ;
+  $async.Future<$57.CreateArticleCreationResponse> createArticleCreation($pb.ClientContext? ctx, $57.CreateArticleCreationRequest request) =>
+    _client.invoke<$57.CreateArticleCreationResponse>(ctx, 'glory_api', 'CreateArticleCreation', request, $57.CreateArticleCreationResponse())
+  ;
+  $async.Future<$57.ListMyArticleCreationResponse> listMyArticleCreation($pb.ClientContext? ctx, $57.ListMyArticleCreationRequest request) =>
+    _client.invoke<$57.ListMyArticleCreationResponse>(ctx, 'glory_api', 'ListMyArticleCreation', request, $57.ListMyArticleCreationResponse())
+  ;
+  $async.Future<$57.CreateArticleCreationDraftResponse> createArticleCreationDraft($pb.ClientContext? ctx, $57.CreateArticleCreationDraftRequest request) =>
+    _client.invoke<$57.CreateArticleCreationDraftResponse>(ctx, 'glory_api', 'CreateArticleCreationDraft', request, $57.CreateArticleCreationDraftResponse())
+  ;
+  $async.Future<$57.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation($pb.ClientContext? ctx, $57.ListMyArticleCreationDraftRequest request) =>
+    _client.invoke<$57.ListMyArticleCreationDraftResponse>(ctx, 'glory_api', 'ListMyDraftArticleCreation', request, $57.ListMyArticleCreationDraftResponse())
+  ;
+  $async.Future<$57.ArticleCreationDraftDetailResponse> draftArticleCreationDetail($pb.ClientContext? ctx, $57.ArticleCreationDraftDetailRequest request) =>
+    _client.invoke<$57.ArticleCreationDraftDetailResponse>(ctx, 'glory_api', 'DraftArticleCreationDetail', request, $57.ArticleCreationDraftDetailResponse())
+  ;
+  $async.Future<$57.DeleteArticleCreationDraftResponse> deleteDraftArticleCreation($pb.ClientContext? ctx, $57.DeleteArticleCreationDraftRequest request) =>
+    _client.invoke<$57.DeleteArticleCreationDraftResponse>(ctx, 'glory_api', 'DeleteDraftArticleCreation', request, $57.DeleteArticleCreationDraftResponse())
+  ;
+  $async.Future<$57.ArticleCreationStatisticsResponse> articleCreationStatistics($pb.ClientContext? ctx, $57.ArticleCreationStatisticsRequest request) =>
+    _client.invoke<$57.ArticleCreationStatisticsResponse>(ctx, 'glory_api', 'ArticleCreationStatistics', request, $57.ArticleCreationStatisticsResponse())
+  ;
+  $async.Future<$57.GetExampleArticleResponse> getExampleArticle($pb.ClientContext? ctx, $57.GetExampleArticleRequest request) =>
+    _client.invoke<$57.GetExampleArticleResponse>(ctx, 'glory_api', 'GetExampleArticle', request, $57.GetExampleArticleResponse())
+  ;
+  $async.Future<$57.GetEvaluationStandardResponse> getEvaluationStandard($pb.ClientContext? ctx, $57.GetEvaluationStandardRequest request) =>
+    _client.invoke<$57.GetEvaluationStandardResponse>(ctx, 'glory_api', 'GetEvaluationStandard', request, $57.GetEvaluationStandardResponse())
+  ;
+  $async.Future<$57.CreateEvaluationConfigResponse> createEvaluationConfig($pb.ClientContext? ctx, $57.CreateEvaluationConfigRequest request) =>
+    _client.invoke<$57.CreateEvaluationConfigResponse>(ctx, 'glory_api', 'CreateEvaluationConfig', request, $57.CreateEvaluationConfigResponse())
+  ;
+  $async.Future<$57.ListEvaluationConfigResponse> listEvaluationConfig($pb.ClientContext? ctx, $57.ListEvaluationConfigRequest request) =>
+    _client.invoke<$57.ListEvaluationConfigResponse>(ctx, 'glory_api', 'ListEvaluationConfig', request, $57.ListEvaluationConfigResponse())
+  ;
+  $async.Future<$57.BatchEvaluateArticleResponse> batchEvaluateArticleCreation($pb.ClientContext? ctx, $57.BatchEvaluateArticleRequest request) =>
+    _client.invoke<$57.BatchEvaluateArticleResponse>(ctx, 'glory_api', 'BatchEvaluateArticleCreation', request, $57.BatchEvaluateArticleResponse())
+  ;
+  $async.Future<$57.ListStudentArticleCreationResponse> listStudentArticleCreation($pb.ClientContext? ctx, $57.ListStudentArticleCreationRequest request) =>
+    _client.invoke<$57.ListStudentArticleCreationResponse>(ctx, 'glory_api', 'ListStudentArticleCreation', request, $57.ListStudentArticleCreationResponse())
+  ;
+  $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ClientContext? ctx, $57.StudentArticleCreationEvaluationDetailRequest request) =>
+    _client.invoke<$57.StudentArticleCreationEvaluationDetailResponse>(ctx, 'glory_api', 'StudentArticleCreationEvaluationDetail', request, $57.StudentArticleCreationEvaluationDetailResponse())
   ;
 }
 
