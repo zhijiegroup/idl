@@ -171,4 +171,6 @@ message StudentTaskEvaluateStatsResponse {
   int64 evaluated_count = 4;
   int64 waiting_submit_count = 5;
   int64 expire_count = 6;
+  int64 passed_count = 7;
+  int64 no_pass_count = 8;
 }
