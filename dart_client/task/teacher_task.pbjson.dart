@@ -238,6 +238,7 @@ const GetTeacherTaskRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'teacher_task_id', '3': 2, '4': 1, '5': 3, '10': 'teacherTaskId'},
+    {'1': 'copy', '3': 3, '4': 1, '5': 8, '10': 'copy'},
   ],
 };
 
@@ -245,7 +246,7 @@ const GetTeacherTaskRequest$json = {
 final $typed_data.Uint8List getTeacherTaskRequestDescriptor = $convert.base64Decode(
     'ChVHZXRUZWFjaGVyVGFza1JlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
     'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSJgoPdGVhY2hlcl90YXNrX2lkGAIgASgDUg10ZWFjaGVy'
-    'VGFza0lk');
+    'VGFza0lkEhIKBGNvcHkYAyABKAhSBGNvcHk=');
 
 @$core.Deprecated('Use getTeacherTaskResponseDescriptor instead')
 const GetTeacherTaskResponse$json = {

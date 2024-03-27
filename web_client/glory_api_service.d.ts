@@ -60,6 +60,7 @@ import * as teacher_task_template from "./task/teacher_task_template";
 import * as teacher_task from "./task/teacher_task";
 import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
+import * as article from "./smart_article/article";
 export {
   user,
   address,
@@ -119,6 +120,7 @@ export {
   teacher_task,
   student_task,
   notification,
+  article,
 };
 
 export class glory_api {
@@ -1780,6 +1782,63 @@ CreateLivePlanProduct create live plan product */
   CloseCaster(
     request: live_board.CloseCasterRequest
   ): Promise<live_board.CloseCasterResponse>;
+
+  /** 智能文案 */
+  CreateArticleCreation(
+    request: article.CreateArticleCreationRequest
+  ): Promise<article.CreateArticleCreationResponse>;
+
+  ListMyArticleCreation(
+    request: article.ListMyArticleCreationRequest
+  ): Promise<article.ListMyArticleCreationResponse>;
+
+  CreateArticleCreationDraft(
+    request: article.CreateArticleCreationDraftRequest
+  ): Promise<article.CreateArticleCreationDraftResponse>;
+
+  ListMyDraftArticleCreation(
+    request: article.ListMyArticleCreationDraftRequest
+  ): Promise<article.ListMyArticleCreationDraftResponse>;
+
+  DraftArticleCreationDetail(
+    request: article.ArticleCreationDraftDetailRequest
+  ): Promise<article.ArticleCreationDraftDetailResponse>;
+
+  DeleteDraftArticleCreation(
+    request: article.DeleteArticleCreationDraftRequest
+  ): Promise<article.DeleteArticleCreationDraftResponse>;
+
+  ArticleCreationStatistics(
+    request: article.ArticleCreationStatisticsRequest
+  ): Promise<article.ArticleCreationStatisticsResponse>;
+
+  GetExampleArticle(
+    request: article.GetExampleArticleRequest
+  ): Promise<article.GetExampleArticleResponse>;
+
+  GetEvaluationStandard(
+    request: article.GetEvaluationStandardRequest
+  ): Promise<article.GetEvaluationStandardResponse>;
+
+  CreateEvaluationConfig(
+    request: article.CreateEvaluationConfigRequest
+  ): Promise<article.CreateEvaluationConfigResponse>;
+
+  ListEvaluationConfig(
+    request: article.ListEvaluationConfigRequest
+  ): Promise<article.ListEvaluationConfigResponse>;
+
+  BatchEvaluateArticleCreation(
+    request: article.BatchEvaluateArticleRequest
+  ): Promise<article.BatchEvaluateArticleResponse>;
+
+  ListStudentArticleCreation(
+    request: article.ListStudentArticleCreationRequest
+  ): Promise<article.ListStudentArticleCreationResponse>;
+
+  StudentArticleCreationEvaluationDetail(
+    request: article.StudentArticleCreationEvaluationDetailRequest
+  ): Promise<article.StudentArticleCreationEvaluationDetailResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

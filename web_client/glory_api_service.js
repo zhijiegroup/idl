@@ -62,6 +62,7 @@ import * as teacher_task_template from "./task/teacher_task_template";
 import * as teacher_task from "./task/teacher_task";
 import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
+import * as article from "./smart_article/article";
 export {
   user,
   address,
@@ -121,6 +122,7 @@ export {
   teacher_task,
   student_task,
   notification,
+  article,
 };
 
 import {
@@ -3183,6 +3185,106 @@ export class glory_api {
   CloseCaster(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/live/close_caster${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  CreateArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/create_article`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/list_my_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateArticleCreationDraft(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/create_draft_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListMyDraftArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/list_my_draft_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  DraftArticleCreationDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/article_creation_draft_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  DeleteDraftArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/delete_draft_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ArticleCreationStatistics(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_student_article_statistics${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  GetExampleArticle(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_example_article${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  GetEvaluationStandard(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_evalation_standard${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  CreateEvaluationConfig(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/create_evaluation_config`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListEvaluationConfig(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/list_evaluation_config${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
+  BatchEvaluateArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/batch_evaluate_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListStudentArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/list_student_article_creation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  StudentArticleCreationEvaluationDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_article_creation_evaluation_result${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 }

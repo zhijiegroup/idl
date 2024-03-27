@@ -18,7 +18,7 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $57;
+import 'base.pbjson.dart' as $58;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $39;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -59,6 +59,7 @@ import 'shop/product.pbjson.dart' as $10;
 import 'shop/shop.pbjson.dart' as $4;
 import 'shop/sku.pbjson.dart' as $11;
 import 'short_video/short_video.pbjson.dart' as $34;
+import 'smart_article/article.pbjson.dart' as $57;
 import 'task/student_task.pbjson.dart' as $54;
 import 'task/system_task.pbjson.dart' as $51;
 import 'task/teacher_task.pbjson.dart' as $53;
@@ -473,26 +474,40 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetLiveBoardComments', '2': '.glory_api.GetLiveBoardCommentsRequest', '3': '.glory_api.GetLiveBoardCommentsResponse', '4': {}},
     {'1': 'ListBoardLivingUser', '2': '.glory_api.ListLivingUserRequest', '3': '.glory_api.ListLivingUserResponse', '4': {}},
     {'1': 'CloseCaster', '2': '.glory_api.CloseCasterRequest', '3': '.glory_api.CloseCasterResponse', '4': {}},
+    {'1': 'CreateArticleCreation', '2': '.glory_api.CreateArticleCreationRequest', '3': '.glory_api.CreateArticleCreationResponse', '4': {}},
+    {'1': 'ListMyArticleCreation', '2': '.glory_api.ListMyArticleCreationRequest', '3': '.glory_api.ListMyArticleCreationResponse', '4': {}},
+    {'1': 'CreateArticleCreationDraft', '2': '.glory_api.CreateArticleCreationDraftRequest', '3': '.glory_api.CreateArticleCreationDraftResponse', '4': {}},
+    {'1': 'ListMyDraftArticleCreation', '2': '.glory_api.ListMyArticleCreationDraftRequest', '3': '.glory_api.ListMyArticleCreationDraftResponse', '4': {}},
+    {'1': 'DraftArticleCreationDetail', '2': '.glory_api.ArticleCreationDraftDetailRequest', '3': '.glory_api.ArticleCreationDraftDetailResponse', '4': {}},
+    {'1': 'DeleteDraftArticleCreation', '2': '.glory_api.DeleteArticleCreationDraftRequest', '3': '.glory_api.DeleteArticleCreationDraftResponse', '4': {}},
+    {'1': 'ArticleCreationStatistics', '2': '.glory_api.ArticleCreationStatisticsRequest', '3': '.glory_api.ArticleCreationStatisticsResponse', '4': {}},
+    {'1': 'GetExampleArticle', '2': '.glory_api.GetExampleArticleRequest', '3': '.glory_api.GetExampleArticleResponse', '4': {}},
+    {'1': 'GetEvaluationStandard', '2': '.glory_api.GetEvaluationStandardRequest', '3': '.glory_api.GetEvaluationStandardResponse', '4': {}},
+    {'1': 'CreateEvaluationConfig', '2': '.glory_api.CreateEvaluationConfigRequest', '3': '.glory_api.CreateEvaluationConfigResponse', '4': {}},
+    {'1': 'ListEvaluationConfig', '2': '.glory_api.ListEvaluationConfigRequest', '3': '.glory_api.ListEvaluationConfigResponse', '4': {}},
+    {'1': 'BatchEvaluateArticleCreation', '2': '.glory_api.BatchEvaluateArticleRequest', '3': '.glory_api.BatchEvaluateArticleResponse', '4': {}},
+    {'1': 'ListStudentArticleCreation', '2': '.glory_api.ListStudentArticleCreationRequest', '3': '.glory_api.ListStudentArticleCreationResponse', '4': {}},
+    {'1': 'StudentArticleCreationEvaluationDetail', '2': '.glory_api.StudentArticleCreationEvaluationDetailRequest', '3': '.glory_api.StudentArticleCreationEvaluationDetailResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $57.BaseRequest$json,
+  '.base.BaseRequest': $58.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $57.BaseResponse$json,
+  '.base.BaseResponse': $58.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $57.AuthorInfo$json,
+  '.base.AuthorInfo': $58.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $57.PaginationRequest$json,
+  '.base.PaginationRequest': $58.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $57.PaginationResponse$json,
+  '.base.PaginationResponse': $58.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1484,6 +1499,43 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.LivingUser': $56.LivingUser$json,
   '.glory_api.CloseCasterRequest': $56.CloseCasterRequest$json,
   '.glory_api.CloseCasterResponse': $56.CloseCasterResponse$json,
+  '.glory_api.CreateArticleCreationRequest': $57.CreateArticleCreationRequest$json,
+  '.glory_api.CreateArticleCreationResponse': $57.CreateArticleCreationResponse$json,
+  '.glory_api.ListMyArticleCreationRequest': $57.ListMyArticleCreationRequest$json,
+  '.glory_api.ListMyArticleCreationResponse': $57.ListMyArticleCreationResponse$json,
+  '.glory_api.ArticleCreation': $57.ArticleCreation$json,
+  '.glory_api.CreateArticleCreationDraftRequest': $57.CreateArticleCreationDraftRequest$json,
+  '.glory_api.CreateArticleCreationDraftResponse': $57.CreateArticleCreationDraftResponse$json,
+  '.glory_api.ListMyArticleCreationDraftRequest': $57.ListMyArticleCreationDraftRequest$json,
+  '.glory_api.ListMyArticleCreationDraftResponse': $57.ListMyArticleCreationDraftResponse$json,
+  '.glory_api.ArticleCreationDraft': $57.ArticleCreationDraft$json,
+  '.glory_api.ArticleCreationDraftDetailRequest': $57.ArticleCreationDraftDetailRequest$json,
+  '.glory_api.ArticleCreationDraftDetailResponse': $57.ArticleCreationDraftDetailResponse$json,
+  '.glory_api.DeleteArticleCreationDraftRequest': $57.DeleteArticleCreationDraftRequest$json,
+  '.glory_api.DeleteArticleCreationDraftResponse': $57.DeleteArticleCreationDraftResponse$json,
+  '.glory_api.ArticleCreationStatisticsRequest': $57.ArticleCreationStatisticsRequest$json,
+  '.glory_api.ArticleCreationStatisticsResponse': $57.ArticleCreationStatisticsResponse$json,
+  '.glory_api.GetExampleArticleRequest': $57.GetExampleArticleRequest$json,
+  '.glory_api.GetExampleArticleResponse': $57.GetExampleArticleResponse$json,
+  '.glory_api.GetEvaluationStandardRequest': $57.GetEvaluationStandardRequest$json,
+  '.glory_api.GetEvaluationStandardResponse': $57.GetEvaluationStandardResponse$json,
+  '.glory_api.CreateEvaluationConfigRequest': $57.CreateEvaluationConfigRequest$json,
+  '.glory_api.CreateEvaluationConfigResponse': $57.CreateEvaluationConfigResponse$json,
+  '.glory_api.ListEvaluationConfigRequest': $57.ListEvaluationConfigRequest$json,
+  '.glory_api.ListEvaluationConfigResponse': $57.ListEvaluationConfigResponse$json,
+  '.glory_api.BatchEvaluateArticleRequest': $57.BatchEvaluateArticleRequest$json,
+  '.glory_api.BatchEvaluateArticleResponse': $57.BatchEvaluateArticleResponse$json,
+  '.glory_api.ListStudentArticleCreationRequest': $57.ListStudentArticleCreationRequest$json,
+  '.glory_api.ListStudentArticleCreationResponse': $57.ListStudentArticleCreationResponse$json,
+  '.glory_api.StudentArticleCreation': $57.StudentArticleCreation$json,
+  '.glory_api.StudentArticleCreationEvaluationDetailRequest': $57.StudentArticleCreationEvaluationDetailRequest$json,
+  '.glory_api.StudentArticleCreationEvaluationDetailResponse': $57.StudentArticleCreationEvaluationDetailResponse$json,
+  '.glory_api.StudentArticleCreationBasic': $57.StudentArticleCreationBasic$json,
+  '.glory_api.StudentArticleCreationOperation': $57.StudentArticleCreationOperation$json,
+  '.glory_api.ArticleContentModeration': $57.ArticleContentModeration$json,
+  '.glory_api.WrongWord': $57.WrongWord$json,
+  '.glory_api.Sentence': $57.Sentence$json,
+  '.glory_api.ArticleCreationInfo': $57.ArticleCreationInfo$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2396,5 +2448,48 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'EuZ2xvcnlfYXBpLkxpc3RMaXZpbmdVc2VyUmVzcG9uc2UiJNLBGCAvYXBpL2xpdmUvbGlzdF9i'
     'b2FyZF9saXZpbmdfdXNlchJoCgtDbG9zZUNhc3RlchIdLmdsb3J5X2FwaS5DbG9zZUNhc3Rlcl'
     'JlcXVlc3QaHi5nbG9yeV9hcGkuQ2xvc2VDYXN0ZXJSZXNwb25zZSIaysEYFi9hcGkvbGl2ZS9j'
-    'bG9zZV9jYXN0ZXI=');
+    'bG9zZV9jYXN0ZXISlAEKFUNyZWF0ZUFydGljbGVDcmVhdGlvbhInLmdsb3J5X2FwaS5DcmVhdG'
+    'VBcnRpY2xlQ3JlYXRpb25SZXF1ZXN0GiguZ2xvcnlfYXBpLkNyZWF0ZUFydGljbGVDcmVhdGlv'
+    'blJlc3BvbnNlIijSwRgkL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2NyZWF0ZV9hcnRpY2xlEp4BCh'
+    'VMaXN0TXlBcnRpY2xlQ3JlYXRpb24SJy5nbG9yeV9hcGkuTGlzdE15QXJ0aWNsZUNyZWF0aW9u'
+    'UmVxdWVzdBooLmdsb3J5X2FwaS5MaXN0TXlBcnRpY2xlQ3JlYXRpb25SZXNwb25zZSIy0sEYLi'
+    '9hcGkvYXJ0aWNsZV9jcmVhdGlvbi9saXN0X215X2FydGljbGVfY3JlYXRpb24SsgEKGkNyZWF0'
+    'ZUFydGljbGVDcmVhdGlvbkRyYWZ0EiwuZ2xvcnlfYXBpLkNyZWF0ZUFydGljbGVDcmVhdGlvbk'
+    'RyYWZ0UmVxdWVzdBotLmdsb3J5X2FwaS5DcmVhdGVBcnRpY2xlQ3JlYXRpb25EcmFmdFJlc3Bv'
+    'bnNlIjfSwRgzL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2NyZWF0ZV9kcmFmdF9hcnRpY2xlX2NyZW'
+    'F0aW9uErMBChpMaXN0TXlEcmFmdEFydGljbGVDcmVhdGlvbhIsLmdsb3J5X2FwaS5MaXN0TXlB'
+    'cnRpY2xlQ3JlYXRpb25EcmFmdFJlcXVlc3QaLS5nbG9yeV9hcGkuTGlzdE15QXJ0aWNsZUNyZW'
+    'F0aW9uRHJhZnRSZXNwb25zZSI40sEYNC9hcGkvYXJ0aWNsZV9jcmVhdGlvbi9saXN0X215X2Ry'
+    'YWZ0X2FydGljbGVfY3JlYXRpb24SsgEKGkRyYWZ0QXJ0aWNsZUNyZWF0aW9uRGV0YWlsEiwuZ2'
+    'xvcnlfYXBpLkFydGljbGVDcmVhdGlvbkRyYWZ0RGV0YWlsUmVxdWVzdBotLmdsb3J5X2FwaS5B'
+    'cnRpY2xlQ3JlYXRpb25EcmFmdERldGFpbFJlc3BvbnNlIjfKwRgzL2FwaS9hcnRpY2xlX2NyZW'
+    'F0aW9uL2FydGljbGVfY3JlYXRpb25fZHJhZnRfZGV0YWlsErIBChpEZWxldGVEcmFmdEFydGlj'
+    'bGVDcmVhdGlvbhIsLmdsb3J5X2FwaS5EZWxldGVBcnRpY2xlQ3JlYXRpb25EcmFmdFJlcXVlc3'
+    'QaLS5nbG9yeV9hcGkuRGVsZXRlQXJ0aWNsZUNyZWF0aW9uRHJhZnRSZXNwb25zZSI30sEYMy9h'
+    'cGkvYXJ0aWNsZV9jcmVhdGlvbi9kZWxldGVfZHJhZnRfYXJ0aWNsZV9jcmVhdGlvbhKwAQoZQX'
+    'J0aWNsZUNyZWF0aW9uU3RhdGlzdGljcxIrLmdsb3J5X2FwaS5BcnRpY2xlQ3JlYXRpb25TdGF0'
+    'aXN0aWNzUmVxdWVzdBosLmdsb3J5X2FwaS5BcnRpY2xlQ3JlYXRpb25TdGF0aXN0aWNzUmVzcG'
+    '9uc2UiOMrBGDQvYXBpL2FydGljbGVfY3JlYXRpb24vZ2V0X3N0dWRlbnRfYXJ0aWNsZV9zdGF0'
+    'aXN0aWNzEo0BChFHZXRFeGFtcGxlQXJ0aWNsZRIjLmdsb3J5X2FwaS5HZXRFeGFtcGxlQXJ0aW'
+    'NsZVJlcXVlc3QaJC5nbG9yeV9hcGkuR2V0RXhhbXBsZUFydGljbGVSZXNwb25zZSItysEYKS9h'
+    'cGkvYXJ0aWNsZV9jcmVhdGlvbi9nZXRfZXhhbXBsZV9hcnRpY2xlEpwBChVHZXRFdmFsdWF0aW'
+    '9uU3RhbmRhcmQSJy5nbG9yeV9hcGkuR2V0RXZhbHVhdGlvblN0YW5kYXJkUmVxdWVzdBooLmds'
+    'b3J5X2FwaS5HZXRFdmFsdWF0aW9uU3RhbmRhcmRSZXNwb25zZSIwysEYLC9hcGkvYXJ0aWNsZV'
+    '9jcmVhdGlvbi9nZXRfZXZhbGF0aW9uX3N0YW5kYXJkEqEBChZDcmVhdGVFdmFsdWF0aW9uQ29u'
+    'ZmlnEiguZ2xvcnlfYXBpLkNyZWF0ZUV2YWx1YXRpb25Db25maWdSZXF1ZXN0GikuZ2xvcnlfYX'
+    'BpLkNyZWF0ZUV2YWx1YXRpb25Db25maWdSZXNwb25zZSIy0sEYLi9hcGkvYXJ0aWNsZV9jcmVh'
+    'dGlvbi9jcmVhdGVfZXZhbHVhdGlvbl9jb25maWcSmQEKFExpc3RFdmFsdWF0aW9uQ29uZmlnEi'
+    'YuZ2xvcnlfYXBpLkxpc3RFdmFsdWF0aW9uQ29uZmlnUmVxdWVzdBonLmdsb3J5X2FwaS5MaXN0'
+    'RXZhbHVhdGlvbkNvbmZpZ1Jlc3BvbnNlIjDKwRgsL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2xpc3'
+    'RfZXZhbHVhdGlvbl9jb25maWcSqgEKHEJhdGNoRXZhbHVhdGVBcnRpY2xlQ3JlYXRpb24SJi5n'
+    'bG9yeV9hcGkuQmF0Y2hFdmFsdWF0ZUFydGljbGVSZXF1ZXN0GicuZ2xvcnlfYXBpLkJhdGNoRX'
+    'ZhbHVhdGVBcnRpY2xlUmVzcG9uc2UiOdLBGDUvYXBpL2FydGljbGVfY3JlYXRpb24vYmF0Y2hf'
+    'ZXZhbHVhdGVfYXJ0aWNsZV9jcmVhdGlvbhKyAQoaTGlzdFN0dWRlbnRBcnRpY2xlQ3JlYXRpb2'
+    '4SLC5nbG9yeV9hcGkuTGlzdFN0dWRlbnRBcnRpY2xlQ3JlYXRpb25SZXF1ZXN0Gi0uZ2xvcnlf'
+    'YXBpLkxpc3RTdHVkZW50QXJ0aWNsZUNyZWF0aW9uUmVzcG9uc2UiN9LBGDMvYXBpL2FydGljbG'
+    'VfY3JlYXRpb24vbGlzdF9zdHVkZW50X2FydGljbGVfY3JlYXRpb24S3wEKJlN0dWRlbnRBcnRp'
+    'Y2xlQ3JlYXRpb25FdmFsdWF0aW9uRGV0YWlsEjguZ2xvcnlfYXBpLlN0dWRlbnRBcnRpY2xlQ3'
+    'JlYXRpb25FdmFsdWF0aW9uRGV0YWlsUmVxdWVzdBo5Lmdsb3J5X2FwaS5TdHVkZW50QXJ0aWNs'
+    'ZUNyZWF0aW9uRXZhbHVhdGlvbkRldGFpbFJlc3BvbnNlIkDKwRg8L2FwaS9hcnRpY2xlX2NyZW'
+    'F0aW9uL2dldF9hcnRpY2xlX2NyZWF0aW9uX2V2YWx1YXRpb25fcmVzdWx0');
 

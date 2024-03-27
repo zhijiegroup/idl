@@ -130,6 +130,7 @@ export interface ListTeacherTaskResponse {
 export interface GetTeacherTaskRequest {
   base_request?: base.BaseRequest;
   teacher_task_id?: string;
+  copy?: boolean;
 }
 
 export interface GetTeacherTaskResponse {

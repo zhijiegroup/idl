@@ -12353,6 +12353,440 @@ public final class glory_apiGrpc {
     return getCloseCasterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> getCreateArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> getCreateArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> getCreateArticleCreationMethod;
+    if ((getCreateArticleCreationMethod = glory_apiGrpc.getCreateArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateArticleCreationMethod = glory_apiGrpc.getCreateArticleCreationMethod) == null) {
+          glory_apiGrpc.getCreateArticleCreationMethod = getCreateArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getCreateArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> getListMyArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> getListMyArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> getListMyArticleCreationMethod;
+    if ((getListMyArticleCreationMethod = glory_apiGrpc.getListMyArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyArticleCreationMethod = glory_apiGrpc.getListMyArticleCreationMethod) == null) {
+          glory_apiGrpc.getListMyArticleCreationMethod = getListMyArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getListMyArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> getCreateArticleCreationDraftMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateArticleCreationDraft",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> getCreateArticleCreationDraftMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> getCreateArticleCreationDraftMethod;
+    if ((getCreateArticleCreationDraftMethod = glory_apiGrpc.getCreateArticleCreationDraftMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateArticleCreationDraftMethod = glory_apiGrpc.getCreateArticleCreationDraftMethod) == null) {
+          glory_apiGrpc.getCreateArticleCreationDraftMethod = getCreateArticleCreationDraftMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateArticleCreationDraft"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateArticleCreationDraft"))
+              .build();
+        }
+      }
+    }
+    return getCreateArticleCreationDraftMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> getListMyDraftArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMyDraftArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> getListMyDraftArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> getListMyDraftArticleCreationMethod;
+    if ((getListMyDraftArticleCreationMethod = glory_apiGrpc.getListMyDraftArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListMyDraftArticleCreationMethod = glory_apiGrpc.getListMyDraftArticleCreationMethod) == null) {
+          glory_apiGrpc.getListMyDraftArticleCreationMethod = getListMyDraftArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMyDraftArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListMyDraftArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getListMyDraftArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> getDraftArticleCreationDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DraftArticleCreationDetail",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> getDraftArticleCreationDetailMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> getDraftArticleCreationDetailMethod;
+    if ((getDraftArticleCreationDetailMethod = glory_apiGrpc.getDraftArticleCreationDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDraftArticleCreationDetailMethod = glory_apiGrpc.getDraftArticleCreationDetailMethod) == null) {
+          glory_apiGrpc.getDraftArticleCreationDetailMethod = getDraftArticleCreationDetailMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DraftArticleCreationDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DraftArticleCreationDetail"))
+              .build();
+        }
+      }
+    }
+    return getDraftArticleCreationDetailMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> getDeleteDraftArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDraftArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> getDeleteDraftArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> getDeleteDraftArticleCreationMethod;
+    if ((getDeleteDraftArticleCreationMethod = glory_apiGrpc.getDeleteDraftArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteDraftArticleCreationMethod = glory_apiGrpc.getDeleteDraftArticleCreationMethod) == null) {
+          glory_apiGrpc.getDeleteDraftArticleCreationMethod = getDeleteDraftArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDraftArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteDraftArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getDeleteDraftArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> getArticleCreationStatisticsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ArticleCreationStatistics",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> getArticleCreationStatisticsMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> getArticleCreationStatisticsMethod;
+    if ((getArticleCreationStatisticsMethod = glory_apiGrpc.getArticleCreationStatisticsMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getArticleCreationStatisticsMethod = glory_apiGrpc.getArticleCreationStatisticsMethod) == null) {
+          glory_apiGrpc.getArticleCreationStatisticsMethod = getArticleCreationStatisticsMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ArticleCreationStatistics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ArticleCreationStatistics"))
+              .build();
+        }
+      }
+    }
+    return getArticleCreationStatisticsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> getGetExampleArticleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExampleArticle",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> getGetExampleArticleMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest, com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> getGetExampleArticleMethod;
+    if ((getGetExampleArticleMethod = glory_apiGrpc.getGetExampleArticleMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetExampleArticleMethod = glory_apiGrpc.getGetExampleArticleMethod) == null) {
+          glory_apiGrpc.getGetExampleArticleMethod = getGetExampleArticleMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest, com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetExampleArticle"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetExampleArticle"))
+              .build();
+        }
+      }
+    }
+    return getGetExampleArticleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> getGetEvaluationStandardMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEvaluationStandard",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> getGetEvaluationStandardMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest, com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> getGetEvaluationStandardMethod;
+    if ((getGetEvaluationStandardMethod = glory_apiGrpc.getGetEvaluationStandardMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetEvaluationStandardMethod = glory_apiGrpc.getGetEvaluationStandardMethod) == null) {
+          glory_apiGrpc.getGetEvaluationStandardMethod = getGetEvaluationStandardMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest, com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEvaluationStandard"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetEvaluationStandard"))
+              .build();
+        }
+      }
+    }
+    return getGetEvaluationStandardMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> getCreateEvaluationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEvaluationConfig",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> getCreateEvaluationConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest, com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> getCreateEvaluationConfigMethod;
+    if ((getCreateEvaluationConfigMethod = glory_apiGrpc.getCreateEvaluationConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateEvaluationConfigMethod = glory_apiGrpc.getCreateEvaluationConfigMethod) == null) {
+          glory_apiGrpc.getCreateEvaluationConfigMethod = getCreateEvaluationConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest, com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEvaluationConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateEvaluationConfig"))
+              .build();
+        }
+      }
+    }
+    return getCreateEvaluationConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> getListEvaluationConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEvaluationConfig",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> getListEvaluationConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest, com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> getListEvaluationConfigMethod;
+    if ((getListEvaluationConfigMethod = glory_apiGrpc.getListEvaluationConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListEvaluationConfigMethod = glory_apiGrpc.getListEvaluationConfigMethod) == null) {
+          glory_apiGrpc.getListEvaluationConfigMethod = getListEvaluationConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest, com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEvaluationConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListEvaluationConfig"))
+              .build();
+        }
+      }
+    }
+    return getListEvaluationConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest,
+      com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> getBatchEvaluateArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchEvaluateArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest,
+      com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> getBatchEvaluateArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest, com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> getBatchEvaluateArticleCreationMethod;
+    if ((getBatchEvaluateArticleCreationMethod = glory_apiGrpc.getBatchEvaluateArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getBatchEvaluateArticleCreationMethod = glory_apiGrpc.getBatchEvaluateArticleCreationMethod) == null) {
+          glory_apiGrpc.getBatchEvaluateArticleCreationMethod = getBatchEvaluateArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest, com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchEvaluateArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("BatchEvaluateArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getBatchEvaluateArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> getListStudentArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListStudentArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> getListStudentArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> getListStudentArticleCreationMethod;
+    if ((getListStudentArticleCreationMethod = glory_apiGrpc.getListStudentArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListStudentArticleCreationMethod = glory_apiGrpc.getListStudentArticleCreationMethod) == null) {
+          glory_apiGrpc.getListStudentArticleCreationMethod = getListStudentArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStudentArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListStudentArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getListStudentArticleCreationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> getStudentArticleCreationEvaluationDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StudentArticleCreationEvaluationDetail",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> getStudentArticleCreationEvaluationDetailMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest, com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> getStudentArticleCreationEvaluationDetailMethod;
+    if ((getStudentArticleCreationEvaluationDetailMethod = glory_apiGrpc.getStudentArticleCreationEvaluationDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getStudentArticleCreationEvaluationDetailMethod = glory_apiGrpc.getStudentArticleCreationEvaluationDetailMethod) == null) {
+          glory_apiGrpc.getStudentArticleCreationEvaluationDetailMethod = getStudentArticleCreationEvaluationDetailMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest, com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StudentArticleCreationEvaluationDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("StudentArticleCreationEvaluationDetail"))
+              .build();
+        }
+      }
+    }
+    return getStudentArticleCreationEvaluationDetailMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -15558,6 +15992,107 @@ public final class glory_apiGrpc {
     default void closeCaster(com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCloseCasterMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 智能文案
+     * </pre>
+     */
+    default void createArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listMyArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createArticleCreationDraft(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateArticleCreationDraftMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listMyDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMyDraftArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void draftArticleCreationDetail(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDraftArticleCreationDetailMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void deleteDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDraftArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void articleCreationStatistics(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getArticleCreationStatisticsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getExampleArticle(com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetExampleArticleMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getEvaluationStandard(com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEvaluationStandardMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void createEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateEvaluationConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListEvaluationConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void batchEvaluateArticleCreation(com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchEvaluateArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void listStudentArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListStudentArticleCreationMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void studentArticleCreationEvaluationDetail(com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStudentArticleCreationEvaluationDetailMethod(), responseObserver);
     }
   }
 
@@ -19144,6 +19679,121 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCloseCasterMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 智能文案
+     * </pre>
+     */
+    public void createArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listMyArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createArticleCreationDraft(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateArticleCreationDraftMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listMyDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMyDraftArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void draftArticleCreationDetail(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDraftArticleCreationDetailMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDraftArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void articleCreationStatistics(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getArticleCreationStatisticsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getExampleArticle(com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetExampleArticleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getEvaluationStandard(com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEvaluationStandardMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEvaluationConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEvaluationConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void batchEvaluateArticleCreation(com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchEvaluateArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listStudentArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListStudentArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void studentArticleCreationEvaluationDetail(com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStudentArticleCreationEvaluationDetailMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -22319,6 +22969,107 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.live.CloseCasterResponse closeCaster(com.zhijiejiaoyu.glory_api.live.CloseCasterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCloseCasterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 智能文案
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse createArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse listMyArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse createArticleCreationDraft(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateArticleCreationDraftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse listMyDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMyDraftArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse draftArticleCreationDetail(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDraftArticleCreationDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse deleteDraftArticleCreation(com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDraftArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse articleCreationStatistics(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArticleCreationStatisticsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse getExampleArticle(com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExampleArticleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse getEvaluationStandard(com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEvaluationStandardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse createEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEvaluationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse listEvaluationConfig(com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEvaluationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse batchEvaluateArticleCreation(com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchEvaluateArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse listStudentArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStudentArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse studentArticleCreationEvaluationDetail(com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStudentArticleCreationEvaluationDetailMethod(), getCallOptions(), request);
     }
   }
 
@@ -25894,6 +26645,121 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCloseCasterMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 智能文案
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse> createArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> listMyArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse> createArticleCreationDraft(
+        com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateArticleCreationDraftMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMyDraftArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse> draftArticleCreationDetail(
+        com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDraftArticleCreationDetailMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse> deleteDraftArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDraftArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse> articleCreationStatistics(
+        com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getArticleCreationStatisticsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse> getExampleArticle(
+        com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetExampleArticleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse> getEvaluationStandard(
+        com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEvaluationStandardMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse> createEvaluationConfig(
+        com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEvaluationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse> listEvaluationConfig(
+        com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEvaluationConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse> batchEvaluateArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchEvaluateArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse> listStudentArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListStudentArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail(
+        com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStudentArticleCreationEvaluationDetailMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -26294,6 +27160,20 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 395;
   private static final int METHODID_LIST_BOARD_LIVING_USER = 396;
   private static final int METHODID_CLOSE_CASTER = 397;
+  private static final int METHODID_CREATE_ARTICLE_CREATION = 398;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 399;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 400;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 401;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 402;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 403;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 404;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 405;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 406;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 407;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 408;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 409;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 410;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 411;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -27903,6 +28783,62 @@ public final class glory_apiGrpc {
         case METHODID_CLOSE_CASTER:
           serviceImpl.closeCaster((com.zhijiejiaoyu.glory_api.live.CloseCasterRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.live.CloseCasterResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ARTICLE_CREATION:
+          serviceImpl.createArticleCreation((com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_ARTICLE_CREATION:
+          serviceImpl.listMyArticleCreation((com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ARTICLE_CREATION_DRAFT:
+          serviceImpl.createArticleCreationDraft((com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MY_DRAFT_ARTICLE_CREATION:
+          serviceImpl.listMyDraftArticleCreation((com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse>) responseObserver);
+          break;
+        case METHODID_DRAFT_ARTICLE_CREATION_DETAIL:
+          serviceImpl.draftArticleCreationDetail((com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_DRAFT_ARTICLE_CREATION:
+          serviceImpl.deleteDraftArticleCreation((com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse>) responseObserver);
+          break;
+        case METHODID_ARTICLE_CREATION_STATISTICS:
+          serviceImpl.articleCreationStatistics((com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse>) responseObserver);
+          break;
+        case METHODID_GET_EXAMPLE_ARTICLE:
+          serviceImpl.getExampleArticle((com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse>) responseObserver);
+          break;
+        case METHODID_GET_EVALUATION_STANDARD:
+          serviceImpl.getEvaluationStandard((com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_EVALUATION_CONFIG:
+          serviceImpl.createEvaluationConfig((com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse>) responseObserver);
+          break;
+        case METHODID_LIST_EVALUATION_CONFIG:
+          serviceImpl.listEvaluationConfig((com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse>) responseObserver);
+          break;
+        case METHODID_BATCH_EVALUATE_ARTICLE_CREATION:
+          serviceImpl.batchEvaluateArticleCreation((com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse>) responseObserver);
+          break;
+        case METHODID_LIST_STUDENT_ARTICLE_CREATION:
+          serviceImpl.listStudentArticleCreation((com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse>) responseObserver);
+          break;
+        case METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL:
+          serviceImpl.studentArticleCreationEvaluationDetail((com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -30708,6 +31644,104 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.live.CloseCasterRequest,
               com.zhijiejiaoyu.glory_api.live.CloseCasterResponse>(
                 service, METHODID_CLOSE_CASTER)))
+        .addMethod(
+          getCreateArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse>(
+                service, METHODID_CREATE_ARTICLE_CREATION)))
+        .addMethod(
+          getListMyArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse>(
+                service, METHODID_LIST_MY_ARTICLE_CREATION)))
+        .addMethod(
+          getCreateArticleCreationDraftMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationDraftResponse>(
+                service, METHODID_CREATE_ARTICLE_CREATION_DRAFT)))
+        .addMethod(
+          getListMyDraftArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationDraftResponse>(
+                service, METHODID_LIST_MY_DRAFT_ARTICLE_CREATION)))
+        .addMethod(
+          getDraftArticleCreationDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ArticleCreationDraftDetailResponse>(
+                service, METHODID_DRAFT_ARTICLE_CREATION_DETAIL)))
+        .addMethod(
+          getDeleteDraftArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftRequest,
+              com.zhijiejiaoyu.glory_api.short_video.DeleteArticleCreationDraftResponse>(
+                service, METHODID_DELETE_DRAFT_ARTICLE_CREATION)))
+        .addMethod(
+          getArticleCreationStatisticsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse>(
+                service, METHODID_ARTICLE_CREATION_STATISTICS)))
+        .addMethod(
+          getGetExampleArticleMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse>(
+                service, METHODID_GET_EXAMPLE_ARTICLE)))
+        .addMethod(
+          getGetEvaluationStandardMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetEvaluationStandardResponse>(
+                service, METHODID_GET_EVALUATION_STANDARD)))
+        .addMethod(
+          getCreateEvaluationConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateEvaluationConfigResponse>(
+                service, METHODID_CREATE_EVALUATION_CONFIG)))
+        .addMethod(
+          getListEvaluationConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse>(
+                service, METHODID_LIST_EVALUATION_CONFIG)))
+        .addMethod(
+          getBatchEvaluateArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleRequest,
+              com.zhijiejiaoyu.glory_api.short_video.BatchEvaluateArticleResponse>(
+                service, METHODID_BATCH_EVALUATE_ARTICLE_CREATION)))
+        .addMethod(
+          getListStudentArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationResponse>(
+                service, METHODID_LIST_STUDENT_ARTICLE_CREATION)))
+        .addMethod(
+          getStudentArticleCreationEvaluationDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest,
+              com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse>(
+                service, METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL)))
         .build();
   }
 
@@ -31154,6 +32188,20 @@ public final class glory_apiGrpc {
               .addMethod(getGetLiveBoardCommentsMethod())
               .addMethod(getListBoardLivingUserMethod())
               .addMethod(getCloseCasterMethod())
+              .addMethod(getCreateArticleCreationMethod())
+              .addMethod(getListMyArticleCreationMethod())
+              .addMethod(getCreateArticleCreationDraftMethod())
+              .addMethod(getListMyDraftArticleCreationMethod())
+              .addMethod(getDraftArticleCreationDetailMethod())
+              .addMethod(getDeleteDraftArticleCreationMethod())
+              .addMethod(getArticleCreationStatisticsMethod())
+              .addMethod(getGetExampleArticleMethod())
+              .addMethod(getGetEvaluationStandardMethod())
+              .addMethod(getCreateEvaluationConfigMethod())
+              .addMethod(getListEvaluationConfigMethod())
+              .addMethod(getBatchEvaluateArticleCreationMethod())
+              .addMethod(getListStudentArticleCreationMethod())
+              .addMethod(getStudentArticleCreationEvaluationDetailMethod())
               .build();
         }
       }
