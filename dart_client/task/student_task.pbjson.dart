@@ -415,6 +415,8 @@ const StudentTaskEvaluateStatsResponse$json = {
     {'1': 'evaluated_count', '3': 4, '4': 1, '5': 3, '10': 'evaluatedCount'},
     {'1': 'waiting_submit_count', '3': 5, '4': 1, '5': 3, '10': 'waitingSubmitCount'},
     {'1': 'expire_count', '3': 6, '4': 1, '5': 3, '10': 'expireCount'},
+    {'1': 'passed_count', '3': 7, '4': 1, '5': 3, '10': 'passedCount'},
+    {'1': 'no_pass_count', '3': 8, '4': 1, '5': 3, '10': 'noPassCount'},
   ],
 };
 
@@ -425,5 +427,6 @@ final $typed_data.Uint8List studentTaskEvaluateStatsResponseDescriptor = $conver
     'dG90YWxUYXNrQ291bnQSNAoWd2FpdGluZ19ldmFsdWF0ZV9jb3VudBgDIAEoA1IUd2FpdGluZ0'
     'V2YWx1YXRlQ291bnQSJwoPZXZhbHVhdGVkX2NvdW50GAQgASgDUg5ldmFsdWF0ZWRDb3VudBIw'
     'ChR3YWl0aW5nX3N1Ym1pdF9jb3VudBgFIAEoA1ISd2FpdGluZ1N1Ym1pdENvdW50EiEKDGV4cG'
-    'lyZV9jb3VudBgGIAEoA1ILZXhwaXJlQ291bnQ=');
+    'lyZV9jb3VudBgGIAEoA1ILZXhwaXJlQ291bnQSIQoMcGFzc2VkX2NvdW50GAcgASgDUgtwYXNz'
+    'ZWRDb3VudBIiCg1ub19wYXNzX2NvdW50GAggASgDUgtub1Bhc3NDb3VudA==');
 

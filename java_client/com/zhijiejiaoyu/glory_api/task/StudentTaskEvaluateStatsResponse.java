@@ -86,6 +86,16 @@ private static final long serialVersionUID = 0L;
             expireCount = input.readInt64();
             break;
           }
+          case 56: {
+
+            passedCount = input.readInt64();
+            break;
+          }
+          case 64: {
+
+            noPassCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +209,28 @@ private static final long serialVersionUID = 0L;
     return expireCount ;
   }
 
+  public static final int PASSED_COUNT_FIELD_NUMBER = 7;
+  private long passedCount ;
+  /**
+   * <code>int64 passed_count = 7;</code>
+   * @return The passedCount.
+   */
+  @java.lang.Override
+  public long getPassedCount() {
+    return passedCount ;
+  }
+
+  public static final int NO_PASS_COUNT_FIELD_NUMBER = 8;
+  private long noPassCount ;
+  /**
+   * <code>int64 no_pass_count = 8;</code>
+   * @return The noPassCount.
+   */
+  @java.lang.Override
+  public long getNoPassCount() {
+    return noPassCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -230,6 +262,12 @@ private static final long serialVersionUID = 0L;
     }
     if (expireCount != 0L) {
       output.writeInt64(6, expireCount );
+    }
+    if (passedCount != 0L) {
+      output.writeInt64(7, passedCount );
+    }
+    if (noPassCount != 0L) {
+      output.writeInt64(8, noPassCount );
     }
     unknownFields.writeTo(output);
   }
@@ -264,6 +302,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, expireCount );
     }
+    if (passedCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, passedCount );
+    }
+    if (noPassCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, noPassCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -294,6 +340,10 @@ private static final long serialVersionUID = 0L;
         != other.getWaitingSubmitCount()) return false;
     if (getExpireCount()
         != other.getExpireCount()) return false;
+    if (getPassedCount()
+        != other.getPassedCount()) return false;
+    if (getNoPassCount()
+        != other.getNoPassCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,6 +374,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXPIRE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getExpireCount());
+    hash = (37 * hash) + PASSED_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPassedCount());
+    hash = (37 * hash) + NO_PASS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getNoPassCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -473,6 +529,10 @@ private static final long serialVersionUID = 0L;
 
       expireCount = 0L;
 
+      passedCount = 0L;
+
+      noPassCount = 0L;
+
       return this;
     }
 
@@ -509,6 +569,8 @@ private static final long serialVersionUID = 0L;
       result.evaluatedCount = evaluatedCount ;
       result.waitingSubmitCount = waitingSubmitCount ;
       result.expireCount = expireCount ;
+      result.passedCount = passedCount ;
+      result.noPassCount = noPassCount ;
       onBuilt();
       return result;
     }
@@ -574,6 +636,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getExpireCount() != 0L) {
         setExpireCount(other.getExpireCount());
+      }
+      if (other.getPassedCount() != 0L) {
+        setPassedCount(other.getPassedCount());
+      }
+      if (other.getNoPassCount() != 0L) {
+        setNoPassCount(other.getNoPassCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -874,6 +942,68 @@ private static final long serialVersionUID = 0L;
     public Builder clearExpireCount() {
       
       expireCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long passedCount ;
+    /**
+     * <code>int64 passed_count = 7;</code>
+     * @return The passedCount.
+     */
+    @java.lang.Override
+    public long getPassedCount() {
+      return passedCount ;
+    }
+    /**
+     * <code>int64 passed_count = 7;</code>
+     * @param value The passedCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPassedCount(long value) {
+      
+      passedCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 passed_count = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPassedCount() {
+      
+      passedCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long noPassCount ;
+    /**
+     * <code>int64 no_pass_count = 8;</code>
+     * @return The noPassCount.
+     */
+    @java.lang.Override
+    public long getNoPassCount() {
+      return noPassCount ;
+    }
+    /**
+     * <code>int64 no_pass_count = 8;</code>
+     * @param value The noPassCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoPassCount(long value) {
+      
+      noPassCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 no_pass_count = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNoPassCount() {
+      
+      noPassCount = 0L;
       onChanged();
       return this;
     }

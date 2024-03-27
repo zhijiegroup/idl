@@ -377,7 +377,7 @@ struct GloryApi_ListTeacherTaskRequest {
 
   var classID: Int64 = 0
 
-  /// 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+  /// 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
   var status: String = String()
 
   /// 任务创建时间开始

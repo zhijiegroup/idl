@@ -221,14 +221,15 @@ public final class StudentTaskOuterClass {
       "\025evaluate_failed_count\030\006 \001(\003\022\024\n\014expire_c" +
       "ount\030\007 \001(\003\"f\n\037StudentTaskEvaluateStatsRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\032\n\022task_evaluate_type\030\002 \001(\005\"\320\001\n S" +
+      "equest\022\032\n\022task_evaluate_type\030\002 \001(\005\"\375\001\n S" +
       "tudentTaskEvaluateStatsResponse\022%\n\tbase_" +
       "resp\030\001 \001(\0132\022.base.BaseResponse\022\030\n\020total_" +
       "task_count\030\002 \001(\003\022\036\n\026waiting_evaluate_cou" +
       "nt\030\003 \001(\003\022\027\n\017evaluated_count\030\004 \001(\003\022\034\n\024wai" +
       "ting_submit_count\030\005 \001(\003\022\024\n\014expire_count\030" +
-      "\006 \001(\003B#\n\037com.zhijiejiaoyu.glory_api.task" +
-      "P\001b\006proto3"
+      "\006 \001(\003\022\024\n\014passed_count\030\007 \001(\003\022\025\n\rno_pass_c" +
+      "ount\030\010 \001(\003B#\n\037com.zhijiejiaoyu.glory_api" +
+      ".taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -363,7 +364,7 @@ public final class StudentTaskOuterClass {
     internal_static_glory_api_StudentTaskEvaluateStatsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTaskEvaluateStatsResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "TotalTaskCount", "WaitingEvaluateCount", "EvaluatedCount", "WaitingSubmitCount", "ExpireCount", });
+        new java.lang.String[] { "BaseResp", "TotalTaskCount", "WaitingEvaluateCount", "EvaluatedCount", "WaitingSubmitCount", "ExpireCount", "PassedCount", "NoPassCount", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();

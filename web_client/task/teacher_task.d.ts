@@ -112,7 +112,7 @@ export interface ListTeacherTaskRequest {
   base_request?: base.BaseRequest;
   keyword?: string;
   class_id?: string;
-  /** 任务状态：not_started：未开始；ongoing：进行中；ended：已结束 */
+  /** 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束 */
   status?: string;
   /** 任务创建时间开始 */
   created_start?: string;

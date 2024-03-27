@@ -197,4 +197,6 @@ export interface StudentTaskEvaluateStatsResponse {
   evaluated_count?: string;
   waiting_submit_count?: string;
   expire_count?: string;
+  passed_count?: string;
+  no_pass_count?: string;
 }

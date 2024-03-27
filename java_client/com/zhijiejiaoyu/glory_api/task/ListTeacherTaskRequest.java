@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object status ;
   /**
    * <pre>
-   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -239,7 +239,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -1038,7 +1038,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object status = "";
     /**
      * <pre>
-     * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+     * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1058,7 +1058,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+     * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1079,7 +1079,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+     * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1098,7 +1098,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+     * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1112,7 +1112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+     * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
      * </pre>
      *
      * <code>string status = 4;</code>

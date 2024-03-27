@@ -2030,6 +2030,8 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? evaluatedCount,
     $fixnum.Int64? waitingSubmitCount,
     $fixnum.Int64? expireCount,
+    $fixnum.Int64? passedCount,
+    $fixnum.Int64? noPassCount,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2050,6 +2052,12 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
     if (expireCount != null) {
       $result.expireCount = expireCount;
     }
+    if (passedCount != null) {
+      $result.passedCount = passedCount;
+    }
+    if (noPassCount != null) {
+      $result.noPassCount = noPassCount;
+    }
     return $result;
   }
   StudentTaskEvaluateStatsResponse._() : super();
@@ -2063,6 +2071,8 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'evaluatedCount')
     ..aInt64(5, _omitFieldNames ? '' : 'waitingSubmitCount')
     ..aInt64(6, _omitFieldNames ? '' : 'expireCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'passedCount')
+    ..aInt64(8, _omitFieldNames ? '' : 'noPassCount')
     ..hasRequiredFields = false
   ;
 
@@ -2142,6 +2152,24 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
   $core.bool hasExpireCount() => $_has(5);
   @$pb.TagNumber(6)
   void clearExpireCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get passedCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set passedCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPassedCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPassedCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get noPassCount => $_getI64(7);
+  @$pb.TagNumber(8)
+  set noPassCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasNoPassCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoPassCount() => clearField(8);
 }
 
 

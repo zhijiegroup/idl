@@ -51,4 +51,16 @@ public interface StudentTaskEvaluateStatsResponseOrBuilder extends
    * @return The expireCount.
    */
   long getExpireCount();
+
+  /**
+   * <code>int64 passed_count = 7;</code>
+   * @return The passedCount.
+   */
+  long getPassedCount();
+
+  /**
+   * <code>int64 no_pass_count = 8;</code>
+   * @return The noPassCount.
+   */
+  long getNoPassCount();
 }

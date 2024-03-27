@@ -42,7 +42,7 @@ public interface ListTeacherTaskRequestOrBuilder extends
 
   /**
    * <pre>
-   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -51,7 +51,7 @@ public interface ListTeacherTaskRequestOrBuilder extends
   java.lang.String getStatus();
   /**
    * <pre>
-   * 任务状态：not_started：未开始；ongoing：进行中；ended：已结束
+   * 任务状态: not_started: 未开始; ongoing: 进行中; ended: 已结束
    * </pre>
    *
    * <code>string status = 4;</code>

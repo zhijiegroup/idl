@@ -754,6 +754,10 @@ struct GloryApi_StudentTaskEvaluateStatsResponse {
 
   var expireCount: Int64 = 0
 
+  var passedCount: Int64 = 0
+
+  var noPassCount: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2044,6 +2048,8 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
     4: .standard(proto: "evaluated_count"),
     5: .standard(proto: "waiting_submit_count"),
     6: .standard(proto: "expire_count"),
+    7: .standard(proto: "passed_count"),
+    8: .standard(proto: "no_pass_count"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2058,6 +2064,8 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.evaluatedCount) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.waitingSubmitCount) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.expireCount) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.passedCount) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.noPassCount) }()
       default: break
       }
     }
@@ -2086,6 +2094,12 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
     if self.expireCount != 0 {
       try visitor.visitSingularInt64Field(value: self.expireCount, fieldNumber: 6)
     }
+    if self.passedCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.passedCount, fieldNumber: 7)
+    }
+    if self.noPassCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.noPassCount, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2096,6 +2110,8 @@ extension GloryApi_StudentTaskEvaluateStatsResponse: SwiftProtobuf.Message, Swif
     if lhs.evaluatedCount != rhs.evaluatedCount {return false}
     if lhs.waitingSubmitCount != rhs.waitingSubmitCount {return false}
     if lhs.expireCount != rhs.expireCount {return false}
+    if lhs.passedCount != rhs.passedCount {return false}
+    if lhs.noPassCount != rhs.noPassCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
