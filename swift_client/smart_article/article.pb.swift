@@ -939,6 +939,8 @@ struct GloryApi_StudentArticleCreationOperation {
   /// Clears the value of `creationContent`. Subsequent reads from it will return its default value.
   mutating func clearCreationContent() {self._creationContent = nil}
 
+  var rejectReason: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2762,6 +2764,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     2: .same(proto: "time"),
     3: .standard(proto: "content_moderation"),
     4: .standard(proto: "creation_content"),
+    5: .standard(proto: "reject_reason"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2774,6 +2777,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
       case 2: try { try decoder.decodeSingularStringField(value: &self.time) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._contentModeration) }()
       case 4: try { try decoder.decodeSingularMessageField(value: &self._creationContent) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.rejectReason) }()
       default: break
       }
     }
@@ -2796,6 +2800,9 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     try { if let v = self._creationContent {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     } }()
+    if !self.rejectReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.rejectReason, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2804,6 +2811,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     if lhs.time != rhs.time {return false}
     if lhs._contentModeration != rhs._contentModeration {return false}
     if lhs._creationContent != rhs._creationContent {return false}
+    if lhs.rejectReason != rhs.rejectReason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

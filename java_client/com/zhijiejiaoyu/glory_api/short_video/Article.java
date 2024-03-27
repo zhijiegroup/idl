@@ -323,23 +323,24 @@ public final class Article {
       "ArticleCreationOperation\"c\n\033StudentArtic" +
       "leCreationBasic\022\020\n\010username\030\001 \001(\t\022\014\n\004cla" +
       "s\030\002 \001(\t\022\r\n\005topic\030\003 \001(\t\022\025\n\rcreation_type\030" +
-      "\004 \001(\t\"\272\001\n\037StudentArticleCreationOperatio" +
+      "\004 \001(\t\"\321\001\n\037StudentArticleCreationOperatio" +
       "n\022\016\n\006action\030\001 \001(\t\022\014\n\004time\030\002 \001(\t\022?\n\022conte" +
       "nt_moderation\030\003 \001(\0132#.glory_api.ArticleC" +
       "ontentModeration\0228\n\020creation_content\030\004 \001" +
-      "(\0132\036.glory_api.ArticleCreationInfo\"r\n\023Ar" +
-      "ticleCreationInfo\022\r\n\005title\030\001 \001(\t\022\017\n\007cont" +
-      "ent\030\002 \001(\t\022\021\n\tai_result\030\003 \001(\t\022\021\n\tai_reaso" +
-      "n\030\004 \001(\t\022\025\n\rai_evaluation\030\005 \001(\t\"\327\001\n\030Artic" +
-      "leContentModeration\022\021\n\tforbidden\030\001 \003(\t\022\020" +
-      "\n\010negative\030\002 \003(\t\022(\n\nwrong_word\030\003 \003(\0132\024.g" +
-      "lory_api.WrongWord\022*\n\rgood_sentence\030\004 \003(" +
-      "\0132\023.glory_api.Sentence\022)\n\014bad_sentence\030\005" +
-      " \003(\0132\023.glory_api.Sentence\022\025\n\rreject_reas" +
-      "on\030\006 \001(\t\"+\n\tWrongWord\022\014\n\004word\030\001 \001(\t\022\020\n\010p" +
-      "osition\030\002 \001(\003\",\n\010Sentence\022\020\n\010sentence\030\001 " +
-      "\001(\t\022\016\n\006reason\030\002 \001(\tB*\n&com.zhijiejiaoyu." +
-      "glory_api.short_videoP\001b\006proto3"
+      "(\0132\036.glory_api.ArticleCreationInfo\022\025\n\rre" +
+      "ject_reason\030\005 \001(\t\"r\n\023ArticleCreationInfo" +
+      "\022\r\n\005title\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\021\n\tai_r" +
+      "esult\030\003 \001(\t\022\021\n\tai_reason\030\004 \001(\t\022\025\n\rai_eva" +
+      "luation\030\005 \001(\t\"\327\001\n\030ArticleContentModerati" +
+      "on\022\021\n\tforbidden\030\001 \003(\t\022\020\n\010negative\030\002 \003(\t\022" +
+      "(\n\nwrong_word\030\003 \003(\0132\024.glory_api.WrongWor" +
+      "d\022*\n\rgood_sentence\030\004 \003(\0132\023.glory_api.Sen" +
+      "tence\022)\n\014bad_sentence\030\005 \003(\0132\023.glory_api." +
+      "Sentence\022\025\n\rreject_reason\030\006 \001(\t\"+\n\tWrong" +
+      "Word\022\014\n\004word\030\001 \001(\t\022\020\n\010position\030\002 \001(\003\",\n\010" +
+      "Sentence\022\020\n\010sentence\030\001 \001(\t\022\016\n\006reason\030\002 \001" +
+      "(\tB*\n&com.zhijiejiaoyu.glory_api.short_v" +
+      "ideoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -544,7 +545,7 @@ public final class Article {
     internal_static_glory_api_StudentArticleCreationOperation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreationOperation_descriptor,
-        new java.lang.String[] { "Action", "Time", "ContentModeration", "CreationContent", });
+        new java.lang.String[] { "Action", "Time", "ContentModeration", "CreationContent", "RejectReason", });
     internal_static_glory_api_ArticleCreationInfo_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_ArticleCreationInfo_fieldAccessorTable = new

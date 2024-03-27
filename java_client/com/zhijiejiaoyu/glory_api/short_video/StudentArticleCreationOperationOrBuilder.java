@@ -60,4 +60,16 @@ public interface StudentArticleCreationOperationOrBuilder extends
    * <code>.glory_api.ArticleCreationInfo creation_content = 4;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ArticleCreationInfoOrBuilder getCreationContentOrBuilder();
+
+  /**
+   * <code>string reject_reason = 5;</code>
+   * @return The rejectReason.
+   */
+  java.lang.String getRejectReason();
+  /**
+   * <code>string reject_reason = 5;</code>
+   * @return The bytes for rejectReason.
+   */
+  com.google.protobuf.ByteString
+      getRejectReasonBytes();
 }

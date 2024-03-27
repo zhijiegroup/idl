@@ -239,6 +239,7 @@ export interface StudentArticleCreationOperation {
   time?: string;
   content_moderation?: ArticleContentModeration;
   creation_content?: ArticleCreationInfo;
+  reject_reason?: string;
 }
 
 export interface ArticleCreationInfo {
