@@ -235,6 +235,7 @@ message StudentArticleCreationOperation {
     string time = 2;
     ArticleContentModeration content_moderation = 3;
     ArticleCreationInfo creation_content = 4; 
+    string reject_reason = 5;
 }
 
 message ArticleCreationInfo {
