@@ -586,6 +586,7 @@ const StudentArticleCreationOperation$json = {
     {'1': 'time', '3': 2, '4': 1, '5': 9, '10': 'time'},
     {'1': 'content_moderation', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ArticleContentModeration', '10': 'contentModeration'},
     {'1': 'creation_content', '3': 4, '4': 1, '5': 11, '6': '.glory_api.ArticleCreationInfo', '10': 'creationContent'},
+    {'1': 'reject_reason', '3': 5, '4': 1, '5': 9, '10': 'rejectReason'},
   ],
 };
 
@@ -595,7 +596,7 @@ final $typed_data.Uint8List studentArticleCreationOperationDescriptor = $convert
     '9uEhIKBHRpbWUYAiABKAlSBHRpbWUSUgoSY29udGVudF9tb2RlcmF0aW9uGAMgASgLMiMuZ2xv'
     'cnlfYXBpLkFydGljbGVDb250ZW50TW9kZXJhdGlvblIRY29udGVudE1vZGVyYXRpb24SSQoQY3'
     'JlYXRpb25fY29udGVudBgEIAEoCzIeLmdsb3J5X2FwaS5BcnRpY2xlQ3JlYXRpb25JbmZvUg9j'
-    'cmVhdGlvbkNvbnRlbnQ=');
+    'cmVhdGlvbkNvbnRlbnQSIwoNcmVqZWN0X3JlYXNvbhgFIAEoCVIMcmVqZWN0UmVhc29u');
 
 @$core.Deprecated('Use articleCreationInfoDescriptor instead')
 const ArticleCreationInfo$json = {
