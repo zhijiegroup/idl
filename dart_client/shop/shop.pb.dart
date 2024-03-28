@@ -56,6 +56,7 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? shopLogoPath,
     $core.String? businessLicensePath,
     $core.String? ownerIdFrontPath,
+    ShopKeeper? shopKeeper,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -170,6 +171,9 @@ class Shop extends $pb.GeneratedMessage {
     if (ownerIdFrontPath != null) {
       $result.ownerIdFrontPath = ownerIdFrontPath;
     }
+    if (shopKeeper != null) {
+      $result.shopKeeper = shopKeeper;
+    }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
     }
@@ -217,6 +221,7 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(37, _omitFieldNames ? '' : 'shopLogoPath')
     ..aOS(38, _omitFieldNames ? '' : 'businessLicensePath')
     ..aOS(39, _omitFieldNames ? '' : 'ownerIdFrontPath')
+    ..aOM<ShopKeeper>(40, _omitFieldNames ? '' : 'shopKeeper', subBuilder: ShopKeeper.create)
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -569,8 +574,19 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(39)
   void clearOwnerIdFrontPath() => clearField(39);
 
+  @$pb.TagNumber(40)
+  ShopKeeper get shopKeeper => $_getN(37);
+  @$pb.TagNumber(40)
+  set shopKeeper(ShopKeeper v) { setField(40, v); }
+  @$pb.TagNumber(40)
+  $core.bool hasShopKeeper() => $_has(37);
+  @$pb.TagNumber(40)
+  void clearShopKeeper() => clearField(40);
+  @$pb.TagNumber(40)
+  ShopKeeper ensureShopKeeper() => $_ensure(37);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(37);
+  $core.List<ShopQualification> get shopQualification => $_getList(38);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {
@@ -854,7 +870,6 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     Shop? shop,
     $0.AuthorInfo? authorInfo,
     ShopBusiness? shopBusiness,
-    ShopKeeper? shopKeeper,
   }) {
     final $result = create();
     if (shop != null) {
@@ -866,9 +881,6 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     if (shopBusiness != null) {
       $result.shopBusiness = shopBusiness;
     }
-    if (shopKeeper != null) {
-      $result.shopKeeper = shopKeeper;
-    }
     return $result;
   }
   ShopWithAuthor._() : super();
@@ -879,7 +891,6 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     ..aOM<Shop>(1, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
     ..aOM<$0.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $0.AuthorInfo.create)
     ..aOM<ShopBusiness>(3, _omitFieldNames ? '' : 'shopBusiness', subBuilder: ShopBusiness.create)
-    ..aOM<ShopKeeper>(4, _omitFieldNames ? '' : 'shopKeeper', subBuilder: ShopKeeper.create)
     ..hasRequiredFields = false
   ;
 
@@ -936,17 +947,6 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
   void clearShopBusiness() => clearField(3);
   @$pb.TagNumber(3)
   ShopBusiness ensureShopBusiness() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  ShopKeeper get shopKeeper => $_getN(3);
-  @$pb.TagNumber(4)
-  set shopKeeper(ShopKeeper v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasShopKeeper() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearShopKeeper() => clearField(4);
-  @$pb.TagNumber(4)
-  ShopKeeper ensureShopKeeper() => $_ensure(3);
 }
 
 class CreateShopRequest extends $pb.GeneratedMessage {

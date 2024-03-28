@@ -308,6 +308,19 @@ private static final long serialVersionUID = 0L;
             ownerIdFrontPath = s;
             break;
           }
+          case 322: {
+            com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder subBuilder = null;
+            if (shopKeeper != null) {
+              subBuilder = shopKeeper .toBuilder();
+            }
+            shopKeeper = input.readMessage(com.zhijiejiaoyu.glory_api.shop.ShopKeeper.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(shopKeeper );
+              shopKeeper = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 2666: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               shopQualification = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopQualification>();
@@ -1863,6 +1876,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SHOP_KEEPER_FIELD_NUMBER = 40;
+  private com.zhijiejiaoyu.glory_api.shop.ShopKeeper shopKeeper ;
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   * @return Whether the shopKeeper field is set.
+   */
+  @java.lang.Override
+  public boolean hasShopKeeper() {
+    return shopKeeper != null;
+  }
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   * @return The shopKeeper.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ShopKeeper getShopKeeper() {
+    return shopKeeper == null ? com.zhijiejiaoyu.glory_api.shop.ShopKeeper.getDefaultInstance() : shopKeeper ;
+  }
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder() {
+    return getShopKeeper();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1992,6 +2031,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getOwnerIdFrontPathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 39, ownerIdFrontPath );
+    }
+    if (shopKeeper != null) {
+      output.writeMessage(40, getShopKeeper());
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -2135,6 +2177,10 @@ private static final long serialVersionUID = 0L;
     if (!getOwnerIdFrontPathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, ownerIdFrontPath );
     }
+    if (shopKeeper != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(40, getShopKeeper());
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2230,6 +2276,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShopLogoPath())) return false;
     if (!getBusinessLicensePath()
         .equals(other.getBusinessLicensePath())) return false;
+    if (hasShopKeeper() != other.hasShopKeeper()) return false;
+    if (hasShopKeeper()) {
+      if (!getShopKeeper()
+          .equals(other.getShopKeeper())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2328,6 +2379,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShopLogoPath().hashCode();
     hash = (37 * hash) + BUSINESS_LICENSE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getBusinessLicensePath().hashCode();
+    if (hasShopKeeper()) {
+      hash = (37 * hash) + SHOP_KEEPER_FIELD_NUMBER;
+      hash = (53 * hash) + getShopKeeper().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2542,6 +2597,12 @@ private static final long serialVersionUID = 0L;
 
       businessLicensePath = "";
 
+      if (shopKeeperBuilder == null) {
+        shopKeeper = null;
+      } else {
+        shopKeeper = null;
+        shopKeeperBuilder = null;
+      }
       return this;
     }
 
@@ -2619,6 +2680,11 @@ private static final long serialVersionUID = 0L;
       result.ownerIdBackPath = ownerIdBackPath ;
       result.shopLogoPath = shopLogoPath ;
       result.businessLicensePath = businessLicensePath ;
+      if (shopKeeperBuilder == null) {
+        result.shopKeeper = shopKeeper ;
+      } else {
+        result.shopKeeper = shopKeeperBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -2838,6 +2904,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getBusinessLicensePath().isEmpty()) {
         businessLicensePath = other.businessLicensePath ;
         onChanged();
+      }
+      if (other.hasShopKeeper()) {
+        mergeShopKeeper(other.getShopKeeper());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6318,6 +6387,125 @@ private static final long serialVersionUID = 0L;
       businessLicensePath = value;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.shop.ShopKeeper shopKeeper ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.ShopKeeper, com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder, com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder> shopKeeperBuilder ;
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     * @return Whether the shopKeeper field is set.
+     */
+    public boolean hasShopKeeper() {
+      return shopKeeperBuilder != null || shopKeeper != null;
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     * @return The shopKeeper.
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ShopKeeper getShopKeeper() {
+      if (shopKeeperBuilder == null) {
+        return shopKeeper == null ? com.zhijiejiaoyu.glory_api.shop.ShopKeeper.getDefaultInstance() : shopKeeper ;
+      } else {
+        return shopKeeperBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public Builder setShopKeeper(com.zhijiejiaoyu.glory_api.shop.ShopKeeper value) {
+      if (shopKeeperBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        shopKeeper = value;
+        onChanged();
+      } else {
+        shopKeeperBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public Builder setShopKeeper(
+        com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder builderForValue) {
+      if (shopKeeperBuilder == null) {
+        shopKeeper = builderForValue.build();
+        onChanged();
+      } else {
+        shopKeeperBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public Builder mergeShopKeeper(com.zhijiejiaoyu.glory_api.shop.ShopKeeper value) {
+      if (shopKeeperBuilder == null) {
+        if (shopKeeper != null) {
+          shopKeeper =
+            com.zhijiejiaoyu.glory_api.shop.ShopKeeper.newBuilder(shopKeeper ).mergeFrom(value).buildPartial();
+        } else {
+          shopKeeper = value;
+        }
+        onChanged();
+      } else {
+        shopKeeperBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public Builder clearShopKeeper() {
+      if (shopKeeperBuilder == null) {
+        shopKeeper = null;
+        onChanged();
+      } else {
+        shopKeeper = null;
+        shopKeeperBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder getShopKeeperBuilder() {
+      
+      onChanged();
+      return getShopKeeperFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder() {
+      if (shopKeeperBuilder != null) {
+        return shopKeeperBuilder .getMessageOrBuilder();
+      } else {
+        return shopKeeper == null ?
+            com.zhijiejiaoyu.glory_api.shop.ShopKeeper.getDefaultInstance() : shopKeeper ;
+      }
+    }
+    /**
+     * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.shop.ShopKeeper, com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder, com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder> 
+        getShopKeeperFieldBuilder() {
+      if (shopKeeperBuilder == null) {
+        shopKeeperBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.shop.ShopKeeper, com.zhijiejiaoyu.glory_api.shop.ShopKeeper.Builder, com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder>(
+                getShopKeeper(),
+                getParentForChildren(),
+                isClean());
+        shopKeeper = null;
+      }
+      return shopKeeperBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

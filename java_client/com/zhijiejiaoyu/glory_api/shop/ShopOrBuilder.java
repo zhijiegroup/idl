@@ -719,4 +719,19 @@ public interface ShopOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBusinessLicensePathBytes();
+
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   * @return Whether the shopKeeper field is set.
+   */
+  boolean hasShopKeeper();
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   * @return The shopKeeper.
+   */
+  com.zhijiejiaoyu.glory_api.shop.ShopKeeper getShopKeeper();
+  /**
+   * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder();
 }

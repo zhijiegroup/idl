@@ -253,6 +253,15 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._businessLicensePath = newValue}
   }
 
+  var shopKeeper: GloryApi_ShopKeeper {
+    get {return _storage._shopKeeper ?? GloryApi_ShopKeeper()}
+    set {_uniqueStorage()._shopKeeper = newValue}
+  }
+  /// Returns true if `shopKeeper` has been explicitly set.
+  var hasShopKeeper: Bool {return _storage._shopKeeper != nil}
+  /// Clears the value of `shopKeeper`. Subsequent reads from it will return its default value.
+  mutating func clearShopKeeper() {_uniqueStorage()._shopKeeper = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -352,15 +361,6 @@ struct GloryApi_ShopWithAuthor {
   /// Clears the value of `shopBusiness`. Subsequent reads from it will return its default value.
   mutating func clearShopBusiness() {self._shopBusiness = nil}
 
-  var shopKeeper: GloryApi_ShopKeeper {
-    get {return _shopKeeper ?? GloryApi_ShopKeeper()}
-    set {_shopKeeper = newValue}
-  }
-  /// Returns true if `shopKeeper` has been explicitly set.
-  var hasShopKeeper: Bool {return self._shopKeeper != nil}
-  /// Clears the value of `shopKeeper`. Subsequent reads from it will return its default value.
-  mutating func clearShopKeeper() {self._shopKeeper = nil}
-
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -368,7 +368,6 @@ struct GloryApi_ShopWithAuthor {
   fileprivate var _shop: GloryApi_Shop? = nil
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
   fileprivate var _shopBusiness: GloryApi_ShopBusiness? = nil
-  fileprivate var _shopKeeper: GloryApi_ShopKeeper? = nil
 }
 
 struct GloryApi_CreateShopRequest {
@@ -1498,6 +1497,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     36: .standard(proto: "owner_id_back_path"),
     37: .standard(proto: "shop_logo_path"),
     38: .standard(proto: "business_license_path"),
+    40: .standard(proto: "shop_keeper"),
   ]
 
   fileprivate class _StorageClass {
@@ -1539,6 +1539,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _ownerIDBackPath: String = String()
     var _shopLogoPath: String = String()
     var _businessLicensePath: String = String()
+    var _shopKeeper: GloryApi_ShopKeeper? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1583,6 +1584,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _ownerIDBackPath = source._ownerIDBackPath
       _shopLogoPath = source._shopLogoPath
       _businessLicensePath = source._businessLicensePath
+      _shopKeeper = source._shopKeeper
     }
   }
 
@@ -1638,6 +1640,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 37: try { try decoder.decodeSingularStringField(value: &_storage._shopLogoPath) }()
         case 38: try { try decoder.decodeSingularStringField(value: &_storage._businessLicensePath) }()
         case 39: try { try decoder.decodeSingularStringField(value: &_storage._ownerIDFrontPath) }()
+        case 40: try { try decoder.decodeSingularMessageField(value: &_storage._shopKeeper) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1647,6 +1650,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
       if _storage._shopID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._shopID, fieldNumber: 1)
       }
@@ -1758,6 +1765,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if !_storage._ownerIDFrontPath.isEmpty {
         try visitor.visitSingularStringField(value: _storage._ownerIDFrontPath, fieldNumber: 39)
       }
+      try { if let v = _storage._shopKeeper {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      } }()
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
       }
@@ -1808,6 +1818,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._ownerIDBackPath != rhs_storage._ownerIDBackPath {return false}
         if _storage._shopLogoPath != rhs_storage._shopLogoPath {return false}
         if _storage._businessLicensePath != rhs_storage._businessLicensePath {return false}
+        if _storage._shopKeeper != rhs_storage._shopKeeper {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1973,7 +1984,6 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     1: .same(proto: "shop"),
     2: .standard(proto: "author_info"),
     3: .standard(proto: "shop_business"),
-    4: .standard(proto: "shop_keeper"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1985,7 +1995,6 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularMessageField(value: &self._shop) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._authorInfo) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._shopBusiness) }()
-      case 4: try { try decoder.decodeSingularMessageField(value: &self._shopKeeper) }()
       default: break
       }
     }
@@ -2005,9 +2014,6 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     try { if let v = self._shopBusiness {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     } }()
-    try { if let v = self._shopKeeper {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2015,7 +2021,6 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs._shop != rhs._shop {return false}
     if lhs._authorInfo != rhs._authorInfo {return false}
     if lhs._shopBusiness != rhs._shopBusiness {return false}
-    if lhs._shopKeeper != rhs._shopKeeper {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

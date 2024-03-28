@@ -51,19 +51,4 @@ public interface ShopWithAuthorOrBuilder extends
    * <code>.glory_api.ShopBusiness shop_business = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopBusinessOrBuilder getShopBusinessOrBuilder();
-
-  /**
-   * <code>.glory_api.ShopKeeper shop_keeper = 4;</code>
-   * @return Whether the shopKeeper field is set.
-   */
-  boolean hasShopKeeper();
-  /**
-   * <code>.glory_api.ShopKeeper shop_keeper = 4;</code>
-   * @return The shopKeeper.
-   */
-  com.zhijiejiaoyu.glory_api.shop.ShopKeeper getShopKeeper();
-  /**
-   * <code>.glory_api.ShopKeeper shop_keeper = 4;</code>
-   */
-  com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder();
 }

@@ -83,6 +83,7 @@ export interface Shop {
   shop_logo_path?: string;
   /** 营业执照 OSS路径 */
   business_license_path?: string;
+  shop_keeper?: ShopKeeper;
 }
 
 export interface ShopQualification {
@@ -116,7 +117,6 @@ export interface ShopWithAuthor {
   shop?: Shop;
   author_info?: base.AuthorInfo;
   shop_business?: ShopBusiness;
-  shop_keeper?: ShopKeeper;
 }
 
 export interface CreateShopRequest {

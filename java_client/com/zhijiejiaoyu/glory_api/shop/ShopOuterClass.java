@@ -254,7 +254,7 @@ public final class ShopOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017shop/shop.proto\022\tglory_api\032\nbase.proto" +
-      "\032\023shop/category.proto\"\362\007\n\004Shop\022\017\n\007shop_i" +
+      "\032\023shop/category.proto\"\236\010\n\004Shop\022\017\n\007shop_i" +
       "d\030\001 \001(\003\022\021\n\tseller_id\030\002 \001(\003\022\021\n\tshop_name\030" +
       "\003 \001(\t\022\023\n\013category_id\030# \003(\003\0229\n\022shop_quali" +
       "fication\030\315\002 \003(\0132\034.glory_api.ShopQualific" +
@@ -279,20 +279,20 @@ public final class ShopOuterClass {
       "(\003\022\017\n\007manager\030! \001(\t\022\025\n\rmanager_phone\030\" \001" +
       "(\t\022\033\n\023owner_id_front_path\030\' \001(\t\022\032\n\022owner" +
       "_id_back_path\030$ \001(\t\022\026\n\016shop_logo_path\030% " +
-      "\001(\t\022\035\n\025business_license_path\030& \001(\t\"\326\001\n\021S" +
-      "hopQualification\022\035\n\025shop_qualification_i" +
-      "d\030\001 \001(\003\022\036\n\026shop_qualification_url\030\002 \001(\t\022" +
-      "\025\n\rcategory_root\030\003 \001(\t\022\032\n\022qualification_" +
-      "name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(\003\022\027\n\017val" +
-      "idity_period\030\006 \001(\t\022\037\n\027shop_qualification" +
-      "_path\030\007 \001(\t\"\"\n\014ShopBusiness\022\022\n\nsale_tota" +
-      "l\030\001 \001(\003\"V\n\nShopKeeper\022\017\n\007user_id\030\001 \001(\003\022\021" +
-      "\n\tuser_name\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022\022\n\nc" +
-      "lass_name\030\004 \001(\t\"\262\001\n\016ShopWithAuthor\022\035\n\004sh" +
-      "op\030\001 \001(\0132\017.glory_api.Shop\022%\n\013author_info" +
-      "\030\002 \001(\0132\020.base.AuthorInfo\022.\n\rshop_busines" +
-      "s\030\003 \001(\0132\027.glory_api.ShopBusiness\022*\n\013shop" +
-      "_keeper\030\004 \001(\0132\025.glory_api.ShopKeeper\"o\n\021" +
+      "\001(\t\022\035\n\025business_license_path\030& \001(\t\022*\n\013sh" +
+      "op_keeper\030( \001(\0132\025.glory_api.ShopKeeper\"\326" +
+      "\001\n\021ShopQualification\022\035\n\025shop_qualificati" +
+      "on_id\030\001 \001(\003\022\036\n\026shop_qualification_url\030\002 " +
+      "\001(\t\022\025\n\rcategory_root\030\003 \001(\t\022\032\n\022qualificat" +
+      "ion_name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(\003\022\027\n" +
+      "\017validity_period\030\006 \001(\t\022\037\n\027shop_qualifica" +
+      "tion_path\030\007 \001(\t\"\"\n\014ShopBusiness\022\022\n\nsale_" +
+      "total\030\001 \001(\003\"V\n\nShopKeeper\022\017\n\007user_id\030\001 \001" +
+      "(\003\022\021\n\tuser_name\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022" +
+      "\022\n\nclass_name\030\004 \001(\t\"\206\001\n\016ShopWithAuthor\022\035" +
+      "\n\004shop\030\001 \001(\0132\017.glory_api.Shop\022%\n\013author_" +
+      "info\030\002 \001(\0132\020.base.AuthorInfo\022.\n\rshop_bus" +
+      "iness\030\003 \001(\0132\027.glory_api.ShopBusiness\"o\n\021" +
       "CreateShopRequest\022\'\n\014base_request\030\001 \001(\0132" +
       "\021.base.BaseRequest\022\035\n\004shop\030\002 \001(\0132\017.glory" +
       "_api.Shop\022\022\n\ncreated_by\030\003 \001(\t\"L\n\022CreateS" +
@@ -416,7 +416,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_Shop_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Shop_descriptor,
-        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", "Manager", "ManagerPhone", "OwnerIdFrontPath", "OwnerIdBackPath", "ShopLogoPath", "BusinessLicensePath", });
+        new java.lang.String[] { "ShopId", "SellerId", "ShopName", "CategoryId", "ShopQualification", "ShopType", "CompanyName", "CompanyId", "CompanyCategory", "OwnerId", "OwnerName", "OwnerIdFrontUrl", "OwnerIdBackUrl", "OwnerIdStartDate", "OwnerIdExpiryDate", "ShopLogoUrl", "Province", "City", "District", "Address", "BusinessLicenseUrl", "BusinessLicenseStartDate", "BusinessLicenseEndDate", "OwnerLocation", "CompanyBankAccount", "CompanyBankPhone", "CompanyBankValidated", "CertifyStatus", "OwnerIdFrontAttachmentId", "OwnerIdBackAttachmentId", "ShopLogoAttachmentId", "BusinessLicenseAttachmentId", "Manager", "ManagerPhone", "OwnerIdFrontPath", "OwnerIdBackPath", "ShopLogoPath", "BusinessLicensePath", "ShopKeeper", });
     internal_static_glory_api_ShopQualification_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ShopQualification_fieldAccessorTable = new
@@ -440,7 +440,7 @@ public final class ShopOuterClass {
     internal_static_glory_api_ShopWithAuthor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopWithAuthor_descriptor,
-        new java.lang.String[] { "Shop", "AuthorInfo", "ShopBusiness", "ShopKeeper", });
+        new java.lang.String[] { "Shop", "AuthorInfo", "ShopBusiness", });
     internal_static_glory_api_CreateShopRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_CreateShopRequest_fieldAccessorTable = new
