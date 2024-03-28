@@ -46,6 +46,7 @@ message Shop {
   string owner_id_back_path = 36; // 身份证背面OSS路径
   string shop_logo_path = 37; // 店铺Logo OSS路径
   string business_license_path = 38; //营业执照 OSS路径
+  ShopKeeper shop_keeper = 40;
 }
 
 message ShopQualification {
@@ -73,7 +74,6 @@ message ShopWithAuthor {
   Shop shop = 1;
   base.AuthorInfo author_info = 2;
   ShopBusiness shop_business = 3;
-  ShopKeeper shop_keeper = 4;
 }
 
 message CreateShopRequest {
