@@ -50,6 +50,7 @@ export interface Course {
   course_modules?: Array<modules.CourseModule>;
   /** 创建时间 */
   created_at?: string;
+  assigned?: boolean;
 }
 
 /** 创建模块化课程 */

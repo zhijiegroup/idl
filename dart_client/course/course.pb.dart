@@ -133,6 +133,7 @@ class Course extends $pb.GeneratedMessage {
     $core.int? courseModule,
     $core.Iterable<$0.CourseModule>? courseModules,
     $core.String? createdAt,
+    $core.bool? assigned,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -189,6 +190,9 @@ class Course extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (assigned != null) {
+      $result.assigned = assigned;
+    }
     return $result;
   }
   Course._() : super();
@@ -214,6 +218,7 @@ class Course extends $pb.GeneratedMessage {
     ..a<$core.int>(16, _omitFieldNames ? '' : 'courseModule', $pb.PbFieldType.O3)
     ..pc<$0.CourseModule>(17, _omitFieldNames ? '' : 'courseModules', $pb.PbFieldType.PM, subBuilder: $0.CourseModule.create)
     ..aOS(18, _omitFieldNames ? '' : 'createdAt')
+    ..aOB(19, _omitFieldNames ? '' : 'assigned')
     ..hasRequiredFields = false
   ;
 
@@ -387,6 +392,15 @@ class Course extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(17);
   @$pb.TagNumber(18)
   void clearCreatedAt() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.bool get assigned => $_getBF(18);
+  @$pb.TagNumber(19)
+  set assigned($core.bool v) { $_setBool(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasAssigned() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearAssigned() => clearField(19);
 }
 
 /// 创建模块化课程

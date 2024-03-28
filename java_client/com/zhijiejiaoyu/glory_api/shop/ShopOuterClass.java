@@ -30,6 +30,11 @@ public final class ShopOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ShopBusiness_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ShopKeeper_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ShopKeeper_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ShopWithAuthor_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -281,121 +286,124 @@ public final class ShopOuterClass {
       "name\030\004 \001(\t\022\025\n\rattachment_id\030\005 \001(\003\022\027\n\017val" +
       "idity_period\030\006 \001(\t\022\037\n\027shop_qualification" +
       "_path\030\007 \001(\t\"\"\n\014ShopBusiness\022\022\n\nsale_tota" +
-      "l\030\001 \001(\003\"\206\001\n\016ShopWithAuthor\022\035\n\004shop\030\001 \001(\013" +
-      "2\017.glory_api.Shop\022%\n\013author_info\030\002 \001(\0132\020" +
-      ".base.AuthorInfo\022.\n\rshop_business\030\003 \001(\0132" +
-      "\027.glory_api.ShopBusiness\"o\n\021CreateShopRe" +
+      "l\030\001 \001(\003\"V\n\nShopKeeper\022\017\n\007user_id\030\001 \001(\003\022\021" +
+      "\n\tuser_name\030\002 \001(\t\022\020\n\010class_id\030\003 \001(\003\022\022\n\nc" +
+      "lass_name\030\004 \001(\t\"\262\001\n\016ShopWithAuthor\022\035\n\004sh" +
+      "op\030\001 \001(\0132\017.glory_api.Shop\022%\n\013author_info" +
+      "\030\002 \001(\0132\020.base.AuthorInfo\022.\n\rshop_busines" +
+      "s\030\003 \001(\0132\027.glory_api.ShopBusiness\022*\n\013shop" +
+      "_keeper\030\004 \001(\0132\025.glory_api.ShopKeeper\"o\n\021" +
+      "CreateShopRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\035\n\004shop\030\002 \001(\0132\017.glory" +
+      "_api.Shop\022\022\n\ncreated_by\030\003 \001(\t\"L\n\022CreateS" +
+      "hopResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022\017\n\007shop_id\030\002 \001(\003\"J\n\016GetShopRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\035\n\004shop\030\002 \001(\0132\017.glory_api.Shop\022\022\n" +
-      "\ncreated_by\030\003 \001(\t\"L\n\022CreateShopResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017" +
-      "\n\007shop_id\030\002 \001(\003\"J\n\016GetShopRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sh" +
-      "op_id\030\002 \001(\003\"h\n\017GetShopResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022.\n\013shop_de" +
-      "tail\030\002 \001(\0132\031.glory_api.ShopWithAuthor\"[\n" +
-      "\021UpdateShopRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\035\n\004shop\030\002 \001(\0132\017.glor" +
-      "y_api.Shop\"L\n\022UpdateShopResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007shop_" +
-      "id\030\002 \001(\003\"\254\002\n\017ListShopRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id" +
-      "\030\002 \001(\003\022\021\n\tseller_id\030\004 \001(\003\022\021\n\tshop_name\030\005" +
-      " \001(\t\022\021\n\tshop_type\030\006 \001(\t\022\020\n\010province\030\007 \001(" +
-      "\t\022\014\n\004city\030\010 \001(\t\022\020\n\010district\030\t \001(\t\022\017\n\007add" +
-      "ress\030\n \001(\t\022\014\n\004post\030\013 \001(\t\022\024\n\014company_name" +
-      "\030\014 \001(\t\022\022\n\nowner_name\030\r \001(\t\022+\n\npagination" +
-      "\030d \001(\0132\027.base.PaginationRequest\"\227\001\n\020List" +
-      "ShopResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022.\n\013shop_detail\030\002 \003(\0132\031.glory" +
-      "_api.ShopWithAuthor\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponse\"M\n\021DeleteShopR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\017\n\007shop_id\030\002 \001(\003\";\n\022DeleteShopRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\"t\n\024AddShopAccessRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_i" +
-      "d\030\002 \001(\003\022\023\n\013access_type\030\003 \001(\t\022\r\n\005phone\030\004 " +
-      "\001(\t\">\n\025AddShopAccessResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"Z\n\027RemoveSho" +
-      "pAccessRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\026\n\016shop_access_id\030\002 \001(\003\"" +
-      "A\n\030RemoveShopAccessResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"P\n\022VerifyFiel" +
-      "dRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\021\n\tshop_name\030\002 \001(\t\"U\n\023VerifyFi" +
-      "eldResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\027\n\017shop_name_valid\030\002 \001(\010\"\244\001\n\n" +
-      "ShopAccess\022\026\n\016shop_access_id\030\001 \001(\003\022\017\n\007sh" +
-      "op_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\023\n\013access_t" +
-      "ype\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\026" +
-      "\n\016binding_method\030\007 \001(\t\022\022\n\ncreated_at\030\010 \001" +
-      "(\t\"f\n\025ListShopAccessRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
-      "\002 \001(\003\022\023\n\013access_type\030\003 \001(\t\"k\n\026ListShopAc" +
-      "cessResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022*\n\013shop_access\030\002 \003(\0132\025.glory" +
-      "_api.ShopAccess\"\'\n\024GetShopQrcodeRequest\022" +
-      "\017\n\007shop_id\030\001 \001(\003\"\027\n\025GetShopQrcodeRespons" +
-      "e\"g\n\026AddShopCategoryRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030" +
-      "\002 \001(\003\022\023\n\013category_id\030\003 \003(\003\"@\n\027AddShopCat" +
-      "egoryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"o\n\031RemoveShopCategoryReques" +
+      "equest\022\017\n\007shop_id\030\002 \001(\003\"h\n\017GetShopRespon" +
+      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
+      "e\022.\n\013shop_detail\030\002 \001(\0132\031.glory_api.ShopW" +
+      "ithAuthor\"[\n\021UpdateShopRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\035\n\004shop\030" +
+      "\002 \001(\0132\017.glory_api.Shop\"L\n\022UpdateShopResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\022\017\n\007shop_id\030\002 \001(\003\"\254\002\n\017ListShopRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\017\n\007shop_id\030\002 \001(\003\022\021\n\tseller_id\030\004 \001(\003\022\021\n" +
+      "\tshop_name\030\005 \001(\t\022\021\n\tshop_type\030\006 \001(\t\022\020\n\010p" +
+      "rovince\030\007 \001(\t\022\014\n\004city\030\010 \001(\t\022\020\n\010district\030" +
+      "\t \001(\t\022\017\n\007address\030\n \001(\t\022\014\n\004post\030\013 \001(\t\022\024\n\014" +
+      "company_name\030\014 \001(\t\022\022\n\nowner_name\030\r \001(\t\022+" +
+      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
+      "est\"\227\001\n\020ListShopResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022.\n\013shop_detail\030\002" +
+      " \003(\0132\031.glory_api.ShopWithAuthor\022,\n\npagin" +
+      "ation\030d \001(\0132\030.base.PaginationResponse\"M\n" +
+      "\021DeleteShopRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\";\n\022" +
+      "DeleteShopResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\"t\n\024AddShopAccessReques" +
       "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\017\n\007shop_id\030\002 \001(\003\022\030\n\020shop_category_id\030" +
-      "\003 \003(\003\"C\n\032RemoveShopCategoryResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"R\n\026Ge" +
-      "tShopCategoryRequest\022\'\n\014base_request\030\001 \001" +
-      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"O" +
-      "\n\014ShopCategory\022\030\n\020shop_category_id\030\001 \001(\003" +
-      "\022%\n\010category\030\003 \001(\0132\023.glory_api.Category\"" +
-      "\203\001\n\027GetShopCategoryResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007shop_id\030\002 " +
-      "\001(\003\0220\n\017category_detail\030\003 \003(\0132\027.glory_api" +
-      ".ShopCategory\"X\n\034ListShopQualificationRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\017\n\007shop_id\030\002 \001(\003\"\200\001\n\035ListShopQual" +
-      "ificationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\0228\n\022shop_qualification\030\002" +
-      " \003(\0132\034.glory_api.ShopQualification\"|\n\030Up" +
-      "dateShopManagerRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003" +
-      "\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager_phone\030\004 \001(\t" +
-      "\"B\n\031UpdateShopManagerResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"f\n\032GetShopB" +
-      "usinessDataRequest\022\'\n\014base_request\030\001 \001(\013" +
-      "2\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\016\n\006" +
-      "period\030\003 \001(\003\"{\n\rShopChartData\022\014\n\004date\030\001 " +
-      "\001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021shop_buyer_a" +
-      "mount\030\003 \001(\003\022\031\n\021shop_order_amount\030\004 \001(\003\022\021" +
-      "\n\ttimestamp\030\005 \001(\003\"\255\001\n\020ShopBusinessData\0221" +
-      "\n\017shop_chart_data\030\001 \003(\0132\030.glory_api.Shop" +
-      "ChartData\022\031\n\021total_deal_amount\030\002 \001(\001\022\034\n\024" +
-      "total_visitor_amount\030\003 \001(\003\022\032\n\022total_orde" +
-      "r_amount\030\004 \001(\003\022\021\n\tshop_type\030\005 \001(\t\"}\n\033Get" +
-      "ShopBusinessDataResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\0227\n\022shop_business" +
-      "_data\030\002 \001(\0132\033.glory_api.ShopBusinessData" +
-      "\"\240\001\n\013ShopSummary\022\017\n\007shop_id\030\001 \001(\003\022\025\n\rsho" +
-      "p_logo_url\030\002 \001(\t\022\021\n\tshop_name\030\003 \001(\t\022\023\n\013d" +
-      "eal_amount\030\004 \001(\001\022\023\n\013order_total\030\005 \001(\003\022\021\n" +
-      "\tseller_id\030\006 \001(\003\022\031\n\021shop_manager_name\030\007 " +
-      "\001(\t\"\267\001\n\026ListShopSummaryRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tshop_" +
-      "name\030\002 \001(\t\022\021\n\tshop_type\030\003 \001(\t\022\020\n\010major_i" +
-      "d\030\004 \001(\003\022\017\n\007clas_id\030\005 \001(\003\022+\n\npagination\030d" +
-      " \001(\0132\027.base.PaginationRequest\"\231\001\n\027ListSh" +
-      "opSummaryResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022)\n\tshop_list\030\002 \003(\0132\026.gl" +
-      "ory_api.ShopSummary\022,\n\npagination\030d \001(\0132" +
-      "\030.base.PaginationResponse\"W\n\031ListShopByS" +
-      "ellerIDRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\021\n\tseller_id\030\002 \001(\003\"g\n\032Li" +
-      "stShopBySellerIDResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\"\n\tshop_list\030\002 \003" +
-      "(\0132\017.glory_api.ShopB#\n\037com.zhijiejiaoyu." +
-      "glory_api.shopP\001b\006proto3"
+      "st\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013access_type\030\003 \001(\t" +
+      "\022\r\n\005phone\030\004 \001(\t\">\n\025AddShopAccessResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "Z\n\027RemoveShopAccessRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016shop_acce" +
+      "ss_id\030\002 \001(\003\"A\n\030RemoveShopAccessResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"P" +
+      "\n\022VerifyFieldRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\021\n\tshop_name\030\002 \001(\t" +
+      "\"U\n\023VerifyFieldResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022\027\n\017shop_name_vali" +
+      "d\030\002 \001(\010\"\244\001\n\nShopAccess\022\026\n\016shop_access_id" +
+      "\030\001 \001(\003\022\017\n\007shop_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003" +
+      "\022\023\n\013access_type\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\014\n\004" +
+      "name\030\006 \001(\t\022\026\n\016binding_method\030\007 \001(\t\022\022\n\ncr" +
+      "eated_at\030\010 \001(\t\"f\n\025ListShopAccessRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013access_type\030\003 \001(\t\"k" +
+      "\n\026ListShopAccessResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\022*\n\013shop_access\030\002" +
+      " \003(\0132\025.glory_api.ShopAccess\"\'\n\024GetShopQr" +
+      "codeRequest\022\017\n\007shop_id\030\001 \001(\003\"\027\n\025GetShopQ" +
+      "rcodeResponse\"g\n\026AddShopCategoryRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013category_id\030\003 \003(\003\"@" +
+      "\n\027AddShopCategoryResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\"o\n\031RemoveShopCa" +
+      "tegoryRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\030\n\020shop_" +
+      "category_id\030\003 \003(\003\"C\n\032RemoveShopCategoryR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"R\n\026GetShopCategoryRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007sho" +
+      "p_id\030\002 \001(\003\"O\n\014ShopCategory\022\030\n\020shop_categ" +
+      "ory_id\030\001 \001(\003\022%\n\010category\030\003 \001(\0132\023.glory_a" +
+      "pi.Category\"\203\001\n\027GetShopCategoryResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017" +
+      "\n\007shop_id\030\002 \001(\003\0220\n\017category_detail\030\003 \003(\013" +
+      "2\027.glory_api.ShopCategory\"X\n\034ListShopQua" +
+      "lificationRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"\200\001\n\035" +
+      "ListShopQualificationResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\0228\n\022shop_qua" +
+      "lification\030\002 \003(\0132\034.glory_api.ShopQualifi" +
+      "cation\"|\n\030UpdateShopManagerRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007s" +
+      "hop_id\030\002 \001(\003\022\017\n\007manager\030\003 \001(\t\022\025\n\rmanager" +
+      "_phone\030\004 \001(\t\"B\n\031UpdateShopManagerRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"f\n\032GetShopBusinessDataRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007shop_" +
+      "id\030\002 \001(\003\022\016\n\006period\030\003 \001(\003\"{\n\rShopChartDat" +
+      "a\022\014\n\004date\030\001 \001(\t\022\023\n\013deal_amount\030\002 \001(\001\022\031\n\021" +
+      "shop_buyer_amount\030\003 \001(\003\022\031\n\021shop_order_am" +
+      "ount\030\004 \001(\003\022\021\n\ttimestamp\030\005 \001(\003\"\255\001\n\020ShopBu" +
+      "sinessData\0221\n\017shop_chart_data\030\001 \003(\0132\030.gl" +
+      "ory_api.ShopChartData\022\031\n\021total_deal_amou" +
+      "nt\030\002 \001(\001\022\034\n\024total_visitor_amount\030\003 \001(\003\022\032" +
+      "\n\022total_order_amount\030\004 \001(\003\022\021\n\tshop_type\030" +
+      "\005 \001(\t\"}\n\033GetShopBusinessDataResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\0227\n\022s" +
+      "hop_business_data\030\002 \001(\0132\033.glory_api.Shop" +
+      "BusinessData\"\240\001\n\013ShopSummary\022\017\n\007shop_id\030" +
+      "\001 \001(\003\022\025\n\rshop_logo_url\030\002 \001(\t\022\021\n\tshop_nam" +
+      "e\030\003 \001(\t\022\023\n\013deal_amount\030\004 \001(\001\022\023\n\013order_to" +
+      "tal\030\005 \001(\003\022\021\n\tseller_id\030\006 \001(\003\022\031\n\021shop_man" +
+      "ager_name\030\007 \001(\t\"\267\001\n\026ListShopSummaryReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\022\021\n\tshop_name\030\002 \001(\t\022\021\n\tshop_type\030\003 \001(" +
+      "\t\022\020\n\010major_id\030\004 \001(\003\022\017\n\007clas_id\030\005 \001(\003\022+\n\n" +
+      "pagination\030d \001(\0132\027.base.PaginationReques" +
+      "t\"\231\001\n\027ListShopSummaryResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022)\n\tshop_lis" +
+      "t\030\002 \003(\0132\026.glory_api.ShopSummary\022,\n\npagin" +
+      "ation\030d \001(\0132\030.base.PaginationResponse\"W\n" +
+      "\031ListShopBySellerIDRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tseller_id" +
+      "\030\002 \001(\003\"g\n\032ListShopBySellerIDResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\ts" +
+      "hop_list\030\002 \003(\0132\017.glory_api.ShopB#\n\037com.z" +
+      "hijiejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -421,254 +429,260 @@ public final class ShopOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopBusiness_descriptor,
         new java.lang.String[] { "SaleTotal", });
-    internal_static_glory_api_ShopWithAuthor_descriptor =
+    internal_static_glory_api_ShopKeeper_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_ShopKeeper_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ShopKeeper_descriptor,
+        new java.lang.String[] { "UserId", "UserName", "ClassId", "ClassName", });
+    internal_static_glory_api_ShopWithAuthor_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_glory_api_ShopWithAuthor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopWithAuthor_descriptor,
-        new java.lang.String[] { "Shop", "AuthorInfo", "ShopBusiness", });
+        new java.lang.String[] { "Shop", "AuthorInfo", "ShopBusiness", "ShopKeeper", });
     internal_static_glory_api_CreateShopRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_CreateShopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateShopRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Shop", "CreatedBy", });
     internal_static_glory_api_CreateShopResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_CreateShopResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateShopResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopId", });
     internal_static_glory_api_GetShopRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_GetShopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_GetShopResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_GetShopResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopDetail", });
     internal_static_glory_api_UpdateShopRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_UpdateShopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateShopRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Shop", });
     internal_static_glory_api_UpdateShopResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_UpdateShopResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateShopResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopId", });
     internal_static_glory_api_ListShopRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_ListShopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "SellerId", "ShopName", "ShopType", "Province", "City", "District", "Address", "Post", "CompanyName", "OwnerName", "Pagination", });
     internal_static_glory_api_ListShopResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_ListShopResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopDetail", "Pagination", });
     internal_static_glory_api_DeleteShopRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_DeleteShopRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteShopRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_DeleteShopResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_DeleteShopResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteShopResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_AddShopAccessRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_AddShopAccessRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddShopAccessRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "AccessType", "Phone", });
     internal_static_glory_api_AddShopAccessResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_AddShopAccessResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddShopAccessResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_RemoveShopAccessRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_RemoveShopAccessRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveShopAccessRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopAccessId", });
     internal_static_glory_api_RemoveShopAccessResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_RemoveShopAccessResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveShopAccessResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_VerifyFieldRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_VerifyFieldRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VerifyFieldRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopName", });
     internal_static_glory_api_VerifyFieldResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_VerifyFieldResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_VerifyFieldResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopNameValid", });
     internal_static_glory_api_ShopAccess_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_ShopAccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopAccess_descriptor,
         new java.lang.String[] { "ShopAccessId", "ShopId", "UserId", "AccessType", "Phone", "Name", "BindingMethod", "CreatedAt", });
     internal_static_glory_api_ListShopAccessRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_ListShopAccessRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopAccessRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "AccessType", });
     internal_static_glory_api_ListShopAccessResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_ListShopAccessResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopAccessResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopAccess", });
     internal_static_glory_api_GetShopQrcodeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_GetShopQrcodeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopQrcodeRequest_descriptor,
         new java.lang.String[] { "ShopId", });
     internal_static_glory_api_GetShopQrcodeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_GetShopQrcodeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopQrcodeResponse_descriptor,
         new java.lang.String[] { });
     internal_static_glory_api_AddShopCategoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_AddShopCategoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddShopCategoryRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "CategoryId", });
     internal_static_glory_api_AddShopCategoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_AddShopCategoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddShopCategoryResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_RemoveShopCategoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_RemoveShopCategoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveShopCategoryRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "ShopCategoryId", });
     internal_static_glory_api_RemoveShopCategoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_RemoveShopCategoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RemoveShopCategoryResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetShopCategoryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_GetShopCategoryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopCategoryRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_ShopCategory_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_ShopCategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopCategory_descriptor,
         new java.lang.String[] { "ShopCategoryId", "Category", });
     internal_static_glory_api_GetShopCategoryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_glory_api_GetShopCategoryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopCategoryResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopId", "CategoryDetail", });
     internal_static_glory_api_ListShopQualificationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_ListShopQualificationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopQualificationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", });
     internal_static_glory_api_ListShopQualificationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_ListShopQualificationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopQualificationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopQualification", });
     internal_static_glory_api_UpdateShopManagerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_UpdateShopManagerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateShopManagerRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "Manager", "ManagerPhone", });
     internal_static_glory_api_UpdateShopManagerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_UpdateShopManagerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateShopManagerResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetShopBusinessDataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_GetShopBusinessDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopBusinessDataRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopId", "Period", });
     internal_static_glory_api_ShopChartData_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_ShopChartData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopChartData_descriptor,
         new java.lang.String[] { "Date", "DealAmount", "ShopBuyerAmount", "ShopOrderAmount", "Timestamp", });
     internal_static_glory_api_ShopBusinessData_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_glory_api_ShopBusinessData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopBusinessData_descriptor,
         new java.lang.String[] { "ShopChartData", "TotalDealAmount", "TotalVisitorAmount", "TotalOrderAmount", "ShopType", });
     internal_static_glory_api_GetShopBusinessDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_glory_api_GetShopBusinessDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetShopBusinessDataResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopBusinessData", });
     internal_static_glory_api_ShopSummary_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_glory_api_ShopSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopSummary_descriptor,
         new java.lang.String[] { "ShopId", "ShopLogoUrl", "ShopName", "DealAmount", "OrderTotal", "SellerId", "ShopManagerName", });
     internal_static_glory_api_ListShopSummaryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_glory_api_ListShopSummaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopSummaryRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ShopName", "ShopType", "MajorId", "ClasId", "Pagination", });
     internal_static_glory_api_ListShopSummaryResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_ListShopSummaryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopSummaryResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ShopList", "Pagination", });
     internal_static_glory_api_ListShopBySellerIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_glory_api_ListShopBySellerIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopBySellerIDRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "SellerId", });
     internal_static_glory_api_ListShopBySellerIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_glory_api_ListShopBySellerIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopBySellerIDResponse_descriptor,

@@ -757,11 +757,104 @@ class ShopBusiness extends $pb.GeneratedMessage {
   void clearSaleTotal() => clearField(1);
 }
 
+class ShopKeeper extends $pb.GeneratedMessage {
+  factory ShopKeeper({
+    $fixnum.Int64? userId,
+    $core.String? userName,
+    $fixnum.Int64? classId,
+    $core.String? className,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (userName != null) {
+      $result.userName = userName;
+    }
+    if (classId != null) {
+      $result.classId = classId;
+    }
+    if (className != null) {
+      $result.className = className;
+    }
+    return $result;
+  }
+  ShopKeeper._() : super();
+  factory ShopKeeper.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ShopKeeper.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShopKeeper', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'userName')
+    ..aInt64(3, _omitFieldNames ? '' : 'classId')
+    ..aOS(4, _omitFieldNames ? '' : 'className')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ShopKeeper clone() => ShopKeeper()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ShopKeeper copyWith(void Function(ShopKeeper) updates) => super.copyWith((message) => updates(message as ShopKeeper)) as ShopKeeper;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ShopKeeper create() => ShopKeeper._();
+  ShopKeeper createEmptyInstance() => create();
+  static $pb.PbList<ShopKeeper> createRepeated() => $pb.PbList<ShopKeeper>();
+  @$core.pragma('dart2js:noInline')
+  static ShopKeeper getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ShopKeeper>(create);
+  static ShopKeeper? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get userId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set userId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get classId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set classId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasClassId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClassId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get className => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set className($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasClassName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClassName() => clearField(4);
+}
+
 class ShopWithAuthor extends $pb.GeneratedMessage {
   factory ShopWithAuthor({
     Shop? shop,
     $0.AuthorInfo? authorInfo,
     ShopBusiness? shopBusiness,
+    ShopKeeper? shopKeeper,
   }) {
     final $result = create();
     if (shop != null) {
@@ -773,6 +866,9 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     if (shopBusiness != null) {
       $result.shopBusiness = shopBusiness;
     }
+    if (shopKeeper != null) {
+      $result.shopKeeper = shopKeeper;
+    }
     return $result;
   }
   ShopWithAuthor._() : super();
@@ -783,6 +879,7 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
     ..aOM<Shop>(1, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
     ..aOM<$0.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $0.AuthorInfo.create)
     ..aOM<ShopBusiness>(3, _omitFieldNames ? '' : 'shopBusiness', subBuilder: ShopBusiness.create)
+    ..aOM<ShopKeeper>(4, _omitFieldNames ? '' : 'shopKeeper', subBuilder: ShopKeeper.create)
     ..hasRequiredFields = false
   ;
 
@@ -839,6 +936,17 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
   void clearShopBusiness() => clearField(3);
   @$pb.TagNumber(3)
   ShopBusiness ensureShopBusiness() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  ShopKeeper get shopKeeper => $_getN(3);
+  @$pb.TagNumber(4)
+  set shopKeeper(ShopKeeper v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasShopKeeper() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShopKeeper() => clearField(4);
+  @$pb.TagNumber(4)
+  ShopKeeper ensureShopKeeper() => $_ensure(3);
 }
 
 class CreateShopRequest extends $pb.GeneratedMessage {

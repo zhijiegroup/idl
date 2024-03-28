@@ -154,3 +154,13 @@ export interface ListTenantSystemResponse {
   base_resp?: base.BaseResponse;
   system_list?: Array<TenantSystem>;
 }
+
+export interface CreateTenantCourseRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+  course_ids?: Array<string>;
+}
+
+export interface CreateTenantCourseResponse {
+  base_resp?: base.BaseResponse;
+}

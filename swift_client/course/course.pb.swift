@@ -157,6 +157,11 @@ struct GloryApi_Course {
     set {_uniqueStorage()._createdAt = newValue}
   }
 
+  var assigned: Bool {
+    get {return _storage._assigned}
+    set {_uniqueStorage()._assigned = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -765,6 +770,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     16: .standard(proto: "course_module"),
     17: .standard(proto: "course_modules"),
     18: .standard(proto: "created_at"),
+    19: .same(proto: "assigned"),
   ]
 
   fileprivate class _StorageClass {
@@ -786,6 +792,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     var _courseModule: Int32 = 0
     var _courseModules: [GloryApi_CourseModule] = []
     var _createdAt: String = String()
+    var _assigned: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -810,6 +817,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       _courseModule = source._courseModule
       _courseModules = source._courseModules
       _createdAt = source._createdAt
+      _assigned = source._assigned
     }
   }
 
@@ -846,6 +854,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         case 16: try { try decoder.decodeSingularInt32Field(value: &_storage._courseModule) }()
         case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseModules) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
+        case 19: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
         default: break
         }
       }
@@ -908,6 +917,9 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       if !_storage._createdAt.isEmpty {
         try visitor.visitSingularStringField(value: _storage._createdAt, fieldNumber: 18)
       }
+      if _storage._assigned != false {
+        try visitor.visitSingularBoolField(value: _storage._assigned, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -935,6 +947,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         if _storage._courseModule != rhs_storage._courseModule {return false}
         if _storage._courseModules != rhs_storage._courseModules {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
+        if _storage._assigned != rhs_storage._assigned {return false}
         return true
       }
       if !storagesAreEqual {return false}

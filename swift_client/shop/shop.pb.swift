@@ -302,6 +302,24 @@ struct GloryApi_ShopBusiness {
   init() {}
 }
 
+struct GloryApi_ShopKeeper {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var userID: Int64 = 0
+
+  var userName: String = String()
+
+  var classID: Int64 = 0
+
+  var className: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_ShopWithAuthor {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -334,6 +352,15 @@ struct GloryApi_ShopWithAuthor {
   /// Clears the value of `shopBusiness`. Subsequent reads from it will return its default value.
   mutating func clearShopBusiness() {self._shopBusiness = nil}
 
+  var shopKeeper: GloryApi_ShopKeeper {
+    get {return _shopKeeper ?? GloryApi_ShopKeeper()}
+    set {_shopKeeper = newValue}
+  }
+  /// Returns true if `shopKeeper` has been explicitly set.
+  var hasShopKeeper: Bool {return self._shopKeeper != nil}
+  /// Clears the value of `shopKeeper`. Subsequent reads from it will return its default value.
+  mutating func clearShopKeeper() {self._shopKeeper = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -341,6 +368,7 @@ struct GloryApi_ShopWithAuthor {
   fileprivate var _shop: GloryApi_Shop? = nil
   fileprivate var _authorInfo: Base_AuthorInfo? = nil
   fileprivate var _shopBusiness: GloryApi_ShopBusiness? = nil
+  fileprivate var _shopKeeper: GloryApi_ShopKeeper? = nil
 }
 
 struct GloryApi_CreateShopRequest {
@@ -1380,6 +1408,7 @@ struct GloryApi_ListShopBySellerIDResponse {
 extension GloryApi_Shop: @unchecked Sendable {}
 extension GloryApi_ShopQualification: @unchecked Sendable {}
 extension GloryApi_ShopBusiness: @unchecked Sendable {}
+extension GloryApi_ShopKeeper: @unchecked Sendable {}
 extension GloryApi_ShopWithAuthor: @unchecked Sendable {}
 extension GloryApi_CreateShopRequest: @unchecked Sendable {}
 extension GloryApi_CreateShopResponse: @unchecked Sendable {}
@@ -1888,12 +1917,63 @@ extension GloryApi_ShopBusiness: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
+extension GloryApi_ShopKeeper: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ShopKeeper"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "user_id"),
+    2: .standard(proto: "user_name"),
+    3: .standard(proto: "class_id"),
+    4: .standard(proto: "class_name"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.className) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 1)
+    }
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 2)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 3)
+    }
+    if !self.className.isEmpty {
+      try visitor.visitSingularStringField(value: self.className, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ShopKeeper, rhs: GloryApi_ShopKeeper) -> Bool {
+    if lhs.userID != rhs.userID {return false}
+    if lhs.userName != rhs.userName {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.className != rhs.className {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ShopWithAuthor"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shop"),
     2: .standard(proto: "author_info"),
     3: .standard(proto: "shop_business"),
+    4: .standard(proto: "shop_keeper"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1905,6 +1985,7 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 1: try { try decoder.decodeSingularMessageField(value: &self._shop) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._authorInfo) }()
       case 3: try { try decoder.decodeSingularMessageField(value: &self._shopBusiness) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._shopKeeper) }()
       default: break
       }
     }
@@ -1924,6 +2005,9 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     try { if let v = self._shopBusiness {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     } }()
+    try { if let v = self._shopKeeper {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1931,6 +2015,7 @@ extension GloryApi_ShopWithAuthor: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs._shop != rhs._shop {return false}
     if lhs._authorInfo != rhs._authorInfo {return false}
     if lhs._shopBusiness != rhs._shopBusiness {return false}
+    if lhs._shopKeeper != rhs._shopKeeper {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

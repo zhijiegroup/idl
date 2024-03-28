@@ -144,6 +144,16 @@ public final class TenantOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListTenantSystemResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantCourseRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantCourseRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateTenantCourseResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateTenantCourseResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -216,8 +226,12 @@ public final class TenantOuterClass {
       "ase.BaseRequest\"o\n\030ListTenantSystemRespo" +
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022,\n\013system_list\030\002 \003(\0132\027.glory_api.Tena" +
-      "ntSystemB%\n!com.zhijiejiaoyu.glory_api.t" +
-      "enantP\001b\006proto3"
+      "ntSystem\"k\n\031CreateTenantCourseRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\021" +
+      "\n\ttenant_id\030\002 \001(\003\022\022\n\ncourse_ids\030\003 \003(\003\"C\n" +
+      "\032CreateTenantCourseResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponseB%\n!com.zhijie" +
+      "jiaoyu.glory_api.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -380,6 +394,18 @@ public final class TenantOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListTenantSystemResponse_descriptor,
         new java.lang.String[] { "BaseResp", "SystemList", });
+    internal_static_glory_api_CreateTenantCourseRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_glory_api_CreateTenantCourseRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantCourseRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", "CourseIds", });
+    internal_static_glory_api_CreateTenantCourseResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_glory_api_CreateTenantCourseResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateTenantCourseResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

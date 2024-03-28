@@ -58,6 +58,7 @@ const Course$json = {
     {'1': 'course_module', '3': 16, '4': 1, '5': 5, '10': 'courseModule'},
     {'1': 'course_modules', '3': 17, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
     {'1': 'created_at', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'assigned', '3': 19, '4': 1, '5': 8, '10': 'assigned'},
   ],
 };
 
@@ -76,7 +77,8 @@ final $typed_data.Uint8List courseDescriptor = $convert.base64Decode(
     'b3Vyc2VNYWpvchInCg9jb3Vyc2VfaW5kdXN0cnkYDiABKAlSDmNvdXJzZUluZHVzdHJ5Eh8KC2'
     'NvdXJzZV90eXBlGA8gASgFUgpjb3Vyc2VUeXBlEiMKDWNvdXJzZV9tb2R1bGUYECABKAVSDGNv'
     'dXJzZU1vZHVsZRI+Cg5jb3Vyc2VfbW9kdWxlcxgRIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2'
-    'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0');
+    'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0EhoKCGFz'
+    'c2lnbmVkGBMgASgIUghhc3NpZ25lZA==');
 
 @$core.Deprecated('Use createCourseRequestDescriptor instead')
 const CreateCourseRequest$json = {

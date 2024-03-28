@@ -407,3 +407,32 @@ final $typed_data.Uint8List listTenantSystemResponseDescriptor = $convert.base64
     'NlUmVzcG9uc2VSCGJhc2VSZXNwEjgKC3N5c3RlbV9saXN0GAIgAygLMhcuZ2xvcnlfYXBpLlRl'
     'bmFudFN5c3RlbVIKc3lzdGVtTGlzdA==');
 
+@$core.Deprecated('Use createTenantCourseRequestDescriptor instead')
+const CreateTenantCourseRequest$json = {
+  '1': 'CreateTenantCourseRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'course_ids', '3': 3, '4': 3, '5': 3, '10': 'courseIds'},
+  ],
+};
+
+/// Descriptor for `CreateTenantCourseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTenantCourseRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVUZW5hbnRDb3Vyc2VSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXRlbmFudF9pZBgCIAEoA1IIdGVuYW50SWQS'
+    'HQoKY291cnNlX2lkcxgDIAMoA1IJY291cnNlSWRz');
+
+@$core.Deprecated('Use createTenantCourseResponseDescriptor instead')
+const CreateTenantCourseResponse$json = {
+  '1': 'CreateTenantCourseResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CreateTenantCourseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTenantCourseResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVUZW5hbnRDb3Vyc2VSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+

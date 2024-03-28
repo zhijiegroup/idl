@@ -127,6 +127,23 @@ const ShopBusiness$json = {
 final $typed_data.Uint8List shopBusinessDescriptor = $convert.base64Decode(
     'CgxTaG9wQnVzaW5lc3MSHQoKc2FsZV90b3RhbBgBIAEoA1IJc2FsZVRvdGFs');
 
+@$core.Deprecated('Use shopKeeperDescriptor instead')
+const ShopKeeper$json = {
+  '1': 'ShopKeeper',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
+    {'1': 'class_id', '3': 3, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'class_name', '3': 4, '4': 1, '5': 9, '10': 'className'},
+  ],
+};
+
+/// Descriptor for `ShopKeeper`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List shopKeeperDescriptor = $convert.base64Decode(
+    'CgpTaG9wS2VlcGVyEhcKB3VzZXJfaWQYASABKANSBnVzZXJJZBIbCgl1c2VyX25hbWUYAiABKA'
+    'lSCHVzZXJOYW1lEhkKCGNsYXNzX2lkGAMgASgDUgdjbGFzc0lkEh0KCmNsYXNzX25hbWUYBCAB'
+    'KAlSCWNsYXNzTmFtZQ==');
+
 @$core.Deprecated('Use shopWithAuthorDescriptor instead')
 const ShopWithAuthor$json = {
   '1': 'ShopWithAuthor',
@@ -134,6 +151,7 @@ const ShopWithAuthor$json = {
     {'1': 'shop', '3': 1, '4': 1, '5': 11, '6': '.glory_api.Shop', '10': 'shop'},
     {'1': 'author_info', '3': 2, '4': 1, '5': 11, '6': '.base.AuthorInfo', '10': 'authorInfo'},
     {'1': 'shop_business', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ShopBusiness', '10': 'shopBusiness'},
+    {'1': 'shop_keeper', '3': 4, '4': 1, '5': 11, '6': '.glory_api.ShopKeeper', '10': 'shopKeeper'},
   ],
 };
 
@@ -141,8 +159,8 @@ const ShopWithAuthor$json = {
 final $typed_data.Uint8List shopWithAuthorDescriptor = $convert.base64Decode(
     'Cg5TaG9wV2l0aEF1dGhvchIjCgRzaG9wGAEgASgLMg8uZ2xvcnlfYXBpLlNob3BSBHNob3ASMQ'
     'oLYXV0aG9yX2luZm8YAiABKAsyEC5iYXNlLkF1dGhvckluZm9SCmF1dGhvckluZm8SPAoNc2hv'
-    'cF9idXNpbmVzcxgDIAEoCzIXLmdsb3J5X2FwaS5TaG9wQnVzaW5lc3NSDHNob3BCdXNpbmVzcw'
-    '==');
+    'cF9idXNpbmVzcxgDIAEoCzIXLmdsb3J5X2FwaS5TaG9wQnVzaW5lc3NSDHNob3BCdXNpbmVzcx'
+    'I2CgtzaG9wX2tlZXBlchgEIAEoCzIVLmdsb3J5X2FwaS5TaG9wS2VlcGVyUgpzaG9wS2VlcGVy');
 
 @$core.Deprecated('Use createShopRequestDescriptor instead')
 const CreateShopRequest$json = {

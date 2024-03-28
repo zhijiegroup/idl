@@ -976,6 +976,10 @@ CreateLivePlanProduct create live plan product */
     request: tenant.InitTenantRequest
   ): Promise<tenant.InitTenantResponse>;
 
+  CreateTenantCourse(
+    request: tenant.CreateTenantCourseRequest
+  ): Promise<tenant.CreateTenantCourseResponse>;
+
   /** tenant_dept */
   CreateTenantDept(
     request: tenant_dept.CreateTenantDeptRequest

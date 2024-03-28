@@ -105,10 +105,18 @@ export interface ShopBusiness {
   sale_total?: string;
 }
 
+export interface ShopKeeper {
+  user_id?: string;
+  user_name?: string;
+  class_id?: string;
+  class_name?: string;
+}
+
 export interface ShopWithAuthor {
   shop?: Shop;
   author_info?: base.AuthorInfo;
   shop_business?: ShopBusiness;
+  shop_keeper?: ShopKeeper;
 }
 
 export interface CreateShopRequest {
