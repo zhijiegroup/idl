@@ -833,6 +833,9 @@ service glory_api {
   rpc InitTenant(InitTenantRequest) returns (InitTenantResponse) {
     option (api.get) = '/api/tenant/init_tenant';
   }
+  rpc CreateTenantCourse(CreateTenantCourseRequest) returns (CreateTenantCourseResponse) {
+    option (api.post) = '/api/tenant/create_tenant_course';
+  }
 
   //tenant_dept
   rpc CreateTenantDept(CreateTenantDeptRequest) returns(CreateTenantDeptResponse) {

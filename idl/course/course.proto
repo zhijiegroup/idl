@@ -34,6 +34,7 @@ message Course {
   int32 course_module = 16; // 1. 模块化课程；2.非模块化课程；3.定制课程
   repeated CourseModule course_modules = 17; // 能力指标或能力方向
   string created_at = 18; // 创建时间
+  bool assigned = 19;
 }
 
 // 创建模块化课程

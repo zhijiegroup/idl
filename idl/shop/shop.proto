@@ -62,10 +62,18 @@ message ShopBusiness {
   int64 sale_total = 1;
 }
 
+message ShopKeeper {
+  int64 user_id = 1;
+  string user_name = 2;
+  int64 class_id = 3;
+  string class_name = 4;
+}
+
 message ShopWithAuthor {
   Shop shop = 1;
   base.AuthorInfo author_info = 2;
   ShopBusiness shop_business = 3;
+  ShopKeeper shop_keeper = 4;
 }
 
 message CreateShopRequest {

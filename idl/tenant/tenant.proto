@@ -151,3 +151,13 @@ message ListTenantSystemResponse {
   base.BaseResponse base_resp = 1;
   repeated TenantSystem system_list = 2;
 }
+
+message CreateTenantCourseRequest {
+  base.BaseRequest base_request = 1;
+  int64 tenant_id = 2;
+  repeated int64 course_ids = 3;
+}
+
+message CreateTenantCourseResponse {
+  base.BaseResponse base_resp = 1;
+}
