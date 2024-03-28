@@ -274,3 +274,36 @@ export interface Sentence {
   sentence?: string;
   reason?: string;
 }
+
+/** 文案纠错接口 */
+export interface CorrectSentenceRequest {
+  base_request?: base.BaseRequest;
+  sentence?: string;
+}
+
+export interface CorrectSentenceResponse {
+  base_resp?: base.BaseResponse;
+  edits?: Array<Edits>;
+}
+
+export interface Edits {
+  source_word?: string;
+  target_word?: string;
+  position?: string;
+}
+
+/** 文案ai聊天 */
+export interface ArticleAIChatRequest {
+  base_request?: base.BaseRequest;
+  question?: string;
+}
+
+export interface ArticleAIChatResponse {
+  base_resp?: base.BaseResponse;
+  messages?: Array<ChatMessage>;
+}
+
+export interface ChatMessage {
+  content?: string;
+  role?: string;
+}

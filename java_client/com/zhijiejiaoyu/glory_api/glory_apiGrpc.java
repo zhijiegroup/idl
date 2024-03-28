@@ -12818,6 +12818,68 @@ public final class glory_apiGrpc {
     return getStudentArticleCreationEvaluationDetailMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> getCorrectSentenceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CorrectSentence",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> getCorrectSentenceMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest, com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> getCorrectSentenceMethod;
+    if ((getCorrectSentenceMethod = glory_apiGrpc.getCorrectSentenceMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCorrectSentenceMethod = glory_apiGrpc.getCorrectSentenceMethod) == null) {
+          glory_apiGrpc.getCorrectSentenceMethod = getCorrectSentenceMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest, com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CorrectSentence"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CorrectSentence"))
+              .build();
+        }
+      }
+    }
+    return getCorrectSentenceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> getArticleAiChatMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ArticleAiChat",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> getArticleAiChatMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> getArticleAiChatMethod;
+    if ((getArticleAiChatMethod = glory_apiGrpc.getArticleAiChatMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getArticleAiChatMethod = glory_apiGrpc.getArticleAiChatMethod) == null) {
+          glory_apiGrpc.getArticleAiChatMethod = getArticleAiChatMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest, com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ArticleAiChat"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ArticleAiChat"))
+              .build();
+        }
+      }
+    }
+    return getArticleAiChatMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -16131,6 +16193,26 @@ public final class glory_apiGrpc {
     default void studentArticleCreationEvaluationDetail(com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStudentArticleCreationEvaluationDetailMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 文案纠错
+     * </pre>
+     */
+    default void correctSentence(com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCorrectSentenceMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 文案AI问答
+     * </pre>
+     */
+    default void articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getArticleAiChatMethod(), responseObserver);
     }
   }
 
@@ -19840,6 +19922,28 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStudentArticleCreationEvaluationDetailMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 文案纠错
+     * </pre>
+     */
+    public void correctSentence(com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCorrectSentenceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 文案AI问答
+     * </pre>
+     */
+    public void articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getArticleAiChatMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -23123,6 +23227,26 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse studentArticleCreationEvaluationDetail(com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStudentArticleCreationEvaluationDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 文案纠错
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse correctSentence(com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCorrectSentenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 文案AI问答
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArticleAiChatMethod(), getCallOptions(), request);
     }
   }
 
@@ -26821,6 +26945,28 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStudentArticleCreationEvaluationDetailMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 文案纠错
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse> correctSentence(
+        com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCorrectSentenceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 文案AI问答
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> articleAiChat(
+        com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getArticleAiChatMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -27236,6 +27382,8 @@ public final class glory_apiGrpc {
   private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 410;
   private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 411;
   private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 412;
+  private static final int METHODID_CORRECT_SENTENCE = 413;
+  private static final int METHODID_ARTICLE_AI_CHAT = 414;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -28905,6 +29053,14 @@ public final class glory_apiGrpc {
         case METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL:
           serviceImpl.studentArticleCreationEvaluationDetail((com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse>) responseObserver);
+          break;
+        case METHODID_CORRECT_SENTENCE:
+          serviceImpl.correctSentence((com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse>) responseObserver);
+          break;
+        case METHODID_ARTICLE_AI_CHAT:
+          serviceImpl.articleAiChat((com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -31815,6 +31971,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailRequest,
               com.zhijiejiaoyu.glory_api.short_video.StudentArticleCreationEvaluationDetailResponse>(
                 service, METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL)))
+        .addMethod(
+          getCorrectSentenceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CorrectSentenceResponse>(
+                service, METHODID_CORRECT_SENTENCE)))
+        .addMethod(
+          getArticleAiChatMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>(
+                service, METHODID_ARTICLE_AI_CHAT)))
         .build();
   }
 
@@ -32276,6 +32446,8 @@ public final class glory_apiGrpc {
               .addMethod(getBatchEvaluateArticleCreationMethod())
               .addMethod(getListStudentArticleCreationMethod())
               .addMethod(getStudentArticleCreationEvaluationDetailMethod())
+              .addMethod(getCorrectSentenceMethod())
+              .addMethod(getArticleAiChatMethod())
               .build();
         }
       }

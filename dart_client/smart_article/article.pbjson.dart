@@ -666,3 +666,90 @@ final $typed_data.Uint8List sentenceDescriptor = $convert.base64Decode(
     'CghTZW50ZW5jZRIaCghzZW50ZW5jZRgBIAEoCVIIc2VudGVuY2USFgoGcmVhc29uGAIgASgJUg'
     'ZyZWFzb24=');
 
+@$core.Deprecated('Use correctSentenceRequestDescriptor instead')
+const CorrectSentenceRequest$json = {
+  '1': 'CorrectSentenceRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'sentence', '3': 2, '4': 1, '5': 9, '10': 'sentence'},
+  ],
+};
+
+/// Descriptor for `CorrectSentenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List correctSentenceRequestDescriptor = $convert.base64Decode(
+    'ChZDb3JyZWN0U2VudGVuY2VSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhoKCHNlbnRlbmNlGAIgASgJUghzZW50ZW5jZQ==');
+
+@$core.Deprecated('Use correctSentenceResponseDescriptor instead')
+const CorrectSentenceResponse$json = {
+  '1': 'CorrectSentenceResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'edits', '3': 2, '4': 3, '5': 11, '6': '.glory_api.Edits', '10': 'edits'},
+  ],
+};
+
+/// Descriptor for `CorrectSentenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List correctSentenceResponseDescriptor = $convert.base64Decode(
+    'ChdDb3JyZWN0U2VudGVuY2VSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
+    'VSZXNwb25zZVIIYmFzZVJlc3ASJgoFZWRpdHMYAiADKAsyEC5nbG9yeV9hcGkuRWRpdHNSBWVk'
+    'aXRz');
+
+@$core.Deprecated('Use editsDescriptor instead')
+const Edits$json = {
+  '1': 'Edits',
+  '2': [
+    {'1': 'source_word', '3': 1, '4': 1, '5': 9, '10': 'sourceWord'},
+    {'1': 'target_word', '3': 2, '4': 1, '5': 9, '10': 'targetWord'},
+    {'1': 'position', '3': 3, '4': 1, '5': 3, '10': 'position'},
+  ],
+};
+
+/// Descriptor for `Edits`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List editsDescriptor = $convert.base64Decode(
+    'CgVFZGl0cxIfCgtzb3VyY2Vfd29yZBgBIAEoCVIKc291cmNlV29yZBIfCgt0YXJnZXRfd29yZB'
+    'gCIAEoCVIKdGFyZ2V0V29yZBIaCghwb3NpdGlvbhgDIAEoA1IIcG9zaXRpb24=');
+
+@$core.Deprecated('Use articleAIChatRequestDescriptor instead')
+const ArticleAIChatRequest$json = {
+  '1': 'ArticleAIChatRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'question', '3': 2, '4': 1, '5': 9, '10': 'question'},
+  ],
+};
+
+/// Descriptor for `ArticleAIChatRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List articleAIChatRequestDescriptor = $convert.base64Decode(
+    'ChRBcnRpY2xlQUlDaGF0UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIaCghxdWVzdGlvbhgCIAEoCVIIcXVlc3Rpb24=');
+
+@$core.Deprecated('Use articleAIChatResponseDescriptor instead')
+const ArticleAIChatResponse$json = {
+  '1': 'ArticleAIChatResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'messages', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ChatMessage', '10': 'messages'},
+  ],
+};
+
+/// Descriptor for `ArticleAIChatResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List articleAIChatResponseDescriptor = $convert.base64Decode(
+    'ChVBcnRpY2xlQUlDaGF0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEjIKCG1lc3NhZ2VzGAIgAygLMhYuZ2xvcnlfYXBpLkNoYXRNZXNz'
+    'YWdlUghtZXNzYWdlcw==');
+
+@$core.Deprecated('Use chatMessageDescriptor instead')
+const ChatMessage$json = {
+  '1': 'ChatMessage',
+  '2': [
+    {'1': 'content', '3': 1, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+  ],
+};
+
+/// Descriptor for `ChatMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List chatMessageDescriptor = $convert.base64Decode(
+    'CgtDaGF0TWVzc2FnZRIYCgdjb250ZW50GAEgASgJUgdjb250ZW50EhIKBHJvbGUYAiABKAlSBH'
+    'JvbGU=');
+

@@ -199,6 +199,36 @@ public final class Article {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_Sentence_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CorrectSentenceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CorrectSentenceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CorrectSentenceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CorrectSentenceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_Edits_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_Edits_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ArticleAIChatRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ArticleAIChatRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ArticleAIChatResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ArticleAIChatResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ChatMessage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ChatMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -339,8 +369,20 @@ public final class Article {
       "Sentence\022\025\n\rreject_reason\030\006 \001(\t\"+\n\tWrong" +
       "Word\022\014\n\004word\030\001 \001(\t\022\020\n\010position\030\002 \001(\003\",\n\010" +
       "Sentence\022\020\n\010sentence\030\001 \001(\t\022\016\n\006reason\030\002 \001" +
-      "(\tB*\n&com.zhijiejiaoyu.glory_api.short_v" +
-      "ideoP\001b\006proto3"
+      "(\t\"S\n\026CorrectSentenceRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010sentenc" +
+      "e\030\002 \001(\t\"a\n\027CorrectSentenceResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\037\n\005edi" +
+      "ts\030\002 \003(\0132\020.glory_api.Edits\"C\n\005Edits\022\023\n\013s" +
+      "ource_word\030\001 \001(\t\022\023\n\013target_word\030\002 \001(\t\022\020\n" +
+      "\010position\030\003 \001(\003\"Q\n\024ArticleAIChatRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\020\n\010question\030\002 \001(\t\"h\n\025ArticleAIChatRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022(\n\010messages\030\002 \003(\0132\026.glory_api.ChatMes" +
+      "sage\",\n\013ChatMessage\022\017\n\007content\030\001 \001(\t\022\014\n\004" +
+      "role\030\002 \001(\tB*\n&com.zhijiejiaoyu.glory_api" +
+      ".short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -570,6 +612,42 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Sentence_descriptor,
         new java.lang.String[] { "Sentence", "Reason", });
+    internal_static_glory_api_CorrectSentenceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_glory_api_CorrectSentenceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CorrectSentenceRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Sentence", });
+    internal_static_glory_api_CorrectSentenceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_glory_api_CorrectSentenceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CorrectSentenceResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Edits", });
+    internal_static_glory_api_Edits_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_glory_api_Edits_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_Edits_descriptor,
+        new java.lang.String[] { "SourceWord", "TargetWord", "Position", });
+    internal_static_glory_api_ArticleAIChatRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_glory_api_ArticleAIChatRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ArticleAIChatRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Question", });
+    internal_static_glory_api_ArticleAIChatResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_glory_api_ArticleAIChatResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ArticleAIChatResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Messages", });
+    internal_static_glory_api_ChatMessage_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_glory_api_ChatMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ChatMessage_descriptor,
+        new java.lang.String[] { "Content", "Role", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

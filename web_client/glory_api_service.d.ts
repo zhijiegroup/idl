@@ -1843,6 +1843,16 @@ CreateLivePlanProduct create live plan product */
   StudentArticleCreationEvaluationDetail(
     request: article.StudentArticleCreationEvaluationDetailRequest
   ): Promise<article.StudentArticleCreationEvaluationDetailResponse>;
+
+  /** 文案纠错 */
+  CorrectSentence(
+    request: article.CorrectSentenceRequest
+  ): Promise<article.CorrectSentenceResponse>;
+
+  /** 文案AI问答 */
+  ArticleAiChat(
+    request: article.ArticleAIChatRequest
+  ): Promise<article.ArticleAIChatResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

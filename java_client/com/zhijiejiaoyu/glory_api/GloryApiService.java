@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\342\235\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\340\237\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1382,8 +1382,14 @@ public final class GloryApiService {
       "tionDetailRequest\0329.glory_api.StudentArt" +
       "icleCreationEvaluationDetailResponse\"@\312\301" +
       "\030</api/article_creation/get_article_crea" +
-      "tion_evaluation_resultB\036\n\032com.zhijiejiao" +
-      "yu.glory_apiP\001b\006proto3"
+      "tion_evaluation_result\022\204\001\n\017CorrectSenten" +
+      "ce\022!.glory_api.CorrectSentenceRequest\032\"." +
+      "glory_api.CorrectSentenceResponse\"*\322\301\030&/" +
+      "api/article_creation/correct_sentence\022u\n" +
+      "\rArticleAiChat\022\037.glory_api.ArticleAIChat" +
+      "Request\032 .glory_api.ArticleAIChatRespons" +
+      "e\"!\322\301\030\035/api/article_creation/ai_chatB\036\n\032" +
+      "com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

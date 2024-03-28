@@ -489,6 +489,8 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'BatchEvaluateArticleCreation', '2': '.glory_api.BatchEvaluateArticleRequest', '3': '.glory_api.BatchEvaluateArticleResponse', '4': {}},
     {'1': 'ListStudentArticleCreation', '2': '.glory_api.ListStudentArticleCreationRequest', '3': '.glory_api.ListStudentArticleCreationResponse', '4': {}},
     {'1': 'StudentArticleCreationEvaluationDetail', '2': '.glory_api.StudentArticleCreationEvaluationDetailRequest', '3': '.glory_api.StudentArticleCreationEvaluationDetailResponse', '4': {}},
+    {'1': 'CorrectSentence', '2': '.glory_api.CorrectSentenceRequest', '3': '.glory_api.CorrectSentenceResponse', '4': {}},
+    {'1': 'ArticleAiChat', '2': '.glory_api.ArticleAIChatRequest', '3': '.glory_api.ArticleAIChatResponse', '4': {}},
   ],
 };
 
@@ -1540,6 +1542,12 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.WrongWord': $57.WrongWord$json,
   '.glory_api.Sentence': $57.Sentence$json,
   '.glory_api.ArticleCreationInfo': $57.ArticleCreationInfo$json,
+  '.glory_api.CorrectSentenceRequest': $57.CorrectSentenceRequest$json,
+  '.glory_api.CorrectSentenceResponse': $57.CorrectSentenceResponse$json,
+  '.glory_api.Edits': $57.Edits$json,
+  '.glory_api.ArticleAIChatRequest': $57.ArticleAIChatRequest$json,
+  '.glory_api.ArticleAIChatResponse': $57.ArticleAIChatResponse$json,
+  '.glory_api.ChatMessage': $57.ChatMessage$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2498,5 +2506,9 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'guZ2xvcnlfYXBpLlN0dWRlbnRBcnRpY2xlQ3JlYXRpb25FdmFsdWF0aW9uRGV0YWlsUmVxdWVz'
     'dBo5Lmdsb3J5X2FwaS5TdHVkZW50QXJ0aWNsZUNyZWF0aW9uRXZhbHVhdGlvbkRldGFpbFJlc3'
     'BvbnNlIkDKwRg8L2FwaS9hcnRpY2xlX2NyZWF0aW9uL2dldF9hcnRpY2xlX2NyZWF0aW9uX2V2'
-    'YWx1YXRpb25fcmVzdWx0');
+    'YWx1YXRpb25fcmVzdWx0EoQBCg9Db3JyZWN0U2VudGVuY2USIS5nbG9yeV9hcGkuQ29ycmVjdF'
+    'NlbnRlbmNlUmVxdWVzdBoiLmdsb3J5X2FwaS5Db3JyZWN0U2VudGVuY2VSZXNwb25zZSIq0sEY'
+    'Ji9hcGkvYXJ0aWNsZV9jcmVhdGlvbi9jb3JyZWN0X3NlbnRlbmNlEnUKDUFydGljbGVBaUNoYX'
+    'QSHy5nbG9yeV9hcGkuQXJ0aWNsZUFJQ2hhdFJlcXVlc3QaIC5nbG9yeV9hcGkuQXJ0aWNsZUFJ'
+    'Q2hhdFJlc3BvbnNlIiHSwRgdL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2FpX2NoYXQ=');
 

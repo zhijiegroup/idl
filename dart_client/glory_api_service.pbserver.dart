@@ -491,6 +491,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.BatchEvaluateArticleResponse> batchEvaluateArticleCreation($pb.ServerContext ctx, $57.BatchEvaluateArticleRequest request);
   $async.Future<$57.ListStudentArticleCreationResponse> listStudentArticleCreation($pb.ServerContext ctx, $57.ListStudentArticleCreationRequest request);
   $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ServerContext ctx, $57.StudentArticleCreationEvaluationDetailRequest request);
+  $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ServerContext ctx, $57.CorrectSentenceRequest request);
+  $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ServerContext ctx, $57.ArticleAIChatRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -907,6 +909,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'BatchEvaluateArticleCreation': return $57.BatchEvaluateArticleRequest();
       case 'ListStudentArticleCreation': return $57.ListStudentArticleCreationRequest();
       case 'StudentArticleCreationEvaluationDetail': return $57.StudentArticleCreationEvaluationDetailRequest();
+      case 'CorrectSentence': return $57.CorrectSentenceRequest();
+      case 'ArticleAiChat': return $57.ArticleAIChatRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1326,6 +1330,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'BatchEvaluateArticleCreation': return this.batchEvaluateArticleCreation(ctx, request as $57.BatchEvaluateArticleRequest);
       case 'ListStudentArticleCreation': return this.listStudentArticleCreation(ctx, request as $57.ListStudentArticleCreationRequest);
       case 'StudentArticleCreationEvaluationDetail': return this.studentArticleCreationEvaluationDetail(ctx, request as $57.StudentArticleCreationEvaluationDetailRequest);
+      case 'CorrectSentence': return this.correctSentence(ctx, request as $57.CorrectSentenceRequest);
+      case 'ArticleAiChat': return this.articleAiChat(ctx, request as $57.ArticleAIChatRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

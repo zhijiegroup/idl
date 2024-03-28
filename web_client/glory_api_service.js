@@ -3295,6 +3295,22 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/article_creation/get_article_creation_evaluation_result${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  CorrectSentence(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/correct_sentence`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ArticleAiChat(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/ai_chat`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

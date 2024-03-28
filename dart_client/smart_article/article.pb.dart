@@ -3371,6 +3371,402 @@ class Sentence extends $pb.GeneratedMessage {
   void clearReason() => clearField(2);
 }
 
+/// 文案纠错接口
+class CorrectSentenceRequest extends $pb.GeneratedMessage {
+  factory CorrectSentenceRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? sentence,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (sentence != null) {
+      $result.sentence = sentence;
+    }
+    return $result;
+  }
+  CorrectSentenceRequest._() : super();
+  factory CorrectSentenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CorrectSentenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CorrectSentenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'sentence')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CorrectSentenceRequest clone() => CorrectSentenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CorrectSentenceRequest copyWith(void Function(CorrectSentenceRequest) updates) => super.copyWith((message) => updates(message as CorrectSentenceRequest)) as CorrectSentenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CorrectSentenceRequest create() => CorrectSentenceRequest._();
+  CorrectSentenceRequest createEmptyInstance() => create();
+  static $pb.PbList<CorrectSentenceRequest> createRepeated() => $pb.PbList<CorrectSentenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CorrectSentenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CorrectSentenceRequest>(create);
+  static CorrectSentenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get sentence => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sentence($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSentence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSentence() => clearField(2);
+}
+
+class CorrectSentenceResponse extends $pb.GeneratedMessage {
+  factory CorrectSentenceResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<Edits>? edits,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (edits != null) {
+      $result.edits.addAll(edits);
+    }
+    return $result;
+  }
+  CorrectSentenceResponse._() : super();
+  factory CorrectSentenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CorrectSentenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CorrectSentenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<Edits>(2, _omitFieldNames ? '' : 'edits', $pb.PbFieldType.PM, subBuilder: Edits.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CorrectSentenceResponse clone() => CorrectSentenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CorrectSentenceResponse copyWith(void Function(CorrectSentenceResponse) updates) => super.copyWith((message) => updates(message as CorrectSentenceResponse)) as CorrectSentenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CorrectSentenceResponse create() => CorrectSentenceResponse._();
+  CorrectSentenceResponse createEmptyInstance() => create();
+  static $pb.PbList<CorrectSentenceResponse> createRepeated() => $pb.PbList<CorrectSentenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CorrectSentenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CorrectSentenceResponse>(create);
+  static CorrectSentenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Edits> get edits => $_getList(1);
+}
+
+class Edits extends $pb.GeneratedMessage {
+  factory Edits({
+    $core.String? sourceWord,
+    $core.String? targetWord,
+    $fixnum.Int64? position,
+  }) {
+    final $result = create();
+    if (sourceWord != null) {
+      $result.sourceWord = sourceWord;
+    }
+    if (targetWord != null) {
+      $result.targetWord = targetWord;
+    }
+    if (position != null) {
+      $result.position = position;
+    }
+    return $result;
+  }
+  Edits._() : super();
+  factory Edits.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Edits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edits', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceWord')
+    ..aOS(2, _omitFieldNames ? '' : 'targetWord')
+    ..aInt64(3, _omitFieldNames ? '' : 'position')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Edits clone() => Edits()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Edits copyWith(void Function(Edits) updates) => super.copyWith((message) => updates(message as Edits)) as Edits;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Edits create() => Edits._();
+  Edits createEmptyInstance() => create();
+  static $pb.PbList<Edits> createRepeated() => $pb.PbList<Edits>();
+  @$core.pragma('dart2js:noInline')
+  static Edits getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Edits>(create);
+  static Edits? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceWord => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceWord($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSourceWord() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceWord() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetWord => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetWord($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTargetWord() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetWord() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get position => $_getI64(2);
+  @$pb.TagNumber(3)
+  set position($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPosition() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPosition() => clearField(3);
+}
+
+/// 文案ai聊天
+class ArticleAIChatRequest extends $pb.GeneratedMessage {
+  factory ArticleAIChatRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? question,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (question != null) {
+      $result.question = question;
+    }
+    return $result;
+  }
+  ArticleAIChatRequest._() : super();
+  factory ArticleAIChatRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ArticleAIChatRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleAIChatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'question')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ArticleAIChatRequest clone() => ArticleAIChatRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ArticleAIChatRequest copyWith(void Function(ArticleAIChatRequest) updates) => super.copyWith((message) => updates(message as ArticleAIChatRequest)) as ArticleAIChatRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArticleAIChatRequest create() => ArticleAIChatRequest._();
+  ArticleAIChatRequest createEmptyInstance() => create();
+  static $pb.PbList<ArticleAIChatRequest> createRepeated() => $pb.PbList<ArticleAIChatRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ArticleAIChatRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ArticleAIChatRequest>(create);
+  static ArticleAIChatRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get question => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set question($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasQuestion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuestion() => clearField(2);
+}
+
+class ArticleAIChatResponse extends $pb.GeneratedMessage {
+  factory ArticleAIChatResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<ChatMessage>? messages,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (messages != null) {
+      $result.messages.addAll(messages);
+    }
+    return $result;
+  }
+  ArticleAIChatResponse._() : super();
+  factory ArticleAIChatResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ArticleAIChatResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleAIChatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<ChatMessage>(2, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: ChatMessage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ArticleAIChatResponse clone() => ArticleAIChatResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ArticleAIChatResponse copyWith(void Function(ArticleAIChatResponse) updates) => super.copyWith((message) => updates(message as ArticleAIChatResponse)) as ArticleAIChatResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArticleAIChatResponse create() => ArticleAIChatResponse._();
+  ArticleAIChatResponse createEmptyInstance() => create();
+  static $pb.PbList<ArticleAIChatResponse> createRepeated() => $pb.PbList<ArticleAIChatResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ArticleAIChatResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ArticleAIChatResponse>(create);
+  static ArticleAIChatResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<ChatMessage> get messages => $_getList(1);
+}
+
+class ChatMessage extends $pb.GeneratedMessage {
+  factory ChatMessage({
+    $core.String? content,
+    $core.String? role,
+  }) {
+    final $result = create();
+    if (content != null) {
+      $result.content = content;
+    }
+    if (role != null) {
+      $result.role = role;
+    }
+    return $result;
+  }
+  ChatMessage._() : super();
+  factory ChatMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChatMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChatMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'content')
+    ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChatMessage clone() => ChatMessage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChatMessage copyWith(void Function(ChatMessage) updates) => super.copyWith((message) => updates(message as ChatMessage)) as ChatMessage;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChatMessage create() => ChatMessage._();
+  ChatMessage createEmptyInstance() => create();
+  static $pb.PbList<ChatMessage> createRepeated() => $pb.PbList<ChatMessage>();
+  @$core.pragma('dart2js:noInline')
+  static ChatMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChatMessage>(create);
+  static ChatMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get content => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set content($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasContent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContent() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get role => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set role($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
