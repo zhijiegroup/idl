@@ -1586,5 +1586,13 @@ service glory_api {
   rpc StudentArticleCreationEvaluationDetail(StudentArticleCreationEvaluationDetailRequest) returns (StudentArticleCreationEvaluationDetailResponse) {
     option (api.get) = '/api/article_creation/get_article_creation_evaluation_result';
   }
+  // 文案纠错
+  rpc CorrectSentence(CorrectSentenceRequest) returns (CorrectSentenceResponse) {
+    option (api.post) = '/api/article_creation/correct_sentence';
+  }
+  // 文案AI问答
+  rpc ArticleAiChat(ArticleAIChatRequest) returns (ArticleAIChatResponse) {
+    option (api.post) = '/api/article_creation/ai_chat';
+  }
 
 }

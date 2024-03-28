@@ -264,3 +264,36 @@ message Sentence {
     string sentence = 1;
     string reason  = 2;
 }
+
+// 文案纠错接口
+message CorrectSentenceRequest {
+    base.BaseRequest base_request = 1;
+    string sentence = 2;
+}
+
+message CorrectSentenceResponse {
+    base.BaseResponse base_resp = 1;
+    repeated Edits edits = 2;
+}
+
+message Edits {
+    string source_word = 1;
+    string target_word = 2;
+    int64 position = 3;
+}
+
+// 文案ai聊天
+message ArticleAIChatRequest {
+    base.BaseRequest base_request = 1;
+    string question = 2;
+}
+
+message ArticleAIChatResponse {
+    base.BaseResponse base_resp = 1;
+    repeated ChatMessage messages = 2;
+}
+
+message ChatMessage {
+    string content = 1;
+    string role = 2;
+}
