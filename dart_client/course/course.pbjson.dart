@@ -202,7 +202,7 @@ const ListCourseRequest$json = {
   '1': 'ListCourseRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'course_classification', '3': 2, '4': 1, '5': 5, '10': 'courseClassification'},
+    {'1': 'course_classification', '3': 2, '4': 3, '5': 5, '10': 'courseClassification'},
     {'1': 'course_module', '3': 3, '4': 1, '5': 5, '10': 'courseModule'},
     {'1': 'major', '3': 4, '4': 3, '5': 9, '10': 'major'},
     {'1': 'level', '3': 5, '4': 3, '5': 5, '10': 'level'},
@@ -216,7 +216,7 @@ const ListCourseRequest$json = {
 /// Descriptor for `ListCourseRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listCourseRequestDescriptor = $convert.base64Decode(
     'ChFMaXN0Q291cnNlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZX'
-    'F1ZXN0UgtiYXNlUmVxdWVzdBIzChVjb3Vyc2VfY2xhc3NpZmljYXRpb24YAiABKAVSFGNvdXJz'
+    'F1ZXN0UgtiYXNlUmVxdWVzdBIzChVjb3Vyc2VfY2xhc3NpZmljYXRpb24YAiADKAVSFGNvdXJz'
     'ZUNsYXNzaWZpY2F0aW9uEiMKDWNvdXJzZV9tb2R1bGUYAyABKAVSDGNvdXJzZU1vZHVsZRIUCg'
     'VtYWpvchgEIAMoCVIFbWFqb3ISFAoFbGV2ZWwYBSADKAVSBWxldmVsEh8KC2NvdXJzZV90eXBl'
     'GAYgAygFUgpjb3Vyc2VUeXBlEicKD2NvdXJzZV9pbmR1c3RyeRgHIAEoCVIOY291cnNlSW5kdX'

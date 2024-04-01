@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListCourseRequest() {
+    courseClassification = emptyIntList();
     major = com.google.protobuf.LazyStringArrayList.EMPTY;
     level = emptyIntList();
     courseType = emptyIntList();
@@ -71,8 +72,24 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 16: {
-
-            courseClassification = input.readInt32();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              courseClassification = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            courseClassification .addInt(input.readInt32());
+            break;
+          }
+          case 18: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              courseClassification = newIntList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              courseClassification .addInt(input.readInt32());
+            }
+            input.popLimit(limit);
             break;
           }
           case 24: {
@@ -82,17 +99,17 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
               major = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             major .add(s);
             break;
           }
           case 40: {
-            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+            if (!((mutable_bitField0 & 0x00000004) != 0)) {
               level = newIntList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             level .addInt(input.readInt32());
             break;
@@ -100,9 +117,9 @@ private static final long serialVersionUID = 0L;
           case 42: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0 & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0 & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
               level = newIntList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             while (input.getBytesUntilLimit() > 0) {
               level .addInt(input.readInt32());
@@ -111,9 +128,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 48: {
-            if (!((mutable_bitField0 & 0x00000004) != 0)) {
+            if (!((mutable_bitField0 & 0x00000008) != 0)) {
               courseType = newIntList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             courseType .addInt(input.readInt32());
             break;
@@ -121,9 +138,9 @@ private static final long serialVersionUID = 0L;
           case 50: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0 & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0 & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
               courseType = newIntList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             while (input.getBytesUntilLimit() > 0) {
               courseType .addInt(input.readInt32());
@@ -171,12 +188,15 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        major = major .getUnmodifiableView();
+        courseClassification .makeImmutable(); // C
       }
       if (((mutable_bitField0 & 0x00000002) != 0)) {
-        level .makeImmutable(); // C
+        major = major .getUnmodifiableView();
       }
       if (((mutable_bitField0 & 0x00000004) != 0)) {
+        level .makeImmutable(); // C
+      }
+      if (((mutable_bitField0 & 0x00000008) != 0)) {
         courseType .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
@@ -223,19 +243,44 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COURSE_CLASSIFICATION_FIELD_NUMBER = 2;
-  private int courseClassification ;
+  private com.google.protobuf.Internal.IntList courseClassification ;
   /**
    * <pre>
    * 课程分类
    * </pre>
    *
-   * <code>int32 course_classification = 2;</code>
-   * @return The courseClassification.
+   * <code>repeated int32 course_classification = 2;</code>
+   * @return A list containing the courseClassification.
    */
   @java.lang.Override
-  public int getCourseClassification() {
+  public java.util.List<java.lang.Integer>
+      getCourseClassificationList() {
     return courseClassification ;
   }
+  /**
+   * <pre>
+   * 课程分类
+   * </pre>
+   *
+   * <code>repeated int32 course_classification = 2;</code>
+   * @return The count of courseClassification.
+   */
+  public int getCourseClassificationCount() {
+    return courseClassification .size();
+  }
+  /**
+   * <pre>
+   * 课程分类
+   * </pre>
+   *
+   * <code>repeated int32 course_classification = 2;</code>
+   * @param index The index of the element to return.
+   * @return The courseClassification at the given index.
+   */
+  public int getCourseClassification(int index) {
+    return courseClassification .getInt(index);
+  }
+  private int courseClassificationMemoizedSerializedSize = -1;
 
   public static final int COURSE_MODULE_FIELD_NUMBER = 3;
   private int courseModule ;
@@ -347,7 +392,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.IntList courseType ;
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>
@@ -360,7 +405,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>
@@ -371,7 +416,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>
@@ -488,8 +533,12 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (courseClassification != 0) {
-      output.writeInt32(2, courseClassification );
+    if (getCourseClassificationList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(courseClassificationMemoizedSerializedSize);
+    }
+    for (int i = 0; i < courseClassification .size(); i++) {
+      output.writeInt32NoTag(courseClassification .getInt(i));
     }
     if (courseModule != 0) {
       output.writeInt32(3, courseModule );
@@ -533,9 +582,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (courseClassification != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, courseClassification );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < courseClassification .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(courseClassification .getInt(i));
+      }
+      size += dataSize;
+      if (!getCourseClassificationList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      courseClassificationMemoizedSerializedSize = dataSize;
     }
     if (courseModule != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -608,8 +667,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (getCourseClassification()
-        != other.getCourseClassification()) return false;
+    if (!getCourseClassificationList()
+        .equals(other.getCourseClassificationList())) return false;
     if (getCourseModule()
         != other.getCourseModule()) return false;
     if (!getMajorList()
@@ -642,8 +701,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + COURSE_CLASSIFICATION_FIELD_NUMBER;
-    hash = (53 * hash) + getCourseClassification();
+    if (getCourseClassificationCount() > 0) {
+      hash = (37 * hash) + COURSE_CLASSIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getCourseClassificationList().hashCode();
+    }
     hash = (37 * hash) + COURSE_MODULE_FIELD_NUMBER;
     hash = (53 * hash) + getCourseModule();
     if (getMajorCount() > 0) {
@@ -810,16 +871,16 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      courseClassification = 0;
-
+      courseClassification = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
       courseModule = 0;
 
       major = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
-      level = emptyIntList();
       bitField0 = (bitField0 & ~0x00000002);
-      courseType = emptyIntList();
+      level = emptyIntList();
       bitField0 = (bitField0 & ~0x00000004);
+      courseType = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000008);
       courseIndustry = "";
 
       simple = false;
@@ -862,21 +923,25 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.courseClassification = courseClassification ;
-      result.courseModule = courseModule ;
       if (((bitField0 & 0x00000001) != 0)) {
-        major = major .getUnmodifiableView();
+        courseClassification .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
       }
-      result.major = major ;
+      result.courseClassification = courseClassification ;
+      result.courseModule = courseModule ;
       if (((bitField0 & 0x00000002) != 0)) {
-        level .makeImmutable();
+        major = major .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000002);
       }
-      result.level = level ;
+      result.major = major ;
       if (((bitField0 & 0x00000004) != 0)) {
-        courseType .makeImmutable();
+        level .makeImmutable();
         bitField0 = (bitField0 & ~0x00000004);
+      }
+      result.level = level ;
+      if (((bitField0 & 0x00000008) != 0)) {
+        courseType .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000008);
       }
       result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
@@ -937,8 +1002,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (other.getCourseClassification() != 0) {
-        setCourseClassification(other.getCourseClassification());
+      if (!other.courseClassification .isEmpty()) {
+        if (courseClassification .isEmpty()) {
+          courseClassification = other.courseClassification ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureCourseClassificationIsMutable();
+          courseClassification .addAll(other.courseClassification );
+        }
+        onChanged();
       }
       if (other.getCourseModule() != 0) {
         setCourseModule(other.getCourseModule());
@@ -946,7 +1018,7 @@ private static final long serialVersionUID = 0L;
       if (!other.major .isEmpty()) {
         if (major .isEmpty()) {
           major = other.major ;
-          bitField0 = (bitField0 & ~0x00000001);
+          bitField0 = (bitField0 & ~0x00000002);
         } else {
           ensureMajorIsMutable();
           major .addAll(other.major );
@@ -956,7 +1028,7 @@ private static final long serialVersionUID = 0L;
       if (!other.level .isEmpty()) {
         if (level .isEmpty()) {
           level = other.level ;
-          bitField0 = (bitField0 & ~0x00000002);
+          bitField0 = (bitField0 & ~0x00000004);
         } else {
           ensureLevelIsMutable();
           level .addAll(other.level );
@@ -966,7 +1038,7 @@ private static final long serialVersionUID = 0L;
       if (!other.courseType .isEmpty()) {
         if (courseType .isEmpty()) {
           courseType = other.courseType ;
-          bitField0 = (bitField0 & ~0x00000004);
+          bitField0 = (bitField0 & ~0x00000008);
         } else {
           ensureCourseTypeIsMutable();
           courseType .addAll(other.courseType );
@@ -1132,31 +1204,63 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private int courseClassification ;
-    /**
-     * <pre>
-     * 课程分类
-     * </pre>
-     *
-     * <code>int32 course_classification = 2;</code>
-     * @return The courseClassification.
-     */
-    @java.lang.Override
-    public int getCourseClassification() {
-      return courseClassification ;
+    private com.google.protobuf.Internal.IntList courseClassification = emptyIntList();
+    private void ensureCourseClassificationIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        courseClassification = mutableCopy(courseClassification );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
      * <pre>
      * 课程分类
      * </pre>
      *
-     * <code>int32 course_classification = 2;</code>
+     * <code>repeated int32 course_classification = 2;</code>
+     * @return A list containing the courseClassification.
+     */
+    public java.util.List<java.lang.Integer>
+        getCourseClassificationList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(courseClassification ) : courseClassification ;
+    }
+    /**
+     * <pre>
+     * 课程分类
+     * </pre>
+     *
+     * <code>repeated int32 course_classification = 2;</code>
+     * @return The count of courseClassification.
+     */
+    public int getCourseClassificationCount() {
+      return courseClassification .size();
+    }
+    /**
+     * <pre>
+     * 课程分类
+     * </pre>
+     *
+     * <code>repeated int32 course_classification = 2;</code>
+     * @param index The index of the element to return.
+     * @return The courseClassification at the given index.
+     */
+    public int getCourseClassification(int index) {
+      return courseClassification .getInt(index);
+    }
+    /**
+     * <pre>
+     * 课程分类
+     * </pre>
+     *
+     * <code>repeated int32 course_classification = 2;</code>
+     * @param index The index to set the value at.
      * @param value The courseClassification to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseClassification(int value) {
-      
-      courseClassification = value;
+    public Builder setCourseClassification(
+        int index, int value) {
+      ensureCourseClassificationIsMutable();
+      courseClassification .setInt(index, value);
       onChanged();
       return this;
     }
@@ -1165,12 +1269,44 @@ private static final long serialVersionUID = 0L;
      * 课程分类
      * </pre>
      *
-     * <code>int32 course_classification = 2;</code>
+     * <code>repeated int32 course_classification = 2;</code>
+     * @param value The courseClassification to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCourseClassification(int value) {
+      ensureCourseClassificationIsMutable();
+      courseClassification .addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程分类
+     * </pre>
+     *
+     * <code>repeated int32 course_classification = 2;</code>
+     * @param values The courseClassification to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCourseClassification(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureCourseClassificationIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, courseClassification );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程分类
+     * </pre>
+     *
+     * <code>repeated int32 course_classification = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearCourseClassification() {
-      
-      courseClassification = 0;
+      courseClassification = emptyIntList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1220,9 +1356,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList major = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureMajorIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
+      if (!((bitField0 & 0x00000002) != 0)) {
         major = new com.google.protobuf.LazyStringArrayList(major );
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1339,7 +1475,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearMajor() {
       major = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
+      bitField0 = (bitField0 & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1366,9 +1502,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Internal.IntList level = emptyIntList();
     private void ensureLevelIsMutable() {
-      if (!((bitField0 & 0x00000002) != 0)) {
+      if (!((bitField0 & 0x00000004) != 0)) {
         level = mutableCopy(level );
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1381,7 +1517,7 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<java.lang.Integer>
         getLevelList() {
-      return ((bitField0 & 0x00000002) != 0) ?
+      return ((bitField0 & 0x00000004) != 0) ?
                java.util.Collections.unmodifiableList(level ) : level ;
     }
     /**
@@ -1466,21 +1602,21 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLevel() {
       level = emptyIntList();
-      bitField0 = (bitField0 & ~0x00000002);
+      bitField0 = (bitField0 & ~0x00000004);
       onChanged();
       return this;
     }
 
     private com.google.protobuf.Internal.IntList courseType = emptyIntList();
     private void ensureCourseTypeIsMutable() {
-      if (!((bitField0 & 0x00000004) != 0)) {
+      if (!((bitField0 & 0x00000008) != 0)) {
         courseType = mutableCopy(courseType );
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1488,12 +1624,12 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<java.lang.Integer>
         getCourseTypeList() {
-      return ((bitField0 & 0x00000004) != 0) ?
+      return ((bitField0 & 0x00000008) != 0) ?
                java.util.Collections.unmodifiableList(courseType ) : courseType ;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1504,7 +1640,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1516,7 +1652,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1533,7 +1669,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1548,7 +1684,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1565,7 +1701,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 1: 专业核心课 2:名师公开课 
+     * 1: 专业核心课 2:名师公开课
      * </pre>
      *
      * <code>repeated int32 course_type = 6;</code>
@@ -1573,7 +1709,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearCourseType() {
       courseType = emptyIntList();
-      bitField0 = (bitField0 & ~0x00000004);
+      bitField0 = (bitField0 & ~0x00000008);
       onChanged();
       return this;
     }
