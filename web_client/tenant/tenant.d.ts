@@ -20,6 +20,8 @@ export interface Tenant {
   admin_phone?: string;
   business_system?: Array<string>;
   platform?: string;
+  course_total_count?: number;
+  courses?: Array<string>;
 }
 
 export interface CreateTenantRequest {

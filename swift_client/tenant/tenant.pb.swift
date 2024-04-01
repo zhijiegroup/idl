@@ -47,6 +47,10 @@ struct GloryApi_Tenant {
 
   var platform: String = String()
 
+  var courseTotalCount: Int32 = 0
+
+  var courses: [String] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -779,6 +783,8 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     9: .standard(proto: "admin_phone"),
     10: .standard(proto: "business_system"),
     11: .same(proto: "platform"),
+    12: .standard(proto: "course_total_count"),
+    13: .same(proto: "courses"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -795,6 +801,8 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       case 9: try { try decoder.decodeSingularStringField(value: &self.adminPhone) }()
       case 10: try { try decoder.decodeRepeatedStringField(value: &self.businessSystem) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.platform) }()
+      case 12: try { try decoder.decodeSingularInt32Field(value: &self.courseTotalCount) }()
+      case 13: try { try decoder.decodeRepeatedStringField(value: &self.courses) }()
       default: break
       }
     }
@@ -825,6 +833,12 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if !self.platform.isEmpty {
       try visitor.visitSingularStringField(value: self.platform, fieldNumber: 11)
     }
+    if self.courseTotalCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.courseTotalCount, fieldNumber: 12)
+    }
+    if !self.courses.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.courses, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -837,6 +851,8 @@ extension GloryApi_Tenant: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     if lhs.adminPhone != rhs.adminPhone {return false}
     if lhs.businessSystem != rhs.businessSystem {return false}
     if lhs.platform != rhs.platform {return false}
+    if lhs.courseTotalCount != rhs.courseTotalCount {return false}
+    if lhs.courses != rhs.courses {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

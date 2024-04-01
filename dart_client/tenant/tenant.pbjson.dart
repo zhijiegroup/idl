@@ -25,6 +25,8 @@ const Tenant$json = {
     {'1': 'admin_phone', '3': 9, '4': 1, '5': 9, '10': 'adminPhone'},
     {'1': 'business_system', '3': 10, '4': 3, '5': 9, '10': 'businessSystem'},
     {'1': 'platform', '3': 11, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'course_total_count', '3': 12, '4': 1, '5': 5, '10': 'courseTotalCount'},
+    {'1': 'courses', '3': 13, '4': 3, '5': 9, '10': 'courses'},
   ],
 };
 
@@ -35,7 +37,8 @@ final $typed_data.Uint8List tenantDescriptor = $convert.base64Decode(
     'JwoPdGVuYW50X292ZXJ2aWV3GAQgASgJUg50ZW5hbnRPdmVydmlldxIdCgphZG1pbl9uYW1lGA'
     'ggASgJUglhZG1pbk5hbWUSHwoLYWRtaW5fcGhvbmUYCSABKAlSCmFkbWluUGhvbmUSJwoPYnVz'
     'aW5lc3Nfc3lzdGVtGAogAygJUg5idXNpbmVzc1N5c3RlbRIaCghwbGF0Zm9ybRgLIAEoCVIIcG'
-    'xhdGZvcm0=');
+    'xhdGZvcm0SLAoSY291cnNlX3RvdGFsX2NvdW50GAwgASgFUhBjb3Vyc2VUb3RhbENvdW50EhgK'
+    'B2NvdXJzZXMYDSADKAlSB2NvdXJzZXM=');
 
 @$core.Deprecated('Use createTenantRequestDescriptor instead')
 const CreateTenantRequest$json = {

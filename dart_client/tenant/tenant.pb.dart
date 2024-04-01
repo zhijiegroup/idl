@@ -26,6 +26,8 @@ class Tenant extends $pb.GeneratedMessage {
     $core.String? adminPhone,
     $core.Iterable<$core.String>? businessSystem,
     $core.String? platform,
+    $core.int? courseTotalCount,
+    $core.Iterable<$core.String>? courses,
   }) {
     final $result = create();
     if (tenantId != null) {
@@ -52,6 +54,12 @@ class Tenant extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
+    if (courseTotalCount != null) {
+      $result.courseTotalCount = courseTotalCount;
+    }
+    if (courses != null) {
+      $result.courses.addAll(courses);
+    }
     return $result;
   }
   Tenant._() : super();
@@ -67,6 +75,8 @@ class Tenant extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'adminPhone')
     ..pPS(10, _omitFieldNames ? '' : 'businessSystem')
     ..aOS(11, _omitFieldNames ? '' : 'platform')
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'courseTotalCount', $pb.PbFieldType.O3)
+    ..pPS(13, _omitFieldNames ? '' : 'courses')
     ..hasRequiredFields = false
   ;
 
@@ -156,6 +166,18 @@ class Tenant extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(7);
   @$pb.TagNumber(11)
   void clearPlatform() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get courseTotalCount => $_getIZ(8);
+  @$pb.TagNumber(12)
+  set courseTotalCount($core.int v) { $_setSignedInt32(8, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCourseTotalCount() => $_has(8);
+  @$pb.TagNumber(12)
+  void clearCourseTotalCount() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.List<$core.String> get courses => $_getList(9);
 }
 
 class CreateTenantRequest extends $pb.GeneratedMessage {

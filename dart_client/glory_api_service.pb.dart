@@ -728,6 +728,9 @@ class glory_apiApi {
   $async.Future<$30.CreateTenantCourseResponse> createTenantCourse($pb.ClientContext? ctx, $30.CreateTenantCourseRequest request) =>
     _client.invoke<$30.CreateTenantCourseResponse>(ctx, 'glory_api', 'CreateTenantCourse', request, $30.CreateTenantCourseResponse())
   ;
+  $async.Future<$30.ListTenantResponse> listTenantCourse($pb.ClientContext? ctx, $30.ListTenantRequest request) =>
+    _client.invoke<$30.ListTenantResponse>(ctx, 'glory_api', 'ListTenantCourse', request, $30.ListTenantResponse())
+  ;
   $async.Future<$31.CreateTenantDeptResponse> createTenantDept($pb.ClientContext? ctx, $31.CreateTenantDeptRequest request) =>
     _client.invoke<$31.CreateTenantDeptResponse>(ctx, 'glory_api', 'CreateTenantDept', request, $31.CreateTenantDeptResponse())
   ;

@@ -153,4 +153,35 @@ public interface TenantOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPlatformBytes();
+
+  /**
+   * <code>int32 course_total_count = 12;</code>
+   * @return The courseTotalCount.
+   */
+  int getCourseTotalCount();
+
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @return A list containing the courses.
+   */
+  java.util.List<java.lang.String>
+      getCoursesList();
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @return The count of courses.
+   */
+  int getCoursesCount();
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @param index The index of the element to return.
+   * @return The courses at the given index.
+   */
+  java.lang.String getCourses(int index);
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the courses at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCoursesBytes(int index);
 }

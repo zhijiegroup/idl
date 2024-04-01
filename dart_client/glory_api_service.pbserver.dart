@@ -295,6 +295,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$30.IsTenantResponse> isEnterTenant($pb.ServerContext ctx, $30.IsEnterTenantRequest request);
   $async.Future<$30.InitTenantResponse> initTenant($pb.ServerContext ctx, $30.InitTenantRequest request);
   $async.Future<$30.CreateTenantCourseResponse> createTenantCourse($pb.ServerContext ctx, $30.CreateTenantCourseRequest request);
+  $async.Future<$30.ListTenantResponse> listTenantCourse($pb.ServerContext ctx, $30.ListTenantRequest request);
   $async.Future<$31.CreateTenantDeptResponse> createTenantDept($pb.ServerContext ctx, $31.CreateTenantDeptRequest request);
   $async.Future<$31.UpdateTenantDeptResponse> updateTenantDept($pb.ServerContext ctx, $31.UpdateTenantDeptRequest request);
   $async.Future<$31.DeleteTenantDeptResponse> deleteTenantDept($pb.ServerContext ctx, $31.DeleteTenantDeptRequest request);
@@ -714,6 +715,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'IsEnterTenant': return $30.IsEnterTenantRequest();
       case 'InitTenant': return $30.InitTenantRequest();
       case 'CreateTenantCourse': return $30.CreateTenantCourseRequest();
+      case 'ListTenantCourse': return $30.ListTenantRequest();
       case 'CreateTenantDept': return $31.CreateTenantDeptRequest();
       case 'UpdateTenantDept': return $31.UpdateTenantDeptRequest();
       case 'DeleteTenantDept': return $31.DeleteTenantDeptRequest();
@@ -1136,6 +1138,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'IsEnterTenant': return this.isEnterTenant(ctx, request as $30.IsEnterTenantRequest);
       case 'InitTenant': return this.initTenant(ctx, request as $30.InitTenantRequest);
       case 'CreateTenantCourse': return this.createTenantCourse(ctx, request as $30.CreateTenantCourseRequest);
+      case 'ListTenantCourse': return this.listTenantCourse(ctx, request as $30.ListTenantRequest);
       case 'CreateTenantDept': return this.createTenantDept(ctx, request as $31.CreateTenantDeptRequest);
       case 'UpdateTenantDept': return this.updateTenantDept(ctx, request as $31.UpdateTenantDeptRequest);
       case 'DeleteTenantDept': return this.deleteTenantDept(ctx, request as $31.DeleteTenantDeptRequest);

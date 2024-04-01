@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     adminPhone = "";
     businessSystem = com.google.protobuf.LazyStringArrayList.EMPTY;
     platform = "";
+    courses = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -106,6 +107,20 @@ private static final long serialVersionUID = 0L;
             platform = s;
             break;
           }
+          case 96: {
+
+            courseTotalCount = input.readInt32();
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              courses = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            courses .add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -123,6 +138,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
         businessSystem = businessSystem .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        courses = courses .getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -459,6 +477,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COURSE_TOTAL_COUNT_FIELD_NUMBER = 12;
+  private int courseTotalCount ;
+  /**
+   * <code>int32 course_total_count = 12;</code>
+   * @return The courseTotalCount.
+   */
+  @java.lang.Override
+  public int getCourseTotalCount() {
+    return courseTotalCount ;
+  }
+
+  public static final int COURSES_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList courses ;
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @return A list containing the courses.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getCoursesList() {
+    return courses ;
+  }
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @return The count of courses.
+   */
+  public int getCoursesCount() {
+    return courses .size();
+  }
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @param index The index of the element to return.
+   * @return The courses at the given index.
+   */
+  public java.lang.String getCourses(int index) {
+    return courses .get(index);
+  }
+  /**
+   * <code>repeated string courses = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the courses at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getCoursesBytes(int index) {
+    return courses .getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -496,6 +560,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, platform );
+    }
+    if (courseTotalCount != 0) {
+      output.writeInt32(12, courseTotalCount );
+    }
+    for (int i = 0; i < courses .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, courses .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -536,6 +606,18 @@ private static final long serialVersionUID = 0L;
     if (!getPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, platform );
     }
+    if (courseTotalCount != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, courseTotalCount );
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < courses .size(); i++) {
+        dataSize += computeStringSizeNoTag(courses .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCoursesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -567,6 +649,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBusinessSystemList())) return false;
     if (!getPlatform()
         .equals(other.getPlatform())) return false;
+    if (getCourseTotalCount()
+        != other.getCourseTotalCount()) return false;
+    if (!getCoursesList()
+        .equals(other.getCoursesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -597,6 +683,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getPlatform().hashCode();
+    hash = (37 * hash) + COURSE_TOTAL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getCourseTotalCount();
+    if (getCoursesCount() > 0) {
+      hash = (37 * hash) + COURSES_FIELD_NUMBER;
+      hash = (53 * hash) + getCoursesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -746,6 +838,10 @@ private static final long serialVersionUID = 0L;
       bitField0 = (bitField0 & ~0x00000001);
       platform = "";
 
+      courseTotalCount = 0;
+
+      courses = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
       return this;
     }
 
@@ -785,6 +881,12 @@ private static final long serialVersionUID = 0L;
       }
       result.businessSystem = businessSystem ;
       result.platform = platform ;
+      result.courseTotalCount = courseTotalCount ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        courses = courses .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
+      result.courses = courses ;
       onBuilt();
       return result;
     }
@@ -868,6 +970,19 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPlatform().isEmpty()) {
         platform = other.platform ;
+        onChanged();
+      }
+      if (other.getCourseTotalCount() != 0) {
+        setCourseTotalCount(other.getCourseTotalCount());
+      }
+      if (!other.courses .isEmpty()) {
+        if (courses .isEmpty()) {
+          courses = other.courses ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureCoursesIsMutable();
+          courses .addAll(other.courses );
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1605,6 +1720,147 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       platform = value;
+      onChanged();
+      return this;
+    }
+
+    private int courseTotalCount ;
+    /**
+     * <code>int32 course_total_count = 12;</code>
+     * @return The courseTotalCount.
+     */
+    @java.lang.Override
+    public int getCourseTotalCount() {
+      return courseTotalCount ;
+    }
+    /**
+     * <code>int32 course_total_count = 12;</code>
+     * @param value The courseTotalCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseTotalCount(int value) {
+      
+      courseTotalCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 course_total_count = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseTotalCount() {
+      
+      courseTotalCount = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList courses = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureCoursesIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        courses = new com.google.protobuf.LazyStringArrayList(courses );
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @return A list containing the courses.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCoursesList() {
+      return courses .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @return The count of courses.
+     */
+    public int getCoursesCount() {
+      return courses .size();
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param index The index of the element to return.
+     * @return The courses at the given index.
+     */
+    public java.lang.String getCourses(int index) {
+      return courses .get(index);
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the courses at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCoursesBytes(int index) {
+      return courses .getByteString(index);
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The courses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourses(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCoursesIsMutable();
+      courses .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param value The courses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCourses(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCoursesIsMutable();
+      courses .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param values The courses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCourses(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCoursesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, courses );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourses() {
+      courses = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string courses = 13;</code>
+     * @param value The bytes of the courses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCoursesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureCoursesIsMutable();
+      courses .add(value);
       onChanged();
       return this;
     }
