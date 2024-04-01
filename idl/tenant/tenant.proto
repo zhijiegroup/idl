@@ -14,6 +14,8 @@ message Tenant {
   string admin_phone = 9; // 自动创建的管理员的手机号
   repeated string business_system = 10;
   string platform = 11;
+  int32 course_total_count = 12;
+  repeated string courses = 13;
 }
 
 message CreateTenantRequest {
@@ -160,4 +162,10 @@ message CreateTenantCourseRequest {
 
 message CreateTenantCourseResponse {
   base.BaseResponse base_resp = 1;
+}
+
+message ListTenantCourseResponse {
+  base.BaseResponse base_resp = 1;
+  repeated Tenant tenant_list = 2;
+  base.PaginationResponse pagination = 100;
 }
