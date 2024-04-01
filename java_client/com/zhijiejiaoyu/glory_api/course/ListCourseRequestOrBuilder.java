@@ -27,10 +27,29 @@ public interface ListCourseRequestOrBuilder extends
    * 课程分类
    * </pre>
    *
-   * <code>int32 course_classification = 2;</code>
-   * @return The courseClassification.
+   * <code>repeated int32 course_classification = 2;</code>
+   * @return A list containing the courseClassification.
    */
-  int getCourseClassification();
+  java.util.List<java.lang.Integer> getCourseClassificationList();
+  /**
+   * <pre>
+   * 课程分类
+   * </pre>
+   *
+   * <code>repeated int32 course_classification = 2;</code>
+   * @return The count of courseClassification.
+   */
+  int getCourseClassificationCount();
+  /**
+   * <pre>
+   * 课程分类
+   * </pre>
+   *
+   * <code>repeated int32 course_classification = 2;</code>
+   * @param index The index of the element to return.
+   * @return The courseClassification at the given index.
+   */
+  int getCourseClassification(int index);
 
   /**
    * <pre>
@@ -114,7 +133,7 @@ public interface ListCourseRequestOrBuilder extends
 
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>
@@ -123,7 +142,7 @@ public interface ListCourseRequestOrBuilder extends
   java.util.List<java.lang.Integer> getCourseTypeList();
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>
@@ -132,7 +151,7 @@ public interface ListCourseRequestOrBuilder extends
   int getCourseTypeCount();
   /**
    * <pre>
-   * 1: 专业核心课 2:名师公开课 
+   * 1: 专业核心课 2:名师公开课
    * </pre>
    *
    * <code>repeated int32 course_type = 6;</code>

@@ -184,7 +184,7 @@ public final class CourseOuterClass {
       "urseResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
       "aseResponse\"\373\001\n\021ListCourseRequest\022\'\n\014bas" +
       "e_request\030\001 \001(\0132\021.base.BaseRequest\022\035\n\025co" +
-      "urse_classification\030\002 \001(\005\022\025\n\rcourse_modu" +
+      "urse_classification\030\002 \003(\005\022\025\n\rcourse_modu" +
       "le\030\003 \001(\005\022\r\n\005major\030\004 \003(\t\022\r\n\005level\030\005 \003(\005\022\023" +
       "\n\013course_type\030\006 \003(\005\022\027\n\017course_industry\030\007" +
       " \001(\t\022\016\n\006simple\030\010 \001(\010\022+\n\npagination\030d \001(\013" +

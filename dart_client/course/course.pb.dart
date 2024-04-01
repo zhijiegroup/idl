@@ -959,7 +959,7 @@ class DeleteCourseResponse extends $pb.GeneratedMessage {
 class ListCourseRequest extends $pb.GeneratedMessage {
   factory ListCourseRequest({
     $1.BaseRequest? baseRequest,
-    $core.int? courseClassification,
+    $core.Iterable<$core.int>? courseClassification,
     $core.int? courseModule,
     $core.Iterable<$core.String>? major,
     $core.Iterable<$core.int>? level,
@@ -973,7 +973,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
       $result.baseRequest = baseRequest;
     }
     if (courseClassification != null) {
-      $result.courseClassification = courseClassification;
+      $result.courseClassification.addAll(courseClassification);
     }
     if (courseModule != null) {
       $result.courseModule = courseModule;
@@ -1004,7 +1004,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCourseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'courseClassification', $pb.PbFieldType.O3)
+    ..p<$core.int>(2, _omitFieldNames ? '' : 'courseClassification', $pb.PbFieldType.K3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'courseModule', $pb.PbFieldType.O3)
     ..pPS(4, _omitFieldNames ? '' : 'major')
     ..p<$core.int>(5, _omitFieldNames ? '' : 'level', $pb.PbFieldType.K3)
@@ -1048,13 +1048,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.int get courseClassification => $_getIZ(1);
-  @$pb.TagNumber(2)
-  set courseClassification($core.int v) { $_setSignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasCourseClassification() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearCourseClassification() => clearField(2);
+  $core.List<$core.int> get courseClassification => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.int get courseModule => $_getIZ(2);

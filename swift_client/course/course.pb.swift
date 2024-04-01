@@ -400,7 +400,7 @@ struct GloryApi_ListCourseRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   /// 课程分类
-  var courseClassification: Int32 = 0
+  var courseClassification: [Int32] = []
 
   /// 全部:0 模块化课程:1 非模块化课程:2 定制课程：3
   var courseModule: Int32 = 0
@@ -411,7 +411,7 @@ struct GloryApi_ListCourseRequest {
   /// 1: 中职 2:高职 3: 中高职
   var level: [Int32] = []
 
-  /// 1: 专业核心课 2:名师公开课 
+  /// 1: 专业核心课 2:名师公开课
   var courseType: [Int32] = []
 
   /// 课程所属行业
@@ -1386,7 +1386,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt32Field(value: &self.courseClassification) }()
+      case 2: try { try decoder.decodeRepeatedInt32Field(value: &self.courseClassification) }()
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.courseModule) }()
       case 4: try { try decoder.decodeRepeatedStringField(value: &self.major) }()
       case 5: try { try decoder.decodeRepeatedInt32Field(value: &self.level) }()
@@ -1407,8 +1407,8 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.courseClassification != 0 {
-      try visitor.visitSingularInt32Field(value: self.courseClassification, fieldNumber: 2)
+    if !self.courseClassification.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.courseClassification, fieldNumber: 2)
     }
     if self.courseModule != 0 {
       try visitor.visitSingularInt32Field(value: self.courseModule, fieldNumber: 3)
