@@ -1255,7 +1255,12 @@ CreateLivePlanProduct create live plan product */
   ): Promise<material.DeleteCourseMaterialResponse>;
 
   /** 资源库
-获取能力指标编码 */
+获取课程类型树 */
+  GetCourseTypeTree(
+    request: course.GetCourseTypeTreeRequest
+  ): Promise<course.GetCourseTypeTreeResponse>;
+
+  /** 获取能力指标编码 */
   GetCourseModuleCode(
     request: modules.GetCourseModuleCodeRequest
   ): Promise<modules.GetCourseModuleCodeResponse>;

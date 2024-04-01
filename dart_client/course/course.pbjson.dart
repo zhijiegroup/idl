@@ -208,6 +208,7 @@ const ListCourseRequest$json = {
     {'1': 'level', '3': 5, '4': 3, '5': 5, '10': 'level'},
     {'1': 'course_type', '3': 6, '4': 3, '5': 5, '10': 'courseType'},
     {'1': 'course_industry', '3': 7, '4': 1, '5': 9, '10': 'courseIndustry'},
+    {'1': 'simple', '3': 8, '4': 1, '5': 8, '10': 'simple'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -219,8 +220,8 @@ final $typed_data.Uint8List listCourseRequestDescriptor = $convert.base64Decode(
     'ZUNsYXNzaWZpY2F0aW9uEiMKDWNvdXJzZV9tb2R1bGUYAyABKAVSDGNvdXJzZU1vZHVsZRIUCg'
     'VtYWpvchgEIAMoCVIFbWFqb3ISFAoFbGV2ZWwYBSADKAVSBWxldmVsEh8KC2NvdXJzZV90eXBl'
     'GAYgAygFUgpjb3Vyc2VUeXBlEicKD2NvdXJzZV9pbmR1c3RyeRgHIAEoCVIOY291cnNlSW5kdX'
-    'N0cnkSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2lu'
-    'YXRpb24=');
+    'N0cnkSFgoGc2ltcGxlGAggASgIUgZzaW1wbGUSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2Uu'
+    'UGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listCourseResponseDescriptor instead')
 const ListCourseResponse$json = {
@@ -366,4 +367,47 @@ final $typed_data.Uint8List listHottestCourseResponseDescriptor = $convert.base6
     'ChlMaXN0SG90dGVzdENvdXJzZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBIrCgdjb3Vyc2VzGAIgAygLMhEuZ2xvcnlfYXBpLkNvdXJz'
     'ZVIHY291cnNlcw==');
+
+@$core.Deprecated('Use courseTypeDescriptor instead')
+const CourseType$json = {
+  '1': 'CourseType',
+  '2': [
+    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'children', '3': 3, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'children'},
+  ],
+};
+
+/// Descriptor for `CourseType`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List courseTypeDescriptor = $convert.base64Decode(
+    'CgpDb3Vyc2VUeXBlEhQKBWxhYmVsGAEgASgJUgVsYWJlbBIUCgV2YWx1ZRgCIAEoCVIFdmFsdW'
+    'USMQoIY2hpbGRyZW4YAyADKAsyFS5nbG9yeV9hcGkuQ291cnNlVHlwZVIIY2hpbGRyZW4=');
+
+@$core.Deprecated('Use getCourseTypeTreeRequestDescriptor instead')
+const GetCourseTypeTreeRequest$json = {
+  '1': 'GetCourseTypeTreeRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetCourseTypeTreeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCourseTypeTreeRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRDb3Vyc2VUeXBlVHJlZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3Q=');
+
+@$core.Deprecated('Use getCourseTypeTreeResponseDescriptor instead')
+const GetCourseTypeTreeResponse$json = {
+  '1': 'GetCourseTypeTreeResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'types', '3': 2, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'types'},
+  ],
+};
+
+/// Descriptor for `GetCourseTypeTreeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCourseTypeTreeResponseDescriptor = $convert.base64Decode(
+    'ChlHZXRDb3Vyc2VUeXBlVHJlZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIrCgV0eXBlcxgCIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VU'
+    'eXBlUgV0eXBlcw==');
 

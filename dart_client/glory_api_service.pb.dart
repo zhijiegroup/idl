@@ -20,12 +20,12 @@ import 'admin/admin_user.pb.dart' as $20;
 import 'admin/config.pb.dart' as $18;
 import 'app/app.pb.dart' as $46;
 import 'course/cmodule.pb.dart' as $40;
-import 'course/course.pb.dart' as $39;
+import 'course/course.pb.dart' as $38;
 import 'course/edu_scheme.pb.dart' as $45;
 import 'course/graph.pb.dart' as $42;
 import 'course/job.pb.dart' as $47;
 import 'course/material.pb.dart' as $37;
-import 'course/module.pb.dart' as $38;
+import 'course/module.pb.dart' as $39;
 import 'course/nmodule.pb.dart' as $41;
 import 'course/teaching_plan.pb.dart' as $44;
 import 'course/user_course.pb.dart' as $43;
@@ -908,32 +908,35 @@ class glory_apiApi {
   $async.Future<$37.DeleteCourseMaterialResponse> deleteCourseMaterial($pb.ClientContext? ctx, $37.DeleteCourseMaterialRequest request) =>
     _client.invoke<$37.DeleteCourseMaterialResponse>(ctx, 'glory_api', 'DeleteCourseMaterial', request, $37.DeleteCourseMaterialResponse())
   ;
-  $async.Future<$38.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ClientContext? ctx, $38.GetCourseModuleCodeRequest request) =>
-    _client.invoke<$38.GetCourseModuleCodeResponse>(ctx, 'glory_api', 'GetCourseModuleCode', request, $38.GetCourseModuleCodeResponse())
+  $async.Future<$38.GetCourseTypeTreeResponse> getCourseTypeTree($pb.ClientContext? ctx, $38.GetCourseTypeTreeRequest request) =>
+    _client.invoke<$38.GetCourseTypeTreeResponse>(ctx, 'glory_api', 'GetCourseTypeTree', request, $38.GetCourseTypeTreeResponse())
   ;
-  $async.Future<$38.GetCourseChapterCodeResponse> getCourseChapterCode($pb.ClientContext? ctx, $38.GetCourseChapterCodeRequest request) =>
-    _client.invoke<$38.GetCourseChapterCodeResponse>(ctx, 'glory_api', 'GetCourseChapterCode', request, $38.GetCourseChapterCodeResponse())
+  $async.Future<$39.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ClientContext? ctx, $39.GetCourseModuleCodeRequest request) =>
+    _client.invoke<$39.GetCourseModuleCodeResponse>(ctx, 'glory_api', 'GetCourseModuleCode', request, $39.GetCourseModuleCodeResponse())
   ;
-  $async.Future<$38.CreateCourseModuleResponse> createCourseModule($pb.ClientContext? ctx, $38.CreateCourseModuleRequest request) =>
-    _client.invoke<$38.CreateCourseModuleResponse>(ctx, 'glory_api', 'CreateCourseModule', request, $38.CreateCourseModuleResponse())
+  $async.Future<$39.GetCourseChapterCodeResponse> getCourseChapterCode($pb.ClientContext? ctx, $39.GetCourseChapterCodeRequest request) =>
+    _client.invoke<$39.GetCourseChapterCodeResponse>(ctx, 'glory_api', 'GetCourseChapterCode', request, $39.GetCourseChapterCodeResponse())
   ;
-  $async.Future<$38.GetCourseModuleResponse> getCourseModule($pb.ClientContext? ctx, $38.GetCourseModuleRequest request) =>
-    _client.invoke<$38.GetCourseModuleResponse>(ctx, 'glory_api', 'GetCourseModule', request, $38.GetCourseModuleResponse())
+  $async.Future<$39.CreateCourseModuleResponse> createCourseModule($pb.ClientContext? ctx, $39.CreateCourseModuleRequest request) =>
+    _client.invoke<$39.CreateCourseModuleResponse>(ctx, 'glory_api', 'CreateCourseModule', request, $39.CreateCourseModuleResponse())
   ;
-  $async.Future<$38.UpdateCourseModuleResponse> updateCourseModule($pb.ClientContext? ctx, $38.UpdateCourseModuleRequest request) =>
-    _client.invoke<$38.UpdateCourseModuleResponse>(ctx, 'glory_api', 'UpdateCourseModule', request, $38.UpdateCourseModuleResponse())
+  $async.Future<$39.GetCourseModuleResponse> getCourseModule($pb.ClientContext? ctx, $39.GetCourseModuleRequest request) =>
+    _client.invoke<$39.GetCourseModuleResponse>(ctx, 'glory_api', 'GetCourseModule', request, $39.GetCourseModuleResponse())
   ;
-  $async.Future<$38.DeleteCourseModuleResponse> deleteCourseModule($pb.ClientContext? ctx, $38.DeleteCourseModuleRequest request) =>
-    _client.invoke<$38.DeleteCourseModuleResponse>(ctx, 'glory_api', 'DeleteCourseModule', request, $38.DeleteCourseModuleResponse())
+  $async.Future<$39.UpdateCourseModuleResponse> updateCourseModule($pb.ClientContext? ctx, $39.UpdateCourseModuleRequest request) =>
+    _client.invoke<$39.UpdateCourseModuleResponse>(ctx, 'glory_api', 'UpdateCourseModule', request, $39.UpdateCourseModuleResponse())
   ;
-  $async.Future<$38.ListCourseModuleResponse> listCourseModule($pb.ClientContext? ctx, $38.ListCourseModuleRequest request) =>
-    _client.invoke<$38.ListCourseModuleResponse>(ctx, 'glory_api', 'ListCourseModule', request, $38.ListCourseModuleResponse())
+  $async.Future<$39.DeleteCourseModuleResponse> deleteCourseModule($pb.ClientContext? ctx, $39.DeleteCourseModuleRequest request) =>
+    _client.invoke<$39.DeleteCourseModuleResponse>(ctx, 'glory_api', 'DeleteCourseModule', request, $39.DeleteCourseModuleResponse())
   ;
-  $async.Future<$39.ListLatestCourseResponse> listLatestCourse($pb.ClientContext? ctx, $39.ListLatestCourseRequest request) =>
-    _client.invoke<$39.ListLatestCourseResponse>(ctx, 'glory_api', 'ListLatestCourse', request, $39.ListLatestCourseResponse())
+  $async.Future<$39.ListCourseModuleResponse> listCourseModule($pb.ClientContext? ctx, $39.ListCourseModuleRequest request) =>
+    _client.invoke<$39.ListCourseModuleResponse>(ctx, 'glory_api', 'ListCourseModule', request, $39.ListCourseModuleResponse())
   ;
-  $async.Future<$39.ListHottestCourseResponse> listHottestCourse($pb.ClientContext? ctx, $39.ListHottestCourseRequest request) =>
-    _client.invoke<$39.ListHottestCourseResponse>(ctx, 'glory_api', 'ListHottestCourse', request, $39.ListHottestCourseResponse())
+  $async.Future<$38.ListLatestCourseResponse> listLatestCourse($pb.ClientContext? ctx, $38.ListLatestCourseRequest request) =>
+    _client.invoke<$38.ListLatestCourseResponse>(ctx, 'glory_api', 'ListLatestCourse', request, $38.ListLatestCourseResponse())
+  ;
+  $async.Future<$38.ListHottestCourseResponse> listHottestCourse($pb.ClientContext? ctx, $38.ListHottestCourseRequest request) =>
+    _client.invoke<$38.ListHottestCourseResponse>(ctx, 'glory_api', 'ListHottestCourse', request, $38.ListHottestCourseResponse())
   ;
   $async.Future<$40.CreateCmCourseResponse> createCmCourse($pb.ClientContext? ctx, $40.CreateCmCourseRequest request) =>
     _client.invoke<$40.CreateCmCourseResponse>(ctx, 'glory_api', 'CreateCmCourse', request, $40.CreateCmCourseResponse())
@@ -962,20 +965,20 @@ class glory_apiApi {
   $async.Future<$41.DeleteNmCourseResponse> deleteNmCourse($pb.ClientContext? ctx, $41.DeleteNmCourseRequest request) =>
     _client.invoke<$41.DeleteNmCourseResponse>(ctx, 'glory_api', 'DeleteNmCourse', request, $41.DeleteNmCourseResponse())
   ;
-  $async.Future<$39.CreateCourseResponse> createCourse($pb.ClientContext? ctx, $39.CreateCourseRequest request) =>
-    _client.invoke<$39.CreateCourseResponse>(ctx, 'glory_api', 'CreateCourse', request, $39.CreateCourseResponse())
+  $async.Future<$38.CreateCourseResponse> createCourse($pb.ClientContext? ctx, $38.CreateCourseRequest request) =>
+    _client.invoke<$38.CreateCourseResponse>(ctx, 'glory_api', 'CreateCourse', request, $38.CreateCourseResponse())
   ;
-  $async.Future<$39.GetCourseResponse> getCourse($pb.ClientContext? ctx, $39.GetCourseRequest request) =>
-    _client.invoke<$39.GetCourseResponse>(ctx, 'glory_api', 'GetCourse', request, $39.GetCourseResponse())
+  $async.Future<$38.GetCourseResponse> getCourse($pb.ClientContext? ctx, $38.GetCourseRequest request) =>
+    _client.invoke<$38.GetCourseResponse>(ctx, 'glory_api', 'GetCourse', request, $38.GetCourseResponse())
   ;
-  $async.Future<$39.UpdateCourseResponse> updateCourse($pb.ClientContext? ctx, $39.UpdateCourseRequest request) =>
-    _client.invoke<$39.UpdateCourseResponse>(ctx, 'glory_api', 'UpdateCourse', request, $39.UpdateCourseResponse())
+  $async.Future<$38.UpdateCourseResponse> updateCourse($pb.ClientContext? ctx, $38.UpdateCourseRequest request) =>
+    _client.invoke<$38.UpdateCourseResponse>(ctx, 'glory_api', 'UpdateCourse', request, $38.UpdateCourseResponse())
   ;
-  $async.Future<$39.DeleteCourseResponse> deleteCourse($pb.ClientContext? ctx, $39.DeleteCourseRequest request) =>
-    _client.invoke<$39.DeleteCourseResponse>(ctx, 'glory_api', 'DeleteCourse', request, $39.DeleteCourseResponse())
+  $async.Future<$38.DeleteCourseResponse> deleteCourse($pb.ClientContext? ctx, $38.DeleteCourseRequest request) =>
+    _client.invoke<$38.DeleteCourseResponse>(ctx, 'glory_api', 'DeleteCourse', request, $38.DeleteCourseResponse())
   ;
-  $async.Future<$39.ListCourseResponse> listCourse($pb.ClientContext? ctx, $39.ListCourseRequest request) =>
-    _client.invoke<$39.ListCourseResponse>(ctx, 'glory_api', 'ListCourse', request, $39.ListCourseResponse())
+  $async.Future<$38.ListCourseResponse> listCourse($pb.ClientContext? ctx, $38.ListCourseRequest request) =>
+    _client.invoke<$38.ListCourseResponse>(ctx, 'glory_api', 'ListCourse', request, $38.ListCourseResponse())
   ;
   $async.Future<$42.CreateKnowledgeGraphResponse> createKnowledgeGraph($pb.ClientContext? ctx, $42.CreateKnowledgeGraphRequest request) =>
     _client.invoke<$42.CreateKnowledgeGraphResponse>(ctx, 'glory_api', 'CreateKnowledgeGraph', request, $42.CreateKnowledgeGraphResponse())
@@ -986,11 +989,11 @@ class glory_apiApi {
   $async.Future<$42.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode($pb.ClientContext? ctx, $42.GetKnowledgeGraphNodeRequest request) =>
     _client.invoke<$42.GetKnowledgeGraphNodeResponse>(ctx, 'glory_api', 'GetKnowledgeGraphNode', request, $42.GetKnowledgeGraphNodeResponse())
   ;
-  $async.Future<$39.GetMajorCodeResponse> getMajorCode($pb.ClientContext? ctx, $39.GetMajorCodeRequest request) =>
-    _client.invoke<$39.GetMajorCodeResponse>(ctx, 'glory_api', 'GetMajorCode', request, $39.GetMajorCodeResponse())
+  $async.Future<$38.GetMajorCodeResponse> getMajorCode($pb.ClientContext? ctx, $38.GetMajorCodeRequest request) =>
+    _client.invoke<$38.GetMajorCodeResponse>(ctx, 'glory_api', 'GetMajorCode', request, $38.GetMajorCodeResponse())
   ;
-  $async.Future<$39.GetCourseIdsResponse> getCourseIds($pb.ClientContext? ctx, $39.GetCourseIdsRequest request) =>
-    _client.invoke<$39.GetCourseIdsResponse>(ctx, 'glory_api', 'GetCourseIds', request, $39.GetCourseIdsResponse())
+  $async.Future<$38.GetCourseIdsResponse> getCourseIds($pb.ClientContext? ctx, $38.GetCourseIdsRequest request) =>
+    _client.invoke<$38.GetCourseIdsResponse>(ctx, 'glory_api', 'GetCourseIds', request, $38.GetCourseIdsResponse())
   ;
   $async.Future<$43.EnrollCourseResponse> enrollCourse($pb.ClientContext? ctx, $43.EnrollCourseRequest request) =>
     _client.invoke<$43.EnrollCourseResponse>(ctx, 'glory_api', 'EnrollCourse', request, $43.EnrollCourseResponse())

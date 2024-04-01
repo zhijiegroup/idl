@@ -965,6 +965,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.int>? level,
     $core.Iterable<$core.int>? courseType,
     $core.String? courseIndustry,
+    $core.bool? simple,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -989,6 +990,9 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     if (courseIndustry != null) {
       $result.courseIndustry = courseIndustry;
     }
+    if (simple != null) {
+      $result.simple = simple;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -1006,6 +1010,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..p<$core.int>(5, _omitFieldNames ? '' : 'level', $pb.PbFieldType.K3)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'courseType', $pb.PbFieldType.K3)
     ..aOS(7, _omitFieldNames ? '' : 'courseIndustry')
+    ..aOB(8, _omitFieldNames ? '' : 'simple')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1078,16 +1083,25 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearCourseIndustry() => clearField(7);
 
+  @$pb.TagNumber(8)
+  $core.bool get simple => $_getBF(7);
+  @$pb.TagNumber(8)
+  set simple($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSimple() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSimple() => clearField(8);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(7);
+  $1.PaginationRequest get pagination => $_getN(8);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(7);
+  $core.bool hasPagination() => $_has(8);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(7);
+  $1.PaginationRequest ensurePagination() => $_ensure(8);
 }
 
 class ListCourseResponse extends $pb.GeneratedMessage {
@@ -1718,6 +1732,190 @@ class ListHottestCourseResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<Course> get courses => $_getList(1);
+}
+
+class CourseType extends $pb.GeneratedMessage {
+  factory CourseType({
+    $core.String? label,
+    $core.String? value,
+    $core.Iterable<CourseType>? children,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    if (children != null) {
+      $result.children.addAll(children);
+    }
+    return $result;
+  }
+  CourseType._() : super();
+  factory CourseType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CourseType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CourseType', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..pc<CourseType>(3, _omitFieldNames ? '' : 'children', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CourseType clone() => CourseType()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CourseType copyWith(void Function(CourseType) updates) => super.copyWith((message) => updates(message as CourseType)) as CourseType;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CourseType create() => CourseType._();
+  CourseType createEmptyInstance() => create();
+  static $pb.PbList<CourseType> createRepeated() => $pb.PbList<CourseType>();
+  @$core.pragma('dart2js:noInline')
+  static CourseType getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CourseType>(create);
+  static CourseType? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<CourseType> get children => $_getList(2);
+}
+
+class GetCourseTypeTreeRequest extends $pb.GeneratedMessage {
+  factory GetCourseTypeTreeRequest({
+    $1.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetCourseTypeTreeRequest._() : super();
+  factory GetCourseTypeTreeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCourseTypeTreeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCourseTypeTreeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCourseTypeTreeRequest clone() => GetCourseTypeTreeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCourseTypeTreeRequest copyWith(void Function(GetCourseTypeTreeRequest) updates) => super.copyWith((message) => updates(message as GetCourseTypeTreeRequest)) as GetCourseTypeTreeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCourseTypeTreeRequest create() => GetCourseTypeTreeRequest._();
+  GetCourseTypeTreeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetCourseTypeTreeRequest> createRepeated() => $pb.PbList<GetCourseTypeTreeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetCourseTypeTreeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCourseTypeTreeRequest>(create);
+  static GetCourseTypeTreeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetCourseTypeTreeResponse extends $pb.GeneratedMessage {
+  factory GetCourseTypeTreeResponse({
+    $1.BaseResponse? baseResp,
+    $core.Iterable<CourseType>? types,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (types != null) {
+      $result.types.addAll(types);
+    }
+    return $result;
+  }
+  GetCourseTypeTreeResponse._() : super();
+  factory GetCourseTypeTreeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetCourseTypeTreeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCourseTypeTreeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..pc<CourseType>(2, _omitFieldNames ? '' : 'types', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetCourseTypeTreeResponse clone() => GetCourseTypeTreeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetCourseTypeTreeResponse copyWith(void Function(GetCourseTypeTreeResponse) updates) => super.copyWith((message) => updates(message as GetCourseTypeTreeResponse)) as GetCourseTypeTreeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCourseTypeTreeResponse create() => GetCourseTypeTreeResponse._();
+  GetCourseTypeTreeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetCourseTypeTreeResponse> createRepeated() => $pb.PbList<GetCourseTypeTreeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetCourseTypeTreeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCourseTypeTreeResponse>(create);
+  static GetCourseTypeTreeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($1.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<CourseType> get types => $_getList(1);
 }
 
 

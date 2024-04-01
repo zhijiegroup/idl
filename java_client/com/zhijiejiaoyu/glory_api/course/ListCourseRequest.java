@@ -137,6 +137,11 @@ private static final long serialVersionUID = 0L;
             courseIndustry = s;
             break;
           }
+          case 64: {
+
+            simple = input.readBool();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -424,6 +429,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SIMPLE_FIELD_NUMBER = 8;
+  private boolean simple ;
+  /**
+   * <pre>
+   * 是否需要精简数据
+   * </pre>
+   *
+   * <code>bool simple = 8;</code>
+   * @return The simple.
+   */
+  @java.lang.Override
+  public boolean getSimple() {
+    return simple ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -494,6 +514,9 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, courseIndustry );
     }
+    if (simple != false) {
+      output.writeBool(8, simple );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -557,6 +580,10 @@ private static final long serialVersionUID = 0L;
     if (!getCourseIndustryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, courseIndustry );
     }
+    if (simple != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, simple );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -593,6 +620,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseTypeList())) return false;
     if (!getCourseIndustry()
         .equals(other.getCourseIndustry())) return false;
+    if (getSimple()
+        != other.getSimple()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -631,6 +660,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + COURSE_INDUSTRY_FIELD_NUMBER;
     hash = (53 * hash) + getCourseIndustry().hashCode();
+    hash = (37 * hash) + SIMPLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSimple());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -790,6 +822,8 @@ private static final long serialVersionUID = 0L;
       bitField0 = (bitField0 & ~0x00000004);
       courseIndustry = "";
 
+      simple = false;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -846,6 +880,7 @@ private static final long serialVersionUID = 0L;
       }
       result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
+      result.simple = simple ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -941,6 +976,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCourseIndustry().isEmpty()) {
         courseIndustry = other.courseIndustry ;
         onChanged();
+      }
+      if (other.getSimple() != false) {
+        setSimple(other.getSimple());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1632,6 +1670,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       courseIndustry = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean simple ;
+    /**
+     * <pre>
+     * 是否需要精简数据
+     * </pre>
+     *
+     * <code>bool simple = 8;</code>
+     * @return The simple.
+     */
+    @java.lang.Override
+    public boolean getSimple() {
+      return simple ;
+    }
+    /**
+     * <pre>
+     * 是否需要精简数据
+     * </pre>
+     *
+     * <code>bool simple = 8;</code>
+     * @param value The simple to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSimple(boolean value) {
+      
+      simple = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否需要精简数据
+     * </pre>
+     *
+     * <code>bool simple = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSimple() {
+      
+      simple = false;
       onChanged();
       return this;
     }

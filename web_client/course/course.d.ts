@@ -114,6 +114,8 @@ export interface ListCourseRequest {
   course_type?: Array<number>;
   /** 课程所属行业 */
   course_industry?: string;
+  /** 是否需要精简数据 */
+  simple?: boolean;
   pagination?: base.PaginationRequest;
 }
 
@@ -165,4 +167,19 @@ export interface ListHottestCourseRequest {
 export interface ListHottestCourseResponse {
   base_resp?: base.BaseResponse;
   courses?: Array<Course>;
+}
+
+export interface CourseType {
+  label?: string;
+  value?: string;
+  children?: Array<CourseType>;
+}
+
+export interface GetCourseTypeTreeRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetCourseTypeTreeResponse {
+  base_resp?: base.BaseResponse;
+  types?: Array<CourseType>;
 }

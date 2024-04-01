@@ -162,6 +162,16 @@ public interface ListCourseRequestOrBuilder extends
       getCourseIndustryBytes();
 
   /**
+   * <pre>
+   * 是否需要精简数据
+   * </pre>
+   *
+   * <code>bool simple = 8;</code>
+   * @return The simple.
+   */
+  boolean getSimple();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
