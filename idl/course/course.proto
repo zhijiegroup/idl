@@ -91,6 +91,7 @@ message ListCourseRequest {
   repeated int32 level = 5; // 1: 中职 2:高职 3: 中高职
   repeated int32 course_type = 6; // 1: 专业核心课 2:名师公开课 
   string course_industry = 7; // 课程所属行业
+  bool simple = 8; // 是否需要精简数据
   base.PaginationRequest pagination = 100;
 }
 
@@ -142,4 +143,19 @@ message ListHottestCourseRequest {
 message ListHottestCourseResponse {
   base.BaseResponse base_resp = 1;
   repeated Course courses = 2;
+}
+
+message CourseType {
+  string label = 1;
+  string value = 2;
+  repeated CourseType children = 3;
+}
+
+message GetCourseTypeTreeRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message GetCourseTypeTreeResponse {
+  base.BaseResponse base_resp = 1;
+  repeated CourseType types = 2;
 }
