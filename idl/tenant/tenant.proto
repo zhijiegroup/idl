@@ -163,9 +163,3 @@ message CreateTenantCourseRequest {
 message CreateTenantCourseResponse {
   base.BaseResponse base_resp = 1;
 }
-
-message ListTenantCourseResponse {
-  base.BaseResponse base_resp = 1;
-  repeated Tenant tenant_list = 2;
-  base.PaginationResponse pagination = 100;
-}
