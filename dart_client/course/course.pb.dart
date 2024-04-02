@@ -964,7 +964,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? major,
     $core.Iterable<$core.int>? level,
     $core.Iterable<$core.int>? courseType,
-    $core.String? courseIndustry,
+    $core.Iterable<$core.String>? courseIndustry,
     $core.bool? simple,
     $core.String? key,
     $1.PaginationRequest? pagination,
@@ -989,7 +989,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
       $result.courseType.addAll(courseType);
     }
     if (courseIndustry != null) {
-      $result.courseIndustry = courseIndustry;
+      $result.courseIndustry.addAll(courseIndustry);
     }
     if (simple != null) {
       $result.simple = simple;
@@ -1013,7 +1013,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..pPS(4, _omitFieldNames ? '' : 'major')
     ..p<$core.int>(5, _omitFieldNames ? '' : 'level', $pb.PbFieldType.K3)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'courseType', $pb.PbFieldType.K3)
-    ..aOS(7, _omitFieldNames ? '' : 'courseIndustry')
+    ..pPS(7, _omitFieldNames ? '' : 'courseIndustry')
     ..aOB(8, _omitFieldNames ? '' : 'simple')
     ..aOS(10, _omitFieldNames ? '' : 'key')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
@@ -1074,13 +1074,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   $core.List<$core.int> get courseType => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get courseIndustry => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set courseIndustry($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasCourseIndustry() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearCourseIndustry() => clearField(7);
+  $core.List<$core.String> get courseIndustry => $_getList(6);
 
   @$pb.TagNumber(8)
   $core.bool get simple => $_getBF(7);
