@@ -92,6 +92,7 @@ message ListCourseRequest {
   repeated int32 course_type = 6; // 1: 专业核心课 2:名师公开课
   string course_industry = 7; // 课程所属行业
   bool simple = 8; // 是否需要精简数据
+  string key = 10; // 模糊查询字段
   base.PaginationRequest pagination = 100;
 }
 
