@@ -22,6 +22,7 @@ message NmCourse {
     double course_hours = 14;
     int64 course_module = 15;
     repeated NmChapter chapters = 16;
+    bool assigned = 17;
 }
 
 message CreateNmCourseChapterResourceRequest {
