@@ -148,6 +148,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.NmChapter.parser(), extensionRegistry));
             break;
           }
+          case 136: {
+
+            assigned = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -577,6 +582,17 @@ private static final long serialVersionUID = 0L;
     return chapters .get(index);
   }
 
+  public static final int ASSIGNED_FIELD_NUMBER = 17;
+  private boolean assigned ;
+  /**
+   * <code>bool assigned = 17;</code>
+   * @return The assigned.
+   */
+  @java.lang.Override
+  public boolean getAssigned() {
+    return assigned ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -638,6 +654,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < chapters .size(); i++) {
       output.writeMessage(16, chapters .get(i));
+    }
+    if (assigned != false) {
+      output.writeBool(17, assigned );
     }
     unknownFields.writeTo(output);
   }
@@ -705,6 +724,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, chapters .get(i));
     }
+    if (assigned != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(17, assigned );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -755,6 +778,8 @@ private static final long serialVersionUID = 0L;
         != other.getCourseModule()) return false;
     if (!getChaptersList()
         .equals(other.getChaptersList())) return false;
+    if (getAssigned()
+        != other.getAssigned()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -808,6 +833,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CHAPTERS_FIELD_NUMBER;
       hash = (53 * hash) + getChaptersList().hashCode();
     }
+    hash = (37 * hash) + ASSIGNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAssigned());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -978,6 +1006,8 @@ private static final long serialVersionUID = 0L;
       } else {
         chaptersBuilder .clear();
       }
+      assigned = false;
+
       return this;
     }
 
@@ -1029,6 +1059,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.chapters = chaptersBuilder .build();
       }
+      result.assigned = assigned ;
       onBuilt();
       return result;
     }
@@ -1154,6 +1185,9 @@ private static final long serialVersionUID = 0L;
             chaptersBuilder .addAllMessages(other.chapters );
           }
         }
+      }
+      if (other.getAssigned() != false) {
+        setAssigned(other.getAssigned());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2203,6 +2237,37 @@ private static final long serialVersionUID = 0L;
         chapters = null;
       }
       return chaptersBuilder ;
+    }
+
+    private boolean assigned ;
+    /**
+     * <code>bool assigned = 17;</code>
+     * @return The assigned.
+     */
+    @java.lang.Override
+    public boolean getAssigned() {
+      return assigned ;
+    }
+    /**
+     * <code>bool assigned = 17;</code>
+     * @param value The assigned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssigned(boolean value) {
+      
+      assigned = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool assigned = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssigned() {
+      
+      assigned = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
