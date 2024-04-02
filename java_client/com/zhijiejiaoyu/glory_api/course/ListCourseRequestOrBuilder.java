@@ -191,6 +191,26 @@ public interface ListCourseRequestOrBuilder extends
   boolean getSimple();
 
   /**
+   * <pre>
+   * 模糊查询字段
+   * </pre>
+   *
+   * <code>string key = 10;</code>
+   * @return The key.
+   */
+  java.lang.String getKey();
+  /**
+   * <pre>
+   * 模糊查询字段
+   * </pre>
+   *
+   * <code>string key = 10;</code>
+   * @return The bytes for key.
+   */
+  com.google.protobuf.ByteString
+      getKeyBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

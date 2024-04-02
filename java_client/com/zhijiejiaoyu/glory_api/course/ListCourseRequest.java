@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     level = emptyIntList();
     courseType = emptyIntList();
     courseIndustry = "";
+    key = "";
   }
 
   @java.lang.Override
@@ -157,6 +158,12 @@ private static final long serialVersionUID = 0L;
           case 64: {
 
             simple = input.readBool();
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            key = s;
             break;
           }
           case 802: {
@@ -489,6 +496,52 @@ private static final long serialVersionUID = 0L;
     return simple ;
   }
 
+  public static final int KEY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object key ;
+  /**
+   * <pre>
+   * 模糊查询字段
+   * </pre>
+   *
+   * <code>string key = 10;</code>
+   * @return The key.
+   */
+  @java.lang.Override
+  public java.lang.String getKey() {
+    java.lang.Object ref = key ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      key = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 模糊查询字段
+   * </pre>
+   *
+   * <code>string key = 10;</code>
+   * @return The bytes for key.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKeyBytes() {
+    java.lang.Object ref = key ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      key = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -565,6 +618,9 @@ private static final long serialVersionUID = 0L;
     }
     if (simple != false) {
       output.writeBool(8, simple );
+    }
+    if (!getKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, key );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -643,6 +699,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, simple );
     }
+    if (!getKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, key );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -681,6 +740,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCourseIndustry())) return false;
     if (getSimple()
         != other.getSimple()) return false;
+    if (!getKey()
+        .equals(other.getKey())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -724,6 +785,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SIMPLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSimple());
+    hash = (37 * hash) + KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKey().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -885,6 +948,8 @@ private static final long serialVersionUID = 0L;
 
       simple = false;
 
+      key = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -946,6 +1011,7 @@ private static final long serialVersionUID = 0L;
       result.courseType = courseType ;
       result.courseIndustry = courseIndustry ;
       result.simple = simple ;
+      result.key = key ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -1051,6 +1117,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSimple() != false) {
         setSimple(other.getSimple());
+      }
+      if (!other.getKey().isEmpty()) {
+        key = other.key ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1849,6 +1919,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearSimple() {
       
       simple = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object key = "";
+    /**
+     * <pre>
+     * 模糊查询字段
+     * </pre>
+     *
+     * <code>string key = 10;</code>
+     * @return The key.
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 模糊查询字段
+     * </pre>
+     *
+     * <code>string key = 10;</code>
+     * @return The bytes for key.
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 模糊查询字段
+     * </pre>
+     *
+     * <code>string key = 10;</code>
+     * @param value The key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      key = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 模糊查询字段
+     * </pre>
+     *
+     * <code>string key = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKey() {
+      
+      key = getDefaultInstance().getKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 模糊查询字段
+     * </pre>
+     *
+     * <code>string key = 10;</code>
+     * @param value The bytes for key to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      key = value;
       onChanged();
       return this;
     }

@@ -420,6 +420,9 @@ struct GloryApi_ListCourseRequest {
   /// 是否需要精简数据
   var simple: Bool = false
 
+  /// 模糊查询字段
+  var key: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1376,6 +1379,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     6: .standard(proto: "course_type"),
     7: .standard(proto: "course_industry"),
     8: .same(proto: "simple"),
+    10: .same(proto: "key"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1393,6 +1397,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 6: try { try decoder.decodeRepeatedInt32Field(value: &self.courseType) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1428,6 +1433,9 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.simple != false {
       try visitor.visitSingularBoolField(value: self.simple, fieldNumber: 8)
     }
+    if !self.key.isEmpty {
+      try visitor.visitSingularStringField(value: self.key, fieldNumber: 10)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1443,6 +1451,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.simple != rhs.simple {return false}
+    if lhs.key != rhs.key {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

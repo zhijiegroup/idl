@@ -966,6 +966,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.int>? courseType,
     $core.String? courseIndustry,
     $core.bool? simple,
+    $core.String? key,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -993,6 +994,9 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     if (simple != null) {
       $result.simple = simple;
     }
+    if (key != null) {
+      $result.key = key;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -1011,6 +1015,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..p<$core.int>(6, _omitFieldNames ? '' : 'courseType', $pb.PbFieldType.K3)
     ..aOS(7, _omitFieldNames ? '' : 'courseIndustry')
     ..aOB(8, _omitFieldNames ? '' : 'simple')
+    ..aOS(10, _omitFieldNames ? '' : 'key')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1086,16 +1091,25 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearSimple() => clearField(8);
 
+  @$pb.TagNumber(10)
+  $core.String get key => $_getSZ(8);
+  @$pb.TagNumber(10)
+  set key($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasKey() => $_has(8);
+  @$pb.TagNumber(10)
+  void clearKey() => clearField(10);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(8);
+  $1.PaginationRequest get pagination => $_getN(9);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(8);
+  $core.bool hasPagination() => $_has(9);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(8);
+  $1.PaginationRequest ensurePagination() => $_ensure(9);
 }
 
 class ListCourseResponse extends $pb.GeneratedMessage {

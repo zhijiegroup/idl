@@ -116,6 +116,8 @@ export interface ListCourseRequest {
   course_industry?: string;
   /** 是否需要精简数据 */
   simple?: boolean;
+  /** 模糊查询字段 */
+  key?: string;
   pagination?: base.PaginationRequest;
 }
 
