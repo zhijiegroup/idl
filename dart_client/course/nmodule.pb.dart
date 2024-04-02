@@ -34,6 +34,7 @@ class NmCourse extends $pb.GeneratedMessage {
     $core.double? courseHours,
     $fixnum.Int64? courseModule,
     $core.Iterable<NmChapter>? chapters,
+    $core.bool? assigned,
   }) {
     final $result = create();
     if (courseId != null) {
@@ -84,6 +85,9 @@ class NmCourse extends $pb.GeneratedMessage {
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
+    if (assigned != null) {
+      $result.assigned = assigned;
+    }
     return $result;
   }
   NmCourse._() : super();
@@ -107,6 +111,7 @@ class NmCourse extends $pb.GeneratedMessage {
     ..a<$core.double>(14, _omitFieldNames ? '' : 'courseHours', $pb.PbFieldType.OD)
     ..aInt64(15, _omitFieldNames ? '' : 'courseModule')
     ..pc<NmChapter>(16, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..aOB(17, _omitFieldNames ? '' : 'assigned')
     ..hasRequiredFields = false
   ;
 
@@ -268,6 +273,15 @@ class NmCourse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(16)
   $core.List<NmChapter> get chapters => $_getList(15);
+
+  @$pb.TagNumber(17)
+  $core.bool get assigned => $_getBF(16);
+  @$pb.TagNumber(17)
+  set assigned($core.bool v) { $_setBool(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasAssigned() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAssigned() => clearField(17);
 }
 
 class CreateNmCourseChapterResourceRequest extends $pb.GeneratedMessage {

@@ -162,4 +162,10 @@ public interface NmCourseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
       int index);
+
+  /**
+   * <code>bool assigned = 17;</code>
+   * @return The assigned.
+   */
+  boolean getAssigned();
 }
