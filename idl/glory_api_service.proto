@@ -1105,6 +1105,10 @@ service glory_api {
   rpc GetCourseTypeTree(GetCourseTypeTreeRequest) returns (GetCourseTypeTreeResponse) {
     option (api.get) = '/api/course/get_course_type_tree';
   }
+  // 获取课程类型列表
+  rpc GetCourseTypeList(GetCourseTypeListRequest) returns (GetCourseTypeListResponse) {
+    option (api.get) = '/api/course/get_course_type_list';
+  }
 
   // 获取能力指标编码
   rpc GetCourseModuleCode(GetCourseModuleCodeRequest) returns (GetCourseModuleCodeResponse) {

@@ -93,6 +93,7 @@ message ListCourseRequest {
   repeated string course_industry = 7; // 课程所属行业
   bool simple = 8; // 是否需要精简数据
   string key = 10; // 模糊查询字段
+  bool assigned = 11; // 是否只查询已购买的课程
   base.PaginationRequest pagination = 100;
 }
 
@@ -159,4 +160,17 @@ message GetCourseTypeTreeRequest {
 message GetCourseTypeTreeResponse {
   base.BaseResponse base_resp = 1;
   repeated CourseType types = 2;
+}
+
+message GetCourseTypeListRequest {
+  base.BaseRequest base_request = 1;
+  bool assigned = 2;
+}
+
+message GetCourseTypeListResponse {
+  base.BaseResponse base_resp = 1;
+  repeated CourseType levels = 2;
+  repeated CourseType types = 3;
+  repeated CourseType majors = 4;
+  repeated CourseType industries = 5;
 }
