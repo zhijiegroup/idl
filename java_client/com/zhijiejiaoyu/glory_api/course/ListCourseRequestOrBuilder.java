@@ -165,20 +165,41 @@ public interface ListCourseRequestOrBuilder extends
    * 课程所属行业
    * </pre>
    *
-   * <code>string course_industry = 7;</code>
-   * @return The courseIndustry.
+   * <code>repeated string course_industry = 7;</code>
+   * @return A list containing the courseIndustry.
    */
-  java.lang.String getCourseIndustry();
+  java.util.List<java.lang.String>
+      getCourseIndustryList();
   /**
    * <pre>
    * 课程所属行业
    * </pre>
    *
-   * <code>string course_industry = 7;</code>
-   * @return The bytes for courseIndustry.
+   * <code>repeated string course_industry = 7;</code>
+   * @return The count of courseIndustry.
+   */
+  int getCourseIndustryCount();
+  /**
+   * <pre>
+   * 课程所属行业
+   * </pre>
+   *
+   * <code>repeated string course_industry = 7;</code>
+   * @param index The index of the element to return.
+   * @return The courseIndustry at the given index.
+   */
+  java.lang.String getCourseIndustry(int index);
+  /**
+   * <pre>
+   * 课程所属行业
+   * </pre>
+   *
+   * <code>repeated string course_industry = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the courseIndustry at the given index.
    */
   com.google.protobuf.ByteString
-      getCourseIndustryBytes();
+      getCourseIndustryBytes(int index);
 
   /**
    * <pre>

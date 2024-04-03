@@ -415,7 +415,7 @@ struct GloryApi_ListCourseRequest {
   var courseType: [Int32] = []
 
   /// 课程所属行业
-  var courseIndustry: String = String()
+  var courseIndustry: [String] = []
 
   /// 是否需要精简数据
   var simple: Bool = false
@@ -1395,7 +1395,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 4: try { try decoder.decodeRepeatedStringField(value: &self.major) }()
       case 5: try { try decoder.decodeRepeatedInt32Field(value: &self.level) }()
       case 6: try { try decoder.decodeRepeatedInt32Field(value: &self.courseType) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
+      case 7: try { try decoder.decodeRepeatedStringField(value: &self.courseIndustry) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
@@ -1428,7 +1428,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       try visitor.visitPackedInt32Field(value: self.courseType, fieldNumber: 6)
     }
     if !self.courseIndustry.isEmpty {
-      try visitor.visitSingularStringField(value: self.courseIndustry, fieldNumber: 7)
+      try visitor.visitRepeatedStringField(value: self.courseIndustry, fieldNumber: 7)
     }
     if self.simple != false {
       try visitor.visitSingularBoolField(value: self.simple, fieldNumber: 8)

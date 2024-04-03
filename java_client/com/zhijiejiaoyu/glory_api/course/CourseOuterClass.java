@@ -187,7 +187,7 @@ public final class CourseOuterClass {
       "urse_classification\030\002 \003(\005\022\025\n\rcourse_modu" +
       "le\030\003 \001(\005\022\r\n\005major\030\004 \003(\t\022\r\n\005level\030\005 \003(\005\022\023" +
       "\n\013course_type\030\006 \003(\005\022\027\n\017course_industry\030\007" +
-      " \001(\t\022\016\n\006simple\030\010 \001(\010\022\013\n\003key\030\n \001(\t\022+\n\npag" +
+      " \003(\t\022\016\n\006simple\030\010 \001(\010\022\013\n\003key\030\n \001(\t\022+\n\npag" +
       "ination\030d \001(\0132\027.base.PaginationRequest\"\215" +
       "\001\n\022ListCourseResponse\022%\n\tbase_resp\030\001 \001(\013" +
       "2\022.base.BaseResponse\022\"\n\007courses\030\002 \003(\0132\021." +
