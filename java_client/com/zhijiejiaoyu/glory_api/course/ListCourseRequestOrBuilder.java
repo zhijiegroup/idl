@@ -232,6 +232,16 @@ public interface ListCourseRequestOrBuilder extends
       getKeyBytes();
 
   /**
+   * <pre>
+   * 是否只查询已购买的课程
+   * </pre>
+   *
+   * <code>bool assigned = 11;</code>
+   * @return The assigned.
+   */
+  boolean getAssigned();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

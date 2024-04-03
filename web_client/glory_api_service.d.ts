@@ -1264,6 +1264,11 @@ CreateLivePlanProduct create live plan product */
     request: course.GetCourseTypeTreeRequest
   ): Promise<course.GetCourseTypeTreeResponse>;
 
+  /** 获取课程类型列表 */
+  GetCourseTypeList(
+    request: course.GetCourseTypeListRequest
+  ): Promise<course.GetCourseTypeListResponse>;
+
   /** 获取能力指标编码 */
   GetCourseModuleCode(
     request: modules.GetCourseModuleCodeRequest

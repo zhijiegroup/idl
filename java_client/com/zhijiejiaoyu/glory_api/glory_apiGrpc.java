@@ -8664,6 +8664,37 @@ public final class glory_apiGrpc {
     return getGetCourseTypeTreeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> getGetCourseTypeListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCourseTypeList",
+      requestType = com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest,
+      com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> getGetCourseTypeListMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest, com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> getGetCourseTypeListMethod;
+    if ((getGetCourseTypeListMethod = glory_apiGrpc.getGetCourseTypeListMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetCourseTypeListMethod = glory_apiGrpc.getGetCourseTypeListMethod) == null) {
+          glory_apiGrpc.getGetCourseTypeListMethod = getGetCourseTypeListMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest, com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCourseTypeList"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetCourseTypeList"))
+              .build();
+        }
+      }
+    }
+    return getGetCourseTypeListMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.course.GetCourseModuleCodeRequest,
       com.zhijiejiaoyu.glory_api.course.GetCourseModuleCodeResponse> getGetCourseModuleCodeMethod;
 
@@ -15175,6 +15206,16 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取课程类型列表
+     * </pre>
+     */
+    default void getCourseTypeList(com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCourseTypeListMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * 获取能力指标编码
      * </pre>
      */
@@ -18786,6 +18827,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取课程类型列表
+     * </pre>
+     */
+    public void getCourseTypeList(com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCourseTypeListMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * 获取能力指标编码
      * </pre>
      */
@@ -22241,6 +22293,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeResponse getCourseTypeTree(com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetCourseTypeTreeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取课程类型列表
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse getCourseTypeList(com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCourseTypeListMethod(), getCallOptions(), request);
     }
 
     /**
@@ -25845,6 +25907,17 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
+     * 获取课程类型列表
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse> getCourseTypeList(
+        com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCourseTypeListMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * 获取能力指标编码
      * </pre>
      */
@@ -27382,144 +27455,145 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_COURSE_MATERIAL = 276;
   private static final int METHODID_DELETE_COURSE_MATERIAL = 277;
   private static final int METHODID_GET_COURSE_TYPE_TREE = 278;
-  private static final int METHODID_GET_COURSE_MODULE_CODE = 279;
-  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 280;
-  private static final int METHODID_CREATE_COURSE_MODULE = 281;
-  private static final int METHODID_GET_COURSE_MODULE = 282;
-  private static final int METHODID_UPDATE_COURSE_MODULE = 283;
-  private static final int METHODID_DELETE_COURSE_MODULE = 284;
-  private static final int METHODID_LIST_COURSE_MODULE = 285;
-  private static final int METHODID_LIST_LATEST_COURSE = 286;
-  private static final int METHODID_LIST_HOTTEST_COURSE = 287;
-  private static final int METHODID_CREATE_CM_COURSE = 288;
-  private static final int METHODID_PREVIEW_CM_COURSE = 289;
-  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 290;
-  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 291;
-  private static final int METHODID_CREATE_NM_COURSE = 292;
-  private static final int METHODID_UPDATE_NM_COURSE = 293;
-  private static final int METHODID_LIST_NM_COURSE = 294;
-  private static final int METHODID_NM_COURSE_DETAIL = 295;
-  private static final int METHODID_DELETE_NM_COURSE = 296;
-  private static final int METHODID_CREATE_COURSE = 297;
-  private static final int METHODID_GET_COURSE = 298;
-  private static final int METHODID_UPDATE_COURSE = 299;
-  private static final int METHODID_DELETE_COURSE = 300;
-  private static final int METHODID_LIST_COURSE = 301;
-  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 302;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 303;
-  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 304;
-  private static final int METHODID_GET_MAJOR_CODE = 305;
-  private static final int METHODID_GET_COURSE_IDS = 306;
-  private static final int METHODID_ENROLL_COURSE = 307;
-  private static final int METHODID_DELETE_MY_COURSE = 308;
-  private static final int METHODID_UPDATE_COURSE_PROGRESS = 309;
-  private static final int METHODID_LIST_MY_COURSE = 310;
-  private static final int METHODID_LIST_TEACHING_PLAN = 311;
-  private static final int METHODID_CREATE_TEACHING_PLAN = 312;
-  private static final int METHODID_UPDATE_TEACHING_PLAN = 313;
-  private static final int METHODID_DELETE_TEACHING_PLAN = 314;
-  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 315;
-  private static final int METHODID_CREATE_EDU_SCHEME = 316;
-  private static final int METHODID_UPDATE_EDU_SCHEME = 317;
-  private static final int METHODID_LIST_EDU_SCHEME = 318;
-  private static final int METHODID_EDU_SCHEME_DETAIL = 319;
-  private static final int METHODID_DELETE_EDU_SCHEME = 320;
-  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 321;
-  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 322;
-  private static final int METHODID_GET_ANDROID_QRCODE = 323;
-  private static final int METHODID_CREATE_JOB = 324;
-  private static final int METHODID_UPDATE_JOB = 325;
-  private static final int METHODID_DELETE_JOB = 326;
-  private static final int METHODID_LIST_JOB = 327;
-  private static final int METHODID_GET_SCHOO_LIVE_CHART = 328;
-  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 329;
-  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 330;
-  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 331;
-  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 332;
-  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 333;
-  private static final int METHODID_LIST_TRAFFIC_WARNING = 334;
-  private static final int METHODID_DELETE_TRAFFIC_WARNING = 335;
-  private static final int METHODID_CREATE_LIVE_CONTROL = 336;
-  private static final int METHODID_UPDATE_LIVE_CONTROL = 337;
-  private static final int METHODID_LIST_LIVE_CONTROL = 338;
-  private static final int METHODID_DELETE_LIVE_CONTROL = 339;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 340;
-  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 341;
-  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 342;
-  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 343;
-  private static final int METHODID_GET_LIVE_REPLAY = 344;
-  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 345;
-  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 346;
-  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 347;
-  private static final int METHODID_DELETE_QUICK_EVALUATION_REPORT = 348;
-  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 349;
-  private static final int METHODID_CREATE_VERSION_LOG = 350;
-  private static final int METHODID_UPDATE_VERSION_LOG = 351;
-  private static final int METHODID_LIST_VERSION_LOG = 352;
-  private static final int METHODID_DELETE_VERSION_LOG = 353;
-  private static final int METHODID_GET_LATEST_VERSION = 354;
-  private static final int METHODID_GET_TASK_CONFIG = 355;
-  private static final int METHODID_CREATE_SYSTEM_TASK = 356;
-  private static final int METHODID_LIST_SYSTEM_TASK = 357;
-  private static final int METHODID_GET_SYSTEM_TASK = 358;
-  private static final int METHODID_UPDATE_SYSTEM_TASK = 359;
-  private static final int METHODID_DELETE_SYSTEM_TASK = 360;
-  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 361;
-  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 362;
-  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 363;
-  private static final int METHODID_GET_TEACHER_TASK_TEMPLATE = 364;
-  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 365;
-  private static final int METHODID_CREATE_TEACHER_TASK = 366;
-  private static final int METHODID_UPDATE_TEACHER_TASK = 367;
-  private static final int METHODID_LIST_TEACHER_TASK = 368;
-  private static final int METHODID_GET_TEACHER_TASK = 369;
-  private static final int METHODID_GET_TEACHER_TASK_PROGRESS = 370;
-  private static final int METHODID_DELETE_TEACHER_TASK = 371;
-  private static final int METHODID_TEACHER_TASK_STATS = 372;
-  private static final int METHODID_COUNT_CLASS_SUBMIT = 373;
-  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 374;
-  private static final int METHODID_COUNT_POSITIVE_LIST = 375;
-  private static final int METHODID_COUNT_POTENTIAL_LIST = 376;
-  private static final int METHODID_COUNT_SUBMIT_LIST = 377;
-  private static final int METHODID_COUNT_CLASS_PASS = 378;
-  private static final int METHODID_COUNT_CLASS_PASS_LIST = 379;
-  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 380;
-  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 381;
-  private static final int METHODID_COUNT_PASS_LIST = 382;
-  private static final int METHODID_LIST_STUDENT_TASK = 383;
-  private static final int METHODID_SUBMIT_STUDENT_TASK = 384;
-  private static final int METHODID_GET_STUDENT_TASK = 385;
-  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 386;
-  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 387;
-  private static final int METHODID_STUDENT_TASK_STATS = 388;
-  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 389;
-  private static final int METHODID_LIST_NOTIFICATION = 390;
-  private static final int METHODID_COUNT_NOTIFICATION = 391;
-  private static final int METHODID_READ_NOTIFICATION = 392;
-  private static final int METHODID_TEST_NOTIFICATION = 393;
-  private static final int METHODID_DELETE_NOTIFICATION = 394;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 395;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 396;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 397;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 398;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 399;
-  private static final int METHODID_CLOSE_CASTER = 400;
-  private static final int METHODID_CREATE_ARTICLE_CREATION = 401;
-  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 402;
-  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 403;
-  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 404;
-  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 405;
-  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 406;
-  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 407;
-  private static final int METHODID_GET_EXAMPLE_ARTICLE = 408;
-  private static final int METHODID_GET_EVALUATION_STANDARD = 409;
-  private static final int METHODID_CREATE_EVALUATION_CONFIG = 410;
-  private static final int METHODID_LIST_EVALUATION_CONFIG = 411;
-  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 412;
-  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 413;
-  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 414;
-  private static final int METHODID_CORRECT_SENTENCE = 415;
-  private static final int METHODID_ARTICLE_AI_CHAT = 416;
+  private static final int METHODID_GET_COURSE_TYPE_LIST = 279;
+  private static final int METHODID_GET_COURSE_MODULE_CODE = 280;
+  private static final int METHODID_GET_COURSE_CHAPTER_CODE = 281;
+  private static final int METHODID_CREATE_COURSE_MODULE = 282;
+  private static final int METHODID_GET_COURSE_MODULE = 283;
+  private static final int METHODID_UPDATE_COURSE_MODULE = 284;
+  private static final int METHODID_DELETE_COURSE_MODULE = 285;
+  private static final int METHODID_LIST_COURSE_MODULE = 286;
+  private static final int METHODID_LIST_LATEST_COURSE = 287;
+  private static final int METHODID_LIST_HOTTEST_COURSE = 288;
+  private static final int METHODID_CREATE_CM_COURSE = 289;
+  private static final int METHODID_PREVIEW_CM_COURSE = 290;
+  private static final int METHODID_CREATE_NM_COURSE_RESOURCE = 291;
+  private static final int METHODID_CREATE_NM_COURSE_CHAPTER = 292;
+  private static final int METHODID_CREATE_NM_COURSE = 293;
+  private static final int METHODID_UPDATE_NM_COURSE = 294;
+  private static final int METHODID_LIST_NM_COURSE = 295;
+  private static final int METHODID_NM_COURSE_DETAIL = 296;
+  private static final int METHODID_DELETE_NM_COURSE = 297;
+  private static final int METHODID_CREATE_COURSE = 298;
+  private static final int METHODID_GET_COURSE = 299;
+  private static final int METHODID_UPDATE_COURSE = 300;
+  private static final int METHODID_DELETE_COURSE = 301;
+  private static final int METHODID_LIST_COURSE = 302;
+  private static final int METHODID_CREATE_KNOWLEDGE_GRAPH = 303;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH = 304;
+  private static final int METHODID_GET_KNOWLEDGE_GRAPH_NODE = 305;
+  private static final int METHODID_GET_MAJOR_CODE = 306;
+  private static final int METHODID_GET_COURSE_IDS = 307;
+  private static final int METHODID_ENROLL_COURSE = 308;
+  private static final int METHODID_DELETE_MY_COURSE = 309;
+  private static final int METHODID_UPDATE_COURSE_PROGRESS = 310;
+  private static final int METHODID_LIST_MY_COURSE = 311;
+  private static final int METHODID_LIST_TEACHING_PLAN = 312;
+  private static final int METHODID_CREATE_TEACHING_PLAN = 313;
+  private static final int METHODID_UPDATE_TEACHING_PLAN = 314;
+  private static final int METHODID_DELETE_TEACHING_PLAN = 315;
+  private static final int METHODID_UPDATE_TEACHING_COURSE_PROGRESS = 316;
+  private static final int METHODID_CREATE_EDU_SCHEME = 317;
+  private static final int METHODID_UPDATE_EDU_SCHEME = 318;
+  private static final int METHODID_LIST_EDU_SCHEME = 319;
+  private static final int METHODID_EDU_SCHEME_DETAIL = 320;
+  private static final int METHODID_DELETE_EDU_SCHEME = 321;
+  private static final int METHODID_DISTRIBUTE_EDU_SCHEME = 322;
+  private static final int METHODID_GET_EDU_SCHEME_LIKE_COURSE = 323;
+  private static final int METHODID_GET_ANDROID_QRCODE = 324;
+  private static final int METHODID_CREATE_JOB = 325;
+  private static final int METHODID_UPDATE_JOB = 326;
+  private static final int METHODID_DELETE_JOB = 327;
+  private static final int METHODID_LIST_JOB = 328;
+  private static final int METHODID_GET_SCHOO_LIVE_CHART = 329;
+  private static final int METHODID_LIST_SCHOO_LIVE_TRAFFIC = 330;
+  private static final int METHODID_GET_LIVE_ALL_TRAFFIC = 331;
+  private static final int METHODID_GET_SCHOO_LIVE_TRAFFIC = 332;
+  private static final int METHODID_LIST_TENANT_TRAFFIC_CONFIG = 333;
+  private static final int METHODID_UPDATE_TENANT_TRAFFIC_CONFIG = 334;
+  private static final int METHODID_LIST_TRAFFIC_WARNING = 335;
+  private static final int METHODID_DELETE_TRAFFIC_WARNING = 336;
+  private static final int METHODID_CREATE_LIVE_CONTROL = 337;
+  private static final int METHODID_UPDATE_LIVE_CONTROL = 338;
+  private static final int METHODID_LIST_LIVE_CONTROL = 339;
+  private static final int METHODID_DELETE_LIVE_CONTROL = 340;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_STANDARD = 341;
+  private static final int METHODID_UPDATE_QUICK_EVALUATION_STANDARD = 342;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_STANDARD = 343;
+  private static final int METHODID_LIST_QUICK_EVALUATION_STANDARD = 344;
+  private static final int METHODID_GET_LIVE_REPLAY = 345;
+  private static final int METHODID_CREATE_QUICK_EVALUATION_REPORT = 346;
+  private static final int METHODID_LIST_QUICK_EVALUATION_REPORT = 347;
+  private static final int METHODID_GET_QUICK_EVALUATION_REPORT = 348;
+  private static final int METHODID_DELETE_QUICK_EVALUATION_REPORT = 349;
+  private static final int METHODID_GET_QUICK_EVALUATION_DETAIL = 350;
+  private static final int METHODID_CREATE_VERSION_LOG = 351;
+  private static final int METHODID_UPDATE_VERSION_LOG = 352;
+  private static final int METHODID_LIST_VERSION_LOG = 353;
+  private static final int METHODID_DELETE_VERSION_LOG = 354;
+  private static final int METHODID_GET_LATEST_VERSION = 355;
+  private static final int METHODID_GET_TASK_CONFIG = 356;
+  private static final int METHODID_CREATE_SYSTEM_TASK = 357;
+  private static final int METHODID_LIST_SYSTEM_TASK = 358;
+  private static final int METHODID_GET_SYSTEM_TASK = 359;
+  private static final int METHODID_UPDATE_SYSTEM_TASK = 360;
+  private static final int METHODID_DELETE_SYSTEM_TASK = 361;
+  private static final int METHODID_CREATE_TEACHER_TASK_TEMPLATE = 362;
+  private static final int METHODID_UPDATE_TEACHER_TASK_TEMPLATE = 363;
+  private static final int METHODID_LIST_TEACHER_TASK_TEMPLATE = 364;
+  private static final int METHODID_GET_TEACHER_TASK_TEMPLATE = 365;
+  private static final int METHODID_DELETE_TEACHER_TASK_TEMPLATE = 366;
+  private static final int METHODID_CREATE_TEACHER_TASK = 367;
+  private static final int METHODID_UPDATE_TEACHER_TASK = 368;
+  private static final int METHODID_LIST_TEACHER_TASK = 369;
+  private static final int METHODID_GET_TEACHER_TASK = 370;
+  private static final int METHODID_GET_TEACHER_TASK_PROGRESS = 371;
+  private static final int METHODID_DELETE_TEACHER_TASK = 372;
+  private static final int METHODID_TEACHER_TASK_STATS = 373;
+  private static final int METHODID_COUNT_CLASS_SUBMIT = 374;
+  private static final int METHODID_COUNT_CLASS_SUBMIT_LIST = 375;
+  private static final int METHODID_COUNT_POSITIVE_LIST = 376;
+  private static final int METHODID_COUNT_POTENTIAL_LIST = 377;
+  private static final int METHODID_COUNT_SUBMIT_LIST = 378;
+  private static final int METHODID_COUNT_CLASS_PASS = 379;
+  private static final int METHODID_COUNT_CLASS_PASS_LIST = 380;
+  private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 381;
+  private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 382;
+  private static final int METHODID_COUNT_PASS_LIST = 383;
+  private static final int METHODID_LIST_STUDENT_TASK = 384;
+  private static final int METHODID_SUBMIT_STUDENT_TASK = 385;
+  private static final int METHODID_GET_STUDENT_TASK = 386;
+  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 387;
+  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 388;
+  private static final int METHODID_STUDENT_TASK_STATS = 389;
+  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 390;
+  private static final int METHODID_LIST_NOTIFICATION = 391;
+  private static final int METHODID_COUNT_NOTIFICATION = 392;
+  private static final int METHODID_READ_NOTIFICATION = 393;
+  private static final int METHODID_TEST_NOTIFICATION = 394;
+  private static final int METHODID_DELETE_NOTIFICATION = 395;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 396;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 397;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 398;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 399;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 400;
+  private static final int METHODID_CLOSE_CASTER = 401;
+  private static final int METHODID_CREATE_ARTICLE_CREATION = 402;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 403;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 404;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 405;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 406;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 407;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 408;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 409;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 410;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 411;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 412;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 413;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 414;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 415;
+  private static final int METHODID_CORRECT_SENTENCE = 416;
+  private static final int METHODID_ARTICLE_AI_CHAT = 417;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -28653,6 +28727,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_COURSE_TYPE_TREE:
           serviceImpl.getCourseTypeTree((com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeResponse>) responseObserver);
+          break;
+        case METHODID_GET_COURSE_TYPE_LIST:
+          serviceImpl.getCourseTypeList((com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse>) responseObserver);
           break;
         case METHODID_GET_COURSE_MODULE_CODE:
           serviceImpl.getCourseModuleCode((com.zhijiejiaoyu.glory_api.course.GetCourseModuleCodeRequest) request,
@@ -31178,6 +31256,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.course.GetCourseTypeTreeResponse>(
                 service, METHODID_GET_COURSE_TYPE_TREE)))
         .addMethod(
+          getGetCourseTypeListMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.course.GetCourseTypeListRequest,
+              com.zhijiejiaoyu.glory_api.course.GetCourseTypeListResponse>(
+                service, METHODID_GET_COURSE_TYPE_LIST)))
+        .addMethod(
           getGetCourseModuleCodeMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -32470,6 +32555,7 @@ public final class glory_apiGrpc {
               .addMethod(getListCourseMaterialMethod())
               .addMethod(getDeleteCourseMaterialMethod())
               .addMethod(getGetCourseTypeTreeMethod())
+              .addMethod(getGetCourseTypeListMethod())
               .addMethod(getGetCourseModuleCodeMethod())
               .addMethod(getGetCourseChapterCodeMethod())
               .addMethod(getCreateCourseModuleMethod())

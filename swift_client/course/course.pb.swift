@@ -423,6 +423,9 @@ struct GloryApi_ListCourseRequest {
   /// 模糊查询字段
   var key: String = String()
 
+  /// 是否只查询已购买的课程
+  var assigned: Bool = false
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -729,6 +732,58 @@ struct GloryApi_GetCourseTypeTreeResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_GetCourseTypeListRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var assigned: Bool = false
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetCourseTypeListResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var levels: [GloryApi_CourseType] = []
+
+  var types: [GloryApi_CourseType] = []
+
+  var majors: [GloryApi_CourseType] = []
+
+  var industries: [GloryApi_CourseType] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_CourseModules: @unchecked Sendable {}
 extension GloryApi_Occupation: @unchecked Sendable {}
@@ -755,6 +810,8 @@ extension GloryApi_ListHottestCourseResponse: @unchecked Sendable {}
 extension GloryApi_CourseType: @unchecked Sendable {}
 extension GloryApi_GetCourseTypeTreeRequest: @unchecked Sendable {}
 extension GloryApi_GetCourseTypeTreeResponse: @unchecked Sendable {}
+extension GloryApi_GetCourseTypeListRequest: @unchecked Sendable {}
+extension GloryApi_GetCourseTypeListResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1380,6 +1437,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     7: .standard(proto: "course_industry"),
     8: .same(proto: "simple"),
     10: .same(proto: "key"),
+    11: .same(proto: "assigned"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1398,6 +1456,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 7: try { try decoder.decodeRepeatedStringField(value: &self.courseIndustry) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
+      case 11: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1436,6 +1495,9 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.key.isEmpty {
       try visitor.visitSingularStringField(value: self.key, fieldNumber: 10)
     }
+    if self.assigned != false {
+      try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 11)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1452,6 +1514,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.simple != rhs.simple {return false}
     if lhs.key != rhs.key {return false}
+    if lhs.assigned != rhs.assigned {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1991,6 +2054,108 @@ extension GloryApi_GetCourseTypeTreeResponse: SwiftProtobuf.Message, SwiftProtob
   static func ==(lhs: GloryApi_GetCourseTypeTreeResponse, rhs: GloryApi_GetCourseTypeTreeResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.types != rhs.types {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetCourseTypeListRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "assigned"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.assigned != false {
+      try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetCourseTypeListRequest, rhs: GloryApi_GetCourseTypeListRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.assigned != rhs.assigned {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetCourseTypeListResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "levels"),
+    3: .same(proto: "types"),
+    4: .same(proto: "majors"),
+    5: .same(proto: "industries"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.levels) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.types) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.majors) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.industries) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.levels.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.levels, fieldNumber: 2)
+    }
+    if !self.types.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.types, fieldNumber: 3)
+    }
+    if !self.majors.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.majors, fieldNumber: 4)
+    }
+    if !self.industries.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.industries, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetCourseTypeListResponse, rhs: GloryApi_GetCourseTypeListResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.levels != rhs.levels {return false}
+    if lhs.types != rhs.types {return false}
+    if lhs.majors != rhs.majors {return false}
+    if lhs.industries != rhs.industries {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

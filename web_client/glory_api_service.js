@@ -2268,6 +2268,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetCourseTypeList(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/course/get_course_type_list${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   GetCourseModuleCode(request) {
     const uri = `${this.uriPrefix}/api/course/get_course_module_code`;
     const body = JSONbigint.stringify(request);

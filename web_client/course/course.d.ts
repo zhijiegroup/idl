@@ -118,6 +118,8 @@ export interface ListCourseRequest {
   simple?: boolean;
   /** 模糊查询字段 */
   key?: string;
+  /** 是否只查询已购买的课程 */
+  assigned?: boolean;
   pagination?: base.PaginationRequest;
 }
 
@@ -184,4 +186,17 @@ export interface GetCourseTypeTreeRequest {
 export interface GetCourseTypeTreeResponse {
   base_resp?: base.BaseResponse;
   types?: Array<CourseType>;
+}
+
+export interface GetCourseTypeListRequest {
+  base_request?: base.BaseRequest;
+  assigned?: boolean;
+}
+
+export interface GetCourseTypeListResponse {
+  base_resp?: base.BaseResponse;
+  levels?: Array<CourseType>;
+  types?: Array<CourseType>;
+  majors?: Array<CourseType>;
+  industries?: Array<CourseType>;
 }

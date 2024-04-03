@@ -169,6 +169,11 @@ private static final long serialVersionUID = 0L;
             key = s;
             break;
           }
+          case 88: {
+
+            assigned = input.readBool();
+            break;
+          }
           case 802: {
             com.zhijiejiaoyu.base.PaginationRequest.Builder subBuilder = null;
             if (pagination != null) {
@@ -553,6 +558,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ASSIGNED_FIELD_NUMBER = 11;
+  private boolean assigned ;
+  /**
+   * <pre>
+   * 是否只查询已购买的课程
+   * </pre>
+   *
+   * <code>bool assigned = 11;</code>
+   * @return The assigned.
+   */
+  @java.lang.Override
+  public boolean getAssigned() {
+    return assigned ;
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -632,6 +652,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, key );
+    }
+    if (assigned != false) {
+      output.writeBool(11, assigned );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -718,6 +741,10 @@ private static final long serialVersionUID = 0L;
     if (!getKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, key );
     }
+    if (assigned != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, assigned );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -758,6 +785,8 @@ private static final long serialVersionUID = 0L;
         != other.getSimple()) return false;
     if (!getKey()
         .equals(other.getKey())) return false;
+    if (getAssigned()
+        != other.getAssigned()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -805,6 +834,9 @@ private static final long serialVersionUID = 0L;
         getSimple());
     hash = (37 * hash) + KEY_FIELD_NUMBER;
     hash = (53 * hash) + getKey().hashCode();
+    hash = (37 * hash) + ASSIGNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAssigned());
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -968,6 +1000,8 @@ private static final long serialVersionUID = 0L;
 
       key = "";
 
+      assigned = false;
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -1034,6 +1068,7 @@ private static final long serialVersionUID = 0L;
       result.courseIndustry = courseIndustry ;
       result.simple = simple ;
       result.key = key ;
+      result.assigned = assigned ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -1149,6 +1184,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getKey().isEmpty()) {
         key = other.key ;
         onChanged();
+      }
+      if (other.getAssigned() != false) {
+        setAssigned(other.getAssigned());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -2093,6 +2131,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       key = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean assigned ;
+    /**
+     * <pre>
+     * 是否只查询已购买的课程
+     * </pre>
+     *
+     * <code>bool assigned = 11;</code>
+     * @return The assigned.
+     */
+    @java.lang.Override
+    public boolean getAssigned() {
+      return assigned ;
+    }
+    /**
+     * <pre>
+     * 是否只查询已购买的课程
+     * </pre>
+     *
+     * <code>bool assigned = 11;</code>
+     * @param value The assigned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssigned(boolean value) {
+      
+      assigned = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 是否只查询已购买的课程
+     * </pre>
+     *
+     * <code>bool assigned = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssigned() {
+      
+      assigned = false;
       onChanged();
       return this;
     }

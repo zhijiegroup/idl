@@ -357,6 +357,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$37.ListCourseMaterialResponse> listCourseMaterial($pb.ServerContext ctx, $37.ListCourseMaterialRequest request);
   $async.Future<$37.DeleteCourseMaterialResponse> deleteCourseMaterial($pb.ServerContext ctx, $37.DeleteCourseMaterialRequest request);
   $async.Future<$38.GetCourseTypeTreeResponse> getCourseTypeTree($pb.ServerContext ctx, $38.GetCourseTypeTreeRequest request);
+  $async.Future<$38.GetCourseTypeListResponse> getCourseTypeList($pb.ServerContext ctx, $38.GetCourseTypeListRequest request);
   $async.Future<$39.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ServerContext ctx, $39.GetCourseModuleCodeRequest request);
   $async.Future<$39.GetCourseChapterCodeResponse> getCourseChapterCode($pb.ServerContext ctx, $39.GetCourseChapterCodeRequest request);
   $async.Future<$39.CreateCourseModuleResponse> createCourseModule($pb.ServerContext ctx, $39.CreateCourseModuleRequest request);
@@ -777,6 +778,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListCourseMaterial': return $37.ListCourseMaterialRequest();
       case 'DeleteCourseMaterial': return $37.DeleteCourseMaterialRequest();
       case 'GetCourseTypeTree': return $38.GetCourseTypeTreeRequest();
+      case 'GetCourseTypeList': return $38.GetCourseTypeListRequest();
       case 'GetCourseModuleCode': return $39.GetCourseModuleCodeRequest();
       case 'GetCourseChapterCode': return $39.GetCourseChapterCodeRequest();
       case 'CreateCourseModule': return $39.CreateCourseModuleRequest();
@@ -1200,6 +1202,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListCourseMaterial': return this.listCourseMaterial(ctx, request as $37.ListCourseMaterialRequest);
       case 'DeleteCourseMaterial': return this.deleteCourseMaterial(ctx, request as $37.DeleteCourseMaterialRequest);
       case 'GetCourseTypeTree': return this.getCourseTypeTree(ctx, request as $38.GetCourseTypeTreeRequest);
+      case 'GetCourseTypeList': return this.getCourseTypeList(ctx, request as $38.GetCourseTypeListRequest);
       case 'GetCourseModuleCode': return this.getCourseModuleCode(ctx, request as $39.GetCourseModuleCodeRequest);
       case 'GetCourseChapterCode': return this.getCourseChapterCode(ctx, request as $39.GetCourseChapterCodeRequest);
       case 'CreateCourseModule': return this.createCourseModule(ctx, request as $39.CreateCourseModuleRequest);

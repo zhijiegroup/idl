@@ -914,6 +914,9 @@ class glory_apiApi {
   $async.Future<$38.GetCourseTypeTreeResponse> getCourseTypeTree($pb.ClientContext? ctx, $38.GetCourseTypeTreeRequest request) =>
     _client.invoke<$38.GetCourseTypeTreeResponse>(ctx, 'glory_api', 'GetCourseTypeTree', request, $38.GetCourseTypeTreeResponse())
   ;
+  $async.Future<$38.GetCourseTypeListResponse> getCourseTypeList($pb.ClientContext? ctx, $38.GetCourseTypeListRequest request) =>
+    _client.invoke<$38.GetCourseTypeListResponse>(ctx, 'glory_api', 'GetCourseTypeList', request, $38.GetCourseTypeListResponse())
+  ;
   $async.Future<$39.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ClientContext? ctx, $39.GetCourseModuleCodeRequest request) =>
     _client.invoke<$39.GetCourseModuleCodeResponse>(ctx, 'glory_api', 'GetCourseModuleCode', request, $39.GetCourseModuleCodeResponse())
   ;
