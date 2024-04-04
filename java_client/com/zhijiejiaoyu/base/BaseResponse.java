@@ -64,6 +64,11 @@ private static final long serialVersionUID = 0L;
             statusMessage = s;
             break;
           }
+          case 24: {
+
+            entryId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +150,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ENTRY_ID_FIELD_NUMBER = 3;
+  private long entryId ;
+  /**
+   * <code>int64 entry_id = 3;</code>
+   * @return The entryId.
+   */
+  @java.lang.Override
+  public long getEntryId() {
+    return entryId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -165,6 +181,9 @@ private static final long serialVersionUID = 0L;
     if (!getStatusMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, statusMessage );
     }
+    if (entryId != 0L) {
+      output.writeInt64(3, entryId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -180,6 +199,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, statusMessage );
+    }
+    if (entryId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, entryId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -200,6 +223,8 @@ private static final long serialVersionUID = 0L;
         != other.getStatusCode()) return false;
     if (!getStatusMessage()
         .equals(other.getStatusMessage())) return false;
+    if (getEntryId()
+        != other.getEntryId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -215,6 +240,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStatusCode();
     hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getStatusMessage().hashCode();
+    hash = (37 * hash) + ENTRY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEntryId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -356,6 +384,8 @@ private static final long serialVersionUID = 0L;
 
       statusMessage = "";
 
+      entryId = 0L;
+
       return this;
     }
 
@@ -384,6 +414,7 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.base.BaseResponse result = new com.zhijiejiaoyu.base.BaseResponse(this);
       result.statusCode = statusCode ;
       result.statusMessage = statusMessage ;
+      result.entryId = entryId ;
       onBuilt();
       return result;
     }
@@ -438,6 +469,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage = other.statusMessage ;
         onChanged();
+      }
+      if (other.getEntryId() != 0L) {
+        setEntryId(other.getEntryId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -571,6 +605,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       statusMessage = value;
+      onChanged();
+      return this;
+    }
+
+    private long entryId ;
+    /**
+     * <code>int64 entry_id = 3;</code>
+     * @return The entryId.
+     */
+    @java.lang.Override
+    public long getEntryId() {
+      return entryId ;
+    }
+    /**
+     * <code>int64 entry_id = 3;</code>
+     * @param value The entryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntryId(long value) {
+      
+      entryId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 entry_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEntryId() {
+      
+      entryId = 0L;
       onChanged();
       return this;
     }

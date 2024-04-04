@@ -19,6 +19,7 @@ class BaseResponse extends $pb.GeneratedMessage {
   factory BaseResponse({
     $core.int? statusCode,
     $core.String? statusMessage,
+    $fixnum.Int64? entryId,
   }) {
     final $result = create();
     if (statusCode != null) {
@@ -26,6 +27,9 @@ class BaseResponse extends $pb.GeneratedMessage {
     }
     if (statusMessage != null) {
       $result.statusMessage = statusMessage;
+    }
+    if (entryId != null) {
+      $result.entryId = entryId;
     }
     return $result;
   }
@@ -36,6 +40,7 @@ class BaseResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BaseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'base'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'statusCode', $pb.PbFieldType.OS3)
     ..aOS(2, _omitFieldNames ? '' : 'statusMessage')
+    ..aInt64(3, _omitFieldNames ? '' : 'entryId')
     ..hasRequiredFields = false
   ;
 
@@ -77,6 +82,15 @@ class BaseResponse extends $pb.GeneratedMessage {
   $core.bool hasStatusMessage() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatusMessage() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get entryId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set entryId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEntryId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntryId() => clearField(3);
 }
 
 /// GeneralResponse is used for return early with only the BaseResponse

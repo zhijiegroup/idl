@@ -9,6 +9,7 @@ export { api };
 export interface BaseResponse {
   status_code?: number;
   status_message?: string;
+  entry_id?: string;
 }
 
 /** GeneralResponse is used for return early with only the BaseResponse */

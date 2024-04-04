@@ -19,13 +19,15 @@ const BaseResponse$json = {
   '2': [
     {'1': 'status_code', '3': 1, '4': 1, '5': 17, '10': 'statusCode'},
     {'1': 'status_message', '3': 2, '4': 1, '5': 9, '10': 'statusMessage'},
+    {'1': 'entry_id', '3': 3, '4': 1, '5': 3, '10': 'entryId'},
   ],
 };
 
 /// Descriptor for `BaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List baseResponseDescriptor = $convert.base64Decode(
     'CgxCYXNlUmVzcG9uc2USHwoLc3RhdHVzX2NvZGUYASABKBFSCnN0YXR1c0NvZGUSJQoOc3RhdH'
-    'VzX21lc3NhZ2UYAiABKAlSDXN0YXR1c01lc3NhZ2U=');
+    'VzX21lc3NhZ2UYAiABKAlSDXN0YXR1c01lc3NhZ2USGQoIZW50cnlfaWQYAyABKANSB2VudHJ5'
+    'SWQ=');
 
 @$core.Deprecated('Use generalResponseDescriptor instead')
 const GeneralResponse$json = {

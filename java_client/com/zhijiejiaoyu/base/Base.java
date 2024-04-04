@@ -53,20 +53,21 @@ public final class Base {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nbase.proto\022\004base\032\tapi.proto\";\n\014BaseRes" +
+      "\n\nbase.proto\022\004base\032\tapi.proto\"M\n\014BaseRes" +
       "ponse\022\023\n\013status_code\030\001 \001(\021\022\026\n\016status_mes" +
-      "sage\030\002 \001(\t\"8\n\017GeneralResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\"Z\n\021Paginati" +
-      "onRequest\022\014\n\004size\030\001 \001(\005\022\014\n\004page\030\002 \001(\005\022\020\n" +
-      "\010sort_key\030\003 \001(\t\022\027\n\017sort_descending\030\004 \001(\010" +
-      "\"p\n\022PaginationResponse\022\014\n\004size\030\001 \001(\005\022\014\n\004" +
-      "page\030\002 \001(\005\022\023\n\013total_count\030\003 \001(\003\022\020\n\010sort_" +
-      "key\030\004 \001(\t\022\027\n\017sort_descending\030\005 \001(\010\"\\\n\nAu" +
-      "thorInfo\022\022\n\ncreated_by\030e \001(\003\022\022\n\ncreated_" +
-      "at\030f \001(\t\022\022\n\nupdated_by\030g \001(\003\022\022\n\nupdated_" +
-      "at\030h \001(\t\"5\n\013BaseRequest\022&\n\nauth_token\030\001 " +
-      "\001(\tB\022\272\273\030\016X-Custom-TokenB\037\n\025com.zhijiejia" +
-      "oyu.baseP\001Z\004baseb\006proto3"
+      "sage\030\002 \001(\t\022\020\n\010entry_id\030\003 \001(\003\"8\n\017GeneralR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"Z\n\021PaginationRequest\022\014\n\004size\030\001 \001(" +
+      "\005\022\014\n\004page\030\002 \001(\005\022\020\n\010sort_key\030\003 \001(\t\022\027\n\017sor" +
+      "t_descending\030\004 \001(\010\"p\n\022PaginationResponse" +
+      "\022\014\n\004size\030\001 \001(\005\022\014\n\004page\030\002 \001(\005\022\023\n\013total_co" +
+      "unt\030\003 \001(\003\022\020\n\010sort_key\030\004 \001(\t\022\027\n\017sort_desc" +
+      "ending\030\005 \001(\010\"\\\n\nAuthorInfo\022\022\n\ncreated_by" +
+      "\030e \001(\003\022\022\n\ncreated_at\030f \001(\t\022\022\n\nupdated_by" +
+      "\030g \001(\003\022\022\n\nupdated_at\030h \001(\t\"5\n\013BaseReques" +
+      "t\022&\n\nauth_token\030\001 \001(\tB\022\272\273\030\016X-Custom-Toke" +
+      "nB\037\n\025com.zhijiejiaoyu.baseP\001Z\004baseb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -78,7 +79,7 @@ public final class Base {
     internal_static_base_BaseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_base_BaseResponse_descriptor,
-        new java.lang.String[] { "StatusCode", "StatusMessage", });
+        new java.lang.String[] { "StatusCode", "StatusMessage", "EntryId", });
     internal_static_base_GeneralResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_base_GeneralResponse_fieldAccessorTable = new

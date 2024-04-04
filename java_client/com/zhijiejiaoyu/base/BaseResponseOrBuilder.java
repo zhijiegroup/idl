@@ -24,4 +24,10 @@ public interface BaseResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getStatusMessageBytes();
+
+  /**
+   * <code>int64 entry_id = 3;</code>
+   * @return The entryId.
+   */
+  long getEntryId();
 }

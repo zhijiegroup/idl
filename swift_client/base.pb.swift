@@ -30,6 +30,8 @@ struct Base_BaseResponse {
 
   var statusMessage: String = String()
 
+  var entryID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -149,6 +151,7 @@ extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "status_code"),
     2: .standard(proto: "status_message"),
+    3: .standard(proto: "entry_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -159,6 +162,7 @@ extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularSInt32Field(value: &self.statusCode) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.statusMessage) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.entryID) }()
       default: break
       }
     }
@@ -171,12 +175,16 @@ extension Base_BaseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.statusMessage.isEmpty {
       try visitor.visitSingularStringField(value: self.statusMessage, fieldNumber: 2)
     }
+    if self.entryID != 0 {
+      try visitor.visitSingularInt64Field(value: self.entryID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Base_BaseResponse, rhs: Base_BaseResponse) -> Bool {
     if lhs.statusCode != rhs.statusCode {return false}
     if lhs.statusMessage != rhs.statusMessage {return false}
+    if lhs.entryID != rhs.entryID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
