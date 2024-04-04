@@ -11,6 +11,7 @@ option go_package = "base";
 message BaseResponse {
   sint32 status_code = 1;
   string status_message = 2;
+  int64 entry_id = 3;
 }
 
 // GeneralResponse is used for return early with only the BaseResponse
