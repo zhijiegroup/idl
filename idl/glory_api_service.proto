@@ -1607,4 +1607,8 @@ service glory_api {
     option (api.post) = '/api/article_creation/ai_chat';
   }
 
+  // 数字人接口
+  rpc DigitalHuman(DigitalHumanRequest) returns (DigitalHumanResponse) {
+    option (api.post) = "/api/digital/human";
+  }
 }
