@@ -3331,6 +3331,14 @@ export class glory_api {
       handleResponse
     );
   }
+
+  DigitalHuman(request) {
+    const uri = `${this.uriPrefix}/api/digital/human`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

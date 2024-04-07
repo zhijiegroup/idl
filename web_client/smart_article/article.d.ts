@@ -307,3 +307,13 @@ export interface ChatMessage {
   content?: string;
   role?: string;
 }
+
+export interface DigitalHumanRequest {
+  base_request?: base.BaseRequest;
+  text?: string;
+}
+
+export interface DigitalHumanResponse {
+  base_resp?: base.BaseResponse;
+  url?: string;
+}
