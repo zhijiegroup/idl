@@ -297,3 +297,14 @@ message ChatMessage {
     string content = 1;
     string role = 2;
 }
+
+
+message DigitalHumanRequest {
+    base.BaseRequest base_request = 1;
+    string text = 2;
+}
+
+message DigitalHumanResponse {
+    base.BaseResponse base_resp = 1;
+    string url = 2;
+}
