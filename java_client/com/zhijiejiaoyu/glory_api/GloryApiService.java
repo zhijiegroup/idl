@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\344\244\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\336\245\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1405,7 +1405,11 @@ public final class GloryApiService {
       "eryDigitalHuman\022#.glory_api.QueryDigital" +
       "HumanRequest\032$.glory_api.QueryDigitalHum" +
       "anResponse\"\034\322\301\030\030/api/digital/human/query" +
-      "B\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "\022x\n\020ListDigitalHuman\022\".glory_api.ListDig" +
+      "italHumanRequest\032#.glory_api.ListDigital" +
+      "HumanResponse\"\033\322\301\030\027/api/digital/human/li" +
+      "stB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

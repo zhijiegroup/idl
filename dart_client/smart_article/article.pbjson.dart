@@ -829,3 +829,59 @@ final $typed_data.Uint8List queryDigitalHumanResponseDescriptor = $convert.base6
     'IAEoBVIEdHlwZRIWCgZzdGF0dXMYBCABKAlSBnN0YXR1cxI1CgZyZXN1bHQYBSABKAsyHS5nbG'
     '9yeV9hcGkuRGlnaXRhbEh1bWFuUmVzdWx0UgZyZXN1bHQ=');
 
+@$core.Deprecated('Use digitalHumanTaskResultDescriptor instead')
+const DigitalHumanTaskResult$json = {
+  '1': 'DigitalHumanTaskResult',
+  '2': [
+    {'1': 'task_id', '3': 1, '4': 1, '5': 9, '10': 'taskId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'type', '3': 3, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'status', '3': 4, '4': 1, '5': 5, '10': 'status'},
+    {'1': 'raw', '3': 5, '4': 1, '5': 11, '6': '.glory_api.DigitalHumanResult', '10': 'raw'},
+  ],
+};
+
+/// Descriptor for `DigitalHumanTaskResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List digitalHumanTaskResultDescriptor = $convert.base64Decode(
+    'ChZEaWdpdGFsSHVtYW5UYXNrUmVzdWx0EhcKB3Rhc2tfaWQYASABKAlSBnRhc2tJZBIUCgV0aX'
+    'RsZRgCIAEoCVIFdGl0bGUSEgoEdHlwZRgDIAEoBVIEdHlwZRIWCgZzdGF0dXMYBCABKAVSBnN0'
+    'YXR1cxIvCgNyYXcYBSABKAsyHS5nbG9yeV9hcGkuRGlnaXRhbEh1bWFuUmVzdWx0UgNyYXc=');
+
+@$core.Deprecated('Use listDigitalHumanResponseDescriptor instead')
+const ListDigitalHumanResponse$json = {
+  '1': 'ListDigitalHumanResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.DigitalHumanTaskResult', '10': 'list'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListDigitalHumanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalHumanResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0RGlnaXRhbEh1bWFuUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjUKBGxpc3QYAiADKAsyIS5nbG9yeV9hcGkuRGlnaXRhbEh1'
+    'bWFuVGFza1Jlc3VsdFIEbGlzdBI4CgpwYWdpbmF0aW9uGGQgASgLMhguYmFzZS5QYWdpbmF0aW'
+    '9uUmVzcG9uc2VSCnBhZ2luYXRpb24=');
+
+@$core.Deprecated('Use listDigitalHumanRequestDescriptor instead')
+const ListDigitalHumanRequest$json = {
+  '1': 'ListDigitalHumanRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
+    {'1': 'type', '3': 3, '4': 1, '5': 5, '10': 'type'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'status', '3': 5, '4': 1, '5': 5, '10': 'status'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListDigitalHumanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalHumanRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0RGlnaXRhbEh1bWFuUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd0YXNrX2lkGAIgASgJUgZ0YXNrSWQSEgoEdHlw'
+    'ZRgDIAEoBVIEdHlwZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSFgoGc3RhdHVzGAUgASgFUgZzdG'
+    'F0dXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2lu'
+    'YXRpb24=');
+

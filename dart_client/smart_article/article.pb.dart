@@ -4139,6 +4139,314 @@ class QueryDigitalHumanResponse extends $pb.GeneratedMessage {
   DigitalHumanResult ensureResult() => $_ensure(4);
 }
 
+class DigitalHumanTaskResult extends $pb.GeneratedMessage {
+  factory DigitalHumanTaskResult({
+    $core.String? taskId,
+    $core.String? title,
+    $core.int? type,
+    $core.int? status,
+    DigitalHumanResult? raw,
+  }) {
+    final $result = create();
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (raw != null) {
+      $result.raw = raw;
+    }
+    return $result;
+  }
+  DigitalHumanTaskResult._() : super();
+  factory DigitalHumanTaskResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DigitalHumanTaskResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanTaskResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'taskId')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
+    ..aOM<DigitalHumanResult>(5, _omitFieldNames ? '' : 'raw', subBuilder: DigitalHumanResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DigitalHumanTaskResult clone() => DigitalHumanTaskResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DigitalHumanTaskResult copyWith(void Function(DigitalHumanTaskResult) updates) => super.copyWith((message) => updates(message as DigitalHumanTaskResult)) as DigitalHumanTaskResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DigitalHumanTaskResult create() => DigitalHumanTaskResult._();
+  DigitalHumanTaskResult createEmptyInstance() => create();
+  static $pb.PbList<DigitalHumanTaskResult> createRepeated() => $pb.PbList<DigitalHumanTaskResult>();
+  @$core.pragma('dart2js:noInline')
+  static DigitalHumanTaskResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanTaskResult>(create);
+  static DigitalHumanTaskResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get taskId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set taskId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTaskId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTaskId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get type => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set type($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get status => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set status($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  DigitalHumanResult get raw => $_getN(4);
+  @$pb.TagNumber(5)
+  set raw(DigitalHumanResult v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRaw() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRaw() => clearField(5);
+  @$pb.TagNumber(5)
+  DigitalHumanResult ensureRaw() => $_ensure(4);
+}
+
+class ListDigitalHumanResponse extends $pb.GeneratedMessage {
+  factory ListDigitalHumanResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<DigitalHumanTaskResult>? list,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (list != null) {
+      $result.list.addAll(list);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListDigitalHumanResponse._() : super();
+  factory ListDigitalHumanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalHumanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<DigitalHumanTaskResult>(2, _omitFieldNames ? '' : 'list', $pb.PbFieldType.PM, subBuilder: DigitalHumanTaskResult.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalHumanResponse clone() => ListDigitalHumanResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalHumanResponse copyWith(void Function(ListDigitalHumanResponse) updates) => super.copyWith((message) => updates(message as ListDigitalHumanResponse)) as ListDigitalHumanResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalHumanResponse create() => ListDigitalHumanResponse._();
+  ListDigitalHumanResponse createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalHumanResponse> createRepeated() => $pb.PbList<ListDigitalHumanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalHumanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalHumanResponse>(create);
+  static ListDigitalHumanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<DigitalHumanTaskResult> get list => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class ListDigitalHumanRequest extends $pb.GeneratedMessage {
+  factory ListDigitalHumanRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? taskId,
+    $core.int? type,
+    $core.String? title,
+    $core.int? status,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListDigitalHumanRequest._() : super();
+  factory ListDigitalHumanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalHumanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'taskId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalHumanRequest clone() => ListDigitalHumanRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalHumanRequest copyWith(void Function(ListDigitalHumanRequest) updates) => super.copyWith((message) => updates(message as ListDigitalHumanRequest)) as ListDigitalHumanRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalHumanRequest create() => ListDigitalHumanRequest._();
+  ListDigitalHumanRequest createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalHumanRequest> createRepeated() => $pb.PbList<ListDigitalHumanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalHumanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalHumanRequest>(create);
+  static ListDigitalHumanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get taskId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set taskId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get type => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set type($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get status => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set status($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => clearField(5);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(5);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(5);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(5);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

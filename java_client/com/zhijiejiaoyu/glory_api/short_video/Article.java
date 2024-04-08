@@ -254,6 +254,21 @@ public final class Article {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_QueryDigitalHumanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DigitalHumanTaskResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DigitalHumanTaskResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListDigitalHumanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListDigitalHumanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListDigitalHumanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListDigitalHumanRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -418,8 +433,20 @@ public final class Article {
       "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
       "sponse\022\017\n\007task_id\030\002 \001(\003\022\014\n\004type\030\003 \001(\005\022\016\n" +
       "\006status\030\004 \001(\t\022-\n\006result\030\005 \001(\0132\035.glory_ap" +
-      "i.DigitalHumanResultB*\n&com.zhijiejiaoyu" +
-      ".glory_api.short_videoP\001b\006proto3"
+      "i.DigitalHumanResult\"\202\001\n\026DigitalHumanTas" +
+      "kResult\022\017\n\007task_id\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022" +
+      "\014\n\004type\030\003 \001(\005\022\016\n\006status\030\004 \001(\005\022*\n\003raw\030\005 \001" +
+      "(\0132\035.glory_api.DigitalHumanResult\"\240\001\n\030Li" +
+      "stDigitalHumanResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022/\n\004list\030\002 \003(\0132!.gl" +
+      "ory_api.DigitalHumanTaskResult\022,\n\npagina" +
+      "tion\030d \001(\0132\030.base.PaginationResponse\"\255\001\n" +
+      "\027ListDigitalHumanRequest\022\'\n\014base_request" +
+      "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007task_id\030\002 \001" +
+      "(\t\022\014\n\004type\030\003 \001(\005\022\r\n\005title\030\004 \001(\t\022\016\n\006statu" +
+      "s\030\005 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
+      "ationRequestB*\n&com.zhijiejiaoyu.glory_a" +
+      "pi.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -715,6 +742,24 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_QueryDigitalHumanResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TaskId", "Type", "Status", "Result", });
+    internal_static_glory_api_DigitalHumanTaskResult_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_glory_api_DigitalHumanTaskResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DigitalHumanTaskResult_descriptor,
+        new java.lang.String[] { "TaskId", "Title", "Type", "Status", "Raw", });
+    internal_static_glory_api_ListDigitalHumanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(49);
+    internal_static_glory_api_ListDigitalHumanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListDigitalHumanResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "List", "Pagination", });
+    internal_static_glory_api_ListDigitalHumanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_glory_api_ListDigitalHumanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListDigitalHumanRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TaskId", "Type", "Title", "Status", "Pagination", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

@@ -1877,6 +1877,11 @@ CreateLivePlanProduct create live plan product */
   QueryDigitalHuman(
     request: article.QueryDigitalHumanRequest
   ): Promise<article.QueryDigitalHumanResponse>;
+
+  /** 查询合成任务进度接口 */
+  ListDigitalHuman(
+    request: article.ListDigitalHumanRequest
+  ): Promise<article.ListDigitalHumanResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

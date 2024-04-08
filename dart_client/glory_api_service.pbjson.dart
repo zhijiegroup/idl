@@ -496,6 +496,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ArticleAiChat', '2': '.glory_api.ArticleAIChatRequest', '3': '.glory_api.ArticleAIChatResponse', '4': {}},
     {'1': 'CreateDigitalHuman', '2': '.glory_api.CreateDigitalHumanRequest', '3': '.glory_api.CreateDigitalHumanResponse', '4': {}},
     {'1': 'QueryDigitalHuman', '2': '.glory_api.QueryDigitalHumanRequest', '3': '.glory_api.QueryDigitalHumanResponse', '4': {}},
+    {'1': 'ListDigitalHuman', '2': '.glory_api.ListDigitalHumanRequest', '3': '.glory_api.ListDigitalHumanResponse', '4': {}},
   ],
 };
 
@@ -1563,6 +1564,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.QueryDigitalHumanRequest': $57.QueryDigitalHumanRequest$json,
   '.glory_api.QueryDigitalHumanResponse': $57.QueryDigitalHumanResponse$json,
   '.glory_api.DigitalHumanResult': $57.DigitalHumanResult$json,
+  '.glory_api.ListDigitalHumanRequest': $57.ListDigitalHumanRequest$json,
+  '.glory_api.ListDigitalHumanResponse': $57.ListDigitalHumanResponse$json,
+  '.glory_api.DigitalHumanTaskResult': $57.DigitalHumanTaskResult$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2537,5 +2541,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'xvcnlfYXBpLkNyZWF0ZURpZ2l0YWxIdW1hblJlc3BvbnNlIh3SwRgZL2FwaS9kaWdpdGFsL2h1'
     'bWFuL2NyZWF0ZRJ8ChFRdWVyeURpZ2l0YWxIdW1hbhIjLmdsb3J5X2FwaS5RdWVyeURpZ2l0YW'
     'xIdW1hblJlcXVlc3QaJC5nbG9yeV9hcGkuUXVlcnlEaWdpdGFsSHVtYW5SZXNwb25zZSIc0sEY'
-    'GC9hcGkvZGlnaXRhbC9odW1hbi9xdWVyeQ==');
+    'GC9hcGkvZGlnaXRhbC9odW1hbi9xdWVyeRJ4ChBMaXN0RGlnaXRhbEh1bWFuEiIuZ2xvcnlfYX'
+    'BpLkxpc3REaWdpdGFsSHVtYW5SZXF1ZXN0GiMuZ2xvcnlfYXBpLkxpc3REaWdpdGFsSHVtYW5S'
+    'ZXNwb25zZSIb0sEYFy9hcGkvZGlnaXRhbC9odW1hbi9saXN0');
 

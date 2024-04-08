@@ -498,6 +498,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ServerContext ctx, $57.ArticleAIChatRequest request);
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ServerContext ctx, $57.CreateDigitalHumanRequest request);
   $async.Future<$57.QueryDigitalHumanResponse> queryDigitalHuman($pb.ServerContext ctx, $57.QueryDigitalHumanRequest request);
+  $async.Future<$57.ListDigitalHumanResponse> listDigitalHuman($pb.ServerContext ctx, $57.ListDigitalHumanRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -921,6 +922,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ArticleAiChat': return $57.ArticleAIChatRequest();
       case 'CreateDigitalHuman': return $57.CreateDigitalHumanRequest();
       case 'QueryDigitalHuman': return $57.QueryDigitalHumanRequest();
+      case 'ListDigitalHuman': return $57.ListDigitalHumanRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1347,6 +1349,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ArticleAiChat': return this.articleAiChat(ctx, request as $57.ArticleAIChatRequest);
       case 'CreateDigitalHuman': return this.createDigitalHuman(ctx, request as $57.CreateDigitalHumanRequest);
       case 'QueryDigitalHuman': return this.queryDigitalHuman(ctx, request as $57.QueryDigitalHumanRequest);
+      case 'ListDigitalHuman': return this.listDigitalHuman(ctx, request as $57.ListDigitalHumanRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

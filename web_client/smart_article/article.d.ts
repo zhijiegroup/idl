@@ -342,3 +342,26 @@ export interface QueryDigitalHumanResponse {
   /** 任务执行结果 */
   result?: DigitalHumanResult;
 }
+
+export interface DigitalHumanTaskResult {
+  task_id?: string;
+  title?: string;
+  type?: number;
+  status?: number;
+  raw?: DigitalHumanResult;
+}
+
+export interface ListDigitalHumanResponse {
+  base_resp?: base.BaseResponse;
+  list?: Array<DigitalHumanTaskResult>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface ListDigitalHumanRequest {
+  base_request?: base.BaseRequest;
+  task_id?: string;
+  type?: number;
+  title?: string;
+  status?: number;
+  pagination?: base.PaginationRequest;
+}
