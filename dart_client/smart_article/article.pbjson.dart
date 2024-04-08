@@ -753,3 +753,31 @@ final $typed_data.Uint8List chatMessageDescriptor = $convert.base64Decode(
     'CgtDaGF0TWVzc2FnZRIYCgdjb250ZW50GAEgASgJUgdjb250ZW50EhIKBHJvbGUYAiABKAlSBH'
     'JvbGU=');
 
+@$core.Deprecated('Use digitalHumanRequestDescriptor instead')
+const DigitalHumanRequest$json = {
+  '1': 'DigitalHumanRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+  ],
+};
+
+/// Descriptor for `DigitalHumanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List digitalHumanRequestDescriptor = $convert.base64Decode(
+    'ChNEaWdpdGFsSHVtYW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
+    'JlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQ=');
+
+@$core.Deprecated('Use digitalHumanResponseDescriptor instead')
+const DigitalHumanResponse$json = {
+  '1': 'DigitalHumanResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `DigitalHumanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List digitalHumanResponseDescriptor = $convert.base64Decode(
+    'ChREaWdpdGFsSHVtYW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
+    'Nwb25zZVIIYmFzZVJlc3ASEAoDdXJsGAIgASgJUgN1cmw=');
+

@@ -12973,6 +12973,37 @@ public final class glory_apiGrpc {
     return getArticleAiChatMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> getDigitalHumanMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DigitalHuman",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> getDigitalHumanMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> getDigitalHumanMethod;
+    if ((getDigitalHumanMethod = glory_apiGrpc.getDigitalHumanMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDigitalHumanMethod = glory_apiGrpc.getDigitalHumanMethod) == null) {
+          glory_apiGrpc.getDigitalHumanMethod = getDigitalHumanMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DigitalHuman"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DigitalHuman"))
+              .build();
+        }
+      }
+    }
+    return getDigitalHumanMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -16333,6 +16364,16 @@ public final class glory_apiGrpc {
     default void articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getArticleAiChatMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 数字人接口
+     * </pre>
+     */
+    default void digitalHuman(com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDigitalHumanMethod(), responseObserver);
     }
   }
 
@@ -20094,6 +20135,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getArticleAiChatMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 数字人接口
+     * </pre>
+     */
+    public void digitalHuman(com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDigitalHumanMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -23424,6 +23476,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getArticleAiChatMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 数字人接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse digitalHuman(com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDigitalHumanMethod(), getCallOptions(), request);
     }
   }
 
@@ -27174,6 +27236,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getArticleAiChatMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 数字人接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse> digitalHuman(
+        com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDigitalHumanMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -27594,6 +27667,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 415;
   private static final int METHODID_CORRECT_SENTENCE = 416;
   private static final int METHODID_ARTICLE_AI_CHAT = 417;
+  private static final int METHODID_DIGITAL_HUMAN = 418;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -29283,6 +29357,10 @@ public final class glory_apiGrpc {
         case METHODID_ARTICLE_AI_CHAT:
           serviceImpl.articleAiChat((com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>) responseObserver);
+          break;
+        case METHODID_DIGITAL_HUMAN:
+          serviceImpl.digitalHuman((com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -32228,6 +32306,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest,
               com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>(
                 service, METHODID_ARTICLE_AI_CHAT)))
+        .addMethod(
+          getDigitalHumanMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.DigitalHumanRequest,
+              com.zhijiejiaoyu.glory_api.short_video.DigitalHumanResponse>(
+                service, METHODID_DIGITAL_HUMAN)))
         .build();
   }
 
@@ -32694,6 +32779,7 @@ public final class glory_apiGrpc {
               .addMethod(getStudentArticleCreationEvaluationDetailMethod())
               .addMethod(getCorrectSentenceMethod())
               .addMethod(getArticleAiChatMethod())
+              .addMethod(getDigitalHumanMethod())
               .build();
         }
       }

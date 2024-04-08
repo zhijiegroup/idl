@@ -1867,6 +1867,11 @@ CreateLivePlanProduct create live plan product */
   ArticleAiChat(
     request: article.ArticleAIChatRequest
   ): Promise<article.ArticleAIChatResponse>;
+
+  /** 数字人接口 */
+  DigitalHuman(
+    request: article.DigitalHumanRequest
+  ): Promise<article.DigitalHumanResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

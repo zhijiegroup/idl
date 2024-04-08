@@ -229,6 +229,16 @@ public final class Article {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ChatMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DigitalHumanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DigitalHumanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DigitalHumanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DigitalHumanResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -381,8 +391,12 @@ public final class Article {
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022(\n\010messages\030\002 \003(\0132\026.glory_api.ChatMes" +
       "sage\",\n\013ChatMessage\022\017\n\007content\030\001 \001(\t\022\014\n\004" +
-      "role\030\002 \001(\tB*\n&com.zhijiejiaoyu.glory_api" +
-      ".short_videoP\001b\006proto3"
+      "role\030\002 \001(\t\"L\n\023DigitalHumanRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004te" +
+      "xt\030\002 \001(\t\"J\n\024DigitalHumanResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\013\n\003url\030\002" +
+      " \001(\tB*\n&com.zhijiejiaoyu.glory_api.short" +
+      "_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -648,6 +662,18 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ChatMessage_descriptor,
         new java.lang.String[] { "Content", "Role", });
+    internal_static_glory_api_DigitalHumanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_glory_api_DigitalHumanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DigitalHumanRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Text", });
+    internal_static_glory_api_DigitalHumanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_glory_api_DigitalHumanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DigitalHumanResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Url", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

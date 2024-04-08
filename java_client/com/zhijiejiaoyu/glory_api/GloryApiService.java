@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\343\242\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\314\243\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1398,8 +1398,11 @@ public final class GloryApiService {
       "reation/correct_sentence\022u\n\rArticleAiCha" +
       "t\022\037.glory_api.ArticleAIChatRequest\032 .glo" +
       "ry_api.ArticleAIChatResponse\"!\322\301\030\035/api/a" +
-      "rticle_creation/ai_chatB\036\n\032com.zhijiejia" +
-      "oyu.glory_apiP\001b\006proto3"
+      "rticle_creation/ai_chat\022g\n\014DigitalHuman\022" +
+      "\036.glory_api.DigitalHumanRequest\032\037.glory_" +
+      "api.DigitalHumanResponse\"\026\322\301\030\022/api/digit" +
+      "al/humanB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
