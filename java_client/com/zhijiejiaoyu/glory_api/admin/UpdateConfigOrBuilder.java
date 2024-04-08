@@ -38,6 +38,18 @@ public interface UpdateConfigOrBuilder extends
       getConfigNameBytes();
 
   /**
+   * <code>string config_name_th = 8;</code>
+   * @return The configNameTh.
+   */
+  java.lang.String getConfigNameTh();
+  /**
+   * <code>string config_name_th = 8;</code>
+   * @return The bytes for configNameTh.
+   */
+  com.google.protobuf.ByteString
+      getConfigNameThBytes();
+
+  /**
    * <code>string config_value = 4;</code>
    * @return The configValue.
    */
@@ -72,16 +84,4 @@ public interface UpdateConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
-
-  /**
-   * <code>string config_lang = 7;</code>
-   * @return The configLang.
-   */
-  java.lang.String getConfigLang();
-  /**
-   * <code>string config_lang = 7;</code>
-   * @return The bytes for configLang.
-   */
-  com.google.protobuf.ByteString
-      getConfigLangBytes();
 }

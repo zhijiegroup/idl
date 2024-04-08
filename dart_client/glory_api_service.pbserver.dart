@@ -207,11 +207,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$17.DeletePaymentResponse> deletePayment($pb.ServerContext ctx, $17.DeletePaymentRequest request);
   $async.Future<$17.WechatPaymentNotifyResponse> wechatPaymentNotify($pb.ServerContext ctx, $17.WechatPaymentNotifyRequest request);
   $async.Future<$18.CreateConfigResponse> createConfig($pb.ServerContext ctx, $18.CreateConfigRequest request);
-  $async.Future<$18.CreateLangConfigResponse> createLangConfig($pb.ServerContext ctx, $18.CreateLangConfigRequest request);
   $async.Future<$18.UpdateConfigResponse> updateConfig($pb.ServerContext ctx, $18.UpdateConfigRequest request);
-  $async.Future<$18.UpdateLangConfigResponse> updateLangConfig($pb.ServerContext ctx, $18.UpdateLangConfigRequest request);
   $async.Future<$18.DeleteConfigResponse> deleteConfig($pb.ServerContext ctx, $18.DeleteConfigRequest request);
-  $async.Future<$18.DeleteLangConfigResponse> deleteLangConfig($pb.ServerContext ctx, $18.DeleteLangConfigRequest request);
   $async.Future<$18.GetConfigResponse> getConfig($pb.ServerContext ctx, $18.GetConfigRequest request);
   $async.Future<$18.GetSTSResponse> getSTS($pb.ServerContext ctx, $18.GetSTSRequest request);
   $async.Future<$18.GenerateWebofficeTokenResponse> generateWebofficeToken($pb.ServerContext ctx, $18.GenerateWebofficeTokenRequest request);
@@ -634,11 +631,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeletePayment': return $17.DeletePaymentRequest();
       case 'WechatPaymentNotify': return $17.WechatPaymentNotifyRequest();
       case 'CreateConfig': return $18.CreateConfigRequest();
-      case 'CreateLangConfig': return $18.CreateLangConfigRequest();
       case 'UpdateConfig': return $18.UpdateConfigRequest();
-      case 'UpdateLangConfig': return $18.UpdateLangConfigRequest();
       case 'DeleteConfig': return $18.DeleteConfigRequest();
-      case 'DeleteLangConfig': return $18.DeleteLangConfigRequest();
       case 'GetConfig': return $18.GetConfigRequest();
       case 'GetSTS': return $18.GetSTSRequest();
       case 'GenerateWebofficeToken': return $18.GenerateWebofficeTokenRequest();
@@ -1064,11 +1058,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeletePayment': return this.deletePayment(ctx, request as $17.DeletePaymentRequest);
       case 'WechatPaymentNotify': return this.wechatPaymentNotify(ctx, request as $17.WechatPaymentNotifyRequest);
       case 'CreateConfig': return this.createConfig(ctx, request as $18.CreateConfigRequest);
-      case 'CreateLangConfig': return this.createLangConfig(ctx, request as $18.CreateLangConfigRequest);
       case 'UpdateConfig': return this.updateConfig(ctx, request as $18.UpdateConfigRequest);
-      case 'UpdateLangConfig': return this.updateLangConfig(ctx, request as $18.UpdateLangConfigRequest);
       case 'DeleteConfig': return this.deleteConfig(ctx, request as $18.DeleteConfigRequest);
-      case 'DeleteLangConfig': return this.deleteLangConfig(ctx, request as $18.DeleteLangConfigRequest);
       case 'GetConfig': return this.getConfig(ctx, request as $18.GetConfigRequest);
       case 'GetSTS': return this.getSTS(ctx, request as $18.GetSTSRequest);
       case 'GenerateWebofficeToken': return this.generateWebofficeToken(ctx, request as $18.GenerateWebofficeTokenRequest);
