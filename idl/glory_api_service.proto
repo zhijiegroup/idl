@@ -543,6 +543,9 @@ service glory_api {
   rpc CreateConfig(CreateConfigRequest) returns (CreateConfigResponse) {
     option (api.post) = '/api/admin/add_config';
   }
+  rpc CreateLangConfig(CreateLangConfigRequest) returns (CreateLangConfigResponse) {
+    option (api.post) = '/api/admin/add_lang_config';
+  }
   rpc UpdateConfig(UpdateConfigRequest) returns (UpdateConfigResponse) {
     option (api.post) = '/api/admin/update_config';
   }
