@@ -1607,8 +1607,12 @@ service glory_api {
     option (api.post) = '/api/article_creation/ai_chat';
   }
 
-  // 数字人接口
-  rpc DigitalHuman(DigitalHumanRequest) returns (DigitalHumanResponse) {
-    option (api.post) = "/api/digital/human";
+  // 数字人合成视频接口
+  rpc CreateDigitalHuman(CreateDigitalHumanRequest) returns (CreateDigitalHumanResponse) {
+    option (api.post) = "/api/digital/human/create";
+  }
+  // 查询合成任务进度接口
+  rpc QueryDigitalHuman(QueryDigitalHumanRequest) returns (QueryDigitalHumanResponse) {
+    option (api.post) = "/api/digital/human/query";
   }
 }
