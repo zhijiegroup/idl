@@ -65,6 +65,14 @@ message UpdateConfigResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message UpdateLangConfigRequest {
+  base.BaseRequest base_request=1;
+  repeated UpdateConfig config = 2;
+}
+message UpdateLangConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
+
 message DeleteConfigRequest {
   base.BaseRequest base_request=1;
   int64 config_id =2;
@@ -73,6 +81,13 @@ message DeleteConfigResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message DeleteLangConfigRequest {
+  base.BaseRequest base_request=1;
+  repeated int64 config_id =2;
+}
+message DeleteLangConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
 
 message GetConfigRequest {
   base.BaseRequest base_request=1;
