@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     updatedAt = "";
     businessSystem = "";
     defaultValue = "";
+    configLang = "";
   }
 
   @java.lang.Override
@@ -117,6 +118,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             defaultValue = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            configLang = s;
             break;
           }
           default: {
@@ -488,6 +495,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONFIG_LANG_FIELD_NUMBER = 13;
+  private volatile java.lang.Object configLang ;
+  /**
+   * <code>string config_lang = 13;</code>
+   * @return The configLang.
+   */
+  @java.lang.Override
+  public java.lang.String getConfigLang() {
+    java.lang.Object ref = configLang ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      configLang = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string config_lang = 13;</code>
+   * @return The bytes for configLang.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConfigLangBytes() {
+    java.lang.Object ref = configLang ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      configLang = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -535,6 +580,9 @@ private static final long serialVersionUID = 0L;
     if (!getDefaultValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, defaultValue );
     }
+    if (!getConfigLangBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, configLang );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -580,6 +628,9 @@ private static final long serialVersionUID = 0L;
     if (!getDefaultValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, defaultValue );
     }
+    if (!getConfigLangBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, configLang );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -617,6 +668,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBusinessSystem())) return false;
     if (!getDefaultValue()
         .equals(other.getDefaultValue())) return false;
+    if (!getConfigLang()
+        .equals(other.getConfigLang())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -653,6 +706,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBusinessSystem().hashCode();
     hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultValue().hashCode();
+    hash = (37 * hash) + CONFIG_LANG_FIELD_NUMBER;
+    hash = (53 * hash) + getConfigLang().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -808,6 +863,8 @@ private static final long serialVersionUID = 0L;
 
       defaultValue = "";
 
+      configLang = "";
+
       return this;
     }
 
@@ -845,6 +902,7 @@ private static final long serialVersionUID = 0L;
       result.updatedAt = updatedAt ;
       result.businessSystem = businessSystem ;
       result.defaultValue = defaultValue ;
+      result.configLang = configLang ;
       onBuilt();
       return result;
     }
@@ -932,6 +990,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDefaultValue().isEmpty()) {
         defaultValue = other.defaultValue ;
+        onChanged();
+      }
+      if (!other.getConfigLang().isEmpty()) {
+        configLang = other.configLang ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1660,6 +1722,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       defaultValue = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object configLang = "";
+    /**
+     * <code>string config_lang = 13;</code>
+     * @return The configLang.
+     */
+    public java.lang.String getConfigLang() {
+      java.lang.Object ref = configLang ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        configLang = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string config_lang = 13;</code>
+     * @return The bytes for configLang.
+     */
+    public com.google.protobuf.ByteString
+        getConfigLangBytes() {
+      java.lang.Object ref = configLang ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        configLang = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string config_lang = 13;</code>
+     * @param value The configLang to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigLang(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      configLang = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string config_lang = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConfigLang() {
+      
+      configLang = getDefaultInstance().getConfigLang();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string config_lang = 13;</code>
+     * @param value The bytes for configLang to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigLangBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      configLang = value;
       onChanged();
       return this;
     }

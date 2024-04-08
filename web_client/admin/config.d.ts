@@ -17,6 +17,7 @@ export interface Config {
   updated_at?: string;
   business_system?: string;
   default_value?: string;
+  config_lang?: string;
 }
 
 export interface AddConfig {
@@ -61,6 +62,7 @@ export interface UpdateConfig {
   config_value?: string;
   default_value?: string;
   description?: string;
+  config_lang?: string;
 }
 
 export interface UpdateConfigRequest {
