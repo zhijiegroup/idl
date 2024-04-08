@@ -9,6 +9,7 @@ option java_multiple_files = true;
 message Config {
   int64 id = 2;
   string config_name = 3;
+  string config_name_th = 13;
   string config_value = 4;
   string config_type = 5;
   string description = 6;
@@ -18,17 +19,16 @@ message Config {
   string updated_at = 10;
   string business_system = 11;
   string default_value = 12;
-  string config_lang = 13;
 }
 
 message AddConfig {
   string config_name = 2; // 配置的名字
+  string config_name_th = 8;
   string config_value = 3;  // 配置的值
   string default_value = 4; // 默认值
   string config_type = 5; // 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
   string description = 6; // 描述
   string business_system = 7; // 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
-  string language = 8; // zh: 中文; th: 泰语
 }
 
 message CreateConfigRequest {
@@ -39,22 +39,14 @@ message CreateConfigResponse {
   base.BaseResponse base_resp = 1;
 }
 
-message CreateLangConfigRequest {
-  base.BaseRequest base_request=1;
-  repeated AddConfig config = 2;
-}
-message CreateLangConfigResponse {
-  base.BaseResponse base_resp = 1;
-}
-
 message UpdateConfig {
   int64 config_id = 1;
   string config_type = 2;
   string config_name = 3;
+  string config_name_th = 8;
   string config_value = 4;
   string default_value = 5;
   string description = 6;
-  string config_lang = 7;
 }
 
 message UpdateConfigRequest {
@@ -81,21 +73,12 @@ message DeleteConfigResponse {
   base.BaseResponse base_resp = 1;
 }
 
-message DeleteLangConfigRequest {
-  base.BaseRequest base_request=1;
-  repeated int64 config_id =2;
-}
-message DeleteLangConfigResponse {
-  base.BaseResponse base_resp = 1;
-}
-
 message GetConfigRequest {
   base.BaseRequest base_request=1;
   string config_name =2;  // config的名字
   string config_type =3;  // config的类型，支持page_permission, system_permission, public_config, system_owner_location
   string business_system = 4; // 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
   string q = 5; // 用于区分config_type的类型，支持pageKey, appKey
-  string language = 6;
 }
 
 message GetConfigResponse {
