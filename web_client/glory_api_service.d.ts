@@ -1868,10 +1868,15 @@ CreateLivePlanProduct create live plan product */
     request: article.ArticleAIChatRequest
   ): Promise<article.ArticleAIChatResponse>;
 
-  /** 数字人接口 */
-  DigitalHuman(
-    request: article.DigitalHumanRequest
-  ): Promise<article.DigitalHumanResponse>;
+  /** 数字人合成视频接口 */
+  CreateDigitalHuman(
+    request: article.CreateDigitalHumanRequest
+  ): Promise<article.CreateDigitalHumanResponse>;
+
+  /** 查询合成任务进度接口 */
+  QueryDigitalHuman(
+    request: article.QueryDigitalHumanRequest
+  ): Promise<article.QueryDigitalHumanResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

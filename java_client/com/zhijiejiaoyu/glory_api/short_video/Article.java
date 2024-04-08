@@ -230,15 +230,30 @@ public final class Article {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ChatMessage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DigitalHumanRequest_descriptor;
+    internal_static_glory_api_CreateDigitalHumanRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DigitalHumanRequest_fieldAccessorTable;
+      internal_static_glory_api_CreateDigitalHumanRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_glory_api_DigitalHumanResponse_descriptor;
+    internal_static_glory_api_CreateDigitalHumanResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_glory_api_DigitalHumanResponse_fieldAccessorTable;
+      internal_static_glory_api_CreateDigitalHumanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QueryDigitalHumanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QueryDigitalHumanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_DigitalHumanResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_DigitalHumanResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_QueryDigitalHumanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_QueryDigitalHumanResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -391,12 +406,20 @@ public final class Article {
       "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
       "se\022(\n\010messages\030\002 \003(\0132\026.glory_api.ChatMes" +
       "sage\",\n\013ChatMessage\022\017\n\007content\030\001 \001(\t\022\014\n\004" +
-      "role\030\002 \001(\t\"L\n\023DigitalHumanRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004te" +
-      "xt\030\002 \001(\t\"J\n\024DigitalHumanResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\013\n\003url\030\002" +
-      " \001(\tB*\n&com.zhijiejiaoyu.glory_api.short" +
-      "_videoP\001b\006proto3"
+      "role\030\002 \001(\t\"R\n\031CreateDigitalHumanRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\014\n\004text\030\002 \001(\t\"C\n\032CreateDigitalHumanResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\"T\n\030QueryDigitalHumanRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007task" +
+      "_id\030\002 \001(\t\"V\n\022DigitalHumanResult\022\021\n\tvideo" +
+      "_url\030\004 \001(\t\022\025\n\rsubtitles_url\030\005 \001(\t\022\026\n\016vid" +
+      "eo_duration\030\006 \001(\003\"\240\001\n\031QueryDigitalHumanR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022\017\n\007task_id\030\002 \001(\003\022\014\n\004type\030\003 \001(\005\022\016\n" +
+      "\006status\030\004 \001(\t\022-\n\006result\030\005 \001(\0132\035.glory_ap" +
+      "i.DigitalHumanResultB*\n&com.zhijiejiaoyu" +
+      ".glory_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -662,18 +685,36 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ChatMessage_descriptor,
         new java.lang.String[] { "Content", "Role", });
-    internal_static_glory_api_DigitalHumanRequest_descriptor =
+    internal_static_glory_api_CreateDigitalHumanRequest_descriptor =
       getDescriptor().getMessageTypes().get(43);
-    internal_static_glory_api_DigitalHumanRequest_fieldAccessorTable = new
+    internal_static_glory_api_CreateDigitalHumanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DigitalHumanRequest_descriptor,
+        internal_static_glory_api_CreateDigitalHumanRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Text", });
-    internal_static_glory_api_DigitalHumanResponse_descriptor =
+    internal_static_glory_api_CreateDigitalHumanResponse_descriptor =
       getDescriptor().getMessageTypes().get(44);
-    internal_static_glory_api_DigitalHumanResponse_fieldAccessorTable = new
+    internal_static_glory_api_CreateDigitalHumanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_glory_api_DigitalHumanResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Url", });
+        internal_static_glory_api_CreateDigitalHumanResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_QueryDigitalHumanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_glory_api_QueryDigitalHumanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QueryDigitalHumanRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TaskId", });
+    internal_static_glory_api_DigitalHumanResult_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_glory_api_DigitalHumanResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_DigitalHumanResult_descriptor,
+        new java.lang.String[] { "VideoUrl", "SubtitlesUrl", "VideoDuration", });
+    internal_static_glory_api_QueryDigitalHumanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_glory_api_QueryDigitalHumanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_QueryDigitalHumanResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "TaskId", "Type", "Status", "Result", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

@@ -308,12 +308,37 @@ export interface ChatMessage {
   role?: string;
 }
 
-export interface DigitalHumanRequest {
+export interface CreateDigitalHumanRequest {
   base_request?: base.BaseRequest;
   text?: string;
 }
 
-export interface DigitalHumanResponse {
+export interface CreateDigitalHumanResponse {
   base_resp?: base.BaseResponse;
-  url?: string;
+}
+
+export interface QueryDigitalHumanRequest {
+  base_request?: base.BaseRequest;
+  task_id?: string;
+}
+
+export interface DigitalHumanResult {
+  /** 视频URL */
+  video_url?: string;
+  /** 字幕URL */
+  subtitles_url?: string;
+  /** 视频时长 */
+  video_duration?: string;
+}
+
+export interface QueryDigitalHumanResponse {
+  base_resp?: base.BaseResponse;
+  /** 任务ID */
+  task_id?: string;
+  /** 任务类型 */
+  type?: number;
+  /** 任务进度 */
+  status?: string;
+  /** 任务执行结果 */
+  result?: DigitalHumanResult;
 }

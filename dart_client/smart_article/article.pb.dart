@@ -3767,8 +3767,8 @@ class ChatMessage extends $pb.GeneratedMessage {
   void clearRole() => clearField(2);
 }
 
-class DigitalHumanRequest extends $pb.GeneratedMessage {
-  factory DigitalHumanRequest({
+class CreateDigitalHumanRequest extends $pb.GeneratedMessage {
+  factory CreateDigitalHumanRequest({
     $0.BaseRequest? baseRequest,
     $core.String? text,
   }) {
@@ -3781,11 +3781,11 @@ class DigitalHumanRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  DigitalHumanRequest._() : super();
-  factory DigitalHumanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DigitalHumanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CreateDigitalHumanRequest._() : super();
+  factory CreateDigitalHumanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateDigitalHumanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'text')
     ..hasRequiredFields = false
@@ -3795,22 +3795,22 @@ class DigitalHumanRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DigitalHumanRequest clone() => DigitalHumanRequest()..mergeFromMessage(this);
+  CreateDigitalHumanRequest clone() => CreateDigitalHumanRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DigitalHumanRequest copyWith(void Function(DigitalHumanRequest) updates) => super.copyWith((message) => updates(message as DigitalHumanRequest)) as DigitalHumanRequest;
+  CreateDigitalHumanRequest copyWith(void Function(CreateDigitalHumanRequest) updates) => super.copyWith((message) => updates(message as CreateDigitalHumanRequest)) as CreateDigitalHumanRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanRequest create() => DigitalHumanRequest._();
-  DigitalHumanRequest createEmptyInstance() => create();
-  static $pb.PbList<DigitalHumanRequest> createRepeated() => $pb.PbList<DigitalHumanRequest>();
+  static CreateDigitalHumanRequest create() => CreateDigitalHumanRequest._();
+  CreateDigitalHumanRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateDigitalHumanRequest> createRepeated() => $pb.PbList<CreateDigitalHumanRequest>();
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanRequest>(create);
-  static DigitalHumanRequest? _defaultInstance;
+  static CreateDigitalHumanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDigitalHumanRequest>(create);
+  static CreateDigitalHumanRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseRequest get baseRequest => $_getN(0);
@@ -3833,27 +3833,22 @@ class DigitalHumanRequest extends $pb.GeneratedMessage {
   void clearText() => clearField(2);
 }
 
-class DigitalHumanResponse extends $pb.GeneratedMessage {
-  factory DigitalHumanResponse({
+class CreateDigitalHumanResponse extends $pb.GeneratedMessage {
+  factory CreateDigitalHumanResponse({
     $0.BaseResponse? baseResp,
-    $core.String? url,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
-    if (url != null) {
-      $result.url = url;
-    }
     return $result;
   }
-  DigitalHumanResponse._() : super();
-  factory DigitalHumanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DigitalHumanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CreateDigitalHumanResponse._() : super();
+  factory CreateDigitalHumanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateDigitalHumanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aOS(2, _omitFieldNames ? '' : 'url')
     ..hasRequiredFields = false
   ;
 
@@ -3861,22 +3856,238 @@ class DigitalHumanResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DigitalHumanResponse clone() => DigitalHumanResponse()..mergeFromMessage(this);
+  CreateDigitalHumanResponse clone() => CreateDigitalHumanResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DigitalHumanResponse copyWith(void Function(DigitalHumanResponse) updates) => super.copyWith((message) => updates(message as DigitalHumanResponse)) as DigitalHumanResponse;
+  CreateDigitalHumanResponse copyWith(void Function(CreateDigitalHumanResponse) updates) => super.copyWith((message) => updates(message as CreateDigitalHumanResponse)) as CreateDigitalHumanResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanResponse create() => DigitalHumanResponse._();
-  DigitalHumanResponse createEmptyInstance() => create();
-  static $pb.PbList<DigitalHumanResponse> createRepeated() => $pb.PbList<DigitalHumanResponse>();
+  static CreateDigitalHumanResponse create() => CreateDigitalHumanResponse._();
+  CreateDigitalHumanResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateDigitalHumanResponse> createRepeated() => $pb.PbList<CreateDigitalHumanResponse>();
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanResponse>(create);
-  static DigitalHumanResponse? _defaultInstance;
+  static CreateDigitalHumanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateDigitalHumanResponse>(create);
+  static CreateDigitalHumanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class QueryDigitalHumanRequest extends $pb.GeneratedMessage {
+  factory QueryDigitalHumanRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? taskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    return $result;
+  }
+  QueryDigitalHumanRequest._() : super();
+  factory QueryDigitalHumanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryDigitalHumanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryDigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'taskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QueryDigitalHumanRequest clone() => QueryDigitalHumanRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QueryDigitalHumanRequest copyWith(void Function(QueryDigitalHumanRequest) updates) => super.copyWith((message) => updates(message as QueryDigitalHumanRequest)) as QueryDigitalHumanRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDigitalHumanRequest create() => QueryDigitalHumanRequest._();
+  QueryDigitalHumanRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryDigitalHumanRequest> createRepeated() => $pb.PbList<QueryDigitalHumanRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDigitalHumanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDigitalHumanRequest>(create);
+  static QueryDigitalHumanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get taskId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set taskId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskId() => clearField(2);
+}
+
+class DigitalHumanResult extends $pb.GeneratedMessage {
+  factory DigitalHumanResult({
+    $core.String? videoUrl,
+    $core.String? subtitlesUrl,
+    $fixnum.Int64? videoDuration,
+  }) {
+    final $result = create();
+    if (videoUrl != null) {
+      $result.videoUrl = videoUrl;
+    }
+    if (subtitlesUrl != null) {
+      $result.subtitlesUrl = subtitlesUrl;
+    }
+    if (videoDuration != null) {
+      $result.videoDuration = videoDuration;
+    }
+    return $result;
+  }
+  DigitalHumanResult._() : super();
+  factory DigitalHumanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DigitalHumanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(4, _omitFieldNames ? '' : 'videoUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'subtitlesUrl')
+    ..aInt64(6, _omitFieldNames ? '' : 'videoDuration')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DigitalHumanResult clone() => DigitalHumanResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DigitalHumanResult copyWith(void Function(DigitalHumanResult) updates) => super.copyWith((message) => updates(message as DigitalHumanResult)) as DigitalHumanResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DigitalHumanResult create() => DigitalHumanResult._();
+  DigitalHumanResult createEmptyInstance() => create();
+  static $pb.PbList<DigitalHumanResult> createRepeated() => $pb.PbList<DigitalHumanResult>();
+  @$core.pragma('dart2js:noInline')
+  static DigitalHumanResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanResult>(create);
+  static DigitalHumanResult? _defaultInstance;
+
+  @$pb.TagNumber(4)
+  $core.String get videoUrl => $_getSZ(0);
+  @$pb.TagNumber(4)
+  set videoUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasVideoUrl() => $_has(0);
+  @$pb.TagNumber(4)
+  void clearVideoUrl() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get subtitlesUrl => $_getSZ(1);
+  @$pb.TagNumber(5)
+  set subtitlesUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSubtitlesUrl() => $_has(1);
+  @$pb.TagNumber(5)
+  void clearSubtitlesUrl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get videoDuration => $_getI64(2);
+  @$pb.TagNumber(6)
+  set videoDuration($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasVideoDuration() => $_has(2);
+  @$pb.TagNumber(6)
+  void clearVideoDuration() => clearField(6);
+}
+
+class QueryDigitalHumanResponse extends $pb.GeneratedMessage {
+  factory QueryDigitalHumanResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? taskId,
+    $core.int? type,
+    $core.String? status,
+    DigitalHumanResult? result,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (result != null) {
+      $result.result = result;
+    }
+    return $result;
+  }
+  QueryDigitalHumanResponse._() : super();
+  factory QueryDigitalHumanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryDigitalHumanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryDigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'taskId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOM<DigitalHumanResult>(5, _omitFieldNames ? '' : 'result', subBuilder: DigitalHumanResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QueryDigitalHumanResponse clone() => QueryDigitalHumanResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QueryDigitalHumanResponse copyWith(void Function(QueryDigitalHumanResponse) updates) => super.copyWith((message) => updates(message as QueryDigitalHumanResponse)) as QueryDigitalHumanResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QueryDigitalHumanResponse create() => QueryDigitalHumanResponse._();
+  QueryDigitalHumanResponse createEmptyInstance() => create();
+  static $pb.PbList<QueryDigitalHumanResponse> createRepeated() => $pb.PbList<QueryDigitalHumanResponse>();
+  @$core.pragma('dart2js:noInline')
+  static QueryDigitalHumanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDigitalHumanResponse>(create);
+  static QueryDigitalHumanResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);
@@ -3890,13 +4101,42 @@ class DigitalHumanResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get url => $_getSZ(1);
+  $fixnum.Int64 get taskId => $_getI64(1);
   @$pb.TagNumber(2)
-  set url($core.String v) { $_setString(1, v); }
+  set taskId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasUrl() => $_has(1);
+  $core.bool hasTaskId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUrl() => clearField(2);
+  void clearTaskId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get type => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set type($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  DigitalHumanResult get result => $_getN(4);
+  @$pb.TagNumber(5)
+  set result(DigitalHumanResult v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasResult() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearResult() => clearField(5);
+  @$pb.TagNumber(5)
+  DigitalHumanResult ensureResult() => $_ensure(4);
 }
 
 

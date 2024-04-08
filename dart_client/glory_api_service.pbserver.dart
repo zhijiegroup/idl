@@ -496,7 +496,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ServerContext ctx, $57.StudentArticleCreationEvaluationDetailRequest request);
   $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ServerContext ctx, $57.CorrectSentenceRequest request);
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ServerContext ctx, $57.ArticleAIChatRequest request);
-  $async.Future<$57.DigitalHumanResponse> digitalHuman($pb.ServerContext ctx, $57.DigitalHumanRequest request);
+  $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ServerContext ctx, $57.CreateDigitalHumanRequest request);
+  $async.Future<$57.QueryDigitalHumanResponse> queryDigitalHuman($pb.ServerContext ctx, $57.QueryDigitalHumanRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -918,7 +919,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return $57.StudentArticleCreationEvaluationDetailRequest();
       case 'CorrectSentence': return $57.CorrectSentenceRequest();
       case 'ArticleAiChat': return $57.ArticleAIChatRequest();
-      case 'DigitalHuman': return $57.DigitalHumanRequest();
+      case 'CreateDigitalHuman': return $57.CreateDigitalHumanRequest();
+      case 'QueryDigitalHuman': return $57.QueryDigitalHumanRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1343,7 +1345,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return this.studentArticleCreationEvaluationDetail(ctx, request as $57.StudentArticleCreationEvaluationDetailRequest);
       case 'CorrectSentence': return this.correctSentence(ctx, request as $57.CorrectSentenceRequest);
       case 'ArticleAiChat': return this.articleAiChat(ctx, request as $57.ArticleAIChatRequest);
-      case 'DigitalHuman': return this.digitalHuman(ctx, request as $57.DigitalHumanRequest);
+      case 'CreateDigitalHuman': return this.createDigitalHuman(ctx, request as $57.CreateDigitalHumanRequest);
+      case 'QueryDigitalHuman': return this.queryDigitalHuman(ctx, request as $57.QueryDigitalHumanRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

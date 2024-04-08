@@ -3332,8 +3332,16 @@ export class glory_api {
     );
   }
 
-  DigitalHuman(request) {
-    const uri = `${this.uriPrefix}/api/digital/human`;
+  CreateDigitalHuman(request) {
+    const uri = `${this.uriPrefix}/api/digital/human/create`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  QueryDigitalHuman(request) {
+    const uri = `${this.uriPrefix}/api/digital/human/query`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
