@@ -134,71 +134,72 @@ public final class ConfigOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\022admin/config.proto\022\tglory_api\032\nbase.pr" +
-      "oto\"\351\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
+      "oto\"\376\001\n\006Config\022\n\n\002id\030\002 \001(\003\022\023\n\013config_nam" +
       "e\030\003 \001(\t\022\024\n\014config_value\030\004 \001(\t\022\023\n\013config_" +
       "type\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\022\n\ncreat" +
       "ed_by\030\007 \001(\003\022\022\n\nupdated_by\030\010 \001(\003\022\022\n\ncreat" +
       "ed_at\030\t \001(\t\022\022\n\nupdated_at\030\n \001(\t\022\027\n\017busin" +
-      "ess_system\030\013 \001(\t\022\025\n\rdefault_value\030\014 \001(\t\"" +
-      "\242\001\n\tAddConfig\022\023\n\013config_name\030\002 \001(\t\022\024\n\014co" +
-      "nfig_value\030\003 \001(\t\022\025\n\rdefault_value\030\004 \001(\t\022" +
-      "\023\n\013config_type\030\005 \001(\t\022\023\n\013description\030\006 \001(" +
-      "\t\022\027\n\017business_system\030\007 \001(\t\022\020\n\010language\030\010" +
-      " \001(\t\"d\n\023CreateConfigRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022$\n\006config\030\002" +
-      " \001(\0132\024.glory_api.AddConfig\"=\n\024CreateConf" +
-      "igResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"h\n\027CreateLangConfigRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\022$\n" +
-      "\006config\030\002 \003(\0132\024.glory_api.AddConfig\"A\n\030C" +
-      "reateLangConfigResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\"\215\001\n\014UpdateConfig\022" +
-      "\021\n\tconfig_id\030\001 \001(\003\022\023\n\013config_type\030\002 \001(\t\022" +
-      "\023\n\013config_name\030\003 \001(\t\022\024\n\014config_value\030\004 \001" +
-      "(\t\022\025\n\rdefault_value\030\005 \001(\t\022\023\n\013description" +
-      "\030\006 \001(\t\"g\n\023UpdateConfigRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\'\n\006config" +
-      "\030\002 \001(\0132\027.glory_api.UpdateConfig\"=\n\024Updat" +
-      "eConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"Q\n\023DeleteConfigRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\021" +
-      "\n\tconfig_id\030\002 \001(\003\"=\n\024DeleteConfigRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"\233\001\n\020GetConfigRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\023\n\013config_name\030\002 " +
-      "\001(\t\022\023\n\013config_type\030\003 \001(\t\022\027\n\017business_sys" +
-      "tem\030\004 \001(\t\022\t\n\001q\030\005 \001(\t\022\020\n\010language\030\006 \001(\t\"^" +
-      "\n\021GetConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\"\n\007configs\030\002 \003(\0132\021.gl" +
-      "ory_api.Config\"c\n\003STS\022\025\n\raccess_key_id\030\001" +
-      " \001(\t\022\031\n\021access_key_secret\030\002 \001(\t\022\022\n\nexpir" +
-      "ation\030\003 \001(\t\022\026\n\016security_token\030\004 \001(\t\"8\n\rG" +
-      "etSTSRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\"T\n\016GetSTSResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\003sts\030\002 " +
-      "\001(\0132\016.glory_api.STS\"\257\001\n\016WebofficeToken\022\024" +
-      "\n\014access_token\030\001 \001(\t\022!\n\031access_token_exp" +
-      "ired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\022\"" +
-      "\n\032refresh_token_expired_time\030\004 \001(\t\022\022\n\nre" +
-      "quest_id\030\005 \001(\t\022\025\n\rweboffice_url\030\006 \001(\t\"]\n" +
-      "\035GenerateWebofficeTokenRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013objec" +
-      "t_path\030\002 \001(\t\"{\n\036GenerateWebofficeTokenRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\0222\n\017weboffice_token\030\002 \001(\0132\031.glory_a" +
-      "pi.WebofficeToken\"\237\001\n\025RefreshWebofficeTo" +
-      "ken\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_toke" +
-      "n_expired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 " +
-      "\001(\t\022\"\n\032refresh_token_expired_time\030\004 \001(\t\022" +
-      "\022\n\nrequest_id\030\005 \001(\t\"t\n\034RefreshWebofficeT" +
-      "okenRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\024\n\014access_token\030\002 \001(\t\022\025\n\rre" +
-      "fresh_token\030\003 \001(\t\"\211\001\n\035RefreshWebofficeTo" +
-      "kenResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022A\n\027refresh_weboffice_token\030\002 " +
-      "\001(\0132 .glory_api.RefreshWebofficeTokenB$\n" +
-      " com.zhijiejiaoyu.glory_api.adminP\001b\006pro" +
-      "to3"
+      "ess_system\030\013 \001(\t\022\025\n\rdefault_value\030\014 \001(\t\022" +
+      "\023\n\013config_lang\030\r \001(\t\"\242\001\n\tAddConfig\022\023\n\013co" +
+      "nfig_name\030\002 \001(\t\022\024\n\014config_value\030\003 \001(\t\022\025\n" +
+      "\rdefault_value\030\004 \001(\t\022\023\n\013config_type\030\005 \001(" +
+      "\t\022\023\n\013description\030\006 \001(\t\022\027\n\017business_syste" +
+      "m\030\007 \001(\t\022\020\n\010language\030\010 \001(\t\"d\n\023CreateConfi" +
+      "gRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022$\n\006config\030\002 \001(\0132\024.glory_api.Ad" +
+      "dConfig\"=\n\024CreateConfigResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\"h\n\027Create" +
+      "LangConfigRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022$\n\006config\030\002 \003(\0132\024.glo" +
+      "ry_api.AddConfig\"A\n\030CreateLangConfigResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\"\242\001\n\014UpdateConfig\022\021\n\tconfig_id\030\001 \001(\003\022" +
+      "\023\n\013config_type\030\002 \001(\t\022\023\n\013config_name\030\003 \001(" +
+      "\t\022\024\n\014config_value\030\004 \001(\t\022\025\n\rdefault_value" +
+      "\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\023\n\013config_la" +
+      "ng\030\007 \001(\t\"g\n\023UpdateConfigRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\'\n\006conf" +
+      "ig\030\002 \001(\0132\027.glory_api.UpdateConfig\"=\n\024Upd" +
+      "ateConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\"Q\n\023DeleteConfigRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\021\n\tconfig_id\030\002 \001(\003\"=\n\024DeleteConfigRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\"\233\001\n\020GetConfigRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\023\n\013config_name\030" +
+      "\002 \001(\t\022\023\n\013config_type\030\003 \001(\t\022\027\n\017business_s" +
+      "ystem\030\004 \001(\t\022\t\n\001q\030\005 \001(\t\022\020\n\010language\030\006 \001(\t" +
+      "\"^\n\021GetConfigResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\"\n\007configs\030\002 \003(\0132\021." +
+      "glory_api.Config\"c\n\003STS\022\025\n\raccess_key_id" +
+      "\030\001 \001(\t\022\031\n\021access_key_secret\030\002 \001(\t\022\022\n\nexp" +
+      "iration\030\003 \001(\t\022\026\n\016security_token\030\004 \001(\t\"8\n" +
+      "\rGetSTSRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\"T\n\016GetSTSResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\003sts\030" +
+      "\002 \001(\0132\016.glory_api.STS\"\257\001\n\016WebofficeToken" +
+      "\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_token_e" +
+      "xpired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t" +
+      "\022\"\n\032refresh_token_expired_time\030\004 \001(\t\022\022\n\n" +
+      "request_id\030\005 \001(\t\022\025\n\rweboffice_url\030\006 \001(\t\"" +
+      "]\n\035GenerateWebofficeTokenRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013obj" +
+      "ect_path\030\002 \001(\t\"{\n\036GenerateWebofficeToken" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\0222\n\017weboffice_token\030\002 \001(\0132\031.glory" +
+      "_api.WebofficeToken\"\237\001\n\025RefreshWeboffice" +
+      "Token\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_to" +
+      "ken_expired_time\030\002 \001(\t\022\025\n\rrefresh_token\030" +
+      "\003 \001(\t\022\"\n\032refresh_token_expired_time\030\004 \001(" +
+      "\t\022\022\n\nrequest_id\030\005 \001(\t\"t\n\034RefreshWeboffic" +
+      "eTokenRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\024\n\014access_token\030\002 \001(\t\022\025\n\r" +
+      "refresh_token\030\003 \001(\t\"\211\001\n\035RefreshWeboffice" +
+      "TokenResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022A\n\027refresh_weboffice_token\030" +
+      "\002 \001(\0132 .glory_api.RefreshWebofficeTokenB" +
+      "$\n com.zhijiejiaoyu.glory_api.adminP\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -210,7 +211,7 @@ public final class ConfigOuterClass {
     internal_static_glory_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Config_descriptor,
-        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", "BusinessSystem", "DefaultValue", });
+        new java.lang.String[] { "Id", "ConfigName", "ConfigValue", "ConfigType", "Description", "CreatedBy", "UpdatedBy", "CreatedAt", "UpdatedAt", "BusinessSystem", "DefaultValue", "ConfigLang", });
     internal_static_glory_api_AddConfig_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_AddConfig_fieldAccessorTable = new
@@ -246,7 +247,7 @@ public final class ConfigOuterClass {
     internal_static_glory_api_UpdateConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateConfig_descriptor,
-        new java.lang.String[] { "ConfigId", "ConfigType", "ConfigName", "ConfigValue", "DefaultValue", "Description", });
+        new java.lang.String[] { "ConfigId", "ConfigType", "ConfigName", "ConfigValue", "DefaultValue", "Description", "ConfigLang", });
     internal_static_glory_api_UpdateConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_UpdateConfigRequest_fieldAccessorTable = new

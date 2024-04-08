@@ -28,6 +28,7 @@ const Config$json = {
     {'1': 'updated_at', '3': 10, '4': 1, '5': 9, '10': 'updatedAt'},
     {'1': 'business_system', '3': 11, '4': 1, '5': 9, '10': 'businessSystem'},
     {'1': 'default_value', '3': 12, '4': 1, '5': 9, '10': 'defaultValue'},
+    {'1': 'config_lang', '3': 13, '4': 1, '5': 9, '10': 'configLang'},
   ],
 };
 
@@ -39,7 +40,8 @@ final $typed_data.Uint8List configDescriptor = $convert.base64Decode(
     'F0ZWRfYnkYByABKANSCWNyZWF0ZWRCeRIdCgp1cGRhdGVkX2J5GAggASgDUgl1cGRhdGVkQnkS'
     'HQoKY3JlYXRlZF9hdBgJIAEoCVIJY3JlYXRlZEF0Eh0KCnVwZGF0ZWRfYXQYCiABKAlSCXVwZG'
     'F0ZWRBdBInCg9idXNpbmVzc19zeXN0ZW0YCyABKAlSDmJ1c2luZXNzU3lzdGVtEiMKDWRlZmF1'
-    'bHRfdmFsdWUYDCABKAlSDGRlZmF1bHRWYWx1ZQ==');
+    'bHRfdmFsdWUYDCABKAlSDGRlZmF1bHRWYWx1ZRIfCgtjb25maWdfbGFuZxgNIAEoCVIKY29uZm'
+    'lnTGFuZw==');
 
 @$core.Deprecated('Use addConfigDescriptor instead')
 const AddConfig$json = {
@@ -129,6 +131,7 @@ const UpdateConfig$json = {
     {'1': 'config_value', '3': 4, '4': 1, '5': 9, '10': 'configValue'},
     {'1': 'default_value', '3': 5, '4': 1, '5': 9, '10': 'defaultValue'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'config_lang', '3': 7, '4': 1, '5': 9, '10': 'configLang'},
   ],
 };
 
@@ -137,7 +140,8 @@ final $typed_data.Uint8List updateConfigDescriptor = $convert.base64Decode(
     'CgxVcGRhdGVDb25maWcSGwoJY29uZmlnX2lkGAEgASgDUghjb25maWdJZBIfCgtjb25maWdfdH'
     'lwZRgCIAEoCVIKY29uZmlnVHlwZRIfCgtjb25maWdfbmFtZRgDIAEoCVIKY29uZmlnTmFtZRIh'
     'Cgxjb25maWdfdmFsdWUYBCABKAlSC2NvbmZpZ1ZhbHVlEiMKDWRlZmF1bHRfdmFsdWUYBSABKA'
-    'lSDGRlZmF1bHRWYWx1ZRIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24=');
+    'lSDGRlZmF1bHRWYWx1ZRIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHwoLY29u'
+    'ZmlnX2xhbmcYByABKAlSCmNvbmZpZ0xhbmc=');
 
 @$core.Deprecated('Use updateConfigRequestDescriptor instead')
 const UpdateConfigRequest$json = {

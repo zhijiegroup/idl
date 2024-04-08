@@ -29,6 +29,7 @@ class Config extends $pb.GeneratedMessage {
     $core.String? updatedAt,
     $core.String? businessSystem,
     $core.String? defaultValue,
+    $core.String? configLang,
   }) {
     final $result = create();
     if (id != null) {
@@ -64,6 +65,9 @@ class Config extends $pb.GeneratedMessage {
     if (defaultValue != null) {
       $result.defaultValue = defaultValue;
     }
+    if (configLang != null) {
+      $result.configLang = configLang;
+    }
     return $result;
   }
   Config._() : super();
@@ -82,6 +86,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'updatedAt')
     ..aOS(11, _omitFieldNames ? '' : 'businessSystem')
     ..aOS(12, _omitFieldNames ? '' : 'defaultValue')
+    ..aOS(13, _omitFieldNames ? '' : 'configLang')
     ..hasRequiredFields = false
   ;
 
@@ -204,6 +209,15 @@ class Config extends $pb.GeneratedMessage {
   $core.bool hasDefaultValue() => $_has(10);
   @$pb.TagNumber(12)
   void clearDefaultValue() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get configLang => $_getSZ(11);
+  @$pb.TagNumber(13)
+  set configLang($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasConfigLang() => $_has(11);
+  @$pb.TagNumber(13)
+  void clearConfigLang() => clearField(13);
 }
 
 class AddConfig extends $pb.GeneratedMessage {
@@ -580,6 +594,7 @@ class UpdateConfig extends $pb.GeneratedMessage {
     $core.String? configValue,
     $core.String? defaultValue,
     $core.String? description,
+    $core.String? configLang,
   }) {
     final $result = create();
     if (configId != null) {
@@ -600,6 +615,9 @@ class UpdateConfig extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
+    if (configLang != null) {
+      $result.configLang = configLang;
+    }
     return $result;
   }
   UpdateConfig._() : super();
@@ -613,6 +631,7 @@ class UpdateConfig extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'configValue')
     ..aOS(5, _omitFieldNames ? '' : 'defaultValue')
     ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..aOS(7, _omitFieldNames ? '' : 'configLang')
     ..hasRequiredFields = false
   ;
 
@@ -690,6 +709,15 @@ class UpdateConfig extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
   void clearDescription() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get configLang => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set configLang($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasConfigLang() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfigLang() => clearField(7);
 }
 
 class UpdateConfigRequest extends $pb.GeneratedMessage {

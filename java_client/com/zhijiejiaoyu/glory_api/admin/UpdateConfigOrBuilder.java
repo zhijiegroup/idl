@@ -72,4 +72,16 @@ public interface UpdateConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <code>string config_lang = 7;</code>
+   * @return The configLang.
+   */
+  java.lang.String getConfigLang();
+  /**
+   * <code>string config_lang = 7;</code>
+   * @return The bytes for configLang.
+   */
+  com.google.protobuf.ByteString
+      getConfigLangBytes();
 }
