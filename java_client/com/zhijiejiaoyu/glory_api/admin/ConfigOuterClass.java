@@ -35,6 +35,16 @@ public final class ConfigOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CreateConfigResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateLangConfigRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateLangConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CreateLangConfigResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CreateLangConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_UpdateConfig_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -130,59 +140,65 @@ public final class ConfigOuterClass {
       "ed_by\030\007 \001(\003\022\022\n\nupdated_by\030\010 \001(\003\022\022\n\ncreat" +
       "ed_at\030\t \001(\t\022\022\n\nupdated_at\030\n \001(\t\022\027\n\017busin" +
       "ess_system\030\013 \001(\t\022\025\n\rdefault_value\030\014 \001(\t\"" +
-      "\220\001\n\tAddConfig\022\023\n\013config_name\030\002 \001(\t\022\024\n\014co" +
+      "\242\001\n\tAddConfig\022\023\n\013config_name\030\002 \001(\t\022\024\n\014co" +
       "nfig_value\030\003 \001(\t\022\025\n\rdefault_value\030\004 \001(\t\022" +
       "\023\n\013config_type\030\005 \001(\t\022\023\n\013description\030\006 \001(" +
-      "\t\022\027\n\017business_system\030\007 \001(\t\"d\n\023CreateConf" +
-      "igRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
-      "aseRequest\022$\n\006config\030\002 \001(\0132\024.glory_api.A" +
-      "ddConfig\"=\n\024CreateConfigResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\215\001\n\014Upda" +
-      "teConfig\022\021\n\tconfig_id\030\001 \001(\003\022\023\n\013config_ty" +
-      "pe\030\002 \001(\t\022\023\n\013config_name\030\003 \001(\t\022\024\n\014config_" +
-      "value\030\004 \001(\t\022\025\n\rdefault_value\030\005 \001(\t\022\023\n\013de" +
-      "scription\030\006 \001(\t\"g\n\023UpdateConfigRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\'\n\006config\030\002 \001(\0132\027.glory_api.UpdateConfig" +
-      "\"=\n\024UpdateConfigResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\"Q\n\023DeleteConfigR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\021\n\tconfig_id\030\002 \001(\003\"=\n\024DeleteConf" +
+      "\t\022\027\n\017business_system\030\007 \001(\t\022\020\n\010language\030\010" +
+      " \001(\t\"d\n\023CreateConfigRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022$\n\006config\030\002" +
+      " \001(\0132\024.glory_api.AddConfig\"=\n\024CreateConf" +
       "igResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"\211\001\n\020GetConfigRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013confi" +
-      "g_name\030\002 \001(\t\022\023\n\013config_type\030\003 \001(\t\022\027\n\017bus" +
-      "iness_system\030\004 \001(\t\022\t\n\001q\030\005 \001(\t\"^\n\021GetConf" +
-      "igResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022\"\n\007configs\030\002 \003(\0132\021.glory_api.C" +
-      "onfig\"c\n\003STS\022\025\n\raccess_key_id\030\001 \001(\t\022\031\n\021a" +
-      "ccess_key_secret\030\002 \001(\t\022\022\n\nexpiration\030\003 \001" +
-      "(\t\022\026\n\016security_token\030\004 \001(\t\"8\n\rGetSTSRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\"T\n\016GetSTSResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\033\n\003sts\030\002 \001(\0132\016.glo" +
-      "ry_api.STS\"\257\001\n\016WebofficeToken\022\024\n\014access_" +
-      "token\030\001 \001(\t\022!\n\031access_token_expired_time" +
-      "\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\022\"\n\032refresh" +
-      "_token_expired_time\030\004 \001(\t\022\022\n\nrequest_id\030" +
-      "\005 \001(\t\022\025\n\rweboffice_url\030\006 \001(\t\"]\n\035Generate" +
-      "WebofficeTokenRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\023\n\013object_path\030\002 " +
-      "\001(\t\"{\n\036GenerateWebofficeTokenResponse\022%\n" +
-      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\017" +
-      "weboffice_token\030\002 \001(\0132\031.glory_api.Weboff" +
-      "iceToken\"\237\001\n\025RefreshWebofficeToken\022\024\n\014ac" +
-      "cess_token\030\001 \001(\t\022!\n\031access_token_expired" +
-      "_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\022\"\n\032re" +
-      "fresh_token_expired_time\030\004 \001(\t\022\022\n\nreques" +
-      "t_id\030\005 \001(\t\"t\n\034RefreshWebofficeTokenReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\024\n\014access_token\030\002 \001(\t\022\025\n\rrefresh_tok" +
-      "en\030\003 \001(\t\"\211\001\n\035RefreshWebofficeTokenRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022A\n\027refresh_weboffice_token\030\002 \001(\0132 .glo" +
-      "ry_api.RefreshWebofficeTokenB$\n com.zhij" +
-      "iejiaoyu.glory_api.adminP\001b\006proto3"
+      "eResponse\"h\n\027CreateLangConfigRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022$\n" +
+      "\006config\030\002 \003(\0132\024.glory_api.AddConfig\"A\n\030C" +
+      "reateLangConfigResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\"\215\001\n\014UpdateConfig\022" +
+      "\021\n\tconfig_id\030\001 \001(\003\022\023\n\013config_type\030\002 \001(\t\022" +
+      "\023\n\013config_name\030\003 \001(\t\022\024\n\014config_value\030\004 \001" +
+      "(\t\022\025\n\rdefault_value\030\005 \001(\t\022\023\n\013description" +
+      "\030\006 \001(\t\"g\n\023UpdateConfigRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\'\n\006config" +
+      "\030\002 \001(\0132\027.glory_api.UpdateConfig\"=\n\024Updat" +
+      "eConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\"Q\n\023DeleteConfigRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\021" +
+      "\n\tconfig_id\030\002 \001(\003\"=\n\024DeleteConfigRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\"\233\001\n\020GetConfigRequest\022\'\n\014base_request\030\001 " +
+      "\001(\0132\021.base.BaseRequest\022\023\n\013config_name\030\002 " +
+      "\001(\t\022\023\n\013config_type\030\003 \001(\t\022\027\n\017business_sys" +
+      "tem\030\004 \001(\t\022\t\n\001q\030\005 \001(\t\022\020\n\010language\030\006 \001(\t\"^" +
+      "\n\021GetConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022\"\n\007configs\030\002 \003(\0132\021.gl" +
+      "ory_api.Config\"c\n\003STS\022\025\n\raccess_key_id\030\001" +
+      " \001(\t\022\031\n\021access_key_secret\030\002 \001(\t\022\022\n\nexpir" +
+      "ation\030\003 \001(\t\022\026\n\016security_token\030\004 \001(\t\"8\n\rG" +
+      "etSTSRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\"T\n\016GetSTSResponse\022%\n\tbase_" +
+      "resp\030\001 \001(\0132\022.base.BaseResponse\022\033\n\003sts\030\002 " +
+      "\001(\0132\016.glory_api.STS\"\257\001\n\016WebofficeToken\022\024" +
+      "\n\014access_token\030\001 \001(\t\022!\n\031access_token_exp" +
+      "ired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 \001(\t\022\"" +
+      "\n\032refresh_token_expired_time\030\004 \001(\t\022\022\n\nre" +
+      "quest_id\030\005 \001(\t\022\025\n\rweboffice_url\030\006 \001(\t\"]\n" +
+      "\035GenerateWebofficeTokenRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013objec" +
+      "t_path\030\002 \001(\t\"{\n\036GenerateWebofficeTokenRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\0222\n\017weboffice_token\030\002 \001(\0132\031.glory_a" +
+      "pi.WebofficeToken\"\237\001\n\025RefreshWebofficeTo" +
+      "ken\022\024\n\014access_token\030\001 \001(\t\022!\n\031access_toke" +
+      "n_expired_time\030\002 \001(\t\022\025\n\rrefresh_token\030\003 " +
+      "\001(\t\022\"\n\032refresh_token_expired_time\030\004 \001(\t\022" +
+      "\022\n\nrequest_id\030\005 \001(\t\"t\n\034RefreshWebofficeT" +
+      "okenRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\024\n\014access_token\030\002 \001(\t\022\025\n\rre" +
+      "fresh_token\030\003 \001(\t\"\211\001\n\035RefreshWebofficeTo" +
+      "kenResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022A\n\027refresh_weboffice_token\030\002 " +
+      "\001(\0132 .glory_api.RefreshWebofficeTokenB$\n" +
+      " com.zhijiejiaoyu.glory_api.adminP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -200,7 +216,7 @@ public final class ConfigOuterClass {
     internal_static_glory_api_AddConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_AddConfig_descriptor,
-        new java.lang.String[] { "ConfigName", "ConfigValue", "DefaultValue", "ConfigType", "Description", "BusinessSystem", });
+        new java.lang.String[] { "ConfigName", "ConfigValue", "DefaultValue", "ConfigType", "Description", "BusinessSystem", "Language", });
     internal_static_glory_api_CreateConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_glory_api_CreateConfigRequest_fieldAccessorTable = new
@@ -213,98 +229,110 @@ public final class ConfigOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_UpdateConfig_descriptor =
+    internal_static_glory_api_CreateLangConfigRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_CreateLangConfigRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateLangConfigRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Config", });
+    internal_static_glory_api_CreateLangConfigResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_CreateLangConfigResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CreateLangConfigResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateConfig_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_UpdateConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateConfig_descriptor,
         new java.lang.String[] { "ConfigId", "ConfigType", "ConfigName", "ConfigValue", "DefaultValue", "Description", });
     internal_static_glory_api_UpdateConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_UpdateConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateConfigRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Config", });
     internal_static_glory_api_UpdateConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_UpdateConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_DeleteConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_DeleteConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteConfigRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ConfigId", });
     internal_static_glory_api_DeleteConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_DeleteConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_GetConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetConfigRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ConfigName", "ConfigType", "BusinessSystem", "Q", });
+        new java.lang.String[] { "BaseRequest", "ConfigName", "ConfigType", "BusinessSystem", "Q", "Language", });
     internal_static_glory_api_GetConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_GetConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Configs", });
     internal_static_glory_api_STS_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_STS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_STS_descriptor,
         new java.lang.String[] { "AccessKeyId", "AccessKeySecret", "Expiration", "SecurityToken", });
     internal_static_glory_api_GetSTSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_GetSTSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSTSRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_GetSTSResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_GetSTSResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSTSResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Sts", });
     internal_static_glory_api_WebofficeToken_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_WebofficeToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_WebofficeToken_descriptor,
         new java.lang.String[] { "AccessToken", "AccessTokenExpiredTime", "RefreshToken", "RefreshTokenExpiredTime", "RequestId", "WebofficeUrl", });
     internal_static_glory_api_GenerateWebofficeTokenRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_GenerateWebofficeTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GenerateWebofficeTokenRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ObjectPath", });
     internal_static_glory_api_GenerateWebofficeTokenResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_GenerateWebofficeTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GenerateWebofficeTokenResponse_descriptor,
         new java.lang.String[] { "BaseResp", "WebofficeToken", });
     internal_static_glory_api_RefreshWebofficeToken_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_RefreshWebofficeToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RefreshWebofficeToken_descriptor,
         new java.lang.String[] { "AccessToken", "AccessTokenExpiredTime", "RefreshToken", "RefreshTokenExpiredTime", "RequestId", });
     internal_static_glory_api_RefreshWebofficeTokenRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_RefreshWebofficeTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RefreshWebofficeTokenRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "AccessToken", "RefreshToken", });
     internal_static_glory_api_RefreshWebofficeTokenResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_RefreshWebofficeTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_RefreshWebofficeTokenResponse_descriptor,

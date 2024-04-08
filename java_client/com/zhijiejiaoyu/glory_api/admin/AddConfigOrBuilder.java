@@ -126,4 +126,24 @@ public interface AddConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBusinessSystemBytes();
+
+  /**
+   * <pre>
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 8;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 8;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

@@ -207,6 +207,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$17.DeletePaymentResponse> deletePayment($pb.ServerContext ctx, $17.DeletePaymentRequest request);
   $async.Future<$17.WechatPaymentNotifyResponse> wechatPaymentNotify($pb.ServerContext ctx, $17.WechatPaymentNotifyRequest request);
   $async.Future<$18.CreateConfigResponse> createConfig($pb.ServerContext ctx, $18.CreateConfigRequest request);
+  $async.Future<$18.CreateLangConfigResponse> createLangConfig($pb.ServerContext ctx, $18.CreateLangConfigRequest request);
   $async.Future<$18.UpdateConfigResponse> updateConfig($pb.ServerContext ctx, $18.UpdateConfigRequest request);
   $async.Future<$18.DeleteConfigResponse> deleteConfig($pb.ServerContext ctx, $18.DeleteConfigRequest request);
   $async.Future<$18.GetConfigResponse> getConfig($pb.ServerContext ctx, $18.GetConfigRequest request);
@@ -631,6 +632,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeletePayment': return $17.DeletePaymentRequest();
       case 'WechatPaymentNotify': return $17.WechatPaymentNotifyRequest();
       case 'CreateConfig': return $18.CreateConfigRequest();
+      case 'CreateLangConfig': return $18.CreateLangConfigRequest();
       case 'UpdateConfig': return $18.UpdateConfigRequest();
       case 'DeleteConfig': return $18.DeleteConfigRequest();
       case 'GetConfig': return $18.GetConfigRequest();
@@ -1058,6 +1060,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeletePayment': return this.deletePayment(ctx, request as $17.DeletePaymentRequest);
       case 'WechatPaymentNotify': return this.wechatPaymentNotify(ctx, request as $17.WechatPaymentNotifyRequest);
       case 'CreateConfig': return this.createConfig(ctx, request as $18.CreateConfigRequest);
+      case 'CreateLangConfig': return this.createLangConfig(ctx, request as $18.CreateLangConfigRequest);
       case 'UpdateConfig': return this.updateConfig(ctx, request as $18.UpdateConfigRequest);
       case 'DeleteConfig': return this.deleteConfig(ctx, request as $18.DeleteConfigRequest);
       case 'GetConfig': return this.getConfig(ctx, request as $18.GetConfigRequest);

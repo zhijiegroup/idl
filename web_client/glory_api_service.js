@@ -1130,6 +1130,14 @@ export class glory_api {
     );
   }
 
+  CreateLangConfig(request) {
+    const uri = `${this.uriPrefix}/api/admin/add_lang_config`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UpdateConfig(request) {
     const uri = `${this.uriPrefix}/api/admin/update_config`;
     const body = JSONbigint.stringify(request);

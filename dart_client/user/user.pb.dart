@@ -3565,6 +3565,7 @@ class ListRoleRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? roleId,
     $core.String? roleName,
     $core.String? roleType,
+    $core.String? language,
     $fixnum.Int64? tenantId,
     $2.PaginationRequest? pagination,
   }) {
@@ -3580,6 +3581,9 @@ class ListRoleRequest extends $pb.GeneratedMessage {
     }
     if (roleType != null) {
       $result.roleType = roleType;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     if (tenantId != null) {
       $result.tenantId = tenantId;
@@ -3598,6 +3602,7 @@ class ListRoleRequest extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'roleId')
     ..aOS(3, _omitFieldNames ? '' : 'roleName')
     ..aOS(4, _omitFieldNames ? '' : 'roleType')
+    ..aOS(5, _omitFieldNames ? '' : 'language')
     ..aInt64(7, _omitFieldNames ? '' : 'tenantId')
     ..aOM<$2.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $2.PaginationRequest.create)
     ..hasRequiredFields = false
@@ -3662,27 +3667,34 @@ class ListRoleRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearRoleType() => clearField(4);
 
-  /// string source = 5;  // 对应的角色来源
-  /// int64 source_id =6;
+  @$pb.TagNumber(5)
+  $core.String get language => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set language($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLanguage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLanguage() => clearField(5);
+
   @$pb.TagNumber(7)
-  $fixnum.Int64 get tenantId => $_getI64(4);
+  $fixnum.Int64 get tenantId => $_getI64(5);
   @$pb.TagNumber(7)
-  set tenantId($fixnum.Int64 v) { $_setInt64(4, v); }
+  set tenantId($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasTenantId() => $_has(4);
+  $core.bool hasTenantId() => $_has(5);
   @$pb.TagNumber(7)
   void clearTenantId() => clearField(7);
 
   @$pb.TagNumber(100)
-  $2.PaginationRequest get pagination => $_getN(5);
+  $2.PaginationRequest get pagination => $_getN(6);
   @$pb.TagNumber(100)
   set pagination($2.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(5);
+  $core.bool hasPagination() => $_has(6);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $2.PaginationRequest ensurePagination() => $_ensure(5);
+  $2.PaginationRequest ensurePagination() => $_ensure(6);
 }
 
 class ListRoleResponse extends $pb.GeneratedMessage {

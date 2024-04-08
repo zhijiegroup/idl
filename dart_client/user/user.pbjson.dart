@@ -719,6 +719,7 @@ const ListRoleRequest$json = {
     {'1': 'role_id', '3': 2, '4': 1, '5': 3, '10': 'roleId'},
     {'1': 'role_name', '3': 3, '4': 1, '5': 9, '10': 'roleName'},
     {'1': 'role_type', '3': 4, '4': 1, '5': 9, '10': 'roleType'},
+    {'1': 'language', '3': 5, '4': 1, '5': 9, '10': 'language'},
     {'1': 'tenant_id', '3': 7, '4': 1, '5': 3, '10': 'tenantId'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
@@ -728,9 +729,9 @@ const ListRoleRequest$json = {
 final $typed_data.Uint8List listRoleRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0Um9sZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUmVxdW'
     'VzdFILYmFzZVJlcXVlc3QSFwoHcm9sZV9pZBgCIAEoA1IGcm9sZUlkEhsKCXJvbGVfbmFtZRgD'
-    'IAEoCVIIcm9sZU5hbWUSGwoJcm9sZV90eXBlGAQgASgJUghyb2xlVHlwZRIbCgl0ZW5hbnRfaW'
-    'QYByABKANSCHRlbmFudElkEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25S'
-    'ZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'IAEoCVIIcm9sZU5hbWUSGwoJcm9sZV90eXBlGAQgASgJUghyb2xlVHlwZRIaCghsYW5ndWFnZR'
+    'gFIAEoCVIIbGFuZ3VhZ2USGwoJdGVuYW50X2lkGAcgASgDUgh0ZW5hbnRJZBI3CgpwYWdpbmF0'
+    'aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listRoleResponseDescriptor instead')
 const ListRoleResponse$json = {

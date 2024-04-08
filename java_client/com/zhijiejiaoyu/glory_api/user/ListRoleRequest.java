@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private ListRoleRequest() {
     roleName = "";
     roleType = "";
+    language = "";
   }
 
   @java.lang.Override
@@ -78,6 +79,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             roleType = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            language = s;
             break;
           }
           case 56: {
@@ -259,12 +266,57 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LANGUAGE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object language ;
+  /**
+   * <pre>
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 5;</code>
+   * @return The language.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguage() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      language = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 5;</code>
+   * @return The bytes for language.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLanguageBytes() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      language = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TENANT_ID_FIELD_NUMBER = 7;
   private long tenantId ;
   /**
    * <pre>
-   *  string source = 5;  // 对应的角色来源
-   *  int64 source_id =6;
+   * 学校id
    * </pre>
    *
    * <code>int64 tenant_id = 7;</code>
@@ -327,6 +379,9 @@ private static final long serialVersionUID = 0L;
     if (!getRoleTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleType );
     }
+    if (!getLanguageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, language );
+    }
     if (tenantId != 0L) {
       output.writeInt64(7, tenantId );
     }
@@ -355,6 +410,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRoleTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleType );
+    }
+    if (!getLanguageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, language );
     }
     if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -390,6 +448,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRoleName())) return false;
     if (!getRoleType()
         .equals(other.getRoleType())) return false;
+    if (!getLanguage()
+        .equals(other.getLanguage())) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -419,6 +479,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRoleName().hashCode();
     hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getRoleType().hashCode();
+    hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguage().hashCode();
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
@@ -571,6 +633,8 @@ private static final long serialVersionUID = 0L;
 
       roleType = "";
 
+      language = "";
+
       tenantId = 0L;
 
       if (paginationBuilder == null) {
@@ -613,6 +677,7 @@ private static final long serialVersionUID = 0L;
       result.roleId = roleId ;
       result.roleName = roleName ;
       result.roleType = roleType ;
+      result.language = language ;
       result.tenantId = tenantId ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -679,6 +744,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRoleType().isEmpty()) {
         roleType = other.roleType ;
+        onChanged();
+      }
+      if (!other.getLanguage().isEmpty()) {
+        language = other.language ;
         onChanged();
       }
       if (other.getTenantId() != 0L) {
@@ -1058,11 +1127,106 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object language = "";
+    /**
+     * <pre>
+     * zh: 中文; th: 泰语
+     * </pre>
+     *
+     * <code>string language = 5;</code>
+     * @return The language.
+     */
+    public java.lang.String getLanguage() {
+      java.lang.Object ref = language ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        language = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * zh: 中文; th: 泰语
+     * </pre>
+     *
+     * <code>string language = 5;</code>
+     * @return The bytes for language.
+     */
+    public com.google.protobuf.ByteString
+        getLanguageBytes() {
+      java.lang.Object ref = language ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        language = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * zh: 中文; th: 泰语
+     * </pre>
+     *
+     * <code>string language = 5;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      language = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * zh: 中文; th: 泰语
+     * </pre>
+     *
+     * <code>string language = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguage() {
+      
+      language = getDefaultInstance().getLanguage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * zh: 中文; th: 泰语
+     * </pre>
+     *
+     * <code>string language = 5;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      language = value;
+      onChanged();
+      return this;
+    }
+
     private long tenantId ;
     /**
      * <pre>
-     *  string source = 5;  // 对应的角色来源
-     *  int64 source_id =6;
+     * 学校id
      * </pre>
      *
      * <code>int64 tenant_id = 7;</code>
@@ -1074,8 +1238,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *  string source = 5;  // 对应的角色来源
-     *  int64 source_id =6;
+     * 学校id
      * </pre>
      *
      * <code>int64 tenant_id = 7;</code>
@@ -1090,8 +1253,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *  string source = 5;  // 对应的角色来源
-     *  int64 source_id =6;
+     * 学校id
      * </pre>
      *
      * <code>int64 tenant_id = 7;</code>

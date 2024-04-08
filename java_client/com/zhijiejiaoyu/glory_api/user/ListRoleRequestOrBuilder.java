@@ -70,8 +70,27 @@ public interface ListRoleRequestOrBuilder extends
 
   /**
    * <pre>
-   *  string source = 5;  // 对应的角色来源
-   *  int64 source_id =6;
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 5;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * zh: 中文; th: 泰语
+   * </pre>
+   *
+   * <code>string language = 5;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
+
+  /**
+   * <pre>
+   * 学校id
    * </pre>
    *
    * <code>int64 tenant_id = 7;</code>

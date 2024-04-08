@@ -32,6 +32,8 @@ export interface AddConfig {
   description?: string;
   /** 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth */
   business_system?: string;
+  /** zh: 中文; th: 泰语 */
+  language?: string;
 }
 
 export interface CreateConfigRequest {
@@ -40,6 +42,15 @@ export interface CreateConfigRequest {
 }
 
 export interface CreateConfigResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface CreateLangConfigRequest {
+  base_request?: base.BaseRequest;
+  config?: Array<AddConfig>;
+}
+
+export interface CreateLangConfigResponse {
   base_resp?: base.BaseResponse;
 }
 
@@ -80,6 +91,7 @@ export interface GetConfigRequest {
   business_system?: string;
   /** 用于区分config_type的类型，支持pageKey, appKey */
   q?: string;
+  language?: string;
 }
 
 export interface GetConfigResponse {

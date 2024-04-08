@@ -1189,8 +1189,10 @@ struct GloryApi_ListRoleRequest {
   /// 角色类型， 支持build-in，跟 user-defined
   var roleType: String = String()
 
-  ///  string source = 5;  // 对应的角色来源
-  ///  int64 source_id =6;
+  /// zh: 中文; th: 泰语
+  var language: String = String()
+
+  /// 学校id
   var tenantID: Int64 = 0
 
   var pagination: Base_PaginationRequest {
@@ -4587,6 +4589,7 @@ extension GloryApi_ListRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
     2: .standard(proto: "role_id"),
     3: .standard(proto: "role_name"),
     4: .standard(proto: "role_type"),
+    5: .same(proto: "language"),
     7: .standard(proto: "tenant_id"),
     100: .same(proto: "pagination"),
   ]
@@ -4601,6 +4604,7 @@ extension GloryApi_ListRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.roleName) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.roleType) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.language) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
@@ -4625,6 +4629,9 @@ extension GloryApi_ListRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.roleType.isEmpty {
       try visitor.visitSingularStringField(value: self.roleType, fieldNumber: 4)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 5)
+    }
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 7)
     }
@@ -4639,6 +4646,7 @@ extension GloryApi_ListRoleRequest: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.roleID != rhs.roleID {return false}
     if lhs.roleName != rhs.roleName {return false}
     if lhs.roleType != rhs.roleType {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.tenantID != rhs.tenantID {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

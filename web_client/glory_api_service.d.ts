@@ -619,6 +619,10 @@ list the permissions that supported */
     request: config.CreateConfigRequest
   ): Promise<config.CreateConfigResponse>;
 
+  CreateLangConfig(
+    request: config.CreateLangConfigRequest
+  ): Promise<config.CreateLangConfigResponse>;
+
   UpdateConfig(
     request: config.UpdateConfigRequest
   ): Promise<config.UpdateConfigResponse>;

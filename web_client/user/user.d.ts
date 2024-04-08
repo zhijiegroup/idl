@@ -312,10 +312,10 @@ export interface ListRoleRequest {
   role_id?: string;
   /** 角色名称，模糊查找 */
   role_name?: string;
-  /** 角色类型， 支持build-in，跟 user-defined
-string source = 5;  // 对应的角色来源
-int64 source_id =6; */
+  /** 角色类型， 支持build-in，跟 user-defined */
   role_type?: string;
+  /** zh: 中文; th: 泰语 */
+  language?: string;
   /** 学校id */
   tenant_id?: string;
   pagination?: base.PaginationRequest;

@@ -464,6 +464,9 @@ class glory_apiApi {
   $async.Future<$18.CreateConfigResponse> createConfig($pb.ClientContext? ctx, $18.CreateConfigRequest request) =>
     _client.invoke<$18.CreateConfigResponse>(ctx, 'glory_api', 'CreateConfig', request, $18.CreateConfigResponse())
   ;
+  $async.Future<$18.CreateLangConfigResponse> createLangConfig($pb.ClientContext? ctx, $18.CreateLangConfigRequest request) =>
+    _client.invoke<$18.CreateLangConfigResponse>(ctx, 'glory_api', 'CreateLangConfig', request, $18.CreateLangConfigResponse())
+  ;
   $async.Future<$18.UpdateConfigResponse> updateConfig($pb.ClientContext? ctx, $18.UpdateConfigRequest request) =>
     _client.invoke<$18.UpdateConfigResponse>(ctx, 'glory_api', 'UpdateConfig', request, $18.UpdateConfigResponse())
   ;

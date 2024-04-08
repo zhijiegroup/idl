@@ -101,4 +101,16 @@ public interface GetConfigRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getQBytes();
+
+  /**
+   * <code>string language = 6;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 6;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }
