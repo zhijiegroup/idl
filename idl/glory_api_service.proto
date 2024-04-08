@@ -549,8 +549,14 @@ service glory_api {
   rpc UpdateConfig(UpdateConfigRequest) returns (UpdateConfigResponse) {
     option (api.post) = '/api/admin/update_config';
   }
+  rpc UpdateLangConfig(UpdateLangConfigRequest) returns (UpdateLangConfigResponse) {
+    option (api.post) = '/api/admin/update_lang_config';
+  }
   rpc DeleteConfig(DeleteConfigRequest) returns (DeleteConfigResponse) {
     option (api.post) = '/api/admin/delete_config';
+  }
+  rpc DeleteLangConfig(DeleteLangConfigRequest) returns (DeleteLangConfigResponse) {
+    option (api.post) = '/api/admin/delete_lang_config';
   }
   rpc GetConfig(GetConfigRequest) returns (GetConfigResponse) {
     option (api.post) = '/api/admin/get_config';
