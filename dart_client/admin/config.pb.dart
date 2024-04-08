@@ -840,6 +840,118 @@ class UpdateConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class UpdateLangConfigRequest extends $pb.GeneratedMessage {
+  factory UpdateLangConfigRequest({
+    $0.BaseRequest? baseRequest,
+    $core.Iterable<UpdateConfig>? config,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (config != null) {
+      $result.config.addAll(config);
+    }
+    return $result;
+  }
+  UpdateLangConfigRequest._() : super();
+  factory UpdateLangConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLangConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLangConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..pc<UpdateConfig>(2, _omitFieldNames ? '' : 'config', $pb.PbFieldType.PM, subBuilder: UpdateConfig.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLangConfigRequest clone() => UpdateLangConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLangConfigRequest copyWith(void Function(UpdateLangConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateLangConfigRequest)) as UpdateLangConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLangConfigRequest create() => UpdateLangConfigRequest._();
+  UpdateLangConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateLangConfigRequest> createRepeated() => $pb.PbList<UpdateLangConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLangConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLangConfigRequest>(create);
+  static UpdateLangConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<UpdateConfig> get config => $_getList(1);
+}
+
+class UpdateLangConfigResponse extends $pb.GeneratedMessage {
+  factory UpdateLangConfigResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateLangConfigResponse._() : super();
+  factory UpdateLangConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateLangConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateLangConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateLangConfigResponse clone() => UpdateLangConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateLangConfigResponse copyWith(void Function(UpdateLangConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateLangConfigResponse)) as UpdateLangConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateLangConfigResponse create() => UpdateLangConfigResponse._();
+  UpdateLangConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateLangConfigResponse> createRepeated() => $pb.PbList<UpdateLangConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateLangConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateLangConfigResponse>(create);
+  static UpdateLangConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 class DeleteConfigRequest extends $pb.GeneratedMessage {
   factory DeleteConfigRequest({
     $0.BaseRequest? baseRequest,
@@ -945,6 +1057,118 @@ class DeleteConfigResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static DeleteConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteConfigResponse>(create);
   static DeleteConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class DeleteLangConfigRequest extends $pb.GeneratedMessage {
+  factory DeleteLangConfigRequest({
+    $0.BaseRequest? baseRequest,
+    $core.Iterable<$fixnum.Int64>? configId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (configId != null) {
+      $result.configId.addAll(configId);
+    }
+    return $result;
+  }
+  DeleteLangConfigRequest._() : super();
+  factory DeleteLangConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteLangConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteLangConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'configId', $pb.PbFieldType.K6)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteLangConfigRequest clone() => DeleteLangConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteLangConfigRequest copyWith(void Function(DeleteLangConfigRequest) updates) => super.copyWith((message) => updates(message as DeleteLangConfigRequest)) as DeleteLangConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLangConfigRequest create() => DeleteLangConfigRequest._();
+  DeleteLangConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteLangConfigRequest> createRepeated() => $pb.PbList<DeleteLangConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLangConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLangConfigRequest>(create);
+  static DeleteLangConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get configId => $_getList(1);
+}
+
+class DeleteLangConfigResponse extends $pb.GeneratedMessage {
+  factory DeleteLangConfigResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  DeleteLangConfigResponse._() : super();
+  factory DeleteLangConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteLangConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteLangConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteLangConfigResponse clone() => DeleteLangConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteLangConfigResponse copyWith(void Function(DeleteLangConfigResponse) updates) => super.copyWith((message) => updates(message as DeleteLangConfigResponse)) as DeleteLangConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLangConfigResponse create() => DeleteLangConfigResponse._();
+  DeleteLangConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteLangConfigResponse> createRepeated() => $pb.PbList<DeleteLangConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLangConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLangConfigResponse>(create);
+  static DeleteLangConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);

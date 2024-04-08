@@ -74,12 +74,30 @@ export interface UpdateConfigResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface UpdateLangConfigRequest {
+  base_request?: base.BaseRequest;
+  config?: Array<UpdateConfig>;
+}
+
+export interface UpdateLangConfigResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface DeleteConfigRequest {
   base_request?: base.BaseRequest;
   config_id?: string;
 }
 
 export interface DeleteConfigResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface DeleteLangConfigRequest {
+  base_request?: base.BaseRequest;
+  config_id?: Array<string>;
+}
+
+export interface DeleteLangConfigResponse {
   base_resp?: base.BaseResponse;
 }
 
