@@ -1615,4 +1615,8 @@ service glory_api {
   rpc QueryDigitalHuman(QueryDigitalHumanRequest) returns (QueryDigitalHumanResponse) {
     option (api.post) = "/api/digital/human/query";
   }
+  // 查询合成任务进度接口
+  rpc ListDigitalHuman(ListDigitalHumanRequest) returns (ListDigitalHumanResponse) {
+    option (api.post) = "/api/digital/human/list";
+  }
 }

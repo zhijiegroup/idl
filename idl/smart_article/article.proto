@@ -326,3 +326,26 @@ message QueryDigitalHumanResponse {
     string status = 4; // 任务进度
     DigitalHumanResult result = 5; // 任务执行结果
 }
+
+message DigitalHumanTaskResult {
+    string task_id = 1;
+    string title = 2;
+    int32 type = 3;
+    int32 status = 4;
+    DigitalHumanResult raw = 5;
+}
+
+message ListDigitalHumanResponse {
+    base.BaseResponse base_resp = 1;
+    repeated DigitalHumanTaskResult list = 2;
+    base.PaginationResponse pagination = 100;
+}
+
+message ListDigitalHumanRequest {
+    base.BaseRequest base_request = 1;
+    string task_id = 2;
+    int32 type = 3;
+    string title = 4;
+    int32 status = 5;
+    base.PaginationRequest pagination = 100;
+}
