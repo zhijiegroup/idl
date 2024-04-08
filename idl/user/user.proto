@@ -296,8 +296,7 @@ message ListRoleRequest {
   int64 role_id = 2;
   string role_name = 3;  // 角色名称，模糊查找
   string role_type = 4; // 角色类型， 支持build-in，跟 user-defined
-  //  string source = 5;  // 对应的角色来源
-  //  int64 source_id =6;
+  string language = 5; // zh: 中文; th: 泰语
   int64 tenant_id = 7;  // 学校id
   base.PaginationRequest pagination = 100;
 }

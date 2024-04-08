@@ -27,6 +27,7 @@ message AddConfig {
   string config_type = 5; // 配置的类型，支持page_permission, system_permission, public_config, system_owner_location
   string description = 6; // 描述
   string business_system = 7; // 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth
+  string language = 8; // zh: 中文; th: 泰语
 }
 
 message CreateConfigRequest {
@@ -34,6 +35,14 @@ message CreateConfigRequest {
   AddConfig config = 2;
 }
 message CreateConfigResponse {
+  base.BaseResponse base_resp = 1;
+}
+
+message CreateLangConfigRequest {
+  base.BaseRequest base_request=1;
+  repeated AddConfig config = 2;
+}
+message CreateLangConfigResponse {
   base.BaseResponse base_resp = 1;
 }
 
@@ -69,6 +78,7 @@ message GetConfigRequest {
   string config_type =3;  // config的类型，支持page_permission, system_permission, public_config, system_owner_location
   string business_system = 4; // 业务系统，添加的时候默认是global(不属于任何业务系统）, 现在支持 score, live, auth
   string q = 5; // 用于区分config_type的类型，支持pageKey, appKey
+  string language = 6;
 }
 
 message GetConfigResponse {
