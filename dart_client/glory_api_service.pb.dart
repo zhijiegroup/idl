@@ -470,8 +470,14 @@ class glory_apiApi {
   $async.Future<$18.UpdateConfigResponse> updateConfig($pb.ClientContext? ctx, $18.UpdateConfigRequest request) =>
     _client.invoke<$18.UpdateConfigResponse>(ctx, 'glory_api', 'UpdateConfig', request, $18.UpdateConfigResponse())
   ;
+  $async.Future<$18.UpdateLangConfigResponse> updateLangConfig($pb.ClientContext? ctx, $18.UpdateLangConfigRequest request) =>
+    _client.invoke<$18.UpdateLangConfigResponse>(ctx, 'glory_api', 'UpdateLangConfig', request, $18.UpdateLangConfigResponse())
+  ;
   $async.Future<$18.DeleteConfigResponse> deleteConfig($pb.ClientContext? ctx, $18.DeleteConfigRequest request) =>
     _client.invoke<$18.DeleteConfigResponse>(ctx, 'glory_api', 'DeleteConfig', request, $18.DeleteConfigResponse())
+  ;
+  $async.Future<$18.DeleteLangConfigResponse> deleteLangConfig($pb.ClientContext? ctx, $18.DeleteLangConfigRequest request) =>
+    _client.invoke<$18.DeleteLangConfigResponse>(ctx, 'glory_api', 'DeleteLangConfig', request, $18.DeleteLangConfigResponse())
   ;
   $async.Future<$18.GetConfigResponse> getConfig($pb.ClientContext? ctx, $18.GetConfigRequest request) =>
     _client.invoke<$18.GetConfigResponse>(ctx, 'glory_api', 'GetConfig', request, $18.GetConfigResponse())

@@ -171,6 +171,34 @@ final $typed_data.Uint8List updateConfigResponseDescriptor = $convert.base64Deco
     'ChRVcGRhdGVDb25maWdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
     'Nwb25zZVIIYmFzZVJlc3A=');
 
+@$core.Deprecated('Use updateLangConfigRequestDescriptor instead')
+const UpdateLangConfigRequest$json = {
+  '1': 'UpdateLangConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'config', '3': 2, '4': 3, '5': 11, '6': '.glory_api.UpdateConfig', '10': 'config'},
+  ],
+};
+
+/// Descriptor for `UpdateLangConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLangConfigRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVMYW5nQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIvCgZjb25maWcYAiADKAsyFy5nbG9yeV9hcGkuVXBk'
+    'YXRlQ29uZmlnUgZjb25maWc=');
+
+@$core.Deprecated('Use updateLangConfigResponseDescriptor instead')
+const UpdateLangConfigResponse$json = {
+  '1': 'UpdateLangConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateLangConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateLangConfigResponseDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVMYW5nQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+
 @$core.Deprecated('Use deleteConfigRequestDescriptor instead')
 const DeleteConfigRequest$json = {
   '1': 'DeleteConfigRequest',
@@ -197,6 +225,33 @@ const DeleteConfigResponse$json = {
 final $typed_data.Uint8List deleteConfigResponseDescriptor = $convert.base64Decode(
     'ChREZWxldGVDb25maWdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
     'Nwb25zZVIIYmFzZVJlc3A=');
+
+@$core.Deprecated('Use deleteLangConfigRequestDescriptor instead')
+const DeleteLangConfigRequest$json = {
+  '1': 'DeleteLangConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'config_id', '3': 2, '4': 3, '5': 3, '10': 'configId'},
+  ],
+};
+
+/// Descriptor for `DeleteLangConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLangConfigRequestDescriptor = $convert.base64Decode(
+    'ChdEZWxldGVMYW5nQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgljb25maWdfaWQYAiADKANSCGNvbmZpZ0lk');
+
+@$core.Deprecated('Use deleteLangConfigResponseDescriptor instead')
+const DeleteLangConfigResponse$json = {
+  '1': 'DeleteLangConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteLangConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLangConfigResponseDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVMYW5nQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
 @$core.Deprecated('Use getConfigRequestDescriptor instead')
 const GetConfigRequest$json = {
