@@ -122,7 +122,7 @@ message UpdatePasswordResponse {
 // Get User
 message GetUserRequest {
   base.BaseRequest base_request = 1;
-  string language = 2; // th: 泰语; zh: 中文
+  string language = 2;
 }
 
 message GetUserResponse {
