@@ -1606,6 +1606,15 @@ service glory_api {
   rpc ArticleAiChat(ArticleAIChatRequest) returns (ArticleAIChatResponse) {
     option (api.post) = '/api/article_creation/ai_chat';
   }
+  rpc UpdateModelPrice(UpdateModelPriceRequest) returns (UpdateModelPriceResponse) {
+    option (api.post) = '/api/article_creation/update_model_price';
+  }
+  rpc UpdateArticleCreationTenantCourse(UpdateTenantCourseDataRequest) returns (UpdateTenantCourseDataResponse) {
+    option (api.post) = '/api/article_creation/update_tenant_course_info';
+  }
+  rpc GetArticleCreationTenant(GetArticleCreationTenantRequest) returns (GetArticleCreationTenantResponse) {
+    option (api.get) = '/api/article_creation/get_article_creation_tenant';
+  }
 
   // 数字人合成视频接口
   rpc CreateDigitalHuman(CreateDigitalHumanRequest) returns (CreateDigitalHumanResponse) {

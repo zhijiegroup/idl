@@ -349,3 +349,50 @@ message ListDigitalHumanRequest {
     int32 status = 5;
     base.PaginationRequest pagination = 100;
 }
+
+message UpdateTenantCourseDataRequest {
+    base.BaseRequest base_request = 1;
+    int32 student_count = 2;
+    int32 course_count = 3;
+    int32 day_course_count = 4;
+    int32 day_assistant_count = 5;
+    int32 day_simple_count = 6;
+    int32 day_complex_count = 7;
+    int64 tenant_id = 8;
+}
+
+message UpdateTenantCourseDataResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message UpdateModelPriceRequest {
+    base.BaseRequest base_request = 1;
+    double assistant_price = 2;
+    double simple_price = 3;
+    double complex_price = 4;
+}
+
+message UpdateModelPriceResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message GetArticleCreationTenantRequest {
+    base.BaseRequest base_request = 1;
+    int64 tenant_id = 2;
+}
+
+message GetArticleCreationTenant {
+    string name = 1;
+    int64 student_count = 2;
+    int64 course_count = 3;
+    int64 day_course_count = 4;
+    int64 simple_count = 5;
+    int64 complex_count = 6;
+    int64 assistant_count = 7;
+    int64 total = 8;
+}
+
+message GetArticleCreationTenantResponse {
+    base.BaseResponse base_resp = 1;
+    GetArticleCreationTenant tenant = 2;
+}
