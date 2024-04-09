@@ -44,6 +44,7 @@ message CourseModule {
   repeated CourseChapter course_chapters = 9; // 课程内容列表
   repeated CourseModule child_modules = 10; // 如果非空，说明这是一个能力方向
   string created_at = 11; // 创建时间
+  bool assigned = 12;
 }
 
 // 获取能力指标编码
