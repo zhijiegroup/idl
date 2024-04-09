@@ -122,6 +122,7 @@ message UpdatePasswordResponse {
 // Get User
 message GetUserRequest {
   base.BaseRequest base_request = 1;
+  string language = 2;
 }
 
 message GetUserResponse {
@@ -173,6 +174,7 @@ message PagePermission {
 message GetUserPagePermissionRequest {
   base.BaseRequest base_request = 1;
   int64 tenant_id = 2;
+  string language = 3;
 }
 
 message GetUserPagePermissionResponse {
@@ -198,6 +200,7 @@ message GetRolePagePermissionRequest {
   base.BaseRequest base_request = 1;
   int64 role_id = 2;
   int64 tenant_id = 3;
+  string language = 4;
 }
 
 message GetRolePagePermissionResponse {
@@ -264,6 +267,7 @@ message RoleType {
 message GetRoleTypeRequest {
   base.BaseRequest base_request = 1;
   string category = 2;
+  string language = 3;
 }
 
 message GetRoleTypeResponse {
