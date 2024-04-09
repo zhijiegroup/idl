@@ -1878,7 +1878,7 @@ CreateLivePlanProduct create live plan product */
     request: article.QueryDigitalHumanRequest
   ): Promise<article.QueryDigitalHumanResponse>;
 
-  /** 查询合成任务进度接口 */
+  /** 查询数字人视频合成任务进度接口 */
   ListDigitalHuman(
     request: article.ListDigitalHumanRequest
   ): Promise<article.ListDigitalHumanResponse>;

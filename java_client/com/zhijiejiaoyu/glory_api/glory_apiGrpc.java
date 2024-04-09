@@ -16450,7 +16450,7 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
-     * 查询合成任务进度接口
+     * 查询数字人视频合成任务进度接口
      * </pre>
      */
     default void listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request,
@@ -20242,7 +20242,7 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
-     * 查询合成任务进度接口
+     * 查询数字人视频合成任务进度接口
      * </pre>
      */
     public void listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request,
@@ -23604,7 +23604,7 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
-     * 查询合成任务进度接口
+     * 查询数字人视频合成任务进度接口
      * </pre>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request) {
@@ -27385,7 +27385,7 @@ public final class glory_apiGrpc {
 
     /**
      * <pre>
-     * 查询合成任务进度接口
+     * 查询数字人视频合成任务进度接口
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> listDigitalHuman(
