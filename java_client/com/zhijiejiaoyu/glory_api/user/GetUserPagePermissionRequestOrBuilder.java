@@ -27,4 +27,16 @@ public interface GetUserPagePermissionRequestOrBuilder extends
    * @return The tenantId.
    */
   long getTenantId();
+
+  /**
+   * <code>string language = 3;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 3;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

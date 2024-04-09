@@ -294,13 +294,14 @@ const GetUserRequest$json = {
   '1': 'GetUserRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
 /// Descriptor for `GetUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
     'Cg5HZXRVc2VyUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZXF1ZX'
-    'N0UgtiYXNlUmVxdWVzdA==');
+    'N0UgtiYXNlUmVxdWVzdBIaCghsYW5ndWFnZRgCIAEoCVIIbGFuZ3VhZ2U=');
 
 @$core.Deprecated('Use getUserResponseDescriptor instead')
 const GetUserResponse$json = {
@@ -432,6 +433,7 @@ const GetUserPagePermissionRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -439,7 +441,7 @@ const GetUserPagePermissionRequest$json = {
 final $typed_data.Uint8List getUserPagePermissionRequestDescriptor = $convert.base64Decode(
     'ChxHZXRVc2VyUGFnZVBlcm1pc3Npb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXRlbmFudF9pZBgCIAEoA1IIdGVuYW50'
-    'SWQ=');
+    'SWQSGgoIbGFuZ3VhZ2UYAyABKAlSCGxhbmd1YWdl');
 
 @$core.Deprecated('Use getUserPagePermissionResponseDescriptor instead')
 const GetUserPagePermissionResponse$json = {
@@ -499,6 +501,7 @@ const GetRolePagePermissionRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'role_id', '3': 2, '4': 1, '5': 3, '10': 'roleId'},
     {'1': 'tenant_id', '3': 3, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'language', '3': 4, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -506,7 +509,8 @@ const GetRolePagePermissionRequest$json = {
 final $typed_data.Uint8List getRolePagePermissionRequestDescriptor = $convert.base64Decode(
     'ChxHZXRSb2xlUGFnZVBlcm1pc3Npb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3JvbGVfaWQYAiABKANSBnJvbGVJZBIb'
-    'Cgl0ZW5hbnRfaWQYAyABKANSCHRlbmFudElk');
+    'Cgl0ZW5hbnRfaWQYAyABKANSCHRlbmFudElkEhoKCGxhbmd1YWdlGAQgASgJUghsYW5ndWFnZQ'
+    '==');
 
 @$core.Deprecated('Use getRolePagePermissionResponseDescriptor instead')
 const GetRolePagePermissionResponse$json = {
@@ -648,13 +652,15 @@ const GetRoleTypeRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
 /// Descriptor for `GetRoleTypeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getRoleTypeRequestDescriptor = $convert.base64Decode(
     'ChJHZXRSb2xlVHlwZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUm'
-    'VxdWVzdFILYmFzZVJlcXVlc3QSGgoIY2F0ZWdvcnkYAiABKAlSCGNhdGVnb3J5');
+    'VxdWVzdFILYmFzZVJlcXVlc3QSGgoIY2F0ZWdvcnkYAiABKAlSCGNhdGVnb3J5EhoKCGxhbmd1'
+    'YWdlGAMgASgJUghsYW5ndWFnZQ==');
 
 @$core.Deprecated('Use getRoleTypeResponseDescriptor instead')
 const GetRoleTypeResponse$json = {

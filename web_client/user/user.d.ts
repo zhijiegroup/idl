@@ -136,6 +136,7 @@ export interface UpdatePasswordResponse {
 /** Get User */
 export interface GetUserRequest {
   base_request?: base.BaseRequest;
+  language?: string;
 }
 
 export interface GetUserResponse {
@@ -188,6 +189,7 @@ export interface PagePermission {
 export interface GetUserPagePermissionRequest {
   base_request?: base.BaseRequest;
   tenant_id?: string;
+  language?: string;
 }
 
 export interface GetUserPagePermissionResponse {
@@ -214,6 +216,7 @@ export interface GetRolePagePermissionRequest {
   base_request?: base.BaseRequest;
   role_id?: string;
   tenant_id?: string;
+  language?: string;
 }
 
 export interface GetRolePagePermissionResponse {
@@ -281,6 +284,7 @@ export interface RoleType {
 export interface GetRoleTypeRequest {
   base_request?: base.BaseRequest;
   category?: string;
+  language?: string;
 }
 
 export interface GetRoleTypeResponse {

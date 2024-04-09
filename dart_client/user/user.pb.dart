@@ -1456,10 +1456,14 @@ class UpdatePasswordResponse extends $pb.GeneratedMessage {
 class GetUserRequest extends $pb.GeneratedMessage {
   factory GetUserRequest({
     $2.BaseRequest? baseRequest,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     return $result;
   }
@@ -1469,6 +1473,7 @@ class GetUserRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -1503,6 +1508,15 @@ class GetUserRequest extends $pb.GeneratedMessage {
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
   $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => clearField(2);
 }
 
 class GetUserResponse extends $pb.GeneratedMessage {
@@ -2115,6 +2129,7 @@ class GetUserPagePermissionRequest extends $pb.GeneratedMessage {
   factory GetUserPagePermissionRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? tenantId,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2122,6 +2137,9 @@ class GetUserPagePermissionRequest extends $pb.GeneratedMessage {
     }
     if (tenantId != null) {
       $result.tenantId = tenantId;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     return $result;
   }
@@ -2132,6 +2150,7 @@ class GetUserPagePermissionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserPagePermissionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -2175,6 +2194,15 @@ class GetUserPagePermissionRequest extends $pb.GeneratedMessage {
   $core.bool hasTenantId() => $_has(1);
   @$pb.TagNumber(2)
   void clearTenantId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => clearField(3);
 }
 
 class GetUserPagePermissionResponse extends $pb.GeneratedMessage {
@@ -2424,6 +2452,7 @@ class GetRolePagePermissionRequest extends $pb.GeneratedMessage {
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? roleId,
     $fixnum.Int64? tenantId,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2435,6 +2464,9 @@ class GetRolePagePermissionRequest extends $pb.GeneratedMessage {
     if (tenantId != null) {
       $result.tenantId = tenantId;
     }
+    if (language != null) {
+      $result.language = language;
+    }
     return $result;
   }
   GetRolePagePermissionRequest._() : super();
@@ -2445,6 +2477,7 @@ class GetRolePagePermissionRequest extends $pb.GeneratedMessage {
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'roleId')
     ..aInt64(3, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(4, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -2497,6 +2530,15 @@ class GetRolePagePermissionRequest extends $pb.GeneratedMessage {
   $core.bool hasTenantId() => $_has(2);
   @$pb.TagNumber(3)
   void clearTenantId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get language => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set language($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLanguage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguage() => clearField(4);
 }
 
 class GetRolePagePermissionResponse extends $pb.GeneratedMessage {
@@ -3227,6 +3269,7 @@ class GetRoleTypeRequest extends $pb.GeneratedMessage {
   factory GetRoleTypeRequest({
     $2.BaseRequest? baseRequest,
     $core.String? category,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3234,6 +3277,9 @@ class GetRoleTypeRequest extends $pb.GeneratedMessage {
     }
     if (category != null) {
       $result.category = category;
+    }
+    if (language != null) {
+      $result.language = language;
     }
     return $result;
   }
@@ -3244,6 +3290,7 @@ class GetRoleTypeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRoleTypeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'category')
+    ..aOS(3, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -3287,6 +3334,15 @@ class GetRoleTypeRequest extends $pb.GeneratedMessage {
   $core.bool hasCategory() => $_has(1);
   @$pb.TagNumber(2)
   void clearCategory() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => clearField(3);
 }
 
 class GetRoleTypeResponse extends $pb.GeneratedMessage {

@@ -513,6 +513,8 @@ struct GloryApi_GetUserRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
+  var language: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -756,6 +758,8 @@ struct GloryApi_GetUserPagePermissionRequest {
 
   var tenantID: Int64 = 0
 
+  var language: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -858,6 +862,8 @@ struct GloryApi_GetRolePagePermissionRequest {
   var roleID: Int64 = 0
 
   var tenantID: Int64 = 0
+
+  var language: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1092,6 +1098,8 @@ struct GloryApi_GetRoleTypeRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var category: String = String()
+
+  var language: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3334,6 +3342,7 @@ extension GloryApi_GetUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let protoMessageName: String = _protobuf_package + ".GetUserRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
+    2: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3343,6 +3352,7 @@ extension GloryApi_GetUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -3356,11 +3366,15 @@ extension GloryApi_GetUserRequest: SwiftProtobuf.Message, SwiftProtobuf._Message
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetUserRequest, rhs: GloryApi_GetUserRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3739,6 +3753,7 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "tenant_id"),
+    3: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3749,6 +3764,7 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -3765,12 +3781,16 @@ extension GloryApi_GetUserPagePermissionRequest: SwiftProtobuf.Message, SwiftPro
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 2)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetUserPagePermissionRequest, rhs: GloryApi_GetUserPagePermissionRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3932,6 +3952,7 @@ extension GloryApi_GetRolePagePermissionRequest: SwiftProtobuf.Message, SwiftPro
     1: .standard(proto: "base_request"),
     2: .standard(proto: "role_id"),
     3: .standard(proto: "tenant_id"),
+    4: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3943,6 +3964,7 @@ extension GloryApi_GetRolePagePermissionRequest: SwiftProtobuf.Message, SwiftPro
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.roleID) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -3962,6 +3984,9 @@ extension GloryApi_GetRolePagePermissionRequest: SwiftProtobuf.Message, SwiftPro
     if self.tenantID != 0 {
       try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 3)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3969,6 +3994,7 @@ extension GloryApi_GetRolePagePermissionRequest: SwiftProtobuf.Message, SwiftPro
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.roleID != rhs.roleID {return false}
     if lhs.tenantID != rhs.tenantID {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -4385,6 +4411,7 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "category"),
+    3: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4395,6 +4422,7 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.category) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -4411,12 +4439,16 @@ extension GloryApi_GetRoleTypeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.category.isEmpty {
       try visitor.visitSingularStringField(value: self.category, fieldNumber: 2)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetRoleTypeRequest, rhs: GloryApi_GetRoleTypeRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.category != rhs.category {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
