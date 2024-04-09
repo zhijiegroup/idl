@@ -885,3 +885,126 @@ final $typed_data.Uint8List listDigitalHumanRequestDescriptor = $convert.base64D
     'F0dXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2lu'
     'YXRpb24=');
 
+@$core.Deprecated('Use updateTenantCourseDataRequestDescriptor instead')
+const UpdateTenantCourseDataRequest$json = {
+  '1': 'UpdateTenantCourseDataRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'student_count', '3': 2, '4': 1, '5': 5, '10': 'studentCount'},
+    {'1': 'course_count', '3': 3, '4': 1, '5': 5, '10': 'courseCount'},
+    {'1': 'day_course_count', '3': 4, '4': 1, '5': 5, '10': 'dayCourseCount'},
+    {'1': 'day_assistant_count', '3': 5, '4': 1, '5': 5, '10': 'dayAssistantCount'},
+    {'1': 'day_simple_count', '3': 6, '4': 1, '5': 5, '10': 'daySimpleCount'},
+    {'1': 'day_complex_count', '3': 7, '4': 1, '5': 5, '10': 'dayComplexCount'},
+    {'1': 'tenant_id', '3': 8, '4': 1, '5': 3, '10': 'tenantId'},
+  ],
+};
+
+/// Descriptor for `UpdateTenantCourseDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTenantCourseDataRequestDescriptor = $convert.base64Decode(
+    'Ch1VcGRhdGVUZW5hbnRDb3Vyc2VEYXRhUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIjCg1zdHVkZW50X2NvdW50GAIgASgFUgxz'
+    'dHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GAMgASgFUgtjb3Vyc2VDb3VudBIoChBkYXlfY2'
+    '91cnNlX2NvdW50GAQgASgFUg5kYXlDb3Vyc2VDb3VudBIuChNkYXlfYXNzaXN0YW50X2NvdW50'
+    'GAUgASgFUhFkYXlBc3Npc3RhbnRDb3VudBIoChBkYXlfc2ltcGxlX2NvdW50GAYgASgFUg5kYX'
+    'lTaW1wbGVDb3VudBIqChFkYXlfY29tcGxleF9jb3VudBgHIAEoBVIPZGF5Q29tcGxleENvdW50'
+    'EhsKCXRlbmFudF9pZBgIIAEoA1IIdGVuYW50SWQ=');
+
+@$core.Deprecated('Use updateTenantCourseDataResponseDescriptor instead')
+const UpdateTenantCourseDataResponse$json = {
+  '1': 'UpdateTenantCourseDataResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateTenantCourseDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateTenantCourseDataResponseDescriptor = $convert.base64Decode(
+    'Ch5VcGRhdGVUZW5hbnRDb3Vyc2VEYXRhUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use updateModelPriceRequestDescriptor instead')
+const UpdateModelPriceRequest$json = {
+  '1': 'UpdateModelPriceRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'assistant_price', '3': 2, '4': 1, '5': 1, '10': 'assistantPrice'},
+    {'1': 'simple_price', '3': 3, '4': 1, '5': 1, '10': 'simplePrice'},
+    {'1': 'complex_price', '3': 4, '4': 1, '5': 1, '10': 'complexPrice'},
+  ],
+};
+
+/// Descriptor for `UpdateModelPriceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateModelPriceRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVNb2RlbFByaWNlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBInCg9hc3Npc3RhbnRfcHJpY2UYAiABKAFSDmFzc2lz'
+    'dGFudFByaWNlEiEKDHNpbXBsZV9wcmljZRgDIAEoAVILc2ltcGxlUHJpY2USIwoNY29tcGxleF'
+    '9wcmljZRgEIAEoAVIMY29tcGxleFByaWNl');
+
+@$core.Deprecated('Use updateModelPriceResponseDescriptor instead')
+const UpdateModelPriceResponse$json = {
+  '1': 'UpdateModelPriceResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateModelPriceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateModelPriceResponseDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVNb2RlbFByaWNlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use getArticleCreationTenantRequestDescriptor instead')
+const GetArticleCreationTenantRequest$json = {
+  '1': 'GetArticleCreationTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'tenant_id', '3': 2, '4': 1, '5': 3, '10': 'tenantId'},
+  ],
+};
+
+/// Descriptor for `GetArticleCreationTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleCreationTenantRequestDescriptor = $convert.base64Decode(
+    'Ch9HZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCz'
+    'IRLmJhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXRlbmFudF9pZBgCIAEoA1IIdGVu'
+    'YW50SWQ=');
+
+@$core.Deprecated('Use getArticleCreationTenantDescriptor instead')
+const GetArticleCreationTenant$json = {
+  '1': 'GetArticleCreationTenant',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'student_count', '3': 2, '4': 1, '5': 3, '10': 'studentCount'},
+    {'1': 'course_count', '3': 3, '4': 1, '5': 3, '10': 'courseCount'},
+    {'1': 'day_course_count', '3': 4, '4': 1, '5': 3, '10': 'dayCourseCount'},
+    {'1': 'simple_count', '3': 5, '4': 1, '5': 3, '10': 'simpleCount'},
+    {'1': 'complex_count', '3': 6, '4': 1, '5': 3, '10': 'complexCount'},
+    {'1': 'assistant_count', '3': 7, '4': 1, '5': 3, '10': 'assistantCount'},
+    {'1': 'total', '3': 8, '4': 1, '5': 3, '10': 'total'},
+  ],
+};
+
+/// Descriptor for `GetArticleCreationTenant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleCreationTenantDescriptor = $convert.base64Decode(
+    'ChhHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnQSEgoEbmFtZRgBIAEoCVIEbmFtZRIjCg1zdHVkZW'
+    '50X2NvdW50GAIgASgDUgxzdHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GAMgASgDUgtjb3Vy'
+    'c2VDb3VudBIoChBkYXlfY291cnNlX2NvdW50GAQgASgDUg5kYXlDb3Vyc2VDb3VudBIhCgxzaW'
+    '1wbGVfY291bnQYBSABKANSC3NpbXBsZUNvdW50EiMKDWNvbXBsZXhfY291bnQYBiABKANSDGNv'
+    'bXBsZXhDb3VudBInCg9hc3Npc3RhbnRfY291bnQYByABKANSDmFzc2lzdGFudENvdW50EhQKBX'
+    'RvdGFsGAggASgDUgV0b3RhbA==');
+
+@$core.Deprecated('Use getArticleCreationTenantResponseDescriptor instead')
+const GetArticleCreationTenantResponse$json = {
+  '1': 'GetArticleCreationTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'tenant', '3': 2, '4': 1, '5': 11, '6': '.glory_api.GetArticleCreationTenant', '10': 'tenant'},
+  ],
+};
+
+/// Descriptor for `GetArticleCreationTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleCreationTenantResponseDescriptor = $convert.base64Decode(
+    'CiBHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi'
+    '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASOwoGdGVuYW50GAIgASgLMiMuZ2xvcnlfYXBp'
+    'LkdldEFydGljbGVDcmVhdGlvblRlbmFudFIGdGVuYW50');
+

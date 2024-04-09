@@ -269,6 +269,41 @@ public final class Article {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ListDigitalHumanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantCourseDataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantCourseDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateTenantCourseDataResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateTenantCourseDataResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateModelPriceRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateModelPriceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_UpdateModelPriceResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_UpdateModelPriceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetArticleCreationTenantRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetArticleCreationTenantRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetArticleCreationTenant_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetArticleCreationTenant_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetArticleCreationTenantResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetArticleCreationTenantResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -445,8 +480,32 @@ public final class Article {
       "\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007task_id\030\002 \001" +
       "(\t\022\014\n\004type\030\003 \001(\005\022\r\n\005title\030\004 \001(\t\022\016\n\006statu" +
       "s\030\005 \001(\005\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
-      "ationRequestB*\n&com.zhijiejiaoyu.glory_a" +
-      "pi.short_videoP\001b\006proto3"
+      "ationRequest\"\364\001\n\035UpdateTenantCourseDataR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\025\n\rstudent_count\030\002 \001(\005\022\024\n\014course" +
+      "_count\030\003 \001(\005\022\030\n\020day_course_count\030\004 \001(\005\022\033" +
+      "\n\023day_assistant_count\030\005 \001(\005\022\030\n\020day_simpl" +
+      "e_count\030\006 \001(\005\022\031\n\021day_complex_count\030\007 \001(\005" +
+      "\022\021\n\ttenant_id\030\010 \001(\003\"G\n\036UpdateTenantCours" +
+      "eDataResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"\210\001\n\027UpdateModelPriceRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\027\n\017assistant_price\030\002 \001(\001\022\024\n\014simple_pri" +
+      "ce\030\003 \001(\001\022\025\n\rcomplex_price\030\004 \001(\001\"A\n\030Updat" +
+      "eModelPriceResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"]\n\037GetArticleCreation" +
+      "TenantRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\022\021\n\ttenant_id\030\002 \001(\003\"\304\001\n\030Ge" +
+      "tArticleCreationTenant\022\014\n\004name\030\001 \001(\t\022\025\n\r" +
+      "student_count\030\002 \001(\003\022\024\n\014course_count\030\003 \001(" +
+      "\003\022\030\n\020day_course_count\030\004 \001(\003\022\024\n\014simple_co" +
+      "unt\030\005 \001(\003\022\025\n\rcomplex_count\030\006 \001(\003\022\027\n\017assi" +
+      "stant_count\030\007 \001(\003\022\r\n\005total\030\010 \001(\003\"~\n GetA" +
+      "rticleCreationTenantResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\0223\n\006tenant\030\002 " +
+      "\001(\0132#.glory_api.GetArticleCreationTenant" +
+      "B*\n&com.zhijiejiaoyu.glory_api.short_vid" +
+      "eoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -760,6 +819,48 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalHumanRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TaskId", "Type", "Title", "Status", "Pagination", });
+    internal_static_glory_api_UpdateTenantCourseDataRequest_descriptor =
+      getDescriptor().getMessageTypes().get(51);
+    internal_static_glory_api_UpdateTenantCourseDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantCourseDataRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "StudentCount", "CourseCount", "DayCourseCount", "DayAssistantCount", "DaySimpleCount", "DayComplexCount", "TenantId", });
+    internal_static_glory_api_UpdateTenantCourseDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(52);
+    internal_static_glory_api_UpdateTenantCourseDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateTenantCourseDataResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_UpdateModelPriceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(53);
+    internal_static_glory_api_UpdateModelPriceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateModelPriceRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "AssistantPrice", "SimplePrice", "ComplexPrice", });
+    internal_static_glory_api_UpdateModelPriceResponse_descriptor =
+      getDescriptor().getMessageTypes().get(54);
+    internal_static_glory_api_UpdateModelPriceResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_UpdateModelPriceResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetArticleCreationTenantRequest_descriptor =
+      getDescriptor().getMessageTypes().get(55);
+    internal_static_glory_api_GetArticleCreationTenantRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetArticleCreationTenantRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TenantId", });
+    internal_static_glory_api_GetArticleCreationTenant_descriptor =
+      getDescriptor().getMessageTypes().get(56);
+    internal_static_glory_api_GetArticleCreationTenant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetArticleCreationTenant_descriptor,
+        new java.lang.String[] { "Name", "StudentCount", "CourseCount", "DayCourseCount", "SimpleCount", "ComplexCount", "AssistantCount", "Total", });
+    internal_static_glory_api_GetArticleCreationTenantResponse_descriptor =
+      getDescriptor().getMessageTypes().get(57);
+    internal_static_glory_api_GetArticleCreationTenantResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetArticleCreationTenantResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Tenant", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

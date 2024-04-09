@@ -496,6 +496,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ServerContext ctx, $57.StudentArticleCreationEvaluationDetailRequest request);
   $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ServerContext ctx, $57.CorrectSentenceRequest request);
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ServerContext ctx, $57.ArticleAIChatRequest request);
+  $async.Future<$57.UpdateModelPriceResponse> updateModelPrice($pb.ServerContext ctx, $57.UpdateModelPriceRequest request);
+  $async.Future<$57.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse($pb.ServerContext ctx, $57.UpdateTenantCourseDataRequest request);
+  $async.Future<$57.GetArticleCreationTenantResponse> getArticleCreationTenant($pb.ServerContext ctx, $57.GetArticleCreationTenantRequest request);
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ServerContext ctx, $57.CreateDigitalHumanRequest request);
   $async.Future<$57.QueryDigitalHumanResponse> queryDigitalHuman($pb.ServerContext ctx, $57.QueryDigitalHumanRequest request);
   $async.Future<$57.ListDigitalHumanResponse> listDigitalHuman($pb.ServerContext ctx, $57.ListDigitalHumanRequest request);
@@ -920,6 +923,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return $57.StudentArticleCreationEvaluationDetailRequest();
       case 'CorrectSentence': return $57.CorrectSentenceRequest();
       case 'ArticleAiChat': return $57.ArticleAIChatRequest();
+      case 'UpdateModelPrice': return $57.UpdateModelPriceRequest();
+      case 'UpdateArticleCreationTenantCourse': return $57.UpdateTenantCourseDataRequest();
+      case 'GetArticleCreationTenant': return $57.GetArticleCreationTenantRequest();
       case 'CreateDigitalHuman': return $57.CreateDigitalHumanRequest();
       case 'QueryDigitalHuman': return $57.QueryDigitalHumanRequest();
       case 'ListDigitalHuman': return $57.ListDigitalHumanRequest();
@@ -1347,6 +1353,9 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return this.studentArticleCreationEvaluationDetail(ctx, request as $57.StudentArticleCreationEvaluationDetailRequest);
       case 'CorrectSentence': return this.correctSentence(ctx, request as $57.CorrectSentenceRequest);
       case 'ArticleAiChat': return this.articleAiChat(ctx, request as $57.ArticleAIChatRequest);
+      case 'UpdateModelPrice': return this.updateModelPrice(ctx, request as $57.UpdateModelPriceRequest);
+      case 'UpdateArticleCreationTenantCourse': return this.updateArticleCreationTenantCourse(ctx, request as $57.UpdateTenantCourseDataRequest);
+      case 'GetArticleCreationTenant': return this.getArticleCreationTenant(ctx, request as $57.GetArticleCreationTenantRequest);
       case 'CreateDigitalHuman': return this.createDigitalHuman(ctx, request as $57.CreateDigitalHumanRequest);
       case 'QueryDigitalHuman': return this.queryDigitalHuman(ctx, request as $57.QueryDigitalHumanRequest);
       case 'ListDigitalHuman': return this.listDigitalHuman(ctx, request as $57.ListDigitalHumanRequest);

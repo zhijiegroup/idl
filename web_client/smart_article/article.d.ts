@@ -365,3 +365,50 @@ export interface ListDigitalHumanRequest {
   status?: number;
   pagination?: base.PaginationRequest;
 }
+
+export interface UpdateTenantCourseDataRequest {
+  base_request?: base.BaseRequest;
+  student_count?: number;
+  course_count?: number;
+  day_course_count?: number;
+  day_assistant_count?: number;
+  day_simple_count?: number;
+  day_complex_count?: number;
+  tenant_id?: string;
+}
+
+export interface UpdateTenantCourseDataResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface UpdateModelPriceRequest {
+  base_request?: base.BaseRequest;
+  assistant_price?: number;
+  simple_price?: number;
+  complex_price?: number;
+}
+
+export interface UpdateModelPriceResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface GetArticleCreationTenantRequest {
+  base_request?: base.BaseRequest;
+  tenant_id?: string;
+}
+
+export interface GetArticleCreationTenant {
+  name?: string;
+  student_count?: string;
+  course_count?: string;
+  day_course_count?: string;
+  simple_count?: string;
+  complex_count?: string;
+  assistant_count?: string;
+  total?: string;
+}
+
+export interface GetArticleCreationTenantResponse {
+  base_resp?: base.BaseResponse;
+  tenant?: GetArticleCreationTenant;
+}

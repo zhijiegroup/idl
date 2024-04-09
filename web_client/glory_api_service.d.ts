@@ -1868,6 +1868,18 @@ CreateLivePlanProduct create live plan product */
     request: article.ArticleAIChatRequest
   ): Promise<article.ArticleAIChatResponse>;
 
+  UpdateModelPrice(
+    request: article.UpdateModelPriceRequest
+  ): Promise<article.UpdateModelPriceResponse>;
+
+  UpdateArticleCreationTenantCourse(
+    request: article.UpdateTenantCourseDataRequest
+  ): Promise<article.UpdateTenantCourseDataResponse>;
+
+  GetArticleCreationTenant(
+    request: article.GetArticleCreationTenantRequest
+  ): Promise<article.GetArticleCreationTenantResponse>;
+
   /** 数字人合成视频接口 */
   CreateDigitalHuman(
     request: article.CreateDigitalHumanRequest

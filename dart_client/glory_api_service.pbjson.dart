@@ -494,6 +494,9 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'StudentArticleCreationEvaluationDetail', '2': '.glory_api.StudentArticleCreationEvaluationDetailRequest', '3': '.glory_api.StudentArticleCreationEvaluationDetailResponse', '4': {}},
     {'1': 'CorrectSentence', '2': '.glory_api.CorrectSentenceRequest', '3': '.glory_api.CorrectSentenceResponse', '4': {}},
     {'1': 'ArticleAiChat', '2': '.glory_api.ArticleAIChatRequest', '3': '.glory_api.ArticleAIChatResponse', '4': {}},
+    {'1': 'UpdateModelPrice', '2': '.glory_api.UpdateModelPriceRequest', '3': '.glory_api.UpdateModelPriceResponse', '4': {}},
+    {'1': 'UpdateArticleCreationTenantCourse', '2': '.glory_api.UpdateTenantCourseDataRequest', '3': '.glory_api.UpdateTenantCourseDataResponse', '4': {}},
+    {'1': 'GetArticleCreationTenant', '2': '.glory_api.GetArticleCreationTenantRequest', '3': '.glory_api.GetArticleCreationTenantResponse', '4': {}},
     {'1': 'CreateDigitalHuman', '2': '.glory_api.CreateDigitalHumanRequest', '3': '.glory_api.CreateDigitalHumanResponse', '4': {}},
     {'1': 'QueryDigitalHuman', '2': '.glory_api.QueryDigitalHumanRequest', '3': '.glory_api.QueryDigitalHumanResponse', '4': {}},
     {'1': 'ListDigitalHuman', '2': '.glory_api.ListDigitalHumanRequest', '3': '.glory_api.ListDigitalHumanResponse', '4': {}},
@@ -1559,6 +1562,13 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ArticleAIChatRequest': $57.ArticleAIChatRequest$json,
   '.glory_api.ArticleAIChatResponse': $57.ArticleAIChatResponse$json,
   '.glory_api.ChatMessage': $57.ChatMessage$json,
+  '.glory_api.UpdateModelPriceRequest': $57.UpdateModelPriceRequest$json,
+  '.glory_api.UpdateModelPriceResponse': $57.UpdateModelPriceResponse$json,
+  '.glory_api.UpdateTenantCourseDataRequest': $57.UpdateTenantCourseDataRequest$json,
+  '.glory_api.UpdateTenantCourseDataResponse': $57.UpdateTenantCourseDataResponse$json,
+  '.glory_api.GetArticleCreationTenantRequest': $57.GetArticleCreationTenantRequest$json,
+  '.glory_api.GetArticleCreationTenantResponse': $57.GetArticleCreationTenantResponse$json,
+  '.glory_api.GetArticleCreationTenant': $57.GetArticleCreationTenant$json,
   '.glory_api.CreateDigitalHumanRequest': $57.CreateDigitalHumanRequest$json,
   '.glory_api.CreateDigitalHumanResponse': $57.CreateDigitalHumanResponse$json,
   '.glory_api.QueryDigitalHumanRequest': $57.QueryDigitalHumanRequest$json,
@@ -2536,12 +2546,21 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'bnRlbmNlUmVxdWVzdBoiLmdsb3J5X2FwaS5Db3JyZWN0U2VudGVuY2VSZXNwb25zZSIq0sEYJi'
     '9hcGkvYXJ0aWNsZV9jcmVhdGlvbi9jb3JyZWN0X3NlbnRlbmNlEnUKDUFydGljbGVBaUNoYXQS'
     'Hy5nbG9yeV9hcGkuQXJ0aWNsZUFJQ2hhdFJlcXVlc3QaIC5nbG9yeV9hcGkuQXJ0aWNsZUFJQ2'
-    'hhdFJlc3BvbnNlIiHSwRgdL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2FpX2NoYXQSgAEKEkNyZWF0'
-    'ZURpZ2l0YWxIdW1hbhIkLmdsb3J5X2FwaS5DcmVhdGVEaWdpdGFsSHVtYW5SZXF1ZXN0GiUuZ2'
-    'xvcnlfYXBpLkNyZWF0ZURpZ2l0YWxIdW1hblJlc3BvbnNlIh3SwRgZL2FwaS9kaWdpdGFsL2h1'
-    'bWFuL2NyZWF0ZRJ8ChFRdWVyeURpZ2l0YWxIdW1hbhIjLmdsb3J5X2FwaS5RdWVyeURpZ2l0YW'
-    'xIdW1hblJlcXVlc3QaJC5nbG9yeV9hcGkuUXVlcnlEaWdpdGFsSHVtYW5SZXNwb25zZSIc0sEY'
-    'GC9hcGkvZGlnaXRhbC9odW1hbi9xdWVyeRJ4ChBMaXN0RGlnaXRhbEh1bWFuEiIuZ2xvcnlfYX'
-    'BpLkxpc3REaWdpdGFsSHVtYW5SZXF1ZXN0GiMuZ2xvcnlfYXBpLkxpc3REaWdpdGFsSHVtYW5S'
-    'ZXNwb25zZSIb0sEYFy9hcGkvZGlnaXRhbC9odW1hbi9saXN0');
+    'hhdFJlc3BvbnNlIiHSwRgdL2FwaS9hcnRpY2xlX2NyZWF0aW9uL2FpX2NoYXQSiQEKEFVwZGF0'
+    'ZU1vZGVsUHJpY2USIi5nbG9yeV9hcGkuVXBkYXRlTW9kZWxQcmljZVJlcXVlc3QaIy5nbG9yeV'
+    '9hcGkuVXBkYXRlTW9kZWxQcmljZVJlc3BvbnNlIizSwRgoL2FwaS9hcnRpY2xlX2NyZWF0aW9u'
+    'L3VwZGF0ZV9tb2RlbF9wcmljZRKtAQohVXBkYXRlQXJ0aWNsZUNyZWF0aW9uVGVuYW50Q291cn'
+    'NlEiguZ2xvcnlfYXBpLlVwZGF0ZVRlbmFudENvdXJzZURhdGFSZXF1ZXN0GikuZ2xvcnlfYXBp'
+    'LlVwZGF0ZVRlbmFudENvdXJzZURhdGFSZXNwb25zZSIz0sEYLy9hcGkvYXJ0aWNsZV9jcmVhdG'
+    'lvbi91cGRhdGVfdGVuYW50X2NvdXJzZV9pbmZvEqoBChhHZXRBcnRpY2xlQ3JlYXRpb25UZW5h'
+    'bnQSKi5nbG9yeV9hcGkuR2V0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVxdWVzdBorLmdsb3J5X2'
+    'FwaS5HZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnRSZXNwb25zZSI1ysEYMS9hcGkvYXJ0aWNsZV9j'
+    'cmVhdGlvbi9nZXRfYXJ0aWNsZV9jcmVhdGlvbl90ZW5hbnQSgAEKEkNyZWF0ZURpZ2l0YWxIdW'
+    '1hbhIkLmdsb3J5X2FwaS5DcmVhdGVEaWdpdGFsSHVtYW5SZXF1ZXN0GiUuZ2xvcnlfYXBpLkNy'
+    'ZWF0ZURpZ2l0YWxIdW1hblJlc3BvbnNlIh3SwRgZL2FwaS9kaWdpdGFsL2h1bWFuL2NyZWF0ZR'
+    'J8ChFRdWVyeURpZ2l0YWxIdW1hbhIjLmdsb3J5X2FwaS5RdWVyeURpZ2l0YWxIdW1hblJlcXVl'
+    'c3QaJC5nbG9yeV9hcGkuUXVlcnlEaWdpdGFsSHVtYW5SZXNwb25zZSIc0sEYGC9hcGkvZGlnaX'
+    'RhbC9odW1hbi9xdWVyeRJ4ChBMaXN0RGlnaXRhbEh1bWFuEiIuZ2xvcnlfYXBpLkxpc3REaWdp'
+    'dGFsSHVtYW5SZXF1ZXN0GiMuZ2xvcnlfYXBpLkxpc3REaWdpdGFsSHVtYW5SZXNwb25zZSIb0s'
+    'EYFy9hcGkvZGlnaXRhbC9odW1hbi9saXN0');
 

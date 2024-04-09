@@ -4447,6 +4447,636 @@ class ListDigitalHumanRequest extends $pb.GeneratedMessage {
   $0.PaginationRequest ensurePagination() => $_ensure(5);
 }
 
+class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
+  factory UpdateTenantCourseDataRequest({
+    $0.BaseRequest? baseRequest,
+    $core.int? studentCount,
+    $core.int? courseCount,
+    $core.int? dayCourseCount,
+    $core.int? dayAssistantCount,
+    $core.int? daySimpleCount,
+    $core.int? dayComplexCount,
+    $fixnum.Int64? tenantId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (studentCount != null) {
+      $result.studentCount = studentCount;
+    }
+    if (courseCount != null) {
+      $result.courseCount = courseCount;
+    }
+    if (dayCourseCount != null) {
+      $result.dayCourseCount = dayCourseCount;
+    }
+    if (dayAssistantCount != null) {
+      $result.dayAssistantCount = dayAssistantCount;
+    }
+    if (daySimpleCount != null) {
+      $result.daySimpleCount = daySimpleCount;
+    }
+    if (dayComplexCount != null) {
+      $result.dayComplexCount = dayComplexCount;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    return $result;
+  }
+  UpdateTenantCourseDataRequest._() : super();
+  factory UpdateTenantCourseDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTenantCourseDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTenantCourseDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'studentCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'courseCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'dayCourseCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'dayAssistantCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'daySimpleCount', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'dayComplexCount', $pb.PbFieldType.O3)
+    ..aInt64(8, _omitFieldNames ? '' : 'tenantId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTenantCourseDataRequest clone() => UpdateTenantCourseDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTenantCourseDataRequest copyWith(void Function(UpdateTenantCourseDataRequest) updates) => super.copyWith((message) => updates(message as UpdateTenantCourseDataRequest)) as UpdateTenantCourseDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantCourseDataRequest create() => UpdateTenantCourseDataRequest._();
+  UpdateTenantCourseDataRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateTenantCourseDataRequest> createRepeated() => $pb.PbList<UpdateTenantCourseDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantCourseDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTenantCourseDataRequest>(create);
+  static UpdateTenantCourseDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get studentCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set studentCount($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStudentCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStudentCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get courseCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set courseCount($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get dayCourseCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set dayCourseCount($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDayCourseCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDayCourseCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get dayAssistantCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set dayAssistantCount($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDayAssistantCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDayAssistantCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get daySimpleCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set daySimpleCount($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDaySimpleCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDaySimpleCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get dayComplexCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set dayComplexCount($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDayComplexCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDayComplexCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get tenantId => $_getI64(7);
+  @$pb.TagNumber(8)
+  set tenantId($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTenantId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTenantId() => clearField(8);
+}
+
+class UpdateTenantCourseDataResponse extends $pb.GeneratedMessage {
+  factory UpdateTenantCourseDataResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateTenantCourseDataResponse._() : super();
+  factory UpdateTenantCourseDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateTenantCourseDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateTenantCourseDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateTenantCourseDataResponse clone() => UpdateTenantCourseDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateTenantCourseDataResponse copyWith(void Function(UpdateTenantCourseDataResponse) updates) => super.copyWith((message) => updates(message as UpdateTenantCourseDataResponse)) as UpdateTenantCourseDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantCourseDataResponse create() => UpdateTenantCourseDataResponse._();
+  UpdateTenantCourseDataResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateTenantCourseDataResponse> createRepeated() => $pb.PbList<UpdateTenantCourseDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTenantCourseDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateTenantCourseDataResponse>(create);
+  static UpdateTenantCourseDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class UpdateModelPriceRequest extends $pb.GeneratedMessage {
+  factory UpdateModelPriceRequest({
+    $0.BaseRequest? baseRequest,
+    $core.double? assistantPrice,
+    $core.double? simplePrice,
+    $core.double? complexPrice,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (assistantPrice != null) {
+      $result.assistantPrice = assistantPrice;
+    }
+    if (simplePrice != null) {
+      $result.simplePrice = simplePrice;
+    }
+    if (complexPrice != null) {
+      $result.complexPrice = complexPrice;
+    }
+    return $result;
+  }
+  UpdateModelPriceRequest._() : super();
+  factory UpdateModelPriceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateModelPriceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateModelPriceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'assistantPrice', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'simplePrice', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'complexPrice', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateModelPriceRequest clone() => UpdateModelPriceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateModelPriceRequest copyWith(void Function(UpdateModelPriceRequest) updates) => super.copyWith((message) => updates(message as UpdateModelPriceRequest)) as UpdateModelPriceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateModelPriceRequest create() => UpdateModelPriceRequest._();
+  UpdateModelPriceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateModelPriceRequest> createRepeated() => $pb.PbList<UpdateModelPriceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateModelPriceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModelPriceRequest>(create);
+  static UpdateModelPriceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.double get assistantPrice => $_getN(1);
+  @$pb.TagNumber(2)
+  set assistantPrice($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAssistantPrice() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAssistantPrice() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get simplePrice => $_getN(2);
+  @$pb.TagNumber(3)
+  set simplePrice($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSimplePrice() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSimplePrice() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get complexPrice => $_getN(3);
+  @$pb.TagNumber(4)
+  set complexPrice($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasComplexPrice() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComplexPrice() => clearField(4);
+}
+
+class UpdateModelPriceResponse extends $pb.GeneratedMessage {
+  factory UpdateModelPriceResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateModelPriceResponse._() : super();
+  factory UpdateModelPriceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateModelPriceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateModelPriceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateModelPriceResponse clone() => UpdateModelPriceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateModelPriceResponse copyWith(void Function(UpdateModelPriceResponse) updates) => super.copyWith((message) => updates(message as UpdateModelPriceResponse)) as UpdateModelPriceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateModelPriceResponse create() => UpdateModelPriceResponse._();
+  UpdateModelPriceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateModelPriceResponse> createRepeated() => $pb.PbList<UpdateModelPriceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateModelPriceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateModelPriceResponse>(create);
+  static UpdateModelPriceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class GetArticleCreationTenantRequest extends $pb.GeneratedMessage {
+  factory GetArticleCreationTenantRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? tenantId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
+    return $result;
+  }
+  GetArticleCreationTenantRequest._() : super();
+  factory GetArticleCreationTenantRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleCreationTenantRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'tenantId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantRequest clone() => GetArticleCreationTenantRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantRequest copyWith(void Function(GetArticleCreationTenantRequest) updates) => super.copyWith((message) => updates(message as GetArticleCreationTenantRequest)) as GetArticleCreationTenantRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantRequest create() => GetArticleCreationTenantRequest._();
+  GetArticleCreationTenantRequest createEmptyInstance() => create();
+  static $pb.PbList<GetArticleCreationTenantRequest> createRepeated() => $pb.PbList<GetArticleCreationTenantRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleCreationTenantRequest>(create);
+  static GetArticleCreationTenantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get tenantId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set tenantId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantId() => clearField(2);
+}
+
+class GetArticleCreationTenant extends $pb.GeneratedMessage {
+  factory GetArticleCreationTenant({
+    $core.String? name,
+    $fixnum.Int64? studentCount,
+    $fixnum.Int64? courseCount,
+    $fixnum.Int64? dayCourseCount,
+    $fixnum.Int64? simpleCount,
+    $fixnum.Int64? complexCount,
+    $fixnum.Int64? assistantCount,
+    $fixnum.Int64? total,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (studentCount != null) {
+      $result.studentCount = studentCount;
+    }
+    if (courseCount != null) {
+      $result.courseCount = courseCount;
+    }
+    if (dayCourseCount != null) {
+      $result.dayCourseCount = dayCourseCount;
+    }
+    if (simpleCount != null) {
+      $result.simpleCount = simpleCount;
+    }
+    if (complexCount != null) {
+      $result.complexCount = complexCount;
+    }
+    if (assistantCount != null) {
+      $result.assistantCount = assistantCount;
+    }
+    if (total != null) {
+      $result.total = total;
+    }
+    return $result;
+  }
+  GetArticleCreationTenant._() : super();
+  factory GetArticleCreationTenant.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleCreationTenant.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenant', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aInt64(2, _omitFieldNames ? '' : 'studentCount')
+    ..aInt64(3, _omitFieldNames ? '' : 'courseCount')
+    ..aInt64(4, _omitFieldNames ? '' : 'dayCourseCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'simpleCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'complexCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'assistantCount')
+    ..aInt64(8, _omitFieldNames ? '' : 'total')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenant clone() => GetArticleCreationTenant()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenant copyWith(void Function(GetArticleCreationTenant) updates) => super.copyWith((message) => updates(message as GetArticleCreationTenant)) as GetArticleCreationTenant;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenant create() => GetArticleCreationTenant._();
+  GetArticleCreationTenant createEmptyInstance() => create();
+  static $pb.PbList<GetArticleCreationTenant> createRepeated() => $pb.PbList<GetArticleCreationTenant>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenant getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleCreationTenant>(create);
+  static GetArticleCreationTenant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get studentCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set studentCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStudentCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStudentCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get courseCount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set courseCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get dayCourseCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set dayCourseCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDayCourseCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDayCourseCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get simpleCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set simpleCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSimpleCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSimpleCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get complexCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set complexCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasComplexCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearComplexCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get assistantCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set assistantCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAssistantCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAssistantCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get total => $_getI64(7);
+  @$pb.TagNumber(8)
+  set total($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTotal() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTotal() => clearField(8);
+}
+
+class GetArticleCreationTenantResponse extends $pb.GeneratedMessage {
+  factory GetArticleCreationTenantResponse({
+    $0.BaseResponse? baseResp,
+    GetArticleCreationTenant? tenant,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (tenant != null) {
+      $result.tenant = tenant;
+    }
+    return $result;
+  }
+  GetArticleCreationTenantResponse._() : super();
+  factory GetArticleCreationTenantResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleCreationTenantResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenantResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<GetArticleCreationTenant>(2, _omitFieldNames ? '' : 'tenant', subBuilder: GetArticleCreationTenant.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantResponse clone() => GetArticleCreationTenantResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantResponse copyWith(void Function(GetArticleCreationTenantResponse) updates) => super.copyWith((message) => updates(message as GetArticleCreationTenantResponse)) as GetArticleCreationTenantResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantResponse create() => GetArticleCreationTenantResponse._();
+  GetArticleCreationTenantResponse createEmptyInstance() => create();
+  static $pb.PbList<GetArticleCreationTenantResponse> createRepeated() => $pb.PbList<GetArticleCreationTenantResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleCreationTenantResponse>(create);
+  static GetArticleCreationTenantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  GetArticleCreationTenant get tenant => $_getN(1);
+  @$pb.TagNumber(2)
+  set tenant(GetArticleCreationTenant v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenant() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenant() => clearField(2);
+  @$pb.TagNumber(2)
+  GetArticleCreationTenant ensureTenant() => $_ensure(1);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

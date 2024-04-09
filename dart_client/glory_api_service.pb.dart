@@ -1331,6 +1331,15 @@ class glory_apiApi {
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ClientContext? ctx, $57.ArticleAIChatRequest request) =>
     _client.invoke<$57.ArticleAIChatResponse>(ctx, 'glory_api', 'ArticleAiChat', request, $57.ArticleAIChatResponse())
   ;
+  $async.Future<$57.UpdateModelPriceResponse> updateModelPrice($pb.ClientContext? ctx, $57.UpdateModelPriceRequest request) =>
+    _client.invoke<$57.UpdateModelPriceResponse>(ctx, 'glory_api', 'UpdateModelPrice', request, $57.UpdateModelPriceResponse())
+  ;
+  $async.Future<$57.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse($pb.ClientContext? ctx, $57.UpdateTenantCourseDataRequest request) =>
+    _client.invoke<$57.UpdateTenantCourseDataResponse>(ctx, 'glory_api', 'UpdateArticleCreationTenantCourse', request, $57.UpdateTenantCourseDataResponse())
+  ;
+  $async.Future<$57.GetArticleCreationTenantResponse> getArticleCreationTenant($pb.ClientContext? ctx, $57.GetArticleCreationTenantRequest request) =>
+    _client.invoke<$57.GetArticleCreationTenantResponse>(ctx, 'glory_api', 'GetArticleCreationTenant', request, $57.GetArticleCreationTenantResponse())
+  ;
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ClientContext? ctx, $57.CreateDigitalHumanRequest request) =>
     _client.invoke<$57.CreateDigitalHumanResponse>(ctx, 'glory_api', 'CreateDigitalHuman', request, $57.CreateDigitalHumanResponse())
   ;

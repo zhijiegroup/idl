@@ -12973,6 +12973,99 @@ public final class glory_apiGrpc {
     return getArticleAiChatMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> getUpdateModelPriceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateModelPrice",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> getUpdateModelPriceMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> getUpdateModelPriceMethod;
+    if ((getUpdateModelPriceMethod = glory_apiGrpc.getUpdateModelPriceMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateModelPriceMethod = glory_apiGrpc.getUpdateModelPriceMethod) == null) {
+          glory_apiGrpc.getUpdateModelPriceMethod = getUpdateModelPriceMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateModelPrice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateModelPrice"))
+              .build();
+        }
+      }
+    }
+    return getUpdateModelPriceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> getUpdateArticleCreationTenantCourseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateArticleCreationTenantCourse",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> getUpdateArticleCreationTenantCourseMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> getUpdateArticleCreationTenantCourseMethod;
+    if ((getUpdateArticleCreationTenantCourseMethod = glory_apiGrpc.getUpdateArticleCreationTenantCourseMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUpdateArticleCreationTenantCourseMethod = glory_apiGrpc.getUpdateArticleCreationTenantCourseMethod) == null) {
+          glory_apiGrpc.getUpdateArticleCreationTenantCourseMethod = getUpdateArticleCreationTenantCourseMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest, com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateArticleCreationTenantCourse"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UpdateArticleCreationTenantCourse"))
+              .build();
+        }
+      }
+    }
+    return getUpdateArticleCreationTenantCourseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> getGetArticleCreationTenantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetArticleCreationTenant",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> getGetArticleCreationTenantMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest, com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> getGetArticleCreationTenantMethod;
+    if ((getGetArticleCreationTenantMethod = glory_apiGrpc.getGetArticleCreationTenantMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetArticleCreationTenantMethod = glory_apiGrpc.getGetArticleCreationTenantMethod) == null) {
+          glory_apiGrpc.getGetArticleCreationTenantMethod = getGetArticleCreationTenantMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest, com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetArticleCreationTenant"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetArticleCreationTenant"))
+              .build();
+        }
+      }
+    }
+    return getGetArticleCreationTenantMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest,
       com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> getCreateDigitalHumanMethod;
 
@@ -16426,6 +16519,27 @@ public final class glory_apiGrpc {
     default void articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getArticleAiChatMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateModelPrice(com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateModelPriceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateArticleCreationTenantCourse(com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateArticleCreationTenantCourseMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetArticleCreationTenantMethod(), responseObserver);
     }
 
     /**
@@ -20219,6 +20333,30 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void updateModelPrice(com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateModelPriceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateArticleCreationTenantCourse(com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateArticleCreationTenantCourseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetArticleCreationTenantMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -23580,6 +23718,27 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getArticleAiChatMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse updateModelPrice(com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateModelPriceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse updateArticleCreationTenantCourse(com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateArticleCreationTenantCourseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse getArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetArticleCreationTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -27362,6 +27521,30 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> updateModelPrice(
+        com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateModelPriceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse(
+        com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateArticleCreationTenantCourseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse> getArticleCreationTenant(
+        com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetArticleCreationTenantMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -27813,9 +27996,12 @@ public final class glory_apiGrpc {
   private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 415;
   private static final int METHODID_CORRECT_SENTENCE = 416;
   private static final int METHODID_ARTICLE_AI_CHAT = 417;
-  private static final int METHODID_CREATE_DIGITAL_HUMAN = 418;
-  private static final int METHODID_QUERY_DIGITAL_HUMAN = 419;
-  private static final int METHODID_LIST_DIGITAL_HUMAN = 420;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 418;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 419;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 420;
+  private static final int METHODID_CREATE_DIGITAL_HUMAN = 421;
+  private static final int METHODID_QUERY_DIGITAL_HUMAN = 422;
+  private static final int METHODID_LIST_DIGITAL_HUMAN = 423;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -29505,6 +29691,18 @@ public final class glory_apiGrpc {
         case METHODID_ARTICLE_AI_CHAT:
           serviceImpl.articleAiChat((com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_MODEL_PRICE:
+          serviceImpl.updateModelPrice((com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE:
+          serviceImpl.updateArticleCreationTenantCourse((com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse>) responseObserver);
+          break;
+        case METHODID_GET_ARTICLE_CREATION_TENANT:
+          serviceImpl.getArticleCreationTenant((com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse>) responseObserver);
           break;
         case METHODID_CREATE_DIGITAL_HUMAN:
           serviceImpl.createDigitalHuman((com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest) request,
@@ -32463,6 +32661,27 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>(
                 service, METHODID_ARTICLE_AI_CHAT)))
         .addMethod(
+          getUpdateModelPriceMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest,
+              com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse>(
+                service, METHODID_UPDATE_MODEL_PRICE)))
+        .addMethod(
+          getUpdateArticleCreationTenantCourseMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataRequest,
+              com.zhijiejiaoyu.glory_api.short_video.UpdateTenantCourseDataResponse>(
+                service, METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE)))
+        .addMethod(
+          getGetArticleCreationTenantMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantResponse>(
+                service, METHODID_GET_ARTICLE_CREATION_TENANT)))
+        .addMethod(
           getCreateDigitalHumanMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -32949,6 +33168,9 @@ public final class glory_apiGrpc {
               .addMethod(getStudentArticleCreationEvaluationDetailMethod())
               .addMethod(getCorrectSentenceMethod())
               .addMethod(getArticleAiChatMethod())
+              .addMethod(getUpdateModelPriceMethod())
+              .addMethod(getUpdateArticleCreationTenantCourseMethod())
+              .addMethod(getGetArticleCreationTenantMethod())
               .addMethod(getCreateDigitalHumanMethod())
               .addMethod(getQueryDigitalHumanMethod())
               .addMethod(getListDigitalHumanMethod())
