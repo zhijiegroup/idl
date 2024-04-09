@@ -29,7 +29,7 @@ class Config extends $pb.GeneratedMessage {
     $core.String? updatedAt,
     $core.String? businessSystem,
     $core.String? defaultValue,
-    $core.String? configLang,
+    $core.String? configNameTh,
   }) {
     final $result = create();
     if (id != null) {
@@ -65,8 +65,8 @@ class Config extends $pb.GeneratedMessage {
     if (defaultValue != null) {
       $result.defaultValue = defaultValue;
     }
-    if (configLang != null) {
-      $result.configLang = configLang;
+    if (configNameTh != null) {
+      $result.configNameTh = configNameTh;
     }
     return $result;
   }
@@ -86,7 +86,7 @@ class Config extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'updatedAt')
     ..aOS(11, _omitFieldNames ? '' : 'businessSystem')
     ..aOS(12, _omitFieldNames ? '' : 'defaultValue')
-    ..aOS(13, _omitFieldNames ? '' : 'configLang')
+    ..aOS(13, _omitFieldNames ? '' : 'configNameTh')
     ..hasRequiredFields = false
   ;
 
@@ -211,13 +211,13 @@ class Config extends $pb.GeneratedMessage {
   void clearDefaultValue() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.String get configLang => $_getSZ(11);
+  $core.String get configNameTh => $_getSZ(11);
   @$pb.TagNumber(13)
-  set configLang($core.String v) { $_setString(11, v); }
+  set configNameTh($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(13)
-  $core.bool hasConfigLang() => $_has(11);
+  $core.bool hasConfigNameTh() => $_has(11);
   @$pb.TagNumber(13)
-  void clearConfigLang() => clearField(13);
+  void clearConfigNameTh() => clearField(13);
 }
 
 class AddConfig extends $pb.GeneratedMessage {
@@ -228,7 +228,7 @@ class AddConfig extends $pb.GeneratedMessage {
     $core.String? configType,
     $core.String? description,
     $core.String? businessSystem,
-    $core.String? language,
+    $core.String? configNameTh,
   }) {
     final $result = create();
     if (configName != null) {
@@ -249,8 +249,8 @@ class AddConfig extends $pb.GeneratedMessage {
     if (businessSystem != null) {
       $result.businessSystem = businessSystem;
     }
-    if (language != null) {
-      $result.language = language;
+    if (configNameTh != null) {
+      $result.configNameTh = configNameTh;
     }
     return $result;
   }
@@ -265,7 +265,7 @@ class AddConfig extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'configType')
     ..aOS(6, _omitFieldNames ? '' : 'description')
     ..aOS(7, _omitFieldNames ? '' : 'businessSystem')
-    ..aOS(8, _omitFieldNames ? '' : 'language')
+    ..aOS(8, _omitFieldNames ? '' : 'configNameTh')
     ..hasRequiredFields = false
   ;
 
@@ -345,13 +345,13 @@ class AddConfig extends $pb.GeneratedMessage {
   void clearBusinessSystem() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get language => $_getSZ(6);
+  $core.String get configNameTh => $_getSZ(6);
   @$pb.TagNumber(8)
-  set language($core.String v) { $_setString(6, v); }
+  set configNameTh($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(8)
-  $core.bool hasLanguage() => $_has(6);
+  $core.bool hasConfigNameTh() => $_has(6);
   @$pb.TagNumber(8)
-  void clearLanguage() => clearField(8);
+  void clearConfigNameTh() => clearField(8);
 }
 
 class CreateConfigRequest extends $pb.GeneratedMessage {
@@ -474,118 +474,6 @@ class CreateConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
-class CreateLangConfigRequest extends $pb.GeneratedMessage {
-  factory CreateLangConfigRequest({
-    $0.BaseRequest? baseRequest,
-    $core.Iterable<AddConfig>? config,
-  }) {
-    final $result = create();
-    if (baseRequest != null) {
-      $result.baseRequest = baseRequest;
-    }
-    if (config != null) {
-      $result.config.addAll(config);
-    }
-    return $result;
-  }
-  CreateLangConfigRequest._() : super();
-  factory CreateLangConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateLangConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLangConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..pc<AddConfig>(2, _omitFieldNames ? '' : 'config', $pb.PbFieldType.PM, subBuilder: AddConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateLangConfigRequest clone() => CreateLangConfigRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateLangConfigRequest copyWith(void Function(CreateLangConfigRequest) updates) => super.copyWith((message) => updates(message as CreateLangConfigRequest)) as CreateLangConfigRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static CreateLangConfigRequest create() => CreateLangConfigRequest._();
-  CreateLangConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateLangConfigRequest> createRepeated() => $pb.PbList<CreateLangConfigRequest>();
-  @$core.pragma('dart2js:noInline')
-  static CreateLangConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLangConfigRequest>(create);
-  static CreateLangConfigRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseRequest() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseRequest() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.List<AddConfig> get config => $_getList(1);
-}
-
-class CreateLangConfigResponse extends $pb.GeneratedMessage {
-  factory CreateLangConfigResponse({
-    $0.BaseResponse? baseResp,
-  }) {
-    final $result = create();
-    if (baseResp != null) {
-      $result.baseResp = baseResp;
-    }
-    return $result;
-  }
-  CreateLangConfigResponse._() : super();
-  factory CreateLangConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateLangConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLangConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CreateLangConfigResponse clone() => CreateLangConfigResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CreateLangConfigResponse copyWith(void Function(CreateLangConfigResponse) updates) => super.copyWith((message) => updates(message as CreateLangConfigResponse)) as CreateLangConfigResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static CreateLangConfigResponse create() => CreateLangConfigResponse._();
-  CreateLangConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateLangConfigResponse> createRepeated() => $pb.PbList<CreateLangConfigResponse>();
-  @$core.pragma('dart2js:noInline')
-  static CreateLangConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLangConfigResponse>(create);
-  static CreateLangConfigResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseResp() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseResp() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
-}
-
 class UpdateConfig extends $pb.GeneratedMessage {
   factory UpdateConfig({
     $fixnum.Int64? configId,
@@ -594,7 +482,7 @@ class UpdateConfig extends $pb.GeneratedMessage {
     $core.String? configValue,
     $core.String? defaultValue,
     $core.String? description,
-    $core.String? configLang,
+    $core.String? configNameTh,
   }) {
     final $result = create();
     if (configId != null) {
@@ -615,8 +503,8 @@ class UpdateConfig extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
-    if (configLang != null) {
-      $result.configLang = configLang;
+    if (configNameTh != null) {
+      $result.configNameTh = configNameTh;
     }
     return $result;
   }
@@ -631,7 +519,7 @@ class UpdateConfig extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'configValue')
     ..aOS(5, _omitFieldNames ? '' : 'defaultValue')
     ..aOS(6, _omitFieldNames ? '' : 'description')
-    ..aOS(7, _omitFieldNames ? '' : 'configLang')
+    ..aOS(8, _omitFieldNames ? '' : 'configNameTh')
     ..hasRequiredFields = false
   ;
 
@@ -710,14 +598,14 @@ class UpdateConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearDescription() => clearField(6);
 
-  @$pb.TagNumber(7)
-  $core.String get configLang => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set configLang($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasConfigLang() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearConfigLang() => clearField(7);
+  @$pb.TagNumber(8)
+  $core.String get configNameTh => $_getSZ(6);
+  @$pb.TagNumber(8)
+  set configNameTh($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasConfigNameTh() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearConfigNameTh() => clearField(8);
 }
 
 class UpdateConfigRequest extends $pb.GeneratedMessage {
@@ -1070,118 +958,6 @@ class DeleteConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
-class DeleteLangConfigRequest extends $pb.GeneratedMessage {
-  factory DeleteLangConfigRequest({
-    $0.BaseRequest? baseRequest,
-    $core.Iterable<$fixnum.Int64>? configId,
-  }) {
-    final $result = create();
-    if (baseRequest != null) {
-      $result.baseRequest = baseRequest;
-    }
-    if (configId != null) {
-      $result.configId.addAll(configId);
-    }
-    return $result;
-  }
-  DeleteLangConfigRequest._() : super();
-  factory DeleteLangConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteLangConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteLangConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'configId', $pb.PbFieldType.K6)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DeleteLangConfigRequest clone() => DeleteLangConfigRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DeleteLangConfigRequest copyWith(void Function(DeleteLangConfigRequest) updates) => super.copyWith((message) => updates(message as DeleteLangConfigRequest)) as DeleteLangConfigRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static DeleteLangConfigRequest create() => DeleteLangConfigRequest._();
-  DeleteLangConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteLangConfigRequest> createRepeated() => $pb.PbList<DeleteLangConfigRequest>();
-  @$core.pragma('dart2js:noInline')
-  static DeleteLangConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLangConfigRequest>(create);
-  static DeleteLangConfigRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseRequest() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseRequest() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get configId => $_getList(1);
-}
-
-class DeleteLangConfigResponse extends $pb.GeneratedMessage {
-  factory DeleteLangConfigResponse({
-    $0.BaseResponse? baseResp,
-  }) {
-    final $result = create();
-    if (baseResp != null) {
-      $result.baseResp = baseResp;
-    }
-    return $result;
-  }
-  DeleteLangConfigResponse._() : super();
-  factory DeleteLangConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteLangConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteLangConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DeleteLangConfigResponse clone() => DeleteLangConfigResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DeleteLangConfigResponse copyWith(void Function(DeleteLangConfigResponse) updates) => super.copyWith((message) => updates(message as DeleteLangConfigResponse)) as DeleteLangConfigResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static DeleteLangConfigResponse create() => DeleteLangConfigResponse._();
-  DeleteLangConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteLangConfigResponse> createRepeated() => $pb.PbList<DeleteLangConfigResponse>();
-  @$core.pragma('dart2js:noInline')
-  static DeleteLangConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteLangConfigResponse>(create);
-  static DeleteLangConfigResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseResp() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseResp() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
-}
-
 class GetConfigRequest extends $pb.GeneratedMessage {
   factory GetConfigRequest({
     $0.BaseRequest? baseRequest,
@@ -1189,7 +965,6 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     $core.String? configType,
     $core.String? businessSystem,
     $core.String? q,
-    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1207,9 +982,6 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     if (q != null) {
       $result.q = q;
     }
-    if (language != null) {
-      $result.language = language;
-    }
     return $result;
   }
   GetConfigRequest._() : super();
@@ -1222,7 +994,6 @@ class GetConfigRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'configType')
     ..aOS(4, _omitFieldNames ? '' : 'businessSystem')
     ..aOS(5, _omitFieldNames ? '' : 'q')
-    ..aOS(6, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -1293,15 +1064,6 @@ class GetConfigRequest extends $pb.GeneratedMessage {
   $core.bool hasQ() => $_has(4);
   @$pb.TagNumber(5)
   void clearQ() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get language => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set language($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasLanguage() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearLanguage() => clearField(6);
 }
 
 class GetConfigResponse extends $pb.GeneratedMessage {

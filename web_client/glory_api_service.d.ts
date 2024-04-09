@@ -619,25 +619,13 @@ list the permissions that supported */
     request: config.CreateConfigRequest
   ): Promise<config.CreateConfigResponse>;
 
-  CreateLangConfig(
-    request: config.CreateLangConfigRequest
-  ): Promise<config.CreateLangConfigResponse>;
-
   UpdateConfig(
     request: config.UpdateConfigRequest
   ): Promise<config.UpdateConfigResponse>;
 
-  UpdateLangConfig(
-    request: config.UpdateLangConfigRequest
-  ): Promise<config.UpdateLangConfigResponse>;
-
   DeleteConfig(
     request: config.DeleteConfigRequest
   ): Promise<config.DeleteConfigResponse>;
-
-  DeleteLangConfig(
-    request: config.DeleteLangConfigRequest
-  ): Promise<config.DeleteLangConfigResponse>;
 
   GetConfig(
     request: config.GetConfigRequest

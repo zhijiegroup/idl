@@ -26,6 +26,18 @@ public interface ConfigOrBuilder extends
       getConfigNameBytes();
 
   /**
+   * <code>string config_name_th = 13;</code>
+   * @return The configNameTh.
+   */
+  java.lang.String getConfigNameTh();
+  /**
+   * <code>string config_name_th = 13;</code>
+   * @return The bytes for configNameTh.
+   */
+  com.google.protobuf.ByteString
+      getConfigNameThBytes();
+
+  /**
    * <code>string config_value = 4;</code>
    * @return The configValue.
    */
@@ -120,16 +132,4 @@ public interface ConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDefaultValueBytes();
-
-  /**
-   * <code>string config_lang = 13;</code>
-   * @return The configLang.
-   */
-  java.lang.String getConfigLang();
-  /**
-   * <code>string config_lang = 13;</code>
-   * @return The bytes for configLang.
-   */
-  com.google.protobuf.ByteString
-      getConfigLangBytes();
 }

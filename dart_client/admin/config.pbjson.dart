@@ -19,6 +19,7 @@ const Config$json = {
   '2': [
     {'1': 'id', '3': 2, '4': 1, '5': 3, '10': 'id'},
     {'1': 'config_name', '3': 3, '4': 1, '5': 9, '10': 'configName'},
+    {'1': 'config_name_th', '3': 13, '4': 1, '5': 9, '10': 'configNameTh'},
     {'1': 'config_value', '3': 4, '4': 1, '5': 9, '10': 'configValue'},
     {'1': 'config_type', '3': 5, '4': 1, '5': 9, '10': 'configType'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
@@ -28,42 +29,41 @@ const Config$json = {
     {'1': 'updated_at', '3': 10, '4': 1, '5': 9, '10': 'updatedAt'},
     {'1': 'business_system', '3': 11, '4': 1, '5': 9, '10': 'businessSystem'},
     {'1': 'default_value', '3': 12, '4': 1, '5': 9, '10': 'defaultValue'},
-    {'1': 'config_lang', '3': 13, '4': 1, '5': 9, '10': 'configLang'},
   ],
 };
 
 /// Descriptor for `Config`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List configDescriptor = $convert.base64Decode(
     'CgZDb25maWcSDgoCaWQYAiABKANSAmlkEh8KC2NvbmZpZ19uYW1lGAMgASgJUgpjb25maWdOYW'
-    '1lEiEKDGNvbmZpZ192YWx1ZRgEIAEoCVILY29uZmlnVmFsdWUSHwoLY29uZmlnX3R5cGUYBSAB'
-    'KAlSCmNvbmZpZ1R5cGUSIAoLZGVzY3JpcHRpb24YBiABKAlSC2Rlc2NyaXB0aW9uEh0KCmNyZW'
-    'F0ZWRfYnkYByABKANSCWNyZWF0ZWRCeRIdCgp1cGRhdGVkX2J5GAggASgDUgl1cGRhdGVkQnkS'
-    'HQoKY3JlYXRlZF9hdBgJIAEoCVIJY3JlYXRlZEF0Eh0KCnVwZGF0ZWRfYXQYCiABKAlSCXVwZG'
-    'F0ZWRBdBInCg9idXNpbmVzc19zeXN0ZW0YCyABKAlSDmJ1c2luZXNzU3lzdGVtEiMKDWRlZmF1'
-    'bHRfdmFsdWUYDCABKAlSDGRlZmF1bHRWYWx1ZRIfCgtjb25maWdfbGFuZxgNIAEoCVIKY29uZm'
-    'lnTGFuZw==');
+    '1lEiQKDmNvbmZpZ19uYW1lX3RoGA0gASgJUgxjb25maWdOYW1lVGgSIQoMY29uZmlnX3ZhbHVl'
+    'GAQgASgJUgtjb25maWdWYWx1ZRIfCgtjb25maWdfdHlwZRgFIAEoCVIKY29uZmlnVHlwZRIgCg'
+    'tkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHQoKY3JlYXRlZF9ieRgHIAEoA1IJY3Jl'
+    'YXRlZEJ5Eh0KCnVwZGF0ZWRfYnkYCCABKANSCXVwZGF0ZWRCeRIdCgpjcmVhdGVkX2F0GAkgAS'
+    'gJUgljcmVhdGVkQXQSHQoKdXBkYXRlZF9hdBgKIAEoCVIJdXBkYXRlZEF0EicKD2J1c2luZXNz'
+    'X3N5c3RlbRgLIAEoCVIOYnVzaW5lc3NTeXN0ZW0SIwoNZGVmYXVsdF92YWx1ZRgMIAEoCVIMZG'
+    'VmYXVsdFZhbHVl');
 
 @$core.Deprecated('Use addConfigDescriptor instead')
 const AddConfig$json = {
   '1': 'AddConfig',
   '2': [
     {'1': 'config_name', '3': 2, '4': 1, '5': 9, '10': 'configName'},
+    {'1': 'config_name_th', '3': 8, '4': 1, '5': 9, '10': 'configNameTh'},
     {'1': 'config_value', '3': 3, '4': 1, '5': 9, '10': 'configValue'},
     {'1': 'default_value', '3': 4, '4': 1, '5': 9, '10': 'defaultValue'},
     {'1': 'config_type', '3': 5, '4': 1, '5': 9, '10': 'configType'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
     {'1': 'business_system', '3': 7, '4': 1, '5': 9, '10': 'businessSystem'},
-    {'1': 'language', '3': 8, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
 /// Descriptor for `AddConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addConfigDescriptor = $convert.base64Decode(
-    'CglBZGRDb25maWcSHwoLY29uZmlnX25hbWUYAiABKAlSCmNvbmZpZ05hbWUSIQoMY29uZmlnX3'
-    'ZhbHVlGAMgASgJUgtjb25maWdWYWx1ZRIjCg1kZWZhdWx0X3ZhbHVlGAQgASgJUgxkZWZhdWx0'
-    'VmFsdWUSHwoLY29uZmlnX3R5cGUYBSABKAlSCmNvbmZpZ1R5cGUSIAoLZGVzY3JpcHRpb24YBi'
-    'ABKAlSC2Rlc2NyaXB0aW9uEicKD2J1c2luZXNzX3N5c3RlbRgHIAEoCVIOYnVzaW5lc3NTeXN0'
-    'ZW0SGgoIbGFuZ3VhZ2UYCCABKAlSCGxhbmd1YWdl');
+    'CglBZGRDb25maWcSHwoLY29uZmlnX25hbWUYAiABKAlSCmNvbmZpZ05hbWUSJAoOY29uZmlnX2'
+    '5hbWVfdGgYCCABKAlSDGNvbmZpZ05hbWVUaBIhCgxjb25maWdfdmFsdWUYAyABKAlSC2NvbmZp'
+    'Z1ZhbHVlEiMKDWRlZmF1bHRfdmFsdWUYBCABKAlSDGRlZmF1bHRWYWx1ZRIfCgtjb25maWdfdH'
+    'lwZRgFIAEoCVIKY29uZmlnVHlwZRIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24S'
+    'JwoPYnVzaW5lc3Nfc3lzdGVtGAcgASgJUg5idXNpbmVzc1N5c3RlbQ==');
 
 @$core.Deprecated('Use createConfigRequestDescriptor instead')
 const CreateConfigRequest$json = {
@@ -93,34 +93,6 @@ final $typed_data.Uint8List createConfigResponseDescriptor = $convert.base64Deco
     'ChRDcmVhdGVDb25maWdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
     'Nwb25zZVIIYmFzZVJlc3A=');
 
-@$core.Deprecated('Use createLangConfigRequestDescriptor instead')
-const CreateLangConfigRequest$json = {
-  '1': 'CreateLangConfigRequest',
-  '2': [
-    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'config', '3': 2, '4': 3, '5': 11, '6': '.glory_api.AddConfig', '10': 'config'},
-  ],
-};
-
-/// Descriptor for `CreateLangConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createLangConfigRequestDescriptor = $convert.base64Decode(
-    'ChdDcmVhdGVMYW5nQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIsCgZjb25maWcYAiADKAsyFC5nbG9yeV9hcGkuQWRk'
-    'Q29uZmlnUgZjb25maWc=');
-
-@$core.Deprecated('Use createLangConfigResponseDescriptor instead')
-const CreateLangConfigResponse$json = {
-  '1': 'CreateLangConfigResponse',
-  '2': [
-    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-  ],
-};
-
-/// Descriptor for `CreateLangConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createLangConfigResponseDescriptor = $convert.base64Decode(
-    'ChhDcmVhdGVMYW5nQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
-    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
-
 @$core.Deprecated('Use updateConfigDescriptor instead')
 const UpdateConfig$json = {
   '1': 'UpdateConfig',
@@ -128,20 +100,20 @@ const UpdateConfig$json = {
     {'1': 'config_id', '3': 1, '4': 1, '5': 3, '10': 'configId'},
     {'1': 'config_type', '3': 2, '4': 1, '5': 9, '10': 'configType'},
     {'1': 'config_name', '3': 3, '4': 1, '5': 9, '10': 'configName'},
+    {'1': 'config_name_th', '3': 8, '4': 1, '5': 9, '10': 'configNameTh'},
     {'1': 'config_value', '3': 4, '4': 1, '5': 9, '10': 'configValue'},
     {'1': 'default_value', '3': 5, '4': 1, '5': 9, '10': 'defaultValue'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'config_lang', '3': 7, '4': 1, '5': 9, '10': 'configLang'},
   ],
 };
 
 /// Descriptor for `UpdateConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateConfigDescriptor = $convert.base64Decode(
     'CgxVcGRhdGVDb25maWcSGwoJY29uZmlnX2lkGAEgASgDUghjb25maWdJZBIfCgtjb25maWdfdH'
-    'lwZRgCIAEoCVIKY29uZmlnVHlwZRIfCgtjb25maWdfbmFtZRgDIAEoCVIKY29uZmlnTmFtZRIh'
-    'Cgxjb25maWdfdmFsdWUYBCABKAlSC2NvbmZpZ1ZhbHVlEiMKDWRlZmF1bHRfdmFsdWUYBSABKA'
-    'lSDGRlZmF1bHRWYWx1ZRIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHwoLY29u'
-    'ZmlnX2xhbmcYByABKAlSCmNvbmZpZ0xhbmc=');
+    'lwZRgCIAEoCVIKY29uZmlnVHlwZRIfCgtjb25maWdfbmFtZRgDIAEoCVIKY29uZmlnTmFtZRIk'
+    'Cg5jb25maWdfbmFtZV90aBgIIAEoCVIMY29uZmlnTmFtZVRoEiEKDGNvbmZpZ192YWx1ZRgEIA'
+    'EoCVILY29uZmlnVmFsdWUSIwoNZGVmYXVsdF92YWx1ZRgFIAEoCVIMZGVmYXVsdFZhbHVlEiAK'
+    'C2Rlc2NyaXB0aW9uGAYgASgJUgtkZXNjcmlwdGlvbg==');
 
 @$core.Deprecated('Use updateConfigRequestDescriptor instead')
 const UpdateConfigRequest$json = {
@@ -226,33 +198,6 @@ final $typed_data.Uint8List deleteConfigResponseDescriptor = $convert.base64Deco
     'ChREZWxldGVDb25maWdSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
     'Nwb25zZVIIYmFzZVJlc3A=');
 
-@$core.Deprecated('Use deleteLangConfigRequestDescriptor instead')
-const DeleteLangConfigRequest$json = {
-  '1': 'DeleteLangConfigRequest',
-  '2': [
-    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'config_id', '3': 2, '4': 3, '5': 3, '10': 'configId'},
-  ],
-};
-
-/// Descriptor for `DeleteLangConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteLangConfigRequestDescriptor = $convert.base64Decode(
-    'ChdEZWxldGVMYW5nQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIbCgljb25maWdfaWQYAiADKANSCGNvbmZpZ0lk');
-
-@$core.Deprecated('Use deleteLangConfigResponseDescriptor instead')
-const DeleteLangConfigResponse$json = {
-  '1': 'DeleteLangConfigResponse',
-  '2': [
-    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-  ],
-};
-
-/// Descriptor for `DeleteLangConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteLangConfigResponseDescriptor = $convert.base64Decode(
-    'ChhEZWxldGVMYW5nQ29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
-    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
-
 @$core.Deprecated('Use getConfigRequestDescriptor instead')
 const GetConfigRequest$json = {
   '1': 'GetConfigRequest',
@@ -262,7 +207,6 @@ const GetConfigRequest$json = {
     {'1': 'config_type', '3': 3, '4': 1, '5': 9, '10': 'configType'},
     {'1': 'business_system', '3': 4, '4': 1, '5': 9, '10': 'businessSystem'},
     {'1': 'q', '3': 5, '4': 1, '5': 9, '10': 'q'},
-    {'1': 'language', '3': 6, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -271,7 +215,7 @@ final $typed_data.Uint8List getConfigRequestDescriptor = $convert.base64Decode(
     'ChBHZXRDb25maWdSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZVJlcX'
     'Vlc3RSC2Jhc2VSZXF1ZXN0Eh8KC2NvbmZpZ19uYW1lGAIgASgJUgpjb25maWdOYW1lEh8KC2Nv'
     'bmZpZ190eXBlGAMgASgJUgpjb25maWdUeXBlEicKD2J1c2luZXNzX3N5c3RlbRgEIAEoCVIOYn'
-    'VzaW5lc3NTeXN0ZW0SDAoBcRgFIAEoCVIBcRIaCghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2U=');
+    'VzaW5lc3NTeXN0ZW0SDAoBcRgFIAEoCVIBcQ==');
 
 @$core.Deprecated('Use getConfigResponseDescriptor instead')
 const GetConfigResponse$json = {

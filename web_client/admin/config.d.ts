@@ -8,6 +8,7 @@ export { base };
 export interface Config {
   id?: string;
   config_name?: string;
+  config_name_th?: string;
   config_value?: string;
   config_type?: string;
   description?: string;
@@ -17,12 +18,12 @@ export interface Config {
   updated_at?: string;
   business_system?: string;
   default_value?: string;
-  config_lang?: string;
 }
 
 export interface AddConfig {
   /** 配置的名字 */
   config_name?: string;
+  config_name_th?: string;
   /** 配置的值 */
   config_value?: string;
   /** 默认值 */
@@ -33,8 +34,6 @@ export interface AddConfig {
   description?: string;
   /** 默认是global(不属于任何业务系统），可以指定为对应的业务系统，如: live, score, auth */
   business_system?: string;
-  /** zh: 中文; th: 泰语 */
-  language?: string;
 }
 
 export interface CreateConfigRequest {
@@ -46,23 +45,14 @@ export interface CreateConfigResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface CreateLangConfigRequest {
-  base_request?: base.BaseRequest;
-  config?: Array<AddConfig>;
-}
-
-export interface CreateLangConfigResponse {
-  base_resp?: base.BaseResponse;
-}
-
 export interface UpdateConfig {
   config_id?: string;
   config_type?: string;
   config_name?: string;
+  config_name_th?: string;
   config_value?: string;
   default_value?: string;
   description?: string;
-  config_lang?: string;
 }
 
 export interface UpdateConfigRequest {
@@ -92,15 +82,6 @@ export interface DeleteConfigResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface DeleteLangConfigRequest {
-  base_request?: base.BaseRequest;
-  config_id?: Array<string>;
-}
-
-export interface DeleteLangConfigResponse {
-  base_resp?: base.BaseResponse;
-}
-
 export interface GetConfigRequest {
   base_request?: base.BaseRequest;
   /** config的名字 */
@@ -111,7 +92,6 @@ export interface GetConfigRequest {
   business_system?: string;
   /** 用于区分config_type的类型，支持pageKey, appKey */
   q?: string;
-  language?: string;
 }
 
 export interface GetConfigResponse {
