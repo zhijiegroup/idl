@@ -79,38 +79,39 @@ public final class Graph {
   static {
     java.lang.String[] descriptorData = {
       "\n\022course/graph.proto\022\tglory_api\032\nbase.pr" +
-      "oto\"\206\001\n\004Node\022\n\n\002id\030\001 \001(\t\022\017\n\007node_id\030\002 \001(" +
+      "oto\"\230\001\n\004Node\022\n\n\002id\030\001 \001(\t\022\017\n\007node_id\030\002 \001(" +
       "\003\022\r\n\005label\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\014\n\004type\030" +
       "\006 \001(\t\022\016\n\006weight\030\007 \001(\005\022%\n\006detail\030\010 \001(\0132\025." +
-      "glory_api.NodeDetail\"E\n\004Edge\022\014\n\004type\030\001 \001" +
-      "(\t\022\r\n\005label\030\002 \001(\t\022\020\n\010begin_id\030\003 \001(\t\022\016\n\006e" +
-      "nd_id\030\004 \001(\t\"N\n\016KnowledgeGraph\022\035\n\004node\030\001 " +
-      "\003(\0132\017.glory_api.Node\022\035\n\004edge\030\002 \003(\0132\017.glo" +
-      "ry_api.Edge\",\n\rResourceCount\022\014\n\004type\030\001 \001" +
-      "(\003\022\r\n\005count\030\002 \001(\003\"\315\002\n\nNodeDetail\022\n\n\002id\030\001" +
-      " \001(\003\022\014\n\004code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004desc" +
-      "\030\004 \001(\t\022\024\n\014organization\030\005 \001(\t\022\r\n\005level\030\006 " +
-      "\001(\t\022\020\n\010industry\030\007 \001(\t\022\014\n\004type\030\010 \001(\t\022\r\n\005c" +
-      "over\030\t \001(\t\022\026\n\016classification\030\n \001(\t\022\016\n\006mo" +
-      "dule\030\013 \001(\005\022\r\n\005major\030\014 \001(\t\022\017\n\007teacher\030\021 \001" +
-      "(\t\022\027\n\017knowledge_hours\030\022 \001(\002\022\023\n\013skill_hou" +
-      "rs\030\023 \001(\002\022\022\n\ncreated_at\030\024 \001(\t\022+\n\tresource" +
-      "s\030\025 \003(\0132\030.glory_api.ResourceCount\"F\n\033Cre" +
-      "ateKnowledgeGraphRequest\022\'\n\014base_request" +
-      "\030\001 \001(\0132\021.base.BaseRequest\"E\n\034CreateKnowl" +
-      "edgeGraphResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"W\n\030GetKnowledgeGraphReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\022\022\n\ncourse_ids\030\002 \003(\003\"l\n\031GetKnowledg" +
-      "eGraphResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022(\n\005graph\030\002 \001(\0132\031.glory_api" +
-      ".KnowledgeGraph\"a\n\034GetKnowledgeGraphNode" +
-      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
-      "eRequest\022\014\n\004type\030\002 \001(\t\022\n\n\002id\030\003 \001(\003\"r\n\035Ge" +
-      "tKnowledgeGraphNodeResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\022*\n\013node_detai" +
-      "l\030\002 \001(\0132\025.glory_api.NodeDetailB%\n!com.zh" +
-      "ijiejiaoyu.glory_api.courseP\001b\006proto3"
+      "glory_api.NodeDetail\022\020\n\010assigned\030\t \001(\010\"E" +
+      "\n\004Edge\022\014\n\004type\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\022\020\n\010b" +
+      "egin_id\030\003 \001(\t\022\016\n\006end_id\030\004 \001(\t\"N\n\016Knowled" +
+      "geGraph\022\035\n\004node\030\001 \003(\0132\017.glory_api.Node\022\035" +
+      "\n\004edge\030\002 \003(\0132\017.glory_api.Edge\",\n\rResourc" +
+      "eCount\022\014\n\004type\030\001 \001(\003\022\r\n\005count\030\002 \001(\003\"\315\002\n\n" +
+      "NodeDetail\022\n\n\002id\030\001 \001(\003\022\014\n\004code\030\002 \001(\t\022\014\n\004" +
+      "name\030\003 \001(\t\022\014\n\004desc\030\004 \001(\t\022\024\n\014organization" +
+      "\030\005 \001(\t\022\r\n\005level\030\006 \001(\t\022\020\n\010industry\030\007 \001(\t\022" +
+      "\014\n\004type\030\010 \001(\t\022\r\n\005cover\030\t \001(\t\022\026\n\016classifi" +
+      "cation\030\n \001(\t\022\016\n\006module\030\013 \001(\005\022\r\n\005major\030\014 " +
+      "\001(\t\022\017\n\007teacher\030\021 \001(\t\022\027\n\017knowledge_hours\030" +
+      "\022 \001(\002\022\023\n\013skill_hours\030\023 \001(\002\022\022\n\ncreated_at" +
+      "\030\024 \001(\t\022+\n\tresources\030\025 \003(\0132\030.glory_api.Re" +
+      "sourceCount\"F\n\033CreateKnowledgeGraphReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\"E\n\034CreateKnowledgeGraphResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"W\n\030Ge" +
+      "tKnowledgeGraphRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\022\n\ncourse_ids\030\002 " +
+      "\003(\003\"l\n\031GetKnowledgeGraphResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022(\n\005graph" +
+      "\030\002 \001(\0132\031.glory_api.KnowledgeGraph\"a\n\034Get" +
+      "KnowledgeGraphNodeRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001(\t" +
+      "\022\n\n\002id\030\003 \001(\003\"r\n\035GetKnowledgeGraphNodeRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022*\n\013node_detail\030\002 \001(\0132\025.glory_api.No" +
+      "deDetailB%\n!com.zhijiejiaoyu.glory_api.c" +
+      "ourseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -122,7 +123,7 @@ public final class Graph {
     internal_static_glory_api_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Node_descriptor,
-        new java.lang.String[] { "Id", "NodeId", "Label", "Value", "Type", "Weight", "Detail", });
+        new java.lang.String[] { "Id", "NodeId", "Label", "Value", "Type", "Weight", "Detail", "Assigned", });
     internal_static_glory_api_Edge_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_Edge_fieldAccessorTable = new

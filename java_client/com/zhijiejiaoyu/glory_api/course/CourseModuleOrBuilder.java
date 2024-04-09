@@ -244,4 +244,10 @@ public interface CourseModuleOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>bool assigned = 12;</code>
+   * @return The assigned.
+   */
+  boolean getAssigned();
 }

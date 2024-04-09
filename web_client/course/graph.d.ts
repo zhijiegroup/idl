@@ -14,6 +14,7 @@ export interface Node {
   /** 节点权重值 */
   weight?: number;
   detail?: NodeDetail;
+  assigned?: boolean;
 }
 
 export interface Edge {

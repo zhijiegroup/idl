@@ -99,6 +99,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 72: {
+
+            assigned = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -335,6 +340,17 @@ private static final long serialVersionUID = 0L;
     return getDetail();
   }
 
+  public static final int ASSIGNED_FIELD_NUMBER = 9;
+  private boolean assigned ;
+  /**
+   * <code>bool assigned = 9;</code>
+   * @return The assigned.
+   */
+  @java.lang.Override
+  public boolean getAssigned() {
+    return assigned ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -370,6 +386,9 @@ private static final long serialVersionUID = 0L;
     if (detail != null) {
       output.writeMessage(8, getDetail());
     }
+    if (assigned != false) {
+      output.writeBool(9, assigned );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -403,6 +422,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getDetail());
     }
+    if (assigned != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, assigned );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -435,6 +458,8 @@ private static final long serialVersionUID = 0L;
       if (!getDetail()
           .equals(other.getDetail())) return false;
     }
+    if (getAssigned()
+        != other.getAssigned()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -463,6 +488,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getDetail().hashCode();
     }
+    hash = (37 * hash) + ASSIGNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAssigned());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -614,6 +642,8 @@ private static final long serialVersionUID = 0L;
         detail = null;
         detailBuilder = null;
       }
+      assigned = false;
+
       return this;
     }
 
@@ -651,6 +681,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.detail = detailBuilder .build();
       }
+      result.assigned = assigned ;
       onBuilt();
       return result;
     }
@@ -723,6 +754,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDetail()) {
         mergeDetail(other.getDetail());
+      }
+      if (other.getAssigned() != false) {
+        setAssigned(other.getAssigned());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1248,6 +1282,37 @@ private static final long serialVersionUID = 0L;
         detail = null;
       }
       return detailBuilder ;
+    }
+
+    private boolean assigned ;
+    /**
+     * <code>bool assigned = 9;</code>
+     * @return The assigned.
+     */
+    @java.lang.Override
+    public boolean getAssigned() {
+      return assigned ;
+    }
+    /**
+     * <code>bool assigned = 9;</code>
+     * @param value The assigned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssigned(boolean value) {
+      
+      assigned = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool assigned = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssigned() {
+      
+      assigned = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -91,6 +91,7 @@ const CourseModule$json = {
     {'1': 'course_chapters', '3': 9, '4': 3, '5': 11, '6': '.glory_api.CourseChapter', '10': 'courseChapters'},
     {'1': 'child_modules', '3': 10, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'childModules'},
     {'1': 'created_at', '3': 11, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'assigned', '3': 12, '4': 1, '5': 8, '10': 'assigned'},
   ],
 };
 
@@ -104,7 +105,7 @@ final $typed_data.Uint8List courseModuleDescriptor = $convert.base64Decode(
     'MYCCABKAJSCnNraWxsSG91cnMSQQoPY291cnNlX2NoYXB0ZXJzGAkgAygLMhguZ2xvcnlfYXBp'
     'LkNvdXJzZUNoYXB0ZXJSDmNvdXJzZUNoYXB0ZXJzEjwKDWNoaWxkX21vZHVsZXMYCiADKAsyFy'
     '5nbG9yeV9hcGkuQ291cnNlTW9kdWxlUgxjaGlsZE1vZHVsZXMSHQoKY3JlYXRlZF9hdBgLIAEo'
-    'CVIJY3JlYXRlZEF0');
+    'CVIJY3JlYXRlZEF0EhoKCGFzc2lnbmVkGAwgASgIUghhc3NpZ25lZA==');
 
 @$core.Deprecated('Use getCourseModuleCodeRequestDescriptor instead')
 const GetCourseModuleCodeRequest$json = {

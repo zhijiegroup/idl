@@ -141,6 +141,8 @@ struct GloryApi_CourseModule {
   /// 创建时间
   var createdAt: String = String()
 
+  var assigned: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -751,6 +753,7 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     9: .standard(proto: "course_chapters"),
     10: .standard(proto: "child_modules"),
     11: .standard(proto: "created_at"),
+    12: .same(proto: "assigned"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -770,6 +773,7 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 9: try { try decoder.decodeRepeatedMessageField(value: &self.courseChapters) }()
       case 10: try { try decoder.decodeRepeatedMessageField(value: &self.childModules) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 12: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
       default: break
       }
     }
@@ -809,6 +813,9 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 11)
     }
+    if self.assigned != false {
+      try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -824,6 +831,7 @@ extension GloryApi_CourseModule: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs.courseChapters != rhs.courseChapters {return false}
     if lhs.childModules != rhs.childModules {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.assigned != rhs.assigned {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

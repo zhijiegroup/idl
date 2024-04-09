@@ -72,6 +72,7 @@ export interface CourseModule {
   child_modules?: Array<CourseModule>;
   /** 创建时间 */
   created_at?: string;
+  assigned?: boolean;
 }
 
 /** 获取能力指标编码 */

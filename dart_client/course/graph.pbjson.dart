@@ -24,6 +24,7 @@ const Node$json = {
     {'1': 'type', '3': 6, '4': 1, '5': 9, '10': 'type'},
     {'1': 'weight', '3': 7, '4': 1, '5': 5, '10': 'weight'},
     {'1': 'detail', '3': 8, '4': 1, '5': 11, '6': '.glory_api.NodeDetail', '10': 'detail'},
+    {'1': 'assigned', '3': 9, '4': 1, '5': 8, '10': 'assigned'},
   ],
 };
 
@@ -32,7 +33,7 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEg4KAmlkGAEgASgJUgJpZBIXCgdub2RlX2lkGAIgASgDUgZub2RlSWQSFAoFbGFiZW'
     'wYBCABKAlSBWxhYmVsEhQKBXZhbHVlGAUgASgJUgV2YWx1ZRISCgR0eXBlGAYgASgJUgR0eXBl'
     'EhYKBndlaWdodBgHIAEoBVIGd2VpZ2h0Ei0KBmRldGFpbBgIIAEoCzIVLmdsb3J5X2FwaS5Ob2'
-    'RlRGV0YWlsUgZkZXRhaWw=');
+    'RlRGV0YWlsUgZkZXRhaWwSGgoIYXNzaWduZWQYCSABKAhSCGFzc2lnbmVk');
 
 @$core.Deprecated('Use edgeDescriptor instead')
 const Edge$json = {

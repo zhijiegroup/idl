@@ -377,6 +377,7 @@ class CourseModule extends $pb.GeneratedMessage {
     $core.Iterable<CourseChapter>? courseChapters,
     $core.Iterable<CourseModule>? childModules,
     $core.String? createdAt,
+    $core.bool? assigned,
   }) {
     final $result = create();
     if (moduleId != null) {
@@ -412,6 +413,9 @@ class CourseModule extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (assigned != null) {
+      $result.assigned = assigned;
+    }
     return $result;
   }
   CourseModule._() : super();
@@ -430,6 +434,7 @@ class CourseModule extends $pb.GeneratedMessage {
     ..pc<CourseChapter>(9, _omitFieldNames ? '' : 'courseChapters', $pb.PbFieldType.PM, subBuilder: CourseChapter.create)
     ..pc<CourseModule>(10, _omitFieldNames ? '' : 'childModules', $pb.PbFieldType.PM, subBuilder: CourseModule.create)
     ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..aOB(12, _omitFieldNames ? '' : 'assigned')
     ..hasRequiredFields = false
   ;
 
@@ -540,6 +545,15 @@ class CourseModule extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(10);
   @$pb.TagNumber(11)
   void clearCreatedAt() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get assigned => $_getBF(11);
+  @$pb.TagNumber(12)
+  set assigned($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasAssigned() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAssigned() => clearField(12);
 }
 
 /// 获取能力指标编码

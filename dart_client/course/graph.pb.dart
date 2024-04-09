@@ -25,6 +25,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? type,
     $core.int? weight,
     NodeDetail? detail,
+    $core.bool? assigned,
   }) {
     final $result = create();
     if (id != null) {
@@ -48,6 +49,9 @@ class Node extends $pb.GeneratedMessage {
     if (detail != null) {
       $result.detail = detail;
     }
+    if (assigned != null) {
+      $result.assigned = assigned;
+    }
     return $result;
   }
   Node._() : super();
@@ -62,6 +66,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'type')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.O3)
     ..aOM<NodeDetail>(8, _omitFieldNames ? '' : 'detail', subBuilder: NodeDetail.create)
+    ..aOB(9, _omitFieldNames ? '' : 'assigned')
     ..hasRequiredFields = false
   ;
 
@@ -150,6 +155,15 @@ class Node extends $pb.GeneratedMessage {
   void clearDetail() => clearField(8);
   @$pb.TagNumber(8)
   NodeDetail ensureDetail() => $_ensure(6);
+
+  @$pb.TagNumber(9)
+  $core.bool get assigned => $_getBF(7);
+  @$pb.TagNumber(9)
+  set assigned($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAssigned() => $_has(7);
+  @$pb.TagNumber(9)
+  void clearAssigned() => clearField(9);
 }
 
 class Edge extends $pb.GeneratedMessage {

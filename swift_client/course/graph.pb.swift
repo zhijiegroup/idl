@@ -47,6 +47,8 @@ struct GloryApi_Node {
   /// Clears the value of `detail`. Subsequent reads from it will return its default value.
   mutating func clearDetail() {self._detail = nil}
 
+  var assigned: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -381,6 +383,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     6: .same(proto: "type"),
     7: .same(proto: "weight"),
     8: .same(proto: "detail"),
+    9: .same(proto: "assigned"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -396,6 +399,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 6: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 7: try { try decoder.decodeSingularInt32Field(value: &self.weight) }()
       case 8: try { try decoder.decodeSingularMessageField(value: &self._detail) }()
+      case 9: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
       default: break
       }
     }
@@ -427,6 +431,9 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     try { if let v = self._detail {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     } }()
+    if self.assigned != false {
+      try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -438,6 +445,7 @@ extension GloryApi_Node: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.type != rhs.type {return false}
     if lhs.weight != rhs.weight {return false}
     if lhs._detail != rhs._detail {return false}
+    if lhs.assigned != rhs.assigned {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

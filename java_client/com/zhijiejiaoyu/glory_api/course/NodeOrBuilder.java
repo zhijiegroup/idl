@@ -85,4 +85,10 @@ public interface NodeOrBuilder extends
    * <code>.glory_api.NodeDetail detail = 8;</code>
    */
   com.zhijiejiaoyu.glory_api.course.NodeDetailOrBuilder getDetailOrBuilder();
+
+  /**
+   * <code>bool assigned = 9;</code>
+   * @return The assigned.
+   */
+  boolean getAssigned();
 }

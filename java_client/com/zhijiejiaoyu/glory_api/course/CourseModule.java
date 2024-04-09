@@ -126,6 +126,11 @@ private static final long serialVersionUID = 0L;
             createdAt = s;
             break;
           }
+          case 96: {
+
+            assigned = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -605,6 +610,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ASSIGNED_FIELD_NUMBER = 12;
+  private boolean assigned ;
+  /**
+   * <code>bool assigned = 12;</code>
+   * @return The assigned.
+   */
+  @java.lang.Override
+  public boolean getAssigned() {
+    return assigned ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -651,6 +667,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, createdAt );
+    }
+    if (assigned != false) {
+      output.writeBool(12, assigned );
     }
     unknownFields.writeTo(output);
   }
@@ -699,6 +718,10 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, createdAt );
     }
+    if (assigned != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, assigned );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -738,6 +761,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getChildModulesList())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (getAssigned()
+        != other.getAssigned()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -778,6 +803,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + ASSIGNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAssigned());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -943,6 +971,8 @@ private static final long serialVersionUID = 0L;
       }
       createdAt = "";
 
+      assigned = false;
+
       return this;
     }
 
@@ -997,6 +1027,7 @@ private static final long serialVersionUID = 0L;
         result.childModules = childModulesBuilder .build();
       }
       result.createdAt = createdAt ;
+      result.assigned = assigned ;
       onBuilt();
       return result;
     }
@@ -1129,6 +1160,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
         onChanged();
+      }
+      if (other.getAssigned() != false) {
+        setAssigned(other.getAssigned());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2485,6 +2519,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       createdAt = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean assigned ;
+    /**
+     * <code>bool assigned = 12;</code>
+     * @return The assigned.
+     */
+    @java.lang.Override
+    public boolean getAssigned() {
+      return assigned ;
+    }
+    /**
+     * <code>bool assigned = 12;</code>
+     * @param value The assigned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssigned(boolean value) {
+      
+      assigned = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool assigned = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssigned() {
+      
+      assigned = false;
       onChanged();
       return this;
     }
