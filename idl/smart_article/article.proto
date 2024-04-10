@@ -406,6 +406,56 @@ message ListArticleCreationTenantRequest {
 message ListArticleCreationTenantResponse {
     base.BaseResponse base_resp = 1;
     repeated GetArticleCreationTenant list = 2;
-    base.PaginationResponse pagination = 100;
-    
+    base.PaginationResponse pagination = 100;  
+}
+
+// 学校成本
+message ListArticleCreationTenantCostRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message ArticleCreationTenantCost {
+    string name = 1;
+    double total_cost_percent = 2;
+    double total_cost = 3; // 总成本
+    double total_spend = 4; // 总花费
+    int64 complex_count = 5;
+    int64 complex_usage_count = 6; 
+    int64 simple_count = 7;
+    int64 simple_usage_count = 8; 
+    int64 assistant_count = 9;
+    int64 assistant_usage_count = 10; 
+    double complex_cost_percent = 11; // 复杂评价花费百分比
+    double complex_cost = 12; // 复杂评价总成本
+    double complex_spend = 13; // 复杂评价总花费
+    double simple_cost_percent = 14; // 简单评价花费百分比
+    double simple_cost = 15; // 简单评价总成本
+    double simple_spend = 16; // 简单评价总花费
+    double assistant_cost_percent = 17; // ai助手花费百分比
+    double assistant_cost = 18; // ai助手总成本
+    double assistant_spend = 19; // ai助手总花费
+}
+
+message ListArticleCreationTenantCostResponse {
+    base.BaseResponse base_resp = 1;
+    repeated ArticleCreationTenantCost list = 2;
+    base.PaginationResponse pagination = 100;  
+}
+
+message GetArticleCreationTenantCostRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message GetArticleCreationTenantCostResponse {
+    base.BaseResponse base_resp = 100;
+    double total_cost = 1; // 总成本
+    double total_spend = 2; // 总花费
+    double total_cost_percent = 3;
+    int64 complex_usage_count = 4; 
+    double complex_spend = 5; // 复杂评价总花费
+    int64 simple_usage_count = 6; 
+    double simple_spend = 7; // 简单评价总花费
+    int64 assistant_usage_count = 8; 
+    double assistant_spend = 9; // ai助手总花费
 }

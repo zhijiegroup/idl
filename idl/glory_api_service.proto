@@ -1618,6 +1618,12 @@ service glory_api {
   rpc ListArticleCreationTenant(ListArticleCreationTenantRequest) returns (ListArticleCreationTenantResponse) {
     option (api.post) = '/api/article_creation/list_article_creation_tenant';
   }
+  rpc ListArticleCreationTenantCost(ListArticleCreationTenantCostRequest) returns (ListArticleCreationTenantCostResponse) {
+    option (api.post) = '/api/article_creation/list_article_creation_tenant_cost';
+  }
+  rpc GetArticleCreationTenantCost(GetArticleCreationTenantCostRequest) returns (GetArticleCreationTenantCostResponse) {
+    option (api.get) = '/api/article_creation/get_article_creation_tenant_cost';
+  }
 
   // 数字人合成视频接口
   rpc CreateDigitalHuman(CreateDigitalHumanRequest) returns (CreateDigitalHumanResponse) {
