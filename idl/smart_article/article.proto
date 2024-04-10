@@ -396,3 +396,16 @@ message GetArticleCreationTenantResponse {
     base.BaseResponse base_resp = 1;
     GetArticleCreationTenant tenant = 2;
 }
+
+// 学校配置列表
+message ListArticleCreationTenantRequest {
+    base.BaseRequest base_request = 1;
+    base.PaginationRequest pagination = 100;
+}
+
+message ListArticleCreationTenantResponse {
+    base.BaseResponse base_resp = 1;
+    repeated GetArticleCreationTenant list = 2;
+    base.PaginationResponse pagination = 100;
+    
+}
