@@ -1626,6 +1626,254 @@ struct GloryApi_ListArticleCreationTenantResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
+/// 学校成本
+struct GloryApi_ListArticleCreationTenantCostRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_ArticleCreationTenantCost {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
+
+  var totalCostPercent: Double {
+    get {return _storage._totalCostPercent}
+    set {_uniqueStorage()._totalCostPercent = newValue}
+  }
+
+  /// 总成本
+  var totalCost: Double {
+    get {return _storage._totalCost}
+    set {_uniqueStorage()._totalCost = newValue}
+  }
+
+  /// 总花费
+  var totalSpend: Double {
+    get {return _storage._totalSpend}
+    set {_uniqueStorage()._totalSpend = newValue}
+  }
+
+  var complexCount: Int64 {
+    get {return _storage._complexCount}
+    set {_uniqueStorage()._complexCount = newValue}
+  }
+
+  var complexUsageCount: Int64 {
+    get {return _storage._complexUsageCount}
+    set {_uniqueStorage()._complexUsageCount = newValue}
+  }
+
+  var simpleCount: Int64 {
+    get {return _storage._simpleCount}
+    set {_uniqueStorage()._simpleCount = newValue}
+  }
+
+  var simpleUsageCount: Int64 {
+    get {return _storage._simpleUsageCount}
+    set {_uniqueStorage()._simpleUsageCount = newValue}
+  }
+
+  var assistantCount: Int64 {
+    get {return _storage._assistantCount}
+    set {_uniqueStorage()._assistantCount = newValue}
+  }
+
+  var assistantUsageCount: Int64 {
+    get {return _storage._assistantUsageCount}
+    set {_uniqueStorage()._assistantUsageCount = newValue}
+  }
+
+  /// 复杂评价花费百分比
+  var complexCostPercent: Double {
+    get {return _storage._complexCostPercent}
+    set {_uniqueStorage()._complexCostPercent = newValue}
+  }
+
+  /// 复杂评价总成本
+  var complexCost: Double {
+    get {return _storage._complexCost}
+    set {_uniqueStorage()._complexCost = newValue}
+  }
+
+  /// 复杂评价总花费
+  var complexSpend: Double {
+    get {return _storage._complexSpend}
+    set {_uniqueStorage()._complexSpend = newValue}
+  }
+
+  /// 简单评价花费百分比
+  var simpleCostPercent: Double {
+    get {return _storage._simpleCostPercent}
+    set {_uniqueStorage()._simpleCostPercent = newValue}
+  }
+
+  /// 简单评价总成本
+  var simpleCost: Double {
+    get {return _storage._simpleCost}
+    set {_uniqueStorage()._simpleCost = newValue}
+  }
+
+  /// 简单评价总花费
+  var simpleSpend: Double {
+    get {return _storage._simpleSpend}
+    set {_uniqueStorage()._simpleSpend = newValue}
+  }
+
+  /// ai助手花费百分比
+  var assistantCostPercent: Double {
+    get {return _storage._assistantCostPercent}
+    set {_uniqueStorage()._assistantCostPercent = newValue}
+  }
+
+  /// ai助手总成本
+  var assistantCost: Double {
+    get {return _storage._assistantCost}
+    set {_uniqueStorage()._assistantCost = newValue}
+  }
+
+  /// ai助手总花费
+  var assistantSpend: Double {
+    get {return _storage._assistantSpend}
+    set {_uniqueStorage()._assistantSpend = newValue}
+  }
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+struct GloryApi_ListArticleCreationTenantCostResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var list: [GloryApi_ArticleCreationTenantCost] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
+struct GloryApi_GetArticleCreationTenantCostRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetArticleCreationTenantCostResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  /// 总成本
+  var totalCost: Double = 0
+
+  /// 总花费
+  var totalSpend: Double = 0
+
+  var totalCostPercent: Double = 0
+
+  var complexUsageCount: Int64 = 0
+
+  /// 复杂评价总花费
+  var complexSpend: Double = 0
+
+  var simpleUsageCount: Int64 = 0
+
+  /// 简单评价总花费
+  var simpleSpend: Double = 0
+
+  var assistantUsageCount: Int64 = 0
+
+  /// ai助手总花费
+  var assistantSpend: Double = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_ArticleCreation: @unchecked Sendable {}
 extension GloryApi_ArticleCreationDraft: @unchecked Sendable {}
@@ -1687,6 +1935,11 @@ extension GloryApi_GetArticleCreationTenant: @unchecked Sendable {}
 extension GloryApi_GetArticleCreationTenantResponse: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantRequest: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantResponse: @unchecked Sendable {}
+extension GloryApi_ListArticleCreationTenantCostRequest: @unchecked Sendable {}
+extension GloryApi_ArticleCreationTenantCost: @unchecked Sendable {}
+extension GloryApi_ListArticleCreationTenantCostResponse: @unchecked Sendable {}
+extension GloryApi_GetArticleCreationTenantCostRequest: @unchecked Sendable {}
+extension GloryApi_GetArticleCreationTenantCostResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -4730,6 +4983,438 @@ extension GloryApi_ListArticleCreationTenantResponse: SwiftProtobuf.Message, Swi
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.list != rhs.list {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListArticleCreationTenantCostRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListArticleCreationTenantCostRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListArticleCreationTenantCostRequest, rhs: GloryApi_ListArticleCreationTenantCostRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ArticleCreationTenantCost: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ArticleCreationTenantCost"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .standard(proto: "total_cost_percent"),
+    3: .standard(proto: "total_cost"),
+    4: .standard(proto: "total_spend"),
+    5: .standard(proto: "complex_count"),
+    6: .standard(proto: "complex_usage_count"),
+    7: .standard(proto: "simple_count"),
+    8: .standard(proto: "simple_usage_count"),
+    9: .standard(proto: "assistant_count"),
+    10: .standard(proto: "assistant_usage_count"),
+    11: .standard(proto: "complex_cost_percent"),
+    12: .standard(proto: "complex_cost"),
+    13: .standard(proto: "complex_spend"),
+    14: .standard(proto: "simple_cost_percent"),
+    15: .standard(proto: "simple_cost"),
+    16: .standard(proto: "simple_spend"),
+    17: .standard(proto: "assistant_cost_percent"),
+    18: .standard(proto: "assistant_cost"),
+    19: .standard(proto: "assistant_spend"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _name: String = String()
+    var _totalCostPercent: Double = 0
+    var _totalCost: Double = 0
+    var _totalSpend: Double = 0
+    var _complexCount: Int64 = 0
+    var _complexUsageCount: Int64 = 0
+    var _simpleCount: Int64 = 0
+    var _simpleUsageCount: Int64 = 0
+    var _assistantCount: Int64 = 0
+    var _assistantUsageCount: Int64 = 0
+    var _complexCostPercent: Double = 0
+    var _complexCost: Double = 0
+    var _complexSpend: Double = 0
+    var _simpleCostPercent: Double = 0
+    var _simpleCost: Double = 0
+    var _simpleSpend: Double = 0
+    var _assistantCostPercent: Double = 0
+    var _assistantCost: Double = 0
+    var _assistantSpend: Double = 0
+
+    #if swift(>=5.10)
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+    #else
+      static let defaultInstance = _StorageClass()
+    #endif
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _name = source._name
+      _totalCostPercent = source._totalCostPercent
+      _totalCost = source._totalCost
+      _totalSpend = source._totalSpend
+      _complexCount = source._complexCount
+      _complexUsageCount = source._complexUsageCount
+      _simpleCount = source._simpleCount
+      _simpleUsageCount = source._simpleUsageCount
+      _assistantCount = source._assistantCount
+      _assistantUsageCount = source._assistantUsageCount
+      _complexCostPercent = source._complexCostPercent
+      _complexCost = source._complexCost
+      _complexSpend = source._complexSpend
+      _simpleCostPercent = source._simpleCostPercent
+      _simpleCost = source._simpleCost
+      _simpleSpend = source._simpleSpend
+      _assistantCostPercent = source._assistantCostPercent
+      _assistantCost = source._assistantCost
+      _assistantSpend = source._assistantSpend
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 2: try { try decoder.decodeSingularDoubleField(value: &_storage._totalCostPercent) }()
+        case 3: try { try decoder.decodeSingularDoubleField(value: &_storage._totalCost) }()
+        case 4: try { try decoder.decodeSingularDoubleField(value: &_storage._totalSpend) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._complexCount) }()
+        case 6: try { try decoder.decodeSingularInt64Field(value: &_storage._complexUsageCount) }()
+        case 7: try { try decoder.decodeSingularInt64Field(value: &_storage._simpleCount) }()
+        case 8: try { try decoder.decodeSingularInt64Field(value: &_storage._simpleUsageCount) }()
+        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantCount) }()
+        case 10: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantUsageCount) }()
+        case 11: try { try decoder.decodeSingularDoubleField(value: &_storage._complexCostPercent) }()
+        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._complexCost) }()
+        case 13: try { try decoder.decodeSingularDoubleField(value: &_storage._complexSpend) }()
+        case 14: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleCostPercent) }()
+        case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleCost) }()
+        case 16: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleSpend) }()
+        case 17: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCostPercent) }()
+        case 18: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCost) }()
+        case 19: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantSpend) }()
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
+      }
+      if _storage._totalCostPercent != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._totalCostPercent, fieldNumber: 2)
+      }
+      if _storage._totalCost != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._totalCost, fieldNumber: 3)
+      }
+      if _storage._totalSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._totalSpend, fieldNumber: 4)
+      }
+      if _storage._complexCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._complexCount, fieldNumber: 5)
+      }
+      if _storage._complexUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._complexUsageCount, fieldNumber: 6)
+      }
+      if _storage._simpleCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._simpleCount, fieldNumber: 7)
+      }
+      if _storage._simpleUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._simpleUsageCount, fieldNumber: 8)
+      }
+      if _storage._assistantCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._assistantCount, fieldNumber: 9)
+      }
+      if _storage._assistantUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._assistantUsageCount, fieldNumber: 10)
+      }
+      if _storage._complexCostPercent != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._complexCostPercent, fieldNumber: 11)
+      }
+      if _storage._complexCost != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._complexCost, fieldNumber: 12)
+      }
+      if _storage._complexSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._complexSpend, fieldNumber: 13)
+      }
+      if _storage._simpleCostPercent != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._simpleCostPercent, fieldNumber: 14)
+      }
+      if _storage._simpleCost != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._simpleCost, fieldNumber: 15)
+      }
+      if _storage._simpleSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._simpleSpend, fieldNumber: 16)
+      }
+      if _storage._assistantCostPercent != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._assistantCostPercent, fieldNumber: 17)
+      }
+      if _storage._assistantCost != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._assistantCost, fieldNumber: 18)
+      }
+      if _storage._assistantSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._assistantSpend, fieldNumber: 19)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ArticleCreationTenantCost, rhs: GloryApi_ArticleCreationTenantCost) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._totalCostPercent != rhs_storage._totalCostPercent {return false}
+        if _storage._totalCost != rhs_storage._totalCost {return false}
+        if _storage._totalSpend != rhs_storage._totalSpend {return false}
+        if _storage._complexCount != rhs_storage._complexCount {return false}
+        if _storage._complexUsageCount != rhs_storage._complexUsageCount {return false}
+        if _storage._simpleCount != rhs_storage._simpleCount {return false}
+        if _storage._simpleUsageCount != rhs_storage._simpleUsageCount {return false}
+        if _storage._assistantCount != rhs_storage._assistantCount {return false}
+        if _storage._assistantUsageCount != rhs_storage._assistantUsageCount {return false}
+        if _storage._complexCostPercent != rhs_storage._complexCostPercent {return false}
+        if _storage._complexCost != rhs_storage._complexCost {return false}
+        if _storage._complexSpend != rhs_storage._complexSpend {return false}
+        if _storage._simpleCostPercent != rhs_storage._simpleCostPercent {return false}
+        if _storage._simpleCost != rhs_storage._simpleCost {return false}
+        if _storage._simpleSpend != rhs_storage._simpleSpend {return false}
+        if _storage._assistantCostPercent != rhs_storage._assistantCostPercent {return false}
+        if _storage._assistantCost != rhs_storage._assistantCost {return false}
+        if _storage._assistantSpend != rhs_storage._assistantSpend {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListArticleCreationTenantCostResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListArticleCreationTenantCostResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "list"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.list) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.list.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.list, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListArticleCreationTenantCostResponse, rhs: GloryApi_ListArticleCreationTenantCostResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.list != rhs.list {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetArticleCreationTenantCostRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetArticleCreationTenantCostRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetArticleCreationTenantCostRequest, rhs: GloryApi_GetArticleCreationTenantCostRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetArticleCreationTenantCostResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    100: .standard(proto: "base_resp"),
+    1: .standard(proto: "total_cost"),
+    2: .standard(proto: "total_spend"),
+    3: .standard(proto: "total_cost_percent"),
+    4: .standard(proto: "complex_usage_count"),
+    5: .standard(proto: "complex_spend"),
+    6: .standard(proto: "simple_usage_count"),
+    7: .standard(proto: "simple_spend"),
+    8: .standard(proto: "assistant_usage_count"),
+    9: .standard(proto: "assistant_spend"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularDoubleField(value: &self.totalCost) }()
+      case 2: try { try decoder.decodeSingularDoubleField(value: &self.totalSpend) }()
+      case 3: try { try decoder.decodeSingularDoubleField(value: &self.totalCostPercent) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.complexUsageCount) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.complexSpend) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.simpleUsageCount) }()
+      case 7: try { try decoder.decodeSingularDoubleField(value: &self.simpleSpend) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
+      case 9: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.totalCost != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCost, fieldNumber: 1)
+    }
+    if self.totalSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 2)
+    }
+    if self.totalCostPercent != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostPercent, fieldNumber: 3)
+    }
+    if self.complexUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 4)
+    }
+    if self.complexSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 5)
+    }
+    if self.simpleUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 6)
+    }
+    if self.simpleSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 7)
+    }
+    if self.assistantUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 8)
+    }
+    if self.assistantSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 9)
+    }
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetArticleCreationTenantCostResponse, rhs: GloryApi_GetArticleCreationTenantCostResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.totalCost != rhs.totalCost {return false}
+    if lhs.totalSpend != rhs.totalSpend {return false}
+    if lhs.totalCostPercent != rhs.totalCostPercent {return false}
+    if lhs.complexUsageCount != rhs.complexUsageCount {return false}
+    if lhs.complexSpend != rhs.complexSpend {return false}
+    if lhs.simpleUsageCount != rhs.simpleUsageCount {return false}
+    if lhs.simpleSpend != rhs.simpleSpend {return false}
+    if lhs.assistantUsageCount != rhs.assistantUsageCount {return false}
+    if lhs.assistantSpend != rhs.assistantSpend {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

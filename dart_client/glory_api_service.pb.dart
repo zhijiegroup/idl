@@ -1343,6 +1343,12 @@ class glory_apiApi {
   $async.Future<$57.ListArticleCreationTenantResponse> listArticleCreationTenant($pb.ClientContext? ctx, $57.ListArticleCreationTenantRequest request) =>
     _client.invoke<$57.ListArticleCreationTenantResponse>(ctx, 'glory_api', 'ListArticleCreationTenant', request, $57.ListArticleCreationTenantResponse())
   ;
+  $async.Future<$57.ListArticleCreationTenantCostResponse> listArticleCreationTenantCost($pb.ClientContext? ctx, $57.ListArticleCreationTenantCostRequest request) =>
+    _client.invoke<$57.ListArticleCreationTenantCostResponse>(ctx, 'glory_api', 'ListArticleCreationTenantCost', request, $57.ListArticleCreationTenantCostResponse())
+  ;
+  $async.Future<$57.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ClientContext? ctx, $57.GetArticleCreationTenantCostRequest request) =>
+    _client.invoke<$57.GetArticleCreationTenantCostResponse>(ctx, 'glory_api', 'GetArticleCreationTenantCost', request, $57.GetArticleCreationTenantCostResponse())
+  ;
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ClientContext? ctx, $57.CreateDigitalHumanRequest request) =>
     _client.invoke<$57.CreateDigitalHumanResponse>(ctx, 'glory_api', 'CreateDigitalHuman', request, $57.CreateDigitalHumanResponse())
   ;

@@ -5222,6 +5222,683 @@ class ListArticleCreationTenantResponse extends $pb.GeneratedMessage {
   $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+/// 学校成本
+class ListArticleCreationTenantCostRequest extends $pb.GeneratedMessage {
+  factory ListArticleCreationTenantCostRequest({
+    $0.BaseRequest? baseRequest,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListArticleCreationTenantCostRequest._() : super();
+  factory ListArticleCreationTenantCostRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListArticleCreationTenantCostRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListArticleCreationTenantCostRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListArticleCreationTenantCostRequest clone() => ListArticleCreationTenantCostRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListArticleCreationTenantCostRequest copyWith(void Function(ListArticleCreationTenantCostRequest) updates) => super.copyWith((message) => updates(message as ListArticleCreationTenantCostRequest)) as ListArticleCreationTenantCostRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListArticleCreationTenantCostRequest create() => ListArticleCreationTenantCostRequest._();
+  ListArticleCreationTenantCostRequest createEmptyInstance() => create();
+  static $pb.PbList<ListArticleCreationTenantCostRequest> createRepeated() => $pb.PbList<ListArticleCreationTenantCostRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListArticleCreationTenantCostRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListArticleCreationTenantCostRequest>(create);
+  static ListArticleCreationTenantCostRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(1);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(1);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(1);
+}
+
+class ArticleCreationTenantCost extends $pb.GeneratedMessage {
+  factory ArticleCreationTenantCost({
+    $core.String? name,
+    $core.double? totalCostPercent,
+    $core.double? totalCost,
+    $core.double? totalSpend,
+    $fixnum.Int64? complexCount,
+    $fixnum.Int64? complexUsageCount,
+    $fixnum.Int64? simpleCount,
+    $fixnum.Int64? simpleUsageCount,
+    $fixnum.Int64? assistantCount,
+    $fixnum.Int64? assistantUsageCount,
+    $core.double? complexCostPercent,
+    $core.double? complexCost,
+    $core.double? complexSpend,
+    $core.double? simpleCostPercent,
+    $core.double? simpleCost,
+    $core.double? simpleSpend,
+    $core.double? assistantCostPercent,
+    $core.double? assistantCost,
+    $core.double? assistantSpend,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (totalCostPercent != null) {
+      $result.totalCostPercent = totalCostPercent;
+    }
+    if (totalCost != null) {
+      $result.totalCost = totalCost;
+    }
+    if (totalSpend != null) {
+      $result.totalSpend = totalSpend;
+    }
+    if (complexCount != null) {
+      $result.complexCount = complexCount;
+    }
+    if (complexUsageCount != null) {
+      $result.complexUsageCount = complexUsageCount;
+    }
+    if (simpleCount != null) {
+      $result.simpleCount = simpleCount;
+    }
+    if (simpleUsageCount != null) {
+      $result.simpleUsageCount = simpleUsageCount;
+    }
+    if (assistantCount != null) {
+      $result.assistantCount = assistantCount;
+    }
+    if (assistantUsageCount != null) {
+      $result.assistantUsageCount = assistantUsageCount;
+    }
+    if (complexCostPercent != null) {
+      $result.complexCostPercent = complexCostPercent;
+    }
+    if (complexCost != null) {
+      $result.complexCost = complexCost;
+    }
+    if (complexSpend != null) {
+      $result.complexSpend = complexSpend;
+    }
+    if (simpleCostPercent != null) {
+      $result.simpleCostPercent = simpleCostPercent;
+    }
+    if (simpleCost != null) {
+      $result.simpleCost = simpleCost;
+    }
+    if (simpleSpend != null) {
+      $result.simpleSpend = simpleSpend;
+    }
+    if (assistantCostPercent != null) {
+      $result.assistantCostPercent = assistantCostPercent;
+    }
+    if (assistantCost != null) {
+      $result.assistantCost = assistantCost;
+    }
+    if (assistantSpend != null) {
+      $result.assistantSpend = assistantSpend;
+    }
+    return $result;
+  }
+  ArticleCreationTenantCost._() : super();
+  factory ArticleCreationTenantCost.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ArticleCreationTenantCost.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleCreationTenantCost', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalCostPercent', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..aInt64(5, _omitFieldNames ? '' : 'complexCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'complexUsageCount')
+    ..aInt64(7, _omitFieldNames ? '' : 'simpleCount')
+    ..aInt64(8, _omitFieldNames ? '' : 'simpleUsageCount')
+    ..aInt64(9, _omitFieldNames ? '' : 'assistantCount')
+    ..aInt64(10, _omitFieldNames ? '' : 'assistantUsageCount')
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'complexCostPercent', $pb.PbFieldType.OD)
+    ..a<$core.double>(12, _omitFieldNames ? '' : 'complexCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(13, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'simpleCostPercent', $pb.PbFieldType.OD)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'simpleCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(16, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(17, _omitFieldNames ? '' : 'assistantCostPercent', $pb.PbFieldType.OD)
+    ..a<$core.double>(18, _omitFieldNames ? '' : 'assistantCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(19, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ArticleCreationTenantCost clone() => ArticleCreationTenantCost()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ArticleCreationTenantCost copyWith(void Function(ArticleCreationTenantCost) updates) => super.copyWith((message) => updates(message as ArticleCreationTenantCost)) as ArticleCreationTenantCost;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArticleCreationTenantCost create() => ArticleCreationTenantCost._();
+  ArticleCreationTenantCost createEmptyInstance() => create();
+  static $pb.PbList<ArticleCreationTenantCost> createRepeated() => $pb.PbList<ArticleCreationTenantCost>();
+  @$core.pragma('dart2js:noInline')
+  static ArticleCreationTenantCost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ArticleCreationTenantCost>(create);
+  static ArticleCreationTenantCost? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get totalCostPercent => $_getN(1);
+  @$pb.TagNumber(2)
+  set totalCostPercent($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalCostPercent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalCostPercent() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get totalCost => $_getN(2);
+  @$pb.TagNumber(3)
+  set totalCost($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalCost() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalCost() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get totalSpend => $_getN(3);
+  @$pb.TagNumber(4)
+  set totalSpend($core.double v) { $_setDouble(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalSpend() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalSpend() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get complexCount => $_getI64(4);
+  @$pb.TagNumber(5)
+  set complexCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasComplexCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComplexCount() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get complexUsageCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set complexUsageCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasComplexUsageCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearComplexUsageCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get simpleCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set simpleCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSimpleCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSimpleCount() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get simpleUsageCount => $_getI64(7);
+  @$pb.TagNumber(8)
+  set simpleUsageCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSimpleUsageCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSimpleUsageCount() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get assistantCount => $_getI64(8);
+  @$pb.TagNumber(9)
+  set assistantCount($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAssistantCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAssistantCount() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get assistantUsageCount => $_getI64(9);
+  @$pb.TagNumber(10)
+  set assistantUsageCount($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAssistantUsageCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAssistantUsageCount() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get complexCostPercent => $_getN(10);
+  @$pb.TagNumber(11)
+  set complexCostPercent($core.double v) { $_setDouble(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasComplexCostPercent() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearComplexCostPercent() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get complexCost => $_getN(11);
+  @$pb.TagNumber(12)
+  set complexCost($core.double v) { $_setDouble(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasComplexCost() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearComplexCost() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.double get complexSpend => $_getN(12);
+  @$pb.TagNumber(13)
+  set complexSpend($core.double v) { $_setDouble(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasComplexSpend() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearComplexSpend() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.double get simpleCostPercent => $_getN(13);
+  @$pb.TagNumber(14)
+  set simpleCostPercent($core.double v) { $_setDouble(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasSimpleCostPercent() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSimpleCostPercent() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get simpleCost => $_getN(14);
+  @$pb.TagNumber(15)
+  set simpleCost($core.double v) { $_setDouble(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasSimpleCost() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearSimpleCost() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get simpleSpend => $_getN(15);
+  @$pb.TagNumber(16)
+  set simpleSpend($core.double v) { $_setDouble(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasSimpleSpend() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSimpleSpend() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.double get assistantCostPercent => $_getN(16);
+  @$pb.TagNumber(17)
+  set assistantCostPercent($core.double v) { $_setDouble(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasAssistantCostPercent() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAssistantCostPercent() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.double get assistantCost => $_getN(17);
+  @$pb.TagNumber(18)
+  set assistantCost($core.double v) { $_setDouble(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasAssistantCost() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearAssistantCost() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.double get assistantSpend => $_getN(18);
+  @$pb.TagNumber(19)
+  set assistantSpend($core.double v) { $_setDouble(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasAssistantSpend() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearAssistantSpend() => clearField(19);
+}
+
+class ListArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
+  factory ListArticleCreationTenantCostResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<ArticleCreationTenantCost>? list,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (list != null) {
+      $result.list.addAll(list);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListArticleCreationTenantCostResponse._() : super();
+  factory ListArticleCreationTenantCostResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListArticleCreationTenantCostResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListArticleCreationTenantCostResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<ArticleCreationTenantCost>(2, _omitFieldNames ? '' : 'list', $pb.PbFieldType.PM, subBuilder: ArticleCreationTenantCost.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListArticleCreationTenantCostResponse clone() => ListArticleCreationTenantCostResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListArticleCreationTenantCostResponse copyWith(void Function(ListArticleCreationTenantCostResponse) updates) => super.copyWith((message) => updates(message as ListArticleCreationTenantCostResponse)) as ListArticleCreationTenantCostResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListArticleCreationTenantCostResponse create() => ListArticleCreationTenantCostResponse._();
+  ListArticleCreationTenantCostResponse createEmptyInstance() => create();
+  static $pb.PbList<ListArticleCreationTenantCostResponse> createRepeated() => $pb.PbList<ListArticleCreationTenantCostResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListArticleCreationTenantCostResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListArticleCreationTenantCostResponse>(create);
+  static ListArticleCreationTenantCostResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<ArticleCreationTenantCost> get list => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class GetArticleCreationTenantCostRequest extends $pb.GeneratedMessage {
+  factory GetArticleCreationTenantCostRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetArticleCreationTenantCostRequest._() : super();
+  factory GetArticleCreationTenantCostRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleCreationTenantCostRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenantCostRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantCostRequest clone() => GetArticleCreationTenantCostRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantCostRequest copyWith(void Function(GetArticleCreationTenantCostRequest) updates) => super.copyWith((message) => updates(message as GetArticleCreationTenantCostRequest)) as GetArticleCreationTenantCostRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantCostRequest create() => GetArticleCreationTenantCostRequest._();
+  GetArticleCreationTenantCostRequest createEmptyInstance() => create();
+  static $pb.PbList<GetArticleCreationTenantCostRequest> createRepeated() => $pb.PbList<GetArticleCreationTenantCostRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantCostRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleCreationTenantCostRequest>(create);
+  static GetArticleCreationTenantCostRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
+  factory GetArticleCreationTenantCostResponse({
+    $core.double? totalCost,
+    $core.double? totalSpend,
+    $core.double? totalCostPercent,
+    $fixnum.Int64? complexUsageCount,
+    $core.double? complexSpend,
+    $fixnum.Int64? simpleUsageCount,
+    $core.double? simpleSpend,
+    $fixnum.Int64? assistantUsageCount,
+    $core.double? assistantSpend,
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (totalCost != null) {
+      $result.totalCost = totalCost;
+    }
+    if (totalSpend != null) {
+      $result.totalSpend = totalSpend;
+    }
+    if (totalCostPercent != null) {
+      $result.totalCostPercent = totalCostPercent;
+    }
+    if (complexUsageCount != null) {
+      $result.complexUsageCount = complexUsageCount;
+    }
+    if (complexSpend != null) {
+      $result.complexSpend = complexSpend;
+    }
+    if (simpleUsageCount != null) {
+      $result.simpleUsageCount = simpleUsageCount;
+    }
+    if (simpleSpend != null) {
+      $result.simpleSpend = simpleSpend;
+    }
+    if (assistantUsageCount != null) {
+      $result.assistantUsageCount = assistantUsageCount;
+    }
+    if (assistantSpend != null) {
+      $result.assistantSpend = assistantSpend;
+    }
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  GetArticleCreationTenantCostResponse._() : super();
+  factory GetArticleCreationTenantCostResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleCreationTenantCostResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenantCostResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'totalCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalCostPercent', $pb.PbFieldType.OD)
+    ..aInt64(4, _omitFieldNames ? '' : 'complexUsageCount')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
+    ..aInt64(6, _omitFieldNames ? '' : 'simpleUsageCount')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
+    ..aInt64(8, _omitFieldNames ? '' : 'assistantUsageCount')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..aOM<$0.BaseResponse>(100, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantCostResponse clone() => GetArticleCreationTenantCostResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleCreationTenantCostResponse copyWith(void Function(GetArticleCreationTenantCostResponse) updates) => super.copyWith((message) => updates(message as GetArticleCreationTenantCostResponse)) as GetArticleCreationTenantCostResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantCostResponse create() => GetArticleCreationTenantCostResponse._();
+  GetArticleCreationTenantCostResponse createEmptyInstance() => create();
+  static $pb.PbList<GetArticleCreationTenantCostResponse> createRepeated() => $pb.PbList<GetArticleCreationTenantCostResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleCreationTenantCostResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleCreationTenantCostResponse>(create);
+  static GetArticleCreationTenantCostResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.double get totalCost => $_getN(0);
+  @$pb.TagNumber(1)
+  set totalCost($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTotalCost() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotalCost() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get totalSpend => $_getN(1);
+  @$pb.TagNumber(2)
+  set totalSpend($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotalSpend() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalSpend() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get totalCostPercent => $_getN(2);
+  @$pb.TagNumber(3)
+  set totalCostPercent($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotalCostPercent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalCostPercent() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get complexUsageCount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set complexUsageCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasComplexUsageCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComplexUsageCount() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get complexSpend => $_getN(4);
+  @$pb.TagNumber(5)
+  set complexSpend($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasComplexSpend() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComplexSpend() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get simpleUsageCount => $_getI64(5);
+  @$pb.TagNumber(6)
+  set simpleUsageCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSimpleUsageCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSimpleUsageCount() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get simpleSpend => $_getN(6);
+  @$pb.TagNumber(7)
+  set simpleSpend($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSimpleSpend() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSimpleSpend() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get assistantUsageCount => $_getI64(7);
+  @$pb.TagNumber(8)
+  set assistantUsageCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAssistantUsageCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAssistantUsageCount() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get assistantSpend => $_getN(8);
+  @$pb.TagNumber(9)
+  set assistantSpend($core.double v) { $_setDouble(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAssistantSpend() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAssistantSpend() => clearField(9);
+
+  @$pb.TagNumber(100)
+  $0.BaseResponse get baseResp => $_getN(9);
+  @$pb.TagNumber(100)
+  set baseResp($0.BaseResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasBaseResp() => $_has(9);
+  @$pb.TagNumber(100)
+  void clearBaseResp() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.BaseResponse ensureBaseResp() => $_ensure(9);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

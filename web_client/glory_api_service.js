@@ -3362,6 +3362,20 @@ export class glory_api {
     );
   }
 
+  ListArticleCreationTenantCost(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/list_article_creation_tenant_cost`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetArticleCreationTenantCost(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_article_creation_tenant_cost${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CreateDigitalHuman(request) {
     const uri = `${this.uriPrefix}/api/digital/human/create`;
     const body = JSONbigint.stringify(request);

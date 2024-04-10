@@ -424,3 +424,70 @@ export interface ListArticleCreationTenantResponse {
   list?: Array<GetArticleCreationTenant>;
   pagination?: base.PaginationResponse;
 }
+
+/** 学校成本 */
+export interface ListArticleCreationTenantCostRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ArticleCreationTenantCost {
+  name?: string;
+  total_cost_percent?: number;
+  /** 总成本 */
+  total_cost?: number;
+  /** 总花费 */
+  total_spend?: number;
+  complex_count?: string;
+  complex_usage_count?: string;
+  simple_count?: string;
+  simple_usage_count?: string;
+  assistant_count?: string;
+  assistant_usage_count?: string;
+  /** 复杂评价花费百分比 */
+  complex_cost_percent?: number;
+  /** 复杂评价总成本 */
+  complex_cost?: number;
+  /** 复杂评价总花费 */
+  complex_spend?: number;
+  /** 简单评价花费百分比 */
+  simple_cost_percent?: number;
+  /** 简单评价总成本 */
+  simple_cost?: number;
+  /** 简单评价总花费 */
+  simple_spend?: number;
+  /** ai助手花费百分比 */
+  assistant_cost_percent?: number;
+  /** ai助手总成本 */
+  assistant_cost?: number;
+  /** ai助手总花费 */
+  assistant_spend?: number;
+}
+
+export interface ListArticleCreationTenantCostResponse {
+  base_resp?: base.BaseResponse;
+  list?: Array<ArticleCreationTenantCost>;
+  pagination?: base.PaginationResponse;
+}
+
+export interface GetArticleCreationTenantCostRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetArticleCreationTenantCostResponse {
+  base_resp?: base.BaseResponse;
+  /** 总成本 */
+  total_cost?: number;
+  /** 总花费 */
+  total_spend?: number;
+  total_cost_percent?: number;
+  complex_usage_count?: string;
+  /** 复杂评价总花费 */
+  complex_spend?: number;
+  simple_usage_count?: string;
+  /** 简单评价总花费 */
+  simple_spend?: number;
+  assistant_usage_count?: string;
+  /** ai助手总花费 */
+  assistant_spend?: number;
+}
