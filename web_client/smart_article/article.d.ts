@@ -412,3 +412,15 @@ export interface GetArticleCreationTenantResponse {
   base_resp?: base.BaseResponse;
   tenant?: GetArticleCreationTenant;
 }
+
+/** 学校配置列表 */
+export interface ListArticleCreationTenantRequest {
+  base_request?: base.BaseRequest;
+  pagination?: base.PaginationRequest;
+}
+
+export interface ListArticleCreationTenantResponse {
+  base_resp?: base.BaseResponse;
+  list?: Array<GetArticleCreationTenant>;
+  pagination?: base.PaginationResponse;
+}

@@ -1008,3 +1008,35 @@ final $typed_data.Uint8List getArticleCreationTenantResponseDescriptor = $conver
     '5iYXNlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASOwoGdGVuYW50GAIgASgLMiMuZ2xvcnlfYXBp'
     'LkdldEFydGljbGVDcmVhdGlvblRlbmFudFIGdGVuYW50');
 
+@$core.Deprecated('Use listArticleCreationTenantRequestDescriptor instead')
+const ListArticleCreationTenantRequest$json = {
+  '1': 'ListArticleCreationTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListArticleCreationTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listArticleCreationTenantRequestDescriptor = $convert.base64Decode(
+    'CiBMaXN0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBI3CgpwYWdpbmF0aW9uGGQgASgLMhcu'
+    'YmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use listArticleCreationTenantResponseDescriptor instead')
+const ListArticleCreationTenantResponse$json = {
+  '1': 'ListArticleCreationTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.GetArticleCreationTenant', '10': 'list'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListArticleCreationTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listArticleCreationTenantResponseDescriptor = $convert.base64Decode(
+    'CiFMaXN0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEjcKBGxpc3QYAiADKAsyIy5nbG9yeV9hcGku'
+    'R2V0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UgRsaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYX'
+    'NlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
+

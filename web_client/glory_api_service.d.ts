@@ -1880,6 +1880,10 @@ CreateLivePlanProduct create live plan product */
     request: article.GetArticleCreationTenantRequest
   ): Promise<article.GetArticleCreationTenantResponse>;
 
+  ListArticleCreationTenant(
+    request: article.ListArticleCreationTenantRequest
+  ): Promise<article.ListArticleCreationTenantResponse>;
+
   /** 数字人合成视频接口 */
   CreateDigitalHuman(
     request: article.CreateDigitalHumanRequest
