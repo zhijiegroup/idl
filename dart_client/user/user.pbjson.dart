@@ -684,6 +684,7 @@ const Role$json = {
     {'1': 'role_id', '3': 1, '4': 1, '5': 3, '10': 'roleId'},
     {'1': 'role_name', '3': 2, '4': 1, '5': 9, '10': 'roleName'},
     {'1': 'role_type', '3': 3, '4': 1, '5': 9, '10': 'roleType'},
+    {'1': 'role_type_name', '3': 4, '4': 1, '5': 9, '10': 'roleTypeName'},
     {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
     {'1': 'readonly', '3': 6, '4': 1, '5': 8, '10': 'readonly'},
     {'1': 'role_permission', '3': 7, '4': 3, '5': 11, '6': '.glory_api.RolePermission', '10': 'rolePermission'},
@@ -694,10 +695,11 @@ const Role$json = {
 /// Descriptor for `Role`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List roleDescriptor = $convert.base64Decode(
     'CgRSb2xlEhcKB3JvbGVfaWQYASABKANSBnJvbGVJZBIbCglyb2xlX25hbWUYAiABKAlSCHJvbG'
-    'VOYW1lEhsKCXJvbGVfdHlwZRgDIAEoCVIIcm9sZVR5cGUSIAoLZGVzY3JpcHRpb24YBSABKAlS'
-    'C2Rlc2NyaXB0aW9uEhoKCHJlYWRvbmx5GAYgASgIUghyZWFkb25seRJCCg9yb2xlX3Blcm1pc3'
-    'Npb24YByADKAsyGS5nbG9yeV9hcGkuUm9sZVBlcm1pc3Npb25SDnJvbGVQZXJtaXNzaW9uEi8K'
-    'BXBhZ2VzGAggAygLMhkuZ2xvcnlfYXBpLlBhZ2VQZXJtaXNzaW9uUgVwYWdlcw==');
+    'VOYW1lEhsKCXJvbGVfdHlwZRgDIAEoCVIIcm9sZVR5cGUSJAoOcm9sZV90eXBlX25hbWUYBCAB'
+    'KAlSDHJvbGVUeXBlTmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24SGgoIcm'
+    'VhZG9ubHkYBiABKAhSCHJlYWRvbmx5EkIKD3JvbGVfcGVybWlzc2lvbhgHIAMoCzIZLmdsb3J5'
+    'X2FwaS5Sb2xlUGVybWlzc2lvblIOcm9sZVBlcm1pc3Npb24SLwoFcGFnZXMYCCADKAsyGS5nbG'
+    '9yeV9hcGkuUGFnZVBlcm1pc3Npb25SBXBhZ2Vz');
 
 @$core.Deprecated('Use rolePermissionDescriptor instead')
 const RolePermission$json = {

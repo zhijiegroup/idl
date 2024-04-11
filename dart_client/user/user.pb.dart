@@ -3410,6 +3410,7 @@ class Role extends $pb.GeneratedMessage {
     $fixnum.Int64? roleId,
     $core.String? roleName,
     $core.String? roleType,
+    $core.String? roleTypeName,
     $core.String? description,
     $core.bool? readonly,
     $core.Iterable<RolePermission>? rolePermission,
@@ -3424,6 +3425,9 @@ class Role extends $pb.GeneratedMessage {
     }
     if (roleType != null) {
       $result.roleType = roleType;
+    }
+    if (roleTypeName != null) {
+      $result.roleTypeName = roleTypeName;
     }
     if (description != null) {
       $result.description = description;
@@ -3447,6 +3451,7 @@ class Role extends $pb.GeneratedMessage {
     ..aInt64(1, _omitFieldNames ? '' : 'roleId')
     ..aOS(2, _omitFieldNames ? '' : 'roleName')
     ..aOS(3, _omitFieldNames ? '' : 'roleType')
+    ..aOS(4, _omitFieldNames ? '' : 'roleTypeName')
     ..aOS(5, _omitFieldNames ? '' : 'description')
     ..aOB(6, _omitFieldNames ? '' : 'readonly')
     ..pc<RolePermission>(7, _omitFieldNames ? '' : 'rolePermission', $pb.PbFieldType.PM, subBuilder: RolePermission.create)
@@ -3504,29 +3509,38 @@ class Role extends $pb.GeneratedMessage {
 
   /// string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
   /// int64 source_id =4; // 对应的资源来源id
+  @$pb.TagNumber(4)
+  $core.String get roleTypeName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set roleTypeName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRoleTypeName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRoleTypeName() => clearField(4);
+
   @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(3);
+  $core.String get description => $_getSZ(4);
   @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(3, v); }
+  set description($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(3);
+  $core.bool hasDescription() => $_has(4);
   @$pb.TagNumber(5)
   void clearDescription() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get readonly => $_getBF(4);
+  $core.bool get readonly => $_getBF(5);
   @$pb.TagNumber(6)
-  set readonly($core.bool v) { $_setBool(4, v); }
+  set readonly($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasReadonly() => $_has(4);
+  $core.bool hasReadonly() => $_has(5);
   @$pb.TagNumber(6)
   void clearReadonly() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<RolePermission> get rolePermission => $_getList(5);
+  $core.List<RolePermission> get rolePermission => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.List<PagePermission> get pages => $_getList(6);
+  $core.List<PagePermission> get pages => $_getList(7);
 }
 
 class RolePermission extends $pb.GeneratedMessage {

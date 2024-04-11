@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private Role() {
     roleName = "";
     roleType = "";
+    roleTypeName = "";
     description = "";
     rolePermission = java.util.Collections.emptyList();
     pages = java.util.Collections.emptyList();
@@ -69,6 +70,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             roleType = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            roleTypeName = s;
             break;
           }
           case 42: {
@@ -225,14 +232,57 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description ;
+  public static final int ROLE_TYPE_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object roleTypeName ;
   /**
    * <pre>
    *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
    *  int64 source_id =4; // 对应的资源来源id
    * </pre>
    *
+   * <code>string role_type_name = 4;</code>
+   * @return The roleTypeName.
+   */
+  @java.lang.Override
+  public java.lang.String getRoleTypeName() {
+    java.lang.Object ref = roleTypeName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roleTypeName = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+   *  int64 source_id =4; // 对应的资源来源id
+   * </pre>
+   *
+   * <code>string role_type_name = 4;</code>
+   * @return The bytes for roleTypeName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleTypeNameBytes() {
+    java.lang.Object ref = roleTypeName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roleTypeName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object description ;
+  /**
    * <code>string description = 5;</code>
    * @return The description.
    */
@@ -250,11 +300,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-   *  int64 source_id =4; // 对应的资源来源id
-   * </pre>
-   *
    * <code>string description = 5;</code>
    * @return The bytes for description.
    */
@@ -387,6 +432,9 @@ private static final long serialVersionUID = 0L;
     if (!getRoleTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roleType );
     }
+    if (!getRoleTypeNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleTypeName );
+    }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description );
     }
@@ -417,6 +465,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRoleTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, roleType );
+    }
+    if (!getRoleTypeNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleTypeName );
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description );
@@ -454,6 +505,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRoleName())) return false;
     if (!getRoleType()
         .equals(other.getRoleType())) return false;
+    if (!getRoleTypeName()
+        .equals(other.getRoleTypeName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (getReadonly()
@@ -480,6 +533,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRoleName().hashCode();
     hash = (37 * hash) + ROLE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getRoleType().hashCode();
+    hash = (37 * hash) + ROLE_TYPE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleTypeName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + READONLY_FIELD_NUMBER;
@@ -634,6 +689,8 @@ private static final long serialVersionUID = 0L;
 
       roleType = "";
 
+      roleTypeName = "";
+
       description = "";
 
       readonly = false;
@@ -680,6 +737,7 @@ private static final long serialVersionUID = 0L;
       result.roleId = roleId ;
       result.roleName = roleName ;
       result.roleType = roleType ;
+      result.roleTypeName = roleTypeName ;
       result.description = description ;
       result.readonly = readonly ;
       if (rolePermissionBuilder == null) {
@@ -757,6 +815,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRoleType().isEmpty()) {
         roleType = other.roleType ;
+        onChanged();
+      }
+      if (!other.getRoleTypeName().isEmpty()) {
+        roleTypeName = other.roleTypeName ;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
@@ -1031,13 +1093,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object description = "";
+    private java.lang.Object roleTypeName = "";
     /**
      * <pre>
      *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
      *  int64 source_id =4; // 对应的资源来源id
      * </pre>
      *
+     * <code>string role_type_name = 4;</code>
+     * @return The roleTypeName.
+     */
+    public java.lang.String getRoleTypeName() {
+      java.lang.Object ref = roleTypeName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleTypeName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
+     * <code>string role_type_name = 4;</code>
+     * @return The bytes for roleTypeName.
+     */
+    public com.google.protobuf.ByteString
+        getRoleTypeNameBytes() {
+      java.lang.Object ref = roleTypeName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleTypeName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
+     * <code>string role_type_name = 4;</code>
+     * @param value The roleTypeName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleTypeName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      roleTypeName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
+     * <code>string role_type_name = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleTypeName() {
+      
+      roleTypeName = getDefaultInstance().getRoleTypeName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
+     *  int64 source_id =4; // 对应的资源来源id
+     * </pre>
+     *
+     * <code>string role_type_name = 4;</code>
+     * @param value The bytes for roleTypeName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleTypeNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      roleTypeName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description = "";
+    /**
      * <code>string description = 5;</code>
      * @return The description.
      */
@@ -1054,11 +1212,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     *  int64 source_id =4; // 对应的资源来源id
-     * </pre>
-     *
      * <code>string description = 5;</code>
      * @return The bytes for description.
      */
@@ -1076,11 +1229,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     *  int64 source_id =4; // 对应的资源来源id
-     * </pre>
-     *
      * <code>string description = 5;</code>
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1096,11 +1244,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     *  int64 source_id =4; // 对应的资源来源id
-     * </pre>
-     *
      * <code>string description = 5;</code>
      * @return This builder for chaining.
      */
@@ -1111,11 +1254,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *  string source = 3;  // 角色对应的资源来源，相当于角色类型，比如学校的角色会绑定table jx_tenant，专业的角色会绑定jx_major
-     *  int64 source_id =4; // 对应的资源来源id
-     * </pre>
-     *
      * <code>string description = 5;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
