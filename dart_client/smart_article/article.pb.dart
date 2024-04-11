@@ -778,6 +778,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? content,
     $core.String? creationType,
+    $core.bool? haveSubTopic,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -798,6 +799,9 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     if (creationType != null) {
       $result.creationType = creationType;
     }
+    if (haveSubTopic != null) {
+      $result.haveSubTopic = haveSubTopic;
+    }
     return $result;
   }
   CreateArticleCreationDraftRequest._() : super();
@@ -811,6 +815,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'title')
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'creationType')
+    ..aOB(7, _omitFieldNames ? '' : 'haveSubTopic')
     ..hasRequiredFields = false
   ;
 
@@ -890,6 +895,15 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
   $core.bool hasCreationType() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreationType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get haveSubTopic => $_getBF(6);
+  @$pb.TagNumber(7)
+  set haveSubTopic($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasHaveSubTopic() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHaveSubTopic() => clearField(7);
 }
 
 class CreateArticleCreationDraftResponse extends $pb.GeneratedMessage {

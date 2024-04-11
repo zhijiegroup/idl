@@ -153,6 +153,7 @@ const CreateArticleCreationDraftRequest$json = {
     {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
+    {'1': 'have_sub_topic', '3': 7, '4': 1, '5': 8, '10': 'haveSubTopic'},
   ],
 };
 
@@ -162,7 +163,8 @@ final $typed_data.Uint8List createArticleCreationDraftRequestDescriptor = $conve
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX2NvZGUYAiABKAlS'
     'CmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ29kZR'
     'IUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1jcmVh'
-    'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGU=');
+    'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSJAoOaGF2ZV9zdWJfdG9waWMYByABKAhSDG'
+    'hhdmVTdWJUb3BpYw==');
 
 @$core.Deprecated('Use createArticleCreationDraftResponseDescriptor instead')
 const CreateArticleCreationDraftResponse$json = {

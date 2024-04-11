@@ -59,11 +59,19 @@ public interface CreateArticleCreationDraftRequestOrBuilder extends
       getTitleBytes();
 
   /**
+   * <pre>
+   * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+   * </pre>
+   *
    * <code>string content = 5;</code>
    * @return The content.
    */
   java.lang.String getContent();
   /**
+   * <pre>
+   * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+   * </pre>
+   *
    * <code>string content = 5;</code>
    * @return The bytes for content.
    */
@@ -81,4 +89,10 @@ public interface CreateArticleCreationDraftRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreationTypeBytes();
+
+  /**
+   * <code>bool have_sub_topic = 7;</code>
+   * @return The haveSubTopic.
+   */
+  boolean getHaveSubTopic();
 }

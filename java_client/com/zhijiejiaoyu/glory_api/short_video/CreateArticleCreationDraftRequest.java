@@ -96,6 +96,11 @@ private static final long serialVersionUID = 0L;
             creationType = s;
             break;
           }
+          case 56: {
+
+            haveSubTopic = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -271,6 +276,10 @@ private static final long serialVersionUID = 0L;
   public static final int CONTENT_FIELD_NUMBER = 5;
   private volatile java.lang.Object content ;
   /**
+   * <pre>
+   * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+   * </pre>
+   *
    * <code>string content = 5;</code>
    * @return The content.
    */
@@ -288,6 +297,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+   * </pre>
+   *
    * <code>string content = 5;</code>
    * @return The bytes for content.
    */
@@ -344,6 +357,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int HAVE_SUB_TOPIC_FIELD_NUMBER = 7;
+  private boolean haveSubTopic ;
+  /**
+   * <code>bool have_sub_topic = 7;</code>
+   * @return The haveSubTopic.
+   */
+  @java.lang.Override
+  public boolean getHaveSubTopic() {
+    return haveSubTopic ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -376,6 +400,9 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creationType );
     }
+    if (haveSubTopic != false) {
+      output.writeBool(7, haveSubTopic );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -403,6 +430,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCreationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creationType );
+    }
+    if (haveSubTopic != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, haveSubTopic );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -434,6 +465,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getCreationType()
         .equals(other.getCreationType())) return false;
+    if (getHaveSubTopic()
+        != other.getHaveSubTopic()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -459,6 +492,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationType().hashCode();
+    hash = (37 * hash) + HAVE_SUB_TOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getHaveSubTopic());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -608,6 +644,8 @@ private static final long serialVersionUID = 0L;
 
       creationType = "";
 
+      haveSubTopic = false;
+
       return this;
     }
 
@@ -644,6 +682,7 @@ private static final long serialVersionUID = 0L;
       result.title = title ;
       result.content = content ;
       result.creationType = creationType ;
+      result.haveSubTopic = haveSubTopic ;
       onBuilt();
       return result;
     }
@@ -714,6 +753,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCreationType().isEmpty()) {
         creationType = other.creationType ;
         onChanged();
+      }
+      if (other.getHaveSubTopic() != false) {
+        setHaveSubTopic(other.getHaveSubTopic());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1093,6 +1135,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object content = "";
     /**
+     * <pre>
+     * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+     * </pre>
+     *
      * <code>string content = 5;</code>
      * @return The content.
      */
@@ -1109,6 +1155,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+     * </pre>
+     *
      * <code>string content = 5;</code>
      * @return The bytes for content.
      */
@@ -1126,6 +1176,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+     * </pre>
+     *
      * <code>string content = 5;</code>
      * @param value The content to set.
      * @return This builder for chaining.
@@ -1141,6 +1195,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+     * </pre>
+     *
      * <code>string content = 5;</code>
      * @return This builder for chaining.
      */
@@ -1151,6 +1209,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
+     * </pre>
+     *
      * <code>string content = 5;</code>
      * @param value The bytes for content to set.
      * @return This builder for chaining.
@@ -1239,6 +1301,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       creationType = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean haveSubTopic ;
+    /**
+     * <code>bool have_sub_topic = 7;</code>
+     * @return The haveSubTopic.
+     */
+    @java.lang.Override
+    public boolean getHaveSubTopic() {
+      return haveSubTopic ;
+    }
+    /**
+     * <code>bool have_sub_topic = 7;</code>
+     * @param value The haveSubTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHaveSubTopic(boolean value) {
+      
+      haveSubTopic = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool have_sub_topic = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearHaveSubTopic() {
+      
+      haveSubTopic = false;
       onChanged();
       return this;
     }

@@ -67,8 +67,10 @@ export interface CreateArticleCreationDraftRequest {
   course_code?: string;
   course_topic_code?: string;
   title?: string;
+  /** 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串 */
   content?: string;
   creation_type?: string;
+  have_sub_topic?: boolean;
 }
 
 export interface CreateArticleCreationDraftResponse {

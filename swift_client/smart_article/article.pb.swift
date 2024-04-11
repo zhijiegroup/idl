@@ -228,9 +228,12 @@ struct GloryApi_CreateArticleCreationDraftRequest {
 
   var title: String = String()
 
+  /// 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
   var content: String = String()
 
   var creationType: String = String()
+
+  var haveSubTopic: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2355,6 +2358,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     4: .same(proto: "title"),
     5: .same(proto: "content"),
     6: .standard(proto: "creation_type"),
+    7: .standard(proto: "have_sub_topic"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2369,6 +2373,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 4: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
+      case 7: try { try decoder.decodeSingularBoolField(value: &self.haveSubTopic) }()
       default: break
       }
     }
@@ -2397,6 +2402,9 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if !self.creationType.isEmpty {
       try visitor.visitSingularStringField(value: self.creationType, fieldNumber: 6)
     }
+    if self.haveSubTopic != false {
+      try visitor.visitSingularBoolField(value: self.haveSubTopic, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2407,6 +2415,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
+    if lhs.haveSubTopic != rhs.haveSubTopic {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
