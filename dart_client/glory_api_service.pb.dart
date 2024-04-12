@@ -1349,6 +1349,9 @@ class glory_apiApi {
   $async.Future<$57.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ClientContext? ctx, $57.GetArticleCreationTenantCostRequest request) =>
     _client.invoke<$57.GetArticleCreationTenantCostResponse>(ctx, 'glory_api', 'GetArticleCreationTenantCost', request, $57.GetArticleCreationTenantCostResponse())
   ;
+  $async.Future<$57.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ClientContext? ctx, $57.GetSubTopicAiResultRequest request) =>
+    _client.invoke<$57.GetSubTopicAiResultResponse>(ctx, 'glory_api', 'GetSubTopicAiResult', request, $57.GetSubTopicAiResultResponse())
+  ;
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ClientContext? ctx, $57.CreateDigitalHumanRequest request) =>
     _client.invoke<$57.CreateDigitalHumanResponse>(ctx, 'glory_api', 'CreateDigitalHuman', request, $57.CreateDigitalHumanResponse())
   ;

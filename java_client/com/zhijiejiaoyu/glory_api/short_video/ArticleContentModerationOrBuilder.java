@@ -240,4 +240,44 @@ public interface ArticleContentModerationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRejectReasonBytes();
+
+  /**
+   * <pre>
+   * 通过原因
+   * </pre>
+   *
+   * <code>string accept_reason = 7;</code>
+   * @return The acceptReason.
+   */
+  java.lang.String getAcceptReason();
+  /**
+   * <pre>
+   * 通过原因
+   * </pre>
+   *
+   * <code>string accept_reason = 7;</code>
+   * @return The bytes for acceptReason.
+   */
+  com.google.protobuf.ByteString
+      getAcceptReasonBytes();
+
+  /**
+   * <pre>
+   * 评价
+   * </pre>
+   *
+   * <code>string evaluation = 8;</code>
+   * @return The evaluation.
+   */
+  java.lang.String getEvaluation();
+  /**
+   * <pre>
+   * 评价
+   * </pre>
+   *
+   * <code>string evaluation = 8;</code>
+   * @return The bytes for evaluation.
+   */
+  com.google.protobuf.ByteString
+      getEvaluationBytes();
 }

@@ -265,6 +265,10 @@ export interface ArticleContentModeration {
   bad_sentence?: Array<Sentence>;
   /** 拒绝原因 */
   reject_reason?: string;
+  /** 通过原因 */
+  accept_reason?: string;
+  /** 评价 */
+  evaluation?: string;
 }
 
 export interface WrongWord {
@@ -492,4 +496,21 @@ export interface GetArticleCreationTenantCostResponse {
   assistant_usage_count?: string;
   /** ai助手总花费 */
   assistant_spend?: number;
+}
+
+export interface GetSubTopicAiResultRequest {
+  base_request?: base.BaseRequest;
+  sub_topic_code?: string;
+  product_name?: string;
+  selling_points?: Array<string>;
+  user_needs?: string;
+  user_pain_points?: string;
+  user_scene?: string;
+  scene_description?: string;
+  full_content?: string;
+}
+
+export interface GetSubTopicAiResultResponse {
+  base_resp?: base.BaseResponse;
+  content_moderation?: ArticleContentModeration;
 }

@@ -3175,6 +3175,8 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     $core.Iterable<Sentence>? goodSentence,
     $core.Iterable<Sentence>? badSentence,
     $core.String? rejectReason,
+    $core.String? acceptReason,
+    $core.String? evaluation,
   }) {
     final $result = create();
     if (forbidden != null) {
@@ -3195,6 +3197,12 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     if (rejectReason != null) {
       $result.rejectReason = rejectReason;
     }
+    if (acceptReason != null) {
+      $result.acceptReason = acceptReason;
+    }
+    if (evaluation != null) {
+      $result.evaluation = evaluation;
+    }
     return $result;
   }
   ArticleContentModeration._() : super();
@@ -3208,6 +3216,8 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     ..pc<Sentence>(4, _omitFieldNames ? '' : 'goodSentence', $pb.PbFieldType.PM, subBuilder: Sentence.create)
     ..pc<Sentence>(5, _omitFieldNames ? '' : 'badSentence', $pb.PbFieldType.PM, subBuilder: Sentence.create)
     ..aOS(6, _omitFieldNames ? '' : 'rejectReason')
+    ..aOS(7, _omitFieldNames ? '' : 'acceptReason')
+    ..aOS(8, _omitFieldNames ? '' : 'evaluation')
     ..hasRequiredFields = false
   ;
 
@@ -3255,6 +3265,24 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
   $core.bool hasRejectReason() => $_has(5);
   @$pb.TagNumber(6)
   void clearRejectReason() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get acceptReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set acceptReason($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAcceptReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAcceptReason() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get evaluation => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set evaluation($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasEvaluation() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvaluation() => clearField(8);
 }
 
 class WrongWord extends $pb.GeneratedMessage {
@@ -5911,6 +5939,232 @@ class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(100);
   @$pb.TagNumber(100)
   $0.BaseResponse ensureBaseResp() => $_ensure(9);
+}
+
+class GetSubTopicAiResultRequest extends $pb.GeneratedMessage {
+  factory GetSubTopicAiResultRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? subTopicCode,
+    $core.String? productName,
+    $core.Iterable<$core.String>? sellingPoints,
+    $core.String? userNeeds,
+    $core.String? userPainPoints,
+    $core.String? userScene,
+    $core.String? sceneDescription,
+    $core.String? fullContent,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (subTopicCode != null) {
+      $result.subTopicCode = subTopicCode;
+    }
+    if (productName != null) {
+      $result.productName = productName;
+    }
+    if (sellingPoints != null) {
+      $result.sellingPoints.addAll(sellingPoints);
+    }
+    if (userNeeds != null) {
+      $result.userNeeds = userNeeds;
+    }
+    if (userPainPoints != null) {
+      $result.userPainPoints = userPainPoints;
+    }
+    if (userScene != null) {
+      $result.userScene = userScene;
+    }
+    if (sceneDescription != null) {
+      $result.sceneDescription = sceneDescription;
+    }
+    if (fullContent != null) {
+      $result.fullContent = fullContent;
+    }
+    return $result;
+  }
+  GetSubTopicAiResultRequest._() : super();
+  factory GetSubTopicAiResultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSubTopicAiResultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubTopicAiResultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'subTopicCode')
+    ..aOS(3, _omitFieldNames ? '' : 'productName')
+    ..pPS(4, _omitFieldNames ? '' : 'sellingPoints')
+    ..aOS(5, _omitFieldNames ? '' : 'userNeeds')
+    ..aOS(6, _omitFieldNames ? '' : 'userPainPoints')
+    ..aOS(7, _omitFieldNames ? '' : 'userScene')
+    ..aOS(8, _omitFieldNames ? '' : 'sceneDescription')
+    ..aOS(9, _omitFieldNames ? '' : 'fullContent')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSubTopicAiResultRequest clone() => GetSubTopicAiResultRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSubTopicAiResultRequest copyWith(void Function(GetSubTopicAiResultRequest) updates) => super.copyWith((message) => updates(message as GetSubTopicAiResultRequest)) as GetSubTopicAiResultRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSubTopicAiResultRequest create() => GetSubTopicAiResultRequest._();
+  GetSubTopicAiResultRequest createEmptyInstance() => create();
+  static $pb.PbList<GetSubTopicAiResultRequest> createRepeated() => $pb.PbList<GetSubTopicAiResultRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetSubTopicAiResultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSubTopicAiResultRequest>(create);
+  static GetSubTopicAiResultRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get subTopicCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set subTopicCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSubTopicCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSubTopicCode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get productName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set productName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasProductName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProductName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get sellingPoints => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get userNeeds => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set userNeeds($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUserNeeds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUserNeeds() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get userPainPoints => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set userPainPoints($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUserPainPoints() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUserPainPoints() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get userScene => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set userScene($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUserScene() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUserScene() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sceneDescription => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sceneDescription($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSceneDescription() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSceneDescription() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get fullContent => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set fullContent($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasFullContent() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFullContent() => clearField(9);
+}
+
+class GetSubTopicAiResultResponse extends $pb.GeneratedMessage {
+  factory GetSubTopicAiResultResponse({
+    $0.BaseResponse? baseResp,
+    ArticleContentModeration? contentModeration,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (contentModeration != null) {
+      $result.contentModeration = contentModeration;
+    }
+    return $result;
+  }
+  GetSubTopicAiResultResponse._() : super();
+  factory GetSubTopicAiResultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSubTopicAiResultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubTopicAiResultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<ArticleContentModeration>(2, _omitFieldNames ? '' : 'contentModeration', subBuilder: ArticleContentModeration.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSubTopicAiResultResponse clone() => GetSubTopicAiResultResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSubTopicAiResultResponse copyWith(void Function(GetSubTopicAiResultResponse) updates) => super.copyWith((message) => updates(message as GetSubTopicAiResultResponse)) as GetSubTopicAiResultResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSubTopicAiResultResponse create() => GetSubTopicAiResultResponse._();
+  GetSubTopicAiResultResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSubTopicAiResultResponse> createRepeated() => $pb.PbList<GetSubTopicAiResultResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSubTopicAiResultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSubTopicAiResultResponse>(create);
+  static GetSubTopicAiResultResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ArticleContentModeration get contentModeration => $_getN(1);
+  @$pb.TagNumber(2)
+  set contentModeration(ArticleContentModeration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContentModeration() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentModeration() => clearField(2);
+  @$pb.TagNumber(2)
+  ArticleContentModeration ensureContentModeration() => $_ensure(1);
 }
 
 

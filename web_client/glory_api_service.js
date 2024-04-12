@@ -3376,6 +3376,14 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  GetSubTopicAiResult(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/get_sub_topic_ai_result`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   CreateDigitalHuman(request) {
     const uri = `${this.uriPrefix}/api/digital/human/create`;
     const body = JSONbigint.stringify(request);

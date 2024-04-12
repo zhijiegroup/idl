@@ -13159,6 +13159,37 @@ public final class glory_apiGrpc {
     return getGetArticleCreationTenantCostMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> getGetSubTopicAiResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubTopicAiResult",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> getGetSubTopicAiResultMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest, com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> getGetSubTopicAiResultMethod;
+    if ((getGetSubTopicAiResultMethod = glory_apiGrpc.getGetSubTopicAiResultMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetSubTopicAiResultMethod = glory_apiGrpc.getGetSubTopicAiResultMethod) == null) {
+          glory_apiGrpc.getGetSubTopicAiResultMethod = getGetSubTopicAiResultMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest, com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSubTopicAiResult"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetSubTopicAiResult"))
+              .build();
+        }
+      }
+    }
+    return getGetSubTopicAiResultMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest,
       com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> getCreateDigitalHumanMethod;
 
@@ -16654,6 +16685,13 @@ public final class glory_apiGrpc {
     default void getArticleCreationTenantCost(com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetArticleCreationTenantCostMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getSubTopicAiResult(com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSubTopicAiResultMethod(), responseObserver);
     }
 
     /**
@@ -20495,6 +20533,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void getSubTopicAiResult(com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubTopicAiResultMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -23898,6 +23944,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostResponse getArticleCreationTenantCost(com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetArticleCreationTenantCostMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse getSubTopicAiResult(com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubTopicAiResultMethod(), getCallOptions(), request);
     }
 
     /**
@@ -27728,6 +27781,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> getSubTopicAiResult(
+        com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubTopicAiResultMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -28185,9 +28246,10 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 421;
   private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 422;
   private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 423;
-  private static final int METHODID_CREATE_DIGITAL_HUMAN = 424;
-  private static final int METHODID_QUERY_DIGITAL_HUMAN = 425;
-  private static final int METHODID_LIST_DIGITAL_HUMAN = 426;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 424;
+  private static final int METHODID_CREATE_DIGITAL_HUMAN = 425;
+  private static final int METHODID_QUERY_DIGITAL_HUMAN = 426;
+  private static final int METHODID_LIST_DIGITAL_HUMAN = 427;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -29901,6 +29963,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_ARTICLE_CREATION_TENANT_COST:
           serviceImpl.getArticleCreationTenantCost((com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostResponse>) responseObserver);
+          break;
+        case METHODID_GET_SUB_TOPIC_AI_RESULT:
+          serviceImpl.getSubTopicAiResult((com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>) responseObserver);
           break;
         case METHODID_CREATE_DIGITAL_HUMAN:
           serviceImpl.createDigitalHuman((com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest) request,
@@ -32901,6 +32967,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenantCostResponse>(
                 service, METHODID_GET_ARTICLE_CREATION_TENANT_COST)))
         .addMethod(
+          getGetSubTopicAiResultMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>(
+                service, METHODID_GET_SUB_TOPIC_AI_RESULT)))
+        .addMethod(
           getCreateDigitalHumanMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -33393,6 +33466,7 @@ public final class glory_apiGrpc {
               .addMethod(getListArticleCreationTenantMethod())
               .addMethod(getListArticleCreationTenantCostMethod())
               .addMethod(getGetArticleCreationTenantCostMethod())
+              .addMethod(getGetSubTopicAiResultMethod())
               .addMethod(getCreateDigitalHumanMethod())
               .addMethod(getQueryDigitalHumanMethod())
               .addMethod(getListDigitalHumanMethod())

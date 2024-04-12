@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
     goodSentence = java.util.Collections.emptyList();
     badSentence = java.util.Collections.emptyList();
     rejectReason = "";
+    acceptReason = "";
+    evaluation = "";
   }
 
   @java.lang.Override
@@ -104,6 +106,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             rejectReason = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            acceptReason = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluation = s;
             break;
           }
           default: {
@@ -481,6 +495,98 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ACCEPT_REASON_FIELD_NUMBER = 7;
+  private volatile java.lang.Object acceptReason ;
+  /**
+   * <pre>
+   * 通过原因
+   * </pre>
+   *
+   * <code>string accept_reason = 7;</code>
+   * @return The acceptReason.
+   */
+  @java.lang.Override
+  public java.lang.String getAcceptReason() {
+    java.lang.Object ref = acceptReason ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      acceptReason = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 通过原因
+   * </pre>
+   *
+   * <code>string accept_reason = 7;</code>
+   * @return The bytes for acceptReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAcceptReasonBytes() {
+    java.lang.Object ref = acceptReason ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      acceptReason = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVALUATION_FIELD_NUMBER = 8;
+  private volatile java.lang.Object evaluation ;
+  /**
+   * <pre>
+   * 评价
+   * </pre>
+   *
+   * <code>string evaluation = 8;</code>
+   * @return The evaluation.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluation() {
+    java.lang.Object ref = evaluation ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluation = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 评价
+   * </pre>
+   *
+   * <code>string evaluation = 8;</code>
+   * @return The bytes for evaluation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluationBytes() {
+    java.lang.Object ref = evaluation ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluation = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -512,6 +618,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRejectReasonBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rejectReason );
+    }
+    if (!getAcceptReasonBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, acceptReason );
+    }
+    if (!getEvaluationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, evaluation );
     }
     unknownFields.writeTo(output);
   }
@@ -553,6 +665,12 @@ private static final long serialVersionUID = 0L;
     if (!getRejectReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rejectReason );
     }
+    if (!getAcceptReasonBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, acceptReason );
+    }
+    if (!getEvaluationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, evaluation );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -580,6 +698,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBadSentenceList())) return false;
     if (!getRejectReason()
         .equals(other.getRejectReason())) return false;
+    if (!getAcceptReason()
+        .equals(other.getAcceptReason())) return false;
+    if (!getEvaluation()
+        .equals(other.getEvaluation())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -613,6 +735,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + REJECT_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getRejectReason().hashCode();
+    hash = (37 * hash) + ACCEPT_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getAcceptReason().hashCode();
+    hash = (37 * hash) + EVALUATION_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -773,6 +899,10 @@ private static final long serialVersionUID = 0L;
       }
       rejectReason = "";
 
+      acceptReason = "";
+
+      evaluation = "";
+
       return this;
     }
 
@@ -838,6 +968,8 @@ private static final long serialVersionUID = 0L;
         result.badSentence = badSentenceBuilder .build();
       }
       result.rejectReason = rejectReason ;
+      result.acceptReason = acceptReason ;
+      result.evaluation = evaluation ;
       onBuilt();
       return result;
     }
@@ -986,6 +1118,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRejectReason().isEmpty()) {
         rejectReason = other.rejectReason ;
+        onChanged();
+      }
+      if (!other.getAcceptReason().isEmpty()) {
+        acceptReason = other.acceptReason ;
+        onChanged();
+      }
+      if (!other.getEvaluation().isEmpty()) {
+        evaluation = other.evaluation ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2338,6 +2478,198 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       rejectReason = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object acceptReason = "";
+    /**
+     * <pre>
+     * 通过原因
+     * </pre>
+     *
+     * <code>string accept_reason = 7;</code>
+     * @return The acceptReason.
+     */
+    public java.lang.String getAcceptReason() {
+      java.lang.Object ref = acceptReason ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        acceptReason = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 通过原因
+     * </pre>
+     *
+     * <code>string accept_reason = 7;</code>
+     * @return The bytes for acceptReason.
+     */
+    public com.google.protobuf.ByteString
+        getAcceptReasonBytes() {
+      java.lang.Object ref = acceptReason ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        acceptReason = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 通过原因
+     * </pre>
+     *
+     * <code>string accept_reason = 7;</code>
+     * @param value The acceptReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceptReason(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      acceptReason = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 通过原因
+     * </pre>
+     *
+     * <code>string accept_reason = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAcceptReason() {
+      
+      acceptReason = getDefaultInstance().getAcceptReason();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 通过原因
+     * </pre>
+     *
+     * <code>string accept_reason = 7;</code>
+     * @param value The bytes for acceptReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceptReasonBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      acceptReason = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluation = "";
+    /**
+     * <pre>
+     * 评价
+     * </pre>
+     *
+     * <code>string evaluation = 8;</code>
+     * @return The evaluation.
+     */
+    public java.lang.String getEvaluation() {
+      java.lang.Object ref = evaluation ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluation = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 评价
+     * </pre>
+     *
+     * <code>string evaluation = 8;</code>
+     * @return The bytes for evaluation.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluationBytes() {
+      java.lang.Object ref = evaluation ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluation = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 评价
+     * </pre>
+     *
+     * <code>string evaluation = 8;</code>
+     * @param value The evaluation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluation(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluation = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 评价
+     * </pre>
+     *
+     * <code>string evaluation = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluation() {
+      
+      evaluation = getDefaultInstance().getEvaluation();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 评价
+     * </pre>
+     *
+     * <code>string evaluation = 8;</code>
+     * @param value The bytes for evaluation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluation = value;
       onChanged();
       return this;
     }

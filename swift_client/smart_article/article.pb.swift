@@ -995,6 +995,12 @@ struct GloryApi_ArticleContentModeration {
   /// 拒绝原因
   var rejectReason: String = String()
 
+  /// 通过原因
+  var acceptReason: String = String()
+
+  /// 评价
+  var evaluation: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1877,6 +1883,74 @@ struct GloryApi_GetArticleCreationTenantCostResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_GetSubTopicAiResultRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var subTopicCode: String = String()
+
+  var productName: String = String()
+
+  var sellingPoints: [String] = []
+
+  var userNeeds: String = String()
+
+  var userPainPoints: String = String()
+
+  var userScene: String = String()
+
+  var sceneDescription: String = String()
+
+  var fullContent: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetSubTopicAiResultResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var contentModeration: GloryApi_ArticleContentModeration {
+    get {return _contentModeration ?? GloryApi_ArticleContentModeration()}
+    set {_contentModeration = newValue}
+  }
+  /// Returns true if `contentModeration` has been explicitly set.
+  var hasContentModeration: Bool {return self._contentModeration != nil}
+  /// Clears the value of `contentModeration`. Subsequent reads from it will return its default value.
+  mutating func clearContentModeration() {self._contentModeration = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _contentModeration: GloryApi_ArticleContentModeration? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_ArticleCreation: @unchecked Sendable {}
 extension GloryApi_ArticleCreationDraft: @unchecked Sendable {}
@@ -1943,6 +2017,8 @@ extension GloryApi_ArticleCreationTenantCost: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantCostResponse: @unchecked Sendable {}
 extension GloryApi_GetArticleCreationTenantCostRequest: @unchecked Sendable {}
 extension GloryApi_GetArticleCreationTenantCostResponse: @unchecked Sendable {}
+extension GloryApi_GetSubTopicAiResultRequest: @unchecked Sendable {}
+extension GloryApi_GetSubTopicAiResultResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -3768,6 +3844,8 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     4: .standard(proto: "good_sentence"),
     5: .standard(proto: "bad_sentence"),
     6: .standard(proto: "reject_reason"),
+    7: .standard(proto: "accept_reason"),
+    8: .same(proto: "evaluation"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3782,6 +3860,8 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.goodSentence) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.badSentence) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.rejectReason) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.acceptReason) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.evaluation) }()
       default: break
       }
     }
@@ -3806,6 +3886,12 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     if !self.rejectReason.isEmpty {
       try visitor.visitSingularStringField(value: self.rejectReason, fieldNumber: 6)
     }
+    if !self.acceptReason.isEmpty {
+      try visitor.visitSingularStringField(value: self.acceptReason, fieldNumber: 7)
+    }
+    if !self.evaluation.isEmpty {
+      try visitor.visitSingularStringField(value: self.evaluation, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3816,6 +3902,8 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     if lhs.goodSentence != rhs.goodSentence {return false}
     if lhs.badSentence != rhs.badSentence {return false}
     if lhs.rejectReason != rhs.rejectReason {return false}
+    if lhs.acceptReason != rhs.acceptReason {return false}
+    if lhs.evaluation != rhs.evaluation {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5424,6 +5512,132 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
     if lhs.simpleSpend != rhs.simpleSpend {return false}
     if lhs.assistantUsageCount != rhs.assistantUsageCount {return false}
     if lhs.assistantSpend != rhs.assistantSpend {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSubTopicAiResultRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSubTopicAiResultRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "sub_topic_code"),
+    3: .standard(proto: "product_name"),
+    4: .standard(proto: "selling_points"),
+    5: .standard(proto: "user_needs"),
+    6: .standard(proto: "user_pain_points"),
+    7: .standard(proto: "user_scene"),
+    8: .standard(proto: "scene_description"),
+    9: .standard(proto: "full_content"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.subTopicCode) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.sellingPoints) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.userNeeds) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.userPainPoints) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.userScene) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.sceneDescription) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.fullContent) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.subTopicCode.isEmpty {
+      try visitor.visitSingularStringField(value: self.subTopicCode, fieldNumber: 2)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 3)
+    }
+    if !self.sellingPoints.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.sellingPoints, fieldNumber: 4)
+    }
+    if !self.userNeeds.isEmpty {
+      try visitor.visitSingularStringField(value: self.userNeeds, fieldNumber: 5)
+    }
+    if !self.userPainPoints.isEmpty {
+      try visitor.visitSingularStringField(value: self.userPainPoints, fieldNumber: 6)
+    }
+    if !self.userScene.isEmpty {
+      try visitor.visitSingularStringField(value: self.userScene, fieldNumber: 7)
+    }
+    if !self.sceneDescription.isEmpty {
+      try visitor.visitSingularStringField(value: self.sceneDescription, fieldNumber: 8)
+    }
+    if !self.fullContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.fullContent, fieldNumber: 9)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSubTopicAiResultRequest, rhs: GloryApi_GetSubTopicAiResultRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.subTopicCode != rhs.subTopicCode {return false}
+    if lhs.productName != rhs.productName {return false}
+    if lhs.sellingPoints != rhs.sellingPoints {return false}
+    if lhs.userNeeds != rhs.userNeeds {return false}
+    if lhs.userPainPoints != rhs.userPainPoints {return false}
+    if lhs.userScene != rhs.userScene {return false}
+    if lhs.sceneDescription != rhs.sceneDescription {return false}
+    if lhs.fullContent != rhs.fullContent {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetSubTopicAiResultResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetSubTopicAiResultResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "content_moderation"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._contentModeration) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._contentModeration {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetSubTopicAiResultResponse, rhs: GloryApi_GetSubTopicAiResultResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._contentModeration != rhs._contentModeration {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

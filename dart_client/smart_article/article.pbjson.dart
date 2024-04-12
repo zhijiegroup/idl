@@ -628,6 +628,8 @@ const ArticleContentModeration$json = {
     {'1': 'good_sentence', '3': 4, '4': 3, '5': 11, '6': '.glory_api.Sentence', '10': 'goodSentence'},
     {'1': 'bad_sentence', '3': 5, '4': 3, '5': 11, '6': '.glory_api.Sentence', '10': 'badSentence'},
     {'1': 'reject_reason', '3': 6, '4': 1, '5': 9, '10': 'rejectReason'},
+    {'1': 'accept_reason', '3': 7, '4': 1, '5': 9, '10': 'acceptReason'},
+    {'1': 'evaluation', '3': 8, '4': 1, '5': 9, '10': 'evaluation'},
   ],
 };
 
@@ -638,7 +640,8 @@ final $typed_data.Uint8List articleContentModerationDescriptor = $convert.base64
     'eV9hcGkuV3JvbmdXb3JkUgl3cm9uZ1dvcmQSOAoNZ29vZF9zZW50ZW5jZRgEIAMoCzITLmdsb3'
     'J5X2FwaS5TZW50ZW5jZVIMZ29vZFNlbnRlbmNlEjYKDGJhZF9zZW50ZW5jZRgFIAMoCzITLmds'
     'b3J5X2FwaS5TZW50ZW5jZVILYmFkU2VudGVuY2USIwoNcmVqZWN0X3JlYXNvbhgGIAEoCVIMcm'
-    'VqZWN0UmVhc29u');
+    'VqZWN0UmVhc29uEiMKDWFjY2VwdF9yZWFzb24YByABKAlSDGFjY2VwdFJlYXNvbhIeCgpldmFs'
+    'dWF0aW9uGAggASgJUgpldmFsdWF0aW9u');
 
 @$core.Deprecated('Use wrongWordDescriptor instead')
 const WrongWord$json = {
@@ -1159,4 +1162,45 @@ final $typed_data.Uint8List getArticleCreationTenantCostResponseDescriptor = $co
     'aW1wbGVfc3BlbmQYByABKAFSC3NpbXBsZVNwZW5kEjIKFWFzc2lzdGFudF91c2FnZV9jb3VudB'
     'gIIAEoA1ITYXNzaXN0YW50VXNhZ2VDb3VudBInCg9hc3Npc3RhbnRfc3BlbmQYCSABKAFSDmFz'
     'c2lzdGFudFNwZW5k');
+
+@$core.Deprecated('Use getSubTopicAiResultRequestDescriptor instead')
+const GetSubTopicAiResultRequest$json = {
+  '1': 'GetSubTopicAiResultRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'sub_topic_code', '3': 2, '4': 1, '5': 9, '10': 'subTopicCode'},
+    {'1': 'product_name', '3': 3, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'selling_points', '3': 4, '4': 3, '5': 9, '10': 'sellingPoints'},
+    {'1': 'user_needs', '3': 5, '4': 1, '5': 9, '10': 'userNeeds'},
+    {'1': 'user_pain_points', '3': 6, '4': 1, '5': 9, '10': 'userPainPoints'},
+    {'1': 'user_scene', '3': 7, '4': 1, '5': 9, '10': 'userScene'},
+    {'1': 'scene_description', '3': 8, '4': 1, '5': 9, '10': 'sceneDescription'},
+    {'1': 'full_content', '3': 9, '4': 1, '5': 9, '10': 'fullContent'},
+  ],
+};
+
+/// Descriptor for `GetSubTopicAiResultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSubTopicAiResultRequestDescriptor = $convert.base64Decode(
+    'ChpHZXRTdWJUb3BpY0FpUmVzdWx0UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIkCg5zdWJfdG9waWNfY29kZRgCIAEoCVIMc3Vi'
+    'VG9waWNDb2RlEiEKDHByb2R1Y3RfbmFtZRgDIAEoCVILcHJvZHVjdE5hbWUSJQoOc2VsbGluZ1'
+    '9wb2ludHMYBCADKAlSDXNlbGxpbmdQb2ludHMSHQoKdXNlcl9uZWVkcxgFIAEoCVIJdXNlck5l'
+    'ZWRzEigKEHVzZXJfcGFpbl9wb2ludHMYBiABKAlSDnVzZXJQYWluUG9pbnRzEh0KCnVzZXJfc2'
+    'NlbmUYByABKAlSCXVzZXJTY2VuZRIrChFzY2VuZV9kZXNjcmlwdGlvbhgIIAEoCVIQc2NlbmVE'
+    'ZXNjcmlwdGlvbhIhCgxmdWxsX2NvbnRlbnQYCSABKAlSC2Z1bGxDb250ZW50');
+
+@$core.Deprecated('Use getSubTopicAiResultResponseDescriptor instead')
+const GetSubTopicAiResultResponse$json = {
+  '1': 'GetSubTopicAiResultResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'content_moderation', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ArticleContentModeration', '10': 'contentModeration'},
+  ],
+};
+
+/// Descriptor for `GetSubTopicAiResultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSubTopicAiResultResponseDescriptor = $convert.base64Decode(
+    'ChtHZXRTdWJUb3BpY0FpUmVzdWx0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
+    '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwElIKEmNvbnRlbnRfbW9kZXJhdGlvbhgCIAEoCzIjLmds'
+    'b3J5X2FwaS5BcnRpY2xlQ29udGVudE1vZGVyYXRpb25SEWNvbnRlbnRNb2RlcmF0aW9u');
 

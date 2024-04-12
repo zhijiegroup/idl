@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\370\255\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\222\257\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1424,18 +1424,22 @@ public final class GloryApiService {
       "lory_api.GetArticleCreationTenantCostReq" +
       "uest\032/.glory_api.GetArticleCreationTenan" +
       "tCostResponse\":\312\301\0306/api/article_creation" +
-      "/get_article_creation_tenant_cost\022\200\001\n\022Cr" +
-      "eateDigitalHuman\022$.glory_api.CreateDigit" +
-      "alHumanRequest\032%.glory_api.CreateDigital" +
-      "HumanResponse\"\035\322\301\030\031/api/digital/human/cr" +
-      "eate\022|\n\021QueryDigitalHuman\022#.glory_api.Qu" +
-      "eryDigitalHumanRequest\032$.glory_api.Query" +
-      "DigitalHumanResponse\"\034\322\301\030\030/api/digital/h" +
-      "uman/query\022x\n\020ListDigitalHuman\022\".glory_a" +
-      "pi.ListDigitalHumanRequest\032#.glory_api.L" +
-      "istDigitalHumanResponse\"\033\322\301\030\027/api/digita" +
-      "l/human/listB\036\n\032com.zhijiejiaoyu.glory_a" +
-      "piP\001b\006proto3"
+      "/get_article_creation_tenant_cost\022\227\001\n\023Ge" +
+      "tSubTopicAiResult\022%.glory_api.GetSubTopi" +
+      "cAiResultRequest\032&.glory_api.GetSubTopic" +
+      "AiResultResponse\"1\322\301\030-/api/article_creat" +
+      "ion/get_sub_topic_ai_result\022\200\001\n\022CreateDi" +
+      "gitalHuman\022$.glory_api.CreateDigitalHuma" +
+      "nRequest\032%.glory_api.CreateDigitalHumanR" +
+      "esponse\"\035\322\301\030\031/api/digital/human/create\022|" +
+      "\n\021QueryDigitalHuman\022#.glory_api.QueryDig" +
+      "italHumanRequest\032$.glory_api.QueryDigita" +
+      "lHumanResponse\"\034\322\301\030\030/api/digital/human/q" +
+      "uery\022x\n\020ListDigitalHuman\022\".glory_api.Lis" +
+      "tDigitalHumanRequest\032#.glory_api.ListDig" +
+      "italHumanResponse\"\033\322\301\030\027/api/digital/huma" +
+      "n/listB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
