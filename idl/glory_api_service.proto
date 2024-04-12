@@ -1624,6 +1624,9 @@ service glory_api {
   rpc GetArticleCreationTenantCost(GetArticleCreationTenantCostRequest) returns (GetArticleCreationTenantCostResponse) {
     option (api.get) = '/api/article_creation/get_article_creation_tenant_cost';
   }
+  rpc GetSubTopicAiResult(GetSubTopicAiResultRequest) returns (GetSubTopicAiResultResponse) {
+    option (api.post) = '/api/article_creation/get_sub_topic_ai_result';
+  }
 
   // 数字人合成视频接口
   rpc CreateDigitalHuman(CreateDigitalHumanRequest) returns (CreateDigitalHumanResponse) {
