@@ -254,6 +254,8 @@ message ArticleContentModeration {
     repeated Sentence good_sentence = 4; // 好句
     repeated Sentence bad_sentence = 5; // 坏句
     string reject_reason = 6; // 拒绝原因
+    string accept_reason = 7; // 通过原因
+    string evaluation = 8; // 评价
 
 }
 message WrongWord {
@@ -459,4 +461,21 @@ message GetArticleCreationTenantCostResponse {
     double simple_spend = 7; // 简单评价总花费
     int64 assistant_usage_count = 8; 
     double assistant_spend = 9; // ai助手总花费
+}
+
+message GetSubTopicAiResultRequest {
+    base.BaseRequest base_request = 1;
+    string sub_topic_code = 2;
+    string product_name = 3;
+    repeated string selling_points = 4;
+    string user_needs = 5;
+    string user_pain_points = 6;
+    string user_scene = 7;
+    string scene_description = 8;
+    string full_content = 9;
+}
+
+message GetSubTopicAiResultResponse {
+    base.BaseResponse base_resp = 1;
+    ArticleContentModeration content_moderation = 2;
 }
