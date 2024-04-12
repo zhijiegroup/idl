@@ -183,6 +183,7 @@ const ListTenantUserRequest$json = {
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
     {'1': 'is_admin', '3': 5, '4': 1, '5': 8, '10': 'isAdmin'},
     {'1': 'is_short_checker', '3': 6, '4': 1, '5': 8, '10': 'isShortChecker'},
+    {'1': 'language', '3': 7, '4': 1, '5': 9, '10': 'language'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -192,9 +193,9 @@ final $typed_data.Uint8List listTenantUserRequestDescriptor = $convert.base64Dec
     'ChVMaXN0VGVuYW50VXNlclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYX'
     'NlUmVxdWVzdFILYmFzZVJlcXVlc3QSGwoJdGVuYW50X2lkGAIgASgDUgh0ZW5hbnRJZBIXCgdk'
     'ZXB0X2lkGAMgASgDUgZkZXB0SWQSEgoEbmFtZRgEIAEoCVIEbmFtZRIZCghpc19hZG1pbhgFIA'
-    'EoCFIHaXNBZG1pbhIoChBpc19zaG9ydF9jaGVja2VyGAYgASgIUg5pc1Nob3J0Q2hlY2tlchI3'
-    'CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg'
-    '==');
+    'EoCFIHaXNBZG1pbhIoChBpc19zaG9ydF9jaGVja2VyGAYgASgIUg5pc1Nob3J0Q2hlY2tlchIa'
+    'CghsYW5ndWFnZRgHIAEoCVIIbGFuZ3VhZ2USNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUG'
+    'FnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
 
 @$core.Deprecated('Use listTenantUserResponseDescriptor instead')
 const ListTenantUserResponse$json = {

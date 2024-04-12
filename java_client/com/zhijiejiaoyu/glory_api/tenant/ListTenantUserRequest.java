@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListTenantUserRequest() {
     name = "";
+    language = "";
   }
 
   @java.lang.Override
@@ -86,6 +87,12 @@ private static final long serialVersionUID = 0L;
           case 48: {
 
             isShortChecker = input.readBool();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            language = s;
             break;
           }
           case 802: {
@@ -241,6 +248,44 @@ private static final long serialVersionUID = 0L;
     return isShortChecker ;
   }
 
+  public static final int LANGUAGE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object language ;
+  /**
+   * <code>string language = 7;</code>
+   * @return The language.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguage() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      language = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string language = 7;</code>
+   * @return The bytes for language.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLanguageBytes() {
+    java.lang.Object ref = language ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      language = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -299,6 +344,9 @@ private static final long serialVersionUID = 0L;
     if (isShortChecker != false) {
       output.writeBool(6, isShortChecker );
     }
+    if (!getLanguageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, language );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -334,6 +382,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isShortChecker );
     }
+    if (!getLanguageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, language );
+    }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(100, getPagination());
@@ -368,6 +419,8 @@ private static final long serialVersionUID = 0L;
         != other.getIsAdmin()) return false;
     if (getIsShortChecker()
         != other.getIsShortChecker()) return false;
+    if (!getLanguage()
+        .equals(other.getLanguage())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -402,6 +455,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IS_SHORT_CHECKER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsShortChecker());
+    hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguage().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -555,6 +610,8 @@ private static final long serialVersionUID = 0L;
 
       isShortChecker = false;
 
+      language = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -597,6 +654,7 @@ private static final long serialVersionUID = 0L;
       result.name = name ;
       result.isAdmin = isAdmin ;
       result.isShortChecker = isShortChecker ;
+      result.language = language ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -668,6 +726,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsShortChecker() != false) {
         setIsShortChecker(other.getIsShortChecker());
+      }
+      if (!other.getLanguage().isEmpty()) {
+        language = other.language ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1016,6 +1078,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsShortChecker() {
       
       isShortChecker = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object language = "";
+    /**
+     * <code>string language = 7;</code>
+     * @return The language.
+     */
+    public java.lang.String getLanguage() {
+      java.lang.Object ref = language ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        language = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string language = 7;</code>
+     * @return The bytes for language.
+     */
+    public com.google.protobuf.ByteString
+        getLanguageBytes() {
+      java.lang.Object ref = language ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        language = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string language = 7;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      language = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string language = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguage() {
+      
+      language = getDefaultInstance().getLanguage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string language = 7;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      language = value;
       onChanged();
       return this;
     }

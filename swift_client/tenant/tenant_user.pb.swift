@@ -293,6 +293,8 @@ struct GloryApi_ListTenantUserRequest {
 
   var isShortChecker: Bool = false
 
+  var language: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -1010,6 +1012,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     4: .same(proto: "name"),
     5: .standard(proto: "is_admin"),
     6: .standard(proto: "is_short_checker"),
+    7: .same(proto: "language"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1025,6 +1028,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 5: try { try decoder.decodeSingularBoolField(value: &self.isAdmin) }()
       case 6: try { try decoder.decodeSingularBoolField(value: &self.isShortChecker) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.language) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1054,6 +1058,9 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.isShortChecker != false {
       try visitor.visitSingularBoolField(value: self.isShortChecker, fieldNumber: 6)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 7)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1067,6 +1074,7 @@ extension GloryApi_ListTenantUserRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.name != rhs.name {return false}
     if lhs.isAdmin != rhs.isAdmin {return false}
     if lhs.isShortChecker != rhs.isShortChecker {return false}
+    if lhs.language != rhs.language {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

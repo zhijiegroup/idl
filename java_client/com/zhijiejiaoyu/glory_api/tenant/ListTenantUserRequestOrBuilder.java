@@ -59,6 +59,18 @@ public interface ListTenantUserRequestOrBuilder extends
   boolean getIsShortChecker();
 
   /**
+   * <code>string language = 7;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 7;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

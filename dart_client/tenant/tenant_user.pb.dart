@@ -747,6 +747,7 @@ class ListTenantUserRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.bool? isAdmin,
     $core.bool? isShortChecker,
+    $core.String? language,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -768,6 +769,9 @@ class ListTenantUserRequest extends $pb.GeneratedMessage {
     if (isShortChecker != null) {
       $result.isShortChecker = isShortChecker;
     }
+    if (language != null) {
+      $result.language = language;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -784,6 +788,7 @@ class ListTenantUserRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'name')
     ..aOB(5, _omitFieldNames ? '' : 'isAdmin')
     ..aOB(6, _omitFieldNames ? '' : 'isShortChecker')
+    ..aOS(7, _omitFieldNames ? '' : 'language')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -865,16 +870,25 @@ class ListTenantUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearIsShortChecker() => clearField(6);
 
+  @$pb.TagNumber(7)
+  $core.String get language => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set language($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLanguage() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLanguage() => clearField(7);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(6);
+  $1.PaginationRequest get pagination => $_getN(7);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(6);
+  $core.bool hasPagination() => $_has(7);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(6);
+  $1.PaginationRequest ensurePagination() => $_ensure(7);
 }
 
 class ListTenantUserResponse extends $pb.GeneratedMessage {
