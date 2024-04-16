@@ -45,4 +45,16 @@ public interface SaveImageInfoResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.shop.ImageInfoOrBuilder getImageInfoOrBuilder(
       int index);
+
+  /**
+   * <code>string video_main_url = 3;</code>
+   * @return The videoMainUrl.
+   */
+  java.lang.String getVideoMainUrl();
+  /**
+   * <code>string video_main_url = 3;</code>
+   * @return The bytes for videoMainUrl.
+   */
+  com.google.protobuf.ByteString
+      getVideoMainUrlBytes();
 }

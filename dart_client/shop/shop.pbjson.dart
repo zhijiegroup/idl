@@ -729,6 +729,8 @@ const ShopSummary$json = {
     {'1': 'order_total', '3': 5, '4': 1, '5': 3, '10': 'orderTotal'},
     {'1': 'seller_id', '3': 6, '4': 1, '5': 3, '10': 'sellerId'},
     {'1': 'shop_manager_name', '3': 7, '4': 1, '5': 9, '10': 'shopManagerName'},
+    {'1': 'user_name', '3': 8, '4': 1, '5': 9, '10': 'userName'},
+    {'1': 'clas_name', '3': 9, '4': 1, '5': 9, '10': 'clasName'},
   ],
 };
 
@@ -738,14 +740,15 @@ final $typed_data.Uint8List shopSummaryDescriptor = $convert.base64Decode(
     'gCIAEoCVILc2hvcExvZ29VcmwSGwoJc2hvcF9uYW1lGAMgASgJUghzaG9wTmFtZRIfCgtkZWFs'
     'X2Ftb3VudBgEIAEoAVIKZGVhbEFtb3VudBIfCgtvcmRlcl90b3RhbBgFIAEoA1IKb3JkZXJUb3'
     'RhbBIbCglzZWxsZXJfaWQYBiABKANSCHNlbGxlcklkEioKEXNob3BfbWFuYWdlcl9uYW1lGAcg'
-    'ASgJUg9zaG9wTWFuYWdlck5hbWU=');
+    'ASgJUg9zaG9wTWFuYWdlck5hbWUSGwoJdXNlcl9uYW1lGAggASgJUgh1c2VyTmFtZRIbCgljbG'
+    'FzX25hbWUYCSABKAlSCGNsYXNOYW1l');
 
 @$core.Deprecated('Use listShopSummaryRequestDescriptor instead')
 const ListShopSummaryRequest$json = {
   '1': 'ListShopSummaryRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-    {'1': 'shop_name', '3': 2, '4': 1, '5': 9, '10': 'shopName'},
+    {'1': 'shop_name_or_username', '3': 2, '4': 1, '5': 9, '10': 'shopNameOrUsername'},
     {'1': 'shop_type', '3': 3, '4': 1, '5': 9, '10': 'shopType'},
     {'1': 'major_id', '3': 4, '4': 1, '5': 3, '10': 'majorId'},
     {'1': 'clas_id', '3': 5, '4': 1, '5': 3, '10': 'clasId'},
@@ -756,10 +759,10 @@ const ListShopSummaryRequest$json = {
 /// Descriptor for `ListShopSummaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listShopSummaryRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0U2hvcFN1bW1hcnlSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
-    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhsKCXNob3BfbmFtZRgCIAEoCVIIc2hvcE5hbWUSGwoJ'
-    'c2hvcF90eXBlGAMgASgJUghzaG9wVHlwZRIZCghtYWpvcl9pZBgEIAEoA1IHbWFqb3JJZBIXCg'
-    'djbGFzX2lkGAUgASgDUgZjbGFzSWQSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5h'
-    'dGlvblJlcXVlc3RSCnBhZ2luYXRpb24=');
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EjEKFXNob3BfbmFtZV9vcl91c2VybmFtZRgCIAEoCVIS'
+    'c2hvcE5hbWVPclVzZXJuYW1lEhsKCXNob3BfdHlwZRgDIAEoCVIIc2hvcFR5cGUSGQoIbWFqb3'
+    'JfaWQYBCABKANSB21ham9ySWQSFwoHY2xhc19pZBgFIAEoA1IGY2xhc0lkEjcKCnBhZ2luYXRp'
+    'b24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listShopSummaryResponseDescriptor instead')
 const ListShopSummaryResponse$json = {

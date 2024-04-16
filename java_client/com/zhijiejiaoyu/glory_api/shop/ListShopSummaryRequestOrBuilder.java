@@ -23,16 +23,16 @@ public interface ListShopSummaryRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>string shop_name = 2;</code>
-   * @return The shopName.
+   * <code>string shop_name_or_username = 2;</code>
+   * @return The shopNameOrUsername.
    */
-  java.lang.String getShopName();
+  java.lang.String getShopNameOrUsername();
   /**
-   * <code>string shop_name = 2;</code>
-   * @return The bytes for shopName.
+   * <code>string shop_name_or_username = 2;</code>
+   * @return The bytes for shopNameOrUsername.
    */
   com.google.protobuf.ByteString
-      getShopNameBytes();
+      getShopNameOrUsernameBytes();
 
   /**
    * <code>string shop_type = 3;</code>

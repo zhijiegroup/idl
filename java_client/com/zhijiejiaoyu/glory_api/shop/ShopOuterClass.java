@@ -385,25 +385,27 @@ public final class ShopOuterClass {
       "\005 \001(\t\"}\n\033GetShopBusinessDataResponse\022%\n\t" +
       "base_resp\030\001 \001(\0132\022.base.BaseResponse\0227\n\022s" +
       "hop_business_data\030\002 \001(\0132\033.glory_api.Shop" +
-      "BusinessData\"\240\001\n\013ShopSummary\022\017\n\007shop_id\030" +
+      "BusinessData\"\306\001\n\013ShopSummary\022\017\n\007shop_id\030" +
       "\001 \001(\003\022\025\n\rshop_logo_url\030\002 \001(\t\022\021\n\tshop_nam" +
       "e\030\003 \001(\t\022\023\n\013deal_amount\030\004 \001(\001\022\023\n\013order_to" +
       "tal\030\005 \001(\003\022\021\n\tseller_id\030\006 \001(\003\022\031\n\021shop_man" +
-      "ager_name\030\007 \001(\t\"\267\001\n\026ListShopSummaryReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\021\n\tshop_name\030\002 \001(\t\022\021\n\tshop_type\030\003 \001(" +
-      "\t\022\020\n\010major_id\030\004 \001(\003\022\017\n\007clas_id\030\005 \001(\003\022+\n\n" +
-      "pagination\030d \001(\0132\027.base.PaginationReques" +
-      "t\"\231\001\n\027ListShopSummaryResponse\022%\n\tbase_re" +
-      "sp\030\001 \001(\0132\022.base.BaseResponse\022)\n\tshop_lis" +
-      "t\030\002 \003(\0132\026.glory_api.ShopSummary\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponse\"W\n" +
-      "\031ListShopBySellerIDRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tseller_id" +
-      "\030\002 \001(\003\"g\n\032ListShopBySellerIDResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\"\n\ts" +
-      "hop_list\030\002 \003(\0132\017.glory_api.ShopB#\n\037com.z" +
-      "hijiejiaoyu.glory_api.shopP\001b\006proto3"
+      "ager_name\030\007 \001(\t\022\021\n\tuser_name\030\010 \001(\t\022\021\n\tcl" +
+      "as_name\030\t \001(\t\"\303\001\n\026ListShopSummaryRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\035\n\025shop_name_or_username\030\002 \001(\t\022\021\n\tshop" +
+      "_type\030\003 \001(\t\022\020\n\010major_id\030\004 \001(\003\022\017\n\007clas_id" +
+      "\030\005 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagina" +
+      "tionRequest\"\231\001\n\027ListShopSummaryResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022)" +
+      "\n\tshop_list\030\002 \003(\0132\026.glory_api.ShopSummar" +
+      "y\022,\n\npagination\030d \001(\0132\030.base.PaginationR" +
+      "esponse\"W\n\031ListShopBySellerIDRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n" +
+      "\tseller_id\030\002 \001(\003\"g\n\032ListShopBySellerIDRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\"\n\tshop_list\030\002 \003(\0132\017.glory_api.Sho" +
+      "pB#\n\037com.zhijiejiaoyu.glory_api.shopP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -662,13 +664,13 @@ public final class ShopOuterClass {
     internal_static_glory_api_ShopSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ShopSummary_descriptor,
-        new java.lang.String[] { "ShopId", "ShopLogoUrl", "ShopName", "DealAmount", "OrderTotal", "SellerId", "ShopManagerName", });
+        new java.lang.String[] { "ShopId", "ShopLogoUrl", "ShopName", "DealAmount", "OrderTotal", "SellerId", "ShopManagerName", "UserName", "ClasName", });
     internal_static_glory_api_ListShopSummaryRequest_descriptor =
       getDescriptor().getMessageTypes().get(42);
     internal_static_glory_api_ListShopSummaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListShopSummaryRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "ShopName", "ShopType", "MajorId", "ClasId", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "ShopNameOrUsername", "ShopType", "MajorId", "ClasId", "Pagination", });
     internal_static_glory_api_ListShopSummaryResponse_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_ListShopSummaryResponse_fieldAccessorTable = new

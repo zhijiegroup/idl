@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListShopSummaryRequest() {
-    shopName = "";
+    shopNameOrUsername = "";
     shopType = "";
   }
 
@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            shopName = s;
+            shopNameOrUsername = s;
             break;
           }
           case 26: {
@@ -156,38 +156,38 @@ private static final long serialVersionUID = 0L;
     return getBaseRequest();
   }
 
-  public static final int SHOP_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object shopName ;
+  public static final int SHOP_NAME_OR_USERNAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object shopNameOrUsername ;
   /**
-   * <code>string shop_name = 2;</code>
-   * @return The shopName.
+   * <code>string shop_name_or_username = 2;</code>
+   * @return The shopNameOrUsername.
    */
   @java.lang.Override
-  public java.lang.String getShopName() {
-    java.lang.Object ref = shopName ;
+  public java.lang.String getShopNameOrUsername() {
+    java.lang.Object ref = shopNameOrUsername ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      shopName = s;
+      shopNameOrUsername = s;
       return s;
     }
   }
   /**
-   * <code>string shop_name = 2;</code>
-   * @return The bytes for shopName.
+   * <code>string shop_name_or_username = 2;</code>
+   * @return The bytes for shopNameOrUsername.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getShopNameBytes() {
-    java.lang.Object ref = shopName ;
+      getShopNameOrUsernameBytes() {
+    java.lang.Object ref = shopNameOrUsername ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      shopName = b;
+      shopNameOrUsername = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -297,8 +297,8 @@ private static final long serialVersionUID = 0L;
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
-    if (!getShopNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shopName );
+    if (!getShopNameOrUsernameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shopNameOrUsername );
     }
     if (!getShopTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shopType );
@@ -325,8 +325,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseRequest());
     }
-    if (!getShopNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shopName );
+    if (!getShopNameOrUsernameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shopNameOrUsername );
     }
     if (!getShopTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shopType );
@@ -363,8 +363,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseRequest()
           .equals(other.getBaseRequest())) return false;
     }
-    if (!getShopName()
-        .equals(other.getShopName())) return false;
+    if (!getShopNameOrUsername()
+        .equals(other.getShopNameOrUsername())) return false;
     if (!getShopType()
         .equals(other.getShopType())) return false;
     if (getMajorId()
@@ -391,8 +391,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getBaseRequest().hashCode();
     }
-    hash = (37 * hash) + SHOP_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getShopName().hashCode();
+    hash = (37 * hash) + SHOP_NAME_OR_USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getShopNameOrUsername().hashCode();
     hash = (37 * hash) + SHOP_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getShopType().hashCode();
     hash = (37 * hash) + MAJOR_ID_FIELD_NUMBER;
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
         baseRequest = null;
         baseRequestBuilder = null;
       }
-      shopName = "";
+      shopNameOrUsername = "";
 
       shopType = "";
 
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
-      result.shopName = shopName ;
+      result.shopNameOrUsername = shopNameOrUsername ;
       result.shopType = shopType ;
       result.majorId = majorId ;
       result.clasId = clasId ;
@@ -649,8 +649,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseRequest()) {
         mergeBaseRequest(other.getBaseRequest());
       }
-      if (!other.getShopName().isEmpty()) {
-        shopName = other.shopName ;
+      if (!other.getShopNameOrUsername().isEmpty()) {
+        shopNameOrUsername = other.shopNameOrUsername ;
         onChanged();
       }
       if (!other.getShopType().isEmpty()) {
@@ -814,78 +814,78 @@ private static final long serialVersionUID = 0L;
       return baseRequestBuilder ;
     }
 
-    private java.lang.Object shopName = "";
+    private java.lang.Object shopNameOrUsername = "";
     /**
-     * <code>string shop_name = 2;</code>
-     * @return The shopName.
+     * <code>string shop_name_or_username = 2;</code>
+     * @return The shopNameOrUsername.
      */
-    public java.lang.String getShopName() {
-      java.lang.Object ref = shopName ;
+    public java.lang.String getShopNameOrUsername() {
+      java.lang.Object ref = shopNameOrUsername ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        shopName = s;
+        shopNameOrUsername = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string shop_name = 2;</code>
-     * @return The bytes for shopName.
+     * <code>string shop_name_or_username = 2;</code>
+     * @return The bytes for shopNameOrUsername.
      */
     public com.google.protobuf.ByteString
-        getShopNameBytes() {
-      java.lang.Object ref = shopName ;
+        getShopNameOrUsernameBytes() {
+      java.lang.Object ref = shopNameOrUsername ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        shopName = b;
+        shopNameOrUsername = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string shop_name = 2;</code>
-     * @param value The shopName to set.
+     * <code>string shop_name_or_username = 2;</code>
+     * @param value The shopNameOrUsername to set.
      * @return This builder for chaining.
      */
-    public Builder setShopName(
+    public Builder setShopNameOrUsername(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      shopName = value;
+      shopNameOrUsername = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string shop_name = 2;</code>
+     * <code>string shop_name_or_username = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearShopName() {
+    public Builder clearShopNameOrUsername() {
       
-      shopName = getDefaultInstance().getShopName();
+      shopNameOrUsername = getDefaultInstance().getShopNameOrUsername();
       onChanged();
       return this;
     }
     /**
-     * <code>string shop_name = 2;</code>
-     * @param value The bytes for shopName to set.
+     * <code>string shop_name_or_username = 2;</code>
+     * @param value The bytes for shopNameOrUsername to set.
      * @return This builder for chaining.
      */
-    public Builder setShopNameBytes(
+    public Builder setShopNameOrUsernameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      shopName = value;
+      shopNameOrUsername = value;
       onChanged();
       return this;
     }

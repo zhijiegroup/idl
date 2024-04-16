@@ -339,11 +339,13 @@ export interface ShopSummary {
   order_total?: string;
   seller_id?: string;
   shop_manager_name?: string;
+  user_name?: string;
+  clas_name?: string;
 }
 
 export interface ListShopSummaryRequest {
   base_request?: base.BaseRequest;
-  shop_name?: string;
+  shop_name_or_username?: string;
   shop_type?: string;
   major_id?: string;
   clas_id?: string;

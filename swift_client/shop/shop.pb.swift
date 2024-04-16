@@ -1280,6 +1280,10 @@ struct GloryApi_ShopSummary {
 
   var shopManagerName: String = String()
 
+  var userName: String = String()
+
+  var clasName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1299,7 +1303,7 @@ struct GloryApi_ListShopSummaryRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var shopName: String = String()
+  var shopNameOrUsername: String = String()
 
   var shopType: String = String()
 
@@ -3679,6 +3683,8 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     5: .standard(proto: "order_total"),
     6: .standard(proto: "seller_id"),
     7: .standard(proto: "shop_manager_name"),
+    8: .standard(proto: "user_name"),
+    9: .standard(proto: "clas_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3694,6 +3700,8 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.orderTotal) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.sellerID) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.shopManagerName) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.userName) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.clasName) }()
       default: break
       }
     }
@@ -3721,6 +3729,12 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.shopManagerName.isEmpty {
       try visitor.visitSingularStringField(value: self.shopManagerName, fieldNumber: 7)
     }
+    if !self.userName.isEmpty {
+      try visitor.visitSingularStringField(value: self.userName, fieldNumber: 8)
+    }
+    if !self.clasName.isEmpty {
+      try visitor.visitSingularStringField(value: self.clasName, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3732,6 +3746,8 @@ extension GloryApi_ShopSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.orderTotal != rhs.orderTotal {return false}
     if lhs.sellerID != rhs.sellerID {return false}
     if lhs.shopManagerName != rhs.shopManagerName {return false}
+    if lhs.userName != rhs.userName {return false}
+    if lhs.clasName != rhs.clasName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3741,7 +3757,7 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static let protoMessageName: String = _protobuf_package + ".ListShopSummaryRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "shop_name"),
+    2: .standard(proto: "shop_name_or_username"),
     3: .standard(proto: "shop_type"),
     4: .standard(proto: "major_id"),
     5: .standard(proto: "clas_id"),
@@ -3755,7 +3771,7 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.shopNameOrUsername) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.shopType) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.majorID) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.clasID) }()
@@ -3773,8 +3789,8 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.shopName.isEmpty {
-      try visitor.visitSingularStringField(value: self.shopName, fieldNumber: 2)
+    if !self.shopNameOrUsername.isEmpty {
+      try visitor.visitSingularStringField(value: self.shopNameOrUsername, fieldNumber: 2)
     }
     if !self.shopType.isEmpty {
       try visitor.visitSingularStringField(value: self.shopType, fieldNumber: 3)
@@ -3793,7 +3809,7 @@ extension GloryApi_ListShopSummaryRequest: SwiftProtobuf.Message, SwiftProtobuf.
 
   static func ==(lhs: GloryApi_ListShopSummaryRequest, rhs: GloryApi_ListShopSummaryRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.shopName != rhs.shopName {return false}
+    if lhs.shopNameOrUsername != rhs.shopNameOrUsername {return false}
     if lhs.shopType != rhs.shopType {return false}
     if lhs.majorID != rhs.majorID {return false}
     if lhs.clasID != rhs.clasID {return false}

@@ -1211,6 +1211,9 @@ struct GloryApi_SaveImageInfoRequest {
   /// 图片类型：image_main,image_detail,image_assistant,white_ground
   var productImageType: String = String()
 
+  /// 主图视频路径
+  var productVideoPath: String = String()
+
   /// 图片OSS路径
   var productImagePath: [String] = []
 
@@ -1236,6 +1239,8 @@ struct GloryApi_SaveImageInfoResponse {
   mutating func clearBaseResp() {self._baseResp = nil}
 
   var imageInfo: [GloryApi_ImageInfo] = []
+
+  var videoMainURL: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3315,7 +3320,8 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     1: .standard(proto: "base_request"),
     2: .standard(proto: "product_id"),
     3: .standard(proto: "product_image_type"),
-    4: .standard(proto: "product_image_path"),
+    4: .standard(proto: "product_video_path"),
+    5: .standard(proto: "product_image_path"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3327,7 +3333,8 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.productImageType) }()
-      case 4: try { try decoder.decodeRepeatedStringField(value: &self.productImagePath) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.productVideoPath) }()
+      case 5: try { try decoder.decodeRepeatedStringField(value: &self.productImagePath) }()
       default: break
       }
     }
@@ -3347,8 +3354,11 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.productImageType.isEmpty {
       try visitor.visitSingularStringField(value: self.productImageType, fieldNumber: 3)
     }
+    if !self.productVideoPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.productVideoPath, fieldNumber: 4)
+    }
     if !self.productImagePath.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.productImagePath, fieldNumber: 4)
+      try visitor.visitRepeatedStringField(value: self.productImagePath, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3357,6 +3367,7 @@ extension GloryApi_SaveImageInfoRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.productID != rhs.productID {return false}
     if lhs.productImageType != rhs.productImageType {return false}
+    if lhs.productVideoPath != rhs.productVideoPath {return false}
     if lhs.productImagePath != rhs.productImagePath {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -3368,6 +3379,7 @@ extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "imageInfo"),
+    3: .standard(proto: "video_main_url"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3378,6 +3390,7 @@ extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.imageInfo) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.videoMainURL) }()
       default: break
       }
     }
@@ -3394,12 +3407,16 @@ extension GloryApi_SaveImageInfoResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.imageInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.imageInfo, fieldNumber: 2)
     }
+    if !self.videoMainURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoMainURL, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_SaveImageInfoResponse, rhs: GloryApi_SaveImageInfoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.imageInfo != rhs.imageInfo {return false}
+    if lhs.videoMainURL != rhs.videoMainURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

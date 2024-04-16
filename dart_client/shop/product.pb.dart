@@ -3231,6 +3231,7 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
     $3.BaseRequest? baseRequest,
     $fixnum.Int64? productId,
     $core.String? productImageType,
+    $core.String? productVideoPath,
     $core.Iterable<$core.String>? productImagePath,
   }) {
     final $result = create();
@@ -3242,6 +3243,9 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
     }
     if (productImageType != null) {
       $result.productImageType = productImageType;
+    }
+    if (productVideoPath != null) {
+      $result.productVideoPath = productVideoPath;
     }
     if (productImagePath != null) {
       $result.productImagePath.addAll(productImagePath);
@@ -3256,7 +3260,8 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
     ..aOM<$3.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $3.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'productId')
     ..aOS(3, _omitFieldNames ? '' : 'productImageType')
-    ..pPS(4, _omitFieldNames ? '' : 'productImagePath')
+    ..aOS(4, _omitFieldNames ? '' : 'productVideoPath')
+    ..pPS(5, _omitFieldNames ? '' : 'productImagePath')
     ..hasRequiredFields = false
   ;
 
@@ -3311,13 +3316,23 @@ class SaveImageInfoRequest extends $pb.GeneratedMessage {
   void clearProductImageType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get productImagePath => $_getList(3);
+  $core.String get productVideoPath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set productVideoPath($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasProductVideoPath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProductVideoPath() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get productImagePath => $_getList(4);
 }
 
 class SaveImageInfoResponse extends $pb.GeneratedMessage {
   factory SaveImageInfoResponse({
     $3.BaseResponse? baseResp,
     $core.Iterable<ImageInfo>? imageInfo,
+    $core.String? videoMainUrl,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3325,6 +3340,9 @@ class SaveImageInfoResponse extends $pb.GeneratedMessage {
     }
     if (imageInfo != null) {
       $result.imageInfo.addAll(imageInfo);
+    }
+    if (videoMainUrl != null) {
+      $result.videoMainUrl = videoMainUrl;
     }
     return $result;
   }
@@ -3335,6 +3353,7 @@ class SaveImageInfoResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveImageInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$3.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $3.BaseResponse.create)
     ..pc<ImageInfo>(2, _omitFieldNames ? '' : 'imageInfo', $pb.PbFieldType.PM, protoName: 'imageInfo', subBuilder: ImageInfo.create)
+    ..aOS(3, _omitFieldNames ? '' : 'videoMainUrl')
     ..hasRequiredFields = false
   ;
 
@@ -3372,6 +3391,15 @@ class SaveImageInfoResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<ImageInfo> get imageInfo => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get videoMainUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set videoMainUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasVideoMainUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVideoMainUrl() => clearField(3);
 }
 
 

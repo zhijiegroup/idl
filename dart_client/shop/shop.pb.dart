@@ -3640,6 +3640,8 @@ class ShopSummary extends $pb.GeneratedMessage {
     $fixnum.Int64? orderTotal,
     $fixnum.Int64? sellerId,
     $core.String? shopManagerName,
+    $core.String? userName,
+    $core.String? clasName,
   }) {
     final $result = create();
     if (shopId != null) {
@@ -3663,6 +3665,12 @@ class ShopSummary extends $pb.GeneratedMessage {
     if (shopManagerName != null) {
       $result.shopManagerName = shopManagerName;
     }
+    if (userName != null) {
+      $result.userName = userName;
+    }
+    if (clasName != null) {
+      $result.clasName = clasName;
+    }
     return $result;
   }
   ShopSummary._() : super();
@@ -3677,6 +3685,8 @@ class ShopSummary extends $pb.GeneratedMessage {
     ..aInt64(5, _omitFieldNames ? '' : 'orderTotal')
     ..aInt64(6, _omitFieldNames ? '' : 'sellerId')
     ..aOS(7, _omitFieldNames ? '' : 'shopManagerName')
+    ..aOS(8, _omitFieldNames ? '' : 'userName')
+    ..aOS(9, _omitFieldNames ? '' : 'clasName')
     ..hasRequiredFields = false
   ;
 
@@ -3763,12 +3773,30 @@ class ShopSummary extends $pb.GeneratedMessage {
   $core.bool hasShopManagerName() => $_has(6);
   @$pb.TagNumber(7)
   void clearShopManagerName() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get userName => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set userName($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasUserName() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUserName() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get clasName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clasName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasClasName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClasName() => clearField(9);
 }
 
 class ListShopSummaryRequest extends $pb.GeneratedMessage {
   factory ListShopSummaryRequest({
     $0.BaseRequest? baseRequest,
-    $core.String? shopName,
+    $core.String? shopNameOrUsername,
     $core.String? shopType,
     $fixnum.Int64? majorId,
     $fixnum.Int64? clasId,
@@ -3778,8 +3806,8 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
     }
-    if (shopName != null) {
-      $result.shopName = shopName;
+    if (shopNameOrUsername != null) {
+      $result.shopNameOrUsername = shopNameOrUsername;
     }
     if (shopType != null) {
       $result.shopType = shopType;
@@ -3801,7 +3829,7 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopSummaryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOS(2, _omitFieldNames ? '' : 'shopName')
+    ..aOS(2, _omitFieldNames ? '' : 'shopNameOrUsername')
     ..aOS(3, _omitFieldNames ? '' : 'shopType')
     ..aInt64(4, _omitFieldNames ? '' : 'majorId')
     ..aInt64(5, _omitFieldNames ? '' : 'clasId')
@@ -3842,13 +3870,13 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get shopName => $_getSZ(1);
+  $core.String get shopNameOrUsername => $_getSZ(1);
   @$pb.TagNumber(2)
-  set shopName($core.String v) { $_setString(1, v); }
+  set shopNameOrUsername($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasShopName() => $_has(1);
+  $core.bool hasShopNameOrUsername() => $_has(1);
   @$pb.TagNumber(2)
-  void clearShopName() => clearField(2);
+  void clearShopNameOrUsername() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get shopType => $_getSZ(2);

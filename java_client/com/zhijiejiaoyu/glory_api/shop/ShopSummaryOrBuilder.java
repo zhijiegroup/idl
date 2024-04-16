@@ -66,4 +66,28 @@ public interface ShopSummaryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getShopManagerNameBytes();
+
+  /**
+   * <code>string user_name = 8;</code>
+   * @return The userName.
+   */
+  java.lang.String getUserName();
+  /**
+   * <code>string user_name = 8;</code>
+   * @return The bytes for userName.
+   */
+  com.google.protobuf.ByteString
+      getUserNameBytes();
+
+  /**
+   * <code>string clas_name = 9;</code>
+   * @return The clasName.
+   */
+  java.lang.String getClasName();
+  /**
+   * <code>string clas_name = 9;</code>
+   * @return The bytes for clasName.
+   */
+  com.google.protobuf.ByteString
+      getClasNameBytes();
 }

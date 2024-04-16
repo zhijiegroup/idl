@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SaveImageInfoResponse() {
     imageInfo = java.util.Collections.emptyList();
+    videoMainUrl = "";
   }
 
   @java.lang.Override
@@ -70,6 +71,12 @@ private static final long serialVersionUID = 0L;
             }
             imageInfo .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.ImageInfo.parser(), extensionRegistry));
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            videoMainUrl = s;
             break;
           }
           default: {
@@ -173,6 +180,44 @@ private static final long serialVersionUID = 0L;
     return imageInfo .get(index);
   }
 
+  public static final int VIDEO_MAIN_URL_FIELD_NUMBER = 3;
+  private volatile java.lang.Object videoMainUrl ;
+  /**
+   * <code>string video_main_url = 3;</code>
+   * @return The videoMainUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getVideoMainUrl() {
+    java.lang.Object ref = videoMainUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      videoMainUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string video_main_url = 3;</code>
+   * @return The bytes for videoMainUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVideoMainUrlBytes() {
+    java.lang.Object ref = videoMainUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      videoMainUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -193,6 +238,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imageInfo .size(); i++) {
       output.writeMessage(2, imageInfo .get(i));
     }
+    if (!getVideoMainUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, videoMainUrl );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -209,6 +257,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < imageInfo .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, imageInfo .get(i));
+    }
+    if (!getVideoMainUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, videoMainUrl );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +283,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getImageInfoList()
         .equals(other.getImageInfoList())) return false;
+    if (!getVideoMainUrl()
+        .equals(other.getVideoMainUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +304,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IMAGEINFO_FIELD_NUMBER;
       hash = (53 * hash) + getImageInfoList().hashCode();
     }
+    hash = (37 * hash) + VIDEO_MAIN_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getVideoMainUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,6 +452,8 @@ private static final long serialVersionUID = 0L;
       } else {
         imageInfoBuilder .clear();
       }
+      videoMainUrl = "";
+
       return this;
     }
 
@@ -438,6 +495,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.imageInfo = imageInfoBuilder .build();
       }
+      result.videoMainUrl = videoMainUrl ;
       onBuilt();
       return result;
     }
@@ -514,6 +572,10 @@ private static final long serialVersionUID = 0L;
             imageInfoBuilder .addAllMessages(other.imageInfo );
           }
         }
+      }
+      if (!other.getVideoMainUrl().isEmpty()) {
+        videoMainUrl = other.videoMainUrl ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -902,6 +964,82 @@ private static final long serialVersionUID = 0L;
         imageInfo = null;
       }
       return imageInfoBuilder ;
+    }
+
+    private java.lang.Object videoMainUrl = "";
+    /**
+     * <code>string video_main_url = 3;</code>
+     * @return The videoMainUrl.
+     */
+    public java.lang.String getVideoMainUrl() {
+      java.lang.Object ref = videoMainUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        videoMainUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string video_main_url = 3;</code>
+     * @return The bytes for videoMainUrl.
+     */
+    public com.google.protobuf.ByteString
+        getVideoMainUrlBytes() {
+      java.lang.Object ref = videoMainUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        videoMainUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string video_main_url = 3;</code>
+     * @param value The videoMainUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoMainUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      videoMainUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string video_main_url = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoMainUrl() {
+      
+      videoMainUrl = getDefaultInstance().getVideoMainUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string video_main_url = 3;</code>
+     * @param value The bytes for videoMainUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoMainUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      videoMainUrl = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

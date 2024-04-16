@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private SaveImageInfoRequest() {
     productImageType = "";
+    productVideoPath = "";
     productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -76,6 +77,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productVideoPath = s;
+            break;
+          }
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               productImagePath = new com.google.protobuf.LazyStringArrayList();
@@ -202,14 +209,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PRODUCT_IMAGE_PATH_FIELD_NUMBER = 4;
+  public static final int PRODUCT_VIDEO_PATH_FIELD_NUMBER = 4;
+  private volatile java.lang.Object productVideoPath ;
+  /**
+   * <pre>
+   * 主图视频路径
+   * </pre>
+   *
+   * <code>string product_video_path = 4;</code>
+   * @return The productVideoPath.
+   */
+  @java.lang.Override
+  public java.lang.String getProductVideoPath() {
+    java.lang.Object ref = productVideoPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productVideoPath = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 主图视频路径
+   * </pre>
+   *
+   * <code>string product_video_path = 4;</code>
+   * @return The bytes for productVideoPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductVideoPathBytes() {
+    java.lang.Object ref = productVideoPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productVideoPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_IMAGE_PATH_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList productImagePath ;
   /**
    * <pre>
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @return A list containing the productImagePath.
    */
   public com.google.protobuf.ProtocolStringList
@@ -221,7 +274,7 @@ private static final long serialVersionUID = 0L;
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @return The count of productImagePath.
    */
   public int getProductImagePathCount() {
@@ -232,7 +285,7 @@ private static final long serialVersionUID = 0L;
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @param index The index of the element to return.
    * @return The productImagePath at the given index.
    */
@@ -244,7 +297,7 @@ private static final long serialVersionUID = 0L;
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the productImagePath at the given index.
    */
@@ -276,8 +329,11 @@ private static final long serialVersionUID = 0L;
     if (!getProductImageTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, productImageType );
     }
+    if (!getProductVideoPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productVideoPath );
+    }
     for (int i = 0; i < productImagePath .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productImagePath .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, productImagePath .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -298,6 +354,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getProductImageTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, productImageType );
+    }
+    if (!getProductVideoPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productVideoPath );
     }
     {
       int dataSize = 0;
@@ -331,6 +390,8 @@ private static final long serialVersionUID = 0L;
         != other.getProductId()) return false;
     if (!getProductImageType()
         .equals(other.getProductImageType())) return false;
+    if (!getProductVideoPath()
+        .equals(other.getProductVideoPath())) return false;
     if (!getProductImagePathList()
         .equals(other.getProductImagePathList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -353,6 +414,8 @@ private static final long serialVersionUID = 0L;
         getProductId());
     hash = (37 * hash) + PRODUCT_IMAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getProductImageType().hashCode();
+    hash = (37 * hash) + PRODUCT_VIDEO_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getProductVideoPath().hashCode();
     if (getProductImagePathCount() > 0) {
       hash = (37 * hash) + PRODUCT_IMAGE_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getProductImagePathList().hashCode();
@@ -500,6 +563,8 @@ private static final long serialVersionUID = 0L;
 
       productImageType = "";
 
+      productVideoPath = "";
+
       productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
       return this;
@@ -536,6 +601,7 @@ private static final long serialVersionUID = 0L;
       }
       result.productId = productId ;
       result.productImageType = productImageType ;
+      result.productVideoPath = productVideoPath ;
       if (((bitField0 & 0x00000001) != 0)) {
         productImagePath = productImagePath .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000001);
@@ -597,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getProductImageType().isEmpty()) {
         productImageType = other.productImageType ;
+        onChanged();
+      }
+      if (!other.getProductVideoPath().isEmpty()) {
+        productVideoPath = other.productVideoPath ;
         onChanged();
       }
       if (!other.productImagePath .isEmpty()) {
@@ -885,6 +955,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object productVideoPath = "";
+    /**
+     * <pre>
+     * 主图视频路径
+     * </pre>
+     *
+     * <code>string product_video_path = 4;</code>
+     * @return The productVideoPath.
+     */
+    public java.lang.String getProductVideoPath() {
+      java.lang.Object ref = productVideoPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productVideoPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 主图视频路径
+     * </pre>
+     *
+     * <code>string product_video_path = 4;</code>
+     * @return The bytes for productVideoPath.
+     */
+    public com.google.protobuf.ByteString
+        getProductVideoPathBytes() {
+      java.lang.Object ref = productVideoPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productVideoPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 主图视频路径
+     * </pre>
+     *
+     * <code>string product_video_path = 4;</code>
+     * @param value The productVideoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductVideoPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productVideoPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 主图视频路径
+     * </pre>
+     *
+     * <code>string product_video_path = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductVideoPath() {
+      
+      productVideoPath = getDefaultInstance().getProductVideoPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 主图视频路径
+     * </pre>
+     *
+     * <code>string product_video_path = 4;</code>
+     * @param value The bytes for productVideoPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductVideoPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productVideoPath = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList productImagePath = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureProductImagePathIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -897,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @return A list containing the productImagePath.
      */
     public com.google.protobuf.ProtocolStringList
@@ -909,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @return The count of productImagePath.
      */
     public int getProductImagePathCount() {
@@ -920,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param index The index of the element to return.
      * @return The productImagePath at the given index.
      */
@@ -932,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param index The index of the value to return.
      * @return The bytes of the productImagePath at the given index.
      */
@@ -945,7 +1111,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param index The index to set the value at.
      * @param value The productImagePath to set.
      * @return This builder for chaining.
@@ -965,7 +1131,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param value The productImagePath to add.
      * @return This builder for chaining.
      */
@@ -984,7 +1150,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param values The productImagePath to add.
      * @return This builder for chaining.
      */
@@ -1001,7 +1167,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductImagePath() {
@@ -1015,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * 图片OSS路径
      * </pre>
      *
-     * <code>repeated string product_image_path = 4;</code>
+     * <code>repeated string product_image_path = 5;</code>
      * @param value The bytes of the productImagePath to add.
      * @return This builder for chaining.
      */

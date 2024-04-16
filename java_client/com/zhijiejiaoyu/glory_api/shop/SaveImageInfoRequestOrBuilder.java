@@ -50,10 +50,30 @@ public interface SaveImageInfoRequestOrBuilder extends
 
   /**
    * <pre>
+   * 主图视频路径
+   * </pre>
+   *
+   * <code>string product_video_path = 4;</code>
+   * @return The productVideoPath.
+   */
+  java.lang.String getProductVideoPath();
+  /**
+   * <pre>
+   * 主图视频路径
+   * </pre>
+   *
+   * <code>string product_video_path = 4;</code>
+   * @return The bytes for productVideoPath.
+   */
+  com.google.protobuf.ByteString
+      getProductVideoPathBytes();
+
+  /**
+   * <pre>
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @return A list containing the productImagePath.
    */
   java.util.List<java.lang.String>
@@ -63,7 +83,7 @@ public interface SaveImageInfoRequestOrBuilder extends
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @return The count of productImagePath.
    */
   int getProductImagePathCount();
@@ -72,7 +92,7 @@ public interface SaveImageInfoRequestOrBuilder extends
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @param index The index of the element to return.
    * @return The productImagePath at the given index.
    */
@@ -82,7 +102,7 @@ public interface SaveImageInfoRequestOrBuilder extends
    * 图片OSS路径
    * </pre>
    *
-   * <code>repeated string product_image_path = 4;</code>
+   * <code>repeated string product_image_path = 5;</code>
    * @param index The index of the value to return.
    * @return The bytes of the productImagePath at the given index.
    */

@@ -296,6 +296,8 @@ export interface SaveImageInfoRequest {
   product_id?: string;
   /** 图片类型：image_main,image_detail,image_assistant,white_ground */
   product_image_type?: string;
+  /** 主图视频路径 */
+  product_video_path?: string;
   /** 图片OSS路径 */
   product_image_path?: Array<string>;
 }
@@ -303,4 +305,5 @@ export interface SaveImageInfoRequest {
 export interface SaveImageInfoResponse {
   base_resp?: base.BaseResponse;
   imageInfo?: Array<ImageInfo>;
+  video_main_url?: string;
 }
