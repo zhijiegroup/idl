@@ -31,6 +31,7 @@ message Product {
   string product_brand = 18;//商品品牌
   int64 activity_id = 19; // 活动ID
   repeated CouponDetail coupon = 20; // 优惠券
+  string product_video_main_url = 21; // 主图视频url
 }
 
 message ProductImage {
