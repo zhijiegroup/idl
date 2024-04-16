@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     shipmentAttribute = java.util.Collections.emptyList();
     productBrand = "";
     coupon = java.util.Collections.emptyList();
+    productVideoMainUrl = "";
   }
 
   @java.lang.Override
@@ -180,6 +181,12 @@ private static final long serialVersionUID = 0L;
             }
             coupon .add(
                 input.readMessage(com.zhijiejiaoyu.glory_api.shop.CouponDetail.parser(), extensionRegistry));
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productVideoMainUrl = s;
             break;
           }
           default: {
@@ -774,6 +781,52 @@ private static final long serialVersionUID = 0L;
     return coupon .get(index);
   }
 
+  public static final int PRODUCT_VIDEO_MAIN_URL_FIELD_NUMBER = 21;
+  private volatile java.lang.Object productVideoMainUrl ;
+  /**
+   * <pre>
+   * 主图视频url
+   * </pre>
+   *
+   * <code>string product_video_main_url = 21;</code>
+   * @return The productVideoMainUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getProductVideoMainUrl() {
+    java.lang.Object ref = productVideoMainUrl ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productVideoMainUrl = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 主图视频url
+   * </pre>
+   *
+   * <code>string product_video_main_url = 21;</code>
+   * @return The bytes for productVideoMainUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductVideoMainUrlBytes() {
+    java.lang.Object ref = productVideoMainUrl ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productVideoMainUrl = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -844,6 +897,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < coupon .size(); i++) {
       output.writeMessage(20, coupon .get(i));
+    }
+    if (!getProductVideoMainUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, productVideoMainUrl );
     }
     unknownFields.writeTo(output);
   }
@@ -926,6 +982,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, coupon .get(i));
     }
+    if (!getProductVideoMainUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, productVideoMainUrl );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -984,6 +1043,8 @@ private static final long serialVersionUID = 0L;
         != other.getActivityId()) return false;
     if (!getCouponList()
         .equals(other.getCouponList())) return false;
+    if (!getProductVideoMainUrl()
+        .equals(other.getProductVideoMainUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1050,6 +1111,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COUPON_FIELD_NUMBER;
       hash = (53 * hash) + getCouponList().hashCode();
     }
+    hash = (37 * hash) + PRODUCT_VIDEO_MAIN_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getProductVideoMainUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1245,6 +1308,8 @@ private static final long serialVersionUID = 0L;
       } else {
         couponBuilder .clear();
       }
+      productVideoMainUrl = "";
+
       return this;
     }
 
@@ -1327,6 +1392,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.coupon = couponBuilder .build();
       }
+      result.productVideoMainUrl = productVideoMainUrl ;
       onBuilt();
       return result;
     }
@@ -1527,6 +1593,10 @@ private static final long serialVersionUID = 0L;
             couponBuilder .addAllMessages(other.coupon );
           }
         }
+      }
+      if (!other.getProductVideoMainUrl().isEmpty()) {
+        productVideoMainUrl = other.productVideoMainUrl ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3564,6 +3634,102 @@ private static final long serialVersionUID = 0L;
         coupon = null;
       }
       return couponBuilder ;
+    }
+
+    private java.lang.Object productVideoMainUrl = "";
+    /**
+     * <pre>
+     * 主图视频url
+     * </pre>
+     *
+     * <code>string product_video_main_url = 21;</code>
+     * @return The productVideoMainUrl.
+     */
+    public java.lang.String getProductVideoMainUrl() {
+      java.lang.Object ref = productVideoMainUrl ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productVideoMainUrl = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 主图视频url
+     * </pre>
+     *
+     * <code>string product_video_main_url = 21;</code>
+     * @return The bytes for productVideoMainUrl.
+     */
+    public com.google.protobuf.ByteString
+        getProductVideoMainUrlBytes() {
+      java.lang.Object ref = productVideoMainUrl ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productVideoMainUrl = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 主图视频url
+     * </pre>
+     *
+     * <code>string product_video_main_url = 21;</code>
+     * @param value The productVideoMainUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductVideoMainUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productVideoMainUrl = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 主图视频url
+     * </pre>
+     *
+     * <code>string product_video_main_url = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductVideoMainUrl() {
+      
+      productVideoMainUrl = getDefaultInstance().getProductVideoMainUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 主图视频url
+     * </pre>
+     *
+     * <code>string product_video_main_url = 21;</code>
+     * @param value The bytes for productVideoMainUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductVideoMainUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productVideoMainUrl = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

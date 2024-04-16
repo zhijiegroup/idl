@@ -44,6 +44,7 @@ class Product extends $pb.GeneratedMessage {
     $core.String? productBrand,
     $fixnum.Int64? activityId,
     $core.Iterable<$2.CouponDetail>? coupon,
+    $core.String? productVideoMainUrl,
   }) {
     final $result = create();
     if (productId != null) {
@@ -103,6 +104,9 @@ class Product extends $pb.GeneratedMessage {
     if (coupon != null) {
       $result.coupon.addAll(coupon);
     }
+    if (productVideoMainUrl != null) {
+      $result.productVideoMainUrl = productVideoMainUrl;
+    }
     return $result;
   }
   Product._() : super();
@@ -129,6 +133,7 @@ class Product extends $pb.GeneratedMessage {
     ..aOS(18, _omitFieldNames ? '' : 'productBrand')
     ..aInt64(19, _omitFieldNames ? '' : 'activityId')
     ..pc<$2.CouponDetail>(20, _omitFieldNames ? '' : 'coupon', $pb.PbFieldType.PM, subBuilder: $2.CouponDetail.create)
+    ..aOS(21, _omitFieldNames ? '' : 'productVideoMainUrl')
     ..hasRequiredFields = false
   ;
 
@@ -302,6 +307,15 @@ class Product extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(20)
   $core.List<$2.CouponDetail> get coupon => $_getList(18);
+
+  @$pb.TagNumber(21)
+  $core.String get productVideoMainUrl => $_getSZ(19);
+  @$pb.TagNumber(21)
+  set productVideoMainUrl($core.String v) { $_setString(19, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasProductVideoMainUrl() => $_has(19);
+  @$pb.TagNumber(21)
+  void clearProductVideoMainUrl() => clearField(21);
 }
 
 class ProductImage extends $pb.GeneratedMessage {

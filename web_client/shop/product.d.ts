@@ -53,6 +53,8 @@ export interface Product {
   activity_id?: string;
   /** 优惠券 */
   coupon?: Array<coupon.CouponDetail>;
+  /** 主图视频url */
+  product_video_main_url?: string;
 }
 
 export interface ProductImage {

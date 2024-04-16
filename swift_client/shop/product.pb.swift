@@ -213,6 +213,12 @@ struct GloryApi_Product {
     set {_uniqueStorage()._coupon = newValue}
   }
 
+  /// 主图视频url
+  var productVideoMainURL: String {
+    get {return _storage._productVideoMainURL}
+    set {_uniqueStorage()._productVideoMainURL = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1332,6 +1338,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     18: .standard(proto: "product_brand"),
     19: .standard(proto: "activity_id"),
     20: .same(proto: "coupon"),
+    21: .standard(proto: "product_video_main_url"),
   ]
 
   fileprivate class _StorageClass {
@@ -1354,6 +1361,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _productBrand: String = String()
     var _activityID: Int64 = 0
     var _coupon: [GloryApi_CouponDetail] = []
+    var _productVideoMainURL: String = String()
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1387,6 +1395,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       _productBrand = source._productBrand
       _activityID = source._activityID
       _coupon = source._coupon
+      _productVideoMainURL = source._productVideoMainURL
     }
   }
 
@@ -1424,6 +1433,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._productBrand) }()
         case 19: try { try decoder.decodeSingularInt64Field(value: &_storage._activityID) }()
         case 20: try { try decoder.decodeRepeatedMessageField(value: &_storage._coupon) }()
+        case 21: try { try decoder.decodeSingularStringField(value: &_storage._productVideoMainURL) }()
         default: break
         }
       }
@@ -1493,6 +1503,9 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
       if !_storage._coupon.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._coupon, fieldNumber: 20)
       }
+      if !_storage._productVideoMainURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._productVideoMainURL, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1521,6 +1534,7 @@ extension GloryApi_Product: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         if _storage._productBrand != rhs_storage._productBrand {return false}
         if _storage._activityID != rhs_storage._activityID {return false}
         if _storage._coupon != rhs_storage._coupon {return false}
+        if _storage._productVideoMainURL != rhs_storage._productVideoMainURL {return false}
         return true
       }
       if !storagesAreEqual {return false}

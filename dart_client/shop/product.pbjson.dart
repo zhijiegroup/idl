@@ -57,6 +57,7 @@ const Product$json = {
     {'1': 'product_brand', '3': 18, '4': 1, '5': 9, '10': 'productBrand'},
     {'1': 'activity_id', '3': 19, '4': 1, '5': 3, '10': 'activityId'},
     {'1': 'coupon', '3': 20, '4': 3, '5': 11, '6': '.glory_api.CouponDetail', '10': 'coupon'},
+    {'1': 'product_video_main_url', '3': 21, '4': 1, '5': 9, '10': 'productVideoMainUrl'},
   ],
 };
 
@@ -75,7 +76,8 @@ final $typed_data.Uint8List productDescriptor = $convert.base64Decode(
     'dXRlUhFzaGlwbWVudEF0dHJpYnV0ZRIdCgpzYWxlX3ByaWNlGBAgASgCUglzYWxlUHJpY2USJw'
     'oPcmVmZXJlbmNlX3ByaWNlGBEgASgCUg5yZWZlcmVuY2VQcmljZRIjCg1wcm9kdWN0X2JyYW5k'
     'GBIgASgJUgxwcm9kdWN0QnJhbmQSHwoLYWN0aXZpdHlfaWQYEyABKANSCmFjdGl2aXR5SWQSLw'
-    'oGY291cG9uGBQgAygLMhcuZ2xvcnlfYXBpLkNvdXBvbkRldGFpbFIGY291cG9u');
+    'oGY291cG9uGBQgAygLMhcuZ2xvcnlfYXBpLkNvdXBvbkRldGFpbFIGY291cG9uEjMKFnByb2R1'
+    'Y3RfdmlkZW9fbWFpbl91cmwYFSABKAlSE3Byb2R1Y3RWaWRlb01haW5Vcmw=');
 
 @$core.Deprecated('Use productImageDescriptor instead')
 const ProductImage$json = {

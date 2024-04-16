@@ -322,4 +322,24 @@ public interface ProductOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.shop.CouponDetailOrBuilder getCouponOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 主图视频url
+   * </pre>
+   *
+   * <code>string product_video_main_url = 21;</code>
+   * @return The productVideoMainUrl.
+   */
+  java.lang.String getProductVideoMainUrl();
+  /**
+   * <pre>
+   * 主图视频url
+   * </pre>
+   *
+   * <code>string product_video_main_url = 21;</code>
+   * @return The bytes for productVideoMainUrl.
+   */
+  com.google.protobuf.ByteString
+      getProductVideoMainUrlBytes();
 }
