@@ -107,5 +107,4 @@ message DisableActivityRequest {
 }
 message DisableActivityResponse {
     base.BaseResponse base_resp = 1;
-    
 }
