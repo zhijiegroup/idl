@@ -2,12 +2,11 @@
 // @ts-nocheck
 import { getDefaultLocale } from '@/hooks/useChangeLocale';
 const cur_lang = getDefaultLocale();
+let language = "zh";
 if (cur_lang === "th-TH") {
-  cur_lang = "thai";
-}else {
-  cur_lang = "zh";
+  language = "thai";
 }
-export const headers = { "Content-Type": "application/json","Language": cur_lang };
+export const headers = { "Content-Type": "application/json","Language": language };
 export const method = "GET";
 export const credentials = "same-origin";
 
