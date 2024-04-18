@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-nocheck
-
-export const headers = { "Content-Type": "application/json" };
+import { getDefaultLocale } from '@/hooks/useChangeLocale';
+const cur_lang = getDefaultLocale();
+export const headers = { "Content-Type": "application/json","Language": cur_lang };
 export const method = "GET";
 export const credentials = "same-origin";
 
