@@ -248,4 +248,5 @@ message FreeShippingInBatchesRequest {
 }
 message FreeShippingInBatchesResponse {
   base.BaseResponse base_resp = 1;
+  
 }
