@@ -2480,12 +2480,6 @@ export class glory_api {
     );
   }
 
-  GetMajorCode(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/course/get_major_code${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
   GetCourseIds(request) {
     const uri = `${this.uriPrefix}/api/course/get_course_ids`;
     const body = JSONbigint.stringify(request);

@@ -243,48 +243,6 @@ final $typed_data.Uint8List listCourseResponseDescriptor = $convert.base64Decode
     'c2VzEjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW'
     '5hdGlvbg==');
 
-@$core.Deprecated('Use majorCodeDescriptor instead')
-const MajorCode$json = {
-  '1': 'MajorCode',
-  '2': [
-    {'1': 'label', '3': 1, '4': 1, '5': 9, '10': 'label'},
-    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
-  ],
-};
-
-/// Descriptor for `MajorCode`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List majorCodeDescriptor = $convert.base64Decode(
-    'CglNYWpvckNvZGUSFAoFbGFiZWwYASABKAlSBWxhYmVsEhQKBXZhbHVlGAIgASgJUgV2YWx1ZQ'
-    '==');
-
-@$core.Deprecated('Use getMajorCodeRequestDescriptor instead')
-const GetMajorCodeRequest$json = {
-  '1': 'GetMajorCodeRequest',
-  '2': [
-    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
-  ],
-};
-
-/// Descriptor for `GetMajorCodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getMajorCodeRequestDescriptor = $convert.base64Decode(
-    'ChNHZXRNYWpvckNvZGVSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQmFzZV'
-    'JlcXVlc3RSC2Jhc2VSZXF1ZXN0');
-
-@$core.Deprecated('Use getMajorCodeResponseDescriptor instead')
-const GetMajorCodeResponse$json = {
-  '1': 'GetMajorCodeResponse',
-  '2': [
-    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'major_code', '3': 2, '4': 3, '5': 11, '6': '.glory_api.MajorCode', '10': 'majorCode'},
-  ],
-};
-
-/// Descriptor for `GetMajorCodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getMajorCodeResponseDescriptor = $convert.base64Decode(
-    'ChRHZXRNYWpvckNvZGVSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2VSZX'
-    'Nwb25zZVIIYmFzZVJlc3ASMwoKbWFqb3JfY29kZRgCIAMoCzIULmdsb3J5X2FwaS5NYWpvckNv'
-    'ZGVSCW1ham9yQ29kZQ==');
-
 @$core.Deprecated('Use getCourseIdsRequestDescriptor instead')
 const GetCourseIdsRequest$json = {
   '1': 'GetCourseIdsRequest',

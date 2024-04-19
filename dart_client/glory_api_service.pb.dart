@@ -995,9 +995,6 @@ class glory_apiApi {
   $async.Future<$42.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode($pb.ClientContext? ctx, $42.GetKnowledgeGraphNodeRequest request) =>
     _client.invoke<$42.GetKnowledgeGraphNodeResponse>(ctx, 'glory_api', 'GetKnowledgeGraphNode', request, $42.GetKnowledgeGraphNodeResponse())
   ;
-  $async.Future<$38.GetMajorCodeResponse> getMajorCode($pb.ClientContext? ctx, $38.GetMajorCodeRequest request) =>
-    _client.invoke<$38.GetMajorCodeResponse>(ctx, 'glory_api', 'GetMajorCode', request, $38.GetMajorCodeResponse())
-  ;
   $async.Future<$38.GetCourseIdsResponse> getCourseIds($pb.ClientContext? ctx, $38.GetCourseIdsRequest request) =>
     _client.invoke<$38.GetCourseIdsResponse>(ctx, 'glory_api', 'GetCourseIds', request, $38.GetCourseIdsResponse())
   ;

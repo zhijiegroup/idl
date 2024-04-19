@@ -384,7 +384,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$42.CreateKnowledgeGraphResponse> createKnowledgeGraph($pb.ServerContext ctx, $42.CreateKnowledgeGraphRequest request);
   $async.Future<$42.GetKnowledgeGraphResponse> getKnowledgeGraph($pb.ServerContext ctx, $42.GetKnowledgeGraphRequest request);
   $async.Future<$42.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode($pb.ServerContext ctx, $42.GetKnowledgeGraphNodeRequest request);
-  $async.Future<$38.GetMajorCodeResponse> getMajorCode($pb.ServerContext ctx, $38.GetMajorCodeRequest request);
   $async.Future<$38.GetCourseIdsResponse> getCourseIds($pb.ServerContext ctx, $38.GetCourseIdsRequest request);
   $async.Future<$43.EnrollCourseResponse> enrollCourse($pb.ServerContext ctx, $43.EnrollCourseRequest request);
   $async.Future<$43.DeleteMyCourseResponse> deleteMyCourse($pb.ServerContext ctx, $43.DeleteMyCourseRequest request);
@@ -815,7 +814,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateKnowledgeGraph': return $42.CreateKnowledgeGraphRequest();
       case 'GetKnowledgeGraph': return $42.GetKnowledgeGraphRequest();
       case 'GetKnowledgeGraphNode': return $42.GetKnowledgeGraphNodeRequest();
-      case 'GetMajorCode': return $38.GetMajorCodeRequest();
       case 'GetCourseIds': return $38.GetCourseIdsRequest();
       case 'EnrollCourse': return $43.EnrollCourseRequest();
       case 'DeleteMyCourse': return $43.DeleteMyCourseRequest();
@@ -1249,7 +1247,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateKnowledgeGraph': return this.createKnowledgeGraph(ctx, request as $42.CreateKnowledgeGraphRequest);
       case 'GetKnowledgeGraph': return this.getKnowledgeGraph(ctx, request as $42.GetKnowledgeGraphRequest);
       case 'GetKnowledgeGraphNode': return this.getKnowledgeGraphNode(ctx, request as $42.GetKnowledgeGraphNodeRequest);
-      case 'GetMajorCode': return this.getMajorCode(ctx, request as $38.GetMajorCodeRequest);
       case 'GetCourseIds': return this.getCourseIds(ctx, request as $38.GetCourseIdsRequest);
       case 'EnrollCourse': return this.enrollCourse(ctx, request as $43.EnrollCourseRequest);
       case 'DeleteMyCourse': return this.deleteMyCourse(ctx, request as $43.DeleteMyCourseRequest);

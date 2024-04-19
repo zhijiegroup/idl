@@ -1399,10 +1399,6 @@ CreateLivePlanProduct create live plan product */
     request: graph.GetKnowledgeGraphNodeRequest
   ): Promise<graph.GetKnowledgeGraphNodeResponse>;
 
-  GetMajorCode(
-    request: course.GetMajorCodeRequest
-  ): Promise<course.GetMajorCodeResponse>;
-
   GetCourseIds(
     request: course.GetCourseIdsRequest
   ): Promise<course.GetCourseIdsResponse>;
