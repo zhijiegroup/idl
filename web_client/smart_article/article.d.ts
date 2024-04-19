@@ -317,6 +317,7 @@ export interface ChatMessage {
 export interface CreateDigitalHumanRequest {
   base_request?: base.BaseRequest;
   text?: string;
+  title?: string;
 }
 
 export interface CreateDigitalHumanResponse {

@@ -33,4 +33,16 @@ public interface CreateDigitalHumanRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTextBytes();
+
+  /**
+   * <code>string title = 3;</code>
+   * @return The title.
+   */
+  java.lang.String getTitle();
+  /**
+   * <code>string title = 3;</code>
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString
+      getTitleBytes();
 }

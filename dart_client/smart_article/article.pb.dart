@@ -3813,6 +3813,7 @@ class CreateDigitalHumanRequest extends $pb.GeneratedMessage {
   factory CreateDigitalHumanRequest({
     $0.BaseRequest? baseRequest,
     $core.String? text,
+    $core.String? title,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3820,6 +3821,9 @@ class CreateDigitalHumanRequest extends $pb.GeneratedMessage {
     }
     if (text != null) {
       $result.text = text;
+    }
+    if (title != null) {
+      $result.title = title;
     }
     return $result;
   }
@@ -3830,6 +3834,7 @@ class CreateDigitalHumanRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'text')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
     ..hasRequiredFields = false
   ;
 
@@ -3873,6 +3878,15 @@ class CreateDigitalHumanRequest extends $pb.GeneratedMessage {
   $core.bool hasText() => $_has(1);
   @$pb.TagNumber(2)
   void clearText() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => clearField(3);
 }
 
 class CreateDigitalHumanResponse extends $pb.GeneratedMessage {

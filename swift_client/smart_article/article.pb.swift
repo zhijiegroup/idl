@@ -1174,6 +1174,8 @@ struct GloryApi_CreateDigitalHumanRequest {
 
   var text: String = String()
 
+  var title: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4240,6 +4242,7 @@ extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtob
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "text"),
+    3: .same(proto: "title"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4250,6 +4253,7 @@ extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.text) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
       default: break
       }
     }
@@ -4266,12 +4270,16 @@ extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.text.isEmpty {
       try visitor.visitSingularStringField(value: self.text, fieldNumber: 2)
     }
+    if !self.title.isEmpty {
+      try visitor.visitSingularStringField(value: self.title, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateDigitalHumanRequest, rhs: GloryApi_CreateDigitalHumanRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.text != rhs.text {return false}
+    if lhs.title != rhs.title {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

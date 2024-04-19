@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateDigitalHumanRequest() {
     text = "";
+    title = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             text = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            title = s;
             break;
           }
           default: {
@@ -164,6 +171,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TITLE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object title ;
+  /**
+   * <code>string title = 3;</code>
+   * @return The title.
+   */
+  @java.lang.Override
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      title = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string title = 3;</code>
+   * @return The bytes for title.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTitleBytes() {
+    java.lang.Object ref = title ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      title = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +229,9 @@ private static final long serialVersionUID = 0L;
     if (!getTextBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, text );
     }
+    if (!getTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +247,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTextBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, text );
+    }
+    if (!getTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +273,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getText()
         .equals(other.getText())) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +292,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getText().hashCode();
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -380,6 +435,8 @@ private static final long serialVersionUID = 0L;
       }
       text = "";
 
+      title = "";
+
       return this;
     }
 
@@ -412,6 +469,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.text = text ;
+      result.title = title ;
       onBuilt();
       return result;
     }
@@ -465,6 +523,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getText().isEmpty()) {
         text = other.text ;
+        onChanged();
+      }
+      if (!other.getTitle().isEmpty()) {
+        title = other.title ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -687,6 +749,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       text = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object title = "";
+    /**
+     * <code>string title = 3;</code>
+     * @return The title.
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @return The bytes for title.
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @param value The title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      title = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTitle() {
+      
+      title = getDefaultInstance().getTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string title = 3;</code>
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      title = value;
       onChanged();
       return this;
     }

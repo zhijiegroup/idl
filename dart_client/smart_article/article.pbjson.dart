@@ -764,13 +764,15 @@ const CreateDigitalHumanRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
   ],
 };
 
 /// Descriptor for `CreateDigitalHumanRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createDigitalHumanRequestDescriptor = $convert.base64Decode(
     'ChlDcmVhdGVEaWdpdGFsSHVtYW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
-    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQ=');
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQSFAoFdGl0bGUY'
+    'AyABKAlSBXRpdGxl');
 
 @$core.Deprecated('Use createDigitalHumanResponseDescriptor instead')
 const CreateDigitalHumanResponse$json = {
