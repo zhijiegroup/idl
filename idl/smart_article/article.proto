@@ -301,10 +301,10 @@ message ChatMessage {
     string role = 2;
 }
 
-
 message CreateDigitalHumanRequest {
     base.BaseRequest base_request = 1;
     string text = 2;
+    string title = 3;
 }
 
 message CreateDigitalHumanResponse {
