@@ -311,36 +311,18 @@ message CreateDigitalHumanResponse {
     base.BaseResponse base_resp = 1;
 }
 
-message QueryDigitalHumanRequest {
-    base.BaseRequest base_request = 1;
-    string task_id = 2;
-}
-
-message DigitalHumanResult {
-    string video_url = 4; // 视频URL
-    string subtitles_url = 5; // 字幕URL
-    int64 video_duration = 6; // 视频时长
-}
-
-message QueryDigitalHumanResponse {
-    base.BaseResponse base_resp = 1;
-    int64 task_id = 2; // 任务ID
-    int32 type = 3; // 任务类型
-    string status = 4; // 任务进度
-    DigitalHumanResult result = 5; // 任务执行结果
-}
-
-message DigitalHumanTaskResult {
+message DigitalVideo {
     string task_id = 1;
-    string title = 2;
-    int32 type = 3;
-    int32 status = 4;
-    DigitalHumanResult raw = 5;
+    string video_title = 2;
+    string video_url = 3;
+    int64 video_duration = 4;
+    string subtitle_url = 5;
+    string video_preview = 6;
 }
 
 message ListDigitalHumanResponse {
     base.BaseResponse base_resp = 1;
-    repeated DigitalHumanTaskResult list = 2;
+    repeated DigitalVideo list = 2;
     base.PaginationResponse pagination = 100;
 }
 
