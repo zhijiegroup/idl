@@ -309,6 +309,7 @@ message CreateDigitalVideoRequest {
 
 message CreateDigitalVideoResponse {
     base.BaseResponse base_resp = 1;
+    string task_id = 2;
 }
 
 message DigitalVideo {
