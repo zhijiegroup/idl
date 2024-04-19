@@ -23,27 +23,27 @@ public interface ListDigitalHumanResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
-  java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> 
+  java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> 
       getListList();
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult getList(int index);
+  com.zhijiejiaoyu.glory_api.short_video.DigitalVideo getList(int index);
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   int getListCount();
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
-  java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder> 
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder> 
       getListOrBuilderList();
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
-  com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder getListOrBuilder(
+  com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder getListOrBuilder(
       int index);
 
   /**

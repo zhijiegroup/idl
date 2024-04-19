@@ -503,7 +503,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ServerContext ctx, $57.GetArticleCreationTenantCostRequest request);
   $async.Future<$57.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ServerContext ctx, $57.GetSubTopicAiResultRequest request);
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ServerContext ctx, $57.CreateDigitalHumanRequest request);
-  $async.Future<$57.QueryDigitalHumanResponse> queryDigitalHuman($pb.ServerContext ctx, $57.QueryDigitalHumanRequest request);
   $async.Future<$57.ListDigitalHumanResponse> listDigitalHuman($pb.ServerContext ctx, $57.ListDigitalHumanRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
@@ -933,7 +932,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetArticleCreationTenantCost': return $57.GetArticleCreationTenantCostRequest();
       case 'GetSubTopicAiResult': return $57.GetSubTopicAiResultRequest();
       case 'CreateDigitalHuman': return $57.CreateDigitalHumanRequest();
-      case 'QueryDigitalHuman': return $57.QueryDigitalHumanRequest();
       case 'ListDigitalHuman': return $57.ListDigitalHumanRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
@@ -1366,7 +1364,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'GetArticleCreationTenantCost': return this.getArticleCreationTenantCost(ctx, request as $57.GetArticleCreationTenantCostRequest);
       case 'GetSubTopicAiResult': return this.getSubTopicAiResult(ctx, request as $57.GetSubTopicAiResultRequest);
       case 'CreateDigitalHuman': return this.createDigitalHuman(ctx, request as $57.CreateDigitalHumanRequest);
-      case 'QueryDigitalHuman': return this.queryDigitalHuman(ctx, request as $57.QueryDigitalHumanRequest);
       case 'ListDigitalHuman': return this.listDigitalHuman(ctx, request as $57.ListDigitalHumanRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
