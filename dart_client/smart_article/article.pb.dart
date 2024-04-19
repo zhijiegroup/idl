@@ -3941,296 +3941,47 @@ class CreateDigitalHumanResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
-class QueryDigitalHumanRequest extends $pb.GeneratedMessage {
-  factory QueryDigitalHumanRequest({
-    $0.BaseRequest? baseRequest,
+class DigitalVideo extends $pb.GeneratedMessage {
+  factory DigitalVideo({
     $core.String? taskId,
+    $core.String? videoTitle,
+    $core.String? videoUrl,
+    $fixnum.Int64? videoDuration,
+    $core.String? subtitleUrl,
+    $core.String? videoPreview,
   }) {
     final $result = create();
-    if (baseRequest != null) {
-      $result.baseRequest = baseRequest;
-    }
     if (taskId != null) {
       $result.taskId = taskId;
     }
-    return $result;
-  }
-  QueryDigitalHumanRequest._() : super();
-  factory QueryDigitalHumanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryDigitalHumanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryDigitalHumanRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aOS(2, _omitFieldNames ? '' : 'taskId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  QueryDigitalHumanRequest clone() => QueryDigitalHumanRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  QueryDigitalHumanRequest copyWith(void Function(QueryDigitalHumanRequest) updates) => super.copyWith((message) => updates(message as QueryDigitalHumanRequest)) as QueryDigitalHumanRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static QueryDigitalHumanRequest create() => QueryDigitalHumanRequest._();
-  QueryDigitalHumanRequest createEmptyInstance() => create();
-  static $pb.PbList<QueryDigitalHumanRequest> createRepeated() => $pb.PbList<QueryDigitalHumanRequest>();
-  @$core.pragma('dart2js:noInline')
-  static QueryDigitalHumanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDigitalHumanRequest>(create);
-  static QueryDigitalHumanRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseRequest() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseRequest() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.String get taskId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set taskId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasTaskId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTaskId() => clearField(2);
-}
-
-class DigitalHumanResult extends $pb.GeneratedMessage {
-  factory DigitalHumanResult({
-    $core.String? videoUrl,
-    $core.String? subtitlesUrl,
-    $fixnum.Int64? videoDuration,
-  }) {
-    final $result = create();
+    if (videoTitle != null) {
+      $result.videoTitle = videoTitle;
+    }
     if (videoUrl != null) {
       $result.videoUrl = videoUrl;
-    }
-    if (subtitlesUrl != null) {
-      $result.subtitlesUrl = subtitlesUrl;
     }
     if (videoDuration != null) {
       $result.videoDuration = videoDuration;
     }
-    return $result;
-  }
-  DigitalHumanResult._() : super();
-  factory DigitalHumanResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DigitalHumanResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(4, _omitFieldNames ? '' : 'videoUrl')
-    ..aOS(5, _omitFieldNames ? '' : 'subtitlesUrl')
-    ..aInt64(6, _omitFieldNames ? '' : 'videoDuration')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DigitalHumanResult clone() => DigitalHumanResult()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DigitalHumanResult copyWith(void Function(DigitalHumanResult) updates) => super.copyWith((message) => updates(message as DigitalHumanResult)) as DigitalHumanResult;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static DigitalHumanResult create() => DigitalHumanResult._();
-  DigitalHumanResult createEmptyInstance() => create();
-  static $pb.PbList<DigitalHumanResult> createRepeated() => $pb.PbList<DigitalHumanResult>();
-  @$core.pragma('dart2js:noInline')
-  static DigitalHumanResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanResult>(create);
-  static DigitalHumanResult? _defaultInstance;
-
-  @$pb.TagNumber(4)
-  $core.String get videoUrl => $_getSZ(0);
-  @$pb.TagNumber(4)
-  set videoUrl($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasVideoUrl() => $_has(0);
-  @$pb.TagNumber(4)
-  void clearVideoUrl() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get subtitlesUrl => $_getSZ(1);
-  @$pb.TagNumber(5)
-  set subtitlesUrl($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasSubtitlesUrl() => $_has(1);
-  @$pb.TagNumber(5)
-  void clearSubtitlesUrl() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $fixnum.Int64 get videoDuration => $_getI64(2);
-  @$pb.TagNumber(6)
-  set videoDuration($fixnum.Int64 v) { $_setInt64(2, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasVideoDuration() => $_has(2);
-  @$pb.TagNumber(6)
-  void clearVideoDuration() => clearField(6);
-}
-
-class QueryDigitalHumanResponse extends $pb.GeneratedMessage {
-  factory QueryDigitalHumanResponse({
-    $0.BaseResponse? baseResp,
-    $fixnum.Int64? taskId,
-    $core.int? type,
-    $core.String? status,
-    DigitalHumanResult? result,
-  }) {
-    final $result = create();
-    if (baseResp != null) {
-      $result.baseResp = baseResp;
+    if (subtitleUrl != null) {
+      $result.subtitleUrl = subtitleUrl;
     }
-    if (taskId != null) {
-      $result.taskId = taskId;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (result != null) {
-      $result.result = result;
+    if (videoPreview != null) {
+      $result.videoPreview = videoPreview;
     }
     return $result;
   }
-  QueryDigitalHumanResponse._() : super();
-  factory QueryDigitalHumanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryDigitalHumanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DigitalVideo._() : super();
+  factory DigitalVideo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DigitalVideo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'QueryDigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'taskId')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
-    ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOM<DigitalHumanResult>(5, _omitFieldNames ? '' : 'result', subBuilder: DigitalHumanResult.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  QueryDigitalHumanResponse clone() => QueryDigitalHumanResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  QueryDigitalHumanResponse copyWith(void Function(QueryDigitalHumanResponse) updates) => super.copyWith((message) => updates(message as QueryDigitalHumanResponse)) as QueryDigitalHumanResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static QueryDigitalHumanResponse create() => QueryDigitalHumanResponse._();
-  QueryDigitalHumanResponse createEmptyInstance() => create();
-  static $pb.PbList<QueryDigitalHumanResponse> createRepeated() => $pb.PbList<QueryDigitalHumanResponse>();
-  @$core.pragma('dart2js:noInline')
-  static QueryDigitalHumanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDigitalHumanResponse>(create);
-  static QueryDigitalHumanResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
-  @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasBaseResp() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearBaseResp() => clearField(1);
-  @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get taskId => $_getI64(1);
-  @$pb.TagNumber(2)
-  set taskId($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasTaskId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTaskId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.int get type => $_getIZ(2);
-  @$pb.TagNumber(3)
-  set type($core.int v) { $_setSignedInt32(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasType() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearType() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get status => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set status($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasStatus() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearStatus() => clearField(4);
-
-  @$pb.TagNumber(5)
-  DigitalHumanResult get result => $_getN(4);
-  @$pb.TagNumber(5)
-  set result(DigitalHumanResult v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasResult() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearResult() => clearField(5);
-  @$pb.TagNumber(5)
-  DigitalHumanResult ensureResult() => $_ensure(4);
-}
-
-class DigitalHumanTaskResult extends $pb.GeneratedMessage {
-  factory DigitalHumanTaskResult({
-    $core.String? taskId,
-    $core.String? title,
-    $core.int? type,
-    $core.int? status,
-    DigitalHumanResult? raw,
-  }) {
-    final $result = create();
-    if (taskId != null) {
-      $result.taskId = taskId;
-    }
-    if (title != null) {
-      $result.title = title;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (raw != null) {
-      $result.raw = raw;
-    }
-    return $result;
-  }
-  DigitalHumanTaskResult._() : super();
-  factory DigitalHumanTaskResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DigitalHumanTaskResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalHumanTaskResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalVideo', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'taskId')
-    ..aOS(2, _omitFieldNames ? '' : 'title')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
-    ..aOM<DigitalHumanResult>(5, _omitFieldNames ? '' : 'raw', subBuilder: DigitalHumanResult.create)
+    ..aOS(2, _omitFieldNames ? '' : 'videoTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'videoUrl')
+    ..aInt64(4, _omitFieldNames ? '' : 'videoDuration')
+    ..aOS(5, _omitFieldNames ? '' : 'subtitleUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'videoPreview')
     ..hasRequiredFields = false
   ;
 
@@ -4238,22 +3989,22 @@ class DigitalHumanTaskResult extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DigitalHumanTaskResult clone() => DigitalHumanTaskResult()..mergeFromMessage(this);
+  DigitalVideo clone() => DigitalVideo()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DigitalHumanTaskResult copyWith(void Function(DigitalHumanTaskResult) updates) => super.copyWith((message) => updates(message as DigitalHumanTaskResult)) as DigitalHumanTaskResult;
+  DigitalVideo copyWith(void Function(DigitalVideo) updates) => super.copyWith((message) => updates(message as DigitalVideo)) as DigitalVideo;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanTaskResult create() => DigitalHumanTaskResult._();
-  DigitalHumanTaskResult createEmptyInstance() => create();
-  static $pb.PbList<DigitalHumanTaskResult> createRepeated() => $pb.PbList<DigitalHumanTaskResult>();
+  static DigitalVideo create() => DigitalVideo._();
+  DigitalVideo createEmptyInstance() => create();
+  static $pb.PbList<DigitalVideo> createRepeated() => $pb.PbList<DigitalVideo>();
   @$core.pragma('dart2js:noInline')
-  static DigitalHumanTaskResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalHumanTaskResult>(create);
-  static DigitalHumanTaskResult? _defaultInstance;
+  static DigitalVideo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalVideo>(create);
+  static DigitalVideo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get taskId => $_getSZ(0);
@@ -4265,48 +4016,55 @@ class DigitalHumanTaskResult extends $pb.GeneratedMessage {
   void clearTaskId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get title => $_getSZ(1);
+  $core.String get videoTitle => $_getSZ(1);
   @$pb.TagNumber(2)
-  set title($core.String v) { $_setString(1, v); }
+  set videoTitle($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTitle() => $_has(1);
+  $core.bool hasVideoTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTitle() => clearField(2);
+  void clearVideoTitle() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.int get type => $_getIZ(2);
+  $core.String get videoUrl => $_getSZ(2);
   @$pb.TagNumber(3)
-  set type($core.int v) { $_setSignedInt32(2, v); }
+  set videoUrl($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasType() => $_has(2);
+  $core.bool hasVideoUrl() => $_has(2);
   @$pb.TagNumber(3)
-  void clearType() => clearField(3);
+  void clearVideoUrl() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.int get status => $_getIZ(3);
+  $fixnum.Int64 get videoDuration => $_getI64(3);
   @$pb.TagNumber(4)
-  set status($core.int v) { $_setSignedInt32(3, v); }
+  set videoDuration($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasStatus() => $_has(3);
+  $core.bool hasVideoDuration() => $_has(3);
   @$pb.TagNumber(4)
-  void clearStatus() => clearField(4);
+  void clearVideoDuration() => clearField(4);
 
   @$pb.TagNumber(5)
-  DigitalHumanResult get raw => $_getN(4);
+  $core.String get subtitleUrl => $_getSZ(4);
   @$pb.TagNumber(5)
-  set raw(DigitalHumanResult v) { setField(5, v); }
+  set subtitleUrl($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasRaw() => $_has(4);
+  $core.bool hasSubtitleUrl() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRaw() => clearField(5);
-  @$pb.TagNumber(5)
-  DigitalHumanResult ensureRaw() => $_ensure(4);
+  void clearSubtitleUrl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get videoPreview => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set videoPreview($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasVideoPreview() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVideoPreview() => clearField(6);
 }
 
 class ListDigitalHumanResponse extends $pb.GeneratedMessage {
   factory ListDigitalHumanResponse({
     $0.BaseResponse? baseResp,
-    $core.Iterable<DigitalHumanTaskResult>? list,
+    $core.Iterable<DigitalVideo>? list,
     $0.PaginationResponse? pagination,
   }) {
     final $result = create();
@@ -4327,7 +4085,7 @@ class ListDigitalHumanResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalHumanResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..pc<DigitalHumanTaskResult>(2, _omitFieldNames ? '' : 'list', $pb.PbFieldType.PM, subBuilder: DigitalHumanTaskResult.create)
+    ..pc<DigitalVideo>(2, _omitFieldNames ? '' : 'list', $pb.PbFieldType.PM, subBuilder: DigitalVideo.create)
     ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
@@ -4365,7 +4123,7 @@ class ListDigitalHumanResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<DigitalHumanTaskResult> get list => $_getList(1);
+  $core.List<DigitalVideo> get list => $_getList(1);
 
   @$pb.TagNumber(100)
   $0.PaginationResponse get pagination => $_getN(2);

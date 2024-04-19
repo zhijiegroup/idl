@@ -65,11 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              list = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult>();
+              list = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo>();
               mutable_bitField0_ |= 0x00000001;
             }
             list .add(
-                input.readMessage(com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.parser(), extensionRegistry));
+                input.readMessage(com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.parser(), extensionRegistry));
             break;
           }
           case 802: {
@@ -147,41 +147,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIST_FIELD_NUMBER = 2;
-  private java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> list ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> list ;
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> getListList() {
+  public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> getListList() {
     return list ;
   }
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder> 
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder> 
       getListOrBuilderList() {
     return list ;
   }
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   @java.lang.Override
   public int getListCount() {
     return list .size();
   }
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult getList(int index) {
+  public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo getList(int index) {
     return list .get(index);
   }
   /**
-   * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+   * <code>repeated .glory_api.DigitalVideo list = 2;</code>
    */
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder getListOrBuilder(
+  public com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder getListOrBuilder(
       int index) {
     return list .get(index);
   }
@@ -733,22 +733,22 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> list =
+    private java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> list =
       java.util.Collections.emptyList();
     private void ensureListIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        list = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult>(list );
+        list = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo>(list );
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder> listBuilder ;
+        com.zhijiejiaoyu.glory_api.short_video.DigitalVideo, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder> listBuilder ;
 
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> getListList() {
+    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> getListList() {
       if (listBuilder == null) {
         return java.util.Collections.unmodifiableList(list );
       } else {
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public int getListCount() {
       if (listBuilder == null) {
@@ -766,9 +766,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult getList(int index) {
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo getList(int index) {
       if (listBuilder == null) {
         return list .get(index);
       } else {
@@ -776,10 +776,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder setList(
-        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult value) {
+        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo value) {
       if (listBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -793,10 +793,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder setList(
-        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder builderForValue) {
+        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder builderForValue) {
       if (listBuilder == null) {
         ensureListIsMutable();
         list .set(index, builderForValue.build());
@@ -807,9 +807,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public Builder addList(com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult value) {
+    public Builder addList(com.zhijiejiaoyu.glory_api.short_video.DigitalVideo value) {
       if (listBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -823,10 +823,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder addList(
-        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult value) {
+        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo value) {
       if (listBuilder == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -840,10 +840,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder addList(
-        com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder builderForValue) {
+        com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder builderForValue) {
       if (listBuilder == null) {
         ensureListIsMutable();
         list .add(builderForValue.build());
@@ -854,10 +854,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder addList(
-        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder builderForValue) {
+        int index, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder builderForValue) {
       if (listBuilder == null) {
         ensureListIsMutable();
         list .add(index, builderForValue.build());
@@ -868,10 +868,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder addAllList(
-        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult> values) {
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalVideo> values) {
       if (listBuilder == null) {
         ensureListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder clearList() {
       if (listBuilder == null) {
@@ -896,7 +896,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
     public Builder removeList(int index) {
       if (listBuilder == null) {
@@ -909,16 +909,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder getListBuilder(
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder getListBuilder(
         int index) {
       return getListFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder getListOrBuilder(
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder getListOrBuilder(
         int index) {
       if (listBuilder == null) {
         return list .get(index);  } else {
@@ -926,9 +926,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder> 
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder> 
          getListOrBuilderList() {
       if (listBuilder != null) {
         return listBuilder .getMessageOrBuilderList();
@@ -937,33 +937,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder addListBuilder() {
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder addListBuilder() {
       return getListFieldBuilder().addBuilder(
-          com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.getDefaultInstance());
+          com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder addListBuilder(
+    public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder addListBuilder(
         int index) {
       return getListFieldBuilder().addBuilder(
-          index, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.getDefaultInstance());
+          index, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.DigitalHumanTaskResult list = 2;</code>
+     * <code>repeated .glory_api.DigitalVideo list = 2;</code>
      */
-    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder> 
+    public java.util.List<com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder> 
          getListBuilderList() {
       return getListFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder> 
+        com.zhijiejiaoyu.glory_api.short_video.DigitalVideo, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder> 
         getListFieldBuilder() {
       if (listBuilder == null) {
         listBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResult.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalHumanTaskResultOrBuilder>(
+            com.zhijiejiaoyu.glory_api.short_video.DigitalVideo, com.zhijiejiaoyu.glory_api.short_video.DigitalVideo.Builder, com.zhijiejiaoyu.glory_api.short_video.DigitalVideoOrBuilder>(
                 list ,
                 ((bitField0 & 0x00000001) != 0),
                 getParentForChildren(),

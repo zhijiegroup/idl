@@ -501,7 +501,6 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'GetArticleCreationTenantCost', '2': '.glory_api.GetArticleCreationTenantCostRequest', '3': '.glory_api.GetArticleCreationTenantCostResponse', '4': {}},
     {'1': 'GetSubTopicAiResult', '2': '.glory_api.GetSubTopicAiResultRequest', '3': '.glory_api.GetSubTopicAiResultResponse', '4': {}},
     {'1': 'CreateDigitalHuman', '2': '.glory_api.CreateDigitalHumanRequest', '3': '.glory_api.CreateDigitalHumanResponse', '4': {}},
-    {'1': 'QueryDigitalHuman', '2': '.glory_api.QueryDigitalHumanRequest', '3': '.glory_api.QueryDigitalHumanResponse', '4': {}},
     {'1': 'ListDigitalHuman', '2': '.glory_api.ListDigitalHumanRequest', '3': '.glory_api.ListDigitalHumanResponse', '4': {}},
   ],
 };
@@ -1580,12 +1579,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetSubTopicAiResultResponse': $57.GetSubTopicAiResultResponse$json,
   '.glory_api.CreateDigitalHumanRequest': $57.CreateDigitalHumanRequest$json,
   '.glory_api.CreateDigitalHumanResponse': $57.CreateDigitalHumanResponse$json,
-  '.glory_api.QueryDigitalHumanRequest': $57.QueryDigitalHumanRequest$json,
-  '.glory_api.QueryDigitalHumanResponse': $57.QueryDigitalHumanResponse$json,
-  '.glory_api.DigitalHumanResult': $57.DigitalHumanResult$json,
   '.glory_api.ListDigitalHumanRequest': $57.ListDigitalHumanRequest$json,
   '.glory_api.ListDigitalHumanResponse': $57.ListDigitalHumanResponse$json,
-  '.glory_api.DigitalHumanTaskResult': $57.DigitalHumanTaskResult$json,
+  '.glory_api.DigitalVideo': $57.DigitalVideo$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2577,10 +2573,8 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'YXBpLkdldFN1YlRvcGljQWlSZXN1bHRSZXNwb25zZSIx0sEYLS9hcGkvYXJ0aWNsZV9jcmVhdG'
     'lvbi9nZXRfc3ViX3RvcGljX2FpX3Jlc3VsdBKAAQoSQ3JlYXRlRGlnaXRhbEh1bWFuEiQuZ2xv'
     'cnlfYXBpLkNyZWF0ZURpZ2l0YWxIdW1hblJlcXVlc3QaJS5nbG9yeV9hcGkuQ3JlYXRlRGlnaX'
-    'RhbEh1bWFuUmVzcG9uc2UiHdLBGBkvYXBpL2RpZ2l0YWwvaHVtYW4vY3JlYXRlEnwKEVF1ZXJ5'
-    'RGlnaXRhbEh1bWFuEiMuZ2xvcnlfYXBpLlF1ZXJ5RGlnaXRhbEh1bWFuUmVxdWVzdBokLmdsb3'
-    'J5X2FwaS5RdWVyeURpZ2l0YWxIdW1hblJlc3BvbnNlIhzSwRgYL2FwaS9kaWdpdGFsL2h1bWFu'
-    'L3F1ZXJ5EngKEExpc3REaWdpdGFsSHVtYW4SIi5nbG9yeV9hcGkuTGlzdERpZ2l0YWxIdW1hbl'
-    'JlcXVlc3QaIy5nbG9yeV9hcGkuTGlzdERpZ2l0YWxIdW1hblJlc3BvbnNlIhvSwRgXL2FwaS9k'
-    'aWdpdGFsL2h1bWFuL2xpc3Q=');
+    'RhbEh1bWFuUmVzcG9uc2UiHdLBGBkvYXBpL2RpZ2l0YWwvaHVtYW4vY3JlYXRlEngKEExpc3RE'
+    'aWdpdGFsSHVtYW4SIi5nbG9yeV9hcGkuTGlzdERpZ2l0YWxIdW1hblJlcXVlc3QaIy5nbG9yeV'
+    '9hcGkuTGlzdERpZ2l0YWxIdW1hblJlc3BvbnNlIhvSwRgXL2FwaS9kaWdpdGFsL2h1bWFuL2xp'
+    'c3Q=');
 

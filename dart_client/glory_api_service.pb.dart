@@ -1352,9 +1352,6 @@ class glory_apiApi {
   $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ClientContext? ctx, $57.CreateDigitalHumanRequest request) =>
     _client.invoke<$57.CreateDigitalHumanResponse>(ctx, 'glory_api', 'CreateDigitalHuman', request, $57.CreateDigitalHumanResponse())
   ;
-  $async.Future<$57.QueryDigitalHumanResponse> queryDigitalHuman($pb.ClientContext? ctx, $57.QueryDigitalHumanRequest request) =>
-    _client.invoke<$57.QueryDigitalHumanResponse>(ctx, 'glory_api', 'QueryDigitalHuman', request, $57.QueryDigitalHumanResponse())
-  ;
   $async.Future<$57.ListDigitalHumanResponse> listDigitalHuman($pb.ClientContext? ctx, $57.ListDigitalHumanRequest request) =>
     _client.invoke<$57.ListDigitalHumanResponse>(ctx, 'glory_api', 'ListDigitalHuman', request, $57.ListDigitalHumanResponse())
   ;

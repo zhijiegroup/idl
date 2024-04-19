@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\241\256\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\243\255\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1429,14 +1429,11 @@ public final class GloryApiService {
       "reateDigitalHuman\022$.glory_api.CreateDigi" +
       "talHumanRequest\032%.glory_api.CreateDigita" +
       "lHumanResponse\"\035\322\301\030\031/api/digital/human/c" +
-      "reate\022|\n\021QueryDigitalHuman\022#.glory_api.Q" +
-      "ueryDigitalHumanRequest\032$.glory_api.Quer" +
-      "yDigitalHumanResponse\"\034\322\301\030\030/api/digital/" +
-      "human/query\022x\n\020ListDigitalHuman\022\".glory_" +
-      "api.ListDigitalHumanRequest\032#.glory_api." +
-      "ListDigitalHumanResponse\"\033\322\301\030\027/api/digit" +
-      "al/human/listB\036\n\032com.zhijiejiaoyu.glory_" +
-      "apiP\001b\006proto3"
+      "reate\022x\n\020ListDigitalHuman\022\".glory_api.Li" +
+      "stDigitalHumanRequest\032#.glory_api.ListDi" +
+      "gitalHumanResponse\"\033\322\301\030\027/api/digital/hum" +
+      "an/listB\036\n\032com.zhijiejiaoyu.glory_apiP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

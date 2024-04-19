@@ -1204,116 +1204,26 @@ struct GloryApi_CreateDigitalHumanResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_QueryDigitalHumanRequest {
+struct GloryApi_DigitalVideo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
-
-  var baseRequest: Base_BaseRequest {
-    get {return _baseRequest ?? Base_BaseRequest()}
-    set {_baseRequest = newValue}
-  }
-  /// Returns true if `baseRequest` has been explicitly set.
-  var hasBaseRequest: Bool {return self._baseRequest != nil}
-  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
-  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var taskID: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  var videoTitle: String = String()
 
-  init() {}
-
-  fileprivate var _baseRequest: Base_BaseRequest? = nil
-}
-
-struct GloryApi_DigitalHumanResult {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  /// 视频URL
   var videoURL: String = String()
 
-  /// 字幕URL
-  var subtitlesURL: String = String()
-
-  /// 视频时长
   var videoDuration: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  var subtitleURL: String = String()
 
-  init() {}
-}
-
-struct GloryApi_QueryDigitalHumanResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
-  }
-  /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
-  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
-
-  /// 任务ID
-  var taskID: Int64 = 0
-
-  /// 任务类型
-  var type: Int32 = 0
-
-  /// 任务进度
-  var status: String = String()
-
-  /// 任务执行结果
-  var result: GloryApi_DigitalHumanResult {
-    get {return _result ?? GloryApi_DigitalHumanResult()}
-    set {_result = newValue}
-  }
-  /// Returns true if `result` has been explicitly set.
-  var hasResult: Bool {return self._result != nil}
-  /// Clears the value of `result`. Subsequent reads from it will return its default value.
-  mutating func clearResult() {self._result = nil}
+  var videoPreview: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _result: GloryApi_DigitalHumanResult? = nil
-}
-
-struct GloryApi_DigitalHumanTaskResult {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var taskID: String = String()
-
-  var title: String = String()
-
-  var type: Int32 = 0
-
-  var status: Int32 = 0
-
-  var raw: GloryApi_DigitalHumanResult {
-    get {return _raw ?? GloryApi_DigitalHumanResult()}
-    set {_raw = newValue}
-  }
-  /// Returns true if `raw` has been explicitly set.
-  var hasRaw: Bool {return self._raw != nil}
-  /// Clears the value of `raw`. Subsequent reads from it will return its default value.
-  mutating func clearRaw() {self._raw = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _raw: GloryApi_DigitalHumanResult? = nil
 }
 
 struct GloryApi_ListDigitalHumanResponse {
@@ -1330,7 +1240,7 @@ struct GloryApi_ListDigitalHumanResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var list: [GloryApi_DigitalHumanTaskResult] = []
+  var list: [GloryApi_DigitalVideo] = []
 
   var pagination: Base_PaginationResponse {
     get {return _pagination ?? Base_PaginationResponse()}
@@ -1999,10 +1909,7 @@ extension GloryApi_ArticleAIChatResponse: @unchecked Sendable {}
 extension GloryApi_ChatMessage: @unchecked Sendable {}
 extension GloryApi_CreateDigitalHumanRequest: @unchecked Sendable {}
 extension GloryApi_CreateDigitalHumanResponse: @unchecked Sendable {}
-extension GloryApi_QueryDigitalHumanRequest: @unchecked Sendable {}
-extension GloryApi_DigitalHumanResult: @unchecked Sendable {}
-extension GloryApi_QueryDigitalHumanResponse: @unchecked Sendable {}
-extension GloryApi_DigitalHumanTaskResult: @unchecked Sendable {}
+extension GloryApi_DigitalVideo: @unchecked Sendable {}
 extension GloryApi_ListDigitalHumanResponse: @unchecked Sendable {}
 extension GloryApi_ListDigitalHumanRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataRequest: @unchecked Sendable {}
@@ -4321,160 +4228,15 @@ extension GloryApi_CreateDigitalHumanResponse: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension GloryApi_QueryDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QueryDigitalHumanRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_request"),
-    2: .standard(proto: "task_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.taskID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseRequest {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if !self.taskID.isEmpty {
-      try visitor.visitSingularStringField(value: self.taskID, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_QueryDigitalHumanRequest, rhs: GloryApi_QueryDigitalHumanRequest) -> Bool {
-    if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.taskID != rhs.taskID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_DigitalHumanResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DigitalHumanResult"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    4: .standard(proto: "video_url"),
-    5: .standard(proto: "subtitles_url"),
-    6: .standard(proto: "video_duration"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 4: try { try decoder.decodeSingularStringField(value: &self.videoURL) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.subtitlesURL) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.videoDuration) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.videoURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.videoURL, fieldNumber: 4)
-    }
-    if !self.subtitlesURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.subtitlesURL, fieldNumber: 5)
-    }
-    if self.videoDuration != 0 {
-      try visitor.visitSingularInt64Field(value: self.videoDuration, fieldNumber: 6)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_DigitalHumanResult, rhs: GloryApi_DigitalHumanResult) -> Bool {
-    if lhs.videoURL != rhs.videoURL {return false}
-    if lhs.subtitlesURL != rhs.subtitlesURL {return false}
-    if lhs.videoDuration != rhs.videoDuration {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_QueryDigitalHumanResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QueryDigitalHumanResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-    2: .standard(proto: "task_id"),
-    3: .same(proto: "type"),
-    4: .same(proto: "status"),
-    5: .same(proto: "result"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 5: try { try decoder.decodeSingularMessageField(value: &self._result) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    if self.taskID != 0 {
-      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 2)
-    }
-    if self.type != 0 {
-      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 3)
-    }
-    if !self.status.isEmpty {
-      try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
-    }
-    try { if let v = self._result {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_QueryDigitalHumanResponse, rhs: GloryApi_QueryDigitalHumanResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.taskID != rhs.taskID {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.status != rhs.status {return false}
-    if lhs._result != rhs._result {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_DigitalHumanTaskResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DigitalHumanTaskResult"
+extension GloryApi_DigitalVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DigitalVideo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "task_id"),
-    2: .same(proto: "title"),
-    3: .same(proto: "type"),
-    4: .same(proto: "status"),
-    5: .same(proto: "raw"),
+    2: .standard(proto: "video_title"),
+    3: .standard(proto: "video_url"),
+    4: .standard(proto: "video_duration"),
+    5: .standard(proto: "subtitle_url"),
+    6: .standard(proto: "video_preview"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4484,44 +4246,45 @@ extension GloryApi_DigitalHumanTaskResult: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.taskID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.title) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
-      case 4: try { try decoder.decodeSingularInt32Field(value: &self.status) }()
-      case 5: try { try decoder.decodeSingularMessageField(value: &self._raw) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.videoTitle) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.videoURL) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.videoDuration) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.subtitleURL) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.videoPreview) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.taskID.isEmpty {
       try visitor.visitSingularStringField(value: self.taskID, fieldNumber: 1)
     }
-    if !self.title.isEmpty {
-      try visitor.visitSingularStringField(value: self.title, fieldNumber: 2)
+    if !self.videoTitle.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoTitle, fieldNumber: 2)
     }
-    if self.type != 0 {
-      try visitor.visitSingularInt32Field(value: self.type, fieldNumber: 3)
+    if !self.videoURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoURL, fieldNumber: 3)
     }
-    if self.status != 0 {
-      try visitor.visitSingularInt32Field(value: self.status, fieldNumber: 4)
+    if self.videoDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.videoDuration, fieldNumber: 4)
     }
-    try { if let v = self._raw {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    } }()
+    if !self.subtitleURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.subtitleURL, fieldNumber: 5)
+    }
+    if !self.videoPreview.isEmpty {
+      try visitor.visitSingularStringField(value: self.videoPreview, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_DigitalHumanTaskResult, rhs: GloryApi_DigitalHumanTaskResult) -> Bool {
+  static func ==(lhs: GloryApi_DigitalVideo, rhs: GloryApi_DigitalVideo) -> Bool {
     if lhs.taskID != rhs.taskID {return false}
-    if lhs.title != rhs.title {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.status != rhs.status {return false}
-    if lhs._raw != rhs._raw {return false}
+    if lhs.videoTitle != rhs.videoTitle {return false}
+    if lhs.videoURL != rhs.videoURL {return false}
+    if lhs.videoDuration != rhs.videoDuration {return false}
+    if lhs.subtitleURL != rhs.subtitleURL {return false}
+    if lhs.videoPreview != rhs.videoPreview {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

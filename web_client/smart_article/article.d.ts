@@ -324,43 +324,18 @@ export interface CreateDigitalHumanResponse {
   base_resp?: base.BaseResponse;
 }
 
-export interface QueryDigitalHumanRequest {
-  base_request?: base.BaseRequest;
+export interface DigitalVideo {
   task_id?: string;
-}
-
-export interface DigitalHumanResult {
-  /** 视频URL */
+  video_title?: string;
   video_url?: string;
-  /** 字幕URL */
-  subtitles_url?: string;
-  /** 视频时长 */
   video_duration?: string;
-}
-
-export interface QueryDigitalHumanResponse {
-  base_resp?: base.BaseResponse;
-  /** 任务ID */
-  task_id?: string;
-  /** 任务类型 */
-  type?: number;
-  /** 任务进度 */
-  status?: string;
-  /** 任务执行结果 */
-  result?: DigitalHumanResult;
-}
-
-export interface DigitalHumanTaskResult {
-  task_id?: string;
-  title?: string;
-  type?: number;
-  status?: number;
-  raw?: DigitalHumanResult;
+  subtitle_url?: string;
+  video_preview?: string;
 }
 
 export interface ListDigitalHumanResponse {
   base_resp?: base.BaseResponse;
-  list?: Array<DigitalHumanTaskResult>;
+  list?: Array<DigitalVideo>;
   pagination?: base.PaginationResponse;
 }
 
