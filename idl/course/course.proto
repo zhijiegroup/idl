@@ -35,6 +35,7 @@ message Course {
   repeated CourseModule course_modules = 17; // 能力指标或能力方向
   string created_at = 18; // 创建时间
   bool assigned = 19;
+  string language = 20; // 课程语言
 }
 
 // 创建模块化课程
@@ -94,6 +95,7 @@ message ListCourseRequest {
   bool simple = 8; // 是否需要精简数据
   string key = 10; // 模糊查询字段
   bool assigned = 11; // 是否只查询已购买的课程
+  string language = 12; // 课程语言
   base.PaginationRequest pagination = 100;
 }
 
