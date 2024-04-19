@@ -59,6 +59,7 @@ const Course$json = {
     {'1': 'course_modules', '3': 17, '4': 3, '5': 11, '6': '.glory_api.CourseModule', '10': 'courseModules'},
     {'1': 'created_at', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'assigned', '3': 19, '4': 1, '5': 8, '10': 'assigned'},
+    {'1': 'language', '3': 20, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -78,7 +79,7 @@ final $typed_data.Uint8List courseDescriptor = $convert.base64Decode(
     'NvdXJzZV90eXBlGA8gASgFUgpjb3Vyc2VUeXBlEiMKDWNvdXJzZV9tb2R1bGUYECABKAVSDGNv'
     'dXJzZU1vZHVsZRI+Cg5jb3Vyc2VfbW9kdWxlcxgRIAMoCzIXLmdsb3J5X2FwaS5Db3Vyc2VNb2'
     'R1bGVSDWNvdXJzZU1vZHVsZXMSHQoKY3JlYXRlZF9hdBgSIAEoCVIJY3JlYXRlZEF0EhoKCGFz'
-    'c2lnbmVkGBMgASgIUghhc3NpZ25lZA==');
+    'c2lnbmVkGBMgASgIUghhc3NpZ25lZBIaCghsYW5ndWFnZRgUIAEoCVIIbGFuZ3VhZ2U=');
 
 @$core.Deprecated('Use createCourseRequestDescriptor instead')
 const CreateCourseRequest$json = {
@@ -211,6 +212,7 @@ const ListCourseRequest$json = {
     {'1': 'simple', '3': 8, '4': 1, '5': 8, '10': 'simple'},
     {'1': 'key', '3': 10, '4': 1, '5': 9, '10': 'key'},
     {'1': 'assigned', '3': 11, '4': 1, '5': 8, '10': 'assigned'},
+    {'1': 'language', '3': 12, '4': 1, '5': 9, '10': 'language'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -223,8 +225,8 @@ final $typed_data.Uint8List listCourseRequestDescriptor = $convert.base64Decode(
     'VtYWpvchgEIAMoCVIFbWFqb3ISFAoFbGV2ZWwYBSADKAVSBWxldmVsEh8KC2NvdXJzZV90eXBl'
     'GAYgAygFUgpjb3Vyc2VUeXBlEicKD2NvdXJzZV9pbmR1c3RyeRgHIAMoCVIOY291cnNlSW5kdX'
     'N0cnkSFgoGc2ltcGxlGAggASgIUgZzaW1wbGUSEAoDa2V5GAogASgJUgNrZXkSGgoIYXNzaWdu'
-    'ZWQYCyABKAhSCGFzc2lnbmVkEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb2'
-    '5SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'ZWQYCyABKAhSCGFzc2lnbmVkEhoKCGxhbmd1YWdlGAwgASgJUghsYW5ndWFnZRI3CgpwYWdpbm'
+    'F0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listCourseResponseDescriptor instead')
 const ListCourseResponse$json = {

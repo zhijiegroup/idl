@@ -350,4 +350,24 @@ public interface CourseOrBuilder extends
    * @return The assigned.
    */
   boolean getAssigned();
+
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>string language = 20;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>string language = 20;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

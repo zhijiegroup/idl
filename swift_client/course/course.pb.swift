@@ -162,6 +162,12 @@ struct GloryApi_Course {
     set {_uniqueStorage()._assigned = newValue}
   }
 
+  /// 课程语言
+  var language: String {
+    get {return _storage._language}
+    set {_uniqueStorage()._language = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -425,6 +431,9 @@ struct GloryApi_ListCourseRequest {
 
   /// 是否只查询已购买的课程
   var assigned: Bool = false
+
+  /// 课程语言
+  var language: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -836,6 +845,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     17: .standard(proto: "course_modules"),
     18: .standard(proto: "created_at"),
     19: .same(proto: "assigned"),
+    20: .same(proto: "language"),
   ]
 
   fileprivate class _StorageClass {
@@ -858,6 +868,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     var _courseModules: [GloryApi_CourseModule] = []
     var _createdAt: String = String()
     var _assigned: Bool = false
+    var _language: String = String()
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -891,6 +902,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       _courseModules = source._courseModules
       _createdAt = source._createdAt
       _assigned = source._assigned
+      _language = source._language
     }
   }
 
@@ -928,6 +940,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         case 17: try { try decoder.decodeRepeatedMessageField(value: &_storage._courseModules) }()
         case 18: try { try decoder.decodeSingularStringField(value: &_storage._createdAt) }()
         case 19: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
+        case 20: try { try decoder.decodeSingularStringField(value: &_storage._language) }()
         default: break
         }
       }
@@ -993,6 +1006,9 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       if _storage._assigned != false {
         try visitor.visitSingularBoolField(value: _storage._assigned, fieldNumber: 19)
       }
+      if !_storage._language.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._language, fieldNumber: 20)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1021,6 +1037,7 @@ extension GloryApi_Course: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         if _storage._courseModules != rhs_storage._courseModules {return false}
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._assigned != rhs_storage._assigned {return false}
+        if _storage._language != rhs_storage._language {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1385,6 +1402,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     8: .same(proto: "simple"),
     10: .same(proto: "key"),
     11: .same(proto: "assigned"),
+    12: .same(proto: "language"),
     100: .same(proto: "pagination"),
   ]
 
@@ -1404,6 +1422,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.language) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1445,6 +1464,9 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.assigned != false {
       try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 11)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 12)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -1462,6 +1484,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.simple != rhs.simple {return false}
     if lhs.key != rhs.key {return false}
     if lhs.assigned != rhs.assigned {return false}
+    if lhs.language != rhs.language {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

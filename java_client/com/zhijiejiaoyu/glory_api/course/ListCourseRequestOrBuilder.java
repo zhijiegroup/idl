@@ -242,6 +242,26 @@ public interface ListCourseRequestOrBuilder extends
   boolean getAssigned();
 
   /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>string language = 12;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>string language = 12;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

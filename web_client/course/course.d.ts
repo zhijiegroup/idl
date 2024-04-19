@@ -51,6 +51,8 @@ export interface Course {
   /** 创建时间 */
   created_at?: string;
   assigned?: boolean;
+  /** 课程语言 */
+  language?: string;
 }
 
 /** 创建模块化课程 */
@@ -120,6 +122,8 @@ export interface ListCourseRequest {
   key?: string;
   /** 是否只查询已购买的课程 */
   assigned?: boolean;
+  /** 课程语言 */
+  language?: string;
   pagination?: base.PaginationRequest;
 }
 
