@@ -322,6 +322,7 @@ export interface CreateDigitalVideoRequest {
 
 export interface CreateDigitalVideoResponse {
   base_resp?: base.BaseResponse;
+  task_id?: string;
 }
 
 export interface DigitalVideo {

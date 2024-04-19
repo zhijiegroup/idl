@@ -3892,10 +3892,14 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
 class CreateDigitalVideoResponse extends $pb.GeneratedMessage {
   factory CreateDigitalVideoResponse({
     $0.BaseResponse? baseResp,
+    $core.String? taskId,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (taskId != null) {
+      $result.taskId = taskId;
     }
     return $result;
   }
@@ -3905,6 +3909,7 @@ class CreateDigitalVideoResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateDigitalVideoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'taskId')
     ..hasRequiredFields = false
   ;
 
@@ -3939,6 +3944,15 @@ class CreateDigitalVideoResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get taskId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set taskId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTaskId() => clearField(2);
 }
 
 class DigitalVideo extends $pb.GeneratedMessage {

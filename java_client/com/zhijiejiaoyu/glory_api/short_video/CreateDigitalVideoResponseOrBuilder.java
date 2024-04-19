@@ -21,4 +21,16 @@ public interface CreateDigitalVideoResponseOrBuilder extends
    * <code>.base.BaseResponse base_resp = 1;</code>
    */
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
+
+  /**
+   * <code>string task_id = 2;</code>
+   * @return The taskId.
+   */
+  java.lang.String getTaskId();
+  /**
+   * <code>string task_id = 2;</code>
+   * @return The bytes for taskId.
+   */
+  com.google.protobuf.ByteString
+      getTaskIdBytes();
 }
