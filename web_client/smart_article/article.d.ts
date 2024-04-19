@@ -314,38 +314,50 @@ export interface ChatMessage {
   role?: string;
 }
 
-export interface CreateDigitalHumanRequest {
+export interface CreateDigitalVideoRequest {
   base_request?: base.BaseRequest;
   text?: string;
   title?: string;
 }
 
-export interface CreateDigitalHumanResponse {
+export interface CreateDigitalVideoResponse {
   base_resp?: base.BaseResponse;
 }
 
 export interface DigitalVideo {
   task_id?: string;
+  task_status?: number;
   video_title?: string;
   video_url?: string;
   video_duration?: string;
   subtitle_url?: string;
   video_preview?: string;
+  created_at?: string;
 }
 
-export interface ListDigitalHumanResponse {
+export interface ListDigitalVideoResponse {
   base_resp?: base.BaseResponse;
   list?: Array<DigitalVideo>;
   pagination?: base.PaginationResponse;
 }
 
-export interface ListDigitalHumanRequest {
+export interface ListDigitalVideoRequest {
   base_request?: base.BaseRequest;
   task_id?: string;
   type?: number;
   title?: string;
   status?: number;
   pagination?: base.PaginationRequest;
+}
+
+export interface GetDigitalVideoResponse {
+  base_resp?: base.BaseResponse;
+  video?: DigitalVideo;
+}
+
+export interface GetDigitalVideoRequest {
+  base_request?: base.BaseRequest;
+  task_id?: string;
 }
 
 export interface UpdateTenantCourseDataRequest {

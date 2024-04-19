@@ -3378,16 +3378,24 @@ export class glory_api {
     );
   }
 
-  CreateDigitalHuman(request) {
-    const uri = `${this.uriPrefix}/api/digital/human/create`;
+  CreateDigitalVideo(request) {
+    const uri = `${this.uriPrefix}/api/digital/create_video`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
     );
   }
 
-  ListDigitalHuman(request) {
-    const uri = `${this.uriPrefix}/api/digital/human/list`;
+  ListDigitalVideo(request) {
+    const uri = `${this.uriPrefix}/api/digital/list_video`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetDigitalVideo(request) {
+    const uri = `${this.uriPrefix}/api/digital/get_video`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

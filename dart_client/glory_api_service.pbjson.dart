@@ -500,8 +500,9 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListArticleCreationTenantCost', '2': '.glory_api.ListArticleCreationTenantCostRequest', '3': '.glory_api.ListArticleCreationTenantCostResponse', '4': {}},
     {'1': 'GetArticleCreationTenantCost', '2': '.glory_api.GetArticleCreationTenantCostRequest', '3': '.glory_api.GetArticleCreationTenantCostResponse', '4': {}},
     {'1': 'GetSubTopicAiResult', '2': '.glory_api.GetSubTopicAiResultRequest', '3': '.glory_api.GetSubTopicAiResultResponse', '4': {}},
-    {'1': 'CreateDigitalHuman', '2': '.glory_api.CreateDigitalHumanRequest', '3': '.glory_api.CreateDigitalHumanResponse', '4': {}},
-    {'1': 'ListDigitalHuman', '2': '.glory_api.ListDigitalHumanRequest', '3': '.glory_api.ListDigitalHumanResponse', '4': {}},
+    {'1': 'CreateDigitalVideo', '2': '.glory_api.CreateDigitalVideoRequest', '3': '.glory_api.CreateDigitalVideoResponse', '4': {}},
+    {'1': 'ListDigitalVideo', '2': '.glory_api.ListDigitalVideoRequest', '3': '.glory_api.ListDigitalVideoResponse', '4': {}},
+    {'1': 'GetDigitalVideo', '2': '.glory_api.GetDigitalVideoRequest', '3': '.glory_api.GetDigitalVideoResponse', '4': {}},
   ],
 };
 
@@ -1577,11 +1578,13 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetArticleCreationTenantCostResponse': $57.GetArticleCreationTenantCostResponse$json,
   '.glory_api.GetSubTopicAiResultRequest': $57.GetSubTopicAiResultRequest$json,
   '.glory_api.GetSubTopicAiResultResponse': $57.GetSubTopicAiResultResponse$json,
-  '.glory_api.CreateDigitalHumanRequest': $57.CreateDigitalHumanRequest$json,
-  '.glory_api.CreateDigitalHumanResponse': $57.CreateDigitalHumanResponse$json,
-  '.glory_api.ListDigitalHumanRequest': $57.ListDigitalHumanRequest$json,
-  '.glory_api.ListDigitalHumanResponse': $57.ListDigitalHumanResponse$json,
+  '.glory_api.CreateDigitalVideoRequest': $57.CreateDigitalVideoRequest$json,
+  '.glory_api.CreateDigitalVideoResponse': $57.CreateDigitalVideoResponse$json,
+  '.glory_api.ListDigitalVideoRequest': $57.ListDigitalVideoRequest$json,
+  '.glory_api.ListDigitalVideoResponse': $57.ListDigitalVideoResponse$json,
   '.glory_api.DigitalVideo': $57.DigitalVideo$json,
+  '.glory_api.GetDigitalVideoRequest': $57.GetDigitalVideoRequest$json,
+  '.glory_api.GetDigitalVideoResponse': $57.GetDigitalVideoResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2571,10 +2574,12 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'ZWF0aW9uL2dldF9hcnRpY2xlX2NyZWF0aW9uX3RlbmFudF9jb3N0EpcBChNHZXRTdWJUb3BpY0'
     'FpUmVzdWx0EiUuZ2xvcnlfYXBpLkdldFN1YlRvcGljQWlSZXN1bHRSZXF1ZXN0GiYuZ2xvcnlf'
     'YXBpLkdldFN1YlRvcGljQWlSZXN1bHRSZXNwb25zZSIx0sEYLS9hcGkvYXJ0aWNsZV9jcmVhdG'
-    'lvbi9nZXRfc3ViX3RvcGljX2FpX3Jlc3VsdBKAAQoSQ3JlYXRlRGlnaXRhbEh1bWFuEiQuZ2xv'
-    'cnlfYXBpLkNyZWF0ZURpZ2l0YWxIdW1hblJlcXVlc3QaJS5nbG9yeV9hcGkuQ3JlYXRlRGlnaX'
-    'RhbEh1bWFuUmVzcG9uc2UiHdLBGBkvYXBpL2RpZ2l0YWwvaHVtYW4vY3JlYXRlEngKEExpc3RE'
-    'aWdpdGFsSHVtYW4SIi5nbG9yeV9hcGkuTGlzdERpZ2l0YWxIdW1hblJlcXVlc3QaIy5nbG9yeV'
-    '9hcGkuTGlzdERpZ2l0YWxIdW1hblJlc3BvbnNlIhvSwRgXL2FwaS9kaWdpdGFsL2h1bWFuL2xp'
-    'c3Q=');
+    'lvbi9nZXRfc3ViX3RvcGljX2FpX3Jlc3VsdBKAAQoSQ3JlYXRlRGlnaXRhbFZpZGVvEiQuZ2xv'
+    'cnlfYXBpLkNyZWF0ZURpZ2l0YWxWaWRlb1JlcXVlc3QaJS5nbG9yeV9hcGkuQ3JlYXRlRGlnaX'
+    'RhbFZpZGVvUmVzcG9uc2UiHdLBGBkvYXBpL2RpZ2l0YWwvY3JlYXRlX3ZpZGVvEngKEExpc3RE'
+    'aWdpdGFsVmlkZW8SIi5nbG9yeV9hcGkuTGlzdERpZ2l0YWxWaWRlb1JlcXVlc3QaIy5nbG9yeV'
+    '9hcGkuTGlzdERpZ2l0YWxWaWRlb1Jlc3BvbnNlIhvSwRgXL2FwaS9kaWdpdGFsL2xpc3Rfdmlk'
+    'ZW8SdAoPR2V0RGlnaXRhbFZpZGVvEiEuZ2xvcnlfYXBpLkdldERpZ2l0YWxWaWRlb1JlcXVlc3'
+    'QaIi5nbG9yeV9hcGkuR2V0RGlnaXRhbFZpZGVvUmVzcG9uc2UiGtLBGBYvYXBpL2RpZ2l0YWwv'
+    'Z2V0X3ZpZGVv');
 

@@ -20,6 +20,12 @@ public interface DigitalVideoOrBuilder extends
       getTaskIdBytes();
 
   /**
+   * <code>int32 task_status = 7;</code>
+   * @return The taskStatus.
+   */
+  int getTaskStatus();
+
+  /**
    * <code>string video_title = 2;</code>
    * @return The videoTitle.
    */
@@ -72,4 +78,16 @@ public interface DigitalVideoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getVideoPreviewBytes();
+
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The createdAt.
+   */
+  java.lang.String getCreatedAt();
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The bytes for createdAt.
+   */
+  com.google.protobuf.ByteString
+      getCreatedAtBytes();
 }

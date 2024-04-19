@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\243\255\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\231\256\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1426,14 +1426,17 @@ public final class GloryApiService {
       "SubTopicAiResultRequest\032&.glory_api.GetS" +
       "ubTopicAiResultResponse\"1\322\301\030-/api/articl" +
       "e_creation/get_sub_topic_ai_result\022\200\001\n\022C" +
-      "reateDigitalHuman\022$.glory_api.CreateDigi" +
-      "talHumanRequest\032%.glory_api.CreateDigita" +
-      "lHumanResponse\"\035\322\301\030\031/api/digital/human/c" +
-      "reate\022x\n\020ListDigitalHuman\022\".glory_api.Li" +
-      "stDigitalHumanRequest\032#.glory_api.ListDi" +
-      "gitalHumanResponse\"\033\322\301\030\027/api/digital/hum" +
-      "an/listB\036\n\032com.zhijiejiaoyu.glory_apiP\001b" +
-      "\006proto3"
+      "reateDigitalVideo\022$.glory_api.CreateDigi" +
+      "talVideoRequest\032%.glory_api.CreateDigita" +
+      "lVideoResponse\"\035\322\301\030\031/api/digital/create_" +
+      "video\022x\n\020ListDigitalVideo\022\".glory_api.Li" +
+      "stDigitalVideoRequest\032#.glory_api.ListDi" +
+      "gitalVideoResponse\"\033\322\301\030\027/api/digital/lis" +
+      "t_video\022t\n\017GetDigitalVideo\022!.glory_api.G" +
+      "etDigitalVideoRequest\032\".glory_api.GetDig" +
+      "italVideoResponse\"\032\322\301\030\026/api/digital/get_" +
+      "videoB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

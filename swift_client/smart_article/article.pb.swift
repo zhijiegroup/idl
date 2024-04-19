@@ -1158,7 +1158,7 @@ struct GloryApi_ChatMessage {
   init() {}
 }
 
-struct GloryApi_CreateDigitalHumanRequest {
+struct GloryApi_CreateDigitalVideoRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1183,7 +1183,7 @@ struct GloryApi_CreateDigitalHumanRequest {
   fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
-struct GloryApi_CreateDigitalHumanResponse {
+struct GloryApi_CreateDigitalVideoResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1211,6 +1211,8 @@ struct GloryApi_DigitalVideo {
 
   var taskID: String = String()
 
+  var taskStatus: Int32 = 0
+
   var videoTitle: String = String()
 
   var videoURL: String = String()
@@ -1221,12 +1223,14 @@ struct GloryApi_DigitalVideo {
 
   var videoPreview: String = String()
 
+  var createdAt: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 }
 
-struct GloryApi_ListDigitalHumanResponse {
+struct GloryApi_ListDigitalVideoResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1259,7 +1263,7 @@ struct GloryApi_ListDigitalHumanResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
-struct GloryApi_ListDigitalHumanRequest {
+struct GloryApi_ListDigitalVideoRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1296,6 +1300,60 @@ struct GloryApi_ListDigitalHumanRequest {
 
   fileprivate var _baseRequest: Base_BaseRequest? = nil
   fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_GetDigitalVideoResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var video: GloryApi_DigitalVideo {
+    get {return _video ?? GloryApi_DigitalVideo()}
+    set {_video = newValue}
+  }
+  /// Returns true if `video` has been explicitly set.
+  var hasVideo: Bool {return self._video != nil}
+  /// Clears the value of `video`. Subsequent reads from it will return its default value.
+  mutating func clearVideo() {self._video = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _video: GloryApi_DigitalVideo? = nil
+}
+
+struct GloryApi_GetDigitalVideoRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var taskID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
 }
 
 struct GloryApi_UpdateTenantCourseDataRequest {
@@ -1907,11 +1965,13 @@ extension GloryApi_Edits: @unchecked Sendable {}
 extension GloryApi_ArticleAIChatRequest: @unchecked Sendable {}
 extension GloryApi_ArticleAIChatResponse: @unchecked Sendable {}
 extension GloryApi_ChatMessage: @unchecked Sendable {}
-extension GloryApi_CreateDigitalHumanRequest: @unchecked Sendable {}
-extension GloryApi_CreateDigitalHumanResponse: @unchecked Sendable {}
+extension GloryApi_CreateDigitalVideoRequest: @unchecked Sendable {}
+extension GloryApi_CreateDigitalVideoResponse: @unchecked Sendable {}
 extension GloryApi_DigitalVideo: @unchecked Sendable {}
-extension GloryApi_ListDigitalHumanResponse: @unchecked Sendable {}
-extension GloryApi_ListDigitalHumanRequest: @unchecked Sendable {}
+extension GloryApi_ListDigitalVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListDigitalVideoRequest: @unchecked Sendable {}
+extension GloryApi_GetDigitalVideoResponse: @unchecked Sendable {}
+extension GloryApi_GetDigitalVideoRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataResponse: @unchecked Sendable {}
 extension GloryApi_UpdateModelPriceRequest: @unchecked Sendable {}
@@ -4144,8 +4204,8 @@ extension GloryApi_ChatMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateDigitalHumanRequest"
+extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateDigitalVideoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "text"),
@@ -4183,7 +4243,7 @@ extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateDigitalHumanRequest, rhs: GloryApi_CreateDigitalHumanRequest) -> Bool {
+  static func ==(lhs: GloryApi_CreateDigitalVideoRequest, rhs: GloryApi_CreateDigitalVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.text != rhs.text {return false}
     if lhs.title != rhs.title {return false}
@@ -4192,8 +4252,8 @@ extension GloryApi_CreateDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension GloryApi_CreateDigitalHumanResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateDigitalHumanResponse"
+extension GloryApi_CreateDigitalVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".CreateDigitalVideoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
   ]
@@ -4221,7 +4281,7 @@ extension GloryApi_CreateDigitalHumanResponse: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_CreateDigitalHumanResponse, rhs: GloryApi_CreateDigitalHumanResponse) -> Bool {
+  static func ==(lhs: GloryApi_CreateDigitalVideoResponse, rhs: GloryApi_CreateDigitalVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -4232,11 +4292,13 @@ extension GloryApi_DigitalVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   static let protoMessageName: String = _protobuf_package + ".DigitalVideo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "task_id"),
+    7: .standard(proto: "task_status"),
     2: .standard(proto: "video_title"),
     3: .standard(proto: "video_url"),
     4: .standard(proto: "video_duration"),
     5: .standard(proto: "subtitle_url"),
     6: .standard(proto: "video_preview"),
+    8: .standard(proto: "created_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4251,6 +4313,8 @@ extension GloryApi_DigitalVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.videoDuration) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.subtitleURL) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.videoPreview) }()
+      case 7: try { try decoder.decodeSingularInt32Field(value: &self.taskStatus) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       default: break
       }
     }
@@ -4275,23 +4339,31 @@ extension GloryApi_DigitalVideo: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if !self.videoPreview.isEmpty {
       try visitor.visitSingularStringField(value: self.videoPreview, fieldNumber: 6)
     }
+    if self.taskStatus != 0 {
+      try visitor.visitSingularInt32Field(value: self.taskStatus, fieldNumber: 7)
+    }
+    if !self.createdAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_DigitalVideo, rhs: GloryApi_DigitalVideo) -> Bool {
     if lhs.taskID != rhs.taskID {return false}
+    if lhs.taskStatus != rhs.taskStatus {return false}
     if lhs.videoTitle != rhs.videoTitle {return false}
     if lhs.videoURL != rhs.videoURL {return false}
     if lhs.videoDuration != rhs.videoDuration {return false}
     if lhs.subtitleURL != rhs.subtitleURL {return false}
     if lhs.videoPreview != rhs.videoPreview {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension GloryApi_ListDigitalHumanResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListDigitalHumanResponse"
+extension GloryApi_ListDigitalVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalVideoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "list"),
@@ -4329,7 +4401,7 @@ extension GloryApi_ListDigitalHumanResponse: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListDigitalHumanResponse, rhs: GloryApi_ListDigitalHumanResponse) -> Bool {
+  static func ==(lhs: GloryApi_ListDigitalVideoResponse, rhs: GloryApi_ListDigitalVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.list != rhs.list {return false}
     if lhs._pagination != rhs._pagination {return false}
@@ -4338,8 +4410,8 @@ extension GloryApi_ListDigitalHumanResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension GloryApi_ListDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListDigitalHumanRequest"
+extension GloryApi_ListDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalVideoRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "task_id"),
@@ -4392,13 +4464,97 @@ extension GloryApi_ListDigitalHumanRequest: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_ListDigitalHumanRequest, rhs: GloryApi_ListDigitalHumanRequest) -> Bool {
+  static func ==(lhs: GloryApi_ListDigitalVideoRequest, rhs: GloryApi_ListDigitalVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.taskID != rhs.taskID {return false}
     if lhs.type != rhs.type {return false}
     if lhs.title != rhs.title {return false}
     if lhs.status != rhs.status {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetDigitalVideoResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetDigitalVideoResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "video"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._video) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._video {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetDigitalVideoResponse, rhs: GloryApi_GetDigitalVideoResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._video != rhs._video {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetDigitalVideoRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "task_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.taskID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.taskID.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetDigitalVideoRequest, rhs: GloryApi_GetDigitalVideoRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.taskID != rhs.taskID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

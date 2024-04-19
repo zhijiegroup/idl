@@ -758,9 +758,9 @@ final $typed_data.Uint8List chatMessageDescriptor = $convert.base64Decode(
     'CgtDaGF0TWVzc2FnZRIYCgdjb250ZW50GAEgASgJUgdjb250ZW50EhIKBHJvbGUYAiABKAlSBH'
     'JvbGU=');
 
-@$core.Deprecated('Use createDigitalHumanRequestDescriptor instead')
-const CreateDigitalHumanRequest$json = {
-  '1': 'CreateDigitalHumanRequest',
+@$core.Deprecated('Use createDigitalVideoRequestDescriptor instead')
+const CreateDigitalVideoRequest$json = {
+  '1': 'CreateDigitalVideoRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
@@ -768,23 +768,23 @@ const CreateDigitalHumanRequest$json = {
   ],
 };
 
-/// Descriptor for `CreateDigitalHumanRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createDigitalHumanRequestDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVEaWdpdGFsSHVtYW5SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+/// Descriptor for `CreateDigitalVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDigitalVideoRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVEaWdpdGFsVmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQSFAoFdGl0bGUY'
     'AyABKAlSBXRpdGxl');
 
-@$core.Deprecated('Use createDigitalHumanResponseDescriptor instead')
-const CreateDigitalHumanResponse$json = {
-  '1': 'CreateDigitalHumanResponse',
+@$core.Deprecated('Use createDigitalVideoResponseDescriptor instead')
+const CreateDigitalVideoResponse$json = {
+  '1': 'CreateDigitalVideoResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
   ],
 };
 
-/// Descriptor for `CreateDigitalHumanResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createDigitalHumanResponseDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVEaWdpdGFsSHVtYW5SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+/// Descriptor for `CreateDigitalVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDigitalVideoResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVEaWdpdGFsVmlkZW9SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 
 @$core.Deprecated('Use digitalVideoDescriptor instead')
@@ -792,24 +792,27 @@ const DigitalVideo$json = {
   '1': 'DigitalVideo',
   '2': [
     {'1': 'task_id', '3': 1, '4': 1, '5': 9, '10': 'taskId'},
+    {'1': 'task_status', '3': 7, '4': 1, '5': 5, '10': 'taskStatus'},
     {'1': 'video_title', '3': 2, '4': 1, '5': 9, '10': 'videoTitle'},
     {'1': 'video_url', '3': 3, '4': 1, '5': 9, '10': 'videoUrl'},
     {'1': 'video_duration', '3': 4, '4': 1, '5': 3, '10': 'videoDuration'},
     {'1': 'subtitle_url', '3': 5, '4': 1, '5': 9, '10': 'subtitleUrl'},
     {'1': 'video_preview', '3': 6, '4': 1, '5': 9, '10': 'videoPreview'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
 /// Descriptor for `DigitalVideo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List digitalVideoDescriptor = $convert.base64Decode(
-    'CgxEaWdpdGFsVmlkZW8SFwoHdGFza19pZBgBIAEoCVIGdGFza0lkEh8KC3ZpZGVvX3RpdGxlGA'
-    'IgASgJUgp2aWRlb1RpdGxlEhsKCXZpZGVvX3VybBgDIAEoCVIIdmlkZW9VcmwSJQoOdmlkZW9f'
-    'ZHVyYXRpb24YBCABKANSDXZpZGVvRHVyYXRpb24SIQoMc3VidGl0bGVfdXJsGAUgASgJUgtzdW'
-    'J0aXRsZVVybBIjCg12aWRlb19wcmV2aWV3GAYgASgJUgx2aWRlb1ByZXZpZXc=');
+    'CgxEaWdpdGFsVmlkZW8SFwoHdGFza19pZBgBIAEoCVIGdGFza0lkEh8KC3Rhc2tfc3RhdHVzGA'
+    'cgASgFUgp0YXNrU3RhdHVzEh8KC3ZpZGVvX3RpdGxlGAIgASgJUgp2aWRlb1RpdGxlEhsKCXZp'
+    'ZGVvX3VybBgDIAEoCVIIdmlkZW9VcmwSJQoOdmlkZW9fZHVyYXRpb24YBCABKANSDXZpZGVvRH'
+    'VyYXRpb24SIQoMc3VidGl0bGVfdXJsGAUgASgJUgtzdWJ0aXRsZVVybBIjCg12aWRlb19wcmV2'
+    'aWV3GAYgASgJUgx2aWRlb1ByZXZpZXcSHQoKY3JlYXRlZF9hdBgIIAEoCVIJY3JlYXRlZEF0');
 
-@$core.Deprecated('Use listDigitalHumanResponseDescriptor instead')
-const ListDigitalHumanResponse$json = {
-  '1': 'ListDigitalHumanResponse',
+@$core.Deprecated('Use listDigitalVideoResponseDescriptor instead')
+const ListDigitalVideoResponse$json = {
+  '1': 'ListDigitalVideoResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.DigitalVideo', '10': 'list'},
@@ -817,16 +820,16 @@ const ListDigitalHumanResponse$json = {
   ],
 };
 
-/// Descriptor for `ListDigitalHumanResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listDigitalHumanResponseDescriptor = $convert.base64Decode(
-    'ChhMaXN0RGlnaXRhbEh1bWFuUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+/// Descriptor for `ListDigitalVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalVideoResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0RGlnaXRhbFZpZGVvUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
     'NlUmVzcG9uc2VSCGJhc2VSZXNwEisKBGxpc3QYAiADKAsyFy5nbG9yeV9hcGkuRGlnaXRhbFZp'
     'ZGVvUgRsaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYXRpb25SZXNwb25zZV'
     'IKcGFnaW5hdGlvbg==');
 
-@$core.Deprecated('Use listDigitalHumanRequestDescriptor instead')
-const ListDigitalHumanRequest$json = {
-  '1': 'ListDigitalHumanRequest',
+@$core.Deprecated('Use listDigitalVideoRequestDescriptor instead')
+const ListDigitalVideoRequest$json = {
+  '1': 'ListDigitalVideoRequest',
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
@@ -837,13 +840,42 @@ const ListDigitalHumanRequest$json = {
   ],
 };
 
-/// Descriptor for `ListDigitalHumanRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listDigitalHumanRequestDescriptor = $convert.base64Decode(
-    'ChdMaXN0RGlnaXRhbEh1bWFuUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+/// Descriptor for `ListDigitalVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalVideoRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0RGlnaXRhbFZpZGVvUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd0YXNrX2lkGAIgASgJUgZ0YXNrSWQSEgoEdHlw'
     'ZRgDIAEoBVIEdHlwZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSFgoGc3RhdHVzGAUgASgFUgZzdG'
     'F0dXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2lu'
     'YXRpb24=');
+
+@$core.Deprecated('Use getDigitalVideoResponseDescriptor instead')
+const GetDigitalVideoResponse$json = {
+  '1': 'GetDigitalVideoResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'video', '3': 2, '4': 1, '5': 11, '6': '.glory_api.DigitalVideo', '10': 'video'},
+  ],
+};
+
+/// Descriptor for `GetDigitalVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDigitalVideoResponseDescriptor = $convert.base64Decode(
+    'ChdHZXREaWdpdGFsVmlkZW9SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
+    'VSZXNwb25zZVIIYmFzZVJlc3ASLQoFdmlkZW8YAiABKAsyFy5nbG9yeV9hcGkuRGlnaXRhbFZp'
+    'ZGVvUgV2aWRlbw==');
+
+@$core.Deprecated('Use getDigitalVideoRequestDescriptor instead')
+const GetDigitalVideoRequest$json = {
+  '1': 'GetDigitalVideoRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
+  ],
+};
+
+/// Descriptor for `GetDigitalVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDigitalVideoRequestDescriptor = $convert.base64Decode(
+    'ChZHZXREaWdpdGFsVmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKAlSBnRhc2tJZA==');
 
 @$core.Deprecated('Use updateTenantCourseDataRequestDescriptor instead')
 const UpdateTenantCourseDataRequest$json = {

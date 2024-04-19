@@ -1893,14 +1893,19 @@ CreateLivePlanProduct create live plan product */
   ): Promise<article.GetSubTopicAiResultResponse>;
 
   /** 数字人合成视频接口 */
-  CreateDigitalHuman(
-    request: article.CreateDigitalHumanRequest
-  ): Promise<article.CreateDigitalHumanResponse>;
+  CreateDigitalVideo(
+    request: article.CreateDigitalVideoRequest
+  ): Promise<article.CreateDigitalVideoResponse>;
 
   /** 查询数字人视频合成任务进度接口 */
-  ListDigitalHuman(
-    request: article.ListDigitalHumanRequest
-  ): Promise<article.ListDigitalHumanResponse>;
+  ListDigitalVideo(
+    request: article.ListDigitalVideoRequest
+  ): Promise<article.ListDigitalVideoResponse>;
+
+  /** 查询任务进度接口 */
+  GetDigitalVideo(
+    request: article.GetDigitalVideoRequest
+  ): Promise<article.GetDigitalVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

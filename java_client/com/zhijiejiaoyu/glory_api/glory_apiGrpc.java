@@ -13159,66 +13159,97 @@ public final class glory_apiGrpc {
     return getGetSubTopicAiResultMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest,
-      com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> getCreateDigitalHumanMethod;
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> getCreateDigitalVideoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateDigitalHuman",
-      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "CreateDigitalVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest,
-      com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> getCreateDigitalHumanMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> getCreateDigitalHumanMethod;
-    if ((getCreateDigitalHumanMethod = glory_apiGrpc.getCreateDigitalHumanMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> getCreateDigitalVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> getCreateDigitalVideoMethod;
+    if ((getCreateDigitalVideoMethod = glory_apiGrpc.getCreateDigitalVideoMethod) == null) {
       synchronized (glory_apiGrpc.class) {
-        if ((getCreateDigitalHumanMethod = glory_apiGrpc.getCreateDigitalHumanMethod) == null) {
-          glory_apiGrpc.getCreateDigitalHumanMethod = getCreateDigitalHumanMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse>newBuilder()
+        if ((getCreateDigitalVideoMethod = glory_apiGrpc.getCreateDigitalVideoMethod) == null) {
+          glory_apiGrpc.getCreateDigitalVideoMethod = getCreateDigitalVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDigitalHuman"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDigitalVideo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest.getDefaultInstance()))
+                  com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateDigitalHuman"))
+                  com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateDigitalVideo"))
               .build();
         }
       }
     }
-    return getCreateDigitalHumanMethod;
+    return getCreateDigitalVideoMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest,
-      com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> getListDigitalHumanMethod;
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> getListDigitalVideoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListDigitalHuman",
-      requestType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListDigitalVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest,
-      com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> getListDigitalHumanMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> getListDigitalHumanMethod;
-    if ((getListDigitalHumanMethod = glory_apiGrpc.getListDigitalHumanMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> getListDigitalVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> getListDigitalVideoMethod;
+    if ((getListDigitalVideoMethod = glory_apiGrpc.getListDigitalVideoMethod) == null) {
       synchronized (glory_apiGrpc.class) {
-        if ((getListDigitalHumanMethod = glory_apiGrpc.getListDigitalHumanMethod) == null) {
-          glory_apiGrpc.getListDigitalHumanMethod = getListDigitalHumanMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse>newBuilder()
+        if ((getListDigitalVideoMethod = glory_apiGrpc.getListDigitalVideoMethod) == null) {
+          glory_apiGrpc.getListDigitalVideoMethod = getListDigitalVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDigitalHuman"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDigitalVideo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest.getDefaultInstance()))
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListDigitalHuman"))
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListDigitalVideo"))
               .build();
         }
       }
     }
-    return getListDigitalHumanMethod;
+    return getListDigitalVideoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> getGetDigitalVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDigitalVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> getGetDigitalVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> getGetDigitalVideoMethod;
+    if ((getGetDigitalVideoMethod = glory_apiGrpc.getGetDigitalVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetDigitalVideoMethod = glory_apiGrpc.getGetDigitalVideoMethod) == null) {
+          glory_apiGrpc.getGetDigitalVideoMethod = getGetDigitalVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDigitalVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetDigitalVideo"))
+              .build();
+        }
+      }
+    }
+    return getGetDigitalVideoMethod;
   }
 
   /**
@@ -16630,9 +16661,9 @@ public final class glory_apiGrpc {
      * 数字人合成视频接口
      * </pre>
      */
-    default void createDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDigitalHumanMethod(), responseObserver);
+    default void createDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDigitalVideoMethod(), responseObserver);
     }
 
     /**
@@ -16640,9 +16671,19 @@ public final class glory_apiGrpc {
      * 查询数字人视频合成任务进度接口
      * </pre>
      */
-    default void listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalHumanMethod(), responseObserver);
+    default void listDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 查询任务进度接口
+     * </pre>
+     */
+    default void getDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDigitalVideoMethod(), responseObserver);
     }
   }
 
@@ -20458,10 +20499,10 @@ public final class glory_apiGrpc {
      * 数字人合成视频接口
      * </pre>
      */
-    public void createDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> responseObserver) {
+    public void createDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateDigitalHumanMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getCreateDigitalVideoMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -20469,10 +20510,21 @@ public final class glory_apiGrpc {
      * 查询数字人视频合成任务进度接口
      * </pre>
      */
-    public void listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> responseObserver) {
+    public void listDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListDigitalHumanMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListDigitalVideoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 查询任务进度接口
+     * </pre>
+     */
+    public void getDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDigitalVideoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -23853,9 +23905,9 @@ public final class glory_apiGrpc {
      * 数字人合成视频接口
      * </pre>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse createDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest request) {
+    public com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse createDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDigitalHumanMethod(), getCallOptions(), request);
+          getChannel(), getCreateDigitalVideoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -23863,9 +23915,19 @@ public final class glory_apiGrpc {
      * 查询数字人视频合成任务进度接口
      * </pre>
      */
-    public com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse listDigitalHuman(com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request) {
+    public com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse listDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListDigitalHumanMethod(), getCallOptions(), request);
+          getChannel(), getListDigitalVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 查询任务进度接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse getDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDigitalVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -27670,10 +27732,10 @@ public final class glory_apiGrpc {
      * 数字人合成视频接口
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse> createDigitalHuman(
-        com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> createDigitalVideo(
+        com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateDigitalHumanMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateDigitalVideoMethod(), getCallOptions()), request);
     }
 
     /**
@@ -27681,10 +27743,21 @@ public final class glory_apiGrpc {
      * 查询数字人视频合成任务进度接口
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse> listDigitalHuman(
-        com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse> listDigitalVideo(
+        com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListDigitalHumanMethod(), getCallOptions()), request);
+          getChannel().newCall(getListDigitalVideoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 查询任务进度接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> getDigitalVideo(
+        com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDigitalVideoMethod(), getCallOptions()), request);
     }
   }
 
@@ -28112,8 +28185,9 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 421;
   private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 422;
   private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 423;
-  private static final int METHODID_CREATE_DIGITAL_HUMAN = 424;
-  private static final int METHODID_LIST_DIGITAL_HUMAN = 425;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 424;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 425;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 426;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -29828,13 +29902,17 @@ public final class glory_apiGrpc {
           serviceImpl.getSubTopicAiResult((com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>) responseObserver);
           break;
-        case METHODID_CREATE_DIGITAL_HUMAN:
-          serviceImpl.createDigitalHuman((com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse>) responseObserver);
+        case METHODID_CREATE_DIGITAL_VIDEO:
+          serviceImpl.createDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse>) responseObserver);
           break;
-        case METHODID_LIST_DIGITAL_HUMAN:
-          serviceImpl.listDigitalHuman((com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse>) responseObserver);
+        case METHODID_LIST_DIGITAL_VIDEO:
+          serviceImpl.listDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse>) responseObserver);
+          break;
+        case METHODID_GET_DIGITAL_VIDEO:
+          serviceImpl.getDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -32823,19 +32901,26 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>(
                 service, METHODID_GET_SUB_TOPIC_AI_RESULT)))
         .addMethod(
-          getCreateDigitalHumanMethod(),
+          getCreateDigitalVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanRequest,
-              com.zhijiejiaoyu.glory_api.short_video.CreateDigitalHumanResponse>(
-                service, METHODID_CREATE_DIGITAL_HUMAN)))
+              com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse>(
+                service, METHODID_CREATE_DIGITAL_VIDEO)))
         .addMethod(
-          getListDigitalHumanMethod(),
+          getListDigitalVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanRequest,
-              com.zhijiejiaoyu.glory_api.short_video.ListDigitalHumanResponse>(
-                service, METHODID_LIST_DIGITAL_HUMAN)))
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalVideoResponse>(
+                service, METHODID_LIST_DIGITAL_VIDEO)))
+        .addMethod(
+          getGetDigitalVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse>(
+                service, METHODID_GET_DIGITAL_VIDEO)))
         .build();
   }
 
@@ -33308,8 +33393,9 @@ public final class glory_apiGrpc {
               .addMethod(getListArticleCreationTenantCostMethod())
               .addMethod(getGetArticleCreationTenantCostMethod())
               .addMethod(getGetSubTopicAiResultMethod())
-              .addMethod(getCreateDigitalHumanMethod())
-              .addMethod(getListDigitalHumanMethod())
+              .addMethod(getCreateDigitalVideoMethod())
+              .addMethod(getListDigitalVideoMethod())
+              .addMethod(getGetDigitalVideoMethod())
               .build();
         }
       }

@@ -1349,11 +1349,14 @@ class glory_apiApi {
   $async.Future<$57.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ClientContext? ctx, $57.GetSubTopicAiResultRequest request) =>
     _client.invoke<$57.GetSubTopicAiResultResponse>(ctx, 'glory_api', 'GetSubTopicAiResult', request, $57.GetSubTopicAiResultResponse())
   ;
-  $async.Future<$57.CreateDigitalHumanResponse> createDigitalHuman($pb.ClientContext? ctx, $57.CreateDigitalHumanRequest request) =>
-    _client.invoke<$57.CreateDigitalHumanResponse>(ctx, 'glory_api', 'CreateDigitalHuman', request, $57.CreateDigitalHumanResponse())
+  $async.Future<$57.CreateDigitalVideoResponse> createDigitalVideo($pb.ClientContext? ctx, $57.CreateDigitalVideoRequest request) =>
+    _client.invoke<$57.CreateDigitalVideoResponse>(ctx, 'glory_api', 'CreateDigitalVideo', request, $57.CreateDigitalVideoResponse())
   ;
-  $async.Future<$57.ListDigitalHumanResponse> listDigitalHuman($pb.ClientContext? ctx, $57.ListDigitalHumanRequest request) =>
-    _client.invoke<$57.ListDigitalHumanResponse>(ctx, 'glory_api', 'ListDigitalHuman', request, $57.ListDigitalHumanResponse())
+  $async.Future<$57.ListDigitalVideoResponse> listDigitalVideo($pb.ClientContext? ctx, $57.ListDigitalVideoRequest request) =>
+    _client.invoke<$57.ListDigitalVideoResponse>(ctx, 'glory_api', 'ListDigitalVideo', request, $57.ListDigitalVideoResponse())
+  ;
+  $async.Future<$57.GetDigitalVideoResponse> getDigitalVideo($pb.ClientContext? ctx, $57.GetDigitalVideoRequest request) =>
+    _client.invoke<$57.GetDigitalVideoResponse>(ctx, 'glory_api', 'GetDigitalVideo', request, $57.GetDigitalVideoResponse())
   ;
 }
 

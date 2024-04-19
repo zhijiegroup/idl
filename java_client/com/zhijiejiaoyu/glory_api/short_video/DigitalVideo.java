@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     videoUrl = "";
     subtitleUrl = "";
     videoPreview = "";
+    createdAt = "";
   }
 
   @java.lang.Override
@@ -86,6 +87,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             videoPreview = s;
+            break;
+          }
+          case 56: {
+
+            taskStatus = input.readInt32();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            createdAt = s;
             break;
           }
           default: {
@@ -156,6 +168,17 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TASK_STATUS_FIELD_NUMBER = 7;
+  private int taskStatus ;
+  /**
+   * <code>int32 task_status = 7;</code>
+   * @return The taskStatus.
+   */
+  @java.lang.Override
+  public int getTaskStatus() {
+    return taskStatus ;
   }
 
   public static final int VIDEO_TITLE_FIELD_NUMBER = 2;
@@ -321,6 +344,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CREATED_AT_FIELD_NUMBER = 8;
+  private volatile java.lang.Object createdAt ;
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public java.lang.String getCreatedAt() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      createdAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string created_at = 8;</code>
+   * @return The bytes for createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatedAtBytes() {
+    java.lang.Object ref = createdAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      createdAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -353,6 +414,12 @@ private static final long serialVersionUID = 0L;
     if (!getVideoPreviewBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, videoPreview );
     }
+    if (taskStatus != 0) {
+      output.writeInt32(7, taskStatus );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, createdAt );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -381,6 +448,13 @@ private static final long serialVersionUID = 0L;
     if (!getVideoPreviewBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, videoPreview );
     }
+    if (taskStatus != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, taskStatus );
+    }
+    if (!getCreatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, createdAt );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -398,6 +472,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getTaskId()
         .equals(other.getTaskId())) return false;
+    if (getTaskStatus()
+        != other.getTaskStatus()) return false;
     if (!getVideoTitle()
         .equals(other.getVideoTitle())) return false;
     if (!getVideoUrl()
@@ -408,6 +484,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSubtitleUrl())) return false;
     if (!getVideoPreview()
         .equals(other.getVideoPreview())) return false;
+    if (!getCreatedAt()
+        .equals(other.getCreatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -421,6 +499,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTaskId().hashCode();
+    hash = (37 * hash) + TASK_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskStatus();
     hash = (37 * hash) + VIDEO_TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getVideoTitle().hashCode();
     hash = (37 * hash) + VIDEO_URL_FIELD_NUMBER;
@@ -432,6 +512,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSubtitleUrl().hashCode();
     hash = (37 * hash) + VIDEO_PREVIEW_FIELD_NUMBER;
     hash = (53 * hash) + getVideoPreview().hashCode();
+    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -567,6 +649,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       taskId = "";
 
+      taskStatus = 0;
+
       videoTitle = "";
 
       videoUrl = "";
@@ -576,6 +660,8 @@ private static final long serialVersionUID = 0L;
       subtitleUrl = "";
 
       videoPreview = "";
+
+      createdAt = "";
 
       return this;
     }
@@ -604,11 +690,13 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.short_video.DigitalVideo buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.DigitalVideo result = new com.zhijiejiaoyu.glory_api.short_video.DigitalVideo(this);
       result.taskId = taskId ;
+      result.taskStatus = taskStatus ;
       result.videoTitle = videoTitle ;
       result.videoUrl = videoUrl ;
       result.videoDuration = videoDuration ;
       result.subtitleUrl = subtitleUrl ;
       result.videoPreview = videoPreview ;
+      result.createdAt = createdAt ;
       onBuilt();
       return result;
     }
@@ -661,6 +749,9 @@ private static final long serialVersionUID = 0L;
         taskId = other.taskId ;
         onChanged();
       }
+      if (other.getTaskStatus() != 0) {
+        setTaskStatus(other.getTaskStatus());
+      }
       if (!other.getVideoTitle().isEmpty()) {
         videoTitle = other.videoTitle ;
         onChanged();
@@ -678,6 +769,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getVideoPreview().isEmpty()) {
         videoPreview = other.videoPreview ;
+        onChanged();
+      }
+      if (!other.getCreatedAt().isEmpty()) {
+        createdAt = other.createdAt ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -781,6 +876,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       taskId = value;
+      onChanged();
+      return this;
+    }
+
+    private int taskStatus ;
+    /**
+     * <code>int32 task_status = 7;</code>
+     * @return The taskStatus.
+     */
+    @java.lang.Override
+    public int getTaskStatus() {
+      return taskStatus ;
+    }
+    /**
+     * <code>int32 task_status = 7;</code>
+     * @param value The taskStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskStatus(int value) {
+      
+      taskStatus = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 task_status = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskStatus() {
+      
+      taskStatus = 0;
       onChanged();
       return this;
     }
@@ -1116,6 +1242,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       videoPreview = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object createdAt = "";
+    /**
+     * <code>string created_at = 8;</code>
+     * @return The createdAt.
+     */
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 8;</code>
+     * @return The bytes for createdAt.
+     */
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string created_at = 8;</code>
+     * @param value The createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      createdAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatedAt() {
+      
+      createdAt = getDefaultInstance().getCreatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string created_at = 8;</code>
+     * @param value The bytes for createdAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      createdAt = value;
       onChanged();
       return this;
     }
