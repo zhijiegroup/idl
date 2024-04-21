@@ -1197,6 +1197,8 @@ struct GloryApi_CreateDigitalVideoResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var taskID: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4256,6 +4258,7 @@ extension GloryApi_CreateDigitalVideoResponse: SwiftProtobuf.Message, SwiftProto
   static let protoMessageName: String = _protobuf_package + ".CreateDigitalVideoResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
+    2: .standard(proto: "task_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4265,6 +4268,7 @@ extension GloryApi_CreateDigitalVideoResponse: SwiftProtobuf.Message, SwiftProto
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.taskID) }()
       default: break
       }
     }
@@ -4278,11 +4282,15 @@ extension GloryApi_CreateDigitalVideoResponse: SwiftProtobuf.Message, SwiftProto
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if !self.taskID.isEmpty {
+      try visitor.visitSingularStringField(value: self.taskID, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_CreateDigitalVideoResponse, rhs: GloryApi_CreateDigitalVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.taskID != rhs.taskID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

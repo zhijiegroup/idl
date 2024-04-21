@@ -779,13 +779,14 @@ const CreateDigitalVideoResponse$json = {
   '1': 'CreateDigitalVideoResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
   ],
 };
 
 /// Descriptor for `CreateDigitalVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createDigitalVideoResponseDescriptor = $convert.base64Decode(
     'ChpDcmVhdGVEaWdpdGFsVmlkZW9SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
-    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3ASFwoHdGFza19pZBgCIAEoCVIGdGFza0lk');
 
 @$core.Deprecated('Use digitalVideoDescriptor instead')
 const DigitalVideo$json = {
