@@ -281,5 +281,6 @@ message TaskStudent {
 
 message ListTaskStudentResponse {
   base.BaseResponse base_resp = 1;
-  repeated TaskStudent student_list = 2;
+  repeated TaskStudent no_submit_list = 2;
+  repeated TaskStudent submitted_list = 3;
 }
