@@ -184,6 +184,21 @@ public final class TeacherTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_TeacherTaskStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTaskStudentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTaskStudentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_TaskStudent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_TaskStudent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListTaskStudentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListTaskStudentResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -335,8 +350,17 @@ public final class TeacherTaskOuterClass {
       "StatsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
       "BaseResponse\022\030\n\020total_task_count\030\002 \001(\003\022\031" +
       "\n\021not_started_count\030\003 \001(\003\022\025\n\rongoing_cou" +
-      "nt\030\004 \001(\003\022\023\n\013ended_count\030\005 \001(\003B#\n\037com.zhi" +
-      "jiejiaoyu.glory_api.taskP\001b\006proto3"
+      "nt\030\004 \001(\003\022\023\n\013ended_count\030\005 \001(\003\"d\n\026ListTas" +
+      "kStudentRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007task_id\030\002 \001(\003\022\020\n\010cla" +
+      "ss_id\030\003 \003(\003\">\n\013TaskStudent\022\014\n\004name\030\001 \001(\t" +
+      "\022\017\n\007task_id\030\002 \001(\003\022\020\n\010class_id\030\003 \001(\003\"\240\001\n\027" +
+      "ListTaskStudentResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022.\n\016no_submit_list" +
+      "\030\002 \003(\0132\026.glory_api.TaskStudent\022.\n\016submit" +
+      "ted_list\030\003 \003(\0132\026.glory_api.TaskStudentB#" +
+      "\n\037com.zhijiejiaoyu.glory_api.taskP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -550,6 +574,24 @@ public final class TeacherTaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_TeacherTaskStatsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalTaskCount", "NotStartedCount", "OngoingCount", "EndedCount", });
+    internal_static_glory_api_ListTaskStudentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_glory_api_ListTaskStudentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTaskStudentRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "TaskId", "ClassId", });
+    internal_static_glory_api_TaskStudent_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_glory_api_TaskStudent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_TaskStudent_descriptor,
+        new java.lang.String[] { "Name", "TaskId", "ClassId", });
+    internal_static_glory_api_ListTaskStudentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_glory_api_ListTaskStudentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListTaskStudentResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "NoSubmitList", "SubmittedList", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();

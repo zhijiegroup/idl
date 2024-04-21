@@ -665,3 +665,51 @@ final $typed_data.Uint8List teacherTaskStatsResponseDescriptor = $convert.base64
     '5nb2luZ19jb3VudBgEIAEoA1IMb25nb2luZ0NvdW50Eh8KC2VuZGVkX2NvdW50GAUgASgDUgpl'
     'bmRlZENvdW50');
 
+@$core.Deprecated('Use listTaskStudentRequestDescriptor instead')
+const ListTaskStudentRequest$json = {
+  '1': 'ListTaskStudentRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 3, '10': 'taskId'},
+    {'1': 'class_id', '3': 3, '4': 3, '5': 3, '10': 'classId'},
+  ],
+};
+
+/// Descriptor for `ListTaskStudentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTaskStudentRequestDescriptor = $convert.base64Decode(
+    'ChZMaXN0VGFza1N0dWRlbnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKANSBnRhc2tJZBIZCghjbGFz'
+    'c19pZBgDIAMoA1IHY2xhc3NJZA==');
+
+@$core.Deprecated('Use taskStudentDescriptor instead')
+const TaskStudent$json = {
+  '1': 'TaskStudent',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 3, '10': 'taskId'},
+    {'1': 'class_id', '3': 3, '4': 1, '5': 3, '10': 'classId'},
+  ],
+};
+
+/// Descriptor for `TaskStudent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List taskStudentDescriptor = $convert.base64Decode(
+    'CgtUYXNrU3R1ZGVudBISCgRuYW1lGAEgASgJUgRuYW1lEhcKB3Rhc2tfaWQYAiABKANSBnRhc2'
+    'tJZBIZCghjbGFzc19pZBgDIAEoA1IHY2xhc3NJZA==');
+
+@$core.Deprecated('Use listTaskStudentResponseDescriptor instead')
+const ListTaskStudentResponse$json = {
+  '1': 'ListTaskStudentResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'no_submit_list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.TaskStudent', '10': 'noSubmitList'},
+    {'1': 'submitted_list', '3': 3, '4': 3, '5': 11, '6': '.glory_api.TaskStudent', '10': 'submittedList'},
+  ],
+};
+
+/// Descriptor for `ListTaskStudentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTaskStudentResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0VGFza1N0dWRlbnRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLkJhc2'
+    'VSZXNwb25zZVIIYmFzZVJlc3ASPAoObm9fc3VibWl0X2xpc3QYAiADKAsyFi5nbG9yeV9hcGku'
+    'VGFza1N0dWRlbnRSDG5vU3VibWl0TGlzdBI9Cg5zdWJtaXR0ZWRfbGlzdBgDIAMoCzIWLmdsb3'
+    'J5X2FwaS5UYXNrU3R1ZGVudFINc3VibWl0dGVkTGlzdA==');
+

@@ -305,3 +305,21 @@ export interface TeacherTaskStatsResponse {
   ongoing_count?: string;
   ended_count?: string;
 }
+
+export interface ListTaskStudentRequest {
+  base_request?: base.BaseRequest;
+  task_id?: string;
+  class_id?: Array<string>;
+}
+
+export interface TaskStudent {
+  name?: string;
+  task_id?: string;
+  class_id?: string;
+}
+
+export interface ListTaskStudentResponse {
+  base_resp?: base.BaseResponse;
+  no_submit_list?: Array<TaskStudent>;
+  submitted_list?: Array<TaskStudent>;
+}

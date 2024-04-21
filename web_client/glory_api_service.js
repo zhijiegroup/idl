@@ -2994,6 +2994,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  ListTaskStudent(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/teacher_task_students${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   CountClassSubmit(request) {
     const uri = `${this.uriPrefix}/api/task/count_class_submit`;
     const body = JSONbigint.stringify(request);
