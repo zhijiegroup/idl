@@ -266,3 +266,21 @@ message TeacherTaskStatsResponse {
   int64 ongoing_count = 4;
   int64 ended_count = 5;
 }
+
+message ListTaskStudentRequest {
+  base.BaseRequest base_request = 1;
+  int64 task_id = 2;
+  repeated int64 class_id = 3;
+}
+
+message TaskStudent {
+  string name = 1;
+  int64 task_id = 2;
+  int64 class_id = 3;
+}
+
+message ListTaskStudentResponse {
+  base.BaseResponse base_resp = 1;
+  repeated TaskStudent no_submit_list = 2;
+  repeated TaskStudent submitted_list = 3;
+}
