@@ -103,6 +103,7 @@ message UpdateNmCourseRequest {
     string course_industry = 12;
     repeated NmChapter chapters = 13;
     int64 course_id = 14;
+    string language = 15;
 }
 
 message UpdateNmCourseResponse {
