@@ -110,6 +110,11 @@ struct GloryApi_NmCourse {
     set {_uniqueStorage()._assigned = newValue}
   }
 
+  var language: String {
+    get {return _storage._language}
+    set {_uniqueStorage()._language = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -613,6 +618,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     15: .standard(proto: "course_module"),
     16: .same(proto: "chapters"),
     17: .same(proto: "assigned"),
+    18: .same(proto: "language"),
   ]
 
   fileprivate class _StorageClass {
@@ -633,6 +639,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     var _courseModule: Int64 = 0
     var _chapters: [GloryApi_NmChapter] = []
     var _assigned: Bool = false
+    var _language: String = String()
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -664,6 +671,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       _courseModule = source._courseModule
       _chapters = source._chapters
       _assigned = source._assigned
+      _language = source._language
     }
   }
 
@@ -699,6 +707,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
         case 15: try { try decoder.decodeSingularInt64Field(value: &_storage._courseModule) }()
         case 16: try { try decoder.decodeRepeatedMessageField(value: &_storage._chapters) }()
         case 17: try { try decoder.decodeSingularBoolField(value: &_storage._assigned) }()
+        case 18: try { try decoder.decodeSingularStringField(value: &_storage._language) }()
         default: break
         }
       }
@@ -758,6 +767,9 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       if _storage._assigned != false {
         try visitor.visitSingularBoolField(value: _storage._assigned, fieldNumber: 17)
       }
+      if !_storage._language.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._language, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -784,6 +796,7 @@ extension GloryApi_NmCourse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
         if _storage._courseModule != rhs_storage._courseModule {return false}
         if _storage._chapters != rhs_storage._chapters {return false}
         if _storage._assigned != rhs_storage._assigned {return false}
+        if _storage._language != rhs_storage._language {return false}
         return true
       }
       if !storagesAreEqual {return false}

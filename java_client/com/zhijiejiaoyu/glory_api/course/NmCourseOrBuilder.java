@@ -168,4 +168,16 @@ public interface NmCourseOrBuilder extends
    * @return The assigned.
    */
   boolean getAssigned();
+
+  /**
+   * <code>string language = 18;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 18;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }
