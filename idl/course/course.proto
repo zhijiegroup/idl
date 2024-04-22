@@ -161,4 +161,5 @@ message GetCourseTypeListResponse {
   repeated CourseType types = 3;
   repeated CourseType majors = 4;
   repeated CourseType industries = 5;
+  repeated CourseType languages = 6;
 }
