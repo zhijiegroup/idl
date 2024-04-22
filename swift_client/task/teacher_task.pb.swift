@@ -1109,6 +1109,72 @@ struct GloryApi_TeacherTaskStatsResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_ListTaskStudentRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var taskID: Int64 = 0
+
+  var classID: [Int64] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_TaskStudent {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String = String()
+
+  var taskID: Int64 = 0
+
+  var classID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListTaskStudentResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var noSubmitList: [GloryApi_TaskStudent] = []
+
+  var submittedList: [GloryApi_TaskStudent] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_TeacherTaskParameter: @unchecked Sendable {}
 extension GloryApi_TeacherTaskClass: @unchecked Sendable {}
@@ -1144,6 +1210,9 @@ extension GloryApi_CountClassSubmitListResponse: @unchecked Sendable {}
 extension GloryApi_CountClassPassListResponse: @unchecked Sendable {}
 extension GloryApi_TeacherTaskStatsRequest: @unchecked Sendable {}
 extension GloryApi_TeacherTaskStatsResponse: @unchecked Sendable {}
+extension GloryApi_ListTaskStudentRequest: @unchecked Sendable {}
+extension GloryApi_TaskStudent: @unchecked Sendable {}
+extension GloryApi_ListTaskStudentResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -3159,6 +3228,146 @@ extension GloryApi_TeacherTaskStatsResponse: SwiftProtobuf.Message, SwiftProtobu
     if lhs.notStartedCount != rhs.notStartedCount {return false}
     if lhs.ongoingCount != rhs.ongoingCount {return false}
     if lhs.endedCount != rhs.endedCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTaskStudentRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTaskStudentRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "task_id"),
+    3: .standard(proto: "class_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.classID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 2)
+    }
+    if !self.classID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.classID, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTaskStudentRequest, rhs: GloryApi_ListTaskStudentRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_TaskStudent: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TaskStudent"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .standard(proto: "task_id"),
+    3: .standard(proto: "class_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 2)
+    }
+    if self.classID != 0 {
+      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TaskStudent, rhs: GloryApi_TaskStudent) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.taskID != rhs.taskID {return false}
+    if lhs.classID != rhs.classID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListTaskStudentResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListTaskStudentResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "no_submit_list"),
+    3: .standard(proto: "submitted_list"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.noSubmitList) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.submittedList) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.noSubmitList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.noSubmitList, fieldNumber: 2)
+    }
+    if !self.submittedList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.submittedList, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListTaskStudentResponse, rhs: GloryApi_ListTaskStudentResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.noSubmitList != rhs.noSubmitList {return false}
+    if lhs.submittedList != rhs.submittedList {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

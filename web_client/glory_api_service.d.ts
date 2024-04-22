@@ -1680,6 +1680,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.TeacherTaskStatsRequest
   ): Promise<teacher_task.TeacherTaskStatsResponse>;
 
+  ListTaskStudent(
+    request: teacher_task.ListTaskStudentRequest
+  ): Promise<teacher_task.ListTaskStudentResponse>;
+
   /** 教师任务统计 */
   CountClassSubmit(
     request: teacher_task.CountTeacherTaskRequest
