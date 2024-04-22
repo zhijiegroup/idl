@@ -20,14 +20,14 @@ public interface TaskStudentOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 task_id = 2;</code>
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  long getUserId();
+
+  /**
+   * <code>int64 task_id = 3;</code>
    * @return The taskId.
    */
   long getTaskId();
-
-  /**
-   * <code>int64 class_id = 3;</code>
-   * @return The classId.
-   */
-  long getClassId();
 }

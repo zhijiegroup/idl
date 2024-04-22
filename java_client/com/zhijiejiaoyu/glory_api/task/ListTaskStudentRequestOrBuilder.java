@@ -29,19 +29,36 @@ public interface ListTaskStudentRequestOrBuilder extends
   long getTaskId();
 
   /**
-   * <code>repeated int64 class_id = 3;</code>
-   * @return A list containing the classId.
+   * <code>repeated int64 no_submit_class_id = 3;</code>
+   * @return A list containing the noSubmitClassId.
    */
-  java.util.List<java.lang.Long> getClassIdList();
+  java.util.List<java.lang.Long> getNoSubmitClassIdList();
   /**
-   * <code>repeated int64 class_id = 3;</code>
-   * @return The count of classId.
+   * <code>repeated int64 no_submit_class_id = 3;</code>
+   * @return The count of noSubmitClassId.
    */
-  int getClassIdCount();
+  int getNoSubmitClassIdCount();
   /**
-   * <code>repeated int64 class_id = 3;</code>
+   * <code>repeated int64 no_submit_class_id = 3;</code>
    * @param index The index of the element to return.
-   * @return The classId at the given index.
+   * @return The noSubmitClassId at the given index.
    */
-  long getClassId(int index);
+  long getNoSubmitClassId(int index);
+
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @return A list containing the submittedClassId.
+   */
+  java.util.List<java.lang.Long> getSubmittedClassIdList();
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @return The count of submittedClassId.
+   */
+  int getSubmittedClassIdCount();
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @param index The index of the element to return.
+   * @return The submittedClassId at the given index.
+   */
+  long getSubmittedClassId(int index);
 }

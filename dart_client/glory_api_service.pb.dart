@@ -1196,8 +1196,8 @@ class glory_apiApi {
   $async.Future<$53.TeacherTaskStatsResponse> teacherTaskStats($pb.ClientContext? ctx, $53.TeacherTaskStatsRequest request) =>
     _client.invoke<$53.TeacherTaskStatsResponse>(ctx, 'glory_api', 'TeacherTaskStats', request, $53.TeacherTaskStatsResponse())
   ;
-  $async.Future<$53.ListTaskStudentResponse> listTaskStudent($pb.ClientContext? ctx, $53.ListTaskStudentRequest request) =>
-    _client.invoke<$53.ListTaskStudentResponse>(ctx, 'glory_api', 'ListTaskStudent', request, $53.ListTaskStudentResponse())
+  $async.Future<$53.ListTaskStudentResponse> teacherTaskStudents($pb.ClientContext? ctx, $53.ListTaskStudentRequest request) =>
+    _client.invoke<$53.ListTaskStudentResponse>(ctx, 'glory_api', 'TeacherTaskStudents', request, $53.ListTaskStudentResponse())
   ;
   $async.Future<$53.CountClassSubmitResponse> countClassSubmit($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
     _client.invoke<$53.CountClassSubmitResponse>(ctx, 'glory_api', 'CountClassSubmit', request, $53.CountClassSubmitResponse())

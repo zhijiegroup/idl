@@ -57,12 +57,12 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            taskId = input.readInt64();
+            userId = input.readInt64();
             break;
           }
           case 24: {
 
-            classId = input.readInt64();
+            taskId = input.readInt64();
             break;
           }
           default: {
@@ -135,26 +135,26 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TASK_ID_FIELD_NUMBER = 2;
+  public static final int USER_ID_FIELD_NUMBER = 2;
+  private long userId ;
+  /**
+   * <code>int64 user_id = 2;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public long getUserId() {
+    return userId ;
+  }
+
+  public static final int TASK_ID_FIELD_NUMBER = 3;
   private long taskId ;
   /**
-   * <code>int64 task_id = 2;</code>
+   * <code>int64 task_id = 3;</code>
    * @return The taskId.
    */
   @java.lang.Override
   public long getTaskId() {
     return taskId ;
-  }
-
-  public static final int CLASS_ID_FIELD_NUMBER = 3;
-  private long classId ;
-  /**
-   * <code>int64 class_id = 3;</code>
-   * @return The classId.
-   */
-  @java.lang.Override
-  public long getClassId() {
-    return classId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -174,11 +174,11 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name );
     }
-    if (taskId != 0L) {
-      output.writeInt64(2, taskId );
+    if (userId != 0L) {
+      output.writeInt64(2, userId );
     }
-    if (classId != 0L) {
-      output.writeInt64(3, classId );
+    if (taskId != 0L) {
+      output.writeInt64(3, taskId );
     }
     unknownFields.writeTo(output);
   }
@@ -192,13 +192,13 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name );
     }
+    if (userId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, userId );
+    }
     if (taskId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, taskId );
-    }
-    if (classId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, classId );
+        .computeInt64Size(3, taskId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -217,10 +217,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (getUserId()
+        != other.getUserId()) return false;
     if (getTaskId()
         != other.getTaskId()) return false;
-    if (getClassId()
-        != other.getClassId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -234,12 +234,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTaskId());
-    hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getClassId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -375,9 +375,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name = "";
 
-      taskId = 0L;
+      userId = 0L;
 
-      classId = 0L;
+      taskId = 0L;
 
       return this;
     }
@@ -406,8 +406,8 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.task.TaskStudent buildPartial() {
       com.zhijiejiaoyu.glory_api.task.TaskStudent result = new com.zhijiejiaoyu.glory_api.task.TaskStudent(this);
       result.name = name ;
+      result.userId = userId ;
       result.taskId = taskId ;
-      result.classId = classId ;
       onBuilt();
       return result;
     }
@@ -460,11 +460,11 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
+      if (other.getUserId() != 0L) {
+        setUserId(other.getUserId());
+      }
       if (other.getTaskId() != 0L) {
         setTaskId(other.getTaskId());
-      }
-      if (other.getClassId() != 0L) {
-        setClassId(other.getClassId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -571,9 +571,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long userId ;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public long getUserId() {
+      return userId ;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(long value) {
+      
+      userId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId = 0L;
+      onChanged();
+      return this;
+    }
+
     private long taskId ;
     /**
-     * <code>int64 task_id = 2;</code>
+     * <code>int64 task_id = 3;</code>
      * @return The taskId.
      */
     @java.lang.Override
@@ -581,7 +612,7 @@ private static final long serialVersionUID = 0L;
       return taskId ;
     }
     /**
-     * <code>int64 task_id = 2;</code>
+     * <code>int64 task_id = 3;</code>
      * @param value The taskId to set.
      * @return This builder for chaining.
      */
@@ -592,43 +623,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 task_id = 2;</code>
+     * <code>int64 task_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearTaskId() {
       
       taskId = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long classId ;
-    /**
-     * <code>int64 class_id = 3;</code>
-     * @return The classId.
-     */
-    @java.lang.Override
-    public long getClassId() {
-      return classId ;
-    }
-    /**
-     * <code>int64 class_id = 3;</code>
-     * @param value The classId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setClassId(long value) {
-      
-      classId = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 class_id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearClassId() {
-      
-      classId = 0L;
       onChanged();
       return this;
     }

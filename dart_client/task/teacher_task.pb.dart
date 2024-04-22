@@ -3390,7 +3390,8 @@ class ListTaskStudentRequest extends $pb.GeneratedMessage {
   factory ListTaskStudentRequest({
     $2.BaseRequest? baseRequest,
     $fixnum.Int64? taskId,
-    $core.Iterable<$fixnum.Int64>? classId,
+    $core.Iterable<$fixnum.Int64>? noSubmitClassId,
+    $core.Iterable<$fixnum.Int64>? submittedClassId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3399,8 +3400,11 @@ class ListTaskStudentRequest extends $pb.GeneratedMessage {
     if (taskId != null) {
       $result.taskId = taskId;
     }
-    if (classId != null) {
-      $result.classId.addAll(classId);
+    if (noSubmitClassId != null) {
+      $result.noSubmitClassId.addAll(noSubmitClassId);
+    }
+    if (submittedClassId != null) {
+      $result.submittedClassId.addAll(submittedClassId);
     }
     return $result;
   }
@@ -3411,7 +3415,8 @@ class ListTaskStudentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTaskStudentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'taskId')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'classId', $pb.PbFieldType.K6)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'noSubmitClassId', $pb.PbFieldType.K6)
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'submittedClassId', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
@@ -3457,24 +3462,27 @@ class ListTaskStudentRequest extends $pb.GeneratedMessage {
   void clearTaskId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get classId => $_getList(2);
+  $core.List<$fixnum.Int64> get noSubmitClassId => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$fixnum.Int64> get submittedClassId => $_getList(3);
 }
 
 class TaskStudent extends $pb.GeneratedMessage {
   factory TaskStudent({
     $core.String? name,
+    $fixnum.Int64? userId,
     $fixnum.Int64? taskId,
-    $fixnum.Int64? classId,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
     }
+    if (userId != null) {
+      $result.userId = userId;
+    }
     if (taskId != null) {
       $result.taskId = taskId;
-    }
-    if (classId != null) {
-      $result.classId = classId;
     }
     return $result;
   }
@@ -3484,8 +3492,8 @@ class TaskStudent extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TaskStudent', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aInt64(2, _omitFieldNames ? '' : 'taskId')
-    ..aInt64(3, _omitFieldNames ? '' : 'classId')
+    ..aInt64(2, _omitFieldNames ? '' : 'userId')
+    ..aInt64(3, _omitFieldNames ? '' : 'taskId')
     ..hasRequiredFields = false
   ;
 
@@ -3520,22 +3528,22 @@ class TaskStudent extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get taskId => $_getI64(1);
+  $fixnum.Int64 get userId => $_getI64(1);
   @$pb.TagNumber(2)
-  set taskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set userId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTaskId() => $_has(1);
+  $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTaskId() => clearField(2);
+  void clearUserId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get classId => $_getI64(2);
+  $fixnum.Int64 get taskId => $_getI64(2);
   @$pb.TagNumber(3)
-  set classId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set taskId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasClassId() => $_has(2);
+  $core.bool hasTaskId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearClassId() => clearField(3);
+  void clearTaskId() => clearField(3);
 }
 
 class ListTaskStudentResponse extends $pb.GeneratedMessage {

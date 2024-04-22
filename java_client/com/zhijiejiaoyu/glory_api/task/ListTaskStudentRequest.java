@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListTaskStudentRequest() {
-    classId = emptyLongList();
+    noSubmitClassId = emptyLongList();
+    submittedClassId = emptyLongList();
   }
 
   @java.lang.Override
@@ -70,21 +71,42 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              classId = newLongList();
+              noSubmitClassId = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
-            classId .addLong(input.readInt64());
+            noSubmitClassId .addLong(input.readInt64());
             break;
           }
           case 26: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
             if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              classId = newLongList();
+              noSubmitClassId = newLongList();
               mutable_bitField0_ |= 0x00000001;
             }
             while (input.getBytesUntilLimit() > 0) {
-              classId .addLong(input.readInt64());
+              noSubmitClassId .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
+            break;
+          }
+          case 32: {
+            if (!((mutable_bitField0 & 0x00000002) != 0)) {
+              submittedClassId = newLongList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            submittedClassId .addLong(input.readInt64());
+            break;
+          }
+          case 34: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              submittedClassId = newLongList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              submittedClassId .addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
@@ -105,7 +127,10 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0 & 0x00000001) != 0)) {
-        classId .makeImmutable(); // C
+        noSubmitClassId .makeImmutable(); // C
+      }
+      if (((mutable_bitField0 & 0x00000002) != 0)) {
+        submittedClassId .makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -161,33 +186,61 @@ private static final long serialVersionUID = 0L;
     return taskId ;
   }
 
-  public static final int CLASS_ID_FIELD_NUMBER = 3;
-  private com.google.protobuf.Internal.LongList classId ;
+  public static final int NO_SUBMIT_CLASS_ID_FIELD_NUMBER = 3;
+  private com.google.protobuf.Internal.LongList noSubmitClassId ;
   /**
-   * <code>repeated int64 class_id = 3;</code>
-   * @return A list containing the classId.
+   * <code>repeated int64 no_submit_class_id = 3;</code>
+   * @return A list containing the noSubmitClassId.
    */
   @java.lang.Override
   public java.util.List<java.lang.Long>
-      getClassIdList() {
-    return classId ;
+      getNoSubmitClassIdList() {
+    return noSubmitClassId ;
   }
   /**
-   * <code>repeated int64 class_id = 3;</code>
-   * @return The count of classId.
+   * <code>repeated int64 no_submit_class_id = 3;</code>
+   * @return The count of noSubmitClassId.
    */
-  public int getClassIdCount() {
-    return classId .size();
+  public int getNoSubmitClassIdCount() {
+    return noSubmitClassId .size();
   }
   /**
-   * <code>repeated int64 class_id = 3;</code>
+   * <code>repeated int64 no_submit_class_id = 3;</code>
    * @param index The index of the element to return.
-   * @return The classId at the given index.
+   * @return The noSubmitClassId at the given index.
    */
-  public long getClassId(int index) {
-    return classId .getLong(index);
+  public long getNoSubmitClassId(int index) {
+    return noSubmitClassId .getLong(index);
   }
-  private int classIdMemoizedSerializedSize = -1;
+  private int noSubmitClassIdMemoizedSerializedSize = -1;
+
+  public static final int SUBMITTED_CLASS_ID_FIELD_NUMBER = 4;
+  private com.google.protobuf.Internal.LongList submittedClassId ;
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @return A list containing the submittedClassId.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Long>
+      getSubmittedClassIdList() {
+    return submittedClassId ;
+  }
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @return The count of submittedClassId.
+   */
+  public int getSubmittedClassIdCount() {
+    return submittedClassId .size();
+  }
+  /**
+   * <code>repeated int64 submitted_class_id = 4;</code>
+   * @param index The index of the element to return.
+   * @return The submittedClassId at the given index.
+   */
+  public long getSubmittedClassId(int index) {
+    return submittedClassId .getLong(index);
+  }
+  private int submittedClassIdMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -210,12 +263,19 @@ private static final long serialVersionUID = 0L;
     if (taskId != 0L) {
       output.writeInt64(2, taskId );
     }
-    if (getClassIdList().size() > 0) {
+    if (getNoSubmitClassIdList().size() > 0) {
       output.writeUInt32NoTag(26);
-      output.writeUInt32NoTag(classIdMemoizedSerializedSize);
+      output.writeUInt32NoTag(noSubmitClassIdMemoizedSerializedSize);
     }
-    for (int i = 0; i < classId .size(); i++) {
-      output.writeInt64NoTag(classId .getLong(i));
+    for (int i = 0; i < noSubmitClassId .size(); i++) {
+      output.writeInt64NoTag(noSubmitClassId .getLong(i));
+    }
+    if (getSubmittedClassIdList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(submittedClassIdMemoizedSerializedSize);
+    }
+    for (int i = 0; i < submittedClassId .size(); i++) {
+      output.writeInt64NoTag(submittedClassId .getLong(i));
     }
     unknownFields.writeTo(output);
   }
@@ -236,17 +296,31 @@ private static final long serialVersionUID = 0L;
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < classId .size(); i++) {
+      for (int i = 0; i < noSubmitClassId .size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(classId .getLong(i));
+          .computeInt64SizeNoTag(noSubmitClassId .getLong(i));
       }
       size += dataSize;
-      if (!getClassIdList().isEmpty()) {
+      if (!getNoSubmitClassIdList().isEmpty()) {
         size += 1;
         size += com.google.protobuf.CodedOutputStream
             .computeInt32SizeNoTag(dataSize);
       }
-      classIdMemoizedSerializedSize = dataSize;
+      noSubmitClassIdMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < submittedClassId .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(submittedClassId .getLong(i));
+      }
+      size += dataSize;
+      if (!getSubmittedClassIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      submittedClassIdMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,8 +344,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getTaskId()
         != other.getTaskId()) return false;
-    if (!getClassIdList()
-        .equals(other.getClassIdList())) return false;
+    if (!getNoSubmitClassIdList()
+        .equals(other.getNoSubmitClassIdList())) return false;
+    if (!getSubmittedClassIdList()
+        .equals(other.getSubmittedClassIdList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -290,9 +366,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTaskId());
-    if (getClassIdCount() > 0) {
-      hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClassIdList().hashCode();
+    if (getNoSubmitClassIdCount() > 0) {
+      hash = (37 * hash) + NO_SUBMIT_CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNoSubmitClassIdList().hashCode();
+    }
+    if (getSubmittedClassIdCount() > 0) {
+      hash = (37 * hash) + SUBMITTED_CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSubmittedClassIdList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -435,8 +515,10 @@ private static final long serialVersionUID = 0L;
       }
       taskId = 0L;
 
-      classId = emptyLongList();
+      noSubmitClassId = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      submittedClassId = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000002);
       return this;
     }
 
@@ -471,10 +553,15 @@ private static final long serialVersionUID = 0L;
       }
       result.taskId = taskId ;
       if (((bitField0 & 0x00000001) != 0)) {
-        classId .makeImmutable();
+        noSubmitClassId .makeImmutable();
         bitField0 = (bitField0 & ~0x00000001);
       }
-      result.classId = classId ;
+      result.noSubmitClassId = noSubmitClassId ;
+      if (((bitField0 & 0x00000002) != 0)) {
+        submittedClassId .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000002);
+      }
+      result.submittedClassId = submittedClassId ;
       onBuilt();
       return result;
     }
@@ -529,13 +616,23 @@ private static final long serialVersionUID = 0L;
       if (other.getTaskId() != 0L) {
         setTaskId(other.getTaskId());
       }
-      if (!other.classId .isEmpty()) {
-        if (classId .isEmpty()) {
-          classId = other.classId ;
+      if (!other.noSubmitClassId .isEmpty()) {
+        if (noSubmitClassId .isEmpty()) {
+          noSubmitClassId = other.noSubmitClassId ;
           bitField0 = (bitField0 & ~0x00000001);
         } else {
-          ensureClassIdIsMutable();
-          classId .addAll(other.classId );
+          ensureNoSubmitClassIdIsMutable();
+          noSubmitClassId .addAll(other.noSubmitClassId );
+        }
+        onChanged();
+      }
+      if (!other.submittedClassId .isEmpty()) {
+        if (submittedClassId .isEmpty()) {
+          submittedClassId = other.submittedClassId ;
+          bitField0 = (bitField0 & ~0x00000002);
+        } else {
+          ensureSubmittedClassIdIsMutable();
+          submittedClassId .addAll(other.submittedClassId );
         }
         onChanged();
       }
@@ -719,81 +816,160 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Internal.LongList classId = emptyLongList();
-    private void ensureClassIdIsMutable() {
+    private com.google.protobuf.Internal.LongList noSubmitClassId = emptyLongList();
+    private void ensureNoSubmitClassIdIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
-        classId = mutableCopy(classId );
+        noSubmitClassId = mutableCopy(noSubmitClassId );
         bitField0_ |= 0x00000001;
        }
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
-     * @return A list containing the classId.
+     * <code>repeated int64 no_submit_class_id = 3;</code>
+     * @return A list containing the noSubmitClassId.
      */
     public java.util.List<java.lang.Long>
-        getClassIdList() {
+        getNoSubmitClassIdList() {
       return ((bitField0 & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(classId ) : classId ;
+               java.util.Collections.unmodifiableList(noSubmitClassId ) : noSubmitClassId ;
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
-     * @return The count of classId.
+     * <code>repeated int64 no_submit_class_id = 3;</code>
+     * @return The count of noSubmitClassId.
      */
-    public int getClassIdCount() {
-      return classId .size();
+    public int getNoSubmitClassIdCount() {
+      return noSubmitClassId .size();
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
+     * <code>repeated int64 no_submit_class_id = 3;</code>
      * @param index The index of the element to return.
-     * @return The classId at the given index.
+     * @return The noSubmitClassId at the given index.
      */
-    public long getClassId(int index) {
-      return classId .getLong(index);
+    public long getNoSubmitClassId(int index) {
+      return noSubmitClassId .getLong(index);
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
+     * <code>repeated int64 no_submit_class_id = 3;</code>
      * @param index The index to set the value at.
-     * @param value The classId to set.
+     * @param value The noSubmitClassId to set.
      * @return This builder for chaining.
      */
-    public Builder setClassId(
+    public Builder setNoSubmitClassId(
         int index, long value) {
-      ensureClassIdIsMutable();
-      classId .setLong(index, value);
+      ensureNoSubmitClassIdIsMutable();
+      noSubmitClassId .setLong(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
-     * @param value The classId to add.
+     * <code>repeated int64 no_submit_class_id = 3;</code>
+     * @param value The noSubmitClassId to add.
      * @return This builder for chaining.
      */
-    public Builder addClassId(long value) {
-      ensureClassIdIsMutable();
-      classId .addLong(value);
+    public Builder addNoSubmitClassId(long value) {
+      ensureNoSubmitClassIdIsMutable();
+      noSubmitClassId .addLong(value);
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
-     * @param values The classId to add.
+     * <code>repeated int64 no_submit_class_id = 3;</code>
+     * @param values The noSubmitClassId to add.
      * @return This builder for chaining.
      */
-    public Builder addAllClassId(
+    public Builder addAllNoSubmitClassId(
         java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureClassIdIsMutable();
+      ensureNoSubmitClassIdIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, classId );
+          values, noSubmitClassId );
       onChanged();
       return this;
     }
     /**
-     * <code>repeated int64 class_id = 3;</code>
+     * <code>repeated int64 no_submit_class_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearClassId() {
-      classId = emptyLongList();
+    public Builder clearNoSubmitClassId() {
+      noSubmitClassId = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.LongList submittedClassId = emptyLongList();
+    private void ensureSubmittedClassIdIsMutable() {
+      if (!((bitField0 & 0x00000002) != 0)) {
+        submittedClassId = mutableCopy(submittedClassId );
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @return A list containing the submittedClassId.
+     */
+    public java.util.List<java.lang.Long>
+        getSubmittedClassIdList() {
+      return ((bitField0 & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(submittedClassId ) : submittedClassId ;
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @return The count of submittedClassId.
+     */
+    public int getSubmittedClassIdCount() {
+      return submittedClassId .size();
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @param index The index of the element to return.
+     * @return The submittedClassId at the given index.
+     */
+    public long getSubmittedClassId(int index) {
+      return submittedClassId .getLong(index);
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The submittedClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubmittedClassId(
+        int index, long value) {
+      ensureSubmittedClassIdIsMutable();
+      submittedClassId .setLong(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @param value The submittedClassId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSubmittedClassId(long value) {
+      ensureSubmittedClassIdIsMutable();
+      submittedClassId .addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @param values The submittedClassId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSubmittedClassId(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureSubmittedClassIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, submittedClassId );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 submitted_class_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSubmittedClassId() {
+      submittedClassId = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000002);
       onChanged();
       return this;
     }

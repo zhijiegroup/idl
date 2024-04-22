@@ -671,30 +671,32 @@ const ListTaskStudentRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'task_id', '3': 2, '4': 1, '5': 3, '10': 'taskId'},
-    {'1': 'class_id', '3': 3, '4': 3, '5': 3, '10': 'classId'},
+    {'1': 'no_submit_class_id', '3': 3, '4': 3, '5': 3, '10': 'noSubmitClassId'},
+    {'1': 'submitted_class_id', '3': 4, '4': 3, '5': 3, '10': 'submittedClassId'},
   ],
 };
 
 /// Descriptor for `ListTaskStudentRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listTaskStudentRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0VGFza1N0dWRlbnRSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
-    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKANSBnRhc2tJZBIZCghjbGFz'
-    'c19pZBgDIAMoA1IHY2xhc3NJZA==');
+    'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKANSBnRhc2tJZBIrChJub19z'
+    'dWJtaXRfY2xhc3NfaWQYAyADKANSD25vU3VibWl0Q2xhc3NJZBIsChJzdWJtaXR0ZWRfY2xhc3'
+    'NfaWQYBCADKANSEHN1Ym1pdHRlZENsYXNzSWQ=');
 
 @$core.Deprecated('Use taskStudentDescriptor instead')
 const TaskStudent$json = {
   '1': 'TaskStudent',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'task_id', '3': 2, '4': 1, '5': 3, '10': 'taskId'},
-    {'1': 'class_id', '3': 3, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 3, '10': 'userId'},
+    {'1': 'task_id', '3': 3, '4': 1, '5': 3, '10': 'taskId'},
   ],
 };
 
 /// Descriptor for `TaskStudent`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List taskStudentDescriptor = $convert.base64Decode(
-    'CgtUYXNrU3R1ZGVudBISCgRuYW1lGAEgASgJUgRuYW1lEhcKB3Rhc2tfaWQYAiABKANSBnRhc2'
-    'tJZBIZCghjbGFzc19pZBgDIAEoA1IHY2xhc3NJZA==');
+    'CgtUYXNrU3R1ZGVudBISCgRuYW1lGAEgASgJUgRuYW1lEhcKB3VzZXJfaWQYAiABKANSBnVzZX'
+    'JJZBIXCgd0YXNrX2lkGAMgASgDUgZ0YXNrSWQ=');
 
 @$core.Deprecated('Use listTaskStudentResponseDescriptor instead')
 const ListTaskStudentResponse$json = {

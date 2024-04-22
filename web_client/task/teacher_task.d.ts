@@ -309,13 +309,14 @@ export interface TeacherTaskStatsResponse {
 export interface ListTaskStudentRequest {
   base_request?: base.BaseRequest;
   task_id?: string;
-  class_id?: Array<string>;
+  no_submit_class_id?: Array<string>;
+  submitted_class_id?: Array<string>;
 }
 
 export interface TaskStudent {
   name?: string;
+  user_id?: string;
   task_id?: string;
-  class_id?: string;
 }
 
 export interface ListTaskStudentResponse {

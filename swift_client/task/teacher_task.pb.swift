@@ -1125,7 +1125,9 @@ struct GloryApi_ListTaskStudentRequest {
 
   var taskID: Int64 = 0
 
-  var classID: [Int64] = []
+  var noSubmitClassID: [Int64] = []
+
+  var submittedClassID: [Int64] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1141,9 +1143,9 @@ struct GloryApi_TaskStudent {
 
   var name: String = String()
 
-  var taskID: Int64 = 0
+  var userID: Int64 = 0
 
-  var classID: Int64 = 0
+  var taskID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3238,7 +3240,8 @@ extension GloryApi_ListTaskStudentRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .standard(proto: "task_id"),
-    3: .standard(proto: "class_id"),
+    3: .standard(proto: "no_submit_class_id"),
+    4: .standard(proto: "submitted_class_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3249,7 +3252,8 @@ extension GloryApi_ListTaskStudentRequest: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
-      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.classID) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.noSubmitClassID) }()
+      case 4: try { try decoder.decodeRepeatedInt64Field(value: &self.submittedClassID) }()
       default: break
       }
     }
@@ -3266,8 +3270,11 @@ extension GloryApi_ListTaskStudentRequest: SwiftProtobuf.Message, SwiftProtobuf.
     if self.taskID != 0 {
       try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 2)
     }
-    if !self.classID.isEmpty {
-      try visitor.visitPackedInt64Field(value: self.classID, fieldNumber: 3)
+    if !self.noSubmitClassID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.noSubmitClassID, fieldNumber: 3)
+    }
+    if !self.submittedClassID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.submittedClassID, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3275,7 +3282,8 @@ extension GloryApi_ListTaskStudentRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_ListTaskStudentRequest, rhs: GloryApi_ListTaskStudentRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.taskID != rhs.taskID {return false}
-    if lhs.classID != rhs.classID {return false}
+    if lhs.noSubmitClassID != rhs.noSubmitClassID {return false}
+    if lhs.submittedClassID != rhs.submittedClassID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3285,8 +3293,8 @@ extension GloryApi_TaskStudent: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   static let protoMessageName: String = _protobuf_package + ".TaskStudent"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
-    2: .standard(proto: "task_id"),
-    3: .standard(proto: "class_id"),
+    2: .standard(proto: "user_id"),
+    3: .standard(proto: "task_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3296,8 +3304,8 @@ extension GloryApi_TaskStudent: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.userID) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.taskID) }()
       default: break
       }
     }
@@ -3307,19 +3315,19 @@ extension GloryApi_TaskStudent: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
-    if self.taskID != 0 {
-      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 2)
+    if self.userID != 0 {
+      try visitor.visitSingularInt64Field(value: self.userID, fieldNumber: 2)
     }
-    if self.classID != 0 {
-      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 3)
+    if self.taskID != 0 {
+      try visitor.visitSingularInt64Field(value: self.taskID, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_TaskStudent, rhs: GloryApi_TaskStudent) -> Bool {
     if lhs.name != rhs.name {return false}
+    if lhs.userID != rhs.userID {return false}
     if lhs.taskID != rhs.taskID {return false}
-    if lhs.classID != rhs.classID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
