@@ -212,7 +212,7 @@ const ListCourseRequest$json = {
     {'1': 'simple', '3': 8, '4': 1, '5': 8, '10': 'simple'},
     {'1': 'key', '3': 10, '4': 1, '5': 9, '10': 'key'},
     {'1': 'assigned', '3': 11, '4': 1, '5': 8, '10': 'assigned'},
-    {'1': 'language', '3': 12, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'language', '3': 12, '4': 3, '5': 9, '10': 'language'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -225,7 +225,7 @@ final $typed_data.Uint8List listCourseRequestDescriptor = $convert.base64Decode(
     'VtYWpvchgEIAMoCVIFbWFqb3ISFAoFbGV2ZWwYBSADKAVSBWxldmVsEh8KC2NvdXJzZV90eXBl'
     'GAYgAygFUgpjb3Vyc2VUeXBlEicKD2NvdXJzZV9pbmR1c3RyeRgHIAMoCVIOY291cnNlSW5kdX'
     'N0cnkSFgoGc2ltcGxlGAggASgIUgZzaW1wbGUSEAoDa2V5GAogASgJUgNrZXkSGgoIYXNzaWdu'
-    'ZWQYCyABKAhSCGFzc2lnbmVkEhoKCGxhbmd1YWdlGAwgASgJUghsYW5ndWFnZRI3CgpwYWdpbm'
+    'ZWQYCyABKAhSCGFzc2lnbmVkEhoKCGxhbmd1YWdlGAwgAygJUghsYW5ndWFnZRI3CgpwYWdpbm'
     'F0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listCourseResponseDescriptor instead')
