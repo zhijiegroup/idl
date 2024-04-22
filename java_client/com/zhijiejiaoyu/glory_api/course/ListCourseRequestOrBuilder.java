@@ -246,20 +246,41 @@ public interface ListCourseRequestOrBuilder extends
    * 课程语言
    * </pre>
    *
-   * <code>string language = 12;</code>
-   * @return The language.
+   * <code>repeated string language = 12;</code>
+   * @return A list containing the language.
    */
-  java.lang.String getLanguage();
+  java.util.List<java.lang.String>
+      getLanguageList();
   /**
    * <pre>
    * 课程语言
    * </pre>
    *
-   * <code>string language = 12;</code>
-   * @return The bytes for language.
+   * <code>repeated string language = 12;</code>
+   * @return The count of language.
+   */
+  int getLanguageCount();
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>repeated string language = 12;</code>
+   * @param index The index of the element to return.
+   * @return The language at the given index.
+   */
+  java.lang.String getLanguage(int index);
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>repeated string language = 12;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the language at the given index.
    */
   com.google.protobuf.ByteString
-      getLanguageBytes();
+      getLanguageBytes(int index);
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

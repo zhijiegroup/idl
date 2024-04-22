@@ -109,7 +109,7 @@ public final class Nmodule {
   static {
     java.lang.String[] descriptorData = {
       "\n\024course/nmodule.proto\022\tglory_api\032\nbase." +
-      "proto\"\251\003\n\010NmCourse\022\021\n\tcourse_id\030\001 \001(\003\022\023\n" +
+      "proto\"\273\003\n\010NmCourse\022\021\n\tcourse_id\030\001 \001(\003\022\023\n" +
       "\013course_name\030\002 \001(\t\022\033\n\023course_organizatio" +
       "n\030\003 \001(\t\022\033\n\023course_teacher_name\030\004 \001(\t\022\023\n\013" +
       "skill_hours\030\005 \001(\001\022\027\n\017knowledge_hours\030\006 \001" +
@@ -119,68 +119,69 @@ public final class Nmodule {
       " \001(\003\022\023\n\013course_type\030\014 \001(\003\022\027\n\017course_indu" +
       "stry\030\r \001(\t\022\024\n\014course_hours\030\016 \001(\001\022\025\n\rcour" +
       "se_module\030\017 \001(\003\022&\n\010chapters\030\020 \003(\0132\024.glor" +
-      "y_api.NmChapter\022\020\n\010assigned\030\021 \001(\010\"\224\001\n$Cr" +
-      "eateNmCourseChapterResourceRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rr" +
-      "esource_name\030\002 \001(\t\022\025\n\rresource_type\030\003 \001(" +
-      "\003\022\025\n\rresource_path\030\004 \001(\t\"c\n%CreateNmCour" +
-      "seChapterResourceResponse\022%\n\tbase_resp\030\001" +
-      " \001(\0132\022.base.BaseResponse\022\023\n\013resource_id\030" +
-      "\002 \001(\003\"\205\001\n\034CreateNmCourseChapterRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\024\n\014chapter_name\030\002 \001(\t\022\021\n\tparent_id\030\003 \001(\003" +
-      "\022\023\n\013resource_id\030\004 \001(\003\"Z\n\035CreateNmCourseC" +
-      "hapterResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponse\022\022\n\nchapter_id\030\002 \001(\003\"\366\002\n\025Cr" +
-      "eateNmCourseRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\023\n\013course_name\030\002 \001(" +
-      "\t\022\033\n\023course_organization\030\003 \001(\t\022\024\n\014teache" +
-      "r_name\030\004 \001(\t\022\024\n\014course_hours\030\005 \001(\001\022\032\n\022co" +
-      "urse_description\030\006 \001(\t\022\031\n\021course_cover_p" +
-      "ath\030\007 \001(\t\022\035\n\025course_classification\030\010 \001(\003" +
-      "\022\024\n\014course_level\030\t \001(\003\022\024\n\014course_major\030\n" +
-      " \001(\t\022\023\n\013course_type\030\013 \001(\003\022\027\n\017course_indu" +
-      "stry\030\014 \001(\t\022&\n\010chapters\030\r \003(\0132\024.glory_api" +
-      ".NmChapter\"\243\001\n\tNmChapter\022\022\n\nchapter_id\030\001" +
-      " \001(\003\022\024\n\014chapter_name\030\002 \001(\t\022\025\n\rchapter_in" +
-      "dex\030\003 \001(\t\022+\n\rchild_chapter\030\004 \003(\0132\024.glory" +
-      "_api.NmChapter\022(\n\tresources\030\005 \003(\0132\025.glor" +
-      "y_api.NmResource\"\217\001\n\nNmResource\022\023\n\013resou" +
-      "rce_id\030\001 \001(\003\022\025\n\rresource_name\030\002 \001(\t\022\025\n\rr" +
-      "esource_type\030\003 \001(\003\022\025\n\rresource_path\030\004 \001(" +
-      "\t\022\024\n\014resource_url\030\005 \001(\t\022\021\n\tfile_type\030\006 \001" +
-      "(\t\"R\n\026CreateNmCourseResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022\021\n\tcourse_id" +
-      "\030\002 \001(\003\"\211\003\n\025UpdateNmCourseRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013cou" +
-      "rse_name\030\002 \001(\t\022\033\n\023course_organization\030\003 " +
-      "\001(\t\022\024\n\014teacher_name\030\004 \001(\t\022\024\n\014course_hour" +
-      "s\030\005 \001(\001\022\032\n\022course_description\030\006 \001(\t\022\031\n\021c" +
-      "ourse_cover_path\030\007 \001(\t\022\035\n\025course_classif" +
-      "ication\030\010 \001(\003\022\024\n\014course_level\030\t \001(\003\022\024\n\014c" +
-      "ourse_major\030\n \001(\t\022\023\n\013course_type\030\013 \001(\003\022\027" +
-      "\n\017course_industry\030\014 \001(\t\022&\n\010chapters\030\r \003(" +
-      "\0132\024.glory_api.NmChapter\022\021\n\tcourse_id\030\016 \001" +
-      "(\003\"?\n\026UpdateNmCourseResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\"S\n\025NmCourseD" +
-      "etailRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
-      "e.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"\220\001\n\026NmC" +
-      "ourseDetailResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022#\n\006course\030\002 \001(\0132\023.glo" +
-      "ry_api.NmCourse\022\021\n\tis_joined\030\004 \001(\010\022\027\n\017co" +
-      "urse_progress\030\003 \001(\005\"\222\001\n\023ListNmCourseRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\026\n\016classification\030\002 \001(\005\022\r\n\005value\030\003 " +
-      "\001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
-      "nRequest\"\221\001\n\024ListNmCourseResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022$\n\007cour" +
-      "ses\030\002 \003(\0132\023.glory_api.NmCourse\022,\n\npagina" +
-      "tion\030d \001(\0132\030.base.PaginationResponse\"S\n\025" +
-      "DeleteNmCourseRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\021\n\tcourse_id\030\002 \001(" +
-      "\003\"?\n\026DeleteNmCourseResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponseB%\n!com.zhijie" +
-      "jiaoyu.glory_api.courseP\001b\006proto3"
+      "y_api.NmChapter\022\020\n\010assigned\030\021 \001(\010\022\020\n\010lan" +
+      "guage\030\022 \001(\t\"\224\001\n$CreateNmCourseChapterRes" +
+      "ourceRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\025\n\rresource_name\030\002 \001(\t\022\025\n\r" +
+      "resource_type\030\003 \001(\003\022\025\n\rresource_path\030\004 \001" +
+      "(\t\"c\n%CreateNmCourseChapterResourceRespo" +
+      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
+      "se\022\023\n\013resource_id\030\002 \001(\003\"\205\001\n\034CreateNmCour" +
+      "seChapterRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\024\n\014chapter_name\030\002 \001(\t\022" +
+      "\021\n\tparent_id\030\003 \001(\003\022\023\n\013resource_id\030\004 \001(\003\"" +
+      "Z\n\035CreateNmCourseChapterResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\022\n\nchapt" +
+      "er_id\030\002 \001(\003\"\366\002\n\025CreateNmCourseRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\023" +
+      "\n\013course_name\030\002 \001(\t\022\033\n\023course_organizati" +
+      "on\030\003 \001(\t\022\024\n\014teacher_name\030\004 \001(\t\022\024\n\014course" +
+      "_hours\030\005 \001(\001\022\032\n\022course_description\030\006 \001(\t" +
+      "\022\031\n\021course_cover_path\030\007 \001(\t\022\035\n\025course_cl" +
+      "assification\030\010 \001(\003\022\024\n\014course_level\030\t \001(\003" +
+      "\022\024\n\014course_major\030\n \001(\t\022\023\n\013course_type\030\013 " +
+      "\001(\003\022\027\n\017course_industry\030\014 \001(\t\022&\n\010chapters" +
+      "\030\r \003(\0132\024.glory_api.NmChapter\"\243\001\n\tNmChapt" +
+      "er\022\022\n\nchapter_id\030\001 \001(\003\022\024\n\014chapter_name\030\002" +
+      " \001(\t\022\025\n\rchapter_index\030\003 \001(\t\022+\n\rchild_cha" +
+      "pter\030\004 \003(\0132\024.glory_api.NmChapter\022(\n\treso" +
+      "urces\030\005 \003(\0132\025.glory_api.NmResource\"\217\001\n\nN" +
+      "mResource\022\023\n\013resource_id\030\001 \001(\003\022\025\n\rresour" +
+      "ce_name\030\002 \001(\t\022\025\n\rresource_type\030\003 \001(\003\022\025\n\r" +
+      "resource_path\030\004 \001(\t\022\024\n\014resource_url\030\005 \001(" +
+      "\t\022\021\n\tfile_type\030\006 \001(\t\"R\n\026CreateNmCourseRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\021\n\tcourse_id\030\002 \001(\003\"\233\003\n\025UpdateNmCou" +
+      "rseRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\023\n\013course_name\030\002 \001(\t\022\033\n\023cour" +
+      "se_organization\030\003 \001(\t\022\024\n\014teacher_name\030\004 " +
+      "\001(\t\022\024\n\014course_hours\030\005 \001(\001\022\032\n\022course_desc" +
+      "ription\030\006 \001(\t\022\031\n\021course_cover_path\030\007 \001(\t" +
+      "\022\035\n\025course_classification\030\010 \001(\003\022\024\n\014cours" +
+      "e_level\030\t \001(\003\022\024\n\014course_major\030\n \001(\t\022\023\n\013c" +
+      "ourse_type\030\013 \001(\003\022\027\n\017course_industry\030\014 \001(" +
+      "\t\022&\n\010chapters\030\r \003(\0132\024.glory_api.NmChapte" +
+      "r\022\021\n\tcourse_id\030\016 \001(\003\022\020\n\010language\030\017 \001(\t\"?" +
+      "\n\026UpdateNmCourseResponse\022%\n\tbase_resp\030\001 " +
+      "\001(\0132\022.base.BaseResponse\"S\n\025NmCourseDetai" +
+      "lRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\021\n\tcourse_id\030\002 \001(\003\"\220\001\n\026NmCours" +
+      "eDetailResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022#\n\006course\030\002 \001(\0132\023.glory_a" +
+      "pi.NmCourse\022\021\n\tis_joined\030\004 \001(\010\022\027\n\017course" +
+      "_progress\030\003 \001(\005\"\222\001\n\023ListNmCourseRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\026\n\016classification\030\002 \001(\005\022\r\n\005value\030\003 \001(\t\022" +
+      "+\n\npagination\030d \001(\0132\027.base.PaginationReq" +
+      "uest\"\221\001\n\024ListNmCourseResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022$\n\007courses\030" +
+      "\002 \003(\0132\023.glory_api.NmCourse\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponse\"S\n\025Dele" +
+      "teNmCourseRequest\022\'\n\014base_request\030\001 \001(\0132" +
+      "\021.base.BaseRequest\022\021\n\tcourse_id\030\002 \001(\003\"?\n" +
+      "\026DeleteNmCourseResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponseB%\n!com.zhijiejiao" +
+      "yu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -192,7 +193,7 @@ public final class Nmodule {
     internal_static_glory_api_NmCourse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_NmCourse_descriptor,
-        new java.lang.String[] { "CourseId", "CourseName", "CourseOrganization", "CourseTeacherName", "SkillHours", "KnowledgeHours", "CourseDescription", "CoverUrl", "CourseClassification", "CourseMajor", "CourseLevel", "CourseType", "CourseIndustry", "CourseHours", "CourseModule", "Chapters", "Assigned", });
+        new java.lang.String[] { "CourseId", "CourseName", "CourseOrganization", "CourseTeacherName", "SkillHours", "KnowledgeHours", "CourseDescription", "CoverUrl", "CourseClassification", "CourseMajor", "CourseLevel", "CourseType", "CourseIndustry", "CourseHours", "CourseModule", "Chapters", "Assigned", "Language", });
     internal_static_glory_api_CreateNmCourseChapterResourceRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_CreateNmCourseChapterResourceRequest_fieldAccessorTable = new
@@ -246,7 +247,7 @@ public final class Nmodule {
     internal_static_glory_api_UpdateNmCourseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateNmCourseRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CourseName", "CourseOrganization", "TeacherName", "CourseHours", "CourseDescription", "CourseCoverPath", "CourseClassification", "CourseLevel", "CourseMajor", "CourseType", "CourseIndustry", "Chapters", "CourseId", });
+        new java.lang.String[] { "BaseRequest", "CourseName", "CourseOrganization", "TeacherName", "CourseHours", "CourseDescription", "CourseCoverPath", "CourseClassification", "CourseLevel", "CourseMajor", "CourseType", "CourseIndustry", "Chapters", "CourseId", "Language", });
     internal_static_glory_api_UpdateNmCourseResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_UpdateNmCourseResponse_fieldAccessorTable = new

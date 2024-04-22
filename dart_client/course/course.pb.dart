@@ -982,7 +982,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     $core.bool? simple,
     $core.String? key,
     $core.bool? assigned,
-    $core.String? language,
+    $core.Iterable<$core.String>? language,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1017,7 +1017,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
       $result.assigned = assigned;
     }
     if (language != null) {
-      $result.language = language;
+      $result.language.addAll(language);
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -1039,7 +1039,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
     ..aOB(8, _omitFieldNames ? '' : 'simple')
     ..aOS(10, _omitFieldNames ? '' : 'key')
     ..aOB(11, _omitFieldNames ? '' : 'assigned')
-    ..aOS(12, _omitFieldNames ? '' : 'language')
+    ..pPS(12, _omitFieldNames ? '' : 'language')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1128,13 +1128,7 @@ class ListCourseRequest extends $pb.GeneratedMessage {
   void clearAssigned() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get language => $_getSZ(10);
-  @$pb.TagNumber(12)
-  set language($core.String v) { $_setString(10, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasLanguage() => $_has(10);
-  @$pb.TagNumber(12)
-  void clearLanguage() => clearField(12);
+  $core.List<$core.String> get language => $_getList(10);
 
   @$pb.TagNumber(100)
   $1.PaginationRequest get pagination => $_getN(11);

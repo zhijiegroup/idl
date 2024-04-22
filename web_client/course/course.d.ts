@@ -123,7 +123,7 @@ export interface ListCourseRequest {
   /** 是否只查询已购买的课程 */
   assigned?: boolean;
   /** 课程语言 */
-  language?: string;
+  language?: Array<string>;
   pagination?: base.PaginationRequest;
 }
 

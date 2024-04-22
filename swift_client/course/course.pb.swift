@@ -433,7 +433,7 @@ struct GloryApi_ListCourseRequest {
   var assigned: Bool = false
 
   /// 课程语言
-  var language: String = String()
+  var language: [String] = []
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -1422,7 +1422,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 8: try { try decoder.decodeSingularBoolField(value: &self.simple) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.key) }()
       case 11: try { try decoder.decodeSingularBoolField(value: &self.assigned) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self.language) }()
+      case 12: try { try decoder.decodeRepeatedStringField(value: &self.language) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -1465,7 +1465,7 @@ extension GloryApi_ListCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
       try visitor.visitSingularBoolField(value: self.assigned, fieldNumber: 11)
     }
     if !self.language.isEmpty {
-      try visitor.visitSingularStringField(value: self.language, fieldNumber: 12)
+      try visitor.visitRepeatedStringField(value: self.language, fieldNumber: 12)
     }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)

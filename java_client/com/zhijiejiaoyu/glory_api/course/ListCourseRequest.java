@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
     courseType = emptyIntList();
     courseIndustry = com.google.protobuf.LazyStringArrayList.EMPTY;
     key = "";
-    language = "";
+    language = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -177,8 +177,11 @@ private static final long serialVersionUID = 0L;
           }
           case 98: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            language = s;
+            if (!((mutable_bitField0 & 0x00000020) != 0)) {
+              language = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            language .add(s);
             break;
           }
           case 802: {
@@ -223,6 +226,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000010) != 0)) {
         courseIndustry = courseIndustry .getUnmodifiableView();
+      }
+      if (((mutable_bitField0 & 0x00000020) != 0)) {
+        language = language .getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -581,49 +587,54 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 12;
-  private volatile java.lang.Object language ;
+  private com.google.protobuf.LazyStringList language ;
   /**
    * <pre>
    * 课程语言
    * </pre>
    *
-   * <code>string language = 12;</code>
-   * @return The language.
+   * <code>repeated string language = 12;</code>
+   * @return A list containing the language.
    */
-  @java.lang.Override
-  public java.lang.String getLanguage() {
-    java.lang.Object ref = language ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      language = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getLanguageList() {
+    return language ;
   }
   /**
    * <pre>
    * 课程语言
    * </pre>
    *
-   * <code>string language = 12;</code>
-   * @return The bytes for language.
+   * <code>repeated string language = 12;</code>
+   * @return The count of language.
    */
-  @java.lang.Override
+  public int getLanguageCount() {
+    return language .size();
+  }
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>repeated string language = 12;</code>
+   * @param index The index of the element to return.
+   * @return The language at the given index.
+   */
+  public java.lang.String getLanguage(int index) {
+    return language .get(index);
+  }
+  /**
+   * <pre>
+   * 课程语言
+   * </pre>
+   *
+   * <code>repeated string language = 12;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the language at the given index.
+   */
   public com.google.protobuf.ByteString
-      getLanguageBytes() {
-    java.lang.Object ref = language ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      language = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getLanguageBytes(int index) {
+    return language .getByteString(index);
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -709,8 +720,8 @@ private static final long serialVersionUID = 0L;
     if (assigned != false) {
       output.writeBool(11, assigned );
     }
-    if (!getLanguageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, language );
+    for (int i = 0; i < language .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, language .getRaw(i));
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -801,8 +812,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, assigned );
     }
-    if (!getLanguageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, language );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < language .size(); i++) {
+        dataSize += computeStringSizeNoTag(language .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLanguageList().size();
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -846,8 +862,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getKey())) return false;
     if (getAssigned()
         != other.getAssigned()) return false;
-    if (!getLanguage()
-        .equals(other.getLanguage())) return false;
+    if (!getLanguageList()
+        .equals(other.getLanguageList())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -898,8 +914,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ASSIGNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAssigned());
-    hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getLanguage().hashCode();
+    if (getLanguageCount() > 0) {
+      hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageList().hashCode();
+    }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -1065,8 +1083,8 @@ private static final long serialVersionUID = 0L;
 
       assigned = false;
 
-      language = "";
-
+      language = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000020);
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -1134,6 +1152,10 @@ private static final long serialVersionUID = 0L;
       result.simple = simple ;
       result.key = key ;
       result.assigned = assigned ;
+      if (((bitField0 & 0x00000020) != 0)) {
+        language = language .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000020);
+      }
       result.language = language ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -1254,8 +1276,14 @@ private static final long serialVersionUID = 0L;
       if (other.getAssigned() != false) {
         setAssigned(other.getAssigned());
       }
-      if (!other.getLanguage().isEmpty()) {
-        language = other.language ;
+      if (!other.language .isEmpty()) {
+        if (language .isEmpty()) {
+          language = other.language ;
+          bitField0 = (bitField0 & ~0x00000020);
+        } else {
+          ensureLanguageIsMutable();
+          language .addAll(other.language );
+        }
         onChanged();
       }
       if (other.hasPagination()) {
@@ -2248,64 +2276,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object language = "";
-    /**
-     * <pre>
-     * 课程语言
-     * </pre>
-     *
-     * <code>string language = 12;</code>
-     * @return The language.
-     */
-    public java.lang.String getLanguage() {
-      java.lang.Object ref = language ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        language = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList language = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLanguageIsMutable() {
+      if (!((bitField0 & 0x00000020) != 0)) {
+        language = new com.google.protobuf.LazyStringArrayList(language );
+        bitField0_ |= 0x00000020;
+       }
     }
     /**
      * <pre>
      * 课程语言
      * </pre>
      *
-     * <code>string language = 12;</code>
-     * @return The bytes for language.
+     * <code>repeated string language = 12;</code>
+     * @return A list containing the language.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLanguageList() {
+      return language .getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * 课程语言
+     * </pre>
+     *
+     * <code>repeated string language = 12;</code>
+     * @return The count of language.
+     */
+    public int getLanguageCount() {
+      return language .size();
+    }
+    /**
+     * <pre>
+     * 课程语言
+     * </pre>
+     *
+     * <code>repeated string language = 12;</code>
+     * @param index The index of the element to return.
+     * @return The language at the given index.
+     */
+    public java.lang.String getLanguage(int index) {
+      return language .get(index);
+    }
+    /**
+     * <pre>
+     * 课程语言
+     * </pre>
+     *
+     * <code>repeated string language = 12;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the language at the given index.
      */
     public com.google.protobuf.ByteString
-        getLanguageBytes() {
-      java.lang.Object ref = language ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        language = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getLanguageBytes(int index) {
+      return language .getByteString(index);
     }
     /**
      * <pre>
      * 课程语言
      * </pre>
      *
-     * <code>string language = 12;</code>
+     * <code>repeated string language = 12;</code>
+     * @param index The index to set the value at.
      * @param value The language to set.
      * @return This builder for chaining.
      */
     public Builder setLanguage(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguageIsMutable();
+      language .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程语言
+     * </pre>
+     *
+     * <code>repeated string language = 12;</code>
+     * @param value The language to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      language = value;
+  ensureLanguageIsMutable();
+      language .add(value);
       onChanged();
       return this;
     }
@@ -2314,12 +2375,29 @@ private static final long serialVersionUID = 0L;
      * 课程语言
      * </pre>
      *
-     * <code>string language = 12;</code>
+     * <code>repeated string language = 12;</code>
+     * @param values The language to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguage(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLanguageIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, language );
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程语言
+     * </pre>
+     *
+     * <code>repeated string language = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-      
-      language = getDefaultInstance().getLanguage();
+      language = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2328,18 +2406,18 @@ private static final long serialVersionUID = 0L;
      * 课程语言
      * </pre>
      *
-     * <code>string language = 12;</code>
-     * @param value The bytes for language to set.
+     * <code>repeated string language = 12;</code>
+     * @param value The bytes of the language to add.
      * @return This builder for chaining.
      */
-    public Builder setLanguageBytes(
+    public Builder addLanguageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      language = value;
+      ensureLanguageIsMutable();
+      language .add(value);
       onChanged();
       return this;
     }

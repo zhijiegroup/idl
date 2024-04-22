@@ -23,6 +23,7 @@ export interface NmCourse {
   course_module?: string;
   chapters?: Array<NmChapter>;
   assigned?: boolean;
+  language?: string;
 }
 
 export interface CreateNmCourseChapterResourceRequest {
@@ -106,6 +107,7 @@ export interface UpdateNmCourseRequest {
   course_industry?: string;
   chapters?: Array<NmChapter>;
   course_id?: string;
+  language?: string;
 }
 
 export interface UpdateNmCourseResponse {
