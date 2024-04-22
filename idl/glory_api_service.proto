@@ -1460,8 +1460,8 @@ service glory_api {
   rpc TeacherTaskStats(TeacherTaskStatsRequest) returns (TeacherTaskStatsResponse) {
     option (api.get) = '/api/task/teacher_task_stats';
   }
-  rpc ListTaskStudent(ListTaskStudentRequest) returns (ListTaskStudentResponse) {
-    option (api.get) = '/api/task/teacher_task_students';
+  rpc TeacherTaskStudents(ListTaskStudentRequest) returns (ListTaskStudentResponse) {
+    option (api.post) = '/api/task/teacher_task_students';
   }
   // 教师任务统计
   rpc CountClassSubmit(CountTeacherTaskRequest) returns (CountClassSubmitResponse) {

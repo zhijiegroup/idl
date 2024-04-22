@@ -270,13 +270,14 @@ message TeacherTaskStatsResponse {
 message ListTaskStudentRequest {
   base.BaseRequest base_request = 1;
   int64 task_id = 2;
-  repeated int64 class_id = 3;
+  repeated int64 no_submit_class_id = 3;
+  repeated int64 submitted_class_id = 4;
 }
 
 message TaskStudent {
   string name = 1;
-  int64 task_id = 2;
-  int64 class_id = 3;
+  int64 user_id = 2;
+  int64 task_id = 3;
 }
 
 message ListTaskStudentResponse {
