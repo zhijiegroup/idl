@@ -23,6 +23,7 @@ message NmCourse {
     int64 course_module = 15;
     repeated NmChapter chapters = 16;
     bool assigned = 17;
+    string language = 18;
 }
 
 message CreateNmCourseChapterResourceRequest {
