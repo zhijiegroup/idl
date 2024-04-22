@@ -397,6 +397,7 @@ const GetCourseTypeListResponse$json = {
     {'1': 'types', '3': 3, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'types'},
     {'1': 'majors', '3': 4, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'majors'},
     {'1': 'industries', '3': 5, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'industries'},
+    {'1': 'languages', '3': 6, '4': 3, '5': 11, '6': '.glory_api.CourseType', '10': 'languages'},
   ],
 };
 
@@ -406,5 +407,6 @@ final $typed_data.Uint8List getCourseTypeListResponseDescriptor = $convert.base6
     'FzZVJlc3BvbnNlUghiYXNlUmVzcBItCgZsZXZlbHMYAiADKAsyFS5nbG9yeV9hcGkuQ291cnNl'
     'VHlwZVIGbGV2ZWxzEisKBXR5cGVzGAMgAygLMhUuZ2xvcnlfYXBpLkNvdXJzZVR5cGVSBXR5cG'
     'VzEi0KBm1ham9ycxgEIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUgZtYWpvcnMSNQoKaW5k'
-    'dXN0cmllcxgFIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUgppbmR1c3RyaWVz');
+    'dXN0cmllcxgFIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUgppbmR1c3RyaWVzEjMKCWxhbm'
+    'd1YWdlcxgGIAMoCzIVLmdsb3J5X2FwaS5Db3Vyc2VUeXBlUglsYW5ndWFnZXM=');
 

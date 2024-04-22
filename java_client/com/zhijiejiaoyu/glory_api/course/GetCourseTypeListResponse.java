@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     types = java.util.Collections.emptyList();
     majors = java.util.Collections.emptyList();
     industries = java.util.Collections.emptyList();
+    languages = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -102,6 +103,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseType.parser(), extensionRegistry));
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0 & 0x00000010) != 0)) {
+              languages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            languages .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.course.CourseType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +138,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000008) != 0)) {
         industries = java.util.Collections.unmodifiableList(industries );
+      }
+      if (((mutable_bitField0 & 0x00000010) != 0)) {
+        languages = java.util.Collections.unmodifiableList(languages );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -332,6 +345,46 @@ private static final long serialVersionUID = 0L;
     return industries .get(index);
   }
 
+  public static final int LANGUAGES_FIELD_NUMBER = 6;
+  private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> languages ;
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getLanguagesList() {
+    return languages ;
+  }
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getLanguagesOrBuilderList() {
+    return languages ;
+  }
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  @java.lang.Override
+  public int getLanguagesCount() {
+    return languages .size();
+  }
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseType getLanguages(int index) {
+    return languages .get(index);
+  }
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLanguagesOrBuilder(
+      int index) {
+    return languages .get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -360,6 +413,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < industries .size(); i++) {
       output.writeMessage(5, industries .get(i));
+    }
+    for (int i = 0; i < languages .size(); i++) {
+      output.writeMessage(6, languages .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -390,6 +446,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, industries .get(i));
     }
+    for (int i = 0; i < languages .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, languages .get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,6 +478,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMajorsList())) return false;
     if (!getIndustriesList()
         .equals(other.getIndustriesList())) return false;
+    if (!getLanguagesList()
+        .equals(other.getLanguagesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -448,6 +510,10 @@ private static final long serialVersionUID = 0L;
     if (getIndustriesCount() > 0) {
       hash = (37 * hash) + INDUSTRIES_FIELD_NUMBER;
       hash = (53 * hash) + getIndustriesList().hashCode();
+    }
+    if (getLanguagesCount() > 0) {
+      hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguagesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -581,6 +647,7 @@ private static final long serialVersionUID = 0L;
         getTypesFieldBuilder();
         getMajorsFieldBuilder();
         getIndustriesFieldBuilder();
+        getLanguagesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -615,6 +682,12 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000008);
       } else {
         industriesBuilder .clear();
+      }
+      if (languagesBuilder == null) {
+        languages = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000010);
+      } else {
+        languagesBuilder .clear();
       }
       return this;
     }
@@ -683,6 +756,15 @@ private static final long serialVersionUID = 0L;
         result.industries = industries ;
       } else {
         result.industries = industriesBuilder .build();
+      }
+      if (languagesBuilder == null) {
+        if (((bitField0 & 0x00000010) != 0)) {
+          languages = java.util.Collections.unmodifiableList(languages );
+          bitField0 = (bitField0 & ~0x00000010);
+        }
+        result.languages = languages ;
+      } else {
+        result.languages = languagesBuilder .build();
       }
       onBuilt();
       return result;
@@ -836,6 +918,32 @@ private static final long serialVersionUID = 0L;
                  getIndustriesFieldBuilder() : null;
           } else {
             industriesBuilder .addAllMessages(other.industries );
+          }
+        }
+      }
+      if (languagesBuilder == null) {
+        if (!other.languages .isEmpty()) {
+          if (languages .isEmpty()) {
+            languages = other.languages ;
+            bitField0 = (bitField0 & ~0x00000010);
+          } else {
+            ensureLanguagesIsMutable();
+            languages .addAll(other.languages );
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.languages .isEmpty()) {
+          if (languagesBuilder .isEmpty()) {
+            languagesBuilder .dispose();
+            languagesBuilder = null;
+            languages = other.languages ;
+            bitField0 = (bitField0 & ~0x00000010);
+            languagesBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getLanguagesFieldBuilder() : null;
+          } else {
+            languagesBuilder .addAllMessages(other.languages );
           }
         }
       }
@@ -1946,6 +2054,246 @@ private static final long serialVersionUID = 0L;
         industries = null;
       }
       return industriesBuilder ;
+    }
+
+    private java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> languages =
+      java.util.Collections.emptyList();
+    private void ensureLanguagesIsMutable() {
+      if (!((bitField0 & 0x00000010) != 0)) {
+        languages = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.course.CourseType>(languages );
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> languagesBuilder ;
+
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> getLanguagesList() {
+      if (languagesBuilder == null) {
+        return java.util.Collections.unmodifiableList(languages );
+      } else {
+        return languagesBuilder .getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public int getLanguagesCount() {
+      if (languagesBuilder == null) {
+        return languages .size();
+      } else {
+        return languagesBuilder .getCount();
+      }
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType getLanguages(int index) {
+      if (languagesBuilder == null) {
+        return languages .get(index);
+      } else {
+        return languagesBuilder .getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder setLanguages(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (languagesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesIsMutable();
+        languages .set(index, value);
+        onChanged();
+      } else {
+        languagesBuilder .setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder setLanguages(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (languagesBuilder == null) {
+        ensureLanguagesIsMutable();
+        languages .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        languagesBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder addLanguages(com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (languagesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesIsMutable();
+        languages .add(value);
+        onChanged();
+      } else {
+        languagesBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder addLanguages(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType value) {
+      if (languagesBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesIsMutable();
+        languages .add(index, value);
+        onChanged();
+      } else {
+        languagesBuilder .addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder addLanguages(
+        com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (languagesBuilder == null) {
+        ensureLanguagesIsMutable();
+        languages .add(builderForValue.build());
+        onChanged();
+      } else {
+        languagesBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder addLanguages(
+        int index, com.zhijiejiaoyu.glory_api.course.CourseType.Builder builderForValue) {
+      if (languagesBuilder == null) {
+        ensureLanguagesIsMutable();
+        languages .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        languagesBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder addAllLanguages(
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.course.CourseType> values) {
+      if (languagesBuilder == null) {
+        ensureLanguagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, languages );
+        onChanged();
+      } else {
+        languagesBuilder .addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder clearLanguages() {
+      if (languagesBuilder == null) {
+        languages = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000010);
+        onChanged();
+      } else {
+        languagesBuilder .clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public Builder removeLanguages(int index) {
+      if (languagesBuilder == null) {
+        ensureLanguagesIsMutable();
+        languages .remove(index);
+        onChanged();
+      } else {
+        languagesBuilder .remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder getLanguagesBuilder(
+        int index) {
+      return getLanguagesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLanguagesOrBuilder(
+        int index) {
+      if (languagesBuilder == null) {
+        return languages .get(index);  } else {
+        return languagesBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+         getLanguagesOrBuilderList() {
+      if (languagesBuilder != null) {
+        return languagesBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(languages );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addLanguagesBuilder() {
+      return getLanguagesFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.course.CourseType.Builder addLanguagesBuilder(
+        int index) {
+      return getLanguagesFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.course.CourseType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.CourseType languages = 6;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType.Builder> 
+         getLanguagesBuilderList() {
+      return getLanguagesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+        getLanguagesFieldBuilder() {
+      if (languagesBuilder == null) {
+        languagesBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.course.CourseType, com.zhijiejiaoyu.glory_api.course.CourseType.Builder, com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder>(
+                languages ,
+                ((bitField0 & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        languages = null;
+      }
+      return languagesBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -211,13 +211,14 @@ public final class CourseOuterClass {
       "\005types\030\002 \003(\0132\025.glory_api.CourseType\"U\n\030G" +
       "etCourseTypeListRequest\022\'\n\014base_request\030" +
       "\001 \001(\0132\021.base.BaseRequest\022\020\n\010assigned\030\002 \001" +
-      "(\010\"\341\001\n\031GetCourseTypeListResponse\022%\n\tbase" +
+      "(\010\"\213\002\n\031GetCourseTypeListResponse\022%\n\tbase" +
       "_resp\030\001 \001(\0132\022.base.BaseResponse\022%\n\006level" +
       "s\030\002 \003(\0132\025.glory_api.CourseType\022$\n\005types\030" +
       "\003 \003(\0132\025.glory_api.CourseType\022%\n\006majors\030\004" +
       " \003(\0132\025.glory_api.CourseType\022)\n\nindustrie" +
-      "s\030\005 \003(\0132\025.glory_api.CourseTypeB%\n!com.zh" +
-      "ijiejiaoyu.glory_api.courseP\001b\006proto3"
+      "s\030\005 \003(\0132\025.glory_api.CourseType\022(\n\tlangua" +
+      "ges\030\006 \003(\0132\025.glory_api.CourseTypeB%\n!com." +
+      "zhijiejiaoyu.glory_api.courseP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -368,7 +369,7 @@ public final class CourseOuterClass {
     internal_static_glory_api_GetCourseTypeListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetCourseTypeListResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "Levels", "Types", "Majors", "Industries", });
+        new java.lang.String[] { "BaseResp", "Levels", "Types", "Majors", "Industries", "Languages", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.course.Module.getDescriptor();
   }

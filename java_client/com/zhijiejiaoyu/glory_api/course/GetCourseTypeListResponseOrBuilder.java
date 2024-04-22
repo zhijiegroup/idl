@@ -117,4 +117,28 @@ public interface GetCourseTypeListResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getIndustriesOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.course.CourseType> 
+      getLanguagesList();
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseType getLanguages(int index);
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  int getLanguagesCount();
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder> 
+      getLanguagesOrBuilderList();
+  /**
+   * <code>repeated .glory_api.CourseType languages = 6;</code>
+   */
+  com.zhijiejiaoyu.glory_api.course.CourseTypeOrBuilder getLanguagesOrBuilder(
+      int index);
 }

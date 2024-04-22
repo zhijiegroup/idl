@@ -1853,6 +1853,7 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     $core.Iterable<CourseType>? types,
     $core.Iterable<CourseType>? majors,
     $core.Iterable<CourseType>? industries,
+    $core.Iterable<CourseType>? languages,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1870,6 +1871,9 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     if (industries != null) {
       $result.industries.addAll(industries);
     }
+    if (languages != null) {
+      $result.languages.addAll(languages);
+    }
     return $result;
   }
   GetCourseTypeListResponse._() : super();
@@ -1882,6 +1886,7 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
     ..pc<CourseType>(3, _omitFieldNames ? '' : 'types', $pb.PbFieldType.PM, subBuilder: CourseType.create)
     ..pc<CourseType>(4, _omitFieldNames ? '' : 'majors', $pb.PbFieldType.PM, subBuilder: CourseType.create)
     ..pc<CourseType>(5, _omitFieldNames ? '' : 'industries', $pb.PbFieldType.PM, subBuilder: CourseType.create)
+    ..pc<CourseType>(6, _omitFieldNames ? '' : 'languages', $pb.PbFieldType.PM, subBuilder: CourseType.create)
     ..hasRequiredFields = false
   ;
 
@@ -1928,6 +1933,9 @@ class GetCourseTypeListResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<CourseType> get industries => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<CourseType> get languages => $_getList(5);
 }
 
 
