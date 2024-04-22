@@ -225,6 +225,7 @@ const UpdateNmCourseRequest$json = {
     {'1': 'course_industry', '3': 12, '4': 1, '5': 9, '10': 'courseIndustry'},
     {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
     {'1': 'course_id', '3': 14, '4': 1, '5': 3, '10': 'courseId'},
+    {'1': 'language', '3': 15, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -240,7 +241,8 @@ final $typed_data.Uint8List updateNmCourseRequestDescriptor = $convert.base64Dec
     'wYCSABKANSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3IS'
     'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
-    'ZXJSCGNoYXB0ZXJzEhsKCWNvdXJzZV9pZBgOIAEoA1IIY291cnNlSWQ=');
+    'ZXJSCGNoYXB0ZXJzEhsKCWNvdXJzZV9pZBgOIAEoA1IIY291cnNlSWQSGgoIbGFuZ3VhZ2UYDy'
+    'ABKAlSCGxhbmd1YWdl');
 
 @$core.Deprecated('Use updateNmCourseResponseDescriptor instead')
 const UpdateNmCourseResponse$json = {

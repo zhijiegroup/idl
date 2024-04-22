@@ -167,4 +167,16 @@ public interface UpdateNmCourseRequestOrBuilder extends
    * @return The courseId.
    */
   long getCourseId();
+
+  /**
+   * <code>string language = 15;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 15;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

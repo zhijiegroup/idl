@@ -376,6 +376,8 @@ struct GloryApi_UpdateNmCourseRequest {
 
   var courseID: Int64 = 0
 
+  var language: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1283,6 +1285,7 @@ extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     12: .standard(proto: "course_industry"),
     13: .same(proto: "chapters"),
     14: .standard(proto: "course_id"),
+    15: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1305,6 +1308,7 @@ extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
       case 14: try { try decoder.decodeSingularInt64Field(value: &self.courseID) }()
+      case 15: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -1357,6 +1361,9 @@ extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if self.courseID != 0 {
       try visitor.visitSingularInt64Field(value: self.courseID, fieldNumber: 14)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1375,6 +1382,7 @@ extension GloryApi_UpdateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.chapters != rhs.chapters {return false}
     if lhs.courseID != rhs.courseID {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -107,6 +107,7 @@ export interface UpdateNmCourseRequest {
   course_industry?: string;
   chapters?: Array<NmChapter>;
   course_id?: string;
+  language?: string;
 }
 
 export interface UpdateNmCourseResponse {

@@ -1128,6 +1128,7 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     $core.String? courseIndustry,
     $core.Iterable<NmChapter>? chapters,
     $fixnum.Int64? courseId,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1172,6 +1173,9 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     if (courseId != null) {
       $result.courseId = courseId;
     }
+    if (language != null) {
+      $result.language = language;
+    }
     return $result;
   }
   UpdateNmCourseRequest._() : super();
@@ -1193,6 +1197,7 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'courseIndustry')
     ..pc<NmChapter>(13, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
     ..aInt64(14, _omitFieldNames ? '' : 'courseId')
+    ..aOS(15, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -1338,6 +1343,15 @@ class UpdateNmCourseRequest extends $pb.GeneratedMessage {
   $core.bool hasCourseId() => $_has(13);
   @$pb.TagNumber(14)
   void clearCourseId() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get language => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set language($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLanguage() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLanguage() => clearField(15);
 }
 
 class UpdateNmCourseResponse extends $pb.GeneratedMessage {
