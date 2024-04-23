@@ -305,6 +305,7 @@ message CreateDigitalVideoRequest {
     base.BaseRequest base_request = 1;
     string text = 2;
     string title = 3;
+    string bg = 4;
 }
 
 message CreateDigitalVideoResponse {
