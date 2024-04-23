@@ -318,6 +318,7 @@ export interface CreateDigitalVideoRequest {
   base_request?: base.BaseRequest;
   text?: string;
   title?: string;
+  bg?: string;
 }
 
 export interface CreateDigitalVideoResponse {

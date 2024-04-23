@@ -765,6 +765,7 @@ const CreateDigitalVideoRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
     {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'bg', '3': 4, '4': 1, '5': 9, '10': 'bg'},
   ],
 };
 
@@ -772,7 +773,7 @@ const CreateDigitalVideoRequest$json = {
 final $typed_data.Uint8List createDigitalVideoRequestDescriptor = $convert.base64Decode(
     'ChlDcmVhdGVEaWdpdGFsVmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQSFAoFdGl0bGUY'
-    'AyABKAlSBXRpdGxl');
+    'AyABKAlSBXRpdGxlEg4KAmJnGAQgASgJUgJiZw==');
 
 @$core.Deprecated('Use createDigitalVideoResponseDescriptor instead')
 const CreateDigitalVideoResponse$json = {

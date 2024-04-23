@@ -3814,6 +3814,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $core.String? text,
     $core.String? title,
+    $core.String? bg,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3825,6 +3826,9 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     if (title != null) {
       $result.title = title;
     }
+    if (bg != null) {
+      $result.bg = bg;
+    }
     return $result;
   }
   CreateDigitalVideoRequest._() : super();
@@ -3835,6 +3839,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'text')
     ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'bg')
     ..hasRequiredFields = false
   ;
 
@@ -3887,6 +3892,15 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
   $core.bool hasTitle() => $_has(2);
   @$pb.TagNumber(3)
   void clearTitle() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get bg => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set bg($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasBg() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBg() => clearField(4);
 }
 
 class CreateDigitalVideoResponse extends $pb.GeneratedMessage {

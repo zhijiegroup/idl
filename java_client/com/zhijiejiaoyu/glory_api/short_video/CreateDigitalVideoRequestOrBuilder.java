@@ -45,4 +45,16 @@ public interface CreateDigitalVideoRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTitleBytes();
+
+  /**
+   * <code>string bg = 4;</code>
+   * @return The bg.
+   */
+  java.lang.String getBg();
+  /**
+   * <code>string bg = 4;</code>
+   * @return The bytes for bg.
+   */
+  com.google.protobuf.ByteString
+      getBgBytes();
 }

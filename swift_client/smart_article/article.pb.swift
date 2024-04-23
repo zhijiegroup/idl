@@ -1176,6 +1176,8 @@ struct GloryApi_CreateDigitalVideoRequest {
 
   var title: String = String()
 
+  var bg: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4212,6 +4214,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     1: .standard(proto: "base_request"),
     2: .same(proto: "text"),
     3: .same(proto: "title"),
+    4: .same(proto: "bg"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4223,6 +4226,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.text) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.bg) }()
       default: break
       }
     }
@@ -4242,6 +4246,9 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 3)
     }
+    if !self.bg.isEmpty {
+      try visitor.visitSingularStringField(value: self.bg, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4249,6 +4256,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.text != rhs.text {return false}
     if lhs.title != rhs.title {return false}
+    if lhs.bg != rhs.bg {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
