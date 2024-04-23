@@ -64,6 +64,7 @@ message CreateNmCourseRequest {
     int64 course_type = 11; // 课程类型：1:核心课程 2:名师公开课
     string course_industry = 12;
     repeated NmChapter chapters = 13;
+    string language = 14;
 }
 
 message NmChapter {
