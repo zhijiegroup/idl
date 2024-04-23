@@ -161,4 +161,16 @@ public interface CreateNmCourseRequestOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.course.NmChapterOrBuilder getChaptersOrBuilder(
       int index);
+
+  /**
+   * <code>string language = 14;</code>
+   * @return The language.
+   */
+  java.lang.String getLanguage();
+  /**
+   * <code>string language = 14;</code>
+   * @return The bytes for language.
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

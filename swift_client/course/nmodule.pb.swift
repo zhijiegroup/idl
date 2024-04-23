@@ -262,6 +262,8 @@ struct GloryApi_CreateNmCourseRequest {
 
   var chapters: [GloryApi_NmChapter] = []
 
+  var language: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1016,6 +1018,7 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     11: .standard(proto: "course_type"),
     12: .standard(proto: "course_industry"),
     13: .same(proto: "chapters"),
+    14: .same(proto: "language"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1037,6 +1040,7 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
       case 11: try { try decoder.decodeSingularInt64Field(value: &self.courseType) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.courseIndustry) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.chapters) }()
+      case 14: try { try decoder.decodeSingularStringField(value: &self.language) }()
       default: break
       }
     }
@@ -1086,6 +1090,9 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.chapters.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.chapters, fieldNumber: 13)
     }
+    if !self.language.isEmpty {
+      try visitor.visitSingularStringField(value: self.language, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1103,6 +1110,7 @@ extension GloryApi_CreateNmCourseRequest: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.courseType != rhs.courseType {return false}
     if lhs.courseIndustry != rhs.courseIndustry {return false}
     if lhs.chapters != rhs.chapters {return false}
+    if lhs.language != rhs.language {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

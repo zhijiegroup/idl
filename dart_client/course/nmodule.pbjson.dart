@@ -136,6 +136,7 @@ const CreateNmCourseRequest$json = {
     {'1': 'course_type', '3': 11, '4': 1, '5': 3, '10': 'courseType'},
     {'1': 'course_industry', '3': 12, '4': 1, '5': 9, '10': 'courseIndustry'},
     {'1': 'chapters', '3': 13, '4': 3, '5': 11, '6': '.glory_api.NmChapter', '10': 'chapters'},
+    {'1': 'language', '3': 14, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -151,7 +152,7 @@ final $typed_data.Uint8List createNmCourseRequestDescriptor = $convert.base64Dec
     'wYCSABKANSC2NvdXJzZUxldmVsEiEKDGNvdXJzZV9tYWpvchgKIAEoCVILY291cnNlTWFqb3IS'
     'HwoLY291cnNlX3R5cGUYCyABKANSCmNvdXJzZVR5cGUSJwoPY291cnNlX2luZHVzdHJ5GAwgAS'
     'gJUg5jb3Vyc2VJbmR1c3RyeRIwCghjaGFwdGVycxgNIAMoCzIULmdsb3J5X2FwaS5ObUNoYXB0'
-    'ZXJSCGNoYXB0ZXJz');
+    'ZXJSCGNoYXB0ZXJzEhoKCGxhbmd1YWdlGA4gASgJUghsYW5ndWFnZQ==');
 
 @$core.Deprecated('Use nmChapterDescriptor instead')
 const NmChapter$json = {

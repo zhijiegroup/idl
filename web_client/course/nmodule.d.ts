@@ -66,6 +66,7 @@ export interface CreateNmCourseRequest {
   course_type?: string;
   course_industry?: string;
   chapters?: Array<NmChapter>;
+  language?: string;
 }
 
 export interface NmChapter {

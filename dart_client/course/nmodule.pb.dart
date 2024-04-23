@@ -633,6 +633,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? courseType,
     $core.String? courseIndustry,
     $core.Iterable<NmChapter>? chapters,
+    $core.String? language,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -674,6 +675,9 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     if (chapters != null) {
       $result.chapters.addAll(chapters);
     }
+    if (language != null) {
+      $result.language = language;
+    }
     return $result;
   }
   CreateNmCourseRequest._() : super();
@@ -694,6 +698,7 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
     ..aInt64(11, _omitFieldNames ? '' : 'courseType')
     ..aOS(12, _omitFieldNames ? '' : 'courseIndustry')
     ..pc<NmChapter>(13, _omitFieldNames ? '' : 'chapters', $pb.PbFieldType.PM, subBuilder: NmChapter.create)
+    ..aOS(14, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false
   ;
 
@@ -830,6 +835,15 @@ class CreateNmCourseRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $core.List<NmChapter> get chapters => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.String get language => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set language($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasLanguage() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLanguage() => clearField(14);
 }
 
 class NmChapter extends $pb.GeneratedMessage {
