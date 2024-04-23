@@ -189,4 +189,5 @@ export interface GetCourseTypeListResponse {
   types?: Array<CourseType>;
   majors?: Array<CourseType>;
   industries?: Array<CourseType>;
+  languages?: Array<CourseType>;
 }

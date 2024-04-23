@@ -728,6 +728,8 @@ struct GloryApi_GetCourseTypeListResponse {
 
   var industries: [GloryApi_CourseType] = []
 
+  var languages: [GloryApi_CourseType] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1963,6 +1965,7 @@ extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtob
     3: .same(proto: "types"),
     4: .same(proto: "majors"),
     5: .same(proto: "industries"),
+    6: .same(proto: "languages"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1976,6 +1979,7 @@ extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtob
       case 3: try { try decoder.decodeRepeatedMessageField(value: &self.types) }()
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.majors) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.industries) }()
+      case 6: try { try decoder.decodeRepeatedMessageField(value: &self.languages) }()
       default: break
       }
     }
@@ -2001,6 +2005,9 @@ extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtob
     if !self.industries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.industries, fieldNumber: 5)
     }
+    if !self.languages.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.languages, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2010,6 +2017,7 @@ extension GloryApi_GetCourseTypeListResponse: SwiftProtobuf.Message, SwiftProtob
     if lhs.types != rhs.types {return false}
     if lhs.majors != rhs.majors {return false}
     if lhs.industries != rhs.industries {return false}
+    if lhs.languages != rhs.languages {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
