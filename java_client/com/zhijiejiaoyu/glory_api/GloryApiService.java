@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\233\260\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\236\261\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1441,8 +1441,11 @@ public final class GloryApiService {
       "digital/get_video\022|\n\017ListDigitalCode\022!.g" +
       "lory_api.ListDigitalCodeRequest\032\".glory_" +
       "api.ListDigitalCodeResponse\"\"\312\301\030\036/api/di" +
-      "gital/list_digital_codeB\036\n\032com.zhijiejia" +
-      "oyu.glory_apiP\001b\006proto3"
+      "gital/list_digital_code\022\200\001\n\022DeleteDigita" +
+      "lVideo\022$.glory_api.DeleteDigitalVideoReq" +
+      "uest\032%.glory_api.DeleteDigitalVideoRespo" +
+      "nse\"\035\312\301\030\031/api/digital/delete_videoB\036\n\032co" +
+      "m.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

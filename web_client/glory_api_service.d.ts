@@ -1915,6 +1915,11 @@ CreateLivePlanProduct create live plan product */
   ListDigitalCode(
     request: article.ListDigitalCodeRequest
   ): Promise<article.ListDigitalCodeResponse>;
+
+  /** 删除数字人视频接口 */
+  DeleteDigitalVideo(
+    request: article.DeleteDigitalVideoRequest
+  ): Promise<article.DeleteDigitalVideoResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -378,6 +378,15 @@ export interface ListDigitalCodeRequest {
   base_request?: base.BaseRequest;
 }
 
+export interface DeleteDigitalVideoRequest {
+  base_request?: base.BaseRequest;
+  task_id?: string;
+}
+
+export interface DeleteDigitalVideoResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface UpdateTenantCourseDataRequest {
   base_request?: base.BaseRequest;
   student_count?: number;

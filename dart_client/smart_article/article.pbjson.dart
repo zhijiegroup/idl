@@ -923,6 +923,33 @@ final $typed_data.Uint8List listDigitalCodeRequestDescriptor = $convert.base64De
     'ChZMaXN0RGlnaXRhbENvZGVSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2UuQm'
     'FzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
 
+@$core.Deprecated('Use deleteDigitalVideoRequestDescriptor instead')
+const DeleteDigitalVideoRequest$json = {
+  '1': 'DeleteDigitalVideoRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'task_id', '3': 2, '4': 1, '5': 9, '10': 'taskId'},
+  ],
+};
+
+/// Descriptor for `DeleteDigitalVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteDigitalVideoRequestDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVEaWdpdGFsVmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
+    'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhcKB3Rhc2tfaWQYAiABKAlSBnRhc2tJZA==');
+
+@$core.Deprecated('Use deleteDigitalVideoResponseDescriptor instead')
+const DeleteDigitalVideoResponse$json = {
+  '1': 'DeleteDigitalVideoResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DeleteDigitalVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteDigitalVideoResponseDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVEaWdpdGFsVmlkZW9SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
+    'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
+
 @$core.Deprecated('Use updateTenantCourseDataRequestDescriptor instead')
 const UpdateTenantCourseDataRequest$json = {
   '1': 'UpdateTenantCourseDataRequest',

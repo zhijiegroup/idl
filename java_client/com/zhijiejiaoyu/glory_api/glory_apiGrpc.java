@@ -13314,6 +13314,37 @@ public final class glory_apiGrpc {
     return getListDigitalCodeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> getDeleteDigitalVideoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDigitalVideo",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest,
+      com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> getDeleteDigitalVideoMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> getDeleteDigitalVideoMethod;
+    if ((getDeleteDigitalVideoMethod = glory_apiGrpc.getDeleteDigitalVideoMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDeleteDigitalVideoMethod = glory_apiGrpc.getDeleteDigitalVideoMethod) == null) {
+          glory_apiGrpc.getDeleteDigitalVideoMethod = getDeleteDigitalVideoMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest, com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDigitalVideo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DeleteDigitalVideo"))
+              .build();
+        }
+      }
+    }
+    return getDeleteDigitalVideoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -16763,6 +16794,16 @@ public final class glory_apiGrpc {
     default void listDigitalCode(com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalCodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 删除数字人视频接口
+     * </pre>
+     */
+    default void deleteDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDigitalVideoMethod(), responseObserver);
     }
   }
 
@@ -20624,6 +20665,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDigitalCodeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 删除数字人视频接口
+     * </pre>
+     */
+    public void deleteDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDigitalVideoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -24043,6 +24095,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse listDigitalCode(com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDigitalCodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 删除数字人视频接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse deleteDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDigitalVideoMethod(), getCallOptions(), request);
     }
   }
 
@@ -27893,6 +27955,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDigitalCodeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 删除数字人视频接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> deleteDigitalVideo(
+        com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDigitalVideoMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -28324,6 +28397,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_DIGITAL_VIDEO = 426;
   private static final int METHODID_GET_DIGITAL_VIDEO = 427;
   private static final int METHODID_LIST_DIGITAL_CODE = 428;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 429;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30057,6 +30131,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_DIGITAL_CODE:
           serviceImpl.listDigitalCode((com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_DIGITAL_VIDEO:
+          serviceImpl.deleteDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -33079,6 +33157,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest,
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse>(
                 service, METHODID_LIST_DIGITAL_CODE)))
+        .addMethod(
+          getDeleteDigitalVideoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest,
+              com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse>(
+                service, METHODID_DELETE_DIGITAL_VIDEO)))
         .build();
   }
 
@@ -33556,6 +33641,7 @@ public final class glory_apiGrpc {
               .addMethod(getListDigitalVideoMethod())
               .addMethod(getGetDigitalVideoMethod())
               .addMethod(getListDigitalCodeMethod())
+              .addMethod(getDeleteDigitalVideoMethod())
               .build();
         }
       }

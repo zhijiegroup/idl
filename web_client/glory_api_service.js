@@ -3415,6 +3415,12 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/digital/list_digital_code${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  DeleteDigitalVideo(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/digital/delete_video${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();
