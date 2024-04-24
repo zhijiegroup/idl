@@ -13283,6 +13283,37 @@ public final class glory_apiGrpc {
     return getGetDigitalVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> getListDigitalCodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDigitalCode",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> getListDigitalCodeMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> getListDigitalCodeMethod;
+    if ((getListDigitalCodeMethod = glory_apiGrpc.getListDigitalCodeMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListDigitalCodeMethod = glory_apiGrpc.getListDigitalCodeMethod) == null) {
+          glory_apiGrpc.getListDigitalCodeMethod = getListDigitalCodeMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDigitalCode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListDigitalCode"))
+              .build();
+        }
+      }
+    }
+    return getListDigitalCodeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -16722,6 +16753,16 @@ public final class glory_apiGrpc {
     default void getDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDigitalVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 数字人模型列表接口
+     * </pre>
+     */
+    default void listDigitalCode(com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalCodeMethod(), responseObserver);
     }
   }
 
@@ -20572,6 +20613,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDigitalVideoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 数字人模型列表接口
+     * </pre>
+     */
+    public void listDigitalCode(com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDigitalCodeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -23981,6 +24033,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse getDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDigitalVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 数字人模型列表接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse listDigitalCode(com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDigitalCodeMethod(), getCallOptions(), request);
     }
   }
 
@@ -27820,6 +27882,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDigitalVideoMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 数字人模型列表接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse> listDigitalCode(
+        com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDigitalCodeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -28250,6 +28323,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_CREATE_DIGITAL_VIDEO = 425;
   private static final int METHODID_LIST_DIGITAL_VIDEO = 426;
   private static final int METHODID_GET_DIGITAL_VIDEO = 427;
+  private static final int METHODID_LIST_DIGITAL_CODE = 428;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -29979,6 +30053,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_DIGITAL_VIDEO:
           serviceImpl.getDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_DIGITAL_CODE:
+          serviceImpl.listDigitalCode((com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -32994,6 +33072,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoRequest,
               com.zhijiejiaoyu.glory_api.short_video.GetDigitalVideoResponse>(
                 service, METHODID_GET_DIGITAL_VIDEO)))
+        .addMethod(
+          getListDigitalCodeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalCodeResponse>(
+                service, METHODID_LIST_DIGITAL_CODE)))
         .build();
   }
 
@@ -33470,6 +33555,7 @@ public final class glory_apiGrpc {
               .addMethod(getCreateDigitalVideoMethod())
               .addMethod(getListDigitalVideoMethod())
               .addMethod(getGetDigitalVideoMethod())
+              .addMethod(getListDigitalCodeMethod())
               .build();
         }
       }

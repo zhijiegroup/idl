@@ -319,6 +319,7 @@ export interface CreateDigitalVideoRequest {
   text?: string;
   title?: string;
   bg?: string;
+  code?: string;
 }
 
 export interface CreateDigitalVideoResponse {
@@ -360,6 +361,21 @@ export interface GetDigitalVideoResponse {
 export interface GetDigitalVideoRequest {
   base_request?: base.BaseRequest;
   task_id?: string;
+}
+
+export interface DigitalCode {
+  label?: string;
+  value?: string;
+}
+
+export interface ListDigitalCodeResponse {
+  base_resp?: base.BaseResponse;
+  r2d?: Array<DigitalCode>;
+  r3d?: Array<DigitalCode>;
+}
+
+export interface ListDigitalCodeRequest {
+  base_request?: base.BaseRequest;
 }
 
 export interface UpdateTenantCourseDataRequest {

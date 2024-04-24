@@ -3815,6 +3815,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     $core.String? text,
     $core.String? title,
     $core.String? bg,
+    $core.String? code,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3829,6 +3830,9 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     if (bg != null) {
       $result.bg = bg;
     }
+    if (code != null) {
+      $result.code = code;
+    }
     return $result;
   }
   CreateDigitalVideoRequest._() : super();
@@ -3840,6 +3844,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'text')
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'bg')
+    ..aOS(5, _omitFieldNames ? '' : 'code')
     ..hasRequiredFields = false
   ;
 
@@ -3901,6 +3906,15 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
   $core.bool hasBg() => $_has(3);
   @$pb.TagNumber(4)
   void clearBg() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get code => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set code($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCode() => clearField(5);
 }
 
 class CreateDigitalVideoResponse extends $pb.GeneratedMessage {
@@ -4449,6 +4463,190 @@ class GetDigitalVideoRequest extends $pb.GeneratedMessage {
   $core.bool hasTaskId() => $_has(1);
   @$pb.TagNumber(2)
   void clearTaskId() => clearField(2);
+}
+
+class DigitalCode extends $pb.GeneratedMessage {
+  factory DigitalCode({
+    $core.String? label,
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
+  DigitalCode._() : super();
+  factory DigitalCode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DigitalCode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalCode', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'label')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DigitalCode clone() => DigitalCode()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DigitalCode copyWith(void Function(DigitalCode) updates) => super.copyWith((message) => updates(message as DigitalCode)) as DigitalCode;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DigitalCode create() => DigitalCode._();
+  DigitalCode createEmptyInstance() => create();
+  static $pb.PbList<DigitalCode> createRepeated() => $pb.PbList<DigitalCode>();
+  @$core.pragma('dart2js:noInline')
+  static DigitalCode getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalCode>(create);
+  static DigitalCode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get label => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set label($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLabel() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+}
+
+class ListDigitalCodeResponse extends $pb.GeneratedMessage {
+  factory ListDigitalCodeResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<DigitalCode>? r2d,
+    $core.Iterable<DigitalCode>? r3d,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (r2d != null) {
+      $result.r2d.addAll(r2d);
+    }
+    if (r3d != null) {
+      $result.r3d.addAll(r3d);
+    }
+    return $result;
+  }
+  ListDigitalCodeResponse._() : super();
+  factory ListDigitalCodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalCodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalCodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<DigitalCode>(2, _omitFieldNames ? '' : 'r2d', $pb.PbFieldType.PM, subBuilder: DigitalCode.create)
+    ..pc<DigitalCode>(3, _omitFieldNames ? '' : 'r3d', $pb.PbFieldType.PM, subBuilder: DigitalCode.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalCodeResponse clone() => ListDigitalCodeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalCodeResponse copyWith(void Function(ListDigitalCodeResponse) updates) => super.copyWith((message) => updates(message as ListDigitalCodeResponse)) as ListDigitalCodeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalCodeResponse create() => ListDigitalCodeResponse._();
+  ListDigitalCodeResponse createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalCodeResponse> createRepeated() => $pb.PbList<ListDigitalCodeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalCodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalCodeResponse>(create);
+  static ListDigitalCodeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<DigitalCode> get r2d => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<DigitalCode> get r3d => $_getList(2);
+}
+
+class ListDigitalCodeRequest extends $pb.GeneratedMessage {
+  factory ListDigitalCodeRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  ListDigitalCodeRequest._() : super();
+  factory ListDigitalCodeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalCodeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalCodeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalCodeRequest clone() => ListDigitalCodeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalCodeRequest copyWith(void Function(ListDigitalCodeRequest) updates) => super.copyWith((message) => updates(message as ListDigitalCodeRequest)) as ListDigitalCodeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalCodeRequest create() => ListDigitalCodeRequest._();
+  ListDigitalCodeRequest createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalCodeRequest> createRepeated() => $pb.PbList<ListDigitalCodeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalCodeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalCodeRequest>(create);
+  static ListDigitalCodeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 }
 
 class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {

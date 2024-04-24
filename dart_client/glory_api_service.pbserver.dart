@@ -506,6 +506,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.CreateDigitalVideoResponse> createDigitalVideo($pb.ServerContext ctx, $57.CreateDigitalVideoRequest request);
   $async.Future<$57.ListDigitalVideoResponse> listDigitalVideo($pb.ServerContext ctx, $57.ListDigitalVideoRequest request);
   $async.Future<$57.GetDigitalVideoResponse> getDigitalVideo($pb.ServerContext ctx, $57.GetDigitalVideoRequest request);
+  $async.Future<$57.ListDigitalCodeResponse> listDigitalCode($pb.ServerContext ctx, $57.ListDigitalCodeRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -937,6 +938,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateDigitalVideo': return $57.CreateDigitalVideoRequest();
       case 'ListDigitalVideo': return $57.ListDigitalVideoRequest();
       case 'GetDigitalVideo': return $57.GetDigitalVideoRequest();
+      case 'ListDigitalCode': return $57.ListDigitalCodeRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1371,6 +1373,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateDigitalVideo': return this.createDigitalVideo(ctx, request as $57.CreateDigitalVideoRequest);
       case 'ListDigitalVideo': return this.listDigitalVideo(ctx, request as $57.ListDigitalVideoRequest);
       case 'GetDigitalVideo': return this.getDigitalVideo(ctx, request as $57.GetDigitalVideoRequest);
+      case 'ListDigitalCode': return this.listDigitalCode(ctx, request as $57.ListDigitalCodeRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

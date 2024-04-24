@@ -1361,5 +1361,8 @@ class glory_apiApi {
   $async.Future<$57.GetDigitalVideoResponse> getDigitalVideo($pb.ClientContext? ctx, $57.GetDigitalVideoRequest request) =>
     _client.invoke<$57.GetDigitalVideoResponse>(ctx, 'glory_api', 'GetDigitalVideo', request, $57.GetDigitalVideoResponse())
   ;
+  $async.Future<$57.ListDigitalCodeResponse> listDigitalCode($pb.ClientContext? ctx, $57.ListDigitalCodeRequest request) =>
+    _client.invoke<$57.ListDigitalCodeResponse>(ctx, 'glory_api', 'ListDigitalCode', request, $57.ListDigitalCodeResponse())
+  ;
 }
 

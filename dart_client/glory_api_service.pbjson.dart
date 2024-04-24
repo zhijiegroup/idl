@@ -504,6 +504,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'CreateDigitalVideo', '2': '.glory_api.CreateDigitalVideoRequest', '3': '.glory_api.CreateDigitalVideoResponse', '4': {}},
     {'1': 'ListDigitalVideo', '2': '.glory_api.ListDigitalVideoRequest', '3': '.glory_api.ListDigitalVideoResponse', '4': {}},
     {'1': 'GetDigitalVideo', '2': '.glory_api.GetDigitalVideoRequest', '3': '.glory_api.GetDigitalVideoResponse', '4': {}},
+    {'1': 'ListDigitalCode', '2': '.glory_api.ListDigitalCodeRequest', '3': '.glory_api.ListDigitalCodeResponse', '4': {}},
   ],
 };
 
@@ -1589,6 +1590,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.DigitalVideo': $57.DigitalVideo$json,
   '.glory_api.GetDigitalVideoRequest': $57.GetDigitalVideoRequest$json,
   '.glory_api.GetDigitalVideoResponse': $57.GetDigitalVideoResponse$json,
+  '.glory_api.ListDigitalCodeRequest': $57.ListDigitalCodeRequest$json,
+  '.glory_api.ListDigitalCodeResponse': $57.ListDigitalCodeResponse$json,
+  '.glory_api.DigitalCode': $57.DigitalCode$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2587,5 +2591,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'xWaWRlb1JlcXVlc3QaIy5nbG9yeV9hcGkuTGlzdERpZ2l0YWxWaWRlb1Jlc3BvbnNlIhvSwRgX'
     'L2FwaS9kaWdpdGFsL2xpc3RfdmlkZW8SdAoPR2V0RGlnaXRhbFZpZGVvEiEuZ2xvcnlfYXBpLk'
     'dldERpZ2l0YWxWaWRlb1JlcXVlc3QaIi5nbG9yeV9hcGkuR2V0RGlnaXRhbFZpZGVvUmVzcG9u'
-    'c2UiGtLBGBYvYXBpL2RpZ2l0YWwvZ2V0X3ZpZGVv');
+    'c2UiGtLBGBYvYXBpL2RpZ2l0YWwvZ2V0X3ZpZGVvEnwKD0xpc3REaWdpdGFsQ29kZRIhLmdsb3'
+    'J5X2FwaS5MaXN0RGlnaXRhbENvZGVSZXF1ZXN0GiIuZ2xvcnlfYXBpLkxpc3REaWdpdGFsQ29k'
+    'ZVJlc3BvbnNlIiLKwRgeL2FwaS9kaWdpdGFsL2xpc3RfZGlnaXRhbF9jb2Rl');
 

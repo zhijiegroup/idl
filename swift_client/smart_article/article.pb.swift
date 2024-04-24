@@ -1178,6 +1178,8 @@ struct GloryApi_CreateDigitalVideoRequest {
 
   var bg: String = String()
 
+  var code: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1352,6 +1354,66 @@ struct GloryApi_GetDigitalVideoRequest {
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var taskID: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_DigitalCode {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var label: String = String()
+
+  var value: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListDigitalCodeResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var r2D: [GloryApi_DigitalCode] = []
+
+  var r3D: [GloryApi_DigitalCode] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_ListDigitalCodeRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1976,6 +2038,9 @@ extension GloryApi_ListDigitalVideoResponse: @unchecked Sendable {}
 extension GloryApi_ListDigitalVideoRequest: @unchecked Sendable {}
 extension GloryApi_GetDigitalVideoResponse: @unchecked Sendable {}
 extension GloryApi_GetDigitalVideoRequest: @unchecked Sendable {}
+extension GloryApi_DigitalCode: @unchecked Sendable {}
+extension GloryApi_ListDigitalCodeResponse: @unchecked Sendable {}
+extension GloryApi_ListDigitalCodeRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataResponse: @unchecked Sendable {}
 extension GloryApi_UpdateModelPriceRequest: @unchecked Sendable {}
@@ -4215,6 +4280,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     2: .same(proto: "text"),
     3: .same(proto: "title"),
     4: .same(proto: "bg"),
+    5: .same(proto: "code"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4227,6 +4293,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
       case 2: try { try decoder.decodeSingularStringField(value: &self.text) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.bg) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.code) }()
       default: break
       }
     }
@@ -4249,6 +4316,9 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.bg.isEmpty {
       try visitor.visitSingularStringField(value: self.bg, fieldNumber: 4)
     }
+    if !self.code.isEmpty {
+      try visitor.visitSingularStringField(value: self.code, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4257,6 +4327,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs.text != rhs.text {return false}
     if lhs.title != rhs.title {return false}
     if lhs.bg != rhs.bg {return false}
+    if lhs.code != rhs.code {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -4571,6 +4642,128 @@ extension GloryApi_GetDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_GetDigitalVideoRequest, rhs: GloryApi_GetDigitalVideoRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.taskID != rhs.taskID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DigitalCode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DigitalCode"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "label"),
+    2: .same(proto: "value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.label) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.label.isEmpty {
+      try visitor.visitSingularStringField(value: self.label, fieldNumber: 1)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DigitalCode, rhs: GloryApi_DigitalCode) -> Bool {
+    if lhs.label != rhs.label {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListDigitalCodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalCodeResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "r2d"),
+    3: .same(proto: "r3d"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.r2D) }()
+      case 3: try { try decoder.decodeRepeatedMessageField(value: &self.r3D) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.r2D.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.r2D, fieldNumber: 2)
+    }
+    if !self.r3D.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.r3D, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListDigitalCodeResponse, rhs: GloryApi_ListDigitalCodeResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.r2D != rhs.r2D {return false}
+    if lhs.r3D != rhs.r3D {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListDigitalCodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalCodeRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListDigitalCodeRequest, rhs: GloryApi_ListDigitalCodeRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

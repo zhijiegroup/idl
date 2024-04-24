@@ -1910,6 +1910,11 @@ CreateLivePlanProduct create live plan product */
   GetDigitalVideo(
     request: article.GetDigitalVideoRequest
   ): Promise<article.GetDigitalVideoResponse>;
+
+  /** 数字人模型列表接口 */
+  ListDigitalCode(
+    request: article.ListDigitalCodeRequest
+  ): Promise<article.ListDigitalCodeResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

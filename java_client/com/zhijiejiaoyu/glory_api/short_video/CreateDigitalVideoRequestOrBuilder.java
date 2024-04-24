@@ -57,4 +57,16 @@ public interface CreateDigitalVideoRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBgBytes();
+
+  /**
+   * <code>string code = 5;</code>
+   * @return The code.
+   */
+  java.lang.String getCode();
+  /**
+   * <code>string code = 5;</code>
+   * @return The bytes for code.
+   */
+  com.google.protobuf.ByteString
+      getCodeBytes();
 }
