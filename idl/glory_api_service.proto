@@ -1644,4 +1644,8 @@ service glory_api {
   rpc ListDigitalCode(ListDigitalCodeRequest) returns (ListDigitalCodeResponse) {
     option (api.get) = "/api/digital/list_digital_code";
   }
+  // 删除数字人视频接口
+  rpc DeleteDigitalVideo(DeleteDigitalVideoRequest) returns (DeleteDigitalVideoResponse) {
+    option (api.get) = "/api/digital/delete_video";
+  }
 }
