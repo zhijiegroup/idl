@@ -365,6 +365,15 @@ message ListDigitalCodeRequest {
     base.BaseRequest base_request = 1;
 }
 
+message DeleteDigitalVideoRequest {
+    base.BaseRequest base_request = 1;
+    string task_id = 2;
+}
+
+message DeleteDigitalVideoResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 message UpdateTenantCourseDataRequest {
     base.BaseRequest base_request = 1;
     int32 student_count = 2;
