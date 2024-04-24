@@ -306,6 +306,7 @@ message CreateDigitalVideoRequest {
     string text = 2;
     string title = 3;
     string bg = 4;
+    string code = 5;
 }
 
 message CreateDigitalVideoResponse {
@@ -347,6 +348,21 @@ message GetDigitalVideoResponse {
 message GetDigitalVideoRequest {
     base.BaseRequest base_request = 1;
     string task_id = 2;
+}
+
+message DigitalCode {
+    string label = 1;
+    string value = 2;
+}
+
+message ListDigitalCodeResponse {
+    base.BaseResponse base_resp = 1;
+    repeated DigitalCode r2d = 2;
+    repeated DigitalCode r3d = 3;
+}
+
+message ListDigitalCodeRequest {
+    base.BaseRequest base_request = 1;
 }
 
 message UpdateTenantCourseDataRequest {
