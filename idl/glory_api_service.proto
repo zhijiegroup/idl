@@ -1640,4 +1640,8 @@ service glory_api {
   rpc GetDigitalVideo(GetDigitalVideoRequest) returns (GetDigitalVideoResponse) {
     option (api.post) = "/api/digital/get_video";
   }
+  // 数字人模型列表接口
+  rpc ListDigitalCode(ListDigitalCodeRequest) returns (ListDigitalCodeResponse) {
+    option (api.get) = "/api/digital/list_digital_code";
+  }
 }
