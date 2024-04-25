@@ -47,6 +47,7 @@ message TeacherTask {
   string updated_at = 21;
   User creator = 22;
   User updator = 23;
+  repeated string teacher_task_attachments = 24;
 }
 
 message TeacherTaskProgress {
