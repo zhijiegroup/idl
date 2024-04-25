@@ -200,3 +200,12 @@ export interface StudentTaskEvaluateStatsResponse {
   passed_count?: string;
   no_pass_count?: string;
 }
+
+export interface StartStudentTaskTimeRequest {
+  base_request?: base.BaseRequest;
+  student_task_id?: string;
+}
+
+export interface StartStudentTaskTimeResponse {
+  base_resp?: base.BaseResponse;
+}

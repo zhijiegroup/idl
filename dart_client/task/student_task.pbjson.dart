@@ -430,3 +430,31 @@ final $typed_data.Uint8List studentTaskEvaluateStatsResponseDescriptor = $conver
     'lyZV9jb3VudBgGIAEoA1ILZXhwaXJlQ291bnQSIQoMcGFzc2VkX2NvdW50GAcgASgDUgtwYXNz'
     'ZWRDb3VudBIiCg1ub19wYXNzX2NvdW50GAggASgDUgtub1Bhc3NDb3VudA==');
 
+@$core.Deprecated('Use startStudentTaskTimeRequestDescriptor instead')
+const StartStudentTaskTimeRequest$json = {
+  '1': 'StartStudentTaskTimeRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'student_task_id', '3': 2, '4': 1, '5': 3, '10': 'studentTaskId'},
+  ],
+};
+
+/// Descriptor for `StartStudentTaskTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startStudentTaskTimeRequestDescriptor = $convert.base64Decode(
+    'ChtTdGFydFN0dWRlbnRUYXNrVGltZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
+    'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSJgoPc3R1ZGVudF90YXNrX2lkGAIgASgDUg1z'
+    'dHVkZW50VGFza0lk');
+
+@$core.Deprecated('Use startStudentTaskTimeResponseDescriptor instead')
+const StartStudentTaskTimeResponse$json = {
+  '1': 'StartStudentTaskTimeResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `StartStudentTaskTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List startStudentTaskTimeResponseDescriptor = $convert.base64Decode(
+    'ChxTdGFydFN0dWRlbnRUYXNrVGltZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+

@@ -2172,6 +2172,124 @@ class StudentTaskEvaluateStatsResponse extends $pb.GeneratedMessage {
   void clearNoPassCount() => clearField(8);
 }
 
+class StartStudentTaskTimeRequest extends $pb.GeneratedMessage {
+  factory StartStudentTaskTimeRequest({
+    $2.BaseRequest? baseRequest,
+    $fixnum.Int64? studentTaskId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (studentTaskId != null) {
+      $result.studentTaskId = studentTaskId;
+    }
+    return $result;
+  }
+  StartStudentTaskTimeRequest._() : super();
+  factory StartStudentTaskTimeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartStudentTaskTimeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartStudentTaskTimeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'studentTaskId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartStudentTaskTimeRequest clone() => StartStudentTaskTimeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartStudentTaskTimeRequest copyWith(void Function(StartStudentTaskTimeRequest) updates) => super.copyWith((message) => updates(message as StartStudentTaskTimeRequest)) as StartStudentTaskTimeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartStudentTaskTimeRequest create() => StartStudentTaskTimeRequest._();
+  StartStudentTaskTimeRequest createEmptyInstance() => create();
+  static $pb.PbList<StartStudentTaskTimeRequest> createRepeated() => $pb.PbList<StartStudentTaskTimeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StartStudentTaskTimeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartStudentTaskTimeRequest>(create);
+  static StartStudentTaskTimeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get studentTaskId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set studentTaskId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStudentTaskId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStudentTaskId() => clearField(2);
+}
+
+class StartStudentTaskTimeResponse extends $pb.GeneratedMessage {
+  factory StartStudentTaskTimeResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  StartStudentTaskTimeResponse._() : super();
+  factory StartStudentTaskTimeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StartStudentTaskTimeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartStudentTaskTimeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StartStudentTaskTimeResponse clone() => StartStudentTaskTimeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StartStudentTaskTimeResponse copyWith(void Function(StartStudentTaskTimeResponse) updates) => super.copyWith((message) => updates(message as StartStudentTaskTimeResponse)) as StartStudentTaskTimeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StartStudentTaskTimeResponse create() => StartStudentTaskTimeResponse._();
+  StartStudentTaskTimeResponse createEmptyInstance() => create();
+  static $pb.PbList<StartStudentTaskTimeResponse> createRepeated() => $pb.PbList<StartStudentTaskTimeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static StartStudentTaskTimeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartStudentTaskTimeResponse>(create);
+  static StartStudentTaskTimeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

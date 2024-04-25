@@ -469,6 +469,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$54.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ServerContext ctx, $54.TeacherEvaluateStudentTaskRequest request);
   $async.Future<$54.StudentTaskStatsResponse> studentTaskStats($pb.ServerContext ctx, $54.StudentTaskStatsRequest request);
   $async.Future<$54.StudentTaskEvaluateStatsResponse> studentTaskEvaluateStats($pb.ServerContext ctx, $54.StudentTaskEvaluateStatsRequest request);
+  $async.Future<$54.StartStudentTaskTimeResponse> startStudentTaskTime($pb.ServerContext ctx, $54.StartStudentTaskTimeRequest request);
   $async.Future<$55.ListNotificationResponse> listNotification($pb.ServerContext ctx, $55.ListNotificationRequest request);
   $async.Future<$55.CountNotificationResponse> countNotification($pb.ServerContext ctx, $55.CountNotificationRequest request);
   $async.Future<$55.ReadNotificationResponse> readNotification($pb.ServerContext ctx, $55.ReadNotificationRequest request);
@@ -902,6 +903,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'TeacherEvaluateStudentTask': return $54.TeacherEvaluateStudentTaskRequest();
       case 'StudentTaskStats': return $54.StudentTaskStatsRequest();
       case 'StudentTaskEvaluateStats': return $54.StudentTaskEvaluateStatsRequest();
+      case 'StartStudentTaskTime': return $54.StartStudentTaskTimeRequest();
       case 'ListNotification': return $55.ListNotificationRequest();
       case 'CountNotification': return $55.CountNotificationRequest();
       case 'ReadNotification': return $55.ReadNotificationRequest();
@@ -1338,6 +1340,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'TeacherEvaluateStudentTask': return this.teacherEvaluateStudentTask(ctx, request as $54.TeacherEvaluateStudentTaskRequest);
       case 'StudentTaskStats': return this.studentTaskStats(ctx, request as $54.StudentTaskStatsRequest);
       case 'StudentTaskEvaluateStats': return this.studentTaskEvaluateStats(ctx, request as $54.StudentTaskEvaluateStatsRequest);
+      case 'StartStudentTaskTime': return this.startStudentTaskTime(ctx, request as $54.StartStudentTaskTimeRequest);
       case 'ListNotification': return this.listNotification(ctx, request as $55.ListNotificationRequest);
       case 'CountNotification': return this.countNotification(ctx, request as $55.CountNotificationRequest);
       case 'ReadNotification': return this.readNotification(ctx, request as $55.ReadNotificationRequest);

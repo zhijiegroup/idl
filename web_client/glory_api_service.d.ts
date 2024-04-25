@@ -1754,6 +1754,10 @@ CreateLivePlanProduct create live plan product */
     request: student_task.StudentTaskEvaluateStatsRequest
   ): Promise<student_task.StudentTaskEvaluateStatsResponse>;
 
+  StartStudentTaskTime(
+    request: student_task.StartStudentTaskTimeRequest
+  ): Promise<student_task.StartStudentTaskTimeResponse>;
+
   /** 通知模块 */
   ListNotification(
     request: notification.ListNotificationRequest

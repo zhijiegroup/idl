@@ -119,6 +119,16 @@ public final class StudentTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_StudentTaskEvaluateStatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StartStudentTaskTimeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StartStudentTaskTimeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_StartStudentTaskTimeResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_StartStudentTaskTimeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -228,8 +238,12 @@ public final class StudentTaskOuterClass {
       "nt\030\003 \001(\003\022\027\n\017evaluated_count\030\004 \001(\003\022\034\n\024wai" +
       "ting_submit_count\030\005 \001(\003\022\024\n\014expire_count\030" +
       "\006 \001(\003\022\024\n\014passed_count\030\007 \001(\003\022\025\n\rno_pass_c" +
-      "ount\030\010 \001(\003B#\n\037com.zhijiejiaoyu.glory_api" +
-      ".taskP\001b\006proto3"
+      "ount\030\010 \001(\003\"_\n\033StartStudentTaskTimeReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\027\n\017student_task_id\030\002 \001(\003\"E\n\034StartStud" +
+      "entTaskTimeResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponseB#\n\037com.zhijiejiaoyu.g" +
+      "lory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -365,6 +379,18 @@ public final class StudentTaskOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTaskEvaluateStatsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalTaskCount", "WaitingEvaluateCount", "EvaluatedCount", "WaitingSubmitCount", "ExpireCount", "PassedCount", "NoPassCount", });
+    internal_static_glory_api_StartStudentTaskTimeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_glory_api_StartStudentTaskTimeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StartStudentTaskTimeRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "StudentTaskId", });
+    internal_static_glory_api_StartStudentTaskTimeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_glory_api_StartStudentTaskTimeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_StartStudentTaskTimeResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
