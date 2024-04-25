@@ -84,6 +84,8 @@ export interface StudentTask {
   student?: user.User;
   /** 老师信息 */
   teacher?: user.User;
+  /** 老师任务附件 */
+  teacher_attachments?: Array<string>;
 }
 
 export interface TeacherRequirementEvaluation {

@@ -537,4 +537,45 @@ public interface StudentTaskOrBuilder extends
    * <code>.glory_api.User teacher = 20;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
+
+  /**
+   * <pre>
+   * 老师任务附件
+   * </pre>
+   *
+   * <code>repeated string teacher_attachments = 21;</code>
+   * @return A list containing the teacherAttachments.
+   */
+  java.util.List<java.lang.String>
+      getTeacherAttachmentsList();
+  /**
+   * <pre>
+   * 老师任务附件
+   * </pre>
+   *
+   * <code>repeated string teacher_attachments = 21;</code>
+   * @return The count of teacherAttachments.
+   */
+  int getTeacherAttachmentsCount();
+  /**
+   * <pre>
+   * 老师任务附件
+   * </pre>
+   *
+   * <code>repeated string teacher_attachments = 21;</code>
+   * @param index The index of the element to return.
+   * @return The teacherAttachments at the given index.
+   */
+  java.lang.String getTeacherAttachments(int index);
+  /**
+   * <pre>
+   * 老师任务附件
+   * </pre>
+   *
+   * <code>repeated string teacher_attachments = 21;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teacherAttachments at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTeacherAttachmentsBytes(int index);
 }
