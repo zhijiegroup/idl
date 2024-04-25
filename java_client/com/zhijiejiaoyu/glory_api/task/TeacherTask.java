@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     taskParameters = java.util.Collections.emptyList();
     createdAt = "";
     updatedAt = "";
+    teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -223,6 +224,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 194: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0 & 0x00000008) != 0)) {
+              teacherTaskAttachments = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            teacherTaskAttachments .add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -246,6 +256,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0 & 0x00000004) != 0)) {
         taskParameters = java.util.Collections.unmodifiableList(taskParameters );
+      }
+      if (((mutable_bitField0 & 0x00000008) != 0)) {
+        teacherTaskAttachments = teacherTaskAttachments .getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1062,6 +1075,41 @@ private static final long serialVersionUID = 0L;
     return getUpdator();
   }
 
+  public static final int TEACHER_TASK_ATTACHMENTS_FIELD_NUMBER = 24;
+  private com.google.protobuf.LazyStringList teacherTaskAttachments ;
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @return A list containing the teacherTaskAttachments.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTeacherTaskAttachmentsList() {
+    return teacherTaskAttachments ;
+  }
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @return The count of teacherTaskAttachments.
+   */
+  public int getTeacherTaskAttachmentsCount() {
+    return teacherTaskAttachments .size();
+  }
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @param index The index of the element to return.
+   * @return The teacherTaskAttachments at the given index.
+   */
+  public java.lang.String getTeacherTaskAttachments(int index) {
+    return teacherTaskAttachments .get(index);
+  }
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teacherTaskAttachments at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTeacherTaskAttachmentsBytes(int index) {
+    return teacherTaskAttachments .getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1144,6 +1192,9 @@ private static final long serialVersionUID = 0L;
     }
     if (updator != null) {
       output.writeMessage(23, getUpdator());
+    }
+    for (int i = 0; i < teacherTaskAttachments .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, teacherTaskAttachments .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1240,6 +1291,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getUpdator());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < teacherTaskAttachments .size(); i++) {
+        dataSize += computeStringSizeNoTag(teacherTaskAttachments .getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getTeacherTaskAttachmentsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1310,6 +1369,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdator()
           .equals(other.getUpdator())) return false;
     }
+    if (!getTeacherTaskAttachmentsList()
+        .equals(other.getTeacherTaskAttachmentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1384,6 +1445,10 @@ private static final long serialVersionUID = 0L;
     if (hasUpdator()) {
       hash = (37 * hash) + UPDATOR_FIELD_NUMBER;
       hash = (53 * hash) + getUpdator().hashCode();
+    }
+    if (getTeacherTaskAttachmentsCount() > 0) {
+      hash = (37 * hash) + TEACHER_TASK_ATTACHMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTeacherTaskAttachmentsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1586,6 +1651,8 @@ private static final long serialVersionUID = 0L;
         updator = null;
         updatorBuilder = null;
       }
+      teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000008);
       return this;
     }
 
@@ -1668,6 +1735,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updator = updatorBuilder .build();
       }
+      if (((bitField0 & 0x00000008) != 0)) {
+        teacherTaskAttachments = teacherTaskAttachments .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000008);
+      }
+      result.teacherTaskAttachments = teacherTaskAttachments ;
       onBuilt();
       return result;
     }
@@ -1847,6 +1919,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdator()) {
         mergeUpdator(other.getUpdator());
+      }
+      if (!other.teacherTaskAttachments .isEmpty()) {
+        if (teacherTaskAttachments .isEmpty()) {
+          teacherTaskAttachments = other.teacherTaskAttachments ;
+          bitField0 = (bitField0 & ~0x00000008);
+        } else {
+          ensureTeacherTaskAttachmentsIsMutable();
+          teacherTaskAttachments .addAll(other.teacherTaskAttachments );
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4224,6 +4306,116 @@ private static final long serialVersionUID = 0L;
         updator = null;
       }
       return updatorBuilder ;
+    }
+
+    private com.google.protobuf.LazyStringList teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTeacherTaskAttachmentsIsMutable() {
+      if (!((bitField0 & 0x00000008) != 0)) {
+        teacherTaskAttachments = new com.google.protobuf.LazyStringArrayList(teacherTaskAttachments );
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @return A list containing the teacherTaskAttachments.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTeacherTaskAttachmentsList() {
+      return teacherTaskAttachments .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @return The count of teacherTaskAttachments.
+     */
+    public int getTeacherTaskAttachmentsCount() {
+      return teacherTaskAttachments .size();
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param index The index of the element to return.
+     * @return The teacherTaskAttachments at the given index.
+     */
+    public java.lang.String getTeacherTaskAttachments(int index) {
+      return teacherTaskAttachments .get(index);
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the teacherTaskAttachments at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTeacherTaskAttachmentsBytes(int index) {
+      return teacherTaskAttachments .getByteString(index);
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param index The index to set the value at.
+     * @param value The teacherTaskAttachments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherTaskAttachments(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeacherTaskAttachmentsIsMutable();
+      teacherTaskAttachments .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param value The teacherTaskAttachments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTeacherTaskAttachments(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTeacherTaskAttachmentsIsMutable();
+      teacherTaskAttachments .add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param values The teacherTaskAttachments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTeacherTaskAttachments(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTeacherTaskAttachmentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, teacherTaskAttachments );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherTaskAttachments() {
+      teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string teacher_task_attachments = 24;</code>
+     * @param value The bytes of the teacherTaskAttachments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTeacherTaskAttachmentsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTeacherTaskAttachmentsIsMutable();
+      teacherTaskAttachments .add(value);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

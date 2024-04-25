@@ -434,4 +434,29 @@ public interface TeacherTaskOrBuilder extends
    * <code>.glory_api.User updator = 23;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder();
+
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @return A list containing the teacherTaskAttachments.
+   */
+  java.util.List<java.lang.String>
+      getTeacherTaskAttachmentsList();
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @return The count of teacherTaskAttachments.
+   */
+  int getTeacherTaskAttachmentsCount();
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @param index The index of the element to return.
+   * @return The teacherTaskAttachments at the given index.
+   */
+  java.lang.String getTeacherTaskAttachments(int index);
+  /**
+   * <code>repeated string teacher_task_attachments = 24;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the teacherTaskAttachments at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTeacherTaskAttachmentsBytes(int index);
 }

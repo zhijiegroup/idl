@@ -235,6 +235,7 @@ class TeacherTask extends $pb.GeneratedMessage {
     $core.String? updatedAt,
     $1.User? creator,
     $1.User? updator,
+    $core.Iterable<$core.String>? teacherTaskAttachments,
   }) {
     final $result = create();
     if (teacherTaskId != null) {
@@ -306,6 +307,9 @@ class TeacherTask extends $pb.GeneratedMessage {
     if (updator != null) {
       $result.updator = updator;
     }
+    if (teacherTaskAttachments != null) {
+      $result.teacherTaskAttachments.addAll(teacherTaskAttachments);
+    }
     return $result;
   }
   TeacherTask._() : super();
@@ -336,6 +340,7 @@ class TeacherTask extends $pb.GeneratedMessage {
     ..aOS(21, _omitFieldNames ? '' : 'updatedAt')
     ..aOM<$1.User>(22, _omitFieldNames ? '' : 'creator', subBuilder: $1.User.create)
     ..aOM<$1.User>(23, _omitFieldNames ? '' : 'updator', subBuilder: $1.User.create)
+    ..pPS(24, _omitFieldNames ? '' : 'teacherTaskAttachments')
     ..hasRequiredFields = false
   ;
 
@@ -554,6 +559,9 @@ class TeacherTask extends $pb.GeneratedMessage {
   void clearUpdator() => clearField(23);
   @$pb.TagNumber(23)
   $1.User ensureUpdator() => $_ensure(22);
+
+  @$pb.TagNumber(24)
+  $core.List<$core.String> get teacherTaskAttachments => $_getList(23);
 }
 
 class TeacherTaskProgress extends $pb.GeneratedMessage {

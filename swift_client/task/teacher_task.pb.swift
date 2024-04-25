@@ -208,6 +208,11 @@ struct GloryApi_TeacherTask {
   /// Clears the value of `updator`. Subsequent reads from it will return its default value.
   mutating func clearUpdator() {_uniqueStorage()._updator = nil}
 
+  var teacherTaskAttachments: [String] {
+    get {return _storage._teacherTaskAttachments}
+    set {_uniqueStorage()._teacherTaskAttachments = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1353,6 +1358,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     21: .standard(proto: "updated_at"),
     22: .same(proto: "creator"),
     23: .same(proto: "updator"),
+    24: .standard(proto: "teacher_task_attachments"),
   ]
 
   fileprivate class _StorageClass {
@@ -1379,6 +1385,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _updatedAt: String = String()
     var _creator: GloryApi_User? = nil
     var _updator: GloryApi_User? = nil
+    var _teacherTaskAttachments: [String] = []
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1416,6 +1423,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _updatedAt = source._updatedAt
       _creator = source._creator
       _updator = source._updator
+      _teacherTaskAttachments = source._teacherTaskAttachments
     }
   }
 
@@ -1457,6 +1465,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 21: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
         case 22: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
         case 23: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
+        case 24: try { try decoder.decodeRepeatedStringField(value: &_storage._teacherTaskAttachments) }()
         default: break
         }
       }
@@ -1538,6 +1547,9 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       try { if let v = _storage._updator {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
       } }()
+      if !_storage._teacherTaskAttachments.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._teacherTaskAttachments, fieldNumber: 24)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1570,6 +1582,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._updatedAt != rhs_storage._updatedAt {return false}
         if _storage._creator != rhs_storage._creator {return false}
         if _storage._updator != rhs_storage._updator {return false}
+        if _storage._teacherTaskAttachments != rhs_storage._teacherTaskAttachments {return false}
         return true
       }
       if !storagesAreEqual {return false}

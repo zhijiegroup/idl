@@ -65,6 +65,7 @@ export interface TeacherTask {
   updated_at?: string;
   creator?: user.User;
   updator?: user.User;
+  teacher_task_attachments?: Array<string>;
 }
 
 export interface TeacherTaskProgress {
