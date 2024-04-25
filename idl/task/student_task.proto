@@ -174,3 +174,12 @@ message StudentTaskEvaluateStatsResponse {
   int64 passed_count = 7;
   int64 no_pass_count = 8;
 }
+
+message StartStudentTaskTimeRequest {
+  base.BaseRequest base_request = 1;
+  int64 student_task_id = 2;
+}
+
+message StartStudentTaskTimeResponse {
+  base.BaseResponse base_resp = 1;
+}
