@@ -63,7 +63,6 @@ message StudentTask {
   TenantDept major_dept = 18; // 学生专业信息
   User student = 19; // 学生信息
   User teacher = 20; // 老师信息
-  repeated string teacher_attachments = 21; // 老师任务附件
 }
 
 message TeacherRequirementEvaluation {
