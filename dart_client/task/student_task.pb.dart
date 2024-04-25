@@ -480,7 +480,6 @@ class StudentTask extends $pb.GeneratedMessage {
     $1.TenantDept? majorDept,
     $1.User? student,
     $1.User? teacher,
-    $core.Iterable<$core.String>? teacherAttachments,
   }) {
     final $result = create();
     if (studentTaskId != null) {
@@ -543,9 +542,6 @@ class StudentTask extends $pb.GeneratedMessage {
     if (teacher != null) {
       $result.teacher = teacher;
     }
-    if (teacherAttachments != null) {
-      $result.teacherAttachments.addAll(teacherAttachments);
-    }
     return $result;
   }
   StudentTask._() : super();
@@ -573,7 +569,6 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOM<$1.TenantDept>(18, _omitFieldNames ? '' : 'majorDept', subBuilder: $1.TenantDept.create)
     ..aOM<$1.User>(19, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
     ..aOM<$1.User>(20, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
-    ..pPS(21, _omitFieldNames ? '' : 'teacherAttachments')
     ..hasRequiredFields = false
   ;
 
@@ -757,9 +752,6 @@ class StudentTask extends $pb.GeneratedMessage {
   void clearTeacher() => clearField(20);
   @$pb.TagNumber(20)
   $1.User ensureTeacher() => $_ensure(19);
-
-  @$pb.TagNumber(21)
-  $core.List<$core.String> get teacherAttachments => $_getList(20);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {

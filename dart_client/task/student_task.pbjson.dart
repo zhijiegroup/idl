@@ -124,7 +124,6 @@ const StudentTask$json = {
     {'1': 'major_dept', '3': 18, '4': 1, '5': 11, '6': '.glory_api.TenantDept', '10': 'majorDept'},
     {'1': 'student', '3': 19, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'student'},
     {'1': 'teacher', '3': 20, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
-    {'1': 'teacher_attachments', '3': 21, '4': 3, '5': 9, '10': 'teacherAttachments'},
   ],
 };
 
@@ -149,8 +148,7 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'Ug90YXNrUmVzdWx0TGlua3MSNAoKY2xhc3NfZGVwdBgRIAEoCzIVLmdsb3J5X2FwaS5UZW5hbn'
     'REZXB0UgljbGFzc0RlcHQSNAoKbWFqb3JfZGVwdBgSIAEoCzIVLmdsb3J5X2FwaS5UZW5hbnRE'
     'ZXB0UgltYWpvckRlcHQSKQoHc3R1ZGVudBgTIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdzdHVkZW'
-    '50EikKB3RlYWNoZXIYFCABKAsyDy5nbG9yeV9hcGkuVXNlclIHdGVhY2hlchIvChN0ZWFjaGVy'
-    'X2F0dGFjaG1lbnRzGBUgAygJUhJ0ZWFjaGVyQXR0YWNobWVudHM=');
+    '50EikKB3RlYWNoZXIYFCABKAsyDy5nbG9yeV9hcGkuVXNlclIHdGVhY2hlcg==');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {
