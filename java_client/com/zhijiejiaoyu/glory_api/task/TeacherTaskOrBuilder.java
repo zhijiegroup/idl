@@ -436,27 +436,26 @@ public interface TeacherTaskOrBuilder extends
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getUpdatorOrBuilder();
 
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @return A list containing the teacherTaskAttachments.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> 
       getTeacherTaskAttachmentsList();
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @return The count of teacherTaskAttachments.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+   */
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment getTeacherTaskAttachments(int index);
+  /**
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
   int getTeacherTaskAttachmentsCount();
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @param index The index of the element to return.
-   * @return The teacherTaskAttachments at the given index.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  java.lang.String getTeacherTaskAttachments(int index);
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder> 
+      getTeacherTaskAttachmentsOrBuilderList();
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the teacherTaskAttachments at the given index.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  com.google.protobuf.ByteString
-      getTeacherTaskAttachmentsBytes(int index);
+  com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder getTeacherTaskAttachmentsOrBuilder(
+      int index);
 }

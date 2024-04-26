@@ -23,6 +23,11 @@ export interface TeacherTaskClass {
   class_name?: string;
 }
 
+export interface TeacherTaskAttachment {
+  oss_path?: string;
+  oss_url?: string;
+}
+
 export interface TeacherTask {
   /** 教师任务 ID */
   teacher_task_id?: string;
@@ -65,7 +70,7 @@ export interface TeacherTask {
   updated_at?: string;
   creator?: user.User;
   updator?: user.User;
-  teacher_task_attachments?: Array<string>;
+  teacher_task_attachments?: Array<TeacherTaskAttachment>;
 }
 
 export interface TeacherTaskProgress {

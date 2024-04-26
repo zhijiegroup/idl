@@ -1444,6 +1444,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.TeacherTask': $53.TeacherTask$json,
   '.glory_api.TeacherTaskClass': $53.TeacherTaskClass$json,
   '.glory_api.TeacherTaskParameter': $53.TeacherTaskParameter$json,
+  '.glory_api.TeacherTaskAttachment': $53.TeacherTaskAttachment$json,
   '.glory_api.CreateTeacherTaskResponse': $53.CreateTeacherTaskResponse$json,
   '.glory_api.UpdateTeacherTaskRequest': $53.UpdateTeacherTaskRequest$json,
   '.glory_api.UpdateTeacherTaskResponse': $53.UpdateTeacherTaskResponse$json,

@@ -51,6 +51,20 @@ final $typed_data.Uint8List teacherTaskClassDescriptor = $convert.base64Decode(
     'ChBUZWFjaGVyVGFza0NsYXNzEhkKCGNsYXNzX2lkGAEgASgDUgdjbGFzc0lkEh0KCmNsYXNzX2'
     '5hbWUYAiABKAlSCWNsYXNzTmFtZQ==');
 
+@$core.Deprecated('Use teacherTaskAttachmentDescriptor instead')
+const TeacherTaskAttachment$json = {
+  '1': 'TeacherTaskAttachment',
+  '2': [
+    {'1': 'oss_path', '3': 1, '4': 1, '5': 9, '10': 'ossPath'},
+    {'1': 'oss_url', '3': 2, '4': 1, '5': 9, '10': 'ossUrl'},
+  ],
+};
+
+/// Descriptor for `TeacherTaskAttachment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List teacherTaskAttachmentDescriptor = $convert.base64Decode(
+    'ChVUZWFjaGVyVGFza0F0dGFjaG1lbnQSGQoIb3NzX3BhdGgYASABKAlSB29zc1BhdGgSFwoHb3'
+    'NzX3VybBgCIAEoCVIGb3NzVXJs');
+
 @$core.Deprecated('Use teacherTaskDescriptor instead')
 const TeacherTask$json = {
   '1': 'TeacherTask',
@@ -78,7 +92,7 @@ const TeacherTask$json = {
     {'1': 'updated_at', '3': 21, '4': 1, '5': 9, '10': 'updatedAt'},
     {'1': 'creator', '3': 22, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'creator'},
     {'1': 'updator', '3': 23, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'updator'},
-    {'1': 'teacher_task_attachments', '3': 24, '4': 3, '5': 9, '10': 'teacherTaskAttachments'},
+    {'1': 'teacher_task_attachments', '3': 24, '4': 3, '5': 11, '6': '.glory_api.TeacherTaskAttachment', '10': 'teacherTaskAttachments'},
   ],
 };
 
@@ -104,8 +118,8 @@ final $typed_data.Uint8List teacherTaskDescriptor = $convert.base64Decode(
     'VyVGFza1RlbXBsYXRlUhN0ZWFjaGVyVGFza1RlbXBsYXRlEh0KCmNyZWF0ZWRfYXQYFCABKAlS'
     'CWNyZWF0ZWRBdBIdCgp1cGRhdGVkX2F0GBUgASgJUgl1cGRhdGVkQXQSKQoHY3JlYXRvchgWIA'
     'EoCzIPLmdsb3J5X2FwaS5Vc2VyUgdjcmVhdG9yEikKB3VwZGF0b3IYFyABKAsyDy5nbG9yeV9h'
-    'cGkuVXNlclIHdXBkYXRvchI4Chh0ZWFjaGVyX3Rhc2tfYXR0YWNobWVudHMYGCADKAlSFnRlYW'
-    'NoZXJUYXNrQXR0YWNobWVudHM=');
+    'cGkuVXNlclIHdXBkYXRvchJaChh0ZWFjaGVyX3Rhc2tfYXR0YWNobWVudHMYGCADKAsyIC5nbG'
+    '9yeV9hcGkuVGVhY2hlclRhc2tBdHRhY2htZW50UhZ0ZWFjaGVyVGFza0F0dGFjaG1lbnRz');
 
 @$core.Deprecated('Use teacherTaskProgressDescriptor instead')
 const TeacherTaskProgress$json = {

@@ -210,6 +210,70 @@ class TeacherTaskClass extends $pb.GeneratedMessage {
   void clearClassName() => clearField(2);
 }
 
+class TeacherTaskAttachment extends $pb.GeneratedMessage {
+  factory TeacherTaskAttachment({
+    $core.String? ossPath,
+    $core.String? ossUrl,
+  }) {
+    final $result = create();
+    if (ossPath != null) {
+      $result.ossPath = ossPath;
+    }
+    if (ossUrl != null) {
+      $result.ossUrl = ossUrl;
+    }
+    return $result;
+  }
+  TeacherTaskAttachment._() : super();
+  factory TeacherTaskAttachment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TeacherTaskAttachment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeacherTaskAttachment', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ossPath')
+    ..aOS(2, _omitFieldNames ? '' : 'ossUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TeacherTaskAttachment clone() => TeacherTaskAttachment()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TeacherTaskAttachment copyWith(void Function(TeacherTaskAttachment) updates) => super.copyWith((message) => updates(message as TeacherTaskAttachment)) as TeacherTaskAttachment;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskAttachment create() => TeacherTaskAttachment._();
+  TeacherTaskAttachment createEmptyInstance() => create();
+  static $pb.PbList<TeacherTaskAttachment> createRepeated() => $pb.PbList<TeacherTaskAttachment>();
+  @$core.pragma('dart2js:noInline')
+  static TeacherTaskAttachment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TeacherTaskAttachment>(create);
+  static TeacherTaskAttachment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ossPath => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ossPath($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOssPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOssPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get ossUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ossUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOssUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOssUrl() => clearField(2);
+}
+
 class TeacherTask extends $pb.GeneratedMessage {
   factory TeacherTask({
     $fixnum.Int64? teacherTaskId,
@@ -235,7 +299,7 @@ class TeacherTask extends $pb.GeneratedMessage {
     $core.String? updatedAt,
     $1.User? creator,
     $1.User? updator,
-    $core.Iterable<$core.String>? teacherTaskAttachments,
+    $core.Iterable<TeacherTaskAttachment>? teacherTaskAttachments,
   }) {
     final $result = create();
     if (teacherTaskId != null) {
@@ -340,7 +404,7 @@ class TeacherTask extends $pb.GeneratedMessage {
     ..aOS(21, _omitFieldNames ? '' : 'updatedAt')
     ..aOM<$1.User>(22, _omitFieldNames ? '' : 'creator', subBuilder: $1.User.create)
     ..aOM<$1.User>(23, _omitFieldNames ? '' : 'updator', subBuilder: $1.User.create)
-    ..pPS(24, _omitFieldNames ? '' : 'teacherTaskAttachments')
+    ..pc<TeacherTaskAttachment>(24, _omitFieldNames ? '' : 'teacherTaskAttachments', $pb.PbFieldType.PM, subBuilder: TeacherTaskAttachment.create)
     ..hasRequiredFields = false
   ;
 
@@ -561,7 +625,7 @@ class TeacherTask extends $pb.GeneratedMessage {
   $1.User ensureUpdator() => $_ensure(22);
 
   @$pb.TagNumber(24)
-  $core.List<$core.String> get teacherTaskAttachments => $_getList(23);
+  $core.List<TeacherTaskAttachment> get teacherTaskAttachments => $_getList(23);
 }
 
 class TeacherTaskProgress extends $pb.GeneratedMessage {

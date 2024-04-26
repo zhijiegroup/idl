@@ -58,6 +58,20 @@ struct GloryApi_TeacherTaskClass {
   init() {}
 }
 
+struct GloryApi_TeacherTaskAttachment {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var ossPath: String = String()
+
+  var ossURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_TeacherTask {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -208,7 +222,7 @@ struct GloryApi_TeacherTask {
   /// Clears the value of `updator`. Subsequent reads from it will return its default value.
   mutating func clearUpdator() {_uniqueStorage()._updator = nil}
 
-  var teacherTaskAttachments: [String] {
+  var teacherTaskAttachments: [GloryApi_TeacherTaskAttachment] {
     get {return _storage._teacherTaskAttachments}
     set {_uniqueStorage()._teacherTaskAttachments = newValue}
   }
@@ -1185,6 +1199,7 @@ struct GloryApi_ListTaskStudentResponse {
 #if swift(>=5.5) && canImport(_Concurrency)
 extension GloryApi_TeacherTaskParameter: @unchecked Sendable {}
 extension GloryApi_TeacherTaskClass: @unchecked Sendable {}
+extension GloryApi_TeacherTaskAttachment: @unchecked Sendable {}
 extension GloryApi_TeacherTask: @unchecked Sendable {}
 extension GloryApi_TeacherTaskProgress: @unchecked Sendable {}
 extension GloryApi_CreateTeacherTaskRequest: @unchecked Sendable {}
@@ -1332,6 +1347,44 @@ extension GloryApi_TeacherTaskClass: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
+extension GloryApi_TeacherTaskAttachment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".TeacherTaskAttachment"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "oss_path"),
+    2: .standard(proto: "oss_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.ossPath) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.ossURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.ossPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.ossPath, fieldNumber: 1)
+    }
+    if !self.ossURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.ossURL, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_TeacherTaskAttachment, rhs: GloryApi_TeacherTaskAttachment) -> Bool {
+    if lhs.ossPath != rhs.ossPath {return false}
+    if lhs.ossURL != rhs.ossURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TeacherTask"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1385,7 +1438,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _updatedAt: String = String()
     var _creator: GloryApi_User? = nil
     var _updator: GloryApi_User? = nil
-    var _teacherTaskAttachments: [String] = []
+    var _teacherTaskAttachments: [GloryApi_TeacherTaskAttachment] = []
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1465,7 +1518,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 21: try { try decoder.decodeSingularStringField(value: &_storage._updatedAt) }()
         case 22: try { try decoder.decodeSingularMessageField(value: &_storage._creator) }()
         case 23: try { try decoder.decodeSingularMessageField(value: &_storage._updator) }()
-        case 24: try { try decoder.decodeRepeatedStringField(value: &_storage._teacherTaskAttachments) }()
+        case 24: try { try decoder.decodeRepeatedMessageField(value: &_storage._teacherTaskAttachments) }()
         default: break
         }
       }
@@ -1548,7 +1601,7 @@ extension GloryApi_TeacherTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
       } }()
       if !_storage._teacherTaskAttachments.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._teacherTaskAttachments, fieldNumber: 24)
+        try visitor.visitRepeatedMessageField(value: _storage._teacherTaskAttachments, fieldNumber: 24)
       }
     }
     try unknownFields.traverse(visitor: &visitor)

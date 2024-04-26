@@ -29,7 +29,7 @@ private static final long serialVersionUID = 0L;
     taskParameters = java.util.Collections.emptyList();
     createdAt = "";
     updatedAt = "";
-    teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    teacherTaskAttachments = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -225,12 +225,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 194: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000008) != 0)) {
-              teacherTaskAttachments = new com.google.protobuf.LazyStringArrayList();
+              teacherTaskAttachments = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment>();
               mutable_bitField0_ |= 0x00000008;
             }
-            teacherTaskAttachments .add(s);
+            teacherTaskAttachments .add(
+                input.readMessage(com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
         taskParameters = java.util.Collections.unmodifiableList(taskParameters );
       }
       if (((mutable_bitField0 & 0x00000008) != 0)) {
-        teacherTaskAttachments = teacherTaskAttachments .getUnmodifiableView();
+        teacherTaskAttachments = java.util.Collections.unmodifiableList(teacherTaskAttachments );
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1076,38 +1076,43 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TEACHER_TASK_ATTACHMENTS_FIELD_NUMBER = 24;
-  private com.google.protobuf.LazyStringList teacherTaskAttachments ;
+  private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> teacherTaskAttachments ;
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @return A list containing the teacherTaskAttachments.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getTeacherTaskAttachmentsList() {
+  @java.lang.Override
+  public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> getTeacherTaskAttachmentsList() {
     return teacherTaskAttachments ;
   }
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @return The count of teacherTaskAttachments.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
+  @java.lang.Override
+  public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder> 
+      getTeacherTaskAttachmentsOrBuilderList() {
+    return teacherTaskAttachments ;
+  }
+  /**
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+   */
+  @java.lang.Override
   public int getTeacherTaskAttachmentsCount() {
     return teacherTaskAttachments .size();
   }
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @param index The index of the element to return.
-   * @return The teacherTaskAttachments at the given index.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  public java.lang.String getTeacherTaskAttachments(int index) {
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment getTeacherTaskAttachments(int index) {
     return teacherTaskAttachments .get(index);
   }
   /**
-   * <code>repeated string teacher_task_attachments = 24;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the teacherTaskAttachments at the given index.
+   * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
    */
-  public com.google.protobuf.ByteString
-      getTeacherTaskAttachmentsBytes(int index) {
-    return teacherTaskAttachments .getByteString(index);
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder getTeacherTaskAttachmentsOrBuilder(
+      int index) {
+    return teacherTaskAttachments .get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1194,7 +1199,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(23, getUpdator());
     }
     for (int i = 0; i < teacherTaskAttachments .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, teacherTaskAttachments .getRaw(i));
+      output.writeMessage(24, teacherTaskAttachments .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1291,13 +1296,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getUpdator());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < teacherTaskAttachments .size(); i++) {
-        dataSize += computeStringSizeNoTag(teacherTaskAttachments .getRaw(i));
-      }
-      size += dataSize;
-      size += 2 * getTeacherTaskAttachmentsList().size();
+    for (int i = 0; i < teacherTaskAttachments .size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, teacherTaskAttachments .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1580,6 +1581,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getTeacherTaskClassesFieldBuilder();
         getTaskParametersFieldBuilder();
+        getTeacherTaskAttachmentsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1651,8 +1653,12 @@ private static final long serialVersionUID = 0L;
         updator = null;
         updatorBuilder = null;
       }
-      teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000008);
+      if (teacherTaskAttachmentsBuilder == null) {
+        teacherTaskAttachments = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000008);
+      } else {
+        teacherTaskAttachmentsBuilder .clear();
+      }
       return this;
     }
 
@@ -1735,11 +1741,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updator = updatorBuilder .build();
       }
-      if (((bitField0 & 0x00000008) != 0)) {
-        teacherTaskAttachments = teacherTaskAttachments .getUnmodifiableView();
-        bitField0 = (bitField0 & ~0x00000008);
+      if (teacherTaskAttachmentsBuilder == null) {
+        if (((bitField0 & 0x00000008) != 0)) {
+          teacherTaskAttachments = java.util.Collections.unmodifiableList(teacherTaskAttachments );
+          bitField0 = (bitField0 & ~0x00000008);
+        }
+        result.teacherTaskAttachments = teacherTaskAttachments ;
+      } else {
+        result.teacherTaskAttachments = teacherTaskAttachmentsBuilder .build();
       }
-      result.teacherTaskAttachments = teacherTaskAttachments ;
       onBuilt();
       return result;
     }
@@ -1920,15 +1930,31 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdator()) {
         mergeUpdator(other.getUpdator());
       }
-      if (!other.teacherTaskAttachments .isEmpty()) {
-        if (teacherTaskAttachments .isEmpty()) {
-          teacherTaskAttachments = other.teacherTaskAttachments ;
-          bitField0 = (bitField0 & ~0x00000008);
-        } else {
-          ensureTeacherTaskAttachmentsIsMutable();
-          teacherTaskAttachments .addAll(other.teacherTaskAttachments );
+      if (teacherTaskAttachmentsBuilder == null) {
+        if (!other.teacherTaskAttachments .isEmpty()) {
+          if (teacherTaskAttachments .isEmpty()) {
+            teacherTaskAttachments = other.teacherTaskAttachments ;
+            bitField0 = (bitField0 & ~0x00000008);
+          } else {
+            ensureTeacherTaskAttachmentsIsMutable();
+            teacherTaskAttachments .addAll(other.teacherTaskAttachments );
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.teacherTaskAttachments .isEmpty()) {
+          if (teacherTaskAttachmentsBuilder .isEmpty()) {
+            teacherTaskAttachmentsBuilder .dispose();
+            teacherTaskAttachmentsBuilder = null;
+            teacherTaskAttachments = other.teacherTaskAttachments ;
+            bitField0 = (bitField0 & ~0x00000008);
+            teacherTaskAttachmentsBuilder = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTeacherTaskAttachmentsFieldBuilder() : null;
+          } else {
+            teacherTaskAttachmentsBuilder .addAllMessages(other.teacherTaskAttachments );
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4308,114 +4334,244 @@ private static final long serialVersionUID = 0L;
       return updatorBuilder ;
     }
 
-    private com.google.protobuf.LazyStringList teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> teacherTaskAttachments =
+      java.util.Collections.emptyList();
     private void ensureTeacherTaskAttachmentsIsMutable() {
       if (!((bitField0 & 0x00000008) != 0)) {
-        teacherTaskAttachments = new com.google.protobuf.LazyStringArrayList(teacherTaskAttachments );
+        teacherTaskAttachments = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment>(teacherTaskAttachments );
         bitField0_ |= 0x00000008;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder> teacherTaskAttachmentsBuilder ;
+
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @return A list containing the teacherTaskAttachments.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTeacherTaskAttachmentsList() {
-      return teacherTaskAttachments .getUnmodifiableView();
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> getTeacherTaskAttachmentsList() {
+      if (teacherTaskAttachmentsBuilder == null) {
+        return java.util.Collections.unmodifiableList(teacherTaskAttachments );
+      } else {
+        return teacherTaskAttachmentsBuilder .getMessageList();
+      }
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @return The count of teacherTaskAttachments.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
     public int getTeacherTaskAttachmentsCount() {
-      return teacherTaskAttachments .size();
+      if (teacherTaskAttachmentsBuilder == null) {
+        return teacherTaskAttachments .size();
+      } else {
+        return teacherTaskAttachmentsBuilder .getCount();
+      }
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param index The index of the element to return.
-     * @return The teacherTaskAttachments at the given index.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
-    public java.lang.String getTeacherTaskAttachments(int index) {
-      return teacherTaskAttachments .get(index);
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment getTeacherTaskAttachments(int index) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        return teacherTaskAttachments .get(index);
+      } else {
+        return teacherTaskAttachmentsBuilder .getMessage(index);
+      }
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the teacherTaskAttachments at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getTeacherTaskAttachmentsBytes(int index) {
-      return teacherTaskAttachments .getByteString(index);
-    }
-    /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param index The index to set the value at.
-     * @param value The teacherTaskAttachments to set.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
     public Builder setTeacherTaskAttachments(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTeacherTaskAttachmentsIsMutable();
-      teacherTaskAttachments .set(index, value);
-      onChanged();
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment value) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .set(index, value);
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param value The teacherTaskAttachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public Builder setTeacherTaskAttachments(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder builderForValue) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .set(index, builderForValue.build());
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public Builder addTeacherTaskAttachments(com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment value) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .add(value);
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
     public Builder addTeacherTaskAttachments(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTeacherTaskAttachmentsIsMutable();
-      teacherTaskAttachments .add(value);
-      onChanged();
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment value) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .add(index, value);
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param values The teacherTaskAttachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public Builder addTeacherTaskAttachments(
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder builderForValue) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .add(builderForValue.build());
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public Builder addTeacherTaskAttachments(
+        int index, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder builderForValue) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .add(index, builderForValue.build());
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
     public Builder addAllTeacherTaskAttachments(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureTeacherTaskAttachmentsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, teacherTaskAttachments );
-      onChanged();
+        java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment> values) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        ensureTeacherTaskAttachmentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, teacherTaskAttachments );
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .addAllMessages(values);
+      }
       return this;
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
     public Builder clearTeacherTaskAttachments() {
-      teacherTaskAttachments = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000008);
-      onChanged();
+      if (teacherTaskAttachmentsBuilder == null) {
+        teacherTaskAttachments = java.util.Collections.emptyList();
+        bitField0 = (bitField0 & ~0x00000008);
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .clear();
+      }
       return this;
     }
     /**
-     * <code>repeated string teacher_task_attachments = 24;</code>
-     * @param value The bytes of the teacherTaskAttachments to add.
-     * @return This builder for chaining.
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
      */
-    public Builder addTeacherTaskAttachmentsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureTeacherTaskAttachmentsIsMutable();
-      teacherTaskAttachments .add(value);
-      onChanged();
+    public Builder removeTeacherTaskAttachments(int index) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        ensureTeacherTaskAttachmentsIsMutable();
+        teacherTaskAttachments .remove(index);
+        onChanged();
+      } else {
+        teacherTaskAttachmentsBuilder .remove(index);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder getTeacherTaskAttachmentsBuilder(
+        int index) {
+      return getTeacherTaskAttachmentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder getTeacherTaskAttachmentsOrBuilder(
+        int index) {
+      if (teacherTaskAttachmentsBuilder == null) {
+        return teacherTaskAttachments .get(index);  } else {
+        return teacherTaskAttachmentsBuilder .getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public java.util.List<? extends com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder> 
+         getTeacherTaskAttachmentsOrBuilderList() {
+      if (teacherTaskAttachmentsBuilder != null) {
+        return teacherTaskAttachmentsBuilder .getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(teacherTaskAttachments );
+      }
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder addTeacherTaskAttachmentsBuilder() {
+      return getTeacherTaskAttachmentsFieldBuilder().addBuilder(
+          com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder addTeacherTaskAttachmentsBuilder(
+        int index) {
+      return getTeacherTaskAttachmentsFieldBuilder().addBuilder(
+          index, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .glory_api.TeacherTaskAttachment teacher_task_attachments = 24;</code>
+     */
+    public java.util.List<com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder> 
+         getTeacherTaskAttachmentsBuilderList() {
+      return getTeacherTaskAttachmentsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder> 
+        getTeacherTaskAttachmentsFieldBuilder() {
+      if (teacherTaskAttachmentsBuilder == null) {
+        teacherTaskAttachmentsBuilder = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachment.Builder, com.zhijiejiaoyu.glory_api.task.TeacherTaskAttachmentOrBuilder>(
+                teacherTaskAttachments ,
+                ((bitField0 & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        teacherTaskAttachments = null;
+      }
+      return teacherTaskAttachmentsBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
