@@ -1654,4 +1654,8 @@ service glory_api {
   rpc DeleteDigitalVideo(DeleteDigitalVideoRequest) returns (DeleteDigitalVideoResponse) {
     option (api.get) = "/api/digital/delete_video";
   }
+  // 数字人资产列表接口
+  rpc ListDigitalAvatar(ListDigitalAvatarRequest) returns (ListDigitalAvatarResponse) {
+    option (api.post) = "/api/digital/list_avatar";
+  }
 }
