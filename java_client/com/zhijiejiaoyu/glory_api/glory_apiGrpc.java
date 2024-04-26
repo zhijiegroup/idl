@@ -12167,6 +12167,37 @@ public final class glory_apiGrpc {
     return getStartStudentTaskTimeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> getDownloadTeacherTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DownloadTeacherTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> getDownloadTeacherTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> getDownloadTeacherTaskMethod;
+    if ((getDownloadTeacherTaskMethod = glory_apiGrpc.getDownloadTeacherTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getDownloadTeacherTaskMethod = glory_apiGrpc.getDownloadTeacherTaskMethod) == null) {
+          glory_apiGrpc.getDownloadTeacherTaskMethod = getDownloadTeacherTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest, com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DownloadTeacherTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("DownloadTeacherTask"))
+              .build();
+        }
+      }
+    }
+    return getDownloadTeacherTaskMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest,
       com.zhijiejiaoyu.glory_api.notification.ListNotificationResponse> getListNotificationMethod;
 
@@ -16541,6 +16572,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void downloadTeacherTask(com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDownloadTeacherTaskMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * 通知模块
      * </pre>
@@ -20381,6 +20419,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void downloadTeacherTask(com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDownloadTeacherTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 通知模块
      * </pre>
@@ -23854,6 +23900,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.task.StartStudentTaskTimeResponse startStudentTaskTime(com.zhijiejiaoyu.glory_api.task.StartStudentTaskTimeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartStudentTaskTimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse downloadTeacherTask(com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDownloadTeacherTaskMethod(), getCallOptions(), request);
     }
 
     /**
@@ -27686,6 +27739,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse> downloadTeacherTask(
+        com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDownloadTeacherTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 通知模块
      * </pre>
@@ -28421,45 +28482,46 @@ public final class glory_apiGrpc {
   private static final int METHODID_STUDENT_TASK_STATS = 389;
   private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 390;
   private static final int METHODID_START_STUDENT_TASK_TIME = 391;
-  private static final int METHODID_LIST_NOTIFICATION = 392;
-  private static final int METHODID_COUNT_NOTIFICATION = 393;
-  private static final int METHODID_READ_NOTIFICATION = 394;
-  private static final int METHODID_TEST_NOTIFICATION = 395;
-  private static final int METHODID_DELETE_NOTIFICATION = 396;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 397;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 398;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 399;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 400;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 401;
-  private static final int METHODID_CLOSE_CASTER = 402;
-  private static final int METHODID_CREATE_ARTICLE_CREATION = 403;
-  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 404;
-  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 405;
-  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 406;
-  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 407;
-  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 408;
-  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 409;
-  private static final int METHODID_GET_EXAMPLE_ARTICLE = 410;
-  private static final int METHODID_GET_EVALUATION_STANDARD = 411;
-  private static final int METHODID_CREATE_EVALUATION_CONFIG = 412;
-  private static final int METHODID_LIST_EVALUATION_CONFIG = 413;
-  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 414;
-  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 415;
-  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 416;
-  private static final int METHODID_CORRECT_SENTENCE = 417;
-  private static final int METHODID_ARTICLE_AI_CHAT = 418;
-  private static final int METHODID_UPDATE_MODEL_PRICE = 419;
-  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 420;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 421;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 422;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 423;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 424;
-  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 425;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 426;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 427;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 428;
-  private static final int METHODID_LIST_DIGITAL_CODE = 429;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 430;
+  private static final int METHODID_DOWNLOAD_TEACHER_TASK = 392;
+  private static final int METHODID_LIST_NOTIFICATION = 393;
+  private static final int METHODID_COUNT_NOTIFICATION = 394;
+  private static final int METHODID_READ_NOTIFICATION = 395;
+  private static final int METHODID_TEST_NOTIFICATION = 396;
+  private static final int METHODID_DELETE_NOTIFICATION = 397;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 398;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 399;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 400;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 401;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 402;
+  private static final int METHODID_CLOSE_CASTER = 403;
+  private static final int METHODID_CREATE_ARTICLE_CREATION = 404;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 405;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 406;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 407;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 408;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 409;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 410;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 411;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 412;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 413;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 414;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 415;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 416;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 417;
+  private static final int METHODID_CORRECT_SENTENCE = 418;
+  private static final int METHODID_ARTICLE_AI_CHAT = 419;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 420;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 421;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 422;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 423;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 424;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 425;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 426;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 427;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 428;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 429;
+  private static final int METHODID_LIST_DIGITAL_CODE = 430;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 431;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30045,6 +30107,10 @@ public final class glory_apiGrpc {
         case METHODID_START_STUDENT_TASK_TIME:
           serviceImpl.startStudentTaskTime((com.zhijiejiaoyu.glory_api.task.StartStudentTaskTimeRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.StartStudentTaskTimeResponse>) responseObserver);
+          break;
+        case METHODID_DOWNLOAD_TEACHER_TASK:
+          serviceImpl.downloadTeacherTask((com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse>) responseObserver);
           break;
         case METHODID_LIST_NOTIFICATION:
           serviceImpl.listNotification((com.zhijiejiaoyu.glory_api.notification.ListNotificationRequest) request,
@@ -32965,6 +33031,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.StartStudentTaskTimeResponse>(
                 service, METHODID_START_STUDENT_TASK_TIME)))
         .addMethod(
+          getDownloadTeacherTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.DownloadTeacherTaskResponse>(
+                service, METHODID_DOWNLOAD_TEACHER_TASK)))
+        .addMethod(
           getListNotificationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -33677,6 +33750,7 @@ public final class glory_apiGrpc {
               .addMethod(getStudentTaskStatsMethod())
               .addMethod(getStudentTaskEvaluateStatsMethod())
               .addMethod(getStartStudentTaskTimeMethod())
+              .addMethod(getDownloadTeacherTaskMethod())
               .addMethod(getListNotificationMethod())
               .addMethod(getCountNotificationMethod())
               .addMethod(getReadNotificationMethod())

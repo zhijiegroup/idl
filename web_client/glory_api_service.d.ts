@@ -1758,6 +1758,10 @@ CreateLivePlanProduct create live plan product */
     request: student_task.StartStudentTaskTimeRequest
   ): Promise<student_task.StartStudentTaskTimeResponse>;
 
+  DownloadTeacherTask(
+    request: teacher_task.DownloadTeacherTaskRequest
+  ): Promise<teacher_task.DownloadTeacherTaskResponse>;
+
   /** 通知模块 */
   ListNotification(
     request: notification.ListNotificationRequest

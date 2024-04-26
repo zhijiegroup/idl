@@ -330,3 +330,12 @@ export interface ListTaskStudentResponse {
   no_submit_list?: Array<TaskStudent>;
   submitted_list?: Array<TaskStudent>;
 }
+
+export interface DownloadTeacherTaskRequest {
+  base_request?: base.BaseRequest;
+  teacher_task_id?: string;
+}
+
+export interface DownloadTeacherTaskResponse {
+  base_resp?: base.BaseResponse;
+}

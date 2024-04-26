@@ -230,6 +230,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 168: {
+
+            taskDuration = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1161,6 +1166,21 @@ private static final long serialVersionUID = 0L;
     return getTeacher();
   }
 
+  public static final int TASK_DURATION_FIELD_NUMBER = 21;
+  private long taskDuration ;
+  /**
+   * <pre>
+   * 任务完成使用时间，单位秒
+   * </pre>
+   *
+   * <code>int64 task_duration = 21;</code>
+   * @return The taskDuration.
+   */
+  @java.lang.Override
+  public long getTaskDuration() {
+    return taskDuration ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1234,6 +1254,9 @@ private static final long serialVersionUID = 0L;
     }
     if (teacher != null) {
       output.writeMessage(20, getTeacher());
+    }
+    if (taskDuration != 0L) {
+      output.writeInt64(21, taskDuration );
     }
     unknownFields.writeTo(output);
   }
@@ -1316,6 +1339,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getTeacher());
     }
+    if (taskDuration != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(21, taskDuration );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1386,6 +1413,8 @@ private static final long serialVersionUID = 0L;
       if (!getTeacher()
           .equals(other.getTeacher())) return false;
     }
+    if (getTaskDuration()
+        != other.getTaskDuration()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1458,6 +1487,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TEACHER_FIELD_NUMBER;
       hash = (53 * hash) + getTeacher().hashCode();
     }
+    hash = (37 * hash) + TASK_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskDuration());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1676,6 +1708,8 @@ private static final long serialVersionUID = 0L;
         teacher = null;
         teacherBuilder = null;
       }
+      taskDuration = 0L;
+
       return this;
     }
 
@@ -1783,6 +1817,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.teacher = teacherBuilder .build();
       }
+      result.taskDuration = taskDuration ;
       onBuilt();
       return result;
     }
@@ -2013,6 +2048,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTeacher()) {
         mergeTeacher(other.getTeacher());
+      }
+      if (other.getTaskDuration() != 0L) {
+        setTaskDuration(other.getTaskDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5219,6 +5257,49 @@ private static final long serialVersionUID = 0L;
         teacher = null;
       }
       return teacherBuilder ;
+    }
+
+    private long taskDuration ;
+    /**
+     * <pre>
+     * 任务完成使用时间，单位秒
+     * </pre>
+     *
+     * <code>int64 task_duration = 21;</code>
+     * @return The taskDuration.
+     */
+    @java.lang.Override
+    public long getTaskDuration() {
+      return taskDuration ;
+    }
+    /**
+     * <pre>
+     * 任务完成使用时间，单位秒
+     * </pre>
+     *
+     * <code>int64 task_duration = 21;</code>
+     * @param value The taskDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskDuration(long value) {
+      
+      taskDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 任务完成使用时间，单位秒
+     * </pre>
+     *
+     * <code>int64 task_duration = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskDuration() {
+      
+      taskDuration = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

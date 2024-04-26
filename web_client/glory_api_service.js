@@ -3142,6 +3142,12 @@ export class glory_api {
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
 
+  DownloadTeacherTask(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/task/download_teacher_task${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListNotification(request) {
     const uri = `${this.uriPrefix}/api/notification/list`;
     const body = JSONbigint.stringify(request);

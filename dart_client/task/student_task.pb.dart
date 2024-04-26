@@ -480,6 +480,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $1.TenantDept? majorDept,
     $1.User? student,
     $1.User? teacher,
+    $fixnum.Int64? taskDuration,
   }) {
     final $result = create();
     if (studentTaskId != null) {
@@ -542,6 +543,9 @@ class StudentTask extends $pb.GeneratedMessage {
     if (teacher != null) {
       $result.teacher = teacher;
     }
+    if (taskDuration != null) {
+      $result.taskDuration = taskDuration;
+    }
     return $result;
   }
   StudentTask._() : super();
@@ -569,6 +573,7 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOM<$1.TenantDept>(18, _omitFieldNames ? '' : 'majorDept', subBuilder: $1.TenantDept.create)
     ..aOM<$1.User>(19, _omitFieldNames ? '' : 'student', subBuilder: $1.User.create)
     ..aOM<$1.User>(20, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
+    ..aInt64(21, _omitFieldNames ? '' : 'taskDuration')
     ..hasRequiredFields = false
   ;
 
@@ -752,6 +757,15 @@ class StudentTask extends $pb.GeneratedMessage {
   void clearTeacher() => clearField(20);
   @$pb.TagNumber(20)
   $1.User ensureTeacher() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $fixnum.Int64 get taskDuration => $_getI64(20);
+  @$pb.TagNumber(21)
+  set taskDuration($fixnum.Int64 v) { $_setInt64(20, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasTaskDuration() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearTaskDuration() => clearField(21);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {

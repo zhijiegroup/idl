@@ -1253,6 +1253,9 @@ class glory_apiApi {
   $async.Future<$54.StartStudentTaskTimeResponse> startStudentTaskTime($pb.ClientContext? ctx, $54.StartStudentTaskTimeRequest request) =>
     _client.invoke<$54.StartStudentTaskTimeResponse>(ctx, 'glory_api', 'StartStudentTaskTime', request, $54.StartStudentTaskTimeResponse())
   ;
+  $async.Future<$53.DownloadTeacherTaskResponse> downloadTeacherTask($pb.ClientContext? ctx, $53.DownloadTeacherTaskRequest request) =>
+    _client.invoke<$53.DownloadTeacherTaskResponse>(ctx, 'glory_api', 'DownloadTeacherTask', request, $53.DownloadTeacherTaskResponse())
+  ;
   $async.Future<$55.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $55.ListNotificationRequest request) =>
     _client.invoke<$55.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $55.ListNotificationResponse())
   ;

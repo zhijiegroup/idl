@@ -537,4 +537,14 @@ public interface StudentTaskOrBuilder extends
    * <code>.glory_api.User teacher = 20;</code>
    */
   com.zhijiejiaoyu.glory_api.user.UserOrBuilder getTeacherOrBuilder();
+
+  /**
+   * <pre>
+   * 任务完成使用时间，单位秒
+   * </pre>
+   *
+   * <code>int64 task_duration = 21;</code>
+   * @return The taskDuration.
+   */
+  long getTaskDuration();
 }

@@ -731,3 +731,31 @@ final $typed_data.Uint8List listTaskStudentResponseDescriptor = $convert.base64D
     'VGFza1N0dWRlbnRSDG5vU3VibWl0TGlzdBI9Cg5zdWJtaXR0ZWRfbGlzdBgDIAMoCzIWLmdsb3'
     'J5X2FwaS5UYXNrU3R1ZGVudFINc3VibWl0dGVkTGlzdA==');
 
+@$core.Deprecated('Use downloadTeacherTaskRequestDescriptor instead')
+const DownloadTeacherTaskRequest$json = {
+  '1': 'DownloadTeacherTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'teacher_task_id', '3': 2, '4': 1, '5': 3, '10': 'teacherTaskId'},
+  ],
+};
+
+/// Descriptor for `DownloadTeacherTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadTeacherTaskRequestDescriptor = $convert.base64Decode(
+    'ChpEb3dubG9hZFRlYWNoZXJUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBImCg90ZWFjaGVyX3Rhc2tfaWQYAiABKANSDXRl'
+    'YWNoZXJUYXNrSWQ=');
+
+@$core.Deprecated('Use downloadTeacherTaskResponseDescriptor instead')
+const DownloadTeacherTaskResponse$json = {
+  '1': 'DownloadTeacherTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `DownloadTeacherTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadTeacherTaskResponseDescriptor = $convert.base64Decode(
+    'ChtEb3dubG9hZFRlYWNoZXJUYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
+    '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
