@@ -23,6 +23,11 @@ message TeacherTaskClass {
   string class_name = 2;
 }
 
+message TeacherTaskAttachment {
+  string oss_path = 1;
+  string oss_url = 2;
+}
+
 message TeacherTask {
   int64 teacher_task_id = 1; // 教师任务 ID
   int64 teacher_id = 2; // 教师 ID
@@ -47,7 +52,7 @@ message TeacherTask {
   string updated_at = 21;
   User creator = 22;
   User updator = 23;
-  repeated string teacher_task_attachments = 24;
+  repeated TeacherTaskAttachment teacher_task_attachments = 24;
 }
 
 message TeacherTaskProgress {
