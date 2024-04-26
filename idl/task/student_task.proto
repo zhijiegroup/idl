@@ -63,6 +63,7 @@ message StudentTask {
   TenantDept major_dept = 18; // 学生专业信息
   User student = 19; // 学生信息
   User teacher = 20; // 老师信息
+  int64 task_duration = 21; // 任务完成使用时间，单位秒
 }
 
 message TeacherRequirementEvaluation {
