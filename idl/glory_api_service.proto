@@ -1519,6 +1519,9 @@ service glory_api {
   rpc StartStudentTaskTime(StartStudentTaskTimeRequest) returns (StartStudentTaskTimeResponse) {
     option (api.get) = '/api/task/student_task_start_time';
   }
+  rpc DownloadTeacherTask(DownloadTeacherTaskRequest) returns (DownloadTeacherTaskResponse) {
+    option (api.get) = '/api/task/download_teacher_task';
+  }
 
   // 通知模块
   rpc ListNotification(ListNotificationRequest) returns (ListNotificationResponse) {
