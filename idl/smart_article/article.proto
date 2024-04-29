@@ -374,6 +374,27 @@ message DeleteDigitalVideoResponse {
     base.BaseResponse base_resp = 1;
 }
 
+message ListDigitalAvatarRequest {
+    base.BaseRequest base_request = 1;
+    string type = 2;
+    base.PaginationRequest pagination = 100;
+}
+
+message DigitalAvatar {
+    string code = 1;
+    string name = 2;
+    string image_url = 3;
+    string portrait_url = 4;
+    string description = 5;
+    string preview_url = 6;
+}
+
+message ListDigitalAvatarResponse {
+    base.BaseResponse base_resp = 1;
+    repeated DigitalAvatar avatars = 2;
+    base.PaginationResponse pagination = 100;
+}
+
 message UpdateTenantCourseDataRequest {
     base.BaseRequest base_request = 1;
     int32 student_count = 2;
