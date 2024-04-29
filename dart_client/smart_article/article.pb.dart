@@ -4767,6 +4767,284 @@ class DeleteDigitalVideoResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class ListDigitalAvatarRequest extends $pb.GeneratedMessage {
+  factory ListDigitalAvatarRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? type,
+    $0.PaginationRequest? pagination,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListDigitalAvatarRequest._() : super();
+  factory ListDigitalAvatarRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalAvatarRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalAvatarRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'type')
+    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalAvatarRequest clone() => ListDigitalAvatarRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalAvatarRequest copyWith(void Function(ListDigitalAvatarRequest) updates) => super.copyWith((message) => updates(message as ListDigitalAvatarRequest)) as ListDigitalAvatarRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalAvatarRequest create() => ListDigitalAvatarRequest._();
+  ListDigitalAvatarRequest createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalAvatarRequest> createRepeated() => $pb.PbList<ListDigitalAvatarRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalAvatarRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalAvatarRequest>(create);
+  static ListDigitalAvatarRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get type => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set type($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  @$pb.TagNumber(100)
+  $0.PaginationRequest get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationRequest v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationRequest ensurePagination() => $_ensure(2);
+}
+
+class DigitalAvatar extends $pb.GeneratedMessage {
+  factory DigitalAvatar({
+    $core.String? code,
+    $core.String? name,
+    $core.String? imageUrl,
+    $core.String? portraitUrl,
+    $core.String? description,
+    $core.String? previewUrl,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (imageUrl != null) {
+      $result.imageUrl = imageUrl;
+    }
+    if (portraitUrl != null) {
+      $result.portraitUrl = portraitUrl;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (previewUrl != null) {
+      $result.previewUrl = previewUrl;
+    }
+    return $result;
+  }
+  DigitalAvatar._() : super();
+  factory DigitalAvatar.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DigitalAvatar.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DigitalAvatar', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'imageUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'portraitUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'previewUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DigitalAvatar clone() => DigitalAvatar()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DigitalAvatar copyWith(void Function(DigitalAvatar) updates) => super.copyWith((message) => updates(message as DigitalAvatar)) as DigitalAvatar;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DigitalAvatar create() => DigitalAvatar._();
+  DigitalAvatar createEmptyInstance() => create();
+  static $pb.PbList<DigitalAvatar> createRepeated() => $pb.PbList<DigitalAvatar>();
+  @$core.pragma('dart2js:noInline')
+  static DigitalAvatar getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DigitalAvatar>(create);
+  static DigitalAvatar? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get imageUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set imageUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasImageUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImageUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get portraitUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set portraitUrl($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPortraitUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPortraitUrl() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get previewUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set previewUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPreviewUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreviewUrl() => clearField(6);
+}
+
+class ListDigitalAvatarResponse extends $pb.GeneratedMessage {
+  factory ListDigitalAvatarResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<DigitalAvatar>? avatars,
+    $0.PaginationResponse? pagination,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (avatars != null) {
+      $result.avatars.addAll(avatars);
+    }
+    if (pagination != null) {
+      $result.pagination = pagination;
+    }
+    return $result;
+  }
+  ListDigitalAvatarResponse._() : super();
+  factory ListDigitalAvatarResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListDigitalAvatarResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListDigitalAvatarResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<DigitalAvatar>(2, _omitFieldNames ? '' : 'avatars', $pb.PbFieldType.PM, subBuilder: DigitalAvatar.create)
+    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListDigitalAvatarResponse clone() => ListDigitalAvatarResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListDigitalAvatarResponse copyWith(void Function(ListDigitalAvatarResponse) updates) => super.copyWith((message) => updates(message as ListDigitalAvatarResponse)) as ListDigitalAvatarResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalAvatarResponse create() => ListDigitalAvatarResponse._();
+  ListDigitalAvatarResponse createEmptyInstance() => create();
+  static $pb.PbList<ListDigitalAvatarResponse> createRepeated() => $pb.PbList<ListDigitalAvatarResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListDigitalAvatarResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListDigitalAvatarResponse>(create);
+  static ListDigitalAvatarResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<DigitalAvatar> get avatars => $_getList(1);
+
+  @$pb.TagNumber(100)
+  $0.PaginationResponse get pagination => $_getN(2);
+  @$pb.TagNumber(100)
+  set pagination($0.PaginationResponse v) { setField(100, v); }
+  @$pb.TagNumber(100)
+  $core.bool hasPagination() => $_has(2);
+  @$pb.TagNumber(100)
+  void clearPagination() => clearField(100);
+  @$pb.TagNumber(100)
+  $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
 class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
   factory UpdateTenantCourseDataRequest({
     $0.BaseRequest? baseRequest,

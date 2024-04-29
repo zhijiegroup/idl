@@ -950,6 +950,59 @@ final $typed_data.Uint8List deleteDigitalVideoResponseDescriptor = $convert.base
     'ChpEZWxldGVEaWdpdGFsVmlkZW9SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYXNlLk'
     'Jhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 
+@$core.Deprecated('Use listDigitalAvatarRequestDescriptor instead')
+const ListDigitalAvatarRequest$json = {
+  '1': 'ListDigitalAvatarRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListDigitalAvatarRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalAvatarRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0RGlnaXRhbEF2YXRhclJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSEgoEdHlwZRgCIAEoCVIEdHlwZRI3CgpwYWdpbmF0'
+    'aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use digitalAvatarDescriptor instead')
+const DigitalAvatar$json = {
+  '1': 'DigitalAvatar',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'image_url', '3': 3, '4': 1, '5': 9, '10': 'imageUrl'},
+    {'1': 'portrait_url', '3': 4, '4': 1, '5': 9, '10': 'portraitUrl'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'preview_url', '3': 6, '4': 1, '5': 9, '10': 'previewUrl'},
+  ],
+};
+
+/// Descriptor for `DigitalAvatar`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List digitalAvatarDescriptor = $convert.base64Decode(
+    'Cg1EaWdpdGFsQXZhdGFyEhIKBGNvZGUYASABKAlSBGNvZGUSEgoEbmFtZRgCIAEoCVIEbmFtZR'
+    'IbCglpbWFnZV91cmwYAyABKAlSCGltYWdlVXJsEiEKDHBvcnRyYWl0X3VybBgEIAEoCVILcG9y'
+    'dHJhaXRVcmwSIAoLZGVzY3JpcHRpb24YBSABKAlSC2Rlc2NyaXB0aW9uEh8KC3ByZXZpZXdfdX'
+    'JsGAYgASgJUgpwcmV2aWV3VXJs');
+
+@$core.Deprecated('Use listDigitalAvatarResponseDescriptor instead')
+const ListDigitalAvatarResponse$json = {
+  '1': 'ListDigitalAvatarResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'avatars', '3': 2, '4': 3, '5': 11, '6': '.glory_api.DigitalAvatar', '10': 'avatars'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListDigitalAvatarResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDigitalAvatarResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0RGlnaXRhbEF2YXRhclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIyCgdhdmF0YXJzGAIgAygLMhguZ2xvcnlfYXBpLkRpZ2l0'
+    'YWxBdmF0YXJSB2F2YXRhcnMSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvbl'
+    'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
+
 @$core.Deprecated('Use updateTenantCourseDataRequestDescriptor instead')
 const UpdateTenantCourseDataRequest$json = {
   '1': 'UpdateTenantCourseDataRequest',

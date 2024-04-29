@@ -3433,6 +3433,14 @@ export class glory_api {
     const uri = `${this.uriPrefix}/api/digital/delete_video${query}`;
     return fetch(uri, { method, headers, credentials }).then(handleResponse);
   }
+
+  ListDigitalAvatar(request) {
+    const uri = `${this.uriPrefix}/api/digital/list_avatar`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

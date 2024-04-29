@@ -13407,6 +13407,37 @@ public final class glory_apiGrpc {
     return getDeleteDigitalVideoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> getListDigitalAvatarMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDigitalAvatar",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> getListDigitalAvatarMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> getListDigitalAvatarMethod;
+    if ((getListDigitalAvatarMethod = glory_apiGrpc.getListDigitalAvatarMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListDigitalAvatarMethod = glory_apiGrpc.getListDigitalAvatarMethod) == null) {
+          glory_apiGrpc.getListDigitalAvatarMethod = getListDigitalAvatarMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest, com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDigitalAvatar"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListDigitalAvatar"))
+              .build();
+        }
+      }
+    }
+    return getListDigitalAvatarMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -16880,6 +16911,16 @@ public final class glory_apiGrpc {
     default void deleteDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDigitalVideoMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 数字人资产列表接口
+     * </pre>
+     */
+    default void listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalAvatarMethod(), responseObserver);
     }
   }
 
@@ -20768,6 +20809,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDigitalVideoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 数字人资产列表接口
+     * </pre>
+     */
+    public void listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -24211,6 +24263,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse deleteDigitalVideo(com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDigitalVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 数字人资产列表接口
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDigitalAvatarMethod(), getCallOptions(), request);
     }
   }
 
@@ -28088,6 +28150,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDigitalVideoMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 数字人资产列表接口
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> listDigitalAvatar(
+        com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -28522,6 +28595,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_GET_DIGITAL_VIDEO = 429;
   private static final int METHODID_LIST_DIGITAL_CODE = 430;
   private static final int METHODID_DELETE_DIGITAL_VIDEO = 431;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 432;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30267,6 +30341,10 @@ public final class glory_apiGrpc {
         case METHODID_DELETE_DIGITAL_VIDEO:
           serviceImpl.deleteDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse>) responseObserver);
+          break;
+        case METHODID_LIST_DIGITAL_AVATAR:
+          serviceImpl.listDigitalAvatar((com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -33310,6 +33388,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoRequest,
               com.zhijiejiaoyu.glory_api.short_video.DeleteDigitalVideoResponse>(
                 service, METHODID_DELETE_DIGITAL_VIDEO)))
+        .addMethod(
+          getListDigitalAvatarMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>(
+                service, METHODID_LIST_DIGITAL_AVATAR)))
         .build();
   }
 
@@ -33790,6 +33875,7 @@ public final class glory_apiGrpc {
               .addMethod(getGetDigitalVideoMethod())
               .addMethod(getListDigitalCodeMethod())
               .addMethod(getDeleteDigitalVideoMethod())
+              .addMethod(getListDigitalAvatarMethod())
               .build();
         }
       }

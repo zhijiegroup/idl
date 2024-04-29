@@ -1466,6 +1466,94 @@ struct GloryApi_DeleteDigitalVideoResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_ListDigitalAvatarRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var type: String = String()
+
+  var pagination: Base_PaginationRequest {
+    get {return _pagination ?? Base_PaginationRequest()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+  fileprivate var _pagination: Base_PaginationRequest? = nil
+}
+
+struct GloryApi_DigitalAvatar {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var code: String = String()
+
+  var name: String = String()
+
+  var imageURL: String = String()
+
+  var portraitURL: String = String()
+
+  var description_p: String = String()
+
+  var previewURL: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
+struct GloryApi_ListDigitalAvatarResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var avatars: [GloryApi_DigitalAvatar] = []
+
+  var pagination: Base_PaginationResponse {
+    get {return _pagination ?? Base_PaginationResponse()}
+    set {_pagination = newValue}
+  }
+  /// Returns true if `pagination` has been explicitly set.
+  var hasPagination: Bool {return self._pagination != nil}
+  /// Clears the value of `pagination`. Subsequent reads from it will return its default value.
+  mutating func clearPagination() {self._pagination = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _pagination: Base_PaginationResponse? = nil
+}
+
 struct GloryApi_UpdateTenantCourseDataRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -2087,6 +2175,9 @@ extension GloryApi_ListDigitalCodeResponse: @unchecked Sendable {}
 extension GloryApi_ListDigitalCodeRequest: @unchecked Sendable {}
 extension GloryApi_DeleteDigitalVideoRequest: @unchecked Sendable {}
 extension GloryApi_DeleteDigitalVideoResponse: @unchecked Sendable {}
+extension GloryApi_ListDigitalAvatarRequest: @unchecked Sendable {}
+extension GloryApi_DigitalAvatar: @unchecked Sendable {}
+extension GloryApi_ListDigitalAvatarResponse: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataRequest: @unchecked Sendable {}
 extension GloryApi_UpdateTenantCourseDataResponse: @unchecked Sendable {}
 extension GloryApi_UpdateModelPriceRequest: @unchecked Sendable {}
@@ -4888,6 +4979,164 @@ extension GloryApi_DeleteDigitalVideoResponse: SwiftProtobuf.Message, SwiftProto
 
   static func ==(lhs: GloryApi_DeleteDigitalVideoResponse, rhs: GloryApi_DeleteDigitalVideoResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListDigitalAvatarRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalAvatarRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .same(proto: "type"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.type.isEmpty {
+      try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListDigitalAvatarRequest, rhs: GloryApi_ListDigitalAvatarRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.type != rhs.type {return false}
+    if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_DigitalAvatar: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".DigitalAvatar"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "code"),
+    2: .same(proto: "name"),
+    3: .standard(proto: "image_url"),
+    4: .standard(proto: "portrait_url"),
+    5: .same(proto: "description"),
+    6: .standard(proto: "preview_url"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.code) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.imageURL) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.portraitURL) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.description_p) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.previewURL) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.code.isEmpty {
+      try visitor.visitSingularStringField(value: self.code, fieldNumber: 1)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 3)
+    }
+    if !self.portraitURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.portraitURL, fieldNumber: 4)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 5)
+    }
+    if !self.previewURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.previewURL, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_DigitalAvatar, rhs: GloryApi_DigitalAvatar) -> Bool {
+    if lhs.code != rhs.code {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
+    if lhs.portraitURL != rhs.portraitURL {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.previewURL != rhs.previewURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_ListDigitalAvatarResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ListDigitalAvatarResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "avatars"),
+    100: .same(proto: "pagination"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.avatars) }()
+      case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if !self.avatars.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.avatars, fieldNumber: 2)
+    }
+    try { if let v = self._pagination {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ListDigitalAvatarResponse, rhs: GloryApi_ListDigitalAvatarResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.avatars != rhs.avatars {return false}
+    if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

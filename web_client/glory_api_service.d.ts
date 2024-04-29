@@ -1928,6 +1928,11 @@ CreateLivePlanProduct create live plan product */
   DeleteDigitalVideo(
     request: article.DeleteDigitalVideoRequest
   ): Promise<article.DeleteDigitalVideoResponse>;
+
+  /** 数字人资产列表接口 */
+  ListDigitalAvatar(
+    request: article.ListDigitalAvatarRequest
+  ): Promise<article.ListDigitalAvatarResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -387,6 +387,27 @@ export interface DeleteDigitalVideoResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface ListDigitalAvatarRequest {
+  base_request?: base.BaseRequest;
+  type?: string;
+  pagination?: base.PaginationRequest;
+}
+
+export interface DigitalAvatar {
+  code?: string;
+  name?: string;
+  image_url?: string;
+  portrait_url?: string;
+  description?: string;
+  preview_url?: string;
+}
+
+export interface ListDigitalAvatarResponse {
+  base_resp?: base.BaseResponse;
+  avatars?: Array<DigitalAvatar>;
+  pagination?: base.PaginationResponse;
+}
+
 export interface UpdateTenantCourseDataRequest {
   base_request?: base.BaseRequest;
   student_count?: number;
