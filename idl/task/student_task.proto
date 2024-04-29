@@ -64,6 +64,7 @@ message StudentTask {
   User student = 19; // 学生信息
   User teacher = 20; // 老师信息
   int64 task_duration = 21; // 任务完成使用时间，单位秒
+  int64 task_student_start_time = 22; // 学生任务开始时间
 }
 
 message TeacherRequirementEvaluation {
