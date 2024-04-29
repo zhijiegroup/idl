@@ -260,6 +260,12 @@ struct GloryApi_StudentTask {
     set {_uniqueStorage()._taskDuration = newValue}
   }
 
+  /// 学生任务开始时间
+  var taskStudentStartTime: Int64 {
+    get {return _storage._taskStudentStartTime}
+    set {_uniqueStorage()._taskStudentStartTime = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1113,6 +1119,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     19: .same(proto: "student"),
     20: .same(proto: "teacher"),
     21: .standard(proto: "task_duration"),
+    22: .standard(proto: "task_student_start_time"),
   ]
 
   fileprivate class _StorageClass {
@@ -1137,6 +1144,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _student: GloryApi_User? = nil
     var _teacher: GloryApi_User? = nil
     var _taskDuration: Int64 = 0
+    var _taskStudentStartTime: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1172,6 +1180,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _student = source._student
       _teacher = source._teacher
       _taskDuration = source._taskDuration
+      _taskStudentStartTime = source._taskStudentStartTime
     }
   }
 
@@ -1211,6 +1220,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 19: try { try decoder.decodeSingularMessageField(value: &_storage._student) }()
         case 20: try { try decoder.decodeSingularMessageField(value: &_storage._teacher) }()
         case 21: try { try decoder.decodeSingularInt64Field(value: &_storage._taskDuration) }()
+        case 22: try { try decoder.decodeSingularInt64Field(value: &_storage._taskStudentStartTime) }()
         default: break
         }
       }
@@ -1286,6 +1296,9 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if _storage._taskDuration != 0 {
         try visitor.visitSingularInt64Field(value: _storage._taskDuration, fieldNumber: 21)
       }
+      if _storage._taskStudentStartTime != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._taskStudentStartTime, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1316,6 +1329,7 @@ extension GloryApi_StudentTask: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._student != rhs_storage._student {return false}
         if _storage._teacher != rhs_storage._teacher {return false}
         if _storage._taskDuration != rhs_storage._taskDuration {return false}
+        if _storage._taskStudentStartTime != rhs_storage._taskStudentStartTime {return false}
         return true
       }
       if !storagesAreEqual {return false}

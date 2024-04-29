@@ -86,6 +86,8 @@ export interface StudentTask {
   teacher?: user.User;
   /** 任务完成使用时间，单位秒 */
   task_duration?: string;
+  /** 学生任务开始时间 */
+  task_student_start_time?: string;
 }
 
 export interface TeacherRequirementEvaluation {

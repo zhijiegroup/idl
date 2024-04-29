@@ -235,6 +235,11 @@ private static final long serialVersionUID = 0L;
             taskDuration = input.readInt64();
             break;
           }
+          case 176: {
+
+            taskStudentStartTime = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1181,6 +1186,21 @@ private static final long serialVersionUID = 0L;
     return taskDuration ;
   }
 
+  public static final int TASK_STUDENT_START_TIME_FIELD_NUMBER = 22;
+  private long taskStudentStartTime ;
+  /**
+   * <pre>
+   * 学生任务开始时间
+   * </pre>
+   *
+   * <code>int64 task_student_start_time = 22;</code>
+   * @return The taskStudentStartTime.
+   */
+  @java.lang.Override
+  public long getTaskStudentStartTime() {
+    return taskStudentStartTime ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1257,6 +1277,9 @@ private static final long serialVersionUID = 0L;
     }
     if (taskDuration != 0L) {
       output.writeInt64(21, taskDuration );
+    }
+    if (taskStudentStartTime != 0L) {
+      output.writeInt64(22, taskStudentStartTime );
     }
     unknownFields.writeTo(output);
   }
@@ -1343,6 +1366,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(21, taskDuration );
     }
+    if (taskStudentStartTime != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(22, taskStudentStartTime );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1415,6 +1442,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTaskDuration()
         != other.getTaskDuration()) return false;
+    if (getTaskStudentStartTime()
+        != other.getTaskStudentStartTime()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1490,6 +1519,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TASK_DURATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTaskDuration());
+    hash = (37 * hash) + TASK_STUDENT_START_TIME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTaskStudentStartTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1710,6 +1742,8 @@ private static final long serialVersionUID = 0L;
       }
       taskDuration = 0L;
 
+      taskStudentStartTime = 0L;
+
       return this;
     }
 
@@ -1818,6 +1852,7 @@ private static final long serialVersionUID = 0L;
         result.teacher = teacherBuilder .build();
       }
       result.taskDuration = taskDuration ;
+      result.taskStudentStartTime = taskStudentStartTime ;
       onBuilt();
       return result;
     }
@@ -2051,6 +2086,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTaskDuration() != 0L) {
         setTaskDuration(other.getTaskDuration());
+      }
+      if (other.getTaskStudentStartTime() != 0L) {
+        setTaskStudentStartTime(other.getTaskStudentStartTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5298,6 +5336,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskDuration() {
       
       taskDuration = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long taskStudentStartTime ;
+    /**
+     * <pre>
+     * 学生任务开始时间
+     * </pre>
+     *
+     * <code>int64 task_student_start_time = 22;</code>
+     * @return The taskStudentStartTime.
+     */
+    @java.lang.Override
+    public long getTaskStudentStartTime() {
+      return taskStudentStartTime ;
+    }
+    /**
+     * <pre>
+     * 学生任务开始时间
+     * </pre>
+     *
+     * <code>int64 task_student_start_time = 22;</code>
+     * @param value The taskStudentStartTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskStudentStartTime(long value) {
+      
+      taskStudentStartTime = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生任务开始时间
+     * </pre>
+     *
+     * <code>int64 task_student_start_time = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskStudentStartTime() {
+      
+      taskStudentStartTime = 0L;
       onChanged();
       return this;
     }

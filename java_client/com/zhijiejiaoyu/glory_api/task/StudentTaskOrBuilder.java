@@ -547,4 +547,14 @@ public interface StudentTaskOrBuilder extends
    * @return The taskDuration.
    */
   long getTaskDuration();
+
+  /**
+   * <pre>
+   * 学生任务开始时间
+   * </pre>
+   *
+   * <code>int64 task_student_start_time = 22;</code>
+   * @return The taskStudentStartTime.
+   */
+  long getTaskStudentStartTime();
 }
