@@ -72,6 +72,16 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ChatMessage.parser(), extensionRegistry));
             break;
           }
+          case 24: {
+
+            total = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            used = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -173,6 +183,28 @@ private static final long serialVersionUID = 0L;
     return messages .get(index);
   }
 
+  public static final int TOTAL_FIELD_NUMBER = 3;
+  private long total ;
+  /**
+   * <code>int64 total = 3;</code>
+   * @return The total.
+   */
+  @java.lang.Override
+  public long getTotal() {
+    return total ;
+  }
+
+  public static final int USED_FIELD_NUMBER = 4;
+  private long used ;
+  /**
+   * <code>int64 used = 4;</code>
+   * @return The used.
+   */
+  @java.lang.Override
+  public long getUsed() {
+    return used ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -193,6 +225,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < messages .size(); i++) {
       output.writeMessage(2, messages .get(i));
     }
+    if (total != 0L) {
+      output.writeInt64(3, total );
+    }
+    if (used != 0L) {
+      output.writeInt64(4, used );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -209,6 +247,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < messages .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, messages .get(i));
+    }
+    if (total != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, total );
+    }
+    if (used != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, used );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,6 +278,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMessagesList()
         .equals(other.getMessagesList())) return false;
+    if (getTotal()
+        != other.getTotal()) return false;
+    if (getUsed()
+        != other.getUsed()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +301,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getMessagesList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotal());
+    hash = (37 * hash) + USED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUsed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,6 +453,10 @@ private static final long serialVersionUID = 0L;
       } else {
         messagesBuilder .clear();
       }
+      total = 0L;
+
+      used = 0L;
+
       return this;
     }
 
@@ -438,6 +498,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.messages = messagesBuilder .build();
       }
+      result.total = total ;
+      result.used = used ;
       onBuilt();
       return result;
     }
@@ -514,6 +576,12 @@ private static final long serialVersionUID = 0L;
             messagesBuilder .addAllMessages(other.messages );
           }
         }
+      }
+      if (other.getTotal() != 0L) {
+        setTotal(other.getTotal());
+      }
+      if (other.getUsed() != 0L) {
+        setUsed(other.getUsed());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -902,6 +970,68 @@ private static final long serialVersionUID = 0L;
         messages = null;
       }
       return messagesBuilder ;
+    }
+
+    private long total ;
+    /**
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total ;
+    }
+    /**
+     * <code>int64 total = 3;</code>
+     * @param value The total to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotal(long value) {
+      
+      total = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 total = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotal() {
+      
+      total = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long used ;
+    /**
+     * <code>int64 used = 4;</code>
+     * @return The used.
+     */
+    @java.lang.Override
+    public long getUsed() {
+      return used ;
+    }
+    /**
+     * <code>int64 used = 4;</code>
+     * @param value The used to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsed(long value) {
+      
+      used = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 used = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsed() {
+      
+      used = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

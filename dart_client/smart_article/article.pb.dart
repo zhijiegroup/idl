@@ -3689,6 +3689,8 @@ class ArticleAIChatResponse extends $pb.GeneratedMessage {
   factory ArticleAIChatResponse({
     $0.BaseResponse? baseResp,
     $core.Iterable<ChatMessage>? messages,
+    $fixnum.Int64? total,
+    $fixnum.Int64? used,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3696,6 +3698,12 @@ class ArticleAIChatResponse extends $pb.GeneratedMessage {
     }
     if (messages != null) {
       $result.messages.addAll(messages);
+    }
+    if (total != null) {
+      $result.total = total;
+    }
+    if (used != null) {
+      $result.used = used;
     }
     return $result;
   }
@@ -3706,6 +3714,8 @@ class ArticleAIChatResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleAIChatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..pc<ChatMessage>(2, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: ChatMessage.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'total')
+    ..aInt64(4, _omitFieldNames ? '' : 'used')
     ..hasRequiredFields = false
   ;
 
@@ -3743,6 +3753,24 @@ class ArticleAIChatResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<ChatMessage> get messages => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get total => $_getI64(2);
+  @$pb.TagNumber(3)
+  set total($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTotal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotal() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get used => $_getI64(3);
+  @$pb.TagNumber(4)
+  set used($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUsed() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUsed() => clearField(4);
 }
 
 class ChatMessage extends $pb.GeneratedMessage {

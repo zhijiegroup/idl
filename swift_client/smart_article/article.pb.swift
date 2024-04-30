@@ -1137,6 +1137,10 @@ struct GloryApi_ArticleAIChatResponse {
 
   var messages: [GloryApi_ChatMessage] = []
 
+  var total: Int64 = 0
+
+  var used: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4335,6 +4339,8 @@ extension GloryApi_ArticleAIChatResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .same(proto: "messages"),
+    3: .same(proto: "total"),
+    4: .same(proto: "used"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4345,6 +4351,8 @@ extension GloryApi_ArticleAIChatResponse: SwiftProtobuf.Message, SwiftProtobuf._
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.messages) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.used) }()
       default: break
       }
     }
@@ -4361,12 +4369,20 @@ extension GloryApi_ArticleAIChatResponse: SwiftProtobuf.Message, SwiftProtobuf._
     if !self.messages.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.messages, fieldNumber: 2)
     }
+    if self.total != 0 {
+      try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 3)
+    }
+    if self.used != 0 {
+      try visitor.visitSingularInt64Field(value: self.used, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ArticleAIChatResponse, rhs: GloryApi_ArticleAIChatResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.messages != rhs.messages {return false}
+    if lhs.total != rhs.total {return false}
+    if lhs.used != rhs.used {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

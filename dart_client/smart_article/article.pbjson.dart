@@ -735,6 +735,8 @@ const ArticleAIChatResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'messages', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ChatMessage', '10': 'messages'},
+    {'1': 'total', '3': 3, '4': 1, '5': 3, '10': 'total'},
+    {'1': 'used', '3': 4, '4': 1, '5': 3, '10': 'used'},
   ],
 };
 
@@ -742,7 +744,8 @@ const ArticleAIChatResponse$json = {
 final $typed_data.Uint8List articleAIChatResponseDescriptor = $convert.base64Decode(
     'ChVBcnRpY2xlQUlDaGF0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
     'VzcG9uc2VSCGJhc2VSZXNwEjIKCG1lc3NhZ2VzGAIgAygLMhYuZ2xvcnlfYXBpLkNoYXRNZXNz'
-    'YWdlUghtZXNzYWdlcw==');
+    'YWdlUghtZXNzYWdlcxIUCgV0b3RhbBgDIAEoA1IFdG90YWwSEgoEdXNlZBgEIAEoA1IEdXNlZA'
+    '==');
 
 @$core.Deprecated('Use chatMessageDescriptor instead')
 const ChatMessage$json = {

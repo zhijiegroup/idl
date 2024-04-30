@@ -45,4 +45,16 @@ public interface ArticleAIChatResponseOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.short_video.ChatMessageOrBuilder getMessagesOrBuilder(
       int index);
+
+  /**
+   * <code>int64 total = 3;</code>
+   * @return The total.
+   */
+  long getTotal();
+
+  /**
+   * <code>int64 used = 4;</code>
+   * @return The used.
+   */
+  long getUsed();
 }

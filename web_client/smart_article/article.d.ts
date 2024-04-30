@@ -307,6 +307,8 @@ export interface ArticleAIChatRequest {
 export interface ArticleAIChatResponse {
   base_resp?: base.BaseResponse;
   messages?: Array<ChatMessage>;
+  total?: string;
+  used?: string;
 }
 
 export interface ChatMessage {
