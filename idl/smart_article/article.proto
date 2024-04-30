@@ -294,6 +294,8 @@ message ArticleAIChatRequest {
 message ArticleAIChatResponse {
     base.BaseResponse base_resp = 1;
     repeated ChatMessage messages = 2;
+    int64 total = 3;
+    int64 used = 4;
 }
 
 message ChatMessage {
