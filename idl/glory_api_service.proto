@@ -1612,6 +1612,10 @@ service glory_api {
   rpc ArticleAiChat(ArticleAIChatRequest) returns (ArticleAIChatResponse) {
     option (api.post) = '/api/article_creation/ai_chat';
   }
+  // 获取AI聊天配置
+  rpc GetChatConfig(GetChatConfigRequest) returns (GetChatConfigResponse) {
+    option (api.get) = '/api/article_creation/get_ai_chat_config';
+  }
   rpc UpdateModelPrice(UpdateModelPriceRequest) returns (UpdateModelPriceResponse) {
     option (api.post) = '/api/article_creation/update_model_price';
   }
