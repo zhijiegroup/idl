@@ -761,6 +761,35 @@ final $typed_data.Uint8List chatMessageDescriptor = $convert.base64Decode(
     'CgtDaGF0TWVzc2FnZRIYCgdjb250ZW50GAEgASgJUgdjb250ZW50EhIKBHJvbGUYAiABKAlSBH'
     'JvbGU=');
 
+@$core.Deprecated('Use getChatConfigRequestDescriptor instead')
+const GetChatConfigRequest$json = {
+  '1': 'GetChatConfigRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `GetChatConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getChatConfigRequestDescriptor = $convert.base64Decode(
+    'ChRHZXRDaGF0Q29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2'
+    'VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getChatConfigResponseDescriptor instead')
+const GetChatConfigResponse$json = {
+  '1': 'GetChatConfigResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'total', '3': 2, '4': 1, '5': 3, '10': 'total'},
+    {'1': 'used', '3': 3, '4': 1, '5': 3, '10': 'used'},
+  ],
+};
+
+/// Descriptor for `GetChatConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getChatConfigResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRDaGF0Q29uZmlnUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUm'
+    'VzcG9uc2VSCGJhc2VSZXNwEhQKBXRvdGFsGAIgASgDUgV0b3RhbBISCgR1c2VkGAMgASgDUgR1'
+    'c2Vk');
+
 @$core.Deprecated('Use createDigitalVideoRequestDescriptor instead')
 const CreateDigitalVideoRequest$json = {
   '1': 'CreateDigitalVideoRequest',

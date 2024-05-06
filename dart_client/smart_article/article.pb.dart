@@ -3837,6 +3837,138 @@ class ChatMessage extends $pb.GeneratedMessage {
   void clearRole() => clearField(2);
 }
 
+class GetChatConfigRequest extends $pb.GeneratedMessage {
+  factory GetChatConfigRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  GetChatConfigRequest._() : super();
+  factory GetChatConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetChatConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetChatConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetChatConfigRequest clone() => GetChatConfigRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetChatConfigRequest copyWith(void Function(GetChatConfigRequest) updates) => super.copyWith((message) => updates(message as GetChatConfigRequest)) as GetChatConfigRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetChatConfigRequest create() => GetChatConfigRequest._();
+  GetChatConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<GetChatConfigRequest> createRepeated() => $pb.PbList<GetChatConfigRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetChatConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetChatConfigRequest>(create);
+  static GetChatConfigRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class GetChatConfigResponse extends $pb.GeneratedMessage {
+  factory GetChatConfigResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? total,
+    $fixnum.Int64? used,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (total != null) {
+      $result.total = total;
+    }
+    if (used != null) {
+      $result.used = used;
+    }
+    return $result;
+  }
+  GetChatConfigResponse._() : super();
+  factory GetChatConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetChatConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetChatConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'total')
+    ..aInt64(3, _omitFieldNames ? '' : 'used')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetChatConfigResponse clone() => GetChatConfigResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetChatConfigResponse copyWith(void Function(GetChatConfigResponse) updates) => super.copyWith((message) => updates(message as GetChatConfigResponse)) as GetChatConfigResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetChatConfigResponse create() => GetChatConfigResponse._();
+  GetChatConfigResponse createEmptyInstance() => create();
+  static $pb.PbList<GetChatConfigResponse> createRepeated() => $pb.PbList<GetChatConfigResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetChatConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetChatConfigResponse>(create);
+  static GetChatConfigResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get total => $_getI64(1);
+  @$pb.TagNumber(2)
+  set total($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTotal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotal() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get used => $_getI64(2);
+  @$pb.TagNumber(3)
+  set used($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUsed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUsed() => clearField(3);
+}
+
 class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
   factory CreateDigitalVideoRequest({
     $0.BaseRequest? baseRequest,

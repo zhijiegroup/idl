@@ -1876,6 +1876,11 @@ CreateLivePlanProduct create live plan product */
     request: article.ArticleAIChatRequest
   ): Promise<article.ArticleAIChatResponse>;
 
+  /** 获取AI聊天配置 */
+  GetChatConfig(
+    request: article.GetChatConfigRequest
+  ): Promise<article.GetChatConfigResponse>;
+
   UpdateModelPrice(
     request: article.UpdateModelPriceRequest
   ): Promise<article.UpdateModelPriceResponse>;

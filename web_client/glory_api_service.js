@@ -3346,6 +3346,12 @@ export class glory_api {
     );
   }
 
+  GetChatConfig(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_ai_chat_config${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   UpdateModelPrice(request) {
     const uri = `${this.uriPrefix}/api/article_creation/update_model_price`;
     const body = JSONbigint.stringify(request);

@@ -498,6 +498,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ServerContext ctx, $57.StudentArticleCreationEvaluationDetailRequest request);
   $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ServerContext ctx, $57.CorrectSentenceRequest request);
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ServerContext ctx, $57.ArticleAIChatRequest request);
+  $async.Future<$57.GetChatConfigResponse> getChatConfig($pb.ServerContext ctx, $57.GetChatConfigRequest request);
   $async.Future<$57.UpdateModelPriceResponse> updateModelPrice($pb.ServerContext ctx, $57.UpdateModelPriceRequest request);
   $async.Future<$57.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse($pb.ServerContext ctx, $57.UpdateTenantCourseDataRequest request);
   $async.Future<$57.GetArticleCreationTenantResponse> getArticleCreationTenant($pb.ServerContext ctx, $57.GetArticleCreationTenantRequest request);
@@ -934,6 +935,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return $57.StudentArticleCreationEvaluationDetailRequest();
       case 'CorrectSentence': return $57.CorrectSentenceRequest();
       case 'ArticleAiChat': return $57.ArticleAIChatRequest();
+      case 'GetChatConfig': return $57.GetChatConfigRequest();
       case 'UpdateModelPrice': return $57.UpdateModelPriceRequest();
       case 'UpdateArticleCreationTenantCourse': return $57.UpdateTenantCourseDataRequest();
       case 'GetArticleCreationTenant': return $57.GetArticleCreationTenantRequest();
@@ -1373,6 +1375,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'StudentArticleCreationEvaluationDetail': return this.studentArticleCreationEvaluationDetail(ctx, request as $57.StudentArticleCreationEvaluationDetailRequest);
       case 'CorrectSentence': return this.correctSentence(ctx, request as $57.CorrectSentenceRequest);
       case 'ArticleAiChat': return this.articleAiChat(ctx, request as $57.ArticleAIChatRequest);
+      case 'GetChatConfig': return this.getChatConfig(ctx, request as $57.GetChatConfigRequest);
       case 'UpdateModelPrice': return this.updateModelPrice(ctx, request as $57.UpdateModelPriceRequest);
       case 'UpdateArticleCreationTenantCourse': return this.updateArticleCreationTenantCourse(ctx, request as $57.UpdateTenantCourseDataRequest);
       case 'GetArticleCreationTenant': return this.getArticleCreationTenant(ctx, request as $57.GetArticleCreationTenantRequest);

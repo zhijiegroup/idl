@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\271\264\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\274\265\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1406,57 +1406,60 @@ public final class GloryApiService {
       "sentence\022u\n\rArticleAiChat\022\037.glory_api.Ar" +
       "ticleAIChatRequest\032 .glory_api.ArticleAI" +
       "ChatResponse\"!\322\301\030\035/api/article_creation/" +
-      "ai_chat\022\211\001\n\020UpdateModelPrice\022\".glory_api" +
-      ".UpdateModelPriceRequest\032#.glory_api.Upd" +
-      "ateModelPriceResponse\",\322\301\030(/api/article_" +
-      "creation/update_model_price\022\255\001\n!UpdateAr" +
-      "ticleCreationTenantCourse\022(.glory_api.Up" +
-      "dateTenantCourseDataRequest\032).glory_api." +
-      "UpdateTenantCourseDataResponse\"3\322\301\030//api" +
-      "/article_creation/update_tenant_course_i" +
-      "nfo\022\252\001\n\030GetArticleCreationTenant\022*.glory" +
-      "_api.GetArticleCreationTenantRequest\032+.g" +
-      "lory_api.GetArticleCreationTenantRespons" +
-      "e\"5\312\301\0301/api/article_creation/get_article" +
-      "_creation_tenant\022\256\001\n\031ListArticleCreation" +
-      "Tenant\022+.glory_api.ListArticleCreationTe" +
-      "nantRequest\032,.glory_api.ListArticleCreat" +
-      "ionTenantResponse\"6\322\301\0302/api/article_crea" +
-      "tion/list_article_creation_tenant\022\277\001\n\035Li" +
-      "stArticleCreationTenantCost\022/.glory_api." +
-      "ListArticleCreationTenantCostRequest\0320.g" +
-      "lory_api.ListArticleCreationTenantCostRe" +
-      "sponse\";\322\301\0307/api/article_creation/list_a" +
-      "rticle_creation_tenant_cost\022\273\001\n\034GetArtic" +
-      "leCreationTenantCost\022..glory_api.GetArti" +
-      "cleCreationTenantCostRequest\032/.glory_api" +
-      ".GetArticleCreationTenantCostResponse\":\312" +
-      "\301\0306/api/article_creation/get_article_cre" +
-      "ation_tenant_cost\022\227\001\n\023GetSubTopicAiResul" +
-      "t\022%.glory_api.GetSubTopicAiResultRequest" +
-      "\032&.glory_api.GetSubTopicAiResultResponse" +
-      "\"1\322\301\030-/api/article_creation/get_sub_topi" +
-      "c_ai_result\022\200\001\n\022CreateDigitalVideo\022$.glo" +
-      "ry_api.CreateDigitalVideoRequest\032%.glory" +
-      "_api.CreateDigitalVideoResponse\"\035\322\301\030\031/ap" +
-      "i/digital/create_video\022x\n\020ListDigitalVid" +
-      "eo\022\".glory_api.ListDigitalVideoRequest\032#" +
-      ".glory_api.ListDigitalVideoResponse\"\033\322\301\030" +
-      "\027/api/digital/list_video\022t\n\017GetDigitalVi" +
-      "deo\022!.glory_api.GetDigitalVideoRequest\032\"" +
-      ".glory_api.GetDigitalVideoResponse\"\032\322\301\030\026" +
-      "/api/digital/get_video\022|\n\017ListDigitalCod" +
-      "e\022!.glory_api.ListDigitalCodeRequest\032\".g" +
-      "lory_api.ListDigitalCodeResponse\"\"\312\301\030\036/a" +
-      "pi/digital/list_digital_code\022\200\001\n\022DeleteD" +
-      "igitalVideo\022$.glory_api.DeleteDigitalVid" +
-      "eoRequest\032%.glory_api.DeleteDigitalVideo" +
-      "Response\"\035\312\301\030\031/api/digital/delete_video\022" +
-      "|\n\021ListDigitalAvatar\022#.glory_api.ListDig" +
-      "italAvatarRequest\032$.glory_api.ListDigita" +
-      "lAvatarResponse\"\034\322\301\030\030/api/digital/list_a" +
-      "vatarB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006p" +
-      "roto3"
+      "ai_chat\022\200\001\n\rGetChatConfig\022\037.glory_api.Ge" +
+      "tChatConfigRequest\032 .glory_api.GetChatCo" +
+      "nfigResponse\",\312\301\030(/api/article_creation/" +
+      "get_ai_chat_config\022\211\001\n\020UpdateModelPrice\022" +
+      "\".glory_api.UpdateModelPriceRequest\032#.gl" +
+      "ory_api.UpdateModelPriceResponse\",\322\301\030(/a" +
+      "pi/article_creation/update_model_price\022\255" +
+      "\001\n!UpdateArticleCreationTenantCourse\022(.g" +
+      "lory_api.UpdateTenantCourseDataRequest\032)" +
+      ".glory_api.UpdateTenantCourseDataRespons" +
+      "e\"3\322\301\030//api/article_creation/update_tena" +
+      "nt_course_info\022\252\001\n\030GetArticleCreationTen" +
+      "ant\022*.glory_api.GetArticleCreationTenant" +
+      "Request\032+.glory_api.GetArticleCreationTe" +
+      "nantResponse\"5\312\301\0301/api/article_creation/" +
+      "get_article_creation_tenant\022\256\001\n\031ListArti" +
+      "cleCreationTenant\022+.glory_api.ListArticl" +
+      "eCreationTenantRequest\032,.glory_api.ListA" +
+      "rticleCreationTenantResponse\"6\322\301\0302/api/a" +
+      "rticle_creation/list_article_creation_te" +
+      "nant\022\277\001\n\035ListArticleCreationTenantCost\022/" +
+      ".glory_api.ListArticleCreationTenantCost" +
+      "Request\0320.glory_api.ListArticleCreationT" +
+      "enantCostResponse\";\322\301\0307/api/article_crea" +
+      "tion/list_article_creation_tenant_cost\022\273" +
+      "\001\n\034GetArticleCreationTenantCost\022..glory_" +
+      "api.GetArticleCreationTenantCostRequest\032" +
+      "/.glory_api.GetArticleCreationTenantCost" +
+      "Response\":\312\301\0306/api/article_creation/get_" +
+      "article_creation_tenant_cost\022\227\001\n\023GetSubT" +
+      "opicAiResult\022%.glory_api.GetSubTopicAiRe" +
+      "sultRequest\032&.glory_api.GetSubTopicAiRes" +
+      "ultResponse\"1\322\301\030-/api/article_creation/g" +
+      "et_sub_topic_ai_result\022\200\001\n\022CreateDigital" +
+      "Video\022$.glory_api.CreateDigitalVideoRequ" +
+      "est\032%.glory_api.CreateDigitalVideoRespon" +
+      "se\"\035\322\301\030\031/api/digital/create_video\022x\n\020Lis" +
+      "tDigitalVideo\022\".glory_api.ListDigitalVid" +
+      "eoRequest\032#.glory_api.ListDigitalVideoRe" +
+      "sponse\"\033\322\301\030\027/api/digital/list_video\022t\n\017G" +
+      "etDigitalVideo\022!.glory_api.GetDigitalVid" +
+      "eoRequest\032\".glory_api.GetDigitalVideoRes" +
+      "ponse\"\032\322\301\030\026/api/digital/get_video\022|\n\017Lis" +
+      "tDigitalCode\022!.glory_api.ListDigitalCode" +
+      "Request\032\".glory_api.ListDigitalCodeRespo" +
+      "nse\"\"\312\301\030\036/api/digital/list_digital_code\022" +
+      "\200\001\n\022DeleteDigitalVideo\022$.glory_api.Delet" +
+      "eDigitalVideoRequest\032%.glory_api.DeleteD" +
+      "igitalVideoResponse\"\035\312\301\030\031/api/digital/de" +
+      "lete_video\022|\n\021ListDigitalAvatar\022#.glory_" +
+      "api.ListDigitalAvatarRequest\032$.glory_api" +
+      ".ListDigitalAvatarResponse\"\034\322\301\030\030/api/dig" +
+      "ital/list_avatarB\036\n\032com.zhijiejiaoyu.glo" +
+      "ry_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

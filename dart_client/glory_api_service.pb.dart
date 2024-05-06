@@ -1337,6 +1337,9 @@ class glory_apiApi {
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ClientContext? ctx, $57.ArticleAIChatRequest request) =>
     _client.invoke<$57.ArticleAIChatResponse>(ctx, 'glory_api', 'ArticleAiChat', request, $57.ArticleAIChatResponse())
   ;
+  $async.Future<$57.GetChatConfigResponse> getChatConfig($pb.ClientContext? ctx, $57.GetChatConfigRequest request) =>
+    _client.invoke<$57.GetChatConfigResponse>(ctx, 'glory_api', 'GetChatConfig', request, $57.GetChatConfigResponse())
+  ;
   $async.Future<$57.UpdateModelPriceResponse> updateModelPrice($pb.ClientContext? ctx, $57.UpdateModelPriceRequest request) =>
     _client.invoke<$57.UpdateModelPriceResponse>(ctx, 'glory_api', 'UpdateModelPrice', request, $57.UpdateModelPriceResponse())
   ;

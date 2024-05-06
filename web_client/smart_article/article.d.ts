@@ -316,6 +316,16 @@ export interface ChatMessage {
   role?: string;
 }
 
+export interface GetChatConfigRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface GetChatConfigResponse {
+  base_resp?: base.BaseResponse;
+  total?: string;
+  used?: string;
+}
+
 export interface CreateDigitalVideoRequest {
   base_request?: base.BaseRequest;
   text?: string;
