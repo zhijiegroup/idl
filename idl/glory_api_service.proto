@@ -1494,6 +1494,9 @@ service glory_api {
   rpc CountPassList(CountTeacherTaskRequest) returns (CountPassListResponse) {
     option (api.post) = '/api/task/count_pass_list';
   }
+  rpc CountHistoryTask(CountHistoryTaskRequest) returns (CountHistoryTaskResponse) {
+    option (api.post) = '/api/task/count_history_task';
+  }
   // 学生任务
   rpc ListStudentTask(ListStudentTaskRequest) returns (ListStudentTaskResponse) {
     option (api.post) = '/api/task/list_student_task';

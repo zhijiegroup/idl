@@ -300,3 +300,11 @@ message DownloadTeacherTaskRequest {
 message DownloadTeacherTaskResponse {
   base.BaseResponse base_resp = 1;
 }
+
+message CountHistoryTaskRequest {
+  base.BaseRequest base_request = 1;
+}
+
+message CountHistoryTaskResponse {
+  base.BaseResponse base_resp = 1;
+}
