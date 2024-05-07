@@ -1658,4 +1658,12 @@ service glory_api {
   rpc ListDigitalAvatar(ListDigitalAvatarRequest) returns (ListDigitalAvatarResponse) {
     option (api.post) = "/api/digital/list_avatar";
   }
+  // 上传数字人直播背景图
+  rpc UploadBackgroundImage(UploadBackgroundImageRequest) returns (UploadBackgroundImageResponse) {
+    option (api.post) = "/api/digital/upload_background_image";
+  }
+  // 获取所有直播背景图
+  rpc ListBackgroundImage(ListBackgroundImageRequest) returns (ListBackgroundImageResponse) {
+    option (api.post) = "/api/digital/list_background_image";
+  }
 }
