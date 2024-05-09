@@ -407,6 +407,29 @@ message ListDigitalAvatarResponse {
     base.PaginationResponse pagination = 100;
 }
 
+message UploadBackgroundImageRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message UploadBackgroundImageResponse {
+    base.BaseResponse base_resp = 1;
+    string url = 2;
+}
+
+message ListBackgroundImageRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message OssImage {
+    string path = 1;
+    string url = 2;
+}
+
+message ListBackgroundImageResponse {
+    base.BaseResponse base_resp = 1;
+    repeated OssImage images = 2;
+}
+
 message UpdateTenantCourseDataRequest {
     base.BaseRequest base_request = 1;
     int32 student_count = 2;
