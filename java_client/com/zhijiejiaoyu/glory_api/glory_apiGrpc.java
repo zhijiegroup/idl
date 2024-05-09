@@ -11919,6 +11919,37 @@ public final class glory_apiGrpc {
     return getCountPassListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> getCountHistoryTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CountHistoryTask",
+      requestType = com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest,
+      com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> getCountHistoryTaskMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest, com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> getCountHistoryTaskMethod;
+    if ((getCountHistoryTaskMethod = glory_apiGrpc.getCountHistoryTaskMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCountHistoryTaskMethod = glory_apiGrpc.getCountHistoryTaskMethod) == null) {
+          glory_apiGrpc.getCountHistoryTaskMethod = getCountHistoryTaskMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest, com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CountHistoryTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CountHistoryTask"))
+              .build();
+        }
+      }
+    }
+    return getCountHistoryTaskMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest,
       com.zhijiejiaoyu.glory_api.task.ListStudentTaskResponse> getListStudentTaskMethod;
 
@@ -13467,6 +13498,68 @@ public final class glory_apiGrpc {
       }
     }
     return getListDigitalAvatarMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadBackgroundImage",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
+      com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod;
+    if ((getUploadBackgroundImageMethod = glory_apiGrpc.getUploadBackgroundImageMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getUploadBackgroundImageMethod = glory_apiGrpc.getUploadBackgroundImageMethod) == null) {
+          glory_apiGrpc.getUploadBackgroundImageMethod = getUploadBackgroundImageMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadBackgroundImage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UploadBackgroundImage"))
+              .build();
+        }
+      }
+    }
+    return getUploadBackgroundImageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackgroundImage",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
+      com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod;
+    if ((getListBackgroundImageMethod = glory_apiGrpc.getListBackgroundImageMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getListBackgroundImageMethod = glory_apiGrpc.getListBackgroundImageMethod) == null) {
+          glory_apiGrpc.getListBackgroundImageMethod = getListBackgroundImageMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackgroundImage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListBackgroundImage"))
+              .build();
+        }
+      }
+    }
+    return getListBackgroundImageMethod;
   }
 
   /**
@@ -16575,6 +16668,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    default void countHistoryTask(com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCountHistoryTaskMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * 学生任务
      * </pre>
@@ -16962,6 +17062,26 @@ public final class glory_apiGrpc {
     default void listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalAvatarMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 上传数字人直播背景图
+     * </pre>
+     */
+    default void uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadBackgroundImageMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取所有直播背景图
+     * </pre>
+     */
+    default void listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBackgroundImageMethod(), responseObserver);
     }
   }
 
@@ -20434,6 +20554,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void countHistoryTask(com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCountHistoryTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 学生任务
      * </pre>
@@ -20871,6 +20999,28 @@ public final class glory_apiGrpc {
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 上传数字人直播背景图
+     * </pre>
+     */
+    public void uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadBackgroundImageMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取所有直播背景图
+     * </pre>
+     */
+    public void listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackgroundImageMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -23948,6 +24098,13 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse countHistoryTask(com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCountHistoryTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * 学生任务
      * </pre>
@@ -24335,6 +24492,26 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDigitalAvatarMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 上传数字人直播背景图
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadBackgroundImageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取所有直播背景图
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackgroundImageMethod(), getCallOptions(), request);
     }
   }
 
@@ -27796,6 +27973,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse> countHistoryTask(
+        com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCountHistoryTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 学生任务
      * </pre>
@@ -28234,6 +28419,28 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 上传数字人直播背景图
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> uploadBackgroundImage(
+        com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadBackgroundImageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * 获取所有直播背景图
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> listBackgroundImage(
+        com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackgroundImageMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -28620,56 +28827,59 @@ public final class glory_apiGrpc {
   private static final int METHODID_COUNT_SUPER_STUDENT_LIST = 381;
   private static final int METHODID_COUNT_LAGGING_STUDENT_LIST = 382;
   private static final int METHODID_COUNT_PASS_LIST = 383;
-  private static final int METHODID_LIST_STUDENT_TASK = 384;
-  private static final int METHODID_SUBMIT_STUDENT_TASK = 385;
-  private static final int METHODID_GET_STUDENT_TASK = 386;
-  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 387;
-  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 388;
-  private static final int METHODID_STUDENT_TASK_STATS = 389;
-  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 390;
-  private static final int METHODID_START_STUDENT_TASK_TIME = 391;
-  private static final int METHODID_DOWNLOAD_TEACHER_TASK = 392;
-  private static final int METHODID_LIST_NOTIFICATION = 393;
-  private static final int METHODID_COUNT_NOTIFICATION = 394;
-  private static final int METHODID_READ_NOTIFICATION = 395;
-  private static final int METHODID_TEST_NOTIFICATION = 396;
-  private static final int METHODID_DELETE_NOTIFICATION = 397;
-  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 398;
-  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 399;
-  private static final int METHODID_GET_LIVE_BOARD_DATA = 400;
-  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 401;
-  private static final int METHODID_LIST_BOARD_LIVING_USER = 402;
-  private static final int METHODID_CLOSE_CASTER = 403;
-  private static final int METHODID_CREATE_ARTICLE_CREATION = 404;
-  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 405;
-  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 406;
-  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 407;
-  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 408;
-  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 409;
-  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 410;
-  private static final int METHODID_GET_EXAMPLE_ARTICLE = 411;
-  private static final int METHODID_GET_EVALUATION_STANDARD = 412;
-  private static final int METHODID_CREATE_EVALUATION_CONFIG = 413;
-  private static final int METHODID_LIST_EVALUATION_CONFIG = 414;
-  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 415;
-  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 416;
-  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 417;
-  private static final int METHODID_CORRECT_SENTENCE = 418;
-  private static final int METHODID_ARTICLE_AI_CHAT = 419;
-  private static final int METHODID_GET_CHAT_CONFIG = 420;
-  private static final int METHODID_UPDATE_MODEL_PRICE = 421;
-  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 422;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 423;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 424;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 425;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 426;
-  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 427;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 428;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 429;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 430;
-  private static final int METHODID_LIST_DIGITAL_CODE = 431;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 432;
-  private static final int METHODID_LIST_DIGITAL_AVATAR = 433;
+  private static final int METHODID_COUNT_HISTORY_TASK = 384;
+  private static final int METHODID_LIST_STUDENT_TASK = 385;
+  private static final int METHODID_SUBMIT_STUDENT_TASK = 386;
+  private static final int METHODID_GET_STUDENT_TASK = 387;
+  private static final int METHODID_TEACHER_LIST_STUDENT_TASK = 388;
+  private static final int METHODID_TEACHER_EVALUATE_STUDENT_TASK = 389;
+  private static final int METHODID_STUDENT_TASK_STATS = 390;
+  private static final int METHODID_STUDENT_TASK_EVALUATE_STATS = 391;
+  private static final int METHODID_START_STUDENT_TASK_TIME = 392;
+  private static final int METHODID_DOWNLOAD_TEACHER_TASK = 393;
+  private static final int METHODID_LIST_NOTIFICATION = 394;
+  private static final int METHODID_COUNT_NOTIFICATION = 395;
+  private static final int METHODID_READ_NOTIFICATION = 396;
+  private static final int METHODID_TEST_NOTIFICATION = 397;
+  private static final int METHODID_DELETE_NOTIFICATION = 398;
+  private static final int METHODID_LIST_USER_MAJOR_AND_CLASS = 399;
+  private static final int METHODID_GET_AGGREGATION_LIVE_URL = 400;
+  private static final int METHODID_GET_LIVE_BOARD_DATA = 401;
+  private static final int METHODID_GET_LIVE_BOARD_COMMENTS = 402;
+  private static final int METHODID_LIST_BOARD_LIVING_USER = 403;
+  private static final int METHODID_CLOSE_CASTER = 404;
+  private static final int METHODID_CREATE_ARTICLE_CREATION = 405;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 406;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 407;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 408;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 409;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 410;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 411;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 412;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 413;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 414;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 415;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 416;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 417;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 418;
+  private static final int METHODID_CORRECT_SENTENCE = 419;
+  private static final int METHODID_ARTICLE_AI_CHAT = 420;
+  private static final int METHODID_GET_CHAT_CONFIG = 421;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 422;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 423;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 424;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 425;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 426;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 427;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 428;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 429;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 430;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 431;
+  private static final int METHODID_LIST_DIGITAL_CODE = 432;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 433;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 434;
+  private static final int METHODID_UPLOAD_BACKGROUND_IMAGE = 435;
+  private static final int METHODID_LIST_BACKGROUND_IMAGE = 436;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30224,6 +30434,10 @@ public final class glory_apiGrpc {
           serviceImpl.countPassList((com.zhijiejiaoyu.glory_api.task.CountTeacherTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CountPassListResponse>) responseObserver);
           break;
+        case METHODID_COUNT_HISTORY_TASK:
+          serviceImpl.countHistoryTask((com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse>) responseObserver);
+          break;
         case METHODID_LIST_STUDENT_TASK:
           serviceImpl.listStudentTask((com.zhijiejiaoyu.glory_api.task.ListStudentTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.task.ListStudentTaskResponse>) responseObserver);
@@ -30423,6 +30637,14 @@ public final class glory_apiGrpc {
         case METHODID_LIST_DIGITAL_AVATAR:
           serviceImpl.listDigitalAvatar((com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>) responseObserver);
+          break;
+        case METHODID_UPLOAD_BACKGROUND_IMAGE:
+          serviceImpl.uploadBackgroundImage((com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>) responseObserver);
+          break;
+        case METHODID_LIST_BACKGROUND_IMAGE:
+          serviceImpl.listBackgroundImage((com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -33131,6 +33353,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.task.CountPassListResponse>(
                 service, METHODID_COUNT_PASS_LIST)))
         .addMethod(
+          getCountHistoryTaskMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.task.CountHistoryTaskRequest,
+              com.zhijiejiaoyu.glory_api.task.CountHistoryTaskResponse>(
+                service, METHODID_COUNT_HISTORY_TASK)))
+        .addMethod(
           getListStudentTaskMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -33480,6 +33709,20 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest,
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>(
                 service, METHODID_LIST_DIGITAL_AVATAR)))
+        .addMethod(
+          getUploadBackgroundImageMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
+              com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>(
+                service, METHODID_UPLOAD_BACKGROUND_IMAGE)))
+        .addMethod(
+          getListBackgroundImageMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
+              com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>(
+                service, METHODID_LIST_BACKGROUND_IMAGE)))
         .build();
   }
 
@@ -33912,6 +34155,7 @@ public final class glory_apiGrpc {
               .addMethod(getCountSuperStudentListMethod())
               .addMethod(getCountLaggingStudentListMethod())
               .addMethod(getCountPassListMethod())
+              .addMethod(getCountHistoryTaskMethod())
               .addMethod(getListStudentTaskMethod())
               .addMethod(getSubmitStudentTaskMethod())
               .addMethod(getGetStudentTaskMethod())
@@ -33962,6 +34206,8 @@ public final class glory_apiGrpc {
               .addMethod(getListDigitalCodeMethod())
               .addMethod(getDeleteDigitalVideoMethod())
               .addMethod(getListDigitalAvatarMethod())
+              .addMethod(getUploadBackgroundImageMethod())
+              .addMethod(getListBackgroundImageMethod())
               .build();
         }
       }

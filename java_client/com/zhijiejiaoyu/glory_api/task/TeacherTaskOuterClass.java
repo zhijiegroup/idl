@@ -214,6 +214,16 @@ public final class TeacherTaskOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_DownloadTeacherTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CountHistoryTaskRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CountHistoryTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_CountHistoryTaskResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_CountHistoryTaskResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -382,8 +392,11 @@ public final class TeacherTaskOuterClass {
       "se_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017t" +
       "eacher_task_id\030\002 \001(\003\"D\n\033DownloadTeacherT" +
       "askResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponseB#\n\037com.zhijiejiaoyu.glory_api" +
-      ".taskP\001b\006proto3"
+      "seResponse\"B\n\027CountHistoryTaskRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\"A" +
+      "\n\030CountHistoryTaskResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponseB#\n\037com.zhijiej" +
+      "iaoyu.glory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -632,6 +645,18 @@ public final class TeacherTaskOuterClass {
     internal_static_glory_api_DownloadTeacherTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DownloadTeacherTaskResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_CountHistoryTaskRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_glory_api_CountHistoryTaskRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CountHistoryTaskRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", });
+    internal_static_glory_api_CountHistoryTaskResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_glory_api_CountHistoryTaskResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_CountHistoryTaskResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.api.Api.getDescriptor();
     com.zhijiejiaoyu.base.Base.getDescriptor();

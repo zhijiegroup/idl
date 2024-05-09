@@ -5205,6 +5205,300 @@ class ListDigitalAvatarResponse extends $pb.GeneratedMessage {
   $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+class UploadBackgroundImageRequest extends $pb.GeneratedMessage {
+  factory UploadBackgroundImageRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  UploadBackgroundImageRequest._() : super();
+  factory UploadBackgroundImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadBackgroundImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadBackgroundImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadBackgroundImageRequest clone() => UploadBackgroundImageRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadBackgroundImageRequest copyWith(void Function(UploadBackgroundImageRequest) updates) => super.copyWith((message) => updates(message as UploadBackgroundImageRequest)) as UploadBackgroundImageRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadBackgroundImageRequest create() => UploadBackgroundImageRequest._();
+  UploadBackgroundImageRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadBackgroundImageRequest> createRepeated() => $pb.PbList<UploadBackgroundImageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadBackgroundImageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadBackgroundImageRequest>(create);
+  static UploadBackgroundImageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class UploadBackgroundImageResponse extends $pb.GeneratedMessage {
+  factory UploadBackgroundImageResponse({
+    $0.BaseResponse? baseResp,
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
+  UploadBackgroundImageResponse._() : super();
+  factory UploadBackgroundImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadBackgroundImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadBackgroundImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOS(2, _omitFieldNames ? '' : 'url')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadBackgroundImageResponse clone() => UploadBackgroundImageResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadBackgroundImageResponse copyWith(void Function(UploadBackgroundImageResponse) updates) => super.copyWith((message) => updates(message as UploadBackgroundImageResponse)) as UploadBackgroundImageResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UploadBackgroundImageResponse create() => UploadBackgroundImageResponse._();
+  UploadBackgroundImageResponse createEmptyInstance() => create();
+  static $pb.PbList<UploadBackgroundImageResponse> createRepeated() => $pb.PbList<UploadBackgroundImageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UploadBackgroundImageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadBackgroundImageResponse>(create);
+  static UploadBackgroundImageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get url => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set url($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUrl() => clearField(2);
+}
+
+class ListBackgroundImageRequest extends $pb.GeneratedMessage {
+  factory ListBackgroundImageRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  ListBackgroundImageRequest._() : super();
+  factory ListBackgroundImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListBackgroundImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBackgroundImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListBackgroundImageRequest clone() => ListBackgroundImageRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListBackgroundImageRequest copyWith(void Function(ListBackgroundImageRequest) updates) => super.copyWith((message) => updates(message as ListBackgroundImageRequest)) as ListBackgroundImageRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBackgroundImageRequest create() => ListBackgroundImageRequest._();
+  ListBackgroundImageRequest createEmptyInstance() => create();
+  static $pb.PbList<ListBackgroundImageRequest> createRepeated() => $pb.PbList<ListBackgroundImageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListBackgroundImageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBackgroundImageRequest>(create);
+  static ListBackgroundImageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class OssImage extends $pb.GeneratedMessage {
+  factory OssImage({
+    $core.String? path,
+    $core.String? url,
+  }) {
+    final $result = create();
+    if (path != null) {
+      $result.path = path;
+    }
+    if (url != null) {
+      $result.url = url;
+    }
+    return $result;
+  }
+  OssImage._() : super();
+  factory OssImage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory OssImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OssImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'path')
+    ..aOS(2, _omitFieldNames ? '' : 'url')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  OssImage clone() => OssImage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  OssImage copyWith(void Function(OssImage) updates) => super.copyWith((message) => updates(message as OssImage)) as OssImage;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OssImage create() => OssImage._();
+  OssImage createEmptyInstance() => create();
+  static $pb.PbList<OssImage> createRepeated() => $pb.PbList<OssImage>();
+  @$core.pragma('dart2js:noInline')
+  static OssImage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OssImage>(create);
+  static OssImage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get path => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set path($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPath() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get url => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set url($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUrl() => clearField(2);
+}
+
+class ListBackgroundImageResponse extends $pb.GeneratedMessage {
+  factory ListBackgroundImageResponse({
+    $0.BaseResponse? baseResp,
+    $core.Iterable<OssImage>? images,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (images != null) {
+      $result.images.addAll(images);
+    }
+    return $result;
+  }
+  ListBackgroundImageResponse._() : super();
+  factory ListBackgroundImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListBackgroundImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBackgroundImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..pc<OssImage>(2, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: OssImage.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListBackgroundImageResponse clone() => ListBackgroundImageResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListBackgroundImageResponse copyWith(void Function(ListBackgroundImageResponse) updates) => super.copyWith((message) => updates(message as ListBackgroundImageResponse)) as ListBackgroundImageResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListBackgroundImageResponse create() => ListBackgroundImageResponse._();
+  ListBackgroundImageResponse createEmptyInstance() => create();
+  static $pb.PbList<ListBackgroundImageResponse> createRepeated() => $pb.PbList<ListBackgroundImageResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListBackgroundImageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBackgroundImageResponse>(create);
+  static ListBackgroundImageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<OssImage> get images => $_getList(1);
+}
+
 class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
   factory UpdateTenantCourseDataRequest({
     $0.BaseRequest? baseRequest,

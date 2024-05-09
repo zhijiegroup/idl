@@ -1725,6 +1725,10 @@ CreateLivePlanProduct create live plan product */
     request: teacher_task.CountTeacherTaskRequest
   ): Promise<teacher_task.CountPassListResponse>;
 
+  CountHistoryTask(
+    request: teacher_task.CountHistoryTaskRequest
+  ): Promise<teacher_task.CountHistoryTaskResponse>;
+
   /** 学生任务 */
   ListStudentTask(
     request: student_task.ListStudentTaskRequest
@@ -1938,6 +1942,16 @@ CreateLivePlanProduct create live plan product */
   ListDigitalAvatar(
     request: article.ListDigitalAvatarRequest
   ): Promise<article.ListDigitalAvatarResponse>;
+
+  /** 上传数字人直播背景图 */
+  UploadBackgroundImage(
+    request: article.UploadBackgroundImageRequest
+  ): Promise<article.UploadBackgroundImageResponse>;
+
+  /** 获取所有直播背景图 */
+  ListBackgroundImage(
+    request: article.ListBackgroundImageRequest
+  ): Promise<article.ListBackgroundImageResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

@@ -3804,6 +3804,110 @@ class DownloadTeacherTaskResponse extends $pb.GeneratedMessage {
   $2.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class CountHistoryTaskRequest extends $pb.GeneratedMessage {
+  factory CountHistoryTaskRequest({
+    $2.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  CountHistoryTaskRequest._() : super();
+  factory CountHistoryTaskRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CountHistoryTaskRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountHistoryTaskRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $2.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CountHistoryTaskRequest clone() => CountHistoryTaskRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CountHistoryTaskRequest copyWith(void Function(CountHistoryTaskRequest) updates) => super.copyWith((message) => updates(message as CountHistoryTaskRequest)) as CountHistoryTaskRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CountHistoryTaskRequest create() => CountHistoryTaskRequest._();
+  CountHistoryTaskRequest createEmptyInstance() => create();
+  static $pb.PbList<CountHistoryTaskRequest> createRepeated() => $pb.PbList<CountHistoryTaskRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CountHistoryTaskRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CountHistoryTaskRequest>(create);
+  static CountHistoryTaskRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($2.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class CountHistoryTaskResponse extends $pb.GeneratedMessage {
+  factory CountHistoryTaskResponse({
+    $2.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  CountHistoryTaskResponse._() : super();
+  factory CountHistoryTaskResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CountHistoryTaskResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CountHistoryTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CountHistoryTaskResponse clone() => CountHistoryTaskResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CountHistoryTaskResponse copyWith(void Function(CountHistoryTaskResponse) updates) => super.copyWith((message) => updates(message as CountHistoryTaskResponse)) as CountHistoryTaskResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CountHistoryTaskResponse create() => CountHistoryTaskResponse._();
+  CountHistoryTaskResponse createEmptyInstance() => create();
+  static $pb.PbList<CountHistoryTaskResponse> createRepeated() => $pb.PbList<CountHistoryTaskResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CountHistoryTaskResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CountHistoryTaskResponse>(create);
+  static CountHistoryTaskResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($2.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $2.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

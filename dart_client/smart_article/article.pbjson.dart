@@ -1035,6 +1035,74 @@ final $typed_data.Uint8List listDigitalAvatarResponseDescriptor = $convert.base6
     'YWxBdmF0YXJSB2F2YXRhcnMSOAoKcGFnaW5hdGlvbhhkIAEoCzIYLmJhc2UuUGFnaW5hdGlvbl'
     'Jlc3BvbnNlUgpwYWdpbmF0aW9u');
 
+@$core.Deprecated('Use uploadBackgroundImageRequestDescriptor instead')
+const UploadBackgroundImageRequest$json = {
+  '1': 'UploadBackgroundImageRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `UploadBackgroundImageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadBackgroundImageRequestDescriptor = $convert.base64Decode(
+    'ChxVcGxvYWRCYWNrZ3JvdW5kSW1hZ2VSZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
+    'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0');
+
+@$core.Deprecated('Use uploadBackgroundImageResponseDescriptor instead')
+const UploadBackgroundImageResponse$json = {
+  '1': 'UploadBackgroundImageResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `UploadBackgroundImageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List uploadBackgroundImageResponseDescriptor = $convert.base64Decode(
+    'Ch1VcGxvYWRCYWNrZ3JvdW5kSW1hZ2VSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASEAoDdXJsGAIgASgJUgN1cmw=');
+
+@$core.Deprecated('Use listBackgroundImageRequestDescriptor instead')
+const ListBackgroundImageRequest$json = {
+  '1': 'ListBackgroundImageRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `ListBackgroundImageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBackgroundImageRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0QmFja2dyb3VuZEltYWdlUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYX'
+    'NlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use ossImageDescriptor instead')
+const OssImage$json = {
+  '1': 'OssImage',
+  '2': [
+    {'1': 'path', '3': 1, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'url', '3': 2, '4': 1, '5': 9, '10': 'url'},
+  ],
+};
+
+/// Descriptor for `OssImage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ossImageDescriptor = $convert.base64Decode(
+    'CghPc3NJbWFnZRISCgRwYXRoGAEgASgJUgRwYXRoEhAKA3VybBgCIAEoCVIDdXJs');
+
+@$core.Deprecated('Use listBackgroundImageResponseDescriptor instead')
+const ListBackgroundImageResponse$json = {
+  '1': 'ListBackgroundImageResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'images', '3': 2, '4': 3, '5': 11, '6': '.glory_api.OssImage', '10': 'images'},
+  ],
+};
+
+/// Descriptor for `ListBackgroundImageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listBackgroundImageResponseDescriptor = $convert.base64Decode(
+    'ChtMaXN0QmFja2dyb3VuZEltYWdlUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
+    '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEisKBmltYWdlcxgCIAMoCzITLmdsb3J5X2FwaS5Pc3NJ'
+    'bWFnZVIGaW1hZ2Vz');
+
 @$core.Deprecated('Use updateTenantCourseDataRequestDescriptor instead')
 const UpdateTenantCourseDataRequest$json = {
   '1': 'UpdateTenantCourseDataRequest',

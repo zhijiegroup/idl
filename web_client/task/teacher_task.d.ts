@@ -339,3 +339,11 @@ export interface DownloadTeacherTaskRequest {
 export interface DownloadTeacherTaskResponse {
   base_resp?: base.BaseResponse;
 }
+
+export interface CountHistoryTaskRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface CountHistoryTaskResponse {
+  base_resp?: base.BaseResponse;
+}

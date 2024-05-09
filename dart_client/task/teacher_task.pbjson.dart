@@ -759,3 +759,29 @@ final $typed_data.Uint8List downloadTeacherTaskResponseDescriptor = $convert.bas
     'ChtEb3dubG9hZFRlYWNoZXJUYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS'
     '5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use countHistoryTaskRequestDescriptor instead')
+const CountHistoryTaskRequest$json = {
+  '1': 'CountHistoryTaskRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `CountHistoryTaskRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countHistoryTaskRequestDescriptor = $convert.base64Decode(
+    'ChdDb3VudEhpc3RvcnlUYXNrUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use countHistoryTaskResponseDescriptor instead')
+const CountHistoryTaskResponse$json = {
+  '1': 'CountHistoryTaskResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CountHistoryTaskResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List countHistoryTaskResponseDescriptor = $convert.base64Decode(
+    'ChhDb3VudEhpc3RvcnlUYXNrUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
+

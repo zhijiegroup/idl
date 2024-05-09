@@ -420,6 +420,29 @@ export interface ListDigitalAvatarResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface UploadBackgroundImageRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface UploadBackgroundImageResponse {
+  base_resp?: base.BaseResponse;
+  url?: string;
+}
+
+export interface ListBackgroundImageRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface OssImage {
+  path?: string;
+  url?: string;
+}
+
+export interface ListBackgroundImageResponse {
+  base_resp?: base.BaseResponse;
+  images?: Array<OssImage>;
+}
+
 export interface UpdateTenantCourseDataRequest {
   base_request?: base.BaseRequest;
   student_count?: number;

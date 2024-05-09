@@ -1229,6 +1229,9 @@ class glory_apiApi {
   $async.Future<$53.CountPassListResponse> countPassList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
     _client.invoke<$53.CountPassListResponse>(ctx, 'glory_api', 'CountPassList', request, $53.CountPassListResponse())
   ;
+  $async.Future<$53.CountHistoryTaskResponse> countHistoryTask($pb.ClientContext? ctx, $53.CountHistoryTaskRequest request) =>
+    _client.invoke<$53.CountHistoryTaskResponse>(ctx, 'glory_api', 'CountHistoryTask', request, $53.CountHistoryTaskResponse())
+  ;
   $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ClientContext? ctx, $54.ListStudentTaskRequest request) =>
     _client.invoke<$54.ListStudentTaskResponse>(ctx, 'glory_api', 'ListStudentTask', request, $54.ListStudentTaskResponse())
   ;
@@ -1378,6 +1381,12 @@ class glory_apiApi {
   ;
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ClientContext? ctx, $57.ListDigitalAvatarRequest request) =>
     _client.invoke<$57.ListDigitalAvatarResponse>(ctx, 'glory_api', 'ListDigitalAvatar', request, $57.ListDigitalAvatarResponse())
+  ;
+  $async.Future<$57.UploadBackgroundImageResponse> uploadBackgroundImage($pb.ClientContext? ctx, $57.UploadBackgroundImageRequest request) =>
+    _client.invoke<$57.UploadBackgroundImageResponse>(ctx, 'glory_api', 'UploadBackgroundImage', request, $57.UploadBackgroundImageResponse())
+  ;
+  $async.Future<$57.ListBackgroundImageResponse> listBackgroundImage($pb.ClientContext? ctx, $57.ListBackgroundImageRequest request) =>
+    _client.invoke<$57.ListBackgroundImageResponse>(ctx, 'glory_api', 'ListBackgroundImage', request, $57.ListBackgroundImageResponse())
   ;
 }
 

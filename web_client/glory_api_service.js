@@ -3082,6 +3082,14 @@ export class glory_api {
     );
   }
 
+  CountHistoryTask(request) {
+    const uri = `${this.uriPrefix}/api/task/count_history_task`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListStudentTask(request) {
     const uri = `${this.uriPrefix}/api/task/list_student_task`;
     const body = JSONbigint.stringify(request);
@@ -3442,6 +3450,22 @@ export class glory_api {
 
   ListDigitalAvatar(request) {
     const uri = `${this.uriPrefix}/api/digital/list_avatar`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  UploadBackgroundImage(request) {
+    const uri = `${this.uriPrefix}/api/digital/upload_background_image`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListBackgroundImage(request) {
+    const uri = `${this.uriPrefix}/api/digital/list_background_image`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
