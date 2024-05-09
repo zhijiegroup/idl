@@ -13035,6 +13035,37 @@ public final class glory_apiGrpc {
     return getArticleAiChatMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> getGetChatConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChatConfig",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> getGetChatConfigMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest, com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> getGetChatConfigMethod;
+    if ((getGetChatConfigMethod = glory_apiGrpc.getGetChatConfigMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetChatConfigMethod = glory_apiGrpc.getGetChatConfigMethod) == null) {
+          glory_apiGrpc.getGetChatConfigMethod = getGetChatConfigMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest, com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetChatConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetChatConfig"))
+              .build();
+        }
+      }
+    }
+    return getGetChatConfigMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest,
       com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> getUpdateModelPriceMethod;
 
@@ -16812,6 +16843,16 @@ public final class glory_apiGrpc {
     default void articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getArticleAiChatMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 获取AI聊天配置
+     * </pre>
+     */
+    default void getChatConfig(com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetChatConfigMethod(), responseObserver);
     }
 
     /**
@@ -20700,6 +20741,17 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 获取AI聊天配置
+     * </pre>
+     */
+    public void getChatConfig(com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChatConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void updateModelPrice(com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> responseObserver) {
@@ -24164,6 +24216,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse articleAiChat(com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getArticleAiChatMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 获取AI聊天配置
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse getChatConfig(com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChatConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -28041,6 +28103,17 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 获取AI聊天配置
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse> getChatConfig(
+        com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChatConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceResponse> updateModelPrice(
         com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest request) {
@@ -28583,19 +28656,20 @@ public final class glory_apiGrpc {
   private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 417;
   private static final int METHODID_CORRECT_SENTENCE = 418;
   private static final int METHODID_ARTICLE_AI_CHAT = 419;
-  private static final int METHODID_UPDATE_MODEL_PRICE = 420;
-  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 421;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 422;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 423;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 424;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 425;
-  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 426;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 427;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 428;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 429;
-  private static final int METHODID_LIST_DIGITAL_CODE = 430;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 431;
-  private static final int METHODID_LIST_DIGITAL_AVATAR = 432;
+  private static final int METHODID_GET_CHAT_CONFIG = 420;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 421;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 422;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 423;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 424;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 425;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 426;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 427;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 428;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 429;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 430;
+  private static final int METHODID_LIST_DIGITAL_CODE = 431;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 432;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 433;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30293,6 +30367,10 @@ public final class glory_apiGrpc {
         case METHODID_ARTICLE_AI_CHAT:
           serviceImpl.articleAiChat((com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>) responseObserver);
+          break;
+        case METHODID_GET_CHAT_CONFIG:
+          serviceImpl.getChatConfig((com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse>) responseObserver);
           break;
         case METHODID_UPDATE_MODEL_PRICE:
           serviceImpl.updateModelPrice((com.zhijiejiaoyu.glory_api.short_video.UpdateModelPriceRequest) request,
@@ -33305,6 +33383,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ArticleAIChatResponse>(
                 service, METHODID_ARTICLE_AI_CHAT)))
         .addMethod(
+          getGetChatConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetChatConfigRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetChatConfigResponse>(
+                service, METHODID_GET_CHAT_CONFIG)))
+        .addMethod(
           getUpdateModelPriceMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -33863,6 +33948,7 @@ public final class glory_apiGrpc {
               .addMethod(getStudentArticleCreationEvaluationDetailMethod())
               .addMethod(getCorrectSentenceMethod())
               .addMethod(getArticleAiChatMethod())
+              .addMethod(getGetChatConfigMethod())
               .addMethod(getUpdateModelPriceMethod())
               .addMethod(getUpdateArticleCreationTenantCourseMethod())
               .addMethod(getGetArticleCreationTenantMethod())
