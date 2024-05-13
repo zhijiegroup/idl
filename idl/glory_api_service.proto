@@ -1611,6 +1611,14 @@ service glory_api {
   rpc CorrectSentence(CorrectSentenceRequest) returns (CorrectSentenceResponse) {
     option (api.post) = '/api/article_creation/correct_sentence';
   }
+  // 生成AI评价
+  rpc GenArticleAiEvaluation(GenArticleAIEvaluationRequest) returns (GenArticleAIEvaluationResponse) {
+    option (api.post) = '/api/article_creation/gen_ai_evaluation';
+  }
+  // 获取AI评价
+  rpc GetArticleAiEvaluation(GetArticleAIEvaluationRequest) returns (GetArticleAIEvaluationResponse) {
+    option (api.get) = '/api/article_creation/get_ai_evaluation';
+  }
   // 文案AI问答
   rpc ArticleAiChat(ArticleAIChatRequest) returns (ArticleAIChatResponse) {
     option (api.post) = '/api/article_creation/ai_chat';
