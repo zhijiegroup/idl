@@ -42,7 +42,7 @@ public interface ListStudentArticleCreationRequestOrBuilder extends
 
   /**
    * <pre>
-   *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+   *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -51,7 +51,7 @@ public interface ListStudentArticleCreationRequestOrBuilder extends
   java.lang.String getStatus();
   /**
    * <pre>
-   *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+   *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
    * </pre>
    *
    * <code>string status = 4;</code>

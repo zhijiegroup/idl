@@ -3612,6 +3612,332 @@ class Edits extends $pb.GeneratedMessage {
   void clearPosition() => clearField(3);
 }
 
+/// 生成AI评价接口
+class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
+  factory GenArticleAIEvaluationRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? topicCode,
+    $core.String? title,
+    $core.String? content,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (topicCode != null) {
+      $result.topicCode = topicCode;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (content != null) {
+      $result.content = content;
+    }
+    return $result;
+  }
+  GenArticleAIEvaluationRequest._() : super();
+  factory GenArticleAIEvaluationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenArticleAIEvaluationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenArticleAIEvaluationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'topicCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'content')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenArticleAIEvaluationRequest clone() => GenArticleAIEvaluationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenArticleAIEvaluationRequest copyWith(void Function(GenArticleAIEvaluationRequest) updates) => super.copyWith((message) => updates(message as GenArticleAIEvaluationRequest)) as GenArticleAIEvaluationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenArticleAIEvaluationRequest create() => GenArticleAIEvaluationRequest._();
+  GenArticleAIEvaluationRequest createEmptyInstance() => create();
+  static $pb.PbList<GenArticleAIEvaluationRequest> createRepeated() => $pb.PbList<GenArticleAIEvaluationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GenArticleAIEvaluationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenArticleAIEvaluationRequest>(create);
+  static GenArticleAIEvaluationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get topicCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set topicCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTopicCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTopicCode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get content => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set content($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasContent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContent() => clearField(4);
+}
+
+class GenArticleAIEvaluationResponse extends $pb.GeneratedMessage {
+  factory GenArticleAIEvaluationResponse({
+    $0.BaseResponse? baseResp,
+    $fixnum.Int64? aiResultId,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (aiResultId != null) {
+      $result.aiResultId = aiResultId;
+    }
+    return $result;
+  }
+  GenArticleAIEvaluationResponse._() : super();
+  factory GenArticleAIEvaluationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenArticleAIEvaluationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenArticleAIEvaluationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'aiResultId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenArticleAIEvaluationResponse clone() => GenArticleAIEvaluationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenArticleAIEvaluationResponse copyWith(void Function(GenArticleAIEvaluationResponse) updates) => super.copyWith((message) => updates(message as GenArticleAIEvaluationResponse)) as GenArticleAIEvaluationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenArticleAIEvaluationResponse create() => GenArticleAIEvaluationResponse._();
+  GenArticleAIEvaluationResponse createEmptyInstance() => create();
+  static $pb.PbList<GenArticleAIEvaluationResponse> createRepeated() => $pb.PbList<GenArticleAIEvaluationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GenArticleAIEvaluationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenArticleAIEvaluationResponse>(create);
+  static GenArticleAIEvaluationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get aiResultId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set aiResultId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAiResultId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAiResultId() => clearField(2);
+}
+
+/// 获取AI评价接口
+class GetArticleAIEvaluationRequest extends $pb.GeneratedMessage {
+  factory GetArticleAIEvaluationRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? aiResultId,
+    $core.String? topicCode,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (aiResultId != null) {
+      $result.aiResultId = aiResultId;
+    }
+    if (topicCode != null) {
+      $result.topicCode = topicCode;
+    }
+    return $result;
+  }
+  GetArticleAIEvaluationRequest._() : super();
+  factory GetArticleAIEvaluationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleAIEvaluationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleAIEvaluationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'aiResultId')
+    ..aOS(3, _omitFieldNames ? '' : 'topicCode')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleAIEvaluationRequest clone() => GetArticleAIEvaluationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleAIEvaluationRequest copyWith(void Function(GetArticleAIEvaluationRequest) updates) => super.copyWith((message) => updates(message as GetArticleAIEvaluationRequest)) as GetArticleAIEvaluationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleAIEvaluationRequest create() => GetArticleAIEvaluationRequest._();
+  GetArticleAIEvaluationRequest createEmptyInstance() => create();
+  static $pb.PbList<GetArticleAIEvaluationRequest> createRepeated() => $pb.PbList<GetArticleAIEvaluationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleAIEvaluationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleAIEvaluationRequest>(create);
+  static GetArticleAIEvaluationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get aiResultId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set aiResultId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAiResultId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAiResultId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get topicCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set topicCode($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasTopicCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTopicCode() => clearField(3);
+}
+
+class GetArticleAIEvaluationResponse extends $pb.GeneratedMessage {
+  factory GetArticleAIEvaluationResponse({
+    $0.BaseResponse? baseResp,
+    ArticleContentModeration? contentModeration,
+    ArticleCreationInfo? creationContent,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (contentModeration != null) {
+      $result.contentModeration = contentModeration;
+    }
+    if (creationContent != null) {
+      $result.creationContent = creationContent;
+    }
+    return $result;
+  }
+  GetArticleAIEvaluationResponse._() : super();
+  factory GetArticleAIEvaluationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetArticleAIEvaluationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleAIEvaluationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<ArticleContentModeration>(2, _omitFieldNames ? '' : 'contentModeration', subBuilder: ArticleContentModeration.create)
+    ..aOM<ArticleCreationInfo>(3, _omitFieldNames ? '' : 'creationContent', subBuilder: ArticleCreationInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetArticleAIEvaluationResponse clone() => GetArticleAIEvaluationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetArticleAIEvaluationResponse copyWith(void Function(GetArticleAIEvaluationResponse) updates) => super.copyWith((message) => updates(message as GetArticleAIEvaluationResponse)) as GetArticleAIEvaluationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetArticleAIEvaluationResponse create() => GetArticleAIEvaluationResponse._();
+  GetArticleAIEvaluationResponse createEmptyInstance() => create();
+  static $pb.PbList<GetArticleAIEvaluationResponse> createRepeated() => $pb.PbList<GetArticleAIEvaluationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetArticleAIEvaluationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetArticleAIEvaluationResponse>(create);
+  static GetArticleAIEvaluationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ArticleContentModeration get contentModeration => $_getN(1);
+  @$pb.TagNumber(2)
+  set contentModeration(ArticleContentModeration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContentModeration() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentModeration() => clearField(2);
+  @$pb.TagNumber(2)
+  ArticleContentModeration ensureContentModeration() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ArticleCreationInfo get creationContent => $_getN(2);
+  @$pb.TagNumber(3)
+  set creationContent(ArticleCreationInfo v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCreationContent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreationContent() => clearField(3);
+  @$pb.TagNumber(3)
+  ArticleCreationInfo ensureCreationContent() => $_ensure(2);
+}
+
 /// 文案ai聊天
 class ArticleAIChatRequest extends $pb.GeneratedMessage {
   factory ArticleAIChatRequest({

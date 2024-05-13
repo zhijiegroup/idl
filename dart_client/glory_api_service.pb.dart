@@ -1337,6 +1337,12 @@ class glory_apiApi {
   $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ClientContext? ctx, $57.CorrectSentenceRequest request) =>
     _client.invoke<$57.CorrectSentenceResponse>(ctx, 'glory_api', 'CorrectSentence', request, $57.CorrectSentenceResponse())
   ;
+  $async.Future<$57.GenArticleAIEvaluationResponse> genArticleAiEvaluation($pb.ClientContext? ctx, $57.GenArticleAIEvaluationRequest request) =>
+    _client.invoke<$57.GenArticleAIEvaluationResponse>(ctx, 'glory_api', 'GenArticleAiEvaluation', request, $57.GenArticleAIEvaluationResponse())
+  ;
+  $async.Future<$57.GetArticleAIEvaluationResponse> getArticleAiEvaluation($pb.ClientContext? ctx, $57.GetArticleAIEvaluationRequest request) =>
+    _client.invoke<$57.GetArticleAIEvaluationResponse>(ctx, 'glory_api', 'GetArticleAiEvaluation', request, $57.GetArticleAIEvaluationResponse())
+  ;
   $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ClientContext? ctx, $57.ArticleAIChatRequest request) =>
     _client.invoke<$57.ArticleAIChatResponse>(ctx, 'glory_api', 'ArticleAiChat', request, $57.ArticleAIChatResponse())
   ;

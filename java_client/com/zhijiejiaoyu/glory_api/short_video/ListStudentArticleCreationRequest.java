@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object status ;
   /**
    * <pre>
-   *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+   *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+   *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -1122,7 +1122,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object status = "";
     /**
      * <pre>
-     *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+     *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1142,7 +1142,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+     *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1163,7 +1163,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+     *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1182,7 +1182,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+     *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
      * </pre>
      *
      * <code>string status = 4;</code>
@@ -1196,7 +1196,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+     *待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
      * </pre>
      *
      * <code>string status = 4;</code>

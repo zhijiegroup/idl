@@ -715,6 +715,72 @@ final $typed_data.Uint8List editsDescriptor = $convert.base64Decode(
     'CgVFZGl0cxIfCgtzb3VyY2Vfd29yZBgBIAEoCVIKc291cmNlV29yZBIfCgt0YXJnZXRfd29yZB'
     'gCIAEoCVIKdGFyZ2V0V29yZBIaCghwb3NpdGlvbhgDIAEoA1IIcG9zaXRpb24=');
 
+@$core.Deprecated('Use genArticleAIEvaluationRequestDescriptor instead')
+const GenArticleAIEvaluationRequest$json = {
+  '1': 'GenArticleAIEvaluationRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'topic_code', '3': 2, '4': 1, '5': 9, '10': 'topicCode'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'content', '3': 4, '4': 1, '5': 9, '10': 'content'},
+  ],
+};
+
+/// Descriptor for `GenArticleAIEvaluationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List genArticleAIEvaluationRequestDescriptor = $convert.base64Decode(
+    'Ch1HZW5BcnRpY2xlQUlFdmFsdWF0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIdCgp0b3BpY19jb2RlGAIgASgJUgl0b3Bp'
+    'Y0NvZGUSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhgKB2NvbnRlbnQYBCABKAlSB2NvbnRlbnQ=');
+
+@$core.Deprecated('Use genArticleAIEvaluationResponseDescriptor instead')
+const GenArticleAIEvaluationResponse$json = {
+  '1': 'GenArticleAIEvaluationResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'ai_result_id', '3': 2, '4': 1, '5': 3, '10': 'aiResultId'},
+  ],
+};
+
+/// Descriptor for `GenArticleAIEvaluationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List genArticleAIEvaluationResponseDescriptor = $convert.base64Decode(
+    'Ch5HZW5BcnRpY2xlQUlFdmFsdWF0aW9uUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEiAKDGFpX3Jlc3VsdF9pZBgCIAEoA1IKYWlSZXN1'
+    'bHRJZA==');
+
+@$core.Deprecated('Use getArticleAIEvaluationRequestDescriptor instead')
+const GetArticleAIEvaluationRequest$json = {
+  '1': 'GetArticleAIEvaluationRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'ai_result_id', '3': 2, '4': 1, '5': 3, '10': 'aiResultId'},
+    {'1': 'topic_code', '3': 3, '4': 1, '5': 9, '10': 'topicCode'},
+  ],
+};
+
+/// Descriptor for `GetArticleAIEvaluationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleAIEvaluationRequestDescriptor = $convert.base64Decode(
+    'Ch1HZXRBcnRpY2xlQUlFdmFsdWF0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
+    '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIgCgxhaV9yZXN1bHRfaWQYAiABKANSCmFp'
+    'UmVzdWx0SWQSHQoKdG9waWNfY29kZRgDIAEoCVIJdG9waWNDb2Rl');
+
+@$core.Deprecated('Use getArticleAIEvaluationResponseDescriptor instead')
+const GetArticleAIEvaluationResponse$json = {
+  '1': 'GetArticleAIEvaluationResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'content_moderation', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ArticleContentModeration', '10': 'contentModeration'},
+    {'1': 'creation_content', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ArticleCreationInfo', '10': 'creationContent'},
+  ],
+};
+
+/// Descriptor for `GetArticleAIEvaluationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleAIEvaluationResponseDescriptor = $convert.base64Decode(
+    'Ch5HZXRBcnRpY2xlQUlFdmFsdWF0aW9uUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYm'
+    'FzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwElIKEmNvbnRlbnRfbW9kZXJhdGlvbhgCIAEoCzIj'
+    'Lmdsb3J5X2FwaS5BcnRpY2xlQ29udGVudE1vZGVyYXRpb25SEWNvbnRlbnRNb2RlcmF0aW9uEk'
+    'kKEGNyZWF0aW9uX2NvbnRlbnQYAyABKAsyHi5nbG9yeV9hcGkuQXJ0aWNsZUNyZWF0aW9uSW5m'
+    'b1IPY3JlYXRpb25Db250ZW50');
+
 @$core.Deprecated('Use articleAIChatRequestDescriptor instead')
 const ArticleAIChatRequest$json = {
   '1': 'ArticleAIChatRequest',
