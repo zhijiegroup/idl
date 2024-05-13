@@ -134,7 +134,7 @@ message GetExampleArticleRequest {
 
 message GetExampleArticleResponse {
     base.BaseResponse base_resp = 1;
-    string example = 2;
+    repeated string example = 2;
 }
 
 message GetEvaluationStandardRequest {
