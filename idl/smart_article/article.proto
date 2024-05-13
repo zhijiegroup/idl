@@ -319,6 +319,7 @@ message CreateDigitalVideoRequest {
     string title = 3;
     string bg = 4;
     string code = 5;
+    int32 speech_rate = 6;
 }
 
 message CreateDigitalVideoResponse {
