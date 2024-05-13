@@ -1695,14 +1695,14 @@ class GetExampleArticleRequest extends $pb.GeneratedMessage {
 class GetExampleArticleResponse extends $pb.GeneratedMessage {
   factory GetExampleArticleResponse({
     $0.BaseResponse? baseResp,
-    $core.String? example,
+    $core.Iterable<$core.String>? example,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
     if (example != null) {
-      $result.example = example;
+      $result.example.addAll(example);
     }
     return $result;
   }
@@ -1712,7 +1712,7 @@ class GetExampleArticleResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetExampleArticleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aOS(2, _omitFieldNames ? '' : 'example')
+    ..pPS(2, _omitFieldNames ? '' : 'example')
     ..hasRequiredFields = false
   ;
 
@@ -1749,13 +1749,7 @@ class GetExampleArticleResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get example => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set example($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasExample() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearExample() => clearField(2);
+  $core.List<$core.String> get example => $_getList(1);
 }
 
 class GetEvaluationStandardRequest extends $pb.GeneratedMessage {

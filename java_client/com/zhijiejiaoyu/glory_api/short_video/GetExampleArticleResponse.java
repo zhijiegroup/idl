@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetExampleArticleResponse() {
-    example = "";
+    example = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -39,6 +39,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -64,8 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            example = s;
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              example = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            example .add(s);
             break;
           }
           default: {
@@ -83,6 +87,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        example = example .getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -127,41 +134,38 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXAMPLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object example ;
+  private com.google.protobuf.LazyStringList example ;
   /**
-   * <code>string example = 2;</code>
-   * @return The example.
+   * <code>repeated string example = 2;</code>
+   * @return A list containing the example.
    */
-  @java.lang.Override
-  public java.lang.String getExample() {
-    java.lang.Object ref = example ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      example = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList
+      getExampleList() {
+    return example ;
   }
   /**
-   * <code>string example = 2;</code>
-   * @return The bytes for example.
+   * <code>repeated string example = 2;</code>
+   * @return The count of example.
    */
-  @java.lang.Override
+  public int getExampleCount() {
+    return example .size();
+  }
+  /**
+   * <code>repeated string example = 2;</code>
+   * @param index The index of the element to return.
+   * @return The example at the given index.
+   */
+  public java.lang.String getExample(int index) {
+    return example .get(index);
+  }
+  /**
+   * <code>repeated string example = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the example at the given index.
+   */
   public com.google.protobuf.ByteString
-      getExampleBytes() {
-    java.lang.Object ref = example ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      example = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getExampleBytes(int index) {
+    return example .getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -181,8 +185,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (!getExampleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, example );
+    for (int i = 0; i < example .size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, example .getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -197,8 +201,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (!getExampleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, example );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < example .size(); i++) {
+        dataSize += computeStringSizeNoTag(example .getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExampleList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,8 +229,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getExample()
-        .equals(other.getExample())) return false;
+    if (!getExampleList()
+        .equals(other.getExampleList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,8 +246,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-    hash = (53 * hash) + getExample().hashCode();
+    if (getExampleCount() > 0) {
+      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
+      hash = (53 * hash) + getExampleList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,8 +389,8 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      example = "";
-
+      example = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       return this;
     }
 
@@ -406,10 +417,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse result = new com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse(this);
+      int from_bitField0 = bitField0 ;
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
+      }
+      if (((bitField0 & 0x00000001) != 0)) {
+        example = example .getUnmodifiableView();
+        bitField0 = (bitField0 & ~0x00000001);
       }
       result.example = example ;
       onBuilt();
@@ -463,8 +479,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (!other.getExample().isEmpty()) {
-        example = other.example ;
+      if (!other.example .isEmpty()) {
+        if (example .isEmpty()) {
+          example = other.example ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureExampleIsMutable();
+          example .addAll(other.example );
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -495,6 +517,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -615,78 +638,112 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.lang.Object example = "";
-    /**
-     * <code>string example = 2;</code>
-     * @return The example.
-     */
-    public java.lang.String getExample() {
-      java.lang.Object ref = example ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        example = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    private com.google.protobuf.LazyStringList example = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureExampleIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        example = new com.google.protobuf.LazyStringArrayList(example );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>string example = 2;</code>
-     * @return The bytes for example.
+     * <code>repeated string example = 2;</code>
+     * @return A list containing the example.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getExampleList() {
+      return example .getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string example = 2;</code>
+     * @return The count of example.
+     */
+    public int getExampleCount() {
+      return example .size();
+    }
+    /**
+     * <code>repeated string example = 2;</code>
+     * @param index The index of the element to return.
+     * @return The example at the given index.
+     */
+    public java.lang.String getExample(int index) {
+      return example .get(index);
+    }
+    /**
+     * <code>repeated string example = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the example at the given index.
      */
     public com.google.protobuf.ByteString
-        getExampleBytes() {
-      java.lang.Object ref = example ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        example = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getExampleBytes(int index) {
+      return example .getByteString(index);
     }
     /**
-     * <code>string example = 2;</code>
+     * <code>repeated string example = 2;</code>
+     * @param index The index to set the value at.
      * @param value The example to set.
      * @return This builder for chaining.
      */
     public Builder setExample(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExampleIsMutable();
+      example .set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string example = 2;</code>
+     * @param value The example to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExample(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      example = value;
+  ensureExampleIsMutable();
+      example .add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>string example = 2;</code>
+     * <code>repeated string example = 2;</code>
+     * @param values The example to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExample(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureExampleIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, example );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string example = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearExample() {
-      
-      example = getDefaultInstance().getExample();
+      example = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string example = 2;</code>
-     * @param value The bytes for example to set.
+     * <code>repeated string example = 2;</code>
+     * @param value The bytes of the example to add.
      * @return This builder for chaining.
      */
-    public Builder setExampleBytes(
+    public Builder addExampleBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      example = value;
+      ensureExampleIsMutable();
+      example .add(value);
       onChanged();
       return this;
     }

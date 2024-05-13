@@ -497,7 +497,7 @@ public final class Article {
       "quest\022\023\n\013course_code\030\002 \001(\t\022\022\n\ntopic_code" +
       "\030\003 \001(\t\"S\n\031GetExampleArticleResponse\022%\n\tb" +
       "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007ex" +
-      "ample\030\002 \001(\t\"p\n\034GetEvaluationStandardRequ" +
+      "ample\030\002 \003(\t\"p\n\034GetEvaluationStandardRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
       "uest\022\023\n\013course_code\030\002 \001(\t\022\022\n\ntopic_code\030" +
       "\003 \001(\t\"X\n\035GetEvaluationStandardResponse\022%" +

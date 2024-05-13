@@ -134,7 +134,7 @@ export interface GetExampleArticleRequest {
 
 export interface GetExampleArticleResponse {
   base_resp?: base.BaseResponse;
-  example?: string;
+  example?: Array<string>;
 }
 
 export interface GetEvaluationStandardRequest {

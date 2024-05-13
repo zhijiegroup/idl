@@ -333,14 +333,14 @@ const GetExampleArticleResponse$json = {
   '1': 'GetExampleArticleResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'example', '3': 2, '4': 1, '5': 9, '10': 'example'},
+    {'1': 'example', '3': 2, '4': 3, '5': 9, '10': 'example'},
   ],
 };
 
 /// Descriptor for `GetExampleArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getExampleArticleResponseDescriptor = $convert.base64Decode(
     'ChlHZXRFeGFtcGxlQXJ0aWNsZVJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
-    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIYCgdleGFtcGxlGAIgASgJUgdleGFtcGxl');
+    'FzZVJlc3BvbnNlUghiYXNlUmVzcBIYCgdleGFtcGxlGAIgAygJUgdleGFtcGxl');
 
 @$core.Deprecated('Use getEvaluationStandardRequestDescriptor instead')
 const GetEvaluationStandardRequest$json = {
