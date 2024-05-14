@@ -1295,6 +1295,9 @@ class glory_apiApi {
   $async.Future<$57.CreateArticleCreationResponse> createArticleCreation($pb.ClientContext? ctx, $57.CreateArticleCreationRequest request) =>
     _client.invoke<$57.CreateArticleCreationResponse>(ctx, 'glory_api', 'CreateArticleCreation', request, $57.CreateArticleCreationResponse())
   ;
+  $async.Future<$57.CreateModifiedArticleCreationResponse> createModifiedArticleCreation($pb.ClientContext? ctx, $57.CreateModifiedArticleCreationRequest request) =>
+    _client.invoke<$57.CreateModifiedArticleCreationResponse>(ctx, 'glory_api', 'CreateModifiedArticleCreation', request, $57.CreateModifiedArticleCreationResponse())
+  ;
   $async.Future<$57.ListMyArticleCreationResponse> listMyArticleCreation($pb.ClientContext? ctx, $57.ListMyArticleCreationRequest request) =>
     _client.invoke<$57.ListMyArticleCreationResponse>(ctx, 'glory_api', 'ListMyArticleCreation', request, $57.ListMyArticleCreationResponse())
   ;

@@ -24,9 +24,8 @@ const ArticleCreation$json = {
     {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
     {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
-    {'1': 'source', '3': 8, '4': 1, '5': 9, '10': 'source'},
-    {'1': 'digital_hunman_video_url', '3': 9, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
-    {'1': 'created_at', '3': 10, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'digital_hunman_video_url', '3': 8, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
@@ -36,9 +35,9 @@ final $typed_data.Uint8List articleCreationDescriptor = $convert.base64Decode(
     'NyZWF0aW9uSWQSNwoYbGFzdF9hcnRpY2xlX2NyZWF0aW9uX2lkGAIgASgDUhVsYXN0QXJ0aWNs'
     'ZUNyZWF0aW9uSWQSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhsKCWFpX3Jlc3VsdBgEIAEoCVIIYW'
     'lSZXN1bHQSFgoGc3RhdHVzGAUgASgJUgZzdGF0dXMSFAoFdG9waWMYBiABKAlSBXRvcGljEiMK'
-    'DWNyZWF0aW9uX3R5cGUYByABKAlSDGNyZWF0aW9uVHlwZRIWCgZzb3VyY2UYCCABKAlSBnNvdX'
-    'JjZRI3ChhkaWdpdGFsX2h1bm1hbl92aWRlb191cmwYCSABKAlSFWRpZ2l0YWxIdW5tYW5WaWRl'
-    'b1VybBIdCgpjcmVhdGVkX2F0GAogASgJUgljcmVhdGVkQXQ=');
+    'DWNyZWF0aW9uX3R5cGUYByABKAlSDGNyZWF0aW9uVHlwZRI3ChhkaWdpdGFsX2h1bm1hbl92aW'
+    'Rlb191cmwYCCABKAlSFWRpZ2l0YWxIdW5tYW5WaWRlb1VybBIdCgpjcmVhdGVkX2F0GAkgASgJ'
+    'UgljcmVhdGVkQXQ=');
 
 @$core.Deprecated('Use articleCreationDraftDescriptor instead')
 const ArticleCreationDraft$json = {
@@ -71,12 +70,12 @@ const CreateArticleCreationRequest$json = {
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'course_code', '3': 2, '4': 1, '5': 9, '10': 'courseCode'},
     {'1': 'course_topic_code', '3': 3, '4': 1, '5': 9, '10': 'courseTopicCode'},
-    {'1': 'have_sub_topic', '3': 4, '4': 1, '5': 8, '10': 'haveSubTopic'},
-    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'content', '3': 6, '4': 1, '5': 9, '10': 'content'},
-    {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
-    {'1': 'last_article_creation_id', '3': 8, '4': 1, '5': 3, '10': 'lastArticleCreationId'},
-    {'1': 'product_name', '3': 9, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
+    {'1': 'last_article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'lastArticleCreationId'},
+    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'article_creation_id', '3': 9, '4': 1, '5': 3, '10': 'articleCreationId'},
   ],
 };
 
@@ -84,11 +83,11 @@ const CreateArticleCreationRequest$json = {
 final $typed_data.Uint8List createArticleCreationRequestDescriptor = $convert.base64Decode(
     'ChxDcmVhdGVBcnRpY2xlQ3JlYXRpb25SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLm'
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0Eh8KC2NvdXJzZV9jb2RlGAIgASgJUgpjb3Vy'
-    'c2VDb2RlEioKEWNvdXJzZV90b3BpY19jb2RlGAMgASgJUg9jb3Vyc2VUb3BpY0NvZGUSJAoOaG'
-    'F2ZV9zdWJfdG9waWMYBCABKAhSDGhhdmVTdWJUb3BpYxIUCgV0aXRsZRgFIAEoCVIFdGl0bGUS'
-    'GAoHY29udGVudBgGIAEoCVIHY29udGVudBIjCg1jcmVhdGlvbl90eXBlGAcgASgJUgxjcmVhdG'
-    'lvblR5cGUSNwoYbGFzdF9hcnRpY2xlX2NyZWF0aW9uX2lkGAggASgDUhVsYXN0QXJ0aWNsZUNy'
-    'ZWF0aW9uSWQSIQoMcHJvZHVjdF9uYW1lGAkgASgJUgtwcm9kdWN0TmFtZQ==');
+    'c2VDb2RlEioKEWNvdXJzZV90b3BpY19jb2RlGAMgASgJUg9jb3Vyc2VUb3BpY0NvZGUSFAoFdG'
+    'l0bGUYBCABKAlSBXRpdGxlEhgKB2NvbnRlbnQYBSABKAlSB2NvbnRlbnQSIwoNY3JlYXRpb25f'
+    'dHlwZRgGIAEoCVIMY3JlYXRpb25UeXBlEjcKGGxhc3RfYXJ0aWNsZV9jcmVhdGlvbl9pZBgHIA'
+    'EoA1IVbGFzdEFydGljbGVDcmVhdGlvbklkEiEKDHByb2R1Y3RfbmFtZRgIIAEoCVILcHJvZHVj'
+    'dE5hbWUSLgoTYXJ0aWNsZV9jcmVhdGlvbl9pZBgJIAEoA1IRYXJ0aWNsZUNyZWF0aW9uSWQ=');
 
 @$core.Deprecated('Use createArticleCreationResponseDescriptor instead')
 const CreateArticleCreationResponse$json = {
@@ -179,6 +178,44 @@ const CreateArticleCreationDraftResponse$json = {
 final $typed_data.Uint8List createArticleCreationDraftResponseDescriptor = $convert.base64Decode(
     'CiJDcmVhdGVBcnRpY2xlQ3JlYXRpb25EcmFmdFJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCz'
     'ISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+
+@$core.Deprecated('Use createModifiedArticleCreationRequestDescriptor instead')
+const CreateModifiedArticleCreationRequest$json = {
+  '1': 'CreateModifiedArticleCreationRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'course_code', '3': 2, '4': 1, '5': 9, '10': 'courseCode'},
+    {'1': 'course_topic_code', '3': 3, '4': 1, '5': 9, '10': 'courseTopicCode'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
+    {'1': 'modified_article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'modifiedArticleCreationId'},
+    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
+  ],
+};
+
+/// Descriptor for `CreateModifiedArticleCreationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createModifiedArticleCreationRequestDescriptor = $convert.base64Decode(
+    'CiRDcmVhdGVNb2RpZmllZEFydGljbGVDcmVhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GA'
+    'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX2NvZGUYAiAB'
+    'KAlSCmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ2'
+    '9kZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1j'
+    'cmVhdGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSPwocbW9kaWZpZWRfYXJ0aWNsZV9jcm'
+    'VhdGlvbl9pZBgHIAEoA1IZbW9kaWZpZWRBcnRpY2xlQ3JlYXRpb25JZBIhCgxwcm9kdWN0X25h'
+    'bWUYCCABKAlSC3Byb2R1Y3ROYW1l');
+
+@$core.Deprecated('Use createModifiedArticleCreationResponseDescriptor instead')
+const CreateModifiedArticleCreationResponse$json = {
+  '1': 'CreateModifiedArticleCreationResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CreateModifiedArticleCreationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createModifiedArticleCreationResponseDescriptor = $convert.base64Decode(
+    'CiVDcmVhdGVNb2RpZmllZEFydGljbGVDcmVhdGlvblJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIA'
+    'EoCzISLmJhc2UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcA==');
 
 @$core.Deprecated('Use listMyArticleCreationDraftRequestDescriptor instead')
 const ListMyArticleCreationDraftRequest$json = {
@@ -300,7 +337,6 @@ const ArticleCreationStatisticsResponse$json = {
     {'1': 'evaluated_total', '3': 4, '4': 1, '5': 3, '10': 'evaluatedTotal'},
     {'1': 'ai_pass_total', '3': 5, '4': 1, '5': 3, '10': 'aiPassTotal'},
     {'1': 'ai_no_pass_total', '3': 6, '4': 1, '5': 3, '10': 'aiNoPassTotal'},
-    {'1': 'system_evaluated_total', '3': 7, '4': 1, '5': 3, '10': 'systemEvaluatedTotal'},
   ],
 };
 
@@ -310,8 +346,7 @@ final $typed_data.Uint8List articleCreationStatisticsResponseDescriptor = $conve
     'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEhQKBXRvdGFsGAIgASgDUgV0b3RhbBIhCgxy'
     'ZWplY3RfdG90YWwYAyABKANSC3JlamVjdFRvdGFsEicKD2V2YWx1YXRlZF90b3RhbBgEIAEoA1'
     'IOZXZhbHVhdGVkVG90YWwSIgoNYWlfcGFzc190b3RhbBgFIAEoA1ILYWlQYXNzVG90YWwSJwoQ'
-    'YWlfbm9fcGFzc190b3RhbBgGIAEoA1INYWlOb1Bhc3NUb3RhbBI0ChZzeXN0ZW1fZXZhbHVhdG'
-    'VkX3RvdGFsGAcgASgDUhRzeXN0ZW1FdmFsdWF0ZWRUb3RhbA==');
+    'YWlfbm9fcGFzc190b3RhbBgGIAEoA1INYWlOb1Bhc3NUb3RhbA==');
 
 @$core.Deprecated('Use getExampleArticleRequestDescriptor instead')
 const GetExampleArticleRequest$json = {

@@ -12601,6 +12601,37 @@ public final class glory_apiGrpc {
     return getCreateArticleCreationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> getCreateModifiedArticleCreationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateModifiedArticleCreation",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest,
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> getCreateModifiedArticleCreationMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> getCreateModifiedArticleCreationMethod;
+    if ((getCreateModifiedArticleCreationMethod = glory_apiGrpc.getCreateModifiedArticleCreationMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getCreateModifiedArticleCreationMethod = glory_apiGrpc.getCreateModifiedArticleCreationMethod) == null) {
+          glory_apiGrpc.getCreateModifiedArticleCreationMethod = getCreateModifiedArticleCreationMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest, com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateModifiedArticleCreation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("CreateModifiedArticleCreation"))
+              .build();
+        }
+      }
+    }
+    return getCreateModifiedArticleCreationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest,
       com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> getListMyArticleCreationMethod;
 
@@ -16835,6 +16866,16 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 保存修改后的智能文案
+     * </pre>
+     */
+    default void createModifiedArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateModifiedArticleCreationMethod(), responseObserver);
+    }
+
+    /**
      */
     default void listMyArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> responseObserver) {
@@ -20743,6 +20784,17 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 保存修改后的智能文案
+     * </pre>
+     */
+    public void createModifiedArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateModifiedArticleCreationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void listMyArticleCreation(com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> responseObserver) {
@@ -24262,6 +24314,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse createArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateArticleCreationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 保存修改后的智能文案
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse createModifiedArticleCreation(com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateModifiedArticleCreationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -28162,6 +28224,17 @@ public final class glory_apiGrpc {
     }
 
     /**
+     * <pre>
+     * 保存修改后的智能文案
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse> createModifiedArticleCreation(
+        com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateModifiedArticleCreationMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationResponse> listMyArticleCreation(
         com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest request) {
@@ -28849,37 +28922,38 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_BOARD_LIVING_USER = 403;
   private static final int METHODID_CLOSE_CASTER = 404;
   private static final int METHODID_CREATE_ARTICLE_CREATION = 405;
-  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 406;
-  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 407;
-  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 408;
-  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 409;
-  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 410;
-  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 411;
-  private static final int METHODID_GET_EXAMPLE_ARTICLE = 412;
-  private static final int METHODID_GET_EVALUATION_STANDARD = 413;
-  private static final int METHODID_CREATE_EVALUATION_CONFIG = 414;
-  private static final int METHODID_LIST_EVALUATION_CONFIG = 415;
-  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 416;
-  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 417;
-  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 418;
-  private static final int METHODID_CORRECT_SENTENCE = 419;
-  private static final int METHODID_GEN_ARTICLE_AI_EVALUATION = 420;
-  private static final int METHODID_GET_ARTICLE_AI_EVALUATION = 421;
-  private static final int METHODID_ARTICLE_AI_CHAT = 422;
-  private static final int METHODID_GET_CHAT_CONFIG = 423;
-  private static final int METHODID_UPDATE_MODEL_PRICE = 424;
-  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 425;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 426;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 427;
-  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 428;
-  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 429;
-  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 430;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 431;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 432;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 433;
-  private static final int METHODID_LIST_DIGITAL_CODE = 434;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 435;
-  private static final int METHODID_LIST_DIGITAL_AVATAR = 436;
+  private static final int METHODID_CREATE_MODIFIED_ARTICLE_CREATION = 406;
+  private static final int METHODID_LIST_MY_ARTICLE_CREATION = 407;
+  private static final int METHODID_CREATE_ARTICLE_CREATION_DRAFT = 408;
+  private static final int METHODID_LIST_MY_DRAFT_ARTICLE_CREATION = 409;
+  private static final int METHODID_DRAFT_ARTICLE_CREATION_DETAIL = 410;
+  private static final int METHODID_DELETE_DRAFT_ARTICLE_CREATION = 411;
+  private static final int METHODID_ARTICLE_CREATION_STATISTICS = 412;
+  private static final int METHODID_GET_EXAMPLE_ARTICLE = 413;
+  private static final int METHODID_GET_EVALUATION_STANDARD = 414;
+  private static final int METHODID_CREATE_EVALUATION_CONFIG = 415;
+  private static final int METHODID_LIST_EVALUATION_CONFIG = 416;
+  private static final int METHODID_BATCH_EVALUATE_ARTICLE_CREATION = 417;
+  private static final int METHODID_LIST_STUDENT_ARTICLE_CREATION = 418;
+  private static final int METHODID_STUDENT_ARTICLE_CREATION_EVALUATION_DETAIL = 419;
+  private static final int METHODID_CORRECT_SENTENCE = 420;
+  private static final int METHODID_GEN_ARTICLE_AI_EVALUATION = 421;
+  private static final int METHODID_GET_ARTICLE_AI_EVALUATION = 422;
+  private static final int METHODID_ARTICLE_AI_CHAT = 423;
+  private static final int METHODID_GET_CHAT_CONFIG = 424;
+  private static final int METHODID_UPDATE_MODEL_PRICE = 425;
+  private static final int METHODID_UPDATE_ARTICLE_CREATION_TENANT_COURSE = 426;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT = 427;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT = 428;
+  private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 429;
+  private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 430;
+  private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 431;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 432;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 433;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 434;
+  private static final int METHODID_LIST_DIGITAL_CODE = 435;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 436;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 437;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30521,6 +30595,10 @@ public final class glory_apiGrpc {
         case METHODID_CREATE_ARTICLE_CREATION:
           serviceImpl.createArticleCreation((com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_MODIFIED_ARTICLE_CREATION:
+          serviceImpl.createModifiedArticleCreation((com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse>) responseObserver);
           break;
         case METHODID_LIST_MY_ARTICLE_CREATION:
           serviceImpl.listMyArticleCreation((com.zhijiejiaoyu.glory_api.short_video.ListMyArticleCreationRequest) request,
@@ -33507,6 +33585,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.CreateArticleCreationResponse>(
                 service, METHODID_CREATE_ARTICLE_CREATION)))
         .addMethod(
+          getCreateModifiedArticleCreationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationRequest,
+              com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse>(
+                service, METHODID_CREATE_MODIFIED_ARTICLE_CREATION)))
+        .addMethod(
           getListMyArticleCreationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -34177,6 +34262,7 @@ public final class glory_apiGrpc {
               .addMethod(getListBoardLivingUserMethod())
               .addMethod(getCloseCasterMethod())
               .addMethod(getCreateArticleCreationMethod())
+              .addMethod(getCreateModifiedArticleCreationMethod())
               .addMethod(getListMyArticleCreationMethod())
               .addMethod(getCreateArticleCreationDraftMethod())
               .addMethod(getListMyDraftArticleCreationMethod())

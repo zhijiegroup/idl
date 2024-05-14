@@ -14,7 +14,6 @@ export interface ArticleCreation {
   status?: string;
   topic?: string;
   creation_type?: string;
-  source?: string;
   digital_hunman_video_url?: string;
   created_at?: string;
 }
@@ -34,12 +33,12 @@ export interface CreateArticleCreationRequest {
   base_request?: base.BaseRequest;
   course_code?: string;
   course_topic_code?: string;
-  have_sub_topic?: boolean;
   title?: string;
   content?: string;
   creation_type?: string;
   last_article_creation_id?: string;
   product_name?: string;
+  article_creation_id?: string;
 }
 
 export interface CreateArticleCreationResponse {
@@ -75,6 +74,23 @@ export interface CreateArticleCreationDraftRequest {
 }
 
 export interface CreateArticleCreationDraftResponse {
+  base_resp?: base.BaseResponse;
+}
+
+/** 保存修改后的文案 */
+export interface CreateModifiedArticleCreationRequest {
+  base_request?: base.BaseRequest;
+  course_code?: string;
+  course_topic_code?: string;
+  title?: string;
+  content?: string;
+  creation_type?: string;
+  /** 修改的文案ID */
+  modified_article_creation_id?: string;
+  product_name?: string;
+}
+
+export interface CreateModifiedArticleCreationResponse {
   base_resp?: base.BaseResponse;
 }
 
@@ -124,7 +140,6 @@ export interface ArticleCreationStatisticsResponse {
   evaluated_total?: string;
   ai_pass_total?: string;
   ai_no_pass_total?: string;
-  system_evaluated_total?: string;
 }
 
 export interface GetExampleArticleRequest {

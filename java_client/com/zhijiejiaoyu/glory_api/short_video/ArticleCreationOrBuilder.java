@@ -80,36 +80,24 @@ public interface ArticleCreationOrBuilder extends
       getCreationTypeBytes();
 
   /**
-   * <code>string source = 8;</code>
-   * @return The source.
-   */
-  java.lang.String getSource();
-  /**
-   * <code>string source = 8;</code>
-   * @return The bytes for source.
-   */
-  com.google.protobuf.ByteString
-      getSourceBytes();
-
-  /**
-   * <code>string digital_hunman_video_url = 9;</code>
+   * <code>string digital_hunman_video_url = 8;</code>
    * @return The digitalHunmanVideoUrl.
    */
   java.lang.String getDigitalHunmanVideoUrl();
   /**
-   * <code>string digital_hunman_video_url = 9;</code>
+   * <code>string digital_hunman_video_url = 8;</code>
    * @return The bytes for digitalHunmanVideoUrl.
    */
   com.google.protobuf.ByteString
       getDigitalHunmanVideoUrlBytes();
 
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 9;</code>
    * @return The createdAt.
    */
   java.lang.String getCreatedAt();
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 9;</code>
    * @return The bytes for createdAt.
    */
   com.google.protobuf.ByteString

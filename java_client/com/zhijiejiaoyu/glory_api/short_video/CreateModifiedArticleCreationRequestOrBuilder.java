@@ -3,8 +3,8 @@
 
 package com.zhijiejiaoyu.glory_api.short_video;
 
-public interface CreateArticleCreationRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:glory_api.CreateArticleCreationRequest)
+public interface CreateModifiedArticleCreationRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:glory_api.CreateModifiedArticleCreationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -83,10 +83,14 @@ public interface CreateArticleCreationRequestOrBuilder extends
       getCreationTypeBytes();
 
   /**
-   * <code>int64 last_article_creation_id = 7;</code>
-   * @return The lastArticleCreationId.
+   * <pre>
+   * 修改的文案ID
+   * </pre>
+   *
+   * <code>int64 modified_article_creation_id = 7;</code>
+   * @return The modifiedArticleCreationId.
    */
-  long getLastArticleCreationId();
+  long getModifiedArticleCreationId();
 
   /**
    * <code>string product_name = 8;</code>
@@ -99,10 +103,4 @@ public interface CreateArticleCreationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getProductNameBytes();
-
-  /**
-   * <code>int64 article_creation_id = 9;</code>
-   * @return The articleCreationId.
-   */
-  long getArticleCreationId();
 }

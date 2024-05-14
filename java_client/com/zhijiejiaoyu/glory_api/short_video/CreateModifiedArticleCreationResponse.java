@@ -4,25 +4,25 @@
 package com.zhijiejiaoyu.glory_api.short_video;
 
 /**
- * Protobuf type {@code glory_api.ArticleCreationStatisticsResponse}
+ * Protobuf type {@code glory_api.CreateModifiedArticleCreationResponse}
  */
-public final class ArticleCreationStatisticsResponse extends
+public final class CreateModifiedArticleCreationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.ArticleCreationStatisticsResponse)
-    ArticleCreationStatisticsResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.CreateModifiedArticleCreationResponse)
+    CreateModifiedArticleCreationResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ArticleCreationStatisticsResponse.newBuilder() to construct.
-  private ArticleCreationStatisticsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CreateModifiedArticleCreationResponse.newBuilder() to construct.
+  private CreateModifiedArticleCreationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ArticleCreationStatisticsResponse() {
+  private CreateModifiedArticleCreationResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ArticleCreationStatisticsResponse();
+    return new CreateModifiedArticleCreationResponse();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ArticleCreationStatisticsResponse(
+  private CreateModifiedArticleCreationResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,31 +61,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
-
-            total = input.readInt64();
-            break;
-          }
-          case 24: {
-
-            rejectTotal = input.readInt64();
-            break;
-          }
-          case 32: {
-
-            evaluatedTotal = input.readInt64();
-            break;
-          }
-          case 40: {
-
-            aiPassTotal = input.readInt64();
-            break;
-          }
-          case 48: {
-
-            aiNoPassTotal = input.readInt64();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -107,15 +82,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_ArticleCreationStatisticsResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_CreateModifiedArticleCreationResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_ArticleCreationStatisticsResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_CreateModifiedArticleCreationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.class, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.class, com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -144,61 +119,6 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int TOTAL_FIELD_NUMBER = 2;
-  private long total ;
-  /**
-   * <code>int64 total = 2;</code>
-   * @return The total.
-   */
-  @java.lang.Override
-  public long getTotal() {
-    return total ;
-  }
-
-  public static final int REJECT_TOTAL_FIELD_NUMBER = 3;
-  private long rejectTotal ;
-  /**
-   * <code>int64 reject_total = 3;</code>
-   * @return The rejectTotal.
-   */
-  @java.lang.Override
-  public long getRejectTotal() {
-    return rejectTotal ;
-  }
-
-  public static final int EVALUATED_TOTAL_FIELD_NUMBER = 4;
-  private long evaluatedTotal ;
-  /**
-   * <code>int64 evaluated_total = 4;</code>
-   * @return The evaluatedTotal.
-   */
-  @java.lang.Override
-  public long getEvaluatedTotal() {
-    return evaluatedTotal ;
-  }
-
-  public static final int AI_PASS_TOTAL_FIELD_NUMBER = 5;
-  private long aiPassTotal ;
-  /**
-   * <code>int64 ai_pass_total = 5;</code>
-   * @return The aiPassTotal.
-   */
-  @java.lang.Override
-  public long getAiPassTotal() {
-    return aiPassTotal ;
-  }
-
-  public static final int AI_NO_PASS_TOTAL_FIELD_NUMBER = 6;
-  private long aiNoPassTotal ;
-  /**
-   * <code>int64 ai_no_pass_total = 6;</code>
-   * @return The aiNoPassTotal.
-   */
-  @java.lang.Override
-  public long getAiNoPassTotal() {
-    return aiNoPassTotal ;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -216,21 +136,6 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (total != 0L) {
-      output.writeInt64(2, total );
-    }
-    if (rejectTotal != 0L) {
-      output.writeInt64(3, rejectTotal );
-    }
-    if (evaluatedTotal != 0L) {
-      output.writeInt64(4, evaluatedTotal );
-    }
-    if (aiPassTotal != 0L) {
-      output.writeInt64(5, aiPassTotal );
-    }
-    if (aiNoPassTotal != 0L) {
-      output.writeInt64(6, aiNoPassTotal );
-    }
     unknownFields.writeTo(output);
   }
 
@@ -244,26 +149,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (total != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, total );
-    }
-    if (rejectTotal != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, rejectTotal );
-    }
-    if (evaluatedTotal != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, evaluatedTotal );
-    }
-    if (aiPassTotal != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, aiPassTotal );
-    }
-    if (aiNoPassTotal != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, aiNoPassTotal );
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -274,26 +159,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse other = (com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse) obj;
+    com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse other = (com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getTotal()
-        != other.getTotal()) return false;
-    if (getRejectTotal()
-        != other.getRejectTotal()) return false;
-    if (getEvaluatedTotal()
-        != other.getEvaluatedTotal()) return false;
-    if (getAiPassTotal()
-        != other.getAiPassTotal()) return false;
-    if (getAiNoPassTotal()
-        != other.getAiNoPassTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -309,89 +184,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTotal());
-    hash = (37 * hash) + REJECT_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getRejectTotal());
-    hash = (37 * hash) + EVALUATED_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getEvaluatedTotal());
-    hash = (37 * hash) + AI_PASS_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAiPassTotal());
-    hash = (37 * hash) + AI_NO_PASS_TOTAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAiNoPassTotal());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -404,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -420,26 +280,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.ArticleCreationStatisticsResponse}
+   * Protobuf type {@code glory_api.CreateModifiedArticleCreationResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.ArticleCreationStatisticsResponse)
-      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.CreateModifiedArticleCreationResponse)
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_ArticleCreationStatisticsResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_CreateModifiedArticleCreationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_ArticleCreationStatisticsResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_CreateModifiedArticleCreationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.class, com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.class, com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -463,33 +323,23 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      total = 0L;
-
-      rejectTotal = 0L;
-
-      evaluatedTotal = 0L;
-
-      aiPassTotal = 0L;
-
-      aiNoPassTotal = 0L;
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_ArticleCreationStatisticsResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_CreateModifiedArticleCreationResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse build() {
-      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse build() {
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -497,18 +347,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse result = new com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse(this);
+    public com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse result = new com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse(this);
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.total = total ;
-      result.rejectTotal = rejectTotal ;
-      result.evaluatedTotal = evaluatedTotal ;
-      result.aiPassTotal = aiPassTotal ;
-      result.aiNoPassTotal = aiNoPassTotal ;
       onBuilt();
       return result;
     }
@@ -547,33 +392,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
-      }
-      if (other.getTotal() != 0L) {
-        setTotal(other.getTotal());
-      }
-      if (other.getRejectTotal() != 0L) {
-        setRejectTotal(other.getRejectTotal());
-      }
-      if (other.getEvaluatedTotal() != 0L) {
-        setEvaluatedTotal(other.getEvaluatedTotal());
-      }
-      if (other.getAiPassTotal() != 0L) {
-        setAiPassTotal(other.getAiPassTotal());
-      }
-      if (other.getAiNoPassTotal() != 0L) {
-        setAiNoPassTotal(other.getAiNoPassTotal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -590,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -722,161 +552,6 @@ private static final long serialVersionUID = 0L;
       }
       return baseRespBuilder ;
     }
-
-    private long total ;
-    /**
-     * <code>int64 total = 2;</code>
-     * @return The total.
-     */
-    @java.lang.Override
-    public long getTotal() {
-      return total ;
-    }
-    /**
-     * <code>int64 total = 2;</code>
-     * @param value The total to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotal(long value) {
-      
-      total = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 total = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTotal() {
-      
-      total = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long rejectTotal ;
-    /**
-     * <code>int64 reject_total = 3;</code>
-     * @return The rejectTotal.
-     */
-    @java.lang.Override
-    public long getRejectTotal() {
-      return rejectTotal ;
-    }
-    /**
-     * <code>int64 reject_total = 3;</code>
-     * @param value The rejectTotal to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRejectTotal(long value) {
-      
-      rejectTotal = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 reject_total = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRejectTotal() {
-      
-      rejectTotal = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long evaluatedTotal ;
-    /**
-     * <code>int64 evaluated_total = 4;</code>
-     * @return The evaluatedTotal.
-     */
-    @java.lang.Override
-    public long getEvaluatedTotal() {
-      return evaluatedTotal ;
-    }
-    /**
-     * <code>int64 evaluated_total = 4;</code>
-     * @param value The evaluatedTotal to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluatedTotal(long value) {
-      
-      evaluatedTotal = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 evaluated_total = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEvaluatedTotal() {
-      
-      evaluatedTotal = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long aiPassTotal ;
-    /**
-     * <code>int64 ai_pass_total = 5;</code>
-     * @return The aiPassTotal.
-     */
-    @java.lang.Override
-    public long getAiPassTotal() {
-      return aiPassTotal ;
-    }
-    /**
-     * <code>int64 ai_pass_total = 5;</code>
-     * @param value The aiPassTotal to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAiPassTotal(long value) {
-      
-      aiPassTotal = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 ai_pass_total = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAiPassTotal() {
-      
-      aiPassTotal = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long aiNoPassTotal ;
-    /**
-     * <code>int64 ai_no_pass_total = 6;</code>
-     * @return The aiNoPassTotal.
-     */
-    @java.lang.Override
-    public long getAiNoPassTotal() {
-      return aiNoPassTotal ;
-    }
-    /**
-     * <code>int64 ai_no_pass_total = 6;</code>
-     * @param value The aiNoPassTotal to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAiNoPassTotal(long value) {
-      
-      aiNoPassTotal = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 ai_no_pass_total = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAiNoPassTotal() {
-      
-      aiNoPassTotal = 0L;
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -890,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.ArticleCreationStatisticsResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.CreateModifiedArticleCreationResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.ArticleCreationStatisticsResponse)
-  private static final com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.CreateModifiedArticleCreationResponse)
+  private static final com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ArticleCreationStatisticsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ArticleCreationStatisticsResponse>() {
+  private static final com.google.protobuf.Parser<CreateModifiedArticleCreationResponse>
+      PARSER = new com.google.protobuf.AbstractParser<CreateModifiedArticleCreationResponse>() {
     @java.lang.Override
-    public ArticleCreationStatisticsResponse parsePartialFrom(
+    public CreateModifiedArticleCreationResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ArticleCreationStatisticsResponse(input, extensionRegistry);
+      return new CreateModifiedArticleCreationResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ArticleCreationStatisticsResponse> parser() {
+  public static com.google.protobuf.Parser<CreateModifiedArticleCreationResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ArticleCreationStatisticsResponse> getParserForType() {
+  public com.google.protobuf.Parser<CreateModifiedArticleCreationResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationStatisticsResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.short_video.CreateModifiedArticleCreationResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

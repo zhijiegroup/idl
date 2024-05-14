@@ -1818,6 +1818,11 @@ CreateLivePlanProduct create live plan product */
     request: article.CreateArticleCreationRequest
   ): Promise<article.CreateArticleCreationResponse>;
 
+  /** 保存修改后的智能文案 */
+  CreateModifiedArticleCreation(
+    request: article.CreateModifiedArticleCreationRequest
+  ): Promise<article.CreateModifiedArticleCreationResponse>;
+
   ListMyArticleCreation(
     request: article.ListMyArticleCreationRequest
   ): Promise<article.ListMyArticleCreationResponse>;

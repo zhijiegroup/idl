@@ -51,10 +51,4 @@ public interface ArticleCreationStatisticsResponseOrBuilder extends
    * @return The aiNoPassTotal.
    */
   long getAiNoPassTotal();
-
-  /**
-   * <code>int64 system_evaluated_total = 7;</code>
-   * @return The systemEvaluatedTotal.
-   */
-  long getSystemEvaluatedTotal();
 }

@@ -25,7 +25,6 @@ class ArticleCreation extends $pb.GeneratedMessage {
     $core.String? status,
     $core.String? topic,
     $core.String? creationType,
-    $core.String? source,
     $core.String? digitalHunmanVideoUrl,
     $core.String? createdAt,
   }) {
@@ -51,9 +50,6 @@ class ArticleCreation extends $pb.GeneratedMessage {
     if (creationType != null) {
       $result.creationType = creationType;
     }
-    if (source != null) {
-      $result.source = source;
-    }
     if (digitalHunmanVideoUrl != null) {
       $result.digitalHunmanVideoUrl = digitalHunmanVideoUrl;
     }
@@ -74,9 +70,8 @@ class ArticleCreation extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'status')
     ..aOS(6, _omitFieldNames ? '' : 'topic')
     ..aOS(7, _omitFieldNames ? '' : 'creationType')
-    ..aOS(8, _omitFieldNames ? '' : 'source')
-    ..aOS(9, _omitFieldNames ? '' : 'digitalHunmanVideoUrl')
-    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(8, _omitFieldNames ? '' : 'digitalHunmanVideoUrl')
+    ..aOS(9, _omitFieldNames ? '' : 'createdAt')
     ..hasRequiredFields = false
   ;
 
@@ -165,31 +160,22 @@ class ArticleCreation extends $pb.GeneratedMessage {
   void clearCreationType() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get source => $_getSZ(7);
+  $core.String get digitalHunmanVideoUrl => $_getSZ(7);
   @$pb.TagNumber(8)
-  set source($core.String v) { $_setString(7, v); }
+  set digitalHunmanVideoUrl($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasSource() => $_has(7);
+  $core.bool hasDigitalHunmanVideoUrl() => $_has(7);
   @$pb.TagNumber(8)
-  void clearSource() => clearField(8);
+  void clearDigitalHunmanVideoUrl() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get digitalHunmanVideoUrl => $_getSZ(8);
+  $core.String get createdAt => $_getSZ(8);
   @$pb.TagNumber(9)
-  set digitalHunmanVideoUrl($core.String v) { $_setString(8, v); }
+  set createdAt($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasDigitalHunmanVideoUrl() => $_has(8);
+  $core.bool hasCreatedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearDigitalHunmanVideoUrl() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.String get createdAt => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set createdAt($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasCreatedAt() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearCreatedAt() => clearField(10);
+  void clearCreatedAt() => clearField(9);
 }
 
 class ArticleCreationDraft extends $pb.GeneratedMessage {
@@ -345,12 +331,12 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     $0.BaseRequest? baseRequest,
     $core.String? courseCode,
     $core.String? courseTopicCode,
-    $core.bool? haveSubTopic,
     $core.String? title,
     $core.String? content,
     $core.String? creationType,
     $fixnum.Int64? lastArticleCreationId,
     $core.String? productName,
+    $fixnum.Int64? articleCreationId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -361,9 +347,6 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     }
     if (courseTopicCode != null) {
       $result.courseTopicCode = courseTopicCode;
-    }
-    if (haveSubTopic != null) {
-      $result.haveSubTopic = haveSubTopic;
     }
     if (title != null) {
       $result.title = title;
@@ -380,6 +363,9 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     if (productName != null) {
       $result.productName = productName;
     }
+    if (articleCreationId != null) {
+      $result.articleCreationId = articleCreationId;
+    }
     return $result;
   }
   CreateArticleCreationRequest._() : super();
@@ -390,12 +376,12 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'courseCode')
     ..aOS(3, _omitFieldNames ? '' : 'courseTopicCode')
-    ..aOB(4, _omitFieldNames ? '' : 'haveSubTopic')
-    ..aOS(5, _omitFieldNames ? '' : 'title')
-    ..aOS(6, _omitFieldNames ? '' : 'content')
-    ..aOS(7, _omitFieldNames ? '' : 'creationType')
-    ..aInt64(8, _omitFieldNames ? '' : 'lastArticleCreationId')
-    ..aOS(9, _omitFieldNames ? '' : 'productName')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'content')
+    ..aOS(6, _omitFieldNames ? '' : 'creationType')
+    ..aInt64(7, _omitFieldNames ? '' : 'lastArticleCreationId')
+    ..aOS(8, _omitFieldNames ? '' : 'productName')
+    ..aInt64(9, _omitFieldNames ? '' : 'articleCreationId')
     ..hasRequiredFields = false
   ;
 
@@ -450,58 +436,58 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
   void clearCourseTopicCode() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get haveSubTopic => $_getBF(3);
+  $core.String get title => $_getSZ(3);
   @$pb.TagNumber(4)
-  set haveSubTopic($core.bool v) { $_setBool(3, v); }
+  set title($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasHaveSubTopic() => $_has(3);
+  $core.bool hasTitle() => $_has(3);
   @$pb.TagNumber(4)
-  void clearHaveSubTopic() => clearField(4);
+  void clearTitle() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get title => $_getSZ(4);
+  $core.String get content => $_getSZ(4);
   @$pb.TagNumber(5)
-  set title($core.String v) { $_setString(4, v); }
+  set content($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTitle() => $_has(4);
+  $core.bool hasContent() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTitle() => clearField(5);
+  void clearContent() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get content => $_getSZ(5);
+  $core.String get creationType => $_getSZ(5);
   @$pb.TagNumber(6)
-  set content($core.String v) { $_setString(5, v); }
+  set creationType($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasContent() => $_has(5);
+  $core.bool hasCreationType() => $_has(5);
   @$pb.TagNumber(6)
-  void clearContent() => clearField(6);
+  void clearCreationType() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get creationType => $_getSZ(6);
+  $fixnum.Int64 get lastArticleCreationId => $_getI64(6);
   @$pb.TagNumber(7)
-  set creationType($core.String v) { $_setString(6, v); }
+  set lastArticleCreationId($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasCreationType() => $_has(6);
+  $core.bool hasLastArticleCreationId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCreationType() => clearField(7);
+  void clearLastArticleCreationId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get lastArticleCreationId => $_getI64(7);
+  $core.String get productName => $_getSZ(7);
   @$pb.TagNumber(8)
-  set lastArticleCreationId($fixnum.Int64 v) { $_setInt64(7, v); }
+  set productName($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasLastArticleCreationId() => $_has(7);
+  $core.bool hasProductName() => $_has(7);
   @$pb.TagNumber(8)
-  void clearLastArticleCreationId() => clearField(8);
+  void clearProductName() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get productName => $_getSZ(8);
+  $fixnum.Int64 get articleCreationId => $_getI64(8);
   @$pb.TagNumber(9)
-  set productName($core.String v) { $_setString(8, v); }
+  set articleCreationId($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasProductName() => $_has(8);
+  $core.bool hasArticleCreationId() => $_has(8);
   @$pb.TagNumber(9)
-  void clearProductName() => clearField(9);
+  void clearArticleCreationId() => clearField(9);
 }
 
 class CreateArticleCreationResponse extends $pb.GeneratedMessage {
@@ -959,6 +945,209 @@ class CreateArticleCreationDraftResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CreateArticleCreationDraftResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateArticleCreationDraftResponse>(create);
   static CreateArticleCreationDraftResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+/// 保存修改后的文案
+class CreateModifiedArticleCreationRequest extends $pb.GeneratedMessage {
+  factory CreateModifiedArticleCreationRequest({
+    $0.BaseRequest? baseRequest,
+    $core.String? courseCode,
+    $core.String? courseTopicCode,
+    $core.String? title,
+    $core.String? content,
+    $core.String? creationType,
+    $fixnum.Int64? modifiedArticleCreationId,
+    $core.String? productName,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (courseCode != null) {
+      $result.courseCode = courseCode;
+    }
+    if (courseTopicCode != null) {
+      $result.courseTopicCode = courseTopicCode;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (content != null) {
+      $result.content = content;
+    }
+    if (creationType != null) {
+      $result.creationType = creationType;
+    }
+    if (modifiedArticleCreationId != null) {
+      $result.modifiedArticleCreationId = modifiedArticleCreationId;
+    }
+    if (productName != null) {
+      $result.productName = productName;
+    }
+    return $result;
+  }
+  CreateModifiedArticleCreationRequest._() : super();
+  factory CreateModifiedArticleCreationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateModifiedArticleCreationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateModifiedArticleCreationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'courseCode')
+    ..aOS(3, _omitFieldNames ? '' : 'courseTopicCode')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'content')
+    ..aOS(6, _omitFieldNames ? '' : 'creationType')
+    ..aInt64(7, _omitFieldNames ? '' : 'modifiedArticleCreationId')
+    ..aOS(8, _omitFieldNames ? '' : 'productName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateModifiedArticleCreationRequest clone() => CreateModifiedArticleCreationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateModifiedArticleCreationRequest copyWith(void Function(CreateModifiedArticleCreationRequest) updates) => super.copyWith((message) => updates(message as CreateModifiedArticleCreationRequest)) as CreateModifiedArticleCreationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateModifiedArticleCreationRequest create() => CreateModifiedArticleCreationRequest._();
+  CreateModifiedArticleCreationRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateModifiedArticleCreationRequest> createRepeated() => $pb.PbList<CreateModifiedArticleCreationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateModifiedArticleCreationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateModifiedArticleCreationRequest>(create);
+  static CreateModifiedArticleCreationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get courseCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set courseCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCourseCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCourseCode() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get courseTopicCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set courseTopicCode($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCourseTopicCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCourseTopicCode() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get content => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set content($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasContent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContent() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get creationType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set creationType($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreationType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreationType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get modifiedArticleCreationId => $_getI64(6);
+  @$pb.TagNumber(7)
+  set modifiedArticleCreationId($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasModifiedArticleCreationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearModifiedArticleCreationId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get productName => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set productName($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasProductName() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProductName() => clearField(8);
+}
+
+class CreateModifiedArticleCreationResponse extends $pb.GeneratedMessage {
+  factory CreateModifiedArticleCreationResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  CreateModifiedArticleCreationResponse._() : super();
+  factory CreateModifiedArticleCreationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateModifiedArticleCreationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateModifiedArticleCreationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateModifiedArticleCreationResponse clone() => CreateModifiedArticleCreationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateModifiedArticleCreationResponse copyWith(void Function(CreateModifiedArticleCreationResponse) updates) => super.copyWith((message) => updates(message as CreateModifiedArticleCreationResponse)) as CreateModifiedArticleCreationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateModifiedArticleCreationResponse create() => CreateModifiedArticleCreationResponse._();
+  CreateModifiedArticleCreationResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateModifiedArticleCreationResponse> createRepeated() => $pb.PbList<CreateModifiedArticleCreationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateModifiedArticleCreationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateModifiedArticleCreationResponse>(create);
+  static CreateModifiedArticleCreationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);
@@ -1498,7 +1687,6 @@ class ArticleCreationStatisticsResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? evaluatedTotal,
     $fixnum.Int64? aiPassTotal,
     $fixnum.Int64? aiNoPassTotal,
-    $fixnum.Int64? systemEvaluatedTotal,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1519,9 +1707,6 @@ class ArticleCreationStatisticsResponse extends $pb.GeneratedMessage {
     if (aiNoPassTotal != null) {
       $result.aiNoPassTotal = aiNoPassTotal;
     }
-    if (systemEvaluatedTotal != null) {
-      $result.systemEvaluatedTotal = systemEvaluatedTotal;
-    }
     return $result;
   }
   ArticleCreationStatisticsResponse._() : super();
@@ -1535,7 +1720,6 @@ class ArticleCreationStatisticsResponse extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'evaluatedTotal')
     ..aInt64(5, _omitFieldNames ? '' : 'aiPassTotal')
     ..aInt64(6, _omitFieldNames ? '' : 'aiNoPassTotal')
-    ..aInt64(7, _omitFieldNames ? '' : 'systemEvaluatedTotal')
     ..hasRequiredFields = false
   ;
 
@@ -1615,15 +1799,6 @@ class ArticleCreationStatisticsResponse extends $pb.GeneratedMessage {
   $core.bool hasAiNoPassTotal() => $_has(5);
   @$pb.TagNumber(6)
   void clearAiNoPassTotal() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $fixnum.Int64 get systemEvaluatedTotal => $_getI64(6);
-  @$pb.TagNumber(7)
-  set systemEvaluatedTotal($fixnum.Int64 v) { $_setInt64(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasSystemEvaluatedTotal() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearSystemEvaluatedTotal() => clearField(7);
 }
 
 class GetExampleArticleRequest extends $pb.GeneratedMessage {

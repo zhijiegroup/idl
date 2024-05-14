@@ -3246,6 +3246,14 @@ export class glory_api {
     );
   }
 
+  CreateModifiedArticleCreation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/create_modified_article`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListMyArticleCreation(request) {
     const uri = `${this.uriPrefix}/api/article_creation/list_my_article_creation`;
     const body = JSONbigint.stringify(request);

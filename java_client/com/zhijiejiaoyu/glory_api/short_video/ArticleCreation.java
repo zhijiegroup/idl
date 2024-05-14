@@ -21,7 +21,6 @@ private static final long serialVersionUID = 0L;
     status = "";
     topic = "";
     creationType = "";
-    source = "";
     digitalHunmanVideoUrl = "";
     createdAt = "";
   }
@@ -99,16 +98,10 @@ private static final long serialVersionUID = 0L;
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            source = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             digitalHunmanVideoUrl = s;
             break;
           }
-          case 82: {
+          case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
@@ -358,48 +351,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SOURCE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object source ;
-  /**
-   * <code>string source = 8;</code>
-   * @return The source.
-   */
-  @java.lang.Override
-  public java.lang.String getSource() {
-    java.lang.Object ref = source ;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      source = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string source = 8;</code>
-   * @return The bytes for source.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSourceBytes() {
-    java.lang.Object ref = source ;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      source = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DIGITAL_HUNMAN_VIDEO_URL_FIELD_NUMBER = 9;
+  public static final int DIGITAL_HUNMAN_VIDEO_URL_FIELD_NUMBER = 8;
   private volatile java.lang.Object digitalHunmanVideoUrl ;
   /**
-   * <code>string digital_hunman_video_url = 9;</code>
+   * <code>string digital_hunman_video_url = 8;</code>
    * @return The digitalHunmanVideoUrl.
    */
   @java.lang.Override
@@ -416,7 +371,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string digital_hunman_video_url = 9;</code>
+   * <code>string digital_hunman_video_url = 8;</code>
    * @return The bytes for digitalHunmanVideoUrl.
    */
   @java.lang.Override
@@ -434,10 +389,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 10;
+  public static final int CREATED_AT_FIELD_NUMBER = 9;
   private volatile java.lang.Object createdAt ;
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 9;</code>
    * @return The createdAt.
    */
   @java.lang.Override
@@ -454,7 +409,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string created_at = 10;</code>
+   * <code>string created_at = 9;</code>
    * @return The bytes for createdAt.
    */
   @java.lang.Override
@@ -507,14 +462,11 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creationType );
     }
-    if (!getSourceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, source );
-    }
     if (!getDigitalHunmanVideoUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, digitalHunmanVideoUrl );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, digitalHunmanVideoUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
     }
     unknownFields.writeTo(output);
   }
@@ -548,14 +500,11 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creationType );
     }
-    if (!getSourceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, source );
-    }
     if (!getDigitalHunmanVideoUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, digitalHunmanVideoUrl );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, digitalHunmanVideoUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -586,8 +535,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTopic())) return false;
     if (!getCreationType()
         .equals(other.getCreationType())) return false;
-    if (!getSource()
-        .equals(other.getSource())) return false;
     if (!getDigitalHunmanVideoUrl()
         .equals(other.getDigitalHunmanVideoUrl())) return false;
     if (!getCreatedAt()
@@ -619,8 +566,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTopic().hashCode();
     hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationType().hashCode();
-    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
-    hash = (53 * hash) + getSource().hashCode();
     hash = (37 * hash) + DIGITAL_HUNMAN_VIDEO_URL_FIELD_NUMBER;
     hash = (53 * hash) + getDigitalHunmanVideoUrl().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
@@ -772,8 +717,6 @@ private static final long serialVersionUID = 0L;
 
       creationType = "";
 
-      source = "";
-
       digitalHunmanVideoUrl = "";
 
       createdAt = "";
@@ -811,7 +754,6 @@ private static final long serialVersionUID = 0L;
       result.status = status ;
       result.topic = topic ;
       result.creationType = creationType ;
-      result.source = source ;
       result.digitalHunmanVideoUrl = digitalHunmanVideoUrl ;
       result.createdAt = createdAt ;
       onBuilt();
@@ -886,10 +828,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreationType().isEmpty()) {
         creationType = other.creationType ;
-        onChanged();
-      }
-      if (!other.getSource().isEmpty()) {
-        source = other.source ;
         onChanged();
       }
       if (!other.getDigitalHunmanVideoUrl().isEmpty()) {
@@ -1371,85 +1309,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object source = "";
-    /**
-     * <code>string source = 8;</code>
-     * @return The source.
-     */
-    public java.lang.String getSource() {
-      java.lang.Object ref = source ;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        source = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string source = 8;</code>
-     * @return The bytes for source.
-     */
-    public com.google.protobuf.ByteString
-        getSourceBytes() {
-      java.lang.Object ref = source ;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        source = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string source = 8;</code>
-     * @param value The source to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSource(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      source = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string source = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSource() {
-      
-      source = getDefaultInstance().getSource();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string source = 8;</code>
-     * @param value The bytes for source to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      source = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object digitalHunmanVideoUrl = "";
     /**
-     * <code>string digital_hunman_video_url = 9;</code>
+     * <code>string digital_hunman_video_url = 8;</code>
      * @return The digitalHunmanVideoUrl.
      */
     public java.lang.String getDigitalHunmanVideoUrl() {
@@ -1465,7 +1327,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string digital_hunman_video_url = 9;</code>
+     * <code>string digital_hunman_video_url = 8;</code>
      * @return The bytes for digitalHunmanVideoUrl.
      */
     public com.google.protobuf.ByteString
@@ -1482,7 +1344,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string digital_hunman_video_url = 9;</code>
+     * <code>string digital_hunman_video_url = 8;</code>
      * @param value The digitalHunmanVideoUrl to set.
      * @return This builder for chaining.
      */
@@ -1497,7 +1359,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string digital_hunman_video_url = 9;</code>
+     * <code>string digital_hunman_video_url = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearDigitalHunmanVideoUrl() {
@@ -1507,7 +1369,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string digital_hunman_video_url = 9;</code>
+     * <code>string digital_hunman_video_url = 8;</code>
      * @param value The bytes for digitalHunmanVideoUrl to set.
      * @return This builder for chaining.
      */
@@ -1525,7 +1387,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object createdAt = "";
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 9;</code>
      * @return The createdAt.
      */
     public java.lang.String getCreatedAt() {
@@ -1541,7 +1403,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 9;</code>
      * @return The bytes for createdAt.
      */
     public com.google.protobuf.ByteString
@@ -1558,7 +1420,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 9;</code>
      * @param value The createdAt to set.
      * @return This builder for chaining.
      */
@@ -1573,7 +1435,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearCreatedAt() {
@@ -1583,7 +1445,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string created_at = 10;</code>
+     * <code>string created_at = 9;</code>
      * @param value The bytes for createdAt to set.
      * @return This builder for chaining.
      */
