@@ -100,6 +100,11 @@ struct GloryApi_User {
   /// Clears the value of `seller`. Subsequent reads from it will return its default value.
   mutating func clearSeller() {_uniqueStorage()._seller = nil}
 
+  var tenantID: Int64 {
+    get {return _storage._tenantID}
+    set {_uniqueStorage()._tenantID = newValue}
+  }
+
   ///判断用户的shop访问权限
   var shopAccess: [GloryApi_ShopAccess] {
     get {return _storage._shopAccess}
@@ -2520,6 +2525,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     7: .standard(proto: "avatar_attachment_id"),
     8: .standard(proto: "avatar_url"),
     9: .same(proto: "seller"),
+    18: .standard(proto: "tenant_id"),
     10: .standard(proto: "shop_access"),
     11: .standard(proto: "tenant_dept"),
     121: .same(proto: "roles"),
@@ -2540,6 +2546,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _avatarAttachmentID: Int64 = 0
     var _avatarURL: String = String()
     var _seller: GloryApi_Seller? = nil
+    var _tenantID: Int64 = 0
     var _shopAccess: [GloryApi_ShopAccess] = []
     var _tenantDept: [GloryApi_TenantDept] = []
     var _roles: [GloryApi_Role] = []
@@ -2571,6 +2578,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _avatarAttachmentID = source._avatarAttachmentID
       _avatarURL = source._avatarURL
       _seller = source._seller
+      _tenantID = source._tenantID
       _shopAccess = source._shopAccess
       _tenantDept = source._tenantDept
       _roles = source._roles
@@ -2613,6 +2621,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isEnterTenant) }()
         case 16: try { try decoder.decodeSingularBoolField(value: &_storage._weakPassword) }()
         case 17: try { try decoder.decodeSingularBoolField(value: &_storage._needChangePassword) }()
+        case 18: try { try decoder.decodeSingularInt64Field(value: &_storage._tenantID) }()
         case 121: try { try decoder.decodeRepeatedMessageField(value: &_storage._roles) }()
         default: break
         }
@@ -2674,6 +2683,9 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._needChangePassword != false {
         try visitor.visitSingularBoolField(value: _storage._needChangePassword, fieldNumber: 17)
       }
+      if _storage._tenantID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._tenantID, fieldNumber: 18)
+      }
       if !_storage._roles.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._roles, fieldNumber: 121)
       }
@@ -2695,6 +2707,7 @@ extension GloryApi_User: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._avatarAttachmentID != rhs_storage._avatarAttachmentID {return false}
         if _storage._avatarURL != rhs_storage._avatarURL {return false}
         if _storage._seller != rhs_storage._seller {return false}
+        if _storage._tenantID != rhs_storage._tenantID {return false}
         if _storage._shopAccess != rhs_storage._shopAccess {return false}
         if _storage._tenantDept != rhs_storage._tenantDept {return false}
         if _storage._roles != rhs_storage._roles {return false}

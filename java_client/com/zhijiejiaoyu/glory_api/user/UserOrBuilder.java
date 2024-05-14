@@ -107,6 +107,12 @@ public interface UserOrBuilder extends
   com.zhijiejiaoyu.glory_api.seller.SellerOrBuilder getSellerOrBuilder();
 
   /**
+   * <code>int64 tenant_id = 18;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
+
+  /**
    * <pre>
    *判断用户的shop访问权限
    * </pre>

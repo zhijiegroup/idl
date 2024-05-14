@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private ListDigitalVideoRequest() {
     taskId = "";
     title = "";
+    phone = "";
   }
 
   @java.lang.Override
@@ -83,6 +84,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             status = input.readInt32();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            phone = s;
             break;
           }
           case 802: {
@@ -254,6 +261,44 @@ private static final long serialVersionUID = 0L;
     return status ;
   }
 
+  public static final int PHONE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object phone ;
+  /**
+   * <code>string phone = 6;</code>
+   * @return The phone.
+   */
+  @java.lang.Override
+  public java.lang.String getPhone() {
+    java.lang.Object ref = phone ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      phone = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string phone = 6;</code>
+   * @return The bytes for phone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPhoneBytes() {
+    java.lang.Object ref = phone ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      phone = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -309,6 +354,9 @@ private static final long serialVersionUID = 0L;
     if (status != 0) {
       output.writeInt32(5, status );
     }
+    if (!getPhoneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, phone );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -338,6 +386,9 @@ private static final long serialVersionUID = 0L;
     if (status != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, status );
+    }
+    if (!getPhoneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, phone );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -371,6 +422,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTitle())) return false;
     if (getStatus()
         != other.getStatus()) return false;
+    if (!getPhone()
+        .equals(other.getPhone())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -399,6 +452,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus();
+    hash = (37 * hash) + PHONE_FIELD_NUMBER;
+    hash = (53 * hash) + getPhone().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -550,6 +605,8 @@ private static final long serialVersionUID = 0L;
 
       status = 0;
 
+      phone = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -591,6 +648,7 @@ private static final long serialVersionUID = 0L;
       result.type = type ;
       result.title = title ;
       result.status = status ;
+      result.phone = phone ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -660,6 +718,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStatus() != 0) {
         setStatus(other.getStatus());
+      }
+      if (!other.getPhone().isEmpty()) {
+        phone = other.phone ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1022,6 +1084,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatus() {
       
       status = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object phone = "";
+    /**
+     * <code>string phone = 6;</code>
+     * @return The phone.
+     */
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phone = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string phone = 6;</code>
+     * @return The bytes for phone.
+     */
+    public com.google.protobuf.ByteString
+        getPhoneBytes() {
+      java.lang.Object ref = phone ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phone = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string phone = 6;</code>
+     * @param value The phone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhone(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      phone = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string phone = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPhone() {
+      
+      phone = getDefaultInstance().getPhone();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string phone = 6;</code>
+     * @param value The bytes for phone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPhoneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      phone = value;
       onChanged();
       return this;
     }

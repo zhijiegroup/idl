@@ -59,6 +59,18 @@ public interface ListDigitalVideoRequestOrBuilder extends
   int getStatus();
 
   /**
+   * <code>string phone = 6;</code>
+   * @return The phone.
+   */
+  java.lang.String getPhone();
+  /**
+   * <code>string phone = 6;</code>
+   * @return The bytes for phone.
+   */
+  com.google.protobuf.ByteString
+      getPhoneBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

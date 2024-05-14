@@ -358,6 +358,7 @@ export interface CreateDigitalVideoRequest {
   title?: string;
   bg?: string;
   code?: string;
+  speech_rate?: number;
 }
 
 export interface CreateDigitalVideoResponse {
@@ -388,6 +389,7 @@ export interface ListDigitalVideoRequest {
   type?: number;
   title?: string;
   status?: number;
+  phone?: string;
   pagination?: base.PaginationRequest;
 }
 

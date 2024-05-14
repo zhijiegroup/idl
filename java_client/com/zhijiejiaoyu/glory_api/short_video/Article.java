@@ -611,131 +611,132 @@ public final class Article {
       "t\030\001 \001(\0132\021.base.BaseRequest\"[\n\025GetChatCon" +
       "figResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
       "seResponse\022\r\n\005total\030\002 \001(\003\022\014\n\004used\030\003 \001(\003\"" +
-      "{\n\031CreateDigitalVideoRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004text\030\002 " +
-      "\001(\t\022\r\n\005title\030\003 \001(\t\022\n\n\002bg\030\004 \001(\t\022\014\n\004code\030\005" +
-      " \001(\t\"T\n\032CreateDigitalVideoResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007tas" +
-      "k_id\030\002 \001(\t\"\265\001\n\014DigitalVideo\022\017\n\007task_id\030\001" +
-      " \001(\t\022\023\n\013task_status\030\007 \001(\005\022\023\n\013video_title" +
-      "\030\002 \001(\t\022\021\n\tvideo_url\030\003 \001(\t\022\026\n\016video_durat" +
-      "ion\030\004 \001(\003\022\024\n\014subtitle_url\030\005 \001(\t\022\025\n\rvideo" +
-      "_preview\030\006 \001(\t\022\022\n\ncreated_at\030\010 \001(\t\"\226\001\n\030L" +
-      "istDigitalVideoResponse\022%\n\tbase_resp\030\001 \001" +
-      "(\0132\022.base.BaseResponse\022%\n\004list\030\002 \003(\0132\027.g" +
-      "lory_api.DigitalVideo\022,\n\npagination\030d \001(" +
-      "\0132\030.base.PaginationResponse\"\255\001\n\027ListDigi" +
-      "talVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007task_id\030\002 \001(\t\022\014\n\004typ" +
-      "e\030\003 \001(\005\022\r\n\005title\030\004 \001(\t\022\016\n\006status\030\005 \001(\005\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"h\n\027GetDigitalVideoResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\022&\n\005video\030\002" +
-      " \001(\0132\027.glory_api.DigitalVideo\"R\n\026GetDigi" +
-      "talVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\017\n\007task_id\030\002 \001(\t\"+\n\013Dig" +
-      "italCode\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\212" +
-      "\001\n\027ListDigitalCodeResponse\022%\n\tbase_resp\030" +
-      "\001 \001(\0132\022.base.BaseResponse\022#\n\003r2d\030\002 \003(\0132\026" +
-      ".glory_api.DigitalCode\022#\n\003r3d\030\003 \003(\0132\026.gl" +
-      "ory_api.DigitalCode\"A\n\026ListDigitalCodeRe" +
+      "\220\001\n\031CreateDigitalVideoRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004text\030\002" +
+      " \001(\t\022\r\n\005title\030\003 \001(\t\022\n\n\002bg\030\004 \001(\t\022\014\n\004code\030" +
+      "\005 \001(\t\022\023\n\013speech_rate\030\006 \001(\005\"T\n\032CreateDigi" +
+      "talVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\017\n\007task_id\030\002 \001(\t\"\265\001\n\014Dig" +
+      "italVideo\022\017\n\007task_id\030\001 \001(\t\022\023\n\013task_statu" +
+      "s\030\007 \001(\005\022\023\n\013video_title\030\002 \001(\t\022\021\n\tvideo_ur" +
+      "l\030\003 \001(\t\022\026\n\016video_duration\030\004 \001(\003\022\024\n\014subti" +
+      "tle_url\030\005 \001(\t\022\025\n\rvideo_preview\030\006 \001(\t\022\022\n\n" +
+      "created_at\030\010 \001(\t\"\226\001\n\030ListDigitalVideoRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022%\n\004list\030\002 \003(\0132\027.glory_api.DigitalVi" +
+      "deo\022,\n\npagination\030d \001(\0132\030.base.Paginatio" +
+      "nResponse\"\274\001\n\027ListDigitalVideoRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\017" +
+      "\n\007task_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\005\022\r\n\005title\030\004" +
+      " \001(\t\022\016\n\006status\030\005 \001(\005\022\r\n\005phone\030\006 \001(\t\022+\n\np" +
+      "agination\030d \001(\0132\027.base.PaginationRequest" +
+      "\"h\n\027GetDigitalVideoResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022&\n\005video\030\002 \001(" +
+      "\0132\027.glory_api.DigitalVideo\"R\n\026GetDigital" +
+      "VideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\017\n\007task_id\030\002 \001(\t\"+\n\013Digita" +
+      "lCode\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\212\001\n\027" +
+      "ListDigitalCodeResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022#\n\003r2d\030\002 \003(\0132\026.gl" +
+      "ory_api.DigitalCode\022#\n\003r3d\030\003 \003(\0132\026.glory" +
+      "_api.DigitalCode\"A\n\026ListDigitalCodeReque" +
+      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
+      "est\"U\n\031DeleteDigitalVideoRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007tas" +
+      "k_id\030\002 \001(\t\"C\n\032DeleteDigitalVideoResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "~\n\030ListDigitalAvatarRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 \001" +
+      "(\t\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
+      "Request\"~\n\rDigitalAvatar\022\014\n\004code\030\001 \001(\t\022\014" +
+      "\n\004name\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\022\024\n\014portr" +
+      "ait_url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\023\n\013pr" +
+      "eview_url\030\006 \001(\t\"\233\001\n\031ListDigitalAvatarRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022)\n\007avatars\030\002 \003(\0132\030.glory_api.Digita" +
+      "lAvatar\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
+      "ationResponse\"G\n\034UploadBackgroundImageRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\"U\n\031DeleteDigitalVideoRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007" +
-      "task_id\030\002 \001(\t\"C\n\032DeleteDigitalVideoRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\"~\n\030ListDigitalAvatarRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030" +
-      "\002 \001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
-      "ionRequest\"~\n\rDigitalAvatar\022\014\n\004code\030\001 \001(" +
-      "\t\022\014\n\004name\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\022\024\n\014po" +
-      "rtrait_url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\023\n" +
-      "\013preview_url\030\006 \001(\t\"\233\001\n\031ListDigitalAvatar" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\022)\n\007avatars\030\002 \003(\0132\030.glory_api.Dig" +
-      "italAvatar\022,\n\npagination\030d \001(\0132\030.base.Pa" +
-      "ginationResponse\"G\n\034UploadBackgroundImag" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\"S\n\035UploadBackgroundImageRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022\013\n\003url\030\002 \001(\t\"E\n\032ListBackgroundImageReq" +
-      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
-      "quest\"%\n\010OssImage\022\014\n\004path\030\001 \001(\t\022\013\n\003url\030\002" +
-      " \001(\t\"i\n\033ListBackgroundImageResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022#\n\006im" +
-      "ages\030\002 \003(\0132\023.glory_api.OssImage\"\364\001\n\035Upda" +
-      "teTenantCourseDataRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rstudent_co" +
-      "unt\030\002 \001(\005\022\024\n\014course_count\030\003 \001(\005\022\030\n\020day_c" +
-      "ourse_count\030\004 \001(\005\022\033\n\023day_assistant_count" +
-      "\030\005 \001(\005\022\030\n\020day_simple_count\030\006 \001(\005\022\031\n\021day_" +
-      "complex_count\030\007 \001(\005\022\021\n\ttenant_id\030\010 \001(\003\"G" +
-      "\n\036UpdateTenantCourseDataResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\"\210\001\n\027Upda" +
-      "teModelPriceRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\027\n\017assistant_price\030" +
-      "\002 \001(\001\022\024\n\014simple_price\030\003 \001(\001\022\025\n\rcomplex_p" +
-      "rice\030\004 \001(\001\"A\n\030UpdateModelPriceResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"]\n" +
-      "\037GetArticleCreationTenantRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\021\n\tten" +
-      "ant_id\030\002 \001(\003\"\304\001\n\030GetArticleCreationTenan" +
-      "t\022\014\n\004name\030\001 \001(\t\022\025\n\rstudent_count\030\002 \001(\003\022\024" +
-      "\n\014course_count\030\003 \001(\003\022\030\n\020day_course_count" +
-      "\030\004 \001(\003\022\024\n\014simple_count\030\005 \001(\003\022\025\n\rcomplex_" +
-      "count\030\006 \001(\003\022\027\n\017assistant_count\030\007 \001(\003\022\r\n\005" +
-      "total\030\010 \001(\003\"~\n GetArticleCreationTenantR" +
-      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
-      "sponse\0223\n\006tenant\030\002 \001(\0132#.glory_api.GetAr" +
-      "ticleCreationTenant\"x\n ListArticleCreati" +
-      "onTenantRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022+\n\npagination\030d \001(\0132\027.b" +
-      "ase.PaginationRequest\"\253\001\n!ListArticleCre" +
-      "ationTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\0221\n\004list\030\002 \003(\0132#.glory" +
-      "_api.GetArticleCreationTenant\022,\n\npaginat" +
-      "ion\030d \001(\0132\030.base.PaginationResponse\"|\n$L" +
-      "istArticleCreationTenantCostRequest\022\'\n\014b" +
-      "ase_request\030\001 \001(\0132\021.base.BaseRequest\022+\n\n" +
-      "pagination\030d \001(\0132\027.base.PaginationReques" +
-      "t\"\360\003\n\031ArticleCreationTenantCost\022\014\n\004name\030" +
-      "\001 \001(\t\022\032\n\022total_cost_percent\030\002 \001(\001\022\022\n\ntot" +
-      "al_cost\030\003 \001(\001\022\023\n\013total_spend\030\004 \001(\001\022\025\n\rco" +
-      "mplex_count\030\005 \001(\003\022\033\n\023complex_usage_count" +
-      "\030\006 \001(\003\022\024\n\014simple_count\030\007 \001(\003\022\032\n\022simple_u" +
-      "sage_count\030\010 \001(\003\022\027\n\017assistant_count\030\t \001(" +
-      "\003\022\035\n\025assistant_usage_count\030\n \001(\003\022\034\n\024comp" +
-      "lex_cost_percent\030\013 \001(\001\022\024\n\014complex_cost\030\014" +
-      " \001(\001\022\025\n\rcomplex_spend\030\r \001(\001\022\033\n\023simple_co" +
-      "st_percent\030\016 \001(\001\022\023\n\013simple_cost\030\017 \001(\001\022\024\n" +
-      "\014simple_spend\030\020 \001(\001\022\036\n\026assistant_cost_pe" +
-      "rcent\030\021 \001(\001\022\026\n\016assistant_cost\030\022 \001(\001\022\027\n\017a" +
-      "ssistant_spend\030\023 \001(\001\"\260\001\n%ListArticleCrea" +
-      "tionTenantCostResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\0222\n\004list\030\002 \003(\0132$.gl" +
-      "ory_api.ArticleCreationTenantCost\022,\n\npag" +
-      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
-      "N\n#GetArticleCreationTenantCostRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\"" +
-      "\260\002\n$GetArticleCreationTenantCostResponse" +
-      "\022%\n\tbase_resp\030d \001(\0132\022.base.BaseResponse\022" +
-      "\022\n\ntotal_cost\030\001 \001(\001\022\023\n\013total_spend\030\002 \001(\001" +
-      "\022\032\n\022total_cost_percent\030\003 \001(\001\022\033\n\023complex_" +
-      "usage_count\030\004 \001(\003\022\025\n\rcomplex_spend\030\005 \001(\001" +
-      "\022\032\n\022simple_usage_count\030\006 \001(\003\022\024\n\014simple_s" +
-      "pend\030\007 \001(\001\022\035\n\025assistant_usage_count\030\010 \001(" +
-      "\003\022\027\n\017assistant_spend\030\t \001(\001\"\376\001\n\032GetSubTop" +
-      "icAiResultRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\026\n\016sub_topic_code\030\002 \001" +
-      "(\t\022\024\n\014product_name\030\003 \001(\t\022\026\n\016selling_poin" +
-      "ts\030\004 \003(\t\022\022\n\nuser_needs\030\005 \001(\t\022\030\n\020user_pai" +
-      "n_points\030\006 \001(\t\022\022\n\nuser_scene\030\007 \001(\t\022\031\n\021sc" +
-      "ene_description\030\010 \001(\t\022\024\n\014full_content\030\t " +
-      "\001(\t\"\205\001\n\033GetSubTopicAiResultResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\022co" +
-      "ntent_moderation\030\002 \001(\0132#.glory_api.Artic" +
-      "leContentModerationB*\n&com.zhijiejiaoyu." +
-      "glory_api.short_videoP\001b\006proto3"
+      "equest\"S\n\035UploadBackgroundImageResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\013" +
+      "\n\003url\030\002 \001(\t\"E\n\032ListBackgroundImageReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\"%\n\010OssImage\022\014\n\004path\030\001 \001(\t\022\013\n\003url\030\002 \001(" +
+      "\t\"i\n\033ListBackgroundImageResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022#\n\006image" +
+      "s\030\002 \003(\0132\023.glory_api.OssImage\"\364\001\n\035UpdateT" +
+      "enantCourseDataRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\025\n\rstudent_count" +
+      "\030\002 \001(\005\022\024\n\014course_count\030\003 \001(\005\022\030\n\020day_cour" +
+      "se_count\030\004 \001(\005\022\033\n\023day_assistant_count\030\005 " +
+      "\001(\005\022\030\n\020day_simple_count\030\006 \001(\005\022\031\n\021day_com" +
+      "plex_count\030\007 \001(\005\022\021\n\ttenant_id\030\010 \001(\003\"G\n\036U" +
+      "pdateTenantCourseDataResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\"\210\001\n\027UpdateM" +
+      "odelPriceRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
+      ".base.BaseRequest\022\027\n\017assistant_price\030\002 \001" +
+      "(\001\022\024\n\014simple_price\030\003 \001(\001\022\025\n\rcomplex_pric" +
+      "e\030\004 \001(\001\"A\n\030UpdateModelPriceResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"]\n\037Ge" +
+      "tArticleCreationTenantRequest\022\'\n\014base_re" +
+      "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant" +
+      "_id\030\002 \001(\003\"\304\001\n\030GetArticleCreationTenant\022\014" +
+      "\n\004name\030\001 \001(\t\022\025\n\rstudent_count\030\002 \001(\003\022\024\n\014c" +
+      "ourse_count\030\003 \001(\003\022\030\n\020day_course_count\030\004 " +
+      "\001(\003\022\024\n\014simple_count\030\005 \001(\003\022\025\n\rcomplex_cou" +
+      "nt\030\006 \001(\003\022\027\n\017assistant_count\030\007 \001(\003\022\r\n\005tot" +
+      "al\030\010 \001(\003\"~\n GetArticleCreationTenantResp" +
+      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
+      "nse\0223\n\006tenant\030\002 \001(\0132#.glory_api.GetArtic" +
+      "leCreationTenant\"x\n ListArticleCreationT" +
+      "enantRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"\253\001\n!ListArticleCreati" +
+      "onTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\0221\n\004list\030\002 \003(\0132#.glory_ap" +
+      "i.GetArticleCreationTenant\022,\n\npagination" +
+      "\030d \001(\0132\030.base.PaginationResponse\"|\n$List" +
+      "ArticleCreationTenantCostRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022+\n\npag" +
+      "ination\030d \001(\0132\027.base.PaginationRequest\"\360" +
+      "\003\n\031ArticleCreationTenantCost\022\014\n\004name\030\001 \001" +
+      "(\t\022\032\n\022total_cost_percent\030\002 \001(\001\022\022\n\ntotal_" +
+      "cost\030\003 \001(\001\022\023\n\013total_spend\030\004 \001(\001\022\025\n\rcompl" +
+      "ex_count\030\005 \001(\003\022\033\n\023complex_usage_count\030\006 " +
+      "\001(\003\022\024\n\014simple_count\030\007 \001(\003\022\032\n\022simple_usag" +
+      "e_count\030\010 \001(\003\022\027\n\017assistant_count\030\t \001(\003\022\035" +
+      "\n\025assistant_usage_count\030\n \001(\003\022\034\n\024complex" +
+      "_cost_percent\030\013 \001(\001\022\024\n\014complex_cost\030\014 \001(" +
+      "\001\022\025\n\rcomplex_spend\030\r \001(\001\022\033\n\023simple_cost_" +
+      "percent\030\016 \001(\001\022\023\n\013simple_cost\030\017 \001(\001\022\024\n\014si" +
+      "mple_spend\030\020 \001(\001\022\036\n\026assistant_cost_perce" +
+      "nt\030\021 \001(\001\022\026\n\016assistant_cost\030\022 \001(\001\022\027\n\017assi" +
+      "stant_spend\030\023 \001(\001\"\260\001\n%ListArticleCreatio" +
+      "nTenantCostResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\0222\n\004list\030\002 \003(\0132$.glory" +
+      "_api.ArticleCreationTenantCost\022,\n\npagina" +
+      "tion\030d \001(\0132\030.base.PaginationResponse\"N\n#" +
+      "GetArticleCreationTenantCostRequest\022\'\n\014b" +
+      "ase_request\030\001 \001(\0132\021.base.BaseRequest\"\260\002\n" +
+      "$GetArticleCreationTenantCostResponse\022%\n" +
+      "\tbase_resp\030d \001(\0132\022.base.BaseResponse\022\022\n\n" +
+      "total_cost\030\001 \001(\001\022\023\n\013total_spend\030\002 \001(\001\022\032\n" +
+      "\022total_cost_percent\030\003 \001(\001\022\033\n\023complex_usa" +
+      "ge_count\030\004 \001(\003\022\025\n\rcomplex_spend\030\005 \001(\001\022\032\n" +
+      "\022simple_usage_count\030\006 \001(\003\022\024\n\014simple_spen" +
+      "d\030\007 \001(\001\022\035\n\025assistant_usage_count\030\010 \001(\003\022\027" +
+      "\n\017assistant_spend\030\t \001(\001\"\376\001\n\032GetSubTopicA" +
+      "iResultRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\026\n\016sub_topic_code\030\002 \001(\t\022" +
+      "\024\n\014product_name\030\003 \001(\t\022\026\n\016selling_points\030" +
+      "\004 \003(\t\022\022\n\nuser_needs\030\005 \001(\t\022\030\n\020user_pain_p" +
+      "oints\030\006 \001(\t\022\022\n\nuser_scene\030\007 \001(\t\022\031\n\021scene" +
+      "_description\030\010 \001(\t\022\024\n\014full_content\030\t \001(\t" +
+      "\"\205\001\n\033GetSubTopicAiResultResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\022conte" +
+      "nt_moderation\030\002 \001(\0132#.glory_api.ArticleC" +
+      "ontentModerationB*\n&com.zhijiejiaoyu.glo" +
+      "ry_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1042,7 +1043,7 @@ public final class Article {
     internal_static_glory_api_CreateDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateDigitalVideoRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Text", "Title", "Bg", "Code", });
+        new java.lang.String[] { "BaseRequest", "Text", "Title", "Bg", "Code", "SpeechRate", });
     internal_static_glory_api_CreateDigitalVideoResponse_descriptor =
       getDescriptor().getMessageTypes().get(50);
     internal_static_glory_api_CreateDigitalVideoResponse_fieldAccessorTable = new
@@ -1066,7 +1067,7 @@ public final class Article {
     internal_static_glory_api_ListDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalVideoRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TaskId", "Type", "Title", "Status", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "TaskId", "Type", "Title", "Status", "Phone", "Pagination", });
     internal_static_glory_api_GetDigitalVideoResponse_descriptor =
       getDescriptor().getMessageTypes().get(54);
     internal_static_glory_api_GetDigitalVideoResponse_fieldAccessorTable = new

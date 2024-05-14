@@ -1348,6 +1348,8 @@ struct GloryApi_CreateDigitalVideoRequest {
 
   var code: String = String()
 
+  var speechRate: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1458,6 +1460,8 @@ struct GloryApi_ListDigitalVideoRequest {
   var title: String = String()
 
   var status: Int32 = 0
+
+  var phone: String = String()
 
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
@@ -4987,6 +4991,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     3: .same(proto: "title"),
     4: .same(proto: "bg"),
     5: .same(proto: "code"),
+    6: .standard(proto: "speech_rate"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5000,6 +5005,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
       case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.bg) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.code) }()
+      case 6: try { try decoder.decodeSingularInt32Field(value: &self.speechRate) }()
       default: break
       }
     }
@@ -5025,6 +5031,9 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.code.isEmpty {
       try visitor.visitSingularStringField(value: self.code, fieldNumber: 5)
     }
+    if self.speechRate != 0 {
+      try visitor.visitSingularInt32Field(value: self.speechRate, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -5034,6 +5043,7 @@ extension GloryApi_CreateDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs.title != rhs.title {return false}
     if lhs.bg != rhs.bg {return false}
     if lhs.code != rhs.code {return false}
+    if lhs.speechRate != rhs.speechRate {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5211,6 +5221,7 @@ extension GloryApi_ListDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     3: .same(proto: "type"),
     4: .same(proto: "title"),
     5: .same(proto: "status"),
+    6: .same(proto: "phone"),
     100: .same(proto: "pagination"),
   ]
 
@@ -5225,6 +5236,7 @@ extension GloryApi_ListDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 3: try { try decoder.decodeSingularInt32Field(value: &self.type) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 5: try { try decoder.decodeSingularInt32Field(value: &self.status) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.phone) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -5251,6 +5263,9 @@ extension GloryApi_ListDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.status != 0 {
       try visitor.visitSingularInt32Field(value: self.status, fieldNumber: 5)
     }
+    if !self.phone.isEmpty {
+      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 6)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -5263,6 +5278,7 @@ extension GloryApi_ListDigitalVideoRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.type != rhs.type {return false}
     if lhs.title != rhs.title {return false}
     if lhs.status != rhs.status {return false}
+    if lhs.phone != rhs.phone {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -865,6 +865,7 @@ const CreateDigitalVideoRequest$json = {
     {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
     {'1': 'bg', '3': 4, '4': 1, '5': 9, '10': 'bg'},
     {'1': 'code', '3': 5, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'speech_rate', '3': 6, '4': 1, '5': 5, '10': 'speechRate'},
   ],
 };
 
@@ -872,7 +873,8 @@ const CreateDigitalVideoRequest$json = {
 final $typed_data.Uint8List createDigitalVideoRequestDescriptor = $convert.base64Decode(
     'ChlDcmVhdGVEaWdpdGFsVmlkZW9SZXF1ZXN0EjQKDGJhc2VfcmVxdWVzdBgBIAEoCzIRLmJhc2'
     'UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhIKBHRleHQYAiABKAlSBHRleHQSFAoFdGl0bGUY'
-    'AyABKAlSBXRpdGxlEg4KAmJnGAQgASgJUgJiZxISCgRjb2RlGAUgASgJUgRjb2Rl');
+    'AyABKAlSBXRpdGxlEg4KAmJnGAQgASgJUgJiZxISCgRjb2RlGAUgASgJUgRjb2RlEh8KC3NwZW'
+    'VjaF9yYXRlGAYgASgFUgpzcGVlY2hSYXRl');
 
 @$core.Deprecated('Use createDigitalVideoResponseDescriptor instead')
 const CreateDigitalVideoResponse$json = {
@@ -937,6 +939,7 @@ const ListDigitalVideoRequest$json = {
     {'1': 'type', '3': 3, '4': 1, '5': 5, '10': 'type'},
     {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
     {'1': 'status', '3': 5, '4': 1, '5': 5, '10': 'status'},
+    {'1': 'phone', '3': 6, '4': 1, '5': 9, '10': 'phone'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -946,8 +949,8 @@ final $typed_data.Uint8List listDigitalVideoRequestDescriptor = $convert.base64D
     'ChdMaXN0RGlnaXRhbFZpZGVvUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgd0YXNrX2lkGAIgASgJUgZ0YXNrSWQSEgoEdHlw'
     'ZRgDIAEoBVIEdHlwZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSFgoGc3RhdHVzGAUgASgFUgZzdG'
-    'F0dXMSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2lu'
-    'YXRpb24=');
+    'F0dXMSFAoFcGhvbmUYBiABKAlSBXBob25lEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBh'
+    'Z2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use getDigitalVideoResponseDescriptor instead')
 const GetDigitalVideoResponse$json = {

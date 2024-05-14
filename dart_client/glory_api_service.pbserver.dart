@@ -515,8 +515,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.ListDigitalCodeResponse> listDigitalCode($pb.ServerContext ctx, $57.ListDigitalCodeRequest request);
   $async.Future<$57.DeleteDigitalVideoResponse> deleteDigitalVideo($pb.ServerContext ctx, $57.DeleteDigitalVideoRequest request);
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ServerContext ctx, $57.ListDigitalAvatarRequest request);
-  $async.Future<$57.UploadBackgroundImageResponse> uploadBackgroundImage($pb.ServerContext ctx, $57.UploadBackgroundImageRequest request);
-  $async.Future<$57.ListBackgroundImageResponse> listBackgroundImage($pb.ServerContext ctx, $57.ListBackgroundImageRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -957,8 +955,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListDigitalCode': return $57.ListDigitalCodeRequest();
       case 'DeleteDigitalVideo': return $57.DeleteDigitalVideoRequest();
       case 'ListDigitalAvatar': return $57.ListDigitalAvatarRequest();
-      case 'UploadBackgroundImage': return $57.UploadBackgroundImageRequest();
-      case 'ListBackgroundImage': return $57.ListBackgroundImageRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1402,8 +1398,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListDigitalCode': return this.listDigitalCode(ctx, request as $57.ListDigitalCodeRequest);
       case 'DeleteDigitalVideo': return this.deleteDigitalVideo(ctx, request as $57.DeleteDigitalVideoRequest);
       case 'ListDigitalAvatar': return this.listDigitalAvatar(ctx, request as $57.ListDigitalAvatarRequest);
-      case 'UploadBackgroundImage': return this.uploadBackgroundImage(ctx, request as $57.UploadBackgroundImageRequest);
-      case 'ListBackgroundImage': return this.listBackgroundImage(ctx, request as $57.ListBackgroundImageRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

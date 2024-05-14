@@ -69,4 +69,10 @@ public interface CreateDigitalVideoRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCodeBytes();
+
+  /**
+   * <code>int32 speech_rate = 6;</code>
+   * @return The speechRate.
+   */
+  int getSpeechRate();
 }

@@ -179,6 +179,7 @@ class User extends $pb.GeneratedMessage {
     $core.bool? isEnterTenant,
     $core.bool? weakPassword,
     $core.bool? needChangePassword,
+    $fixnum.Int64? tenantId,
     $core.Iterable<Role>? roles,
   }) {
     final $result = create();
@@ -230,6 +231,9 @@ class User extends $pb.GeneratedMessage {
     if (needChangePassword != null) {
       $result.needChangePassword = needChangePassword;
     }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
     if (roles != null) {
       $result.roles.addAll(roles);
     }
@@ -256,6 +260,7 @@ class User extends $pb.GeneratedMessage {
     ..aOB(15, _omitFieldNames ? '' : 'isEnterTenant')
     ..aOB(16, _omitFieldNames ? '' : 'weakPassword')
     ..aOB(17, _omitFieldNames ? '' : 'needChangePassword')
+    ..aInt64(18, _omitFieldNames ? '' : 'tenantId')
     ..pc<Role>(121, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: Role.create)
     ..hasRequiredFields = false
   ;
@@ -409,8 +414,17 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(17)
   void clearNeedChangePassword() => clearField(17);
 
+  @$pb.TagNumber(18)
+  $fixnum.Int64 get tenantId => $_getI64(16);
+  @$pb.TagNumber(18)
+  set tenantId($fixnum.Int64 v) { $_setInt64(16, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasTenantId() => $_has(16);
+  @$pb.TagNumber(18)
+  void clearTenantId() => clearField(18);
+
   @$pb.TagNumber(121)
-  $core.List<Role> get roles => $_getList(16);
+  $core.List<Role> get roles => $_getList(17);
 }
 
 class UserFollow extends $pb.GeneratedMessage {

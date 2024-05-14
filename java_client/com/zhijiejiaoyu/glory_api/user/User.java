@@ -165,6 +165,11 @@ private static final long serialVersionUID = 0L;
             needChangePassword = input.readBool();
             break;
           }
+          case 144: {
+
+            tenantId = input.readInt64();
+            break;
+          }
           case 970: {
             if (!((mutable_bitField0 & 0x00000004) != 0)) {
               roles = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.user.Role>();
@@ -494,6 +499,17 @@ private static final long serialVersionUID = 0L;
     return getSeller();
   }
 
+  public static final int TENANT_ID_FIELD_NUMBER = 18;
+  private long tenantId ;
+  /**
+   * <code>int64 tenant_id = 18;</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public long getTenantId() {
+    return tenantId ;
+  }
+
   public static final int SHOP_ACCESS_FIELD_NUMBER = 10;
   private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> shopAccess ;
   /**
@@ -792,6 +808,9 @@ private static final long serialVersionUID = 0L;
     if (needChangePassword != false) {
       output.writeBool(17, needChangePassword );
     }
+    if (tenantId != 0L) {
+      output.writeInt64(18, tenantId );
+    }
     for (int i = 0; i < roles .size(); i++) {
       output.writeMessage(121, roles .get(i));
     }
@@ -862,6 +881,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(17, needChangePassword );
     }
+    if (tenantId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(18, tenantId );
+    }
     for (int i = 0; i < roles .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(121, roles .get(i));
@@ -902,6 +925,8 @@ private static final long serialVersionUID = 0L;
       if (!getSeller()
           .equals(other.getSeller())) return false;
     }
+    if (getTenantId()
+        != other.getTenantId()) return false;
     if (!getShopAccessList()
         .equals(other.getShopAccessList())) return false;
     if (!getTenantDeptList()
@@ -951,6 +976,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SELLER_FIELD_NUMBER;
       hash = (53 * hash) + getSeller().hashCode();
     }
+    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTenantId());
     if (getShopAccessCount() > 0) {
       hash = (37 * hash) + SHOP_ACCESS_FIELD_NUMBER;
       hash = (53 * hash) + getShopAccessList().hashCode();
@@ -1138,6 +1166,8 @@ private static final long serialVersionUID = 0L;
         seller = null;
         sellerBuilder = null;
       }
+      tenantId = 0L;
+
       if (shopAccessBuilder == null) {
         shopAccess = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -1210,6 +1240,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.seller = sellerBuilder .build();
       }
+      result.tenantId = tenantId ;
       if (shopAccessBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           shopAccess = java.util.Collections.unmodifiableList(shopAccess );
@@ -1330,6 +1361,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSeller()) {
         mergeSeller(other.getSeller());
+      }
+      if (other.getTenantId() != 0L) {
+        setTenantId(other.getTenantId());
       }
       if (shopAccessBuilder == null) {
         if (!other.shopAccess .isEmpty()) {
@@ -2112,6 +2146,37 @@ private static final long serialVersionUID = 0L;
         seller = null;
       }
       return sellerBuilder ;
+    }
+
+    private long tenantId ;
+    /**
+     * <code>int64 tenant_id = 18;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId ;
+    }
+    /**
+     * <code>int64 tenant_id = 18;</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(long value) {
+      
+      tenantId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 tenant_id = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      
+      tenantId = 0L;
+      onChanged();
+      return this;
     }
 
     private java.util.List<com.zhijiejiaoyu.glory_api.shop.ShopAccess> shopAccess =

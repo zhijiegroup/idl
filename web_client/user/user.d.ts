@@ -30,6 +30,7 @@ export interface User {
   avatar_attachment_id?: string;
   avatar_url?: string;
   seller?: seller.Seller;
+  tenant_id?: string;
   /** 判断用户的shop访问权限 */
   shop_access?: Array<shop.ShopAccess>;
   tenant_dept?: Array<TenantDept>;

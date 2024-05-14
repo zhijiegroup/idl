@@ -58,7 +58,7 @@ public final class GloryApiService {
       "cher_task_template.proto\032\027task/teacher_t" +
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
-      "le/article.proto2\233\273\003\n\tglory_api\022s\n\rCreat" +
+      "le/article.proto2\365\270\003\n\tglory_api\022s\n\rCreat" +
       "eExample\022\037.glory_api.CreateExampleReques" +
       "t\032 .glory_api.CreateExampleResponse\"\037\322\301\030" +
       "\033/api/example/create_example\022g\n\nGetExamp" +
@@ -1469,15 +1469,8 @@ public final class GloryApiService {
       "elete_video\022|\n\021ListDigitalAvatar\022#.glory" +
       "_api.ListDigitalAvatarRequest\032$.glory_ap" +
       "i.ListDigitalAvatarResponse\"\034\322\301\030\030/api/di" +
-      "gital/list_avatar\022\224\001\n\025UploadBackgroundIm" +
-      "age\022\'.glory_api.UploadBackgroundImageReq" +
-      "uest\032(.glory_api.UploadBackgroundImageRe" +
-      "sponse\"(\322\301\030$/api/digital/upload_backgrou" +
-      "nd_image\022\214\001\n\023ListBackgroundImage\022%.glory" +
-      "_api.ListBackgroundImageRequest\032&.glory_" +
-      "api.ListBackgroundImageResponse\"&\322\301\030\"/ap" +
-      "i/digital/list_background_imageB\036\n\032com.z" +
-      "hijiejiaoyu.glory_apiP\001b\006proto3"
+      "gital/list_avatarB\036\n\032com.zhijiejiaoyu.gl" +
+      "ory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

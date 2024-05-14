@@ -49,6 +49,7 @@ const User$json = {
     {'1': 'avatar_attachment_id', '3': 7, '4': 1, '5': 3, '10': 'avatarAttachmentId'},
     {'1': 'avatar_url', '3': 8, '4': 1, '5': 9, '10': 'avatarUrl'},
     {'1': 'seller', '3': 9, '4': 1, '5': 11, '6': '.glory_api.Seller', '10': 'seller'},
+    {'1': 'tenant_id', '3': 18, '4': 1, '5': 3, '10': 'tenantId'},
     {'1': 'shop_access', '3': 10, '4': 3, '5': 11, '6': '.glory_api.ShopAccess', '10': 'shopAccess'},
     {'1': 'tenant_dept', '3': 11, '4': 3, '5': 11, '6': '.glory_api.TenantDept', '10': 'tenantDept'},
     {'1': 'roles', '3': 121, '4': 3, '5': 11, '6': '.glory_api.Role', '10': 'roles'},
@@ -66,14 +67,14 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'ABKAlSBXRva2VuEiEKDHRva2VuX2V4cGlyeRgEIAEoCVILdG9rZW5FeHBpcnkSHQoKY3JlYXRl'
     'ZF9hdBgFIAEoCVIJY3JlYXRlZEF0EhIKBG5hbWUYBiABKAlSBG5hbWUSMAoUYXZhdGFyX2F0dG'
     'FjaG1lbnRfaWQYByABKANSEmF2YXRhckF0dGFjaG1lbnRJZBIdCgphdmF0YXJfdXJsGAggASgJ'
-    'UglhdmF0YXJVcmwSKQoGc2VsbGVyGAkgASgLMhEuZ2xvcnlfYXBpLlNlbGxlclIGc2VsbGVyEj'
-    'YKC3Nob3BfYWNjZXNzGAogAygLMhUuZ2xvcnlfYXBpLlNob3BBY2Nlc3NSCnNob3BBY2Nlc3MS'
-    'NgoLdGVuYW50X2RlcHQYCyADKAsyFS5nbG9yeV9hcGkuVGVuYW50RGVwdFIKdGVuYW50RGVwdB'
-    'IlCgVyb2xlcxh5IAMoCzIPLmdsb3J5X2FwaS5Sb2xlUgVyb2xlcxIvCgVwYWdlcxgNIAMoCzIZ'
-    'Lmdsb3J5X2FwaS5QYWdlUGVybWlzc2lvblIFcGFnZXMSGQoIaXNfYWRtaW4YDiABKAhSB2lzQW'
-    'RtaW4SJgoPaXNfZW50ZXJfdGVuYW50GA8gASgIUg1pc0VudGVyVGVuYW50EiMKDXdlYWtfcGFz'
-    'c3dvcmQYECABKAhSDHdlYWtQYXNzd29yZBIwChRuZWVkX2NoYW5nZV9wYXNzd29yZBgRIAEoCF'
-    'ISbmVlZENoYW5nZVBhc3N3b3Jk');
+    'UglhdmF0YXJVcmwSKQoGc2VsbGVyGAkgASgLMhEuZ2xvcnlfYXBpLlNlbGxlclIGc2VsbGVyEh'
+    'sKCXRlbmFudF9pZBgSIAEoA1IIdGVuYW50SWQSNgoLc2hvcF9hY2Nlc3MYCiADKAsyFS5nbG9y'
+    'eV9hcGkuU2hvcEFjY2Vzc1IKc2hvcEFjY2VzcxI2Cgt0ZW5hbnRfZGVwdBgLIAMoCzIVLmdsb3'
+    'J5X2FwaS5UZW5hbnREZXB0Ugp0ZW5hbnREZXB0EiUKBXJvbGVzGHkgAygLMg8uZ2xvcnlfYXBp'
+    'LlJvbGVSBXJvbGVzEi8KBXBhZ2VzGA0gAygLMhkuZ2xvcnlfYXBpLlBhZ2VQZXJtaXNzaW9uUg'
+    'VwYWdlcxIZCghpc19hZG1pbhgOIAEoCFIHaXNBZG1pbhImCg9pc19lbnRlcl90ZW5hbnQYDyAB'
+    'KAhSDWlzRW50ZXJUZW5hbnQSIwoNd2Vha19wYXNzd29yZBgQIAEoCFIMd2Vha1Bhc3N3b3JkEj'
+    'AKFG5lZWRfY2hhbmdlX3Bhc3N3b3JkGBEgASgIUhJuZWVkQ2hhbmdlUGFzc3dvcmQ=');
 
 @$core.Deprecated('Use userFollowDescriptor instead')
 const UserFollow$json = {

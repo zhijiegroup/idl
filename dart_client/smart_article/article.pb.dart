@@ -4296,6 +4296,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? bg,
     $core.String? code,
+    $core.int? speechRate,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -4313,6 +4314,9 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     if (code != null) {
       $result.code = code;
     }
+    if (speechRate != null) {
+      $result.speechRate = speechRate;
+    }
     return $result;
   }
   CreateDigitalVideoRequest._() : super();
@@ -4325,6 +4329,7 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'bg')
     ..aOS(5, _omitFieldNames ? '' : 'code')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'speechRate', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -4395,6 +4400,15 @@ class CreateDigitalVideoRequest extends $pb.GeneratedMessage {
   $core.bool hasCode() => $_has(4);
   @$pb.TagNumber(5)
   void clearCode() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get speechRate => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set speechRate($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSpeechRate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSpeechRate() => clearField(6);
 }
 
 class CreateDigitalVideoResponse extends $pb.GeneratedMessage {
@@ -4694,6 +4708,7 @@ class ListDigitalVideoRequest extends $pb.GeneratedMessage {
     $core.int? type,
     $core.String? title,
     $core.int? status,
+    $core.String? phone,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -4712,6 +4727,9 @@ class ListDigitalVideoRequest extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (phone != null) {
+      $result.phone = phone;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -4727,6 +4745,7 @@ class ListDigitalVideoRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.O3)
     ..aOS(4, _omitFieldNames ? '' : 'title')
     ..a<$core.int>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
+    ..aOS(6, _omitFieldNames ? '' : 'phone')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -4799,16 +4818,25 @@ class ListDigitalVideoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearStatus() => clearField(5);
 
+  @$pb.TagNumber(6)
+  $core.String get phone => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set phone($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPhone() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPhone() => clearField(6);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(5);
+  $0.PaginationRequest get pagination => $_getN(6);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(5);
+  $core.bool hasPagination() => $_has(6);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(5);
+  $0.PaginationRequest ensurePagination() => $_ensure(6);
 }
 
 class GetDigitalVideoResponse extends $pb.GeneratedMessage {

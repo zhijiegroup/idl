@@ -89,6 +89,11 @@ private static final long serialVersionUID = 0L;
             code = s;
             break;
           }
+          case 48: {
+
+            speechRate = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -299,6 +304,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SPEECH_RATE_FIELD_NUMBER = 6;
+  private int speechRate ;
+  /**
+   * <code>int32 speech_rate = 6;</code>
+   * @return The speechRate.
+   */
+  @java.lang.Override
+  public int getSpeechRate() {
+    return speechRate ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -328,6 +344,9 @@ private static final long serialVersionUID = 0L;
     if (!getCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, code );
     }
+    if (speechRate != 0) {
+      output.writeInt32(6, speechRate );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -352,6 +371,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, code );
+    }
+    if (speechRate != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, speechRate );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -381,6 +404,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBg())) return false;
     if (!getCode()
         .equals(other.getCode())) return false;
+    if (getSpeechRate()
+        != other.getSpeechRate()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -404,6 +429,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBg().hashCode();
     hash = (37 * hash) + CODE_FIELD_NUMBER;
     hash = (53 * hash) + getCode().hashCode();
+    hash = (37 * hash) + SPEECH_RATE_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeechRate();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -551,6 +578,8 @@ private static final long serialVersionUID = 0L;
 
       code = "";
 
+      speechRate = 0;
+
       return this;
     }
 
@@ -586,6 +615,7 @@ private static final long serialVersionUID = 0L;
       result.title = title ;
       result.bg = bg ;
       result.code = code ;
+      result.speechRate = speechRate ;
       onBuilt();
       return result;
     }
@@ -652,6 +682,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCode().isEmpty()) {
         code = other.code ;
         onChanged();
+      }
+      if (other.getSpeechRate() != 0) {
+        setSpeechRate(other.getSpeechRate());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1101,6 +1134,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       code = value;
+      onChanged();
+      return this;
+    }
+
+    private int speechRate ;
+    /**
+     * <code>int32 speech_rate = 6;</code>
+     * @return The speechRate.
+     */
+    @java.lang.Override
+    public int getSpeechRate() {
+      return speechRate ;
+    }
+    /**
+     * <code>int32 speech_rate = 6;</code>
+     * @param value The speechRate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpeechRate(int value) {
+      
+      speechRate = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 speech_rate = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpeechRate() {
+      
+      speechRate = 0;
       onChanged();
       return this;
     }

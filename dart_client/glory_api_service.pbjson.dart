@@ -513,8 +513,6 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListDigitalCode', '2': '.glory_api.ListDigitalCodeRequest', '3': '.glory_api.ListDigitalCodeResponse', '4': {}},
     {'1': 'DeleteDigitalVideo', '2': '.glory_api.DeleteDigitalVideoRequest', '3': '.glory_api.DeleteDigitalVideoResponse', '4': {}},
     {'1': 'ListDigitalAvatar', '2': '.glory_api.ListDigitalAvatarRequest', '3': '.glory_api.ListDigitalAvatarResponse', '4': {}},
-    {'1': 'UploadBackgroundImage', '2': '.glory_api.UploadBackgroundImageRequest', '3': '.glory_api.UploadBackgroundImageResponse', '4': {}},
-    {'1': 'ListBackgroundImage', '2': '.glory_api.ListBackgroundImageRequest', '3': '.glory_api.ListBackgroundImageResponse', '4': {}},
   ],
 };
 
@@ -1621,11 +1619,6 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListDigitalAvatarRequest': $57.ListDigitalAvatarRequest$json,
   '.glory_api.ListDigitalAvatarResponse': $57.ListDigitalAvatarResponse$json,
   '.glory_api.DigitalAvatar': $57.DigitalAvatar$json,
-  '.glory_api.UploadBackgroundImageRequest': $57.UploadBackgroundImageRequest$json,
-  '.glory_api.UploadBackgroundImageResponse': $57.UploadBackgroundImageResponse$json,
-  '.glory_api.ListBackgroundImageRequest': $57.ListBackgroundImageRequest$json,
-  '.glory_api.ListBackgroundImageResponse': $57.ListBackgroundImageResponse$json,
-  '.glory_api.OssImage': $57.OssImage$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2646,11 +2639,5 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'VEaWdpdGFsVmlkZW9SZXF1ZXN0GiUuZ2xvcnlfYXBpLkRlbGV0ZURpZ2l0YWxWaWRlb1Jlc3Bv'
     'bnNlIh3KwRgZL2FwaS9kaWdpdGFsL2RlbGV0ZV92aWRlbxJ8ChFMaXN0RGlnaXRhbEF2YXRhch'
     'IjLmdsb3J5X2FwaS5MaXN0RGlnaXRhbEF2YXRhclJlcXVlc3QaJC5nbG9yeV9hcGkuTGlzdERp'
-    'Z2l0YWxBdmF0YXJSZXNwb25zZSIc0sEYGC9hcGkvZGlnaXRhbC9saXN0X2F2YXRhchKUAQoVVX'
-    'Bsb2FkQmFja2dyb3VuZEltYWdlEicuZ2xvcnlfYXBpLlVwbG9hZEJhY2tncm91bmRJbWFnZVJl'
-    'cXVlc3QaKC5nbG9yeV9hcGkuVXBsb2FkQmFja2dyb3VuZEltYWdlUmVzcG9uc2UiKNLBGCQvYX'
-    'BpL2RpZ2l0YWwvdXBsb2FkX2JhY2tncm91bmRfaW1hZ2USjAEKE0xpc3RCYWNrZ3JvdW5kSW1h'
-    'Z2USJS5nbG9yeV9hcGkuTGlzdEJhY2tncm91bmRJbWFnZVJlcXVlc3QaJi5nbG9yeV9hcGkuTG'
-    'lzdEJhY2tncm91bmRJbWFnZVJlc3BvbnNlIibSwRgiL2FwaS9kaWdpdGFsL2xpc3RfYmFja2dy'
-    'b3VuZF9pbWFnZQ==');
+    'Z2l0YWxBdmF0YXJSZXNwb25zZSIc0sEYGC9hcGkvZGlnaXRhbC9saXN0X2F2YXRhcg==');
 

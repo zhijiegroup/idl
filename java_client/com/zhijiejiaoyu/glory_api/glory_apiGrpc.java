@@ -13562,68 +13562,6 @@ public final class glory_apiGrpc {
     return getListDigitalAvatarMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
-      com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UploadBackgroundImage",
-      requestType = com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
-      com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> getUploadBackgroundImageMethod;
-    if ((getUploadBackgroundImageMethod = glory_apiGrpc.getUploadBackgroundImageMethod) == null) {
-      synchronized (glory_apiGrpc.class) {
-        if ((getUploadBackgroundImageMethod = glory_apiGrpc.getUploadBackgroundImageMethod) == null) {
-          glory_apiGrpc.getUploadBackgroundImageMethod = getUploadBackgroundImageMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadBackgroundImage"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("UploadBackgroundImage"))
-              .build();
-        }
-      }
-    }
-    return getUploadBackgroundImageMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
-      com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListBackgroundImage",
-      requestType = com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest.class,
-      responseType = com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
-      com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod() {
-    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> getListBackgroundImageMethod;
-    if ((getListBackgroundImageMethod = glory_apiGrpc.getListBackgroundImageMethod) == null) {
-      synchronized (glory_apiGrpc.class) {
-        if ((getListBackgroundImageMethod = glory_apiGrpc.getListBackgroundImageMethod) == null) {
-          glory_apiGrpc.getListBackgroundImageMethod = getListBackgroundImageMethod =
-              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest, com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackgroundImage"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("ListBackgroundImage"))
-              .build();
-        }
-      }
-    }
-    return getListBackgroundImageMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -17144,26 +17082,6 @@ public final class glory_apiGrpc {
     default void listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalAvatarMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * 上传数字人直播背景图
-     * </pre>
-     */
-    default void uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUploadBackgroundImageMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * 获取所有直播背景图
-     * </pre>
-     */
-    default void listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBackgroundImageMethod(), responseObserver);
     }
   }
 
@@ -21104,28 +21022,6 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     * <pre>
-     * 上传数字人直播背景图
-     * </pre>
-     */
-    public void uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUploadBackgroundImageMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * 获取所有直播背景图
-     * </pre>
-     */
-    public void listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request,
-        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListBackgroundImageMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -24616,26 +24512,6 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse listDigitalAvatar(com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDigitalAvatarMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * 上传数字人直播背景图
-     * </pre>
-     */
-    public com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse uploadBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUploadBackgroundImageMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * 获取所有直播背景图
-     * </pre>
-     */
-    public com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse listBackgroundImage(com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListBackgroundImageMethod(), getCallOptions(), request);
     }
   }
 
@@ -28565,28 +28441,6 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDigitalAvatarMethod(), getCallOptions()), request);
     }
-
-    /**
-     * <pre>
-     * 上传数字人直播背景图
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse> uploadBackgroundImage(
-        com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUploadBackgroundImageMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * 获取所有直播背景图
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse> listBackgroundImage(
-        com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListBackgroundImageMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -29026,8 +28880,6 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_DIGITAL_CODE = 434;
   private static final int METHODID_DELETE_DIGITAL_VIDEO = 435;
   private static final int METHODID_LIST_DIGITAL_AVATAR = 436;
-  private static final int METHODID_UPLOAD_BACKGROUND_IMAGE = 437;
-  private static final int METHODID_LIST_BACKGROUND_IMAGE = 438;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -30793,14 +30645,6 @@ public final class glory_apiGrpc {
         case METHODID_LIST_DIGITAL_AVATAR:
           serviceImpl.listDigitalAvatar((com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>) responseObserver);
-          break;
-        case METHODID_UPLOAD_BACKGROUND_IMAGE:
-          serviceImpl.uploadBackgroundImage((com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>) responseObserver);
-          break;
-        case METHODID_LIST_BACKGROUND_IMAGE:
-          serviceImpl.listBackgroundImage((com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest) request,
-              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -33879,20 +33723,6 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarRequest,
               com.zhijiejiaoyu.glory_api.short_video.ListDigitalAvatarResponse>(
                 service, METHODID_LIST_DIGITAL_AVATAR)))
-        .addMethod(
-          getUploadBackgroundImageMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageRequest,
-              com.zhijiejiaoyu.glory_api.short_video.UploadBackgroundImageResponse>(
-                service, METHODID_UPLOAD_BACKGROUND_IMAGE)))
-        .addMethod(
-          getListBackgroundImageMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageRequest,
-              com.zhijiejiaoyu.glory_api.short_video.ListBackgroundImageResponse>(
-                service, METHODID_LIST_BACKGROUND_IMAGE)))
         .build();
   }
 
@@ -34378,8 +34208,6 @@ public final class glory_apiGrpc {
               .addMethod(getListDigitalCodeMethod())
               .addMethod(getDeleteDigitalVideoMethod())
               .addMethod(getListDigitalAvatarMethod())
-              .addMethod(getUploadBackgroundImageMethod())
-              .addMethod(getListBackgroundImageMethod())
               .build();
         }
       }

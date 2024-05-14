@@ -1388,11 +1388,5 @@ class glory_apiApi {
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ClientContext? ctx, $57.ListDigitalAvatarRequest request) =>
     _client.invoke<$57.ListDigitalAvatarResponse>(ctx, 'glory_api', 'ListDigitalAvatar', request, $57.ListDigitalAvatarResponse())
   ;
-  $async.Future<$57.UploadBackgroundImageResponse> uploadBackgroundImage($pb.ClientContext? ctx, $57.UploadBackgroundImageRequest request) =>
-    _client.invoke<$57.UploadBackgroundImageResponse>(ctx, 'glory_api', 'UploadBackgroundImage', request, $57.UploadBackgroundImageResponse())
-  ;
-  $async.Future<$57.ListBackgroundImageResponse> listBackgroundImage($pb.ClientContext? ctx, $57.ListBackgroundImageRequest request) =>
-    _client.invoke<$57.ListBackgroundImageResponse>(ctx, 'glory_api', 'ListBackgroundImage', request, $57.ListBackgroundImageResponse())
-  ;
 }
 
