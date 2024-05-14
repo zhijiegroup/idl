@@ -1572,6 +1572,9 @@ service glory_api {
   rpc CreateModifiedArticleCreation(CreateModifiedArticleCreationRequest) returns (CreateModifiedArticleCreationResponse) {
     option (api.post) = '/api/article_creation/create_modified_article';
   }
+  rpc GetArticleDetail(GetArticleDetailRequest) returns (GetArticleDetailResponse) {
+    option (api.get) = '/api/article_creation/get_article_detail';
+  }
   rpc ListMyArticleCreation(ListMyArticleCreationRequest) returns (ListMyArticleCreationResponse) {
     option (api.post) = '/api/article_creation/list_my_article_creation';
   }
