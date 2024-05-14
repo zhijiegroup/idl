@@ -345,6 +345,7 @@ message CreateDigitalVideoRequest {
     string title = 3;
     string bg = 4;
     string code = 5;
+    int32 speech_rate = 6;
 }
 
 message CreateDigitalVideoResponse {
@@ -375,6 +376,7 @@ message ListDigitalVideoRequest {
     int32 type = 3;
     string title = 4;
     int32 status = 5;
+    string phone = 6;
     base.PaginationRequest pagination = 100;
 }
 
