@@ -57,4 +57,16 @@ public interface GenArticleAIEvaluationRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getContentBytes();
+
+  /**
+   * <code>string product_name = 5;</code>
+   * @return The productName.
+   */
+  java.lang.String getProductName();
+  /**
+   * <code>string product_name = 5;</code>
+   * @return The bytes for productName.
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
 }

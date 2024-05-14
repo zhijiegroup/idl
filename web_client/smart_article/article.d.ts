@@ -39,6 +39,7 @@ export interface CreateArticleCreationRequest {
   content?: string;
   creation_type?: string;
   last_article_creation_id?: string;
+  product_name?: string;
 }
 
 export interface CreateArticleCreationResponse {
@@ -145,7 +146,8 @@ export interface GetEvaluationStandardRequest {
 
 export interface GetEvaluationStandardResponse {
   base_resp?: base.BaseResponse;
-  standard?: string;
+  pass_standard?: string;
+  evaluation_standard?: string;
 }
 
 export interface CreateEvaluationConfigRequest {
@@ -304,6 +306,7 @@ export interface GenArticleAIEvaluationRequest {
   topic_code?: string;
   title?: string;
   content?: string;
+  product_name?: string;
 }
 
 export interface GenArticleAIEvaluationResponse {

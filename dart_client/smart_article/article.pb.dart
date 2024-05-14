@@ -350,6 +350,7 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     $core.String? content,
     $core.String? creationType,
     $fixnum.Int64? lastArticleCreationId,
+    $core.String? productName,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -376,6 +377,9 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     if (lastArticleCreationId != null) {
       $result.lastArticleCreationId = lastArticleCreationId;
     }
+    if (productName != null) {
+      $result.productName = productName;
+    }
     return $result;
   }
   CreateArticleCreationRequest._() : super();
@@ -391,6 +395,7 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'content')
     ..aOS(7, _omitFieldNames ? '' : 'creationType')
     ..aInt64(8, _omitFieldNames ? '' : 'lastArticleCreationId')
+    ..aOS(9, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -488,6 +493,15 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
   $core.bool hasLastArticleCreationId() => $_has(7);
   @$pb.TagNumber(8)
   void clearLastArticleCreationId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get productName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set productName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasProductName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearProductName() => clearField(9);
 }
 
 class CreateArticleCreationResponse extends $pb.GeneratedMessage {
@@ -1835,14 +1849,18 @@ class GetEvaluationStandardRequest extends $pb.GeneratedMessage {
 class GetEvaluationStandardResponse extends $pb.GeneratedMessage {
   factory GetEvaluationStandardResponse({
     $0.BaseResponse? baseResp,
-    $core.String? standard,
+    $core.String? passStandard,
+    $core.String? evaluationStandard,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
-    if (standard != null) {
-      $result.standard = standard;
+    if (passStandard != null) {
+      $result.passStandard = passStandard;
+    }
+    if (evaluationStandard != null) {
+      $result.evaluationStandard = evaluationStandard;
     }
     return $result;
   }
@@ -1852,7 +1870,8 @@ class GetEvaluationStandardResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEvaluationStandardResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aOS(2, _omitFieldNames ? '' : 'standard')
+    ..aOS(2, _omitFieldNames ? '' : 'passStandard')
+    ..aOS(3, _omitFieldNames ? '' : 'evaluationStandard')
     ..hasRequiredFields = false
   ;
 
@@ -1889,13 +1908,22 @@ class GetEvaluationStandardResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get standard => $_getSZ(1);
+  $core.String get passStandard => $_getSZ(1);
   @$pb.TagNumber(2)
-  set standard($core.String v) { $_setString(1, v); }
+  set passStandard($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasStandard() => $_has(1);
+  $core.bool hasPassStandard() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStandard() => clearField(2);
+  void clearPassStandard() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get evaluationStandard => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set evaluationStandard($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEvaluationStandard() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEvaluationStandard() => clearField(3);
 }
 
 class CreateEvaluationConfigRequest extends $pb.GeneratedMessage {
@@ -3619,6 +3647,7 @@ class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
     $core.String? topicCode,
     $core.String? title,
     $core.String? content,
+    $core.String? productName,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -3633,6 +3662,9 @@ class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
     if (content != null) {
       $result.content = content;
     }
+    if (productName != null) {
+      $result.productName = productName;
+    }
     return $result;
   }
   GenArticleAIEvaluationRequest._() : super();
@@ -3644,6 +3676,7 @@ class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'topicCode')
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'content')
+    ..aOS(5, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -3705,6 +3738,15 @@ class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
   $core.bool hasContent() => $_has(3);
   @$pb.TagNumber(4)
   void clearContent() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get productName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set productName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasProductName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProductName() => clearField(5);
 }
 
 class GenArticleAIEvaluationResponse extends $pb.GeneratedMessage {

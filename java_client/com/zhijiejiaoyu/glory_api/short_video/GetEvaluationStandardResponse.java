@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private GetEvaluationStandardResponse() {
-    standard = "";
+    passStandard = "";
+    evaluationStandard = "";
   }
 
   @java.lang.Override
@@ -65,7 +66,13 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            standard = s;
+            passStandard = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluationStandard = s;
             break;
           }
           default: {
@@ -126,38 +133,76 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int STANDARD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object standard ;
+  public static final int PASS_STANDARD_FIELD_NUMBER = 2;
+  private volatile java.lang.Object passStandard ;
   /**
-   * <code>string standard = 2;</code>
-   * @return The standard.
+   * <code>string pass_standard = 2;</code>
+   * @return The passStandard.
    */
   @java.lang.Override
-  public java.lang.String getStandard() {
-    java.lang.Object ref = standard ;
+  public java.lang.String getPassStandard() {
+    java.lang.Object ref = passStandard ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      standard = s;
+      passStandard = s;
       return s;
     }
   }
   /**
-   * <code>string standard = 2;</code>
-   * @return The bytes for standard.
+   * <code>string pass_standard = 2;</code>
+   * @return The bytes for passStandard.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getStandardBytes() {
-    java.lang.Object ref = standard ;
+      getPassStandardBytes() {
+    java.lang.Object ref = passStandard ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      standard = b;
+      passStandard = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVALUATION_STANDARD_FIELD_NUMBER = 3;
+  private volatile java.lang.Object evaluationStandard ;
+  /**
+   * <code>string evaluation_standard = 3;</code>
+   * @return The evaluationStandard.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluationStandard() {
+    java.lang.Object ref = evaluationStandard ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluationStandard = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string evaluation_standard = 3;</code>
+   * @return The bytes for evaluationStandard.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluationStandardBytes() {
+    java.lang.Object ref = evaluationStandard ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluationStandard = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -181,8 +226,11 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (!getStandardBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, standard );
+    if (!getPassStandardBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, passStandard );
+    }
+    if (!getEvaluationStandardBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, evaluationStandard );
     }
     unknownFields.writeTo(output);
   }
@@ -197,8 +245,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (!getStandardBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, standard );
+    if (!getPassStandardBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, passStandard );
+    }
+    if (!getEvaluationStandardBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, evaluationStandard );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,8 +271,10 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getStandard()
-        .equals(other.getStandard())) return false;
+    if (!getPassStandard()
+        .equals(other.getPassStandard())) return false;
+    if (!getEvaluationStandard()
+        .equals(other.getEvaluationStandard())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -237,8 +290,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + STANDARD_FIELD_NUMBER;
-    hash = (53 * hash) + getStandard().hashCode();
+    hash = (37 * hash) + PASS_STANDARD_FIELD_NUMBER;
+    hash = (53 * hash) + getPassStandard().hashCode();
+    hash = (37 * hash) + EVALUATION_STANDARD_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationStandard().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,7 +433,9 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      standard = "";
+      passStandard = "";
+
+      evaluationStandard = "";
 
       return this;
     }
@@ -411,7 +468,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.standard = standard ;
+      result.passStandard = passStandard ;
+      result.evaluationStandard = evaluationStandard ;
       onBuilt();
       return result;
     }
@@ -463,8 +521,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (!other.getStandard().isEmpty()) {
-        standard = other.standard ;
+      if (!other.getPassStandard().isEmpty()) {
+        passStandard = other.passStandard ;
+        onChanged();
+      }
+      if (!other.getEvaluationStandard().isEmpty()) {
+        evaluationStandard = other.evaluationStandard ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -615,78 +677,154 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private java.lang.Object standard = "";
+    private java.lang.Object passStandard = "";
     /**
-     * <code>string standard = 2;</code>
-     * @return The standard.
+     * <code>string pass_standard = 2;</code>
+     * @return The passStandard.
      */
-    public java.lang.String getStandard() {
-      java.lang.Object ref = standard ;
+    public java.lang.String getPassStandard() {
+      java.lang.Object ref = passStandard ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        standard = s;
+        passStandard = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string standard = 2;</code>
-     * @return The bytes for standard.
+     * <code>string pass_standard = 2;</code>
+     * @return The bytes for passStandard.
      */
     public com.google.protobuf.ByteString
-        getStandardBytes() {
-      java.lang.Object ref = standard ;
+        getPassStandardBytes() {
+      java.lang.Object ref = passStandard ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        standard = b;
+        passStandard = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string standard = 2;</code>
-     * @param value The standard to set.
+     * <code>string pass_standard = 2;</code>
+     * @param value The passStandard to set.
      * @return This builder for chaining.
      */
-    public Builder setStandard(
+    public Builder setPassStandard(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      standard = value;
+      passStandard = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string standard = 2;</code>
+     * <code>string pass_standard = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStandard() {
+    public Builder clearPassStandard() {
       
-      standard = getDefaultInstance().getStandard();
+      passStandard = getDefaultInstance().getPassStandard();
       onChanged();
       return this;
     }
     /**
-     * <code>string standard = 2;</code>
-     * @param value The bytes for standard to set.
+     * <code>string pass_standard = 2;</code>
+     * @param value The bytes for passStandard to set.
      * @return This builder for chaining.
      */
-    public Builder setStandardBytes(
+    public Builder setPassStandardBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      standard = value;
+      passStandard = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluationStandard = "";
+    /**
+     * <code>string evaluation_standard = 3;</code>
+     * @return The evaluationStandard.
+     */
+    public java.lang.String getEvaluationStandard() {
+      java.lang.Object ref = evaluationStandard ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluationStandard = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string evaluation_standard = 3;</code>
+     * @return The bytes for evaluationStandard.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluationStandardBytes() {
+      java.lang.Object ref = evaluationStandard ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluationStandard = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string evaluation_standard = 3;</code>
+     * @param value The evaluationStandard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationStandard(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluationStandard = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluation_standard = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationStandard() {
+      
+      evaluationStandard = getDefaultInstance().getEvaluationStandard();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluation_standard = 3;</code>
+     * @param value The bytes for evaluationStandard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationStandardBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluationStandard = value;
       onChanged();
       return this;
     }

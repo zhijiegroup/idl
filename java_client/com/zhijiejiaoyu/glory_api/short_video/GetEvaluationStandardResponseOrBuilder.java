@@ -23,14 +23,26 @@ public interface GetEvaluationStandardResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>string standard = 2;</code>
-   * @return The standard.
+   * <code>string pass_standard = 2;</code>
+   * @return The passStandard.
    */
-  java.lang.String getStandard();
+  java.lang.String getPassStandard();
   /**
-   * <code>string standard = 2;</code>
-   * @return The bytes for standard.
+   * <code>string pass_standard = 2;</code>
+   * @return The bytes for passStandard.
    */
   com.google.protobuf.ByteString
-      getStandardBytes();
+      getPassStandardBytes();
+
+  /**
+   * <code>string evaluation_standard = 3;</code>
+   * @return The evaluationStandard.
+   */
+  java.lang.String getEvaluationStandard();
+  /**
+   * <code>string evaluation_standard = 3;</code>
+   * @return The bytes for evaluationStandard.
+   */
+  com.google.protobuf.ByteString
+      getEvaluationStandardBytes();
 }

@@ -93,4 +93,16 @@ public interface CreateArticleCreationRequestOrBuilder extends
    * @return The lastArticleCreationId.
    */
   long getLastArticleCreationId();
+
+  /**
+   * <code>string product_name = 9;</code>
+   * @return The productName.
+   */
+  java.lang.String getProductName();
+  /**
+   * <code>string product_name = 9;</code>
+   * @return The bytes for productName.
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
 }

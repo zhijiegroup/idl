@@ -104,6 +104,8 @@ struct GloryApi_CreateArticleCreationRequest {
 
   var lastArticleCreationID: Int64 = 0
 
+  var productName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -576,7 +578,9 @@ struct GloryApi_GetEvaluationStandardResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var standard: String = String()
+  var passStandard: String = String()
+
+  var evaluationStandard: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1117,6 +1121,8 @@ struct GloryApi_GenArticleAIEvaluationRequest {
   var title: String = String()
 
   var content: String = String()
+
+  var productName: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2656,6 +2662,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     6: .same(proto: "content"),
     7: .standard(proto: "creation_type"),
     8: .standard(proto: "last_article_creation_id"),
+    9: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2672,6 +2679,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
       case 6: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.lastArticleCreationID) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -2706,6 +2714,9 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if self.lastArticleCreationID != 0 {
       try visitor.visitSingularInt64Field(value: self.lastArticleCreationID, fieldNumber: 8)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2718,6 +2729,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
     if lhs.lastArticleCreationID != rhs.lastArticleCreationID {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3525,7 +3537,8 @@ extension GloryApi_GetEvaluationStandardResponse: SwiftProtobuf.Message, SwiftPr
   static let protoMessageName: String = _protobuf_package + ".GetEvaluationStandardResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "standard"),
+    2: .standard(proto: "pass_standard"),
+    3: .standard(proto: "evaluation_standard"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3535,7 +3548,8 @@ extension GloryApi_GetEvaluationStandardResponse: SwiftProtobuf.Message, SwiftPr
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.standard) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.passStandard) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.evaluationStandard) }()
       default: break
       }
     }
@@ -3549,15 +3563,19 @@ extension GloryApi_GetEvaluationStandardResponse: SwiftProtobuf.Message, SwiftPr
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if !self.standard.isEmpty {
-      try visitor.visitSingularStringField(value: self.standard, fieldNumber: 2)
+    if !self.passStandard.isEmpty {
+      try visitor.visitSingularStringField(value: self.passStandard, fieldNumber: 2)
+    }
+    if !self.evaluationStandard.isEmpty {
+      try visitor.visitSingularStringField(value: self.evaluationStandard, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetEvaluationStandardResponse, rhs: GloryApi_GetEvaluationStandardResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.standard != rhs.standard {return false}
+    if lhs.passStandard != rhs.passStandard {return false}
+    if lhs.evaluationStandard != rhs.evaluationStandard {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -4580,6 +4598,7 @@ extension GloryApi_GenArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "topic_code"),
     3: .same(proto: "title"),
     4: .same(proto: "content"),
+    5: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4592,6 +4611,7 @@ extension GloryApi_GenArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
       case 2: try { try decoder.decodeSingularStringField(value: &self.topicCode) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.content) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -4614,6 +4634,9 @@ extension GloryApi_GenArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
     if !self.content.isEmpty {
       try visitor.visitSingularStringField(value: self.content, fieldNumber: 4)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4622,6 +4645,7 @@ extension GloryApi_GenArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
     if lhs.topicCode != rhs.topicCode {return false}
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -76,6 +76,7 @@ const CreateArticleCreationRequest$json = {
     {'1': 'content', '3': 6, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'last_article_creation_id', '3': 8, '4': 1, '5': 3, '10': 'lastArticleCreationId'},
+    {'1': 'product_name', '3': 9, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -87,7 +88,7 @@ final $typed_data.Uint8List createArticleCreationRequestDescriptor = $convert.ba
     'F2ZV9zdWJfdG9waWMYBCABKAhSDGhhdmVTdWJUb3BpYxIUCgV0aXRsZRgFIAEoCVIFdGl0bGUS'
     'GAoHY29udGVudBgGIAEoCVIHY29udGVudBIjCg1jcmVhdGlvbl90eXBlGAcgASgJUgxjcmVhdG'
     'lvblR5cGUSNwoYbGFzdF9hcnRpY2xlX2NyZWF0aW9uX2lkGAggASgDUhVsYXN0QXJ0aWNsZUNy'
-    'ZWF0aW9uSWQ=');
+    'ZWF0aW9uSWQSIQoMcHJvZHVjdF9uYW1lGAkgASgJUgtwcm9kdWN0TmFtZQ==');
 
 @$core.Deprecated('Use createArticleCreationResponseDescriptor instead')
 const CreateArticleCreationResponse$json = {
@@ -363,14 +364,17 @@ const GetEvaluationStandardResponse$json = {
   '1': 'GetEvaluationStandardResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'standard', '3': 2, '4': 1, '5': 9, '10': 'standard'},
+    {'1': 'pass_standard', '3': 2, '4': 1, '5': 9, '10': 'passStandard'},
+    {'1': 'evaluation_standard', '3': 3, '4': 1, '5': 9, '10': 'evaluationStandard'},
   ],
 };
 
 /// Descriptor for `GetEvaluationStandardResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getEvaluationStandardResponseDescriptor = $convert.base64Decode(
     'Ch1HZXRFdmFsdWF0aW9uU3RhbmRhcmRSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
-    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASGgoIc3RhbmRhcmQYAiABKAlSCHN0YW5kYXJk');
+    'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASIwoNcGFzc19zdGFuZGFyZBgCIAEoCVIMcGFzc1N0'
+    'YW5kYXJkEi8KE2V2YWx1YXRpb25fc3RhbmRhcmQYAyABKAlSEmV2YWx1YXRpb25TdGFuZGFyZA'
+    '==');
 
 @$core.Deprecated('Use createEvaluationConfigRequestDescriptor instead')
 const CreateEvaluationConfigRequest$json = {
@@ -723,6 +727,7 @@ const GenArticleAIEvaluationRequest$json = {
     {'1': 'topic_code', '3': 2, '4': 1, '5': 9, '10': 'topicCode'},
     {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 4, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'product_name', '3': 5, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -730,7 +735,8 @@ const GenArticleAIEvaluationRequest$json = {
 final $typed_data.Uint8List genArticleAIEvaluationRequestDescriptor = $convert.base64Decode(
     'Ch1HZW5BcnRpY2xlQUlFdmFsdWF0aW9uUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIdCgp0b3BpY19jb2RlGAIgASgJUgl0b3Bp'
-    'Y0NvZGUSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhgKB2NvbnRlbnQYBCABKAlSB2NvbnRlbnQ=');
+    'Y0NvZGUSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhgKB2NvbnRlbnQYBCABKAlSB2NvbnRlbnQSIQ'
+    'oMcHJvZHVjdF9uYW1lGAUgASgJUgtwcm9kdWN0TmFtZQ==');
 
 @$core.Deprecated('Use genArticleAIEvaluationResponseDescriptor instead')
 const GenArticleAIEvaluationResponse$json = {
