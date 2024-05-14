@@ -89,10 +89,4 @@ public interface CreateArticleCreationDraftRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreationTypeBytes();
-
-  /**
-   * <code>bool have_sub_topic = 7;</code>
-   * @return The haveSubTopic.
-   */
-  boolean getHaveSubTopic();
 }

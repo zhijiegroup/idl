@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     creationType = "";
     digitalHunmanVideoUrl = "";
     createdAt = "";
+    content = "";
+    productName = "";
   }
 
   @java.lang.Override
@@ -105,6 +107,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            content = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productName = s;
             break;
           }
           default: {
@@ -427,6 +441,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CONTENT_FIELD_NUMBER = 10;
+  private volatile java.lang.Object content ;
+  /**
+   * <code>string content = 10;</code>
+   * @return The content.
+   */
+  @java.lang.Override
+  public java.lang.String getContent() {
+    java.lang.Object ref = content ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      content = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string content = 10;</code>
+   * @return The bytes for content.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getContentBytes() {
+    java.lang.Object ref = content ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      content = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 11;
+  private volatile java.lang.Object productName ;
+  /**
+   * <code>string product_name = 11;</code>
+   * @return The productName.
+   */
+  @java.lang.Override
+  public java.lang.String getProductName() {
+    java.lang.Object ref = productName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string product_name = 11;</code>
+   * @return The bytes for productName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProductNameBytes() {
+    java.lang.Object ref = productName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -468,6 +558,12 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
     }
+    if (!getContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, content );
+    }
+    if (!getProductNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, productName );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -506,6 +602,12 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
     }
+    if (!getContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, content );
+    }
+    if (!getProductNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, productName );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -539,6 +641,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDigitalHunmanVideoUrl())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (!getContent()
+        .equals(other.getContent())) return false;
+    if (!getProductName()
+        .equals(other.getProductName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -570,6 +676,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDigitalHunmanVideoUrl().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProductName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -721,6 +831,10 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      content = "";
+
+      productName = "";
+
       return this;
     }
 
@@ -756,6 +870,8 @@ private static final long serialVersionUID = 0L;
       result.creationType = creationType ;
       result.digitalHunmanVideoUrl = digitalHunmanVideoUrl ;
       result.createdAt = createdAt ;
+      result.content = content ;
+      result.productName = productName ;
       onBuilt();
       return result;
     }
@@ -836,6 +952,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
+        onChanged();
+      }
+      if (!other.getContent().isEmpty()) {
+        content = other.content ;
+        onChanged();
+      }
+      if (!other.getProductName().isEmpty()) {
+        productName = other.productName ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1457,6 +1581,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       createdAt = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object content = "";
+    /**
+     * <code>string content = 10;</code>
+     * @return The content.
+     */
+    public java.lang.String getContent() {
+      java.lang.Object ref = content ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string content = 10;</code>
+     * @return The bytes for content.
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string content = 10;</code>
+     * @param value The content to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      content = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string content = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearContent() {
+      
+      content = getDefaultInstance().getContent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string content = 10;</code>
+     * @param value The bytes for content to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      content = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object productName = "";
+    /**
+     * <code>string product_name = 11;</code>
+     * @return The productName.
+     */
+    public java.lang.String getProductName() {
+      java.lang.Object ref = productName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string product_name = 11;</code>
+     * @return The bytes for productName.
+     */
+    public com.google.protobuf.ByteString
+        getProductNameBytes() {
+      java.lang.Object ref = productName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string product_name = 11;</code>
+     * @param value The productName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_name = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductName() {
+      
+      productName = getDefaultInstance().getProductName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string product_name = 11;</code>
+     * @param value The bytes for productName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productName = value;
       onChanged();
       return this;
     }

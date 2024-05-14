@@ -1823,6 +1823,10 @@ CreateLivePlanProduct create live plan product */
     request: article.CreateModifiedArticleCreationRequest
   ): Promise<article.CreateModifiedArticleCreationResponse>;
 
+  GetArticleDetail(
+    request: article.GetArticleDetailRequest
+  ): Promise<article.GetArticleDetailResponse>;
+
   ListMyArticleCreation(
     request: article.ListMyArticleCreationRequest
   ): Promise<article.ListMyArticleCreationResponse>;

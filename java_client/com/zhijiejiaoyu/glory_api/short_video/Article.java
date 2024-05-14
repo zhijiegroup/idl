@@ -35,6 +35,16 @@ public final class Article {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_CreateArticleCreationResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetArticleDetailRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetArticleDetailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetArticleDetailResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetArticleDetailResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_glory_api_ListMyArticleCreationRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -459,303 +469,312 @@ public final class Article {
   static {
     java.lang.String[] descriptorData = {
       "\n\033smart_article/article.proto\022\tglory_api" +
-      "\032\nbase.proto\032\017user/user.proto\"\336\001\n\017Articl" +
+      "\032\nbase.proto\032\017user/user.proto\"\205\002\n\017Articl" +
       "eCreation\022\033\n\023article_creation_id\030\001 \001(\003\022 " +
       "\n\030last_article_creation_id\030\002 \001(\003\022\r\n\005titl" +
       "e\030\003 \001(\t\022\021\n\tai_result\030\004 \001(\t\022\016\n\006status\030\005 \001" +
       "(\t\022\r\n\005topic\030\006 \001(\t\022\025\n\rcreation_type\030\007 \001(\t" +
       "\022 \n\030digital_hunman_video_url\030\010 \001(\t\022\022\n\ncr" +
-      "eated_at\030\t \001(\t\"\321\001\n\024ArticleCreationDraft\022" +
-      "!\n\031article_creation_draft_id\030\001 \001(\003\022\033\n\023ar" +
-      "ticle_creation_id\030\002 \001(\003\022\023\n\013course_code\030\003" +
-      " \001(\t\022\031\n\021course_topic_code\030\004 \001(\t\022\r\n\005title" +
-      "\030\005 \001(\t\022\017\n\007content\030\006 \001(\t\022\025\n\rcreation_type" +
-      "\030\007 \001(\t\022\022\n\ncreated_at\030\010 \001(\t\"\203\002\n\034CreateArt" +
-      "icleCreationRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\023\n\013course_code\030\002 \001(" +
-      "\t\022\031\n\021course_topic_code\030\003 \001(\t\022\r\n\005title\030\004 " +
-      "\001(\t\022\017\n\007content\030\005 \001(\t\022\025\n\rcreation_type\030\006 " +
-      "\001(\t\022 \n\030last_article_creation_id\030\007 \001(\003\022\024\n" +
-      "\014product_name\030\010 \001(\t\022\033\n\023article_creation_" +
-      "id\030\t \001(\003\"F\n\035CreateArticleCreationRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"\321\001\n\034ListMyArticleCreationRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006st" +
-      "atus\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\021\n\tai_result\030\004" +
-      " \001(\t\022\r\n\005topic\030\005 \001(\t\022\r\n\005start\030\006 \001(\003\022\013\n\003en" +
-      "d\030\007 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagin" +
-      "ationRequest\"\236\001\n\035ListMyArticleCreationRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022(\n\004list\030\002 \003(\0132\032.glory_api.ArticleC" +
-      "reation\022,\n\npagination\030d \001(\0132\030.base.Pagin" +
-      "ationResponse\"\313\001\n!CreateArticleCreationD" +
-      "raftRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022\023\n\013course_code\030\002 \001(\t\022\031\n\021cou" +
-      "rse_topic_code\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\017\n\007c" +
-      "ontent\030\005 \001(\t\022\025\n\rcreation_type\030\006 \001(\t\022\026\n\016h" +
-      "ave_sub_topic\030\007 \001(\010\"K\n\"CreateArticleCrea" +
-      "tionDraftResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\"\362\001\n$CreateModifiedArtic" +
-      "leCreationRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\023\n\013course_code\030\002 \001(\t\022" +
-      "\031\n\021course_topic_code\030\003 \001(\t\022\r\n\005title\030\004 \001(" +
-      "\t\022\017\n\007content\030\005 \001(\t\022\025\n\rcreation_type\030\006 \001(" +
-      "\t\022$\n\034modified_article_creation_id\030\007 \001(\003\022" +
-      "\024\n\014product_name\030\010 \001(\t\"N\n%CreateModifiedA" +
-      "rticleCreationResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"\263\001\n!ListMyArticleC" +
-      "reationDraftRequest\022\'\n\014base_request\030\001 \001(" +
-      "\0132\021.base.BaseRequest\022\r\n\005title\030\002 \001(\t\022\r\n\005t" +
-      "opic\030\003 \001(\t\022\r\n\005start\030\004 \001(\003\022\013\n\003end\030\005 \001(\003\022+" +
-      "\n\npagination\030d \001(\0132\027.base.PaginationRequ" +
-      "est\"\250\001\n\"ListMyArticleCreationDraftRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\022-\n\004list\030\002 \003(\0132\037.glory_api.ArticleCreat" +
-      "ionDraft\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponse\"o\n!ArticleCreationDraftDe" +
-      "tailRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
-      ".BaseRequest\022!\n\031article_creation_draft_i" +
-      "d\030\002 \001(\003\"z\n\"ArticleCreationDraftDetailRes" +
+      "eated_at\030\t \001(\t\022\017\n\007content\030\n \001(\t\022\024\n\014produ" +
+      "ct_name\030\013 \001(\t\"\321\001\n\024ArticleCreationDraft\022!" +
+      "\n\031article_creation_draft_id\030\001 \001(\003\022\033\n\023art" +
+      "icle_creation_id\030\002 \001(\003\022\023\n\013course_code\030\003 " +
+      "\001(\t\022\031\n\021course_topic_code\030\004 \001(\t\022\r\n\005title\030" +
+      "\005 \001(\t\022\017\n\007content\030\006 \001(\t\022\025\n\rcreation_type\030" +
+      "\007 \001(\t\022\022\n\ncreated_at\030\010 \001(\t\"\203\002\n\034CreateArti" +
+      "cleCreationRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\023\n\013course_code\030\002 \001(\t" +
+      "\022\031\n\021course_topic_code\030\003 \001(\t\022\r\n\005title\030\004 \001" +
+      "(\t\022\017\n\007content\030\005 \001(\t\022\025\n\rcreation_type\030\006 \001" +
+      "(\t\022 \n\030last_article_creation_id\030\007 \001(\003\022\024\n\014" +
+      "product_name\030\010 \001(\t\022\033\n\023article_creation_i" +
+      "d\030\t \001(\003\"F\n\035CreateArticleCreationResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "_\n\027GetArticleDetailRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023article_c" +
+      "reation_id\030\002 \001(\003\"\336\001\n\030GetArticleDetailRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022-\n\004data\030\002 \001(\0132\037.glory_api.ArticleCr" +
-      "eationDraft\"o\n!DeleteArticleCreationDraf" +
-      "tRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022!\n\031article_creation_draft_id\030\002" +
-      " \001(\003\"K\n\"DeleteArticleCreationDraftRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\"Y\n ArticleCreationStatisticsRequest\022\'\n" +
-      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\014" +
-      "\n\004role\030\002 \001(\t\"\271\001\n!ArticleCreationStatisti" +
-      "csResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\022\r\n\005total\030\002 \001(\003\022\024\n\014reject_total" +
-      "\030\003 \001(\003\022\027\n\017evaluated_total\030\004 \001(\003\022\025\n\rai_pa" +
-      "ss_total\030\005 \001(\003\022\030\n\020ai_no_pass_total\030\006 \001(\003" +
-      "\"l\n\030GetExampleArticleRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013course_" +
-      "code\030\002 \001(\t\022\022\n\ntopic_code\030\003 \001(\t\"S\n\031GetExa" +
-      "mpleArticleResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\022\017\n\007example\030\002 \003(\t\"p\n\034G" +
-      "etEvaluationStandardRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013course_c" +
-      "ode\030\002 \001(\t\022\022\n\ntopic_code\030\003 \001(\t\"z\n\035GetEval" +
-      "uationStandardResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\022\025\n\rpass_standard\030\002" +
-      " \001(\t\022\033\n\023evaluation_standard\030\003 \001(\t\"\221\001\n\035Cr" +
-      "eateEvaluationConfigRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rtime_dur" +
-      "ation\030\002 \001(\003\022\026\n\016system_content\030\003 \001(\t\022\030\n\020p" +
-      "ersonal_content\030\004 \003(\t\"G\n\036CreateEvaluatio" +
-      "nConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\"F\n\033ListEvaluationConfigRe" +
+      "onse\0224\n\020article_creation\030\002 \001(\0132\032.glory_a" +
+      "pi.ArticleCreation\022?\n\022content_moderation" +
+      "\030\003 \001(\0132#.glory_api.ArticleContentModerat" +
+      "ion\022\025\n\rreject_reason\030\004 \001(\t\022\r\n\005score\030\005 \001(" +
+      "\003\"\321\001\n\034ListMyArticleCreationRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\016\n\006s" +
+      "tatus\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\021\n\tai_result\030" +
+      "\004 \001(\t\022\r\n\005topic\030\005 \001(\t\022\r\n\005start\030\006 \001(\003\022\013\n\003e" +
+      "nd\030\007 \001(\003\022+\n\npagination\030d \001(\0132\027.base.Pagi" +
+      "nationRequest\"\236\001\n\035ListMyArticleCreationR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\022(\n\004list\030\002 \003(\0132\032.glory_api.Article" +
+      "Creation\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"\263\001\n!CreateArticleCreation" +
+      "DraftRequest\022\'\n\014base_request\030\001 \001(\0132\021.bas" +
+      "e.BaseRequest\022\023\n\013course_code\030\002 \001(\t\022\031\n\021co" +
+      "urse_topic_code\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\017\n\007" +
+      "content\030\005 \001(\t\022\025\n\rcreation_type\030\006 \001(\t\"K\n\"" +
+      "CreateArticleCreationDraftResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\"\362\001\n$Cr" +
+      "eateModifiedArticleCreationRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\023\n\013c" +
+      "ourse_code\030\002 \001(\t\022\031\n\021course_topic_code\030\003 " +
+      "\001(\t\022\r\n\005title\030\004 \001(\t\022\017\n\007content\030\005 \001(\t\022\025\n\rc" +
+      "reation_type\030\006 \001(\t\022$\n\034modified_article_c" +
+      "reation_id\030\007 \001(\003\022\024\n\014product_name\030\010 \001(\t\"N" +
+      "\n%CreateModifiedArticleCreationResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\263" +
+      "\001\n!ListMyArticleCreationDraftRequest\022\'\n\014" +
+      "base_request\030\001 \001(\0132\021.base.BaseRequest\022\r\n" +
+      "\005title\030\002 \001(\t\022\r\n\005topic\030\003 \001(\t\022\r\n\005start\030\004 \001" +
+      "(\003\022\013\n\003end\030\005 \001(\003\022+\n\npagination\030d \001(\0132\027.ba" +
+      "se.PaginationRequest\"\250\001\n\"ListMyArticleCr" +
+      "eationDraftResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\022-\n\004list\030\002 \003(\0132\037.glory" +
+      "_api.ArticleCreationDraft\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponse\"o\n!Artic" +
+      "leCreationDraftDetailRequest\022\'\n\014base_req" +
+      "uest\030\001 \001(\0132\021.base.BaseRequest\022!\n\031article" +
+      "_creation_draft_id\030\002 \001(\003\"z\n\"ArticleCreat" +
+      "ionDraftDetailResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022-\n\004data\030\002 \001(\0132\037.gl" +
+      "ory_api.ArticleCreationDraft\"o\n!DeleteAr" +
+      "ticleCreationDraftRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022!\n\031article_cr" +
+      "eation_draft_id\030\002 \001(\003\"K\n\"DeleteArticleCr" +
+      "eationDraftResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
+      ".base.BaseResponse\"Y\n ArticleCreationSta" +
+      "tisticsRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\014\n\004role\030\002 \001(\t\"\271\001\n!Articl" +
+      "eCreationStatisticsResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022\r\n\005total\030\002 \001(" +
+      "\003\022\024\n\014reject_total\030\003 \001(\003\022\027\n\017evaluated_tot" +
+      "al\030\004 \001(\003\022\025\n\rai_pass_total\030\005 \001(\003\022\030\n\020ai_no" +
+      "_pass_total\030\006 \001(\003\"l\n\030GetExampleArticleRe" +
       "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\"S\n\034ListEvaluationConfigResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\014\n" +
-      "\004list\030\002 \003(\t\"\205\001\n\033BatchEvaluateArticleRequ" +
+      "equest\022\023\n\013course_code\030\002 \001(\t\022\022\n\ntopic_cod" +
+      "e\030\003 \001(\t\"S\n\031GetExampleArticleResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007e" +
+      "xample\030\002 \003(\t\"p\n\034GetEvaluationStandardReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\023\n\013course_code\030\002 \001(\t\022\022\n\ntopic_code" +
+      "\030\003 \001(\t\"z\n\035GetEvaluationStandardResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\025" +
+      "\n\rpass_standard\030\002 \001(\t\022\033\n\023evaluation_stan" +
+      "dard\030\003 \001(\t\"\221\001\n\035CreateEvaluationConfigReq" +
+      "uest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRe" +
+      "quest\022\025\n\rtime_duration\030\002 \001(\003\022\026\n\016system_c" +
+      "ontent\030\003 \001(\t\022\030\n\020personal_content\030\004 \003(\t\"G" +
+      "\n\036CreateEvaluationConfigResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\"F\n\033ListE" +
+      "valuationConfigRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\"S\n\034ListEvaluatio" +
+      "nConfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
+      "e.BaseResponse\022\014\n\004list\030\002 \003(\t\"\205\001\n\033BatchEv" +
+      "aluateArticleRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\034\n\024article_creatio" +
+      "n_ids\030\002 \003(\003\022\016\n\006action\030\003 \001(\t\022\017\n\007comment\030\004" +
+      " \001(\t\"E\n\034BatchEvaluateArticleResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"\355\001\n!" +
+      "ListStudentArticleCreationRequest\022\'\n\014bas" +
+      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rna" +
+      "me_or_title\030\002 \001(\t\022\017\n\007clas_id\030\003 \001(\003\022\016\n\006st" +
+      "atus\030\004 \001(\t\022\017\n\007ai_pass\030\005 \001(\t\022\r\n\005topic\030\006 \001" +
+      "(\t\022\r\n\005start\030\007 \001(\003\022\013\n\003end\030\010 \001(\003\022+\n\npagina" +
+      "tion\030d \001(\0132\027.base.PaginationRequest\"\252\001\n\"" +
+      "ListStudentArticleCreationResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022,\n\npag" +
+      "ination\030\002 \001(\0132\030.base.PaginationResponse\022" +
+      "/\n\004list\030\003 \003(\0132!.glory_api.StudentArticle" +
+      "Creation\"\343\001\n\026StudentArticleCreation\022\033\n\023a" +
+      "rticle_creation_id\030\001 \001(\003\022\020\n\010username\030\002 \001" +
+      "(\t\022\014\n\004clas\030\003 \001(\t\022\021\n\tai_result\030\004 \001(\t\022\016\n\006s" +
+      "tatus\030\005 \001(\t\022\r\n\005title\030\006 \001(\t\022\r\n\005topic\030\007 \001(" +
+      "\t\022\025\n\rcreation_type\030\010 \001(\t\022 \n\030digital_hunm" +
+      "an_video_url\030\t \001(\t\022\022\n\ncreated_at\030\n \001(\t\"u" +
+      "\n-StudentArticleCreationEvaluationDetail" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\033\n\023article_creation_id\030\002 \001(\003\"\313\001" +
+      "\n.StudentArticleCreationEvaluationDetail" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\0225\n\005basic\030\002 \001(\0132&.glory_api.Stude" +
+      "ntArticleCreationBasic\022;\n\007history\030\003 \003(\0132" +
+      "*.glory_api.StudentArticleCreationOperat" +
+      "ion\"c\n\033StudentArticleCreationBasic\022\020\n\010us" +
+      "ername\030\001 \001(\t\022\014\n\004clas\030\002 \001(\t\022\r\n\005topic\030\003 \001(" +
+      "\t\022\025\n\rcreation_type\030\004 \001(\t\"\321\001\n\037StudentArti" +
+      "cleCreationOperation\022\016\n\006action\030\001 \001(\t\022\014\n\004" +
+      "time\030\002 \001(\t\022?\n\022content_moderation\030\003 \001(\0132#" +
+      ".glory_api.ArticleContentModeration\0228\n\020c" +
+      "reation_content\030\004 \001(\0132\036.glory_api.Articl" +
+      "eCreationInfo\022\025\n\rreject_reason\030\005 \001(\t\"r\n\023" +
+      "ArticleCreationInfo\022\r\n\005title\030\001 \001(\t\022\017\n\007co" +
+      "ntent\030\002 \001(\t\022\021\n\tai_result\030\003 \001(\t\022\021\n\tai_rea" +
+      "son\030\004 \001(\t\022\025\n\rai_evaluation\030\005 \001(\t\"\202\002\n\030Art" +
+      "icleContentModeration\022\021\n\tforbidden\030\001 \003(\t" +
+      "\022\020\n\010negative\030\002 \003(\t\022(\n\nwrong_word\030\003 \003(\0132\024" +
+      ".glory_api.WrongWord\022*\n\rgood_sentence\030\004 " +
+      "\003(\0132\023.glory_api.Sentence\022)\n\014bad_sentence" +
+      "\030\005 \003(\0132\023.glory_api.Sentence\022\025\n\rreject_re" +
+      "ason\030\006 \001(\t\022\025\n\raccept_reason\030\007 \001(\t\022\022\n\neva" +
+      "luation\030\010 \001(\t\"+\n\tWrongWord\022\014\n\004word\030\001 \001(\t" +
+      "\022\020\n\010position\030\002 \001(\003\",\n\010Sentence\022\020\n\010senten" +
+      "ce\030\001 \001(\t\022\016\n\006reason\030\002 \001(\t\"S\n\026CorrectSente" +
+      "nceRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\020\n\010sentence\030\002 \001(\t\"a\n\027Correct" +
+      "SentenceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\037\n\005edits\030\002 \003(\0132\020.glory_a" +
+      "pi.Edits\"C\n\005Edits\022\023\n\013source_word\030\001 \001(\t\022\023" +
+      "\n\013target_word\030\002 \001(\t\022\020\n\010position\030\003 \001(\003\"\222\001" +
+      "\n\035GenArticleAIEvaluationRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\ntopi" +
+      "c_code\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\017\n\007content\030\004" +
+      " \001(\t\022\024\n\014product_name\030\005 \001(\t\"]\n\036GenArticle" +
+      "AIEvaluationResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022\024\n\014ai_result_id\030\002 \001(" +
+      "\003\"r\n\035GetArticleAIEvaluationRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014a" +
+      "i_result_id\030\002 \001(\003\022\022\n\ntopic_code\030\003 \001(\t\"\302\001" +
+      "\n\036GetArticleAIEvaluationResponse\022%\n\tbase" +
+      "_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\022conte" +
+      "nt_moderation\030\002 \001(\0132#.glory_api.ArticleC" +
+      "ontentModeration\0228\n\020creation_content\030\003 \001" +
+      "(\0132\036.glory_api.ArticleCreationInfo\"Q\n\024Ar" +
+      "ticleAIChatRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\020\n\010question\030\002 \001(\t\"\205\001" +
+      "\n\025ArticleAIChatResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022(\n\010messages\030\002 \003(\013" +
+      "2\026.glory_api.ChatMessage\022\r\n\005total\030\003 \001(\003\022" +
+      "\014\n\004used\030\004 \001(\003\",\n\013ChatMessage\022\017\n\007content\030" +
+      "\001 \001(\t\022\014\n\004role\030\002 \001(\t\"?\n\024GetChatConfigRequ" +
       "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\034\n\024article_creation_ids\030\002 \003(\003\022\016\n\006ac" +
-      "tion\030\003 \001(\t\022\017\n\007comment\030\004 \001(\t\"E\n\034BatchEval" +
-      "uateArticleResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"\355\001\n!ListStudentArticl" +
-      "eCreationRequest\022\'\n\014base_request\030\001 \001(\0132\021" +
-      ".base.BaseRequest\022\025\n\rname_or_title\030\002 \001(\t" +
-      "\022\017\n\007clas_id\030\003 \001(\003\022\016\n\006status\030\004 \001(\t\022\017\n\007ai_" +
-      "pass\030\005 \001(\t\022\r\n\005topic\030\006 \001(\t\022\r\n\005start\030\007 \001(\003" +
-      "\022\013\n\003end\030\010 \001(\003\022+\n\npagination\030d \001(\0132\027.base" +
-      ".PaginationRequest\"\252\001\n\"ListStudentArticl" +
-      "eCreationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022,\n\npagination\030\002 \001(\0132\030.b" +
-      "ase.PaginationResponse\022/\n\004list\030\003 \003(\0132!.g" +
-      "lory_api.StudentArticleCreation\"\343\001\n\026Stud" +
-      "entArticleCreation\022\033\n\023article_creation_i" +
-      "d\030\001 \001(\003\022\020\n\010username\030\002 \001(\t\022\014\n\004clas\030\003 \001(\t\022" +
-      "\021\n\tai_result\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022\r\n\005ti" +
-      "tle\030\006 \001(\t\022\r\n\005topic\030\007 \001(\t\022\025\n\rcreation_typ" +
-      "e\030\010 \001(\t\022 \n\030digital_hunman_video_url\030\t \001(" +
-      "\t\022\022\n\ncreated_at\030\n \001(\t\"u\n-StudentArticleC" +
-      "reationEvaluationDetailRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\033\n\023artic" +
-      "le_creation_id\030\002 \001(\003\"\313\001\n.StudentArticleC" +
-      "reationEvaluationDetailResponse\022%\n\tbase_" +
-      "resp\030\001 \001(\0132\022.base.BaseResponse\0225\n\005basic\030" +
-      "\002 \001(\0132&.glory_api.StudentArticleCreation" +
-      "Basic\022;\n\007history\030\003 \003(\0132*.glory_api.Stude" +
-      "ntArticleCreationOperation\"c\n\033StudentArt" +
-      "icleCreationBasic\022\020\n\010username\030\001 \001(\t\022\014\n\004c" +
-      "las\030\002 \001(\t\022\r\n\005topic\030\003 \001(\t\022\025\n\rcreation_typ" +
-      "e\030\004 \001(\t\"\321\001\n\037StudentArticleCreationOperat" +
-      "ion\022\016\n\006action\030\001 \001(\t\022\014\n\004time\030\002 \001(\t\022?\n\022con" +
-      "tent_moderation\030\003 \001(\0132#.glory_api.Articl" +
-      "eContentModeration\0228\n\020creation_content\030\004" +
-      " \001(\0132\036.glory_api.ArticleCreationInfo\022\025\n\r" +
-      "reject_reason\030\005 \001(\t\"r\n\023ArticleCreationIn" +
-      "fo\022\r\n\005title\030\001 \001(\t\022\017\n\007content\030\002 \001(\t\022\021\n\tai" +
-      "_result\030\003 \001(\t\022\021\n\tai_reason\030\004 \001(\t\022\025\n\rai_e" +
-      "valuation\030\005 \001(\t\"\202\002\n\030ArticleContentModera" +
-      "tion\022\021\n\tforbidden\030\001 \003(\t\022\020\n\010negative\030\002 \003(" +
-      "\t\022(\n\nwrong_word\030\003 \003(\0132\024.glory_api.WrongW" +
-      "ord\022*\n\rgood_sentence\030\004 \003(\0132\023.glory_api.S" +
-      "entence\022)\n\014bad_sentence\030\005 \003(\0132\023.glory_ap" +
-      "i.Sentence\022\025\n\rreject_reason\030\006 \001(\t\022\025\n\racc" +
-      "ept_reason\030\007 \001(\t\022\022\n\nevaluation\030\010 \001(\t\"+\n\t" +
-      "WrongWord\022\014\n\004word\030\001 \001(\t\022\020\n\010position\030\002 \001(" +
-      "\003\",\n\010Sentence\022\020\n\010sentence\030\001 \001(\t\022\016\n\006reaso" +
-      "n\030\002 \001(\t\"S\n\026CorrectSentenceRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\020\n\010se" +
-      "ntence\030\002 \001(\t\"a\n\027CorrectSentenceResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\037" +
-      "\n\005edits\030\002 \003(\0132\020.glory_api.Edits\"C\n\005Edits" +
-      "\022\023\n\013source_word\030\001 \001(\t\022\023\n\013target_word\030\002 \001" +
-      "(\t\022\020\n\010position\030\003 \001(\003\"\222\001\n\035GenArticleAIEva" +
-      "luationRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\022\n\ntopic_code\030\002 \001(\t\022\r\n\005t" +
-      "itle\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\024\n\014product_n" +
-      "ame\030\005 \001(\t\"]\n\036GenArticleAIEvaluationRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022\024\n\014ai_result_id\030\002 \001(\003\"r\n\035GetArticleAI" +
-      "EvaluationRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\024\n\014ai_result_id\030\002 \001(\003" +
-      "\022\022\n\ntopic_code\030\003 \001(\t\"\302\001\n\036GetArticleAIEva" +
-      "luationResponse\022%\n\tbase_resp\030\001 \001(\0132\022.bas" +
-      "e.BaseResponse\022?\n\022content_moderation\030\002 \001" +
-      "(\0132#.glory_api.ArticleContentModeration\022" +
-      "8\n\020creation_content\030\003 \001(\0132\036.glory_api.Ar" +
-      "ticleCreationInfo\"Q\n\024ArticleAIChatReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\020\n\010question\030\002 \001(\t\"\205\001\n\025ArticleAIChatRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022(\n\010messages\030\002 \003(\0132\026.glory_api.Chat" +
-      "Message\022\r\n\005total\030\003 \001(\003\022\014\n\004used\030\004 \001(\003\",\n\013" +
-      "ChatMessage\022\017\n\007content\030\001 \001(\t\022\014\n\004role\030\002 \001" +
-      "(\t\"?\n\024GetChatConfigRequest\022\'\n\014base_reque" +
-      "st\030\001 \001(\0132\021.base.BaseRequest\"[\n\025GetChatCo" +
-      "nfigResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponse\022\r\n\005total\030\002 \001(\003\022\014\n\004used\030\003 \001(\003" +
-      "\"\220\001\n\031CreateDigitalVideoRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004text\030" +
-      "\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\n\n\002bg\030\004 \001(\t\022\014\n\004code" +
-      "\030\005 \001(\t\022\023\n\013speech_rate\030\006 \001(\005\"T\n\032CreateDig" +
-      "italVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\022\017\n\007task_id\030\002 \001(\t\"\265\001\n\014Di" +
-      "gitalVideo\022\017\n\007task_id\030\001 \001(\t\022\023\n\013task_stat" +
-      "us\030\007 \001(\005\022\023\n\013video_title\030\002 \001(\t\022\021\n\tvideo_u" +
-      "rl\030\003 \001(\t\022\026\n\016video_duration\030\004 \001(\003\022\024\n\014subt" +
-      "itle_url\030\005 \001(\t\022\025\n\rvideo_preview\030\006 \001(\t\022\022\n" +
-      "\ncreated_at\030\010 \001(\t\"\226\001\n\030ListDigitalVideoRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022%\n\004list\030\002 \003(\0132\027.glory_api.DigitalV" +
-      "ideo\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
-      "onResponse\"\274\001\n\027ListDigitalVideoRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\017\n\007task_id\030\002 \001(\t\022\014\n\004type\030\003 \001(\005\022\r\n\005title\030" +
-      "\004 \001(\t\022\016\n\006status\030\005 \001(\005\022\r\n\005phone\030\006 \001(\t\022+\n\n" +
-      "pagination\030d \001(\0132\027.base.PaginationReques" +
-      "t\"h\n\027GetDigitalVideoResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022&\n\005video\030\002 \001" +
-      "(\0132\027.glory_api.DigitalVideo\"R\n\026GetDigita" +
-      "lVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022\017\n\007task_id\030\002 \001(\t\"+\n\013Digit" +
-      "alCode\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\212\001\n" +
-      "\027ListDigitalCodeResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022#\n\003r2d\030\002 \003(\0132\026.g" +
-      "lory_api.DigitalCode\022#\n\003r3d\030\003 \003(\0132\026.glor" +
-      "y_api.DigitalCode\"A\n\026ListDigitalCodeRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\"U\n\031DeleteDigitalVideoRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007ta" +
-      "sk_id\030\002 \001(\t\"C\n\032DeleteDigitalVideoRespons" +
-      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
-      "\"~\n\030ListDigitalAvatarRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004type\030\002 " +
-      "\001(\t\022+\n\npagination\030d \001(\0132\027.base.Paginatio" +
-      "nRequest\"~\n\rDigitalAvatar\022\014\n\004code\030\001 \001(\t\022" +
-      "\014\n\004name\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\022\024\n\014port" +
-      "rait_url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\023\n\013p" +
-      "review_url\030\006 \001(\t\"\233\001\n\031ListDigitalAvatarRe" +
-      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
-      "ponse\022)\n\007avatars\030\002 \003(\0132\030.glory_api.Digit" +
-      "alAvatar\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
-      "nationResponse\"G\n\034UploadBackgroundImageR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\"S\n\035UploadBackgroundImageResponse" +
-      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022" +
-      "\013\n\003url\030\002 \001(\t\"E\n\032ListBackgroundImageReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\"%\n\010OssImage\022\014\n\004path\030\001 \001(\t\022\013\n\003url\030\002 \001" +
-      "(\t\"i\n\033ListBackgroundImageResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022#\n\006imag" +
-      "es\030\002 \003(\0132\023.glory_api.OssImage\"\364\001\n\035Update" +
-      "TenantCourseDataRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\025\n\rstudent_coun" +
-      "t\030\002 \001(\005\022\024\n\014course_count\030\003 \001(\005\022\030\n\020day_cou" +
-      "rse_count\030\004 \001(\005\022\033\n\023day_assistant_count\030\005" +
-      " \001(\005\022\030\n\020day_simple_count\030\006 \001(\005\022\031\n\021day_co" +
-      "mplex_count\030\007 \001(\005\022\021\n\ttenant_id\030\010 \001(\003\"G\n\036" +
-      "UpdateTenantCourseDataResponse\022%\n\tbase_r" +
-      "esp\030\001 \001(\0132\022.base.BaseResponse\"\210\001\n\027Update" +
-      "ModelPriceRequest\022\'\n\014base_request\030\001 \001(\0132" +
-      "\021.base.BaseRequest\022\027\n\017assistant_price\030\002 " +
-      "\001(\001\022\024\n\014simple_price\030\003 \001(\001\022\025\n\rcomplex_pri" +
-      "ce\030\004 \001(\001\"A\n\030UpdateModelPriceResponse\022%\n\t" +
-      "base_resp\030\001 \001(\0132\022.base.BaseResponse\"]\n\037G" +
-      "etArticleCreationTenantRequest\022\'\n\014base_r" +
-      "equest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenan" +
-      "t_id\030\002 \001(\003\"\304\001\n\030GetArticleCreationTenant\022" +
-      "\014\n\004name\030\001 \001(\t\022\025\n\rstudent_count\030\002 \001(\003\022\024\n\014" +
-      "course_count\030\003 \001(\003\022\030\n\020day_course_count\030\004" +
-      " \001(\003\022\024\n\014simple_count\030\005 \001(\003\022\025\n\rcomplex_co" +
-      "unt\030\006 \001(\003\022\027\n\017assistant_count\030\007 \001(\003\022\r\n\005to" +
-      "tal\030\010 \001(\003\"~\n GetArticleCreationTenantRes" +
+      "uest\"[\n\025GetChatConfigResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\022\r\n\005total\030\002 " +
+      "\001(\003\022\014\n\004used\030\003 \001(\003\"\220\001\n\031CreateDigitalVideo" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\014\n\004text\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\n\n" +
+      "\002bg\030\004 \001(\t\022\014\n\004code\030\005 \001(\t\022\023\n\013speech_rate\030\006" +
+      " \001(\005\"T\n\032CreateDigitalVideoResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022\017\n\007tas" +
+      "k_id\030\002 \001(\t\"\265\001\n\014DigitalVideo\022\017\n\007task_id\030\001" +
+      " \001(\t\022\023\n\013task_status\030\007 \001(\005\022\023\n\013video_title" +
+      "\030\002 \001(\t\022\021\n\tvideo_url\030\003 \001(\t\022\026\n\016video_durat" +
+      "ion\030\004 \001(\003\022\024\n\014subtitle_url\030\005 \001(\t\022\025\n\rvideo" +
+      "_preview\030\006 \001(\t\022\022\n\ncreated_at\030\010 \001(\t\"\226\001\n\030L" +
+      "istDigitalVideoResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022%\n\004list\030\002 \003(\0132\027.g" +
+      "lory_api.DigitalVideo\022,\n\npagination\030d \001(" +
+      "\0132\030.base.PaginationResponse\"\274\001\n\027ListDigi" +
+      "talVideoRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007task_id\030\002 \001(\t\022\014\n\004typ" +
+      "e\030\003 \001(\005\022\r\n\005title\030\004 \001(\t\022\016\n\006status\030\005 \001(\005\022\r" +
+      "\n\005phone\030\006 \001(\t\022+\n\npagination\030d \001(\0132\027.base" +
+      ".PaginationRequest\"h\n\027GetDigitalVideoRes" +
       "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\0223\n\006tenant\030\002 \001(\0132#.glory_api.GetArti" +
-      "cleCreationTenant\"x\n ListArticleCreation" +
-      "TenantRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
-      "se.BaseRequest\022+\n\npagination\030d \001(\0132\027.bas" +
-      "e.PaginationRequest\"\253\001\n!ListArticleCreat" +
-      "ionTenantResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
-      "ase.BaseResponse\0221\n\004list\030\002 \003(\0132#.glory_a" +
-      "pi.GetArticleCreationTenant\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"|\n$Lis" +
-      "tArticleCreationTenantCostRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022+\n\npa" +
-      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
-      "\360\003\n\031ArticleCreationTenantCost\022\014\n\004name\030\001 " +
-      "\001(\t\022\032\n\022total_cost_percent\030\002 \001(\001\022\022\n\ntotal" +
-      "_cost\030\003 \001(\001\022\023\n\013total_spend\030\004 \001(\001\022\025\n\rcomp" +
-      "lex_count\030\005 \001(\003\022\033\n\023complex_usage_count\030\006" +
-      " \001(\003\022\024\n\014simple_count\030\007 \001(\003\022\032\n\022simple_usa" +
-      "ge_count\030\010 \001(\003\022\027\n\017assistant_count\030\t \001(\003\022" +
-      "\035\n\025assistant_usage_count\030\n \001(\003\022\034\n\024comple" +
-      "x_cost_percent\030\013 \001(\001\022\024\n\014complex_cost\030\014 \001" +
-      "(\001\022\025\n\rcomplex_spend\030\r \001(\001\022\033\n\023simple_cost" +
-      "_percent\030\016 \001(\001\022\023\n\013simple_cost\030\017 \001(\001\022\024\n\014s" +
-      "imple_spend\030\020 \001(\001\022\036\n\026assistant_cost_perc" +
-      "ent\030\021 \001(\001\022\026\n\016assistant_cost\030\022 \001(\001\022\027\n\017ass" +
-      "istant_spend\030\023 \001(\001\"\260\001\n%ListArticleCreati" +
-      "onTenantCostResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\0222\n\004list\030\002 \003(\0132$.glor" +
-      "y_api.ArticleCreationTenantCost\022,\n\npagin" +
-      "ation\030d \001(\0132\030.base.PaginationResponse\"N\n" +
-      "#GetArticleCreationTenantCostRequest\022\'\n\014" +
-      "base_request\030\001 \001(\0132\021.base.BaseRequest\"\260\002" +
-      "\n$GetArticleCreationTenantCostResponse\022%" +
-      "\n\tbase_resp\030d \001(\0132\022.base.BaseResponse\022\022\n" +
-      "\ntotal_cost\030\001 \001(\001\022\023\n\013total_spend\030\002 \001(\001\022\032" +
-      "\n\022total_cost_percent\030\003 \001(\001\022\033\n\023complex_us" +
-      "age_count\030\004 \001(\003\022\025\n\rcomplex_spend\030\005 \001(\001\022\032" +
-      "\n\022simple_usage_count\030\006 \001(\003\022\024\n\014simple_spe" +
-      "nd\030\007 \001(\001\022\035\n\025assistant_usage_count\030\010 \001(\003\022" +
-      "\027\n\017assistant_spend\030\t \001(\001\"\376\001\n\032GetSubTopic" +
-      "AiResultRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\026\n\016sub_topic_code\030\002 \001(\t" +
-      "\022\024\n\014product_name\030\003 \001(\t\022\026\n\016selling_points" +
-      "\030\004 \003(\t\022\022\n\nuser_needs\030\005 \001(\t\022\030\n\020user_pain_" +
-      "points\030\006 \001(\t\022\022\n\nuser_scene\030\007 \001(\t\022\031\n\021scen" +
-      "e_description\030\010 \001(\t\022\024\n\014full_content\030\t \001(" +
-      "\t\"\205\001\n\033GetSubTopicAiResultResponse\022%\n\tbas" +
-      "e_resp\030\001 \001(\0132\022.base.BaseResponse\022?\n\022cont" +
-      "ent_moderation\030\002 \001(\0132#.glory_api.Article" +
-      "ContentModerationB*\n&com.zhijiejiaoyu.gl" +
-      "ory_api.short_videoP\001b\006proto3"
+      "onse\022&\n\005video\030\002 \001(\0132\027.glory_api.DigitalV" +
+      "ideo\"R\n\026GetDigitalVideoRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007task_" +
+      "id\030\002 \001(\t\"+\n\013DigitalCode\022\r\n\005label\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t\"\212\001\n\027ListDigitalCodeRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022#\n\003r2d\030\002 \003(\0132\026.glory_api.DigitalCode\022#\n" +
+      "\003r3d\030\003 \003(\0132\026.glory_api.DigitalCode\"A\n\026Li" +
+      "stDigitalCodeRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\"U\n\031DeleteDigitalVi" +
+      "deoRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\017\n\007task_id\030\002 \001(\t\"C\n\032DeleteDi" +
+      "gitalVideoResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\"~\n\030ListDigitalAvatarRe" +
+      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
+      "equest\022\014\n\004type\030\002 \001(\t\022+\n\npagination\030d \001(\013" +
+      "2\027.base.PaginationRequest\"~\n\rDigitalAvat" +
+      "ar\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\021\n\timage_" +
+      "url\030\003 \001(\t\022\024\n\014portrait_url\030\004 \001(\t\022\023\n\013descr" +
+      "iption\030\005 \001(\t\022\023\n\013preview_url\030\006 \001(\t\"\233\001\n\031Li" +
+      "stDigitalAvatarResponse\022%\n\tbase_resp\030\001 \001" +
+      "(\0132\022.base.BaseResponse\022)\n\007avatars\030\002 \003(\0132" +
+      "\030.glory_api.DigitalAvatar\022,\n\npagination\030" +
+      "d \001(\0132\030.base.PaginationResponse\"G\n\034Uploa" +
+      "dBackgroundImageRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\"S\n\035UploadBackgr" +
+      "oundImageResponse\022%\n\tbase_resp\030\001 \001(\0132\022.b" +
+      "ase.BaseResponse\022\013\n\003url\030\002 \001(\t\"E\n\032ListBac" +
+      "kgroundImageRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\"%\n\010OssImage\022\014\n\004path" +
+      "\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\"i\n\033ListBackgroundIma" +
+      "geResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022#\n\006images\030\002 \003(\0132\023.glory_api.Os" +
+      "sImage\"\364\001\n\035UpdateTenantCourseDataRequest" +
+      "\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReques" +
+      "t\022\025\n\rstudent_count\030\002 \001(\005\022\024\n\014course_count" +
+      "\030\003 \001(\005\022\030\n\020day_course_count\030\004 \001(\005\022\033\n\023day_" +
+      "assistant_count\030\005 \001(\005\022\030\n\020day_simple_coun" +
+      "t\030\006 \001(\005\022\031\n\021day_complex_count\030\007 \001(\005\022\021\n\tte" +
+      "nant_id\030\010 \001(\003\"G\n\036UpdateTenantCourseDataR" +
+      "esponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRe" +
+      "sponse\"\210\001\n\027UpdateModelPriceRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017a" +
+      "ssistant_price\030\002 \001(\001\022\024\n\014simple_price\030\003 \001" +
+      "(\001\022\025\n\rcomplex_price\030\004 \001(\001\"A\n\030UpdateModel" +
+      "PriceResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\"]\n\037GetArticleCreationTenant" +
+      "Request\022\'\n\014base_request\030\001 \001(\0132\021.base.Bas" +
+      "eRequest\022\021\n\ttenant_id\030\002 \001(\003\"\304\001\n\030GetArtic" +
+      "leCreationTenant\022\014\n\004name\030\001 \001(\t\022\025\n\rstuden" +
+      "t_count\030\002 \001(\003\022\024\n\014course_count\030\003 \001(\003\022\030\n\020d" +
+      "ay_course_count\030\004 \001(\003\022\024\n\014simple_count\030\005 " +
+      "\001(\003\022\025\n\rcomplex_count\030\006 \001(\003\022\027\n\017assistant_" +
+      "count\030\007 \001(\003\022\r\n\005total\030\010 \001(\003\"~\n GetArticle" +
+      "CreationTenantResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\0223\n\006tenant\030\002 \001(\0132#." +
+      "glory_api.GetArticleCreationTenant\"x\n Li" +
+      "stArticleCreationTenantRequest\022\'\n\014base_r" +
+      "equest\030\001 \001(\0132\021.base.BaseRequest\022+\n\npagin" +
+      "ation\030d \001(\0132\027.base.PaginationRequest\"\253\001\n" +
+      "!ListArticleCreationTenantResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\0221\n\004lis" +
+      "t\030\002 \003(\0132#.glory_api.GetArticleCreationTe" +
+      "nant\022,\n\npagination\030d \001(\0132\030.base.Paginati" +
+      "onResponse\"|\n$ListArticleCreationTenantC" +
+      "ostRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022+\n\npagination\030d \001(\0132\027.base.P" +
+      "aginationRequest\"\360\003\n\031ArticleCreationTena" +
+      "ntCost\022\014\n\004name\030\001 \001(\t\022\032\n\022total_cost_perce" +
+      "nt\030\002 \001(\001\022\022\n\ntotal_cost\030\003 \001(\001\022\023\n\013total_sp" +
+      "end\030\004 \001(\001\022\025\n\rcomplex_count\030\005 \001(\003\022\033\n\023comp" +
+      "lex_usage_count\030\006 \001(\003\022\024\n\014simple_count\030\007 " +
+      "\001(\003\022\032\n\022simple_usage_count\030\010 \001(\003\022\027\n\017assis" +
+      "tant_count\030\t \001(\003\022\035\n\025assistant_usage_coun" +
+      "t\030\n \001(\003\022\034\n\024complex_cost_percent\030\013 \001(\001\022\024\n" +
+      "\014complex_cost\030\014 \001(\001\022\025\n\rcomplex_spend\030\r \001" +
+      "(\001\022\033\n\023simple_cost_percent\030\016 \001(\001\022\023\n\013simpl" +
+      "e_cost\030\017 \001(\001\022\024\n\014simple_spend\030\020 \001(\001\022\036\n\026as" +
+      "sistant_cost_percent\030\021 \001(\001\022\026\n\016assistant_" +
+      "cost\030\022 \001(\001\022\027\n\017assistant_spend\030\023 \001(\001\"\260\001\n%" +
+      "ListArticleCreationTenantCostResponse\022%\n" +
+      "\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0222\n\004" +
+      "list\030\002 \003(\0132$.glory_api.ArticleCreationTe" +
+      "nantCost\022,\n\npagination\030d \001(\0132\030.base.Pagi" +
+      "nationResponse\"N\n#GetArticleCreationTena" +
+      "ntCostRequest\022\'\n\014base_request\030\001 \001(\0132\021.ba" +
+      "se.BaseRequest\"\260\002\n$GetArticleCreationTen" +
+      "antCostResponse\022%\n\tbase_resp\030d \001(\0132\022.bas" +
+      "e.BaseResponse\022\022\n\ntotal_cost\030\001 \001(\001\022\023\n\013to" +
+      "tal_spend\030\002 \001(\001\022\032\n\022total_cost_percent\030\003 " +
+      "\001(\001\022\033\n\023complex_usage_count\030\004 \001(\003\022\025\n\rcomp" +
+      "lex_spend\030\005 \001(\001\022\032\n\022simple_usage_count\030\006 " +
+      "\001(\003\022\024\n\014simple_spend\030\007 \001(\001\022\035\n\025assistant_u" +
+      "sage_count\030\010 \001(\003\022\027\n\017assistant_spend\030\t \001(" +
+      "\001\"\376\001\n\032GetSubTopicAiResultRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\026\n\016sub" +
+      "_topic_code\030\002 \001(\t\022\024\n\014product_name\030\003 \001(\t\022" +
+      "\026\n\016selling_points\030\004 \003(\t\022\022\n\nuser_needs\030\005 " +
+      "\001(\t\022\030\n\020user_pain_points\030\006 \001(\t\022\022\n\nuser_sc" +
+      "ene\030\007 \001(\t\022\031\n\021scene_description\030\010 \001(\t\022\024\n\014" +
+      "full_content\030\t \001(\t\"\205\001\n\033GetSubTopicAiResu" +
+      "ltResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
+      "eResponse\022?\n\022content_moderation\030\002 \001(\0132#." +
+      "glory_api.ArticleContentModerationB*\n&co" +
+      "m.zhijiejiaoyu.glory_api.short_videoP\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -768,7 +787,7 @@ public final class Article {
     internal_static_glory_api_ArticleCreation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreation_descriptor,
-        new java.lang.String[] { "ArticleCreationId", "LastArticleCreationId", "Title", "AiResult", "Status", "Topic", "CreationType", "DigitalHunmanVideoUrl", "CreatedAt", });
+        new java.lang.String[] { "ArticleCreationId", "LastArticleCreationId", "Title", "AiResult", "Status", "Topic", "CreationType", "DigitalHunmanVideoUrl", "CreatedAt", "Content", "ProductName", });
     internal_static_glory_api_ArticleCreationDraft_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_glory_api_ArticleCreationDraft_fieldAccessorTable = new
@@ -787,500 +806,512 @@ public final class Article {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateArticleCreationResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
-    internal_static_glory_api_ListMyArticleCreationRequest_descriptor =
+    internal_static_glory_api_GetArticleDetailRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_GetArticleDetailRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetArticleDetailRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ArticleCreationId", });
+    internal_static_glory_api_GetArticleDetailResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_GetArticleDetailResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetArticleDetailResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "ArticleCreation", "ContentModeration", "RejectReason", "Score", });
+    internal_static_glory_api_ListMyArticleCreationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_ListMyArticleCreationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyArticleCreationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Status", "Title", "AiResult", "Topic", "Start", "End", "Pagination", });
     internal_static_glory_api_ListMyArticleCreationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_glory_api_ListMyArticleCreationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyArticleCreationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
     internal_static_glory_api_CreateArticleCreationDraftRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_glory_api_CreateArticleCreationDraftRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateArticleCreationDraftRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "CourseCode", "CourseTopicCode", "Title", "Content", "CreationType", "HaveSubTopic", });
+        new java.lang.String[] { "BaseRequest", "CourseCode", "CourseTopicCode", "Title", "Content", "CreationType", });
     internal_static_glory_api_CreateArticleCreationDraftResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_glory_api_CreateArticleCreationDraftResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateArticleCreationDraftResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_CreateModifiedArticleCreationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_glory_api_CreateModifiedArticleCreationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateModifiedArticleCreationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseCode", "CourseTopicCode", "Title", "Content", "CreationType", "ModifiedArticleCreationId", "ProductName", });
     internal_static_glory_api_CreateModifiedArticleCreationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_glory_api_CreateModifiedArticleCreationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateModifiedArticleCreationResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListMyArticleCreationDraftRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_glory_api_ListMyArticleCreationDraftRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyArticleCreationDraftRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Title", "Topic", "Start", "End", "Pagination", });
     internal_static_glory_api_ListMyArticleCreationDraftResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_ListMyArticleCreationDraftResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListMyArticleCreationDraftResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
     internal_static_glory_api_ArticleCreationDraftDetailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_ArticleCreationDraftDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationDraftDetailRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ArticleCreationDraftId", });
     internal_static_glory_api_ArticleCreationDraftDetailResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_glory_api_ArticleCreationDraftDetailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationDraftDetailResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Data", });
     internal_static_glory_api_DeleteArticleCreationDraftRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_glory_api_DeleteArticleCreationDraftRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteArticleCreationDraftRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ArticleCreationDraftId", });
     internal_static_glory_api_DeleteArticleCreationDraftResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_glory_api_DeleteArticleCreationDraftResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteArticleCreationDraftResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ArticleCreationStatisticsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_glory_api_ArticleCreationStatisticsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationStatisticsRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Role", });
     internal_static_glory_api_ArticleCreationStatisticsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_glory_api_ArticleCreationStatisticsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationStatisticsResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Total", "RejectTotal", "EvaluatedTotal", "AiPassTotal", "AiNoPassTotal", });
     internal_static_glory_api_GetExampleArticleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_glory_api_GetExampleArticleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetExampleArticleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseCode", "TopicCode", });
     internal_static_glory_api_GetExampleArticleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_glory_api_GetExampleArticleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetExampleArticleResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Example", });
     internal_static_glory_api_GetEvaluationStandardRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_glory_api_GetEvaluationStandardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetEvaluationStandardRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "CourseCode", "TopicCode", });
     internal_static_glory_api_GetEvaluationStandardResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_glory_api_GetEvaluationStandardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetEvaluationStandardResponse_descriptor,
         new java.lang.String[] { "BaseResp", "PassStandard", "EvaluationStandard", });
     internal_static_glory_api_CreateEvaluationConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_glory_api_CreateEvaluationConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateEvaluationConfigRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TimeDuration", "SystemContent", "PersonalContent", });
     internal_static_glory_api_CreateEvaluationConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_glory_api_CreateEvaluationConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateEvaluationConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListEvaluationConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_glory_api_ListEvaluationConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListEvaluationConfigRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_ListEvaluationConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_glory_api_ListEvaluationConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListEvaluationConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", });
     internal_static_glory_api_BatchEvaluateArticleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_glory_api_BatchEvaluateArticleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_BatchEvaluateArticleRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ArticleCreationIds", "Action", "Comment", });
     internal_static_glory_api_BatchEvaluateArticleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_glory_api_BatchEvaluateArticleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_BatchEvaluateArticleResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListStudentArticleCreationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_glory_api_ListStudentArticleCreationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListStudentArticleCreationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "NameOrTitle", "ClasId", "Status", "AiPass", "Topic", "Start", "End", "Pagination", });
     internal_static_glory_api_ListStudentArticleCreationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_glory_api_ListStudentArticleCreationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListStudentArticleCreationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Pagination", "List", });
     internal_static_glory_api_StudentArticleCreation_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_glory_api_StudentArticleCreation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreation_descriptor,
         new java.lang.String[] { "ArticleCreationId", "Username", "Clas", "AiResult", "Status", "Title", "Topic", "CreationType", "DigitalHunmanVideoUrl", "CreatedAt", });
     internal_static_glory_api_StudentArticleCreationEvaluationDetailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_glory_api_StudentArticleCreationEvaluationDetailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreationEvaluationDetailRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "ArticleCreationId", });
     internal_static_glory_api_StudentArticleCreationEvaluationDetailResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_glory_api_StudentArticleCreationEvaluationDetailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreationEvaluationDetailResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Basic", "History", });
     internal_static_glory_api_StudentArticleCreationBasic_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_glory_api_StudentArticleCreationBasic_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreationBasic_descriptor,
         new java.lang.String[] { "Username", "Clas", "Topic", "CreationType", });
     internal_static_glory_api_StudentArticleCreationOperation_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_glory_api_StudentArticleCreationOperation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentArticleCreationOperation_descriptor,
         new java.lang.String[] { "Action", "Time", "ContentModeration", "CreationContent", "RejectReason", });
     internal_static_glory_api_ArticleCreationInfo_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_glory_api_ArticleCreationInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationInfo_descriptor,
         new java.lang.String[] { "Title", "Content", "AiResult", "AiReason", "AiEvaluation", });
     internal_static_glory_api_ArticleContentModeration_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_glory_api_ArticleContentModeration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleContentModeration_descriptor,
         new java.lang.String[] { "Forbidden", "Negative", "WrongWord", "GoodSentence", "BadSentence", "RejectReason", "AcceptReason", "Evaluation", });
     internal_static_glory_api_WrongWord_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_glory_api_WrongWord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_WrongWord_descriptor,
         new java.lang.String[] { "Word", "Position", });
     internal_static_glory_api_Sentence_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_glory_api_Sentence_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Sentence_descriptor,
         new java.lang.String[] { "Sentence", "Reason", });
     internal_static_glory_api_CorrectSentenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_glory_api_CorrectSentenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CorrectSentenceRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Sentence", });
     internal_static_glory_api_CorrectSentenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_glory_api_CorrectSentenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CorrectSentenceResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Edits", });
     internal_static_glory_api_Edits_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_glory_api_Edits_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Edits_descriptor,
         new java.lang.String[] { "SourceWord", "TargetWord", "Position", });
     internal_static_glory_api_GenArticleAIEvaluationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_glory_api_GenArticleAIEvaluationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GenArticleAIEvaluationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TopicCode", "Title", "Content", "ProductName", });
     internal_static_glory_api_GenArticleAIEvaluationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_glory_api_GenArticleAIEvaluationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GenArticleAIEvaluationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "AiResultId", });
     internal_static_glory_api_GetArticleAIEvaluationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_glory_api_GetArticleAIEvaluationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleAIEvaluationRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "AiResultId", "TopicCode", });
     internal_static_glory_api_GetArticleAIEvaluationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_glory_api_GetArticleAIEvaluationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleAIEvaluationResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ContentModeration", "CreationContent", });
     internal_static_glory_api_ArticleAIChatRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_glory_api_ArticleAIChatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleAIChatRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Question", });
     internal_static_glory_api_ArticleAIChatResponse_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_glory_api_ArticleAIChatResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleAIChatResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Messages", "Total", "Used", });
     internal_static_glory_api_ChatMessage_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_glory_api_ChatMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ChatMessage_descriptor,
         new java.lang.String[] { "Content", "Role", });
     internal_static_glory_api_GetChatConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_glory_api_GetChatConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetChatConfigRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_GetChatConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_glory_api_GetChatConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetChatConfigResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Total", "Used", });
     internal_static_glory_api_CreateDigitalVideoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_glory_api_CreateDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateDigitalVideoRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Text", "Title", "Bg", "Code", "SpeechRate", });
     internal_static_glory_api_CreateDigitalVideoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_glory_api_CreateDigitalVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_CreateDigitalVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TaskId", });
     internal_static_glory_api_DigitalVideo_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_glory_api_DigitalVideo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DigitalVideo_descriptor,
         new java.lang.String[] { "TaskId", "TaskStatus", "VideoTitle", "VideoUrl", "VideoDuration", "SubtitleUrl", "VideoPreview", "CreatedAt", });
     internal_static_glory_api_ListDigitalVideoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_glory_api_ListDigitalVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
     internal_static_glory_api_ListDigitalVideoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_glory_api_ListDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalVideoRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TaskId", "Type", "Title", "Status", "Phone", "Pagination", });
     internal_static_glory_api_GetDigitalVideoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_glory_api_GetDigitalVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetDigitalVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Video", });
     internal_static_glory_api_GetDigitalVideoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_glory_api_GetDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetDigitalVideoRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TaskId", });
     internal_static_glory_api_DigitalCode_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_glory_api_DigitalCode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DigitalCode_descriptor,
         new java.lang.String[] { "Label", "Value", });
     internal_static_glory_api_ListDigitalCodeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_glory_api_ListDigitalCodeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalCodeResponse_descriptor,
         new java.lang.String[] { "BaseResp", "R2D", "R3D", });
     internal_static_glory_api_ListDigitalCodeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_glory_api_ListDigitalCodeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalCodeRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_DeleteDigitalVideoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_glory_api_DeleteDigitalVideoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteDigitalVideoRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TaskId", });
     internal_static_glory_api_DeleteDigitalVideoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_glory_api_DeleteDigitalVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DeleteDigitalVideoResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_ListDigitalAvatarRequest_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_glory_api_ListDigitalAvatarRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalAvatarRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Type", "Pagination", });
     internal_static_glory_api_DigitalAvatar_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_glory_api_DigitalAvatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_DigitalAvatar_descriptor,
         new java.lang.String[] { "Code", "Name", "ImageUrl", "PortraitUrl", "Description", "PreviewUrl", });
     internal_static_glory_api_ListDigitalAvatarResponse_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_glory_api_ListDigitalAvatarResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListDigitalAvatarResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Avatars", "Pagination", });
     internal_static_glory_api_UploadBackgroundImageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_glory_api_UploadBackgroundImageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadBackgroundImageRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_UploadBackgroundImageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_glory_api_UploadBackgroundImageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UploadBackgroundImageResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Url", });
     internal_static_glory_api_ListBackgroundImageRequest_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_glory_api_ListBackgroundImageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListBackgroundImageRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_OssImage_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_glory_api_OssImage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_OssImage_descriptor,
         new java.lang.String[] { "Path", "Url", });
     internal_static_glory_api_ListBackgroundImageResponse_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_glory_api_ListBackgroundImageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListBackgroundImageResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Images", });
     internal_static_glory_api_UpdateTenantCourseDataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_glory_api_UpdateTenantCourseDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTenantCourseDataRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "StudentCount", "CourseCount", "DayCourseCount", "DayAssistantCount", "DaySimpleCount", "DayComplexCount", "TenantId", });
     internal_static_glory_api_UpdateTenantCourseDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_glory_api_UpdateTenantCourseDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTenantCourseDataResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_UpdateModelPriceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_glory_api_UpdateModelPriceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateModelPriceRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "AssistantPrice", "SimplePrice", "ComplexPrice", });
     internal_static_glory_api_UpdateModelPriceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_glory_api_UpdateModelPriceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateModelPriceResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     internal_static_glory_api_GetArticleCreationTenantRequest_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_glory_api_GetArticleCreationTenantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleCreationTenantRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "TenantId", });
     internal_static_glory_api_GetArticleCreationTenant_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_glory_api_GetArticleCreationTenant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleCreationTenant_descriptor,
         new java.lang.String[] { "Name", "StudentCount", "CourseCount", "DayCourseCount", "SimpleCount", "ComplexCount", "AssistantCount", "Total", });
     internal_static_glory_api_GetArticleCreationTenantResponse_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_glory_api_GetArticleCreationTenantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleCreationTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", "Tenant", });
     internal_static_glory_api_ListArticleCreationTenantRequest_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_glory_api_ListArticleCreationTenantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListArticleCreationTenantRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ListArticleCreationTenantResponse_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_glory_api_ListArticleCreationTenantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListArticleCreationTenantResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
     internal_static_glory_api_ListArticleCreationTenantCostRequest_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_glory_api_ListArticleCreationTenantCostRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListArticleCreationTenantCostRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "Pagination", });
     internal_static_glory_api_ArticleCreationTenantCost_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_glory_api_ArticleCreationTenantCost_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ArticleCreationTenantCost_descriptor,
         new java.lang.String[] { "Name", "TotalCostPercent", "TotalCost", "TotalSpend", "ComplexCount", "ComplexUsageCount", "SimpleCount", "SimpleUsageCount", "AssistantCount", "AssistantUsageCount", "ComplexCostPercent", "ComplexCost", "ComplexSpend", "SimpleCostPercent", "SimpleCost", "SimpleSpend", "AssistantCostPercent", "AssistantCost", "AssistantSpend", });
     internal_static_glory_api_ListArticleCreationTenantCostResponse_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_glory_api_ListArticleCreationTenantCostResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListArticleCreationTenantCostResponse_descriptor,
         new java.lang.String[] { "BaseResp", "List", "Pagination", });
     internal_static_glory_api_GetArticleCreationTenantCostRequest_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_glory_api_GetArticleCreationTenantCostRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleCreationTenantCostRequest_descriptor,
         new java.lang.String[] { "BaseRequest", });
     internal_static_glory_api_GetArticleCreationTenantCostResponse_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_glory_api_GetArticleCreationTenantCostResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetArticleCreationTenantCostResponse_descriptor,
         new java.lang.String[] { "BaseResp", "TotalCost", "TotalSpend", "TotalCostPercent", "ComplexUsageCount", "ComplexSpend", "SimpleUsageCount", "SimpleSpend", "AssistantUsageCount", "AssistantSpend", });
     internal_static_glory_api_GetSubTopicAiResultRequest_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_glory_api_GetSubTopicAiResultRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSubTopicAiResultRequest_descriptor,
         new java.lang.String[] { "BaseRequest", "SubTopicCode", "ProductName", "SellingPoints", "UserNeeds", "UserPainPoints", "UserScene", "SceneDescription", "FullContent", });
     internal_static_glory_api_GetSubTopicAiResultResponse_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_glory_api_GetSubTopicAiResultResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetSubTopicAiResultResponse_descriptor,

@@ -16,6 +16,8 @@ export interface ArticleCreation {
   creation_type?: string;
   digital_hunman_video_url?: string;
   created_at?: string;
+  content?: string;
+  product_name?: string;
 }
 
 export interface ArticleCreationDraft {
@@ -45,6 +47,19 @@ export interface CreateArticleCreationResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface GetArticleDetailRequest {
+  base_request?: base.BaseRequest;
+  article_creation_id?: string;
+}
+
+export interface GetArticleDetailResponse {
+  base_resp?: base.BaseResponse;
+  article_creation?: ArticleCreation;
+  content_moderation?: ArticleContentModeration;
+  reject_reason?: string;
+  score?: string;
+}
+
 export interface ListMyArticleCreationRequest {
   base_request?: base.BaseRequest;
   status?: string;
@@ -70,7 +85,6 @@ export interface CreateArticleCreationDraftRequest {
   /** 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串 */
   content?: string;
   creation_type?: string;
-  have_sub_topic?: boolean;
 }
 
 export interface CreateArticleCreationDraftResponse {

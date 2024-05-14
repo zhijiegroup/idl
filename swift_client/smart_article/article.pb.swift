@@ -43,6 +43,10 @@ struct GloryApi_ArticleCreation {
 
   var createdAt: String = String()
 
+  var content: String = String()
+
+  var productName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -130,6 +134,78 @@ struct GloryApi_CreateArticleCreationResponse {
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
+struct GloryApi_GetArticleDetailRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var articleCreationID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetArticleDetailResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+
+  var articleCreation: GloryApi_ArticleCreation {
+    get {return _storage._articleCreation ?? GloryApi_ArticleCreation()}
+    set {_uniqueStorage()._articleCreation = newValue}
+  }
+  /// Returns true if `articleCreation` has been explicitly set.
+  var hasArticleCreation: Bool {return _storage._articleCreation != nil}
+  /// Clears the value of `articleCreation`. Subsequent reads from it will return its default value.
+  mutating func clearArticleCreation() {_uniqueStorage()._articleCreation = nil}
+
+  var contentModeration: GloryApi_ArticleContentModeration {
+    get {return _storage._contentModeration ?? GloryApi_ArticleContentModeration()}
+    set {_uniqueStorage()._contentModeration = newValue}
+  }
+  /// Returns true if `contentModeration` has been explicitly set.
+  var hasContentModeration: Bool {return _storage._contentModeration != nil}
+  /// Clears the value of `contentModeration`. Subsequent reads from it will return its default value.
+  mutating func clearContentModeration() {_uniqueStorage()._contentModeration = nil}
+
+  var rejectReason: String {
+    get {return _storage._rejectReason}
+    set {_uniqueStorage()._rejectReason = newValue}
+  }
+
+  var score: Int64 {
+    get {return _storage._score}
+    set {_uniqueStorage()._score = newValue}
+  }
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListMyArticleCreationRequest {
@@ -232,8 +308,6 @@ struct GloryApi_CreateArticleCreationDraftRequest {
   var content: String = String()
 
   var creationType: String = String()
-
-  var haveSubTopic: Bool = false
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2458,6 +2532,8 @@ extension GloryApi_ArticleCreation: @unchecked Sendable {}
 extension GloryApi_ArticleCreationDraft: @unchecked Sendable {}
 extension GloryApi_CreateArticleCreationRequest: @unchecked Sendable {}
 extension GloryApi_CreateArticleCreationResponse: @unchecked Sendable {}
+extension GloryApi_GetArticleDetailRequest: @unchecked Sendable {}
+extension GloryApi_GetArticleDetailResponse: @unchecked Sendable {}
 extension GloryApi_ListMyArticleCreationRequest: @unchecked Sendable {}
 extension GloryApi_ListMyArticleCreationResponse: @unchecked Sendable {}
 extension GloryApi_CreateArticleCreationDraftRequest: @unchecked Sendable {}
@@ -2559,6 +2635,8 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     7: .standard(proto: "creation_type"),
     8: .standard(proto: "digital_hunman_video_url"),
     9: .standard(proto: "created_at"),
+    10: .same(proto: "content"),
+    11: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2576,6 +2654,8 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 7: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.digitalHunmanVideoURL) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.content) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -2609,6 +2689,12 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
     }
+    if !self.content.isEmpty {
+      try visitor.visitSingularStringField(value: self.content, fieldNumber: 10)
+    }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2622,6 +2708,8 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.creationType != rhs.creationType {return false}
     if lhs.digitalHunmanVideoURL != rhs.digitalHunmanVideoURL {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.content != rhs.content {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2821,6 +2909,156 @@ extension GloryApi_CreateArticleCreationResponse: SwiftProtobuf.Message, SwiftPr
   }
 }
 
+extension GloryApi_GetArticleDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetArticleDetailRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "article_creation_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.articleCreationID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetArticleDetailRequest, rhs: GloryApi_GetArticleDetailRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.articleCreationID != rhs.articleCreationID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetArticleDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetArticleDetailResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "article_creation"),
+    3: .standard(proto: "content_moderation"),
+    4: .standard(proto: "reject_reason"),
+    5: .same(proto: "score"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _articleCreation: GloryApi_ArticleCreation? = nil
+    var _contentModeration: GloryApi_ArticleContentModeration? = nil
+    var _rejectReason: String = String()
+    var _score: Int64 = 0
+
+    #if swift(>=5.10)
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+    #else
+      static let defaultInstance = _StorageClass()
+    #endif
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _articleCreation = source._articleCreation
+      _contentModeration = source._contentModeration
+      _rejectReason = source._rejectReason
+      _score = source._score
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._articleCreation) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._contentModeration) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._rejectReason) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._score) }()
+        default: break
+        }
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._articleCreation {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+      try { if let v = _storage._contentModeration {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+      if !_storage._rejectReason.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._rejectReason, fieldNumber: 4)
+      }
+      if _storage._score != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._score, fieldNumber: 5)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetArticleDetailResponse, rhs: GloryApi_GetArticleDetailResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._articleCreation != rhs_storage._articleCreation {return false}
+        if _storage._contentModeration != rhs_storage._contentModeration {return false}
+        if _storage._rejectReason != rhs_storage._rejectReason {return false}
+        if _storage._score != rhs_storage._score {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_ListMyArticleCreationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListMyArticleCreationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -2956,7 +3194,6 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     4: .same(proto: "title"),
     5: .same(proto: "content"),
     6: .standard(proto: "creation_type"),
-    7: .standard(proto: "have_sub_topic"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2971,7 +3208,6 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 4: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self.haveSubTopic) }()
       default: break
       }
     }
@@ -3000,9 +3236,6 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if !self.creationType.isEmpty {
       try visitor.visitSingularStringField(value: self.creationType, fieldNumber: 6)
     }
-    if self.haveSubTopic != false {
-      try visitor.visitSingularBoolField(value: self.haveSubTopic, fieldNumber: 7)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3013,7 +3246,6 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
-    if lhs.haveSubTopic != rhs.haveSubTopic {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

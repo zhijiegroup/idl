@@ -102,4 +102,28 @@ public interface ArticleCreationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>string content = 10;</code>
+   * @return The content.
+   */
+  java.lang.String getContent();
+  /**
+   * <code>string content = 10;</code>
+   * @return The bytes for content.
+   */
+  com.google.protobuf.ByteString
+      getContentBytes();
+
+  /**
+   * <code>string product_name = 11;</code>
+   * @return The productName.
+   */
+  java.lang.String getProductName();
+  /**
+   * <code>string product_name = 11;</code>
+   * @return The bytes for productName.
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
 }

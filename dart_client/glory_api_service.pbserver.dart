@@ -485,6 +485,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$56.CloseCasterResponse> closeCaster($pb.ServerContext ctx, $56.CloseCasterRequest request);
   $async.Future<$57.CreateArticleCreationResponse> createArticleCreation($pb.ServerContext ctx, $57.CreateArticleCreationRequest request);
   $async.Future<$57.CreateModifiedArticleCreationResponse> createModifiedArticleCreation($pb.ServerContext ctx, $57.CreateModifiedArticleCreationRequest request);
+  $async.Future<$57.GetArticleDetailResponse> getArticleDetail($pb.ServerContext ctx, $57.GetArticleDetailRequest request);
   $async.Future<$57.ListMyArticleCreationResponse> listMyArticleCreation($pb.ServerContext ctx, $57.ListMyArticleCreationRequest request);
   $async.Future<$57.CreateArticleCreationDraftResponse> createArticleCreationDraft($pb.ServerContext ctx, $57.CreateArticleCreationDraftRequest request);
   $async.Future<$57.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation($pb.ServerContext ctx, $57.ListMyArticleCreationDraftRequest request);
@@ -926,6 +927,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CloseCaster': return $56.CloseCasterRequest();
       case 'CreateArticleCreation': return $57.CreateArticleCreationRequest();
       case 'CreateModifiedArticleCreation': return $57.CreateModifiedArticleCreationRequest();
+      case 'GetArticleDetail': return $57.GetArticleDetailRequest();
       case 'ListMyArticleCreation': return $57.ListMyArticleCreationRequest();
       case 'CreateArticleCreationDraft': return $57.CreateArticleCreationDraftRequest();
       case 'ListMyDraftArticleCreation': return $57.ListMyArticleCreationDraftRequest();
@@ -1370,6 +1372,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CloseCaster': return this.closeCaster(ctx, request as $56.CloseCasterRequest);
       case 'CreateArticleCreation': return this.createArticleCreation(ctx, request as $57.CreateArticleCreationRequest);
       case 'CreateModifiedArticleCreation': return this.createModifiedArticleCreation(ctx, request as $57.CreateModifiedArticleCreationRequest);
+      case 'GetArticleDetail': return this.getArticleDetail(ctx, request as $57.GetArticleDetailRequest);
       case 'ListMyArticleCreation': return this.listMyArticleCreation(ctx, request as $57.ListMyArticleCreationRequest);
       case 'CreateArticleCreationDraft': return this.createArticleCreationDraft(ctx, request as $57.CreateArticleCreationDraftRequest);
       case 'ListMyDraftArticleCreation': return this.listMyDraftArticleCreation(ctx, request as $57.ListMyArticleCreationDraftRequest);

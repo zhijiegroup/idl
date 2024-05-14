@@ -26,6 +26,8 @@ const ArticleCreation$json = {
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'digital_hunman_video_url', '3': 8, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
     {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'content', '3': 10, '4': 1, '5': 9, '10': 'content'},
+    {'1': 'product_name', '3': 11, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -37,7 +39,8 @@ final $typed_data.Uint8List articleCreationDescriptor = $convert.base64Decode(
     'lSZXN1bHQSFgoGc3RhdHVzGAUgASgJUgZzdGF0dXMSFAoFdG9waWMYBiABKAlSBXRvcGljEiMK'
     'DWNyZWF0aW9uX3R5cGUYByABKAlSDGNyZWF0aW9uVHlwZRI3ChhkaWdpdGFsX2h1bm1hbl92aW'
     'Rlb191cmwYCCABKAlSFWRpZ2l0YWxIdW5tYW5WaWRlb1VybBIdCgpjcmVhdGVkX2F0GAkgASgJ'
-    'UgljcmVhdGVkQXQ=');
+    'UgljcmVhdGVkQXQSGAoHY29udGVudBgKIAEoCVIHY29udGVudBIhCgxwcm9kdWN0X25hbWUYCy'
+    'ABKAlSC3Byb2R1Y3ROYW1l');
 
 @$core.Deprecated('Use articleCreationDraftDescriptor instead')
 const ArticleCreationDraft$json = {
@@ -102,6 +105,42 @@ final $typed_data.Uint8List createArticleCreationResponseDescriptor = $convert.b
     'Ch1DcmVhdGVBcnRpY2xlQ3JlYXRpb25SZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
     'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3A=');
 
+@$core.Deprecated('Use getArticleDetailRequestDescriptor instead')
+const GetArticleDetailRequest$json = {
+  '1': 'GetArticleDetailRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'article_creation_id', '3': 2, '4': 1, '5': 3, '10': 'articleCreationId'},
+  ],
+};
+
+/// Descriptor for `GetArticleDetailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleDetailRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRBcnRpY2xlRGV0YWlsUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIuChNhcnRpY2xlX2NyZWF0aW9uX2lkGAIgASgDUhFh'
+    'cnRpY2xlQ3JlYXRpb25JZA==');
+
+@$core.Deprecated('Use getArticleDetailResponseDescriptor instead')
+const GetArticleDetailResponse$json = {
+  '1': 'GetArticleDetailResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'article_creation', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ArticleCreation', '10': 'articleCreation'},
+    {'1': 'content_moderation', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ArticleContentModeration', '10': 'contentModeration'},
+    {'1': 'reject_reason', '3': 4, '4': 1, '5': 9, '10': 'rejectReason'},
+    {'1': 'score', '3': 5, '4': 1, '5': 3, '10': 'score'},
+  ],
+};
+
+/// Descriptor for `GetArticleDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getArticleDetailResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRBcnRpY2xlRGV0YWlsUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEkUKEGFydGljbGVfY3JlYXRpb24YAiABKAsyGi5nbG9yeV9h'
+    'cGkuQXJ0aWNsZUNyZWF0aW9uUg9hcnRpY2xlQ3JlYXRpb24SUgoSY29udGVudF9tb2RlcmF0aW'
+    '9uGAMgASgLMiMuZ2xvcnlfYXBpLkFydGljbGVDb250ZW50TW9kZXJhdGlvblIRY29udGVudE1v'
+    'ZGVyYXRpb24SIwoNcmVqZWN0X3JlYXNvbhgEIAEoCVIMcmVqZWN0UmVhc29uEhQKBXNjb3JlGA'
+    'UgASgDUgVzY29yZQ==');
+
 @$core.Deprecated('Use listMyArticleCreationRequestDescriptor instead')
 const ListMyArticleCreationRequest$json = {
   '1': 'ListMyArticleCreationRequest',
@@ -153,7 +192,6 @@ const CreateArticleCreationDraftRequest$json = {
     {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
-    {'1': 'have_sub_topic', '3': 7, '4': 1, '5': 8, '10': 'haveSubTopic'},
   ],
 };
 
@@ -163,8 +201,7 @@ final $typed_data.Uint8List createArticleCreationDraftRequestDescriptor = $conve
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX2NvZGUYAiABKAlS'
     'CmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ29kZR'
     'IUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1jcmVh'
-    'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSJAoOaGF2ZV9zdWJfdG9waWMYByABKAhSDG'
-    'hhdmVTdWJUb3BpYw==');
+    'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGU=');
 
 @$core.Deprecated('Use createArticleCreationDraftResponseDescriptor instead')
 const CreateArticleCreationDraftResponse$json = {

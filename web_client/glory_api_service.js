@@ -3254,6 +3254,12 @@ export class glory_api {
     );
   }
 
+  GetArticleDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_article_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ListMyArticleCreation(request) {
     const uri = `${this.uriPrefix}/api/article_creation/list_my_article_creation`;
     const body = JSONbigint.stringify(request);
