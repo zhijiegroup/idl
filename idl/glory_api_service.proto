@@ -1568,6 +1568,10 @@ service glory_api {
   rpc CreateArticleCreation(CreateArticleCreationRequest) returns (CreateArticleCreationResponse) {
     option (api.post) = '/api/article_creation/create_article';
   }
+  // 保存修改后的智能文案
+  rpc CreateModifiedArticleCreation(CreateModifiedArticleCreationRequest) returns (CreateModifiedArticleCreationResponse) {
+    option (api.post) = '/api/article_creation/create_modified_article';
+  }
   rpc ListMyArticleCreation(ListMyArticleCreationRequest) returns (ListMyArticleCreationResponse) {
     option (api.post) = '/api/article_creation/list_my_article_creation';
   }
