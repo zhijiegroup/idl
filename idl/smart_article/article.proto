@@ -40,6 +40,7 @@ message CreateArticleCreationRequest {
     string content = 6;
     string creation_type = 7;
     int64 last_article_creation_id = 8;
+    string product_name = 9;
 }
 
 message CreateArticleCreationResponse {
@@ -145,7 +146,8 @@ message GetEvaluationStandardRequest {
 
 message GetEvaluationStandardResponse {
     base.BaseResponse base_resp = 1;
-    string standard = 2;
+    string pass_standard = 2;
+    string evaluation_standard = 3;
 }
 
 message CreateEvaluationConfigRequest {
@@ -291,6 +293,7 @@ message GenArticleAIEvaluationRequest {
     string topic_code = 2;
     string title = 3;
     string content = 4;
+    string product_name = 5;
 }
 
 message GenArticleAIEvaluationResponse {
