@@ -23,14 +23,27 @@ public interface GetExampleArticleResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>string example = 2;</code>
-   * @return The example.
+   * <code>repeated string example = 2;</code>
+   * @return A list containing the example.
    */
-  java.lang.String getExample();
+  java.util.List<java.lang.String>
+      getExampleList();
   /**
-   * <code>string example = 2;</code>
-   * @return The bytes for example.
+   * <code>repeated string example = 2;</code>
+   * @return The count of example.
+   */
+  int getExampleCount();
+  /**
+   * <code>repeated string example = 2;</code>
+   * @param index The index of the element to return.
+   * @return The example at the given index.
+   */
+  java.lang.String getExample(int index);
+  /**
+   * <code>repeated string example = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the example at the given index.
    */
   com.google.protobuf.ByteString
-      getExampleBytes();
+      getExampleBytes(int index);
 }

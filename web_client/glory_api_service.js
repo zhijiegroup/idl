@@ -3346,6 +3346,20 @@ export class glory_api {
     );
   }
 
+  GenArticleAiEvaluation(request) {
+    const uri = `${this.uriPrefix}/api/article_creation/gen_ai_evaluation`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetArticleAiEvaluation(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/get_ai_evaluation${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   ArticleAiChat(request) {
     const uri = `${this.uriPrefix}/api/article_creation/ai_chat`;
     const body = JSONbigint.stringify(request);

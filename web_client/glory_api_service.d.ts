@@ -1875,6 +1875,16 @@ CreateLivePlanProduct create live plan product */
     request: article.CorrectSentenceRequest
   ): Promise<article.CorrectSentenceResponse>;
 
+  /** 生成AI评价 */
+  GenArticleAiEvaluation(
+    request: article.GenArticleAIEvaluationRequest
+  ): Promise<article.GenArticleAIEvaluationResponse>;
+
+  /** 获取AI评价 */
+  GetArticleAiEvaluation(
+    request: article.GetArticleAIEvaluationRequest
+  ): Promise<article.GetArticleAIEvaluationResponse>;
+
   /** 文案AI问答 */
   ArticleAiChat(
     request: article.ArticleAIChatRequest

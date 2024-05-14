@@ -134,7 +134,7 @@ export interface GetExampleArticleRequest {
 
 export interface GetExampleArticleResponse {
   base_resp?: base.BaseResponse;
-  example?: string;
+  example?: Array<string>;
 }
 
 export interface GetEvaluationStandardRequest {
@@ -185,7 +185,7 @@ export interface ListStudentArticleCreationRequest {
   base_request?: base.BaseRequest;
   name_or_title?: string;
   clas_id?: string;
-  /** 待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified */
+  /** 待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected */
   status?: string;
   /** pass no_pass */
   ai_pass?: string;
@@ -296,6 +296,32 @@ export interface Edits {
   source_word?: string;
   target_word?: string;
   position?: string;
+}
+
+/** 生成AI评价接口 */
+export interface GenArticleAIEvaluationRequest {
+  base_request?: base.BaseRequest;
+  topic_code?: string;
+  title?: string;
+  content?: string;
+}
+
+export interface GenArticleAIEvaluationResponse {
+  base_resp?: base.BaseResponse;
+  ai_result_id?: string;
+}
+
+/** 获取AI评价接口 */
+export interface GetArticleAIEvaluationRequest {
+  base_request?: base.BaseRequest;
+  ai_result_id?: string;
+  topic_code?: string;
+}
+
+export interface GetArticleAIEvaluationResponse {
+  base_resp?: base.BaseResponse;
+  content_moderation?: ArticleContentModeration;
+  creation_content?: ArticleCreationInfo;
 }
 
 /** 文案ai聊天 */

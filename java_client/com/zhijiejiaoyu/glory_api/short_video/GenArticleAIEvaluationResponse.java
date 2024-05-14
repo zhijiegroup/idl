@@ -4,26 +4,25 @@
 package com.zhijiejiaoyu.glory_api.short_video;
 
 /**
- * Protobuf type {@code glory_api.GetExampleArticleResponse}
+ * Protobuf type {@code glory_api.GenArticleAIEvaluationResponse}
  */
-public final class GetExampleArticleResponse extends
+public final class GenArticleAIEvaluationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:glory_api.GetExampleArticleResponse)
-    GetExampleArticleResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:glory_api.GenArticleAIEvaluationResponse)
+    GenArticleAIEvaluationResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetExampleArticleResponse.newBuilder() to construct.
-  private GetExampleArticleResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GenArticleAIEvaluationResponse.newBuilder() to construct.
+  private GenArticleAIEvaluationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetExampleArticleResponse() {
-    example = com.google.protobuf.LazyStringArrayList.EMPTY;
+  private GenArticleAIEvaluationResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetExampleArticleResponse();
+    return new GenArticleAIEvaluationResponse();
   }
 
   @java.lang.Override
@@ -31,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetExampleArticleResponse(
+  private GenArticleAIEvaluationResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -39,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -63,13 +61,9 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0 & 0x00000001) != 0)) {
-              example = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            example .add(s);
+          case 16: {
+
+            aiResultId = input.readInt64();
             break;
           }
           default: {
@@ -87,24 +81,21 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0 & 0x00000001) != 0)) {
-        example = example .getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GetExampleArticleResponse_descriptor;
+    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GenArticleAIEvaluationResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GetExampleArticleResponse_fieldAccessorTable
+    return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GenArticleAIEvaluationResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.class, com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.Builder.class);
+            com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.class, com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.Builder.class);
   }
 
   public static final int BASE_RESP_FIELD_NUMBER = 1;
@@ -133,39 +124,15 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int EXAMPLE_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList example ;
+  public static final int AI_RESULT_ID_FIELD_NUMBER = 2;
+  private long aiResultId ;
   /**
-   * <code>repeated string example = 2;</code>
-   * @return A list containing the example.
+   * <code>int64 ai_result_id = 2;</code>
+   * @return The aiResultId.
    */
-  public com.google.protobuf.ProtocolStringList
-      getExampleList() {
-    return example ;
-  }
-  /**
-   * <code>repeated string example = 2;</code>
-   * @return The count of example.
-   */
-  public int getExampleCount() {
-    return example .size();
-  }
-  /**
-   * <code>repeated string example = 2;</code>
-   * @param index The index of the element to return.
-   * @return The example at the given index.
-   */
-  public java.lang.String getExample(int index) {
-    return example .get(index);
-  }
-  /**
-   * <code>repeated string example = 2;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the example at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getExampleBytes(int index) {
-    return example .getByteString(index);
+  @java.lang.Override
+  public long getAiResultId() {
+    return aiResultId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -185,8 +152,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    for (int i = 0; i < example .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, example .getRaw(i));
+    if (aiResultId != 0L) {
+      output.writeInt64(2, aiResultId );
     }
     unknownFields.writeTo(output);
   }
@@ -201,13 +168,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < example .size(); i++) {
-        dataSize += computeStringSizeNoTag(example .getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getExampleList().size();
+    if (aiResultId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, aiResultId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,18 +182,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse)) {
+    if (!(obj instanceof com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse)) {
       return super.equals(obj);
     }
-    com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse other = (com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse) obj;
+    com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse other = (com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse) obj;
 
     if (hasBaseResp() != other.hasBaseResp()) return false;
     if (hasBaseResp()) {
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (!getExampleList()
-        .equals(other.getExampleList())) return false;
+    if (getAiResultId()
+        != other.getAiResultId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -246,78 +209,77 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    if (getExampleCount() > 0) {
-      hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
-      hash = (53 * hash) + getExampleList().hashCode();
-    }
+    hash = (37 * hash) + AI_RESULT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAiResultId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(byte[] data)
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseDelimitedFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parseFrom(
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -330,7 +292,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse prototype) {
+  public static Builder newBuilder(com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -346,26 +308,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code glory_api.GetExampleArticleResponse}
+   * Protobuf type {@code glory_api.GenArticleAIEvaluationResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:glory_api.GetExampleArticleResponse)
-      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:glory_api.GenArticleAIEvaluationResponse)
+      com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GetExampleArticleResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GenArticleAIEvaluationResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GetExampleArticleResponse_fieldAccessorTable
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GenArticleAIEvaluationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.class, com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.Builder.class);
+              com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.class, com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.Builder.class);
     }
 
-    // Construct using com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.newBuilder()
+    // Construct using com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -389,25 +351,25 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      example = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
+      aiResultId = 0L;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GetExampleArticleResponse_descriptor;
+      return com.zhijiejiaoyu.glory_api.short_video.Article.internal_static_glory_api_GenArticleAIEvaluationResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse getDefaultInstanceForType() {
-      return com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.getDefaultInstance();
+    public com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse getDefaultInstanceForType() {
+      return com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse build() {
-      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse result = buildPartial();
+    public com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse build() {
+      com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -415,19 +377,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse buildPartial() {
-      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse result = new com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse(this);
-      int from_bitField0 = bitField0 ;
+    public com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse buildPartial() {
+      com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse result = new com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse(this);
       if (baseRespBuilder == null) {
         result.baseResp = baseResp ;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      if (((bitField0 & 0x00000001) != 0)) {
-        example = example .getUnmodifiableView();
-        bitField0 = (bitField0 & ~0x00000001);
-      }
-      result.example = example ;
+      result.aiResultId = aiResultId ;
       onBuilt();
       return result;
     }
@@ -466,28 +423,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse) {
-        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse)other);
+      if (other instanceof com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse) {
+        return mergeFrom((com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse other) {
-      if (other == com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse other) {
+      if (other == com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (!other.example .isEmpty()) {
-        if (example .isEmpty()) {
-          example = other.example ;
-          bitField0 = (bitField0 & ~0x00000001);
-        } else {
-          ensureExampleIsMutable();
-          example .addAll(other.example );
-        }
-        onChanged();
+      if (other.getAiResultId() != 0L) {
+        setAiResultId(other.getAiResultId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -504,11 +454,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse parsedMessage = null;
+      com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -517,7 +467,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseResponse baseResp ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -638,112 +587,33 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private com.google.protobuf.LazyStringList example = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureExampleIsMutable() {
-      if (!((bitField0 & 0x00000001) != 0)) {
-        example = new com.google.protobuf.LazyStringArrayList(example );
-        bitField0_ |= 0x00000001;
-       }
-    }
+    private long aiResultId ;
     /**
-     * <code>repeated string example = 2;</code>
-     * @return A list containing the example.
+     * <code>int64 ai_result_id = 2;</code>
+     * @return The aiResultId.
      */
-    public com.google.protobuf.ProtocolStringList
-        getExampleList() {
-      return example .getUnmodifiableView();
+    @java.lang.Override
+    public long getAiResultId() {
+      return aiResultId ;
     }
     /**
-     * <code>repeated string example = 2;</code>
-     * @return The count of example.
-     */
-    public int getExampleCount() {
-      return example .size();
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @param index The index of the element to return.
-     * @return The example at the given index.
-     */
-    public java.lang.String getExample(int index) {
-      return example .get(index);
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the example at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getExampleBytes(int index) {
-      return example .getByteString(index);
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @param index The index to set the value at.
-     * @param value The example to set.
+     * <code>int64 ai_result_id = 2;</code>
+     * @param value The aiResultId to set.
      * @return This builder for chaining.
      */
-    public Builder setExample(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExampleIsMutable();
-      example .set(index, value);
+    public Builder setAiResultId(long value) {
+      
+      aiResultId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string example = 2;</code>
-     * @param value The example to add.
+     * <code>int64 ai_result_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder addExample(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExampleIsMutable();
-      example .add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @param values The example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllExample(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureExampleIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, example );
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearExample() {
-      example = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0 = (bitField0 & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string example = 2;</code>
-     * @param value The bytes of the example to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExampleBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureExampleIsMutable();
-      example .add(value);
+    public Builder clearAiResultId() {
+      
+      aiResultId = 0L;
       onChanged();
       return this;
     }
@@ -760,41 +630,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:glory_api.GetExampleArticleResponse)
+    // @@protoc_insertion_point(builder_scope:glory_api.GenArticleAIEvaluationResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:glory_api.GetExampleArticleResponse)
-  private static final com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:glory_api.GenArticleAIEvaluationResponse)
+  private static final com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse();
+    DEFAULT_INSTANCE = new com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse();
   }
 
-  public static com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse getDefaultInstance() {
+  public static com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetExampleArticleResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetExampleArticleResponse>() {
+  private static final com.google.protobuf.Parser<GenArticleAIEvaluationResponse>
+      PARSER = new com.google.protobuf.AbstractParser<GenArticleAIEvaluationResponse>() {
     @java.lang.Override
-    public GetExampleArticleResponse parsePartialFrom(
+    public GenArticleAIEvaluationResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetExampleArticleResponse(input, extensionRegistry);
+      return new GenArticleAIEvaluationResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetExampleArticleResponse> parser() {
+  public static com.google.protobuf.Parser<GenArticleAIEvaluationResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetExampleArticleResponse> getParserForType() {
+  public com.google.protobuf.Parser<GenArticleAIEvaluationResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.zhijiejiaoyu.glory_api.short_video.GetExampleArticleResponse getDefaultInstanceForType() {
+  public com.zhijiejiaoyu.glory_api.short_video.GenArticleAIEvaluationResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

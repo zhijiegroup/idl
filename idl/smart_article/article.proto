@@ -134,7 +134,7 @@ message GetExampleArticleRequest {
 
 message GetExampleArticleResponse {
     base.BaseResponse base_resp = 1;
-    string example = 2;
+    repeated string example = 2;
 }
 
 message GetEvaluationStandardRequest {
@@ -185,7 +185,7 @@ message ListStudentArticleCreationRequest {
     base.BaseRequest base_request = 1;
     string name_or_title = 2;
     int64 clas_id = 3;
-    string status = 4; //待评价 to_evaluated 老师评价 teacher_evaluated   系统评价 system_evaluated    打回 rejected 已修改 modified
+    string status = 4; //待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
     string ai_pass = 5; // pass no_pass
     string topic = 6; // 填写topic code
     int64 start = 7; // 时间戳精确到秒
@@ -283,6 +283,32 @@ message Edits {
     string source_word = 1;
     string target_word = 2;
     int64 position = 3;
+}
+
+// 生成AI评价接口
+message GenArticleAIEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    string topic_code = 2;
+    string title = 3;
+    string content = 4;
+}
+
+message GenArticleAIEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+    int64 ai_result_id = 2;
+}
+
+// 获取AI评价接口
+message GetArticleAIEvaluationRequest {
+    base.BaseRequest base_request = 1;
+    int64 ai_result_id = 2;
+    string topic_code = 3;
+}
+
+message GetArticleAIEvaluationResponse {
+    base.BaseResponse base_resp = 1;
+    ArticleContentModeration content_moderation = 2;
+    ArticleCreationInfo creation_content = 3; 
 }
 
 // 文案ai聊天
