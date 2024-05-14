@@ -30,6 +30,7 @@ message User {
   int64 avatar_attachment_id = 7;
   string avatar_url = 8;
   Seller seller = 9;
+  int64 tenant_id = 18;
 
   repeated ShopAccess shop_access = 10;  //判断用户的shop访问权限
   repeated TenantDept tenant_dept = 11;

@@ -350,6 +350,7 @@ message ListDigitalVideoRequest {
     int32 type = 3;
     string title = 4;
     int32 status = 5;
+    string phone = 6;
     base.PaginationRequest pagination = 100;
 }
 
