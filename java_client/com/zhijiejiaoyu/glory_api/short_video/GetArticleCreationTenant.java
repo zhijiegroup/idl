@@ -203,6 +203,10 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SPEND_FIELD_NUMBER = 2;
   private double totalSpend ;
   /**
+   * <pre>
+   * 总花费
+   * </pre>
+   *
    * <code>double total_spend = 2;</code>
    * @return The totalSpend.
    */
@@ -214,6 +218,10 @@ private static final long serialVersionUID = 0L;
   public static final int COST_MIN_FIELD_NUMBER = 3;
   private double costMin ;
   /**
+   * <pre>
+   * 总成本最低值
+   * </pre>
+   *
    * <code>double cost_min = 3;</code>
    * @return The costMin.
    */
@@ -225,6 +233,10 @@ private static final long serialVersionUID = 0L;
   public static final int COST_MAX_FIELD_NUMBER = 4;
   private double costMax ;
   /**
+   * <pre>
+   * 总成本最高值
+   * </pre>
+   *
    * <code>double cost_max = 4;</code>
    * @return The costMax.
    */
@@ -266,6 +278,10 @@ private static final long serialVersionUID = 0L;
   public static final int COMPLEX_USAGE_COUNT_FIELD_NUMBER = 7;
   private long complexUsageCount ;
   /**
+   * <pre>
+   * 复杂评价使用次数
+   * </pre>
+   *
    * <code>int64 complex_usage_count = 7;</code>
    * @return The complexUsageCount.
    */
@@ -277,6 +293,10 @@ private static final long serialVersionUID = 0L;
   public static final int COMPLEX_SPEND_FIELD_NUMBER = 8;
   private double complexSpend ;
   /**
+   * <pre>
+   * 复杂评价总花费
+   * </pre>
+   *
    * <code>double complex_spend = 8;</code>
    * @return The complexSpend.
    */
@@ -288,6 +308,10 @@ private static final long serialVersionUID = 0L;
   public static final int SIMPLE_USAGE_COUNT_FIELD_NUMBER = 9;
   private long simpleUsageCount ;
   /**
+   * <pre>
+   * 简评使用次数
+   * </pre>
+   *
    * <code>int64 simple_usage_count = 9;</code>
    * @return The simpleUsageCount.
    */
@@ -299,6 +323,10 @@ private static final long serialVersionUID = 0L;
   public static final int SIMPLE_SPEND_FIELD_NUMBER = 10;
   private double simpleSpend ;
   /**
+   * <pre>
+   * 简评总花费
+   * </pre>
+   *
    * <code>double simple_spend = 10;</code>
    * @return The simpleSpend.
    */
@@ -1052,6 +1080,10 @@ private static final long serialVersionUID = 0L;
 
     private double totalSpend ;
     /**
+     * <pre>
+     * 总花费
+     * </pre>
+     *
      * <code>double total_spend = 2;</code>
      * @return The totalSpend.
      */
@@ -1060,6 +1092,10 @@ private static final long serialVersionUID = 0L;
       return totalSpend ;
     }
     /**
+     * <pre>
+     * 总花费
+     * </pre>
+     *
      * <code>double total_spend = 2;</code>
      * @param value The totalSpend to set.
      * @return This builder for chaining.
@@ -1071,6 +1107,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 总花费
+     * </pre>
+     *
      * <code>double total_spend = 2;</code>
      * @return This builder for chaining.
      */
@@ -1083,6 +1123,10 @@ private static final long serialVersionUID = 0L;
 
     private double costMin ;
     /**
+     * <pre>
+     * 总成本最低值
+     * </pre>
+     *
      * <code>double cost_min = 3;</code>
      * @return The costMin.
      */
@@ -1091,6 +1135,10 @@ private static final long serialVersionUID = 0L;
       return costMin ;
     }
     /**
+     * <pre>
+     * 总成本最低值
+     * </pre>
+     *
      * <code>double cost_min = 3;</code>
      * @param value The costMin to set.
      * @return This builder for chaining.
@@ -1102,6 +1150,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 总成本最低值
+     * </pre>
+     *
      * <code>double cost_min = 3;</code>
      * @return This builder for chaining.
      */
@@ -1114,6 +1166,10 @@ private static final long serialVersionUID = 0L;
 
     private double costMax ;
     /**
+     * <pre>
+     * 总成本最高值
+     * </pre>
+     *
      * <code>double cost_max = 4;</code>
      * @return The costMax.
      */
@@ -1122,6 +1178,10 @@ private static final long serialVersionUID = 0L;
       return costMax ;
     }
     /**
+     * <pre>
+     * 总成本最高值
+     * </pre>
+     *
      * <code>double cost_max = 4;</code>
      * @param value The costMax to set.
      * @return This builder for chaining.
@@ -1133,6 +1193,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 总成本最高值
+     * </pre>
+     *
      * <code>double cost_max = 4;</code>
      * @return This builder for chaining.
      */
@@ -1231,6 +1295,10 @@ private static final long serialVersionUID = 0L;
 
     private long complexUsageCount ;
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 7;</code>
      * @return The complexUsageCount.
      */
@@ -1239,6 +1307,10 @@ private static final long serialVersionUID = 0L;
       return complexUsageCount ;
     }
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 7;</code>
      * @param value The complexUsageCount to set.
      * @return This builder for chaining.
@@ -1250,6 +1322,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 7;</code>
      * @return This builder for chaining.
      */
@@ -1262,6 +1338,10 @@ private static final long serialVersionUID = 0L;
 
     private double complexSpend ;
     /**
+     * <pre>
+     * 复杂评价总花费
+     * </pre>
+     *
      * <code>double complex_spend = 8;</code>
      * @return The complexSpend.
      */
@@ -1270,6 +1350,10 @@ private static final long serialVersionUID = 0L;
       return complexSpend ;
     }
     /**
+     * <pre>
+     * 复杂评价总花费
+     * </pre>
+     *
      * <code>double complex_spend = 8;</code>
      * @param value The complexSpend to set.
      * @return This builder for chaining.
@@ -1281,6 +1365,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 复杂评价总花费
+     * </pre>
+     *
      * <code>double complex_spend = 8;</code>
      * @return This builder for chaining.
      */
@@ -1293,6 +1381,10 @@ private static final long serialVersionUID = 0L;
 
     private long simpleUsageCount ;
     /**
+     * <pre>
+     * 简评使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 9;</code>
      * @return The simpleUsageCount.
      */
@@ -1301,6 +1393,10 @@ private static final long serialVersionUID = 0L;
       return simpleUsageCount ;
     }
     /**
+     * <pre>
+     * 简评使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 9;</code>
      * @param value The simpleUsageCount to set.
      * @return This builder for chaining.
@@ -1312,6 +1408,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 简评使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 9;</code>
      * @return This builder for chaining.
      */
@@ -1324,6 +1424,10 @@ private static final long serialVersionUID = 0L;
 
     private double simpleSpend ;
     /**
+     * <pre>
+     * 简评总花费
+     * </pre>
+     *
      * <code>double simple_spend = 10;</code>
      * @return The simpleSpend.
      */
@@ -1332,6 +1436,10 @@ private static final long serialVersionUID = 0L;
       return simpleSpend ;
     }
     /**
+     * <pre>
+     * 简评总花费
+     * </pre>
+     *
      * <code>double simple_spend = 10;</code>
      * @param value The simpleSpend to set.
      * @return This builder for chaining.
@@ -1343,6 +1451,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 简评总花费
+     * </pre>
+     *
      * <code>double simple_spend = 10;</code>
      * @return This builder for chaining.
      */

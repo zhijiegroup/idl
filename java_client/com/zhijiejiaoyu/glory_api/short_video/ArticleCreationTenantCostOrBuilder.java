@@ -71,18 +71,30 @@ public interface ArticleCreationTenantCostOrBuilder extends
   double getSpendPercentMax();
 
   /**
+   * <pre>
+   * 复杂评价使用次数
+   * </pre>
+   *
    * <code>int64 complex_usage_count = 9;</code>
    * @return The complexUsageCount.
    */
   long getComplexUsageCount();
 
   /**
+   * <pre>
+   * 简单评价使用次数
+   * </pre>
+   *
    * <code>int64 simple_usage_count = 10;</code>
    * @return The simpleUsageCount.
    */
   long getSimpleUsageCount();
 
   /**
+   * <pre>
+   * AI助手总次数
+   * </pre>
+   *
    * <code>int64 assistant_count = 11;</code>
    * @return The assistantCount.
    */

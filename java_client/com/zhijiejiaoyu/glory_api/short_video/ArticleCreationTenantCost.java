@@ -274,6 +274,10 @@ private static final long serialVersionUID = 0L;
   public static final int COMPLEX_USAGE_COUNT_FIELD_NUMBER = 9;
   private long complexUsageCount ;
   /**
+   * <pre>
+   * 复杂评价使用次数
+   * </pre>
+   *
    * <code>int64 complex_usage_count = 9;</code>
    * @return The complexUsageCount.
    */
@@ -285,6 +289,10 @@ private static final long serialVersionUID = 0L;
   public static final int SIMPLE_USAGE_COUNT_FIELD_NUMBER = 10;
   private long simpleUsageCount ;
   /**
+   * <pre>
+   * 简单评价使用次数
+   * </pre>
+   *
    * <code>int64 simple_usage_count = 10;</code>
    * @return The simpleUsageCount.
    */
@@ -296,6 +304,10 @@ private static final long serialVersionUID = 0L;
   public static final int ASSISTANT_COUNT_FIELD_NUMBER = 11;
   private long assistantCount ;
   /**
+   * <pre>
+   * AI助手总次数
+   * </pre>
+   *
    * <code>int64 assistant_count = 11;</code>
    * @return The assistantCount.
    */
@@ -1254,6 +1266,10 @@ private static final long serialVersionUID = 0L;
 
     private long complexUsageCount ;
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 9;</code>
      * @return The complexUsageCount.
      */
@@ -1262,6 +1278,10 @@ private static final long serialVersionUID = 0L;
       return complexUsageCount ;
     }
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 9;</code>
      * @param value The complexUsageCount to set.
      * @return This builder for chaining.
@@ -1273,6 +1293,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 复杂评价使用次数
+     * </pre>
+     *
      * <code>int64 complex_usage_count = 9;</code>
      * @return This builder for chaining.
      */
@@ -1285,6 +1309,10 @@ private static final long serialVersionUID = 0L;
 
     private long simpleUsageCount ;
     /**
+     * <pre>
+     * 简单评价使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 10;</code>
      * @return The simpleUsageCount.
      */
@@ -1293,6 +1321,10 @@ private static final long serialVersionUID = 0L;
       return simpleUsageCount ;
     }
     /**
+     * <pre>
+     * 简单评价使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 10;</code>
      * @param value The simpleUsageCount to set.
      * @return This builder for chaining.
@@ -1304,6 +1336,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 简单评价使用次数
+     * </pre>
+     *
      * <code>int64 simple_usage_count = 10;</code>
      * @return This builder for chaining.
      */
@@ -1316,6 +1352,10 @@ private static final long serialVersionUID = 0L;
 
     private long assistantCount ;
     /**
+     * <pre>
+     * AI助手总次数
+     * </pre>
+     *
      * <code>int64 assistant_count = 11;</code>
      * @return The assistantCount.
      */
@@ -1324,6 +1364,10 @@ private static final long serialVersionUID = 0L;
       return assistantCount ;
     }
     /**
+     * <pre>
+     * AI助手总次数
+     * </pre>
+     *
      * <code>int64 assistant_count = 11;</code>
      * @param value The assistantCount to set.
      * @return This builder for chaining.
@@ -1335,6 +1379,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * AI助手总次数
+     * </pre>
+     *
      * <code>int64 assistant_count = 11;</code>
      * @return This builder for chaining.
      */

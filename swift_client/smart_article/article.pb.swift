@@ -2099,10 +2099,13 @@ struct GloryApi_GetArticleCreationTenant {
 
   var name: String = String()
 
+  /// 总花费
   var totalSpend: Double = 0
 
+  /// 总成本最低值
   var costMin: Double = 0
 
+  /// 总成本最高值
   var costMax: Double = 0
 
   /// 已花费百分比最低值
@@ -2111,12 +2114,16 @@ struct GloryApi_GetArticleCreationTenant {
   /// 已花费百分比最高值
   var spendPercentMax: Double = 0
 
+  /// 复杂评价使用次数
   var complexUsageCount: Int64 = 0
 
+  /// 复杂评价总花费
   var complexSpend: Double = 0
 
+  /// 简评使用次数
   var simpleUsageCount: Int64 = 0
 
+  /// 简评总花费
   var simpleSpend: Double = 0
 
   /// AI评价总次数
@@ -2291,10 +2298,13 @@ struct GloryApi_ArticleCreationTenantCost {
   /// 已消费最高百分比
   var spendPercentMax: Double = 0
 
+  /// 复杂评价使用次数
   var complexUsageCount: Int64 = 0
 
+  /// 简单评价使用次数
   var simpleUsageCount: Int64 = 0
 
+  /// AI助手总次数
   var assistantCount: Int64 = 0
 
   /// ai助手使用总次数

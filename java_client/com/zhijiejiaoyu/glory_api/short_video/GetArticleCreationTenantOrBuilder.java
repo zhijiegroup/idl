@@ -20,18 +20,30 @@ public interface GetArticleCreationTenantOrBuilder extends
       getNameBytes();
 
   /**
+   * <pre>
+   * 总花费
+   * </pre>
+   *
    * <code>double total_spend = 2;</code>
    * @return The totalSpend.
    */
   double getTotalSpend();
 
   /**
+   * <pre>
+   * 总成本最低值
+   * </pre>
+   *
    * <code>double cost_min = 3;</code>
    * @return The costMin.
    */
   double getCostMin();
 
   /**
+   * <pre>
+   * 总成本最高值
+   * </pre>
+   *
    * <code>double cost_max = 4;</code>
    * @return The costMax.
    */
@@ -58,24 +70,40 @@ public interface GetArticleCreationTenantOrBuilder extends
   double getSpendPercentMax();
 
   /**
+   * <pre>
+   * 复杂评价使用次数
+   * </pre>
+   *
    * <code>int64 complex_usage_count = 7;</code>
    * @return The complexUsageCount.
    */
   long getComplexUsageCount();
 
   /**
+   * <pre>
+   * 复杂评价总花费
+   * </pre>
+   *
    * <code>double complex_spend = 8;</code>
    * @return The complexSpend.
    */
   double getComplexSpend();
 
   /**
+   * <pre>
+   * 简评使用次数
+   * </pre>
+   *
    * <code>int64 simple_usage_count = 9;</code>
    * @return The simpleUsageCount.
    */
   long getSimpleUsageCount();
 
   /**
+   * <pre>
+   * 简评总花费
+   * </pre>
+   *
    * <code>double simple_spend = 10;</code>
    * @return The simpleSpend.
    */

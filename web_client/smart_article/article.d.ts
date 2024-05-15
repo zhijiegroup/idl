@@ -538,16 +538,23 @@ export interface GetArticleCreationTenantRequest {
 
 export interface GetArticleCreationTenant {
   name?: string;
+  /** 总花费 */
   total_spend?: number;
+  /** 总成本最低值 */
   cost_min?: number;
+  /** 总成本最高值 */
   cost_max?: number;
   /** 已花费百分比最低值 */
   spend_percent_min?: number;
   /** 已花费百分比最高值 */
   spend_percent_max?: number;
+  /** 复杂评价使用次数 */
   complex_usage_count?: string;
+  /** 复杂评价总花费 */
   complex_spend?: number;
+  /** 简评使用次数 */
   simple_usage_count?: string;
+  /** 简评总花费 */
   simple_spend?: number;
   /** AI评价总次数 */
   evaluation_count?: string;
@@ -600,19 +607,21 @@ double total_cost_percent_max = 3; */
   spend_percent_max?: number;
   /** 已消费最高百分比 */
   complex_usage_count?: string;
+  /** 复杂评价使用次数 */
   simple_usage_count?: string;
+  /** 简单评价使用次数 */
   assistant_count?: string;
-  /** ai助手使用总次数 */
+  /** AI助手总次数 */
   assistant_usage_count?: string;
-  /** 复杂评价总花费 */
+  /** ai助手使用总次数 */
   complex_spend?: number;
-  /** 简单评价总花费 */
+  /** 复杂评价总花费 */
   simple_spend?: number;
-  /** ai助手总花费 */
+  /** 简单评价总花费 */
   assistant_spend?: number;
-  /** ai聊天总成本 */
+  /** ai助手总花费 */
   assistant_cost?: number;
-  /** ai聊天使用百分比 */
+  /** ai聊天总成本 */
   assistant_usage_percent?: number;
 }
 
