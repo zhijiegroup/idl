@@ -113,6 +113,7 @@ message GetStudentTaskRequest {
 message GetStudentTaskResponse {
   base.BaseResponse base_resp = 1;
   StudentTask student_task = 2;
+  int64 room_id = 3;
 }
 
 message TeacherListStudentTaskRequest {
