@@ -183,6 +183,7 @@ message CreateEvaluationConfigRequest {
     int64 time_duration = 2;
     string system_content = 3;
     repeated string personal_content = 4;
+    int64 evaluation_score = 5;
 }
 
 message CreateEvaluationConfigResponse {
@@ -525,10 +526,11 @@ message GetArticleCreationTenant {
     int64 student_count = 2;
     int64 course_count = 3;
     int64 day_course_count = 4;
-    int64 simple_count = 5;
-    int64 complex_count = 6;
+    int64 evaluation_count = 5;
+    int64 evaluation_day_count = 6;
     int64 assistant_count = 7;
-    int64 total = 8;
+    int64 assistant_day_count = 8;
+    int64 total = 9;
 }
 
 message GetArticleCreationTenantResponse {
@@ -556,24 +558,23 @@ message ListArticleCreationTenantCostRequest {
 
 message ArticleCreationTenantCost {
     string name = 1;
-    double total_cost_percent = 2;
-    double total_cost = 3; // 总成本
-    double total_spend = 4; // 总花费
-    int64 complex_count = 5;
-    int64 complex_usage_count = 6; 
-    int64 simple_count = 7;
-    int64 simple_usage_count = 8; 
-    int64 assistant_count = 9;
-    int64 assistant_usage_count = 10; 
-    double complex_cost_percent = 11; // 复杂评价花费百分比
-    double complex_cost = 12; // 复杂评价总成本
+    // double total_cost_percent_min = 2;
+    // double total_cost_percent_max = 3;
+    double total_cost_min = 4; // 总成本1
+    double total_cost_max = 5; // 总成本2
+    double total_spend = 6; // 实际总花费
+    double spend_percent_min = 7; // 已消费最低百分比
+    double spend_percent_max = 8; // 已消费最高百分比
+    int64 complex_usage_count = 9; 
+    int64 simple_usage_count = 10; 
+    int64 assistant_count = 11;
+    int64 assistant_usage_count = 12;  // ai助手使用总次数
     double complex_spend = 13; // 复杂评价总花费
-    double simple_cost_percent = 14; // 简单评价花费百分比
-    double simple_cost = 15; // 简单评价总成本
-    double simple_spend = 16; // 简单评价总花费
-    double assistant_cost_percent = 17; // ai助手花费百分比
-    double assistant_cost = 18; // ai助手总成本
-    double assistant_spend = 19; // ai助手总花费
+    double simple_spend = 14; // 简单评价总花费
+    double assistant_spend = 15; // ai助手总花费
+    double assistant_cost = 16; // ai聊天总成本
+    double assistant_usage_percent = 17; // ai聊天使用百分比
+
 }
 
 message ListArticleCreationTenantCostResponse {
@@ -588,15 +589,17 @@ message GetArticleCreationTenantCostRequest {
 
 message GetArticleCreationTenantCostResponse {
     base.BaseResponse base_resp = 100;
-    double total_cost = 1; // 总成本
-    double total_spend = 2; // 总花费
-    double total_cost_percent = 3;
-    int64 complex_usage_count = 4; 
-    double complex_spend = 5; // 复杂评价总花费
-    int64 simple_usage_count = 6; 
-    double simple_spend = 7; // 简单评价总花费
-    int64 assistant_usage_count = 8; 
-    double assistant_spend = 9; // ai助手总花费
+    double total_cost_min = 1; // 总成本1
+    double total_cost_max = 2; // 总成本2
+    double total_spend = 3; // 总花费
+    double total_cost_percent_min = 4;
+    double total_cost_percent_max = 5;
+    int64 complex_usage_count = 6; 
+    double complex_spend = 7; // 复杂评价总花费
+    int64 simple_usage_count = 8; 
+    double simple_spend = 9; // 简单评价总花费
+    int64 assistant_usage_count = 10; 
+    double assistant_spend = 11; // ai助手总花费
 }
 
 message GetSubTopicAiResultRequest {
