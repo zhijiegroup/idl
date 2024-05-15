@@ -2097,55 +2097,111 @@ struct GloryApi_GetArticleCreationTenant {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var name: String = String()
+  var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
 
   /// 总花费
-  var totalSpend: Double = 0
+  var totalSpend: Double {
+    get {return _storage._totalSpend}
+    set {_uniqueStorage()._totalSpend = newValue}
+  }
 
   /// 总成本最低值
-  var costMin: Double = 0
+  var costMin: Double {
+    get {return _storage._costMin}
+    set {_uniqueStorage()._costMin = newValue}
+  }
 
   /// 总成本最高值
-  var costMax: Double = 0
+  var costMax: Double {
+    get {return _storage._costMax}
+    set {_uniqueStorage()._costMax = newValue}
+  }
 
   /// 已花费百分比最低值
-  var spendPercentMin: Double = 0
+  var spendPercentMin: Double {
+    get {return _storage._spendPercentMin}
+    set {_uniqueStorage()._spendPercentMin = newValue}
+  }
 
   /// 已花费百分比最高值
-  var spendPercentMax: Double = 0
+  var spendPercentMax: Double {
+    get {return _storage._spendPercentMax}
+    set {_uniqueStorage()._spendPercentMax = newValue}
+  }
 
   /// 复杂评价使用次数
-  var complexUsageCount: Int64 = 0
+  var complexUsageCount: Int64 {
+    get {return _storage._complexUsageCount}
+    set {_uniqueStorage()._complexUsageCount = newValue}
+  }
 
   /// 复杂评价总花费
-  var complexSpend: Double = 0
+  var complexSpend: Double {
+    get {return _storage._complexSpend}
+    set {_uniqueStorage()._complexSpend = newValue}
+  }
 
   /// 简评使用次数
-  var simpleUsageCount: Int64 = 0
+  var simpleUsageCount: Int64 {
+    get {return _storage._simpleUsageCount}
+    set {_uniqueStorage()._simpleUsageCount = newValue}
+  }
 
   /// 简评总花费
-  var simpleSpend: Double = 0
+  var simpleSpend: Double {
+    get {return _storage._simpleSpend}
+    set {_uniqueStorage()._simpleSpend = newValue}
+  }
 
   /// AI评价总次数
-  var evaluationCount: Int64 = 0
+  var evaluationCount: Int64 {
+    get {return _storage._evaluationCount}
+    set {_uniqueStorage()._evaluationCount = newValue}
+  }
 
   /// AI助手使用总次数
-  var assistantCount: Int64 = 0
+  var assistantCount: Int64 {
+    get {return _storage._assistantCount}
+    set {_uniqueStorage()._assistantCount = newValue}
+  }
 
   /// AI聊天总使用次数
-  var assistantUsageCount: Int64 = 0
+  var assistantUsageCount: Int64 {
+    get {return _storage._assistantUsageCount}
+    set {_uniqueStorage()._assistantUsageCount = newValue}
+  }
 
   /// AI聊天总花费
-  var assistantSpend: Double = 0
+  var assistantSpend: Double {
+    get {return _storage._assistantSpend}
+    set {_uniqueStorage()._assistantSpend = newValue}
+  }
 
   /// AI聊天次数使用百分比
-  var assistantCountPercent: Double = 0
+  var assistantCountPercent: Double {
+    get {return _storage._assistantCountPercent}
+    set {_uniqueStorage()._assistantCountPercent = newValue}
+  }
 
-  var tenantID: Int64 = 0
+  var tenantID: Int64 {
+    get {return _storage._tenantID}
+    set {_uniqueStorage()._tenantID = newValue}
+  }
+
+  /// 学生数量
+  var studentCount: Int64 {
+    get {return _storage._studentCount}
+    set {_uniqueStorage()._studentCount = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_GetArticleCreationTenantResponse {
@@ -2154,28 +2210,29 @@ struct GloryApi_GetArticleCreationTenantResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _storage._baseResp ?? Base_BaseResponse()}
-    set {_uniqueStorage()._baseResp = newValue}
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return _storage._baseResp != nil}
+  var hasBaseResp: Bool {return self._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
+  mutating func clearBaseResp() {self._baseResp = nil}
 
   var tenant: GloryApi_GetArticleCreationTenant {
-    get {return _storage._tenant ?? GloryApi_GetArticleCreationTenant()}
-    set {_uniqueStorage()._tenant = newValue}
+    get {return _tenant ?? GloryApi_GetArticleCreationTenant()}
+    set {_tenant = newValue}
   }
   /// Returns true if `tenant` has been explicitly set.
-  var hasTenant: Bool {return _storage._tenant != nil}
+  var hasTenant: Bool {return self._tenant != nil}
   /// Clears the value of `tenant`. Subsequent reads from it will return its default value.
-  mutating func clearTenant() {_uniqueStorage()._tenant = nil}
+  mutating func clearTenant() {self._tenant = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _storage = _StorageClass.defaultInstance
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _tenant: GloryApi_GetArticleCreationTenant? = nil
 }
 
 /// 学校配置列表
@@ -6580,119 +6637,27 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     14: .standard(proto: "assistant_spend"),
     15: .standard(proto: "assistant_count_percent"),
     16: .standard(proto: "tenant_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 2: try { try decoder.decodeSingularDoubleField(value: &self.totalSpend) }()
-      case 3: try { try decoder.decodeSingularDoubleField(value: &self.costMin) }()
-      case 4: try { try decoder.decodeSingularDoubleField(value: &self.costMax) }()
-      case 5: try { try decoder.decodeSingularDoubleField(value: &self.spendPercentMin) }()
-      case 6: try { try decoder.decodeSingularDoubleField(value: &self.spendPercentMax) }()
-      case 7: try { try decoder.decodeSingularInt64Field(value: &self.complexUsageCount) }()
-      case 8: try { try decoder.decodeSingularDoubleField(value: &self.complexSpend) }()
-      case 9: try { try decoder.decodeSingularInt64Field(value: &self.simpleUsageCount) }()
-      case 10: try { try decoder.decodeSingularDoubleField(value: &self.simpleSpend) }()
-      case 11: try { try decoder.decodeSingularInt64Field(value: &self.evaluationCount) }()
-      case 12: try { try decoder.decodeSingularInt64Field(value: &self.assistantCount) }()
-      case 13: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
-      case 14: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
-      case 15: try { try decoder.decodeSingularDoubleField(value: &self.assistantCountPercent) }()
-      case 16: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
-    }
-    if self.totalSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 2)
-    }
-    if self.costMin != 0 {
-      try visitor.visitSingularDoubleField(value: self.costMin, fieldNumber: 3)
-    }
-    if self.costMax != 0 {
-      try visitor.visitSingularDoubleField(value: self.costMax, fieldNumber: 4)
-    }
-    if self.spendPercentMin != 0 {
-      try visitor.visitSingularDoubleField(value: self.spendPercentMin, fieldNumber: 5)
-    }
-    if self.spendPercentMax != 0 {
-      try visitor.visitSingularDoubleField(value: self.spendPercentMax, fieldNumber: 6)
-    }
-    if self.complexUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 7)
-    }
-    if self.complexSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 8)
-    }
-    if self.simpleUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 9)
-    }
-    if self.simpleSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 10)
-    }
-    if self.evaluationCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.evaluationCount, fieldNumber: 11)
-    }
-    if self.assistantCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.assistantCount, fieldNumber: 12)
-    }
-    if self.assistantUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 13)
-    }
-    if self.assistantSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 14)
-    }
-    if self.assistantCountPercent != 0 {
-      try visitor.visitSingularDoubleField(value: self.assistantCountPercent, fieldNumber: 15)
-    }
-    if self.tenantID != 0 {
-      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 16)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_GetArticleCreationTenant, rhs: GloryApi_GetArticleCreationTenant) -> Bool {
-    if lhs.name != rhs.name {return false}
-    if lhs.totalSpend != rhs.totalSpend {return false}
-    if lhs.costMin != rhs.costMin {return false}
-    if lhs.costMax != rhs.costMax {return false}
-    if lhs.spendPercentMin != rhs.spendPercentMin {return false}
-    if lhs.spendPercentMax != rhs.spendPercentMax {return false}
-    if lhs.complexUsageCount != rhs.complexUsageCount {return false}
-    if lhs.complexSpend != rhs.complexSpend {return false}
-    if lhs.simpleUsageCount != rhs.simpleUsageCount {return false}
-    if lhs.simpleSpend != rhs.simpleSpend {return false}
-    if lhs.evaluationCount != rhs.evaluationCount {return false}
-    if lhs.assistantCount != rhs.assistantCount {return false}
-    if lhs.assistantUsageCount != rhs.assistantUsageCount {return false}
-    if lhs.assistantSpend != rhs.assistantSpend {return false}
-    if lhs.assistantCountPercent != rhs.assistantCountPercent {return false}
-    if lhs.tenantID != rhs.tenantID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_GetArticleCreationTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetArticleCreationTenantResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_resp"),
-    2: .same(proto: "tenant"),
+    17: .standard(proto: "student_count"),
   ]
 
   fileprivate class _StorageClass {
-    var _baseResp: Base_BaseResponse? = nil
-    var _tenant: GloryApi_GetArticleCreationTenant? = nil
+    var _name: String = String()
+    var _totalSpend: Double = 0
+    var _costMin: Double = 0
+    var _costMax: Double = 0
+    var _spendPercentMin: Double = 0
+    var _spendPercentMax: Double = 0
+    var _complexUsageCount: Int64 = 0
+    var _complexSpend: Double = 0
+    var _simpleUsageCount: Int64 = 0
+    var _simpleSpend: Double = 0
+    var _evaluationCount: Int64 = 0
+    var _assistantCount: Int64 = 0
+    var _assistantUsageCount: Int64 = 0
+    var _assistantSpend: Double = 0
+    var _assistantCountPercent: Double = 0
+    var _tenantID: Int64 = 0
+    var _studentCount: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -6707,8 +6672,23 @@ extension GloryApi_GetArticleCreationTenantResponse: SwiftProtobuf.Message, Swif
     private init() {}
 
     init(copying source: _StorageClass) {
-      _baseResp = source._baseResp
-      _tenant = source._tenant
+      _name = source._name
+      _totalSpend = source._totalSpend
+      _costMin = source._costMin
+      _costMax = source._costMax
+      _spendPercentMin = source._spendPercentMin
+      _spendPercentMax = source._spendPercentMax
+      _complexUsageCount = source._complexUsageCount
+      _complexSpend = source._complexSpend
+      _simpleUsageCount = source._simpleUsageCount
+      _simpleSpend = source._simpleSpend
+      _evaluationCount = source._evaluationCount
+      _assistantCount = source._assistantCount
+      _assistantUsageCount = source._assistantUsageCount
+      _assistantSpend = source._assistantSpend
+      _assistantCountPercent = source._assistantCountPercent
+      _tenantID = source._tenantID
+      _studentCount = source._studentCount
     }
   }
 
@@ -6727,8 +6707,23 @@ extension GloryApi_GetArticleCreationTenantResponse: SwiftProtobuf.Message, Swif
         // allocates stack space for every case branch when no optimizations are
         // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
-        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._tenant) }()
+        case 1: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 2: try { try decoder.decodeSingularDoubleField(value: &_storage._totalSpend) }()
+        case 3: try { try decoder.decodeSingularDoubleField(value: &_storage._costMin) }()
+        case 4: try { try decoder.decodeSingularDoubleField(value: &_storage._costMax) }()
+        case 5: try { try decoder.decodeSingularDoubleField(value: &_storage._spendPercentMin) }()
+        case 6: try { try decoder.decodeSingularDoubleField(value: &_storage._spendPercentMax) }()
+        case 7: try { try decoder.decodeSingularInt64Field(value: &_storage._complexUsageCount) }()
+        case 8: try { try decoder.decodeSingularDoubleField(value: &_storage._complexSpend) }()
+        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._simpleUsageCount) }()
+        case 10: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleSpend) }()
+        case 11: try { try decoder.decodeSingularInt64Field(value: &_storage._evaluationCount) }()
+        case 12: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantCount) }()
+        case 13: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantUsageCount) }()
+        case 14: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantSpend) }()
+        case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCountPercent) }()
+        case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._tenantID) }()
+        case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._studentCount) }()
         default: break
         }
       }
@@ -6737,31 +6732,129 @@ extension GloryApi_GetArticleCreationTenantResponse: SwiftProtobuf.Message, Swif
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._baseResp {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      try { if let v = _storage._tenant {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      } }()
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
+      }
+      if _storage._totalSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._totalSpend, fieldNumber: 2)
+      }
+      if _storage._costMin != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._costMin, fieldNumber: 3)
+      }
+      if _storage._costMax != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._costMax, fieldNumber: 4)
+      }
+      if _storage._spendPercentMin != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._spendPercentMin, fieldNumber: 5)
+      }
+      if _storage._spendPercentMax != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._spendPercentMax, fieldNumber: 6)
+      }
+      if _storage._complexUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._complexUsageCount, fieldNumber: 7)
+      }
+      if _storage._complexSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._complexSpend, fieldNumber: 8)
+      }
+      if _storage._simpleUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._simpleUsageCount, fieldNumber: 9)
+      }
+      if _storage._simpleSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._simpleSpend, fieldNumber: 10)
+      }
+      if _storage._evaluationCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._evaluationCount, fieldNumber: 11)
+      }
+      if _storage._assistantCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._assistantCount, fieldNumber: 12)
+      }
+      if _storage._assistantUsageCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._assistantUsageCount, fieldNumber: 13)
+      }
+      if _storage._assistantSpend != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._assistantSpend, fieldNumber: 14)
+      }
+      if _storage._assistantCountPercent != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._assistantCountPercent, fieldNumber: 15)
+      }
+      if _storage._tenantID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._tenantID, fieldNumber: 16)
+      }
+      if _storage._studentCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._studentCount, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: GloryApi_GetArticleCreationTenantResponse, rhs: GloryApi_GetArticleCreationTenantResponse) -> Bool {
+  static func ==(lhs: GloryApi_GetArticleCreationTenant, rhs: GloryApi_GetArticleCreationTenant) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._baseResp != rhs_storage._baseResp {return false}
-        if _storage._tenant != rhs_storage._tenant {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._totalSpend != rhs_storage._totalSpend {return false}
+        if _storage._costMin != rhs_storage._costMin {return false}
+        if _storage._costMax != rhs_storage._costMax {return false}
+        if _storage._spendPercentMin != rhs_storage._spendPercentMin {return false}
+        if _storage._spendPercentMax != rhs_storage._spendPercentMax {return false}
+        if _storage._complexUsageCount != rhs_storage._complexUsageCount {return false}
+        if _storage._complexSpend != rhs_storage._complexSpend {return false}
+        if _storage._simpleUsageCount != rhs_storage._simpleUsageCount {return false}
+        if _storage._simpleSpend != rhs_storage._simpleSpend {return false}
+        if _storage._evaluationCount != rhs_storage._evaluationCount {return false}
+        if _storage._assistantCount != rhs_storage._assistantCount {return false}
+        if _storage._assistantUsageCount != rhs_storage._assistantUsageCount {return false}
+        if _storage._assistantSpend != rhs_storage._assistantSpend {return false}
+        if _storage._assistantCountPercent != rhs_storage._assistantCountPercent {return false}
+        if _storage._tenantID != rhs_storage._tenantID {return false}
+        if _storage._studentCount != rhs_storage._studentCount {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetArticleCreationTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetArticleCreationTenantResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .same(proto: "tenant"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._tenant) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._tenant {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetArticleCreationTenantResponse, rhs: GloryApi_GetArticleCreationTenantResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._tenant != rhs._tenant {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

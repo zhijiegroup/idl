@@ -6702,6 +6702,7 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     $core.double? assistantSpend,
     $core.double? assistantCountPercent,
     $fixnum.Int64? tenantId,
+    $fixnum.Int64? studentCount,
   }) {
     final $result = create();
     if (name != null) {
@@ -6752,6 +6753,9 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     if (tenantId != null) {
       $result.tenantId = tenantId;
     }
+    if (studentCount != null) {
+      $result.studentCount = studentCount;
+    }
     return $result;
   }
   GetArticleCreationTenant._() : super();
@@ -6775,6 +6779,7 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     ..a<$core.double>(14, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
     ..a<$core.double>(15, _omitFieldNames ? '' : 'assistantCountPercent', $pb.PbFieldType.OD)
     ..aInt64(16, _omitFieldNames ? '' : 'tenantId')
+    ..aInt64(17, _omitFieldNames ? '' : 'studentCount')
     ..hasRequiredFields = false
   ;
 
@@ -6942,6 +6947,15 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
   $core.bool hasTenantId() => $_has(15);
   @$pb.TagNumber(16)
   void clearTenantId() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get studentCount => $_getI64(16);
+  @$pb.TagNumber(17)
+  set studentCount($fixnum.Int64 v) { $_setInt64(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasStudentCount() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearStudentCount() => clearField(17);
 }
 
 class GetArticleCreationTenantResponse extends $pb.GeneratedMessage {

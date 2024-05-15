@@ -164,4 +164,14 @@ public interface GetArticleCreationTenantOrBuilder extends
    * @return The tenantId.
    */
   long getTenantId();
+
+  /**
+   * <pre>
+   * 学生数量
+   * </pre>
+   *
+   * <code>int64 student_count = 17;</code>
+   * @return The studentCount.
+   */
+  long getStudentCount();
 }
