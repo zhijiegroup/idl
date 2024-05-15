@@ -346,6 +346,9 @@ struct GloryApi_TenantTrafficConfig {
   /// 直播流量预警值 KB
   var trafficUsedWarningCount: Int64 = 0
 
+  /// 最大同时直播房间数量限制
+  var maxLivingLimit: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1223,6 +1226,7 @@ extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
     4: .standard(proto: "traffic_day_limit"),
     5: .standard(proto: "traffic_all_count"),
     6: .standard(proto: "traffic_used_warning_count"),
+    7: .standard(proto: "max_living_limit"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1237,6 +1241,7 @@ extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.trafficDayLimit) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.trafficAllCount) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.trafficUsedWarningCount) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.maxLivingLimit) }()
       default: break
       }
     }
@@ -1261,6 +1266,9 @@ extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.trafficUsedWarningCount != 0 {
       try visitor.visitSingularInt64Field(value: self.trafficUsedWarningCount, fieldNumber: 6)
     }
+    if self.maxLivingLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxLivingLimit, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1271,6 +1279,7 @@ extension GloryApi_TenantTrafficConfig: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.trafficDayLimit != rhs.trafficDayLimit {return false}
     if lhs.trafficAllCount != rhs.trafficAllCount {return false}
     if lhs.trafficUsedWarningCount != rhs.trafficUsedWarningCount {return false}
+    if lhs.maxLivingLimit != rhs.maxLivingLimit {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

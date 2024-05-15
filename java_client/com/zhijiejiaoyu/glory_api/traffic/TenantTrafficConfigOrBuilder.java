@@ -64,4 +64,14 @@ public interface TenantTrafficConfigOrBuilder extends
    * @return The trafficUsedWarningCount.
    */
   long getTrafficUsedWarningCount();
+
+  /**
+   * <pre>
+   * 最大同时直播房间数量限制
+   * </pre>
+   *
+   * <code>int64 max_living_limit = 7;</code>
+   * @return The maxLivingLimit.
+   */
+  long getMaxLivingLimit();
 }

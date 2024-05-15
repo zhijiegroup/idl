@@ -230,6 +230,7 @@ const TenantTrafficConfig$json = {
     {'1': 'traffic_day_limit', '3': 4, '4': 1, '5': 3, '10': 'trafficDayLimit'},
     {'1': 'traffic_all_count', '3': 5, '4': 1, '5': 3, '10': 'trafficAllCount'},
     {'1': 'traffic_used_warning_count', '3': 6, '4': 1, '5': 3, '10': 'trafficUsedWarningCount'},
+    {'1': 'max_living_limit', '3': 7, '4': 1, '5': 3, '10': 'maxLivingLimit'},
   ],
 };
 
@@ -240,7 +241,7 @@ final $typed_data.Uint8List tenantTrafficConfigDescriptor = $convert.base64Decod
     'A1IRbGl2ZUR1cmF0aW9uTGltaXQSKgoRdHJhZmZpY19kYXlfbGltaXQYBCABKANSD3RyYWZmaW'
     'NEYXlMaW1pdBIqChF0cmFmZmljX2FsbF9jb3VudBgFIAEoA1IPdHJhZmZpY0FsbENvdW50EjsK'
     'GnRyYWZmaWNfdXNlZF93YXJuaW5nX2NvdW50GAYgASgDUhd0cmFmZmljVXNlZFdhcm5pbmdDb3'
-    'VudA==');
+    'VudBIoChBtYXhfbGl2aW5nX2xpbWl0GAcgASgDUg5tYXhMaXZpbmdMaW1pdA==');
 
 @$core.Deprecated('Use listTenantLiveTrafficConfigResponseDescriptor instead')
 const ListTenantLiveTrafficConfigResponse$json = {

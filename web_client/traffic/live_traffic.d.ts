@@ -99,6 +99,8 @@ export interface TenantTrafficConfig {
   traffic_all_count?: string;
   /** 直播流量预警值 KB */
   traffic_used_warning_count?: string;
+  /** 最大同时直播房间数量限制 */
+  max_living_limit?: string;
 }
 
 export interface ListTenantLiveTrafficConfigResponse {
