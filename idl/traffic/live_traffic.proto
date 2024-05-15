@@ -110,6 +110,7 @@ message UpdateTenantLiveTrafficConfigRequest {
     int64 traffic_used_warning_count = 6;
     int64 day_traffic_limit_percent = 7;
     int64 all_traffic_limit_percent = 8;
+    int64 max_living_limit = 9; // 最大同时直播房间数量限制
 }
 
 message UpdateTenantLiveTrafficConfigResponse {

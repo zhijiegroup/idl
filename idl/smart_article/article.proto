@@ -537,6 +537,7 @@ message GetArticleCreationTenant {
     int64 assistant_usage_count = 13; // AI聊天总使用次数
     double assistant_spend = 14; // AI聊天总花费
     double assistant_count_percent = 15; // AI聊天次数使用百分比
+    int64 tenant_id = 16;
 }
 
 message GetArticleCreationTenantResponse {
