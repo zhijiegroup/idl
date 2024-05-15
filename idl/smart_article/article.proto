@@ -197,6 +197,7 @@ message ListEvaluationConfigRequest {
 message ListEvaluationConfigResponse {
     base.BaseResponse base_resp = 1;
     repeated string list = 2;
+    int64 evaluation_score = 3;
 }
 
 // 批量评价学生
@@ -496,9 +497,8 @@ message UpdateTenantCourseDataRequest {
     int32 course_count = 3;
     int32 day_course_count = 4;
     int32 day_assistant_count = 5;
-    int32 day_simple_count = 6;
-    int32 day_complex_count = 7;
-    int64 tenant_id = 8;
+    int32 day_evaluation_count = 6; // 每天AI评价数量
+    int64 tenant_id = 7;
 }
 
 message UpdateTenantCourseDataResponse {
@@ -523,14 +523,20 @@ message GetArticleCreationTenantRequest {
 
 message GetArticleCreationTenant {
     string name = 1;
-    int64 student_count = 2;
-    int64 course_count = 3;
-    int64 day_course_count = 4;
-    int64 evaluation_count = 5;
-    int64 evaluation_day_count = 6;
-    int64 assistant_count = 7;
-    int64 assistant_day_count = 8;
-    int64 total = 9;
+    double total_spend = 2;
+    double cost_min = 3;
+    double cost_max = 4;
+    double spend_percent_min = 5; // 已花费百分比最低值
+    double spend_percent_max = 6; // 已花费百分比最高值
+    int64 complex_usage_count = 7;
+    double complex_spend = 8;
+    int64 simple_usage_count = 9;
+    double simple_spend = 10;
+    int64 evaluation_count = 11; // AI评价总次数
+    int64 assistant_count = 12; // AI助手使用总次数
+    int64 assistant_usage_count = 13; // AI聊天总使用次数
+    double assistant_spend = 14; // AI聊天总花费
+    double assistant_count_percent = 15; // AI聊天次数使用百分比
 }
 
 message GetArticleCreationTenantResponse {
