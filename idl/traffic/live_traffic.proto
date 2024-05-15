@@ -93,6 +93,7 @@ message TenantTrafficConfig {
     int64 traffic_day_limit = 4; // 单日流量限制 KB
     int64 traffic_all_count = 5; // 直播流量总包 KB
     int64 traffic_used_warning_count = 6; // 直播流量预警值 KB
+    int64 max_living_limit = 7; // 最大同时直播房间数量限制
 }
 
 message ListTenantLiveTrafficConfigResponse {
