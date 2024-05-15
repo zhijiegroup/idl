@@ -567,6 +567,8 @@ export interface GetArticleCreationTenant {
   /** AI聊天次数使用百分比 */
   assistant_count_percent?: number;
   tenant_id?: string;
+  /** 学生数量 */
+  student_count?: string;
 }
 
 export interface GetArticleCreationTenantResponse {

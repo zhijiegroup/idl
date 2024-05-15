@@ -130,6 +130,11 @@ private static final long serialVersionUID = 0L;
             tenantId = input.readInt64();
             break;
           }
+          case 136: {
+
+            studentCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -421,6 +426,21 @@ private static final long serialVersionUID = 0L;
     return tenantId ;
   }
 
+  public static final int STUDENT_COUNT_FIELD_NUMBER = 17;
+  private long studentCount ;
+  /**
+   * <pre>
+   * 学生数量
+   * </pre>
+   *
+   * <code>int64 student_count = 17;</code>
+   * @return The studentCount.
+   */
+  @java.lang.Override
+  public long getStudentCount() {
+    return studentCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -482,6 +502,9 @@ private static final long serialVersionUID = 0L;
     }
     if (tenantId != 0L) {
       output.writeInt64(16, tenantId );
+    }
+    if (studentCount != 0L) {
+      output.writeInt64(17, studentCount );
     }
     unknownFields.writeTo(output);
   }
@@ -555,6 +578,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(16, tenantId );
     }
+    if (studentCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(17, studentCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -611,6 +638,8 @@ private static final long serialVersionUID = 0L;
             other.getAssistantCountPercent())) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
+    if (getStudentCount()
+        != other.getStudentCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -669,6 +698,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
+    hash = (37 * hash) + STUDENT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStudentCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -834,6 +866,8 @@ private static final long serialVersionUID = 0L;
 
       tenantId = 0L;
 
+      studentCount = 0L;
+
       return this;
     }
 
@@ -876,6 +910,7 @@ private static final long serialVersionUID = 0L;
       result.assistantSpend = assistantSpend ;
       result.assistantCountPercent = assistantCountPercent ;
       result.tenantId = tenantId ;
+      result.studentCount = studentCount ;
       onBuilt();
       return result;
     }
@@ -972,6 +1007,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
+      }
+      if (other.getStudentCount() != 0L) {
+        setStudentCount(other.getStudentCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1707,6 +1745,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearTenantId() {
       
       tenantId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long studentCount ;
+    /**
+     * <pre>
+     * 学生数量
+     * </pre>
+     *
+     * <code>int64 student_count = 17;</code>
+     * @return The studentCount.
+     */
+    @java.lang.Override
+    public long getStudentCount() {
+      return studentCount ;
+    }
+    /**
+     * <pre>
+     * 学生数量
+     * </pre>
+     *
+     * <code>int64 student_count = 17;</code>
+     * @param value The studentCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentCount(long value) {
+      
+      studentCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 学生数量
+     * </pre>
+     *
+     * <code>int64 student_count = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStudentCount() {
+      
+      studentCount = 0L;
       onChanged();
       return this;
     }
