@@ -178,34 +178,35 @@ public final class LiveTraffic {
       "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022B\n\032te" +
       "nant_traffic_config_list\030\002 \003(\0132\036.glory_a" +
       "pi.TenantTrafficConfig\022,\n\npagination\030d \001" +
-      "(\0132\030.base.PaginationResponse\"\237\002\n$UpdateT" +
+      "(\0132\030.base.PaginationResponse\"\271\002\n$UpdateT" +
       "enantLiveTrafficConfigRequest\022\'\n\014base_re" +
       "quest\030\001 \001(\0132\021.base.BaseRequest\022\021\n\ttenant" +
       "_id\030\002 \001(\003\022\033\n\023live_duration_limit\030\003 \001(\003\022\031" +
       "\n\021traffic_day_limit\030\004 \001(\003\022\031\n\021traffic_all" +
       "_count\030\005 \001(\003\022\"\n\032traffic_used_warning_cou" +
       "nt\030\006 \001(\003\022!\n\031day_traffic_limit_percent\030\007 " +
-      "\001(\003\022!\n\031all_traffic_limit_percent\030\010 \001(\003\"N" +
-      "\n%UpdateTenantLiveTrafficConfigResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\232" +
-      "\001\n\031ListTrafficWarningRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\024\n\014warning" +
-      "_type\030\002 \001(\003\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagina" +
-      "tion\030d \001(\0132\027.base.PaginationRequest\"\227\001\n\016" +
-      "TrafficWarning\022\032\n\022traffic_warning_id\030\001 \001" +
-      "(\003\022\021\n\ttenant_id\030\002 \001(\003\022\023\n\013tenant_name\030\003 \001" +
-      "(\t\022\024\n\014warning_type\030\004 \001(\003\022\027\n\017warning_cont" +
-      "ent\030\005 \001(\t\022\022\n\ncreated_at\030\006 \001(\t\"\252\001\n\032ListTr" +
-      "afficWarningResponse\022%\n\tbase_resp\030\001 \001(\0132" +
-      "\022.base.BaseResponse\0227\n\024traffic_warning_l" +
-      "ist\030\002 \003(\0132\031.glory_api.TrafficWarning\022,\n\n" +
-      "pagination\030d \001(\0132\030.base.PaginationRespon" +
-      "se\"b\n\033DeleteTrafficWarningRequest\022\'\n\014bas" +
-      "e_request\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022tr" +
-      "affic_warning_id\030\002 \001(\003\"E\n\034DeleteTrafficW" +
-      "arningResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
-      ".BaseResponseB&\n\"com.zhijiejiaoyu.glory_" +
-      "api.trafficP\001b\006proto3"
+      "\001(\003\022!\n\031all_traffic_limit_percent\030\010 \001(\003\022\030" +
+      "\n\020max_living_limit\030\t \001(\003\"N\n%UpdateTenant" +
+      "LiveTrafficConfigResponse\022%\n\tbase_resp\030\001" +
+      " \001(\0132\022.base.BaseResponse\"\232\001\n\031ListTraffic" +
+      "WarningRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\024\n\014warning_type\030\002 \001(\003\022\021\n" +
+      "\ttenant_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132\027.b" +
+      "ase.PaginationRequest\"\227\001\n\016TrafficWarning" +
+      "\022\032\n\022traffic_warning_id\030\001 \001(\003\022\021\n\ttenant_i" +
+      "d\030\002 \001(\003\022\023\n\013tenant_name\030\003 \001(\t\022\024\n\014warning_" +
+      "type\030\004 \001(\003\022\027\n\017warning_content\030\005 \001(\t\022\022\n\nc" +
+      "reated_at\030\006 \001(\t\"\252\001\n\032ListTrafficWarningRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\0227\n\024traffic_warning_list\030\002 \003(\0132\031.gl" +
+      "ory_api.TrafficWarning\022,\n\npagination\030d \001" +
+      "(\0132\030.base.PaginationResponse\"b\n\033DeleteTr" +
+      "afficWarningRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\032\n\022traffic_warning_" +
+      "id\030\002 \001(\003\"E\n\034DeleteTrafficWarningResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponseB" +
+      "&\n\"com.zhijiejiaoyu.glory_api.trafficP\001b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -295,7 +296,7 @@ public final class LiveTraffic {
     internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_UpdateTenantLiveTrafficConfigRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "TenantId", "LiveDurationLimit", "TrafficDayLimit", "TrafficAllCount", "TrafficUsedWarningCount", "DayTrafficLimitPercent", "AllTrafficLimitPercent", });
+        new java.lang.String[] { "BaseRequest", "TenantId", "LiveDurationLimit", "TrafficDayLimit", "TrafficAllCount", "TrafficUsedWarningCount", "DayTrafficLimitPercent", "AllTrafficLimitPercent", "MaxLivingLimit", });
     internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_glory_api_UpdateTenantLiveTrafficConfigResponse_fieldAccessorTable = new

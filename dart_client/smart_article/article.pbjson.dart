@@ -1355,6 +1355,7 @@ const GetArticleCreationTenant$json = {
     {'1': 'assistant_usage_count', '3': 13, '4': 1, '5': 3, '10': 'assistantUsageCount'},
     {'1': 'assistant_spend', '3': 14, '4': 1, '5': 1, '10': 'assistantSpend'},
     {'1': 'assistant_count_percent', '3': 15, '4': 1, '5': 1, '10': 'assistantCountPercent'},
+    {'1': 'tenant_id', '3': 16, '4': 1, '5': 3, '10': 'tenantId'},
   ],
 };
 
@@ -1371,7 +1372,7 @@ final $typed_data.Uint8List getArticleCreationTenantDescriptor = $convert.base64
     'Y291bnQYDCABKANSDmFzc2lzdGFudENvdW50EjIKFWFzc2lzdGFudF91c2FnZV9jb3VudBgNIA'
     'EoA1ITYXNzaXN0YW50VXNhZ2VDb3VudBInCg9hc3Npc3RhbnRfc3BlbmQYDiABKAFSDmFzc2lz'
     'dGFudFNwZW5kEjYKF2Fzc2lzdGFudF9jb3VudF9wZXJjZW50GA8gASgBUhVhc3Npc3RhbnRDb3'
-    'VudFBlcmNlbnQ=');
+    'VudFBlcmNlbnQSGwoJdGVuYW50X2lkGBAgASgDUgh0ZW5hbnRJZA==');
 
 @$core.Deprecated('Use getArticleCreationTenantResponseDescriptor instead')
 const GetArticleCreationTenantResponse$json = {

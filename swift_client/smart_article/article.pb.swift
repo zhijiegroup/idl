@@ -2134,6 +2134,8 @@ struct GloryApi_GetArticleCreationTenant {
   /// AI聊天次数使用百分比
   var assistantCountPercent: Double = 0
 
+  var tenantID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -6567,6 +6569,7 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     13: .standard(proto: "assistant_usage_count"),
     14: .standard(proto: "assistant_spend"),
     15: .standard(proto: "assistant_count_percent"),
+    16: .standard(proto: "tenant_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6590,6 +6593,7 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       case 13: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
       case 14: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
       case 15: try { try decoder.decodeSingularDoubleField(value: &self.assistantCountPercent) }()
+      case 16: try { try decoder.decodeSingularInt64Field(value: &self.tenantID) }()
       default: break
       }
     }
@@ -6641,6 +6645,9 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     if self.assistantCountPercent != 0 {
       try visitor.visitSingularDoubleField(value: self.assistantCountPercent, fieldNumber: 15)
     }
+    if self.tenantID != 0 {
+      try visitor.visitSingularInt64Field(value: self.tenantID, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -6660,6 +6667,7 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     if lhs.assistantUsageCount != rhs.assistantUsageCount {return false}
     if lhs.assistantSpend != rhs.assistantSpend {return false}
     if lhs.assistantCountPercent != rhs.assistantCountPercent {return false}
+    if lhs.tenantID != rhs.tenantID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -130,4 +130,10 @@ public interface GetArticleCreationTenantOrBuilder extends
    * @return The assistantCountPercent.
    */
   double getAssistantCountPercent();
+
+  /**
+   * <code>int64 tenant_id = 16;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
 }

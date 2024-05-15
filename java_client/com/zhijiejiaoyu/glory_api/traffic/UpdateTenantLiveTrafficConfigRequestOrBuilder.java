@@ -63,4 +63,14 @@ public interface UpdateTenantLiveTrafficConfigRequestOrBuilder extends
    * @return The allTrafficLimitPercent.
    */
   long getAllTrafficLimitPercent();
+
+  /**
+   * <pre>
+   * 最大同时直播房间数量限制
+   * </pre>
+   *
+   * <code>int64 max_living_limit = 9;</code>
+   * @return The maxLivingLimit.
+   */
+  long getMaxLivingLimit();
 }

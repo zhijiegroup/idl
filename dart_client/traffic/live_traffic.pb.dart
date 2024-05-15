@@ -1288,6 +1288,7 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? trafficUsedWarningCount,
     $fixnum.Int64? dayTrafficLimitPercent,
     $fixnum.Int64? allTrafficLimitPercent,
+    $fixnum.Int64? maxLivingLimit,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1314,6 +1315,9 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     if (allTrafficLimitPercent != null) {
       $result.allTrafficLimitPercent = allTrafficLimitPercent;
     }
+    if (maxLivingLimit != null) {
+      $result.maxLivingLimit = maxLivingLimit;
+    }
     return $result;
   }
   UpdateTenantLiveTrafficConfigRequest._() : super();
@@ -1329,6 +1333,7 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
     ..aInt64(6, _omitFieldNames ? '' : 'trafficUsedWarningCount')
     ..aInt64(7, _omitFieldNames ? '' : 'dayTrafficLimitPercent')
     ..aInt64(8, _omitFieldNames ? '' : 'allTrafficLimitPercent')
+    ..aInt64(9, _omitFieldNames ? '' : 'maxLivingLimit')
     ..hasRequiredFields = false
   ;
 
@@ -1426,6 +1431,15 @@ class UpdateTenantLiveTrafficConfigRequest extends $pb.GeneratedMessage {
   $core.bool hasAllTrafficLimitPercent() => $_has(7);
   @$pb.TagNumber(8)
   void clearAllTrafficLimitPercent() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get maxLivingLimit => $_getI64(8);
+  @$pb.TagNumber(9)
+  set maxLivingLimit($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMaxLivingLimit() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMaxLivingLimit() => clearField(9);
 }
 
 class UpdateTenantLiveTrafficConfigResponse extends $pb.GeneratedMessage {

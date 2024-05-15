@@ -412,6 +412,9 @@ struct GloryApi_UpdateTenantLiveTrafficConfigRequest {
 
   var allTrafficLimitPercent: Int64 = 0
 
+  /// 最大同时直播房间数量限制
+  var maxLivingLimit: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1332,6 +1335,7 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     6: .standard(proto: "traffic_used_warning_count"),
     7: .standard(proto: "day_traffic_limit_percent"),
     8: .standard(proto: "all_traffic_limit_percent"),
+    9: .standard(proto: "max_living_limit"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1348,6 +1352,7 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.trafficUsedWarningCount) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.dayTrafficLimitPercent) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.allTrafficLimitPercent) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.maxLivingLimit) }()
       default: break
       }
     }
@@ -1382,6 +1387,9 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     if self.allTrafficLimitPercent != 0 {
       try visitor.visitSingularInt64Field(value: self.allTrafficLimitPercent, fieldNumber: 8)
     }
+    if self.maxLivingLimit != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxLivingLimit, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1394,6 +1402,7 @@ extension GloryApi_UpdateTenantLiveTrafficConfigRequest: SwiftProtobuf.Message, 
     if lhs.trafficUsedWarningCount != rhs.trafficUsedWarningCount {return false}
     if lhs.dayTrafficLimitPercent != rhs.dayTrafficLimitPercent {return false}
     if lhs.allTrafficLimitPercent != rhs.allTrafficLimitPercent {return false}
+    if lhs.maxLivingLimit != rhs.maxLivingLimit {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

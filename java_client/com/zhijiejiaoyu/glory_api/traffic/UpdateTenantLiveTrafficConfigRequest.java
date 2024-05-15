@@ -96,6 +96,11 @@ private static final long serialVersionUID = 0L;
             allTrafficLimitPercent = input.readInt64();
             break;
           }
+          case 72: {
+
+            maxLivingLimit = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -231,6 +236,21 @@ private static final long serialVersionUID = 0L;
     return allTrafficLimitPercent ;
   }
 
+  public static final int MAX_LIVING_LIMIT_FIELD_NUMBER = 9;
+  private long maxLivingLimit ;
+  /**
+   * <pre>
+   * 最大同时直播房间数量限制
+   * </pre>
+   *
+   * <code>int64 max_living_limit = 9;</code>
+   * @return The maxLivingLimit.
+   */
+  @java.lang.Override
+  public long getMaxLivingLimit() {
+    return maxLivingLimit ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -268,6 +288,9 @@ private static final long serialVersionUID = 0L;
     }
     if (allTrafficLimitPercent != 0L) {
       output.writeInt64(8, allTrafficLimitPercent );
+    }
+    if (maxLivingLimit != 0L) {
+      output.writeInt64(9, maxLivingLimit );
     }
     unknownFields.writeTo(output);
   }
@@ -310,6 +333,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(8, allTrafficLimitPercent );
     }
+    if (maxLivingLimit != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, maxLivingLimit );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -344,6 +371,8 @@ private static final long serialVersionUID = 0L;
         != other.getDayTrafficLimitPercent()) return false;
     if (getAllTrafficLimitPercent()
         != other.getAllTrafficLimitPercent()) return false;
+    if (getMaxLivingLimit()
+        != other.getMaxLivingLimit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -380,6 +409,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALL_TRAFFIC_LIMIT_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAllTrafficLimitPercent());
+    hash = (37 * hash) + MAX_LIVING_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getMaxLivingLimit());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -533,6 +565,8 @@ private static final long serialVersionUID = 0L;
 
       allTrafficLimitPercent = 0L;
 
+      maxLivingLimit = 0L;
+
       return this;
     }
 
@@ -571,6 +605,7 @@ private static final long serialVersionUID = 0L;
       result.trafficUsedWarningCount = trafficUsedWarningCount ;
       result.dayTrafficLimitPercent = dayTrafficLimitPercent ;
       result.allTrafficLimitPercent = allTrafficLimitPercent ;
+      result.maxLivingLimit = maxLivingLimit ;
       onBuilt();
       return result;
     }
@@ -642,6 +677,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAllTrafficLimitPercent() != 0L) {
         setAllTrafficLimitPercent(other.getAllTrafficLimitPercent());
+      }
+      if (other.getMaxLivingLimit() != 0L) {
+        setMaxLivingLimit(other.getMaxLivingLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1004,6 +1042,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearAllTrafficLimitPercent() {
       
       allTrafficLimitPercent = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxLivingLimit ;
+    /**
+     * <pre>
+     * 最大同时直播房间数量限制
+     * </pre>
+     *
+     * <code>int64 max_living_limit = 9;</code>
+     * @return The maxLivingLimit.
+     */
+    @java.lang.Override
+    public long getMaxLivingLimit() {
+      return maxLivingLimit ;
+    }
+    /**
+     * <pre>
+     * 最大同时直播房间数量限制
+     * </pre>
+     *
+     * <code>int64 max_living_limit = 9;</code>
+     * @param value The maxLivingLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxLivingLimit(long value) {
+      
+      maxLivingLimit = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 最大同时直播房间数量限制
+     * </pre>
+     *
+     * <code>int64 max_living_limit = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxLivingLimit() {
+      
+      maxLivingLimit = 0L;
       onChanged();
       return this;
     }

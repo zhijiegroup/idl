@@ -116,6 +116,8 @@ export interface UpdateTenantLiveTrafficConfigRequest {
   traffic_used_warning_count?: string;
   day_traffic_limit_percent?: string;
   all_traffic_limit_percent?: string;
+  /** 最大同时直播房间数量限制 */
+  max_living_limit?: string;
 }
 
 export interface UpdateTenantLiveTrafficConfigResponse {
