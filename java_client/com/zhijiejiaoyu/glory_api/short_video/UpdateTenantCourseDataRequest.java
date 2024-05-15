@@ -83,15 +83,10 @@ private static final long serialVersionUID = 0L;
           }
           case 48: {
 
-            daySimpleCount = input.readInt32();
+            dayEvaluationCount = input.readInt32();
             break;
           }
           case 56: {
-
-            dayComplexCount = input.readInt32();
-            break;
-          }
-          case 64: {
 
             tenantId = input.readInt64();
             break;
@@ -198,32 +193,25 @@ private static final long serialVersionUID = 0L;
     return dayAssistantCount ;
   }
 
-  public static final int DAY_SIMPLE_COUNT_FIELD_NUMBER = 6;
-  private int daySimpleCount ;
+  public static final int DAY_EVALUATION_COUNT_FIELD_NUMBER = 6;
+  private int dayEvaluationCount ;
   /**
-   * <code>int32 day_simple_count = 6;</code>
-   * @return The daySimpleCount.
+   * <pre>
+   * 每天AI评价数量
+   * </pre>
+   *
+   * <code>int32 day_evaluation_count = 6;</code>
+   * @return The dayEvaluationCount.
    */
   @java.lang.Override
-  public int getDaySimpleCount() {
-    return daySimpleCount ;
+  public int getDayEvaluationCount() {
+    return dayEvaluationCount ;
   }
 
-  public static final int DAY_COMPLEX_COUNT_FIELD_NUMBER = 7;
-  private int dayComplexCount ;
-  /**
-   * <code>int32 day_complex_count = 7;</code>
-   * @return The dayComplexCount.
-   */
-  @java.lang.Override
-  public int getDayComplexCount() {
-    return dayComplexCount ;
-  }
-
-  public static final int TENANT_ID_FIELD_NUMBER = 8;
+  public static final int TENANT_ID_FIELD_NUMBER = 7;
   private long tenantId ;
   /**
-   * <code>int64 tenant_id = 8;</code>
+   * <code>int64 tenant_id = 7;</code>
    * @return The tenantId.
    */
   @java.lang.Override
@@ -260,14 +248,11 @@ private static final long serialVersionUID = 0L;
     if (dayAssistantCount != 0) {
       output.writeInt32(5, dayAssistantCount );
     }
-    if (daySimpleCount != 0) {
-      output.writeInt32(6, daySimpleCount );
-    }
-    if (dayComplexCount != 0) {
-      output.writeInt32(7, dayComplexCount );
+    if (dayEvaluationCount != 0) {
+      output.writeInt32(6, dayEvaluationCount );
     }
     if (tenantId != 0L) {
-      output.writeInt64(8, tenantId );
+      output.writeInt64(7, tenantId );
     }
     unknownFields.writeTo(output);
   }
@@ -298,17 +283,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, dayAssistantCount );
     }
-    if (daySimpleCount != 0) {
+    if (dayEvaluationCount != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, daySimpleCount );
-    }
-    if (dayComplexCount != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, dayComplexCount );
+        .computeInt32Size(6, dayEvaluationCount );
     }
     if (tenantId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, tenantId );
+        .computeInt64Size(7, tenantId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,10 +319,8 @@ private static final long serialVersionUID = 0L;
         != other.getDayCourseCount()) return false;
     if (getDayAssistantCount()
         != other.getDayAssistantCount()) return false;
-    if (getDaySimpleCount()
-        != other.getDaySimpleCount()) return false;
-    if (getDayComplexCount()
-        != other.getDayComplexCount()) return false;
+    if (getDayEvaluationCount()
+        != other.getDayEvaluationCount()) return false;
     if (getTenantId()
         != other.getTenantId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -367,10 +346,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDayCourseCount();
     hash = (37 * hash) + DAY_ASSISTANT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getDayAssistantCount();
-    hash = (37 * hash) + DAY_SIMPLE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getDaySimpleCount();
-    hash = (37 * hash) + DAY_COMPLEX_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getDayComplexCount();
+    hash = (37 * hash) + DAY_EVALUATION_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getDayEvaluationCount();
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTenantId());
@@ -521,9 +498,7 @@ private static final long serialVersionUID = 0L;
 
       dayAssistantCount = 0;
 
-      daySimpleCount = 0;
-
-      dayComplexCount = 0;
+      dayEvaluationCount = 0;
 
       tenantId = 0L;
 
@@ -562,8 +537,7 @@ private static final long serialVersionUID = 0L;
       result.courseCount = courseCount ;
       result.dayCourseCount = dayCourseCount ;
       result.dayAssistantCount = dayAssistantCount ;
-      result.daySimpleCount = daySimpleCount ;
-      result.dayComplexCount = dayComplexCount ;
+      result.dayEvaluationCount = dayEvaluationCount ;
       result.tenantId = tenantId ;
       onBuilt();
       return result;
@@ -628,11 +602,8 @@ private static final long serialVersionUID = 0L;
       if (other.getDayAssistantCount() != 0) {
         setDayAssistantCount(other.getDayAssistantCount());
       }
-      if (other.getDaySimpleCount() != 0) {
-        setDaySimpleCount(other.getDaySimpleCount());
-      }
-      if (other.getDayComplexCount() != 0) {
-        setDayComplexCount(other.getDayComplexCount());
+      if (other.getDayEvaluationCount() != 0) {
+        setDayEvaluationCount(other.getDayEvaluationCount());
       }
       if (other.getTenantId() != 0L) {
         setTenantId(other.getTenantId());
@@ -909,71 +880,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int daySimpleCount ;
+    private int dayEvaluationCount ;
     /**
-     * <code>int32 day_simple_count = 6;</code>
-     * @return The daySimpleCount.
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int32 day_evaluation_count = 6;</code>
+     * @return The dayEvaluationCount.
      */
     @java.lang.Override
-    public int getDaySimpleCount() {
-      return daySimpleCount ;
+    public int getDayEvaluationCount() {
+      return dayEvaluationCount ;
     }
     /**
-     * <code>int32 day_simple_count = 6;</code>
-     * @param value The daySimpleCount to set.
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int32 day_evaluation_count = 6;</code>
+     * @param value The dayEvaluationCount to set.
      * @return This builder for chaining.
      */
-    public Builder setDaySimpleCount(int value) {
+    public Builder setDayEvaluationCount(int value) {
       
-      daySimpleCount = value;
+      dayEvaluationCount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 day_simple_count = 6;</code>
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int32 day_evaluation_count = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDaySimpleCount() {
+    public Builder clearDayEvaluationCount() {
       
-      daySimpleCount = 0;
-      onChanged();
-      return this;
-    }
-
-    private int dayComplexCount ;
-    /**
-     * <code>int32 day_complex_count = 7;</code>
-     * @return The dayComplexCount.
-     */
-    @java.lang.Override
-    public int getDayComplexCount() {
-      return dayComplexCount ;
-    }
-    /**
-     * <code>int32 day_complex_count = 7;</code>
-     * @param value The dayComplexCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDayComplexCount(int value) {
-      
-      dayComplexCount = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 day_complex_count = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDayComplexCount() {
-      
-      dayComplexCount = 0;
+      dayEvaluationCount = 0;
       onChanged();
       return this;
     }
 
     private long tenantId ;
     /**
-     * <code>int64 tenant_id = 8;</code>
+     * <code>int64 tenant_id = 7;</code>
      * @return The tenantId.
      */
     @java.lang.Override
@@ -981,7 +933,7 @@ private static final long serialVersionUID = 0L;
       return tenantId ;
     }
     /**
-     * <code>int64 tenant_id = 8;</code>
+     * <code>int64 tenant_id = 7;</code>
      * @param value The tenantId to set.
      * @return This builder for chaining.
      */
@@ -992,7 +944,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 tenant_id = 8;</code>
+     * <code>int64 tenant_id = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearTenantId() {

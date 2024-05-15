@@ -20,50 +20,114 @@ public interface GetArticleCreationTenantOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 student_count = 2;</code>
-   * @return The studentCount.
+   * <code>double total_spend = 2;</code>
+   * @return The totalSpend.
    */
-  long getStudentCount();
+  double getTotalSpend();
 
   /**
-   * <code>int64 course_count = 3;</code>
-   * @return The courseCount.
+   * <code>double cost_min = 3;</code>
+   * @return The costMin.
    */
-  long getCourseCount();
+  double getCostMin();
 
   /**
-   * <code>int64 day_course_count = 4;</code>
-   * @return The dayCourseCount.
+   * <code>double cost_max = 4;</code>
+   * @return The costMax.
    */
-  long getDayCourseCount();
+  double getCostMax();
 
   /**
-   * <code>int64 evaluation_count = 5;</code>
+   * <pre>
+   * 已花费百分比最低值
+   * </pre>
+   *
+   * <code>double spend_percent_min = 5;</code>
+   * @return The spendPercentMin.
+   */
+  double getSpendPercentMin();
+
+  /**
+   * <pre>
+   * 已花费百分比最高值
+   * </pre>
+   *
+   * <code>double spend_percent_max = 6;</code>
+   * @return The spendPercentMax.
+   */
+  double getSpendPercentMax();
+
+  /**
+   * <code>int64 complex_usage_count = 7;</code>
+   * @return The complexUsageCount.
+   */
+  long getComplexUsageCount();
+
+  /**
+   * <code>double complex_spend = 8;</code>
+   * @return The complexSpend.
+   */
+  double getComplexSpend();
+
+  /**
+   * <code>int64 simple_usage_count = 9;</code>
+   * @return The simpleUsageCount.
+   */
+  long getSimpleUsageCount();
+
+  /**
+   * <code>double simple_spend = 10;</code>
+   * @return The simpleSpend.
+   */
+  double getSimpleSpend();
+
+  /**
+   * <pre>
+   * AI评价总次数
+   * </pre>
+   *
+   * <code>int64 evaluation_count = 11;</code>
    * @return The evaluationCount.
    */
   long getEvaluationCount();
 
   /**
-   * <code>int64 evaluation_day_count = 6;</code>
-   * @return The evaluationDayCount.
-   */
-  long getEvaluationDayCount();
-
-  /**
-   * <code>int64 assistant_count = 7;</code>
+   * <pre>
+   * AI助手使用总次数
+   * </pre>
+   *
+   * <code>int64 assistant_count = 12;</code>
    * @return The assistantCount.
    */
   long getAssistantCount();
 
   /**
-   * <code>int64 assistant_day_count = 8;</code>
-   * @return The assistantDayCount.
+   * <pre>
+   * AI聊天总使用次数
+   * </pre>
+   *
+   * <code>int64 assistant_usage_count = 13;</code>
+   * @return The assistantUsageCount.
    */
-  long getAssistantDayCount();
+  long getAssistantUsageCount();
 
   /**
-   * <code>int64 total = 9;</code>
-   * @return The total.
+   * <pre>
+   * AI聊天总花费
+   * </pre>
+   *
+   * <code>double assistant_spend = 14;</code>
+   * @return The assistantSpend.
    */
-  long getTotal();
+  double getAssistantSpend();
+
+  /**
+   * <pre>
+   * AI聊天次数使用百分比
+   * </pre>
+   *
+   * <code>double assistant_count_percent = 15;</code>
+   * @return The assistantCountPercent.
+   */
+  double getAssistantCountPercent();
 }

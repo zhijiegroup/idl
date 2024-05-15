@@ -2503,6 +2503,7 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
   factory ListEvaluationConfigResponse({
     $0.BaseResponse? baseResp,
     $core.Iterable<$core.String>? list,
+    $fixnum.Int64? evaluationScore,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2510,6 +2511,9 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
     }
     if (list != null) {
       $result.list.addAll(list);
+    }
+    if (evaluationScore != null) {
+      $result.evaluationScore = evaluationScore;
     }
     return $result;
   }
@@ -2520,6 +2524,7 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEvaluationConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..pPS(2, _omitFieldNames ? '' : 'list')
+    ..aInt64(3, _omitFieldNames ? '' : 'evaluationScore')
     ..hasRequiredFields = false
   ;
 
@@ -2557,6 +2562,15 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get list => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get evaluationScore => $_getI64(2);
+  @$pb.TagNumber(3)
+  set evaluationScore($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEvaluationScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEvaluationScore() => clearField(3);
 }
 
 /// 批量评价学生
@@ -6277,8 +6291,7 @@ class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
     $core.int? courseCount,
     $core.int? dayCourseCount,
     $core.int? dayAssistantCount,
-    $core.int? daySimpleCount,
-    $core.int? dayComplexCount,
+    $core.int? dayEvaluationCount,
     $fixnum.Int64? tenantId,
   }) {
     final $result = create();
@@ -6297,11 +6310,8 @@ class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
     if (dayAssistantCount != null) {
       $result.dayAssistantCount = dayAssistantCount;
     }
-    if (daySimpleCount != null) {
-      $result.daySimpleCount = daySimpleCount;
-    }
-    if (dayComplexCount != null) {
-      $result.dayComplexCount = dayComplexCount;
+    if (dayEvaluationCount != null) {
+      $result.dayEvaluationCount = dayEvaluationCount;
     }
     if (tenantId != null) {
       $result.tenantId = tenantId;
@@ -6318,9 +6328,8 @@ class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
     ..a<$core.int>(3, _omitFieldNames ? '' : 'courseCount', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'dayCourseCount', $pb.PbFieldType.O3)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'dayAssistantCount', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'daySimpleCount', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'dayComplexCount', $pb.PbFieldType.O3)
-    ..aInt64(8, _omitFieldNames ? '' : 'tenantId')
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'dayEvaluationCount', $pb.PbFieldType.O3)
+    ..aInt64(7, _omitFieldNames ? '' : 'tenantId')
     ..hasRequiredFields = false
   ;
 
@@ -6393,31 +6402,22 @@ class UpdateTenantCourseDataRequest extends $pb.GeneratedMessage {
   void clearDayAssistantCount() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.int get daySimpleCount => $_getIZ(5);
+  $core.int get dayEvaluationCount => $_getIZ(5);
   @$pb.TagNumber(6)
-  set daySimpleCount($core.int v) { $_setSignedInt32(5, v); }
+  set dayEvaluationCount($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasDaySimpleCount() => $_has(5);
+  $core.bool hasDayEvaluationCount() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDaySimpleCount() => clearField(6);
+  void clearDayEvaluationCount() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.int get dayComplexCount => $_getIZ(6);
+  $fixnum.Int64 get tenantId => $_getI64(6);
   @$pb.TagNumber(7)
-  set dayComplexCount($core.int v) { $_setSignedInt32(6, v); }
+  set tenantId($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDayComplexCount() => $_has(6);
+  $core.bool hasTenantId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearDayComplexCount() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $fixnum.Int64 get tenantId => $_getI64(7);
-  @$pb.TagNumber(8)
-  set tenantId($fixnum.Int64 v) { $_setInt64(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasTenantId() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearTenantId() => clearField(8);
+  void clearTenantId() => clearField(7);
 }
 
 class UpdateTenantCourseDataResponse extends $pb.GeneratedMessage {
@@ -6687,42 +6687,66 @@ class GetArticleCreationTenantRequest extends $pb.GeneratedMessage {
 class GetArticleCreationTenant extends $pb.GeneratedMessage {
   factory GetArticleCreationTenant({
     $core.String? name,
-    $fixnum.Int64? studentCount,
-    $fixnum.Int64? courseCount,
-    $fixnum.Int64? dayCourseCount,
+    $core.double? totalSpend,
+    $core.double? costMin,
+    $core.double? costMax,
+    $core.double? spendPercentMin,
+    $core.double? spendPercentMax,
+    $fixnum.Int64? complexUsageCount,
+    $core.double? complexSpend,
+    $fixnum.Int64? simpleUsageCount,
+    $core.double? simpleSpend,
     $fixnum.Int64? evaluationCount,
-    $fixnum.Int64? evaluationDayCount,
     $fixnum.Int64? assistantCount,
-    $fixnum.Int64? assistantDayCount,
-    $fixnum.Int64? total,
+    $fixnum.Int64? assistantUsageCount,
+    $core.double? assistantSpend,
+    $core.double? assistantCountPercent,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
     }
-    if (studentCount != null) {
-      $result.studentCount = studentCount;
+    if (totalSpend != null) {
+      $result.totalSpend = totalSpend;
     }
-    if (courseCount != null) {
-      $result.courseCount = courseCount;
+    if (costMin != null) {
+      $result.costMin = costMin;
     }
-    if (dayCourseCount != null) {
-      $result.dayCourseCount = dayCourseCount;
+    if (costMax != null) {
+      $result.costMax = costMax;
+    }
+    if (spendPercentMin != null) {
+      $result.spendPercentMin = spendPercentMin;
+    }
+    if (spendPercentMax != null) {
+      $result.spendPercentMax = spendPercentMax;
+    }
+    if (complexUsageCount != null) {
+      $result.complexUsageCount = complexUsageCount;
+    }
+    if (complexSpend != null) {
+      $result.complexSpend = complexSpend;
+    }
+    if (simpleUsageCount != null) {
+      $result.simpleUsageCount = simpleUsageCount;
+    }
+    if (simpleSpend != null) {
+      $result.simpleSpend = simpleSpend;
     }
     if (evaluationCount != null) {
       $result.evaluationCount = evaluationCount;
     }
-    if (evaluationDayCount != null) {
-      $result.evaluationDayCount = evaluationDayCount;
-    }
     if (assistantCount != null) {
       $result.assistantCount = assistantCount;
     }
-    if (assistantDayCount != null) {
-      $result.assistantDayCount = assistantDayCount;
+    if (assistantUsageCount != null) {
+      $result.assistantUsageCount = assistantUsageCount;
     }
-    if (total != null) {
-      $result.total = total;
+    if (assistantSpend != null) {
+      $result.assistantSpend = assistantSpend;
+    }
+    if (assistantCountPercent != null) {
+      $result.assistantCountPercent = assistantCountPercent;
     }
     return $result;
   }
@@ -6732,14 +6756,20 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenant', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aInt64(2, _omitFieldNames ? '' : 'studentCount')
-    ..aInt64(3, _omitFieldNames ? '' : 'courseCount')
-    ..aInt64(4, _omitFieldNames ? '' : 'dayCourseCount')
-    ..aInt64(5, _omitFieldNames ? '' : 'evaluationCount')
-    ..aInt64(6, _omitFieldNames ? '' : 'evaluationDayCount')
-    ..aInt64(7, _omitFieldNames ? '' : 'assistantCount')
-    ..aInt64(8, _omitFieldNames ? '' : 'assistantDayCount')
-    ..aInt64(9, _omitFieldNames ? '' : 'total')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'costMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'costMax', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'spendPercentMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'spendPercentMax', $pb.PbFieldType.OD)
+    ..aInt64(7, _omitFieldNames ? '' : 'complexUsageCount')
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
+    ..aInt64(9, _omitFieldNames ? '' : 'simpleUsageCount')
+    ..a<$core.double>(10, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
+    ..aInt64(11, _omitFieldNames ? '' : 'evaluationCount')
+    ..aInt64(12, _omitFieldNames ? '' : 'assistantCount')
+    ..aInt64(13, _omitFieldNames ? '' : 'assistantUsageCount')
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'assistantCountPercent', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -6774,76 +6804,130 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get studentCount => $_getI64(1);
+  $core.double get totalSpend => $_getN(1);
   @$pb.TagNumber(2)
-  set studentCount($fixnum.Int64 v) { $_setInt64(1, v); }
+  set totalSpend($core.double v) { $_setDouble(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasStudentCount() => $_has(1);
+  $core.bool hasTotalSpend() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStudentCount() => clearField(2);
+  void clearTotalSpend() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get courseCount => $_getI64(2);
+  $core.double get costMin => $_getN(2);
   @$pb.TagNumber(3)
-  set courseCount($fixnum.Int64 v) { $_setInt64(2, v); }
+  set costMin($core.double v) { $_setDouble(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCourseCount() => $_has(2);
+  $core.bool hasCostMin() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCourseCount() => clearField(3);
+  void clearCostMin() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get dayCourseCount => $_getI64(3);
+  $core.double get costMax => $_getN(3);
   @$pb.TagNumber(4)
-  set dayCourseCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  set costMax($core.double v) { $_setDouble(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDayCourseCount() => $_has(3);
+  $core.bool hasCostMax() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDayCourseCount() => clearField(4);
+  void clearCostMax() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get evaluationCount => $_getI64(4);
+  $core.double get spendPercentMin => $_getN(4);
   @$pb.TagNumber(5)
-  set evaluationCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  set spendPercentMin($core.double v) { $_setDouble(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasEvaluationCount() => $_has(4);
+  $core.bool hasSpendPercentMin() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEvaluationCount() => clearField(5);
+  void clearSpendPercentMin() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get evaluationDayCount => $_getI64(5);
+  $core.double get spendPercentMax => $_getN(5);
   @$pb.TagNumber(6)
-  set evaluationDayCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  set spendPercentMax($core.double v) { $_setDouble(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasEvaluationDayCount() => $_has(5);
+  $core.bool hasSpendPercentMax() => $_has(5);
   @$pb.TagNumber(6)
-  void clearEvaluationDayCount() => clearField(6);
+  void clearSpendPercentMax() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get assistantCount => $_getI64(6);
+  $fixnum.Int64 get complexUsageCount => $_getI64(6);
   @$pb.TagNumber(7)
-  set assistantCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  set complexUsageCount($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAssistantCount() => $_has(6);
+  $core.bool hasComplexUsageCount() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAssistantCount() => clearField(7);
+  void clearComplexUsageCount() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get assistantDayCount => $_getI64(7);
+  $core.double get complexSpend => $_getN(7);
   @$pb.TagNumber(8)
-  set assistantDayCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  set complexSpend($core.double v) { $_setDouble(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasAssistantDayCount() => $_has(7);
+  $core.bool hasComplexSpend() => $_has(7);
   @$pb.TagNumber(8)
-  void clearAssistantDayCount() => clearField(8);
+  void clearComplexSpend() => clearField(8);
 
   @$pb.TagNumber(9)
-  $fixnum.Int64 get total => $_getI64(8);
+  $fixnum.Int64 get simpleUsageCount => $_getI64(8);
   @$pb.TagNumber(9)
-  set total($fixnum.Int64 v) { $_setInt64(8, v); }
+  set simpleUsageCount($fixnum.Int64 v) { $_setInt64(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasTotal() => $_has(8);
+  $core.bool hasSimpleUsageCount() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTotal() => clearField(9);
+  void clearSimpleUsageCount() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get simpleSpend => $_getN(9);
+  @$pb.TagNumber(10)
+  set simpleSpend($core.double v) { $_setDouble(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasSimpleSpend() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSimpleSpend() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get evaluationCount => $_getI64(10);
+  @$pb.TagNumber(11)
+  set evaluationCount($fixnum.Int64 v) { $_setInt64(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasEvaluationCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEvaluationCount() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get assistantCount => $_getI64(11);
+  @$pb.TagNumber(12)
+  set assistantCount($fixnum.Int64 v) { $_setInt64(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasAssistantCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAssistantCount() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get assistantUsageCount => $_getI64(12);
+  @$pb.TagNumber(13)
+  set assistantUsageCount($fixnum.Int64 v) { $_setInt64(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasAssistantUsageCount() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAssistantUsageCount() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.double get assistantSpend => $_getN(13);
+  @$pb.TagNumber(14)
+  set assistantSpend($core.double v) { $_setDouble(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasAssistantSpend() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearAssistantSpend() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get assistantCountPercent => $_getN(14);
+  @$pb.TagNumber(15)
+  set assistantCountPercent($core.double v) { $_setDouble(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasAssistantCountPercent() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearAssistantCountPercent() => clearField(15);
 }
 
 class GetArticleCreationTenantResponse extends $pb.GeneratedMessage {

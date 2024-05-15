@@ -47,19 +47,17 @@ public interface UpdateTenantCourseDataRequestOrBuilder extends
   int getDayAssistantCount();
 
   /**
-   * <code>int32 day_simple_count = 6;</code>
-   * @return The daySimpleCount.
+   * <pre>
+   * 每天AI评价数量
+   * </pre>
+   *
+   * <code>int32 day_evaluation_count = 6;</code>
+   * @return The dayEvaluationCount.
    */
-  int getDaySimpleCount();
+  int getDayEvaluationCount();
 
   /**
-   * <code>int32 day_complex_count = 7;</code>
-   * @return The dayComplexCount.
-   */
-  int getDayComplexCount();
-
-  /**
-   * <code>int64 tenant_id = 8;</code>
+   * <code>int64 tenant_id = 7;</code>
    * @return The tenantId.
    */
   long getTenantId();

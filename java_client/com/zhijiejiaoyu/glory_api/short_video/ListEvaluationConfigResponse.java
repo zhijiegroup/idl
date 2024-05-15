@@ -72,6 +72,11 @@ private static final long serialVersionUID = 0L;
             list .add(s);
             break;
           }
+          case 24: {
+
+            evaluationScore = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -168,6 +173,17 @@ private static final long serialVersionUID = 0L;
     return list .getByteString(index);
   }
 
+  public static final int EVALUATION_SCORE_FIELD_NUMBER = 3;
+  private long evaluationScore ;
+  /**
+   * <code>int64 evaluation_score = 3;</code>
+   * @return The evaluationScore.
+   */
+  @java.lang.Override
+  public long getEvaluationScore() {
+    return evaluationScore ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -187,6 +203,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < list .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, list .getRaw(i));
+    }
+    if (evaluationScore != 0L) {
+      output.writeInt64(3, evaluationScore );
     }
     unknownFields.writeTo(output);
   }
@@ -208,6 +227,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getListList().size();
+    }
+    if (evaluationScore != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, evaluationScore );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,6 +254,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getListList()
         .equals(other.getListList())) return false;
+    if (getEvaluationScore()
+        != other.getEvaluationScore()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -250,6 +275,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LIST_FIELD_NUMBER;
       hash = (53 * hash) + getListList().hashCode();
     }
+    hash = (37 * hash) + EVALUATION_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationScore());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -391,6 +419,8 @@ private static final long serialVersionUID = 0L;
       }
       list = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      evaluationScore = 0L;
+
       return this;
     }
 
@@ -428,6 +458,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.list = list ;
+      result.evaluationScore = evaluationScore ;
       onBuilt();
       return result;
     }
@@ -488,6 +519,9 @@ private static final long serialVersionUID = 0L;
           list .addAll(other.list );
         }
         onChanged();
+      }
+      if (other.getEvaluationScore() != 0L) {
+        setEvaluationScore(other.getEvaluationScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -744,6 +778,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureListIsMutable();
       list .add(value);
+      onChanged();
+      return this;
+    }
+
+    private long evaluationScore ;
+    /**
+     * <code>int64 evaluation_score = 3;</code>
+     * @return The evaluationScore.
+     */
+    @java.lang.Override
+    public long getEvaluationScore() {
+      return evaluationScore ;
+    }
+    /**
+     * <code>int64 evaluation_score = 3;</code>
+     * @param value The evaluationScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationScore(long value) {
+      
+      evaluationScore = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 evaluation_score = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationScore() {
+      
+      evaluationScore = 0L;
       onChanged();
       return this;
     }

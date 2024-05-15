@@ -46,4 +46,10 @@ public interface ListEvaluationConfigResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getListBytes(int index);
+
+  /**
+   * <code>int64 evaluation_score = 3;</code>
+   * @return The evaluationScore.
+   */
+  long getEvaluationScore();
 }

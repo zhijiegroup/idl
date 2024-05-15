@@ -55,44 +55,74 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
-          case 16: {
+          case 17: {
 
-            studentCount = input.readInt64();
+            totalSpend = input.readDouble();
             break;
           }
-          case 24: {
+          case 25: {
 
-            courseCount = input.readInt64();
+            costMin = input.readDouble();
             break;
           }
-          case 32: {
+          case 33: {
 
-            dayCourseCount = input.readInt64();
+            costMax = input.readDouble();
             break;
           }
-          case 40: {
+          case 41: {
 
-            evaluationCount = input.readInt64();
+            spendPercentMin = input.readDouble();
             break;
           }
-          case 48: {
+          case 49: {
 
-            evaluationDayCount = input.readInt64();
+            spendPercentMax = input.readDouble();
             break;
           }
           case 56: {
 
-            assistantCount = input.readInt64();
+            complexUsageCount = input.readInt64();
             break;
           }
-          case 64: {
+          case 65: {
 
-            assistantDayCount = input.readInt64();
+            complexSpend = input.readDouble();
             break;
           }
           case 72: {
 
-            total = input.readInt64();
+            simpleUsageCount = input.readInt64();
+            break;
+          }
+          case 81: {
+
+            simpleSpend = input.readDouble();
+            break;
+          }
+          case 88: {
+
+            evaluationCount = input.readInt64();
+            break;
+          }
+          case 96: {
+
+            assistantCount = input.readInt64();
+            break;
+          }
+          case 104: {
+
+            assistantUsageCount = input.readInt64();
+            break;
+          }
+          case 113: {
+
+            assistantSpend = input.readDouble();
+            break;
+          }
+          case 121: {
+
+            assistantCountPercent = input.readDouble();
             break;
           }
           default: {
@@ -165,43 +195,121 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STUDENT_COUNT_FIELD_NUMBER = 2;
-  private long studentCount ;
+  public static final int TOTAL_SPEND_FIELD_NUMBER = 2;
+  private double totalSpend ;
   /**
-   * <code>int64 student_count = 2;</code>
-   * @return The studentCount.
+   * <code>double total_spend = 2;</code>
+   * @return The totalSpend.
    */
   @java.lang.Override
-  public long getStudentCount() {
-    return studentCount ;
+  public double getTotalSpend() {
+    return totalSpend ;
   }
 
-  public static final int COURSE_COUNT_FIELD_NUMBER = 3;
-  private long courseCount ;
+  public static final int COST_MIN_FIELD_NUMBER = 3;
+  private double costMin ;
   /**
-   * <code>int64 course_count = 3;</code>
-   * @return The courseCount.
+   * <code>double cost_min = 3;</code>
+   * @return The costMin.
    */
   @java.lang.Override
-  public long getCourseCount() {
-    return courseCount ;
+  public double getCostMin() {
+    return costMin ;
   }
 
-  public static final int DAY_COURSE_COUNT_FIELD_NUMBER = 4;
-  private long dayCourseCount ;
+  public static final int COST_MAX_FIELD_NUMBER = 4;
+  private double costMax ;
   /**
-   * <code>int64 day_course_count = 4;</code>
-   * @return The dayCourseCount.
+   * <code>double cost_max = 4;</code>
+   * @return The costMax.
    */
   @java.lang.Override
-  public long getDayCourseCount() {
-    return dayCourseCount ;
+  public double getCostMax() {
+    return costMax ;
   }
 
-  public static final int EVALUATION_COUNT_FIELD_NUMBER = 5;
+  public static final int SPEND_PERCENT_MIN_FIELD_NUMBER = 5;
+  private double spendPercentMin ;
+  /**
+   * <pre>
+   * 已花费百分比最低值
+   * </pre>
+   *
+   * <code>double spend_percent_min = 5;</code>
+   * @return The spendPercentMin.
+   */
+  @java.lang.Override
+  public double getSpendPercentMin() {
+    return spendPercentMin ;
+  }
+
+  public static final int SPEND_PERCENT_MAX_FIELD_NUMBER = 6;
+  private double spendPercentMax ;
+  /**
+   * <pre>
+   * 已花费百分比最高值
+   * </pre>
+   *
+   * <code>double spend_percent_max = 6;</code>
+   * @return The spendPercentMax.
+   */
+  @java.lang.Override
+  public double getSpendPercentMax() {
+    return spendPercentMax ;
+  }
+
+  public static final int COMPLEX_USAGE_COUNT_FIELD_NUMBER = 7;
+  private long complexUsageCount ;
+  /**
+   * <code>int64 complex_usage_count = 7;</code>
+   * @return The complexUsageCount.
+   */
+  @java.lang.Override
+  public long getComplexUsageCount() {
+    return complexUsageCount ;
+  }
+
+  public static final int COMPLEX_SPEND_FIELD_NUMBER = 8;
+  private double complexSpend ;
+  /**
+   * <code>double complex_spend = 8;</code>
+   * @return The complexSpend.
+   */
+  @java.lang.Override
+  public double getComplexSpend() {
+    return complexSpend ;
+  }
+
+  public static final int SIMPLE_USAGE_COUNT_FIELD_NUMBER = 9;
+  private long simpleUsageCount ;
+  /**
+   * <code>int64 simple_usage_count = 9;</code>
+   * @return The simpleUsageCount.
+   */
+  @java.lang.Override
+  public long getSimpleUsageCount() {
+    return simpleUsageCount ;
+  }
+
+  public static final int SIMPLE_SPEND_FIELD_NUMBER = 10;
+  private double simpleSpend ;
+  /**
+   * <code>double simple_spend = 10;</code>
+   * @return The simpleSpend.
+   */
+  @java.lang.Override
+  public double getSimpleSpend() {
+    return simpleSpend ;
+  }
+
+  public static final int EVALUATION_COUNT_FIELD_NUMBER = 11;
   private long evaluationCount ;
   /**
-   * <code>int64 evaluation_count = 5;</code>
+   * <pre>
+   * AI评价总次数
+   * </pre>
+   *
+   * <code>int64 evaluation_count = 11;</code>
    * @return The evaluationCount.
    */
   @java.lang.Override
@@ -209,21 +317,14 @@ private static final long serialVersionUID = 0L;
     return evaluationCount ;
   }
 
-  public static final int EVALUATION_DAY_COUNT_FIELD_NUMBER = 6;
-  private long evaluationDayCount ;
-  /**
-   * <code>int64 evaluation_day_count = 6;</code>
-   * @return The evaluationDayCount.
-   */
-  @java.lang.Override
-  public long getEvaluationDayCount() {
-    return evaluationDayCount ;
-  }
-
-  public static final int ASSISTANT_COUNT_FIELD_NUMBER = 7;
+  public static final int ASSISTANT_COUNT_FIELD_NUMBER = 12;
   private long assistantCount ;
   /**
-   * <code>int64 assistant_count = 7;</code>
+   * <pre>
+   * AI助手使用总次数
+   * </pre>
+   *
+   * <code>int64 assistant_count = 12;</code>
    * @return The assistantCount.
    */
   @java.lang.Override
@@ -231,26 +332,49 @@ private static final long serialVersionUID = 0L;
     return assistantCount ;
   }
 
-  public static final int ASSISTANT_DAY_COUNT_FIELD_NUMBER = 8;
-  private long assistantDayCount ;
+  public static final int ASSISTANT_USAGE_COUNT_FIELD_NUMBER = 13;
+  private long assistantUsageCount ;
   /**
-   * <code>int64 assistant_day_count = 8;</code>
-   * @return The assistantDayCount.
+   * <pre>
+   * AI聊天总使用次数
+   * </pre>
+   *
+   * <code>int64 assistant_usage_count = 13;</code>
+   * @return The assistantUsageCount.
    */
   @java.lang.Override
-  public long getAssistantDayCount() {
-    return assistantDayCount ;
+  public long getAssistantUsageCount() {
+    return assistantUsageCount ;
   }
 
-  public static final int TOTAL_FIELD_NUMBER = 9;
-  private long total ;
+  public static final int ASSISTANT_SPEND_FIELD_NUMBER = 14;
+  private double assistantSpend ;
   /**
-   * <code>int64 total = 9;</code>
-   * @return The total.
+   * <pre>
+   * AI聊天总花费
+   * </pre>
+   *
+   * <code>double assistant_spend = 14;</code>
+   * @return The assistantSpend.
    */
   @java.lang.Override
-  public long getTotal() {
-    return total ;
+  public double getAssistantSpend() {
+    return assistantSpend ;
+  }
+
+  public static final int ASSISTANT_COUNT_PERCENT_FIELD_NUMBER = 15;
+  private double assistantCountPercent ;
+  /**
+   * <pre>
+   * AI聊天次数使用百分比
+   * </pre>
+   *
+   * <code>double assistant_count_percent = 15;</code>
+   * @return The assistantCountPercent.
+   */
+  @java.lang.Override
+  public double getAssistantCountPercent() {
+    return assistantCountPercent ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -270,29 +394,47 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name );
     }
-    if (studentCount != 0L) {
-      output.writeInt64(2, studentCount );
+    if (totalSpend != 0D) {
+      output.writeDouble(2, totalSpend );
     }
-    if (courseCount != 0L) {
-      output.writeInt64(3, courseCount );
+    if (costMin != 0D) {
+      output.writeDouble(3, costMin );
     }
-    if (dayCourseCount != 0L) {
-      output.writeInt64(4, dayCourseCount );
+    if (costMax != 0D) {
+      output.writeDouble(4, costMax );
+    }
+    if (spendPercentMin != 0D) {
+      output.writeDouble(5, spendPercentMin );
+    }
+    if (spendPercentMax != 0D) {
+      output.writeDouble(6, spendPercentMax );
+    }
+    if (complexUsageCount != 0L) {
+      output.writeInt64(7, complexUsageCount );
+    }
+    if (complexSpend != 0D) {
+      output.writeDouble(8, complexSpend );
+    }
+    if (simpleUsageCount != 0L) {
+      output.writeInt64(9, simpleUsageCount );
+    }
+    if (simpleSpend != 0D) {
+      output.writeDouble(10, simpleSpend );
     }
     if (evaluationCount != 0L) {
-      output.writeInt64(5, evaluationCount );
-    }
-    if (evaluationDayCount != 0L) {
-      output.writeInt64(6, evaluationDayCount );
+      output.writeInt64(11, evaluationCount );
     }
     if (assistantCount != 0L) {
-      output.writeInt64(7, assistantCount );
+      output.writeInt64(12, assistantCount );
     }
-    if (assistantDayCount != 0L) {
-      output.writeInt64(8, assistantDayCount );
+    if (assistantUsageCount != 0L) {
+      output.writeInt64(13, assistantUsageCount );
     }
-    if (total != 0L) {
-      output.writeInt64(9, total );
+    if (assistantSpend != 0D) {
+      output.writeDouble(14, assistantSpend );
+    }
+    if (assistantCountPercent != 0D) {
+      output.writeDouble(15, assistantCountPercent );
     }
     unknownFields.writeTo(output);
   }
@@ -306,37 +448,61 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name );
     }
-    if (studentCount != 0L) {
+    if (totalSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, studentCount );
+        .computeDoubleSize(2, totalSpend );
     }
-    if (courseCount != 0L) {
+    if (costMin != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, courseCount );
+        .computeDoubleSize(3, costMin );
     }
-    if (dayCourseCount != 0L) {
+    if (costMax != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, dayCourseCount );
+        .computeDoubleSize(4, costMax );
+    }
+    if (spendPercentMin != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(5, spendPercentMin );
+    }
+    if (spendPercentMax != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(6, spendPercentMax );
+    }
+    if (complexUsageCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, complexUsageCount );
+    }
+    if (complexSpend != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(8, complexSpend );
+    }
+    if (simpleUsageCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(9, simpleUsageCount );
+    }
+    if (simpleSpend != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(10, simpleSpend );
     }
     if (evaluationCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, evaluationCount );
-    }
-    if (evaluationDayCount != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, evaluationDayCount );
+        .computeInt64Size(11, evaluationCount );
     }
     if (assistantCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, assistantCount );
+        .computeInt64Size(12, assistantCount );
     }
-    if (assistantDayCount != 0L) {
+    if (assistantUsageCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, assistantDayCount );
+        .computeInt64Size(13, assistantUsageCount );
     }
-    if (total != 0L) {
+    if (assistantSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, total );
+        .computeDoubleSize(14, assistantSpend );
+    }
+    if (assistantCountPercent != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(15, assistantCountPercent );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -355,22 +521,43 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getStudentCount()
-        != other.getStudentCount()) return false;
-    if (getCourseCount()
-        != other.getCourseCount()) return false;
-    if (getDayCourseCount()
-        != other.getDayCourseCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getTotalSpend())
+        != java.lang.Double.doubleToLongBits(
+            other.getTotalSpend())) return false;
+    if (java.lang.Double.doubleToLongBits(getCostMin())
+        != java.lang.Double.doubleToLongBits(
+            other.getCostMin())) return false;
+    if (java.lang.Double.doubleToLongBits(getCostMax())
+        != java.lang.Double.doubleToLongBits(
+            other.getCostMax())) return false;
+    if (java.lang.Double.doubleToLongBits(getSpendPercentMin())
+        != java.lang.Double.doubleToLongBits(
+            other.getSpendPercentMin())) return false;
+    if (java.lang.Double.doubleToLongBits(getSpendPercentMax())
+        != java.lang.Double.doubleToLongBits(
+            other.getSpendPercentMax())) return false;
+    if (getComplexUsageCount()
+        != other.getComplexUsageCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getComplexSpend())
+        != java.lang.Double.doubleToLongBits(
+            other.getComplexSpend())) return false;
+    if (getSimpleUsageCount()
+        != other.getSimpleUsageCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getSimpleSpend())
+        != java.lang.Double.doubleToLongBits(
+            other.getSimpleSpend())) return false;
     if (getEvaluationCount()
         != other.getEvaluationCount()) return false;
-    if (getEvaluationDayCount()
-        != other.getEvaluationDayCount()) return false;
     if (getAssistantCount()
         != other.getAssistantCount()) return false;
-    if (getAssistantDayCount()
-        != other.getAssistantDayCount()) return false;
-    if (getTotal()
-        != other.getTotal()) return false;
+    if (getAssistantUsageCount()
+        != other.getAssistantUsageCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getAssistantSpend())
+        != java.lang.Double.doubleToLongBits(
+            other.getAssistantSpend())) return false;
+    if (java.lang.Double.doubleToLongBits(getAssistantCountPercent())
+        != java.lang.Double.doubleToLongBits(
+            other.getAssistantCountPercent())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -384,30 +571,48 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + STUDENT_COUNT_FIELD_NUMBER;
+    hash = (37 * hash) + TOTAL_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getStudentCount());
-    hash = (37 * hash) + COURSE_COUNT_FIELD_NUMBER;
+        java.lang.Double.doubleToLongBits(getTotalSpend()));
+    hash = (37 * hash) + COST_MIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCourseCount());
-    hash = (37 * hash) + DAY_COURSE_COUNT_FIELD_NUMBER;
+        java.lang.Double.doubleToLongBits(getCostMin()));
+    hash = (37 * hash) + COST_MAX_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDayCourseCount());
+        java.lang.Double.doubleToLongBits(getCostMax()));
+    hash = (37 * hash) + SPEND_PERCENT_MIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSpendPercentMin()));
+    hash = (37 * hash) + SPEND_PERCENT_MAX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSpendPercentMax()));
+    hash = (37 * hash) + COMPLEX_USAGE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getComplexUsageCount());
+    hash = (37 * hash) + COMPLEX_SPEND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getComplexSpend()));
+    hash = (37 * hash) + SIMPLE_USAGE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSimpleUsageCount());
+    hash = (37 * hash) + SIMPLE_SPEND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSimpleSpend()));
     hash = (37 * hash) + EVALUATION_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEvaluationCount());
-    hash = (37 * hash) + EVALUATION_DAY_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getEvaluationDayCount());
     hash = (37 * hash) + ASSISTANT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAssistantCount());
-    hash = (37 * hash) + ASSISTANT_DAY_COUNT_FIELD_NUMBER;
+    hash = (37 * hash) + ASSISTANT_USAGE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAssistantDayCount());
-    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+        getAssistantUsageCount());
+    hash = (37 * hash) + ASSISTANT_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTotal());
+        java.lang.Double.doubleToLongBits(getAssistantSpend()));
+    hash = (37 * hash) + ASSISTANT_COUNT_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAssistantCountPercent()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -543,21 +748,33 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name = "";
 
-      studentCount = 0L;
+      totalSpend = 0D;
 
-      courseCount = 0L;
+      costMin = 0D;
 
-      dayCourseCount = 0L;
+      costMax = 0D;
+
+      spendPercentMin = 0D;
+
+      spendPercentMax = 0D;
+
+      complexUsageCount = 0L;
+
+      complexSpend = 0D;
+
+      simpleUsageCount = 0L;
+
+      simpleSpend = 0D;
 
       evaluationCount = 0L;
 
-      evaluationDayCount = 0L;
-
       assistantCount = 0L;
 
-      assistantDayCount = 0L;
+      assistantUsageCount = 0L;
 
-      total = 0L;
+      assistantSpend = 0D;
+
+      assistantCountPercent = 0D;
 
       return this;
     }
@@ -586,14 +803,20 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenant buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenant result = new com.zhijiejiaoyu.glory_api.short_video.GetArticleCreationTenant(this);
       result.name = name ;
-      result.studentCount = studentCount ;
-      result.courseCount = courseCount ;
-      result.dayCourseCount = dayCourseCount ;
+      result.totalSpend = totalSpend ;
+      result.costMin = costMin ;
+      result.costMax = costMax ;
+      result.spendPercentMin = spendPercentMin ;
+      result.spendPercentMax = spendPercentMax ;
+      result.complexUsageCount = complexUsageCount ;
+      result.complexSpend = complexSpend ;
+      result.simpleUsageCount = simpleUsageCount ;
+      result.simpleSpend = simpleSpend ;
       result.evaluationCount = evaluationCount ;
-      result.evaluationDayCount = evaluationDayCount ;
       result.assistantCount = assistantCount ;
-      result.assistantDayCount = assistantDayCount ;
-      result.total = total ;
+      result.assistantUsageCount = assistantUsageCount ;
+      result.assistantSpend = assistantSpend ;
+      result.assistantCountPercent = assistantCountPercent ;
       onBuilt();
       return result;
     }
@@ -646,29 +869,47 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
-      if (other.getStudentCount() != 0L) {
-        setStudentCount(other.getStudentCount());
+      if (other.getTotalSpend() != 0D) {
+        setTotalSpend(other.getTotalSpend());
       }
-      if (other.getCourseCount() != 0L) {
-        setCourseCount(other.getCourseCount());
+      if (other.getCostMin() != 0D) {
+        setCostMin(other.getCostMin());
       }
-      if (other.getDayCourseCount() != 0L) {
-        setDayCourseCount(other.getDayCourseCount());
+      if (other.getCostMax() != 0D) {
+        setCostMax(other.getCostMax());
+      }
+      if (other.getSpendPercentMin() != 0D) {
+        setSpendPercentMin(other.getSpendPercentMin());
+      }
+      if (other.getSpendPercentMax() != 0D) {
+        setSpendPercentMax(other.getSpendPercentMax());
+      }
+      if (other.getComplexUsageCount() != 0L) {
+        setComplexUsageCount(other.getComplexUsageCount());
+      }
+      if (other.getComplexSpend() != 0D) {
+        setComplexSpend(other.getComplexSpend());
+      }
+      if (other.getSimpleUsageCount() != 0L) {
+        setSimpleUsageCount(other.getSimpleUsageCount());
+      }
+      if (other.getSimpleSpend() != 0D) {
+        setSimpleSpend(other.getSimpleSpend());
       }
       if (other.getEvaluationCount() != 0L) {
         setEvaluationCount(other.getEvaluationCount());
       }
-      if (other.getEvaluationDayCount() != 0L) {
-        setEvaluationDayCount(other.getEvaluationDayCount());
-      }
       if (other.getAssistantCount() != 0L) {
         setAssistantCount(other.getAssistantCount());
       }
-      if (other.getAssistantDayCount() != 0L) {
-        setAssistantDayCount(other.getAssistantDayCount());
+      if (other.getAssistantUsageCount() != 0L) {
+        setAssistantUsageCount(other.getAssistantUsageCount());
       }
-      if (other.getTotal() != 0L) {
-        setTotal(other.getTotal());
+      if (other.getAssistantSpend() != 0D) {
+        setAssistantSpend(other.getAssistantSpend());
+      }
+      if (other.getAssistantCountPercent() != 0D) {
+        setAssistantCountPercent(other.getAssistantCountPercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -775,102 +1016,316 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long studentCount ;
+    private double totalSpend ;
     /**
-     * <code>int64 student_count = 2;</code>
-     * @return The studentCount.
+     * <code>double total_spend = 2;</code>
+     * @return The totalSpend.
      */
     @java.lang.Override
-    public long getStudentCount() {
-      return studentCount ;
+    public double getTotalSpend() {
+      return totalSpend ;
     }
     /**
-     * <code>int64 student_count = 2;</code>
-     * @param value The studentCount to set.
+     * <code>double total_spend = 2;</code>
+     * @param value The totalSpend to set.
      * @return This builder for chaining.
      */
-    public Builder setStudentCount(long value) {
+    public Builder setTotalSpend(double value) {
       
-      studentCount = value;
+      totalSpend = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 student_count = 2;</code>
+     * <code>double total_spend = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearStudentCount() {
+    public Builder clearTotalSpend() {
       
-      studentCount = 0L;
+      totalSpend = 0D;
       onChanged();
       return this;
     }
 
-    private long courseCount ;
+    private double costMin ;
     /**
-     * <code>int64 course_count = 3;</code>
-     * @return The courseCount.
+     * <code>double cost_min = 3;</code>
+     * @return The costMin.
      */
     @java.lang.Override
-    public long getCourseCount() {
-      return courseCount ;
+    public double getCostMin() {
+      return costMin ;
     }
     /**
-     * <code>int64 course_count = 3;</code>
-     * @param value The courseCount to set.
+     * <code>double cost_min = 3;</code>
+     * @param value The costMin to set.
      * @return This builder for chaining.
      */
-    public Builder setCourseCount(long value) {
+    public Builder setCostMin(double value) {
       
-      courseCount = value;
+      costMin = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 course_count = 3;</code>
+     * <code>double cost_min = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCourseCount() {
+    public Builder clearCostMin() {
       
-      courseCount = 0L;
+      costMin = 0D;
       onChanged();
       return this;
     }
 
-    private long dayCourseCount ;
+    private double costMax ;
     /**
-     * <code>int64 day_course_count = 4;</code>
-     * @return The dayCourseCount.
+     * <code>double cost_max = 4;</code>
+     * @return The costMax.
      */
     @java.lang.Override
-    public long getDayCourseCount() {
-      return dayCourseCount ;
+    public double getCostMax() {
+      return costMax ;
     }
     /**
-     * <code>int64 day_course_count = 4;</code>
-     * @param value The dayCourseCount to set.
+     * <code>double cost_max = 4;</code>
+     * @param value The costMax to set.
      * @return This builder for chaining.
      */
-    public Builder setDayCourseCount(long value) {
+    public Builder setCostMax(double value) {
       
-      dayCourseCount = value;
+      costMax = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 day_course_count = 4;</code>
+     * <code>double cost_max = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDayCourseCount() {
+    public Builder clearCostMax() {
       
-      dayCourseCount = 0L;
+      costMax = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double spendPercentMin ;
+    /**
+     * <pre>
+     * 已花费百分比最低值
+     * </pre>
+     *
+     * <code>double spend_percent_min = 5;</code>
+     * @return The spendPercentMin.
+     */
+    @java.lang.Override
+    public double getSpendPercentMin() {
+      return spendPercentMin ;
+    }
+    /**
+     * <pre>
+     * 已花费百分比最低值
+     * </pre>
+     *
+     * <code>double spend_percent_min = 5;</code>
+     * @param value The spendPercentMin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpendPercentMin(double value) {
+      
+      spendPercentMin = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 已花费百分比最低值
+     * </pre>
+     *
+     * <code>double spend_percent_min = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpendPercentMin() {
+      
+      spendPercentMin = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double spendPercentMax ;
+    /**
+     * <pre>
+     * 已花费百分比最高值
+     * </pre>
+     *
+     * <code>double spend_percent_max = 6;</code>
+     * @return The spendPercentMax.
+     */
+    @java.lang.Override
+    public double getSpendPercentMax() {
+      return spendPercentMax ;
+    }
+    /**
+     * <pre>
+     * 已花费百分比最高值
+     * </pre>
+     *
+     * <code>double spend_percent_max = 6;</code>
+     * @param value The spendPercentMax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpendPercentMax(double value) {
+      
+      spendPercentMax = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 已花费百分比最高值
+     * </pre>
+     *
+     * <code>double spend_percent_max = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpendPercentMax() {
+      
+      spendPercentMax = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long complexUsageCount ;
+    /**
+     * <code>int64 complex_usage_count = 7;</code>
+     * @return The complexUsageCount.
+     */
+    @java.lang.Override
+    public long getComplexUsageCount() {
+      return complexUsageCount ;
+    }
+    /**
+     * <code>int64 complex_usage_count = 7;</code>
+     * @param value The complexUsageCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComplexUsageCount(long value) {
+      
+      complexUsageCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 complex_usage_count = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComplexUsageCount() {
+      
+      complexUsageCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double complexSpend ;
+    /**
+     * <code>double complex_spend = 8;</code>
+     * @return The complexSpend.
+     */
+    @java.lang.Override
+    public double getComplexSpend() {
+      return complexSpend ;
+    }
+    /**
+     * <code>double complex_spend = 8;</code>
+     * @param value The complexSpend to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComplexSpend(double value) {
+      
+      complexSpend = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double complex_spend = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComplexSpend() {
+      
+      complexSpend = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long simpleUsageCount ;
+    /**
+     * <code>int64 simple_usage_count = 9;</code>
+     * @return The simpleUsageCount.
+     */
+    @java.lang.Override
+    public long getSimpleUsageCount() {
+      return simpleUsageCount ;
+    }
+    /**
+     * <code>int64 simple_usage_count = 9;</code>
+     * @param value The simpleUsageCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSimpleUsageCount(long value) {
+      
+      simpleUsageCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 simple_usage_count = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSimpleUsageCount() {
+      
+      simpleUsageCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double simpleSpend ;
+    /**
+     * <code>double simple_spend = 10;</code>
+     * @return The simpleSpend.
+     */
+    @java.lang.Override
+    public double getSimpleSpend() {
+      return simpleSpend ;
+    }
+    /**
+     * <code>double simple_spend = 10;</code>
+     * @param value The simpleSpend to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSimpleSpend(double value) {
+      
+      simpleSpend = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double simple_spend = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSimpleSpend() {
+      
+      simpleSpend = 0D;
       onChanged();
       return this;
     }
 
     private long evaluationCount ;
     /**
-     * <code>int64 evaluation_count = 5;</code>
+     * <pre>
+     * AI评价总次数
+     * </pre>
+     *
+     * <code>int64 evaluation_count = 11;</code>
      * @return The evaluationCount.
      */
     @java.lang.Override
@@ -878,7 +1333,11 @@ private static final long serialVersionUID = 0L;
       return evaluationCount ;
     }
     /**
-     * <code>int64 evaluation_count = 5;</code>
+     * <pre>
+     * AI评价总次数
+     * </pre>
+     *
+     * <code>int64 evaluation_count = 11;</code>
      * @param value The evaluationCount to set.
      * @return This builder for chaining.
      */
@@ -889,7 +1348,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 evaluation_count = 5;</code>
+     * <pre>
+     * AI评价总次数
+     * </pre>
+     *
+     * <code>int64 evaluation_count = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearEvaluationCount() {
@@ -899,40 +1362,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long evaluationDayCount ;
-    /**
-     * <code>int64 evaluation_day_count = 6;</code>
-     * @return The evaluationDayCount.
-     */
-    @java.lang.Override
-    public long getEvaluationDayCount() {
-      return evaluationDayCount ;
-    }
-    /**
-     * <code>int64 evaluation_day_count = 6;</code>
-     * @param value The evaluationDayCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluationDayCount(long value) {
-      
-      evaluationDayCount = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 evaluation_day_count = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEvaluationDayCount() {
-      
-      evaluationDayCount = 0L;
-      onChanged();
-      return this;
-    }
-
     private long assistantCount ;
     /**
-     * <code>int64 assistant_count = 7;</code>
+     * <pre>
+     * AI助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_count = 12;</code>
      * @return The assistantCount.
      */
     @java.lang.Override
@@ -940,7 +1376,11 @@ private static final long serialVersionUID = 0L;
       return assistantCount ;
     }
     /**
-     * <code>int64 assistant_count = 7;</code>
+     * <pre>
+     * AI助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_count = 12;</code>
      * @param value The assistantCount to set.
      * @return This builder for chaining.
      */
@@ -951,7 +1391,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 assistant_count = 7;</code>
+     * <pre>
+     * AI助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_count = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearAssistantCount() {
@@ -961,64 +1405,131 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long assistantDayCount ;
+    private long assistantUsageCount ;
     /**
-     * <code>int64 assistant_day_count = 8;</code>
-     * @return The assistantDayCount.
+     * <pre>
+     * AI聊天总使用次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 13;</code>
+     * @return The assistantUsageCount.
      */
     @java.lang.Override
-    public long getAssistantDayCount() {
-      return assistantDayCount ;
+    public long getAssistantUsageCount() {
+      return assistantUsageCount ;
     }
     /**
-     * <code>int64 assistant_day_count = 8;</code>
-     * @param value The assistantDayCount to set.
+     * <pre>
+     * AI聊天总使用次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 13;</code>
+     * @param value The assistantUsageCount to set.
      * @return This builder for chaining.
      */
-    public Builder setAssistantDayCount(long value) {
+    public Builder setAssistantUsageCount(long value) {
       
-      assistantDayCount = value;
+      assistantUsageCount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 assistant_day_count = 8;</code>
+     * <pre>
+     * AI聊天总使用次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 13;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAssistantDayCount() {
+    public Builder clearAssistantUsageCount() {
       
-      assistantDayCount = 0L;
+      assistantUsageCount = 0L;
       onChanged();
       return this;
     }
 
-    private long total ;
+    private double assistantSpend ;
     /**
-     * <code>int64 total = 9;</code>
-     * @return The total.
+     * <pre>
+     * AI聊天总花费
+     * </pre>
+     *
+     * <code>double assistant_spend = 14;</code>
+     * @return The assistantSpend.
      */
     @java.lang.Override
-    public long getTotal() {
-      return total ;
+    public double getAssistantSpend() {
+      return assistantSpend ;
     }
     /**
-     * <code>int64 total = 9;</code>
-     * @param value The total to set.
+     * <pre>
+     * AI聊天总花费
+     * </pre>
+     *
+     * <code>double assistant_spend = 14;</code>
+     * @param value The assistantSpend to set.
      * @return This builder for chaining.
      */
-    public Builder setTotal(long value) {
+    public Builder setAssistantSpend(double value) {
       
-      total = value;
+      assistantSpend = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 total = 9;</code>
+     * <pre>
+     * AI聊天总花费
+     * </pre>
+     *
+     * <code>double assistant_spend = 14;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotal() {
+    public Builder clearAssistantSpend() {
       
-      total = 0L;
+      assistantSpend = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double assistantCountPercent ;
+    /**
+     * <pre>
+     * AI聊天次数使用百分比
+     * </pre>
+     *
+     * <code>double assistant_count_percent = 15;</code>
+     * @return The assistantCountPercent.
+     */
+    @java.lang.Override
+    public double getAssistantCountPercent() {
+      return assistantCountPercent ;
+    }
+    /**
+     * <pre>
+     * AI聊天次数使用百分比
+     * </pre>
+     *
+     * <code>double assistant_count_percent = 15;</code>
+     * @param value The assistantCountPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssistantCountPercent(double value) {
+      
+      assistantCountPercent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * AI聊天次数使用百分比
+     * </pre>
+     *
+     * <code>double assistant_count_percent = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssistantCountPercent() {
+      
+      assistantCountPercent = 0D;
       onChanged();
       return this;
     }

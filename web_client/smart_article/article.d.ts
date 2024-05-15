@@ -198,6 +198,7 @@ export interface ListEvaluationConfigRequest {
 export interface ListEvaluationConfigResponse {
   base_resp?: base.BaseResponse;
   list?: Array<string>;
+  evaluation_score?: string;
 }
 
 /** 批量评价学生 */
@@ -510,8 +511,8 @@ export interface UpdateTenantCourseDataRequest {
   course_count?: number;
   day_course_count?: number;
   day_assistant_count?: number;
-  day_simple_count?: number;
-  day_complex_count?: number;
+  /** 每天AI评价数量 */
+  day_evaluation_count?: number;
   tenant_id?: string;
 }
 
@@ -537,14 +538,27 @@ export interface GetArticleCreationTenantRequest {
 
 export interface GetArticleCreationTenant {
   name?: string;
-  student_count?: string;
-  course_count?: string;
-  day_course_count?: string;
+  total_spend?: number;
+  cost_min?: number;
+  cost_max?: number;
+  /** 已花费百分比最低值 */
+  spend_percent_min?: number;
+  /** 已花费百分比最高值 */
+  spend_percent_max?: number;
+  complex_usage_count?: string;
+  complex_spend?: number;
+  simple_usage_count?: string;
+  simple_spend?: number;
+  /** AI评价总次数 */
   evaluation_count?: string;
-  evaluation_day_count?: string;
+  /** AI助手使用总次数 */
   assistant_count?: string;
-  assistant_day_count?: string;
-  total?: string;
+  /** AI聊天总使用次数 */
+  assistant_usage_count?: string;
+  /** AI聊天总花费 */
+  assistant_spend?: number;
+  /** AI聊天次数使用百分比 */
+  assistant_count_percent?: number;
 }
 
 export interface GetArticleCreationTenantResponse {

@@ -500,13 +500,15 @@ const ListEvaluationConfigResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'list', '3': 2, '4': 3, '5': 9, '10': 'list'},
+    {'1': 'evaluation_score', '3': 3, '4': 1, '5': 3, '10': 'evaluationScore'},
   ],
 };
 
 /// Descriptor for `ListEvaluationConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listEvaluationConfigResponseDescriptor = $convert.base64Decode(
     'ChxMaXN0RXZhbHVhdGlvbkNvbmZpZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
-    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBISCgRsaXN0GAIgAygJUgRsaXN0');
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBISCgRsaXN0GAIgAygJUgRsaXN0EikKEGV2YWx1YXRp'
+    'b25fc2NvcmUYAyABKANSD2V2YWx1YXRpb25TY29yZQ==');
 
 @$core.Deprecated('Use batchEvaluateArticleRequestDescriptor instead')
 const BatchEvaluateArticleRequest$json = {
@@ -1261,9 +1263,8 @@ const UpdateTenantCourseDataRequest$json = {
     {'1': 'course_count', '3': 3, '4': 1, '5': 5, '10': 'courseCount'},
     {'1': 'day_course_count', '3': 4, '4': 1, '5': 5, '10': 'dayCourseCount'},
     {'1': 'day_assistant_count', '3': 5, '4': 1, '5': 5, '10': 'dayAssistantCount'},
-    {'1': 'day_simple_count', '3': 6, '4': 1, '5': 5, '10': 'daySimpleCount'},
-    {'1': 'day_complex_count', '3': 7, '4': 1, '5': 5, '10': 'dayComplexCount'},
-    {'1': 'tenant_id', '3': 8, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'day_evaluation_count', '3': 6, '4': 1, '5': 5, '10': 'dayEvaluationCount'},
+    {'1': 'tenant_id', '3': 7, '4': 1, '5': 3, '10': 'tenantId'},
   ],
 };
 
@@ -1273,9 +1274,8 @@ final $typed_data.Uint8List updateTenantCourseDataRequestDescriptor = $convert.b
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIjCg1zdHVkZW50X2NvdW50GAIgASgFUgxz'
     'dHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GAMgASgFUgtjb3Vyc2VDb3VudBIoChBkYXlfY2'
     '91cnNlX2NvdW50GAQgASgFUg5kYXlDb3Vyc2VDb3VudBIuChNkYXlfYXNzaXN0YW50X2NvdW50'
-    'GAUgASgFUhFkYXlBc3Npc3RhbnRDb3VudBIoChBkYXlfc2ltcGxlX2NvdW50GAYgASgFUg5kYX'
-    'lTaW1wbGVDb3VudBIqChFkYXlfY29tcGxleF9jb3VudBgHIAEoBVIPZGF5Q29tcGxleENvdW50'
-    'EhsKCXRlbmFudF9pZBgIIAEoA1IIdGVuYW50SWQ=');
+    'GAUgASgFUhFkYXlBc3Npc3RhbnRDb3VudBIwChRkYXlfZXZhbHVhdGlvbl9jb3VudBgGIAEoBV'
+    'ISZGF5RXZhbHVhdGlvbkNvdW50EhsKCXRlbmFudF9pZBgHIAEoA1IIdGVuYW50SWQ=');
 
 @$core.Deprecated('Use updateTenantCourseDataResponseDescriptor instead')
 const UpdateTenantCourseDataResponse$json = {
@@ -1341,26 +1341,37 @@ const GetArticleCreationTenant$json = {
   '1': 'GetArticleCreationTenant',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'student_count', '3': 2, '4': 1, '5': 3, '10': 'studentCount'},
-    {'1': 'course_count', '3': 3, '4': 1, '5': 3, '10': 'courseCount'},
-    {'1': 'day_course_count', '3': 4, '4': 1, '5': 3, '10': 'dayCourseCount'},
-    {'1': 'evaluation_count', '3': 5, '4': 1, '5': 3, '10': 'evaluationCount'},
-    {'1': 'evaluation_day_count', '3': 6, '4': 1, '5': 3, '10': 'evaluationDayCount'},
-    {'1': 'assistant_count', '3': 7, '4': 1, '5': 3, '10': 'assistantCount'},
-    {'1': 'assistant_day_count', '3': 8, '4': 1, '5': 3, '10': 'assistantDayCount'},
-    {'1': 'total', '3': 9, '4': 1, '5': 3, '10': 'total'},
+    {'1': 'total_spend', '3': 2, '4': 1, '5': 1, '10': 'totalSpend'},
+    {'1': 'cost_min', '3': 3, '4': 1, '5': 1, '10': 'costMin'},
+    {'1': 'cost_max', '3': 4, '4': 1, '5': 1, '10': 'costMax'},
+    {'1': 'spend_percent_min', '3': 5, '4': 1, '5': 1, '10': 'spendPercentMin'},
+    {'1': 'spend_percent_max', '3': 6, '4': 1, '5': 1, '10': 'spendPercentMax'},
+    {'1': 'complex_usage_count', '3': 7, '4': 1, '5': 3, '10': 'complexUsageCount'},
+    {'1': 'complex_spend', '3': 8, '4': 1, '5': 1, '10': 'complexSpend'},
+    {'1': 'simple_usage_count', '3': 9, '4': 1, '5': 3, '10': 'simpleUsageCount'},
+    {'1': 'simple_spend', '3': 10, '4': 1, '5': 1, '10': 'simpleSpend'},
+    {'1': 'evaluation_count', '3': 11, '4': 1, '5': 3, '10': 'evaluationCount'},
+    {'1': 'assistant_count', '3': 12, '4': 1, '5': 3, '10': 'assistantCount'},
+    {'1': 'assistant_usage_count', '3': 13, '4': 1, '5': 3, '10': 'assistantUsageCount'},
+    {'1': 'assistant_spend', '3': 14, '4': 1, '5': 1, '10': 'assistantSpend'},
+    {'1': 'assistant_count_percent', '3': 15, '4': 1, '5': 1, '10': 'assistantCountPercent'},
   ],
 };
 
 /// Descriptor for `GetArticleCreationTenant`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getArticleCreationTenantDescriptor = $convert.base64Decode(
-    'ChhHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnQSEgoEbmFtZRgBIAEoCVIEbmFtZRIjCg1zdHVkZW'
-    '50X2NvdW50GAIgASgDUgxzdHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GAMgASgDUgtjb3Vy'
-    'c2VDb3VudBIoChBkYXlfY291cnNlX2NvdW50GAQgASgDUg5kYXlDb3Vyc2VDb3VudBIpChBldm'
-    'FsdWF0aW9uX2NvdW50GAUgASgDUg9ldmFsdWF0aW9uQ291bnQSMAoUZXZhbHVhdGlvbl9kYXlf'
-    'Y291bnQYBiABKANSEmV2YWx1YXRpb25EYXlDb3VudBInCg9hc3Npc3RhbnRfY291bnQYByABKA'
-    'NSDmFzc2lzdGFudENvdW50Ei4KE2Fzc2lzdGFudF9kYXlfY291bnQYCCABKANSEWFzc2lzdGFu'
-    'dERheUNvdW50EhQKBXRvdGFsGAkgASgDUgV0b3RhbA==');
+    'ChhHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnQSEgoEbmFtZRgBIAEoCVIEbmFtZRIfCgt0b3RhbF'
+    '9zcGVuZBgCIAEoAVIKdG90YWxTcGVuZBIZCghjb3N0X21pbhgDIAEoAVIHY29zdE1pbhIZCghj'
+    'b3N0X21heBgEIAEoAVIHY29zdE1heBIqChFzcGVuZF9wZXJjZW50X21pbhgFIAEoAVIPc3Blbm'
+    'RQZXJjZW50TWluEioKEXNwZW5kX3BlcmNlbnRfbWF4GAYgASgBUg9zcGVuZFBlcmNlbnRNYXgS'
+    'LgoTY29tcGxleF91c2FnZV9jb3VudBgHIAEoA1IRY29tcGxleFVzYWdlQ291bnQSIwoNY29tcG'
+    'xleF9zcGVuZBgIIAEoAVIMY29tcGxleFNwZW5kEiwKEnNpbXBsZV91c2FnZV9jb3VudBgJIAEo'
+    'A1IQc2ltcGxlVXNhZ2VDb3VudBIhCgxzaW1wbGVfc3BlbmQYCiABKAFSC3NpbXBsZVNwZW5kEi'
+    'kKEGV2YWx1YXRpb25fY291bnQYCyABKANSD2V2YWx1YXRpb25Db3VudBInCg9hc3Npc3RhbnRf'
+    'Y291bnQYDCABKANSDmFzc2lzdGFudENvdW50EjIKFWFzc2lzdGFudF91c2FnZV9jb3VudBgNIA'
+    'EoA1ITYXNzaXN0YW50VXNhZ2VDb3VudBInCg9hc3Npc3RhbnRfc3BlbmQYDiABKAFSDmFzc2lz'
+    'dGFudFNwZW5kEjYKF2Fzc2lzdGFudF9jb3VudF9wZXJjZW50GA8gASgBUhVhc3Npc3RhbnRDb3'
+    'VudFBlcmNlbnQ=');
 
 @$core.Deprecated('Use getArticleCreationTenantResponseDescriptor instead')
 const GetArticleCreationTenantResponse$json = {
