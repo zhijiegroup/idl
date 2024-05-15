@@ -266,6 +266,7 @@ const GetStudentTaskResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'student_task', '3': 2, '4': 1, '5': 11, '6': '.glory_api.StudentTask', '10': 'studentTask'},
+    {'1': 'room_id', '3': 3, '4': 1, '5': 3, '10': 'roomId'},
   ],
 };
 
@@ -273,7 +274,7 @@ const GetStudentTaskResponse$json = {
 final $typed_data.Uint8List getStudentTaskResponseDescriptor = $convert.base64Decode(
     'ChZHZXRTdHVkZW50VGFza1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZV'
     'Jlc3BvbnNlUghiYXNlUmVzcBI5CgxzdHVkZW50X3Rhc2sYAiABKAsyFi5nbG9yeV9hcGkuU3R1'
-    'ZGVudFRhc2tSC3N0dWRlbnRUYXNr');
+    'ZGVudFRhc2tSC3N0dWRlbnRUYXNrEhcKB3Jvb21faWQYAyABKANSBnJvb21JZA==');
 
 @$core.Deprecated('Use teacherListStudentTaskRequestDescriptor instead')
 const TeacherListStudentTaskRequest$json = {

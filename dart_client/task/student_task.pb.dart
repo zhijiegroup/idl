@@ -1306,6 +1306,7 @@ class GetStudentTaskResponse extends $pb.GeneratedMessage {
   factory GetStudentTaskResponse({
     $2.BaseResponse? baseResp,
     StudentTask? studentTask,
+    $fixnum.Int64? roomId,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1313,6 +1314,9 @@ class GetStudentTaskResponse extends $pb.GeneratedMessage {
     }
     if (studentTask != null) {
       $result.studentTask = studentTask;
+    }
+    if (roomId != null) {
+      $result.roomId = roomId;
     }
     return $result;
   }
@@ -1323,6 +1327,7 @@ class GetStudentTaskResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStudentTaskResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$2.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $2.BaseResponse.create)
     ..aOM<StudentTask>(2, _omitFieldNames ? '' : 'studentTask', subBuilder: StudentTask.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'roomId')
     ..hasRequiredFields = false
   ;
 
@@ -1368,6 +1373,15 @@ class GetStudentTaskResponse extends $pb.GeneratedMessage {
   void clearStudentTask() => clearField(2);
   @$pb.TagNumber(2)
   StudentTask ensureStudentTask() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get roomId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set roomId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRoomId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomId() => clearField(3);
 }
 
 class TeacherListStudentTaskRequest extends $pb.GeneratedMessage {

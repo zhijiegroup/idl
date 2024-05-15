@@ -138,6 +138,7 @@ export interface GetStudentTaskRequest {
 export interface GetStudentTaskResponse {
   base_resp?: base.BaseResponse;
   student_task?: StudentTask;
+  room_id?: string;
 }
 
 export interface TeacherListStudentTaskRequest {

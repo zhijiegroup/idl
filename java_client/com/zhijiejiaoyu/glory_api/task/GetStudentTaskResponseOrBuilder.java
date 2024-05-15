@@ -36,4 +36,10 @@ public interface GetStudentTaskResponseOrBuilder extends
    * <code>.glory_api.StudentTask student_task = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.task.StudentTaskOrBuilder getStudentTaskOrBuilder();
+
+  /**
+   * <code>int64 room_id = 3;</code>
+   * @return The roomId.
+   */
+  long getRoomId();
 }

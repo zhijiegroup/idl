@@ -480,6 +480,8 @@ struct GloryApi_GetStudentTaskResponse {
   /// Clears the value of `studentTask`. Subsequent reads from it will return its default value.
   mutating func clearStudentTask() {self._studentTask = nil}
 
+  var roomID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1642,6 +1644,7 @@ extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "student_task"),
+    3: .standard(proto: "room_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1652,6 +1655,7 @@ extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._studentTask) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.roomID) }()
       default: break
       }
     }
@@ -1668,12 +1672,16 @@ extension GloryApi_GetStudentTaskResponse: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._studentTask {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    if self.roomID != 0 {
+      try visitor.visitSingularInt64Field(value: self.roomID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetStudentTaskResponse, rhs: GloryApi_GetStudentTaskResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._studentTask != rhs._studentTask {return false}
+    if lhs.roomID != rhs.roomID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
