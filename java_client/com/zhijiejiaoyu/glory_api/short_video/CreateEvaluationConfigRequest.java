@@ -84,6 +84,11 @@ private static final long serialVersionUID = 0L;
             personalContent .add(s);
             break;
           }
+          case 40: {
+
+            evaluationScore = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -229,6 +234,17 @@ private static final long serialVersionUID = 0L;
     return personalContent .getByteString(index);
   }
 
+  public static final int EVALUATION_SCORE_FIELD_NUMBER = 5;
+  private long evaluationScore ;
+  /**
+   * <code>int64 evaluation_score = 5;</code>
+   * @return The evaluationScore.
+   */
+  @java.lang.Override
+  public long getEvaluationScore() {
+    return evaluationScore ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -254,6 +270,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < personalContent .size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, personalContent .getRaw(i));
+    }
+    if (evaluationScore != 0L) {
+      output.writeInt64(5, evaluationScore );
     }
     unknownFields.writeTo(output);
   }
@@ -283,6 +302,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getPersonalContentList().size();
     }
+    if (evaluationScore != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, evaluationScore );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -309,6 +332,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSystemContent())) return false;
     if (!getPersonalContentList()
         .equals(other.getPersonalContentList())) return false;
+    if (getEvaluationScore()
+        != other.getEvaluationScore()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -333,6 +358,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PERSONAL_CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalContentList().hashCode();
     }
+    hash = (37 * hash) + EVALUATION_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationScore());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,6 +506,8 @@ private static final long serialVersionUID = 0L;
 
       personalContent = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
+      evaluationScore = 0L;
+
       return this;
     }
 
@@ -517,6 +547,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.personalContent = personalContent ;
+      result.evaluationScore = evaluationScore ;
       onBuilt();
       return result;
     }
@@ -584,6 +615,9 @@ private static final long serialVersionUID = 0L;
           personalContent .addAll(other.personalContent );
         }
         onChanged();
+      }
+      if (other.getEvaluationScore() != 0L) {
+        setEvaluationScore(other.getEvaluationScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -947,6 +981,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensurePersonalContentIsMutable();
       personalContent .add(value);
+      onChanged();
+      return this;
+    }
+
+    private long evaluationScore ;
+    /**
+     * <code>int64 evaluation_score = 5;</code>
+     * @return The evaluationScore.
+     */
+    @java.lang.Override
+    public long getEvaluationScore() {
+      return evaluationScore ;
+    }
+    /**
+     * <code>int64 evaluation_score = 5;</code>
+     * @param value The evaluationScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationScore(long value) {
+      
+      evaluationScore = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 evaluation_score = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationScore() {
+      
+      evaluationScore = 0L;
       onChanged();
       return this;
     }

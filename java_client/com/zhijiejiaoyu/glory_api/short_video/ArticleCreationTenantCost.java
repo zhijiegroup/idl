@@ -55,59 +55,49 @@ private static final long serialVersionUID = 0L;
             name = s;
             break;
           }
-          case 17: {
-
-            totalCostPercent = input.readDouble();
-            break;
-          }
-          case 25: {
-
-            totalCost = input.readDouble();
-            break;
-          }
           case 33: {
+
+            totalCostMin = input.readDouble();
+            break;
+          }
+          case 41: {
+
+            totalCostMax = input.readDouble();
+            break;
+          }
+          case 49: {
 
             totalSpend = input.readDouble();
             break;
           }
-          case 40: {
+          case 57: {
 
-            complexCount = input.readInt64();
+            spendPercentMin = input.readDouble();
             break;
           }
-          case 48: {
+          case 65: {
 
-            complexUsageCount = input.readInt64();
-            break;
-          }
-          case 56: {
-
-            simpleCount = input.readInt64();
-            break;
-          }
-          case 64: {
-
-            simpleUsageCount = input.readInt64();
+            spendPercentMax = input.readDouble();
             break;
           }
           case 72: {
 
-            assistantCount = input.readInt64();
+            complexUsageCount = input.readInt64();
             break;
           }
           case 80: {
 
+            simpleUsageCount = input.readInt64();
+            break;
+          }
+          case 88: {
+
+            assistantCount = input.readInt64();
+            break;
+          }
+          case 96: {
+
             assistantUsageCount = input.readInt64();
-            break;
-          }
-          case 89: {
-
-            complexCostPercent = input.readDouble();
-            break;
-          }
-          case 97: {
-
-            complexCost = input.readDouble();
             break;
           }
           case 105: {
@@ -117,32 +107,22 @@ private static final long serialVersionUID = 0L;
           }
           case 113: {
 
-            simpleCostPercent = input.readDouble();
+            simpleSpend = input.readDouble();
             break;
           }
           case 121: {
 
-            simpleCost = input.readDouble();
+            assistantSpend = input.readDouble();
             break;
           }
           case 129: {
 
-            simpleSpend = input.readDouble();
+            assistantCost = input.readDouble();
             break;
           }
           case 137: {
 
-            assistantCostPercent = input.readDouble();
-            break;
-          }
-          case 145: {
-
-            assistantCost = input.readDouble();
-            break;
-          }
-          case 153: {
-
-            assistantSpend = input.readDouble();
+            assistantUsagePercent = input.readDouble();
             break;
           }
           default: {
@@ -215,40 +195,45 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TOTAL_COST_PERCENT_FIELD_NUMBER = 2;
-  private double totalCostPercent ;
-  /**
-   * <code>double total_cost_percent = 2;</code>
-   * @return The totalCostPercent.
-   */
-  @java.lang.Override
-  public double getTotalCostPercent() {
-    return totalCostPercent ;
-  }
-
-  public static final int TOTAL_COST_FIELD_NUMBER = 3;
-  private double totalCost ;
+  public static final int TOTAL_COST_MIN_FIELD_NUMBER = 4;
+  private double totalCostMin ;
   /**
    * <pre>
-   * 总成本
+   * double total_cost_percent_min = 2;
+   * double total_cost_percent_max = 3;
    * </pre>
    *
-   * <code>double total_cost = 3;</code>
-   * @return The totalCost.
+   * <code>double total_cost_min = 4;</code>
+   * @return The totalCostMin.
    */
   @java.lang.Override
-  public double getTotalCost() {
-    return totalCost ;
+  public double getTotalCostMin() {
+    return totalCostMin ;
   }
 
-  public static final int TOTAL_SPEND_FIELD_NUMBER = 4;
+  public static final int TOTAL_COST_MAX_FIELD_NUMBER = 5;
+  private double totalCostMax ;
+  /**
+   * <pre>
+   * 总成本2
+   * </pre>
+   *
+   * <code>double total_cost_max = 5;</code>
+   * @return The totalCostMax.
+   */
+  @java.lang.Override
+  public double getTotalCostMax() {
+    return totalCostMax ;
+  }
+
+  public static final int TOTAL_SPEND_FIELD_NUMBER = 6;
   private double totalSpend ;
   /**
    * <pre>
-   * 总花费
+   * 实际总花费
    * </pre>
    *
-   * <code>double total_spend = 4;</code>
+   * <code>double total_spend = 6;</code>
    * @return The totalSpend.
    */
   @java.lang.Override
@@ -256,21 +241,40 @@ private static final long serialVersionUID = 0L;
     return totalSpend ;
   }
 
-  public static final int COMPLEX_COUNT_FIELD_NUMBER = 5;
-  private long complexCount ;
+  public static final int SPEND_PERCENT_MIN_FIELD_NUMBER = 7;
+  private double spendPercentMin ;
   /**
-   * <code>int64 complex_count = 5;</code>
-   * @return The complexCount.
+   * <pre>
+   * 已消费最低百分比
+   * </pre>
+   *
+   * <code>double spend_percent_min = 7;</code>
+   * @return The spendPercentMin.
    */
   @java.lang.Override
-  public long getComplexCount() {
-    return complexCount ;
+  public double getSpendPercentMin() {
+    return spendPercentMin ;
   }
 
-  public static final int COMPLEX_USAGE_COUNT_FIELD_NUMBER = 6;
+  public static final int SPEND_PERCENT_MAX_FIELD_NUMBER = 8;
+  private double spendPercentMax ;
+  /**
+   * <pre>
+   * 已消费最高百分比
+   * </pre>
+   *
+   * <code>double spend_percent_max = 8;</code>
+   * @return The spendPercentMax.
+   */
+  @java.lang.Override
+  public double getSpendPercentMax() {
+    return spendPercentMax ;
+  }
+
+  public static final int COMPLEX_USAGE_COUNT_FIELD_NUMBER = 9;
   private long complexUsageCount ;
   /**
-   * <code>int64 complex_usage_count = 6;</code>
+   * <code>int64 complex_usage_count = 9;</code>
    * @return The complexUsageCount.
    */
   @java.lang.Override
@@ -278,21 +282,10 @@ private static final long serialVersionUID = 0L;
     return complexUsageCount ;
   }
 
-  public static final int SIMPLE_COUNT_FIELD_NUMBER = 7;
-  private long simpleCount ;
-  /**
-   * <code>int64 simple_count = 7;</code>
-   * @return The simpleCount.
-   */
-  @java.lang.Override
-  public long getSimpleCount() {
-    return simpleCount ;
-  }
-
-  public static final int SIMPLE_USAGE_COUNT_FIELD_NUMBER = 8;
+  public static final int SIMPLE_USAGE_COUNT_FIELD_NUMBER = 10;
   private long simpleUsageCount ;
   /**
-   * <code>int64 simple_usage_count = 8;</code>
+   * <code>int64 simple_usage_count = 10;</code>
    * @return The simpleUsageCount.
    */
   @java.lang.Override
@@ -300,10 +293,10 @@ private static final long serialVersionUID = 0L;
     return simpleUsageCount ;
   }
 
-  public static final int ASSISTANT_COUNT_FIELD_NUMBER = 9;
+  public static final int ASSISTANT_COUNT_FIELD_NUMBER = 11;
   private long assistantCount ;
   /**
-   * <code>int64 assistant_count = 9;</code>
+   * <code>int64 assistant_count = 11;</code>
    * @return The assistantCount.
    */
   @java.lang.Override
@@ -311,45 +304,19 @@ private static final long serialVersionUID = 0L;
     return assistantCount ;
   }
 
-  public static final int ASSISTANT_USAGE_COUNT_FIELD_NUMBER = 10;
+  public static final int ASSISTANT_USAGE_COUNT_FIELD_NUMBER = 12;
   private long assistantUsageCount ;
   /**
-   * <code>int64 assistant_usage_count = 10;</code>
+   * <pre>
+   * ai助手使用总次数
+   * </pre>
+   *
+   * <code>int64 assistant_usage_count = 12;</code>
    * @return The assistantUsageCount.
    */
   @java.lang.Override
   public long getAssistantUsageCount() {
     return assistantUsageCount ;
-  }
-
-  public static final int COMPLEX_COST_PERCENT_FIELD_NUMBER = 11;
-  private double complexCostPercent ;
-  /**
-   * <pre>
-   * 复杂评价花费百分比
-   * </pre>
-   *
-   * <code>double complex_cost_percent = 11;</code>
-   * @return The complexCostPercent.
-   */
-  @java.lang.Override
-  public double getComplexCostPercent() {
-    return complexCostPercent ;
-  }
-
-  public static final int COMPLEX_COST_FIELD_NUMBER = 12;
-  private double complexCost ;
-  /**
-   * <pre>
-   * 复杂评价总成本
-   * </pre>
-   *
-   * <code>double complex_cost = 12;</code>
-   * @return The complexCost.
-   */
-  @java.lang.Override
-  public double getComplexCost() {
-    return complexCost ;
   }
 
   public static final int COMPLEX_SPEND_FIELD_NUMBER = 13;
@@ -367,44 +334,14 @@ private static final long serialVersionUID = 0L;
     return complexSpend ;
   }
 
-  public static final int SIMPLE_COST_PERCENT_FIELD_NUMBER = 14;
-  private double simpleCostPercent ;
-  /**
-   * <pre>
-   * 简单评价花费百分比
-   * </pre>
-   *
-   * <code>double simple_cost_percent = 14;</code>
-   * @return The simpleCostPercent.
-   */
-  @java.lang.Override
-  public double getSimpleCostPercent() {
-    return simpleCostPercent ;
-  }
-
-  public static final int SIMPLE_COST_FIELD_NUMBER = 15;
-  private double simpleCost ;
-  /**
-   * <pre>
-   * 简单评价总成本
-   * </pre>
-   *
-   * <code>double simple_cost = 15;</code>
-   * @return The simpleCost.
-   */
-  @java.lang.Override
-  public double getSimpleCost() {
-    return simpleCost ;
-  }
-
-  public static final int SIMPLE_SPEND_FIELD_NUMBER = 16;
+  public static final int SIMPLE_SPEND_FIELD_NUMBER = 14;
   private double simpleSpend ;
   /**
    * <pre>
    * 简单评价总花费
    * </pre>
    *
-   * <code>double simple_spend = 16;</code>
+   * <code>double simple_spend = 14;</code>
    * @return The simpleSpend.
    */
   @java.lang.Override
@@ -412,29 +349,29 @@ private static final long serialVersionUID = 0L;
     return simpleSpend ;
   }
 
-  public static final int ASSISTANT_COST_PERCENT_FIELD_NUMBER = 17;
-  private double assistantCostPercent ;
+  public static final int ASSISTANT_SPEND_FIELD_NUMBER = 15;
+  private double assistantSpend ;
   /**
    * <pre>
-   * ai助手花费百分比
+   * ai助手总花费
    * </pre>
    *
-   * <code>double assistant_cost_percent = 17;</code>
-   * @return The assistantCostPercent.
+   * <code>double assistant_spend = 15;</code>
+   * @return The assistantSpend.
    */
   @java.lang.Override
-  public double getAssistantCostPercent() {
-    return assistantCostPercent ;
+  public double getAssistantSpend() {
+    return assistantSpend ;
   }
 
-  public static final int ASSISTANT_COST_FIELD_NUMBER = 18;
+  public static final int ASSISTANT_COST_FIELD_NUMBER = 16;
   private double assistantCost ;
   /**
    * <pre>
-   * ai助手总成本
+   * ai聊天总成本
    * </pre>
    *
-   * <code>double assistant_cost = 18;</code>
+   * <code>double assistant_cost = 16;</code>
    * @return The assistantCost.
    */
   @java.lang.Override
@@ -442,19 +379,19 @@ private static final long serialVersionUID = 0L;
     return assistantCost ;
   }
 
-  public static final int ASSISTANT_SPEND_FIELD_NUMBER = 19;
-  private double assistantSpend ;
+  public static final int ASSISTANT_USAGE_PERCENT_FIELD_NUMBER = 17;
+  private double assistantUsagePercent ;
   /**
    * <pre>
-   * ai助手总花费
+   * ai聊天使用百分比
    * </pre>
    *
-   * <code>double assistant_spend = 19;</code>
-   * @return The assistantSpend.
+   * <code>double assistant_usage_percent = 17;</code>
+   * @return The assistantUsagePercent.
    */
   @java.lang.Override
-  public double getAssistantSpend() {
-    return assistantSpend ;
+  public double getAssistantUsagePercent() {
+    return assistantUsagePercent ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -474,59 +411,47 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name );
     }
-    if (totalCostPercent != 0D) {
-      output.writeDouble(2, totalCostPercent );
+    if (totalCostMin != 0D) {
+      output.writeDouble(4, totalCostMin );
     }
-    if (totalCost != 0D) {
-      output.writeDouble(3, totalCost );
+    if (totalCostMax != 0D) {
+      output.writeDouble(5, totalCostMax );
     }
     if (totalSpend != 0D) {
-      output.writeDouble(4, totalSpend );
+      output.writeDouble(6, totalSpend );
     }
-    if (complexCount != 0L) {
-      output.writeInt64(5, complexCount );
+    if (spendPercentMin != 0D) {
+      output.writeDouble(7, spendPercentMin );
+    }
+    if (spendPercentMax != 0D) {
+      output.writeDouble(8, spendPercentMax );
     }
     if (complexUsageCount != 0L) {
-      output.writeInt64(6, complexUsageCount );
-    }
-    if (simpleCount != 0L) {
-      output.writeInt64(7, simpleCount );
+      output.writeInt64(9, complexUsageCount );
     }
     if (simpleUsageCount != 0L) {
-      output.writeInt64(8, simpleUsageCount );
+      output.writeInt64(10, simpleUsageCount );
     }
     if (assistantCount != 0L) {
-      output.writeInt64(9, assistantCount );
+      output.writeInt64(11, assistantCount );
     }
     if (assistantUsageCount != 0L) {
-      output.writeInt64(10, assistantUsageCount );
-    }
-    if (complexCostPercent != 0D) {
-      output.writeDouble(11, complexCostPercent );
-    }
-    if (complexCost != 0D) {
-      output.writeDouble(12, complexCost );
+      output.writeInt64(12, assistantUsageCount );
     }
     if (complexSpend != 0D) {
       output.writeDouble(13, complexSpend );
     }
-    if (simpleCostPercent != 0D) {
-      output.writeDouble(14, simpleCostPercent );
-    }
-    if (simpleCost != 0D) {
-      output.writeDouble(15, simpleCost );
-    }
     if (simpleSpend != 0D) {
-      output.writeDouble(16, simpleSpend );
-    }
-    if (assistantCostPercent != 0D) {
-      output.writeDouble(17, assistantCostPercent );
-    }
-    if (assistantCost != 0D) {
-      output.writeDouble(18, assistantCost );
+      output.writeDouble(14, simpleSpend );
     }
     if (assistantSpend != 0D) {
-      output.writeDouble(19, assistantSpend );
+      output.writeDouble(15, assistantSpend );
+    }
+    if (assistantCost != 0D) {
+      output.writeDouble(16, assistantCost );
+    }
+    if (assistantUsagePercent != 0D) {
+      output.writeDouble(17, assistantUsagePercent );
     }
     unknownFields.writeTo(output);
   }
@@ -540,77 +465,61 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name );
     }
-    if (totalCostPercent != 0D) {
+    if (totalCostMin != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, totalCostPercent );
+        .computeDoubleSize(4, totalCostMin );
     }
-    if (totalCost != 0D) {
+    if (totalCostMax != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, totalCost );
+        .computeDoubleSize(5, totalCostMax );
     }
     if (totalSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(4, totalSpend );
+        .computeDoubleSize(6, totalSpend );
     }
-    if (complexCount != 0L) {
+    if (spendPercentMin != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, complexCount );
+        .computeDoubleSize(7, spendPercentMin );
+    }
+    if (spendPercentMax != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(8, spendPercentMax );
     }
     if (complexUsageCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, complexUsageCount );
-    }
-    if (simpleCount != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, simpleCount );
+        .computeInt64Size(9, complexUsageCount );
     }
     if (simpleUsageCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, simpleUsageCount );
+        .computeInt64Size(10, simpleUsageCount );
     }
     if (assistantCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(9, assistantCount );
+        .computeInt64Size(11, assistantCount );
     }
     if (assistantUsageCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(10, assistantUsageCount );
-    }
-    if (complexCostPercent != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(11, complexCostPercent );
-    }
-    if (complexCost != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(12, complexCost );
+        .computeInt64Size(12, assistantUsageCount );
     }
     if (complexSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(13, complexSpend );
     }
-    if (simpleCostPercent != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(14, simpleCostPercent );
-    }
-    if (simpleCost != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(15, simpleCost );
-    }
     if (simpleSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(16, simpleSpend );
-    }
-    if (assistantCostPercent != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(17, assistantCostPercent );
-    }
-    if (assistantCost != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(18, assistantCost );
+        .computeDoubleSize(14, simpleSpend );
     }
     if (assistantSpend != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(19, assistantSpend );
+        .computeDoubleSize(15, assistantSpend );
+    }
+    if (assistantCost != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(16, assistantCost );
+    }
+    if (assistantUsagePercent != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(17, assistantUsagePercent );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -629,54 +538,44 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (java.lang.Double.doubleToLongBits(getTotalCostPercent())
+    if (java.lang.Double.doubleToLongBits(getTotalCostMin())
         != java.lang.Double.doubleToLongBits(
-            other.getTotalCostPercent())) return false;
-    if (java.lang.Double.doubleToLongBits(getTotalCost())
+            other.getTotalCostMin())) return false;
+    if (java.lang.Double.doubleToLongBits(getTotalCostMax())
         != java.lang.Double.doubleToLongBits(
-            other.getTotalCost())) return false;
+            other.getTotalCostMax())) return false;
     if (java.lang.Double.doubleToLongBits(getTotalSpend())
         != java.lang.Double.doubleToLongBits(
             other.getTotalSpend())) return false;
-    if (getComplexCount()
-        != other.getComplexCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getSpendPercentMin())
+        != java.lang.Double.doubleToLongBits(
+            other.getSpendPercentMin())) return false;
+    if (java.lang.Double.doubleToLongBits(getSpendPercentMax())
+        != java.lang.Double.doubleToLongBits(
+            other.getSpendPercentMax())) return false;
     if (getComplexUsageCount()
         != other.getComplexUsageCount()) return false;
-    if (getSimpleCount()
-        != other.getSimpleCount()) return false;
     if (getSimpleUsageCount()
         != other.getSimpleUsageCount()) return false;
     if (getAssistantCount()
         != other.getAssistantCount()) return false;
     if (getAssistantUsageCount()
         != other.getAssistantUsageCount()) return false;
-    if (java.lang.Double.doubleToLongBits(getComplexCostPercent())
-        != java.lang.Double.doubleToLongBits(
-            other.getComplexCostPercent())) return false;
-    if (java.lang.Double.doubleToLongBits(getComplexCost())
-        != java.lang.Double.doubleToLongBits(
-            other.getComplexCost())) return false;
     if (java.lang.Double.doubleToLongBits(getComplexSpend())
         != java.lang.Double.doubleToLongBits(
             other.getComplexSpend())) return false;
-    if (java.lang.Double.doubleToLongBits(getSimpleCostPercent())
-        != java.lang.Double.doubleToLongBits(
-            other.getSimpleCostPercent())) return false;
-    if (java.lang.Double.doubleToLongBits(getSimpleCost())
-        != java.lang.Double.doubleToLongBits(
-            other.getSimpleCost())) return false;
     if (java.lang.Double.doubleToLongBits(getSimpleSpend())
         != java.lang.Double.doubleToLongBits(
             other.getSimpleSpend())) return false;
-    if (java.lang.Double.doubleToLongBits(getAssistantCostPercent())
-        != java.lang.Double.doubleToLongBits(
-            other.getAssistantCostPercent())) return false;
-    if (java.lang.Double.doubleToLongBits(getAssistantCost())
-        != java.lang.Double.doubleToLongBits(
-            other.getAssistantCost())) return false;
     if (java.lang.Double.doubleToLongBits(getAssistantSpend())
         != java.lang.Double.doubleToLongBits(
             other.getAssistantSpend())) return false;
+    if (java.lang.Double.doubleToLongBits(getAssistantCost())
+        != java.lang.Double.doubleToLongBits(
+            other.getAssistantCost())) return false;
+    if (java.lang.Double.doubleToLongBits(getAssistantUsagePercent())
+        != java.lang.Double.doubleToLongBits(
+            other.getAssistantUsagePercent())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -690,24 +589,24 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TOTAL_COST_PERCENT_FIELD_NUMBER;
+    hash = (37 * hash) + TOTAL_COST_MIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getTotalCostPercent()));
-    hash = (37 * hash) + TOTAL_COST_FIELD_NUMBER;
+        java.lang.Double.doubleToLongBits(getTotalCostMin()));
+    hash = (37 * hash) + TOTAL_COST_MAX_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getTotalCost()));
+        java.lang.Double.doubleToLongBits(getTotalCostMax()));
     hash = (37 * hash) + TOTAL_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getTotalSpend()));
-    hash = (37 * hash) + COMPLEX_COUNT_FIELD_NUMBER;
+    hash = (37 * hash) + SPEND_PERCENT_MIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getComplexCount());
+        java.lang.Double.doubleToLongBits(getSpendPercentMin()));
+    hash = (37 * hash) + SPEND_PERCENT_MAX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getSpendPercentMax()));
     hash = (37 * hash) + COMPLEX_USAGE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getComplexUsageCount());
-    hash = (37 * hash) + SIMPLE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSimpleCount());
     hash = (37 * hash) + SIMPLE_USAGE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getSimpleUsageCount());
@@ -717,33 +616,21 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ASSISTANT_USAGE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAssistantUsageCount());
-    hash = (37 * hash) + COMPLEX_COST_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getComplexCostPercent()));
-    hash = (37 * hash) + COMPLEX_COST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getComplexCost()));
     hash = (37 * hash) + COMPLEX_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getComplexSpend()));
-    hash = (37 * hash) + SIMPLE_COST_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getSimpleCostPercent()));
-    hash = (37 * hash) + SIMPLE_COST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getSimpleCost()));
     hash = (37 * hash) + SIMPLE_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getSimpleSpend()));
-    hash = (37 * hash) + ASSISTANT_COST_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getAssistantCostPercent()));
-    hash = (37 * hash) + ASSISTANT_COST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getAssistantCost()));
     hash = (37 * hash) + ASSISTANT_SPEND_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getAssistantSpend()));
+    hash = (37 * hash) + ASSISTANT_COST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAssistantCost()));
+    hash = (37 * hash) + ASSISTANT_USAGE_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getAssistantUsagePercent()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -879,17 +766,17 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name = "";
 
-      totalCostPercent = 0D;
+      totalCostMin = 0D;
 
-      totalCost = 0D;
+      totalCostMax = 0D;
 
       totalSpend = 0D;
 
-      complexCount = 0L;
+      spendPercentMin = 0D;
+
+      spendPercentMax = 0D;
 
       complexUsageCount = 0L;
-
-      simpleCount = 0L;
 
       simpleUsageCount = 0L;
 
@@ -897,23 +784,15 @@ private static final long serialVersionUID = 0L;
 
       assistantUsageCount = 0L;
 
-      complexCostPercent = 0D;
-
-      complexCost = 0D;
-
       complexSpend = 0D;
-
-      simpleCostPercent = 0D;
-
-      simpleCost = 0D;
 
       simpleSpend = 0D;
 
-      assistantCostPercent = 0D;
+      assistantSpend = 0D;
 
       assistantCost = 0D;
 
-      assistantSpend = 0D;
+      assistantUsagePercent = 0D;
 
       return this;
     }
@@ -942,24 +821,20 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.short_video.ArticleCreationTenantCost buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ArticleCreationTenantCost result = new com.zhijiejiaoyu.glory_api.short_video.ArticleCreationTenantCost(this);
       result.name = name ;
-      result.totalCostPercent = totalCostPercent ;
-      result.totalCost = totalCost ;
+      result.totalCostMin = totalCostMin ;
+      result.totalCostMax = totalCostMax ;
       result.totalSpend = totalSpend ;
-      result.complexCount = complexCount ;
+      result.spendPercentMin = spendPercentMin ;
+      result.spendPercentMax = spendPercentMax ;
       result.complexUsageCount = complexUsageCount ;
-      result.simpleCount = simpleCount ;
       result.simpleUsageCount = simpleUsageCount ;
       result.assistantCount = assistantCount ;
       result.assistantUsageCount = assistantUsageCount ;
-      result.complexCostPercent = complexCostPercent ;
-      result.complexCost = complexCost ;
       result.complexSpend = complexSpend ;
-      result.simpleCostPercent = simpleCostPercent ;
-      result.simpleCost = simpleCost ;
       result.simpleSpend = simpleSpend ;
-      result.assistantCostPercent = assistantCostPercent ;
-      result.assistantCost = assistantCost ;
       result.assistantSpend = assistantSpend ;
+      result.assistantCost = assistantCost ;
+      result.assistantUsagePercent = assistantUsagePercent ;
       onBuilt();
       return result;
     }
@@ -1012,23 +887,23 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
-      if (other.getTotalCostPercent() != 0D) {
-        setTotalCostPercent(other.getTotalCostPercent());
+      if (other.getTotalCostMin() != 0D) {
+        setTotalCostMin(other.getTotalCostMin());
       }
-      if (other.getTotalCost() != 0D) {
-        setTotalCost(other.getTotalCost());
+      if (other.getTotalCostMax() != 0D) {
+        setTotalCostMax(other.getTotalCostMax());
       }
       if (other.getTotalSpend() != 0D) {
         setTotalSpend(other.getTotalSpend());
       }
-      if (other.getComplexCount() != 0L) {
-        setComplexCount(other.getComplexCount());
+      if (other.getSpendPercentMin() != 0D) {
+        setSpendPercentMin(other.getSpendPercentMin());
+      }
+      if (other.getSpendPercentMax() != 0D) {
+        setSpendPercentMax(other.getSpendPercentMax());
       }
       if (other.getComplexUsageCount() != 0L) {
         setComplexUsageCount(other.getComplexUsageCount());
-      }
-      if (other.getSimpleCount() != 0L) {
-        setSimpleCount(other.getSimpleCount());
       }
       if (other.getSimpleUsageCount() != 0L) {
         setSimpleUsageCount(other.getSimpleUsageCount());
@@ -1039,32 +914,20 @@ private static final long serialVersionUID = 0L;
       if (other.getAssistantUsageCount() != 0L) {
         setAssistantUsageCount(other.getAssistantUsageCount());
       }
-      if (other.getComplexCostPercent() != 0D) {
-        setComplexCostPercent(other.getComplexCostPercent());
-      }
-      if (other.getComplexCost() != 0D) {
-        setComplexCost(other.getComplexCost());
-      }
       if (other.getComplexSpend() != 0D) {
         setComplexSpend(other.getComplexSpend());
-      }
-      if (other.getSimpleCostPercent() != 0D) {
-        setSimpleCostPercent(other.getSimpleCostPercent());
-      }
-      if (other.getSimpleCost() != 0D) {
-        setSimpleCost(other.getSimpleCost());
       }
       if (other.getSimpleSpend() != 0D) {
         setSimpleSpend(other.getSimpleSpend());
       }
-      if (other.getAssistantCostPercent() != 0D) {
-        setAssistantCostPercent(other.getAssistantCostPercent());
+      if (other.getAssistantSpend() != 0D) {
+        setAssistantSpend(other.getAssistantSpend());
       }
       if (other.getAssistantCost() != 0D) {
         setAssistantCost(other.getAssistantCost());
       }
-      if (other.getAssistantSpend() != 0D) {
-        setAssistantSpend(other.getAssistantSpend());
+      if (other.getAssistantUsagePercent() != 0D) {
+        setAssistantUsagePercent(other.getAssistantUsagePercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1171,76 +1034,91 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double totalCostPercent ;
+    private double totalCostMin ;
     /**
-     * <code>double total_cost_percent = 2;</code>
-     * @return The totalCostPercent.
+     * <pre>
+     * double total_cost_percent_min = 2;
+     * double total_cost_percent_max = 3;
+     * </pre>
+     *
+     * <code>double total_cost_min = 4;</code>
+     * @return The totalCostMin.
      */
     @java.lang.Override
-    public double getTotalCostPercent() {
-      return totalCostPercent ;
+    public double getTotalCostMin() {
+      return totalCostMin ;
     }
     /**
-     * <code>double total_cost_percent = 2;</code>
-     * @param value The totalCostPercent to set.
+     * <pre>
+     * double total_cost_percent_min = 2;
+     * double total_cost_percent_max = 3;
+     * </pre>
+     *
+     * <code>double total_cost_min = 4;</code>
+     * @param value The totalCostMin to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalCostPercent(double value) {
+    public Builder setTotalCostMin(double value) {
       
-      totalCostPercent = value;
+      totalCostMin = value;
       onChanged();
       return this;
     }
     /**
-     * <code>double total_cost_percent = 2;</code>
+     * <pre>
+     * double total_cost_percent_min = 2;
+     * double total_cost_percent_max = 3;
+     * </pre>
+     *
+     * <code>double total_cost_min = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotalCostPercent() {
+    public Builder clearTotalCostMin() {
       
-      totalCostPercent = 0D;
+      totalCostMin = 0D;
       onChanged();
       return this;
     }
 
-    private double totalCost ;
+    private double totalCostMax ;
     /**
      * <pre>
-     * 总成本
+     * 总成本2
      * </pre>
      *
-     * <code>double total_cost = 3;</code>
-     * @return The totalCost.
+     * <code>double total_cost_max = 5;</code>
+     * @return The totalCostMax.
      */
     @java.lang.Override
-    public double getTotalCost() {
-      return totalCost ;
+    public double getTotalCostMax() {
+      return totalCostMax ;
     }
     /**
      * <pre>
-     * 总成本
+     * 总成本2
      * </pre>
      *
-     * <code>double total_cost = 3;</code>
-     * @param value The totalCost to set.
+     * <code>double total_cost_max = 5;</code>
+     * @param value The totalCostMax to set.
      * @return This builder for chaining.
      */
-    public Builder setTotalCost(double value) {
+    public Builder setTotalCostMax(double value) {
       
-      totalCost = value;
+      totalCostMax = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * 总成本
+     * 总成本2
      * </pre>
      *
-     * <code>double total_cost = 3;</code>
+     * <code>double total_cost_max = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotalCost() {
+    public Builder clearTotalCostMax() {
       
-      totalCost = 0D;
+      totalCostMax = 0D;
       onChanged();
       return this;
     }
@@ -1248,10 +1126,10 @@ private static final long serialVersionUID = 0L;
     private double totalSpend ;
     /**
      * <pre>
-     * 总花费
+     * 实际总花费
      * </pre>
      *
-     * <code>double total_spend = 4;</code>
+     * <code>double total_spend = 6;</code>
      * @return The totalSpend.
      */
     @java.lang.Override
@@ -1260,10 +1138,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 总花费
+     * 实际总花费
      * </pre>
      *
-     * <code>double total_spend = 4;</code>
+     * <code>double total_spend = 6;</code>
      * @param value The totalSpend to set.
      * @return This builder for chaining.
      */
@@ -1275,10 +1153,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * 总花费
+     * 实际总花费
      * </pre>
      *
-     * <code>double total_spend = 4;</code>
+     * <code>double total_spend = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotalSpend() {
@@ -1288,40 +1166,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long complexCount ;
+    private double spendPercentMin ;
     /**
-     * <code>int64 complex_count = 5;</code>
-     * @return The complexCount.
+     * <pre>
+     * 已消费最低百分比
+     * </pre>
+     *
+     * <code>double spend_percent_min = 7;</code>
+     * @return The spendPercentMin.
      */
     @java.lang.Override
-    public long getComplexCount() {
-      return complexCount ;
+    public double getSpendPercentMin() {
+      return spendPercentMin ;
     }
     /**
-     * <code>int64 complex_count = 5;</code>
-     * @param value The complexCount to set.
+     * <pre>
+     * 已消费最低百分比
+     * </pre>
+     *
+     * <code>double spend_percent_min = 7;</code>
+     * @param value The spendPercentMin to set.
      * @return This builder for chaining.
      */
-    public Builder setComplexCount(long value) {
+    public Builder setSpendPercentMin(double value) {
       
-      complexCount = value;
+      spendPercentMin = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 complex_count = 5;</code>
+     * <pre>
+     * 已消费最低百分比
+     * </pre>
+     *
+     * <code>double spend_percent_min = 7;</code>
      * @return This builder for chaining.
      */
-    public Builder clearComplexCount() {
+    public Builder clearSpendPercentMin() {
       
-      complexCount = 0L;
+      spendPercentMin = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double spendPercentMax ;
+    /**
+     * <pre>
+     * 已消费最高百分比
+     * </pre>
+     *
+     * <code>double spend_percent_max = 8;</code>
+     * @return The spendPercentMax.
+     */
+    @java.lang.Override
+    public double getSpendPercentMax() {
+      return spendPercentMax ;
+    }
+    /**
+     * <pre>
+     * 已消费最高百分比
+     * </pre>
+     *
+     * <code>double spend_percent_max = 8;</code>
+     * @param value The spendPercentMax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpendPercentMax(double value) {
+      
+      spendPercentMax = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 已消费最高百分比
+     * </pre>
+     *
+     * <code>double spend_percent_max = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSpendPercentMax() {
+      
+      spendPercentMax = 0D;
       onChanged();
       return this;
     }
 
     private long complexUsageCount ;
     /**
-     * <code>int64 complex_usage_count = 6;</code>
+     * <code>int64 complex_usage_count = 9;</code>
      * @return The complexUsageCount.
      */
     @java.lang.Override
@@ -1329,7 +1262,7 @@ private static final long serialVersionUID = 0L;
       return complexUsageCount ;
     }
     /**
-     * <code>int64 complex_usage_count = 6;</code>
+     * <code>int64 complex_usage_count = 9;</code>
      * @param value The complexUsageCount to set.
      * @return This builder for chaining.
      */
@@ -1340,7 +1273,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 complex_usage_count = 6;</code>
+     * <code>int64 complex_usage_count = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearComplexUsageCount() {
@@ -1350,40 +1283,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long simpleCount ;
-    /**
-     * <code>int64 simple_count = 7;</code>
-     * @return The simpleCount.
-     */
-    @java.lang.Override
-    public long getSimpleCount() {
-      return simpleCount ;
-    }
-    /**
-     * <code>int64 simple_count = 7;</code>
-     * @param value The simpleCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSimpleCount(long value) {
-      
-      simpleCount = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 simple_count = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSimpleCount() {
-      
-      simpleCount = 0L;
-      onChanged();
-      return this;
-    }
-
     private long simpleUsageCount ;
     /**
-     * <code>int64 simple_usage_count = 8;</code>
+     * <code>int64 simple_usage_count = 10;</code>
      * @return The simpleUsageCount.
      */
     @java.lang.Override
@@ -1391,7 +1293,7 @@ private static final long serialVersionUID = 0L;
       return simpleUsageCount ;
     }
     /**
-     * <code>int64 simple_usage_count = 8;</code>
+     * <code>int64 simple_usage_count = 10;</code>
      * @param value The simpleUsageCount to set.
      * @return This builder for chaining.
      */
@@ -1402,7 +1304,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 simple_usage_count = 8;</code>
+     * <code>int64 simple_usage_count = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearSimpleUsageCount() {
@@ -1414,7 +1316,7 @@ private static final long serialVersionUID = 0L;
 
     private long assistantCount ;
     /**
-     * <code>int64 assistant_count = 9;</code>
+     * <code>int64 assistant_count = 11;</code>
      * @return The assistantCount.
      */
     @java.lang.Override
@@ -1422,7 +1324,7 @@ private static final long serialVersionUID = 0L;
       return assistantCount ;
     }
     /**
-     * <code>int64 assistant_count = 9;</code>
+     * <code>int64 assistant_count = 11;</code>
      * @param value The assistantCount to set.
      * @return This builder for chaining.
      */
@@ -1433,7 +1335,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 assistant_count = 9;</code>
+     * <code>int64 assistant_count = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearAssistantCount() {
@@ -1445,7 +1347,11 @@ private static final long serialVersionUID = 0L;
 
     private long assistantUsageCount ;
     /**
-     * <code>int64 assistant_usage_count = 10;</code>
+     * <pre>
+     * ai助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 12;</code>
      * @return The assistantUsageCount.
      */
     @java.lang.Override
@@ -1453,7 +1359,11 @@ private static final long serialVersionUID = 0L;
       return assistantUsageCount ;
     }
     /**
-     * <code>int64 assistant_usage_count = 10;</code>
+     * <pre>
+     * ai助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 12;</code>
      * @param value The assistantUsageCount to set.
      * @return This builder for chaining.
      */
@@ -1464,98 +1374,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 assistant_usage_count = 10;</code>
+     * <pre>
+     * ai助手使用总次数
+     * </pre>
+     *
+     * <code>int64 assistant_usage_count = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearAssistantUsageCount() {
       
       assistantUsageCount = 0L;
-      onChanged();
-      return this;
-    }
-
-    private double complexCostPercent ;
-    /**
-     * <pre>
-     * 复杂评价花费百分比
-     * </pre>
-     *
-     * <code>double complex_cost_percent = 11;</code>
-     * @return The complexCostPercent.
-     */
-    @java.lang.Override
-    public double getComplexCostPercent() {
-      return complexCostPercent ;
-    }
-    /**
-     * <pre>
-     * 复杂评价花费百分比
-     * </pre>
-     *
-     * <code>double complex_cost_percent = 11;</code>
-     * @param value The complexCostPercent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setComplexCostPercent(double value) {
-      
-      complexCostPercent = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 复杂评价花费百分比
-     * </pre>
-     *
-     * <code>double complex_cost_percent = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearComplexCostPercent() {
-      
-      complexCostPercent = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double complexCost ;
-    /**
-     * <pre>
-     * 复杂评价总成本
-     * </pre>
-     *
-     * <code>double complex_cost = 12;</code>
-     * @return The complexCost.
-     */
-    @java.lang.Override
-    public double getComplexCost() {
-      return complexCost ;
-    }
-    /**
-     * <pre>
-     * 复杂评价总成本
-     * </pre>
-     *
-     * <code>double complex_cost = 12;</code>
-     * @param value The complexCost to set.
-     * @return This builder for chaining.
-     */
-    public Builder setComplexCost(double value) {
-      
-      complexCost = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 复杂评价总成本
-     * </pre>
-     *
-     * <code>double complex_cost = 12;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearComplexCost() {
-      
-      complexCost = 0D;
       onChanged();
       return this;
     }
@@ -1603,99 +1431,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double simpleCostPercent ;
-    /**
-     * <pre>
-     * 简单评价花费百分比
-     * </pre>
-     *
-     * <code>double simple_cost_percent = 14;</code>
-     * @return The simpleCostPercent.
-     */
-    @java.lang.Override
-    public double getSimpleCostPercent() {
-      return simpleCostPercent ;
-    }
-    /**
-     * <pre>
-     * 简单评价花费百分比
-     * </pre>
-     *
-     * <code>double simple_cost_percent = 14;</code>
-     * @param value The simpleCostPercent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSimpleCostPercent(double value) {
-      
-      simpleCostPercent = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 简单评价花费百分比
-     * </pre>
-     *
-     * <code>double simple_cost_percent = 14;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSimpleCostPercent() {
-      
-      simpleCostPercent = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double simpleCost ;
-    /**
-     * <pre>
-     * 简单评价总成本
-     * </pre>
-     *
-     * <code>double simple_cost = 15;</code>
-     * @return The simpleCost.
-     */
-    @java.lang.Override
-    public double getSimpleCost() {
-      return simpleCost ;
-    }
-    /**
-     * <pre>
-     * 简单评价总成本
-     * </pre>
-     *
-     * <code>double simple_cost = 15;</code>
-     * @param value The simpleCost to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSimpleCost(double value) {
-      
-      simpleCost = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 简单评价总成本
-     * </pre>
-     *
-     * <code>double simple_cost = 15;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSimpleCost() {
-      
-      simpleCost = 0D;
-      onChanged();
-      return this;
-    }
-
     private double simpleSpend ;
     /**
      * <pre>
      * 简单评价总花费
      * </pre>
      *
-     * <code>double simple_spend = 16;</code>
+     * <code>double simple_spend = 14;</code>
      * @return The simpleSpend.
      */
     @java.lang.Override
@@ -1707,7 +1449,7 @@ private static final long serialVersionUID = 0L;
      * 简单评价总花费
      * </pre>
      *
-     * <code>double simple_spend = 16;</code>
+     * <code>double simple_spend = 14;</code>
      * @param value The simpleSpend to set.
      * @return This builder for chaining.
      */
@@ -1722,98 +1464,12 @@ private static final long serialVersionUID = 0L;
      * 简单评价总花费
      * </pre>
      *
-     * <code>double simple_spend = 16;</code>
+     * <code>double simple_spend = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearSimpleSpend() {
       
       simpleSpend = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double assistantCostPercent ;
-    /**
-     * <pre>
-     * ai助手花费百分比
-     * </pre>
-     *
-     * <code>double assistant_cost_percent = 17;</code>
-     * @return The assistantCostPercent.
-     */
-    @java.lang.Override
-    public double getAssistantCostPercent() {
-      return assistantCostPercent ;
-    }
-    /**
-     * <pre>
-     * ai助手花费百分比
-     * </pre>
-     *
-     * <code>double assistant_cost_percent = 17;</code>
-     * @param value The assistantCostPercent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAssistantCostPercent(double value) {
-      
-      assistantCostPercent = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ai助手花费百分比
-     * </pre>
-     *
-     * <code>double assistant_cost_percent = 17;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAssistantCostPercent() {
-      
-      assistantCostPercent = 0D;
-      onChanged();
-      return this;
-    }
-
-    private double assistantCost ;
-    /**
-     * <pre>
-     * ai助手总成本
-     * </pre>
-     *
-     * <code>double assistant_cost = 18;</code>
-     * @return The assistantCost.
-     */
-    @java.lang.Override
-    public double getAssistantCost() {
-      return assistantCost ;
-    }
-    /**
-     * <pre>
-     * ai助手总成本
-     * </pre>
-     *
-     * <code>double assistant_cost = 18;</code>
-     * @param value The assistantCost to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAssistantCost(double value) {
-      
-      assistantCost = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ai助手总成本
-     * </pre>
-     *
-     * <code>double assistant_cost = 18;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAssistantCost() {
-      
-      assistantCost = 0D;
       onChanged();
       return this;
     }
@@ -1824,7 +1480,7 @@ private static final long serialVersionUID = 0L;
      * ai助手总花费
      * </pre>
      *
-     * <code>double assistant_spend = 19;</code>
+     * <code>double assistant_spend = 15;</code>
      * @return The assistantSpend.
      */
     @java.lang.Override
@@ -1836,7 +1492,7 @@ private static final long serialVersionUID = 0L;
      * ai助手总花费
      * </pre>
      *
-     * <code>double assistant_spend = 19;</code>
+     * <code>double assistant_spend = 15;</code>
      * @param value The assistantSpend to set.
      * @return This builder for chaining.
      */
@@ -1851,12 +1507,98 @@ private static final long serialVersionUID = 0L;
      * ai助手总花费
      * </pre>
      *
-     * <code>double assistant_spend = 19;</code>
+     * <code>double assistant_spend = 15;</code>
      * @return This builder for chaining.
      */
     public Builder clearAssistantSpend() {
       
       assistantSpend = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double assistantCost ;
+    /**
+     * <pre>
+     * ai聊天总成本
+     * </pre>
+     *
+     * <code>double assistant_cost = 16;</code>
+     * @return The assistantCost.
+     */
+    @java.lang.Override
+    public double getAssistantCost() {
+      return assistantCost ;
+    }
+    /**
+     * <pre>
+     * ai聊天总成本
+     * </pre>
+     *
+     * <code>double assistant_cost = 16;</code>
+     * @param value The assistantCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssistantCost(double value) {
+      
+      assistantCost = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ai聊天总成本
+     * </pre>
+     *
+     * <code>double assistant_cost = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssistantCost() {
+      
+      assistantCost = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double assistantUsagePercent ;
+    /**
+     * <pre>
+     * ai聊天使用百分比
+     * </pre>
+     *
+     * <code>double assistant_usage_percent = 17;</code>
+     * @return The assistantUsagePercent.
+     */
+    @java.lang.Override
+    public double getAssistantUsagePercent() {
+      return assistantUsagePercent ;
+    }
+    /**
+     * <pre>
+     * ai聊天使用百分比
+     * </pre>
+     *
+     * <code>double assistant_usage_percent = 17;</code>
+     * @param value The assistantUsagePercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssistantUsagePercent(double value) {
+      
+      assistantUsagePercent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ai聊天使用百分比
+     * </pre>
+     *
+     * <code>double assistant_usage_percent = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssistantUsagePercent() {
+      
+      assistantUsagePercent = 0D;
       onChanged();
       return this;
     }

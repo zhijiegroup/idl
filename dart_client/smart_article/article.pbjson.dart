@@ -456,6 +456,7 @@ const CreateEvaluationConfigRequest$json = {
     {'1': 'time_duration', '3': 2, '4': 1, '5': 3, '10': 'timeDuration'},
     {'1': 'system_content', '3': 3, '4': 1, '5': 9, '10': 'systemContent'},
     {'1': 'personal_content', '3': 4, '4': 3, '5': 9, '10': 'personalContent'},
+    {'1': 'evaluation_score', '3': 5, '4': 1, '5': 3, '10': 'evaluationScore'},
   ],
 };
 
@@ -464,7 +465,8 @@ final $typed_data.Uint8List createEvaluationConfigRequestDescriptor = $convert.b
     'Ch1DcmVhdGVFdmFsdWF0aW9uQ29uZmlnUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES'
     '5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIjCg10aW1lX2R1cmF0aW9uGAIgASgDUgx0'
     'aW1lRHVyYXRpb24SJQoOc3lzdGVtX2NvbnRlbnQYAyABKAlSDXN5c3RlbUNvbnRlbnQSKQoQcG'
-    'Vyc29uYWxfY29udGVudBgEIAMoCVIPcGVyc29uYWxDb250ZW50');
+    'Vyc29uYWxfY29udGVudBgEIAMoCVIPcGVyc29uYWxDb250ZW50EikKEGV2YWx1YXRpb25fc2Nv'
+    'cmUYBSABKANSD2V2YWx1YXRpb25TY29yZQ==');
 
 @$core.Deprecated('Use createEvaluationConfigResponseDescriptor instead')
 const CreateEvaluationConfigResponse$json = {
@@ -1342,10 +1344,11 @@ const GetArticleCreationTenant$json = {
     {'1': 'student_count', '3': 2, '4': 1, '5': 3, '10': 'studentCount'},
     {'1': 'course_count', '3': 3, '4': 1, '5': 3, '10': 'courseCount'},
     {'1': 'day_course_count', '3': 4, '4': 1, '5': 3, '10': 'dayCourseCount'},
-    {'1': 'simple_count', '3': 5, '4': 1, '5': 3, '10': 'simpleCount'},
-    {'1': 'complex_count', '3': 6, '4': 1, '5': 3, '10': 'complexCount'},
+    {'1': 'evaluation_count', '3': 5, '4': 1, '5': 3, '10': 'evaluationCount'},
+    {'1': 'evaluation_day_count', '3': 6, '4': 1, '5': 3, '10': 'evaluationDayCount'},
     {'1': 'assistant_count', '3': 7, '4': 1, '5': 3, '10': 'assistantCount'},
-    {'1': 'total', '3': 8, '4': 1, '5': 3, '10': 'total'},
+    {'1': 'assistant_day_count', '3': 8, '4': 1, '5': 3, '10': 'assistantDayCount'},
+    {'1': 'total', '3': 9, '4': 1, '5': 3, '10': 'total'},
   ],
 };
 
@@ -1353,10 +1356,11 @@ const GetArticleCreationTenant$json = {
 final $typed_data.Uint8List getArticleCreationTenantDescriptor = $convert.base64Decode(
     'ChhHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnQSEgoEbmFtZRgBIAEoCVIEbmFtZRIjCg1zdHVkZW'
     '50X2NvdW50GAIgASgDUgxzdHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GAMgASgDUgtjb3Vy'
-    'c2VDb3VudBIoChBkYXlfY291cnNlX2NvdW50GAQgASgDUg5kYXlDb3Vyc2VDb3VudBIhCgxzaW'
-    '1wbGVfY291bnQYBSABKANSC3NpbXBsZUNvdW50EiMKDWNvbXBsZXhfY291bnQYBiABKANSDGNv'
-    'bXBsZXhDb3VudBInCg9hc3Npc3RhbnRfY291bnQYByABKANSDmFzc2lzdGFudENvdW50EhQKBX'
-    'RvdGFsGAggASgDUgV0b3RhbA==');
+    'c2VDb3VudBIoChBkYXlfY291cnNlX2NvdW50GAQgASgDUg5kYXlDb3Vyc2VDb3VudBIpChBldm'
+    'FsdWF0aW9uX2NvdW50GAUgASgDUg9ldmFsdWF0aW9uQ291bnQSMAoUZXZhbHVhdGlvbl9kYXlf'
+    'Y291bnQYBiABKANSEmV2YWx1YXRpb25EYXlDb3VudBInCg9hc3Npc3RhbnRfY291bnQYByABKA'
+    'NSDmFzc2lzdGFudENvdW50Ei4KE2Fzc2lzdGFudF9kYXlfY291bnQYCCABKANSEWFzc2lzdGFu'
+    'dERheUNvdW50EhQKBXRvdGFsGAkgASgDUgV0b3RhbA==');
 
 @$core.Deprecated('Use getArticleCreationTenantResponseDescriptor instead')
 const GetArticleCreationTenantResponse$json = {
@@ -1425,44 +1429,37 @@ const ArticleCreationTenantCost$json = {
   '1': 'ArticleCreationTenantCost',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'total_cost_percent', '3': 2, '4': 1, '5': 1, '10': 'totalCostPercent'},
-    {'1': 'total_cost', '3': 3, '4': 1, '5': 1, '10': 'totalCost'},
-    {'1': 'total_spend', '3': 4, '4': 1, '5': 1, '10': 'totalSpend'},
-    {'1': 'complex_count', '3': 5, '4': 1, '5': 3, '10': 'complexCount'},
-    {'1': 'complex_usage_count', '3': 6, '4': 1, '5': 3, '10': 'complexUsageCount'},
-    {'1': 'simple_count', '3': 7, '4': 1, '5': 3, '10': 'simpleCount'},
-    {'1': 'simple_usage_count', '3': 8, '4': 1, '5': 3, '10': 'simpleUsageCount'},
-    {'1': 'assistant_count', '3': 9, '4': 1, '5': 3, '10': 'assistantCount'},
-    {'1': 'assistant_usage_count', '3': 10, '4': 1, '5': 3, '10': 'assistantUsageCount'},
-    {'1': 'complex_cost_percent', '3': 11, '4': 1, '5': 1, '10': 'complexCostPercent'},
-    {'1': 'complex_cost', '3': 12, '4': 1, '5': 1, '10': 'complexCost'},
+    {'1': 'total_cost_min', '3': 4, '4': 1, '5': 1, '10': 'totalCostMin'},
+    {'1': 'total_cost_max', '3': 5, '4': 1, '5': 1, '10': 'totalCostMax'},
+    {'1': 'total_spend', '3': 6, '4': 1, '5': 1, '10': 'totalSpend'},
+    {'1': 'spend_percent_min', '3': 7, '4': 1, '5': 1, '10': 'spendPercentMin'},
+    {'1': 'spend_percent_max', '3': 8, '4': 1, '5': 1, '10': 'spendPercentMax'},
+    {'1': 'complex_usage_count', '3': 9, '4': 1, '5': 3, '10': 'complexUsageCount'},
+    {'1': 'simple_usage_count', '3': 10, '4': 1, '5': 3, '10': 'simpleUsageCount'},
+    {'1': 'assistant_count', '3': 11, '4': 1, '5': 3, '10': 'assistantCount'},
+    {'1': 'assistant_usage_count', '3': 12, '4': 1, '5': 3, '10': 'assistantUsageCount'},
     {'1': 'complex_spend', '3': 13, '4': 1, '5': 1, '10': 'complexSpend'},
-    {'1': 'simple_cost_percent', '3': 14, '4': 1, '5': 1, '10': 'simpleCostPercent'},
-    {'1': 'simple_cost', '3': 15, '4': 1, '5': 1, '10': 'simpleCost'},
-    {'1': 'simple_spend', '3': 16, '4': 1, '5': 1, '10': 'simpleSpend'},
-    {'1': 'assistant_cost_percent', '3': 17, '4': 1, '5': 1, '10': 'assistantCostPercent'},
-    {'1': 'assistant_cost', '3': 18, '4': 1, '5': 1, '10': 'assistantCost'},
-    {'1': 'assistant_spend', '3': 19, '4': 1, '5': 1, '10': 'assistantSpend'},
+    {'1': 'simple_spend', '3': 14, '4': 1, '5': 1, '10': 'simpleSpend'},
+    {'1': 'assistant_spend', '3': 15, '4': 1, '5': 1, '10': 'assistantSpend'},
+    {'1': 'assistant_cost', '3': 16, '4': 1, '5': 1, '10': 'assistantCost'},
+    {'1': 'assistant_usage_percent', '3': 17, '4': 1, '5': 1, '10': 'assistantUsagePercent'},
   ],
 };
 
 /// Descriptor for `ArticleCreationTenantCost`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List articleCreationTenantCostDescriptor = $convert.base64Decode(
-    'ChlBcnRpY2xlQ3JlYXRpb25UZW5hbnRDb3N0EhIKBG5hbWUYASABKAlSBG5hbWUSLAoSdG90YW'
-    'xfY29zdF9wZXJjZW50GAIgASgBUhB0b3RhbENvc3RQZXJjZW50Eh0KCnRvdGFsX2Nvc3QYAyAB'
-    'KAFSCXRvdGFsQ29zdBIfCgt0b3RhbF9zcGVuZBgEIAEoAVIKdG90YWxTcGVuZBIjCg1jb21wbG'
-    'V4X2NvdW50GAUgASgDUgxjb21wbGV4Q291bnQSLgoTY29tcGxleF91c2FnZV9jb3VudBgGIAEo'
-    'A1IRY29tcGxleFVzYWdlQ291bnQSIQoMc2ltcGxlX2NvdW50GAcgASgDUgtzaW1wbGVDb3VudB'
-    'IsChJzaW1wbGVfdXNhZ2VfY291bnQYCCABKANSEHNpbXBsZVVzYWdlQ291bnQSJwoPYXNzaXN0'
-    'YW50X2NvdW50GAkgASgDUg5hc3Npc3RhbnRDb3VudBIyChVhc3Npc3RhbnRfdXNhZ2VfY291bn'
-    'QYCiABKANSE2Fzc2lzdGFudFVzYWdlQ291bnQSMAoUY29tcGxleF9jb3N0X3BlcmNlbnQYCyAB'
-    'KAFSEmNvbXBsZXhDb3N0UGVyY2VudBIhCgxjb21wbGV4X2Nvc3QYDCABKAFSC2NvbXBsZXhDb3'
-    'N0EiMKDWNvbXBsZXhfc3BlbmQYDSABKAFSDGNvbXBsZXhTcGVuZBIuChNzaW1wbGVfY29zdF9w'
-    'ZXJjZW50GA4gASgBUhFzaW1wbGVDb3N0UGVyY2VudBIfCgtzaW1wbGVfY29zdBgPIAEoAVIKc2'
-    'ltcGxlQ29zdBIhCgxzaW1wbGVfc3BlbmQYECABKAFSC3NpbXBsZVNwZW5kEjQKFmFzc2lzdGFu'
-    'dF9jb3N0X3BlcmNlbnQYESABKAFSFGFzc2lzdGFudENvc3RQZXJjZW50EiUKDmFzc2lzdGFudF'
-    '9jb3N0GBIgASgBUg1hc3Npc3RhbnRDb3N0EicKD2Fzc2lzdGFudF9zcGVuZBgTIAEoAVIOYXNz'
-    'aXN0YW50U3BlbmQ=');
+    'ChlBcnRpY2xlQ3JlYXRpb25UZW5hbnRDb3N0EhIKBG5hbWUYASABKAlSBG5hbWUSJAoOdG90YW'
+    'xfY29zdF9taW4YBCABKAFSDHRvdGFsQ29zdE1pbhIkCg50b3RhbF9jb3N0X21heBgFIAEoAVIM'
+    'dG90YWxDb3N0TWF4Eh8KC3RvdGFsX3NwZW5kGAYgASgBUgp0b3RhbFNwZW5kEioKEXNwZW5kX3'
+    'BlcmNlbnRfbWluGAcgASgBUg9zcGVuZFBlcmNlbnRNaW4SKgoRc3BlbmRfcGVyY2VudF9tYXgY'
+    'CCABKAFSD3NwZW5kUGVyY2VudE1heBIuChNjb21wbGV4X3VzYWdlX2NvdW50GAkgASgDUhFjb2'
+    '1wbGV4VXNhZ2VDb3VudBIsChJzaW1wbGVfdXNhZ2VfY291bnQYCiABKANSEHNpbXBsZVVzYWdl'
+    'Q291bnQSJwoPYXNzaXN0YW50X2NvdW50GAsgASgDUg5hc3Npc3RhbnRDb3VudBIyChVhc3Npc3'
+    'RhbnRfdXNhZ2VfY291bnQYDCABKANSE2Fzc2lzdGFudFVzYWdlQ291bnQSIwoNY29tcGxleF9z'
+    'cGVuZBgNIAEoAVIMY29tcGxleFNwZW5kEiEKDHNpbXBsZV9zcGVuZBgOIAEoAVILc2ltcGxlU3'
+    'BlbmQSJwoPYXNzaXN0YW50X3NwZW5kGA8gASgBUg5hc3Npc3RhbnRTcGVuZBIlCg5hc3Npc3Rh'
+    'bnRfY29zdBgQIAEoAVINYXNzaXN0YW50Q29zdBI2Chdhc3Npc3RhbnRfdXNhZ2VfcGVyY2VudB'
+    'gRIAEoAVIVYXNzaXN0YW50VXNhZ2VQZXJjZW50');
 
 @$core.Deprecated('Use listArticleCreationTenantCostResponseDescriptor instead')
 const ListArticleCreationTenantCostResponse$json = {
@@ -1499,29 +1496,33 @@ const GetArticleCreationTenantCostResponse$json = {
   '1': 'GetArticleCreationTenantCostResponse',
   '2': [
     {'1': 'base_resp', '3': 100, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'total_cost', '3': 1, '4': 1, '5': 1, '10': 'totalCost'},
-    {'1': 'total_spend', '3': 2, '4': 1, '5': 1, '10': 'totalSpend'},
-    {'1': 'total_cost_percent', '3': 3, '4': 1, '5': 1, '10': 'totalCostPercent'},
-    {'1': 'complex_usage_count', '3': 4, '4': 1, '5': 3, '10': 'complexUsageCount'},
-    {'1': 'complex_spend', '3': 5, '4': 1, '5': 1, '10': 'complexSpend'},
-    {'1': 'simple_usage_count', '3': 6, '4': 1, '5': 3, '10': 'simpleUsageCount'},
-    {'1': 'simple_spend', '3': 7, '4': 1, '5': 1, '10': 'simpleSpend'},
-    {'1': 'assistant_usage_count', '3': 8, '4': 1, '5': 3, '10': 'assistantUsageCount'},
-    {'1': 'assistant_spend', '3': 9, '4': 1, '5': 1, '10': 'assistantSpend'},
+    {'1': 'total_cost_min', '3': 1, '4': 1, '5': 1, '10': 'totalCostMin'},
+    {'1': 'total_cost_max', '3': 2, '4': 1, '5': 1, '10': 'totalCostMax'},
+    {'1': 'total_spend', '3': 3, '4': 1, '5': 1, '10': 'totalSpend'},
+    {'1': 'total_cost_percent_min', '3': 4, '4': 1, '5': 1, '10': 'totalCostPercentMin'},
+    {'1': 'total_cost_percent_max', '3': 5, '4': 1, '5': 1, '10': 'totalCostPercentMax'},
+    {'1': 'complex_usage_count', '3': 6, '4': 1, '5': 3, '10': 'complexUsageCount'},
+    {'1': 'complex_spend', '3': 7, '4': 1, '5': 1, '10': 'complexSpend'},
+    {'1': 'simple_usage_count', '3': 8, '4': 1, '5': 3, '10': 'simpleUsageCount'},
+    {'1': 'simple_spend', '3': 9, '4': 1, '5': 1, '10': 'simpleSpend'},
+    {'1': 'assistant_usage_count', '3': 10, '4': 1, '5': 3, '10': 'assistantUsageCount'},
+    {'1': 'assistant_spend', '3': 11, '4': 1, '5': 1, '10': 'assistantSpend'},
   ],
 };
 
 /// Descriptor for `GetArticleCreationTenantCostResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getArticleCreationTenantCostResponseDescriptor = $convert.base64Decode(
     'CiRHZXRBcnRpY2xlQ3JlYXRpb25UZW5hbnRDb3N0UmVzcG9uc2USLwoJYmFzZV9yZXNwGGQgAS'
-    'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEh0KCnRvdGFsX2Nvc3QYASABKAFSCXRv'
-    'dGFsQ29zdBIfCgt0b3RhbF9zcGVuZBgCIAEoAVIKdG90YWxTcGVuZBIsChJ0b3RhbF9jb3N0X3'
-    'BlcmNlbnQYAyABKAFSEHRvdGFsQ29zdFBlcmNlbnQSLgoTY29tcGxleF91c2FnZV9jb3VudBgE'
-    'IAEoA1IRY29tcGxleFVzYWdlQ291bnQSIwoNY29tcGxleF9zcGVuZBgFIAEoAVIMY29tcGxleF'
-    'NwZW5kEiwKEnNpbXBsZV91c2FnZV9jb3VudBgGIAEoA1IQc2ltcGxlVXNhZ2VDb3VudBIhCgxz'
-    'aW1wbGVfc3BlbmQYByABKAFSC3NpbXBsZVNwZW5kEjIKFWFzc2lzdGFudF91c2FnZV9jb3VudB'
-    'gIIAEoA1ITYXNzaXN0YW50VXNhZ2VDb3VudBInCg9hc3Npc3RhbnRfc3BlbmQYCSABKAFSDmFz'
-    'c2lzdGFudFNwZW5k');
+    'gLMhIuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEiQKDnRvdGFsX2Nvc3RfbWluGAEgASgB'
+    'Ugx0b3RhbENvc3RNaW4SJAoOdG90YWxfY29zdF9tYXgYAiABKAFSDHRvdGFsQ29zdE1heBIfCg'
+    't0b3RhbF9zcGVuZBgDIAEoAVIKdG90YWxTcGVuZBIzChZ0b3RhbF9jb3N0X3BlcmNlbnRfbWlu'
+    'GAQgASgBUhN0b3RhbENvc3RQZXJjZW50TWluEjMKFnRvdGFsX2Nvc3RfcGVyY2VudF9tYXgYBS'
+    'ABKAFSE3RvdGFsQ29zdFBlcmNlbnRNYXgSLgoTY29tcGxleF91c2FnZV9jb3VudBgGIAEoA1IR'
+    'Y29tcGxleFVzYWdlQ291bnQSIwoNY29tcGxleF9zcGVuZBgHIAEoAVIMY29tcGxleFNwZW5kEi'
+    'wKEnNpbXBsZV91c2FnZV9jb3VudBgIIAEoA1IQc2ltcGxlVXNhZ2VDb3VudBIhCgxzaW1wbGVf'
+    'c3BlbmQYCSABKAFSC3NpbXBsZVNwZW5kEjIKFWFzc2lzdGFudF91c2FnZV9jb3VudBgKIAEoA1'
+    'ITYXNzaXN0YW50VXNhZ2VDb3VudBInCg9hc3Npc3RhbnRfc3BlbmQYCyABKAFSDmFzc2lzdGFu'
+    'dFNwZW5k');
 
 @$core.Deprecated('Use getSubTopicAiResultRequestDescriptor instead')
 const GetSubTopicAiResultRequest$json = {

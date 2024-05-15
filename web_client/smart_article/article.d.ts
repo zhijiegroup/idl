@@ -184,6 +184,7 @@ export interface CreateEvaluationConfigRequest {
   time_duration?: string;
   system_content?: string;
   personal_content?: Array<string>;
+  evaluation_score?: string;
 }
 
 export interface CreateEvaluationConfigResponse {
@@ -539,9 +540,10 @@ export interface GetArticleCreationTenant {
   student_count?: string;
   course_count?: string;
   day_course_count?: string;
-  simple_count?: string;
-  complex_count?: string;
+  evaluation_count?: string;
+  evaluation_day_count?: string;
   assistant_count?: string;
+  assistant_day_count?: string;
   total?: string;
 }
 
@@ -570,35 +572,33 @@ export interface ListArticleCreationTenantCostRequest {
 
 export interface ArticleCreationTenantCost {
   name?: string;
-  total_cost_percent?: number;
-  /** 总成本 */
-  total_cost?: number;
-  /** 总花费 */
+  /** double total_cost_percent_min = 2;
+double total_cost_percent_max = 3; */
+  total_cost_min?: number;
+  /** 总成本1 */
+  total_cost_max?: number;
+  /** 总成本2 */
   total_spend?: number;
-  complex_count?: string;
+  /** 实际总花费 */
+  spend_percent_min?: number;
+  /** 已消费最低百分比 */
+  spend_percent_max?: number;
+  /** 已消费最高百分比 */
   complex_usage_count?: string;
-  simple_count?: string;
   simple_usage_count?: string;
   assistant_count?: string;
+  /** ai助手使用总次数 */
   assistant_usage_count?: string;
-  /** 复杂评价花费百分比 */
-  complex_cost_percent?: number;
-  /** 复杂评价总成本 */
-  complex_cost?: number;
   /** 复杂评价总花费 */
   complex_spend?: number;
-  /** 简单评价花费百分比 */
-  simple_cost_percent?: number;
-  /** 简单评价总成本 */
-  simple_cost?: number;
   /** 简单评价总花费 */
   simple_spend?: number;
-  /** ai助手花费百分比 */
-  assistant_cost_percent?: number;
-  /** ai助手总成本 */
-  assistant_cost?: number;
   /** ai助手总花费 */
   assistant_spend?: number;
+  /** ai聊天总成本 */
+  assistant_cost?: number;
+  /** ai聊天使用百分比 */
+  assistant_usage_percent?: number;
 }
 
 export interface ListArticleCreationTenantCostResponse {
@@ -613,11 +613,14 @@ export interface GetArticleCreationTenantCostRequest {
 
 export interface GetArticleCreationTenantCostResponse {
   base_resp?: base.BaseResponse;
-  /** 总成本 */
-  total_cost?: number;
+  /** 总成本1 */
+  total_cost_min?: number;
+  /** 总成本2 */
+  total_cost_max?: number;
   /** 总花费 */
   total_spend?: number;
-  total_cost_percent?: number;
+  total_cost_percent_min?: number;
+  total_cost_percent_max?: number;
   complex_usage_count?: string;
   /** 复杂评价总花费 */
   complex_spend?: number;

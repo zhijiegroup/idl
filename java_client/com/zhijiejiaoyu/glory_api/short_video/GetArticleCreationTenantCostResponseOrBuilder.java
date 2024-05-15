@@ -24,32 +24,48 @@ public interface GetArticleCreationTenantCostResponseOrBuilder extends
 
   /**
    * <pre>
-   * 总成本
+   * 总成本1
    * </pre>
    *
-   * <code>double total_cost = 1;</code>
-   * @return The totalCost.
+   * <code>double total_cost_min = 1;</code>
+   * @return The totalCostMin.
    */
-  double getTotalCost();
+  double getTotalCostMin();
+
+  /**
+   * <pre>
+   * 总成本2
+   * </pre>
+   *
+   * <code>double total_cost_max = 2;</code>
+   * @return The totalCostMax.
+   */
+  double getTotalCostMax();
 
   /**
    * <pre>
    * 总花费
    * </pre>
    *
-   * <code>double total_spend = 2;</code>
+   * <code>double total_spend = 3;</code>
    * @return The totalSpend.
    */
   double getTotalSpend();
 
   /**
-   * <code>double total_cost_percent = 3;</code>
-   * @return The totalCostPercent.
+   * <code>double total_cost_percent_min = 4;</code>
+   * @return The totalCostPercentMin.
    */
-  double getTotalCostPercent();
+  double getTotalCostPercentMin();
 
   /**
-   * <code>int64 complex_usage_count = 4;</code>
+   * <code>double total_cost_percent_max = 5;</code>
+   * @return The totalCostPercentMax.
+   */
+  double getTotalCostPercentMax();
+
+  /**
+   * <code>int64 complex_usage_count = 6;</code>
    * @return The complexUsageCount.
    */
   long getComplexUsageCount();
@@ -59,13 +75,13 @@ public interface GetArticleCreationTenantCostResponseOrBuilder extends
    * 复杂评价总花费
    * </pre>
    *
-   * <code>double complex_spend = 5;</code>
+   * <code>double complex_spend = 7;</code>
    * @return The complexSpend.
    */
   double getComplexSpend();
 
   /**
-   * <code>int64 simple_usage_count = 6;</code>
+   * <code>int64 simple_usage_count = 8;</code>
    * @return The simpleUsageCount.
    */
   long getSimpleUsageCount();
@@ -75,13 +91,13 @@ public interface GetArticleCreationTenantCostResponseOrBuilder extends
    * 简单评价总花费
    * </pre>
    *
-   * <code>double simple_spend = 7;</code>
+   * <code>double simple_spend = 9;</code>
    * @return The simpleSpend.
    */
   double getSimpleSpend();
 
   /**
-   * <code>int64 assistant_usage_count = 8;</code>
+   * <code>int64 assistant_usage_count = 10;</code>
    * @return The assistantUsageCount.
    */
   long getAssistantUsageCount();
@@ -91,7 +107,7 @@ public interface GetArticleCreationTenantCostResponseOrBuilder extends
    * ai助手总花费
    * </pre>
    *
-   * <code>double assistant_spend = 9;</code>
+   * <code>double assistant_spend = 11;</code>
    * @return The assistantSpend.
    */
   double getAssistantSpend();

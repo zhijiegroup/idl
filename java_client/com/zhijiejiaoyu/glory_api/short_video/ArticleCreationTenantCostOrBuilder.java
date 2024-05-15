@@ -20,86 +20,83 @@ public interface ArticleCreationTenantCostOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>double total_cost_percent = 2;</code>
-   * @return The totalCostPercent.
+   * <pre>
+   * double total_cost_percent_min = 2;
+   * double total_cost_percent_max = 3;
+   * </pre>
+   *
+   * <code>double total_cost_min = 4;</code>
+   * @return The totalCostMin.
    */
-  double getTotalCostPercent();
+  double getTotalCostMin();
 
   /**
    * <pre>
-   * 总成本
+   * 总成本2
    * </pre>
    *
-   * <code>double total_cost = 3;</code>
-   * @return The totalCost.
+   * <code>double total_cost_max = 5;</code>
+   * @return The totalCostMax.
    */
-  double getTotalCost();
+  double getTotalCostMax();
 
   /**
    * <pre>
-   * 总花费
+   * 实际总花费
    * </pre>
    *
-   * <code>double total_spend = 4;</code>
+   * <code>double total_spend = 6;</code>
    * @return The totalSpend.
    */
   double getTotalSpend();
 
   /**
-   * <code>int64 complex_count = 5;</code>
-   * @return The complexCount.
+   * <pre>
+   * 已消费最低百分比
+   * </pre>
+   *
+   * <code>double spend_percent_min = 7;</code>
+   * @return The spendPercentMin.
    */
-  long getComplexCount();
+  double getSpendPercentMin();
 
   /**
-   * <code>int64 complex_usage_count = 6;</code>
+   * <pre>
+   * 已消费最高百分比
+   * </pre>
+   *
+   * <code>double spend_percent_max = 8;</code>
+   * @return The spendPercentMax.
+   */
+  double getSpendPercentMax();
+
+  /**
+   * <code>int64 complex_usage_count = 9;</code>
    * @return The complexUsageCount.
    */
   long getComplexUsageCount();
 
   /**
-   * <code>int64 simple_count = 7;</code>
-   * @return The simpleCount.
-   */
-  long getSimpleCount();
-
-  /**
-   * <code>int64 simple_usage_count = 8;</code>
+   * <code>int64 simple_usage_count = 10;</code>
    * @return The simpleUsageCount.
    */
   long getSimpleUsageCount();
 
   /**
-   * <code>int64 assistant_count = 9;</code>
+   * <code>int64 assistant_count = 11;</code>
    * @return The assistantCount.
    */
   long getAssistantCount();
 
   /**
-   * <code>int64 assistant_usage_count = 10;</code>
+   * <pre>
+   * ai助手使用总次数
+   * </pre>
+   *
+   * <code>int64 assistant_usage_count = 12;</code>
    * @return The assistantUsageCount.
    */
   long getAssistantUsageCount();
-
-  /**
-   * <pre>
-   * 复杂评价花费百分比
-   * </pre>
-   *
-   * <code>double complex_cost_percent = 11;</code>
-   * @return The complexCostPercent.
-   */
-  double getComplexCostPercent();
-
-  /**
-   * <pre>
-   * 复杂评价总成本
-   * </pre>
-   *
-   * <code>double complex_cost = 12;</code>
-   * @return The complexCost.
-   */
-  double getComplexCost();
 
   /**
    * <pre>
@@ -113,61 +110,41 @@ public interface ArticleCreationTenantCostOrBuilder extends
 
   /**
    * <pre>
-   * 简单评价花费百分比
-   * </pre>
-   *
-   * <code>double simple_cost_percent = 14;</code>
-   * @return The simpleCostPercent.
-   */
-  double getSimpleCostPercent();
-
-  /**
-   * <pre>
-   * 简单评价总成本
-   * </pre>
-   *
-   * <code>double simple_cost = 15;</code>
-   * @return The simpleCost.
-   */
-  double getSimpleCost();
-
-  /**
-   * <pre>
    * 简单评价总花费
    * </pre>
    *
-   * <code>double simple_spend = 16;</code>
+   * <code>double simple_spend = 14;</code>
    * @return The simpleSpend.
    */
   double getSimpleSpend();
 
   /**
    * <pre>
-   * ai助手花费百分比
+   * ai助手总花费
    * </pre>
    *
-   * <code>double assistant_cost_percent = 17;</code>
-   * @return The assistantCostPercent.
+   * <code>double assistant_spend = 15;</code>
+   * @return The assistantSpend.
    */
-  double getAssistantCostPercent();
+  double getAssistantSpend();
 
   /**
    * <pre>
-   * ai助手总成本
+   * ai聊天总成本
    * </pre>
    *
-   * <code>double assistant_cost = 18;</code>
+   * <code>double assistant_cost = 16;</code>
    * @return The assistantCost.
    */
   double getAssistantCost();
 
   /**
    * <pre>
-   * ai助手总花费
+   * ai聊天使用百分比
    * </pre>
    *
-   * <code>double assistant_spend = 19;</code>
-   * @return The assistantSpend.
+   * <code>double assistant_usage_percent = 17;</code>
+   * @return The assistantUsagePercent.
    */
-  double getAssistantSpend();
+  double getAssistantUsagePercent();
 }

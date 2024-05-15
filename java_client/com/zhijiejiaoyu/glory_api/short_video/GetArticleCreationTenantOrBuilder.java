@@ -38,16 +38,16 @@ public interface GetArticleCreationTenantOrBuilder extends
   long getDayCourseCount();
 
   /**
-   * <code>int64 simple_count = 5;</code>
-   * @return The simpleCount.
+   * <code>int64 evaluation_count = 5;</code>
+   * @return The evaluationCount.
    */
-  long getSimpleCount();
+  long getEvaluationCount();
 
   /**
-   * <code>int64 complex_count = 6;</code>
-   * @return The complexCount.
+   * <code>int64 evaluation_day_count = 6;</code>
+   * @return The evaluationDayCount.
    */
-  long getComplexCount();
+  long getEvaluationDayCount();
 
   /**
    * <code>int64 assistant_count = 7;</code>
@@ -56,7 +56,13 @@ public interface GetArticleCreationTenantOrBuilder extends
   long getAssistantCount();
 
   /**
-   * <code>int64 total = 8;</code>
+   * <code>int64 assistant_day_count = 8;</code>
+   * @return The assistantDayCount.
+   */
+  long getAssistantDayCount();
+
+  /**
+   * <code>int64 total = 9;</code>
    * @return The total.
    */
   long getTotal();

@@ -737,6 +737,8 @@ struct GloryApi_CreateEvaluationConfigRequest {
 
   var personalContent: [String] = []
 
+  var evaluationScore: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2102,11 +2104,13 @@ struct GloryApi_GetArticleCreationTenant {
 
   var dayCourseCount: Int64 = 0
 
-  var simpleCount: Int64 = 0
+  var evaluationCount: Int64 = 0
 
-  var complexCount: Int64 = 0
+  var evaluationDayCount: Int64 = 0
 
   var assistantCount: Int64 = 0
+
+  var assistantDayCount: Int64 = 0
 
   var total: Int64 = 0
 
@@ -2248,117 +2252,51 @@ struct GloryApi_ArticleCreationTenantCost {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var name: String {
-    get {return _storage._name}
-    set {_uniqueStorage()._name = newValue}
-  }
+  var name: String = String()
 
-  var totalCostPercent: Double {
-    get {return _storage._totalCostPercent}
-    set {_uniqueStorage()._totalCostPercent = newValue}
-  }
+  /// double total_cost_percent_min = 2;
+  /// double total_cost_percent_max = 3;
+  var totalCostMin: Double = 0
 
-  /// 总成本
-  var totalCost: Double {
-    get {return _storage._totalCost}
-    set {_uniqueStorage()._totalCost = newValue}
-  }
+  /// 总成本2
+  var totalCostMax: Double = 0
 
-  /// 总花费
-  var totalSpend: Double {
-    get {return _storage._totalSpend}
-    set {_uniqueStorage()._totalSpend = newValue}
-  }
+  /// 实际总花费
+  var totalSpend: Double = 0
 
-  var complexCount: Int64 {
-    get {return _storage._complexCount}
-    set {_uniqueStorage()._complexCount = newValue}
-  }
+  /// 已消费最低百分比
+  var spendPercentMin: Double = 0
 
-  var complexUsageCount: Int64 {
-    get {return _storage._complexUsageCount}
-    set {_uniqueStorage()._complexUsageCount = newValue}
-  }
+  /// 已消费最高百分比
+  var spendPercentMax: Double = 0
 
-  var simpleCount: Int64 {
-    get {return _storage._simpleCount}
-    set {_uniqueStorage()._simpleCount = newValue}
-  }
+  var complexUsageCount: Int64 = 0
 
-  var simpleUsageCount: Int64 {
-    get {return _storage._simpleUsageCount}
-    set {_uniqueStorage()._simpleUsageCount = newValue}
-  }
+  var simpleUsageCount: Int64 = 0
 
-  var assistantCount: Int64 {
-    get {return _storage._assistantCount}
-    set {_uniqueStorage()._assistantCount = newValue}
-  }
+  var assistantCount: Int64 = 0
 
-  var assistantUsageCount: Int64 {
-    get {return _storage._assistantUsageCount}
-    set {_uniqueStorage()._assistantUsageCount = newValue}
-  }
-
-  /// 复杂评价花费百分比
-  var complexCostPercent: Double {
-    get {return _storage._complexCostPercent}
-    set {_uniqueStorage()._complexCostPercent = newValue}
-  }
-
-  /// 复杂评价总成本
-  var complexCost: Double {
-    get {return _storage._complexCost}
-    set {_uniqueStorage()._complexCost = newValue}
-  }
+  /// ai助手使用总次数
+  var assistantUsageCount: Int64 = 0
 
   /// 复杂评价总花费
-  var complexSpend: Double {
-    get {return _storage._complexSpend}
-    set {_uniqueStorage()._complexSpend = newValue}
-  }
-
-  /// 简单评价花费百分比
-  var simpleCostPercent: Double {
-    get {return _storage._simpleCostPercent}
-    set {_uniqueStorage()._simpleCostPercent = newValue}
-  }
-
-  /// 简单评价总成本
-  var simpleCost: Double {
-    get {return _storage._simpleCost}
-    set {_uniqueStorage()._simpleCost = newValue}
-  }
+  var complexSpend: Double = 0
 
   /// 简单评价总花费
-  var simpleSpend: Double {
-    get {return _storage._simpleSpend}
-    set {_uniqueStorage()._simpleSpend = newValue}
-  }
-
-  /// ai助手花费百分比
-  var assistantCostPercent: Double {
-    get {return _storage._assistantCostPercent}
-    set {_uniqueStorage()._assistantCostPercent = newValue}
-  }
-
-  /// ai助手总成本
-  var assistantCost: Double {
-    get {return _storage._assistantCost}
-    set {_uniqueStorage()._assistantCost = newValue}
-  }
+  var simpleSpend: Double = 0
 
   /// ai助手总花费
-  var assistantSpend: Double {
-    get {return _storage._assistantSpend}
-    set {_uniqueStorage()._assistantSpend = newValue}
-  }
+  var assistantSpend: Double = 0
+
+  /// ai聊天总成本
+  var assistantCost: Double = 0
+
+  /// ai聊天使用百分比
+  var assistantUsagePercent: Double = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
-
-  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ListArticleCreationTenantCostResponse {
@@ -2429,13 +2367,18 @@ struct GloryApi_GetArticleCreationTenantCostResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  /// 总成本
-  var totalCost: Double = 0
+  /// 总成本1
+  var totalCostMin: Double = 0
+
+  /// 总成本2
+  var totalCostMax: Double = 0
 
   /// 总花费
   var totalSpend: Double = 0
 
-  var totalCostPercent: Double = 0
+  var totalCostPercentMin: Double = 0
+
+  var totalCostPercentMax: Double = 0
 
   var complexUsageCount: Int64 = 0
 
@@ -3978,6 +3921,7 @@ extension GloryApi_CreateEvaluationConfigRequest: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "time_duration"),
     3: .standard(proto: "system_content"),
     4: .standard(proto: "personal_content"),
+    5: .standard(proto: "evaluation_score"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3990,6 +3934,7 @@ extension GloryApi_CreateEvaluationConfigRequest: SwiftProtobuf.Message, SwiftPr
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.timeDuration) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.systemContent) }()
       case 4: try { try decoder.decodeRepeatedStringField(value: &self.personalContent) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluationScore) }()
       default: break
       }
     }
@@ -4012,6 +3957,9 @@ extension GloryApi_CreateEvaluationConfigRequest: SwiftProtobuf.Message, SwiftPr
     if !self.personalContent.isEmpty {
       try visitor.visitRepeatedStringField(value: self.personalContent, fieldNumber: 4)
     }
+    if self.evaluationScore != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluationScore, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4020,6 +3968,7 @@ extension GloryApi_CreateEvaluationConfigRequest: SwiftProtobuf.Message, SwiftPr
     if lhs.timeDuration != rhs.timeDuration {return false}
     if lhs.systemContent != rhs.systemContent {return false}
     if lhs.personalContent != rhs.personalContent {return false}
+    if lhs.evaluationScore != rhs.evaluationScore {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -6588,10 +6537,11 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     2: .standard(proto: "student_count"),
     3: .standard(proto: "course_count"),
     4: .standard(proto: "day_course_count"),
-    5: .standard(proto: "simple_count"),
-    6: .standard(proto: "complex_count"),
+    5: .standard(proto: "evaluation_count"),
+    6: .standard(proto: "evaluation_day_count"),
     7: .standard(proto: "assistant_count"),
-    8: .same(proto: "total"),
+    8: .standard(proto: "assistant_day_count"),
+    9: .same(proto: "total"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -6604,10 +6554,11 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       case 2: try { try decoder.decodeSingularInt64Field(value: &self.studentCount) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.courseCount) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.dayCourseCount) }()
-      case 5: try { try decoder.decodeSingularInt64Field(value: &self.simpleCount) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.complexCount) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluationCount) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.evaluationDayCount) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.assistantCount) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.assistantDayCount) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
       default: break
       }
     }
@@ -6626,17 +6577,20 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     if self.dayCourseCount != 0 {
       try visitor.visitSingularInt64Field(value: self.dayCourseCount, fieldNumber: 4)
     }
-    if self.simpleCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.simpleCount, fieldNumber: 5)
+    if self.evaluationCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluationCount, fieldNumber: 5)
     }
-    if self.complexCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.complexCount, fieldNumber: 6)
+    if self.evaluationDayCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluationDayCount, fieldNumber: 6)
     }
     if self.assistantCount != 0 {
       try visitor.visitSingularInt64Field(value: self.assistantCount, fieldNumber: 7)
     }
+    if self.assistantDayCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.assistantDayCount, fieldNumber: 8)
+    }
     if self.total != 0 {
-      try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 8)
+      try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -6646,9 +6600,10 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     if lhs.studentCount != rhs.studentCount {return false}
     if lhs.courseCount != rhs.courseCount {return false}
     if lhs.dayCourseCount != rhs.dayCourseCount {return false}
-    if lhs.simpleCount != rhs.simpleCount {return false}
-    if lhs.complexCount != rhs.complexCount {return false}
+    if lhs.evaluationCount != rhs.evaluationCount {return false}
+    if lhs.evaluationDayCount != rhs.evaluationDayCount {return false}
     if lhs.assistantCount != rhs.assistantCount {return false}
+    if lhs.assistantDayCount != rhs.assistantDayCount {return false}
     if lhs.total != rhs.total {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -6833,213 +6788,113 @@ extension GloryApi_ArticleCreationTenantCost: SwiftProtobuf.Message, SwiftProtob
   static let protoMessageName: String = _protobuf_package + ".ArticleCreationTenantCost"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
-    2: .standard(proto: "total_cost_percent"),
-    3: .standard(proto: "total_cost"),
-    4: .standard(proto: "total_spend"),
-    5: .standard(proto: "complex_count"),
-    6: .standard(proto: "complex_usage_count"),
-    7: .standard(proto: "simple_count"),
-    8: .standard(proto: "simple_usage_count"),
-    9: .standard(proto: "assistant_count"),
-    10: .standard(proto: "assistant_usage_count"),
-    11: .standard(proto: "complex_cost_percent"),
-    12: .standard(proto: "complex_cost"),
+    4: .standard(proto: "total_cost_min"),
+    5: .standard(proto: "total_cost_max"),
+    6: .standard(proto: "total_spend"),
+    7: .standard(proto: "spend_percent_min"),
+    8: .standard(proto: "spend_percent_max"),
+    9: .standard(proto: "complex_usage_count"),
+    10: .standard(proto: "simple_usage_count"),
+    11: .standard(proto: "assistant_count"),
+    12: .standard(proto: "assistant_usage_count"),
     13: .standard(proto: "complex_spend"),
-    14: .standard(proto: "simple_cost_percent"),
-    15: .standard(proto: "simple_cost"),
-    16: .standard(proto: "simple_spend"),
-    17: .standard(proto: "assistant_cost_percent"),
-    18: .standard(proto: "assistant_cost"),
-    19: .standard(proto: "assistant_spend"),
+    14: .standard(proto: "simple_spend"),
+    15: .standard(proto: "assistant_spend"),
+    16: .standard(proto: "assistant_cost"),
+    17: .standard(proto: "assistant_usage_percent"),
   ]
 
-  fileprivate class _StorageClass {
-    var _name: String = String()
-    var _totalCostPercent: Double = 0
-    var _totalCost: Double = 0
-    var _totalSpend: Double = 0
-    var _complexCount: Int64 = 0
-    var _complexUsageCount: Int64 = 0
-    var _simpleCount: Int64 = 0
-    var _simpleUsageCount: Int64 = 0
-    var _assistantCount: Int64 = 0
-    var _assistantUsageCount: Int64 = 0
-    var _complexCostPercent: Double = 0
-    var _complexCost: Double = 0
-    var _complexSpend: Double = 0
-    var _simpleCostPercent: Double = 0
-    var _simpleCost: Double = 0
-    var _simpleSpend: Double = 0
-    var _assistantCostPercent: Double = 0
-    var _assistantCost: Double = 0
-    var _assistantSpend: Double = 0
-
-    #if swift(>=5.10)
-      // This property is used as the initial default value for new instances of the type.
-      // The type itself is protecting the reference to its storage via CoW semantics.
-      // This will force a copy to be made of this reference when the first mutation occurs;
-      // hence, it is safe to mark this as `nonisolated(unsafe)`.
-      static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _name = source._name
-      _totalCostPercent = source._totalCostPercent
-      _totalCost = source._totalCost
-      _totalSpend = source._totalSpend
-      _complexCount = source._complexCount
-      _complexUsageCount = source._complexUsageCount
-      _simpleCount = source._simpleCount
-      _simpleUsageCount = source._simpleUsageCount
-      _assistantCount = source._assistantCount
-      _assistantUsageCount = source._assistantUsageCount
-      _complexCostPercent = source._complexCostPercent
-      _complexCost = source._complexCost
-      _complexSpend = source._complexSpend
-      _simpleCostPercent = source._simpleCostPercent
-      _simpleCost = source._simpleCost
-      _simpleSpend = source._simpleSpend
-      _assistantCostPercent = source._assistantCostPercent
-      _assistantCost = source._assistantCost
-      _assistantSpend = source._assistantSpend
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
-        case 2: try { try decoder.decodeSingularDoubleField(value: &_storage._totalCostPercent) }()
-        case 3: try { try decoder.decodeSingularDoubleField(value: &_storage._totalCost) }()
-        case 4: try { try decoder.decodeSingularDoubleField(value: &_storage._totalSpend) }()
-        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._complexCount) }()
-        case 6: try { try decoder.decodeSingularInt64Field(value: &_storage._complexUsageCount) }()
-        case 7: try { try decoder.decodeSingularInt64Field(value: &_storage._simpleCount) }()
-        case 8: try { try decoder.decodeSingularInt64Field(value: &_storage._simpleUsageCount) }()
-        case 9: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantCount) }()
-        case 10: try { try decoder.decodeSingularInt64Field(value: &_storage._assistantUsageCount) }()
-        case 11: try { try decoder.decodeSingularDoubleField(value: &_storage._complexCostPercent) }()
-        case 12: try { try decoder.decodeSingularDoubleField(value: &_storage._complexCost) }()
-        case 13: try { try decoder.decodeSingularDoubleField(value: &_storage._complexSpend) }()
-        case 14: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleCostPercent) }()
-        case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleCost) }()
-        case 16: try { try decoder.decodeSingularDoubleField(value: &_storage._simpleSpend) }()
-        case 17: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCostPercent) }()
-        case 18: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCost) }()
-        case 19: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantSpend) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.totalCostMin) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.totalCostMax) }()
+      case 6: try { try decoder.decodeSingularDoubleField(value: &self.totalSpend) }()
+      case 7: try { try decoder.decodeSingularDoubleField(value: &self.spendPercentMin) }()
+      case 8: try { try decoder.decodeSingularDoubleField(value: &self.spendPercentMax) }()
+      case 9: try { try decoder.decodeSingularInt64Field(value: &self.complexUsageCount) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.simpleUsageCount) }()
+      case 11: try { try decoder.decodeSingularInt64Field(value: &self.assistantCount) }()
+      case 12: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
+      case 13: try { try decoder.decodeSingularDoubleField(value: &self.complexSpend) }()
+      case 14: try { try decoder.decodeSingularDoubleField(value: &self.simpleSpend) }()
+      case 15: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
+      case 16: try { try decoder.decodeSingularDoubleField(value: &self.assistantCost) }()
+      case 17: try { try decoder.decodeSingularDoubleField(value: &self.assistantUsagePercent) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if !_storage._name.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
-      }
-      if _storage._totalCostPercent != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._totalCostPercent, fieldNumber: 2)
-      }
-      if _storage._totalCost != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._totalCost, fieldNumber: 3)
-      }
-      if _storage._totalSpend != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._totalSpend, fieldNumber: 4)
-      }
-      if _storage._complexCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._complexCount, fieldNumber: 5)
-      }
-      if _storage._complexUsageCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._complexUsageCount, fieldNumber: 6)
-      }
-      if _storage._simpleCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._simpleCount, fieldNumber: 7)
-      }
-      if _storage._simpleUsageCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._simpleUsageCount, fieldNumber: 8)
-      }
-      if _storage._assistantCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._assistantCount, fieldNumber: 9)
-      }
-      if _storage._assistantUsageCount != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._assistantUsageCount, fieldNumber: 10)
-      }
-      if _storage._complexCostPercent != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._complexCostPercent, fieldNumber: 11)
-      }
-      if _storage._complexCost != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._complexCost, fieldNumber: 12)
-      }
-      if _storage._complexSpend != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._complexSpend, fieldNumber: 13)
-      }
-      if _storage._simpleCostPercent != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._simpleCostPercent, fieldNumber: 14)
-      }
-      if _storage._simpleCost != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._simpleCost, fieldNumber: 15)
-      }
-      if _storage._simpleSpend != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._simpleSpend, fieldNumber: 16)
-      }
-      if _storage._assistantCostPercent != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._assistantCostPercent, fieldNumber: 17)
-      }
-      if _storage._assistantCost != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._assistantCost, fieldNumber: 18)
-      }
-      if _storage._assistantSpend != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._assistantSpend, fieldNumber: 19)
-      }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if self.totalCostMin != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostMin, fieldNumber: 4)
+    }
+    if self.totalCostMax != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostMax, fieldNumber: 5)
+    }
+    if self.totalSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 6)
+    }
+    if self.spendPercentMin != 0 {
+      try visitor.visitSingularDoubleField(value: self.spendPercentMin, fieldNumber: 7)
+    }
+    if self.spendPercentMax != 0 {
+      try visitor.visitSingularDoubleField(value: self.spendPercentMax, fieldNumber: 8)
+    }
+    if self.complexUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 9)
+    }
+    if self.simpleUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 10)
+    }
+    if self.assistantCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.assistantCount, fieldNumber: 11)
+    }
+    if self.assistantUsageCount != 0 {
+      try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 12)
+    }
+    if self.complexSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 13)
+    }
+    if self.simpleSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 14)
+    }
+    if self.assistantSpend != 0 {
+      try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 15)
+    }
+    if self.assistantCost != 0 {
+      try visitor.visitSingularDoubleField(value: self.assistantCost, fieldNumber: 16)
+    }
+    if self.assistantUsagePercent != 0 {
+      try visitor.visitSingularDoubleField(value: self.assistantUsagePercent, fieldNumber: 17)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ArticleCreationTenantCost, rhs: GloryApi_ArticleCreationTenantCost) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._name != rhs_storage._name {return false}
-        if _storage._totalCostPercent != rhs_storage._totalCostPercent {return false}
-        if _storage._totalCost != rhs_storage._totalCost {return false}
-        if _storage._totalSpend != rhs_storage._totalSpend {return false}
-        if _storage._complexCount != rhs_storage._complexCount {return false}
-        if _storage._complexUsageCount != rhs_storage._complexUsageCount {return false}
-        if _storage._simpleCount != rhs_storage._simpleCount {return false}
-        if _storage._simpleUsageCount != rhs_storage._simpleUsageCount {return false}
-        if _storage._assistantCount != rhs_storage._assistantCount {return false}
-        if _storage._assistantUsageCount != rhs_storage._assistantUsageCount {return false}
-        if _storage._complexCostPercent != rhs_storage._complexCostPercent {return false}
-        if _storage._complexCost != rhs_storage._complexCost {return false}
-        if _storage._complexSpend != rhs_storage._complexSpend {return false}
-        if _storage._simpleCostPercent != rhs_storage._simpleCostPercent {return false}
-        if _storage._simpleCost != rhs_storage._simpleCost {return false}
-        if _storage._simpleSpend != rhs_storage._simpleSpend {return false}
-        if _storage._assistantCostPercent != rhs_storage._assistantCostPercent {return false}
-        if _storage._assistantCost != rhs_storage._assistantCost {return false}
-        if _storage._assistantSpend != rhs_storage._assistantSpend {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.name != rhs.name {return false}
+    if lhs.totalCostMin != rhs.totalCostMin {return false}
+    if lhs.totalCostMax != rhs.totalCostMax {return false}
+    if lhs.totalSpend != rhs.totalSpend {return false}
+    if lhs.spendPercentMin != rhs.spendPercentMin {return false}
+    if lhs.spendPercentMax != rhs.spendPercentMax {return false}
+    if lhs.complexUsageCount != rhs.complexUsageCount {return false}
+    if lhs.simpleUsageCount != rhs.simpleUsageCount {return false}
+    if lhs.assistantCount != rhs.assistantCount {return false}
+    if lhs.assistantUsageCount != rhs.assistantUsageCount {return false}
+    if lhs.complexSpend != rhs.complexSpend {return false}
+    if lhs.simpleSpend != rhs.simpleSpend {return false}
+    if lhs.assistantSpend != rhs.assistantSpend {return false}
+    if lhs.assistantCost != rhs.assistantCost {return false}
+    if lhs.assistantUsagePercent != rhs.assistantUsagePercent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -7133,15 +6988,17 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
   static let protoMessageName: String = _protobuf_package + ".GetArticleCreationTenantCostResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     100: .standard(proto: "base_resp"),
-    1: .standard(proto: "total_cost"),
-    2: .standard(proto: "total_spend"),
-    3: .standard(proto: "total_cost_percent"),
-    4: .standard(proto: "complex_usage_count"),
-    5: .standard(proto: "complex_spend"),
-    6: .standard(proto: "simple_usage_count"),
-    7: .standard(proto: "simple_spend"),
-    8: .standard(proto: "assistant_usage_count"),
-    9: .standard(proto: "assistant_spend"),
+    1: .standard(proto: "total_cost_min"),
+    2: .standard(proto: "total_cost_max"),
+    3: .standard(proto: "total_spend"),
+    4: .standard(proto: "total_cost_percent_min"),
+    5: .standard(proto: "total_cost_percent_max"),
+    6: .standard(proto: "complex_usage_count"),
+    7: .standard(proto: "complex_spend"),
+    8: .standard(proto: "simple_usage_count"),
+    9: .standard(proto: "simple_spend"),
+    10: .standard(proto: "assistant_usage_count"),
+    11: .standard(proto: "assistant_spend"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -7150,15 +7007,17 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularDoubleField(value: &self.totalCost) }()
-      case 2: try { try decoder.decodeSingularDoubleField(value: &self.totalSpend) }()
-      case 3: try { try decoder.decodeSingularDoubleField(value: &self.totalCostPercent) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.complexUsageCount) }()
-      case 5: try { try decoder.decodeSingularDoubleField(value: &self.complexSpend) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.simpleUsageCount) }()
-      case 7: try { try decoder.decodeSingularDoubleField(value: &self.simpleSpend) }()
-      case 8: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
-      case 9: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
+      case 1: try { try decoder.decodeSingularDoubleField(value: &self.totalCostMin) }()
+      case 2: try { try decoder.decodeSingularDoubleField(value: &self.totalCostMax) }()
+      case 3: try { try decoder.decodeSingularDoubleField(value: &self.totalSpend) }()
+      case 4: try { try decoder.decodeSingularDoubleField(value: &self.totalCostPercentMin) }()
+      case 5: try { try decoder.decodeSingularDoubleField(value: &self.totalCostPercentMax) }()
+      case 6: try { try decoder.decodeSingularInt64Field(value: &self.complexUsageCount) }()
+      case 7: try { try decoder.decodeSingularDoubleField(value: &self.complexSpend) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.simpleUsageCount) }()
+      case 9: try { try decoder.decodeSingularDoubleField(value: &self.simpleSpend) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.assistantUsageCount) }()
+      case 11: try { try decoder.decodeSingularDoubleField(value: &self.assistantSpend) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       default: break
       }
@@ -7170,32 +7029,38 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
     // https://github.com/apple/swift-protobuf/issues/1182
-    if self.totalCost != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalCost, fieldNumber: 1)
+    if self.totalCostMin != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostMin, fieldNumber: 1)
+    }
+    if self.totalCostMax != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostMax, fieldNumber: 2)
     }
     if self.totalSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 2)
+      try visitor.visitSingularDoubleField(value: self.totalSpend, fieldNumber: 3)
     }
-    if self.totalCostPercent != 0 {
-      try visitor.visitSingularDoubleField(value: self.totalCostPercent, fieldNumber: 3)
+    if self.totalCostPercentMin != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostPercentMin, fieldNumber: 4)
+    }
+    if self.totalCostPercentMax != 0 {
+      try visitor.visitSingularDoubleField(value: self.totalCostPercentMax, fieldNumber: 5)
     }
     if self.complexUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 4)
+      try visitor.visitSingularInt64Field(value: self.complexUsageCount, fieldNumber: 6)
     }
     if self.complexSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 5)
+      try visitor.visitSingularDoubleField(value: self.complexSpend, fieldNumber: 7)
     }
     if self.simpleUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.simpleUsageCount, fieldNumber: 8)
     }
     if self.simpleSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 7)
+      try visitor.visitSingularDoubleField(value: self.simpleSpend, fieldNumber: 9)
     }
     if self.assistantUsageCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 8)
+      try visitor.visitSingularInt64Field(value: self.assistantUsageCount, fieldNumber: 10)
     }
     if self.assistantSpend != 0 {
-      try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 9)
+      try visitor.visitSingularDoubleField(value: self.assistantSpend, fieldNumber: 11)
     }
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
@@ -7205,9 +7070,11 @@ extension GloryApi_GetArticleCreationTenantCostResponse: SwiftProtobuf.Message, 
 
   static func ==(lhs: GloryApi_GetArticleCreationTenantCostResponse, rhs: GloryApi_GetArticleCreationTenantCostResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.totalCost != rhs.totalCost {return false}
+    if lhs.totalCostMin != rhs.totalCostMin {return false}
+    if lhs.totalCostMax != rhs.totalCostMax {return false}
     if lhs.totalSpend != rhs.totalSpend {return false}
-    if lhs.totalCostPercent != rhs.totalCostPercent {return false}
+    if lhs.totalCostPercentMin != rhs.totalCostPercentMin {return false}
+    if lhs.totalCostPercentMax != rhs.totalCostPercentMax {return false}
     if lhs.complexUsageCount != rhs.complexUsageCount {return false}
     if lhs.complexSpend != rhs.complexSpend {return false}
     if lhs.simpleUsageCount != rhs.simpleUsageCount {return false}

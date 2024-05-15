@@ -64,4 +64,10 @@ public interface CreateEvaluationConfigRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPersonalContentBytes(int index);
+
+  /**
+   * <code>int64 evaluation_score = 5;</code>
+   * @return The evaluationScore.
+   */
+  long getEvaluationScore();
 }

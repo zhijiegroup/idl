@@ -2299,6 +2299,7 @@ class CreateEvaluationConfigRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? timeDuration,
     $core.String? systemContent,
     $core.Iterable<$core.String>? personalContent,
+    $fixnum.Int64? evaluationScore,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2313,6 +2314,9 @@ class CreateEvaluationConfigRequest extends $pb.GeneratedMessage {
     if (personalContent != null) {
       $result.personalContent.addAll(personalContent);
     }
+    if (evaluationScore != null) {
+      $result.evaluationScore = evaluationScore;
+    }
     return $result;
   }
   CreateEvaluationConfigRequest._() : super();
@@ -2324,6 +2328,7 @@ class CreateEvaluationConfigRequest extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'timeDuration')
     ..aOS(3, _omitFieldNames ? '' : 'systemContent')
     ..pPS(4, _omitFieldNames ? '' : 'personalContent')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluationScore')
     ..hasRequiredFields = false
   ;
 
@@ -2379,6 +2384,15 @@ class CreateEvaluationConfigRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get personalContent => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluationScore => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluationScore($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluationScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluationScore() => clearField(5);
 }
 
 class CreateEvaluationConfigResponse extends $pb.GeneratedMessage {
@@ -6676,9 +6690,10 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     $fixnum.Int64? studentCount,
     $fixnum.Int64? courseCount,
     $fixnum.Int64? dayCourseCount,
-    $fixnum.Int64? simpleCount,
-    $fixnum.Int64? complexCount,
+    $fixnum.Int64? evaluationCount,
+    $fixnum.Int64? evaluationDayCount,
     $fixnum.Int64? assistantCount,
+    $fixnum.Int64? assistantDayCount,
     $fixnum.Int64? total,
   }) {
     final $result = create();
@@ -6694,14 +6709,17 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     if (dayCourseCount != null) {
       $result.dayCourseCount = dayCourseCount;
     }
-    if (simpleCount != null) {
-      $result.simpleCount = simpleCount;
+    if (evaluationCount != null) {
+      $result.evaluationCount = evaluationCount;
     }
-    if (complexCount != null) {
-      $result.complexCount = complexCount;
+    if (evaluationDayCount != null) {
+      $result.evaluationDayCount = evaluationDayCount;
     }
     if (assistantCount != null) {
       $result.assistantCount = assistantCount;
+    }
+    if (assistantDayCount != null) {
+      $result.assistantDayCount = assistantDayCount;
     }
     if (total != null) {
       $result.total = total;
@@ -6717,10 +6735,11 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'studentCount')
     ..aInt64(3, _omitFieldNames ? '' : 'courseCount')
     ..aInt64(4, _omitFieldNames ? '' : 'dayCourseCount')
-    ..aInt64(5, _omitFieldNames ? '' : 'simpleCount')
-    ..aInt64(6, _omitFieldNames ? '' : 'complexCount')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluationCount')
+    ..aInt64(6, _omitFieldNames ? '' : 'evaluationDayCount')
     ..aInt64(7, _omitFieldNames ? '' : 'assistantCount')
-    ..aInt64(8, _omitFieldNames ? '' : 'total')
+    ..aInt64(8, _omitFieldNames ? '' : 'assistantDayCount')
+    ..aInt64(9, _omitFieldNames ? '' : 'total')
     ..hasRequiredFields = false
   ;
 
@@ -6782,22 +6801,22 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
   void clearDayCourseCount() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get simpleCount => $_getI64(4);
+  $fixnum.Int64 get evaluationCount => $_getI64(4);
   @$pb.TagNumber(5)
-  set simpleCount($fixnum.Int64 v) { $_setInt64(4, v); }
+  set evaluationCount($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasSimpleCount() => $_has(4);
+  $core.bool hasEvaluationCount() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSimpleCount() => clearField(5);
+  void clearEvaluationCount() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get complexCount => $_getI64(5);
+  $fixnum.Int64 get evaluationDayCount => $_getI64(5);
   @$pb.TagNumber(6)
-  set complexCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  set evaluationDayCount($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasComplexCount() => $_has(5);
+  $core.bool hasEvaluationDayCount() => $_has(5);
   @$pb.TagNumber(6)
-  void clearComplexCount() => clearField(6);
+  void clearEvaluationDayCount() => clearField(6);
 
   @$pb.TagNumber(7)
   $fixnum.Int64 get assistantCount => $_getI64(6);
@@ -6809,13 +6828,22 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
   void clearAssistantCount() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get total => $_getI64(7);
+  $fixnum.Int64 get assistantDayCount => $_getI64(7);
   @$pb.TagNumber(8)
-  set total($fixnum.Int64 v) { $_setInt64(7, v); }
+  set assistantDayCount($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasTotal() => $_has(7);
+  $core.bool hasAssistantDayCount() => $_has(7);
   @$pb.TagNumber(8)
-  void clearTotal() => clearField(8);
+  void clearAssistantDayCount() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get total => $_getI64(8);
+  @$pb.TagNumber(9)
+  set total($fixnum.Int64 v) { $_setInt64(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasTotal() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTotal() => clearField(9);
 }
 
 class GetArticleCreationTenantResponse extends $pb.GeneratedMessage {
@@ -7103,46 +7131,42 @@ class ListArticleCreationTenantCostRequest extends $pb.GeneratedMessage {
 class ArticleCreationTenantCost extends $pb.GeneratedMessage {
   factory ArticleCreationTenantCost({
     $core.String? name,
-    $core.double? totalCostPercent,
-    $core.double? totalCost,
+    $core.double? totalCostMin,
+    $core.double? totalCostMax,
     $core.double? totalSpend,
-    $fixnum.Int64? complexCount,
+    $core.double? spendPercentMin,
+    $core.double? spendPercentMax,
     $fixnum.Int64? complexUsageCount,
-    $fixnum.Int64? simpleCount,
     $fixnum.Int64? simpleUsageCount,
     $fixnum.Int64? assistantCount,
     $fixnum.Int64? assistantUsageCount,
-    $core.double? complexCostPercent,
-    $core.double? complexCost,
     $core.double? complexSpend,
-    $core.double? simpleCostPercent,
-    $core.double? simpleCost,
     $core.double? simpleSpend,
-    $core.double? assistantCostPercent,
-    $core.double? assistantCost,
     $core.double? assistantSpend,
+    $core.double? assistantCost,
+    $core.double? assistantUsagePercent,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
     }
-    if (totalCostPercent != null) {
-      $result.totalCostPercent = totalCostPercent;
+    if (totalCostMin != null) {
+      $result.totalCostMin = totalCostMin;
     }
-    if (totalCost != null) {
-      $result.totalCost = totalCost;
+    if (totalCostMax != null) {
+      $result.totalCostMax = totalCostMax;
     }
     if (totalSpend != null) {
       $result.totalSpend = totalSpend;
     }
-    if (complexCount != null) {
-      $result.complexCount = complexCount;
+    if (spendPercentMin != null) {
+      $result.spendPercentMin = spendPercentMin;
+    }
+    if (spendPercentMax != null) {
+      $result.spendPercentMax = spendPercentMax;
     }
     if (complexUsageCount != null) {
       $result.complexUsageCount = complexUsageCount;
-    }
-    if (simpleCount != null) {
-      $result.simpleCount = simpleCount;
     }
     if (simpleUsageCount != null) {
       $result.simpleUsageCount = simpleUsageCount;
@@ -7153,32 +7177,20 @@ class ArticleCreationTenantCost extends $pb.GeneratedMessage {
     if (assistantUsageCount != null) {
       $result.assistantUsageCount = assistantUsageCount;
     }
-    if (complexCostPercent != null) {
-      $result.complexCostPercent = complexCostPercent;
-    }
-    if (complexCost != null) {
-      $result.complexCost = complexCost;
-    }
     if (complexSpend != null) {
       $result.complexSpend = complexSpend;
-    }
-    if (simpleCostPercent != null) {
-      $result.simpleCostPercent = simpleCostPercent;
-    }
-    if (simpleCost != null) {
-      $result.simpleCost = simpleCost;
     }
     if (simpleSpend != null) {
       $result.simpleSpend = simpleSpend;
     }
-    if (assistantCostPercent != null) {
-      $result.assistantCostPercent = assistantCostPercent;
+    if (assistantSpend != null) {
+      $result.assistantSpend = assistantSpend;
     }
     if (assistantCost != null) {
       $result.assistantCost = assistantCost;
     }
-    if (assistantSpend != null) {
-      $result.assistantSpend = assistantSpend;
+    if (assistantUsagePercent != null) {
+      $result.assistantUsagePercent = assistantUsagePercent;
     }
     return $result;
   }
@@ -7188,24 +7200,20 @@ class ArticleCreationTenantCost extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleCreationTenantCost', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalCostPercent', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalCost', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
-    ..aInt64(5, _omitFieldNames ? '' : 'complexCount')
-    ..aInt64(6, _omitFieldNames ? '' : 'complexUsageCount')
-    ..aInt64(7, _omitFieldNames ? '' : 'simpleCount')
-    ..aInt64(8, _omitFieldNames ? '' : 'simpleUsageCount')
-    ..aInt64(9, _omitFieldNames ? '' : 'assistantCount')
-    ..aInt64(10, _omitFieldNames ? '' : 'assistantUsageCount')
-    ..a<$core.double>(11, _omitFieldNames ? '' : 'complexCostPercent', $pb.PbFieldType.OD)
-    ..a<$core.double>(12, _omitFieldNames ? '' : 'complexCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalCostMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'totalCostMax', $pb.PbFieldType.OD)
+    ..a<$core.double>(6, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'spendPercentMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(8, _omitFieldNames ? '' : 'spendPercentMax', $pb.PbFieldType.OD)
+    ..aInt64(9, _omitFieldNames ? '' : 'complexUsageCount')
+    ..aInt64(10, _omitFieldNames ? '' : 'simpleUsageCount')
+    ..aInt64(11, _omitFieldNames ? '' : 'assistantCount')
+    ..aInt64(12, _omitFieldNames ? '' : 'assistantUsageCount')
     ..a<$core.double>(13, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
-    ..a<$core.double>(14, _omitFieldNames ? '' : 'simpleCostPercent', $pb.PbFieldType.OD)
-    ..a<$core.double>(15, _omitFieldNames ? '' : 'simpleCost', $pb.PbFieldType.OD)
-    ..a<$core.double>(16, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
-    ..a<$core.double>(17, _omitFieldNames ? '' : 'assistantCostPercent', $pb.PbFieldType.OD)
-    ..a<$core.double>(18, _omitFieldNames ? '' : 'assistantCost', $pb.PbFieldType.OD)
-    ..a<$core.double>(19, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(14, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(15, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(16, _omitFieldNames ? '' : 'assistantCost', $pb.PbFieldType.OD)
+    ..a<$core.double>(17, _omitFieldNames ? '' : 'assistantUsagePercent', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -7239,167 +7247,133 @@ class ArticleCreationTenantCost extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
-  @$pb.TagNumber(2)
-  $core.double get totalCostPercent => $_getN(1);
-  @$pb.TagNumber(2)
-  set totalCostPercent($core.double v) { $_setDouble(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasTotalCostPercent() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTotalCostPercent() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.double get totalCost => $_getN(2);
-  @$pb.TagNumber(3)
-  set totalCost($core.double v) { $_setDouble(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasTotalCost() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearTotalCost() => clearField(3);
-
+  /// double total_cost_percent_min = 2;
+  /// double total_cost_percent_max = 3;
   @$pb.TagNumber(4)
+  $core.double get totalCostMin => $_getN(1);
+  @$pb.TagNumber(4)
+  set totalCostMin($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTotalCostMin() => $_has(1);
+  @$pb.TagNumber(4)
+  void clearTotalCostMin() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get totalCostMax => $_getN(2);
+  @$pb.TagNumber(5)
+  set totalCostMax($core.double v) { $_setDouble(2, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTotalCostMax() => $_has(2);
+  @$pb.TagNumber(5)
+  void clearTotalCostMax() => clearField(5);
+
+  @$pb.TagNumber(6)
   $core.double get totalSpend => $_getN(3);
-  @$pb.TagNumber(4)
+  @$pb.TagNumber(6)
   set totalSpend($core.double v) { $_setDouble(3, v); }
-  @$pb.TagNumber(4)
+  @$pb.TagNumber(6)
   $core.bool hasTotalSpend() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearTotalSpend() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $fixnum.Int64 get complexCount => $_getI64(4);
-  @$pb.TagNumber(5)
-  set complexCount($fixnum.Int64 v) { $_setInt64(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasComplexCount() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearComplexCount() => clearField(5);
-
   @$pb.TagNumber(6)
-  $fixnum.Int64 get complexUsageCount => $_getI64(5);
-  @$pb.TagNumber(6)
-  set complexUsageCount($fixnum.Int64 v) { $_setInt64(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasComplexUsageCount() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearComplexUsageCount() => clearField(6);
+  void clearTotalSpend() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get simpleCount => $_getI64(6);
+  $core.double get spendPercentMin => $_getN(4);
   @$pb.TagNumber(7)
-  set simpleCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  set spendPercentMin($core.double v) { $_setDouble(4, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSimpleCount() => $_has(6);
+  $core.bool hasSpendPercentMin() => $_has(4);
   @$pb.TagNumber(7)
-  void clearSimpleCount() => clearField(7);
+  void clearSpendPercentMin() => clearField(7);
 
   @$pb.TagNumber(8)
+  $core.double get spendPercentMax => $_getN(5);
+  @$pb.TagNumber(8)
+  set spendPercentMax($core.double v) { $_setDouble(5, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSpendPercentMax() => $_has(5);
+  @$pb.TagNumber(8)
+  void clearSpendPercentMax() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get complexUsageCount => $_getI64(6);
+  @$pb.TagNumber(9)
+  set complexUsageCount($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasComplexUsageCount() => $_has(6);
+  @$pb.TagNumber(9)
+  void clearComplexUsageCount() => clearField(9);
+
+  @$pb.TagNumber(10)
   $fixnum.Int64 get simpleUsageCount => $_getI64(7);
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
   set simpleUsageCount($fixnum.Int64 v) { $_setInt64(7, v); }
-  @$pb.TagNumber(8)
+  @$pb.TagNumber(10)
   $core.bool hasSimpleUsageCount() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearSimpleUsageCount() => clearField(8);
+  @$pb.TagNumber(10)
+  void clearSimpleUsageCount() => clearField(10);
 
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(11)
   $fixnum.Int64 get assistantCount => $_getI64(8);
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(11)
   set assistantCount($fixnum.Int64 v) { $_setInt64(8, v); }
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(11)
   $core.bool hasAssistantCount() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearAssistantCount() => clearField(9);
+  @$pb.TagNumber(11)
+  void clearAssistantCount() => clearField(11);
 
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(12)
   $fixnum.Int64 get assistantUsageCount => $_getI64(9);
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(12)
   set assistantUsageCount($fixnum.Int64 v) { $_setInt64(9, v); }
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(12)
   $core.bool hasAssistantUsageCount() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearAssistantUsageCount() => clearField(10);
-
-  @$pb.TagNumber(11)
-  $core.double get complexCostPercent => $_getN(10);
-  @$pb.TagNumber(11)
-  set complexCostPercent($core.double v) { $_setDouble(10, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasComplexCostPercent() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearComplexCostPercent() => clearField(11);
-
   @$pb.TagNumber(12)
-  $core.double get complexCost => $_getN(11);
-  @$pb.TagNumber(12)
-  set complexCost($core.double v) { $_setDouble(11, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasComplexCost() => $_has(11);
-  @$pb.TagNumber(12)
-  void clearComplexCost() => clearField(12);
+  void clearAssistantUsageCount() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.double get complexSpend => $_getN(12);
+  $core.double get complexSpend => $_getN(10);
   @$pb.TagNumber(13)
-  set complexSpend($core.double v) { $_setDouble(12, v); }
+  set complexSpend($core.double v) { $_setDouble(10, v); }
   @$pb.TagNumber(13)
-  $core.bool hasComplexSpend() => $_has(12);
+  $core.bool hasComplexSpend() => $_has(10);
   @$pb.TagNumber(13)
   void clearComplexSpend() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.double get simpleCostPercent => $_getN(13);
+  $core.double get simpleSpend => $_getN(11);
   @$pb.TagNumber(14)
-  set simpleCostPercent($core.double v) { $_setDouble(13, v); }
+  set simpleSpend($core.double v) { $_setDouble(11, v); }
   @$pb.TagNumber(14)
-  $core.bool hasSimpleCostPercent() => $_has(13);
+  $core.bool hasSimpleSpend() => $_has(11);
   @$pb.TagNumber(14)
-  void clearSimpleCostPercent() => clearField(14);
+  void clearSimpleSpend() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.double get simpleCost => $_getN(14);
+  $core.double get assistantSpend => $_getN(12);
   @$pb.TagNumber(15)
-  set simpleCost($core.double v) { $_setDouble(14, v); }
+  set assistantSpend($core.double v) { $_setDouble(12, v); }
   @$pb.TagNumber(15)
-  $core.bool hasSimpleCost() => $_has(14);
+  $core.bool hasAssistantSpend() => $_has(12);
   @$pb.TagNumber(15)
-  void clearSimpleCost() => clearField(15);
+  void clearAssistantSpend() => clearField(15);
 
   @$pb.TagNumber(16)
-  $core.double get simpleSpend => $_getN(15);
+  $core.double get assistantCost => $_getN(13);
   @$pb.TagNumber(16)
-  set simpleSpend($core.double v) { $_setDouble(15, v); }
+  set assistantCost($core.double v) { $_setDouble(13, v); }
   @$pb.TagNumber(16)
-  $core.bool hasSimpleSpend() => $_has(15);
+  $core.bool hasAssistantCost() => $_has(13);
   @$pb.TagNumber(16)
-  void clearSimpleSpend() => clearField(16);
+  void clearAssistantCost() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.double get assistantCostPercent => $_getN(16);
+  $core.double get assistantUsagePercent => $_getN(14);
   @$pb.TagNumber(17)
-  set assistantCostPercent($core.double v) { $_setDouble(16, v); }
+  set assistantUsagePercent($core.double v) { $_setDouble(14, v); }
   @$pb.TagNumber(17)
-  $core.bool hasAssistantCostPercent() => $_has(16);
+  $core.bool hasAssistantUsagePercent() => $_has(14);
   @$pb.TagNumber(17)
-  void clearAssistantCostPercent() => clearField(17);
-
-  @$pb.TagNumber(18)
-  $core.double get assistantCost => $_getN(17);
-  @$pb.TagNumber(18)
-  set assistantCost($core.double v) { $_setDouble(17, v); }
-  @$pb.TagNumber(18)
-  $core.bool hasAssistantCost() => $_has(17);
-  @$pb.TagNumber(18)
-  void clearAssistantCost() => clearField(18);
-
-  @$pb.TagNumber(19)
-  $core.double get assistantSpend => $_getN(18);
-  @$pb.TagNumber(19)
-  set assistantSpend($core.double v) { $_setDouble(18, v); }
-  @$pb.TagNumber(19)
-  $core.bool hasAssistantSpend() => $_has(18);
-  @$pb.TagNumber(19)
-  void clearAssistantSpend() => clearField(19);
+  void clearAssistantUsagePercent() => clearField(17);
 }
 
 class ListArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
@@ -7532,9 +7506,11 @@ class GetArticleCreationTenantCostRequest extends $pb.GeneratedMessage {
 
 class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
   factory GetArticleCreationTenantCostResponse({
-    $core.double? totalCost,
+    $core.double? totalCostMin,
+    $core.double? totalCostMax,
     $core.double? totalSpend,
-    $core.double? totalCostPercent,
+    $core.double? totalCostPercentMin,
+    $core.double? totalCostPercentMax,
     $fixnum.Int64? complexUsageCount,
     $core.double? complexSpend,
     $fixnum.Int64? simpleUsageCount,
@@ -7544,14 +7520,20 @@ class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
     $0.BaseResponse? baseResp,
   }) {
     final $result = create();
-    if (totalCost != null) {
-      $result.totalCost = totalCost;
+    if (totalCostMin != null) {
+      $result.totalCostMin = totalCostMin;
+    }
+    if (totalCostMax != null) {
+      $result.totalCostMax = totalCostMax;
     }
     if (totalSpend != null) {
       $result.totalSpend = totalSpend;
     }
-    if (totalCostPercent != null) {
-      $result.totalCostPercent = totalCostPercent;
+    if (totalCostPercentMin != null) {
+      $result.totalCostPercentMin = totalCostPercentMin;
+    }
+    if (totalCostPercentMax != null) {
+      $result.totalCostPercentMax = totalCostPercentMax;
     }
     if (complexUsageCount != null) {
       $result.complexUsageCount = complexUsageCount;
@@ -7581,15 +7563,17 @@ class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
   factory GetArticleCreationTenantCostResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleCreationTenantCostResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'totalCost', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalCostPercent', $pb.PbFieldType.OD)
-    ..aInt64(4, _omitFieldNames ? '' : 'complexUsageCount')
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
-    ..aInt64(6, _omitFieldNames ? '' : 'simpleUsageCount')
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
-    ..aInt64(8, _omitFieldNames ? '' : 'assistantUsageCount')
-    ..a<$core.double>(9, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(1, _omitFieldNames ? '' : 'totalCostMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'totalCostMax', $pb.PbFieldType.OD)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalSpend', $pb.PbFieldType.OD)
+    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalCostPercentMin', $pb.PbFieldType.OD)
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'totalCostPercentMax', $pb.PbFieldType.OD)
+    ..aInt64(6, _omitFieldNames ? '' : 'complexUsageCount')
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'complexSpend', $pb.PbFieldType.OD)
+    ..aInt64(8, _omitFieldNames ? '' : 'simpleUsageCount')
+    ..a<$core.double>(9, _omitFieldNames ? '' : 'simpleSpend', $pb.PbFieldType.OD)
+    ..aInt64(10, _omitFieldNames ? '' : 'assistantUsageCount')
+    ..a<$core.double>(11, _omitFieldNames ? '' : 'assistantSpend', $pb.PbFieldType.OD)
     ..aOM<$0.BaseResponse>(100, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..hasRequiredFields = false
   ;
@@ -7616,96 +7600,114 @@ class GetArticleCreationTenantCostResponse extends $pb.GeneratedMessage {
   static GetArticleCreationTenantCostResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.double get totalCost => $_getN(0);
+  $core.double get totalCostMin => $_getN(0);
   @$pb.TagNumber(1)
-  set totalCost($core.double v) { $_setDouble(0, v); }
+  set totalCostMin($core.double v) { $_setDouble(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTotalCost() => $_has(0);
+  $core.bool hasTotalCostMin() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTotalCost() => clearField(1);
+  void clearTotalCostMin() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.double get totalSpend => $_getN(1);
+  $core.double get totalCostMax => $_getN(1);
   @$pb.TagNumber(2)
-  set totalSpend($core.double v) { $_setDouble(1, v); }
+  set totalCostMax($core.double v) { $_setDouble(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTotalSpend() => $_has(1);
+  $core.bool hasTotalCostMax() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTotalSpend() => clearField(2);
+  void clearTotalCostMax() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.double get totalCostPercent => $_getN(2);
+  $core.double get totalSpend => $_getN(2);
   @$pb.TagNumber(3)
-  set totalCostPercent($core.double v) { $_setDouble(2, v); }
+  set totalSpend($core.double v) { $_setDouble(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTotalCostPercent() => $_has(2);
+  $core.bool hasTotalSpend() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTotalCostPercent() => clearField(3);
+  void clearTotalSpend() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get complexUsageCount => $_getI64(3);
+  $core.double get totalCostPercentMin => $_getN(3);
   @$pb.TagNumber(4)
-  set complexUsageCount($fixnum.Int64 v) { $_setInt64(3, v); }
+  set totalCostPercentMin($core.double v) { $_setDouble(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasComplexUsageCount() => $_has(3);
+  $core.bool hasTotalCostPercentMin() => $_has(3);
   @$pb.TagNumber(4)
-  void clearComplexUsageCount() => clearField(4);
+  void clearTotalCostPercentMin() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.double get complexSpend => $_getN(4);
+  $core.double get totalCostPercentMax => $_getN(4);
   @$pb.TagNumber(5)
-  set complexSpend($core.double v) { $_setDouble(4, v); }
+  set totalCostPercentMax($core.double v) { $_setDouble(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasComplexSpend() => $_has(4);
+  $core.bool hasTotalCostPercentMax() => $_has(4);
   @$pb.TagNumber(5)
-  void clearComplexSpend() => clearField(5);
+  void clearTotalCostPercentMax() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get simpleUsageCount => $_getI64(5);
+  $fixnum.Int64 get complexUsageCount => $_getI64(5);
   @$pb.TagNumber(6)
-  set simpleUsageCount($fixnum.Int64 v) { $_setInt64(5, v); }
+  set complexUsageCount($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasSimpleUsageCount() => $_has(5);
+  $core.bool hasComplexUsageCount() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSimpleUsageCount() => clearField(6);
+  void clearComplexUsageCount() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.double get simpleSpend => $_getN(6);
+  $core.double get complexSpend => $_getN(6);
   @$pb.TagNumber(7)
-  set simpleSpend($core.double v) { $_setDouble(6, v); }
+  set complexSpend($core.double v) { $_setDouble(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSimpleSpend() => $_has(6);
+  $core.bool hasComplexSpend() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSimpleSpend() => clearField(7);
+  void clearComplexSpend() => clearField(7);
 
   @$pb.TagNumber(8)
-  $fixnum.Int64 get assistantUsageCount => $_getI64(7);
+  $fixnum.Int64 get simpleUsageCount => $_getI64(7);
   @$pb.TagNumber(8)
-  set assistantUsageCount($fixnum.Int64 v) { $_setInt64(7, v); }
+  set simpleUsageCount($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasAssistantUsageCount() => $_has(7);
+  $core.bool hasSimpleUsageCount() => $_has(7);
   @$pb.TagNumber(8)
-  void clearAssistantUsageCount() => clearField(8);
+  void clearSimpleUsageCount() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.double get assistantSpend => $_getN(8);
+  $core.double get simpleSpend => $_getN(8);
   @$pb.TagNumber(9)
-  set assistantSpend($core.double v) { $_setDouble(8, v); }
+  set simpleSpend($core.double v) { $_setDouble(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAssistantSpend() => $_has(8);
+  $core.bool hasSimpleSpend() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAssistantSpend() => clearField(9);
+  void clearSimpleSpend() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get assistantUsageCount => $_getI64(9);
+  @$pb.TagNumber(10)
+  set assistantUsageCount($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAssistantUsageCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAssistantUsageCount() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get assistantSpend => $_getN(10);
+  @$pb.TagNumber(11)
+  set assistantSpend($core.double v) { $_setDouble(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasAssistantSpend() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAssistantSpend() => clearField(11);
 
   @$pb.TagNumber(100)
-  $0.BaseResponse get baseResp => $_getN(9);
+  $0.BaseResponse get baseResp => $_getN(11);
   @$pb.TagNumber(100)
   set baseResp($0.BaseResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasBaseResp() => $_has(9);
+  $core.bool hasBaseResp() => $_has(11);
   @$pb.TagNumber(100)
   void clearBaseResp() => clearField(100);
   @$pb.TagNumber(100)
-  $0.BaseResponse ensureBaseResp() => $_ensure(9);
+  $0.BaseResponse ensureBaseResp() => $_ensure(11);
 }
 
 class GetSubTopicAiResultRequest extends $pb.GeneratedMessage {

@@ -72,12 +72,12 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            simpleCount = input.readInt64();
+            evaluationCount = input.readInt64();
             break;
           }
           case 48: {
 
-            complexCount = input.readInt64();
+            evaluationDayCount = input.readInt64();
             break;
           }
           case 56: {
@@ -86,6 +86,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 64: {
+
+            assistantDayCount = input.readInt64();
+            break;
+          }
+          case 72: {
 
             total = input.readInt64();
             break;
@@ -193,26 +198,26 @@ private static final long serialVersionUID = 0L;
     return dayCourseCount ;
   }
 
-  public static final int SIMPLE_COUNT_FIELD_NUMBER = 5;
-  private long simpleCount ;
+  public static final int EVALUATION_COUNT_FIELD_NUMBER = 5;
+  private long evaluationCount ;
   /**
-   * <code>int64 simple_count = 5;</code>
-   * @return The simpleCount.
+   * <code>int64 evaluation_count = 5;</code>
+   * @return The evaluationCount.
    */
   @java.lang.Override
-  public long getSimpleCount() {
-    return simpleCount ;
+  public long getEvaluationCount() {
+    return evaluationCount ;
   }
 
-  public static final int COMPLEX_COUNT_FIELD_NUMBER = 6;
-  private long complexCount ;
+  public static final int EVALUATION_DAY_COUNT_FIELD_NUMBER = 6;
+  private long evaluationDayCount ;
   /**
-   * <code>int64 complex_count = 6;</code>
-   * @return The complexCount.
+   * <code>int64 evaluation_day_count = 6;</code>
+   * @return The evaluationDayCount.
    */
   @java.lang.Override
-  public long getComplexCount() {
-    return complexCount ;
+  public long getEvaluationDayCount() {
+    return evaluationDayCount ;
   }
 
   public static final int ASSISTANT_COUNT_FIELD_NUMBER = 7;
@@ -226,10 +231,21 @@ private static final long serialVersionUID = 0L;
     return assistantCount ;
   }
 
-  public static final int TOTAL_FIELD_NUMBER = 8;
+  public static final int ASSISTANT_DAY_COUNT_FIELD_NUMBER = 8;
+  private long assistantDayCount ;
+  /**
+   * <code>int64 assistant_day_count = 8;</code>
+   * @return The assistantDayCount.
+   */
+  @java.lang.Override
+  public long getAssistantDayCount() {
+    return assistantDayCount ;
+  }
+
+  public static final int TOTAL_FIELD_NUMBER = 9;
   private long total ;
   /**
-   * <code>int64 total = 8;</code>
+   * <code>int64 total = 9;</code>
    * @return The total.
    */
   @java.lang.Override
@@ -263,17 +279,20 @@ private static final long serialVersionUID = 0L;
     if (dayCourseCount != 0L) {
       output.writeInt64(4, dayCourseCount );
     }
-    if (simpleCount != 0L) {
-      output.writeInt64(5, simpleCount );
+    if (evaluationCount != 0L) {
+      output.writeInt64(5, evaluationCount );
     }
-    if (complexCount != 0L) {
-      output.writeInt64(6, complexCount );
+    if (evaluationDayCount != 0L) {
+      output.writeInt64(6, evaluationDayCount );
     }
     if (assistantCount != 0L) {
       output.writeInt64(7, assistantCount );
     }
+    if (assistantDayCount != 0L) {
+      output.writeInt64(8, assistantDayCount );
+    }
     if (total != 0L) {
-      output.writeInt64(8, total );
+      output.writeInt64(9, total );
     }
     unknownFields.writeTo(output);
   }
@@ -299,21 +318,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, dayCourseCount );
     }
-    if (simpleCount != 0L) {
+    if (evaluationCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, simpleCount );
+        .computeInt64Size(5, evaluationCount );
     }
-    if (complexCount != 0L) {
+    if (evaluationDayCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, complexCount );
+        .computeInt64Size(6, evaluationDayCount );
     }
     if (assistantCount != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, assistantCount );
     }
+    if (assistantDayCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, assistantDayCount );
+    }
     if (total != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, total );
+        .computeInt64Size(9, total );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -338,12 +361,14 @@ private static final long serialVersionUID = 0L;
         != other.getCourseCount()) return false;
     if (getDayCourseCount()
         != other.getDayCourseCount()) return false;
-    if (getSimpleCount()
-        != other.getSimpleCount()) return false;
-    if (getComplexCount()
-        != other.getComplexCount()) return false;
+    if (getEvaluationCount()
+        != other.getEvaluationCount()) return false;
+    if (getEvaluationDayCount()
+        != other.getEvaluationDayCount()) return false;
     if (getAssistantCount()
         != other.getAssistantCount()) return false;
+    if (getAssistantDayCount()
+        != other.getAssistantDayCount()) return false;
     if (getTotal()
         != other.getTotal()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -368,15 +393,18 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DAY_COURSE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getDayCourseCount());
-    hash = (37 * hash) + SIMPLE_COUNT_FIELD_NUMBER;
+    hash = (37 * hash) + EVALUATION_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSimpleCount());
-    hash = (37 * hash) + COMPLEX_COUNT_FIELD_NUMBER;
+        getEvaluationCount());
+    hash = (37 * hash) + EVALUATION_DAY_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getComplexCount());
+        getEvaluationDayCount());
     hash = (37 * hash) + ASSISTANT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAssistantCount());
+    hash = (37 * hash) + ASSISTANT_DAY_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getAssistantDayCount());
     hash = (37 * hash) + TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTotal());
@@ -521,11 +549,13 @@ private static final long serialVersionUID = 0L;
 
       dayCourseCount = 0L;
 
-      simpleCount = 0L;
+      evaluationCount = 0L;
 
-      complexCount = 0L;
+      evaluationDayCount = 0L;
 
       assistantCount = 0L;
+
+      assistantDayCount = 0L;
 
       total = 0L;
 
@@ -559,9 +589,10 @@ private static final long serialVersionUID = 0L;
       result.studentCount = studentCount ;
       result.courseCount = courseCount ;
       result.dayCourseCount = dayCourseCount ;
-      result.simpleCount = simpleCount ;
-      result.complexCount = complexCount ;
+      result.evaluationCount = evaluationCount ;
+      result.evaluationDayCount = evaluationDayCount ;
       result.assistantCount = assistantCount ;
+      result.assistantDayCount = assistantDayCount ;
       result.total = total ;
       onBuilt();
       return result;
@@ -624,14 +655,17 @@ private static final long serialVersionUID = 0L;
       if (other.getDayCourseCount() != 0L) {
         setDayCourseCount(other.getDayCourseCount());
       }
-      if (other.getSimpleCount() != 0L) {
-        setSimpleCount(other.getSimpleCount());
+      if (other.getEvaluationCount() != 0L) {
+        setEvaluationCount(other.getEvaluationCount());
       }
-      if (other.getComplexCount() != 0L) {
-        setComplexCount(other.getComplexCount());
+      if (other.getEvaluationDayCount() != 0L) {
+        setEvaluationDayCount(other.getEvaluationDayCount());
       }
       if (other.getAssistantCount() != 0L) {
         setAssistantCount(other.getAssistantCount());
+      }
+      if (other.getAssistantDayCount() != 0L) {
+        setAssistantDayCount(other.getAssistantDayCount());
       }
       if (other.getTotal() != 0L) {
         setTotal(other.getTotal());
@@ -834,64 +868,64 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long simpleCount ;
+    private long evaluationCount ;
     /**
-     * <code>int64 simple_count = 5;</code>
-     * @return The simpleCount.
+     * <code>int64 evaluation_count = 5;</code>
+     * @return The evaluationCount.
      */
     @java.lang.Override
-    public long getSimpleCount() {
-      return simpleCount ;
+    public long getEvaluationCount() {
+      return evaluationCount ;
     }
     /**
-     * <code>int64 simple_count = 5;</code>
-     * @param value The simpleCount to set.
+     * <code>int64 evaluation_count = 5;</code>
+     * @param value The evaluationCount to set.
      * @return This builder for chaining.
      */
-    public Builder setSimpleCount(long value) {
+    public Builder setEvaluationCount(long value) {
       
-      simpleCount = value;
+      evaluationCount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 simple_count = 5;</code>
+     * <code>int64 evaluation_count = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSimpleCount() {
+    public Builder clearEvaluationCount() {
       
-      simpleCount = 0L;
+      evaluationCount = 0L;
       onChanged();
       return this;
     }
 
-    private long complexCount ;
+    private long evaluationDayCount ;
     /**
-     * <code>int64 complex_count = 6;</code>
-     * @return The complexCount.
+     * <code>int64 evaluation_day_count = 6;</code>
+     * @return The evaluationDayCount.
      */
     @java.lang.Override
-    public long getComplexCount() {
-      return complexCount ;
+    public long getEvaluationDayCount() {
+      return evaluationDayCount ;
     }
     /**
-     * <code>int64 complex_count = 6;</code>
-     * @param value The complexCount to set.
+     * <code>int64 evaluation_day_count = 6;</code>
+     * @param value The evaluationDayCount to set.
      * @return This builder for chaining.
      */
-    public Builder setComplexCount(long value) {
+    public Builder setEvaluationDayCount(long value) {
       
-      complexCount = value;
+      evaluationDayCount = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 complex_count = 6;</code>
+     * <code>int64 evaluation_day_count = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearComplexCount() {
+    public Builder clearEvaluationDayCount() {
       
-      complexCount = 0L;
+      evaluationDayCount = 0L;
       onChanged();
       return this;
     }
@@ -927,9 +961,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long assistantDayCount ;
+    /**
+     * <code>int64 assistant_day_count = 8;</code>
+     * @return The assistantDayCount.
+     */
+    @java.lang.Override
+    public long getAssistantDayCount() {
+      return assistantDayCount ;
+    }
+    /**
+     * <code>int64 assistant_day_count = 8;</code>
+     * @param value The assistantDayCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssistantDayCount(long value) {
+      
+      assistantDayCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 assistant_day_count = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAssistantDayCount() {
+      
+      assistantDayCount = 0L;
+      onChanged();
+      return this;
+    }
+
     private long total ;
     /**
-     * <code>int64 total = 8;</code>
+     * <code>int64 total = 9;</code>
      * @return The total.
      */
     @java.lang.Override
@@ -937,7 +1002,7 @@ private static final long serialVersionUID = 0L;
       return total ;
     }
     /**
-     * <code>int64 total = 8;</code>
+     * <code>int64 total = 9;</code>
      * @param value The total to set.
      * @return This builder for chaining.
      */
@@ -948,7 +1013,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 total = 8;</code>
+     * <code>int64 total = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearTotal() {
