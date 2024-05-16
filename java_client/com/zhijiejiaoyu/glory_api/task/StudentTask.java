@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     systemTaskKey = "";
     taskLinks = java.util.Collections.emptyList();
     taskResultLinks = java.util.Collections.emptyList();
+    resultMessage = "";
   }
 
   @java.lang.Override
@@ -238,6 +239,12 @@ private static final long serialVersionUID = 0L;
           case 176: {
 
             taskStudentStartTime = input.readInt64();
+            break;
+          }
+          case 186: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            resultMessage = s;
             break;
           }
           default: {
@@ -1201,6 +1208,44 @@ private static final long serialVersionUID = 0L;
     return taskStudentStartTime ;
   }
 
+  public static final int RESULT_MESSAGE_FIELD_NUMBER = 23;
+  private volatile java.lang.Object resultMessage ;
+  /**
+   * <code>string result_message = 23;</code>
+   * @return The resultMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getResultMessage() {
+    java.lang.Object ref = resultMessage ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resultMessage = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string result_message = 23;</code>
+   * @return The bytes for resultMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResultMessageBytes() {
+    java.lang.Object ref = resultMessage ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resultMessage = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1280,6 +1325,9 @@ private static final long serialVersionUID = 0L;
     }
     if (taskStudentStartTime != 0L) {
       output.writeInt64(22, taskStudentStartTime );
+    }
+    if (!getResultMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, resultMessage );
     }
     unknownFields.writeTo(output);
   }
@@ -1370,6 +1418,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(22, taskStudentStartTime );
     }
+    if (!getResultMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, resultMessage );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1444,6 +1495,8 @@ private static final long serialVersionUID = 0L;
         != other.getTaskDuration()) return false;
     if (getTaskStudentStartTime()
         != other.getTaskStudentStartTime()) return false;
+    if (!getResultMessage()
+        .equals(other.getResultMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1522,6 +1575,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TASK_STUDENT_START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTaskStudentStartTime());
+    hash = (37 * hash) + RESULT_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getResultMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1744,6 +1799,8 @@ private static final long serialVersionUID = 0L;
 
       taskStudentStartTime = 0L;
 
+      resultMessage = "";
+
       return this;
     }
 
@@ -1853,6 +1910,7 @@ private static final long serialVersionUID = 0L;
       }
       result.taskDuration = taskDuration ;
       result.taskStudentStartTime = taskStudentStartTime ;
+      result.resultMessage = resultMessage ;
       onBuilt();
       return result;
     }
@@ -2089,6 +2147,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTaskStudentStartTime() != 0L) {
         setTaskStudentStartTime(other.getTaskStudentStartTime());
+      }
+      if (!other.getResultMessage().isEmpty()) {
+        resultMessage = other.resultMessage ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5379,6 +5441,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskStudentStartTime() {
       
       taskStudentStartTime = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resultMessage = "";
+    /**
+     * <code>string result_message = 23;</code>
+     * @return The resultMessage.
+     */
+    public java.lang.String getResultMessage() {
+      java.lang.Object ref = resultMessage ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resultMessage = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string result_message = 23;</code>
+     * @return The bytes for resultMessage.
+     */
+    public com.google.protobuf.ByteString
+        getResultMessageBytes() {
+      java.lang.Object ref = resultMessage ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultMessage = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string result_message = 23;</code>
+     * @param value The resultMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResultMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      resultMessage = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string result_message = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResultMessage() {
+      
+      resultMessage = getDefaultInstance().getResultMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string result_message = 23;</code>
+     * @param value The bytes for resultMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResultMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      resultMessage = value;
       onChanged();
       return this;
     }

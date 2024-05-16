@@ -155,7 +155,7 @@ public final class StudentTaskOuterClass {
       "\023task_requirement_id\030\001 \001(\003\022\030\n\020task_requi" +
       "rement\030\002 \001(\t\022\021\n\tis_passed\030\003 \001(\010\":\n\025Stude" +
       "ntTaskAttachment\022\020\n\010oss_path\030\001 \001(\t\022\017\n\007os" +
-      "s_url\030\002 \001(\t\"\312\006\n\013StudentTask\022\027\n\017student_t" +
+      "s_url\030\002 \001(\t\"\342\006\n\013StudentTask\022\027\n\017student_t" +
       "ask_id\030\001 \001(\003\022\023\n\013task_status\030\002 \001(\t\022\024\n\014sub" +
       "mitted_at\030\003 \001(\t\022\030\n\020submit_parameter\030\004 \001(" +
       "\t\022\032\n\022submit_description\030\005 \001(\t\0225\n\013attachm" +
@@ -176,76 +176,76 @@ public final class StudentTaskOuterClass {
       "i.TenantDept\022 \n\007student\030\023 \001(\0132\017.glory_ap" +
       "i.User\022 \n\007teacher\030\024 \001(\0132\017.glory_api.User" +
       "\022\025\n\rtask_duration\030\025 \001(\003\022\037\n\027task_student_" +
-      "start_time\030\026 \001(\003\"P\n\034TeacherRequirementEv" +
-      "aluation\022\026\n\016requirement_id\030\001 \001(\003\022\030\n\020requ" +
-      "irement_pass\030\002 \001(\010\"\272\002\n\026ListStudentTaskRe" +
-      "quest\022\014\n\004type\030\001 \001(\005\022\017\n\007keyword\030\002 \001(\t\022\020\n\010" +
-      "platform\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022(\n\ntask_s" +
-      "tart\030\005 \001(\0132\024.glory_api.TimeRange\022&\n\010task" +
-      "_end\030\006 \001(\0132\024.glory_api.TimeRange\022/\n\021task" +
-      "_submitted_at\030\007 \001(\0132\024.glory_api.TimeRang" +
-      "e\022/\n\021task_evaluated_at\030\010 \001(\0132\024.glory_api" +
-      ".TimeRange\022+\n\npagination\030d \001(\0132\027.base.Pa" +
-      "ginationRequest\"\235\001\n\027ListStudentTaskRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022-\n\rstudent_tasks\030\002 \003(\0132\026.glory_api.St" +
-      "udentTask\022,\n\npagination\030d \001(\0132\030.base.Pag" +
-      "inationResponse\"\227\001\n\030SubmitStudentTaskReq" +
-      "uest\022\027\n\017student_task_id\030\001 \001(\003\022\036\n\026student" +
-      "_task_parameter\030\002 \001(\t\022 \n\030student_task_de" +
-      "scription\030\003 \001(\t\022 \n\030student_task_attachme" +
-      "nts\030\004 \003(\t\"B\n\031SubmitStudentTaskResponse\022%" +
-      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"Y\n" +
-      "\025GetStudentTaskRequest\022\'\n\014base_request\030\001" +
-      " \001(\0132\021.base.BaseRequest\022\027\n\017student_task_" +
-      "id\030\002 \001(\003\"~\n\026GetStudentTaskResponse\022%\n\tba" +
-      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022,\n\014stu" +
-      "dent_task\030\002 \001(\0132\026.glory_api.StudentTask\022" +
-      "\017\n\007room_id\030\003 \001(\003\"\227\003\n\035TeacherListStudentT" +
-      "askRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
-      "BaseRequest\022\032\n\022task_evaluate_type\030\002 \001(\005\022" +
-      "\034\n\024task_evaluate_status\030\003 \001(\005\022\017\n\007keyword" +
-      "\030\004 \001(\t\022\021\n\tclass_ids\030\005 \003(\003\022\016\n\006status\030\006 \001(" +
-      "\t\022(\n\ntask_start\030\007 \001(\0132\024.glory_api.TimeRa" +
-      "nge\022&\n\010task_end\030\010 \001(\0132\024.glory_api.TimeRa" +
-      "nge\022/\n\021task_submitted_at\030\t \001(\0132\024.glory_a" +
-      "pi.TimeRange\022/\n\021task_evaluated_at\030\n \001(\0132" +
-      "\024.glory_api.TimeRange\022+\n\npagination\030d \001(" +
-      "\0132\027.base.PaginationRequest\"\244\001\n\036TeacherLi" +
-      "stStudentTaskResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022-\n\rstudent_tasks\030\002 " +
-      "\003(\0132\026.glory_api.StudentTask\022,\n\npaginatio" +
-      "n\030d \001(\0132\030.base.PaginationResponse\"\336\001\n!Te" +
-      "acherEvaluateStudentTaskRequest\022\'\n\014base_" +
-      "request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017stud" +
-      "ent_task_id\030\002 \001(\003\022H\n\027requirement_evaluat" +
-      "ions\030\003 \003(\0132\'.glory_api.TeacherRequiremen" +
-      "tEvaluation\022\025\n\rfailed_reason\030\004 \001(\t\022\026\n\016ev" +
-      "aluate_score\030\005 \001(\005\"K\n\"TeacherEvaluateStu" +
-      "dentTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
-      "se.BaseResponse\"B\n\027StudentTaskStatsReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\"\355\001\n\030StudentTaskStatsResponse\022%\n\tbase" +
-      "_resp\030\001 \001(\0132\022.base.BaseResponse\022\030\n\020total" +
-      "_task_count\030\002 \001(\003\022\034\n\024waiting_submit_coun" +
-      "t\030\003 \001(\003\022\036\n\026waiting_evaluate_count\030\004 \001(\003\022" +
-      "\035\n\025evaluate_passed_count\030\005 \001(\003\022\035\n\025evalua" +
-      "te_failed_count\030\006 \001(\003\022\024\n\014expire_count\030\007 " +
-      "\001(\003\"f\n\037StudentTaskEvaluateStatsRequest\022\'" +
-      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
-      "\032\n\022task_evaluate_type\030\002 \001(\005\"\375\001\n StudentT" +
-      "askEvaluateStatsResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\030\n\020total_task_co" +
-      "unt\030\002 \001(\003\022\036\n\026waiting_evaluate_count\030\003 \001(" +
-      "\003\022\027\n\017evaluated_count\030\004 \001(\003\022\034\n\024waiting_su" +
-      "bmit_count\030\005 \001(\003\022\024\n\014expire_count\030\006 \001(\003\022\024" +
-      "\n\014passed_count\030\007 \001(\003\022\025\n\rno_pass_count\030\010 " +
-      "\001(\003\"_\n\033StartStudentTaskTimeRequest\022\'\n\014ba" +
-      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\027\n\017s" +
-      "tudent_task_id\030\002 \001(\003\"E\n\034StartStudentTask" +
-      "TimeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponseB#\n\037com.zhijiejiaoyu.glory_ap" +
-      "i.taskP\001b\006proto3"
+      "start_time\030\026 \001(\003\022\026\n\016result_message\030\027 \001(\t" +
+      "\"P\n\034TeacherRequirementEvaluation\022\026\n\016requ" +
+      "irement_id\030\001 \001(\003\022\030\n\020requirement_pass\030\002 \001" +
+      "(\010\"\272\002\n\026ListStudentTaskRequest\022\014\n\004type\030\001 " +
+      "\001(\005\022\017\n\007keyword\030\002 \001(\t\022\020\n\010platform\030\003 \001(\t\022\016" +
+      "\n\006status\030\004 \001(\t\022(\n\ntask_start\030\005 \001(\0132\024.glo" +
+      "ry_api.TimeRange\022&\n\010task_end\030\006 \001(\0132\024.glo" +
+      "ry_api.TimeRange\022/\n\021task_submitted_at\030\007 " +
+      "\001(\0132\024.glory_api.TimeRange\022/\n\021task_evalua" +
+      "ted_at\030\010 \001(\0132\024.glory_api.TimeRange\022+\n\npa" +
+      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
+      "\235\001\n\027ListStudentTaskResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\022-\n\rstudent_ta" +
+      "sks\030\002 \003(\0132\026.glory_api.StudentTask\022,\n\npag" +
+      "ination\030d \001(\0132\030.base.PaginationResponse\"" +
+      "\227\001\n\030SubmitStudentTaskRequest\022\027\n\017student_" +
+      "task_id\030\001 \001(\003\022\036\n\026student_task_parameter\030" +
+      "\002 \001(\t\022 \n\030student_task_description\030\003 \001(\t\022" +
+      " \n\030student_task_attachments\030\004 \003(\t\"B\n\031Sub" +
+      "mitStudentTaskResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\"Y\n\025GetStudentTaskR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\027\n\017student_task_id\030\002 \001(\003\"~\n\026GetS" +
+      "tudentTaskResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
+      "base.BaseResponse\022,\n\014student_task\030\002 \001(\0132" +
+      "\026.glory_api.StudentTask\022\017\n\007room_id\030\003 \001(\003" +
+      "\"\227\003\n\035TeacherListStudentTaskRequest\022\'\n\014ba" +
+      "se_request\030\001 \001(\0132\021.base.BaseRequest\022\032\n\022t" +
+      "ask_evaluate_type\030\002 \001(\005\022\034\n\024task_evaluate" +
+      "_status\030\003 \001(\005\022\017\n\007keyword\030\004 \001(\t\022\021\n\tclass_" +
+      "ids\030\005 \003(\003\022\016\n\006status\030\006 \001(\t\022(\n\ntask_start\030" +
+      "\007 \001(\0132\024.glory_api.TimeRange\022&\n\010task_end\030" +
+      "\010 \001(\0132\024.glory_api.TimeRange\022/\n\021task_subm" +
+      "itted_at\030\t \001(\0132\024.glory_api.TimeRange\022/\n\021" +
+      "task_evaluated_at\030\n \001(\0132\024.glory_api.Time" +
+      "Range\022+\n\npagination\030d \001(\0132\027.base.Paginat" +
+      "ionRequest\"\244\001\n\036TeacherListStudentTaskRes" +
+      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
+      "onse\022-\n\rstudent_tasks\030\002 \003(\0132\026.glory_api." +
+      "StudentTask\022,\n\npagination\030d \001(\0132\030.base.P" +
+      "aginationResponse\"\336\001\n!TeacherEvaluateStu" +
+      "dentTaskRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\027\n\017student_task_id\030\002 \001(" +
+      "\003\022H\n\027requirement_evaluations\030\003 \003(\0132\'.glo" +
+      "ry_api.TeacherRequirementEvaluation\022\025\n\rf" +
+      "ailed_reason\030\004 \001(\t\022\026\n\016evaluate_score\030\005 \001" +
+      "(\005\"K\n\"TeacherEvaluateStudentTaskResponse" +
+      "\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"" +
+      "B\n\027StudentTaskStatsRequest\022\'\n\014base_reque" +
+      "st\030\001 \001(\0132\021.base.BaseRequest\"\355\001\n\030StudentT" +
+      "askStatsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\022\030\n\020total_task_count\030\002 \001(" +
+      "\003\022\034\n\024waiting_submit_count\030\003 \001(\003\022\036\n\026waiti" +
+      "ng_evaluate_count\030\004 \001(\003\022\035\n\025evaluate_pass" +
+      "ed_count\030\005 \001(\003\022\035\n\025evaluate_failed_count\030" +
+      "\006 \001(\003\022\024\n\014expire_count\030\007 \001(\003\"f\n\037StudentTa" +
+      "skEvaluateStatsRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\032\n\022task_evaluate" +
+      "_type\030\002 \001(\005\"\375\001\n StudentTaskEvaluateStats" +
+      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
+      "esponse\022\030\n\020total_task_count\030\002 \001(\003\022\036\n\026wai" +
+      "ting_evaluate_count\030\003 \001(\003\022\027\n\017evaluated_c" +
+      "ount\030\004 \001(\003\022\034\n\024waiting_submit_count\030\005 \001(\003" +
+      "\022\024\n\014expire_count\030\006 \001(\003\022\024\n\014passed_count\030\007" +
+      " \001(\003\022\025\n\rno_pass_count\030\010 \001(\003\"_\n\033StartStud" +
+      "entTaskTimeRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\027\n\017student_task_id\030\002" +
+      " \001(\003\"E\n\034StartStudentTaskTimeResponse\022%\n\t" +
+      "base_resp\030\001 \001(\0132\022.base.BaseResponseB#\n\037c" +
+      "om.zhijiejiaoyu.glory_api.taskP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -290,7 +290,7 @@ public final class StudentTaskOuterClass {
     internal_static_glory_api_StudentTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_StudentTask_descriptor,
-        new java.lang.String[] { "StudentTaskId", "TaskStatus", "SubmittedAt", "SubmitParameter", "SubmitDescription", "Attachments", "EvaluatedAt", "StudentTaskParameterResult", "StudentTaskRequirementResult", "TeacherFailedReason", "TeacherEvaluateScore", "TaskPlatform", "SystemTaskKey", "TeacherTask", "TaskLinks", "TaskResultLinks", "ClassDept", "MajorDept", "Student", "Teacher", "TaskDuration", "TaskStudentStartTime", });
+        new java.lang.String[] { "StudentTaskId", "TaskStatus", "SubmittedAt", "SubmitParameter", "SubmitDescription", "Attachments", "EvaluatedAt", "StudentTaskParameterResult", "StudentTaskRequirementResult", "TeacherFailedReason", "TeacherEvaluateScore", "TaskPlatform", "SystemTaskKey", "TeacherTask", "TaskLinks", "TaskResultLinks", "ClassDept", "MajorDept", "Student", "Teacher", "TaskDuration", "TaskStudentStartTime", "ResultMessage", });
     internal_static_glory_api_TeacherRequirementEvaluation_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_glory_api_TeacherRequirementEvaluation_fieldAccessorTable = new

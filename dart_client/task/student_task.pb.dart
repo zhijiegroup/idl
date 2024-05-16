@@ -482,6 +482,7 @@ class StudentTask extends $pb.GeneratedMessage {
     $1.User? teacher,
     $fixnum.Int64? taskDuration,
     $fixnum.Int64? taskStudentStartTime,
+    $core.String? resultMessage,
   }) {
     final $result = create();
     if (studentTaskId != null) {
@@ -550,6 +551,9 @@ class StudentTask extends $pb.GeneratedMessage {
     if (taskStudentStartTime != null) {
       $result.taskStudentStartTime = taskStudentStartTime;
     }
+    if (resultMessage != null) {
+      $result.resultMessage = resultMessage;
+    }
     return $result;
   }
   StudentTask._() : super();
@@ -579,6 +583,7 @@ class StudentTask extends $pb.GeneratedMessage {
     ..aOM<$1.User>(20, _omitFieldNames ? '' : 'teacher', subBuilder: $1.User.create)
     ..aInt64(21, _omitFieldNames ? '' : 'taskDuration')
     ..aInt64(22, _omitFieldNames ? '' : 'taskStudentStartTime')
+    ..aOS(23, _omitFieldNames ? '' : 'resultMessage')
     ..hasRequiredFields = false
   ;
 
@@ -780,6 +785,15 @@ class StudentTask extends $pb.GeneratedMessage {
   $core.bool hasTaskStudentStartTime() => $_has(21);
   @$pb.TagNumber(22)
   void clearTaskStudentStartTime() => clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.String get resultMessage => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set resultMessage($core.String v) { $_setString(22, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasResultMessage() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearResultMessage() => clearField(23);
 }
 
 class TeacherRequirementEvaluation extends $pb.GeneratedMessage {

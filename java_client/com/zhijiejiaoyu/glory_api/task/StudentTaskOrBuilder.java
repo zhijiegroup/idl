@@ -557,4 +557,16 @@ public interface StudentTaskOrBuilder extends
    * @return The taskStudentStartTime.
    */
   long getTaskStudentStartTime();
+
+  /**
+   * <code>string result_message = 23;</code>
+   * @return The resultMessage.
+   */
+  java.lang.String getResultMessage();
+  /**
+   * <code>string result_message = 23;</code>
+   * @return The bytes for resultMessage.
+   */
+  com.google.protobuf.ByteString
+      getResultMessageBytes();
 }

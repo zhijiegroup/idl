@@ -126,6 +126,7 @@ const StudentTask$json = {
     {'1': 'teacher', '3': 20, '4': 1, '5': 11, '6': '.glory_api.User', '10': 'teacher'},
     {'1': 'task_duration', '3': 21, '4': 1, '5': 3, '10': 'taskDuration'},
     {'1': 'task_student_start_time', '3': 22, '4': 1, '5': 3, '10': 'taskStudentStartTime'},
+    {'1': 'result_message', '3': 23, '4': 1, '5': 9, '10': 'resultMessage'},
   ],
 };
 
@@ -152,7 +153,8 @@ final $typed_data.Uint8List studentTaskDescriptor = $convert.base64Decode(
     'ZXB0UgltYWpvckRlcHQSKQoHc3R1ZGVudBgTIAEoCzIPLmdsb3J5X2FwaS5Vc2VyUgdzdHVkZW'
     '50EikKB3RlYWNoZXIYFCABKAsyDy5nbG9yeV9hcGkuVXNlclIHdGVhY2hlchIjCg10YXNrX2R1'
     'cmF0aW9uGBUgASgDUgx0YXNrRHVyYXRpb24SNQoXdGFza19zdHVkZW50X3N0YXJ0X3RpbWUYFi'
-    'ABKANSFHRhc2tTdHVkZW50U3RhcnRUaW1l');
+    'ABKANSFHRhc2tTdHVkZW50U3RhcnRUaW1lEiUKDnJlc3VsdF9tZXNzYWdlGBcgASgJUg1yZXN1'
+    'bHRNZXNzYWdl');
 
 @$core.Deprecated('Use teacherRequirementEvaluationDescriptor instead')
 const TeacherRequirementEvaluation$json = {

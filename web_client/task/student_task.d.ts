@@ -88,6 +88,7 @@ export interface StudentTask {
   task_duration?: string;
   /** 学生任务开始时间 */
   task_student_start_time?: string;
+  result_message?: string;
 }
 
 export interface TeacherRequirementEvaluation {
