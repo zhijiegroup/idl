@@ -539,6 +539,8 @@ message GetArticleCreationTenant {
     double assistant_count_percent = 15; // AI聊天次数使用百分比
     int64 tenant_id = 16;
     int64 student_count = 17; // 学生数量
+    int64 course_count = 18; // 课程数量
+    int64 day_course_count = 19; // 每天课程数量
 }
 
 message GetArticleCreationTenantResponse {
