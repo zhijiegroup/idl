@@ -174,4 +174,24 @@ public interface GetArticleCreationTenantOrBuilder extends
    * @return The studentCount.
    */
   long getStudentCount();
+
+  /**
+   * <pre>
+   * 课程数量
+   * </pre>
+   *
+   * <code>int64 course_count = 18;</code>
+   * @return The courseCount.
+   */
+  long getCourseCount();
+
+  /**
+   * <pre>
+   * 每天课程数量
+   * </pre>
+   *
+   * <code>int64 day_course_count = 19;</code>
+   * @return The dayCourseCount.
+   */
+  long getDayCourseCount();
 }

@@ -135,6 +135,16 @@ private static final long serialVersionUID = 0L;
             studentCount = input.readInt64();
             break;
           }
+          case 144: {
+
+            courseCount = input.readInt64();
+            break;
+          }
+          case 152: {
+
+            dayCourseCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -441,6 +451,36 @@ private static final long serialVersionUID = 0L;
     return studentCount ;
   }
 
+  public static final int COURSE_COUNT_FIELD_NUMBER = 18;
+  private long courseCount ;
+  /**
+   * <pre>
+   * 课程数量
+   * </pre>
+   *
+   * <code>int64 course_count = 18;</code>
+   * @return The courseCount.
+   */
+  @java.lang.Override
+  public long getCourseCount() {
+    return courseCount ;
+  }
+
+  public static final int DAY_COURSE_COUNT_FIELD_NUMBER = 19;
+  private long dayCourseCount ;
+  /**
+   * <pre>
+   * 每天课程数量
+   * </pre>
+   *
+   * <code>int64 day_course_count = 19;</code>
+   * @return The dayCourseCount.
+   */
+  @java.lang.Override
+  public long getDayCourseCount() {
+    return dayCourseCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -505,6 +545,12 @@ private static final long serialVersionUID = 0L;
     }
     if (studentCount != 0L) {
       output.writeInt64(17, studentCount );
+    }
+    if (courseCount != 0L) {
+      output.writeInt64(18, courseCount );
+    }
+    if (dayCourseCount != 0L) {
+      output.writeInt64(19, dayCourseCount );
     }
     unknownFields.writeTo(output);
   }
@@ -582,6 +628,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(17, studentCount );
     }
+    if (courseCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(18, courseCount );
+    }
+    if (dayCourseCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(19, dayCourseCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -640,6 +694,10 @@ private static final long serialVersionUID = 0L;
         != other.getTenantId()) return false;
     if (getStudentCount()
         != other.getStudentCount()) return false;
+    if (getCourseCount()
+        != other.getCourseCount()) return false;
+    if (getDayCourseCount()
+        != other.getDayCourseCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -701,6 +759,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STUDENT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStudentCount());
+    hash = (37 * hash) + COURSE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCourseCount());
+    hash = (37 * hash) + DAY_COURSE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDayCourseCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -868,6 +932,10 @@ private static final long serialVersionUID = 0L;
 
       studentCount = 0L;
 
+      courseCount = 0L;
+
+      dayCourseCount = 0L;
+
       return this;
     }
 
@@ -911,6 +979,8 @@ private static final long serialVersionUID = 0L;
       result.assistantCountPercent = assistantCountPercent ;
       result.tenantId = tenantId ;
       result.studentCount = studentCount ;
+      result.courseCount = courseCount ;
+      result.dayCourseCount = dayCourseCount ;
       onBuilt();
       return result;
     }
@@ -1010,6 +1080,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStudentCount() != 0L) {
         setStudentCount(other.getStudentCount());
+      }
+      if (other.getCourseCount() != 0L) {
+        setCourseCount(other.getCourseCount());
+      }
+      if (other.getDayCourseCount() != 0L) {
+        setDayCourseCount(other.getDayCourseCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1788,6 +1864,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearStudentCount() {
       
       studentCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long courseCount ;
+    /**
+     * <pre>
+     * 课程数量
+     * </pre>
+     *
+     * <code>int64 course_count = 18;</code>
+     * @return The courseCount.
+     */
+    @java.lang.Override
+    public long getCourseCount() {
+      return courseCount ;
+    }
+    /**
+     * <pre>
+     * 课程数量
+     * </pre>
+     *
+     * <code>int64 course_count = 18;</code>
+     * @param value The courseCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCourseCount(long value) {
+      
+      courseCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 课程数量
+     * </pre>
+     *
+     * <code>int64 course_count = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCourseCount() {
+      
+      courseCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long dayCourseCount ;
+    /**
+     * <pre>
+     * 每天课程数量
+     * </pre>
+     *
+     * <code>int64 day_course_count = 19;</code>
+     * @return The dayCourseCount.
+     */
+    @java.lang.Override
+    public long getDayCourseCount() {
+      return dayCourseCount ;
+    }
+    /**
+     * <pre>
+     * 每天课程数量
+     * </pre>
+     *
+     * <code>int64 day_course_count = 19;</code>
+     * @param value The dayCourseCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDayCourseCount(long value) {
+      
+      dayCourseCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 每天课程数量
+     * </pre>
+     *
+     * <code>int64 day_course_count = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDayCourseCount() {
+      
+      dayCourseCount = 0L;
       onChanged();
       return this;
     }

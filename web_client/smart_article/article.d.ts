@@ -569,6 +569,10 @@ export interface GetArticleCreationTenant {
   tenant_id?: string;
   /** 学生数量 */
   student_count?: string;
+  /** 课程数量 */
+  course_count?: string;
+  /** 每天课程数量 */
+  day_course_count?: string;
 }
 
 export interface GetArticleCreationTenantResponse {

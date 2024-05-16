@@ -2197,6 +2197,18 @@ struct GloryApi_GetArticleCreationTenant {
     set {_uniqueStorage()._studentCount = newValue}
   }
 
+  /// 课程数量
+  var courseCount: Int64 {
+    get {return _storage._courseCount}
+    set {_uniqueStorage()._courseCount = newValue}
+  }
+
+  /// 每天课程数量
+  var dayCourseCount: Int64 {
+    get {return _storage._dayCourseCount}
+    set {_uniqueStorage()._dayCourseCount = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -6638,6 +6650,8 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     15: .standard(proto: "assistant_count_percent"),
     16: .standard(proto: "tenant_id"),
     17: .standard(proto: "student_count"),
+    18: .standard(proto: "course_count"),
+    19: .standard(proto: "day_course_count"),
   ]
 
   fileprivate class _StorageClass {
@@ -6658,6 +6672,8 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
     var _assistantCountPercent: Double = 0
     var _tenantID: Int64 = 0
     var _studentCount: Int64 = 0
+    var _courseCount: Int64 = 0
+    var _dayCourseCount: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -6689,6 +6705,8 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       _assistantCountPercent = source._assistantCountPercent
       _tenantID = source._tenantID
       _studentCount = source._studentCount
+      _courseCount = source._courseCount
+      _dayCourseCount = source._dayCourseCount
     }
   }
 
@@ -6724,6 +6742,8 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
         case 15: try { try decoder.decodeSingularDoubleField(value: &_storage._assistantCountPercent) }()
         case 16: try { try decoder.decodeSingularInt64Field(value: &_storage._tenantID) }()
         case 17: try { try decoder.decodeSingularInt64Field(value: &_storage._studentCount) }()
+        case 18: try { try decoder.decodeSingularInt64Field(value: &_storage._courseCount) }()
+        case 19: try { try decoder.decodeSingularInt64Field(value: &_storage._dayCourseCount) }()
         default: break
         }
       }
@@ -6783,6 +6803,12 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
       if _storage._studentCount != 0 {
         try visitor.visitSingularInt64Field(value: _storage._studentCount, fieldNumber: 17)
       }
+      if _storage._courseCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._courseCount, fieldNumber: 18)
+      }
+      if _storage._dayCourseCount != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._dayCourseCount, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -6809,6 +6835,8 @@ extension GloryApi_GetArticleCreationTenant: SwiftProtobuf.Message, SwiftProtobu
         if _storage._assistantCountPercent != rhs_storage._assistantCountPercent {return false}
         if _storage._tenantID != rhs_storage._tenantID {return false}
         if _storage._studentCount != rhs_storage._studentCount {return false}
+        if _storage._courseCount != rhs_storage._courseCount {return false}
+        if _storage._dayCourseCount != rhs_storage._dayCourseCount {return false}
         return true
       }
       if !storagesAreEqual {return false}
