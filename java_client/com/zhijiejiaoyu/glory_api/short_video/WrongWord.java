@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private WrongWord() {
-    word = "";
+    wrongWord = "";
+    correctWord = "";
   }
 
   @java.lang.Override
@@ -52,10 +53,16 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            word = s;
+            wrongWord = s;
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            correctWord = s;
+            break;
+          }
+          case 24: {
 
             position = input.readInt64();
             break;
@@ -92,48 +99,86 @@ private static final long serialVersionUID = 0L;
             com.zhijiejiaoyu.glory_api.short_video.WrongWord.class, com.zhijiejiaoyu.glory_api.short_video.WrongWord.Builder.class);
   }
 
-  public static final int WORD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object word ;
+  public static final int WRONG_WORD_FIELD_NUMBER = 1;
+  private volatile java.lang.Object wrongWord ;
   /**
-   * <code>string word = 1;</code>
-   * @return The word.
+   * <code>string wrong_word = 1;</code>
+   * @return The wrongWord.
    */
   @java.lang.Override
-  public java.lang.String getWord() {
-    java.lang.Object ref = word ;
+  public java.lang.String getWrongWord() {
+    java.lang.Object ref = wrongWord ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      word = s;
+      wrongWord = s;
       return s;
     }
   }
   /**
-   * <code>string word = 1;</code>
-   * @return The bytes for word.
+   * <code>string wrong_word = 1;</code>
+   * @return The bytes for wrongWord.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getWordBytes() {
-    java.lang.Object ref = word ;
+      getWrongWordBytes() {
+    java.lang.Object ref = wrongWord ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      word = b;
+      wrongWord = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int POSITION_FIELD_NUMBER = 2;
+  public static final int CORRECT_WORD_FIELD_NUMBER = 2;
+  private volatile java.lang.Object correctWord ;
+  /**
+   * <code>string correct_word = 2;</code>
+   * @return The correctWord.
+   */
+  @java.lang.Override
+  public java.lang.String getCorrectWord() {
+    java.lang.Object ref = correctWord ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      correctWord = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string correct_word = 2;</code>
+   * @return The bytes for correctWord.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCorrectWordBytes() {
+    java.lang.Object ref = correctWord ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      correctWord = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int POSITION_FIELD_NUMBER = 3;
   private long position ;
   /**
-   * <code>int64 position = 2;</code>
+   * <code>int64 position = 3;</code>
    * @return The position.
    */
   @java.lang.Override
@@ -155,11 +200,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getWordBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, word );
+    if (!getWrongWordBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, wrongWord );
+    }
+    if (!getCorrectWordBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, correctWord );
     }
     if (position != 0L) {
-      output.writeInt64(2, position );
+      output.writeInt64(3, position );
     }
     unknownFields.writeTo(output);
   }
@@ -170,12 +218,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getWordBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, word );
+    if (!getWrongWordBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, wrongWord );
+    }
+    if (!getCorrectWordBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, correctWord );
     }
     if (position != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, position );
+        .computeInt64Size(3, position );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +243,10 @@ private static final long serialVersionUID = 0L;
     }
     com.zhijiejiaoyu.glory_api.short_video.WrongWord other = (com.zhijiejiaoyu.glory_api.short_video.WrongWord) obj;
 
-    if (!getWord()
-        .equals(other.getWord())) return false;
+    if (!getWrongWord()
+        .equals(other.getWrongWord())) return false;
+    if (!getCorrectWord()
+        .equals(other.getCorrectWord())) return false;
     if (getPosition()
         != other.getPosition()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -207,8 +260,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + WORD_FIELD_NUMBER;
-    hash = (53 * hash) + getWord().hashCode();
+    hash = (37 * hash) + WRONG_WORD_FIELD_NUMBER;
+    hash = (53 * hash) + getWrongWord().hashCode();
+    hash = (37 * hash) + CORRECT_WORD_FIELD_NUMBER;
+    hash = (53 * hash) + getCorrectWord().hashCode();
     hash = (37 * hash) + POSITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPosition());
@@ -345,7 +400,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      word = "";
+      wrongWord = "";
+
+      correctWord = "";
 
       position = 0L;
 
@@ -375,7 +432,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.WrongWord buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.WrongWord result = new com.zhijiejiaoyu.glory_api.short_video.WrongWord(this);
-      result.word = word ;
+      result.wrongWord = wrongWord ;
+      result.correctWord = correctWord ;
       result.position = position ;
       onBuilt();
       return result;
@@ -425,8 +483,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.zhijiejiaoyu.glory_api.short_video.WrongWord other) {
       if (other == com.zhijiejiaoyu.glory_api.short_video.WrongWord.getDefaultInstance()) return this;
-      if (!other.getWord().isEmpty()) {
-        word = other.word ;
+      if (!other.getWrongWord().isEmpty()) {
+        wrongWord = other.wrongWord ;
+        onChanged();
+      }
+      if (!other.getCorrectWord().isEmpty()) {
+        correctWord = other.correctWord ;
         onChanged();
       }
       if (other.getPosition() != 0L) {
@@ -461,85 +523,161 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object word = "";
+    private java.lang.Object wrongWord = "";
     /**
-     * <code>string word = 1;</code>
-     * @return The word.
+     * <code>string wrong_word = 1;</code>
+     * @return The wrongWord.
      */
-    public java.lang.String getWord() {
-      java.lang.Object ref = word ;
+    public java.lang.String getWrongWord() {
+      java.lang.Object ref = wrongWord ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        word = s;
+        wrongWord = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string word = 1;</code>
-     * @return The bytes for word.
+     * <code>string wrong_word = 1;</code>
+     * @return The bytes for wrongWord.
      */
     public com.google.protobuf.ByteString
-        getWordBytes() {
-      java.lang.Object ref = word ;
+        getWrongWordBytes() {
+      java.lang.Object ref = wrongWord ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        word = b;
+        wrongWord = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string word = 1;</code>
-     * @param value The word to set.
+     * <code>string wrong_word = 1;</code>
+     * @param value The wrongWord to set.
      * @return This builder for chaining.
      */
-    public Builder setWord(
+    public Builder setWrongWord(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      word = value;
+      wrongWord = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string word = 1;</code>
+     * <code>string wrong_word = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearWord() {
+    public Builder clearWrongWord() {
       
-      word = getDefaultInstance().getWord();
+      wrongWord = getDefaultInstance().getWrongWord();
       onChanged();
       return this;
     }
     /**
-     * <code>string word = 1;</code>
-     * @param value The bytes for word to set.
+     * <code>string wrong_word = 1;</code>
+     * @param value The bytes for wrongWord to set.
      * @return This builder for chaining.
      */
-    public Builder setWordBytes(
+    public Builder setWrongWordBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      word = value;
+      wrongWord = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object correctWord = "";
+    /**
+     * <code>string correct_word = 2;</code>
+     * @return The correctWord.
+     */
+    public java.lang.String getCorrectWord() {
+      java.lang.Object ref = correctWord ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        correctWord = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string correct_word = 2;</code>
+     * @return The bytes for correctWord.
+     */
+    public com.google.protobuf.ByteString
+        getCorrectWordBytes() {
+      java.lang.Object ref = correctWord ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        correctWord = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string correct_word = 2;</code>
+     * @param value The correctWord to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCorrectWord(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      correctWord = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string correct_word = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCorrectWord() {
+      
+      correctWord = getDefaultInstance().getCorrectWord();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string correct_word = 2;</code>
+     * @param value The bytes for correctWord to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCorrectWordBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      correctWord = value;
       onChanged();
       return this;
     }
 
     private long position ;
     /**
-     * <code>int64 position = 2;</code>
+     * <code>int64 position = 3;</code>
      * @return The position.
      */
     @java.lang.Override
@@ -547,7 +685,7 @@ private static final long serialVersionUID = 0L;
       return position ;
     }
     /**
-     * <code>int64 position = 2;</code>
+     * <code>int64 position = 3;</code>
      * @param value The position to set.
      * @return This builder for chaining.
      */
@@ -558,7 +696,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 position = 2;</code>
+     * <code>int64 position = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPosition() {

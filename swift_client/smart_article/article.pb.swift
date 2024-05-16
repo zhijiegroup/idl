@@ -1147,7 +1147,9 @@ struct GloryApi_WrongWord {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var word: String = String()
+  var wrongWord: String = String()
+
+  var correctWord: String = String()
 
   var position: Int64 = 0
 
@@ -4835,8 +4837,9 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
 extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".WrongWord"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "word"),
-    2: .same(proto: "position"),
+    1: .standard(proto: "wrong_word"),
+    2: .standard(proto: "correct_word"),
+    3: .same(proto: "position"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4845,25 +4848,30 @@ extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.word) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.position) }()
+      case 1: try { try decoder.decodeSingularStringField(value: &self.wrongWord) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.correctWord) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.position) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.word.isEmpty {
-      try visitor.visitSingularStringField(value: self.word, fieldNumber: 1)
+    if !self.wrongWord.isEmpty {
+      try visitor.visitSingularStringField(value: self.wrongWord, fieldNumber: 1)
+    }
+    if !self.correctWord.isEmpty {
+      try visitor.visitSingularStringField(value: self.correctWord, fieldNumber: 2)
     }
     if self.position != 0 {
-      try visitor.visitSingularInt64Field(value: self.position, fieldNumber: 2)
+      try visitor.visitSingularInt64Field(value: self.position, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_WrongWord, rhs: GloryApi_WrongWord) -> Bool {
-    if lhs.word != rhs.word {return false}
+    if lhs.wrongWord != rhs.wrongWord {return false}
+    if lhs.correctWord != rhs.correctWord {return false}
     if lhs.position != rhs.position {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

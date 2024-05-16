@@ -727,15 +727,16 @@ final $typed_data.Uint8List articleContentModerationDescriptor = $convert.base64
 const WrongWord$json = {
   '1': 'WrongWord',
   '2': [
-    {'1': 'word', '3': 1, '4': 1, '5': 9, '10': 'word'},
-    {'1': 'position', '3': 2, '4': 1, '5': 3, '10': 'position'},
+    {'1': 'wrong_word', '3': 1, '4': 1, '5': 9, '10': 'wrongWord'},
+    {'1': 'correct_word', '3': 2, '4': 1, '5': 9, '10': 'correctWord'},
+    {'1': 'position', '3': 3, '4': 1, '5': 3, '10': 'position'},
   ],
 };
 
 /// Descriptor for `WrongWord`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List wrongWordDescriptor = $convert.base64Decode(
-    'CglXcm9uZ1dvcmQSEgoEd29yZBgBIAEoCVIEd29yZBIaCghwb3NpdGlvbhgCIAEoA1IIcG9zaX'
-    'Rpb24=');
+    'CglXcm9uZ1dvcmQSHQoKd3Jvbmdfd29yZBgBIAEoCVIJd3JvbmdXb3JkEiEKDGNvcnJlY3Rfd2'
+    '9yZBgCIAEoCVILY29ycmVjdFdvcmQSGgoIcG9zaXRpb24YAyABKANSCHBvc2l0aW9u');
 
 @$core.Deprecated('Use sentenceDescriptor instead')
 const Sentence$json = {

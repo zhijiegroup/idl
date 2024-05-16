@@ -8,19 +8,31 @@ public interface WrongWordOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string word = 1;</code>
-   * @return The word.
+   * <code>string wrong_word = 1;</code>
+   * @return The wrongWord.
    */
-  java.lang.String getWord();
+  java.lang.String getWrongWord();
   /**
-   * <code>string word = 1;</code>
-   * @return The bytes for word.
+   * <code>string wrong_word = 1;</code>
+   * @return The bytes for wrongWord.
    */
   com.google.protobuf.ByteString
-      getWordBytes();
+      getWrongWordBytes();
 
   /**
-   * <code>int64 position = 2;</code>
+   * <code>string correct_word = 2;</code>
+   * @return The correctWord.
+   */
+  java.lang.String getCorrectWord();
+  /**
+   * <code>string correct_word = 2;</code>
+   * @return The bytes for correctWord.
+   */
+  com.google.protobuf.ByteString
+      getCorrectWordBytes();
+
+  /**
+   * <code>int64 position = 3;</code>
    * @return The position.
    */
   long getPosition();

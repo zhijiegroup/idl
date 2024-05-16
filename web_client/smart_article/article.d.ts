@@ -305,7 +305,8 @@ export interface ArticleContentModeration {
 }
 
 export interface WrongWord {
-  word?: string;
+  wrong_word?: string;
+  correct_word?: string;
   position?: string;
 }
 

@@ -3704,12 +3704,16 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
 
 class WrongWord extends $pb.GeneratedMessage {
   factory WrongWord({
-    $core.String? word,
+    $core.String? wrongWord,
+    $core.String? correctWord,
     $fixnum.Int64? position,
   }) {
     final $result = create();
-    if (word != null) {
-      $result.word = word;
+    if (wrongWord != null) {
+      $result.wrongWord = wrongWord;
+    }
+    if (correctWord != null) {
+      $result.correctWord = correctWord;
     }
     if (position != null) {
       $result.position = position;
@@ -3721,8 +3725,9 @@ class WrongWord extends $pb.GeneratedMessage {
   factory WrongWord.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WrongWord', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'word')
-    ..aInt64(2, _omitFieldNames ? '' : 'position')
+    ..aOS(1, _omitFieldNames ? '' : 'wrongWord')
+    ..aOS(2, _omitFieldNames ? '' : 'correctWord')
+    ..aInt64(3, _omitFieldNames ? '' : 'position')
     ..hasRequiredFields = false
   ;
 
@@ -3748,22 +3753,31 @@ class WrongWord extends $pb.GeneratedMessage {
   static WrongWord? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get word => $_getSZ(0);
+  $core.String get wrongWord => $_getSZ(0);
   @$pb.TagNumber(1)
-  set word($core.String v) { $_setString(0, v); }
+  set wrongWord($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasWord() => $_has(0);
+  $core.bool hasWrongWord() => $_has(0);
   @$pb.TagNumber(1)
-  void clearWord() => clearField(1);
+  void clearWrongWord() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get position => $_getI64(1);
+  $core.String get correctWord => $_getSZ(1);
   @$pb.TagNumber(2)
-  set position($fixnum.Int64 v) { $_setInt64(1, v); }
+  set correctWord($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPosition() => $_has(1);
+  $core.bool hasCorrectWord() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPosition() => clearField(2);
+  void clearCorrectWord() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get position => $_getI64(2);
+  @$pb.TagNumber(3)
+  set position($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPosition() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPosition() => clearField(3);
 }
 
 class Sentence extends $pb.GeneratedMessage {
