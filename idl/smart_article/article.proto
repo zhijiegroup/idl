@@ -294,6 +294,8 @@ message WrongWord {
     string wrong_word = 1;
     string correct_word = 2;
     int64 position  = 3;
+    string source_sentence = 4;
+    string target_sentence = 5;
 }
 
 message Sentence {
