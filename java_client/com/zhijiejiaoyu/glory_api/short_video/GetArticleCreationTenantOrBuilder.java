@@ -194,4 +194,24 @@ public interface GetArticleCreationTenantOrBuilder extends
    * @return The dayCourseCount.
    */
   long getDayCourseCount();
+
+  /**
+   * <pre>
+   * 每天聊天数量
+   * </pre>
+   *
+   * <code>int64 day_assistant_count = 20;</code>
+   * @return The dayAssistantCount.
+   */
+  long getDayAssistantCount();
+
+  /**
+   * <pre>
+   * 每天AI评价数量
+   * </pre>
+   *
+   * <code>int64 day_evaluation_count = 21;</code>
+   * @return The dayEvaluationCount.
+   */
+  long getDayEvaluationCount();
 }

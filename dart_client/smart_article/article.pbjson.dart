@@ -1360,6 +1360,8 @@ const GetArticleCreationTenant$json = {
     {'1': 'student_count', '3': 17, '4': 1, '5': 3, '10': 'studentCount'},
     {'1': 'course_count', '3': 18, '4': 1, '5': 3, '10': 'courseCount'},
     {'1': 'day_course_count', '3': 19, '4': 1, '5': 3, '10': 'dayCourseCount'},
+    {'1': 'day_assistant_count', '3': 20, '4': 1, '5': 3, '10': 'dayAssistantCount'},
+    {'1': 'day_evaluation_count', '3': 21, '4': 1, '5': 3, '10': 'dayEvaluationCount'},
   ],
 };
 
@@ -1378,7 +1380,9 @@ final $typed_data.Uint8List getArticleCreationTenantDescriptor = $convert.base64
     'dGFudFNwZW5kEjYKF2Fzc2lzdGFudF9jb3VudF9wZXJjZW50GA8gASgBUhVhc3Npc3RhbnRDb3'
     'VudFBlcmNlbnQSGwoJdGVuYW50X2lkGBAgASgDUgh0ZW5hbnRJZBIjCg1zdHVkZW50X2NvdW50'
     'GBEgASgDUgxzdHVkZW50Q291bnQSIQoMY291cnNlX2NvdW50GBIgASgDUgtjb3Vyc2VDb3VudB'
-    'IoChBkYXlfY291cnNlX2NvdW50GBMgASgDUg5kYXlDb3Vyc2VDb3VudA==');
+    'IoChBkYXlfY291cnNlX2NvdW50GBMgASgDUg5kYXlDb3Vyc2VDb3VudBIuChNkYXlfYXNzaXN0'
+    'YW50X2NvdW50GBQgASgDUhFkYXlBc3Npc3RhbnRDb3VudBIwChRkYXlfZXZhbHVhdGlvbl9jb3'
+    'VudBgVIAEoA1ISZGF5RXZhbHVhdGlvbkNvdW50');
 
 @$core.Deprecated('Use getArticleCreationTenantResponseDescriptor instead')
 const GetArticleCreationTenantResponse$json = {

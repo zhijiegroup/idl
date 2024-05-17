@@ -6719,6 +6719,8 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     $fixnum.Int64? studentCount,
     $fixnum.Int64? courseCount,
     $fixnum.Int64? dayCourseCount,
+    $fixnum.Int64? dayAssistantCount,
+    $fixnum.Int64? dayEvaluationCount,
   }) {
     final $result = create();
     if (name != null) {
@@ -6778,6 +6780,12 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     if (dayCourseCount != null) {
       $result.dayCourseCount = dayCourseCount;
     }
+    if (dayAssistantCount != null) {
+      $result.dayAssistantCount = dayAssistantCount;
+    }
+    if (dayEvaluationCount != null) {
+      $result.dayEvaluationCount = dayEvaluationCount;
+    }
     return $result;
   }
   GetArticleCreationTenant._() : super();
@@ -6804,6 +6812,8 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
     ..aInt64(17, _omitFieldNames ? '' : 'studentCount')
     ..aInt64(18, _omitFieldNames ? '' : 'courseCount')
     ..aInt64(19, _omitFieldNames ? '' : 'dayCourseCount')
+    ..aInt64(20, _omitFieldNames ? '' : 'dayAssistantCount')
+    ..aInt64(21, _omitFieldNames ? '' : 'dayEvaluationCount')
     ..hasRequiredFields = false
   ;
 
@@ -6998,6 +7008,24 @@ class GetArticleCreationTenant extends $pb.GeneratedMessage {
   $core.bool hasDayCourseCount() => $_has(18);
   @$pb.TagNumber(19)
   void clearDayCourseCount() => clearField(19);
+
+  @$pb.TagNumber(20)
+  $fixnum.Int64 get dayAssistantCount => $_getI64(19);
+  @$pb.TagNumber(20)
+  set dayAssistantCount($fixnum.Int64 v) { $_setInt64(19, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasDayAssistantCount() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearDayAssistantCount() => clearField(20);
+
+  @$pb.TagNumber(21)
+  $fixnum.Int64 get dayEvaluationCount => $_getI64(20);
+  @$pb.TagNumber(21)
+  set dayEvaluationCount($fixnum.Int64 v) { $_setInt64(20, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasDayEvaluationCount() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearDayEvaluationCount() => clearField(21);
 }
 
 class GetArticleCreationTenantResponse extends $pb.GeneratedMessage {

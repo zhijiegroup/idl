@@ -145,6 +145,16 @@ private static final long serialVersionUID = 0L;
             dayCourseCount = input.readInt64();
             break;
           }
+          case 160: {
+
+            dayAssistantCount = input.readInt64();
+            break;
+          }
+          case 168: {
+
+            dayEvaluationCount = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -481,6 +491,36 @@ private static final long serialVersionUID = 0L;
     return dayCourseCount ;
   }
 
+  public static final int DAY_ASSISTANT_COUNT_FIELD_NUMBER = 20;
+  private long dayAssistantCount ;
+  /**
+   * <pre>
+   * 每天聊天数量
+   * </pre>
+   *
+   * <code>int64 day_assistant_count = 20;</code>
+   * @return The dayAssistantCount.
+   */
+  @java.lang.Override
+  public long getDayAssistantCount() {
+    return dayAssistantCount ;
+  }
+
+  public static final int DAY_EVALUATION_COUNT_FIELD_NUMBER = 21;
+  private long dayEvaluationCount ;
+  /**
+   * <pre>
+   * 每天AI评价数量
+   * </pre>
+   *
+   * <code>int64 day_evaluation_count = 21;</code>
+   * @return The dayEvaluationCount.
+   */
+  @java.lang.Override
+  public long getDayEvaluationCount() {
+    return dayEvaluationCount ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -551,6 +591,12 @@ private static final long serialVersionUID = 0L;
     }
     if (dayCourseCount != 0L) {
       output.writeInt64(19, dayCourseCount );
+    }
+    if (dayAssistantCount != 0L) {
+      output.writeInt64(20, dayAssistantCount );
+    }
+    if (dayEvaluationCount != 0L) {
+      output.writeInt64(21, dayEvaluationCount );
     }
     unknownFields.writeTo(output);
   }
@@ -636,6 +682,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(19, dayCourseCount );
     }
+    if (dayAssistantCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(20, dayAssistantCount );
+    }
+    if (dayEvaluationCount != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(21, dayEvaluationCount );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -698,6 +752,10 @@ private static final long serialVersionUID = 0L;
         != other.getCourseCount()) return false;
     if (getDayCourseCount()
         != other.getDayCourseCount()) return false;
+    if (getDayAssistantCount()
+        != other.getDayAssistantCount()) return false;
+    if (getDayEvaluationCount()
+        != other.getDayEvaluationCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -765,6 +823,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DAY_COURSE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getDayCourseCount());
+    hash = (37 * hash) + DAY_ASSISTANT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDayAssistantCount());
+    hash = (37 * hash) + DAY_EVALUATION_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getDayEvaluationCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -936,6 +1000,10 @@ private static final long serialVersionUID = 0L;
 
       dayCourseCount = 0L;
 
+      dayAssistantCount = 0L;
+
+      dayEvaluationCount = 0L;
+
       return this;
     }
 
@@ -981,6 +1049,8 @@ private static final long serialVersionUID = 0L;
       result.studentCount = studentCount ;
       result.courseCount = courseCount ;
       result.dayCourseCount = dayCourseCount ;
+      result.dayAssistantCount = dayAssistantCount ;
+      result.dayEvaluationCount = dayEvaluationCount ;
       onBuilt();
       return result;
     }
@@ -1086,6 +1156,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getDayCourseCount() != 0L) {
         setDayCourseCount(other.getDayCourseCount());
+      }
+      if (other.getDayAssistantCount() != 0L) {
+        setDayAssistantCount(other.getDayAssistantCount());
+      }
+      if (other.getDayEvaluationCount() != 0L) {
+        setDayEvaluationCount(other.getDayEvaluationCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1950,6 +2026,92 @@ private static final long serialVersionUID = 0L;
     public Builder clearDayCourseCount() {
       
       dayCourseCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long dayAssistantCount ;
+    /**
+     * <pre>
+     * 每天聊天数量
+     * </pre>
+     *
+     * <code>int64 day_assistant_count = 20;</code>
+     * @return The dayAssistantCount.
+     */
+    @java.lang.Override
+    public long getDayAssistantCount() {
+      return dayAssistantCount ;
+    }
+    /**
+     * <pre>
+     * 每天聊天数量
+     * </pre>
+     *
+     * <code>int64 day_assistant_count = 20;</code>
+     * @param value The dayAssistantCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDayAssistantCount(long value) {
+      
+      dayAssistantCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 每天聊天数量
+     * </pre>
+     *
+     * <code>int64 day_assistant_count = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDayAssistantCount() {
+      
+      dayAssistantCount = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long dayEvaluationCount ;
+    /**
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int64 day_evaluation_count = 21;</code>
+     * @return The dayEvaluationCount.
+     */
+    @java.lang.Override
+    public long getDayEvaluationCount() {
+      return dayEvaluationCount ;
+    }
+    /**
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int64 day_evaluation_count = 21;</code>
+     * @param value The dayEvaluationCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDayEvaluationCount(long value) {
+      
+      dayEvaluationCount = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 每天AI评价数量
+     * </pre>
+     *
+     * <code>int64 day_evaluation_count = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDayEvaluationCount() {
+      
+      dayEvaluationCount = 0L;
       onChanged();
       return this;
     }

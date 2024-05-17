@@ -574,6 +574,10 @@ export interface GetArticleCreationTenant {
   course_count?: string;
   /** 每天课程数量 */
   day_course_count?: string;
+  /** 每天聊天数量 */
+  day_assistant_count?: string;
+  /** 每天AI评价数量 */
+  day_evaluation_count?: string;
 }
 
 export interface GetArticleCreationTenantResponse {
