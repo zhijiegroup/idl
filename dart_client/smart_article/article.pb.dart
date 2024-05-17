@@ -3975,6 +3975,8 @@ class Edits extends $pb.GeneratedMessage {
   factory Edits({
     $core.String? sourceWord,
     $core.String? targetWord,
+    $core.String? sourceSentence,
+    $core.String? targetSentence,
     $fixnum.Int64? position,
   }) {
     final $result = create();
@@ -3983,6 +3985,12 @@ class Edits extends $pb.GeneratedMessage {
     }
     if (targetWord != null) {
       $result.targetWord = targetWord;
+    }
+    if (sourceSentence != null) {
+      $result.sourceSentence = sourceSentence;
+    }
+    if (targetSentence != null) {
+      $result.targetSentence = targetSentence;
     }
     if (position != null) {
       $result.position = position;
@@ -3996,7 +4004,9 @@ class Edits extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edits', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceWord')
     ..aOS(2, _omitFieldNames ? '' : 'targetWord')
-    ..aInt64(3, _omitFieldNames ? '' : 'position')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceSentence')
+    ..aOS(4, _omitFieldNames ? '' : 'targetSentence')
+    ..aInt64(5, _omitFieldNames ? '' : 'position')
     ..hasRequiredFields = false
   ;
 
@@ -4040,13 +4050,31 @@ class Edits extends $pb.GeneratedMessage {
   void clearTargetWord() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get position => $_getI64(2);
+  $core.String get sourceSentence => $_getSZ(2);
   @$pb.TagNumber(3)
-  set position($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sourceSentence($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasPosition() => $_has(2);
+  $core.bool hasSourceSentence() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPosition() => clearField(3);
+  void clearSourceSentence() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get targetSentence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetSentence($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTargetSentence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetSentence() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get position => $_getI64(4);
+  @$pb.TagNumber(5)
+  set position($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPosition() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPosition() => clearField(5);
 }
 
 /// 生成AI评价接口

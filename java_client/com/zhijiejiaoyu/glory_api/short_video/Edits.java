@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   private Edits() {
     sourceWord = "";
     targetWord = "";
+    sourceSentence = "";
+    targetSentence = "";
   }
 
   @java.lang.Override
@@ -62,7 +64,19 @@ private static final long serialVersionUID = 0L;
             targetWord = s;
             break;
           }
-          case 24: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceSentence = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            targetSentence = s;
+            break;
+          }
+          case 40: {
 
             position = input.readInt64();
             break;
@@ -175,10 +189,86 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int POSITION_FIELD_NUMBER = 3;
+  public static final int SOURCE_SENTENCE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object sourceSentence ;
+  /**
+   * <code>string source_sentence = 3;</code>
+   * @return The sourceSentence.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceSentence() {
+    java.lang.Object ref = sourceSentence ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceSentence = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string source_sentence = 3;</code>
+   * @return The bytes for sourceSentence.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceSentenceBytes() {
+    java.lang.Object ref = sourceSentence ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceSentence = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TARGET_SENTENCE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object targetSentence ;
+  /**
+   * <code>string target_sentence = 4;</code>
+   * @return The targetSentence.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetSentence() {
+    java.lang.Object ref = targetSentence ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetSentence = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string target_sentence = 4;</code>
+   * @return The bytes for targetSentence.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTargetSentenceBytes() {
+    java.lang.Object ref = targetSentence ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      targetSentence = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int POSITION_FIELD_NUMBER = 5;
   private long position ;
   /**
-   * <code>int64 position = 3;</code>
+   * <code>int64 position = 5;</code>
    * @return The position.
    */
   @java.lang.Override
@@ -206,8 +296,14 @@ private static final long serialVersionUID = 0L;
     if (!getTargetWordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, targetWord );
     }
+    if (!getSourceSentenceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceSentence );
+    }
+    if (!getTargetSentenceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, targetSentence );
+    }
     if (position != 0L) {
-      output.writeInt64(3, position );
+      output.writeInt64(5, position );
     }
     unknownFields.writeTo(output);
   }
@@ -224,9 +320,15 @@ private static final long serialVersionUID = 0L;
     if (!getTargetWordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, targetWord );
     }
+    if (!getSourceSentenceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceSentence );
+    }
+    if (!getTargetSentenceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, targetSentence );
+    }
     if (position != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, position );
+        .computeInt64Size(5, position );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -247,6 +349,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSourceWord())) return false;
     if (!getTargetWord()
         .equals(other.getTargetWord())) return false;
+    if (!getSourceSentence()
+        .equals(other.getSourceSentence())) return false;
+    if (!getTargetSentence()
+        .equals(other.getTargetSentence())) return false;
     if (getPosition()
         != other.getPosition()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -264,6 +370,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSourceWord().hashCode();
     hash = (37 * hash) + TARGET_WORD_FIELD_NUMBER;
     hash = (53 * hash) + getTargetWord().hashCode();
+    hash = (37 * hash) + SOURCE_SENTENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceSentence().hashCode();
+    hash = (37 * hash) + TARGET_SENTENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getTargetSentence().hashCode();
     hash = (37 * hash) + POSITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPosition());
@@ -404,6 +514,10 @@ private static final long serialVersionUID = 0L;
 
       targetWord = "";
 
+      sourceSentence = "";
+
+      targetSentence = "";
+
       position = 0L;
 
       return this;
@@ -434,6 +548,8 @@ private static final long serialVersionUID = 0L;
       com.zhijiejiaoyu.glory_api.short_video.Edits result = new com.zhijiejiaoyu.glory_api.short_video.Edits(this);
       result.sourceWord = sourceWord ;
       result.targetWord = targetWord ;
+      result.sourceSentence = sourceSentence ;
+      result.targetSentence = targetSentence ;
       result.position = position ;
       onBuilt();
       return result;
@@ -489,6 +605,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTargetWord().isEmpty()) {
         targetWord = other.targetWord ;
+        onChanged();
+      }
+      if (!other.getSourceSentence().isEmpty()) {
+        sourceSentence = other.sourceSentence ;
+        onChanged();
+      }
+      if (!other.getTargetSentence().isEmpty()) {
+        targetSentence = other.targetSentence ;
         onChanged();
       }
       if (other.getPosition() != 0L) {
@@ -675,9 +799,161 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object sourceSentence = "";
+    /**
+     * <code>string source_sentence = 3;</code>
+     * @return The sourceSentence.
+     */
+    public java.lang.String getSourceSentence() {
+      java.lang.Object ref = sourceSentence ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceSentence = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string source_sentence = 3;</code>
+     * @return The bytes for sourceSentence.
+     */
+    public com.google.protobuf.ByteString
+        getSourceSentenceBytes() {
+      java.lang.Object ref = sourceSentence ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceSentence = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string source_sentence = 3;</code>
+     * @param value The sourceSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceSentence(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceSentence = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string source_sentence = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceSentence() {
+      
+      sourceSentence = getDefaultInstance().getSourceSentence();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string source_sentence = 3;</code>
+     * @param value The bytes for sourceSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceSentenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceSentence = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object targetSentence = "";
+    /**
+     * <code>string target_sentence = 4;</code>
+     * @return The targetSentence.
+     */
+    public java.lang.String getTargetSentence() {
+      java.lang.Object ref = targetSentence ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetSentence = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string target_sentence = 4;</code>
+     * @return The bytes for targetSentence.
+     */
+    public com.google.protobuf.ByteString
+        getTargetSentenceBytes() {
+      java.lang.Object ref = targetSentence ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetSentence = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string target_sentence = 4;</code>
+     * @param value The targetSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetSentence(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      targetSentence = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string target_sentence = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetSentence() {
+      
+      targetSentence = getDefaultInstance().getTargetSentence();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string target_sentence = 4;</code>
+     * @param value The bytes for targetSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetSentenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      targetSentence = value;
+      onChanged();
+      return this;
+    }
+
     private long position ;
     /**
-     * <code>int64 position = 3;</code>
+     * <code>int64 position = 5;</code>
      * @return The position.
      */
     @java.lang.Override
@@ -685,7 +961,7 @@ private static final long serialVersionUID = 0L;
       return position ;
     }
     /**
-     * <code>int64 position = 3;</code>
+     * <code>int64 position = 5;</code>
      * @param value The position to set.
      * @return This builder for chaining.
      */
@@ -696,7 +972,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 position = 3;</code>
+     * <code>int64 position = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearPosition() {

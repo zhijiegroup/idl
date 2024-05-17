@@ -329,6 +329,8 @@ export interface CorrectSentenceResponse {
 export interface Edits {
   source_word?: string;
   target_word?: string;
+  source_sentence?: string;
+  target_sentence?: string;
   position?: string;
 }
 

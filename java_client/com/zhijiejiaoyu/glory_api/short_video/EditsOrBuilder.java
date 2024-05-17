@@ -32,7 +32,31 @@ public interface EditsOrBuilder extends
       getTargetWordBytes();
 
   /**
-   * <code>int64 position = 3;</code>
+   * <code>string source_sentence = 3;</code>
+   * @return The sourceSentence.
+   */
+  java.lang.String getSourceSentence();
+  /**
+   * <code>string source_sentence = 3;</code>
+   * @return The bytes for sourceSentence.
+   */
+  com.google.protobuf.ByteString
+      getSourceSentenceBytes();
+
+  /**
+   * <code>string target_sentence = 4;</code>
+   * @return The targetSentence.
+   */
+  java.lang.String getTargetSentence();
+  /**
+   * <code>string target_sentence = 4;</code>
+   * @return The bytes for targetSentence.
+   */
+  com.google.protobuf.ByteString
+      getTargetSentenceBytes();
+
+  /**
+   * <code>int64 position = 5;</code>
    * @return The position.
    */
   long getPosition();

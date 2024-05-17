@@ -1228,6 +1228,10 @@ struct GloryApi_Edits {
 
   var targetWord: String = String()
 
+  var sourceSentence: String = String()
+
+  var targetSentence: String = String()
+
   var position: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -5017,7 +5021,9 @@ extension GloryApi_Edits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "source_word"),
     2: .standard(proto: "target_word"),
-    3: .same(proto: "position"),
+    3: .standard(proto: "source_sentence"),
+    4: .standard(proto: "target_sentence"),
+    5: .same(proto: "position"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5028,7 +5034,9 @@ extension GloryApi_Edits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.sourceWord) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.targetWord) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.position) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.sourceSentence) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.targetSentence) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.position) }()
       default: break
       }
     }
@@ -5041,8 +5049,14 @@ extension GloryApi_Edits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if !self.targetWord.isEmpty {
       try visitor.visitSingularStringField(value: self.targetWord, fieldNumber: 2)
     }
+    if !self.sourceSentence.isEmpty {
+      try visitor.visitSingularStringField(value: self.sourceSentence, fieldNumber: 3)
+    }
+    if !self.targetSentence.isEmpty {
+      try visitor.visitSingularStringField(value: self.targetSentence, fieldNumber: 4)
+    }
     if self.position != 0 {
-      try visitor.visitSingularInt64Field(value: self.position, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.position, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -5050,6 +5064,8 @@ extension GloryApi_Edits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   static func ==(lhs: GloryApi_Edits, rhs: GloryApi_Edits) -> Bool {
     if lhs.sourceWord != rhs.sourceWord {return false}
     if lhs.targetWord != rhs.targetWord {return false}
+    if lhs.sourceSentence != rhs.sourceSentence {return false}
+    if lhs.targetSentence != rhs.targetSentence {return false}
     if lhs.position != rhs.position {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

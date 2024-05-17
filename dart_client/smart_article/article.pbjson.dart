@@ -787,14 +787,18 @@ const Edits$json = {
   '2': [
     {'1': 'source_word', '3': 1, '4': 1, '5': 9, '10': 'sourceWord'},
     {'1': 'target_word', '3': 2, '4': 1, '5': 9, '10': 'targetWord'},
-    {'1': 'position', '3': 3, '4': 1, '5': 3, '10': 'position'},
+    {'1': 'source_sentence', '3': 3, '4': 1, '5': 9, '10': 'sourceSentence'},
+    {'1': 'target_sentence', '3': 4, '4': 1, '5': 9, '10': 'targetSentence'},
+    {'1': 'position', '3': 5, '4': 1, '5': 3, '10': 'position'},
   ],
 };
 
 /// Descriptor for `Edits`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List editsDescriptor = $convert.base64Decode(
     'CgVFZGl0cxIfCgtzb3VyY2Vfd29yZBgBIAEoCVIKc291cmNlV29yZBIfCgt0YXJnZXRfd29yZB'
-    'gCIAEoCVIKdGFyZ2V0V29yZBIaCghwb3NpdGlvbhgDIAEoA1IIcG9zaXRpb24=');
+    'gCIAEoCVIKdGFyZ2V0V29yZBInCg9zb3VyY2Vfc2VudGVuY2UYAyABKAlSDnNvdXJjZVNlbnRl'
+    'bmNlEicKD3RhcmdldF9zZW50ZW5jZRgEIAEoCVIOdGFyZ2V0U2VudGVuY2USGgoIcG9zaXRpb2'
+    '4YBSABKANSCHBvc2l0aW9u');
 
 @$core.Deprecated('Use genArticleAIEvaluationRequestDescriptor instead')
 const GenArticleAIEvaluationRequest$json = {
