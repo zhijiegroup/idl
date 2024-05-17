@@ -315,7 +315,9 @@ message CorrectSentenceResponse {
 message Edits {
     string source_word = 1;
     string target_word = 2;
-    int64 position = 3;
+    string source_sentence = 3;
+    string target_sentence = 4;
+    int64 position = 5;
 }
 
 // 生成AI评价接口
