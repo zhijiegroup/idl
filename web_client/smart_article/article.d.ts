@@ -308,6 +308,8 @@ export interface WrongWord {
   wrong_word?: string;
   correct_word?: string;
   position?: string;
+  source_sentence?: string;
+  target_sentence?: string;
 }
 
 export interface Sentence {

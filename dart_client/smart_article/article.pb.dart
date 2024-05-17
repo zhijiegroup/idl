@@ -3707,6 +3707,8 @@ class WrongWord extends $pb.GeneratedMessage {
     $core.String? wrongWord,
     $core.String? correctWord,
     $fixnum.Int64? position,
+    $core.String? sourceSentence,
+    $core.String? targetSentence,
   }) {
     final $result = create();
     if (wrongWord != null) {
@@ -3718,6 +3720,12 @@ class WrongWord extends $pb.GeneratedMessage {
     if (position != null) {
       $result.position = position;
     }
+    if (sourceSentence != null) {
+      $result.sourceSentence = sourceSentence;
+    }
+    if (targetSentence != null) {
+      $result.targetSentence = targetSentence;
+    }
     return $result;
   }
   WrongWord._() : super();
@@ -3728,6 +3736,8 @@ class WrongWord extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'wrongWord')
     ..aOS(2, _omitFieldNames ? '' : 'correctWord')
     ..aInt64(3, _omitFieldNames ? '' : 'position')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceSentence')
+    ..aOS(5, _omitFieldNames ? '' : 'targetSentence')
     ..hasRequiredFields = false
   ;
 
@@ -3778,6 +3788,24 @@ class WrongWord extends $pb.GeneratedMessage {
   $core.bool hasPosition() => $_has(2);
   @$pb.TagNumber(3)
   void clearPosition() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceSentence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceSentence($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSourceSentence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceSentence() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get targetSentence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set targetSentence($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTargetSentence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetSentence() => clearField(5);
 }
 
 class Sentence extends $pb.GeneratedMessage {

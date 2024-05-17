@@ -36,4 +36,28 @@ public interface WrongWordOrBuilder extends
    * @return The position.
    */
   long getPosition();
+
+  /**
+   * <code>string source_sentence = 4;</code>
+   * @return The sourceSentence.
+   */
+  java.lang.String getSourceSentence();
+  /**
+   * <code>string source_sentence = 4;</code>
+   * @return The bytes for sourceSentence.
+   */
+  com.google.protobuf.ByteString
+      getSourceSentenceBytes();
+
+  /**
+   * <code>string target_sentence = 5;</code>
+   * @return The targetSentence.
+   */
+  java.lang.String getTargetSentence();
+  /**
+   * <code>string target_sentence = 5;</code>
+   * @return The bytes for targetSentence.
+   */
+  com.google.protobuf.ByteString
+      getTargetSentenceBytes();
 }

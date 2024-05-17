@@ -1153,6 +1153,10 @@ struct GloryApi_WrongWord {
 
   var position: Int64 = 0
 
+  var sourceSentence: String = String()
+
+  var targetSentence: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4856,6 +4860,8 @@ extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     1: .standard(proto: "wrong_word"),
     2: .standard(proto: "correct_word"),
     3: .same(proto: "position"),
+    4: .standard(proto: "source_sentence"),
+    5: .standard(proto: "target_sentence"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4867,6 +4873,8 @@ extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 1: try { try decoder.decodeSingularStringField(value: &self.wrongWord) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.correctWord) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.position) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.sourceSentence) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.targetSentence) }()
       default: break
       }
     }
@@ -4882,6 +4890,12 @@ extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if self.position != 0 {
       try visitor.visitSingularInt64Field(value: self.position, fieldNumber: 3)
     }
+    if !self.sourceSentence.isEmpty {
+      try visitor.visitSingularStringField(value: self.sourceSentence, fieldNumber: 4)
+    }
+    if !self.targetSentence.isEmpty {
+      try visitor.visitSingularStringField(value: self.targetSentence, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4889,6 +4903,8 @@ extension GloryApi_WrongWord: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.wrongWord != rhs.wrongWord {return false}
     if lhs.correctWord != rhs.correctWord {return false}
     if lhs.position != rhs.position {return false}
+    if lhs.sourceSentence != rhs.sourceSentence {return false}
+    if lhs.targetSentence != rhs.targetSentence {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

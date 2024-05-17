@@ -730,13 +730,17 @@ const WrongWord$json = {
     {'1': 'wrong_word', '3': 1, '4': 1, '5': 9, '10': 'wrongWord'},
     {'1': 'correct_word', '3': 2, '4': 1, '5': 9, '10': 'correctWord'},
     {'1': 'position', '3': 3, '4': 1, '5': 3, '10': 'position'},
+    {'1': 'source_sentence', '3': 4, '4': 1, '5': 9, '10': 'sourceSentence'},
+    {'1': 'target_sentence', '3': 5, '4': 1, '5': 9, '10': 'targetSentence'},
   ],
 };
 
 /// Descriptor for `WrongWord`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List wrongWordDescriptor = $convert.base64Decode(
     'CglXcm9uZ1dvcmQSHQoKd3Jvbmdfd29yZBgBIAEoCVIJd3JvbmdXb3JkEiEKDGNvcnJlY3Rfd2'
-    '9yZBgCIAEoCVILY29ycmVjdFdvcmQSGgoIcG9zaXRpb24YAyABKANSCHBvc2l0aW9u');
+    '9yZBgCIAEoCVILY29ycmVjdFdvcmQSGgoIcG9zaXRpb24YAyABKANSCHBvc2l0aW9uEicKD3Nv'
+    'dXJjZV9zZW50ZW5jZRgEIAEoCVIOc291cmNlU2VudGVuY2USJwoPdGFyZ2V0X3NlbnRlbmNlGA'
+    'UgASgJUg50YXJnZXRTZW50ZW5jZQ==');
 
 @$core.Deprecated('Use sentenceDescriptor instead')
 const Sentence$json = {

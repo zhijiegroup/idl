@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   private WrongWord() {
     wrongWord = "";
     correctWord = "";
+    sourceSentence = "";
+    targetSentence = "";
   }
 
   @java.lang.Override
@@ -65,6 +67,18 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             position = input.readInt64();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceSentence = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            targetSentence = s;
             break;
           }
           default: {
@@ -186,6 +200,82 @@ private static final long serialVersionUID = 0L;
     return position ;
   }
 
+  public static final int SOURCE_SENTENCE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object sourceSentence ;
+  /**
+   * <code>string source_sentence = 4;</code>
+   * @return The sourceSentence.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceSentence() {
+    java.lang.Object ref = sourceSentence ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceSentence = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string source_sentence = 4;</code>
+   * @return The bytes for sourceSentence.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceSentenceBytes() {
+    java.lang.Object ref = sourceSentence ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceSentence = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TARGET_SENTENCE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object targetSentence ;
+  /**
+   * <code>string target_sentence = 5;</code>
+   * @return The targetSentence.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetSentence() {
+    java.lang.Object ref = targetSentence ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetSentence = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string target_sentence = 5;</code>
+   * @return The bytes for targetSentence.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTargetSentenceBytes() {
+    java.lang.Object ref = targetSentence ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      targetSentence = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -209,6 +299,12 @@ private static final long serialVersionUID = 0L;
     if (position != 0L) {
       output.writeInt64(3, position );
     }
+    if (!getSourceSentenceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sourceSentence );
+    }
+    if (!getTargetSentenceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, targetSentence );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -227,6 +323,12 @@ private static final long serialVersionUID = 0L;
     if (position != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, position );
+    }
+    if (!getSourceSentenceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sourceSentence );
+    }
+    if (!getTargetSentenceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, targetSentence );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -249,6 +351,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCorrectWord())) return false;
     if (getPosition()
         != other.getPosition()) return false;
+    if (!getSourceSentence()
+        .equals(other.getSourceSentence())) return false;
+    if (!getTargetSentence()
+        .equals(other.getTargetSentence())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -267,6 +373,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + POSITION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPosition());
+    hash = (37 * hash) + SOURCE_SENTENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceSentence().hashCode();
+    hash = (37 * hash) + TARGET_SENTENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getTargetSentence().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,6 +516,10 @@ private static final long serialVersionUID = 0L;
 
       position = 0L;
 
+      sourceSentence = "";
+
+      targetSentence = "";
+
       return this;
     }
 
@@ -435,6 +549,8 @@ private static final long serialVersionUID = 0L;
       result.wrongWord = wrongWord ;
       result.correctWord = correctWord ;
       result.position = position ;
+      result.sourceSentence = sourceSentence ;
+      result.targetSentence = targetSentence ;
       onBuilt();
       return result;
     }
@@ -493,6 +609,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPosition() != 0L) {
         setPosition(other.getPosition());
+      }
+      if (!other.getSourceSentence().isEmpty()) {
+        sourceSentence = other.sourceSentence ;
+        onChanged();
+      }
+      if (!other.getTargetSentence().isEmpty()) {
+        targetSentence = other.targetSentence ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -702,6 +826,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearPosition() {
       
       position = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceSentence = "";
+    /**
+     * <code>string source_sentence = 4;</code>
+     * @return The sourceSentence.
+     */
+    public java.lang.String getSourceSentence() {
+      java.lang.Object ref = sourceSentence ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceSentence = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string source_sentence = 4;</code>
+     * @return The bytes for sourceSentence.
+     */
+    public com.google.protobuf.ByteString
+        getSourceSentenceBytes() {
+      java.lang.Object ref = sourceSentence ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceSentence = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string source_sentence = 4;</code>
+     * @param value The sourceSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceSentence(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceSentence = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string source_sentence = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceSentence() {
+      
+      sourceSentence = getDefaultInstance().getSourceSentence();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string source_sentence = 4;</code>
+     * @param value The bytes for sourceSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceSentenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceSentence = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object targetSentence = "";
+    /**
+     * <code>string target_sentence = 5;</code>
+     * @return The targetSentence.
+     */
+    public java.lang.String getTargetSentence() {
+      java.lang.Object ref = targetSentence ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetSentence = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string target_sentence = 5;</code>
+     * @return The bytes for targetSentence.
+     */
+    public com.google.protobuf.ByteString
+        getTargetSentenceBytes() {
+      java.lang.Object ref = targetSentence ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetSentence = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string target_sentence = 5;</code>
+     * @param value The targetSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetSentence(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      targetSentence = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string target_sentence = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetSentence() {
+      
+      targetSentence = getDefaultInstance().getTargetSentence();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string target_sentence = 5;</code>
+     * @param value The bytes for targetSentence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetSentenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      targetSentence = value;
       onChanged();
       return this;
     }
