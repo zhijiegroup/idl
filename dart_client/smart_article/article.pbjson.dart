@@ -710,6 +710,7 @@ const ArticleContentModeration$json = {
     {'1': 'reject_reason', '3': 6, '4': 1, '5': 9, '10': 'rejectReason'},
     {'1': 'accept_reason', '3': 7, '4': 1, '5': 9, '10': 'acceptReason'},
     {'1': 'evaluation', '3': 8, '4': 1, '5': 9, '10': 'evaluation'},
+    {'1': 'pass_result', '3': 9, '4': 1, '5': 9, '10': 'passResult'},
   ],
 };
 
@@ -721,7 +722,8 @@ final $typed_data.Uint8List articleContentModerationDescriptor = $convert.base64
     'J5X2FwaS5TZW50ZW5jZVIMZ29vZFNlbnRlbmNlEjYKDGJhZF9zZW50ZW5jZRgFIAMoCzITLmds'
     'b3J5X2FwaS5TZW50ZW5jZVILYmFkU2VudGVuY2USIwoNcmVqZWN0X3JlYXNvbhgGIAEoCVIMcm'
     'VqZWN0UmVhc29uEiMKDWFjY2VwdF9yZWFzb24YByABKAlSDGFjY2VwdFJlYXNvbhIeCgpldmFs'
-    'dWF0aW9uGAggASgJUgpldmFsdWF0aW9u');
+    'dWF0aW9uGAggASgJUgpldmFsdWF0aW9uEh8KC3Bhc3NfcmVzdWx0GAkgASgJUgpwYXNzUmVzdW'
+    'x0');
 
 @$core.Deprecated('Use wrongWordDescriptor instead')
 const WrongWord$json = {

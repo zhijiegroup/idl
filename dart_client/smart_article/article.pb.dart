@@ -3594,6 +3594,7 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     $core.String? rejectReason,
     $core.String? acceptReason,
     $core.String? evaluation,
+    $core.String? passResult,
   }) {
     final $result = create();
     if (forbidden != null) {
@@ -3620,6 +3621,9 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     if (evaluation != null) {
       $result.evaluation = evaluation;
     }
+    if (passResult != null) {
+      $result.passResult = passResult;
+    }
     return $result;
   }
   ArticleContentModeration._() : super();
@@ -3635,6 +3639,7 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'rejectReason')
     ..aOS(7, _omitFieldNames ? '' : 'acceptReason')
     ..aOS(8, _omitFieldNames ? '' : 'evaluation')
+    ..aOS(9, _omitFieldNames ? '' : 'passResult')
     ..hasRequiredFields = false
   ;
 
@@ -3700,6 +3705,15 @@ class ArticleContentModeration extends $pb.GeneratedMessage {
   $core.bool hasEvaluation() => $_has(7);
   @$pb.TagNumber(8)
   void clearEvaluation() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get passResult => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set passResult($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPassResult() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPassResult() => clearField(9);
 }
 
 class WrongWord extends $pb.GeneratedMessage {

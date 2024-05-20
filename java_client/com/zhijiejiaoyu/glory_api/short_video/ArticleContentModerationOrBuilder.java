@@ -280,4 +280,24 @@ public interface ArticleContentModerationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEvaluationBytes();
+
+  /**
+   * <pre>
+   * 通过结果
+   * </pre>
+   *
+   * <code>string pass_result = 9;</code>
+   * @return The passResult.
+   */
+  java.lang.String getPassResult();
+  /**
+   * <pre>
+   * 通过结果
+   * </pre>
+   *
+   * <code>string pass_result = 9;</code>
+   * @return The bytes for passResult.
+   */
+  com.google.protobuf.ByteString
+      getPassResultBytes();
 }

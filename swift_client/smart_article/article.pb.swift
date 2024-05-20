@@ -1056,36 +1056,44 @@ struct GloryApi_StudentArticleCreationOperation {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var action: String = String()
+  var action: String {
+    get {return _storage._action}
+    set {_uniqueStorage()._action = newValue}
+  }
 
-  var time: String = String()
+  var time: String {
+    get {return _storage._time}
+    set {_uniqueStorage()._time = newValue}
+  }
 
   var contentModeration: GloryApi_ArticleContentModeration {
-    get {return _contentModeration ?? GloryApi_ArticleContentModeration()}
-    set {_contentModeration = newValue}
+    get {return _storage._contentModeration ?? GloryApi_ArticleContentModeration()}
+    set {_uniqueStorage()._contentModeration = newValue}
   }
   /// Returns true if `contentModeration` has been explicitly set.
-  var hasContentModeration: Bool {return self._contentModeration != nil}
+  var hasContentModeration: Bool {return _storage._contentModeration != nil}
   /// Clears the value of `contentModeration`. Subsequent reads from it will return its default value.
-  mutating func clearContentModeration() {self._contentModeration = nil}
+  mutating func clearContentModeration() {_uniqueStorage()._contentModeration = nil}
 
   var creationContent: GloryApi_ArticleCreationInfo {
-    get {return _creationContent ?? GloryApi_ArticleCreationInfo()}
-    set {_creationContent = newValue}
+    get {return _storage._creationContent ?? GloryApi_ArticleCreationInfo()}
+    set {_uniqueStorage()._creationContent = newValue}
   }
   /// Returns true if `creationContent` has been explicitly set.
-  var hasCreationContent: Bool {return self._creationContent != nil}
+  var hasCreationContent: Bool {return _storage._creationContent != nil}
   /// Clears the value of `creationContent`. Subsequent reads from it will return its default value.
-  mutating func clearCreationContent() {self._creationContent = nil}
+  mutating func clearCreationContent() {_uniqueStorage()._creationContent = nil}
 
-  var rejectReason: String = String()
+  var rejectReason: String {
+    get {return _storage._rejectReason}
+    set {_uniqueStorage()._rejectReason = newValue}
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _contentModeration: GloryApi_ArticleContentModeration? = nil
-  fileprivate var _creationContent: GloryApi_ArticleCreationInfo? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct GloryApi_ArticleCreationInfo {
@@ -1136,6 +1144,9 @@ struct GloryApi_ArticleContentModeration {
 
   /// 评价
   var evaluation: String = String()
+
+  /// 通过结果
+  var passResult: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1328,39 +1339,37 @@ struct GloryApi_GetArticleAIEvaluationResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var contentModeration: GloryApi_ArticleContentModeration {
-    get {return _contentModeration ?? GloryApi_ArticleContentModeration()}
-    set {_contentModeration = newValue}
+    get {return _storage._contentModeration ?? GloryApi_ArticleContentModeration()}
+    set {_uniqueStorage()._contentModeration = newValue}
   }
   /// Returns true if `contentModeration` has been explicitly set.
-  var hasContentModeration: Bool {return self._contentModeration != nil}
+  var hasContentModeration: Bool {return _storage._contentModeration != nil}
   /// Clears the value of `contentModeration`. Subsequent reads from it will return its default value.
-  mutating func clearContentModeration() {self._contentModeration = nil}
+  mutating func clearContentModeration() {_uniqueStorage()._contentModeration = nil}
 
   var creationContent: GloryApi_ArticleCreationInfo {
-    get {return _creationContent ?? GloryApi_ArticleCreationInfo()}
-    set {_creationContent = newValue}
+    get {return _storage._creationContent ?? GloryApi_ArticleCreationInfo()}
+    set {_uniqueStorage()._creationContent = newValue}
   }
   /// Returns true if `creationContent` has been explicitly set.
-  var hasCreationContent: Bool {return self._creationContent != nil}
+  var hasCreationContent: Bool {return _storage._creationContent != nil}
   /// Clears the value of `creationContent`. Subsequent reads from it will return its default value.
-  mutating func clearCreationContent() {self._creationContent = nil}
+  mutating func clearCreationContent() {_uniqueStorage()._creationContent = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _contentModeration: GloryApi_ArticleContentModeration? = nil
-  fileprivate var _creationContent: GloryApi_ArticleCreationInfo? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// 文案ai聊天
@@ -4674,51 +4683,99 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     5: .standard(proto: "reject_reason"),
   ]
 
+  fileprivate class _StorageClass {
+    var _action: String = String()
+    var _time: String = String()
+    var _contentModeration: GloryApi_ArticleContentModeration? = nil
+    var _creationContent: GloryApi_ArticleCreationInfo? = nil
+    var _rejectReason: String = String()
+
+    #if swift(>=5.10)
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+    #else
+      static let defaultInstance = _StorageClass()
+    #endif
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _action = source._action
+      _time = source._time
+      _contentModeration = source._contentModeration
+      _creationContent = source._creationContent
+      _rejectReason = source._rejectReason
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self.action) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.time) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._contentModeration) }()
-      case 4: try { try decoder.decodeSingularMessageField(value: &self._creationContent) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.rejectReason) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularStringField(value: &_storage._action) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._time) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._contentModeration) }()
+        case 4: try { try decoder.decodeSingularMessageField(value: &_storage._creationContent) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._rejectReason) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    if !self.action.isEmpty {
-      try visitor.visitSingularStringField(value: self.action, fieldNumber: 1)
-    }
-    if !self.time.isEmpty {
-      try visitor.visitSingularStringField(value: self.time, fieldNumber: 2)
-    }
-    try { if let v = self._contentModeration {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._creationContent {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
-    if !self.rejectReason.isEmpty {
-      try visitor.visitSingularStringField(value: self.rejectReason, fieldNumber: 5)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if !_storage._action.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._action, fieldNumber: 1)
+      }
+      if !_storage._time.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._time, fieldNumber: 2)
+      }
+      try { if let v = _storage._contentModeration {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+      try { if let v = _storage._creationContent {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      } }()
+      if !_storage._rejectReason.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._rejectReason, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_StudentArticleCreationOperation, rhs: GloryApi_StudentArticleCreationOperation) -> Bool {
-    if lhs.action != rhs.action {return false}
-    if lhs.time != rhs.time {return false}
-    if lhs._contentModeration != rhs._contentModeration {return false}
-    if lhs._creationContent != rhs._creationContent {return false}
-    if lhs.rejectReason != rhs.rejectReason {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._action != rhs_storage._action {return false}
+        if _storage._time != rhs_storage._time {return false}
+        if _storage._contentModeration != rhs_storage._contentModeration {return false}
+        if _storage._creationContent != rhs_storage._creationContent {return false}
+        if _storage._rejectReason != rhs_storage._rejectReason {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -4791,6 +4848,7 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     6: .standard(proto: "reject_reason"),
     7: .standard(proto: "accept_reason"),
     8: .same(proto: "evaluation"),
+    9: .standard(proto: "pass_result"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4807,6 +4865,7 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
       case 6: try { try decoder.decodeSingularStringField(value: &self.rejectReason) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.acceptReason) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.evaluation) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.passResult) }()
       default: break
       }
     }
@@ -4837,6 +4896,9 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     if !self.evaluation.isEmpty {
       try visitor.visitSingularStringField(value: self.evaluation, fieldNumber: 8)
     }
+    if !self.passResult.isEmpty {
+      try visitor.visitSingularStringField(value: self.passResult, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4849,6 +4911,7 @@ extension GloryApi_ArticleContentModeration: SwiftProtobuf.Message, SwiftProtobu
     if lhs.rejectReason != rhs.rejectReason {return false}
     if lhs.acceptReason != rhs.acceptReason {return false}
     if lhs.evaluation != rhs.evaluation {return false}
+    if lhs.passResult != rhs.passResult {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5246,41 +5309,85 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
     3: .standard(proto: "creation_content"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _contentModeration: GloryApi_ArticleContentModeration? = nil
+    var _creationContent: GloryApi_ArticleCreationInfo? = nil
+
+    #if swift(>=5.10)
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+    #else
+      static let defaultInstance = _StorageClass()
+    #endif
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _contentModeration = source._contentModeration
+      _creationContent = source._creationContent
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._contentModeration) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._creationContent) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._contentModeration) }()
+        case 3: try { try decoder.decodeSingularMessageField(value: &_storage._creationContent) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._contentModeration {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
-    try { if let v = self._creationContent {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._contentModeration {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+      try { if let v = _storage._creationContent {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetArticleAIEvaluationResponse, rhs: GloryApi_GetArticleAIEvaluationResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._contentModeration != rhs._contentModeration {return false}
-    if lhs._creationContent != rhs._creationContent {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._contentModeration != rhs_storage._contentModeration {return false}
+        if _storage._creationContent != rhs_storage._creationContent {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

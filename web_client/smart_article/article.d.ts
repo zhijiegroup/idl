@@ -302,6 +302,8 @@ export interface ArticleContentModeration {
   accept_reason?: string;
   /** 评价 */
   evaluation?: string;
+  /** 通过结果 */
+  pass_result?: string;
 }
 
 export interface WrongWord {
