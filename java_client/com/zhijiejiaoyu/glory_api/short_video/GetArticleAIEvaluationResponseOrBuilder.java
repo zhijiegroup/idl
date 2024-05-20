@@ -51,4 +51,24 @@ public interface GetArticleAIEvaluationResponseOrBuilder extends
    * <code>.glory_api.ArticleCreationInfo creation_content = 3;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ArticleCreationInfoOrBuilder getCreationContentOrBuilder();
+
+  /**
+   * <pre>
+   * 当天评价总数
+   * </pre>
+   *
+   * <code>int64 evaluation_total = 4;</code>
+   * @return The evaluationTotal.
+   */
+  long getEvaluationTotal();
+
+  /**
+   * <pre>
+   * 当天评价使用数 
+   * </pre>
+   *
+   * <code>int64 evaluation_used = 5;</code>
+   * @return The evaluationUsed.
+   */
+  long getEvaluationUsed();
 }

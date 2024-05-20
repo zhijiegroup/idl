@@ -365,6 +365,7 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? lastArticleCreationId,
     $core.String? productName,
     $fixnum.Int64? articleCreationId,
+    $fixnum.Int64? articleCreationDraftId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -394,6 +395,9 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     if (articleCreationId != null) {
       $result.articleCreationId = articleCreationId;
     }
+    if (articleCreationDraftId != null) {
+      $result.articleCreationDraftId = articleCreationDraftId;
+    }
     return $result;
   }
   CreateArticleCreationRequest._() : super();
@@ -410,6 +414,7 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
     ..aInt64(7, _omitFieldNames ? '' : 'lastArticleCreationId')
     ..aOS(8, _omitFieldNames ? '' : 'productName')
     ..aInt64(9, _omitFieldNames ? '' : 'articleCreationId')
+    ..aInt64(10, _omitFieldNames ? '' : 'articleCreationDraftId')
     ..hasRequiredFields = false
   ;
 
@@ -516,6 +521,15 @@ class CreateArticleCreationRequest extends $pb.GeneratedMessage {
   $core.bool hasArticleCreationId() => $_has(8);
   @$pb.TagNumber(9)
   void clearArticleCreationId() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get articleCreationDraftId => $_getI64(9);
+  @$pb.TagNumber(10)
+  set articleCreationDraftId($fixnum.Int64 v) { $_setInt64(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasArticleCreationDraftId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearArticleCreationDraftId() => clearField(10);
 }
 
 class CreateArticleCreationResponse extends $pb.GeneratedMessage {
@@ -4394,6 +4408,8 @@ class GetArticleAIEvaluationResponse extends $pb.GeneratedMessage {
     $0.BaseResponse? baseResp,
     ArticleContentModeration? contentModeration,
     ArticleCreationInfo? creationContent,
+    $fixnum.Int64? evaluationTotal,
+    $fixnum.Int64? evaluationUsed,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -4405,6 +4421,12 @@ class GetArticleAIEvaluationResponse extends $pb.GeneratedMessage {
     if (creationContent != null) {
       $result.creationContent = creationContent;
     }
+    if (evaluationTotal != null) {
+      $result.evaluationTotal = evaluationTotal;
+    }
+    if (evaluationUsed != null) {
+      $result.evaluationUsed = evaluationUsed;
+    }
     return $result;
   }
   GetArticleAIEvaluationResponse._() : super();
@@ -4415,6 +4437,8 @@ class GetArticleAIEvaluationResponse extends $pb.GeneratedMessage {
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<ArticleContentModeration>(2, _omitFieldNames ? '' : 'contentModeration', subBuilder: ArticleContentModeration.create)
     ..aOM<ArticleCreationInfo>(3, _omitFieldNames ? '' : 'creationContent', subBuilder: ArticleCreationInfo.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'evaluationTotal')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluationUsed')
     ..hasRequiredFields = false
   ;
 
@@ -4471,6 +4495,24 @@ class GetArticleAIEvaluationResponse extends $pb.GeneratedMessage {
   void clearCreationContent() => clearField(3);
   @$pb.TagNumber(3)
   ArticleCreationInfo ensureCreationContent() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get evaluationTotal => $_getI64(3);
+  @$pb.TagNumber(4)
+  set evaluationTotal($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEvaluationTotal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvaluationTotal() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluationUsed => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluationUsed($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluationUsed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluationUsed() => clearField(5);
 }
 
 /// 文案ai聊天
@@ -4747,18 +4789,26 @@ class GetChatConfigRequest extends $pb.GeneratedMessage {
 class GetChatConfigResponse extends $pb.GeneratedMessage {
   factory GetChatConfigResponse({
     $0.BaseResponse? baseResp,
-    $fixnum.Int64? total,
-    $fixnum.Int64? used,
+    $fixnum.Int64? chatTotal,
+    $fixnum.Int64? chatUsed,
+    $fixnum.Int64? evaluationTotal,
+    $fixnum.Int64? evaluationUsed,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
-    if (total != null) {
-      $result.total = total;
+    if (chatTotal != null) {
+      $result.chatTotal = chatTotal;
     }
-    if (used != null) {
-      $result.used = used;
+    if (chatUsed != null) {
+      $result.chatUsed = chatUsed;
+    }
+    if (evaluationTotal != null) {
+      $result.evaluationTotal = evaluationTotal;
+    }
+    if (evaluationUsed != null) {
+      $result.evaluationUsed = evaluationUsed;
     }
     return $result;
   }
@@ -4768,8 +4818,10 @@ class GetChatConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetChatConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'total')
-    ..aInt64(3, _omitFieldNames ? '' : 'used')
+    ..aInt64(2, _omitFieldNames ? '' : 'chatTotal')
+    ..aInt64(3, _omitFieldNames ? '' : 'chatUsed')
+    ..aInt64(4, _omitFieldNames ? '' : 'evaluationTotal')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluationUsed')
     ..hasRequiredFields = false
   ;
 
@@ -4806,22 +4858,40 @@ class GetChatConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get total => $_getI64(1);
+  $fixnum.Int64 get chatTotal => $_getI64(1);
   @$pb.TagNumber(2)
-  set total($fixnum.Int64 v) { $_setInt64(1, v); }
+  set chatTotal($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasTotal() => $_has(1);
+  $core.bool hasChatTotal() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTotal() => clearField(2);
+  void clearChatTotal() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get used => $_getI64(2);
+  $fixnum.Int64 get chatUsed => $_getI64(2);
   @$pb.TagNumber(3)
-  set used($fixnum.Int64 v) { $_setInt64(2, v); }
+  set chatUsed($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUsed() => $_has(2);
+  $core.bool hasChatUsed() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUsed() => clearField(3);
+  void clearChatUsed() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get evaluationTotal => $_getI64(3);
+  @$pb.TagNumber(4)
+  set evaluationTotal($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEvaluationTotal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvaluationTotal() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluationUsed => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluationUsed($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluationUsed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluationUsed() => clearField(5);
 }
 
 class CreateDigitalVideoRequest extends $pb.GeneratedMessage {

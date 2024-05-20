@@ -23,14 +23,42 @@ public interface GetChatConfigResponseOrBuilder extends
   com.zhijiejiaoyu.base.BaseResponseOrBuilder getBaseRespOrBuilder();
 
   /**
-   * <code>int64 total = 2;</code>
-   * @return The total.
+   * <pre>
+   * 当天聊天总数
+   * </pre>
+   *
+   * <code>int64 chat_total = 2;</code>
+   * @return The chatTotal.
    */
-  long getTotal();
+  long getChatTotal();
 
   /**
-   * <code>int64 used = 3;</code>
-   * @return The used.
+   * <pre>
+   * 当天聊天使用数
+   * </pre>
+   *
+   * <code>int64 chat_used = 3;</code>
+   * @return The chatUsed.
    */
-  long getUsed();
+  long getChatUsed();
+
+  /**
+   * <pre>
+   * 当天评价总数
+   * </pre>
+   *
+   * <code>int64 evaluation_total = 4;</code>
+   * @return The evaluationTotal.
+   */
+  long getEvaluationTotal();
+
+  /**
+   * <pre>
+   * 当天评价使用数
+   * </pre>
+   *
+   * <code>int64 evaluation_used = 5;</code>
+   * @return The evaluationUsed.
+   */
+  long getEvaluationUsed();
 }

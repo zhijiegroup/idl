@@ -63,12 +63,22 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            total = input.readInt64();
+            chatTotal = input.readInt64();
             break;
           }
           case 24: {
 
-            used = input.readInt64();
+            chatUsed = input.readInt64();
+            break;
+          }
+          case 32: {
+
+            evaluationTotal = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            evaluationUsed = input.readInt64();
             break;
           }
           default: {
@@ -129,26 +139,64 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int TOTAL_FIELD_NUMBER = 2;
-  private long total ;
+  public static final int CHAT_TOTAL_FIELD_NUMBER = 2;
+  private long chatTotal ;
   /**
-   * <code>int64 total = 2;</code>
-   * @return The total.
+   * <pre>
+   * 当天聊天总数
+   * </pre>
+   *
+   * <code>int64 chat_total = 2;</code>
+   * @return The chatTotal.
    */
   @java.lang.Override
-  public long getTotal() {
-    return total ;
+  public long getChatTotal() {
+    return chatTotal ;
   }
 
-  public static final int USED_FIELD_NUMBER = 3;
-  private long used ;
+  public static final int CHAT_USED_FIELD_NUMBER = 3;
+  private long chatUsed ;
   /**
-   * <code>int64 used = 3;</code>
-   * @return The used.
+   * <pre>
+   * 当天聊天使用数
+   * </pre>
+   *
+   * <code>int64 chat_used = 3;</code>
+   * @return The chatUsed.
    */
   @java.lang.Override
-  public long getUsed() {
-    return used ;
+  public long getChatUsed() {
+    return chatUsed ;
+  }
+
+  public static final int EVALUATION_TOTAL_FIELD_NUMBER = 4;
+  private long evaluationTotal ;
+  /**
+   * <pre>
+   * 当天评价总数
+   * </pre>
+   *
+   * <code>int64 evaluation_total = 4;</code>
+   * @return The evaluationTotal.
+   */
+  @java.lang.Override
+  public long getEvaluationTotal() {
+    return evaluationTotal ;
+  }
+
+  public static final int EVALUATION_USED_FIELD_NUMBER = 5;
+  private long evaluationUsed ;
+  /**
+   * <pre>
+   * 当天评价使用数
+   * </pre>
+   *
+   * <code>int64 evaluation_used = 5;</code>
+   * @return The evaluationUsed.
+   */
+  @java.lang.Override
+  public long getEvaluationUsed() {
+    return evaluationUsed ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -168,11 +216,17 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (total != 0L) {
-      output.writeInt64(2, total );
+    if (chatTotal != 0L) {
+      output.writeInt64(2, chatTotal );
     }
-    if (used != 0L) {
-      output.writeInt64(3, used );
+    if (chatUsed != 0L) {
+      output.writeInt64(3, chatUsed );
+    }
+    if (evaluationTotal != 0L) {
+      output.writeInt64(4, evaluationTotal );
+    }
+    if (evaluationUsed != 0L) {
+      output.writeInt64(5, evaluationUsed );
     }
     unknownFields.writeTo(output);
   }
@@ -187,13 +241,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (total != 0L) {
+    if (chatTotal != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, total );
+        .computeInt64Size(2, chatTotal );
     }
-    if (used != 0L) {
+    if (chatUsed != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, used );
+        .computeInt64Size(3, chatUsed );
+    }
+    if (evaluationTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, evaluationTotal );
+    }
+    if (evaluationUsed != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, evaluationUsed );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,10 +277,14 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getTotal()
-        != other.getTotal()) return false;
-    if (getUsed()
-        != other.getUsed()) return false;
+    if (getChatTotal()
+        != other.getChatTotal()) return false;
+    if (getChatUsed()
+        != other.getChatUsed()) return false;
+    if (getEvaluationTotal()
+        != other.getEvaluationTotal()) return false;
+    if (getEvaluationUsed()
+        != other.getEvaluationUsed()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -234,12 +300,18 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (37 * hash) + CHAT_TOTAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTotal());
-    hash = (37 * hash) + USED_FIELD_NUMBER;
+        getChatTotal());
+    hash = (37 * hash) + CHAT_USED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUsed());
+        getChatUsed());
+    hash = (37 * hash) + EVALUATION_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationTotal());
+    hash = (37 * hash) + EVALUATION_USED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationUsed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -379,9 +451,13 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      total = 0L;
+      chatTotal = 0L;
 
-      used = 0L;
+      chatUsed = 0L;
+
+      evaluationTotal = 0L;
+
+      evaluationUsed = 0L;
 
       return this;
     }
@@ -414,8 +490,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.total = total ;
-      result.used = used ;
+      result.chatTotal = chatTotal ;
+      result.chatUsed = chatUsed ;
+      result.evaluationTotal = evaluationTotal ;
+      result.evaluationUsed = evaluationUsed ;
       onBuilt();
       return result;
     }
@@ -467,11 +545,17 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getTotal() != 0L) {
-        setTotal(other.getTotal());
+      if (other.getChatTotal() != 0L) {
+        setChatTotal(other.getChatTotal());
       }
-      if (other.getUsed() != 0L) {
-        setUsed(other.getUsed());
+      if (other.getChatUsed() != 0L) {
+        setChatUsed(other.getChatUsed());
+      }
+      if (other.getEvaluationTotal() != 0L) {
+        setEvaluationTotal(other.getEvaluationTotal());
+      }
+      if (other.getEvaluationUsed() != 0L) {
+        setEvaluationUsed(other.getEvaluationUsed());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -621,64 +705,174 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private long total ;
+    private long chatTotal ;
     /**
-     * <code>int64 total = 2;</code>
-     * @return The total.
+     * <pre>
+     * 当天聊天总数
+     * </pre>
+     *
+     * <code>int64 chat_total = 2;</code>
+     * @return The chatTotal.
      */
     @java.lang.Override
-    public long getTotal() {
-      return total ;
+    public long getChatTotal() {
+      return chatTotal ;
     }
     /**
-     * <code>int64 total = 2;</code>
-     * @param value The total to set.
+     * <pre>
+     * 当天聊天总数
+     * </pre>
+     *
+     * <code>int64 chat_total = 2;</code>
+     * @param value The chatTotal to set.
      * @return This builder for chaining.
      */
-    public Builder setTotal(long value) {
+    public Builder setChatTotal(long value) {
       
-      total = value;
+      chatTotal = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 total = 2;</code>
+     * <pre>
+     * 当天聊天总数
+     * </pre>
+     *
+     * <code>int64 chat_total = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTotal() {
+    public Builder clearChatTotal() {
       
-      total = 0L;
+      chatTotal = 0L;
       onChanged();
       return this;
     }
 
-    private long used ;
+    private long chatUsed ;
     /**
-     * <code>int64 used = 3;</code>
-     * @return The used.
+     * <pre>
+     * 当天聊天使用数
+     * </pre>
+     *
+     * <code>int64 chat_used = 3;</code>
+     * @return The chatUsed.
      */
     @java.lang.Override
-    public long getUsed() {
-      return used ;
+    public long getChatUsed() {
+      return chatUsed ;
     }
     /**
-     * <code>int64 used = 3;</code>
-     * @param value The used to set.
+     * <pre>
+     * 当天聊天使用数
+     * </pre>
+     *
+     * <code>int64 chat_used = 3;</code>
+     * @param value The chatUsed to set.
      * @return This builder for chaining.
      */
-    public Builder setUsed(long value) {
+    public Builder setChatUsed(long value) {
       
-      used = value;
+      chatUsed = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 used = 3;</code>
+     * <pre>
+     * 当天聊天使用数
+     * </pre>
+     *
+     * <code>int64 chat_used = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearUsed() {
+    public Builder clearChatUsed() {
       
-      used = 0L;
+      chatUsed = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long evaluationTotal ;
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @return The evaluationTotal.
+     */
+    @java.lang.Override
+    public long getEvaluationTotal() {
+      return evaluationTotal ;
+    }
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @param value The evaluationTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationTotal(long value) {
+      
+      evaluationTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationTotal() {
+      
+      evaluationTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long evaluationUsed ;
+    /**
+     * <pre>
+     * 当天评价使用数
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @return The evaluationUsed.
+     */
+    @java.lang.Override
+    public long getEvaluationUsed() {
+      return evaluationUsed ;
+    }
+    /**
+     * <pre>
+     * 当天评价使用数
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @param value The evaluationUsed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationUsed(long value) {
+      
+      evaluationUsed = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当天评价使用数
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationUsed() {
+      
+      evaluationUsed = 0L;
       onChanged();
       return this;
     }

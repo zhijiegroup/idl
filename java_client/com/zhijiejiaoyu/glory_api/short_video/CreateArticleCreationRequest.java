@@ -113,6 +113,11 @@ private static final long serialVersionUID = 0L;
             articleCreationId = input.readInt64();
             break;
           }
+          case 80: {
+
+            articleCreationDraftId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -413,12 +418,31 @@ private static final long serialVersionUID = 0L;
   public static final int ARTICLE_CREATION_ID_FIELD_NUMBER = 9;
   private long articleCreationId ;
   /**
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
    * <code>int64 article_creation_id = 9;</code>
    * @return The articleCreationId.
    */
   @java.lang.Override
   public long getArticleCreationId() {
     return articleCreationId ;
+  }
+
+  public static final int ARTICLE_CREATION_DRAFT_ID_FIELD_NUMBER = 10;
+  private long articleCreationDraftId ;
+  /**
+   * <pre>
+   * 草稿文案的ID
+   * </pre>
+   *
+   * <code>int64 article_creation_draft_id = 10;</code>
+   * @return The articleCreationDraftId.
+   */
+  @java.lang.Override
+  public long getArticleCreationDraftId() {
+    return articleCreationDraftId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -462,6 +486,9 @@ private static final long serialVersionUID = 0L;
     if (articleCreationId != 0L) {
       output.writeInt64(9, articleCreationId );
     }
+    if (articleCreationDraftId != 0L) {
+      output.writeInt64(10, articleCreationDraftId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -501,6 +528,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(9, articleCreationId );
     }
+    if (articleCreationDraftId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(10, articleCreationDraftId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -537,6 +568,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductName())) return false;
     if (getArticleCreationId()
         != other.getArticleCreationId()) return false;
+    if (getArticleCreationDraftId()
+        != other.getArticleCreationDraftId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -570,6 +603,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getArticleCreationId());
+    hash = (37 * hash) + ARTICLE_CREATION_DRAFT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getArticleCreationDraftId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -725,6 +761,8 @@ private static final long serialVersionUID = 0L;
 
       articleCreationId = 0L;
 
+      articleCreationDraftId = 0L;
+
       return this;
     }
 
@@ -764,6 +802,7 @@ private static final long serialVersionUID = 0L;
       result.lastArticleCreationId = lastArticleCreationId ;
       result.productName = productName ;
       result.articleCreationId = articleCreationId ;
+      result.articleCreationDraftId = articleCreationDraftId ;
       onBuilt();
       return result;
     }
@@ -844,6 +883,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getArticleCreationId() != 0L) {
         setArticleCreationId(other.getArticleCreationId());
+      }
+      if (other.getArticleCreationDraftId() != 0L) {
+        setArticleCreationDraftId(other.getArticleCreationDraftId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1482,6 +1524,10 @@ private static final long serialVersionUID = 0L;
 
     private long articleCreationId ;
     /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
      * <code>int64 article_creation_id = 9;</code>
      * @return The articleCreationId.
      */
@@ -1490,6 +1536,10 @@ private static final long serialVersionUID = 0L;
       return articleCreationId ;
     }
     /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
      * <code>int64 article_creation_id = 9;</code>
      * @param value The articleCreationId to set.
      * @return This builder for chaining.
@@ -1501,12 +1551,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
      * <code>int64 article_creation_id = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearArticleCreationId() {
       
       articleCreationId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long articleCreationDraftId ;
+    /**
+     * <pre>
+     * 草稿文案的ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 10;</code>
+     * @return The articleCreationDraftId.
+     */
+    @java.lang.Override
+    public long getArticleCreationDraftId() {
+      return articleCreationDraftId ;
+    }
+    /**
+     * <pre>
+     * 草稿文案的ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 10;</code>
+     * @param value The articleCreationDraftId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArticleCreationDraftId(long value) {
+      
+      articleCreationDraftId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 草稿文案的ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearArticleCreationDraftId() {
+      
+      articleCreationDraftId = 0L;
       onChanged();
       return this;
     }

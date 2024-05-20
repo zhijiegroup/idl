@@ -101,8 +101,22 @@ public interface CreateArticleCreationRequestOrBuilder extends
       getProductNameBytes();
 
   /**
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
    * <code>int64 article_creation_id = 9;</code>
    * @return The articleCreationId.
    */
   long getArticleCreationId();
+
+  /**
+   * <pre>
+   * 草稿文案的ID
+   * </pre>
+   *
+   * <code>int64 article_creation_draft_id = 10;</code>
+   * @return The articleCreationDraftId.
+   */
+  long getArticleCreationDraftId();
 }

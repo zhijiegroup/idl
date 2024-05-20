@@ -106,7 +106,11 @@ struct GloryApi_CreateArticleCreationRequest {
 
   var productName: String = String()
 
+  /// 文案ID
   var articleCreationID: Int64 = 0
+
+  /// 草稿文案的ID
+  var articleCreationDraftID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1370,6 +1374,18 @@ struct GloryApi_GetArticleAIEvaluationResponse {
   /// Clears the value of `creationContent`. Subsequent reads from it will return its default value.
   mutating func clearCreationContent() {_uniqueStorage()._creationContent = nil}
 
+  /// 当天评价总数
+  var evaluationTotal: Int64 {
+    get {return _storage._evaluationTotal}
+    set {_uniqueStorage()._evaluationTotal = newValue}
+  }
+
+  /// 当天评价使用数 
+  var evaluationUsed: Int64 {
+    get {return _storage._evaluationUsed}
+    set {_uniqueStorage()._evaluationUsed = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1477,9 +1493,17 @@ struct GloryApi_GetChatConfigResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var total: Int64 = 0
+  /// 当天聊天总数
+  var chatTotal: Int64 = 0
 
-  var used: Int64 = 0
+  /// 当天聊天使用数
+  var chatUsed: Int64 = 0
+
+  /// 当天评价总数
+  var evaluationTotal: Int64 = 0
+
+  /// 当天评价使用数
+  var evaluationUsed: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2880,6 +2904,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     7: .standard(proto: "last_article_creation_id"),
     8: .standard(proto: "product_name"),
     9: .standard(proto: "article_creation_id"),
+    10: .standard(proto: "article_creation_draft_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2897,6 +2922,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.lastArticleCreationID) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 9: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
+      case 10: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationDraftID) }()
       default: break
       }
     }
@@ -2934,6 +2960,9 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if self.articleCreationID != 0 {
       try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 9)
     }
+    if self.articleCreationDraftID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationDraftID, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2947,6 +2976,7 @@ extension GloryApi_CreateArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.lastArticleCreationID != rhs.lastArticleCreationID {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.articleCreationID != rhs.articleCreationID {return false}
+    if lhs.articleCreationDraftID != rhs.articleCreationDraftID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5318,12 +5348,16 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "content_moderation"),
     3: .standard(proto: "creation_content"),
+    4: .standard(proto: "evaluation_total"),
+    5: .standard(proto: "evaluation_used"),
   ]
 
   fileprivate class _StorageClass {
     var _baseResp: Base_BaseResponse? = nil
     var _contentModeration: GloryApi_ArticleContentModeration? = nil
     var _creationContent: GloryApi_ArticleCreationInfo? = nil
+    var _evaluationTotal: Int64 = 0
+    var _evaluationUsed: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -5341,6 +5375,8 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
       _baseResp = source._baseResp
       _contentModeration = source._contentModeration
       _creationContent = source._creationContent
+      _evaluationTotal = source._evaluationTotal
+      _evaluationUsed = source._evaluationUsed
     }
   }
 
@@ -5362,6 +5398,8 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
         case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._contentModeration) }()
         case 3: try { try decoder.decodeSingularMessageField(value: &_storage._creationContent) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._evaluationTotal) }()
+        case 5: try { try decoder.decodeSingularInt64Field(value: &_storage._evaluationUsed) }()
         default: break
         }
       }
@@ -5383,6 +5421,12 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
       try { if let v = _storage._creationContent {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       } }()
+      if _storage._evaluationTotal != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._evaluationTotal, fieldNumber: 4)
+      }
+      if _storage._evaluationUsed != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._evaluationUsed, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -5395,6 +5439,8 @@ extension GloryApi_GetArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
         if _storage._baseResp != rhs_storage._baseResp {return false}
         if _storage._contentModeration != rhs_storage._contentModeration {return false}
         if _storage._creationContent != rhs_storage._creationContent {return false}
+        if _storage._evaluationTotal != rhs_storage._evaluationTotal {return false}
+        if _storage._evaluationUsed != rhs_storage._evaluationUsed {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -5578,8 +5624,10 @@ extension GloryApi_GetChatConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._
   static let protoMessageName: String = _protobuf_package + ".GetChatConfigResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "total"),
-    3: .same(proto: "used"),
+    2: .standard(proto: "chat_total"),
+    3: .standard(proto: "chat_used"),
+    4: .standard(proto: "evaluation_total"),
+    5: .standard(proto: "evaluation_used"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5589,8 +5637,10 @@ extension GloryApi_GetChatConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.total) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.used) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.chatTotal) }()
+      case 3: try { try decoder.decodeSingularInt64Field(value: &self.chatUsed) }()
+      case 4: try { try decoder.decodeSingularInt64Field(value: &self.evaluationTotal) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluationUsed) }()
       default: break
       }
     }
@@ -5604,19 +5654,27 @@ extension GloryApi_GetChatConfigResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.total != 0 {
-      try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 2)
+    if self.chatTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.chatTotal, fieldNumber: 2)
     }
-    if self.used != 0 {
-      try visitor.visitSingularInt64Field(value: self.used, fieldNumber: 3)
+    if self.chatUsed != 0 {
+      try visitor.visitSingularInt64Field(value: self.chatUsed, fieldNumber: 3)
+    }
+    if self.evaluationTotal != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluationTotal, fieldNumber: 4)
+    }
+    if self.evaluationUsed != 0 {
+      try visitor.visitSingularInt64Field(value: self.evaluationUsed, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetChatConfigResponse, rhs: GloryApi_GetChatConfigResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.total != rhs.total {return false}
-    if lhs.used != rhs.used {return false}
+    if lhs.chatTotal != rhs.chatTotal {return false}
+    if lhs.chatUsed != rhs.chatUsed {return false}
+    if lhs.evaluationTotal != rhs.evaluationTotal {return false}
+    if lhs.evaluationUsed != rhs.evaluationUsed {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

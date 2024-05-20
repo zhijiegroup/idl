@@ -87,6 +87,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 32: {
+
+            evaluationTotal = input.readInt64();
+            break;
+          }
+          case 40: {
+
+            evaluationUsed = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -197,6 +207,36 @@ private static final long serialVersionUID = 0L;
     return getCreationContent();
   }
 
+  public static final int EVALUATION_TOTAL_FIELD_NUMBER = 4;
+  private long evaluationTotal ;
+  /**
+   * <pre>
+   * 当天评价总数
+   * </pre>
+   *
+   * <code>int64 evaluation_total = 4;</code>
+   * @return The evaluationTotal.
+   */
+  @java.lang.Override
+  public long getEvaluationTotal() {
+    return evaluationTotal ;
+  }
+
+  public static final int EVALUATION_USED_FIELD_NUMBER = 5;
+  private long evaluationUsed ;
+  /**
+   * <pre>
+   * 当天评价使用数 
+   * </pre>
+   *
+   * <code>int64 evaluation_used = 5;</code>
+   * @return The evaluationUsed.
+   */
+  @java.lang.Override
+  public long getEvaluationUsed() {
+    return evaluationUsed ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -220,6 +260,12 @@ private static final long serialVersionUID = 0L;
     if (creationContent != null) {
       output.writeMessage(3, getCreationContent());
     }
+    if (evaluationTotal != 0L) {
+      output.writeInt64(4, evaluationTotal );
+    }
+    if (evaluationUsed != 0L) {
+      output.writeInt64(5, evaluationUsed );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +286,14 @@ private static final long serialVersionUID = 0L;
     if (creationContent != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCreationContent());
+    }
+    if (evaluationTotal != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, evaluationTotal );
+    }
+    if (evaluationUsed != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, evaluationUsed );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -271,6 +325,10 @@ private static final long serialVersionUID = 0L;
       if (!getCreationContent()
           .equals(other.getCreationContent())) return false;
     }
+    if (getEvaluationTotal()
+        != other.getEvaluationTotal()) return false;
+    if (getEvaluationUsed()
+        != other.getEvaluationUsed()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -294,6 +352,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CREATION_CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getCreationContent().hashCode();
     }
+    hash = (37 * hash) + EVALUATION_TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationTotal());
+    hash = (37 * hash) + EVALUATION_USED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getEvaluationUsed());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -445,6 +509,10 @@ private static final long serialVersionUID = 0L;
         creationContent = null;
         creationContentBuilder = null;
       }
+      evaluationTotal = 0L;
+
+      evaluationUsed = 0L;
+
       return this;
     }
 
@@ -486,6 +554,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.creationContent = creationContentBuilder .build();
       }
+      result.evaluationTotal = evaluationTotal ;
+      result.evaluationUsed = evaluationUsed ;
       onBuilt();
       return result;
     }
@@ -542,6 +612,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCreationContent()) {
         mergeCreationContent(other.getCreationContent());
+      }
+      if (other.getEvaluationTotal() != 0L) {
+        setEvaluationTotal(other.getEvaluationTotal());
+      }
+      if (other.getEvaluationUsed() != 0L) {
+        setEvaluationUsed(other.getEvaluationUsed());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -927,6 +1003,92 @@ private static final long serialVersionUID = 0L;
         creationContent = null;
       }
       return creationContentBuilder ;
+    }
+
+    private long evaluationTotal ;
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @return The evaluationTotal.
+     */
+    @java.lang.Override
+    public long getEvaluationTotal() {
+      return evaluationTotal ;
+    }
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @param value The evaluationTotal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationTotal(long value) {
+      
+      evaluationTotal = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当天评价总数
+     * </pre>
+     *
+     * <code>int64 evaluation_total = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationTotal() {
+      
+      evaluationTotal = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long evaluationUsed ;
+    /**
+     * <pre>
+     * 当天评价使用数 
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @return The evaluationUsed.
+     */
+    @java.lang.Override
+    public long getEvaluationUsed() {
+      return evaluationUsed ;
+    }
+    /**
+     * <pre>
+     * 当天评价使用数 
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @param value The evaluationUsed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationUsed(long value) {
+      
+      evaluationUsed = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 当天评价使用数 
+     * </pre>
+     *
+     * <code>int64 evaluation_used = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationUsed() {
+      
+      evaluationUsed = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

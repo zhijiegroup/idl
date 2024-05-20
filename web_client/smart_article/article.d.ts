@@ -40,7 +40,10 @@ export interface CreateArticleCreationRequest {
   creation_type?: string;
   last_article_creation_id?: string;
   product_name?: string;
+  /** 文案ID */
   article_creation_id?: string;
+  /** 草稿文案的ID */
+  article_creation_draft_id?: string;
 }
 
 export interface CreateArticleCreationResponse {
@@ -367,6 +370,10 @@ export interface GetArticleAIEvaluationResponse {
   base_resp?: base.BaseResponse;
   content_moderation?: ArticleContentModeration;
   creation_content?: ArticleCreationInfo;
+  /** 当天评价总数 */
+  evaluation_total?: string;
+  /** 当天评价使用数 */
+  evaluation_used?: string;
 }
 
 /** 文案ai聊天 */
@@ -393,8 +400,14 @@ export interface GetChatConfigRequest {
 
 export interface GetChatConfigResponse {
   base_resp?: base.BaseResponse;
-  total?: string;
-  used?: string;
+  /** 当天聊天总数 */
+  chat_total?: string;
+  /** 当天聊天使用数 */
+  chat_used?: string;
+  /** 当天评价总数 */
+  evaluation_total?: string;
+  /** 当天评价使用数 */
+  evaluation_used?: string;
 }
 
 export interface CreateDigitalVideoRequest {
