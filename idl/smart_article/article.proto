@@ -288,6 +288,7 @@ message ArticleContentModeration {
     string reject_reason = 6; // 拒绝原因
     string accept_reason = 7; // 通过原因
     string evaluation = 8; // 评价
+    string pass_result =9;// 通过结果
 
 }
 message WrongWord {
