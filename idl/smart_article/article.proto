@@ -41,7 +41,8 @@ message CreateArticleCreationRequest {
     string creation_type = 6;
     int64 last_article_creation_id = 7;
     string product_name = 8;
-    int64 article_creation_id = 9;
+    int64 article_creation_id = 9; // 文案ID
+    int64 w = 10; // 草稿文案的ID
 }
 
 message CreateArticleCreationResponse {
@@ -349,6 +350,8 @@ message GetArticleAIEvaluationResponse {
     base.BaseResponse base_resp = 1;
     ArticleContentModeration content_moderation = 2;
     ArticleCreationInfo creation_content = 3; 
+    int64 evaluation_total = 4; // 当天评价总数
+    int64 evaluation_used = 5;  // 当天评价使用数 
 }
 
 // 文案ai聊天
@@ -375,8 +378,10 @@ message GetChatConfigRequest {
 
 message GetChatConfigResponse {
     base.BaseResponse base_resp = 1;
-    int64 total = 2;
-    int64 used = 3;
+    int64 chat_total = 2; // 当天聊天总数
+    int64 chat_used = 3; // 当天聊天使用数
+    int64 evaluation_total = 4; // 当天评价总数
+    int64 evaluation_used = 5;  // 当天评价使用数
 }
 
 message CreateDigitalVideoRequest {
