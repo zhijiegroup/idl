@@ -85,6 +85,7 @@ message CreateArticleCreationDraftRequest {
     string title = 4;
     string content = 5; // 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
     string creation_type = 6;
+    int64 article_creation_id = 7; // 文案ID
 }
 
 message CreateArticleCreationDraftResponse {
@@ -334,13 +335,13 @@ message GenArticleAIEvaluationRequest {
 
 message GenArticleAIEvaluationResponse {
     base.BaseResponse base_resp = 1;
-    int64 ai_result_id = 2;
+    int64 article_creation_id = 2; // 文案ID
 }
 
 // 获取AI评价接口
 message GetArticleAIEvaluationRequest {
     base.BaseRequest base_request = 1;
-    int64 ai_result_id = 2;
+    int64 article_creation_id = 2; // 文案ID
     string topic_code = 3;
 }
 
