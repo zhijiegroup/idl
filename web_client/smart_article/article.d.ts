@@ -85,6 +85,8 @@ export interface CreateArticleCreationDraftRequest {
   /** 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串 */
   content?: string;
   creation_type?: string;
+  /** 文案ID */
+  article_creation_id?: string;
 }
 
 export interface CreateArticleCreationDraftResponse {
@@ -349,13 +351,15 @@ export interface GenArticleAIEvaluationRequest {
 
 export interface GenArticleAIEvaluationResponse {
   base_resp?: base.BaseResponse;
-  ai_result_id?: string;
+  /** 文案ID */
+  article_creation_id?: string;
 }
 
 /** 获取AI评价接口 */
 export interface GetArticleAIEvaluationRequest {
   base_request?: base.BaseRequest;
-  ai_result_id?: string;
+  /** 文案ID */
+  article_creation_id?: string;
   topic_code?: string;
 }
 

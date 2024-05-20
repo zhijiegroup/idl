@@ -89,4 +89,14 @@ public interface CreateArticleCreationDraftRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreationTypeBytes();
+
+  /**
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 7;</code>
+   * @return The articleCreationId.
+   */
+  long getArticleCreationId();
 }

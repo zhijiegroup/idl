@@ -984,6 +984,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? content,
     $core.String? creationType,
+    $fixnum.Int64? articleCreationId,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1004,6 +1005,9 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     if (creationType != null) {
       $result.creationType = creationType;
     }
+    if (articleCreationId != null) {
+      $result.articleCreationId = articleCreationId;
+    }
     return $result;
   }
   CreateArticleCreationDraftRequest._() : super();
@@ -1017,6 +1021,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'title')
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'creationType')
+    ..aInt64(7, _omitFieldNames ? '' : 'articleCreationId')
     ..hasRequiredFields = false
   ;
 
@@ -1096,6 +1101,15 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
   $core.bool hasCreationType() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreationType() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get articleCreationId => $_getI64(6);
+  @$pb.TagNumber(7)
+  set articleCreationId($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasArticleCreationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearArticleCreationId() => clearField(7);
 }
 
 class CreateArticleCreationDraftResponse extends $pb.GeneratedMessage {
@@ -4231,14 +4245,14 @@ class GenArticleAIEvaluationRequest extends $pb.GeneratedMessage {
 class GenArticleAIEvaluationResponse extends $pb.GeneratedMessage {
   factory GenArticleAIEvaluationResponse({
     $0.BaseResponse? baseResp,
-    $fixnum.Int64? aiResultId,
+    $fixnum.Int64? articleCreationId,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
     }
-    if (aiResultId != null) {
-      $result.aiResultId = aiResultId;
+    if (articleCreationId != null) {
+      $result.articleCreationId = articleCreationId;
     }
     return $result;
   }
@@ -4248,7 +4262,7 @@ class GenArticleAIEvaluationResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenArticleAIEvaluationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'aiResultId')
+    ..aInt64(2, _omitFieldNames ? '' : 'articleCreationId')
     ..hasRequiredFields = false
   ;
 
@@ -4285,28 +4299,28 @@ class GenArticleAIEvaluationResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get aiResultId => $_getI64(1);
+  $fixnum.Int64 get articleCreationId => $_getI64(1);
   @$pb.TagNumber(2)
-  set aiResultId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set articleCreationId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAiResultId() => $_has(1);
+  $core.bool hasArticleCreationId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAiResultId() => clearField(2);
+  void clearArticleCreationId() => clearField(2);
 }
 
 /// 获取AI评价接口
 class GetArticleAIEvaluationRequest extends $pb.GeneratedMessage {
   factory GetArticleAIEvaluationRequest({
     $0.BaseRequest? baseRequest,
-    $fixnum.Int64? aiResultId,
+    $fixnum.Int64? articleCreationId,
     $core.String? topicCode,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
     }
-    if (aiResultId != null) {
-      $result.aiResultId = aiResultId;
+    if (articleCreationId != null) {
+      $result.articleCreationId = articleCreationId;
     }
     if (topicCode != null) {
       $result.topicCode = topicCode;
@@ -4319,7 +4333,7 @@ class GetArticleAIEvaluationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetArticleAIEvaluationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'aiResultId')
+    ..aInt64(2, _omitFieldNames ? '' : 'articleCreationId')
     ..aOS(3, _omitFieldNames ? '' : 'topicCode')
     ..hasRequiredFields = false
   ;
@@ -4357,13 +4371,13 @@ class GetArticleAIEvaluationRequest extends $pb.GeneratedMessage {
   $0.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get aiResultId => $_getI64(1);
+  $fixnum.Int64 get articleCreationId => $_getI64(1);
   @$pb.TagNumber(2)
-  set aiResultId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set articleCreationId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAiResultId() => $_has(1);
+  $core.bool hasArticleCreationId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAiResultId() => clearField(2);
+  void clearArticleCreationId() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get topicCode => $_getSZ(2);

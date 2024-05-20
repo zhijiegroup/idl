@@ -96,6 +96,11 @@ private static final long serialVersionUID = 0L;
             creationType = s;
             break;
           }
+          case 56: {
+
+            articleCreationId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -352,6 +357,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ARTICLE_CREATION_ID_FIELD_NUMBER = 7;
+  private long articleCreationId ;
+  /**
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 7;</code>
+   * @return The articleCreationId.
+   */
+  @java.lang.Override
+  public long getArticleCreationId() {
+    return articleCreationId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -384,6 +404,9 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creationType );
     }
+    if (articleCreationId != 0L) {
+      output.writeInt64(7, articleCreationId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -411,6 +434,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCreationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creationType );
+    }
+    if (articleCreationId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, articleCreationId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -442,6 +469,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getCreationType()
         .equals(other.getCreationType())) return false;
+    if (getArticleCreationId()
+        != other.getArticleCreationId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -467,6 +496,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationType().hashCode();
+    hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getArticleCreationId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -616,6 +648,8 @@ private static final long serialVersionUID = 0L;
 
       creationType = "";
 
+      articleCreationId = 0L;
+
       return this;
     }
 
@@ -652,6 +686,7 @@ private static final long serialVersionUID = 0L;
       result.title = title ;
       result.content = content ;
       result.creationType = creationType ;
+      result.articleCreationId = articleCreationId ;
       onBuilt();
       return result;
     }
@@ -722,6 +757,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCreationType().isEmpty()) {
         creationType = other.creationType ;
         onChanged();
+      }
+      if (other.getArticleCreationId() != 0L) {
+        setArticleCreationId(other.getArticleCreationId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1267,6 +1305,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       creationType = value;
+      onChanged();
+      return this;
+    }
+
+    private long articleCreationId ;
+    /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @return The articleCreationId.
+     */
+    @java.lang.Override
+    public long getArticleCreationId() {
+      return articleCreationId ;
+    }
+    /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @param value The articleCreationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArticleCreationId(long value) {
+      
+      articleCreationId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearArticleCreationId() {
+      
+      articleCreationId = 0L;
       onChanged();
       return this;
     }

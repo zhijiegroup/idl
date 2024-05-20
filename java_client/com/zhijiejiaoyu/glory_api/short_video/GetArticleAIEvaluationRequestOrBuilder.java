@@ -23,10 +23,14 @@ public interface GetArticleAIEvaluationRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
-   * <code>int64 ai_result_id = 2;</code>
-   * @return The aiResultId.
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 2;</code>
+   * @return The articleCreationId.
    */
-  long getAiResultId();
+  long getArticleCreationId();
 
   /**
    * <code>string topic_code = 3;</code>

@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            aiResultId = input.readInt64();
+            articleCreationId = input.readInt64();
             break;
           }
           default: {
@@ -124,15 +124,19 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int AI_RESULT_ID_FIELD_NUMBER = 2;
-  private long aiResultId ;
+  public static final int ARTICLE_CREATION_ID_FIELD_NUMBER = 2;
+  private long articleCreationId ;
   /**
-   * <code>int64 ai_result_id = 2;</code>
-   * @return The aiResultId.
+   * <pre>
+   * 文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 2;</code>
+   * @return The articleCreationId.
    */
   @java.lang.Override
-  public long getAiResultId() {
-    return aiResultId ;
+  public long getArticleCreationId() {
+    return articleCreationId ;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -152,8 +156,8 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
-    if (aiResultId != 0L) {
-      output.writeInt64(2, aiResultId );
+    if (articleCreationId != 0L) {
+      output.writeInt64(2, articleCreationId );
     }
     unknownFields.writeTo(output);
   }
@@ -168,9 +172,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
-    if (aiResultId != 0L) {
+    if (articleCreationId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, aiResultId );
+        .computeInt64Size(2, articleCreationId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,8 +196,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
-    if (getAiResultId()
-        != other.getAiResultId()) return false;
+    if (getArticleCreationId()
+        != other.getArticleCreationId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -209,9 +213,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
-    hash = (37 * hash) + AI_RESULT_ID_FIELD_NUMBER;
+    hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAiResultId());
+        getArticleCreationId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,7 +355,7 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
-      aiResultId = 0L;
+      articleCreationId = 0L;
 
       return this;
     }
@@ -384,7 +388,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
-      result.aiResultId = aiResultId ;
+      result.articleCreationId = articleCreationId ;
       onBuilt();
       return result;
     }
@@ -436,8 +440,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
       }
-      if (other.getAiResultId() != 0L) {
-        setAiResultId(other.getAiResultId());
+      if (other.getArticleCreationId() != 0L) {
+        setArticleCreationId(other.getArticleCreationId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -587,33 +591,45 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
-    private long aiResultId ;
+    private long articleCreationId ;
     /**
-     * <code>int64 ai_result_id = 2;</code>
-     * @return The aiResultId.
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 2;</code>
+     * @return The articleCreationId.
      */
     @java.lang.Override
-    public long getAiResultId() {
-      return aiResultId ;
+    public long getArticleCreationId() {
+      return articleCreationId ;
     }
     /**
-     * <code>int64 ai_result_id = 2;</code>
-     * @param value The aiResultId to set.
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 2;</code>
+     * @param value The articleCreationId to set.
      * @return This builder for chaining.
      */
-    public Builder setAiResultId(long value) {
+    public Builder setArticleCreationId(long value) {
       
-      aiResultId = value;
+      articleCreationId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 ai_result_id = 2;</code>
+     * <pre>
+     * 文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAiResultId() {
+    public Builder clearArticleCreationId() {
       
-      aiResultId = 0L;
+      articleCreationId = 0L;
       onChanged();
       return this;
     }

@@ -309,6 +309,9 @@ struct GloryApi_CreateArticleCreationDraftRequest {
 
   var creationType: String = String()
 
+  /// 文案ID
+  var articleCreationID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1298,7 +1301,8 @@ struct GloryApi_GenArticleAIEvaluationResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
-  var aiResultID: Int64 = 0
+  /// 文案ID
+  var articleCreationID: Int64 = 0
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1322,7 +1326,8 @@ struct GloryApi_GetArticleAIEvaluationRequest {
   /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
   mutating func clearBaseRequest() {self._baseRequest = nil}
 
-  var aiResultID: Int64 = 0
+  /// 文案ID
+  var articleCreationID: Int64 = 0
 
   var topicCode: String = String()
 
@@ -3268,6 +3273,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     4: .same(proto: "title"),
     5: .same(proto: "content"),
     6: .standard(proto: "creation_type"),
+    7: .standard(proto: "article_creation_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3282,6 +3288,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 4: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
+      case 7: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
       default: break
       }
     }
@@ -3310,6 +3317,9 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if !self.creationType.isEmpty {
       try visitor.visitSingularStringField(value: self.creationType, fieldNumber: 6)
     }
+    if self.articleCreationID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3320,6 +3330,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.title != rhs.title {return false}
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
+    if lhs.articleCreationID != rhs.articleCreationID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5215,7 +5226,7 @@ extension GloryApi_GenArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
   static let protoMessageName: String = _protobuf_package + ".GenArticleAIEvaluationResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .standard(proto: "ai_result_id"),
+    2: .standard(proto: "article_creation_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -5225,7 +5236,7 @@ extension GloryApi_GenArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.aiResultID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
       default: break
       }
     }
@@ -5239,15 +5250,15 @@ extension GloryApi_GenArticleAIEvaluationResponse: SwiftProtobuf.Message, SwiftP
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.aiResultID != 0 {
-      try visitor.visitSingularInt64Field(value: self.aiResultID, fieldNumber: 2)
+    if self.articleCreationID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GenArticleAIEvaluationResponse, rhs: GloryApi_GenArticleAIEvaluationResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
-    if lhs.aiResultID != rhs.aiResultID {return false}
+    if lhs.articleCreationID != rhs.articleCreationID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -5257,7 +5268,7 @@ extension GloryApi_GetArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
   static let protoMessageName: String = _protobuf_package + ".GetArticleAIEvaluationRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
-    2: .standard(proto: "ai_result_id"),
+    2: .standard(proto: "article_creation_id"),
     3: .standard(proto: "topic_code"),
   ]
 
@@ -5268,7 +5279,7 @@ extension GloryApi_GetArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.aiResultID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.topicCode) }()
       default: break
       }
@@ -5283,8 +5294,8 @@ extension GloryApi_GetArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
     try { if let v = self._baseRequest {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
-    if self.aiResultID != 0 {
-      try visitor.visitSingularInt64Field(value: self.aiResultID, fieldNumber: 2)
+    if self.articleCreationID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 2)
     }
     if !self.topicCode.isEmpty {
       try visitor.visitSingularStringField(value: self.topicCode, fieldNumber: 3)
@@ -5294,7 +5305,7 @@ extension GloryApi_GetArticleAIEvaluationRequest: SwiftProtobuf.Message, SwiftPr
 
   static func ==(lhs: GloryApi_GetArticleAIEvaluationRequest, rhs: GloryApi_GetArticleAIEvaluationRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
-    if lhs.aiResultID != rhs.aiResultID {return false}
+    if lhs.articleCreationID != rhs.articleCreationID {return false}
     if lhs.topicCode != rhs.topicCode {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
