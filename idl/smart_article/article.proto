@@ -42,7 +42,7 @@ message CreateArticleCreationRequest {
     int64 last_article_creation_id = 7;
     string product_name = 8;
     int64 article_creation_id = 9; // 文案ID
-    int64 w = 10; // 草稿文案的ID
+    int64 article_creation_draft_id = 10; // 草稿文案的ID
 }
 
 message CreateArticleCreationResponse {
