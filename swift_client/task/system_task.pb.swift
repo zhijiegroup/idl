@@ -41,6 +41,8 @@ struct GloryApi_TaskParameter {
 
   var taskParameterVisibleInSystem: Bool = false
 
+  var taskParameterRequired: Bool = false
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -494,6 +496,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     6: .standard(proto: "task_parameter_enums"),
     7: .standard(proto: "task_parameter_children"),
     8: .standard(proto: "task_parameter_visible_in_system"),
+    9: .standard(proto: "task_parameter_required"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -510,6 +513,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 6: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameterEnums) }()
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameterChildren) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.taskParameterVisibleInSystem) }()
+      case 9: try { try decoder.decodeSingularBoolField(value: &self.taskParameterRequired) }()
       default: break
       }
     }
@@ -540,6 +544,9 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.taskParameterVisibleInSystem != false {
       try visitor.visitSingularBoolField(value: self.taskParameterVisibleInSystem, fieldNumber: 8)
     }
+    if self.taskParameterRequired != false {
+      try visitor.visitSingularBoolField(value: self.taskParameterRequired, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -552,6 +559,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.taskParameterEnums != rhs.taskParameterEnums {return false}
     if lhs.taskParameterChildren != rhs.taskParameterChildren {return false}
     if lhs.taskParameterVisibleInSystem != rhs.taskParameterVisibleInSystem {return false}
+    if lhs.taskParameterRequired != rhs.taskParameterRequired {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

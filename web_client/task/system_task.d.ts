@@ -16,6 +16,7 @@ export interface TaskParameter {
   task_parameter_enums?: Array<TaskParameter>;
   task_parameter_children?: Array<TaskParameter>;
   task_parameter_visible_in_system?: boolean;
+  task_parameter_required?: boolean;
 }
 
 export interface TaskConfig {

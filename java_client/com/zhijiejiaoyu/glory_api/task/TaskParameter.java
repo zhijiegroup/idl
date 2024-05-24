@@ -109,6 +109,11 @@ private static final long serialVersionUID = 0L;
             taskParameterVisibleInSystem = input.readBool();
             break;
           }
+          case 72: {
+
+            taskParameterRequired = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -428,6 +433,17 @@ private static final long serialVersionUID = 0L;
     return taskParameterVisibleInSystem ;
   }
 
+  public static final int TASK_PARAMETER_REQUIRED_FIELD_NUMBER = 9;
+  private boolean taskParameterRequired ;
+  /**
+   * <code>bool task_parameter_required = 9;</code>
+   * @return The taskParameterRequired.
+   */
+  @java.lang.Override
+  public boolean getTaskParameterRequired() {
+    return taskParameterRequired ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -466,6 +482,9 @@ private static final long serialVersionUID = 0L;
     if (taskParameterVisibleInSystem != false) {
       output.writeBool(8, taskParameterVisibleInSystem );
     }
+    if (taskParameterRequired != false) {
+      output.writeBool(9, taskParameterRequired );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -502,6 +521,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, taskParameterVisibleInSystem );
     }
+    if (taskParameterRequired != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, taskParameterRequired );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -533,6 +556,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskParameterChildrenList())) return false;
     if (getTaskParameterVisibleInSystem()
         != other.getTaskParameterVisibleInSystem()) return false;
+    if (getTaskParameterRequired()
+        != other.getTaskParameterRequired()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -565,6 +590,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TASK_PARAMETER_VISIBLE_IN_SYSTEM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTaskParameterVisibleInSystem());
+    hash = (37 * hash) + TASK_PARAMETER_REQUIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTaskParameterRequired());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -724,6 +752,8 @@ private static final long serialVersionUID = 0L;
       }
       taskParameterVisibleInSystem = false;
 
+      taskParameterRequired = false;
+
       return this;
     }
 
@@ -775,6 +805,7 @@ private static final long serialVersionUID = 0L;
         result.taskParameterChildren = taskParameterChildrenBuilder .build();
       }
       result.taskParameterVisibleInSystem = taskParameterVisibleInSystem ;
+      result.taskParameterRequired = taskParameterRequired ;
       onBuilt();
       return result;
     }
@@ -897,6 +928,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTaskParameterVisibleInSystem() != false) {
         setTaskParameterVisibleInSystem(other.getTaskParameterVisibleInSystem());
+      }
+      if (other.getTaskParameterRequired() != false) {
+        setTaskParameterRequired(other.getTaskParameterRequired());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1815,6 +1849,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskParameterVisibleInSystem() {
       
       taskParameterVisibleInSystem = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean taskParameterRequired ;
+    /**
+     * <code>bool task_parameter_required = 9;</code>
+     * @return The taskParameterRequired.
+     */
+    @java.lang.Override
+    public boolean getTaskParameterRequired() {
+      return taskParameterRequired ;
+    }
+    /**
+     * <code>bool task_parameter_required = 9;</code>
+     * @param value The taskParameterRequired to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskParameterRequired(boolean value) {
+      
+      taskParameterRequired = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool task_parameter_required = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskParameterRequired() {
+      
+      taskParameterRequired = false;
       onChanged();
       return this;
     }

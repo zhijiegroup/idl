@@ -120,4 +120,10 @@ public interface TaskParameterOrBuilder extends
    * @return The taskParameterVisibleInSystem.
    */
   boolean getTaskParameterVisibleInSystem();
+
+  /**
+   * <code>bool task_parameter_required = 9;</code>
+   * @return The taskParameterRequired.
+   */
+  boolean getTaskParameterRequired();
 }
