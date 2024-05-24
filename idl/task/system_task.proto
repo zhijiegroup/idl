@@ -16,6 +16,7 @@ message TaskParameter {
   repeated TaskParameter task_parameter_enums = 6;
   repeated TaskParameter task_parameter_children = 7;
   bool task_parameter_visible_in_system = 8;
+  bool task_parameter_required = 9;
 }
 
 message TaskConfig {
