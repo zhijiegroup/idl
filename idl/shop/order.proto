@@ -98,6 +98,7 @@ message OrderInfo {
   string deliver_address = 21;//收获地址
   optional CouponDetail coupon_detail = 22; // 优惠券详情
   string channel = 23;
+  string wechat_order_status = 24;
 }
 
 //收获与配送信息
