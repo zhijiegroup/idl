@@ -999,6 +999,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     $core.String? content,
     $core.String? creationType,
     $fixnum.Int64? articleCreationId,
+    $core.String? productName,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1022,6 +1023,9 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     if (articleCreationId != null) {
       $result.articleCreationId = articleCreationId;
     }
+    if (productName != null) {
+      $result.productName = productName;
+    }
     return $result;
   }
   CreateArticleCreationDraftRequest._() : super();
@@ -1036,6 +1040,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'creationType')
     ..aInt64(7, _omitFieldNames ? '' : 'articleCreationId')
+    ..aOS(8, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -1124,6 +1129,15 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
   $core.bool hasArticleCreationId() => $_has(6);
   @$pb.TagNumber(7)
   void clearArticleCreationId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get productName => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set productName($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasProductName() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProductName() => clearField(8);
 }
 
 class CreateArticleCreationDraftResponse extends $pb.GeneratedMessage {

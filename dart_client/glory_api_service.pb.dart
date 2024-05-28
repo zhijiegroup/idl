@@ -19,6 +19,7 @@ import 'admin/admin_tenant.pb.dart' as $19;
 import 'admin/admin_user.pb.dart' as $20;
 import 'admin/config.pb.dart' as $18;
 import 'app/app.pb.dart' as $46;
+import 'approval_flow/approval_flow.pb.dart' as $58;
 import 'course/cmodule.pb.dart' as $40;
 import 'course/course.pb.dart' as $38;
 import 'course/edu_scheme.pb.dart' as $45;
@@ -1393,6 +1394,9 @@ class glory_apiApi {
   ;
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ClientContext? ctx, $57.ListDigitalAvatarRequest request) =>
     _client.invoke<$57.ListDigitalAvatarResponse>(ctx, 'glory_api', 'ListDigitalAvatar', request, $57.ListDigitalAvatarResponse())
+  ;
+  $async.Future<$58.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ClientContext? ctx, $58.SubmitApprovalFlowRequest request) =>
+    _client.invoke<$58.SubmitApprovalFlowResponse>(ctx, 'glory_api', 'SubmitApprovalFlow', request, $58.SubmitApprovalFlowResponse())
   ;
 }
 

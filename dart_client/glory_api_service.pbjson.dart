@@ -18,7 +18,8 @@ import 'admin/admin_tenant.pbjson.dart' as $19;
 import 'admin/admin_user.pbjson.dart' as $20;
 import 'admin/config.pbjson.dart' as $18;
 import 'app/app.pbjson.dart' as $46;
-import 'base.pbjson.dart' as $58;
+import 'approval_flow/approval_flow.pbjson.dart' as $58;
+import 'base.pbjson.dart' as $59;
 import 'course/cmodule.pbjson.dart' as $40;
 import 'course/course.pbjson.dart' as $38;
 import 'course/edu_scheme.pbjson.dart' as $45;
@@ -515,26 +516,27 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'ListDigitalCode', '2': '.glory_api.ListDigitalCodeRequest', '3': '.glory_api.ListDigitalCodeResponse', '4': {}},
     {'1': 'DeleteDigitalVideo', '2': '.glory_api.DeleteDigitalVideoRequest', '3': '.glory_api.DeleteDigitalVideoResponse', '4': {}},
     {'1': 'ListDigitalAvatar', '2': '.glory_api.ListDigitalAvatarRequest', '3': '.glory_api.ListDigitalAvatarResponse', '4': {}},
+    {'1': 'SubmitApprovalFlow', '2': '.glory_api.SubmitApprovalFlowRequest', '3': '.glory_api.SubmitApprovalFlowResponse', '4': {}},
   ],
 };
 
 @$core.Deprecated('Use glory_apiServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiServiceBase$messageJson = {
   '.glory_api.CreateExampleRequest': $0.CreateExampleRequest$json,
-  '.base.BaseRequest': $58.BaseRequest$json,
+  '.base.BaseRequest': $59.BaseRequest$json,
   '.glory_api.Example': $0.Example$json,
   '.glory_api.CreateExampleResponse': $0.CreateExampleResponse$json,
-  '.base.BaseResponse': $58.BaseResponse$json,
+  '.base.BaseResponse': $59.BaseResponse$json,
   '.glory_api.GetExampleRequest': $0.GetExampleRequest$json,
   '.glory_api.GetExampleResponse': $0.GetExampleResponse$json,
   '.glory_api.ExampleWithAuthor': $0.ExampleWithAuthor$json,
-  '.base.AuthorInfo': $58.AuthorInfo$json,
+  '.base.AuthorInfo': $59.AuthorInfo$json,
   '.glory_api.UpdateExampleRequest': $0.UpdateExampleRequest$json,
   '.glory_api.UpdateExampleResponse': $0.UpdateExampleResponse$json,
   '.glory_api.ListExampleRequest': $0.ListExampleRequest$json,
-  '.base.PaginationRequest': $58.PaginationRequest$json,
+  '.base.PaginationRequest': $59.PaginationRequest$json,
   '.glory_api.ListExampleResponse': $0.ListExampleResponse$json,
-  '.base.PaginationResponse': $58.PaginationResponse$json,
+  '.base.PaginationResponse': $59.PaginationResponse$json,
   '.glory_api.DeleteExampleRequest': $0.DeleteExampleRequest$json,
   '.glory_api.DeleteExampleResponse': $0.DeleteExampleResponse$json,
   '.glory_api.LoginRequest': $1.LoginRequest$json,
@@ -1625,6 +1627,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListDigitalAvatarRequest': $57.ListDigitalAvatarRequest$json,
   '.glory_api.ListDigitalAvatarResponse': $57.ListDigitalAvatarResponse$json,
   '.glory_api.DigitalAvatar': $57.DigitalAvatar$json,
+  '.glory_api.SubmitApprovalFlowRequest': $58.SubmitApprovalFlowRequest$json,
+  '.glory_api.SubmitApprovalFlowResponse': $58.SubmitApprovalFlowResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2651,5 +2655,8 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'lkZW9SZXF1ZXN0GiUuZ2xvcnlfYXBpLkRlbGV0ZURpZ2l0YWxWaWRlb1Jlc3BvbnNlIh3KwRgZ'
     'L2FwaS9kaWdpdGFsL2RlbGV0ZV92aWRlbxJ8ChFMaXN0RGlnaXRhbEF2YXRhchIjLmdsb3J5X2'
     'FwaS5MaXN0RGlnaXRhbEF2YXRhclJlcXVlc3QaJC5nbG9yeV9hcGkuTGlzdERpZ2l0YWxBdmF0'
-    'YXJSZXNwb25zZSIc0sEYGC9hcGkvZGlnaXRhbC9saXN0X2F2YXRhcg==');
+    'YXJSZXNwb25zZSIc0sEYGC9hcGkvZGlnaXRhbC9saXN0X2F2YXRhchKOAQoSU3VibWl0QXBwcm'
+    '92YWxGbG93EiQuZ2xvcnlfYXBpLlN1Ym1pdEFwcHJvdmFsRmxvd1JlcXVlc3QaJS5nbG9yeV9h'
+    'cGkuU3VibWl0QXBwcm92YWxGbG93UmVzcG9uc2UiK9LBGCcvYXBpL2FwcHJvdmFsX2Zsb3cvc3'
+    'VibWl0X2FwcHJvdmFsX2Zsb3c=');
 

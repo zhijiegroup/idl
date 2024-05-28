@@ -63,6 +63,7 @@ import * as teacher_task from "./task/teacher_task";
 import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
 import * as article from "./smart_article/article";
+import * as approval_flow from "./approval_flow/approval_flow";
 export {
   user,
   address,
@@ -123,6 +124,7 @@ export {
   student_task,
   notification,
   article,
+  approval_flow,
 };
 
 import {
@@ -3478,6 +3480,14 @@ export class glory_api {
 
   ListDigitalAvatar(request) {
     const uri = `${this.uriPrefix}/api/digital/list_avatar`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  SubmitApprovalFlow(request) {
+    const uri = `${this.uriPrefix}/api/approval_flow/submit_approval_flow`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse
