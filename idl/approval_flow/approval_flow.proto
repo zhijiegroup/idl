@@ -1,0 +1,19 @@
+syntax = "proto3";
+package glory_api;
+option java_package = "com.zhijiejiaoyu.glory_api.short_video";
+option java_multiple_files = true;
+
+import "base.proto";
+import "user/user.proto";
+
+message SubmitApprovalFlowRequest {
+    base.BaseRequest base_request = 1;
+    string approval_type = 2;
+    int64 shop_id = 3;
+    int64 product_id = 4;
+    string note = 5;
+}
+
+message SubmitApprovalFlowResponse {
+    base.BaseResponse base_resp = 1;
+}

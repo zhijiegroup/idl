@@ -63,6 +63,7 @@ import "task/teacher_task.proto";
 import "task/student_task.proto";
 import "notification/notification.proto";
 import "smart_article/article.proto";
+import "approval_flow/approval_flow.proto";
 
 service glory_api {
 
@@ -1688,4 +1689,12 @@ service glory_api {
 //  rpc ListBackgroundImage(ListBackgroundImageRequest) returns (ListBackgroundImageResponse) {
 //    option (api.post) = "/api/digital/list_background_image";
 //  }
+
+  // 店铺商品审核相关接口
+
+  // 提交审核
+  rpc SubmitApprovalFlow(SubmitApprovalFlowRequest) returns (SubmitApprovalFlowResponse) {
+    option (api.post) = "/api/approval_flow/submit_approval_flow";
+  }
+
 }
