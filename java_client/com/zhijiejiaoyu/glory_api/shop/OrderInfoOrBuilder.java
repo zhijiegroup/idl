@@ -405,4 +405,16 @@ public interface OrderInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getChannelBytes();
+
+  /**
+   * <code>string wechat_order_status = 24;</code>
+   * @return The wechatOrderStatus.
+   */
+  java.lang.String getWechatOrderStatus();
+  /**
+   * <code>string wechat_order_status = 24;</code>
+   * @return The bytes for wechatOrderStatus.
+   */
+  com.google.protobuf.ByteString
+      getWechatOrderStatusBytes();
 }
