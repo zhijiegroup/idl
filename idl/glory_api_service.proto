@@ -1696,5 +1696,9 @@ service glory_api {
   rpc SubmitApprovalFlow(SubmitApprovalFlowRequest) returns (SubmitApprovalFlowResponse) {
     option (api.post) = "/api/approval_flow/submit_approval_flow";
   }
+  // 审核
+  rpc ApproveFlow(ApproveFlowRequest) returns (ApproveFlowResponse) {
+    option (api.post) = "/api/approval_flow/approve_flow";
+  }
 
 }
