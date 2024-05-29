@@ -20,6 +20,7 @@ import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
 import * as activity from "./shop/activity";
+import * as bill from "./shop/bill";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -81,6 +82,7 @@ export {
   freight_template,
   coupon,
   activity,
+  bill,
   attachment,
   seller,
   payment,
@@ -1040,6 +1042,30 @@ export class glory_api {
 
   DeleteCart(request) {
     const uri = `${this.uriPrefix}/api/shop/delete_cart`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  CreateShopBill(request) {
+    const uri = `${this.uriPrefix}/api/shop/create_bill`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  ListShopBill(request) {
+    const uri = `${this.uriPrefix}/api/shop/list_bill`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  SettleShopBill(request) {
+    const uri = `${this.uriPrefix}/api/shop/settle_bill`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

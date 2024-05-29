@@ -18,6 +18,7 @@ import * as operation from "./shop/operation";
 import * as freight_template from "./shop/freight_template";
 import * as coupon from "./shop/coupon";
 import * as activity from "./shop/activity";
+import * as bill from "./shop/bill";
 import * as attachment from "./seller/attachment";
 import * as seller from "./seller/seller";
 import * as payment from "./payment/payment";
@@ -79,6 +80,7 @@ export {
   freight_template,
   coupon,
   activity,
+  bill,
   attachment,
   seller,
   payment,
@@ -573,6 +575,19 @@ list the permissions that supported */
   UpdateCart(request: cart.UpdateCartRequest): Promise<cart.UpdateCartResponse>;
 
   DeleteCart(request: cart.DeleteCartRequest): Promise<cart.DeleteCartResponse>;
+
+  /** 创建账单 */
+  CreateShopBill(
+    request: bill.CreateBillRequest
+  ): Promise<bill.CreateBillResponse>;
+
+  /** 账单列表 */
+  ListShopBill(request: bill.ListBillRequest): Promise<bill.ListBillResponse>;
+
+  /** 结算账单 */
+  SettleShopBill(
+    request: bill.SettleBillRequest
+  ): Promise<bill.SettleBillResponse>;
 
   /** seller */
   UploadAttachment(

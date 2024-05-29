@@ -14,65 +14,66 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'account/account_operation.pb.dart' as $23;
-import 'admin/admin_tenant.pb.dart' as $19;
-import 'admin/admin_user.pb.dart' as $20;
-import 'admin/config.pb.dart' as $18;
-import 'app/app.pb.dart' as $46;
-import 'approval_flow/approval_flow.pb.dart' as $58;
-import 'course/cmodule.pb.dart' as $40;
-import 'course/course.pb.dart' as $38;
-import 'course/edu_scheme.pb.dart' as $45;
-import 'course/graph.pb.dart' as $42;
-import 'course/job.pb.dart' as $47;
-import 'course/material.pb.dart' as $37;
-import 'course/module.pb.dart' as $39;
-import 'course/nmodule.pb.dart' as $41;
-import 'course/teaching_plan.pb.dart' as $44;
-import 'course/user_course.pb.dart' as $43;
-import 'currency/virtual_currency.pb.dart' as $22;
+import 'account/account_operation.pb.dart' as $24;
+import 'admin/admin_tenant.pb.dart' as $20;
+import 'admin/admin_user.pb.dart' as $21;
+import 'admin/config.pb.dart' as $19;
+import 'app/app.pb.dart' as $47;
+import 'approval_flow/approval_flow.pb.dart' as $59;
+import 'course/cmodule.pb.dart' as $41;
+import 'course/course.pb.dart' as $39;
+import 'course/edu_scheme.pb.dart' as $46;
+import 'course/graph.pb.dart' as $43;
+import 'course/job.pb.dart' as $48;
+import 'course/material.pb.dart' as $38;
+import 'course/module.pb.dart' as $40;
+import 'course/nmodule.pb.dart' as $42;
+import 'course/teaching_plan.pb.dart' as $45;
+import 'course/user_course.pb.dart' as $44;
+import 'currency/virtual_currency.pb.dart' as $23;
 import 'example/example.pb.dart' as $0;
-import 'live/live_board.pb.dart' as $56;
-import 'live/live_control.pb.dart' as $49;
-import 'live/live_evaluate.pb.dart' as $29;
-import 'live/live_plan.pb.dart' as $25;
-import 'live/live_quick_evaluate.pb.dart' as $50;
-import 'live/live_room.pb.dart' as $24;
-import 'live/live_text.pb.dart' as $28;
-import 'live/live_token.pb.dart' as $26;
-import 'live/live_user.pb.dart' as $27;
+import 'live/live_board.pb.dart' as $57;
+import 'live/live_control.pb.dart' as $50;
+import 'live/live_evaluate.pb.dart' as $30;
+import 'live/live_plan.pb.dart' as $26;
+import 'live/live_quick_evaluate.pb.dart' as $51;
+import 'live/live_room.pb.dart' as $25;
+import 'live/live_text.pb.dart' as $29;
+import 'live/live_token.pb.dart' as $27;
+import 'live/live_user.pb.dart' as $28;
 import 'mall/mall_index.pb.dart' as $7;
-import 'notification/notification.pb.dart' as $55;
-import 'payment/payment.pb.dart' as $17;
+import 'notification/notification.pb.dart' as $56;
+import 'payment/payment.pb.dart' as $18;
 import 'role/role.pb.dart' as $3;
-import 'seller/attachment.pb.dart' as $15;
-import 'seller/seller.pb.dart' as $16;
-import 'shop/activity.pb.dart' as $36;
+import 'seller/attachment.pb.dart' as $16;
+import 'seller/seller.pb.dart' as $17;
+import 'shop/activity.pb.dart' as $37;
 import 'shop/attribute.pb.dart' as $12;
+import 'shop/bill.pb.dart' as $15;
 import 'shop/cart.pb.dart' as $14;
 import 'shop/category.pb.dart' as $8;
 import 'shop/category_qualification.pb.dart' as $9;
-import 'shop/coupon.pb.dart' as $35;
+import 'shop/coupon.pb.dart' as $36;
 import 'shop/freight_template.pb.dart' as $6;
 import 'shop/operation.pb.dart' as $5;
 import 'shop/order.pb.dart' as $13;
 import 'shop/product.pb.dart' as $10;
 import 'shop/shop.pb.dart' as $4;
 import 'shop/sku.pb.dart' as $11;
-import 'short_video/short_video.pb.dart' as $34;
-import 'smart_article/article.pb.dart' as $57;
-import 'task/student_task.pb.dart' as $54;
-import 'task/system_task.pb.dart' as $51;
-import 'task/teacher_task.pb.dart' as $53;
-import 'task/teacher_task_template.pb.dart' as $52;
-import 'tenant/tenant.pb.dart' as $30;
-import 'tenant/tenant_config.pb.dart' as $33;
-import 'tenant/tenant_dept.pb.dart' as $31;
-import 'tenant/tenant_user.pb.dart' as $32;
-import 'traffic/live_traffic.pb.dart' as $48;
+import 'short_video/short_video.pb.dart' as $35;
+import 'smart_article/article.pb.dart' as $58;
+import 'task/student_task.pb.dart' as $55;
+import 'task/system_task.pb.dart' as $52;
+import 'task/teacher_task.pb.dart' as $54;
+import 'task/teacher_task_template.pb.dart' as $53;
+import 'tenant/tenant.pb.dart' as $31;
+import 'tenant/tenant_config.pb.dart' as $34;
+import 'tenant/tenant_dept.pb.dart' as $32;
+import 'tenant/tenant_user.pb.dart' as $33;
+import 'traffic/live_traffic.pb.dart' as $49;
 import 'user/address.pb.dart' as $2;
 import 'user/user.pb.dart' as $1;
-import 'wxpay/wxpay.pb.dart' as $21;
+import 'wxpay/wxpay.pb.dart' as $22;
 
 class glory_apiApi {
   $pb.RpcClient _client;
@@ -432,974 +433,983 @@ class glory_apiApi {
   $async.Future<$14.DeleteCartResponse> deleteCart($pb.ClientContext? ctx, $14.DeleteCartRequest request) =>
     _client.invoke<$14.DeleteCartResponse>(ctx, 'glory_api', 'DeleteCart', request, $14.DeleteCartResponse())
   ;
-  $async.Future<$15.UploadAttachmentResponse> uploadAttachment($pb.ClientContext? ctx, $15.UploadAttachmentRequest request) =>
-    _client.invoke<$15.UploadAttachmentResponse>(ctx, 'glory_api', 'UploadAttachment', request, $15.UploadAttachmentResponse())
+  $async.Future<$15.CreateBillResponse> createShopBill($pb.ClientContext? ctx, $15.CreateBillRequest request) =>
+    _client.invoke<$15.CreateBillResponse>(ctx, 'glory_api', 'CreateShopBill', request, $15.CreateBillResponse())
   ;
-  $async.Future<$15.SaveAttachmentResponse> saveAttachment($pb.ClientContext? ctx, $15.SaveAttachmentRequest request) =>
-    _client.invoke<$15.SaveAttachmentResponse>(ctx, 'glory_api', 'SaveAttachment', request, $15.SaveAttachmentResponse())
+  $async.Future<$15.ListBillResponse> listShopBill($pb.ClientContext? ctx, $15.ListBillRequest request) =>
+    _client.invoke<$15.ListBillResponse>(ctx, 'glory_api', 'ListShopBill', request, $15.ListBillResponse())
   ;
-  $async.Future<$15.ListAttachmentResponse> listAttachment($pb.ClientContext? ctx, $15.ListAttachmentRequest request) =>
-    _client.invoke<$15.ListAttachmentResponse>(ctx, 'glory_api', 'ListAttachment', request, $15.ListAttachmentResponse())
+  $async.Future<$15.SettleBillResponse> settleShopBill($pb.ClientContext? ctx, $15.SettleBillRequest request) =>
+    _client.invoke<$15.SettleBillResponse>(ctx, 'glory_api', 'SettleShopBill', request, $15.SettleBillResponse())
   ;
-  $async.Future<$15.DeleteAttachmentResponse> deleteAttachment($pb.ClientContext? ctx, $15.DeleteAttachmentRequest request) =>
-    _client.invoke<$15.DeleteAttachmentResponse>(ctx, 'glory_api', 'DeleteAttachment', request, $15.DeleteAttachmentResponse())
+  $async.Future<$16.UploadAttachmentResponse> uploadAttachment($pb.ClientContext? ctx, $16.UploadAttachmentRequest request) =>
+    _client.invoke<$16.UploadAttachmentResponse>(ctx, 'glory_api', 'UploadAttachment', request, $16.UploadAttachmentResponse())
   ;
-  $async.Future<$16.CreateSellerResponse> createSeller($pb.ClientContext? ctx, $16.CreateSellerRequest request) =>
-    _client.invoke<$16.CreateSellerResponse>(ctx, 'glory_api', 'CreateSeller', request, $16.CreateSellerResponse())
+  $async.Future<$16.SaveAttachmentResponse> saveAttachment($pb.ClientContext? ctx, $16.SaveAttachmentRequest request) =>
+    _client.invoke<$16.SaveAttachmentResponse>(ctx, 'glory_api', 'SaveAttachment', request, $16.SaveAttachmentResponse())
   ;
-  $async.Future<$17.CreatePaymentResponse> createPayment($pb.ClientContext? ctx, $17.CreatePaymentRequest request) =>
-    _client.invoke<$17.CreatePaymentResponse>(ctx, 'glory_api', 'CreatePayment', request, $17.CreatePaymentResponse())
+  $async.Future<$16.ListAttachmentResponse> listAttachment($pb.ClientContext? ctx, $16.ListAttachmentRequest request) =>
+    _client.invoke<$16.ListAttachmentResponse>(ctx, 'glory_api', 'ListAttachment', request, $16.ListAttachmentResponse())
   ;
-  $async.Future<$17.GetPaymentResponse> getPayment($pb.ClientContext? ctx, $17.GetPaymentRequest request) =>
-    _client.invoke<$17.GetPaymentResponse>(ctx, 'glory_api', 'GetPayment', request, $17.GetPaymentResponse())
+  $async.Future<$16.DeleteAttachmentResponse> deleteAttachment($pb.ClientContext? ctx, $16.DeleteAttachmentRequest request) =>
+    _client.invoke<$16.DeleteAttachmentResponse>(ctx, 'glory_api', 'DeleteAttachment', request, $16.DeleteAttachmentResponse())
   ;
-  $async.Future<$17.UpdatePaymentResponse> updatePayment($pb.ClientContext? ctx, $17.UpdatePaymentRequest request) =>
-    _client.invoke<$17.UpdatePaymentResponse>(ctx, 'glory_api', 'UpdatePayment', request, $17.UpdatePaymentResponse())
+  $async.Future<$17.CreateSellerResponse> createSeller($pb.ClientContext? ctx, $17.CreateSellerRequest request) =>
+    _client.invoke<$17.CreateSellerResponse>(ctx, 'glory_api', 'CreateSeller', request, $17.CreateSellerResponse())
   ;
-  $async.Future<$17.DeletePaymentResponse> deletePayment($pb.ClientContext? ctx, $17.DeletePaymentRequest request) =>
-    _client.invoke<$17.DeletePaymentResponse>(ctx, 'glory_api', 'DeletePayment', request, $17.DeletePaymentResponse())
+  $async.Future<$18.CreatePaymentResponse> createPayment($pb.ClientContext? ctx, $18.CreatePaymentRequest request) =>
+    _client.invoke<$18.CreatePaymentResponse>(ctx, 'glory_api', 'CreatePayment', request, $18.CreatePaymentResponse())
   ;
-  $async.Future<$17.WechatPaymentNotifyResponse> wechatPaymentNotify($pb.ClientContext? ctx, $17.WechatPaymentNotifyRequest request) =>
-    _client.invoke<$17.WechatPaymentNotifyResponse>(ctx, 'glory_api', 'WechatPaymentNotify', request, $17.WechatPaymentNotifyResponse())
+  $async.Future<$18.GetPaymentResponse> getPayment($pb.ClientContext? ctx, $18.GetPaymentRequest request) =>
+    _client.invoke<$18.GetPaymentResponse>(ctx, 'glory_api', 'GetPayment', request, $18.GetPaymentResponse())
   ;
-  $async.Future<$18.CreateConfigResponse> createConfig($pb.ClientContext? ctx, $18.CreateConfigRequest request) =>
-    _client.invoke<$18.CreateConfigResponse>(ctx, 'glory_api', 'CreateConfig', request, $18.CreateConfigResponse())
+  $async.Future<$18.UpdatePaymentResponse> updatePayment($pb.ClientContext? ctx, $18.UpdatePaymentRequest request) =>
+    _client.invoke<$18.UpdatePaymentResponse>(ctx, 'glory_api', 'UpdatePayment', request, $18.UpdatePaymentResponse())
   ;
-  $async.Future<$18.UpdateConfigResponse> updateConfig($pb.ClientContext? ctx, $18.UpdateConfigRequest request) =>
-    _client.invoke<$18.UpdateConfigResponse>(ctx, 'glory_api', 'UpdateConfig', request, $18.UpdateConfigResponse())
+  $async.Future<$18.DeletePaymentResponse> deletePayment($pb.ClientContext? ctx, $18.DeletePaymentRequest request) =>
+    _client.invoke<$18.DeletePaymentResponse>(ctx, 'glory_api', 'DeletePayment', request, $18.DeletePaymentResponse())
   ;
-  $async.Future<$18.DeleteConfigResponse> deleteConfig($pb.ClientContext? ctx, $18.DeleteConfigRequest request) =>
-    _client.invoke<$18.DeleteConfigResponse>(ctx, 'glory_api', 'DeleteConfig', request, $18.DeleteConfigResponse())
+  $async.Future<$18.WechatPaymentNotifyResponse> wechatPaymentNotify($pb.ClientContext? ctx, $18.WechatPaymentNotifyRequest request) =>
+    _client.invoke<$18.WechatPaymentNotifyResponse>(ctx, 'glory_api', 'WechatPaymentNotify', request, $18.WechatPaymentNotifyResponse())
   ;
-  $async.Future<$18.GetConfigResponse> getConfig($pb.ClientContext? ctx, $18.GetConfigRequest request) =>
-    _client.invoke<$18.GetConfigResponse>(ctx, 'glory_api', 'GetConfig', request, $18.GetConfigResponse())
+  $async.Future<$19.CreateConfigResponse> createConfig($pb.ClientContext? ctx, $19.CreateConfigRequest request) =>
+    _client.invoke<$19.CreateConfigResponse>(ctx, 'glory_api', 'CreateConfig', request, $19.CreateConfigResponse())
   ;
-  $async.Future<$18.GetSTSResponse> getSTS($pb.ClientContext? ctx, $18.GetSTSRequest request) =>
-    _client.invoke<$18.GetSTSResponse>(ctx, 'glory_api', 'GetSTS', request, $18.GetSTSResponse())
+  $async.Future<$19.UpdateConfigResponse> updateConfig($pb.ClientContext? ctx, $19.UpdateConfigRequest request) =>
+    _client.invoke<$19.UpdateConfigResponse>(ctx, 'glory_api', 'UpdateConfig', request, $19.UpdateConfigResponse())
   ;
-  $async.Future<$18.GenerateWebofficeTokenResponse> generateWebofficeToken($pb.ClientContext? ctx, $18.GenerateWebofficeTokenRequest request) =>
-    _client.invoke<$18.GenerateWebofficeTokenResponse>(ctx, 'glory_api', 'GenerateWebofficeToken', request, $18.GenerateWebofficeTokenResponse())
+  $async.Future<$19.DeleteConfigResponse> deleteConfig($pb.ClientContext? ctx, $19.DeleteConfigRequest request) =>
+    _client.invoke<$19.DeleteConfigResponse>(ctx, 'glory_api', 'DeleteConfig', request, $19.DeleteConfigResponse())
   ;
-  $async.Future<$18.RefreshWebofficeTokenResponse> refreshWebofficeToken($pb.ClientContext? ctx, $18.RefreshWebofficeTokenRequest request) =>
-    _client.invoke<$18.RefreshWebofficeTokenResponse>(ctx, 'glory_api', 'RefreshWebofficeToken', request, $18.RefreshWebofficeTokenResponse())
+  $async.Future<$19.GetConfigResponse> getConfig($pb.ClientContext? ctx, $19.GetConfigRequest request) =>
+    _client.invoke<$19.GetConfigResponse>(ctx, 'glory_api', 'GetConfig', request, $19.GetConfigResponse())
   ;
-  $async.Future<$19.ListTenantOrgResponse> listTenantOrg($pb.ClientContext? ctx, $19.ListTenantOrgRequest request) =>
-    _client.invoke<$19.ListTenantOrgResponse>(ctx, 'glory_api', 'ListTenantOrg', request, $19.ListTenantOrgResponse())
+  $async.Future<$19.GetSTSResponse> getSTS($pb.ClientContext? ctx, $19.GetSTSRequest request) =>
+    _client.invoke<$19.GetSTSResponse>(ctx, 'glory_api', 'GetSTS', request, $19.GetSTSResponse())
   ;
-  $async.Future<$20.GetAdminTenantResponse> getAdminTenant($pb.ClientContext? ctx, $20.GetAdminTenantRequest request) =>
-    _client.invoke<$20.GetAdminTenantResponse>(ctx, 'glory_api', 'GetAdminTenant', request, $20.GetAdminTenantResponse())
+  $async.Future<$19.GenerateWebofficeTokenResponse> generateWebofficeToken($pb.ClientContext? ctx, $19.GenerateWebofficeTokenRequest request) =>
+    _client.invoke<$19.GenerateWebofficeTokenResponse>(ctx, 'glory_api', 'GenerateWebofficeToken', request, $19.GenerateWebofficeTokenResponse())
   ;
-  $async.Future<$20.ListAdminUserResponse> listAdminUser($pb.ClientContext? ctx, $20.ListAdminUserRequest request) =>
-    _client.invoke<$20.ListAdminUserResponse>(ctx, 'glory_api', 'ListAdminUser', request, $20.ListAdminUserResponse())
+  $async.Future<$19.RefreshWebofficeTokenResponse> refreshWebofficeToken($pb.ClientContext? ctx, $19.RefreshWebofficeTokenRequest request) =>
+    _client.invoke<$19.RefreshWebofficeTokenResponse>(ctx, 'glory_api', 'RefreshWebofficeToken', request, $19.RefreshWebofficeTokenResponse())
   ;
-  $async.Future<$20.CreateAdminUserResponse> createAdminUser($pb.ClientContext? ctx, $20.CreateAdminUserRequest request) =>
-    _client.invoke<$20.CreateAdminUserResponse>(ctx, 'glory_api', 'CreateAdminUser', request, $20.CreateAdminUserResponse())
+  $async.Future<$20.ListTenantOrgResponse> listTenantOrg($pb.ClientContext? ctx, $20.ListTenantOrgRequest request) =>
+    _client.invoke<$20.ListTenantOrgResponse>(ctx, 'glory_api', 'ListTenantOrg', request, $20.ListTenantOrgResponse())
   ;
-  $async.Future<$20.UpdateAdminUserResponse> updateAdminUser($pb.ClientContext? ctx, $20.UpdateAdminUserRequest request) =>
-    _client.invoke<$20.UpdateAdminUserResponse>(ctx, 'glory_api', 'UpdateAdminUser', request, $20.UpdateAdminUserResponse())
+  $async.Future<$21.GetAdminTenantResponse> getAdminTenant($pb.ClientContext? ctx, $21.GetAdminTenantRequest request) =>
+    _client.invoke<$21.GetAdminTenantResponse>(ctx, 'glory_api', 'GetAdminTenant', request, $21.GetAdminTenantResponse())
   ;
-  $async.Future<$20.DeleteAdminUserResponse> deleteAdminUser($pb.ClientContext? ctx, $20.DeleteAdminUserRequest request) =>
-    _client.invoke<$20.DeleteAdminUserResponse>(ctx, 'glory_api', 'DeleteAdminUser', request, $20.DeleteAdminUserResponse())
+  $async.Future<$21.ListAdminUserResponse> listAdminUser($pb.ClientContext? ctx, $21.ListAdminUserRequest request) =>
+    _client.invoke<$21.ListAdminUserResponse>(ctx, 'glory_api', 'ListAdminUser', request, $21.ListAdminUserResponse())
   ;
-  $async.Future<$21.PrepayResponse> wxPrepay($pb.ClientContext? ctx, $21.PrepayRequest request) =>
-    _client.invoke<$21.PrepayResponse>(ctx, 'glory_api', 'WxPrepay', request, $21.PrepayResponse())
+  $async.Future<$21.CreateAdminUserResponse> createAdminUser($pb.ClientContext? ctx, $21.CreateAdminUserRequest request) =>
+    _client.invoke<$21.CreateAdminUserResponse>(ctx, 'glory_api', 'CreateAdminUser', request, $21.CreateAdminUserResponse())
   ;
-  $async.Future<$21.CloseOrderResponse> closeOrder($pb.ClientContext? ctx, $21.CloseOrderRequest request) =>
-    _client.invoke<$21.CloseOrderResponse>(ctx, 'glory_api', 'CloseOrder', request, $21.CloseOrderResponse())
+  $async.Future<$21.UpdateAdminUserResponse> updateAdminUser($pb.ClientContext? ctx, $21.UpdateAdminUserRequest request) =>
+    _client.invoke<$21.UpdateAdminUserResponse>(ctx, 'glory_api', 'UpdateAdminUser', request, $21.UpdateAdminUserResponse())
   ;
-  $async.Future<$21.QueryOrderByIdResponse> queryOrderById($pb.ClientContext? ctx, $21.QueryOrderByIdRequest request) =>
-    _client.invoke<$21.QueryOrderByIdResponse>(ctx, 'glory_api', 'QueryOrderById', request, $21.QueryOrderByIdResponse())
+  $async.Future<$21.DeleteAdminUserResponse> deleteAdminUser($pb.ClientContext? ctx, $21.DeleteAdminUserRequest request) =>
+    _client.invoke<$21.DeleteAdminUserResponse>(ctx, 'glory_api', 'DeleteAdminUser', request, $21.DeleteAdminUserResponse())
   ;
-  $async.Future<$21.QueryOrderByOutTradeNoResponse> queryOrderByOutTrade($pb.ClientContext? ctx, $21.QueryOrderByOutTradeNoRequest request) =>
-    _client.invoke<$21.QueryOrderByOutTradeNoResponse>(ctx, 'glory_api', 'QueryOrderByOutTrade', request, $21.QueryOrderByOutTradeNoResponse())
+  $async.Future<$22.PrepayResponse> wxPrepay($pb.ClientContext? ctx, $22.PrepayRequest request) =>
+    _client.invoke<$22.PrepayResponse>(ctx, 'glory_api', 'WxPrepay', request, $22.PrepayResponse())
   ;
-  $async.Future<$22.AddVirtualCurrencyResponse> addVCurrency($pb.ClientContext? ctx, $22.AddVirtualCurrencyRequest request) =>
-    _client.invoke<$22.AddVirtualCurrencyResponse>(ctx, 'glory_api', 'AddVCurrency', request, $22.AddVirtualCurrencyResponse())
+  $async.Future<$22.CloseOrderResponse> closeOrder($pb.ClientContext? ctx, $22.CloseOrderRequest request) =>
+    _client.invoke<$22.CloseOrderResponse>(ctx, 'glory_api', 'CloseOrder', request, $22.CloseOrderResponse())
   ;
-  $async.Future<$22.RechargeCurrencyResponse> rechargeCurrency($pb.ClientContext? ctx, $22.RechargeCurrencyRequest request) =>
-    _client.invoke<$22.RechargeCurrencyResponse>(ctx, 'glory_api', 'RechargeCurrency', request, $22.RechargeCurrencyResponse())
+  $async.Future<$22.QueryOrderByIdResponse> queryOrderById($pb.ClientContext? ctx, $22.QueryOrderByIdRequest request) =>
+    _client.invoke<$22.QueryOrderByIdResponse>(ctx, 'glory_api', 'QueryOrderById', request, $22.QueryOrderByIdResponse())
   ;
-  $async.Future<$22.RechargeCurrencyInBatchesResponse> rechargeCurrencyInBatches($pb.ClientContext? ctx, $22.RechargeCurrencyInBatchesRequest request) =>
-    _client.invoke<$22.RechargeCurrencyInBatchesResponse>(ctx, 'glory_api', 'RechargeCurrencyInBatches', request, $22.RechargeCurrencyInBatchesResponse())
+  $async.Future<$22.QueryOrderByOutTradeNoResponse> queryOrderByOutTrade($pb.ClientContext? ctx, $22.QueryOrderByOutTradeNoRequest request) =>
+    _client.invoke<$22.QueryOrderByOutTradeNoResponse>(ctx, 'glory_api', 'QueryOrderByOutTrade', request, $22.QueryOrderByOutTradeNoResponse())
   ;
-  $async.Future<$22.GetVirtualCurrencyResponse> getVCurrency($pb.ClientContext? ctx, $22.GetVirtualCurrencyRequest request) =>
-    _client.invoke<$22.GetVirtualCurrencyResponse>(ctx, 'glory_api', 'GetVCurrency', request, $22.GetVirtualCurrencyResponse())
+  $async.Future<$23.AddVirtualCurrencyResponse> addVCurrency($pb.ClientContext? ctx, $23.AddVirtualCurrencyRequest request) =>
+    _client.invoke<$23.AddVirtualCurrencyResponse>(ctx, 'glory_api', 'AddVCurrency', request, $23.AddVirtualCurrencyResponse())
   ;
-  $async.Future<$22.ListVirtualCurrencyResponse> listVCurrency($pb.ClientContext? ctx, $22.ListVirtualCurrencyRequest request) =>
-    _client.invoke<$22.ListVirtualCurrencyResponse>(ctx, 'glory_api', 'ListVCurrency', request, $22.ListVirtualCurrencyResponse())
+  $async.Future<$23.RechargeCurrencyResponse> rechargeCurrency($pb.ClientContext? ctx, $23.RechargeCurrencyRequest request) =>
+    _client.invoke<$23.RechargeCurrencyResponse>(ctx, 'glory_api', 'RechargeCurrency', request, $23.RechargeCurrencyResponse())
   ;
-  $async.Future<$23.ListAccountOperationResponse> listAccountOperation($pb.ClientContext? ctx, $23.ListAccountOperationRequest request) =>
-    _client.invoke<$23.ListAccountOperationResponse>(ctx, 'glory_api', 'ListAccountOperation', request, $23.ListAccountOperationResponse())
+  $async.Future<$23.RechargeCurrencyInBatchesResponse> rechargeCurrencyInBatches($pb.ClientContext? ctx, $23.RechargeCurrencyInBatchesRequest request) =>
+    _client.invoke<$23.RechargeCurrencyInBatchesResponse>(ctx, 'glory_api', 'RechargeCurrencyInBatches', request, $23.RechargeCurrencyInBatchesResponse())
   ;
-  $async.Future<$24.CreateRoomResponse> createRoom($pb.ClientContext? ctx, $24.CreateRoomRequest request) =>
-    _client.invoke<$24.CreateRoomResponse>(ctx, 'glory_api', 'CreateRoom', request, $24.CreateRoomResponse())
+  $async.Future<$23.GetVirtualCurrencyResponse> getVCurrency($pb.ClientContext? ctx, $23.GetVirtualCurrencyRequest request) =>
+    _client.invoke<$23.GetVirtualCurrencyResponse>(ctx, 'glory_api', 'GetVCurrency', request, $23.GetVirtualCurrencyResponse())
   ;
-  $async.Future<$24.GetRoomResponse> getRoom($pb.ClientContext? ctx, $24.GetRoomRequest request) =>
-    _client.invoke<$24.GetRoomResponse>(ctx, 'glory_api', 'GetRoom', request, $24.GetRoomResponse())
+  $async.Future<$23.ListVirtualCurrencyResponse> listVCurrency($pb.ClientContext? ctx, $23.ListVirtualCurrencyRequest request) =>
+    _client.invoke<$23.ListVirtualCurrencyResponse>(ctx, 'glory_api', 'ListVCurrency', request, $23.ListVirtualCurrencyResponse())
   ;
-  $async.Future<$24.UpdateRoomResponse> updateRoom($pb.ClientContext? ctx, $24.UpdateRoomRequest request) =>
-    _client.invoke<$24.UpdateRoomResponse>(ctx, 'glory_api', 'UpdateRoom', request, $24.UpdateRoomResponse())
+  $async.Future<$24.ListAccountOperationResponse> listAccountOperation($pb.ClientContext? ctx, $24.ListAccountOperationRequest request) =>
+    _client.invoke<$24.ListAccountOperationResponse>(ctx, 'glory_api', 'ListAccountOperation', request, $24.ListAccountOperationResponse())
   ;
-  $async.Future<$24.ListRoomResponse> listRoom($pb.ClientContext? ctx, $24.ListRoomRequest request) =>
-    _client.invoke<$24.ListRoomResponse>(ctx, 'glory_api', 'ListRoom', request, $24.ListRoomResponse())
+  $async.Future<$25.CreateRoomResponse> createRoom($pb.ClientContext? ctx, $25.CreateRoomRequest request) =>
+    _client.invoke<$25.CreateRoomResponse>(ctx, 'glory_api', 'CreateRoom', request, $25.CreateRoomResponse())
   ;
-  $async.Future<$24.DeleteRoomResponse> deleteRoom($pb.ClientContext? ctx, $24.DeleteRoomRequest request) =>
-    _client.invoke<$24.DeleteRoomResponse>(ctx, 'glory_api', 'DeleteRoom', request, $24.DeleteRoomResponse())
+  $async.Future<$25.GetRoomResponse> getRoom($pb.ClientContext? ctx, $25.GetRoomRequest request) =>
+    _client.invoke<$25.GetRoomResponse>(ctx, 'glory_api', 'GetRoom', request, $25.GetRoomResponse())
   ;
-  $async.Future<$24.ListFinishedRoomResponse> listFinishedRoom($pb.ClientContext? ctx, $24.ListFinishedRoomRequest request) =>
-    _client.invoke<$24.ListFinishedRoomResponse>(ctx, 'glory_api', 'ListFinishedRoom', request, $24.ListFinishedRoomResponse())
+  $async.Future<$25.UpdateRoomResponse> updateRoom($pb.ClientContext? ctx, $25.UpdateRoomRequest request) =>
+    _client.invoke<$25.UpdateRoomResponse>(ctx, 'glory_api', 'UpdateRoom', request, $25.UpdateRoomResponse())
   ;
-  $async.Future<$24.GetFinishedRoomResponse> getFinishedRoom($pb.ClientContext? ctx, $24.GetFinishedRoomRequest request) =>
-    _client.invoke<$24.GetFinishedRoomResponse>(ctx, 'glory_api', 'GetFinishedRoom', request, $24.GetFinishedRoomResponse())
+  $async.Future<$25.ListRoomResponse> listRoom($pb.ClientContext? ctx, $25.ListRoomRequest request) =>
+    _client.invoke<$25.ListRoomResponse>(ctx, 'glory_api', 'ListRoom', request, $25.ListRoomResponse())
   ;
-  $async.Future<$25.LiveRecordResponse> record($pb.ClientContext? ctx, $25.LiveRecordRequest request) =>
-    _client.invoke<$25.LiveRecordResponse>(ctx, 'glory_api', 'Record', request, $25.LiveRecordResponse())
+  $async.Future<$25.DeleteRoomResponse> deleteRoom($pb.ClientContext? ctx, $25.DeleteRoomRequest request) =>
+    _client.invoke<$25.DeleteRoomResponse>(ctx, 'glory_api', 'DeleteRoom', request, $25.DeleteRoomResponse())
   ;
-  $async.Future<$26.CreateLiveUserTokenResponse> createLiveUserToken($pb.ClientContext? ctx, $26.CreateLiveUserTokenRequest request) =>
-    _client.invoke<$26.CreateLiveUserTokenResponse>(ctx, 'glory_api', 'CreateLiveUserToken', request, $26.CreateLiveUserTokenResponse())
+  $async.Future<$25.ListFinishedRoomResponse> listFinishedRoom($pb.ClientContext? ctx, $25.ListFinishedRoomRequest request) =>
+    _client.invoke<$25.ListFinishedRoomResponse>(ctx, 'glory_api', 'ListFinishedRoom', request, $25.ListFinishedRoomResponse())
   ;
-  $async.Future<$24.CreateNewMessageTokenResponse> createNewLiveUserToken($pb.ClientContext? ctx, $24.CreateNewMessageTokenRequest request) =>
-    _client.invoke<$24.CreateNewMessageTokenResponse>(ctx, 'glory_api', 'CreateNewLiveUserToken', request, $24.CreateNewMessageTokenResponse())
+  $async.Future<$25.GetFinishedRoomResponse> getFinishedRoom($pb.ClientContext? ctx, $25.GetFinishedRoomRequest request) =>
+    _client.invoke<$25.GetFinishedRoomResponse>(ctx, 'glory_api', 'GetFinishedRoom', request, $25.GetFinishedRoomResponse())
   ;
-  $async.Future<$27.UserEnterRoomResponse> userEnterRoom($pb.ClientContext? ctx, $27.UserEnterRoomRequest request) =>
-    _client.invoke<$27.UserEnterRoomResponse>(ctx, 'glory_api', 'UserEnterRoom', request, $27.UserEnterRoomResponse())
+  $async.Future<$26.LiveRecordResponse> record($pb.ClientContext? ctx, $26.LiveRecordRequest request) =>
+    _client.invoke<$26.LiveRecordResponse>(ctx, 'glory_api', 'Record', request, $26.LiveRecordResponse())
   ;
-  $async.Future<$27.UserExitRoomResponse> userExitRoom($pb.ClientContext? ctx, $27.UserExitRoomRequest request) =>
-    _client.invoke<$27.UserExitRoomResponse>(ctx, 'glory_api', 'UserExitRoom', request, $27.UserExitRoomResponse())
+  $async.Future<$27.CreateLiveUserTokenResponse> createLiveUserToken($pb.ClientContext? ctx, $27.CreateLiveUserTokenRequest request) =>
+    _client.invoke<$27.CreateLiveUserTokenResponse>(ctx, 'glory_api', 'CreateLiveUserToken', request, $27.CreateLiveUserTokenResponse())
   ;
-  $async.Future<$15.ListAttachmentResponse> listActiveRoomUser($pb.ClientContext? ctx, $27.ListActiveRoomUserRequest request) =>
-    _client.invoke<$15.ListAttachmentResponse>(ctx, 'glory_api', 'ListActiveRoomUser', request, $15.ListAttachmentResponse())
+  $async.Future<$25.CreateNewMessageTokenResponse> createNewLiveUserToken($pb.ClientContext? ctx, $25.CreateNewMessageTokenRequest request) =>
+    _client.invoke<$25.CreateNewMessageTokenResponse>(ctx, 'glory_api', 'CreateNewLiveUserToken', request, $25.CreateNewMessageTokenResponse())
   ;
-  $async.Future<$24.LiveSSEResponse> liveSSE($pb.ClientContext? ctx, $24.LiveSSERequest request) =>
-    _client.invoke<$24.LiveSSEResponse>(ctx, 'glory_api', 'LiveSSE', request, $24.LiveSSEResponse())
+  $async.Future<$28.UserEnterRoomResponse> userEnterRoom($pb.ClientContext? ctx, $28.UserEnterRoomRequest request) =>
+    _client.invoke<$28.UserEnterRoomResponse>(ctx, 'glory_api', 'UserEnterRoom', request, $28.UserEnterRoomResponse())
   ;
-  $async.Future<$24.CloseShopAllLiveResponse> closeShopAllLive($pb.ClientContext? ctx, $24.CloseShopAllLiveRequest request) =>
-    _client.invoke<$24.CloseShopAllLiveResponse>(ctx, 'glory_api', 'CloseShopAllLive', request, $24.CloseShopAllLiveResponse())
+  $async.Future<$28.UserExitRoomResponse> userExitRoom($pb.ClientContext? ctx, $28.UserExitRoomRequest request) =>
+    _client.invoke<$28.UserExitRoomResponse>(ctx, 'glory_api', 'UserExitRoom', request, $28.UserExitRoomResponse())
   ;
-  $async.Future<$24.UpdateLiveCommentCountResponse> updateLiveCommentCount($pb.ClientContext? ctx, $24.UpdateLiveCommentCountRequest request) =>
-    _client.invoke<$24.UpdateLiveCommentCountResponse>(ctx, 'glory_api', 'UpdateLiveCommentCount', request, $24.UpdateLiveCommentCountResponse())
+  $async.Future<$16.ListAttachmentResponse> listActiveRoomUser($pb.ClientContext? ctx, $28.ListActiveRoomUserRequest request) =>
+    _client.invoke<$16.ListAttachmentResponse>(ctx, 'glory_api', 'ListActiveRoomUser', request, $16.ListAttachmentResponse())
   ;
-  $async.Future<$25.CreateLivePlanResponse> createLivePlan($pb.ClientContext? ctx, $25.CreateLivePlanRequest request) =>
-    _client.invoke<$25.CreateLivePlanResponse>(ctx, 'glory_api', 'CreateLivePlan', request, $25.CreateLivePlanResponse())
+  $async.Future<$25.LiveSSEResponse> liveSSE($pb.ClientContext? ctx, $25.LiveSSERequest request) =>
+    _client.invoke<$25.LiveSSEResponse>(ctx, 'glory_api', 'LiveSSE', request, $25.LiveSSEResponse())
   ;
-  $async.Future<$25.GetLivePlanResponse> getLivePlan($pb.ClientContext? ctx, $25.GetLivePlanRequest request) =>
-    _client.invoke<$25.GetLivePlanResponse>(ctx, 'glory_api', 'GetLivePlan', request, $25.GetLivePlanResponse())
+  $async.Future<$25.CloseShopAllLiveResponse> closeShopAllLive($pb.ClientContext? ctx, $25.CloseShopAllLiveRequest request) =>
+    _client.invoke<$25.CloseShopAllLiveResponse>(ctx, 'glory_api', 'CloseShopAllLive', request, $25.CloseShopAllLiveResponse())
   ;
-  $async.Future<$25.UpdateLivePlanResponse> updateLivePlan($pb.ClientContext? ctx, $25.UpdateLivePlanRequest request) =>
-    _client.invoke<$25.UpdateLivePlanResponse>(ctx, 'glory_api', 'UpdateLivePlan', request, $25.UpdateLivePlanResponse())
+  $async.Future<$25.UpdateLiveCommentCountResponse> updateLiveCommentCount($pb.ClientContext? ctx, $25.UpdateLiveCommentCountRequest request) =>
+    _client.invoke<$25.UpdateLiveCommentCountResponse>(ctx, 'glory_api', 'UpdateLiveCommentCount', request, $25.UpdateLiveCommentCountResponse())
   ;
-  $async.Future<$25.ListLivePlanResponse> listLivePlan($pb.ClientContext? ctx, $25.ListLivePlanRequest request) =>
-    _client.invoke<$25.ListLivePlanResponse>(ctx, 'glory_api', 'ListLivePlan', request, $25.ListLivePlanResponse())
+  $async.Future<$26.CreateLivePlanResponse> createLivePlan($pb.ClientContext? ctx, $26.CreateLivePlanRequest request) =>
+    _client.invoke<$26.CreateLivePlanResponse>(ctx, 'glory_api', 'CreateLivePlan', request, $26.CreateLivePlanResponse())
   ;
-  $async.Future<$25.DeleteLivePlanResponse> deleteLivePlan($pb.ClientContext? ctx, $25.DeleteLivePlanRequest request) =>
-    _client.invoke<$25.DeleteLivePlanResponse>(ctx, 'glory_api', 'DeleteLivePlan', request, $25.DeleteLivePlanResponse())
+  $async.Future<$26.GetLivePlanResponse> getLivePlan($pb.ClientContext? ctx, $26.GetLivePlanRequest request) =>
+    _client.invoke<$26.GetLivePlanResponse>(ctx, 'glory_api', 'GetLivePlan', request, $26.GetLivePlanResponse())
   ;
-  $async.Future<$25.CreateLivePlanProductResponse> createLivePlanProduct($pb.ClientContext? ctx, $25.CreateLivePlanProductRequest request) =>
-    _client.invoke<$25.CreateLivePlanProductResponse>(ctx, 'glory_api', 'CreateLivePlanProduct', request, $25.CreateLivePlanProductResponse())
+  $async.Future<$26.UpdateLivePlanResponse> updateLivePlan($pb.ClientContext? ctx, $26.UpdateLivePlanRequest request) =>
+    _client.invoke<$26.UpdateLivePlanResponse>(ctx, 'glory_api', 'UpdateLivePlan', request, $26.UpdateLivePlanResponse())
   ;
-  $async.Future<$25.UpdateLivePlanProductResponse> updateLivePlanProduct($pb.ClientContext? ctx, $25.UpdateLivePlanProductRequest request) =>
-    _client.invoke<$25.UpdateLivePlanProductResponse>(ctx, 'glory_api', 'UpdateLivePlanProduct', request, $25.UpdateLivePlanProductResponse())
+  $async.Future<$26.ListLivePlanResponse> listLivePlan($pb.ClientContext? ctx, $26.ListLivePlanRequest request) =>
+    _client.invoke<$26.ListLivePlanResponse>(ctx, 'glory_api', 'ListLivePlan', request, $26.ListLivePlanResponse())
   ;
-  $async.Future<$25.ListLivePlanProductResponse> listLivePlanProduct($pb.ClientContext? ctx, $25.ListLivePlanProductRequest request) =>
-    _client.invoke<$25.ListLivePlanProductResponse>(ctx, 'glory_api', 'ListLivePlanProduct', request, $25.ListLivePlanProductResponse())
+  $async.Future<$26.DeleteLivePlanResponse> deleteLivePlan($pb.ClientContext? ctx, $26.DeleteLivePlanRequest request) =>
+    _client.invoke<$26.DeleteLivePlanResponse>(ctx, 'glory_api', 'DeleteLivePlan', request, $26.DeleteLivePlanResponse())
   ;
-  $async.Future<$25.DeleteLivePlanProductResponse> deleteLivePlanProduct($pb.ClientContext? ctx, $25.DeleteLivePlanProductRequest request) =>
-    _client.invoke<$25.DeleteLivePlanProductResponse>(ctx, 'glory_api', 'DeleteLivePlanProduct', request, $25.DeleteLivePlanProductResponse())
+  $async.Future<$26.CreateLivePlanProductResponse> createLivePlanProduct($pb.ClientContext? ctx, $26.CreateLivePlanProductRequest request) =>
+    _client.invoke<$26.CreateLivePlanProductResponse>(ctx, 'glory_api', 'CreateLivePlanProduct', request, $26.CreateLivePlanProductResponse())
   ;
-  $async.Future<$25.LoadLivePlanProductResponse> loadLivePlanProduct($pb.ClientContext? ctx, $25.LoadLivePlanProductRequest request) =>
-    _client.invoke<$25.LoadLivePlanProductResponse>(ctx, 'glory_api', 'LoadLivePlanProduct', request, $25.LoadLivePlanProductResponse())
+  $async.Future<$26.UpdateLivePlanProductResponse> updateLivePlanProduct($pb.ClientContext? ctx, $26.UpdateLivePlanProductRequest request) =>
+    _client.invoke<$26.UpdateLivePlanProductResponse>(ctx, 'glory_api', 'UpdateLivePlanProduct', request, $26.UpdateLivePlanProductResponse())
   ;
-  $async.Future<$25.UpdateLiveProductStatusResponse> updateLiveProductStatus($pb.ClientContext? ctx, $25.UpdateLiveProductStatusRequest request) =>
-    _client.invoke<$25.UpdateLiveProductStatusResponse>(ctx, 'glory_api', 'UpdateLiveProductStatus', request, $25.UpdateLiveProductStatusResponse())
+  $async.Future<$26.ListLivePlanProductResponse> listLivePlanProduct($pb.ClientContext? ctx, $26.ListLivePlanProductRequest request) =>
+    _client.invoke<$26.ListLivePlanProductResponse>(ctx, 'glory_api', 'ListLivePlanProduct', request, $26.ListLivePlanProductResponse())
   ;
-  $async.Future<$25.ListLiveProductStatusResponse> listLiveProductStatus($pb.ClientContext? ctx, $25.ListLiveProductStatusRequest request) =>
-    _client.invoke<$25.ListLiveProductStatusResponse>(ctx, 'glory_api', 'ListLiveProductStatus', request, $25.ListLiveProductStatusResponse())
+  $async.Future<$26.DeleteLivePlanProductResponse> deleteLivePlanProduct($pb.ClientContext? ctx, $26.DeleteLivePlanProductRequest request) =>
+    _client.invoke<$26.DeleteLivePlanProductResponse>(ctx, 'glory_api', 'DeleteLivePlanProduct', request, $26.DeleteLivePlanProductResponse())
   ;
-  $async.Future<$25.DeleteLiveProductStatusResponse> deleteLiveProductStatus($pb.ClientContext? ctx, $25.DeleteLiveProductStatusRequest request) =>
-    _client.invoke<$25.DeleteLiveProductStatusResponse>(ctx, 'glory_api', 'DeleteLiveProductStatus', request, $25.DeleteLiveProductStatusResponse())
+  $async.Future<$26.LoadLivePlanProductResponse> loadLivePlanProduct($pb.ClientContext? ctx, $26.LoadLivePlanProductRequest request) =>
+    _client.invoke<$26.LoadLivePlanProductResponse>(ctx, 'glory_api', 'LoadLivePlanProduct', request, $26.LoadLivePlanProductResponse())
   ;
-  $async.Future<$25.CreateLiveProductStatusResponse> createLiveProductStatus($pb.ClientContext? ctx, $25.CreateLiveProductStatusRequest request) =>
-    _client.invoke<$25.CreateLiveProductStatusResponse>(ctx, 'glory_api', 'CreateLiveProductStatus', request, $25.CreateLiveProductStatusResponse())
+  $async.Future<$26.UpdateLiveProductStatusResponse> updateLiveProductStatus($pb.ClientContext? ctx, $26.UpdateLiveProductStatusRequest request) =>
+    _client.invoke<$26.UpdateLiveProductStatusResponse>(ctx, 'glory_api', 'UpdateLiveProductStatus', request, $26.UpdateLiveProductStatusResponse())
   ;
-  $async.Future<$25.GetLivingProductStatusResponse> getLivingProductStatus($pb.ClientContext? ctx, $25.GetLivingProductStatusRequest request) =>
-    _client.invoke<$25.GetLivingProductStatusResponse>(ctx, 'glory_api', 'GetLivingProductStatus', request, $25.GetLivingProductStatusResponse())
+  $async.Future<$26.ListLiveProductStatusResponse> listLiveProductStatus($pb.ClientContext? ctx, $26.ListLiveProductStatusRequest request) =>
+    _client.invoke<$26.ListLiveProductStatusResponse>(ctx, 'glory_api', 'ListLiveProductStatus', request, $26.ListLiveProductStatusResponse())
   ;
-  $async.Future<$25.UpdateLiveProductIntroductStatusResponse> updateLiveProductIntroductStatus($pb.ClientContext? ctx, $25.UpdateLiveProductIntroductStatusRequest request) =>
-    _client.invoke<$25.UpdateLiveProductIntroductStatusResponse>(ctx, 'glory_api', 'UpdateLiveProductIntroductStatus', request, $25.UpdateLiveProductIntroductStatusResponse())
+  $async.Future<$26.DeleteLiveProductStatusResponse> deleteLiveProductStatus($pb.ClientContext? ctx, $26.DeleteLiveProductStatusRequest request) =>
+    _client.invoke<$26.DeleteLiveProductStatusResponse>(ctx, 'glory_api', 'DeleteLiveProductStatus', request, $26.DeleteLiveProductStatusResponse())
   ;
-  $async.Future<$28.CreateLiveTextResponse> createLiveText($pb.ClientContext? ctx, $28.CreateLiveTextRequest request) =>
-    _client.invoke<$28.CreateLiveTextResponse>(ctx, 'glory_api', 'CreateLiveText', request, $28.CreateLiveTextResponse())
+  $async.Future<$26.CreateLiveProductStatusResponse> createLiveProductStatus($pb.ClientContext? ctx, $26.CreateLiveProductStatusRequest request) =>
+    _client.invoke<$26.CreateLiveProductStatusResponse>(ctx, 'glory_api', 'CreateLiveProductStatus', request, $26.CreateLiveProductStatusResponse())
   ;
-  $async.Future<$28.UpdateLiveTextResponse> updateLiveText($pb.ClientContext? ctx, $28.UpdateLiveTextRequest request) =>
-    _client.invoke<$28.UpdateLiveTextResponse>(ctx, 'glory_api', 'UpdateLiveText', request, $28.UpdateLiveTextResponse())
+  $async.Future<$26.GetLivingProductStatusResponse> getLivingProductStatus($pb.ClientContext? ctx, $26.GetLivingProductStatusRequest request) =>
+    _client.invoke<$26.GetLivingProductStatusResponse>(ctx, 'glory_api', 'GetLivingProductStatus', request, $26.GetLivingProductStatusResponse())
   ;
-  $async.Future<$28.ListLiveTextResponse> listLiveText($pb.ClientContext? ctx, $28.ListLiveTextRequest request) =>
-    _client.invoke<$28.ListLiveTextResponse>(ctx, 'glory_api', 'ListLiveText', request, $28.ListLiveTextResponse())
+  $async.Future<$26.UpdateLiveProductIntroductStatusResponse> updateLiveProductIntroductStatus($pb.ClientContext? ctx, $26.UpdateLiveProductIntroductStatusRequest request) =>
+    _client.invoke<$26.UpdateLiveProductIntroductStatusResponse>(ctx, 'glory_api', 'UpdateLiveProductIntroductStatus', request, $26.UpdateLiveProductIntroductStatusResponse())
   ;
-  $async.Future<$28.GetLiveTextResponse> getLiveText($pb.ClientContext? ctx, $28.GetLiveTextRequest request) =>
-    _client.invoke<$28.GetLiveTextResponse>(ctx, 'glory_api', 'GetLiveText', request, $28.GetLiveTextResponse())
+  $async.Future<$29.CreateLiveTextResponse> createLiveText($pb.ClientContext? ctx, $29.CreateLiveTextRequest request) =>
+    _client.invoke<$29.CreateLiveTextResponse>(ctx, 'glory_api', 'CreateLiveText', request, $29.CreateLiveTextResponse())
   ;
-  $async.Future<$28.DeleteLiveTextsResponse> deleteLiveTexts($pb.ClientContext? ctx, $28.DeleteLiveTextsRequest request) =>
-    _client.invoke<$28.DeleteLiveTextsResponse>(ctx, 'glory_api', 'DeleteLiveTexts', request, $28.DeleteLiveTextsResponse())
+  $async.Future<$29.UpdateLiveTextResponse> updateLiveText($pb.ClientContext? ctx, $29.UpdateLiveTextRequest request) =>
+    _client.invoke<$29.UpdateLiveTextResponse>(ctx, 'glory_api', 'UpdateLiveText', request, $29.UpdateLiveTextResponse())
   ;
-  $async.Future<$28.TeacherListStudentShortVideoTextResponse> teacherListStudentShortVideoText($pb.ClientContext? ctx, $28.TeacherListStudentShortVideoTextRequest request) =>
-    _client.invoke<$28.TeacherListStudentShortVideoTextResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideoText', request, $28.TeacherListStudentShortVideoTextResponse())
+  $async.Future<$29.ListLiveTextResponse> listLiveText($pb.ClientContext? ctx, $29.ListLiveTextRequest request) =>
+    _client.invoke<$29.ListLiveTextResponse>(ctx, 'glory_api', 'ListLiveText', request, $29.ListLiveTextResponse())
   ;
-  $async.Future<$24.GetLiveChartDataResponse> getLiveChartData($pb.ClientContext? ctx, $24.GetLiveChartDataRequest request) =>
-    _client.invoke<$24.GetLiveChartDataResponse>(ctx, 'glory_api', 'GetLiveChartData', request, $24.GetLiveChartDataResponse())
+  $async.Future<$29.GetLiveTextResponse> getLiveText($pb.ClientContext? ctx, $29.GetLiveTextRequest request) =>
+    _client.invoke<$29.GetLiveTextResponse>(ctx, 'glory_api', 'GetLiveText', request, $29.GetLiveTextResponse())
   ;
-  $async.Future<$29.GetEvaluateSelectorResponse> getEvaluateSelector($pb.ClientContext? ctx, $29.GetEvaluateSelectorRequest request) =>
-    _client.invoke<$29.GetEvaluateSelectorResponse>(ctx, 'glory_api', 'GetEvaluateSelector', request, $29.GetEvaluateSelectorResponse())
+  $async.Future<$29.DeleteLiveTextsResponse> deleteLiveTexts($pb.ClientContext? ctx, $29.DeleteLiveTextsRequest request) =>
+    _client.invoke<$29.DeleteLiveTextsResponse>(ctx, 'glory_api', 'DeleteLiveTexts', request, $29.DeleteLiveTextsResponse())
   ;
-  $async.Future<$29.ListPersonalEvaluateResponse> listPersonalEvaluate($pb.ClientContext? ctx, $29.ListPersonalEvaluateRequest request) =>
-    _client.invoke<$29.ListPersonalEvaluateResponse>(ctx, 'glory_api', 'ListPersonalEvaluate', request, $29.ListPersonalEvaluateResponse())
+  $async.Future<$29.TeacherListStudentShortVideoTextResponse> teacherListStudentShortVideoText($pb.ClientContext? ctx, $29.TeacherListStudentShortVideoTextRequest request) =>
+    _client.invoke<$29.TeacherListStudentShortVideoTextResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideoText', request, $29.TeacherListStudentShortVideoTextResponse())
   ;
-  $async.Future<$29.GetEvaluateDetailResponse> getEvaluateDetail($pb.ClientContext? ctx, $29.GetEvaluateDetailRequest request) =>
-    _client.invoke<$29.GetEvaluateDetailResponse>(ctx, 'glory_api', 'GetEvaluateDetail', request, $29.GetEvaluateDetailResponse())
+  $async.Future<$25.GetLiveChartDataResponse> getLiveChartData($pb.ClientContext? ctx, $25.GetLiveChartDataRequest request) =>
+    _client.invoke<$25.GetLiveChartDataResponse>(ctx, 'glory_api', 'GetLiveChartData', request, $25.GetLiveChartDataResponse())
   ;
-  $async.Future<$29.SubmitEvaluateResponse> submitEvaluate($pb.ClientContext? ctx, $29.SubmitEvaluateRequest request) =>
-    _client.invoke<$29.SubmitEvaluateResponse>(ctx, 'glory_api', 'SubmitEvaluate', request, $29.SubmitEvaluateResponse())
+  $async.Future<$30.GetEvaluateSelectorResponse> getEvaluateSelector($pb.ClientContext? ctx, $30.GetEvaluateSelectorRequest request) =>
+    _client.invoke<$30.GetEvaluateSelectorResponse>(ctx, 'glory_api', 'GetEvaluateSelector', request, $30.GetEvaluateSelectorResponse())
   ;
-  $async.Future<$29.ListUnevaluatedRoomResponse> listUnevaluatedRoom($pb.ClientContext? ctx, $29.ListUnevaluatedRoomRequest request) =>
-    _client.invoke<$29.ListUnevaluatedRoomResponse>(ctx, 'glory_api', 'ListUnevaluatedRoom', request, $29.ListUnevaluatedRoomResponse())
+  $async.Future<$30.ListPersonalEvaluateResponse> listPersonalEvaluate($pb.ClientContext? ctx, $30.ListPersonalEvaluateRequest request) =>
+    _client.invoke<$30.ListPersonalEvaluateResponse>(ctx, 'glory_api', 'ListPersonalEvaluate', request, $30.ListPersonalEvaluateResponse())
   ;
-  $async.Future<$29.ListStudentEvalutionsResponse> listStudentEvaluations($pb.ClientContext? ctx, $29.ListStudentEvalutionsRequest request) =>
-    _client.invoke<$29.ListStudentEvalutionsResponse>(ctx, 'glory_api', 'ListStudentEvaluations', request, $29.ListStudentEvalutionsResponse())
+  $async.Future<$30.GetEvaluateDetailResponse> getEvaluateDetail($pb.ClientContext? ctx, $30.GetEvaluateDetailRequest request) =>
+    _client.invoke<$30.GetEvaluateDetailResponse>(ctx, 'glory_api', 'GetEvaluateDetail', request, $30.GetEvaluateDetailResponse())
   ;
-  $async.Future<$29.IgnoreLiveEvaluationResponse> ignoreEvaluation($pb.ClientContext? ctx, $29.IgnoreLiveEvaluationRequest request) =>
-    _client.invoke<$29.IgnoreLiveEvaluationResponse>(ctx, 'glory_api', 'IgnoreEvaluation', request, $29.IgnoreLiveEvaluationResponse())
+  $async.Future<$30.SubmitEvaluateResponse> submitEvaluate($pb.ClientContext? ctx, $30.SubmitEvaluateRequest request) =>
+    _client.invoke<$30.SubmitEvaluateResponse>(ctx, 'glory_api', 'SubmitEvaluate', request, $30.SubmitEvaluateResponse())
   ;
-  $async.Future<$29.GetRankResponse> getRank($pb.ClientContext? ctx, $29.GetRankRequest request) =>
-    _client.invoke<$29.GetRankResponse>(ctx, 'glory_api', 'GetRank', request, $29.GetRankResponse())
+  $async.Future<$30.ListUnevaluatedRoomResponse> listUnevaluatedRoom($pb.ClientContext? ctx, $30.ListUnevaluatedRoomRequest request) =>
+    _client.invoke<$30.ListUnevaluatedRoomResponse>(ctx, 'glory_api', 'ListUnevaluatedRoom', request, $30.ListUnevaluatedRoomResponse())
   ;
-  $async.Future<$24.RecordLiveCallbackResponse> recordLiveCallback($pb.ClientContext? ctx, $24.RecordLiveCallbackRequest request) =>
-    _client.invoke<$24.RecordLiveCallbackResponse>(ctx, 'glory_api', 'RecordLiveCallback', request, $24.RecordLiveCallbackResponse())
+  $async.Future<$30.ListStudentEvalutionsResponse> listStudentEvaluations($pb.ClientContext? ctx, $30.ListStudentEvalutionsRequest request) =>
+    _client.invoke<$30.ListStudentEvalutionsResponse>(ctx, 'glory_api', 'ListStudentEvaluations', request, $30.ListStudentEvalutionsResponse())
   ;
-  $async.Future<$24.VideoToTextCallbackResponse> videoToTextCallback($pb.ClientContext? ctx, $24.VideoToTextCallbackRequest request) =>
-    _client.invoke<$24.VideoToTextCallbackResponse>(ctx, 'glory_api', 'VideoToTextCallback', request, $24.VideoToTextCallbackResponse())
+  $async.Future<$30.IgnoreLiveEvaluationResponse> ignoreEvaluation($pb.ClientContext? ctx, $30.IgnoreLiveEvaluationRequest request) =>
+    _client.invoke<$30.IgnoreLiveEvaluationResponse>(ctx, 'glory_api', 'IgnoreEvaluation', request, $30.IgnoreLiveEvaluationResponse())
   ;
-  $async.Future<$24.LiveStreamCallbackResponse> liveStreamCallback($pb.ClientContext? ctx, $24.LiveStreamCallbackRequest request) =>
-    _client.invoke<$24.LiveStreamCallbackResponse>(ctx, 'glory_api', 'LiveStreamCallback', request, $24.LiveStreamCallbackResponse())
+  $async.Future<$30.GetRankResponse> getRank($pb.ClientContext? ctx, $30.GetRankRequest request) =>
+    _client.invoke<$30.GetRankResponse>(ctx, 'glory_api', 'GetRank', request, $30.GetRankResponse())
   ;
-  $async.Future<$29.RegenerationAiFeedbackResponse> regenerationAiFeedback($pb.ClientContext? ctx, $29.RegenerationAiFeedbackRequest request) =>
-    _client.invoke<$29.RegenerationAiFeedbackResponse>(ctx, 'glory_api', 'RegenerationAiFeedback', request, $29.RegenerationAiFeedbackResponse())
+  $async.Future<$25.RecordLiveCallbackResponse> recordLiveCallback($pb.ClientContext? ctx, $25.RecordLiveCallbackRequest request) =>
+    _client.invoke<$25.RecordLiveCallbackResponse>(ctx, 'glory_api', 'RecordLiveCallback', request, $25.RecordLiveCallbackResponse())
   ;
-  $async.Future<$29.SubmitUserAttitudeForAIResultResponse> submitUserAttitudeForAiResult($pb.ClientContext? ctx, $29.SubmitUserAttitudeForAIResultRequest request) =>
-    _client.invoke<$29.SubmitUserAttitudeForAIResultResponse>(ctx, 'glory_api', 'SubmitUserAttitudeForAiResult', request, $29.SubmitUserAttitudeForAIResultResponse())
+  $async.Future<$25.VideoToTextCallbackResponse> videoToTextCallback($pb.ClientContext? ctx, $25.VideoToTextCallbackRequest request) =>
+    _client.invoke<$25.VideoToTextCallbackResponse>(ctx, 'glory_api', 'VideoToTextCallback', request, $25.VideoToTextCallbackResponse())
   ;
-  $async.Future<$25.PreheatResponse> preheatProduct($pb.ClientContext? ctx, $25.PreheatRequest request) =>
-    _client.invoke<$25.PreheatResponse>(ctx, 'glory_api', 'PreheatProduct', request, $25.PreheatResponse())
+  $async.Future<$25.LiveStreamCallbackResponse> liveStreamCallback($pb.ClientContext? ctx, $25.LiveStreamCallbackRequest request) =>
+    _client.invoke<$25.LiveStreamCallbackResponse>(ctx, 'glory_api', 'LiveStreamCallback', request, $25.LiveStreamCallbackResponse())
   ;
-  $async.Future<$25.PublicPriceResponse> publicPrice($pb.ClientContext? ctx, $25.PublicPriceRequest request) =>
-    _client.invoke<$25.PublicPriceResponse>(ctx, 'glory_api', 'PublicPrice', request, $25.PublicPriceResponse())
+  $async.Future<$30.RegenerationAiFeedbackResponse> regenerationAiFeedback($pb.ClientContext? ctx, $30.RegenerationAiFeedbackRequest request) =>
+    _client.invoke<$30.RegenerationAiFeedbackResponse>(ctx, 'glory_api', 'RegenerationAiFeedback', request, $30.RegenerationAiFeedbackResponse())
   ;
-  $async.Future<$30.ListTenantSystemResponse> listTenantSystem($pb.ClientContext? ctx, $30.ListTenantSystemRequest request) =>
-    _client.invoke<$30.ListTenantSystemResponse>(ctx, 'glory_api', 'ListTenantSystem', request, $30.ListTenantSystemResponse())
+  $async.Future<$30.SubmitUserAttitudeForAIResultResponse> submitUserAttitudeForAiResult($pb.ClientContext? ctx, $30.SubmitUserAttitudeForAIResultRequest request) =>
+    _client.invoke<$30.SubmitUserAttitudeForAIResultResponse>(ctx, 'glory_api', 'SubmitUserAttitudeForAiResult', request, $30.SubmitUserAttitudeForAIResultResponse())
   ;
-  $async.Future<$30.CreateTenantResponse> createTenant($pb.ClientContext? ctx, $30.CreateTenantRequest request) =>
-    _client.invoke<$30.CreateTenantResponse>(ctx, 'glory_api', 'CreateTenant', request, $30.CreateTenantResponse())
+  $async.Future<$26.PreheatResponse> preheatProduct($pb.ClientContext? ctx, $26.PreheatRequest request) =>
+    _client.invoke<$26.PreheatResponse>(ctx, 'glory_api', 'PreheatProduct', request, $26.PreheatResponse())
   ;
-  $async.Future<$30.GetTenantResponse> getTenant($pb.ClientContext? ctx, $30.GetTenantRequest request) =>
-    _client.invoke<$30.GetTenantResponse>(ctx, 'glory_api', 'GetTenant', request, $30.GetTenantResponse())
+  $async.Future<$26.PublicPriceResponse> publicPrice($pb.ClientContext? ctx, $26.PublicPriceRequest request) =>
+    _client.invoke<$26.PublicPriceResponse>(ctx, 'glory_api', 'PublicPrice', request, $26.PublicPriceResponse())
   ;
-  $async.Future<$30.UpdateTenantResponse> updateTenant($pb.ClientContext? ctx, $30.UpdateTenantRequest request) =>
-    _client.invoke<$30.UpdateTenantResponse>(ctx, 'glory_api', 'UpdateTenant', request, $30.UpdateTenantResponse())
+  $async.Future<$31.ListTenantSystemResponse> listTenantSystem($pb.ClientContext? ctx, $31.ListTenantSystemRequest request) =>
+    _client.invoke<$31.ListTenantSystemResponse>(ctx, 'glory_api', 'ListTenantSystem', request, $31.ListTenantSystemResponse())
   ;
-  $async.Future<$30.DeleteTenantResponse> deleteTenant($pb.ClientContext? ctx, $30.DeleteTenantRequest request) =>
-    _client.invoke<$30.DeleteTenantResponse>(ctx, 'glory_api', 'DeleteTenant', request, $30.DeleteTenantResponse())
+  $async.Future<$31.CreateTenantResponse> createTenant($pb.ClientContext? ctx, $31.CreateTenantRequest request) =>
+    _client.invoke<$31.CreateTenantResponse>(ctx, 'glory_api', 'CreateTenant', request, $31.CreateTenantResponse())
   ;
-  $async.Future<$30.ListTenantResponse> listTenant($pb.ClientContext? ctx, $30.ListTenantRequest request) =>
-    _client.invoke<$30.ListTenantResponse>(ctx, 'glory_api', 'ListTenant', request, $30.ListTenantResponse())
+  $async.Future<$31.GetTenantResponse> getTenant($pb.ClientContext? ctx, $31.GetTenantRequest request) =>
+    _client.invoke<$31.GetTenantResponse>(ctx, 'glory_api', 'GetTenant', request, $31.GetTenantResponse())
   ;
-  $async.Future<$30.GetTenantOrgResponse> getTenantOrg($pb.ClientContext? ctx, $30.GetTenantOrgRequest request) =>
-    _client.invoke<$30.GetTenantOrgResponse>(ctx, 'glory_api', 'GetTenantOrg', request, $30.GetTenantOrgResponse())
+  $async.Future<$31.UpdateTenantResponse> updateTenant($pb.ClientContext? ctx, $31.UpdateTenantRequest request) =>
+    _client.invoke<$31.UpdateTenantResponse>(ctx, 'glory_api', 'UpdateTenant', request, $31.UpdateTenantResponse())
   ;
-  $async.Future<$30.EnterTenantResponse> enterTenant($pb.ClientContext? ctx, $30.EnterTenantRequest request) =>
-    _client.invoke<$30.EnterTenantResponse>(ctx, 'glory_api', 'EnterTenant', request, $30.EnterTenantResponse())
+  $async.Future<$31.DeleteTenantResponse> deleteTenant($pb.ClientContext? ctx, $31.DeleteTenantRequest request) =>
+    _client.invoke<$31.DeleteTenantResponse>(ctx, 'glory_api', 'DeleteTenant', request, $31.DeleteTenantResponse())
   ;
-  $async.Future<$30.ExitTenantResponse> exitTenant($pb.ClientContext? ctx, $30.ExitTenantRequest request) =>
-    _client.invoke<$30.ExitTenantResponse>(ctx, 'glory_api', 'ExitTenant', request, $30.ExitTenantResponse())
+  $async.Future<$31.ListTenantResponse> listTenant($pb.ClientContext? ctx, $31.ListTenantRequest request) =>
+    _client.invoke<$31.ListTenantResponse>(ctx, 'glory_api', 'ListTenant', request, $31.ListTenantResponse())
   ;
-  $async.Future<$30.IsTenantResponse> isEnterTenant($pb.ClientContext? ctx, $30.IsEnterTenantRequest request) =>
-    _client.invoke<$30.IsTenantResponse>(ctx, 'glory_api', 'IsEnterTenant', request, $30.IsTenantResponse())
+  $async.Future<$31.GetTenantOrgResponse> getTenantOrg($pb.ClientContext? ctx, $31.GetTenantOrgRequest request) =>
+    _client.invoke<$31.GetTenantOrgResponse>(ctx, 'glory_api', 'GetTenantOrg', request, $31.GetTenantOrgResponse())
   ;
-  $async.Future<$30.InitTenantResponse> initTenant($pb.ClientContext? ctx, $30.InitTenantRequest request) =>
-    _client.invoke<$30.InitTenantResponse>(ctx, 'glory_api', 'InitTenant', request, $30.InitTenantResponse())
+  $async.Future<$31.EnterTenantResponse> enterTenant($pb.ClientContext? ctx, $31.EnterTenantRequest request) =>
+    _client.invoke<$31.EnterTenantResponse>(ctx, 'glory_api', 'EnterTenant', request, $31.EnterTenantResponse())
   ;
-  $async.Future<$30.CreateTenantCourseResponse> createTenantCourse($pb.ClientContext? ctx, $30.CreateTenantCourseRequest request) =>
-    _client.invoke<$30.CreateTenantCourseResponse>(ctx, 'glory_api', 'CreateTenantCourse', request, $30.CreateTenantCourseResponse())
+  $async.Future<$31.ExitTenantResponse> exitTenant($pb.ClientContext? ctx, $31.ExitTenantRequest request) =>
+    _client.invoke<$31.ExitTenantResponse>(ctx, 'glory_api', 'ExitTenant', request, $31.ExitTenantResponse())
   ;
-  $async.Future<$30.ListTenantResponse> listTenantCourse($pb.ClientContext? ctx, $30.ListTenantRequest request) =>
-    _client.invoke<$30.ListTenantResponse>(ctx, 'glory_api', 'ListTenantCourse', request, $30.ListTenantResponse())
+  $async.Future<$31.IsTenantResponse> isEnterTenant($pb.ClientContext? ctx, $31.IsEnterTenantRequest request) =>
+    _client.invoke<$31.IsTenantResponse>(ctx, 'glory_api', 'IsEnterTenant', request, $31.IsTenantResponse())
   ;
-  $async.Future<$31.CreateTenantDeptResponse> createTenantDept($pb.ClientContext? ctx, $31.CreateTenantDeptRequest request) =>
-    _client.invoke<$31.CreateTenantDeptResponse>(ctx, 'glory_api', 'CreateTenantDept', request, $31.CreateTenantDeptResponse())
+  $async.Future<$31.InitTenantResponse> initTenant($pb.ClientContext? ctx, $31.InitTenantRequest request) =>
+    _client.invoke<$31.InitTenantResponse>(ctx, 'glory_api', 'InitTenant', request, $31.InitTenantResponse())
   ;
-  $async.Future<$31.UpdateTenantDeptResponse> updateTenantDept($pb.ClientContext? ctx, $31.UpdateTenantDeptRequest request) =>
-    _client.invoke<$31.UpdateTenantDeptResponse>(ctx, 'glory_api', 'UpdateTenantDept', request, $31.UpdateTenantDeptResponse())
+  $async.Future<$31.CreateTenantCourseResponse> createTenantCourse($pb.ClientContext? ctx, $31.CreateTenantCourseRequest request) =>
+    _client.invoke<$31.CreateTenantCourseResponse>(ctx, 'glory_api', 'CreateTenantCourse', request, $31.CreateTenantCourseResponse())
   ;
-  $async.Future<$31.DeleteTenantDeptResponse> deleteTenantDept($pb.ClientContext? ctx, $31.DeleteTenantDeptRequest request) =>
-    _client.invoke<$31.DeleteTenantDeptResponse>(ctx, 'glory_api', 'DeleteTenantDept', request, $31.DeleteTenantDeptResponse())
+  $async.Future<$31.ListTenantResponse> listTenantCourse($pb.ClientContext? ctx, $31.ListTenantRequest request) =>
+    _client.invoke<$31.ListTenantResponse>(ctx, 'glory_api', 'ListTenantCourse', request, $31.ListTenantResponse())
   ;
-  $async.Future<$31.GetTenantDeptResponse> getTenantDept($pb.ClientContext? ctx, $31.GetTenantDeptRequest request) =>
-    _client.invoke<$31.GetTenantDeptResponse>(ctx, 'glory_api', 'GetTenantDept', request, $31.GetTenantDeptResponse())
+  $async.Future<$32.CreateTenantDeptResponse> createTenantDept($pb.ClientContext? ctx, $32.CreateTenantDeptRequest request) =>
+    _client.invoke<$32.CreateTenantDeptResponse>(ctx, 'glory_api', 'CreateTenantDept', request, $32.CreateTenantDeptResponse())
   ;
-  $async.Future<$31.GetTenantDeptTypeResponse> getTenantDeptType($pb.ClientContext? ctx, $31.GetTenantDeptTypeRequest request) =>
-    _client.invoke<$31.GetTenantDeptTypeResponse>(ctx, 'glory_api', 'GetTenantDeptType', request, $31.GetTenantDeptTypeResponse())
+  $async.Future<$32.UpdateTenantDeptResponse> updateTenantDept($pb.ClientContext? ctx, $32.UpdateTenantDeptRequest request) =>
+    _client.invoke<$32.UpdateTenantDeptResponse>(ctx, 'glory_api', 'UpdateTenantDept', request, $32.UpdateTenantDeptResponse())
   ;
-  $async.Future<$31.ListTenantDeptResponse> listTenantDept($pb.ClientContext? ctx, $31.ListTenantDeptRequest request) =>
-    _client.invoke<$31.ListTenantDeptResponse>(ctx, 'glory_api', 'ListTenantDept', request, $31.ListTenantDeptResponse())
+  $async.Future<$32.DeleteTenantDeptResponse> deleteTenantDept($pb.ClientContext? ctx, $32.DeleteTenantDeptRequest request) =>
+    _client.invoke<$32.DeleteTenantDeptResponse>(ctx, 'glory_api', 'DeleteTenantDept', request, $32.DeleteTenantDeptResponse())
   ;
-  $async.Future<$32.CreateTenantUserResponse> createTenantUser($pb.ClientContext? ctx, $32.CreateTenantUserRequest request) =>
-    _client.invoke<$32.CreateTenantUserResponse>(ctx, 'glory_api', 'CreateTenantUser', request, $32.CreateTenantUserResponse())
+  $async.Future<$32.GetTenantDeptResponse> getTenantDept($pb.ClientContext? ctx, $32.GetTenantDeptRequest request) =>
+    _client.invoke<$32.GetTenantDeptResponse>(ctx, 'glory_api', 'GetTenantDept', request, $32.GetTenantDeptResponse())
   ;
-  $async.Future<$32.DeleteTenantUserResponse> deleteTenantUser($pb.ClientContext? ctx, $32.DeleteTenantUserRequest request) =>
-    _client.invoke<$32.DeleteTenantUserResponse>(ctx, 'glory_api', 'DeleteTenantUser', request, $32.DeleteTenantUserResponse())
+  $async.Future<$32.GetTenantDeptTypeResponse> getTenantDeptType($pb.ClientContext? ctx, $32.GetTenantDeptTypeRequest request) =>
+    _client.invoke<$32.GetTenantDeptTypeResponse>(ctx, 'glory_api', 'GetTenantDeptType', request, $32.GetTenantDeptTypeResponse())
   ;
-  $async.Future<$32.UpdateTenantUserResponse> updateTenantUser($pb.ClientContext? ctx, $32.UpdateTenantUserRequest request) =>
-    _client.invoke<$32.UpdateTenantUserResponse>(ctx, 'glory_api', 'UpdateTenantUser', request, $32.UpdateTenantUserResponse())
+  $async.Future<$32.ListTenantDeptResponse> listTenantDept($pb.ClientContext? ctx, $32.ListTenantDeptRequest request) =>
+    _client.invoke<$32.ListTenantDeptResponse>(ctx, 'glory_api', 'ListTenantDept', request, $32.ListTenantDeptResponse())
   ;
-  $async.Future<$32.GetTenantUserResponse> getTenantUser($pb.ClientContext? ctx, $32.GetTenantUserRequest request) =>
-    _client.invoke<$32.GetTenantUserResponse>(ctx, 'glory_api', 'GetTenantUser', request, $32.GetTenantUserResponse())
+  $async.Future<$33.CreateTenantUserResponse> createTenantUser($pb.ClientContext? ctx, $33.CreateTenantUserRequest request) =>
+    _client.invoke<$33.CreateTenantUserResponse>(ctx, 'glory_api', 'CreateTenantUser', request, $33.CreateTenantUserResponse())
   ;
-  $async.Future<$32.ListTenantUserResponse> listTenantUser($pb.ClientContext? ctx, $32.ListTenantUserRequest request) =>
-    _client.invoke<$32.ListTenantUserResponse>(ctx, 'glory_api', 'ListTenantUser', request, $32.ListTenantUserResponse())
+  $async.Future<$33.DeleteTenantUserResponse> deleteTenantUser($pb.ClientContext? ctx, $33.DeleteTenantUserRequest request) =>
+    _client.invoke<$33.DeleteTenantUserResponse>(ctx, 'glory_api', 'DeleteTenantUser', request, $33.DeleteTenantUserResponse())
   ;
-  $async.Future<$32.ListTenantStudentResponse> listTenantStudent($pb.ClientContext? ctx, $32.ListTenantStudentRequest request) =>
-    _client.invoke<$32.ListTenantStudentResponse>(ctx, 'glory_api', 'ListTenantStudent', request, $32.ListTenantStudentResponse())
+  $async.Future<$33.UpdateTenantUserResponse> updateTenantUser($pb.ClientContext? ctx, $33.UpdateTenantUserRequest request) =>
+    _client.invoke<$33.UpdateTenantUserResponse>(ctx, 'glory_api', 'UpdateTenantUser', request, $33.UpdateTenantUserResponse())
   ;
-  $async.Future<$32.UpdateTenantUserPasswordResponse> updateTenantUserPassword($pb.ClientContext? ctx, $32.UpdateTenantUserPasswordRequest request) =>
-    _client.invoke<$32.UpdateTenantUserPasswordResponse>(ctx, 'glory_api', 'UpdateTenantUserPassword', request, $32.UpdateTenantUserPasswordResponse())
+  $async.Future<$33.GetTenantUserResponse> getTenantUser($pb.ClientContext? ctx, $33.GetTenantUserRequest request) =>
+    _client.invoke<$33.GetTenantUserResponse>(ctx, 'glory_api', 'GetTenantUser', request, $33.GetTenantUserResponse())
   ;
-  $async.Future<$33.UpdateTenantConfigResponse> updateTenantConfig($pb.ClientContext? ctx, $33.UpdateTenantConfigRequest request) =>
-    _client.invoke<$33.UpdateTenantConfigResponse>(ctx, 'glory_api', 'UpdateTenantConfig', request, $33.UpdateTenantConfigResponse())
+  $async.Future<$33.ListTenantUserResponse> listTenantUser($pb.ClientContext? ctx, $33.ListTenantUserRequest request) =>
+    _client.invoke<$33.ListTenantUserResponse>(ctx, 'glory_api', 'ListTenantUser', request, $33.ListTenantUserResponse())
   ;
-  $async.Future<$33.ListTenantConfigResponse> listTenantConfig($pb.ClientContext? ctx, $33.ListTenantConfigRequest request) =>
-    _client.invoke<$33.ListTenantConfigResponse>(ctx, 'glory_api', 'ListTenantConfig', request, $33.ListTenantConfigResponse())
+  $async.Future<$33.ListTenantStudentResponse> listTenantStudent($pb.ClientContext? ctx, $33.ListTenantStudentRequest request) =>
+    _client.invoke<$33.ListTenantStudentResponse>(ctx, 'glory_api', 'ListTenantStudent', request, $33.ListTenantStudentResponse())
   ;
-  $async.Future<$34.CreateShortVideoResponse> createShortVideo($pb.ClientContext? ctx, $34.CreateShortVideoRequest request) =>
-    _client.invoke<$34.CreateShortVideoResponse>(ctx, 'glory_api', 'CreateShortVideo', request, $34.CreateShortVideoResponse())
+  $async.Future<$33.UpdateTenantUserPasswordResponse> updateTenantUserPassword($pb.ClientContext? ctx, $33.UpdateTenantUserPasswordRequest request) =>
+    _client.invoke<$33.UpdateTenantUserPasswordResponse>(ctx, 'glory_api', 'UpdateTenantUserPassword', request, $33.UpdateTenantUserPasswordResponse())
   ;
-  $async.Future<$34.StageShortVideoResponse> stageShortVideo($pb.ClientContext? ctx, $34.StageShortVideoRequest request) =>
-    _client.invoke<$34.StageShortVideoResponse>(ctx, 'glory_api', 'StageShortVideo', request, $34.StageShortVideoResponse())
+  $async.Future<$34.UpdateTenantConfigResponse> updateTenantConfig($pb.ClientContext? ctx, $34.UpdateTenantConfigRequest request) =>
+    _client.invoke<$34.UpdateTenantConfigResponse>(ctx, 'glory_api', 'UpdateTenantConfig', request, $34.UpdateTenantConfigResponse())
   ;
-  $async.Future<$34.ListMyShortVideoResponse> listMyShortVideo($pb.ClientContext? ctx, $34.ListMyShortVideoRequest request) =>
-    _client.invoke<$34.ListMyShortVideoResponse>(ctx, 'glory_api', 'ListMyShortVideo', request, $34.ListMyShortVideoResponse())
+  $async.Future<$34.ListTenantConfigResponse> listTenantConfig($pb.ClientContext? ctx, $34.ListTenantConfigRequest request) =>
+    _client.invoke<$34.ListTenantConfigResponse>(ctx, 'glory_api', 'ListTenantConfig', request, $34.ListTenantConfigResponse())
   ;
-  $async.Future<$34.ListMyStageVideoResponse> listMyStageVideo($pb.ClientContext? ctx, $34.ListMyStageVideoRequest request) =>
-    _client.invoke<$34.ListMyStageVideoResponse>(ctx, 'glory_api', 'ListMyStageVideo', request, $34.ListMyStageVideoResponse())
+  $async.Future<$35.CreateShortVideoResponse> createShortVideo($pb.ClientContext? ctx, $35.CreateShortVideoRequest request) =>
+    _client.invoke<$35.CreateShortVideoResponse>(ctx, 'glory_api', 'CreateShortVideo', request, $35.CreateShortVideoResponse())
   ;
-  $async.Future<$34.ListMyLikeVideoResponse> listMyLikeVideo($pb.ClientContext? ctx, $34.ListMyLikeVideoRequest request) =>
-    _client.invoke<$34.ListMyLikeVideoResponse>(ctx, 'glory_api', 'ListMyLikeVideo', request, $34.ListMyLikeVideoResponse())
+  $async.Future<$35.StageShortVideoResponse> stageShortVideo($pb.ClientContext? ctx, $35.StageShortVideoRequest request) =>
+    _client.invoke<$35.StageShortVideoResponse>(ctx, 'glory_api', 'StageShortVideo', request, $35.StageShortVideoResponse())
   ;
-  $async.Future<$34.ListMyFavoriteVideoResponse> listMyFavoriteVideo($pb.ClientContext? ctx, $34.ListMyFavoriteVideoRequest request) =>
-    _client.invoke<$34.ListMyFavoriteVideoResponse>(ctx, 'glory_api', 'ListMyFavoriteVideo', request, $34.ListMyFavoriteVideoResponse())
+  $async.Future<$35.ListMyShortVideoResponse> listMyShortVideo($pb.ClientContext? ctx, $35.ListMyShortVideoRequest request) =>
+    _client.invoke<$35.ListMyShortVideoResponse>(ctx, 'glory_api', 'ListMyShortVideo', request, $35.ListMyShortVideoResponse())
   ;
-  $async.Future<$34.GetShortVideoResponse> getShortVideo($pb.ClientContext? ctx, $34.GetShortVideoRequest request) =>
-    _client.invoke<$34.GetShortVideoResponse>(ctx, 'glory_api', 'GetShortVideo', request, $34.GetShortVideoResponse())
+  $async.Future<$35.ListMyStageVideoResponse> listMyStageVideo($pb.ClientContext? ctx, $35.ListMyStageVideoRequest request) =>
+    _client.invoke<$35.ListMyStageVideoResponse>(ctx, 'glory_api', 'ListMyStageVideo', request, $35.ListMyStageVideoResponse())
   ;
-  $async.Future<$34.UpdateShortVideoResponse> updateShortVideo($pb.ClientContext? ctx, $34.UpdateShortVideoRequest request) =>
-    _client.invoke<$34.UpdateShortVideoResponse>(ctx, 'glory_api', 'UpdateShortVideo', request, $34.UpdateShortVideoResponse())
+  $async.Future<$35.ListMyLikeVideoResponse> listMyLikeVideo($pb.ClientContext? ctx, $35.ListMyLikeVideoRequest request) =>
+    _client.invoke<$35.ListMyLikeVideoResponse>(ctx, 'glory_api', 'ListMyLikeVideo', request, $35.ListMyLikeVideoResponse())
   ;
-  $async.Future<$34.DeleteShortVideoResponse> deleteShortVideo($pb.ClientContext? ctx, $34.DeleteShortVideoRequest request) =>
-    _client.invoke<$34.DeleteShortVideoResponse>(ctx, 'glory_api', 'DeleteShortVideo', request, $34.DeleteShortVideoResponse())
+  $async.Future<$35.ListMyFavoriteVideoResponse> listMyFavoriteVideo($pb.ClientContext? ctx, $35.ListMyFavoriteVideoRequest request) =>
+    _client.invoke<$35.ListMyFavoriteVideoResponse>(ctx, 'glory_api', 'ListMyFavoriteVideo', request, $35.ListMyFavoriteVideoResponse())
   ;
-  $async.Future<$34.GetStageVideoResponse> getStageVideo($pb.ClientContext? ctx, $34.GetStageVideoRequest request) =>
-    _client.invoke<$34.GetStageVideoResponse>(ctx, 'glory_api', 'GetStageVideo', request, $34.GetStageVideoResponse())
+  $async.Future<$35.GetShortVideoResponse> getShortVideo($pb.ClientContext? ctx, $35.GetShortVideoRequest request) =>
+    _client.invoke<$35.GetShortVideoResponse>(ctx, 'glory_api', 'GetShortVideo', request, $35.GetShortVideoResponse())
   ;
-  $async.Future<$34.DeleteStageVideoResponse> deleteStageVideo($pb.ClientContext? ctx, $34.DeleteStageVideoRequest request) =>
-    _client.invoke<$34.DeleteStageVideoResponse>(ctx, 'glory_api', 'DeleteStageVideo', request, $34.DeleteStageVideoResponse())
+  $async.Future<$35.UpdateShortVideoResponse> updateShortVideo($pb.ClientContext? ctx, $35.UpdateShortVideoRequest request) =>
+    _client.invoke<$35.UpdateShortVideoResponse>(ctx, 'glory_api', 'UpdateShortVideo', request, $35.UpdateShortVideoResponse())
   ;
-  $async.Future<$34.UpdateStageVideoResponse> updateStageVideo($pb.ClientContext? ctx, $34.UpdateStageVideoRequest request) =>
-    _client.invoke<$34.UpdateStageVideoResponse>(ctx, 'glory_api', 'UpdateStageVideo', request, $34.UpdateStageVideoResponse())
+  $async.Future<$35.DeleteShortVideoResponse> deleteShortVideo($pb.ClientContext? ctx, $35.DeleteShortVideoRequest request) =>
+    _client.invoke<$35.DeleteShortVideoResponse>(ctx, 'glory_api', 'DeleteShortVideo', request, $35.DeleteShortVideoResponse())
   ;
-  $async.Future<$34.ManagementListShortVideoResponse> managementListShortVideo($pb.ClientContext? ctx, $34.ManagementListShortVideoRequest request) =>
-    _client.invoke<$34.ManagementListShortVideoResponse>(ctx, 'glory_api', 'ManagementListShortVideo', request, $34.ManagementListShortVideoResponse())
+  $async.Future<$35.GetStageVideoResponse> getStageVideo($pb.ClientContext? ctx, $35.GetStageVideoRequest request) =>
+    _client.invoke<$35.GetStageVideoResponse>(ctx, 'glory_api', 'GetStageVideo', request, $35.GetStageVideoResponse())
   ;
-  $async.Future<$34.ManagementCensorShortVideoResponse> managementCensorShortVideo($pb.ClientContext? ctx, $34.ManagementCensorShortVideoRequest request) =>
-    _client.invoke<$34.ManagementCensorShortVideoResponse>(ctx, 'glory_api', 'ManagementCensorShortVideo', request, $34.ManagementCensorShortVideoResponse())
+  $async.Future<$35.DeleteStageVideoResponse> deleteStageVideo($pb.ClientContext? ctx, $35.DeleteStageVideoRequest request) =>
+    _client.invoke<$35.DeleteStageVideoResponse>(ctx, 'glory_api', 'DeleteStageVideo', request, $35.DeleteStageVideoResponse())
   ;
-  $async.Future<$34.ManagementDeleteShortVideoResponse> managementDeleteShortVideo($pb.ClientContext? ctx, $34.ManagementDeleteShortVideoRequest request) =>
-    _client.invoke<$34.ManagementDeleteShortVideoResponse>(ctx, 'glory_api', 'ManagementDeleteShortVideo', request, $34.ManagementDeleteShortVideoResponse())
+  $async.Future<$35.UpdateStageVideoResponse> updateStageVideo($pb.ClientContext? ctx, $35.UpdateStageVideoRequest request) =>
+    _client.invoke<$35.UpdateStageVideoResponse>(ctx, 'glory_api', 'UpdateStageVideo', request, $35.UpdateStageVideoResponse())
   ;
-  $async.Future<$34.ListShortVideoResponse> listShortVideo($pb.ClientContext? ctx, $34.ListShortVideoRequest request) =>
-    _client.invoke<$34.ListShortVideoResponse>(ctx, 'glory_api', 'ListShortVideo', request, $34.ListShortVideoResponse())
+  $async.Future<$35.ManagementListShortVideoResponse> managementListShortVideo($pb.ClientContext? ctx, $35.ManagementListShortVideoRequest request) =>
+    _client.invoke<$35.ManagementListShortVideoResponse>(ctx, 'glory_api', 'ManagementListShortVideo', request, $35.ManagementListShortVideoResponse())
   ;
-  $async.Future<$34.LikeShortVideoResponse> likeShortVideo($pb.ClientContext? ctx, $34.LikeShortVideoRequest request) =>
-    _client.invoke<$34.LikeShortVideoResponse>(ctx, 'glory_api', 'LikeShortVideo', request, $34.LikeShortVideoResponse())
+  $async.Future<$35.ManagementCensorShortVideoResponse> managementCensorShortVideo($pb.ClientContext? ctx, $35.ManagementCensorShortVideoRequest request) =>
+    _client.invoke<$35.ManagementCensorShortVideoResponse>(ctx, 'glory_api', 'ManagementCensorShortVideo', request, $35.ManagementCensorShortVideoResponse())
   ;
-  $async.Future<$34.FavoriteShortVideoResponse> favoriteShortVideo($pb.ClientContext? ctx, $34.FavoriteShortVideoRequest request) =>
-    _client.invoke<$34.FavoriteShortVideoResponse>(ctx, 'glory_api', 'FavoriteShortVideo', request, $34.FavoriteShortVideoResponse())
+  $async.Future<$35.ManagementDeleteShortVideoResponse> managementDeleteShortVideo($pb.ClientContext? ctx, $35.ManagementDeleteShortVideoRequest request) =>
+    _client.invoke<$35.ManagementDeleteShortVideoResponse>(ctx, 'glory_api', 'ManagementDeleteShortVideo', request, $35.ManagementDeleteShortVideoResponse())
   ;
-  $async.Future<$34.CreateShortVideoCommentResponse> createShortVideoComment($pb.ClientContext? ctx, $34.CreateShortVideoCommentRequest request) =>
-    _client.invoke<$34.CreateShortVideoCommentResponse>(ctx, 'glory_api', 'CreateShortVideoComment', request, $34.CreateShortVideoCommentResponse())
+  $async.Future<$35.ListShortVideoResponse> listShortVideo($pb.ClientContext? ctx, $35.ListShortVideoRequest request) =>
+    _client.invoke<$35.ListShortVideoResponse>(ctx, 'glory_api', 'ListShortVideo', request, $35.ListShortVideoResponse())
   ;
-  $async.Future<$34.DeleteShortVideoCommentResponse> deleteShortVideoComment($pb.ClientContext? ctx, $34.DeleteShortVideoCommentRequest request) =>
-    _client.invoke<$34.DeleteShortVideoCommentResponse>(ctx, 'glory_api', 'DeleteShortVideoComment', request, $34.DeleteShortVideoCommentResponse())
+  $async.Future<$35.LikeShortVideoResponse> likeShortVideo($pb.ClientContext? ctx, $35.LikeShortVideoRequest request) =>
+    _client.invoke<$35.LikeShortVideoResponse>(ctx, 'glory_api', 'LikeShortVideo', request, $35.LikeShortVideoResponse())
   ;
-  $async.Future<$34.ListShortVideoCommentResponse> listShortVideoComment($pb.ClientContext? ctx, $34.ListShortVideoCommentRequest request) =>
-    _client.invoke<$34.ListShortVideoCommentResponse>(ctx, 'glory_api', 'ListShortVideoComment', request, $34.ListShortVideoCommentResponse())
+  $async.Future<$35.FavoriteShortVideoResponse> favoriteShortVideo($pb.ClientContext? ctx, $35.FavoriteShortVideoRequest request) =>
+    _client.invoke<$35.FavoriteShortVideoResponse>(ctx, 'glory_api', 'FavoriteShortVideo', request, $35.FavoriteShortVideoResponse())
   ;
-  $async.Future<$34.TeacherListStudentShortVideoResponse> teacherListStudentShortVideo($pb.ClientContext? ctx, $34.TeacherListStudentShortVideoRequest request) =>
-    _client.invoke<$34.TeacherListStudentShortVideoResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideo', request, $34.TeacherListStudentShortVideoResponse())
+  $async.Future<$35.CreateShortVideoCommentResponse> createShortVideoComment($pb.ClientContext? ctx, $35.CreateShortVideoCommentRequest request) =>
+    _client.invoke<$35.CreateShortVideoCommentResponse>(ctx, 'glory_api', 'CreateShortVideoComment', request, $35.CreateShortVideoCommentResponse())
   ;
-  $async.Future<$35.CreateCouponResponse> createCoupon($pb.ClientContext? ctx, $35.CreateCouponRequest request) =>
-    _client.invoke<$35.CreateCouponResponse>(ctx, 'glory_api', 'CreateCoupon', request, $35.CreateCouponResponse())
+  $async.Future<$35.DeleteShortVideoCommentResponse> deleteShortVideoComment($pb.ClientContext? ctx, $35.DeleteShortVideoCommentRequest request) =>
+    _client.invoke<$35.DeleteShortVideoCommentResponse>(ctx, 'glory_api', 'DeleteShortVideoComment', request, $35.DeleteShortVideoCommentResponse())
   ;
-  $async.Future<$35.ListCouponResponse> listCoupon($pb.ClientContext? ctx, $35.ListCouponRequest request) =>
-    _client.invoke<$35.ListCouponResponse>(ctx, 'glory_api', 'ListCoupon', request, $35.ListCouponResponse())
+  $async.Future<$35.ListShortVideoCommentResponse> listShortVideoComment($pb.ClientContext? ctx, $35.ListShortVideoCommentRequest request) =>
+    _client.invoke<$35.ListShortVideoCommentResponse>(ctx, 'glory_api', 'ListShortVideoComment', request, $35.ListShortVideoCommentResponse())
   ;
-  $async.Future<$35.GetCouponDetailResponse> couponDetail($pb.ClientContext? ctx, $35.GetCouponDetailRequest request) =>
-    _client.invoke<$35.GetCouponDetailResponse>(ctx, 'glory_api', 'CouponDetail', request, $35.GetCouponDetailResponse())
+  $async.Future<$35.TeacherListStudentShortVideoResponse> teacherListStudentShortVideo($pb.ClientContext? ctx, $35.TeacherListStudentShortVideoRequest request) =>
+    _client.invoke<$35.TeacherListStudentShortVideoResponse>(ctx, 'glory_api', 'TeacherListStudentShortVideo', request, $35.TeacherListStudentShortVideoResponse())
   ;
-  $async.Future<$35.UpdateCouponResponse> updateCoupon($pb.ClientContext? ctx, $35.UpdateCouponRequest request) =>
-    _client.invoke<$35.UpdateCouponResponse>(ctx, 'glory_api', 'UpdateCoupon', request, $35.UpdateCouponResponse())
+  $async.Future<$36.CreateCouponResponse> createCoupon($pb.ClientContext? ctx, $36.CreateCouponRequest request) =>
+    _client.invoke<$36.CreateCouponResponse>(ctx, 'glory_api', 'CreateCoupon', request, $36.CreateCouponResponse())
   ;
-  $async.Future<$35.DeleteCouponResponse> deleteCoupon($pb.ClientContext? ctx, $35.DeleteCouponRequest request) =>
-    _client.invoke<$35.DeleteCouponResponse>(ctx, 'glory_api', 'DeleteCoupon', request, $35.DeleteCouponResponse())
+  $async.Future<$36.ListCouponResponse> listCoupon($pb.ClientContext? ctx, $36.ListCouponRequest request) =>
+    _client.invoke<$36.ListCouponResponse>(ctx, 'glory_api', 'ListCoupon', request, $36.ListCouponResponse())
   ;
-  $async.Future<$35.AbolishCouponResponse> abolishCoupon($pb.ClientContext? ctx, $35.AbolishCouponRequest request) =>
-    _client.invoke<$35.AbolishCouponResponse>(ctx, 'glory_api', 'AbolishCoupon', request, $35.AbolishCouponResponse())
+  $async.Future<$36.GetCouponDetailResponse> couponDetail($pb.ClientContext? ctx, $36.GetCouponDetailRequest request) =>
+    _client.invoke<$36.GetCouponDetailResponse>(ctx, 'glory_api', 'CouponDetail', request, $36.GetCouponDetailResponse())
   ;
-  $async.Future<$35.UpdateCouponDistributionStatusResponse> updateCouponDistributionStatus($pb.ClientContext? ctx, $35.UpdateCouponDistributionStatusRequest request) =>
-    _client.invoke<$35.UpdateCouponDistributionStatusResponse>(ctx, 'glory_api', 'UpdateCouponDistributionStatus', request, $35.UpdateCouponDistributionStatusResponse())
+  $async.Future<$36.UpdateCouponResponse> updateCoupon($pb.ClientContext? ctx, $36.UpdateCouponRequest request) =>
+    _client.invoke<$36.UpdateCouponResponse>(ctx, 'glory_api', 'UpdateCoupon', request, $36.UpdateCouponResponse())
   ;
-  $async.Future<$35.ClaimCouponResponse> claimCoupon($pb.ClientContext? ctx, $35.ClaimCouponRequest request) =>
-    _client.invoke<$35.ClaimCouponResponse>(ctx, 'glory_api', 'ClaimCoupon', request, $35.ClaimCouponResponse())
+  $async.Future<$36.DeleteCouponResponse> deleteCoupon($pb.ClientContext? ctx, $36.DeleteCouponRequest request) =>
+    _client.invoke<$36.DeleteCouponResponse>(ctx, 'glory_api', 'DeleteCoupon', request, $36.DeleteCouponResponse())
   ;
-  $async.Future<$35.ListMyCouponResponse> listMyCoupon($pb.ClientContext? ctx, $35.ListMyCouponRequest request) =>
-    _client.invoke<$35.ListMyCouponResponse>(ctx, 'glory_api', 'ListMyCoupon', request, $35.ListMyCouponResponse())
+  $async.Future<$36.AbolishCouponResponse> abolishCoupon($pb.ClientContext? ctx, $36.AbolishCouponRequest request) =>
+    _client.invoke<$36.AbolishCouponResponse>(ctx, 'glory_api', 'AbolishCoupon', request, $36.AbolishCouponResponse())
   ;
-  $async.Future<$36.CreateActivityResponse> createActivity($pb.ClientContext? ctx, $36.CreateActivityRequest request) =>
-    _client.invoke<$36.CreateActivityResponse>(ctx, 'glory_api', 'CreateActivity', request, $36.CreateActivityResponse())
+  $async.Future<$36.UpdateCouponDistributionStatusResponse> updateCouponDistributionStatus($pb.ClientContext? ctx, $36.UpdateCouponDistributionStatusRequest request) =>
+    _client.invoke<$36.UpdateCouponDistributionStatusResponse>(ctx, 'glory_api', 'UpdateCouponDistributionStatus', request, $36.UpdateCouponDistributionStatusResponse())
   ;
-  $async.Future<$36.ListActivityResponse> listActivity($pb.ClientContext? ctx, $36.ListActivityRequest request) =>
-    _client.invoke<$36.ListActivityResponse>(ctx, 'glory_api', 'ListActivity', request, $36.ListActivityResponse())
+  $async.Future<$36.ClaimCouponResponse> claimCoupon($pb.ClientContext? ctx, $36.ClaimCouponRequest request) =>
+    _client.invoke<$36.ClaimCouponResponse>(ctx, 'glory_api', 'ClaimCoupon', request, $36.ClaimCouponResponse())
   ;
-  $async.Future<$36.GetActivityDetailResponse> activityDetail($pb.ClientContext? ctx, $36.GetActivityDetailRequest request) =>
-    _client.invoke<$36.GetActivityDetailResponse>(ctx, 'glory_api', 'ActivityDetail', request, $36.GetActivityDetailResponse())
+  $async.Future<$36.ListMyCouponResponse> listMyCoupon($pb.ClientContext? ctx, $36.ListMyCouponRequest request) =>
+    _client.invoke<$36.ListMyCouponResponse>(ctx, 'glory_api', 'ListMyCoupon', request, $36.ListMyCouponResponse())
   ;
-  $async.Future<$36.UpdateActivityResponse> updateActivity($pb.ClientContext? ctx, $36.UpdateActivityRequest request) =>
-    _client.invoke<$36.UpdateActivityResponse>(ctx, 'glory_api', 'UpdateActivity', request, $36.UpdateActivityResponse())
+  $async.Future<$37.CreateActivityResponse> createActivity($pb.ClientContext? ctx, $37.CreateActivityRequest request) =>
+    _client.invoke<$37.CreateActivityResponse>(ctx, 'glory_api', 'CreateActivity', request, $37.CreateActivityResponse())
   ;
-  $async.Future<$36.DeleteActivityResponse> deleteActivity($pb.ClientContext? ctx, $36.DeleteActivityRequest request) =>
-    _client.invoke<$36.DeleteActivityResponse>(ctx, 'glory_api', 'DeleteActivity', request, $36.DeleteActivityResponse())
+  $async.Future<$37.ListActivityResponse> listActivity($pb.ClientContext? ctx, $37.ListActivityRequest request) =>
+    _client.invoke<$37.ListActivityResponse>(ctx, 'glory_api', 'ListActivity', request, $37.ListActivityResponse())
   ;
-  $async.Future<$36.DisableActivityResponse> disableActivity($pb.ClientContext? ctx, $36.DisableActivityRequest request) =>
-    _client.invoke<$36.DisableActivityResponse>(ctx, 'glory_api', 'DisableActivity', request, $36.DisableActivityResponse())
+  $async.Future<$37.GetActivityDetailResponse> activityDetail($pb.ClientContext? ctx, $37.GetActivityDetailRequest request) =>
+    _client.invoke<$37.GetActivityDetailResponse>(ctx, 'glory_api', 'ActivityDetail', request, $37.GetActivityDetailResponse())
   ;
-  $async.Future<$24.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct($pb.ClientContext? ctx, $24.GetCouponAndIntroducingProductRequest request) =>
-    _client.invoke<$24.GetCouponAndIntroducingProductResponse>(ctx, 'glory_api', 'GetCouponAndIntroducingProduct', request, $24.GetCouponAndIntroducingProductResponse())
+  $async.Future<$37.UpdateActivityResponse> updateActivity($pb.ClientContext? ctx, $37.UpdateActivityRequest request) =>
+    _client.invoke<$37.UpdateActivityResponse>(ctx, 'glory_api', 'UpdateActivity', request, $37.UpdateActivityResponse())
   ;
-  $async.Future<$37.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ClientContext? ctx, $37.CreateCourseMaterialBoxRequest request) =>
-    _client.invoke<$37.CreateCourseMaterialBoxResponse>(ctx, 'glory_api', 'CreateCourseMaterialBox', request, $37.CreateCourseMaterialBoxResponse())
+  $async.Future<$37.DeleteActivityResponse> deleteActivity($pb.ClientContext? ctx, $37.DeleteActivityRequest request) =>
+    _client.invoke<$37.DeleteActivityResponse>(ctx, 'glory_api', 'DeleteActivity', request, $37.DeleteActivityResponse())
   ;
-  $async.Future<$37.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ClientContext? ctx, $37.UpdateCourseMaterialBoxRequest request) =>
-    _client.invoke<$37.UpdateCourseMaterialBoxResponse>(ctx, 'glory_api', 'UpdateCourseMaterialBox', request, $37.UpdateCourseMaterialBoxResponse())
+  $async.Future<$37.DisableActivityResponse> disableActivity($pb.ClientContext? ctx, $37.DisableActivityRequest request) =>
+    _client.invoke<$37.DisableActivityResponse>(ctx, 'glory_api', 'DisableActivity', request, $37.DisableActivityResponse())
   ;
-  $async.Future<$37.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ClientContext? ctx, $37.ListCourseMaterialBoxRequest request) =>
-    _client.invoke<$37.ListCourseMaterialBoxResponse>(ctx, 'glory_api', 'ListCourseMaterialBox', request, $37.ListCourseMaterialBoxResponse())
+  $async.Future<$25.GetCouponAndIntroducingProductResponse> getCouponAndIntroducingProduct($pb.ClientContext? ctx, $25.GetCouponAndIntroducingProductRequest request) =>
+    _client.invoke<$25.GetCouponAndIntroducingProductResponse>(ctx, 'glory_api', 'GetCouponAndIntroducingProduct', request, $25.GetCouponAndIntroducingProductResponse())
   ;
-  $async.Future<$37.DeleteCourseMaterialBoxResponse> deleteCourseMaterialBox($pb.ClientContext? ctx, $37.DeleteCourseMaterialBoxRequest request) =>
-    _client.invoke<$37.DeleteCourseMaterialBoxResponse>(ctx, 'glory_api', 'DeleteCourseMaterialBox', request, $37.DeleteCourseMaterialBoxResponse())
+  $async.Future<$38.CreateCourseMaterialBoxResponse> createCourseMaterialBox($pb.ClientContext? ctx, $38.CreateCourseMaterialBoxRequest request) =>
+    _client.invoke<$38.CreateCourseMaterialBoxResponse>(ctx, 'glory_api', 'CreateCourseMaterialBox', request, $38.CreateCourseMaterialBoxResponse())
   ;
-  $async.Future<$37.UploadCourseMaterialResponse> uploadCourseMaterial($pb.ClientContext? ctx, $37.UploadCourseMaterialRequest request) =>
-    _client.invoke<$37.UploadCourseMaterialResponse>(ctx, 'glory_api', 'UploadCourseMaterial', request, $37.UploadCourseMaterialResponse())
+  $async.Future<$38.UpdateCourseMaterialBoxResponse> updateCourseMaterialBox($pb.ClientContext? ctx, $38.UpdateCourseMaterialBoxRequest request) =>
+    _client.invoke<$38.UpdateCourseMaterialBoxResponse>(ctx, 'glory_api', 'UpdateCourseMaterialBox', request, $38.UpdateCourseMaterialBoxResponse())
   ;
-  $async.Future<$37.ListCourseMaterialResponse> listCourseMaterial($pb.ClientContext? ctx, $37.ListCourseMaterialRequest request) =>
-    _client.invoke<$37.ListCourseMaterialResponse>(ctx, 'glory_api', 'ListCourseMaterial', request, $37.ListCourseMaterialResponse())
+  $async.Future<$38.ListCourseMaterialBoxResponse> listCourseMaterialBox($pb.ClientContext? ctx, $38.ListCourseMaterialBoxRequest request) =>
+    _client.invoke<$38.ListCourseMaterialBoxResponse>(ctx, 'glory_api', 'ListCourseMaterialBox', request, $38.ListCourseMaterialBoxResponse())
   ;
-  $async.Future<$37.DeleteCourseMaterialResponse> deleteCourseMaterial($pb.ClientContext? ctx, $37.DeleteCourseMaterialRequest request) =>
-    _client.invoke<$37.DeleteCourseMaterialResponse>(ctx, 'glory_api', 'DeleteCourseMaterial', request, $37.DeleteCourseMaterialResponse())
+  $async.Future<$38.DeleteCourseMaterialBoxResponse> deleteCourseMaterialBox($pb.ClientContext? ctx, $38.DeleteCourseMaterialBoxRequest request) =>
+    _client.invoke<$38.DeleteCourseMaterialBoxResponse>(ctx, 'glory_api', 'DeleteCourseMaterialBox', request, $38.DeleteCourseMaterialBoxResponse())
   ;
-  $async.Future<$38.GetCourseTypeTreeResponse> getCourseTypeTree($pb.ClientContext? ctx, $38.GetCourseTypeTreeRequest request) =>
-    _client.invoke<$38.GetCourseTypeTreeResponse>(ctx, 'glory_api', 'GetCourseTypeTree', request, $38.GetCourseTypeTreeResponse())
+  $async.Future<$38.UploadCourseMaterialResponse> uploadCourseMaterial($pb.ClientContext? ctx, $38.UploadCourseMaterialRequest request) =>
+    _client.invoke<$38.UploadCourseMaterialResponse>(ctx, 'glory_api', 'UploadCourseMaterial', request, $38.UploadCourseMaterialResponse())
   ;
-  $async.Future<$38.GetCourseTypeListResponse> getCourseTypeList($pb.ClientContext? ctx, $38.GetCourseTypeListRequest request) =>
-    _client.invoke<$38.GetCourseTypeListResponse>(ctx, 'glory_api', 'GetCourseTypeList', request, $38.GetCourseTypeListResponse())
+  $async.Future<$38.ListCourseMaterialResponse> listCourseMaterial($pb.ClientContext? ctx, $38.ListCourseMaterialRequest request) =>
+    _client.invoke<$38.ListCourseMaterialResponse>(ctx, 'glory_api', 'ListCourseMaterial', request, $38.ListCourseMaterialResponse())
   ;
-  $async.Future<$39.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ClientContext? ctx, $39.GetCourseModuleCodeRequest request) =>
-    _client.invoke<$39.GetCourseModuleCodeResponse>(ctx, 'glory_api', 'GetCourseModuleCode', request, $39.GetCourseModuleCodeResponse())
+  $async.Future<$38.DeleteCourseMaterialResponse> deleteCourseMaterial($pb.ClientContext? ctx, $38.DeleteCourseMaterialRequest request) =>
+    _client.invoke<$38.DeleteCourseMaterialResponse>(ctx, 'glory_api', 'DeleteCourseMaterial', request, $38.DeleteCourseMaterialResponse())
   ;
-  $async.Future<$39.GetCourseChapterCodeResponse> getCourseChapterCode($pb.ClientContext? ctx, $39.GetCourseChapterCodeRequest request) =>
-    _client.invoke<$39.GetCourseChapterCodeResponse>(ctx, 'glory_api', 'GetCourseChapterCode', request, $39.GetCourseChapterCodeResponse())
+  $async.Future<$39.GetCourseTypeTreeResponse> getCourseTypeTree($pb.ClientContext? ctx, $39.GetCourseTypeTreeRequest request) =>
+    _client.invoke<$39.GetCourseTypeTreeResponse>(ctx, 'glory_api', 'GetCourseTypeTree', request, $39.GetCourseTypeTreeResponse())
   ;
-  $async.Future<$39.CreateCourseModuleResponse> createCourseModule($pb.ClientContext? ctx, $39.CreateCourseModuleRequest request) =>
-    _client.invoke<$39.CreateCourseModuleResponse>(ctx, 'glory_api', 'CreateCourseModule', request, $39.CreateCourseModuleResponse())
+  $async.Future<$39.GetCourseTypeListResponse> getCourseTypeList($pb.ClientContext? ctx, $39.GetCourseTypeListRequest request) =>
+    _client.invoke<$39.GetCourseTypeListResponse>(ctx, 'glory_api', 'GetCourseTypeList', request, $39.GetCourseTypeListResponse())
   ;
-  $async.Future<$39.GetCourseModuleResponse> getCourseModule($pb.ClientContext? ctx, $39.GetCourseModuleRequest request) =>
-    _client.invoke<$39.GetCourseModuleResponse>(ctx, 'glory_api', 'GetCourseModule', request, $39.GetCourseModuleResponse())
+  $async.Future<$40.GetCourseModuleCodeResponse> getCourseModuleCode($pb.ClientContext? ctx, $40.GetCourseModuleCodeRequest request) =>
+    _client.invoke<$40.GetCourseModuleCodeResponse>(ctx, 'glory_api', 'GetCourseModuleCode', request, $40.GetCourseModuleCodeResponse())
   ;
-  $async.Future<$39.UpdateCourseModuleResponse> updateCourseModule($pb.ClientContext? ctx, $39.UpdateCourseModuleRequest request) =>
-    _client.invoke<$39.UpdateCourseModuleResponse>(ctx, 'glory_api', 'UpdateCourseModule', request, $39.UpdateCourseModuleResponse())
+  $async.Future<$40.GetCourseChapterCodeResponse> getCourseChapterCode($pb.ClientContext? ctx, $40.GetCourseChapterCodeRequest request) =>
+    _client.invoke<$40.GetCourseChapterCodeResponse>(ctx, 'glory_api', 'GetCourseChapterCode', request, $40.GetCourseChapterCodeResponse())
   ;
-  $async.Future<$39.DeleteCourseModuleResponse> deleteCourseModule($pb.ClientContext? ctx, $39.DeleteCourseModuleRequest request) =>
-    _client.invoke<$39.DeleteCourseModuleResponse>(ctx, 'glory_api', 'DeleteCourseModule', request, $39.DeleteCourseModuleResponse())
+  $async.Future<$40.CreateCourseModuleResponse> createCourseModule($pb.ClientContext? ctx, $40.CreateCourseModuleRequest request) =>
+    _client.invoke<$40.CreateCourseModuleResponse>(ctx, 'glory_api', 'CreateCourseModule', request, $40.CreateCourseModuleResponse())
   ;
-  $async.Future<$39.ListCourseModuleResponse> listCourseModule($pb.ClientContext? ctx, $39.ListCourseModuleRequest request) =>
-    _client.invoke<$39.ListCourseModuleResponse>(ctx, 'glory_api', 'ListCourseModule', request, $39.ListCourseModuleResponse())
+  $async.Future<$40.GetCourseModuleResponse> getCourseModule($pb.ClientContext? ctx, $40.GetCourseModuleRequest request) =>
+    _client.invoke<$40.GetCourseModuleResponse>(ctx, 'glory_api', 'GetCourseModule', request, $40.GetCourseModuleResponse())
   ;
-  $async.Future<$38.ListLatestCourseResponse> listLatestCourse($pb.ClientContext? ctx, $38.ListLatestCourseRequest request) =>
-    _client.invoke<$38.ListLatestCourseResponse>(ctx, 'glory_api', 'ListLatestCourse', request, $38.ListLatestCourseResponse())
+  $async.Future<$40.UpdateCourseModuleResponse> updateCourseModule($pb.ClientContext? ctx, $40.UpdateCourseModuleRequest request) =>
+    _client.invoke<$40.UpdateCourseModuleResponse>(ctx, 'glory_api', 'UpdateCourseModule', request, $40.UpdateCourseModuleResponse())
   ;
-  $async.Future<$38.ListHottestCourseResponse> listHottestCourse($pb.ClientContext? ctx, $38.ListHottestCourseRequest request) =>
-    _client.invoke<$38.ListHottestCourseResponse>(ctx, 'glory_api', 'ListHottestCourse', request, $38.ListHottestCourseResponse())
+  $async.Future<$40.DeleteCourseModuleResponse> deleteCourseModule($pb.ClientContext? ctx, $40.DeleteCourseModuleRequest request) =>
+    _client.invoke<$40.DeleteCourseModuleResponse>(ctx, 'glory_api', 'DeleteCourseModule', request, $40.DeleteCourseModuleResponse())
   ;
-  $async.Future<$40.CreateCmCourseResponse> createCmCourse($pb.ClientContext? ctx, $40.CreateCmCourseRequest request) =>
-    _client.invoke<$40.CreateCmCourseResponse>(ctx, 'glory_api', 'CreateCmCourse', request, $40.CreateCmCourseResponse())
+  $async.Future<$40.ListCourseModuleResponse> listCourseModule($pb.ClientContext? ctx, $40.ListCourseModuleRequest request) =>
+    _client.invoke<$40.ListCourseModuleResponse>(ctx, 'glory_api', 'ListCourseModule', request, $40.ListCourseModuleResponse())
   ;
-  $async.Future<$40.PreviewCmCourseResponse> previewCmCourse($pb.ClientContext? ctx, $40.PreviewCmCourseRequest request) =>
-    _client.invoke<$40.PreviewCmCourseResponse>(ctx, 'glory_api', 'PreviewCmCourse', request, $40.PreviewCmCourseResponse())
+  $async.Future<$39.ListLatestCourseResponse> listLatestCourse($pb.ClientContext? ctx, $39.ListLatestCourseRequest request) =>
+    _client.invoke<$39.ListLatestCourseResponse>(ctx, 'glory_api', 'ListLatestCourse', request, $39.ListLatestCourseResponse())
   ;
-  $async.Future<$41.CreateNmCourseChapterResourceResponse> createNmCourseResource($pb.ClientContext? ctx, $41.CreateNmCourseChapterResourceRequest request) =>
-    _client.invoke<$41.CreateNmCourseChapterResourceResponse>(ctx, 'glory_api', 'CreateNmCourseResource', request, $41.CreateNmCourseChapterResourceResponse())
+  $async.Future<$39.ListHottestCourseResponse> listHottestCourse($pb.ClientContext? ctx, $39.ListHottestCourseRequest request) =>
+    _client.invoke<$39.ListHottestCourseResponse>(ctx, 'glory_api', 'ListHottestCourse', request, $39.ListHottestCourseResponse())
   ;
-  $async.Future<$41.CreateNmCourseChapterResponse> createNmCourseChapter($pb.ClientContext? ctx, $41.CreateNmCourseChapterRequest request) =>
-    _client.invoke<$41.CreateNmCourseChapterResponse>(ctx, 'glory_api', 'CreateNmCourseChapter', request, $41.CreateNmCourseChapterResponse())
+  $async.Future<$41.CreateCmCourseResponse> createCmCourse($pb.ClientContext? ctx, $41.CreateCmCourseRequest request) =>
+    _client.invoke<$41.CreateCmCourseResponse>(ctx, 'glory_api', 'CreateCmCourse', request, $41.CreateCmCourseResponse())
   ;
-  $async.Future<$41.CreateNmCourseResponse> createNmCourse($pb.ClientContext? ctx, $41.CreateNmCourseRequest request) =>
-    _client.invoke<$41.CreateNmCourseResponse>(ctx, 'glory_api', 'CreateNmCourse', request, $41.CreateNmCourseResponse())
+  $async.Future<$41.PreviewCmCourseResponse> previewCmCourse($pb.ClientContext? ctx, $41.PreviewCmCourseRequest request) =>
+    _client.invoke<$41.PreviewCmCourseResponse>(ctx, 'glory_api', 'PreviewCmCourse', request, $41.PreviewCmCourseResponse())
   ;
-  $async.Future<$41.UpdateNmCourseResponse> updateNmCourse($pb.ClientContext? ctx, $41.UpdateNmCourseRequest request) =>
-    _client.invoke<$41.UpdateNmCourseResponse>(ctx, 'glory_api', 'UpdateNmCourse', request, $41.UpdateNmCourseResponse())
+  $async.Future<$42.CreateNmCourseChapterResourceResponse> createNmCourseResource($pb.ClientContext? ctx, $42.CreateNmCourseChapterResourceRequest request) =>
+    _client.invoke<$42.CreateNmCourseChapterResourceResponse>(ctx, 'glory_api', 'CreateNmCourseResource', request, $42.CreateNmCourseChapterResourceResponse())
   ;
-  $async.Future<$41.ListNmCourseResponse> listNmCourse($pb.ClientContext? ctx, $41.ListNmCourseRequest request) =>
-    _client.invoke<$41.ListNmCourseResponse>(ctx, 'glory_api', 'ListNmCourse', request, $41.ListNmCourseResponse())
+  $async.Future<$42.CreateNmCourseChapterResponse> createNmCourseChapter($pb.ClientContext? ctx, $42.CreateNmCourseChapterRequest request) =>
+    _client.invoke<$42.CreateNmCourseChapterResponse>(ctx, 'glory_api', 'CreateNmCourseChapter', request, $42.CreateNmCourseChapterResponse())
   ;
-  $async.Future<$41.NmCourseDetailResponse> nmCourseDetail($pb.ClientContext? ctx, $41.NmCourseDetailRequest request) =>
-    _client.invoke<$41.NmCourseDetailResponse>(ctx, 'glory_api', 'NmCourseDetail', request, $41.NmCourseDetailResponse())
+  $async.Future<$42.CreateNmCourseResponse> createNmCourse($pb.ClientContext? ctx, $42.CreateNmCourseRequest request) =>
+    _client.invoke<$42.CreateNmCourseResponse>(ctx, 'glory_api', 'CreateNmCourse', request, $42.CreateNmCourseResponse())
   ;
-  $async.Future<$41.DeleteNmCourseResponse> deleteNmCourse($pb.ClientContext? ctx, $41.DeleteNmCourseRequest request) =>
-    _client.invoke<$41.DeleteNmCourseResponse>(ctx, 'glory_api', 'DeleteNmCourse', request, $41.DeleteNmCourseResponse())
+  $async.Future<$42.UpdateNmCourseResponse> updateNmCourse($pb.ClientContext? ctx, $42.UpdateNmCourseRequest request) =>
+    _client.invoke<$42.UpdateNmCourseResponse>(ctx, 'glory_api', 'UpdateNmCourse', request, $42.UpdateNmCourseResponse())
   ;
-  $async.Future<$38.CreateCourseResponse> createCourse($pb.ClientContext? ctx, $38.CreateCourseRequest request) =>
-    _client.invoke<$38.CreateCourseResponse>(ctx, 'glory_api', 'CreateCourse', request, $38.CreateCourseResponse())
+  $async.Future<$42.ListNmCourseResponse> listNmCourse($pb.ClientContext? ctx, $42.ListNmCourseRequest request) =>
+    _client.invoke<$42.ListNmCourseResponse>(ctx, 'glory_api', 'ListNmCourse', request, $42.ListNmCourseResponse())
   ;
-  $async.Future<$38.GetCourseResponse> getCourse($pb.ClientContext? ctx, $38.GetCourseRequest request) =>
-    _client.invoke<$38.GetCourseResponse>(ctx, 'glory_api', 'GetCourse', request, $38.GetCourseResponse())
+  $async.Future<$42.NmCourseDetailResponse> nmCourseDetail($pb.ClientContext? ctx, $42.NmCourseDetailRequest request) =>
+    _client.invoke<$42.NmCourseDetailResponse>(ctx, 'glory_api', 'NmCourseDetail', request, $42.NmCourseDetailResponse())
   ;
-  $async.Future<$38.UpdateCourseResponse> updateCourse($pb.ClientContext? ctx, $38.UpdateCourseRequest request) =>
-    _client.invoke<$38.UpdateCourseResponse>(ctx, 'glory_api', 'UpdateCourse', request, $38.UpdateCourseResponse())
+  $async.Future<$42.DeleteNmCourseResponse> deleteNmCourse($pb.ClientContext? ctx, $42.DeleteNmCourseRequest request) =>
+    _client.invoke<$42.DeleteNmCourseResponse>(ctx, 'glory_api', 'DeleteNmCourse', request, $42.DeleteNmCourseResponse())
   ;
-  $async.Future<$38.DeleteCourseResponse> deleteCourse($pb.ClientContext? ctx, $38.DeleteCourseRequest request) =>
-    _client.invoke<$38.DeleteCourseResponse>(ctx, 'glory_api', 'DeleteCourse', request, $38.DeleteCourseResponse())
+  $async.Future<$39.CreateCourseResponse> createCourse($pb.ClientContext? ctx, $39.CreateCourseRequest request) =>
+    _client.invoke<$39.CreateCourseResponse>(ctx, 'glory_api', 'CreateCourse', request, $39.CreateCourseResponse())
   ;
-  $async.Future<$38.ListCourseResponse> listCourse($pb.ClientContext? ctx, $38.ListCourseRequest request) =>
-    _client.invoke<$38.ListCourseResponse>(ctx, 'glory_api', 'ListCourse', request, $38.ListCourseResponse())
+  $async.Future<$39.GetCourseResponse> getCourse($pb.ClientContext? ctx, $39.GetCourseRequest request) =>
+    _client.invoke<$39.GetCourseResponse>(ctx, 'glory_api', 'GetCourse', request, $39.GetCourseResponse())
   ;
-  $async.Future<$42.CreateKnowledgeGraphResponse> createKnowledgeGraph($pb.ClientContext? ctx, $42.CreateKnowledgeGraphRequest request) =>
-    _client.invoke<$42.CreateKnowledgeGraphResponse>(ctx, 'glory_api', 'CreateKnowledgeGraph', request, $42.CreateKnowledgeGraphResponse())
+  $async.Future<$39.UpdateCourseResponse> updateCourse($pb.ClientContext? ctx, $39.UpdateCourseRequest request) =>
+    _client.invoke<$39.UpdateCourseResponse>(ctx, 'glory_api', 'UpdateCourse', request, $39.UpdateCourseResponse())
   ;
-  $async.Future<$42.GetKnowledgeGraphResponse> getKnowledgeGraph($pb.ClientContext? ctx, $42.GetKnowledgeGraphRequest request) =>
-    _client.invoke<$42.GetKnowledgeGraphResponse>(ctx, 'glory_api', 'GetKnowledgeGraph', request, $42.GetKnowledgeGraphResponse())
+  $async.Future<$39.DeleteCourseResponse> deleteCourse($pb.ClientContext? ctx, $39.DeleteCourseRequest request) =>
+    _client.invoke<$39.DeleteCourseResponse>(ctx, 'glory_api', 'DeleteCourse', request, $39.DeleteCourseResponse())
   ;
-  $async.Future<$42.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode($pb.ClientContext? ctx, $42.GetKnowledgeGraphNodeRequest request) =>
-    _client.invoke<$42.GetKnowledgeGraphNodeResponse>(ctx, 'glory_api', 'GetKnowledgeGraphNode', request, $42.GetKnowledgeGraphNodeResponse())
+  $async.Future<$39.ListCourseResponse> listCourse($pb.ClientContext? ctx, $39.ListCourseRequest request) =>
+    _client.invoke<$39.ListCourseResponse>(ctx, 'glory_api', 'ListCourse', request, $39.ListCourseResponse())
   ;
-  $async.Future<$38.GetCourseIdsResponse> getCourseIds($pb.ClientContext? ctx, $38.GetCourseIdsRequest request) =>
-    _client.invoke<$38.GetCourseIdsResponse>(ctx, 'glory_api', 'GetCourseIds', request, $38.GetCourseIdsResponse())
+  $async.Future<$43.CreateKnowledgeGraphResponse> createKnowledgeGraph($pb.ClientContext? ctx, $43.CreateKnowledgeGraphRequest request) =>
+    _client.invoke<$43.CreateKnowledgeGraphResponse>(ctx, 'glory_api', 'CreateKnowledgeGraph', request, $43.CreateKnowledgeGraphResponse())
   ;
-  $async.Future<$43.EnrollCourseResponse> enrollCourse($pb.ClientContext? ctx, $43.EnrollCourseRequest request) =>
-    _client.invoke<$43.EnrollCourseResponse>(ctx, 'glory_api', 'EnrollCourse', request, $43.EnrollCourseResponse())
+  $async.Future<$43.GetKnowledgeGraphResponse> getKnowledgeGraph($pb.ClientContext? ctx, $43.GetKnowledgeGraphRequest request) =>
+    _client.invoke<$43.GetKnowledgeGraphResponse>(ctx, 'glory_api', 'GetKnowledgeGraph', request, $43.GetKnowledgeGraphResponse())
   ;
-  $async.Future<$43.DeleteMyCourseResponse> deleteMyCourse($pb.ClientContext? ctx, $43.DeleteMyCourseRequest request) =>
-    _client.invoke<$43.DeleteMyCourseResponse>(ctx, 'glory_api', 'DeleteMyCourse', request, $43.DeleteMyCourseResponse())
+  $async.Future<$43.GetKnowledgeGraphNodeResponse> getKnowledgeGraphNode($pb.ClientContext? ctx, $43.GetKnowledgeGraphNodeRequest request) =>
+    _client.invoke<$43.GetKnowledgeGraphNodeResponse>(ctx, 'glory_api', 'GetKnowledgeGraphNode', request, $43.GetKnowledgeGraphNodeResponse())
   ;
-  $async.Future<$43.UpdateCourseProgressResponse> updateCourseProgress($pb.ClientContext? ctx, $43.UpdateCourseProgressRequest request) =>
-    _client.invoke<$43.UpdateCourseProgressResponse>(ctx, 'glory_api', 'UpdateCourseProgress', request, $43.UpdateCourseProgressResponse())
+  $async.Future<$39.GetCourseIdsResponse> getCourseIds($pb.ClientContext? ctx, $39.GetCourseIdsRequest request) =>
+    _client.invoke<$39.GetCourseIdsResponse>(ctx, 'glory_api', 'GetCourseIds', request, $39.GetCourseIdsResponse())
   ;
-  $async.Future<$43.ListMyCourseResponse> listMyCourse($pb.ClientContext? ctx, $43.ListMyCourseRequest request) =>
-    _client.invoke<$43.ListMyCourseResponse>(ctx, 'glory_api', 'ListMyCourse', request, $43.ListMyCourseResponse())
+  $async.Future<$44.EnrollCourseResponse> enrollCourse($pb.ClientContext? ctx, $44.EnrollCourseRequest request) =>
+    _client.invoke<$44.EnrollCourseResponse>(ctx, 'glory_api', 'EnrollCourse', request, $44.EnrollCourseResponse())
   ;
-  $async.Future<$44.ListTeachingPlanResponse> listTeachingPlan($pb.ClientContext? ctx, $44.ListTeachingPlanRequest request) =>
-    _client.invoke<$44.ListTeachingPlanResponse>(ctx, 'glory_api', 'ListTeachingPlan', request, $44.ListTeachingPlanResponse())
+  $async.Future<$44.DeleteMyCourseResponse> deleteMyCourse($pb.ClientContext? ctx, $44.DeleteMyCourseRequest request) =>
+    _client.invoke<$44.DeleteMyCourseResponse>(ctx, 'glory_api', 'DeleteMyCourse', request, $44.DeleteMyCourseResponse())
   ;
-  $async.Future<$44.CreateTeachingPlanResponse> createTeachingPlan($pb.ClientContext? ctx, $44.CreateTeachingPlanRequest request) =>
-    _client.invoke<$44.CreateTeachingPlanResponse>(ctx, 'glory_api', 'CreateTeachingPlan', request, $44.CreateTeachingPlanResponse())
+  $async.Future<$44.UpdateCourseProgressResponse> updateCourseProgress($pb.ClientContext? ctx, $44.UpdateCourseProgressRequest request) =>
+    _client.invoke<$44.UpdateCourseProgressResponse>(ctx, 'glory_api', 'UpdateCourseProgress', request, $44.UpdateCourseProgressResponse())
   ;
-  $async.Future<$44.UpdateTeachingPlanResponse> updateTeachingPlan($pb.ClientContext? ctx, $44.UpdateTeachingPlanRequest request) =>
-    _client.invoke<$44.UpdateTeachingPlanResponse>(ctx, 'glory_api', 'UpdateTeachingPlan', request, $44.UpdateTeachingPlanResponse())
+  $async.Future<$44.ListMyCourseResponse> listMyCourse($pb.ClientContext? ctx, $44.ListMyCourseRequest request) =>
+    _client.invoke<$44.ListMyCourseResponse>(ctx, 'glory_api', 'ListMyCourse', request, $44.ListMyCourseResponse())
   ;
-  $async.Future<$44.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ClientContext? ctx, $44.DeleteTeachingPlanRequest request) =>
-    _client.invoke<$44.DeleteTeachingPlanResponse>(ctx, 'glory_api', 'DeleteTeachingPlan', request, $44.DeleteTeachingPlanResponse())
+  $async.Future<$45.ListTeachingPlanResponse> listTeachingPlan($pb.ClientContext? ctx, $45.ListTeachingPlanRequest request) =>
+    _client.invoke<$45.ListTeachingPlanResponse>(ctx, 'glory_api', 'ListTeachingPlan', request, $45.ListTeachingPlanResponse())
   ;
-  $async.Future<$44.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress($pb.ClientContext? ctx, $44.UpdateTeachingCourseProgressRequest request) =>
-    _client.invoke<$44.UpdateTeachingCourseProgressResponse>(ctx, 'glory_api', 'UpdateTeachingCourseProgress', request, $44.UpdateTeachingCourseProgressResponse())
+  $async.Future<$45.CreateTeachingPlanResponse> createTeachingPlan($pb.ClientContext? ctx, $45.CreateTeachingPlanRequest request) =>
+    _client.invoke<$45.CreateTeachingPlanResponse>(ctx, 'glory_api', 'CreateTeachingPlan', request, $45.CreateTeachingPlanResponse())
   ;
-  $async.Future<$45.CreateEduSchemeResponse> createEduScheme($pb.ClientContext? ctx, $45.CreateEduSchemeRequest request) =>
-    _client.invoke<$45.CreateEduSchemeResponse>(ctx, 'glory_api', 'CreateEduScheme', request, $45.CreateEduSchemeResponse())
+  $async.Future<$45.UpdateTeachingPlanResponse> updateTeachingPlan($pb.ClientContext? ctx, $45.UpdateTeachingPlanRequest request) =>
+    _client.invoke<$45.UpdateTeachingPlanResponse>(ctx, 'glory_api', 'UpdateTeachingPlan', request, $45.UpdateTeachingPlanResponse())
   ;
-  $async.Future<$45.UpdateEduSchemeResponse> updateEduScheme($pb.ClientContext? ctx, $45.UpdateEduSchemeRequest request) =>
-    _client.invoke<$45.UpdateEduSchemeResponse>(ctx, 'glory_api', 'UpdateEduScheme', request, $45.UpdateEduSchemeResponse())
+  $async.Future<$45.DeleteTeachingPlanResponse> deleteTeachingPlan($pb.ClientContext? ctx, $45.DeleteTeachingPlanRequest request) =>
+    _client.invoke<$45.DeleteTeachingPlanResponse>(ctx, 'glory_api', 'DeleteTeachingPlan', request, $45.DeleteTeachingPlanResponse())
   ;
-  $async.Future<$45.ListEduSchemeResponse> listEduScheme($pb.ClientContext? ctx, $45.ListEduSchemeRequest request) =>
-    _client.invoke<$45.ListEduSchemeResponse>(ctx, 'glory_api', 'ListEduScheme', request, $45.ListEduSchemeResponse())
+  $async.Future<$45.UpdateTeachingCourseProgressResponse> updateTeachingCourseProgress($pb.ClientContext? ctx, $45.UpdateTeachingCourseProgressRequest request) =>
+    _client.invoke<$45.UpdateTeachingCourseProgressResponse>(ctx, 'glory_api', 'UpdateTeachingCourseProgress', request, $45.UpdateTeachingCourseProgressResponse())
   ;
-  $async.Future<$45.EduSchemeDetailResponse> eduSchemeDetail($pb.ClientContext? ctx, $45.EduSchemeDetailRequest request) =>
-    _client.invoke<$45.EduSchemeDetailResponse>(ctx, 'glory_api', 'EduSchemeDetail', request, $45.EduSchemeDetailResponse())
+  $async.Future<$46.CreateEduSchemeResponse> createEduScheme($pb.ClientContext? ctx, $46.CreateEduSchemeRequest request) =>
+    _client.invoke<$46.CreateEduSchemeResponse>(ctx, 'glory_api', 'CreateEduScheme', request, $46.CreateEduSchemeResponse())
   ;
-  $async.Future<$45.DeleteEduSchemeResponse> deleteEduScheme($pb.ClientContext? ctx, $45.DeleteEduSchemeRequest request) =>
-    _client.invoke<$45.DeleteEduSchemeResponse>(ctx, 'glory_api', 'DeleteEduScheme', request, $45.DeleteEduSchemeResponse())
+  $async.Future<$46.UpdateEduSchemeResponse> updateEduScheme($pb.ClientContext? ctx, $46.UpdateEduSchemeRequest request) =>
+    _client.invoke<$46.UpdateEduSchemeResponse>(ctx, 'glory_api', 'UpdateEduScheme', request, $46.UpdateEduSchemeResponse())
   ;
-  $async.Future<$45.DistributeEduSchemeResponse> distributeEduScheme($pb.ClientContext? ctx, $45.DistributeEduSchemeRequest request) =>
-    _client.invoke<$45.DistributeEduSchemeResponse>(ctx, 'glory_api', 'DistributeEduScheme', request, $45.DistributeEduSchemeResponse())
+  $async.Future<$46.ListEduSchemeResponse> listEduScheme($pb.ClientContext? ctx, $46.ListEduSchemeRequest request) =>
+    _client.invoke<$46.ListEduSchemeResponse>(ctx, 'glory_api', 'ListEduScheme', request, $46.ListEduSchemeResponse())
   ;
-  $async.Future<$45.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse($pb.ClientContext? ctx, $45.GetEduSchemeLikeCourseRequest request) =>
-    _client.invoke<$45.GetEduSchemeLikeCourseResponse>(ctx, 'glory_api', 'GetEduSchemeLikeCourse', request, $45.GetEduSchemeLikeCourseResponse())
+  $async.Future<$46.EduSchemeDetailResponse> eduSchemeDetail($pb.ClientContext? ctx, $46.EduSchemeDetailRequest request) =>
+    _client.invoke<$46.EduSchemeDetailResponse>(ctx, 'glory_api', 'EduSchemeDetail', request, $46.EduSchemeDetailResponse())
   ;
-  $async.Future<$46.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ClientContext? ctx, $46.GetAndroidQRCodeRequest request) =>
-    _client.invoke<$46.GetAndroidQRCodeResponse>(ctx, 'glory_api', 'GetAndroidQRcode', request, $46.GetAndroidQRCodeResponse())
+  $async.Future<$46.DeleteEduSchemeResponse> deleteEduScheme($pb.ClientContext? ctx, $46.DeleteEduSchemeRequest request) =>
+    _client.invoke<$46.DeleteEduSchemeResponse>(ctx, 'glory_api', 'DeleteEduScheme', request, $46.DeleteEduSchemeResponse())
   ;
-  $async.Future<$47.CreateJobResponse> createJob($pb.ClientContext? ctx, $47.CreateJobRequest request) =>
-    _client.invoke<$47.CreateJobResponse>(ctx, 'glory_api', 'CreateJob', request, $47.CreateJobResponse())
+  $async.Future<$46.DistributeEduSchemeResponse> distributeEduScheme($pb.ClientContext? ctx, $46.DistributeEduSchemeRequest request) =>
+    _client.invoke<$46.DistributeEduSchemeResponse>(ctx, 'glory_api', 'DistributeEduScheme', request, $46.DistributeEduSchemeResponse())
   ;
-  $async.Future<$47.UpdateJobResponse> updateJob($pb.ClientContext? ctx, $47.UpdateJobRequest request) =>
-    _client.invoke<$47.UpdateJobResponse>(ctx, 'glory_api', 'UpdateJob', request, $47.UpdateJobResponse())
+  $async.Future<$46.GetEduSchemeLikeCourseResponse> getEduSchemeLikeCourse($pb.ClientContext? ctx, $46.GetEduSchemeLikeCourseRequest request) =>
+    _client.invoke<$46.GetEduSchemeLikeCourseResponse>(ctx, 'glory_api', 'GetEduSchemeLikeCourse', request, $46.GetEduSchemeLikeCourseResponse())
   ;
-  $async.Future<$47.DeleteJobResponse> deleteJob($pb.ClientContext? ctx, $47.DeleteJobRequest request) =>
-    _client.invoke<$47.DeleteJobResponse>(ctx, 'glory_api', 'DeleteJob', request, $47.DeleteJobResponse())
+  $async.Future<$47.GetAndroidQRCodeResponse> getAndroidQRcode($pb.ClientContext? ctx, $47.GetAndroidQRCodeRequest request) =>
+    _client.invoke<$47.GetAndroidQRCodeResponse>(ctx, 'glory_api', 'GetAndroidQRcode', request, $47.GetAndroidQRCodeResponse())
   ;
-  $async.Future<$47.ListJobResponse> listJob($pb.ClientContext? ctx, $47.ListJobRequest request) =>
-    _client.invoke<$47.ListJobResponse>(ctx, 'glory_api', 'ListJob', request, $47.ListJobResponse())
+  $async.Future<$48.CreateJobResponse> createJob($pb.ClientContext? ctx, $48.CreateJobRequest request) =>
+    _client.invoke<$48.CreateJobResponse>(ctx, 'glory_api', 'CreateJob', request, $48.CreateJobResponse())
   ;
-  $async.Future<$48.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ClientContext? ctx, $48.GetSchoolLiveTrafficChartRequest request) =>
-    _client.invoke<$48.GetSchoolLiveTrafficChartResponse>(ctx, 'glory_api', 'GetSchooLiveChart', request, $48.GetSchoolLiveTrafficChartResponse())
+  $async.Future<$48.UpdateJobResponse> updateJob($pb.ClientContext? ctx, $48.UpdateJobRequest request) =>
+    _client.invoke<$48.UpdateJobResponse>(ctx, 'glory_api', 'UpdateJob', request, $48.UpdateJobResponse())
   ;
-  $async.Future<$48.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ClientContext? ctx, $48.ListSchoolLiveTrafficRequest request) =>
-    _client.invoke<$48.ListSchoolLiveTrafficResponse>(ctx, 'glory_api', 'ListSchooLiveTraffic', request, $48.ListSchoolLiveTrafficResponse())
+  $async.Future<$48.DeleteJobResponse> deleteJob($pb.ClientContext? ctx, $48.DeleteJobRequest request) =>
+    _client.invoke<$48.DeleteJobResponse>(ctx, 'glory_api', 'DeleteJob', request, $48.DeleteJobResponse())
   ;
-  $async.Future<$48.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ClientContext? ctx, $48.GetAllLiveTrafficRequest request) =>
-    _client.invoke<$48.GetAllLiveTrafficResponse>(ctx, 'glory_api', 'GetLiveAllTraffic', request, $48.GetAllLiveTrafficResponse())
+  $async.Future<$48.ListJobResponse> listJob($pb.ClientContext? ctx, $48.ListJobRequest request) =>
+    _client.invoke<$48.ListJobResponse>(ctx, 'glory_api', 'ListJob', request, $48.ListJobResponse())
   ;
-  $async.Future<$48.GetSchooLiveTrafficResponse> getSchooLiveTraffic($pb.ClientContext? ctx, $48.GetSchooLiveTrafficRequest request) =>
-    _client.invoke<$48.GetSchooLiveTrafficResponse>(ctx, 'glory_api', 'GetSchooLiveTraffic', request, $48.GetSchooLiveTrafficResponse())
+  $async.Future<$49.GetSchoolLiveTrafficChartResponse> getSchooLiveChart($pb.ClientContext? ctx, $49.GetSchoolLiveTrafficChartRequest request) =>
+    _client.invoke<$49.GetSchoolLiveTrafficChartResponse>(ctx, 'glory_api', 'GetSchooLiveChart', request, $49.GetSchoolLiveTrafficChartResponse())
   ;
-  $async.Future<$48.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig($pb.ClientContext? ctx, $48.ListTenantLiveTrafficConfigRequest request) =>
-    _client.invoke<$48.ListTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'ListTenantTrafficConfig', request, $48.ListTenantLiveTrafficConfigResponse())
+  $async.Future<$49.ListSchoolLiveTrafficResponse> listSchooLiveTraffic($pb.ClientContext? ctx, $49.ListSchoolLiveTrafficRequest request) =>
+    _client.invoke<$49.ListSchoolLiveTrafficResponse>(ctx, 'glory_api', 'ListSchooLiveTraffic', request, $49.ListSchoolLiveTrafficResponse())
   ;
-  $async.Future<$48.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ClientContext? ctx, $48.UpdateTenantLiveTrafficConfigRequest request) =>
-    _client.invoke<$48.UpdateTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'UpdateTenantTrafficConfig', request, $48.UpdateTenantLiveTrafficConfigResponse())
+  $async.Future<$49.GetAllLiveTrafficResponse> getLiveAllTraffic($pb.ClientContext? ctx, $49.GetAllLiveTrafficRequest request) =>
+    _client.invoke<$49.GetAllLiveTrafficResponse>(ctx, 'glory_api', 'GetLiveAllTraffic', request, $49.GetAllLiveTrafficResponse())
   ;
-  $async.Future<$48.ListTrafficWarningResponse> listTrafficWarning($pb.ClientContext? ctx, $48.ListTrafficWarningRequest request) =>
-    _client.invoke<$48.ListTrafficWarningResponse>(ctx, 'glory_api', 'ListTrafficWarning', request, $48.ListTrafficWarningResponse())
+  $async.Future<$49.GetSchooLiveTrafficResponse> getSchooLiveTraffic($pb.ClientContext? ctx, $49.GetSchooLiveTrafficRequest request) =>
+    _client.invoke<$49.GetSchooLiveTrafficResponse>(ctx, 'glory_api', 'GetSchooLiveTraffic', request, $49.GetSchooLiveTrafficResponse())
   ;
-  $async.Future<$48.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ClientContext? ctx, $48.DeleteTrafficWarningRequest request) =>
-    _client.invoke<$48.DeleteTrafficWarningResponse>(ctx, 'glory_api', 'DeleteTrafficWarning', request, $48.DeleteTrafficWarningResponse())
+  $async.Future<$49.ListTenantLiveTrafficConfigResponse> listTenantTrafficConfig($pb.ClientContext? ctx, $49.ListTenantLiveTrafficConfigRequest request) =>
+    _client.invoke<$49.ListTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'ListTenantTrafficConfig', request, $49.ListTenantLiveTrafficConfigResponse())
   ;
-  $async.Future<$49.CreateLiveControlResponse> createLiveControl($pb.ClientContext? ctx, $49.CreateLiveControlRequest request) =>
-    _client.invoke<$49.CreateLiveControlResponse>(ctx, 'glory_api', 'CreateLiveControl', request, $49.CreateLiveControlResponse())
+  $async.Future<$49.UpdateTenantLiveTrafficConfigResponse> updateTenantTrafficConfig($pb.ClientContext? ctx, $49.UpdateTenantLiveTrafficConfigRequest request) =>
+    _client.invoke<$49.UpdateTenantLiveTrafficConfigResponse>(ctx, 'glory_api', 'UpdateTenantTrafficConfig', request, $49.UpdateTenantLiveTrafficConfigResponse())
   ;
-  $async.Future<$49.UpdateLiveControlResponse> updateLiveControl($pb.ClientContext? ctx, $49.UpdateLiveControlRequest request) =>
-    _client.invoke<$49.UpdateLiveControlResponse>(ctx, 'glory_api', 'UpdateLiveControl', request, $49.UpdateLiveControlResponse())
+  $async.Future<$49.ListTrafficWarningResponse> listTrafficWarning($pb.ClientContext? ctx, $49.ListTrafficWarningRequest request) =>
+    _client.invoke<$49.ListTrafficWarningResponse>(ctx, 'glory_api', 'ListTrafficWarning', request, $49.ListTrafficWarningResponse())
   ;
-  $async.Future<$49.ListLiveControlResponse> listLiveControl($pb.ClientContext? ctx, $49.ListLiveControlRequest request) =>
-    _client.invoke<$49.ListLiveControlResponse>(ctx, 'glory_api', 'ListLiveControl', request, $49.ListLiveControlResponse())
+  $async.Future<$49.DeleteTrafficWarningResponse> deleteTrafficWarning($pb.ClientContext? ctx, $49.DeleteTrafficWarningRequest request) =>
+    _client.invoke<$49.DeleteTrafficWarningResponse>(ctx, 'glory_api', 'DeleteTrafficWarning', request, $49.DeleteTrafficWarningResponse())
   ;
-  $async.Future<$49.DeleteLiveControlResponse> deleteLiveControl($pb.ClientContext? ctx, $49.DeleteLiveControlRequest request) =>
-    _client.invoke<$49.DeleteLiveControlResponse>(ctx, 'glory_api', 'DeleteLiveControl', request, $49.DeleteLiveControlResponse())
+  $async.Future<$50.CreateLiveControlResponse> createLiveControl($pb.ClientContext? ctx, $50.CreateLiveControlRequest request) =>
+    _client.invoke<$50.CreateLiveControlResponse>(ctx, 'glory_api', 'CreateLiveControl', request, $50.CreateLiveControlResponse())
   ;
-  $async.Future<$50.CreateQuickEvaluationResponse> createQuickEvaluationStandard($pb.ClientContext? ctx, $50.CreateQuickEvaluationRequest request) =>
-    _client.invoke<$50.CreateQuickEvaluationResponse>(ctx, 'glory_api', 'CreateQuickEvaluationStandard', request, $50.CreateQuickEvaluationResponse())
+  $async.Future<$50.UpdateLiveControlResponse> updateLiveControl($pb.ClientContext? ctx, $50.UpdateLiveControlRequest request) =>
+    _client.invoke<$50.UpdateLiveControlResponse>(ctx, 'glory_api', 'UpdateLiveControl', request, $50.UpdateLiveControlResponse())
   ;
-  $async.Future<$50.UpdateQuickEvaluationResponse> updateQuickEvaluationStandard($pb.ClientContext? ctx, $50.UpdateQuickEvaluationRequest request) =>
-    _client.invoke<$50.UpdateQuickEvaluationResponse>(ctx, 'glory_api', 'UpdateQuickEvaluationStandard', request, $50.UpdateQuickEvaluationResponse())
+  $async.Future<$50.ListLiveControlResponse> listLiveControl($pb.ClientContext? ctx, $50.ListLiveControlRequest request) =>
+    _client.invoke<$50.ListLiveControlResponse>(ctx, 'glory_api', 'ListLiveControl', request, $50.ListLiveControlResponse())
   ;
-  $async.Future<$50.DeleteQuickEvaluationResponse> deleteQuickEvaluationStandard($pb.ClientContext? ctx, $50.DeleteQuickEvaluationRequest request) =>
-    _client.invoke<$50.DeleteQuickEvaluationResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationStandard', request, $50.DeleteQuickEvaluationResponse())
+  $async.Future<$50.DeleteLiveControlResponse> deleteLiveControl($pb.ClientContext? ctx, $50.DeleteLiveControlRequest request) =>
+    _client.invoke<$50.DeleteLiveControlResponse>(ctx, 'glory_api', 'DeleteLiveControl', request, $50.DeleteLiveControlResponse())
   ;
-  $async.Future<$50.ListQuickEvaluationResponse> listQuickEvaluationStandard($pb.ClientContext? ctx, $50.ListQuickEvaluationRequest request) =>
-    _client.invoke<$50.ListQuickEvaluationResponse>(ctx, 'glory_api', 'ListQuickEvaluationStandard', request, $50.ListQuickEvaluationResponse())
+  $async.Future<$51.CreateQuickEvaluationResponse> createQuickEvaluationStandard($pb.ClientContext? ctx, $51.CreateQuickEvaluationRequest request) =>
+    _client.invoke<$51.CreateQuickEvaluationResponse>(ctx, 'glory_api', 'CreateQuickEvaluationStandard', request, $51.CreateQuickEvaluationResponse())
   ;
-  $async.Future<$24.GetLiveReplayResponse> getLiveReplay($pb.ClientContext? ctx, $24.GetLiveReplayRequest request) =>
-    _client.invoke<$24.GetLiveReplayResponse>(ctx, 'glory_api', 'GetLiveReplay', request, $24.GetLiveReplayResponse())
+  $async.Future<$51.UpdateQuickEvaluationResponse> updateQuickEvaluationStandard($pb.ClientContext? ctx, $51.UpdateQuickEvaluationRequest request) =>
+    _client.invoke<$51.UpdateQuickEvaluationResponse>(ctx, 'glory_api', 'UpdateQuickEvaluationStandard', request, $51.UpdateQuickEvaluationResponse())
   ;
-  $async.Future<$50.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ClientContext? ctx, $50.CreateQuickEvaluationReportRequest request) =>
-    _client.invoke<$50.CreateQuickEvaluationReportResponse>(ctx, 'glory_api', 'CreateQuickEvaluationReport', request, $50.CreateQuickEvaluationReportResponse())
+  $async.Future<$51.DeleteQuickEvaluationResponse> deleteQuickEvaluationStandard($pb.ClientContext? ctx, $51.DeleteQuickEvaluationRequest request) =>
+    _client.invoke<$51.DeleteQuickEvaluationResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationStandard', request, $51.DeleteQuickEvaluationResponse())
   ;
-  $async.Future<$50.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ClientContext? ctx, $50.ListQuickEvaluationReportRequest request) =>
-    _client.invoke<$50.ListQuickEvaluationReportResponse>(ctx, 'glory_api', 'ListQuickEvaluationReport', request, $50.ListQuickEvaluationReportResponse())
+  $async.Future<$51.ListQuickEvaluationResponse> listQuickEvaluationStandard($pb.ClientContext? ctx, $51.ListQuickEvaluationRequest request) =>
+    _client.invoke<$51.ListQuickEvaluationResponse>(ctx, 'glory_api', 'ListQuickEvaluationStandard', request, $51.ListQuickEvaluationResponse())
   ;
-  $async.Future<$50.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ClientContext? ctx, $50.GetQuickEvaluationReportRequest request) =>
-    _client.invoke<$50.GetQuickEvaluationReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationReport', request, $50.GetQuickEvaluationReportResponse())
+  $async.Future<$25.GetLiveReplayResponse> getLiveReplay($pb.ClientContext? ctx, $25.GetLiveReplayRequest request) =>
+    _client.invoke<$25.GetLiveReplayResponse>(ctx, 'glory_api', 'GetLiveReplay', request, $25.GetLiveReplayResponse())
   ;
-  $async.Future<$50.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ClientContext? ctx, $50.DeleteQuickEvaluationReportRequest request) =>
-    _client.invoke<$50.DeleteQuickEvaluationReportResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationReport', request, $50.DeleteQuickEvaluationReportResponse())
+  $async.Future<$51.CreateQuickEvaluationReportResponse> createQuickEvaluationReport($pb.ClientContext? ctx, $51.CreateQuickEvaluationReportRequest request) =>
+    _client.invoke<$51.CreateQuickEvaluationReportResponse>(ctx, 'glory_api', 'CreateQuickEvaluationReport', request, $51.CreateQuickEvaluationReportResponse())
   ;
-  $async.Future<$50.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ClientContext? ctx, $50.GetQuickEvaluationDetailRequest request) =>
-    _client.invoke<$50.GetQuickEvaluationDetailResponse>(ctx, 'glory_api', 'GetQuickEvaluationDetail', request, $50.GetQuickEvaluationDetailResponse())
+  $async.Future<$51.ListQuickEvaluationReportResponse> listQuickEvaluationReport($pb.ClientContext? ctx, $51.ListQuickEvaluationReportRequest request) =>
+    _client.invoke<$51.ListQuickEvaluationReportResponse>(ctx, 'glory_api', 'ListQuickEvaluationReport', request, $51.ListQuickEvaluationReportResponse())
   ;
-  $async.Future<$46.CreateVersionLogResponse> createVersionLog($pb.ClientContext? ctx, $46.CreateVersionLogRequest request) =>
-    _client.invoke<$46.CreateVersionLogResponse>(ctx, 'glory_api', 'CreateVersionLog', request, $46.CreateVersionLogResponse())
+  $async.Future<$51.GetQuickEvaluationReportResponse> getQuickEvaluationReport($pb.ClientContext? ctx, $51.GetQuickEvaluationReportRequest request) =>
+    _client.invoke<$51.GetQuickEvaluationReportResponse>(ctx, 'glory_api', 'GetQuickEvaluationReport', request, $51.GetQuickEvaluationReportResponse())
   ;
-  $async.Future<$46.UpdateVersionLogResponse> updateVersionLog($pb.ClientContext? ctx, $46.UpdateVersionLogRequest request) =>
-    _client.invoke<$46.UpdateVersionLogResponse>(ctx, 'glory_api', 'UpdateVersionLog', request, $46.UpdateVersionLogResponse())
+  $async.Future<$51.DeleteQuickEvaluationReportResponse> deleteQuickEvaluationReport($pb.ClientContext? ctx, $51.DeleteQuickEvaluationReportRequest request) =>
+    _client.invoke<$51.DeleteQuickEvaluationReportResponse>(ctx, 'glory_api', 'DeleteQuickEvaluationReport', request, $51.DeleteQuickEvaluationReportResponse())
   ;
-  $async.Future<$46.ListVersionLogResponse> listVersionLog($pb.ClientContext? ctx, $46.ListVersionLogRequest request) =>
-    _client.invoke<$46.ListVersionLogResponse>(ctx, 'glory_api', 'ListVersionLog', request, $46.ListVersionLogResponse())
+  $async.Future<$51.GetQuickEvaluationDetailResponse> getQuickEvaluationDetail($pb.ClientContext? ctx, $51.GetQuickEvaluationDetailRequest request) =>
+    _client.invoke<$51.GetQuickEvaluationDetailResponse>(ctx, 'glory_api', 'GetQuickEvaluationDetail', request, $51.GetQuickEvaluationDetailResponse())
   ;
-  $async.Future<$46.DeleteVersionLogResponse> deleteVersionLog($pb.ClientContext? ctx, $46.DeleteVersionLogRequest request) =>
-    _client.invoke<$46.DeleteVersionLogResponse>(ctx, 'glory_api', 'DeleteVersionLog', request, $46.DeleteVersionLogResponse())
+  $async.Future<$47.CreateVersionLogResponse> createVersionLog($pb.ClientContext? ctx, $47.CreateVersionLogRequest request) =>
+    _client.invoke<$47.CreateVersionLogResponse>(ctx, 'glory_api', 'CreateVersionLog', request, $47.CreateVersionLogResponse())
   ;
-  $async.Future<$46.GetLatestVersionResponse> getLatestVersion($pb.ClientContext? ctx, $46.GetLatestVersionRequest request) =>
-    _client.invoke<$46.GetLatestVersionResponse>(ctx, 'glory_api', 'GetLatestVersion', request, $46.GetLatestVersionResponse())
+  $async.Future<$47.UpdateVersionLogResponse> updateVersionLog($pb.ClientContext? ctx, $47.UpdateVersionLogRequest request) =>
+    _client.invoke<$47.UpdateVersionLogResponse>(ctx, 'glory_api', 'UpdateVersionLog', request, $47.UpdateVersionLogResponse())
   ;
-  $async.Future<$51.GetTaskConfigResponse> getTaskConfig($pb.ClientContext? ctx, $51.GetTaskConfigRequest request) =>
-    _client.invoke<$51.GetTaskConfigResponse>(ctx, 'glory_api', 'GetTaskConfig', request, $51.GetTaskConfigResponse())
+  $async.Future<$47.ListVersionLogResponse> listVersionLog($pb.ClientContext? ctx, $47.ListVersionLogRequest request) =>
+    _client.invoke<$47.ListVersionLogResponse>(ctx, 'glory_api', 'ListVersionLog', request, $47.ListVersionLogResponse())
   ;
-  $async.Future<$51.CreateSystemTaskResponse> createSystemTask($pb.ClientContext? ctx, $51.CreateSystemTaskRequest request) =>
-    _client.invoke<$51.CreateSystemTaskResponse>(ctx, 'glory_api', 'CreateSystemTask', request, $51.CreateSystemTaskResponse())
+  $async.Future<$47.DeleteVersionLogResponse> deleteVersionLog($pb.ClientContext? ctx, $47.DeleteVersionLogRequest request) =>
+    _client.invoke<$47.DeleteVersionLogResponse>(ctx, 'glory_api', 'DeleteVersionLog', request, $47.DeleteVersionLogResponse())
   ;
-  $async.Future<$51.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $51.ListSystemTaskRequest request) =>
-    _client.invoke<$51.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $51.ListSystemTaskResponse())
+  $async.Future<$47.GetLatestVersionResponse> getLatestVersion($pb.ClientContext? ctx, $47.GetLatestVersionRequest request) =>
+    _client.invoke<$47.GetLatestVersionResponse>(ctx, 'glory_api', 'GetLatestVersion', request, $47.GetLatestVersionResponse())
   ;
-  $async.Future<$51.GetSystemTaskResponse> getSystemTask($pb.ClientContext? ctx, $51.GetSystemTaskRequest request) =>
-    _client.invoke<$51.GetSystemTaskResponse>(ctx, 'glory_api', 'GetSystemTask', request, $51.GetSystemTaskResponse())
+  $async.Future<$52.GetTaskConfigResponse> getTaskConfig($pb.ClientContext? ctx, $52.GetTaskConfigRequest request) =>
+    _client.invoke<$52.GetTaskConfigResponse>(ctx, 'glory_api', 'GetTaskConfig', request, $52.GetTaskConfigResponse())
   ;
-  $async.Future<$51.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $51.UpdateSystemTaskRequest request) =>
-    _client.invoke<$51.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $51.UpdateSystemTaskResponse())
+  $async.Future<$52.CreateSystemTaskResponse> createSystemTask($pb.ClientContext? ctx, $52.CreateSystemTaskRequest request) =>
+    _client.invoke<$52.CreateSystemTaskResponse>(ctx, 'glory_api', 'CreateSystemTask', request, $52.CreateSystemTaskResponse())
   ;
-  $async.Future<$51.DeleteSystemTaskResponse> deleteSystemTask($pb.ClientContext? ctx, $51.DeleteSystemTaskRequest request) =>
-    _client.invoke<$51.DeleteSystemTaskResponse>(ctx, 'glory_api', 'DeleteSystemTask', request, $51.DeleteSystemTaskResponse())
+  $async.Future<$52.ListSystemTaskResponse> listSystemTask($pb.ClientContext? ctx, $52.ListSystemTaskRequest request) =>
+    _client.invoke<$52.ListSystemTaskResponse>(ctx, 'glory_api', 'ListSystemTask', request, $52.ListSystemTaskResponse())
   ;
-  $async.Future<$52.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ClientContext? ctx, $52.CreateTeacherTaskTemplateRequest request) =>
-    _client.invoke<$52.CreateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'CreateTeacherTaskTemplate', request, $52.CreateTeacherTaskTemplateResponse())
+  $async.Future<$52.GetSystemTaskResponse> getSystemTask($pb.ClientContext? ctx, $52.GetSystemTaskRequest request) =>
+    _client.invoke<$52.GetSystemTaskResponse>(ctx, 'glory_api', 'GetSystemTask', request, $52.GetSystemTaskResponse())
   ;
-  $async.Future<$52.UpdateTeacherTaskTemplateResponse> updateTeacherTaskTemplate($pb.ClientContext? ctx, $52.UpdateTeacherTaskTemplateRequest request) =>
-    _client.invoke<$52.UpdateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'UpdateTeacherTaskTemplate', request, $52.UpdateTeacherTaskTemplateResponse())
+  $async.Future<$52.UpdateSystemTaskResponse> updateSystemTask($pb.ClientContext? ctx, $52.UpdateSystemTaskRequest request) =>
+    _client.invoke<$52.UpdateSystemTaskResponse>(ctx, 'glory_api', 'UpdateSystemTask', request, $52.UpdateSystemTaskResponse())
   ;
-  $async.Future<$52.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ClientContext? ctx, $52.ListTeacherTaskTemplateRequest request) =>
-    _client.invoke<$52.ListTeacherTaskTemplateResponse>(ctx, 'glory_api', 'ListTeacherTaskTemplate', request, $52.ListTeacherTaskTemplateResponse())
+  $async.Future<$52.DeleteSystemTaskResponse> deleteSystemTask($pb.ClientContext? ctx, $52.DeleteSystemTaskRequest request) =>
+    _client.invoke<$52.DeleteSystemTaskResponse>(ctx, 'glory_api', 'DeleteSystemTask', request, $52.DeleteSystemTaskResponse())
   ;
-  $async.Future<$52.GetTeacherTaskTemplateResponse> getTeacherTaskTemplate($pb.ClientContext? ctx, $52.GetTeacherTaskTemplateRequest request) =>
-    _client.invoke<$52.GetTeacherTaskTemplateResponse>(ctx, 'glory_api', 'GetTeacherTaskTemplate', request, $52.GetTeacherTaskTemplateResponse())
+  $async.Future<$53.CreateTeacherTaskTemplateResponse> createTeacherTaskTemplate($pb.ClientContext? ctx, $53.CreateTeacherTaskTemplateRequest request) =>
+    _client.invoke<$53.CreateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'CreateTeacherTaskTemplate', request, $53.CreateTeacherTaskTemplateResponse())
   ;
-  $async.Future<$52.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ClientContext? ctx, $52.DeleteTeacherTaskTemplateRequest request) =>
-    _client.invoke<$52.DeleteTeacherTaskTemplateResponse>(ctx, 'glory_api', 'DeleteTeacherTaskTemplate', request, $52.DeleteTeacherTaskTemplateResponse())
+  $async.Future<$53.UpdateTeacherTaskTemplateResponse> updateTeacherTaskTemplate($pb.ClientContext? ctx, $53.UpdateTeacherTaskTemplateRequest request) =>
+    _client.invoke<$53.UpdateTeacherTaskTemplateResponse>(ctx, 'glory_api', 'UpdateTeacherTaskTemplate', request, $53.UpdateTeacherTaskTemplateResponse())
   ;
-  $async.Future<$53.CreateTeacherTaskResponse> createTeacherTask($pb.ClientContext? ctx, $53.CreateTeacherTaskRequest request) =>
-    _client.invoke<$53.CreateTeacherTaskResponse>(ctx, 'glory_api', 'CreateTeacherTask', request, $53.CreateTeacherTaskResponse())
+  $async.Future<$53.ListTeacherTaskTemplateResponse> listTeacherTaskTemplate($pb.ClientContext? ctx, $53.ListTeacherTaskTemplateRequest request) =>
+    _client.invoke<$53.ListTeacherTaskTemplateResponse>(ctx, 'glory_api', 'ListTeacherTaskTemplate', request, $53.ListTeacherTaskTemplateResponse())
   ;
-  $async.Future<$53.UpdateTeacherTaskResponse> updateTeacherTask($pb.ClientContext? ctx, $53.UpdateTeacherTaskRequest request) =>
-    _client.invoke<$53.UpdateTeacherTaskResponse>(ctx, 'glory_api', 'UpdateTeacherTask', request, $53.UpdateTeacherTaskResponse())
+  $async.Future<$53.GetTeacherTaskTemplateResponse> getTeacherTaskTemplate($pb.ClientContext? ctx, $53.GetTeacherTaskTemplateRequest request) =>
+    _client.invoke<$53.GetTeacherTaskTemplateResponse>(ctx, 'glory_api', 'GetTeacherTaskTemplate', request, $53.GetTeacherTaskTemplateResponse())
   ;
-  $async.Future<$53.ListTeacherTaskResponse> listTeacherTask($pb.ClientContext? ctx, $53.ListTeacherTaskRequest request) =>
-    _client.invoke<$53.ListTeacherTaskResponse>(ctx, 'glory_api', 'ListTeacherTask', request, $53.ListTeacherTaskResponse())
+  $async.Future<$53.DeleteTeacherTaskTemplateResponse> deleteTeacherTaskTemplate($pb.ClientContext? ctx, $53.DeleteTeacherTaskTemplateRequest request) =>
+    _client.invoke<$53.DeleteTeacherTaskTemplateResponse>(ctx, 'glory_api', 'DeleteTeacherTaskTemplate', request, $53.DeleteTeacherTaskTemplateResponse())
   ;
-  $async.Future<$53.GetTeacherTaskResponse> getTeacherTask($pb.ClientContext? ctx, $53.GetTeacherTaskRequest request) =>
-    _client.invoke<$53.GetTeacherTaskResponse>(ctx, 'glory_api', 'GetTeacherTask', request, $53.GetTeacherTaskResponse())
+  $async.Future<$54.CreateTeacherTaskResponse> createTeacherTask($pb.ClientContext? ctx, $54.CreateTeacherTaskRequest request) =>
+    _client.invoke<$54.CreateTeacherTaskResponse>(ctx, 'glory_api', 'CreateTeacherTask', request, $54.CreateTeacherTaskResponse())
   ;
-  $async.Future<$53.GetTeacherTaskProgressResponse> getTeacherTaskProgress($pb.ClientContext? ctx, $53.GetTeacherTaskProgressRequest request) =>
-    _client.invoke<$53.GetTeacherTaskProgressResponse>(ctx, 'glory_api', 'GetTeacherTaskProgress', request, $53.GetTeacherTaskProgressResponse())
+  $async.Future<$54.UpdateTeacherTaskResponse> updateTeacherTask($pb.ClientContext? ctx, $54.UpdateTeacherTaskRequest request) =>
+    _client.invoke<$54.UpdateTeacherTaskResponse>(ctx, 'glory_api', 'UpdateTeacherTask', request, $54.UpdateTeacherTaskResponse())
   ;
-  $async.Future<$53.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ClientContext? ctx, $53.DeleteTeacherTaskRequest request) =>
-    _client.invoke<$53.DeleteTeacherTaskResponse>(ctx, 'glory_api', 'DeleteTeacherTask', request, $53.DeleteTeacherTaskResponse())
+  $async.Future<$54.ListTeacherTaskResponse> listTeacherTask($pb.ClientContext? ctx, $54.ListTeacherTaskRequest request) =>
+    _client.invoke<$54.ListTeacherTaskResponse>(ctx, 'glory_api', 'ListTeacherTask', request, $54.ListTeacherTaskResponse())
   ;
-  $async.Future<$53.TeacherTaskStatsResponse> teacherTaskStats($pb.ClientContext? ctx, $53.TeacherTaskStatsRequest request) =>
-    _client.invoke<$53.TeacherTaskStatsResponse>(ctx, 'glory_api', 'TeacherTaskStats', request, $53.TeacherTaskStatsResponse())
+  $async.Future<$54.GetTeacherTaskResponse> getTeacherTask($pb.ClientContext? ctx, $54.GetTeacherTaskRequest request) =>
+    _client.invoke<$54.GetTeacherTaskResponse>(ctx, 'glory_api', 'GetTeacherTask', request, $54.GetTeacherTaskResponse())
   ;
-  $async.Future<$53.ListTaskStudentResponse> teacherTaskStudents($pb.ClientContext? ctx, $53.ListTaskStudentRequest request) =>
-    _client.invoke<$53.ListTaskStudentResponse>(ctx, 'glory_api', 'TeacherTaskStudents', request, $53.ListTaskStudentResponse())
+  $async.Future<$54.GetTeacherTaskProgressResponse> getTeacherTaskProgress($pb.ClientContext? ctx, $54.GetTeacherTaskProgressRequest request) =>
+    _client.invoke<$54.GetTeacherTaskProgressResponse>(ctx, 'glory_api', 'GetTeacherTaskProgress', request, $54.GetTeacherTaskProgressResponse())
   ;
-  $async.Future<$53.CountClassSubmitResponse> countClassSubmit($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountClassSubmitResponse>(ctx, 'glory_api', 'CountClassSubmit', request, $53.CountClassSubmitResponse())
+  $async.Future<$54.DeleteTeacherTaskResponse> deleteTeacherTask($pb.ClientContext? ctx, $54.DeleteTeacherTaskRequest request) =>
+    _client.invoke<$54.DeleteTeacherTaskResponse>(ctx, 'glory_api', 'DeleteTeacherTask', request, $54.DeleteTeacherTaskResponse())
   ;
-  $async.Future<$53.CountClassSubmitListResponse> countClassSubmitList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountClassSubmitListResponse>(ctx, 'glory_api', 'CountClassSubmitList', request, $53.CountClassSubmitListResponse())
+  $async.Future<$54.TeacherTaskStatsResponse> teacherTaskStats($pb.ClientContext? ctx, $54.TeacherTaskStatsRequest request) =>
+    _client.invoke<$54.TeacherTaskStatsResponse>(ctx, 'glory_api', 'TeacherTaskStats', request, $54.TeacherTaskStatsResponse())
   ;
-  $async.Future<$53.CountPositiveListResponse> countPositiveList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountPositiveListResponse>(ctx, 'glory_api', 'CountPositiveList', request, $53.CountPositiveListResponse())
+  $async.Future<$54.ListTaskStudentResponse> teacherTaskStudents($pb.ClientContext? ctx, $54.ListTaskStudentRequest request) =>
+    _client.invoke<$54.ListTaskStudentResponse>(ctx, 'glory_api', 'TeacherTaskStudents', request, $54.ListTaskStudentResponse())
   ;
-  $async.Future<$53.CountPotentialListResponse> countPotentialList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountPotentialListResponse>(ctx, 'glory_api', 'CountPotentialList', request, $53.CountPotentialListResponse())
+  $async.Future<$54.CountClassSubmitResponse> countClassSubmit($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountClassSubmitResponse>(ctx, 'glory_api', 'CountClassSubmit', request, $54.CountClassSubmitResponse())
   ;
-  $async.Future<$53.CountSubmitListResponse> countSubmitList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountSubmitListResponse>(ctx, 'glory_api', 'CountSubmitList', request, $53.CountSubmitListResponse())
+  $async.Future<$54.CountClassSubmitListResponse> countClassSubmitList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountClassSubmitListResponse>(ctx, 'glory_api', 'CountClassSubmitList', request, $54.CountClassSubmitListResponse())
   ;
-  $async.Future<$53.CountClassPassResponse> countClassPass($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountClassPassResponse>(ctx, 'glory_api', 'CountClassPass', request, $53.CountClassPassResponse())
+  $async.Future<$54.CountPositiveListResponse> countPositiveList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountPositiveListResponse>(ctx, 'glory_api', 'CountPositiveList', request, $54.CountPositiveListResponse())
   ;
-  $async.Future<$53.CountClassPassListResponse> countClassPassList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountClassPassListResponse>(ctx, 'glory_api', 'CountClassPassList', request, $53.CountClassPassListResponse())
+  $async.Future<$54.CountPotentialListResponse> countPotentialList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountPotentialListResponse>(ctx, 'glory_api', 'CountPotentialList', request, $54.CountPotentialListResponse())
   ;
-  $async.Future<$53.CountSuperStudentListResponse> countSuperStudentList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountSuperStudentListResponse>(ctx, 'glory_api', 'CountSuperStudentList', request, $53.CountSuperStudentListResponse())
+  $async.Future<$54.CountSubmitListResponse> countSubmitList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountSubmitListResponse>(ctx, 'glory_api', 'CountSubmitList', request, $54.CountSubmitListResponse())
   ;
-  $async.Future<$53.CountLaggingStudentListResponse> countLaggingStudentList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountLaggingStudentListResponse>(ctx, 'glory_api', 'CountLaggingStudentList', request, $53.CountLaggingStudentListResponse())
+  $async.Future<$54.CountClassPassResponse> countClassPass($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountClassPassResponse>(ctx, 'glory_api', 'CountClassPass', request, $54.CountClassPassResponse())
   ;
-  $async.Future<$53.CountPassListResponse> countPassList($pb.ClientContext? ctx, $53.CountTeacherTaskRequest request) =>
-    _client.invoke<$53.CountPassListResponse>(ctx, 'glory_api', 'CountPassList', request, $53.CountPassListResponse())
+  $async.Future<$54.CountClassPassListResponse> countClassPassList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountClassPassListResponse>(ctx, 'glory_api', 'CountClassPassList', request, $54.CountClassPassListResponse())
   ;
-  $async.Future<$53.CountHistoryTaskResponse> countHistoryTask($pb.ClientContext? ctx, $53.CountHistoryTaskRequest request) =>
-    _client.invoke<$53.CountHistoryTaskResponse>(ctx, 'glory_api', 'CountHistoryTask', request, $53.CountHistoryTaskResponse())
+  $async.Future<$54.CountSuperStudentListResponse> countSuperStudentList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountSuperStudentListResponse>(ctx, 'glory_api', 'CountSuperStudentList', request, $54.CountSuperStudentListResponse())
   ;
-  $async.Future<$54.ListStudentTaskResponse> listStudentTask($pb.ClientContext? ctx, $54.ListStudentTaskRequest request) =>
-    _client.invoke<$54.ListStudentTaskResponse>(ctx, 'glory_api', 'ListStudentTask', request, $54.ListStudentTaskResponse())
+  $async.Future<$54.CountLaggingStudentListResponse> countLaggingStudentList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountLaggingStudentListResponse>(ctx, 'glory_api', 'CountLaggingStudentList', request, $54.CountLaggingStudentListResponse())
   ;
-  $async.Future<$54.SubmitStudentTaskResponse> submitStudentTask($pb.ClientContext? ctx, $54.SubmitStudentTaskRequest request) =>
-    _client.invoke<$54.SubmitStudentTaskResponse>(ctx, 'glory_api', 'SubmitStudentTask', request, $54.SubmitStudentTaskResponse())
+  $async.Future<$54.CountPassListResponse> countPassList($pb.ClientContext? ctx, $54.CountTeacherTaskRequest request) =>
+    _client.invoke<$54.CountPassListResponse>(ctx, 'glory_api', 'CountPassList', request, $54.CountPassListResponse())
   ;
-  $async.Future<$54.GetStudentTaskResponse> getStudentTask($pb.ClientContext? ctx, $54.GetStudentTaskRequest request) =>
-    _client.invoke<$54.GetStudentTaskResponse>(ctx, 'glory_api', 'GetStudentTask', request, $54.GetStudentTaskResponse())
+  $async.Future<$54.CountHistoryTaskResponse> countHistoryTask($pb.ClientContext? ctx, $54.CountHistoryTaskRequest request) =>
+    _client.invoke<$54.CountHistoryTaskResponse>(ctx, 'glory_api', 'CountHistoryTask', request, $54.CountHistoryTaskResponse())
   ;
-  $async.Future<$54.TeacherListStudentTaskResponse> teacherListStudentTask($pb.ClientContext? ctx, $54.TeacherListStudentTaskRequest request) =>
-    _client.invoke<$54.TeacherListStudentTaskResponse>(ctx, 'glory_api', 'TeacherListStudentTask', request, $54.TeacherListStudentTaskResponse())
+  $async.Future<$55.ListStudentTaskResponse> listStudentTask($pb.ClientContext? ctx, $55.ListStudentTaskRequest request) =>
+    _client.invoke<$55.ListStudentTaskResponse>(ctx, 'glory_api', 'ListStudentTask', request, $55.ListStudentTaskResponse())
   ;
-  $async.Future<$54.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ClientContext? ctx, $54.TeacherEvaluateStudentTaskRequest request) =>
-    _client.invoke<$54.TeacherEvaluateStudentTaskResponse>(ctx, 'glory_api', 'TeacherEvaluateStudentTask', request, $54.TeacherEvaluateStudentTaskResponse())
+  $async.Future<$55.SubmitStudentTaskResponse> submitStudentTask($pb.ClientContext? ctx, $55.SubmitStudentTaskRequest request) =>
+    _client.invoke<$55.SubmitStudentTaskResponse>(ctx, 'glory_api', 'SubmitStudentTask', request, $55.SubmitStudentTaskResponse())
   ;
-  $async.Future<$54.StudentTaskStatsResponse> studentTaskStats($pb.ClientContext? ctx, $54.StudentTaskStatsRequest request) =>
-    _client.invoke<$54.StudentTaskStatsResponse>(ctx, 'glory_api', 'StudentTaskStats', request, $54.StudentTaskStatsResponse())
+  $async.Future<$55.GetStudentTaskResponse> getStudentTask($pb.ClientContext? ctx, $55.GetStudentTaskRequest request) =>
+    _client.invoke<$55.GetStudentTaskResponse>(ctx, 'glory_api', 'GetStudentTask', request, $55.GetStudentTaskResponse())
   ;
-  $async.Future<$54.StudentTaskEvaluateStatsResponse> studentTaskEvaluateStats($pb.ClientContext? ctx, $54.StudentTaskEvaluateStatsRequest request) =>
-    _client.invoke<$54.StudentTaskEvaluateStatsResponse>(ctx, 'glory_api', 'StudentTaskEvaluateStats', request, $54.StudentTaskEvaluateStatsResponse())
+  $async.Future<$55.TeacherListStudentTaskResponse> teacherListStudentTask($pb.ClientContext? ctx, $55.TeacherListStudentTaskRequest request) =>
+    _client.invoke<$55.TeacherListStudentTaskResponse>(ctx, 'glory_api', 'TeacherListStudentTask', request, $55.TeacherListStudentTaskResponse())
   ;
-  $async.Future<$54.StartStudentTaskTimeResponse> startStudentTaskTime($pb.ClientContext? ctx, $54.StartStudentTaskTimeRequest request) =>
-    _client.invoke<$54.StartStudentTaskTimeResponse>(ctx, 'glory_api', 'StartStudentTaskTime', request, $54.StartStudentTaskTimeResponse())
+  $async.Future<$55.TeacherEvaluateStudentTaskResponse> teacherEvaluateStudentTask($pb.ClientContext? ctx, $55.TeacherEvaluateStudentTaskRequest request) =>
+    _client.invoke<$55.TeacherEvaluateStudentTaskResponse>(ctx, 'glory_api', 'TeacherEvaluateStudentTask', request, $55.TeacherEvaluateStudentTaskResponse())
   ;
-  $async.Future<$53.DownloadTeacherTaskResponse> downloadTeacherTask($pb.ClientContext? ctx, $53.DownloadTeacherTaskRequest request) =>
-    _client.invoke<$53.DownloadTeacherTaskResponse>(ctx, 'glory_api', 'DownloadTeacherTask', request, $53.DownloadTeacherTaskResponse())
+  $async.Future<$55.StudentTaskStatsResponse> studentTaskStats($pb.ClientContext? ctx, $55.StudentTaskStatsRequest request) =>
+    _client.invoke<$55.StudentTaskStatsResponse>(ctx, 'glory_api', 'StudentTaskStats', request, $55.StudentTaskStatsResponse())
   ;
-  $async.Future<$55.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $55.ListNotificationRequest request) =>
-    _client.invoke<$55.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $55.ListNotificationResponse())
+  $async.Future<$55.StudentTaskEvaluateStatsResponse> studentTaskEvaluateStats($pb.ClientContext? ctx, $55.StudentTaskEvaluateStatsRequest request) =>
+    _client.invoke<$55.StudentTaskEvaluateStatsResponse>(ctx, 'glory_api', 'StudentTaskEvaluateStats', request, $55.StudentTaskEvaluateStatsResponse())
   ;
-  $async.Future<$55.CountNotificationResponse> countNotification($pb.ClientContext? ctx, $55.CountNotificationRequest request) =>
-    _client.invoke<$55.CountNotificationResponse>(ctx, 'glory_api', 'CountNotification', request, $55.CountNotificationResponse())
+  $async.Future<$55.StartStudentTaskTimeResponse> startStudentTaskTime($pb.ClientContext? ctx, $55.StartStudentTaskTimeRequest request) =>
+    _client.invoke<$55.StartStudentTaskTimeResponse>(ctx, 'glory_api', 'StartStudentTaskTime', request, $55.StartStudentTaskTimeResponse())
   ;
-  $async.Future<$55.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $55.ReadNotificationRequest request) =>
-    _client.invoke<$55.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $55.ReadNotificationResponse())
+  $async.Future<$54.DownloadTeacherTaskResponse> downloadTeacherTask($pb.ClientContext? ctx, $54.DownloadTeacherTaskRequest request) =>
+    _client.invoke<$54.DownloadTeacherTaskResponse>(ctx, 'glory_api', 'DownloadTeacherTask', request, $54.DownloadTeacherTaskResponse())
   ;
-  $async.Future<$55.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $55.TestNotificationRequest request) =>
-    _client.invoke<$55.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $55.TestNotificationResponse())
+  $async.Future<$56.ListNotificationResponse> listNotification($pb.ClientContext? ctx, $56.ListNotificationRequest request) =>
+    _client.invoke<$56.ListNotificationResponse>(ctx, 'glory_api', 'ListNotification', request, $56.ListNotificationResponse())
   ;
-  $async.Future<$55.DeleteNotificationResponse> deleteNotification($pb.ClientContext? ctx, $55.DeleteNotificationRequest request) =>
-    _client.invoke<$55.DeleteNotificationResponse>(ctx, 'glory_api', 'DeleteNotification', request, $55.DeleteNotificationResponse())
+  $async.Future<$56.CountNotificationResponse> countNotification($pb.ClientContext? ctx, $56.CountNotificationRequest request) =>
+    _client.invoke<$56.CountNotificationResponse>(ctx, 'glory_api', 'CountNotification', request, $56.CountNotificationResponse())
   ;
-  $async.Future<$56.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ClientContext? ctx, $56.ListUserMajorAndClasRequest request) =>
-    _client.invoke<$56.ListUserMajorAndClasResponse>(ctx, 'glory_api', 'ListUserMajorAndClass', request, $56.ListUserMajorAndClasResponse())
+  $async.Future<$56.ReadNotificationResponse> readNotification($pb.ClientContext? ctx, $56.ReadNotificationRequest request) =>
+    _client.invoke<$56.ReadNotificationResponse>(ctx, 'glory_api', 'ReadNotification', request, $56.ReadNotificationResponse())
   ;
-  $async.Future<$56.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $56.GetAggregationLiveUrlRequest request) =>
-    _client.invoke<$56.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $56.GetAggregationLiveUrlResponse())
+  $async.Future<$56.TestNotificationResponse> testNotification($pb.ClientContext? ctx, $56.TestNotificationRequest request) =>
+    _client.invoke<$56.TestNotificationResponse>(ctx, 'glory_api', 'TestNotification', request, $56.TestNotificationResponse())
   ;
-  $async.Future<$56.GetLiveBoardDataResponse> getLiveBoardData($pb.ClientContext? ctx, $56.GetLiveBoardDataRequest request) =>
-    _client.invoke<$56.GetLiveBoardDataResponse>(ctx, 'glory_api', 'GetLiveBoardData', request, $56.GetLiveBoardDataResponse())
+  $async.Future<$56.DeleteNotificationResponse> deleteNotification($pb.ClientContext? ctx, $56.DeleteNotificationRequest request) =>
+    _client.invoke<$56.DeleteNotificationResponse>(ctx, 'glory_api', 'DeleteNotification', request, $56.DeleteNotificationResponse())
   ;
-  $async.Future<$56.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ClientContext? ctx, $56.GetLiveBoardCommentsRequest request) =>
-    _client.invoke<$56.GetLiveBoardCommentsResponse>(ctx, 'glory_api', 'GetLiveBoardComments', request, $56.GetLiveBoardCommentsResponse())
+  $async.Future<$57.ListUserMajorAndClasResponse> listUserMajorAndClass($pb.ClientContext? ctx, $57.ListUserMajorAndClasRequest request) =>
+    _client.invoke<$57.ListUserMajorAndClasResponse>(ctx, 'glory_api', 'ListUserMajorAndClass', request, $57.ListUserMajorAndClasResponse())
   ;
-  $async.Future<$56.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $56.ListLivingUserRequest request) =>
-    _client.invoke<$56.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $56.ListLivingUserResponse())
+  $async.Future<$57.GetAggregationLiveUrlResponse> getAggregationLiveUrl($pb.ClientContext? ctx, $57.GetAggregationLiveUrlRequest request) =>
+    _client.invoke<$57.GetAggregationLiveUrlResponse>(ctx, 'glory_api', 'GetAggregationLiveUrl', request, $57.GetAggregationLiveUrlResponse())
   ;
-  $async.Future<$56.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $56.CloseCasterRequest request) =>
-    _client.invoke<$56.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $56.CloseCasterResponse())
+  $async.Future<$57.GetLiveBoardDataResponse> getLiveBoardData($pb.ClientContext? ctx, $57.GetLiveBoardDataRequest request) =>
+    _client.invoke<$57.GetLiveBoardDataResponse>(ctx, 'glory_api', 'GetLiveBoardData', request, $57.GetLiveBoardDataResponse())
   ;
-  $async.Future<$57.CreateArticleCreationResponse> createArticleCreation($pb.ClientContext? ctx, $57.CreateArticleCreationRequest request) =>
-    _client.invoke<$57.CreateArticleCreationResponse>(ctx, 'glory_api', 'CreateArticleCreation', request, $57.CreateArticleCreationResponse())
+  $async.Future<$57.GetLiveBoardCommentsResponse> getLiveBoardComments($pb.ClientContext? ctx, $57.GetLiveBoardCommentsRequest request) =>
+    _client.invoke<$57.GetLiveBoardCommentsResponse>(ctx, 'glory_api', 'GetLiveBoardComments', request, $57.GetLiveBoardCommentsResponse())
   ;
-  $async.Future<$57.CreateModifiedArticleCreationResponse> createModifiedArticleCreation($pb.ClientContext? ctx, $57.CreateModifiedArticleCreationRequest request) =>
-    _client.invoke<$57.CreateModifiedArticleCreationResponse>(ctx, 'glory_api', 'CreateModifiedArticleCreation', request, $57.CreateModifiedArticleCreationResponse())
+  $async.Future<$57.ListLivingUserResponse> listBoardLivingUser($pb.ClientContext? ctx, $57.ListLivingUserRequest request) =>
+    _client.invoke<$57.ListLivingUserResponse>(ctx, 'glory_api', 'ListBoardLivingUser', request, $57.ListLivingUserResponse())
   ;
-  $async.Future<$57.GetArticleDetailResponse> getArticleDetail($pb.ClientContext? ctx, $57.GetArticleDetailRequest request) =>
-    _client.invoke<$57.GetArticleDetailResponse>(ctx, 'glory_api', 'GetArticleDetail', request, $57.GetArticleDetailResponse())
+  $async.Future<$57.CloseCasterResponse> closeCaster($pb.ClientContext? ctx, $57.CloseCasterRequest request) =>
+    _client.invoke<$57.CloseCasterResponse>(ctx, 'glory_api', 'CloseCaster', request, $57.CloseCasterResponse())
   ;
-  $async.Future<$57.ListMyArticleCreationResponse> listMyArticleCreation($pb.ClientContext? ctx, $57.ListMyArticleCreationRequest request) =>
-    _client.invoke<$57.ListMyArticleCreationResponse>(ctx, 'glory_api', 'ListMyArticleCreation', request, $57.ListMyArticleCreationResponse())
+  $async.Future<$58.CreateArticleCreationResponse> createArticleCreation($pb.ClientContext? ctx, $58.CreateArticleCreationRequest request) =>
+    _client.invoke<$58.CreateArticleCreationResponse>(ctx, 'glory_api', 'CreateArticleCreation', request, $58.CreateArticleCreationResponse())
   ;
-  $async.Future<$57.CreateArticleCreationDraftResponse> createArticleCreationDraft($pb.ClientContext? ctx, $57.CreateArticleCreationDraftRequest request) =>
-    _client.invoke<$57.CreateArticleCreationDraftResponse>(ctx, 'glory_api', 'CreateArticleCreationDraft', request, $57.CreateArticleCreationDraftResponse())
+  $async.Future<$58.CreateModifiedArticleCreationResponse> createModifiedArticleCreation($pb.ClientContext? ctx, $58.CreateModifiedArticleCreationRequest request) =>
+    _client.invoke<$58.CreateModifiedArticleCreationResponse>(ctx, 'glory_api', 'CreateModifiedArticleCreation', request, $58.CreateModifiedArticleCreationResponse())
   ;
-  $async.Future<$57.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation($pb.ClientContext? ctx, $57.ListMyArticleCreationDraftRequest request) =>
-    _client.invoke<$57.ListMyArticleCreationDraftResponse>(ctx, 'glory_api', 'ListMyDraftArticleCreation', request, $57.ListMyArticleCreationDraftResponse())
+  $async.Future<$58.GetArticleDetailResponse> getArticleDetail($pb.ClientContext? ctx, $58.GetArticleDetailRequest request) =>
+    _client.invoke<$58.GetArticleDetailResponse>(ctx, 'glory_api', 'GetArticleDetail', request, $58.GetArticleDetailResponse())
   ;
-  $async.Future<$57.ArticleCreationDraftDetailResponse> draftArticleCreationDetail($pb.ClientContext? ctx, $57.ArticleCreationDraftDetailRequest request) =>
-    _client.invoke<$57.ArticleCreationDraftDetailResponse>(ctx, 'glory_api', 'DraftArticleCreationDetail', request, $57.ArticleCreationDraftDetailResponse())
+  $async.Future<$58.ListMyArticleCreationResponse> listMyArticleCreation($pb.ClientContext? ctx, $58.ListMyArticleCreationRequest request) =>
+    _client.invoke<$58.ListMyArticleCreationResponse>(ctx, 'glory_api', 'ListMyArticleCreation', request, $58.ListMyArticleCreationResponse())
   ;
-  $async.Future<$57.DeleteArticleCreationDraftResponse> deleteDraftArticleCreation($pb.ClientContext? ctx, $57.DeleteArticleCreationDraftRequest request) =>
-    _client.invoke<$57.DeleteArticleCreationDraftResponse>(ctx, 'glory_api', 'DeleteDraftArticleCreation', request, $57.DeleteArticleCreationDraftResponse())
+  $async.Future<$58.CreateArticleCreationDraftResponse> createArticleCreationDraft($pb.ClientContext? ctx, $58.CreateArticleCreationDraftRequest request) =>
+    _client.invoke<$58.CreateArticleCreationDraftResponse>(ctx, 'glory_api', 'CreateArticleCreationDraft', request, $58.CreateArticleCreationDraftResponse())
   ;
-  $async.Future<$57.ArticleCreationStatisticsResponse> articleCreationStatistics($pb.ClientContext? ctx, $57.ArticleCreationStatisticsRequest request) =>
-    _client.invoke<$57.ArticleCreationStatisticsResponse>(ctx, 'glory_api', 'ArticleCreationStatistics', request, $57.ArticleCreationStatisticsResponse())
+  $async.Future<$58.ListMyArticleCreationDraftResponse> listMyDraftArticleCreation($pb.ClientContext? ctx, $58.ListMyArticleCreationDraftRequest request) =>
+    _client.invoke<$58.ListMyArticleCreationDraftResponse>(ctx, 'glory_api', 'ListMyDraftArticleCreation', request, $58.ListMyArticleCreationDraftResponse())
   ;
-  $async.Future<$57.GetExampleArticleResponse> getExampleArticle($pb.ClientContext? ctx, $57.GetExampleArticleRequest request) =>
-    _client.invoke<$57.GetExampleArticleResponse>(ctx, 'glory_api', 'GetExampleArticle', request, $57.GetExampleArticleResponse())
+  $async.Future<$58.ArticleCreationDraftDetailResponse> draftArticleCreationDetail($pb.ClientContext? ctx, $58.ArticleCreationDraftDetailRequest request) =>
+    _client.invoke<$58.ArticleCreationDraftDetailResponse>(ctx, 'glory_api', 'DraftArticleCreationDetail', request, $58.ArticleCreationDraftDetailResponse())
   ;
-  $async.Future<$57.GetEvaluationStandardResponse> getEvaluationStandard($pb.ClientContext? ctx, $57.GetEvaluationStandardRequest request) =>
-    _client.invoke<$57.GetEvaluationStandardResponse>(ctx, 'glory_api', 'GetEvaluationStandard', request, $57.GetEvaluationStandardResponse())
+  $async.Future<$58.DeleteArticleCreationDraftResponse> deleteDraftArticleCreation($pb.ClientContext? ctx, $58.DeleteArticleCreationDraftRequest request) =>
+    _client.invoke<$58.DeleteArticleCreationDraftResponse>(ctx, 'glory_api', 'DeleteDraftArticleCreation', request, $58.DeleteArticleCreationDraftResponse())
   ;
-  $async.Future<$57.CreateEvaluationConfigResponse> createEvaluationConfig($pb.ClientContext? ctx, $57.CreateEvaluationConfigRequest request) =>
-    _client.invoke<$57.CreateEvaluationConfigResponse>(ctx, 'glory_api', 'CreateEvaluationConfig', request, $57.CreateEvaluationConfigResponse())
+  $async.Future<$58.ArticleCreationStatisticsResponse> articleCreationStatistics($pb.ClientContext? ctx, $58.ArticleCreationStatisticsRequest request) =>
+    _client.invoke<$58.ArticleCreationStatisticsResponse>(ctx, 'glory_api', 'ArticleCreationStatistics', request, $58.ArticleCreationStatisticsResponse())
   ;
-  $async.Future<$57.ListEvaluationConfigResponse> listEvaluationConfig($pb.ClientContext? ctx, $57.ListEvaluationConfigRequest request) =>
-    _client.invoke<$57.ListEvaluationConfigResponse>(ctx, 'glory_api', 'ListEvaluationConfig', request, $57.ListEvaluationConfigResponse())
+  $async.Future<$58.GetExampleArticleResponse> getExampleArticle($pb.ClientContext? ctx, $58.GetExampleArticleRequest request) =>
+    _client.invoke<$58.GetExampleArticleResponse>(ctx, 'glory_api', 'GetExampleArticle', request, $58.GetExampleArticleResponse())
   ;
-  $async.Future<$57.BatchEvaluateArticleResponse> batchEvaluateArticleCreation($pb.ClientContext? ctx, $57.BatchEvaluateArticleRequest request) =>
-    _client.invoke<$57.BatchEvaluateArticleResponse>(ctx, 'glory_api', 'BatchEvaluateArticleCreation', request, $57.BatchEvaluateArticleResponse())
+  $async.Future<$58.GetEvaluationStandardResponse> getEvaluationStandard($pb.ClientContext? ctx, $58.GetEvaluationStandardRequest request) =>
+    _client.invoke<$58.GetEvaluationStandardResponse>(ctx, 'glory_api', 'GetEvaluationStandard', request, $58.GetEvaluationStandardResponse())
   ;
-  $async.Future<$57.ListStudentArticleCreationResponse> listStudentArticleCreation($pb.ClientContext? ctx, $57.ListStudentArticleCreationRequest request) =>
-    _client.invoke<$57.ListStudentArticleCreationResponse>(ctx, 'glory_api', 'ListStudentArticleCreation', request, $57.ListStudentArticleCreationResponse())
+  $async.Future<$58.CreateEvaluationConfigResponse> createEvaluationConfig($pb.ClientContext? ctx, $58.CreateEvaluationConfigRequest request) =>
+    _client.invoke<$58.CreateEvaluationConfigResponse>(ctx, 'glory_api', 'CreateEvaluationConfig', request, $58.CreateEvaluationConfigResponse())
   ;
-  $async.Future<$57.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ClientContext? ctx, $57.StudentArticleCreationEvaluationDetailRequest request) =>
-    _client.invoke<$57.StudentArticleCreationEvaluationDetailResponse>(ctx, 'glory_api', 'StudentArticleCreationEvaluationDetail', request, $57.StudentArticleCreationEvaluationDetailResponse())
+  $async.Future<$58.ListEvaluationConfigResponse> listEvaluationConfig($pb.ClientContext? ctx, $58.ListEvaluationConfigRequest request) =>
+    _client.invoke<$58.ListEvaluationConfigResponse>(ctx, 'glory_api', 'ListEvaluationConfig', request, $58.ListEvaluationConfigResponse())
   ;
-  $async.Future<$57.CorrectSentenceResponse> correctSentence($pb.ClientContext? ctx, $57.CorrectSentenceRequest request) =>
-    _client.invoke<$57.CorrectSentenceResponse>(ctx, 'glory_api', 'CorrectSentence', request, $57.CorrectSentenceResponse())
+  $async.Future<$58.BatchEvaluateArticleResponse> batchEvaluateArticleCreation($pb.ClientContext? ctx, $58.BatchEvaluateArticleRequest request) =>
+    _client.invoke<$58.BatchEvaluateArticleResponse>(ctx, 'glory_api', 'BatchEvaluateArticleCreation', request, $58.BatchEvaluateArticleResponse())
   ;
-  $async.Future<$57.GenArticleAIEvaluationResponse> genArticleAiEvaluation($pb.ClientContext? ctx, $57.GenArticleAIEvaluationRequest request) =>
-    _client.invoke<$57.GenArticleAIEvaluationResponse>(ctx, 'glory_api', 'GenArticleAiEvaluation', request, $57.GenArticleAIEvaluationResponse())
+  $async.Future<$58.ListStudentArticleCreationResponse> listStudentArticleCreation($pb.ClientContext? ctx, $58.ListStudentArticleCreationRequest request) =>
+    _client.invoke<$58.ListStudentArticleCreationResponse>(ctx, 'glory_api', 'ListStudentArticleCreation', request, $58.ListStudentArticleCreationResponse())
   ;
-  $async.Future<$57.GetArticleAIEvaluationResponse> getArticleAiEvaluation($pb.ClientContext? ctx, $57.GetArticleAIEvaluationRequest request) =>
-    _client.invoke<$57.GetArticleAIEvaluationResponse>(ctx, 'glory_api', 'GetArticleAiEvaluation', request, $57.GetArticleAIEvaluationResponse())
+  $async.Future<$58.StudentArticleCreationEvaluationDetailResponse> studentArticleCreationEvaluationDetail($pb.ClientContext? ctx, $58.StudentArticleCreationEvaluationDetailRequest request) =>
+    _client.invoke<$58.StudentArticleCreationEvaluationDetailResponse>(ctx, 'glory_api', 'StudentArticleCreationEvaluationDetail', request, $58.StudentArticleCreationEvaluationDetailResponse())
   ;
-  $async.Future<$57.ArticleAIChatResponse> articleAiChat($pb.ClientContext? ctx, $57.ArticleAIChatRequest request) =>
-    _client.invoke<$57.ArticleAIChatResponse>(ctx, 'glory_api', 'ArticleAiChat', request, $57.ArticleAIChatResponse())
+  $async.Future<$58.CorrectSentenceResponse> correctSentence($pb.ClientContext? ctx, $58.CorrectSentenceRequest request) =>
+    _client.invoke<$58.CorrectSentenceResponse>(ctx, 'glory_api', 'CorrectSentence', request, $58.CorrectSentenceResponse())
   ;
-  $async.Future<$57.GetChatConfigResponse> getChatConfig($pb.ClientContext? ctx, $57.GetChatConfigRequest request) =>
-    _client.invoke<$57.GetChatConfigResponse>(ctx, 'glory_api', 'GetChatConfig', request, $57.GetChatConfigResponse())
+  $async.Future<$58.GenArticleAIEvaluationResponse> genArticleAiEvaluation($pb.ClientContext? ctx, $58.GenArticleAIEvaluationRequest request) =>
+    _client.invoke<$58.GenArticleAIEvaluationResponse>(ctx, 'glory_api', 'GenArticleAiEvaluation', request, $58.GenArticleAIEvaluationResponse())
   ;
-  $async.Future<$57.UpdateModelPriceResponse> updateModelPrice($pb.ClientContext? ctx, $57.UpdateModelPriceRequest request) =>
-    _client.invoke<$57.UpdateModelPriceResponse>(ctx, 'glory_api', 'UpdateModelPrice', request, $57.UpdateModelPriceResponse())
+  $async.Future<$58.GetArticleAIEvaluationResponse> getArticleAiEvaluation($pb.ClientContext? ctx, $58.GetArticleAIEvaluationRequest request) =>
+    _client.invoke<$58.GetArticleAIEvaluationResponse>(ctx, 'glory_api', 'GetArticleAiEvaluation', request, $58.GetArticleAIEvaluationResponse())
   ;
-  $async.Future<$57.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse($pb.ClientContext? ctx, $57.UpdateTenantCourseDataRequest request) =>
-    _client.invoke<$57.UpdateTenantCourseDataResponse>(ctx, 'glory_api', 'UpdateArticleCreationTenantCourse', request, $57.UpdateTenantCourseDataResponse())
+  $async.Future<$58.ArticleAIChatResponse> articleAiChat($pb.ClientContext? ctx, $58.ArticleAIChatRequest request) =>
+    _client.invoke<$58.ArticleAIChatResponse>(ctx, 'glory_api', 'ArticleAiChat', request, $58.ArticleAIChatResponse())
   ;
-  $async.Future<$57.GetArticleCreationTenantResponse> getArticleCreationTenant($pb.ClientContext? ctx, $57.GetArticleCreationTenantRequest request) =>
-    _client.invoke<$57.GetArticleCreationTenantResponse>(ctx, 'glory_api', 'GetArticleCreationTenant', request, $57.GetArticleCreationTenantResponse())
+  $async.Future<$58.GetChatConfigResponse> getChatConfig($pb.ClientContext? ctx, $58.GetChatConfigRequest request) =>
+    _client.invoke<$58.GetChatConfigResponse>(ctx, 'glory_api', 'GetChatConfig', request, $58.GetChatConfigResponse())
   ;
-  $async.Future<$57.ListArticleCreationTenantResponse> listArticleCreationTenant($pb.ClientContext? ctx, $57.ListArticleCreationTenantRequest request) =>
-    _client.invoke<$57.ListArticleCreationTenantResponse>(ctx, 'glory_api', 'ListArticleCreationTenant', request, $57.ListArticleCreationTenantResponse())
+  $async.Future<$58.UpdateModelPriceResponse> updateModelPrice($pb.ClientContext? ctx, $58.UpdateModelPriceRequest request) =>
+    _client.invoke<$58.UpdateModelPriceResponse>(ctx, 'glory_api', 'UpdateModelPrice', request, $58.UpdateModelPriceResponse())
   ;
-  $async.Future<$57.ListArticleCreationTenantCostResponse> listArticleCreationTenantCost($pb.ClientContext? ctx, $57.ListArticleCreationTenantCostRequest request) =>
-    _client.invoke<$57.ListArticleCreationTenantCostResponse>(ctx, 'glory_api', 'ListArticleCreationTenantCost', request, $57.ListArticleCreationTenantCostResponse())
+  $async.Future<$58.UpdateTenantCourseDataResponse> updateArticleCreationTenantCourse($pb.ClientContext? ctx, $58.UpdateTenantCourseDataRequest request) =>
+    _client.invoke<$58.UpdateTenantCourseDataResponse>(ctx, 'glory_api', 'UpdateArticleCreationTenantCourse', request, $58.UpdateTenantCourseDataResponse())
   ;
-  $async.Future<$57.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ClientContext? ctx, $57.GetArticleCreationTenantCostRequest request) =>
-    _client.invoke<$57.GetArticleCreationTenantCostResponse>(ctx, 'glory_api', 'GetArticleCreationTenantCost', request, $57.GetArticleCreationTenantCostResponse())
+  $async.Future<$58.GetArticleCreationTenantResponse> getArticleCreationTenant($pb.ClientContext? ctx, $58.GetArticleCreationTenantRequest request) =>
+    _client.invoke<$58.GetArticleCreationTenantResponse>(ctx, 'glory_api', 'GetArticleCreationTenant', request, $58.GetArticleCreationTenantResponse())
   ;
-  $async.Future<$57.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ClientContext? ctx, $57.GetSubTopicAiResultRequest request) =>
-    _client.invoke<$57.GetSubTopicAiResultResponse>(ctx, 'glory_api', 'GetSubTopicAiResult', request, $57.GetSubTopicAiResultResponse())
+  $async.Future<$58.ListArticleCreationTenantResponse> listArticleCreationTenant($pb.ClientContext? ctx, $58.ListArticleCreationTenantRequest request) =>
+    _client.invoke<$58.ListArticleCreationTenantResponse>(ctx, 'glory_api', 'ListArticleCreationTenant', request, $58.ListArticleCreationTenantResponse())
   ;
-  $async.Future<$57.CreateDigitalVideoResponse> createDigitalVideo($pb.ClientContext? ctx, $57.CreateDigitalVideoRequest request) =>
-    _client.invoke<$57.CreateDigitalVideoResponse>(ctx, 'glory_api', 'CreateDigitalVideo', request, $57.CreateDigitalVideoResponse())
+  $async.Future<$58.ListArticleCreationTenantCostResponse> listArticleCreationTenantCost($pb.ClientContext? ctx, $58.ListArticleCreationTenantCostRequest request) =>
+    _client.invoke<$58.ListArticleCreationTenantCostResponse>(ctx, 'glory_api', 'ListArticleCreationTenantCost', request, $58.ListArticleCreationTenantCostResponse())
   ;
-  $async.Future<$57.ListDigitalVideoResponse> listDigitalVideo($pb.ClientContext? ctx, $57.ListDigitalVideoRequest request) =>
-    _client.invoke<$57.ListDigitalVideoResponse>(ctx, 'glory_api', 'ListDigitalVideo', request, $57.ListDigitalVideoResponse())
+  $async.Future<$58.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ClientContext? ctx, $58.GetArticleCreationTenantCostRequest request) =>
+    _client.invoke<$58.GetArticleCreationTenantCostResponse>(ctx, 'glory_api', 'GetArticleCreationTenantCost', request, $58.GetArticleCreationTenantCostResponse())
   ;
-  $async.Future<$57.GetDigitalVideoResponse> getDigitalVideo($pb.ClientContext? ctx, $57.GetDigitalVideoRequest request) =>
-    _client.invoke<$57.GetDigitalVideoResponse>(ctx, 'glory_api', 'GetDigitalVideo', request, $57.GetDigitalVideoResponse())
+  $async.Future<$58.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ClientContext? ctx, $58.GetSubTopicAiResultRequest request) =>
+    _client.invoke<$58.GetSubTopicAiResultResponse>(ctx, 'glory_api', 'GetSubTopicAiResult', request, $58.GetSubTopicAiResultResponse())
   ;
-  $async.Future<$57.ListDigitalCodeResponse> listDigitalCode($pb.ClientContext? ctx, $57.ListDigitalCodeRequest request) =>
-    _client.invoke<$57.ListDigitalCodeResponse>(ctx, 'glory_api', 'ListDigitalCode', request, $57.ListDigitalCodeResponse())
+  $async.Future<$58.CreateDigitalVideoResponse> createDigitalVideo($pb.ClientContext? ctx, $58.CreateDigitalVideoRequest request) =>
+    _client.invoke<$58.CreateDigitalVideoResponse>(ctx, 'glory_api', 'CreateDigitalVideo', request, $58.CreateDigitalVideoResponse())
   ;
-  $async.Future<$57.DeleteDigitalVideoResponse> deleteDigitalVideo($pb.ClientContext? ctx, $57.DeleteDigitalVideoRequest request) =>
-    _client.invoke<$57.DeleteDigitalVideoResponse>(ctx, 'glory_api', 'DeleteDigitalVideo', request, $57.DeleteDigitalVideoResponse())
+  $async.Future<$58.ListDigitalVideoResponse> listDigitalVideo($pb.ClientContext? ctx, $58.ListDigitalVideoRequest request) =>
+    _client.invoke<$58.ListDigitalVideoResponse>(ctx, 'glory_api', 'ListDigitalVideo', request, $58.ListDigitalVideoResponse())
   ;
-  $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ClientContext? ctx, $57.ListDigitalAvatarRequest request) =>
-    _client.invoke<$57.ListDigitalAvatarResponse>(ctx, 'glory_api', 'ListDigitalAvatar', request, $57.ListDigitalAvatarResponse())
+  $async.Future<$58.GetDigitalVideoResponse> getDigitalVideo($pb.ClientContext? ctx, $58.GetDigitalVideoRequest request) =>
+    _client.invoke<$58.GetDigitalVideoResponse>(ctx, 'glory_api', 'GetDigitalVideo', request, $58.GetDigitalVideoResponse())
   ;
-  $async.Future<$58.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ClientContext? ctx, $58.SubmitApprovalFlowRequest request) =>
-    _client.invoke<$58.SubmitApprovalFlowResponse>(ctx, 'glory_api', 'SubmitApprovalFlow', request, $58.SubmitApprovalFlowResponse())
+  $async.Future<$58.ListDigitalCodeResponse> listDigitalCode($pb.ClientContext? ctx, $58.ListDigitalCodeRequest request) =>
+    _client.invoke<$58.ListDigitalCodeResponse>(ctx, 'glory_api', 'ListDigitalCode', request, $58.ListDigitalCodeResponse())
   ;
-  $async.Future<$58.ApproveFlowResponse> approveFlow($pb.ClientContext? ctx, $58.ApproveFlowRequest request) =>
-    _client.invoke<$58.ApproveFlowResponse>(ctx, 'glory_api', 'ApproveFlow', request, $58.ApproveFlowResponse())
+  $async.Future<$58.DeleteDigitalVideoResponse> deleteDigitalVideo($pb.ClientContext? ctx, $58.DeleteDigitalVideoRequest request) =>
+    _client.invoke<$58.DeleteDigitalVideoResponse>(ctx, 'glory_api', 'DeleteDigitalVideo', request, $58.DeleteDigitalVideoResponse())
+  ;
+  $async.Future<$58.ListDigitalAvatarResponse> listDigitalAvatar($pb.ClientContext? ctx, $58.ListDigitalAvatarRequest request) =>
+    _client.invoke<$58.ListDigitalAvatarResponse>(ctx, 'glory_api', 'ListDigitalAvatar', request, $58.ListDigitalAvatarResponse())
+  ;
+  $async.Future<$59.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ClientContext? ctx, $59.SubmitApprovalFlowRequest request) =>
+    _client.invoke<$59.SubmitApprovalFlowResponse>(ctx, 'glory_api', 'SubmitApprovalFlow', request, $59.SubmitApprovalFlowResponse())
+  ;
+  $async.Future<$59.ApproveFlowResponse> approveFlow($pb.ClientContext? ctx, $59.ApproveFlowRequest request) =>
+    _client.invoke<$59.ApproveFlowResponse>(ctx, 'glory_api', 'ApproveFlow', request, $59.ApproveFlowResponse())
   ;
 }
 
