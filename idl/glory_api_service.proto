@@ -20,6 +20,7 @@ import "shop/operation.proto";
 import "shop/freight_template.proto";
 import "shop/coupon.proto";
 import "shop/activity.proto";
+import "shop/bill.proto";
 import "seller/attachment.proto";
 import "seller/seller.proto";
 import "payment/payment.proto";
@@ -504,6 +505,21 @@ service glory_api {
 
   rpc DeleteCart(DeleteCartRequest) returns (DeleteCartResponse) {
     option (api.post) = '/api/shop/delete_cart';
+  }
+
+  // shop bill
+
+  // 创建账单
+  rpc CreateShopBill(CreateBillRequest) returns (CreateBillResponse) {
+    option (api.post) = '/api/shop/create_bill';
+  }
+  // 账单列表
+  rpc ListShopBill(ListBillRequest) returns (ListBillResponse) {
+    option (api.post) = '/api/shop/list_bill';
+  }
+  // 结算账单
+  rpc SettleShopBill(SettleBillRequest) returns (SettleBillResponse) {
+    option (api.post) = '/api/shop/settle_bill';
   }
 
   // seller
