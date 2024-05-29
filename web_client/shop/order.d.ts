@@ -124,6 +124,7 @@ export interface OrderInfo {
   /** 优惠券详情 */
   coupon_detail?: coupon.CouponDetail;
   channel?: string;
+  wechat_order_status?: string;
 }
 
 /** 收获与配送信息 */

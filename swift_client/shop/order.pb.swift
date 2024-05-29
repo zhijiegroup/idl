@@ -387,6 +387,11 @@ struct GloryApi_OrderInfo {
     set {_uniqueStorage()._channel = newValue}
   }
 
+  var wechatOrderStatus: String {
+    get {return _storage._wechatOrderStatus}
+    set {_uniqueStorage()._wechatOrderStatus = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1674,6 +1679,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     21: .standard(proto: "deliver_address"),
     22: .standard(proto: "coupon_detail"),
     23: .same(proto: "channel"),
+    24: .standard(proto: "wechat_order_status"),
   ]
 
   fileprivate class _StorageClass {
@@ -1700,6 +1706,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _deliverAddress: String = String()
     var _couponDetail: GloryApi_CouponDetail? = nil
     var _channel: String = String()
+    var _wechatOrderStatus: String = String()
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1737,6 +1744,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _deliverAddress = source._deliverAddress
       _couponDetail = source._couponDetail
       _channel = source._channel
+      _wechatOrderStatus = source._wechatOrderStatus
     }
   }
 
@@ -1778,6 +1786,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 21: try { try decoder.decodeSingularStringField(value: &_storage._deliverAddress) }()
         case 22: try { try decoder.decodeSingularMessageField(value: &_storage._couponDetail) }()
         case 23: try { try decoder.decodeSingularStringField(value: &_storage._channel) }()
+        case 24: try { try decoder.decodeSingularStringField(value: &_storage._wechatOrderStatus) }()
         default: break
         }
       }
@@ -1859,6 +1868,9 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       if !_storage._channel.isEmpty {
         try visitor.visitSingularStringField(value: _storage._channel, fieldNumber: 23)
       }
+      if !_storage._wechatOrderStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._wechatOrderStatus, fieldNumber: 24)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1891,6 +1903,7 @@ extension GloryApi_OrderInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._deliverAddress != rhs_storage._deliverAddress {return false}
         if _storage._couponDetail != rhs_storage._couponDetail {return false}
         if _storage._channel != rhs_storage._channel {return false}
+        if _storage._wechatOrderStatus != rhs_storage._wechatOrderStatus {return false}
         return true
       }
       if !storagesAreEqual {return false}

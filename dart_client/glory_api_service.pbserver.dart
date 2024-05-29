@@ -20,6 +20,7 @@ import 'admin/admin_tenant.pb.dart' as $19;
 import 'admin/admin_user.pb.dart' as $20;
 import 'admin/config.pb.dart' as $18;
 import 'app/app.pb.dart' as $46;
+import 'approval_flow/approval_flow.pb.dart' as $58;
 import 'course/cmodule.pb.dart' as $40;
 import 'course/course.pb.dart' as $38;
 import 'course/edu_scheme.pb.dart' as $45;
@@ -517,6 +518,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.ListDigitalCodeResponse> listDigitalCode($pb.ServerContext ctx, $57.ListDigitalCodeRequest request);
   $async.Future<$57.DeleteDigitalVideoResponse> deleteDigitalVideo($pb.ServerContext ctx, $57.DeleteDigitalVideoRequest request);
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ServerContext ctx, $57.ListDigitalAvatarRequest request);
+  $async.Future<$58.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ServerContext ctx, $58.SubmitApprovalFlowRequest request);
+  $async.Future<$58.ApproveFlowResponse> approveFlow($pb.ServerContext ctx, $58.ApproveFlowRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -959,6 +962,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListDigitalCode': return $57.ListDigitalCodeRequest();
       case 'DeleteDigitalVideo': return $57.DeleteDigitalVideoRequest();
       case 'ListDigitalAvatar': return $57.ListDigitalAvatarRequest();
+      case 'SubmitApprovalFlow': return $58.SubmitApprovalFlowRequest();
+      case 'ApproveFlow': return $58.ApproveFlowRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1404,6 +1409,8 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListDigitalCode': return this.listDigitalCode(ctx, request as $57.ListDigitalCodeRequest);
       case 'DeleteDigitalVideo': return this.deleteDigitalVideo(ctx, request as $57.DeleteDigitalVideoRequest);
       case 'ListDigitalAvatar': return this.listDigitalAvatar(ctx, request as $57.ListDigitalAvatarRequest);
+      case 'SubmitApprovalFlow': return this.submitApprovalFlow(ctx, request as $58.SubmitApprovalFlowRequest);
+      case 'ApproveFlow': return this.approveFlow(ctx, request as $58.ApproveFlowRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

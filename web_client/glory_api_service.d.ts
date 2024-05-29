@@ -61,6 +61,7 @@ import * as teacher_task from "./task/teacher_task";
 import * as student_task from "./task/student_task";
 import * as notification from "./notification/notification";
 import * as article from "./smart_article/article";
+import * as approval_flow from "./approval_flow/approval_flow";
 export {
   user,
   address,
@@ -121,6 +122,7 @@ export {
   student_task,
   notification,
   article,
+  approval_flow,
 };
 
 export class glory_api {
@@ -1961,6 +1963,16 @@ CreateLivePlanProduct create live plan product */
   ListDigitalAvatar(
     request: article.ListDigitalAvatarRequest
   ): Promise<article.ListDigitalAvatarResponse>;
+
+  /** 提交审核 */
+  SubmitApprovalFlow(
+    request: approval_flow.SubmitApprovalFlowRequest
+  ): Promise<approval_flow.SubmitApprovalFlowResponse>;
+
+  /** 审核 */
+  ApproveFlow(
+    request: approval_flow.ApproveFlowRequest
+  ): Promise<approval_flow.ApproveFlowResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

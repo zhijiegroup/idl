@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     buyerName = "";
     deliverAddress = "";
     channel = "";
+    wechatOrderStatus = "";
   }
 
   @java.lang.Override
@@ -205,6 +206,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             channel = s;
+            break;
+          }
+          case 194: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            wechatOrderStatus = s;
             break;
           }
           default: {
@@ -1047,6 +1054,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int WECHAT_ORDER_STATUS_FIELD_NUMBER = 24;
+  private volatile java.lang.Object wechatOrderStatus ;
+  /**
+   * <code>string wechat_order_status = 24;</code>
+   * @return The wechatOrderStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getWechatOrderStatus() {
+    java.lang.Object ref = wechatOrderStatus ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      wechatOrderStatus = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string wechat_order_status = 24;</code>
+   * @return The bytes for wechatOrderStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWechatOrderStatusBytes() {
+    java.lang.Object ref = wechatOrderStatus ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      wechatOrderStatus = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1129,6 +1174,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getChannelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, channel );
+    }
+    if (!getWechatOrderStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, wechatOrderStatus );
     }
     unknownFields.writeTo(output);
   }
@@ -1218,6 +1266,9 @@ private static final long serialVersionUID = 0L;
     if (!getChannelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, channel );
     }
+    if (!getWechatOrderStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, wechatOrderStatus );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1288,6 +1339,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getChannel()
         .equals(other.getChannel())) return false;
+    if (!getWechatOrderStatus()
+        .equals(other.getWechatOrderStatus())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1357,6 +1410,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + getChannel().hashCode();
+    hash = (37 * hash) + WECHAT_ORDER_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getWechatOrderStatus().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1550,6 +1605,8 @@ private static final long serialVersionUID = 0L;
       bitField0 = (bitField0 & ~0x00000002);
       channel = "";
 
+      wechatOrderStatus = "";
+
       return this;
     }
 
@@ -1616,6 +1673,7 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       result.channel = channel ;
+      result.wechatOrderStatus = wechatOrderStatus ;
       result.bitField0 = to_bitField0 ;
       onBuilt();
       return result;
@@ -1768,6 +1826,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getChannel().isEmpty()) {
         channel = other.channel ;
+        onChanged();
+      }
+      if (!other.getWechatOrderStatus().isEmpty()) {
+        wechatOrderStatus = other.wechatOrderStatus ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3824,6 +3886,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       channel = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object wechatOrderStatus = "";
+    /**
+     * <code>string wechat_order_status = 24;</code>
+     * @return The wechatOrderStatus.
+     */
+    public java.lang.String getWechatOrderStatus() {
+      java.lang.Object ref = wechatOrderStatus ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        wechatOrderStatus = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string wechat_order_status = 24;</code>
+     * @return The bytes for wechatOrderStatus.
+     */
+    public com.google.protobuf.ByteString
+        getWechatOrderStatusBytes() {
+      java.lang.Object ref = wechatOrderStatus ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        wechatOrderStatus = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string wechat_order_status = 24;</code>
+     * @param value The wechatOrderStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWechatOrderStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      wechatOrderStatus = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string wechat_order_status = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWechatOrderStatus() {
+      
+      wechatOrderStatus = getDefaultInstance().getWechatOrderStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string wechat_order_status = 24;</code>
+     * @param value The bytes for wechatOrderStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWechatOrderStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      wechatOrderStatus = value;
       onChanged();
       return this;
     }

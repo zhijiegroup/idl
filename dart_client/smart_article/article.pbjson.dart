@@ -196,6 +196,7 @@ const CreateArticleCreationDraftRequest$json = {
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'articleCreationId'},
+    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -206,7 +207,8 @@ final $typed_data.Uint8List createArticleCreationDraftRequestDescriptor = $conve
     'CmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ29kZR'
     'IUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1jcmVh'
     'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSLgoTYXJ0aWNsZV9jcmVhdGlvbl9pZBgHIA'
-    'EoA1IRYXJ0aWNsZUNyZWF0aW9uSWQ=');
+    'EoA1IRYXJ0aWNsZUNyZWF0aW9uSWQSIQoMcHJvZHVjdF9uYW1lGAggASgJUgtwcm9kdWN0TmFt'
+    'ZQ==');
 
 @$core.Deprecated('Use createArticleCreationDraftResponseDescriptor instead')
 const CreateArticleCreationDraftResponse$json = {

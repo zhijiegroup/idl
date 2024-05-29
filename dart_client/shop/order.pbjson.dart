@@ -171,6 +171,7 @@ const OrderInfo$json = {
     {'1': 'deliver_address', '3': 21, '4': 1, '5': 9, '10': 'deliverAddress'},
     {'1': 'coupon_detail', '3': 22, '4': 1, '5': 11, '6': '.glory_api.CouponDetail', '9': 0, '10': 'couponDetail', '17': true},
     {'1': 'channel', '3': 23, '4': 1, '5': 9, '10': 'channel'},
+    {'1': 'wechat_order_status', '3': 24, '4': 1, '5': 9, '10': 'wechatOrderStatus'},
   ],
   '8': [
     {'1': '_coupon_detail'},
@@ -194,7 +195,8 @@ final $typed_data.Uint8List orderInfoDescriptor = $convert.base64Decode(
     'Y3ROYW1lEh0KCmJ1eWVyX25hbWUYFCABKAlSCWJ1eWVyTmFtZRInCg9kZWxpdmVyX2FkZHJlc3'
     'MYFSABKAlSDmRlbGl2ZXJBZGRyZXNzEkEKDWNvdXBvbl9kZXRhaWwYFiABKAsyFy5nbG9yeV9h'
     'cGkuQ291cG9uRGV0YWlsSABSDGNvdXBvbkRldGFpbIgBARIYCgdjaGFubmVsGBcgASgJUgdjaG'
-    'FubmVsQhAKDl9jb3Vwb25fZGV0YWls');
+    'FubmVsEi4KE3dlY2hhdF9vcmRlcl9zdGF0dXMYGCABKAlSEXdlY2hhdE9yZGVyU3RhdHVzQhAK'
+    'Dl9jb3Vwb25fZGV0YWls');
 
 @$core.Deprecated('Use deliverInfoDescriptor instead')
 const DeliverInfo$json = {

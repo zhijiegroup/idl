@@ -918,6 +918,7 @@ class OrderInfo extends $pb.GeneratedMessage {
     $core.String? deliverAddress,
     $0.CouponDetail? couponDetail,
     $core.String? channel,
+    $core.String? wechatOrderStatus,
   }) {
     final $result = create();
     if (orderId != null) {
@@ -989,6 +990,9 @@ class OrderInfo extends $pb.GeneratedMessage {
     if (channel != null) {
       $result.channel = channel;
     }
+    if (wechatOrderStatus != null) {
+      $result.wechatOrderStatus = wechatOrderStatus;
+    }
     return $result;
   }
   OrderInfo._() : super();
@@ -1019,6 +1023,7 @@ class OrderInfo extends $pb.GeneratedMessage {
     ..aOS(21, _omitFieldNames ? '' : 'deliverAddress')
     ..aOM<$0.CouponDetail>(22, _omitFieldNames ? '' : 'couponDetail', subBuilder: $0.CouponDetail.create)
     ..aOS(23, _omitFieldNames ? '' : 'channel')
+    ..aOS(24, _omitFieldNames ? '' : 'wechatOrderStatus')
     ..hasRequiredFields = false
   ;
 
@@ -1245,6 +1250,15 @@ class OrderInfo extends $pb.GeneratedMessage {
   $core.bool hasChannel() => $_has(22);
   @$pb.TagNumber(23)
   void clearChannel() => clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.String get wechatOrderStatus => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set wechatOrderStatus($core.String v) { $_setString(23, v); }
+  @$pb.TagNumber(24)
+  $core.bool hasWechatOrderStatus() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearWechatOrderStatus() => clearField(24);
 }
 
 /// 收获与配送信息

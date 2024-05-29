@@ -308,13 +308,14 @@ struct GloryApi_CreateArticleCreationDraftRequest {
 
   var title: String = String()
 
-  /// 如果是子主题，则没有标题字段，content内容是包含了所有子主题的json字符串
   var content: String = String()
 
   var creationType: String = String()
 
   /// 文案ID
   var articleCreationID: Int64 = 0
+
+  var productName: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -3304,6 +3305,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     5: .same(proto: "content"),
     6: .standard(proto: "creation_type"),
     7: .standard(proto: "article_creation_id"),
+    8: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3319,6 +3321,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 5: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -3350,6 +3353,9 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if self.articleCreationID != 0 {
       try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 7)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3361,6 +3367,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
     if lhs.articleCreationID != rhs.articleCreationID {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
