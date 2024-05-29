@@ -17,3 +17,15 @@ message SubmitApprovalFlowRequest {
 message SubmitApprovalFlowResponse {
     base.BaseResponse base_resp = 1;
 }
+
+message ApproveFlowRequest {
+    base.BaseRequest base_request = 1;
+    int64 approval_flow_id = 2;
+    int64 approval_flow_level_id = 3;
+    string result = 4;
+    string comment = 5;
+}
+
+message ApproveFlowResponse {
+    base.BaseResponse base_resp = 1;
+}
