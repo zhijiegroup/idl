@@ -1968,6 +1968,11 @@ CreateLivePlanProduct create live plan product */
   SubmitApprovalFlow(
     request: approval_flow.SubmitApprovalFlowRequest
   ): Promise<approval_flow.SubmitApprovalFlowResponse>;
+
+  /** 审核 */
+  ApproveFlow(
+    request: approval_flow.ApproveFlowRequest
+  ): Promise<approval_flow.ApproveFlowResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

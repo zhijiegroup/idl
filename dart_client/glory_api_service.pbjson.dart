@@ -517,6 +517,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'DeleteDigitalVideo', '2': '.glory_api.DeleteDigitalVideoRequest', '3': '.glory_api.DeleteDigitalVideoResponse', '4': {}},
     {'1': 'ListDigitalAvatar', '2': '.glory_api.ListDigitalAvatarRequest', '3': '.glory_api.ListDigitalAvatarResponse', '4': {}},
     {'1': 'SubmitApprovalFlow', '2': '.glory_api.SubmitApprovalFlowRequest', '3': '.glory_api.SubmitApprovalFlowResponse', '4': {}},
+    {'1': 'ApproveFlow', '2': '.glory_api.ApproveFlowRequest', '3': '.glory_api.ApproveFlowResponse', '4': {}},
   ],
 };
 
@@ -1629,6 +1630,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.DigitalAvatar': $57.DigitalAvatar$json,
   '.glory_api.SubmitApprovalFlowRequest': $58.SubmitApprovalFlowRequest$json,
   '.glory_api.SubmitApprovalFlowResponse': $58.SubmitApprovalFlowResponse$json,
+  '.glory_api.ApproveFlowRequest': $58.ApproveFlowRequest$json,
+  '.glory_api.ApproveFlowResponse': $58.ApproveFlowResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2658,5 +2661,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     'YXJSZXNwb25zZSIc0sEYGC9hcGkvZGlnaXRhbC9saXN0X2F2YXRhchKOAQoSU3VibWl0QXBwcm'
     '92YWxGbG93EiQuZ2xvcnlfYXBpLlN1Ym1pdEFwcHJvdmFsRmxvd1JlcXVlc3QaJS5nbG9yeV9h'
     'cGkuU3VibWl0QXBwcm92YWxGbG93UmVzcG9uc2UiK9LBGCcvYXBpL2FwcHJvdmFsX2Zsb3cvc3'
-    'VibWl0X2FwcHJvdmFsX2Zsb3c=');
+    'VibWl0X2FwcHJvdmFsX2Zsb3cScQoLQXBwcm92ZUZsb3cSHS5nbG9yeV9hcGkuQXBwcm92ZUZs'
+    'b3dSZXF1ZXN0Gh4uZ2xvcnlfYXBpLkFwcHJvdmVGbG93UmVzcG9uc2UiI9LBGB8vYXBpL2FwcH'
+    'JvdmFsX2Zsb3cvYXBwcm92ZV9mbG93');
 

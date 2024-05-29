@@ -519,6 +519,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$57.DeleteDigitalVideoResponse> deleteDigitalVideo($pb.ServerContext ctx, $57.DeleteDigitalVideoRequest request);
   $async.Future<$57.ListDigitalAvatarResponse> listDigitalAvatar($pb.ServerContext ctx, $57.ListDigitalAvatarRequest request);
   $async.Future<$58.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ServerContext ctx, $58.SubmitApprovalFlowRequest request);
+  $async.Future<$58.ApproveFlowResponse> approveFlow($pb.ServerContext ctx, $58.ApproveFlowRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -962,6 +963,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteDigitalVideo': return $57.DeleteDigitalVideoRequest();
       case 'ListDigitalAvatar': return $57.ListDigitalAvatarRequest();
       case 'SubmitApprovalFlow': return $58.SubmitApprovalFlowRequest();
+      case 'ApproveFlow': return $58.ApproveFlowRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1408,6 +1410,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'DeleteDigitalVideo': return this.deleteDigitalVideo(ctx, request as $57.DeleteDigitalVideoRequest);
       case 'ListDigitalAvatar': return this.listDigitalAvatar(ctx, request as $57.ListDigitalAvatarRequest);
       case 'SubmitApprovalFlow': return this.submitApprovalFlow(ctx, request as $58.SubmitApprovalFlowRequest);
+      case 'ApproveFlow': return this.approveFlow(ctx, request as $58.ApproveFlowRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

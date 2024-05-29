@@ -3493,6 +3493,14 @@ export class glory_api {
       handleResponse
     );
   }
+
+  ApproveFlow(request) {
+    const uri = `${this.uriPrefix}/api/approval_flow/approve_flow`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
 }
 
 export const glory_apiClient = new glory_api();

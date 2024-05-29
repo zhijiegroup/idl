@@ -59,7 +59,7 @@ public final class GloryApiService {
       "ask.proto\032\027task/student_task.proto\032\037noti" +
       "fication/notification.proto\032\033smart_artic" +
       "le/article.proto\032!approval_flow/approval" +
-      "_flow.proto2\312\274\003\n\tglory_api\022s\n\rCreateExam" +
+      "_flow.proto2\275\275\003\n\tglory_api\022s\n\rCreateExam" +
       "ple\022\037.glory_api.CreateExampleRequest\032 .g" +
       "lory_api.CreateExampleResponse\"\037\322\301\030\033/api" +
       "/example/create_example\022g\n\nGetExample\022\034." +
@@ -1482,8 +1482,10 @@ public final class GloryApiService {
       "$.glory_api.SubmitApprovalFlowRequest\032%." +
       "glory_api.SubmitApprovalFlowResponse\"+\322\301" +
       "\030\'/api/approval_flow/submit_approval_flo" +
-      "wB\036\n\032com.zhijiejiaoyu.glory_apiP\001b\006proto" +
-      "3"
+      "w\022q\n\013ApproveFlow\022\035.glory_api.ApproveFlow" +
+      "Request\032\036.glory_api.ApproveFlowResponse\"" +
+      "#\322\301\030\037/api/approval_flow/approve_flowB\036\n\032" +
+      "com.zhijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -24,6 +24,16 @@ public final class ApprovalFlow {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_SubmitApprovalFlowResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ApproveFlowRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ApproveFlowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ApproveFlowResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ApproveFlowResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -40,8 +50,13 @@ public final class ApprovalFlow {
       "ype\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\022\n\nproduct_id" +
       "\030\004 \001(\003\022\014\n\004note\030\005 \001(\t\"C\n\032SubmitApprovalFl" +
       "owResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponseB*\n&com.zhijiejiaoyu.glory_api." +
-      "short_videoP\001b\006proto3"
+      "eResponse\"\230\001\n\022ApproveFlowRequest\022\'\n\014base" +
+      "_request\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020app" +
+      "roval_flow_id\030\002 \001(\003\022\036\n\026approval_flow_lev" +
+      "el_id\030\003 \001(\003\022\016\n\006result\030\004 \001(\t\022\017\n\007comment\030\005" +
+      " \001(\t\"<\n\023ApproveFlowResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponseB*\n&com.zhijie" +
+      "jiaoyu.glory_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -60,6 +75,18 @@ public final class ApprovalFlow {
     internal_static_glory_api_SubmitApprovalFlowResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SubmitApprovalFlowResponse_descriptor,
+        new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ApproveFlowRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_glory_api_ApproveFlowRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ApproveFlowRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "ApprovalFlowId", "ApprovalFlowLevelId", "Result", "Comment", });
+    internal_static_glory_api_ApproveFlowResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_glory_api_ApproveFlowResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ApproveFlowResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
