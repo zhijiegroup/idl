@@ -57,6 +57,8 @@ enum State {
   deleted = 5;//删除 到 回收站
   deleted_forever = 6;//永久删除
   sold_out = 7;//售罄
+  approving = 8; // 审核中
+  approval_rejection = 9;  // 审核拒绝
 }
 
 message ProductWithAuthor {
