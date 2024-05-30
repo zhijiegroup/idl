@@ -34,6 +34,21 @@ public final class ApprovalFlow {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_ApproveFlowResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListApprovalFlowRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListApprovalFlowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ListApprovalFlowResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ListApprovalFlowResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_ApprovalFlowDetail_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_ApprovalFlowDetail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -55,7 +70,21 @@ public final class ApprovalFlow {
       "roval_flow_id\030\002 \001(\003\022\036\n\026approval_flow_lev" +
       "el_id\030\003 \001(\003\022\016\n\006result\030\004 \001(\t\022\017\n\007comment\030\005" +
       " \001(\t\"<\n\023ApproveFlowResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponseB*\n&com.zhijie" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"\303\001\n\027ListAppro" +
+      "valFlowRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
+      "ase.BaseRequest\022\014\n\004type\030\002 \001(\t\022\014\n\004name\030\003 " +
+      "\001(\t\022\r\n\005phone\030\004 \001(\t\022\025\n\rapproval_type\030\005 \001(" +
+      "\t\022\020\n\010class_id\030\006 \001(\003\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\234\001\n\030ListApprova" +
+      "lFlowResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
+      "BaseResponse\022+\n\004list\030\002 \003(\0132\035.glory_api.A" +
+      "pprovalFlowDetail\022,\n\npagination\030d \001(\0132\030." +
+      "base.PaginationResponse\"\310\001\n\022ApprovalFlow" +
+      "Detail\022\030\n\020approval_flow_id\030\001 \001(\003\022\023\n\013tena" +
+      "nt_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005phone\030\004 \001" +
+      "(\t\022\022\n\nclass_name\030\005 \001(\t\022\025\n\rapproval_type\030" +
+      "\006 \001(\t\022\021\n\tshop_name\030\007 \001(\t\022\024\n\014product_name" +
+      "\030\010 \001(\t\022\022\n\ncreated_at\030\t \001(\tB*\n&com.zhijie" +
       "jiaoyu.glory_api.short_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -88,6 +117,24 @@ public final class ApprovalFlow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ApproveFlowResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_ListApprovalFlowRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_glory_api_ListApprovalFlowRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListApprovalFlowRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "Type", "Name", "Phone", "ApprovalType", "ClassId", "Pagination", });
+    internal_static_glory_api_ListApprovalFlowResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_glory_api_ListApprovalFlowResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ListApprovalFlowResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "List", "Pagination", });
+    internal_static_glory_api_ApprovalFlowDetail_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_glory_api_ApprovalFlowDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_ApprovalFlowDetail_descriptor,
+        new java.lang.String[] { "ApprovalFlowId", "TenantName", "Name", "Phone", "ClassName", "ApprovalType", "ShopName", "ProductName", "CreatedAt", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
     com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }

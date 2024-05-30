@@ -77,3 +77,67 @@ final $typed_data.Uint8List approveFlowResponseDescriptor = $convert.base64Decod
     'ChNBcHByb3ZlRmxvd1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQmFzZVJlc3'
     'BvbnNlUghiYXNlUmVzcA==');
 
+@$core.Deprecated('Use listApprovalFlowRequestDescriptor instead')
+const ListApprovalFlowRequest$json = {
+  '1': 'ListApprovalFlowRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'phone', '3': 4, '4': 1, '5': 9, '10': 'phone'},
+    {'1': 'approval_type', '3': 5, '4': 1, '5': 9, '10': 'approvalType'},
+    {'1': 'class_id', '3': 6, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListApprovalFlowRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApprovalFlowRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0QXBwcm92YWxGbG93UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgR0eXBlGAIgASgJUgR0eXBlEhIKBG5hbWUYAyAB'
+    'KAlSBG5hbWUSFAoFcGhvbmUYBCABKAlSBXBob25lEiMKDWFwcHJvdmFsX3R5cGUYBSABKAlSDG'
+    'FwcHJvdmFsVHlwZRIZCghjbGFzc19pZBgGIAEoA1IHY2xhc3NJZBI3CgpwYWdpbmF0aW9uGGQg'
+    'ASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use listApprovalFlowResponseDescriptor instead')
+const ListApprovalFlowResponse$json = {
+  '1': 'ListApprovalFlowResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'list', '3': 2, '4': 3, '5': 11, '6': '.glory_api.ApprovalFlowDetail', '10': 'list'},
+    {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `ListApprovalFlowResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listApprovalFlowResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0QXBwcm92YWxGbG93UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEjEKBGxpc3QYAiADKAsyHS5nbG9yeV9hcGkuQXBwcm92YWxG'
+    'bG93RGV0YWlsUgRsaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYXNlLlBhZ2luYXRpb25SZX'
+    'Nwb25zZVIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use approvalFlowDetailDescriptor instead')
+const ApprovalFlowDetail$json = {
+  '1': 'ApprovalFlowDetail',
+  '2': [
+    {'1': 'approval_flow_id', '3': 1, '4': 1, '5': 3, '10': 'approvalFlowId'},
+    {'1': 'tenant_name', '3': 2, '4': 1, '5': 9, '10': 'tenantName'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'phone', '3': 4, '4': 1, '5': 9, '10': 'phone'},
+    {'1': 'class_name', '3': 5, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'approval_type', '3': 6, '4': 1, '5': 9, '10': 'approvalType'},
+    {'1': 'shop_name', '3': 7, '4': 1, '5': 9, '10': 'shopName'},
+    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `ApprovalFlowDetail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List approvalFlowDetailDescriptor = $convert.base64Decode(
+    'ChJBcHByb3ZhbEZsb3dEZXRhaWwSKAoQYXBwcm92YWxfZmxvd19pZBgBIAEoA1IOYXBwcm92YW'
+    'xGbG93SWQSHwoLdGVuYW50X25hbWUYAiABKAlSCnRlbmFudE5hbWUSEgoEbmFtZRgDIAEoCVIE'
+    'bmFtZRIUCgVwaG9uZRgEIAEoCVIFcGhvbmUSHQoKY2xhc3NfbmFtZRgFIAEoCVIJY2xhc3NOYW'
+    '1lEiMKDWFwcHJvdmFsX3R5cGUYBiABKAlSDGFwcHJvdmFsVHlwZRIbCglzaG9wX25hbWUYByAB'
+    'KAlSCHNob3BOYW1lEiEKDHByb2R1Y3RfbmFtZRgIIAEoCVILcHJvZHVjdE5hbWUSHQoKY3JlYX'
+    'RlZF9hdBgJIAEoCVIJY3JlYXRlZEF0');
+
