@@ -44,6 +44,12 @@ enum GloryApi_State: SwiftProtobuf.Enum {
 
   ///售罄
   case soldOut // = 7
+
+  /// 审核中
+  case approving // = 8
+
+  /// 审核拒绝
+  case approvalRejection // = 9
   case UNRECOGNIZED(Int)
 
   init() {
@@ -60,6 +66,8 @@ enum GloryApi_State: SwiftProtobuf.Enum {
     case 5: self = .deleted
     case 6: self = .deletedForever
     case 7: self = .soldOut
+    case 8: self = .approving
+    case 9: self = .approvalRejection
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -74,6 +82,8 @@ enum GloryApi_State: SwiftProtobuf.Enum {
     case .deleted: return 5
     case .deletedForever: return 6
     case .soldOut: return 7
+    case .approving: return 8
+    case .approvalRejection: return 9
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -93,6 +103,8 @@ extension GloryApi_State: CaseIterable {
     .deleted,
     .deletedForever,
     .soldOut,
+    .approving,
+    .approvalRejection,
   ]
 }
 
@@ -1313,6 +1325,8 @@ extension GloryApi_State: SwiftProtobuf._ProtoNameProviding {
     5: .same(proto: "deleted"),
     6: .same(proto: "deleted_forever"),
     7: .same(proto: "sold_out"),
+    8: .same(proto: "approving"),
+    9: .same(proto: "approval_rejection"),
   ]
 }
 

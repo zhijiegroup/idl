@@ -18,4 +18,6 @@ export const State = {
   deleted: 5,
   deleted_forever: 6,
   sold_out: 7,
+  approving: 8,
+  approval_rejection: 9,
 };

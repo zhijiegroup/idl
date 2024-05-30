@@ -22,6 +22,8 @@ class State extends $pb.ProtobufEnum {
   static const State deleted = State._(5, _omitEnumNames ? '' : 'deleted');
   static const State deleted_forever = State._(6, _omitEnumNames ? '' : 'deleted_forever');
   static const State sold_out = State._(7, _omitEnumNames ? '' : 'sold_out');
+  static const State approving = State._(8, _omitEnumNames ? '' : 'approving');
+  static const State approval_rejection = State._(9, _omitEnumNames ? '' : 'approval_rejection');
 
   static const $core.List<State> values = <State> [
     DEFAULT,
@@ -32,6 +34,8 @@ class State extends $pb.ProtobufEnum {
     deleted,
     deleted_forever,
     sold_out,
+    approving,
+    approval_rejection,
   ];
 
   static final $core.Map<$core.int, State> _byValue = $pb.ProtobufEnum.initByValue(values);

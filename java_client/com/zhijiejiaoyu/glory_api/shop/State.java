@@ -68,6 +68,22 @@ public enum State
    * <code>sold_out = 7;</code>
    */
   sold_out(7),
+  /**
+   * <pre>
+   * 审核中
+   * </pre>
+   *
+   * <code>approving = 8;</code>
+   */
+  approving(8),
+  /**
+   * <pre>
+   * 审核拒绝
+   * </pre>
+   *
+   * <code>approval_rejection = 9;</code>
+   */
+  approval_rejection(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -131,6 +147,22 @@ public enum State
    * <code>sold_out = 7;</code>
    */
   public static final int sold_out_VALUE = 7;
+  /**
+   * <pre>
+   * 审核中
+   * </pre>
+   *
+   * <code>approving = 8;</code>
+   */
+  public static final int approving_VALUE = 8;
+  /**
+   * <pre>
+   * 审核拒绝
+   * </pre>
+   *
+   * <code>approval_rejection = 9;</code>
+   */
+  public static final int approval_rejection_VALUE = 9;
 
 
   public final int getNumber() {
@@ -165,6 +197,8 @@ public enum State
       case 5: return deleted;
       case 6: return deleted_forever;
       case 7: return sold_out;
+      case 8: return approving;
+      case 9: return approval_rejection;
       default: return null;
     }
   }

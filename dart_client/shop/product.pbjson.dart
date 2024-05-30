@@ -25,6 +25,8 @@ const State$json = {
     {'1': 'deleted', '2': 5},
     {'1': 'deleted_forever', '2': 6},
     {'1': 'sold_out', '2': 7},
+    {'1': 'approving', '2': 8},
+    {'1': 'approval_rejection', '2': 9},
   ],
 };
 
@@ -32,7 +34,8 @@ const State$json = {
 final $typed_data.Uint8List stateDescriptor = $convert.base64Decode(
     'CgVTdGF0ZRILCgdERUZBVUxUEAASCwoHY3JlYXRlZBABEgwKCG9uX3NoZWxmEAISDQoJb2ZmX3'
     'NoZWxmEAMSEAoMb3V0X29mX3N0b2NrEAQSCwoHZGVsZXRlZBAFEhMKD2RlbGV0ZWRfZm9yZXZl'
-    'chAGEgwKCHNvbGRfb3V0EAc=');
+    'chAGEgwKCHNvbGRfb3V0EAcSDQoJYXBwcm92aW5nEAgSFgoSYXBwcm92YWxfcmVqZWN0aW9uEA'
+    'k=');
 
 @$core.Deprecated('Use productDescriptor instead')
 const Product$json = {

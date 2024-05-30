@@ -365,11 +365,12 @@ public final class ProductOuterClass {
       "eImageInfoResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
       "base.BaseResponse\022\'\n\timageInfo\030\002 \003(\0132\024.g" +
       "lory_api.ImageInfo\022\026\n\016video_main_url\030\003 \001" +
-      "(\t*\200\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022\014" +
+      "(\t*\247\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022\014" +
       "\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of_st" +
       "ock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever\020\006\022" +
-      "\014\n\010sold_out\020\007B#\n\037com.zhijiejiaoyu.glory_" +
-      "api.shopP\001b\006proto3"
+      "\014\n\010sold_out\020\007\022\r\n\tapproving\020\010\022\026\n\022approval" +
+      "_rejection\020\tB#\n\037com.zhijiejiaoyu.glory_a" +
+      "pi.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
