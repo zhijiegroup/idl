@@ -521,6 +521,10 @@ service glory_api {
   rpc SettleShopBill(SettleBillRequest) returns (SettleBillResponse) {
     option (api.post) = '/api/shop/settle_bill';
   }
+  // 账单详情
+  rpc GetShopBillDetail(GetShopBillDetailRequest) returns (GetShopBilDetailResponse) {
+    option (api.post) = '/api/shop/get_bill_detail';
+  }
 
   // seller
   rpc UploadAttachment(UploadAttachmentRequest) returns (UploadAttachmentResponse) {

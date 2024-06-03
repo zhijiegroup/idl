@@ -4,6 +4,7 @@ option java_package = "com.zhijiejiaoyu.glory_api.shop";
 option java_multiple_files = true;
 
 import "base.proto";
+import "shop/order.proto";
 
 message CreateBillRequest {
   base.BaseRequest base_request = 1;
@@ -16,14 +17,15 @@ message CreateBillResponse {
 }
 
 message Bill {
-  string bill_id = 1;
+  int64 bill_id = 1;
   string bill_name = 2;
   string tenant_name = 3;
   string shop_name = 4;
-  string bill_status = 5;
+  bool bill_status = 5;
   int32 bill_amount = 6;
   string created_at = 7;
   string settled_at = 8;
+  repeated OrderInfo orders = 9;
 }
 
 message ListBillRequest {
@@ -47,4 +49,14 @@ message SettleBillRequest {
 
 message SettleBillResponse {
   base.BaseResponse base_resp = 1;
+}
+
+message GetShopBillDetailRequest {
+  base.BaseRequest base_request = 1;
+  int64 bill_id = 2;
+}
+
+message GetShopBilDetailResponse {
+  base.BaseResponse base_resp = 1;
+  Bill bill = 2;
 }
