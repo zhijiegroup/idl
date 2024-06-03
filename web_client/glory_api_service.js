@@ -1072,6 +1072,14 @@ export class glory_api {
     );
   }
 
+  GetShopBillDetail(request) {
+    const uri = `${this.uriPrefix}/api/shop/get_bill_detail`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   UploadAttachment(request) {
     const uri = `${this.uriPrefix}/api/seller/upload_attachment`;
     const body = JSONbigint.stringify(request);

@@ -49,6 +49,16 @@ public final class BillOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_glory_api_SettleBillResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetShopBillDetailRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetShopBillDetailRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_glory_api_GetShopBilDetailResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_glory_api_GetShopBilDetailResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -59,32 +69,39 @@ public final class BillOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017shop/bill.proto\022\tglory_api\032\nbase.proto" +
-      "\"M\n\021CreateBillRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\"" +
-      "M\n\022CreateBillResponse\022%\n\tbase_resp\030\001 \001(\013" +
-      "2\022.base.BaseResponse\022\020\n\010bill_url\030\002 \001(\t\"\244" +
-      "\001\n\004Bill\022\017\n\007bill_id\030\001 \001(\t\022\021\n\tbill_name\030\002 " +
-      "\001(\t\022\023\n\013tenant_name\030\003 \001(\t\022\021\n\tshop_name\030\004 " +
-      "\001(\t\022\023\n\013bill_status\030\005 \001(\t\022\023\n\013bill_amount\030" +
-      "\006 \001(\005\022\022\n\ncreated_at\030\007 \001(\t\022\022\n\nsettled_at\030" +
-      "\010 \001(\t\"\210\001\n\017ListBillRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\014\n\004name\030\002 \001(\t" +
-      "\022\021\n\ttenant_id\030\003 \001(\003\022+\n\npagination\030d \001(\0132" +
-      "\027.base.PaginationRequest\"\213\001\n\020ListBillRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022\"\n\tbill_list\030\002 \003(\0132\017.glory_api.Bill" +
-      "\022,\n\npagination\030d \001(\0132\030.base.PaginationRe" +
-      "sponse\"f\n\021SettleBillRequest\022\'\n\014base_requ" +
-      "est\030\001 \001(\0132\021.base.BaseRequest\022\017\n\007bill_id\030" +
-      "\002 \001(\003\022\027\n\017settle_evidence\030\003 \001(\t\";\n\022Settle" +
-      "BillResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
-      "aseResponseB#\n\037com.zhijiejiaoyu.glory_ap" +
+      "\032\020shop/order.proto\"M\n\021CreateBillRequest\022" +
+      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
+      "\022\017\n\007shop_id\030\002 \001(\003\"M\n\022CreateBillResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\022\020" +
+      "\n\010bill_url\030\002 \001(\t\"\312\001\n\004Bill\022\017\n\007bill_id\030\001 \001" +
+      "(\003\022\021\n\tbill_name\030\002 \001(\t\022\023\n\013tenant_name\030\003 \001" +
+      "(\t\022\021\n\tshop_name\030\004 \001(\t\022\023\n\013bill_status\030\005 \001" +
+      "(\010\022\023\n\013bill_amount\030\006 \001(\005\022\022\n\ncreated_at\030\007 " +
+      "\001(\t\022\022\n\nsettled_at\030\010 \001(\t\022$\n\006orders\030\t \003(\0132" +
+      "\024.glory_api.OrderInfo\"\210\001\n\017ListBillReques" +
+      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
+      "st\022\014\n\004name\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\003\022+\n\np" +
+      "agination\030d \001(\0132\027.base.PaginationRequest" +
+      "\"\213\001\n\020ListBillResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\"\n\tbill_list\030\002 \003(\0132" +
+      "\017.glory_api.Bill\022,\n\npagination\030d \001(\0132\030.b" +
+      "ase.PaginationResponse\"f\n\021SettleBillRequ" +
+      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
+      "uest\022\017\n\007bill_id\030\002 \001(\003\022\027\n\017settle_evidence" +
+      "\030\003 \001(\t\";\n\022SettleBillResponse\022%\n\tbase_res" +
+      "p\030\001 \001(\0132\022.base.BaseResponse\"T\n\030GetShopBi" +
+      "llDetailRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\017\n\007bill_id\030\002 \001(\003\"`\n\030Get" +
+      "ShopBilDetailResponse\022%\n\tbase_resp\030\001 \001(\013" +
+      "2\022.base.BaseResponse\022\035\n\004bill\030\002 \001(\0132\017.glo" +
+      "ry_api.BillB#\n\037com.zhijiejiaoyu.glory_ap" +
       "i.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.shop.OrderOuterClass.getDescriptor(),
         });
     internal_static_glory_api_CreateBillRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -103,7 +120,7 @@ public final class BillOuterClass {
     internal_static_glory_api_Bill_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_Bill_descriptor,
-        new java.lang.String[] { "BillId", "BillName", "TenantName", "ShopName", "BillStatus", "BillAmount", "CreatedAt", "SettledAt", });
+        new java.lang.String[] { "BillId", "BillName", "TenantName", "ShopName", "BillStatus", "BillAmount", "CreatedAt", "SettledAt", "Orders", });
     internal_static_glory_api_ListBillRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_glory_api_ListBillRequest_fieldAccessorTable = new
@@ -128,7 +145,20 @@ public final class BillOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_SettleBillResponse_descriptor,
         new java.lang.String[] { "BaseResp", });
+    internal_static_glory_api_GetShopBillDetailRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_glory_api_GetShopBillDetailRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetShopBillDetailRequest_descriptor,
+        new java.lang.String[] { "BaseRequest", "BillId", });
+    internal_static_glory_api_GetShopBilDetailResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_glory_api_GetShopBilDetailResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_glory_api_GetShopBilDetailResponse_descriptor,
+        new java.lang.String[] { "BaseResp", "Bill", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
+    com.zhijiejiaoyu.glory_api.shop.OrderOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

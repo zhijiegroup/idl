@@ -442,6 +442,9 @@ class glory_apiApi {
   $async.Future<$15.SettleBillResponse> settleShopBill($pb.ClientContext? ctx, $15.SettleBillRequest request) =>
     _client.invoke<$15.SettleBillResponse>(ctx, 'glory_api', 'SettleShopBill', request, $15.SettleBillResponse())
   ;
+  $async.Future<$15.GetShopBilDetailResponse> getShopBillDetail($pb.ClientContext? ctx, $15.GetShopBillDetailRequest request) =>
+    _client.invoke<$15.GetShopBilDetailResponse>(ctx, 'glory_api', 'GetShopBillDetail', request, $15.GetShopBilDetailResponse())
+  ;
   $async.Future<$16.UploadAttachmentResponse> uploadAttachment($pb.ClientContext? ctx, $16.UploadAttachmentRequest request) =>
     _client.invoke<$16.UploadAttachmentResponse>(ctx, 'glory_api', 'UploadAttachment', request, $16.UploadAttachmentResponse())
   ;

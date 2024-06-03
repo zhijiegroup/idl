@@ -15,6 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
+import 'order.pb.dart' as $1;
 
 class CreateBillRequest extends $pb.GeneratedMessage {
   factory CreateBillRequest({
@@ -150,14 +151,15 @@ class CreateBillResponse extends $pb.GeneratedMessage {
 
 class Bill extends $pb.GeneratedMessage {
   factory Bill({
-    $core.String? billId,
+    $fixnum.Int64? billId,
     $core.String? billName,
     $core.String? tenantName,
     $core.String? shopName,
-    $core.String? billStatus,
+    $core.bool? billStatus,
     $core.int? billAmount,
     $core.String? createdAt,
     $core.String? settledAt,
+    $core.Iterable<$1.OrderInfo>? orders,
   }) {
     final $result = create();
     if (billId != null) {
@@ -184,6 +186,9 @@ class Bill extends $pb.GeneratedMessage {
     if (settledAt != null) {
       $result.settledAt = settledAt;
     }
+    if (orders != null) {
+      $result.orders.addAll(orders);
+    }
     return $result;
   }
   Bill._() : super();
@@ -191,14 +196,15 @@ class Bill extends $pb.GeneratedMessage {
   factory Bill.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Bill', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'billId')
+    ..aInt64(1, _omitFieldNames ? '' : 'billId')
     ..aOS(2, _omitFieldNames ? '' : 'billName')
     ..aOS(3, _omitFieldNames ? '' : 'tenantName')
     ..aOS(4, _omitFieldNames ? '' : 'shopName')
-    ..aOS(5, _omitFieldNames ? '' : 'billStatus')
+    ..aOB(5, _omitFieldNames ? '' : 'billStatus')
     ..a<$core.int>(6, _omitFieldNames ? '' : 'billAmount', $pb.PbFieldType.O3)
     ..aOS(7, _omitFieldNames ? '' : 'createdAt')
     ..aOS(8, _omitFieldNames ? '' : 'settledAt')
+    ..pc<$1.OrderInfo>(9, _omitFieldNames ? '' : 'orders', $pb.PbFieldType.PM, subBuilder: $1.OrderInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -224,9 +230,9 @@ class Bill extends $pb.GeneratedMessage {
   static Bill? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get billId => $_getSZ(0);
+  $fixnum.Int64 get billId => $_getI64(0);
   @$pb.TagNumber(1)
-  set billId($core.String v) { $_setString(0, v); }
+  set billId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasBillId() => $_has(0);
   @$pb.TagNumber(1)
@@ -260,9 +266,9 @@ class Bill extends $pb.GeneratedMessage {
   void clearShopName() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get billStatus => $_getSZ(4);
+  $core.bool get billStatus => $_getBF(4);
   @$pb.TagNumber(5)
-  set billStatus($core.String v) { $_setString(4, v); }
+  set billStatus($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasBillStatus() => $_has(4);
   @$pb.TagNumber(5)
@@ -294,6 +300,9 @@ class Bill extends $pb.GeneratedMessage {
   $core.bool hasSettledAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearSettledAt() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<$1.OrderInfo> get orders => $_getList(8);
 }
 
 class ListBillRequest extends $pb.GeneratedMessage {
@@ -598,6 +607,140 @@ class SettleBillResponse extends $pb.GeneratedMessage {
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class GetShopBillDetailRequest extends $pb.GeneratedMessage {
+  factory GetShopBillDetailRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? billId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (billId != null) {
+      $result.billId = billId;
+    }
+    return $result;
+  }
+  GetShopBillDetailRequest._() : super();
+  factory GetShopBillDetailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetShopBillDetailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopBillDetailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'billId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetShopBillDetailRequest clone() => GetShopBillDetailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetShopBillDetailRequest copyWith(void Function(GetShopBillDetailRequest) updates) => super.copyWith((message) => updates(message as GetShopBillDetailRequest)) as GetShopBillDetailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetShopBillDetailRequest create() => GetShopBillDetailRequest._();
+  GetShopBillDetailRequest createEmptyInstance() => create();
+  static $pb.PbList<GetShopBillDetailRequest> createRepeated() => $pb.PbList<GetShopBillDetailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetShopBillDetailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetShopBillDetailRequest>(create);
+  static GetShopBillDetailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get billId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set billId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBillId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillId() => clearField(2);
+}
+
+class GetShopBilDetailResponse extends $pb.GeneratedMessage {
+  factory GetShopBilDetailResponse({
+    $0.BaseResponse? baseResp,
+    Bill? bill,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (bill != null) {
+      $result.bill = bill;
+    }
+    return $result;
+  }
+  GetShopBilDetailResponse._() : super();
+  factory GetShopBilDetailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetShopBilDetailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopBilDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<Bill>(2, _omitFieldNames ? '' : 'bill', subBuilder: Bill.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetShopBilDetailResponse clone() => GetShopBilDetailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetShopBilDetailResponse copyWith(void Function(GetShopBilDetailResponse) updates) => super.copyWith((message) => updates(message as GetShopBilDetailResponse)) as GetShopBilDetailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetShopBilDetailResponse create() => GetShopBilDetailResponse._();
+  GetShopBilDetailResponse createEmptyInstance() => create();
+  static $pb.PbList<GetShopBilDetailResponse> createRepeated() => $pb.PbList<GetShopBilDetailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetShopBilDetailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetShopBilDetailResponse>(create);
+  static GetShopBilDetailResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  Bill get bill => $_getN(1);
+  @$pb.TagNumber(2)
+  set bill(Bill v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBill() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBill() => clearField(2);
+  @$pb.TagNumber(2)
+  Bill ensureBill() => $_ensure(1);
 }
 
 

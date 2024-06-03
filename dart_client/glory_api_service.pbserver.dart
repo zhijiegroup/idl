@@ -201,6 +201,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$15.CreateBillResponse> createShopBill($pb.ServerContext ctx, $15.CreateBillRequest request);
   $async.Future<$15.ListBillResponse> listShopBill($pb.ServerContext ctx, $15.ListBillRequest request);
   $async.Future<$15.SettleBillResponse> settleShopBill($pb.ServerContext ctx, $15.SettleBillRequest request);
+  $async.Future<$15.GetShopBilDetailResponse> getShopBillDetail($pb.ServerContext ctx, $15.GetShopBillDetailRequest request);
   $async.Future<$16.UploadAttachmentResponse> uploadAttachment($pb.ServerContext ctx, $16.UploadAttachmentRequest request);
   $async.Future<$16.SaveAttachmentResponse> saveAttachment($pb.ServerContext ctx, $16.SaveAttachmentRequest request);
   $async.Future<$16.ListAttachmentResponse> listAttachment($pb.ServerContext ctx, $16.ListAttachmentRequest request);
@@ -649,6 +650,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShopBill': return $15.CreateBillRequest();
       case 'ListShopBill': return $15.ListBillRequest();
       case 'SettleShopBill': return $15.SettleBillRequest();
+      case 'GetShopBillDetail': return $15.GetShopBillDetailRequest();
       case 'UploadAttachment': return $16.UploadAttachmentRequest();
       case 'SaveAttachment': return $16.SaveAttachmentRequest();
       case 'ListAttachment': return $16.ListAttachmentRequest();
@@ -1100,6 +1102,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShopBill': return this.createShopBill(ctx, request as $15.CreateBillRequest);
       case 'ListShopBill': return this.listShopBill(ctx, request as $15.ListBillRequest);
       case 'SettleShopBill': return this.settleShopBill(ctx, request as $15.SettleBillRequest);
+      case 'GetShopBillDetail': return this.getShopBillDetail(ctx, request as $15.GetShopBillDetailRequest);
       case 'UploadAttachment': return this.uploadAttachment(ctx, request as $16.UploadAttachmentRequest);
       case 'SaveAttachment': return this.saveAttachment(ctx, request as $16.SaveAttachmentRequest);
       case 'ListAttachment': return this.listAttachment(ctx, request as $16.ListAttachmentRequest);

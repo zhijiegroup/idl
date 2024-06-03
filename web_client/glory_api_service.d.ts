@@ -589,6 +589,11 @@ list the permissions that supported */
     request: bill.SettleBillRequest
   ): Promise<bill.SettleBillResponse>;
 
+  /** 账单详情 */
+  GetShopBillDetail(
+    request: bill.GetShopBillDetailRequest
+  ): Promise<bill.GetShopBilDetailResponse>;
+
   /** seller */
   UploadAttachment(
     request: attachment.UploadAttachmentRequest
