@@ -47,6 +47,14 @@ message Shop {
   string shop_logo_path = 37; // 店铺Logo OSS路径
   string business_license_path = 38; //营业执照 OSS路径
   ShopKeeper shop_keeper = 40;
+  string class_name = 41;
+  string student_num = 42;
+  string student_card_path = 43;
+  string manager_wechat_id = 44;
+  string payment_qrcode_path = 45;
+  string teacher_name = 46;
+  string teacher_phone = 47;
+
 }
 
 message ShopQualification {
@@ -253,6 +261,16 @@ message UpdateShopManagerRequest {
 }
 
 message UpdateShopManagerResponse{
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateShopStatusRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  string status = 3;
+}
+
+message UpdateShopStatusResponse{
   base.BaseResponse base_resp = 1;
 }
 
