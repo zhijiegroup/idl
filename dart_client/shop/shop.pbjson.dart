@@ -56,6 +56,13 @@ const Shop$json = {
     {'1': 'shop_logo_path', '3': 37, '4': 1, '5': 9, '10': 'shopLogoPath'},
     {'1': 'business_license_path', '3': 38, '4': 1, '5': 9, '10': 'businessLicensePath'},
     {'1': 'shop_keeper', '3': 40, '4': 1, '5': 11, '6': '.glory_api.ShopKeeper', '10': 'shopKeeper'},
+    {'1': 'class_name', '3': 41, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'student_num', '3': 42, '4': 1, '5': 9, '10': 'studentNum'},
+    {'1': 'student_card_path', '3': 43, '4': 1, '5': 9, '10': 'studentCardPath'},
+    {'1': 'manager_wechat_id', '3': 44, '4': 1, '5': 9, '10': 'managerWechatId'},
+    {'1': 'payment_qrcode_path', '3': 45, '4': 1, '5': 9, '10': 'paymentQrcodePath'},
+    {'1': 'teacher_name', '3': 46, '4': 1, '5': 9, '10': 'teacherName'},
+    {'1': 'teacher_phone', '3': 47, '4': 1, '5': 9, '10': 'teacherPhone'},
   ],
 };
 
@@ -91,7 +98,11 @@ final $typed_data.Uint8List shopDescriptor = $convert.base64Decode(
     'RoGCQgASgJUg9vd25lcklkQmFja1BhdGgSJAoOc2hvcF9sb2dvX3BhdGgYJSABKAlSDHNob3BM'
     'b2dvUGF0aBIyChVidXNpbmVzc19saWNlbnNlX3BhdGgYJiABKAlSE2J1c2luZXNzTGljZW5zZV'
     'BhdGgSNgoLc2hvcF9rZWVwZXIYKCABKAsyFS5nbG9yeV9hcGkuU2hvcEtlZXBlclIKc2hvcEtl'
-    'ZXBlcg==');
+    'ZXBlchIdCgpjbGFzc19uYW1lGCkgASgJUgljbGFzc05hbWUSHwoLc3R1ZGVudF9udW0YKiABKA'
+    'lSCnN0dWRlbnROdW0SKgoRc3R1ZGVudF9jYXJkX3BhdGgYKyABKAlSD3N0dWRlbnRDYXJkUGF0'
+    'aBIqChFtYW5hZ2VyX3dlY2hhdF9pZBgsIAEoCVIPbWFuYWdlcldlY2hhdElkEi4KE3BheW1lbn'
+    'RfcXJjb2RlX3BhdGgYLSABKAlSEXBheW1lbnRRcmNvZGVQYXRoEiEKDHRlYWNoZXJfbmFtZRgu'
+    'IAEoCVILdGVhY2hlck5hbWUSIwoNdGVhY2hlcl9waG9uZRgvIAEoCVIMdGVhY2hlclBob25l');
 
 @$core.Deprecated('Use shopQualificationDescriptor instead')
 const ShopQualification$json = {
@@ -647,6 +658,35 @@ const UpdateShopManagerResponse$json = {
 final $typed_data.Uint8List updateShopManagerResponseDescriptor = $convert.base64Decode(
     'ChlVcGRhdGVTaG9wTWFuYWdlclJlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2UuQm'
     'FzZVJlc3BvbnNlUghiYXNlUmVzcA==');
+
+@$core.Deprecated('Use updateShopStatusRequestDescriptor instead')
+const UpdateShopStatusRequest$json = {
+  '1': 'UpdateShopStatusRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateShopStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateShopStatusRequestDescriptor = $convert.base64Decode(
+    'ChdVcGRhdGVTaG9wU3RhdHVzUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBIXCgdzaG9wX2lkGAIgASgDUgZzaG9wSWQSFgoGc3Rh'
+    'dHVzGAMgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use updateShopStatusResponseDescriptor instead')
+const UpdateShopStatusResponse$json = {
+  '1': 'UpdateShopStatusResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `UpdateShopStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateShopStatusResponseDescriptor = $convert.base64Decode(
+    'ChhVcGRhdGVTaG9wU3RhdHVzUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNw');
 
 @$core.Deprecated('Use getShopBusinessDataRequestDescriptor instead')
 const GetShopBusinessDataRequest$json = {

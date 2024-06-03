@@ -57,6 +57,13 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? businessLicensePath,
     $core.String? ownerIdFrontPath,
     ShopKeeper? shopKeeper,
+    $core.String? className,
+    $core.String? studentNum,
+    $core.String? studentCardPath,
+    $core.String? managerWechatId,
+    $core.String? paymentQrcodePath,
+    $core.String? teacherName,
+    $core.String? teacherPhone,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -174,6 +181,27 @@ class Shop extends $pb.GeneratedMessage {
     if (shopKeeper != null) {
       $result.shopKeeper = shopKeeper;
     }
+    if (className != null) {
+      $result.className = className;
+    }
+    if (studentNum != null) {
+      $result.studentNum = studentNum;
+    }
+    if (studentCardPath != null) {
+      $result.studentCardPath = studentCardPath;
+    }
+    if (managerWechatId != null) {
+      $result.managerWechatId = managerWechatId;
+    }
+    if (paymentQrcodePath != null) {
+      $result.paymentQrcodePath = paymentQrcodePath;
+    }
+    if (teacherName != null) {
+      $result.teacherName = teacherName;
+    }
+    if (teacherPhone != null) {
+      $result.teacherPhone = teacherPhone;
+    }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
     }
@@ -222,6 +250,13 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(38, _omitFieldNames ? '' : 'businessLicensePath')
     ..aOS(39, _omitFieldNames ? '' : 'ownerIdFrontPath')
     ..aOM<ShopKeeper>(40, _omitFieldNames ? '' : 'shopKeeper', subBuilder: ShopKeeper.create)
+    ..aOS(41, _omitFieldNames ? '' : 'className')
+    ..aOS(42, _omitFieldNames ? '' : 'studentNum')
+    ..aOS(43, _omitFieldNames ? '' : 'studentCardPath')
+    ..aOS(44, _omitFieldNames ? '' : 'managerWechatId')
+    ..aOS(45, _omitFieldNames ? '' : 'paymentQrcodePath')
+    ..aOS(46, _omitFieldNames ? '' : 'teacherName')
+    ..aOS(47, _omitFieldNames ? '' : 'teacherPhone')
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -585,8 +620,71 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(40)
   ShopKeeper ensureShopKeeper() => $_ensure(37);
 
+  @$pb.TagNumber(41)
+  $core.String get className => $_getSZ(38);
+  @$pb.TagNumber(41)
+  set className($core.String v) { $_setString(38, v); }
+  @$pb.TagNumber(41)
+  $core.bool hasClassName() => $_has(38);
+  @$pb.TagNumber(41)
+  void clearClassName() => clearField(41);
+
+  @$pb.TagNumber(42)
+  $core.String get studentNum => $_getSZ(39);
+  @$pb.TagNumber(42)
+  set studentNum($core.String v) { $_setString(39, v); }
+  @$pb.TagNumber(42)
+  $core.bool hasStudentNum() => $_has(39);
+  @$pb.TagNumber(42)
+  void clearStudentNum() => clearField(42);
+
+  @$pb.TagNumber(43)
+  $core.String get studentCardPath => $_getSZ(40);
+  @$pb.TagNumber(43)
+  set studentCardPath($core.String v) { $_setString(40, v); }
+  @$pb.TagNumber(43)
+  $core.bool hasStudentCardPath() => $_has(40);
+  @$pb.TagNumber(43)
+  void clearStudentCardPath() => clearField(43);
+
+  @$pb.TagNumber(44)
+  $core.String get managerWechatId => $_getSZ(41);
+  @$pb.TagNumber(44)
+  set managerWechatId($core.String v) { $_setString(41, v); }
+  @$pb.TagNumber(44)
+  $core.bool hasManagerWechatId() => $_has(41);
+  @$pb.TagNumber(44)
+  void clearManagerWechatId() => clearField(44);
+
+  @$pb.TagNumber(45)
+  $core.String get paymentQrcodePath => $_getSZ(42);
+  @$pb.TagNumber(45)
+  set paymentQrcodePath($core.String v) { $_setString(42, v); }
+  @$pb.TagNumber(45)
+  $core.bool hasPaymentQrcodePath() => $_has(42);
+  @$pb.TagNumber(45)
+  void clearPaymentQrcodePath() => clearField(45);
+
+  @$pb.TagNumber(46)
+  $core.String get teacherName => $_getSZ(43);
+  @$pb.TagNumber(46)
+  set teacherName($core.String v) { $_setString(43, v); }
+  @$pb.TagNumber(46)
+  $core.bool hasTeacherName() => $_has(43);
+  @$pb.TagNumber(46)
+  void clearTeacherName() => clearField(46);
+
+  @$pb.TagNumber(47)
+  $core.String get teacherPhone => $_getSZ(44);
+  @$pb.TagNumber(47)
+  set teacherPhone($core.String v) { $_setString(44, v); }
+  @$pb.TagNumber(47)
+  $core.bool hasTeacherPhone() => $_has(44);
+  @$pb.TagNumber(47)
+  void clearTeacherPhone() => clearField(47);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(38);
+  $core.List<ShopQualification> get shopQualification => $_getList(45);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {
@@ -3264,6 +3362,138 @@ class UpdateShopManagerResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdateShopManagerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateShopManagerResponse>(create);
   static UpdateShopManagerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class UpdateShopStatusRequest extends $pb.GeneratedMessage {
+  factory UpdateShopStatusRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? shopId,
+    $core.String? status,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  UpdateShopStatusRequest._() : super();
+  factory UpdateShopStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateShopStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'shopId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateShopStatusRequest clone() => UpdateShopStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateShopStatusRequest copyWith(void Function(UpdateShopStatusRequest) updates) => super.copyWith((message) => updates(message as UpdateShopStatusRequest)) as UpdateShopStatusRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateShopStatusRequest create() => UpdateShopStatusRequest._();
+  UpdateShopStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateShopStatusRequest> createRepeated() => $pb.PbList<UpdateShopStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateShopStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateShopStatusRequest>(create);
+  static UpdateShopStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get shopId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set shopId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasShopId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShopId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+}
+
+class UpdateShopStatusResponse extends $pb.GeneratedMessage {
+  factory UpdateShopStatusResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  UpdateShopStatusResponse._() : super();
+  factory UpdateShopStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateShopStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateShopStatusResponse clone() => UpdateShopStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateShopStatusResponse copyWith(void Function(UpdateShopStatusResponse) updates) => super.copyWith((message) => updates(message as UpdateShopStatusResponse)) as UpdateShopStatusResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateShopStatusResponse create() => UpdateShopStatusResponse._();
+  UpdateShopStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateShopStatusResponse> createRepeated() => $pb.PbList<UpdateShopStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateShopStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateShopStatusResponse>(create);
+  static UpdateShopStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);

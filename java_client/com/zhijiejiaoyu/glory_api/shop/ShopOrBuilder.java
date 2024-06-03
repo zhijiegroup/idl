@@ -734,4 +734,88 @@ public interface ShopOrBuilder extends
    * <code>.glory_api.ShopKeeper shop_keeper = 40;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder();
+
+  /**
+   * <code>string class_name = 41;</code>
+   * @return The className.
+   */
+  java.lang.String getClassName();
+  /**
+   * <code>string class_name = 41;</code>
+   * @return The bytes for className.
+   */
+  com.google.protobuf.ByteString
+      getClassNameBytes();
+
+  /**
+   * <code>string student_num = 42;</code>
+   * @return The studentNum.
+   */
+  java.lang.String getStudentNum();
+  /**
+   * <code>string student_num = 42;</code>
+   * @return The bytes for studentNum.
+   */
+  com.google.protobuf.ByteString
+      getStudentNumBytes();
+
+  /**
+   * <code>string student_card_path = 43;</code>
+   * @return The studentCardPath.
+   */
+  java.lang.String getStudentCardPath();
+  /**
+   * <code>string student_card_path = 43;</code>
+   * @return The bytes for studentCardPath.
+   */
+  com.google.protobuf.ByteString
+      getStudentCardPathBytes();
+
+  /**
+   * <code>string manager_wechat_id = 44;</code>
+   * @return The managerWechatId.
+   */
+  java.lang.String getManagerWechatId();
+  /**
+   * <code>string manager_wechat_id = 44;</code>
+   * @return The bytes for managerWechatId.
+   */
+  com.google.protobuf.ByteString
+      getManagerWechatIdBytes();
+
+  /**
+   * <code>string payment_qrcode_path = 45;</code>
+   * @return The paymentQrcodePath.
+   */
+  java.lang.String getPaymentQrcodePath();
+  /**
+   * <code>string payment_qrcode_path = 45;</code>
+   * @return The bytes for paymentQrcodePath.
+   */
+  com.google.protobuf.ByteString
+      getPaymentQrcodePathBytes();
+
+  /**
+   * <code>string teacher_name = 46;</code>
+   * @return The teacherName.
+   */
+  java.lang.String getTeacherName();
+  /**
+   * <code>string teacher_name = 46;</code>
+   * @return The bytes for teacherName.
+   */
+  com.google.protobuf.ByteString
+      getTeacherNameBytes();
+
+  /**
+   * <code>string teacher_phone = 47;</code>
+   * @return The teacherPhone.
+   */
+  java.lang.String getTeacherPhone();
+  /**
+   * <code>string teacher_phone = 47;</code>
+   * @return The bytes for teacherPhone.
+   */
+  com.google.protobuf.ByteString
+      getTeacherPhoneBytes();
 }

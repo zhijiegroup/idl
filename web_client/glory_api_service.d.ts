@@ -340,6 +340,10 @@ list the permissions that supported */
     request: shop.UpdateShopManagerRequest
   ): Promise<shop.UpdateShopManagerResponse>;
 
+  UpdateShopStatus(
+    request: shop.UpdateShopStatusRequest
+  ): Promise<shop.UpdateShopStatusResponse>;
+
   GetShopBusinessData(
     request: shop.GetShopBusinessDataRequest
   ): Promise<shop.GetShopBusinessDataResponse>;
