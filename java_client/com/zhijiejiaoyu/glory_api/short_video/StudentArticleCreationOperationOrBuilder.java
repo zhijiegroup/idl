@@ -84,4 +84,10 @@ public interface StudentArticleCreationOperationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCommentBytes();
+
+  /**
+   * <code>int64 score = 7;</code>
+   * @return The score.
+   */
+  long getScore();
 }

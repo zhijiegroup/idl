@@ -281,6 +281,7 @@ export interface StudentArticleCreationOperation {
   creation_content?: ArticleCreationInfo;
   reject_reason?: string;
   comment?: string;
+  score?: string;
 }
 
 export interface ArticleCreationInfo {

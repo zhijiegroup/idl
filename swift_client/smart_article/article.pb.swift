@@ -1102,6 +1102,11 @@ struct GloryApi_StudentArticleCreationOperation {
     set {_uniqueStorage()._comment = newValue}
   }
 
+  var score: Int64 {
+    get {return _storage._score}
+    set {_uniqueStorage()._score = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4735,6 +4740,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     4: .standard(proto: "creation_content"),
     5: .standard(proto: "reject_reason"),
     6: .same(proto: "comment"),
+    7: .same(proto: "score"),
   ]
 
   fileprivate class _StorageClass {
@@ -4744,6 +4750,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
     var _creationContent: GloryApi_ArticleCreationInfo? = nil
     var _rejectReason: String = String()
     var _comment: String = String()
+    var _score: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -4764,6 +4771,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
       _creationContent = source._creationContent
       _rejectReason = source._rejectReason
       _comment = source._comment
+      _score = source._score
     }
   }
 
@@ -4788,6 +4796,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
         case 4: try { try decoder.decodeSingularMessageField(value: &_storage._creationContent) }()
         case 5: try { try decoder.decodeSingularStringField(value: &_storage._rejectReason) }()
         case 6: try { try decoder.decodeSingularStringField(value: &_storage._comment) }()
+        case 7: try { try decoder.decodeSingularInt64Field(value: &_storage._score) }()
         default: break
         }
       }
@@ -4818,6 +4827,9 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
       if !_storage._comment.isEmpty {
         try visitor.visitSingularStringField(value: _storage._comment, fieldNumber: 6)
       }
+      if _storage._score != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._score, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -4833,6 +4845,7 @@ extension GloryApi_StudentArticleCreationOperation: SwiftProtobuf.Message, Swift
         if _storage._creationContent != rhs_storage._creationContent {return false}
         if _storage._rejectReason != rhs_storage._rejectReason {return false}
         if _storage._comment != rhs_storage._comment {return false}
+        if _storage._score != rhs_storage._score {return false}
         return true
       }
       if !storagesAreEqual {return false}

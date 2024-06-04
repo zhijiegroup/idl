@@ -3418,6 +3418,7 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     ArticleCreationInfo? creationContent,
     $core.String? rejectReason,
     $core.String? comment,
+    $fixnum.Int64? score,
   }) {
     final $result = create();
     if (action != null) {
@@ -3438,6 +3439,9 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     if (comment != null) {
       $result.comment = comment;
     }
+    if (score != null) {
+      $result.score = score;
+    }
     return $result;
   }
   StudentArticleCreationOperation._() : super();
@@ -3451,6 +3455,7 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     ..aOM<ArticleCreationInfo>(4, _omitFieldNames ? '' : 'creationContent', subBuilder: ArticleCreationInfo.create)
     ..aOS(5, _omitFieldNames ? '' : 'rejectReason')
     ..aOS(6, _omitFieldNames ? '' : 'comment')
+    ..aInt64(7, _omitFieldNames ? '' : 'score')
     ..hasRequiredFields = false
   ;
 
@@ -3532,6 +3537,15 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
   $core.bool hasComment() => $_has(5);
   @$pb.TagNumber(6)
   void clearComment() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get score => $_getI64(6);
+  @$pb.TagNumber(7)
+  set score($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasScore() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScore() => clearField(7);
 }
 
 class ArticleCreationInfo extends $pb.GeneratedMessage {
