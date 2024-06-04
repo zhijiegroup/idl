@@ -244,6 +244,9 @@ class glory_apiApi {
   $async.Future<$4.UpdateShopManagerResponse> updateShopManager($pb.ClientContext? ctx, $4.UpdateShopManagerRequest request) =>
     _client.invoke<$4.UpdateShopManagerResponse>(ctx, 'glory_api', 'UpdateShopManager', request, $4.UpdateShopManagerResponse())
   ;
+  $async.Future<$4.UpdateShopStatusResponse> updateShopStatus($pb.ClientContext? ctx, $4.UpdateShopStatusRequest request) =>
+    _client.invoke<$4.UpdateShopStatusResponse>(ctx, 'glory_api', 'UpdateShopStatus', request, $4.UpdateShopStatusResponse())
+  ;
   $async.Future<$4.GetShopBusinessDataResponse> getShopBusinessData($pb.ClientContext? ctx, $4.GetShopBusinessDataRequest request) =>
     _client.invoke<$4.GetShopBusinessDataResponse>(ctx, 'glory_api', 'GetShopBusinessData', request, $4.GetShopBusinessDataResponse())
   ;
@@ -441,6 +444,9 @@ class glory_apiApi {
   ;
   $async.Future<$15.SettleBillResponse> settleShopBill($pb.ClientContext? ctx, $15.SettleBillRequest request) =>
     _client.invoke<$15.SettleBillResponse>(ctx, 'glory_api', 'SettleShopBill', request, $15.SettleBillResponse())
+  ;
+  $async.Future<$15.GetShopBilDetailResponse> getShopBillDetail($pb.ClientContext? ctx, $15.GetShopBillDetailRequest request) =>
+    _client.invoke<$15.GetShopBilDetailResponse>(ctx, 'glory_api', 'GetShopBillDetail', request, $15.GetShopBilDetailResponse())
   ;
   $async.Future<$16.UploadAttachmentResponse> uploadAttachment($pb.ClientContext? ctx, $16.UploadAttachmentRequest request) =>
     _client.invoke<$16.UploadAttachmentResponse>(ctx, 'glory_api', 'UploadAttachment', request, $16.UploadAttachmentResponse())

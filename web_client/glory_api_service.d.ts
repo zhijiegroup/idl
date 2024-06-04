@@ -340,6 +340,10 @@ list the permissions that supported */
     request: shop.UpdateShopManagerRequest
   ): Promise<shop.UpdateShopManagerResponse>;
 
+  UpdateShopStatus(
+    request: shop.UpdateShopStatusRequest
+  ): Promise<shop.UpdateShopStatusResponse>;
+
   GetShopBusinessData(
     request: shop.GetShopBusinessDataRequest
   ): Promise<shop.GetShopBusinessDataResponse>;
@@ -588,6 +592,11 @@ list the permissions that supported */
   SettleShopBill(
     request: bill.SettleBillRequest
   ): Promise<bill.SettleBillResponse>;
+
+  /** 账单详情 */
+  GetShopBillDetail(
+    request: bill.GetShopBillDetailRequest
+  ): Promise<bill.GetShopBilDetailResponse>;
 
   /** seller */
   UploadAttachment(

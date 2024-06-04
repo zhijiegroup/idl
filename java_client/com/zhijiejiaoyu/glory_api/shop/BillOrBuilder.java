@@ -8,16 +8,10 @@ public interface BillOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string bill_id = 1;</code>
+   * <code>int64 bill_id = 1;</code>
    * @return The billId.
    */
-  java.lang.String getBillId();
-  /**
-   * <code>string bill_id = 1;</code>
-   * @return The bytes for billId.
-   */
-  com.google.protobuf.ByteString
-      getBillIdBytes();
+  long getBillId();
 
   /**
    * <code>string bill_name = 2;</code>
@@ -56,16 +50,10 @@ public interface BillOrBuilder extends
       getShopNameBytes();
 
   /**
-   * <code>string bill_status = 5;</code>
+   * <code>bool bill_status = 5;</code>
    * @return The billStatus.
    */
-  java.lang.String getBillStatus();
-  /**
-   * <code>string bill_status = 5;</code>
-   * @return The bytes for billStatus.
-   */
-  com.google.protobuf.ByteString
-      getBillStatusBytes();
+  boolean getBillStatus();
 
   /**
    * <code>int32 bill_amount = 6;</code>
@@ -96,4 +84,28 @@ public interface BillOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSettledAtBytes();
+
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.shop.OrderInfo> 
+      getOrdersList();
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.OrderInfo getOrders(int index);
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   */
+  int getOrdersCount();
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder> 
+      getOrdersOrBuilderList();
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrdersOrBuilder(
+      int index);
 }

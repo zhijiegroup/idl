@@ -262,6 +262,41 @@ struct GloryApi_Shop {
   /// Clears the value of `shopKeeper`. Subsequent reads from it will return its default value.
   mutating func clearShopKeeper() {_uniqueStorage()._shopKeeper = nil}
 
+  var className: String {
+    get {return _storage._className}
+    set {_uniqueStorage()._className = newValue}
+  }
+
+  var studentNum: String {
+    get {return _storage._studentNum}
+    set {_uniqueStorage()._studentNum = newValue}
+  }
+
+  var studentCardPath: String {
+    get {return _storage._studentCardPath}
+    set {_uniqueStorage()._studentCardPath = newValue}
+  }
+
+  var managerWechatID: String {
+    get {return _storage._managerWechatID}
+    set {_uniqueStorage()._managerWechatID = newValue}
+  }
+
+  var paymentQrcodePath: String {
+    get {return _storage._paymentQrcodePath}
+    set {_uniqueStorage()._paymentQrcodePath = newValue}
+  }
+
+  var teacherName: String {
+    get {return _storage._teacherName}
+    set {_uniqueStorage()._teacherName = newValue}
+  }
+
+  var teacherPhone: String {
+    get {return _storage._teacherPhone}
+    set {_uniqueStorage()._teacherPhone = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1165,6 +1200,52 @@ struct GloryApi_UpdateShopManagerResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
+struct GloryApi_UpdateShopStatusRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var shopID: Int64 = 0
+
+  var status: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_UpdateShopStatusResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 struct GloryApi_GetShopBusinessDataRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -1445,6 +1526,8 @@ extension GloryApi_ListShopQualificationRequest: @unchecked Sendable {}
 extension GloryApi_ListShopQualificationResponse: @unchecked Sendable {}
 extension GloryApi_UpdateShopManagerRequest: @unchecked Sendable {}
 extension GloryApi_UpdateShopManagerResponse: @unchecked Sendable {}
+extension GloryApi_UpdateShopStatusRequest: @unchecked Sendable {}
+extension GloryApi_UpdateShopStatusResponse: @unchecked Sendable {}
 extension GloryApi_GetShopBusinessDataRequest: @unchecked Sendable {}
 extension GloryApi_ShopChartData: @unchecked Sendable {}
 extension GloryApi_ShopBusinessData: @unchecked Sendable {}
@@ -1502,6 +1585,13 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     37: .standard(proto: "shop_logo_path"),
     38: .standard(proto: "business_license_path"),
     40: .standard(proto: "shop_keeper"),
+    41: .standard(proto: "class_name"),
+    42: .standard(proto: "student_num"),
+    43: .standard(proto: "student_card_path"),
+    44: .standard(proto: "manager_wechat_id"),
+    45: .standard(proto: "payment_qrcode_path"),
+    46: .standard(proto: "teacher_name"),
+    47: .standard(proto: "teacher_phone"),
   ]
 
   fileprivate class _StorageClass {
@@ -1544,6 +1634,13 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _shopLogoPath: String = String()
     var _businessLicensePath: String = String()
     var _shopKeeper: GloryApi_ShopKeeper? = nil
+    var _className: String = String()
+    var _studentNum: String = String()
+    var _studentCardPath: String = String()
+    var _managerWechatID: String = String()
+    var _paymentQrcodePath: String = String()
+    var _teacherName: String = String()
+    var _teacherPhone: String = String()
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1597,6 +1694,13 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _shopLogoPath = source._shopLogoPath
       _businessLicensePath = source._businessLicensePath
       _shopKeeper = source._shopKeeper
+      _className = source._className
+      _studentNum = source._studentNum
+      _studentCardPath = source._studentCardPath
+      _managerWechatID = source._managerWechatID
+      _paymentQrcodePath = source._paymentQrcodePath
+      _teacherName = source._teacherName
+      _teacherPhone = source._teacherPhone
     }
   }
 
@@ -1653,6 +1757,13 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 38: try { try decoder.decodeSingularStringField(value: &_storage._businessLicensePath) }()
         case 39: try { try decoder.decodeSingularStringField(value: &_storage._ownerIDFrontPath) }()
         case 40: try { try decoder.decodeSingularMessageField(value: &_storage._shopKeeper) }()
+        case 41: try { try decoder.decodeSingularStringField(value: &_storage._className) }()
+        case 42: try { try decoder.decodeSingularStringField(value: &_storage._studentNum) }()
+        case 43: try { try decoder.decodeSingularStringField(value: &_storage._studentCardPath) }()
+        case 44: try { try decoder.decodeSingularStringField(value: &_storage._managerWechatID) }()
+        case 45: try { try decoder.decodeSingularStringField(value: &_storage._paymentQrcodePath) }()
+        case 46: try { try decoder.decodeSingularStringField(value: &_storage._teacherName) }()
+        case 47: try { try decoder.decodeSingularStringField(value: &_storage._teacherPhone) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1780,6 +1891,27 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       try { if let v = _storage._shopKeeper {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
       } }()
+      if !_storage._className.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._className, fieldNumber: 41)
+      }
+      if !_storage._studentNum.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._studentNum, fieldNumber: 42)
+      }
+      if !_storage._studentCardPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._studentCardPath, fieldNumber: 43)
+      }
+      if !_storage._managerWechatID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._managerWechatID, fieldNumber: 44)
+      }
+      if !_storage._paymentQrcodePath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._paymentQrcodePath, fieldNumber: 45)
+      }
+      if !_storage._teacherName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._teacherName, fieldNumber: 46)
+      }
+      if !_storage._teacherPhone.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._teacherPhone, fieldNumber: 47)
+      }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
       }
@@ -1831,6 +1963,13 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._shopLogoPath != rhs_storage._shopLogoPath {return false}
         if _storage._businessLicensePath != rhs_storage._businessLicensePath {return false}
         if _storage._shopKeeper != rhs_storage._shopKeeper {return false}
+        if _storage._className != rhs_storage._className {return false}
+        if _storage._studentNum != rhs_storage._studentNum {return false}
+        if _storage._studentCardPath != rhs_storage._studentCardPath {return false}
+        if _storage._managerWechatID != rhs_storage._managerWechatID {return false}
+        if _storage._paymentQrcodePath != rhs_storage._paymentQrcodePath {return false}
+        if _storage._teacherName != rhs_storage._teacherName {return false}
+        if _storage._teacherPhone != rhs_storage._teacherPhone {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -3465,6 +3604,90 @@ extension GloryApi_UpdateShopManagerResponse: SwiftProtobuf.Message, SwiftProtob
   }
 
   static func ==(lhs: GloryApi_UpdateShopManagerResponse, rhs: GloryApi_UpdateShopManagerResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShopStatusRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShopStatusRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "shop_id"),
+    3: .same(proto: "status"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 2)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShopStatusRequest, rhs: GloryApi_UpdateShopStatusRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.status != rhs.status {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_UpdateShopStatusResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".UpdateShopStatusResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_UpdateShopStatusResponse, rhs: GloryApi_UpdateShopStatusResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

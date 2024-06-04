@@ -3,7 +3,8 @@
 // @ts-nocheck
 
 import * as base from "../base";
-export { base };
+import * as order from "./order";
+export { base, order };
 
 export interface CreateBillRequest {
   base_request?: base.BaseRequest;
@@ -20,10 +21,11 @@ export interface Bill {
   bill_name?: string;
   tenant_name?: string;
   shop_name?: string;
-  bill_status?: string;
+  bill_status?: boolean;
   bill_amount?: number;
   created_at?: string;
   settled_at?: string;
+  orders?: Array<order.OrderInfo>;
 }
 
 export interface ListBillRequest {
@@ -47,4 +49,14 @@ export interface SettleBillRequest {
 
 export interface SettleBillResponse {
   base_resp?: base.BaseResponse;
+}
+
+export interface GetShopBillDetailRequest {
+  base_request?: base.BaseRequest;
+  bill_id?: string;
+}
+
+export interface GetShopBilDetailResponse {
+  base_resp?: base.BaseResponse;
+  bill?: Bill;
 }

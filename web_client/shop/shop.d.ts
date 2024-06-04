@@ -84,6 +84,13 @@ export interface Shop {
   /** 营业执照 OSS路径 */
   business_license_path?: string;
   shop_keeper?: ShopKeeper;
+  class_name?: string;
+  student_num?: string;
+  student_card_path?: string;
+  manager_wechat_id?: string;
+  payment_qrcode_path?: string;
+  teacher_name?: string;
+  teacher_phone?: string;
 }
 
 export interface ShopQualification {
@@ -301,6 +308,16 @@ export interface UpdateShopManagerRequest {
 }
 
 export interface UpdateShopManagerResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface UpdateShopStatusRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+  status?: string;
+}
+
+export interface UpdateShopStatusResponse {
   base_resp?: base.BaseResponse;
 }
 

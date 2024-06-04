@@ -49,6 +49,14 @@ message Shop {
   ShopKeeper shop_keeper = 40;
   string status = 41; // 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
   string approval_status = 42; // 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+  string class_name = 48;
+  string student_num = 49;
+  string student_card_path = 43;
+  string manager_wechat_id = 44;
+  string payment_qrcode_path = 45;
+  string teacher_name = 46;
+  string teacher_phone = 47;
+
 }
 
 message ShopQualification {
@@ -255,6 +263,16 @@ message UpdateShopManagerRequest {
 }
 
 message UpdateShopManagerResponse{
+  base.BaseResponse base_resp = 1;
+}
+
+message UpdateShopStatusRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+  string status = 3;
+}
+
+message UpdateShopStatusResponse{
   base.BaseResponse base_resp = 1;
 }
 

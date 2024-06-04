@@ -135,6 +135,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$5.ListOperationMetricsResponse> listOperationMetrics($pb.ServerContext ctx, $5.ListOperationMetricsRequest request);
   $async.Future<$4.GetShopQrcodeResponse> getShopQrcode($pb.ServerContext ctx, $4.GetShopQrcodeRequest request);
   $async.Future<$4.UpdateShopManagerResponse> updateShopManager($pb.ServerContext ctx, $4.UpdateShopManagerRequest request);
+  $async.Future<$4.UpdateShopStatusResponse> updateShopStatus($pb.ServerContext ctx, $4.UpdateShopStatusRequest request);
   $async.Future<$4.GetShopBusinessDataResponse> getShopBusinessData($pb.ServerContext ctx, $4.GetShopBusinessDataRequest request);
   $async.Future<$4.AddShopAccessResponse> addShopAccess($pb.ServerContext ctx, $4.AddShopAccessRequest request);
   $async.Future<$4.RemoveShopAccessResponse> removeShopAccess($pb.ServerContext ctx, $4.RemoveShopAccessRequest request);
@@ -201,6 +202,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$15.CreateBillResponse> createShopBill($pb.ServerContext ctx, $15.CreateBillRequest request);
   $async.Future<$15.ListBillResponse> listShopBill($pb.ServerContext ctx, $15.ListBillRequest request);
   $async.Future<$15.SettleBillResponse> settleShopBill($pb.ServerContext ctx, $15.SettleBillRequest request);
+  $async.Future<$15.GetShopBilDetailResponse> getShopBillDetail($pb.ServerContext ctx, $15.GetShopBillDetailRequest request);
   $async.Future<$16.UploadAttachmentResponse> uploadAttachment($pb.ServerContext ctx, $16.UploadAttachmentRequest request);
   $async.Future<$16.SaveAttachmentResponse> saveAttachment($pb.ServerContext ctx, $16.SaveAttachmentRequest request);
   $async.Future<$16.ListAttachmentResponse> listAttachment($pb.ServerContext ctx, $16.ListAttachmentRequest request);
@@ -583,6 +585,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListOperationMetrics': return $5.ListOperationMetricsRequest();
       case 'GetShopQrcode': return $4.GetShopQrcodeRequest();
       case 'UpdateShopManager': return $4.UpdateShopManagerRequest();
+      case 'UpdateShopStatus': return $4.UpdateShopStatusRequest();
       case 'GetShopBusinessData': return $4.GetShopBusinessDataRequest();
       case 'AddShopAccess': return $4.AddShopAccessRequest();
       case 'RemoveShopAccess': return $4.RemoveShopAccessRequest();
@@ -649,6 +652,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShopBill': return $15.CreateBillRequest();
       case 'ListShopBill': return $15.ListBillRequest();
       case 'SettleShopBill': return $15.SettleBillRequest();
+      case 'GetShopBillDetail': return $15.GetShopBillDetailRequest();
       case 'UploadAttachment': return $16.UploadAttachmentRequest();
       case 'SaveAttachment': return $16.SaveAttachmentRequest();
       case 'ListAttachment': return $16.ListAttachmentRequest();
@@ -1034,6 +1038,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListOperationMetrics': return this.listOperationMetrics(ctx, request as $5.ListOperationMetricsRequest);
       case 'GetShopQrcode': return this.getShopQrcode(ctx, request as $4.GetShopQrcodeRequest);
       case 'UpdateShopManager': return this.updateShopManager(ctx, request as $4.UpdateShopManagerRequest);
+      case 'UpdateShopStatus': return this.updateShopStatus(ctx, request as $4.UpdateShopStatusRequest);
       case 'GetShopBusinessData': return this.getShopBusinessData(ctx, request as $4.GetShopBusinessDataRequest);
       case 'AddShopAccess': return this.addShopAccess(ctx, request as $4.AddShopAccessRequest);
       case 'RemoveShopAccess': return this.removeShopAccess(ctx, request as $4.RemoveShopAccessRequest);
@@ -1100,6 +1105,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'CreateShopBill': return this.createShopBill(ctx, request as $15.CreateBillRequest);
       case 'ListShopBill': return this.listShopBill(ctx, request as $15.ListBillRequest);
       case 'SettleShopBill': return this.settleShopBill(ctx, request as $15.SettleBillRequest);
+      case 'GetShopBillDetail': return this.getShopBillDetail(ctx, request as $15.GetShopBillDetailRequest);
       case 'UploadAttachment': return this.uploadAttachment(ctx, request as $16.UploadAttachmentRequest);
       case 'SaveAttachment': return this.saveAttachment(ctx, request as $16.SaveAttachmentRequest);
       case 'ListAttachment': return this.listAttachment(ctx, request as $16.ListAttachmentRequest);

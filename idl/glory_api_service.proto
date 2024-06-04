@@ -277,6 +277,10 @@ service glory_api {
     option (api.post) = '/api/shop/update_shop_manager';
   }
 
+  rpc UpdateShopStatus(UpdateShopStatusRequest) returns (UpdateShopStatusResponse) {
+    option (api.post) = '/api/shop/update_shop_status';
+  }
+
   rpc GetShopBusinessData(GetShopBusinessDataRequest) returns (GetShopBusinessDataResponse) {
     option (api.get) = '/api/shop/get_shop_business_data';
   }

@@ -562,6 +562,14 @@ export class glory_api {
     );
   }
 
+  UpdateShopStatus(request) {
+    const uri = `${this.uriPrefix}/api/shop/update_shop_status`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   GetShopBusinessData(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/shop/get_shop_business_data${query}`;
@@ -1066,6 +1074,14 @@ export class glory_api {
 
   SettleShopBill(request) {
     const uri = `${this.uriPrefix}/api/shop/settle_bill`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
+  GetShopBillDetail(request) {
+    const uri = `${this.uriPrefix}/api/shop/get_bill_detail`;
     const body = JSONbigint.stringify(request);
     return fetch(uri, { method: "POST", headers, body, credentials }).then(
       handleResponse

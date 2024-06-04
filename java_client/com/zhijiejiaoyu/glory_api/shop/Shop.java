@@ -46,6 +46,13 @@ private static final long serialVersionUID = 0L;
     ownerIdBackPath = "";
     shopLogoPath = "";
     businessLicensePath = "";
+    className = "";
+    studentNum = "";
+    studentCardPath = "";
+    managerWechatId = "";
+    paymentQrcodePath = "";
+    teacherName = "";
+    teacherPhone = "";
   }
 
   @java.lang.Override
@@ -319,6 +326,48 @@ private static final long serialVersionUID = 0L;
               shopKeeper = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 330: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            className = s;
+            break;
+          }
+          case 338: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            studentNum = s;
+            break;
+          }
+          case 346: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            studentCardPath = s;
+            break;
+          }
+          case 354: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            managerWechatId = s;
+            break;
+          }
+          case 362: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            paymentQrcodePath = s;
+            break;
+          }
+          case 370: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            teacherName = s;
+            break;
+          }
+          case 378: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            teacherPhone = s;
             break;
           }
           case 2666: {
@@ -1902,6 +1951,272 @@ private static final long serialVersionUID = 0L;
     return getShopKeeper();
   }
 
+  public static final int CLASS_NAME_FIELD_NUMBER = 41;
+  private volatile java.lang.Object className ;
+  /**
+   * <code>string class_name = 41;</code>
+   * @return The className.
+   */
+  @java.lang.Override
+  public java.lang.String getClassName() {
+    java.lang.Object ref = className ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      className = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string class_name = 41;</code>
+   * @return The bytes for className.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClassNameBytes() {
+    java.lang.Object ref = className ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      className = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STUDENT_NUM_FIELD_NUMBER = 42;
+  private volatile java.lang.Object studentNum ;
+  /**
+   * <code>string student_num = 42;</code>
+   * @return The studentNum.
+   */
+  @java.lang.Override
+  public java.lang.String getStudentNum() {
+    java.lang.Object ref = studentNum ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      studentNum = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string student_num = 42;</code>
+   * @return The bytes for studentNum.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStudentNumBytes() {
+    java.lang.Object ref = studentNum ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      studentNum = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STUDENT_CARD_PATH_FIELD_NUMBER = 43;
+  private volatile java.lang.Object studentCardPath ;
+  /**
+   * <code>string student_card_path = 43;</code>
+   * @return The studentCardPath.
+   */
+  @java.lang.Override
+  public java.lang.String getStudentCardPath() {
+    java.lang.Object ref = studentCardPath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      studentCardPath = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string student_card_path = 43;</code>
+   * @return The bytes for studentCardPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStudentCardPathBytes() {
+    java.lang.Object ref = studentCardPath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      studentCardPath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MANAGER_WECHAT_ID_FIELD_NUMBER = 44;
+  private volatile java.lang.Object managerWechatId ;
+  /**
+   * <code>string manager_wechat_id = 44;</code>
+   * @return The managerWechatId.
+   */
+  @java.lang.Override
+  public java.lang.String getManagerWechatId() {
+    java.lang.Object ref = managerWechatId ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      managerWechatId = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string manager_wechat_id = 44;</code>
+   * @return The bytes for managerWechatId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagerWechatIdBytes() {
+    java.lang.Object ref = managerWechatId ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      managerWechatId = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAYMENT_QRCODE_PATH_FIELD_NUMBER = 45;
+  private volatile java.lang.Object paymentQrcodePath ;
+  /**
+   * <code>string payment_qrcode_path = 45;</code>
+   * @return The paymentQrcodePath.
+   */
+  @java.lang.Override
+  public java.lang.String getPaymentQrcodePath() {
+    java.lang.Object ref = paymentQrcodePath ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      paymentQrcodePath = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string payment_qrcode_path = 45;</code>
+   * @return The bytes for paymentQrcodePath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPaymentQrcodePathBytes() {
+    java.lang.Object ref = paymentQrcodePath ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      paymentQrcodePath = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEACHER_NAME_FIELD_NUMBER = 46;
+  private volatile java.lang.Object teacherName ;
+  /**
+   * <code>string teacher_name = 46;</code>
+   * @return The teacherName.
+   */
+  @java.lang.Override
+  public java.lang.String getTeacherName() {
+    java.lang.Object ref = teacherName ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      teacherName = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string teacher_name = 46;</code>
+   * @return The bytes for teacherName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTeacherNameBytes() {
+    java.lang.Object ref = teacherName ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      teacherName = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEACHER_PHONE_FIELD_NUMBER = 47;
+  private volatile java.lang.Object teacherPhone ;
+  /**
+   * <code>string teacher_phone = 47;</code>
+   * @return The teacherPhone.
+   */
+  @java.lang.Override
+  public java.lang.String getTeacherPhone() {
+    java.lang.Object ref = teacherPhone ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      teacherPhone = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string teacher_phone = 47;</code>
+   * @return The bytes for teacherPhone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTeacherPhoneBytes() {
+    java.lang.Object ref = teacherPhone ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      teacherPhone = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2034,6 +2349,27 @@ private static final long serialVersionUID = 0L;
     }
     if (shopKeeper != null) {
       output.writeMessage(40, getShopKeeper());
+    }
+    if (!getClassNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 41, className );
+    }
+    if (!getStudentNumBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 42, studentNum );
+    }
+    if (!getStudentCardPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, studentCardPath );
+    }
+    if (!getManagerWechatIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44, managerWechatId );
+    }
+    if (!getPaymentQrcodePathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 45, paymentQrcodePath );
+    }
+    if (!getTeacherNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 46, teacherName );
+    }
+    if (!getTeacherPhoneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, teacherPhone );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -2181,6 +2517,27 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(40, getShopKeeper());
     }
+    if (!getClassNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, className );
+    }
+    if (!getStudentNumBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, studentNum );
+    }
+    if (!getStudentCardPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, studentCardPath );
+    }
+    if (!getManagerWechatIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, managerWechatId );
+    }
+    if (!getPaymentQrcodePathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(45, paymentQrcodePath );
+    }
+    if (!getTeacherNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46, teacherName );
+    }
+    if (!getTeacherPhoneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, teacherPhone );
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2281,6 +2638,20 @@ private static final long serialVersionUID = 0L;
       if (!getShopKeeper()
           .equals(other.getShopKeeper())) return false;
     }
+    if (!getClassName()
+        .equals(other.getClassName())) return false;
+    if (!getStudentNum()
+        .equals(other.getStudentNum())) return false;
+    if (!getStudentCardPath()
+        .equals(other.getStudentCardPath())) return false;
+    if (!getManagerWechatId()
+        .equals(other.getManagerWechatId())) return false;
+    if (!getPaymentQrcodePath()
+        .equals(other.getPaymentQrcodePath())) return false;
+    if (!getTeacherName()
+        .equals(other.getTeacherName())) return false;
+    if (!getTeacherPhone()
+        .equals(other.getTeacherPhone())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2383,6 +2754,20 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SHOP_KEEPER_FIELD_NUMBER;
       hash = (53 * hash) + getShopKeeper().hashCode();
     }
+    hash = (37 * hash) + CLASS_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getClassName().hashCode();
+    hash = (37 * hash) + STUDENT_NUM_FIELD_NUMBER;
+    hash = (53 * hash) + getStudentNum().hashCode();
+    hash = (37 * hash) + STUDENT_CARD_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getStudentCardPath().hashCode();
+    hash = (37 * hash) + MANAGER_WECHAT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getManagerWechatId().hashCode();
+    hash = (37 * hash) + PAYMENT_QRCODE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getPaymentQrcodePath().hashCode();
+    hash = (37 * hash) + TEACHER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherName().hashCode();
+    hash = (37 * hash) + TEACHER_PHONE_FIELD_NUMBER;
+    hash = (53 * hash) + getTeacherPhone().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2603,6 +2988,20 @@ private static final long serialVersionUID = 0L;
         shopKeeper = null;
         shopKeeperBuilder = null;
       }
+      className = "";
+
+      studentNum = "";
+
+      studentCardPath = "";
+
+      managerWechatId = "";
+
+      paymentQrcodePath = "";
+
+      teacherName = "";
+
+      teacherPhone = "";
+
       return this;
     }
 
@@ -2685,6 +3084,13 @@ private static final long serialVersionUID = 0L;
       } else {
         result.shopKeeper = shopKeeperBuilder .build();
       }
+      result.className = className ;
+      result.studentNum = studentNum ;
+      result.studentCardPath = studentCardPath ;
+      result.managerWechatId = managerWechatId ;
+      result.paymentQrcodePath = paymentQrcodePath ;
+      result.teacherName = teacherName ;
+      result.teacherPhone = teacherPhone ;
       onBuilt();
       return result;
     }
@@ -2907,6 +3313,34 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasShopKeeper()) {
         mergeShopKeeper(other.getShopKeeper());
+      }
+      if (!other.getClassName().isEmpty()) {
+        className = other.className ;
+        onChanged();
+      }
+      if (!other.getStudentNum().isEmpty()) {
+        studentNum = other.studentNum ;
+        onChanged();
+      }
+      if (!other.getStudentCardPath().isEmpty()) {
+        studentCardPath = other.studentCardPath ;
+        onChanged();
+      }
+      if (!other.getManagerWechatId().isEmpty()) {
+        managerWechatId = other.managerWechatId ;
+        onChanged();
+      }
+      if (!other.getPaymentQrcodePath().isEmpty()) {
+        paymentQrcodePath = other.paymentQrcodePath ;
+        onChanged();
+      }
+      if (!other.getTeacherName().isEmpty()) {
+        teacherName = other.teacherName ;
+        onChanged();
+      }
+      if (!other.getTeacherPhone().isEmpty()) {
+        teacherPhone = other.teacherPhone ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6506,6 +6940,538 @@ private static final long serialVersionUID = 0L;
         shopKeeper = null;
       }
       return shopKeeperBuilder ;
+    }
+
+    private java.lang.Object className = "";
+    /**
+     * <code>string class_name = 41;</code>
+     * @return The className.
+     */
+    public java.lang.String getClassName() {
+      java.lang.Object ref = className ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        className = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string class_name = 41;</code>
+     * @return The bytes for className.
+     */
+    public com.google.protobuf.ByteString
+        getClassNameBytes() {
+      java.lang.Object ref = className ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        className = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string class_name = 41;</code>
+     * @param value The className to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClassName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      className = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string class_name = 41;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClassName() {
+      
+      className = getDefaultInstance().getClassName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string class_name = 41;</code>
+     * @param value The bytes for className to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClassNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      className = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object studentNum = "";
+    /**
+     * <code>string student_num = 42;</code>
+     * @return The studentNum.
+     */
+    public java.lang.String getStudentNum() {
+      java.lang.Object ref = studentNum ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        studentNum = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string student_num = 42;</code>
+     * @return The bytes for studentNum.
+     */
+    public com.google.protobuf.ByteString
+        getStudentNumBytes() {
+      java.lang.Object ref = studentNum ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        studentNum = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string student_num = 42;</code>
+     * @param value The studentNum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentNum(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      studentNum = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string student_num = 42;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStudentNum() {
+      
+      studentNum = getDefaultInstance().getStudentNum();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string student_num = 42;</code>
+     * @param value The bytes for studentNum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentNumBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      studentNum = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object studentCardPath = "";
+    /**
+     * <code>string student_card_path = 43;</code>
+     * @return The studentCardPath.
+     */
+    public java.lang.String getStudentCardPath() {
+      java.lang.Object ref = studentCardPath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        studentCardPath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string student_card_path = 43;</code>
+     * @return The bytes for studentCardPath.
+     */
+    public com.google.protobuf.ByteString
+        getStudentCardPathBytes() {
+      java.lang.Object ref = studentCardPath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        studentCardPath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string student_card_path = 43;</code>
+     * @param value The studentCardPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentCardPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      studentCardPath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string student_card_path = 43;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStudentCardPath() {
+      
+      studentCardPath = getDefaultInstance().getStudentCardPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string student_card_path = 43;</code>
+     * @param value The bytes for studentCardPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStudentCardPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      studentCardPath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object managerWechatId = "";
+    /**
+     * <code>string manager_wechat_id = 44;</code>
+     * @return The managerWechatId.
+     */
+    public java.lang.String getManagerWechatId() {
+      java.lang.Object ref = managerWechatId ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managerWechatId = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string manager_wechat_id = 44;</code>
+     * @return The bytes for managerWechatId.
+     */
+    public com.google.protobuf.ByteString
+        getManagerWechatIdBytes() {
+      java.lang.Object ref = managerWechatId ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managerWechatId = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string manager_wechat_id = 44;</code>
+     * @param value The managerWechatId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagerWechatId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      managerWechatId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string manager_wechat_id = 44;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearManagerWechatId() {
+      
+      managerWechatId = getDefaultInstance().getManagerWechatId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string manager_wechat_id = 44;</code>
+     * @param value The bytes for managerWechatId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagerWechatIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      managerWechatId = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object paymentQrcodePath = "";
+    /**
+     * <code>string payment_qrcode_path = 45;</code>
+     * @return The paymentQrcodePath.
+     */
+    public java.lang.String getPaymentQrcodePath() {
+      java.lang.Object ref = paymentQrcodePath ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paymentQrcodePath = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string payment_qrcode_path = 45;</code>
+     * @return The bytes for paymentQrcodePath.
+     */
+    public com.google.protobuf.ByteString
+        getPaymentQrcodePathBytes() {
+      java.lang.Object ref = paymentQrcodePath ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paymentQrcodePath = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string payment_qrcode_path = 45;</code>
+     * @param value The paymentQrcodePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentQrcodePath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      paymentQrcodePath = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string payment_qrcode_path = 45;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPaymentQrcodePath() {
+      
+      paymentQrcodePath = getDefaultInstance().getPaymentQrcodePath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string payment_qrcode_path = 45;</code>
+     * @param value The bytes for paymentQrcodePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentQrcodePathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      paymentQrcodePath = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object teacherName = "";
+    /**
+     * <code>string teacher_name = 46;</code>
+     * @return The teacherName.
+     */
+    public java.lang.String getTeacherName() {
+      java.lang.Object ref = teacherName ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        teacherName = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string teacher_name = 46;</code>
+     * @return The bytes for teacherName.
+     */
+    public com.google.protobuf.ByteString
+        getTeacherNameBytes() {
+      java.lang.Object ref = teacherName ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        teacherName = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string teacher_name = 46;</code>
+     * @param value The teacherName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      teacherName = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string teacher_name = 46;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherName() {
+      
+      teacherName = getDefaultInstance().getTeacherName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string teacher_name = 46;</code>
+     * @param value The bytes for teacherName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      teacherName = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object teacherPhone = "";
+    /**
+     * <code>string teacher_phone = 47;</code>
+     * @return The teacherPhone.
+     */
+    public java.lang.String getTeacherPhone() {
+      java.lang.Object ref = teacherPhone ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        teacherPhone = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string teacher_phone = 47;</code>
+     * @return The bytes for teacherPhone.
+     */
+    public com.google.protobuf.ByteString
+        getTeacherPhoneBytes() {
+      java.lang.Object ref = teacherPhone ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        teacherPhone = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string teacher_phone = 47;</code>
+     * @param value The teacherPhone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherPhone(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      teacherPhone = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string teacher_phone = 47;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeacherPhone() {
+      
+      teacherPhone = getDefaultInstance().getTeacherPhone();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string teacher_phone = 47;</code>
+     * @param value The bytes for teacherPhone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeacherPhoneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      teacherPhone = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -45,24 +45,26 @@ final $typed_data.Uint8List createBillResponseDescriptor = $convert.base64Decode
 const Bill$json = {
   '1': 'Bill',
   '2': [
-    {'1': 'bill_id', '3': 1, '4': 1, '5': 9, '10': 'billId'},
+    {'1': 'bill_id', '3': 1, '4': 1, '5': 3, '10': 'billId'},
     {'1': 'bill_name', '3': 2, '4': 1, '5': 9, '10': 'billName'},
     {'1': 'tenant_name', '3': 3, '4': 1, '5': 9, '10': 'tenantName'},
     {'1': 'shop_name', '3': 4, '4': 1, '5': 9, '10': 'shopName'},
-    {'1': 'bill_status', '3': 5, '4': 1, '5': 9, '10': 'billStatus'},
+    {'1': 'bill_status', '3': 5, '4': 1, '5': 8, '10': 'billStatus'},
     {'1': 'bill_amount', '3': 6, '4': 1, '5': 5, '10': 'billAmount'},
     {'1': 'created_at', '3': 7, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'settled_at', '3': 8, '4': 1, '5': 9, '10': 'settledAt'},
+    {'1': 'orders', '3': 9, '4': 3, '5': 11, '6': '.glory_api.OrderInfo', '10': 'orders'},
   ],
 };
 
 /// Descriptor for `Bill`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List billDescriptor = $convert.base64Decode(
-    'CgRCaWxsEhcKB2JpbGxfaWQYASABKAlSBmJpbGxJZBIbCgliaWxsX25hbWUYAiABKAlSCGJpbG'
+    'CgRCaWxsEhcKB2JpbGxfaWQYASABKANSBmJpbGxJZBIbCgliaWxsX25hbWUYAiABKAlSCGJpbG'
     'xOYW1lEh8KC3RlbmFudF9uYW1lGAMgASgJUgp0ZW5hbnROYW1lEhsKCXNob3BfbmFtZRgEIAEo'
-    'CVIIc2hvcE5hbWUSHwoLYmlsbF9zdGF0dXMYBSABKAlSCmJpbGxTdGF0dXMSHwoLYmlsbF9hbW'
+    'CVIIc2hvcE5hbWUSHwoLYmlsbF9zdGF0dXMYBSABKAhSCmJpbGxTdGF0dXMSHwoLYmlsbF9hbW'
     '91bnQYBiABKAVSCmJpbGxBbW91bnQSHQoKY3JlYXRlZF9hdBgHIAEoCVIJY3JlYXRlZEF0Eh0K'
-    'CnNldHRsZWRfYXQYCCABKAlSCXNldHRsZWRBdA==');
+    'CnNldHRsZWRfYXQYCCABKAlSCXNldHRsZWRBdBIsCgZvcmRlcnMYCSADKAsyFC5nbG9yeV9hcG'
+    'kuT3JkZXJJbmZvUgZvcmRlcnM=');
 
 @$core.Deprecated('Use listBillRequestDescriptor instead')
 const ListBillRequest$json = {
@@ -127,4 +129,33 @@ const SettleBillResponse$json = {
 final $typed_data.Uint8List settleBillResponseDescriptor = $convert.base64Decode(
     'ChJTZXR0bGVCaWxsUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use getShopBillDetailRequestDescriptor instead')
+const GetShopBillDetailRequest$json = {
+  '1': 'GetShopBillDetailRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'bill_id', '3': 2, '4': 1, '5': 3, '10': 'billId'},
+  ],
+};
+
+/// Descriptor for `GetShopBillDetailRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getShopBillDetailRequestDescriptor = $convert.base64Decode(
+    'ChhHZXRTaG9wQmlsbERldGFpbFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS'
+    '5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFwoHYmlsbF9pZBgCIAEoA1IGYmlsbElk');
+
+@$core.Deprecated('Use getShopBilDetailResponseDescriptor instead')
+const GetShopBilDetailResponse$json = {
+  '1': 'GetShopBilDetailResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+    {'1': 'bill', '3': 2, '4': 1, '5': 11, '6': '.glory_api.Bill', '10': 'bill'},
+  ],
+};
+
+/// Descriptor for `GetShopBilDetailResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getShopBilDetailResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRTaG9wQmlsRGV0YWlsUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYX'
+    'NlUmVzcG9uc2VSCGJhc2VSZXNwEiMKBGJpbGwYAiABKAsyDy5nbG9yeV9hcGkuQmlsbFIEYmls'
+    'bA==');
 
