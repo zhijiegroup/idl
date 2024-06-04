@@ -47,8 +47,10 @@ message Shop {
   string shop_logo_path = 37; // 店铺Logo OSS路径
   string business_license_path = 38; //营业执照 OSS路径
   ShopKeeper shop_keeper = 40;
-  string class_name = 41;
-  string student_num = 42;
+  string status = 41; // 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+  string approval_status = 42; // 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+  string class_name = 48;
+  string student_num = 49;
   string student_card_path = 43;
   string manager_wechat_id = 44;
   string payment_qrcode_path = 45;
