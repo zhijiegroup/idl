@@ -72,4 +72,16 @@ public interface StudentArticleCreationOperationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRejectReasonBytes();
+
+  /**
+   * <code>string comment = 6;</code>
+   * @return The comment.
+   */
+  java.lang.String getComment();
+  /**
+   * <code>string comment = 6;</code>
+   * @return The bytes for comment.
+   */
+  com.google.protobuf.ByteString
+      getCommentBytes();
 }

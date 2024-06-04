@@ -3417,6 +3417,7 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     ArticleContentModeration? contentModeration,
     ArticleCreationInfo? creationContent,
     $core.String? rejectReason,
+    $core.String? comment,
   }) {
     final $result = create();
     if (action != null) {
@@ -3434,6 +3435,9 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     if (rejectReason != null) {
       $result.rejectReason = rejectReason;
     }
+    if (comment != null) {
+      $result.comment = comment;
+    }
     return $result;
   }
   StudentArticleCreationOperation._() : super();
@@ -3446,6 +3450,7 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
     ..aOM<ArticleContentModeration>(3, _omitFieldNames ? '' : 'contentModeration', subBuilder: ArticleContentModeration.create)
     ..aOM<ArticleCreationInfo>(4, _omitFieldNames ? '' : 'creationContent', subBuilder: ArticleCreationInfo.create)
     ..aOS(5, _omitFieldNames ? '' : 'rejectReason')
+    ..aOS(6, _omitFieldNames ? '' : 'comment')
     ..hasRequiredFields = false
   ;
 
@@ -3518,6 +3523,15 @@ class StudentArticleCreationOperation extends $pb.GeneratedMessage {
   $core.bool hasRejectReason() => $_has(4);
   @$pb.TagNumber(5)
   void clearRejectReason() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get comment => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set comment($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasComment() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearComment() => clearField(6);
 }
 
 class ArticleCreationInfo extends $pb.GeneratedMessage {
