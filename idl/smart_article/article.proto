@@ -272,6 +272,7 @@ message StudentArticleCreationOperation {
     ArticleContentModeration content_moderation = 3;
     ArticleCreationInfo creation_content = 4; 
     string reject_reason = 5;
+    string comment = 6;
 }
 
 message ArticleCreationInfo {
