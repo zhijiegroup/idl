@@ -85,33 +85,34 @@ public final class ApprovalFlow {
       "roval_flow_id\030\002 \001(\003\022\036\n\026approval_flow_lev" +
       "el_id\030\003 \001(\003\022\016\n\006result\030\004 \001(\t\022\017\n\007comment\030\005" +
       " \001(\t\"<\n\023ApproveFlowResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\303\001\n\027ListAppro" +
+      "\030\001 \001(\0132\022.base.BaseResponse\"\330\001\n\027ListAppro" +
       "valFlowRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
       "ase.BaseRequest\022\014\n\004type\030\002 \001(\t\022\014\n\004name\030\003 " +
       "\001(\t\022\r\n\005phone\030\004 \001(\t\022\025\n\rapproval_type\030\005 \001(" +
-      "\t\022\020\n\010class_id\030\006 \001(\003\022+\n\npagination\030d \001(\0132" +
-      "\027.base.PaginationRequest\"\234\001\n\030ListApprova" +
-      "lFlowResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\022+\n\004list\030\002 \003(\0132\035.glory_api.A" +
-      "pprovalFlowDetail\022,\n\npagination\030d \001(\0132\030." +
-      "base.PaginationResponse\"\223\001\n\021ApprovalFlow" +
-      "Level\022\036\n\026approval_flow_level_id\030\001 \001(\003\022\023\n" +
-      "\013level_order\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\026\n\016pr" +
-      "ocess_status\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\020\n\010a" +
-      "pprover\030\006 \001(\t\"\204\002\n\022ApprovalFlowDetail\022\030\n\020" +
-      "approval_flow_id\030\001 \001(\003\022\023\n\013tenant_name\030\002 " +
-      "\001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\022\n\nclas" +
-      "s_name\030\005 \001(\t\022\025\n\rapproval_type\030\006 \001(\t\022\021\n\ts" +
-      "hop_name\030\007 \001(\t\022\024\n\014product_name\030\010 \001(\t\022\022\n\n" +
-      "created_at\030\t \001(\t\022:\n\024approval_flow_levels" +
-      "\030\n \003(\0132\034.glory_api.ApprovalFlowLevel\"a\n\034" +
-      "GetApprovalFlowDetailRequest\022\'\n\014base_req" +
-      "uest\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020approva" +
-      "l_flow_id\030\002 \001(\003\"|\n\035GetApprovalFlowDetail" +
-      "Response\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseR" +
-      "esponse\0224\n\rapproval_flow\030\002 \001(\0132\035.glory_a" +
-      "pi.ApprovalFlowDetailB*\n&com.zhijiejiaoy" +
-      "u.glory_api.short_videoP\001b\006proto3"
+      "\t\022\020\n\010class_id\030\006 \001(\003\022\023\n\013access_type\030\007 \001(\t" +
+      "\022+\n\npagination\030d \001(\0132\027.base.PaginationRe" +
+      "quest\"\234\001\n\030ListApprovalFlowResponse\022%\n\tba" +
+      "se_resp\030\001 \001(\0132\022.base.BaseResponse\022+\n\004lis" +
+      "t\030\002 \003(\0132\035.glory_api.ApprovalFlowDetail\022," +
+      "\n\npagination\030d \001(\0132\030.base.PaginationResp" +
+      "onse\"\223\001\n\021ApprovalFlowLevel\022\036\n\026approval_f" +
+      "low_level_id\030\001 \001(\003\022\023\n\013level_order\030\002 \001(\003\022" +
+      "\016\n\006status\030\003 \001(\t\022\026\n\016process_status\030\004 \001(\t\022" +
+      "\017\n\007comment\030\005 \001(\t\022\020\n\010approver\030\006 \001(\t\"\204\002\n\022A" +
+      "pprovalFlowDetail\022\030\n\020approval_flow_id\030\001 " +
+      "\001(\003\022\023\n\013tenant_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r" +
+      "\n\005phone\030\004 \001(\t\022\022\n\nclass_name\030\005 \001(\t\022\025\n\rapp" +
+      "roval_type\030\006 \001(\t\022\021\n\tshop_name\030\007 \001(\t\022\024\n\014p" +
+      "roduct_name\030\010 \001(\t\022\022\n\ncreated_at\030\t \001(\t\022:\n" +
+      "\024approval_flow_levels\030\n \003(\0132\034.glory_api." +
+      "ApprovalFlowLevel\"a\n\034GetApprovalFlowDeta" +
+      "ilRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.B" +
+      "aseRequest\022\030\n\020approval_flow_id\030\002 \001(\003\"|\n\035" +
+      "GetApprovalFlowDetailResponse\022%\n\tbase_re" +
+      "sp\030\001 \001(\0132\022.base.BaseResponse\0224\n\rapproval" +
+      "_flow\030\002 \001(\0132\035.glory_api.ApprovalFlowDeta" +
+      "ilB*\n&com.zhijiejiaoyu.glory_api.short_v" +
+      "ideoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -148,7 +149,7 @@ public final class ApprovalFlow {
     internal_static_glory_api_ListApprovalFlowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_ListApprovalFlowRequest_descriptor,
-        new java.lang.String[] { "BaseRequest", "Type", "Name", "Phone", "ApprovalType", "ClassId", "Pagination", });
+        new java.lang.String[] { "BaseRequest", "Type", "Name", "Phone", "ApprovalType", "ClassId", "AccessType", "Pagination", });
     internal_static_glory_api_ListApprovalFlowResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_glory_api_ListApprovalFlowResponse_fieldAccessorTable = new

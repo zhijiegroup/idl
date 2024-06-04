@@ -37,6 +37,8 @@ export interface ListApprovalFlowRequest {
   phone?: string;
   approval_type?: string;
   class_id?: string;
+  /** 访问类型 */
+  access_type?: string;
   pagination?: base.PaginationRequest;
 }
 

@@ -77,6 +77,26 @@ public interface ListApprovalFlowRequestOrBuilder extends
   long getClassId();
 
   /**
+   * <pre>
+   * 访问类型
+   * </pre>
+   *
+   * <code>string access_type = 7;</code>
+   * @return The accessType.
+   */
+  java.lang.String getAccessType();
+  /**
+   * <pre>
+   * 访问类型
+   * </pre>
+   *
+   * <code>string access_type = 7;</code>
+   * @return The bytes for accessType.
+   */
+  com.google.protobuf.ByteString
+      getAccessTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */

@@ -87,6 +87,7 @@ const ListApprovalFlowRequest$json = {
     {'1': 'phone', '3': 4, '4': 1, '5': 9, '10': 'phone'},
     {'1': 'approval_type', '3': 5, '4': 1, '5': 9, '10': 'approvalType'},
     {'1': 'class_id', '3': 6, '4': 1, '5': 3, '10': 'classId'},
+    {'1': 'access_type', '3': 7, '4': 1, '5': 9, '10': 'accessType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -96,8 +97,9 @@ final $typed_data.Uint8List listApprovalFlowRequestDescriptor = $convert.base64D
     'ChdMaXN0QXBwcm92YWxGbG93UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
     'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgR0eXBlGAIgASgJUgR0eXBlEhIKBG5hbWUYAyAB'
     'KAlSBG5hbWUSFAoFcGhvbmUYBCABKAlSBXBob25lEiMKDWFwcHJvdmFsX3R5cGUYBSABKAlSDG'
-    'FwcHJvdmFsVHlwZRIZCghjbGFzc19pZBgGIAEoA1IHY2xhc3NJZBI3CgpwYWdpbmF0aW9uGGQg'
-    'ASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
+    'FwcHJvdmFsVHlwZRIZCghjbGFzc19pZBgGIAEoA1IHY2xhc3NJZBIfCgthY2Nlc3NfdHlwZRgH'
+    'IAEoCVIKYWNjZXNzVHlwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUm'
+    'VxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listApprovalFlowResponseDescriptor instead')
 const ListApprovalFlowResponse$json = {

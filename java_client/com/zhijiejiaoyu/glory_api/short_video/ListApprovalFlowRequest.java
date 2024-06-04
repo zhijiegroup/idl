@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     name = "";
     phone = "";
     approvalType = "";
+    accessType = "";
   }
 
   @java.lang.Override
@@ -92,6 +93,12 @@ private static final long serialVersionUID = 0L;
           case 48: {
 
             classId = input.readInt64();
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            accessType = s;
             break;
           }
           case 802: {
@@ -328,6 +335,52 @@ private static final long serialVersionUID = 0L;
     return classId ;
   }
 
+  public static final int ACCESS_TYPE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object accessType ;
+  /**
+   * <pre>
+   * 访问类型
+   * </pre>
+   *
+   * <code>string access_type = 7;</code>
+   * @return The accessType.
+   */
+  @java.lang.Override
+  public java.lang.String getAccessType() {
+    java.lang.Object ref = accessType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      accessType = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 访问类型
+   * </pre>
+   *
+   * <code>string access_type = 7;</code>
+   * @return The bytes for accessType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAccessTypeBytes() {
+    java.lang.Object ref = accessType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      accessType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -386,6 +439,9 @@ private static final long serialVersionUID = 0L;
     if (classId != 0L) {
       output.writeInt64(6, classId );
     }
+    if (!getAccessTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, accessType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -417,6 +473,9 @@ private static final long serialVersionUID = 0L;
     if (classId != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(6, classId );
+    }
+    if (!getAccessTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, accessType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -452,6 +511,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getApprovalType())) return false;
     if (getClassId()
         != other.getClassId()) return false;
+    if (!getAccessType()
+        .equals(other.getAccessType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -483,6 +544,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getClassId());
+    hash = (37 * hash) + ACCESS_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getAccessType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -636,6 +699,8 @@ private static final long serialVersionUID = 0L;
 
       classId = 0L;
 
+      accessType = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -678,6 +743,7 @@ private static final long serialVersionUID = 0L;
       result.phone = phone ;
       result.approvalType = approvalType ;
       result.classId = classId ;
+      result.accessType = accessType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -752,6 +818,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getClassId() != 0L) {
         setClassId(other.getClassId());
+      }
+      if (!other.getAccessType().isEmpty()) {
+        accessType = other.accessType ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1235,6 +1305,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearClassId() {
       
       classId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object accessType = "";
+    /**
+     * <pre>
+     * 访问类型
+     * </pre>
+     *
+     * <code>string access_type = 7;</code>
+     * @return The accessType.
+     */
+    public java.lang.String getAccessType() {
+      java.lang.Object ref = accessType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 访问类型
+     * </pre>
+     *
+     * <code>string access_type = 7;</code>
+     * @return The bytes for accessType.
+     */
+    public com.google.protobuf.ByteString
+        getAccessTypeBytes() {
+      java.lang.Object ref = accessType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 访问类型
+     * </pre>
+     *
+     * <code>string access_type = 7;</code>
+     * @param value The accessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      accessType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 访问类型
+     * </pre>
+     *
+     * <code>string access_type = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAccessType() {
+      
+      accessType = getDefaultInstance().getAccessType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 访问类型
+     * </pre>
+     *
+     * <code>string access_type = 7;</code>
+     * @param value The bytes for accessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      accessType = value;
       onChanged();
       return this;
     }

@@ -144,6 +144,9 @@ struct GloryApi_ListApprovalFlowRequest {
 
   var classID: Int64 = 0
 
+  /// 访问类型
+  var accessType: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -518,6 +521,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
     4: .same(proto: "phone"),
     5: .standard(proto: "approval_type"),
     6: .standard(proto: "class_id"),
+    7: .standard(proto: "access_type"),
     100: .same(proto: "pagination"),
   ]
 
@@ -533,6 +537,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 4: try { try decoder.decodeSingularStringField(value: &self.phone) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.approvalType) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.accessType) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -562,6 +567,9 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
     if self.classID != 0 {
       try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 6)
     }
+    if !self.accessType.isEmpty {
+      try visitor.visitSingularStringField(value: self.accessType, fieldNumber: 7)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -575,6 +583,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.phone != rhs.phone {return false}
     if lhs.approvalType != rhs.approvalType {return false}
     if lhs.classID != rhs.classID {return false}
+    if lhs.accessType != rhs.accessType {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
