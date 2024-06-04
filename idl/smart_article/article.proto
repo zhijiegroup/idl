@@ -273,6 +273,7 @@ message StudentArticleCreationOperation {
     ArticleCreationInfo creation_content = 4; 
     string reject_reason = 5;
     string comment = 6;
+    int64 score = 7;
 }
 
 message ArticleCreationInfo {
