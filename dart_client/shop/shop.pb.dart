@@ -57,13 +57,15 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? businessLicensePath,
     $core.String? ownerIdFrontPath,
     ShopKeeper? shopKeeper,
-    $core.String? className,
-    $core.String? studentNum,
+    $core.String? status,
+    $core.String? approvalStatus,
     $core.String? studentCardPath,
     $core.String? managerWechatId,
     $core.String? paymentQrcodePath,
     $core.String? teacherName,
     $core.String? teacherPhone,
+    $core.String? className,
+    $core.String? studentNum,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -181,11 +183,11 @@ class Shop extends $pb.GeneratedMessage {
     if (shopKeeper != null) {
       $result.shopKeeper = shopKeeper;
     }
-    if (className != null) {
-      $result.className = className;
+    if (status != null) {
+      $result.status = status;
     }
-    if (studentNum != null) {
-      $result.studentNum = studentNum;
+    if (approvalStatus != null) {
+      $result.approvalStatus = approvalStatus;
     }
     if (studentCardPath != null) {
       $result.studentCardPath = studentCardPath;
@@ -201,6 +203,12 @@ class Shop extends $pb.GeneratedMessage {
     }
     if (teacherPhone != null) {
       $result.teacherPhone = teacherPhone;
+    }
+    if (className != null) {
+      $result.className = className;
+    }
+    if (studentNum != null) {
+      $result.studentNum = studentNum;
     }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
@@ -250,13 +258,15 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(38, _omitFieldNames ? '' : 'businessLicensePath')
     ..aOS(39, _omitFieldNames ? '' : 'ownerIdFrontPath')
     ..aOM<ShopKeeper>(40, _omitFieldNames ? '' : 'shopKeeper', subBuilder: ShopKeeper.create)
-    ..aOS(41, _omitFieldNames ? '' : 'className')
-    ..aOS(42, _omitFieldNames ? '' : 'studentNum')
+    ..aOS(41, _omitFieldNames ? '' : 'status')
+    ..aOS(42, _omitFieldNames ? '' : 'approvalStatus')
     ..aOS(43, _omitFieldNames ? '' : 'studentCardPath')
     ..aOS(44, _omitFieldNames ? '' : 'managerWechatId')
     ..aOS(45, _omitFieldNames ? '' : 'paymentQrcodePath')
     ..aOS(46, _omitFieldNames ? '' : 'teacherName')
     ..aOS(47, _omitFieldNames ? '' : 'teacherPhone')
+    ..aOS(48, _omitFieldNames ? '' : 'className')
+    ..aOS(49, _omitFieldNames ? '' : 'studentNum')
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -621,22 +631,22 @@ class Shop extends $pb.GeneratedMessage {
   ShopKeeper ensureShopKeeper() => $_ensure(37);
 
   @$pb.TagNumber(41)
-  $core.String get className => $_getSZ(38);
+  $core.String get status => $_getSZ(38);
   @$pb.TagNumber(41)
-  set className($core.String v) { $_setString(38, v); }
+  set status($core.String v) { $_setString(38, v); }
   @$pb.TagNumber(41)
-  $core.bool hasClassName() => $_has(38);
+  $core.bool hasStatus() => $_has(38);
   @$pb.TagNumber(41)
-  void clearClassName() => clearField(41);
+  void clearStatus() => clearField(41);
 
   @$pb.TagNumber(42)
-  $core.String get studentNum => $_getSZ(39);
+  $core.String get approvalStatus => $_getSZ(39);
   @$pb.TagNumber(42)
-  set studentNum($core.String v) { $_setString(39, v); }
+  set approvalStatus($core.String v) { $_setString(39, v); }
   @$pb.TagNumber(42)
-  $core.bool hasStudentNum() => $_has(39);
+  $core.bool hasApprovalStatus() => $_has(39);
   @$pb.TagNumber(42)
-  void clearStudentNum() => clearField(42);
+  void clearApprovalStatus() => clearField(42);
 
   @$pb.TagNumber(43)
   $core.String get studentCardPath => $_getSZ(40);
@@ -683,8 +693,26 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(47)
   void clearTeacherPhone() => clearField(47);
 
+  @$pb.TagNumber(48)
+  $core.String get className => $_getSZ(45);
+  @$pb.TagNumber(48)
+  set className($core.String v) { $_setString(45, v); }
+  @$pb.TagNumber(48)
+  $core.bool hasClassName() => $_has(45);
+  @$pb.TagNumber(48)
+  void clearClassName() => clearField(48);
+
+  @$pb.TagNumber(49)
+  $core.String get studentNum => $_getSZ(46);
+  @$pb.TagNumber(49)
+  set studentNum($core.String v) { $_setString(46, v); }
+  @$pb.TagNumber(49)
+  $core.bool hasStudentNum() => $_has(46);
+  @$pb.TagNumber(49)
+  void clearStudentNum() => clearField(49);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(45);
+  $core.List<ShopQualification> get shopQualification => $_getList(47);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {

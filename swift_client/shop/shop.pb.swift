@@ -262,6 +262,18 @@ struct GloryApi_Shop {
   /// Clears the value of `shopKeeper`. Subsequent reads from it will return its default value.
   mutating func clearShopKeeper() {_uniqueStorage()._shopKeeper = nil}
 
+  /// 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+  var status: String {
+    get {return _storage._status}
+    set {_uniqueStorage()._status = newValue}
+  }
+
+  /// 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+  var approvalStatus: String {
+    get {return _storage._approvalStatus}
+    set {_uniqueStorage()._approvalStatus = newValue}
+  }
+
   var className: String {
     get {return _storage._className}
     set {_uniqueStorage()._className = newValue}
@@ -1585,8 +1597,10 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     37: .standard(proto: "shop_logo_path"),
     38: .standard(proto: "business_license_path"),
     40: .standard(proto: "shop_keeper"),
-    41: .standard(proto: "class_name"),
-    42: .standard(proto: "student_num"),
+    41: .same(proto: "status"),
+    42: .standard(proto: "approval_status"),
+    48: .standard(proto: "class_name"),
+    49: .standard(proto: "student_num"),
     43: .standard(proto: "student_card_path"),
     44: .standard(proto: "manager_wechat_id"),
     45: .standard(proto: "payment_qrcode_path"),
@@ -1634,6 +1648,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _shopLogoPath: String = String()
     var _businessLicensePath: String = String()
     var _shopKeeper: GloryApi_ShopKeeper? = nil
+    var _status: String = String()
+    var _approvalStatus: String = String()
     var _className: String = String()
     var _studentNum: String = String()
     var _studentCardPath: String = String()
@@ -1694,6 +1710,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _shopLogoPath = source._shopLogoPath
       _businessLicensePath = source._businessLicensePath
       _shopKeeper = source._shopKeeper
+      _status = source._status
+      _approvalStatus = source._approvalStatus
       _className = source._className
       _studentNum = source._studentNum
       _studentCardPath = source._studentCardPath
@@ -1757,13 +1775,15 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 38: try { try decoder.decodeSingularStringField(value: &_storage._businessLicensePath) }()
         case 39: try { try decoder.decodeSingularStringField(value: &_storage._ownerIDFrontPath) }()
         case 40: try { try decoder.decodeSingularMessageField(value: &_storage._shopKeeper) }()
-        case 41: try { try decoder.decodeSingularStringField(value: &_storage._className) }()
-        case 42: try { try decoder.decodeSingularStringField(value: &_storage._studentNum) }()
+        case 41: try { try decoder.decodeSingularStringField(value: &_storage._status) }()
+        case 42: try { try decoder.decodeSingularStringField(value: &_storage._approvalStatus) }()
         case 43: try { try decoder.decodeSingularStringField(value: &_storage._studentCardPath) }()
         case 44: try { try decoder.decodeSingularStringField(value: &_storage._managerWechatID) }()
         case 45: try { try decoder.decodeSingularStringField(value: &_storage._paymentQrcodePath) }()
         case 46: try { try decoder.decodeSingularStringField(value: &_storage._teacherName) }()
         case 47: try { try decoder.decodeSingularStringField(value: &_storage._teacherPhone) }()
+        case 48: try { try decoder.decodeSingularStringField(value: &_storage._className) }()
+        case 49: try { try decoder.decodeSingularStringField(value: &_storage._studentNum) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1891,11 +1911,11 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       try { if let v = _storage._shopKeeper {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
       } }()
-      if !_storage._className.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._className, fieldNumber: 41)
+      if !_storage._status.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 41)
       }
-      if !_storage._studentNum.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._studentNum, fieldNumber: 42)
+      if !_storage._approvalStatus.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._approvalStatus, fieldNumber: 42)
       }
       if !_storage._studentCardPath.isEmpty {
         try visitor.visitSingularStringField(value: _storage._studentCardPath, fieldNumber: 43)
@@ -1911,6 +1931,12 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       }
       if !_storage._teacherPhone.isEmpty {
         try visitor.visitSingularStringField(value: _storage._teacherPhone, fieldNumber: 47)
+      }
+      if !_storage._className.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._className, fieldNumber: 48)
+      }
+      if !_storage._studentNum.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._studentNum, fieldNumber: 49)
       }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
@@ -1963,6 +1989,8 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._shopLogoPath != rhs_storage._shopLogoPath {return false}
         if _storage._businessLicensePath != rhs_storage._businessLicensePath {return false}
         if _storage._shopKeeper != rhs_storage._shopKeeper {return false}
+        if _storage._status != rhs_storage._status {return false}
+        if _storage._approvalStatus != rhs_storage._approvalStatus {return false}
         if _storage._className != rhs_storage._className {return false}
         if _storage._studentNum != rhs_storage._studentNum {return false}
         if _storage._studentCardPath != rhs_storage._studentCardPath {return false}

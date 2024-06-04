@@ -46,6 +46,8 @@ private static final long serialVersionUID = 0L;
     ownerIdBackPath = "";
     shopLogoPath = "";
     businessLicensePath = "";
+    status = "";
+    approvalStatus = "";
     className = "";
     studentNum = "";
     studentCardPath = "";
@@ -331,13 +333,13 @@ private static final long serialVersionUID = 0L;
           case 330: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            className = s;
+            status = s;
             break;
           }
           case 338: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            studentNum = s;
+            approvalStatus = s;
             break;
           }
           case 346: {
@@ -368,6 +370,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             teacherPhone = s;
+            break;
+          }
+          case 386: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            className = s;
+            break;
+          }
+          case 394: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            studentNum = s;
             break;
           }
           case 2666: {
@@ -1951,10 +1965,102 @@ private static final long serialVersionUID = 0L;
     return getShopKeeper();
   }
 
-  public static final int CLASS_NAME_FIELD_NUMBER = 41;
+  public static final int STATUS_FIELD_NUMBER = 41;
+  private volatile java.lang.Object status ;
+  /**
+   * <pre>
+   * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+   * </pre>
+   *
+   * <code>string status = 41;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+   * </pre>
+   *
+   * <code>string status = 41;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVAL_STATUS_FIELD_NUMBER = 42;
+  private volatile java.lang.Object approvalStatus ;
+  /**
+   * <pre>
+   * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+   * </pre>
+   *
+   * <code>string approval_status = 42;</code>
+   * @return The approvalStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getApprovalStatus() {
+    java.lang.Object ref = approvalStatus ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approvalStatus = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+   * </pre>
+   *
+   * <code>string approval_status = 42;</code>
+   * @return The bytes for approvalStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApprovalStatusBytes() {
+    java.lang.Object ref = approvalStatus ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approvalStatus = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLASS_NAME_FIELD_NUMBER = 48;
   private volatile java.lang.Object className ;
   /**
-   * <code>string class_name = 41;</code>
+   * <code>string class_name = 48;</code>
    * @return The className.
    */
   @java.lang.Override
@@ -1971,7 +2077,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string class_name = 41;</code>
+   * <code>string class_name = 48;</code>
    * @return The bytes for className.
    */
   @java.lang.Override
@@ -1989,10 +2095,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STUDENT_NUM_FIELD_NUMBER = 42;
+  public static final int STUDENT_NUM_FIELD_NUMBER = 49;
   private volatile java.lang.Object studentNum ;
   /**
-   * <code>string student_num = 42;</code>
+   * <code>string student_num = 49;</code>
    * @return The studentNum.
    */
   @java.lang.Override
@@ -2009,7 +2115,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string student_num = 42;</code>
+   * <code>string student_num = 49;</code>
    * @return The bytes for studentNum.
    */
   @java.lang.Override
@@ -2350,11 +2456,11 @@ private static final long serialVersionUID = 0L;
     if (shopKeeper != null) {
       output.writeMessage(40, getShopKeeper());
     }
-    if (!getClassNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 41, className );
+    if (!getStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 41, status );
     }
-    if (!getStudentNumBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 42, studentNum );
+    if (!getApprovalStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 42, approvalStatus );
     }
     if (!getStudentCardPathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 43, studentCardPath );
@@ -2370,6 +2476,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTeacherPhoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 47, teacherPhone );
+    }
+    if (!getClassNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48, className );
+    }
+    if (!getStudentNumBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 49, studentNum );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -2517,11 +2629,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(40, getShopKeeper());
     }
-    if (!getClassNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, className );
+    if (!getStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, status );
     }
-    if (!getStudentNumBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, studentNum );
+    if (!getApprovalStatusBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, approvalStatus );
     }
     if (!getStudentCardPathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, studentCardPath );
@@ -2537,6 +2649,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTeacherPhoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, teacherPhone );
+    }
+    if (!getClassNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(48, className );
+    }
+    if (!getStudentNumBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(49, studentNum );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -2638,6 +2756,10 @@ private static final long serialVersionUID = 0L;
       if (!getShopKeeper()
           .equals(other.getShopKeeper())) return false;
     }
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (!getApprovalStatus()
+        .equals(other.getApprovalStatus())) return false;
     if (!getClassName()
         .equals(other.getClassName())) return false;
     if (!getStudentNum()
@@ -2754,6 +2876,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SHOP_KEEPER_FIELD_NUMBER;
       hash = (53 * hash) + getShopKeeper().hashCode();
     }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + APPROVAL_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalStatus().hashCode();
     hash = (37 * hash) + CLASS_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getClassName().hashCode();
     hash = (37 * hash) + STUDENT_NUM_FIELD_NUMBER;
@@ -2988,6 +3114,10 @@ private static final long serialVersionUID = 0L;
         shopKeeper = null;
         shopKeeperBuilder = null;
       }
+      status = "";
+
+      approvalStatus = "";
+
       className = "";
 
       studentNum = "";
@@ -3084,6 +3214,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.shopKeeper = shopKeeperBuilder .build();
       }
+      result.status = status ;
+      result.approvalStatus = approvalStatus ;
       result.className = className ;
       result.studentNum = studentNum ;
       result.studentCardPath = studentCardPath ;
@@ -3313,6 +3445,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasShopKeeper()) {
         mergeShopKeeper(other.getShopKeeper());
+      }
+      if (!other.getStatus().isEmpty()) {
+        status = other.status ;
+        onChanged();
+      }
+      if (!other.getApprovalStatus().isEmpty()) {
+        approvalStatus = other.approvalStatus ;
+        onChanged();
       }
       if (!other.getClassName().isEmpty()) {
         className = other.className ;
@@ -6942,9 +7082,201 @@ private static final long serialVersionUID = 0L;
       return shopKeeperBuilder ;
     }
 
+    private java.lang.Object status = "";
+    /**
+     * <pre>
+     * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+     * </pre>
+     *
+     * <code>string status = 41;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+     * </pre>
+     *
+     * <code>string status = 41;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+     * </pre>
+     *
+     * <code>string status = 41;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      status = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+     * </pre>
+     *
+     * <code>string status = 41;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+     * </pre>
+     *
+     * <code>string status = 41;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      status = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object approvalStatus = "";
+    /**
+     * <pre>
+     * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+     * </pre>
+     *
+     * <code>string approval_status = 42;</code>
+     * @return The approvalStatus.
+     */
+    public java.lang.String getApprovalStatus() {
+      java.lang.Object ref = approvalStatus ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approvalStatus = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+     * </pre>
+     *
+     * <code>string approval_status = 42;</code>
+     * @return The bytes for approvalStatus.
+     */
+    public com.google.protobuf.ByteString
+        getApprovalStatusBytes() {
+      java.lang.Object ref = approvalStatus ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approvalStatus = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+     * </pre>
+     *
+     * <code>string approval_status = 42;</code>
+     * @param value The approvalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approvalStatus = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+     * </pre>
+     *
+     * <code>string approval_status = 42;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalStatus() {
+      
+      approvalStatus = getDefaultInstance().getApprovalStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+     * </pre>
+     *
+     * <code>string approval_status = 42;</code>
+     * @param value The bytes for approvalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approvalStatus = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object className = "";
     /**
-     * <code>string class_name = 41;</code>
+     * <code>string class_name = 48;</code>
      * @return The className.
      */
     public java.lang.String getClassName() {
@@ -6960,7 +7292,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string class_name = 41;</code>
+     * <code>string class_name = 48;</code>
      * @return The bytes for className.
      */
     public com.google.protobuf.ByteString
@@ -6977,7 +7309,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string class_name = 41;</code>
+     * <code>string class_name = 48;</code>
      * @param value The className to set.
      * @return This builder for chaining.
      */
@@ -6992,7 +7324,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string class_name = 41;</code>
+     * <code>string class_name = 48;</code>
      * @return This builder for chaining.
      */
     public Builder clearClassName() {
@@ -7002,7 +7334,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string class_name = 41;</code>
+     * <code>string class_name = 48;</code>
      * @param value The bytes for className to set.
      * @return This builder for chaining.
      */
@@ -7020,7 +7352,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object studentNum = "";
     /**
-     * <code>string student_num = 42;</code>
+     * <code>string student_num = 49;</code>
      * @return The studentNum.
      */
     public java.lang.String getStudentNum() {
@@ -7036,7 +7368,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string student_num = 42;</code>
+     * <code>string student_num = 49;</code>
      * @return The bytes for studentNum.
      */
     public com.google.protobuf.ByteString
@@ -7053,7 +7385,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string student_num = 42;</code>
+     * <code>string student_num = 49;</code>
      * @param value The studentNum to set.
      * @return This builder for chaining.
      */
@@ -7068,7 +7400,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string student_num = 42;</code>
+     * <code>string student_num = 49;</code>
      * @return This builder for chaining.
      */
     public Builder clearStudentNum() {
@@ -7078,7 +7410,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string student_num = 42;</code>
+     * <code>string student_num = 49;</code>
      * @param value The bytes for studentNum to set.
      * @return This builder for chaining.
      */

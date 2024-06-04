@@ -84,6 +84,10 @@ export interface Shop {
   /** 营业执照 OSS路径 */
   business_license_path?: string;
   shop_keeper?: ShopKeeper;
+  /** 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed */
+  status?: string;
+  /** 申请状态: 待审核:to_approve;拒绝:reject;完成:pass */
+  approval_status?: string;
   class_name?: string;
   student_num?: string;
   student_card_path?: string;

@@ -736,24 +736,64 @@ public interface ShopOrBuilder extends
   com.zhijiejiaoyu.glory_api.shop.ShopKeeperOrBuilder getShopKeeperOrBuilder();
 
   /**
-   * <code>string class_name = 41;</code>
+   * <pre>
+   * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+   * </pre>
+   *
+   * <code>string status = 41;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   * 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
+   * </pre>
+   *
+   * <code>string status = 41;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
+   * <pre>
+   * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+   * </pre>
+   *
+   * <code>string approval_status = 42;</code>
+   * @return The approvalStatus.
+   */
+  java.lang.String getApprovalStatus();
+  /**
+   * <pre>
+   * 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+   * </pre>
+   *
+   * <code>string approval_status = 42;</code>
+   * @return The bytes for approvalStatus.
+   */
+  com.google.protobuf.ByteString
+      getApprovalStatusBytes();
+
+  /**
+   * <code>string class_name = 48;</code>
    * @return The className.
    */
   java.lang.String getClassName();
   /**
-   * <code>string class_name = 41;</code>
+   * <code>string class_name = 48;</code>
    * @return The bytes for className.
    */
   com.google.protobuf.ByteString
       getClassNameBytes();
 
   /**
-   * <code>string student_num = 42;</code>
+   * <code>string student_num = 49;</code>
    * @return The studentNum.
    */
   java.lang.String getStudentNum();
   /**
-   * <code>string student_num = 42;</code>
+   * <code>string student_num = 49;</code>
    * @return The bytes for studentNum.
    */
   com.google.protobuf.ByteString

@@ -56,8 +56,10 @@ const Shop$json = {
     {'1': 'shop_logo_path', '3': 37, '4': 1, '5': 9, '10': 'shopLogoPath'},
     {'1': 'business_license_path', '3': 38, '4': 1, '5': 9, '10': 'businessLicensePath'},
     {'1': 'shop_keeper', '3': 40, '4': 1, '5': 11, '6': '.glory_api.ShopKeeper', '10': 'shopKeeper'},
-    {'1': 'class_name', '3': 41, '4': 1, '5': 9, '10': 'className'},
-    {'1': 'student_num', '3': 42, '4': 1, '5': 9, '10': 'studentNum'},
+    {'1': 'status', '3': 41, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'approval_status', '3': 42, '4': 1, '5': 9, '10': 'approvalStatus'},
+    {'1': 'class_name', '3': 48, '4': 1, '5': 9, '10': 'className'},
+    {'1': 'student_num', '3': 49, '4': 1, '5': 9, '10': 'studentNum'},
     {'1': 'student_card_path', '3': 43, '4': 1, '5': 9, '10': 'studentCardPath'},
     {'1': 'manager_wechat_id', '3': 44, '4': 1, '5': 9, '10': 'managerWechatId'},
     {'1': 'payment_qrcode_path', '3': 45, '4': 1, '5': 9, '10': 'paymentQrcodePath'},
@@ -98,11 +100,13 @@ final $typed_data.Uint8List shopDescriptor = $convert.base64Decode(
     'RoGCQgASgJUg9vd25lcklkQmFja1BhdGgSJAoOc2hvcF9sb2dvX3BhdGgYJSABKAlSDHNob3BM'
     'b2dvUGF0aBIyChVidXNpbmVzc19saWNlbnNlX3BhdGgYJiABKAlSE2J1c2luZXNzTGljZW5zZV'
     'BhdGgSNgoLc2hvcF9rZWVwZXIYKCABKAsyFS5nbG9yeV9hcGkuU2hvcEtlZXBlclIKc2hvcEtl'
-    'ZXBlchIdCgpjbGFzc19uYW1lGCkgASgJUgljbGFzc05hbWUSHwoLc3R1ZGVudF9udW0YKiABKA'
-    'lSCnN0dWRlbnROdW0SKgoRc3R1ZGVudF9jYXJkX3BhdGgYKyABKAlSD3N0dWRlbnRDYXJkUGF0'
-    'aBIqChFtYW5hZ2VyX3dlY2hhdF9pZBgsIAEoCVIPbWFuYWdlcldlY2hhdElkEi4KE3BheW1lbn'
-    'RfcXJjb2RlX3BhdGgYLSABKAlSEXBheW1lbnRRcmNvZGVQYXRoEiEKDHRlYWNoZXJfbmFtZRgu'
-    'IAEoCVILdGVhY2hlck5hbWUSIwoNdGVhY2hlcl9waG9uZRgvIAEoCVIMdGVhY2hlclBob25l');
+    'ZXBlchIWCgZzdGF0dXMYKSABKAlSBnN0YXR1cxInCg9hcHByb3ZhbF9zdGF0dXMYKiABKAlSDm'
+    'FwcHJvdmFsU3RhdHVzEh0KCmNsYXNzX25hbWUYMCABKAlSCWNsYXNzTmFtZRIfCgtzdHVkZW50'
+    'X251bRgxIAEoCVIKc3R1ZGVudE51bRIqChFzdHVkZW50X2NhcmRfcGF0aBgrIAEoCVIPc3R1ZG'
+    'VudENhcmRQYXRoEioKEW1hbmFnZXJfd2VjaGF0X2lkGCwgASgJUg9tYW5hZ2VyV2VjaGF0SWQS'
+    'LgoTcGF5bWVudF9xcmNvZGVfcGF0aBgtIAEoCVIRcGF5bWVudFFyY29kZVBhdGgSIQoMdGVhY2'
+    'hlcl9uYW1lGC4gASgJUgt0ZWFjaGVyTmFtZRIjCg10ZWFjaGVyX3Bob25lGC8gASgJUgx0ZWFj'
+    'aGVyUGhvbmU=');
 
 @$core.Deprecated('Use shopQualificationDescriptor instead')
 const ShopQualification$json = {
