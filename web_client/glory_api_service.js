@@ -3551,6 +3551,12 @@ export class glory_api {
       handleResponse
     );
   }
+
+  GetApprovalFlowDetail(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/approval_flow/get_approval_flow_detail${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
 }
 
 export const glory_apiClient = new glory_api();

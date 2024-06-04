@@ -13872,6 +13872,37 @@ public final class glory_apiGrpc {
     return getListApprovalFlowMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> getGetApprovalFlowDetailMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetApprovalFlowDetail",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest,
+      com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> getGetApprovalFlowDetailMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest, com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> getGetApprovalFlowDetailMethod;
+    if ((getGetApprovalFlowDetailMethod = glory_apiGrpc.getGetApprovalFlowDetailMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getGetApprovalFlowDetailMethod = glory_apiGrpc.getGetApprovalFlowDetailMethod) == null) {
+          glory_apiGrpc.getGetApprovalFlowDetailMethod = getGetApprovalFlowDetailMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest, com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetApprovalFlowDetail"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("GetApprovalFlowDetail"))
+              .build();
+        }
+      }
+    }
+    return getGetApprovalFlowDetailMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -17486,6 +17517,16 @@ public final class glory_apiGrpc {
     default void listApprovalFlow(com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListApprovalFlowMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 审核详情
+     * </pre>
+     */
+    default void getApprovalFlowDetail(com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApprovalFlowDetailMethod(), responseObserver);
     }
   }
 
@@ -21530,6 +21571,17 @@ public final class glory_apiGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListApprovalFlowMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * 审核详情
+     * </pre>
+     */
+    public void getApprovalFlowDetail(com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetApprovalFlowDetailMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -25114,6 +25166,16 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowResponse listApprovalFlow(com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListApprovalFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * 审核详情
+     * </pre>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse getApprovalFlowDetail(com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApprovalFlowDetailMethod(), getCallOptions(), request);
     }
   }
 
@@ -29147,6 +29209,17 @@ public final class glory_apiGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListApprovalFlowMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * 审核详情
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse> getApprovalFlowDetail(
+        com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetApprovalFlowDetailMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXAMPLE = 0;
@@ -29596,6 +29669,7 @@ public final class glory_apiGrpc {
   private static final int METHODID_SUBMIT_APPROVAL_FLOW = 444;
   private static final int METHODID_APPROVE_FLOW = 445;
   private static final int METHODID_LIST_APPROVAL_FLOW = 446;
+  private static final int METHODID_GET_APPROVAL_FLOW_DETAIL = 447;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -31401,6 +31475,10 @@ public final class glory_apiGrpc {
         case METHODID_LIST_APPROVAL_FLOW:
           serviceImpl.listApprovalFlow((com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowResponse>) responseObserver);
+          break;
+        case METHODID_GET_APPROVAL_FLOW_DETAIL:
+          serviceImpl.getApprovalFlowDetail((com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -34549,6 +34627,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowRequest,
               com.zhijiejiaoyu.glory_api.short_video.ListApprovalFlowResponse>(
                 service, METHODID_LIST_APPROVAL_FLOW)))
+        .addMethod(
+          getGetApprovalFlowDetailMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailRequest,
+              com.zhijiejiaoyu.glory_api.short_video.GetApprovalFlowDetailResponse>(
+                service, METHODID_GET_APPROVAL_FLOW_DETAIL)))
         .build();
   }
 
@@ -35044,6 +35129,7 @@ public final class glory_apiGrpc {
               .addMethod(getSubmitApprovalFlowMethod())
               .addMethod(getApproveFlowMethod())
               .addMethod(getListApprovalFlowMethod())
+              .addMethod(getGetApprovalFlowDetailMethod())
               .build();
         }
       }

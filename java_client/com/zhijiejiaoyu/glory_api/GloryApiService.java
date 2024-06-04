@@ -59,7 +59,7 @@ public final class GloryApiService {
       "o\032\027task/teacher_task.proto\032\027task/student" +
       "_task.proto\032\037notification/notification.p" +
       "roto\032\033smart_article/article.proto\032!appro" +
-      "val_flow/approval_flow.proto2\371\302\003\n\tglory_" +
+      "val_flow/approval_flow.proto2\227\304\003\n\tglory_" +
       "api\022s\n\rCreateExample\022\037.glory_api.CreateE" +
       "xampleRequest\032 .glory_api.CreateExampleR" +
       "esponse\"\037\322\301\030\033/api/example/create_example" +
@@ -1502,8 +1502,12 @@ public final class GloryApiService {
       "low/approve_flow\022\206\001\n\020ListApprovalFlow\022\"." +
       "glory_api.ListApprovalFlowRequest\032#.glor" +
       "y_api.ListApprovalFlowResponse\")\322\301\030%/api" +
-      "/approval_flow/list_approval_flowB\036\n\032com" +
-      ".zhijiejiaoyu.glory_apiP\001b\006proto3"
+      "/approval_flow/list_approval_flow\022\233\001\n\025Ge" +
+      "tApprovalFlowDetail\022\'.glory_api.GetAppro" +
+      "valFlowDetailRequest\032(.glory_api.GetAppr" +
+      "ovalFlowDetailResponse\"/\312\301\030+/api/approva" +
+      "l_flow/get_approval_flow_detailB\036\n\032com.z" +
+      "hijiejiaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

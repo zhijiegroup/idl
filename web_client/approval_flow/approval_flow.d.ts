@@ -46,6 +46,15 @@ export interface ListApprovalFlowResponse {
   pagination?: base.PaginationResponse;
 }
 
+export interface ApprovalFlowLevel {
+  approval_flow_level_id?: string;
+  level_order?: string;
+  status?: string;
+  process_status?: string;
+  comment?: string;
+  approver?: string;
+}
+
 export interface ApprovalFlowDetail {
   approval_flow_id?: string;
   tenant_name?: string;
@@ -56,4 +65,15 @@ export interface ApprovalFlowDetail {
   shop_name?: string;
   product_name?: string;
   created_at?: string;
+  approval_flow_levels?: Array<ApprovalFlowLevel>;
+}
+
+export interface GetApprovalFlowDetailRequest {
+  base_request?: base.BaseRequest;
+  approval_flow_id?: string;
+}
+
+export interface GetApprovalFlowDetailResponse {
+  base_resp?: base.BaseResponse;
+  approval_flow?: ApprovalFlowDetail;
 }

@@ -2002,6 +2002,11 @@ CreateLivePlanProduct create live plan product */
   ListApprovalFlow(
     request: approval_flow.ListApprovalFlowRequest
   ): Promise<approval_flow.ListApprovalFlowResponse>;
+
+  /** 审核详情 */
+  GetApprovalFlowDetail(
+    request: approval_flow.GetApprovalFlowDetailRequest
+  ): Promise<approval_flow.GetApprovalFlowDetailResponse>;
 }
 
 export declare const glory_apiClient: glory_api;

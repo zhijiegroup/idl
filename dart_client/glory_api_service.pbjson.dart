@@ -525,6 +525,7 @@ const $core.Map<$core.String, $core.dynamic> glory_apiServiceBase$json = {
     {'1': 'SubmitApprovalFlow', '2': '.glory_api.SubmitApprovalFlowRequest', '3': '.glory_api.SubmitApprovalFlowResponse', '4': {}},
     {'1': 'ApproveFlow', '2': '.glory_api.ApproveFlowRequest', '3': '.glory_api.ApproveFlowResponse', '4': {}},
     {'1': 'ListApprovalFlow', '2': '.glory_api.ListApprovalFlowRequest', '3': '.glory_api.ListApprovalFlowResponse', '4': {}},
+    {'1': 'GetApprovalFlowDetail', '2': '.glory_api.GetApprovalFlowDetailRequest', '3': '.glory_api.GetApprovalFlowDetailResponse', '4': {}},
   ],
 };
 
@@ -1653,6 +1654,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListApprovalFlowRequest': $59.ListApprovalFlowRequest$json,
   '.glory_api.ListApprovalFlowResponse': $59.ListApprovalFlowResponse$json,
   '.glory_api.ApprovalFlowDetail': $59.ApprovalFlowDetail$json,
+  '.glory_api.ApprovalFlowLevel': $59.ApprovalFlowLevel$json,
+  '.glory_api.GetApprovalFlowDetailRequest': $59.GetApprovalFlowDetailRequest$json,
+  '.glory_api.GetApprovalFlowDetailResponse': $59.GetApprovalFlowDetailResponse$json,
 };
 
 /// Descriptor for `glory_api`. Decode as a `google.protobuf.ServiceDescriptorProto`.
@@ -2697,5 +2701,7 @@ final $typed_data.Uint8List glory_apiServiceDescriptor = $convert.base64Decode(
     '9hcGkvYXBwcm92YWxfZmxvdy9hcHByb3ZlX2Zsb3cShgEKEExpc3RBcHByb3ZhbEZsb3cSIi5n'
     'bG9yeV9hcGkuTGlzdEFwcHJvdmFsRmxvd1JlcXVlc3QaIy5nbG9yeV9hcGkuTGlzdEFwcHJvdm'
     'FsRmxvd1Jlc3BvbnNlIinSwRglL2FwaS9hcHByb3ZhbF9mbG93L2xpc3RfYXBwcm92YWxfZmxv'
-    'dw==');
+    'dxKbAQoVR2V0QXBwcm92YWxGbG93RGV0YWlsEicuZ2xvcnlfYXBpLkdldEFwcHJvdmFsRmxvd0'
+    'RldGFpbFJlcXVlc3QaKC5nbG9yeV9hcGkuR2V0QXBwcm92YWxGbG93RGV0YWlsUmVzcG9uc2Ui'
+    'L8rBGCsvYXBpL2FwcHJvdmFsX2Zsb3cvZ2V0X2FwcHJvdmFsX2Zsb3dfZGV0YWls');
 

@@ -550,6 +550,126 @@ class ListApprovalFlowResponse extends $pb.GeneratedMessage {
   $0.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
+class ApprovalFlowLevel extends $pb.GeneratedMessage {
+  factory ApprovalFlowLevel({
+    $fixnum.Int64? approvalFlowLevelId,
+    $fixnum.Int64? levelOrder,
+    $core.String? status,
+    $core.String? processStatus,
+    $core.String? comment,
+    $core.String? approver,
+  }) {
+    final $result = create();
+    if (approvalFlowLevelId != null) {
+      $result.approvalFlowLevelId = approvalFlowLevelId;
+    }
+    if (levelOrder != null) {
+      $result.levelOrder = levelOrder;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (processStatus != null) {
+      $result.processStatus = processStatus;
+    }
+    if (comment != null) {
+      $result.comment = comment;
+    }
+    if (approver != null) {
+      $result.approver = approver;
+    }
+    return $result;
+  }
+  ApprovalFlowLevel._() : super();
+  factory ApprovalFlowLevel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ApprovalFlowLevel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApprovalFlowLevel', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'approvalFlowLevelId')
+    ..aInt64(2, _omitFieldNames ? '' : 'levelOrder')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'processStatus')
+    ..aOS(5, _omitFieldNames ? '' : 'comment')
+    ..aOS(6, _omitFieldNames ? '' : 'approver')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ApprovalFlowLevel clone() => ApprovalFlowLevel()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ApprovalFlowLevel copyWith(void Function(ApprovalFlowLevel) updates) => super.copyWith((message) => updates(message as ApprovalFlowLevel)) as ApprovalFlowLevel;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApprovalFlowLevel create() => ApprovalFlowLevel._();
+  ApprovalFlowLevel createEmptyInstance() => create();
+  static $pb.PbList<ApprovalFlowLevel> createRepeated() => $pb.PbList<ApprovalFlowLevel>();
+  @$core.pragma('dart2js:noInline')
+  static ApprovalFlowLevel getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApprovalFlowLevel>(create);
+  static ApprovalFlowLevel? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get approvalFlowLevelId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set approvalFlowLevelId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApprovalFlowLevelId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApprovalFlowLevelId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get levelOrder => $_getI64(1);
+  @$pb.TagNumber(2)
+  set levelOrder($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLevelOrder() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLevelOrder() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get processStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set processStatus($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasProcessStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProcessStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get comment => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set comment($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasComment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComment() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get approver => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set approver($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasApprover() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearApprover() => clearField(6);
+}
+
 class ApprovalFlowDetail extends $pb.GeneratedMessage {
   factory ApprovalFlowDetail({
     $fixnum.Int64? approvalFlowId,
@@ -561,6 +681,7 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     $core.String? shopName,
     $core.String? productName,
     $core.String? createdAt,
+    $core.Iterable<ApprovalFlowLevel>? approvalFlowLevels,
   }) {
     final $result = create();
     if (approvalFlowId != null) {
@@ -590,6 +711,9 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (approvalFlowLevels != null) {
+      $result.approvalFlowLevels.addAll(approvalFlowLevels);
+    }
     return $result;
   }
   ApprovalFlowDetail._() : super();
@@ -606,6 +730,7 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'shopName')
     ..aOS(8, _omitFieldNames ? '' : 'productName')
     ..aOS(9, _omitFieldNames ? '' : 'createdAt')
+    ..pc<ApprovalFlowLevel>(10, _omitFieldNames ? '' : 'approvalFlowLevels', $pb.PbFieldType.PM, subBuilder: ApprovalFlowLevel.create)
     ..hasRequiredFields = false
   ;
 
@@ -710,6 +835,143 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(8);
   @$pb.TagNumber(9)
   void clearCreatedAt() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<ApprovalFlowLevel> get approvalFlowLevels => $_getList(9);
+}
+
+class GetApprovalFlowDetailRequest extends $pb.GeneratedMessage {
+  factory GetApprovalFlowDetailRequest({
+    $0.BaseRequest? baseRequest,
+    $fixnum.Int64? approvalFlowId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (approvalFlowId != null) {
+      $result.approvalFlowId = approvalFlowId;
+    }
+    return $result;
+  }
+  GetApprovalFlowDetailRequest._() : super();
+  factory GetApprovalFlowDetailRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetApprovalFlowDetailRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApprovalFlowDetailRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'approvalFlowId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetApprovalFlowDetailRequest clone() => GetApprovalFlowDetailRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetApprovalFlowDetailRequest copyWith(void Function(GetApprovalFlowDetailRequest) updates) => super.copyWith((message) => updates(message as GetApprovalFlowDetailRequest)) as GetApprovalFlowDetailRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApprovalFlowDetailRequest create() => GetApprovalFlowDetailRequest._();
+  GetApprovalFlowDetailRequest createEmptyInstance() => create();
+  static $pb.PbList<GetApprovalFlowDetailRequest> createRepeated() => $pb.PbList<GetApprovalFlowDetailRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetApprovalFlowDetailRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApprovalFlowDetailRequest>(create);
+  static GetApprovalFlowDetailRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get approvalFlowId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set approvalFlowId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApprovalFlowId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApprovalFlowId() => clearField(2);
+}
+
+class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
+  factory GetApprovalFlowDetailResponse({
+    $0.BaseResponse? baseResp,
+    ApprovalFlowDetail? approvalFlow,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    if (approvalFlow != null) {
+      $result.approvalFlow = approvalFlow;
+    }
+    return $result;
+  }
+  GetApprovalFlowDetailResponse._() : super();
+  factory GetApprovalFlowDetailResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetApprovalFlowDetailResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApprovalFlowDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<ApprovalFlowDetail>(2, _omitFieldNames ? '' : 'approvalFlow', subBuilder: ApprovalFlowDetail.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetApprovalFlowDetailResponse clone() => GetApprovalFlowDetailResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetApprovalFlowDetailResponse copyWith(void Function(GetApprovalFlowDetailResponse) updates) => super.copyWith((message) => updates(message as GetApprovalFlowDetailResponse)) as GetApprovalFlowDetailResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetApprovalFlowDetailResponse create() => GetApprovalFlowDetailResponse._();
+  GetApprovalFlowDetailResponse createEmptyInstance() => create();
+  static $pb.PbList<GetApprovalFlowDetailResponse> createRepeated() => $pb.PbList<GetApprovalFlowDetailResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetApprovalFlowDetailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApprovalFlowDetailResponse>(create);
+  static GetApprovalFlowDetailResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ApprovalFlowDetail get approvalFlow => $_getN(1);
+  @$pb.TagNumber(2)
+  set approvalFlow(ApprovalFlowDetail v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApprovalFlow() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApprovalFlow() => clearField(2);
+  @$pb.TagNumber(2)
+  ApprovalFlowDetail ensureApprovalFlow() => $_ensure(1);
 }
 
 

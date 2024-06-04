@@ -194,6 +194,28 @@ struct GloryApi_ListApprovalFlowResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
+struct GloryApi_ApprovalFlowLevel {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var approvalFlowLevelID: Int64 = 0
+
+  var levelOrder: Int64 = 0
+
+  var status: String = String()
+
+  var processStatus: String = String()
+
+  var comment: String = String()
+
+  var approver: String = String()
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 struct GloryApi_ApprovalFlowDetail {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -217,9 +239,65 @@ struct GloryApi_ApprovalFlowDetail {
 
   var createdAt: String = String()
 
+  var approvalFlowLevels: [GloryApi_ApprovalFlowLevel] = []
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+}
+
+struct GloryApi_GetApprovalFlowDetailRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var approvalFlowID: Int64 = 0
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_GetApprovalFlowDetailResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var approvalFlow: GloryApi_ApprovalFlowDetail {
+    get {return _approvalFlow ?? GloryApi_ApprovalFlowDetail()}
+    set {_approvalFlow = newValue}
+  }
+  /// Returns true if `approvalFlow` has been explicitly set.
+  var hasApprovalFlow: Bool {return self._approvalFlow != nil}
+  /// Clears the value of `approvalFlow`. Subsequent reads from it will return its default value.
+  mutating func clearApprovalFlow() {self._approvalFlow = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+  fileprivate var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -229,7 +307,10 @@ extension GloryApi_ApproveFlowRequest: @unchecked Sendable {}
 extension GloryApi_ApproveFlowResponse: @unchecked Sendable {}
 extension GloryApi_ListApprovalFlowRequest: @unchecked Sendable {}
 extension GloryApi_ListApprovalFlowResponse: @unchecked Sendable {}
+extension GloryApi_ApprovalFlowLevel: @unchecked Sendable {}
 extension GloryApi_ApprovalFlowDetail: @unchecked Sendable {}
+extension GloryApi_GetApprovalFlowDetailRequest: @unchecked Sendable {}
+extension GloryApi_GetApprovalFlowDetailResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -548,6 +629,68 @@ extension GloryApi_ListApprovalFlowResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
+extension GloryApi_ApprovalFlowLevel: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".ApprovalFlowLevel"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "approval_flow_level_id"),
+    2: .standard(proto: "level_order"),
+    3: .same(proto: "status"),
+    4: .standard(proto: "process_status"),
+    5: .same(proto: "comment"),
+    6: .same(proto: "approver"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt64Field(value: &self.approvalFlowLevelID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.levelOrder) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.status) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.processStatus) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.comment) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.approver) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.approvalFlowLevelID != 0 {
+      try visitor.visitSingularInt64Field(value: self.approvalFlowLevelID, fieldNumber: 1)
+    }
+    if self.levelOrder != 0 {
+      try visitor.visitSingularInt64Field(value: self.levelOrder, fieldNumber: 2)
+    }
+    if !self.status.isEmpty {
+      try visitor.visitSingularStringField(value: self.status, fieldNumber: 3)
+    }
+    if !self.processStatus.isEmpty {
+      try visitor.visitSingularStringField(value: self.processStatus, fieldNumber: 4)
+    }
+    if !self.comment.isEmpty {
+      try visitor.visitSingularStringField(value: self.comment, fieldNumber: 5)
+    }
+    if !self.approver.isEmpty {
+      try visitor.visitSingularStringField(value: self.approver, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_ApprovalFlowLevel, rhs: GloryApi_ApprovalFlowLevel) -> Bool {
+    if lhs.approvalFlowLevelID != rhs.approvalFlowLevelID {return false}
+    if lhs.levelOrder != rhs.levelOrder {return false}
+    if lhs.status != rhs.status {return false}
+    if lhs.processStatus != rhs.processStatus {return false}
+    if lhs.comment != rhs.comment {return false}
+    if lhs.approver != rhs.approver {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ApprovalFlowDetail"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -560,6 +703,7 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     7: .standard(proto: "shop_name"),
     8: .standard(proto: "product_name"),
     9: .standard(proto: "created_at"),
+    10: .standard(proto: "approval_flow_levels"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -577,6 +721,7 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 7: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.approvalFlowLevels) }()
       default: break
       }
     }
@@ -610,6 +755,9 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
     }
+    if !self.approvalFlowLevels.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.approvalFlowLevels, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -623,6 +771,91 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.shopName != rhs.shopName {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.approvalFlowLevels != rhs.approvalFlowLevels {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetApprovalFlowDetailRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetApprovalFlowDetailRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+    2: .standard(proto: "approval_flow_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.approvalFlowID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    if self.approvalFlowID != 0 {
+      try visitor.visitSingularInt64Field(value: self.approvalFlowID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetApprovalFlowDetailRequest, rhs: GloryApi_GetApprovalFlowDetailRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.approvalFlowID != rhs.approvalFlowID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".GetApprovalFlowDetailResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+    2: .standard(proto: "approval_flow"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._approvalFlow) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._approvalFlow {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_GetApprovalFlowDetailResponse, rhs: GloryApi_GetApprovalFlowDetailResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
+    if lhs._approvalFlow != rhs._approvalFlow {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

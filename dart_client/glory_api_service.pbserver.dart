@@ -527,6 +527,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$59.SubmitApprovalFlowResponse> submitApprovalFlow($pb.ServerContext ctx, $59.SubmitApprovalFlowRequest request);
   $async.Future<$59.ApproveFlowResponse> approveFlow($pb.ServerContext ctx, $59.ApproveFlowRequest request);
   $async.Future<$59.ListApprovalFlowResponse> listApprovalFlow($pb.ServerContext ctx, $59.ListApprovalFlowRequest request);
+  $async.Future<$59.GetApprovalFlowDetailResponse> getApprovalFlowDetail($pb.ServerContext ctx, $59.GetApprovalFlowDetailRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
@@ -977,6 +978,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SubmitApprovalFlow': return $59.SubmitApprovalFlowRequest();
       case 'ApproveFlow': return $59.ApproveFlowRequest();
       case 'ListApprovalFlow': return $59.ListApprovalFlowRequest();
+      case 'GetApprovalFlowDetail': return $59.GetApprovalFlowDetailRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
@@ -1430,6 +1432,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'SubmitApprovalFlow': return this.submitApprovalFlow(ctx, request as $59.SubmitApprovalFlowRequest);
       case 'ApproveFlow': return this.approveFlow(ctx, request as $59.ApproveFlowRequest);
       case 'ListApprovalFlow': return this.listApprovalFlow(ctx, request as $59.ListApprovalFlowRequest);
+      case 'GetApprovalFlowDetail': return this.getApprovalFlowDetail(ctx, request as $59.GetApprovalFlowDetailRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

@@ -1420,5 +1420,8 @@ class glory_apiApi {
   $async.Future<$59.ListApprovalFlowResponse> listApprovalFlow($pb.ClientContext? ctx, $59.ListApprovalFlowRequest request) =>
     _client.invoke<$59.ListApprovalFlowResponse>(ctx, 'glory_api', 'ListApprovalFlow', request, $59.ListApprovalFlowResponse())
   ;
+  $async.Future<$59.GetApprovalFlowDetailResponse> getApprovalFlowDetail($pb.ClientContext? ctx, $59.GetApprovalFlowDetailRequest request) =>
+    _client.invoke<$59.GetApprovalFlowDetailResponse>(ctx, 'glory_api', 'GetApprovalFlowDetail', request, $59.GetApprovalFlowDetailResponse())
+  ;
 }
 

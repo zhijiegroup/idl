@@ -108,4 +108,28 @@ public interface ApprovalFlowDetailOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   */
+  java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> 
+      getApprovalFlowLevelsList();
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getApprovalFlowLevels(int index);
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   */
+  int getApprovalFlowLevelsCount();
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   */
+  java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> 
+      getApprovalFlowLevelsOrBuilderList();
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getApprovalFlowLevelsOrBuilder(
+      int index);
 }
