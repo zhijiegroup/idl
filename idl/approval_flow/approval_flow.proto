@@ -33,8 +33,7 @@ message ApproveFlowResponse {
 message ListApprovalFlowRequest {
     base.BaseRequest base_request = 1;
     string type = 2;
-    string name = 3;
-    string phone = 4;
+    string name_or_phone = 3;
     string approval_type = 5;
     int64 class_id = 6;
     string access_type = 7; // 访问类型
