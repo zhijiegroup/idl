@@ -83,8 +83,7 @@ const ListApprovalFlowRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'phone', '3': 4, '4': 1, '5': 9, '10': 'phone'},
+    {'1': 'name_or_phone', '3': 3, '4': 1, '5': 9, '10': 'nameOrPhone'},
     {'1': 'approval_type', '3': 5, '4': 1, '5': 9, '10': 'approvalType'},
     {'1': 'class_id', '3': 6, '4': 1, '5': 3, '10': 'classId'},
     {'1': 'access_type', '3': 7, '4': 1, '5': 9, '10': 'accessType'},
@@ -95,11 +94,11 @@ const ListApprovalFlowRequest$json = {
 /// Descriptor for `ListApprovalFlowRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listApprovalFlowRequestDescriptor = $convert.base64Decode(
     'ChdMaXN0QXBwcm92YWxGbG93UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLk'
-    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgR0eXBlGAIgASgJUgR0eXBlEhIKBG5hbWUYAyAB'
-    'KAlSBG5hbWUSFAoFcGhvbmUYBCABKAlSBXBob25lEiMKDWFwcHJvdmFsX3R5cGUYBSABKAlSDG'
-    'FwcHJvdmFsVHlwZRIZCghjbGFzc19pZBgGIAEoA1IHY2xhc3NJZBIfCgthY2Nlc3NfdHlwZRgH'
-    'IAEoCVIKYWNjZXNzVHlwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUm'
-    'VxdWVzdFIKcGFnaW5hdGlvbg==');
+    'Jhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdBISCgR0eXBlGAIgASgJUgR0eXBlEiIKDW5hbWVfb3Jf'
+    'cGhvbmUYAyABKAlSC25hbWVPclBob25lEiMKDWFwcHJvdmFsX3R5cGUYBSABKAlSDGFwcHJvdm'
+    'FsVHlwZRIZCghjbGFzc19pZBgGIAEoA1IHY2xhc3NJZBIfCgthY2Nlc3NfdHlwZRgHIAEoCVIK'
+    'YWNjZXNzVHlwZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdF'
+    'IKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listApprovalFlowResponseDescriptor instead')
 const ListApprovalFlowResponse$json = {

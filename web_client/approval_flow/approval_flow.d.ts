@@ -33,8 +33,7 @@ export interface ApproveFlowResponse {
 export interface ListApprovalFlowRequest {
   base_request?: base.BaseRequest;
   type?: string;
-  name?: string;
-  phone?: string;
+  name_or_phone?: string;
   approval_type?: string;
   class_id?: string;
   /** 访问类型 */

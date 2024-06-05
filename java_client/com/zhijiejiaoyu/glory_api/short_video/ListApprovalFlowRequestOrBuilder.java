@@ -35,28 +35,16 @@ public interface ListApprovalFlowRequestOrBuilder extends
       getTypeBytes();
 
   /**
-   * <code>string name = 3;</code>
-   * @return The name.
+   * <code>string name_or_phone = 3;</code>
+   * @return The nameOrPhone.
    */
-  java.lang.String getName();
+  java.lang.String getNameOrPhone();
   /**
-   * <code>string name = 3;</code>
-   * @return The bytes for name.
+   * <code>string name_or_phone = 3;</code>
+   * @return The bytes for nameOrPhone.
    */
   com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <code>string phone = 4;</code>
-   * @return The phone.
-   */
-  java.lang.String getPhone();
-  /**
-   * <code>string phone = 4;</code>
-   * @return The bytes for phone.
-   */
-  com.google.protobuf.ByteString
-      getPhoneBytes();
+      getNameOrPhoneBytes();
 
   /**
    * <code>string approval_type = 5;</code>

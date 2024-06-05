@@ -136,9 +136,7 @@ struct GloryApi_ListApprovalFlowRequest {
 
   var type: String = String()
 
-  var name: String = String()
-
-  var phone: String = String()
+  var nameOrPhone: String = String()
 
   var approvalType: String = String()
 
@@ -517,8 +515,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_request"),
     2: .same(proto: "type"),
-    3: .same(proto: "name"),
-    4: .same(proto: "phone"),
+    3: .standard(proto: "name_or_phone"),
     5: .standard(proto: "approval_type"),
     6: .standard(proto: "class_id"),
     7: .standard(proto: "access_type"),
@@ -533,8 +530,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.phone) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.nameOrPhone) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.approvalType) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.accessType) }()
@@ -555,11 +551,8 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.type.isEmpty {
       try visitor.visitSingularStringField(value: self.type, fieldNumber: 2)
     }
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
-    }
-    if !self.phone.isEmpty {
-      try visitor.visitSingularStringField(value: self.phone, fieldNumber: 4)
+    if !self.nameOrPhone.isEmpty {
+      try visitor.visitSingularStringField(value: self.nameOrPhone, fieldNumber: 3)
     }
     if !self.approvalType.isEmpty {
       try visitor.visitSingularStringField(value: self.approvalType, fieldNumber: 5)
@@ -579,8 +572,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
   static func ==(lhs: GloryApi_ListApprovalFlowRequest, rhs: GloryApi_ListApprovalFlowRequest) -> Bool {
     if lhs._baseRequest != rhs._baseRequest {return false}
     if lhs.type != rhs.type {return false}
-    if lhs.name != rhs.name {return false}
-    if lhs.phone != rhs.phone {return false}
+    if lhs.nameOrPhone != rhs.nameOrPhone {return false}
     if lhs.approvalType != rhs.approvalType {return false}
     if lhs.classID != rhs.classID {return false}
     if lhs.accessType != rhs.accessType {return false}

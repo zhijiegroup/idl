@@ -340,8 +340,7 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
   factory ListApprovalFlowRequest({
     $0.BaseRequest? baseRequest,
     $core.String? type,
-    $core.String? name,
-    $core.String? phone,
+    $core.String? nameOrPhone,
     $core.String? approvalType,
     $fixnum.Int64? classId,
     $core.String? accessType,
@@ -354,11 +353,8 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (phone != null) {
-      $result.phone = phone;
+    if (nameOrPhone != null) {
+      $result.nameOrPhone = nameOrPhone;
     }
     if (approvalType != null) {
       $result.approvalType = approvalType;
@@ -381,8 +377,7 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApprovalFlowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'type')
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOS(4, _omitFieldNames ? '' : 'phone')
+    ..aOS(3, _omitFieldNames ? '' : 'nameOrPhone')
     ..aOS(5, _omitFieldNames ? '' : 'approvalType')
     ..aInt64(6, _omitFieldNames ? '' : 'classId')
     ..aOS(7, _omitFieldNames ? '' : 'accessType')
@@ -432,60 +427,51 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
+  $core.String get nameOrPhone => $_getSZ(2);
   @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
+  set nameOrPhone($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
+  $core.bool hasNameOrPhone() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get phone => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set phone($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasPhone() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearPhone() => clearField(4);
+  void clearNameOrPhone() => clearField(3);
 
   @$pb.TagNumber(5)
-  $core.String get approvalType => $_getSZ(4);
+  $core.String get approvalType => $_getSZ(3);
   @$pb.TagNumber(5)
-  set approvalType($core.String v) { $_setString(4, v); }
+  set approvalType($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(5)
-  $core.bool hasApprovalType() => $_has(4);
+  $core.bool hasApprovalType() => $_has(3);
   @$pb.TagNumber(5)
   void clearApprovalType() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get classId => $_getI64(5);
+  $fixnum.Int64 get classId => $_getI64(4);
   @$pb.TagNumber(6)
-  set classId($fixnum.Int64 v) { $_setInt64(5, v); }
+  set classId($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(6)
-  $core.bool hasClassId() => $_has(5);
+  $core.bool hasClassId() => $_has(4);
   @$pb.TagNumber(6)
   void clearClassId() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get accessType => $_getSZ(6);
+  $core.String get accessType => $_getSZ(5);
   @$pb.TagNumber(7)
-  set accessType($core.String v) { $_setString(6, v); }
+  set accessType($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAccessType() => $_has(6);
+  $core.bool hasAccessType() => $_has(5);
   @$pb.TagNumber(7)
   void clearAccessType() => clearField(7);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(7);
+  $0.PaginationRequest get pagination => $_getN(6);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(7);
+  $core.bool hasPagination() => $_has(6);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(7);
+  $0.PaginationRequest ensurePagination() => $_ensure(6);
 }
 
 class ListApprovalFlowResponse extends $pb.GeneratedMessage {
