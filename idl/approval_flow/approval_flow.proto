@@ -65,7 +65,10 @@ message ApprovalFlowDetail {
     string shop_name = 7;
     string product_name = 8;
     string created_at = 9;
-    repeated ApprovalFlowLevel approval_flow_levels = 10;
+    string approve_result = 10;
+    string approver = 11;
+    string approved_at = 12;
+    repeated ApprovalFlowLevel approval_flow_levels = 13;
 }
 
 message GetApprovalFlowDetailRequest {
