@@ -59,10 +59,21 @@ public interface ListApprovalFlowRequestOrBuilder extends
       getApprovalTypeBytes();
 
   /**
-   * <code>int64 class_id = 6;</code>
-   * @return The classId.
+   * <code>repeated int64 class_id = 6;</code>
+   * @return A list containing the classId.
    */
-  long getClassId();
+  java.util.List<java.lang.Long> getClassIdList();
+  /**
+   * <code>repeated int64 class_id = 6;</code>
+   * @return The count of classId.
+   */
+  int getClassIdCount();
+  /**
+   * <code>repeated int64 class_id = 6;</code>
+   * @param index The index of the element to return.
+   * @return The classId at the given index.
+   */
+  long getClassId(int index);
 
   /**
    * <pre>

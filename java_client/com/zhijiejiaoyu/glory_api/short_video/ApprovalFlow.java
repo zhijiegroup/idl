@@ -89,7 +89,7 @@ public final class ApprovalFlow {
       "valFlowRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
       "ase.BaseRequest\022\014\n\004type\030\002 \001(\t\022\025\n\rname_or" +
       "_phone\030\003 \001(\t\022\025\n\rapproval_type\030\005 \001(\t\022\020\n\010c" +
-      "lass_id\030\006 \001(\003\022\023\n\013access_type\030\007 \001(\t\022+\n\npa" +
+      "lass_id\030\006 \003(\003\022\023\n\013access_type\030\007 \001(\t\022+\n\npa" +
       "gination\030d \001(\0132\027.base.PaginationRequest\"" +
       "\234\001\n\030ListApprovalFlowResponse\022%\n\tbase_res" +
       "p\030\001 \001(\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(" +

@@ -140,7 +140,7 @@ struct GloryApi_ListApprovalFlowRequest {
 
   var approvalType: String = String()
 
-  var classID: Int64 = 0
+  var classID: [Int64] = []
 
   /// 访问类型
   var accessType: String = String()
@@ -538,7 +538,7 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
       case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.nameOrPhone) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.approvalType) }()
-      case 6: try { try decoder.decodeSingularInt64Field(value: &self.classID) }()
+      case 6: try { try decoder.decodeRepeatedInt64Field(value: &self.classID) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.accessType) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
@@ -563,8 +563,8 @@ extension GloryApi_ListApprovalFlowRequest: SwiftProtobuf.Message, SwiftProtobuf
     if !self.approvalType.isEmpty {
       try visitor.visitSingularStringField(value: self.approvalType, fieldNumber: 5)
     }
-    if self.classID != 0 {
-      try visitor.visitSingularInt64Field(value: self.classID, fieldNumber: 6)
+    if !self.classID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.classID, fieldNumber: 6)
     }
     if !self.accessType.isEmpty {
       try visitor.visitSingularStringField(value: self.accessType, fieldNumber: 7)
