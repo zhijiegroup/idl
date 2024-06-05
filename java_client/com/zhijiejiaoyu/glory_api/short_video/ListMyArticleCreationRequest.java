@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     title = "";
     aiResult = "";
     topic = "";
+    creationType = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,12 @@ private static final long serialVersionUID = 0L;
           case 56: {
 
             end = input.readInt64();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            creationType = s;
             break;
           }
           case 802: {
@@ -344,6 +351,52 @@ private static final long serialVersionUID = 0L;
     return end ;
   }
 
+  public static final int CREATION_TYPE_FIELD_NUMBER = 8;
+  private volatile java.lang.Object creationType ;
+  /**
+   * <pre>
+   * 创作模式 free example 
+   * </pre>
+   *
+   * <code>string creation_type = 8;</code>
+   * @return The creationType.
+   */
+  @java.lang.Override
+  public java.lang.String getCreationType() {
+    java.lang.Object ref = creationType ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creationType = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 创作模式 free example 
+   * </pre>
+   *
+   * <code>string creation_type = 8;</code>
+   * @return The bytes for creationType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreationTypeBytes() {
+    java.lang.Object ref = creationType ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      creationType = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 100;
   private com.zhijiejiaoyu.base.PaginationRequest pagination ;
   /**
@@ -405,6 +458,9 @@ private static final long serialVersionUID = 0L;
     if (end != 0L) {
       output.writeInt64(7, end );
     }
+    if (!getCreationTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, creationType );
+    }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
     }
@@ -440,6 +496,9 @@ private static final long serialVersionUID = 0L;
     if (end != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, end );
+    }
+    if (!getCreationTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, creationType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -477,6 +536,8 @@ private static final long serialVersionUID = 0L;
         != other.getStart()) return false;
     if (getEnd()
         != other.getEnd()) return false;
+    if (!getCreationType()
+        .equals(other.getCreationType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -511,6 +572,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + END_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEnd());
+    hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getCreationType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -666,6 +729,8 @@ private static final long serialVersionUID = 0L;
 
       end = 0L;
 
+      creationType = "";
+
       if (paginationBuilder == null) {
         pagination = null;
       } else {
@@ -709,6 +774,7 @@ private static final long serialVersionUID = 0L;
       result.topic = topic ;
       result.start = start ;
       result.end = end ;
+      result.creationType = creationType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -786,6 +852,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getEnd() != 0L) {
         setEnd(other.getEnd());
+      }
+      if (!other.getCreationType().isEmpty()) {
+        creationType = other.creationType ;
+        onChanged();
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -1300,6 +1370,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnd() {
       
       end = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object creationType = "";
+    /**
+     * <pre>
+     * 创作模式 free example 
+     * </pre>
+     *
+     * <code>string creation_type = 8;</code>
+     * @return The creationType.
+     */
+    public java.lang.String getCreationType() {
+      java.lang.Object ref = creationType ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creationType = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 创作模式 free example 
+     * </pre>
+     *
+     * <code>string creation_type = 8;</code>
+     * @return The bytes for creationType.
+     */
+    public com.google.protobuf.ByteString
+        getCreationTypeBytes() {
+      java.lang.Object ref = creationType ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        creationType = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 创作模式 free example 
+     * </pre>
+     *
+     * <code>string creation_type = 8;</code>
+     * @param value The creationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreationType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      creationType = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 创作模式 free example 
+     * </pre>
+     *
+     * <code>string creation_type = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreationType() {
+      
+      creationType = getDefaultInstance().getCreationType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 创作模式 free example 
+     * </pre>
+     *
+     * <code>string creation_type = 8;</code>
+     * @param value The bytes for creationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreationTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      creationType = value;
       onChanged();
       return this;
     }

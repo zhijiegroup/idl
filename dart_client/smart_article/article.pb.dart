@@ -771,6 +771,7 @@ class ListMyArticleCreationRequest extends $pb.GeneratedMessage {
     $core.String? topic,
     $fixnum.Int64? start,
     $fixnum.Int64? end,
+    $core.String? creationType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -795,6 +796,9 @@ class ListMyArticleCreationRequest extends $pb.GeneratedMessage {
     if (end != null) {
       $result.end = end;
     }
+    if (creationType != null) {
+      $result.creationType = creationType;
+    }
     if (pagination != null) {
       $result.pagination = pagination;
     }
@@ -812,6 +816,7 @@ class ListMyArticleCreationRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'topic')
     ..aInt64(6, _omitFieldNames ? '' : 'start')
     ..aInt64(7, _omitFieldNames ? '' : 'end')
+    ..aOS(8, _omitFieldNames ? '' : 'creationType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -902,16 +907,25 @@ class ListMyArticleCreationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearEnd() => clearField(7);
 
+  @$pb.TagNumber(8)
+  $core.String get creationType => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set creationType($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreationType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreationType() => clearField(8);
+
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(7);
+  $0.PaginationRequest get pagination => $_getN(8);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(7);
+  $core.bool hasPagination() => $_has(8);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(7);
+  $0.PaginationRequest ensurePagination() => $_ensure(8);
 }
 
 class ListMyArticleCreationResponse extends $pb.GeneratedMessage {

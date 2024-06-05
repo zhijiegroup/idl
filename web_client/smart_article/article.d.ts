@@ -71,6 +71,8 @@ export interface ListMyArticleCreationRequest {
   topic?: string;
   start?: string;
   end?: string;
+  /** 创作模式 free example */
+  creation_type?: string;
   pagination?: base.PaginationRequest;
 }
 

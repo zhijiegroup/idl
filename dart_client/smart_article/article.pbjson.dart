@@ -155,6 +155,7 @@ const ListMyArticleCreationRequest$json = {
     {'1': 'topic', '3': 5, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'start', '3': 6, '4': 1, '5': 3, '10': 'start'},
     {'1': 'end', '3': 7, '4': 1, '5': 3, '10': 'end'},
+    {'1': 'creation_type', '3': 8, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -165,8 +166,8 @@ final $typed_data.Uint8List listMyArticleCreationRequestDescriptor = $convert.ba
     'Jhc2UuQmFzZVJlcXVlc3RSC2Jhc2VSZXF1ZXN0EhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVzEhQK'
     'BXRpdGxlGAMgASgJUgV0aXRsZRIbCglhaV9yZXN1bHQYBCABKAlSCGFpUmVzdWx0EhQKBXRvcG'
     'ljGAUgASgJUgV0b3BpYxIUCgVzdGFydBgGIAEoA1IFc3RhcnQSEAoDZW5kGAcgASgDUgNlbmQS'
-    'NwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBhZ2luYXRpb2'
-    '4=');
+    'IwoNY3JlYXRpb25fdHlwZRgIIAEoCVIMY3JlYXRpb25UeXBlEjcKCnBhZ2luYXRpb24YZCABKA'
+    'syFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
 
 @$core.Deprecated('Use listMyArticleCreationResponseDescriptor instead')
 const ListMyArticleCreationResponse$json = {

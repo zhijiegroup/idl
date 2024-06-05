@@ -238,6 +238,9 @@ struct GloryApi_ListMyArticleCreationRequest {
 
   var end: Int64 = 0
 
+  /// 创作模式 free example 
+  var creationType: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -3189,6 +3192,7 @@ extension GloryApi_ListMyArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     5: .same(proto: "topic"),
     6: .same(proto: "start"),
     7: .same(proto: "end"),
+    8: .standard(proto: "creation_type"),
     100: .same(proto: "pagination"),
   ]
 
@@ -3205,6 +3209,7 @@ extension GloryApi_ListMyArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
       case 5: try { try decoder.decodeSingularStringField(value: &self.topic) }()
       case 6: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -3237,6 +3242,9 @@ extension GloryApi_ListMyArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if self.end != 0 {
       try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 7)
     }
+    if !self.creationType.isEmpty {
+      try visitor.visitSingularStringField(value: self.creationType, fieldNumber: 8)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -3251,6 +3259,7 @@ extension GloryApi_ListMyArticleCreationRequest: SwiftProtobuf.Message, SwiftPro
     if lhs.topic != rhs.topic {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}
+    if lhs.creationType != rhs.creationType {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

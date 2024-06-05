@@ -83,6 +83,26 @@ public interface ListMyArticleCreationRequestOrBuilder extends
   long getEnd();
 
   /**
+   * <pre>
+   * 创作模式 free example 
+   * </pre>
+   *
+   * <code>string creation_type = 8;</code>
+   * @return The creationType.
+   */
+  java.lang.String getCreationType();
+  /**
+   * <pre>
+   * 创作模式 free example 
+   * </pre>
+   *
+   * <code>string creation_type = 8;</code>
+   * @return The bytes for creationType.
+   */
+  com.google.protobuf.ByteString
+      getCreationTypeBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
