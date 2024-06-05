@@ -70,6 +70,7 @@ message ListMyArticleCreationRequest {
     string topic = 5;
     int64 start = 6;
     int64 end = 7;
+    string creation_type = 8; // 创作模式 free example 
     base.PaginationRequest pagination = 100;
 }
 
