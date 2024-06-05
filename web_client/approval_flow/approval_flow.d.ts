@@ -66,6 +66,9 @@ export interface ApprovalFlowDetail {
   shop_name?: string;
   product_name?: string;
   created_at?: string;
+  approve_result?: string;
+  approver?: string;
+  approved_at?: string;
   approval_flow_levels?: Array<ApprovalFlowLevel>;
 }
 

@@ -24,6 +24,9 @@ private static final long serialVersionUID = 0L;
     shopName = "";
     productName = "";
     createdAt = "";
+    approveResult = "";
+    approver = "";
+    approvedAt = "";
     approvalFlowLevels = java.util.Collections.emptyList();
   }
 
@@ -112,6 +115,24 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            approveResult = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            approver = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            approvedAt = s;
+            break;
+          }
+          case 106: {
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               approvalFlowLevels = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel>();
               mutable_bitField0_ |= 0x00000001;
@@ -470,17 +491,131 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int APPROVAL_FLOW_LEVELS_FIELD_NUMBER = 10;
+  public static final int APPROVE_RESULT_FIELD_NUMBER = 10;
+  private volatile java.lang.Object approveResult ;
+  /**
+   * <code>string approve_result = 10;</code>
+   * @return The approveResult.
+   */
+  @java.lang.Override
+  public java.lang.String getApproveResult() {
+    java.lang.Object ref = approveResult ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approveResult = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string approve_result = 10;</code>
+   * @return The bytes for approveResult.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApproveResultBytes() {
+    java.lang.Object ref = approveResult ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approveResult = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVER_FIELD_NUMBER = 11;
+  private volatile java.lang.Object approver ;
+  /**
+   * <code>string approver = 11;</code>
+   * @return The approver.
+   */
+  @java.lang.Override
+  public java.lang.String getApprover() {
+    java.lang.Object ref = approver ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approver = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string approver = 11;</code>
+   * @return The bytes for approver.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApproverBytes() {
+    java.lang.Object ref = approver ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approver = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVED_AT_FIELD_NUMBER = 12;
+  private volatile java.lang.Object approvedAt ;
+  /**
+   * <code>string approved_at = 12;</code>
+   * @return The approvedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getApprovedAt() {
+    java.lang.Object ref = approvedAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approvedAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string approved_at = 12;</code>
+   * @return The bytes for approvedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApprovedAtBytes() {
+    java.lang.Object ref = approvedAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approvedAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVAL_FLOW_LEVELS_FIELD_NUMBER = 13;
   private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> approvalFlowLevels ;
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   @java.lang.Override
   public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> getApprovalFlowLevelsList() {
     return approvalFlowLevels ;
   }
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> 
@@ -488,21 +623,21 @@ private static final long serialVersionUID = 0L;
     return approvalFlowLevels ;
   }
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   @java.lang.Override
   public int getApprovalFlowLevelsCount() {
     return approvalFlowLevels .size();
   }
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getApprovalFlowLevels(int index) {
     return approvalFlowLevels .get(index);
   }
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   @java.lang.Override
   public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getApprovalFlowLevelsOrBuilder(
@@ -551,8 +686,17 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
     }
+    if (!getApproveResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, approveResult );
+    }
+    if (!getApproverBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, approver );
+    }
+    if (!getApprovedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, approvedAt );
+    }
     for (int i = 0; i < approvalFlowLevels .size(); i++) {
-      output.writeMessage(10, approvalFlowLevels .get(i));
+      output.writeMessage(13, approvalFlowLevels .get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -591,9 +735,18 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
     }
+    if (!getApproveResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, approveResult );
+    }
+    if (!getApproverBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, approver );
+    }
+    if (!getApprovedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, approvedAt );
+    }
     for (int i = 0; i < approvalFlowLevels .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, approvalFlowLevels .get(i));
+        .computeMessageSize(13, approvalFlowLevels .get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -628,6 +781,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getProductName())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (!getApproveResult()
+        .equals(other.getApproveResult())) return false;
+    if (!getApprover()
+        .equals(other.getApprover())) return false;
+    if (!getApprovedAt()
+        .equals(other.getApprovedAt())) return false;
     if (!getApprovalFlowLevelsList()
         .equals(other.getApprovalFlowLevelsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -660,6 +819,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getProductName().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + APPROVE_RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getApproveResult().hashCode();
+    hash = (37 * hash) + APPROVER_FIELD_NUMBER;
+    hash = (53 * hash) + getApprover().hashCode();
+    hash = (37 * hash) + APPROVED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovedAt().hashCode();
     if (getApprovalFlowLevelsCount() > 0) {
       hash = (37 * hash) + APPROVAL_FLOW_LEVELS_FIELD_NUMBER;
       hash = (53 * hash) + getApprovalFlowLevelsList().hashCode();
@@ -816,6 +981,12 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      approveResult = "";
+
+      approver = "";
+
+      approvedAt = "";
+
       if (approvalFlowLevelsBuilder == null) {
         approvalFlowLevels = java.util.Collections.emptyList();
         bitField0 = (bitField0 & ~0x00000001);
@@ -858,6 +1029,9 @@ private static final long serialVersionUID = 0L;
       result.shopName = shopName ;
       result.productName = productName ;
       result.createdAt = createdAt ;
+      result.approveResult = approveResult ;
+      result.approver = approver ;
+      result.approvedAt = approvedAt ;
       if (approvalFlowLevelsBuilder == null) {
         if (((bitField0 & 0x00000001) != 0)) {
           approvalFlowLevels = java.util.Collections.unmodifiableList(approvalFlowLevels );
@@ -948,6 +1122,18 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
+        onChanged();
+      }
+      if (!other.getApproveResult().isEmpty()) {
+        approveResult = other.approveResult ;
+        onChanged();
+      }
+      if (!other.getApprover().isEmpty()) {
+        approver = other.approver ;
+        onChanged();
+      }
+      if (!other.getApprovedAt().isEmpty()) {
+        approvedAt = other.approvedAt ;
         onChanged();
       }
       if (approvalFlowLevelsBuilder == null) {
@@ -1645,6 +1831,234 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object approveResult = "";
+    /**
+     * <code>string approve_result = 10;</code>
+     * @return The approveResult.
+     */
+    public java.lang.String getApproveResult() {
+      java.lang.Object ref = approveResult ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approveResult = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string approve_result = 10;</code>
+     * @return The bytes for approveResult.
+     */
+    public com.google.protobuf.ByteString
+        getApproveResultBytes() {
+      java.lang.Object ref = approveResult ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approveResult = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string approve_result = 10;</code>
+     * @param value The approveResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApproveResult(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approveResult = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approve_result = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApproveResult() {
+      
+      approveResult = getDefaultInstance().getApproveResult();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approve_result = 10;</code>
+     * @param value The bytes for approveResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApproveResultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approveResult = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object approver = "";
+    /**
+     * <code>string approver = 11;</code>
+     * @return The approver.
+     */
+    public java.lang.String getApprover() {
+      java.lang.Object ref = approver ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approver = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string approver = 11;</code>
+     * @return The bytes for approver.
+     */
+    public com.google.protobuf.ByteString
+        getApproverBytes() {
+      java.lang.Object ref = approver ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approver = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string approver = 11;</code>
+     * @param value The approver to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprover(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approver = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approver = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprover() {
+      
+      approver = getDefaultInstance().getApprover();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approver = 11;</code>
+     * @param value The bytes for approver to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApproverBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approver = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object approvedAt = "";
+    /**
+     * <code>string approved_at = 12;</code>
+     * @return The approvedAt.
+     */
+    public java.lang.String getApprovedAt() {
+      java.lang.Object ref = approvedAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approvedAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string approved_at = 12;</code>
+     * @return The bytes for approvedAt.
+     */
+    public com.google.protobuf.ByteString
+        getApprovedAtBytes() {
+      java.lang.Object ref = approvedAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approvedAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string approved_at = 12;</code>
+     * @param value The approvedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approvedAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approved_at = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovedAt() {
+      
+      approvedAt = getDefaultInstance().getApprovedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approved_at = 12;</code>
+     * @param value The bytes for approvedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approvedAt = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> approvalFlowLevels =
       java.util.Collections.emptyList();
     private void ensureApprovalFlowLevelsIsMutable() {
@@ -1658,7 +2072,7 @@ private static final long serialVersionUID = 0L;
         com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> approvalFlowLevelsBuilder ;
 
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> getApprovalFlowLevelsList() {
       if (approvalFlowLevelsBuilder == null) {
@@ -1668,7 +2082,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public int getApprovalFlowLevelsCount() {
       if (approvalFlowLevelsBuilder == null) {
@@ -1678,7 +2092,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getApprovalFlowLevels(int index) {
       if (approvalFlowLevelsBuilder == null) {
@@ -1688,7 +2102,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder setApprovalFlowLevels(
         int index, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel value) {
@@ -1705,7 +2119,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder setApprovalFlowLevels(
         int index, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder builderForValue) {
@@ -1719,7 +2133,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder addApprovalFlowLevels(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel value) {
       if (approvalFlowLevelsBuilder == null) {
@@ -1735,7 +2149,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder addApprovalFlowLevels(
         int index, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel value) {
@@ -1752,7 +2166,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder addApprovalFlowLevels(
         com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder builderForValue) {
@@ -1766,7 +2180,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder addApprovalFlowLevels(
         int index, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder builderForValue) {
@@ -1780,7 +2194,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder addAllApprovalFlowLevels(
         java.lang.Iterable<? extends com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> values) {
@@ -1795,7 +2209,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder clearApprovalFlowLevels() {
       if (approvalFlowLevelsBuilder == null) {
@@ -1808,7 +2222,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public Builder removeApprovalFlowLevels(int index) {
       if (approvalFlowLevelsBuilder == null) {
@@ -1821,14 +2235,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder getApprovalFlowLevelsBuilder(
         int index) {
       return getApprovalFlowLevelsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getApprovalFlowLevelsOrBuilder(
         int index) {
@@ -1838,7 +2252,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> 
          getApprovalFlowLevelsOrBuilderList() {
@@ -1849,14 +2263,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder addApprovalFlowLevelsBuilder() {
       return getApprovalFlowLevelsFieldBuilder().addBuilder(
           com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder addApprovalFlowLevelsBuilder(
         int index) {
@@ -1864,7 +2278,7 @@ private static final long serialVersionUID = 0L;
           index, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.getDefaultInstance());
     }
     /**
-     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+     * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
      */
     public java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder> 
          getApprovalFlowLevelsBuilderList() {

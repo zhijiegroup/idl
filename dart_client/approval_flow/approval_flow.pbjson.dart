@@ -150,7 +150,10 @@ const ApprovalFlowDetail$json = {
     {'1': 'shop_name', '3': 7, '4': 1, '5': 9, '10': 'shopName'},
     {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
     {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'approval_flow_levels', '3': 10, '4': 3, '5': 11, '6': '.glory_api.ApprovalFlowLevel', '10': 'approvalFlowLevels'},
+    {'1': 'approve_result', '3': 10, '4': 1, '5': 9, '10': 'approveResult'},
+    {'1': 'approver', '3': 11, '4': 1, '5': 9, '10': 'approver'},
+    {'1': 'approved_at', '3': 12, '4': 1, '5': 9, '10': 'approvedAt'},
+    {'1': 'approval_flow_levels', '3': 13, '4': 3, '5': 11, '6': '.glory_api.ApprovalFlowLevel', '10': 'approvalFlowLevels'},
   ],
 };
 
@@ -161,8 +164,10 @@ final $typed_data.Uint8List approvalFlowDetailDescriptor = $convert.base64Decode
     'bmFtZRIUCgVwaG9uZRgEIAEoCVIFcGhvbmUSHQoKY2xhc3NfbmFtZRgFIAEoCVIJY2xhc3NOYW'
     '1lEiMKDWFwcHJvdmFsX3R5cGUYBiABKAlSDGFwcHJvdmFsVHlwZRIbCglzaG9wX25hbWUYByAB'
     'KAlSCHNob3BOYW1lEiEKDHByb2R1Y3RfbmFtZRgIIAEoCVILcHJvZHVjdE5hbWUSHQoKY3JlYX'
-    'RlZF9hdBgJIAEoCVIJY3JlYXRlZEF0Ek4KFGFwcHJvdmFsX2Zsb3dfbGV2ZWxzGAogAygLMhwu'
-    'Z2xvcnlfYXBpLkFwcHJvdmFsRmxvd0xldmVsUhJhcHByb3ZhbEZsb3dMZXZlbHM=');
+    'RlZF9hdBgJIAEoCVIJY3JlYXRlZEF0EiUKDmFwcHJvdmVfcmVzdWx0GAogASgJUg1hcHByb3Zl'
+    'UmVzdWx0EhoKCGFwcHJvdmVyGAsgASgJUghhcHByb3ZlchIfCgthcHByb3ZlZF9hdBgMIAEoCV'
+    'IKYXBwcm92ZWRBdBJOChRhcHByb3ZhbF9mbG93X2xldmVscxgNIAMoCzIcLmdsb3J5X2FwaS5B'
+    'cHByb3ZhbEZsb3dMZXZlbFISYXBwcm92YWxGbG93TGV2ZWxz');
 
 @$core.Deprecated('Use getApprovalFlowDetailRequestDescriptor instead')
 const GetApprovalFlowDetailRequest$json = {

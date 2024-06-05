@@ -110,25 +110,61 @@ public interface ApprovalFlowDetailOrBuilder extends
       getCreatedAtBytes();
 
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>string approve_result = 10;</code>
+   * @return The approveResult.
+   */
+  java.lang.String getApproveResult();
+  /**
+   * <code>string approve_result = 10;</code>
+   * @return The bytes for approveResult.
+   */
+  com.google.protobuf.ByteString
+      getApproveResultBytes();
+
+  /**
+   * <code>string approver = 11;</code>
+   * @return The approver.
+   */
+  java.lang.String getApprover();
+  /**
+   * <code>string approver = 11;</code>
+   * @return The bytes for approver.
+   */
+  com.google.protobuf.ByteString
+      getApproverBytes();
+
+  /**
+   * <code>string approved_at = 12;</code>
+   * @return The approvedAt.
+   */
+  java.lang.String getApprovedAt();
+  /**
+   * <code>string approved_at = 12;</code>
+   * @return The bytes for approvedAt.
+   */
+  com.google.protobuf.ByteString
+      getApprovedAtBytes();
+
+  /**
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel> 
       getApprovalFlowLevelsList();
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getApprovalFlowLevels(int index);
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   int getApprovalFlowLevelsCount();
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> 
       getApprovalFlowLevelsOrBuilderList();
   /**
-   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 10;</code>
+   * <code>repeated .glory_api.ApprovalFlowLevel approval_flow_levels = 13;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getApprovalFlowLevelsOrBuilder(
       int index);

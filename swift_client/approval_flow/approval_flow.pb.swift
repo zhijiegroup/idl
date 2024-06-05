@@ -240,6 +240,12 @@ struct GloryApi_ApprovalFlowDetail {
 
   var createdAt: String = String()
 
+  var approveResult: String = String()
+
+  var approver: String = String()
+
+  var approvedAt: String = String()
+
   var approvalFlowLevels: [GloryApi_ApprovalFlowLevel] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -704,7 +710,10 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     7: .standard(proto: "shop_name"),
     8: .standard(proto: "product_name"),
     9: .standard(proto: "created_at"),
-    10: .standard(proto: "approval_flow_levels"),
+    10: .standard(proto: "approve_result"),
+    11: .same(proto: "approver"),
+    12: .standard(proto: "approved_at"),
+    13: .standard(proto: "approval_flow_levels"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -722,7 +731,10 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 7: try { try decoder.decodeSingularStringField(value: &self.shopName) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
-      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.approvalFlowLevels) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.approveResult) }()
+      case 11: try { try decoder.decodeSingularStringField(value: &self.approver) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.approvedAt) }()
+      case 13: try { try decoder.decodeRepeatedMessageField(value: &self.approvalFlowLevels) }()
       default: break
       }
     }
@@ -756,8 +768,17 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
     }
+    if !self.approveResult.isEmpty {
+      try visitor.visitSingularStringField(value: self.approveResult, fieldNumber: 10)
+    }
+    if !self.approver.isEmpty {
+      try visitor.visitSingularStringField(value: self.approver, fieldNumber: 11)
+    }
+    if !self.approvedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.approvedAt, fieldNumber: 12)
+    }
     if !self.approvalFlowLevels.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.approvalFlowLevels, fieldNumber: 10)
+      try visitor.visitRepeatedMessageField(value: self.approvalFlowLevels, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -772,6 +793,9 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.shopName != rhs.shopName {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.approveResult != rhs.approveResult {return false}
+    if lhs.approver != rhs.approver {return false}
+    if lhs.approvedAt != rhs.approvedAt {return false}
     if lhs.approvalFlowLevels != rhs.approvalFlowLevels {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
