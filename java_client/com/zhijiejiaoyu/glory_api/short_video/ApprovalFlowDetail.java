@@ -141,6 +141,16 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.parser(), extensionRegistry));
             break;
           }
+          case 112: {
+
+            shopId = input.readInt64();
+            break;
+          }
+          case 120: {
+
+            productId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -645,6 +655,28 @@ private static final long serialVersionUID = 0L;
     return approvalFlowLevels .get(index);
   }
 
+  public static final int SHOP_ID_FIELD_NUMBER = 14;
+  private long shopId ;
+  /**
+   * <code>int64 shop_id = 14;</code>
+   * @return The shopId.
+   */
+  @java.lang.Override
+  public long getShopId() {
+    return shopId ;
+  }
+
+  public static final int PRODUCT_ID_FIELD_NUMBER = 15;
+  private long productId ;
+  /**
+   * <code>int64 product_id = 15;</code>
+   * @return The productId.
+   */
+  @java.lang.Override
+  public long getProductId() {
+    return productId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -698,6 +730,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < approvalFlowLevels .size(); i++) {
       output.writeMessage(13, approvalFlowLevels .get(i));
     }
+    if (shopId != 0L) {
+      output.writeInt64(14, shopId );
+    }
+    if (productId != 0L) {
+      output.writeInt64(15, productId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -748,6 +786,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, approvalFlowLevels .get(i));
     }
+    if (shopId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(14, shopId );
+    }
+    if (productId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(15, productId );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -789,6 +835,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getApprovedAt())) return false;
     if (!getApprovalFlowLevelsList()
         .equals(other.getApprovalFlowLevelsList())) return false;
+    if (getShopId()
+        != other.getShopId()) return false;
+    if (getProductId()
+        != other.getProductId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -829,6 +879,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + APPROVAL_FLOW_LEVELS_FIELD_NUMBER;
       hash = (53 * hash) + getApprovalFlowLevelsList().hashCode();
     }
+    hash = (37 * hash) + SHOP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getShopId());
+    hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getProductId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -993,6 +1049,10 @@ private static final long serialVersionUID = 0L;
       } else {
         approvalFlowLevelsBuilder .clear();
       }
+      shopId = 0L;
+
+      productId = 0L;
+
       return this;
     }
 
@@ -1041,6 +1101,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.approvalFlowLevels = approvalFlowLevelsBuilder .build();
       }
+      result.shopId = shopId ;
+      result.productId = productId ;
       onBuilt();
       return result;
     }
@@ -1161,6 +1223,12 @@ private static final long serialVersionUID = 0L;
             approvalFlowLevelsBuilder .addAllMessages(other.approvalFlowLevels );
           }
         }
+      }
+      if (other.getShopId() != 0L) {
+        setShopId(other.getShopId());
+      }
+      if (other.getProductId() != 0L) {
+        setProductId(other.getProductId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2297,6 +2365,68 @@ private static final long serialVersionUID = 0L;
         approvalFlowLevels = null;
       }
       return approvalFlowLevelsBuilder ;
+    }
+
+    private long shopId ;
+    /**
+     * <code>int64 shop_id = 14;</code>
+     * @return The shopId.
+     */
+    @java.lang.Override
+    public long getShopId() {
+      return shopId ;
+    }
+    /**
+     * <code>int64 shop_id = 14;</code>
+     * @param value The shopId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShopId(long value) {
+      
+      shopId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 shop_id = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShopId() {
+      
+      shopId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long productId ;
+    /**
+     * <code>int64 product_id = 15;</code>
+     * @return The productId.
+     */
+    @java.lang.Override
+    public long getProductId() {
+      return productId ;
+    }
+    /**
+     * <code>int64 product_id = 15;</code>
+     * @param value The productId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductId(long value) {
+      
+      productId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 product_id = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProductId() {
+      
+      productId = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

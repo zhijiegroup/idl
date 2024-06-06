@@ -168,4 +168,16 @@ public interface ApprovalFlowDetailOrBuilder extends
    */
   com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getApprovalFlowLevelsOrBuilder(
       int index);
+
+  /**
+   * <code>int64 shop_id = 14;</code>
+   * @return The shopId.
+   */
+  long getShopId();
+
+  /**
+   * <code>int64 product_id = 15;</code>
+   * @return The productId.
+   */
+  long getProductId();
 }

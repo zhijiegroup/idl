@@ -154,6 +154,8 @@ const ApprovalFlowDetail$json = {
     {'1': 'approver', '3': 11, '4': 1, '5': 9, '10': 'approver'},
     {'1': 'approved_at', '3': 12, '4': 1, '5': 9, '10': 'approvedAt'},
     {'1': 'approval_flow_levels', '3': 13, '4': 3, '5': 11, '6': '.glory_api.ApprovalFlowLevel', '10': 'approvalFlowLevels'},
+    {'1': 'shop_id', '3': 14, '4': 1, '5': 3, '10': 'shopId'},
+    {'1': 'product_id', '3': 15, '4': 1, '5': 3, '10': 'productId'},
   ],
 };
 
@@ -167,7 +169,8 @@ final $typed_data.Uint8List approvalFlowDetailDescriptor = $convert.base64Decode
     'RlZF9hdBgJIAEoCVIJY3JlYXRlZEF0EiUKDmFwcHJvdmVfcmVzdWx0GAogASgJUg1hcHByb3Zl'
     'UmVzdWx0EhoKCGFwcHJvdmVyGAsgASgJUghhcHByb3ZlchIfCgthcHByb3ZlZF9hdBgMIAEoCV'
     'IKYXBwcm92ZWRBdBJOChRhcHByb3ZhbF9mbG93X2xldmVscxgNIAMoCzIcLmdsb3J5X2FwaS5B'
-    'cHByb3ZhbEZsb3dMZXZlbFISYXBwcm92YWxGbG93TGV2ZWxz');
+    'cHByb3ZhbEZsb3dMZXZlbFISYXBwcm92YWxGbG93TGV2ZWxzEhcKB3Nob3BfaWQYDiABKANSBn'
+    'Nob3BJZBIdCgpwcm9kdWN0X2lkGA8gASgDUglwcm9kdWN0SWQ=');
 
 @$core.Deprecated('Use getApprovalFlowDetailRequestDescriptor instead')
 const GetApprovalFlowDetailRequest$json = {

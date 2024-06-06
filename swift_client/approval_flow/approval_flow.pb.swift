@@ -248,6 +248,10 @@ struct GloryApi_ApprovalFlowDetail {
 
   var approvalFlowLevels: [GloryApi_ApprovalFlowLevel] = []
 
+  var shopID: Int64 = 0
+
+  var productID: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -282,29 +286,28 @@ struct GloryApi_GetApprovalFlowDetailResponse {
   // methods supported on all messages.
 
   var baseResp: Base_BaseResponse {
-    get {return _baseResp ?? Base_BaseResponse()}
-    set {_baseResp = newValue}
+    get {return _storage._baseResp ?? Base_BaseResponse()}
+    set {_uniqueStorage()._baseResp = newValue}
   }
   /// Returns true if `baseResp` has been explicitly set.
-  var hasBaseResp: Bool {return self._baseResp != nil}
+  var hasBaseResp: Bool {return _storage._baseResp != nil}
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
-  mutating func clearBaseResp() {self._baseResp = nil}
+  mutating func clearBaseResp() {_uniqueStorage()._baseResp = nil}
 
   var approvalFlow: GloryApi_ApprovalFlowDetail {
-    get {return _approvalFlow ?? GloryApi_ApprovalFlowDetail()}
-    set {_approvalFlow = newValue}
+    get {return _storage._approvalFlow ?? GloryApi_ApprovalFlowDetail()}
+    set {_uniqueStorage()._approvalFlow = newValue}
   }
   /// Returns true if `approvalFlow` has been explicitly set.
-  var hasApprovalFlow: Bool {return self._approvalFlow != nil}
+  var hasApprovalFlow: Bool {return _storage._approvalFlow != nil}
   /// Clears the value of `approvalFlow`. Subsequent reads from it will return its default value.
-  mutating func clearApprovalFlow() {self._approvalFlow = nil}
+  mutating func clearApprovalFlow() {_uniqueStorage()._approvalFlow = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _baseResp: Base_BaseResponse? = nil
-  fileprivate var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=5.5) && canImport(_Concurrency)
@@ -714,6 +717,8 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     11: .same(proto: "approver"),
     12: .standard(proto: "approved_at"),
     13: .standard(proto: "approval_flow_levels"),
+    14: .standard(proto: "shop_id"),
+    15: .standard(proto: "product_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -735,6 +740,8 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
       case 11: try { try decoder.decodeSingularStringField(value: &self.approver) }()
       case 12: try { try decoder.decodeSingularStringField(value: &self.approvedAt) }()
       case 13: try { try decoder.decodeRepeatedMessageField(value: &self.approvalFlowLevels) }()
+      case 14: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
+      case 15: try { try decoder.decodeSingularInt64Field(value: &self.productID) }()
       default: break
       }
     }
@@ -780,6 +787,12 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.approvalFlowLevels.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.approvalFlowLevels, fieldNumber: 13)
     }
+    if self.shopID != 0 {
+      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 14)
+    }
+    if self.productID != 0 {
+      try visitor.visitSingularInt64Field(value: self.productID, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -797,6 +810,8 @@ extension GloryApi_ApprovalFlowDetail: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if lhs.approver != rhs.approver {return false}
     if lhs.approvedAt != rhs.approvedAt {return false}
     if lhs.approvalFlowLevels != rhs.approvalFlowLevels {return false}
+    if lhs.shopID != rhs.shopID {return false}
+    if lhs.productID != rhs.productID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -851,36 +866,78 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "approval_flow"),
   ]
 
+  fileprivate class _StorageClass {
+    var _baseResp: Base_BaseResponse? = nil
+    var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
+
+    #if swift(>=5.10)
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+    #else
+      static let defaultInstance = _StorageClass()
+    #endif
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _baseResp = source._baseResp
+      _approvalFlow = source._approvalFlow
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeSingularMessageField(value: &self._approvalFlow) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
+        case 2: try { try decoder.decodeSingularMessageField(value: &_storage._approvalFlow) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every if/case branch local when no optimizations
-    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-    // https://github.com/apple/swift-protobuf/issues/1182
-    try { if let v = self._baseResp {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    } }()
-    try { if let v = self._approvalFlow {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    } }()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._baseResp {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._approvalFlow {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      } }()
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetApprovalFlowDetailResponse, rhs: GloryApi_GetApprovalFlowDetailResponse) -> Bool {
-    if lhs._baseResp != rhs._baseResp {return false}
-    if lhs._approvalFlow != rhs._approvalFlow {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._baseResp != rhs_storage._baseResp {return false}
+        if _storage._approvalFlow != rhs_storage._approvalFlow {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

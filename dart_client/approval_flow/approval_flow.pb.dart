@@ -679,6 +679,8 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     $core.String? approver,
     $core.String? approvedAt,
     $core.Iterable<ApprovalFlowLevel>? approvalFlowLevels,
+    $fixnum.Int64? shopId,
+    $fixnum.Int64? productId,
   }) {
     final $result = create();
     if (approvalFlowId != null) {
@@ -720,6 +722,12 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     if (approvalFlowLevels != null) {
       $result.approvalFlowLevels.addAll(approvalFlowLevels);
     }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    if (productId != null) {
+      $result.productId = productId;
+    }
     return $result;
   }
   ApprovalFlowDetail._() : super();
@@ -740,6 +748,8 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'approver')
     ..aOS(12, _omitFieldNames ? '' : 'approvedAt')
     ..pc<ApprovalFlowLevel>(13, _omitFieldNames ? '' : 'approvalFlowLevels', $pb.PbFieldType.PM, subBuilder: ApprovalFlowLevel.create)
+    ..aInt64(14, _omitFieldNames ? '' : 'shopId')
+    ..aInt64(15, _omitFieldNames ? '' : 'productId')
     ..hasRequiredFields = false
   ;
 
@@ -874,6 +884,24 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $core.List<ApprovalFlowLevel> get approvalFlowLevels => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get shopId => $_getI64(13);
+  @$pb.TagNumber(14)
+  set shopId($fixnum.Int64 v) { $_setInt64(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasShopId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearShopId() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get productId => $_getI64(14);
+  @$pb.TagNumber(15)
+  set productId($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasProductId() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearProductId() => clearField(15);
 }
 
 class GetApprovalFlowDetailRequest extends $pb.GeneratedMessage {

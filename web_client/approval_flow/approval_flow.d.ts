@@ -70,6 +70,8 @@ export interface ApprovalFlowDetail {
   approver?: string;
   approved_at?: string;
   approval_flow_levels?: Array<ApprovalFlowLevel>;
+  shop_id?: string;
+  product_id?: string;
 }
 
 export interface GetApprovalFlowDetailRequest {
