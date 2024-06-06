@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     approver = "";
     approvedAt = "";
     approvalFlowLevels = java.util.Collections.emptyList();
+    flowNote = "";
   }
 
   @java.lang.Override
@@ -149,6 +150,12 @@ private static final long serialVersionUID = 0L;
           case 120: {
 
             productId = input.readInt64();
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            flowNote = s;
             break;
           }
           default: {
@@ -677,6 +684,44 @@ private static final long serialVersionUID = 0L;
     return productId ;
   }
 
+  public static final int FLOW_NOTE_FIELD_NUMBER = 16;
+  private volatile java.lang.Object flowNote ;
+  /**
+   * <code>string flow_note = 16;</code>
+   * @return The flowNote.
+   */
+  @java.lang.Override
+  public java.lang.String getFlowNote() {
+    java.lang.Object ref = flowNote ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      flowNote = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string flow_note = 16;</code>
+   * @return The bytes for flowNote.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFlowNoteBytes() {
+    java.lang.Object ref = flowNote ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      flowNote = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -736,6 +781,9 @@ private static final long serialVersionUID = 0L;
     if (productId != 0L) {
       output.writeInt64(15, productId );
     }
+    if (!getFlowNoteBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, flowNote );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -794,6 +842,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(15, productId );
     }
+    if (!getFlowNoteBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, flowNote );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -839,6 +890,8 @@ private static final long serialVersionUID = 0L;
         != other.getShopId()) return false;
     if (getProductId()
         != other.getProductId()) return false;
+    if (!getFlowNote()
+        .equals(other.getFlowNote())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -885,6 +938,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getProductId());
+    hash = (37 * hash) + FLOW_NOTE_FIELD_NUMBER;
+    hash = (53 * hash) + getFlowNote().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1053,6 +1108,8 @@ private static final long serialVersionUID = 0L;
 
       productId = 0L;
 
+      flowNote = "";
+
       return this;
     }
 
@@ -1103,6 +1160,7 @@ private static final long serialVersionUID = 0L;
       }
       result.shopId = shopId ;
       result.productId = productId ;
+      result.flowNote = flowNote ;
       onBuilt();
       return result;
     }
@@ -1229,6 +1287,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getProductId() != 0L) {
         setProductId(other.getProductId());
+      }
+      if (!other.getFlowNote().isEmpty()) {
+        flowNote = other.flowNote ;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2425,6 +2487,82 @@ private static final long serialVersionUID = 0L;
     public Builder clearProductId() {
       
       productId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object flowNote = "";
+    /**
+     * <code>string flow_note = 16;</code>
+     * @return The flowNote.
+     */
+    public java.lang.String getFlowNote() {
+      java.lang.Object ref = flowNote ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flowNote = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string flow_note = 16;</code>
+     * @return The bytes for flowNote.
+     */
+    public com.google.protobuf.ByteString
+        getFlowNoteBytes() {
+      java.lang.Object ref = flowNote ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flowNote = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string flow_note = 16;</code>
+     * @param value The flowNote to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlowNote(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      flowNote = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string flow_note = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFlowNote() {
+      
+      flowNote = getDefaultInstance().getFlowNote();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string flow_note = 16;</code>
+     * @param value The bytes for flowNote to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlowNoteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      flowNote = value;
       onChanged();
       return this;
     }

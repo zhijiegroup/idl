@@ -180,4 +180,16 @@ public interface ApprovalFlowDetailOrBuilder extends
    * @return The productId.
    */
   long getProductId();
+
+  /**
+   * <code>string flow_note = 16;</code>
+   * @return The flowNote.
+   */
+  java.lang.String getFlowNote();
+  /**
+   * <code>string flow_note = 16;</code>
+   * @return The bytes for flowNote.
+   */
+  com.google.protobuf.ByteString
+      getFlowNoteBytes();
 }

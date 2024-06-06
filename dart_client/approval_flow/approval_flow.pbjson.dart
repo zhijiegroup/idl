@@ -127,6 +127,7 @@ const ApprovalFlowLevel$json = {
     {'1': 'process_status', '3': 4, '4': 1, '5': 9, '10': 'processStatus'},
     {'1': 'comment', '3': 5, '4': 1, '5': 9, '10': 'comment'},
     {'1': 'approver', '3': 6, '4': 1, '5': 9, '10': 'approver'},
+    {'1': 'approved_at', '3': 7, '4': 1, '5': 9, '10': 'approvedAt'},
   ],
 };
 
@@ -135,7 +136,8 @@ final $typed_data.Uint8List approvalFlowLevelDescriptor = $convert.base64Decode(
     'ChFBcHByb3ZhbEZsb3dMZXZlbBIzChZhcHByb3ZhbF9mbG93X2xldmVsX2lkGAEgASgDUhNhcH'
     'Byb3ZhbEZsb3dMZXZlbElkEh8KC2xldmVsX29yZGVyGAIgASgDUgpsZXZlbE9yZGVyEhYKBnN0'
     'YXR1cxgDIAEoCVIGc3RhdHVzEiUKDnByb2Nlc3Nfc3RhdHVzGAQgASgJUg1wcm9jZXNzU3RhdH'
-    'VzEhgKB2NvbW1lbnQYBSABKAlSB2NvbW1lbnQSGgoIYXBwcm92ZXIYBiABKAlSCGFwcHJvdmVy');
+    'VzEhgKB2NvbW1lbnQYBSABKAlSB2NvbW1lbnQSGgoIYXBwcm92ZXIYBiABKAlSCGFwcHJvdmVy'
+    'Eh8KC2FwcHJvdmVkX2F0GAcgASgJUgphcHByb3ZlZEF0');
 
 @$core.Deprecated('Use approvalFlowDetailDescriptor instead')
 const ApprovalFlowDetail$json = {
@@ -156,6 +158,7 @@ const ApprovalFlowDetail$json = {
     {'1': 'approval_flow_levels', '3': 13, '4': 3, '5': 11, '6': '.glory_api.ApprovalFlowLevel', '10': 'approvalFlowLevels'},
     {'1': 'shop_id', '3': 14, '4': 1, '5': 3, '10': 'shopId'},
     {'1': 'product_id', '3': 15, '4': 1, '5': 3, '10': 'productId'},
+    {'1': 'flow_note', '3': 16, '4': 1, '5': 9, '10': 'flowNote'},
   ],
 };
 
@@ -170,7 +173,8 @@ final $typed_data.Uint8List approvalFlowDetailDescriptor = $convert.base64Decode
     'UmVzdWx0EhoKCGFwcHJvdmVyGAsgASgJUghhcHByb3ZlchIfCgthcHByb3ZlZF9hdBgMIAEoCV'
     'IKYXBwcm92ZWRBdBJOChRhcHByb3ZhbF9mbG93X2xldmVscxgNIAMoCzIcLmdsb3J5X2FwaS5B'
     'cHByb3ZhbEZsb3dMZXZlbFISYXBwcm92YWxGbG93TGV2ZWxzEhcKB3Nob3BfaWQYDiABKANSBn'
-    'Nob3BJZBIdCgpwcm9kdWN0X2lkGA8gASgDUglwcm9kdWN0SWQ=');
+    'Nob3BJZBIdCgpwcm9kdWN0X2lkGA8gASgDUglwcm9kdWN0SWQSGwoJZmxvd19ub3RlGBAgASgJ'
+    'UghmbG93Tm90ZQ==');
 
 @$core.Deprecated('Use getApprovalFlowDetailRequestDescriptor instead')
 const GetApprovalFlowDetailRequest$json = {

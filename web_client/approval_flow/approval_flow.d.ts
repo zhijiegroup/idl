@@ -54,6 +54,7 @@ export interface ApprovalFlowLevel {
   process_status?: string;
   comment?: string;
   approver?: string;
+  approved_at?: string;
 }
 
 export interface ApprovalFlowDetail {
@@ -72,6 +73,7 @@ export interface ApprovalFlowDetail {
   approval_flow_levels?: Array<ApprovalFlowLevel>;
   shop_id?: string;
   product_id?: string;
+  flow_note?: string;
 }
 
 export interface GetApprovalFlowDetailRequest {

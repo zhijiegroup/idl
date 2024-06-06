@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     processStatus = "";
     comment = "";
     approver = "";
+    approvedAt = "";
   }
 
   @java.lang.Override
@@ -84,6 +85,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             approver = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            approvedAt = s;
             break;
           }
           default: {
@@ -292,6 +299,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPROVED_AT_FIELD_NUMBER = 7;
+  private volatile java.lang.Object approvedAt ;
+  /**
+   * <code>string approved_at = 7;</code>
+   * @return The approvedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getApprovedAt() {
+    java.lang.Object ref = approvedAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approvedAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string approved_at = 7;</code>
+   * @return The bytes for approvedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApprovedAtBytes() {
+    java.lang.Object ref = approvedAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approvedAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -324,6 +369,9 @@ private static final long serialVersionUID = 0L;
     if (!getApproverBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, approver );
     }
+    if (!getApprovedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, approvedAt );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -353,6 +401,9 @@ private static final long serialVersionUID = 0L;
     if (!getApproverBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, approver );
     }
+    if (!getApprovedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, approvedAt );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -380,6 +431,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getComment())) return false;
     if (!getApprover()
         .equals(other.getApprover())) return false;
+    if (!getApprovedAt()
+        .equals(other.getApprovedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -405,6 +458,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getComment().hashCode();
     hash = (37 * hash) + APPROVER_FIELD_NUMBER;
     hash = (53 * hash) + getApprover().hashCode();
+    hash = (37 * hash) + APPROVED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -550,6 +605,8 @@ private static final long serialVersionUID = 0L;
 
       approver = "";
 
+      approvedAt = "";
+
       return this;
     }
 
@@ -582,6 +639,7 @@ private static final long serialVersionUID = 0L;
       result.processStatus = processStatus ;
       result.comment = comment ;
       result.approver = approver ;
+      result.approvedAt = approvedAt ;
       onBuilt();
       return result;
     }
@@ -650,6 +708,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getApprover().isEmpty()) {
         approver = other.approver ;
+        onChanged();
+      }
+      if (!other.getApprovedAt().isEmpty()) {
+        approvedAt = other.approvedAt ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1043,6 +1105,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       approver = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object approvedAt = "";
+    /**
+     * <code>string approved_at = 7;</code>
+     * @return The approvedAt.
+     */
+    public java.lang.String getApprovedAt() {
+      java.lang.Object ref = approvedAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approvedAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string approved_at = 7;</code>
+     * @return The bytes for approvedAt.
+     */
+    public com.google.protobuf.ByteString
+        getApprovedAtBytes() {
+      java.lang.Object ref = approvedAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approvedAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string approved_at = 7;</code>
+     * @param value The approvedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approvedAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approved_at = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovedAt() {
+      
+      approvedAt = getDefaultInstance().getApprovedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string approved_at = 7;</code>
+     * @param value The bytes for approvedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approvedAt = value;
       onChanged();
       return this;
     }

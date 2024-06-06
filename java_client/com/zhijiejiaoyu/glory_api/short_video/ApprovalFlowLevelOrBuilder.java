@@ -66,4 +66,16 @@ public interface ApprovalFlowLevelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getApproverBytes();
+
+  /**
+   * <code>string approved_at = 7;</code>
+   * @return The approvedAt.
+   */
+  java.lang.String getApprovedAt();
+  /**
+   * <code>string approved_at = 7;</code>
+   * @return The bytes for approvedAt.
+   */
+  com.google.protobuf.ByteString
+      getApprovedAtBytes();
 }

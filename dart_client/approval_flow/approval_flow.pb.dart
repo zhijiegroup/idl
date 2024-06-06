@@ -552,6 +552,7 @@ class ApprovalFlowLevel extends $pb.GeneratedMessage {
     $core.String? processStatus,
     $core.String? comment,
     $core.String? approver,
+    $core.String? approvedAt,
   }) {
     final $result = create();
     if (approvalFlowLevelId != null) {
@@ -572,6 +573,9 @@ class ApprovalFlowLevel extends $pb.GeneratedMessage {
     if (approver != null) {
       $result.approver = approver;
     }
+    if (approvedAt != null) {
+      $result.approvedAt = approvedAt;
+    }
     return $result;
   }
   ApprovalFlowLevel._() : super();
@@ -585,6 +589,7 @@ class ApprovalFlowLevel extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'processStatus')
     ..aOS(5, _omitFieldNames ? '' : 'comment')
     ..aOS(6, _omitFieldNames ? '' : 'approver')
+    ..aOS(7, _omitFieldNames ? '' : 'approvedAt')
     ..hasRequiredFields = false
   ;
 
@@ -662,6 +667,15 @@ class ApprovalFlowLevel extends $pb.GeneratedMessage {
   $core.bool hasApprover() => $_has(5);
   @$pb.TagNumber(6)
   void clearApprover() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get approvedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set approvedAt($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasApprovedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearApprovedAt() => clearField(7);
 }
 
 class ApprovalFlowDetail extends $pb.GeneratedMessage {
@@ -681,6 +695,7 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     $core.Iterable<ApprovalFlowLevel>? approvalFlowLevels,
     $fixnum.Int64? shopId,
     $fixnum.Int64? productId,
+    $core.String? flowNote,
   }) {
     final $result = create();
     if (approvalFlowId != null) {
@@ -728,6 +743,9 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     if (productId != null) {
       $result.productId = productId;
     }
+    if (flowNote != null) {
+      $result.flowNote = flowNote;
+    }
     return $result;
   }
   ApprovalFlowDetail._() : super();
@@ -750,6 +768,7 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
     ..pc<ApprovalFlowLevel>(13, _omitFieldNames ? '' : 'approvalFlowLevels', $pb.PbFieldType.PM, subBuilder: ApprovalFlowLevel.create)
     ..aInt64(14, _omitFieldNames ? '' : 'shopId')
     ..aInt64(15, _omitFieldNames ? '' : 'productId')
+    ..aOS(16, _omitFieldNames ? '' : 'flowNote')
     ..hasRequiredFields = false
   ;
 
@@ -902,6 +921,15 @@ class ApprovalFlowDetail extends $pb.GeneratedMessage {
   $core.bool hasProductId() => $_has(14);
   @$pb.TagNumber(15)
   void clearProductId() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get flowNote => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set flowNote($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasFlowNote() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearFlowNote() => clearField(16);
 }
 
 class GetApprovalFlowDetailRequest extends $pb.GeneratedMessage {
