@@ -69,6 +69,8 @@ message ApprovalFlowDetail {
     string approver = 11;
     string approved_at = 12;
     repeated ApprovalFlowLevel approval_flow_levels = 13;
+    int64 shop_id = 14;
+    int64 product_id = 15;
 }
 
 message GetApprovalFlowDetailRequest {
