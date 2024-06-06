@@ -53,6 +53,7 @@ message ApprovalFlowLevel {
     string process_status = 4;
     string comment = 5;
     string approver = 6;
+    string approved_at = 7;
 }
 
 message ApprovalFlowDetail {
@@ -71,6 +72,7 @@ message ApprovalFlowDetail {
     repeated ApprovalFlowLevel approval_flow_levels = 13;
     int64 shop_id = 14;
     int64 product_id = 15;
+    string flow_note = 16;
 }
 
 message GetApprovalFlowDetailRequest {
