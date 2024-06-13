@@ -36,4 +36,10 @@ public interface GetApprovalFlowDetailResponseOrBuilder extends
    * <code>.glory_api.ApprovalFlowDetail approval_flow = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder getApprovalFlowOrBuilder();
+
+  /**
+   * <code>int32 current_level_order = 3;</code>
+   * @return The currentLevelOrder.
+   */
+  int getCurrentLevelOrder();
 }

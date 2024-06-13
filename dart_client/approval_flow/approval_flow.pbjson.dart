@@ -197,6 +197,7 @@ const GetApprovalFlowDetailResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'approval_flow', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ApprovalFlowDetail', '10': 'approvalFlow'},
+    {'1': 'current_level_order', '3': 3, '4': 1, '5': 5, '10': 'currentLevelOrder'},
   ],
 };
 
@@ -204,5 +205,6 @@ const GetApprovalFlowDetailResponse$json = {
 final $typed_data.Uint8List getApprovalFlowDetailResponseDescriptor = $convert.base64Decode(
     'Ch1HZXRBcHByb3ZhbEZsb3dEZXRhaWxSZXNwb25zZRIvCgliYXNlX3Jlc3AYASABKAsyEi5iYX'
     'NlLkJhc2VSZXNwb25zZVIIYmFzZVJlc3ASQgoNYXBwcm92YWxfZmxvdxgCIAEoCzIdLmdsb3J5'
-    'X2FwaS5BcHByb3ZhbEZsb3dEZXRhaWxSDGFwcHJvdmFsRmxvdw==');
+    'X2FwaS5BcHByb3ZhbEZsb3dEZXRhaWxSDGFwcHJvdmFsRmxvdxIuChNjdXJyZW50X2xldmVsX2'
+    '9yZGVyGAMgASgFUhFjdXJyZW50TGV2ZWxPcmRlcg==');
 

@@ -1002,6 +1002,7 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
   factory GetApprovalFlowDetailResponse({
     $0.BaseResponse? baseResp,
     ApprovalFlowDetail? approvalFlow,
+    $core.int? currentLevelOrder,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1009,6 +1010,9 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
     }
     if (approvalFlow != null) {
       $result.approvalFlow = approvalFlow;
+    }
+    if (currentLevelOrder != null) {
+      $result.currentLevelOrder = currentLevelOrder;
     }
     return $result;
   }
@@ -1019,6 +1023,7 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApprovalFlowDetailResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<ApprovalFlowDetail>(2, _omitFieldNames ? '' : 'approvalFlow', subBuilder: ApprovalFlowDetail.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'currentLevelOrder', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -1064,6 +1069,15 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
   void clearApprovalFlow() => clearField(2);
   @$pb.TagNumber(2)
   ApprovalFlowDetail ensureApprovalFlow() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.int get currentLevelOrder => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set currentLevelOrder($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCurrentLevelOrder() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCurrentLevelOrder() => clearField(3);
 }
 
 

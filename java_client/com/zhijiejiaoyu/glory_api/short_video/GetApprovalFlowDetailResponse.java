@@ -74,6 +74,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            currentLevelOrder = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +163,17 @@ private static final long serialVersionUID = 0L;
     return getApprovalFlow();
   }
 
+  public static final int CURRENT_LEVEL_ORDER_FIELD_NUMBER = 3;
+  private int currentLevelOrder ;
+  /**
+   * <code>int32 current_level_order = 3;</code>
+   * @return The currentLevelOrder.
+   */
+  @java.lang.Override
+  public int getCurrentLevelOrder() {
+    return currentLevelOrder ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +194,9 @@ private static final long serialVersionUID = 0L;
     if (approvalFlow != null) {
       output.writeMessage(2, getApprovalFlow());
     }
+    if (currentLevelOrder != 0) {
+      output.writeInt32(3, currentLevelOrder );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +213,10 @@ private static final long serialVersionUID = 0L;
     if (approvalFlow != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getApprovalFlow());
+    }
+    if (currentLevelOrder != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, currentLevelOrder );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +243,8 @@ private static final long serialVersionUID = 0L;
       if (!getApprovalFlow()
           .equals(other.getApprovalFlow())) return false;
     }
+    if (getCurrentLevelOrder()
+        != other.getCurrentLevelOrder()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +264,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + APPROVAL_FLOW_FIELD_NUMBER;
       hash = (53 * hash) + getApprovalFlow().hashCode();
     }
+    hash = (37 * hash) + CURRENT_LEVEL_ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentLevelOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +411,8 @@ private static final long serialVersionUID = 0L;
         approvalFlow = null;
         approvalFlowBuilder = null;
       }
+      currentLevelOrder = 0;
+
       return this;
     }
 
@@ -420,6 +449,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.approvalFlow = approvalFlowBuilder .build();
       }
+      result.currentLevelOrder = currentLevelOrder ;
       onBuilt();
       return result;
     }
@@ -473,6 +503,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasApprovalFlow()) {
         mergeApprovalFlow(other.getApprovalFlow());
+      }
+      if (other.getCurrentLevelOrder() != 0) {
+        setCurrentLevelOrder(other.getCurrentLevelOrder());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +772,37 @@ private static final long serialVersionUID = 0L;
         approvalFlow = null;
       }
       return approvalFlowBuilder ;
+    }
+
+    private int currentLevelOrder ;
+    /**
+     * <code>int32 current_level_order = 3;</code>
+     * @return The currentLevelOrder.
+     */
+    @java.lang.Override
+    public int getCurrentLevelOrder() {
+      return currentLevelOrder ;
+    }
+    /**
+     * <code>int32 current_level_order = 3;</code>
+     * @param value The currentLevelOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentLevelOrder(int value) {
+      
+      currentLevelOrder = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 current_level_order = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentLevelOrder() {
+      
+      currentLevelOrder = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

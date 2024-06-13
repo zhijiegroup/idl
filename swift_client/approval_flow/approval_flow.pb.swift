@@ -307,6 +307,11 @@ struct GloryApi_GetApprovalFlowDetailResponse {
   /// Clears the value of `approvalFlow`. Subsequent reads from it will return its default value.
   mutating func clearApprovalFlow() {_uniqueStorage()._approvalFlow = nil}
 
+  var currentLevelOrder: Int32 {
+    get {return _storage._currentLevelOrder}
+    set {_uniqueStorage()._currentLevelOrder = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -880,11 +885,13 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "approval_flow"),
+    3: .standard(proto: "current_level_order"),
   ]
 
   fileprivate class _StorageClass {
     var _baseResp: Base_BaseResponse? = nil
     var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
+    var _currentLevelOrder: Int32 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -901,6 +908,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
     init(copying source: _StorageClass) {
       _baseResp = source._baseResp
       _approvalFlow = source._approvalFlow
+      _currentLevelOrder = source._currentLevelOrder
     }
   }
 
@@ -921,6 +929,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
         switch fieldNumber {
         case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._approvalFlow) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._currentLevelOrder) }()
         default: break
         }
       }
@@ -939,6 +948,9 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
       try { if let v = _storage._approvalFlow {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       } }()
+      if _storage._currentLevelOrder != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._currentLevelOrder, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -950,6 +962,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
         let rhs_storage = _args.1
         if _storage._baseResp != rhs_storage._baseResp {return false}
         if _storage._approvalFlow != rhs_storage._approvalFlow {return false}
+        if _storage._currentLevelOrder != rhs_storage._currentLevelOrder {return false}
         return true
       }
       if !storagesAreEqual {return false}
