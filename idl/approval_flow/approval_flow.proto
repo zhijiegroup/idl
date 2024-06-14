@@ -83,4 +83,5 @@ message GetApprovalFlowDetailResponse {
     base.BaseResponse base_resp = 1;
     ApprovalFlowDetail approval_flow = 2;
     int32 current_level_order = 3;
+    int64 next_id = 4;
 }
