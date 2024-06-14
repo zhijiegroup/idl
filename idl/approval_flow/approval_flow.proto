@@ -4,7 +4,6 @@ option java_package = "com.zhijiejiaoyu.glory_api.short_video";
 option java_multiple_files = true;
 
 import "base.proto";
-import "user/user.proto";
 
 message SubmitApprovalFlowRequest {
     base.BaseRequest base_request = 1;
