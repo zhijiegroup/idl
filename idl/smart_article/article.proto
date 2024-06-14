@@ -8,13 +8,13 @@ import "user/user.proto";
 
 message ArticleCreation {
     int64 article_creation_id = 1;
-    int64 last_article_creation_id = 2;
+    int64 article_collection_id = 2;
     string title = 3;
     string ai_result = 4;
     string status = 5;
     string topic = 6;
     string creation_type = 7;
-    string digital_hunman_video_url = 8;
+    string digital_human_video_url = 8;
     string created_at = 9;
     string content = 10;
     string product_name = 11;
