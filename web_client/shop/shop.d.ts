@@ -97,6 +97,7 @@ export interface Shop {
   teacher_name?: string;
   teacher_phone?: string;
   approval_flow?: approval_flow.ApprovalFlowDetail;
+  current_level_order?: number;
 }
 
 export interface ShopQualification {

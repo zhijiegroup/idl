@@ -318,6 +318,11 @@ struct GloryApi_Shop {
   /// Clears the value of `approvalFlow`. Subsequent reads from it will return its default value.
   mutating func clearApprovalFlow() {_uniqueStorage()._approvalFlow = nil}
 
+  var currentLevelOrder: Int32 {
+    get {return _storage._currentLevelOrder}
+    set {_uniqueStorage()._currentLevelOrder = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1616,6 +1621,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     46: .standard(proto: "teacher_name"),
     47: .standard(proto: "teacher_phone"),
     50: .standard(proto: "approval_flow"),
+    51: .standard(proto: "current_level_order"),
   ]
 
   fileprivate class _StorageClass {
@@ -1668,6 +1674,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _teacherName: String = String()
     var _teacherPhone: String = String()
     var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
+    var _currentLevelOrder: Int32 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -1731,6 +1738,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _teacherName = source._teacherName
       _teacherPhone = source._teacherPhone
       _approvalFlow = source._approvalFlow
+      _currentLevelOrder = source._currentLevelOrder
     }
   }
 
@@ -1797,6 +1805,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 48: try { try decoder.decodeSingularStringField(value: &_storage._className) }()
         case 49: try { try decoder.decodeSingularStringField(value: &_storage._studentNum) }()
         case 50: try { try decoder.decodeSingularMessageField(value: &_storage._approvalFlow) }()
+        case 51: try { try decoder.decodeSingularInt32Field(value: &_storage._currentLevelOrder) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1954,6 +1963,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       try { if let v = _storage._approvalFlow {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
       } }()
+      if _storage._currentLevelOrder != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._currentLevelOrder, fieldNumber: 51)
+      }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
       }
@@ -2015,6 +2027,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._teacherName != rhs_storage._teacherName {return false}
         if _storage._teacherPhone != rhs_storage._teacherPhone {return false}
         if _storage._approvalFlow != rhs_storage._approvalFlow {return false}
+        if _storage._currentLevelOrder != rhs_storage._currentLevelOrder {return false}
         return true
       }
       if !storagesAreEqual {return false}
