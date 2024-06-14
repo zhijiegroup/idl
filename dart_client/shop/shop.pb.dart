@@ -68,6 +68,7 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? className,
     $core.String? studentNum,
     $0.ApprovalFlowDetail? approvalFlow,
+    $core.int? currentLevelOrder,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -215,6 +216,9 @@ class Shop extends $pb.GeneratedMessage {
     if (approvalFlow != null) {
       $result.approvalFlow = approvalFlow;
     }
+    if (currentLevelOrder != null) {
+      $result.currentLevelOrder = currentLevelOrder;
+    }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
     }
@@ -273,6 +277,7 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(48, _omitFieldNames ? '' : 'className')
     ..aOS(49, _omitFieldNames ? '' : 'studentNum')
     ..aOM<$0.ApprovalFlowDetail>(50, _omitFieldNames ? '' : 'approvalFlow', subBuilder: $0.ApprovalFlowDetail.create)
+    ..a<$core.int>(51, _omitFieldNames ? '' : 'currentLevelOrder', $pb.PbFieldType.O3)
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -728,8 +733,17 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(50)
   $0.ApprovalFlowDetail ensureApprovalFlow() => $_ensure(47);
 
+  @$pb.TagNumber(51)
+  $core.int get currentLevelOrder => $_getIZ(48);
+  @$pb.TagNumber(51)
+  set currentLevelOrder($core.int v) { $_setSignedInt32(48, v); }
+  @$pb.TagNumber(51)
+  $core.bool hasCurrentLevelOrder() => $_has(48);
+  @$pb.TagNumber(51)
+  void clearCurrentLevelOrder() => clearField(51);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(48);
+  $core.List<ShopQualification> get shopQualification => $_getList(49);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {

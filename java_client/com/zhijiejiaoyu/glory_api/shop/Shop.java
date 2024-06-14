@@ -397,6 +397,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 408: {
+
+            currentLevelOrder = input.readInt32();
+            break;
+          }
           case 2666: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               shopQualification = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopQualification>();
@@ -2362,6 +2367,17 @@ private static final long serialVersionUID = 0L;
     return getApprovalFlow();
   }
 
+  public static final int CURRENT_LEVEL_ORDER_FIELD_NUMBER = 51;
+  private int currentLevelOrder ;
+  /**
+   * <code>int32 current_level_order = 51;</code>
+   * @return The currentLevelOrder.
+   */
+  @java.lang.Override
+  public int getCurrentLevelOrder() {
+    return currentLevelOrder ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2524,6 +2540,9 @@ private static final long serialVersionUID = 0L;
     }
     if (approvalFlow != null) {
       output.writeMessage(50, getApprovalFlow());
+    }
+    if (currentLevelOrder != 0) {
+      output.writeInt32(51, currentLevelOrder );
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -2702,6 +2721,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(50, getApprovalFlow());
     }
+    if (currentLevelOrder != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(51, currentLevelOrder );
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2825,6 +2848,8 @@ private static final long serialVersionUID = 0L;
       if (!getApprovalFlow()
           .equals(other.getApprovalFlow())) return false;
     }
+    if (getCurrentLevelOrder()
+        != other.getCurrentLevelOrder()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2949,6 +2974,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + APPROVAL_FLOW_FIELD_NUMBER;
       hash = (53 * hash) + getApprovalFlow().hashCode();
     }
+    hash = (37 * hash) + CURRENT_LEVEL_ORDER_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentLevelOrder();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3193,6 +3220,8 @@ private static final long serialVersionUID = 0L;
         approvalFlow = null;
         approvalFlowBuilder = null;
       }
+      currentLevelOrder = 0;
+
       return this;
     }
 
@@ -3289,6 +3318,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.approvalFlow = approvalFlowBuilder .build();
       }
+      result.currentLevelOrder = currentLevelOrder ;
       onBuilt();
       return result;
     }
@@ -3550,6 +3580,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasApprovalFlow()) {
         mergeApprovalFlow(other.getApprovalFlow());
+      }
+      if (other.getCurrentLevelOrder() != 0) {
+        setCurrentLevelOrder(other.getCurrentLevelOrder());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7992,6 +8025,37 @@ private static final long serialVersionUID = 0L;
         approvalFlow = null;
       }
       return approvalFlowBuilder ;
+    }
+
+    private int currentLevelOrder ;
+    /**
+     * <code>int32 current_level_order = 51;</code>
+     * @return The currentLevelOrder.
+     */
+    @java.lang.Override
+    public int getCurrentLevelOrder() {
+      return currentLevelOrder ;
+    }
+    /**
+     * <code>int32 current_level_order = 51;</code>
+     * @param value The currentLevelOrder to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentLevelOrder(int value) {
+      
+      currentLevelOrder = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 current_level_order = 51;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentLevelOrder() {
+      
+      currentLevelOrder = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

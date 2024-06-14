@@ -66,6 +66,7 @@ const Shop$json = {
     {'1': 'teacher_name', '3': 46, '4': 1, '5': 9, '10': 'teacherName'},
     {'1': 'teacher_phone', '3': 47, '4': 1, '5': 9, '10': 'teacherPhone'},
     {'1': 'approval_flow', '3': 50, '4': 1, '5': 11, '6': '.glory_api.ApprovalFlowDetail', '10': 'approvalFlow'},
+    {'1': 'current_level_order', '3': 51, '4': 1, '5': 5, '10': 'currentLevelOrder'},
   ],
 };
 
@@ -108,7 +109,8 @@ final $typed_data.Uint8List shopDescriptor = $convert.base64Decode(
     'LgoTcGF5bWVudF9xcmNvZGVfcGF0aBgtIAEoCVIRcGF5bWVudFFyY29kZVBhdGgSIQoMdGVhY2'
     'hlcl9uYW1lGC4gASgJUgt0ZWFjaGVyTmFtZRIjCg10ZWFjaGVyX3Bob25lGC8gASgJUgx0ZWFj'
     'aGVyUGhvbmUSQgoNYXBwcm92YWxfZmxvdxgyIAEoCzIdLmdsb3J5X2FwaS5BcHByb3ZhbEZsb3'
-    'dEZXRhaWxSDGFwcHJvdmFsRmxvdw==');
+    'dEZXRhaWxSDGFwcHJvdmFsRmxvdxIuChNjdXJyZW50X2xldmVsX29yZGVyGDMgASgFUhFjdXJy'
+    'ZW50TGV2ZWxPcmRlcg==');
 
 @$core.Deprecated('Use shopQualificationDescriptor instead')
 const ShopQualification$json = {

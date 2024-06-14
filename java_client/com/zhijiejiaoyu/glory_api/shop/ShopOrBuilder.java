@@ -873,4 +873,10 @@ public interface ShopOrBuilder extends
    * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
    */
   com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder getApprovalFlowOrBuilder();
+
+  /**
+   * <code>int32 current_level_order = 51;</code>
+   * @return The currentLevelOrder.
+   */
+  int getCurrentLevelOrder();
 }
