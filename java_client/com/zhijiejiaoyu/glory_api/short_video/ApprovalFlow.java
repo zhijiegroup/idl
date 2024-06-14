@@ -74,55 +74,54 @@ public final class ApprovalFlow {
   static {
     java.lang.String[] descriptorData = {
       "\n!approval_flow/approval_flow.proto\022\tglo" +
-      "ry_api\032\nbase.proto\032\017user/user.proto\"\216\001\n\031" +
-      "SubmitApprovalFlowRequest\022\'\n\014base_reques" +
-      "t\030\001 \001(\0132\021.base.BaseRequest\022\025\n\rapproval_t" +
-      "ype\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\022\n\nproduct_id" +
-      "\030\004 \001(\003\022\014\n\004note\030\005 \001(\t\"C\n\032SubmitApprovalFl" +
+      "ry_api\032\nbase.proto\"\216\001\n\031SubmitApprovalFlo" +
+      "wRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
+      "seRequest\022\025\n\rapproval_type\030\002 \001(\t\022\017\n\007shop" +
+      "_id\030\003 \001(\003\022\022\n\nproduct_id\030\004 \001(\003\022\014\n\004note\030\005 " +
+      "\001(\t\"C\n\032SubmitApprovalFlowResponse\022%\n\tbas" +
+      "e_resp\030\001 \001(\0132\022.base.BaseResponse\"\230\001\n\022App" +
+      "roveFlowRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
+      "base.BaseRequest\022\030\n\020approval_flow_id\030\002 \001" +
+      "(\003\022\036\n\026approval_flow_level_id\030\003 \001(\003\022\016\n\006re" +
+      "sult\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\"<\n\023ApproveFl" +
       "owResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Bas" +
-      "eResponse\"\230\001\n\022ApproveFlowRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020app" +
-      "roval_flow_id\030\002 \001(\003\022\036\n\026approval_flow_lev" +
-      "el_id\030\003 \001(\003\022\016\n\006result\030\004 \001(\t\022\017\n\007comment\030\005" +
-      " \001(\t\"<\n\023ApproveFlowResponse\022%\n\tbase_resp" +
-      "\030\001 \001(\0132\022.base.BaseResponse\"\322\001\n\027ListAppro" +
-      "valFlowRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\014\n\004type\030\002 \001(\t\022\025\n\rname_or" +
-      "_phone\030\003 \001(\t\022\025\n\rapproval_type\030\005 \001(\t\022\020\n\010c" +
-      "lass_id\030\006 \003(\003\022\023\n\013access_type\030\007 \001(\t\022+\n\npa" +
-      "gination\030d \001(\0132\027.base.PaginationRequest\"" +
-      "\234\001\n\030ListApprovalFlowResponse\022%\n\tbase_res" +
-      "p\030\001 \001(\0132\022.base.BaseResponse\022+\n\004list\030\002 \003(" +
-      "\0132\035.glory_api.ApprovalFlowDetail\022,\n\npagi" +
-      "nation\030d \001(\0132\030.base.PaginationResponse\"\250" +
-      "\001\n\021ApprovalFlowLevel\022\036\n\026approval_flow_le" +
-      "vel_id\030\001 \001(\003\022\023\n\013level_order\030\002 \001(\003\022\016\n\006sta" +
-      "tus\030\003 \001(\t\022\026\n\016process_status\030\004 \001(\t\022\017\n\007com" +
-      "ment\030\005 \001(\t\022\020\n\010approver\030\006 \001(\t\022\023\n\013approved" +
-      "_at\030\007 \001(\t\"\373\002\n\022ApprovalFlowDetail\022\030\n\020appr" +
-      "oval_flow_id\030\001 \001(\003\022\023\n\013tenant_name\030\002 \001(\t\022" +
-      "\014\n\004name\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\022\n\nclass_na" +
-      "me\030\005 \001(\t\022\025\n\rapproval_type\030\006 \001(\t\022\021\n\tshop_" +
-      "name\030\007 \001(\t\022\024\n\014product_name\030\010 \001(\t\022\022\n\ncrea" +
-      "ted_at\030\t \001(\t\022\026\n\016approve_result\030\n \001(\t\022\020\n\010" +
-      "approver\030\013 \001(\t\022\023\n\013approved_at\030\014 \001(\t\022:\n\024a" +
-      "pproval_flow_levels\030\r \003(\0132\034.glory_api.Ap" +
-      "provalFlowLevel\022\017\n\007shop_id\030\016 \001(\003\022\022\n\nprod" +
-      "uct_id\030\017 \001(\003\022\021\n\tflow_note\030\020 \001(\t\"a\n\034GetAp" +
-      "provalFlowDetailRequest\022\'\n\014base_request\030" +
-      "\001 \001(\0132\021.base.BaseRequest\022\030\n\020approval_flo" +
-      "w_id\030\002 \001(\003\"\231\001\n\035GetApprovalFlowDetailResp" +
-      "onse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespo" +
-      "nse\0224\n\rapproval_flow\030\002 \001(\0132\035.glory_api.A" +
-      "pprovalFlowDetail\022\033\n\023current_level_order" +
-      "\030\003 \001(\005B*\n&com.zhijiejiaoyu.glory_api.sho" +
-      "rt_videoP\001b\006proto3"
+      "eResponse\"\322\001\n\027ListApprovalFlowRequest\022\'\n" +
+      "\014base_request\030\001 \001(\0132\021.base.BaseRequest\022\014" +
+      "\n\004type\030\002 \001(\t\022\025\n\rname_or_phone\030\003 \001(\t\022\025\n\ra" +
+      "pproval_type\030\005 \001(\t\022\020\n\010class_id\030\006 \003(\003\022\023\n\013" +
+      "access_type\030\007 \001(\t\022+\n\npagination\030d \001(\0132\027." +
+      "base.PaginationRequest\"\234\001\n\030ListApprovalF" +
+      "lowResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
+      "seResponse\022+\n\004list\030\002 \003(\0132\035.glory_api.App" +
+      "rovalFlowDetail\022,\n\npagination\030d \001(\0132\030.ba" +
+      "se.PaginationResponse\"\250\001\n\021ApprovalFlowLe" +
+      "vel\022\036\n\026approval_flow_level_id\030\001 \001(\003\022\023\n\013l" +
+      "evel_order\030\002 \001(\003\022\016\n\006status\030\003 \001(\t\022\026\n\016proc" +
+      "ess_status\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\020\n\010app" +
+      "rover\030\006 \001(\t\022\023\n\013approved_at\030\007 \001(\t\"\373\002\n\022App" +
+      "rovalFlowDetail\022\030\n\020approval_flow_id\030\001 \001(" +
+      "\003\022\023\n\013tenant_name\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005" +
+      "phone\030\004 \001(\t\022\022\n\nclass_name\030\005 \001(\t\022\025\n\rappro" +
+      "val_type\030\006 \001(\t\022\021\n\tshop_name\030\007 \001(\t\022\024\n\014pro" +
+      "duct_name\030\010 \001(\t\022\022\n\ncreated_at\030\t \001(\t\022\026\n\016a" +
+      "pprove_result\030\n \001(\t\022\020\n\010approver\030\013 \001(\t\022\023\n" +
+      "\013approved_at\030\014 \001(\t\022:\n\024approval_flow_leve" +
+      "ls\030\r \003(\0132\034.glory_api.ApprovalFlowLevel\022\017" +
+      "\n\007shop_id\030\016 \001(\003\022\022\n\nproduct_id\030\017 \001(\003\022\021\n\tf" +
+      "low_note\030\020 \001(\t\"a\n\034GetApprovalFlowDetailR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\030\n\020approval_flow_id\030\002 \001(\003\"\231\001\n\035Ge" +
+      "tApprovalFlowDetailResponse\022%\n\tbase_resp" +
+      "\030\001 \001(\0132\022.base.BaseResponse\0224\n\rapproval_f" +
+      "low\030\002 \001(\0132\035.glory_api.ApprovalFlowDetail" +
+      "\022\033\n\023current_level_order\030\003 \001(\005B*\n&com.zhi" +
+      "jiejiaoyu.glory_api.short_videoP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.zhijiejiaoyu.base.Base.getDescriptor(),
-          com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor(),
         });
     internal_static_glory_api_SubmitApprovalFlowRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -185,7 +184,6 @@ public final class ApprovalFlow {
         internal_static_glory_api_GetApprovalFlowDetailResponse_descriptor,
         new java.lang.String[] { "BaseResp", "ApprovalFlow", "CurrentLevelOrder", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
-    com.zhijiejiaoyu.glory_api.user.UserOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

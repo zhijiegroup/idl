@@ -384,6 +384,19 @@ private static final long serialVersionUID = 0L;
             studentNum = s;
             break;
           }
+          case 402: {
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder subBuilder = null;
+            if (approvalFlow != null) {
+              subBuilder = approvalFlow .toBuilder();
+            }
+            approvalFlow = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(approvalFlow );
+              approvalFlow = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 2666: {
             if (!((mutable_bitField0 & 0x00000002) != 0)) {
               shopQualification = new java.util.ArrayList<com.zhijiejiaoyu.glory_api.shop.ShopQualification>();
@@ -2323,6 +2336,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPROVAL_FLOW_FIELD_NUMBER = 50;
+  private com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail approvalFlow ;
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   * @return Whether the approvalFlow field is set.
+   */
+  @java.lang.Override
+  public boolean hasApprovalFlow() {
+    return approvalFlow != null;
+  }
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   * @return The approvalFlow.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail getApprovalFlow() {
+    return approvalFlow == null ? com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.getDefaultInstance() : approvalFlow ;
+  }
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder getApprovalFlowOrBuilder() {
+    return getApprovalFlow();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2482,6 +2521,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getStudentNumBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 49, studentNum );
+    }
+    if (approvalFlow != null) {
+      output.writeMessage(50, getApprovalFlow());
     }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
@@ -2656,6 +2698,10 @@ private static final long serialVersionUID = 0L;
     if (!getStudentNumBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(49, studentNum );
     }
+    if (approvalFlow != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(50, getApprovalFlow());
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2774,6 +2820,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTeacherName())) return false;
     if (!getTeacherPhone()
         .equals(other.getTeacherPhone())) return false;
+    if (hasApprovalFlow() != other.hasApprovalFlow()) return false;
+    if (hasApprovalFlow()) {
+      if (!getApprovalFlow()
+          .equals(other.getApprovalFlow())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2894,6 +2945,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTeacherName().hashCode();
     hash = (37 * hash) + TEACHER_PHONE_FIELD_NUMBER;
     hash = (53 * hash) + getTeacherPhone().hashCode();
+    if (hasApprovalFlow()) {
+      hash = (37 * hash) + APPROVAL_FLOW_FIELD_NUMBER;
+      hash = (53 * hash) + getApprovalFlow().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3132,6 +3187,12 @@ private static final long serialVersionUID = 0L;
 
       teacherPhone = "";
 
+      if (approvalFlowBuilder == null) {
+        approvalFlow = null;
+      } else {
+        approvalFlow = null;
+        approvalFlowBuilder = null;
+      }
       return this;
     }
 
@@ -3223,6 +3284,11 @@ private static final long serialVersionUID = 0L;
       result.paymentQrcodePath = paymentQrcodePath ;
       result.teacherName = teacherName ;
       result.teacherPhone = teacherPhone ;
+      if (approvalFlowBuilder == null) {
+        result.approvalFlow = approvalFlow ;
+      } else {
+        result.approvalFlow = approvalFlowBuilder .build();
+      }
       onBuilt();
       return result;
     }
@@ -3481,6 +3547,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getTeacherPhone().isEmpty()) {
         teacherPhone = other.teacherPhone ;
         onChanged();
+      }
+      if (other.hasApprovalFlow()) {
+        mergeApprovalFlow(other.getApprovalFlow());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7804,6 +7873,125 @@ private static final long serialVersionUID = 0L;
       teacherPhone = value;
       onChanged();
       return this;
+    }
+
+    private com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail approvalFlow ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder> approvalFlowBuilder ;
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     * @return Whether the approvalFlow field is set.
+     */
+    public boolean hasApprovalFlow() {
+      return approvalFlowBuilder != null || approvalFlow != null;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     * @return The approvalFlow.
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail getApprovalFlow() {
+      if (approvalFlowBuilder == null) {
+        return approvalFlow == null ? com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.getDefaultInstance() : approvalFlow ;
+      } else {
+        return approvalFlowBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public Builder setApprovalFlow(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail value) {
+      if (approvalFlowBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        approvalFlow = value;
+        onChanged();
+      } else {
+        approvalFlowBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public Builder setApprovalFlow(
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder builderForValue) {
+      if (approvalFlowBuilder == null) {
+        approvalFlow = builderForValue.build();
+        onChanged();
+      } else {
+        approvalFlowBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public Builder mergeApprovalFlow(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail value) {
+      if (approvalFlowBuilder == null) {
+        if (approvalFlow != null) {
+          approvalFlow =
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.newBuilder(approvalFlow ).mergeFrom(value).buildPartial();
+        } else {
+          approvalFlow = value;
+        }
+        onChanged();
+      } else {
+        approvalFlowBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public Builder clearApprovalFlow() {
+      if (approvalFlowBuilder == null) {
+        approvalFlow = null;
+        onChanged();
+      } else {
+        approvalFlow = null;
+        approvalFlowBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder getApprovalFlowBuilder() {
+      
+      onChanged();
+      return getApprovalFlowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder getApprovalFlowOrBuilder() {
+      if (approvalFlowBuilder != null) {
+        return approvalFlowBuilder .getMessageOrBuilder();
+      } else {
+        return approvalFlow == null ?
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.getDefaultInstance() : approvalFlow ;
+      }
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder> 
+        getApprovalFlowFieldBuilder() {
+      if (approvalFlowBuilder == null) {
+        approvalFlowBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder>(
+                getApprovalFlow(),
+                getParentForChildren(),
+                isClean());
+        approvalFlow = null;
+      }
+      return approvalFlowBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

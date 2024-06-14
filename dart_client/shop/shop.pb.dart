@@ -14,8 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../base.pb.dart' as $0;
-import 'category.pb.dart' as $1;
+import '../approval_flow/approval_flow.pb.dart' as $0;
+import '../base.pb.dart' as $1;
+import 'category.pb.dart' as $2;
 
 class Shop extends $pb.GeneratedMessage {
   factory Shop({
@@ -66,6 +67,7 @@ class Shop extends $pb.GeneratedMessage {
     $core.String? teacherPhone,
     $core.String? className,
     $core.String? studentNum,
+    $0.ApprovalFlowDetail? approvalFlow,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -210,6 +212,9 @@ class Shop extends $pb.GeneratedMessage {
     if (studentNum != null) {
       $result.studentNum = studentNum;
     }
+    if (approvalFlow != null) {
+      $result.approvalFlow = approvalFlow;
+    }
     if (shopQualification != null) {
       $result.shopQualification.addAll(shopQualification);
     }
@@ -267,6 +272,7 @@ class Shop extends $pb.GeneratedMessage {
     ..aOS(47, _omitFieldNames ? '' : 'teacherPhone')
     ..aOS(48, _omitFieldNames ? '' : 'className')
     ..aOS(49, _omitFieldNames ? '' : 'studentNum')
+    ..aOM<$0.ApprovalFlowDetail>(50, _omitFieldNames ? '' : 'approvalFlow', subBuilder: $0.ApprovalFlowDetail.create)
     ..pc<ShopQualification>(333, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -711,8 +717,19 @@ class Shop extends $pb.GeneratedMessage {
   @$pb.TagNumber(49)
   void clearStudentNum() => clearField(49);
 
+  @$pb.TagNumber(50)
+  $0.ApprovalFlowDetail get approvalFlow => $_getN(47);
+  @$pb.TagNumber(50)
+  set approvalFlow($0.ApprovalFlowDetail v) { setField(50, v); }
+  @$pb.TagNumber(50)
+  $core.bool hasApprovalFlow() => $_has(47);
+  @$pb.TagNumber(50)
+  void clearApprovalFlow() => clearField(50);
+  @$pb.TagNumber(50)
+  $0.ApprovalFlowDetail ensureApprovalFlow() => $_ensure(47);
+
   @$pb.TagNumber(333)
-  $core.List<ShopQualification> get shopQualification => $_getList(47);
+  $core.List<ShopQualification> get shopQualification => $_getList(48);
 }
 
 class ShopQualification extends $pb.GeneratedMessage {
@@ -994,7 +1011,7 @@ class ShopKeeper extends $pb.GeneratedMessage {
 class ShopWithAuthor extends $pb.GeneratedMessage {
   factory ShopWithAuthor({
     Shop? shop,
-    $0.AuthorInfo? authorInfo,
+    $1.AuthorInfo? authorInfo,
     ShopBusiness? shopBusiness,
   }) {
     final $result = create();
@@ -1015,7 +1032,7 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShopWithAuthor', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<Shop>(1, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
-    ..aOM<$0.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $0.AuthorInfo.create)
+    ..aOM<$1.AuthorInfo>(2, _omitFieldNames ? '' : 'authorInfo', subBuilder: $1.AuthorInfo.create)
     ..aOM<ShopBusiness>(3, _omitFieldNames ? '' : 'shopBusiness', subBuilder: ShopBusiness.create)
     ..hasRequiredFields = false
   ;
@@ -1053,15 +1070,15 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
   Shop ensureShop() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $0.AuthorInfo get authorInfo => $_getN(1);
+  $1.AuthorInfo get authorInfo => $_getN(1);
   @$pb.TagNumber(2)
-  set authorInfo($0.AuthorInfo v) { setField(2, v); }
+  set authorInfo($1.AuthorInfo v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAuthorInfo() => $_has(1);
   @$pb.TagNumber(2)
   void clearAuthorInfo() => clearField(2);
   @$pb.TagNumber(2)
-  $0.AuthorInfo ensureAuthorInfo() => $_ensure(1);
+  $1.AuthorInfo ensureAuthorInfo() => $_ensure(1);
 
   @$pb.TagNumber(3)
   ShopBusiness get shopBusiness => $_getN(2);
@@ -1077,7 +1094,7 @@ class ShopWithAuthor extends $pb.GeneratedMessage {
 
 class CreateShopRequest extends $pb.GeneratedMessage {
   factory CreateShopRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     Shop? shop,
     $core.String? createdBy,
   }) {
@@ -1098,7 +1115,7 @@ class CreateShopRequest extends $pb.GeneratedMessage {
   factory CreateShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<Shop>(2, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
     ..aOS(3, _omitFieldNames ? '' : 'createdBy')
     ..hasRequiredFields = false
@@ -1126,15 +1143,15 @@ class CreateShopRequest extends $pb.GeneratedMessage {
   static CreateShopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Shop get shop => $_getN(1);
@@ -1159,7 +1176,7 @@ class CreateShopRequest extends $pb.GeneratedMessage {
 
 class CreateShopResponse extends $pb.GeneratedMessage {
   factory CreateShopResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -1176,7 +1193,7 @@ class CreateShopResponse extends $pb.GeneratedMessage {
   factory CreateShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -1203,15 +1220,15 @@ class CreateShopResponse extends $pb.GeneratedMessage {
   static CreateShopResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -1225,7 +1242,7 @@ class CreateShopResponse extends $pb.GeneratedMessage {
 
 class GetShopRequest extends $pb.GeneratedMessage {
   factory GetShopRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -1242,7 +1259,7 @@ class GetShopRequest extends $pb.GeneratedMessage {
   factory GetShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -1269,15 +1286,15 @@ class GetShopRequest extends $pb.GeneratedMessage {
   static GetShopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -1291,7 +1308,7 @@ class GetShopRequest extends $pb.GeneratedMessage {
 
 class GetShopResponse extends $pb.GeneratedMessage {
   factory GetShopResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     ShopWithAuthor? shopDetail,
   }) {
     final $result = create();
@@ -1308,7 +1325,7 @@ class GetShopResponse extends $pb.GeneratedMessage {
   factory GetShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<ShopWithAuthor>(2, _omitFieldNames ? '' : 'shopDetail', subBuilder: ShopWithAuthor.create)
     ..hasRequiredFields = false
   ;
@@ -1335,15 +1352,15 @@ class GetShopResponse extends $pb.GeneratedMessage {
   static GetShopResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ShopWithAuthor get shopDetail => $_getN(1);
@@ -1359,7 +1376,7 @@ class GetShopResponse extends $pb.GeneratedMessage {
 
 class UpdateShopRequest extends $pb.GeneratedMessage {
   factory UpdateShopRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     Shop? shop,
   }) {
     final $result = create();
@@ -1376,7 +1393,7 @@ class UpdateShopRequest extends $pb.GeneratedMessage {
   factory UpdateShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOM<Shop>(2, _omitFieldNames ? '' : 'shop', subBuilder: Shop.create)
     ..hasRequiredFields = false
   ;
@@ -1403,15 +1420,15 @@ class UpdateShopRequest extends $pb.GeneratedMessage {
   static UpdateShopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Shop get shop => $_getN(1);
@@ -1427,7 +1444,7 @@ class UpdateShopRequest extends $pb.GeneratedMessage {
 
 class UpdateShopResponse extends $pb.GeneratedMessage {
   factory UpdateShopResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -1444,7 +1461,7 @@ class UpdateShopResponse extends $pb.GeneratedMessage {
   factory UpdateShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -1471,15 +1488,15 @@ class UpdateShopResponse extends $pb.GeneratedMessage {
   static UpdateShopResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -1493,7 +1510,7 @@ class UpdateShopResponse extends $pb.GeneratedMessage {
 
 class ListShopRequest extends $pb.GeneratedMessage {
   factory ListShopRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $fixnum.Int64? sellerId,
     $core.String? shopName,
@@ -1505,7 +1522,7 @@ class ListShopRequest extends $pb.GeneratedMessage {
     $core.String? post,
     $core.String? companyName,
     $core.String? ownerName,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -1554,7 +1571,7 @@ class ListShopRequest extends $pb.GeneratedMessage {
   factory ListShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aInt64(4, _omitFieldNames ? '' : 'sellerId')
     ..aOS(5, _omitFieldNames ? '' : 'shopName')
@@ -1566,7 +1583,7 @@ class ListShopRequest extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'post')
     ..aOS(12, _omitFieldNames ? '' : 'companyName')
     ..aOS(13, _omitFieldNames ? '' : 'ownerName')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1592,15 +1609,15 @@ class ListShopRequest extends $pb.GeneratedMessage {
   static ListShopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -1702,22 +1719,22 @@ class ListShopRequest extends $pb.GeneratedMessage {
   void clearOwnerName() => clearField(13);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(12);
+  $1.PaginationRequest get pagination => $_getN(12);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(12);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(12);
+  $1.PaginationRequest ensurePagination() => $_ensure(12);
 }
 
 class ListShopResponse extends $pb.GeneratedMessage {
   factory ListShopResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShopWithAuthor>? shopDetail,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1736,9 +1753,9 @@ class ListShopResponse extends $pb.GeneratedMessage {
   factory ListShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShopWithAuthor>(2, _omitFieldNames ? '' : 'shopDetail', $pb.PbFieldType.PM, subBuilder: ShopWithAuthor.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1764,34 +1781,34 @@ class ListShopResponse extends $pb.GeneratedMessage {
   static ListShopResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShopWithAuthor> get shopDetail => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class DeleteShopRequest extends $pb.GeneratedMessage {
   factory DeleteShopRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -1808,7 +1825,7 @@ class DeleteShopRequest extends $pb.GeneratedMessage {
   factory DeleteShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -1835,15 +1852,15 @@ class DeleteShopRequest extends $pb.GeneratedMessage {
   static DeleteShopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -1857,7 +1874,7 @@ class DeleteShopRequest extends $pb.GeneratedMessage {
 
 class DeleteShopResponse extends $pb.GeneratedMessage {
   factory DeleteShopResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1870,7 +1887,7 @@ class DeleteShopResponse extends $pb.GeneratedMessage {
   factory DeleteShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -1896,20 +1913,20 @@ class DeleteShopResponse extends $pb.GeneratedMessage {
   static DeleteShopResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class AddShopAccessRequest extends $pb.GeneratedMessage {
   factory AddShopAccessRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.String? accessType,
     $core.String? phone,
@@ -1934,7 +1951,7 @@ class AddShopAccessRequest extends $pb.GeneratedMessage {
   factory AddShopAccessRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddShopAccessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aOS(3, _omitFieldNames ? '' : 'accessType')
     ..aOS(4, _omitFieldNames ? '' : 'phone')
@@ -1963,15 +1980,15 @@ class AddShopAccessRequest extends $pb.GeneratedMessage {
   static AddShopAccessRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -2003,7 +2020,7 @@ class AddShopAccessRequest extends $pb.GeneratedMessage {
 
 class AddShopAccessResponse extends $pb.GeneratedMessage {
   factory AddShopAccessResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2016,7 +2033,7 @@ class AddShopAccessResponse extends $pb.GeneratedMessage {
   factory AddShopAccessResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddShopAccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2042,20 +2059,20 @@ class AddShopAccessResponse extends $pb.GeneratedMessage {
   static AddShopAccessResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class RemoveShopAccessRequest extends $pb.GeneratedMessage {
   factory RemoveShopAccessRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopAccessId,
   }) {
     final $result = create();
@@ -2072,7 +2089,7 @@ class RemoveShopAccessRequest extends $pb.GeneratedMessage {
   factory RemoveShopAccessRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveShopAccessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopAccessId')
     ..hasRequiredFields = false
   ;
@@ -2099,15 +2116,15 @@ class RemoveShopAccessRequest extends $pb.GeneratedMessage {
   static RemoveShopAccessRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopAccessId => $_getI64(1);
@@ -2121,7 +2138,7 @@ class RemoveShopAccessRequest extends $pb.GeneratedMessage {
 
 class RemoveShopAccessResponse extends $pb.GeneratedMessage {
   factory RemoveShopAccessResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2134,7 +2151,7 @@ class RemoveShopAccessResponse extends $pb.GeneratedMessage {
   factory RemoveShopAccessResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveShopAccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2160,20 +2177,20 @@ class RemoveShopAccessResponse extends $pb.GeneratedMessage {
   static RemoveShopAccessResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class VerifyFieldRequest extends $pb.GeneratedMessage {
   factory VerifyFieldRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.String? shopName,
   }) {
     final $result = create();
@@ -2190,7 +2207,7 @@ class VerifyFieldRequest extends $pb.GeneratedMessage {
   factory VerifyFieldRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyFieldRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'shopName')
     ..hasRequiredFields = false
   ;
@@ -2217,15 +2234,15 @@ class VerifyFieldRequest extends $pb.GeneratedMessage {
   static VerifyFieldRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get shopName => $_getSZ(1);
@@ -2239,7 +2256,7 @@ class VerifyFieldRequest extends $pb.GeneratedMessage {
 
 class VerifyFieldResponse extends $pb.GeneratedMessage {
   factory VerifyFieldResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.bool? shopNameValid,
   }) {
     final $result = create();
@@ -2256,7 +2273,7 @@ class VerifyFieldResponse extends $pb.GeneratedMessage {
   factory VerifyFieldResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyFieldResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOB(2, _omitFieldNames ? '' : 'shopNameValid')
     ..hasRequiredFields = false
   ;
@@ -2283,15 +2300,15 @@ class VerifyFieldResponse extends $pb.GeneratedMessage {
   static VerifyFieldResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.bool get shopNameValid => $_getBF(1);
@@ -2453,7 +2470,7 @@ class ShopAccess extends $pb.GeneratedMessage {
 
 class ListShopAccessRequest extends $pb.GeneratedMessage {
   factory ListShopAccessRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.String? accessType,
   }) {
@@ -2474,7 +2491,7 @@ class ListShopAccessRequest extends $pb.GeneratedMessage {
   factory ListShopAccessRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopAccessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aOS(3, _omitFieldNames ? '' : 'accessType')
     ..hasRequiredFields = false
@@ -2502,15 +2519,15 @@ class ListShopAccessRequest extends $pb.GeneratedMessage {
   static ListShopAccessRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -2533,7 +2550,7 @@ class ListShopAccessRequest extends $pb.GeneratedMessage {
 
 class ListShopAccessResponse extends $pb.GeneratedMessage {
   factory ListShopAccessResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShopAccess>? shopAccess,
   }) {
     final $result = create();
@@ -2550,7 +2567,7 @@ class ListShopAccessResponse extends $pb.GeneratedMessage {
   factory ListShopAccessResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopAccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShopAccess>(2, _omitFieldNames ? '' : 'shopAccess', $pb.PbFieldType.PM, subBuilder: ShopAccess.create)
     ..hasRequiredFields = false
   ;
@@ -2577,15 +2594,15 @@ class ListShopAccessResponse extends $pb.GeneratedMessage {
   static ListShopAccessResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShopAccess> get shopAccess => $_getList(1);
@@ -2675,7 +2692,7 @@ class GetShopQrcodeResponse extends $pb.GeneratedMessage {
 
 class AddShopCategoryRequest extends $pb.GeneratedMessage {
   factory AddShopCategoryRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.Iterable<$fixnum.Int64>? categoryId,
   }) {
@@ -2696,7 +2713,7 @@ class AddShopCategoryRequest extends $pb.GeneratedMessage {
   factory AddShopCategoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddShopCategoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'categoryId', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -2724,15 +2741,15 @@ class AddShopCategoryRequest extends $pb.GeneratedMessage {
   static AddShopCategoryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -2749,7 +2766,7 @@ class AddShopCategoryRequest extends $pb.GeneratedMessage {
 
 class AddShopCategoryResponse extends $pb.GeneratedMessage {
   factory AddShopCategoryResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2762,7 +2779,7 @@ class AddShopCategoryResponse extends $pb.GeneratedMessage {
   factory AddShopCategoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddShopCategoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2788,20 +2805,20 @@ class AddShopCategoryResponse extends $pb.GeneratedMessage {
   static AddShopCategoryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class RemoveShopCategoryRequest extends $pb.GeneratedMessage {
   factory RemoveShopCategoryRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.Iterable<$fixnum.Int64>? shopCategoryId,
   }) {
@@ -2822,7 +2839,7 @@ class RemoveShopCategoryRequest extends $pb.GeneratedMessage {
   factory RemoveShopCategoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveShopCategoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'shopCategoryId', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -2850,15 +2867,15 @@ class RemoveShopCategoryRequest extends $pb.GeneratedMessage {
   static RemoveShopCategoryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -2875,7 +2892,7 @@ class RemoveShopCategoryRequest extends $pb.GeneratedMessage {
 
 class RemoveShopCategoryResponse extends $pb.GeneratedMessage {
   factory RemoveShopCategoryResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -2888,7 +2905,7 @@ class RemoveShopCategoryResponse extends $pb.GeneratedMessage {
   factory RemoveShopCategoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveShopCategoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -2914,20 +2931,20 @@ class RemoveShopCategoryResponse extends $pb.GeneratedMessage {
   static RemoveShopCategoryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class GetShopCategoryRequest extends $pb.GeneratedMessage {
   factory GetShopCategoryRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -2944,7 +2961,7 @@ class GetShopCategoryRequest extends $pb.GeneratedMessage {
   factory GetShopCategoryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopCategoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -2971,15 +2988,15 @@ class GetShopCategoryRequest extends $pb.GeneratedMessage {
   static GetShopCategoryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -2994,7 +3011,7 @@ class GetShopCategoryRequest extends $pb.GeneratedMessage {
 class ShopCategory extends $pb.GeneratedMessage {
   factory ShopCategory({
     $fixnum.Int64? shopCategoryId,
-    $1.Category? category,
+    $2.Category? category,
   }) {
     final $result = create();
     if (shopCategoryId != null) {
@@ -3011,7 +3028,7 @@ class ShopCategory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ShopCategory', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'shopCategoryId')
-    ..aOM<$1.Category>(3, _omitFieldNames ? '' : 'category', subBuilder: $1.Category.create)
+    ..aOM<$2.Category>(3, _omitFieldNames ? '' : 'category', subBuilder: $2.Category.create)
     ..hasRequiredFields = false
   ;
 
@@ -3046,20 +3063,20 @@ class ShopCategory extends $pb.GeneratedMessage {
   void clearShopCategoryId() => clearField(1);
 
   @$pb.TagNumber(3)
-  $1.Category get category => $_getN(1);
+  $2.Category get category => $_getN(1);
   @$pb.TagNumber(3)
-  set category($1.Category v) { setField(3, v); }
+  set category($2.Category v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCategory() => $_has(1);
   @$pb.TagNumber(3)
   void clearCategory() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Category ensureCategory() => $_ensure(1);
+  $2.Category ensureCategory() => $_ensure(1);
 }
 
 class GetShopCategoryResponse extends $pb.GeneratedMessage {
   factory GetShopCategoryResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $fixnum.Int64? shopId,
     $core.Iterable<ShopCategory>? categoryDetail,
   }) {
@@ -3080,7 +3097,7 @@ class GetShopCategoryResponse extends $pb.GeneratedMessage {
   factory GetShopCategoryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopCategoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..pc<ShopCategory>(3, _omitFieldNames ? '' : 'categoryDetail', $pb.PbFieldType.PM, subBuilder: ShopCategory.create)
     ..hasRequiredFields = false
@@ -3108,15 +3125,15 @@ class GetShopCategoryResponse extends $pb.GeneratedMessage {
   static GetShopCategoryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -3133,7 +3150,7 @@ class GetShopCategoryResponse extends $pb.GeneratedMessage {
 
 class ListShopQualificationRequest extends $pb.GeneratedMessage {
   factory ListShopQualificationRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
   }) {
     final $result = create();
@@ -3150,7 +3167,7 @@ class ListShopQualificationRequest extends $pb.GeneratedMessage {
   factory ListShopQualificationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopQualificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..hasRequiredFields = false
   ;
@@ -3177,15 +3194,15 @@ class ListShopQualificationRequest extends $pb.GeneratedMessage {
   static ListShopQualificationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -3199,7 +3216,7 @@ class ListShopQualificationRequest extends $pb.GeneratedMessage {
 
 class ListShopQualificationResponse extends $pb.GeneratedMessage {
   factory ListShopQualificationResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShopQualification>? shopQualification,
   }) {
     final $result = create();
@@ -3216,7 +3233,7 @@ class ListShopQualificationResponse extends $pb.GeneratedMessage {
   factory ListShopQualificationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopQualificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShopQualification>(2, _omitFieldNames ? '' : 'shopQualification', $pb.PbFieldType.PM, subBuilder: ShopQualification.create)
     ..hasRequiredFields = false
   ;
@@ -3243,15 +3260,15 @@ class ListShopQualificationResponse extends $pb.GeneratedMessage {
   static ListShopQualificationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShopQualification> get shopQualification => $_getList(1);
@@ -3259,7 +3276,7 @@ class ListShopQualificationResponse extends $pb.GeneratedMessage {
 
 class UpdateShopManagerRequest extends $pb.GeneratedMessage {
   factory UpdateShopManagerRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.String? manager,
     $core.String? managerPhone,
@@ -3284,7 +3301,7 @@ class UpdateShopManagerRequest extends $pb.GeneratedMessage {
   factory UpdateShopManagerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopManagerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aOS(3, _omitFieldNames ? '' : 'manager')
     ..aOS(4, _omitFieldNames ? '' : 'managerPhone')
@@ -3313,15 +3330,15 @@ class UpdateShopManagerRequest extends $pb.GeneratedMessage {
   static UpdateShopManagerRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -3353,7 +3370,7 @@ class UpdateShopManagerRequest extends $pb.GeneratedMessage {
 
 class UpdateShopManagerResponse extends $pb.GeneratedMessage {
   factory UpdateShopManagerResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3366,7 +3383,7 @@ class UpdateShopManagerResponse extends $pb.GeneratedMessage {
   factory UpdateShopManagerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopManagerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3392,20 +3409,20 @@ class UpdateShopManagerResponse extends $pb.GeneratedMessage {
   static UpdateShopManagerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class UpdateShopStatusRequest extends $pb.GeneratedMessage {
   factory UpdateShopStatusRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $core.String? status,
   }) {
@@ -3426,7 +3443,7 @@ class UpdateShopStatusRequest extends $pb.GeneratedMessage {
   factory UpdateShopStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aOS(3, _omitFieldNames ? '' : 'status')
     ..hasRequiredFields = false
@@ -3454,15 +3471,15 @@ class UpdateShopStatusRequest extends $pb.GeneratedMessage {
   static UpdateShopStatusRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -3485,7 +3502,7 @@ class UpdateShopStatusRequest extends $pb.GeneratedMessage {
 
 class UpdateShopStatusResponse extends $pb.GeneratedMessage {
   factory UpdateShopStatusResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -3498,7 +3515,7 @@ class UpdateShopStatusResponse extends $pb.GeneratedMessage {
   factory UpdateShopStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateShopStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -3524,20 +3541,20 @@ class UpdateShopStatusResponse extends $pb.GeneratedMessage {
   static UpdateShopStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 class GetShopBusinessDataRequest extends $pb.GeneratedMessage {
   factory GetShopBusinessDataRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? shopId,
     $fixnum.Int64? period,
   }) {
@@ -3558,7 +3575,7 @@ class GetShopBusinessDataRequest extends $pb.GeneratedMessage {
   factory GetShopBusinessDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopBusinessDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'shopId')
     ..aInt64(3, _omitFieldNames ? '' : 'period')
     ..hasRequiredFields = false
@@ -3586,15 +3603,15 @@ class GetShopBusinessDataRequest extends $pb.GeneratedMessage {
   static GetShopBusinessDataRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get shopId => $_getI64(1);
@@ -3823,7 +3840,7 @@ class ShopBusinessData extends $pb.GeneratedMessage {
 
 class GetShopBusinessDataResponse extends $pb.GeneratedMessage {
   factory GetShopBusinessDataResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     ShopBusinessData? shopBusinessData,
   }) {
     final $result = create();
@@ -3840,7 +3857,7 @@ class GetShopBusinessDataResponse extends $pb.GeneratedMessage {
   factory GetShopBusinessDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetShopBusinessDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..aOM<ShopBusinessData>(2, _omitFieldNames ? '' : 'shopBusinessData', subBuilder: ShopBusinessData.create)
     ..hasRequiredFields = false
   ;
@@ -3867,15 +3884,15 @@ class GetShopBusinessDataResponse extends $pb.GeneratedMessage {
   static GetShopBusinessDataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ShopBusinessData get shopBusinessData => $_getN(1);
@@ -4053,12 +4070,12 @@ class ShopSummary extends $pb.GeneratedMessage {
 
 class ListShopSummaryRequest extends $pb.GeneratedMessage {
   factory ListShopSummaryRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $core.String? shopNameOrUsername,
     $core.String? shopType,
     $fixnum.Int64? majorId,
     $fixnum.Int64? clasId,
-    $0.PaginationRequest? pagination,
+    $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -4086,12 +4103,12 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
   factory ListShopSummaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopSummaryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'shopNameOrUsername')
     ..aOS(3, _omitFieldNames ? '' : 'shopType')
     ..aInt64(4, _omitFieldNames ? '' : 'majorId')
     ..aInt64(5, _omitFieldNames ? '' : 'clasId')
-    ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
+    ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -4117,15 +4134,15 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
   static ListShopSummaryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get shopNameOrUsername => $_getSZ(1);
@@ -4164,22 +4181,22 @@ class ListShopSummaryRequest extends $pb.GeneratedMessage {
   void clearClasId() => clearField(5);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(5);
+  $1.PaginationRequest get pagination => $_getN(5);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationRequest v) { setField(100, v); }
+  set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(5);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(5);
+  $1.PaginationRequest ensurePagination() => $_ensure(5);
 }
 
 class ListShopSummaryResponse extends $pb.GeneratedMessage {
   factory ListShopSummaryResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<ShopSummary>? shopList,
-    $0.PaginationResponse? pagination,
+    $1.PaginationResponse? pagination,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -4198,9 +4215,9 @@ class ListShopSummaryResponse extends $pb.GeneratedMessage {
   factory ListShopSummaryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopSummaryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<ShopSummary>(2, _omitFieldNames ? '' : 'shopList', $pb.PbFieldType.PM, subBuilder: ShopSummary.create)
-    ..aOM<$0.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationResponse.create)
+    ..aOM<$1.PaginationResponse>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -4226,34 +4243,34 @@ class ListShopSummaryResponse extends $pb.GeneratedMessage {
   static ListShopSummaryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ShopSummary> get shopList => $_getList(1);
 
   @$pb.TagNumber(100)
-  $0.PaginationResponse get pagination => $_getN(2);
+  $1.PaginationResponse get pagination => $_getN(2);
   @$pb.TagNumber(100)
-  set pagination($0.PaginationResponse v) { setField(100, v); }
+  set pagination($1.PaginationResponse v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationResponse ensurePagination() => $_ensure(2);
+  $1.PaginationResponse ensurePagination() => $_ensure(2);
 }
 
 class ListShopBySellerIDRequest extends $pb.GeneratedMessage {
   factory ListShopBySellerIDRequest({
-    $0.BaseRequest? baseRequest,
+    $1.BaseRequest? baseRequest,
     $fixnum.Int64? sellerId,
   }) {
     final $result = create();
@@ -4270,7 +4287,7 @@ class ListShopBySellerIDRequest extends $pb.GeneratedMessage {
   factory ListShopBySellerIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopBySellerIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
     ..aInt64(2, _omitFieldNames ? '' : 'sellerId')
     ..hasRequiredFields = false
   ;
@@ -4297,15 +4314,15 @@ class ListShopBySellerIDRequest extends $pb.GeneratedMessage {
   static ListShopBySellerIDRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseRequest get baseRequest => $_getN(0);
+  $1.BaseRequest get baseRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get sellerId => $_getI64(1);
@@ -4319,7 +4336,7 @@ class ListShopBySellerIDRequest extends $pb.GeneratedMessage {
 
 class ListShopBySellerIDResponse extends $pb.GeneratedMessage {
   factory ListShopBySellerIDResponse({
-    $0.BaseResponse? baseResp,
+    $1.BaseResponse? baseResp,
     $core.Iterable<Shop>? shopList,
   }) {
     final $result = create();
@@ -4336,7 +4353,7 @@ class ListShopBySellerIDResponse extends $pb.GeneratedMessage {
   factory ListShopBySellerIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShopBySellerIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
-    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
     ..pc<Shop>(2, _omitFieldNames ? '' : 'shopList', $pb.PbFieldType.PM, subBuilder: Shop.create)
     ..hasRequiredFields = false
   ;
@@ -4363,15 +4380,15 @@ class ListShopBySellerIDResponse extends $pb.GeneratedMessage {
   static ListShopBySellerIDResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.BaseResponse get baseResp => $_getN(0);
+  $1.BaseResponse get baseResp => $_getN(0);
   @$pb.TagNumber(1)
-  set baseResp($0.BaseResponse v) { setField(1, v); }
+  set baseResp($1.BaseResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseResp() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseResp() => clearField(1);
   @$pb.TagNumber(1)
-  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<Shop> get shopList => $_getList(1);

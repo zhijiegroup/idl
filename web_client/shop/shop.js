@@ -3,4 +3,5 @@
 
 import * as base from "../base";
 import * as category from "./category";
-export { base, category };
+import * as approval_flow from "../approval_flow/approval_flow";
+export { base, category, approval_flow };

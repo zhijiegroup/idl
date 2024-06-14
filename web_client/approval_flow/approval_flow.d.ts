@@ -3,8 +3,7 @@
 // @ts-nocheck
 
 import * as base from "../base";
-import * as user from "../user/user";
-export { base, user };
+export { base };
 
 export interface SubmitApprovalFlowRequest {
   base_request?: base.BaseRequest;
