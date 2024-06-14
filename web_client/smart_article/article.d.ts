@@ -292,6 +292,7 @@ export interface ArticleCreationInfo {
   ai_result?: string;
   ai_reason?: string;
   ai_evaluation?: string;
+  product_name?: string;
 }
 
 export interface ArticleContentModeration {
