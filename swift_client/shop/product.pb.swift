@@ -542,12 +542,22 @@ struct GloryApi_GetProductResponse {
   /// Clears the value of `productDetail`. Subsequent reads from it will return its default value.
   mutating func clearProductDetail() {self._productDetail = nil}
 
+  var latestApprovalLevel: GloryApi_ApprovalFlowLevel {
+    get {return _latestApprovalLevel ?? GloryApi_ApprovalFlowLevel()}
+    set {_latestApprovalLevel = newValue}
+  }
+  /// Returns true if `latestApprovalLevel` has been explicitly set.
+  var hasLatestApprovalLevel: Bool {return self._latestApprovalLevel != nil}
+  /// Clears the value of `latestApprovalLevel`. Subsequent reads from it will return its default value.
+  mutating func clearLatestApprovalLevel() {self._latestApprovalLevel = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _baseResp: Base_BaseResponse? = nil
   fileprivate var _productDetail: GloryApi_ProductWithValueAuthor? = nil
+  fileprivate var _latestApprovalLevel: GloryApi_ApprovalFlowLevel? = nil
 }
 
 struct GloryApi_UpdateProductRequest {
@@ -2103,6 +2113,7 @@ extension GloryApi_GetProductResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "product_detail"),
+    3: .standard(proto: "latest_approval_level"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2113,6 +2124,7 @@ extension GloryApi_GetProductResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
       case 2: try { try decoder.decodeSingularMessageField(value: &self._productDetail) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._latestApprovalLevel) }()
       default: break
       }
     }
@@ -2129,12 +2141,16 @@ extension GloryApi_GetProductResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try { if let v = self._productDetail {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     } }()
+    try { if let v = self._latestApprovalLevel {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_GetProductResponse, rhs: GloryApi_GetProductResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs._productDetail != rhs._productDetail {return false}
+    if lhs._latestApprovalLevel != rhs._latestApprovalLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

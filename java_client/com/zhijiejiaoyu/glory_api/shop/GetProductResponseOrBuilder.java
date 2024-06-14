@@ -36,4 +36,19 @@ public interface GetProductResponseOrBuilder extends
    * <code>.glory_api.ProductWithValueAuthor product_detail = 2;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.ProductWithValueAuthorOrBuilder getProductDetailOrBuilder();
+
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   * @return Whether the latestApprovalLevel field is set.
+   */
+  boolean hasLatestApprovalLevel();
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   * @return The latestApprovalLevel.
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getLatestApprovalLevel();
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getLatestApprovalLevelOrBuilder();
 }

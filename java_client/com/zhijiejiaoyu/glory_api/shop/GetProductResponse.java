@@ -74,6 +74,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder subBuilder = null;
+            if (latestApprovalLevel != null) {
+              subBuilder = latestApprovalLevel .toBuilder();
+            }
+            latestApprovalLevel = input.readMessage(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(latestApprovalLevel );
+              latestApprovalLevel = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +171,32 @@ private static final long serialVersionUID = 0L;
     return getProductDetail();
   }
 
+  public static final int LATEST_APPROVAL_LEVEL_FIELD_NUMBER = 3;
+  private com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel latestApprovalLevel ;
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   * @return Whether the latestApprovalLevel field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatestApprovalLevel() {
+    return latestApprovalLevel != null;
+  }
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   * @return The latestApprovalLevel.
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getLatestApprovalLevel() {
+    return latestApprovalLevel == null ? com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.getDefaultInstance() : latestApprovalLevel ;
+  }
+  /**
+   * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+   */
+  @java.lang.Override
+  public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getLatestApprovalLevelOrBuilder() {
+    return getLatestApprovalLevel();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -178,6 +217,9 @@ private static final long serialVersionUID = 0L;
     if (productDetail != null) {
       output.writeMessage(2, getProductDetail());
     }
+    if (latestApprovalLevel != null) {
+      output.writeMessage(3, getLatestApprovalLevel());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (productDetail != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getProductDetail());
+    }
+    if (latestApprovalLevel != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getLatestApprovalLevel());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,6 +266,11 @@ private static final long serialVersionUID = 0L;
       if (!getProductDetail()
           .equals(other.getProductDetail())) return false;
     }
+    if (hasLatestApprovalLevel() != other.hasLatestApprovalLevel()) return false;
+    if (hasLatestApprovalLevel()) {
+      if (!getLatestApprovalLevel()
+          .equals(other.getLatestApprovalLevel())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -238,6 +289,10 @@ private static final long serialVersionUID = 0L;
     if (hasProductDetail()) {
       hash = (37 * hash) + PRODUCT_DETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getProductDetail().hashCode();
+    }
+    if (hasLatestApprovalLevel()) {
+      hash = (37 * hash) + LATEST_APPROVAL_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestApprovalLevel().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -384,6 +439,12 @@ private static final long serialVersionUID = 0L;
         productDetail = null;
         productDetailBuilder = null;
       }
+      if (latestApprovalLevelBuilder == null) {
+        latestApprovalLevel = null;
+      } else {
+        latestApprovalLevel = null;
+        latestApprovalLevelBuilder = null;
+      }
       return this;
     }
 
@@ -419,6 +480,11 @@ private static final long serialVersionUID = 0L;
         result.productDetail = productDetail ;
       } else {
         result.productDetail = productDetailBuilder .build();
+      }
+      if (latestApprovalLevelBuilder == null) {
+        result.latestApprovalLevel = latestApprovalLevel ;
+      } else {
+        result.latestApprovalLevel = latestApprovalLevelBuilder .build();
       }
       onBuilt();
       return result;
@@ -473,6 +539,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasProductDetail()) {
         mergeProductDetail(other.getProductDetail());
+      }
+      if (other.hasLatestApprovalLevel()) {
+        mergeLatestApprovalLevel(other.getLatestApprovalLevel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -739,6 +808,125 @@ private static final long serialVersionUID = 0L;
         productDetail = null;
       }
       return productDetailBuilder ;
+    }
+
+    private com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel latestApprovalLevel ;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> latestApprovalLevelBuilder ;
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     * @return Whether the latestApprovalLevel field is set.
+     */
+    public boolean hasLatestApprovalLevel() {
+      return latestApprovalLevelBuilder != null || latestApprovalLevel != null;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     * @return The latestApprovalLevel.
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel getLatestApprovalLevel() {
+      if (latestApprovalLevelBuilder == null) {
+        return latestApprovalLevel == null ? com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.getDefaultInstance() : latestApprovalLevel ;
+      } else {
+        return latestApprovalLevelBuilder .getMessage();
+      }
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public Builder setLatestApprovalLevel(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel value) {
+      if (latestApprovalLevelBuilder == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestApprovalLevel = value;
+        onChanged();
+      } else {
+        latestApprovalLevelBuilder .setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public Builder setLatestApprovalLevel(
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder builderForValue) {
+      if (latestApprovalLevelBuilder == null) {
+        latestApprovalLevel = builderForValue.build();
+        onChanged();
+      } else {
+        latestApprovalLevelBuilder .setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public Builder mergeLatestApprovalLevel(com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel value) {
+      if (latestApprovalLevelBuilder == null) {
+        if (latestApprovalLevel != null) {
+          latestApprovalLevel =
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.newBuilder(latestApprovalLevel ).mergeFrom(value).buildPartial();
+        } else {
+          latestApprovalLevel = value;
+        }
+        onChanged();
+      } else {
+        latestApprovalLevelBuilder .mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public Builder clearLatestApprovalLevel() {
+      if (latestApprovalLevelBuilder == null) {
+        latestApprovalLevel = null;
+        onChanged();
+      } else {
+        latestApprovalLevel = null;
+        latestApprovalLevelBuilder = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder getLatestApprovalLevelBuilder() {
+      
+      onChanged();
+      return getLatestApprovalLevelFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder getLatestApprovalLevelOrBuilder() {
+      if (latestApprovalLevelBuilder != null) {
+        return latestApprovalLevelBuilder .getMessageOrBuilder();
+      } else {
+        return latestApprovalLevel == null ?
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.getDefaultInstance() : latestApprovalLevel ;
+      }
+    }
+    /**
+     * <code>.glory_api.ApprovalFlowLevel latest_approval_level = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder> 
+        getLatestApprovalLevelFieldBuilder() {
+      if (latestApprovalLevelBuilder == null) {
+        latestApprovalLevelBuilder = new com.google.protobuf.SingleFieldBuilderV3<
+            com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevel.Builder, com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowLevelOrBuilder>(
+                getLatestApprovalLevel(),
+                getParentForChildren(),
+                isClean());
+        latestApprovalLevel = null;
+      }
+      return latestApprovalLevelBuilder ;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

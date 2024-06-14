@@ -6,9 +6,10 @@ import * as base from "../base";
 import * as sku from "./sku";
 import * as shop from "./shop";
 import * as attribute from "./attribute";
+import * as approval_flow from "../approval_flow/approval_flow";
 import * as freight_template from "./freight_template";
 import * as coupon from "./coupon";
-export { base, sku, shop, attribute, freight_template, coupon };
+export { base, sku, shop, attribute, approval_flow, freight_template, coupon };
 
 export enum State {
   DEFAULT = 0,
@@ -132,6 +133,7 @@ export interface GetProductRequest {
 export interface GetProductResponse {
   base_resp?: base.BaseResponse;
   product_detail?: ProductWithValueAuthor;
+  latest_approval_level?: approval_flow.ApprovalFlowLevel;
 }
 
 export interface UpdateProductRequest {
