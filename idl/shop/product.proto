@@ -7,6 +7,7 @@ import "base.proto";
 import "shop/sku.proto";
 import "shop/shop.proto";
 import "shop/attribute.proto";
+import "approval_flow/approval_flow.proto";
 import "shop/freight_template.proto";
 import "shop/coupon.proto";
 
@@ -120,6 +121,7 @@ message GetProductRequest {
 message GetProductResponse {
   base.BaseResponse base_resp = 1;
   ProductWithValueAuthor product_detail = 2;
+  ApprovalFlowLevel latest_approval_level = 3;
 }
 
 message UpdateProductRequest {
