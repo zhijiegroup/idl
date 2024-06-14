@@ -4,7 +4,8 @@
 
 import * as base from "../base";
 import * as category from "./category";
-export { base, category };
+import * as approval_flow from "../approval_flow/approval_flow";
+export { base, category, approval_flow };
 
 export interface Shop {
   /** 店铺id,创建时 不传 */
@@ -95,6 +96,7 @@ export interface Shop {
   payment_qrcode_path?: string;
   teacher_name?: string;
   teacher_phone?: string;
+  approval_flow?: approval_flow.ApprovalFlowDetail;
 }
 
 export interface ShopQualification {

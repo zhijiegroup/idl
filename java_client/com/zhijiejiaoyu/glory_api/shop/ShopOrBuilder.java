@@ -858,4 +858,19 @@ public interface ShopOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTeacherPhoneBytes();
+
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   * @return Whether the approvalFlow field is set.
+   */
+  boolean hasApprovalFlow();
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   * @return The approvalFlow.
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetail getApprovalFlow();
+  /**
+   * <code>.glory_api.ApprovalFlowDetail approval_flow = 50;</code>
+   */
+  com.zhijiejiaoyu.glory_api.short_video.ApprovalFlowDetailOrBuilder getApprovalFlowOrBuilder();
 }
