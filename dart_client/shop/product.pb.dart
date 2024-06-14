@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../approval_flow/approval_flow.pb.dart' as $5;
 import '../base.pb.dart' as $3;
 import 'attribute.pb.dart' as $4;
 import 'coupon.pb.dart' as $2;
@@ -1234,6 +1235,7 @@ class GetProductResponse extends $pb.GeneratedMessage {
   factory GetProductResponse({
     $3.BaseResponse? baseResp,
     ProductWithValueAuthor? productDetail,
+    $5.ApprovalFlowLevel? latestApprovalLevel,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1241,6 +1243,9 @@ class GetProductResponse extends $pb.GeneratedMessage {
     }
     if (productDetail != null) {
       $result.productDetail = productDetail;
+    }
+    if (latestApprovalLevel != null) {
+      $result.latestApprovalLevel = latestApprovalLevel;
     }
     return $result;
   }
@@ -1251,6 +1256,7 @@ class GetProductResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetProductResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$3.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $3.BaseResponse.create)
     ..aOM<ProductWithValueAuthor>(2, _omitFieldNames ? '' : 'productDetail', subBuilder: ProductWithValueAuthor.create)
+    ..aOM<$5.ApprovalFlowLevel>(3, _omitFieldNames ? '' : 'latestApprovalLevel', subBuilder: $5.ApprovalFlowLevel.create)
     ..hasRequiredFields = false
   ;
 
@@ -1296,6 +1302,17 @@ class GetProductResponse extends $pb.GeneratedMessage {
   void clearProductDetail() => clearField(2);
   @$pb.TagNumber(2)
   ProductWithValueAuthor ensureProductDetail() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $5.ApprovalFlowLevel get latestApprovalLevel => $_getN(2);
+  @$pb.TagNumber(3)
+  set latestApprovalLevel($5.ApprovalFlowLevel v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLatestApprovalLevel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLatestApprovalLevel() => clearField(3);
+  @$pb.TagNumber(3)
+  $5.ApprovalFlowLevel ensureLatestApprovalLevel() => $_ensure(2);
 }
 
 class UpdateProductRequest extends $pb.GeneratedMessage {

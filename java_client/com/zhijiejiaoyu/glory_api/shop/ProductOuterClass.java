@@ -225,152 +225,154 @@ public final class ProductOuterClass {
     java.lang.String[] descriptorData = {
       "\n\022shop/product.proto\022\tglory_api\032\nbase.pr" +
       "oto\032\016shop/sku.proto\032\017shop/shop.proto\032\024sh" +
-      "op/attribute.proto\032\033shop/freight_templat" +
-      "e.proto\032\021shop/coupon.proto\"\274\004\n\007Product\022\022" +
-      "\n\nproduct_id\030\001 \001(\003\022\017\n\007shop_id\030\002 \001(\003\022\024\n\014p" +
-      "roduct_name\030\003 \001(\t\022\023\n\013category_id\030\004 \001(\003\022\033" +
-      "\n\003sku\030\005 \003(\0132\016.glory_api.Sku\022\037\n\005state\030\007 \001" +
-      "(\0162\020.glory_api.State\022\'\n\006images\030\010 \003(\0132\027.g" +
-      "lory_api.ProductImage\022\025\n\rproduct_price\030\t" +
-      " \001(\002\022\030\n\020product_quantity\030\n \001(\005\022\024\n\014produc" +
-      "t_sold\030\013 \001(\005\022\021\n\tshop_name\030\014 \001(\t\022\025\n\rshop_" +
-      "logo_url\030\r \001(\t\022-\n\020freight_template\030\016 \001(\013" +
-      "2\023.glory_api.Template\0228\n\022shipment_attrib" +
-      "ute\030\017 \003(\0132\034.glory_api.ShipmentAttribute\022" +
-      "\022\n\nsale_price\030\020 \001(\002\022\027\n\017reference_price\030\021" +
-      " \001(\002\022\025\n\rproduct_brand\030\022 \001(\t\022\023\n\013activity_" +
-      "id\030\023 \001(\003\022\'\n\006coupon\030\024 \003(\0132\027.glory_api.Cou" +
-      "ponDetail\022\036\n\026product_video_main_url\030\025 \001(" +
-      "\t\"O\n\014ProductImage\022\030\n\020product_image_id\030\001 " +
-      "\001(\003\022\022\n\nimage_type\030\002 \001(\t\022\021\n\timage_url\030\003 \001" +
-      "(\t\"\225\001\n\021ShipmentAttribute\022\035\n\025shipment_att" +
-      "ribute_id\030\001 \001(\003\022\024\n\014attribute_id\030\002 \001(\003\022\026\n" +
-      "\016attribute_name\030\003 \001(\t\022\032\n\022attribute_value" +
-      "_id\030\004 \001(\003\022\027\n\017attribute_value\030\005 \001(\t\"\241\001\n\021P" +
-      "roductWithAuthor\022#\n\007product\030\001 \001(\0132\022.glor" +
-      "y_api.Product\022@\n\017attribute_value\030\002 \003(\0132\'" +
-      ".glory_api.ProductAttributeWithOneValue\022" +
-      "%\n\013author_info\030\003 \001(\0132\020.base.AuthorInfo\"\267" +
-      "\001\n\034ProductAttributeWithOneValue\022\024\n\014attri" +
-      "bute_id\030\001 \001(\003\022\026\n\016attribute_name\030\002 \001(\t\022\027\n" +
-      "\017attribute_value\030\003 \001(\t\022\026\n\016attribute_type" +
-      "\030\004 \001(\t\022\034\n\024product_attribute_id\030\006 \001(\003\022\032\n\022" +
-      "attribute_value_id\030\007 \001(\003\"\246\001\n\026ProductWith" +
-      "ValueAuthor\022#\n\007product\030\001 \001(\0132\022.glory_api" +
+      "op/attribute.proto\032!approval_flow/approv" +
+      "al_flow.proto\032\033shop/freight_template.pro" +
+      "to\032\021shop/coupon.proto\"\274\004\n\007Product\022\022\n\npro" +
+      "duct_id\030\001 \001(\003\022\017\n\007shop_id\030\002 \001(\003\022\024\n\014produc" +
+      "t_name\030\003 \001(\t\022\023\n\013category_id\030\004 \001(\003\022\033\n\003sku" +
+      "\030\005 \003(\0132\016.glory_api.Sku\022\037\n\005state\030\007 \001(\0162\020." +
+      "glory_api.State\022\'\n\006images\030\010 \003(\0132\027.glory_" +
+      "api.ProductImage\022\025\n\rproduct_price\030\t \001(\002\022" +
+      "\030\n\020product_quantity\030\n \001(\005\022\024\n\014product_sol" +
+      "d\030\013 \001(\005\022\021\n\tshop_name\030\014 \001(\t\022\025\n\rshop_logo_" +
+      "url\030\r \001(\t\022-\n\020freight_template\030\016 \001(\0132\023.gl" +
+      "ory_api.Template\0228\n\022shipment_attribute\030\017" +
+      " \003(\0132\034.glory_api.ShipmentAttribute\022\022\n\nsa" +
+      "le_price\030\020 \001(\002\022\027\n\017reference_price\030\021 \001(\002\022" +
+      "\025\n\rproduct_brand\030\022 \001(\t\022\023\n\013activity_id\030\023 " +
+      "\001(\003\022\'\n\006coupon\030\024 \003(\0132\027.glory_api.CouponDe" +
+      "tail\022\036\n\026product_video_main_url\030\025 \001(\t\"O\n\014" +
+      "ProductImage\022\030\n\020product_image_id\030\001 \001(\003\022\022" +
+      "\n\nimage_type\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\"\225\001" +
+      "\n\021ShipmentAttribute\022\035\n\025shipment_attribut" +
+      "e_id\030\001 \001(\003\022\024\n\014attribute_id\030\002 \001(\003\022\026\n\016attr" +
+      "ibute_name\030\003 \001(\t\022\032\n\022attribute_value_id\030\004" +
+      " \001(\003\022\027\n\017attribute_value\030\005 \001(\t\"\241\001\n\021Produc" +
+      "tWithAuthor\022#\n\007product\030\001 \001(\0132\022.glory_api" +
       ".Product\022@\n\017attribute_value\030\002 \003(\0132\'.glor" +
       "y_api.ProductAttributeWithOneValue\022%\n\013au" +
-      "thor_info\030\003 \001(\0132\020.base.AuthorInfo\"\203\001\n\020Pr" +
-      "oductAttribute\022\034\n\024product_attribute_id\030\001" +
-      " \001(\003\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014attribute_id" +
-      "\030\003 \001(\003\022\'\n\tattribute\030\005 \001(\0132\024.glory_api.At" +
-      "tribute\"\260\001\n\024CreateProductRequest\022\'\n\014base" +
-      "_request\030\001 \001(\0132\021.base.BaseRequest\022#\n\007pro" +
-      "duct\030\002 \001(\0132\022.glory_api.Product\0226\n\021produc" +
-      "t_attribute\030\003 \003(\0132\033.glory_api.ProductAtt" +
-      "ribute\022\022\n\ncreated_by\030\004 \001(\t\"R\n\025CreateProd" +
-      "uctResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Ba" +
-      "seResponse\022\022\n\nproduct_id\030\002 \001(\003\"\241\001\n\024BindA" +
-      "ttributeRequest\022\'\n\014base_request\030\001 \001(\0132\021." +
-      "base.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014" +
-      "product_name\030\003 \001(\t\0226\n\021product_attribute\030" +
-      "\004 \003(\0132\033.glory_api.ProductAttribute\">\n\025Bi" +
-      "ndAttributeResponse\022%\n\tbase_resp\030\001 \001(\0132\022" +
-      ".base.BaseResponse\"P\n\021GetProductRequest\022" +
-      "\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequest" +
-      "\022\022\n\nproduct_id\030\002 \001(\003\"v\n\022GetProductRespon" +
-      "se\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespons" +
-      "e\0229\n\016product_detail\030\002 \001(\0132!.glory_api.Pr" +
-      "oductWithValueAuthor\"\370\002\n\024UpdateProductRe" +
-      "quest\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseR" +
-      "equest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014product_na" +
-      "me\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024.glory_api." +
-      "Attribute\022\033\n\003sku\030\004 \003(\0132\016.glory_api.Sku\022\037" +
-      "\n\005state\030\005 \001(\0162\020.glory_api.State\0220\n\022shipm" +
-      "ent_attribute\030\006 \003(\0132\024.glory_api.Attribut" +
-      "e\022\033\n\023freight_template_id\030\007 \001(\003\022\022\n\nsale_p" +
-      "rice\030\010 \001(\002\022\027\n\017reference_price\030\t \001(\002\022\025\n\rp" +
-      "roduct_brand\030\n \001(\t\022\023\n\013category_id\030\013 \001(\003\"" +
-      "R\n\025UpdateProductResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\022\022\n\nproduct_id\030\002 " +
-      "\001(\003\"\371\002\n\025PublishProductRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduc" +
-      "t_id\030\002 \001(\003\022\024\n\014product_name\030\025 \001(\t\022\'\n\tattr" +
-      "ibute\030\003 \003(\0132\024.glory_api.Attribute\022\033\n\003sku" +
-      "\030\004 \003(\0132\016.glory_api.Sku\022\037\n\005state\030\005 \001(\0162\020." +
-      "glory_api.State\0220\n\022shipment_attribute\030\006 " +
-      "\003(\0132\024.glory_api.Attribute\022\033\n\023freight_tem" +
-      "plate_id\030\007 \001(\003\022\022\n\nsale_price\030\010 \001(\002\022\027\n\017re" +
-      "ference_price\030\t \001(\002\022\025\n\rproduct_brand\030\n \001" +
-      "(\t\022\023\n\013category_id\030\013 \001(\003\"S\n\026PublishProduc" +
-      "tResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.Base" +
-      "Response\022\022\n\nproduct_id\030\002 \001(\003\"U\n\026OffSelfP" +
-      "roductsRequest\022\'\n\014base_request\030\001 \001(\0132\021.b" +
-      "ase.BaseRequest\022\022\n\nproduct_id\030\002 \003(\003\"@\n\027O" +
-      "ffSelfProductsResponse\022%\n\tbase_resp\030\001 \001(" +
-      "\0132\022.base.BaseResponse\"T\n\025DeleteProductsR" +
-      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\022\n\nproduct_id\030\002 \003(\003\"?\n\026DeletePro" +
-      "ductsResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base." +
-      "BaseResponse\"y\n\031ChangeProductStateReques" +
-      "t\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReque" +
-      "st\022\022\n\nproduct_id\030\002 \001(\003\022\037\n\005state\030\003 \001(\0162\020." +
-      "glory_api.State\"C\n\032ChangeProductStateRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\"z\n\032ChangeProductsStateRequest\022\'\n\014ba" +
+      "thor_info\030\003 \001(\0132\020.base.AuthorInfo\"\267\001\n\034Pr" +
+      "oductAttributeWithOneValue\022\024\n\014attribute_" +
+      "id\030\001 \001(\003\022\026\n\016attribute_name\030\002 \001(\t\022\027\n\017attr" +
+      "ibute_value\030\003 \001(\t\022\026\n\016attribute_type\030\004 \001(" +
+      "\t\022\034\n\024product_attribute_id\030\006 \001(\003\022\032\n\022attri" +
+      "bute_value_id\030\007 \001(\003\"\246\001\n\026ProductWithValue" +
+      "Author\022#\n\007product\030\001 \001(\0132\022.glory_api.Prod" +
+      "uct\022@\n\017attribute_value\030\002 \003(\0132\'.glory_api" +
+      ".ProductAttributeWithOneValue\022%\n\013author_" +
+      "info\030\003 \001(\0132\020.base.AuthorInfo\"\203\001\n\020Product" +
+      "Attribute\022\034\n\024product_attribute_id\030\001 \001(\003\022" +
+      "\022\n\nproduct_id\030\002 \001(\003\022\024\n\014attribute_id\030\003 \001(" +
+      "\003\022\'\n\tattribute\030\005 \001(\0132\024.glory_api.Attribu" +
+      "te\"\260\001\n\024CreateProductRequest\022\'\n\014base_requ" +
+      "est\030\001 \001(\0132\021.base.BaseRequest\022#\n\007product\030" +
+      "\002 \001(\0132\022.glory_api.Product\0226\n\021product_att" +
+      "ribute\030\003 \003(\0132\033.glory_api.ProductAttribut" +
+      "e\022\022\n\ncreated_by\030\004 \001(\t\"R\n\025CreateProductRe" +
+      "sponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRes" +
+      "ponse\022\022\n\nproduct_id\030\002 \001(\003\"\241\001\n\024BindAttrib" +
+      "uteRequest\022\'\n\014base_request\030\001 \001(\0132\021.base." +
+      "BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014produ" +
+      "ct_name\030\003 \001(\t\0226\n\021product_attribute\030\004 \003(\013" +
+      "2\033.glory_api.ProductAttribute\">\n\025BindAtt" +
+      "ributeResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base" +
+      ".BaseResponse\"P\n\021GetProductRequest\022\'\n\014ba" +
       "se_request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\np" +
-      "roduct_id\030\002 \003(\003\022\037\n\005state\030\003 \001(\0162\020.glory_a" +
-      "pi.State\"D\n\033ChangeProductsStateResponse\022" +
-      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"\307" +
-      "\001\n\022ListProductRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\024\n\014product_name\030\002" +
-      " \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\023\n\013category_id\030\004 \001" +
-      "(\003\022\037\n\005state\030\005 \001(\0162\020.glory_api.State\022+\n\np" +
-      "agination\030d \001(\0132\027.base.PaginationRequest" +
-      "\"\245\001\n\023ListProductResponse\022%\n\tbase_resp\030\001 " +
-      "\001(\0132\022.base.BaseResponse\0229\n\016product_detai" +
-      "l\030\002 \003(\0132!.glory_api.ProductWithValueAuth" +
-      "or\022,\n\npagination\030d \001(\0132\030.base.Pagination" +
-      "Response\"\234\001\n\036ListProductByProductIDsRequ" +
-      "est\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseReq" +
-      "uest\022\017\n\007shop_id\030\002 \001(\003\022\023\n\013product_ids\030\003 \003" +
-      "(\003\022+\n\npagination\030d \001(\0132\027.base.Pagination" +
-      "Request\"\233\001\n\037ListProductByProductIDsRespo" +
-      "nse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseRespon" +
-      "se\022#\n\007product\030\002 \003(\0132\022.glory_api.Product\022" +
-      ",\n\npagination\030d \001(\0132\030.base.PaginationRes" +
-      "ponse\"S\n\024DeleteProductRequest\022\'\n\014base_re" +
-      "quest\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduc" +
-      "t_id\030\002 \001(\003\">\n\025DeleteProductResponse\022%\n\tb" +
-      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"r\n\027Up" +
-      "loadMultiImageRequest\022\'\n\014base_request\030\001 " +
-      "\001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 \001" +
-      "(\003\022\032\n\022product_image_type\030\003 \001(\003\"j\n\030Upload" +
-      "MultiImageResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\'\n\timageInfo\030\002 \003(\0132\024.g" +
-      "lory_api.ImageInfo\"V\n\tImageInfo\022\023\n\013produ" +
-      "ct_url\030\001 \001(\t\022\032\n\022product_image_type\030\002 \001(\t" +
-      "\022\030\n\020product_image_id\030\003 \001(\003\"W\n\022DeleteImag" +
-      "eRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\030\n\020product_image_id\030\002 \001(\003\"<\n\023D" +
-      "eleteImageResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\"P\n\025UploadSkuImageReque" +
-      "st\022\'\n\014base_request\030\001 \001(\0132\021.base.BaseRequ" +
-      "est\022\016\n\006sku_id\030\002 \001(\003\"R\n\026UploadSkuImageRes" +
-      "ponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResp" +
-      "onse\022\021\n\timage_url\030\002 \001(\t\"\247\001\n\024SaveImageInf" +
-      "oRequest\022\'\n\014base_request\030\001 \001(\0132\021.base.Ba" +
-      "seRequest\022\022\n\nproduct_id\030\002 \001(\003\022\032\n\022product" +
-      "_image_type\030\003 \001(\t\022\032\n\022product_video_path\030" +
-      "\004 \001(\t\022\032\n\022product_image_path\030\005 \003(\t\"\177\n\025Sav" +
-      "eImageInfoResponse\022%\n\tbase_resp\030\001 \001(\0132\022." +
-      "base.BaseResponse\022\'\n\timageInfo\030\002 \003(\0132\024.g" +
-      "lory_api.ImageInfo\022\026\n\016video_main_url\030\003 \001" +
-      "(\t*\247\001\n\005State\022\013\n\007DEFAULT\020\000\022\013\n\007created\020\001\022\014" +
-      "\n\010on_shelf\020\002\022\r\n\toff_shelf\020\003\022\020\n\014out_of_st" +
-      "ock\020\004\022\013\n\007deleted\020\005\022\023\n\017deleted_forever\020\006\022" +
-      "\014\n\010sold_out\020\007\022\r\n\tapproving\020\010\022\026\n\022approval" +
-      "_rejection\020\tB#\n\037com.zhijiejiaoyu.glory_a" +
-      "pi.shopP\001b\006proto3"
+      "roduct_id\030\002 \001(\003\"\263\001\n\022GetProductResponse\022%" +
+      "\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\0229\n" +
+      "\016product_detail\030\002 \001(\0132!.glory_api.Produc" +
+      "tWithValueAuthor\022;\n\025latest_approval_leve" +
+      "l\030\003 \001(\0132\034.glory_api.ApprovalFlowLevel\"\370\002" +
+      "\n\024UpdateProductRequest\022\'\n\014base_request\030\001" +
+      " \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002 " +
+      "\001(\003\022\024\n\014product_name\030\025 \001(\t\022\'\n\tattribute\030\003" +
+      " \003(\0132\024.glory_api.Attribute\022\033\n\003sku\030\004 \003(\0132" +
+      "\016.glory_api.Sku\022\037\n\005state\030\005 \001(\0162\020.glory_a" +
+      "pi.State\0220\n\022shipment_attribute\030\006 \003(\0132\024.g" +
+      "lory_api.Attribute\022\033\n\023freight_template_i" +
+      "d\030\007 \001(\003\022\022\n\nsale_price\030\010 \001(\002\022\027\n\017reference" +
+      "_price\030\t \001(\002\022\025\n\rproduct_brand\030\n \001(\t\022\023\n\013c" +
+      "ategory_id\030\013 \001(\003\"R\n\025UpdateProductRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\022\022\n\nproduct_id\030\002 \001(\003\"\371\002\n\025PublishProductR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\022\n\nproduct_id\030\002 \001(\003\022\024\n\014product_n" +
+      "ame\030\025 \001(\t\022\'\n\tattribute\030\003 \003(\0132\024.glory_api" +
+      ".Attribute\022\033\n\003sku\030\004 \003(\0132\016.glory_api.Sku\022" +
+      "\037\n\005state\030\005 \001(\0162\020.glory_api.State\0220\n\022ship" +
+      "ment_attribute\030\006 \003(\0132\024.glory_api.Attribu" +
+      "te\022\033\n\023freight_template_id\030\007 \001(\003\022\022\n\nsale_" +
+      "price\030\010 \001(\002\022\027\n\017reference_price\030\t \001(\002\022\025\n\r" +
+      "product_brand\030\n \001(\t\022\023\n\013category_id\030\013 \001(\003" +
+      "\"S\n\026PublishProductResponse\022%\n\tbase_resp\030" +
+      "\001 \001(\0132\022.base.BaseResponse\022\022\n\nproduct_id\030" +
+      "\002 \001(\003\"U\n\026OffSelfProductsRequest\022\'\n\014base_" +
+      "request\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nprod" +
+      "uct_id\030\002 \003(\003\"@\n\027OffSelfProductsResponse\022" +
+      "%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse\"T" +
+      "\n\025DeleteProductsRequest\022\'\n\014base_request\030" +
+      "\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id\030\002" +
+      " \003(\003\"?\n\026DeleteProductsResponse\022%\n\tbase_r" +
+      "esp\030\001 \001(\0132\022.base.BaseResponse\"y\n\031ChangeP" +
+      "roductStateRequest\022\'\n\014base_request\030\001 \001(\013" +
+      "2\021.base.BaseRequest\022\022\n\nproduct_id\030\002 \001(\003\022" +
+      "\037\n\005state\030\003 \001(\0162\020.glory_api.State\"C\n\032Chan" +
+      "geProductStateResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\"z\n\032ChangeProductsS" +
+      "tateRequest\022\'\n\014base_request\030\001 \001(\0132\021.base" +
+      ".BaseRequest\022\022\n\nproduct_id\030\002 \003(\003\022\037\n\005stat" +
+      "e\030\003 \001(\0162\020.glory_api.State\"D\n\033ChangeProdu" +
+      "ctsStateResponse\022%\n\tbase_resp\030\001 \001(\0132\022.ba" +
+      "se.BaseResponse\"\307\001\n\022ListProductRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\024\n\014product_name\030\002 \001(\t\022\017\n\007shop_id\030\003 \001(\003\022\023" +
+      "\n\013category_id\030\004 \001(\003\022\037\n\005state\030\005 \001(\0162\020.glo" +
+      "ry_api.State\022+\n\npagination\030d \001(\0132\027.base." +
+      "PaginationRequest\"\245\001\n\023ListProductRespons" +
+      "e\022%\n\tbase_resp\030\001 \001(\0132\022.base.BaseResponse" +
+      "\0229\n\016product_detail\030\002 \003(\0132!.glory_api.Pro" +
+      "ductWithValueAuthor\022,\n\npagination\030d \001(\0132" +
+      "\030.base.PaginationResponse\"\234\001\n\036ListProduc" +
+      "tByProductIDsRequest\022\'\n\014base_request\030\001 \001" +
+      "(\0132\021.base.BaseRequest\022\017\n\007shop_id\030\002 \001(\003\022\023" +
+      "\n\013product_ids\030\003 \003(\003\022+\n\npagination\030d \001(\0132" +
+      "\027.base.PaginationRequest\"\233\001\n\037ListProduct" +
+      "ByProductIDsResponse\022%\n\tbase_resp\030\001 \001(\0132" +
+      "\022.base.BaseResponse\022#\n\007product\030\002 \003(\0132\022.g" +
+      "lory_api.Product\022,\n\npagination\030d \001(\0132\030.b" +
+      "ase.PaginationResponse\"S\n\024DeleteProductR" +
+      "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
+      "Request\022\022\n\nproduct_id\030\002 \001(\003\">\n\025DeletePro" +
+      "ductResponse\022%\n\tbase_resp\030\001 \001(\0132\022.base.B" +
+      "aseResponse\"r\n\027UploadMultiImageRequest\022\'" +
+      "\n\014base_request\030\001 \001(\0132\021.base.BaseRequest\022" +
+      "\022\n\nproduct_id\030\002 \001(\003\022\032\n\022product_image_typ" +
+      "e\030\003 \001(\003\"j\n\030UploadMultiImageResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\tim" +
+      "ageInfo\030\002 \003(\0132\024.glory_api.ImageInfo\"V\n\tI" +
+      "mageInfo\022\023\n\013product_url\030\001 \001(\t\022\032\n\022product" +
+      "_image_type\030\002 \001(\t\022\030\n\020product_image_id\030\003 " +
+      "\001(\003\"W\n\022DeleteImageRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\030\n\020product_im" +
+      "age_id\030\002 \001(\003\"<\n\023DeleteImageResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\"P\n\025Up" +
+      "loadSkuImageRequest\022\'\n\014base_request\030\001 \001(" +
+      "\0132\021.base.BaseRequest\022\016\n\006sku_id\030\002 \001(\003\"R\n\026" +
+      "UploadSkuImageResponse\022%\n\tbase_resp\030\001 \001(" +
+      "\0132\022.base.BaseResponse\022\021\n\timage_url\030\002 \001(\t" +
+      "\"\247\001\n\024SaveImageInfoRequest\022\'\n\014base_reques" +
+      "t\030\001 \001(\0132\021.base.BaseRequest\022\022\n\nproduct_id" +
+      "\030\002 \001(\003\022\032\n\022product_image_type\030\003 \001(\t\022\032\n\022pr" +
+      "oduct_video_path\030\004 \001(\t\022\032\n\022product_image_" +
+      "path\030\005 \003(\t\"\177\n\025SaveImageInfoResponse\022%\n\tb" +
+      "ase_resp\030\001 \001(\0132\022.base.BaseResponse\022\'\n\tim" +
+      "ageInfo\030\002 \003(\0132\024.glory_api.ImageInfo\022\026\n\016v" +
+      "ideo_main_url\030\003 \001(\t*\247\001\n\005State\022\013\n\007DEFAULT" +
+      "\020\000\022\013\n\007created\020\001\022\014\n\010on_shelf\020\002\022\r\n\toff_she" +
+      "lf\020\003\022\020\n\014out_of_stock\020\004\022\013\n\007deleted\020\005\022\023\n\017d" +
+      "eleted_forever\020\006\022\014\n\010sold_out\020\007\022\r\n\tapprov" +
+      "ing\020\010\022\026\n\022approval_rejection\020\tB#\n\037com.zhi" +
+      "jiejiaoyu.glory_api.shopP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -379,6 +381,7 @@ public final class ProductOuterClass {
           com.zhijiejiaoyu.glory_api.shop.SkuOuterClass.getDescriptor(),
           com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor(),
           com.zhijiejiaoyu.glory_api.shop.AttributeOuterClass.getDescriptor(),
+          com.zhijiejiaoyu.glory_api.short_video.ApprovalFlow.getDescriptor(),
           com.zhijiejiaoyu.glory_api.shop.FreightTemplate.getDescriptor(),
           com.zhijiejiaoyu.glory_api.shop.Coupon.getDescriptor(),
         });
@@ -459,7 +462,7 @@ public final class ProductOuterClass {
     internal_static_glory_api_GetProductResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetProductResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ProductDetail", });
+        new java.lang.String[] { "BaseResp", "ProductDetail", "LatestApprovalLevel", });
     internal_static_glory_api_UpdateProductRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_glory_api_UpdateProductRequest_fieldAccessorTable = new
@@ -626,6 +629,7 @@ public final class ProductOuterClass {
     com.zhijiejiaoyu.glory_api.shop.SkuOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.ShopOuterClass.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.AttributeOuterClass.getDescriptor();
+    com.zhijiejiaoyu.glory_api.short_video.ApprovalFlow.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.FreightTemplate.getDescriptor();
     com.zhijiejiaoyu.glory_api.shop.Coupon.getDescriptor();
   }

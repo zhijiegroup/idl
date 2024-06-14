@@ -276,6 +276,7 @@ const GetProductResponse$json = {
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
     {'1': 'product_detail', '3': 2, '4': 1, '5': 11, '6': '.glory_api.ProductWithValueAuthor', '10': 'productDetail'},
+    {'1': 'latest_approval_level', '3': 3, '4': 1, '5': 11, '6': '.glory_api.ApprovalFlowLevel', '10': 'latestApprovalLevel'},
   ],
 };
 
@@ -283,7 +284,9 @@ const GetProductResponse$json = {
 final $typed_data.Uint8List getProductResponseDescriptor = $convert.base64Decode(
     'ChJHZXRQcm9kdWN0UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNwEkgKDnByb2R1Y3RfZGV0YWlsGAIgASgLMiEuZ2xvcnlfYXBpLlByb2R1'
-    'Y3RXaXRoVmFsdWVBdXRob3JSDXByb2R1Y3REZXRhaWw=');
+    'Y3RXaXRoVmFsdWVBdXRob3JSDXByb2R1Y3REZXRhaWwSUAoVbGF0ZXN0X2FwcHJvdmFsX2xldm'
+    'VsGAMgASgLMhwuZ2xvcnlfYXBpLkFwcHJvdmFsRmxvd0xldmVsUhNsYXRlc3RBcHByb3ZhbExl'
+    'dmVs');
 
 @$core.Deprecated('Use updateProductRequestDescriptor instead')
 const UpdateProductRequest$json = {

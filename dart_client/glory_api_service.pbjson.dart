@@ -742,6 +742,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.GetProductResponse': $10.GetProductResponse$json,
   '.glory_api.ProductWithValueAuthor': $10.ProductWithValueAuthor$json,
   '.glory_api.ProductAttributeWithOneValue': $10.ProductAttributeWithOneValue$json,
+  '.glory_api.ApprovalFlowLevel': $59.ApprovalFlowLevel$json,
   '.glory_api.UpdateProductRequest': $10.UpdateProductRequest$json,
   '.glory_api.UpdateProductResponse': $10.UpdateProductResponse$json,
   '.glory_api.ListProductRequest': $10.ListProductRequest$json,
@@ -1654,7 +1655,6 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> glory_apiS
   '.glory_api.ListApprovalFlowRequest': $59.ListApprovalFlowRequest$json,
   '.glory_api.ListApprovalFlowResponse': $59.ListApprovalFlowResponse$json,
   '.glory_api.ApprovalFlowDetail': $59.ApprovalFlowDetail$json,
-  '.glory_api.ApprovalFlowLevel': $59.ApprovalFlowLevel$json,
   '.glory_api.GetApprovalFlowDetailRequest': $59.GetApprovalFlowDetailRequest$json,
   '.glory_api.GetApprovalFlowDetailResponse': $59.GetApprovalFlowDetailResponse$json,
 };
