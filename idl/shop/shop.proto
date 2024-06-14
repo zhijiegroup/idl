@@ -5,6 +5,7 @@ option java_multiple_files = true;
 
 import "base.proto";
 import "shop/category.proto";
+import "approval_flow/approval_flow.proto";
 
 
 message Shop {
@@ -56,7 +57,7 @@ message Shop {
   string payment_qrcode_path = 45;
   string teacher_name = 46;
   string teacher_phone = 47;
-
+  ApprovalFlowDetail approval_flow = 50;
 }
 
 message ShopQualification {
