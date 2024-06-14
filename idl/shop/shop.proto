@@ -58,6 +58,7 @@ message Shop {
   string teacher_name = 46;
   string teacher_phone = 47;
   ApprovalFlowDetail approval_flow = 50;
+  int32 current_level_order = 51;
 }
 
 message ShopQualification {
