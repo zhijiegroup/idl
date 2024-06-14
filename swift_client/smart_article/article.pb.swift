@@ -27,7 +27,7 @@ struct GloryApi_ArticleCreation {
 
   var articleCreationID: Int64 = 0
 
-  var lastArticleCreationID: Int64 = 0
+  var articleCollectionID: Int64 = 0
 
   var title: String = String()
 
@@ -39,7 +39,7 @@ struct GloryApi_ArticleCreation {
 
   var creationType: String = String()
 
-  var digitalHunmanVideoURL: String = String()
+  var digitalHumanVideoURL: String = String()
 
   var createdAt: String = String()
 
@@ -2744,13 +2744,13 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let protoMessageName: String = _protobuf_package + ".ArticleCreation"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "article_creation_id"),
-    2: .standard(proto: "last_article_creation_id"),
+    2: .standard(proto: "article_collection_id"),
     3: .same(proto: "title"),
     4: .standard(proto: "ai_result"),
     5: .same(proto: "status"),
     6: .same(proto: "topic"),
     7: .standard(proto: "creation_type"),
-    8: .standard(proto: "digital_hunman_video_url"),
+    8: .standard(proto: "digital_human_video_url"),
     9: .standard(proto: "created_at"),
     10: .same(proto: "content"),
     11: .standard(proto: "product_name"),
@@ -2763,13 +2763,13 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
-      case 2: try { try decoder.decodeSingularInt64Field(value: &self.lastArticleCreationID) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.articleCollectionID) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.title) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.aiResult) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.topic) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.digitalHunmanVideoURL) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self.digitalHumanVideoURL) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.productName) }()
@@ -2782,8 +2782,8 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.articleCreationID != 0 {
       try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 1)
     }
-    if self.lastArticleCreationID != 0 {
-      try visitor.visitSingularInt64Field(value: self.lastArticleCreationID, fieldNumber: 2)
+    if self.articleCollectionID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCollectionID, fieldNumber: 2)
     }
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 3)
@@ -2800,8 +2800,8 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.creationType.isEmpty {
       try visitor.visitSingularStringField(value: self.creationType, fieldNumber: 7)
     }
-    if !self.digitalHunmanVideoURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.digitalHunmanVideoURL, fieldNumber: 8)
+    if !self.digitalHumanVideoURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.digitalHumanVideoURL, fieldNumber: 8)
     }
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
@@ -2817,13 +2817,13 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
   static func ==(lhs: GloryApi_ArticleCreation, rhs: GloryApi_ArticleCreation) -> Bool {
     if lhs.articleCreationID != rhs.articleCreationID {return false}
-    if lhs.lastArticleCreationID != rhs.lastArticleCreationID {return false}
+    if lhs.articleCollectionID != rhs.articleCollectionID {return false}
     if lhs.title != rhs.title {return false}
     if lhs.aiResult != rhs.aiResult {return false}
     if lhs.status != rhs.status {return false}
     if lhs.topic != rhs.topic {return false}
     if lhs.creationType != rhs.creationType {return false}
-    if lhs.digitalHunmanVideoURL != rhs.digitalHunmanVideoURL {return false}
+    if lhs.digitalHumanVideoURL != rhs.digitalHumanVideoURL {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.content != rhs.content {return false}
     if lhs.productName != rhs.productName {return false}

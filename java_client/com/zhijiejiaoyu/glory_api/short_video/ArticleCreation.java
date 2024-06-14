@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
     status = "";
     topic = "";
     creationType = "";
-    digitalHunmanVideoUrl = "";
+    digitalHumanVideoUrl = "";
     createdAt = "";
     content = "";
     productName = "";
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            lastArticleCreationId = input.readInt64();
+            articleCollectionId = input.readInt64();
             break;
           }
           case 26: {
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            digitalHunmanVideoUrl = s;
+            digitalHumanVideoUrl = s;
             break;
           }
           case 74: {
@@ -164,15 +164,15 @@ private static final long serialVersionUID = 0L;
     return articleCreationId ;
   }
 
-  public static final int LAST_ARTICLE_CREATION_ID_FIELD_NUMBER = 2;
-  private long lastArticleCreationId ;
+  public static final int ARTICLE_COLLECTION_ID_FIELD_NUMBER = 2;
+  private long articleCollectionId ;
   /**
-   * <code>int64 last_article_creation_id = 2;</code>
-   * @return The lastArticleCreationId.
+   * <code>int64 article_collection_id = 2;</code>
+   * @return The articleCollectionId.
    */
   @java.lang.Override
-  public long getLastArticleCreationId() {
-    return lastArticleCreationId ;
+  public long getArticleCollectionId() {
+    return articleCollectionId ;
   }
 
   public static final int TITLE_FIELD_NUMBER = 3;
@@ -365,38 +365,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DIGITAL_HUNMAN_VIDEO_URL_FIELD_NUMBER = 8;
-  private volatile java.lang.Object digitalHunmanVideoUrl ;
+  public static final int DIGITAL_HUMAN_VIDEO_URL_FIELD_NUMBER = 8;
+  private volatile java.lang.Object digitalHumanVideoUrl ;
   /**
-   * <code>string digital_hunman_video_url = 8;</code>
-   * @return The digitalHunmanVideoUrl.
+   * <code>string digital_human_video_url = 8;</code>
+   * @return The digitalHumanVideoUrl.
    */
   @java.lang.Override
-  public java.lang.String getDigitalHunmanVideoUrl() {
-    java.lang.Object ref = digitalHunmanVideoUrl ;
+  public java.lang.String getDigitalHumanVideoUrl() {
+    java.lang.Object ref = digitalHumanVideoUrl ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      digitalHunmanVideoUrl = s;
+      digitalHumanVideoUrl = s;
       return s;
     }
   }
   /**
-   * <code>string digital_hunman_video_url = 8;</code>
-   * @return The bytes for digitalHunmanVideoUrl.
+   * <code>string digital_human_video_url = 8;</code>
+   * @return The bytes for digitalHumanVideoUrl.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getDigitalHunmanVideoUrlBytes() {
-    java.lang.Object ref = digitalHunmanVideoUrl ;
+      getDigitalHumanVideoUrlBytes() {
+    java.lang.Object ref = digitalHumanVideoUrl ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      digitalHunmanVideoUrl = b;
+      digitalHumanVideoUrl = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -534,8 +534,8 @@ private static final long serialVersionUID = 0L;
     if (articleCreationId != 0L) {
       output.writeInt64(1, articleCreationId );
     }
-    if (lastArticleCreationId != 0L) {
-      output.writeInt64(2, lastArticleCreationId );
+    if (articleCollectionId != 0L) {
+      output.writeInt64(2, articleCollectionId );
     }
     if (!getTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title );
@@ -552,8 +552,8 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, creationType );
     }
-    if (!getDigitalHunmanVideoUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, digitalHunmanVideoUrl );
+    if (!getDigitalHumanVideoUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, digitalHumanVideoUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
@@ -577,9 +577,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, articleCreationId );
     }
-    if (lastArticleCreationId != 0L) {
+    if (articleCollectionId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, lastArticleCreationId );
+        .computeInt64Size(2, articleCollectionId );
     }
     if (!getTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title );
@@ -596,8 +596,8 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, creationType );
     }
-    if (!getDigitalHunmanVideoUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, digitalHunmanVideoUrl );
+    if (!getDigitalHumanVideoUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, digitalHumanVideoUrl );
     }
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
@@ -625,8 +625,8 @@ private static final long serialVersionUID = 0L;
 
     if (getArticleCreationId()
         != other.getArticleCreationId()) return false;
-    if (getLastArticleCreationId()
-        != other.getLastArticleCreationId()) return false;
+    if (getArticleCollectionId()
+        != other.getArticleCollectionId()) return false;
     if (!getTitle()
         .equals(other.getTitle())) return false;
     if (!getAiResult()
@@ -637,8 +637,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTopic())) return false;
     if (!getCreationType()
         .equals(other.getCreationType())) return false;
-    if (!getDigitalHunmanVideoUrl()
-        .equals(other.getDigitalHunmanVideoUrl())) return false;
+    if (!getDigitalHumanVideoUrl()
+        .equals(other.getDigitalHumanVideoUrl())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
     if (!getContent()
@@ -659,9 +659,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getArticleCreationId());
-    hash = (37 * hash) + LAST_ARTICLE_CREATION_ID_FIELD_NUMBER;
+    hash = (37 * hash) + ARTICLE_COLLECTION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLastArticleCreationId());
+        getArticleCollectionId());
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + AI_RESULT_FIELD_NUMBER;
@@ -672,8 +672,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTopic().hashCode();
     hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationType().hashCode();
-    hash = (37 * hash) + DIGITAL_HUNMAN_VIDEO_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getDigitalHunmanVideoUrl().hashCode();
+    hash = (37 * hash) + DIGITAL_HUMAN_VIDEO_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getDigitalHumanVideoUrl().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
@@ -815,7 +815,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       articleCreationId = 0L;
 
-      lastArticleCreationId = 0L;
+      articleCollectionId = 0L;
 
       title = "";
 
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
 
       creationType = "";
 
-      digitalHunmanVideoUrl = "";
+      digitalHumanVideoUrl = "";
 
       createdAt = "";
 
@@ -862,13 +862,13 @@ private static final long serialVersionUID = 0L;
     public com.zhijiejiaoyu.glory_api.short_video.ArticleCreation buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ArticleCreation result = new com.zhijiejiaoyu.glory_api.short_video.ArticleCreation(this);
       result.articleCreationId = articleCreationId ;
-      result.lastArticleCreationId = lastArticleCreationId ;
+      result.articleCollectionId = articleCollectionId ;
       result.title = title ;
       result.aiResult = aiResult ;
       result.status = status ;
       result.topic = topic ;
       result.creationType = creationType ;
-      result.digitalHunmanVideoUrl = digitalHunmanVideoUrl ;
+      result.digitalHumanVideoUrl = digitalHumanVideoUrl ;
       result.createdAt = createdAt ;
       result.content = content ;
       result.productName = productName ;
@@ -923,8 +923,8 @@ private static final long serialVersionUID = 0L;
       if (other.getArticleCreationId() != 0L) {
         setArticleCreationId(other.getArticleCreationId());
       }
-      if (other.getLastArticleCreationId() != 0L) {
-        setLastArticleCreationId(other.getLastArticleCreationId());
+      if (other.getArticleCollectionId() != 0L) {
+        setArticleCollectionId(other.getArticleCollectionId());
       }
       if (!other.getTitle().isEmpty()) {
         title = other.title ;
@@ -946,8 +946,8 @@ private static final long serialVersionUID = 0L;
         creationType = other.creationType ;
         onChanged();
       }
-      if (!other.getDigitalHunmanVideoUrl().isEmpty()) {
-        digitalHunmanVideoUrl = other.digitalHunmanVideoUrl ;
+      if (!other.getDigitalHumanVideoUrl().isEmpty()) {
+        digitalHumanVideoUrl = other.digitalHumanVideoUrl ;
         onChanged();
       }
       if (!other.getCreatedAt().isEmpty()) {
@@ -1022,33 +1022,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long lastArticleCreationId ;
+    private long articleCollectionId ;
     /**
-     * <code>int64 last_article_creation_id = 2;</code>
-     * @return The lastArticleCreationId.
+     * <code>int64 article_collection_id = 2;</code>
+     * @return The articleCollectionId.
      */
     @java.lang.Override
-    public long getLastArticleCreationId() {
-      return lastArticleCreationId ;
+    public long getArticleCollectionId() {
+      return articleCollectionId ;
     }
     /**
-     * <code>int64 last_article_creation_id = 2;</code>
-     * @param value The lastArticleCreationId to set.
+     * <code>int64 article_collection_id = 2;</code>
+     * @param value The articleCollectionId to set.
      * @return This builder for chaining.
      */
-    public Builder setLastArticleCreationId(long value) {
+    public Builder setArticleCollectionId(long value) {
       
-      lastArticleCreationId = value;
+      articleCollectionId = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 last_article_creation_id = 2;</code>
+     * <code>int64 article_collection_id = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearLastArticleCreationId() {
+    public Builder clearArticleCollectionId() {
       
-      lastArticleCreationId = 0L;
+      articleCollectionId = 0L;
       onChanged();
       return this;
     }
@@ -1433,78 +1433,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object digitalHunmanVideoUrl = "";
+    private java.lang.Object digitalHumanVideoUrl = "";
     /**
-     * <code>string digital_hunman_video_url = 8;</code>
-     * @return The digitalHunmanVideoUrl.
+     * <code>string digital_human_video_url = 8;</code>
+     * @return The digitalHumanVideoUrl.
      */
-    public java.lang.String getDigitalHunmanVideoUrl() {
-      java.lang.Object ref = digitalHunmanVideoUrl ;
+    public java.lang.String getDigitalHumanVideoUrl() {
+      java.lang.Object ref = digitalHumanVideoUrl ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        digitalHunmanVideoUrl = s;
+        digitalHumanVideoUrl = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string digital_hunman_video_url = 8;</code>
-     * @return The bytes for digitalHunmanVideoUrl.
+     * <code>string digital_human_video_url = 8;</code>
+     * @return The bytes for digitalHumanVideoUrl.
      */
     public com.google.protobuf.ByteString
-        getDigitalHunmanVideoUrlBytes() {
-      java.lang.Object ref = digitalHunmanVideoUrl ;
+        getDigitalHumanVideoUrlBytes() {
+      java.lang.Object ref = digitalHumanVideoUrl ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        digitalHunmanVideoUrl = b;
+        digitalHumanVideoUrl = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string digital_hunman_video_url = 8;</code>
-     * @param value The digitalHunmanVideoUrl to set.
+     * <code>string digital_human_video_url = 8;</code>
+     * @param value The digitalHumanVideoUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setDigitalHunmanVideoUrl(
+    public Builder setDigitalHumanVideoUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      digitalHunmanVideoUrl = value;
+      digitalHumanVideoUrl = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string digital_hunman_video_url = 8;</code>
+     * <code>string digital_human_video_url = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDigitalHunmanVideoUrl() {
+    public Builder clearDigitalHumanVideoUrl() {
       
-      digitalHunmanVideoUrl = getDefaultInstance().getDigitalHunmanVideoUrl();
+      digitalHumanVideoUrl = getDefaultInstance().getDigitalHumanVideoUrl();
       onChanged();
       return this;
     }
     /**
-     * <code>string digital_hunman_video_url = 8;</code>
-     * @param value The bytes for digitalHunmanVideoUrl to set.
+     * <code>string digital_human_video_url = 8;</code>
+     * @param value The bytes for digitalHumanVideoUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setDigitalHunmanVideoUrlBytes(
+    public Builder setDigitalHumanVideoUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      digitalHunmanVideoUrl = value;
+      digitalHumanVideoUrl = value;
       onChanged();
       return this;
     }

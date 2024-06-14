@@ -14,10 +14,10 @@ public interface ArticleCreationOrBuilder extends
   long getArticleCreationId();
 
   /**
-   * <code>int64 last_article_creation_id = 2;</code>
-   * @return The lastArticleCreationId.
+   * <code>int64 article_collection_id = 2;</code>
+   * @return The articleCollectionId.
    */
-  long getLastArticleCreationId();
+  long getArticleCollectionId();
 
   /**
    * <code>string title = 3;</code>
@@ -80,16 +80,16 @@ public interface ArticleCreationOrBuilder extends
       getCreationTypeBytes();
 
   /**
-   * <code>string digital_hunman_video_url = 8;</code>
-   * @return The digitalHunmanVideoUrl.
+   * <code>string digital_human_video_url = 8;</code>
+   * @return The digitalHumanVideoUrl.
    */
-  java.lang.String getDigitalHunmanVideoUrl();
+  java.lang.String getDigitalHumanVideoUrl();
   /**
-   * <code>string digital_hunman_video_url = 8;</code>
-   * @return The bytes for digitalHunmanVideoUrl.
+   * <code>string digital_human_video_url = 8;</code>
+   * @return The bytes for digitalHumanVideoUrl.
    */
   com.google.protobuf.ByteString
-      getDigitalHunmanVideoUrlBytes();
+      getDigitalHumanVideoUrlBytes();
 
   /**
    * <code>string created_at = 9;</code>

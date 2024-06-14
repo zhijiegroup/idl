@@ -8,13 +8,13 @@ export { base, user };
 
 export interface ArticleCreation {
   article_creation_id?: string;
-  last_article_creation_id?: string;
+  article_collection_id?: string;
   title?: string;
   ai_result?: string;
   status?: string;
   topic?: string;
   creation_type?: string;
-  digital_hunman_video_url?: string;
+  digital_human_video_url?: string;
   created_at?: string;
   content?: string;
   product_name?: string;
