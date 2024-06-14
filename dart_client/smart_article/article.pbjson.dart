@@ -18,13 +18,13 @@ const ArticleCreation$json = {
   '1': 'ArticleCreation',
   '2': [
     {'1': 'article_creation_id', '3': 1, '4': 1, '5': 3, '10': 'articleCreationId'},
-    {'1': 'last_article_creation_id', '3': 2, '4': 1, '5': 3, '10': 'lastArticleCreationId'},
+    {'1': 'article_collection_id', '3': 2, '4': 1, '5': 3, '10': 'articleCollectionId'},
     {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
     {'1': 'ai_result', '3': 4, '4': 1, '5': 9, '10': 'aiResult'},
     {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
     {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
-    {'1': 'digital_hunman_video_url', '3': 8, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
+    {'1': 'digital_human_video_url', '3': 8, '4': 1, '5': 9, '10': 'digitalHumanVideoUrl'},
     {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'content', '3': 10, '4': 1, '5': 9, '10': 'content'},
     {'1': 'product_name', '3': 11, '4': 1, '5': 9, '10': 'productName'},
@@ -34,13 +34,13 @@ const ArticleCreation$json = {
 /// Descriptor for `ArticleCreation`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List articleCreationDescriptor = $convert.base64Decode(
     'Cg9BcnRpY2xlQ3JlYXRpb24SLgoTYXJ0aWNsZV9jcmVhdGlvbl9pZBgBIAEoA1IRYXJ0aWNsZU'
-    'NyZWF0aW9uSWQSNwoYbGFzdF9hcnRpY2xlX2NyZWF0aW9uX2lkGAIgASgDUhVsYXN0QXJ0aWNs'
-    'ZUNyZWF0aW9uSWQSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhsKCWFpX3Jlc3VsdBgEIAEoCVIIYW'
-    'lSZXN1bHQSFgoGc3RhdHVzGAUgASgJUgZzdGF0dXMSFAoFdG9waWMYBiABKAlSBXRvcGljEiMK'
-    'DWNyZWF0aW9uX3R5cGUYByABKAlSDGNyZWF0aW9uVHlwZRI3ChhkaWdpdGFsX2h1bm1hbl92aW'
-    'Rlb191cmwYCCABKAlSFWRpZ2l0YWxIdW5tYW5WaWRlb1VybBIdCgpjcmVhdGVkX2F0GAkgASgJ'
-    'UgljcmVhdGVkQXQSGAoHY29udGVudBgKIAEoCVIHY29udGVudBIhCgxwcm9kdWN0X25hbWUYCy'
-    'ABKAlSC3Byb2R1Y3ROYW1l');
+    'NyZWF0aW9uSWQSMgoVYXJ0aWNsZV9jb2xsZWN0aW9uX2lkGAIgASgDUhNhcnRpY2xlQ29sbGVj'
+    'dGlvbklkEhQKBXRpdGxlGAMgASgJUgV0aXRsZRIbCglhaV9yZXN1bHQYBCABKAlSCGFpUmVzdW'
+    'x0EhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEhQKBXRvcGljGAYgASgJUgV0b3BpYxIjCg1jcmVh'
+    'dGlvbl90eXBlGAcgASgJUgxjcmVhdGlvblR5cGUSNQoXZGlnaXRhbF9odW1hbl92aWRlb191cm'
+    'wYCCABKAlSFGRpZ2l0YWxIdW1hblZpZGVvVXJsEh0KCmNyZWF0ZWRfYXQYCSABKAlSCWNyZWF0'
+    'ZWRBdBIYCgdjb250ZW50GAogASgJUgdjb250ZW50EiEKDHByb2R1Y3RfbmFtZRgLIAEoCVILcH'
+    'JvZHVjdE5hbWU=');
 
 @$core.Deprecated('Use articleCreationDraftDescriptor instead')
 const ArticleCreationDraft$json = {

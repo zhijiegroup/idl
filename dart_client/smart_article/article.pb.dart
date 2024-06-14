@@ -19,13 +19,13 @@ import '../base.pb.dart' as $0;
 class ArticleCreation extends $pb.GeneratedMessage {
   factory ArticleCreation({
     $fixnum.Int64? articleCreationId,
-    $fixnum.Int64? lastArticleCreationId,
+    $fixnum.Int64? articleCollectionId,
     $core.String? title,
     $core.String? aiResult,
     $core.String? status,
     $core.String? topic,
     $core.String? creationType,
-    $core.String? digitalHunmanVideoUrl,
+    $core.String? digitalHumanVideoUrl,
     $core.String? createdAt,
     $core.String? content,
     $core.String? productName,
@@ -34,8 +34,8 @@ class ArticleCreation extends $pb.GeneratedMessage {
     if (articleCreationId != null) {
       $result.articleCreationId = articleCreationId;
     }
-    if (lastArticleCreationId != null) {
-      $result.lastArticleCreationId = lastArticleCreationId;
+    if (articleCollectionId != null) {
+      $result.articleCollectionId = articleCollectionId;
     }
     if (title != null) {
       $result.title = title;
@@ -52,8 +52,8 @@ class ArticleCreation extends $pb.GeneratedMessage {
     if (creationType != null) {
       $result.creationType = creationType;
     }
-    if (digitalHunmanVideoUrl != null) {
-      $result.digitalHunmanVideoUrl = digitalHunmanVideoUrl;
+    if (digitalHumanVideoUrl != null) {
+      $result.digitalHumanVideoUrl = digitalHumanVideoUrl;
     }
     if (createdAt != null) {
       $result.createdAt = createdAt;
@@ -72,13 +72,13 @@ class ArticleCreation extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArticleCreation', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'articleCreationId')
-    ..aInt64(2, _omitFieldNames ? '' : 'lastArticleCreationId')
+    ..aInt64(2, _omitFieldNames ? '' : 'articleCollectionId')
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'aiResult')
     ..aOS(5, _omitFieldNames ? '' : 'status')
     ..aOS(6, _omitFieldNames ? '' : 'topic')
     ..aOS(7, _omitFieldNames ? '' : 'creationType')
-    ..aOS(8, _omitFieldNames ? '' : 'digitalHunmanVideoUrl')
+    ..aOS(8, _omitFieldNames ? '' : 'digitalHumanVideoUrl')
     ..aOS(9, _omitFieldNames ? '' : 'createdAt')
     ..aOS(10, _omitFieldNames ? '' : 'content')
     ..aOS(11, _omitFieldNames ? '' : 'productName')
@@ -116,13 +116,13 @@ class ArticleCreation extends $pb.GeneratedMessage {
   void clearArticleCreationId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get lastArticleCreationId => $_getI64(1);
+  $fixnum.Int64 get articleCollectionId => $_getI64(1);
   @$pb.TagNumber(2)
-  set lastArticleCreationId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set articleCollectionId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasLastArticleCreationId() => $_has(1);
+  $core.bool hasArticleCollectionId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLastArticleCreationId() => clearField(2);
+  void clearArticleCollectionId() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get title => $_getSZ(2);
@@ -170,13 +170,13 @@ class ArticleCreation extends $pb.GeneratedMessage {
   void clearCreationType() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get digitalHunmanVideoUrl => $_getSZ(7);
+  $core.String get digitalHumanVideoUrl => $_getSZ(7);
   @$pb.TagNumber(8)
-  set digitalHunmanVideoUrl($core.String v) { $_setString(7, v); }
+  set digitalHumanVideoUrl($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasDigitalHunmanVideoUrl() => $_has(7);
+  $core.bool hasDigitalHumanVideoUrl() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDigitalHunmanVideoUrl() => clearField(8);
+  void clearDigitalHumanVideoUrl() => clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get createdAt => $_getSZ(8);
