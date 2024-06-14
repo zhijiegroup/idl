@@ -283,6 +283,7 @@ message ArticleCreationInfo {
     string ai_result = 3;
     string ai_reason = 4;
     string ai_evaluation = 5;
+    string product_name = 6;
 }
 
 message ArticleContentModeration {
