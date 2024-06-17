@@ -121,6 +121,7 @@ export interface ListMyArticleCreationDraftRequest {
   topic?: string;
   start?: string;
   end?: string;
+  mode?: string;
   pagination?: base.PaginationRequest;
 }
 
