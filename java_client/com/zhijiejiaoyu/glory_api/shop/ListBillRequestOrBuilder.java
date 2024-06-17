@@ -35,10 +35,10 @@ public interface ListBillRequestOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int64 tenant_id = 3;</code>
-   * @return The tenantId.
+   * <code>int32 status = 3;</code>
+   * @return The status.
    */
-  long getTenantId();
+  int getStatus();
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

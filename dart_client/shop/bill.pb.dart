@@ -309,7 +309,7 @@ class ListBillRequest extends $pb.GeneratedMessage {
   factory ListBillRequest({
     $0.BaseRequest? baseRequest,
     $core.String? name,
-    $fixnum.Int64? tenantId,
+    $core.int? status,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -319,8 +319,8 @@ class ListBillRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (tenantId != null) {
-      $result.tenantId = tenantId;
+    if (status != null) {
+      $result.status = status;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -334,7 +334,7 @@ class ListBillRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBillRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aInt64(3, _omitFieldNames ? '' : 'tenantId')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.O3)
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -381,13 +381,13 @@ class ListBillRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get tenantId => $_getI64(2);
+  $core.int get status => $_getIZ(2);
   @$pb.TagNumber(3)
-  set tenantId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set status($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTenantId() => $_has(2);
+  $core.bool hasStatus() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTenantId() => clearField(3);
+  void clearStatus() => clearField(3);
 
   @$pb.TagNumber(100)
   $0.PaginationRequest get pagination => $_getN(3);

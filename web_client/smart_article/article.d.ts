@@ -29,6 +29,7 @@ export interface ArticleCreationDraft {
   content?: string;
   creation_type?: string;
   created_at?: string;
+  product_name?: string;
 }
 
 export interface CreateArticleCreationRequest {

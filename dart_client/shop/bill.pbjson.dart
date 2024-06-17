@@ -72,7 +72,7 @@ const ListBillRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'tenant_id', '3': 3, '4': 1, '5': 3, '10': 'tenantId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 5, '10': 'status'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -80,9 +80,9 @@ const ListBillRequest$json = {
 /// Descriptor for `ListBillRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listBillRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QmlsbFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYmFzZS5CYXNlUmVxdW'
-    'VzdFILYmFzZVJlcXVlc3QSEgoEbmFtZRgCIAEoCVIEbmFtZRIbCgl0ZW5hbnRfaWQYAyABKANS'
-    'CHRlbmFudElkEjcKCnBhZ2luYXRpb24YZCABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0Ug'
-    'pwYWdpbmF0aW9u');
+    'VzdFILYmFzZVJlcXVlc3QSEgoEbmFtZRgCIAEoCVIEbmFtZRIWCgZzdGF0dXMYAyABKAVSBnN0'
+    'YXR1cxI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW'
+    '5hdGlvbg==');
 
 @$core.Deprecated('Use listBillResponseDescriptor instead')
 const ListBillResponse$json = {

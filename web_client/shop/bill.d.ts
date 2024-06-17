@@ -31,7 +31,7 @@ export interface Bill {
 export interface ListBillRequest {
   base_request?: base.BaseRequest;
   name?: string;
-  tenant_id?: string;
+  status?: number;
   pagination?: base.PaginationRequest;
 }
 

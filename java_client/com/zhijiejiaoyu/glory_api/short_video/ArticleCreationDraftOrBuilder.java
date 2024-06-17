@@ -90,4 +90,16 @@ public interface ArticleCreationDraftOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>string product_name = 9;</code>
+   * @return The productName.
+   */
+  java.lang.String getProductName();
+  /**
+   * <code>string product_name = 9;</code>
+   * @return The bytes for productName.
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
 }

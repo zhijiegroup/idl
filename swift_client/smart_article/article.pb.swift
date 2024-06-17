@@ -73,6 +73,8 @@ struct GloryApi_ArticleCreationDraft {
 
   var createdAt: String = String()
 
+  var productName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -2847,6 +2849,7 @@ extension GloryApi_ArticleCreationDraft: SwiftProtobuf.Message, SwiftProtobuf._M
     6: .same(proto: "content"),
     7: .standard(proto: "creation_type"),
     8: .standard(proto: "created_at"),
+    9: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2863,6 +2866,7 @@ extension GloryApi_ArticleCreationDraft: SwiftProtobuf.Message, SwiftProtobuf._M
       case 6: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -2893,6 +2897,9 @@ extension GloryApi_ArticleCreationDraft: SwiftProtobuf.Message, SwiftProtobuf._M
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 8)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2905,6 +2912,7 @@ extension GloryApi_ArticleCreationDraft: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
