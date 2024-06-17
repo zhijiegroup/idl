@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private ListMyArticleCreationDraftRequest() {
     title = "";
     topic = "";
-    mode = "";
+    creationType = "";
   }
 
   @java.lang.Override
@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            mode = s;
+            creationType = s;
             break;
           }
           case 802: {
@@ -261,38 +261,38 @@ private static final long serialVersionUID = 0L;
     return end ;
   }
 
-  public static final int MODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object mode ;
+  public static final int CREATION_TYPE_FIELD_NUMBER = 6;
+  private volatile java.lang.Object creationType ;
   /**
-   * <code>string mode = 6;</code>
-   * @return The mode.
+   * <code>string creation_type = 6;</code>
+   * @return The creationType.
    */
   @java.lang.Override
-  public java.lang.String getMode() {
-    java.lang.Object ref = mode ;
+  public java.lang.String getCreationType() {
+    java.lang.Object ref = creationType ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      mode = s;
+      creationType = s;
       return s;
     }
   }
   /**
-   * <code>string mode = 6;</code>
-   * @return The bytes for mode.
+   * <code>string creation_type = 6;</code>
+   * @return The bytes for creationType.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getModeBytes() {
-    java.lang.Object ref = mode ;
+      getCreationTypeBytes() {
+    java.lang.Object ref = creationType ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      mode = b;
+      creationType = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -354,8 +354,8 @@ private static final long serialVersionUID = 0L;
     if (end != 0L) {
       output.writeInt64(5, end );
     }
-    if (!getModeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, mode );
+    if (!getCreationTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creationType );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -387,8 +387,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, end );
     }
-    if (!getModeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, mode );
+    if (!getCreationTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creationType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -422,8 +422,8 @@ private static final long serialVersionUID = 0L;
         != other.getStart()) return false;
     if (getEnd()
         != other.getEnd()) return false;
-    if (!getMode()
-        .equals(other.getMode())) return false;
+    if (!getCreationType()
+        .equals(other.getCreationType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -454,8 +454,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + END_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getEnd());
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + getMode().hashCode();
+    hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getCreationType().hashCode();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -607,7 +607,7 @@ private static final long serialVersionUID = 0L;
 
       end = 0L;
 
-      mode = "";
+      creationType = "";
 
       if (paginationBuilder == null) {
         pagination = null;
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
       result.topic = topic ;
       result.start = start ;
       result.end = end ;
-      result.mode = mode ;
+      result.creationType = creationType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -721,8 +721,8 @@ private static final long serialVersionUID = 0L;
       if (other.getEnd() != 0L) {
         setEnd(other.getEnd());
       }
-      if (!other.getMode().isEmpty()) {
-        mode = other.mode ;
+      if (!other.getCreationType().isEmpty()) {
+        creationType = other.creationType ;
         onChanged();
       }
       if (other.hasPagination()) {
@@ -1090,78 +1090,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object mode = "";
+    private java.lang.Object creationType = "";
     /**
-     * <code>string mode = 6;</code>
-     * @return The mode.
+     * <code>string creation_type = 6;</code>
+     * @return The creationType.
      */
-    public java.lang.String getMode() {
-      java.lang.Object ref = mode ;
+    public java.lang.String getCreationType() {
+      java.lang.Object ref = creationType ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        mode = s;
+        creationType = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string mode = 6;</code>
-     * @return The bytes for mode.
+     * <code>string creation_type = 6;</code>
+     * @return The bytes for creationType.
      */
     public com.google.protobuf.ByteString
-        getModeBytes() {
-      java.lang.Object ref = mode ;
+        getCreationTypeBytes() {
+      java.lang.Object ref = creationType ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        mode = b;
+        creationType = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string mode = 6;</code>
-     * @param value The mode to set.
+     * <code>string creation_type = 6;</code>
+     * @param value The creationType to set.
      * @return This builder for chaining.
      */
-    public Builder setMode(
+    public Builder setCreationType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      mode = value;
+      creationType = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string mode = 6;</code>
+     * <code>string creation_type = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearMode() {
+    public Builder clearCreationType() {
       
-      mode = getDefaultInstance().getMode();
+      creationType = getDefaultInstance().getCreationType();
       onChanged();
       return this;
     }
     /**
-     * <code>string mode = 6;</code>
-     * @param value The bytes for mode to set.
+     * <code>string creation_type = 6;</code>
+     * @param value The bytes for creationType to set.
      * @return This builder for chaining.
      */
-    public Builder setModeBytes(
+    public Builder setCreationTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      mode = value;
+      creationType = value;
       onChanged();
       return this;
     }

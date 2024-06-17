@@ -59,16 +59,16 @@ public interface ListMyArticleCreationDraftRequestOrBuilder extends
   long getEnd();
 
   /**
-   * <code>string mode = 6;</code>
-   * @return The mode.
+   * <code>string creation_type = 6;</code>
+   * @return The creationType.
    */
-  java.lang.String getMode();
+  java.lang.String getCreationType();
   /**
-   * <code>string mode = 6;</code>
-   * @return The bytes for mode.
+   * <code>string creation_type = 6;</code>
+   * @return The bytes for creationType.
    */
   com.google.protobuf.ByteString
-      getModeBytes();
+      getCreationTypeBytes();
 
   /**
    * <code>.base.PaginationRequest pagination = 100;</code>

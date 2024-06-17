@@ -1430,7 +1430,7 @@ class ListMyArticleCreationDraftRequest extends $pb.GeneratedMessage {
     $core.String? topic,
     $fixnum.Int64? start,
     $fixnum.Int64? end,
-    $core.String? mode,
+    $core.String? creationType,
     $0.PaginationRequest? pagination,
   }) {
     final $result = create();
@@ -1449,8 +1449,8 @@ class ListMyArticleCreationDraftRequest extends $pb.GeneratedMessage {
     if (end != null) {
       $result.end = end;
     }
-    if (mode != null) {
-      $result.mode = mode;
+    if (creationType != null) {
+      $result.creationType = creationType;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -1467,7 +1467,7 @@ class ListMyArticleCreationDraftRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'topic')
     ..aInt64(4, _omitFieldNames ? '' : 'start')
     ..aInt64(5, _omitFieldNames ? '' : 'end')
-    ..aOS(6, _omitFieldNames ? '' : 'mode')
+    ..aOS(6, _omitFieldNames ? '' : 'creationType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -1541,13 +1541,13 @@ class ListMyArticleCreationDraftRequest extends $pb.GeneratedMessage {
   void clearEnd() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get mode => $_getSZ(5);
+  $core.String get creationType => $_getSZ(5);
   @$pb.TagNumber(6)
-  set mode($core.String v) { $_setString(5, v); }
+  set creationType($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasMode() => $_has(5);
+  $core.bool hasCreationType() => $_has(5);
   @$pb.TagNumber(6)
-  void clearMode() => clearField(6);
+  void clearCreationType() => clearField(6);
 
   @$pb.TagNumber(100)
   $0.PaginationRequest get pagination => $_getN(6);
