@@ -428,6 +428,8 @@ struct GloryApi_ListMyArticleCreationDraftRequest {
 
   var end: Int64 = 0
 
+  var mode: String = String()
+
   var pagination: Base_PaginationRequest {
     get {return _pagination ?? Base_PaginationRequest()}
     set {_pagination = newValue}
@@ -3552,6 +3554,7 @@ extension GloryApi_ListMyArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     3: .same(proto: "topic"),
     4: .same(proto: "start"),
     5: .same(proto: "end"),
+    6: .same(proto: "mode"),
     100: .same(proto: "pagination"),
   ]
 
@@ -3566,6 +3569,7 @@ extension GloryApi_ListMyArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 3: try { try decoder.decodeSingularStringField(value: &self.topic) }()
       case 4: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
       case 5: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.mode) }()
       case 100: try { try decoder.decodeSingularMessageField(value: &self._pagination) }()
       default: break
       }
@@ -3592,6 +3596,9 @@ extension GloryApi_ListMyArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if self.end != 0 {
       try visitor.visitSingularInt64Field(value: self.end, fieldNumber: 5)
     }
+    if !self.mode.isEmpty {
+      try visitor.visitSingularStringField(value: self.mode, fieldNumber: 6)
+    }
     try { if let v = self._pagination {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
     } }()
@@ -3604,6 +3611,7 @@ extension GloryApi_ListMyArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.topic != rhs.topic {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}
+    if lhs.mode != rhs.mode {return false}
     if lhs._pagination != rhs._pagination {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

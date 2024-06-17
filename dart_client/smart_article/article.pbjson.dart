@@ -271,6 +271,7 @@ const ListMyArticleCreationDraftRequest$json = {
     {'1': 'topic', '3': 3, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'start', '3': 4, '4': 1, '5': 3, '10': 'start'},
     {'1': 'end', '3': 5, '4': 1, '5': 3, '10': 'end'},
+    {'1': 'mode', '3': 6, '4': 1, '5': 9, '10': 'mode'},
     {'1': 'pagination', '3': 100, '4': 1, '5': 11, '6': '.base.PaginationRequest', '10': 'pagination'},
   ],
 };
@@ -280,8 +281,8 @@ final $typed_data.Uint8List listMyArticleCreationDraftRequestDescriptor = $conve
     'CiFMaXN0TXlBcnRpY2xlQ3JlYXRpb25EcmFmdFJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgAS'
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSFAoFdGl0bGUYAiABKAlSBXRpdGxl'
     'EhQKBXRvcGljGAMgASgJUgV0b3BpYxIUCgVzdGFydBgEIAEoA1IFc3RhcnQSEAoDZW5kGAUgAS'
-    'gDUgNlbmQSNwoKcGFnaW5hdGlvbhhkIAEoCzIXLmJhc2UuUGFnaW5hdGlvblJlcXVlc3RSCnBh'
-    'Z2luYXRpb24=');
+    'gDUgNlbmQSEgoEbW9kZRgGIAEoCVIEbW9kZRI3CgpwYWdpbmF0aW9uGGQgASgLMhcuYmFzZS5Q'
+    'YWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listMyArticleCreationDraftResponseDescriptor instead')
 const ListMyArticleCreationDraftResponse$json = {
