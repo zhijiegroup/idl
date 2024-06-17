@@ -42,4 +42,10 @@ public interface GetApprovalFlowDetailResponseOrBuilder extends
    * @return The currentLevelOrder.
    */
   int getCurrentLevelOrder();
+
+  /**
+   * <code>int64 next_id = 4;</code>
+   * @return The nextId.
+   */
+  long getNextId();
 }

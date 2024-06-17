@@ -1003,6 +1003,7 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
     $0.BaseResponse? baseResp,
     ApprovalFlowDetail? approvalFlow,
     $core.int? currentLevelOrder,
+    $fixnum.Int64? nextId,
   }) {
     final $result = create();
     if (baseResp != null) {
@@ -1014,6 +1015,9 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
     if (currentLevelOrder != null) {
       $result.currentLevelOrder = currentLevelOrder;
     }
+    if (nextId != null) {
+      $result.nextId = nextId;
+    }
     return $result;
   }
   GetApprovalFlowDetailResponse._() : super();
@@ -1024,6 +1028,7 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
     ..aOM<ApprovalFlowDetail>(2, _omitFieldNames ? '' : 'approvalFlow', subBuilder: ApprovalFlowDetail.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'currentLevelOrder', $pb.PbFieldType.O3)
+    ..aInt64(4, _omitFieldNames ? '' : 'nextId')
     ..hasRequiredFields = false
   ;
 
@@ -1078,6 +1083,15 @@ class GetApprovalFlowDetailResponse extends $pb.GeneratedMessage {
   $core.bool hasCurrentLevelOrder() => $_has(2);
   @$pb.TagNumber(3)
   void clearCurrentLevelOrder() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get nextId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set nextId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNextId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNextId() => clearField(4);
 }
 
 

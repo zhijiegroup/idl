@@ -110,13 +110,13 @@ public final class ApprovalFlow {
       "\n\007shop_id\030\016 \001(\003\022\022\n\nproduct_id\030\017 \001(\003\022\021\n\tf" +
       "low_note\030\020 \001(\t\"a\n\034GetApprovalFlowDetailR" +
       "equest\022\'\n\014base_request\030\001 \001(\0132\021.base.Base" +
-      "Request\022\030\n\020approval_flow_id\030\002 \001(\003\"\231\001\n\035Ge" +
+      "Request\022\030\n\020approval_flow_id\030\002 \001(\003\"\252\001\n\035Ge" +
       "tApprovalFlowDetailResponse\022%\n\tbase_resp" +
       "\030\001 \001(\0132\022.base.BaseResponse\0224\n\rapproval_f" +
       "low\030\002 \001(\0132\035.glory_api.ApprovalFlowDetail" +
-      "\022\033\n\023current_level_order\030\003 \001(\005B*\n&com.zhi" +
-      "jiejiaoyu.glory_api.short_videoP\001b\006proto" +
-      "3"
+      "\022\033\n\023current_level_order\030\003 \001(\005\022\017\n\007next_id" +
+      "\030\004 \001(\003B*\n&com.zhijiejiaoyu.glory_api.sho" +
+      "rt_videoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -182,7 +182,7 @@ public final class ApprovalFlow {
     internal_static_glory_api_GetApprovalFlowDetailResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_glory_api_GetApprovalFlowDetailResponse_descriptor,
-        new java.lang.String[] { "BaseResp", "ApprovalFlow", "CurrentLevelOrder", });
+        new java.lang.String[] { "BaseResp", "ApprovalFlow", "CurrentLevelOrder", "NextId", });
     com.zhijiejiaoyu.base.Base.getDescriptor();
   }
 

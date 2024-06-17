@@ -312,6 +312,11 @@ struct GloryApi_GetApprovalFlowDetailResponse {
     set {_uniqueStorage()._currentLevelOrder = newValue}
   }
 
+  var nextID: Int64 {
+    get {return _storage._nextID}
+    set {_uniqueStorage()._nextID = newValue}
+  }
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -886,12 +891,14 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
     1: .standard(proto: "base_resp"),
     2: .standard(proto: "approval_flow"),
     3: .standard(proto: "current_level_order"),
+    4: .standard(proto: "next_id"),
   ]
 
   fileprivate class _StorageClass {
     var _baseResp: Base_BaseResponse? = nil
     var _approvalFlow: GloryApi_ApprovalFlowDetail? = nil
     var _currentLevelOrder: Int32 = 0
+    var _nextID: Int64 = 0
 
     #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
@@ -909,6 +916,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
       _baseResp = source._baseResp
       _approvalFlow = source._approvalFlow
       _currentLevelOrder = source._currentLevelOrder
+      _nextID = source._nextID
     }
   }
 
@@ -930,6 +938,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
         case 1: try { try decoder.decodeSingularMessageField(value: &_storage._baseResp) }()
         case 2: try { try decoder.decodeSingularMessageField(value: &_storage._approvalFlow) }()
         case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._currentLevelOrder) }()
+        case 4: try { try decoder.decodeSingularInt64Field(value: &_storage._nextID) }()
         default: break
         }
       }
@@ -951,6 +960,9 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
       if _storage._currentLevelOrder != 0 {
         try visitor.visitSingularInt32Field(value: _storage._currentLevelOrder, fieldNumber: 3)
       }
+      if _storage._nextID != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._nextID, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -963,6 +975,7 @@ extension GloryApi_GetApprovalFlowDetailResponse: SwiftProtobuf.Message, SwiftPr
         if _storage._baseResp != rhs_storage._baseResp {return false}
         if _storage._approvalFlow != rhs_storage._approvalFlow {return false}
         if _storage._currentLevelOrder != rhs_storage._currentLevelOrder {return false}
+        if _storage._nextID != rhs_storage._nextID {return false}
         return true
       }
       if !storagesAreEqual {return false}
