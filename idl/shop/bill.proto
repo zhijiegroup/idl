@@ -31,7 +31,7 @@ message Bill {
 message ListBillRequest {
   base.BaseRequest base_request = 1;
   string name = 2;
-  int64 tenant_id = 3;
+  int32 status = 3;
   base.PaginationRequest pagination = 100;
 }
 
