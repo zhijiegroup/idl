@@ -70,7 +70,7 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            tenantId = input.readInt64();
+            status = input.readInt32();
             break;
           }
           case 802: {
@@ -182,15 +182,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TENANT_ID_FIELD_NUMBER = 3;
-  private long tenantId ;
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private int status ;
   /**
-   * <code>int64 tenant_id = 3;</code>
-   * @return The tenantId.
+   * <code>int32 status = 3;</code>
+   * @return The status.
    */
   @java.lang.Override
-  public long getTenantId() {
-    return tenantId ;
+  public int getStatus() {
+    return status ;
   }
 
   public static final int PAGINATION_FIELD_NUMBER = 100;
@@ -239,8 +239,8 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name );
     }
-    if (tenantId != 0L) {
-      output.writeInt64(3, tenantId );
+    if (status != 0) {
+      output.writeInt32(3, status );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -261,9 +261,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name );
     }
-    if (tenantId != 0L) {
+    if (status != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, tenantId );
+        .computeInt32Size(3, status );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -291,8 +291,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getName()
         .equals(other.getName())) return false;
-    if (getTenantId()
-        != other.getTenantId()) return false;
+    if (getStatus()
+        != other.getStatus()) return false;
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -315,9 +315,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTenantId());
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus();
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
       hash = (53 * hash) + getPagination().hashCode();
@@ -463,7 +462,7 @@ private static final long serialVersionUID = 0L;
       }
       name = "";
 
-      tenantId = 0L;
+      status = 0;
 
       if (paginationBuilder == null) {
         pagination = null;
@@ -503,7 +502,7 @@ private static final long serialVersionUID = 0L;
         result.baseRequest = baseRequestBuilder .build();
       }
       result.name = name ;
-      result.tenantId = tenantId ;
+      result.status = status ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
       } else {
@@ -564,8 +563,8 @@ private static final long serialVersionUID = 0L;
         name = other.name ;
         onChanged();
       }
-      if (other.getTenantId() != 0L) {
-        setTenantId(other.getTenantId());
+      if (other.getStatus() != 0) {
+        setStatus(other.getStatus());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -794,33 +793,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long tenantId ;
+    private int status ;
     /**
-     * <code>int64 tenant_id = 3;</code>
-     * @return The tenantId.
+     * <code>int32 status = 3;</code>
+     * @return The status.
      */
     @java.lang.Override
-    public long getTenantId() {
-      return tenantId ;
+    public int getStatus() {
+      return status ;
     }
     /**
-     * <code>int64 tenant_id = 3;</code>
-     * @param value The tenantId to set.
+     * <code>int32 status = 3;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setTenantId(long value) {
+    public Builder setStatus(int value) {
       
-      tenantId = value;
+      status = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 tenant_id = 3;</code>
+     * <code>int32 status = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTenantId() {
+    public Builder clearStatus() {
       
-      tenantId = 0L;
+      status = 0;
       onChanged();
       return this;
     }

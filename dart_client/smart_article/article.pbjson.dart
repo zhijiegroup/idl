@@ -54,6 +54,7 @@ const ArticleCreationDraft$json = {
     {'1': 'content', '3': 6, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'created_at', '3': 8, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'product_name', '3': 9, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -64,7 +65,8 @@ final $typed_data.Uint8List articleCreationDraftDescriptor = $convert.base64Deco
     'EWFydGljbGVDcmVhdGlvbklkEh8KC2NvdXJzZV9jb2RlGAMgASgJUgpjb3Vyc2VDb2RlEioKEW'
     'NvdXJzZV90b3BpY19jb2RlGAQgASgJUg9jb3Vyc2VUb3BpY0NvZGUSFAoFdGl0bGUYBSABKAlS'
     'BXRpdGxlEhgKB2NvbnRlbnQYBiABKAlSB2NvbnRlbnQSIwoNY3JlYXRpb25fdHlwZRgHIAEoCV'
-    'IMY3JlYXRpb25UeXBlEh0KCmNyZWF0ZWRfYXQYCCABKAlSCWNyZWF0ZWRBdA==');
+    'IMY3JlYXRpb25UeXBlEh0KCmNyZWF0ZWRfYXQYCCABKAlSCWNyZWF0ZWRBdBIhCgxwcm9kdWN0'
+    'X25hbWUYCSABKAlSC3Byb2R1Y3ROYW1l');
 
 @$core.Deprecated('Use createArticleCreationRequestDescriptor instead')
 const CreateArticleCreationRequest$json = {

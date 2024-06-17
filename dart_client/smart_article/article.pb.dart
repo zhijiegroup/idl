@@ -216,6 +216,7 @@ class ArticleCreationDraft extends $pb.GeneratedMessage {
     $core.String? content,
     $core.String? creationType,
     $core.String? createdAt,
+    $core.String? productName,
   }) {
     final $result = create();
     if (articleCreationDraftId != null) {
@@ -242,6 +243,9 @@ class ArticleCreationDraft extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (productName != null) {
+      $result.productName = productName;
+    }
     return $result;
   }
   ArticleCreationDraft._() : super();
@@ -257,6 +261,7 @@ class ArticleCreationDraft extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'content')
     ..aOS(7, _omitFieldNames ? '' : 'creationType')
     ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(9, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -352,6 +357,15 @@ class ArticleCreationDraft extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearCreatedAt() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get productName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set productName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasProductName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearProductName() => clearField(9);
 }
 
 class CreateArticleCreationRequest extends $pb.GeneratedMessage {
