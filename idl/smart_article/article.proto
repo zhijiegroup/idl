@@ -29,6 +29,7 @@ message ArticleCreationDraft {
     string content = 6;
     string creation_type = 7;
     string created_at = 8;
+    string product_name = 9;
 }
 
 
