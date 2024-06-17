@@ -3569,6 +3569,7 @@ class ArticleCreationInfo extends $pb.GeneratedMessage {
     $core.String? aiResult,
     $core.String? aiReason,
     $core.String? aiEvaluation,
+    $core.String? productName,
   }) {
     final $result = create();
     if (title != null) {
@@ -3586,6 +3587,9 @@ class ArticleCreationInfo extends $pb.GeneratedMessage {
     if (aiEvaluation != null) {
       $result.aiEvaluation = aiEvaluation;
     }
+    if (productName != null) {
+      $result.productName = productName;
+    }
     return $result;
   }
   ArticleCreationInfo._() : super();
@@ -3598,6 +3602,7 @@ class ArticleCreationInfo extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'aiResult')
     ..aOS(4, _omitFieldNames ? '' : 'aiReason')
     ..aOS(5, _omitFieldNames ? '' : 'aiEvaluation')
+    ..aOS(6, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -3666,6 +3671,15 @@ class ArticleCreationInfo extends $pb.GeneratedMessage {
   $core.bool hasAiEvaluation() => $_has(4);
   @$pb.TagNumber(5)
   void clearAiEvaluation() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get productName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set productName($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasProductName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProductName() => clearField(6);
 }
 
 class ArticleContentModeration extends $pb.GeneratedMessage {

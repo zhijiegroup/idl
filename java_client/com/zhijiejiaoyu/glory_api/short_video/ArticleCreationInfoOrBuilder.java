@@ -66,4 +66,16 @@ public interface ArticleCreationInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAiEvaluationBytes();
+
+  /**
+   * <code>string product_name = 6;</code>
+   * @return The productName.
+   */
+  java.lang.String getProductName();
+  /**
+   * <code>string product_name = 6;</code>
+   * @return The bytes for productName.
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
 }

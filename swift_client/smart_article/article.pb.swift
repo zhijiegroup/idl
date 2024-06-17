@@ -1132,6 +1132,8 @@ struct GloryApi_ArticleCreationInfo {
 
   var aiEvaluation: String = String()
 
+  var productName: String = String()
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4872,6 +4874,7 @@ extension GloryApi_ArticleCreationInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
     3: .standard(proto: "ai_result"),
     4: .standard(proto: "ai_reason"),
     5: .standard(proto: "ai_evaluation"),
+    6: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4885,6 +4888,7 @@ extension GloryApi_ArticleCreationInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 3: try { try decoder.decodeSingularStringField(value: &self.aiResult) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.aiReason) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.aiEvaluation) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -4906,6 +4910,9 @@ extension GloryApi_ArticleCreationInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
     if !self.aiEvaluation.isEmpty {
       try visitor.visitSingularStringField(value: self.aiEvaluation, fieldNumber: 5)
     }
+    if !self.productName.isEmpty {
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4915,6 +4922,7 @@ extension GloryApi_ArticleCreationInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.aiResult != rhs.aiResult {return false}
     if lhs.aiReason != rhs.aiReason {return false}
     if lhs.aiEvaluation != rhs.aiEvaluation {return false}
+    if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -700,6 +700,7 @@ const ArticleCreationInfo$json = {
     {'1': 'ai_result', '3': 3, '4': 1, '5': 9, '10': 'aiResult'},
     {'1': 'ai_reason', '3': 4, '4': 1, '5': 9, '10': 'aiReason'},
     {'1': 'ai_evaluation', '3': 5, '4': 1, '5': 9, '10': 'aiEvaluation'},
+    {'1': 'product_name', '3': 6, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -707,7 +708,8 @@ const ArticleCreationInfo$json = {
 final $typed_data.Uint8List articleCreationInfoDescriptor = $convert.base64Decode(
     'ChNBcnRpY2xlQ3JlYXRpb25JbmZvEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIYCgdjb250ZW50GA'
     'IgASgJUgdjb250ZW50EhsKCWFpX3Jlc3VsdBgDIAEoCVIIYWlSZXN1bHQSGwoJYWlfcmVhc29u'
-    'GAQgASgJUghhaVJlYXNvbhIjCg1haV9ldmFsdWF0aW9uGAUgASgJUgxhaUV2YWx1YXRpb24=');
+    'GAQgASgJUghhaVJlYXNvbhIjCg1haV9ldmFsdWF0aW9uGAUgASgJUgxhaUV2YWx1YXRpb24SIQ'
+    'oMcHJvZHVjdF9uYW1lGAYgASgJUgtwcm9kdWN0TmFtZQ==');
 
 @$core.Deprecated('Use articleContentModerationDescriptor instead')
 const ArticleContentModeration$json = {
