@@ -79,6 +79,11 @@ private static final long serialVersionUID = 0L;
             currentLevelOrder = input.readInt32();
             break;
           }
+          case 32: {
+
+            nextId = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +179,17 @@ private static final long serialVersionUID = 0L;
     return currentLevelOrder ;
   }
 
+  public static final int NEXT_ID_FIELD_NUMBER = 4;
+  private long nextId ;
+  /**
+   * <code>int64 next_id = 4;</code>
+   * @return The nextId.
+   */
+  @java.lang.Override
+  public long getNextId() {
+    return nextId ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -197,6 +213,9 @@ private static final long serialVersionUID = 0L;
     if (currentLevelOrder != 0) {
       output.writeInt32(3, currentLevelOrder );
     }
+    if (nextId != 0L) {
+      output.writeInt64(4, nextId );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -217,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (currentLevelOrder != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, currentLevelOrder );
+    }
+    if (nextId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, nextId );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -245,6 +268,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getCurrentLevelOrder()
         != other.getCurrentLevelOrder()) return false;
+    if (getNextId()
+        != other.getNextId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -266,6 +291,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CURRENT_LEVEL_ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getCurrentLevelOrder();
+    hash = (37 * hash) + NEXT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getNextId());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -413,6 +441,8 @@ private static final long serialVersionUID = 0L;
       }
       currentLevelOrder = 0;
 
+      nextId = 0L;
+
       return this;
     }
 
@@ -450,6 +480,7 @@ private static final long serialVersionUID = 0L;
         result.approvalFlow = approvalFlowBuilder .build();
       }
       result.currentLevelOrder = currentLevelOrder ;
+      result.nextId = nextId ;
       onBuilt();
       return result;
     }
@@ -506,6 +537,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCurrentLevelOrder() != 0) {
         setCurrentLevelOrder(other.getCurrentLevelOrder());
+      }
+      if (other.getNextId() != 0L) {
+        setNextId(other.getNextId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -801,6 +835,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearCurrentLevelOrder() {
       
       currentLevelOrder = 0;
+      onChanged();
+      return this;
+    }
+
+    private long nextId ;
+    /**
+     * <code>int64 next_id = 4;</code>
+     * @return The nextId.
+     */
+    @java.lang.Override
+    public long getNextId() {
+      return nextId ;
+    }
+    /**
+     * <code>int64 next_id = 4;</code>
+     * @param value The nextId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextId(long value) {
+      
+      nextId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 next_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextId() {
+      
+      nextId = 0L;
       onChanged();
       return this;
     }

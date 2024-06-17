@@ -84,4 +84,5 @@ export interface GetApprovalFlowDetailResponse {
   base_resp?: base.BaseResponse;
   approval_flow?: ApprovalFlowDetail;
   current_level_order?: number;
+  next_id?: string;
 }
