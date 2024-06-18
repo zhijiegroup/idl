@@ -5,6 +5,7 @@ option java_multiple_files = true;
 
 import "base.proto";
 import "shop/order.proto";
+import "shop/shop.proto";
 
 message CreateBillRequest {
   base.BaseRequest base_request = 1;
@@ -25,7 +26,10 @@ message Bill {
   int32 bill_amount = 6;
   string created_at = 7;
   string settled_at = 8;
-  repeated OrderInfo orders = 9;
+  string bill_path = 9;
+  string bill_evidence = 10;
+  repeated OrderInfo orders = 19;
+  Shop shop = 20;
 }
 
 message ListBillRequest {
