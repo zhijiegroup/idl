@@ -560,7 +560,7 @@ const ListStudentArticleCreationRequest$json = {
     {'1': 'name_or_title', '3': 2, '4': 1, '5': 9, '10': 'nameOrTitle'},
     {'1': 'clas_id', '3': 3, '4': 1, '5': 3, '10': 'clasId'},
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
-    {'1': 'ai_pass', '3': 5, '4': 1, '5': 9, '10': 'aiPass'},
+    {'1': 'ai_result', '3': 5, '4': 1, '5': 9, '10': 'aiResult'},
     {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'start', '3': 7, '4': 1, '5': 3, '10': 'start'},
     {'1': 'end', '3': 8, '4': 1, '5': 3, '10': 'end'},
@@ -573,9 +573,9 @@ final $typed_data.Uint8List listStudentArticleCreationRequestDescriptor = $conve
     'CiFMaXN0U3R1ZGVudEFydGljbGVDcmVhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgAS'
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSIgoNbmFtZV9vcl90aXRsZRgCIAEo'
     'CVILbmFtZU9yVGl0bGUSFwoHY2xhc19pZBgDIAEoA1IGY2xhc0lkEhYKBnN0YXR1cxgEIAEoCV'
-    'IGc3RhdHVzEhcKB2FpX3Bhc3MYBSABKAlSBmFpUGFzcxIUCgV0b3BpYxgGIAEoCVIFdG9waWMS'
-    'FAoFc3RhcnQYByABKANSBXN0YXJ0EhAKA2VuZBgIIAEoA1IDZW5kEjcKCnBhZ2luYXRpb24YZC'
-    'ABKAsyFy5iYXNlLlBhZ2luYXRpb25SZXF1ZXN0UgpwYWdpbmF0aW9u');
+    'IGc3RhdHVzEhsKCWFpX3Jlc3VsdBgFIAEoCVIIYWlSZXN1bHQSFAoFdG9waWMYBiABKAlSBXRv'
+    'cGljEhQKBXN0YXJ0GAcgASgDUgVzdGFydBIQCgNlbmQYCCABKANSA2VuZBI3CgpwYWdpbmF0aW'
+    '9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
 
 @$core.Deprecated('Use listStudentArticleCreationResponseDescriptor instead')
 const ListStudentArticleCreationResponse$json = {

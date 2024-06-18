@@ -65,20 +65,20 @@ public interface ListStudentArticleCreationRequestOrBuilder extends
    * pass no_pass
    * </pre>
    *
-   * <code>string ai_pass = 5;</code>
-   * @return The aiPass.
+   * <code>string ai_result = 5;</code>
+   * @return The aiResult.
    */
-  java.lang.String getAiPass();
+  java.lang.String getAiResult();
   /**
    * <pre>
    * pass no_pass
    * </pre>
    *
-   * <code>string ai_pass = 5;</code>
-   * @return The bytes for aiPass.
+   * <code>string ai_result = 5;</code>
+   * @return The bytes for aiResult.
    */
   com.google.protobuf.ByteString
-      getAiPassBytes();
+      getAiResultBytes();
 
   /**
    * <pre>

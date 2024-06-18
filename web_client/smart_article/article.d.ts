@@ -230,7 +230,7 @@ export interface ListStudentArticleCreationRequest {
   /** 待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected */
   status?: string;
   /** pass no_pass */
-  ai_pass?: string;
+  ai_result?: string;
   /** 填写topic code */
   topic?: string;
   /** 时间戳精确到秒 */

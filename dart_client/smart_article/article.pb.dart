@@ -2805,7 +2805,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
     $core.String? nameOrTitle,
     $fixnum.Int64? clasId,
     $core.String? status,
-    $core.String? aiPass,
+    $core.String? aiResult,
     $core.String? topic,
     $fixnum.Int64? start,
     $fixnum.Int64? end,
@@ -2824,8 +2824,8 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
-    if (aiPass != null) {
-      $result.aiPass = aiPass;
+    if (aiResult != null) {
+      $result.aiResult = aiResult;
     }
     if (topic != null) {
       $result.topic = topic;
@@ -2850,7 +2850,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'nameOrTitle')
     ..aInt64(3, _omitFieldNames ? '' : 'clasId')
     ..aOS(4, _omitFieldNames ? '' : 'status')
-    ..aOS(5, _omitFieldNames ? '' : 'aiPass')
+    ..aOS(5, _omitFieldNames ? '' : 'aiResult')
     ..aOS(6, _omitFieldNames ? '' : 'topic')
     ..aInt64(7, _omitFieldNames ? '' : 'start')
     ..aInt64(8, _omitFieldNames ? '' : 'end')
@@ -2918,13 +2918,13 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
   void clearStatus() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get aiPass => $_getSZ(4);
+  $core.String get aiResult => $_getSZ(4);
   @$pb.TagNumber(5)
-  set aiPass($core.String v) { $_setString(4, v); }
+  set aiResult($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasAiPass() => $_has(4);
+  $core.bool hasAiResult() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAiPass() => clearField(5);
+  void clearAiResult() => clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get topic => $_getSZ(5);

@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListStudentArticleCreationRequest() {
     nameOrTitle = "";
     status = "";
-    aiPass = "";
+    aiResult = "";
     topic = "";
   }
 
@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            aiPass = s;
+            aiResult = s;
             break;
           }
           case 50: {
@@ -274,26 +274,26 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AI_PASS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object aiPass ;
+  public static final int AI_RESULT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object aiResult ;
   /**
    * <pre>
    * pass no_pass
    * </pre>
    *
-   * <code>string ai_pass = 5;</code>
-   * @return The aiPass.
+   * <code>string ai_result = 5;</code>
+   * @return The aiResult.
    */
   @java.lang.Override
-  public java.lang.String getAiPass() {
-    java.lang.Object ref = aiPass ;
+  public java.lang.String getAiResult() {
+    java.lang.Object ref = aiResult ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      aiPass = s;
+      aiResult = s;
       return s;
     }
   }
@@ -302,18 +302,18 @@ private static final long serialVersionUID = 0L;
    * pass no_pass
    * </pre>
    *
-   * <code>string ai_pass = 5;</code>
-   * @return The bytes for aiPass.
+   * <code>string ai_result = 5;</code>
+   * @return The bytes for aiResult.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getAiPassBytes() {
-    java.lang.Object ref = aiPass ;
+      getAiResultBytes() {
+    java.lang.Object ref = aiResult ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      aiPass = b;
+      aiResult = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -448,8 +448,8 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status );
     }
-    if (!getAiPassBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, aiPass );
+    if (!getAiResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, aiResult );
     }
     if (!getTopicBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, topic );
@@ -486,8 +486,8 @@ private static final long serialVersionUID = 0L;
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status );
     }
-    if (!getAiPassBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, aiPass );
+    if (!getAiResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, aiResult );
     }
     if (!getTopicBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, topic );
@@ -530,8 +530,8 @@ private static final long serialVersionUID = 0L;
         != other.getClasId()) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
-    if (!getAiPass()
-        .equals(other.getAiPass())) return false;
+    if (!getAiResult()
+        .equals(other.getAiResult())) return false;
     if (!getTopic()
         .equals(other.getTopic())) return false;
     if (getStart()
@@ -565,8 +565,8 @@ private static final long serialVersionUID = 0L;
         getClasId());
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
-    hash = (37 * hash) + AI_PASS_FIELD_NUMBER;
-    hash = (53 * hash) + getAiPass().hashCode();
+    hash = (37 * hash) + AI_RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getAiResult().hashCode();
     hash = (37 * hash) + TOPIC_FIELD_NUMBER;
     hash = (53 * hash) + getTopic().hashCode();
     hash = (37 * hash) + START_FIELD_NUMBER;
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
 
       status = "";
 
-      aiPass = "";
+      aiResult = "";
 
       topic = "";
 
@@ -776,7 +776,7 @@ private static final long serialVersionUID = 0L;
       result.nameOrTitle = nameOrTitle ;
       result.clasId = clasId ;
       result.status = status ;
-      result.aiPass = aiPass ;
+      result.aiResult = aiResult ;
       result.topic = topic ;
       result.start = start ;
       result.end = end ;
@@ -847,8 +847,8 @@ private static final long serialVersionUID = 0L;
         status = other.status ;
         onChanged();
       }
-      if (!other.getAiPass().isEmpty()) {
-        aiPass = other.aiPass ;
+      if (!other.getAiResult().isEmpty()) {
+        aiResult = other.aiResult ;
         onChanged();
       }
       if (!other.getTopic().isEmpty()) {
@@ -1215,22 +1215,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object aiPass = "";
+    private java.lang.Object aiResult = "";
     /**
      * <pre>
      * pass no_pass
      * </pre>
      *
-     * <code>string ai_pass = 5;</code>
-     * @return The aiPass.
+     * <code>string ai_result = 5;</code>
+     * @return The aiResult.
      */
-    public java.lang.String getAiPass() {
-      java.lang.Object ref = aiPass ;
+    public java.lang.String getAiResult() {
+      java.lang.Object ref = aiResult ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        aiPass = s;
+        aiResult = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1241,17 +1241,17 @@ private static final long serialVersionUID = 0L;
      * pass no_pass
      * </pre>
      *
-     * <code>string ai_pass = 5;</code>
-     * @return The bytes for aiPass.
+     * <code>string ai_result = 5;</code>
+     * @return The bytes for aiResult.
      */
     public com.google.protobuf.ByteString
-        getAiPassBytes() {
-      java.lang.Object ref = aiPass ;
+        getAiResultBytes() {
+      java.lang.Object ref = aiResult ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        aiPass = b;
+        aiResult = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1262,17 +1262,17 @@ private static final long serialVersionUID = 0L;
      * pass no_pass
      * </pre>
      *
-     * <code>string ai_pass = 5;</code>
-     * @param value The aiPass to set.
+     * <code>string ai_result = 5;</code>
+     * @param value The aiResult to set.
      * @return This builder for chaining.
      */
-    public Builder setAiPass(
+    public Builder setAiResult(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      aiPass = value;
+      aiResult = value;
       onChanged();
       return this;
     }
@@ -1281,12 +1281,12 @@ private static final long serialVersionUID = 0L;
      * pass no_pass
      * </pre>
      *
-     * <code>string ai_pass = 5;</code>
+     * <code>string ai_result = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAiPass() {
+    public Builder clearAiResult() {
       
-      aiPass = getDefaultInstance().getAiPass();
+      aiResult = getDefaultInstance().getAiResult();
       onChanged();
       return this;
     }
@@ -1295,18 +1295,18 @@ private static final long serialVersionUID = 0L;
      * pass no_pass
      * </pre>
      *
-     * <code>string ai_pass = 5;</code>
-     * @param value The bytes for aiPass to set.
+     * <code>string ai_result = 5;</code>
+     * @param value The bytes for aiResult to set.
      * @return This builder for chaining.
      */
-    public Builder setAiPassBytes(
+    public Builder setAiResultBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      aiPass = value;
+      aiResult = value;
       onChanged();
       return this;
     }

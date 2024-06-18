@@ -900,7 +900,7 @@ struct GloryApi_ListStudentArticleCreationRequest {
   var status: String = String()
 
   /// pass no_pass
-  var aiPass: String = String()
+  var aiResult: String = String()
 
   /// 填写topic code
   var topic: String = String()
@@ -4407,7 +4407,7 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
     2: .standard(proto: "name_or_title"),
     3: .standard(proto: "clas_id"),
     4: .same(proto: "status"),
-    5: .standard(proto: "ai_pass"),
+    5: .standard(proto: "ai_result"),
     6: .same(proto: "topic"),
     7: .same(proto: "start"),
     8: .same(proto: "end"),
@@ -4424,7 +4424,7 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
       case 2: try { try decoder.decodeSingularStringField(value: &self.nameOrTitle) }()
       case 3: try { try decoder.decodeSingularInt64Field(value: &self.clasID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.aiPass) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.aiResult) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.topic) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.start) }()
       case 8: try { try decoder.decodeSingularInt64Field(value: &self.end) }()
@@ -4451,8 +4451,8 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
     }
-    if !self.aiPass.isEmpty {
-      try visitor.visitSingularStringField(value: self.aiPass, fieldNumber: 5)
+    if !self.aiResult.isEmpty {
+      try visitor.visitSingularStringField(value: self.aiResult, fieldNumber: 5)
     }
     if !self.topic.isEmpty {
       try visitor.visitSingularStringField(value: self.topic, fieldNumber: 6)
@@ -4474,7 +4474,7 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
     if lhs.nameOrTitle != rhs.nameOrTitle {return false}
     if lhs.clasID != rhs.clasID {return false}
     if lhs.status != rhs.status {return false}
-    if lhs.aiPass != rhs.aiPass {return false}
+    if lhs.aiResult != rhs.aiResult {return false}
     if lhs.topic != rhs.topic {return false}
     if lhs.start != rhs.start {return false}
     if lhs.end != rhs.end {return false}
