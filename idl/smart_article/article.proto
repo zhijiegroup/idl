@@ -212,6 +212,7 @@ message BatchEvaluateArticleRequest {
     repeated int64 article_creation_ids = 2;
     string action = 3;
     string comment = 4;
+    int32 score = 5;
 }
 
 message BatchEvaluateArticleResponse {
