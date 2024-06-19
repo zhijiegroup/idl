@@ -216,6 +216,7 @@ export interface BatchEvaluateArticleRequest {
   article_creation_ids?: Array<string>;
   action?: string;
   comment?: string;
+  score?: number;
 }
 
 export interface BatchEvaluateArticleResponse {

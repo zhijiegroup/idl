@@ -102,6 +102,11 @@ private static final long serialVersionUID = 0L;
             comment = s;
             break;
           }
+          case 40: {
+
+            score = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -267,6 +272,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SCORE_FIELD_NUMBER = 5;
+  private int score ;
+  /**
+   * <code>int32 score = 5;</code>
+   * @return The score.
+   */
+  @java.lang.Override
+  public int getScore() {
+    return score ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -297,6 +313,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCommentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, comment );
+    }
+    if (score != 0) {
+      output.writeInt32(5, score );
     }
     unknownFields.writeTo(output);
   }
@@ -331,6 +350,10 @@ private static final long serialVersionUID = 0L;
     if (!getCommentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, comment );
     }
+    if (score != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, score );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -357,6 +380,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAction())) return false;
     if (!getComment()
         .equals(other.getComment())) return false;
+    if (getScore()
+        != other.getScore()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -380,6 +405,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAction().hashCode();
     hash = (37 * hash) + COMMENT_FIELD_NUMBER;
     hash = (53 * hash) + getComment().hashCode();
+    hash = (37 * hash) + SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + getScore();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -529,6 +556,8 @@ private static final long serialVersionUID = 0L;
 
       comment = "";
 
+      score = 0;
+
       return this;
     }
 
@@ -568,6 +597,7 @@ private static final long serialVersionUID = 0L;
       result.articleCreationIds = articleCreationIds ;
       result.action = action ;
       result.comment = comment ;
+      result.score = score ;
       onBuilt();
       return result;
     }
@@ -636,6 +666,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getComment().isEmpty()) {
         comment = other.comment ;
         onChanged();
+      }
+      if (other.getScore() != 0) {
+        setScore(other.getScore());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1013,6 +1046,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       comment = value;
+      onChanged();
+      return this;
+    }
+
+    private int score ;
+    /**
+     * <code>int32 score = 5;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score ;
+    }
+    /**
+     * <code>int32 score = 5;</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScore(int value) {
+      
+      score = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 score = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScore() {
+      
+      score = 0;
       onChanged();
       return this;
     }

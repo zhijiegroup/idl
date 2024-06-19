@@ -849,6 +849,8 @@ struct GloryApi_BatchEvaluateArticleRequest {
 
   var comment: String = String()
 
+  var score: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -4317,6 +4319,7 @@ extension GloryApi_BatchEvaluateArticleRequest: SwiftProtobuf.Message, SwiftProt
     2: .standard(proto: "article_creation_ids"),
     3: .same(proto: "action"),
     4: .same(proto: "comment"),
+    5: .same(proto: "score"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4329,6 +4332,7 @@ extension GloryApi_BatchEvaluateArticleRequest: SwiftProtobuf.Message, SwiftProt
       case 2: try { try decoder.decodeRepeatedInt64Field(value: &self.articleCreationIds) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.action) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.comment) }()
+      case 5: try { try decoder.decodeSingularInt32Field(value: &self.score) }()
       default: break
       }
     }
@@ -4351,6 +4355,9 @@ extension GloryApi_BatchEvaluateArticleRequest: SwiftProtobuf.Message, SwiftProt
     if !self.comment.isEmpty {
       try visitor.visitSingularStringField(value: self.comment, fieldNumber: 4)
     }
+    if self.score != 0 {
+      try visitor.visitSingularInt32Field(value: self.score, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4359,6 +4366,7 @@ extension GloryApi_BatchEvaluateArticleRequest: SwiftProtobuf.Message, SwiftProt
     if lhs.articleCreationIds != rhs.articleCreationIds {return false}
     if lhs.action != rhs.action {return false}
     if lhs.comment != rhs.comment {return false}
+    if lhs.score != rhs.score {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

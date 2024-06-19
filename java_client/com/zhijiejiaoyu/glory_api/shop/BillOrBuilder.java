@@ -86,26 +86,65 @@ public interface BillOrBuilder extends
       getSettledAtBytes();
 
   /**
-   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   * <code>string bill_path = 9;</code>
+   * @return The billPath.
+   */
+  java.lang.String getBillPath();
+  /**
+   * <code>string bill_path = 9;</code>
+   * @return The bytes for billPath.
+   */
+  com.google.protobuf.ByteString
+      getBillPathBytes();
+
+  /**
+   * <code>string bill_evidence = 10;</code>
+   * @return The billEvidence.
+   */
+  java.lang.String getBillEvidence();
+  /**
+   * <code>string bill_evidence = 10;</code>
+   * @return The bytes for billEvidence.
+   */
+  com.google.protobuf.ByteString
+      getBillEvidenceBytes();
+
+  /**
+   * <code>repeated .glory_api.OrderInfo orders = 19;</code>
    */
   java.util.List<com.zhijiejiaoyu.glory_api.shop.OrderInfo> 
       getOrdersList();
   /**
-   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   * <code>repeated .glory_api.OrderInfo orders = 19;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.OrderInfo getOrders(int index);
   /**
-   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   * <code>repeated .glory_api.OrderInfo orders = 19;</code>
    */
   int getOrdersCount();
   /**
-   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   * <code>repeated .glory_api.OrderInfo orders = 19;</code>
    */
   java.util.List<? extends com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder> 
       getOrdersOrBuilderList();
   /**
-   * <code>repeated .glory_api.OrderInfo orders = 9;</code>
+   * <code>repeated .glory_api.OrderInfo orders = 19;</code>
    */
   com.zhijiejiaoyu.glory_api.shop.OrderInfoOrBuilder getOrdersOrBuilder(
       int index);
+
+  /**
+   * <code>.glory_api.Shop shop = 20;</code>
+   * @return Whether the shop field is set.
+   */
+  boolean hasShop();
+  /**
+   * <code>.glory_api.Shop shop = 20;</code>
+   * @return The shop.
+   */
+  com.zhijiejiaoyu.glory_api.shop.Shop getShop();
+  /**
+   * <code>.glory_api.Shop shop = 20;</code>
+   */
+  com.zhijiejiaoyu.glory_api.shop.ShopOrBuilder getShopOrBuilder();
 }

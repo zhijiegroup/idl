@@ -62,4 +62,10 @@ public interface BatchEvaluateArticleRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCommentBytes();
+
+  /**
+   * <code>int32 score = 5;</code>
+   * @return The score.
+   */
+  int getScore();
 }

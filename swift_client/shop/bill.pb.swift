@@ -87,11 +87,26 @@ struct GloryApi_Bill {
 
   var settledAt: String = String()
 
+  var billPath: String = String()
+
+  var billEvidence: String = String()
+
   var orders: [GloryApi_OrderInfo] = []
+
+  var shop: GloryApi_Shop {
+    get {return _shop ?? GloryApi_Shop()}
+    set {_shop = newValue}
+  }
+  /// Returns true if `shop` has been explicitly set.
+  var hasShop: Bool {return self._shop != nil}
+  /// Clears the value of `shop`. Subsequent reads from it will return its default value.
+  mutating func clearShop() {self._shop = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _shop: GloryApi_Shop? = nil
 }
 
 struct GloryApi_ListBillRequest {
@@ -373,7 +388,10 @@ extension GloryApi_Bill: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     6: .standard(proto: "bill_amount"),
     7: .standard(proto: "created_at"),
     8: .standard(proto: "settled_at"),
-    9: .same(proto: "orders"),
+    9: .standard(proto: "bill_path"),
+    10: .standard(proto: "bill_evidence"),
+    19: .same(proto: "orders"),
+    20: .same(proto: "shop"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -390,13 +408,20 @@ extension GloryApi_Bill: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       case 6: try { try decoder.decodeSingularInt32Field(value: &self.billAmount) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.settledAt) }()
-      case 9: try { try decoder.decodeRepeatedMessageField(value: &self.orders) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.billPath) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self.billEvidence) }()
+      case 19: try { try decoder.decodeRepeatedMessageField(value: &self.orders) }()
+      case 20: try { try decoder.decodeSingularMessageField(value: &self._shop) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if self.billID != 0 {
       try visitor.visitSingularInt64Field(value: self.billID, fieldNumber: 1)
     }
@@ -421,9 +446,18 @@ extension GloryApi_Bill: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if !self.settledAt.isEmpty {
       try visitor.visitSingularStringField(value: self.settledAt, fieldNumber: 8)
     }
-    if !self.orders.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.orders, fieldNumber: 9)
+    if !self.billPath.isEmpty {
+      try visitor.visitSingularStringField(value: self.billPath, fieldNumber: 9)
     }
+    if !self.billEvidence.isEmpty {
+      try visitor.visitSingularStringField(value: self.billEvidence, fieldNumber: 10)
+    }
+    if !self.orders.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.orders, fieldNumber: 19)
+    }
+    try { if let v = self._shop {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -436,7 +470,10 @@ extension GloryApi_Bill: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if lhs.billAmount != rhs.billAmount {return false}
     if lhs.createdAt != rhs.createdAt {return false}
     if lhs.settledAt != rhs.settledAt {return false}
+    if lhs.billPath != rhs.billPath {return false}
+    if lhs.billEvidence != rhs.billEvidence {return false}
     if lhs.orders != rhs.orders {return false}
+    if lhs._shop != rhs._shop {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

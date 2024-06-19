@@ -53,7 +53,10 @@ const Bill$json = {
     {'1': 'bill_amount', '3': 6, '4': 1, '5': 5, '10': 'billAmount'},
     {'1': 'created_at', '3': 7, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'settled_at', '3': 8, '4': 1, '5': 9, '10': 'settledAt'},
-    {'1': 'orders', '3': 9, '4': 3, '5': 11, '6': '.glory_api.OrderInfo', '10': 'orders'},
+    {'1': 'bill_path', '3': 9, '4': 1, '5': 9, '10': 'billPath'},
+    {'1': 'bill_evidence', '3': 10, '4': 1, '5': 9, '10': 'billEvidence'},
+    {'1': 'orders', '3': 19, '4': 3, '5': 11, '6': '.glory_api.OrderInfo', '10': 'orders'},
+    {'1': 'shop', '3': 20, '4': 1, '5': 11, '6': '.glory_api.Shop', '10': 'shop'},
   ],
 };
 
@@ -63,8 +66,10 @@ final $typed_data.Uint8List billDescriptor = $convert.base64Decode(
     'xOYW1lEh8KC3RlbmFudF9uYW1lGAMgASgJUgp0ZW5hbnROYW1lEhsKCXNob3BfbmFtZRgEIAEo'
     'CVIIc2hvcE5hbWUSHwoLYmlsbF9zdGF0dXMYBSABKAhSCmJpbGxTdGF0dXMSHwoLYmlsbF9hbW'
     '91bnQYBiABKAVSCmJpbGxBbW91bnQSHQoKY3JlYXRlZF9hdBgHIAEoCVIJY3JlYXRlZEF0Eh0K'
-    'CnNldHRsZWRfYXQYCCABKAlSCXNldHRsZWRBdBIsCgZvcmRlcnMYCSADKAsyFC5nbG9yeV9hcG'
-    'kuT3JkZXJJbmZvUgZvcmRlcnM=');
+    'CnNldHRsZWRfYXQYCCABKAlSCXNldHRsZWRBdBIbCgliaWxsX3BhdGgYCSABKAlSCGJpbGxQYX'
+    'RoEiMKDWJpbGxfZXZpZGVuY2UYCiABKAlSDGJpbGxFdmlkZW5jZRIsCgZvcmRlcnMYEyADKAsy'
+    'FC5nbG9yeV9hcGkuT3JkZXJJbmZvUgZvcmRlcnMSIwoEc2hvcBgUIAEoCzIPLmdsb3J5X2FwaS'
+    '5TaG9wUgRzaG9w');
 
 @$core.Deprecated('Use listBillRequestDescriptor instead')
 const ListBillRequest$json = {

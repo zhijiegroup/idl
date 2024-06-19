@@ -2664,6 +2664,7 @@ class BatchEvaluateArticleRequest extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? articleCreationIds,
     $core.String? action,
     $core.String? comment,
+    $core.int? score,
   }) {
     final $result = create();
     if (baseRequest != null) {
@@ -2678,6 +2679,9 @@ class BatchEvaluateArticleRequest extends $pb.GeneratedMessage {
     if (comment != null) {
       $result.comment = comment;
     }
+    if (score != null) {
+      $result.score = score;
+    }
     return $result;
   }
   BatchEvaluateArticleRequest._() : super();
@@ -2689,6 +2693,7 @@ class BatchEvaluateArticleRequest extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'articleCreationIds', $pb.PbFieldType.K6)
     ..aOS(3, _omitFieldNames ? '' : 'action')
     ..aOS(4, _omitFieldNames ? '' : 'comment')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -2744,6 +2749,15 @@ class BatchEvaluateArticleRequest extends $pb.GeneratedMessage {
   $core.bool hasComment() => $_has(3);
   @$pb.TagNumber(4)
   void clearComment() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get score => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set score($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScore() => clearField(5);
 }
 
 class BatchEvaluateArticleResponse extends $pb.GeneratedMessage {

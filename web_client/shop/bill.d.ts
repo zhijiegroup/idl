@@ -4,7 +4,8 @@
 
 import * as base from "../base";
 import * as order from "./order";
-export { base, order };
+import * as shop from "./shop";
+export { base, order, shop };
 
 export interface CreateBillRequest {
   base_request?: base.BaseRequest;
@@ -25,7 +26,10 @@ export interface Bill {
   bill_amount?: number;
   created_at?: string;
   settled_at?: string;
+  bill_path?: string;
+  bill_evidence?: string;
   orders?: Array<order.OrderInfo>;
+  shop?: shop.Shop;
 }
 
 export interface ListBillRequest {

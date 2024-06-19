@@ -529,6 +529,7 @@ const BatchEvaluateArticleRequest$json = {
     {'1': 'article_creation_ids', '3': 2, '4': 3, '5': 3, '10': 'articleCreationIds'},
     {'1': 'action', '3': 3, '4': 1, '5': 9, '10': 'action'},
     {'1': 'comment', '3': 4, '4': 1, '5': 9, '10': 'comment'},
+    {'1': 'score', '3': 5, '4': 1, '5': 5, '10': 'score'},
   ],
 };
 
@@ -537,7 +538,7 @@ final $typed_data.Uint8List batchEvaluateArticleRequestDescriptor = $convert.bas
     'ChtCYXRjaEV2YWx1YXRlQXJ0aWNsZVJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgASgLMhEuYm'
     'FzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSMAoUYXJ0aWNsZV9jcmVhdGlvbl9pZHMYAiAD'
     'KANSEmFydGljbGVDcmVhdGlvbklkcxIWCgZhY3Rpb24YAyABKAlSBmFjdGlvbhIYCgdjb21tZW'
-    '50GAQgASgJUgdjb21tZW50');
+    '50GAQgASgJUgdjb21tZW50EhQKBXNjb3JlGAUgASgFUgVzY29yZQ==');
 
 @$core.Deprecated('Use batchEvaluateArticleResponseDescriptor instead')
 const BatchEvaluateArticleResponse$json = {

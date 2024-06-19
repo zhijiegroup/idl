@@ -16,6 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../base.pb.dart' as $0;
 import 'order.pb.dart' as $1;
+import 'shop.pb.dart' as $2;
 
 class CreateBillRequest extends $pb.GeneratedMessage {
   factory CreateBillRequest({
@@ -159,7 +160,10 @@ class Bill extends $pb.GeneratedMessage {
     $core.int? billAmount,
     $core.String? createdAt,
     $core.String? settledAt,
+    $core.String? billPath,
+    $core.String? billEvidence,
     $core.Iterable<$1.OrderInfo>? orders,
+    $2.Shop? shop,
   }) {
     final $result = create();
     if (billId != null) {
@@ -186,8 +190,17 @@ class Bill extends $pb.GeneratedMessage {
     if (settledAt != null) {
       $result.settledAt = settledAt;
     }
+    if (billPath != null) {
+      $result.billPath = billPath;
+    }
+    if (billEvidence != null) {
+      $result.billEvidence = billEvidence;
+    }
     if (orders != null) {
       $result.orders.addAll(orders);
+    }
+    if (shop != null) {
+      $result.shop = shop;
     }
     return $result;
   }
@@ -204,7 +217,10 @@ class Bill extends $pb.GeneratedMessage {
     ..a<$core.int>(6, _omitFieldNames ? '' : 'billAmount', $pb.PbFieldType.O3)
     ..aOS(7, _omitFieldNames ? '' : 'createdAt')
     ..aOS(8, _omitFieldNames ? '' : 'settledAt')
-    ..pc<$1.OrderInfo>(9, _omitFieldNames ? '' : 'orders', $pb.PbFieldType.PM, subBuilder: $1.OrderInfo.create)
+    ..aOS(9, _omitFieldNames ? '' : 'billPath')
+    ..aOS(10, _omitFieldNames ? '' : 'billEvidence')
+    ..pc<$1.OrderInfo>(19, _omitFieldNames ? '' : 'orders', $pb.PbFieldType.PM, subBuilder: $1.OrderInfo.create)
+    ..aOM<$2.Shop>(20, _omitFieldNames ? '' : 'shop', subBuilder: $2.Shop.create)
     ..hasRequiredFields = false
   ;
 
@@ -302,7 +318,36 @@ class Bill extends $pb.GeneratedMessage {
   void clearSettledAt() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<$1.OrderInfo> get orders => $_getList(8);
+  $core.String get billPath => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set billPath($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasBillPath() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBillPath() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get billEvidence => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set billEvidence($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasBillEvidence() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBillEvidence() => clearField(10);
+
+  @$pb.TagNumber(19)
+  $core.List<$1.OrderInfo> get orders => $_getList(10);
+
+  @$pb.TagNumber(20)
+  $2.Shop get shop => $_getN(11);
+  @$pb.TagNumber(20)
+  set shop($2.Shop v) { setField(20, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasShop() => $_has(11);
+  @$pb.TagNumber(20)
+  void clearShop() => clearField(20);
+  @$pb.TagNumber(20)
+  $2.Shop ensureShop() => $_ensure(11);
 }
 
 class ListBillRequest extends $pb.GeneratedMessage {
