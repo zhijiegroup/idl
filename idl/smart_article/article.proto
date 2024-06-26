@@ -582,6 +582,14 @@ message ListArticleCreationTenantResponse {
     base.PaginationResponse pagination = 100;  
 }
 
+message InitArticleCreationTenantRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message InitArticleCreationTenantResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 // 学校成本
 message ListArticleCreationTenantCostRequest {
     base.BaseRequest base_request = 1;

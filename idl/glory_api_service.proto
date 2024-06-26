@@ -1680,6 +1680,9 @@ service glory_api {
   rpc GetSubTopicAiResult(GetSubTopicAiResultRequest) returns (GetSubTopicAiResultResponse) {
     option (api.post) = '/api/article_creation/get_sub_topic_ai_result';
   }
+  rpc InitArticleCreationTenant(InitArticleCreationTenantRequest) returns (InitArticleCreationTenantResponse) {
+    option (api.get) = '/api/article_creation/init_article_creation_tenant';
+  }
 
   // 数字人合成视频接口
   rpc CreateDigitalVideo(CreateDigitalVideoRequest) returns (CreateDigitalVideoResponse) {
