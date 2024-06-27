@@ -23,6 +23,18 @@ public interface ListShortVideoRequestOrBuilder extends
   com.zhijiejiaoyu.base.BaseRequestOrBuilder getBaseRequestOrBuilder();
 
   /**
+   * <code>string key = 2;</code>
+   * @return The key.
+   */
+  java.lang.String getKey();
+  /**
+   * <code>string key = 2;</code>
+   * @return The bytes for key.
+   */
+  com.google.protobuf.ByteString
+      getKeyBytes();
+
+  /**
    * <code>.base.PaginationRequest pagination = 100;</code>
    * @return Whether the pagination field is set.
    */
