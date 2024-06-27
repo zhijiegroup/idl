@@ -93,12 +93,22 @@ public interface CreateArticleCreationDraftRequestOrBuilder extends
   long getArticleCreationId();
 
   /**
-   * <code>string product_name = 8;</code>
+   * <pre>
+   * 草稿ID
+   * </pre>
+   *
+   * <code>int64 article_creation_draft_id = 8;</code>
+   * @return The articleCreationDraftId.
+   */
+  long getArticleCreationDraftId();
+
+  /**
+   * <code>string product_name = 9;</code>
    * @return The productName.
    */
   java.lang.String getProductName();
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The bytes for productName.
    */
   com.google.protobuf.ByteString

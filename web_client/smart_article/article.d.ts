@@ -92,6 +92,8 @@ export interface CreateArticleCreationDraftRequest {
   creation_type?: string;
   /** 文案ID */
   article_creation_id?: string;
+  /** 草稿ID */
+  article_creation_draft_id?: string;
   product_name?: string;
 }
 
@@ -626,6 +628,14 @@ export interface ListArticleCreationTenantResponse {
   base_resp?: base.BaseResponse;
   list?: Array<GetArticleCreationTenant>;
   pagination?: base.PaginationResponse;
+}
+
+export interface InitArticleCreationTenantRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface InitArticleCreationTenantResponse {
+  base_resp?: base.BaseResponse;
 }
 
 /** 学校成本 */

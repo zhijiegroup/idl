@@ -13593,6 +13593,37 @@ public final class glory_apiGrpc {
     return getGetSubTopicAiResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest,
+      com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> getInitArticleCreationTenantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InitArticleCreationTenant",
+      requestType = com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest.class,
+      responseType = com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest,
+      com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> getInitArticleCreationTenantMethod() {
+    io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest, com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> getInitArticleCreationTenantMethod;
+    if ((getInitArticleCreationTenantMethod = glory_apiGrpc.getInitArticleCreationTenantMethod) == null) {
+      synchronized (glory_apiGrpc.class) {
+        if ((getInitArticleCreationTenantMethod = glory_apiGrpc.getInitArticleCreationTenantMethod) == null) {
+          glory_apiGrpc.getInitArticleCreationTenantMethod = getInitArticleCreationTenantMethod =
+              io.grpc.MethodDescriptor.<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest, com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "InitArticleCreationTenant"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new glory_apiMethodDescriptorSupplier("InitArticleCreationTenant"))
+              .build();
+        }
+      }
+    }
+    return getInitArticleCreationTenantMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest,
       com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoResponse> getCreateDigitalVideoMethod;
 
@@ -17427,6 +17458,13 @@ public final class glory_apiGrpc {
     default void getSubTopicAiResult(com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request,
         io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSubTopicAiResultMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void initArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInitArticleCreationTenantMethod(), responseObserver);
     }
 
     /**
@@ -21474,6 +21512,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public void initArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest request,
+        io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getInitArticleCreationTenantMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -25076,6 +25122,13 @@ public final class glory_apiGrpc {
     public com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse getSubTopicAiResult(com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSubTopicAiResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse initArticleCreationTenant(com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInitArticleCreationTenantMethod(), getCallOptions(), request);
     }
 
     /**
@@ -29112,6 +29165,14 @@ public final class glory_apiGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse> initArticleCreationTenant(
+        com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getInitArticleCreationTenantMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * 数字人合成视频接口
      * </pre>
@@ -29660,16 +29721,17 @@ public final class glory_apiGrpc {
   private static final int METHODID_LIST_ARTICLE_CREATION_TENANT_COST = 435;
   private static final int METHODID_GET_ARTICLE_CREATION_TENANT_COST = 436;
   private static final int METHODID_GET_SUB_TOPIC_AI_RESULT = 437;
-  private static final int METHODID_CREATE_DIGITAL_VIDEO = 438;
-  private static final int METHODID_LIST_DIGITAL_VIDEO = 439;
-  private static final int METHODID_GET_DIGITAL_VIDEO = 440;
-  private static final int METHODID_LIST_DIGITAL_CODE = 441;
-  private static final int METHODID_DELETE_DIGITAL_VIDEO = 442;
-  private static final int METHODID_LIST_DIGITAL_AVATAR = 443;
-  private static final int METHODID_SUBMIT_APPROVAL_FLOW = 444;
-  private static final int METHODID_APPROVE_FLOW = 445;
-  private static final int METHODID_LIST_APPROVAL_FLOW = 446;
-  private static final int METHODID_GET_APPROVAL_FLOW_DETAIL = 447;
+  private static final int METHODID_INIT_ARTICLE_CREATION_TENANT = 438;
+  private static final int METHODID_CREATE_DIGITAL_VIDEO = 439;
+  private static final int METHODID_LIST_DIGITAL_VIDEO = 440;
+  private static final int METHODID_GET_DIGITAL_VIDEO = 441;
+  private static final int METHODID_LIST_DIGITAL_CODE = 442;
+  private static final int METHODID_DELETE_DIGITAL_VIDEO = 443;
+  private static final int METHODID_LIST_DIGITAL_AVATAR = 444;
+  private static final int METHODID_SUBMIT_APPROVAL_FLOW = 445;
+  private static final int METHODID_APPROVE_FLOW = 446;
+  private static final int METHODID_LIST_APPROVAL_FLOW = 447;
+  private static final int METHODID_GET_APPROVAL_FLOW_DETAIL = 448;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -31439,6 +31501,10 @@ public final class glory_apiGrpc {
         case METHODID_GET_SUB_TOPIC_AI_RESULT:
           serviceImpl.getSubTopicAiResult((com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultRequest) request,
               (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>) responseObserver);
+          break;
+        case METHODID_INIT_ARTICLE_CREATION_TENANT:
+          serviceImpl.initArticleCreationTenant((com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest) request,
+              (io.grpc.stub.StreamObserver<com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse>) responseObserver);
           break;
         case METHODID_CREATE_DIGITAL_VIDEO:
           serviceImpl.createDigitalVideo((com.zhijiejiaoyu.glory_api.short_video.CreateDigitalVideoRequest) request,
@@ -34565,6 +34631,13 @@ public final class glory_apiGrpc {
               com.zhijiejiaoyu.glory_api.short_video.GetSubTopicAiResultResponse>(
                 service, METHODID_GET_SUB_TOPIC_AI_RESULT)))
         .addMethod(
+          getInitArticleCreationTenantMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantRequest,
+              com.zhijiejiaoyu.glory_api.short_video.InitArticleCreationTenantResponse>(
+                service, METHODID_INIT_ARTICLE_CREATION_TENANT)))
+        .addMethod(
           getCreateDigitalVideoMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -35120,6 +35193,7 @@ public final class glory_apiGrpc {
               .addMethod(getListArticleCreationTenantCostMethod())
               .addMethod(getGetArticleCreationTenantCostMethod())
               .addMethod(getGetSubTopicAiResultMethod())
+              .addMethod(getInitArticleCreationTenantMethod())
               .addMethod(getCreateDigitalVideoMethod())
               .addMethod(getListDigitalVideoMethod())
               .addMethod(getGetDigitalVideoMethod())

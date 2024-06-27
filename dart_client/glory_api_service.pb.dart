@@ -1393,6 +1393,9 @@ class glory_apiApi {
   $async.Future<$58.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ClientContext? ctx, $58.GetSubTopicAiResultRequest request) =>
     _client.invoke<$58.GetSubTopicAiResultResponse>(ctx, 'glory_api', 'GetSubTopicAiResult', request, $58.GetSubTopicAiResultResponse())
   ;
+  $async.Future<$58.InitArticleCreationTenantResponse> initArticleCreationTenant($pb.ClientContext? ctx, $58.InitArticleCreationTenantRequest request) =>
+    _client.invoke<$58.InitArticleCreationTenantResponse>(ctx, 'glory_api', 'InitArticleCreationTenant', request, $58.InitArticleCreationTenantResponse())
+  ;
   $async.Future<$58.CreateDigitalVideoResponse> createDigitalVideo($pb.ClientContext? ctx, $58.CreateDigitalVideoRequest request) =>
     _client.invoke<$58.CreateDigitalVideoResponse>(ctx, 'glory_api', 'CreateDigitalVideo', request, $58.CreateDigitalVideoResponse())
   ;
