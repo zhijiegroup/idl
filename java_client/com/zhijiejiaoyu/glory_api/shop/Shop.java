@@ -48,6 +48,7 @@ private static final long serialVersionUID = 0L;
     businessLicensePath = "";
     status = "";
     approvalStatus = "";
+    approvalResult = "";
     className = "";
     studentNum = "";
     studentCardPath = "";
@@ -400,6 +401,12 @@ private static final long serialVersionUID = 0L;
           case 408: {
 
             currentLevelOrder = input.readInt32();
+            break;
+          }
+          case 418: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            approvalResult = s;
             break;
           }
           case 2666: {
@@ -2075,6 +2082,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int APPROVAL_RESULT_FIELD_NUMBER = 52;
+  private volatile java.lang.Object approvalResult ;
+  /**
+   * <pre>
+   * 审批结果对应的内容
+   * </pre>
+   *
+   * <code>string approval_result = 52;</code>
+   * @return The approvalResult.
+   */
+  @java.lang.Override
+  public java.lang.String getApprovalResult() {
+    java.lang.Object ref = approvalResult ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      approvalResult = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 审批结果对应的内容
+   * </pre>
+   *
+   * <code>string approval_result = 52;</code>
+   * @return The bytes for approvalResult.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getApprovalResultBytes() {
+    java.lang.Object ref = approvalResult ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      approvalResult = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CLASS_NAME_FIELD_NUMBER = 48;
   private volatile java.lang.Object className ;
   /**
@@ -2544,6 +2597,9 @@ private static final long serialVersionUID = 0L;
     if (currentLevelOrder != 0) {
       output.writeInt32(51, currentLevelOrder );
     }
+    if (!getApprovalResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 52, approvalResult );
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       output.writeMessage(333, shopQualification .get(i));
     }
@@ -2725,6 +2781,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(51, currentLevelOrder );
     }
+    if (!getApprovalResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(52, approvalResult );
+    }
     for (int i = 0; i < shopQualification .size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(333, shopQualification .get(i));
@@ -2829,6 +2888,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatus())) return false;
     if (!getApprovalStatus()
         .equals(other.getApprovalStatus())) return false;
+    if (!getApprovalResult()
+        .equals(other.getApprovalResult())) return false;
     if (!getClassName()
         .equals(other.getClassName())) return false;
     if (!getStudentNum()
@@ -2956,6 +3017,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getStatus().hashCode();
     hash = (37 * hash) + APPROVAL_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getApprovalStatus().hashCode();
+    hash = (37 * hash) + APPROVAL_RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalResult().hashCode();
     hash = (37 * hash) + CLASS_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getClassName().hashCode();
     hash = (37 * hash) + STUDENT_NUM_FIELD_NUMBER;
@@ -3200,6 +3263,8 @@ private static final long serialVersionUID = 0L;
 
       approvalStatus = "";
 
+      approvalResult = "";
+
       className = "";
 
       studentNum = "";
@@ -3306,6 +3371,7 @@ private static final long serialVersionUID = 0L;
       }
       result.status = status ;
       result.approvalStatus = approvalStatus ;
+      result.approvalResult = approvalResult ;
       result.className = className ;
       result.studentNum = studentNum ;
       result.studentCardPath = studentCardPath ;
@@ -3548,6 +3614,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getApprovalStatus().isEmpty()) {
         approvalStatus = other.approvalStatus ;
+        onChanged();
+      }
+      if (!other.getApprovalResult().isEmpty()) {
+        approvalResult = other.approvalResult ;
         onChanged();
       }
       if (!other.getClassName().isEmpty()) {
@@ -7372,6 +7442,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       approvalStatus = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object approvalResult = "";
+    /**
+     * <pre>
+     * 审批结果对应的内容
+     * </pre>
+     *
+     * <code>string approval_result = 52;</code>
+     * @return The approvalResult.
+     */
+    public java.lang.String getApprovalResult() {
+      java.lang.Object ref = approvalResult ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        approvalResult = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 审批结果对应的内容
+     * </pre>
+     *
+     * <code>string approval_result = 52;</code>
+     * @return The bytes for approvalResult.
+     */
+    public com.google.protobuf.ByteString
+        getApprovalResultBytes() {
+      java.lang.Object ref = approvalResult ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        approvalResult = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 审批结果对应的内容
+     * </pre>
+     *
+     * <code>string approval_result = 52;</code>
+     * @param value The approvalResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalResult(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      approvalResult = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 审批结果对应的内容
+     * </pre>
+     *
+     * <code>string approval_result = 52;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalResult() {
+      
+      approvalResult = getDefaultInstance().getApprovalResult();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 审批结果对应的内容
+     * </pre>
+     *
+     * <code>string approval_result = 52;</code>
+     * @param value The bytes for approvalResult to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalResultBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      approvalResult = value;
       onChanged();
       return this;
     }

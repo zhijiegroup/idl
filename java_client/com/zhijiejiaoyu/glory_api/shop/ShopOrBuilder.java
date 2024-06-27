@@ -776,6 +776,26 @@ public interface ShopOrBuilder extends
       getApprovalStatusBytes();
 
   /**
+   * <pre>
+   * 审批结果对应的内容
+   * </pre>
+   *
+   * <code>string approval_result = 52;</code>
+   * @return The approvalResult.
+   */
+  java.lang.String getApprovalResult();
+  /**
+   * <pre>
+   * 审批结果对应的内容
+   * </pre>
+   *
+   * <code>string approval_result = 52;</code>
+   * @return The bytes for approvalResult.
+   */
+  com.google.protobuf.ByteString
+      getApprovalResultBytes();
+
+  /**
    * <code>string class_name = 48;</code>
    * @return The className.
    */

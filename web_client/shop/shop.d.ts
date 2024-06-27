@@ -89,6 +89,8 @@ export interface Shop {
   status?: string;
   /** 申请状态: 待审核:to_approve;拒绝:reject;完成:pass */
   approval_status?: string;
+  /** 审批结果对应的内容 */
+  approval_result?: string;
   class_name?: string;
   student_num?: string;
   student_card_path?: string;

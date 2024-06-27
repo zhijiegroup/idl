@@ -274,6 +274,12 @@ struct GloryApi_Shop {
     set {_uniqueStorage()._approvalStatus = newValue}
   }
 
+  /// 审批结果对应的内容
+  var approvalResult: String {
+    get {return _storage._approvalResult}
+    set {_uniqueStorage()._approvalResult = newValue}
+  }
+
   var className: String {
     get {return _storage._className}
     set {_uniqueStorage()._className = newValue}
@@ -1613,6 +1619,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     40: .standard(proto: "shop_keeper"),
     41: .same(proto: "status"),
     42: .standard(proto: "approval_status"),
+    52: .standard(proto: "approval_result"),
     48: .standard(proto: "class_name"),
     49: .standard(proto: "student_num"),
     43: .standard(proto: "student_card_path"),
@@ -1666,6 +1673,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     var _shopKeeper: GloryApi_ShopKeeper? = nil
     var _status: String = String()
     var _approvalStatus: String = String()
+    var _approvalResult: String = String()
     var _className: String = String()
     var _studentNum: String = String()
     var _studentCardPath: String = String()
@@ -1730,6 +1738,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       _shopKeeper = source._shopKeeper
       _status = source._status
       _approvalStatus = source._approvalStatus
+      _approvalResult = source._approvalResult
       _className = source._className
       _studentNum = source._studentNum
       _studentCardPath = source._studentCardPath
@@ -1806,6 +1815,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         case 49: try { try decoder.decodeSingularStringField(value: &_storage._studentNum) }()
         case 50: try { try decoder.decodeSingularMessageField(value: &_storage._approvalFlow) }()
         case 51: try { try decoder.decodeSingularInt32Field(value: &_storage._currentLevelOrder) }()
+        case 52: try { try decoder.decodeSingularStringField(value: &_storage._approvalResult) }()
         case 333: try { try decoder.decodeRepeatedMessageField(value: &_storage._shopQualification) }()
         default: break
         }
@@ -1966,6 +1976,9 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       if _storage._currentLevelOrder != 0 {
         try visitor.visitSingularInt32Field(value: _storage._currentLevelOrder, fieldNumber: 51)
       }
+      if !_storage._approvalResult.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._approvalResult, fieldNumber: 52)
+      }
       if !_storage._shopQualification.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._shopQualification, fieldNumber: 333)
       }
@@ -2019,6 +2032,7 @@ extension GloryApi_Shop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
         if _storage._shopKeeper != rhs_storage._shopKeeper {return false}
         if _storage._status != rhs_storage._status {return false}
         if _storage._approvalStatus != rhs_storage._approvalStatus {return false}
+        if _storage._approvalResult != rhs_storage._approvalResult {return false}
         if _storage._className != rhs_storage._className {return false}
         if _storage._studentNum != rhs_storage._studentNum {return false}
         if _storage._studentCardPath != rhs_storage._studentCardPath {return false}
