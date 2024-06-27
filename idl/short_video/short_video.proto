@@ -270,6 +270,7 @@ message ManagementDeleteShortVideoResponse {
 // APP首页短视频列表
 message ListShortVideoRequest {
   base.BaseRequest base_request = 1;
+  string key = 2;
   base.PaginationRequest pagination = 100;
 }
 
