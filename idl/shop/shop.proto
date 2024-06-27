@@ -50,6 +50,7 @@ message Shop {
   ShopKeeper shop_keeper = 40;
   string status = 41; // 店铺申请状态: 注册中:registering;营业中:opening;闭店中:closed
   string approval_status = 42; // 申请状态: 待审核:to_approve;拒绝:reject;完成:pass
+  string approval_result = 52; // 审批结果对应的内容
   string class_name = 48;
   string student_num = 49;
   string student_card_path = 43;
