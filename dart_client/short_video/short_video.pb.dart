@@ -3331,11 +3331,15 @@ class ManagementDeleteShortVideoResponse extends $pb.GeneratedMessage {
 class ListShortVideoRequest extends $pb.GeneratedMessage {
   factory ListShortVideoRequest({
     $1.BaseRequest? baseRequest,
+    $core.String? key,
     $1.PaginationRequest? pagination,
   }) {
     final $result = create();
     if (baseRequest != null) {
       $result.baseRequest = baseRequest;
+    }
+    if (key != null) {
+      $result.key = key;
     }
     if (pagination != null) {
       $result.pagination = pagination;
@@ -3348,6 +3352,7 @@ class ListShortVideoRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListShortVideoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'key')
     ..aOM<$1.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $1.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -3384,16 +3389,25 @@ class ListShortVideoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.BaseRequest ensureBaseRequest() => $_ensure(0);
 
+  @$pb.TagNumber(2)
+  $core.String get key => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set key($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKey() => clearField(2);
+
   @$pb.TagNumber(100)
-  $1.PaginationRequest get pagination => $_getN(1);
+  $1.PaginationRequest get pagination => $_getN(2);
   @$pb.TagNumber(100)
   set pagination($1.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(1);
+  $core.bool hasPagination() => $_has(2);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $1.PaginationRequest ensurePagination() => $_ensure(1);
+  $1.PaginationRequest ensurePagination() => $_ensure(2);
 }
 
 class ListShortVideoResponse extends $pb.GeneratedMessage {

@@ -347,6 +347,7 @@ export interface ManagementDeleteShortVideoResponse {
 /** APP首页短视频列表 */
 export interface ListShortVideoRequest {
   base_request?: base.BaseRequest;
+  key?: string;
   pagination?: base.PaginationRequest;
 }
 
