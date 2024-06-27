@@ -89,7 +89,8 @@ message CreateArticleCreationDraftRequest {
     string content = 5; 
     string creation_type = 6;
     int64 article_creation_id = 7; // 文案ID
-    string product_name = 8;
+    int64 article_creation_draft_id = 8; // 草稿ID
+    string product_name = 9;
 }
 
 message CreateArticleCreationDraftResponse {
@@ -580,6 +581,14 @@ message ListArticleCreationTenantResponse {
     base.BaseResponse base_resp = 1;
     repeated GetArticleCreationTenant list = 2;
     base.PaginationResponse pagination = 100;  
+}
+
+message InitArticleCreationTenantRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message InitArticleCreationTenantResponse {
+    base.BaseResponse base_resp = 1;
 }
 
 // 学校成本
