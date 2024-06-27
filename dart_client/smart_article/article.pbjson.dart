@@ -512,16 +512,19 @@ const ListEvaluationConfigResponse$json = {
   '1': 'ListEvaluationConfigResponse',
   '2': [
     {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
-    {'1': 'list', '3': 2, '4': 3, '5': 9, '10': 'list'},
-    {'1': 'evaluation_score', '3': 3, '4': 1, '5': 3, '10': 'evaluationScore'},
+    {'1': 'time_duration', '3': 2, '4': 1, '5': 3, '10': 'timeDuration'},
+    {'1': 'system_content', '3': 3, '4': 1, '5': 9, '10': 'systemContent'},
+    {'1': 'list', '3': 4, '4': 3, '5': 9, '10': 'list'},
+    {'1': 'evaluation_score', '3': 5, '4': 1, '5': 3, '10': 'evaluationScore'},
   ],
 };
 
 /// Descriptor for `ListEvaluationConfigResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listEvaluationConfigResponseDescriptor = $convert.base64Decode(
     'ChxMaXN0RXZhbHVhdGlvbkNvbmZpZ1Jlc3BvbnNlEi8KCWJhc2VfcmVzcBgBIAEoCzISLmJhc2'
-    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBISCgRsaXN0GAIgAygJUgRsaXN0EikKEGV2YWx1YXRp'
-    'b25fc2NvcmUYAyABKANSD2V2YWx1YXRpb25TY29yZQ==');
+    'UuQmFzZVJlc3BvbnNlUghiYXNlUmVzcBIjCg10aW1lX2R1cmF0aW9uGAIgASgDUgx0aW1lRHVy'
+    'YXRpb24SJQoOc3lzdGVtX2NvbnRlbnQYAyABKAlSDXN5c3RlbUNvbnRlbnQSEgoEbGlzdBgEIA'
+    'MoCVIEbGlzdBIpChBldmFsdWF0aW9uX3Njb3JlGAUgASgDUg9ldmFsdWF0aW9uU2NvcmU=');
 
 @$core.Deprecated('Use batchEvaluateArticleRequestDescriptor instead')
 const BatchEvaluateArticleRequest$json = {

@@ -208,6 +208,8 @@ export interface ListEvaluationConfigRequest {
 
 export interface ListEvaluationConfigResponse {
   base_resp?: base.BaseResponse;
+  time_duration?: string;
+  system_content?: string;
   list?: Array<string>;
   evaluation_score?: string;
 }

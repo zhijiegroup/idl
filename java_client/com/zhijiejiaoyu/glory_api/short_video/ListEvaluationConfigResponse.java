@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListEvaluationConfigResponse() {
+    systemContent = "";
     list = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -63,7 +64,18 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 16: {
+
+            timeDuration = input.readInt64();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            systemContent = s;
+            break;
+          }
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0 & 0x00000001) != 0)) {
               list = new com.google.protobuf.LazyStringArrayList();
@@ -72,7 +84,7 @@ private static final long serialVersionUID = 0L;
             list .add(s);
             break;
           }
-          case 24: {
+          case 40: {
 
             evaluationScore = input.readInt64();
             break;
@@ -138,10 +150,59 @@ private static final long serialVersionUID = 0L;
     return getBaseResp();
   }
 
-  public static final int LIST_FIELD_NUMBER = 2;
+  public static final int TIME_DURATION_FIELD_NUMBER = 2;
+  private long timeDuration ;
+  /**
+   * <code>int64 time_duration = 2;</code>
+   * @return The timeDuration.
+   */
+  @java.lang.Override
+  public long getTimeDuration() {
+    return timeDuration ;
+  }
+
+  public static final int SYSTEM_CONTENT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object systemContent ;
+  /**
+   * <code>string system_content = 3;</code>
+   * @return The systemContent.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemContent() {
+    java.lang.Object ref = systemContent ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemContent = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string system_content = 3;</code>
+   * @return The bytes for systemContent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSystemContentBytes() {
+    java.lang.Object ref = systemContent ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      systemContent = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LIST_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList list ;
   /**
-   * <code>repeated string list = 2;</code>
+   * <code>repeated string list = 4;</code>
    * @return A list containing the list.
    */
   public com.google.protobuf.ProtocolStringList
@@ -149,14 +210,14 @@ private static final long serialVersionUID = 0L;
     return list ;
   }
   /**
-   * <code>repeated string list = 2;</code>
+   * <code>repeated string list = 4;</code>
    * @return The count of list.
    */
   public int getListCount() {
     return list .size();
   }
   /**
-   * <code>repeated string list = 2;</code>
+   * <code>repeated string list = 4;</code>
    * @param index The index of the element to return.
    * @return The list at the given index.
    */
@@ -164,7 +225,7 @@ private static final long serialVersionUID = 0L;
     return list .get(index);
   }
   /**
-   * <code>repeated string list = 2;</code>
+   * <code>repeated string list = 4;</code>
    * @param index The index of the value to return.
    * @return The bytes of the list at the given index.
    */
@@ -173,10 +234,10 @@ private static final long serialVersionUID = 0L;
     return list .getByteString(index);
   }
 
-  public static final int EVALUATION_SCORE_FIELD_NUMBER = 3;
+  public static final int EVALUATION_SCORE_FIELD_NUMBER = 5;
   private long evaluationScore ;
   /**
-   * <code>int64 evaluation_score = 3;</code>
+   * <code>int64 evaluation_score = 5;</code>
    * @return The evaluationScore.
    */
   @java.lang.Override
@@ -201,11 +262,17 @@ private static final long serialVersionUID = 0L;
     if (baseResp != null) {
       output.writeMessage(1, getBaseResp());
     }
+    if (timeDuration != 0L) {
+      output.writeInt64(2, timeDuration );
+    }
+    if (!getSystemContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, systemContent );
+    }
     for (int i = 0; i < list .size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, list .getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, list .getRaw(i));
     }
     if (evaluationScore != 0L) {
-      output.writeInt64(3, evaluationScore );
+      output.writeInt64(5, evaluationScore );
     }
     unknownFields.writeTo(output);
   }
@@ -220,6 +287,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBaseResp());
     }
+    if (timeDuration != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, timeDuration );
+    }
+    if (!getSystemContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, systemContent );
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < list .size(); i++) {
@@ -230,7 +304,7 @@ private static final long serialVersionUID = 0L;
     }
     if (evaluationScore != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, evaluationScore );
+        .computeInt64Size(5, evaluationScore );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -252,6 +326,10 @@ private static final long serialVersionUID = 0L;
       if (!getBaseResp()
           .equals(other.getBaseResp())) return false;
     }
+    if (getTimeDuration()
+        != other.getTimeDuration()) return false;
+    if (!getSystemContent()
+        .equals(other.getSystemContent())) return false;
     if (!getListList()
         .equals(other.getListList())) return false;
     if (getEvaluationScore()
@@ -271,6 +349,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_RESP_FIELD_NUMBER;
       hash = (53 * hash) + getBaseResp().hashCode();
     }
+    hash = (37 * hash) + TIME_DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTimeDuration());
+    hash = (37 * hash) + SYSTEM_CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getSystemContent().hashCode();
     if (getListCount() > 0) {
       hash = (37 * hash) + LIST_FIELD_NUMBER;
       hash = (53 * hash) + getListList().hashCode();
@@ -417,6 +500,10 @@ private static final long serialVersionUID = 0L;
         baseResp = null;
         baseRespBuilder = null;
       }
+      timeDuration = 0L;
+
+      systemContent = "";
+
       list = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0 = (bitField0 & ~0x00000001);
       evaluationScore = 0L;
@@ -453,6 +540,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseResp = baseRespBuilder .build();
       }
+      result.timeDuration = timeDuration ;
+      result.systemContent = systemContent ;
       if (((bitField0 & 0x00000001) != 0)) {
         list = list .getUnmodifiableView();
         bitField0 = (bitField0 & ~0x00000001);
@@ -509,6 +598,13 @@ private static final long serialVersionUID = 0L;
       if (other == com.zhijiejiaoyu.glory_api.short_video.ListEvaluationConfigResponse.getDefaultInstance()) return this;
       if (other.hasBaseResp()) {
         mergeBaseResp(other.getBaseResp());
+      }
+      if (other.getTimeDuration() != 0L) {
+        setTimeDuration(other.getTimeDuration());
+      }
+      if (!other.getSystemContent().isEmpty()) {
+        systemContent = other.systemContent ;
+        onChanged();
       }
       if (!other.list .isEmpty()) {
         if (list .isEmpty()) {
@@ -672,6 +768,113 @@ private static final long serialVersionUID = 0L;
       return baseRespBuilder ;
     }
 
+    private long timeDuration ;
+    /**
+     * <code>int64 time_duration = 2;</code>
+     * @return The timeDuration.
+     */
+    @java.lang.Override
+    public long getTimeDuration() {
+      return timeDuration ;
+    }
+    /**
+     * <code>int64 time_duration = 2;</code>
+     * @param value The timeDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeDuration(long value) {
+      
+      timeDuration = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 time_duration = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimeDuration() {
+      
+      timeDuration = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object systemContent = "";
+    /**
+     * <code>string system_content = 3;</code>
+     * @return The systemContent.
+     */
+    public java.lang.String getSystemContent() {
+      java.lang.Object ref = systemContent ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemContent = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string system_content = 3;</code>
+     * @return The bytes for systemContent.
+     */
+    public com.google.protobuf.ByteString
+        getSystemContentBytes() {
+      java.lang.Object ref = systemContent ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        systemContent = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string system_content = 3;</code>
+     * @param value The systemContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemContent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      systemContent = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_content = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemContent() {
+      
+      systemContent = getDefaultInstance().getSystemContent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string system_content = 3;</code>
+     * @param value The bytes for systemContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemContentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      systemContent = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList list = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureListIsMutable() {
       if (!((bitField0 & 0x00000001) != 0)) {
@@ -680,7 +883,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @return A list containing the list.
      */
     public com.google.protobuf.ProtocolStringList
@@ -688,14 +891,14 @@ private static final long serialVersionUID = 0L;
       return list .getUnmodifiableView();
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @return The count of list.
      */
     public int getListCount() {
       return list .size();
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param index The index of the element to return.
      * @return The list at the given index.
      */
@@ -703,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return list .get(index);
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param index The index of the value to return.
      * @return The bytes of the list at the given index.
      */
@@ -712,7 +915,7 @@ private static final long serialVersionUID = 0L;
       return list .getByteString(index);
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param index The index to set the value at.
      * @param value The list to set.
      * @return This builder for chaining.
@@ -728,7 +931,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param value The list to add.
      * @return This builder for chaining.
      */
@@ -743,7 +946,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param values The list to add.
      * @return This builder for chaining.
      */
@@ -756,7 +959,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearList() {
@@ -766,7 +969,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string list = 2;</code>
+     * <code>repeated string list = 4;</code>
      * @param value The bytes of the list to add.
      * @return This builder for chaining.
      */
@@ -784,7 +987,7 @@ private static final long serialVersionUID = 0L;
 
     private long evaluationScore ;
     /**
-     * <code>int64 evaluation_score = 3;</code>
+     * <code>int64 evaluation_score = 5;</code>
      * @return The evaluationScore.
      */
     @java.lang.Override
@@ -792,7 +995,7 @@ private static final long serialVersionUID = 0L;
       return evaluationScore ;
     }
     /**
-     * <code>int64 evaluation_score = 3;</code>
+     * <code>int64 evaluation_score = 5;</code>
      * @param value The evaluationScore to set.
      * @return This builder for chaining.
      */
@@ -803,7 +1006,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 evaluation_score = 3;</code>
+     * <code>int64 evaluation_score = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearEvaluationScore() {

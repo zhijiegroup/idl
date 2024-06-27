@@ -820,6 +820,10 @@ struct GloryApi_ListEvaluationConfigResponse {
   /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
   mutating func clearBaseResp() {self._baseResp = nil}
 
+  var timeDuration: Int64 = 0
+
+  var systemContent: String = String()
+
   var list: [String] = []
 
   var evaluationScore: Int64 = 0
@@ -4321,8 +4325,10 @@ extension GloryApi_ListEvaluationConfigResponse: SwiftProtobuf.Message, SwiftPro
   static let protoMessageName: String = _protobuf_package + ".ListEvaluationConfigResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_resp"),
-    2: .same(proto: "list"),
-    3: .standard(proto: "evaluation_score"),
+    2: .standard(proto: "time_duration"),
+    3: .standard(proto: "system_content"),
+    4: .same(proto: "list"),
+    5: .standard(proto: "evaluation_score"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4332,8 +4338,10 @@ extension GloryApi_ListEvaluationConfigResponse: SwiftProtobuf.Message, SwiftPro
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
-      case 2: try { try decoder.decodeRepeatedStringField(value: &self.list) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.evaluationScore) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.timeDuration) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.systemContent) }()
+      case 4: try { try decoder.decodeRepeatedStringField(value: &self.list) }()
+      case 5: try { try decoder.decodeSingularInt64Field(value: &self.evaluationScore) }()
       default: break
       }
     }
@@ -4347,17 +4355,25 @@ extension GloryApi_ListEvaluationConfigResponse: SwiftProtobuf.Message, SwiftPro
     try { if let v = self._baseResp {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     } }()
+    if self.timeDuration != 0 {
+      try visitor.visitSingularInt64Field(value: self.timeDuration, fieldNumber: 2)
+    }
+    if !self.systemContent.isEmpty {
+      try visitor.visitSingularStringField(value: self.systemContent, fieldNumber: 3)
+    }
     if !self.list.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.list, fieldNumber: 2)
+      try visitor.visitRepeatedStringField(value: self.list, fieldNumber: 4)
     }
     if self.evaluationScore != 0 {
-      try visitor.visitSingularInt64Field(value: self.evaluationScore, fieldNumber: 3)
+      try visitor.visitSingularInt64Field(value: self.evaluationScore, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: GloryApi_ListEvaluationConfigResponse, rhs: GloryApi_ListEvaluationConfigResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
+    if lhs.timeDuration != rhs.timeDuration {return false}
+    if lhs.systemContent != rhs.systemContent {return false}
     if lhs.list != rhs.list {return false}
     if lhs.evaluationScore != rhs.evaluationScore {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

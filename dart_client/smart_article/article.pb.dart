@@ -2600,12 +2600,20 @@ class ListEvaluationConfigRequest extends $pb.GeneratedMessage {
 class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
   factory ListEvaluationConfigResponse({
     $0.BaseResponse? baseResp,
+    $fixnum.Int64? timeDuration,
+    $core.String? systemContent,
     $core.Iterable<$core.String>? list,
     $fixnum.Int64? evaluationScore,
   }) {
     final $result = create();
     if (baseResp != null) {
       $result.baseResp = baseResp;
+    }
+    if (timeDuration != null) {
+      $result.timeDuration = timeDuration;
+    }
+    if (systemContent != null) {
+      $result.systemContent = systemContent;
     }
     if (list != null) {
       $result.list.addAll(list);
@@ -2621,8 +2629,10 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListEvaluationConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
-    ..pPS(2, _omitFieldNames ? '' : 'list')
-    ..aInt64(3, _omitFieldNames ? '' : 'evaluationScore')
+    ..aInt64(2, _omitFieldNames ? '' : 'timeDuration')
+    ..aOS(3, _omitFieldNames ? '' : 'systemContent')
+    ..pPS(4, _omitFieldNames ? '' : 'list')
+    ..aInt64(5, _omitFieldNames ? '' : 'evaluationScore')
     ..hasRequiredFields = false
   ;
 
@@ -2659,16 +2669,34 @@ class ListEvaluationConfigResponse extends $pb.GeneratedMessage {
   $0.BaseResponse ensureBaseResp() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get list => $_getList(1);
+  $fixnum.Int64 get timeDuration => $_getI64(1);
+  @$pb.TagNumber(2)
+  set timeDuration($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTimeDuration() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimeDuration() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get evaluationScore => $_getI64(2);
+  $core.String get systemContent => $_getSZ(2);
   @$pb.TagNumber(3)
-  set evaluationScore($fixnum.Int64 v) { $_setInt64(2, v); }
+  set systemContent($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasEvaluationScore() => $_has(2);
+  $core.bool hasSystemContent() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEvaluationScore() => clearField(3);
+  void clearSystemContent() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get list => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get evaluationScore => $_getI64(4);
+  @$pb.TagNumber(5)
+  set evaluationScore($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEvaluationScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvaluationScore() => clearField(5);
 }
 
 /// 批量评价学生
