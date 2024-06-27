@@ -203,8 +203,10 @@ message ListEvaluationConfigRequest {
 
 message ListEvaluationConfigResponse {
     base.BaseResponse base_resp = 1;
-    repeated string list = 2;
-    int64 evaluation_score = 3;
+    int64 time_duration = 2;
+    string system_content = 3;
+    repeated string list = 4;
+    int64 evaluation_score = 5;
 }
 
 // 批量评价学生
