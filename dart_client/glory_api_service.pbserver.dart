@@ -518,6 +518,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$58.ListArticleCreationTenantCostResponse> listArticleCreationTenantCost($pb.ServerContext ctx, $58.ListArticleCreationTenantCostRequest request);
   $async.Future<$58.GetArticleCreationTenantCostResponse> getArticleCreationTenantCost($pb.ServerContext ctx, $58.GetArticleCreationTenantCostRequest request);
   $async.Future<$58.GetSubTopicAiResultResponse> getSubTopicAiResult($pb.ServerContext ctx, $58.GetSubTopicAiResultRequest request);
+  $async.Future<$58.InitArticleCreationTenantResponse> initArticleCreationTenant($pb.ServerContext ctx, $58.InitArticleCreationTenantRequest request);
   $async.Future<$58.CreateDigitalVideoResponse> createDigitalVideo($pb.ServerContext ctx, $58.CreateDigitalVideoRequest request);
   $async.Future<$58.ListDigitalVideoResponse> listDigitalVideo($pb.ServerContext ctx, $58.ListDigitalVideoRequest request);
   $async.Future<$58.GetDigitalVideoResponse> getDigitalVideo($pb.ServerContext ctx, $58.GetDigitalVideoRequest request);
@@ -969,6 +970,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListArticleCreationTenantCost': return $58.ListArticleCreationTenantCostRequest();
       case 'GetArticleCreationTenantCost': return $58.GetArticleCreationTenantCostRequest();
       case 'GetSubTopicAiResult': return $58.GetSubTopicAiResultRequest();
+      case 'InitArticleCreationTenant': return $58.InitArticleCreationTenantRequest();
       case 'CreateDigitalVideo': return $58.CreateDigitalVideoRequest();
       case 'ListDigitalVideo': return $58.ListDigitalVideoRequest();
       case 'GetDigitalVideo': return $58.GetDigitalVideoRequest();
@@ -1423,6 +1425,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListArticleCreationTenantCost': return this.listArticleCreationTenantCost(ctx, request as $58.ListArticleCreationTenantCostRequest);
       case 'GetArticleCreationTenantCost': return this.getArticleCreationTenantCost(ctx, request as $58.GetArticleCreationTenantCostRequest);
       case 'GetSubTopicAiResult': return this.getSubTopicAiResult(ctx, request as $58.GetSubTopicAiResultRequest);
+      case 'InitArticleCreationTenant': return this.initArticleCreationTenant(ctx, request as $58.InitArticleCreationTenantRequest);
       case 'CreateDigitalVideo': return this.createDigitalVideo(ctx, request as $58.CreateDigitalVideoRequest);
       case 'ListDigitalVideo': return this.listDigitalVideo(ctx, request as $58.ListDigitalVideoRequest);
       case 'GetDigitalVideo': return this.getDigitalVideo(ctx, request as $58.GetDigitalVideoRequest);

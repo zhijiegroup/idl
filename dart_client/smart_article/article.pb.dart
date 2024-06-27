@@ -1027,6 +1027,7 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     $core.String? content,
     $core.String? creationType,
     $fixnum.Int64? articleCreationId,
+    $fixnum.Int64? articleCreationDraftId,
     $core.String? productName,
   }) {
     final $result = create();
@@ -1051,6 +1052,9 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     if (articleCreationId != null) {
       $result.articleCreationId = articleCreationId;
     }
+    if (articleCreationDraftId != null) {
+      $result.articleCreationDraftId = articleCreationDraftId;
+    }
     if (productName != null) {
       $result.productName = productName;
     }
@@ -1068,7 +1072,8 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'creationType')
     ..aInt64(7, _omitFieldNames ? '' : 'articleCreationId')
-    ..aOS(8, _omitFieldNames ? '' : 'productName')
+    ..aInt64(8, _omitFieldNames ? '' : 'articleCreationDraftId')
+    ..aOS(9, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -1159,13 +1164,22 @@ class CreateArticleCreationDraftRequest extends $pb.GeneratedMessage {
   void clearArticleCreationId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get productName => $_getSZ(7);
+  $fixnum.Int64 get articleCreationDraftId => $_getI64(7);
   @$pb.TagNumber(8)
-  set productName($core.String v) { $_setString(7, v); }
+  set articleCreationDraftId($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasProductName() => $_has(7);
+  $core.bool hasArticleCreationDraftId() => $_has(7);
   @$pb.TagNumber(8)
-  void clearProductName() => clearField(8);
+  void clearArticleCreationDraftId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get productName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set productName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasProductName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearProductName() => clearField(9);
 }
 
 class CreateArticleCreationDraftResponse extends $pb.GeneratedMessage {
@@ -7505,6 +7519,110 @@ class ListArticleCreationTenantResponse extends $pb.GeneratedMessage {
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
   $0.PaginationResponse ensurePagination() => $_ensure(2);
+}
+
+class InitArticleCreationTenantRequest extends $pb.GeneratedMessage {
+  factory InitArticleCreationTenantRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  InitArticleCreationTenantRequest._() : super();
+  factory InitArticleCreationTenantRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitArticleCreationTenantRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitArticleCreationTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InitArticleCreationTenantRequest clone() => InitArticleCreationTenantRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InitArticleCreationTenantRequest copyWith(void Function(InitArticleCreationTenantRequest) updates) => super.copyWith((message) => updates(message as InitArticleCreationTenantRequest)) as InitArticleCreationTenantRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InitArticleCreationTenantRequest create() => InitArticleCreationTenantRequest._();
+  InitArticleCreationTenantRequest createEmptyInstance() => create();
+  static $pb.PbList<InitArticleCreationTenantRequest> createRepeated() => $pb.PbList<InitArticleCreationTenantRequest>();
+  @$core.pragma('dart2js:noInline')
+  static InitArticleCreationTenantRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitArticleCreationTenantRequest>(create);
+  static InitArticleCreationTenantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class InitArticleCreationTenantResponse extends $pb.GeneratedMessage {
+  factory InitArticleCreationTenantResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  InitArticleCreationTenantResponse._() : super();
+  factory InitArticleCreationTenantResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InitArticleCreationTenantResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitArticleCreationTenantResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InitArticleCreationTenantResponse clone() => InitArticleCreationTenantResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InitArticleCreationTenantResponse copyWith(void Function(InitArticleCreationTenantResponse) updates) => super.copyWith((message) => updates(message as InitArticleCreationTenantResponse)) as InitArticleCreationTenantResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InitArticleCreationTenantResponse create() => InitArticleCreationTenantResponse._();
+  InitArticleCreationTenantResponse createEmptyInstance() => create();
+  static $pb.PbList<InitArticleCreationTenantResponse> createRepeated() => $pb.PbList<InitArticleCreationTenantResponse>();
+  @$core.pragma('dart2js:noInline')
+  static InitArticleCreationTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitArticleCreationTenantResponse>(create);
+  static InitArticleCreationTenantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
 /// 学校成本

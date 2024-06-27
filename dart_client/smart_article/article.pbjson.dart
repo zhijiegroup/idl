@@ -199,7 +199,8 @@ const CreateArticleCreationDraftRequest$json = {
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'articleCreationId'},
-    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'article_creation_draft_id', '3': 8, '4': 1, '5': 3, '10': 'articleCreationDraftId'},
+    {'1': 'product_name', '3': 9, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -210,8 +211,9 @@ final $typed_data.Uint8List createArticleCreationDraftRequestDescriptor = $conve
     'CmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ29kZR'
     'IUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1jcmVh'
     'dGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSLgoTYXJ0aWNsZV9jcmVhdGlvbl9pZBgHIA'
-    'EoA1IRYXJ0aWNsZUNyZWF0aW9uSWQSIQoMcHJvZHVjdF9uYW1lGAggASgJUgtwcm9kdWN0TmFt'
-    'ZQ==');
+    'EoA1IRYXJ0aWNsZUNyZWF0aW9uSWQSOQoZYXJ0aWNsZV9jcmVhdGlvbl9kcmFmdF9pZBgIIAEo'
+    'A1IWYXJ0aWNsZUNyZWF0aW9uRHJhZnRJZBIhCgxwcm9kdWN0X25hbWUYCSABKAlSC3Byb2R1Y3'
+    'ROYW1l');
 
 @$core.Deprecated('Use createArticleCreationDraftResponseDescriptor instead')
 const CreateArticleCreationDraftResponse$json = {
@@ -1463,6 +1465,32 @@ final $typed_data.Uint8List listArticleCreationTenantResponseDescriptor = $conve
     'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNwEjcKBGxpc3QYAiADKAsyIy5nbG9yeV9hcGku'
     'R2V0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UgRsaXN0EjgKCnBhZ2luYXRpb24YZCABKAsyGC5iYX'
     'NlLlBhZ2luYXRpb25SZXNwb25zZVIKcGFnaW5hdGlvbg==');
+
+@$core.Deprecated('Use initArticleCreationTenantRequestDescriptor instead')
+const InitArticleCreationTenantRequest$json = {
+  '1': 'InitArticleCreationTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `InitArticleCreationTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initArticleCreationTenantRequestDescriptor = $convert.base64Decode(
+    'CiBJbml0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use initArticleCreationTenantResponseDescriptor instead')
+const InitArticleCreationTenantResponse$json = {
+  '1': 'InitArticleCreationTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `InitArticleCreationTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initArticleCreationTenantResponseDescriptor = $convert.base64Decode(
+    'CiFJbml0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
 @$core.Deprecated('Use listArticleCreationTenantCostRequestDescriptor instead')
 const ListArticleCreationTenantCostRequest$json = {

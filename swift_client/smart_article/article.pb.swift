@@ -320,6 +320,9 @@ struct GloryApi_CreateArticleCreationDraftRequest {
   /// 文案ID
   var articleCreationID: Int64 = 0
 
+  /// 草稿ID
+  var articleCreationDraftID: Int64 = 0
+
   var productName: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -2394,6 +2397,48 @@ struct GloryApi_ListArticleCreationTenantResponse {
   fileprivate var _pagination: Base_PaginationResponse? = nil
 }
 
+struct GloryApi_InitArticleCreationTenantRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseRequest: Base_BaseRequest {
+    get {return _baseRequest ?? Base_BaseRequest()}
+    set {_baseRequest = newValue}
+  }
+  /// Returns true if `baseRequest` has been explicitly set.
+  var hasBaseRequest: Bool {return self._baseRequest != nil}
+  /// Clears the value of `baseRequest`. Subsequent reads from it will return its default value.
+  mutating func clearBaseRequest() {self._baseRequest = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseRequest: Base_BaseRequest? = nil
+}
+
+struct GloryApi_InitArticleCreationTenantResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var baseResp: Base_BaseResponse {
+    get {return _baseResp ?? Base_BaseResponse()}
+    set {_baseResp = newValue}
+  }
+  /// Returns true if `baseResp` has been explicitly set.
+  var hasBaseResp: Bool {return self._baseResp != nil}
+  /// Clears the value of `baseResp`. Subsequent reads from it will return its default value.
+  mutating func clearBaseResp() {self._baseResp = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _baseResp: Base_BaseResponse? = nil
+}
+
 /// 学校成本
 struct GloryApi_ListArticleCreationTenantCostRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -2735,6 +2780,8 @@ extension GloryApi_GetArticleCreationTenant: @unchecked Sendable {}
 extension GloryApi_GetArticleCreationTenantResponse: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantRequest: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantResponse: @unchecked Sendable {}
+extension GloryApi_InitArticleCreationTenantRequest: @unchecked Sendable {}
+extension GloryApi_InitArticleCreationTenantResponse: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantCostRequest: @unchecked Sendable {}
 extension GloryApi_ArticleCreationTenantCost: @unchecked Sendable {}
 extension GloryApi_ListArticleCreationTenantCostResponse: @unchecked Sendable {}
@@ -3338,7 +3385,8 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     5: .same(proto: "content"),
     6: .standard(proto: "creation_type"),
     7: .standard(proto: "article_creation_id"),
-    8: .standard(proto: "product_name"),
+    8: .standard(proto: "article_creation_draft_id"),
+    9: .standard(proto: "product_name"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3354,7 +3402,8 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
       case 5: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 7: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationID) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 8: try { try decoder.decodeSingularInt64Field(value: &self.articleCreationDraftID) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.productName) }()
       default: break
       }
     }
@@ -3386,8 +3435,11 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if self.articleCreationID != 0 {
       try visitor.visitSingularInt64Field(value: self.articleCreationID, fieldNumber: 7)
     }
+    if self.articleCreationDraftID != 0 {
+      try visitor.visitSingularInt64Field(value: self.articleCreationDraftID, fieldNumber: 8)
+    }
     if !self.productName.isEmpty {
-      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: self.productName, fieldNumber: 9)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3400,6 +3452,7 @@ extension GloryApi_CreateArticleCreationDraftRequest: SwiftProtobuf.Message, Swi
     if lhs.content != rhs.content {return false}
     if lhs.creationType != rhs.creationType {return false}
     if lhs.articleCreationID != rhs.articleCreationID {return false}
+    if lhs.articleCreationDraftID != rhs.articleCreationDraftID {return false}
     if lhs.productName != rhs.productName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -7291,6 +7344,78 @@ extension GloryApi_ListArticleCreationTenantResponse: SwiftProtobuf.Message, Swi
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.list != rhs.list {return false}
     if lhs._pagination != rhs._pagination {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_InitArticleCreationTenantRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".InitArticleCreationTenantRequest"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_request"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseRequest {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_InitArticleCreationTenantRequest, rhs: GloryApi_InitArticleCreationTenantRequest) -> Bool {
+    if lhs._baseRequest != rhs._baseRequest {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension GloryApi_InitArticleCreationTenantResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".InitArticleCreationTenantResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "base_resp"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._baseResp) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._baseResp {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: GloryApi_InitArticleCreationTenantResponse, rhs: GloryApi_InitArticleCreationTenantResponse) -> Bool {
+    if lhs._baseResp != rhs._baseResp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

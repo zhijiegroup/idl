@@ -102,7 +102,12 @@ private static final long serialVersionUID = 0L;
             articleCreationId = input.readInt64();
             break;
           }
-          case 66: {
+          case 64: {
+
+            articleCreationDraftId = input.readInt64();
+            break;
+          }
+          case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             productName = s;
@@ -371,10 +376,25 @@ private static final long serialVersionUID = 0L;
     return articleCreationId ;
   }
 
-  public static final int PRODUCT_NAME_FIELD_NUMBER = 8;
+  public static final int ARTICLE_CREATION_DRAFT_ID_FIELD_NUMBER = 8;
+  private long articleCreationDraftId ;
+  /**
+   * <pre>
+   * 草稿ID
+   * </pre>
+   *
+   * <code>int64 article_creation_draft_id = 8;</code>
+   * @return The articleCreationDraftId.
+   */
+  @java.lang.Override
+  public long getArticleCreationDraftId() {
+    return articleCreationDraftId ;
+  }
+
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 9;
   private volatile java.lang.Object productName ;
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The productName.
    */
   @java.lang.Override
@@ -391,7 +411,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The bytes for productName.
    */
   @java.lang.Override
@@ -444,8 +464,11 @@ private static final long serialVersionUID = 0L;
     if (articleCreationId != 0L) {
       output.writeInt64(7, articleCreationId );
     }
+    if (articleCreationDraftId != 0L) {
+      output.writeInt64(8, articleCreationDraftId );
+    }
     if (!getProductNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, productName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, productName );
     }
     unknownFields.writeTo(output);
   }
@@ -479,8 +502,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, articleCreationId );
     }
+    if (articleCreationDraftId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, articleCreationDraftId );
+    }
     if (!getProductNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, productName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, productName );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -514,6 +541,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreationType())) return false;
     if (getArticleCreationId()
         != other.getArticleCreationId()) return false;
+    if (getArticleCreationDraftId()
+        != other.getArticleCreationDraftId()) return false;
     if (!getProductName()
         .equals(other.getProductName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -544,6 +573,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getArticleCreationId());
+    hash = (37 * hash) + ARTICLE_CREATION_DRAFT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getArticleCreationDraftId());
     hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getProductName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -697,6 +729,8 @@ private static final long serialVersionUID = 0L;
 
       articleCreationId = 0L;
 
+      articleCreationDraftId = 0L;
+
       productName = "";
 
       return this;
@@ -736,6 +770,7 @@ private static final long serialVersionUID = 0L;
       result.content = content ;
       result.creationType = creationType ;
       result.articleCreationId = articleCreationId ;
+      result.articleCreationDraftId = articleCreationDraftId ;
       result.productName = productName ;
       onBuilt();
       return result;
@@ -810,6 +845,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getArticleCreationId() != 0L) {
         setArticleCreationId(other.getArticleCreationId());
+      }
+      if (other.getArticleCreationDraftId() != 0L) {
+        setArticleCreationDraftId(other.getArticleCreationDraftId());
       }
       if (!other.getProductName().isEmpty()) {
         productName = other.productName ;
@@ -1386,9 +1424,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long articleCreationDraftId ;
+    /**
+     * <pre>
+     * 草稿ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 8;</code>
+     * @return The articleCreationDraftId.
+     */
+    @java.lang.Override
+    public long getArticleCreationDraftId() {
+      return articleCreationDraftId ;
+    }
+    /**
+     * <pre>
+     * 草稿ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 8;</code>
+     * @param value The articleCreationDraftId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArticleCreationDraftId(long value) {
+      
+      articleCreationDraftId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 草稿ID
+     * </pre>
+     *
+     * <code>int64 article_creation_draft_id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearArticleCreationDraftId() {
+      
+      articleCreationDraftId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object productName = "";
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return The productName.
      */
     public java.lang.String getProductName() {
@@ -1404,7 +1485,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return The bytes for productName.
      */
     public com.google.protobuf.ByteString
@@ -1421,7 +1502,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @param value The productName to set.
      * @return This builder for chaining.
      */
@@ -1436,7 +1517,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductName() {
@@ -1446,7 +1527,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @param value The bytes for productName to set.
      * @return This builder for chaining.
      */

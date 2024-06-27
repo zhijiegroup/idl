@@ -1958,6 +1958,10 @@ CreateLivePlanProduct create live plan product */
     request: article.GetSubTopicAiResultRequest
   ): Promise<article.GetSubTopicAiResultResponse>;
 
+  InitArticleCreationTenant(
+    request: article.InitArticleCreationTenantRequest
+  ): Promise<article.InitArticleCreationTenantResponse>;
+
   /** 数字人合成视频接口 */
   CreateDigitalVideo(
     request: article.CreateDigitalVideoRequest
