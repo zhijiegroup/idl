@@ -43,6 +43,8 @@ struct GloryApi_TaskParameter {
 
   var taskParameterRequired: Bool = false
 
+  var maxLength: Int32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -497,6 +499,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     7: .standard(proto: "task_parameter_children"),
     8: .standard(proto: "task_parameter_visible_in_system"),
     9: .standard(proto: "task_parameter_required"),
+    10: .standard(proto: "max_length"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -514,6 +517,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 7: try { try decoder.decodeRepeatedMessageField(value: &self.taskParameterChildren) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self.taskParameterVisibleInSystem) }()
       case 9: try { try decoder.decodeSingularBoolField(value: &self.taskParameterRequired) }()
+      case 10: try { try decoder.decodeSingularInt32Field(value: &self.maxLength) }()
       default: break
       }
     }
@@ -547,6 +551,9 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.taskParameterRequired != false {
       try visitor.visitSingularBoolField(value: self.taskParameterRequired, fieldNumber: 9)
     }
+    if self.maxLength != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxLength, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -560,6 +567,7 @@ extension GloryApi_TaskParameter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.taskParameterChildren != rhs.taskParameterChildren {return false}
     if lhs.taskParameterVisibleInSystem != rhs.taskParameterVisibleInSystem {return false}
     if lhs.taskParameterRequired != rhs.taskParameterRequired {return false}
+    if lhs.maxLength != rhs.maxLength {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

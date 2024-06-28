@@ -28,6 +28,7 @@ class TaskParameter extends $pb.GeneratedMessage {
     $core.Iterable<TaskParameter>? taskParameterChildren,
     $core.bool? taskParameterVisibleInSystem,
     $core.bool? taskParameterRequired,
+    $core.int? maxLength,
   }) {
     final $result = create();
     if (taskParameterKey != null) {
@@ -57,6 +58,9 @@ class TaskParameter extends $pb.GeneratedMessage {
     if (taskParameterRequired != null) {
       $result.taskParameterRequired = taskParameterRequired;
     }
+    if (maxLength != null) {
+      $result.maxLength = maxLength;
+    }
     return $result;
   }
   TaskParameter._() : super();
@@ -73,6 +77,7 @@ class TaskParameter extends $pb.GeneratedMessage {
     ..pc<TaskParameter>(7, _omitFieldNames ? '' : 'taskParameterChildren', $pb.PbFieldType.PM, subBuilder: TaskParameter.create)
     ..aOB(8, _omitFieldNames ? '' : 'taskParameterVisibleInSystem')
     ..aOB(9, _omitFieldNames ? '' : 'taskParameterRequired')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'maxLength', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -165,6 +170,15 @@ class TaskParameter extends $pb.GeneratedMessage {
   $core.bool hasTaskParameterRequired() => $_has(8);
   @$pb.TagNumber(9)
   void clearTaskParameterRequired() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get maxLength => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set maxLength($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasMaxLength() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMaxLength() => clearField(10);
 }
 
 class TaskConfig extends $pb.GeneratedMessage {
