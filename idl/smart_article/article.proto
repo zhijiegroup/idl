@@ -15,9 +15,11 @@ message ArticleCreation {
     string topic = 6;
     string creation_type = 7;
     string digital_human_video_url = 8;
-    string created_at = 9;
+    string updated_at = 9;
     string content = 10;
     string product_name = 11;
+    int32 score = 12;
+    string evaluator = 13;
 }
 
 message ArticleCreationDraft {
