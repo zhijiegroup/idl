@@ -114,6 +114,11 @@ private static final long serialVersionUID = 0L;
             taskParameterRequired = input.readBool();
             break;
           }
+          case 80: {
+
+            maxLength = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -444,6 +449,17 @@ private static final long serialVersionUID = 0L;
     return taskParameterRequired ;
   }
 
+  public static final int MAX_LENGTH_FIELD_NUMBER = 10;
+  private int maxLength ;
+  /**
+   * <code>int32 max_length = 10;</code>
+   * @return The maxLength.
+   */
+  @java.lang.Override
+  public int getMaxLength() {
+    return maxLength ;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -485,6 +501,9 @@ private static final long serialVersionUID = 0L;
     if (taskParameterRequired != false) {
       output.writeBool(9, taskParameterRequired );
     }
+    if (maxLength != 0) {
+      output.writeInt32(10, maxLength );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -525,6 +544,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, taskParameterRequired );
     }
+    if (maxLength != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, maxLength );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -558,6 +581,8 @@ private static final long serialVersionUID = 0L;
         != other.getTaskParameterVisibleInSystem()) return false;
     if (getTaskParameterRequired()
         != other.getTaskParameterRequired()) return false;
+    if (getMaxLength()
+        != other.getMaxLength()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -593,6 +618,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TASK_PARAMETER_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTaskParameterRequired());
+    hash = (37 * hash) + MAX_LENGTH_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxLength();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -754,6 +781,8 @@ private static final long serialVersionUID = 0L;
 
       taskParameterRequired = false;
 
+      maxLength = 0;
+
       return this;
     }
 
@@ -806,6 +835,7 @@ private static final long serialVersionUID = 0L;
       }
       result.taskParameterVisibleInSystem = taskParameterVisibleInSystem ;
       result.taskParameterRequired = taskParameterRequired ;
+      result.maxLength = maxLength ;
       onBuilt();
       return result;
     }
@@ -931,6 +961,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTaskParameterRequired() != false) {
         setTaskParameterRequired(other.getTaskParameterRequired());
+      }
+      if (other.getMaxLength() != 0) {
+        setMaxLength(other.getMaxLength());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1880,6 +1913,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaskParameterRequired() {
       
       taskParameterRequired = false;
+      onChanged();
+      return this;
+    }
+
+    private int maxLength ;
+    /**
+     * <code>int32 max_length = 10;</code>
+     * @return The maxLength.
+     */
+    @java.lang.Override
+    public int getMaxLength() {
+      return maxLength ;
+    }
+    /**
+     * <code>int32 max_length = 10;</code>
+     * @param value The maxLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxLength(int value) {
+      
+      maxLength = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 max_length = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxLength() {
+      
+      maxLength = 0;
       onChanged();
       return this;
     }

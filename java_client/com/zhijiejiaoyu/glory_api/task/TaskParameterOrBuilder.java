@@ -126,4 +126,10 @@ public interface TaskParameterOrBuilder extends
    * @return The taskParameterRequired.
    */
   boolean getTaskParameterRequired();
+
+  /**
+   * <code>int32 max_length = 10;</code>
+   * @return The maxLength.
+   */
+  int getMaxLength();
 }
