@@ -3484,6 +3484,12 @@ export class glory_api {
     );
   }
 
+  CalcArticleCreationTenant(request) {
+    const query = queryStringify(request);
+    const uri = `${this.uriPrefix}/api/article_creation/calc_article_creation_tenant${query}`;
+    return fetch(uri, { method, headers, credentials }).then(handleResponse);
+  }
+
   InitArticleCreationTenant(request) {
     const query = queryStringify(request);
     const uri = `${this.uriPrefix}/api/article_creation/init_article_creation_tenant${query}`;

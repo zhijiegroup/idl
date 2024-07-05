@@ -59,7 +59,7 @@ public final class GloryApiService {
       "o\032\027task/teacher_task.proto\032\027task/student" +
       "_task.proto\032\037notification/notification.p" +
       "roto\032\033smart_article/article.proto\032!appro" +
-      "val_flow/approval_flow.proto2\310\305\003\n\tglory_" +
+      "val_flow/approval_flow.proto2\371\306\003\n\tglory_" +
       "api\022s\n\rCreateExample\022\037.glory_api.CreateE" +
       "xampleRequest\032 .glory_api.CreateExampleR" +
       "esponse\"\037\322\301\030\033/api/example/create_example" +
@@ -1474,45 +1474,49 @@ public final class GloryApiService {
       "_api.GetSubTopicAiResultRequest\032&.glory_" +
       "api.GetSubTopicAiResultResponse\"1\322\301\030-/ap" +
       "i/article_creation/get_sub_topic_ai_resu" +
-      "lt\022\256\001\n\031InitArticleCreationTenant\022+.glory" +
-      "_api.InitArticleCreationTenantRequest\032,." +
-      "glory_api.InitArticleCreationTenantRespo" +
-      "nse\"6\312\301\0302/api/article_creation/init_arti" +
-      "cle_creation_tenant\022\200\001\n\022CreateDigitalVid" +
-      "eo\022$.glory_api.CreateDigitalVideoRequest" +
-      "\032%.glory_api.CreateDigitalVideoResponse\"" +
-      "\035\322\301\030\031/api/digital/create_video\022x\n\020ListDi" +
-      "gitalVideo\022\".glory_api.ListDigitalVideoR" +
-      "equest\032#.glory_api.ListDigitalVideoRespo" +
-      "nse\"\033\322\301\030\027/api/digital/list_video\022t\n\017GetD" +
-      "igitalVideo\022!.glory_api.GetDigitalVideoR" +
-      "equest\032\".glory_api.GetDigitalVideoRespon" +
-      "se\"\032\322\301\030\026/api/digital/get_video\022|\n\017ListDi" +
-      "gitalCode\022!.glory_api.ListDigitalCodeReq" +
-      "uest\032\".glory_api.ListDigitalCodeResponse" +
-      "\"\"\312\301\030\036/api/digital/list_digital_code\022\200\001\n" +
-      "\022DeleteDigitalVideo\022$.glory_api.DeleteDi" +
-      "gitalVideoRequest\032%.glory_api.DeleteDigi" +
-      "talVideoResponse\"\035\312\301\030\031/api/digital/delet" +
-      "e_video\022|\n\021ListDigitalAvatar\022#.glory_api" +
-      ".ListDigitalAvatarRequest\032$.glory_api.Li" +
-      "stDigitalAvatarResponse\"\034\322\301\030\030/api/digita" +
-      "l/list_avatar\022\216\001\n\022SubmitApprovalFlow\022$.g" +
-      "lory_api.SubmitApprovalFlowRequest\032%.glo" +
-      "ry_api.SubmitApprovalFlowResponse\"+\322\301\030\'/" +
-      "api/approval_flow/submit_approval_flow\022q" +
-      "\n\013ApproveFlow\022\035.glory_api.ApproveFlowReq" +
-      "uest\032\036.glory_api.ApproveFlowResponse\"#\322\301" +
-      "\030\037/api/approval_flow/approve_flow\022\206\001\n\020Li" +
-      "stApprovalFlow\022\".glory_api.ListApprovalF" +
-      "lowRequest\032#.glory_api.ListApprovalFlowR" +
-      "esponse\")\322\301\030%/api/approval_flow/list_app" +
-      "roval_flow\022\233\001\n\025GetApprovalFlowDetail\022\'.g" +
-      "lory_api.GetApprovalFlowDetailRequest\032(." +
-      "glory_api.GetApprovalFlowDetailResponse\"" +
-      "/\312\301\030+/api/approval_flow/get_approval_flo" +
-      "w_detailB\036\n\032com.zhijiejiaoyu.glory_apiP\001" +
-      "b\006proto3"
+      "lt\022\256\001\n\031CalcArticleCreationTenant\022+.glory" +
+      "_api.CalcArticleCreationTenantRequest\032,." +
+      "glory_api.CalcArticleCreationTenantRespo" +
+      "nse\"6\312\301\0302/api/article_creation/calc_arti" +
+      "cle_creation_tenant\022\256\001\n\031InitArticleCreat" +
+      "ionTenant\022+.glory_api.InitArticleCreatio" +
+      "nTenantRequest\032,.glory_api.InitArticleCr" +
+      "eationTenantResponse\"6\312\301\0302/api/article_c" +
+      "reation/init_article_creation_tenant\022\200\001\n" +
+      "\022CreateDigitalVideo\022$.glory_api.CreateDi" +
+      "gitalVideoRequest\032%.glory_api.CreateDigi" +
+      "talVideoResponse\"\035\322\301\030\031/api/digital/creat" +
+      "e_video\022x\n\020ListDigitalVideo\022\".glory_api." +
+      "ListDigitalVideoRequest\032#.glory_api.List" +
+      "DigitalVideoResponse\"\033\322\301\030\027/api/digital/l" +
+      "ist_video\022t\n\017GetDigitalVideo\022!.glory_api" +
+      ".GetDigitalVideoRequest\032\".glory_api.GetD" +
+      "igitalVideoResponse\"\032\322\301\030\026/api/digital/ge" +
+      "t_video\022|\n\017ListDigitalCode\022!.glory_api.L" +
+      "istDigitalCodeRequest\032\".glory_api.ListDi" +
+      "gitalCodeResponse\"\"\312\301\030\036/api/digital/list" +
+      "_digital_code\022\200\001\n\022DeleteDigitalVideo\022$.g" +
+      "lory_api.DeleteDigitalVideoRequest\032%.glo" +
+      "ry_api.DeleteDigitalVideoResponse\"\035\312\301\030\031/" +
+      "api/digital/delete_video\022|\n\021ListDigitalA" +
+      "vatar\022#.glory_api.ListDigitalAvatarReque" +
+      "st\032$.glory_api.ListDigitalAvatarResponse" +
+      "\"\034\322\301\030\030/api/digital/list_avatar\022\216\001\n\022Submi" +
+      "tApprovalFlow\022$.glory_api.SubmitApproval" +
+      "FlowRequest\032%.glory_api.SubmitApprovalFl" +
+      "owResponse\"+\322\301\030\'/api/approval_flow/submi" +
+      "t_approval_flow\022q\n\013ApproveFlow\022\035.glory_a" +
+      "pi.ApproveFlowRequest\032\036.glory_api.Approv" +
+      "eFlowResponse\"#\322\301\030\037/api/approval_flow/ap" +
+      "prove_flow\022\206\001\n\020ListApprovalFlow\022\".glory_" +
+      "api.ListApprovalFlowRequest\032#.glory_api." +
+      "ListApprovalFlowResponse\")\322\301\030%/api/appro" +
+      "val_flow/list_approval_flow\022\233\001\n\025GetAppro" +
+      "valFlowDetail\022\'.glory_api.GetApprovalFlo" +
+      "wDetailRequest\032(.glory_api.GetApprovalFl" +
+      "owDetailResponse\"/\312\301\030+/api/approval_flow" +
+      "/get_approval_flow_detailB\036\n\032com.zhijiej" +
+      "iaoyu.glory_apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

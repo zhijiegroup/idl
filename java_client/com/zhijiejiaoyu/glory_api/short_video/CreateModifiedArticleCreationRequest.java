@@ -103,10 +103,15 @@ private static final long serialVersionUID = 0L;
           }
           case 56: {
 
-            modifiedArticleCreationId = input.readInt64();
+            articleCreationId = input.readInt64();
             break;
           }
-          case 66: {
+          case 64: {
+
+            lastArticleCreationId = input.readInt64();
+            break;
+          }
+          case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             productName = s;
@@ -360,25 +365,40 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MODIFIED_ARTICLE_CREATION_ID_FIELD_NUMBER = 7;
-  private long modifiedArticleCreationId ;
+  public static final int ARTICLE_CREATION_ID_FIELD_NUMBER = 7;
+  private long articleCreationId ;
+  /**
+   * <pre>
+   * 新的的文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 7;</code>
+   * @return The articleCreationId.
+   */
+  @java.lang.Override
+  public long getArticleCreationId() {
+    return articleCreationId ;
+  }
+
+  public static final int LAST_ARTICLE_CREATION_ID_FIELD_NUMBER = 8;
+  private long lastArticleCreationId ;
   /**
    * <pre>
    * 修改的文案ID
    * </pre>
    *
-   * <code>int64 modified_article_creation_id = 7;</code>
-   * @return The modifiedArticleCreationId.
+   * <code>int64 last_article_creation_id = 8;</code>
+   * @return The lastArticleCreationId.
    */
   @java.lang.Override
-  public long getModifiedArticleCreationId() {
-    return modifiedArticleCreationId ;
+  public long getLastArticleCreationId() {
+    return lastArticleCreationId ;
   }
 
-  public static final int PRODUCT_NAME_FIELD_NUMBER = 8;
+  public static final int PRODUCT_NAME_FIELD_NUMBER = 9;
   private volatile java.lang.Object productName ;
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The productName.
    */
   @java.lang.Override
@@ -395,7 +415,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The bytes for productName.
    */
   @java.lang.Override
@@ -445,11 +465,14 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, creationType );
     }
-    if (modifiedArticleCreationId != 0L) {
-      output.writeInt64(7, modifiedArticleCreationId );
+    if (articleCreationId != 0L) {
+      output.writeInt64(7, articleCreationId );
+    }
+    if (lastArticleCreationId != 0L) {
+      output.writeInt64(8, lastArticleCreationId );
     }
     if (!getProductNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, productName );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, productName );
     }
     unknownFields.writeTo(output);
   }
@@ -479,12 +502,16 @@ private static final long serialVersionUID = 0L;
     if (!getCreationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, creationType );
     }
-    if (modifiedArticleCreationId != 0L) {
+    if (articleCreationId != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, modifiedArticleCreationId );
+        .computeInt64Size(7, articleCreationId );
+    }
+    if (lastArticleCreationId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(8, lastArticleCreationId );
     }
     if (!getProductNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, productName );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, productName );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -516,8 +543,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getContent())) return false;
     if (!getCreationType()
         .equals(other.getCreationType())) return false;
-    if (getModifiedArticleCreationId()
-        != other.getModifiedArticleCreationId()) return false;
+    if (getArticleCreationId()
+        != other.getArticleCreationId()) return false;
+    if (getLastArticleCreationId()
+        != other.getLastArticleCreationId()) return false;
     if (!getProductName()
         .equals(other.getProductName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -545,9 +574,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + CREATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getCreationType().hashCode();
-    hash = (37 * hash) + MODIFIED_ARTICLE_CREATION_ID_FIELD_NUMBER;
+    hash = (37 * hash) + ARTICLE_CREATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getModifiedArticleCreationId());
+        getArticleCreationId());
+    hash = (37 * hash) + LAST_ARTICLE_CREATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLastArticleCreationId());
     hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getProductName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -703,7 +735,9 @@ private static final long serialVersionUID = 0L;
 
       creationType = "";
 
-      modifiedArticleCreationId = 0L;
+      articleCreationId = 0L;
+
+      lastArticleCreationId = 0L;
 
       productName = "";
 
@@ -743,7 +777,8 @@ private static final long serialVersionUID = 0L;
       result.title = title ;
       result.content = content ;
       result.creationType = creationType ;
-      result.modifiedArticleCreationId = modifiedArticleCreationId ;
+      result.articleCreationId = articleCreationId ;
+      result.lastArticleCreationId = lastArticleCreationId ;
       result.productName = productName ;
       onBuilt();
       return result;
@@ -816,8 +851,11 @@ private static final long serialVersionUID = 0L;
         creationType = other.creationType ;
         onChanged();
       }
-      if (other.getModifiedArticleCreationId() != 0L) {
-        setModifiedArticleCreationId(other.getModifiedArticleCreationId());
+      if (other.getArticleCreationId() != 0L) {
+        setArticleCreationId(other.getArticleCreationId());
+      }
+      if (other.getLastArticleCreationId() != 0L) {
+        setLastArticleCreationId(other.getLastArticleCreationId());
       }
       if (!other.getProductName().isEmpty()) {
         productName = other.productName ;
@@ -1351,31 +1389,74 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long modifiedArticleCreationId ;
+    private long articleCreationId ;
+    /**
+     * <pre>
+     * 新的的文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @return The articleCreationId.
+     */
+    @java.lang.Override
+    public long getArticleCreationId() {
+      return articleCreationId ;
+    }
+    /**
+     * <pre>
+     * 新的的文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @param value The articleCreationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArticleCreationId(long value) {
+      
+      articleCreationId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的的文案ID
+     * </pre>
+     *
+     * <code>int64 article_creation_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearArticleCreationId() {
+      
+      articleCreationId = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long lastArticleCreationId ;
     /**
      * <pre>
      * 修改的文案ID
      * </pre>
      *
-     * <code>int64 modified_article_creation_id = 7;</code>
-     * @return The modifiedArticleCreationId.
+     * <code>int64 last_article_creation_id = 8;</code>
+     * @return The lastArticleCreationId.
      */
     @java.lang.Override
-    public long getModifiedArticleCreationId() {
-      return modifiedArticleCreationId ;
+    public long getLastArticleCreationId() {
+      return lastArticleCreationId ;
     }
     /**
      * <pre>
      * 修改的文案ID
      * </pre>
      *
-     * <code>int64 modified_article_creation_id = 7;</code>
-     * @param value The modifiedArticleCreationId to set.
+     * <code>int64 last_article_creation_id = 8;</code>
+     * @param value The lastArticleCreationId to set.
      * @return This builder for chaining.
      */
-    public Builder setModifiedArticleCreationId(long value) {
+    public Builder setLastArticleCreationId(long value) {
       
-      modifiedArticleCreationId = value;
+      lastArticleCreationId = value;
       onChanged();
       return this;
     }
@@ -1384,19 +1465,19 @@ private static final long serialVersionUID = 0L;
      * 修改的文案ID
      * </pre>
      *
-     * <code>int64 modified_article_creation_id = 7;</code>
+     * <code>int64 last_article_creation_id = 8;</code>
      * @return This builder for chaining.
      */
-    public Builder clearModifiedArticleCreationId() {
+    public Builder clearLastArticleCreationId() {
       
-      modifiedArticleCreationId = 0L;
+      lastArticleCreationId = 0L;
       onChanged();
       return this;
     }
 
     private java.lang.Object productName = "";
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return The productName.
      */
     public java.lang.String getProductName() {
@@ -1412,7 +1493,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return The bytes for productName.
      */
     public com.google.protobuf.ByteString
@@ -1429,7 +1510,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @param value The productName to set.
      * @return This builder for chaining.
      */
@@ -1444,7 +1525,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearProductName() {
@@ -1454,7 +1535,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string product_name = 8;</code>
+     * <code>string product_name = 9;</code>
      * @param value The bytes for productName to set.
      * @return This builder for chaining.
      */

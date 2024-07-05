@@ -1271,7 +1271,8 @@ class CreateModifiedArticleCreationRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? content,
     $core.String? creationType,
-    $fixnum.Int64? modifiedArticleCreationId,
+    $fixnum.Int64? articleCreationId,
+    $fixnum.Int64? lastArticleCreationId,
     $core.String? productName,
   }) {
     final $result = create();
@@ -1293,8 +1294,11 @@ class CreateModifiedArticleCreationRequest extends $pb.GeneratedMessage {
     if (creationType != null) {
       $result.creationType = creationType;
     }
-    if (modifiedArticleCreationId != null) {
-      $result.modifiedArticleCreationId = modifiedArticleCreationId;
+    if (articleCreationId != null) {
+      $result.articleCreationId = articleCreationId;
+    }
+    if (lastArticleCreationId != null) {
+      $result.lastArticleCreationId = lastArticleCreationId;
     }
     if (productName != null) {
       $result.productName = productName;
@@ -1312,8 +1316,9 @@ class CreateModifiedArticleCreationRequest extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'title')
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'creationType')
-    ..aInt64(7, _omitFieldNames ? '' : 'modifiedArticleCreationId')
-    ..aOS(8, _omitFieldNames ? '' : 'productName')
+    ..aInt64(7, _omitFieldNames ? '' : 'articleCreationId')
+    ..aInt64(8, _omitFieldNames ? '' : 'lastArticleCreationId')
+    ..aOS(9, _omitFieldNames ? '' : 'productName')
     ..hasRequiredFields = false
   ;
 
@@ -1395,22 +1400,31 @@ class CreateModifiedArticleCreationRequest extends $pb.GeneratedMessage {
   void clearCreationType() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get modifiedArticleCreationId => $_getI64(6);
+  $fixnum.Int64 get articleCreationId => $_getI64(6);
   @$pb.TagNumber(7)
-  set modifiedArticleCreationId($fixnum.Int64 v) { $_setInt64(6, v); }
+  set articleCreationId($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasModifiedArticleCreationId() => $_has(6);
+  $core.bool hasArticleCreationId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearModifiedArticleCreationId() => clearField(7);
+  void clearArticleCreationId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get productName => $_getSZ(7);
+  $fixnum.Int64 get lastArticleCreationId => $_getI64(7);
   @$pb.TagNumber(8)
-  set productName($core.String v) { $_setString(7, v); }
+  set lastArticleCreationId($fixnum.Int64 v) { $_setInt64(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasProductName() => $_has(7);
+  $core.bool hasLastArticleCreationId() => $_has(7);
   @$pb.TagNumber(8)
-  void clearProductName() => clearField(8);
+  void clearLastArticleCreationId() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get productName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set productName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasProductName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearProductName() => clearField(9);
 }
 
 class CreateModifiedArticleCreationResponse extends $pb.GeneratedMessage {
@@ -7690,6 +7704,110 @@ class InitArticleCreationTenantResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static InitArticleCreationTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitArticleCreationTenantResponse>(create);
   static InitArticleCreationTenantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($0.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
+class CalcArticleCreationTenantRequest extends $pb.GeneratedMessage {
+  factory CalcArticleCreationTenantRequest({
+    $0.BaseRequest? baseRequest,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    return $result;
+  }
+  CalcArticleCreationTenantRequest._() : super();
+  factory CalcArticleCreationTenantRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CalcArticleCreationTenantRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalcArticleCreationTenantRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CalcArticleCreationTenantRequest clone() => CalcArticleCreationTenantRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CalcArticleCreationTenantRequest copyWith(void Function(CalcArticleCreationTenantRequest) updates) => super.copyWith((message) => updates(message as CalcArticleCreationTenantRequest)) as CalcArticleCreationTenantRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CalcArticleCreationTenantRequest create() => CalcArticleCreationTenantRequest._();
+  CalcArticleCreationTenantRequest createEmptyInstance() => create();
+  static $pb.PbList<CalcArticleCreationTenantRequest> createRepeated() => $pb.PbList<CalcArticleCreationTenantRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CalcArticleCreationTenantRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalcArticleCreationTenantRequest>(create);
+  static CalcArticleCreationTenantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($0.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.BaseRequest ensureBaseRequest() => $_ensure(0);
+}
+
+class CalcArticleCreationTenantResponse extends $pb.GeneratedMessage {
+  factory CalcArticleCreationTenantResponse({
+    $0.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  CalcArticleCreationTenantResponse._() : super();
+  factory CalcArticleCreationTenantResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CalcArticleCreationTenantResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CalcArticleCreationTenantResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$0.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $0.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CalcArticleCreationTenantResponse clone() => CalcArticleCreationTenantResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CalcArticleCreationTenantResponse copyWith(void Function(CalcArticleCreationTenantResponse) updates) => super.copyWith((message) => updates(message as CalcArticleCreationTenantResponse)) as CalcArticleCreationTenantResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CalcArticleCreationTenantResponse create() => CalcArticleCreationTenantResponse._();
+  CalcArticleCreationTenantResponse createEmptyInstance() => create();
+  static $pb.PbList<CalcArticleCreationTenantResponse> createRepeated() => $pb.PbList<CalcArticleCreationTenantResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CalcArticleCreationTenantResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CalcArticleCreationTenantResponse>(create);
+  static CalcArticleCreationTenantResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.BaseResponse get baseResp => $_getN(0);

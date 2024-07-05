@@ -111,8 +111,10 @@ export interface CreateModifiedArticleCreationRequest {
   title?: string;
   content?: string;
   creation_type?: string;
+  /** 新的的文案ID */
+  article_creation_id?: string;
   /** 修改的文案ID */
-  modified_article_creation_id?: string;
+  last_article_creation_id?: string;
   product_name?: string;
 }
 
@@ -641,6 +643,14 @@ export interface InitArticleCreationTenantRequest {
 }
 
 export interface InitArticleCreationTenantResponse {
+  base_resp?: base.BaseResponse;
+}
+
+export interface CalcArticleCreationTenantRequest {
+  base_request?: base.BaseRequest;
+}
+
+export interface CalcArticleCreationTenantResponse {
   base_resp?: base.BaseResponse;
 }
 
