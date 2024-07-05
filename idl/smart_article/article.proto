@@ -107,8 +107,9 @@ message CreateModifiedArticleCreationRequest {
     string title = 4;
     string content = 5;
     string creation_type = 6;
-    int64 modified_article_creation_id = 7; // 修改的文案ID
-    string product_name = 8;
+    int64 article_creation_id = 7; // 新的的文案ID
+    int64 last_article_creation_id = 8; // 修改的文案ID
+    string product_name = 9;
 }
 
 message CreateModifiedArticleCreationResponse {
@@ -594,6 +595,14 @@ message InitArticleCreationTenantRequest {
 }
 
 message InitArticleCreationTenantResponse {
+    base.BaseResponse base_resp = 1;
+}
+
+message CalcArticleCreationTenantRequest {
+    base.BaseRequest base_request = 1;
+}
+
+message CalcArticleCreationTenantResponse {
     base.BaseResponse base_resp = 1;
 }
 
