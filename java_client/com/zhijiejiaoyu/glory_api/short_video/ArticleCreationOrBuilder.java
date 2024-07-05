@@ -92,16 +92,16 @@ public interface ArticleCreationOrBuilder extends
       getDigitalHumanVideoUrlBytes();
 
   /**
-   * <code>string created_at = 9;</code>
-   * @return The createdAt.
+   * <code>string updated_at = 9;</code>
+   * @return The updatedAt.
    */
-  java.lang.String getCreatedAt();
+  java.lang.String getUpdatedAt();
   /**
-   * <code>string created_at = 9;</code>
-   * @return The bytes for createdAt.
+   * <code>string updated_at = 9;</code>
+   * @return The bytes for updatedAt.
    */
   com.google.protobuf.ByteString
-      getCreatedAtBytes();
+      getUpdatedAtBytes();
 
   /**
    * <code>string content = 10;</code>
@@ -126,4 +126,22 @@ public interface ArticleCreationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getProductNameBytes();
+
+  /**
+   * <code>int32 score = 12;</code>
+   * @return The score.
+   */
+  int getScore();
+
+  /**
+   * <code>string evaluator = 13;</code>
+   * @return The evaluator.
+   */
+  java.lang.String getEvaluator();
+  /**
+   * <code>string evaluator = 13;</code>
+   * @return The bytes for evaluator.
+   */
+  com.google.protobuf.ByteString
+      getEvaluatorBytes();
 }

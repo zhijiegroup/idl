@@ -15,9 +15,11 @@ export interface ArticleCreation {
   topic?: string;
   creation_type?: string;
   digital_human_video_url?: string;
-  created_at?: string;
+  updated_at?: string;
   content?: string;
   product_name?: string;
+  score?: number;
+  evaluator?: string;
 }
 
 export interface ArticleCreationDraft {
@@ -231,7 +233,7 @@ export interface BatchEvaluateArticleResponse {
 export interface ListStudentArticleCreationRequest {
   base_request?: base.BaseRequest;
   name_or_title?: string;
-  clas_id?: string;
+  clas_id?: Array<string>;
   /** 待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected */
   status?: string;
   /** pass no_pass */
@@ -262,6 +264,8 @@ export interface StudentArticleCreation {
   creation_type?: string;
   digital_hunman_video_url?: string;
   created_at?: string;
+  score?: number;
+  evaluated_at?: string;
 }
 
 /** 学生文案详情 */

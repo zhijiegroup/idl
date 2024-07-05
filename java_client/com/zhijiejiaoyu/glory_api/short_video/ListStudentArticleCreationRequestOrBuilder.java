@@ -35,10 +35,21 @@ public interface ListStudentArticleCreationRequestOrBuilder extends
       getNameOrTitleBytes();
 
   /**
-   * <code>int64 clas_id = 3;</code>
-   * @return The clasId.
+   * <code>repeated int64 clas_id = 3;</code>
+   * @return A list containing the clasId.
    */
-  long getClasId();
+  java.util.List<java.lang.Long> getClasIdList();
+  /**
+   * <code>repeated int64 clas_id = 3;</code>
+   * @return The count of clasId.
+   */
+  int getClasIdCount();
+  /**
+   * <code>repeated int64 clas_id = 3;</code>
+   * @param index The index of the element to return.
+   * @return The clasId at the given index.
+   */
+  long getClasId(int index);
 
   /**
    * <pre>

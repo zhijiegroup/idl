@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListStudentArticleCreationRequest() {
     nameOrTitle = "";
+    clasId = emptyLongList();
     status = "";
     aiResult = "";
     topic = "";
@@ -46,6 +47,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0 = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -76,8 +78,24 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 24: {
-
-            clasId = input.readInt64();
+            if (!((mutable_bitField0 & 0x00000001) != 0)) {
+              clasId = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            clasId .addLong(input.readInt64());
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0 & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              clasId = newLongList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              clasId .addLong(input.readInt64());
+            }
+            input.popLimit(limit);
             break;
           }
           case 34: {
@@ -136,6 +154,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0 & 0x00000001) != 0)) {
+        clasId .makeImmutable(); // C
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -218,15 +239,32 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CLAS_ID_FIELD_NUMBER = 3;
-  private long clasId ;
+  private com.google.protobuf.Internal.LongList clasId ;
   /**
-   * <code>int64 clas_id = 3;</code>
-   * @return The clasId.
+   * <code>repeated int64 clas_id = 3;</code>
+   * @return A list containing the clasId.
    */
   @java.lang.Override
-  public long getClasId() {
+  public java.util.List<java.lang.Long>
+      getClasIdList() {
     return clasId ;
   }
+  /**
+   * <code>repeated int64 clas_id = 3;</code>
+   * @return The count of clasId.
+   */
+  public int getClasIdCount() {
+    return clasId .size();
+  }
+  /**
+   * <code>repeated int64 clas_id = 3;</code>
+   * @param index The index of the element to return.
+   * @return The clasId at the given index.
+   */
+  public long getClasId(int index) {
+    return clasId .getLong(index);
+  }
+  private int clasIdMemoizedSerializedSize = -1;
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private volatile java.lang.Object status ;
@@ -436,14 +474,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (baseRequest != null) {
       output.writeMessage(1, getBaseRequest());
     }
     if (!getNameOrTitleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nameOrTitle );
     }
-    if (clasId != 0L) {
-      output.writeInt64(3, clasId );
+    if (getClasIdList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(clasIdMemoizedSerializedSize);
+    }
+    for (int i = 0; i < clasId .size(); i++) {
+      output.writeInt64NoTag(clasId .getLong(i));
     }
     if (!getStatusBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status );
@@ -479,9 +522,19 @@ private static final long serialVersionUID = 0L;
     if (!getNameOrTitleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nameOrTitle );
     }
-    if (clasId != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, clasId );
+    {
+      int dataSize = 0;
+      for (int i = 0; i < clasId .size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt64SizeNoTag(clasId .getLong(i));
+      }
+      size += dataSize;
+      if (!getClasIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      clasIdMemoizedSerializedSize = dataSize;
     }
     if (!getStatusBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status );
@@ -526,8 +579,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameOrTitle()
         .equals(other.getNameOrTitle())) return false;
-    if (getClasId()
-        != other.getClasId()) return false;
+    if (!getClasIdList()
+        .equals(other.getClasIdList())) return false;
     if (!getStatus()
         .equals(other.getStatus())) return false;
     if (!getAiResult()
@@ -560,9 +613,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_OR_TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getNameOrTitle().hashCode();
-    hash = (37 * hash) + CLAS_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getClasId());
+    if (getClasIdCount() > 0) {
+      hash = (37 * hash) + CLAS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClasIdList().hashCode();
+    }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getStatus().hashCode();
     hash = (37 * hash) + AI_RESULT_FIELD_NUMBER;
@@ -724,8 +778,8 @@ private static final long serialVersionUID = 0L;
       }
       nameOrTitle = "";
 
-      clasId = 0L;
-
+      clasId = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       status = "";
 
       aiResult = "";
@@ -768,12 +822,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest buildPartial() {
       com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest result = new com.zhijiejiaoyu.glory_api.short_video.ListStudentArticleCreationRequest(this);
+      int from_bitField0 = bitField0 ;
       if (baseRequestBuilder == null) {
         result.baseRequest = baseRequest ;
       } else {
         result.baseRequest = baseRequestBuilder .build();
       }
       result.nameOrTitle = nameOrTitle ;
+      if (((bitField0 & 0x00000001) != 0)) {
+        clasId .makeImmutable();
+        bitField0 = (bitField0 & ~0x00000001);
+      }
       result.clasId = clasId ;
       result.status = status ;
       result.aiResult = aiResult ;
@@ -840,8 +899,15 @@ private static final long serialVersionUID = 0L;
         nameOrTitle = other.nameOrTitle ;
         onChanged();
       }
-      if (other.getClasId() != 0L) {
-        setClasId(other.getClasId());
+      if (!other.clasId .isEmpty()) {
+        if (clasId .isEmpty()) {
+          clasId = other.clasId ;
+          bitField0 = (bitField0 & ~0x00000001);
+        } else {
+          ensureClasIdIsMutable();
+          clasId .addAll(other.clasId );
+        }
+        onChanged();
       }
       if (!other.getStatus().isEmpty()) {
         status = other.status ;
@@ -892,6 +958,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0 ;
 
     private com.zhijiejiaoyu.base.BaseRequest baseRequest ;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1088,33 +1155,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long clasId ;
-    /**
-     * <code>int64 clas_id = 3;</code>
-     * @return The clasId.
-     */
-    @java.lang.Override
-    public long getClasId() {
-      return clasId ;
+    private com.google.protobuf.Internal.LongList clasId = emptyLongList();
+    private void ensureClasIdIsMutable() {
+      if (!((bitField0 & 0x00000001) != 0)) {
+        clasId = mutableCopy(clasId );
+        bitField0_ |= 0x00000001;
+       }
     }
     /**
-     * <code>int64 clas_id = 3;</code>
+     * <code>repeated int64 clas_id = 3;</code>
+     * @return A list containing the clasId.
+     */
+    public java.util.List<java.lang.Long>
+        getClasIdList() {
+      return ((bitField0 & 0x00000001) != 0) ?
+               java.util.Collections.unmodifiableList(clasId ) : clasId ;
+    }
+    /**
+     * <code>repeated int64 clas_id = 3;</code>
+     * @return The count of clasId.
+     */
+    public int getClasIdCount() {
+      return clasId .size();
+    }
+    /**
+     * <code>repeated int64 clas_id = 3;</code>
+     * @param index The index of the element to return.
+     * @return The clasId at the given index.
+     */
+    public long getClasId(int index) {
+      return clasId .getLong(index);
+    }
+    /**
+     * <code>repeated int64 clas_id = 3;</code>
+     * @param index The index to set the value at.
      * @param value The clasId to set.
      * @return This builder for chaining.
      */
-    public Builder setClasId(long value) {
-      
-      clasId = value;
+    public Builder setClasId(
+        int index, long value) {
+      ensureClasIdIsMutable();
+      clasId .setLong(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>int64 clas_id = 3;</code>
+     * <code>repeated int64 clas_id = 3;</code>
+     * @param value The clasId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addClasId(long value) {
+      ensureClasIdIsMutable();
+      clasId .addLong(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 clas_id = 3;</code>
+     * @param values The clasId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllClasId(
+        java.lang.Iterable<? extends java.lang.Long> values) {
+      ensureClasIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, clasId );
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated int64 clas_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearClasId() {
-      
-      clasId = 0L;
+      clasId = emptyLongList();
+      bitField0 = (bitField0 & ~0x00000001);
       onChanged();
       return this;
     }

@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     creationType = "";
     digitalHunmanVideoUrl = "";
     createdAt = "";
+    evaluatedAt = "";
   }
 
   @java.lang.Override
@@ -114,6 +115,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             createdAt = s;
+            break;
+          }
+          case 88: {
+
+            score = input.readInt32();
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluatedAt = s;
             break;
           }
           default: {
@@ -501,6 +513,55 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SCORE_FIELD_NUMBER = 11;
+  private int score ;
+  /**
+   * <code>int32 score = 11;</code>
+   * @return The score.
+   */
+  @java.lang.Override
+  public int getScore() {
+    return score ;
+  }
+
+  public static final int EVALUATED_AT_FIELD_NUMBER = 12;
+  private volatile java.lang.Object evaluatedAt ;
+  /**
+   * <code>string evaluated_at = 12;</code>
+   * @return The evaluatedAt.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluatedAt() {
+    java.lang.Object ref = evaluatedAt ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluatedAt = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string evaluated_at = 12;</code>
+   * @return The bytes for evaluatedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluatedAtBytes() {
+    java.lang.Object ref = evaluatedAt ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluatedAt = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -545,6 +606,12 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, createdAt );
     }
+    if (score != 0) {
+      output.writeInt32(11, score );
+    }
+    if (!getEvaluatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, evaluatedAt );
+    }
     unknownFields.writeTo(output);
   }
 
@@ -585,6 +652,13 @@ private static final long serialVersionUID = 0L;
     if (!getCreatedAtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, createdAt );
     }
+    if (score != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(11, score );
+    }
+    if (!getEvaluatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, evaluatedAt );
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -620,6 +694,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDigitalHunmanVideoUrl())) return false;
     if (!getCreatedAt()
         .equals(other.getCreatedAt())) return false;
+    if (getScore()
+        != other.getScore()) return false;
+    if (!getEvaluatedAt()
+        .equals(other.getEvaluatedAt())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -652,6 +730,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDigitalHunmanVideoUrl().hashCode();
     hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
     hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + getScore();
+    hash = (37 * hash) + EVALUATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluatedAt().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -805,6 +887,10 @@ private static final long serialVersionUID = 0L;
 
       createdAt = "";
 
+      score = 0;
+
+      evaluatedAt = "";
+
       return this;
     }
 
@@ -841,6 +927,8 @@ private static final long serialVersionUID = 0L;
       result.creationType = creationType ;
       result.digitalHunmanVideoUrl = digitalHunmanVideoUrl ;
       result.createdAt = createdAt ;
+      result.score = score ;
+      result.evaluatedAt = evaluatedAt ;
       onBuilt();
       return result;
     }
@@ -926,6 +1014,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCreatedAt().isEmpty()) {
         createdAt = other.createdAt ;
+        onChanged();
+      }
+      if (other.getScore() != 0) {
+        setScore(other.getScore());
+      }
+      if (!other.getEvaluatedAt().isEmpty()) {
+        evaluatedAt = other.evaluatedAt ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1668,6 +1763,113 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       createdAt = value;
+      onChanged();
+      return this;
+    }
+
+    private int score ;
+    /**
+     * <code>int32 score = 11;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score ;
+    }
+    /**
+     * <code>int32 score = 11;</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScore(int value) {
+      
+      score = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 score = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScore() {
+      
+      score = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluatedAt = "";
+    /**
+     * <code>string evaluated_at = 12;</code>
+     * @return The evaluatedAt.
+     */
+    public java.lang.String getEvaluatedAt() {
+      java.lang.Object ref = evaluatedAt ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluatedAt = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string evaluated_at = 12;</code>
+     * @return The bytes for evaluatedAt.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluatedAtBytes() {
+      java.lang.Object ref = evaluatedAt ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluatedAt = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string evaluated_at = 12;</code>
+     * @param value The evaluatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatedAt(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluatedAt = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluated_at = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluatedAt() {
+      
+      evaluatedAt = getDefaultInstance().getEvaluatedAt();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluated_at = 12;</code>
+     * @param value The bytes for evaluatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatedAtBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluatedAt = value;
       onChanged();
       return this;
     }

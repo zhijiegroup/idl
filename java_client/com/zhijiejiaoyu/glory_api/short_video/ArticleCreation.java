@@ -22,9 +22,10 @@ private static final long serialVersionUID = 0L;
     topic = "";
     creationType = "";
     digitalHumanVideoUrl = "";
-    createdAt = "";
+    updatedAt = "";
     content = "";
     productName = "";
+    evaluator = "";
   }
 
   @java.lang.Override
@@ -106,7 +107,7 @@ private static final long serialVersionUID = 0L;
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            createdAt = s;
+            updatedAt = s;
             break;
           }
           case 82: {
@@ -119,6 +120,17 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             productName = s;
+            break;
+          }
+          case 96: {
+
+            score = input.readInt32();
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluator = s;
             break;
           }
           default: {
@@ -403,38 +415,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CREATED_AT_FIELD_NUMBER = 9;
-  private volatile java.lang.Object createdAt ;
+  public static final int UPDATED_AT_FIELD_NUMBER = 9;
+  private volatile java.lang.Object updatedAt ;
   /**
-   * <code>string created_at = 9;</code>
-   * @return The createdAt.
+   * <code>string updated_at = 9;</code>
+   * @return The updatedAt.
    */
   @java.lang.Override
-  public java.lang.String getCreatedAt() {
-    java.lang.Object ref = createdAt ;
+  public java.lang.String getUpdatedAt() {
+    java.lang.Object ref = updatedAt ;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      createdAt = s;
+      updatedAt = s;
       return s;
     }
   }
   /**
-   * <code>string created_at = 9;</code>
-   * @return The bytes for createdAt.
+   * <code>string updated_at = 9;</code>
+   * @return The bytes for updatedAt.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getCreatedAtBytes() {
-    java.lang.Object ref = createdAt ;
+      getUpdatedAtBytes() {
+    java.lang.Object ref = updatedAt ;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      createdAt = b;
+      updatedAt = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -517,6 +529,55 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SCORE_FIELD_NUMBER = 12;
+  private int score ;
+  /**
+   * <code>int32 score = 12;</code>
+   * @return The score.
+   */
+  @java.lang.Override
+  public int getScore() {
+    return score ;
+  }
+
+  public static final int EVALUATOR_FIELD_NUMBER = 13;
+  private volatile java.lang.Object evaluator ;
+  /**
+   * <code>string evaluator = 13;</code>
+   * @return The evaluator.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluator() {
+    java.lang.Object ref = evaluator ;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluator = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string evaluator = 13;</code>
+   * @return The bytes for evaluator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluatorBytes() {
+    java.lang.Object ref = evaluator ;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluator = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -555,14 +616,20 @@ private static final long serialVersionUID = 0L;
     if (!getDigitalHumanVideoUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, digitalHumanVideoUrl );
     }
-    if (!getCreatedAtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createdAt );
+    if (!getUpdatedAtBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, updatedAt );
     }
     if (!getContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, content );
     }
     if (!getProductNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, productName );
+    }
+    if (score != 0) {
+      output.writeInt32(12, score );
+    }
+    if (!getEvaluatorBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, evaluator );
     }
     unknownFields.writeTo(output);
   }
@@ -599,14 +666,21 @@ private static final long serialVersionUID = 0L;
     if (!getDigitalHumanVideoUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, digitalHumanVideoUrl );
     }
-    if (!getCreatedAtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createdAt );
+    if (!getUpdatedAtBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, updatedAt );
     }
     if (!getContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, content );
     }
     if (!getProductNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, productName );
+    }
+    if (score != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, score );
+    }
+    if (!getEvaluatorBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, evaluator );
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -639,12 +713,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCreationType())) return false;
     if (!getDigitalHumanVideoUrl()
         .equals(other.getDigitalHumanVideoUrl())) return false;
-    if (!getCreatedAt()
-        .equals(other.getCreatedAt())) return false;
+    if (!getUpdatedAt()
+        .equals(other.getUpdatedAt())) return false;
     if (!getContent()
         .equals(other.getContent())) return false;
     if (!getProductName()
         .equals(other.getProductName())) return false;
+    if (getScore()
+        != other.getScore()) return false;
+    if (!getEvaluator()
+        .equals(other.getEvaluator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -674,12 +752,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCreationType().hashCode();
     hash = (37 * hash) + DIGITAL_HUMAN_VIDEO_URL_FIELD_NUMBER;
     hash = (53 * hash) + getDigitalHumanVideoUrl().hashCode();
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + getCreatedAt().hashCode();
+    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+    hash = (53 * hash) + getUpdatedAt().hashCode();
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getProductName().hashCode();
+    hash = (37 * hash) + SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + getScore();
+    hash = (37 * hash) + EVALUATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluator().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -829,11 +911,15 @@ private static final long serialVersionUID = 0L;
 
       digitalHumanVideoUrl = "";
 
-      createdAt = "";
+      updatedAt = "";
 
       content = "";
 
       productName = "";
+
+      score = 0;
+
+      evaluator = "";
 
       return this;
     }
@@ -869,9 +955,11 @@ private static final long serialVersionUID = 0L;
       result.topic = topic ;
       result.creationType = creationType ;
       result.digitalHumanVideoUrl = digitalHumanVideoUrl ;
-      result.createdAt = createdAt ;
+      result.updatedAt = updatedAt ;
       result.content = content ;
       result.productName = productName ;
+      result.score = score ;
+      result.evaluator = evaluator ;
       onBuilt();
       return result;
     }
@@ -950,8 +1038,8 @@ private static final long serialVersionUID = 0L;
         digitalHumanVideoUrl = other.digitalHumanVideoUrl ;
         onChanged();
       }
-      if (!other.getCreatedAt().isEmpty()) {
-        createdAt = other.createdAt ;
+      if (!other.getUpdatedAt().isEmpty()) {
+        updatedAt = other.updatedAt ;
         onChanged();
       }
       if (!other.getContent().isEmpty()) {
@@ -960,6 +1048,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getProductName().isEmpty()) {
         productName = other.productName ;
+        onChanged();
+      }
+      if (other.getScore() != 0) {
+        setScore(other.getScore());
+      }
+      if (!other.getEvaluator().isEmpty()) {
+        evaluator = other.evaluator ;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1509,78 +1604,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object createdAt = "";
+    private java.lang.Object updatedAt = "";
     /**
-     * <code>string created_at = 9;</code>
-     * @return The createdAt.
+     * <code>string updated_at = 9;</code>
+     * @return The updatedAt.
      */
-    public java.lang.String getCreatedAt() {
-      java.lang.Object ref = createdAt ;
+    public java.lang.String getUpdatedAt() {
+      java.lang.Object ref = updatedAt ;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        createdAt = s;
+        updatedAt = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string created_at = 9;</code>
-     * @return The bytes for createdAt.
+     * <code>string updated_at = 9;</code>
+     * @return The bytes for updatedAt.
      */
     public com.google.protobuf.ByteString
-        getCreatedAtBytes() {
-      java.lang.Object ref = createdAt ;
+        getUpdatedAtBytes() {
+      java.lang.Object ref = updatedAt ;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        createdAt = b;
+        updatedAt = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string created_at = 9;</code>
-     * @param value The createdAt to set.
+     * <code>string updated_at = 9;</code>
+     * @param value The updatedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatedAt(
+    public Builder setUpdatedAt(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      createdAt = value;
+      updatedAt = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string created_at = 9;</code>
+     * <code>string updated_at = 9;</code>
      * @return This builder for chaining.
      */
-    public Builder clearCreatedAt() {
+    public Builder clearUpdatedAt() {
       
-      createdAt = getDefaultInstance().getCreatedAt();
+      updatedAt = getDefaultInstance().getUpdatedAt();
       onChanged();
       return this;
     }
     /**
-     * <code>string created_at = 9;</code>
-     * @param value The bytes for createdAt to set.
+     * <code>string updated_at = 9;</code>
+     * @param value The bytes for updatedAt to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatedAtBytes(
+    public Builder setUpdatedAtBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      createdAt = value;
+      updatedAt = value;
       onChanged();
       return this;
     }
@@ -1733,6 +1828,113 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       productName = value;
+      onChanged();
+      return this;
+    }
+
+    private int score ;
+    /**
+     * <code>int32 score = 12;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score ;
+    }
+    /**
+     * <code>int32 score = 12;</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScore(int value) {
+      
+      score = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 score = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScore() {
+      
+      score = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluator = "";
+    /**
+     * <code>string evaluator = 13;</code>
+     * @return The evaluator.
+     */
+    public java.lang.String getEvaluator() {
+      java.lang.Object ref = evaluator ;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluator = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string evaluator = 13;</code>
+     * @return The bytes for evaluator.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluatorBytes() {
+      java.lang.Object ref = evaluator ;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluator = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string evaluator = 13;</code>
+     * @param value The evaluator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluator = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluator = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluator() {
+      
+      evaluator = getDefaultInstance().getEvaluator();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluator = 13;</code>
+     * @param value The bytes for evaluator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluator = value;
       onChanged();
       return this;
     }

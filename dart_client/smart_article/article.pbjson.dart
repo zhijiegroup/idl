@@ -25,9 +25,11 @@ const ArticleCreation$json = {
     {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
     {'1': 'creation_type', '3': 7, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'digital_human_video_url', '3': 8, '4': 1, '5': 9, '10': 'digitalHumanVideoUrl'},
-    {'1': 'created_at', '3': 9, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 9, '10': 'updatedAt'},
     {'1': 'content', '3': 10, '4': 1, '5': 9, '10': 'content'},
     {'1': 'product_name', '3': 11, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'score', '3': 12, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'evaluator', '3': 13, '4': 1, '5': 9, '10': 'evaluator'},
   ],
 };
 
@@ -38,9 +40,10 @@ final $typed_data.Uint8List articleCreationDescriptor = $convert.base64Decode(
     'dGlvbklkEhQKBXRpdGxlGAMgASgJUgV0aXRsZRIbCglhaV9yZXN1bHQYBCABKAlSCGFpUmVzdW'
     'x0EhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEhQKBXRvcGljGAYgASgJUgV0b3BpYxIjCg1jcmVh'
     'dGlvbl90eXBlGAcgASgJUgxjcmVhdGlvblR5cGUSNQoXZGlnaXRhbF9odW1hbl92aWRlb191cm'
-    'wYCCABKAlSFGRpZ2l0YWxIdW1hblZpZGVvVXJsEh0KCmNyZWF0ZWRfYXQYCSABKAlSCWNyZWF0'
+    'wYCCABKAlSFGRpZ2l0YWxIdW1hblZpZGVvVXJsEh0KCnVwZGF0ZWRfYXQYCSABKAlSCXVwZGF0'
     'ZWRBdBIYCgdjb250ZW50GAogASgJUgdjb250ZW50EiEKDHByb2R1Y3RfbmFtZRgLIAEoCVILcH'
-    'JvZHVjdE5hbWU=');
+    'JvZHVjdE5hbWUSFAoFc2NvcmUYDCABKAVSBXNjb3JlEhwKCWV2YWx1YXRvchgNIAEoCVIJZXZh'
+    'bHVhdG9y');
 
 @$core.Deprecated('Use articleCreationDraftDescriptor instead')
 const ArticleCreationDraft$json = {
@@ -564,7 +567,7 @@ const ListStudentArticleCreationRequest$json = {
   '2': [
     {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
     {'1': 'name_or_title', '3': 2, '4': 1, '5': 9, '10': 'nameOrTitle'},
-    {'1': 'clas_id', '3': 3, '4': 1, '5': 3, '10': 'clasId'},
+    {'1': 'clas_id', '3': 3, '4': 3, '5': 3, '10': 'clasId'},
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
     {'1': 'ai_result', '3': 5, '4': 1, '5': 9, '10': 'aiResult'},
     {'1': 'topic', '3': 6, '4': 1, '5': 9, '10': 'topic'},
@@ -578,7 +581,7 @@ const ListStudentArticleCreationRequest$json = {
 final $typed_data.Uint8List listStudentArticleCreationRequestDescriptor = $convert.base64Decode(
     'CiFMaXN0U3R1ZGVudEFydGljbGVDcmVhdGlvblJlcXVlc3QSNAoMYmFzZV9yZXF1ZXN0GAEgAS'
     'gLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSIgoNbmFtZV9vcl90aXRsZRgCIAEo'
-    'CVILbmFtZU9yVGl0bGUSFwoHY2xhc19pZBgDIAEoA1IGY2xhc0lkEhYKBnN0YXR1cxgEIAEoCV'
+    'CVILbmFtZU9yVGl0bGUSFwoHY2xhc19pZBgDIAMoA1IGY2xhc0lkEhYKBnN0YXR1cxgEIAEoCV'
     'IGc3RhdHVzEhsKCWFpX3Jlc3VsdBgFIAEoCVIIYWlSZXN1bHQSFAoFdG9waWMYBiABKAlSBXRv'
     'cGljEhQKBXN0YXJ0GAcgASgDUgVzdGFydBIQCgNlbmQYCCABKANSA2VuZBI3CgpwYWdpbmF0aW'
     '9uGGQgASgLMhcuYmFzZS5QYWdpbmF0aW9uUmVxdWVzdFIKcGFnaW5hdGlvbg==');
@@ -614,6 +617,8 @@ const StudentArticleCreation$json = {
     {'1': 'creation_type', '3': 8, '4': 1, '5': 9, '10': 'creationType'},
     {'1': 'digital_hunman_video_url', '3': 9, '4': 1, '5': 9, '10': 'digitalHunmanVideoUrl'},
     {'1': 'created_at', '3': 10, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'score', '3': 11, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'evaluated_at', '3': 12, '4': 1, '5': 9, '10': 'evaluatedAt'},
   ],
 };
 
@@ -625,7 +630,8 @@ final $typed_data.Uint8List studentArticleCreationDescriptor = $convert.base64De
     'ZzdGF0dXMSFAoFdGl0bGUYBiABKAlSBXRpdGxlEhQKBXRvcGljGAcgASgJUgV0b3BpYxIjCg1j'
     'cmVhdGlvbl90eXBlGAggASgJUgxjcmVhdGlvblR5cGUSNwoYZGlnaXRhbF9odW5tYW5fdmlkZW'
     '9fdXJsGAkgASgJUhVkaWdpdGFsSHVubWFuVmlkZW9VcmwSHQoKY3JlYXRlZF9hdBgKIAEoCVIJ'
-    'Y3JlYXRlZEF0');
+    'Y3JlYXRlZEF0EhQKBXNjb3JlGAsgASgFUgVzY29yZRIhCgxldmFsdWF0ZWRfYXQYDCABKAlSC2'
+    'V2YWx1YXRlZEF0');
 
 @$core.Deprecated('Use studentArticleCreationEvaluationDetailRequestDescriptor instead')
 const StudentArticleCreationEvaluationDetailRequest$json = {

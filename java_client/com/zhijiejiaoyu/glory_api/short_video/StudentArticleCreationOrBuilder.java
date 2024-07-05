@@ -120,4 +120,22 @@ public interface StudentArticleCreationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCreatedAtBytes();
+
+  /**
+   * <code>int32 score = 11;</code>
+   * @return The score.
+   */
+  int getScore();
+
+  /**
+   * <code>string evaluated_at = 12;</code>
+   * @return The evaluatedAt.
+   */
+  java.lang.String getEvaluatedAt();
+  /**
+   * <code>string evaluated_at = 12;</code>
+   * @return The bytes for evaluatedAt.
+   */
+  com.google.protobuf.ByteString
+      getEvaluatedAtBytes();
 }

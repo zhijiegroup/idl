@@ -26,9 +26,11 @@ class ArticleCreation extends $pb.GeneratedMessage {
     $core.String? topic,
     $core.String? creationType,
     $core.String? digitalHumanVideoUrl,
-    $core.String? createdAt,
+    $core.String? updatedAt,
     $core.String? content,
     $core.String? productName,
+    $core.int? score,
+    $core.String? evaluator,
   }) {
     final $result = create();
     if (articleCreationId != null) {
@@ -55,14 +57,20 @@ class ArticleCreation extends $pb.GeneratedMessage {
     if (digitalHumanVideoUrl != null) {
       $result.digitalHumanVideoUrl = digitalHumanVideoUrl;
     }
-    if (createdAt != null) {
-      $result.createdAt = createdAt;
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
     }
     if (content != null) {
       $result.content = content;
     }
     if (productName != null) {
       $result.productName = productName;
+    }
+    if (score != null) {
+      $result.score = score;
+    }
+    if (evaluator != null) {
+      $result.evaluator = evaluator;
     }
     return $result;
   }
@@ -79,9 +87,11 @@ class ArticleCreation extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'topic')
     ..aOS(7, _omitFieldNames ? '' : 'creationType')
     ..aOS(8, _omitFieldNames ? '' : 'digitalHumanVideoUrl')
-    ..aOS(9, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
     ..aOS(10, _omitFieldNames ? '' : 'content')
     ..aOS(11, _omitFieldNames ? '' : 'productName')
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..aOS(13, _omitFieldNames ? '' : 'evaluator')
     ..hasRequiredFields = false
   ;
 
@@ -179,13 +189,13 @@ class ArticleCreation extends $pb.GeneratedMessage {
   void clearDigitalHumanVideoUrl() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get createdAt => $_getSZ(8);
+  $core.String get updatedAt => $_getSZ(8);
   @$pb.TagNumber(9)
-  set createdAt($core.String v) { $_setString(8, v); }
+  set updatedAt($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreatedAt() => $_has(8);
+  $core.bool hasUpdatedAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedAt() => clearField(9);
+  void clearUpdatedAt() => clearField(9);
 
   @$pb.TagNumber(10)
   $core.String get content => $_getSZ(9);
@@ -204,6 +214,24 @@ class ArticleCreation extends $pb.GeneratedMessage {
   $core.bool hasProductName() => $_has(10);
   @$pb.TagNumber(11)
   void clearProductName() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get score => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set score($core.int v) { $_setSignedInt32(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasScore() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearScore() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get evaluator => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set evaluator($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasEvaluator() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearEvaluator() => clearField(13);
 }
 
 class ArticleCreationDraft extends $pb.GeneratedMessage {
@@ -2859,7 +2887,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
   factory ListStudentArticleCreationRequest({
     $0.BaseRequest? baseRequest,
     $core.String? nameOrTitle,
-    $fixnum.Int64? clasId,
+    $core.Iterable<$fixnum.Int64>? clasId,
     $core.String? status,
     $core.String? aiResult,
     $core.String? topic,
@@ -2875,7 +2903,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
       $result.nameOrTitle = nameOrTitle;
     }
     if (clasId != null) {
-      $result.clasId = clasId;
+      $result.clasId.addAll(clasId);
     }
     if (status != null) {
       $result.status = status;
@@ -2904,7 +2932,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStudentArticleCreationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
     ..aOM<$0.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $0.BaseRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'nameOrTitle')
-    ..aInt64(3, _omitFieldNames ? '' : 'clasId')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'clasId', $pb.PbFieldType.K6)
     ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aOS(5, _omitFieldNames ? '' : 'aiResult')
     ..aOS(6, _omitFieldNames ? '' : 'topic')
@@ -2956,13 +2984,7 @@ class ListStudentArticleCreationRequest extends $pb.GeneratedMessage {
   void clearNameOrTitle() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get clasId => $_getI64(2);
-  @$pb.TagNumber(3)
-  set clasId($fixnum.Int64 v) { $_setInt64(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasClasId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearClasId() => clearField(3);
+  $core.List<$fixnum.Int64> get clasId => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get status => $_getSZ(3);
@@ -3109,6 +3131,8 @@ class StudentArticleCreation extends $pb.GeneratedMessage {
     $core.String? creationType,
     $core.String? digitalHunmanVideoUrl,
     $core.String? createdAt,
+    $core.int? score,
+    $core.String? evaluatedAt,
   }) {
     final $result = create();
     if (articleCreationId != null) {
@@ -3141,6 +3165,12 @@ class StudentArticleCreation extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (score != null) {
+      $result.score = score;
+    }
+    if (evaluatedAt != null) {
+      $result.evaluatedAt = evaluatedAt;
+    }
     return $result;
   }
   StudentArticleCreation._() : super();
@@ -3158,6 +3188,8 @@ class StudentArticleCreation extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'creationType')
     ..aOS(9, _omitFieldNames ? '' : 'digitalHunmanVideoUrl')
     ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'score', $pb.PbFieldType.O3)
+    ..aOS(12, _omitFieldNames ? '' : 'evaluatedAt')
     ..hasRequiredFields = false
   ;
 
@@ -3271,6 +3303,24 @@ class StudentArticleCreation extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(9);
   @$pb.TagNumber(10)
   void clearCreatedAt() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get score => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set score($core.int v) { $_setSignedInt32(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasScore() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearScore() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get evaluatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set evaluatedAt($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasEvaluatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearEvaluatedAt() => clearField(12);
 }
 
 /// 学生文案详情

@@ -41,11 +41,15 @@ struct GloryApi_ArticleCreation {
 
   var digitalHumanVideoURL: String = String()
 
-  var createdAt: String = String()
+  var updatedAt: String = String()
 
   var content: String = String()
 
   var productName: String = String()
+
+  var score: Int32 = 0
+
+  var evaluator: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -903,7 +907,7 @@ struct GloryApi_ListStudentArticleCreationRequest {
 
   var nameOrTitle: String = String()
 
-  var clasID: Int64 = 0
+  var clasID: [Int64] = []
 
   ///待评价 to_teacher_evaluate   已评价 evaluated    打回 rejected 
   var status: String = String()
@@ -994,6 +998,10 @@ struct GloryApi_StudentArticleCreation {
   var digitalHunmanVideoURL: String = String()
 
   var createdAt: String = String()
+
+  var score: Int32 = 0
+
+  var evaluatedAt: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2810,9 +2818,11 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     6: .same(proto: "topic"),
     7: .standard(proto: "creation_type"),
     8: .standard(proto: "digital_human_video_url"),
-    9: .standard(proto: "created_at"),
+    9: .standard(proto: "updated_at"),
     10: .same(proto: "content"),
     11: .standard(proto: "product_name"),
+    12: .same(proto: "score"),
+    13: .same(proto: "evaluator"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2829,9 +2839,11 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
       case 6: try { try decoder.decodeSingularStringField(value: &self.topic) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 8: try { try decoder.decodeSingularStringField(value: &self.digitalHumanVideoURL) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self.updatedAt) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.content) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self.productName) }()
+      case 12: try { try decoder.decodeSingularInt32Field(value: &self.score) }()
+      case 13: try { try decoder.decodeSingularStringField(value: &self.evaluator) }()
       default: break
       }
     }
@@ -2862,14 +2874,20 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if !self.digitalHumanVideoURL.isEmpty {
       try visitor.visitSingularStringField(value: self.digitalHumanVideoURL, fieldNumber: 8)
     }
-    if !self.createdAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 9)
+    if !self.updatedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.updatedAt, fieldNumber: 9)
     }
     if !self.content.isEmpty {
       try visitor.visitSingularStringField(value: self.content, fieldNumber: 10)
     }
     if !self.productName.isEmpty {
       try visitor.visitSingularStringField(value: self.productName, fieldNumber: 11)
+    }
+    if self.score != 0 {
+      try visitor.visitSingularInt32Field(value: self.score, fieldNumber: 12)
+    }
+    if !self.evaluator.isEmpty {
+      try visitor.visitSingularStringField(value: self.evaluator, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2883,9 +2901,11 @@ extension GloryApi_ArticleCreation: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if lhs.topic != rhs.topic {return false}
     if lhs.creationType != rhs.creationType {return false}
     if lhs.digitalHumanVideoURL != rhs.digitalHumanVideoURL {return false}
-    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.content != rhs.content {return false}
     if lhs.productName != rhs.productName {return false}
+    if lhs.score != rhs.score {return false}
+    if lhs.evaluator != rhs.evaluator {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -4499,7 +4519,7 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularMessageField(value: &self._baseRequest) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.nameOrTitle) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.clasID) }()
+      case 3: try { try decoder.decodeRepeatedInt64Field(value: &self.clasID) }()
       case 4: try { try decoder.decodeSingularStringField(value: &self.status) }()
       case 5: try { try decoder.decodeSingularStringField(value: &self.aiResult) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.topic) }()
@@ -4522,8 +4542,8 @@ extension GloryApi_ListStudentArticleCreationRequest: SwiftProtobuf.Message, Swi
     if !self.nameOrTitle.isEmpty {
       try visitor.visitSingularStringField(value: self.nameOrTitle, fieldNumber: 2)
     }
-    if self.clasID != 0 {
-      try visitor.visitSingularInt64Field(value: self.clasID, fieldNumber: 3)
+    if !self.clasID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.clasID, fieldNumber: 3)
     }
     if !self.status.isEmpty {
       try visitor.visitSingularStringField(value: self.status, fieldNumber: 4)
@@ -4622,6 +4642,8 @@ extension GloryApi_StudentArticleCreation: SwiftProtobuf.Message, SwiftProtobuf.
     8: .standard(proto: "creation_type"),
     9: .standard(proto: "digital_hunman_video_url"),
     10: .standard(proto: "created_at"),
+    11: .same(proto: "score"),
+    12: .standard(proto: "evaluated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -4640,6 +4662,8 @@ extension GloryApi_StudentArticleCreation: SwiftProtobuf.Message, SwiftProtobuf.
       case 8: try { try decoder.decodeSingularStringField(value: &self.creationType) }()
       case 9: try { try decoder.decodeSingularStringField(value: &self.digitalHunmanVideoURL) }()
       case 10: try { try decoder.decodeSingularStringField(value: &self.createdAt) }()
+      case 11: try { try decoder.decodeSingularInt32Field(value: &self.score) }()
+      case 12: try { try decoder.decodeSingularStringField(value: &self.evaluatedAt) }()
       default: break
       }
     }
@@ -4676,6 +4700,12 @@ extension GloryApi_StudentArticleCreation: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.createdAt.isEmpty {
       try visitor.visitSingularStringField(value: self.createdAt, fieldNumber: 10)
     }
+    if self.score != 0 {
+      try visitor.visitSingularInt32Field(value: self.score, fieldNumber: 11)
+    }
+    if !self.evaluatedAt.isEmpty {
+      try visitor.visitSingularStringField(value: self.evaluatedAt, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -4690,6 +4720,8 @@ extension GloryApi_StudentArticleCreation: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.creationType != rhs.creationType {return false}
     if lhs.digitalHunmanVideoURL != rhs.digitalHunmanVideoURL {return false}
     if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.score != rhs.score {return false}
+    if lhs.evaluatedAt != rhs.evaluatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
