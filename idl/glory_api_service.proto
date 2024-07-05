@@ -1680,10 +1680,14 @@ service glory_api {
   rpc GetSubTopicAiResult(GetSubTopicAiResultRequest) returns (GetSubTopicAiResultResponse) {
     option (api.post) = '/api/article_creation/get_sub_topic_ai_result';
   }
+  // 数据维护接口 计算当天用量
+  rpc CalcArticleCreationTenant(CalcArticleCreationTenantRequest) returns (CalcArticleCreationTenantResponse) {
+    option (api.get) = '/api/article_creation/calc_article_creation_tenant';
+  }
+  // 数据维护接口 初始化学校配额
   rpc InitArticleCreationTenant(InitArticleCreationTenantRequest) returns (InitArticleCreationTenantResponse) {
     option (api.get) = '/api/article_creation/init_article_creation_tenant';
   }
-
   // 数字人合成视频接口
   rpc CreateDigitalVideo(CreateDigitalVideoRequest) returns (CreateDigitalVideoResponse) {
     option (api.post) = "/api/digital/create_video";
