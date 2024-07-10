@@ -203,13 +203,6 @@ message ListShopAccessResponse {
   repeated ShopAccess shop_access = 2 ;
 }
 
-message GetShopQrcodeRequest {
-  int64 shop_id = 1;
-}
-message GetShopQrcodeResponse {
-  //  bytes qrcode = 2;
-}
-
 
 message AddShopCategoryRequest {
   base.BaseRequest base_request = 1;
