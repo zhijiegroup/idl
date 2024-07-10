@@ -269,10 +269,6 @@ service glory_api {
   rpc ListOperationMetrics(ListOperationMetricsRequest) returns (ListOperationMetricsResponse) {
     option (api.post) = '/api/shop/list_operation_metrics';
   }
-  rpc GetShopQrcode(GetShopQrcodeRequest) returns (GetShopQrcodeResponse) {
-    option (api.get) = '/api/shop/get_shop_qrcode';
-  }
-
   rpc UpdateShopManager(UpdateShopManagerRequest) returns (UpdateShopManagerResponse) {
     option (api.post) = '/api/shop/update_shop_manager';
   }
