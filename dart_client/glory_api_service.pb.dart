@@ -238,9 +238,6 @@ class glory_apiApi {
   $async.Future<$5.ListOperationMetricsResponse> listOperationMetrics($pb.ClientContext? ctx, $5.ListOperationMetricsRequest request) =>
     _client.invoke<$5.ListOperationMetricsResponse>(ctx, 'glory_api', 'ListOperationMetrics', request, $5.ListOperationMetricsResponse())
   ;
-  $async.Future<$4.GetShopQrcodeResponse> getShopQrcode($pb.ClientContext? ctx, $4.GetShopQrcodeRequest request) =>
-    _client.invoke<$4.GetShopQrcodeResponse>(ctx, 'glory_api', 'GetShopQrcode', request, $4.GetShopQrcodeResponse())
-  ;
   $async.Future<$4.UpdateShopManagerResponse> updateShopManager($pb.ClientContext? ctx, $4.UpdateShopManagerRequest request) =>
     _client.invoke<$4.UpdateShopManagerResponse>(ctx, 'glory_api', 'UpdateShopManager', request, $4.UpdateShopManagerResponse())
   ;

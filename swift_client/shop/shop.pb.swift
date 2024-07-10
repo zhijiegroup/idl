@@ -947,29 +947,6 @@ struct GloryApi_ListShopAccessResponse {
   fileprivate var _baseResp: Base_BaseResponse? = nil
 }
 
-struct GloryApi_GetShopQrcodeRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var shopID: Int64 = 0
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
-///  bytes qrcode = 2;
-struct GloryApi_GetShopQrcodeResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
 struct GloryApi_AddShopCategoryRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -1545,8 +1522,6 @@ extension GloryApi_VerifyFieldResponse: @unchecked Sendable {}
 extension GloryApi_ShopAccess: @unchecked Sendable {}
 extension GloryApi_ListShopAccessRequest: @unchecked Sendable {}
 extension GloryApi_ListShopAccessResponse: @unchecked Sendable {}
-extension GloryApi_GetShopQrcodeRequest: @unchecked Sendable {}
-extension GloryApi_GetShopQrcodeResponse: @unchecked Sendable {}
 extension GloryApi_AddShopCategoryRequest: @unchecked Sendable {}
 extension GloryApi_AddShopCategoryResponse: @unchecked Sendable {}
 extension GloryApi_RemoveShopCategoryRequest: @unchecked Sendable {}
@@ -3152,57 +3127,6 @@ extension GloryApi_ListShopAccessResponse: SwiftProtobuf.Message, SwiftProtobuf.
   static func ==(lhs: GloryApi_ListShopAccessResponse, rhs: GloryApi_ListShopAccessResponse) -> Bool {
     if lhs._baseResp != rhs._baseResp {return false}
     if lhs.shopAccess != rhs.shopAccess {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_GetShopQrcodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetShopQrcodeRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "shop_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt64Field(value: &self.shopID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.shopID != 0 {
-      try visitor.visitSingularInt64Field(value: self.shopID, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_GetShopQrcodeRequest, rhs: GloryApi_GetShopQrcodeRequest) -> Bool {
-    if lhs.shopID != rhs.shopID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension GloryApi_GetShopQrcodeResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetShopQrcodeResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: GloryApi_GetShopQrcodeResponse, rhs: GloryApi_GetShopQrcodeResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

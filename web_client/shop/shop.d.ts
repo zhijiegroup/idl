@@ -252,12 +252,6 @@ export interface ListShopAccessResponse {
   shop_access?: Array<ShopAccess>;
 }
 
-export interface GetShopQrcodeRequest {
-  shop_id?: string;
-}
-
-export interface GetShopQrcodeResponse {}
-
 export interface AddShopCategoryRequest {
   base_request?: base.BaseRequest;
   /** shop id */

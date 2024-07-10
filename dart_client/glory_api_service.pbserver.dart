@@ -133,7 +133,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$4.ListShopResponse> listShop($pb.ServerContext ctx, $4.ListShopRequest request);
   $async.Future<$4.DeleteShopResponse> deleteShop($pb.ServerContext ctx, $4.DeleteShopRequest request);
   $async.Future<$5.ListOperationMetricsResponse> listOperationMetrics($pb.ServerContext ctx, $5.ListOperationMetricsRequest request);
-  $async.Future<$4.GetShopQrcodeResponse> getShopQrcode($pb.ServerContext ctx, $4.GetShopQrcodeRequest request);
   $async.Future<$4.UpdateShopManagerResponse> updateShopManager($pb.ServerContext ctx, $4.UpdateShopManagerRequest request);
   $async.Future<$4.UpdateShopStatusResponse> updateShopStatus($pb.ServerContext ctx, $4.UpdateShopStatusRequest request);
   $async.Future<$4.GetShopBusinessDataResponse> getShopBusinessData($pb.ServerContext ctx, $4.GetShopBusinessDataRequest request);
@@ -586,7 +585,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListShop': return $4.ListShopRequest();
       case 'DeleteShop': return $4.DeleteShopRequest();
       case 'ListOperationMetrics': return $5.ListOperationMetricsRequest();
-      case 'GetShopQrcode': return $4.GetShopQrcodeRequest();
       case 'UpdateShopManager': return $4.UpdateShopManagerRequest();
       case 'UpdateShopStatus': return $4.UpdateShopStatusRequest();
       case 'GetShopBusinessData': return $4.GetShopBusinessDataRequest();
@@ -1042,7 +1040,6 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'ListShop': return this.listShop(ctx, request as $4.ListShopRequest);
       case 'DeleteShop': return this.deleteShop(ctx, request as $4.DeleteShopRequest);
       case 'ListOperationMetrics': return this.listOperationMetrics(ctx, request as $5.ListOperationMetricsRequest);
-      case 'GetShopQrcode': return this.getShopQrcode(ctx, request as $4.GetShopQrcodeRequest);
       case 'UpdateShopManager': return this.updateShopManager(ctx, request as $4.UpdateShopManagerRequest);
       case 'UpdateShopStatus': return this.updateShopStatus(ctx, request as $4.UpdateShopStatusRequest);
       case 'GetShopBusinessData': return this.getShopBusinessData(ctx, request as $4.GetShopBusinessDataRequest);

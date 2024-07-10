@@ -548,12 +548,6 @@ export class glory_api {
     );
   }
 
-  GetShopQrcode(request) {
-    const query = queryStringify(request);
-    const uri = `${this.uriPrefix}/api/shop/get_shop_qrcode${query}`;
-    return fetch(uri, { method, headers, credentials }).then(handleResponse);
-  }
-
   UpdateShopManager(request) {
     const uri = `${this.uriPrefix}/api/shop/update_shop_manager`;
     const body = JSONbigint.stringify(request);

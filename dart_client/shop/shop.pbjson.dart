@@ -485,27 +485,6 @@ final $typed_data.Uint8List listShopAccessResponseDescriptor = $convert.base64De
     'Jlc3BvbnNlUghiYXNlUmVzcBI2CgtzaG9wX2FjY2VzcxgCIAMoCzIVLmdsb3J5X2FwaS5TaG9w'
     'QWNjZXNzUgpzaG9wQWNjZXNz');
 
-@$core.Deprecated('Use getShopQrcodeRequestDescriptor instead')
-const GetShopQrcodeRequest$json = {
-  '1': 'GetShopQrcodeRequest',
-  '2': [
-    {'1': 'shop_id', '3': 1, '4': 1, '5': 3, '10': 'shopId'},
-  ],
-};
-
-/// Descriptor for `GetShopQrcodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getShopQrcodeRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRTaG9wUXJjb2RlUmVxdWVzdBIXCgdzaG9wX2lkGAEgASgDUgZzaG9wSWQ=');
-
-@$core.Deprecated('Use getShopQrcodeResponseDescriptor instead')
-const GetShopQrcodeResponse$json = {
-  '1': 'GetShopQrcodeResponse',
-};
-
-/// Descriptor for `GetShopQrcodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getShopQrcodeResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRTaG9wUXJjb2RlUmVzcG9uc2U=');
-
 @$core.Deprecated('Use addShopCategoryRequestDescriptor instead')
 const AddShopCategoryRequest$json = {
   '1': 'AddShopCategoryRequest',
