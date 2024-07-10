@@ -266,6 +266,9 @@ service glory_api {
   rpc DeleteShop(DeleteShopRequest) returns (DeleteShopResponse) {
     option (api.post) = '/api/shop/delete_shop';
   }
+  rpc ReopenShop(ReopenShopRequest) returns (ReopenShopResponse) {
+    option (api.post) = '/api/shop/reopen_shop';
+  }
   rpc ListOperationMetrics(ListOperationMetricsRequest) returns (ListOperationMetricsResponse) {
     option (api.post) = '/api/shop/list_operation_metrics';
   }

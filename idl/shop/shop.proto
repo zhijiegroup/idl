@@ -149,6 +149,14 @@ message DeleteShopResponse {
   base.BaseResponse base_resp = 1;
 }
 
+message ReopenShopRequest {
+  base.BaseRequest base_request = 1;
+  int64 shop_id = 2;
+}
+
+message ReopenShopResponse {
+  base.BaseResponse base_resp = 1;
+}
 
 message AddShopAccessRequest {
   base.BaseRequest base_request = 1;
