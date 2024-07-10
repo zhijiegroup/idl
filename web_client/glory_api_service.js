@@ -540,6 +540,14 @@ export class glory_api {
     );
   }
 
+  ReopenShop(request) {
+    const uri = `${this.uriPrefix}/api/shop/reopen_shop`;
+    const body = JSONbigint.stringify(request);
+    return fetch(uri, { method: "POST", headers, body, credentials }).then(
+      handleResponse
+    );
+  }
+
   ListOperationMetrics(request) {
     const uri = `${this.uriPrefix}/api/shop/list_operation_metrics`;
     const body = JSONbigint.stringify(request);

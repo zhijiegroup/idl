@@ -328,6 +328,8 @@ list the permissions that supported */
 
   DeleteShop(request: shop.DeleteShopRequest): Promise<shop.DeleteShopResponse>;
 
+  ReopenShop(request: shop.ReopenShopRequest): Promise<shop.ReopenShopResponse>;
+
   ListOperationMetrics(
     request: operation.ListOperationMetricsRequest
   ): Promise<operation.ListOperationMetricsResponse>;
