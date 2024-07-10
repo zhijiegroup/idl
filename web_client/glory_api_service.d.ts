@@ -332,10 +332,6 @@ list the permissions that supported */
     request: operation.ListOperationMetricsRequest
   ): Promise<operation.ListOperationMetricsResponse>;
 
-  GetShopQrcode(
-    request: shop.GetShopQrcodeRequest
-  ): Promise<shop.GetShopQrcodeResponse>;
-
   UpdateShopManager(
     request: shop.UpdateShopManagerRequest
   ): Promise<shop.UpdateShopManagerResponse>;
