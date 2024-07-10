@@ -1958,6 +1958,12 @@ CreateLivePlanProduct create live plan product */
     request: article.GetSubTopicAiResultRequest
   ): Promise<article.GetSubTopicAiResultResponse>;
 
+  /** 数据维护接口 计算当天用量 */
+  CalcArticleCreationTenant(
+    request: article.CalcArticleCreationTenantRequest
+  ): Promise<article.CalcArticleCreationTenantResponse>;
+
+  /** 数据维护接口 初始化学校配额 */
   InitArticleCreationTenant(
     request: article.InitArticleCreationTenantRequest
   ): Promise<article.InitArticleCreationTenantResponse>;

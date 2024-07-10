@@ -84,21 +84,31 @@ public interface CreateModifiedArticleCreationRequestOrBuilder extends
 
   /**
    * <pre>
+   * 新的的文案ID
+   * </pre>
+   *
+   * <code>int64 article_creation_id = 7;</code>
+   * @return The articleCreationId.
+   */
+  long getArticleCreationId();
+
+  /**
+   * <pre>
    * 修改的文案ID
    * </pre>
    *
-   * <code>int64 modified_article_creation_id = 7;</code>
-   * @return The modifiedArticleCreationId.
+   * <code>int64 last_article_creation_id = 8;</code>
+   * @return The lastArticleCreationId.
    */
-  long getModifiedArticleCreationId();
+  long getLastArticleCreationId();
 
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The productName.
    */
   java.lang.String getProductName();
   /**
-   * <code>string product_name = 8;</code>
+   * <code>string product_name = 9;</code>
    * @return The bytes for productName.
    */
   com.google.protobuf.ByteString

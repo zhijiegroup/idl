@@ -241,8 +241,9 @@ const CreateModifiedArticleCreationRequest$json = {
     {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'creation_type', '3': 6, '4': 1, '5': 9, '10': 'creationType'},
-    {'1': 'modified_article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'modifiedArticleCreationId'},
-    {'1': 'product_name', '3': 8, '4': 1, '5': 9, '10': 'productName'},
+    {'1': 'article_creation_id', '3': 7, '4': 1, '5': 3, '10': 'articleCreationId'},
+    {'1': 'last_article_creation_id', '3': 8, '4': 1, '5': 3, '10': 'lastArticleCreationId'},
+    {'1': 'product_name', '3': 9, '4': 1, '5': 9, '10': 'productName'},
   ],
 };
 
@@ -252,9 +253,10 @@ final $typed_data.Uint8List createModifiedArticleCreationRequestDescriptor = $co
     'EgASgLMhEuYmFzZS5CYXNlUmVxdWVzdFILYmFzZVJlcXVlc3QSHwoLY291cnNlX2NvZGUYAiAB'
     'KAlSCmNvdXJzZUNvZGUSKgoRY291cnNlX3RvcGljX2NvZGUYAyABKAlSD2NvdXJzZVRvcGljQ2'
     '9kZRIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSGAoHY29udGVudBgFIAEoCVIHY29udGVudBIjCg1j'
-    'cmVhdGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSPwocbW9kaWZpZWRfYXJ0aWNsZV9jcm'
-    'VhdGlvbl9pZBgHIAEoA1IZbW9kaWZpZWRBcnRpY2xlQ3JlYXRpb25JZBIhCgxwcm9kdWN0X25h'
-    'bWUYCCABKAlSC3Byb2R1Y3ROYW1l');
+    'cmVhdGlvbl90eXBlGAYgASgJUgxjcmVhdGlvblR5cGUSLgoTYXJ0aWNsZV9jcmVhdGlvbl9pZB'
+    'gHIAEoA1IRYXJ0aWNsZUNyZWF0aW9uSWQSNwoYbGFzdF9hcnRpY2xlX2NyZWF0aW9uX2lkGAgg'
+    'ASgDUhVsYXN0QXJ0aWNsZUNyZWF0aW9uSWQSIQoMcHJvZHVjdF9uYW1lGAkgASgJUgtwcm9kdW'
+    'N0TmFtZQ==');
 
 @$core.Deprecated('Use createModifiedArticleCreationResponseDescriptor instead')
 const CreateModifiedArticleCreationResponse$json = {
@@ -1499,6 +1501,32 @@ const InitArticleCreationTenantResponse$json = {
 /// Descriptor for `InitArticleCreationTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List initArticleCreationTenantResponseDescriptor = $convert.base64Decode(
     'CiFJbml0QXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
+    'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
+
+@$core.Deprecated('Use calcArticleCreationTenantRequestDescriptor instead')
+const CalcArticleCreationTenantRequest$json = {
+  '1': 'CalcArticleCreationTenantRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+  ],
+};
+
+/// Descriptor for `CalcArticleCreationTenantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List calcArticleCreationTenantRequestDescriptor = $convert.base64Decode(
+    'CiBDYWxjQXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKA'
+    'syES5iYXNlLkJhc2VSZXF1ZXN0UgtiYXNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use calcArticleCreationTenantResponseDescriptor instead')
+const CalcArticleCreationTenantResponse$json = {
+  '1': 'CalcArticleCreationTenantResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `CalcArticleCreationTenantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List calcArticleCreationTenantResponseDescriptor = $convert.base64Decode(
+    'CiFDYWxjQXJ0aWNsZUNyZWF0aW9uVGVuYW50UmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMh'
     'IuYmFzZS5CYXNlUmVzcG9uc2VSCGJhc2VSZXNw');
 
 @$core.Deprecated('Use listArticleCreationTenantCostRequestDescriptor instead')
