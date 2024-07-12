@@ -132,6 +132,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
   $async.Future<$4.UpdateShopResponse> updateShop($pb.ServerContext ctx, $4.UpdateShopRequest request);
   $async.Future<$4.ListShopResponse> listShop($pb.ServerContext ctx, $4.ListShopRequest request);
   $async.Future<$4.DeleteShopResponse> deleteShop($pb.ServerContext ctx, $4.DeleteShopRequest request);
+  $async.Future<$4.ReopenShopResponse> reopenShop($pb.ServerContext ctx, $4.ReopenShopRequest request);
   $async.Future<$5.ListOperationMetricsResponse> listOperationMetrics($pb.ServerContext ctx, $5.ListOperationMetricsRequest request);
   $async.Future<$4.UpdateShopManagerResponse> updateShopManager($pb.ServerContext ctx, $4.UpdateShopManagerRequest request);
   $async.Future<$4.UpdateShopStatusResponse> updateShopStatus($pb.ServerContext ctx, $4.UpdateShopStatusRequest request);
@@ -584,6 +585,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateShop': return $4.UpdateShopRequest();
       case 'ListShop': return $4.ListShopRequest();
       case 'DeleteShop': return $4.DeleteShopRequest();
+      case 'ReopenShop': return $4.ReopenShopRequest();
       case 'ListOperationMetrics': return $5.ListOperationMetricsRequest();
       case 'UpdateShopManager': return $4.UpdateShopManagerRequest();
       case 'UpdateShopStatus': return $4.UpdateShopStatusRequest();
@@ -1039,6 +1041,7 @@ abstract class glory_apiServiceBase extends $pb.GeneratedService {
       case 'UpdateShop': return this.updateShop(ctx, request as $4.UpdateShopRequest);
       case 'ListShop': return this.listShop(ctx, request as $4.ListShopRequest);
       case 'DeleteShop': return this.deleteShop(ctx, request as $4.DeleteShopRequest);
+      case 'ReopenShop': return this.reopenShop(ctx, request as $4.ReopenShopRequest);
       case 'ListOperationMetrics': return this.listOperationMetrics(ctx, request as $5.ListOperationMetricsRequest);
       case 'UpdateShopManager': return this.updateShopManager(ctx, request as $4.UpdateShopManagerRequest);
       case 'UpdateShopStatus': return this.updateShopStatus(ctx, request as $4.UpdateShopStatusRequest);

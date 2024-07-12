@@ -1952,6 +1952,124 @@ class DeleteShopResponse extends $pb.GeneratedMessage {
   $1.BaseResponse ensureBaseResp() => $_ensure(0);
 }
 
+class ReopenShopRequest extends $pb.GeneratedMessage {
+  factory ReopenShopRequest({
+    $1.BaseRequest? baseRequest,
+    $fixnum.Int64? shopId,
+  }) {
+    final $result = create();
+    if (baseRequest != null) {
+      $result.baseRequest = baseRequest;
+    }
+    if (shopId != null) {
+      $result.shopId = shopId;
+    }
+    return $result;
+  }
+  ReopenShopRequest._() : super();
+  factory ReopenShopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReopenShopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReopenShopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseRequest>(1, _omitFieldNames ? '' : 'baseRequest', subBuilder: $1.BaseRequest.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'shopId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReopenShopRequest clone() => ReopenShopRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReopenShopRequest copyWith(void Function(ReopenShopRequest) updates) => super.copyWith((message) => updates(message as ReopenShopRequest)) as ReopenShopRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReopenShopRequest create() => ReopenShopRequest._();
+  ReopenShopRequest createEmptyInstance() => create();
+  static $pb.PbList<ReopenShopRequest> createRepeated() => $pb.PbList<ReopenShopRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReopenShopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReopenShopRequest>(create);
+  static ReopenShopRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseRequest get baseRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseRequest($1.BaseRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseRequest() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseRequest ensureBaseRequest() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get shopId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set shopId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasShopId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShopId() => clearField(2);
+}
+
+class ReopenShopResponse extends $pb.GeneratedMessage {
+  factory ReopenShopResponse({
+    $1.BaseResponse? baseResp,
+  }) {
+    final $result = create();
+    if (baseResp != null) {
+      $result.baseResp = baseResp;
+    }
+    return $result;
+  }
+  ReopenShopResponse._() : super();
+  factory ReopenShopResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReopenShopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReopenShopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'glory_api'), createEmptyInstance: create)
+    ..aOM<$1.BaseResponse>(1, _omitFieldNames ? '' : 'baseResp', subBuilder: $1.BaseResponse.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReopenShopResponse clone() => ReopenShopResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReopenShopResponse copyWith(void Function(ReopenShopResponse) updates) => super.copyWith((message) => updates(message as ReopenShopResponse)) as ReopenShopResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReopenShopResponse create() => ReopenShopResponse._();
+  ReopenShopResponse createEmptyInstance() => create();
+  static $pb.PbList<ReopenShopResponse> createRepeated() => $pb.PbList<ReopenShopResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReopenShopResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReopenShopResponse>(create);
+  static ReopenShopResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.BaseResponse get baseResp => $_getN(0);
+  @$pb.TagNumber(1)
+  set baseResp($1.BaseResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBaseResp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseResp() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.BaseResponse ensureBaseResp() => $_ensure(0);
+}
+
 class AddShopAccessRequest extends $pb.GeneratedMessage {
   factory AddShopAccessRequest({
     $1.BaseRequest? baseRequest,

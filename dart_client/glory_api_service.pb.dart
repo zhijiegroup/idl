@@ -235,6 +235,9 @@ class glory_apiApi {
   $async.Future<$4.DeleteShopResponse> deleteShop($pb.ClientContext? ctx, $4.DeleteShopRequest request) =>
     _client.invoke<$4.DeleteShopResponse>(ctx, 'glory_api', 'DeleteShop', request, $4.DeleteShopResponse())
   ;
+  $async.Future<$4.ReopenShopResponse> reopenShop($pb.ClientContext? ctx, $4.ReopenShopRequest request) =>
+    _client.invoke<$4.ReopenShopResponse>(ctx, 'glory_api', 'ReopenShop', request, $4.ReopenShopResponse())
+  ;
   $async.Future<$5.ListOperationMetricsResponse> listOperationMetrics($pb.ClientContext? ctx, $5.ListOperationMetricsRequest request) =>
     _client.invoke<$5.ListOperationMetricsResponse>(ctx, 'glory_api', 'ListOperationMetrics', request, $5.ListOperationMetricsResponse())
   ;

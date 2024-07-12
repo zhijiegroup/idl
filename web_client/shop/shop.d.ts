@@ -197,6 +197,15 @@ export interface DeleteShopResponse {
   base_resp?: base.BaseResponse;
 }
 
+export interface ReopenShopRequest {
+  base_request?: base.BaseRequest;
+  shop_id?: string;
+}
+
+export interface ReopenShopResponse {
+  base_resp?: base.BaseResponse;
+}
+
 export interface AddShopAccessRequest {
   base_request?: base.BaseRequest;
   shop_id?: string;

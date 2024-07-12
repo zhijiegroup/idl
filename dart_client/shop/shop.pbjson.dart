@@ -345,6 +345,33 @@ final $typed_data.Uint8List deleteShopResponseDescriptor = $convert.base64Decode
     'ChJEZWxldGVTaG9wUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
     '9uc2VSCGJhc2VSZXNw');
 
+@$core.Deprecated('Use reopenShopRequestDescriptor instead')
+const ReopenShopRequest$json = {
+  '1': 'ReopenShopRequest',
+  '2': [
+    {'1': 'base_request', '3': 1, '4': 1, '5': 11, '6': '.base.BaseRequest', '10': 'baseRequest'},
+    {'1': 'shop_id', '3': 2, '4': 1, '5': 3, '10': 'shopId'},
+  ],
+};
+
+/// Descriptor for `ReopenShopRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reopenShopRequestDescriptor = $convert.base64Decode(
+    'ChFSZW9wZW5TaG9wUmVxdWVzdBI0CgxiYXNlX3JlcXVlc3QYASABKAsyES5iYXNlLkJhc2VSZX'
+    'F1ZXN0UgtiYXNlUmVxdWVzdBIXCgdzaG9wX2lkGAIgASgDUgZzaG9wSWQ=');
+
+@$core.Deprecated('Use reopenShopResponseDescriptor instead')
+const ReopenShopResponse$json = {
+  '1': 'ReopenShopResponse',
+  '2': [
+    {'1': 'base_resp', '3': 1, '4': 1, '5': 11, '6': '.base.BaseResponse', '10': 'baseResp'},
+  ],
+};
+
+/// Descriptor for `ReopenShopResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reopenShopResponseDescriptor = $convert.base64Decode(
+    'ChJSZW9wZW5TaG9wUmVzcG9uc2USLwoJYmFzZV9yZXNwGAEgASgLMhIuYmFzZS5CYXNlUmVzcG'
+    '9uc2VSCGJhc2VSZXNw');
+
 @$core.Deprecated('Use addShopAccessRequestDescriptor instead')
 const AddShopAccessRequest$json = {
   '1': 'AddShopAccessRequest',
