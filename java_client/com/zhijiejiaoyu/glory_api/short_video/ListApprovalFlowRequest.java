@@ -106,7 +106,12 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case 58: {
+          case 56: {
+
+            tenantId = input.readInt64();
+            break;
+          }
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             accessType = s;
@@ -328,14 +333,25 @@ private static final long serialVersionUID = 0L;
   }
   private int classIdMemoizedSerializedSize = -1;
 
-  public static final int ACCESS_TYPE_FIELD_NUMBER = 7;
+  public static final int TENANT_ID_FIELD_NUMBER = 7;
+  private long tenantId ;
+  /**
+   * <code>int64 tenant_id = 7;</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public long getTenantId() {
+    return tenantId ;
+  }
+
+  public static final int ACCESS_TYPE_FIELD_NUMBER = 8;
   private volatile java.lang.Object accessType ;
   /**
    * <pre>
    * 访问类型
    * </pre>
    *
-   * <code>string access_type = 7;</code>
+   * <code>string access_type = 8;</code>
    * @return The accessType.
    */
   @java.lang.Override
@@ -356,7 +372,7 @@ private static final long serialVersionUID = 0L;
    * 访问类型
    * </pre>
    *
-   * <code>string access_type = 7;</code>
+   * <code>string access_type = 8;</code>
    * @return The bytes for accessType.
    */
   @java.lang.Override
@@ -434,8 +450,11 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < classId .size(); i++) {
       output.writeInt64NoTag(classId .getLong(i));
     }
+    if (tenantId != 0L) {
+      output.writeInt64(7, tenantId );
+    }
     if (!getAccessTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, accessType );
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, accessType );
     }
     if (pagination != null) {
       output.writeMessage(100, getPagination());
@@ -476,8 +495,12 @@ private static final long serialVersionUID = 0L;
       }
       classIdMemoizedSerializedSize = dataSize;
     }
+    if (tenantId != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(7, tenantId );
+    }
     if (!getAccessTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, accessType );
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, accessType );
     }
     if (pagination != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -511,6 +534,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getApprovalType())) return false;
     if (!getClassIdList()
         .equals(other.getClassIdList())) return false;
+    if (getTenantId()
+        != other.getTenantId()) return false;
     if (!getAccessType()
         .equals(other.getAccessType())) return false;
     if (hasPagination() != other.hasPagination()) return false;
@@ -543,6 +568,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLASS_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClassIdList().hashCode();
     }
+    hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTenantId());
     hash = (37 * hash) + ACCESS_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getAccessType().hashCode();
     if (hasPagination()) {
@@ -696,6 +724,8 @@ private static final long serialVersionUID = 0L;
 
       classId = emptyLongList();
       bitField0 = (bitField0 & ~0x00000001);
+      tenantId = 0L;
+
       accessType = "";
 
       if (paginationBuilder == null) {
@@ -744,6 +774,7 @@ private static final long serialVersionUID = 0L;
         bitField0 = (bitField0 & ~0x00000001);
       }
       result.classId = classId ;
+      result.tenantId = tenantId ;
       result.accessType = accessType ;
       if (paginationBuilder == null) {
         result.pagination = pagination ;
@@ -822,6 +853,9 @@ private static final long serialVersionUID = 0L;
           classId .addAll(other.classId );
         }
         onChanged();
+      }
+      if (other.getTenantId() != 0L) {
+        setTenantId(other.getTenantId());
       }
       if (!other.getAccessType().isEmpty()) {
         accessType = other.accessType ;
@@ -1286,13 +1320,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long tenantId ;
+    /**
+     * <code>int64 tenant_id = 7;</code>
+     * @return The tenantId.
+     */
+    @java.lang.Override
+    public long getTenantId() {
+      return tenantId ;
+    }
+    /**
+     * <code>int64 tenant_id = 7;</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(long value) {
+      
+      tenantId = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 tenant_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      
+      tenantId = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object accessType = "";
     /**
      * <pre>
      * 访问类型
      * </pre>
      *
-     * <code>string access_type = 7;</code>
+     * <code>string access_type = 8;</code>
      * @return The accessType.
      */
     public java.lang.String getAccessType() {
@@ -1312,7 +1377,7 @@ private static final long serialVersionUID = 0L;
      * 访问类型
      * </pre>
      *
-     * <code>string access_type = 7;</code>
+     * <code>string access_type = 8;</code>
      * @return The bytes for accessType.
      */
     public com.google.protobuf.ByteString
@@ -1333,7 +1398,7 @@ private static final long serialVersionUID = 0L;
      * 访问类型
      * </pre>
      *
-     * <code>string access_type = 7;</code>
+     * <code>string access_type = 8;</code>
      * @param value The accessType to set.
      * @return This builder for chaining.
      */
@@ -1352,7 +1417,7 @@ private static final long serialVersionUID = 0L;
      * 访问类型
      * </pre>
      *
-     * <code>string access_type = 7;</code>
+     * <code>string access_type = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAccessType() {
@@ -1366,7 +1431,7 @@ private static final long serialVersionUID = 0L;
      * 访问类型
      * </pre>
      *
-     * <code>string access_type = 7;</code>
+     * <code>string access_type = 8;</code>
      * @param value The bytes for accessType to set.
      * @return This builder for chaining.
      */
