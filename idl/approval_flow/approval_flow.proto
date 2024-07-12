@@ -35,7 +35,8 @@ message ListApprovalFlowRequest {
     string name_or_phone = 3;
     string approval_type = 5;
     repeated int64 class_id = 6;
-    string access_type = 7; // 访问类型
+    int64 tenant_id = 7;
+    string access_type = 8; // 访问类型
     base.PaginationRequest pagination = 100;
 }
 
