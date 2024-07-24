@@ -76,11 +76,17 @@ public interface ListApprovalFlowRequestOrBuilder extends
   long getClassId(int index);
 
   /**
+   * <code>int64 tenant_id = 7;</code>
+   * @return The tenantId.
+   */
+  long getTenantId();
+
+  /**
    * <pre>
    * 访问类型
    * </pre>
    *
-   * <code>string access_type = 7;</code>
+   * <code>string access_type = 8;</code>
    * @return The accessType.
    */
   java.lang.String getAccessType();
@@ -89,7 +95,7 @@ public interface ListApprovalFlowRequestOrBuilder extends
    * 访问类型
    * </pre>
    *
-   * <code>string access_type = 7;</code>
+   * <code>string access_type = 8;</code>
    * @return The bytes for accessType.
    */
   com.google.protobuf.ByteString

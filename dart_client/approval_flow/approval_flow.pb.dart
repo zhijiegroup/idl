@@ -343,6 +343,7 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
     $core.String? nameOrPhone,
     $core.String? approvalType,
     $core.Iterable<$fixnum.Int64>? classId,
+    $fixnum.Int64? tenantId,
     $core.String? accessType,
     $0.PaginationRequest? pagination,
   }) {
@@ -362,6 +363,9 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
     if (classId != null) {
       $result.classId.addAll(classId);
     }
+    if (tenantId != null) {
+      $result.tenantId = tenantId;
+    }
     if (accessType != null) {
       $result.accessType = accessType;
     }
@@ -380,7 +384,8 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'nameOrPhone')
     ..aOS(5, _omitFieldNames ? '' : 'approvalType')
     ..p<$fixnum.Int64>(6, _omitFieldNames ? '' : 'classId', $pb.PbFieldType.K6)
-    ..aOS(7, _omitFieldNames ? '' : 'accessType')
+    ..aInt64(7, _omitFieldNames ? '' : 'tenantId')
+    ..aOS(8, _omitFieldNames ? '' : 'accessType')
     ..aOM<$0.PaginationRequest>(100, _omitFieldNames ? '' : 'pagination', subBuilder: $0.PaginationRequest.create)
     ..hasRequiredFields = false
   ;
@@ -448,24 +453,33 @@ class ListApprovalFlowRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get classId => $_getList(4);
 
   @$pb.TagNumber(7)
-  $core.String get accessType => $_getSZ(5);
+  $fixnum.Int64 get tenantId => $_getI64(5);
   @$pb.TagNumber(7)
-  set accessType($core.String v) { $_setString(5, v); }
+  set tenantId($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAccessType() => $_has(5);
+  $core.bool hasTenantId() => $_has(5);
   @$pb.TagNumber(7)
-  void clearAccessType() => clearField(7);
+  void clearTenantId() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get accessType => $_getSZ(6);
+  @$pb.TagNumber(8)
+  set accessType($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAccessType() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearAccessType() => clearField(8);
 
   @$pb.TagNumber(100)
-  $0.PaginationRequest get pagination => $_getN(6);
+  $0.PaginationRequest get pagination => $_getN(7);
   @$pb.TagNumber(100)
   set pagination($0.PaginationRequest v) { setField(100, v); }
   @$pb.TagNumber(100)
-  $core.bool hasPagination() => $_has(6);
+  $core.bool hasPagination() => $_has(7);
   @$pb.TagNumber(100)
   void clearPagination() => clearField(100);
   @$pb.TagNumber(100)
-  $0.PaginationRequest ensurePagination() => $_ensure(6);
+  $0.PaginationRequest ensurePagination() => $_ensure(7);
 }
 
 class ListApprovalFlowResponse extends $pb.GeneratedMessage {
