@@ -108,6 +108,47 @@ message GetQuickEvaluationReportRequest {
     int64 report_id = 2;
 }
 
+message GetQuickEvaluationTotalReportRequest {
+    base.BaseRequest base_request = 1;
+    int64 begin_time = 2;
+    int64 end_time = 3;
+}
+
+message QuickEvaluationTotalReportItemEntry {
+    string name = 1;
+    string percent = 2;
+    string detail = 3;
+}
+
+message QuickEvaluationTotalReportItem {
+    string item_name = 1;
+    repeated QuickEvaluationTotalReportItemEntry entries = 2;
+    string desc = 3;
+}
+
+message QuickEvaluationTotalReportStudentDetail {
+    string name = 1;
+    bool result = 2;
+    string reason = 3;
+    int64 report_id = 4;
+    int64 room_id = 5;
+}
+
+message QuickEvaluationTotalReport {
+    int32 total_count = 1;
+    int32 pass_count = 2;
+    int32 no_pass_count = 3;
+    string begin_time = 4;
+    string end_time = 5;
+    repeated QuickEvaluationTotalReportItem items = 6;
+    repeated QuickEvaluationTotalReportStudentDetail pass_list = 7;
+    repeated QuickEvaluationTotalReportStudentDetail no_pass_list = 8;
+}
+
+message GetQuickEvaluationTotalReportResponse {
+    base.BaseResponse base_resp = 1;
+}
+
 message PassDetail {
     int64 user_id = 1;
     string user_name = 2;
